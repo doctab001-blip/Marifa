@@ -2,7 +2,7 @@
 
 Marifa is a Saudi-context clinical knowledge, competency and governance SaaS foundation. This repository contains a production-oriented Next.js application shell plus an explicitly isolated demonstration mode.
 
-> **Clinical safety:** all seeded clinical records are labelled **DEMO — NOT FOR CLINICAL USE**. They contain no medication doses, treatment algorithms, diagnostic thresholds or claimed approvals.
+> **Clinical safety:** fictional UI fixtures remain labelled **DEMO — NOT FOR CLINICAL USE**. Disease-management imports are source-linked, schema-validated **drafts** and must complete local clinical-governance review before publication or clinical use. They do not replace the current source guideline, SFDA labelling or the local formulary.
 
 ## What works now
 
@@ -54,6 +54,22 @@ To prepare another Supabase environment:
 5. Configure `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` in the hosting environment.
 6. Verify every RLS policy using two distinct tenant fixtures before adding private hospital content.
 
+### Disease-management seeds
+
+The Disease Management Module adds a strict JSON contract, a tenant-aware guideline migration and two clinically sourced seed batches. Validate the files without a database connection:
+
+```bash
+npm run seed:diseases:validate
+```
+
+To import into an approved development environment, first apply all migrations, then set `SUPABASE_URL` and a server-only `SUPABASE_SERVICE_ROLE_KEY` in `.env.local` and run:
+
+```bash
+npm run seed:diseases
+```
+
+The importer upserts shared national metadata and its current version by stable UUID. Every imported record remains `draft`; it is readable only to authenticated users and requires a separate governance workflow to become published.
+
 The migration does not create predictable demo auth accounts. Invitations and initial administrator setup must use a secure, one-time, server-controlled flow.
 
 ## Architecture notes
@@ -61,6 +77,8 @@ The migration does not create predictable demo auth accounts. Invitations and in
 - `app/` — Next.js App Router pages and server routes.
 - `components/` — reusable workspace, search, pathway, bookmark and workflow UI.
 - `lib/` — typed domain model, demo repository, search ranking and pathway validation.
+- `lib/validations/disease.ts` — strict six-tier disease-management schema.
+- `data/seeds/` and `prisma/seed.ts` — validated Saudi/NICE-adapted draft content and idempotent Supabase importer.
 - `supabase/` — PostgreSQL migration and non-sensitive seed.
 - `tests/` — Vitest and React Testing Library checks.
 - `e2e/` — Playwright clinician journeys.

@@ -1,0 +1,406 @@
+[
+  {
+    "id": "a1010000-0000-4000-8000-000000000001",
+    "title": "Acute Severe Asthma Exacerbation (Adult)",
+    "specialty": "Emergency Medicine and Respiratory Medicine",
+    "authority": "MOH",
+    "status": "draft",
+    "version": "1.0-marifa",
+    "lastReviewed": "2018-01-01",
+    "pillar": "Urgent Care",
+    "pathophysiology": {
+      "summary": "An acute exacerbation is a sustained worsening of airflow obstruction caused by bronchial smooth-muscle constriction, airway-wall oedema and mucus plugging on a background of variable airway inflammation. Severe obstruction raises the work of breathing, produces ventilation-perfusion mismatch and may progress from hypocapnia to carbon-dioxide retention as respiratory muscles fatigue.",
+      "keyMechanisms": [
+        "Trigger-driven airway inflammation and bronchial hyper-responsiveness narrow conducting airways.",
+        "Mucosal oedema and tenacious secretions amplify expiratory flow limitation and dynamic hyperinflation.",
+        "Ventilation-perfusion mismatch causes hypoxaemia; a normalising or rising carbon dioxide level in a distressed patient can indicate fatigue.",
+        "Prolonged expiration and air trapping increase intrathoracic pressure and the work of breathing."
+      ]
+    },
+    "presentation": {
+      "symptoms": ["Rapidly worsening breathlessness", "Wheeze or chest tightness", "Cough, often after a viral, allergen or irritant exposure", "Reduced response to the patient's usual reliever medicine"],
+      "physicalSigns": ["Tachypnoea with prolonged expiration", "Diffuse expiratory wheeze or, in near-fatal obstruction, a quiet chest", "Accessory-muscle use and inability to complete sentences", "Tachycardia with reduced peak expiratory flow compared with predicted or personal best"],
+      "redFlags": ["Exhaustion, confusion, drowsiness, cyanosis, hypotension or a silent chest", "Inability to speak, worsening hypoxaemia or poor respiratory effort despite initial treatment", "Normal or rising arterial carbon dioxide in a patient with severe respiratory distress", "Previous near-fatal asthma, intensive-care admission or mechanical ventilation"]
+    },
+    "differentials": [
+      {"condition": "Anaphylaxis", "distinguishingFeatures": "Abrupt multisystem illness with urticaria, angioedema, hypotension or gastrointestinal symptoms after a likely exposure."},
+      {"condition": "Acute pulmonary oedema", "distinguishingFeatures": "Orthopnoea, inspiratory crackles, raised jugular venous pressure or radiographic congestion rather than predominantly expiratory obstruction."},
+      {"condition": "Pulmonary embolism", "distinguishingFeatures": "Pleuritic pain, haemoptysis, venous-thromboembolism risk factors or unexplained hypoxaemia with limited wheeze."},
+      {"condition": "Pneumothorax", "distinguishingFeatures": "Sudden unilateral pleuritic pain, asymmetric breath sounds and hyper-resonance; tension physiology adds hypotension and tracheal deviation."}
+    ],
+    "investigations": {
+      "ruleIn": [
+        {"testName": "Peak expiratory flow", "targetCondition": "Severity of airflow obstruction", "expectedFinding": "Marked reduction from predicted or documented personal best, with serial improvement after treatment supporting reversible obstruction.", "clinicalRationale": "Provides an objective trend when the patient can perform the manoeuvre safely."},
+        {"testName": "Continuous pulse oximetry", "targetCondition": "Hypoxaemia", "expectedFinding": "Reduced oxygen saturation or a need for supplemental oxygen to maintain the locally defined target.", "clinicalRationale": "Detects gas-exchange impairment and guides titrated oxygen while avoiding delay to treatment."},
+        {"testName": "Arterial or venous blood gas when severe or deteriorating", "targetCondition": "Respiratory failure and metabolic disturbance", "expectedFinding": "Hypoxaemia; carbon-dioxide retention or acidaemia in life-threatening disease.", "clinicalRationale": "A rising carbon dioxide level can signal fatigue and the need for critical-care escalation."}
+      ],
+      "ruleOut": [
+        {"testName": "Chest radiograph when clinically indicated", "targetCondition": "Pneumothorax, pneumonia or pulmonary oedema", "expectedFinding": "No focal alternative pathology in uncomplicated asthma; an abnormality redirects management.", "clinicalRationale": "Imaging is selective rather than routine and should not delay immediate bronchodilator treatment."},
+        {"testName": "12-lead electrocardiogram", "targetCondition": "Acute coronary syndrome or significant arrhythmia", "expectedFinding": "Absence of acute ischaemic change or a clinically important rhythm disturbance.", "clinicalRationale": "Useful for older patients, chest pain, marked tachycardia or relevant cardiovascular comorbidity."}
+      ]
+    },
+    "clinicalManagement": [
+      {"id": "stabilise", "title": "Immediate assessment and stabilisation", "timeframe": "Immediately on arrival", "actions": ["Use an airway-breathing-circulation approach and call senior emergency support for severe or life-threatening features.", "Position upright when tolerated, establish monitoring and obtain intravenous access without delaying inhaled therapy.", "Give controlled oxygen to the locally approved saturation target and reassess frequently."]},
+      {"id": "bronchodilate", "title": "Reverse bronchoconstriction", "timeframe": "Within minutes", "actions": ["Give repeated inhaled short-acting beta-2 agonist using an appropriate delivery system.", "Add inhaled ipratropium bromide in severe or life-threatening exacerbation.", "Document response using symptoms, respiratory effort, oxygenation and peak flow where feasible."], "branches": [{"condition": "Poor response or deteriorating physiology", "actions": ["Escalate immediately to a senior emergency/critical-care clinician.", "Consider continuous nebulised bronchodilator delivery and intravenous magnesium sulfate under the approved local protocol."]}]},
+      {"id": "anti-inflammatory", "title": "Treat airway inflammation", "timeframe": "Early in the first hour", "actions": ["Administer systemic corticosteroid promptly unless contraindicated.", "Review likely trigger, adherence and recent corticosteroid exposure.", "Do not use antibiotics routinely unless bacterial infection is clinically supported."]},
+      {"id": "reassess", "title": "Structured reassessment", "timeframe": "After each initial treatment cycle", "actions": ["Repeat respiratory rate, work of breathing, speech, oxygen saturation and peak flow where possible.", "Check for complications and alternative diagnoses if the trajectory is not improving.", "Escalate for ventilatory support planning before exhaustion or reduced consciousness develops."]},
+      {"id": "disposition", "title": "Determine safe disposition", "timeframe": "After sustained clinical response", "actions": ["Admit patients with persistent severe features, oxygen requirement, poor social support or high relapse risk.", "Before discharge, verify inhaler technique, provide an individualised written action plan and arrange controller therapy review.", "Explain explicit emergency return precautions."]}
+    ],
+    "nonClinicalManagement": {
+      "patientEducation": ["Explain reliever versus controller medicines and the danger of relying on frequent reliever use.", "Demonstrate inhaler and spacer technique and confirm understanding using teach-back.", "Provide a written action plan that states deterioration thresholds and where to obtain urgent care."],
+      "lifestyleAndDiet": ["Identify and reduce exposure to tobacco smoke, vaping, occupational irritants and known allergens.", "Support influenza vaccination and other indicated immunisation under the Saudi schedule.", "Encourage gradual return to activity once symptoms and peak flow recover."],
+      "mdtReferrals": ["Respiratory specialist for life-threatening, recurrent severe or diagnostically uncertain asthma", "Asthma educator or respiratory pharmacist for technique and adherence review", "Critical care when deterioration, exhaustion or ventilatory support is anticipated"],
+      "dischargeCriteria": ["Symptoms and work of breathing have improved and remain stable after observation.", "Oxygenation is stable without unplanned escalation and objective airflow is improving.", "Medicines, inhaler technique, written action plan, follow-up and return precautions are confirmed."],
+      "followUpPlan": "Arrange prompt primary-care or respiratory review after discharge, with earlier assessment for recurrent symptoms; review the trigger, control, adherence, inhaler technique and need to step up long-term therapy."
+    }
+  },
+  {
+    "id": "a1010000-0000-4000-8000-000000000002",
+    "title": "Sepsis",
+    "specialty": "Emergency Medicine, Internal Medicine and Critical Care",
+    "authority": "MOH",
+    "status": "draft",
+    "version": "1.0-marifa",
+    "lastReviewed": "2026-01-01",
+    "pillar": "Urgent Care",
+    "pathophysiology": {
+      "summary": "Sepsis is life-threatening organ dysfunction caused by a dysregulated host response to infection. Endothelial injury, vasodilation, capillary leak, microvascular thrombosis and cellular metabolic dysfunction can impair tissue oxygen delivery and progress to shock and multiorgan failure.",
+      "keyMechanisms": ["An uncontrolled inflammatory and immune response disrupts endothelial integrity and vascular tone.", "Relative and absolute hypovolaemia reduce effective circulating volume.", "Microcirculatory dysfunction and coagulation activation impair organ perfusion.", "Myocardial depression and cellular oxygen-utilisation defects can persist despite apparently corrected blood pressure."]
+    },
+    "presentation": {
+      "symptoms": ["Fever, rigors or feeling unusually cold", "New confusion, profound weakness or reduced urine output", "Breathlessness, cough, dysuria, abdominal pain or another focal infection symptom", "Rapid deterioration in a patient with recent infection, procedure or immunosuppression"],
+      "physicalSigns": ["Altered mental status", "Tachypnoea, hypoxaemia or increased work of breathing", "Hypotension, prolonged capillary refill, mottling or cool peripheries", "Oliguria, tachycardia or abnormal temperature"],
+      "redFlags": ["Persistent hypotension or evidence of hypoperfusion after initial fluid resuscitation", "New altered consciousness, rapidly increasing oxygen need or respiratory failure", "Lactate elevation with clinical deterioration or oliguria", "Purpura, necrotising soft-tissue features, meningism or a source needing immediate surgical control"]
+    },
+    "differentials": [
+      {"condition": "Cardiogenic shock", "distinguishingFeatures": "Ischaemic symptoms, pulmonary congestion, elevated jugular venous pressure or cardiac imaging suggesting pump failure."},
+      {"condition": "Hypovolaemic shock", "distinguishingFeatures": "History of bleeding or fluid loss without a convincing infectious focus; response depends on correction of the volume deficit."},
+      {"condition": "Anaphylaxis", "distinguishingFeatures": "Abrupt onset after exposure with skin or mucosal findings, bronchospasm or gastrointestinal symptoms."},
+      {"condition": "Pulmonary embolism", "distinguishingFeatures": "Sudden dyspnoea or pleuritic pain, thromboembolic risk and right-heart strain without a clear infection syndrome."}
+    ],
+    "investigations": {
+      "ruleIn": [
+        {"testName": "Serum lactate with repeat trend", "targetCondition": "Tissue hypoperfusion", "expectedFinding": "Elevation or failure to clear in a clinically deteriorating patient.", "clinicalRationale": "Supports severity assessment and response monitoring but must be interpreted with the whole clinical picture."},
+        {"testName": "Blood cultures and source-directed microbiology", "targetCondition": "Causative infection", "expectedFinding": "Growth or molecular detection of a plausible pathogen from blood or the suspected source.", "clinicalRationale": "Enables antimicrobial narrowing and source-directed care; obtain before antibiotics only when this does not cause harmful delay."},
+        {"testName": "Organ-function panel", "targetCondition": "Sepsis-associated organ dysfunction", "expectedFinding": "Acute kidney, liver, coagulation, haematological or gas-exchange abnormality.", "clinicalRationale": "Defines severity, guides support and provides a baseline for trends."}
+      ],
+      "ruleOut": [
+        {"testName": "Electrocardiogram and cardiac biomarkers when indicated", "targetCondition": "Acute coronary syndrome or primary cardiac shock", "expectedFinding": "No primary ischaemic pattern explaining the haemodynamic state.", "clinicalRationale": "Cardiac disease can mimic or coexist with sepsis and changes fluid and vasopressor decisions."},
+        {"testName": "Source-directed imaging", "targetCondition": "Non-infectious mimic or drainable focus", "expectedFinding": "Imaging identifies or excludes pneumonia, obstruction, perforation, abscess or another urgent source.", "clinicalRationale": "Confirms anatomy and determines whether procedural source control is required."}
+      ]
+    },
+    "clinicalManagement": [
+      {"id": "recognise", "title": "Recognise sepsis and grade urgency", "timeframe": "Immediately", "actions": ["Assess airway, breathing, circulation, mental status, perfusion and urine output.", "Record observations and identify high-risk organ dysfunction without relying on a single screening score.", "Activate senior and critical-care escalation for shock or rapidly worsening physiology."]},
+      {"id": "sample", "title": "Obtain time-critical diagnostics", "timeframe": "As early as possible without delaying treatment", "actions": ["Measure lactate and obtain blood count, renal, liver, coagulation and glucose studies.", "Take blood cultures and appropriate source specimens before antimicrobials when this can be done promptly.", "Use targeted imaging to locate infection and source-control needs."]},
+      {"id": "treat", "title": "Start infection and perfusion treatment", "timeframe": "Immediately for shock or high-likelihood sepsis", "actions": ["Administer empiric intravenous antimicrobials selected for the suspected source, local resistance patterns, allergies and recent exposure.", "Give balanced crystalloid in reassessed aliquots when hypoperfusion is present, accounting for cardiac or renal risk.", "Provide oxygen and organ support according to measured need."], "branches": [{"condition": "Hypotension persists despite appropriate initial fluid", "actions": ["Start vasopressor support in a monitored setting under critical-care oversight.", "Use dynamic reassessment to avoid both under-resuscitation and fluid overload."]}]},
+      {"id": "source-control", "title": "Achieve source control", "timeframe": "Urgently once the source is identified", "actions": ["Request surgical, interventional radiology or specialty review for drainage, debridement or device removal.", "Do not defer an urgent source-control procedure solely to complete non-essential tests.", "Document the source-control decision and planned timing."]},
+      {"id": "review", "title": "Reassess and de-escalate", "timeframe": "Continuously, with formal review after initial resuscitation", "actions": ["Trend haemodynamics, lactate, urine output, oxygen need and organ function.", "Review microbiology and narrow, change or stop antimicrobials when evidence supports it.", "Reconsider the diagnosis and seek additional source control if improvement is inadequate."]}
+    ],
+    "nonClinicalManagement": {
+      "patientEducation": ["Explain the suspected source, organ effects and why treatment and monitoring are time critical.", "On recovery, provide signs of recurrent infection or deterioration that require urgent assessment.", "Discuss antimicrobial purpose, planned review and potential adverse effects."],
+      "lifestyleAndDiet": ["Support nutrition, hydration and mobilisation during recovery according to swallowing and organ-function assessment.", "Review indicated vaccination and infection-prevention measures after the acute episode.", "Address smoking and other modifiable infection risks when clinically stable."],
+      "mdtReferrals": ["Critical care for shock, respiratory failure or escalating organ support", "Source-specific surgical or procedural team", "Microbiology or infectious diseases for complex infection or antimicrobial stewardship", "Physiotherapy, dietetics and rehabilitation after prolonged or severe illness"],
+      "dischargeCriteria": ["Infection source and treatment plan are established with stable physiology.", "Organ dysfunction has resolved or has a safe documented outpatient plan.", "Oral therapy, monitoring, follow-up and explicit return precautions are feasible and understood."],
+      "followUpPlan": "Arrange source-appropriate clinical review and results follow-up, reconcile antimicrobials and other medicines, screen for post-sepsis functional or psychological problems, and escalate persistent fatigue, breathlessness, cognitive change or recurrent fever."
+    }
+  },
+  {
+    "id": "a1010000-0000-4000-8000-000000000003",
+    "title": "Deep-Vein Thrombosis and Pulmonary Embolism",
+    "specialty": "Emergency Medicine, Internal Medicine and Haematology",
+    "authority": "MOH",
+    "status": "draft",
+    "version": "2024-marifa",
+    "lastReviewed": "2024-09-04",
+    "pillar": "Urgent Care",
+    "pathophysiology": {
+      "summary": "Venous thromboembolism results from venous stasis, endothelial injury and hypercoagulability. A deep-vein thrombus may obstruct limb venous return or embolise to pulmonary arteries, increasing dead space and pulmonary vascular resistance and, in severe cases, causing right-ventricular failure and shock.",
+      "keyMechanisms": ["Thrombus formation is promoted by immobility, surgery, cancer, oestrogen exposure, pregnancy and inherited or acquired thrombophilia.", "Pulmonary arterial obstruction produces ventilation-perfusion mismatch and hypoxaemia.", "Acute right-ventricular pressure overload can reduce left-ventricular filling and systemic cardiac output.", "Residual venous obstruction and valve damage contribute to post-thrombotic syndrome; persistent vascular obstruction may cause chronic thromboembolic pulmonary hypertension."]
+    },
+    "presentation": {
+      "symptoms": ["Unilateral leg pain or swelling", "Sudden unexplained dyspnoea", "Pleuritic chest pain, cough, haemoptysis or syncope", "Reduced exercise tolerance with recent immobility, surgery, cancer or prior thrombosis"],
+      "physicalSigns": ["Unilateral pitting oedema, calf asymmetry or deep venous tenderness", "Tachycardia, tachypnoea or hypoxaemia", "Signs of right-heart strain such as raised jugular venous pressure", "Hypotension or poor perfusion in high-risk pulmonary embolism"],
+      "redFlags": ["Haemodynamic instability, syncope with persistent hypotension or obstructive-shock features", "Severe hypoxaemia, rapidly escalating oxygen requirement or cardiac arrest", "Threatened limb with massive swelling, cyanosis or severe pain", "Active major bleeding or another absolute barrier to anticoagulation in a patient with confirmed or highly suspected VTE"]
+    },
+    "differentials": [
+      {"condition": "Cellulitis", "distinguishingFeatures": "Superficial erythema, warmth and a possible portal of entry with inflammatory features rather than isolated deep venous tenderness."},
+      {"condition": "Ruptured Baker cyst", "distinguishingFeatures": "Posterior knee pathology with fluid tracking into the calf and diagnostic ultrasound findings."},
+      {"condition": "Acute coronary syndrome", "distinguishingFeatures": "Pressure-type pain, ischaemic electrocardiographic change or a coronary biomarker pattern rather than pleuritic pain and right-heart strain."},
+      {"condition": "Pneumonia or pneumothorax", "distinguishingFeatures": "Focal infective symptoms or unilateral absent breath sounds with confirmatory chest imaging."}
+    ],
+    "investigations": {
+      "ruleIn": [
+        {"testName": "Compression ultrasonography", "targetCondition": "Proximal lower-limb DVT", "expectedFinding": "Non-compressible venous segment or directly visualised thrombus.", "clinicalRationale": "First-line anatomical confirmation for suspected proximal DVT."},
+        {"testName": "CT pulmonary angiography", "targetCondition": "Pulmonary embolism", "expectedFinding": "Intraluminal filling defect in a pulmonary artery.", "clinicalRationale": "Confirms pulmonary embolism and describes clot burden while also identifying some alternative thoracic diagnoses."},
+        {"testName": "Echocardiography in unstable PE", "targetCondition": "Right-ventricular pressure overload", "expectedFinding": "Right-ventricular dilatation or dysfunction compatible with acute pressure overload.", "clinicalRationale": "Supports urgent risk stratification when instability makes definitive imaging unsafe or delayed."}
+      ],
+      "ruleOut": [
+        {"testName": "High-sensitivity D-dimer in an appropriate low-probability pathway", "targetCondition": "Acute VTE", "expectedFinding": "A negative result below the assay's validated threshold makes acute VTE unlikely in the selected population.", "clinicalRationale": "Avoids unnecessary imaging only after structured clinical-probability assessment."},
+        {"testName": "Ventilation-perfusion imaging", "targetCondition": "Pulmonary embolism when CTPA is unsuitable", "expectedFinding": "Normal perfusion argues strongly against PE; a mismatched perfusion defect supports it.", "clinicalRationale": "Provides an alternative when contrast, radiation distribution or renal considerations make CTPA unsuitable."}
+      ]
+    },
+    "clinicalManagement": [
+      {"id": "probability", "title": "Estimate clinical probability", "timeframe": "At first assessment", "actions": ["Use a validated DVT or PE clinical-probability tool within its intended population.", "Check haemodynamic stability and bleeding risk before selecting the diagnostic pathway.", "Do not use a D-dimer to rule out VTE when clinical probability is high."]},
+      {"id": "diagnose", "title": "Obtain definitive imaging", "timeframe": "Urgently according to probability and stability", "actions": ["Arrange compression ultrasonography for suspected DVT and CTPA or appropriate ventilation-perfusion imaging for suspected PE.", "Give interim therapeutic anticoagulation when indicated by the approved pathway and imaging is delayed, after checking contraindications.", "Obtain baseline blood count, renal and liver function, coagulation studies and pregnancy testing when relevant without delaying urgent treatment."]},
+      {"id": "anticoagulate", "title": "Start anticoagulation", "timeframe": "Once VTE is confirmed or interim treatment is indicated", "actions": ["Select a locally formulary-approved anticoagulant based on renal and hepatic function, cancer, pregnancy potential, interactions, bleeding risk and patient preference.", "Use generic agents and approved dosing references; do not derive dosing from this data record.", "Document intended duration and the review point for extension or cessation."]},
+      {"id": "escalate-pe", "title": "Manage high-risk pulmonary embolism", "timeframe": "Immediately", "actions": ["Activate critical-care and senior specialist support for haemodynamic instability.", "Consider systemic thrombolysis or another reperfusion strategy only after rapid assessment of contraindications and local capability.", "Provide respiratory and circulatory support while definitive therapy is organised."], "branches": [{"condition": "Anticoagulation is contraindicated", "actions": ["Seek urgent haematology or vascular advice.", "Consider a temporary mechanical strategy only when guideline criteria are met, with an explicit retrieval plan."]}]},
+      {"id": "secondary-prevention", "title": "Plan secondary prevention", "timeframe": "Before discharge", "actions": ["Classify the event as provoked, unprovoked or cancer-associated and document persistent risk factors.", "Review adherence, interactions and bleeding precautions.", "Avoid routine thrombophilia testing when it will not change management; seek specialist advice for selected cases."]}
+    ],
+    "nonClinicalManagement": {
+      "patientEducation": ["Explain clot symptoms, anticoagulant purpose, adherence and what to do after a missed dose using the medicine-specific approved information.", "Provide urgent warning signs for recurrent PE and major bleeding.", "Discuss procedure, dental and pregnancy-planning precautions before any anticoagulant change."],
+      "lifestyleAndDiet": ["Encourage mobilisation as tolerated once anticoagulation and clinical stability permit.", "Reduce prolonged immobility during travel and recovery and maintain hydration when appropriate.", "Address smoking, obesity and other modifiable vascular risks without implying that lifestyle replaces anticoagulation."],
+      "mdtReferrals": ["Haematology for recurrent, unusual-site or selected unprovoked VTE", "Oncology for suspected or active cancer-associated thrombosis", "Vascular or interventional service for threatened limb or selected reperfusion decisions", "Obstetric medicine for pregnancy or postpartum VTE"],
+      "dischargeCriteria": ["Haemodynamics and oxygenation are stable and validated outpatient-risk criteria are met where outpatient care is proposed.", "Anticoagulant access, renal-function appropriateness, administration and follow-up are confirmed.", "Bleeding and recurrence precautions are understood and a responsible service owns pending results."],
+      "followUpPlan": "Review early after discharge for symptoms, bleeding, adherence and renal function where relevant; reassess treatment duration at the guideline-defined milestone and investigate persistent dyspnoea for post-PE complications."
+    }
+  },
+  {
+    "id": "a1010000-0000-4000-8000-000000000004",
+    "title": "Community-Acquired Pneumonia",
+    "specialty": "Internal Medicine, Respiratory Medicine and Infectious Diseases",
+    "authority": "MOH",
+    "status": "draft",
+    "version": "2021-marifa",
+    "lastReviewed": "2021-01-01",
+    "pillar": "Urgent Care",
+    "pathophysiology": {
+      "summary": "Community-acquired pneumonia is infection of the distal airways and alveoli acquired outside hospital or early after admission. Alveolar inflammation and exudate impair ventilation and gas exchange; systemic inflammatory effects may cause sepsis and organ dysfunction.",
+      "keyMechanisms": ["Pathogen aspiration or inhalation overcomes airway and innate immune defences.", "Alveolar neutrophilic inflammation and fluid cause consolidation and ventilation-perfusion mismatch.", "Host response varies with age, comorbidity, immune status and pathogen virulence.", "Complications include parapneumonic effusion, empyema, lung abscess, respiratory failure and sepsis."]
+    },
+    "presentation": {
+      "symptoms": ["Acute cough with or without sputum", "Fever, rigors or malaise", "Dyspnoea or pleuritic chest pain", "Confusion or functional decline, especially in older adults"],
+      "physicalSigns": ["Tachypnoea, hypoxaemia or increased work of breathing", "Focal crackles, bronchial breathing or dullness to percussion", "Fever or hypothermia with tachycardia", "Confusion, hypotension or poor perfusion in severe disease"],
+      "redFlags": ["Respiratory failure, exhaustion or rapidly increasing oxygen need", "Shock, altered mental status, oliguria or other sepsis-associated organ dysfunction", "Multilobar disease, cavitation or a large pleural effusion", "Immunocompromise, aspiration risk or failure to improve on appropriate initial therapy"]
+    },
+    "differentials": [
+      {"condition": "Pulmonary embolism", "distinguishingFeatures": "Abrupt pleuritic pain or dyspnoea, thrombosis risk and limited infective prodrome; imaging shows vascular rather than air-space disease."},
+      {"condition": "Acute heart failure", "distinguishingFeatures": "Orthopnoea, bilateral congestion, raised jugular venous pressure and cardiac dysfunction."},
+      {"condition": "Viral respiratory infection without pneumonia", "distinguishingFeatures": "Diffuse upper-respiratory features without focal consolidation or compatible chest imaging."},
+      {"condition": "Pulmonary tuberculosis", "distinguishingFeatures": "Subacute constitutional symptoms, epidemiologic risk, upper-lobe or cavitary change and specific microbiology."}
+    ],
+    "investigations": {
+      "ruleIn": [
+        {"testName": "Chest radiograph", "targetCondition": "Pulmonary air-space infection", "expectedFinding": "New focal or multifocal infiltrate compatible with pneumonia.", "clinicalRationale": "Supports diagnosis, extent assessment and detection of effusion or another thoracic process in hospital-managed disease."},
+        {"testName": "Pulse oximetry and blood gas when severe", "targetCondition": "Gas-exchange impairment", "expectedFinding": "Hypoxaemia, with acidaemia or ventilatory failure in advanced disease.", "clinicalRationale": "Determines oxygen and ventilatory support needs."},
+        {"testName": "Microbiology selected by severity", "targetCondition": "Causative pathogen", "expectedFinding": "A plausible bacterial or viral pathogen in good-quality respiratory, blood or molecular samples.", "clinicalRationale": "Severe or epidemiologically important disease benefits most from organism identification and antimicrobial narrowing."}
+      ],
+      "ruleOut": [
+        {"testName": "Electrocardiogram and cardiac assessment", "targetCondition": "Heart failure or acute coronary syndrome", "expectedFinding": "No primary cardiac process sufficient to explain the presentation.", "clinicalRationale": "Cardiac disease commonly mimics or coexists with pneumonia."},
+        {"testName": "CT chest or pleural ultrasound when indicated", "targetCondition": "Pulmonary embolism, malignancy, abscess or complicated effusion", "expectedFinding": "No alternative lesion, or a complication is identified for targeted management.", "clinicalRationale": "Reserved for diagnostic uncertainty, complication assessment or treatment failure."}
+      ]
+    },
+    "clinicalManagement": [
+      {"id": "severity", "title": "Confirm diagnosis and assess severity", "timeframe": "At presentation", "actions": ["Assess oxygenation, sepsis features, comorbidity and ability to take oral treatment.", "Use a validated severity tool as an adjunct, not a replacement for clinical judgement.", "Identify aspiration, resistant-organism, travel and immunocompromise risks."]},
+      {"id": "antimicrobial", "title": "Start empiric antimicrobial therapy", "timeframe": "Promptly after diagnosis; immediately when sepsis or shock is present", "actions": ["Select generic therapy from the current MOH/local formulary according to severity, allergy, recent exposure and the local antibiogram.", "Obtain indicated cultures first only when this will not delay urgent therapy.", "Document indication, route, review date and planned duration."]},
+      {"id": "support", "title": "Provide supportive care", "timeframe": "Concurrent with antimicrobial treatment", "actions": ["Titrate oxygen to the appropriate clinical target.", "Treat sepsis, fluid deficit, pain and fever while accounting for cardiac and renal status.", "Provide thrombosis prevention and early mobilisation for admitted patients when appropriate."]},
+      {"id": "review-response", "title": "Review response and complications", "timeframe": "Formal review within 24 to 48 hours or sooner if deteriorating", "actions": ["Reassess observations, oxygen need, mental status, oral intake and inflammatory/organ-function trends.", "Narrow or change antimicrobials using microbiology and clinical response.", "Investigate empyema, abscess, resistant pathogen, obstruction or an alternative diagnosis when improvement is absent."]},
+      {"id": "switch-discharge", "title": "Switch route and plan discharge", "timeframe": "When clinically stable", "actions": ["Switch from intravenous to oral treatment when stability and gastrointestinal absorption permit.", "Use the shortest effective guideline-concordant course and document the stop date.", "Arrange follow-up imaging only for persistent symptoms or guideline-defined risk, not automatically for every patient."]}
+    ],
+    "nonClinicalManagement": {
+      "patientEducation": ["Explain the expected recovery trajectory and that cough and fatigue may outlast fever.", "Give return precautions for worsening breathlessness, confusion, cyanosis, chest pain or inability to maintain intake.", "Explain antimicrobial adherence and why unused antibiotics should not be saved or shared."],
+      "lifestyleAndDiet": ["Encourage hydration and nutrition as tolerated.", "Offer smoking-cessation support.", "Review influenza, pneumococcal and other indicated vaccination after recovery."],
+      "mdtReferrals": ["Critical care for respiratory failure or shock", "Respiratory medicine for complications, recurrent pneumonia or diagnostic uncertainty", "Microbiology or infectious diseases for resistant organisms, severe immunocompromise or treatment failure", "Speech and language therapy for suspected aspiration"],
+      "dischargeCriteria": ["Vital signs and oxygen requirement are stable at an appropriate baseline.", "The patient can take oral medicine and maintain hydration and nutrition.", "A safe antimicrobial plan, follow-up ownership and return precautions are documented."],
+      "followUpPlan": "Arrange clinical review based on severity and comorbidity; follow pending cultures, reassess non-resolution, and consider interval chest imaging for persistent symptoms or higher malignancy risk according to local policy."
+    }
+  },
+  {
+    "id": "a1010000-0000-4000-8000-000000000005",
+    "title": "Acute Anaphylaxis",
+    "specialty": "Emergency Medicine and Allergy and Immunology",
+    "authority": "MOH",
+    "status": "draft",
+    "version": "1.2-marifa",
+    "lastReviewed": "2020-12-28",
+    "pillar": "Urgent Care",
+    "pathophysiology": {
+      "summary": "Anaphylaxis is a rapid systemic hypersensitivity reaction. Mast-cell and basophil mediator release causes vasodilation, capillary leak, mucosal oedema and bronchoconstriction, which can progress quickly to airway obstruction, distributive shock and cardiac arrest.",
+      "keyMechanisms": ["IgE-mediated or non-IgE pathways trigger widespread mediator release.", "Vasodilation and capillary permeability reduce venous return and blood pressure.", "Upper-airway oedema and lower-airway bronchospasm compromise ventilation.", "Biphasic recurrence can occur after apparent initial resolution."]
+    },
+    "presentation": {
+      "symptoms": ["Sudden throat tightness, hoarse voice or difficulty swallowing", "Breathlessness, wheeze or persistent cough", "Generalised itching, flushing, urticaria or swelling", "Dizziness, collapse, cramping abdominal pain or vomiting after a likely exposure"],
+      "physicalSigns": ["Stridor, angioedema or respiratory distress", "Wheeze, hypoxaemia or reduced air entry", "Hypotension, tachycardia, poor perfusion or collapse", "Generalised urticaria or flushing, noting that skin signs can be absent"],
+      "redFlags": ["Airway swelling, stridor, severe bronchospasm or rapidly worsening breathing", "Hypotension, syncope, confusion or shock", "Refractory symptoms after intramuscular epinephrine", "Known mast-cell disorder, severe asthma, beta-blocker use or prior biphasic/refractory anaphylaxis"]
+    },
+    "differentials": [
+      {"condition": "Acute severe asthma", "distinguishingFeatures": "Predominantly lower-airway obstruction without hypotension, acute skin/mucosal change or a clear multisystem exposure response."},
+      {"condition": "Vasovagal syncope", "distinguishingFeatures": "Bradycardia, pallor and rapid improvement supine without urticaria, wheeze or airway swelling."},
+      {"condition": "Hereditary or bradykinin-mediated angioedema", "distinguishingFeatures": "Angioedema without urticaria, often slower onset and limited response to epinephrine or antihistamine."},
+      {"condition": "Septic shock", "distinguishingFeatures": "Infective syndrome and less immediate exposure relationship, although initial shock management may overlap."}
+    ],
+    "investigations": {
+      "ruleIn": [
+        {"testName": "Clinical diagnostic criteria", "targetCondition": "Anaphylaxis", "expectedFinding": "Acute airway, breathing or circulatory compromise with compatible skin/mucosal findings or a likely allergen exposure.", "clinicalRationale": "Anaphylaxis is a clinical diagnosis and treatment must not wait for laboratory confirmation."},
+        {"testName": "Serial serum tryptase when indicated", "targetCondition": "Systemic mast-cell activation", "expectedFinding": "A rise above the person's baseline in an appropriately timed sample.", "clinicalRationale": "Can support later specialist evaluation but a normal result does not exclude anaphylaxis."}
+      ],
+      "ruleOut": [
+        {"testName": "Point-of-care glucose", "targetCondition": "Hypoglycaemia", "expectedFinding": "Glucose is not low enough to explain altered consciousness or collapse.", "clinicalRationale": "Rapidly excludes a reversible mimic while resuscitation continues."},
+        {"testName": "Electrocardiogram", "targetCondition": "Primary arrhythmia or acute coronary syndrome", "expectedFinding": "No primary electrical or ischaemic cause for collapse.", "clinicalRationale": "Particularly important in older patients, chest pain, severe hypotension or epinephrine-related symptoms."}
+      ]
+    },
+    "clinicalManagement": [
+      {"id": "epinephrine", "title": "Give intramuscular epinephrine", "timeframe": "Immediately", "actions": ["Administer intramuscular epinephrine into the anterolateral thigh using the current MOH age/weight dosing protocol.", "Repeat at the protocol interval if airway, breathing or circulatory compromise persists.", "Do not delay epinephrine for antihistamines, corticosteroids, intravenous access or diagnostic tests."]},
+      {"id": "position-airway", "title": "Position and support airway and breathing", "timeframe": "Concurrent with first epinephrine dose", "actions": ["Lay the patient flat with legs elevated unless respiratory distress requires a supported position; avoid sudden standing or sitting.", "Call the resuscitation team, give high-concentration oxygen when indicated and prepare early for a difficult airway.", "Use inhaled bronchodilator as an adjunct for persistent bronchospasm, never as a substitute for epinephrine."]},
+      {"id": "circulation", "title": "Restore circulation", "timeframe": "Immediately when shock is present", "actions": ["Establish intravenous or intraosseous access and give rapid isotonic crystalloid with frequent reassessment.", "Use continuous monitoring and obtain senior critical-care support for refractory shock.", "Intravenous epinephrine infusion is restricted to appropriately monitored settings and experienced clinicians."]},
+      {"id": "remove-trigger", "title": "Stop exposure and add adjunctive care", "timeframe": "As soon as feasible", "actions": ["Stop the suspected trigger when this can be done safely, such as halting an infusion.", "After stabilisation, use adjunctive antihistamine for persistent skin symptoms according to local policy.", "Do not rely on corticosteroids to prevent immediate deterioration or replace observation."]},
+      {"id": "observe", "title": "Observe and plan safe discharge", "timeframe": "After complete clinical resolution", "actions": ["Use risk-stratified observation, extending monitoring after severe, refractory or high-risk reactions.", "Document the suspected trigger and all treatment times.", "Provide an emergency plan and allergy referral before discharge."]}
+    ],
+    "nonClinicalManagement": {
+      "patientEducation": ["Teach recognition of airway, breathing and circulatory symptoms and the need to use an epinephrine auto-injector without delay when prescribed.", "Demonstrate auto-injector technique and use teach-back.", "Provide written trigger-avoidance and emergency instructions in the patient's preferred language."],
+      "lifestyleAndDiet": ["Avoid the suspected trigger until specialist assessment clarifies the diagnosis.", "Review food, medicine and occupational labels without imposing unnecessary broad restriction.", "Encourage the patient to carry medical identification and prescribed rescue devices."],
+      "mdtReferrals": ["Allergy and immunology for trigger confirmation and prevention planning", "Critical care for refractory airway, breathing or circulatory compromise", "Dietitian for confirmed food allergy requiring substantial dietary exclusion", "Pharmacy for auto-injector access and technique reinforcement"],
+      "dischargeCriteria": ["Airway, breathing, circulation and skin/mucosal symptoms have fully resolved for the risk-appropriate observation period.", "The patient has access to prescribed rescue medication and can demonstrate its use.", "Written precautions, suspected-trigger documentation and specialist follow-up are in place."],
+      "followUpPlan": "Arrange allergy evaluation, ensure the event is recorded in the medicine/allergy record, review auto-injector availability before expiry, and advise immediate emergency care for any recurrent systemic reaction."
+    }
+  },
+  {
+    "id": "a1010000-0000-4000-8000-000000000006",
+    "title": "Breast Cancer Management",
+    "specialty": "Medical Oncology, Breast Surgery and Radiation Oncology",
+    "authority": "SHC",
+    "status": "draft",
+    "version": "2018-marifa",
+    "lastReviewed": "2018-01-01",
+    "pillar": "Planned Care",
+    "pathophysiology": {
+      "summary": "Breast cancer comprises malignant epithelial tumours with heterogeneous hormone-receptor, HER2 and genomic biology. Disease may remain in situ, invade breast and regional lymphatics, or spread haematogenously to bone, liver, lung and brain; biology and stage jointly determine treatment and prognosis.",
+      "keyMechanisms": ["Accumulated genomic and epigenetic alterations enable uncontrolled proliferation and invasion.", "Oestrogen/progesterone-receptor signalling and HER2 amplification define actionable biological subsets.", "Lymphatic spread commonly involves axillary and regional nodes.", "Tumour heterogeneity and treatment selection pressure can change receptor status in recurrent disease."]
+    },
+    "presentation": {
+      "symptoms": ["New breast or axillary lump", "Nipple retraction or bloody discharge", "Persistent focal breast change or skin dimpling", "Bone pain, breathlessness, neurological symptoms or weight loss in advanced disease"],
+      "physicalSigns": ["Discrete breast mass or asymmetric thickening", "Peau d'orange, ulceration or inflammatory change", "Nipple inversion or eczematous nipple lesion", "Palpable axillary or supraclavicular nodes"],
+      "redFlags": ["Rapidly progressive inflammatory breast change", "Spinal pain with weakness, sensory change or bladder/bowel dysfunction", "New focal neurological deficit, seizure or raised intracranial-pressure symptoms", "Visceral crisis with organ dysfunction requiring rapid oncology assessment"]
+    },
+    "differentials": [
+      {"condition": "Fibroadenoma", "distinguishingFeatures": "Often mobile, well-circumscribed and benign on age-appropriate imaging, but tissue diagnosis is required when assessment is discordant."},
+      {"condition": "Breast cyst", "distinguishingFeatures": "Fluid-filled lesion on ultrasound with resolution after aspiration in selected cases."},
+      {"condition": "Mastitis or abscess", "distinguishingFeatures": "Pain, erythema, fever and a collection; non-resolution requires investigation for inflammatory malignancy."},
+      {"condition": "Fat necrosis", "distinguishingFeatures": "History of trauma or surgery with characteristic imaging, although biopsy may be needed if suspicious."}
+    ],
+    "investigations": {
+      "ruleIn": [
+        {"testName": "Triple assessment", "targetCondition": "Breast malignancy", "expectedFinding": "Concordant suspicious clinical examination, mammography/ultrasound and core-biopsy histology.", "clinicalRationale": "Integrates anatomy and tissue diagnosis while minimising false reassurance from any single test."},
+        {"testName": "Histopathology with ER, PR and HER2 testing", "targetCondition": "Invasive breast-cancer subtype", "expectedFinding": "Malignant morphology with grade and validated receptor status.", "clinicalRationale": "Confirms diagnosis and directs endocrine, anti-HER2 and chemotherapy decisions."},
+        {"testName": "Stage-directed imaging", "targetCondition": "Regional or distant metastatic disease", "expectedFinding": "Imaging defines tumour, nodal and metastatic burden when stage or symptoms justify it.", "clinicalRationale": "Avoids indiscriminate staging in low-risk disease while identifying treatment-changing metastases."}
+      ],
+      "ruleOut": [
+        {"testName": "Image-guided core biopsy of a suspicious benign-appearing lesion", "targetCondition": "Benign breast disease", "expectedFinding": "Pathology is benign and concordant with clinical and imaging findings.", "clinicalRationale": "Discordance requires repeat sampling or excision rather than simple reassurance."},
+        {"testName": "Targeted imaging of new symptoms", "targetCondition": "Metastatic complication", "expectedFinding": "No metastasis explaining the symptom, or a lesion is identified for urgent management.", "clinicalRationale": "Routine surveillance imaging in asymptomatic early-stage survivors is not a substitute for symptom-led assessment."}
+      ]
+    },
+    "clinicalManagement": [
+      {"id": "confirm-stage", "title": "Confirm pathology and stage", "timeframe": "Before definitive treatment", "actions": ["Obtain adequate core tissue and report histological type, grade and ER, PR and HER2 status.", "Complete stage-appropriate imaging and assess performance status, comorbidities and baseline organ function.", "Arrange genetic and fertility counselling when clinical criteria are met."]},
+      {"id": "mdt-plan", "title": "Agree a multidisciplinary plan", "timeframe": "After diagnostic work-up", "actions": ["Discuss every new case in a breast multidisciplinary conference.", "Integrate stage, biology, patient goals, surgical feasibility and treatment toxicities.", "Record sequence of surgery, systemic therapy and radiotherapy with responsible teams."]},
+      {"id": "local-therapy", "title": "Deliver local-regional therapy", "timeframe": "According to stage and treatment sequence", "actions": ["Offer breast-conserving surgery or mastectomy according to disease extent, contraindications and informed preference.", "Stage the axilla using the appropriate sentinel-node or nodal procedure.", "Plan radiotherapy according to surgical approach, margins, nodal involvement and recurrence risk."]},
+      {"id": "systemic-therapy", "title": "Select biology-directed systemic therapy", "timeframe": "Neoadjuvant or adjuvant as agreed by MDT", "actions": ["Use endocrine therapy for hormone-receptor-positive disease when indicated.", "Use generic anti-HER2 therapy for eligible HER2-positive disease with cardiac monitoring.", "Select chemotherapy and any contemporary targeted or immunotherapy only through the current approved oncology protocol."], "branches": [{"condition": "Locally advanced or inflammatory disease", "actions": ["Prioritise neoadjuvant systemic therapy and serial response assessment.", "Proceed to local therapy if disease becomes operable and the MDT confirms benefit."]}]},
+      {"id": "surveillance", "title": "Survivorship or advanced-disease review", "timeframe": "After initial treatment and throughout follow-up", "actions": ["Use interval history, examination and mammography of retained breast tissue according to policy.", "Manage endocrine, bone, cardiac, menopausal and lymphoedema effects.", "For metastatic disease, prioritise symptom control, quality of life and biology-directed therapy with early supportive care."]}
+    ],
+    "nonClinicalManagement": {
+      "patientEducation": ["Explain stage, receptor status, treatment intent and the role of each modality in plain language.", "Discuss expected adverse effects, fertility, sexual health, pregnancy considerations and when to seek urgent care.", "Provide individualised information on recurrence symptoms without encouraging harmful routine self-testing."],
+      "lifestyleAndDiet": ["Support regular physical activity and maintenance of a healthy body composition during and after treatment.", "Provide dietetic advice for treatment-related weight change, nausea or malnutrition.", "Offer smoking-cessation support and advise avoidance of unreviewed supplements that may interact with therapy."],
+      "mdtReferrals": ["Breast surgeon, medical oncologist, radiation oncologist and breast-care nurse", "Genetics for hereditary-risk criteria", "Fertility service before gonadotoxic treatment when relevant", "Physiotherapy/lymphoedema, psycho-oncology and palliative care according to need"],
+      "dischargeCriteria": ["The diagnosis, stage, receptor profile and MDT plan are documented.", "Acute treatment complications are controlled and the patient has clear contacts.", "Surveillance ownership, medicine monitoring and urgent symptom pathways are explicit."],
+      "followUpPlan": "Follow the current Saudi oncology surveillance schedule, including clinical review and mammography where breast tissue remains; monitor therapy-specific cardiac, bone, gynaecological and lymphoedema risks and investigate new symptoms promptly."
+    }
+  },
+  {
+    "id": "a1010000-0000-4000-8000-000000000007",
+    "title": "Lung Cancer Management",
+    "specialty": "Thoracic Oncology, Respiratory Medicine and Thoracic Surgery",
+    "authority": "SHC",
+    "status": "draft",
+    "version": "2019-marifa",
+    "lastReviewed": "2019-01-01",
+    "pillar": "Planned Care",
+    "pathophysiology": {
+      "summary": "Lung cancer arises from malignant transformation of respiratory epithelium and is broadly classified as non-small-cell or small-cell carcinoma. Local invasion, lymphatic spread and early haematogenous dissemination determine resectability and systemic treatment; molecular drivers and immune phenotype increasingly guide therapy.",
+      "keyMechanisms": ["Tobacco smoke, environmental and occupational carcinogens produce cumulative genomic injury.", "Histological subtype and molecular alterations determine growth pattern and treatment sensitivity.", "Mediastinal nodal involvement strongly affects stage and curative options.", "Metastatic spread commonly affects brain, bone, liver and adrenal glands; paraneoplastic syndromes may precede local symptoms."]
+    },
+    "presentation": {
+      "symptoms": ["Persistent or changing cough", "Haemoptysis, breathlessness or chest pain", "Unexplained weight loss, fatigue or recurrent focal pneumonia", "Hoarseness, bone pain, headache or focal neurological symptoms"],
+      "physicalSigns": ["Focal reduced air entry, wheeze or signs of pleural effusion", "Supraclavicular lymphadenopathy", "Clubbing or features of superior vena cava obstruction", "Neurological deficit, bony tenderness or paraneoplastic manifestations"],
+      "redFlags": ["Massive haemoptysis or threatened airway", "Superior vena cava obstruction with respiratory or neurological compromise", "Spinal-cord compression symptoms or new focal neurological deficit", "Severe hypercalcaemia, pericardial tamponade or rapidly worsening respiratory failure"]
+    },
+    "differentials": [
+      {"condition": "Pulmonary tuberculosis", "distinguishingFeatures": "Epidemiologic risk, constitutional symptoms, cavitation and specific microbiological evidence."},
+      {"condition": "Non-resolving pneumonia", "distinguishingFeatures": "Acute infective presentation that resolves radiographically; persistence or recurrence in one lobe raises concern for obstruction."},
+      {"condition": "Benign pulmonary nodule", "distinguishingFeatures": "Stable interval imaging or benign calcification/morphology within a validated nodule pathway."},
+      {"condition": "Metastasis from another primary tumour", "distinguishingFeatures": "Known extrathoracic cancer and pathology/immunophenotype inconsistent with a pulmonary primary."}
+    ],
+    "investigations": {
+      "ruleIn": [
+        {"testName": "Contrast-enhanced CT chest and upper abdomen", "targetCondition": "Primary lung malignancy and anatomical stage", "expectedFinding": "Suspicious pulmonary lesion with local, nodal or metastatic features.", "clinicalRationale": "Defines the safest highest-yield biopsy target and initial resectability assessment."},
+        {"testName": "Image-guided, bronchoscopic or endobronchial-ultrasound biopsy", "targetCondition": "Histological lung-cancer diagnosis", "expectedFinding": "Adequate tissue confirms histology and supports molecular and immune biomarker testing.", "clinicalRationale": "Tissue method should maximise diagnostic and staging value while minimising procedural risk."},
+        {"testName": "PET-CT and brain imaging when stage appropriate", "targetCondition": "Occult nodal or distant metastasis", "expectedFinding": "Metabolically or anatomically suspicious disease requiring confirmation when it changes curative intent.", "clinicalRationale": "Prevents futile local treatment and guides invasive staging."}
+      ],
+      "ruleOut": [
+        {"testName": "Microbiology on appropriate respiratory specimens", "targetCondition": "Tuberculosis or fungal infection", "expectedFinding": "No microbiological evidence of an infectious mimic, or infection is identified for treatment and isolation measures.", "clinicalRationale": "Infection can mimic malignancy and is especially important in cavitary disease."},
+        {"testName": "Interval nodule imaging within a validated pathway", "targetCondition": "Benign or indolent pulmonary nodule", "expectedFinding": "Long-term stability or benign evolution lowers malignancy probability.", "clinicalRationale": "Avoids invasive testing for appropriately selected low-risk nodules while preserving surveillance safety."}
+      ]
+    },
+    "clinicalManagement": [
+      {"id": "diagnose", "title": "Obtain diagnosis and full stage", "timeframe": "Urgently after suspicious imaging", "actions": ["Choose a biopsy that provides diagnosis and the greatest staging information with acceptable risk.", "Complete TNM staging and document performance status, pulmonary function and comorbidity.", "Obtain adequate tissue for current molecular-driver and immune biomarker testing in eligible non-small-cell disease."]},
+      {"id": "thoracic-mdt", "title": "Agree treatment in thoracic MDT", "timeframe": "After staging and biomarker work-up", "actions": ["Include respiratory medicine, thoracic surgery, medical oncology, radiation oncology, radiology, pathology and supportive care.", "State whether intent is curative, disease controlling or symptom focused.", "Discuss clinical trials and the patient's informed preferences."]},
+      {"id": "early-stage", "title": "Treat localised disease", "timeframe": "Without avoidable delay", "actions": ["Offer anatomical surgical resection with nodal evaluation to operable patients when oncologically appropriate.", "Use definitive stereotactic or conventional radiotherapy for selected medically inoperable localised disease.", "Consider peri-operative systemic therapy according to stage, histology, biomarkers and the current protocol."]},
+      {"id": "locally-advanced", "title": "Treat locally advanced disease", "timeframe": "According to MDT sequence", "actions": ["Assess suitability for combined-modality chemoradiotherapy or selected surgical pathways.", "Use generic systemic agents and radiotherapy schedules only from the current approved oncology protocol.", "Monitor pulmonary, oesophageal, haematological and immune-related toxicity."]},
+      {"id": "advanced", "title": "Treat advanced disease and complications", "timeframe": "Promptly after biomarker results; immediately for oncological emergencies", "actions": ["Select targeted therapy, immunotherapy or cytotoxic chemotherapy according to histology, molecular findings, immune phenotype and fitness.", "Use palliative radiotherapy, pleural procedures, analgesia and other symptom-directed interventions early.", "Escalate cord compression, major haemoptysis, severe hypercalcaemia and superior vena cava obstruction through emergency oncology pathways."]}
+    ],
+    "nonClinicalManagement": {
+      "patientEducation": ["Explain histology, stage, biomarker results, treatment intent and realistic benefits and harms.", "Provide urgent warning signs for haemoptysis, neurological change, cord compression and treatment toxicity.", "Offer shared decision support that includes supportive-care-only options when appropriate."],
+      "lifestyleAndDiet": ["Provide evidence-based tobacco-cessation treatment at every stage without making treatment conditional on cessation.", "Assess weight loss and sarcopenia and provide early nutrition support.", "Encourage pulmonary rehabilitation or activity adapted to symptoms and treatment."],
+      "mdtReferrals": ["Thoracic surgery, medical oncology, radiation oncology and respiratory medicine", "Molecular pathology/genomics for eligible disease", "Palliative care from diagnosis of advanced disease or high symptom burden", "Dietitian, physiotherapy, psycho-oncology and smoking-cessation service"],
+      "dischargeCriteria": ["Diagnosis, stage, biomarkers and MDT treatment intent are documented.", "Acute respiratory or metabolic complications are controlled.", "The patient has named contacts, toxicity guidance and a scheduled treatment or surveillance visit."],
+      "followUpPlan": "Use stage- and treatment-specific surveillance with symptom review and scheduled imaging under the thoracic MDT; monitor late pulmonary and treatment effects and re-biopsy or repeat molecular assessment when progression could alter therapy."
+    }
+  },
+  {
+    "id": "a1010000-0000-4000-8000-000000000008",
+    "title": "Adult Periodic Health Examination",
+    "specialty": "Family Medicine and Preventive Medicine",
+    "authority": "PHA",
+    "status": "draft",
+    "version": "2023-marifa",
+    "lastReviewed": "2023-01-01",
+    "pillar": "Keep Well",
+    "pathophysiology": {
+      "summary": "Periodic health examination is a risk-based preventive-care process rather than a disease episode. It identifies modifiable cardiovascular, metabolic, cancer, infectious, mental-health and functional risks before symptoms or irreversible complications develop, while avoiding screening that has an unfavourable balance of benefit and harm.",
+      "keyMechanisms": ["Age, sex, family history, exposures and comorbidity alter baseline disease probability and screening benefit.", "Repeated measurement can detect trajectories in blood pressure, adiposity, glycaemia and lipids before complications emerge.", "Evidence-based screening shifts selected cancers and chronic diseases toward earlier diagnosis.", "Shared decisions reduce harms from false positives, overdiagnosis and preventive medicines with small net benefit."]
+    },
+    "presentation": {
+      "symptoms": ["Often asymptomatic attendance for preventive review", "May disclose fatigue, low mood, sleep problems or reduced function during structured history", "May report tobacco exposure, inactivity, unhealthy diet or occupational risk", "May have overdue vaccination or cancer screening"],
+      "physicalSigns": ["Elevated or discrepant blood-pressure readings", "Raised body-mass index or waist circumference", "Oral-health, vision, hearing or mobility concerns", "Abnormal findings requiring conversion from screening to a diagnostic pathway"],
+      "redFlags": ["Chest pain, focal neurological deficit, severe breathlessness or syncope discovered during screening", "Markedly elevated blood pressure with acute target-organ symptoms", "Suicidal ideation or immediate safeguarding concern", "Alarm cancer symptoms such as unexplained bleeding, persistent mass or major unintentional weight loss"]
+    },
+    "differentials": [
+      {"condition": "Routine preventive need", "distinguishingFeatures": "Asymptomatic, eligible by age or risk and suitable for a validated screening intervention."},
+      {"condition": "Established disease requiring chronic-care review", "distinguishingFeatures": "Known diagnosis or repeated abnormal result requiring disease-specific targets rather than screening thresholds."},
+      {"condition": "Symptomatic undiagnosed disease", "distinguishingFeatures": "Symptoms or signs raise pre-test probability and require diagnostic, not screening, tests."},
+      {"condition": "Transient measurement abnormality", "distinguishingFeatures": "Single clinic value is not confirmed on repeat or out-of-office measurement."}
+    ],
+    "investigations": {
+      "ruleIn": [
+        {"testName": "Standardised blood-pressure measurement with out-of-office confirmation", "targetCondition": "Hypertension", "expectedFinding": "Persistently elevated readings confirmed outside the clinic when indicated.", "clinicalRationale": "Reduces misclassification from technique, white-coat effect and isolated readings."},
+        {"testName": "Risk-based glucose testing", "targetCondition": "Prediabetes or diabetes", "expectedFinding": "Abnormal fasting glucose, random glucose in context or glycated haemoglobin confirmed through the diagnostic pathway.", "clinicalRationale": "PHA guidance begins routine adult testing at the defined age and earlier with overweight plus risk factors."},
+        {"testName": "Age-, sex- and risk-appropriate cancer screening", "targetCondition": "Preclinical breast, colorectal, cervical or lung cancer", "expectedFinding": "Negative screening at the recommended interval or an abnormal result requiring timely diagnostic confirmation.", "clinicalRationale": "Benefit depends on eligibility, interval and complete follow-through after an abnormal screen."}
+      ],
+      "ruleOut": [
+        {"testName": "Repeat or confirmatory diagnostic test after an abnormal screen", "targetCondition": "False-positive screening result", "expectedFinding": "Diagnostic testing does not confirm disease.", "clinicalRationale": "Screening tests do not by themselves establish many diagnoses."},
+        {"testName": "Medication and comorbidity review", "targetCondition": "Secondary or iatrogenic risk", "expectedFinding": "A medicine, pregnancy state, renal disease or other condition explains or changes the preventive finding.", "clinicalRationale": "Prevents inappropriate application of general-population screening or treatment advice."}
+      ]
+    },
+    "clinicalManagement": [
+      {"id": "risk-inventory", "title": "Build an individual risk inventory", "timeframe": "At each periodic examination", "actions": ["Record age, sex, pregnancy potential, family history, tobacco exposure, occupation, medicines, comorbidity and prior screening.", "Assess mental health, safety, function and social determinants with validated tools where appropriate.", "Separate asymptomatic screening from symptoms that require diagnostic evaluation."]},
+      {"id": "measure", "title": "Complete core measurements", "timeframe": "During the visit", "actions": ["Measure blood pressure using validated technique and assess body-mass index and waist circumference at the PHA interval.", "Order glucose and lipid testing according to age and risk.", "Review oral health, vaccination status and age-related vision, hearing, falls or cognition needs."]},
+      {"id": "screen", "title": "Offer eligible screening", "timeframe": "At the guideline-defined interval", "actions": ["Offer breast, cervical, colorectal, lung, osteoporosis and abdominal-aortic-aneurysm screening only when age, sex and risk criteria are met.", "Explain likely benefits, limitations and follow-up before testing.", "Create a closed-loop plan for every abnormal result."]},
+      {"id": "prevent", "title": "Deliver preventive interventions", "timeframe": "At the same visit or scheduled follow-up", "actions": ["Provide indicated immunisation under the current Saudi schedule.", "Offer tobacco-cessation treatment, physical-activity and dietary support.", "Use generic preventive pharmacotherapy only after formal cardiovascular-risk, contraindication and shared-decision assessment."]},
+      {"id": "close-loop", "title": "Close the preventive-care loop", "timeframe": "After results are available", "actions": ["Communicate normal and abnormal results in understandable language.", "Convert confirmed abnormalities to the relevant diagnostic or chronic-care pathway.", "Update the recall date and assign ownership for referrals and pending tests."]}
+    ],
+    "nonClinicalManagement": {
+      "patientEducation": ["Explain that preventive tests are selected by personal risk and that more testing is not always safer.", "Use shared decision making for preference-sensitive cancer screening and preventive medicines.", "Give accessible instructions for preparation, result access and the next step after an abnormal result."],
+      "lifestyleAndDiet": ["Support a sustainable dietary pattern rich in vegetables, fruit, whole grains and minimally processed foods while accounting for culture and comorbidity.", "Encourage regular aerobic and strengthening activity adapted to ability.", "Provide tobacco cessation, sleep, weight and oral-health support without stigma."],
+      "mdtReferrals": ["Primary-care nurse or preventive-care coordinator for recall and result tracking", "Dietitian, tobacco-cessation service or exercise professional according to risk", "Mental-health service for confirmed depression, anxiety or safety concern", "Diagnostic specialty pathway for any abnormal screening result"],
+      "dischargeCriteria": ["Risk profile, due interventions and deferred shared decisions are documented.", "Every test and referral has a named owner and result-communication method.", "Urgent symptoms or severe abnormalities have been diverted to immediate assessment."],
+      "followUpPlan": "Maintain a personalised recall schedule based on the 2023 PHA age and risk tables, review abnormal results promptly, and update eligibility whenever health status, family history, pregnancy status or exposure changes."
+    }
+  }
+]

@@ -8,6 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --max-warnings=0",
+    "seed:diseases": "tsx prisma/seed.ts",
+    "seed:diseases:validate": "tsx prisma/seed.ts --validate-only",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
@@ -47,6 +49,7 @@
     "globals": "latest",
     "jsdom": "latest",
     "tailwindcss": "latest",
+    "tsx": "4.20.6",
     "typescript": "latest",
     "typescript-eslint": "latest",
     "vitest": "latest"

@@ -1,6 +1,6 @@
 import { TriangleAlert } from "lucide-react";
 
-export function ClinicalWarning({ title = "Emergency Red Flags", items }: { title?: string; items: string[] }) {
+export function ClinicalWarning({ title = "Emergency red flags", items }: { title?: string; items: string[] }) {
   return (
     <section className="clinical-warning" aria-labelledby="clinical-warning-title">
       <div className="clinical-warning-icon" aria-hidden="true">
