@@ -84,7 +84,7 @@ export function ModelOfCareDirectory({ diseases, state, rejectedCount = 0, initi
 
       <section className="directory-results" aria-labelledby="directory-results-title" aria-live="polite">
         <div className="directory-section-heading">
-          <div><p className="disease-kicker">{activePillar === "all" ? "All care pillars" : activePillar}</p><h2 id="directory-results-title">Approved clinical protocols</h2></div>
+          <div><p className="disease-kicker">{activePillar === "all" ? "All care pillars" : activePillar}</p><h2 id="directory-results-title">Clinical scenarios and pathways</h2></div>
           <p>{filteredDiseases.length} {filteredDiseases.length === 1 ? "protocol" : "protocols"}</p>
         </div>
         {filteredDiseases.length > 0 && <div className="disease-card-grid">

@@ -13,11 +13,11 @@ export default async function DiseaseDirectoryPage({ searchParams }: { searchPar
         <div>
           <p className="disease-kicker">Disease management</p>
           <h1>Clinical pathways, organised around care</h1>
-          <p>Find governed disease guidelines across the six Saudi Model of Care pillars. Every visible record is current, approved or published, and schema-validated before rendering.</p>
+          <p>Explore clinical scenarios across the six Saudi Model of Care pillars. Each record shows its source and clinical review status; published learning content may still be awaiting clinical review.</p>
         </div>
         <div className="directory-governance-note">
           <ShieldCheck size={19} strokeWidth={1.5} aria-hidden="true" />
-          <div><strong>Governed content</strong><span>Draft and invalid pathways remain hidden</span></div>
+          <div><strong>Clinical review status</strong><span>Check each scenario’s review notice before use</span></div>
         </div>
       </header>
 
