@@ -123,6 +123,7 @@ a { color: inherit; text-decoration: none; }
 
 /* Tenant administration */
 .admin-page { max-width: 1500px; }
+.dashboard-access-notice { margin: 0 0 18px; padding: 12px 15px; border: 1px solid #fedf89; border-radius: 11px; color: #7a2e0e; background: #fffaeb; font-size: .76rem; line-height: 1.5; }
 .admin-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 22px; margin-bottom: 21px; }
 .admin-heading .page-title { color: var(--royal); margin-top: 5px; }
 .admin-scope { display: inline-flex; align-items: center; gap: 7px; padding: 9px 12px; border: 1px solid #dbe7ff; border-radius: 999px; color: var(--royal); background: #f4f7ff; font-size: .7rem; font-weight: 750; white-space: nowrap; }
@@ -132,7 +133,7 @@ a { color: inherit; text-decoration: none; }
 .admin-tab.is-active { color: var(--royal); border-bottom-color: var(--royal); }
 .admin-content { display: grid; gap: 20px; }
 .admin-metrics { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 16px; }
-.admin-metric-card { padding: 17px 18px 16px; }
+.admin-metric-card { padding: 17px 18px 16px; background: #fff; box-shadow: 0 1px 2px rgba(16,24,40,.08); }
 .admin-metric-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 35px; color: #475467; font-size: .73rem; font-weight: 720; }
 .admin-metric-icon { width: 35px; height: 35px; border-radius: 11px; display: grid; place-items: center; flex: 0 0 auto; }
 .admin-metric-icon.tone-blue { color: var(--royal); background: #edf4ff; }
@@ -159,6 +160,10 @@ a { color: inherit; text-decoration: none; }
 .admin-section-icon { width: 42px; height: 42px; display: grid; place-items: center; color: var(--royal); background: #edf4ff; border-radius: 12px; }
 
 .staff-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 14px; }
+.staff-toolbar-simple { margin-bottom: 14px; }
+.staff-toolbar-simple .admin-preview-note { margin: 0; }
+.staff-toolbar-simple > button { width: fit-content; }
+.staff-table-caption { padding: 12px 15px; color: #7b8798; font-size: .68rem; text-align: left; }
 .staff-search { position: relative; display: flex; align-items: center; width: min(400px,100%); color: #8a94a6; }
 .staff-search > svg { position: absolute; left: 13px; z-index: 1; }
 .ui-input { width: 100%; height: 42px; padding: 0 13px; border: 1px solid var(--line); border-radius: 10px; color: #202938; background: #fff; font-size: .76rem; }
@@ -174,6 +179,7 @@ a { color: inherit; text-decoration: none; }
 .ui-button-danger:hover { border-color: #e6aaa4; background: #fff6f5; }
 .admin-table-card { overflow: hidden; }
 .admin-table-scroll { overflow-x: auto; }
+.admin-table-card .ui-table th:last-child,.admin-table-card .ui-table td:last-child { width: auto; text-align: left; }
 .ui-table { width: 100%; border-collapse: collapse; text-align: left; }
 .ui-table th { height: 43px; padding: 0 15px; color: #667085; background: #fafbfe; border-bottom: 1px solid var(--line); font-size: .65rem; font-weight: 750; white-space: nowrap; }
 .ui-table td { height: 59px; padding: 10px 15px; border-bottom: 1px solid #eef1f5; color: #475467; font-size: .72rem; white-space: nowrap; }
@@ -244,6 +250,7 @@ a { color: inherit; text-decoration: none; }
   .admin-tab { min-height: 43px; padding: 0 11px; font-size: .68rem; }
   .admin-metrics { gap: 10px; }
   .admin-metric-card { padding: 13px; }
+  .admin-metrics { grid-template-columns: 1fr; }
   .admin-metric-top { align-items: flex-start; font-size: .67rem; }
   .admin-metric-value { font-size: 1.55rem; }
   .admin-metric-icon { width: 30px; height: 30px; }
@@ -255,6 +262,7 @@ a { color: inherit; text-decoration: none; }
   .staff-toolbar { align-items: stretch; flex-direction: column; }
   .staff-search { width: 100%; }
   .staff-toolbar > [data-radix-dialog-trigger] { width: 100%; }
+  .staff-toolbar-simple > button { width: 100%; }
   .admin-queue-item { padding: 15px; }
   .admin-queue-actions { display: grid; width: 100%; grid-template-columns: repeat(3,minmax(0,1fr)); }
   .admin-queue-actions .ui-button { padding: 0 7px; font-size: .64rem; }

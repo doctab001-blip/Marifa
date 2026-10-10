@@ -6,13 +6,15 @@ import { DemoBanner } from "@/components/demo-banner";
 import { getDiseaseTopics } from "@/lib/data/diseases";
 import { getCurrentViewer } from "@/lib/supabase/session";
 
-export default async function DashboardPage() {
+export default async function DashboardPage({ searchParams }: { searchParams: Promise<{ error?: string | string[] }> }) {
+  const { error } = await searchParams;
   const completed = competencies.filter((item) => item.status === "completed").length;
   const viewer = await getCurrentViewer();
   const firstName = viewer?.name.split(/\s+/).slice(0, 2).join(" ") ?? "Clinician";
   return (
     <main className="page">
       <DemoBanner />
+      {error === "unauthorized" && <aside className="dashboard-access-notice" role="alert">You don’t have permission to open Administration. Ask your hospital administrator if you need access.</aside>}
       <div className="page-header"><div><div className="eyebrow">Your workspace at a glance</div><h1 className="page-title">Welcome back, {firstName}</h1><p className="page-copy">Your clinical knowledge and professional requirements, in one governed workspace.</p></div></div>
       <section className="hero-search" aria-labelledby="clinical-search-title">
         <h2 id="clinical-search-title">What clinical guidance do you need?</h2>

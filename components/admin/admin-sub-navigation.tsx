@@ -14,7 +14,7 @@ export function AdminSubNavigation({ links }: { links: AdminLink[] }) {
         const active = pathname === href || (href !== "/dashboard/admin" && pathname.startsWith(`${href}/`));
         return (
           <Link key={href} href={href} aria-current={active ? "page" : undefined} className={`admin-tab${active ? " is-active" : ""}`}>
-            <Icon size={16} aria-hidden="true" /><span>{label}</span>
+            <Icon size={16} strokeWidth={1.5} aria-hidden="true" /><span>{label}</span>
           </Link>
         );
       })}

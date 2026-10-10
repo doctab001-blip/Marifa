@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { ArrowRight, Activity, BookOpenCheck, ClipboardCheck, UsersRound } from "lucide-react";
+import { Activity, ArrowRight, BookOpenCheck, ClipboardCheck, ShieldCheck, UsersRound } from "lucide-react";
 import { getAdminOverview } from "@/lib/admin/data";
 
-const icons = [UsersRound, BookOpenCheck, ClipboardCheck, Activity];
+const icons = [UsersRound, BookOpenCheck, ClipboardCheck, ShieldCheck];
 
 function formatWhen(value: string) {
   return new Intl.DateTimeFormat("en-SA", { dateStyle: "medium", timeStyle: "short", timeZone: "Asia/Riyadh" }).format(new Date(value));
@@ -18,7 +18,7 @@ export default async function AdminOverviewPage() {
           const Icon = icons[index];
           return (
             <article className="card admin-metric-card" key={metric.label}>
-              <div className="admin-metric-top"><span>{metric.label}</span><span className={`admin-metric-icon tone-${metric.tone}`}><Icon size={17} aria-hidden="true" /></span></div>
+              <div className="admin-metric-top"><span>{metric.label}</span><span className={`admin-metric-icon tone-${metric.tone}`}><Icon size={17} strokeWidth={1.5} aria-hidden="true" /></span></div>
               <strong className="admin-metric-value">{metric.value}</strong>
               <span className="admin-metric-detail">{metric.detail}</span>
             </article>
