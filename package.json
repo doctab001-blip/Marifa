@@ -10,6 +10,7 @@
     "lint": "eslint . --max-warnings=0",
     "seed:diseases": "tsx prisma/seed.ts",
     "seed:diseases:validate": "tsx prisma/seed.ts --validate-only",
+    "seed:diseases:apply": "tsx prisma/seed.ts --apply",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",

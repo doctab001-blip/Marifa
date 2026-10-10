@@ -38,7 +38,7 @@ const navigation = [
   { href: "/dashboard/hospital-news", label: "Hospital News", icon: Megaphone },
   { href: "/dashboard/my-certificates", label: "My Certificates", icon: Award },
   { href: "/dashboard/notifications", label: "Notifications", icon: Bell },
-  { href: "/dashboard/administration-and-settings", label: "Administration and Settings", icon: Settings },
+  { href: "/dashboard/admin", label: "Administration and Settings", icon: Settings },
 ];
 
 const sections = [

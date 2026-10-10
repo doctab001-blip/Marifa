@@ -20,6 +20,8 @@ type SourceMetadata = {
   sourceUrl: string;
   publicationDate: string;
   sourceType: "official-saudi-guideline" | "curated-saudi-draft" | "nice-adapted-guideline";
+  approval?: { approvedBy: string; approvedAt: string; publishedAt?: string };
+  systemSeededNationalBaseline?: boolean;
 };
 
 const sourceMetadata: Record<string, SourceMetadata> = {
@@ -35,22 +37,42 @@ const sourceMetadata: Record<string, SourceMetadata> = {
   "a1020000-0000-4000-8000-000000000002": { sourceTitle: "NICE NG136: Hypertension in adults — diagnosis and management", sourceUrl: "https://www.nice.org.uk/guidance/ng136", publicationDate: "2026-02-26", sourceType: "nice-adapted-guideline" },
 };
 
-async function loadBatches() {
+type SeedRecord = { disease: DiseaseDetail; source: SourceMetadata };
+
+const uuidV4 = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+const approvedStatuses = new Set(["approved", "published"]);
+
+async function loadBatches(): Promise<SeedRecord[]> {
   const parsed = await Promise.all(
     batchPaths.map(async (path) => {
       const raw = await readFile(resolve(path), "utf8");
       return DiseaseSeedBatchSchema.parse(JSON.parse(raw));
     }),
   );
-  const records = parsed.flat();
+  const diseases = parsed.flat();
   const ids = new Set<string>();
   const titles = new Set<string>();
-  for (const record of records) {
-    if (ids.has(record.id)) throw new Error(`Duplicate disease id: ${record.id}`);
-    if (titles.has(record.title)) throw new Error(`Duplicate disease title: ${record.title}`);
-    if (!sourceMetadata[record.id]) throw new Error(`Missing source metadata: ${record.id}`);
-    ids.add(record.id);
-    titles.add(record.title);
+  const records: SeedRecord[] = [];
+  for (const disease of diseases) {
+    if (!uuidV4.test(disease.id)) throw new Error(`Expected a hardcoded UUIDv4 for ${disease.title}; got ${disease.id}`);
+    if (ids.has(disease.id)) throw new Error(`Duplicate disease id: ${disease.id}`);
+    if (titles.has(disease.title)) throw new Error(`Duplicate disease title: ${disease.title}`);
+    const source = sourceMetadata[disease.id];
+    if (!source) throw new Error(`Missing source metadata: ${disease.id}`);
+    if (new URL(source.sourceUrl).protocol !== "https:") throw new Error(`Source URL must use HTTPS: ${disease.title}`);
+    if (approvedStatuses.has(disease.status)) {
+      if (!source.approval && !source.systemSeededNationalBaseline) {
+        throw new Error(`${disease.title} is ${disease.status} without reviewer approval metadata or an explicit national-baseline marker.`);
+      }
+      if (!source.approval?.approvedBy || !uuidV4.test(source.approval.approvedBy) || !source.approval.approvedAt) {
+        throw new Error(`${disease.title} cannot be seeded as ${disease.status}: the current database constraint requires an approver profile UUID and approval timestamp.`);
+      }
+    } else if (source.approval) {
+      throw new Error(`${disease.title} has approval metadata but its content status is ${disease.status}.`);
+    }
+    ids.add(disease.id);
+    titles.add(disease.title);
+    records.push({ disease, source });
   }
   return records;
 }
@@ -64,7 +86,7 @@ function issuingOrganization(record: DiseaseDetail) {
   }[record.authority];
 }
 
-async function seed(records: DiseaseDetail[]) {
+async function seed(records: SeedRecord[]) {
   const url = process.env.SUPABASE_URL ?? process.env.NEXT_PUBLIC_SUPABASE_URL;
   const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY ?? process.env.SUPABASE_SECRET_KEY;
   if (!url || !serviceKey) {
@@ -75,50 +97,104 @@ async function seed(records: DiseaseDetail[]) {
     auth: { autoRefreshToken: false, persistSession: false },
   });
 
-  for (const record of records) {
-    const source = sourceMetadata[record.id];
-    const { error: guidelineError } = await supabase.from("clinical_guidelines").upsert(
-      {
-        id: record.id,
-        organization_id: null,
-        title: record.title,
-        specialty: record.specialty,
-        status: record.status,
-        source_type: source.sourceType,
-        is_shared_reference: true,
-      },
-      { onConflict: "id" },
-    );
-    if (guidelineError) throw new Error(`${record.title}: ${guidelineError.message}`);
+  async function preflight() {
+    const ids = records.map(({ disease }) => disease.id);
+    const { data: guidelines, error: guidelineReadError } = await supabase
+      .from("clinical_guidelines")
+      .select("id,title,status,organization_id,is_shared_reference")
+      .in("id", ids);
+    if (guidelineReadError) throw new Error(`Guideline preflight failed: ${guidelineReadError.message}`);
 
-    const { error: versionError } = await supabase.from("guideline_versions").upsert(
-      {
-        id: record.id,
-        guideline_id: record.id,
-        version: record.version,
-        version_number: record.version,
-        status: record.status,
-        content: record,
-        is_current: true,
-        change_summary: "Initial schema-validated disease-management seed; requires local clinical governance approval before publication.",
-        source_title: source.sourceTitle,
-        issuing_organization: issuingOrganization(record),
-        source_url: source.sourceUrl,
-        jurisdiction: "Saudi Arabia",
-        publication_date: source.publicationDate,
-        last_verified_date: record.lastReviewed,
-        review_date: record.lastReviewed,
-      },
-      { onConflict: "id" },
-    );
-    if (versionError) throw new Error(`${record.title} (${record.version}): ${versionError.message}`);
+    const byId = new Map(records.map(({ disease }) => [disease.id, disease]));
+    const existingGuidelines = (guidelines ?? []) as unknown as Array<{ id: string; title: string; status: string; organization_id: string | null; is_shared_reference: boolean }>;
+    for (const existing of existingGuidelines) {
+      const requested = byId.get(existing.id);
+      if (!requested) continue;
+      if (existing.title !== requested.title) throw new Error(`Refusing to reuse ${existing.id}: the stored title differs from ${requested.title}.`);
+      if (existing.organization_id !== null || existing.is_shared_reference !== true) {
+        throw new Error(`Refusing to change tenant-scoped guideline ${existing.id}; expected a shared national reference with organization_id NULL.`);
+      }
+      if (existing.status !== requested.status) {
+        throw new Error(`Refusing status change for ${requested.title}: database=${existing.status}, seed=${requested.status}.`);
+      }
+    }
+
+    const { data: versions, error: versionReadError } = await supabase
+      .from("guideline_versions")
+      .select("id,guideline_id,version,status,is_current")
+      .in("guideline_id", ids);
+    if (versionReadError) throw new Error(`Version preflight failed: ${versionReadError.message}`);
+
+    const requestedById = new Map(records.map(({ disease }) => [disease.id, disease]));
+    const existingVersions = (versions ?? []) as unknown as Array<{ id: string; guideline_id: string; version: string; status: string; is_current: boolean }>;
+    for (const existing of existingVersions) {
+      const requested = requestedById.get(existing.guideline_id);
+      if (!requested) continue;
+      if (existing.id === requested.id && existing.version !== requested.version) {
+        throw new Error(`Refusing to reuse version UUID ${existing.id} for ${requested.title}: the stored version is ${existing.version}, seed version is ${requested.version}.`);
+      }
+      if (existing.version === requested.version && existing.id !== requested.id) {
+        throw new Error(`Refusing to change version identity for ${requested.title} ${requested.version}; reconcile the existing version UUID ${existing.id} before seeding.`);
+      }
+      if (existing.is_current && existing.version !== requested.version) {
+        throw new Error(`Refusing to replace the current ${existing.version} version for ${requested.title}; review and retire it explicitly first.`);
+      }
+      if (existing.version === requested.version && existing.status !== requested.status) {
+        throw new Error(`Refusing status change for ${requested.title} version ${requested.version}: database=${existing.status}, seed=${requested.status}.`);
+      }
+    }
+  }
+
+  await preflight();
+
+  const guidelines = records.map(({ disease, source }) => ({
+    id: disease.id,
+    organization_id: null,
+    title: disease.title,
+    specialty: disease.specialty,
+    status: disease.status,
+    source_type: source.sourceType,
+    is_shared_reference: true,
+  }));
+  const { error: guidelineError } = await supabase
+    .from("clinical_guidelines")
+    .upsert(guidelines, { onConflict: "id" });
+  if (guidelineError) throw new Error(`Guideline metadata upsert failed: ${guidelineError.message}`);
+
+  const versions = records.map(({ disease, source }) => ({
+    id: disease.id,
+    guideline_id: disease.id,
+    version: disease.version,
+    version_number: disease.version,
+    status: disease.status,
+    content: disease,
+    is_current: true,
+    change_summary: source.systemSeededNationalBaseline
+      ? "System-seeded national baseline; provenance and approval metadata are recorded below."
+      : "Schema-validated repository seed; draft pending local clinical governance review.",
+    source_title: source.sourceTitle,
+    issuing_organization: issuingOrganization(disease),
+    source_url: source.sourceUrl,
+    jurisdiction: "Saudi Arabia",
+    publication_date: source.publicationDate,
+    last_verified_date: disease.lastReviewed,
+    review_date: disease.lastReviewed,
+    approved_by: source.approval?.approvedBy ?? null,
+    approved_at: source.approval?.approvedAt ?? null,
+    published_at: disease.status === "published" ? source.approval?.publishedAt ?? null : null,
+  }));
+  const { error: versionError } = await supabase
+    .from("guideline_versions")
+    .upsert(versions, { onConflict: "id" });
+  if (versionError) {
+    throw new Error(`Version upsert failed after guideline metadata was saved. It is safe to rerun after correcting the error because both upserts use stable identifiers. ${versionError.message}`);
   }
 }
 
 const records = await loadBatches();
-if (process.argv.includes("--validate-only")) {
-  console.log(`Validated ${records.length} disease-management records across ${batchPaths.length} batches.`);
-} else {
+if (process.argv.includes("--apply")) {
   await seed(records);
-  console.log(`Upserted ${records.length} disease-management records and current versions.`);
+  console.log(`Upserted ${records.length} validated disease-management records and current versions.`);
+} else {
+  console.log(`Validated ${records.length} disease-management records across ${batchPaths.length} batches. No database writes were made; pass --apply to upsert.`);
 }

@@ -6,7 +6,8 @@ Marifa is a Saudi-context clinical knowledge, competency and governance SaaS fou
 
 ## What works now
 
-- Supabase Auth sign-in for invited users plus an isolated demo sign-in with an HTTP-only session cookie.
+- Supabase SSR authentication with email/password and Google OAuth; `/dashboard` requires an authenticated Supabase session.
+- An isolated demo sign-in with an HTTP-only session cookie for the demonstration workspace.
 - Organization-aware application shell and permission-oriented navigation.
 - Ranked disease search across names, abbreviations, symptoms, specialties and indexed Arabic titles.
 - Disease detail pages with source, version, status, jurisdiction and review metadata.
@@ -28,7 +29,7 @@ npm install
 npm run dev
 ```
 
-Open `http://localhost:3000`. Choose either demo identity. No password or production account is created.
+Open `http://localhost:3000`. Configure `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` in `.env.local` to use Supabase authentication. For local OAuth and signup callbacks, set `NEXT_PUBLIC_SITE_URL=http://localhost:3000`. The demo sign-in remains separate and does not authenticate `/dashboard`.
 
 Validation:
 
@@ -52,7 +53,9 @@ To prepare another Supabase environment:
 3. Apply `supabase/seed.sql` for non-clinical roles and the fictional organization.
 4. Configure the public URL and anonymous key in `.env.local`; keep the service-role key server-only.
 5. Configure `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` in the hosting environment.
-6. Verify every RLS policy using two distinct tenant fixtures before adding private hospital content.
+6. Set `NEXT_PUBLIC_SITE_URL` to the canonical application origin in each hosting environment.
+7. To enable Google sign-in, configure the Google provider in Supabase Auth and add `${NEXT_PUBLIC_SITE_URL}/auth/callback` to the Supabase redirect URL allowlist.
+8. Verify every RLS policy using two distinct tenant fixtures before adding private hospital content.
 
 ### Disease-management seeds
 
@@ -100,7 +103,7 @@ The repository is linked only to the Vercel project `marifa-clinical`. The unrel
 
 ## Known limitations
 
-- Demo session identities remain deliberately separate from Supabase Auth; invited Supabase users can sign in through the same login page.
+- Demo session identities remain deliberately separate from Supabase Auth. Dashboard access requires a Supabase session; email confirmation settings may require a new user to verify their address before a session is issued.
 - The disease catalogue and health check use Supabase; detailed clinical sections remain authored demonstration fixtures and mutations are not yet durable.
 - Browser bookmarks and lifecycle interactions are demonstration state, not durable records.
 - File upload, private storage, document extraction and signed URLs are not implemented.
