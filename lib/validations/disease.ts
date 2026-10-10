@@ -79,11 +79,12 @@ export const DiseaseDetailSchema = z
     speciality: nonEmptyText.optional(),
     sub_specialities: nonEmptyTextArray.optional(),
     authority: DiseaseAuthoritySchema,
-    clinicalReviewStatus: z.enum(["pending", "approved", "rejected"]).optional(),
     status: DiseaseStatusSchema,
     version: nonEmptyText,
     lastReviewed: isoDate,
     pillar: ModelOfCarePillarSchema,
+    clinicalScenario: nonEmptyText.optional(),
+    clinicalReviewStatus: z.literal("pending").optional(),
     pathophysiology: z
       .object({
         summary: nonEmptyText,

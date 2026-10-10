@@ -4,11 +4,13 @@ import { cache } from "react";
 import { redirect } from "next/navigation";
 import { isSupabaseConfigured } from "@/lib/supabase/config";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { DiseaseDetailSchema } from "@/lib/validations/disease";
 
 export type OrganizationAdminContext = {
   userId: string;
   organizationId: string;
   organizationName: string;
+  roleCode: string;
 };
 
 // Role codes in Marifa are stored in lowercase snake case.
@@ -44,6 +46,8 @@ export const requireOrganizationAdmin = cache(async (): Promise<OrganizationAdmi
     assignedRoles.some((role) => role.membership_id === membership.id),
   );
   if (!adminMembership) redirect("/dashboard?error=unauthorized");
+  const adminRole = assignedRoles.find((role) => role.membership_id === adminMembership.id) as unknown as { roles: { code: string } | { code: string }[] | null };
+  const roleValue = Array.isArray(adminRole.roles) ? adminRole.roles[0] : adminRole.roles;
 
   const { data: organization, error: organizationError } = await supabase
     .from("organizations")
@@ -57,6 +61,7 @@ export const requireOrganizationAdmin = cache(async (): Promise<OrganizationAdmi
     userId,
     organizationId: adminMembership.organization_id,
     organizationName: organization.name,
+    roleCode: roleValue?.code ?? "org_admin",
   };
 });
 
@@ -144,7 +149,7 @@ export async function getAdminStaff(): Promise<{ context: OrganizationAdminConte
   return { context, staff };
 }
 
-export type GovernanceItem = { id: string; title: string; specialty: string; status: string; updatedAt: string };
+export type GovernanceItem = { id: string; title: string; specialty: string; status: string; updatedAt: string; canEdit?: boolean };
 
 export async function getGovernanceQueue(): Promise<{ context: OrganizationAdminContext; items: GovernanceItem[] }> {
   const context = await requireOrganizationAdmin();
@@ -157,15 +162,52 @@ export async function getGovernanceQueue(): Promise<{ context: OrganizationAdmin
     .order("created_at", { ascending: true });
 
   if (error) return { context, items: [] };
+  const sharedResult = context.roleCode === "platform_admin" ? await supabase
+    .from("clinical_guidelines")
+    .select("id,title,specialty,status,created_at")
+    .is("organization_id", null).eq("is_shared_reference", true).eq("source_type", "curated-textbook-topic").eq("status", "published")
+    .order("created_at", { ascending: true }) : { data: [], error: null };
   return {
     context,
-    items: (data ?? []).map((item) => ({
+    items: [...(data ?? []).map((item) => ({
       id: item.id,
       title: item.title,
       specialty: item.specialty ?? "Unassigned",
       status: item.status,
       updatedAt: item.created_at,
-    })),
+    })), ...(sharedResult.data ?? []).map((item) => ({ id: item.id, title: item.title, specialty: item.specialty ?? "Unassigned", status: item.status, updatedAt: item.created_at, canEdit: true }))],
+  };
+}
+
+export async function getDraftGuideline(id: string) {
+  const context = await requireOrganizationAdmin();
+  const supabase = await createSupabaseServerClient();
+  const sharedPublished = context.roleCode === "platform_admin";
+  let query = supabase
+    .from("clinical_guidelines")
+    .select("id,title,specialty,status,guideline_versions!inner(id,version,status,content,source_title,source_url,publication_date,review_date,is_current)")
+    .eq("id", id).eq("guideline_versions.is_current", true);
+  query = sharedPublished
+    ? query.is("organization_id", null).eq("is_shared_reference", true).eq("source_type", "curated-textbook-topic").eq("status", "published").eq("guideline_versions.status", "published")
+    : query.eq("organization_id", context.organizationId).eq("status", "draft").eq("guideline_versions.status", "draft");
+  const { data, error } = await query.maybeSingle();
+
+  if (error || !data) return { state: "not-found" as const };
+  const version = Array.isArray(data.guideline_versions) ? data.guideline_versions[0] : data.guideline_versions;
+  if (!version) return { state: "not-found" as const };
+  const parsed = DiseaseDetailSchema.safeParse(version.content);
+  if (!parsed.success) return { state: "invalid" as const, title: data.title, issues: parsed.error.issues.map((issue) => issue.message) };
+
+  return {
+    state: "ready" as const,
+    title: data.title,
+    specialty: data.specialty ?? "Unassigned",
+    disease: parsed.data,
+    sourceTitle: version.source_title,
+    sourceUrl: version.source_url,
+    publicationDate: version.publication_date,
+    reviewDate: version.review_date,
+    isLive: sharedPublished,
   };
 }
 

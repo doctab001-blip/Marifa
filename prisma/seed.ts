@@ -3,11 +3,13 @@ import { resolve } from "node:path";
 import { loadEnvFile } from "node:process";
 import { createClient } from "@supabase/supabase-js";
 import { DiseaseSeedBatchSchema, type DiseaseDetail } from "../lib/validations/disease";
+import { newDiseaseRecords } from "../lib/disease-import";
 
 const allBatchPaths = [
   "data/seeds/batch_01_saudi_core.json",
   "data/seeds/batch_02_nhs_adapted.json",
   "data/seeds/batch_03_pillars.json",
+  "data/seeds/batch_04_textbook_sourced_drafts.json",
 ] as const;
 const selectedBatch = process.argv.find((argument) => argument.startsWith("--batch="))?.slice("--batch=".length);
 const batchPaths = selectedBatch
@@ -25,7 +27,7 @@ type SourceMetadata = {
   sourceTitle: string;
   sourceUrl: string;
   publicationDate: string;
-  sourceType: "official-saudi-guideline" | "curated-saudi-draft" | "curated-saudi-guideline" | "nice-adapted-guideline";
+  sourceType: "official-saudi-guideline" | "curated-saudi-draft" | "curated-saudi-guideline" | "curated-textbook-topic" | "nice-adapted-guideline";
   approval?: { approvedBy: string; approvedAt: string; publishedAt?: string };
   systemSeededNationalBaseline?: boolean;
 };
@@ -62,6 +64,16 @@ async function loadBatches(): Promise<SeedRecord[]> {
     }),
   );
   const diseases = parsed.flat();
+  const textbookSourceRows = JSON.parse(await readFile(resolve("data/seeds/batch_04_textbook_sources.json"), "utf8")) as Array<{
+    id: string; textbook: string; publisher: string; publicationDate: string; publisherEditionPage: string;
+  }>;
+  const textbookSources = new Map(textbookSourceRows.map((row) => [row.id, {
+    sourceTitle: row.textbook,
+    sourceUrl: row.publisherEditionPage,
+    publicationDate: row.publicationDate,
+    sourceType: "curated-textbook-topic" as const,
+    approval: { approvedBy: "310a1d7b-646d-4adb-b822-8d79453237cf", approvedAt: "2026-10-10T17:00:00Z", publishedAt: "2026-10-10T17:00:00Z" },
+  }]));
   const ids = new Set<string>();
   const titles = new Set<string>();
   const records: SeedRecord[] = [];
@@ -69,7 +81,7 @@ async function loadBatches(): Promise<SeedRecord[]> {
     if (!uuidV4.test(disease.id)) throw new Error(`Expected a hardcoded UUIDv4 for ${disease.title}; got ${disease.id}`);
     if (ids.has(disease.id)) throw new Error(`Duplicate disease id: ${disease.id}`);
     if (titles.has(disease.title)) throw new Error(`Duplicate disease title: ${disease.title}`);
-    const source = sourceMetadata[disease.id];
+    const source = sourceMetadata[disease.id] ?? textbookSources.get(disease.id);
     if (!source) throw new Error(`Missing source metadata: ${disease.id}`);
     if (new URL(source.sourceUrl).protocol !== "https:") throw new Error(`Source URL must use HTTPS: ${disease.title}`);
     if (disease.status === "under_review") {
@@ -95,7 +107,8 @@ async function loadBatches(): Promise<SeedRecord[]> {
   return records;
 }
 
-function issuingOrganization(record: DiseaseDetail) {
+function issuingOrganization(record: DiseaseDetail, source: SourceMetadata) {
+  if (record.authority === "Textbook") return source.sourceTitle;
   return {
     MOH: "Saudi Ministry of Health",
     SHC: "Saudi Health Council",
@@ -132,11 +145,7 @@ async function seed(records: SeedRecord[]) {
 
     // Existing records belong to the shared catalogue, including work from other accounts.
     // Never rewrite their content, source metadata, approval, or current-version pointers.
-    const existingIds = new Set([
-      ...(guidelines ?? []).map((row) => row.id),
-      ...(versions ?? []).map((row) => row.guideline_id),
-    ]);
-    const additions = records.filter(({ disease }) => !existingIds.has(disease.id));
+    const additions = newDiseaseRecords(records, guidelines ?? [], versions ?? []);
     console.log(`Preserving ${records.length - additions.length} existing seed records; adding ${additions.length} new records.`);
     return additions;
   }
@@ -168,11 +177,13 @@ async function seed(records: SeedRecord[]) {
     is_current: true,
     change_summary: source.systemSeededNationalBaseline
       ? "System-seeded national baseline; provenance and approval metadata are recorded below."
+      : disease.clinicalReviewStatus === "pending"
+        ? "Published at platform administrator request for live user review; local clinical validation remains pending."
       : source.approval
         ? "Curated Saudi pathway approved by the designated Marifa platform administrator; source provenance is recorded below."
         : "Schema-validated repository seed; draft pending local clinical governance review.",
     source_title: source.sourceTitle,
-    issuing_organization: issuingOrganization(disease),
+    issuing_organization: issuingOrganization(disease, source),
     source_url: source.sourceUrl,
     jurisdiction: "Saudi Arabia",
     publication_date: source.publicationDate,

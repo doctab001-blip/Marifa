@@ -11,16 +11,16 @@ function readableSourceType(sourceType: string) {
 
 export function DiseaseCard({ disease }: { disease: DiseaseGuidelineSummary }) {
   const reviewPending = disease.clinicalReviewStatus === "pending";
-  const reviewRejected = disease.clinicalReviewStatus === "rejected";
-  const approved = !reviewPending && !reviewRejected && (disease.status === "approved" || disease.status === "published");
+  const approved = !reviewPending && (disease.status === "approved" || disease.status === "published");
   const draft = disease.status === "draft";
-  const statusLabel = reviewPending ? "Clinical review pending" : reviewRejected ? "Clinical review rejected" : approved ? "Approved" : draft ? "Draft" : disease.status.replaceAll("_", " ");
+  const underReview = disease.status === "under_review" || reviewPending;
+  const statusLabel = reviewPending ? "Clinical review pending" : approved ? "Approved" : draft ? "Draft" : disease.status.replaceAll("_", " ");
 
   return (
     <Link href={`/dashboard/diseases/${disease.id}`} className={`disease-card${disease.pillar === "Urgent Care" ? " is-urgent" : ""}`}>
       <div className="disease-card-top">
         <span className="disease-pillar-label">{disease.pillar}</span>
-        <span className={`disease-status-badge ${approved ? "is-approved" : draft ? "is-draft" : ""}`}>
+        <span className={`disease-status-badge ${approved ? "is-approved" : draft ? "is-draft" : underReview ? "is-review" : ""}`}>
           {statusLabel}
         </span>
       </div>

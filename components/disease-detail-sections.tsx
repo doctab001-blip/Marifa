@@ -72,7 +72,7 @@ export function DiseaseDetailSections({ disease }: { disease: DiseaseDetail }) {
         <h3>Key mechanisms</h3>
         <TextList items={disease.pathophysiology.keyMechanisms} />
         {disease.pathophysiology.references?.length ? (
-          <div className="clinical-references" aria-label="Further reading">
+          <div className="clinical-references" aria-label="Sources for further reading">
             <h3>Sources for further reading</h3>
             <ul>
               {disease.pathophysiology.references.map((reference) => (

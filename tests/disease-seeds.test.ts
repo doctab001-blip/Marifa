@@ -1,9 +1,16 @@
 import saudiCore from "@/data/seeds/batch_01_saudi_core.json";
 import niceAdapted from "@/data/seeds/batch_02_nhs_adapted.json";
+import textbook from "@/data/seeds/batch_04_textbook_sourced_drafts.json";
 import { describe, expect, it } from "vitest";
 import { DiseaseSeedBatchSchema } from "@/lib/validations/disease";
 
 describe("disease seed batches", () => {
+  it("retains all 60 textbook scenarios and their pending clinical-review metadata", () => {
+    const records = DiseaseSeedBatchSchema.parse(textbook);
+    expect(records).toHaveLength(60);
+    expect(new Set(records.map((record) => record.id)).size).toBe(60);
+    expect(records.every((record) => record.authority === "Textbook" && record.clinicalReviewStatus === "pending")).toBe(true);
+  });
   it("contains eight Saudi core records and two NICE adaptations", () => {
     const core = DiseaseSeedBatchSchema.parse(saudiCore);
     const fallback = DiseaseSeedBatchSchema.parse(niceAdapted);

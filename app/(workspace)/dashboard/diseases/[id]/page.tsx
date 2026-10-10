@@ -16,7 +16,7 @@ function ErrorState({ invalid = false }: { invalid?: boolean }) {
       <section className="guideline-error card" role="alert">
         <ShieldAlert size={28} strokeWidth={1.5} aria-hidden="true" />
         <h1>{invalid ? "This guideline could not be validated" : "This guideline is temporarily unavailable"}</h1>
-        <p>{invalid ? "The approved record did not match the required clinical schema and has been withheld from display." : "The secure clinical data service could not be reached with the current session. Please try again later."}</p>
+        <p>{invalid ? "The clinical record did not match the required schema and has been withheld from display." : "The secure clinical data service could not be reached with the current session. Please try again later."}</p>
       </section>
     </main>
   );
@@ -30,7 +30,7 @@ export default async function DiseaseDetailPage({ params }: { params: Promise<{ 
   if (result.state === "unavailable") return <ErrorState />;
 
   const disease = result.disease;
-  const reviewIncomplete = disease.clinicalReviewStatus === "pending" || disease.clinicalReviewStatus === "rejected";
+  const reviewIncomplete = disease.clinicalReviewStatus === "pending" || disease.status === "under_review";
   const approvalLabel = reviewIncomplete ? "Under review" : disease.status === "published" ? "Published" : "Approved";
   return (
     <main className="page disease-detail-page">
@@ -42,13 +42,18 @@ export default async function DiseaseDetailPage({ params }: { params: Promise<{ 
           <h1>{disease.title}</h1>
         </div>
         <dl className="disease-source-card">
-          <div><dt><Building2 size={14} strokeWidth={1.5} />Source authority</dt><dd>{disease.authority}</dd></div>
+          <div><dt><Building2 size={14} strokeWidth={1.5} />Source authority</dt><dd>{disease.status === "under_review" ? "External evidence synthesis" : disease.authority}</dd></div>
           <div><dt><FileCheck2 size={14} strokeWidth={1.5} />Version</dt><dd>{disease.version}</dd></div>
-          <div><dt><CalendarDays size={14} strokeWidth={1.5} />Last reviewed</dt><dd>{formatDate(disease.lastReviewed)}</dd></div>
+          <div><dt><CalendarDays size={14} strokeWidth={1.5} />{disease.status === "under_review" || disease.clinicalReviewStatus === "pending" ? "Clinical review" : "Last reviewed"}</dt><dd>{disease.status === "under_review" || disease.clinicalReviewStatus === "pending" ? "Pending" : formatDate(disease.lastReviewed)}</dd></div>
         </dl>
       </header>
 
-      <div className="clinical-governance-notice" role="note"><strong>Clinical governance:</strong> {reviewIncomplete && "This saved scenario has not completed clinical review and is not approved for clinical use. "}Verify patient-specific factors, local formulary and pathways. Escalate emergencies immediately.</div>
+      {disease.status === "under_review" || disease.clinicalReviewStatus === "pending" ? (
+        <div className="clinical-review-draft-notice" role="alert"><strong>UNREVIEWED DRAFT — NOT FOR CLINICAL USE.</strong> The source edition and topic synthesis are awaiting full source verification and Saudi clinical governance review. This is not an approved local protocol; follow approved local pathways and seek senior clinical advice for patient care.</div>
+      ) : (
+        <div className="clinical-governance-notice" role="note"><strong>Clinical governance:</strong> Verify patient-specific factors, local formulary and pathways. Escalate emergencies immediately.</div>
+      )}
+      {disease.clinicalScenario && <section className="clinical-scenario-card" aria-labelledby="clinical-scenario-title"><p className="disease-kicker">Case scenario</p><h2 id="clinical-scenario-title">Start with the patient</h2><p>{disease.clinicalScenario}</p></section>}
       <DiseaseDetailSections disease={disease} />
     </main>
   );
