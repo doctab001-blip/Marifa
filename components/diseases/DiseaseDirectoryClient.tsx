@@ -5,6 +5,7 @@ import { Baby, CalendarCheck, FileSearch, HeartHandshake, HeartPulse, Search, Sh
 import { DiseaseCard } from "@/components/diseases/DiseaseCard";
 import type { DiseaseDirectoryResult, DiseaseGuidelineSummary } from "@/lib/data/disease-guidelines";
 import type { DiseaseDetail } from "@/lib/validations/disease";
+import { hasMedicalSpeciality, medicalSpecialities } from "@/lib/medical-specialities";
 
 type Pillar = DiseaseDetail["pillar"];
 type PillarFilter = Pillar | "all";
@@ -32,6 +33,7 @@ export function DiseaseDirectoryClient({
   const [query, setQuery] = useState(initialQuery);
   const [debouncedQuery, setDebouncedQuery] = useState(initialQuery.trim().toLocaleLowerCase());
   const [activePillar, setActivePillar] = useState<PillarFilter>("all");
+  const [activeSpeciality, setActiveSpeciality] = useState("all");
 
   useEffect(() => {
     const timer = window.setTimeout(() => setDebouncedQuery(query.trim().toLocaleLowerCase()), 250);
@@ -40,9 +42,11 @@ export function DiseaseDirectoryClient({
 
   const filteredDiseases = useMemo(() => diseases.filter((disease) => {
     const matchesPillar = activePillar === "all" || disease.pillar === activePillar;
-    const searchable = `${disease.title} ${disease.specialty}`.toLocaleLowerCase();
-    return matchesPillar && (!debouncedQuery || searchable.includes(debouncedQuery));
-  }), [activePillar, debouncedQuery, diseases]);
+    const specialityText = [disease.speciality, disease.specialty, ...disease.subSpecialities].join(" ");
+    const matchesSpeciality = activeSpeciality === "all" || hasMedicalSpeciality(specialityText, activeSpeciality);
+    const searchable = `${disease.title} ${specialityText}`.toLocaleLowerCase();
+    return matchesPillar && matchesSpeciality && (!debouncedQuery || searchable.includes(debouncedQuery));
+  }), [activePillar, activeSpeciality, debouncedQuery, diseases]);
 
   return (
     <>
@@ -80,6 +84,11 @@ export function DiseaseDirectoryClient({
         </div>
       </section>
 
+      <section className="speciality-filter-section" aria-labelledby="specialities-title">
+        <div className="directory-section-heading"><div><p className="disease-kicker">Clinical domain</p><h2 id="specialities-title">Browse by medical speciality</h2></div></div>
+        <label className="speciality-filter-control"><span>Medical speciality</span><select value={activeSpeciality} onChange={(event) => setActiveSpeciality(event.target.value)} aria-label="Filter by medical speciality"><option value="all">All specialities</option>{medicalSpecialities.map(({ name }) => <option key={name} value={name}>{name}</option>)}</select></label>
+      </section>
+
       <section className="directory-results" aria-labelledby="directory-results-title" aria-live="polite">
         <div className="directory-section-heading">
           <div><p className="disease-kicker">{activePillar === "all" ? "All care pillars" : activePillar}</p><h2 id="directory-results-title">Published clinical guidelines</h2></div>
@@ -94,7 +103,7 @@ export function DiseaseDirectoryClient({
             <FileSearch size={28} strokeWidth={1.5} aria-hidden="true" />
             <h3>{state === "unavailable" ? "Clinical directory unavailable" : diseases.length === 0 ? "No guidelines are currently published" : "No matching guidelines"}</h3>
             <p>{state === "unavailable" ? "The clinical directory could not be loaded. Please try again later." : diseases.length === 0 ? "Published clinical guidelines will appear here when they are available." : "Try another disease or specialty, or choose a different care pillar."}</p>
-            {diseases.length > 0 && <button type="button" onClick={() => { setQuery(""); setActivePillar("all"); }}>Reset filters</button>}
+            {diseases.length > 0 && <button type="button" onClick={() => { setQuery(""); setActivePillar("all"); setActiveSpeciality("all"); }}>Reset filters</button>}
           </div>
         )}
         {rejectedCount > 0 && <p className="directory-validation-note" role="status">{rejectedCount} published {rejectedCount === 1 ? "record was" : "records were"} hidden because validation failed.</p>}

@@ -59,6 +59,8 @@ export const DiseaseDetailSchema = z
     id: z.uuid(),
     title: nonEmptyText,
     specialty: nonEmptyText,
+    speciality: nonEmptyText.optional(),
+    sub_specialities: nonEmptyTextArray.optional(),
     authority: DiseaseAuthoritySchema,
     status: DiseaseStatusSchema,
     version: nonEmptyText,

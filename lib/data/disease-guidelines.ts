@@ -2,10 +2,11 @@ import "server-only";
 import { DiseaseDetailSchema, type DiseaseDetail } from "@/lib/validations/disease";
 import { isSupabaseConfigured } from "@/lib/supabase/config";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { hasMedicalSpeciality, inferMedicalSpecialityTags } from "@/lib/medical-specialities";
 
-export type DiseaseGuidelineSummary = Pick<DiseaseDetail, "id" | "title" | "specialty" | "authority" | "status" | "version" | "lastReviewed" | "pillar"> & { summary: string; sourceType?: string };
+export type DiseaseGuidelineSummary = Pick<DiseaseDetail, "id" | "title" | "specialty" | "authority" | "status" | "version" | "lastReviewed" | "pillar"> & { summary: string; sourceType?: string; speciality: string; subSpecialities: string[] };
 type GuidelineVersionJoin = { content: unknown };
-type GuidelineRow = { id: string; title: string; specialty: string | null; status: string; source_type: string; guideline_versions: GuidelineVersionJoin | GuidelineVersionJoin[] };
+type GuidelineRow = { id: string; title: string; specialty: string | null; speciality_id?: string | null; speciality?: { name: string } | { name: string }[] | null; sub_specialities?: string[] | null; status: string; source_type: string; guideline_versions: GuidelineVersionJoin | GuidelineVersionJoin[] };
 
 export type DiseaseDirectoryResult = { diseases: DiseaseGuidelineSummary[]; state: "ready" | "unavailable"; rejectedCount: number };
 export type DiseaseDetailResult =
@@ -24,17 +25,20 @@ function isApproved(disease: DiseaseDetail) {
   return disease.status === "approved" || disease.status === "published";
 }
 
-function toSummary(disease: DiseaseDetail): Omit<DiseaseGuidelineSummary, "sourceType"> {
-  return { id: disease.id, title: disease.title, specialty: disease.specialty, authority: disease.authority, status: disease.status, version: disease.version, lastReviewed: disease.lastReviewed, pillar: disease.pillar, summary: disease.pathophysiology.summary };
+function toSummary(disease: DiseaseDetail, row: GuidelineRow): Omit<DiseaseGuidelineSummary, "sourceType"> {
+  const inferred = inferMedicalSpecialityTags(disease.specialty);
+  const catalogSpeciality = Array.isArray(row.speciality) ? row.speciality[0]?.name : row.speciality?.name;
+  const speciality = catalogSpeciality ?? disease.speciality ?? inferred[0] ?? disease.specialty;
+  return { id: disease.id, title: disease.title, specialty: disease.specialty, speciality, subSpecialities: disease.sub_specialities ?? row.sub_specialities ?? inferred.filter((tag) => tag !== speciality), authority: disease.authority, status: disease.status, version: disease.version, lastReviewed: disease.lastReviewed, pillar: disease.pillar, summary: disease.pathophysiology.summary };
 }
 
-export async function getApprovedDiseaseGuidelines(): Promise<DiseaseDirectoryResult> {
+export async function getApprovedDiseaseGuidelines(filters: { speciality?: string; carePillar?: string } = {}): Promise<DiseaseDirectoryResult> {
   if (!isSupabaseConfigured()) return { diseases: [], state: "unavailable", rejectedCount: 0 };
   try {
     const supabase = await createSupabaseServerClient();
     const { data, error } = await supabase
       .from("clinical_guidelines")
-      .select("id,title,specialty,status,source_type,guideline_versions!inner(content)")
+      .select("id,title,specialty,speciality_id,speciality:specialties!clinical_guidelines_speciality_id_fkey(name),sub_specialities,status,source_type,guideline_versions!inner(content)")
       .is("organization_id", null)
       .in("status", [...approvedStatuses])
       .eq("guideline_versions.is_current", true)
@@ -50,7 +54,10 @@ export async function getApprovedDiseaseGuidelines(): Promise<DiseaseDirectoryRe
         rejectedCount += 1;
         continue;
       }
-      diseases.push({ ...toSummary(parsed.data), sourceType: row.source_type });
+      const summary = toSummary(parsed.data, row);
+      if (filters.speciality && ![summary.speciality, ...summary.subSpecialities].some((tag) => hasMedicalSpeciality(tag, filters.speciality!))) continue;
+      if (filters.carePillar && parsed.data.pillar !== filters.carePillar) continue;
+      diseases.push({ ...summary, sourceType: row.source_type });
     }
     return { diseases, state: "ready", rejectedCount };
   } catch {

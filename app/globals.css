@@ -697,3 +697,12 @@ h1, h2, h3, h4, h5, h6, .heading, .brand-name, .metric-value { font-family: var(
   .page { padding: 0; }
   .card { box-shadow: none; break-inside: avoid; }
 }
+
+/* Medical speciality taxonomy filters and guideline badges */
+.speciality-filter-section { margin-top: 12px; padding: 16px 18px; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+.speciality-filter-control { display: grid; grid-template-columns: minmax(150px, .28fr) minmax(220px, 1fr); align-items: center; gap: 14px; max-width: 720px; margin-top: 12px; color: #475569; font-size: .78rem; font-weight: 700; }
+.speciality-filter-control select { min-height: 42px; padding: 0 12px; border: 1px solid #d8e0eb; border-radius: 9px; color: #1f2937; background: #fff; font: inherit; }
+.disease-speciality-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.disease-speciality-badge, .disease-sub-speciality-badge { display: inline-flex; align-items: center; min-height: 24px; padding: 3px 9px; border-radius: 999px; font-size: .68rem; font-weight: 750; line-height: 1.25; }
+.disease-speciality-badge { color: #1e3a8a; background: #eaf1ff; }
+.disease-sub-speciality-badge { color: #475569; background: #f1f5f9; }

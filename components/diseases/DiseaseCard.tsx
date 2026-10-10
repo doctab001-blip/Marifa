@@ -24,7 +24,10 @@ export function DiseaseCard({ disease }: { disease: DiseaseGuidelineSummary }) {
       </div>
       <div className="disease-card-copy">
         <h3>{disease.title}</h3>
-        <p>{disease.specialty}</p>
+        <div className="disease-speciality-badges" aria-label="Medical specialities">
+          <span className="disease-speciality-badge">{disease.speciality}</span>
+          {disease.subSpecialities.map((speciality) => <span className="disease-sub-speciality-badge" key={speciality}>{speciality}</span>)}
+        </div>
       </div>
       <div className="disease-card-footer">
         <span className="disease-authority-badge" aria-label={`Authority: ${disease.authority}`}>
