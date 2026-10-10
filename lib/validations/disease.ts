@@ -70,6 +70,11 @@ export const DiseaseDetailSchema = z
       .object({
         summary: nonEmptyText,
         keyMechanisms: nonEmptyTextArray,
+        references: z.array(z.object({
+          title: nonEmptyText,
+          edition: nonEmptyText,
+          url: z.url(),
+        }).strict()).optional(),
       })
       .strict(),
     presentation: z

@@ -528,11 +528,13 @@ a.topic-row:focus-visible { outline: 3px solid rgba(47, 164, 231, .42); outline-
 .disease-status-badge { flex: 0 0 auto; padding: 5px 8px; border-radius: 999px; color: #475467; background: #f2f4f7; font-size: .64rem; font-weight: 800; }
 .disease-status-badge.is-approved { color: #067647; background: #ecfdf3; }
 .disease-status-badge.is-draft { color: #b54708; background: #fffaeb; }
+.disease-status-badge.is-review { color: #8a4b08; background: #fff8e7; }
 .approval-badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 8px; border: 1px solid; border-radius: 999px; font-size: .64rem; font-weight: 800; line-height: 1; white-space: nowrap; }
 .approval-badge > span { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
 .approval-badge-approved { color: #087443; border-color: #abe8c7; background: #edfdf4; }
 .approval-badge-published { color: #087443; border-color: #abe8c7; background: #edfdf4; }
 .approval-badge-draft { color: #6941c6; border-color: #d8d2f4; background: #f5f3ff; }
+.approval-badge-under-review { color: #8a4b08; border-color: #f4cf82; background: #fff8e7; }
 .directory-empty { padding: 58px 20px; text-align: center; background: #fff; border: 1px solid #e8edf4; border-radius: 18px; box-shadow: 0 12px 34px rgba(31,60,136,.06); }
 .directory-empty svg { color: #2FA4E7; width: 48px; height: 48px; }
 .directory-empty h3 { margin: 10px 0 5px; color: var(--royal); font: 700 1rem Poppins, Inter, sans-serif; }
@@ -615,6 +617,12 @@ a.topic-row:focus-visible { outline: 3px solid rgba(47, 164, 231, .42); outline-
 .clinical-tier-body { padding: 20px; border-top: 1px solid #edf0f5; }
 .clinical-tier-body > h3, .clinical-two-column h3, .investigation-groups h3, .non-clinical-grid h3 { margin: 0 0 9px; font: 700 .82rem Poppins, Inter, sans-serif; }
 .clinical-summary { margin: 0 0 18px; color: #3c485b; font-size: .77rem; line-height: 1.7; }
+.clinical-references { margin-top: 18px; padding-top: 14px; border-top: 1px solid #e2e8f0; }
+.clinical-references h3 { margin: 0 0 7px; color: #475569; font-size: .75rem; font-weight: 700; }
+.clinical-references ul { display: grid; gap: 5px; margin: 0; padding-left: 18px; color: #475569; font-size: .76rem; }
+.clinical-references li::marker { color: var(--cerulean); }
+.clinical-references a { color: var(--royal); text-decoration: underline; text-underline-offset: 2px; }
+.clinical-review-draft-notice { margin: 12px 0; padding: 14px 16px; border: 1px solid #f4cf82; border-left: 5px solid #d97706; border-radius: 10px; color: #713f12; background: #fff8e7; font-size: .82rem; line-height: 1.55; }
 .clinical-content-list { margin: 0; padding-left: 20px; color: #3c485b; font-size: .74rem; line-height: 1.65; }
 .clinical-content-list li + li { margin-top: 5px; }
 .clinical-content-list li::marker { color: var(--cerulean); }

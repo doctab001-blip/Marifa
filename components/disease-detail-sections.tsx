@@ -62,6 +62,18 @@ export function DiseaseDetailSections({ disease }: { disease: DiseaseDetail }) {
         <p className="clinical-summary">{disease.pathophysiology.summary}</p>
         <h3>Key mechanisms</h3>
         <TextList items={disease.pathophysiology.keyMechanisms} />
+        {disease.pathophysiology.references?.length ? (
+          <div className="clinical-references" aria-label="Sources for further reading">
+            <h3>Sources for further reading</h3>
+            <ul>
+              {disease.pathophysiology.references.map((reference) => (
+                <li key={`${reference.title}-${reference.edition}`}>
+                  <a href={reference.url} target="_blank" rel="noreferrer">{reference.title} <span>({reference.edition})</span></a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
       </Section>
 
       <Section number={2} title="Presentation" icon={<ClipboardList size={19} strokeWidth={1.5} />}>

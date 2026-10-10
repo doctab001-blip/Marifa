@@ -82,7 +82,7 @@ export function DiseaseDirectoryClient({
 
       <section className="directory-results" aria-labelledby="directory-results-title" aria-live="polite">
         <div className="directory-section-heading">
-          <div><p className="disease-kicker">{activePillar === "all" ? "All care pillars" : activePillar}</p><h2 id="directory-results-title">Published clinical guidelines</h2></div>
+          <div><p className="disease-kicker">{activePillar === "all" ? "All care pillars" : activePillar}</p><h2 id="directory-results-title">Clinical guidelines and review candidates</h2></div>
           <p>{filteredDiseases.length} {filteredDiseases.length === 1 ? "guideline" : "guidelines"}</p>
         </div>
         {filteredDiseases.length > 0 ? (

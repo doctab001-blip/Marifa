@@ -12,13 +12,14 @@ function readableSourceType(sourceType: string) {
 export function DiseaseCard({ disease }: { disease: DiseaseGuidelineSummary }) {
   const approved = disease.status === "approved" || disease.status === "published";
   const draft = disease.status === "draft";
-  const statusLabel = approved ? "Approved" : draft ? "Draft" : disease.status.replaceAll("_", " ");
+  const underReview = disease.status === "under_review";
+  const statusLabel = approved ? "Approved" : draft ? "Draft" : disease.status.replaceAll("_", " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
 
   return (
     <Link href={`/dashboard/diseases/${disease.id}`} className={`disease-card${disease.pillar === "Urgent Care" ? " is-urgent" : ""}`}>
       <div className="disease-card-top">
         <span className="disease-pillar-label">{disease.pillar}</span>
-        <span className={`disease-status-badge ${approved ? "is-approved" : draft ? "is-draft" : ""}`}>
+        <span className={`disease-status-badge ${approved ? "is-approved" : draft ? "is-draft" : underReview ? "is-review" : ""}`}>
           {statusLabel}
         </span>
       </div>
