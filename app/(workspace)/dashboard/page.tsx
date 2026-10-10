@@ -12,7 +12,7 @@ export default async function DashboardPage() {
   return (
     <main className="page">
       <DemoBanner />
-      <div className="page-header"><div><div className="eyebrow">Thursday, 9 October 2026</div><h1 className="page-title">Good evening, {firstName}</h1><p className="page-copy">Your clinical knowledge and professional requirements, in one governed workspace.</p></div></div>
+      <div className="page-header"><div><div className="eyebrow">Your workspace at a glance</div><h1 className="page-title">Welcome back, {firstName}</h1><p className="page-copy">Your clinical knowledge and professional requirements, in one governed workspace.</p></div></div>
       <section className="hero-search" aria-labelledby="clinical-search-title">
         <h2 id="clinical-search-title">What clinical guidance do you need?</h2>
         <p>Search diseases, symptoms, pathways, medicines and hospital terminology.</p>
@@ -37,8 +37,8 @@ export default async function DashboardPage() {
         </div>
         <div className="grid" style={{ alignContent: "start" }}>
           <section className="card section-card">
-            <div className="section-head"><h2>My requirements</h2><Link className="section-link" href="/competencies">View all</Link></div>
-            {competencies.slice(1).map((item) => <Link className="topic-row" href="/competencies" key={item.id}><div className="topic-icon">{item.status === "overdue" ? <TriangleAlert size={17} /> : <CalendarClock size={17} />}</div><div className="topic-main"><strong>{item.title}</strong><p>{item.progress}% complete · due {item.dueDate}</p><div className="progress"><span style={{ width: `${item.progress}%` }} /></div></div></Link>)}
+            <div className="section-head"><h2>My requirements</h2><Link className="section-link" href="/dashboard/competencies">View all</Link></div>
+            {competencies.slice(1).map((item) => <Link className="topic-row" href="/dashboard/competencies" key={item.id}><div className="topic-icon">{item.status === "overdue" ? <TriangleAlert size={17} /> : <CalendarClock size={17} />}</div><div className="topic-main"><strong>{item.title}</strong><p>{item.progress}% complete · due {item.dueDate}</p><div className="progress"><span style={{ width: `${item.progress}%` }} /></div></div></Link>)}
           </section>
           <Link href="/dashboard/diseases" className="card section-card" style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}><div><div className="eyebrow">Flagship module</div><h2 className="heading" style={{ fontSize: ".95rem", margin: "6px 0" }}>Explore Disease Management</h2><p className="page-copy" style={{ fontSize: ".72rem" }}>Search across care pillars and inspect source provenance.</p></div><ArrowRight color="#1f3c88" /></Link>
         </div>

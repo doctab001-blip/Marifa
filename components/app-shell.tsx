@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { Bell, LogOut, Search, Settings } from "lucide-react";
+import { Bell, LogOut, Search } from "lucide-react";
 import { getCurrentViewer } from "@/lib/supabase/session";
 import { MobileNavigation, SidebarNavigation } from "@/components/app-navigation";
 
@@ -16,7 +16,6 @@ export async function AppShell({ children }: { children: React.ReactNode }) {
         </Link>
         <SidebarNavigation />
         <div className="nav-spacer" />
-        <Link href="/modules" className="nav-link" title="Administration & Settings"><Settings size={17} /><span>Administration</span></Link>
         <div className="org-card"><strong>{user.organizationName}</strong><span>Isolated demo tenant · Riyadh</span></div>
       </aside>
       <section className="workspace">
