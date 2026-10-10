@@ -13,14 +13,13 @@ function TextList({ items }: { items: string[] }) {
   })}</ul>;
 }
 
-function Section({ number, title, icon, children, defaultOpen = false }: {
+function Section({ number, title, icon, children }: {
   number: number;
   title: string;
   icon: React.ReactNode;
   children: React.ReactNode;
-  defaultOpen?: boolean;
 }) {
-  const [isOpen, setIsOpen] = useState(defaultOpen);
+  const [isOpen, setIsOpen] = useState(true);
   const headingId = `clinical-step-${number}-heading`;
   const panelId = `clinical-step-${number}-panel`;
 
@@ -59,7 +58,7 @@ function Section({ number, title, icon, children, defaultOpen = false }: {
 export function DiseaseDetailSections({ disease }: { disease: DiseaseDetail }) {
   return (
     <section className="clinical-tiers" aria-label="Six-tier clinical guideline">
-      <Section number={1} title="Pathophysiology" icon={<Activity size={19} strokeWidth={1.5} />} defaultOpen>
+      <Section number={1} title="Pathophysiology" icon={<Activity size={19} strokeWidth={1.5} />}>
         <p className="clinical-summary">{disease.pathophysiology.summary}</p>
         <h3>Key mechanisms</h3>
         <TextList items={disease.pathophysiology.keyMechanisms} />
@@ -74,9 +73,9 @@ export function DiseaseDetailSections({ disease }: { disease: DiseaseDetail }) {
       </Section>
 
       <Section number={3} title="Differential diagnoses" icon={<BookOpenText size={19} strokeWidth={1.5} />}>
-        <div className="clinical-record-grid">
-          {disease.differentials.map((item) => <article key={item.condition}><h3>{item.condition}</h3><p>{item.distinguishingFeatures}</p></article>)}
-        </div>
+        <ul className="clinical-content-list differential-list">
+          {disease.differentials.map((item) => <li key={item.condition}><strong>{item.condition}:</strong> {item.distinguishingFeatures}</li>)}
+        </ul>
       </Section>
 
       <Section number={4} title="Investigations" icon={<Beaker size={19} strokeWidth={1.5} />}>
@@ -84,14 +83,16 @@ export function DiseaseDetailSections({ disease }: { disease: DiseaseDetail }) {
           {(["ruleIn", "ruleOut"] as const).map((group) => (
             <div key={group}>
               <h3>{group === "ruleIn" ? "Rule in and characterise" : "Rule out complications and alternatives"}</h3>
-              <div className="investigation-list">
+              <ul className="investigation-list">
                 {disease.investigations[group].map((test) => (
-                  <article key={`${group}-${test.testName}-${test.targetCondition}`}>
-                    <h4>{test.testName}</h4>
-                    <dl><div><dt>Target</dt><dd>{test.targetCondition}</dd></div><div><dt>Expected finding</dt><dd>{test.expectedFinding}</dd></div><div><dt>Clinical rationale</dt><dd>{test.clinicalRationale}</dd></div></dl>
-                  </article>
+                  <li key={`${group}-${test.testName}-${test.targetCondition}`}>
+                    <strong>{test.testName}</strong>
+                    <span><b>Target:</b> {test.targetCondition}</span>
+                    <span><b>Expected:</b> {test.expectedFinding}</span>
+                    <span><b>Why:</b> {test.clinicalRationale}</span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           ))}
         </div>
