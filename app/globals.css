@@ -637,18 +637,19 @@ a { color: inherit; text-decoration: none; }
 .disease-overview-stat-alert strong { color: #a35a00; }
 .disease-content-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; margin: 0 0 16px; }
 .disease-content-heading > span { padding: 7px 11px; border: 1px solid #dbe7ff; border-radius: 999px; color: var(--royal); background: #f4f7ff; font-size: .8rem; font-weight: 750; }
-.clinical-tiers { gap: 14px; }
+.clinical-tiers { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; align-items: start; }
 .clinical-tier { border-radius: 17px; box-shadow: 0 7px 22px rgba(31,60,136,.045); transition: border-color .18s, box-shadow .18s; }
 .clinical-tier:hover { border-color: #cad7eb; box-shadow: 0 10px 28px rgba(31,60,136,.075); }
-.clinical-tier summary { grid-template-columns: 34px 42px minmax(0,1fr) 22px; gap: 13px; padding: 18px 21px; }
+.clinical-tier-heading { display: grid; grid-template-columns: 34px 42px minmax(0,1fr); align-items: center; gap: 13px; padding: 18px 21px; border-bottom: 1px solid #edf0f5; }
+.clinical-tier-heading h2 { margin: 0; color: #0f172a; font: 700 1.05rem/1.3 Poppins, Inter, sans-serif; }
 .clinical-tier-number { width: 34px; height: 34px; font-size: .8rem; }
 .clinical-tier-icon { width: 42px; height: 42px; }
-.clinical-tier summary strong { font-size: 1.05rem; }
 .clinical-tier-body { padding: 25px; }
 .clinical-tier-body > h3, .clinical-two-column h3, .investigation-groups h3, .non-clinical-grid h3 { margin-bottom: 11px; font-size: 1rem; }
 .clinical-summary { font-size: .98rem; line-height: 1.8; }
 .clinical-content-list { font-size: .94rem; line-height: 1.75; }
 .clinical-content-list li + li { margin-top: 8px; }
+.clinical-content-list li > strong { color: #0f172a; font-weight: 700; }
 .clinical-record-grid h3, .investigation-list h4 { font-size: .95rem; }
 .clinical-record-grid p, .investigation-list dd { font-size: .89rem; line-height: 1.65; }
 .investigation-list dt { font-size: .82rem; }
@@ -686,6 +687,7 @@ a { color: inherit; text-decoration: none; }
   .disease-overview-stat:nth-of-type(2) { padding-left: 0; border-left: 0; }
 }
 @media (max-width: 760px) {
+  .clinical-tiers { grid-template-columns: 1fr; gap: 14px; }
   .disease-profile-header { grid-template-columns: 1fr; gap: 22px; padding: 25px 20px; border-radius: 20px; }
   .disease-profile-header h1 { margin-top: 14px; font-size: clamp(2rem, 8vw, 2.65rem); }
   .disease-profile-copy > p { font-size: 1rem; }
@@ -697,10 +699,10 @@ a { color: inherit; text-decoration: none; }
   .disease-overview-stat span { font-size: .73rem; }
   .disease-content-heading h2 { font-size: 1.2rem; }
   .disease-content-heading > span { font-size: .72rem; }
-  .clinical-tier summary { grid-template-columns: 30px 36px minmax(0,1fr) 18px; gap: 9px; padding: 14px; }
+  .clinical-tier-heading { grid-template-columns: 30px 36px minmax(0,1fr); gap: 9px; padding: 14px; }
   .clinical-tier-number { width: 30px; height: 30px; }
   .clinical-tier-icon { width: 36px; height: 36px; }
-  .clinical-tier summary strong { font-size: .97rem; }
+  .clinical-tier-heading h2 { font-size: .97rem; }
   .clinical-tier-body { padding: 18px; }
   .clinical-content-list { font-size: .9rem; }
   .presentation-observations { margin-bottom: 14px; }
@@ -790,7 +792,7 @@ h1, h2, h3, h4, h5, h6, .heading, .brand-name, .metric-value { font-family: var(
   .pathway-step-heading { padding: 14px; }
   .pathway-actions { padding: 13px 15px 14px 30px; }
   .pathway-branches { padding: 13px; }
-  .clinical-tier summary { grid-template-columns: 25px 34px minmax(0, 1fr) 18px; gap: 8px; padding: 13px; }
+  .clinical-tier-heading { grid-template-columns: 25px 34px minmax(0, 1fr); gap: 8px; padding: 13px; }
   .clinical-tier-number { width: 25px; height: 25px; }
   .clinical-tier-icon { width: 34px; height: 34px; }
   .clinical-tier-body { padding: 15px; }

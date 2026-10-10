@@ -1,36 +1,38 @@
-import { Activity, Beaker, BookOpenText, ChevronDown, ClipboardList, HeartHandshake } from "lucide-react";
+import { Activity, Beaker, BookOpenText, ClipboardList, HeartHandshake } from "lucide-react";
 import { ClinicalWarning } from "@/components/clinical-warning";
 import { PathwaySequence } from "@/components/pathway-sequence";
 import type { DiseaseDetail } from "@/lib/validations/disease";
 
 function TextList({ items }: { items: string[] }) {
-  return <ul className="clinical-content-list">{items.map((item) => <li key={item}>{item}</li>)}</ul>;
+  return <ul className="clinical-content-list">{items.map((item) => {
+    const separator = item.indexOf(":");
+    return <li key={item}>{separator > 0 ? <><strong>{item.slice(0, separator)}:</strong>{item.slice(separator + 1)}</> : item}</li>;
+  })}</ul>;
 }
 
-function Section({ number, title, icon, children, open = false }: { number: number; title: string; icon: React.ReactNode; children: React.ReactNode; open?: boolean }) {
+function Section({ number, title, icon, children }: { number: number; title: string; icon: React.ReactNode; children: React.ReactNode }) {
   return (
-    <details className="clinical-tier" open={open}>
-      <summary>
+    <section className="clinical-tier">
+      <header className="clinical-tier-heading">
         <span className="clinical-tier-number">{number}</span>
         <span className="clinical-tier-icon" aria-hidden="true">{icon}</span>
-        <strong>{title}</strong>
-        <ChevronDown className="clinical-tier-chevron" size={18} strokeWidth={1.5} aria-hidden="true" />
-      </summary>
+        <h2>{title}</h2>
+      </header>
       <div className="clinical-tier-body">{children}</div>
-    </details>
+    </section>
   );
 }
 
 export function DiseaseDetailSections({ disease }: { disease: DiseaseDetail }) {
   return (
     <section className="clinical-tiers" aria-label="Six-tier clinical guideline">
-      <Section number={1} title="Pathophysiology" icon={<Activity size={19} strokeWidth={1.5} />} open>
+      <Section number={1} title="Pathophysiology" icon={<Activity size={19} strokeWidth={1.5} />}>
         <p className="clinical-summary">{disease.pathophysiology.summary}</p>
         <h3>Key mechanisms</h3>
         <TextList items={disease.pathophysiology.keyMechanisms} />
       </Section>
 
-      <Section number={2} title="Presentation" icon={<ClipboardList size={19} strokeWidth={1.5} />} open>
+      <Section number={2} title="Presentation" icon={<ClipboardList size={19} strokeWidth={1.5} />}>
         <div className="presentation-intro"><span className="presentation-intro-number">{String(disease.presentation.symptoms.length + disease.presentation.physicalSigns.length).padStart(2, "0")}</span><p><strong>What to recognise</strong><span>Review the reported symptoms alongside examination findings. Check the highlighted red flags before moving to the next step.</span></p></div>
         <div className="clinical-two-column presentation-observations">
           <div className="presentation-observation"><div className="presentation-observation-heading"><h3>Symptoms to ask about</h3><span>{disease.presentation.symptoms.length} points</span></div><TextList items={disease.presentation.symptoms} /></div>
