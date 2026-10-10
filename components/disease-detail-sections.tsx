@@ -1,4 +1,7 @@
-import { Activity, Beaker, BookOpenText, ClipboardList, HeartHandshake } from "lucide-react";
+"use client";
+
+import { useState } from "react";
+import { Activity, Beaker, BookOpenText, ChevronDown, ClipboardList, HeartHandshake } from "lucide-react";
 import { ClinicalWarning } from "@/components/clinical-warning";
 import { PathwaySequence } from "@/components/pathway-sequence";
 import type { DiseaseDetail } from "@/lib/validations/disease";
@@ -10,15 +13,45 @@ function TextList({ items }: { items: string[] }) {
   })}</ul>;
 }
 
-function Section({ number, title, icon, children }: { number: number; title: string; icon: React.ReactNode; children: React.ReactNode }) {
+function Section({ number, title, icon, children, defaultOpen = false }: {
+  number: number;
+  title: string;
+  icon: React.ReactNode;
+  children: React.ReactNode;
+  defaultOpen?: boolean;
+}) {
+  const [isOpen, setIsOpen] = useState(defaultOpen);
+  const headingId = `clinical-step-${number}-heading`;
+  const panelId = `clinical-step-${number}-panel`;
+
   return (
-    <section className="clinical-tier">
-      <header className="clinical-tier-heading">
+    <section className={`clinical-tier${isOpen ? " is-open" : ""}`}>
+      <button
+        id={headingId}
+        className="clinical-tier-heading"
+        type="button"
+        aria-label={`Step ${number}: ${title}`}
+        aria-expanded={isOpen}
+        aria-controls={panelId}
+        onClick={() => setIsOpen((open) => !open)}
+      >
         <span className="clinical-tier-number">{number}</span>
         <span className="clinical-tier-icon" aria-hidden="true">{icon}</span>
-        <h2>{title}</h2>
-      </header>
-      <div className="clinical-tier-body">{children}</div>
+        <span className="clinical-tier-title" role="heading" aria-level={2}>{title}</span>
+        <ChevronDown className="clinical-tier-chevron" size={19} strokeWidth={1.7} aria-hidden="true" />
+      </button>
+      <div
+        id={panelId}
+        className={`clinical-tier-panel${isOpen ? " is-open" : ""}`}
+        role="region"
+        aria-labelledby={headingId}
+        aria-hidden={!isOpen}
+        inert={!isOpen}
+      >
+        <div className="clinical-tier-panel-inner">
+          <div className="clinical-tier-body">{children}</div>
+        </div>
+      </div>
     </section>
   );
 }
@@ -26,7 +59,7 @@ function Section({ number, title, icon, children }: { number: number; title: str
 export function DiseaseDetailSections({ disease }: { disease: DiseaseDetail }) {
   return (
     <section className="clinical-tiers" aria-label="Six-tier clinical guideline">
-      <Section number={1} title="Pathophysiology" icon={<Activity size={19} strokeWidth={1.5} />}>
+      <Section number={1} title="Pathophysiology" icon={<Activity size={19} strokeWidth={1.5} />} defaultOpen>
         <p className="clinical-summary">{disease.pathophysiology.summary}</p>
         <h3>Key mechanisms</h3>
         <TextList items={disease.pathophysiology.keyMechanisms} />
