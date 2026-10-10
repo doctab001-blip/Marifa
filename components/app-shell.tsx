@@ -5,7 +5,7 @@ import { getCurrentViewer } from "@/lib/supabase/session";
 
 const nav = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
-  { href: "/diseases", label: "Disease Management", icon: Stethoscope, primary: true },
+  { href: "/dashboard/diseases", label: "Disease Management", icon: Stethoscope, primary: true },
   { href: "/clinical-library", label: "Clinical Guidelines", icon: Library },
   { href: "/modules", label: "Hospital Protocols", icon: FileCheck2 },
   { href: "/modules", label: "Medicines & Formulary", icon: Pill },
@@ -37,7 +37,7 @@ export async function AppShell({ children }: { children: React.ReactNode }) {
       </aside>
       <section className="workspace">
         <header className="topbar">
-          <form className="global-search" action="/diseases">
+          <form className="global-search" action="/dashboard/diseases">
             <Search size={17} aria-hidden="true" />
             <input name="q" aria-label="Search clinical knowledge" placeholder="Search clinical knowledge…" />
           </form>
@@ -51,7 +51,7 @@ export async function AppShell({ children }: { children: React.ReactNode }) {
       </section>
       <nav className="mobile-nav" aria-label="Mobile navigation">
         <Link href="/dashboard" aria-label="Dashboard"><LayoutDashboard size={19} /></Link>
-        <Link href="/diseases" aria-label="Disease Management"><Stethoscope size={19} /></Link>
+        <Link href="/dashboard/diseases" aria-label="Disease Management"><Stethoscope size={19} /></Link>
         <Link href="/clinical-library" aria-label="Clinical Guidelines"><Library size={19} /></Link>
         <Link href="/competencies" aria-label="Competencies"><ClipboardCheck size={19} /></Link>
       </nav>

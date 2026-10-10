@@ -16,7 +16,7 @@ export default async function DashboardPage() {
       <section className="hero-search" aria-labelledby="clinical-search-title">
         <h2 id="clinical-search-title">What clinical guidance do you need?</h2>
         <p>Search diseases, symptoms, pathways, medicines and hospital terminology.</p>
-        <form className="hero-input" action="/diseases"><Search size={19} /><input name="q" aria-label="Search disease management" placeholder="Try “COPD”, “shortness of breath” or “AKI”" /><button type="submit">Search</button></form>
+        <form className="hero-input" action="/dashboard/diseases"><Search size={19} /><input name="q" aria-label="Search disease management" placeholder="Try “DKA”, “asthma” or “screening”" /><button type="submit">Search</button></form>
       </section>
       <div className="grid grid-4" style={{ marginTop: 18 }}>
         <div className="card metric"><div className="metric-top"><span>Assigned competencies</span><span className="metric-icon"><ClipboardCheck size={17} /></span></div><div className="metric-value">{competencies.length}</div><div className="metric-note">{completed} complete · 3 require attention</div></div>
@@ -27,7 +27,7 @@ export default async function DashboardPage() {
       <div className="clinical-grid" style={{ marginTop: 18 }}>
         <div className="grid">
           <section className="card section-card">
-            <div className="section-head"><h2>Recently updated clinical topics</h2><Link className="section-link" href="/diseases">View directory</Link></div>
+            <div className="section-head"><h2>Recently updated clinical topics</h2><Link className="section-link" href="/dashboard/diseases">View directory</Link></div>
             {diseases.map((disease) => <Link href={`/diseases/${disease.slug}`} className="topic-row" key={disease.id}><div className="topic-icon"><Stethoscope size={17} /></div><div className="topic-main"><strong>{disease.name}</strong><p>{disease.summary}</p></div><div className="topic-meta"><span className="status status-demo">Demo</span></div><ChevronRight size={15} color="#98a2b3" /></Link>)}
           </section>
           <section className="card section-card">
@@ -40,7 +40,7 @@ export default async function DashboardPage() {
             <div className="section-head"><h2>My requirements</h2><Link className="section-link" href="/competencies">View all</Link></div>
             {competencies.slice(1).map((item) => <Link className="topic-row" href="/competencies" key={item.id}><div className="topic-icon">{item.status === "overdue" ? <TriangleAlert size={17} /> : <CalendarClock size={17} />}</div><div className="topic-main"><strong>{item.title}</strong><p>{item.progress}% complete · due {item.dueDate}</p><div className="progress"><span style={{ width: `${item.progress}%` }} /></div></div></Link>)}
           </section>
-          <Link href="/diseases" className="card section-card" style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}><div><div className="eyebrow">Flagship module</div><h2 className="heading" style={{ fontSize: ".95rem", margin: "6px 0" }}>Explore Disease Management</h2><p className="page-copy" style={{ fontSize: ".72rem" }}>Search across specialties and inspect source provenance.</p></div><ArrowRight color="#1f3c88" /></Link>
+          <Link href="/dashboard/diseases" className="card section-card" style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}><div><div className="eyebrow">Flagship module</div><h2 className="heading" style={{ fontSize: ".95rem", margin: "6px 0" }}>Explore Disease Management</h2><p className="page-copy" style={{ fontSize: ".72rem" }}>Search across care pillars and inspect source provenance.</p></div><ArrowRight color="#1f3c88" /></Link>
         </div>
       </div>
     </main>
