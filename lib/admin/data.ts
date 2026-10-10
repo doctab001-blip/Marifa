@@ -72,6 +72,7 @@ export type AdminActivity = {
   action: string;
   entity: string;
   occurredAt: string;
+  illustrative?: boolean;
 };
 
 export async function getAdminOverview() {
@@ -95,8 +96,9 @@ export async function getAdminOverview() {
     action: item.action,
     entity: item.entity_type.replaceAll("_", " "),
     occurredAt: item.occurred_at,
+    illustrative: false,
   }));
-  return { context, metrics, activities };
+  return { context, metrics, activities, usingPreview: false };
 }
 
 export type StaffMember = {
