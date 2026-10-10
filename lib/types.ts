@@ -68,7 +68,10 @@ export type DemoUser = {
   id: string;
   name: string;
   initials: string;
-  role: "MBBS / GP" | "Specialist" | "Consultant" | "Clinical Governance Lead";
+  role: string;
+  designation: string;
+  isAdmin: boolean;
+  primaryColor: string;
   specialty: string;
   organizationId: string;
   organizationName: string;

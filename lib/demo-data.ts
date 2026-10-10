@@ -5,6 +5,9 @@ export const demoUser: DemoUser = {
   name: "Dr. Tabassum",
   initials: "DT",
   role: "Specialist",
+  designation: "Specialist",
+  isAdmin: false,
+  primaryColor: "#1f3c88",
   specialty: "General Medicine",
   organizationId: "org_nour_demo",
   organizationName: "Nour Medical Centre — Demo"
@@ -15,6 +18,9 @@ export const governanceUser: DemoUser = {
   name: "Dr Sarah Alqahtani",
   initials: "SA",
   role: "Clinical Governance Lead",
+  designation: "Consultant",
+  isAdmin: false,
+  primaryColor: "#1f3c88",
   specialty: "Clinical Governance",
   organizationId: "org_nour_demo",
   organizationName: "Nour Medical Centre — Demo"

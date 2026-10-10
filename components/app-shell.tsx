@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { Bell, LogOut, Search } from "lucide-react";
+import { Bell, LogOut, Search, Settings2 } from "lucide-react";
 import { getCurrentViewer } from "@/lib/supabase/session";
 import { MobileNavigation, SidebarNavigation } from "@/components/app-navigation";
 
@@ -8,7 +8,7 @@ export async function AppShell({ children }: { children: React.ReactNode }) {
   const user = await getCurrentViewer();
   if (!user) redirect("/login");
   return (
-    <div className="app-shell">
+    <div className="app-shell" style={{ "--royal": user.primaryColor } as React.CSSProperties}>
       <aside className="sidebar" aria-label="Main navigation">
         <Link href="/dashboard" className="brand">
           <div className="brand-mark">M</div>
@@ -25,8 +25,15 @@ export async function AppShell({ children }: { children: React.ReactNode }) {
             <input name="q" aria-label="Search clinical knowledge" placeholder="Search clinical knowledge…" />
           </form>
           <div className="top-actions">
-            <Bell size={18} color="#667085" aria-label="Notifications" />
-            <div className="user-chip"><div className="avatar">{user.initials}</div><div><strong>{user.name}</strong><span>{user.role}</span></div></div>
+            <Link className="top-action-link" href="/dashboard/notifications" aria-label="Open notifications" title="Notifications"><Bell size={18} strokeWidth={1.7} /></Link>
+            {user.isAdmin && <Link className="top-action-link" href="/dashboard/admin/settings#profile" aria-label="Edit profile and appearance" title="Profile and appearance settings"><Settings2 size={18} strokeWidth={1.7} /></Link>}
+            {user.isAdmin ? (
+              <Link className="user-chip" href="/dashboard/admin/settings#profile" aria-label={`Edit profile for ${user.name}`} title="Edit profile">
+                <div className="avatar">{user.initials}</div><div><strong>{user.name}</strong><span>{user.designation} · {user.role}</span></div>
+              </Link>
+            ) : (
+              <div className="user-chip"><div className="avatar">{user.initials}</div><div><strong>{user.name}</strong><span>{user.designation}</span></div></div>
+            )}
             <form action="/api/logout" method="post"><button type="submit" className="button-secondary" aria-label="Sign out" title="Sign out"><LogOut size={15} /></button></form>
           </div>
         </header>

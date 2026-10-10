@@ -72,29 +72,31 @@ export type AdminActivity = {
   action: string;
   entity: string;
   occurredAt: string;
-  illustrative?: boolean;
 };
-
-const previewActivities: AdminActivity[] = [{
-  id: "demo-activity-1",
-  action: "Dr. Tabassum Akhtar approved Adult Sepsis Protocol v3.0",
-  entity: "Illustrative demo governance activity",
-  occurredAt: "2026-10-09T09:30:00+03:00",
-  illustrative: true,
-}];
-
-const previewMetrics: AdminMetric[] = [
-  { label: "Total Active Staff", value: 42, detail: "Illustrative demo value", tone: "blue" },
-  { label: "Guidelines Pending Review", value: 3, detail: "Illustrative demo value", tone: "amber" },
-  { label: "Overdue Competencies", value: 12, detail: "Illustrative demo value", tone: "red" },
-  { label: "Active Policies", value: 104, detail: "Illustrative demo value", tone: "green" },
-];
 
 export async function getAdminOverview() {
   const context = await requireOrganizationAdmin();
-  const metrics: AdminMetric[] = [...previewMetrics];
-  const activities: AdminActivity[] = [...previewActivities];
-  return { context, metrics, activities, usingPreview: true };
+  const supabase = await createSupabaseServerClient();
+  const [staffResult, reviewResult, activityResult] = await Promise.all([
+    supabase.from("organization_memberships").select("id", { count: "exact", head: true })
+      .eq("organization_id", context.organizationId).eq("account_status", "active"),
+    supabase.from("clinical_guidelines").select("id, guideline_versions!inner(id)")
+      .eq("organization_id", context.organizationId).eq("guideline_versions.status", "under_review"),
+    supabase.from("audit_events").select("id, action, entity_type, occurred_at")
+      .eq("organization_id", context.organizationId).order("occurred_at", { ascending: false }).limit(8),
+  ]);
+
+  const metrics: AdminMetric[] = [
+    { label: "Total Active Staff", value: staffResult.error ? 0 : staffResult.count ?? 0, detail: "Active organization members", tone: "blue" },
+    { label: "Guidelines Pending Review", value: reviewResult.error ? 0 : new Set((reviewResult.data ?? []).map((item) => item.id)).size, detail: "Awaiting governance review", tone: "amber" },
+  ];
+  const activities: AdminActivity[] = activityResult.error ? [] : (activityResult.data ?? []).map((item) => ({
+    id: item.id,
+    action: item.action,
+    entity: item.entity_type.replaceAll("_", " "),
+    occurredAt: item.occurred_at,
+  }));
+  return { context, metrics, activities };
 }
 
 export type StaffMember = {
@@ -106,16 +108,38 @@ export type StaffMember = {
   status: "Active" | "Inactive";
 };
 
-const previewStaff: StaffMember[] = [
-  { id: "demo-staff-1", name: "Tabassum Akhtar", professionalLevel: "Specialist", specialty: "Internal Medicine", systemRole: "Platform_Admin", status: "Active" },
-  { id: "demo-staff-2", name: "Sarah Al-Qahtani", professionalLevel: "Consultant", specialty: "Emergency Medicine", systemRole: "Hospital_Admin", status: "Active" },
-  { id: "demo-staff-3", name: "Omar Al-Salem", professionalLevel: "MBBS / GP", specialty: "Family Medicine", systemRole: "Editor", status: "Active" },
-  { id: "demo-staff-4", name: "Maha Al-Dossary", professionalLevel: "Specialist", specialty: "Paediatrics", systemRole: "Clinician", status: "Inactive" },
-];
-
 export async function getAdminStaff(): Promise<{ context: OrganizationAdminContext; staff: StaffMember[] }> {
   const context = await requireOrganizationAdmin();
-  return { context, staff: [...previewStaff] };
+  const supabase = await createSupabaseServerClient();
+  const { data, error } = await supabase
+    .from("organization_memberships")
+    .select("id, user_id, professional_level, account_status, profiles(display_name), membership_roles(roles(code,name))")
+    .eq("organization_id", context.organizationId)
+    .order("created_at", { ascending: true });
+  if (error || !data) return { context, staff: [] };
+
+  const roleLabels: Record<string, StaffMember["systemRole"]> = {
+    platform_admin: "Platform_Admin", hospital_admin: "Hospital_Admin", org_admin: "Hospital_Admin",
+    editor: "Editor", clinician: "Clinician",
+  };
+  const staff = (data as unknown as Array<{
+    id: string; user_id: string; professional_level: string | null; account_status: string;
+    profiles: { display_name: string } | { display_name: string }[] | null;
+    membership_roles: Array<{ roles: { code: string; name: string } | { code: string; name: string }[] | null }> | null;
+  }>).filter((member) => member.user_id !== context.userId).map((member) => {
+    const profile = Array.isArray(member.profiles) ? member.profiles[0] : member.profiles;
+    const assignedRole = member.membership_roles?.map((item) => Array.isArray(item.roles) ? item.roles[0] : item.roles).find(Boolean);
+    const level = member.professional_level?.replaceAll("_", " ") ?? "Not specified";
+    return {
+      id: member.id,
+      name: profile?.display_name ?? "Unnamed staff member",
+      professionalLevel: level.replace(/\b\w/g, (letter) => letter.toUpperCase()),
+      specialty: "Not specified",
+      systemRole: roleLabels[assignedRole?.code ?? ""] ?? "Clinician",
+      status: member.account_status === "active" ? "Active" as const : "Inactive" as const,
+    };
+  });
+  return { context, staff };
 }
 
 export type GovernanceItem = { id: string; title: string; specialty: string; status: string; updatedAt: string };
@@ -143,13 +167,20 @@ export async function getGovernanceQueue(): Promise<{ context: OrganizationAdmin
   };
 }
 
-export async function getOrganizationSettings() {
+export async function getAdminSettings() {
   const context = await requireOrganizationAdmin();
   const supabase = await createSupabaseServerClient();
-  const { data } = await supabase
-    .from("organization_settings")
-    .select("primary_color, locale, timezone")
-    .eq("organization_id", context.organizationId)
-    .maybeSingle();
-  return { context, settings: data ?? { primary_color: "#1F3C88", locale: "en-SA", timezone: "Asia/Riyadh" } };
+  const [profileResult, membershipResult, settingsResult] = await Promise.all([
+    supabase.from("profiles").select("display_name").eq("id", context.userId).maybeSingle(),
+    supabase.from("organization_memberships").select("professional_level").eq("organization_id", context.organizationId).eq("user_id", context.userId).eq("account_status", "active").maybeSingle(),
+    supabase.from("organization_settings").select("primary_color, locale, timezone").eq("organization_id", context.organizationId).maybeSingle(),
+  ]);
+  return {
+    context,
+    profile: {
+      displayName: profileResult.data?.display_name ?? "Marifa Administrator",
+      professionalLevel: membershipResult.data?.professional_level ?? "consultant",
+    },
+    settings: settingsResult.data ?? { primary_color: "#1f3c88", locale: "en-SA", timezone: "Asia/Riyadh" },
+  };
 }
