@@ -66,10 +66,9 @@ export function DiseaseDetailSections({ disease }: { disease: DiseaseDetail }) {
       </Section>
 
       <Section number={2} title="Presentation" icon={<ClipboardList size={19} strokeWidth={1.5} />}>
-        <div className="presentation-intro"><span className="presentation-intro-number">{String(disease.presentation.symptoms.length + disease.presentation.physicalSigns.length).padStart(2, "0")}</span><p><strong>What to recognise</strong><span>Review the reported symptoms alongside examination findings. Check the highlighted red flags before moving to the next step.</span></p></div>
         <div className="clinical-two-column presentation-observations">
-          <div className="presentation-observation"><div className="presentation-observation-heading"><h3>Symptoms to ask about</h3><span>{disease.presentation.symptoms.length} points</span></div><TextList items={disease.presentation.symptoms} /></div>
-          <div className="presentation-observation"><div className="presentation-observation-heading"><h3>Signs to look for</h3><span>{disease.presentation.physicalSigns.length} points</span></div><TextList items={disease.presentation.physicalSigns} /></div>
+          <div className="presentation-observation"><div className="presentation-observation-heading"><h3>Symptoms</h3></div><TextList items={disease.presentation.symptoms} /></div>
+          <div className="presentation-observation"><div className="presentation-observation-heading"><h3>Physical signs</h3></div><TextList items={disease.presentation.physicalSigns} /></div>
         </div>
         <div className="presentation-red-flags"><ClinicalWarning items={disease.presentation.redFlags} /></div>
       </Section>
