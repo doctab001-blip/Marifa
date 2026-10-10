@@ -1,5 +1,5 @@
 import { ShieldCheck } from "lucide-react";
-import { ModelOfCareDirectory } from "@/components/model-of-care-directory";
+import { DiseaseDirectoryClient } from "@/components/diseases/DiseaseDirectoryClient";
 import { getApprovedDiseaseGuidelines } from "@/lib/data/disease-guidelines";
 
 export default async function DiseaseDirectoryPage({ searchParams }: { searchParams: Promise<{ q?: string | string[] }> }) {
@@ -13,7 +13,7 @@ export default async function DiseaseDirectoryPage({ searchParams }: { searchPar
         <div>
           <p className="disease-kicker">Disease management</p>
           <h1>Clinical pathways, organised around care</h1>
-          <p>Find governed disease protocols across the six Saudi Model of Care pillars. Every visible record is current, approved or published, and schema-validated before rendering.</p>
+          <p>Find governed disease guidelines across the six Saudi Model of Care pillars. Every visible record is current, approved or published, and schema-validated before rendering.</p>
         </div>
         <div className="directory-governance-note">
           <ShieldCheck size={19} strokeWidth={1.5} aria-hidden="true" />
@@ -21,7 +21,7 @@ export default async function DiseaseDirectoryPage({ searchParams }: { searchPar
         </div>
       </header>
 
-      <ModelOfCareDirectory diseases={result.diseases} state={result.state} rejectedCount={result.rejectedCount} initialQuery={initialQuery} />
+      <DiseaseDirectoryClient diseases={result.diseases} state={result.state} rejectedCount={result.rejectedCount} initialQuery={initialQuery} />
     </main>
   );
 }

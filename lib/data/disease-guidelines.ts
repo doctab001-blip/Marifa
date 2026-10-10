@@ -3,9 +3,9 @@ import { DiseaseDetailSchema, type DiseaseDetail } from "@/lib/validations/disea
 import { isSupabaseConfigured } from "@/lib/supabase/config";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 
-export type DiseaseGuidelineSummary = Pick<DiseaseDetail, "id" | "title" | "specialty" | "authority" | "status" | "version" | "lastReviewed" | "pillar"> & { summary: string };
+export type DiseaseGuidelineSummary = Pick<DiseaseDetail, "id" | "title" | "specialty" | "authority" | "status" | "version" | "lastReviewed" | "pillar"> & { summary: string; sourceType?: string };
 type GuidelineVersionJoin = { content: unknown };
-type GuidelineRow = { id: string; guideline_versions: GuidelineVersionJoin | GuidelineVersionJoin[] };
+type GuidelineRow = { id: string; title: string; specialty: string | null; status: string; source_type: string; guideline_versions: GuidelineVersionJoin | GuidelineVersionJoin[] };
 
 export type DiseaseDirectoryResult = { diseases: DiseaseGuidelineSummary[]; state: "ready" | "unavailable"; rejectedCount: number };
 export type DiseaseDetailResult =
@@ -24,7 +24,7 @@ function isApproved(disease: DiseaseDetail) {
   return disease.status === "approved" || disease.status === "published";
 }
 
-function toSummary(disease: DiseaseDetail): DiseaseGuidelineSummary {
+function toSummary(disease: DiseaseDetail): Omit<DiseaseGuidelineSummary, "sourceType"> {
   return { id: disease.id, title: disease.title, specialty: disease.specialty, authority: disease.authority, status: disease.status, version: disease.version, lastReviewed: disease.lastReviewed, pillar: disease.pillar, summary: disease.pathophysiology.summary };
 }
 
@@ -34,7 +34,7 @@ export async function getApprovedDiseaseGuidelines(): Promise<DiseaseDirectoryRe
     const supabase = await createSupabaseServerClient();
     const { data, error } = await supabase
       .from("clinical_guidelines")
-      .select("id,guideline_versions!inner(content)")
+      .select("id,title,specialty,status,source_type,guideline_versions!inner(content)")
       .is("organization_id", null)
       .in("status", [...approvedStatuses])
       .eq("guideline_versions.is_current", true)
@@ -46,11 +46,11 @@ export async function getApprovedDiseaseGuidelines(): Promise<DiseaseDirectoryRe
     let rejectedCount = 0;
     for (const row of (data ?? []) as unknown as GuidelineRow[]) {
       const parsed = DiseaseDetailSchema.safeParse(currentContent(row));
-      if (!parsed.success || !isApproved(parsed.data) || parsed.data.id !== row.id) {
+      if (!parsed.success || !isApproved(parsed.data) || parsed.data.id !== row.id || row.status !== parsed.data.status || row.title !== parsed.data.title || row.specialty !== parsed.data.specialty) {
         rejectedCount += 1;
         continue;
       }
-      diseases.push(toSummary(parsed.data));
+      diseases.push({ ...toSummary(parsed.data), sourceType: row.source_type });
     }
     return { diseases, state: "ready", rejectedCount };
   } catch {
