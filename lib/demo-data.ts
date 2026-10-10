@@ -1,9 +1,9 @@
 import type { Competency, DemoUser, DiseaseTopic } from "@/lib/types";
 
 export const demoUser: DemoUser = {
-  id: "usr_demo_amina",
-  name: "Dr Amina Alharbi",
-  initials: "AA",
+  id: "usr_demo_tabassum",
+  name: "Dr. Tabassum",
+  initials: "DT",
   role: "Specialist",
   specialty: "General Medicine",
   organizationId: "org_nour_demo",

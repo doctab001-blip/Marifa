@@ -27,7 +27,7 @@ export default function LoginPage() {
           <form action="/api/demo-session" method="post">
             <button className="demo-account" type="submit" name="role" value="clinician">
               <span className="avatar"><BookOpenCheck size={17} /></span>
-              <span><strong>Clinician workspace</strong><span>Dr Amina Alharbi · Specialist · General Medicine</span></span>
+              <span><strong>Clinician workspace</strong><span>Dr. Tabassum · Specialist · General Medicine</span></span>
             </button>
             <button className="demo-account" type="submit" name="role" value="governance">
               <span className="avatar"><ShieldCheck size={17} /></span>
