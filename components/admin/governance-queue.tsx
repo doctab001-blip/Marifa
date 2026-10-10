@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import * as Dialog from "@radix-ui/react-dialog";
-import { Check, Eye, X, XCircle } from "lucide-react";
+import { Check, X, XCircle } from "lucide-react";
 import type { GovernanceItem } from "@/lib/admin/data";
 import { Button } from "@/components/ui/button";
 
@@ -17,7 +18,7 @@ export function GovernanceQueue({ items }: { items: GovernanceItem[] }) {
           <article className="card admin-queue-item" key={item.id}>
             <div className="admin-queue-copy"><span className={`admin-queue-status status-${item.status}`}>{item.status === "under_review" ? "Under review" : "Draft"}</span><h3>{item.title}</h3><p>{item.specialty} <span aria-hidden="true">·</span> Added {new Intl.DateTimeFormat("en-SA", { dateStyle: "medium", timeZone: "Asia/Riyadh" }).format(new Date(item.updatedAt))}</p></div>
             <div className="admin-queue-actions">
-              <Button onClick={() => setSelected({ action: "Review", item })}><Eye size={15} />Review</Button>
+              {item.status === "draft" ? <Link className="ui-button ui-button-secondary" href={`/dashboard/admin/guidelines/${encodeURIComponent(item.id)}`}>Edit draft</Link> : <Button onClick={() => setSelected({ action: "Review", item })}>Review</Button>}
               <Button variant="primary" onClick={() => setSelected({ action: "Approve", item })}><Check size={15} />Approve</Button>
               <Button variant="danger" onClick={() => setSelected({ action: "Reject", item })}><XCircle size={15} />Reject</Button>
             </div>

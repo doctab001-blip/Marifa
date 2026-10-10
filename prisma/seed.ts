@@ -7,6 +7,7 @@ import { DiseaseSeedBatchSchema, type DiseaseDetail } from "../lib/validations/d
 const batchPaths = [
   "data/seeds/batch_01_saudi_core.json",
   "data/seeds/batch_02_nhs_adapted.json",
+  "data/seeds/batch_04_textbook_sourced_drafts.json",
 ] as const;
 
 try {
@@ -50,6 +51,15 @@ async function loadBatches(): Promise<SeedRecord[]> {
     }),
   );
   const diseases = parsed.flat();
+  const textbookSourceRows = JSON.parse(await readFile(resolve("data/seeds/batch_04_textbook_sources.json"), "utf8")) as Array<{
+    id: string; textbook: string; publisher: string; publicationDate: string; publisherEditionPage: string;
+  }>;
+  const textbookSources = new Map(textbookSourceRows.map((row) => [row.id, {
+    sourceTitle: row.textbook,
+    sourceUrl: row.publisherEditionPage,
+    publicationDate: row.publicationDate,
+    sourceType: "curated-saudi-draft" as const,
+  }]));
   const ids = new Set<string>();
   const titles = new Set<string>();
   const records: SeedRecord[] = [];
@@ -57,7 +67,7 @@ async function loadBatches(): Promise<SeedRecord[]> {
     if (!uuidV4.test(disease.id)) throw new Error(`Expected a hardcoded UUIDv4 for ${disease.title}; got ${disease.id}`);
     if (ids.has(disease.id)) throw new Error(`Duplicate disease id: ${disease.id}`);
     if (titles.has(disease.title)) throw new Error(`Duplicate disease title: ${disease.title}`);
-    const source = sourceMetadata[disease.id];
+    const source = sourceMetadata[disease.id] ?? textbookSources.get(disease.id);
     if (!source) throw new Error(`Missing source metadata: ${disease.id}`);
     if (new URL(source.sourceUrl).protocol !== "https:") throw new Error(`Source URL must use HTTPS: ${disease.title}`);
     if (approvedStatuses.has(disease.status)) {
@@ -77,7 +87,8 @@ async function loadBatches(): Promise<SeedRecord[]> {
   return records;
 }
 
-function issuingOrganization(record: DiseaseDetail) {
+function issuingOrganization(record: DiseaseDetail, source: SourceMetadata) {
+  if (record.authority === "Textbook") return source.sourceTitle;
   return {
     MOH: "Saudi Ministry of Health",
     SHC: "Saudi Health Council",
@@ -173,7 +184,7 @@ async function seed(records: SeedRecord[]) {
       ? "System-seeded national baseline; provenance and approval metadata are recorded below."
       : "Schema-validated repository seed; draft pending local clinical governance review.",
     source_title: source.sourceTitle,
-    issuing_organization: issuingOrganization(disease),
+    issuing_organization: issuingOrganization(disease, source),
     source_url: source.sourceUrl,
     jurisdiction: "Saudi Arabia",
     publication_date: source.publicationDate,

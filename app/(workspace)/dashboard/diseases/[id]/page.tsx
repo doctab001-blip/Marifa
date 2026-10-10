@@ -48,6 +48,7 @@ export default async function DiseaseDetailPage({ params }: { params: Promise<{ 
       </header>
 
       <div className="clinical-governance-notice" role="note"><strong>Clinical governance:</strong> Verify patient-specific factors, local formulary and pathways. Escalate emergencies immediately.</div>
+      {disease.clinicalScenario && <section className="clinical-scenario-card" aria-labelledby="clinical-scenario-title"><p className="disease-kicker">Case scenario</p><h2 id="clinical-scenario-title">Start with the patient</h2><p>{disease.clinicalScenario}</p></section>}
       <DiseaseDetailSections disease={disease} />
     </main>
   );

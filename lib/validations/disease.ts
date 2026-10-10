@@ -4,7 +4,7 @@ const nonEmptyText = z.string().trim().min(1);
 const nonEmptyTextArray = z.array(nonEmptyText).min(1);
 const isoDate = z.iso.date();
 
-export const DiseaseAuthoritySchema = z.enum(["MOH", "SHC", "PHA", "NICE"]);
+export const DiseaseAuthoritySchema = z.enum(["MOH", "SHC", "PHA", "NICE", "Textbook"]);
 
 export const DiseaseStatusSchema = z.enum([
   "draft",
@@ -64,6 +64,7 @@ export const DiseaseDetailSchema = z
     version: nonEmptyText,
     lastReviewed: isoDate,
     pillar: ModelOfCarePillarSchema,
+    clinicalScenario: nonEmptyText.optional(),
     pathophysiology: z
       .object({
         summary: nonEmptyText,

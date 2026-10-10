@@ -4,6 +4,7 @@ import { cache } from "react";
 import { redirect } from "next/navigation";
 import { isSupabaseConfigured } from "@/lib/supabase/config";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { DiseaseDetailSchema } from "@/lib/validations/disease";
 
 export type OrganizationAdminContext = {
   userId: string;
@@ -166,6 +167,37 @@ export async function getGovernanceQueue(): Promise<{ context: OrganizationAdmin
       status: item.status,
       updatedAt: item.created_at,
     })),
+  };
+}
+
+export async function getDraftGuideline(id: string) {
+  const context = await requireOrganizationAdmin();
+  const supabase = await createSupabaseServerClient();
+  const { data, error } = await supabase
+    .from("clinical_guidelines")
+    .select("id,title,specialty,status,guideline_versions!inner(id,version,status,content,source_title,source_url,publication_date,review_date,is_current)")
+    .eq("id", id)
+    .eq("organization_id", context.organizationId)
+    .eq("status", "draft")
+    .eq("guideline_versions.status", "draft")
+    .eq("guideline_versions.is_current", true)
+    .maybeSingle();
+
+  if (error || !data) return { state: "not-found" as const };
+  const version = Array.isArray(data.guideline_versions) ? data.guideline_versions[0] : data.guideline_versions;
+  if (!version) return { state: "not-found" as const };
+  const parsed = DiseaseDetailSchema.safeParse(version.content);
+  if (!parsed.success) return { state: "invalid" as const, title: data.title, issues: parsed.error.issues.map((issue) => issue.message) };
+
+  return {
+    state: "ready" as const,
+    title: data.title,
+    specialty: data.specialty ?? "Unassigned",
+    disease: parsed.data,
+    sourceTitle: version.source_title,
+    sourceUrl: version.source_url,
+    publicationDate: version.publication_date,
+    reviewDate: version.review_date,
   };
 }
 
