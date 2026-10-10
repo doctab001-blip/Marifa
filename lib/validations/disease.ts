@@ -65,6 +65,7 @@ export const DiseaseDetailSchema = z
     lastReviewed: isoDate,
     pillar: ModelOfCarePillarSchema,
     clinicalScenario: nonEmptyText.optional(),
+    clinicalReviewStatus: z.literal("pending").optional(),
     pathophysiology: z
       .object({
         summary: nonEmptyText,

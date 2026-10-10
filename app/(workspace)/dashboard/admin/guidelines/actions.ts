@@ -22,26 +22,26 @@ export async function saveDraftGuideline(formData: FormData) {
   }
 
   const parsed = DiseaseDetailSchema.safeParse(input);
-  if (!parsed.success || parsed.data.id !== id || parsed.data.status !== "draft") {
+  if (!parsed.success || parsed.data.id !== id || !["draft", "published"].includes(parsed.data.status)) {
     redirect(`${editPath}?error=invalid_content`);
   }
 
   const context = await requireOrganizationAdmin();
   const supabase = await createSupabaseServerClient();
-  const { data: guideline, error: guidelineError } = await supabase
-    .from("clinical_guidelines")
-    .select("id")
-    .eq("id", id)
-    .eq("organization_id", context.organizationId)
-    .eq("status", "draft")
-    .maybeSingle();
+  const isLive = parsed.data.status === "published";
+  if (isLive && (context.roleCode !== "platform_admin" || parsed.data.clinicalReviewStatus !== "pending")) redirect("/dashboard/admin/governance?error=not_editable");
+  let guidelineQuery = supabase.from("clinical_guidelines").select("id").eq("id", id).eq("status", parsed.data.status);
+  guidelineQuery = isLive
+    ? guidelineQuery.is("organization_id", null).eq("is_shared_reference", true).eq("source_type", "curated-textbook-topic")
+    : guidelineQuery.eq("organization_id", context.organizationId);
+  const { data: guideline, error: guidelineError } = await guidelineQuery.maybeSingle();
   if (guidelineError || !guideline) redirect("/dashboard/admin/governance?error=not_editable");
 
   const { data: version, error: versionError } = await supabase
     .from("guideline_versions")
     .select("id")
     .eq("guideline_id", id)
-    .eq("status", "draft")
+    .eq("status", parsed.data.status)
     .eq("is_current", true)
     .maybeSingle();
   if (versionError || !version) redirect(`${editPath}?error=version_not_editable`);
@@ -50,22 +50,24 @@ export async function saveDraftGuideline(formData: FormData) {
     .from("guideline_versions")
     .update({
       content: parsed.data,
-      change_summary: "Draft content updated in the Marifa live editor; clinical and local governance review remains pending.",
+      change_summary: isLive ? "Published topic edited in the Marifa live editor; local clinical validation remains pending." : "Draft content updated in the Marifa live editor; clinical and local governance review remains pending.",
     })
     .eq("id", version.id)
     .eq("guideline_id", id)
-    .eq("status", "draft");
+    .eq("status", parsed.data.status);
   if (contentError) redirect(`${editPath}?error=save_failed`);
 
-  const { error: metadataError } = await supabase
-    .from("clinical_guidelines")
-    .update({ title: parsed.data.title, specialty: parsed.data.specialty })
-    .eq("id", id)
-    .eq("organization_id", context.organizationId)
-    .eq("status", "draft");
+  let metadataQuery = supabase.from("clinical_guidelines").update({ title: parsed.data.title, specialty: parsed.data.specialty })
+    .eq("id", id).eq("status", parsed.data.status);
+  metadataQuery = isLive
+    ? metadataQuery.is("organization_id", null).eq("is_shared_reference", true).eq("source_type", "curated-textbook-topic")
+    : metadataQuery.eq("organization_id", context.organizationId);
+  const { error: metadataError } = await metadataQuery;
   if (metadataError) redirect(`${editPath}?error=metadata_save_failed`);
 
   revalidatePath(editPath);
   revalidatePath("/dashboard/admin/governance");
+  revalidatePath("/dashboard/diseases");
+  revalidatePath(`/dashboard/diseases/${encodeURIComponent(id)}`);
   redirect(`${editPath}?saved=1`);
 }

@@ -20,7 +20,7 @@ type SourceMetadata = {
   sourceTitle: string;
   sourceUrl: string;
   publicationDate: string;
-  sourceType: "official-saudi-guideline" | "curated-saudi-draft" | "nice-adapted-guideline";
+  sourceType: "official-saudi-guideline" | "curated-saudi-draft" | "curated-textbook-topic" | "nice-adapted-guideline";
   approval?: { approvedBy: string; approvedAt: string; publishedAt?: string };
   systemSeededNationalBaseline?: boolean;
 };
@@ -58,7 +58,8 @@ async function loadBatches(): Promise<SeedRecord[]> {
     sourceTitle: row.textbook,
     sourceUrl: row.publisherEditionPage,
     publicationDate: row.publicationDate,
-    sourceType: "curated-saudi-draft" as const,
+    sourceType: "curated-textbook-topic" as const,
+    approval: { approvedBy: "310a1d7b-646d-4adb-b822-8d79453237cf", approvedAt: "2026-10-10T17:00:00Z", publishedAt: "2026-10-10T17:00:00Z" },
   }]));
   const ids = new Set<string>();
   const titles = new Set<string>();
@@ -182,7 +183,7 @@ async function seed(records: SeedRecord[]) {
     is_current: true,
     change_summary: source.systemSeededNationalBaseline
       ? "System-seeded national baseline; provenance and approval metadata are recorded below."
-      : "Schema-validated repository seed; draft pending local clinical governance review.",
+      : disease.clinicalReviewStatus === "pending" ? "Published at platform administrator request for live user review; local clinical validation remains pending." : "Schema-validated repository seed; draft pending local clinical governance review.",
     source_title: source.sourceTitle,
     issuing_organization: issuingOrganization(disease, source),
     source_url: source.sourceUrl,

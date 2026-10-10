@@ -43,12 +43,11 @@ export default async function DiseaseDetailPage({ params }: { params: Promise<{ 
         <dl className="disease-source-card">
           <div><dt><Building2 size={14} strokeWidth={1.5} />Source authority</dt><dd>{disease.authority}</dd></div>
           <div><dt><FileCheck2 size={14} strokeWidth={1.5} />Version</dt><dd>{disease.version}</dd></div>
-          <div><dt><CalendarDays size={14} strokeWidth={1.5} />Last reviewed</dt><dd>{formatDate(disease.lastReviewed)}</dd></div>
+          <div><dt><CalendarDays size={14} strokeWidth={1.5} />{disease.clinicalReviewStatus === "pending" ? "Prepared" : "Last reviewed"}</dt><dd>{formatDate(disease.lastReviewed)}</dd></div>
         </dl>
       </header>
 
-      <div className="clinical-governance-notice" role="note"><strong>Clinical governance:</strong> Verify patient-specific factors, local formulary and pathways. Escalate emergencies immediately.</div>
-      {disease.clinicalScenario && <section className="clinical-scenario-card" aria-labelledby="clinical-scenario-title"><p className="disease-kicker">Case scenario</p><h2 id="clinical-scenario-title">Start with the patient</h2><p>{disease.clinicalScenario}</p></section>}
+      <div className="clinical-governance-notice" role="note"><strong>{disease.clinicalReviewStatus === "pending" ? "Educational topic · clinical review pending:" : "Clinical governance:"}</strong> {disease.clinicalReviewStatus === "pending" ? "This is an original educational synthesis based on the cited textbook edition. Full chapter and local clinical verification are pending. It is not an approved local clinical protocol; check current Saudi/local pathways before clinical use." : "Verify patient-specific factors, local formulary and pathways. Escalate emergencies immediately."}</div>
       <DiseaseDetailSections disease={disease} />
     </main>
   );
