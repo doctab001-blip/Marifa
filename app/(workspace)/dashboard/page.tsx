@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Link from "next/link";
 import { Activity, ArrowRight, Award, BookMarked, CalendarClock, ChevronRight, ClipboardCheck, FileText, Search, Stethoscope, TriangleAlert } from "lucide-react";
 import { announcements, competencies } from "@/lib/demo-data";
@@ -7,7 +8,7 @@ import { getCurrentViewer } from "@/lib/supabase/session";
 
 export default async function DashboardPage() {
   const completed = competencies.filter((item) => item.status === "completed").length;
-  const [diseases, viewer] = await Promise.all([getDiseaseTopics(), getCurrentViewer()]);
+  const viewer = await getCurrentViewer();
   const firstName = viewer?.name.split(/\s+/).slice(0, 2).join(" ") ?? "Clinician";
   return (
     <main className="page">
@@ -27,8 +28,7 @@ export default async function DashboardPage() {
       <div className="clinical-grid" style={{ marginTop: 18 }}>
         <div className="grid">
           <section className="card section-card">
-            <div className="section-head"><h2>Recently updated clinical topics</h2><Link className="section-link" href="/dashboard/diseases">View directory</Link></div>
-            {diseases.map((disease) => <Link href={`/diseases/${disease.slug}`} className="topic-row" key={disease.id}><div className="topic-icon"><Stethoscope size={17} /></div><div className="topic-main"><strong>{disease.name}</strong><p>{disease.summary}</p></div><div className="topic-meta"><span className="status status-demo">Demo</span></div><ChevronRight size={15} color="#98a2b3" /></Link>)}
+            <Suspense fallback={<RecentTopicsFallback />}><RecentTopics /></Suspense>
           </section>
           <section className="card section-card">
             <div className="section-head"><h2>Important hospital updates</h2><span className="section-link">Demo feed</span></div>
@@ -45,4 +45,19 @@ export default async function DashboardPage() {
       </div>
     </main>
   );
+}
+
+async function RecentTopics() {
+  const diseases = await getDiseaseTopics();
+  return <>
+    <div className="section-head"><h2>Recently updated clinical topics</h2><Link className="section-link" href="/dashboard/diseases">View directory</Link></div>
+    {diseases.map((disease) => <Link href={`/diseases/${disease.slug}`} className="topic-row" key={disease.id}><div className="topic-icon"><Stethoscope size={17} /></div><div className="topic-main"><strong>{disease.name}</strong><p>{disease.summary}</p></div><div className="topic-meta"><span className="status status-demo">Demo</span></div><ChevronRight size={15} color="#98a2b3" /></Link>)}
+  </>;
+}
+
+function RecentTopicsFallback() {
+  return <>
+    <div className="section-head"><h2>Recently updated clinical topics</h2><span className="section-link">Loading topics…</span></div>
+    <div className="topic-row" aria-busy="true"><div className="topic-main"><strong>Loading clinical topics</strong><p>The dashboard is ready while the topic list loads.</p></div></div>
+  </>;
 }

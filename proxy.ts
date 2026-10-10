@@ -17,7 +17,9 @@ export async function proxy(request: NextRequest) {
       }
     }
   });
-  await supabase.auth.getUser();
+  // Verify the access token locally when the project uses asymmetric signing.
+  // getUser() calls the Auth server on every navigation and static-data request.
+  await supabase.auth.getClaims();
   return response;
 }
 
