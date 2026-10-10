@@ -1,13 +1,13 @@
-import { ClipboardList, Settings2, ShieldCheck, UsersRound } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import { AdminSubNavigation } from "@/components/admin/admin-sub-navigation";
 import { requireOrganizationAdmin } from "@/lib/admin/data";
 
 const links = [
-  { href: "/dashboard/admin", label: "Overview", icon: ClipboardList },
-  { href: "/dashboard/admin/staff", label: "Staff Directory", icon: UsersRound },
-  { href: "/dashboard/admin/governance", label: "Governance Queue", icon: ShieldCheck },
-  { href: "/dashboard/admin/settings", label: "Settings", icon: Settings2 },
-];
+  { href: "/dashboard/admin", label: "Overview", icon: "overview" },
+  { href: "/dashboard/admin/staff", label: "Staff Directory", icon: "staff" },
+  { href: "/dashboard/admin/governance", label: "Governance Queue", icon: "governance" },
+  { href: "/dashboard/admin/settings", label: "Settings", icon: "settings" },
+] as const;
 
 export default async function AdministrationLayout({ children }: { children: React.ReactNode }) {
   const { organizationName } = await requireOrganizationAdmin();
