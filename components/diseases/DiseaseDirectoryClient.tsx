@@ -70,11 +70,11 @@ export function DiseaseDirectoryClient({
         </div>
         <div className="care-pillar-tabs" role="group" aria-label="Filter by care pillar">
           <button type="button" className={`care-pillar-tab ${activePillar === "all" ? "is-active" : ""}`} onClick={() => setActivePillar("all")} aria-pressed={activePillar === "all"}>
-            All Categories
+            All Categories <span className="care-pillar-tab-count">{diseases.length}</span>
           </button>
           {pillars.map(({ id, icon: Icon }) => (
             <button key={id} type="button" className={`care-pillar-tab ${activePillar === id ? "is-active" : ""}`} onClick={() => setActivePillar(activePillar === id ? "all" : id)} aria-pressed={activePillar === id}>
-              <Icon size={16} aria-hidden="true" />{id}
+              <Icon size={16} aria-hidden="true" />{id} <span className="care-pillar-tab-count">{diseases.filter((disease) => disease.pillar === id).length}</span>
             </button>
           ))}
         </div>
