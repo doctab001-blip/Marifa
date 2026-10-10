@@ -10,12 +10,14 @@ function readableSourceType(sourceType: string) {
 }
 
 export function DiseaseCard({ disease }: { disease: DiseaseGuidelineSummary }) {
-  const approved = disease.status === "approved" || disease.status === "published";
+  const reviewPending = disease.clinicalReviewStatus === "pending";
+  const reviewRejected = disease.clinicalReviewStatus === "rejected";
+  const approved = !reviewPending && !reviewRejected && (disease.status === "approved" || disease.status === "published");
   const draft = disease.status === "draft";
-  const statusLabel = approved ? "Approved" : draft ? "Draft" : disease.status.replaceAll("_", " ");
+  const statusLabel = reviewPending ? "Clinical review pending" : reviewRejected ? "Clinical review rejected" : approved ? "Approved" : draft ? "Draft" : disease.status.replaceAll("_", " ");
 
   return (
-    <Link href={`/dashboard/diseases/${disease.id}`} className="disease-card">
+    <Link href={`/dashboard/diseases/${disease.id}`} className={`disease-card${disease.pillar === "Urgent Care" ? " is-urgent" : ""}`}>
       <div className="disease-card-top">
         <span className="disease-pillar-label">{disease.pillar}</span>
         <span className={`disease-status-badge ${approved ? "is-approved" : draft ? "is-draft" : ""}`}>
@@ -25,8 +27,8 @@ export function DiseaseCard({ disease }: { disease: DiseaseGuidelineSummary }) {
       <div className="disease-card-copy">
         <h3>{disease.title}</h3>
         <div className="disease-speciality-badges" aria-label="Medical specialities">
-          <span className="disease-speciality-badge">{disease.speciality}</span>
-          {disease.subSpecialities.map((speciality) => <span className="disease-sub-speciality-badge" key={speciality}>{speciality}</span>)}
+          <span className="disease-speciality-badge">{disease.speciality ?? disease.specialty}</span>
+          {(disease.subSpecialities ?? []).map((speciality) => <span className="disease-sub-speciality-badge" key={speciality}>{speciality}</span>)}
         </div>
       </div>
       <div className="disease-card-footer">

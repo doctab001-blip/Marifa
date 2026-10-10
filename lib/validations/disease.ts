@@ -4,7 +4,7 @@ const nonEmptyText = z.string().trim().min(1);
 const nonEmptyTextArray = z.array(nonEmptyText).min(1);
 const isoDate = z.iso.date();
 
-export const DiseaseAuthoritySchema = z.enum(["MOH", "SHC", "PHA", "NICE"]);
+export const DiseaseAuthoritySchema = z.enum(["MOH", "SHC", "PHA", "NICE", "Textbook"]);
 
 export const DiseaseStatusSchema = z.enum([
   "draft",
@@ -26,7 +26,9 @@ export const ModelOfCarePillarSchema = z.enum([
 
 export const InvestigationSchema = z
   .object({
+    tier: z.enum(["laboratory", "firstLineImaging", "advancedImaging", "specializedAdjunctive"]),
     testName: nonEmptyText,
+    modalityTarget: nonEmptyText,
     targetCondition: nonEmptyText,
     expectedFinding: nonEmptyText,
     clinicalRationale: nonEmptyText,
@@ -50,6 +52,21 @@ export const ClinicalManagementStepSchema = z
   })
   .strict();
 
+export const MedicationRegimenSchema = z.object({
+  indication: nonEmptyText,
+  patientGroup: nonEmptyText,
+  genericName: nonEmptyText,
+  dose: nonEmptyText,
+  route: nonEmptyText,
+  frequency: nonEmptyText,
+  duration: nonEmptyText,
+  adjustments: nonEmptyTextArray,
+  monitoring: nonEmptyTextArray,
+  sourceTitle: nonEmptyText,
+  sourceUrl: z.url(),
+  sourceEdition: nonEmptyText,
+}).strict();
+
 /**
  * Canonical six-tier disease-management payload stored in guideline_versions.content.
  * Every nested object is strict so ingestion fails on misspelled or undocumented keys.
@@ -62,6 +79,7 @@ export const DiseaseDetailSchema = z
     speciality: nonEmptyText.optional(),
     sub_specialities: nonEmptyTextArray.optional(),
     authority: DiseaseAuthoritySchema,
+    clinicalReviewStatus: z.enum(["pending", "approved", "rejected"]).optional(),
     status: DiseaseStatusSchema,
     version: nonEmptyText,
     lastReviewed: isoDate,
@@ -70,6 +88,11 @@ export const DiseaseDetailSchema = z
       .object({
         summary: nonEmptyText,
         keyMechanisms: nonEmptyTextArray,
+        references: z.array(z.object({
+          title: nonEmptyText,
+          edition: nonEmptyText,
+          url: z.url(),
+        }).strict()).optional(),
       })
       .strict(),
     presentation: z
@@ -96,6 +119,11 @@ export const DiseaseDetailSchema = z
       })
       .strict(),
     clinicalManagement: z.array(ClinicalManagementStepSchema).min(1),
+    medicationPlan: z.object({
+      status: z.enum(["source-verified", "no-drug-indicated", "local-protocol-required"]),
+      regimens: z.array(MedicationRegimenSchema),
+      note: nonEmptyText,
+    }).strict().optional(),
     nonClinicalManagement: z
       .object({
         patientEducation: nonEmptyTextArray,

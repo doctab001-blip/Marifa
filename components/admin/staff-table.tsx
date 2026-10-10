@@ -1,4 +1,4 @@
-import { UserPlus } from "lucide-react";
+import { UserPlus, UsersRound } from "lucide-react";
 import type { StaffMember } from "@/lib/admin/data";
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -7,13 +7,13 @@ export function StaffTable({ staff }: { staff: StaffMember[] }) {
   return (
     <>
       <div className="staff-toolbar staff-toolbar-simple">
-        <p className="admin-preview-note">Illustrative staff entries for the selected organization.</p>
+        <p className="admin-preview-note">Staff members in your organization.</p>
         <Button variant="primary" type="button"><UserPlus size={16} strokeWidth={1.5} aria-hidden="true" />Invite Staff Member</Button>
       </div>
       <div className="card admin-table-card">
         <div className="admin-table-scroll">
           <Table>
-            <caption className="staff-table-caption">Illustrative staff directory</caption>
+            <caption className="staff-table-caption">Organization staff directory</caption>
             <TableHeader>
               <TableRow>
                 <TableHead>Name</TableHead>
@@ -24,7 +24,9 @@ export function StaffTable({ staff }: { staff: StaffMember[] }) {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {staff.map((member) => (
+              {staff.length === 0 ? (
+                <TableRow><TableCell colSpan={5}><div className="admin-empty staff-empty"><UsersRound size={30} strokeWidth={1.5} aria-hidden="true" /><p>No additional staff members found. Click &apos;Invite Staff Member&apos; to grow your team.</p></div></TableCell></TableRow>
+              ) : staff.map((member) => (
                 <TableRow key={member.id}>
                   <TableCell><strong className="staff-name">{member.name}</strong></TableCell>
                   <TableCell>{member.professionalLevel}</TableCell>

@@ -4,7 +4,7 @@ import { isSupabaseConfigured } from "@/lib/supabase/config";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { hasMedicalSpeciality, inferMedicalSpecialityTags } from "@/lib/medical-specialities";
 
-export type DiseaseGuidelineSummary = Pick<DiseaseDetail, "id" | "title" | "specialty" | "authority" | "status" | "version" | "lastReviewed" | "pillar"> & { summary: string; sourceType?: string; speciality: string; subSpecialities: string[] };
+export type DiseaseGuidelineSummary = Pick<DiseaseDetail, "id" | "title" | "specialty" | "authority" | "status" | "version" | "lastReviewed" | "pillar" | "clinicalReviewStatus"> & { summary: string; sourceType?: string; speciality?: string; subSpecialities?: string[] };
 type GuidelineVersionJoin = { content: unknown };
 type GuidelineRow = { id: string; title: string; specialty: string | null; speciality_id?: string | null; speciality?: { name: string } | { name: string }[] | null; sub_specialities?: string[] | null; status: string; source_type: string; guideline_versions: GuidelineVersionJoin | GuidelineVersionJoin[] };
 
@@ -29,7 +29,7 @@ function toSummary(disease: DiseaseDetail, row: GuidelineRow): Omit<DiseaseGuide
   const inferred = inferMedicalSpecialityTags(disease.specialty);
   const catalogSpeciality = Array.isArray(row.speciality) ? row.speciality[0]?.name : row.speciality?.name;
   const speciality = catalogSpeciality ?? disease.speciality ?? inferred[0] ?? disease.specialty;
-  return { id: disease.id, title: disease.title, specialty: disease.specialty, speciality, subSpecialities: disease.sub_specialities ?? row.sub_specialities ?? inferred.filter((tag) => tag !== speciality), authority: disease.authority, status: disease.status, version: disease.version, lastReviewed: disease.lastReviewed, pillar: disease.pillar, summary: disease.pathophysiology.summary };
+  return { id: disease.id, title: disease.title, specialty: disease.specialty, speciality, subSpecialities: disease.sub_specialities ?? row.sub_specialities ?? inferred.filter((tag) => tag !== speciality), authority: disease.authority, clinicalReviewStatus: disease.clinicalReviewStatus, status: disease.status, version: disease.version, lastReviewed: disease.lastReviewed, pillar: disease.pillar, summary: disease.pathophysiology.summary };
 }
 
 export async function getApprovedDiseaseGuidelines(filters: { speciality?: string; carePillar?: string } = {}): Promise<DiseaseDirectoryResult> {
@@ -55,7 +55,7 @@ export async function getApprovedDiseaseGuidelines(filters: { speciality?: strin
         continue;
       }
       const summary = toSummary(parsed.data, row);
-      if (filters.speciality && ![summary.speciality, ...summary.subSpecialities].some((tag) => hasMedicalSpeciality(tag, filters.speciality!))) continue;
+      if (filters.speciality && ![summary.speciality ?? summary.specialty, ...(summary.subSpecialities ?? [])].some((tag) => hasMedicalSpeciality(tag, filters.speciality!))) continue;
       if (filters.carePillar && parsed.data.pillar !== filters.carePillar) continue;
       diseases.push({ ...summary, sourceType: row.source_type });
     }

@@ -1,9 +1,8 @@
 "use client";
 
-import Link from "next/link";
-import { ArrowRight, Baby, CalendarCheck, HeartHandshake, HeartPulse, Search, ShieldCheck, Siren, X } from "lucide-react";
+import { Baby, CalendarCheck, HeartHandshake, HeartPulse, Search, ShieldCheck, Siren, X } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
-import { ApprovalStatusBadge } from "@/components/approval-status-badge";
+import { DiseaseCard } from "@/components/diseases/DiseaseCard";
 import type { DiseaseDirectoryResult, DiseaseGuidelineSummary } from "@/lib/data/disease-guidelines";
 import type { DiseaseDetail } from "@/lib/validations/disease";
 
@@ -27,11 +26,6 @@ export const carePillars: Array<{ id: Pillar; title: Pillar; description: string
   { id: "Safe Birth", title: "Safe Birth", description: "Maternal and newborn care", icon: "baby" },
   { id: "Palliative Care", title: "Palliative Care", description: "Comfort, dignity and support", icon: "heart-handshake" },
 ];
-
-function statusLabel(status: DiseaseGuidelineSummary["status"]) {
-  if (status === "under_review") return "Under review" as const;
-  return `${status.charAt(0).toUpperCase()}${status.slice(1)}` as "Approved" | "Published" | "Draft" | "Superseded" | "Archived";
-}
 
 export function ModelOfCareDirectory({ diseases, state, rejectedCount = 0, initialQuery = "" }: {
   diseases: DiseaseGuidelineSummary[];
@@ -79,7 +73,9 @@ export function ModelOfCareDirectory({ diseases, state, rejectedCount = 0, initi
               <button className={`care-pillar-card ${isActive ? "is-active" : ""}`} type="button" key={id} onClick={() => setActivePillar(isActive ? "all" : id)} aria-pressed={isActive}>
                 <span className="care-pillar-icon"><Icon size={21} strokeWidth={1.5} /></span>
                 <span className="care-pillar-copy"><strong>{title}</strong><small>{description}</small></span>
-                <span className="care-pillar-count">{diseases.filter((disease) => disease.pillar === id).length}</span>
+                <span className="care-pillar-count" aria-label={`${diseases.filter((disease) => disease.pillar === id).length} guidelines`}>
+                  {diseases.filter((disease) => disease.pillar === id).length}
+                </span>
               </button>
             );
           })}
@@ -92,13 +88,7 @@ export function ModelOfCareDirectory({ diseases, state, rejectedCount = 0, initi
           <p>{filteredDiseases.length} {filteredDiseases.length === 1 ? "protocol" : "protocols"}</p>
         </div>
         {filteredDiseases.length > 0 && <div className="disease-card-grid">
-          {filteredDiseases.map((disease) => (
-            <Link href={`/dashboard/diseases/${disease.id}`} className="disease-card" key={disease.id}>
-              <div className="disease-card-top"><span>{disease.pillar}</span><ApprovalStatusBadge status={statusLabel(disease.status)} /></div>
-              <div><h3>{disease.title}</h3><p>{disease.summary}</p></div>
-              <div className="disease-card-footer"><span>{disease.authority} · {disease.specialty}</span><span>View protocol <ArrowRight size={14} strokeWidth={1.5} /></span></div>
-            </Link>
-          ))}
+          {filteredDiseases.map((disease) => <DiseaseCard key={disease.id} disease={disease} />)}
         </div>}
         {filteredDiseases.length === 0 && (
           <div className="directory-empty card">

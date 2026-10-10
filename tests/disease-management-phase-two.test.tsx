@@ -3,14 +3,21 @@ import { describe, expect, it, vi } from "vitest";
 import { ClinicalWarning } from "@/components/clinical-warning";
 import { ModelOfCareDirectory } from "@/components/model-of-care-directory";
 import { PathwaySequence } from "@/components/pathway-sequence";
+import { DiseaseCard } from "@/components/diseases/DiseaseCard";
 import type { DiseaseGuidelineSummary } from "@/lib/data/disease-guidelines";
 
 const diseases: DiseaseGuidelineSummary[] = [
-  { id: "a1010000-0000-4000-8000-000000000001", title: "Acute Severe Asthma Exacerbation (Adult)", specialty: "Emergency Medicine", authority: "MOH", status: "approved", version: "1.0", lastReviewed: "2026-09-01", pillar: "Urgent Care", summary: "Acute airflow obstruction requiring urgent assessment." },
-  { id: "a1010000-0000-4000-8000-000000000008", title: "Adult Periodic Health Examination", specialty: "Preventive Medicine", authority: "PHA", status: "published", version: "1.0", lastReviewed: "2026-09-01", pillar: "Keep Well", summary: "Risk-based preventive screening for adults." },
+  { id: "a1010000-0000-4000-8000-000000000001", title: "Acute Severe Asthma Exacerbation (Adult)", specialty: "Emergency Medicine", speciality: "Emergency Medicine", subSpecialities: [], authority: "MOH", status: "approved", version: "1.0", lastReviewed: "2026-09-01", pillar: "Urgent Care", summary: "Acute airflow obstruction requiring urgent assessment." },
+  { id: "a1010000-0000-4000-8000-000000000008", title: "Adult Periodic Health Examination", specialty: "Preventive Medicine", speciality: "Preventive Medicine", subSpecialities: [], authority: "PHA", status: "published", version: "1.0", lastReviewed: "2026-09-01", pillar: "Keep Well", summary: "Risk-based preventive screening for adults." },
 ];
 
 describe("Disease management UI", () => {
+  it("shows saved textbook scenarios without claiming clinical approval", () => {
+    render(<DiseaseCard disease={{ ...diseases[0], authority: "Textbook", status: "published", clinicalReviewStatus: "pending" }} />);
+    expect(screen.getByText("Clinical review pending")).toBeInTheDocument();
+    expect(screen.getByText("Textbook")).toBeInTheDocument();
+    expect(screen.queryByText("Approved")).not.toBeInTheDocument();
+  });
   it("debounces directory search before updating results", () => {
     vi.useFakeTimers();
     render(<ModelOfCareDirectory diseases={diseases} state="ready" />);

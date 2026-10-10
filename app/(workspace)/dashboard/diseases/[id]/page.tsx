@@ -30,7 +30,8 @@ export default async function DiseaseDetailPage({ params }: { params: Promise<{ 
   if (result.state === "unavailable") return <ErrorState />;
 
   const disease = result.disease;
-  const approvalLabel = disease.status === "published" ? "Published" : "Approved";
+  const reviewIncomplete = disease.clinicalReviewStatus === "pending" || disease.clinicalReviewStatus === "rejected";
+  const approvalLabel = reviewIncomplete ? "Under review" : disease.status === "published" ? "Published" : "Approved";
   return (
     <main className="page disease-detail-page">
       <Link href="/dashboard/diseases" className="disease-back-link"><ArrowLeft size={15} strokeWidth={1.5} />Back to disease directory</Link>
@@ -39,7 +40,6 @@ export default async function DiseaseDetailPage({ params }: { params: Promise<{ 
         <div className="disease-profile-copy">
           <div className="disease-profile-labels"><span>{disease.pillar}</span><ApprovalStatusBadge status={approvalLabel} /></div>
           <h1>{disease.title}</h1>
-          <p>{disease.pathophysiology.summary}</p>
         </div>
         <dl className="disease-source-card">
           <div><dt><Building2 size={14} strokeWidth={1.5} />Source authority</dt><dd>{disease.authority}</dd></div>
@@ -48,7 +48,7 @@ export default async function DiseaseDetailPage({ params }: { params: Promise<{ 
         </dl>
       </header>
 
-      <div className="clinical-governance-notice" role="note"><strong>Clinical governance:</strong> Confirm applicability, local formulary and patient-specific factors before use. Emergency red flags require immediate escalation through local pathways.</div>
+      <div className="clinical-governance-notice" role="note"><strong>Clinical governance:</strong> {reviewIncomplete && "This saved scenario has not completed clinical review and is not approved for clinical use. "}Verify patient-specific factors, local formulary and pathways. Escalate emergencies immediately.</div>
       <DiseaseDetailSections disease={disease} />
     </main>
   );

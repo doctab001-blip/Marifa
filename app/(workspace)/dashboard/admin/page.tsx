@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Activity, ArrowRight, BookOpenCheck, ClipboardCheck, ShieldCheck, UsersRound } from "lucide-react";
 import { getAdminOverview } from "@/lib/admin/data";
+import GenerateGuidelineForm from "./components/GenerateGuidelineForm";
 
 const icons = [UsersRound, BookOpenCheck, ClipboardCheck, ShieldCheck];
 
@@ -9,7 +10,7 @@ function formatWhen(value: string) {
 }
 
 export default async function AdminOverviewPage() {
-  const { metrics, activities, usingPreview } = await getAdminOverview();
+  const { metrics, activities } = await getAdminOverview();
 
   return (
     <div className="admin-content">
@@ -25,7 +26,13 @@ export default async function AdminOverviewPage() {
           );
         })}
       </section>
-      {usingPreview && <p className="admin-preview-note">Some indicators are illustrative demo values while those database sources are being connected.</p>}
+
+      <section className="card" aria-labelledby="generate-guideline-title" style={{ padding: 24, background: "#FFFFFF" }}>
+        <div className="section-head" style={{ marginBottom: 20 }}>
+          <div><span className="eyebrow">Clinical content</span><h2 id="generate-guideline-title">Generate a clinical pathway</h2></div>
+        </div>
+        <GenerateGuidelineForm />
+      </section>
 
       <section className="card admin-activity-card" aria-labelledby="admin-activity-title">
         <div className="section-head"><div><span className="eyebrow">Governance log</span><h2 id="admin-activity-title">Recent activity</h2></div><Link className="section-link" href="/dashboard/admin/governance">Open governance <ArrowRight size={14} /></Link></div>
@@ -34,12 +41,12 @@ export default async function AdminOverviewPage() {
             {activities.map((item) => (
               <li key={item.id}>
                 <span className="admin-timeline-marker" aria-hidden="true" />
-                <div><strong>{item.action}</strong><p>{item.entity}</p><time dateTime={item.occurredAt}>{item.illustrative ? "Demo preview" : formatWhen(item.occurredAt)}</time></div>
+                <div><strong>{item.action}</strong><p>{item.entity}</p><time dateTime={item.occurredAt}>{formatWhen(item.occurredAt)}</time></div>
               </li>
             ))}
           </ol>
         ) : (
-          <div className="admin-empty"><Activity size={20} aria-hidden="true" /><p>No governance actions recorded for this organization yet.</p></div>
+          <div className="admin-empty"><Activity size={28} aria-hidden="true" /><p>No recent governance activity.</p></div>
         )}
       </section>
     </div>

@@ -59,7 +59,7 @@ To prepare another Supabase environment:
 
 ### Disease-management seeds
 
-The Disease Management Module adds a strict JSON contract, a tenant-aware guideline migration and two clinically sourced seed batches. Validate the files without a database connection:
+The Disease Management Module adds a strict JSON contract, a tenant-aware guideline migration and three curated seed batches. Validate the files without a database connection:
 
 ```bash
 npm run seed:diseases:validate
@@ -71,7 +71,7 @@ To import into an approved development environment, first apply all migrations, 
 npm run seed:diseases
 ```
 
-The importer upserts shared national metadata and its current version by stable UUID. Every imported record remains `draft`; it is readable only to authenticated users and requires a separate governance workflow to become published.
+The importer adds new shared-reference records by stable UUID and skips any guideline that already exists, including all of its saved versions. Conflict handling also ignores existing rows, so rerunning a seed cannot overwrite another account’s content, approval metadata or current-version pointers. Improvements to existing clinical content must use a separately reviewed new version. Draft batches remain drafts. Batch 03 records require recorded reviewer approval metadata and can be seeded independently with `npm run seed:diseases -- --batch=03 --apply` after validating their sources and approver.
 
 The migration does not create predictable demo auth accounts. Invitations and initial administrator setup must use a secure, one-time, server-controlled flow.
 

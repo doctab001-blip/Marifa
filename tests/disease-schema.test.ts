@@ -14,8 +14,8 @@ const validDisease = {
   presentation: { symptoms: ["Symptom"], physicalSigns: ["Sign"], redFlags: ["Red flag"] },
   differentials: [{ condition: "Alternative", distinguishingFeatures: "Feature" }],
   investigations: {
-    ruleIn: [{ testName: "Test", targetCondition: "Condition", expectedFinding: "Finding", clinicalRationale: "Rationale" }],
-    ruleOut: [{ testName: "Test", targetCondition: "Alternative", expectedFinding: "Finding", clinicalRationale: "Rationale" }],
+    ruleIn: [{ tier: "laboratory", testName: "Test", modalityTarget: "Test for condition", targetCondition: "Condition", expectedFinding: "Finding", clinicalRationale: "Rationale" }],
+    ruleOut: [{ tier: "specializedAdjunctive", testName: "Test", modalityTarget: "Test for alternative", targetCondition: "Alternative", expectedFinding: "Finding", clinicalRationale: "Rationale" }],
   },
   clinicalManagement: [{ id: "assess", title: "Assess", timeframe: "Immediate", actions: ["Act"] }],
   nonClinicalManagement: {
@@ -30,6 +30,12 @@ const validDisease = {
 describe("DiseaseDetailSchema", () => {
   it("accepts a complete six-tier disease record", () => {
     expect(DiseaseDetailSchema.parse(validDisease)).toEqual(validDisease);
+  });
+
+  it("preserves textbook source and pending clinical review on existing published scenarios", () => {
+    const existing = { ...validDisease, authority: "Textbook", status: "published", clinicalReviewStatus: "pending" };
+    expect(DiseaseDetailSchema.parse(existing)).toEqual(existing);
+    expect(() => DiseaseDetailSchema.parse({ ...existing, clinicalReviewStatus: "invented-approval" })).toThrow();
   });
 
   it("rejects unknown fields and empty clinical arrays", () => {

@@ -18,26 +18,95 @@
       ]
     },
     "presentation": {
-      "symptoms": ["Palpitations or an irregular heartbeat", "Breathlessness or reduced exercise tolerance", "Fatigue, dizziness, presyncope or syncope", "Chest discomfort or presentation with stroke or transient ischaemic attack"],
-      "physicalSigns": ["Irregularly irregular pulse", "Variable first heart sound and pulse deficit", "Tachycardia or, with conduction disease or medication, bradycardia", "Signs of heart failure, valve disease or systemic embolism"],
-      "redFlags": ["Haemodynamic instability, shock, ongoing myocardial ischaemia or severe pulmonary oedema", "New focal neurological deficit suggesting stroke", "Syncope with a very rapid or very slow ventricular response", "Acute decompensated heart failure or pre-excited atrial fibrillation"]
+      "symptoms": [
+        "Palpitations or an irregular heartbeat",
+        "Breathlessness or reduced exercise tolerance",
+        "Fatigue, dizziness, presyncope or syncope",
+        "Chest discomfort or presentation with stroke or transient ischaemic attack"
+      ],
+      "physicalSigns": [
+        "Irregularly irregular pulse",
+        "Variable first heart sound and pulse deficit",
+        "Tachycardia or, with conduction disease or medication, bradycardia",
+        "Signs of heart failure, valve disease or systemic embolism"
+      ],
+      "redFlags": [
+        "Haemodynamic instability, shock, ongoing myocardial ischaemia or severe pulmonary oedema",
+        "New focal neurological deficit suggesting stroke",
+        "Syncope with a very rapid or very slow ventricular response",
+        "Acute decompensated heart failure or pre-excited atrial fibrillation"
+      ]
     },
     "differentials": [
-      {"condition": "Atrial flutter with variable block", "distinguishingFeatures": "Organised flutter activity on electrocardiogram, often with a regular or patterned ventricular response."},
-      {"condition": "Frequent atrial ectopy", "distinguishingFeatures": "Discrete premature P waves with intervening sinus rhythm rather than sustained fibrillatory activity."},
-      {"condition": "Multifocal atrial tachycardia", "distinguishingFeatures": "At least three P-wave morphologies and an isoelectric baseline, often in severe pulmonary disease."},
-      {"condition": "Sinus tachycardia with artefact", "distinguishingFeatures": "Consistent P waves and a physiological trigger; careful lead review separates artefact from atrial activity."}
+      {
+        "condition": "Atrial flutter with variable block",
+        "distinguishingFeatures": "Organised flutter activity on electrocardiogram, often with a regular or patterned ventricular response."
+      },
+      {
+        "condition": "Frequent atrial ectopy",
+        "distinguishingFeatures": "Discrete premature P waves with intervening sinus rhythm rather than sustained fibrillatory activity."
+      },
+      {
+        "condition": "Multifocal atrial tachycardia",
+        "distinguishingFeatures": "At least three P-wave morphologies and an isoelectric baseline, often in severe pulmonary disease."
+      },
+      {
+        "condition": "Sinus tachycardia with artefact",
+        "distinguishingFeatures": "Consistent P waves and a physiological trigger; careful lead review separates artefact from atrial activity."
+      }
     ],
     "investigations": {
       "ruleIn": [
-        {"testName": "12-lead electrocardiogram", "targetCondition": "Atrial fibrillation", "expectedFinding": "Irregularly irregular R-R intervals with no consistent discrete P waves.", "clinicalRationale": "Provides rhythm confirmation and identifies conduction, ischaemic or pre-excitation features that alter management."},
-        {"testName": "Ambulatory electrocardiographic monitoring", "targetCondition": "Paroxysmal atrial fibrillation", "expectedFinding": "Intermittent electrocardiographically documented atrial fibrillation during symptoms or silent episodes.", "clinicalRationale": "Monitoring duration should match symptom frequency when the resting electrocardiogram is normal."},
-        {"testName": "Transthoracic echocardiography when indicated", "targetCondition": "Structural or functional heart disease", "expectedFinding": "Atrial enlargement, ventricular dysfunction, valve disease or another finding that changes management.", "clinicalRationale": "Supports rhythm-control planning, heart-failure assessment and selected refinement of thromboembolic risk."}
+        {
+          "testName": "12-lead electrocardiogram",
+          "targetCondition": "Atrial fibrillation",
+          "expectedFinding": "Irregularly irregular R-R intervals with no consistent discrete P waves.",
+          "clinicalRationale": "Provides rhythm confirmation and identifies conduction, ischaemic or pre-excitation features that alter management.",
+          "tier": "specializedAdjunctive",
+          "modalityTarget": "12-lead electrocardiogram — Atrial fibrillation"
+        },
+        {
+          "testName": "Ambulatory electrocardiographic monitoring",
+          "targetCondition": "Paroxysmal atrial fibrillation",
+          "expectedFinding": "Intermittent electrocardiographically documented atrial fibrillation during symptoms or silent episodes.",
+          "clinicalRationale": "Monitoring duration should match symptom frequency when the resting electrocardiogram is normal.",
+          "tier": "specializedAdjunctive",
+          "modalityTarget": "Ambulatory electrocardiographic monitoring — Paroxysmal atrial fibrillation"
+        },
+        {
+          "testName": "Transthoracic echocardiography when indicated",
+          "targetCondition": "Structural or functional heart disease",
+          "expectedFinding": "Atrial enlargement, ventricular dysfunction, valve disease or another finding that changes management.",
+          "clinicalRationale": "Supports rhythm-control planning, heart-failure assessment and selected refinement of thromboembolic risk.",
+          "tier": "specializedAdjunctive",
+          "modalityTarget": "Transthoracic echocardiography when indicated — Structural or functional heart disease"
+        }
       ],
       "ruleOut": [
-        {"testName": "Thyroid function testing", "targetCondition": "Thyrotoxicosis", "expectedFinding": "No biochemical hyperthyroidism, or a reversible driver is identified.", "clinicalRationale": "Thyroid disease can precipitate atrial fibrillation and requires concurrent treatment."},
-        {"testName": "Electrolytes, renal and liver function", "targetCondition": "Metabolic precipitant or medicine contraindication", "expectedFinding": "No correctable electrolyte disturbance; organ function is adequate for the selected medicine or prompts adjustment.", "clinicalRationale": "Identifies reversible contributors and is essential before anticoagulant or antiarrhythmic selection."},
-        {"testName": "Acute coronary and pulmonary assessment when clinically indicated", "targetCondition": "Acute coronary syndrome or pulmonary embolism", "expectedFinding": "No acute ischaemic or thromboembolic trigger, or one is identified and treated through its urgent pathway.", "clinicalRationale": "New atrial fibrillation may be secondary to another time-critical condition."}
+        {
+          "testName": "Thyroid function testing",
+          "targetCondition": "Thyrotoxicosis",
+          "expectedFinding": "No biochemical hyperthyroidism, or a reversible driver is identified.",
+          "clinicalRationale": "Thyroid disease can precipitate atrial fibrillation and requires concurrent treatment.",
+          "tier": "laboratory",
+          "modalityTarget": "Thyroid function testing — Thyrotoxicosis"
+        },
+        {
+          "testName": "Electrolytes, renal and liver function",
+          "targetCondition": "Metabolic precipitant or medicine contraindication",
+          "expectedFinding": "No correctable electrolyte disturbance; organ function is adequate for the selected medicine or prompts adjustment.",
+          "clinicalRationale": "Identifies reversible contributors and is essential before anticoagulant or antiarrhythmic selection.",
+          "tier": "laboratory",
+          "modalityTarget": "Electrolytes, renal and liver function — Metabolic precipitant or medicine contraindication"
+        },
+        {
+          "testName": "Acute coronary and pulmonary assessment when clinically indicated",
+          "targetCondition": "Acute coronary syndrome or pulmonary embolism",
+          "expectedFinding": "No acute ischaemic or thromboembolic trigger, or one is identified and treated through its urgent pathway.",
+          "clinicalRationale": "New atrial fibrillation may be secondary to another time-critical condition.",
+          "tier": "laboratory",
+          "modalityTarget": "Acute coronary and pulmonary assessment when clinically indicated — Acute coronary syndrome or pulmonary embolism"
+        }
       ]
     },
     "clinicalManagement": [
@@ -45,42 +114,93 @@
         "id": "stability",
         "title": "Assess stability and reversible triggers",
         "timeframe": "Immediately at acute presentation",
-        "actions": ["Assess airway, breathing, circulation, ischaemia, heart failure and neurological status.", "Obtain a 12-lead electrocardiogram and correct hypoxia, electrolyte disturbance or another precipitant.", "Seek senior cardiology/critical-care support for unstable or pre-excited atrial fibrillation."],
+        "actions": [
+          "Assess airway, breathing, circulation, ischaemia, heart failure and neurological status.",
+          "Obtain a 12-lead electrocardiogram and correct hypoxia, electrolyte disturbance or another precipitant.",
+          "Seek senior cardiology/critical-care support for unstable or pre-excited atrial fibrillation."
+        ],
         "branches": [
-          {"condition": "Life-threatening haemodynamic instability attributable to atrial fibrillation", "actions": ["Perform urgent synchronised electrical cardioversion under the locally approved resuscitation and sedation protocol.", "Do not delay emergency cardioversion solely to complete routine anticoagulation assessment."]},
-          {"condition": "No life-threatening instability", "actions": ["Proceed to symptom, duration, rate/rhythm and thromboembolic-risk assessment."]}
+          {
+            "condition": "Life-threatening haemodynamic instability attributable to atrial fibrillation",
+            "actions": [
+              "Perform urgent synchronised electrical cardioversion under the locally approved resuscitation and sedation protocol.",
+              "Do not delay emergency cardioversion solely to complete routine anticoagulation assessment."
+            ]
+          },
+          {
+            "condition": "No life-threatening instability",
+            "actions": [
+              "Proceed to symptom, duration, rate/rhythm and thromboembolic-risk assessment."
+            ]
+          }
         ]
       },
       {
         "id": "risk",
         "title": "Assess stroke and bleeding risks",
         "timeframe": "At diagnosis and whenever risk factors change",
-        "actions": ["Use CHA2DS2-VASc for stroke risk and a validated bleeding-risk tool such as ORBIT.", "Identify and modify reversible bleeding risks rather than using a bleeding score alone to withhold anticoagulation.", "Discuss absolute benefits, bleeding harms and patient preferences using shared decision making."]
+        "actions": [
+          "Use CHA2DS2-VASc for stroke risk and a validated bleeding-risk tool such as ORBIT.",
+          "Identify and modify reversible bleeding risks rather than using a bleeding score alone to withhold anticoagulation.",
+          "Discuss absolute benefits, bleeding harms and patient preferences using shared decision making."
+        ]
       },
       {
         "id": "anticoagulation",
         "title": "Prevent thromboembolism",
         "timeframe": "Promptly after risk assessment",
-        "actions": ["Offer an SFDA-authorised generic direct-acting oral anticoagulant, such as dabigatran etexilate or rivaroxaban, when indicated and suitable; select using renal function, interactions, adherence and the local formulary.", "Use warfarin when a direct-acting anticoagulant is contraindicated, unsuitable, or the clinical condition specifically requires a vitamin-K antagonist.", "Do not use antiplatelet monotherapy solely for atrial-fibrillation stroke prevention.", "Use current SFDA labelling and the local formulary for all dosing; this record is not a prescribing source."]
+        "actions": [
+          "Offer an SFDA-authorised generic direct-acting oral anticoagulant, such as dabigatran etexilate or rivaroxaban, when indicated and suitable; select using renal function, interactions, adherence and the local formulary.",
+          "Use warfarin when a direct-acting anticoagulant is contraindicated, unsuitable, or the clinical condition specifically requires a vitamin-K antagonist.",
+          "Do not use antiplatelet monotherapy solely for atrial-fibrillation stroke prevention.",
+          "Use current SFDA labelling and the local formulary for all dosing; this record is not a prescribing source."
+        ]
       },
       {
         "id": "rate-rhythm",
         "title": "Choose rate or rhythm control",
         "timeframe": "During initial management and at symptom review",
-        "actions": ["Use rate control first for many stable patients, with a generic beta-blocker or rate-limiting calcium-channel blocker selected for comorbidity and contraindications.", "Consider rhythm control for persistent symptoms, a reversible cause, new onset, atrial flutter suitable for ablation or heart failure thought to be driven by the arrhythmia.", "Avoid a rate-limiting calcium-channel blocker in acute decompensated heart failure and obtain specialist advice.", "Assess anticoagulation requirements around cardioversion according to rhythm duration and the current protocol."]
+        "actions": [
+          "Use rate control first for many stable patients, with a generic beta-blocker or rate-limiting calcium-channel blocker selected for comorbidity and contraindications.",
+          "Consider rhythm control for persistent symptoms, a reversible cause, new onset, atrial flutter suitable for ablation or heart failure thought to be driven by the arrhythmia.",
+          "Avoid a rate-limiting calcium-channel blocker in acute decompensated heart failure and obtain specialist advice.",
+          "Assess anticoagulation requirements around cardioversion according to rhythm duration and the current protocol."
+        ]
       },
       {
         "id": "specialist",
         "title": "Escalate persistent or complex disease",
         "timeframe": "Promptly when initial treatment fails or complexity is identified",
-        "actions": ["Refer for cardiology review when symptoms remain uncontrolled, recurrence follows cardioversion or antiarrhythmic/ablation decisions are needed.", "Consider catheter ablation through specialist shared decision making for eligible symptomatic patients.", "Reassess stroke prevention after rhythm restoration because apparent sinus rhythm does not automatically remove thromboembolic risk."]
+        "actions": [
+          "Refer for cardiology review when symptoms remain uncontrolled, recurrence follows cardioversion or antiarrhythmic/ablation decisions are needed.",
+          "Consider catheter ablation through specialist shared decision making for eligible symptomatic patients.",
+          "Reassess stroke prevention after rhythm restoration because apparent sinus rhythm does not automatically remove thromboembolic risk."
+        ]
       }
     ],
     "nonClinicalManagement": {
-      "patientEducation": ["Explain the irregular rhythm, symptom-control options and the distinct purpose of anticoagulation.", "Teach stroke warning signs and the need for immediate emergency assessment.", "Provide medicine-specific bleeding, missed-dose, procedure and interaction advice using approved Saudi information."],
-      "lifestyleAndDiet": ["Support weight management, regular physical activity and control of blood pressure and diabetes.", "Screen for and treat obstructive sleep apnoea when suspected.", "Reduce excessive alcohol and stimulant exposure and stop smoking.", "For warfarin, advise consistency rather than avoidance of vitamin-K-containing foods and arrange INR education."],
-      "mdtReferrals": ["Cardiology or electrophysiology for rhythm-control and ablation decisions", "Anticoagulation or clinical pharmacy service for medicine selection, interactions and adherence", "Stroke service for any acute or previous cerebrovascular event", "Sleep medicine and weight-management services where relevant"],
-      "dischargeCriteria": ["Haemodynamics are stable and acute triggers have been addressed.", "A rate/rhythm strategy and anticoagulation decision are documented with renal-function-appropriate prescribing.", "The patient understands stroke and bleeding precautions and has timely follow-up."],
+      "patientEducation": [
+        "Explain the irregular rhythm, symptom-control options and the distinct purpose of anticoagulation.",
+        "Teach stroke warning signs and the need for immediate emergency assessment.",
+        "Provide medicine-specific bleeding, missed-dose, procedure and interaction advice using approved Saudi information."
+      ],
+      "lifestyleAndDiet": [
+        "Support weight management, regular physical activity and control of blood pressure and diabetes.",
+        "Screen for and treat obstructive sleep apnoea when suspected.",
+        "Reduce excessive alcohol and stimulant exposure and stop smoking.",
+        "For warfarin, advise consistency rather than avoidance of vitamin-K-containing foods and arrange INR education."
+      ],
+      "mdtReferrals": [
+        "Cardiology or electrophysiology for rhythm-control and ablation decisions",
+        "Anticoagulation or clinical pharmacy service for medicine selection, interactions and adherence",
+        "Stroke service for any acute or previous cerebrovascular event",
+        "Sleep medicine and weight-management services where relevant"
+      ],
+      "dischargeCriteria": [
+        "Haemodynamics are stable and acute triggers have been addressed.",
+        "A rate/rhythm strategy and anticoagulation decision are documented with renal-function-appropriate prescribing.",
+        "The patient understands stroke and bleeding precautions and has timely follow-up."
+      ],
       "followUpPlan": "Review symptoms, pulse/rate, blood pressure, anticoagulant adherence, bleeding risk and renal function at a medicine-appropriate interval; reassess stroke risk at least annually and whenever age or comorbidity changes."
     }
   },
@@ -95,29 +215,103 @@
     "pillar": "Chronic Care",
     "pathophysiology": {
       "summary": "Sustained arterial hypertension reflects increased systemic vascular resistance, altered sodium-volume balance and neurohormonal activation interacting with age, genetics, adiposity and environmental exposures. Chronic pressure load accelerates vascular remodelling and damages the heart, brain, kidneys, retina and peripheral arteries.",
-      "keyMechanisms": ["Renin-angiotensin-aldosterone and sympathetic activation increase vascular tone and sodium retention.", "Endothelial dysfunction and arterial stiffness raise systolic pressure and pulse pressure.", "Renal sodium handling and pressure natriuresis reset at a higher arterial pressure.", "Persistent load causes left-ventricular hypertrophy, albuminuria, retinopathy and cerebrovascular injury."]
+      "keyMechanisms": [
+        "Renin-angiotensin-aldosterone and sympathetic activation increase vascular tone and sodium retention.",
+        "Endothelial dysfunction and arterial stiffness raise systolic pressure and pulse pressure.",
+        "Renal sodium handling and pressure natriuresis reset at a higher arterial pressure.",
+        "Persistent load causes left-ventricular hypertrophy, albuminuria, retinopathy and cerebrovascular injury."
+      ]
     },
     "presentation": {
-      "symptoms": ["Usually asymptomatic and detected on screening", "Headache or dizziness, which are non-specific", "Symptoms of target-organ disease such as exertional chest discomfort, breathlessness or neurological episodes", "Features suggesting a secondary cause, including episodic palpitations, muscle weakness or sleep apnoea"],
-      "physicalSigns": ["Repeated elevated clinic blood pressure using correct technique", "Postural blood-pressure fall in older adults, diabetes or symptomatic patients", "Retinal vascular change", "Signs of left-ventricular hypertrophy, heart failure, peripheral vascular disease or endocrine disease"],
-      "redFlags": ["Blood pressure at or above the severe range with retinal haemorrhage/papilloedema, confusion, chest pain, acute kidney injury or heart failure", "Pregnancy or possible pregnancy with severe hypertension or concerning symptoms", "Acute focal neurological deficit or aortic-dissection features", "Suspected catecholamine crisis or another rapidly progressive secondary cause"]
+      "symptoms": [
+        "Usually asymptomatic and detected on screening",
+        "Headache or dizziness, which are non-specific",
+        "Symptoms of target-organ disease such as exertional chest discomfort, breathlessness or neurological episodes",
+        "Features suggesting a secondary cause, including episodic palpitations, muscle weakness or sleep apnoea"
+      ],
+      "physicalSigns": [
+        "Repeated elevated clinic blood pressure using correct technique",
+        "Postural blood-pressure fall in older adults, diabetes or symptomatic patients",
+        "Retinal vascular change",
+        "Signs of left-ventricular hypertrophy, heart failure, peripheral vascular disease or endocrine disease"
+      ],
+      "redFlags": [
+        "Blood pressure at or above the severe range with retinal haemorrhage/papilloedema, confusion, chest pain, acute kidney injury or heart failure",
+        "Pregnancy or possible pregnancy with severe hypertension or concerning symptoms",
+        "Acute focal neurological deficit or aortic-dissection features",
+        "Suspected catecholamine crisis or another rapidly progressive secondary cause"
+      ]
     },
     "differentials": [
-      {"condition": "White-coat hypertension", "distinguishingFeatures": "Raised clinic readings with normal validated ambulatory or home averages."},
-      {"condition": "Masked hypertension", "distinguishingFeatures": "Normal clinic readings but elevated out-of-office averages or unexplained target-organ damage."},
-      {"condition": "Secondary hypertension", "distinguishingFeatures": "Young onset, abrupt worsening, resistant disease, hypokalaemia, renal findings, endocrine features or a medicine/substance trigger."},
-      {"condition": "Transient blood-pressure elevation", "distinguishingFeatures": "Pain, anxiety, acute illness or recent stimulant exposure with normal readings after the driver resolves."}
+      {
+        "condition": "White-coat hypertension",
+        "distinguishingFeatures": "Raised clinic readings with normal validated ambulatory or home averages."
+      },
+      {
+        "condition": "Masked hypertension",
+        "distinguishingFeatures": "Normal clinic readings but elevated out-of-office averages or unexplained target-organ damage."
+      },
+      {
+        "condition": "Secondary hypertension",
+        "distinguishingFeatures": "Young onset, abrupt worsening, resistant disease, hypokalaemia, renal findings, endocrine features or a medicine/substance trigger."
+      },
+      {
+        "condition": "Transient blood-pressure elevation",
+        "distinguishingFeatures": "Pain, anxiety, acute illness or recent stimulant exposure with normal readings after the driver resolves."
+      }
     ],
     "investigations": {
       "ruleIn": [
-        {"testName": "Standardised repeated clinic blood pressure", "targetCondition": "Persistent clinic hypertension", "expectedFinding": "Clinic blood pressure remains at or above the diagnostic threshold after repeat measurement with correct cuff and positioning.", "clinicalRationale": "Technique and repetition reduce random error and identify inter-arm difference."},
-        {"testName": "Ambulatory blood-pressure monitoring", "targetCondition": "Sustained hypertension", "expectedFinding": "Average waking readings meet the validated diagnostic threshold using adequate measurements.", "clinicalRationale": "Preferred confirmation method for clinic readings below the severe range and distinguishes white-coat effect."},
-        {"testName": "Home blood-pressure monitoring", "targetCondition": "Sustained hypertension when ABPM is unsuitable", "expectedFinding": "Average readings after discarding the first day meet the validated home threshold.", "clinicalRationale": "Provides confirmation and supports later self-monitoring when performed with a validated device and protocol."}
+        {
+          "testName": "Standardised repeated clinic blood pressure",
+          "targetCondition": "Persistent clinic hypertension",
+          "expectedFinding": "Clinic blood pressure remains at or above the diagnostic threshold after repeat measurement with correct cuff and positioning.",
+          "clinicalRationale": "Technique and repetition reduce random error and identify inter-arm difference.",
+          "tier": "laboratory",
+          "modalityTarget": "Standardised repeated clinic blood pressure — Persistent clinic hypertension"
+        },
+        {
+          "testName": "Ambulatory blood-pressure monitoring",
+          "targetCondition": "Sustained hypertension",
+          "expectedFinding": "Average waking readings meet the validated diagnostic threshold using adequate measurements.",
+          "clinicalRationale": "Preferred confirmation method for clinic readings below the severe range and distinguishes white-coat effect.",
+          "tier": "specializedAdjunctive",
+          "modalityTarget": "Ambulatory blood-pressure monitoring — Sustained hypertension"
+        },
+        {
+          "testName": "Home blood-pressure monitoring",
+          "targetCondition": "Sustained hypertension when ABPM is unsuitable",
+          "expectedFinding": "Average readings after discarding the first day meet the validated home threshold.",
+          "clinicalRationale": "Provides confirmation and supports later self-monitoring when performed with a validated device and protocol.",
+          "tier": "laboratory",
+          "modalityTarget": "Home blood-pressure monitoring — Sustained hypertension when ABPM is unsuitable"
+        }
       ],
       "ruleOut": [
-        {"testName": "Urine albumin-creatinine ratio and urinalysis", "targetCondition": "Chronic kidney disease or renal target-organ damage", "expectedFinding": "No albuminuria or haematuria, or an abnormality prompts renal evaluation.", "clinicalRationale": "Renal disease can be both a cause and consequence of hypertension and changes treatment choice and targets."},
-        {"testName": "Electrolytes, creatinine/eGFR, glycated haemoglobin and lipid profile", "targetCondition": "Secondary contributor and cardiovascular comorbidity", "expectedFinding": "Baseline metabolic and renal status is defined; hypokalaemia, kidney dysfunction or diabetes redirects assessment.", "clinicalRationale": "Supports cardiovascular-risk estimation and safe medicine selection."},
-        {"testName": "Fundoscopy and 12-lead electrocardiogram", "targetCondition": "Retinal or cardiac target-organ damage", "expectedFinding": "No hypertensive retinopathy or left-ventricular/cardiac abnormality, or damage is documented for risk management.", "clinicalRationale": "Target-organ damage changes urgency and the balance of treatment benefit."}
+        {
+          "testName": "Urine albumin-creatinine ratio and urinalysis",
+          "targetCondition": "Chronic kidney disease or renal target-organ damage",
+          "expectedFinding": "No albuminuria or haematuria, or an abnormality prompts renal evaluation.",
+          "clinicalRationale": "Renal disease can be both a cause and consequence of hypertension and changes treatment choice and targets.",
+          "tier": "laboratory",
+          "modalityTarget": "Urine albumin-creatinine ratio and urinalysis — Chronic kidney disease or renal target-organ damage"
+        },
+        {
+          "testName": "Electrolytes, creatinine/eGFR, glycated haemoglobin and lipid profile",
+          "targetCondition": "Secondary contributor and cardiovascular comorbidity",
+          "expectedFinding": "Baseline metabolic and renal status is defined; hypokalaemia, kidney dysfunction or diabetes redirects assessment.",
+          "clinicalRationale": "Supports cardiovascular-risk estimation and safe medicine selection.",
+          "tier": "laboratory",
+          "modalityTarget": "Electrolytes, creatinine/eGFR, glycated haemoglobin and lipid profile — Secondary contributor and cardiovascular comorbidity"
+        },
+        {
+          "testName": "Fundoscopy and 12-lead electrocardiogram",
+          "targetCondition": "Retinal or cardiac target-organ damage",
+          "expectedFinding": "No hypertensive retinopathy or left-ventricular/cardiac abnormality, or damage is documented for risk management.",
+          "clinicalRationale": "Target-organ damage changes urgency and the balance of treatment benefit.",
+          "tier": "specializedAdjunctive",
+          "modalityTarget": "Fundoscopy and 12-lead electrocardiogram — Retinal or cardiac target-organ damage"
+        }
       ]
     },
     "clinicalManagement": [
@@ -125,42 +319,92 @@
         "id": "measure-confirm",
         "title": "Measure and confirm",
         "timeframe": "At initial and confirmation visits",
-        "actions": ["Use a validated, maintained device, correct cuff size, supported arm and a quiet seated setting.", "Measure both arms initially and use the arm with the persistently higher reading.", "Confirm clinic hypertension with ambulatory monitoring or, when unsuitable, structured home monitoring unless urgent severe hypertension requires immediate assessment."]
+        "actions": [
+          "Use a validated, maintained device, correct cuff size, supported arm and a quiet seated setting.",
+          "Measure both arms initially and use the arm with the persistently higher reading.",
+          "Confirm clinic hypertension with ambulatory monitoring or, when unsuitable, structured home monitoring unless urgent severe hypertension requires immediate assessment."
+        ]
       },
       {
         "id": "urgent-severe",
         "title": "Identify severe hypertension requiring urgent assessment",
         "timeframe": "Same day when severe readings or symptoms are present",
-        "actions": ["Assess for retinal, neurological, cardiac, aortic and renal target-organ injury.", "Use emergency transfer for life-threatening symptoms or suspected acute organ injury.", "Do not rapidly lower asymptomatic blood pressure outside a monitored, indication-specific protocol."],
+        "actions": [
+          "Assess for retinal, neurological, cardiac, aortic and renal target-organ injury.",
+          "Use emergency transfer for life-threatening symptoms or suspected acute organ injury.",
+          "Do not rapidly lower asymptomatic blood pressure outside a monitored, indication-specific protocol."
+        ],
         "branches": [
-          {"condition": "Severe blood pressure with acute target-organ injury", "actions": ["Activate emergency specialist management and monitored intravenous therapy under the local protocol."]},
-          {"condition": "Severe blood pressure without acute target-organ injury", "actions": ["Arrange urgent clinical review, confirm adherence and complete prompt organ assessment rather than routine follow-up."]}
+          {
+            "condition": "Severe blood pressure with acute target-organ injury",
+            "actions": [
+              "Activate emergency specialist management and monitored intravenous therapy under the local protocol."
+            ]
+          },
+          {
+            "condition": "Severe blood pressure without acute target-organ injury",
+            "actions": [
+              "Arrange urgent clinical review, confirm adherence and complete prompt organ assessment rather than routine follow-up."
+            ]
+          }
         ]
       },
       {
         "id": "risk-organs",
         "title": "Assess cardiovascular risk and organ damage",
         "timeframe": "During diagnostic confirmation",
-        "actions": ["Obtain urine albumin-creatinine ratio, haematuria screen, glycated haemoglobin, electrolytes, creatinine/eGFR and lipids.", "Perform fundoscopy and a 12-lead electrocardiogram.", "Use a cardiovascular-risk tool validated or approved for local Saudi practice and assess for secondary-cause clues."]
+        "actions": [
+          "Obtain urine albumin-creatinine ratio, haematuria screen, glycated haemoglobin, electrolytes, creatinine/eGFR and lipids.",
+          "Perform fundoscopy and a 12-lead electrocardiogram.",
+          "Use a cardiovascular-risk tool validated or approved for local Saudi practice and assess for secondary-cause clues."
+        ]
       },
       {
         "id": "start-treatment",
         "title": "Start lifestyle and pharmacological treatment",
         "timeframe": "After confirmed diagnosis, sooner when severity or organ damage requires",
-        "actions": ["Offer lifestyle intervention to every patient and discuss medicine using age, diabetes, kidney disease, pregnancy potential, frailty and cardiovascular risk.", "Use generic ACE inhibitors, angiotensin-receptor blockers, calcium-channel blockers or thiazide-like diuretics in the guideline sequence when suitable and SFDA authorised.", "Do not combine an ACE inhibitor with an angiotensin-receptor blocker.", "Use current SFDA labelling and the local formulary for dose, contraindication and monitoring decisions; this record is not a prescribing source."]
+        "actions": [
+          "Offer lifestyle intervention to every patient and discuss medicine using age, diabetes, kidney disease, pregnancy potential, frailty and cardiovascular risk.",
+          "Use generic ACE inhibitors, angiotensin-receptor blockers, calcium-channel blockers or thiazide-like diuretics in the guideline sequence when suitable and SFDA authorised.",
+          "Do not combine an ACE inhibitor with an angiotensin-receptor blocker.",
+          "Use current SFDA labelling and the local formulary for dose, contraindication and monitoring decisions; this record is not a prescribing source."
+        ]
       },
       {
         "id": "titrate-review",
         "title": "Titrate and monitor",
         "timeframe": "At defined intervals after each treatment change and at least annually once stable",
-        "actions": ["Check adherence, side effects, postural symptoms and validated clinic or home readings before intensification.", "Monitor kidney function and electrolytes after renin-angiotensin system blockers, diuretics or mineralocorticoid-receptor antagonists according to protocol.", "Before labelling resistant hypertension, confirm out-of-office elevation, optimal tolerated triple therapy and adherence, then seek specialist input or use protocol-directed fourth-line treatment.", "Individualise targets for frailty, multimorbidity and significant postural hypotension."]
+        "actions": [
+          "Check adherence, side effects, postural symptoms and validated clinic or home readings before intensification.",
+          "Monitor kidney function and electrolytes after renin-angiotensin system blockers, diuretics or mineralocorticoid-receptor antagonists according to protocol.",
+          "Before labelling resistant hypertension, confirm out-of-office elevation, optimal tolerated triple therapy and adherence, then seek specialist input or use protocol-directed fourth-line treatment.",
+          "Individualise targets for frailty, multimorbidity and significant postural hypotension."
+        ]
       }
     ],
     "nonClinicalManagement": {
-      "patientEducation": ["Explain that hypertension is often silent but treatment reduces long-term cardiovascular and renal risk.", "Teach validated home-monitoring technique and how to record readings without excessive repeated checking.", "Discuss medicine purpose, common adverse effects, pregnancy precautions and when to seek urgent care."],
-      "lifestyleAndDiet": ["Reduce dietary sodium using culturally relevant food choices; avoid potassium-containing salt substitutes when kidney disease, diabetes or interacting medicines make them unsafe.", "Encourage regular aerobic and strengthening activity and gradual weight reduction when indicated.", "Limit excessive caffeine and alcohol, stop smoking and address sleep apnoea risk.", "Do not recommend calcium, magnesium or potassium supplements solely to lower blood pressure."],
-      "mdtReferrals": ["Primary-care pharmacist or nurse for adherence and home-monitoring support", "Nephrology, endocrinology or hypertension specialist for suspected secondary or resistant hypertension", "Obstetric medicine for pregnancy, pregnancy planning or postpartum hypertension", "Dietitian, weight-management and smoking-cessation services according to need"],
-      "dischargeCriteria": ["Hypertension is confirmed or excluded using an appropriate out-of-office pathway.", "Target-organ and cardiovascular-risk assessment is complete or has a named owner.", "Treatment, monitoring, individual target and urgent symptom advice are documented and understood."],
+      "patientEducation": [
+        "Explain that hypertension is often silent but treatment reduces long-term cardiovascular and renal risk.",
+        "Teach validated home-monitoring technique and how to record readings without excessive repeated checking.",
+        "Discuss medicine purpose, common adverse effects, pregnancy precautions and when to seek urgent care."
+      ],
+      "lifestyleAndDiet": [
+        "Reduce dietary sodium using culturally relevant food choices; avoid potassium-containing salt substitutes when kidney disease, diabetes or interacting medicines make them unsafe.",
+        "Encourage regular aerobic and strengthening activity and gradual weight reduction when indicated.",
+        "Limit excessive caffeine and alcohol, stop smoking and address sleep apnoea risk.",
+        "Do not recommend calcium, magnesium or potassium supplements solely to lower blood pressure."
+      ],
+      "mdtReferrals": [
+        "Primary-care pharmacist or nurse for adherence and home-monitoring support",
+        "Nephrology, endocrinology or hypertension specialist for suspected secondary or resistant hypertension",
+        "Obstetric medicine for pregnancy, pregnancy planning or postpartum hypertension",
+        "Dietitian, weight-management and smoking-cessation services according to need"
+      ],
+      "dischargeCriteria": [
+        "Hypertension is confirmed or excluded using an appropriate out-of-office pathway.",
+        "Target-organ and cardiovascular-risk assessment is complete or has a named owner.",
+        "Treatment, monitoring, individual target and urgent symptom advice are documented and understood."
+      ],
       "followUpPlan": "Review after initiation or each medicine change until a stable target is achieved, then provide at least annual review of blood pressure, postural symptoms, lifestyle, adherence, adverse effects, renal function and evolving cardiovascular risk."
     }
   }

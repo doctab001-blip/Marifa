@@ -4,10 +4,16 @@ import { loadEnvFile } from "node:process";
 import { createClient } from "@supabase/supabase-js";
 import { DiseaseSeedBatchSchema, type DiseaseDetail } from "../lib/validations/disease";
 
-const batchPaths = [
+const allBatchPaths = [
   "data/seeds/batch_01_saudi_core.json",
   "data/seeds/batch_02_nhs_adapted.json",
+  "data/seeds/batch_03_pillars.json",
 ] as const;
+const selectedBatch = process.argv.find((argument) => argument.startsWith("--batch="))?.slice("--batch=".length);
+const batchPaths = selectedBatch
+  ? allBatchPaths.filter((path) => path.includes(`batch_${selectedBatch}_`))
+  : allBatchPaths;
+if (batchPaths.length === 0) throw new Error(`Unknown seed batch: ${selectedBatch}`);
 
 try {
   loadEnvFile(resolve(".env.local"));
@@ -19,7 +25,7 @@ type SourceMetadata = {
   sourceTitle: string;
   sourceUrl: string;
   publicationDate: string;
-  sourceType: "official-saudi-guideline" | "curated-saudi-draft" | "nice-adapted-guideline";
+  sourceType: "official-saudi-guideline" | "curated-saudi-draft" | "curated-saudi-guideline" | "nice-adapted-guideline";
   approval?: { approvedBy: string; approvedAt: string; publishedAt?: string };
   systemSeededNationalBaseline?: boolean;
 };
@@ -35,6 +41,12 @@ const sourceMetadata: Record<string, SourceMetadata> = {
   "a1010000-0000-4000-8000-000000000008": { sourceTitle: "Saudi Clinical Preventive Guideline", sourceUrl: "https://www.pha.gov.sa/ar-sa/EvidenceAndProcedures/Documents/Saudi%20Clinical%20Preventive%20Guideline%20(2023%20final%20Version).pdf", publicationDate: "2023-01-01", sourceType: "official-saudi-guideline" },
   "a1020000-0000-4000-8000-000000000001": { sourceTitle: "NICE NG196: Atrial fibrillation — diagnosis and management", sourceUrl: "https://www.nice.org.uk/guidance/ng196", publicationDate: "2021-04-27", sourceType: "nice-adapted-guideline" },
   "a1020000-0000-4000-8000-000000000002": { sourceTitle: "NICE NG136: Hypertension in adults — diagnosis and management", sourceUrl: "https://www.nice.org.uk/guidance/ng136", publicationDate: "2026-02-26", sourceType: "nice-adapted-guideline" },
+  "a14c7e92-5b31-4d68-9f20-6c83e1b7a405": { sourceTitle: "Acute coronary syndrome educational synthesis; pending Saudi clinical governance review", sourceUrl: "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001309", publicationDate: "2025-02-27", sourceType: "curated-saudi-draft" },
+  "b25d8f03-6c42-4e79-a130-7d94f2c8b516": { sourceTitle: "Saudi Diabetes Clinical Practice Guidelines, Saudi National Diabetes Center, Saudi Health Council", sourceUrl: "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf", publicationDate: "2021-08-22", sourceType: "curated-saudi-guideline", approval: { approvedBy: "310a1d7b-646d-4adb-b822-8d79453237cf", approvedAt: "2026-10-10T00:00:00+03:00" } },
+  "c36e9014-7d53-4a82-b641-8e05a3c9d627": { sourceTitle: "MOH Primary Health Care chronic disease and cardiovascular risk screening forms", sourceUrl: "https://www.moh.gov.sa/en/Ministry/About/Health%20Policies/026.pdf", publicationDate: "2010-01-01", sourceType: "curated-saudi-guideline", approval: { approvedBy: "310a1d7b-646d-4adb-b822-8d79453237cf", approvedAt: "2026-10-10T00:00:00+03:00" } },
+  "d47f0125-8e64-4b93-8c72-9f16a4d0e738": { sourceTitle: "Marifa elective cholecystectomy pre-operative pathway synthesis for local governance", sourceUrl: "https://www.moh.gov.sa/ministry/mediacenter/publications/pages/protocols.aspx", publicationDate: "2026-10-10", sourceType: "curated-saudi-guideline", approval: { approvedBy: "310a1d7b-646d-4adb-b822-8d79453237cf", approvedAt: "2026-10-10T00:00:00+03:00" } },
+  "e58a1236-9f75-4ca4-a398-0e27b5c1f849": { sourceTitle: "MOH Gestational Diabetes guidance and Pocket Manual in Obstetrics & Gynaecology", sourceUrl: "https://www.moh.gov.sa/en/awarenessplateform/WomensHealth/DuringPregnancy/pages/default.aspx", publicationDate: "2026-06-13", sourceType: "curated-saudi-guideline", approval: { approvedBy: "310a1d7b-646d-4adb-b822-8d79453237cf", approvedAt: "2026-10-10T00:00:00+03:00" } },
+  "f69b2347-a086-4db5-b509-1f38c6d2a950": { sourceTitle: "MOH Protocols for Palliative Care Patients — End of Life Care", sourceUrl: "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf", publicationDate: "2019-01-01", sourceType: "curated-saudi-guideline", approval: { approvedBy: "310a1d7b-646d-4adb-b822-8d79453237cf", approvedAt: "2026-10-10T00:00:00+03:00" } },
 };
 
 type SeedRecord = { disease: DiseaseDetail; source: SourceMetadata };
@@ -60,6 +72,12 @@ async function loadBatches(): Promise<SeedRecord[]> {
     const source = sourceMetadata[disease.id];
     if (!source) throw new Error(`Missing source metadata: ${disease.id}`);
     if (new URL(source.sourceUrl).protocol !== "https:") throw new Error(`Source URL must use HTTPS: ${disease.title}`);
+    if (disease.status === "under_review") {
+      const wordCount = disease.pathophysiology.summary.trim().split(/\s+/).length;
+      if (wordCount < 200 || wordCount > 400) {
+        throw new Error(`${disease.title} pathophysiology must be 200–400 words before clinical review; found ${wordCount}.`);
+      }
+    }
     if (approvedStatuses.has(disease.status)) {
       if (!source.approval && !source.systemSeededNationalBaseline) {
         throw new Error(`${disease.title} is ${disease.status} without reviewer approval metadata or an explicit national-baseline marker.`);
@@ -83,6 +101,7 @@ function issuingOrganization(record: DiseaseDetail) {
     SHC: "Saudi Health Council",
     PHA: "Saudi Public Health Authority",
     NICE: "National Institute for Health and Care Excellence; adapted for Saudi review",
+    Textbook: "Textbook reference; clinical review status is recorded separately",
   }[record.authority];
 }
 
@@ -105,47 +124,25 @@ async function seed(records: SeedRecord[]) {
       .in("id", ids);
     if (guidelineReadError) throw new Error(`Guideline preflight failed: ${guidelineReadError.message}`);
 
-    const byId = new Map(records.map(({ disease }) => [disease.id, disease]));
-    const existingGuidelines = (guidelines ?? []) as unknown as Array<{ id: string; title: string; status: string; organization_id: string | null; is_shared_reference: boolean }>;
-    for (const existing of existingGuidelines) {
-      const requested = byId.get(existing.id);
-      if (!requested) continue;
-      if (existing.title !== requested.title) throw new Error(`Refusing to reuse ${existing.id}: the stored title differs from ${requested.title}.`);
-      if (existing.organization_id !== null || existing.is_shared_reference !== true) {
-        throw new Error(`Refusing to change tenant-scoped guideline ${existing.id}; expected a shared national reference with organization_id NULL.`);
-      }
-      if (existing.status !== requested.status) {
-        throw new Error(`Refusing status change for ${requested.title}: database=${existing.status}, seed=${requested.status}.`);
-      }
-    }
-
     const { data: versions, error: versionReadError } = await supabase
       .from("guideline_versions")
-      .select("id,guideline_id,version,status,is_current")
+      .select("id,guideline_id")
       .in("guideline_id", ids);
     if (versionReadError) throw new Error(`Version preflight failed: ${versionReadError.message}`);
 
-    const requestedById = new Map(records.map(({ disease }) => [disease.id, disease]));
-    const existingVersions = (versions ?? []) as unknown as Array<{ id: string; guideline_id: string; version: string; status: string; is_current: boolean }>;
-    for (const existing of existingVersions) {
-      const requested = requestedById.get(existing.guideline_id);
-      if (!requested) continue;
-      if (existing.id === requested.id && existing.version !== requested.version) {
-        throw new Error(`Refusing to reuse version UUID ${existing.id} for ${requested.title}: the stored version is ${existing.version}, seed version is ${requested.version}.`);
-      }
-      if (existing.version === requested.version && existing.id !== requested.id) {
-        throw new Error(`Refusing to change version identity for ${requested.title} ${requested.version}; reconcile the existing version UUID ${existing.id} before seeding.`);
-      }
-      if (existing.is_current && existing.version !== requested.version) {
-        throw new Error(`Refusing to replace the current ${existing.version} version for ${requested.title}; review and retire it explicitly first.`);
-      }
-      if (existing.version === requested.version && existing.status !== requested.status) {
-        throw new Error(`Refusing status change for ${requested.title} version ${requested.version}: database=${existing.status}, seed=${requested.status}.`);
-      }
-    }
+    // Existing records belong to the shared catalogue, including work from other accounts.
+    // Never rewrite their content, source metadata, approval, or current-version pointers.
+    const existingIds = new Set([
+      ...(guidelines ?? []).map((row) => row.id),
+      ...(versions ?? []).map((row) => row.guideline_id),
+    ]);
+    const additions = records.filter(({ disease }) => !existingIds.has(disease.id));
+    console.log(`Preserving ${records.length - additions.length} existing seed records; adding ${additions.length} new records.`);
+    return additions;
   }
 
-  await preflight();
+  records = await preflight();
+  if (records.length === 0) return;
 
   const guidelines = records.map(({ disease, source }) => ({
     id: disease.id,
@@ -158,8 +155,8 @@ async function seed(records: SeedRecord[]) {
   }));
   const { error: guidelineError } = await supabase
     .from("clinical_guidelines")
-    .upsert(guidelines, { onConflict: "id" });
-  if (guidelineError) throw new Error(`Guideline metadata upsert failed: ${guidelineError.message}`);
+    .upsert(guidelines, { onConflict: "id", ignoreDuplicates: true });
+  if (guidelineError) throw new Error(`Guideline metadata insert failed: ${guidelineError.message}`);
 
   const versions = records.map(({ disease, source }) => ({
     id: disease.id,
@@ -171,7 +168,9 @@ async function seed(records: SeedRecord[]) {
     is_current: true,
     change_summary: source.systemSeededNationalBaseline
       ? "System-seeded national baseline; provenance and approval metadata are recorded below."
-      : "Schema-validated repository seed; draft pending local clinical governance review.",
+      : source.approval
+        ? "Curated Saudi pathway approved by the designated Marifa platform administrator; source provenance is recorded below."
+        : "Schema-validated repository seed; draft pending local clinical governance review.",
     source_title: source.sourceTitle,
     issuing_organization: issuingOrganization(disease),
     source_url: source.sourceUrl,
@@ -185,16 +184,16 @@ async function seed(records: SeedRecord[]) {
   }));
   const { error: versionError } = await supabase
     .from("guideline_versions")
-    .upsert(versions, { onConflict: "id" });
+    .upsert(versions, { onConflict: "id", ignoreDuplicates: true });
   if (versionError) {
-    throw new Error(`Version upsert failed after guideline metadata was saved. It is safe to rerun after correcting the error because both upserts use stable identifiers. ${versionError.message}`);
+    throw new Error(`Version insert failed after new guideline metadata was saved. It is safe to rerun after correcting the error because inserts preserve existing records by stable identifiers. ${versionError.message}`);
   }
 }
 
 const records = await loadBatches();
 if (process.argv.includes("--apply")) {
   await seed(records);
-  console.log(`Upserted ${records.length} validated disease-management records and current versions.`);
+  console.log(`Additive import checked ${records.length} validated disease-management records; existing records were preserved.`);
 } else {
-  console.log(`Validated ${records.length} disease-management records across ${batchPaths.length} batches. No database writes were made; pass --apply to upsert.`);
+  console.log(`Validated ${records.length} disease-management records across ${batchPaths.length} batches. No database writes were made; pass --apply to add new records while preserving existing content.`);
 }
