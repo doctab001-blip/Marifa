@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { Baby, CalendarCheck, FileSearch, HeartHandshake, HeartPulse, Search, ShieldCheck, Siren, X } from "lucide-react";
+import { Baby, CalendarCheck, FileSearch, HeartHandshake, HeartPulse, LayoutGrid, List, Search, ShieldCheck, Siren, X } from "lucide-react";
 import { DiseaseCard } from "@/components/diseases/DiseaseCard";
 import type { DiseaseDirectoryResult, DiseaseGuidelineSummary } from "@/lib/data/disease-guidelines";
 import type { DiseaseDetail } from "@/lib/validations/disease";
@@ -30,6 +30,7 @@ export function DiseaseDirectoryClient({
   rejectedCount?: number;
   initialQuery?: string;
 }) {
+  const [view, setView] = useState<"grid" | "list">("grid");
   const [query, setQuery] = useState(initialQuery);
   const [debouncedQuery, setDebouncedQuery] = useState(initialQuery.trim().toLocaleLowerCase());
   const [activePillar, setActivePillar] = useState<PillarFilter>("all");
@@ -92,10 +93,16 @@ export function DiseaseDirectoryClient({
       <section className="directory-results" aria-labelledby="directory-results-title" aria-live="polite">
         <div className="directory-section-heading">
           <div><p className="disease-kicker">{activePillar === "all" ? "All care pillars" : activePillar}</p><h2 id="directory-results-title">Clinical guidelines and review candidates</h2></div>
-          <p>{filteredDiseases.length} {filteredDiseases.length === 1 ? "guideline" : "guidelines"}</p>
+          <div className="directory-result-tools">
+            <p role="status">{filteredDiseases.length} {filteredDiseases.length === 1 ? "guideline" : "guidelines"}</p>
+            <div className="directory-view-toggle" role="group" aria-label="Directory view">
+              <button type="button" aria-pressed={view === "grid"} onClick={() => setView("grid")}><LayoutGrid size={16} aria-hidden="true" />Grid</button>
+              <button type="button" aria-pressed={view === "list"} onClick={() => setView("list")}><List size={16} aria-hidden="true" />List</button>
+            </div>
+          </div>
         </div>
         {filteredDiseases.length > 0 ? (
-          <div className="disease-card-grid">
+          <div className={`disease-card-grid${view === "list" ? " disease-card-list" : ""}`}>
             {filteredDiseases.map((disease) => <DiseaseCard key={disease.id} disease={disease} />)}
           </div>
         ) : (

@@ -10,6 +10,14 @@ function readableSourceType(sourceType: string) {
 }
 
 export function DiseaseCard({ disease }: { disease: DiseaseGuidelineSummary }) {
+  const primarySpeciality = disease.speciality ?? disease.specialty;
+  const seenSpecialities = new Set([primarySpeciality.trim().toLocaleLowerCase()]);
+  const subSpecialities = (disease.subSpecialities ?? []).filter((speciality) => {
+    const key = speciality.trim().toLocaleLowerCase();
+    if (!key || seenSpecialities.has(key)) return false;
+    seenSpecialities.add(key);
+    return true;
+  });
   const reviewPending = disease.clinicalReviewStatus === "pending";
   const approved = !reviewPending && (disease.status === "approved" || disease.status === "published");
   const draft = disease.status === "draft";
@@ -27,8 +35,8 @@ export function DiseaseCard({ disease }: { disease: DiseaseGuidelineSummary }) {
       <div className="disease-card-copy">
         <h3>{disease.title}</h3>
         <div className="disease-speciality-badges" aria-label="Medical specialities">
-          <span className="disease-speciality-badge">{disease.speciality ?? disease.specialty}</span>
-          {(disease.subSpecialities ?? []).map((speciality) => <span className="disease-sub-speciality-badge" key={speciality}>{speciality}</span>)}
+          <span className="disease-speciality-badge">{primarySpeciality}</span>
+          {subSpecialities.map((speciality) => <span className="disease-sub-speciality-badge" key={speciality}>{speciality}</span>)}
         </div>
       </div>
       <div className="disease-card-footer">

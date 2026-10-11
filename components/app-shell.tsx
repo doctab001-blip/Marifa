@@ -2,14 +2,15 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { Bell, LogOut, Search, Settings2 } from "lucide-react";
 import { getCurrentViewer } from "@/lib/supabase/session";
+import { CollapsibleShell } from "@/components/collapsible-shell";
 import { MobileNavigation, SidebarNavigation } from "@/components/app-navigation";
 
 export async function AppShell({ children }: { children: React.ReactNode }) {
   const user = await getCurrentViewer();
   if (!user) redirect("/login");
   return (
-    <div className="app-shell" style={{ "--royal": user.primaryColor } as React.CSSProperties}>
-      <aside className="sidebar" aria-label="Main navigation">
+    <CollapsibleShell primaryColor={user.primaryColor}>
+      <aside id="workspace-sidebar" className="sidebar" aria-label="Main navigation">
         <Link href="/dashboard" className="brand">
           <div className="brand-mark">M</div>
           <div className="brand-copy"><div className="brand-name">Marifa</div><div className="brand-sub">Clinical knowledge & governance</div></div>
@@ -40,6 +41,6 @@ export async function AppShell({ children }: { children: React.ReactNode }) {
         {children}
       </section>
       <MobileNavigation />
-    </div>
+    </CollapsibleShell>
   );
 }
