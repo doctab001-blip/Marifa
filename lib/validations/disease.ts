@@ -32,6 +32,11 @@ export const InvestigationSchema = z
     targetCondition: nonEmptyText,
     expectedFinding: nonEmptyText,
     clinicalRationale: nonEmptyText,
+    references: z.array(z.object({
+      title: nonEmptyText,
+      edition: nonEmptyText,
+      url: z.url().refine((url) => /^https?:\/\//.test(url), "Clinical references must use HTTP or HTTPS"),
+    }).strict()).min(1).optional(),
   })
   .strict();
 

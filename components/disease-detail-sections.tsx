@@ -4,14 +4,26 @@ import { useState } from "react";
 import { Activity, Beaker, BookOpenText, ChevronDown, ClipboardList, HeartHandshake } from "lucide-react";
 import { ClinicalWarning } from "@/components/clinical-warning";
 import { PathwaySequence } from "@/components/pathway-sequence";
+import { InvestigationCards } from "@/components/investigation-cards";
+import type { InvestigationReference } from "@/lib/investigation-display";
 import { getMedicationPlan } from "@/lib/data/medication-plans";
 import type { DiseaseDetail } from "@/lib/validations/disease";
 
 function TextList({ items }: { items: string[] }) {
-  return <ul className="clinical-content-list">{items.map((item) => {
-    const separator = item.indexOf(":");
-    return <li key={item}>{separator > 0 ? <><strong>{item.slice(0, separator)}:</strong>{item.slice(separator + 1)}</> : item}</li>;
-  })}</ul>;
+  return (
+    <ul className="m-0 list-disc space-y-2 ps-5 text-sm leading-relaxed text-slate-700 marker:text-blue-700">
+      {items.map((item, index) => {
+        const separator = item.indexOf(":");
+        return (
+          <li key={`${index}-${item}`}>
+            {separator > 0 ? (
+              <><strong className="font-semibold text-slate-900">{item.slice(0, separator)}:</strong>{item.slice(separator + 1)}</>
+            ) : item}
+          </li>
+        );
+      })}
+    </ul>
+  );
 }
 
 function Section({ number, title, icon, children }: {
@@ -56,14 +68,8 @@ function Section({ number, title, icon, children }: {
   );
 }
 
-export function DiseaseDetailSections({ disease }: { disease: DiseaseDetail }) {
+export function DiseaseDetailSections({ disease, investigationSource }: { disease: DiseaseDetail; investigationSource?: InvestigationReference }) {
   const medicationPlan = disease.medicationPlan ?? getMedicationPlan(disease.id);
-  const investigationTiers = [
-    ["laboratory", "Laboratory diagnostics"],
-    ["firstLineImaging", "First-line imaging"],
-    ["advancedImaging", "Advanced / definitive imaging"],
-    ["specializedAdjunctive", "Specialized / adjunctive tests"],
-  ] as const;
 
   return (
     <section className="clinical-tiers" aria-label="Six-tier clinical guideline">
@@ -100,32 +106,7 @@ export function DiseaseDetailSections({ disease }: { disease: DiseaseDetail }) {
       </Section>
 
       <Section number={4} title="Investigations" icon={<Beaker size={19} strokeWidth={1.5} />}>
-        <div className="investigation-groups">
-          {investigationTiers.map(([tier, title]) => {
-            const tests = (["ruleIn", "ruleOut"] as const).flatMap((group) =>
-              disease.investigations[group]
-                .filter((test) => test.tier === tier)
-                .map((test) => ({ ...test, group })),
-            );
-            if (!tests.length) return null;
-            return (
-              <section className="investigation-tier" key={tier} aria-labelledby={`investigation-${tier}`}>
-                <h3 id={`investigation-${tier}`}>{title}</h3>
-                <ul className="investigation-list">
-                  {tests.map((test) => (
-                    <li key={`${test.group}-${test.testName}-${test.targetCondition}`}>
-                      <strong>{test.testName}</strong>
-                      <span><b>Modality &amp; target:</b> {test.modalityTarget}</span>
-                      <span><b>Expected finding / interpretation:</b> {test.expectedFinding}</span>
-                      <span><b>Clinical rationale:</b> {test.clinicalRationale}</span>
-                      <span className="investigation-purpose">{test.group === "ruleIn" ? "Rule in / characterise" : "Rule out complications / alternatives"}</span>
-                    </li>
-                  ))}
-                </ul>
-              </section>
-            );
-          })}
-        </div>
+        <InvestigationCards investigations={disease.investigations} source={investigationSource} />
       </Section>
 
       <Section number={5} title="Clinical pathway" icon={<ClipboardList size={19} strokeWidth={1.5} />}>
@@ -146,7 +127,7 @@ export function DiseaseDetailSections({ disease }: { disease: DiseaseDetail }) {
                 <div><dt>Source</dt><dd><a href={regimen.sourceUrl} target="_blank" rel="noreferrer">{regimen.sourceTitle} ({regimen.sourceEdition})</a></dd></div>
               </dl>
             </li>)}
-          </ul> : <p className="medication-plan-status">{medicationPlan?.note ?? "No exact-dose medicine plan is linked to this topic. Consult the current Saudi/local protocol and hospital formulary for prescribing details."}</p>}
+          </ul> : <p className="m-0 rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm leading-relaxed text-slate-500">{medicationPlan?.note ?? "No exact-dose medicine plan is linked to this topic. Consult the current Saudi/local protocol and hospital formulary for prescribing details."}</p>}
         </section>
       </Section>
 

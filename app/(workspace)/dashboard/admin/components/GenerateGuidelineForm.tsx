@@ -75,14 +75,14 @@ export default function GenerateGuidelineForm() {
 
       <section className="rounded-xl border border-sky-100 bg-sky-50/70 px-4 py-3.5 text-sm text-slate-700" aria-labelledby="investigation-authoring-title">
         <h3 id="investigation-authoring-title" className="mb-2 font-semibold text-slate-900">Investigation content required for every pathway</h3>
-        <p className="mb-2 text-xs leading-5">Structure each test as a separate record with its modality and target, expected finding or interpretation, and the clinical rationale for management.</p>
-        <ul className="grid gap-x-5 gap-y-1 text-xs sm:grid-cols-2">
+        <p className="mb-2 text-sm leading-5">Name each test separately. State the exact condition or abnormality sought, the finding and its limitations, and why the result changes triage, treatment, monitoring or referral.</p>
+        <ul className="grid gap-x-5 gap-y-1 text-sm sm:grid-cols-2">
           <li><strong>Laboratory diagnostics:</strong> relevant blood, urine, and microbiology tests</li>
           <li><strong>First-line imaging:</strong> initial radiography where indicated</li>
           <li><strong>Advanced imaging:</strong> definitive cross-sectional imaging where indicated</li>
           <li><strong>Specialized / adjunctive:</strong> focused ultrasound and other targeted tests</li>
         </ul>
-        <p className="mt-2 text-xs leading-5 text-slate-600">Include only tests supported by the clinical context and cited guidance; explain how results change triage, treatment, or escalation.</p>
+        <p className="mt-2 text-sm leading-5 text-slate-600">Use current Saudi MOH guidance and a relevant standard textbook. Record the document title, edition/date, page or section and link for each test. A publisher page or protocol directory alone is not source verification. New clinical content needs a new version and clinical review.</p>
       </section>
 
       {error && <p role="alert" className="rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-700">{error}</p>}
@@ -92,7 +92,7 @@ export default function GenerateGuidelineForm() {
           {isLoading ? <Loader2 size={17} className="animate-spin" aria-hidden="true" /> : <WandSparkles size={17} aria-hidden="true" />}
           {isLoading ? "Generating Pathway..." : "Generate pathway"}
         </button>
-        <p className="text-xs text-slate-500">Generation may take up to 30 seconds. Keep this page open.</p>
+        <p className="text-sm text-slate-500">Generation may take up to 30 seconds. Keep this page open.</p>
       </div>
     </form>
   );

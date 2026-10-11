@@ -653,17 +653,40 @@ a.topic-row:focus-visible { outline: 3px solid rgba(47, 164, 231, .42); outline-
 .clinical-record-grid article { padding: 15px; border: 1px solid #e2e8f1; border-radius: 11px; background: #fbfcfe; }
 .clinical-record-grid h3 { margin: 0 0 6px; font: 700 var(--font-size-subheading) Poppins, Inter, sans-serif; color: #27364d; }
 .clinical-record-grid p { margin: 0; color: #52617a; font-size: var(--font-size-body); line-height: 1.55; }
-.investigation-groups { display: grid; gap: 22px; }
-.investigation-list { display: grid; gap: 8px; margin: 0; padding-left: 20px; color: #475569; }
-.investigation-list li { padding-left: 3px; }
-.investigation-list li::marker { color: var(--royal); }
-.investigation-list li > strong { display: block; margin-bottom: 3px; color: #0f172a; font-size: var(--font-size-body); }
-.investigation-list li > span { display: block; color: #475569; font-size: var(--font-size-body); line-height: 1.5; }
-.investigation-list li > span + span { margin-top: 2px; }
+.investigation-groups { display: grid; gap: 24px; }
+.investigation-intro { max-width: 78ch; margin: 0; color: #475569; font-size: 15px; line-height: 1.65; }
+.investigation-list { display: grid; gap: 16px; margin: 0; padding: 0; list-style: none; }
+.investigation-card { min-width: 0; padding: 20px; border: 1px solid #d8e3ec; border-inline-start: 4px solid #12847d; border-radius: 12px; background: #fff; break-inside: avoid; }
+.investigation-card header { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 10px 16px; padding-bottom: 16px; }
+.investigation-card h4 { flex: 1 1 320px; max-width: 76ch; margin: 0; color: #102a43; font-size: 17px; font-weight: 700; line-height: 1.5; overflow-wrap: anywhere; }
+.investigation-purpose { flex: 0 1 auto; display: inline-block; padding: 4px 9px; border-radius: 6px; color: #315b60; background: #edf7f5; font-size: 12px; font-weight: 600; line-height: 1.5; }
+.investigation-details { display: grid; gap: 14px; margin: 0; }
+.investigation-details > div { display: grid; grid-template-columns: minmax(150px, 190px) minmax(0, 1fr); gap: 8px 20px; }
+.investigation-details dt { color: #20445a; font-size: 14px; font-weight: 700; line-height: 1.65; }
+.investigation-details dd { max-width: 78ch; margin: 0; color: #334155; font-size: 16px; line-height: 1.7; overflow-wrap: anywhere; }
+.investigation-details > .investigation-finding { padding: 14px; border-radius: 8px; background: #f3f7fb; }
 .investigation-tier { min-width: 0; }
-.investigation-tier > h3 { color: #172554; font-size: var(--font-size-subheading); }
-.investigation-list li > span { overflow-wrap: anywhere; white-space: normal; }
-.investigation-list li > .investigation-purpose { display: inline-block; margin-top: 5px; padding: 3px 7px; border-radius: 999px; color: #334155; background: #f1f5f9; font-size: var(--font-size-body); font-weight: 650; }
+.investigation-tier > h3 { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; color: #172554; font-size: 17px; }
+.investigation-count { padding: 2px 7px; border-radius: 5px; background: #edf2f7; color: #52617a; font-size: 12px; font-family: Inter, sans-serif; }
+.investigation-review-note { margin: 0; padding: 14px 16px; border: 1px solid #ead19b; border-radius: 8px; color: #704b15; background: #fffaf0; font-size: 14px; line-height: 1.65; }
+.investigation-review-note strong { display: block; }
+.investigation-review-label { margin: 0 0 14px; color: #835919; font-size: 13px; font-weight: 600; }
+.investigation-sources, .investigation-card-sources { display: grid; gap: 8px; padding-top: 16px; border-top: 1px solid #e2e8f0; color: #475569; font-size: 14px; line-height: 1.6; }
+.investigation-card-sources { margin-top: 18px; }
+.investigation-card-sources ul { margin: 0; padding-inline-start: 18px; }
+.investigation-sources a, .investigation-card-sources a { color: #126b84; text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.investigation-sources p { max-width: 85ch; margin: 0; font-size: 13px; }
+@media (max-width: 700px) {
+  .investigation-card { padding: 16px; }
+  .investigation-card h4 { flex-basis: 100%; font-size: 16px; }
+  .investigation-details > div { grid-template-columns: 1fr; gap: 3px; }
+  .investigation-details dd { font-size: 15px; }
+  .investigation-details > .investigation-finding { padding: 12px; }
+}
+@media print {
+  .investigation-card { box-shadow: none; border-color: #aaa; }
+  .investigation-details dd { color: #111; }
+}
 .clinical-tier-body > .pathway-sequence { padding: 0; border: 0; border-radius: 0; box-shadow: none; }
 .non-clinical-grid { margin-bottom: 18px; }
 .non-clinical-grid > div { padding: 15px; border: 1px solid #e2e8f1; border-radius: 11px; background: #fbfcfe; }

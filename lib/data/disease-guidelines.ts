@@ -5,12 +5,12 @@ import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { hasMedicalSpeciality, inferMedicalSpecialityTags } from "@/lib/medical-specialities";
 
 export type DiseaseGuidelineSummary = Pick<DiseaseDetail, "id" | "title" | "specialty" | "authority" | "status" | "version" | "lastReviewed" | "pillar" | "clinicalReviewStatus"> & { summary: string; sourceType?: string; speciality?: string; subSpecialities?: string[] };
-type GuidelineVersionJoin = { content: unknown };
+type GuidelineVersionJoin = { content: unknown; source_title?: string | null; source_url?: string | null };
 type GuidelineRow = { id: string; title: string; specialty: string | null; speciality_id?: string | null; speciality?: { name: string } | { name: string }[] | null; sub_specialities?: string[] | null; status: string; source_type: string; guideline_versions: GuidelineVersionJoin | GuidelineVersionJoin[] };
 
 export type DiseaseDirectoryResult = { diseases: DiseaseGuidelineSummary[]; state: "ready" | "unavailable"; rejectedCount: number };
 export type DiseaseDetailResult =
-  | { state: "ready"; disease: DiseaseDetail }
+  | { state: "ready"; disease: DiseaseDetail; investigationSource?: { title: string; url: string } }
   | { state: "not-found" }
   | { state: "invalid" }
   | { state: "unavailable" };
@@ -20,6 +20,12 @@ const postPublicationReviewId = "a14c7e92-5b31-4d68-9f20-6c83e1b7a405";
 
 function currentContent(row: GuidelineRow) {
   return Array.isArray(row.guideline_versions) ? row.guideline_versions[0]?.content : row.guideline_versions?.content;
+}
+
+function currentSource(row: GuidelineRow) {
+  const version = Array.isArray(row.guideline_versions) ? row.guideline_versions[0] : row.guideline_versions;
+  if (!version?.source_title || !version.source_url || !/^https?:\/\//.test(version.source_url)) return undefined;
+  return { title: version.source_title, url: version.source_url };
 }
 
 function isApproved(disease: DiseaseDetail) {
@@ -94,7 +100,7 @@ export async function getApprovedDiseaseGuideline(id: string): Promise<DiseaseDe
     if (id === postPublicationReviewId) {
       const { data: reviewData, error: reviewError } = await supabase
         .from("clinical_guidelines")
-        .select("id,guideline_versions!inner(content)")
+        .select("id,guideline_versions!inner(content,source_title,source_url)")
         .eq("id", id)
         .is("organization_id", null)
         .eq("status", "approved")
@@ -106,12 +112,12 @@ export async function getApprovedDiseaseGuideline(id: string): Promise<DiseaseDe
         const reviewRow = reviewData as unknown as GuidelineRow;
         const reviewContent = DiseaseDetailSchema.safeParse(currentContent(reviewRow));
         if (!reviewContent.success || reviewContent.data.id !== reviewRow.id || reviewContent.data.status !== "under_review") return { state: "invalid" };
-        return { state: "ready", disease: reviewContent.data };
+        return { state: "ready", disease: reviewContent.data, investigationSource: currentSource(reviewRow) };
       }
     }
     const { data, error } = await supabase
       .from("clinical_guidelines")
-      .select("id,guideline_versions!inner(content)")
+      .select("id,guideline_versions!inner(content,source_title,source_url)")
       .eq("id", id)
       .is("organization_id", null)
       .in("status", [...approvedStatuses])
@@ -124,7 +130,7 @@ export async function getApprovedDiseaseGuideline(id: string): Promise<DiseaseDe
     const row = data as unknown as GuidelineRow;
     const parsed = DiseaseDetailSchema.safeParse(currentContent(row));
     if (!parsed.success || !isApproved(parsed.data) || parsed.data.id !== row.id) return { state: "invalid" };
-    return { state: "ready", disease: parsed.data };
+    return { state: "ready", disease: parsed.data, investigationSource: currentSource(row) };
   } catch {
     return { state: "unavailable" };
   }
