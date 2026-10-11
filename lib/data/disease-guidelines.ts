@@ -1,4 +1,5 @@
 import "server-only";
+import { clinicalReviewOverrides } from "@/lib/data/clinical-review-overrides";
 import { DiseaseDetailSchema, type DiseaseDetail } from "@/lib/validations/disease";
 import { isSupabaseConfigured } from "@/lib/supabase/config";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
@@ -16,7 +17,6 @@ export type DiseaseDetailResult =
   | { state: "unavailable" };
 
 const approvedStatuses = ["approved", "published"] as const;
-const postPublicationReviewId = "a14c7e92-5b31-4d68-9f20-6c83e1b7a405";
 
 function currentContent(row: GuidelineRow) {
   return Array.isArray(row.guideline_versions) ? row.guideline_versions[0]?.content : row.guideline_versions?.content;
@@ -67,24 +67,27 @@ export async function getApprovedDiseaseGuidelines(filters: { speciality?: strin
       diseases.push({ ...summary, sourceType: row.source_type });
     }
 
-    const { data: reviewData, error: reviewError } = await supabase
-      .from("clinical_guidelines")
-      .select("id,title,specialty,status,source_type,guideline_versions!inner(content)")
-      .eq("id", postPublicationReviewId)
-      .is("organization_id", null)
-      .eq("status", "approved")
-      .eq("guideline_versions.is_current", false)
-      .eq("guideline_versions.status", "under_review")
-      .maybeSingle();
-    if (reviewError) throw reviewError;
-    if (reviewData) {
-      const row = reviewData as unknown as GuidelineRow;
-      const parsed = DiseaseDetailSchema.safeParse(currentContent(row));
-      if (parsed.success && parsed.data.status === "under_review" && parsed.data.id === row.id) {
-        const index = diseases.findIndex((disease) => disease.id === row.id);
-        if (index >= 0) diseases[index] = { ...toSummary(parsed.data, row), sourceType: row.source_type };
-      } else {
-        rejectedCount += 1;
+    for (const [reviewId, reviewVersion] of Object.entries(clinicalReviewOverrides)) {
+      let reviewQuery = supabase
+        .from("clinical_guidelines")
+        .select("id,title,specialty,status,source_type,guideline_versions!inner(content)")
+        .eq("id", reviewId)
+        .is("organization_id", null)
+        .eq("status", "approved")
+        .eq("guideline_versions.is_current", false)
+        .eq("guideline_versions.status", "under_review");
+      if (reviewVersion) reviewQuery = reviewQuery.eq("guideline_versions.version", reviewVersion);
+      const { data: reviewData, error: reviewError } = await reviewQuery.maybeSingle();
+      if (reviewError) throw reviewError;
+      if (reviewData) {
+        const row = reviewData as unknown as GuidelineRow;
+        const parsed = DiseaseDetailSchema.safeParse(currentContent(row));
+        if (parsed.success && parsed.data.status === "under_review" && parsed.data.id === row.id) {
+          const index = diseases.findIndex((disease) => disease.id === row.id);
+          if (index >= 0) diseases[index] = { ...toSummary(parsed.data, row), sourceType: row.source_type };
+        } else {
+          rejectedCount += 1;
+        }
       }
     }
     return { diseases, state: "ready", rejectedCount };
@@ -97,16 +100,18 @@ export async function getApprovedDiseaseGuideline(id: string): Promise<DiseaseDe
   if (!isSupabaseConfigured()) return { state: "unavailable" };
   try {
     const supabase = await createSupabaseServerClient();
-    if (id === postPublicationReviewId) {
-      const { data: reviewData, error: reviewError } = await supabase
+    if (Object.hasOwn(clinicalReviewOverrides, id)) {
+      let reviewQuery = supabase
         .from("clinical_guidelines")
         .select("id,guideline_versions!inner(content,source_title,source_url)")
         .eq("id", id)
         .is("organization_id", null)
         .eq("status", "approved")
         .eq("guideline_versions.is_current", false)
-        .eq("guideline_versions.status", "under_review")
-        .maybeSingle();
+        .eq("guideline_versions.status", "under_review");
+      const reviewVersion = clinicalReviewOverrides[id];
+      if (reviewVersion) reviewQuery = reviewQuery.eq("guideline_versions.version", reviewVersion);
+      const { data: reviewData, error: reviewError } = await reviewQuery.maybeSingle();
       if (reviewError) throw reviewError;
       if (reviewData) {
         const reviewRow = reviewData as unknown as GuidelineRow;
