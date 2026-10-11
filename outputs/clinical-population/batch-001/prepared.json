@@ -1,0 +1,3629 @@
+{
+  "version": "official-extraction-2026-10-11-b001",
+  "count": 10,
+  "prepared": [
+    {
+      "id": "a1010000-0000-4000-8000-000000000005",
+      "title": "Acute Anaphylaxis",
+      "original_version_id": "a1010000-0000-4000-8000-000000000005",
+      "expected_hash": "6886cced10988c480152065d225bb88b",
+      "source_url": "https://www.resus.org.uk/professional-library/2025-resuscitation-guidelines/special-circumstances-guidelines",
+      "source_title": "RCUK 2025: Special circumstances — anaphylaxis",
+      "issuer": "Other",
+      "scope": "Adult emergency anaphylaxis; the 2021 detailed algorithm supplies monitoring. Saudi adaptation and complete prescribing review pending.",
+      "content": {
+        "id": "a1010000-0000-4000-8000-000000000005",
+        "title": "Acute Anaphylaxis",
+        "specialty": "Emergency Medicine and Allergy and Immunology",
+        "authority": "MOH",
+        "status": "draft",
+        "version": "official-extraction-2026-10-11-b001",
+        "lastReviewed": "2020-12-28",
+        "pillar": "Urgent Care",
+        "clinicalReviewStatus": "pending",
+        "pathophysiology": {
+          "summary": "Anaphylaxis is a rapid systemic hypersensitivity reaction. Mast-cell and basophil mediator release causes vasodilation, capillary leak, mucosal oedema and bronchoconstriction, which can progress quickly to airway obstruction, distributive shock and cardiac arrest.",
+          "keyMechanisms": [
+            "IgE-mediated or non-IgE pathways trigger widespread mediator release.",
+            "Vasodilation and capillary permeability reduce venous return and blood pressure.",
+            "Upper-airway oedema and lower-airway bronchospasm compromise ventilation.",
+            "Biphasic recurrence can occur after apparent initial resolution."
+          ]
+        },
+        "presentation": {
+          "symptoms": [
+            "Sudden throat tightness, hoarse voice or difficulty swallowing",
+            "Breathlessness, wheeze or persistent cough",
+            "Generalised itching, flushing, urticaria or swelling",
+            "Dizziness, collapse, cramping abdominal pain or vomiting after a likely exposure"
+          ],
+          "physicalSigns": [
+            "Stridor, angioedema or respiratory distress",
+            "Wheeze, hypoxaemia or reduced air entry",
+            "Hypotension, tachycardia, poor perfusion or collapse",
+            "Generalised urticaria or flushing, noting that skin signs can be absent"
+          ],
+          "redFlags": [
+            "Airway swelling, stridor, severe bronchospasm or rapidly worsening breathing",
+            "Hypotension, syncope, confusion or shock",
+            "Refractory symptoms after intramuscular epinephrine",
+            "Known mast-cell disorder, severe asthma, beta-blocker use or prior biphasic/refractory anaphylaxis"
+          ]
+        },
+        "differentials": [
+          {
+            "condition": "Acute severe asthma",
+            "distinguishingFeatures": "Predominantly lower-airway obstruction without hypotension, acute skin/mucosal change or a clear multisystem exposure response."
+          },
+          {
+            "condition": "Vasovagal syncope",
+            "distinguishingFeatures": "Bradycardia, pallor and rapid improvement supine without urticaria, wheeze or airway swelling."
+          },
+          {
+            "condition": "Hereditary or bradykinin-mediated angioedema",
+            "distinguishingFeatures": "Angioedema without urticaria, often slower onset and limited response to epinephrine or antihistamine."
+          },
+          {
+            "condition": "Septic shock",
+            "distinguishingFeatures": "Infective syndrome and less immediate exposure relationship, although initial shock management may overlap."
+          }
+        ],
+        "investigations": {
+          "ruleIn": [
+            {
+              "tier": "laboratory",
+              "testName": "Clinical diagnostic criteria",
+              "modalityTarget": "Clinical diagnostic criteria — Anaphylaxis",
+              "targetCondition": "Anaphylaxis",
+              "expectedFinding": "Acute airway, breathing or circulatory compromise with compatible skin/mucosal findings or a likely allergen exposure.",
+              "clinicalRationale": "Anaphylaxis is a clinical diagnosis and treatment must not wait for laboratory confirmation."
+            },
+            {
+              "tier": "laboratory",
+              "testName": "Serial serum tryptase when indicated",
+              "modalityTarget": "Serial serum tryptase when indicated — Systemic mast-cell activation",
+              "targetCondition": "Systemic mast-cell activation",
+              "expectedFinding": "A rise above the person's baseline in an appropriately timed sample.",
+              "clinicalRationale": "Can support later specialist evaluation but a normal result does not exclude anaphylaxis."
+            }
+          ],
+          "ruleOut": [
+            {
+              "tier": "laboratory",
+              "testName": "Point-of-care glucose",
+              "modalityTarget": "Point-of-care glucose — Hypoglycaemia",
+              "targetCondition": "Hypoglycaemia",
+              "expectedFinding": "Glucose is not low enough to explain altered consciousness or collapse.",
+              "clinicalRationale": "Rapidly excludes a reversible mimic while resuscitation continues."
+            },
+            {
+              "tier": "specializedAdjunctive",
+              "testName": "Electrocardiogram",
+              "modalityTarget": "Electrocardiogram — Primary arrhythmia or acute coronary syndrome",
+              "targetCondition": "Primary arrhythmia or acute coronary syndrome",
+              "expectedFinding": "No primary electrical or ischaemic cause for collapse.",
+              "clinicalRationale": "Particularly important in older patients, chest pain, severe hypotension or epinephrine-related symptoms."
+            }
+          ]
+        },
+        "clinicalManagement": [
+          {
+            "id": "epinephrine",
+            "title": "Give intramuscular epinephrine",
+            "timeframe": "Immediately",
+            "actions": [
+              "Administer intramuscular epinephrine into the anterolateral thigh using the current MOH age/weight dosing protocol.",
+              "Repeat at the protocol interval if airway, breathing or circulatory compromise persists.",
+              "Do not delay epinephrine for antihistamines, corticosteroids, intravenous access or diagnostic tests."
+            ]
+          },
+          {
+            "id": "position-airway",
+            "title": "Position and support airway and breathing",
+            "timeframe": "Concurrent with first epinephrine dose",
+            "actions": [
+              "Lay the patient flat with legs elevated unless respiratory distress requires a supported position; avoid sudden standing or sitting.",
+              "Call the resuscitation team, give high-concentration oxygen when indicated and prepare early for a difficult airway.",
+              "Use inhaled bronchodilator as an adjunct for persistent bronchospasm, never as a substitute for epinephrine."
+            ]
+          },
+          {
+            "id": "circulation",
+            "title": "Restore circulation",
+            "timeframe": "Immediately when shock is present",
+            "actions": [
+              "Establish intravenous or intraosseous access and give rapid isotonic crystalloid with frequent reassessment.",
+              "Use continuous monitoring and obtain senior critical-care support for refractory shock.",
+              "Intravenous epinephrine infusion is restricted to appropriately monitored settings and experienced clinicians."
+            ]
+          },
+          {
+            "id": "remove-trigger",
+            "title": "Stop exposure and add adjunctive care",
+            "timeframe": "As soon as feasible",
+            "actions": [
+              "Stop the suspected trigger when this can be done safely, such as halting an infusion.",
+              "After stabilisation, use adjunctive antihistamine for persistent skin symptoms according to local policy.",
+              "Do not rely on corticosteroids to prevent immediate deterioration or replace observation."
+            ]
+          },
+          {
+            "id": "observe",
+            "title": "Observe and plan safe discharge",
+            "timeframe": "After complete clinical resolution",
+            "actions": [
+              "Use risk-stratified observation, extending monitoring after severe, refractory or high-risk reactions.",
+              "Document the suspected trigger and all treatment times.",
+              "Provide an emergency plan and allergy referral before discharge."
+            ]
+          }
+        ],
+        "medicationPlan": {
+          "status": "local-protocol-required",
+          "regimens": [
+            {
+              "indication": "Suspected adult anaphylaxis",
+              "patientGroup": "Adults; paediatric doses not included",
+              "genericName": "Adrenaline (epinephrine)",
+              "dose": "500 micrograms using 1 mg/mL concentration",
+              "route": "Intramuscular",
+              "frequency": "Repeat if no improvement within 5 minutes",
+              "duration": "Until emergency reassessment; further duration not specified",
+              "adjustments": [
+                "Full contraindication and adjustment list not specified in this excerpt; review the detailed RCUK guideline and local formulary."
+              ],
+              "monitoring": [
+                "Assess response to treatment."
+              ],
+              "sourceTitle": "RCUK 2025: Special circumstances — anaphylaxis",
+              "sourceUrl": "https://www.resus.org.uk/professional-library/2025-resuscitation-guidelines/special-circumstances-guidelines",
+              "sourceEdition": "2025; Management and prevention of cardiac arrest due to anaphylaxis"
+            }
+          ],
+          "note": "UNVERIFIED DRAFT — not approved for clinical use. Adult emergency anaphylaxis; the 2021 detailed algorithm supplies monitoring. Saudi adaptation and complete prescribing review pending. Detailed investigations, refractory infusion regimen and complete contraindication review are not extracted. This is a limited adult scope. Existing sections outside this extraction are inherited unchanged and are not newly verified."
+        },
+        "granularPathway": {
+          "schema_version": 1,
+          "evidence": {
+            "sources": [
+              {
+                "id": "442dc7ef-35ea-4b9a-9963-c90b8aaf59ab",
+                "title": "RCUK 2025: Special circumstances — anaphylaxis",
+                "issuer": "Other",
+                "edition": "2025",
+                "url": "https://www.resus.org.uk/professional-library/2025-resuscitation-guidelines/special-circumstances-guidelines",
+                "locator": "Management and prevention of cardiac arrest due to anaphylaxis",
+                "primary_source": true
+              }
+            ],
+            "selection_rationale": "Unverified scope: Adult emergency anaphylaxis; the 2021 detailed algorithm supplies monitoring. Saudi adaptation and complete prescribing review pending."
+          },
+          "Investigations": [
+            {
+              "id": "official-assessment",
+              "title": "Source-backed assessment draft",
+              "timeframe": "According to each source step",
+              "steps": [
+                {
+                  "test": "Airway, breathing and circulation assessment",
+                  "clinical_question": "Recognise anaphylaxis promptly",
+                  "expected_finding": "Compromise can occur without skin changes",
+                  "decision_rationale": "Clinical recognition triggers treatment",
+                  "timeframe": "Immediately"
+                }
+              ],
+              "evidence": {
+                "sources": [
+                  {
+                    "id": "442dc7ef-35ea-4b9a-9963-c90b8aaf59ab",
+                    "title": "RCUK 2025: Special circumstances — anaphylaxis",
+                    "issuer": "Other",
+                    "edition": "2025",
+                    "url": "https://www.resus.org.uk/professional-library/2025-resuscitation-guidelines/special-circumstances-guidelines",
+                    "locator": "Management and prevention of cardiac arrest due to anaphylaxis",
+                    "primary_source": true
+                  }
+                ],
+                "selection_rationale": "Unverified scope: Adult emergency anaphylaxis; the 2021 detailed algorithm supplies monitoring. Saudi adaptation and complete prescribing review pending."
+              }
+            }
+          ],
+          "Treatment_Plan": [
+            {
+              "id": "official-management",
+              "title": "Limited source-backed management draft",
+              "timeframe": "According to each source action",
+              "actions": [
+                {
+                  "instruction": "Remove the trigger if feasible; give early IV crystalloid and assess response.",
+                  "timeframe": "Immediately"
+                },
+                {
+                  "instruction": "Review gaps: Detailed investigations, refractory infusion regimen and complete contraindication review are not extracted. This is a limited adult scope.",
+                  "timeframe": "Before clinical approval"
+                }
+              ],
+              "Medicines_Doses": [],
+              "branches": [],
+              "evidence": {
+                "sources": [
+                  {
+                    "id": "442dc7ef-35ea-4b9a-9963-c90b8aaf59ab",
+                    "title": "RCUK 2025: Special circumstances — anaphylaxis",
+                    "issuer": "Other",
+                    "edition": "2025",
+                    "url": "https://www.resus.org.uk/professional-library/2025-resuscitation-guidelines/special-circumstances-guidelines",
+                    "locator": "Management and prevention of cardiac arrest due to anaphylaxis",
+                    "primary_source": true
+                  }
+                ],
+                "selection_rationale": "Unverified scope: Adult emergency anaphylaxis; the 2021 detailed algorithm supplies monitoring. Saudi adaptation and complete prescribing review pending."
+              }
+            }
+          ]
+        },
+        "nonClinicalManagement": {
+          "patientEducation": [
+            "Teach recognition of airway, breathing and circulatory symptoms and the need to use an epinephrine auto-injector without delay when prescribed.",
+            "Demonstrate auto-injector technique and use teach-back.",
+            "Provide written trigger-avoidance and emergency instructions in the patient's preferred language."
+          ],
+          "lifestyleAndDiet": [
+            "Avoid the suspected trigger until specialist assessment clarifies the diagnosis.",
+            "Review food, medicine and occupational labels without imposing unnecessary broad restriction.",
+            "Encourage the patient to carry medical identification and prescribed rescue devices."
+          ],
+          "mdtReferrals": [
+            "Allergy and immunology for trigger confirmation and prevention planning",
+            "Critical care for refractory airway, breathing or circulatory compromise",
+            "Dietitian for confirmed food allergy requiring substantial dietary exclusion",
+            "Pharmacy for auto-injector access and technique reinforcement"
+          ],
+          "dischargeCriteria": [
+            "Airway, breathing, circulation and skin/mucosal symptoms have fully resolved for the risk-appropriate observation period.",
+            "The patient has access to prescribed rescue medication and can demonstrate its use.",
+            "Written precautions, suspected-trigger documentation and specialist follow-up are in place."
+          ],
+          "followUpPlan": "Arrange allergy evaluation, ensure the event is recorded in the medicine/allergy record, review auto-injector availability before expiry, and advise immediate emergency care for any recurrent systemic reaction."
+        }
+      },
+      "graph": {
+        "title": "Acute Anaphylaxis: limited evidence extraction",
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "title": "Extracted scope",
+            "detail": "Adult emergency anaphylaxis; the 2021 detailed algorithm supplies monitoring. Saudi adaptation and complete prescribing review pending.",
+            "referenceIds": [
+              "442dc7ef-35ea-4b9a-9963-c90b8aaf59ab"
+            ]
+          },
+          {
+            "id": "assessment",
+            "type": "assessment",
+            "title": "Investigations",
+            "detail": "Airway, breathing and circulation assessment: Clinical recognition triggers treatment; Immediately",
+            "referenceIds": [
+              "442dc7ef-35ea-4b9a-9963-c90b8aaf59ab"
+            ]
+          },
+          {
+            "id": "management",
+            "type": "action",
+            "title": "Source-backed actions",
+            "detail": "Remove the trigger if feasible; give early IV crystalloid and assess response. Immediately",
+            "referenceIds": [
+              "442dc7ef-35ea-4b9a-9963-c90b8aaf59ab"
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "title": "End of extracted scope",
+            "detail": "Review gaps: Detailed investigations, refractory infusion regimen and complete contraindication review are not extracted. This is a limited adult scope.",
+            "referenceIds": [
+              "442dc7ef-35ea-4b9a-9963-c90b8aaf59ab"
+            ]
+          }
+        ],
+        "transitions": [
+          {
+            "from": "start",
+            "to": "assessment"
+          },
+          {
+            "from": "assessment",
+            "to": "management"
+          },
+          {
+            "from": "management",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c2c404f2-5f47-4e4d-9ce7-fb32a9c1e104",
+      "title": "Acute Appendicitis",
+      "original_version_id": "c2c404f2-5f47-4e4d-9ce7-fb32a9c1e104",
+      "expected_hash": "a01975c3ceb1f4fef6559d38f88bbcde",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7386163/",
+      "source_title": "WSES Jerusalem guidelines: acute appendicitis",
+      "issuer": "Other",
+      "scope": "Historical open-access evidence candidate. The 2025 WSES edition exists; reconciliation is mandatory before adoption. No historical dose promoted as current.",
+      "content": {
+        "id": "c2c404f2-5f47-4e4d-9ce7-fb32a9c1e104",
+        "title": "Acute Appendicitis",
+        "specialty": "Emergency Medicine and General Surgery",
+        "authority": "MOH",
+        "status": "draft",
+        "version": "official-extraction-2026-10-11-b001",
+        "lastReviewed": "2026-10-10",
+        "pillar": "Urgent Care",
+        "clinicalReviewStatus": "pending",
+        "pathophysiology": {
+          "summary": "Appendiceal obstruction and inflammation may progress to ischemia, perforation, abscess, or peritonitis.",
+          "keyMechanisms": [
+            "Luminal obstruction",
+            "Appendiceal wall inflammation and distension",
+            "Venous congestion and ischemia",
+            "Perforation and intra-abdominal infection"
+          ]
+        },
+        "presentation": {
+          "symptoms": [
+            "Abdominal pain possibly migrating to right lower quadrant",
+            "Loss of appetite",
+            "Nausea or vomiting",
+            "Fever",
+            "Pain worsened by movement or cough"
+          ],
+          "physicalSigns": [
+            "Right lower quadrant tenderness",
+            "Localized guarding",
+            "Pain with movement or cough",
+            "Possible fever and tachycardia",
+            "Variable findings in pregnancy, older adults, and children"
+          ],
+          "redFlags": [
+            "Generalized peritonitis",
+            "Hemodynamic instability or sepsis",
+            "Rigid abdomen",
+            "Rapidly worsening pain or systemic illness",
+            "Pregnancy/immunosuppression with concerning symptoms"
+          ]
+        },
+        "differentials": [
+          {
+            "condition": "Ectopic pregnancy",
+            "distinguishingFeatures": "Possible pregnancy, pelvic pain, vaginal bleeding, or instability."
+          },
+          {
+            "condition": "Ovarian torsion",
+            "distinguishingFeatures": "Acute unilateral pelvic pain with supportive adnexal imaging."
+          },
+          {
+            "condition": "Renal/ureteric colic",
+            "distinguishingFeatures": "Colicky flank-to-groin pain and possible hematuria."
+          },
+          {
+            "condition": "Gastroenteritis/mesenteric adenitis",
+            "distinguishingFeatures": "Diarrhea or diffuse symptoms may predominate; serial examination helps distinguish."
+          }
+        ],
+        "investigations": {
+          "ruleIn": [
+            {
+              "tier": "laboratory",
+              "testName": "Serial focused abdominal examination",
+              "modalityTarget": "Serial focused abdominal examination — Appendicitis or peritoneal irritation",
+              "targetCondition": "Appendicitis or peritoneal irritation",
+              "expectedFinding": "Persistent or evolving focal tenderness, guarding, or movement pain.",
+              "clinicalRationale": "Clinical course and serial findings support diagnosis."
+            },
+            {
+              "tier": "advancedImaging",
+              "testName": "Ultrasound or CT selected by age, pregnancy, and local protocol",
+              "modalityTarget": "Ultrasound or CT selected by age, pregnancy, and local protocol — Appendicitis",
+              "targetCondition": "Appendicitis",
+              "expectedFinding": "Imaging consistent with inflamed appendix or complication.",
+              "clinicalRationale": "Clarifies uncertain presentations and identifies complications."
+            }
+          ],
+          "ruleOut": [
+            {
+              "tier": "laboratory",
+              "testName": "Urinalysis",
+              "modalityTarget": "Urinalysis — Urinary infection or calculus",
+              "targetCondition": "Urinary infection or calculus",
+              "expectedFinding": "No findings sufficient to explain symptoms when urinary disease is unlikely.",
+              "clinicalRationale": "Assesses common mimics but does not independently exclude appendicitis."
+            },
+            {
+              "tier": "laboratory",
+              "testName": "Pregnancy test when relevant",
+              "modalityTarget": "Pregnancy test when relevant — Pregnancy-related abdominal pain",
+              "targetCondition": "Pregnancy-related abdominal pain",
+              "expectedFinding": "Negative when pregnancy is excluded.",
+              "clinicalRationale": "Informs differential, imaging, and gynecologic urgency."
+            }
+          ]
+        },
+        "clinicalManagement": [
+          {
+            "id": "assess-stabilize",
+            "title": "Assess and stabilize",
+            "timeframe": "At presentation",
+            "actions": [
+              "Assess observations, hydration, pain, abdominal findings, and peritonitis/sepsis.",
+              "Keep fasting when surgery may be needed.",
+              "Provide analgesia, antiemetic treatment, and fluids as clinically indicated."
+            ],
+            "branches": [
+              {
+                "condition": "Peritonitis, sepsis, or instability",
+                "actions": [
+                  "Escalate immediately to emergency and surgical senior review.",
+                  "Initiate resuscitation and urgent source-control planning."
+                ]
+              },
+              {
+                "condition": "Stable with uncertain diagnosis",
+                "actions": [
+                  "Use serial examination and appropriate laboratory or imaging assessment.",
+                  "Consult surgery if symptoms persist or worsen."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "definitive-care",
+            "title": "Confirm diagnosis and arrange definitive care",
+            "timeframe": "Urgently after initial assessment",
+            "actions": [
+              "Consult general surgery for suspected appendicitis or complication.",
+              "Select imaging and antimicrobial management per patient factors and local pathway.",
+              "Document diagnosis, severity, pregnancy status when relevant, and disposition."
+            ],
+            "branches": [
+              {
+                "condition": "Confirmed or strongly suspected appendicitis",
+                "actions": [
+                  "Arrange surgical admission and definitive management planning.",
+                  "Use antimicrobials when indicated by severity and local protocol."
+                ]
+              },
+              {
+                "condition": "Appendicitis not supported and patient stable",
+                "actions": [
+                  "Assess alternative diagnoses and discharge safety.",
+                  "Give return precautions for worsening pain, fever, vomiting, or weakness."
+                ]
+              }
+            ]
+          }
+        ],
+        "medicationPlan": {
+          "status": "local-protocol-required",
+          "regimens": [],
+          "note": "UNVERIFIED DRAFT — not approved for clinical use. Historical open-access evidence candidate. The 2025 WSES edition exists; reconciliation is mandatory before adoption. No historical dose promoted as current. Specific current drug selection, dose, route, contraindications and duration require retrieval of the newer 2025 edition and local antimicrobial policy. No dose inferred from the older edition. Existing sections outside this extraction are inherited unchanged and are not newly verified."
+        },
+        "granularPathway": {
+          "schema_version": 1,
+          "evidence": {
+            "sources": [
+              {
+                "id": "1919c9db-1113-438a-8a27-9a074856e244",
+                "title": "WSES Jerusalem guidelines: acute appendicitis",
+                "issuer": "Other",
+                "edition": "2020",
+                "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7386163/",
+                "locator": "Recommendations 1.1, 1.10, 3.1 and 7.1",
+                "primary_source": true
+              }
+            ],
+            "selection_rationale": "Unverified scope: Historical open-access evidence candidate. The 2025 WSES edition exists; reconciliation is mandatory before adoption. No historical dose promoted as current."
+          },
+          "Investigations": [
+            {
+              "id": "official-assessment",
+              "title": "Source-backed assessment draft",
+              "timeframe": "According to each source step",
+              "steps": [
+                {
+                  "test": "Clinical risk stratification and ultrasound when imaging indicated",
+                  "clinical_question": "Assess appendicitis probability",
+                  "expected_finding": "Interpret findings with age, sex and clinical assessment",
+                  "decision_rationale": "Guide selective imaging",
+                  "timeframe": "During diagnostic assessment"
+                }
+              ],
+              "evidence": {
+                "sources": [
+                  {
+                    "id": "1919c9db-1113-438a-8a27-9a074856e244",
+                    "title": "WSES Jerusalem guidelines: acute appendicitis",
+                    "issuer": "Other",
+                    "edition": "2020",
+                    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7386163/",
+                    "locator": "Recommendations 1.1, 1.10, 3.1 and 7.1",
+                    "primary_source": true
+                  }
+                ],
+                "selection_rationale": "Unverified scope: Historical open-access evidence candidate. The 2025 WSES edition exists; reconciliation is mandatory before adoption. No historical dose promoted as current."
+              }
+            }
+          ],
+          "Treatment_Plan": [
+            {
+              "id": "official-management",
+              "title": "Limited source-backed management draft",
+              "timeframe": "According to each source action",
+              "actions": [
+                {
+                  "instruction": "Discuss antibiotics as an alternative for selected uncomplicated appendicitis without an appendicolith, including recurrence and failure risks.",
+                  "timeframe": "After diagnosis and surgical review"
+                },
+                {
+                  "instruction": "For appendectomy, use preoperative broad-spectrum prophylaxis; uncomplicated disease does not require postoperative antibiotics in this edition.",
+                  "timeframe": "Preoperatively"
+                },
+                {
+                  "instruction": "Review gaps: Specific current drug selection, dose, route, contraindications and duration require retrieval of the newer 2025 edition and local antimicrobial policy. No dose inferred from the older edition.",
+                  "timeframe": "Before clinical approval"
+                }
+              ],
+              "Medicines_Doses": [],
+              "branches": [],
+              "evidence": {
+                "sources": [
+                  {
+                    "id": "1919c9db-1113-438a-8a27-9a074856e244",
+                    "title": "WSES Jerusalem guidelines: acute appendicitis",
+                    "issuer": "Other",
+                    "edition": "2020",
+                    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7386163/",
+                    "locator": "Recommendations 1.1, 1.10, 3.1 and 7.1",
+                    "primary_source": true
+                  }
+                ],
+                "selection_rationale": "Unverified scope: Historical open-access evidence candidate. The 2025 WSES edition exists; reconciliation is mandatory before adoption. No historical dose promoted as current."
+              }
+            }
+          ]
+        },
+        "nonClinicalManagement": {
+          "patientEducation": [
+            "Explain that symptoms can evolve and reassessment may be needed.",
+            "Review warning symptoms requiring immediate return."
+          ],
+          "lifestyleAndDiet": [
+            "Follow fasting instructions while surgery is considered.",
+            "Resume oral intake per treating-team advice."
+          ],
+          "mdtReferrals": [
+            "General surgery",
+            "Obstetrics and gynecology if relevant",
+            "Radiology for uncertain or complex cases"
+          ],
+          "dischargeCriteria": [
+            "Serious surgical and pregnancy-related causes assessed",
+            "Stable observations and manageable symptoms",
+            "Follow-up or observation plan documented",
+            "Immediate return precautions understood"
+          ],
+          "followUpPlan": "If discharged, arrange follow-up by working diagnosis and advise immediate return for worsening or persistent symptoms."
+        }
+      },
+      "graph": {
+        "title": "Acute Appendicitis: limited evidence extraction",
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "title": "Extracted scope",
+            "detail": "Historical open-access evidence candidate. The 2025 WSES edition exists; reconciliation is mandatory before adoption. No historical dose promoted as current.",
+            "referenceIds": [
+              "1919c9db-1113-438a-8a27-9a074856e244"
+            ]
+          },
+          {
+            "id": "assessment",
+            "type": "assessment",
+            "title": "Investigations",
+            "detail": "Clinical risk stratification and ultrasound when imaging indicated: Guide selective imaging; During diagnostic assessment",
+            "referenceIds": [
+              "1919c9db-1113-438a-8a27-9a074856e244"
+            ]
+          },
+          {
+            "id": "management",
+            "type": "action",
+            "title": "Source-backed actions",
+            "detail": "Discuss antibiotics as an alternative for selected uncomplicated appendicitis without an appendicolith, including recurrence and failure risks. After diagnosis and surgical review\nFor appendectomy, use preoperative broad-spectrum prophylaxis; uncomplicated disease does not require postoperative antibiotics in this edition. Preoperatively",
+            "referenceIds": [
+              "1919c9db-1113-438a-8a27-9a074856e244"
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "title": "End of extracted scope",
+            "detail": "Review gaps: Specific current drug selection, dose, route, contraindications and duration require retrieval of the newer 2025 edition and local antimicrobial policy. No dose inferred from the older edition.",
+            "referenceIds": [
+              "1919c9db-1113-438a-8a27-9a074856e244"
+            ]
+          }
+        ],
+        "transitions": [
+          {
+            "from": "start",
+            "to": "assessment"
+          },
+          {
+            "from": "assessment",
+            "to": "management"
+          },
+          {
+            "from": "management",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "83aa7315-9778-4b3a-93a8-edcac20d7c58",
+      "title": "Acute Bowel Obstruction",
+      "original_version_id": "83aa7315-9778-4b3a-93a8-edcac20d7c58",
+      "expected_hash": "e0decb00dd2c82ad1844a390a1083162",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6006983/",
+      "source_title": "WSES Bologna guidelines: adhesive small bowel obstruction",
+      "issuer": "Other",
+      "scope": "Adhesive small-bowel obstruction only; does not cover all causes of bowel obstruction.",
+      "content": {
+        "id": "83aa7315-9778-4b3a-93a8-edcac20d7c58",
+        "title": "Acute Bowel Obstruction",
+        "specialty": "Acute Care Surgery / Emergency Medicine",
+        "authority": "Textbook",
+        "status": "draft",
+        "version": "official-extraction-2026-10-11-b001",
+        "lastReviewed": "2026-10-10",
+        "pillar": "Urgent Care",
+        "clinicalReviewStatus": "pending",
+        "pathophysiology": {
+          "summary": "A mechanical blockage or dysmotility causes proximal dilation and fluid sequestration. A closed-loop obstruction can compromise venous and arterial supply, leading to ischaemia, necrosis, and perforation. This topic is educational and should be interpreted alongside current local pathways and patient-specific assessment.",
+          "keyMechanisms": [
+            "A mechanical blockage or dysmotility causes proximal dilation and fluid sequestration. A closed-loop obstruction can compromise venous and arterial supply, leading to ischaemia, necrosis, and perforation.",
+            "Clinical expression and progression vary with baseline risk, comorbidity, treatment exposure, and access to timely care."
+          ]
+        },
+        "presentation": {
+          "symptoms": [
+            "Evaluate the characteristic symptom pattern of Acute Bowel Obstruction, including onset, evolution, severity, associated symptoms, precipitating factors, complications, and relevant negative findings.",
+            "Clarify onset, progression, associated symptoms, baseline function, medicines and the patient’s own priorities.",
+            "Ask about relevant risk factors and context described in the case; document important negative findings rather than assuming their absence."
+          ],
+          "physicalSigns": [
+            "Record observations and a focused examination directed to the organ system and competing diagnoses in this topic.",
+            "Assess functional change, comorbidity, hydration/perfusion where relevant, and baseline status.",
+            "Use serial reassessment when the condition or treatment can change over hours or days."
+          ],
+          "redFlags": [
+            "Continuous severe pain or peritonism",
+            "Shock, fever with toxicity, or metabolic acidosis",
+            "Strangulated hernia",
+            "Free air or suspected bowel ischaemia"
+          ]
+        },
+        "differentials": [
+          {
+            "condition": "Ileus",
+            "distinguishingFeatures": "Diffuse bowel dilation without a mechanical transition; consider medicines and recent illness/surgery."
+          },
+          {
+            "condition": "Gastroenteritis",
+            "distinguishingFeatures": "Diarrhoea and absence of progressive distension may support an alternative."
+          },
+          {
+            "condition": "Mesenteric ischaemia or perforation",
+            "distinguishingFeatures": "Pain out of proportion or peritonism requires emergency action."
+          }
+        ],
+        "investigations": {
+          "ruleIn": [
+            {
+              "tier": "laboratory",
+              "testName": "CBC, electrolytes, renal function and lactate when ischaemia is suspected; pregnancy test where relevant.",
+              "modalityTarget": "CBC, electrolytes, renal function and lactate when ischaemia is suspected; pregnancy test where relevant. — Acute Bowel Obstruction",
+              "targetCondition": "Acute Bowel Obstruction",
+              "expectedFinding": "A result that supports the working diagnosis or defines its severity, interpreted with the clinical picture and current criteria.",
+              "clinicalRationale": "Choose this investigation because it can confirm the suspected process, establish baseline risk, or change the next decision in this case."
+            },
+            {
+              "tier": "laboratory",
+              "testName": "Abdominal imaging selected with surgical input to define level, transition, closed loop, ischaemia, or perforation.",
+              "modalityTarget": "Abdominal imaging selected with surgical input to define level, transition, closed loop, ischaemia, or perforation. — Cause, complication, or risk relevant to Acute Bowel Obstruction",
+              "targetCondition": "Cause, complication, or risk relevant to Acute Bowel Obstruction",
+              "expectedFinding": "A result that may identify a precipitating factor or complication; interpret in context rather than as a stand-alone diagnosis.",
+              "clinicalRationale": "This helps detect an important alternative or complication and informs safe monitoring and referral."
+            }
+          ],
+          "ruleOut": [
+            {
+              "tier": "laboratory",
+              "testName": "Focused evaluation for the leading alternative diagnoses",
+              "modalityTarget": "Focused evaluation for the leading alternative diagnoses — Important alternative to Acute Bowel Obstruction",
+              "targetCondition": "Important alternative to Acute Bowel Obstruction",
+              "expectedFinding": "Findings that lower the likelihood of the selected alternative; a normal result does not exclude every urgent cause.",
+              "clinicalRationale": "The differential matters because it changes urgency or treatment and should be actively considered."
+            },
+            {
+              "tier": "laboratory",
+              "testName": "Serial clinical reassessment with targeted repeat testing when indicated",
+              "modalityTarget": "Serial clinical reassessment with targeted repeat testing when indicated — Progression or evolving complication",
+              "targetCondition": "Progression or evolving complication",
+              "expectedFinding": "Stable or improving clinical trend without new evidence of the suspected complication.",
+              "clinicalRationale": "A single early assessment may miss an evolving problem; repeat only when it can guide care."
+            }
+          ]
+        },
+        "clinicalManagement": [
+          {
+            "id": "assess-and-triage",
+            "title": "Assess urgency, stability, and the person’s priorities",
+            "timeframe": "At first contact and whenever the situation changes",
+            "actions": [
+              "Confirm the presenting concern, relevant timeline, baseline function, medicines, allergies, comorbidities, and the patient’s immediate priorities.",
+              "Assess the red flags above and use the current local escalation pathway if instability or rapid deterioration is present.",
+              "Explain uncertainty and involve the patient or appropriate decision-maker in a way suited to the setting."
+            ],
+            "branches": [
+              {
+                "condition": "A red flag, instability, or rapid deterioration is present",
+                "actions": [
+                  "Escalate immediately to the responsible senior or emergency team using the local pathway.",
+                  "Stabilise and investigate in parallel; do not delay time-critical action for routine testing."
+                ]
+              },
+              {
+                "condition": "The person is stable for a planned or longitudinal pathway",
+                "actions": [
+                  "Proceed with focused assessment and shared planning.",
+                  "Document the threshold for urgent reassessment."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "confirm-and-stratify",
+            "title": "Confirm the working diagnosis and stratify risk",
+            "timeframe": "Promptly; adapt timing to acuity",
+            "actions": [
+              "Use the history, examination, and investigations listed above to confirm the likely process and assess important alternatives.",
+              "Interpret results using current national/local diagnostic criteria, age, pregnancy status, comorbidity, and prior results.",
+              "Record severity, uncertainty, and which findings would change the plan."
+            ],
+            "branches": [
+              {
+                "condition": "The diagnosis remains uncertain or tests conflict with the clinical picture",
+                "actions": [
+                  "Reassess the history and examination and seek senior or specialty advice.",
+                  "Use targeted additional testing only when its result can change management."
+                ]
+              },
+              {
+                "condition": "A high-risk complication or an alternative diagnosis is identified",
+                "actions": [
+                  "Switch to the relevant urgent or specialty pathway.",
+                  "Communicate the finding and handover responsibility clearly."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "individualised-care",
+            "title": "Agree evidence-informed care and address the cause",
+            "timeframe": "According to acuity and current local protocol",
+            "actions": [
+              "Use the topic-specific focus in this record to agree immediate and longer-term priorities with the patient.",
+              "Select treatment only after checking current local guidance, formulary, contraindications, interactions, organ function, pregnancy considerations, and patient preference.",
+              "Treat reversible contributors and address access, communication, cultural, and functional barriers."
+            ],
+            "branches": [
+              {
+                "condition": "Treatment is ineffective, poorly tolerated, or inconsistent with the patient’s goals",
+                "actions": [
+                  "Reassess diagnosis, treatment burden, adherence barriers, and alternatives with the responsible specialist.",
+                  "Document the shared decision and safety-net plan."
+                ]
+              },
+              {
+                "condition": "The patient improves on the agreed plan",
+                "actions": [
+                  "Continue the plan with monitoring proportional to risk.",
+                  "Provide clear instructions for expected course and warning symptoms."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "coordinate-and-follow-up",
+            "title": "Coordinate handover, education, and follow-up",
+            "timeframe": "Before transition and at the agreed review interval",
+            "actions": [
+              "Provide a written plan stating the working diagnosis, key findings, medicines or interventions, monitoring, and who owns each next step.",
+              "Use teach-back to check that the patient or caregiver understands warning symptoms, follow-up, and how to obtain help.",
+              "Close the loop on pending results, referrals, and screening or prevention actions."
+            ],
+            "branches": [
+              {
+                "condition": "Safe care cannot be delivered in the current setting",
+                "actions": [
+                  "Arrange a higher level of care or supported transfer and send a structured clinical handover.",
+                  "Confirm transport, caregiver, and communication needs where relevant."
+                ]
+              },
+              {
+                "condition": "The patient is ready for outpatient or continuing care",
+                "actions": [
+                  "Confirm a feasible follow-up date and contact route.",
+                  "Document when and how the plan should be reviewed or escalated."
+                ]
+              }
+            ]
+          }
+        ],
+        "medicationPlan": {
+          "status": "local-protocol-required",
+          "regimens": [],
+          "note": "UNVERIFIED DRAFT — not approved for clinical use. Adhesive small-bowel obstruction only; does not cover all causes of bowel obstruction. No complete named-drug regimen or precise fluid dose extracted; local prescribing review required. Existing sections outside this extraction are inherited unchanged and are not newly verified."
+        },
+        "granularPathway": {
+          "schema_version": 1,
+          "evidence": {
+            "sources": [
+              {
+                "id": "51328a5d-b61c-490a-824d-bed228dbfcfd",
+                "title": "WSES Bologna guidelines: adhesive small bowel obstruction",
+                "issuer": "Other",
+                "edition": "2017 update, published 2018",
+                "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6006983/",
+                "locator": "Diagnosis; CT scans; Non-operative management",
+                "primary_source": true
+              }
+            ],
+            "selection_rationale": "Unverified scope: Adhesive small-bowel obstruction only; does not cover all causes of bowel obstruction."
+          },
+          "Investigations": [
+            {
+              "id": "official-assessment",
+              "title": "Source-backed assessment draft",
+              "timeframe": "According to each source step",
+              "steps": [
+                {
+                  "test": "CT assessment",
+                  "clinical_question": "Identify obstruction and bowel compromise",
+                  "expected_finding": "Closed loop, ischaemia or free fluid may require surgery without delay",
+                  "decision_rationale": "Select operative versus non-operative management",
+                  "timeframe": "During assessment"
+                },
+                {
+                  "test": "Blood count, lactate, electrolytes, CRP and BUN/creatinine",
+                  "clinical_question": "Assess complications and dehydration",
+                  "expected_finding": "Interpret alongside clinical assessment",
+                  "decision_rationale": "Detect dehydration and metabolic abnormalities",
+                  "timeframe": "During assessment"
+                }
+              ],
+              "evidence": {
+                "sources": [
+                  {
+                    "id": "51328a5d-b61c-490a-824d-bed228dbfcfd",
+                    "title": "WSES Bologna guidelines: adhesive small bowel obstruction",
+                    "issuer": "Other",
+                    "edition": "2017 update, published 2018",
+                    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6006983/",
+                    "locator": "Diagnosis; CT scans; Non-operative management",
+                    "primary_source": true
+                  }
+                ],
+                "selection_rationale": "Unverified scope: Adhesive small-bowel obstruction only; does not cover all causes of bowel obstruction."
+              }
+            }
+          ],
+          "Treatment_Plan": [
+            {
+              "id": "official-management",
+              "title": "Limited source-backed management draft",
+              "timeframe": "According to each source action",
+              "actions": [
+                {
+                  "instruction": "Non-operative treatment is unsuitable with peritonitis, strangulation or ischaemia; otherwise use bowel rest, decompression and fluid/electrolyte correction.",
+                  "timeframe": "After surgical assessment"
+                },
+                {
+                  "instruction": "A non-operative trial up to 72 hours is considered appropriate in eligible patients; deterioration requires earlier reassessment.",
+                  "timeframe": "Up to 72 hours; not a compulsory waiting period"
+                },
+                {
+                  "instruction": "Review gaps: No complete named-drug regimen or precise fluid dose extracted; local prescribing review required.",
+                  "timeframe": "Before clinical approval"
+                }
+              ],
+              "Medicines_Doses": [],
+              "branches": [],
+              "evidence": {
+                "sources": [
+                  {
+                    "id": "51328a5d-b61c-490a-824d-bed228dbfcfd",
+                    "title": "WSES Bologna guidelines: adhesive small bowel obstruction",
+                    "issuer": "Other",
+                    "edition": "2017 update, published 2018",
+                    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6006983/",
+                    "locator": "Diagnosis; CT scans; Non-operative management",
+                    "primary_source": true
+                  }
+                ],
+                "selection_rationale": "Unverified scope: Adhesive small-bowel obstruction only; does not cover all causes of bowel obstruction."
+              }
+            }
+          ]
+        },
+        "nonClinicalManagement": {
+          "patientEducation": [
+            "Explain acute bowel obstruction in plain language, including what is known, what remains uncertain, and how the plan will be reviewed.",
+            "Use teach-back for warning signs, medicines or monitoring, and the route to urgent help.",
+            "Invite questions and adapt written or interpreted information to the patient’s language, health literacy, and communication needs."
+          ],
+          "lifestyleAndDiet": [
+            "Offer topic-relevant prevention or self-management support that is safe, feasible, culturally appropriate, and consistent with the person’s goals.",
+            "Avoid one-size-fits-all restrictions; individualise advice for pregnancy, frailty, kidney/heart disease, disability, and treatment burden."
+          ],
+          "mdtReferrals": [
+            "Acute Care Surgery / Emergency Medicine",
+            "Primary care or the responsible continuity team",
+            "Pharmacist, nurse educator, dietitian, rehabilitation, mental-health, or social support when relevant to the case."
+          ],
+          "dischargeCriteria": [
+            "Clinical status is appropriate for the next setting, and urgent complications have been excluded or addressed.",
+            "The patient or caregiver has an understandable plan, access to needed treatment/support, and a clear escalation route.",
+            "Pending investigations and referrals have a named owner and follow-up timeframe."
+          ],
+          "followUpPlan": "Review the topic-specific focus, patient goals, symptoms and function at an interval matched to risk. Reconcile new results and treatment effects, close referrals, and revisit the plan if the condition, circumstances, or preferences change."
+        }
+      },
+      "graph": {
+        "title": "Acute Bowel Obstruction: limited evidence extraction",
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "title": "Extracted scope",
+            "detail": "Adhesive small-bowel obstruction only; does not cover all causes of bowel obstruction.",
+            "referenceIds": [
+              "51328a5d-b61c-490a-824d-bed228dbfcfd"
+            ]
+          },
+          {
+            "id": "assessment",
+            "type": "assessment",
+            "title": "Investigations",
+            "detail": "CT assessment: Select operative versus non-operative management; During assessment\nBlood count, lactate, electrolytes, CRP and BUN/creatinine: Detect dehydration and metabolic abnormalities; During assessment",
+            "referenceIds": [
+              "51328a5d-b61c-490a-824d-bed228dbfcfd"
+            ]
+          },
+          {
+            "id": "management",
+            "type": "action",
+            "title": "Source-backed actions",
+            "detail": "Non-operative treatment is unsuitable with peritonitis, strangulation or ischaemia; otherwise use bowel rest, decompression and fluid/electrolyte correction. After surgical assessment\nA non-operative trial up to 72 hours is considered appropriate in eligible patients; deterioration requires earlier reassessment. Up to 72 hours; not a compulsory waiting period",
+            "referenceIds": [
+              "51328a5d-b61c-490a-824d-bed228dbfcfd"
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "title": "End of extracted scope",
+            "detail": "Review gaps: No complete named-drug regimen or precise fluid dose extracted; local prescribing review required.",
+            "referenceIds": [
+              "51328a5d-b61c-490a-824d-bed228dbfcfd"
+            ]
+          }
+        ],
+        "transitions": [
+          {
+            "from": "start",
+            "to": "assessment"
+          },
+          {
+            "from": "assessment",
+            "to": "management"
+          },
+          {
+            "from": "management",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c2c404f2-5f47-4e4d-9ce7-fb32a9c1e103",
+      "title": "Acute Coronary Syndrome",
+      "original_version_id": "c2c404f2-5f47-4e4d-9ce7-fb32a9c1e103",
+      "expected_hash": "7c60768214b327ee8f2bdfc10fbe8d1d",
+      "source_url": "https://www.nice.org.uk/guidance/ng185/chapter/recommendations",
+      "source_title": "NICE NG185: Acute coronary syndromes",
+      "issuer": "NICE",
+      "scope": "Adult confirmed ACS; loading dose only. Broader antithrombotic and reperfusion protocols are not extracted.",
+      "content": {
+        "id": "c2c404f2-5f47-4e4d-9ce7-fb32a9c1e103",
+        "title": "Acute Coronary Syndrome",
+        "specialty": "Emergency Medicine and Cardiology",
+        "authority": "MOH",
+        "status": "draft",
+        "version": "official-extraction-2026-10-11-b001",
+        "lastReviewed": "2026-10-10",
+        "pillar": "Urgent Care",
+        "clinicalReviewStatus": "pending",
+        "pathophysiology": {
+          "summary": "Acute reduction in coronary blood flow, commonly from plaque disruption and thrombosis, causes myocardial ischemia and may cause infarction.",
+          "keyMechanisms": [
+            "Atherosclerotic plaque disruption",
+            "Platelet activation and coronary thrombosis",
+            "Myocardial oxygen supply-demand imbalance",
+            "Myocardial necrosis if ischemia persists"
+          ]
+        },
+        "presentation": {
+          "symptoms": [
+            "Chest pressure, tightness, heaviness, or pain",
+            "Discomfort to arm, jaw, back, neck, or upper abdomen",
+            "Shortness of breath",
+            "Nausea, vomiting, or sweating",
+            "Fatigue, lightheadedness, or syncope"
+          ],
+          "physicalSigns": [
+            "Diaphoresis or pallor",
+            "Tachycardia, bradycardia, or arrhythmia",
+            "Hypotension or hypertension",
+            "Signs of acute heart failure",
+            "Examination may be normal"
+          ],
+          "redFlags": [
+            "Persistent or recurrent ischemic pain",
+            "High-risk ECG changes",
+            "Hemodynamic instability",
+            "Pulmonary edema or cardiogenic shock",
+            "Cardiac arrest or malignant arrhythmia"
+          ]
+        },
+        "differentials": [
+          {
+            "condition": "Aortic dissection",
+            "distinguishingFeatures": "Abrupt severe pain, pulse/BP asymmetry, neurologic deficit, or aortic regurgitation."
+          },
+          {
+            "condition": "Pulmonary embolism",
+            "distinguishingFeatures": "Pleuritic pain, unexplained hypoxemia/tachycardia, and VTE risk."
+          },
+          {
+            "condition": "Pericarditis",
+            "distinguishingFeatures": "Often positional or pleuritic pain with characteristic ECG changes."
+          },
+          {
+            "condition": "Gastroesophageal or musculoskeletal pain",
+            "distinguishingFeatures": "Meal-related, positional, or reproducible features do not alone exclude ACS."
+          }
+        ],
+        "investigations": {
+          "ruleIn": [
+            {
+              "tier": "specializedAdjunctive",
+              "testName": "12-lead ECG repeated when symptoms persist/evolve",
+              "modalityTarget": "12-lead ECG repeated when symptoms persist/evolve — ACS",
+              "targetCondition": "ACS",
+              "expectedFinding": "Possible ST elevation, ischemic ST depression, T-wave inversion, or dynamic changes.",
+              "clinicalRationale": "Rapid interpretation guides reperfusion and risk management."
+            },
+            {
+              "tier": "laboratory",
+              "testName": "Serial high-sensitivity troponin using local pathway",
+              "modalityTarget": "Serial high-sensitivity troponin using local pathway — Acute myocardial injury",
+              "targetCondition": "Acute myocardial injury",
+              "expectedFinding": "Rise/fall with a value above assay threshold in clinical context.",
+              "clinicalRationale": "Supports diagnosis and risk assessment with symptoms and ECG."
+            }
+          ],
+          "ruleOut": [
+            {
+              "tier": "specializedAdjunctive",
+              "testName": "Serial ECG and troponin pathway",
+              "modalityTarget": "Serial ECG and troponin pathway — Acute MI",
+              "targetCondition": "Acute MI",
+              "expectedFinding": "No evolving ischemic ECG or significant troponin change by validated pathway.",
+              "clinicalRationale": "A single normal ECG or early troponin does not exclude ACS."
+            },
+            {
+              "tier": "firstLineImaging",
+              "testName": "Chest radiograph when indicated",
+              "modalityTarget": "Chest radiograph when indicated — Alternative thoracic cause or complication",
+              "targetCondition": "Alternative thoracic cause or complication",
+              "expectedFinding": "No evident pneumothorax, major edema, or other thoracic cause.",
+              "clinicalRationale": "Assesses selected mimics but does not rule out ACS."
+            }
+          ]
+        },
+        "clinicalManagement": [
+          {
+            "id": "rapid-assessment",
+            "title": "Rapid assessment and ECG",
+            "timeframe": "Immediately",
+            "actions": [
+              "Assess airway, breathing, circulation, observations, pain, and stability.",
+              "Obtain and interpret 12-lead ECG promptly; repeat if symptoms continue or change.",
+              "Establish monitoring and IV access; obtain serial biomarkers per local pathway."
+            ],
+            "branches": [
+              {
+                "condition": "ST-elevation MI or ongoing high-risk ischemia",
+                "actions": [
+                  "Activate local reperfusion pathway and contact cardiology immediately.",
+                  "Arrange urgent transfer to a reperfusion-capable service."
+                ]
+              },
+              {
+                "condition": "Instability, shock, or malignant arrhythmia",
+                "actions": [
+                  "Provide resuscitation and urgent senior, cardiology, and critical-care review.",
+                  "Treat instability per local emergency protocol."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "protocol-care",
+            "title": "Initiate protocol-directed ACS care",
+            "timeframe": "As soon as ACS is suspected",
+            "actions": [
+              "Administer indicated antiplatelet and other therapies per current Saudi/local protocol after checking contraindications and bleeding risk.",
+              "Give oxygen only when indicated by hypoxemia or respiratory distress.",
+              "Assess for alternative life-threatening diagnoses before potentially harmful therapies."
+            ],
+            "branches": [
+              {
+                "condition": "ACS confirmed or strongly suspected",
+                "actions": [
+                  "Admit or transfer for cardiology-led risk assessment and treatment.",
+                  "Review ECG, serial troponin, renal function, bleeding risk, and comorbidities."
+                ]
+              },
+              {
+                "condition": "ACS not established after validated assessment",
+                "actions": [
+                  "Evaluate alternative causes and disposition based on overall risk.",
+                  "Provide return precautions and follow-up."
+                ]
+              }
+            ]
+          }
+        ],
+        "medicationPlan": {
+          "status": "local-protocol-required",
+          "regimens": [
+            {
+              "indication": "STEMI, NSTEMI or unstable angina initial loading",
+              "patientGroup": "Adults",
+              "genericName": "Aspirin",
+              "dose": "300 mg loading dose",
+              "route": "Not specified in these recommendations; local protocol required",
+              "frequency": "Once",
+              "duration": "Single loading dose only",
+              "adjustments": [
+                "Exclude aspirin allergy; assess bleeding risk. Full prescribing adjustments require local review."
+              ],
+              "monitoring": [
+                "Assess bleeding risk."
+              ],
+              "sourceTitle": "NICE NG185: Acute coronary syndromes",
+              "sourceUrl": "https://www.nice.org.uk/guidance/ng185/chapter/recommendations",
+              "sourceEdition": "Live recommendations retrieved 2026-10-11; 1.1.4; 1.2.1–1.2.8; 1.2.12"
+            }
+          ],
+          "note": "UNVERIFIED DRAFT — not approved for clinical use. Adult confirmed ACS; loading dose only. Broader antithrombotic and reperfusion protocols are not extracted. Route and subsequent maintenance dose not specified here; no antithrombin dose inferred. Existing sections outside this extraction are inherited unchanged and are not newly verified."
+        },
+        "granularPathway": {
+          "schema_version": 1,
+          "evidence": {
+            "sources": [
+              {
+                "id": "fcb950b0-1993-4cc6-8ad2-176d1729aec1",
+                "title": "NICE NG185: Acute coronary syndromes",
+                "issuer": "NICE",
+                "edition": "Live recommendations retrieved 2026-10-11",
+                "url": "https://www.nice.org.uk/guidance/ng185/chapter/recommendations",
+                "locator": "1.1.4; 1.2.1–1.2.8; 1.2.12",
+                "primary_source": true
+              }
+            ],
+            "selection_rationale": "Unverified scope: Adult confirmed ACS; loading dose only. Broader antithrombotic and reperfusion protocols are not extracted."
+          },
+          "Investigations": [
+            {
+              "id": "official-assessment",
+              "title": "Source-backed assessment draft",
+              "timeframe": "According to each source step",
+              "steps": [
+                {
+                  "test": "12-lead ECG and troponin",
+                  "clinical_question": "Assess ischaemia and NSTEMI risk",
+                  "expected_finding": "Interpret with history and examination",
+                  "decision_rationale": "Support risk assessment",
+                  "timeframe": "Initial assessment"
+                }
+              ],
+              "evidence": {
+                "sources": [
+                  {
+                    "id": "fcb950b0-1993-4cc6-8ad2-176d1729aec1",
+                    "title": "NICE NG185: Acute coronary syndromes",
+                    "issuer": "NICE",
+                    "edition": "Live recommendations retrieved 2026-10-11",
+                    "url": "https://www.nice.org.uk/guidance/ng185/chapter/recommendations",
+                    "locator": "1.1.4; 1.2.1–1.2.8; 1.2.12",
+                    "primary_source": true
+                  }
+                ],
+                "selection_rationale": "Unverified scope: Adult confirmed ACS; loading dose only. Broader antithrombotic and reperfusion protocols are not extracted."
+              }
+            }
+          ],
+          "Treatment_Plan": [
+            {
+              "id": "official-management",
+              "title": "Limited source-backed management draft",
+              "timeframe": "According to each source action",
+              "actions": [
+                {
+                  "instruction": "Unstable NSTEMI or unstable angina requires immediate coronary angiography.",
+                  "timeframe": "Immediately when clinically unstable"
+                },
+                {
+                  "instruction": "Review gaps: Route and subsequent maintenance dose not specified here; no antithrombin dose inferred.",
+                  "timeframe": "Before clinical approval"
+                }
+              ],
+              "Medicines_Doses": [],
+              "branches": [],
+              "evidence": {
+                "sources": [
+                  {
+                    "id": "fcb950b0-1993-4cc6-8ad2-176d1729aec1",
+                    "title": "NICE NG185: Acute coronary syndromes",
+                    "issuer": "NICE",
+                    "edition": "Live recommendations retrieved 2026-10-11",
+                    "url": "https://www.nice.org.uk/guidance/ng185/chapter/recommendations",
+                    "locator": "1.1.4; 1.2.1–1.2.8; 1.2.12",
+                    "primary_source": true
+                  }
+                ],
+                "selection_rationale": "Unverified scope: Adult confirmed ACS; loading dose only. Broader antithrombotic and reperfusion protocols are not extracted."
+              }
+            }
+          ]
+        },
+        "nonClinicalManagement": {
+          "patientEducation": [
+            "Explain that possible ACS needs urgent assessment even if discomfort improves.",
+            "Seek emergency help immediately if symptoms recur."
+          ],
+          "lifestyleAndDiet": [
+            "Address tobacco, diet, activity, and cardiovascular risks after stabilization.",
+            "Support adherence to secondary prevention."
+          ],
+          "mdtReferrals": [
+            "Cardiology",
+            "Cardiac rehabilitation when appropriate",
+            "Pharmacy and primary care for medication and risk-factor follow-up"
+          ],
+          "dischargeCriteria": [
+            "Assessed by validated ACS pathway",
+            "No ongoing instability or unresolved high-risk features",
+            "Medication and follow-up plans documented",
+            "Emergency return precautions understood"
+          ],
+          "followUpPlan": "For confirmed ACS, arrange cardiology follow-up and cardiac rehabilitation as appropriate."
+        }
+      },
+      "graph": {
+        "title": "Acute Coronary Syndrome: limited evidence extraction",
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "title": "Extracted scope",
+            "detail": "Adult confirmed ACS; loading dose only. Broader antithrombotic and reperfusion protocols are not extracted.",
+            "referenceIds": [
+              "fcb950b0-1993-4cc6-8ad2-176d1729aec1"
+            ]
+          },
+          {
+            "id": "assessment",
+            "type": "assessment",
+            "title": "Investigations",
+            "detail": "12-lead ECG and troponin: Support risk assessment; Initial assessment",
+            "referenceIds": [
+              "fcb950b0-1993-4cc6-8ad2-176d1729aec1"
+            ]
+          },
+          {
+            "id": "management",
+            "type": "action",
+            "title": "Source-backed actions",
+            "detail": "Unstable NSTEMI or unstable angina requires immediate coronary angiography. Immediately when clinically unstable",
+            "referenceIds": [
+              "fcb950b0-1993-4cc6-8ad2-176d1729aec1"
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "title": "End of extracted scope",
+            "detail": "Review gaps: Route and subsequent maintenance dose not specified here; no antithrombin dose inferred.",
+            "referenceIds": [
+              "fcb950b0-1993-4cc6-8ad2-176d1729aec1"
+            ]
+          }
+        ],
+        "transitions": [
+          {
+            "from": "start",
+            "to": "assessment"
+          },
+          {
+            "from": "assessment",
+            "to": "management"
+          },
+          {
+            "from": "management",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a14c7e92-5b31-4d68-9f20-6c83e1b7a405",
+      "title": "Acute Coronary Syndrome Assessment and Escalation Pathway",
+      "original_version_id": "a14c7e92-5b31-4d68-9f20-6c83e1b7a405",
+      "expected_hash": "c8f9139a0e1718b9687d43b20cf60098",
+      "source_url": "https://www.nice.org.uk/guidance/ng185/chapter/recommendations",
+      "source_title": "NICE NG185: Acute coronary syndromes",
+      "issuer": "NICE",
+      "scope": "Adult NSTEMI/unstable-angina assessment; not an undifferentiated chest-pain algorithm.",
+      "content": {
+        "id": "a14c7e92-5b31-4d68-9f20-6c83e1b7a405",
+        "title": "Acute Coronary Syndrome Assessment and Escalation Pathway",
+        "specialty": "Emergency Medicine and Cardiology",
+        "authority": "MOH",
+        "status": "draft",
+        "version": "official-extraction-2026-10-11-b001",
+        "lastReviewed": "2026-10-10",
+        "pillar": "Urgent Care",
+        "clinicalReviewStatus": "pending",
+        "pathophysiology": {
+          "summary": "Acute myocardial ischaemia usually results from reduced coronary blood flow and may progress to infarction, arrhythmia, or haemodynamic compromise.",
+          "keyMechanisms": [
+            "Atherosclerotic plaque disruption with platelet activation and thrombosis",
+            "Reduced myocardial oxygen supply relative to demand",
+            "Progressive myocardial injury"
+          ]
+        },
+        "presentation": {
+          "symptoms": [
+            "Chest pressure, tightness, heaviness, or discomfort",
+            "Discomfort radiating to arm, shoulder, jaw, back, or upper abdomen",
+            "Dyspnoea, nausea, sweating, or unusual fatigue",
+            "Atypical or minimal symptoms, especially in older adults and people with diabetes"
+          ],
+          "physicalSigns": [
+            "Pallor, diaphoresis, or respiratory distress",
+            "Tachycardia, bradycardia, hypotension, or irregular pulse",
+            "Possible heart-failure signs such as crackles or raised jugular venous pressure"
+          ],
+          "redFlags": [
+            "Persistent or recurrent suspected cardiac chest discomfort",
+            "Acute ischaemic ECG pattern",
+            "Syncope, shock, pulmonary oedema, or life-threatening arrhythmia",
+            "Cardiac arrest or new neurological deficit"
+          ]
+        },
+        "differentials": [
+          {
+            "condition": "Aortic dissection",
+            "distinguishingFeatures": "Abrupt severe chest or back pain, pulse or blood-pressure asymmetry, or new aortic regurgitation."
+          },
+          {
+            "condition": "Pulmonary embolism",
+            "distinguishingFeatures": "Acute dyspnoea, pleuritic pain, hypoxaemia, or venous thromboembolism risk factors."
+          },
+          {
+            "condition": "Acute pericarditis",
+            "distinguishingFeatures": "Often pleuritic or positional pain with compatible ECG findings."
+          },
+          {
+            "condition": "Gastro-oesophageal or musculoskeletal pain",
+            "distinguishingFeatures": "May be meal-related, reflux-associated, movement-related, or reproducible; these features alone do not exclude ACS."
+          }
+        ],
+        "investigations": {
+          "ruleIn": [
+            {
+              "tier": "specializedAdjunctive",
+              "testName": "12-lead electrocardiogram",
+              "modalityTarget": "12-lead electrocardiogram — Acute myocardial ischaemia or infarction",
+              "targetCondition": "Acute myocardial ischaemia or infarction",
+              "expectedFinding": "ST elevation or depression, dynamic T-wave change, or another acute ischaemic pattern",
+              "clinicalRationale": "Identify immediately actionable ischaemia and guide escalation."
+            },
+            {
+              "tier": "laboratory",
+              "testName": "Serial high-sensitivity cardiac troponin",
+              "modalityTarget": "Serial high-sensitivity cardiac troponin — Acute myocardial injury",
+              "targetCondition": "Acute myocardial injury",
+              "expectedFinding": "Rise or fall with at least one value above the assay-specific 99th percentile, interpreted with symptoms and ECG",
+              "clinicalRationale": "Detect myocardial injury using symptom timing and the local assay pathway."
+            },
+            {
+              "tier": "specializedAdjunctive",
+              "testName": "Bedside echocardiography when indicated",
+              "modalityTarget": "Bedside echocardiography when indicated — Regional ventricular dysfunction or mechanical complication",
+              "targetCondition": "Regional ventricular dysfunction or mechanical complication",
+              "expectedFinding": "New regional wall-motion abnormality or cardiac dysfunction",
+              "clinicalRationale": "Assess instability or complications when clinically indicated."
+            }
+          ],
+          "ruleOut": [
+            {
+              "tier": "specializedAdjunctive",
+              "testName": "Serial 12-lead electrocardiograms",
+              "modalityTarget": "Serial 12-lead electrocardiograms — Evolving acute myocardial ischaemia",
+              "targetCondition": "Evolving acute myocardial ischaemia",
+              "expectedFinding": "No dynamic ischaemic changes during assessment",
+              "clinicalRationale": "Repeat ECG when symptoms persist or recur; one normal ECG does not exclude ACS."
+            },
+            {
+              "tier": "laboratory",
+              "testName": "Serial high-sensitivity cardiac troponin using a validated local pathway",
+              "modalityTarget": "Serial high-sensitivity cardiac troponin using a validated local pathway — Acute myocardial infarction",
+              "targetCondition": "Acute myocardial infarction",
+              "expectedFinding": "Values and change below pathway rule-out thresholds with appropriate timing",
+              "clinicalRationale": "Support rule-out only when the complete validated pathway and clinical assessment permit."
+            },
+            {
+              "tier": "firstLineImaging",
+              "testName": "Chest radiograph when indicated",
+              "modalityTarget": "Chest radiograph when indicated — Selected alternative acute thoracic causes",
+              "targetCondition": "Selected alternative acute thoracic causes",
+              "expectedFinding": "No finding supporting an alternative such as pulmonary oedema or pneumothorax",
+              "clinicalRationale": "Assess relevant alternatives; a normal result does not rule out ACS."
+            }
+          ]
+        },
+        "clinicalManagement": [
+          {
+            "id": "acs-1",
+            "title": "Immediate assessment and stabilisation",
+            "timeframe": "Immediately",
+            "actions": [
+              "Assess airway, breathing, circulation, mental status, vital signs, and pain.",
+              "Obtain and interpret a 12-lead ECG promptly; repeat for persistent or changing symptoms.",
+              "Monitor and establish access according to acuity and local protocol.",
+              "Take focused history including onset, risk factors, medicines, allergies, and bleeding risk.",
+              "Activate local emergency, cardiology, and reperfusion pathways when indicated."
+            ],
+            "branches": [
+              {
+                "condition": "Arrest, shock, life-threatening arrhythmia, or pulmonary oedema",
+                "actions": [
+                  "Begin the relevant resuscitation or emergency stabilisation pathway.",
+                  "Request immediate senior, critical-care, and cardiology support.",
+                  "Do not delay escalation for routine investigations."
+                ]
+              },
+              {
+                "condition": "Aortic dissection or another time-critical alternative is suspected",
+                "actions": [
+                  "Escalate urgently for senior assessment and targeted evaluation.",
+                  "Assess competing diagnoses and contraindications before ACS-directed treatment."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "acs-2",
+            "title": "Confirm working diagnosis and risk",
+            "timeframe": "Initial emergency assessment",
+            "actions": [
+              "Use serial ECG and biomarker testing under the local validated pathway.",
+              "Order blood count, renal function, electrolytes, glucose, and other tests as indicated.",
+              "Assess haemodynamic status, bleeding risk, comorbidities, and suitability for invasive or reperfusion strategies.",
+              "Document diagnostic uncertainty and escalation plan."
+            ],
+            "branches": [
+              {
+                "condition": "ECG or clinical status indicates immediate reperfusion",
+                "actions": [
+                  "Activate the local reperfusion pathway without waiting for routine serial biomarkers.",
+                  "Arrange urgent transfer if required by local capability."
+                ]
+              },
+              {
+                "condition": "Initial ECG is non-diagnostic but ACS remains possible",
+                "actions": [
+                  "Continue observation and serial ECG and biomarker assessment.",
+                  "Escalate for recurrent pain, ECG changes, or deterioration."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "acs-3",
+            "title": "Disposition and prevention planning",
+            "timeframe": "After initial risk assessment",
+            "actions": [
+              "Admit or transfer confirmed ACS, high-risk cases, or unresolved diagnostic concern.",
+              "Use the approved ACS protocol and specialist input for treatment decisions.",
+              "For discharged patients, document stability, follow-up, and return precautions.",
+              "Arrange cardiology and cardiac-rehabilitation follow-up after confirmed ACS."
+            ],
+            "branches": [
+              {
+                "condition": "ACS confirmed or high-risk features persist",
+                "actions": [
+                  "Continue monitored hospital care and specialist-led management.",
+                  "Document receiving team and structured handover."
+                ]
+              },
+              {
+                "condition": "ACS excluded through local pathway and no emergency alternative suspected",
+                "actions": [
+                  "Provide a documented explanation and follow-up plan.",
+                  "Advise emergency reassessment for recurrent or worsening symptoms."
+                ]
+              }
+            ]
+          }
+        ],
+        "medicationPlan": {
+          "status": "local-protocol-required",
+          "regimens": [],
+          "note": "UNVERIFIED DRAFT — not approved for clinical use. Adult NSTEMI/unstable-angina assessment; not an undifferentiated chest-pain algorithm. This assessment scope does not duplicate the ACS drug extraction. Complete medicine doses and contraindication review remain pending. Existing sections outside this extraction are inherited unchanged and are not newly verified."
+        },
+        "granularPathway": {
+          "schema_version": 1,
+          "evidence": {
+            "sources": [
+              {
+                "id": "b74a033e-98a6-459f-ba66-9166501607d8",
+                "title": "NICE NG185: Acute coronary syndromes",
+                "issuer": "NICE",
+                "edition": "Live recommendations retrieved 2026-10-11",
+                "url": "https://www.nice.org.uk/guidance/ng185/chapter/recommendations",
+                "locator": "1.2.2; 1.2.8; 1.2.12–1.2.13",
+                "primary_source": true
+              }
+            ],
+            "selection_rationale": "Unverified scope: Adult NSTEMI/unstable-angina assessment; not an undifferentiated chest-pain algorithm."
+          },
+          "Investigations": [
+            {
+              "id": "official-assessment",
+              "title": "Source-backed assessment draft",
+              "timeframe": "According to each source step",
+              "steps": [
+                {
+                  "test": "ECG, troponin, creatinine, glucose and haemoglobin",
+                  "clinical_question": "Risk stratification",
+                  "expected_finding": "Assess alongside clinical history",
+                  "decision_rationale": "Guide invasive strategy",
+                  "timeframe": "Initial assessment"
+                }
+              ],
+              "evidence": {
+                "sources": [
+                  {
+                    "id": "b74a033e-98a6-459f-ba66-9166501607d8",
+                    "title": "NICE NG185: Acute coronary syndromes",
+                    "issuer": "NICE",
+                    "edition": "Live recommendations retrieved 2026-10-11",
+                    "url": "https://www.nice.org.uk/guidance/ng185/chapter/recommendations",
+                    "locator": "1.2.2; 1.2.8; 1.2.12–1.2.13",
+                    "primary_source": true
+                  }
+                ],
+                "selection_rationale": "Unverified scope: Adult NSTEMI/unstable-angina assessment; not an undifferentiated chest-pain algorithm."
+              }
+            }
+          ],
+          "Treatment_Plan": [
+            {
+              "id": "official-management",
+              "title": "Limited source-backed management draft",
+              "timeframe": "According to each source action",
+              "actions": [
+                {
+                  "instruction": "Immediate angiography for instability; consider angiography within 72 hours when predicted 6-month mortality exceeds 3% and there are no angiography contraindications.",
+                  "timeframe": "Immediate or within 72 hours according to eligibility"
+                },
+                {
+                  "instruction": "Review gaps: This assessment scope does not duplicate the ACS drug extraction. Complete medicine doses and contraindication review remain pending.",
+                  "timeframe": "Before clinical approval"
+                }
+              ],
+              "Medicines_Doses": [],
+              "branches": [],
+              "evidence": {
+                "sources": [
+                  {
+                    "id": "b74a033e-98a6-459f-ba66-9166501607d8",
+                    "title": "NICE NG185: Acute coronary syndromes",
+                    "issuer": "NICE",
+                    "edition": "Live recommendations retrieved 2026-10-11",
+                    "url": "https://www.nice.org.uk/guidance/ng185/chapter/recommendations",
+                    "locator": "1.2.2; 1.2.8; 1.2.12–1.2.13",
+                    "primary_source": true
+                  }
+                ],
+                "selection_rationale": "Unverified scope: Adult NSTEMI/unstable-angina assessment; not an undifferentiated chest-pain algorithm."
+              }
+            }
+          ]
+        },
+        "nonClinicalManagement": {
+          "patientEducation": [
+            "Explain urgent ECGs, blood tests, monitoring, and possible transfer.",
+            "Discuss warning symptoms requiring emergency reassessment.",
+            "For confirmed ACS, explain follow-up and prescribed risk-reduction plan."
+          ],
+          "lifestyleAndDiet": [
+            "Offer individualised tobacco-cessation support, heart-healthy eating, physical activity, and cardiovascular risk reduction after acute assessment."
+          ],
+          "mdtReferrals": [
+            "Emergency medicine",
+            "Cardiology",
+            "Critical care when indicated",
+            "Cardiac rehabilitation",
+            "Primary care"
+          ],
+          "dischargeCriteria": [
+            "Time-critical causes have been assessed using an appropriate pathway.",
+            "Patient is clinically stable and disposition is documented.",
+            "Follow-up instructions and return precautions are communicated."
+          ],
+          "followUpPlan": "Arrange follow-up for the final diagnosis; confirmed ACS requires a documented cardiology and cardiac-rehabilitation plan."
+        }
+      },
+      "graph": {
+        "title": "Acute Coronary Syndrome Assessment and Escalation Pathway: limited evidence extraction",
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "title": "Extracted scope",
+            "detail": "Adult NSTEMI/unstable-angina assessment; not an undifferentiated chest-pain algorithm.",
+            "referenceIds": [
+              "b74a033e-98a6-459f-ba66-9166501607d8"
+            ]
+          },
+          {
+            "id": "assessment",
+            "type": "assessment",
+            "title": "Investigations",
+            "detail": "ECG, troponin, creatinine, glucose and haemoglobin: Guide invasive strategy; Initial assessment",
+            "referenceIds": [
+              "b74a033e-98a6-459f-ba66-9166501607d8"
+            ]
+          },
+          {
+            "id": "management",
+            "type": "action",
+            "title": "Source-backed actions",
+            "detail": "Immediate angiography for instability; consider angiography within 72 hours when predicted 6-month mortality exceeds 3% and there are no angiography contraindications. Immediate or within 72 hours according to eligibility",
+            "referenceIds": [
+              "b74a033e-98a6-459f-ba66-9166501607d8"
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "title": "End of extracted scope",
+            "detail": "Review gaps: This assessment scope does not duplicate the ACS drug extraction. Complete medicine doses and contraindication review remain pending.",
+            "referenceIds": [
+              "b74a033e-98a6-459f-ba66-9166501607d8"
+            ]
+          }
+        ],
+        "transitions": [
+          {
+            "from": "start",
+            "to": "assessment"
+          },
+          {
+            "from": "assessment",
+            "to": "management"
+          },
+          {
+            "from": "management",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "05481a2b-c95c-440a-a4d0-0c520e8129a4",
+      "title": "Acute Exacerbation of COPD",
+      "original_version_id": "05481a2b-c95c-440a-a4d0-0c520e8129a4",
+      "expected_hash": "00f814ec31d93ebbc224d432c8bd88fc",
+      "source_url": "https://www.nice.org.uk/guidance/ng115/chapter/recommendations",
+      "source_title": "NICE NG115: COPD in over 16s",
+      "issuer": "NICE",
+      "scope": "Adults admitted with COPD exacerbation; steroid dose only. Antibiotics are conditional and are not implied for every exacerbation.",
+      "content": {
+        "id": "05481a2b-c95c-440a-a4d0-0c520e8129a4",
+        "title": "Acute Exacerbation of COPD",
+        "specialty": "Respiratory Medicine / Emergency Medicine",
+        "authority": "Textbook",
+        "status": "draft",
+        "version": "official-extraction-2026-10-11-b001",
+        "lastReviewed": "2026-10-10",
+        "pillar": "Urgent Care",
+        "clinicalReviewStatus": "pending",
+        "pathophysiology": {
+          "summary": "Airway inflammation and mucus increase expiratory flow limitation and dynamic hyperinflation; infection or pollutants can worsen ventilation-perfusion mismatch. Severe episodes may cause hypercapnia, fatigue, and respiratory muscle failure. This topic is educational and should be interpreted alongside current local pathways and patient-specific assessment.",
+          "keyMechanisms": [
+            "Airway inflammation and mucus increase expiratory flow limitation and dynamic hyperinflation",
+            "infection or pollutants can worsen ventilation-perfusion mismatch. Severe episodes may cause hypercapnia, fatigue, and respiratory muscle failure."
+          ]
+        },
+        "presentation": {
+          "symptoms": [
+            "Evaluate the characteristic symptom pattern of Acute Exacerbation of COPD, including onset, evolution, severity, associated symptoms, precipitating factors, complications, and relevant negative findings.",
+            "Clarify onset, progression, associated symptoms, baseline function, medicines and the patient’s own priorities.",
+            "Ask about relevant risk factors and context described in the case; document important negative findings rather than assuming their absence."
+          ],
+          "physicalSigns": [
+            "Record observations and a focused examination directed to the organ system and competing diagnoses in this topic.",
+            "Assess functional change, comorbidity, hydration/perfusion where relevant, and baseline status.",
+            "Use serial reassessment when the condition or treatment can change over hours or days."
+          ],
+          "redFlags": [
+            "Severe hypoxaemia or rising carbon dioxide with acidosis",
+            "Exhaustion, confusion, or silent chest",
+            "Haemodynamic instability",
+            "Sudden pleuritic pain or unilateral reduced breath sounds"
+          ]
+        },
+        "differentials": [
+          {
+            "condition": "Pneumonia",
+            "distinguishingFeatures": "Fever, focal findings, or infiltrate may indicate concurrent infection."
+          },
+          {
+            "condition": "Acute heart failure",
+            "distinguishingFeatures": "Congestion may coexist and change fluid or respiratory decisions."
+          },
+          {
+            "condition": "Pulmonary embolism or pneumothorax",
+            "distinguishingFeatures": "Consider when onset, pain, hypoxaemia, or examination is disproportionate."
+          }
+        ],
+        "investigations": {
+          "ruleIn": [
+            {
+              "tier": "specializedAdjunctive",
+              "testName": "Oxygenation and blood gas when severe or hypercapnia is suspected; chest imaging and ECG as indicated.",
+              "modalityTarget": "Oxygenation and blood gas when severe or hypercapnia is suspected; chest imaging and ECG as indicated. — Acute Exacerbation of COPD",
+              "targetCondition": "Acute Exacerbation of COPD",
+              "expectedFinding": "A result that supports the working diagnosis or defines its severity, interpreted with the clinical picture and current criteria.",
+              "clinicalRationale": "Choose this investigation because it can confirm the suspected process, establish baseline risk, or change the next decision in this case."
+            },
+            {
+              "tier": "specializedAdjunctive",
+              "testName": "Review infection markers, renal function, medicines, and alternative causes; spirometry is generally not a stabilisation test.",
+              "modalityTarget": "Review infection markers, renal function, medicines, and alternative causes; spirometry is generally not a stabilisation test. — Cause, complication, or risk relevant to Acute Exacerbation of COPD",
+              "targetCondition": "Cause, complication, or risk relevant to Acute Exacerbation of COPD",
+              "expectedFinding": "A result that may identify a precipitating factor or complication; interpret in context rather than as a stand-alone diagnosis.",
+              "clinicalRationale": "This helps detect an important alternative or complication and informs safe monitoring and referral."
+            }
+          ],
+          "ruleOut": [
+            {
+              "tier": "laboratory",
+              "testName": "Focused evaluation for the leading alternative diagnoses",
+              "modalityTarget": "Focused evaluation for the leading alternative diagnoses — Important alternative to Acute Exacerbation of COPD",
+              "targetCondition": "Important alternative to Acute Exacerbation of COPD",
+              "expectedFinding": "Findings that lower the likelihood of the selected alternative; a normal result does not exclude every urgent cause.",
+              "clinicalRationale": "The differential matters because it changes urgency or treatment and should be actively considered."
+            },
+            {
+              "tier": "laboratory",
+              "testName": "Serial clinical reassessment with targeted repeat testing when indicated",
+              "modalityTarget": "Serial clinical reassessment with targeted repeat testing when indicated — Progression or evolving complication",
+              "targetCondition": "Progression or evolving complication",
+              "expectedFinding": "Stable or improving clinical trend without new evidence of the suspected complication.",
+              "clinicalRationale": "A single early assessment may miss an evolving problem; repeat only when it can guide care."
+            }
+          ]
+        },
+        "clinicalManagement": [
+          {
+            "id": "assess-and-triage",
+            "title": "Assess urgency, stability, and the person’s priorities",
+            "timeframe": "At first contact and whenever the situation changes",
+            "actions": [
+              "Confirm the presenting concern, relevant timeline, baseline function, medicines, allergies, comorbidities, and the patient’s immediate priorities.",
+              "Assess the red flags above and use the current local escalation pathway if instability or rapid deterioration is present.",
+              "Explain uncertainty and involve the patient or appropriate decision-maker in a way suited to the setting."
+            ],
+            "branches": [
+              {
+                "condition": "A red flag, instability, or rapid deterioration is present",
+                "actions": [
+                  "Escalate immediately to the responsible senior or emergency team using the local pathway.",
+                  "Stabilise and investigate in parallel; do not delay time-critical action for routine testing."
+                ]
+              },
+              {
+                "condition": "The person is stable for a planned or longitudinal pathway",
+                "actions": [
+                  "Proceed with focused assessment and shared planning.",
+                  "Document the threshold for urgent reassessment."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "confirm-and-stratify",
+            "title": "Confirm the working diagnosis and stratify risk",
+            "timeframe": "Promptly; adapt timing to acuity",
+            "actions": [
+              "Use the history, examination, and investigations listed above to confirm the likely process and assess important alternatives.",
+              "Interpret results using current national/local diagnostic criteria, age, pregnancy status, comorbidity, and prior results.",
+              "Record severity, uncertainty, and which findings would change the plan."
+            ],
+            "branches": [
+              {
+                "condition": "The diagnosis remains uncertain or tests conflict with the clinical picture",
+                "actions": [
+                  "Reassess the history and examination and seek senior or specialty advice.",
+                  "Use targeted additional testing only when its result can change management."
+                ]
+              },
+              {
+                "condition": "A high-risk complication or an alternative diagnosis is identified",
+                "actions": [
+                  "Switch to the relevant urgent or specialty pathway.",
+                  "Communicate the finding and handover responsibility clearly."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "individualised-care",
+            "title": "Agree evidence-informed care and address the cause",
+            "timeframe": "According to acuity and current local protocol",
+            "actions": [
+              "Use the topic-specific focus in this record to agree immediate and longer-term priorities with the patient.",
+              "Select treatment only after checking current local guidance, formulary, contraindications, interactions, organ function, pregnancy considerations, and patient preference.",
+              "Treat reversible contributors and address access, communication, cultural, and functional barriers."
+            ],
+            "branches": [
+              {
+                "condition": "Treatment is ineffective, poorly tolerated, or inconsistent with the patient’s goals",
+                "actions": [
+                  "Reassess diagnosis, treatment burden, adherence barriers, and alternatives with the responsible specialist.",
+                  "Document the shared decision and safety-net plan."
+                ]
+              },
+              {
+                "condition": "The patient improves on the agreed plan",
+                "actions": [
+                  "Continue the plan with monitoring proportional to risk.",
+                  "Provide clear instructions for expected course and warning symptoms."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "coordinate-and-follow-up",
+            "title": "Coordinate handover, education, and follow-up",
+            "timeframe": "Before transition and at the agreed review interval",
+            "actions": [
+              "Provide a written plan stating the working diagnosis, key findings, medicines or interventions, monitoring, and who owns each next step.",
+              "Use teach-back to check that the patient or caregiver understands warning symptoms, follow-up, and how to obtain help.",
+              "Close the loop on pending results, referrals, and screening or prevention actions."
+            ],
+            "branches": [
+              {
+                "condition": "Safe care cannot be delivered in the current setting",
+                "actions": [
+                  "Arrange a higher level of care or supported transfer and send a structured clinical handover.",
+                  "Confirm transport, caregiver, and communication needs where relevant."
+                ]
+              },
+              {
+                "condition": "The patient is ready for outpatient or continuing care",
+                "actions": [
+                  "Confirm a feasible follow-up date and contact route.",
+                  "Document when and how the plan should be reviewed or escalated."
+                ]
+              }
+            ]
+          }
+        ],
+        "medicationPlan": {
+          "status": "local-protocol-required",
+          "regimens": [
+            {
+              "indication": "COPD exacerbation requiring corticosteroid therapy",
+              "patientGroup": "Adults without significant contraindications",
+              "genericName": "Prednisolone",
+              "dose": "30 mg",
+              "route": "Oral",
+              "frequency": "Daily",
+              "duration": "5 days",
+              "adjustments": [
+                "Significant contraindications must be excluded; individual conditions and dose adjustments are not enumerated in this recommendation."
+              ],
+              "monitoring": [
+                "Specific drug monitoring not specified in this recommendation; local prescribing review required."
+              ],
+              "sourceTitle": "NICE NG115: COPD in over 16s",
+              "sourceUrl": "https://www.nice.org.uk/guidance/ng115/chapter/recommendations",
+              "sourceEdition": "Live recommendations retrieved 2026-10-11; 1.3.3; 1.3.13–1.3.16; 1.3.24"
+            }
+          ],
+          "note": "UNVERIFIED DRAFT — not approved for clinical use. Adults admitted with COPD exacerbation; steroid dose only. Antibiotics are conditional and are not implied for every exacerbation. No bronchodilator or antibiotic dose inferred. Complete contraindication list and local formulary review pending. Existing sections outside this extraction are inherited unchanged and are not newly verified."
+        },
+        "granularPathway": {
+          "schema_version": 1,
+          "evidence": {
+            "sources": [
+              {
+                "id": "41302cef-8db1-4365-8f60-be83d1d478cd",
+                "title": "NICE NG115: COPD in over 16s",
+                "issuer": "NICE",
+                "edition": "Live recommendations retrieved 2026-10-11",
+                "url": "https://www.nice.org.uk/guidance/ng115/chapter/recommendations",
+                "locator": "1.3.3; 1.3.13–1.3.16; 1.3.24",
+                "primary_source": true
+              }
+            ],
+            "selection_rationale": "Unverified scope: Adults admitted with COPD exacerbation; steroid dose only. Antibiotics are conditional and are not implied for every exacerbation."
+          },
+          "Investigations": [
+            {
+              "id": "official-assessment",
+              "title": "Source-backed assessment draft",
+              "timeframe": "According to each source step",
+              "steps": [
+                {
+                  "test": "Chest X-ray, arterial blood gases, ECG, full blood count and urea/electrolytes",
+                  "clinical_question": "Assess severity and comorbidity",
+                  "expected_finding": "Record inspired oxygen with blood gases",
+                  "decision_rationale": "Guide hospital management",
+                  "timeframe": "On hospital presentation"
+                }
+              ],
+              "evidence": {
+                "sources": [
+                  {
+                    "id": "41302cef-8db1-4365-8f60-be83d1d478cd",
+                    "title": "NICE NG115: COPD in over 16s",
+                    "issuer": "NICE",
+                    "edition": "Live recommendations retrieved 2026-10-11",
+                    "url": "https://www.nice.org.uk/guidance/ng115/chapter/recommendations",
+                    "locator": "1.3.3; 1.3.13–1.3.16; 1.3.24",
+                    "primary_source": true
+                  }
+                ],
+                "selection_rationale": "Unverified scope: Adults admitted with COPD exacerbation; steroid dose only. Antibiotics are conditional and are not implied for every exacerbation."
+              }
+            }
+          ],
+          "Treatment_Plan": [
+            {
+              "id": "official-management",
+              "title": "Limited source-backed management draft",
+              "timeframe": "According to each source action",
+              "actions": [
+                {
+                  "instruction": "Use non-invasive ventilation for persistent hypercapnic ventilatory failure despite optimal medical therapy.",
+                  "timeframe": "When persistent ventilatory failure is identified"
+                },
+                {
+                  "instruction": "Review gaps: No bronchodilator or antibiotic dose inferred. Complete contraindication list and local formulary review pending.",
+                  "timeframe": "Before clinical approval"
+                }
+              ],
+              "Medicines_Doses": [],
+              "branches": [],
+              "evidence": {
+                "sources": [
+                  {
+                    "id": "41302cef-8db1-4365-8f60-be83d1d478cd",
+                    "title": "NICE NG115: COPD in over 16s",
+                    "issuer": "NICE",
+                    "edition": "Live recommendations retrieved 2026-10-11",
+                    "url": "https://www.nice.org.uk/guidance/ng115/chapter/recommendations",
+                    "locator": "1.3.3; 1.3.13–1.3.16; 1.3.24",
+                    "primary_source": true
+                  }
+                ],
+                "selection_rationale": "Unverified scope: Adults admitted with COPD exacerbation; steroid dose only. Antibiotics are conditional and are not implied for every exacerbation."
+              }
+            }
+          ]
+        },
+        "nonClinicalManagement": {
+          "patientEducation": [
+            "Explain acute exacerbation of copd in plain language, including what is known, what remains uncertain, and how the plan will be reviewed.",
+            "Use teach-back for warning signs, medicines or monitoring, and the route to urgent help.",
+            "Invite questions and adapt written or interpreted information to the patient’s language, health literacy, and communication needs."
+          ],
+          "lifestyleAndDiet": [
+            "Offer topic-relevant prevention or self-management support that is safe, feasible, culturally appropriate, and consistent with the person’s goals.",
+            "Avoid one-size-fits-all restrictions; individualise advice for pregnancy, frailty, kidney/heart disease, disability, and treatment burden."
+          ],
+          "mdtReferrals": [
+            "Respiratory Medicine / Emergency Medicine",
+            "Primary care or the responsible continuity team",
+            "Pharmacist, nurse educator, dietitian, rehabilitation, mental-health, or social support when relevant to the case."
+          ],
+          "dischargeCriteria": [
+            "Clinical status is appropriate for the next setting, and urgent complications have been excluded or addressed.",
+            "The patient or caregiver has an understandable plan, access to needed treatment/support, and a clear escalation route.",
+            "Pending investigations and referrals have a named owner and follow-up timeframe."
+          ],
+          "followUpPlan": "Review the topic-specific focus, patient goals, symptoms and function at an interval matched to risk. Reconcile new results and treatment effects, close referrals, and revisit the plan if the condition, circumstances, or preferences change."
+        }
+      },
+      "graph": {
+        "title": "Acute Exacerbation of COPD: limited evidence extraction",
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "title": "Extracted scope",
+            "detail": "Adults admitted with COPD exacerbation; steroid dose only. Antibiotics are conditional and are not implied for every exacerbation.",
+            "referenceIds": [
+              "41302cef-8db1-4365-8f60-be83d1d478cd"
+            ]
+          },
+          {
+            "id": "assessment",
+            "type": "assessment",
+            "title": "Investigations",
+            "detail": "Chest X-ray, arterial blood gases, ECG, full blood count and urea/electrolytes: Guide hospital management; On hospital presentation",
+            "referenceIds": [
+              "41302cef-8db1-4365-8f60-be83d1d478cd"
+            ]
+          },
+          {
+            "id": "management",
+            "type": "action",
+            "title": "Source-backed actions",
+            "detail": "Use non-invasive ventilation for persistent hypercapnic ventilatory failure despite optimal medical therapy. When persistent ventilatory failure is identified",
+            "referenceIds": [
+              "41302cef-8db1-4365-8f60-be83d1d478cd"
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "title": "End of extracted scope",
+            "detail": "Review gaps: No bronchodilator or antibiotic dose inferred. Complete contraindication list and local formulary review pending.",
+            "referenceIds": [
+              "41302cef-8db1-4365-8f60-be83d1d478cd"
+            ]
+          }
+        ],
+        "transitions": [
+          {
+            "from": "start",
+            "to": "assessment"
+          },
+          {
+            "from": "assessment",
+            "to": "management"
+          },
+          {
+            "from": "management",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "336de333-f235-46c4-aa57-2ea4a6e017d5",
+      "title": "Acute Heart Failure and Pulmonary Oedema",
+      "original_version_id": "336de333-f235-46c4-aa57-2ea4a6e017d5",
+      "expected_hash": "78d95438d80ba52422a71de90bb40754",
+      "source_url": "https://www.nice.org.uk/guidance/cg187/chapter/recommendations",
+      "source_title": "NICE CG187: Acute heart failure",
+      "issuer": "NICE",
+      "scope": "New suspected adult acute heart failure; no complete individual prescription extracted.",
+      "content": {
+        "id": "336de333-f235-46c4-aa57-2ea4a6e017d5",
+        "title": "Acute Heart Failure and Pulmonary Oedema",
+        "specialty": "Emergency Medicine",
+        "authority": "Textbook",
+        "status": "draft",
+        "version": "official-extraction-2026-10-11-b001",
+        "lastReviewed": "2026-10-10",
+        "pillar": "Urgent Care",
+        "clinicalReviewStatus": "pending",
+        "pathophysiology": {
+          "summary": "Raised filling pressures cause pulmonary or systemic venous congestion; impaired output and neurohormonal activation can worsen renal sodium retention. Acute triggers may include ischaemia, arrhythmia, infection, uncontrolled blood pressure, medication interruption, or renal deterioration. This topic is educational and should be interpreted alongside current local pathways and patient-specific assessment.",
+          "keyMechanisms": [
+            "Raised filling pressures cause pulmonary or systemic venous congestion",
+            "impaired output and neurohormonal activation can worsen renal sodium retention. Acute triggers may include ischaemia, arrhythmia, infection, uncontrolled blood pressure, medication interruption, or renal deterioration."
+          ]
+        },
+        "presentation": {
+          "symptoms": [
+            "Evaluate the characteristic symptom pattern of Acute Heart Failure and Pulmonary Oedema, including onset, evolution, severity, associated symptoms, precipitating factors, complications, and relevant negative findings.",
+            "Clarify onset, progression, associated symptoms, baseline function, medicines and the patient’s own priorities.",
+            "Ask about relevant risk factors and context described in the case; document important negative findings rather than assuming their absence."
+          ],
+          "physicalSigns": [
+            "Record observations and a focused examination directed to the organ system and competing diagnoses in this topic.",
+            "Assess functional change, comorbidity, hydration/perfusion where relevant, and baseline status.",
+            "Use serial reassessment when the condition or treatment can change over hours or days."
+          ],
+          "redFlags": [
+            "Severe hypoxaemia or exhaustion",
+            "Hypotension, cool peripheries, or shock",
+            "Ongoing ischaemic chest pain or dangerous arrhythmia",
+            "Altered consciousness or rapidly worsening respiratory distress"
+          ]
+        },
+        "differentials": [
+          {
+            "condition": "Pneumonia",
+            "distinguishingFeatures": "Fever or focal findings may coexist with congestion."
+          },
+          {
+            "condition": "Pulmonary embolism",
+            "distinguishingFeatures": "Acute pleuritic symptoms and thromboembolic risk require structured assessment."
+          },
+          {
+            "condition": "COPD/asthma exacerbation",
+            "distinguishingFeatures": "Wheeze does not exclude simultaneous cardiac congestion."
+          }
+        ],
+        "investigations": {
+          "ruleIn": [
+            {
+              "tier": "specializedAdjunctive",
+              "testName": "ECG, oxygenation, chest imaging, renal/electrolyte profile, natriuretic peptide and cardiac biomarkers as indicated.",
+              "modalityTarget": "ECG, oxygenation, chest imaging, renal/electrolyte profile, natriuretic peptide and cardiac biomarkers as indicated. — Acute Heart Failure and Pulmonary Oedema",
+              "targetCondition": "Acute Heart Failure and Pulmonary Oedema",
+              "expectedFinding": "A result that supports the working diagnosis or defines its severity, interpreted with the clinical picture and current criteria.",
+              "clinicalRationale": "Choose this investigation because it can confirm the suspected process, establish baseline risk, or change the next decision in this case."
+            },
+            {
+              "tier": "specializedAdjunctive",
+              "testName": "Bedside cardiac or lung ultrasound can support assessment where trained staff and local pathways are available.",
+              "modalityTarget": "Bedside cardiac or lung ultrasound can support assessment where trained staff and local pathways are available. — Cause, complication, or risk relevant to Acute Heart Failure and Pulmonary Oedema",
+              "targetCondition": "Cause, complication, or risk relevant to Acute Heart Failure and Pulmonary Oedema",
+              "expectedFinding": "A result that may identify a precipitating factor or complication; interpret in context rather than as a stand-alone diagnosis.",
+              "clinicalRationale": "This helps detect an important alternative or complication and informs safe monitoring and referral."
+            }
+          ],
+          "ruleOut": [
+            {
+              "tier": "laboratory",
+              "testName": "Focused evaluation for the leading alternative diagnoses",
+              "modalityTarget": "Focused evaluation for the leading alternative diagnoses — Important alternative to Acute Heart Failure and Pulmonary Oedema",
+              "targetCondition": "Important alternative to Acute Heart Failure and Pulmonary Oedema",
+              "expectedFinding": "Findings that lower the likelihood of the selected alternative; a normal result does not exclude every urgent cause.",
+              "clinicalRationale": "The differential matters because it changes urgency or treatment and should be actively considered."
+            },
+            {
+              "tier": "laboratory",
+              "testName": "Serial clinical reassessment with targeted repeat testing when indicated",
+              "modalityTarget": "Serial clinical reassessment with targeted repeat testing when indicated — Progression or evolving complication",
+              "targetCondition": "Progression or evolving complication",
+              "expectedFinding": "Stable or improving clinical trend without new evidence of the suspected complication.",
+              "clinicalRationale": "A single early assessment may miss an evolving problem; repeat only when it can guide care."
+            }
+          ]
+        },
+        "clinicalManagement": [
+          {
+            "id": "assess-and-triage",
+            "title": "Assess urgency, stability, and the person’s priorities",
+            "timeframe": "At first contact and whenever the situation changes",
+            "actions": [
+              "Confirm the presenting concern, relevant timeline, baseline function, medicines, allergies, comorbidities, and the patient’s immediate priorities.",
+              "Assess the red flags above and use the current local escalation pathway if instability or rapid deterioration is present.",
+              "Explain uncertainty and involve the patient or appropriate decision-maker in a way suited to the setting."
+            ],
+            "branches": [
+              {
+                "condition": "A red flag, instability, or rapid deterioration is present",
+                "actions": [
+                  "Escalate immediately to the responsible senior or emergency team using the local pathway.",
+                  "Stabilise and investigate in parallel; do not delay time-critical action for routine testing."
+                ]
+              },
+              {
+                "condition": "The person is stable for a planned or longitudinal pathway",
+                "actions": [
+                  "Proceed with focused assessment and shared planning.",
+                  "Document the threshold for urgent reassessment."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "confirm-and-stratify",
+            "title": "Confirm the working diagnosis and stratify risk",
+            "timeframe": "Promptly; adapt timing to acuity",
+            "actions": [
+              "Use the history, examination, and investigations listed above to confirm the likely process and assess important alternatives.",
+              "Interpret results using current national/local diagnostic criteria, age, pregnancy status, comorbidity, and prior results.",
+              "Record severity, uncertainty, and which findings would change the plan."
+            ],
+            "branches": [
+              {
+                "condition": "The diagnosis remains uncertain or tests conflict with the clinical picture",
+                "actions": [
+                  "Reassess the history and examination and seek senior or specialty advice.",
+                  "Use targeted additional testing only when its result can change management."
+                ]
+              },
+              {
+                "condition": "A high-risk complication or an alternative diagnosis is identified",
+                "actions": [
+                  "Switch to the relevant urgent or specialty pathway.",
+                  "Communicate the finding and handover responsibility clearly."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "individualised-care",
+            "title": "Agree evidence-informed care and address the cause",
+            "timeframe": "According to acuity and current local protocol",
+            "actions": [
+              "Use the topic-specific focus in this record to agree immediate and longer-term priorities with the patient.",
+              "Select treatment only after checking current local guidance, formulary, contraindications, interactions, organ function, pregnancy considerations, and patient preference.",
+              "Treat reversible contributors and address access, communication, cultural, and functional barriers."
+            ],
+            "branches": [
+              {
+                "condition": "Treatment is ineffective, poorly tolerated, or inconsistent with the patient’s goals",
+                "actions": [
+                  "Reassess diagnosis, treatment burden, adherence barriers, and alternatives with the responsible specialist.",
+                  "Document the shared decision and safety-net plan."
+                ]
+              },
+              {
+                "condition": "The patient improves on the agreed plan",
+                "actions": [
+                  "Continue the plan with monitoring proportional to risk.",
+                  "Provide clear instructions for expected course and warning symptoms."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "coordinate-and-follow-up",
+            "title": "Coordinate handover, education, and follow-up",
+            "timeframe": "Before transition and at the agreed review interval",
+            "actions": [
+              "Provide a written plan stating the working diagnosis, key findings, medicines or interventions, monitoring, and who owns each next step.",
+              "Use teach-back to check that the patient or caregiver understands warning symptoms, follow-up, and how to obtain help.",
+              "Close the loop on pending results, referrals, and screening or prevention actions."
+            ],
+            "branches": [
+              {
+                "condition": "Safe care cannot be delivered in the current setting",
+                "actions": [
+                  "Arrange a higher level of care or supported transfer and send a structured clinical handover.",
+                  "Confirm transport, caregiver, and communication needs where relevant."
+                ]
+              },
+              {
+                "condition": "The patient is ready for outpatient or continuing care",
+                "actions": [
+                  "Confirm a feasible follow-up date and contact route.",
+                  "Document when and how the plan should be reviewed or escalated."
+                ]
+              }
+            ]
+          }
+        ],
+        "medicationPlan": {
+          "status": "local-protocol-required",
+          "regimens": [],
+          "note": "UNVERIFIED DRAFT — not approved for clinical use. New suspected adult acute heart failure; no complete individual prescription extracted. Named diuretic, exact dose, frequency and complete contraindications are absent from these recommendations; no furosemide dose inferred. Existing sections outside this extraction are inherited unchanged and are not newly verified."
+        },
+        "granularPathway": {
+          "schema_version": 1,
+          "evidence": {
+            "sources": [
+              {
+                "id": "e909b799-acfb-4260-90d0-3f6c4aa90f37",
+                "title": "NICE CG187: Acute heart failure",
+                "issuer": "NICE",
+                "edition": "Live recommendations retrieved 2026-10-11",
+                "url": "https://www.nice.org.uk/guidance/cg187/chapter/recommendations",
+                "locator": "1.2.2–1.2.4; 1.3.3–1.3.9",
+                "primary_source": true
+              }
+            ],
+            "selection_rationale": "Unverified scope: New suspected adult acute heart failure; no complete individual prescription extracted."
+          },
+          "Investigations": [
+            {
+              "id": "official-assessment",
+              "title": "Source-backed assessment draft",
+              "timeframe": "According to each source step",
+              "steps": [
+                {
+                  "test": "BNP or NT-proBNP",
+                  "clinical_question": "Exclude new acute heart failure",
+                  "expected_finding": "BNP below 100 ng/L or NT-proBNP below 300 ng/L supports exclusion",
+                  "decision_rationale": "Guide echocardiographic assessment",
+                  "timeframe": "Initial assessment"
+                },
+                {
+                  "test": "Transthoracic echocardiography when natriuretic peptides raised",
+                  "clinical_question": "Identify cardiac abnormalities",
+                  "expected_finding": "Establish presence or absence of abnormalities",
+                  "decision_rationale": "Guide specialist treatment",
+                  "timeframe": "Consider within 48 hours of admission"
+                }
+              ],
+              "evidence": {
+                "sources": [
+                  {
+                    "id": "e909b799-acfb-4260-90d0-3f6c4aa90f37",
+                    "title": "NICE CG187: Acute heart failure",
+                    "issuer": "NICE",
+                    "edition": "Live recommendations retrieved 2026-10-11",
+                    "url": "https://www.nice.org.uk/guidance/cg187/chapter/recommendations",
+                    "locator": "1.2.2–1.2.4; 1.3.3–1.3.9",
+                    "primary_source": true
+                  }
+                ],
+                "selection_rationale": "Unverified scope: New suspected adult acute heart failure; no complete individual prescription extracted."
+              }
+            }
+          ],
+          "Treatment_Plan": [
+            {
+              "id": "official-management",
+              "title": "Limited source-backed management draft",
+              "timeframe": "According to each source action",
+              "actions": [
+                {
+                  "instruction": "Use IV diuretic therapy with renal-function, weight and urine-output monitoring; no precise diuretic dose is specified here.",
+                  "timeframe": "Initial treatment"
+                },
+                {
+                  "instruction": "Avoid routine nitrates; selected IV use requires close BP monitoring with at least level 2 care. Do not use sodium nitroprusside.",
+                  "timeframe": "During treatment selection"
+                },
+                {
+                  "instruction": "Review gaps: Named diuretic, exact dose, frequency and complete contraindications are absent from these recommendations; no furosemide dose inferred.",
+                  "timeframe": "Before clinical approval"
+                }
+              ],
+              "Medicines_Doses": [],
+              "branches": [],
+              "evidence": {
+                "sources": [
+                  {
+                    "id": "e909b799-acfb-4260-90d0-3f6c4aa90f37",
+                    "title": "NICE CG187: Acute heart failure",
+                    "issuer": "NICE",
+                    "edition": "Live recommendations retrieved 2026-10-11",
+                    "url": "https://www.nice.org.uk/guidance/cg187/chapter/recommendations",
+                    "locator": "1.2.2–1.2.4; 1.3.3–1.3.9",
+                    "primary_source": true
+                  }
+                ],
+                "selection_rationale": "Unverified scope: New suspected adult acute heart failure; no complete individual prescription extracted."
+              }
+            }
+          ]
+        },
+        "nonClinicalManagement": {
+          "patientEducation": [
+            "Explain acute heart failure and pulmonary oedema in plain language, including what is known, what remains uncertain, and how the plan will be reviewed.",
+            "Use teach-back for warning signs, medicines or monitoring, and the route to urgent help.",
+            "Invite questions and adapt written or interpreted information to the patient’s language, health literacy, and communication needs."
+          ],
+          "lifestyleAndDiet": [
+            "Offer topic-relevant prevention or self-management support that is safe, feasible, culturally appropriate, and consistent with the person’s goals.",
+            "Avoid one-size-fits-all restrictions; individualise advice for pregnancy, frailty, kidney/heart disease, disability, and treatment burden."
+          ],
+          "mdtReferrals": [
+            "Emergency Medicine",
+            "Primary care or the responsible continuity team",
+            "Pharmacist, nurse educator, dietitian, rehabilitation, mental-health, or social support when relevant to the case."
+          ],
+          "dischargeCriteria": [
+            "Clinical status is appropriate for the next setting, and urgent complications have been excluded or addressed.",
+            "The patient or caregiver has an understandable plan, access to needed treatment/support, and a clear escalation route.",
+            "Pending investigations and referrals have a named owner and follow-up timeframe."
+          ],
+          "followUpPlan": "Review the topic-specific focus, patient goals, symptoms and function at an interval matched to risk. Reconcile new results and treatment effects, close referrals, and revisit the plan if the condition, circumstances, or preferences change."
+        }
+      },
+      "graph": {
+        "title": "Acute Heart Failure and Pulmonary Oedema: limited evidence extraction",
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "title": "Extracted scope",
+            "detail": "New suspected adult acute heart failure; no complete individual prescription extracted.",
+            "referenceIds": [
+              "e909b799-acfb-4260-90d0-3f6c4aa90f37"
+            ]
+          },
+          {
+            "id": "assessment",
+            "type": "assessment",
+            "title": "Investigations",
+            "detail": "BNP or NT-proBNP: Guide echocardiographic assessment; Initial assessment\nTransthoracic echocardiography when natriuretic peptides raised: Guide specialist treatment; Consider within 48 hours of admission",
+            "referenceIds": [
+              "e909b799-acfb-4260-90d0-3f6c4aa90f37"
+            ]
+          },
+          {
+            "id": "management",
+            "type": "action",
+            "title": "Source-backed actions",
+            "detail": "Use IV diuretic therapy with renal-function, weight and urine-output monitoring; no precise diuretic dose is specified here. Initial treatment\nAvoid routine nitrates; selected IV use requires close BP monitoring with at least level 2 care. Do not use sodium nitroprusside. During treatment selection",
+            "referenceIds": [
+              "e909b799-acfb-4260-90d0-3f6c4aa90f37"
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "title": "End of extracted scope",
+            "detail": "Review gaps: Named diuretic, exact dose, frequency and complete contraindications are absent from these recommendations; no furosemide dose inferred.",
+            "referenceIds": [
+              "e909b799-acfb-4260-90d0-3f6c4aa90f37"
+            ]
+          }
+        ],
+        "transitions": [
+          {
+            "from": "start",
+            "to": "assessment"
+          },
+          {
+            "from": "assessment",
+            "to": "management"
+          },
+          {
+            "from": "management",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c2c404f2-5f47-4e4d-9ce7-fb32a9c1e105",
+      "title": "Acute Ischemic Stroke",
+      "original_version_id": "c2c404f2-5f47-4e4d-9ce7-fb32a9c1e105",
+      "expected_hash": "00886318e0c8d279ff03fd09923afd40",
+      "source_url": "https://www.nice.org.uk/guidance/ng128/chapter/recommendations",
+      "source_title": "NICE NG128: Stroke and TIA in over 16s",
+      "issuer": "NICE",
+      "scope": "Initial aspirin pathway after haemorrhage excluded; reperfusion-specific exclusions and antiplatelet timing require specialist review.",
+      "content": {
+        "id": "c2c404f2-5f47-4e4d-9ce7-fb32a9c1e105",
+        "title": "Acute Ischemic Stroke",
+        "specialty": "Emergency Medicine and Neurology",
+        "authority": "MOH",
+        "status": "draft",
+        "version": "official-extraction-2026-10-11-b001",
+        "lastReviewed": "2026-10-10",
+        "pillar": "Urgent Care",
+        "clinicalReviewStatus": "pending",
+        "pathophysiology": {
+          "summary": "Acute arterial occlusion reduces cerebral perfusion, causing focal neurologic dysfunction and potentially irreversible infarction.",
+          "keyMechanisms": [
+            "Thrombotic occlusion or embolism",
+            "Reduced cerebral blood flow",
+            "Ischemic penumbra around infarcted tissue",
+            "Potential large-vessel occlusion"
+          ]
+        },
+        "presentation": {
+          "symptoms": [
+            "Sudden unilateral face/arm/leg weakness or numbness",
+            "Sudden speech or language difficulty",
+            "Sudden visual loss or diplopia",
+            "Sudden imbalance or incoordination",
+            "Sudden focal deficit"
+          ],
+          "physicalSigns": [
+            "Facial asymmetry",
+            "Unilateral weakness or sensory loss",
+            "Aphasia or dysarthria",
+            "Visual field deficit or gaze deviation",
+            "Ataxia or neglect"
+          ],
+          "redFlags": [
+            "New disabling focal neurologic deficit",
+            "Reduced consciousness or airway compromise",
+            "Severe sudden headache or vomiting",
+            "Seizure at onset or worsening deficit",
+            "Unknown last-known-well time"
+          ]
+        },
+        "differentials": [
+          {
+            "condition": "Intracranial hemorrhage",
+            "distinguishingFeatures": "May present similarly; urgent imaging is required before reperfusion decisions."
+          },
+          {
+            "condition": "Hypoglycemia",
+            "distinguishingFeatures": "Can mimic focal deficit and should be checked immediately."
+          },
+          {
+            "condition": "Seizure with postictal deficit",
+            "distinguishingFeatures": "Seizure or postictal state may be present, but stroke can also provoke seizure."
+          },
+          {
+            "condition": "Migraine with aura",
+            "distinguishingFeatures": "May cause evolving positive symptoms; new deficits require urgent stroke assessment."
+          }
+        ],
+        "investigations": {
+          "ruleIn": [
+            {
+              "tier": "advancedImaging",
+              "testName": "Urgent noncontrast CT and vascular imaging when indicated",
+              "modalityTarget": "Urgent noncontrast CT and vascular imaging when indicated — Ischemic stroke/large-vessel occlusion",
+              "targetCondition": "Ischemic stroke/large-vessel occlusion",
+              "expectedFinding": "CT may initially be normal or show ischemic change; vascular imaging may identify occlusion.",
+              "clinicalRationale": "Excludes hemorrhage and supports reperfusion/thrombectomy decisions."
+            },
+            {
+              "tier": "laboratory",
+              "testName": "Bedside capillary glucose",
+              "modalityTarget": "Bedside capillary glucose — Hypoglycemia mimic or comorbidity",
+              "targetCondition": "Hypoglycemia mimic or comorbidity",
+              "expectedFinding": "Possible glucose abnormality.",
+              "clinicalRationale": "Rapidly identifies a treatable mimic."
+            }
+          ],
+          "ruleOut": [
+            {
+              "tier": "laboratory",
+              "testName": "Brain imaging before reperfusion",
+              "modalityTarget": "Brain imaging before reperfusion — Intracranial hemorrhage",
+              "targetCondition": "Intracranial hemorrhage",
+              "expectedFinding": "No acute hemorrhage on appropriate initial imaging.",
+              "clinicalRationale": "Hemorrhage must be assessed before ischemic reperfusion."
+            },
+            {
+              "tier": "specializedAdjunctive",
+              "testName": "ECG and cardiac monitoring",
+              "modalityTarget": "ECG and cardiac monitoring — Arrhythmia contributing to symptoms",
+              "targetCondition": "Arrhythmia contributing to symptoms",
+              "expectedFinding": "No acute arrhythmia; normal result does not exclude embolic source.",
+              "clinicalRationale": "Detects concurrent rhythm problems without delaying imaging."
+            }
+          ]
+        },
+        "clinicalManagement": [
+          {
+            "id": "activate-stroke",
+            "title": "Activate stroke response and establish timing",
+            "timeframe": "Immediately",
+            "actions": [
+              "Activate local stroke pathway and document last-known-well and discovery times.",
+              "Assess airway, breathing, circulation, observations, neurologic deficit, and glucose.",
+              "Arrange urgent brain imaging and stroke-team review."
+            ],
+            "branches": [
+              {
+                "condition": "Airway compromise or unstable physiology",
+                "actions": [
+                  "Stabilize airway and circulation with emergency/critical-care support.",
+                  "Continue urgent stroke coordination and imaging when safe."
+                ]
+              },
+              {
+                "condition": "Potential reperfusion or thrombectomy candidate",
+                "actions": [
+                  "Proceed through time-critical imaging and specialist decision pathway.",
+                  "Do not delay review for nonessential tests."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "stroke-type",
+            "title": "Determine stroke type and provide specialist-directed care",
+            "timeframe": "Immediately after initial imaging",
+            "actions": [
+              "Distinguish ischemia from hemorrhage and assess large-vessel occlusion with specialist input.",
+              "Assess reperfusion and endovascular eligibility under current Saudi/local protocol.",
+              "Monitor neurologic status and arrange stroke-unit admission or transfer."
+            ],
+            "branches": [
+              {
+                "condition": "Hemorrhage identified",
+                "actions": [
+                  "Do not proceed with ischemic reperfusion treatment.",
+                  "Activate hemorrhage pathway and obtain urgent specialist care."
+                ]
+              },
+              {
+                "condition": "Ischemic stroke without reperfusion",
+                "actions": [
+                  "Provide stroke-unit care and protocol-directed support.",
+                  "Assess swallowing before oral intake and begin secondary-cause workup."
+                ]
+              }
+            ]
+          }
+        ],
+        "medicationPlan": {
+          "status": "local-protocol-required",
+          "regimens": [
+            {
+              "indication": "Acute stroke after intracerebral haemorrhage excluded",
+              "patientGroup": "Adults; reperfusion-specific timing needs specialist confirmation",
+              "genericName": "Aspirin",
+              "dose": "300 mg",
+              "route": "Oral without dysphagia; rectal or enteral tube with dysphagia",
+              "frequency": "Daily; start as soon as possible and within 24 hours after required assessment",
+              "duration": "Until 2 weeks after onset, or earlier transition on discharge",
+              "adjustments": [
+                "Haemorrhage must be excluded. Full contraindication and post-thrombolysis timing review remains pending."
+              ],
+              "monitoring": [
+                "Swallow screen before oral administration."
+              ],
+              "sourceTitle": "NICE NG128: Stroke and TIA in over 16s",
+              "sourceUrl": "https://www.nice.org.uk/guidance/ng128/chapter/recommendations",
+              "sourceEdition": "Live recommendations retrieved 2026-10-11; 1.3.2–1.3.3; 1.4.9; 1.6.1"
+            }
+          ],
+          "note": "UNVERIFIED DRAFT — not approved for clinical use. Initial aspirin pathway after haemorrhage excluded; reperfusion-specific exclusions and antiplatelet timing require specialist review. No thrombolytic dose inferred. Full allergy, bleeding and reperfusion-related restrictions require review. Existing sections outside this extraction are inherited unchanged and are not newly verified."
+        },
+        "granularPathway": {
+          "schema_version": 1,
+          "evidence": {
+            "sources": [
+              {
+                "id": "2c3bc355-a43d-49b9-826b-276ed7fb4a6f",
+                "title": "NICE NG128: Stroke and TIA in over 16s",
+                "issuer": "NICE",
+                "edition": "Live recommendations retrieved 2026-10-11",
+                "url": "https://www.nice.org.uk/guidance/ng128/chapter/recommendations",
+                "locator": "1.3.2–1.3.3; 1.4.9; 1.6.1",
+                "primary_source": true
+              }
+            ],
+            "selection_rationale": "Unverified scope: Initial aspirin pathway after haemorrhage excluded; reperfusion-specific exclusions and antiplatelet timing require specialist review."
+          },
+          "Investigations": [
+            {
+              "id": "official-assessment",
+              "title": "Source-backed assessment draft",
+              "timeframe": "According to each source step",
+              "steps": [
+                {
+                  "test": "Non-enhanced CT brain",
+                  "clinical_question": "Exclude intracranial haemorrhage",
+                  "expected_finding": "Imaging must exclude haemorrhage before this aspirin pathway",
+                  "decision_rationale": "Determine appropriate acute treatment",
+                  "timeframe": "Immediately when urgent criteria apply; otherwise within 24 hours"
+                },
+                {
+                  "test": "Swallow screen",
+                  "clinical_question": "Assess oral medication safety",
+                  "expected_finding": "Dysphagia changes administration route",
+                  "decision_rationale": "Reduce aspiration risk",
+                  "timeframe": "Before oral food, fluid or medication"
+                }
+              ],
+              "evidence": {
+                "sources": [
+                  {
+                    "id": "2c3bc355-a43d-49b9-826b-276ed7fb4a6f",
+                    "title": "NICE NG128: Stroke and TIA in over 16s",
+                    "issuer": "NICE",
+                    "edition": "Live recommendations retrieved 2026-10-11",
+                    "url": "https://www.nice.org.uk/guidance/ng128/chapter/recommendations",
+                    "locator": "1.3.2–1.3.3; 1.4.9; 1.6.1",
+                    "primary_source": true
+                  }
+                ],
+                "selection_rationale": "Unverified scope: Initial aspirin pathway after haemorrhage excluded; reperfusion-specific exclusions and antiplatelet timing require specialist review."
+              }
+            }
+          ],
+          "Treatment_Plan": [
+            {
+              "id": "official-management",
+              "title": "Limited source-backed management draft",
+              "timeframe": "According to each source action",
+              "actions": [
+                {
+                  "instruction": "Select oral aspirin when no dysphagia; use rectal or enteral-tube administration when dysphagia is present.",
+                  "timeframe": "After brain imaging and swallowing assessment"
+                },
+                {
+                  "instruction": "Review gaps: No thrombolytic dose inferred. Full allergy, bleeding and reperfusion-related restrictions require review.",
+                  "timeframe": "Before clinical approval"
+                }
+              ],
+              "Medicines_Doses": [],
+              "branches": [],
+              "evidence": {
+                "sources": [
+                  {
+                    "id": "2c3bc355-a43d-49b9-826b-276ed7fb4a6f",
+                    "title": "NICE NG128: Stroke and TIA in over 16s",
+                    "issuer": "NICE",
+                    "edition": "Live recommendations retrieved 2026-10-11",
+                    "url": "https://www.nice.org.uk/guidance/ng128/chapter/recommendations",
+                    "locator": "1.3.2–1.3.3; 1.4.9; 1.6.1",
+                    "primary_source": true
+                  }
+                ],
+                "selection_rationale": "Unverified scope: Initial aspirin pathway after haemorrhage excluded; reperfusion-specific exclusions and antiplatelet timing require specialist review."
+              }
+            }
+          ]
+        },
+        "nonClinicalManagement": {
+          "patientEducation": [
+            "Explain stroke symptoms require immediate emergency assessment even if they improve.",
+            "Discuss rehabilitation and recurrent-stroke warning signs after stabilization."
+          ],
+          "lifestyleAndDiet": [
+            "Assess tobacco, diet, activity, and vascular risks during recovery.",
+            "Follow swallowing and diet recommendations before oral intake."
+          ],
+          "mdtReferrals": [
+            "Stroke neurology",
+            "Neurosurgery/interventional neuroradiology when indicated",
+            "Speech therapy, physiotherapy, occupational therapy",
+            "Cardiology and rehabilitation as appropriate"
+          ],
+          "dischargeCriteria": [
+            "Stroke-team assessment and safe disposition completed",
+            "Neurologic status and investigations documented",
+            "Swallowing, mobility, and support assessed",
+            "Prevention, rehabilitation, and follow-up documented"
+          ],
+          "followUpPlan": "Arrange stroke-service follow-up, rehabilitation, and etiologic evaluation; communicate prevention plans to primary care."
+        }
+      },
+      "graph": {
+        "title": "Acute Ischemic Stroke: limited evidence extraction",
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "title": "Extracted scope",
+            "detail": "Initial aspirin pathway after haemorrhage excluded; reperfusion-specific exclusions and antiplatelet timing require specialist review.",
+            "referenceIds": [
+              "2c3bc355-a43d-49b9-826b-276ed7fb4a6f"
+            ]
+          },
+          {
+            "id": "assessment",
+            "type": "assessment",
+            "title": "Investigations",
+            "detail": "Non-enhanced CT brain: Determine appropriate acute treatment; Immediately when urgent criteria apply; otherwise within 24 hours\nSwallow screen: Reduce aspiration risk; Before oral food, fluid or medication",
+            "referenceIds": [
+              "2c3bc355-a43d-49b9-826b-276ed7fb4a6f"
+            ]
+          },
+          {
+            "id": "management",
+            "type": "action",
+            "title": "Source-backed actions",
+            "detail": "Select oral aspirin when no dysphagia; use rectal or enteral-tube administration when dysphagia is present. After brain imaging and swallowing assessment",
+            "referenceIds": [
+              "2c3bc355-a43d-49b9-826b-276ed7fb4a6f"
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "title": "End of extracted scope",
+            "detail": "Review gaps: No thrombolytic dose inferred. Full allergy, bleeding and reperfusion-related restrictions require review.",
+            "referenceIds": [
+              "2c3bc355-a43d-49b9-826b-276ed7fb4a6f"
+            ]
+          }
+        ],
+        "transitions": [
+          {
+            "from": "start",
+            "to": "assessment"
+          },
+          {
+            "from": "assessment",
+            "to": "management"
+          },
+          {
+            "from": "management",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cb0f8932-f4c5-4a6a-9d44-d320713a366b",
+      "title": "Acute Kidney Injury",
+      "original_version_id": "cb0f8932-f4c5-4a6a-9d44-d320713a366b",
+      "expected_hash": "3ff0b642175a7e452c82d5bd9a51bb50",
+      "source_url": "https://www.nice.org.uk/guidance/ng148/chapter/recommendations",
+      "source_title": "NICE NG148: Acute kidney injury",
+      "issuer": "NICE",
+      "scope": "Diagnostic assessment and restrictions on routine drug treatment; not a complete fluid or renal-replacement prescription.",
+      "content": {
+        "id": "cb0f8932-f4c5-4a6a-9d44-d320713a366b",
+        "title": "Acute Kidney Injury",
+        "specialty": "Nephrology / Emergency Medicine",
+        "authority": "Textbook",
+        "status": "draft",
+        "version": "official-extraction-2026-10-11-b001",
+        "lastReviewed": "2026-10-10",
+        "pillar": "Urgent Care",
+        "clinicalReviewStatus": "pending",
+        "pathophysiology": {
+          "summary": "Reduced renal perfusion, parenchymal injury, or urinary obstruction can lower filtration; these mechanisms may coexist. Sepsis, medicines, glomerular disease, and fluid depletion can lead to electrolyte, acid-base, and volume complications. This topic is educational and should be interpreted alongside current local pathways and patient-specific assessment.",
+          "keyMechanisms": [
+            "Reduced renal perfusion, parenchymal injury, or urinary obstruction can lower filtration",
+            "these mechanisms may coexist. Sepsis, medicines, glomerular disease, and fluid depletion can lead to electrolyte, acid-base, and volume complications."
+          ]
+        },
+        "presentation": {
+          "symptoms": [
+            "Evaluate the characteristic symptom pattern of Acute Kidney Injury, including onset, evolution, severity, associated symptoms, precipitating factors, complications, and relevant negative findings.",
+            "Clarify onset, progression, associated symptoms, baseline function, medicines and the patient’s own priorities.",
+            "Ask about relevant risk factors and context described in the case; document important negative findings rather than assuming their absence."
+          ],
+          "physicalSigns": [
+            "Record observations and a focused examination directed to the organ system and competing diagnoses in this topic.",
+            "Assess functional change, comorbidity, hydration/perfusion where relevant, and baseline status.",
+            "Use serial reassessment when the condition or treatment can change over hours or days."
+          ],
+          "redFlags": [
+            "Anuria or rapidly rising creatinine",
+            "Refractory hyperkalaemia or acidosis",
+            "Pulmonary oedema or uraemic complication",
+            "Sepsis or suspected bilateral obstruction"
+          ]
+        },
+        "differentials": [
+          {
+            "condition": "Chronic kidney disease progression",
+            "distinguishingFeatures": "Prior results and duration establish chronicity."
+          },
+          {
+            "condition": "Urinary obstruction",
+            "distinguishingFeatures": "Retention symptoms and imaging identify a reversible cause."
+          },
+          {
+            "condition": "Glomerular/interstitial disease or rhabdomyolysis",
+            "distinguishingFeatures": "Urine sediment, systemic signs, medicines, and muscle injury guide testing."
+          }
+        ],
+        "investigations": {
+          "ruleIn": [
+            {
+              "tier": "specializedAdjunctive",
+              "testName": "Trend creatinine against baseline, urine output, electrolytes, acid-base status, urine dip/microscopy and medication exposures.",
+              "modalityTarget": "Trend creatinine against baseline, urine output, electrolytes, acid-base status, urine dip/microscopy and medication exposures. — Acute Kidney Injury",
+              "targetCondition": "Acute Kidney Injury",
+              "expectedFinding": "A result that supports the working diagnosis or defines its severity, interpreted with the clinical picture and current criteria.",
+              "clinicalRationale": "Choose this investigation because it can confirm the suspected process, establish baseline risk, or change the next decision in this case."
+            },
+            {
+              "tier": "laboratory",
+              "testName": "Renal imaging if obstruction is possible; use serology or additional imaging only when cause suggests it.",
+              "modalityTarget": "Renal imaging if obstruction is possible; use serology or additional imaging only when cause suggests it. — Cause, complication, or risk relevant to Acute Kidney Injury",
+              "targetCondition": "Cause, complication, or risk relevant to Acute Kidney Injury",
+              "expectedFinding": "A result that may identify a precipitating factor or complication; interpret in context rather than as a stand-alone diagnosis.",
+              "clinicalRationale": "This helps detect an important alternative or complication and informs safe monitoring and referral."
+            }
+          ],
+          "ruleOut": [
+            {
+              "tier": "laboratory",
+              "testName": "Focused evaluation for the leading alternative diagnoses",
+              "modalityTarget": "Focused evaluation for the leading alternative diagnoses — Important alternative to Acute Kidney Injury",
+              "targetCondition": "Important alternative to Acute Kidney Injury",
+              "expectedFinding": "Findings that lower the likelihood of the selected alternative; a normal result does not exclude every urgent cause.",
+              "clinicalRationale": "The differential matters because it changes urgency or treatment and should be actively considered."
+            },
+            {
+              "tier": "laboratory",
+              "testName": "Serial clinical reassessment with targeted repeat testing when indicated",
+              "modalityTarget": "Serial clinical reassessment with targeted repeat testing when indicated — Progression or evolving complication",
+              "targetCondition": "Progression or evolving complication",
+              "expectedFinding": "Stable or improving clinical trend without new evidence of the suspected complication.",
+              "clinicalRationale": "A single early assessment may miss an evolving problem; repeat only when it can guide care."
+            }
+          ]
+        },
+        "clinicalManagement": [
+          {
+            "id": "assess-and-triage",
+            "title": "Assess urgency, stability, and the person’s priorities",
+            "timeframe": "At first contact and whenever the situation changes",
+            "actions": [
+              "Confirm the presenting concern, relevant timeline, baseline function, medicines, allergies, comorbidities, and the patient’s immediate priorities.",
+              "Assess the red flags above and use the current local escalation pathway if instability or rapid deterioration is present.",
+              "Explain uncertainty and involve the patient or appropriate decision-maker in a way suited to the setting."
+            ],
+            "branches": [
+              {
+                "condition": "A red flag, instability, or rapid deterioration is present",
+                "actions": [
+                  "Escalate immediately to the responsible senior or emergency team using the local pathway.",
+                  "Stabilise and investigate in parallel; do not delay time-critical action for routine testing."
+                ]
+              },
+              {
+                "condition": "The person is stable for a planned or longitudinal pathway",
+                "actions": [
+                  "Proceed with focused assessment and shared planning.",
+                  "Document the threshold for urgent reassessment."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "confirm-and-stratify",
+            "title": "Confirm the working diagnosis and stratify risk",
+            "timeframe": "Promptly; adapt timing to acuity",
+            "actions": [
+              "Use the history, examination, and investigations listed above to confirm the likely process and assess important alternatives.",
+              "Interpret results using current national/local diagnostic criteria, age, pregnancy status, comorbidity, and prior results.",
+              "Record severity, uncertainty, and which findings would change the plan."
+            ],
+            "branches": [
+              {
+                "condition": "The diagnosis remains uncertain or tests conflict with the clinical picture",
+                "actions": [
+                  "Reassess the history and examination and seek senior or specialty advice.",
+                  "Use targeted additional testing only when its result can change management."
+                ]
+              },
+              {
+                "condition": "A high-risk complication or an alternative diagnosis is identified",
+                "actions": [
+                  "Switch to the relevant urgent or specialty pathway.",
+                  "Communicate the finding and handover responsibility clearly."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "individualised-care",
+            "title": "Agree evidence-informed care and address the cause",
+            "timeframe": "According to acuity and current local protocol",
+            "actions": [
+              "Use the topic-specific focus in this record to agree immediate and longer-term priorities with the patient.",
+              "Select treatment only after checking current local guidance, formulary, contraindications, interactions, organ function, pregnancy considerations, and patient preference.",
+              "Treat reversible contributors and address access, communication, cultural, and functional barriers."
+            ],
+            "branches": [
+              {
+                "condition": "Treatment is ineffective, poorly tolerated, or inconsistent with the patient’s goals",
+                "actions": [
+                  "Reassess diagnosis, treatment burden, adherence barriers, and alternatives with the responsible specialist.",
+                  "Document the shared decision and safety-net plan."
+                ]
+              },
+              {
+                "condition": "The patient improves on the agreed plan",
+                "actions": [
+                  "Continue the plan with monitoring proportional to risk.",
+                  "Provide clear instructions for expected course and warning symptoms."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "coordinate-and-follow-up",
+            "title": "Coordinate handover, education, and follow-up",
+            "timeframe": "Before transition and at the agreed review interval",
+            "actions": [
+              "Provide a written plan stating the working diagnosis, key findings, medicines or interventions, monitoring, and who owns each next step.",
+              "Use teach-back to check that the patient or caregiver understands warning symptoms, follow-up, and how to obtain help.",
+              "Close the loop on pending results, referrals, and screening or prevention actions."
+            ],
+            "branches": [
+              {
+                "condition": "Safe care cannot be delivered in the current setting",
+                "actions": [
+                  "Arrange a higher level of care or supported transfer and send a structured clinical handover.",
+                  "Confirm transport, caregiver, and communication needs where relevant."
+                ]
+              },
+              {
+                "condition": "The patient is ready for outpatient or continuing care",
+                "actions": [
+                  "Confirm a feasible follow-up date and contact route.",
+                  "Document when and how the plan should be reviewed or escalated."
+                ]
+              }
+            ]
+          }
+        ],
+        "medicationPlan": {
+          "status": "local-protocol-required",
+          "regimens": [],
+          "note": "UNVERIFIED DRAFT — not approved for clinical use. Diagnostic assessment and restrictions on routine drug treatment; not a complete fluid or renal-replacement prescription. No precise drug or fluid regimen supported in this scope; dose and contraindication review remains pending. Existing sections outside this extraction are inherited unchanged and are not newly verified."
+        },
+        "granularPathway": {
+          "schema_version": 1,
+          "evidence": {
+            "sources": [
+              {
+                "id": "2dc1b27d-a27a-408b-8d08-27510f17f5a9",
+                "title": "NICE NG148: Acute kidney injury",
+                "issuer": "NICE",
+                "edition": "Live recommendations retrieved 2026-10-11",
+                "url": "https://www.nice.org.uk/guidance/ng148/chapter/recommendations",
+                "locator": "1.4.2–1.4.6; 1.5.3–1.5.5",
+                "primary_source": true
+              }
+            ],
+            "selection_rationale": "Unverified scope: Diagnostic assessment and restrictions on routine drug treatment; not a complete fluid or renal-replacement prescription."
+          },
+          "Investigations": [
+            {
+              "id": "official-assessment",
+              "title": "Source-backed assessment draft",
+              "timeframe": "According to each source step",
+              "steps": [
+                {
+                  "test": "Urine dipstick for blood, protein, leucocytes, nitrites and glucose",
+                  "clinical_question": "Assess AKI cause",
+                  "expected_finding": "Abnormal results require action",
+                  "decision_rationale": "Guide cause-directed management",
+                  "timeframe": "As soon as AKI suspected"
+                },
+                {
+                  "test": "Urinary tract ultrasound when obstruction possible or cause unclear",
+                  "clinical_question": "Detect obstruction or pyonephrosis",
+                  "expected_finding": "Assess for urinary obstruction",
+                  "decision_rationale": "Identify need for intervention",
+                  "timeframe": "Within 6 hours if pyonephrosis suspected; within 24 hours for unclear cause or obstruction risk"
+                }
+              ],
+              "evidence": {
+                "sources": [
+                  {
+                    "id": "2dc1b27d-a27a-408b-8d08-27510f17f5a9",
+                    "title": "NICE NG148: Acute kidney injury",
+                    "issuer": "NICE",
+                    "edition": "Live recommendations retrieved 2026-10-11",
+                    "url": "https://www.nice.org.uk/guidance/ng148/chapter/recommendations",
+                    "locator": "1.4.2–1.4.6; 1.5.3–1.5.5",
+                    "primary_source": true
+                  }
+                ],
+                "selection_rationale": "Unverified scope: Diagnostic assessment and restrictions on routine drug treatment; not a complete fluid or renal-replacement prescription."
+              }
+            }
+          ],
+          "Treatment_Plan": [
+            {
+              "id": "official-management",
+              "title": "Limited source-backed management draft",
+              "timeframe": "According to each source action",
+              "actions": [
+                {
+                  "instruction": "Do not use low-dose dopamine for AKI; do not routinely use loop diuretics, except consider them for fluid overload in the specified renal-replacement/recovery settings.",
+                  "timeframe": "During treatment selection"
+                },
+                {
+                  "instruction": "Review gaps: No precise drug or fluid regimen supported in this scope; dose and contraindication review remains pending.",
+                  "timeframe": "Before clinical approval"
+                }
+              ],
+              "Medicines_Doses": [],
+              "branches": [],
+              "evidence": {
+                "sources": [
+                  {
+                    "id": "2dc1b27d-a27a-408b-8d08-27510f17f5a9",
+                    "title": "NICE NG148: Acute kidney injury",
+                    "issuer": "NICE",
+                    "edition": "Live recommendations retrieved 2026-10-11",
+                    "url": "https://www.nice.org.uk/guidance/ng148/chapter/recommendations",
+                    "locator": "1.4.2–1.4.6; 1.5.3–1.5.5",
+                    "primary_source": true
+                  }
+                ],
+                "selection_rationale": "Unverified scope: Diagnostic assessment and restrictions on routine drug treatment; not a complete fluid or renal-replacement prescription."
+              }
+            }
+          ]
+        },
+        "nonClinicalManagement": {
+          "patientEducation": [
+            "Explain acute kidney injury in plain language, including what is known, what remains uncertain, and how the plan will be reviewed.",
+            "Use teach-back for warning signs, medicines or monitoring, and the route to urgent help.",
+            "Invite questions and adapt written or interpreted information to the patient’s language, health literacy, and communication needs."
+          ],
+          "lifestyleAndDiet": [
+            "Offer topic-relevant prevention or self-management support that is safe, feasible, culturally appropriate, and consistent with the person’s goals.",
+            "Avoid one-size-fits-all restrictions; individualise advice for pregnancy, frailty, kidney/heart disease, disability, and treatment burden."
+          ],
+          "mdtReferrals": [
+            "Nephrology / Emergency Medicine",
+            "Primary care or the responsible continuity team",
+            "Pharmacist, nurse educator, dietitian, rehabilitation, mental-health, or social support when relevant to the case."
+          ],
+          "dischargeCriteria": [
+            "Clinical status is appropriate for the next setting, and urgent complications have been excluded or addressed.",
+            "The patient or caregiver has an understandable plan, access to needed treatment/support, and a clear escalation route.",
+            "Pending investigations and referrals have a named owner and follow-up timeframe."
+          ],
+          "followUpPlan": "Review the topic-specific focus, patient goals, symptoms and function at an interval matched to risk. Reconcile new results and treatment effects, close referrals, and revisit the plan if the condition, circumstances, or preferences change."
+        }
+      },
+      "graph": {
+        "title": "Acute Kidney Injury: limited evidence extraction",
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "title": "Extracted scope",
+            "detail": "Diagnostic assessment and restrictions on routine drug treatment; not a complete fluid or renal-replacement prescription.",
+            "referenceIds": [
+              "2dc1b27d-a27a-408b-8d08-27510f17f5a9"
+            ]
+          },
+          {
+            "id": "assessment",
+            "type": "assessment",
+            "title": "Investigations",
+            "detail": "Urine dipstick for blood, protein, leucocytes, nitrites and glucose: Guide cause-directed management; As soon as AKI suspected\nUrinary tract ultrasound when obstruction possible or cause unclear: Identify need for intervention; Within 6 hours if pyonephrosis suspected; within 24 hours for unclear cause or obstruction risk",
+            "referenceIds": [
+              "2dc1b27d-a27a-408b-8d08-27510f17f5a9"
+            ]
+          },
+          {
+            "id": "management",
+            "type": "action",
+            "title": "Source-backed actions",
+            "detail": "Do not use low-dose dopamine for AKI; do not routinely use loop diuretics, except consider them for fluid overload in the specified renal-replacement/recovery settings. During treatment selection",
+            "referenceIds": [
+              "2dc1b27d-a27a-408b-8d08-27510f17f5a9"
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "title": "End of extracted scope",
+            "detail": "Review gaps: No precise drug or fluid regimen supported in this scope; dose and contraindication review remains pending.",
+            "referenceIds": [
+              "2dc1b27d-a27a-408b-8d08-27510f17f5a9"
+            ]
+          }
+        ],
+        "transitions": [
+          {
+            "from": "start",
+            "to": "assessment"
+          },
+          {
+            "from": "assessment",
+            "to": "management"
+          },
+          {
+            "from": "management",
+            "to": "end"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bb3cbef9-52b1-41f8-b2ee-17078b3a2d5d",
+      "title": "Acute Pancreatitis",
+      "original_version_id": "bb3cbef9-52b1-41f8-b2ee-17078b3a2d5d",
+      "expected_hash": "5e22ecfd17aff7b95e3c54d654fc3713",
+      "source_url": "https://www.nice.org.uk/guidance/ng104/chapter/recommendations",
+      "source_title": "NICE NG104: Pancreatitis",
+      "issuer": "NICE",
+      "scope": "Diagnosis, infection prevention and nutrition; precise analgesia and fluid prescriptions are outside this extraction.",
+      "content": {
+        "id": "bb3cbef9-52b1-41f8-b2ee-17078b3a2d5d",
+        "title": "Acute Pancreatitis",
+        "specialty": "Gastroenterology / Emergency Medicine",
+        "authority": "Textbook",
+        "status": "draft",
+        "version": "official-extraction-2026-10-11-b001",
+        "lastReviewed": "2026-10-10",
+        "pillar": "Urgent Care",
+        "clinicalReviewStatus": "pending",
+        "pathophysiology": {
+          "summary": "Premature activation of pancreatic enzymes causes local inflammation and can trigger systemic inflammatory response. Oedema may progress to necrosis, fluid collections, or organ failure; gallstones, alcohol, metabolic causes, and medicines require consideration. This topic is educational and should be interpreted alongside current local pathways and patient-specific assessment.",
+          "keyMechanisms": [
+            "Premature activation of pancreatic enzymes causes local inflammation and can trigger systemic inflammatory response. Oedema may progress to necrosis, fluid collections, or organ failure",
+            "gallstones, alcohol, metabolic causes, and medicines require consideration."
+          ]
+        },
+        "presentation": {
+          "symptoms": [
+            "Evaluate the characteristic symptom pattern of Acute Pancreatitis, including onset, evolution, severity, associated symptoms, precipitating factors, complications, and relevant negative findings.",
+            "Clarify onset, progression, associated symptoms, baseline function, medicines and the patient’s own priorities.",
+            "Ask about relevant risk factors and context described in the case; document important negative findings rather than assuming their absence."
+          ],
+          "physicalSigns": [
+            "Record observations and a focused examination directed to the organ system and competing diagnoses in this topic.",
+            "Assess functional change, comorbidity, hydration/perfusion where relevant, and baseline status.",
+            "Use serial reassessment when the condition or treatment can change over hours or days."
+          ],
+          "redFlags": [
+            "Shock or persistent organ dysfunction",
+            "Hypoxaemia or acute kidney injury",
+            "Cholangitis or obstructive jaundice",
+            "Peritonism or pain out of proportion"
+          ]
+        },
+        "differentials": [
+          {
+            "condition": "Biliary colic/cholecystitis",
+            "distinguishingFeatures": "May cause similar pain but lacks the full pancreatitis pattern."
+          },
+          {
+            "condition": "Peptic ulcer/perforation",
+            "distinguishingFeatures": "Peritonism or free air changes management."
+          },
+          {
+            "condition": "ACS or mesenteric ischaemia",
+            "distinguishingFeatures": "Consider based on risk, ECG, and pain pattern."
+          }
+        ],
+        "investigations": {
+          "ruleIn": [
+            {
+              "tier": "laboratory",
+              "testName": "Lipase, CBC, renal/electrolyte/liver profile, glucose and triglycerides when relevant; assess organ failure.",
+              "modalityTarget": "Lipase, CBC, renal/electrolyte/liver profile, glucose and triglycerides when relevant; assess organ failure. — Acute Pancreatitis",
+              "targetCondition": "Acute Pancreatitis",
+              "expectedFinding": "A result that supports the working diagnosis or defines its severity, interpreted with the clinical picture and current criteria.",
+              "clinicalRationale": "Choose this investigation because it can confirm the suspected process, establish baseline risk, or change the next decision in this case."
+            },
+            {
+              "tier": "specializedAdjunctive",
+              "testName": "Ultrasound for biliary cause; cross-sectional imaging should answer a specific question and use appropriate timing.",
+              "modalityTarget": "Ultrasound for biliary cause; cross-sectional imaging should answer a specific question and use appropriate timing. — Cause, complication, or risk relevant to Acute Pancreatitis",
+              "targetCondition": "Cause, complication, or risk relevant to Acute Pancreatitis",
+              "expectedFinding": "A result that may identify a precipitating factor or complication; interpret in context rather than as a stand-alone diagnosis.",
+              "clinicalRationale": "This helps detect an important alternative or complication and informs safe monitoring and referral."
+            }
+          ],
+          "ruleOut": [
+            {
+              "tier": "laboratory",
+              "testName": "Focused evaluation for the leading alternative diagnoses",
+              "modalityTarget": "Focused evaluation for the leading alternative diagnoses — Important alternative to Acute Pancreatitis",
+              "targetCondition": "Important alternative to Acute Pancreatitis",
+              "expectedFinding": "Findings that lower the likelihood of the selected alternative; a normal result does not exclude every urgent cause.",
+              "clinicalRationale": "The differential matters because it changes urgency or treatment and should be actively considered."
+            },
+            {
+              "tier": "laboratory",
+              "testName": "Serial clinical reassessment with targeted repeat testing when indicated",
+              "modalityTarget": "Serial clinical reassessment with targeted repeat testing when indicated — Progression or evolving complication",
+              "targetCondition": "Progression or evolving complication",
+              "expectedFinding": "Stable or improving clinical trend without new evidence of the suspected complication.",
+              "clinicalRationale": "A single early assessment may miss an evolving problem; repeat only when it can guide care."
+            }
+          ]
+        },
+        "clinicalManagement": [
+          {
+            "id": "assess-and-triage",
+            "title": "Assess urgency, stability, and the person’s priorities",
+            "timeframe": "At first contact and whenever the situation changes",
+            "actions": [
+              "Confirm the presenting concern, relevant timeline, baseline function, medicines, allergies, comorbidities, and the patient’s immediate priorities.",
+              "Assess the red flags above and use the current local escalation pathway if instability or rapid deterioration is present.",
+              "Explain uncertainty and involve the patient or appropriate decision-maker in a way suited to the setting."
+            ],
+            "branches": [
+              {
+                "condition": "A red flag, instability, or rapid deterioration is present",
+                "actions": [
+                  "Escalate immediately to the responsible senior or emergency team using the local pathway.",
+                  "Stabilise and investigate in parallel; do not delay time-critical action for routine testing."
+                ]
+              },
+              {
+                "condition": "The person is stable for a planned or longitudinal pathway",
+                "actions": [
+                  "Proceed with focused assessment and shared planning.",
+                  "Document the threshold for urgent reassessment."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "confirm-and-stratify",
+            "title": "Confirm the working diagnosis and stratify risk",
+            "timeframe": "Promptly; adapt timing to acuity",
+            "actions": [
+              "Use the history, examination, and investigations listed above to confirm the likely process and assess important alternatives.",
+              "Interpret results using current national/local diagnostic criteria, age, pregnancy status, comorbidity, and prior results.",
+              "Record severity, uncertainty, and which findings would change the plan."
+            ],
+            "branches": [
+              {
+                "condition": "The diagnosis remains uncertain or tests conflict with the clinical picture",
+                "actions": [
+                  "Reassess the history and examination and seek senior or specialty advice.",
+                  "Use targeted additional testing only when its result can change management."
+                ]
+              },
+              {
+                "condition": "A high-risk complication or an alternative diagnosis is identified",
+                "actions": [
+                  "Switch to the relevant urgent or specialty pathway.",
+                  "Communicate the finding and handover responsibility clearly."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "individualised-care",
+            "title": "Agree evidence-informed care and address the cause",
+            "timeframe": "According to acuity and current local protocol",
+            "actions": [
+              "Use the topic-specific focus in this record to agree immediate and longer-term priorities with the patient.",
+              "Select treatment only after checking current local guidance, formulary, contraindications, interactions, organ function, pregnancy considerations, and patient preference.",
+              "Treat reversible contributors and address access, communication, cultural, and functional barriers."
+            ],
+            "branches": [
+              {
+                "condition": "Treatment is ineffective, poorly tolerated, or inconsistent with the patient’s goals",
+                "actions": [
+                  "Reassess diagnosis, treatment burden, adherence barriers, and alternatives with the responsible specialist.",
+                  "Document the shared decision and safety-net plan."
+                ]
+              },
+              {
+                "condition": "The patient improves on the agreed plan",
+                "actions": [
+                  "Continue the plan with monitoring proportional to risk.",
+                  "Provide clear instructions for expected course and warning symptoms."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "coordinate-and-follow-up",
+            "title": "Coordinate handover, education, and follow-up",
+            "timeframe": "Before transition and at the agreed review interval",
+            "actions": [
+              "Provide a written plan stating the working diagnosis, key findings, medicines or interventions, monitoring, and who owns each next step.",
+              "Use teach-back to check that the patient or caregiver understands warning symptoms, follow-up, and how to obtain help.",
+              "Close the loop on pending results, referrals, and screening or prevention actions."
+            ],
+            "branches": [
+              {
+                "condition": "Safe care cannot be delivered in the current setting",
+                "actions": [
+                  "Arrange a higher level of care or supported transfer and send a structured clinical handover.",
+                  "Confirm transport, caregiver, and communication needs where relevant."
+                ]
+              },
+              {
+                "condition": "The patient is ready for outpatient or continuing care",
+                "actions": [
+                  "Confirm a feasible follow-up date and contact route.",
+                  "Document when and how the plan should be reviewed or escalated."
+                ]
+              }
+            ]
+          }
+        ],
+        "medicationPlan": {
+          "status": "local-protocol-required",
+          "regimens": [],
+          "note": "UNVERIFIED DRAFT — not approved for clinical use. Diagnosis, infection prevention and nutrition; precise analgesia and fluid prescriptions are outside this extraction. No drug names or precise doses specified for supportive treatment here; no antibiotic or analgesic dose inferred. Existing sections outside this extraction are inherited unchanged and are not newly verified."
+        },
+        "granularPathway": {
+          "schema_version": 1,
+          "evidence": {
+            "sources": [
+              {
+                "id": "15b7519d-5f50-4441-972c-e0cc45f6b592",
+                "title": "NICE NG104: Pancreatitis",
+                "issuer": "NICE",
+                "edition": "Live recommendations retrieved 2026-10-11",
+                "url": "https://www.nice.org.uk/guidance/ng104/chapter/recommendations",
+                "locator": "Acute pancreatitis introduction; 1.2.3–1.2.7",
+                "primary_source": true
+              }
+            ],
+            "selection_rationale": "Unverified scope: Diagnosis, infection prevention and nutrition; precise analgesia and fluid prescriptions are outside this extraction."
+          },
+          "Investigations": [
+            {
+              "id": "official-assessment",
+              "title": "Source-backed assessment draft",
+              "timeframe": "According to each source step",
+              "steps": [
+                {
+                  "test": "Serum lipase or amylase",
+                  "clinical_question": "Support acute pancreatitis diagnosis",
+                  "expected_finding": "Usually raised; elevations also occur in other conditions",
+                  "decision_rationale": "Interpret in clinical context",
+                  "timeframe": "At diagnostic assessment"
+                },
+                {
+                  "test": "Abdominal CT when enzyme elevations absent",
+                  "clinical_question": "Assess pancreatic inflammation",
+                  "expected_finding": "May confirm inflammation",
+                  "decision_rationale": "Support diagnosis when enzymes do not establish it",
+                  "timeframe": "When clinically indicated"
+                }
+              ],
+              "evidence": {
+                "sources": [
+                  {
+                    "id": "15b7519d-5f50-4441-972c-e0cc45f6b592",
+                    "title": "NICE NG104: Pancreatitis",
+                    "issuer": "NICE",
+                    "edition": "Live recommendations retrieved 2026-10-11",
+                    "url": "https://www.nice.org.uk/guidance/ng104/chapter/recommendations",
+                    "locator": "Acute pancreatitis introduction; 1.2.3–1.2.7",
+                    "primary_source": true
+                  }
+                ],
+                "selection_rationale": "Unverified scope: Diagnosis, infection prevention and nutrition; precise analgesia and fluid prescriptions are outside this extraction."
+              }
+            }
+          ],
+          "Treatment_Plan": [
+            {
+              "id": "official-management",
+              "title": "Limited source-backed management draft",
+              "timeframe": "According to each source action",
+              "actions": [
+                {
+                  "instruction": "Do not use prophylactic antimicrobials. Avoid withholding food without a clear reason, such as vomiting.",
+                  "timeframe": "During initial management"
+                },
+                {
+                  "instruction": "For moderately severe or severe disease, start enteral nutrition within 72 hours; parenteral nutrition is reserved for failed or contraindicated enteral nutrition.",
+                  "timeframe": "Within 72 hours when indicated"
+                },
+                {
+                  "instruction": "Review gaps: No drug names or precise doses specified for supportive treatment here; no antibiotic or analgesic dose inferred.",
+                  "timeframe": "Before clinical approval"
+                }
+              ],
+              "Medicines_Doses": [],
+              "branches": [],
+              "evidence": {
+                "sources": [
+                  {
+                    "id": "15b7519d-5f50-4441-972c-e0cc45f6b592",
+                    "title": "NICE NG104: Pancreatitis",
+                    "issuer": "NICE",
+                    "edition": "Live recommendations retrieved 2026-10-11",
+                    "url": "https://www.nice.org.uk/guidance/ng104/chapter/recommendations",
+                    "locator": "Acute pancreatitis introduction; 1.2.3–1.2.7",
+                    "primary_source": true
+                  }
+                ],
+                "selection_rationale": "Unverified scope: Diagnosis, infection prevention and nutrition; precise analgesia and fluid prescriptions are outside this extraction."
+              }
+            }
+          ]
+        },
+        "nonClinicalManagement": {
+          "patientEducation": [
+            "Explain acute pancreatitis in plain language, including what is known, what remains uncertain, and how the plan will be reviewed.",
+            "Use teach-back for warning signs, medicines or monitoring, and the route to urgent help.",
+            "Invite questions and adapt written or interpreted information to the patient’s language, health literacy, and communication needs."
+          ],
+          "lifestyleAndDiet": [
+            "Offer topic-relevant prevention or self-management support that is safe, feasible, culturally appropriate, and consistent with the person’s goals.",
+            "Avoid one-size-fits-all restrictions; individualise advice for pregnancy, frailty, kidney/heart disease, disability, and treatment burden."
+          ],
+          "mdtReferrals": [
+            "Gastroenterology / Emergency Medicine",
+            "Primary care or the responsible continuity team",
+            "Pharmacist, nurse educator, dietitian, rehabilitation, mental-health, or social support when relevant to the case."
+          ],
+          "dischargeCriteria": [
+            "Clinical status is appropriate for the next setting, and urgent complications have been excluded or addressed.",
+            "The patient or caregiver has an understandable plan, access to needed treatment/support, and a clear escalation route.",
+            "Pending investigations and referrals have a named owner and follow-up timeframe."
+          ],
+          "followUpPlan": "Review the topic-specific focus, patient goals, symptoms and function at an interval matched to risk. Reconcile new results and treatment effects, close referrals, and revisit the plan if the condition, circumstances, or preferences change."
+        }
+      },
+      "graph": {
+        "title": "Acute Pancreatitis: limited evidence extraction",
+        "nodes": [
+          {
+            "id": "start",
+            "type": "start",
+            "title": "Extracted scope",
+            "detail": "Diagnosis, infection prevention and nutrition; precise analgesia and fluid prescriptions are outside this extraction.",
+            "referenceIds": [
+              "15b7519d-5f50-4441-972c-e0cc45f6b592"
+            ]
+          },
+          {
+            "id": "assessment",
+            "type": "assessment",
+            "title": "Investigations",
+            "detail": "Serum lipase or amylase: Interpret in clinical context; At diagnostic assessment\nAbdominal CT when enzyme elevations absent: Support diagnosis when enzymes do not establish it; When clinically indicated",
+            "referenceIds": [
+              "15b7519d-5f50-4441-972c-e0cc45f6b592"
+            ]
+          },
+          {
+            "id": "management",
+            "type": "action",
+            "title": "Source-backed actions",
+            "detail": "Do not use prophylactic antimicrobials. Avoid withholding food without a clear reason, such as vomiting. During initial management\nFor moderately severe or severe disease, start enteral nutrition within 72 hours; parenteral nutrition is reserved for failed or contraindicated enteral nutrition. Within 72 hours when indicated",
+            "referenceIds": [
+              "15b7519d-5f50-4441-972c-e0cc45f6b592"
+            ]
+          },
+          {
+            "id": "end",
+            "type": "end",
+            "title": "End of extracted scope",
+            "detail": "Review gaps: No drug names or precise doses specified for supportive treatment here; no antibiotic or analgesic dose inferred.",
+            "referenceIds": [
+              "15b7519d-5f50-4441-972c-e0cc45f6b592"
+            ]
+          }
+        ],
+        "transitions": [
+          {
+            "from": "start",
+            "to": "assessment"
+          },
+          {
+            "from": "assessment",
+            "to": "management"
+          },
+          {
+            "from": "management",
+            "to": "end"
+          }
+        ]
+      }
+    }
+  ]
+}
