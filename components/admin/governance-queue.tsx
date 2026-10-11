@@ -25,7 +25,7 @@ export function GovernanceQueue({ items }: { items: GovernanceItem[] }) {
             </form>}
             <div className="admin-queue-copy"><span className={`admin-queue-status status-${item.status}`}>{item.status === "under_review" ? "Under review" : item.status === "published" ? "Published" : "Draft"}</span><h3>{item.title}</h3><p>{item.specialty} <span aria-hidden="true">·</span> Added {new Intl.DateTimeFormat("en-SA", { dateStyle: "medium", timeZone: "Asia/Riyadh" }).format(new Date(item.updatedAt))}</p></div>
             <div className="admin-queue-actions">
-              {item.status === "published" ? (item.canEdit && <Link className="ui-button ui-button-secondary" href={`/dashboard/admin/guidelines/${encodeURIComponent(item.id)}`}>Edit live topic</Link>) : <>
+              {item.status === "published" ? <Link className="ui-button ui-button-secondary" href={`/dashboard/diseases/${encodeURIComponent(item.id)}`}>View topic</Link> : <>
                 {item.status === "draft" ? <Link className="ui-button ui-button-secondary" href={`/dashboard/admin/guidelines/${encodeURIComponent(item.id)}`}>Edit draft</Link> : <Button onClick={() => setSelected({ action: "Review", item })}>Review</Button>}
                 <Button variant="danger" onClick={() => setSelected({ action: "Reject", item })}><XCircle size={15} />Reject</Button>
               </>}

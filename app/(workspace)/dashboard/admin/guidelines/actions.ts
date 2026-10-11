@@ -25,14 +25,12 @@ export async function saveDraftGuideline(formData: FormData) {
   }
 
   const parsed = DiseaseDetailSchema.safeParse(input);
-  if (!parsed.success || parsed.data.id !== id || !["draft", "under_review", "published"].includes(parsed.data.status)) {
+  if (!parsed.success || parsed.data.id !== id || !["draft", "under_review"].includes(parsed.data.status)) {
     redirect(`${editPath}&error=invalid_content`);
   }
 
   const context = await requireOrganizationAdmin();
   const supabase = await createSupabaseDataClient();
-  const isLive = parsed.data.status === "published";
-  if (isLive && (context.roleCode !== "platform_admin" || parsed.data.clinicalReviewStatus !== "pending")) redirect("/dashboard/admin/governance?error=not_editable");
   let guidelineQuery = supabase.from("clinical_guidelines").select("id,organization_id,is_shared_reference").eq("id", id);
   guidelineQuery = context.roleCode === "platform_admin"
     ? guidelineQuery.or(`organization_id.eq.${context.organizationId},and(organization_id.is.null,is_shared_reference.eq.true)`)
@@ -47,13 +45,13 @@ export async function saveDraftGuideline(formData: FormData) {
     .eq("guideline_id", id)
     .maybeSingle();
   if (versionError || !version) redirect(`${editPath}&error=version_not_editable`);
-  if (version.status !== parsed.data.status || (!version.is_current && !["draft", "under_review"].includes(version.status))) redirect(`${editPath}&error=version_not_editable`);
+  if (version.status !== parsed.data.status || !["draft", "under_review"].includes(version.status)) redirect(`${editPath}&error=version_not_editable`);
 
   const { error: contentError } = await supabase
     .from("guideline_versions")
     .update({
       content: parsed.data,
-      change_summary: isLive ? "Published topic edited in the Marifa live editor; local clinical validation remains pending." : "Draft content updated in the Marifa live editor; clinical and local governance review remains pending.",
+      change_summary: "Draft content updated in the Marifa editor; clinical and local governance review remains pending.",
     })
     .eq("id", version.id)
     .eq("guideline_id", id)

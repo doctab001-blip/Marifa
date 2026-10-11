@@ -139,11 +139,11 @@ function OptionalSection({ title, present, onAdd, onRemove, children }: { title:
   return <div className="pathway-optional-section"><div className="pathway-field-heading"><h4>{title}</h4>{present ? <button type="button" className="pathway-remove-button" onClick={onRemove}><Trash2 size={14} />Remove section</button> : <button type="button" className="ui-button ui-button-secondary pathway-add-button" onClick={onAdd}><Plus size={14} />Add section</button>}</div>{present ? children : <p className="pathway-empty-list">This optional section is not included in the current version.</p>}</div>;
 }
 
-function SavePathwayButton({ isLive }: { isLive: boolean }) {
-  return <button className="ui-button ui-button-primary" type="submit"><Save size={15} />{isLive ? "Save live pathway" : "Save Pathway"}</button>;
+function SavePathwayButton() {
+  return <button className="ui-button ui-button-primary" type="submit"><Save size={15} />Save draft</button>;
 }
 
-export function GuidelinePathwayForm({ disease, guidelineId, versionId, isLive, saveAction }: { disease: DiseaseDetail; guidelineId: string; versionId: string; isLive: boolean; saveAction: (formData: FormData) => Promise<void> }) {
+export function GuidelinePathwayForm({ disease, guidelineId, versionId, saveAction }: { disease: DiseaseDetail; guidelineId: string; versionId: string; saveAction: (formData: FormData) => Promise<void> }) {
   const [payload, setPayload] = useState(disease);
   const [issues, setIssues] = useState<string[]>([]);
   const update = (path: Path, value: unknown) => setPayload((current) => setAtPath(current, path, value));
@@ -187,6 +187,6 @@ export function GuidelinePathwayForm({ disease, guidelineId, versionId, isLive, 
       <OptionalSection title="Teaching guide" present={Boolean(payload.teaching)} onAdd={() => update(["teaching"], { learningObjectives: [""], guidedApproach: [{ title: "", prompt: "", guidance: "" }], checkpoints: [{ question: "", answer: "" }], pitfalls: [""], keyPoints: [""] })} onRemove={() => { const next = structuredClone(payload) as unknown as JsonObject; delete next.teaching; setPayload(next as unknown as DiseaseDetail); }}><ValueEditor value={payload.teaching} path={["teaching"]} update={update} /></OptionalSection>
     </section>
 
-    <div className="card pathway-save-bar"><span>{isLive ? "Saving updates the live topic immediately." : "The pathway remains a governed draft until an administrator approves it."}</span><SavePathwayButton isLive={isLive} /></div>
+    <div className="card pathway-save-bar"><span>The pathway remains a governed draft until an authorised reviewer approves it.</span><SavePathwayButton /></div>
   </form>;
 }

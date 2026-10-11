@@ -27,7 +27,7 @@ const disease = DiseaseDetailSchema.parse({
 describe("GuidelinePathwayForm", () => {
   it("edits strings and dynamic lists while compiling a valid hidden payload", async () => {
     const user = userEvent.setup();
-    render(<GuidelinePathwayForm disease={disease} guidelineId={disease.id} versionId="22222222-2222-4222-8222-222222222222" isLive={false} saveAction={vi.fn()} />);
+    render(<GuidelinePathwayForm disease={disease} guidelineId={disease.id} versionId="22222222-2222-4222-8222-222222222222" saveAction={vi.fn()} />);
 
     const summary = screen.getByRole("textbox", { name: "Summary" });
     await user.clear(summary);
@@ -42,13 +42,13 @@ describe("GuidelinePathwayForm", () => {
     expect(compiled.pathophysiology.summary).toBe("Updated clinical summary.");
     expect(compiled.presentation.symptoms).toEqual(["Original symptom", "New symptom"]);
     expect(DiseaseDetailSchema.safeParse(compiled).success).toBe(true);
-    expect(screen.getByRole("button", { name: "Save Pathway" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Save draft" })).toBeInTheDocument();
   });
 
   it("blocks submission and explains schema errors before the server action", async () => {
     const user = userEvent.setup();
     const saveAction = vi.fn();
-    const { container } = render(<GuidelinePathwayForm disease={disease} guidelineId={disease.id} versionId="22222222-2222-4222-8222-222222222222" isLive={false} saveAction={saveAction} />);
+    const { container } = render(<GuidelinePathwayForm disease={disease} guidelineId={disease.id} versionId="22222222-2222-4222-8222-222222222222" saveAction={saveAction} />);
     const symptoms = screen.getByRole("heading", { name: "Symptoms" }).closest(".pathway-array-field");
     await user.click(within(symptoms as HTMLElement).getByRole("button", { name: "Remove Symptoms item 1" }));
     fireEvent.submit(container.querySelector("form") as HTMLFormElement);

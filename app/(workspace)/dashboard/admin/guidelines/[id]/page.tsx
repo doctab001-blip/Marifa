@@ -39,7 +39,7 @@ export default async function EditDraftGuidelinePage({
       ) : (
         <>
           <header className="admin-section-heading admin-draft-heading">
-            <div><p className="eyebrow">Clinical content · {result.isLive ? "Published topic" : "Draft"}</p><h2>Edit {result.disease.title}</h2><p>{result.disease.pillar} · {result.disease.specialty}</p></div>
+            <div><p className="eyebrow">Clinical content · {result.isLive ? "Published topic" : "Draft"}</p><h2>{result.isLive ? "View" : "Edit"} {result.disease.title}</h2><p>{result.disease.pillar} · {result.disease.specialty}</p></div>
             <div className="admin-header-actions">
               <span className={`admin-queue-status ${result.isLive ? "status-published" : "status-draft"}`}>{result.isLive ? "Published to all site users" : "Draft · not approved"}</span>
               {!result.isLive && <a className="ui-button ui-button-secondary" href="#pathway-editor">Edit topic</a>}
@@ -51,7 +51,7 @@ export default async function EditDraftGuidelinePage({
               </form>}
             </div>
           </header>
-          {query.saved === "1" && <p className="admin-save-message" role="status">{result.isLive ? "Topic saved live." : "Draft saved. Its status remains draft."}</p>}
+          {query.saved === "1" && <p className="admin-save-message" role="status">Draft saved. Its status remains draft.</p>}
           {query.error && messages[query.error] && <p className="admin-save-error" role="alert">{messages[query.error]}</p>}
           <div className="clinical-governance-notice" role="note"><strong>Review state:</strong> {result.isLive ? "This educational topic is live for review; local clinical validation is pending. Do not use it as an official local protocol until clinically validated." : "This is an editable draft."} Textbook edition details identify the reference used; they do not mean this content has been clinically reviewed. Check current Saudi guidance, local formulary, and service protocols.</div>
           <article className="card admin-source-summary">
@@ -60,7 +60,7 @@ export default async function EditDraftGuidelinePage({
           </article>
           <ClinicalEvidenceAudit audit={result.disease.evidenceAudit} />
           <details className="card admin-source-summary"><summary>Review the six-part topic</summary><div><h3>1. Topic and mechanisms</h3><p>{result.disease.pathophysiology.summary}</p><h3>2. Presentation</h3><ul>{result.disease.presentation.symptoms.map((item) => <li key={item}>{item}</li>)}</ul><h3>3. Differential diagnoses</h3><ul>{result.disease.differentials.map((item) => <li key={item.condition}><strong>{item.condition}:</strong> {item.distinguishingFeatures}</li>)}</ul><h3>4. Investigations</h3><InvestigationCards investigations={result.disease.investigations} source={result.sourceUrl ? { title: result.sourceTitle, url: result.sourceUrl } : undefined} /><h3>5. Clinical management</h3><ul>{result.disease.clinicalManagement.map((item) => <li key={item.id}><strong>{item.title}:</strong> {item.actions.join(" ")}</li>)}</ul><h3>6. Non-clinical care</h3><ul>{result.disease.nonClinicalManagement.patientEducation.map((item) => <li key={item}>{item}</li>)}</ul></div></details>
-          <GuidelinePathwayForm disease={result.disease} guidelineId={id} versionId={result.versionId} isLive={result.isLive} saveAction={saveDraftGuideline} />
+          {result.isLive ? <div className="clinical-governance-notice" role="note"><strong>Published versions are read-only.</strong> To correct this topic, prepare a new draft version so that the change goes through clinical review; the published version stays in the history.</div> : <GuidelinePathwayForm disease={result.disease} guidelineId={id} versionId={result.versionId} saveAction={saveDraftGuideline} />}
         </>
       )}
     </section>
