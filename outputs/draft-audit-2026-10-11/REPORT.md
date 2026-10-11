@@ -12,6 +12,12 @@ At 19:41 Riyadh time the live logs show a successful approval followed by three 
 
 ## Per-version findings
 
+## Release verification
+
+The live database now has all 75 new noncurrent, under-review audit versions. All 81 catalogue records and all 165 original versions remain preserved; no approval or publication was performed. The queue therefore shows 167 draft versions across 75 topics. There are 6 limited Medscape comparisons, with no claim of original derivation. Type checking, 43 tests, the production build and the connected health check passed. The public browser showed the corrected COPD draft and its unresolved-evidence notice.
+
+Deployment: https://marifa-clinical.vercel.app (dpl_9EUT5gXZEys3MZdNigCkJD28dEqM; code commit 1b7fa65). See readback.json for the checked counts and limitations. The full clinical audit and full corrections remain unfinished where the report flags unverified sections or inaccessible sources.
+
 ### Acute Appendicitis — official-extraction-2026-10-11-b001
 Version ID: f48c5096-efe3-476f-a842-e85aa1f2eb12
 Verdict: incomplete — not demonstrated compliant. Medscape derivation: not established.
@@ -780,4 +786,3 @@ Verdict: incomplete — not demonstrated compliant. Medscape derivation: not est
 - Management contains generic template steps; the correction supplies a limited topic-specific source branch.
 - The recorded source is a publisher/book catalogue link; it does not substantiate the detailed clinical claims.
 - Hospital thromboprophylaxis only; NG89 does not verify the complete diagnosis or treatment of pregnancy-associated VTE.
-

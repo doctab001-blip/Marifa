@@ -1,0 +1,30 @@
+{
+  "verification": {
+    "audit_versions": 75,
+    "total_versions": 240,
+    "catalogue_count": 81,
+    "draft_queue_versions": 167,
+    "original_versions_preserved": 165,
+    "limited_medscape_comparisons": 6,
+    "audit_versions_pending_noncurrent": 75
+  },
+  "deployment": {
+    "id": "dpl_9EUT5gXZEys3MZdNigCkJD28dEqM",
+    "url": "https://marifa-clinical.vercel.app",
+    "codeCommit": "1b7fa65"
+  },
+  "checks": {
+    "typecheck": "passed",
+    "unitTests": 43,
+    "productionBuild": "passed",
+    "health": "database connected",
+    "browser": "167 draft versions across 75 topics; selected COPD audit visible"
+  },
+  "limitations": [
+    "Full NICE compliance has not been established",
+    "Original Medscape derivation has not been established",
+    "Most Medscape retrievals returned HTTP 429",
+    "NICE NG259 retrieval returned HTTP 403",
+    "Inherited sections and full prescribing remain unverified"
+  ]
+}
