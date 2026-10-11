@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { requireOrganizationAdmin } from "@/lib/admin/data";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { isTemporaryOpenAdminMode } from "@/lib/access-mode";
 
 const themes = ["#1f3c88", "#0f766e", "#166534", "#7c3aed", "#be123c"] as const;
 const levels = ["mbbs_gp", "specialist", "consultant"] as const;
@@ -16,6 +17,7 @@ function field(formData: FormData, name: string) {
 }
 
 export async function saveAdminSettings(formData: FormData) {
+  if (isTemporaryOpenAdminMode()) redirect("/dashboard/admin/settings?error=temporary_mode#profile");
   const context = await requireOrganizationAdmin();
   const displayName = field(formData, "display_name");
   const professionalLevel = field(formData, "professional_level");

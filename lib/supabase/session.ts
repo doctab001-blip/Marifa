@@ -1,12 +1,14 @@
 import "server-only";
 import { cache } from "react";
 import { cookies } from "next/headers";
-import { demoUser, governanceUser } from "@/lib/demo-data";
+import { demoUser, governanceUser, temporaryAdminUser } from "@/lib/demo-data";
+import { isTemporaryOpenAdminMode } from "@/lib/access-mode";
 import type { DemoUser } from "@/lib/types";
 import { isSupabaseConfigured } from "@/lib/supabase/config";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 
 export const getCurrentViewer = cache(async (): Promise<DemoUser | null> => {
+  if (isTemporaryOpenAdminMode()) return temporaryAdminUser;
   const cookieStore = await cookies();
   const demoSession = cookieStore.get("marifa_demo_session")?.value;
   if (demoSession === "governance") return governanceUser;

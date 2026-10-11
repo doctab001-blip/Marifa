@@ -28,8 +28,11 @@ export default async function DiseaseDraftsPage({ searchParams }: { searchParams
 
       <DiseaseManagementNavigation active="drafts" />
 
+      <p className="clinical-review-draft-notice" role="note"><strong>Temporary admin access:</strong> sign-in is disabled for this development phase. Anyone with this site link can open the editor and use the approval controls. Every approved version still records the configured Marifa administrator and approval time.</p>
+
       {query.approved === "1" && <p className="admin-save-message" role="status">Version approved. The reviewer and approval time were recorded.</p>}
       {query.error === "approval_failed" && <p className="admin-save-error" role="alert">Approval failed because the version changed or your account does not have approval access.</p>}
+      {query.error === "temporary_admin_config" && <p className="admin-save-error" role="alert">Temporary administrator access is not configured on this deployment.</p>}
 
       {result.state === "unavailable" ? (
         <section className="directory-empty card" role="alert">

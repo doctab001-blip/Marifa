@@ -26,6 +26,19 @@ export const governanceUser: DemoUser = {
   organizationName: "Nour Medical Centre — Demo"
 };
 
+export const temporaryAdminUser: DemoUser = {
+  id: "temporary-admin",
+  name: "Marifa Administrator",
+  initials: "MA",
+  role: "Platform Admin",
+  designation: "Temporary access mode",
+  isAdmin: true,
+  primaryColor: "#1f3c88",
+  specialty: "Clinical Governance",
+  organizationId: process.env.MARIFA_TEMPORARY_ADMIN_ORGANIZATION_ID ?? "temporary-admin-organization",
+  organizationName: "Marifa Platform",
+};
+
 export const diseases: DiseaseTopic[] = [
   {
     id: "dis_copd",

@@ -1,11 +1,18 @@
 import { createServerClient, type CookieOptions } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
+import { isTemporaryOpenAdminMode } from "@/lib/access-mode";
 
 export async function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   const isDashboardRoute = pathname === "/dashboard" || pathname.startsWith("/dashboard/");
   const isAuthRoute = pathname === "/login" || pathname === "/signup";
   if (!isDashboardRoute && !isAuthRoute) return NextResponse.next({ request });
+
+  if (isTemporaryOpenAdminMode()) {
+    return isAuthRoute
+      ? NextResponse.redirect(new URL("/dashboard/diseases/drafts", request.url))
+      : NextResponse.next({ request });
+  }
 
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;

@@ -2,7 +2,7 @@ import "server-only";
 
 import { getCurrentViewer } from "@/lib/supabase/session";
 import { isSupabaseConfigured } from "@/lib/supabase/config";
-import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { createSupabaseDataClient } from "@/lib/supabase/data-client";
 import { DiseaseDetailSchema } from "@/lib/validations/disease";
 
 export type DiseaseDraft = {
@@ -33,7 +33,7 @@ export async function getDiseaseDrafts(): Promise<{
   }
 
   try {
-    const supabase = await createSupabaseServerClient();
+    const supabase = await createSupabaseDataClient();
     const drafts: DiseaseDraft[] = [];
     const pageSize = 500;
 
@@ -93,7 +93,7 @@ export async function getDiseaseDraftVersion(versionId: string) {
   }
 
   try {
-    const supabase = await createSupabaseServerClient();
+    const supabase = await createSupabaseDataClient();
     const { data, error } = await supabase
       .from("guideline_versions")
       .select("id,status,content,source_title,source_url,clinical_guidelines!inner(id,organization_id,is_shared_reference)")

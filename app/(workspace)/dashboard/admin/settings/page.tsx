@@ -16,7 +16,7 @@ export default async function HospitalSettingsPage({ searchParams }: { searchPar
     <section className="admin-content">
       <header className="admin-section-heading"><div><p className="eyebrow">Workspace configuration</p><h2>Profile &amp; appearance</h2><p>Update your administrator profile and the shared look and locale for {context.organizationName}.</p></div></header>
       {query.saved && <p className="settings-feedback settings-feedback-success" role="status"><Check size={16} /> Your changes have been saved.</p>}
-      {query.error && <p className="settings-feedback settings-feedback-error" role="alert">{query.error === "invalid" ? "Check the name and choose valid options before saving." : "We couldn’t save these changes. Please try again."}</p>}
+      {query.error && <p className="settings-feedback settings-feedback-error" role="alert">{query.error === "invalid" ? "Check the name and choose valid options before saving." : query.error === "temporary_mode" ? "Profile settings are paused while temporary no-login administration is active." : "We couldn’t save these changes. Please try again."}</p>}
       <form action={saveAdminSettings} className="admin-settings-form" id="profile">
         <div className="admin-settings-grid">
           <article className="card admin-setting-card admin-edit-card">

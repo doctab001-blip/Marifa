@@ -3,7 +3,8 @@ import "server-only";
 import { cache } from "react";
 import { redirect } from "next/navigation";
 import { isSupabaseConfigured } from "@/lib/supabase/config";
-import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { createSupabaseDataClient } from "@/lib/supabase/data-client";
+import { getTemporaryAdminIdentity, isTemporaryOpenAdminMode } from "@/lib/access-mode";
 import { DiseaseDetailSchema } from "@/lib/validations/disease";
 
 export type OrganizationAdminContext = {
@@ -18,9 +19,19 @@ const ADMIN_ROLE_CODES = ["org_admin", "hospital_admin", "platform_admin"] as co
 
 /** Every admin data loader calls this before it reads organization data. */
 export const requireOrganizationAdmin = cache(async (): Promise<OrganizationAdminContext> => {
+  if (isTemporaryOpenAdminMode()) {
+    const identity = getTemporaryAdminIdentity();
+    if (!identity) redirect("/dashboard/diseases/drafts?error=temporary_admin_config");
+    return {
+      userId: identity.userId,
+      organizationId: identity.organizationId,
+      organizationName: "Marifa Platform",
+      roleCode: "platform_admin",
+    };
+  }
   if (!isSupabaseConfigured()) redirect("/login?error=auth_config");
 
-  const supabase = await createSupabaseServerClient();
+  const supabase = await createSupabaseDataClient();
   const { data: authData, error: authError } = await supabase.auth.getClaims();
   const userId = authData?.claims?.sub;
   if (authError || typeof userId !== "string") redirect("/login");
@@ -82,7 +93,7 @@ export type AdminActivity = {
 
 export async function getAdminOverview() {
   const context = await requireOrganizationAdmin();
-  const supabase = await createSupabaseServerClient();
+  const supabase = await createSupabaseDataClient();
   const [staffResult, reviewResult, activityResult] = await Promise.all([
     supabase.from("organization_memberships").select("id", { count: "exact", head: true })
       .eq("organization_id", context.organizationId).eq("account_status", "active"),
@@ -117,7 +128,7 @@ export type StaffMember = {
 
 export async function getAdminStaff(): Promise<{ context: OrganizationAdminContext; staff: StaffMember[] }> {
   const context = await requireOrganizationAdmin();
-  const supabase = await createSupabaseServerClient();
+  const supabase = await createSupabaseDataClient();
   const { data, error } = await supabase
     .from("organization_memberships")
     .select("id, user_id, professional_level, account_status, profiles(display_name), membership_roles(roles(code,name))")
@@ -153,7 +164,7 @@ export type GovernanceItem = { id: string; title: string; specialty: string; sta
 
 export async function getGovernanceQueue(): Promise<{ context: OrganizationAdminContext; items: GovernanceItem[] }> {
   const context = await requireOrganizationAdmin();
-  const supabase = await createSupabaseServerClient();
+  const supabase = await createSupabaseDataClient();
   const { data, error } = await supabase
     .from("clinical_guidelines")
     .select("id, title, specialty, status, created_at, guideline_versions!inner(id,version,status,is_current)")
@@ -189,7 +200,7 @@ export async function getGovernanceQueue(): Promise<{ context: OrganizationAdmin
 
 export async function getDraftGuideline(id: string, requestedVersionId?: string) {
   const context = await requireOrganizationAdmin();
-  const supabase = await createSupabaseServerClient();
+  const supabase = await createSupabaseDataClient();
   const canManageShared = context.roleCode === "platform_admin";
   let query = supabase
     .from("clinical_guidelines")
@@ -229,7 +240,7 @@ export async function getDraftGuideline(id: string, requestedVersionId?: string)
 
 export async function getAdminSettings() {
   const context = await requireOrganizationAdmin();
-  const supabase = await createSupabaseServerClient();
+  const supabase = await createSupabaseDataClient();
   const [profileResult, membershipResult, settingsResult] = await Promise.all([
     supabase.from("profiles").select("display_name").eq("id", context.userId).maybeSingle(),
     supabase.from("organization_memberships").select("professional_level").eq("organization_id", context.organizationId).eq("user_id", context.userId).eq("account_status", "active").maybeSingle(),

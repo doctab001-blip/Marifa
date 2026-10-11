@@ -2,8 +2,9 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { createSupabaseDataClient } from "@/lib/supabase/data-client";
 import { requireOrganizationAdmin } from "@/lib/admin/data";
+import { isTemporaryOpenAdminMode } from "@/lib/access-mode";
 import { DiseaseDetailSchema } from "@/lib/validations/disease";
 
 const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
@@ -28,7 +29,7 @@ export async function saveDraftGuideline(formData: FormData) {
   }
 
   const context = await requireOrganizationAdmin();
-  const supabase = await createSupabaseServerClient();
+  const supabase = await createSupabaseDataClient();
   const isLive = parsed.data.status === "published";
   if (isLive && (context.roleCode !== "platform_admin" || parsed.data.clinicalReviewStatus !== "pending")) redirect("/dashboard/admin/governance?error=not_editable");
   let guidelineQuery = supabase.from("clinical_guidelines").select("id,organization_id,is_shared_reference").eq("id", id);
@@ -86,11 +87,17 @@ export async function approveGuidelineVersion(formData: FormData) {
     redirect("/dashboard/admin/governance?error=not_authorized");
   }
 
-  const supabase = await createSupabaseServerClient();
-  const { error } = await supabase.rpc("approve_clinical_guideline_version", {
-    p_guideline_id: id,
-    p_version_id: versionId,
-  });
+  const supabase = await createSupabaseDataClient();
+  const { error } = isTemporaryOpenAdminMode()
+    ? await supabase.rpc("approve_clinical_guideline_version_as_temporary_admin", {
+      p_guideline_id: id,
+      p_version_id: versionId,
+      p_actor_id: context.userId,
+    })
+    : await supabase.rpc("approve_clinical_guideline_version", {
+      p_guideline_id: id,
+      p_version_id: versionId,
+    });
   if (error) redirect(destination === "drafts" ? "/dashboard/diseases/drafts?error=approval_failed" : "/dashboard/admin/governance?error=approval_failed");
 
   revalidatePath("/dashboard/admin/governance");
