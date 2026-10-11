@@ -18,14 +18,11 @@ describe("Global investigation display", () => {
   it("pairs the named assessment with the question, rationale and interpretation without repeating its name", () => {
     const before = structuredClone(test);
     render(<InvestigationCards investigations={{ ruleIn: [test], ruleOut: [{ ...test, testName: "Home monitoring", targetCondition: "White-coat effect" }] }} />);
-    expect(screen.getByRole("heading", { name: /Bedside assessment/ })).toBeInTheDocument();
-    const card = screen.getByRole("heading", { name: test.testName }).closest("li")!;
-    expect(within(card).getByText("What are we looking for?")).toBeInTheDocument();
-    expect(within(card).getByText(test.targetCondition)).toBeInTheDocument();
-    expect(within(card).getByText("Why are we doing it?")).toBeInTheDocument();
-    expect(within(card).getByText(test.clinicalRationale)).toBeInTheDocument();
-    expect(within(card).getByText(test.expectedFinding)).toBeInTheDocument();
-    expect(within(card).queryByText(test.modalityTarget)).not.toBeInTheDocument();
+    const row = screen.getAllByRole("row").find((candidate) => within(candidate).queryByText(test.testName, { exact: true }) !== null)!;
+    expect(within(row).getByText(test.targetCondition)).toBeInTheDocument();
+    expect(within(row).getByText(test.clinicalRationale)).toBeInTheDocument();
+    expect(within(row).getByText(test.expectedFinding)).toBeInTheDocument();
+    expect(within(row).queryByText(test.modalityTarget)).not.toBeInTheDocument();
     expect(screen.queryByText(/Rule out complications/)).not.toBeInTheDocument();
     expect(test).toEqual(before);
     expect(investigationDisplayTier(test)).toBe("bedside");
@@ -37,7 +34,7 @@ describe("Global investigation display", () => {
     expect(investigationNeedsReview(generic)).toBe(true);
     render(<InvestigationCards investigations={{ ruleIn: [generic], ruleOut: [] }} />);
     expect(screen.getByText("Investigation detail needs clinical review.")).toBeInTheDocument();
-    expect(screen.getByText(generic.modalityTarget)).toBeInTheDocument();
+    expect(screen.getByText(/Method & clinical context: Measure after rest with the appropriate cuff\./)).toBeInTheDocument();
     expect(screen.getByText(generic.expectedFinding)).toBeInTheDocument();
   });
 

@@ -8,6 +8,8 @@ import { InvestigationCards } from "@/components/investigation-cards";
 import type { InvestigationReference } from "@/lib/investigation-display";
 import { getMedicationPlan } from "@/lib/data/medication-plans";
 import type { DiseaseDetail } from "@/lib/validations/disease";
+import { SourceCitation, type CitationSource } from "@/components/source-citation";
+import { Investigations as GranularInvestigations, TreatmentDetails } from "@/components/granular-pathway";
 
 function TextList({ items }: { items: string[] }) {
   return (
@@ -70,6 +72,7 @@ function Section({ number, title, icon, children }: {
 
 export function DiseaseDetailSections({ disease, investigationSource }: { disease: DiseaseDetail; investigationSource?: InvestigationReference }) {
   const medicationPlan = disease.medicationPlan ?? getMedicationPlan(disease.id);
+  const topicSources: CitationSource[] = investigationSource ? [investigationSource] : [];
 
   return (
     <section className="clinical-tiers" aria-label="Six-tier clinical guideline">
@@ -106,11 +109,12 @@ export function DiseaseDetailSections({ disease, investigationSource }: { diseas
       </Section>
 
       <Section number={4} title="Investigations" icon={<Beaker size={19} strokeWidth={1.5} />}>
-        <InvestigationCards investigations={disease.investigations} source={investigationSource} />
+        {disease.granularPathway ? <GranularInvestigations phases={disease.granularPathway.Investigations} /> : <><InvestigationCards investigations={disease.investigations} source={investigationSource} /><SourceCitation sources={topicSources} /></>}
       </Section>
 
       <Section number={5} title="Clinical pathway" icon={<ClipboardList size={19} strokeWidth={1.5} />}>
-        <PathwaySequence steps={disease.clinicalManagement} />
+        <PathwaySequence steps={disease.clinicalManagement} sources={topicSources} />
+        {disease.granularPathway ? <TreatmentDetails plans={disease.granularPathway.Treatment_Plan} /> : null}
         <section className="medication-plan" aria-labelledby="medication-plan-title">
           <header><div><p className="disease-kicker">Treatment details</p><h3 id="medication-plan-title">Medicines and doses</h3></div></header>
           {medicationPlan?.regimens.length ? <p className="medication-plan-status">{medicationPlan.note}</p> : null}
@@ -126,9 +130,11 @@ export function DiseaseDetailSections({ disease, investigationSource }: { diseas
                 <div><dt>Monitoring</dt><dd><ul>{regimen.monitoring.map((item) => <li key={item}>{item}</li>)}</ul></dd></div>
                 <div><dt>Source</dt><dd><a href={regimen.sourceUrl} target="_blank" rel="noreferrer">{regimen.sourceTitle} ({regimen.sourceEdition})</a></dd></div>
               </dl>
+              <SourceCitation sources={[{ title: regimen.sourceTitle, url: regimen.sourceUrl, edition: regimen.sourceEdition }]} />
             </li>)}
           </ul> : <p className="m-0 rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm leading-relaxed text-slate-500">{medicationPlan?.note ?? "No exact-dose medicine plan is linked to this topic. Consult the current Saudi/local protocol and hospital formulary for prescribing details."}</p>}
         </section>
+        <SourceCitation sources={topicSources} />
       </Section>
 
       <Section number={6} title="Non-clinical care" icon={<HeartHandshake size={19} strokeWidth={1.5} />}>
@@ -140,6 +146,7 @@ export function DiseaseDetailSections({ disease, investigationSource }: { diseas
         </div>
         <div className="follow-up-plan"><strong>Follow-up plan</strong><p>{disease.nonClinicalManagement.followUpPlan}</p></div>
       </Section>
+      <SourceCitation sources={topicSources} />
     </section>
   );
 }

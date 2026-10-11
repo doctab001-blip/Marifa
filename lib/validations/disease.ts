@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { ClinicalPathwaySchema } from "@/lib/validations/clinical-pathway";
 
 const nonEmptyText = z.string().trim().min(1);
 const nonEmptyTextArray = z.array(nonEmptyText).min(1);
@@ -130,6 +131,8 @@ export const DiseaseDetailSchema = z
       regimens: z.array(MedicationRegimenSchema),
       note: nonEmptyText,
     }).strict().optional(),
+    // Additive strict pathway payload. Legacy governed versions remain readable unchanged.
+    granularPathway: ClinicalPathwaySchema.optional(),
     nonClinicalManagement: z
       .object({
         patientEducation: nonEmptyTextArray,

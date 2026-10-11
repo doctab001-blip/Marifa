@@ -11,5 +11,5 @@ export default defineConfig([
     plugins: { "react-hooks": reactHooks },
     rules: reactHooks.configs.recommended.rules
   },
-  globalIgnores([".next/**", "coverage/**", "playwright-report/**"])
+  globalIgnores([".next/**", "coverage/**", "playwright-report/**", "outputs/**"])
 ]);

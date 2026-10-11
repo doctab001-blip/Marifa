@@ -1,7 +1,9 @@
 import { ArrowRight, GitBranch, ListChecks } from "lucide-react";
 import type { DiseaseDetail } from "@/lib/validations/disease";
+import { ClinicalTimeframe } from "@/components/clinical-timeframe";
+import { SourceCitation, type CitationSource } from "@/components/source-citation";
 
-export function PathwaySequence({ steps }: { steps: DiseaseDetail["clinicalManagement"] }) {
+export function PathwaySequence({ steps, sources = [] }: { steps: DiseaseDetail["clinicalManagement"]; sources?: CitationSource[] }) {
   return (
     <section className="pathway-sequence" aria-labelledby="pathway-sequence-title">
       <header className="pathway-sequence-header">
@@ -23,11 +25,11 @@ export function PathwaySequence({ steps }: { steps: DiseaseDetail["clinicalManag
               <div className="pathway-step-heading">
                 <span>Step {index + 1}</span>
                 <h3>{step.title}</h3>
-                <p>{step.timeframe}</p>
+                <p className="font-semibold text-slate-900"><ClinicalTimeframe text={step.timeframe} /></p>
               </div>
-              <ul className="pathway-actions">
-                {step.actions.map((action) => <li key={action}>{action}</li>)}
-              </ul>
+              <ol className="m-0 list-decimal space-y-2 py-4 pe-4 ps-9 text-sm leading-relaxed text-slate-700 marker:font-semibold marker:text-blue-700 sm:pe-5 sm:ps-10">
+                {step.actions.map((action, actionIndex) => <li key={`${actionIndex}-${action}`}><ClinicalTimeframe text={action} /></li>)}
+              </ol>
               {step.branches && (
                 <div className="pathway-branches" aria-label={`Decision branches for ${step.title}`}>
                   <div className="pathway-branches-label">
@@ -36,19 +38,24 @@ export function PathwaySequence({ steps }: { steps: DiseaseDetail["clinicalManag
                   </div>
                   <div className="pathway-branch-grid">
                     {step.branches.map((branch) => (
-                      <div className="pathway-branch" key={branch.condition}>
-                        <strong>{branch.condition}</strong>
-                        <ArrowRight size={14} strokeWidth={1.5} aria-hidden="true" />
-                        <ul>{branch.actions.map((action) => <li key={action}>{action}</li>)}</ul>
+                      <div className="grid min-w-0 grid-cols-[minmax(0,1fr)_14px] items-start gap-2 rounded-lg border border-slate-200 bg-slate-50 p-3" key={branch.condition}>
+                        <strong className="text-sm font-semibold leading-snug text-slate-900">{branch.condition}</strong>
+                        <ArrowRight className="mt-0.5 text-blue-700" size={14} strokeWidth={1.5} aria-hidden="true" />
+                        <ul className="col-span-full m-0 list-disc space-y-2 ps-5 text-sm leading-relaxed text-slate-700 marker:text-blue-700">
+                          {branch.actions.map((action, actionIndex) => <li key={`${actionIndex}-${action}`}><ClinicalTimeframe text={action} /></li>)}
+                        </ul>
+                        <SourceCitation sources={sources} />
                       </div>
                     ))}
                   </div>
+                  <SourceCitation sources={sources} />
                 </div>
               )}
             </article>
           </li>
         ))}
       </ol>
+      <SourceCitation sources={sources} />
     </section>
   );
 }
