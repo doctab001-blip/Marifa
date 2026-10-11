@@ -4,7 +4,7 @@ const text = z.string().trim().min(1);
 export const GuidelineSourceSchema = z.object({
   id: z.uuid(),
   title: text,
-  issuer: z.enum(["MOH", "SHC", "ADA", "ACC/AHA", "ESC", "NICE", "PHA", "Textbook"]),
+  issuer: z.enum(["MOH", "SHC", "ADA", "ACC/AHA", "ESC", "NICE", "PHA", "Textbook", "Other"]),
   edition: text,
   url: z.url().refine((value) => value.startsWith("https://"), "An exact HTTPS guideline URL is required"),
   locator: text, // Guideline section, table or recommendation number.

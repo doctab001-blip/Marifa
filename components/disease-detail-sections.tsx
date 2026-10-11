@@ -10,6 +10,7 @@ import { getMedicationPlan } from "@/lib/data/medication-plans";
 import type { DiseaseDetail } from "@/lib/validations/disease";
 import { SourceCitation, type CitationSource } from "@/components/source-citation";
 import { Investigations as GranularInvestigations, TreatmentDetails } from "@/components/granular-pathway";
+import { ClinicalEvidenceAudit } from "@/components/clinical-evidence-audit";
 
 function TextList({ items }: { items: string[] }) {
   return (
@@ -76,6 +77,7 @@ export function DiseaseDetailSections({ disease, investigationSource }: { diseas
 
   return (
     <section className="clinical-tiers" aria-label="Six-tier clinical guideline">
+      <ClinicalEvidenceAudit audit={disease.evidenceAudit} />
       <Section number={1} title="Pathophysiology" icon={<Activity size={19} strokeWidth={1.5} />}>
         <p className="clinical-summary">{disease.pathophysiology.summary}</p>
         <h3>Key mechanisms</h3>

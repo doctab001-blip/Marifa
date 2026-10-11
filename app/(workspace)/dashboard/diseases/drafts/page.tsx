@@ -3,6 +3,7 @@ import { ArrowRight, FileClock, FileSearch, ShieldAlert } from "lucide-react";
 import { DiseaseManagementNavigation } from "@/components/diseases/DiseaseManagementNavigation";
 import { getDiseaseDrafts } from "@/lib/data/disease-drafts";
 import { approveGuidelineVersion } from "@/app/(workspace)/dashboard/admin/guidelines/actions";
+import { approvalErrorMessages } from "@/lib/approval-errors";
 
 function formatDate(date: string) {
   return new Intl.DateTimeFormat("en-SA", { dateStyle: "medium", timeZone: "Asia/Riyadh" }).format(new Date(date));
@@ -31,7 +32,7 @@ export default async function DiseaseDraftsPage({ searchParams }: { searchParams
       <p className="clinical-review-draft-notice" role="note"><strong>Temporary admin access:</strong> sign-in is disabled for this development phase. Anyone with this site link can open the editor and use the approval controls. Every approved version still records the configured Marifa administrator and approval time.</p>
 
       {query.approved === "1" && <p className="admin-save-message" role="status">Version approved. The reviewer and approval time were recorded.</p>}
-      {query.error === "approval_failed" && <p className="admin-save-error" role="alert">Approval failed because the version changed or your account does not have approval access.</p>}
+      {query.error && approvalErrorMessages[query.error] && <p className="admin-save-error" role="alert">{approvalErrorMessages[query.error]}</p>}
       {query.error === "temporary_admin_config" && <p className="admin-save-error" role="alert">Temporary administrator access is not configured on this deployment.</p>}
 
       {result.state === "unavailable" ? (
@@ -50,7 +51,7 @@ export default async function DiseaseDraftsPage({ searchParams }: { searchParams
         <section className="disease-draft-list" aria-labelledby="disease-draft-list-title">
           <div className="directory-section-heading">
             <div><p className="disease-kicker">Organization workspace</p><h2 id="disease-draft-list-title">Draft topics</h2></div>
-            <p role="status">{result.drafts.length} {result.drafts.length === 1 ? "topic" : "topics"}</p>
+            <p role="status">{result.drafts.length} draft versions across {new Set(result.drafts.map((draft) => draft.id)).size} topics</p>
           </div>
           <div className="disease-draft-grid">
             {result.drafts.map((draft) => (
@@ -72,6 +73,7 @@ export default async function DiseaseDraftsPage({ searchParams }: { searchParams
                 <p className="disease-draft-meta">{draft.specialty} <span aria-hidden="true">·</span> Prepared {formatDate(draft.createdAt)}</p>
                 <p className="disease-draft-source">{draft.isSharedReference ? "Shared reference draft" : "Organization draft"}</p>
                 <p className="disease-draft-source">Source: {draft.sourceTitle}</p>
+                {draft.auditSummary && <p className="disease-draft-source"><strong>Evidence audit incomplete:</strong> {draft.auditSummary}</p>}
                 <div className="clinical-review-draft-notice disease-draft-warning" role="note"><strong>UNREVIEWED DRAFT — NOT FOR CLINICAL USE.</strong> Clinical and governance review are pending.</div>
               </article>
             ))}

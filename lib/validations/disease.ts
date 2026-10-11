@@ -5,7 +5,7 @@ const nonEmptyText = z.string().trim().min(1);
 const nonEmptyTextArray = z.array(nonEmptyText).min(1);
 const isoDate = z.iso.date();
 
-export const DiseaseAuthoritySchema = z.enum(["MOH", "SHC", "PHA", "NICE", "Textbook"]);
+export const DiseaseAuthoritySchema = z.enum(["MOH", "SHC", "PHA", "NICE", "Textbook", "Other"]);
 
 export const DiseaseStatusSchema = z.enum([
   "draft",
@@ -91,6 +91,15 @@ export const DiseaseDetailSchema = z
     pillar: ModelOfCarePillarSchema,
     clinicalScenario: nonEmptyText.optional(),
     clinicalReviewStatus: z.literal("pending").optional(),
+    evidenceAudit: z.object({
+      checkedOn: isoDate,
+      status: z.literal("incomplete"),
+      scope: nonEmptyText,
+      findings: nonEmptyTextArray,
+      unverifiedSections: nonEmptyTextArray,
+      medscapeStatus: z.enum(["limited-comparison", "unavailable"]),
+      originalVersionIds: z.array(z.uuid()).min(1),
+    }).strict().optional(),
     pathophysiology: z
       .object({
         summary: nonEmptyText,

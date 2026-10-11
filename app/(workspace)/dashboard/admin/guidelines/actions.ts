@@ -6,6 +6,7 @@ import { createSupabaseDataClient } from "@/lib/supabase/data-client";
 import { requireOrganizationAdmin } from "@/lib/admin/data";
 import { isTemporaryOpenAdminMode } from "@/lib/access-mode";
 import { DiseaseDetailSchema } from "@/lib/validations/disease";
+import { approvalErrorCode } from "@/lib/approval-errors";
 
 const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
@@ -98,7 +99,20 @@ export async function approveGuidelineVersion(formData: FormData) {
       p_guideline_id: id,
       p_version_id: versionId,
     });
-  if (error) redirect(destination === "drafts" ? "/dashboard/diseases/drafts?error=approval_failed" : "/dashboard/admin/governance?error=approval_failed");
+  if (error) {
+    if (error.code === "22023") {
+      const { data: receipt } = await supabase.from("guideline_versions")
+        .select("status,is_current,approved_by,approved_at")
+        .eq("id", versionId).eq("guideline_id", id).maybeSingle();
+      if (receipt?.is_current && ["approved", "published"].includes(receipt.status) && receipt.approved_by && receipt.approved_at) {
+        revalidatePath("/dashboard/diseases/drafts");
+        redirect(destination === "drafts" ? "/dashboard/diseases/drafts?approved=1" : "/dashboard/admin/governance?approved=1");
+      }
+    }
+    console.error("Clinical version approval failed", { code: error.code, guidelineId: id, versionId });
+    const code = approvalErrorCode(error.code);
+    redirect(`${destination === "drafts" ? "/dashboard/diseases/drafts" : "/dashboard/admin/governance"}?error=${code}`);
+  }
 
   revalidatePath("/dashboard/admin/governance");
   revalidatePath("/dashboard/diseases/drafts");

@@ -18,6 +18,7 @@ export type DiseaseDraft = {
   createdAt: string;
   canEdit: boolean;
   canApprove: boolean;
+  auditSummary?: string;
 };
 
 export async function getDiseaseDrafts(): Promise<{
@@ -40,7 +41,7 @@ export async function getDiseaseDrafts(): Promise<{
     for (let start = 0; ; start += pageSize) {
       const { data, error } = await supabase
         .from("clinical_guidelines")
-        .select("id,title,specialty,status,is_shared_reference,organization_id,created_at,guideline_versions!inner(id,version,status,is_current,created_at,source_title)")
+        .select("id,title,specialty,status,is_shared_reference,organization_id,created_at,guideline_versions!inner(id,version,status,is_current,created_at,source_title,audit:content->evidenceAudit)")
         .or(`organization_id.eq.${viewer.organizationId},and(organization_id.is.null,is_shared_reference.eq.true)`)
         .in("guideline_versions.status", ["draft", "under_review"])
         .order("created_at", { ascending: false })
@@ -56,6 +57,7 @@ export async function getDiseaseDrafts(): Promise<{
           is_current: boolean;
           created_at: string;
           source_title: string;
+          audit?: { scope?: string };
         }>;
         for (const version of related.filter((entry) => ["draft", "under_review"].includes(entry.status))) {
           const canManage = isAdmin && (!item.is_shared_reference || isPlatformAdmin);
@@ -72,6 +74,7 @@ export async function getDiseaseDrafts(): Promise<{
             createdAt: version.created_at,
             canEdit: canManage,
             canApprove: canManage,
+            auditSummary: version.audit?.scope,
           });
         }
       }

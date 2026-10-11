@@ -32,6 +32,12 @@ describe("DiseaseDetailSchema", () => {
     expect(DiseaseDetailSchema.parse(validDisease)).toEqual(validDisease);
   });
 
+  it("keeps an evidence check distinct from clinical approval", () => {
+    const audit = { checkedOn: "2026-10-11", status: "incomplete", scope: "NICE management comparison only", findings: ["Original Medscape derivation not established"], unverifiedSections: ["Prescribing"], medscapeStatus: "unavailable", originalVersionIds: [validDisease.id] };
+    expect(DiseaseDetailSchema.parse({ ...validDisease, authority: "Other", evidenceAudit: audit }).evidenceAudit?.status).toBe("incomplete");
+    expect(() => DiseaseDetailSchema.parse({ ...validDisease, evidenceAudit: { ...audit, status: "clinically-approved" } })).toThrow();
+  });
+
   it("preserves textbook source and pending clinical review on existing published scenarios", () => {
     const existing = { ...validDisease, authority: "Textbook", status: "published", clinicalReviewStatus: "pending" };
     expect(DiseaseDetailSchema.parse(existing)).toEqual(existing);

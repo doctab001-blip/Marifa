@@ -5,6 +5,7 @@ import { getDraftGuideline } from "@/lib/admin/data";
 import { approveGuidelineVersion, saveDraftGuideline } from "../actions";
 import { InvestigationCards } from "@/components/investigation-cards";
 import { GuidelinePathwayForm } from "@/components/admin/guideline-pathway-form";
+import { ClinicalEvidenceAudit } from "@/components/clinical-evidence-audit";
 
 const messages: Record<string, string> = {
   invalid_json: "The content is not valid JSON. Correct the formatting and try again.",
@@ -55,8 +56,9 @@ export default async function EditDraftGuidelinePage({
           <div className="clinical-governance-notice" role="note"><strong>Review state:</strong> {result.isLive ? "This educational topic is live for review; local clinical validation is pending. Do not use it as an official local protocol until clinically validated." : "This is an editable draft."} Textbook edition details identify the reference used; they do not mean this content has been clinically reviewed. Check current Saudi guidance, local formulary, and service protocols.</div>
           <article className="card admin-source-summary">
             <BookOpenCheck size={18} aria-hidden="true" />
-            <div><strong>{result.sourceTitle ?? "Textbook source not recorded"}</strong><span>{result.sourceUrl ? <a href={result.sourceUrl} target="_blank" rel="noreferrer">Open publisher source page</a> : "No publisher URL recorded"}</span><small>Prepared 10 October 2026 · the date in the draft is not a clinical-review date.</small></div>
+            <div><strong>{result.sourceTitle ?? "Source not recorded"}</strong><span>{result.sourceUrl ? <a href={result.sourceUrl} target="_blank" rel="noreferrer">Open source reference</a> : "No source URL recorded"}</span><small>Preparation and source-check dates do not record clinical approval.</small></div>
           </article>
+          <ClinicalEvidenceAudit audit={result.disease.evidenceAudit} />
           <details className="card admin-source-summary"><summary>Review the six-part topic</summary><div><h3>1. Topic and mechanisms</h3><p>{result.disease.pathophysiology.summary}</p><h3>2. Presentation</h3><ul>{result.disease.presentation.symptoms.map((item) => <li key={item}>{item}</li>)}</ul><h3>3. Differential diagnoses</h3><ul>{result.disease.differentials.map((item) => <li key={item.condition}><strong>{item.condition}:</strong> {item.distinguishingFeatures}</li>)}</ul><h3>4. Investigations</h3><InvestigationCards investigations={result.disease.investigations} source={result.sourceUrl ? { title: result.sourceTitle, url: result.sourceUrl } : undefined} /><h3>5. Clinical management</h3><ul>{result.disease.clinicalManagement.map((item) => <li key={item.id}><strong>{item.title}:</strong> {item.actions.join(" ")}</li>)}</ul><h3>6. Non-clinical care</h3><ul>{result.disease.nonClinicalManagement.patientEducation.map((item) => <li key={item}>{item}</li>)}</ul></div></details>
           <GuidelinePathwayForm disease={result.disease} guidelineId={id} versionId={result.versionId} isLive={result.isLive} saveAction={saveDraftGuideline} />
         </>
