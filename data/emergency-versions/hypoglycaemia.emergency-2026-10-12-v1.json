@@ -1,0 +1,353 @@
+{
+  "id": "8091cd18-2256-40b7-8c6d-7557ac5e2fdf",
+  "title": "Severe Hypoglycaemia",
+  "specialty": "Emergency Medicine / Endocrinology",
+  "authority": "SHC",
+  "status": "under_review",
+  "version": "emergency-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Adults with diabetes on insulin or insulin secretagogues. Verified against SDCPG 2021 pp. 68–70.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Local formulary availability and hospital protocol adoption"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "8091cd18-2256-40b7-8c6d-7557ac5e2fdf"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Hypoglycaemia is the commonest acute complication of insulin and sulfonylurea treatment. When glucose falls, adrenergic warning symptoms come first; if glucose keeps falling the brain is starved of glucose (neuroglycopenia), causing confusion, seizures and coma.",
+    "keyMechanisms": [
+      "Too much insulin effect relative to glucose supply: missed meals or fasting, exercise, weight loss, or reduced insulin clearance in kidney failure.",
+      "Adrenergic phase (autonomic): palpitations, sweating, anxiety, tremor, tachycardia, tingling, hunger.",
+      "Neuroglycopenic phase: dizziness, headache, blurred vision, poor concentration, behaviour change or aggression, confusion, seizures, coma.",
+      "Hypoglycaemia unawareness: repeated episodes blunt the adrenergic response, so warning symptoms are lost; risk of severe hypoglycaemia rises six-fold.",
+      "Long-acting sulfonylureas (e.g. glibenclamide) keep stimulating insulin release, so hypoglycaemia recurs for 24–48 h."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Adrenergic: palpitations, sweating, anxiety, tremor, hunger.",
+      "Neuroglycopenic: headache, blurred vision, confusion, behaviour change, aggression, fatigue.",
+      "Severe: seizures, coma."
+    ],
+    "physicalSigns": [
+      "Sweaty, pale, tachycardic.",
+      "Reduced GCS or abnormal behaviour; may mimic stroke or intoxication.",
+      "Look for injection sites, medical ID bracelet, signs of infection or kidney disease."
+    ],
+    "redFlags": [
+      "Unconscious or unable to swallow: IV dextrose or IM glucagon now; do not give oral glucose",
+      "Seizures, deteriorating consciousness, or persistent vomiting (MOH call-the-doctor criteria)",
+      "Severe hypoglycaemia can cause arrhythmias, QT prolongation, hypokalaemia, MI and stroke: ECG and monitor",
+      "Hypoglycaemia on a long-acting sulfonylurea: recurrence for 24–48 h; admit and observe",
+      "Recurrent hypoglycaemia despite treatment, or hypoglycaemia without diabetes treatment: look for another cause"
+    ],
+    "precipitants": [
+      "Insulin or sulfonylurea dose errors.",
+      "Missed meals or fasting (including Ramadan).",
+      "Exercise; weight loss.",
+      "Kidney failure.",
+      "Prior severe hypoglycaemia; HbA1c below 6.0%; long insulin duration; autonomic neuropathy; elderly; cognitive impairment; pregnancy."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Stroke or TIA",
+      "distinguishingFeatures": "Focal deficit persists after glucose is corrected. Always check glucose in any acute neurological presentation."
+    },
+    {
+      "condition": "Intoxication (alcohol, drugs)",
+      "distinguishingFeatures": "History and toxicology; check glucose because intoxication and hypoglycaemia can coexist."
+    },
+    {
+      "condition": "Seizure disorder",
+      "distinguishingFeatures": "Glucose normal at the time of the event."
+    },
+    {
+      "condition": "Spontaneous (non-drug) hypoglycaemia: sepsis, organ failure (especially liver failure, end-stage kidney disease), cancer, dementia",
+      "distinguishingFeatures": "No insulin or sulfonylurea to explain it, or recurrence after dextrose; carries a higher mortality than drug-induced hypoglycaemia and needs work-up."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Capillary glucose (confirm with laboratory sample)",
+        "modalityTarget": "Immediately; then 5 min after IV dextrose, 15 min after oral glucose or glucagon",
+        "targetCondition": "Hypoglycaemia",
+        "expectedFinding": "Level 1: below 3.9 mmol/L (70 mg/dL). Level 2: below 3.0 mmol/L (54 mg/dL). Level 3: severe event needing another person's help, at any value.",
+        "clinicalRationale": "Treat until glucose is above 4.0 mmol/L. Send a laboratory sample but do not wait for the result.",
+        "normalValue": "3.9–5.5 mmol/L fasting",
+        "references": [
+          {
+            "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+            "edition": "1st ed. 2021",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Urea, creatinine and electrolytes",
+        "modalityTarget": "Arrival",
+        "targetCondition": "Kidney failure",
+        "expectedFinding": "Reduced eGFR.",
+        "clinicalRationale": "Kidney failure reduces insulin and sulfonylurea clearance and prolongs hypoglycaemia.",
+        "normalValue": "Creatinine about 60–110 µmol/L",
+        "references": [
+          {
+            "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+            "edition": "1st ed. 2021",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "HbA1c",
+        "modalityTarget": "Arrival if not done recently",
+        "targetCondition": "Over-treatment",
+        "expectedFinding": "Low HbA1c (below 6.0%) is a risk factor.",
+        "clinicalRationale": "Relax glycaemic targets after severe or recurrent hypoglycaemia.",
+        "normalValue": "Below 5.7%",
+        "references": [
+          {
+            "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+            "edition": "1st ed. 2021",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "ECG",
+        "modalityTarget": "Severe or prolonged hypoglycaemia",
+        "targetCondition": "Arrhythmia",
+        "expectedFinding": "QT prolongation, arrhythmia, ischaemia; hypokalaemia may accompany severe hypoglycaemia.",
+        "clinicalRationale": "Monitor if abnormal; check potassium.",
+        "normalValue": "Sinus rhythm, QTc normal",
+        "references": [
+          {
+            "title": "MOH Inpatient Hypoglycemia Management Protocol, Saudi Ministry of Health (Protocol-007)",
+            "edition": "MOH therapeutic protocols",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-007.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Infection screen and medication review",
+        "modalityTarget": "Arrival",
+        "targetCondition": "Precipitant",
+        "expectedFinding": "Infection, reduced intake, new or changed insulin or sulfonylurea dose.",
+        "clinicalRationale": "Treat the cause and adjust the dose (Step 3–4 of the SDCPG algorithm).",
+        "references": [
+          {
+            "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+            "edition": "1st ed. 2021",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "assess",
+      "title": "Assess ABC, consciousness and ability to swallow",
+      "timeframe": "Immediately",
+      "actions": [
+        "Check capillary glucose and send a laboratory sample; do not wait for the result."
+      ]
+    },
+    {
+      "id": "conscious",
+      "title": "Conscious and able to drink",
+      "timeframe": "Now; repeat every 15 min",
+      "actions": [
+        "15 g fast glucose: half a cup of apple or orange juice, or one tablespoon of sugar dissolved in water, or one tablespoon of honey.",
+        "Recheck glucose after 15 min; if still 4.0 mmol/L or less, repeat (up to 3 times) until above 4.0.",
+        "Then give a 15–20 g complex carbohydrate snack (e.g. one toast)."
+      ]
+    },
+    {
+      "id": "unconscious",
+      "title": "Unconscious or unable to drink",
+      "timeframe": "Now; repeat until glucose above 4.0",
+      "actions": [
+        "IV access secured: give 50% dextrose and recheck glucose after 5 min; repeat the same dose until above 4.0 mmol/L.",
+        "No IV access: glucagon 1 mg SC or IM; recheck after 15 min; repeat if still 4.0 or less.",
+        "When awake and able to eat: a meal with 30 g complex carbohydrate (2–3 toasts)."
+      ],
+      "branches": [
+        {
+          "condition": "Glucose 2.5–4.0 mmol/L",
+          "actions": [
+            "25 mL of 50% dextrose IV over 1–3 min."
+          ]
+        },
+        {
+          "condition": "Glucose below 2.5 mmol/L",
+          "actions": [
+            "50 mL of 50% dextrose IV over 1–3 min."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cause",
+      "title": "Find the cause and adjust treatment",
+      "timeframe": "Before discharge",
+      "actions": [
+        "Identify precipitants (missed meal, exercise, dose error, kidney failure, infection, alcohol).",
+        "Adjust insulin or other glucose-lowering drugs; avoid high-risk agents in recurrent hypoglycaemia.",
+        "Long-acting sulfonylurea (e.g. glibenclamide, gliclazide MR): observe for 24–48 h.",
+        "Unexplained hypoglycaemia on insulin or oral agents: reduce the dose by 10–25% (MOH).",
+        "Hypoglycaemia unawareness or level 2 on insulin: relax glycaemic targets for at least 1 month (up to 3 months)."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Recognise, investigate and manage severe hypoglycaemia in the emergency department."
+    ],
+    "references": [
+      {
+        "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+        "edition": "1st ed. 2021",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf",
+        "locator": "pp. 68–70 (hypoglycaemia, Table 11, Table 12, Figure 14)"
+      },
+      {
+        "title": "MOH Inpatient Hypoglycemia Management Protocol, Saudi Ministry of Health (Protocol-007)",
+        "edition": "MOH therapeutic protocols",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-007.pdf",
+        "locator": "Adult hypoglycaemia pathway; call-MD criteria; literature review"
+      },
+      {
+        "title": "SFDA Saudi Drug Information System (registration search)",
+        "edition": "Accessed 11–12 Oct 2026",
+        "url": "https://sdi.sfda.gov.sa/"
+      }
+    ],
+    "keyPoints": [
+      "Check glucose in every confused, fitting or unconscious patient.",
+      "15 g fast sugar, recheck in 15 min, then a complex carbohydrate snack.",
+      "Unconscious: 50% dextrose IV or glucagon 1 mg IM.",
+      "Long-acting sulfonylurea: admit for 24–48 h."
+    ],
+    "pitfalls": [
+      "Oral glucose to a patient who cannot swallow.",
+      "Discharging after a sulfonylurea overdose or glibenclamide hypoglycaemia once glucose is normal.",
+      "Not adjusting the regimen or relaxing targets after a severe episode.",
+      "Missing hypoglycaemia unawareness."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Recognise early symptoms; carry glucose; medical ID bracelet.",
+      "Family taught to use glucagon.",
+      "Driving: keep glucose in the car; check before and during long journeys.",
+      "Ramadan fasting: break the fast if glucose is below 3.9 mmol/L."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable in the acute phase."
+    ],
+    "mdtReferrals": [
+      "Diabetes educator.",
+      "Diabetes team for regimen change."
+    ],
+    "dischargeCriteria": [
+      "Fully alert, eating, glucose stable above 4.0 mmol/L.",
+      "Cause identified; not on a long-acting sulfonylurea (or observed 24–48 h).",
+      "A responsible adult can monitor at home; glucagon prescribed for those at risk."
+    ],
+    "followUpPlan": "Review within days by the diabetes team to adjust doses; ask about hypoglycaemia at every visit."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Level 1",
+      "threshold": "Glucose below 3.9 mmol/L (70 mg/dL)"
+    },
+    {
+      "criterion": "Level 2",
+      "threshold": "Glucose below 3.0 mmol/L (54 mg/dL): neuroglycopenic, act immediately"
+    },
+    {
+      "criterion": "Level 3 (severe)",
+      "threshold": "Altered mental or physical function needing another person's help, regardless of value"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Conscious hypoglycaemia",
+        "patientGroup": "Adults able to swallow",
+        "genericName": "Oral glucose (sugar, juice or honey)",
+        "dose": "15 g",
+        "route": "Oral",
+        "frequency": "Repeat every 15 min until glucose above 4.0 (up to 3 times)",
+        "duration": "Then 15–20 g complex carbohydrate snack",
+        "adjustments": [
+          "Not if unable to swallow safely"
+        ],
+        "monitoring": [
+          "Glucose 15 min after each dose"
+        ],
+        "sourceTitle": "SDCPG hypoglycaemia algorithm",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf",
+        "sourceEdition": "SDCPG 2021 p. 70"
+      },
+      {
+        "indication": "Unconscious or unable to swallow, IV access",
+        "patientGroup": "Adults",
+        "genericName": "Dextrose 50%",
+        "dose": "25 mL if glucose 2.5–4.0; 50 mL if below 2.5",
+        "route": "IV over 1–3 min",
+        "frequency": "Repeat every 5 min until above 4.0",
+        "duration": "Single doses",
+        "adjustments": [
+          "Recheck glucose before each repeat dose"
+        ],
+        "monitoring": [
+          "Glucose 5 min after each dose"
+        ],
+        "sourceTitle": "SDCPG hypoglycaemia algorithm",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf",
+        "sourceEdition": "SDCPG 2021 p. 70"
+      },
+      {
+        "indication": "Unconscious, no IV access",
+        "patientGroup": "Adults",
+        "genericName": "Glucagon",
+        "dose": "1 mg",
+        "route": "SC or IM",
+        "frequency": "Repeat after 15 min if glucose still 4.0 or less",
+        "duration": "Single doses",
+        "adjustments": [
+          "Prescribe to all insulin-treated patients at risk"
+        ],
+        "monitoring": [
+          "Glucose 15 min after"
+        ],
+        "sourceTitle": "SDCPG hypoglycaemia algorithm",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf",
+        "sourceEdition": "SDCPG 2021 p. 70"
+      }
+    ],
+    "note": "Doses as stated in the cited source. Check SFDA registration and the hospital formulary."
+  }
+}

@@ -1,0 +1,481 @@
+{
+  "id": "a1010000-0000-4000-8000-000000000004",
+  "title": "Community-Acquired Pneumonia",
+  "specialty": "Internal Medicine, Respiratory Medicine and Infectious Diseases",
+  "authority": "MOH",
+  "status": "under_review",
+  "version": "emergency-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Immunocompetent adults with CAP. Antibiotic regimens follow the Saudi MOH LRTI protocol (adopted from ATS/IDSA 2019); steroid and duration updates from ATS 2025.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Local formulary availability and hospital protocol adoption"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "a1010000-0000-4000-8000-000000000004"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "CAP is acute infection of the lung parenchyma acquired outside hospital. Alveoli fill with inflammatory exudate, causing consolidation, impaired gas exchange and, in severe cases, sepsis and respiratory failure.",
+    "keyMechanisms": [
+      "Organisms reach the alveoli (usually by micro-aspiration) and overwhelm local defences; the inflammatory exudate fills air spaces (consolidation).",
+      "Ventilation–perfusion mismatch from consolidated lung causes hypoxaemia and tachypnoea.",
+      "The systemic inflammatory response can progress to sepsis, septic shock and multi-organ failure.",
+      "Resistant organisms (MRSA, Pseudomonas) are more likely after recent hospitalisation and IV antibiotics or with prior respiratory isolation.",
+      "Viral infection (e.g. influenza) can coexist with bacterial infection."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Cough, sputum, fever, rigors, breathlessness, pleuritic chest pain.",
+      "Confusion (a severity criterion)."
+    ],
+    "physicalSigns": [
+      "Fever (or hypothermia below 36 °C in severe disease), tachypnoea, tachycardia, hypoxia.",
+      "Focal crackles, bronchial breathing, dullness to percussion.",
+      "Confusion; hypotension."
+    ],
+    "redFlags": [
+      "ATS major criteria: septic shock needing vasopressors, or respiratory failure needing mechanical ventilation — direct ICU admission",
+      "Three or more ATS minor criteria: RR 30 or more, PaO2/FiO2 250 or less, multilobar infiltrates, confusion, urea (BUN) 20 mg/dL or more (about 7 mmol/L), WBC below 4 × 10⁹/L, platelets below 100 × 10⁹/L, temperature below 36 °C, hypotension needing aggressive fluids",
+      "PSI class V (above 130 points): ICU"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Acute bronchitis or viral upper respiratory infection",
+      "distinguishingFeatures": "No new infiltrate on imaging."
+    },
+    {
+      "condition": "Pulmonary embolism",
+      "distinguishingFeatures": "Pleuritic pain and hypoxia without consolidation; VTE risk factors."
+    },
+    {
+      "condition": "Heart failure / pulmonary oedema",
+      "distinguishingFeatures": "Bilateral infiltrates, raised JVP, cardiomegaly, raised natriuretic peptide."
+    },
+    {
+      "condition": "Pulmonary tuberculosis",
+      "distinguishingFeatures": "Subacute course, weight loss, upper-lobe or cavitary change; MOH protocol cautions against fluoroquinolones without excluding TB."
+    },
+    {
+      "condition": "Hospital-acquired pneumonia",
+      "distinguishingFeatures": "Onset 48 h or more after admission; follow the HAP/VAP section and local antibiogram."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Chest X-ray (or lung ultrasound)",
+        "modalityTarget": "At presentation",
+        "targetCondition": "Consolidation",
+        "expectedFinding": "New infiltrate or consolidation.",
+        "clinicalRationale": "Confirms CAP; antibiotics are started in clinically suspected and radiographically confirmed CAP. ATS 2025: lung ultrasound is an acceptable alternative where expertise exists.",
+        "normalValue": "Clear lung fields",
+        "references": [
+          {
+            "title": "Diagnosis and Treatment of Adults with Community-acquired Pneumonia (ATS/IDSA)",
+            "edition": "Am J Respir Crit Care Med 2019;200:e45–e67 (Metlay JP et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6812437/"
+          },
+          {
+            "title": "Diagnosis and Management of Community-acquired Pneumonia: An Official ATS Clinical Practice Guideline",
+            "edition": "Am J Respir Crit Care Med 2026;212(1):24–44 (Jones BE et al.; online 18 Jul 2025)",
+            "url": "https://academic.oup.com/ajrccm/article/212/1/24/8435770"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Pulse oximetry / blood gas",
+        "modalityTarget": "At presentation",
+        "targetCondition": "Hypoxaemia, respiratory failure",
+        "expectedFinding": "SpO2 low; PaO2/FiO2 250 or less is a severe minor criterion.",
+        "clinicalRationale": "Guides oxygen, level of care and ventilation decisions.",
+        "normalValue": "SpO2 at least 94%; PaO2/FiO2 above 400",
+        "references": [
+          {
+            "title": "Diagnosis and Treatment of Adults with Community-acquired Pneumonia (ATS/IDSA)",
+            "edition": "Am J Respir Crit Care Med 2019;200:e45–e67 (Metlay JP et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6812437/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "FBC, urea, creatinine, electrolytes",
+        "modalityTarget": "At presentation",
+        "targetCondition": "Severity",
+        "expectedFinding": "WBC below 4, platelets below 100, urea (BUN) 20 mg/dL or more.",
+        "clinicalRationale": "Part of ATS minor criteria and PSI scoring.",
+        "normalValue": "WBC 4–11 × 10⁹/L; platelets 150–400 × 10⁹/L; urea 2.5–7.8 mmol/L",
+        "references": [
+          {
+            "title": "Diagnosis and Treatment of Adults with Community-acquired Pneumonia (ATS/IDSA)",
+            "edition": "Am J Respir Crit Care Med 2019;200:e45–e67 (Metlay JP et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6812437/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Blood cultures and sputum Gram stain and culture",
+        "modalityTarget": "Before antibiotics in severe CAP, or if treating empirically for MRSA or Pseudomonas, or with prior MRSA/Pseudomonas or recent hospitalisation and IV antibiotics",
+        "targetCondition": "Pathogen",
+        "expectedFinding": "Positive culture.",
+        "clinicalRationale": "Not routine for non-severe outpatient CAP. Positive results allow de-escalation.",
+        "references": [
+          {
+            "title": "Diagnosis and Treatment of Adults with Community-acquired Pneumonia (ATS/IDSA)",
+            "edition": "Am J Respir Crit Care Med 2019;200:e45–e67 (Metlay JP et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6812437/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Pneumococcal and Legionella urinary antigen",
+        "modalityTarget": "Severe CAP only",
+        "targetCondition": "Pathogen",
+        "expectedFinding": "Positive antigen.",
+        "clinicalRationale": "Not routine in non-severe CAP.",
+        "references": [
+          {
+            "title": "Diagnosis and Treatment of Adults with Community-acquired Pneumonia (ATS/IDSA)",
+            "edition": "Am J Respir Crit Care Med 2019;200:e45–e67 (Metlay JP et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6812437/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Influenza testing",
+        "modalityTarget": "When influenza is circulating",
+        "targetCondition": "Influenza",
+        "expectedFinding": "Positive.",
+        "clinicalRationale": "Inpatients with influenza get oseltamivir 75 mg every 12 h for 5 days regardless of symptom duration, plus standard antibacterial therapy.",
+        "references": [
+          {
+            "title": "Diagnosis and Treatment of Adults with Community-acquired Pneumonia (ATS/IDSA)",
+            "edition": "Am J Respir Crit Care Med 2019;200:e45–e67 (Metlay JP et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6812437/"
+          },
+          {
+            "title": "MOH Lower Respiratory Tract Infections Management Protocol",
+            "edition": "Saudi Ministry of Health, first version 2020–2021",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Lower-Respiratory-Tract-Infections-Management-Protocol.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Procalcitonin",
+        "modalityTarget": "Not for the start decision",
+        "targetCondition": "Bacterial infection",
+        "expectedFinding": "Raised or normal.",
+        "clinicalRationale": "Start antibiotics in confirmed CAP regardless of procalcitonin.",
+        "references": [
+          {
+            "title": "Diagnosis and Treatment of Adults with Community-acquired Pneumonia (ATS/IDSA)",
+            "edition": "Am J Respir Crit Care Med 2019;200:e45–e67 (Metlay JP et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6812437/"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "severity",
+      "title": "Assess severity and place of care",
+      "timeframe": "At presentation",
+      "actions": [
+        "Calculate PSI (MOH): class II (70 points or less) outpatient; III (71–90) outpatient or observation; IV (91–130) admit; V (above 130) admit to ICU.",
+        "Apply ATS severe CAP criteria: 1 major or 3 or more minor criteria = severe CAP."
+      ],
+      "branches": [
+        {
+          "condition": "Vasopressors or mechanical ventilation needed",
+          "actions": [
+            "Direct ICU admission."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "antibiotics",
+      "title": "Start empirical antibiotics (MOH protocol)",
+      "timeframe": "Promptly after diagnosis",
+      "actions": [
+        "Previously healthy outpatient: amoxicillin 1 g PO every 8 h for 5–7 days (or a macrolide or doxycycline as listed).",
+        "Outpatient with comorbidity or recent antibiotics: beta-lactam (amoxicillin-clavulanate, amoxicillin or cefuroxime) PLUS a macrolide.",
+        "Inpatient non-severe: ceftriaxone 1–2 g IV every 24 h PLUS clarithromycin 500 mg every 12 h or azithromycin 500 mg then 250 mg daily (days 2–5).",
+        "Inpatient severe: ceftriaxone 1–2 g IV every 24 h PLUS a macrolide, or PLUS levofloxacin 750 mg IV every 24 h or moxifloxacin 400 mg IV every 24 h."
+      ],
+      "branches": [
+        {
+          "condition": "Prior MRSA isolation, or recent hospitalisation + IV antibiotics + validated local MRSA risk",
+          "actions": [
+            "Add vancomycin 25–30 mg/kg IV loading (if acutely severe) then 1 g every 8 h, or linezolid 600 mg IV every 12 h."
+          ]
+        },
+        {
+          "condition": "Prior Pseudomonas isolation, or recent hospitalisation + IV antibiotics + local risk",
+          "actions": [
+            "Replace the beta-lactam with piperacillin-tazobactam 4.5 g every 6 h, cefepime 2 g every 8 h, ceftazidime 2 g every 8 h, aztreonam 2 g every 8 h, meropenem 1 g every 8 h or imipenem 500 mg every 6 h."
+          ]
+        },
+        {
+          "condition": "Beta-lactam allergy",
+          "actions": [
+            "Levofloxacin 750 mg daily or moxifloxacin 400 mg daily; exclude TB first (MOH)."
+          ]
+        },
+        {
+          "condition": "Influenza positive",
+          "actions": [
+            "Oseltamivir 75 mg every 12 h for 5 days, plus standard antibacterial therapy."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "support",
+      "title": "Supportive care",
+      "timeframe": "Throughout",
+      "actions": [
+        "Oxygen to target saturations; fluids and vasopressors per sepsis guidance if shocked.",
+        "Steroids (ATS 2025): suggest systemic corticosteroids in severe CAP inpatients (stronger case if started within 24 h of meeting severe criteria, ICU admission or respiratory failure); do NOT give in non-severe CAP. Not recommended for confirmed influenza."
+      ]
+    },
+    {
+      "id": "duration",
+      "title": "Duration and stopping",
+      "timeframe": "Day 3 onwards",
+      "actions": [
+        "Stop when clinically stable: afebrile 48–72 h, no supplemental oxygen (unless needed before), and no more than one instability sign (HR above 100, RR above 24, SBP 90 or less).",
+        "ATS 2025: non-severe inpatients and outpatients — less than 5 days (minimum 3) once stable; severe CAP — 5 days or more.",
+        "MOH regimens list 5–7 days for most agents; de-escalate on culture results.",
+        "No routine follow-up chest imaging in improving patients (ATS 2019)."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Recognise, investigate and manage community-acquired pneumonia in the emergency department."
+    ],
+    "references": [
+      {
+        "title": "MOH Lower Respiratory Tract Infections Management Protocol",
+        "edition": "Saudi Ministry of Health, first version 2020–2021",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Lower-Respiratory-Tract-Infections-Management-Protocol.pdf",
+        "locator": "Community-acquired pneumonia: PSI, regimens by patient group, MRSA and Pseudomonas modifiers, influenza"
+      },
+      {
+        "title": "Diagnosis and Treatment of Adults with Community-acquired Pneumonia (ATS/IDSA)",
+        "edition": "Am J Respir Crit Care Med 2019;200:e45–e67 (Metlay JP et al.)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6812437/",
+        "locator": "Questions 1–16; Table 1 severe CAP criteria"
+      },
+      {
+        "title": "Diagnosis and Management of Community-acquired Pneumonia: An Official ATS Clinical Practice Guideline",
+        "edition": "Am J Respir Crit Care Med 2026;212(1):24–44 (Jones BE et al.; online 18 Jul 2025)",
+        "url": "https://academic.oup.com/ajrccm/article/212/1/24/8435770",
+        "locator": "Corticosteroids, antibiotic duration, virus-positive CAP, lung ultrasound"
+      },
+      {
+        "title": "SFDA Saudi Drug Information System (registration search)",
+        "edition": "Accessed 11–12 Oct 2026",
+        "url": "https://sdi.sfda.gov.sa/"
+      }
+    ],
+    "keyPoints": [
+      "Confirm with imaging; grade with PSI and ATS severe criteria.",
+      "Inpatient: ceftriaxone + macrolide; severe: ceftriaxone + macrolide or respiratory quinolone.",
+      "Add MRSA or Pseudomonas cover only with prior isolation or validated risk.",
+      "Influenza-positive inpatients: oseltamivir plus antibacterials.",
+      "Stop once stable: short courses are enough."
+    ],
+    "pitfalls": [
+      "Waiting for procalcitonin before treating confirmed CAP.",
+      "Broad MRSA/Pseudomonas cover for everyone.",
+      "Fluoroquinolone without considering TB.",
+      "Steroids in non-severe CAP.",
+      "Routine follow-up chest X-ray in recovered patients."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Complete the antibiotic course; return if breathlessness, chest pain or confusion worsen.",
+      "Smoking cessation; influenza and pneumococcal vaccination."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable in the acute phase."
+    ],
+    "mdtReferrals": [
+      "ICU for severe CAP with major criteria.",
+      "Respiratory or infectious diseases if not improving or resistant organisms."
+    ],
+    "dischargeCriteria": [
+      "Clinically stable (afebrile, off oxygen or at baseline, at most one instability sign).",
+      "Able to take oral antibiotics and fluids.",
+      "Safe home situation."
+    ],
+    "followUpPlan": "Review if not improving within 48–72 h. No routine follow-up chest X-ray; consider lung cancer screening where eligible (ATS 2019)."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Diagnosis",
+      "threshold": "Clinical features of lower respiratory infection + new infiltrate on chest imaging"
+    },
+    {
+      "criterion": "Severe CAP (ATS)",
+      "threshold": "1 major criterion (vasopressor-dependent shock or mechanical ventilation) OR 3 or more minor criteria"
+    },
+    {
+      "criterion": "PSI (MOH)",
+      "threshold": "Class II–III outpatient or observation; IV admit; V ICU"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Non-severe inpatient CAP",
+        "patientGroup": "Immunocompetent adults",
+        "genericName": "Ceftriaxone + clarithromycin",
+        "dose": "Ceftriaxone 1–2 g; clarithromycin 500 mg",
+        "route": "Ceftriaxone IV; clarithromycin PO",
+        "frequency": "Ceftriaxone every 24 h; clarithromycin every 12 h",
+        "duration": "7 days (MOH); ATS 2025 suggests 3–5 days once stable",
+        "adjustments": [
+          "Alternative macrolide: azithromycin 500 mg day 1 then 250 mg daily days 2–5",
+          "Allergy: levofloxacin 750 mg daily or moxifloxacin 400 mg daily after excluding TB"
+        ],
+        "monitoring": [
+          "Clinical stability, QT with macrolide or quinolone"
+        ],
+        "sourceTitle": "MOH LRTI Management Protocol",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Lower-Respiratory-Tract-Infections-Management-Protocol.pdf",
+        "sourceEdition": "MOH 2020–2021"
+      },
+      {
+        "indication": "Severe inpatient CAP",
+        "patientGroup": "Immunocompetent adults",
+        "genericName": "Ceftriaxone + levofloxacin (or + macrolide)",
+        "dose": "Ceftriaxone 1–2 g; levofloxacin 750 mg",
+        "route": "IV",
+        "frequency": "Every 24 h",
+        "duration": "5–7 days (at least 5 days in severe CAP, ATS 2025)",
+        "adjustments": [
+          "Pseudomonas risk: antipseudomonal beta-lactam instead",
+          "MRSA risk: add vancomycin or linezolid"
+        ],
+        "monitoring": [
+          "Cultures, clinical response"
+        ],
+        "sourceTitle": "MOH LRTI Management Protocol",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Lower-Respiratory-Tract-Infections-Management-Protocol.pdf",
+        "sourceEdition": "MOH 2020–2021"
+      },
+      {
+        "indication": "MRSA risk",
+        "patientGroup": "Prior MRSA or validated risk",
+        "genericName": "Vancomycin",
+        "dose": "Loading 25–30 mg/kg (acutely severe), then 1 g",
+        "route": "IV",
+        "frequency": "Every 8 h",
+        "duration": "7 days",
+        "adjustments": [
+          "Adjust by level and renal function (MOH TDM protocol)"
+        ],
+        "monitoring": [
+          "Trough or AUC levels, creatinine"
+        ],
+        "sourceTitle": "MOH LRTI Management Protocol",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Lower-Respiratory-Tract-Infections-Management-Protocol.pdf",
+        "sourceEdition": "MOH 2020–2021"
+      },
+      {
+        "indication": "Influenza-positive CAP",
+        "patientGroup": "Adults",
+        "genericName": "Oseltamivir",
+        "dose": "75 mg",
+        "route": "PO",
+        "frequency": "Every 12 h",
+        "duration": "5 days",
+        "adjustments": [
+          "Renal adjustment per product information"
+        ],
+        "monitoring": [
+          "Clinical response"
+        ],
+        "sourceTitle": "MOH LRTI Management Protocol",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Lower-Respiratory-Tract-Infections-Management-Protocol.pdf",
+        "sourceEdition": "MOH 2020–2021"
+      },
+      {
+        "indication": "Outpatient, previously healthy",
+        "patientGroup": "Adults, no antibiotics in past 3 months",
+        "genericName": "Amoxicillin",
+        "dose": "1 g",
+        "route": "PO",
+        "frequency": "Every 8 h",
+        "duration": "5–7 days",
+        "adjustments": [
+          "Alternatives: azithromycin, clarithromycin 500 mg every 12 h, doxycycline 100 mg every 12 h"
+        ],
+        "monitoring": [
+          "Return if worse"
+        ],
+        "sourceTitle": "MOH LRTI Management Protocol",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Lower-Respiratory-Tract-Infections-Management-Protocol.pdf",
+        "sourceEdition": "MOH 2020–2021"
+      }
+    ],
+    "note": "Doses as stated in the cited source. Check SFDA registration and the hospital formulary."
+  },
+  "guidelineComparison": {
+    "title": "MOH LRTI protocol (based on ATS/IDSA 2019) vs ATS 2025 update",
+    "columns": [
+      "MOH LRTI protocol",
+      "ATS 2025"
+    ],
+    "rows": [
+      {
+        "parameter": "Antibiotic duration",
+        "values": [
+          "5–7 days (7 days for most inpatient regimens)",
+          "Non-severe: under 5 days (minimum 3) once stable; severe: 5 days or more"
+        ]
+      },
+      {
+        "parameter": "Corticosteroids",
+        "values": [
+          "Not addressed",
+          "Suggest in severe CAP; do not use in non-severe CAP"
+        ]
+      },
+      {
+        "parameter": "Imaging",
+        "values": [
+          "Chest radiograph",
+          "Lung ultrasound acceptable alternative where expertise exists"
+        ]
+      }
+    ],
+    "note": "Antibiotic choice follows the MOH protocol and local formulary restrictions; duration and steroid decisions should be agreed locally in light of ATS 2025."
+  }
+}

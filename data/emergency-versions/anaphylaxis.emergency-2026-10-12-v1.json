@@ -1,0 +1,497 @@
+{
+  "id": "a1010000-0000-4000-8000-000000000005",
+  "title": "Acute Anaphylaxis",
+  "specialty": "Emergency Medicine and Allergy and Immunology",
+  "authority": "MOH",
+  "status": "under_review",
+  "version": "emergency-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Adults (paediatric doses are in the MOH protocol). Verified against the Saudi MoH Anaphylaxis Protocol v1.2 (2020) and RCUK 2021.",
+    "findings": [
+      "Saudi MOH and RCUK differ on adrenaline dose, adjunct drugs and observation period; both are shown.",
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Local formulary availability and hospital protocol adoption"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "a1010000-0000-4000-8000-000000000005"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Anaphylaxis is a serious, rapid-onset systemic hypersensitivity reaction that compromises the airway, breathing and/or circulation. Mast cell and basophil mediators cause airway oedema, bronchospasm, vasodilation, capillary leak and sometimes myocardial depression.",
+    "keyMechanisms": [
+      "Airway and breathing: tissue oedema and smooth-muscle contraction cause laryngeal swelling, bronchospasm and wheeze (commonest in food-induced anaphylaxis).",
+      "Circulation: vasodilation plus capillary leak causes distributive and hypovolaemic shock; up to 35% of blood volume can leak out within 10 minutes. Myocardial depression and ischaemic ECG changes can occur even with normal coronaries.",
+      "Posture: sitting or standing a hypotensive patient reduces venous return and has caused cardiovascular collapse and death; keep them supine (or semi-recumbent if breathless).",
+      "Why adrenaline works: alpha effects reverse vasodilation and oedema; beta effects open the airways, increase myocardial contraction and suppress mast-cell mediator release. Delay is linked to protracted and fatal reactions.",
+      "Biphasic reactions (about 5%): symptoms recur hours later without re-exposure; median time about 12 h."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Sudden onset over minutes after a trigger (drug, food, insect sting, contrast, vaccine). Parenteral triggers act fastest.",
+      "Breathing difficulty, throat tightness, hoarseness; dizziness or collapse.",
+      "Abdominal cramps, vomiting, incontinence; anxiety or 'sense of impending doom'.",
+      "Skin and mucosal changes (flushing, urticaria, angioedema) in over 80%, but absent in up to 20%."
+    ],
+    "physicalSigns": [
+      "Airway: lip, tongue or throat swelling, hoarseness, stridor.",
+      "Breathing: tachypnoea, wheeze, fatigue, cyanosis, SpO2 below 92%, confusion.",
+      "Circulation: pale, clammy, hypotension, tachycardia (bradycardia is a late, pre-arrest sign), drowsiness or coma.",
+      "Skin: urticaria, angioedema, erythema."
+    ],
+    "redFlags": [
+      "Stridor, hoarseness or tongue swelling: impending airway obstruction; most experienced person to intubate early",
+      "No improvement after two doses of IM adrenaline: refractory anaphylaxis; call critical care and start an IV adrenaline infusion",
+      "Patient on a beta-blocker with poor response: give glucagon",
+      "Never sit or stand a hypotensive patient up"
+    ],
+    "precipitants": [
+      "Drugs (antibiotics, NSAIDs, contrast, anaesthetic agents), blood products, vaccines.",
+      "Food (most anaphylaxis in children).",
+      "Insect stings and bites.",
+      "No trigger found in 5–10%."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Life-threatening asthma",
+      "distinguishingFeatures": "Wheeze without skin, circulatory or allergen features; anaphylaxis can look identical (especially in children). If in doubt, give IM adrenaline."
+    },
+    {
+      "condition": "ACE-inhibitor angioedema",
+      "distinguishingFeatures": "Swelling of lips, tongue or airway without urticaria in a patient on an ACE inhibitor; usually does not respond to adrenaline."
+    },
+    {
+      "condition": "Inducible laryngeal obstruction",
+      "distinguishingFeatures": "Throat tightness and stridor without objective allergic features; does not respond to adrenaline."
+    },
+    {
+      "condition": "Vasovagal faint",
+      "distinguishingFeatures": "Bradycardia, pallor, quick recovery when lying flat; no urticaria, wheeze or angioedema."
+    },
+    {
+      "condition": "Panic attack",
+      "distinguishingFeatures": "Hyperventilation, tingling; no hypotension, hypoxia, wheeze or rash. Can be hard to separate in people with previous anaphylaxis."
+    },
+    {
+      "condition": "Isolated urticaria or angioedema",
+      "distinguishingFeatures": "Skin or mucosal changes only, without airway, breathing or circulation problems: not anaphylaxis."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Clinical ABCDE assessment",
+        "modalityTarget": "Immediately; repeat after every intervention",
+        "targetCondition": "Anaphylaxis",
+        "expectedFinding": "Sudden airway and/or breathing and/or circulation problem, usually with skin changes.",
+        "clinicalRationale": "Diagnosis is clinical. Treat immediately; never wait for tests.",
+        "references": [
+          {
+            "title": "Emergency treatment of anaphylaxis: Guidelines for healthcare providers (Resuscitation Council UK)",
+            "edition": "May 2021",
+            "url": "https://www.resus.org.uk/sites/default/files/2021-05/Emergency%20Treatment%20of%20Anaphylaxis%20May%202021_0.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Pulse oximetry, BP, ECG monitoring",
+        "modalityTarget": "Continuously while on adrenaline; BP at least every 5 min on an infusion",
+        "targetCondition": "Hypoxia, shock, arrhythmia",
+        "expectedFinding": "SpO2 below 92%, hypotension, tachycardia, arrhythmia or ischaemic changes.",
+        "clinicalRationale": "Tachycardia, tremor and pallor with normal or high BP suggest too much adrenaline: reduce the infusion.",
+        "normalValue": "SpO2 at least 94% on air; SBP at least 90 mmHg",
+        "references": [
+          {
+            "title": "Saudi MoH Protocol for Adult and Pediatric Management of Anaphylaxis",
+            "edition": "Version 1.2, 28 Dec 2020",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-MoH-Protocol-for-Management-of-Anaphylaxis-V1.2.pdf"
+          },
+          {
+            "title": "Emergency treatment of anaphylaxis: Guidelines for healthcare providers (Resuscitation Council UK)",
+            "edition": "May 2021",
+            "url": "https://www.resus.org.uk/sites/default/files/2021-05/Emergency%20Treatment%20of%20Anaphylaxis%20May%202021_0.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Mast cell tryptase",
+        "modalityTarget": "1st sample as soon as feasible (do not delay treatment); 2nd at 1–2 h (no later than 4 h) after onset; 3rd at least 24 h after resolution or at allergy clinic",
+        "targetCondition": "Confirm anaphylaxis",
+        "expectedFinding": "Raised (above 11.4 or 14 µg/L, or above [baseline × 1.2] + 2 µg/L).",
+        "clinicalRationale": "Supports the diagnosis for the allergy clinic; results are not available acutely. A normal level does not exclude anaphylaxis (often normal in food reactions). Record exact times.",
+        "normalValue": "Below 11.4 µg/L",
+        "references": [
+          {
+            "title": "Emergency treatment of anaphylaxis: Guidelines for healthcare providers (Resuscitation Council UK)",
+            "edition": "May 2021",
+            "url": "https://www.resus.org.uk/sites/default/files/2021-05/Emergency%20Treatment%20of%20Anaphylaxis%20May%202021_0.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Urine output",
+        "modalityTarget": "Hourly if receiving fluid for hypotension or shock",
+        "targetCondition": "Perfusion",
+        "expectedFinding": "Low urine output in shock.",
+        "clinicalRationale": "Guides fluid resuscitation.",
+        "normalValue": "At least 0.5 mL/kg/h",
+        "references": [
+          {
+            "title": "Saudi MoH Protocol for Adult and Pediatric Management of Anaphylaxis",
+            "edition": "Version 1.2, 28 Dec 2020",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-MoH-Protocol-for-Management-of-Anaphylaxis-V1.2.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "abcde",
+      "title": "Recognise, call for help, remove the trigger",
+      "timeframe": "Immediately",
+      "actions": [
+        "ABCDE approach; call for help (resuscitation team).",
+        "Stop the suspected drug, infusion or colloid; remove the trigger if possible.",
+        "Lie the patient flat with legs raised (semi-recumbent if breathing is difficult). Do not sit or stand them up."
+      ]
+    },
+    {
+      "id": "adrenaline",
+      "title": "IM adrenaline first",
+      "timeframe": "Immediately; repeat after 5 min",
+      "actions": [
+        "Adrenaline 1 mg/mL (1:1000) IM into the anterolateral mid-thigh: RCUK 0.5 mg (0.5 mL) for adults and children over 12; MOH 0.3–0.5 mg.",
+        "Repeat after 5 minutes if airway, breathing or circulation problems persist (MOH: every 5–15 min as needed).",
+        "Do not give IV bolus adrenaline outside cardiac arrest or specialist hands."
+      ],
+      "branches": [
+        {
+          "condition": "Impending airway obstruction (angioedema, stridor)",
+          "actions": [
+            "Immediate intubation by the most experienced available operator."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "oxygen-fluids",
+      "title": "Oxygen and fluids",
+      "timeframe": "Alongside adrenaline",
+      "actions": [
+        "High-flow oxygen (MOH: 8–10 L/min by face mask, up to 100%).",
+        "Hypotension or poor response: rapid IV crystalloid bolus 500–1000 mL (RCUK) or 1–2 L 0.9% saline (MOH); repeat as needed. Severe shock may need 3–5 L.",
+        "Use IO access if IV access is delayed."
+      ]
+    },
+    {
+      "id": "bronchospasm",
+      "title": "Persistent bronchospasm",
+      "timeframe": "After IM adrenaline",
+      "actions": [
+        "Salbutamol 2.5–5 mg nebulised in 3 mL saline (MOH), or 2–3 puffs MDI; repeat as needed."
+      ]
+    },
+    {
+      "id": "refractory",
+      "title": "Refractory anaphylaxis",
+      "timeframe": "No improvement after two IM doses",
+      "actions": [
+        "Call critical care early; keep giving IM adrenaline every 5 min until the infusion runs.",
+        "Start low-dose IV adrenaline infusion: RCUK 1 mg in 100 mL 0.9% NaCl at 0.5 mL/kg/h (about 0.1 microgram/kg/min) via a dedicated line; 1 mL/kg/h if hypotensive or hypoxic. MOH: start at 0.1 microgram/kg/min and titrate.",
+        "Continuous ECG, SpO2 and BP at least every 5 min. Titrate to the lowest effective rate.",
+        "Wean: halve as symptoms improve; 1 h after full resolution, reduce over 30 min and stop.",
+        "If still refractory: noradrenaline (or dopamine per MOH; metaraminol or vasopressin per RCUK) by expert titration."
+      ],
+      "branches": [
+        {
+          "condition": "On a beta-blocker",
+          "actions": [
+            "Glucagon: MOH 1–5 mg IV over 5 min then 5–15 microgram/min infusion (rapid push causes vomiting); RCUK 1 mg IV, repeat or 1–2 mg/h. Hold the beta-blocker."
+          ]
+        },
+        {
+          "condition": "Persistent severe bradycardia despite fluids",
+          "actions": [
+            "Atropine 0.5 mg IV, repeat if necessary (RCUK)."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "adjuncts",
+      "title": "Adjuncts after stabilisation (never instead of adrenaline)",
+      "timeframe": "After ABC problems are treated",
+      "actions": [
+        "Antihistamines are third-line and only for skin symptoms: RCUK prefers a non-sedating oral antihistamine (e.g. cetirizine). MOH lists cetirizine 10 mg IV or diphenhydramine 25–50 mg IV, and famotidine 20 mg IV.",
+        "Corticosteroids: RCUK does not advise them routinely (consider hydrocortisone 200 mg IV for refractory reactions or coexisting asthma). MOH lists methylprednisolone 125 mg IV."
+      ]
+    },
+    {
+      "id": "observe",
+      "title": "Observe and discharge safely",
+      "timeframe": "2–12 h depending on risk",
+      "actions": [
+        "RCUK fast-track discharge after 2 h from resolution only if: good response within 5–10 min to a single dose given within 30 min of onset, complete resolution, already has trained-in-use auto-injectors, and adequate supervision.",
+        "At least 6 h after resolution if 2 IM doses were needed or there was a previous biphasic reaction. MOH: observe 6 h if airway compromise, high adrenaline doses, coronary artery disease, asthma, or on beta-blockers or ACE inhibitors.",
+        "At least 12 h if more than 2 doses were needed, severe asthma or severe respiratory compromise, possible continuing absorption (e.g. slow-release medicines), late night presentation, or poor access to emergency care.",
+        "Before discharge: stand the patient up and check for dizziness; eat something at least 1 h before leaving. If not improving: ICU (MOH)."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Recognise, investigate and manage acute anaphylaxis in the emergency department."
+    ],
+    "references": [
+      {
+        "title": "Saudi MoH Protocol for Adult and Pediatric Management of Anaphylaxis",
+        "edition": "Version 1.2, 28 Dec 2020",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-MoH-Protocol-for-Management-of-Anaphylaxis-V1.2.pdf",
+        "locator": "Management, adjunctive therapies, refractory symptoms, adult algorithm"
+      },
+      {
+        "title": "Emergency treatment of anaphylaxis: Guidelines for healthcare providers (Resuscitation Council UK)",
+        "edition": "May 2021",
+        "url": "https://www.resus.org.uk/sites/default/files/2021-05/Emergency%20Treatment%20of%20Anaphylaxis%20May%202021_0.pdf",
+        "locator": "Sections 2.3, 3, 5, 6, 7, 8; Appendix 3"
+      },
+      {
+        "title": "SFDA Saudi Drug Information System (registration search)",
+        "edition": "Accessed 11–12 Oct 2026",
+        "url": "https://sdi.sfda.gov.sa/"
+      }
+    ],
+    "keyPoints": [
+      "If in doubt, give IM adrenaline 0.5 mg into the thigh.",
+      "Repeat after 5 minutes if not better; after two doses, start an IV adrenaline infusion.",
+      "Lie the patient flat; never stand a hypotensive patient up.",
+      "Antihistamines and steroids do not treat airway, breathing or circulation problems.",
+      "Tryptase at 1–2 h, refer to allergy, auto-injector on discharge."
+    ],
+    "pitfalls": [
+      "Giving antihistamine or steroid first and delaying adrenaline.",
+      "IV bolus adrenaline outside cardiac arrest.",
+      "Missing anaphylaxis without a rash (absent in up to 20%).",
+      "Sitting the patient up.",
+      "Discharging early without a risk-based observation period or auto-injector."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "What anaphylaxis is and how to recognise it.",
+      "Biphasic reaction risk and when to return.",
+      "Use of the adrenaline auto-injector (demonstrated) and an action plan.",
+      "Avoid the trigger; do not take further doses of a drug that caused anaphylaxis."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable in the acute phase."
+    ],
+    "mdtReferrals": [
+      "Allergy-immunology clinic for every patient.",
+      "ICU if not improving."
+    ],
+    "dischargeCriteria": [
+      "Complete resolution and observed for the risk-appropriate period (2, 6 or 12 h).",
+      "Senior review of discharge decision.",
+      "Adrenaline auto-injector prescribed and use demonstrated (unless drug-induced), with an action plan.",
+      "Told about biphasic reactions and to return immediately if symptoms recur.",
+      "Allergy recorded in the record; drug reactions reported to SFDA (https://ade.sfda.gov.sa)."
+    ],
+    "followUpPlan": "Refer every patient to an allergist-immunologist (MOH and RCUK); take the convalescent tryptase sample there."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Anaphylaxis is likely when",
+      "threshold": "Sudden onset of an Airway and/or Breathing and/or Circulation problem, usually with skin or mucosal changes"
+    },
+    {
+      "criterion": "Not anaphylaxis",
+      "threshold": "Skin or mucosal changes alone (generalised urticaria, angioedema, rhinitis) without A, B or C problems"
+    },
+    {
+      "criterion": "Refractory anaphylaxis",
+      "threshold": "Persisting respiratory or cardiovascular problems despite two appropriate doses of IM adrenaline"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Anaphylaxis: first-line",
+        "patientGroup": "Adults and children over 12",
+        "genericName": "Adrenaline (epinephrine) 1 mg/mL (1:1000)",
+        "dose": "0.5 mg (0.5 mL) RCUK; 0.3–0.5 mg MOH",
+        "route": "IM, anterolateral mid-thigh",
+        "frequency": "Repeat after 5 min if no improvement (MOH: every 5–15 min)",
+        "duration": "Until A, B and C problems resolve",
+        "adjustments": [
+          "Subcutaneous and inhaled routes are less effective",
+          "IV bolus only in cardiac arrest or specialist hands"
+        ],
+        "monitoring": [
+          "ECG, SpO2, BP"
+        ],
+        "sourceTitle": "RCUK Emergency treatment of anaphylaxis",
+        "sourceUrl": "https://www.resus.org.uk/sites/default/files/2021-05/Emergency%20Treatment%20of%20Anaphylaxis%20May%202021_0.pdf",
+        "sourceEdition": "RCUK 2021"
+      },
+      {
+        "indication": "Refractory anaphylaxis",
+        "patientGroup": "Adults after two IM doses",
+        "genericName": "Adrenaline IV infusion",
+        "dose": "1 mg in 100 mL 0.9% NaCl; start 0.5 mL/kg/h (~0.1 microgram/kg/min), 1 mL/kg/h if hypotensive or hypoxic; MOH start 0.1 microgram/kg/min",
+        "route": "IV (peripheral, dedicated line) or IO",
+        "frequency": "Continuous, titrate every 5–10 min",
+        "duration": "Wean 1 h after resolution over 30 min",
+        "adjustments": [
+          "Reduce if tachycardia, tremor, pallor with normal or high BP",
+          "Not on the same arm as the BP cuff"
+        ],
+        "monitoring": [
+          "Continuous ECG and SpO2; BP at least every 5 min"
+        ],
+        "sourceTitle": "RCUK Emergency treatment of anaphylaxis",
+        "sourceUrl": "https://www.resus.org.uk/sites/default/files/2021-05/Emergency%20Treatment%20of%20Anaphylaxis%20May%202021_0.pdf",
+        "sourceEdition": "RCUK 2021"
+      },
+      {
+        "indication": "Hypotension",
+        "patientGroup": "Adults",
+        "genericName": "Crystalloid (0.9% NaCl, Hartmann's or Plasma-Lyte)",
+        "dose": "500–1000 mL bolus (RCUK) or 1–2 L 0.9% NaCl (MOH); up to 3–5 L in severe shock",
+        "route": "IV or IO",
+        "frequency": "Repeat as needed",
+        "duration": "Until BP restored",
+        "adjustments": [
+          "Stop any colloid that may be the trigger",
+          "Balanced crystalloid preferred for large volumes (RCUK)"
+        ],
+        "monitoring": [
+          "BP, urine output"
+        ],
+        "sourceTitle": "Saudi MoH Anaphylaxis Protocol",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-MoH-Protocol-for-Management-of-Anaphylaxis-V1.2.pdf",
+        "sourceEdition": "MOH v1.2 2020"
+      },
+      {
+        "indication": "Bronchospasm despite IM adrenaline",
+        "patientGroup": "Adults",
+        "genericName": "Salbutamol",
+        "dose": "2.5–5 mg in 3 mL saline nebulised, or 2–3 puffs MDI",
+        "route": "Inhaled",
+        "frequency": "Repeat as needed",
+        "duration": "As needed",
+        "adjustments": [
+          "Adjunct only"
+        ],
+        "monitoring": [
+          "SpO2, work of breathing"
+        ],
+        "sourceTitle": "Saudi MoH Anaphylaxis Protocol",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-MoH-Protocol-for-Management-of-Anaphylaxis-V1.2.pdf",
+        "sourceEdition": "MOH v1.2 2020"
+      },
+      {
+        "indication": "Anaphylaxis on a beta-blocker, poor response",
+        "patientGroup": "Adults",
+        "genericName": "Glucagon",
+        "dose": "MOH: 1–5 mg IV over 5 min, then 5–15 microgram/min. RCUK: 1 mg IV, repeat or 1–2 mg/h",
+        "route": "IV",
+        "frequency": "As stated",
+        "duration": "Until response",
+        "adjustments": [
+          "Rapid injection causes vomiting",
+          "Hold the beta-blocker"
+        ],
+        "monitoring": [
+          "BP, HR"
+        ],
+        "sourceTitle": "Saudi MoH Anaphylaxis Protocol",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-MoH-Protocol-for-Management-of-Anaphylaxis-V1.2.pdf",
+        "sourceEdition": "MOH v1.2 2020"
+      },
+      {
+        "indication": "Skin symptoms after stabilisation (third-line)",
+        "patientGroup": "Adults",
+        "genericName": "Cetirizine",
+        "dose": "10 mg (RCUK prefers oral non-sedating; MOH lists 10 mg IV over 2 min)",
+        "route": "Oral or IV",
+        "frequency": "Once",
+        "duration": "As needed",
+        "adjustments": [
+          "Never for A, B or C problems",
+          "MOH alternatives: diphenhydramine 25–50 mg IV over 5 min; famotidine 20 mg IV"
+        ],
+        "monitoring": [
+          "Sedation"
+        ],
+        "sourceTitle": "RCUK Emergency treatment of anaphylaxis",
+        "sourceUrl": "https://www.resus.org.uk/sites/default/files/2021-05/Emergency%20Treatment%20of%20Anaphylaxis%20May%202021_0.pdf",
+        "sourceEdition": "RCUK 2021"
+      }
+    ],
+    "note": "Doses as stated in the cited source. Check SFDA registration and the hospital formulary."
+  },
+  "guidelineComparison": {
+    "title": "Saudi MOH protocol vs RCUK 2021",
+    "columns": [
+      "Saudi MoH v1.2 (2020)",
+      "RCUK (2021)"
+    ],
+    "rows": [
+      {
+        "parameter": "Adult IM adrenaline",
+        "values": [
+          "0.3–0.5 mg, repeat every 5–15 min",
+          "0.5 mg, repeat after 5 min"
+        ]
+      },
+      {
+        "parameter": "Antihistamines",
+        "values": [
+          "Cetirizine 10 mg IV or diphenhydramine 25–50 mg IV; famotidine 20 mg IV",
+          "Third-line, skin only; non-sedating oral preferred; no routine H2 blocker"
+        ]
+      },
+      {
+        "parameter": "Corticosteroids",
+        "values": [
+          "Consider methylprednisolone 125 mg IV",
+          "Not routine; consider hydrocortisone 200 mg IV in refractory reactions or asthma"
+        ]
+      },
+      {
+        "parameter": "IV adrenaline infusion",
+        "values": [
+          "Start 0.1 microgram/kg/min",
+          "1 mg/100 mL at 0.5–1 mL/kg/h (~0.1–0.2 microgram/kg/min) after 2 IM doses"
+        ]
+      },
+      {
+        "parameter": "Observation",
+        "values": [
+          "6 h for high-risk groups",
+          "Risk-stratified: 2 h, at least 6 h, or at least 12 h"
+        ]
+      }
+    ],
+    "note": "Both agree that IM adrenaline is first-line and must never be delayed for adjuncts."
+  }
+}

@@ -1,7 +1,7 @@
 import { TriangleAlert } from "lucide-react";
 import type { DiseaseDetail } from "@/lib/validations/disease";
 import { PathwaySequence } from "@/components/pathway-sequence";
-import { SourceCitation, type CitationSource } from "@/components/source-citation";
+import type { CitationSource } from "@/components/source-citation";
 import { Investigations as MonitoringSchedule, TreatmentDetails } from "@/components/granular-pathway";
 import { ClinicalEvidenceAudit } from "@/components/clinical-evidence-audit";
 import { getMedicationPlan } from "@/lib/data/medication-plans";
@@ -123,7 +123,6 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
         ) : null}
 
         {disease.granularPathway ? <details className="em-more"><summary>Monitoring schedule and decision points</summary><MonitoringSchedule phases={disease.granularPathway.Investigations} /></details> : null}
-        <SourceCitation sources={topicSources} />
       </section>
 
       <section id="management" className="em-section" aria-labelledby="management-title">
@@ -172,13 +171,52 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
         <h3>Disposition and follow-up</h3>
         <div className="em-two-col">
           <div><h4>Discharge when</h4><List items={care.dischargeCriteria} /></div>
-          <div><h4>Before they leave</h4><List items={[...care.patientEducation, ...care.lifestyleAndDiet, ...care.mdtReferrals]} /></div>
+          <div><h4>Before they leave</h4><List items={[...care.patientEducation, ...care.lifestyleAndDiet, ...care.mdtReferrals].filter((item) => !/^not applicable/i.test(item))} /></div>
         </div>
         <p className="em-followup"><strong>Follow-up:</strong> {care.followUpPlan}</p>
       </section>
 
       {disease.evidenceAudit ? <details className="em-more"><summary>Evidence and review status</summary><ClinicalEvidenceAudit audit={disease.evidenceAudit} /></details> : null}
-      {disease.teaching?.references?.length ? <SourceCitation sources={disease.teaching.references} /> : null}
+      <References disease={disease} versionSource={investigationSource} />
     </div>
+  );
+}
+
+type Reference = { title: string; url: string; detail?: string };
+
+/** Every source cited anywhere in the version, de-duplicated and listed at the end of the page. */
+export function collectReferences(disease: DiseaseDetail, versionSource?: CitationSource): Reference[] {
+  const found: Reference[] = [];
+  const add = (title: string | undefined, url: string | undefined, detail?: string) => {
+    if (!title || !url || !/^https?:\/\//i.test(url)) return;
+    const existing = found.find((item) => item.url === url);
+    if (existing) {
+      if (detail && existing.detail && !existing.detail.includes(detail)) existing.detail = `${existing.detail}; ${detail}`;
+      return;
+    }
+    found.push({ title, url, detail });
+  };
+  disease.teaching?.references?.forEach((ref) => add(ref.title, ref.url, [ref.edition, ref.locator].filter(Boolean).join(" · ")));
+  disease.pathophysiology.references?.forEach((ref) => add(ref.title, ref.url, ref.edition));
+  [...disease.investigations.ruleIn, ...disease.investigations.ruleOut].forEach((item) => item.references?.forEach((ref) => add(ref.title, ref.url, ref.edition)));
+  disease.medicationPlan?.regimens.forEach((regimen) => add(regimen.sourceTitle, regimen.sourceUrl, regimen.sourceEdition));
+  const pathway = disease.granularPathway;
+  if (pathway) {
+    const sources = [pathway.evidence, ...pathway.Investigations.map((item) => item.evidence), ...pathway.Treatment_Plan.flatMap((plan) => [plan.evidence, ...plan.branches.map((branch) => branch.evidence)])].flatMap((evidence) => evidence.sources);
+    sources.forEach((source) => add(source.title, source.url, [source.edition, source.locator].filter(Boolean).join(" · ")));
+  }
+  if (versionSource) add(versionSource.title, versionSource.url, versionSource.edition);
+  return found;
+}
+
+function References({ disease, versionSource }: { disease: DiseaseDetail; versionSource?: CitationSource }) {
+  const references = collectReferences(disease, versionSource);
+  return (
+    <section className="em-references" aria-labelledby="references-title">
+      <h2 id="references-title">References</h2>
+      {references.length ? (
+        <ol>{references.map((ref) => <li key={ref.url}><a href={ref.url} target="_blank" rel="noreferrer">{ref.title}</a>{ref.detail ? <span> — {ref.detail}</span> : null}</li>)}</ol>
+      ) : <p>No source with a verifiable link is recorded for this version. Treat the content as unverified.</p>}
+    </section>
   );
 }
