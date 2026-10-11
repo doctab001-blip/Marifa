@@ -11,7 +11,7 @@ describe("teaching demonstration versions", () => {
       const parsed = DiseaseDetailSchema.parse(JSON.parse(readFileSync(join(dir, file), "utf8")));
       expect(parsed.status).toBe("under_review");
       expect(parsed.clinicalReviewStatus).toBe("pending");
-      expect(parsed.teaching?.vignette?.fictitious).toBe(true);
+      if (parsed.teaching?.vignette) expect(parsed.teaching.vignette.fictitious).toBe(true);
       expect(parsed.teaching?.learningObjectives.length).toBeGreaterThan(0);
       expect(parsed.medicationPlan?.regimens.every((regimen) => regimen.sourceUrl.startsWith("https://"))).toBe(true);
     });

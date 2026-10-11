@@ -1,10 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ShieldAlert } from "lucide-react";
-import { DiseaseDetailSections } from "@/components/disease-detail-sections";
+import { EmergencyTopic } from "@/components/emergency-topic";
 import { getDiseaseDraftVersion } from "@/lib/data/disease-drafts";
-import { TeachingGuide } from "@/components/teaching-guide";
-import { buildTeachingView } from "@/lib/teaching";
 
 export default async function DiseaseDraftPreviewPage({ params }: { params: Promise<{ versionId: string }> }) {
   const { versionId } = await params;
@@ -22,9 +20,7 @@ export default async function DiseaseDraftPreviewPage({ params }: { params: Prom
         <div className="scenario-chips"><span className="status status-draft">Version {result.disease.version}</span><span className="scenario-chip">{result.disease.pillar}</span><span className="scenario-chip">{result.disease.specialty}</span></div>
         <div className="clinical-review-draft-notice" role="alert"><strong>UNREVIEWED DRAFT — NOT FOR CLINICAL USE.</strong> Only an authorized administrator can edit or approve this version.</div>
         <hr className="scenario-divider" />
-        <TeachingGuide view={buildTeachingView(result.disease)} />
-        <h2 className="teach-heading teach-sections-heading"><span aria-hidden="true">🩻</span>The clinical pathway, step by step</h2>
-        <DiseaseDetailSections disease={result.disease} investigationSource={result.source} />
+        <EmergencyTopic disease={result.disease} investigationSource={result.source} />
       </article>
     </main>
   );

@@ -3,7 +3,7 @@ import type { DiseaseDetail } from "@/lib/validations/disease";
 import { ClinicalTimeframe } from "@/components/clinical-timeframe";
 import { SourceCitation, type CitationSource } from "@/components/source-citation";
 
-export function PathwaySequence({ steps, sources = [] }: { steps: DiseaseDetail["clinicalManagement"]; sources?: CitationSource[] }) {
+export function PathwaySequence({ steps, sources = [], compact = false }: { steps: DiseaseDetail["clinicalManagement"]; sources?: CitationSource[]; compact?: boolean }) {
   return (
     <section className="pathway-sequence" aria-labelledby="pathway-sequence-title">
       <header className="pathway-sequence-header">
@@ -47,7 +47,7 @@ export function PathwaySequence({ steps, sources = [] }: { steps: DiseaseDetail[
                       </div>
                     ))}
                   </div>
-                  <SourceCitation sources={sources} />
+                  {compact ? null : <SourceCitation sources={sources} />}
                 </div>
               )}
             </article>

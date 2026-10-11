@@ -2,12 +2,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ShieldAlert } from "lucide-react";
 import { ApprovalStatusBadge } from "@/components/approval-status-badge";
-import { DiseaseDetailSections } from "@/components/disease-detail-sections";
-import { TeachingGuide } from "@/components/teaching-guide";
+import { EmergencyTopic } from "@/components/emergency-topic";
 import { TopicLibraryHeader, TopicPager, type TopicLink } from "@/components/topic-library";
 import { getApprovedDiseaseGuideline, getApprovedDiseaseGuidelines } from "@/lib/data/disease-guidelines";
 import { isTemporaryOpenAdminMode } from "@/lib/access-mode";
-import { buildTeachingView } from "@/lib/teaching";
 
 function formatDate(date: string) {
   return new Intl.DateTimeFormat("en-GB", { day: "2-digit", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${date}T00:00:00Z`));
@@ -38,7 +36,6 @@ export default async function DiseaseDetailPage({ params }: { params: Promise<{ 
   const topics: TopicLink[] = directory.state === "ready" ? directory.diseases.map(({ id: topicId, title }) => ({ id: topicId, title })) : [];
   const reviewIncomplete = disease.clinicalReviewStatus === "pending" || disease.status === "under_review";
   const approvalLabel = reviewIncomplete ? "Under review" : disease.status === "published" ? "Published" : "Approved";
-  const teaching = buildTeachingView(disease);
 
   return (
     <main className="page disease-detail-page topic-page">
@@ -62,9 +59,7 @@ export default async function DiseaseDetailPage({ params }: { params: Promise<{ 
         )}
 
         <hr className="scenario-divider" />
-        <TeachingGuide view={teaching} />
-        <h2 className="teach-heading teach-sections-heading"><span aria-hidden="true">🩻</span>The clinical pathway, step by step</h2>
-        <DiseaseDetailSections disease={disease} investigationSource={result.investigationSource} />
+        <EmergencyTopic disease={disease} investigationSource={result.investigationSource} />
       </article>
 
       <TopicPager topics={topics} currentId={disease.id} />

@@ -1,0 +1,184 @@
+import { TriangleAlert } from "lucide-react";
+import type { DiseaseDetail } from "@/lib/validations/disease";
+import { PathwaySequence } from "@/components/pathway-sequence";
+import { SourceCitation, type CitationSource } from "@/components/source-citation";
+import { Investigations as MonitoringSchedule, TreatmentDetails } from "@/components/granular-pathway";
+import { ClinicalEvidenceAudit } from "@/components/clinical-evidence-audit";
+import { getMedicationPlan } from "@/lib/data/medication-plans";
+
+type Investigation = DiseaseDetail["investigations"]["ruleIn"][number];
+
+export const emergencySections = [
+  { id: "pathophysiology", label: "Pathophysiology" },
+  { id: "signs-symptoms", label: "Signs & symptoms" },
+  { id: "investigations", label: "Investigations" },
+  { id: "management", label: "Management" },
+] as const;
+
+function Labelled({ text }: { text: string }) {
+  const separator = text.indexOf(":");
+  if (separator > 0 && separator < 60) return <><strong>{text.slice(0, separator)}:</strong>{text.slice(separator + 1)}</>;
+  return <>{text}</>;
+}
+
+function List({ items, className = "em-list" }: { items: string[]; className?: string }) {
+  return <ul className={className}>{items.map((item, index) => <li key={`${index}-${item}`}><Labelled text={item} /></li>)}</ul>;
+}
+
+function Heading({ id, number, title }: { id: string; number: number; title: string }) {
+  return <h2 className="em-heading" id={`${id}-title`}><span className="em-heading-number">{number}</span>{title}</h2>;
+}
+
+const isImaging = (item: Investigation) => item.tier === "firstLineImaging" || item.tier === "advancedImaging";
+
+export function EmergencyTopic({ disease, investigationSource }: { disease: DiseaseDetail; investigationSource?: CitationSource }) {
+  const topicSources: CitationSource[] = investigationSource ? [investigationSource] : [];
+  const allTests = [...disease.investigations.ruleIn, ...disease.investigations.ruleOut];
+  const labs = allTests.filter((item) => !isImaging(item));
+  const imaging = allTests.filter(isImaging);
+  const showNormal = labs.some((item) => item.normalValue);
+  const testChoices = allTests.filter((item) => item.pros?.length || item.cons?.length);
+  const medicationPlan = disease.medicationPlan ?? getMedicationPlan(disease.id);
+  const care = disease.nonClinicalManagement;
+  const pitfalls = disease.teaching?.pitfalls ?? [];
+  const pearls = disease.teaching?.keyPoints ?? [];
+
+  return (
+    <div className="em-topic">
+      <nav className="em-nav" aria-label="Jump to section">
+        {emergencySections.map((section, index) => <a key={section.id} href={`#${section.id}`}><span>{index + 1}</span>{section.label}</a>)}
+      </nav>
+
+      <section id="pathophysiology" className="em-section" aria-labelledby="pathophysiology-title">
+        <Heading id="pathophysiology" number={1} title="Pathophysiology" />
+        <p className="em-lead">{disease.pathophysiology.summary}</p>
+        <List items={disease.pathophysiology.keyMechanisms} />
+      </section>
+
+      <section id="signs-symptoms" className="em-section" aria-labelledby="signs-symptoms-title">
+        <Heading id="signs-symptoms" number={2} title="Signs & symptoms" />
+        <div className="em-alert" role="note">
+          <TriangleAlert size={20} aria-hidden="true" />
+          <div><strong>Red flags — escalate now</strong><List items={disease.presentation.redFlags} /></div>
+        </div>
+        <div className="em-two-col">
+          <div><h3>Symptoms</h3><List items={disease.presentation.symptoms} /></div>
+          <div><h3>Signs</h3><List items={disease.presentation.physicalSigns} /></div>
+        </div>
+        {disease.presentation.precipitants?.length ? <div className="em-box"><h3>Look for the precipitant</h3><List items={disease.presentation.precipitants} /></div> : null}
+        <h3>Mimics and must-not-miss alternatives</h3>
+        <div className="em-table-wrap">
+          <table className="em-table">
+            <thead><tr><th scope="col">Condition</th><th scope="col">How to tell it apart</th></tr></thead>
+            <tbody>{disease.differentials.map((item) => <tr key={item.condition}><th scope="row">{item.condition}</th><td>{item.distinguishingFeatures}</td></tr>)}</tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="investigations" className="em-section" aria-labelledby="investigations-title">
+        <Heading id="investigations" number={3} title="Investigations" />
+        {disease.diagnosticCriteria?.length ? (
+          <div className="em-criteria">
+            <h3>Diagnostic criteria</h3>
+            <dl>{disease.diagnosticCriteria.map((item) => <div key={item.criterion}><dt>{item.criterion}</dt><dd>{item.threshold}</dd></div>)}</dl>
+          </div>
+        ) : null}
+        <div className="em-table-wrap">
+          <table className="em-table em-investigation-table">
+            <thead><tr><th scope="col">Test</th>{showNormal ? <th scope="col">Normal</th> : null}<th scope="col">In this condition</th><th scope="col">What it means / next step</th></tr></thead>
+            <tbody>
+              {labs.map((item) => (
+                <tr key={item.testName}>
+                  <th scope="row">{item.testName}<small>{item.modalityTarget}</small></th>
+                  {showNormal ? <td data-label="Normal">{item.normalValue ?? "—"}</td> : null}
+                  <td data-label="In this condition" className="em-deranged">{item.expectedFinding}</td>
+                  <td data-label="What it means">{item.clinicalRationale}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        {showNormal ? <p className="em-footnote">Normal values are typical adult reference ranges; use your own laboratory&apos;s ranges.</p> : null}
+
+        {testChoices.length ? testChoices.map((item) => (
+          <div key={`choice-${item.testName}`} className="em-proscons">
+            <h3>{item.testName}: pros and cons</h3>
+            <div className="em-two-col">
+              {item.pros?.length ? <div className="em-pros"><strong>Pros</strong><List items={item.pros} /></div> : null}
+              {item.cons?.length ? <div className="em-cons"><strong>Cons</strong><List items={item.cons} /></div> : null}
+            </div>
+          </div>
+        )) : null}
+
+        {imaging.length ? (
+          <>
+            <h3>Imaging</h3>
+            <div className="em-table-wrap">
+              <table className="em-table">
+                <thead><tr><th scope="col">Imaging</th><th scope="col">When to order</th><th scope="col">What you are looking for</th></tr></thead>
+                <tbody>{imaging.map((item) => <tr key={item.testName}><th scope="row">{item.testName}</th><td>{item.modalityTarget}</td><td>{item.expectedFinding} {item.clinicalRationale}</td></tr>)}</tbody>
+              </table>
+            </div>
+          </>
+        ) : null}
+
+        {disease.granularPathway ? <details className="em-more"><summary>Monitoring schedule and decision points</summary><MonitoringSchedule phases={disease.granularPathway.Investigations} /></details> : null}
+        <SourceCitation sources={topicSources} />
+      </section>
+
+      <section id="management" className="em-section" aria-labelledby="management-title">
+        <Heading id="management" number={4} title="Management" />
+        <PathwaySequence steps={disease.clinicalManagement} sources={topicSources} compact />
+
+        {medicationPlan?.regimens.length ? (
+          <>
+            <h3>Medicines and doses</h3>
+            <p className="em-footnote">{medicationPlan.note}</p>
+            <div className="em-table-wrap">
+              <table className="em-table em-dose-table">
+                <thead><tr><th scope="col">Medicine and indication</th><th scope="col">Dose, route, frequency</th><th scope="col">Cautions and monitoring</th></tr></thead>
+                <tbody>{medicationPlan.regimens.map((regimen) => (
+                  <tr key={`${regimen.genericName}-${regimen.indication}`}>
+                    <th scope="row">{regimen.genericName}<small>{regimen.indication} · {regimen.patientGroup}</small></th>
+                    <td>{regimen.dose}<small>{regimen.route} · {regimen.frequency} · {regimen.duration}</small></td>
+                    <td><List items={[...regimen.adjustments, ...regimen.monitoring.map((item) => `Monitor: ${item}`)]} /><a href={regimen.sourceUrl} target="_blank" rel="noreferrer" className="em-source-link">{regimen.sourceEdition}</a></td>
+                  </tr>
+                ))}</tbody>
+              </table>
+            </div>
+          </>
+        ) : medicationPlan?.note ? <p className="em-footnote">{medicationPlan.note}</p> : null}
+
+        {disease.guidelineComparison ? (
+          <>
+            <h3>{disease.guidelineComparison.title}</h3>
+            <div className="em-table-wrap">
+              <table className="em-table">
+                <thead><tr><th scope="col">Parameter</th>{disease.guidelineComparison.columns.map((column) => <th scope="col" key={column}>{column}</th>)}</tr></thead>
+                <tbody>{disease.guidelineComparison.rows.map((row) => <tr key={row.parameter}><th scope="row">{row.parameter}</th>{row.values.map((value, index) => <td key={`${row.parameter}-${index}`}>{value}</td>)}</tr>)}</tbody>
+              </table>
+            </div>
+            {disease.guidelineComparison.note ? <p className="em-footnote">{disease.guidelineComparison.note}</p> : null}
+          </>
+        ) : disease.granularPathway ? <TreatmentDetails plans={disease.granularPathway.Treatment_Plan} /> : null}
+
+        {pearls.length || pitfalls.length ? (
+          <div className="em-two-col">
+            {pearls.length ? <div className="em-box em-pearls"><h3>Key points</h3><List items={pearls} /></div> : null}
+            {pitfalls.length ? <div className="em-box em-pitfalls"><h3>Pitfalls</h3><List items={pitfalls} /></div> : null}
+          </div>
+        ) : null}
+
+        <h3>Disposition and follow-up</h3>
+        <div className="em-two-col">
+          <div><h4>Discharge when</h4><List items={care.dischargeCriteria} /></div>
+          <div><h4>Before they leave</h4><List items={[...care.patientEducation, ...care.lifestyleAndDiet, ...care.mdtReferrals]} /></div>
+        </div>
+        <p className="em-followup"><strong>Follow-up:</strong> {care.followUpPlan}</p>
+      </section>
+
+      {disease.evidenceAudit ? <details className="em-more"><summary>Evidence and review status</summary><ClinicalEvidenceAudit audit={disease.evidenceAudit} /></details> : null}
+      {disease.teaching?.references?.length ? <SourceCitation sources={disease.teaching.references} /> : null}
+    </div>
+  );
+}

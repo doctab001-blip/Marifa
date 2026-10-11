@@ -33,6 +33,10 @@ export const InvestigationSchema = z
     targetCondition: nonEmptyText,
     expectedFinding: nonEmptyText,
     clinicalRationale: nonEmptyText,
+    // Optional emergency-reference fields. Reference ranges are laboratory-specific.
+    normalValue: nonEmptyText.optional(),
+    pros: nonEmptyTextArray.optional(),
+    cons: nonEmptyTextArray.optional(),
     references: z.array(z.object({
       title: nonEmptyText,
       edition: nonEmptyText,
@@ -106,6 +110,18 @@ export const TeachingGuideSchema = z.object({
   references: z.array(TeachingReferenceSchema).min(1).optional(),
 }).strict();
 
+/** Side-by-side comparison of guidelines that disagree; conflicts are shown, never merged. */
+export const GuidelineComparisonSchema = z.object({
+  title: nonEmptyText,
+  columns: z.array(nonEmptyText).min(2).max(4),
+  rows: z.array(z.object({ parameter: nonEmptyText, values: nonEmptyTextArray }).strict()).min(1),
+  note: nonEmptyText.optional(),
+}).strict().superRefine((value, ctx) => {
+  value.rows.forEach((row, index) => {
+    if (row.values.length !== value.columns.length) ctx.addIssue({ code: "custom", path: ["rows", index, "values"], message: "Each row needs one value per column" });
+  });
+});
+
 /**
  * Canonical six-tier disease-management payload stored in guideline_versions.content.
  * Every nested object is strict so ingestion fails on misspelled or undocumented keys.
@@ -149,6 +165,7 @@ export const DiseaseDetailSchema = z
         symptoms: nonEmptyTextArray,
         physicalSigns: nonEmptyTextArray,
         redFlags: nonEmptyTextArray,
+        precipitants: nonEmptyTextArray.optional(),
       })
       .strict(),
     differentials: z
@@ -175,6 +192,9 @@ export const DiseaseDetailSchema = z
     }).strict().optional(),
     // Additive strict pathway payload. Legacy governed versions remain readable unchanged.
     granularPathway: ClinicalPathwaySchema.optional(),
+    // Optional emergency-reference blocks; legacy versions without them remain valid.
+    diagnosticCriteria: z.array(z.object({ criterion: nonEmptyText, threshold: nonEmptyText }).strict()).min(1).optional(),
+    guidelineComparison: GuidelineComparisonSchema.optional(),
     // Additive teaching and guiding layer; legacy versions without it remain valid.
     teaching: TeachingGuideSchema.optional(),
     nonClinicalManagement: z

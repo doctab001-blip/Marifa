@@ -1,0 +1,746 @@
+{
+  "id": "625f0d83-3863-47f9-a64e-55c0355f3240",
+  "title": "Diabetic Ketoacidosis",
+  "specialty": "Endocrinology / Emergency Medicine",
+  "authority": "SHC",
+  "status": "under_review",
+  "version": "emergency-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Adults (SDCPG adult pathway: above 14 years and over 50 kg). Not for children, pregnancy (immediate obstetric input) or haemodynamically unstable patients (ICU). Every number on this page was checked against SDCPG 2021 pp. 71–74, the 2024 international consensus or the 2009 ADA consensus. Clinical approval is pending.",
+    "findings": [
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "SDCPG and the 2024 consensus differ on several thresholds; both are shown in the comparison table and a local protocol must choose one.",
+      "SFDA register (11 Oct 2026): soluble human insulin, insulin glargine, potassium chloride, sodium bicarbonate 8.4%, 0.9% sodium chloride, dextrose and glucagon are registered; no potassium phosphate injection was found."
+    ],
+    "unverifiedSections": [
+      "LMWH prophylaxis dose (use the local VTE protocol)",
+      "Local choice between SDCPG and consensus thresholds"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "625f0d83-3863-47f9-a64e-55c0355f3240",
+      "884332ea-526d-4d69-a948-c42077c24cc7"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "DKA is a state of cellular starvation and runaway catabolism caused by two failures at once: absolute or relative insulin deficiency and an excess of counter-regulatory hormones (glucagon, catecholamines, cortisol and growth hormone).",
+    "keyMechanisms": [
+      "Hyperglycaemia and osmotic diuresis: without insulin, tissues cannot take up glucose while glucagon drives hepatic gluconeogenesis and glycogenolysis. Glucose spills into the urine and pulls water, sodium and potassium with it, causing profound dehydration.",
+      "Lipolysis and ketogenesis: fat is broken down to free fatty acids, which the liver oxidises to ketone bodies (β-hydroxybutyrate, acetoacetate and acetone).",
+      "Acidosis: ketoacids consume bicarbonate, producing a high anion gap metabolic acidosis. Kussmaul breathing is the respiratory compensation.",
+      "Potassium paradox: acidosis and insulin deficiency shift potassium out of cells, so serum potassium is often normal or high despite a total-body deficit of 3–6 mmol/kg. Insulin drives it back in, so check potassium before insulin.",
+      "Euglycaemic DKA: about 10% present with glucose below 11.1 mmol/L, most often with SGLT2 inhibitors, reduced intake, pregnancy or alcohol.",
+      "HHS is the other end of the spectrum: enough insulin to prevent ketosis but not hyperglycaemia, so dehydration and hyperosmolality dominate. One-third of crises are mixed DKA–HHS."
+    ],
+    "references": [
+      {
+        "title": "Hyperglycaemic crises in adults with diabetes: a consensus report",
+        "edition": "Diabetologia 2024, Sections 2–3",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11343900/"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Onset: hours to a few days (HHS: days to weeks).",
+      "Volume depletion: polyuria, polydipsia, weight loss, weakness.",
+      "Gastrointestinal: nausea, vomiting and abdominal pain in more than half. Abdominal pain correlates with the severity of acidosis and can mimic a surgical abdomen; if it does not settle as the acidosis corrects, look for a surgical cause.",
+      "Neurological: most patients are alert; drowsiness, stupor or coma occur in severe DKA and are more common in HHS."
+    ],
+    "physicalSigns": [
+      "Dehydration: dry mucosa, sunken eyes, poor skin turgor, tachycardia, hypotension, shock in severe cases.",
+      "Respiratory: Kussmaul respiration (deep, rapid breathing) and a fruity acetone breath.",
+      "Signs of the trigger: chest, urine, skin or foot infection; features of myocardial infarction or an acute abdomen.",
+      "Record GCS: below 12 is an SDCPG severity marker."
+    ],
+    "precipitants": [
+      "Infection: the most common trigger (urinary tract infection and pneumonia most often).",
+      "Insulin omission or insufficient insulin: the main cause of recurrent DKA.",
+      "New-onset type 1 diabetes.",
+      "SGLT2 inhibitors: can cause euglycaemic DKA.",
+      "Acute illness: myocardial infarction, stroke, pancreatitis, surgery; also alcohol and drugs that affect carbohydrate metabolism."
+    ],
+    "redFlags": [
+      "SDCPG markers for HDU/ICU: GCS below 12; pH below 7.1; ketones above 6 mmol/L; bicarbonate below 5 mmol/L; potassium below 3.3 or above 6.0 mmol/L; systolic BP below 90 mmHg; SpO2 below 92% on air; pulse above 100 or below 60; urine output below 0.5 mL/kg/h or AKI",
+      "Potassium below 3.3 mmol/L (SDCPG) or below 3.5 mmol/L (consensus): hold insulin and replace potassium first",
+      "New headache, confusion or falling consciousness during treatment: suspect cerebral oedema; senior help and early brain imaging",
+      "Pregnancy, heart failure, dialysis or frail older adult: standard fluid volumes are unsafe"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "HHS",
+      "distinguishingFeatures": "Glucose at least 33.3 mmol/L, effective osmolality above 300 mOsm/kg, ketones below 3.0 mmol/L, pH at least 7.3 and bicarbonate at least 15 mmol/L. Older patient, slower onset, confusion common."
+    },
+    {
+      "condition": "Mixed DKA–HHS",
+      "distinguishingFeatures": "Hyperosmolar and ketotic (ketones at least 3.0 mmol/L or pH below 7.30 or bicarbonate below 18 mmol/L). Treat as DKA but lower osmolality slowly."
+    },
+    {
+      "condition": "Starvation ketosis",
+      "distinguishingFeatures": "Intake below about 500 kcal/day; glucose usually not high and acidosis mild."
+    },
+    {
+      "condition": "Alcoholic ketoacidosis",
+      "distinguishingFeatures": "Heavy alcohol use with a recent binge, vomiting and starvation; glucose may be normal or low."
+    },
+    {
+      "condition": "Ketosis of pregnancy or hyperemesis",
+      "distinguishingFeatures": "Pregnant, vomiting; mixed acid–base picture. Involve obstetrics immediately."
+    },
+    {
+      "condition": "Surgical abdomen, sepsis or MI as the cause",
+      "distinguishingFeatures": "Pain that persists after acidosis corrects, focal abdominal signs, raised lipase with imaging evidence of pancreatitis, ischaemic ECG or raised troponin."
+    }
+  ],
+  "diagnosticCriteria": [
+    {
+      "criterion": "D — Diabetes / hyperglycaemia",
+      "threshold": "Glucose at least 11.1 mmol/L, OR known diabetes at any glucose"
+    },
+    {
+      "criterion": "K — Ketosis",
+      "threshold": "Blood β-hydroxybutyrate at least 3.0 mmol/L, OR urine ketones 2+ or more"
+    },
+    {
+      "criterion": "A — Acidosis",
+      "threshold": "pH below 7.3 and/or bicarbonate below 18 mmol/L (consensus) — SDCPG uses below 15 mmol/L"
+    },
+    {
+      "criterion": "Severity (consensus)",
+      "threshold": "Mild: pH 7.25–7.30 or HCO3 15–18, alert · Moderate: pH 7.0–7.25 or HCO3 10–15, alert/drowsy · Severe: pH below 7.0 or HCO3 below 10, ketones above 6, stupor/coma → ICU"
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Capillary / plasma glucose",
+        "modalityTarget": "Arrival, then every 1–2 h (SDCPG: hourly)",
+        "targetCondition": "Hyperglycaemia",
+        "normalValue": "Fasting below 5.6 mmol/L (hypoglycaemia below 3.9)",
+        "expectedFinding": "At least 11.1 mmol/L. Can be below 11.1 in euglycaemic DKA (SGLT2 inhibitor, fasting, pregnancy).",
+        "clinicalRationale": "Diagnostic criterion. During treatment: add dextrose when it falls to 13–14 mmol/L; below 4.0 mmol/L treat hypoglycaemia.",
+        "references": [
+          {
+            "title": "Consensus report",
+            "edition": "2024, Fig. 2 and Section 4",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11343900/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Blood β-hydroxybutyrate (capillary or serum)",
+        "modalityTarget": "Arrival, then every 4 h until resolution",
+        "targetCondition": "Ketosis",
+        "normalValue": "Below 0.6 mmol/L",
+        "expectedFinding": "At least 3.0 mmol/L is diagnostic; above 6.0 mmol/L is severe.",
+        "clinicalRationale": "Best marker of diagnosis and resolution (below 0.6 mmol/L). Urine ketones measure acetoacetate, lag behind and can mislead; captopril and valproate cause false positives.",
+        "references": [
+          {
+            "title": "Consensus report",
+            "edition": "2024, Section 3",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11343900/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Venous blood gas (pH, bicarbonate)",
+        "modalityTarget": "Arrival, then every 4 h until resolution",
+        "targetCondition": "Metabolic acidosis",
+        "normalValue": "pH 7.35–7.45; bicarbonate 22–29 mmol/L",
+        "expectedFinding": "pH below 7.3 and/or bicarbonate below 18 mmol/L (SDCPG: below 15).",
+        "clinicalRationale": "Grades severity, sets level of care and tracks resolution (pH at least 7.3 or bicarbonate at least 18 mmol/L). Bicarbonate therapy only if pH below 7.0 (SDCPG: 6.9).",
+        "pros": [
+          "Faster and less painful than arterial sampling, with lower complication risk",
+          "Venous pH and bicarbonate are what the consensus uses for diagnosis, monitoring and resolution"
+        ],
+        "cons": [
+          "Does not measure oxygenation; use pulse oximetry, or an arterial gas in shock, severe respiratory distress or a suspected mixed acid–base disorder"
+        ],
+        "references": [
+          {
+            "title": "Consensus report",
+            "edition": "2024, Section 4",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11343900/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Potassium",
+        "modalityTarget": "Before insulin, 2 h after starting insulin, then every 4 h",
+        "targetCondition": "Potassium deficit",
+        "normalValue": "3.5–5.0 mmol/L",
+        "expectedFinding": "Often normal or high at presentation despite a total-body deficit; falls by 1–2 mmol/L with treatment.",
+        "clinicalRationale": "Above 5.2 (SDCPG) / 5.0 (consensus): no added potassium. 3.3–5.2: add 40 mmol/L (SDCPG) or 20–30 mmol/L (consensus). Below 3.3 (SDCPG) / 3.5 (consensus): hold insulin and replace. Target 4–5 mmol/L.",
+        "references": [
+          {
+            "title": "SDCPG",
+            "edition": "2021, pp. 72–74",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Sodium (corrected for glucose)",
+        "modalityTarget": "Arrival, then every 4 h",
+        "targetCondition": "Water and sodium loss",
+        "normalValue": "135–145 mmol/L",
+        "expectedFinding": "Often low because glucose draws water out of cells (translocational, not true hyponatraemia).",
+        "clinicalRationale": "Correct for glucose: add about 1.6 mmol/L of sodium for every 5.6 mmol/L of glucose above normal (SDCPG: add 3 per 10 mmol/L above 5.5). A rising sodium as glucose falls is expected and is not a reason for hypotonic fluid.",
+        "references": [
+          {
+            "title": "Consensus report",
+            "edition": "2024, Section 4 (fluids)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11343900/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Anion gap = Na − (Cl + HCO3)",
+        "modalityTarget": "Arrival",
+        "targetCondition": "High anion gap acidosis",
+        "normalValue": "Up to 12 mmol/L",
+        "expectedFinding": "Above 12 mmol/L.",
+        "clinicalRationale": "Supports ketoacidosis; useful where ketone testing is unavailable. Do not use it to judge resolution: large volumes of 0.9% saline cause a hyperchloraemic normal-gap acidosis.",
+        "references": [
+          {
+            "title": "Consensus report",
+            "edition": "2024, Section 3",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11343900/"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Urea and creatinine",
+        "modalityTarget": "Arrival, then every 4 h; daily after resolution",
+        "targetCondition": "Acute kidney injury",
+        "normalValue": "Creatinine about 60–110 µmol/L",
+        "expectedFinding": "Raised in up to half (pre-renal AKI).",
+        "clinicalRationale": "Usually recovers with fluids. Oliguria or AKI is an SDCPG severity marker and makes potassium replacement riskier.",
+        "references": [
+          {
+            "title": "Consensus report",
+            "edition": "2024, Table 3",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11343900/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Serum osmolality (2 × Na + glucose)",
+        "modalityTarget": "Arrival; every 4 h if hyperosmolar",
+        "targetCondition": "HHS or mixed DKA–HHS",
+        "normalValue": "275–295 mOsm/kg",
+        "expectedFinding": "Above 300 mOsm/kg suggests a hyperosmolar component.",
+        "clinicalRationale": "If raised, lower osmolality by no more than 3–8 mOsm/kg/h and sodium by no more than 10 mmol/L in 24 h.",
+        "references": [
+          {
+            "title": "Consensus report",
+            "edition": "2024, Fig. 2b and Section 4",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11343900/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count",
+        "modalityTarget": "Arrival",
+        "targetCondition": "Infection",
+        "normalValue": "WBC 4–11 × 10⁹/L",
+        "expectedFinding": "WBC 10–15 × 10⁹/L is usual in DKA from stress hormones.",
+        "clinicalRationale": "Do not assume infection from a modest rise. WBC above 25 × 10⁹/L suggests infection and needs a search.",
+        "references": [
+          {
+            "title": "Hyperglycemic crises in adult patients with diabetes (ADA consensus)",
+            "edition": "Diabetes Care 2009",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2699725/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Phosphate, magnesium, calcium",
+        "modalityTarget": "Arrival; phosphate every 4 h",
+        "targetCondition": "Electrolyte losses",
+        "normalValue": "Phosphate 0.8–1.5 mmol/L",
+        "expectedFinding": "Phosphate often normal at first, then falls with insulin.",
+        "clinicalRationale": "Replace phosphate only if below 1.0 mmol/L with muscle weakness or respiratory or cardiac compromise.",
+        "references": [
+          {
+            "title": "Consensus report",
+            "edition": "2024, Section 4",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11343900/"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "ECG ± troponin",
+        "modalityTarget": "Arrival",
+        "targetCondition": "Hyperkalaemia or MI as trigger",
+        "normalValue": "Sinus rhythm, normal T waves",
+        "expectedFinding": "Peaked T waves with high potassium; ischaemic changes if MI is the trigger.",
+        "clinicalRationale": "Attach a cardiac monitor and repeat the ECG if potassium is below 3.3 mmol/L (SDCPG order sheet); potassium above 6.0 mmol/L is an SDCPG severity marker.",
+        "references": [
+          {
+            "title": "Consensus report",
+            "edition": "2024, Section 3",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11343900/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Infection screen; lipase; pregnancy test; HbA1c",
+        "modalityTarget": "Arrival, guided by history",
+        "targetCondition": "Trigger and baseline control",
+        "expectedFinding": "Positive cultures or urinalysis; raised lipase; positive pregnancy test; high HbA1c.",
+        "clinicalRationale": "Blood and urine cultures if infection is suspected. Lipase can rise in DKA without pancreatitis, so interpret with imaging. A high HbA1c means the insulin regimen should be changed before discharge.",
+        "references": [
+          {
+            "title": "Hyperglycemic crises in adult patients with diabetes (ADA consensus)",
+            "edition": "Diabetes Care 2009",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2699725/"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Chest X-ray",
+        "modalityTarget": "Respiratory symptoms, hypoxia, or no obvious trigger",
+        "targetCondition": "Pneumonia",
+        "expectedFinding": "Consolidation.",
+        "clinicalRationale": "Pneumonia is a leading trigger; listed on the SDCPG adult order sheet.",
+        "references": [
+          {
+            "title": "SDCPG",
+            "edition": "2021, p. 74",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "CT head (non-contrast)",
+        "modalityTarget": "Altered consciousness out of proportion to the acidosis, focal signs, or deterioration during treatment",
+        "targetCondition": "Cerebral oedema or stroke",
+        "expectedFinding": "Cerebral oedema (rare in adults, about 30% mortality) or a stroke as the trigger.",
+        "clinicalRationale": "The consensus advises a low threshold for brain imaging when mental status changes.",
+        "references": [
+          {
+            "title": "Consensus report",
+            "edition": "2024, Table 3",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11343900/"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Abdominal ultrasound or CT",
+        "modalityTarget": "Abdominal pain that persists after the acidosis has started to correct",
+        "targetCondition": "Surgical cause",
+        "expectedFinding": "Appendicitis, cholecystitis, pancreatitis or another surgical cause.",
+        "clinicalRationale": "DKA pain should settle with treatment; persistent pain needs further evaluation.",
+        "references": [
+          {
+            "title": "Consensus report",
+            "edition": "2024, Section 3",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11343900/"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "assess",
+      "title": "Assess, confirm and decide level of care",
+      "timeframe": "First 15 minutes",
+      "actions": [
+        "ABC, GCS, IV access, weight. Send glucose, ketones, VBG, U&E, FBC before treatment.",
+        "Confirm D + K + A. Grade severity. Stop SGLT2 inhibitors.",
+        "Severe DKA, any SDCPG marker, HHS or critical trigger → HDU/ICU. Mild–moderate and alert → ED or step-down with close nursing."
+      ],
+      "branches": [
+        {
+          "condition": "Systolic BP below 90 or shock",
+          "actions": [
+            "ICU; give isotonic saline until BP stabilises. The SDCPG order sheet does not apply."
+          ]
+        },
+        {
+          "condition": "Pregnant, under 14 years or 50 kg or less",
+          "actions": [
+            "Use the obstetric or paediatric DKA pathway; do not use the adult order sheet."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fluids",
+      "title": "Fluids first",
+      "timeframe": "Start immediately",
+      "actions": [
+        "0.9% NaCl 1 L over hour 1 (no potassium).",
+        "Then 1 L over the next 2 h (no potassium), then 1 L over the next 4 h with potassium, then 100–250 mL/h (SDCPG order sheet; adults over 50 kg, SBP at least 90).",
+        "Consensus alternative: 0.9% NaCl or balanced crystalloid 500–1000 mL/h for 2–4 h; correct the deficit over 24–48 h."
+      ],
+      "branches": [
+        {
+          "condition": "Older, heart failure, dialysis or pregnant",
+          "actions": [
+            "250 mL boluses with frequent reassessment."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "potassium-insulin",
+      "title": "Potassium gate, then fixed-rate insulin",
+      "timeframe": "Once potassium is known",
+      "actions": [
+        "Never start insulin before the potassium result.",
+        "Fixed-rate IV soluble insulin 0.1 unit/kg/h (50 units in 50 mL 0.9% NaCl). No bolus (SDCPG).",
+        "Continue the patient's usual long-acting basal insulin.",
+        "Recheck potassium 2 h after insulin starts, then every 4 h; keep it at 4–5 mmol/L."
+      ],
+      "branches": [
+        {
+          "condition": "K above 5.2 (SDCPG) / 5.0 (consensus)",
+          "actions": [
+            "No potassium; recheck in 2 h."
+          ]
+        },
+        {
+          "condition": "K 3.3–5.2 mmol/L",
+          "actions": [
+            "Add 40 mmol KCl per litre, maximum 10 mmol/h (SDCPG). Consensus: 20–30 mmol/L."
+          ]
+        },
+        {
+          "condition": "K below 3.3 (SDCPG) / 3.5 (consensus)",
+          "actions": [
+            "Hold insulin, cardiac monitor, ECG.",
+            "Replace potassium (SDCPG: 40 mmol in 500 mL over 4 h; consensus: 10 mmol/h); restart insulin when above threshold."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dextrose",
+      "title": "As glucose falls: add dextrose, keep insulin running",
+      "timeframe": "Usually 4–8 h",
+      "actions": [
+        "Insulin clears ketones; never stop it because glucose is normal.",
+        "SDCPG: glucose below 13 mmol/L → 5% dextrose in 0.9% NaCl at 100–250 mL/h, keep insulin at 0.1 unit/kg/h; reduce to 0.05 only if glucose is below 6 mmol/L.",
+        "Consensus: glucose below 13.9 mmol/L → add 5–10% dextrose and reduce insulin to 0.05 unit/kg/h; aim for glucose about 11 mmol/L."
+      ],
+      "branches": [
+        {
+          "condition": "Glucose below 4.0 mmol/L",
+          "actions": [
+            "25 mL of 50% dextrose; recheck and review the infusion."
+          ]
+        },
+        {
+          "condition": "Euglycaemic DKA",
+          "actions": [
+            "Start 5–10% dextrose with the saline from the outset so insulin can be given."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "adjuncts",
+      "title": "Only if indicated: bicarbonate, phosphate, VTE prophylaxis",
+      "timeframe": "Review with each VBG",
+      "actions": [
+        "No routine bicarbonate: no benefit, and risk of hypokalaemia and cerebral oedema.",
+        "No routine phosphate.",
+        "Prophylactic LMWH unless contraindicated (local VTE protocol)."
+      ],
+      "branches": [
+        {
+          "condition": "pH below 7.0 (consensus) / 6.9 (SDCPG)",
+          "actions": [
+            "Consensus: 100 mmol 8.4% sodium bicarbonate in 400 mL sterile water every 2 h until pH above 7.0. SDCPG: 50 mmol in 200 mL at 200 mL/h; hold if K below 3.3."
+          ]
+        },
+        {
+          "condition": "Phosphate below 1.0 mmol/L with weakness or cardiorespiratory compromise",
+          "actions": [
+            "20–30 mmol potassium phosphate in the fluids (check local availability; not found in the SFDA register)."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "resolution",
+      "title": "Resolution and switch to subcutaneous insulin",
+      "timeframe": "When criteria met and eating",
+      "actions": [
+        "Resolved: ketones below 0.6 mmol/L AND pH at least 7.3 or bicarbonate at least 18 mmol/L, and eating and drinking. Do not use urine ketones or the anion gap.",
+        "Give subcutaneous insulin BEFORE stopping the infusion: SDCPG overlaps the first rapid-acting dose by 1 h; consensus gives basal insulin 1–2 h before stopping.",
+        "Insulin-naive: total daily dose 0.5–0.6 unit/kg/day as basal-bolus (about 0.3 unit/kg/day if frail or kidney failure). Known diabetes: usual dose unless control was poor."
+      ],
+      "branches": [
+        {
+          "condition": "Low bicarbonate but ketones below 0.6 after lots of saline",
+          "actions": [
+            "Likely hyperchloraemic acidosis, not persistent DKA; do not delay the switch for this alone."
+          ]
+        }
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "note": "Adults over 50 kg. Doses as stated in SDCPG 2021 or the 2024 consensus; where they differ, both are shown. SFDA registration checked 11 Oct 2026.",
+    "regimens": [
+      {
+        "indication": "Resuscitation",
+        "patientGroup": "Adults, SBP at least 90",
+        "genericName": "0.9% sodium chloride",
+        "dose": "1 L over 1 h; 1 L over 2 h; 1 L over 4 h; then 100–250 mL/h",
+        "route": "IV",
+        "frequency": "Continuous",
+        "duration": "Deficit corrected over 24–48 h",
+        "adjustments": [
+          "250 mL boluses if older, heart failure, dialysis or pregnant"
+        ],
+        "monitoring": [
+          "BP, HR, fluid balance, sodium"
+        ],
+        "sourceTitle": "SDCPG",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf",
+        "sourceEdition": "SDCPG 2021 p. 74"
+      },
+      {
+        "indication": "Clear ketones",
+        "patientGroup": "Adults once K at least 3.3 (SDCPG) / 3.5 (consensus)",
+        "genericName": "Soluble (regular) human insulin",
+        "dose": "0.1 unit/kg/h fixed rate; 50 units in 50 mL 0.9% NaCl; no bolus",
+        "route": "IV",
+        "frequency": "Continuous",
+        "duration": "Until resolved and SC insulin overlapped",
+        "adjustments": [
+          "Reduce to 0.05 unit/kg/h: consensus at glucose below 13.9; SDCPG at glucose below 6",
+          "Bolus 0.1 unit/kg IV/IM only if IV access delayed (consensus)"
+        ],
+        "monitoring": [
+          "Glucose every 1–2 h",
+          "Ketones and VBG every 4 h"
+        ],
+        "sourceTitle": "SDCPG; consensus",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf",
+        "sourceEdition": "SDCPG 2021 pp. 72–74; Consensus 2024 §4"
+      },
+      {
+        "indication": "Potassium replacement",
+        "patientGroup": "Urine output present; K 3.3–5.2",
+        "genericName": "Potassium chloride in IV fluid",
+        "dose": "40 mmol/L (SDCPG) or 20–30 mmol/L (consensus); max 10 mmol/h",
+        "route": "IV",
+        "frequency": "Adjust to each result",
+        "duration": "Until resolved",
+        "adjustments": [
+          "None if K above 5.2",
+          "K below 3.3: hold insulin; 40 mmol in 500 mL over 4 h (SDCPG) or 10 mmol/h (consensus)",
+          "SDCPG narrative allows up to 40 mmol/h but its order sheet caps at 10 mmol/h"
+        ],
+        "monitoring": [
+          "K at 2 h, then every 4 h",
+          "Cardiac monitor if K below 3.3"
+        ],
+        "sourceTitle": "SDCPG; consensus",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf",
+        "sourceEdition": "SDCPG 2021 pp. 72–74; Consensus 2024 §4"
+      },
+      {
+        "indication": "Prevent hypoglycaemia while insulin runs",
+        "patientGroup": "Glucose below 13 (SDCPG) / 13.9 (consensus); from the start in euglycaemic DKA",
+        "genericName": "5% dextrose in 0.9% NaCl (consensus: 5–10%)",
+        "dose": "100–250 mL/h",
+        "route": "IV",
+        "frequency": "Continuous",
+        "duration": "Until resolved",
+        "adjustments": [
+          "Glucose below 4.0: 25 mL 50% dextrose"
+        ],
+        "monitoring": [
+          "Glucose every 1–2 h"
+        ],
+        "sourceTitle": "SDCPG; consensus",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf",
+        "sourceEdition": "SDCPG 2021 p. 74; Consensus 2024 §4"
+      },
+      {
+        "indication": "Severe acidosis only",
+        "patientGroup": "pH below 7.0 (consensus) / 6.9 (SDCPG)",
+        "genericName": "Sodium bicarbonate 8.4%",
+        "dose": "100 mmol in 400 mL sterile water (consensus) or 50 mmol in 200 mL at 200 mL/h (SDCPG)",
+        "route": "IV",
+        "frequency": "Every 2 h while below threshold",
+        "duration": "Until pH above threshold",
+        "adjustments": [
+          "Hold if K below 3.3"
+        ],
+        "monitoring": [
+          "K every 2 h",
+          "VBG"
+        ],
+        "sourceTitle": "Consensus; SDCPG",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11343900/",
+        "sourceEdition": "Consensus 2024 §4; SDCPG 2021 p. 73"
+      }
+    ]
+  },
+  "guidelineComparison": {
+    "title": "Saudi SDCPG vs international consensus: where they differ",
+    "columns": [
+      "Saudi SDCPG 2021",
+      "International consensus 2024"
+    ],
+    "rows": [
+      {
+        "parameter": "Bicarbonate diagnostic threshold",
+        "values": [
+          "Below 15 mmol/L",
+          "Below 18 mmol/L"
+        ]
+      },
+      {
+        "parameter": "Hold insulin if potassium",
+        "values": [
+          "Below 3.3 mmol/L",
+          "Below 3.5 mmol/L"
+        ]
+      },
+      {
+        "parameter": "Insulin bolus",
+        "values": [
+          "No bolus (order sheet)",
+          "Only if IV access is delayed"
+        ]
+      },
+      {
+        "parameter": "Add dextrose at glucose",
+        "values": [
+          "Below 13 mmol/L (order sheet; narrative says 15)",
+          "Below 13.9 mmol/L"
+        ]
+      },
+      {
+        "parameter": "Reduce insulin to 0.05 unit/kg/h",
+        "values": [
+          "Only if glucose below 6 mmol/L",
+          "When glucose below 13.9 mmol/L, to prevent hypoglycaemia"
+        ]
+      },
+      {
+        "parameter": "Bicarbonate therapy",
+        "values": [
+          "pH below 6.9: 50 mmol",
+          "pH below 7.0: 100 mmol"
+        ]
+      },
+      {
+        "parameter": "Resolution",
+        "values": [
+          "HCO3 at least 18 and/or pH at least 7.3, closed anion gap, eating",
+          "Ketones below 0.6 and pH at least 7.3 or HCO3 at least 18; anion gap not used"
+        ]
+      },
+      {
+        "parameter": "IV–SC overlap",
+        "values": [
+          "1 h (rapid-acting)",
+          "1–2 h (basal)"
+        ]
+      }
+    ],
+    "note": "Pick one protocol locally and apply it consistently; do not mix thresholds in one patient. Keeping insulin at 0.1 unit/kg/h (SDCPG) gives more insulin and needs dextrose and close glucose checks; the consensus reduces the rate because hypoglycaemia occurs in 16–28% of treated DKA."
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Diagnose, grade and treat adult DKA in the emergency department."
+    ],
+    "keyPoints": [
+      "D + K + A: all three needed.",
+      "Fluids → check potassium → insulin 0.1 unit/kg/h. Never reverse the order.",
+      "Treat the ketones, not the glucose: add dextrose, keep insulin running.",
+      "Always look for the trigger, most often infection or missed insulin.",
+      "Discharge only with sick-day rules, ketone testing, insulin supply and follow-up in 2–4 weeks. SDCPG: people with type 2 diabetes who had unexplained ketoacidosis in the 3 months before Ramadan should not fast."
+    ],
+    "pitfalls": [
+      "Starting insulin before the potassium result.",
+      "Stopping or cutting insulin because glucose is normal while ketones are still high.",
+      "Missing euglycaemic DKA in a patient on an SGLT2 inhibitor.",
+      "Calling infection on a WBC of 12 (stress leucocytosis is expected).",
+      "Using urine ketones or the anion gap to call resolution.",
+      "Stopping IV insulin without overlapping SC insulin → rebound DKA.",
+      "Routine bicarbonate.",
+      "Standard fluid volumes in the elderly, heart failure or dialysis."
+    ],
+    "references": [
+      {
+        "title": "Saudi Diabetes Clinical Practice Guidelines (SNDC / Saudi Health Council)",
+        "edition": "1st ed. 2021",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf",
+        "locator": "pp. 71–74, 90"
+      },
+      {
+        "title": "Hyperglycaemic crises in adults with diabetes: a consensus report (ADA/EASD/JBDS/AACE/DTS)",
+        "edition": "Diabetologia 2024;67:1455–1479",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11343900/"
+      },
+      {
+        "title": "Hyperglycemic crises in adult patients with diabetes (ADA consensus)",
+        "edition": "Diabetes Care 2009;32:1335–1343",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2699725/",
+        "locator": "Laboratory findings (leucocytosis, lipase)"
+      },
+      {
+        "title": "SFDA Saudi Drug Information System",
+        "edition": "Accessed 11 Oct 2026",
+        "url": "https://sdi.sfda.gov.sa/"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Sick-day rules; never omit basal insulin; injection technique.",
+      "Home glucose and ketone testing; when to seek help.",
+      "SGLT2 inhibitors: not restarted routinely after DKA in type 2 diabetes; not recommended in type 1."
+    ],
+    "lifestyleAndDiet": [
+      "Eating and drinking normally before the switch to SC insulin."
+    ],
+    "mdtReferrals": [
+      "Diabetes team and educator before discharge.",
+      "Social services if insulin access is a barrier.",
+      "Mental health screen on admission and before discharge."
+    ],
+    "dischargeCriteria": [
+      "DKA resolved, eating and drinking, on SC insulin.",
+      "Trigger treated or followed up.",
+      "Education done; insulin, meter and ketone strips supplied; contact number given.",
+      "Regimen changed before discharge if control was poor or a drug contributed."
+    ],
+    "followUpPlan": "Diabetes clinic within 2–4 weeks: this reduces recurrent DKA."
+  }
+}
