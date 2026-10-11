@@ -73,7 +73,7 @@ export async function getApprovedDiseaseGuidelines(filters: { speciality?: strin
         .select("id,title,specialty,status,source_type,guideline_versions!inner(content)")
         .eq("id", reviewId)
         .is("organization_id", null)
-        .eq("status", "approved")
+        .in("status", [...approvedStatuses])
         .eq("guideline_versions.is_current", false)
         .eq("guideline_versions.status", "under_review");
       if (reviewVersion) reviewQuery = reviewQuery.eq("guideline_versions.version", reviewVersion);
@@ -106,7 +106,7 @@ export async function getApprovedDiseaseGuideline(id: string): Promise<DiseaseDe
         .select("id,guideline_versions!inner(content,source_title,source_url)")
         .eq("id", id)
         .is("organization_id", null)
-        .eq("status", "approved")
+        .in("status", [...approvedStatuses])
         .eq("guideline_versions.is_current", false)
         .eq("guideline_versions.status", "under_review");
       const reviewVersion = clinicalReviewOverrides[id];
