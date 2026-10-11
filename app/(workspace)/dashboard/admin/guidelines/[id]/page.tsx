@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, BookOpenCheck, Save } from "lucide-react";
 import { getDraftGuideline } from "@/lib/admin/data";
-import { saveDraftGuideline } from "../actions";
+import { approveGuidelineVersion, saveDraftGuideline } from "../actions";
 import { InvestigationCards } from "@/components/investigation-cards";
 
 const messages: Record<string, string> = {
@@ -18,10 +18,10 @@ export default async function EditDraftGuidelinePage({
   searchParams,
 }: {
   params: Promise<{ id: string }>;
-  searchParams: Promise<{ saved?: string; error?: string }>;
+  searchParams: Promise<{ saved?: string; error?: string; version?: string }>;
 }) {
   const [{ id }, query] = await Promise.all([params, searchParams]);
-  const result = await getDraftGuideline(id);
+  const result = await getDraftGuideline(id, query.version);
   if (result.state === "not-found") notFound();
 
   return (
@@ -38,7 +38,16 @@ export default async function EditDraftGuidelinePage({
         <>
           <header className="admin-section-heading admin-draft-heading">
             <div><p className="eyebrow">Clinical content · {result.isLive ? "Published topic" : "Draft"}</p><h2>Edit {result.disease.title}</h2><p>{result.disease.pillar} · {result.disease.specialty}</p></div>
-            <span className={`admin-queue-status ${result.isLive ? "status-published" : "status-draft"}`}>{result.isLive ? "Published to all site users" : "Draft · not approved"}</span>
+            <div className="admin-header-actions">
+              <span className={`admin-queue-status ${result.isLive ? "status-published" : "status-draft"}`}>{result.isLive ? "Published to all site users" : "Draft · not approved"}</span>
+              {!result.isLive && <a className="ui-button ui-button-secondary" href="#guideline-content">Edit topic</a>}
+              {result.canApprove && <form action={approveGuidelineVersion}>
+                <input type="hidden" name="id" value={id} />
+                <input type="hidden" name="versionId" value={result.versionId} />
+                <input type="hidden" name="destination" value="drafts" />
+                <button className="ui-button ui-button-primary" type="submit">Approve version</button>
+              </form>}
+            </div>
           </header>
           {query.saved === "1" && <p className="admin-save-message" role="status">{result.isLive ? "Topic saved live." : "Draft saved. Its status remains draft."}</p>}
           {query.error && messages[query.error] && <p className="admin-save-error" role="alert">{messages[query.error]}</p>}
@@ -50,10 +59,11 @@ export default async function EditDraftGuidelinePage({
           <details className="card admin-source-summary"><summary>Review the six-part topic</summary><div><h3>1. Topic and mechanisms</h3><p>{result.disease.pathophysiology.summary}</p><h3>2. Presentation</h3><ul>{result.disease.presentation.symptoms.map((item) => <li key={item}>{item}</li>)}</ul><h3>3. Differential diagnoses</h3><ul>{result.disease.differentials.map((item) => <li key={item.condition}><strong>{item.condition}:</strong> {item.distinguishingFeatures}</li>)}</ul><h3>4. Investigations</h3><InvestigationCards investigations={result.disease.investigations} source={result.sourceUrl ? { title: result.sourceTitle, url: result.sourceUrl } : undefined} /><h3>5. Clinical management</h3><ul>{result.disease.clinicalManagement.map((item) => <li key={item.id}><strong>{item.title}:</strong> {item.actions.join(" ")}</li>)}</ul><h3>6. Non-clinical care</h3><ul>{result.disease.nonClinicalManagement.patientEducation.map((item) => <li key={item}>{item}</li>)}</ul></div></details>
           <form action={saveDraftGuideline} className="card admin-json-form">
             <input type="hidden" name="id" value={id} />
+            <input type="hidden" name="versionId" value={result.versionId} />
             <label htmlFor="guideline-content">Six-tier pathway content (JSON)</label>
             <p className="admin-form-note">Edit the topic content in Marifa’s six-part format. Saving validates each section and keeps its current publication status.</p>
             <textarea id="guideline-content" name="content" className="admin-json-editor" defaultValue={JSON.stringify(result.disease, null, 2)} spellCheck={false} required />
-            <div className="admin-json-actions"><span>{result.isLive ? "Your changes will be immediately visible to all site users." : "Only this organisation’s draft can be changed here."}</span><button className="ui-button ui-button-primary" type="submit"><Save size={15} />{result.isLive ? "Save live topic" : "Save draft"}</button></div>
+            <div className="admin-json-actions"><span>{result.isLive ? "Your changes will be immediately visible to all site users." : "Only authorized administrators can change this draft version."}</span><button className="ui-button ui-button-primary" type="submit"><Save size={15} />{result.isLive ? "Save live topic" : "Save draft"}</button></div>
           </form>
         </>
       )}

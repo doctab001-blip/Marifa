@@ -1,5 +1,6 @@
 import { ShieldCheck } from "lucide-react";
 import { DiseaseDirectoryClient } from "@/components/diseases/DiseaseDirectoryClient";
+import { DiseaseManagementNavigation } from "@/components/diseases/DiseaseManagementNavigation";
 import { getApprovedDiseaseGuidelines } from "@/lib/data/disease-guidelines";
 
 export default async function DiseaseDirectoryPage({ searchParams }: { searchParams: Promise<{ q?: string | string[] }> }) {
@@ -20,6 +21,8 @@ export default async function DiseaseDirectoryPage({ searchParams }: { searchPar
           <div><strong>Clinical review status</strong><span>Check each scenario’s review notice before use</span></div>
         </div>
       </header>
+
+      <DiseaseManagementNavigation active="directory" />
 
       <DiseaseDirectoryClient diseases={result.diseases} state={result.state} rejectedCount={result.rejectedCount} initialQuery={initialQuery} />
     </main>

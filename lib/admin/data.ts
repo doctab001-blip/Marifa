@@ -149,16 +149,18 @@ export async function getAdminStaff(): Promise<{ context: OrganizationAdminConte
   return { context, staff };
 }
 
-export type GovernanceItem = { id: string; title: string; specialty: string; status: string; updatedAt: string; canEdit?: boolean };
+export type GovernanceItem = { id: string; title: string; specialty: string; status: string; updatedAt: string; versionId?: string; versionNumber?: string; canEdit?: boolean };
 
 export async function getGovernanceQueue(): Promise<{ context: OrganizationAdminContext; items: GovernanceItem[] }> {
   const context = await requireOrganizationAdmin();
   const supabase = await createSupabaseServerClient();
   const { data, error } = await supabase
     .from("clinical_guidelines")
-    .select("id, title, specialty, status, created_at")
+    .select("id, title, specialty, status, created_at, guideline_versions!inner(id,version,status,is_current)")
     .eq("organization_id", context.organizationId)
     .in("status", ["draft", "under_review"])
+    .eq("guideline_versions.is_current", true)
+    .in("guideline_versions.status", ["draft", "under_review"])
     .order("created_at", { ascending: true });
 
   if (error) return { context, items: [] };
@@ -169,27 +171,38 @@ export async function getGovernanceQueue(): Promise<{ context: OrganizationAdmin
     .order("created_at", { ascending: true }) : { data: [], error: null };
   return {
     context,
-    items: [...(data ?? []).map((item) => ({
-      id: item.id,
-      title: item.title,
-      specialty: item.specialty ?? "Unassigned",
-      status: item.status,
-      updatedAt: item.created_at,
-    })), ...(sharedResult.data ?? []).map((item) => ({ id: item.id, title: item.title, specialty: item.specialty ?? "Unassigned", status: item.status, updatedAt: item.created_at, canEdit: true }))],
+    items: [...(data ?? []).map((item) => {
+      const versions = item.guideline_versions as unknown as Array<{ id: string; version: string; status: string; is_current: boolean }>;
+      const currentVersion = versions.find((version) => version.is_current && ["draft", "under_review"].includes(version.status));
+      return {
+        id: item.id,
+        title: item.title,
+        specialty: item.specialty ?? "Unassigned",
+        status: item.status,
+        updatedAt: item.created_at,
+        versionId: currentVersion?.id,
+        versionNumber: currentVersion?.version,
+      };
+    }), ...(sharedResult.data ?? []).map((item) => ({ id: item.id, title: item.title, specialty: item.specialty ?? "Unassigned", status: item.status, updatedAt: item.created_at, canEdit: true }))],
   };
 }
 
-export async function getDraftGuideline(id: string) {
+export async function getDraftGuideline(id: string, requestedVersionId?: string) {
   const context = await requireOrganizationAdmin();
   const supabase = await createSupabaseServerClient();
-  const sharedPublished = context.roleCode === "platform_admin";
+  const canManageShared = context.roleCode === "platform_admin";
   let query = supabase
     .from("clinical_guidelines")
     .select("id,title,specialty,status,guideline_versions!inner(id,version,status,content,source_title,source_url,publication_date,review_date,is_current)")
-    .eq("id", id).eq("guideline_versions.is_current", true);
-  query = sharedPublished
-    ? query.is("organization_id", null).eq("is_shared_reference", true).eq("source_type", "curated-textbook-topic").eq("status", "published").eq("guideline_versions.status", "published")
-    : query.eq("organization_id", context.organizationId).eq("status", "draft").eq("guideline_versions.status", "draft");
+    .eq("id", id);
+  if (requestedVersionId) {
+    query = query.eq("guideline_versions.id", requestedVersionId).in("guideline_versions.status", ["draft", "under_review"]);
+  } else {
+    query = query.eq("guideline_versions.is_current", true);
+  }
+  query = canManageShared
+    ? query.or(`organization_id.eq.${context.organizationId},and(organization_id.is.null,is_shared_reference.eq.true)`)
+    : query.eq("organization_id", context.organizationId);
   const { data, error } = await query.maybeSingle();
 
   if (error || !data) return { state: "not-found" as const };
@@ -207,7 +220,10 @@ export async function getDraftGuideline(id: string) {
     sourceUrl: version.source_url,
     publicationDate: version.publication_date,
     reviewDate: version.review_date,
-    isLive: sharedPublished,
+    versionId: version.id,
+    versionStatus: version.status,
+    isLive: version.is_current && ["approved", "published"].includes(version.status),
+    canApprove: ["draft", "under_review"].includes(version.status),
   };
 }
 
