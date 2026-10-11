@@ -44,7 +44,6 @@ export function PathwaySequence({ steps, sources = [] }: { steps: DiseaseDetail[
                         <ul className="col-span-full m-0 list-disc space-y-2 ps-5 text-sm leading-relaxed text-slate-700 marker:text-blue-700">
                           {branch.actions.map((action, actionIndex) => <li key={`${actionIndex}-${action}`}><ClinicalTimeframe text={action} /></li>)}
                         </ul>
-                        <SourceCitation sources={sources} />
                       </div>
                     ))}
                   </div>

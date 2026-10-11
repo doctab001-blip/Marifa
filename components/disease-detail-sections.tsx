@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Activity, Beaker, BookOpenText, ChevronDown, ClipboardList, HeartHandshake } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { ClinicalWarning } from "@/components/clinical-warning";
 import { PathwaySequence } from "@/components/pathway-sequence";
 import { InvestigationCards } from "@/components/investigation-cards";
@@ -11,6 +11,7 @@ import type { DiseaseDetail } from "@/lib/validations/disease";
 import { SourceCitation, type CitationSource } from "@/components/source-citation";
 import { Investigations as GranularInvestigations, TreatmentDetails } from "@/components/granular-pathway";
 import { ClinicalEvidenceAudit } from "@/components/clinical-evidence-audit";
+import { teachingSections, type TeachingSectionKey } from "@/lib/teaching";
 
 function TextList({ items }: { items: string[] }) {
   return (
@@ -29,30 +30,30 @@ function TextList({ items }: { items: string[] }) {
   );
 }
 
-function Section({ number, title, icon, children }: {
+function Section({ number, section, children }: {
   number: number;
-  title: string;
-  icon: React.ReactNode;
+  section: TeachingSectionKey;
   children: React.ReactNode;
 }) {
   const [isOpen, setIsOpen] = useState(true);
+  const meta = teachingSections[section];
   const headingId = `clinical-step-${number}-heading`;
   const panelId = `clinical-step-${number}-panel`;
 
   return (
-    <section className={`clinical-tier${isOpen ? " is-open" : ""}`}>
+    <section id={meta.anchor} className={`clinical-tier${isOpen ? " is-open" : ""}`}>
       <button
         id={headingId}
         className="clinical-tier-heading"
         type="button"
-        aria-label={`Step ${number}: ${title}`}
+        aria-label={`Step ${number}: ${meta.title} (${meta.formal})`}
         aria-expanded={isOpen}
         aria-controls={panelId}
         onClick={() => setIsOpen((open) => !open)}
       >
         <span className="clinical-tier-number">{number}</span>
-        <span className="clinical-tier-icon" aria-hidden="true">{icon}</span>
-        <span className="clinical-tier-title" role="heading" aria-level={2}>{title}</span>
+        <span className="clinical-tier-icon" aria-hidden="true">{meta.emoji}</span>
+        <span className="clinical-tier-title" role="heading" aria-level={2}>{meta.title}<small>{meta.formal}</small></span>
         <ChevronDown className="clinical-tier-chevron" size={19} strokeWidth={1.7} aria-hidden="true" />
       </button>
       <div
@@ -64,7 +65,10 @@ function Section({ number, title, icon, children }: {
         inert={!isOpen}
       >
         <div className="clinical-tier-panel-inner">
-          <div className="clinical-tier-body">{children}</div>
+          <div className="clinical-tier-body">
+            <p className="teaching-cue"><span aria-hidden="true">💡</span><span><strong>Guide:</strong> {meta.cue}</span></p>
+            {children}
+          </div>
         </div>
       </div>
     </section>
@@ -76,9 +80,9 @@ export function DiseaseDetailSections({ disease, investigationSource }: { diseas
   const topicSources: CitationSource[] = investigationSource ? [investigationSource] : [];
 
   return (
-    <section className="clinical-tiers" aria-label="Six-tier clinical guideline">
+    <section className="clinical-tiers" aria-label="Six-step clinical teaching pathway">
       <ClinicalEvidenceAudit audit={disease.evidenceAudit} />
-      <Section number={1} title="Pathophysiology" icon={<Activity size={19} strokeWidth={1.5} />}>
+      <Section number={1} section="why">
         <p className="clinical-summary">{disease.pathophysiology.summary}</p>
         <h3>Key mechanisms</h3>
         <TextList items={disease.pathophysiology.keyMechanisms} />
@@ -96,7 +100,7 @@ export function DiseaseDetailSections({ disease, investigationSource }: { diseas
         ) : null}
       </Section>
 
-      <Section number={2} title="Presentation" icon={<ClipboardList size={19} strokeWidth={1.5} />}>
+      <Section number={2} section="recognise">
         <div className="clinical-two-column presentation-observations">
           <div className="presentation-observation"><div className="presentation-observation-heading"><h3>Symptoms</h3></div><TextList items={disease.presentation.symptoms} /></div>
           <div className="presentation-observation"><div className="presentation-observation-heading"><h3>Physical signs</h3></div><TextList items={disease.presentation.physicalSigns} /></div>
@@ -104,17 +108,17 @@ export function DiseaseDetailSections({ disease, investigationSource }: { diseas
         <div className="presentation-red-flags"><ClinicalWarning items={disease.presentation.redFlags} /></div>
       </Section>
 
-      <Section number={3} title="Differential diagnoses" icon={<BookOpenText size={19} strokeWidth={1.5} />}>
+      <Section number={3} section="differentiate">
         <ul className="clinical-content-list differential-list">
           {disease.differentials.map((item) => <li key={item.condition}><strong>{item.condition}:</strong> {item.distinguishingFeatures}</li>)}
         </ul>
       </Section>
 
-      <Section number={4} title="Investigations" icon={<Beaker size={19} strokeWidth={1.5} />}>
+      <Section number={4} section="confirm">
         {disease.granularPathway ? <GranularInvestigations phases={disease.granularPathway.Investigations} /> : <><InvestigationCards investigations={disease.investigations} source={investigationSource} /><SourceCitation sources={topicSources} /></>}
       </Section>
 
-      <Section number={5} title="Clinical pathway" icon={<ClipboardList size={19} strokeWidth={1.5} />}>
+      <Section number={5} section="manage">
         <PathwaySequence steps={disease.clinicalManagement} sources={topicSources} />
         {disease.granularPathway ? <TreatmentDetails plans={disease.granularPathway.Treatment_Plan} /> : null}
         <section className="medication-plan" aria-labelledby="medication-plan-title">
@@ -139,7 +143,7 @@ export function DiseaseDetailSections({ disease, investigationSource }: { diseas
         <SourceCitation sources={topicSources} />
       </Section>
 
-      <Section number={6} title="Non-clinical care" icon={<HeartHandshake size={19} strokeWidth={1.5} />}>
+      <Section number={6} section="ongoing">
         <div className="non-clinical-grid">
           <div><h3>Patient education</h3><TextList items={disease.nonClinicalManagement.patientEducation} /></div>
           <div><h3>Lifestyle and diet</h3><TextList items={disease.nonClinicalManagement.lifestyleAndDiet} /></div>

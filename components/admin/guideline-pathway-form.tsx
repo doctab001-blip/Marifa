@@ -12,6 +12,7 @@ const LONG_TEXT_KEYS = new Set([
   "summary", "clinicalScenario", "distinguishingFeatures", "modalityTarget", "targetCondition",
   "expectedFinding", "clinicalRationale", "note", "followUpPlan", "selection_rationale",
   "instruction", "clinical_question", "decision_rationale", "reason",
+  "text", "prompt", "guidance", "question", "answer", "scope",
 ]);
 
 const SELECT_OPTIONS: Record<string, string[]> = {
@@ -63,6 +64,8 @@ function newArrayItem(path: Path, existing: unknown[]) {
   if (key.endsWith("clinicalManagement")) return { id: `new-step-${existing.length + 1}`, title: "", timeframe: "", actions: [""] };
   if (key.endsWith("clinicalManagement.*.branches")) return { condition: "", actions: [""] };
   if (key.endsWith("medicationPlan.regimens")) return { indication: "", patientGroup: "", genericName: "", dose: "", route: "", frequency: "", duration: "", adjustments: [""], monitoring: [""], sourceTitle: "", sourceUrl: "https://", sourceEdition: "" };
+  if (key.endsWith("teaching.guidedApproach")) return { title: "", prompt: "", guidance: "" };
+  if (key.endsWith("teaching.checkpoints")) return { question: "", answer: "" };
   if (key.endsWith("sources")) return sourceTemplate();
   if (key.endsWith("granularPathway.Investigations")) return { id: `new-investigation-${existing.length + 1}`, title: "", timeframe: "", steps: [{ test: "", clinical_question: "", expected_finding: "", decision_rationale: "", timeframe: "" }], evidence: evidenceTemplate() };
   if (key.endsWith("Investigations.*.steps")) return { test: "", clinical_question: "", expected_finding: "", decision_rationale: "", timeframe: "" };
@@ -179,6 +182,10 @@ export function GuidelinePathwayForm({ disease, guidelineId, versionId, isLive, 
       <OptionalSection title="Granular evidence pathway" present={Boolean(payload.granularPathway)} onAdd={() => update(["granularPathway"], { schema_version: 1, evidence: evidenceTemplate(), Investigations: [], Treatment_Plan: [] })} onRemove={() => { const next = structuredClone(payload) as unknown as JsonObject; delete next.granularPathway; setPayload(next as unknown as DiseaseDetail); }}><ValueEditor value={payload.granularPathway} path={["granularPathway"]} update={update} /></OptionalSection>
     </section>
     <section className="card pathway-form-section"><header><span>6</span><div><h3>Non-clinical care</h3><p>Education, lifestyle, referrals, discharge, and follow-up.</p></div></header><ValueEditor value={payload.nonClinicalManagement} path={["nonClinicalManagement"]} update={update} /></section>
+
+    <section className="card pathway-form-section"><header><span>7</span><div><h3>Teaching guide</h3><p>Learning objectives, guided approach, check-your-understanding questions and pitfalls. Do not add doses, thresholds or timings that the clinical sections and sources do not already support.</p></div></header>
+      <OptionalSection title="Teaching guide" present={Boolean(payload.teaching)} onAdd={() => update(["teaching"], { learningObjectives: [""], guidedApproach: [{ title: "", prompt: "", guidance: "" }], checkpoints: [{ question: "", answer: "" }], pitfalls: [""], keyPoints: [""] })} onRemove={() => { const next = structuredClone(payload) as unknown as JsonObject; delete next.teaching; setPayload(next as unknown as DiseaseDetail); }}><ValueEditor value={payload.teaching} path={["teaching"]} update={update} /></OptionalSection>
+    </section>
 
     <div className="card pathway-save-bar"><span>{isLive ? "Saving updates the live topic immediately." : "The pathway remains a governed draft until an administrator approves it."}</span><SavePathwayButton isLive={isLive} /></div>
   </form>;

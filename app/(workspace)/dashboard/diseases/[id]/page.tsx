@@ -1,9 +1,13 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Building2, CalendarDays, FileCheck2, ShieldAlert } from "lucide-react";
+import { ArrowLeft, ShieldAlert } from "lucide-react";
 import { ApprovalStatusBadge } from "@/components/approval-status-badge";
 import { DiseaseDetailSections } from "@/components/disease-detail-sections";
-import { getApprovedDiseaseGuideline } from "@/lib/data/disease-guidelines";
+import { TeachingGuide } from "@/components/teaching-guide";
+import { TopicLibraryHeader, TopicPager, type TopicLink } from "@/components/topic-library";
+import { getApprovedDiseaseGuideline, getApprovedDiseaseGuidelines } from "@/lib/data/disease-guidelines";
+import { isTemporaryOpenAdminMode } from "@/lib/access-mode";
+import { buildTeachingView } from "@/lib/teaching";
 
 function formatDate(date: string) {
   return new Intl.DateTimeFormat("en-GB", { day: "2-digit", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${date}T00:00:00Z`));
@@ -30,31 +34,40 @@ export default async function DiseaseDetailPage({ params }: { params: Promise<{ 
   if (result.state === "unavailable") return <ErrorState />;
 
   const disease = result.disease;
+  const directory = await getApprovedDiseaseGuidelines({ carePillar: disease.pillar });
+  const topics: TopicLink[] = directory.state === "ready" ? directory.diseases.map(({ id: topicId, title }) => ({ id: topicId, title })) : [];
   const reviewIncomplete = disease.clinicalReviewStatus === "pending" || disease.status === "under_review";
   const approvalLabel = reviewIncomplete ? "Under review" : disease.status === "published" ? "Published" : "Approved";
+  const teaching = buildTeachingView(disease);
+
   return (
-    <main className="page disease-detail-page">
-      <Link href="/dashboard/diseases" className="disease-back-link"><ArrowLeft size={15} strokeWidth={1.5} />Back to disease directory</Link>
+    <main className="page disease-detail-page topic-page">
+      <TopicLibraryHeader pillar={disease.pillar} topics={topics} currentId={disease.id} />
 
-      <header className="disease-profile-header">
-        <div className="disease-profile-copy">
-          <div className="disease-profile-labels"><span>{disease.pillar}</span><ApprovalStatusBadge status={approvalLabel} /></div>
-          <h1>{disease.title}</h1>
+      <article className="scenario-card" aria-labelledby="scenario-title">
+        <p className="scenario-eyebrow">Clinical scenario</p>
+        <h1 id="scenario-title" className="scenario-title">{disease.title}</h1>
+        <div className="scenario-chips">
+          <ApprovalStatusBadge status={approvalLabel} />
+          <span className="scenario-chip">{disease.specialty}</span>
+          <span className="scenario-chip">{disease.status === "under_review" ? `Evidence synthesis from ${disease.authority} guidance · unreviewed` : `Source: ${disease.authority}`}</span>
+          <span className="scenario-chip">Version {disease.version}</span>
+          <span className="scenario-chip">{reviewIncomplete ? "Clinical review pending" : `Last reviewed ${formatDate(disease.lastReviewed)}`}</span>
         </div>
-        <dl className="disease-source-card">
-          <div><dt><Building2 size={14} strokeWidth={1.5} />Source authority</dt><dd>{disease.status === "under_review" ? "External evidence synthesis" : disease.authority}</dd></div>
-          <div><dt><FileCheck2 size={14} strokeWidth={1.5} />Version</dt><dd>{disease.version}</dd></div>
-          <div><dt><CalendarDays size={14} strokeWidth={1.5} />{disease.status === "under_review" || disease.clinicalReviewStatus === "pending" ? "Clinical review" : "Last reviewed"}</dt><dd>{disease.status === "under_review" || disease.clinicalReviewStatus === "pending" ? "Pending" : formatDate(disease.lastReviewed)}</dd></div>
-        </dl>
-      </header>
 
-      {disease.status === "under_review" || disease.clinicalReviewStatus === "pending" ? (
-        <div className="clinical-review-draft-notice" role="alert"><strong>UNREVIEWED DRAFT — NOT FOR CLINICAL USE.</strong> The source edition and topic synthesis are awaiting full source verification and Saudi clinical governance review. This is not an approved local protocol; follow approved local pathways and seek senior clinical advice for patient care.</div>
-      ) : (
-        <div className="clinical-governance-notice" role="note"><strong>Clinical governance:</strong> Verify patient-specific factors, local formulary and pathways. Escalate emergencies immediately.</div>
-      )}
-      {disease.clinicalScenario && <section className="clinical-scenario-card" aria-labelledby="clinical-scenario-title"><p className="disease-kicker">Case scenario</p><h2 id="clinical-scenario-title">Start with the patient</h2><p>{disease.clinicalScenario}</p></section>}
-      <DiseaseDetailSections disease={disease} investigationSource={result.investigationSource} />
+        {reviewIncomplete ? (
+          <div className="clinical-review-draft-notice" role="alert"><strong>UNREVIEWED DRAFT — NOT FOR CLINICAL USE.</strong> The source edition and topic synthesis are awaiting full source verification and Saudi clinical governance review. This is not an approved local protocol; follow approved local pathways and seek senior clinical advice for patient care.</div>
+        ) : (
+          <div className="clinical-governance-notice" role="note"><strong>Clinical governance:</strong> Verify patient-specific factors, local formulary and pathways. Escalate emergencies immediately.{isTemporaryOpenAdminMode() ? " Approvals recorded while the temporary open-administration mode is active are not verified clinical sign-offs." : ""}</div>
+        )}
+
+        <hr className="scenario-divider" />
+        <TeachingGuide view={teaching} />
+        <h2 className="teach-heading teach-sections-heading"><span aria-hidden="true">🩻</span>The clinical pathway, step by step</h2>
+        <DiseaseDetailSections disease={disease} investigationSource={result.investigationSource} />
+      </article>
+
+      <TopicPager topics={topics} currentId={disease.id} />
     </main>
   );
 }

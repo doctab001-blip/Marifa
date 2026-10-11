@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ShieldAlert } from "lucide-react";
 import { DiseaseDetailSections } from "@/components/disease-detail-sections";
 import { getDiseaseDraftVersion } from "@/lib/data/disease-drafts";
+import { TeachingGuide } from "@/components/teaching-guide";
+import { buildTeachingView } from "@/lib/teaching";
 
 export default async function DiseaseDraftPreviewPage({ params }: { params: Promise<{ versionId: string }> }) {
   const { versionId } = await params;
@@ -12,11 +14,18 @@ export default async function DiseaseDraftPreviewPage({ params }: { params: Prom
     return <main className="page disease-detail-page"><section className="guideline-error card" role="alert"><ShieldAlert size={28} /><h1>Draft unavailable</h1><p>This draft could not be loaded or validated.</p></section></main>;
   }
   return (
-    <main className="page disease-detail-page">
+    <main className="page disease-detail-page topic-page">
       <Link href="/dashboard/diseases/drafts" className="disease-back-link"><ArrowLeft size={15} />Back to draft topics</Link>
-      <header className="disease-profile-header"><div className="disease-profile-copy"><p className="disease-kicker">Read-only clinical draft</p><h1>{result.disease.title}</h1><p>{result.disease.pillar} · {result.disease.specialty}</p></div><span className="status status-draft">Version {result.disease.version}</span></header>
-      <div className="clinical-review-draft-notice" role="alert"><strong>UNREVIEWED DRAFT — NOT FOR CLINICAL USE.</strong> Only an authorized administrator can edit or approve this version.</div>
-      <DiseaseDetailSections disease={result.disease} investigationSource={result.source} />
+      <article className="scenario-card" aria-labelledby="scenario-title">
+        <p className="scenario-eyebrow">Clinical scenario · read-only draft</p>
+        <h1 id="scenario-title" className="scenario-title">{result.disease.title}</h1>
+        <div className="scenario-chips"><span className="status status-draft">Version {result.disease.version}</span><span className="scenario-chip">{result.disease.pillar}</span><span className="scenario-chip">{result.disease.specialty}</span></div>
+        <div className="clinical-review-draft-notice" role="alert"><strong>UNREVIEWED DRAFT — NOT FOR CLINICAL USE.</strong> Only an authorized administrator can edit or approve this version.</div>
+        <hr className="scenario-divider" />
+        <TeachingGuide view={buildTeachingView(result.disease)} />
+        <h2 className="teach-heading teach-sections-heading"><span aria-hidden="true">🩻</span>The clinical pathway, step by step</h2>
+        <DiseaseDetailSections disease={result.disease} investigationSource={result.source} />
+      </article>
     </main>
   );
 }

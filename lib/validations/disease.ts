@@ -73,6 +73,39 @@ export const MedicationRegimenSchema = z.object({
   sourceEdition: nonEmptyText,
 }).strict();
 
+const TeachingReferenceSchema = z.object({
+  title: nonEmptyText,
+  edition: nonEmptyText,
+  url: z.url().refine((url) => /^https?:\/\//.test(url), "Teaching references must use HTTP or HTTPS"),
+  locator: nonEmptyText.optional(),
+}).strict();
+
+/**
+ * Optional teaching layer. It guides a learner through the six verified clinical
+ * sections; it must not introduce doses, thresholds or timings that the clinical
+ * sections and their sources do not already support.
+ */
+export const TeachingGuideSchema = z.object({
+  scope: nonEmptyText.optional(),
+  learningObjectives: nonEmptyTextArray,
+  vignette: z.object({
+    text: nonEmptyText,
+    fictitious: z.literal(true),
+  }).strict().optional(),
+  guidedApproach: z.array(z.object({
+    title: nonEmptyText,
+    prompt: nonEmptyText,
+    guidance: nonEmptyText,
+  }).strict()).min(1).optional(),
+  checkpoints: z.array(z.object({
+    question: nonEmptyText,
+    answer: nonEmptyText,
+  }).strict()).min(1).optional(),
+  pitfalls: nonEmptyTextArray.optional(),
+  keyPoints: nonEmptyTextArray.optional(),
+  references: z.array(TeachingReferenceSchema).min(1).optional(),
+}).strict();
+
 /**
  * Canonical six-tier disease-management payload stored in guideline_versions.content.
  * Every nested object is strict so ingestion fails on misspelled or undocumented keys.
@@ -142,6 +175,8 @@ export const DiseaseDetailSchema = z
     }).strict().optional(),
     // Additive strict pathway payload. Legacy governed versions remain readable unchanged.
     granularPathway: ClinicalPathwaySchema.optional(),
+    // Additive teaching and guiding layer; legacy versions without it remain valid.
+    teaching: TeachingGuideSchema.optional(),
     nonClinicalManagement: z
       .object({
         patientEducation: nonEmptyTextArray,
@@ -157,4 +192,5 @@ export const DiseaseDetailSchema = z
 export const DiseaseSeedBatchSchema = z.array(DiseaseDetailSchema).min(1);
 
 export type DiseaseDetail = z.infer<typeof DiseaseDetailSchema>;
+export type TeachingGuide = z.infer<typeof TeachingGuideSchema>;
 export type DiseaseSeedBatch = z.infer<typeof DiseaseSeedBatchSchema>;

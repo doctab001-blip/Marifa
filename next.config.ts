@@ -3,6 +3,13 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  async redirects() {
+    // The legacy three-topic demo directory has been superseded by the governed catalogue.
+    return [
+      { source: "/diseases", destination: "/dashboard/diseases", permanent: false },
+      { source: "/diseases/:slug", destination: "/dashboard/diseases", permanent: false },
+    ];
+  },
   async headers() {
     return [
       {

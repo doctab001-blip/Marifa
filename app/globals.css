@@ -986,3 +986,100 @@ h1, h2, h3, h4, h5, h6, .heading, .brand-name, .metric-value { font-family: var(
 .disease-directory-page .care-pillar-tab-count,
 .disease-directory-page .speciality-filter-control { font-weight: 400; }
 .disease-directory-page .care-pillar-tab.is-active { box-shadow: none; }
+
+/* ── Case pages: StepUp-style topic library with a teaching and guiding format ── */
+.topic-page {
+  --tp-primary: #1d4ed8; --tp-primary-deep: #1e40af; --tp-accent: #0f766e; --tp-ink: #0b1220;
+  --tp-body: #1e293b; --tp-muted: #475569; --tp-hairline: #e2e8f0; --tp-hairline-strong: #cbd5e1;
+  --tp-surface: #f8fafc; --tp-tile: oklch(96.5% .025 245); --tp-radius: 1.25rem; --tp-amber: #b45309;
+  --tp-heading-font: var(--font-jakarta), "Plus Jakarta Sans", var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif;
+  max-width: 980px !important; margin-inline: auto; color: var(--tp-body); font-size: 1rem;
+}
+.topic-library-header { padding: 4px 0 26px; }
+.topic-back-pill { display: inline-flex; align-items: center; gap: 10px; padding: 9px 18px; border: 1px solid #cfe0f5; border-radius: 999px; background: #eef6ff; color: var(--tp-ink); font-weight: 600; font-size: .95rem; transition: background .15s ease, border-color .15s ease; }
+.topic-back-pill:hover { background: #e2eefe; border-color: #b6cdf0; }
+.topic-library-title { margin: 22px 0 0; color: var(--tp-ink); font: 800 clamp(1.75rem, 3.6vw, 2.35rem)/1.12 var(--tp-heading-font); letter-spacing: -.03em; }
+.topic-library-rule { display: block; width: 64px; height: 5px; margin-top: 10px; border-radius: 999px; background: linear-gradient(90deg, var(--tp-primary), var(--tp-accent)); }
+.topic-library-count { margin: 14px 0 0; color: var(--tp-muted); font-weight: 600; }
+.topic-switcher { margin-top: 22px; border: 1px solid var(--tp-hairline); border-radius: var(--tp-radius); background: var(--tp-surface); }
+.topic-switcher > summary { list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 22px; cursor: pointer; }
+.topic-switcher > summary::-webkit-details-marker { display: none; }
+.topic-switcher > summary > span:first-child { display: grid; gap: 2px; min-width: 0; }
+.topic-switcher-position { color: var(--tp-muted); font-size: .92rem; }
+.topic-switcher > summary strong { color: var(--tp-ink); font: 700 1.08rem/1.3 var(--tp-heading-font); }
+.topic-switcher-action { display: inline-flex; align-items: center; gap: 6px; flex: none; color: var(--tp-accent); font-weight: 650; }
+.topic-switcher[open] .topic-switcher-action svg { transform: rotate(180deg); }
+.topic-switcher-list { max-height: 360px; overflow-y: auto; margin: 0; padding: 6px 10px 12px; list-style: none; border-top: 1px solid var(--tp-hairline); }
+.topic-switcher-list a { display: flex; gap: 12px; align-items: baseline; padding: 9px 12px; border-radius: 10px; color: var(--tp-body); }
+.topic-switcher-list a span { min-width: 1.6rem; color: var(--tp-muted); font-variant-numeric: tabular-nums; font-size: .85rem; }
+.topic-switcher-list a:hover { background: #eef6ff; }
+.topic-switcher-list a[aria-current="page"] { background: var(--tp-tile); color: var(--tp-primary-deep); font-weight: 700; }
+
+.scenario-card { padding: clamp(22px, 4vw, 40px); border: 1px solid var(--tp-hairline); border-radius: var(--tp-radius); background: #fff; box-shadow: 0 1px 2px rgba(15,23,42,.05), 0 24px 48px -28px rgba(15,23,42,.18); }
+.scenario-eyebrow { margin: 0; color: var(--tp-ink); font-size: .82rem; font-weight: 750; letter-spacing: .18em; text-transform: uppercase; }
+.scenario-title { margin: 10px 0 0; color: var(--tp-ink); font: 800 clamp(1.7rem, 3.4vw, 2.25rem)/1.15 var(--tp-heading-font); letter-spacing: -.025em; }
+.scenario-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.scenario-chip { display: inline-flex; align-items: center; padding: 6px 14px; border: 1px solid var(--tp-hairline); border-radius: 999px; background: #fff; color: var(--tp-body); font-size: .86rem; font-weight: 550; }
+.scenario-card .clinical-review-draft-notice, .scenario-card .clinical-governance-notice { margin: 20px 0 0; font-size: .92rem; }
+.scenario-divider { margin: 28px 0 8px; border: 0; border-top: 1px solid var(--tp-hairline); }
+
+.teaching-guide { display: grid; gap: 30px; padding-top: 22px; }
+.teach-heading { display: flex; align-items: center; gap: 12px; margin: 0 0 14px; color: var(--tp-ink); font: 750 clamp(1.2rem, 2.2vw, 1.4rem)/1.3 var(--tp-heading-font); letter-spacing: -.015em; }
+.teach-heading > span { font-size: 1.35em; line-height: 1; }
+.teach-callout { padding: 4px 0 4px 22px; border-left: 4px solid var(--tp-accent); color: var(--tp-body); font-size: 1.02rem; line-height: 1.7; }
+.teach-tone-blue .teach-callout { border-left-color: var(--tp-primary); }
+.teach-tone-amber .teach-callout { border-left-color: var(--tp-amber); }
+.teach-label { margin: 0 0 10px; color: var(--tp-muted); font-size: .78rem; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; }
+.teach-objectives, .teach-list { margin: 0; padding-left: 1.3rem; display: grid; gap: 8px; }
+.teach-objectives { list-style: decimal; }
+.teach-list { list-style: disc; }
+.teach-objectives li::marker { color: var(--tp-accent); font-weight: 800; }
+.teach-list li::marker { color: var(--tp-primary); }
+.teach-scope { margin: 14px 0 0; }
+.teach-vignette { margin: 0; color: var(--tp-ink); }
+.teach-steps { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; counter-reset: teach-step; }
+.teach-steps > li { padding: 14px 18px; border: 1px solid var(--tp-hairline); border-radius: 14px; background: var(--tp-surface); }
+.teach-step-title { color: var(--tp-ink); font: 700 1.02rem/1.35 var(--tp-heading-font); }
+.teach-step-title a { color: inherit; text-decoration: underline; text-decoration-color: #93c5fd; text-underline-offset: 4px; }
+.teach-step-title a:hover { color: var(--tp-primary); }
+.teach-step-prompt { margin: 6px 0 0; color: var(--tp-ink); font-weight: 550; }
+.teach-step-guidance { margin: 4px 0 0; color: var(--tp-muted); font-size: .95rem; }
+.teach-checkpoints { display: grid; gap: 10px; }
+.teach-checkpoint { border: 1px solid var(--tp-hairline); border-radius: 14px; background: #fff; }
+.teach-checkpoint > summary { cursor: pointer; padding: 14px 18px; color: var(--tp-ink); font-weight: 650; list-style: none; position: relative; padding-right: 116px; }
+.teach-checkpoint > summary::-webkit-details-marker { display: none; }
+.teach-checkpoint > summary::after { content: "Reveal answer"; position: absolute; right: 16px; top: 14px; color: var(--tp-accent); font-size: .84rem; font-weight: 700; }
+.teach-checkpoint[open] > summary::after { content: "Hide"; }
+.teach-checkpoint > p { margin: 0; padding: 0 18px 16px; color: var(--tp-body); border-top: 1px dashed var(--tp-hairline); padding-top: 12px; }
+.teach-derived { margin: 12px 0 0; color: var(--tp-muted); font-size: .84rem; font-style: italic; }
+.teach-refs span { color: var(--tp-muted); font-size: .9rem; }
+.teach-refs a { color: var(--tp-primary); text-decoration: underline; text-underline-offset: 3px; }
+.teach-sections-heading { margin-top: 38px; padding-top: 26px; border-top: 1px solid var(--tp-hairline); }
+
+.topic-page .clinical-tiers { gap: 14px; }
+.topic-page .clinical-tier { border-radius: 16px; box-shadow: none; border-color: var(--tp-hairline); }
+.topic-page .clinical-tier-heading { grid-template-columns: 30px 34px minmax(0, 1fr) 20px; padding: 16px 20px; }
+.topic-page .clinical-tier-number { background: var(--tp-primary); }
+.topic-page .clinical-tier-icon { width: 34px; height: 34px; border-radius: 10px; background: var(--tp-tile); font-size: 1.15rem; }
+.topic-page .clinical-tier-title { display: grid; font: 750 1.08rem/1.3 var(--tp-heading-font); color: var(--tp-ink); }
+.topic-page .clinical-tier-title small { color: var(--tp-muted); font: 500 .8rem/1.3 var(--font-inter), Inter, sans-serif; letter-spacing: .02em; }
+.topic-page .clinical-tier { scroll-margin-top: 90px; }
+.teaching-cue { display: flex; gap: 10px; margin: 0 0 18px; padding: 12px 16px; border-left: 4px solid var(--tp-accent, #0f766e); border-radius: 0 12px 12px 0; background: #f0fdfa; color: #134e4a; font-size: .93rem; line-height: 1.6; }
+
+.topic-pager { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 26px; }
+.topic-pager-link { display: flex; align-items: center; gap: 12px; padding: 16px 18px; border: 1px solid var(--tp-hairline); border-radius: 16px; background: #fff; color: var(--tp-ink); font-weight: 650; transition: border-color .15s ease, box-shadow .15s ease; }
+.topic-pager-link:hover { border-color: var(--tp-hairline-strong); box-shadow: 0 8px 24px -16px rgba(15,23,42,.35); }
+.topic-pager-link small { display: block; color: var(--tp-muted); font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.topic-pager-link.is-next { justify-content: flex-end; text-align: right; }
+
+@media (max-width: 720px) {
+  .topic-page { font-size: .97rem; }
+  .scenario-card { padding: 22px 18px; border-radius: 18px; }
+  .teach-callout { padding-left: 16px; }
+  .teach-checkpoint > summary { padding-right: 18px; }
+  .teach-checkpoint > summary::after { position: static; display: block; margin-top: 6px; }
+  .topic-pager { grid-template-columns: 1fr; }
+  .topic-pager-link.is-next { justify-content: space-between; }
+  .topic-page .clinical-tier-heading { padding: 14px; gap: 10px; }
+}
+.topic-page .pathway-branch-grid { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); align-items: start; }

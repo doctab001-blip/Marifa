@@ -1,6 +1,6 @@
 import "server-only";
 import { requireOrganizationAdmin } from "@/lib/admin/data";
-import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { createSupabaseDataClient } from "@/lib/supabase/data-client";
 import { DiseaseDetailSchema } from "@/lib/validations/disease";
 
 export const investigationRevision = "investigations-2026-10-11-v1";
@@ -8,7 +8,7 @@ export const investigationRevision = "investigations-2026-10-11-v1";
 export async function getInvestigationRevisions() {
   const context = await requireOrganizationAdmin();
   if (context.roleCode !== "platform_admin") return [];
-  const supabase = await createSupabaseServerClient();
+  const supabase = await createSupabaseDataClient();
   const { data, error } = await supabase.from("guideline_versions")
     .select("guideline_id,content,clinical_guidelines!inner(title,is_shared_reference,organization_id)")
     .eq("version", investigationRevision).eq("status", "under_review").eq("is_current", false)
@@ -24,7 +24,7 @@ export async function getInvestigationRevisions() {
 export async function getInvestigationRevision(id: string) {
   const context = await requireOrganizationAdmin();
   if (context.roleCode !== "platform_admin") return null;
-  const supabase = await createSupabaseServerClient();
+  const supabase = await createSupabaseDataClient();
   const { data, error } = await supabase.from("guideline_versions")
     .select("guideline_id,content,source_title,source_url,clinical_guidelines!inner(is_shared_reference,organization_id)")
     .eq("guideline_id", id).eq("version", investigationRevision).eq("status", "under_review").eq("is_current", false)
