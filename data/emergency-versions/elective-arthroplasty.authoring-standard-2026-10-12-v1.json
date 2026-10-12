@@ -1,0 +1,504 @@
+{
+  "id": "090cabb1-daef-487b-a0cf-4f36c4e6fb30",
+  "title": "Elective Hip and Knee Arthroplasty Preparation",
+  "specialty": "Orthopaedics",
+  "authority": "MOH",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Planned Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Adults having primary elective hip or knee replacement: shared decisions, prehabilitation, major-surgery tests, tranexamic acid, VTE prophylaxis and antibiotic prophylaxis. Verified against NICE NG157 (joint replacement), NG45, NG89 and Saudi MOH Protocol-015 (orthopaedic prophylaxis, MRSA screening).",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "IV tranexamic acid dose (NICE refers to the SmPC)",
+      "Rivaroxaban/apixaban regimens",
+      "SFDA registration not checked per drug",
+      "Local antibiogram may add gentamicin (MOH p. 1)"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "090cabb1-daef-487b-a0cf-4f36c4e6fb30"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Joint replacement relieves pain and restores function in end-stage joint disease (usually osteoarthritis) by replacing worn articular surfaces with an implant. Main risks are bleeding, VTE, infection of the prosthesis and dislocation.",
+    "keyMechanisms": [
+      "Cartilage loss and bone remodelling cause pain and stiffness that fail non-surgical care.",
+      "Major lower-limb surgery and immobility raise VTE risk — prophylaxis for 14–38 days (NICE NG89).",
+      "Implant infection is hard to treat — MRSA screening, prophylaxis and ultra-clean air (MOH, NICE).",
+      "Tranexamic acid reduces blood loss (NICE NG157)."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Joint pain limiting walking, sleep and daily activities despite non-surgical treatment.",
+      "Stiffness, deformity."
+    ],
+    "physicalSigns": [
+      "Reduced range of movement, deformity, antalgic gait.",
+      "Skin condition over the joint; distal pulses."
+    ],
+    "redFlags": [
+      "Active infection anywhere (skin, urine, teeth) — defer surgery",
+      "Unstable cardiac or respiratory disease",
+      "Calf swelling or breathlessness after surgery — VTE"
+    ],
+    "precipitants": [
+      "Osteoarthritis",
+      "Obesity",
+      "Previous joint injury"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Referred pain (spine, hip to knee)",
+      "distinguishingFeatures": "Clinical and imaging correlation."
+    },
+    {
+      "condition": "Inflammatory arthritis",
+      "distinguishingFeatures": "Synovitis, raised inflammatory markers — rheumatology."
+    },
+    {
+      "condition": "Avascular necrosis",
+      "distinguishingFeatures": "Imaging pattern."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "MRSA nasal screen",
+        "modalityTarget": "Before orthopaedic implant surgery (MOH)",
+        "targetCondition": "MRSA carriage",
+        "expectedFinding": "Positive screen.",
+        "clinicalRationale": "Decolonise with nasal mupirocin and chlorhexidine body wash for 5 days; vancomycin alternative prophylaxis (MOH p. 2).",
+        "normalValue": "Negative",
+        "references": [
+          {
+            "title": "Antibiotics Surgical Prophylaxis (MOH Protocol-015, GDOH-INP-ASPF-091)",
+            "edition": "Saudi MOH, issued 22 May 2017, updated 22 May 2021, p. 2 (orthopaedic: MRSA screen and eradication)",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-015.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count",
+        "modalityTarget": "Pre-assessment (major surgery)",
+        "targetCondition": "Anaemia, thrombocytopenia",
+        "expectedFinding": "NICE NG45: Offer to all (ASA 1–4).",
+        "clinicalRationale": "Treat iron-deficiency anaemia before surgery (NICE NG180).",
+        "normalValue": "Hb 130–170 g/L (men), 120–150 g/L (women); platelets 150–400 × 10⁹/L",
+        "references": [
+          {
+            "title": "NICE NG45: Routine preoperative tests for elective surgery",
+            "edition": "NICE guideline, 2016, Tables 1–3 (tests by surgery grade and ASA grade); Recommendations 1.3–1.9",
+            "url": "https://www.nice.org.uk/guidance/ng45"
+          },
+          {
+            "title": "NICE NG180: Perioperative care in adults",
+            "edition": "NICE guideline, 2020, Recommendations 1.3 (preoperative anaemia)",
+            "url": "https://www.nice.org.uk/guidance/ng180"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Kidney function (creatinine, eGFR, electrolytes)",
+        "modalityTarget": "Pre-assessment (major surgery)",
+        "targetCondition": "Renal impairment, AKI risk",
+        "expectedFinding": "NICE NG45: ASA 1 at risk of AKI: consider; ASA 2–4: offer.",
+        "clinicalRationale": "Adjust nephrotoxic drugs and antibiotic doses.",
+        "normalValue": "eGFR 60 or more mL/min/1.73 m²; K 3.5–5.0 mmol/L",
+        "references": [
+          {
+            "title": "NICE NG45: Routine preoperative tests for elective surgery",
+            "edition": "NICE guideline, 2016, Tables 1–3 (tests by surgery grade and ASA grade); Recommendations 1.3–1.9",
+            "url": "https://www.nice.org.uk/guidance/ng45"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Resting 12-lead ECG",
+        "modalityTarget": "Pre-assessment (major surgery)",
+        "targetCondition": "Arrhythmia, ischaemia",
+        "expectedFinding": "NICE NG45: ASA 1 over 65 without ECG in 12 months: consider; ASA 2–4: offer.",
+        "clinicalRationale": "Abnormal ECG with murmur or cardiac symptoms → anaesthetist review; echo only for murmur with symptoms or heart failure signs (NICE NG45 1.9).",
+        "normalValue": "Sinus rhythm, no ischaemic changes",
+        "references": [
+          {
+            "title": "NICE NG45: Routine preoperative tests for elective surgery",
+            "edition": "NICE guideline, 2016, Tables 1–3 (tests by surgery grade and ASA grade); Recommendations 1.3–1.9",
+            "url": "https://www.nice.org.uk/guidance/ng45"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "HbA1c (known diabetes only)",
+        "modalityTarget": "If not tested in the last 3 months",
+        "targetCondition": "Glycaemic control",
+        "expectedFinding": "Raised HbA1c.",
+        "clinicalRationale": "Do not test people without diabetes (NICE NG45).",
+        "normalValue": "Individual target (e.g. below 53 mmol/mol / 7%)",
+        "references": [
+          {
+            "title": "NICE NG45: Routine preoperative tests for elective surgery",
+            "edition": "NICE guideline, 2016, Recommendations 1.5.1–1.6.2 (HbA1c only for known diabetes, if not tested in last 3 months)",
+            "url": "https://www.nice.org.uk/guidance/ng45"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Pregnancy status",
+        "modalityTarget": "Day of surgery, all women of childbearing potential",
+        "targetCondition": "Unrecognised pregnancy",
+        "expectedFinding": "Possible pregnancy.",
+        "clinicalRationale": "Test with consent if any doubt; document (NICE NG45).",
+        "normalValue": "Not pregnant",
+        "references": [
+          {
+            "title": "NICE NG45: Routine preoperative tests for elective surgery",
+            "edition": "NICE guideline, 2016, Recommendations 1.3.1–1.3.6 (pregnancy status on the day of surgery)",
+            "url": "https://www.nice.org.uk/guidance/ng45"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "decide",
+      "title": "Shared decision and prehabilitation",
+      "timeframe": "At listing",
+      "actions": [
+        "Discuss alternatives, benefits, risks, implant options and anaesthesia (NICE NG157).",
+        "Prehabilitation advice: exercises, weight, diet, smoking cessation (NICE NG157 1.2).",
+        "Offer regional or general anaesthesia with local infiltration analgesia (NICE NG157 1.3)."
+      ]
+    },
+    {
+      "id": "blood",
+      "title": "Blood conservation",
+      "timeframe": "Intra-operative",
+      "actions": [
+        "Give IV tranexamic acid; if no renal impairment also 1–2 g topical intra-articular before closure; total combined dose not above 3 g (NICE NG157 1.4).",
+        "Use 2 implant 'stop moments' and ultra-clean air theatres (NICE NG157)."
+      ]
+    },
+    {
+      "id": "assess",
+      "title": "Pre-operative assessment",
+      "timeframe": "Weeks before surgery",
+      "actions": [
+        "Grade surgery (minor, intermediate, major/complex) and ASA status; order only the tests NICE NG45 lists for that combination.",
+        "Do not routinely order chest X-ray, urine dipstick, sickle tests or HbA1c in people without diabetes (NICE NG45).",
+        "Discuss stopping smoking and reducing alcohol; manage iron-deficiency anaemia (NICE NG180).",
+        "Make an individual anticoagulant plan if the person takes anticoagulants (NICE NG45)."
+      ]
+    },
+    {
+      "id": "vte",
+      "title": "VTE prophylaxis",
+      "timeframe": "Admission to discharge",
+      "actions": [
+        "Hip: LMWH 10 days then aspirin 75 or 150 mg for 28 days; or LMWH 28 days with stockings; or rivaroxaban (NICE NG89 1.11.5).",
+        "Knee: aspirin 75 or 150 mg for 14 days; or LMWH 14 days with stockings; or rivaroxaban (NICE NG89 1.11.8).",
+        "Enoxaparin label dose for hip/knee replacement: 30 mg SC every 12 h (hip alternative 40 mg once daily)."
+      ]
+    },
+    {
+      "id": "abx",
+      "title": "Surgical antibiotic prophylaxis (MOH Protocol-015)",
+      "timeframe": "Within 60 min before incision",
+      "actions": [
+        "Total joint replacement: cefazolin 2 g IV (3 g if 120 kg or more) within 60 min of incision (MOH p. 2).",
+        "Allergy or MRSA: clindamycin 900 mg (60 min) or vancomycin 15 mg/kg (max 2 g) within 120 min (MOH p. 2).",
+        "Re-dose cefazolin every 4 h (or clindamycin every 6 h) if surgery lasts more than 4 h or blood loss exceeds 1,500 mL (MOH p. 1).",
+        "Stop prophylaxis within 24 h of the end of surgery, even with drains or catheters (MOH p. 4)."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Prepare adults for primary hip or knee replacement with evidence-based blood, infection and VTE measures."
+    ],
+    "references": [
+      {
+        "title": "NICE NG157: Joint replacement (primary): hip, knee and shoulder",
+        "edition": "NICE guideline, 2020",
+        "url": "https://www.nice.org.uk/guidance/ng157",
+        "locator": "Recommendations 1.1–1.8 (information, prehabilitation, anaesthesia, tranexamic acid, infection prevention)"
+      },
+      {
+        "title": "NICE NG45: Routine preoperative tests for elective surgery",
+        "edition": "NICE guideline, 2016",
+        "url": "https://www.nice.org.uk/guidance/ng45",
+        "locator": "Tables 1–3 (major surgery)"
+      },
+      {
+        "title": "NICE NG89: Venous thromboembolism in over 16s: reducing the risk of hospital-acquired DVT or PE",
+        "edition": "NICE guideline, 2018 (updated 2019)",
+        "url": "https://www.nice.org.uk/guidance/ng89",
+        "locator": "Recommendations 1.11.5–1.11.9 (elective hip and knee replacement)"
+      },
+      {
+        "title": "Antibiotics Surgical Prophylaxis (MOH Protocol-015, GDOH-INP-ASPF-091)",
+        "edition": "Saudi MOH, issued 22 May 2017, updated 22 May 2021",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-015.pdf",
+        "locator": "pp. 2, 4"
+      },
+      {
+        "title": "Cefazolin for injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00dd6da7-50a8-44c9-b2dc-7948973df392",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Vancomycin hydrochloride for injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00946db3-d6c5-4534-a870-1ec6e63eda43",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Tranexamic acid injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00630e54-0e84-465d-96a5-63486c87dcd9",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Enoxaparin sodium injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=014c6710-f2c4-fd1e-e063-6394a90ae525",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ],
+    "keyPoints": [
+      "Shared decision and prehabilitation.",
+      "Major surgery: FBC, renal function and ECG for most.",
+      "Tranexamic acid, total not above 3 g.",
+      "Cefazolin 2 g; screen and decolonise MRSA.",
+      "VTE prophylaxis 14 days (knee) to 38 days (hip)."
+    ],
+    "pitfalls": [
+      "Operating with active infection elsewhere.",
+      "Topical tranexamic acid in renal impairment.",
+      "Stopping VTE prophylaxis at discharge."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Exercises before and after surgery; recovery expectations; when to return to driving and work (NICE NG157)."
+    ],
+    "lifestyleAndDiet": [
+      "Stop smoking and reduce alcohol before surgery (NICE NG180).",
+      "Stay active; prehabilitation exercises where advised."
+    ],
+    "mdtReferrals": [
+      "Physiotherapy and occupational therapy.",
+      "Anaesthetic pre-assessment."
+    ],
+    "dischargeCriteria": [
+      "Pain controlled with oral analgesia; eating, drinking and mobilising.",
+      "Wound satisfactory; VTE prophylaxis plan and follow-up arranged."
+    ],
+    "followUpPlan": "Post-operative review per surgical team; return immediately with fever, wound redness, calf swelling, breathlessness or chest pain."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Tranexamic acid maximum",
+      "threshold": "Total combined dose 3 g (NICE NG157)"
+    },
+    {
+      "criterion": "Knee VTE",
+      "threshold": "Aspirin 14 days or LMWH 14 days or rivaroxaban"
+    },
+    {
+      "criterion": "Hip VTE",
+      "threshold": "LMWH 10 days + aspirin 28 days, or LMWH 28 days, or rivaroxaban"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Surgical prophylaxis (preferred)",
+        "patientGroup": "Adults",
+        "genericName": "Cefazolin",
+        "dose": "2 g (3 g if weight 120 kg or more)",
+        "route": "IV",
+        "frequency": "Single dose within 60 min before incision",
+        "duration": "Re-dose every 4 h if surgery over 4 h or blood loss over 1,500 mL; stop within 24 h",
+        "adjustments": [
+          "Adjust for renal impairment per label",
+          "Use alternative if cephalosporin allergy"
+        ],
+        "monitoring": [
+          "Allergy, infusion reactions"
+        ],
+        "sourceTitle": "Antibiotics Surgical Prophylaxis (MOH Protocol-015, GDOH-INP-ASPF-091)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-015.pdf",
+        "sourceEdition": "Saudi MOH, issued 22 May 2017, updated 22 May 2021, p. 2 (orthopaedic: total joint replacement)",
+        "contraindications": [
+          "Known allergy to cephalosporins"
+        ]
+      },
+      {
+        "indication": "Surgical prophylaxis (beta-lactam allergy or preferred agent unavailable)",
+        "patientGroup": "Adults",
+        "genericName": "Clindamycin",
+        "dose": "900 mg",
+        "route": "IV",
+        "frequency": "Single dose within 60 min before incision",
+        "duration": "Re-dose every 6 h if surgery over 4 h or blood loss over 1,500 mL",
+        "adjustments": [
+          "C. difficile risk"
+        ],
+        "monitoring": [
+          "Diarrhoea"
+        ],
+        "sourceTitle": "Antibiotics Surgical Prophylaxis (MOH Protocol-015, GDOH-INP-ASPF-091)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-015.pdf",
+        "sourceEdition": "Saudi MOH, issued 22 May 2017, updated 22 May 2021, p. 2 (alternative)",
+        "contraindications": [
+          "Hypersensitivity to clindamycin or lincomycin"
+        ]
+      },
+      {
+        "indication": "Surgical prophylaxis alternative (MRSA carrier or allergy)",
+        "patientGroup": "Adults",
+        "genericName": "Vancomycin",
+        "dose": "15 mg/kg (maximum 2 g)",
+        "route": "IV",
+        "frequency": "Single dose within 120 min before incision",
+        "duration": "Single dose",
+        "adjustments": [
+          "Renal dose adjustment per label"
+        ],
+        "monitoring": [
+          "Renal function"
+        ],
+        "sourceTitle": "Antibiotics Surgical Prophylaxis (MOH Protocol-015, GDOH-INP-ASPF-091)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-015.pdf",
+        "sourceEdition": "Saudi MOH, issued 22 May 2017, updated 22 May 2021, p. 2 (vancomycin alternative)",
+        "contraindications": [
+          "Known hypersensitivity to vancomycin"
+        ]
+      },
+      {
+        "indication": "Blood loss reduction",
+        "patientGroup": "Adults having primary hip or knee replacement",
+        "genericName": "Tranexamic acid",
+        "dose": "IV dose per product label/local protocol; plus 1–2 g topical intra-articular if no renal impairment",
+        "route": "IV ± topical",
+        "frequency": "Intra-operative",
+        "duration": "Total combined dose not above 3 g",
+        "adjustments": [
+          "Renal impairment: reduced IV dose only, no topical (NICE NG157)",
+          "Topical use is off-label"
+        ],
+        "monitoring": [
+          "Bleeding, VTE signs"
+        ],
+        "sourceTitle": "NICE NG157: Joint replacement (primary): hip, knee and shoulder",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng157",
+        "sourceEdition": "NICE guideline, 2020, Recommendations 1.4.1–1.4.2 (tranexamic acid)",
+        "contraindications": [
+          "Subarachnoid haemorrhage",
+          "Active intravascular clotting",
+          "Hypersensitivity"
+        ]
+      },
+      {
+        "indication": "VTE prophylaxis after hip or knee replacement (LMWH option)",
+        "patientGroup": "Adults with VTE risk above bleeding risk",
+        "genericName": "Enoxaparin",
+        "dose": "30 mg every 12 h (hip: 40 mg once daily is an alternative)",
+        "route": "SC",
+        "frequency": "As stated",
+        "duration": "Knee 14 days; hip 10 days then aspirin 28 days, or 28 days (NICE NG89)",
+        "adjustments": [
+          "CrCl below 30: adjust per label",
+          "Neuraxial timing (boxed warning)"
+        ],
+        "monitoring": [
+          "Platelets, bleeding"
+        ],
+        "sourceTitle": "Enoxaparin sodium injection prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=014c6710-f2c4-fd1e-e063-6394a90ae525",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "contraindications": [
+          "Active major bleeding",
+          "Heparin-induced thrombocytopenia within 100 days or circulating HIT antibodies",
+          "Hypersensitivity to enoxaparin, heparin or pork products"
+        ]
+      },
+      {
+        "indication": "VTE prophylaxis (aspirin option)",
+        "patientGroup": "Adults",
+        "genericName": "Aspirin",
+        "dose": "75 mg or 150 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Knee: 14 days; hip: 28 days after 10 days of LMWH (NICE NG89)",
+        "adjustments": [
+          "Off-label for VTE prophylaxis (NICE note)"
+        ],
+        "monitoring": [
+          "Bleeding, dyspepsia"
+        ],
+        "sourceTitle": "NICE NG89: Venous thromboembolism in over 16s: reducing the risk of hospital-acquired DVT or PE",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng89",
+        "sourceEdition": "NICE guideline, 2018 (updated 2019), Recommendations 1.11.5–1.11.9 (elective hip and knee replacement)",
+        "contraindications": [
+          "Known allergy to NSAIDs",
+          "Syndrome of asthma, rhinitis and nasal polyps",
+          "Hypersensitivity to aspirin"
+        ]
+      }
+    ],
+    "note": "Antibiotic regimens are from Saudi MOH Protocol-015; VTE durations from NICE NG89 with enoxaparin doses from the FDA label; contraindications from FDA labels. Check SFDA registration, hospital antibiogram and formulary."
+  },
+  "guidelineComparison": {
+    "title": "VTE prophylaxis: hip vs knee replacement (NICE NG89)",
+    "columns": [
+      "Hip",
+      "Knee"
+    ],
+    "rows": [
+      {
+        "parameter": "Option 1",
+        "values": [
+          "LMWH 10 days then aspirin 28 days",
+          "Aspirin 75/150 mg 14 days"
+        ]
+      },
+      {
+        "parameter": "Option 2",
+        "values": [
+          "LMWH 28 days + stockings",
+          "LMWH 14 days + stockings"
+        ]
+      },
+      {
+        "parameter": "Option 3",
+        "values": [
+          "Rivaroxaban (TA170)",
+          "Rivaroxaban (TA170)"
+        ]
+      }
+    ],
+    "note": "Doses of rivaroxaban/apixaban per NICE TAs — not reproduced."
+  }
+}

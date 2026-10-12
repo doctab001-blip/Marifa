@@ -1,0 +1,389 @@
+{
+  "id": "c5e62cae-fb6e-47ef-8681-bec748e64dd4",
+  "title": "Elective Coronary Revascularisation Review",
+  "specialty": "Cardiology / Cardiothoracic Surgery",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Planned Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Adults with stable angina considered for elective PCI or CABG: indications, PCI vs CABG choice, heart-team review and peri-procedural prophylaxis. Verified against NICE CG126 (section 1.5), NG45 and NG89; antibiotic prophylaxis for CABG from Saudi MOH Protocol-015.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Dual antiplatelet regimens after PCI — see ACS/IHD topics",
+      "ESC 2024 chronic coronary syndrome guidance not reviewed",
+      "SFDA registration not checked per drug",
+      "Local antibiogram may add gentamicin (MOH p. 1)"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "c5e62cae-fb6e-47ef-8681-bec748e64dd4"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Revascularisation restores blood flow past flow-limiting coronary stenoses by stenting (PCI) or bypass grafting (CABG). Its main purpose in stable angina is relieving symptoms (NICE CG126).",
+    "keyMechanisms": [
+      "Fixed stenoses limit flow reserve and cause exertional ischaemia.",
+      "Complex multivessel or left main disease carries higher risk; CABG may improve survival in selected groups (NICE CG126).",
+      "Repeat revascularisation is less frequent after CABG than PCI (NICE CG126)."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Angina not controlled on optimal medical treatment.",
+      "Exertional breathlessness."
+    ],
+    "physicalSigns": [
+      "Often normal; signs of heart failure or valve disease."
+    ],
+    "redFlags": [
+      "Rest or crescendo angina — manage as ACS",
+      "Heart failure or syncope"
+    ],
+    "precipitants": [
+      "Diabetes",
+      "Multivessel or left main disease",
+      "Smoking"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Acute coronary syndrome",
+      "distinguishingFeatures": "Rest pain, troponin rise."
+    },
+    {
+      "condition": "Aortic stenosis",
+      "distinguishingFeatures": "Murmur; echo."
+    },
+    {
+      "condition": "Microvascular angina",
+      "distinguishingFeatures": "Symptoms without obstructive disease."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count",
+        "modalityTarget": "Pre-assessment (major surgery)",
+        "targetCondition": "Anaemia, thrombocytopenia",
+        "expectedFinding": "NICE NG45: Offer to all (ASA 1–4).",
+        "clinicalRationale": "Treat iron-deficiency anaemia before surgery (NICE NG180).",
+        "normalValue": "Hb 130–170 g/L (men), 120–150 g/L (women); platelets 150–400 × 10⁹/L",
+        "references": [
+          {
+            "title": "NICE NG45: Routine preoperative tests for elective surgery",
+            "edition": "NICE guideline, 2016, Tables 1–3 (tests by surgery grade and ASA grade); Recommendations 1.3–1.9",
+            "url": "https://www.nice.org.uk/guidance/ng45"
+          },
+          {
+            "title": "NICE NG180: Perioperative care in adults",
+            "edition": "NICE guideline, 2020, Recommendations 1.3 (preoperative anaemia)",
+            "url": "https://www.nice.org.uk/guidance/ng180"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Kidney function (creatinine, eGFR, electrolytes)",
+        "modalityTarget": "Pre-assessment (major surgery)",
+        "targetCondition": "Renal impairment, AKI risk",
+        "expectedFinding": "NICE NG45: ASA 1 at risk of AKI: consider; ASA 2–4: offer.",
+        "clinicalRationale": "Adjust nephrotoxic drugs and antibiotic doses.",
+        "normalValue": "eGFR 60 or more mL/min/1.73 m²; K 3.5–5.0 mmol/L",
+        "references": [
+          {
+            "title": "NICE NG45: Routine preoperative tests for elective surgery",
+            "edition": "NICE guideline, 2016, Tables 1–3 (tests by surgery grade and ASA grade); Recommendations 1.3–1.9",
+            "url": "https://www.nice.org.uk/guidance/ng45"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Resting 12-lead ECG",
+        "modalityTarget": "Pre-assessment (major surgery)",
+        "targetCondition": "Arrhythmia, ischaemia",
+        "expectedFinding": "NICE NG45: ASA 1 over 65 without ECG in 12 months: consider; ASA 2–4: offer.",
+        "clinicalRationale": "Abnormal ECG with murmur or cardiac symptoms → anaesthetist review; echo only for murmur with symptoms or heart failure signs (NICE NG45 1.9).",
+        "normalValue": "Sinus rhythm, no ischaemic changes",
+        "references": [
+          {
+            "title": "NICE NG45: Routine preoperative tests for elective surgery",
+            "edition": "NICE guideline, 2016, Tables 1–3 (tests by surgery grade and ASA grade); Recommendations 1.3–1.9",
+            "url": "https://www.nice.org.uk/guidance/ng45"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "HbA1c (known diabetes only)",
+        "modalityTarget": "If not tested in the last 3 months",
+        "targetCondition": "Glycaemic control",
+        "expectedFinding": "Raised HbA1c.",
+        "clinicalRationale": "Do not test people without diabetes (NICE NG45).",
+        "normalValue": "Individual target (e.g. below 53 mmol/mol / 7%)",
+        "references": [
+          {
+            "title": "NICE NG45: Routine preoperative tests for elective surgery",
+            "edition": "NICE guideline, 2016, Recommendations 1.5.1–1.6.2 (HbA1c only for known diabetes, if not tested in last 3 months)",
+            "url": "https://www.nice.org.uk/guidance/ng45"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Pregnancy status",
+        "modalityTarget": "Day of surgery, all women of childbearing potential",
+        "targetCondition": "Unrecognised pregnancy",
+        "expectedFinding": "Possible pregnancy.",
+        "clinicalRationale": "Test with consent if any doubt; document (NICE NG45).",
+        "normalValue": "Not pregnant",
+        "references": [
+          {
+            "title": "NICE NG45: Routine preoperative tests for elective surgery",
+            "edition": "NICE guideline, 2016, Recommendations 1.3.1–1.3.6 (pregnancy status on the day of surgery)",
+            "url": "https://www.nice.org.uk/guidance/ng45"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "advancedImaging",
+        "testName": "Coronary angiography",
+        "modalityTarget": "Symptoms uncontrolled on optimal medical treatment (NICE CG126 1.5.2)",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Anatomy: left main, three-vessel, complexity.",
+        "clinicalRationale": "Guides PCI vs CABG; functional testing may be needed for intermediate lesions.",
+        "normalValue": "No flow-limiting stenosis",
+        "references": [
+          {
+            "title": "NICE CG126: Stable angina: management",
+            "edition": "NICE clinical guideline, 2011 (updated 2016), Recommendations 1.5.1–1.5.11 (investigation and revascularisation)",
+            "url": "https://www.nice.org.uk/guidance/cg126"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "indication",
+      "title": "Indication",
+      "timeframe": "After optimal medical therapy",
+      "actions": [
+        "Consider CABG or PCI when symptoms are not controlled on optimal medical treatment (NICE CG126 1.5.1).",
+        "Offer CABG when PCI is not appropriate, and PCI when CABG is not appropriate, with suitable anatomy."
+      ]
+    },
+    {
+      "id": "choice",
+      "title": "PCI or CABG",
+      "timeframe": "Heart-team meeting",
+      "actions": [
+        "Weigh potential survival advantage of CABG in multivessel disease with diabetes, age over 65, or complex three-vessel/left main disease (NICE CG126 1.5.6).",
+        "Discuss left main or complex three-vessel disease at a multidisciplinary meeting with surgeons and interventional cardiologists (NICE CG126 1.5.8).",
+        "Give balanced information: both relieve symptoms; stroke is uncommon after either; repeat procedures fewer after CABG."
+      ]
+    },
+    {
+      "id": "assess",
+      "title": "Pre-operative assessment",
+      "timeframe": "Weeks before surgery",
+      "actions": [
+        "Grade surgery (minor, intermediate, major/complex) and ASA status; order only the tests NICE NG45 lists for that combination.",
+        "Do not routinely order chest X-ray, urine dipstick, sickle tests or HbA1c in people without diabetes (NICE NG45).",
+        "Discuss stopping smoking and reducing alcohol; manage iron-deficiency anaemia (NICE NG180).",
+        "Make an individual anticoagulant plan if the person takes anticoagulants (NICE NG45)."
+      ]
+    },
+    {
+      "id": "vte",
+      "title": "VTE prophylaxis",
+      "timeframe": "Admission to discharge",
+      "actions": [
+        "Cardiac surgery: consider mechanical prophylaxis and LMWH for at least 7 days if not otherwise anticoagulated (NICE NG89 1.15)."
+      ]
+    },
+    {
+      "id": "abx",
+      "title": "Surgical antibiotic prophylaxis (MOH Protocol-015)",
+      "timeframe": "Within 60 min before incision",
+      "actions": [
+        "CABG: screen and decolonise MRSA; cefazolin 2 g IV (3 g if 120 kg or more) within 60 min (MOH p. 1).",
+        "Allergy: clindamycin 900 mg or vancomycin 15 mg/kg (max 2 g) (MOH p. 1).",
+        "Re-dose cefazolin every 4 h (or clindamycin every 6 h) if surgery lasts more than 4 h or blood loss exceeds 1,500 mL (MOH p. 1).",
+        "Stop prophylaxis within 24 h of the end of surgery, even with drains or catheters (MOH p. 4)."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Select adults with stable angina for PCI or CABG and prepare them for the procedure."
+    ],
+    "references": [
+      {
+        "title": "NICE CG126: Stable angina: management",
+        "edition": "NICE clinical guideline, 2011 (updated 2016)",
+        "url": "https://www.nice.org.uk/guidance/cg126",
+        "locator": "Recommendations 1.5.1–1.5.11 (investigation and revascularisation)"
+      },
+      {
+        "title": "NICE NG45: Routine preoperative tests for elective surgery",
+        "edition": "NICE guideline, 2016",
+        "url": "https://www.nice.org.uk/guidance/ng45",
+        "locator": "Tables 1–3"
+      },
+      {
+        "title": "NICE NG89: Venous thromboembolism in over 16s: reducing the risk of hospital-acquired DVT or PE",
+        "edition": "NICE guideline, 2018 (updated 2019)",
+        "url": "https://www.nice.org.uk/guidance/ng89",
+        "locator": "Recommendations 1.15.1–1.15.2"
+      },
+      {
+        "title": "Antibiotics Surgical Prophylaxis (MOH Protocol-015, GDOH-INP-ASPF-091)",
+        "edition": "Saudi MOH, issued 22 May 2017, updated 22 May 2021",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-015.pdf",
+        "locator": "pp. 1, 4"
+      },
+      {
+        "title": "Cefazolin for injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00dd6da7-50a8-44c9-b2dc-7948973df392",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Clindamycin phosphate injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=05a75685-0af5-407c-ac57-e380c882b49d",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ],
+    "keyPoints": [
+      "Optimise medical therapy first.",
+      "Angiography if symptoms persist.",
+      "Heart team for left main/complex disease.",
+      "CABG may improve survival in diabetic multivessel disease.",
+      "Cefazolin 2 g for CABG; MRSA screen."
+    ],
+    "pitfalls": [
+      "Revascularising controlled angina for prognosis without heart-team review.",
+      "No balanced discussion of PCI vs CABG."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain vein/artery harvesting, length of stay, recovery and drugs after the procedure (NICE CG126 1.5.10)."
+    ],
+    "lifestyleAndDiet": [
+      "Stop smoking and reduce alcohol before surgery (NICE NG180).",
+      "Stay active; prehabilitation exercises where advised."
+    ],
+    "mdtReferrals": [
+      "Heart team; cardiac rehabilitation."
+    ],
+    "dischargeCriteria": [
+      "Pain controlled with oral analgesia; eating, drinking and mobilising.",
+      "Wound satisfactory; VTE prophylaxis plan and follow-up arranged."
+    ],
+    "followUpPlan": "Post-operative review per surgical team; return immediately with fever, wound redness, calf swelling, breathlessness or chest pain."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Revascularisation",
+      "threshold": "Angina uncontrolled on optimal medical treatment"
+    },
+    {
+      "criterion": "Favour CABG (survival)",
+      "threshold": "Multivessel disease with diabetes, age over 65, or complex 3-vessel/left main disease"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Surgical prophylaxis (preferred)",
+        "patientGroup": "Adults",
+        "genericName": "Cefazolin",
+        "dose": "2 g (3 g if weight 120 kg or more)",
+        "route": "IV",
+        "frequency": "Single dose within 60 min before incision",
+        "duration": "Re-dose every 4 h if surgery over 4 h or blood loss over 1,500 mL; stop within 24 h",
+        "adjustments": [
+          "Adjust for renal impairment per label",
+          "Use alternative if cephalosporin allergy"
+        ],
+        "monitoring": [
+          "Allergy, infusion reactions"
+        ],
+        "sourceTitle": "Antibiotics Surgical Prophylaxis (MOH Protocol-015, GDOH-INP-ASPF-091)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-015.pdf",
+        "sourceEdition": "Saudi MOH, issued 22 May 2017, updated 22 May 2021, p. 1 (cardiac: coronary artery bypass)",
+        "contraindications": [
+          "Known allergy to cephalosporins"
+        ]
+      },
+      {
+        "indication": "Surgical prophylaxis (beta-lactam allergy or preferred agent unavailable)",
+        "patientGroup": "Adults",
+        "genericName": "Clindamycin",
+        "dose": "900 mg",
+        "route": "IV",
+        "frequency": "Single dose within 60 min before incision",
+        "duration": "Re-dose every 6 h if surgery over 4 h or blood loss over 1,500 mL",
+        "adjustments": [
+          "C. difficile risk"
+        ],
+        "monitoring": [
+          "Diarrhoea"
+        ],
+        "sourceTitle": "Antibiotics Surgical Prophylaxis (MOH Protocol-015, GDOH-INP-ASPF-091)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-015.pdf",
+        "sourceEdition": "Saudi MOH, issued 22 May 2017, updated 22 May 2021, p. 1 (alternative)",
+        "contraindications": [
+          "Hypersensitivity to clindamycin or lincomycin"
+        ]
+      }
+    ],
+    "note": "Antibiotic regimens are from Saudi MOH Protocol-015; VTE durations from NICE NG89 with enoxaparin doses from the FDA label; contraindications from FDA labels. Check SFDA registration, hospital antibiogram and formulary."
+  },
+  "guidelineComparison": {
+    "title": "PCI vs CABG (NICE CG126)",
+    "columns": [
+      "PCI",
+      "CABG"
+    ],
+    "rows": [
+      {
+        "parameter": "Symptom relief",
+        "values": [
+          "Effective",
+          "Effective"
+        ]
+      },
+      {
+        "parameter": "Repeat procedures",
+        "values": [
+          "More frequent",
+          "Less frequent"
+        ]
+      },
+      {
+        "parameter": "Survival",
+        "values": [
+          "—",
+          "Possible advantage in selected multivessel disease"
+        ]
+      }
+    ],
+    "note": "Stroke uncommon and similar after both."
+  }
+}

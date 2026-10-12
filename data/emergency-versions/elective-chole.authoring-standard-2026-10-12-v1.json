@@ -1,0 +1,460 @@
+{
+  "id": "d47f0125-8e64-4b93-8c72-9f16a4d0e738",
+  "title": "Elective Cholecystectomy Pre-operative Assessment Pathway",
+  "specialty": "General Surgery and Anaesthesia",
+  "authority": "MOH",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Planned Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Adults listed for elective laparoscopic cholecystectomy for symptomatic gallstones: confirming the indication, NICE NG45 pre-operative tests, VTE and antibiotic prophylaxis. Verified against NICE CG188 (gallstone disease), NICE NG45, NG180, NG89 and Saudi MOH Protocol-015 (surgical antibiotic prophylaxis).",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Laparoscopic procedure grade per NICE examples assumed intermediate",
+      "SFDA registration not checked per drug",
+      "Local antibiogram may add gentamicin (MOH p. 1)"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "d47f0125-8e64-4b93-8c72-9f16a4d0e738"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Gallstones form when bile is supersaturated with cholesterol or bilirubin. Stones that obstruct the cystic duct cause biliary colic and cholecystitis; stones in the common bile duct cause jaundice, cholangitis or pancreatitis.",
+    "keyMechanisms": [
+      "Cystic duct obstruction → gallbladder distension → colic; persistent obstruction → inflammation (acute cholecystitis).",
+      "Common bile duct stones raise bilirubin and ALP and dilate the duct — MRCP if ultrasound misses them (NICE CG188).",
+      "Asymptomatic stones in a normal gallbladder need no treatment (NICE CG188)."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Recurrent right upper quadrant or epigastric pain after meals, radiating to the back or shoulder.",
+      "Nausea and vomiting with attacks."
+    ],
+    "physicalSigns": [
+      "Right upper quadrant tenderness (Murphy's sign in cholecystitis).",
+      "Jaundice (duct stones)."
+    ],
+    "redFlags": [
+      "Fever with jaundice — cholangitis",
+      "Persistent pain with fever — acute cholecystitis: laparoscopic cholecystectomy within 1 week (NICE CG188)",
+      "Raised lipase/amylase — gallstone pancreatitis"
+    ],
+    "precipitants": [
+      "Female sex, obesity, rapid weight loss, pregnancy",
+      "Haemolytic disease (pigment stones)"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Peptic ulcer disease",
+      "distinguishingFeatures": "Epigastric pain related to food or NSAIDs; normal gallbladder."
+    },
+    {
+      "condition": "Functional dyspepsia",
+      "distinguishingFeatures": "Normal ultrasound and LFTs."
+    },
+    {
+      "condition": "Common bile duct stones",
+      "distinguishingFeatures": "Dilated duct, abnormal LFTs — MRCP."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Liver function tests",
+        "modalityTarget": "All suspected gallstone disease (NICE CG188)",
+        "targetCondition": "Duct obstruction",
+        "expectedFinding": "Raised bilirubin, ALP, GGT.",
+        "clinicalRationale": "Abnormal with normal ultrasound duct → MRCP; then EUS if needed.",
+        "normalValue": "Bilirubin below about 21 µmol/L; ALP about 30–130 U/L",
+        "references": [
+          {
+            "title": "NICE CG188: Gallstone disease: diagnosis and management",
+            "edition": "NICE clinical guideline, 2014, Recommendations 1.1.1–1.2.5",
+            "url": "https://www.nice.org.uk/guidance/cg188"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count",
+        "modalityTarget": "Pre-assessment (intermediate surgery)",
+        "targetCondition": "Anaemia, thrombocytopenia",
+        "expectedFinding": "NICE NG45: ASA 3–4 with cardiovascular or renal disease and symptoms not recently investigated: consider.",
+        "clinicalRationale": "Treat iron-deficiency anaemia before surgery (NICE NG180).",
+        "normalValue": "Hb 130–170 g/L (men), 120–150 g/L (women); platelets 150–400 × 10⁹/L",
+        "references": [
+          {
+            "title": "NICE NG45: Routine preoperative tests for elective surgery",
+            "edition": "NICE guideline, 2016, Tables 1–3 (tests by surgery grade and ASA grade); Recommendations 1.3–1.9",
+            "url": "https://www.nice.org.uk/guidance/ng45"
+          },
+          {
+            "title": "NICE NG180: Perioperative care in adults",
+            "edition": "NICE guideline, 2020, Recommendations 1.3 (preoperative anaemia)",
+            "url": "https://www.nice.org.uk/guidance/ng180"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Kidney function (creatinine, eGFR, electrolytes)",
+        "modalityTarget": "Pre-assessment (intermediate surgery)",
+        "targetCondition": "Renal impairment, AKI risk",
+        "expectedFinding": "NICE NG45: ASA 2 at risk of AKI: consider; ASA 3–4: offer.",
+        "clinicalRationale": "Adjust nephrotoxic drugs and antibiotic doses.",
+        "normalValue": "eGFR 60 or more mL/min/1.73 m²; K 3.5–5.0 mmol/L",
+        "references": [
+          {
+            "title": "NICE NG45: Routine preoperative tests for elective surgery",
+            "edition": "NICE guideline, 2016, Tables 1–3 (tests by surgery grade and ASA grade); Recommendations 1.3–1.9",
+            "url": "https://www.nice.org.uk/guidance/ng45"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Resting 12-lead ECG",
+        "modalityTarget": "Pre-assessment (intermediate surgery)",
+        "targetCondition": "Arrhythmia, ischaemia",
+        "expectedFinding": "NICE NG45: ASA 2 with cardiovascular, renal or diabetes comorbidity: consider; ASA 3–4: offer.",
+        "clinicalRationale": "Abnormal ECG with murmur or cardiac symptoms → anaesthetist review; echo only for murmur with symptoms or heart failure signs (NICE NG45 1.9).",
+        "normalValue": "Sinus rhythm, no ischaemic changes",
+        "references": [
+          {
+            "title": "NICE NG45: Routine preoperative tests for elective surgery",
+            "edition": "NICE guideline, 2016, Tables 1–3 (tests by surgery grade and ASA grade); Recommendations 1.3–1.9",
+            "url": "https://www.nice.org.uk/guidance/ng45"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "HbA1c (known diabetes only)",
+        "modalityTarget": "If not tested in the last 3 months",
+        "targetCondition": "Glycaemic control",
+        "expectedFinding": "Raised HbA1c.",
+        "clinicalRationale": "Do not test people without diabetes (NICE NG45).",
+        "normalValue": "Individual target (e.g. below 53 mmol/mol / 7%)",
+        "references": [
+          {
+            "title": "NICE NG45: Routine preoperative tests for elective surgery",
+            "edition": "NICE guideline, 2016, Recommendations 1.5.1–1.6.2 (HbA1c only for known diabetes, if not tested in last 3 months)",
+            "url": "https://www.nice.org.uk/guidance/ng45"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Pregnancy status",
+        "modalityTarget": "Day of surgery, all women of childbearing potential",
+        "targetCondition": "Unrecognised pregnancy",
+        "expectedFinding": "Possible pregnancy.",
+        "clinicalRationale": "Test with consent if any doubt; document (NICE NG45).",
+        "normalValue": "Not pregnant",
+        "references": [
+          {
+            "title": "NICE NG45: Routine preoperative tests for elective surgery",
+            "edition": "NICE guideline, 2016, Recommendations 1.3.1–1.3.6 (pregnancy status on the day of surgery)",
+            "url": "https://www.nice.org.uk/guidance/ng45"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Abdominal ultrasound",
+        "modalityTarget": "All suspected gallstone disease (NICE CG188)",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Gallbladder stones; wall thickening; duct dilatation.",
+        "clinicalRationale": "Confirms indication; dilated duct or abnormal LFTs without seen duct stones → MRCP.",
+        "normalValue": "No stones; common bile duct not dilated",
+        "references": [
+          {
+            "title": "NICE CG188: Gallstone disease: diagnosis and management",
+            "edition": "NICE clinical guideline, 2014, Recommendations 1.1.1–1.2.5",
+            "url": "https://www.nice.org.uk/guidance/cg188"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "indication",
+      "title": "Confirm indication",
+      "timeframe": "At listing",
+      "actions": [
+        "Offer laparoscopic cholecystectomy for symptomatic gallbladder stones; day case unless circumstances need admission (NICE CG188).",
+        "Reassure people with asymptomatic stones in a normal gallbladder and biliary tree (NICE CG188)."
+      ]
+    },
+    {
+      "id": "assess",
+      "title": "Pre-operative assessment",
+      "timeframe": "Weeks before surgery",
+      "actions": [
+        "Grade surgery (minor, intermediate, major/complex) and ASA status; order only the tests NICE NG45 lists for that combination.",
+        "Do not routinely order chest X-ray, urine dipstick, sickle tests or HbA1c in people without diabetes (NICE NG45).",
+        "Discuss stopping smoking and reducing alcohol; manage iron-deficiency anaemia (NICE NG180).",
+        "Make an individual anticoagulant plan if the person takes anticoagulants (NICE NG45)."
+      ]
+    },
+    {
+      "id": "vte",
+      "title": "VTE prophylaxis",
+      "timeframe": "Admission to discharge",
+      "actions": [
+        "Mechanical prophylaxis from admission (stockings or intermittent pneumatic compression) until mobility returns (NICE NG89 1.14.2).",
+        "Add LMWH (or fondaparinux) for at least 7 days if VTE risk outweighs bleeding risk (NICE NG89 1.14.3) — enoxaparin 40 mg SC daily (FDA label)."
+      ]
+    },
+    {
+      "id": "abx",
+      "title": "Surgical antibiotic prophylaxis (MOH Protocol-015)",
+      "timeframe": "Within 60 min before incision",
+      "actions": [
+        "Open biliary or high-risk elective laparoscopic procedures: cefazolin 2 g IV (3 g if 120 kg or more) within 60 min of incision (MOH p. 1).",
+        "Allergy: clindamycin 900 mg IV plus ciprofloxacin 400 mg IV (within 120 min) (MOH p. 1).",
+        "Re-dose cefazolin every 4 h (or clindamycin every 6 h) if surgery lasts more than 4 h or blood loss exceeds 1,500 mL (MOH p. 1).",
+        "Stop prophylaxis within 24 h of the end of surgery, even with drains or catheters (MOH p. 4)."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Confirm the indication for elective cholecystectomy and complete safe pre-operative preparation."
+    ],
+    "references": [
+      {
+        "title": "NICE CG188: Gallstone disease: diagnosis and management",
+        "edition": "NICE clinical guideline, 2014",
+        "url": "https://www.nice.org.uk/guidance/cg188",
+        "locator": "Recommendations 1.1.1–1.2.5"
+      },
+      {
+        "title": "NICE NG45: Routine preoperative tests for elective surgery",
+        "edition": "NICE guideline, 2016",
+        "url": "https://www.nice.org.uk/guidance/ng45",
+        "locator": "Recommendations 1.1–1.9; Tables 1–3"
+      },
+      {
+        "title": "NICE NG180: Perioperative care in adults",
+        "edition": "NICE guideline, 2020",
+        "url": "https://www.nice.org.uk/guidance/ng180",
+        "locator": "Recommendations 1.2–1.3"
+      },
+      {
+        "title": "NICE NG89: Venous thromboembolism in over 16s: reducing the risk of hospital-acquired DVT or PE",
+        "edition": "NICE guideline, 2018 (updated 2019)",
+        "url": "https://www.nice.org.uk/guidance/ng89",
+        "locator": "Recommendations 1.14.1–1.14.3"
+      },
+      {
+        "title": "Antibiotics Surgical Prophylaxis (MOH Protocol-015, GDOH-INP-ASPF-091)",
+        "edition": "Saudi MOH, issued 22 May 2017, updated 22 May 2021",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-015.pdf",
+        "locator": "pp. 1, 4"
+      },
+      {
+        "title": "Cefazolin for injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00dd6da7-50a8-44c9-b2dc-7948973df392",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Clindamycin phosphate injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=05a75685-0af5-407c-ac57-e380c882b49d",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Ciprofloxacin injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=42c758be-4d44-018a-e063-6294a90ae041",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Enoxaparin sodium injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=014c6710-f2c4-fd1e-e063-6394a90ae525",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ],
+    "keyPoints": [
+      "Ultrasound and LFTs confirm the indication.",
+      "Symptomatic stones → laparoscopic cholecystectomy, usually day case.",
+      "Intermediate surgery: test only per NG45 grade/ASA.",
+      "Cefazolin 2 g within 60 min; stop within 24 h.",
+      "VTE: mechanical + LMWH at least 7 days if risk."
+    ],
+    "pitfalls": [
+      "Operating on asymptomatic stones in a normal gallbladder.",
+      "Missing duct stones (check LFTs, MRCP).",
+      "Routine chest X-ray or urine dipstick."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Fasting and medicine instructions; day-case expectations.",
+      "Return for jaundice, fever or worsening pain."
+    ],
+    "lifestyleAndDiet": [
+      "Stop smoking and reduce alcohol before surgery (NICE NG180).",
+      "Stay active; prehabilitation exercises where advised."
+    ],
+    "mdtReferrals": [
+      "Anaesthetic pre-assessment for ASA 3–4.",
+      "Gastroenterology/ERCP for duct stones."
+    ],
+    "dischargeCriteria": [
+      "Pain controlled with oral analgesia; eating, drinking and mobilising.",
+      "Wound satisfactory; VTE prophylaxis plan and follow-up arranged."
+    ],
+    "followUpPlan": "Post-operative review per surgical team; return immediately with fever, wound redness, calf swelling, breathlessness or chest pain."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Laparoscopic cholecystectomy",
+      "threshold": "Symptomatic gallbladder stones (NICE CG188)"
+    },
+    {
+      "criterion": "Early surgery",
+      "threshold": "Acute cholecystitis: within 1 week of diagnosis (NICE CG188)"
+    },
+    {
+      "criterion": "MRCP",
+      "threshold": "Dilated duct and/or abnormal LFTs without duct stones on ultrasound"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Surgical prophylaxis (preferred)",
+        "patientGroup": "Adults",
+        "genericName": "Cefazolin",
+        "dose": "2 g (3 g if weight 120 kg or more)",
+        "route": "IV",
+        "frequency": "Single dose within 60 min before incision",
+        "duration": "Re-dose every 4 h if surgery over 4 h or blood loss over 1,500 mL; stop within 24 h",
+        "adjustments": [
+          "Adjust for renal impairment per label",
+          "Use alternative if cephalosporin allergy"
+        ],
+        "monitoring": [
+          "Allergy, infusion reactions"
+        ],
+        "sourceTitle": "Antibiotics Surgical Prophylaxis (MOH Protocol-015, GDOH-INP-ASPF-091)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-015.pdf",
+        "sourceEdition": "Saudi MOH, issued 22 May 2017, updated 22 May 2021, p. 1 (gastroduodenal, biliary tract, high-risk elective laparoscopic)",
+        "contraindications": [
+          "Known allergy to cephalosporins"
+        ]
+      },
+      {
+        "indication": "Surgical prophylaxis (beta-lactam allergy or preferred agent unavailable)",
+        "patientGroup": "Adults",
+        "genericName": "Clindamycin",
+        "dose": "900 mg",
+        "route": "IV",
+        "frequency": "Single dose within 60 min before incision",
+        "duration": "Re-dose every 6 h if surgery over 4 h or blood loss over 1,500 mL",
+        "adjustments": [
+          "C. difficile risk"
+        ],
+        "monitoring": [
+          "Diarrhoea"
+        ],
+        "sourceTitle": "Antibiotics Surgical Prophylaxis (MOH Protocol-015, GDOH-INP-ASPF-091)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-015.pdf",
+        "sourceEdition": "Saudi MOH, issued 22 May 2017, updated 22 May 2021, p. 1 (alternative: clindamycin 900 mg + ciprofloxacin 400 mg)",
+        "contraindications": [
+          "Hypersensitivity to clindamycin or lincomycin"
+        ]
+      },
+      {
+        "indication": "Surgical prophylaxis alternative (with clindamycin)",
+        "patientGroup": "Adults with beta-lactam allergy",
+        "genericName": "Ciprofloxacin",
+        "dose": "400 mg",
+        "route": "IV",
+        "frequency": "Single dose within 120 min before incision",
+        "duration": "Single dose",
+        "adjustments": [
+          "Tendinopathy and QT warnings"
+        ],
+        "monitoring": [
+          "Allergy"
+        ],
+        "sourceTitle": "Antibiotics Surgical Prophylaxis (MOH Protocol-015, GDOH-INP-ASPF-091)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-015.pdf",
+        "sourceEdition": "Saudi MOH, issued 22 May 2017, updated 22 May 2021, p. 1 (alternative agents)",
+        "contraindications": [
+          "Hypersensitivity to ciprofloxacin or other quinolones",
+          "Concomitant tizanidine"
+        ]
+      },
+      {
+        "indication": "VTE prophylaxis after abdominal or pelvic surgery (NICE: minimum 7 days)",
+        "patientGroup": "Adults with VTE risk above bleeding risk",
+        "genericName": "Enoxaparin",
+        "dose": "40 mg (first dose 2 h before surgery per label)",
+        "route": "SC",
+        "frequency": "Once daily",
+        "duration": "At least 7 days (NICE NG89)",
+        "adjustments": [
+          "CrCl below 30 mL/min: dose adjustment per label",
+          "Neuraxial anaesthesia timing (boxed warning)"
+        ],
+        "monitoring": [
+          "Platelets, bleeding, renal function"
+        ],
+        "sourceTitle": "Enoxaparin sodium injection prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=014c6710-f2c4-fd1e-e063-6394a90ae525",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "contraindications": [
+          "Active major bleeding",
+          "Heparin-induced thrombocytopenia within 100 days or circulating HIT antibodies",
+          "Hypersensitivity to enoxaparin, heparin or pork products"
+        ]
+      }
+    ],
+    "note": "Antibiotic regimens are from Saudi MOH Protocol-015; VTE durations from NICE NG89 with enoxaparin doses from the FDA label; contraindications from FDA labels. Check SFDA registration, hospital antibiogram and formulary."
+  },
+  "guidelineComparison": {
+    "title": "NICE CG188 vs MOH Protocol-015 roles",
+    "columns": [
+      "NICE CG188/NG45",
+      "MOH Protocol-015"
+    ],
+    "rows": [
+      {
+        "parameter": "Indication",
+        "values": [
+          "Symptomatic stones → laparoscopic cholecystectomy",
+          "Not covered"
+        ]
+      },
+      {
+        "parameter": "Antibiotics",
+        "values": [
+          "Not covered",
+          "Cefazolin 2 g; allergy: clindamycin + ciprofloxacin"
+        ]
+      }
+    ],
+    "note": "Sources cover different steps; no conflicting numbers."
+  }
+}
