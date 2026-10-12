@@ -1,0 +1,1274 @@
+{
+  "captured_at": "2026-10-12T06:54:56.347Z",
+  "project_ref": "peuusnbucyazatkngvxw",
+  "guideline_id": "c36e9014-7d53-4a82-b641-8e05a3c9d627",
+  "rows": [
+    {
+      "id": "c36e9014-7d53-4a82-b641-8e05a3c9d627",
+      "guideline_id": "c36e9014-7d53-4a82-b641-8e05a3c9d627",
+      "version": "1.0",
+      "status": "approved",
+      "content": {
+        "id": "c36e9014-7d53-4a82-b641-8e05a3c9d627",
+        "title": "Adult Essential Hypertension Screening and Confirmation",
+        "pillar": "Keep Well",
+        "status": "approved",
+        "version": "1.0",
+        "authority": "MOH",
+        "specialty": "Primary Care and Family Medicine",
+        "lastReviewed": "2026-10-10",
+        "presentation": {
+          "redFlags": [
+            "Severe elevation with chest pain, dyspnoea, neurological deficit, confusion, visual loss, or acute kidney injury",
+            "Pregnancy with elevated pressure or pre-eclampsia symptoms",
+            "Abrupt onset, resistant readings, or suspected secondary cause"
+          ],
+          "symptoms": [
+            "Usually asymptomatic",
+            "Occasional non-specific headache or dizziness, which cannot establish diagnosis"
+          ],
+          "physicalSigns": [
+            "Elevated pressure on correctly performed measurement",
+            "Possible target-organ disease in established hypertension",
+            "Possible clinical clues to a secondary cause"
+          ]
+        },
+        "differentials": [
+          {
+            "condition": "White-coat hypertension",
+            "distinguishingFeatures": "Clinic readings elevated but validated out-of-office average not persistently elevated."
+          },
+          {
+            "condition": "Masked hypertension",
+            "distinguishingFeatures": "Clinic readings may be below threshold while home or ambulatory readings are elevated."
+          },
+          {
+            "condition": "Secondary hypertension",
+            "distinguishingFeatures": "Young onset, abrupt worsening, resistance, relevant medicines, renal or endocrine clues."
+          },
+          {
+            "condition": "Transient elevation",
+            "distinguishingFeatures": "Pain, anxiety, acute illness, stimulants, or measurement error; repeat under standardised conditions."
+          }
+        ],
+        "investigations": {
+          "ruleIn": [
+            {
+              "tier": "laboratory",
+              "testName": "Repeated standardised clinic blood-pressure measurement",
+              "modalityTarget": "Repeated standardised clinic blood-pressure measurement — Persistently elevated blood pressure",
+              "expectedFinding": "Repeated readings meeting locally adopted threshold using validated device and correct cuff",
+              "targetCondition": "Persistently elevated blood pressure",
+              "clinicalRationale": "Reduce misclassification from poor technique or transient elevation."
+            },
+            {
+              "tier": "specializedAdjunctive",
+              "testName": "Home or ambulatory blood-pressure monitoring",
+              "modalityTarget": "Home or ambulatory blood-pressure monitoring — Sustained hypertension",
+              "expectedFinding": "Out-of-office average meeting locally adopted threshold",
+              "targetCondition": "Sustained hypertension",
+              "clinicalRationale": "Confirm persistence and identify white-coat or masked hypertension."
+            },
+            {
+              "tier": "laboratory",
+              "testName": "Creatinine, estimated glomerular filtration rate, electrolytes, urine albumin, and urinalysis",
+              "modalityTarget": "Creatinine, estimated glomerular filtration rate, electrolytes, urine albumin, and urinalysis — Target-organ involvement or possible secondary hypertension",
+              "expectedFinding": "Renal impairment, albuminuria, electrolyte abnormality, or other finding needing assessment",
+              "targetCondition": "Target-organ involvement or possible secondary hypertension",
+              "clinicalRationale": "Assess baseline kidney health and direct further evaluation."
+            },
+            {
+              "tier": "specializedAdjunctive",
+              "testName": "Electrocardiogram",
+              "modalityTarget": "Electrocardiogram — Cardiac target-organ involvement",
+              "expectedFinding": "Possible left ventricular hypertrophy, rhythm abnormality, or prior cardiac disease",
+              "targetCondition": "Cardiac target-organ involvement",
+              "clinicalRationale": "Assess cardiovascular context; normal ECG does not exclude hypertension."
+            }
+          ],
+          "ruleOut": [
+            {
+              "tier": "laboratory",
+              "testName": "Repeat standardised readings after rest",
+              "modalityTarget": "Repeat standardised readings after rest — Transient or measurement-related elevation",
+              "expectedFinding": "Repeat readings below locally adopted threshold",
+              "targetCondition": "Transient or measurement-related elevation",
+              "clinicalRationale": "Check for technique-related or transient elevation."
+            },
+            {
+              "tier": "specializedAdjunctive",
+              "testName": "Validated home or ambulatory monitoring",
+              "modalityTarget": "Validated home or ambulatory monitoring — White-coat hypertension",
+              "expectedFinding": "Out-of-office average below local threshold despite elevated clinic readings",
+              "targetCondition": "White-coat hypertension",
+              "clinicalRationale": "Avoid relying on clinic readings alone when results are discordant."
+            },
+            {
+              "tier": "laboratory",
+              "testName": "Targeted secondary-hypertension investigations",
+              "modalityTarget": "Targeted secondary-hypertension investigations — Secondary cause of elevated blood pressure",
+              "expectedFinding": "No targeted evidence for the suspected cause",
+              "targetCondition": "Secondary cause of elevated blood pressure",
+              "clinicalRationale": "Select testing using clinical indications rather than broad routine testing."
+            }
+          ]
+        },
+        "pathophysiology": {
+          "summary": "Essential hypertension is persistently elevated arterial blood pressure without an identified secondary cause. It is often asymptomatic and increases cardiovascular, cerebrovascular, and kidney risk.",
+          "keyMechanisms": [
+            "Interactions among genetic, renal, vascular, neurohormonal, and environmental factors",
+            "Increased systemic vascular resistance and altered sodium-volume regulation",
+            "Cumulative pressure-related vascular and target-organ injury"
+          ]
+        },
+        "clinicalManagement": [
+          {
+            "id": "htn-1",
+            "title": "Screen and measure accurately",
+            "actions": [
+              "Use a validated device, correct cuff, and standardised seated measurement after rest.",
+              "Obtain repeat readings and document method, values, symptoms, and context.",
+              "Review medicines, supplements, stimulants, tobacco, pain, and acute illness.",
+              "Do not diagnose from one isolated value unless urgent circumstances require action."
+            ],
+            "branches": [
+              {
+                "actions": [
+                  "Arrange repeat and out-of-office confirmation within a risk-appropriate interval.",
+                  "Explain follow-up and symptoms needing urgent assessment."
+                ],
+                "condition": "Elevated screening measurement without acute symptoms"
+              },
+              {
+                "actions": [
+                  "Arrange immediate emergency assessment.",
+                  "Avoid rapid unsupervised outpatient lowering."
+                ],
+                "condition": "Severe elevation with possible acute target-organ injury"
+              }
+            ],
+            "timeframe": "Preventive and primary-care encounters, or when indicated"
+          },
+          {
+            "id": "htn-2",
+            "title": "Confirm diagnosis and assess risk",
+            "actions": [
+              "Confirm sustained hypertension with repeated clinic and/or validated out-of-office readings.",
+              "Assess cardiovascular risk, kidney function, diabetes, lipids, smoking, and target-organ injury.",
+              "Investigate secondary causes when clinical indications are present.",
+              "Agree an individualised plan and follow-up interval."
+            ],
+            "branches": [
+              {
+                "actions": [
+                  "Consider white-coat hypertension rather than labelling sustained disease.",
+                  "Continue monitoring based on overall risk."
+                ],
+                "condition": "Out-of-office values are not persistently elevated"
+              },
+              {
+                "actions": [
+                  "Arrange targeted work-up and specialist input as appropriate.",
+                  "Address urgent complications through emergency care."
+                ],
+                "condition": "Secondary cause or target-organ injury suspected"
+              }
+            ],
+            "timeframe": "After elevated screening readings"
+          },
+          {
+            "id": "htn-3",
+            "title": "Reduce risk and provide ongoing care",
+            "actions": [
+              "Offer lifestyle measures and treatment options under current local guidance.",
+              "Select medication when indicated based on comorbidities, renal function, pregnancy potential, contraindications, and preference.",
+              "Review pressure, adherence, adverse effects, renal function, and risk after treatment changes.",
+              "Escalate persistent uncontrolled readings or suspected complications."
+            ],
+            "branches": [
+              {
+                "actions": [
+                  "Use a pregnancy-specific assessment and treatment pathway.",
+                  "Review medicines promptly and involve obstetric care when indicated."
+                ],
+                "condition": "Pregnancy or pregnancy potential"
+              },
+              {
+                "actions": [
+                  "Confirm measurement technique and adherence; review interfering medicines and secondary causes.",
+                  "Adjust treatment or refer under local guidance."
+                ],
+                "condition": "Pressure remains above agreed target"
+              }
+            ],
+            "timeframe": "After diagnosis and at regular follow-up"
+          }
+        ],
+        "nonClinicalManagement": {
+          "followUpPlan": "Arrange repeat clinic or out-of-office measurements and cardiovascular-risk review according to results, patient risk, and local guidance.",
+          "mdtReferrals": [
+            "Primary care or family medicine",
+            "Dietitian or lifestyle support",
+            "Cardiology, nephrology, or endocrinology when indicated",
+            "Obstetrics for pregnancy-associated hypertension"
+          ],
+          "lifestyleAndDiet": [
+            "Discuss balanced eating and sodium reduction where appropriate.",
+            "Encourage regular activity, healthy weight goals, and tobacco cessation.",
+            "Discuss alcohol use consistent with health needs and local advice."
+          ],
+          "patientEducation": [
+            "Explain that hypertension is often symptom-free and needs accurate measurement and follow-up.",
+            "Teach home-monitoring technique when used.",
+            "Explain urgent symptoms requiring immediate assessment."
+          ],
+          "dischargeCriteria": [
+            "Measurement result, confirmation plan, and precautions are documented.",
+            "Acute target-organ injury is assessed and disposition determined.",
+            "Patient knows when blood pressure will be reassessed."
+          ]
+        }
+      },
+      "change_summary": "Curated Saudi pathway approved by the designated Marifa platform administrator; source provenance is recorded below.",
+      "source_title": "MOH Primary Health Care chronic disease and cardiovascular risk screening forms",
+      "issuing_organization": "Saudi Ministry of Health",
+      "source_url": "https://www.moh.gov.sa/en/Ministry/About/Health%20Policies/026.pdf",
+      "jurisdiction": "Saudi Arabia",
+      "publication_date": "2010-01-01",
+      "effective_date": null,
+      "last_verified_date": "2026-10-10",
+      "review_date": "2026-10-10",
+      "approved_by": "310a1d7b-646d-4adb-b822-8d79453237cf",
+      "approved_at": "2026-10-09T21:00:00+00:00",
+      "published_at": null,
+      "created_by": null,
+      "created_at": "2026-10-10T15:13:32.980627+00:00",
+      "version_number": "1.0",
+      "is_current": true,
+      "content_hash": "89112e0d8865f427a8fb9ef3ff936d546320419a1347f4c4aaf04c397da6e575"
+    },
+    {
+      "id": "f8a3c6b1-f12a-4123-a95c-63e43c1121a2",
+      "guideline_id": "c36e9014-7d53-4a82-b641-8e05a3c9d627",
+      "version": "investigations-2026-10-11-v1",
+      "status": "under_review",
+      "content": {
+        "id": "c36e9014-7d53-4a82-b641-8e05a3c9d627",
+        "title": "Adult Essential Hypertension Screening and Confirmation",
+        "pillar": "Keep Well",
+        "status": "under_review",
+        "version": "investigations-2026-10-11-v1",
+        "authority": "MOH",
+        "specialty": "Primary Care and Family Medicine",
+        "lastReviewed": "2026-10-10",
+        "presentation": {
+          "redFlags": [
+            "Severe elevation with chest pain, dyspnoea, neurological deficit, confusion, visual loss, or acute kidney injury",
+            "Pregnancy with elevated pressure or pre-eclampsia symptoms",
+            "Abrupt onset, resistant readings, or suspected secondary cause"
+          ],
+          "symptoms": [
+            "Usually asymptomatic",
+            "Occasional non-specific headache or dizziness, which cannot establish diagnosis"
+          ],
+          "physicalSigns": [
+            "Elevated pressure on correctly performed measurement",
+            "Possible target-organ disease in established hypertension",
+            "Possible clinical clues to a secondary cause"
+          ]
+        },
+        "differentials": [
+          {
+            "condition": "White-coat hypertension",
+            "distinguishingFeatures": "Clinic readings elevated but validated out-of-office average not persistently elevated."
+          },
+          {
+            "condition": "Masked hypertension",
+            "distinguishingFeatures": "Clinic readings may be below threshold while home or ambulatory readings are elevated."
+          },
+          {
+            "condition": "Secondary hypertension",
+            "distinguishingFeatures": "Young onset, abrupt worsening, resistance, relevant medicines, renal or endocrine clues."
+          },
+          {
+            "condition": "Transient elevation",
+            "distinguishingFeatures": "Pain, anxiety, acute illness, stimulants, or measurement error; repeat under standardised conditions."
+          }
+        ],
+        "investigations": {
+          "ruleIn": [
+            {
+              "tier": "specializedAdjunctive",
+              "testName": "Repeated standardised clinic blood-pressure measurement",
+              "references": [
+                {
+                  "url": "https://www.moh.gov.sa/en/Ministry/About/Health%20Policies/026.pdf#page=35",
+                  "title": "Saudi MOH: Cardiometabolic Risk Management — Assessment of Hypertension",
+                  "edition": "Legacy manual, PDF pages 35–36; check current local pathway"
+                }
+              ],
+              "modalityTarget": "Repeated standardised clinic blood-pressure measurement — Persistent elevated blood pressure",
+              "expectedFinding": "Repeat valid readings and compare with the current Saudi diagnostic threshold.",
+              "targetCondition": "Persistent elevated blood pressure",
+              "clinicalRationale": "Avoids diagnosis from an isolated or technically inaccurate reading."
+            },
+            {
+              "tier": "specializedAdjunctive",
+              "testName": "Home or ambulatory blood-pressure monitoring",
+              "references": [
+                {
+                  "url": "https://www.moh.gov.sa/en/Ministry/About/Health%20Policies/026.pdf#page=35",
+                  "title": "Saudi MOH: Cardiometabolic Risk Management — Assessment of Hypertension",
+                  "edition": "Legacy manual, PDF pages 35–36; check current local pathway"
+                }
+              ],
+              "modalityTarget": "Home or ambulatory blood-pressure monitoring — Sustained, white-coat or masked hypertension",
+              "expectedFinding": "Compare out-of-office averages with clinic readings using the appropriate thresholds.",
+              "targetCondition": "Sustained, white-coat or masked hypertension",
+              "clinicalRationale": "Confirms the blood-pressure pattern before long-term management decisions."
+            },
+            {
+              "tier": "laboratory",
+              "testName": "Serum creatinine and eGFR",
+              "references": [
+                {
+                  "url": "https://www.moh.gov.sa/en/Ministry/About/Health%20Policies/026.pdf#page=35",
+                  "title": "Saudi MOH: Cardiometabolic Risk Management — Assessment of Hypertension",
+                  "edition": "Legacy manual, PDF pages 35–36; check current local pathway"
+                }
+              ],
+              "modalityTarget": "Serum creatinine and eGFR — Reduced kidney filtration",
+              "expectedFinding": "Raised creatinine or reduced eGFR warrants assessment against prior results.",
+              "targetCondition": "Reduced kidney filtration",
+              "clinicalRationale": "Detects renal involvement and provides a treatment-safety baseline."
+            },
+            {
+              "tier": "laboratory",
+              "testName": "Serum potassium and sodium",
+              "references": [
+                {
+                  "url": "https://www.moh.gov.sa/en/Ministry/About/Health%20Policies/026.pdf#page=35",
+                  "title": "Saudi MOH: Cardiometabolic Risk Management — Assessment of Hypertension",
+                  "edition": "Legacy manual, PDF pages 35–36; check current local pathway"
+                }
+              ],
+              "modalityTarget": "Serum potassium and sodium — Electrolyte disturbance",
+              "expectedFinding": "Low potassium may suggest a secondary cause or medicine effect.",
+              "targetCondition": "Electrolyte disturbance",
+              "clinicalRationale": "Identifies secondary-cause clues and informs safe medicine selection."
+            },
+            {
+              "tier": "laboratory",
+              "testName": "Urine albumin-creatinine ratio",
+              "references": [
+                {
+                  "url": "https://www.moh.gov.sa/en/Ministry/About/Health%20Policies/026.pdf#page=35",
+                  "title": "Saudi MOH: Cardiometabolic Risk Management — Assessment of Hypertension",
+                  "edition": "Legacy manual, PDF pages 35–36; check current local pathway"
+                }
+              ],
+              "modalityTarget": "Urine albumin-creatinine ratio — Renal albumin leakage",
+              "expectedFinding": "Raised albumin excretion suggests kidney damage; confirm as appropriate.",
+              "targetCondition": "Renal albumin leakage",
+              "clinicalRationale": "Identifies renal target-organ involvement and modifies risk assessment."
+            },
+            {
+              "tier": "laboratory",
+              "testName": "Urinalysis",
+              "references": [
+                {
+                  "url": "https://www.moh.gov.sa/en/Ministry/About/Health%20Policies/026.pdf#page=35",
+                  "title": "Saudi MOH: Cardiometabolic Risk Management — Assessment of Hypertension",
+                  "edition": "Legacy manual, PDF pages 35–36; check current local pathway"
+                }
+              ],
+              "modalityTarget": "Urinalysis — Haematuria, protein or abnormal urinary sediment",
+              "expectedFinding": "An abnormal result directs renal evaluation.",
+              "targetCondition": "Haematuria, protein or abnormal urinary sediment",
+              "clinicalRationale": "Looks for kidney disease as a cause or consequence of hypertension."
+            },
+            {
+              "tier": "specializedAdjunctive",
+              "testName": "12-lead electrocardiogram",
+              "references": [
+                {
+                  "url": "https://www.moh.gov.sa/en/Ministry/About/Health%20Policies/026.pdf#page=35",
+                  "title": "Saudi MOH: Cardiometabolic Risk Management — Assessment of Hypertension",
+                  "edition": "Legacy manual, PDF pages 35–36; check current local pathway"
+                }
+              ],
+              "modalityTarget": "12-lead electrocardiogram — Left-ventricular hypertrophy, ischaemic change or arrhythmia",
+              "expectedFinding": "Relevant ECG changes identify cardiac involvement; a normal ECG does not exclude it.",
+              "targetCondition": "Left-ventricular hypertrophy, ischaemic change or arrhythmia",
+              "clinicalRationale": "Assesses cardiac consequences and competing cardiovascular disease."
+            },
+            {
+              "tier": "laboratory",
+              "testName": "Lipid profile and glycaemia assessment",
+              "references": [
+                {
+                  "url": "https://www.moh.gov.sa/en/Ministry/About/Health%20Policies/026.pdf#page=35",
+                  "title": "Saudi MOH: Cardiometabolic Risk Management — Assessment of Hypertension",
+                  "edition": "Legacy manual, PDF pages 35–36; check current local pathway"
+                }
+              ],
+              "modalityTarget": "Lipid profile and glycaemia assessment — Dyslipidaemia or diabetes accompanying hypertension",
+              "expectedFinding": "Abnormal lipid/glucose results change cardiovascular-risk assessment.",
+              "targetCondition": "Dyslipidaemia or diabetes accompanying hypertension",
+              "clinicalRationale": "Defines coexisting modifiable risk factors."
+            }
+          ],
+          "ruleOut": [
+            {
+              "tier": "laboratory",
+              "testName": "Aldosterone-renin testing when primary aldosteronism is suspected",
+              "references": [
+                {
+                  "url": "https://www.msdmanuals.com/professional/cardiovascular-disorders/hypertension/hypertension",
+                  "title": "MSD Manual Professional: Hypertension — Testing",
+                  "edition": "Online review updated February 2026; Saudi application awaiting review"
+                }
+              ],
+              "modalityTarget": "Aldosterone-renin testing when primary aldosteronism is suspected — Inappropriate aldosterone activity",
+              "expectedFinding": "Interpret the ratio with potassium, medicines and sampling conditions.",
+              "targetCondition": "Inappropriate aldosterone activity",
+              "clinicalRationale": "Investigates resistant hypertension or relevant hypokalaemia under a specialist/local pathway."
+            },
+            {
+              "tier": "laboratory",
+              "testName": "Plasma free metanephrines when pheochromocytoma is suspected",
+              "references": [
+                {
+                  "url": "https://www.msdmanuals.com/professional/cardiovascular-disorders/hypertension/hypertension",
+                  "title": "MSD Manual Professional: Hypertension — Testing",
+                  "edition": "Online review updated February 2026; Saudi application awaiting review"
+                }
+              ],
+              "modalityTarget": "Plasma free metanephrines when pheochromocytoma is suspected — Catecholamine excess",
+              "expectedFinding": "Raised results need contextual interpretation and confirmatory assessment.",
+              "targetCondition": "Catecholamine excess",
+              "clinicalRationale": "Investigates suggestive episodic symptoms or other relevant clinical clues."
+            },
+            {
+              "tier": "specializedAdjunctive",
+              "testName": "Sleep study when obstructive sleep apnoea is suspected",
+              "references": [
+                {
+                  "url": "https://www.msdmanuals.com/professional/cardiovascular-disorders/hypertension/hypertension",
+                  "title": "MSD Manual Professional: Hypertension — Testing",
+                  "edition": "Online review updated February 2026; Saudi application awaiting review"
+                }
+              ],
+              "modalityTarget": "Sleep study when obstructive sleep apnoea is suspected — Sleep-related obstructive breathing events",
+              "expectedFinding": "A diagnostic study establishes clinically important sleep-disordered breathing.",
+              "targetCondition": "Sleep-related obstructive breathing events",
+              "clinicalRationale": "Tests a suspected contributor; it is not routine for every hypertensive patient."
+            }
+          ]
+        },
+        "pathophysiology": {
+          "summary": "Essential hypertension is persistently elevated arterial blood pressure without an identified secondary cause. It is often asymptomatic and increases cardiovascular, cerebrovascular, and kidney risk.",
+          "keyMechanisms": [
+            "Interactions among genetic, renal, vascular, neurohormonal, and environmental factors",
+            "Increased systemic vascular resistance and altered sodium-volume regulation",
+            "Cumulative pressure-related vascular and target-organ injury"
+          ]
+        },
+        "clinicalManagement": [
+          {
+            "id": "htn-1",
+            "title": "Screen and measure accurately",
+            "actions": [
+              "Use a validated device, correct cuff, and standardised seated measurement after rest.",
+              "Obtain repeat readings and document method, values, symptoms, and context.",
+              "Review medicines, supplements, stimulants, tobacco, pain, and acute illness.",
+              "Do not diagnose from one isolated value unless urgent circumstances require action."
+            ],
+            "branches": [
+              {
+                "actions": [
+                  "Arrange repeat and out-of-office confirmation within a risk-appropriate interval.",
+                  "Explain follow-up and symptoms needing urgent assessment."
+                ],
+                "condition": "Elevated screening measurement without acute symptoms"
+              },
+              {
+                "actions": [
+                  "Arrange immediate emergency assessment.",
+                  "Avoid rapid unsupervised outpatient lowering."
+                ],
+                "condition": "Severe elevation with possible acute target-organ injury"
+              }
+            ],
+            "timeframe": "Preventive and primary-care encounters, or when indicated"
+          },
+          {
+            "id": "htn-2",
+            "title": "Confirm diagnosis and assess risk",
+            "actions": [
+              "Confirm sustained hypertension with repeated clinic and/or validated out-of-office readings.",
+              "Assess cardiovascular risk, kidney function, diabetes, lipids, smoking, and target-organ injury.",
+              "Investigate secondary causes when clinical indications are present.",
+              "Agree an individualised plan and follow-up interval."
+            ],
+            "branches": [
+              {
+                "actions": [
+                  "Consider white-coat hypertension rather than labelling sustained disease.",
+                  "Continue monitoring based on overall risk."
+                ],
+                "condition": "Out-of-office values are not persistently elevated"
+              },
+              {
+                "actions": [
+                  "Arrange targeted work-up and specialist input as appropriate.",
+                  "Address urgent complications through emergency care."
+                ],
+                "condition": "Secondary cause or target-organ injury suspected"
+              }
+            ],
+            "timeframe": "After elevated screening readings"
+          },
+          {
+            "id": "htn-3",
+            "title": "Reduce risk and provide ongoing care",
+            "actions": [
+              "Offer lifestyle measures and treatment options under current local guidance.",
+              "Select medication when indicated based on comorbidities, renal function, pregnancy potential, contraindications, and preference.",
+              "Review pressure, adherence, adverse effects, renal function, and risk after treatment changes.",
+              "Escalate persistent uncontrolled readings or suspected complications."
+            ],
+            "branches": [
+              {
+                "actions": [
+                  "Use a pregnancy-specific assessment and treatment pathway.",
+                  "Review medicines promptly and involve obstetric care when indicated."
+                ],
+                "condition": "Pregnancy or pregnancy potential"
+              },
+              {
+                "actions": [
+                  "Confirm measurement technique and adherence; review interfering medicines and secondary causes.",
+                  "Adjust treatment or refer under local guidance."
+                ],
+                "condition": "Pressure remains above agreed target"
+              }
+            ],
+            "timeframe": "After diagnosis and at regular follow-up"
+          }
+        ],
+        "clinicalReviewStatus": "pending",
+        "nonClinicalManagement": {
+          "followUpPlan": "Arrange repeat clinic or out-of-office measurements and cardiovascular-risk review according to results, patient risk, and local guidance.",
+          "mdtReferrals": [
+            "Primary care or family medicine",
+            "Dietitian or lifestyle support",
+            "Cardiology, nephrology, or endocrinology when indicated",
+            "Obstetrics for pregnancy-associated hypertension"
+          ],
+          "lifestyleAndDiet": [
+            "Discuss balanced eating and sodium reduction where appropriate.",
+            "Encourage regular activity, healthy weight goals, and tobacco cessation.",
+            "Discuss alcohol use consistent with health needs and local advice."
+          ],
+          "patientEducation": [
+            "Explain that hypertension is often symptom-free and needs accurate measurement and follow-up.",
+            "Teach home-monitoring technique when used.",
+            "Explain urgent symptoms requiring immediate assessment."
+          ],
+          "dischargeCriteria": [
+            "Measurement result, confirmation plan, and precautions are documented.",
+            "Acute target-organ injury is assessed and disposition determined.",
+            "Patient knows when blood pressure will be reassessed."
+          ]
+        }
+      },
+      "change_summary": "Codex-prepared investigation revision: named assessments, specific targets, findings/limitations and decision rationale. Full textbook chapter verification and current Saudi/local clinical review remain pending. Prior current version and all other content preserved; no clinical approval or publication claimed.",
+      "source_title": "MOH Primary Health Care chronic disease and cardiovascular risk screening forms",
+      "issuing_organization": "Saudi Ministry of Health",
+      "source_url": "https://www.moh.gov.sa/en/Ministry/About/Health%20Policies/026.pdf",
+      "jurisdiction": "Saudi Arabia",
+      "publication_date": "2010-01-01",
+      "effective_date": null,
+      "last_verified_date": null,
+      "review_date": "2026-10-11",
+      "approved_by": null,
+      "approved_at": null,
+      "published_at": null,
+      "created_by": null,
+      "created_at": "2026-10-11T04:18:52.83895+00:00",
+      "version_number": "investigations-2026-10-11-v1",
+      "is_current": false,
+      "content_hash": "87ef100edc341812588c4a9f118de8edbb7bab836c747342ddf52453045a25fb"
+    },
+    {
+      "id": "126c1f4a-c6af-425f-af52-4d86f6e92223",
+      "guideline_id": "c36e9014-7d53-4a82-b641-8e05a3c9d627",
+      "version": "official-extraction-2026-10-11-b002",
+      "status": "draft",
+      "content": {
+        "id": "c36e9014-7d53-4a82-b641-8e05a3c9d627",
+        "title": "Adult Essential Hypertension Screening and Confirmation",
+        "pillar": "Keep Well",
+        "status": "draft",
+        "version": "official-extraction-2026-10-11-b002",
+        "authority": "MOH",
+        "specialty": "Primary Care and Family Medicine",
+        "lastReviewed": "2026-10-10",
+        "presentation": {
+          "redFlags": [
+            "Severe elevation with chest pain, dyspnoea, neurological deficit, confusion, visual loss, or acute kidney injury",
+            "Pregnancy with elevated pressure or pre-eclampsia symptoms",
+            "Abrupt onset, resistant readings, or suspected secondary cause"
+          ],
+          "symptoms": [
+            "Usually asymptomatic",
+            "Occasional non-specific headache or dizziness, which cannot establish diagnosis"
+          ],
+          "physicalSigns": [
+            "Elevated pressure on correctly performed measurement",
+            "Possible target-organ disease in established hypertension",
+            "Possible clinical clues to a secondary cause"
+          ]
+        },
+        "differentials": [
+          {
+            "condition": "White-coat hypertension",
+            "distinguishingFeatures": "Clinic readings elevated but validated out-of-office average not persistently elevated."
+          },
+          {
+            "condition": "Masked hypertension",
+            "distinguishingFeatures": "Clinic readings may be below threshold while home or ambulatory readings are elevated."
+          },
+          {
+            "condition": "Secondary hypertension",
+            "distinguishingFeatures": "Young onset, abrupt worsening, resistance, relevant medicines, renal or endocrine clues."
+          },
+          {
+            "condition": "Transient elevation",
+            "distinguishingFeatures": "Pain, anxiety, acute illness, stimulants, or measurement error; repeat under standardised conditions."
+          }
+        ],
+        "investigations": {
+          "ruleIn": [
+            {
+              "tier": "laboratory",
+              "testName": "Repeated standardised clinic blood-pressure measurement",
+              "modalityTarget": "Repeated standardised clinic blood-pressure measurement — Persistently elevated blood pressure",
+              "expectedFinding": "Repeated readings meeting locally adopted threshold using validated device and correct cuff",
+              "targetCondition": "Persistently elevated blood pressure",
+              "clinicalRationale": "Reduce misclassification from poor technique or transient elevation."
+            },
+            {
+              "tier": "specializedAdjunctive",
+              "testName": "Home or ambulatory blood-pressure monitoring",
+              "modalityTarget": "Home or ambulatory blood-pressure monitoring — Sustained hypertension",
+              "expectedFinding": "Out-of-office average meeting locally adopted threshold",
+              "targetCondition": "Sustained hypertension",
+              "clinicalRationale": "Confirm persistence and identify white-coat or masked hypertension."
+            },
+            {
+              "tier": "laboratory",
+              "testName": "Creatinine, estimated glomerular filtration rate, electrolytes, urine albumin, and urinalysis",
+              "modalityTarget": "Creatinine, estimated glomerular filtration rate, electrolytes, urine albumin, and urinalysis — Target-organ involvement or possible secondary hypertension",
+              "expectedFinding": "Renal impairment, albuminuria, electrolyte abnormality, or other finding needing assessment",
+              "targetCondition": "Target-organ involvement or possible secondary hypertension",
+              "clinicalRationale": "Assess baseline kidney health and direct further evaluation."
+            },
+            {
+              "tier": "specializedAdjunctive",
+              "testName": "Electrocardiogram",
+              "modalityTarget": "Electrocardiogram — Cardiac target-organ involvement",
+              "expectedFinding": "Possible left ventricular hypertrophy, rhythm abnormality, or prior cardiac disease",
+              "targetCondition": "Cardiac target-organ involvement",
+              "clinicalRationale": "Assess cardiovascular context; normal ECG does not exclude hypertension."
+            }
+          ],
+          "ruleOut": [
+            {
+              "tier": "laboratory",
+              "testName": "Repeat standardised readings after rest",
+              "modalityTarget": "Repeat standardised readings after rest — Transient or measurement-related elevation",
+              "expectedFinding": "Repeat readings below locally adopted threshold",
+              "targetCondition": "Transient or measurement-related elevation",
+              "clinicalRationale": "Check for technique-related or transient elevation."
+            },
+            {
+              "tier": "specializedAdjunctive",
+              "testName": "Validated home or ambulatory monitoring",
+              "modalityTarget": "Validated home or ambulatory monitoring — White-coat hypertension",
+              "expectedFinding": "Out-of-office average below local threshold despite elevated clinic readings",
+              "targetCondition": "White-coat hypertension",
+              "clinicalRationale": "Avoid relying on clinic readings alone when results are discordant."
+            },
+            {
+              "tier": "laboratory",
+              "testName": "Targeted secondary-hypertension investigations",
+              "modalityTarget": "Targeted secondary-hypertension investigations — Secondary cause of elevated blood pressure",
+              "expectedFinding": "No targeted evidence for the suspected cause",
+              "targetCondition": "Secondary cause of elevated blood pressure",
+              "clinicalRationale": "Select testing using clinical indications rather than broad routine testing."
+            }
+          ]
+        },
+        "medicationPlan": {
+          "note": "UNVERIFIED DRAFT — not approved for clinical use. Adults undergoing blood-pressure measurement, confirmation of hypertension and target-organ-damage assessment. This extraction does not select a specific antihypertensive product or dose. Pregnancy, chronic kidney disease, type 1 diabetes, frailty, resistant hypertension and Saudi/local thresholds require dedicated reconciliation before approval. Existing sections outside this extraction are inherited unchanged and are not newly verified.",
+          "status": "local-protocol-required",
+          "regimens": []
+        },
+        "granularPathway": {
+          "evidence": {
+            "sources": [
+              {
+                "id": "d9172498-65f8-4c96-bf9a-b457238729ed",
+                "url": "https://www.nice.org.uk/guidance/ng136/chapter/recommendations",
+                "title": "Hypertension in adults: diagnosis and management",
+                "issuer": "NICE",
+                "edition": "NG136, last updated 26 February 2026",
+                "locator": "Recommendations 1.1.1 to 1.3.3 and 1.4.19 to 1.4.24",
+                "primary_source": true
+              }
+            ],
+            "selection_rationale": "Unverified scope: Adults undergoing blood-pressure measurement, confirmation of hypertension and target-organ-damage assessment."
+          },
+          "Investigations": [
+            {
+              "id": "official-assessment",
+              "steps": [
+                {
+                  "test": "Standardised clinic blood pressure in both arms",
+                  "timeframe": "At initial assessment",
+                  "expected_finding": "Clinic blood pressure of 140/90 mmHg or higher prompts repeat measurement and confirmation; a persistent inter-arm difference over 15 mmHg directs future measurements to the higher arm.",
+                  "clinical_question": "Is clinic blood pressure raised and is there a persistent inter-arm difference?",
+                  "decision_rationale": "NICE specifies standardised technique, repeat measurement and bilateral assessment."
+                },
+                {
+                  "test": "Ambulatory or home blood pressure monitoring",
+                  "timeframe": "After raised clinic blood pressure is identified",
+                  "expected_finding": "A daytime ABPM or HBPM average of 135/85 mmHg or higher with clinic pressure at least 140/90 mmHg confirms hypertension.",
+                  "clinical_question": "Is hypertension confirmed outside the clinic?",
+                  "decision_rationale": "NICE recommends ABPM, or HBPM when ABPM is unsuitable, for confirmation below severe-hypertension thresholds."
+                },
+                {
+                  "test": "Target-organ-damage assessment",
+                  "timeframe": "During diagnostic assessment",
+                  "expected_finding": "Urine ACR and haematuria testing, HbA1c, electrolytes, creatinine/eGFR, cholesterol, fundoscopy and 12-lead ECG identify associated risk or damage.",
+                  "clinical_question": "Is there renal, metabolic, retinal or cardiac involvement?",
+                  "decision_rationale": "NICE recommends this assessment for all people with hypertension."
+                }
+              ],
+              "title": "Source-backed assessment draft",
+              "evidence": {
+                "sources": [
+                  {
+                    "id": "d9172498-65f8-4c96-bf9a-b457238729ed",
+                    "url": "https://www.nice.org.uk/guidance/ng136/chapter/recommendations",
+                    "title": "Hypertension in adults: diagnosis and management",
+                    "issuer": "NICE",
+                    "edition": "NG136, last updated 26 February 2026",
+                    "locator": "Recommendations 1.1.1 to 1.3.3 and 1.4.19 to 1.4.24",
+                    "primary_source": true
+                  }
+                ],
+                "selection_rationale": "Unverified scope: Adults undergoing blood-pressure measurement, confirmation of hypertension and target-organ-damage assessment."
+              },
+              "timeframe": "According to each source step"
+            }
+          ],
+          "Treatment_Plan": [
+            {
+              "id": "official-management",
+              "title": "Limited source-backed management draft",
+              "actions": [
+                {
+                  "timeframe": "From initial assessment and at review",
+                  "instruction": "Offer lifestyle advice to people with suspected or diagnosed hypertension and repeat it periodically."
+                },
+                {
+                  "timeframe": "At least annually",
+                  "instruction": "Provide annual review for adults with hypertension to monitor blood pressure and discuss lifestyle, symptoms and medication."
+                },
+                {
+                  "timeframe": "Before clinical approval",
+                  "instruction": "Review gaps: This extraction does not select a specific antihypertensive product or dose. Pregnancy, chronic kidney disease, type 1 diabetes, frailty, resistant hypertension and Saudi/local thresholds require dedicated reconciliation before approval."
+                }
+              ],
+              "branches": [],
+              "evidence": {
+                "sources": [
+                  {
+                    "id": "d9172498-65f8-4c96-bf9a-b457238729ed",
+                    "url": "https://www.nice.org.uk/guidance/ng136/chapter/recommendations",
+                    "title": "Hypertension in adults: diagnosis and management",
+                    "issuer": "NICE",
+                    "edition": "NG136, last updated 26 February 2026",
+                    "locator": "Recommendations 1.1.1 to 1.3.3 and 1.4.19 to 1.4.24",
+                    "primary_source": true
+                  }
+                ],
+                "selection_rationale": "Unverified scope: Adults undergoing blood-pressure measurement, confirmation of hypertension and target-organ-damage assessment."
+              },
+              "timeframe": "According to each source action",
+              "Medicines_Doses": []
+            }
+          ],
+          "schema_version": 1
+        },
+        "pathophysiology": {
+          "summary": "Essential hypertension is persistently elevated arterial blood pressure without an identified secondary cause. It is often asymptomatic and increases cardiovascular, cerebrovascular, and kidney risk.",
+          "keyMechanisms": [
+            "Interactions among genetic, renal, vascular, neurohormonal, and environmental factors",
+            "Increased systemic vascular resistance and altered sodium-volume regulation",
+            "Cumulative pressure-related vascular and target-organ injury"
+          ]
+        },
+        "clinicalManagement": [
+          {
+            "id": "htn-1",
+            "title": "Screen and measure accurately",
+            "actions": [
+              "Use a validated device, correct cuff, and standardised seated measurement after rest.",
+              "Obtain repeat readings and document method, values, symptoms, and context.",
+              "Review medicines, supplements, stimulants, tobacco, pain, and acute illness.",
+              "Do not diagnose from one isolated value unless urgent circumstances require action."
+            ],
+            "branches": [
+              {
+                "actions": [
+                  "Arrange repeat and out-of-office confirmation within a risk-appropriate interval.",
+                  "Explain follow-up and symptoms needing urgent assessment."
+                ],
+                "condition": "Elevated screening measurement without acute symptoms"
+              },
+              {
+                "actions": [
+                  "Arrange immediate emergency assessment.",
+                  "Avoid rapid unsupervised outpatient lowering."
+                ],
+                "condition": "Severe elevation with possible acute target-organ injury"
+              }
+            ],
+            "timeframe": "Preventive and primary-care encounters, or when indicated"
+          },
+          {
+            "id": "htn-2",
+            "title": "Confirm diagnosis and assess risk",
+            "actions": [
+              "Confirm sustained hypertension with repeated clinic and/or validated out-of-office readings.",
+              "Assess cardiovascular risk, kidney function, diabetes, lipids, smoking, and target-organ injury.",
+              "Investigate secondary causes when clinical indications are present.",
+              "Agree an individualised plan and follow-up interval."
+            ],
+            "branches": [
+              {
+                "actions": [
+                  "Consider white-coat hypertension rather than labelling sustained disease.",
+                  "Continue monitoring based on overall risk."
+                ],
+                "condition": "Out-of-office values are not persistently elevated"
+              },
+              {
+                "actions": [
+                  "Arrange targeted work-up and specialist input as appropriate.",
+                  "Address urgent complications through emergency care."
+                ],
+                "condition": "Secondary cause or target-organ injury suspected"
+              }
+            ],
+            "timeframe": "After elevated screening readings"
+          },
+          {
+            "id": "htn-3",
+            "title": "Reduce risk and provide ongoing care",
+            "actions": [
+              "Offer lifestyle measures and treatment options under current local guidance.",
+              "Select medication when indicated based on comorbidities, renal function, pregnancy potential, contraindications, and preference.",
+              "Review pressure, adherence, adverse effects, renal function, and risk after treatment changes.",
+              "Escalate persistent uncontrolled readings or suspected complications."
+            ],
+            "branches": [
+              {
+                "actions": [
+                  "Use a pregnancy-specific assessment and treatment pathway.",
+                  "Review medicines promptly and involve obstetric care when indicated."
+                ],
+                "condition": "Pregnancy or pregnancy potential"
+              },
+              {
+                "actions": [
+                  "Confirm measurement technique and adherence; review interfering medicines and secondary causes.",
+                  "Adjust treatment or refer under local guidance."
+                ],
+                "condition": "Pressure remains above agreed target"
+              }
+            ],
+            "timeframe": "After diagnosis and at regular follow-up"
+          }
+        ],
+        "clinicalReviewStatus": "pending",
+        "nonClinicalManagement": {
+          "followUpPlan": "Arrange repeat clinic or out-of-office measurements and cardiovascular-risk review according to results, patient risk, and local guidance.",
+          "mdtReferrals": [
+            "Primary care or family medicine",
+            "Dietitian or lifestyle support",
+            "Cardiology, nephrology, or endocrinology when indicated",
+            "Obstetrics for pregnancy-associated hypertension"
+          ],
+          "lifestyleAndDiet": [
+            "Discuss balanced eating and sodium reduction where appropriate.",
+            "Encourage regular activity, healthy weight goals, and tobacco cessation.",
+            "Discuss alcohol use consistent with health needs and local advice."
+          ],
+          "patientEducation": [
+            "Explain that hypertension is often symptom-free and needs accurate measurement and follow-up.",
+            "Teach home-monitoring technique when used.",
+            "Explain urgent symptoms requiring immediate assessment."
+          ],
+          "dischargeCriteria": [
+            "Measurement result, confirmation plan, and precautions are documented.",
+            "Acute target-organ injury is assessed and disposition determined.",
+            "Patient knows when blood pressure will be reassessed."
+          ]
+        }
+      },
+      "change_summary": "Automated official-guideline extraction; unverified limited-scope draft. Adults undergoing blood-pressure measurement, confirmation of hypertension and target-organ-damage assessment. Existing source version: c36e9014-7d53-4a82-b641-8e05a3c9d627. No clinician approval or new verification date recorded. Graph validation is structural only.",
+      "source_title": "Hypertension in adults: diagnosis and management",
+      "issuing_organization": "NICE",
+      "source_url": "https://www.nice.org.uk/guidance/ng136/chapter/recommendations",
+      "jurisdiction": "International; Saudi adaptation pending",
+      "publication_date": null,
+      "effective_date": null,
+      "last_verified_date": null,
+      "review_date": "2026-10-10",
+      "approved_by": null,
+      "approved_at": null,
+      "published_at": null,
+      "created_by": null,
+      "created_at": "2026-10-11T16:23:43.893584+00:00",
+      "version_number": "official-extraction-2026-10-11-b002",
+      "is_current": false,
+      "content_hash": "45565833df9644580defbb484335ac35d2d2051b11520c7852c90eddae19ed0f"
+    },
+    {
+      "id": "1fe92e16-8de4-4f7c-b6ed-26c4317fcd60",
+      "guideline_id": "c36e9014-7d53-4a82-b641-8e05a3c9d627",
+      "version": "evidence-audit-2026-10-11-v1",
+      "status": "under_review",
+      "content": {
+        "id": "c36e9014-7d53-4a82-b641-8e05a3c9d627",
+        "title": "Adult Essential Hypertension Screening and Confirmation",
+        "pillar": "Keep Well",
+        "status": "under_review",
+        "version": "evidence-audit-2026-10-11-v1",
+        "authority": "NICE",
+        "specialty": "Primary Care and Family Medicine",
+        "lastReviewed": "2026-10-10",
+        "presentation": {
+          "redFlags": [
+            "Severe elevation with chest pain, dyspnoea, neurological deficit, confusion, visual loss, or acute kidney injury",
+            "Pregnancy with elevated pressure or pre-eclampsia symptoms",
+            "Abrupt onset, resistant readings, or suspected secondary cause"
+          ],
+          "symptoms": [
+            "Usually asymptomatic",
+            "Occasional non-specific headache or dizziness, which cannot establish diagnosis"
+          ],
+          "physicalSigns": [
+            "Elevated pressure on correctly performed measurement",
+            "Possible target-organ disease in established hypertension",
+            "Possible clinical clues to a secondary cause"
+          ]
+        },
+        "differentials": [
+          {
+            "condition": "White-coat hypertension",
+            "distinguishingFeatures": "Clinic readings elevated but validated out-of-office average not persistently elevated."
+          },
+          {
+            "condition": "Masked hypertension",
+            "distinguishingFeatures": "Clinic readings may be below threshold while home or ambulatory readings are elevated."
+          },
+          {
+            "condition": "Secondary hypertension",
+            "distinguishingFeatures": "Young onset, abrupt worsening, resistance, relevant medicines, renal or endocrine clues."
+          },
+          {
+            "condition": "Transient elevation",
+            "distinguishingFeatures": "Pain, anxiety, acute illness, stimulants, or measurement error; repeat under standardised conditions."
+          }
+        ],
+        "evidenceAudit": {
+          "scope": "NICE diagnosis thresholds; local Saudi risk tools and treatment implementation require review.",
+          "status": "incomplete",
+          "findings": [
+            "Full NICE compliance and original Medscape derivation have not been established.",
+            "Diagnostic referral or uptake guidance is not sufficient evidence for a Saudi population screening or vaccination schedule.",
+            "NICE diagnosis thresholds; local Saudi risk tools and treatment implementation require review."
+          ],
+          "checkedOn": "2026-10-11",
+          "medscapeStatus": "unavailable",
+          "originalVersionIds": [
+            "126c1f4a-c6af-425f-af52-4d86f6e92223",
+            "f8a3c6b1-f12a-4123-a95c-63e43c1121a2"
+          ],
+          "unverifiedSections": [
+            "Inherited pathophysiology, presentation and differential detail",
+            "Investigation selection and interpretation outside the explicitly cited scope",
+            "Complete medicines, contraindications, dose adjustments and monitoring",
+            "Non-clinical care and local Saudi adaptation"
+          ]
+        },
+        "investigations": {
+          "ruleIn": [
+            {
+              "tier": "laboratory",
+              "testName": "Repeated standardised clinic blood-pressure measurement",
+              "modalityTarget": "Repeated standardised clinic blood-pressure measurement — Persistently elevated blood pressure",
+              "expectedFinding": "Repeated readings meeting locally adopted threshold using validated device and correct cuff",
+              "targetCondition": "Persistently elevated blood pressure",
+              "clinicalRationale": "Reduce misclassification from poor technique or transient elevation."
+            },
+            {
+              "tier": "specializedAdjunctive",
+              "testName": "Home or ambulatory blood-pressure monitoring",
+              "modalityTarget": "Home or ambulatory blood-pressure monitoring — Sustained hypertension",
+              "expectedFinding": "Out-of-office average meeting locally adopted threshold",
+              "targetCondition": "Sustained hypertension",
+              "clinicalRationale": "Confirm persistence and identify white-coat or masked hypertension."
+            },
+            {
+              "tier": "laboratory",
+              "testName": "Creatinine, estimated glomerular filtration rate, electrolytes, urine albumin, and urinalysis",
+              "modalityTarget": "Creatinine, estimated glomerular filtration rate, electrolytes, urine albumin, and urinalysis — Target-organ involvement or possible secondary hypertension",
+              "expectedFinding": "Renal impairment, albuminuria, electrolyte abnormality, or other finding needing assessment",
+              "targetCondition": "Target-organ involvement or possible secondary hypertension",
+              "clinicalRationale": "Assess baseline kidney health and direct further evaluation."
+            },
+            {
+              "tier": "specializedAdjunctive",
+              "testName": "Electrocardiogram",
+              "modalityTarget": "Electrocardiogram — Cardiac target-organ involvement",
+              "expectedFinding": "Possible left ventricular hypertrophy, rhythm abnormality, or prior cardiac disease",
+              "targetCondition": "Cardiac target-organ involvement",
+              "clinicalRationale": "Assess cardiovascular context; normal ECG does not exclude hypertension."
+            }
+          ],
+          "ruleOut": [
+            {
+              "tier": "laboratory",
+              "testName": "Repeat standardised readings after rest",
+              "modalityTarget": "Repeat standardised readings after rest — Transient or measurement-related elevation",
+              "expectedFinding": "Repeat readings below locally adopted threshold",
+              "targetCondition": "Transient or measurement-related elevation",
+              "clinicalRationale": "Check for technique-related or transient elevation."
+            },
+            {
+              "tier": "specializedAdjunctive",
+              "testName": "Validated home or ambulatory monitoring",
+              "modalityTarget": "Validated home or ambulatory monitoring — White-coat hypertension",
+              "expectedFinding": "Out-of-office average below local threshold despite elevated clinic readings",
+              "targetCondition": "White-coat hypertension",
+              "clinicalRationale": "Avoid relying on clinic readings alone when results are discordant."
+            },
+            {
+              "tier": "laboratory",
+              "testName": "Targeted secondary-hypertension investigations",
+              "modalityTarget": "Targeted secondary-hypertension investigations — Secondary cause of elevated blood pressure",
+              "expectedFinding": "No targeted evidence for the suspected cause",
+              "targetCondition": "Secondary cause of elevated blood pressure",
+              "clinicalRationale": "Select testing using clinical indications rather than broad routine testing."
+            }
+          ]
+        },
+        "medicationPlan": {
+          "note": "UNREVIEWED DRAFT — NOT FOR CLINICAL USE. This version replaces the inherited prescribing list with a limited source comparison. It is not a complete prescribing protocol. Verify all doses, routes, contraindications, organ-function adjustments, interactions and monitoring before approval. Original medication content remains preserved in the previous versions.",
+          "status": "local-protocol-required",
+          "regimens": []
+        },
+        "granularPathway": {
+          "evidence": {
+            "sources": [
+              {
+                "id": "be6c8987-fa62-4aff-8fb1-736183cdff6e",
+                "url": "https://www.nice.org.uk/guidance/ng136/chapter/recommendations",
+                "title": "Recommendations",
+                "issuer": "NICE",
+                "edition": "Public recommendation/reference page retrieved 11 October 2026; retrieval is not clinical approval",
+                "locator": "1.2.3–1.2.8; 1.5",
+                "primary_source": true
+              }
+            ],
+            "selection_rationale": "Limited source comparison only. NICE diagnosis thresholds; local Saudi risk tools and treatment implementation require review. Inherited sections have not been re-verified; see the evidence audit. No full NICE compliance, original Medscape derivation or clinician approval is asserted."
+          },
+          "Investigations": [
+            {
+              "id": "inherited-investigations",
+              "steps": [
+                {
+                  "test": "Repeated standardised clinic blood-pressure measurement",
+                  "timeframe": "Not newly verified",
+                  "expected_finding": "Repeated readings meeting locally adopted threshold using validated device and correct cuff",
+                  "clinical_question": "Persistently elevated blood pressure",
+                  "decision_rationale": "Inherited and not verified in this audit: Reduce misclassification from poor technique or transient elevation."
+                },
+                {
+                  "test": "Home or ambulatory blood-pressure monitoring",
+                  "timeframe": "Not newly verified",
+                  "expected_finding": "Out-of-office average meeting locally adopted threshold",
+                  "clinical_question": "Sustained hypertension",
+                  "decision_rationale": "Inherited and not verified in this audit: Confirm persistence and identify white-coat or masked hypertension."
+                },
+                {
+                  "test": "Creatinine, estimated glomerular filtration rate, electrolytes, urine albumin, and urinalysis",
+                  "timeframe": "Not newly verified",
+                  "expected_finding": "Renal impairment, albuminuria, electrolyte abnormality, or other finding needing assessment",
+                  "clinical_question": "Target-organ involvement or possible secondary hypertension",
+                  "decision_rationale": "Inherited and not verified in this audit: Assess baseline kidney health and direct further evaluation."
+                },
+                {
+                  "test": "Electrocardiogram",
+                  "timeframe": "Not newly verified",
+                  "expected_finding": "Possible left ventricular hypertrophy, rhythm abnormality, or prior cardiac disease",
+                  "clinical_question": "Cardiac target-organ involvement",
+                  "decision_rationale": "Inherited and not verified in this audit: Assess cardiovascular context; normal ECG does not exclude hypertension."
+                },
+                {
+                  "test": "Repeat standardised readings after rest",
+                  "timeframe": "Not newly verified",
+                  "expected_finding": "Repeat readings below locally adopted threshold",
+                  "clinical_question": "Transient or measurement-related elevation",
+                  "decision_rationale": "Inherited and not verified in this audit: Check for technique-related or transient elevation."
+                },
+                {
+                  "test": "Validated home or ambulatory monitoring",
+                  "timeframe": "Not newly verified",
+                  "expected_finding": "Out-of-office average below local threshold despite elevated clinic readings",
+                  "clinical_question": "White-coat hypertension",
+                  "decision_rationale": "Inherited and not verified in this audit: Avoid relying on clinic readings alone when results are discordant."
+                },
+                {
+                  "test": "Targeted secondary-hypertension investigations",
+                  "timeframe": "Not newly verified",
+                  "expected_finding": "No targeted evidence for the suspected cause",
+                  "clinical_question": "Secondary cause of elevated blood pressure",
+                  "decision_rationale": "Inherited and not verified in this audit: Select testing using clinical indications rather than broad routine testing."
+                }
+              ],
+              "title": "Inherited investigations — verification still required",
+              "evidence": {
+                "sources": [
+                  {
+                    "id": "be6c8987-fa62-4aff-8fb1-736183cdff6e",
+                    "url": "https://www.nice.org.uk/guidance/ng136/chapter/recommendations",
+                    "title": "Recommendations",
+                    "issuer": "NICE",
+                    "edition": "Public recommendation/reference page retrieved 11 October 2026; retrieval is not clinical approval",
+                    "locator": "1.2.3–1.2.8; 1.5",
+                    "primary_source": true
+                  }
+                ],
+                "selection_rationale": "Limited source comparison only. NICE diagnosis thresholds; local Saudi risk tools and treatment implementation require review. Inherited sections have not been re-verified; see the evidence audit. No full NICE compliance, original Medscape derivation or clinician approval is asserted."
+              },
+              "timeframe": "Determine from the full disease-specific pathway before clinical approval"
+            }
+          ],
+          "Treatment_Plan": [
+            {
+              "id": "source-scope-correction",
+              "title": "Limited source correction",
+              "actions": [
+                {
+                  "timeframe": "Clinician must confirm timing for the specific patient",
+                  "instruction": "Confirm clinic readings of 140/90 to below 180/120 mmHg using ABPM, or HBPM if ABPM is unsuitable."
+                },
+                {
+                  "timeframe": "Clinician must confirm timing for the specific patient",
+                  "instruction": "Use a daytime ABPM or HBPM average of at least 135/85 mmHg to confirm hypertension with raised clinic pressure; assess severe readings for same-day referral indications."
+                }
+              ],
+              "branches": [],
+              "evidence": {
+                "sources": [
+                  {
+                    "id": "be6c8987-fa62-4aff-8fb1-736183cdff6e",
+                    "url": "https://www.nice.org.uk/guidance/ng136/chapter/recommendations",
+                    "title": "Recommendations",
+                    "issuer": "NICE",
+                    "edition": "Public recommendation/reference page retrieved 11 October 2026; retrieval is not clinical approval",
+                    "locator": "1.2.3–1.2.8; 1.5",
+                    "primary_source": true
+                  }
+                ],
+                "selection_rationale": "Limited source comparison only. NICE diagnosis thresholds; local Saudi risk tools and treatment implementation require review. Inherited sections have not been re-verified; see the evidence audit. No full NICE compliance, original Medscape derivation or clinician approval is asserted."
+              },
+              "timeframe": "According to clinical acuity and the source pathway",
+              "Medicines_Doses": []
+            }
+          ],
+          "schema_version": 1
+        },
+        "pathophysiology": {
+          "summary": "Essential hypertension is persistently elevated arterial blood pressure without an identified secondary cause. It is often asymptomatic and increases cardiovascular, cerebrovascular, and kidney risk.",
+          "keyMechanisms": [
+            "Interactions among genetic, renal, vascular, neurohormonal, and environmental factors",
+            "Increased systemic vascular resistance and altered sodium-volume regulation",
+            "Cumulative pressure-related vascular and target-organ injury"
+          ]
+        },
+        "clinicalManagement": [
+          {
+            "id": "source-scope-correction",
+            "title": "Topic-specific source correction — limited scope",
+            "actions": [
+              "Confirm clinic readings of 140/90 to below 180/120 mmHg using ABPM, or HBPM if ABPM is unsuitable.",
+              "Use a daytime ABPM or HBPM average of at least 135/85 mmHg to confirm hypertension with raised clinic pressure; assess severe readings for same-day referral indications."
+            ],
+            "timeframe": "Apply according to acuity and the cited guideline; clinician verification required"
+          }
+        ],
+        "clinicalReviewStatus": "pending",
+        "nonClinicalManagement": {
+          "followUpPlan": "Arrange repeat clinic or out-of-office measurements and cardiovascular-risk review according to results, patient risk, and local guidance.",
+          "mdtReferrals": [
+            "Primary care or family medicine",
+            "Dietitian or lifestyle support",
+            "Cardiology, nephrology, or endocrinology when indicated",
+            "Obstetrics for pregnancy-associated hypertension"
+          ],
+          "lifestyleAndDiet": [
+            "Discuss balanced eating and sodium reduction where appropriate.",
+            "Encourage regular activity, healthy weight goals, and tobacco cessation.",
+            "Discuss alcohol use consistent with health needs and local advice."
+          ],
+          "patientEducation": [
+            "Explain that hypertension is often symptom-free and needs accurate measurement and follow-up.",
+            "Teach home-monitoring technique when used.",
+            "Explain urgent symptoms requiring immediate assessment."
+          ],
+          "dischargeCriteria": [
+            "Measurement result, confirmation plan, and precautions are documented.",
+            "Acute target-organ injury is assessed and disposition determined.",
+            "Patient knows when blood pressure will be reassessed."
+          ]
+        }
+      },
+      "change_summary": "Limited evidence audit; NOT clinically approved. limited-scope-correction. NICE diagnosis thresholds; local Saudi risk tools and treatment implementation require review. Original versions: [\"126c1f4a-c6af-425f-af52-4d86f6e92223\", \"f8a3c6b1-f12a-4123-a95c-63e43c1121a2\"]",
+      "source_title": "Recommendations",
+      "issuing_organization": "NICE",
+      "source_url": "https://www.nice.org.uk/guidance/ng136/chapter/recommendations",
+      "jurisdiction": "International comparator; Saudi adaptation and full clinical review pending",
+      "publication_date": null,
+      "effective_date": null,
+      "last_verified_date": null,
+      "review_date": "2026-10-11",
+      "approved_by": null,
+      "approved_at": null,
+      "published_at": null,
+      "created_by": null,
+      "created_at": "2026-10-11T20:06:43.565948+00:00",
+      "version_number": "evidence-audit-2026-10-11-v1",
+      "is_current": false,
+      "content_hash": "d933deb6437603d56fbb189b96c13b13536bf54d3732a7c70505814f0b4cefdb"
+    }
+  ]
+}

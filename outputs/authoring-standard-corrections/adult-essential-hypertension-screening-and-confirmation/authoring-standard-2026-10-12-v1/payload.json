@@ -1,0 +1,357 @@
+{
+  "id": "c36e9014-7d53-4a82-b641-8e05a3c9d627",
+  "title": "Adult Essential Hypertension Screening and Confirmation",
+  "specialty": "Primary Care and Family Medicine",
+  "authority": "MOH",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Keep Well",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Adult screening, standardised measurement, confirmation, initial organ-damage assessment, escalation and follow-up were checked against the opened NHC/SHA 2023 hypertension guideline and the opened Saudi MOH hypertension page.",
+    "findings": [
+      "The Saudi guideline separates thresholds used to diagnose hypertension from thresholds used to consider treatment; this topic does not merge them.",
+      "Home and ambulatory measurements supplement office measurement and identify white-coat or masked hypertension.",
+      "The source requires a clinical and laboratory evaluation for target-organ damage and secondary causes after suspected hypertension."
+    ],
+    "unverifiedSections": [
+      "Local laboratory-specific reference intervals.",
+      "Local availability and calibration programme for validated blood-pressure devices.",
+      "A second current international guideline could not be opened; NICE NG136 returned HTTP 403.",
+      "Treatment selection is outside this screening-and-confirmation topic."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "c36e9014-7d53-4a82-b641-8e05a3c9d627",
+      "f8a3c6b1-f12a-4123-a95c-63e43c1121a2",
+      "126c1f4a-c6af-425f-af52-4d86f6e92223",
+      "1fe92e16-8de4-4f7c-b6ed-26c4317fcd60"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Sustained arterial pressure above the diagnostic threshold causes progressive vascular and target-organ injury. The condition is usually silent, so reliable measurement and confirmation are central to diagnosis.",
+    "keyMechanisms": [
+      "Persistent excess arterial pressure injures blood vessels over time.",
+      "Vascular injury and arterial wall change reduce efficient blood flow and contribute to cardiac and cerebrovascular complications.",
+      "Ongoing pressure-related injury affects the heart, brain, kidneys and eyes; the initial evaluation looks for damage in these organs."
+    ],
+    "references": [
+      {
+        "title": "National Heart Center/Saudi Heart Association 2023 Guidelines on the Management of Hypertension",
+        "edition": "2023, pp. 17-23, sections 3.1 and 3.4, Tables 2 and 6-8",
+        "url": "https://saudi-heart.com/wp-content/uploads/2023/12/NHC_SHA-2023-Guidelines-on-the-management-of-Hypertension..pdf"
+      },
+      {
+        "title": "Cardiovascular Diseases - Hypertension",
+        "edition": "Saudi MOH, updated 24 August 2023, overview and complications",
+        "url": "https://www.moh.gov.sa/en/healthawareness/educationalcontent/diseases/heartcirculatory/pages/0011.aspx"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Usually no symptoms, including at markedly elevated readings.",
+      "Headache, dizziness, nosebleed, visual change or tinnitus may occur but cannot confirm hypertension."
+    ],
+    "physicalSigns": [
+      "Elevated blood pressure measured with a validated device and correct technique.",
+      "Possible signs of cardiac, neurological, renal or retinal target-organ damage.",
+      "Possible clues to a secondary cause on cardiovascular, renal, endocrine or vascular examination."
+    ],
+    "redFlags": [
+      "Blood pressure above 190/120 mmHg with new or worsening hypertension-mediated organ damage: treat as a hypertensive emergency pathway.",
+      "Chest pain, dyspnoea, acute neurological deficit, confusion or visual loss with severe elevation: urgent hospital assessment.",
+      "Pregnancy with elevated blood pressure: use a pregnancy-specific pathway."
+    ],
+    "precipitants": [
+      "Obesity, physical inactivity, high dietary salt intake, smoking and advancing age.",
+      "Kidney, endocrine or thyroid disease, sleep apnoea and pregnancy.",
+      "Medicines, contraceptive pills, stimulants or recreational drugs that raise blood pressure."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "White-coat hypertension",
+      "distinguishingFeatures": "Office blood pressure is elevated while correctly performed home or ambulatory averages are below the applicable diagnostic threshold."
+    },
+    {
+      "condition": "Masked hypertension",
+      "distinguishingFeatures": "Office blood pressure is below the diagnostic threshold while home or ambulatory readings are elevated."
+    },
+    {
+      "condition": "Transient or technique-related elevation",
+      "distinguishingFeatures": "The reading falls after rest and correct cuff, position and repeat-measurement technique; review pain, acute illness and substances."
+    },
+    {
+      "condition": "Secondary hypertension",
+      "distinguishingFeatures": "History, examination or baseline tests suggest renal, endocrine, vascular, sleep-related, pregnancy-related or medicine-related disease."
+    }
+  ],
+  "diagnosticCriteria": [
+    {
+      "criterion": "Saudi office, daytime ambulatory or average home diagnostic threshold",
+      "threshold": "130/80 mmHg or higher when measured appropriately."
+    },
+    {
+      "criterion": "Saudi 24-hour ambulatory diagnostic threshold",
+      "threshold": "Above 125/75 mmHg."
+    },
+    {
+      "criterion": "Saudi night-time ambulatory diagnostic threshold",
+      "threshold": "Above 110/65 mmHg."
+    },
+    {
+      "criterion": "Saudi threshold at which treatment is considered",
+      "threshold": "Above 140/90 mmHg in the office; 130/80 mmHg or higher for 24-hour ambulatory average; 135/85 mmHg or higher for daytime ambulatory or average home readings."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Standardised office blood pressure",
+        "modalityTarget": "Screen at each healthcare visit when feasible; use annual screening after age 40 or with risk factors, and every 3-5 years for other adults.",
+        "targetCondition": "Persistent hypertension",
+        "expectedFinding": "Average of three measurements meets or exceeds 130/80 mmHg after correct preparation and technique.",
+        "clinicalRationale": "Seat the patient quietly for at least 5 minutes; support back and arm with feet on the floor; use a calibrated device and correct cuff; measure both arms; average three readings 1-2 minutes apart. Repeat if readings differ by more than 10 mmHg.",
+        "normalValue": "120/80 mmHg is the Saudi guideline's normal reference value.",
+        "references": [
+          {
+            "title": "National Heart Center/Saudi Heart Association 2023 Guidelines on the Management of Hypertension",
+            "edition": "2023, pp. 17-21, sections 3.1-3.3, Tables 2-4 and Figure 1",
+            "url": "https://saudi-heart.com/wp-content/uploads/2023/12/NHC_SHA-2023-Guidelines-on-the-management-of-Hypertension..pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Home blood-pressure monitoring",
+        "modalityTarget": "Confirm an elevated office result or assess suspected white-coat or masked hypertension.",
+        "targetCondition": "Out-of-office hypertension",
+        "expectedFinding": "Average home blood pressure is 130/80 mmHg or higher for diagnosis; 135/85 mmHg or higher is the separate threshold at which treatment is considered.",
+        "clinicalRationale": "Use a validated automatic monitor after at least 5 minutes seated in a quiet setting with back, legs and arm supported. Record two to three readings morning and evening for several days.",
+        "normalValue": "Average home blood pressure below 130/80 mmHg under the Saudi diagnostic definition.",
+        "references": [
+          {
+            "title": "National Heart Center/Saudi Heart Association 2023 Guidelines on the Management of Hypertension",
+            "edition": "2023, pp. 18-20, sections 3.2.2.1-3.2.2.2 and Tables 2-3",
+            "url": "https://saudi-heart.com/wp-content/uploads/2023/12/NHC_SHA-2023-Guidelines-on-the-management-of-Hypertension..pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "24-hour ambulatory blood-pressure monitoring",
+        "modalityTarget": "Confirm office readings and identify white-coat, masked or isolated nocturnal hypertension.",
+        "targetCondition": "Sustained or nocturnal hypertension",
+        "expectedFinding": "Twenty-four-hour average above 125/75 mmHg or night-time average above 110/65 mmHg meets the Saudi diagnostic definition.",
+        "clinicalRationale": "Interpret daytime, night-time and 24-hour averages separately because their thresholds differ.",
+        "normalValue": "Twenty-four-hour average 125/75 mmHg or lower and night-time average 110/65 mmHg or lower under the Saudi diagnostic definition.",
+        "references": [
+          {
+            "title": "National Heart Center/Saudi Heart Association 2023 Guidelines on the Management of Hypertension",
+            "edition": "2023, pp. 18-20, section 3.2.2.2 and Tables 2-3",
+            "url": "https://saudi-heart.com/wp-content/uploads/2023/12/NHC_SHA-2023-Guidelines-on-the-management-of-Hypertension..pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Baseline organ-damage and secondary-cause panel",
+        "modalityTarget": "After suspected or confirmed hypertension: glucose or HbA1c, full blood count, lipid profile, creatinine with estimated glomerular filtration rate, sodium, potassium, calcium, thyroid-stimulating hormone and urinalysis.",
+        "targetCondition": "Hypertension-mediated organ damage, cardiovascular risk or secondary hypertension",
+        "expectedFinding": "Renal impairment, electrolyte disturbance, dysglycaemia, dyslipidaemia, thyroid abnormality, haematuria or proteinuria may change risk assessment or trigger targeted evaluation.",
+        "clinicalRationale": "Interpret each result against the reporting laboratory's adult interval. Add urine albumin-to-creatinine ratio for diabetes, long-standing hypertension or established organ damage; it may also be used in suspected hypertension.",
+        "normalValue": "Within the reporting laboratory's adult reference interval; the Saudi guideline does not set a single numeric normal range for this panel.",
+        "references": [
+          {
+            "title": "National Heart Center/Saudi Heart Association 2023 Guidelines on the Management of Hypertension",
+            "edition": "2023, pp. 21-23, section 3.4 and Table 6",
+            "url": "https://saudi-heart.com/wp-content/uploads/2023/12/NHC_SHA-2023-Guidelines-on-the-management-of-Hypertension..pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Twelve-lead electrocardiogram",
+        "modalityTarget": "Baseline evaluation after suspected or confirmed hypertension.",
+        "targetCondition": "Cardiac target-organ damage or coexisting cardiac disease",
+        "expectedFinding": "Left-ventricular hypertrophy, rhythm abnormality or evidence of cardiac disease may alter risk and prompt echocardiography or specialist review.",
+        "clinicalRationale": "A normal tracing does not exclude hypertension. Consider echocardiography when the electrocardiogram is abnormal or left-ventricular dysfunction or coronary disease is strongly suspected.",
+        "normalValue": "No electrocardiographic evidence of hypertensive cardiac damage; interpret against the clinical context.",
+        "references": [
+          {
+            "title": "National Heart Center/Saudi Heart Association 2023 Guidelines on the Management of Hypertension",
+            "edition": "2023, pp. 21-23, section 3.4 and Table 6",
+            "url": "https://saudi-heart.com/wp-content/uploads/2023/12/NHC_SHA-2023-Guidelines-on-the-management-of-Hypertension..pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Repeat office measurement after correct preparation",
+        "modalityTarget": "An isolated elevated reading or inconsistent readings.",
+        "targetCondition": "Transient or technique-related elevation",
+        "expectedFinding": "The average falls below the Saudi office diagnostic threshold after standardised repeat measurement.",
+        "clinicalRationale": "Do not label sustained hypertension from a poorly performed or isolated reading. Use the higher arm for subsequent readings when arms differ.",
+        "normalValue": "Below 130/80 mmHg under the Saudi office diagnostic definition.",
+        "references": [
+          {
+            "title": "National Heart Center/Saudi Heart Association 2023 Guidelines on the Management of Hypertension",
+            "edition": "2023, pp. 18-20, section 3.2.1, Figure 1 and Tables 2-3",
+            "url": "https://saudi-heart.com/wp-content/uploads/2023/12/NHC_SHA-2023-Guidelines-on-the-management-of-Hypertension..pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Orthostatic blood-pressure measurement",
+        "modalityTarget": "First assessment; especially older adults, people with diabetes, symptoms or conditions associated with orthostatic hypotension.",
+        "targetCondition": "Orthostatic hypotension affecting interpretation or treatment safety",
+        "expectedFinding": "Symptoms or a fall after standing indicates that management should account for postural blood pressure.",
+        "clinicalRationale": "Measure after 1 minute and 3 minutes standing from a seated position. The opened Saudi source specifies timing but does not state a numeric diagnostic fall in this section.",
+        "normalValue": "No symptomatic postural fall; no numeric normal threshold is asserted from the opened source.",
+        "references": [
+          {
+            "title": "National Heart Center/Saudi Heart Association 2023 Guidelines on the Management of Hypertension",
+            "edition": "2023, pp. 18-20, section 3.2.1 and Figure 1",
+            "url": "https://saudi-heart.com/wp-content/uploads/2023/12/NHC_SHA-2023-Guidelines-on-the-management-of-Hypertension..pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "screen",
+      "title": "Screen with standardised office measurement",
+      "timeframe": "At each healthcare visit when feasible",
+      "actions": [
+        "Screen all adults older than 18 years. Screen annually after age 40 or when hypertension risk factors are present; otherwise screen every 3-5 years (NHC/SHA 2023, section 3.3.1, Table 4).",
+        "Seat quietly for at least 5 minutes; support the back and arm; keep both feet on the floor; use a calibrated validated device and correct cuff (section 3.2.1, Figure 1).",
+        "Measure both arms. Average three readings taken 1-2 minutes apart; take additional measurements when readings differ by more than 10 mmHg (section 3.2.1)."
+      ]
+    },
+    {
+      "id": "confirm",
+      "title": "Confirm persistence outside the office",
+      "timeframe": "After an elevated screening result",
+      "actions": [
+        "Use validated home or 24-hour ambulatory monitoring to confirm office readings and detect white-coat, masked or nocturnal hypertension (NHC/SHA 2023, section 3.2.2, Tables 2-3).",
+        "Keep diagnostic thresholds separate from treatment-consideration thresholds. Record the method, time period and average used.",
+        "If repeat office and out-of-office results disagree, document the phenotype rather than averaging readings from different methods."
+      ],
+      "branches": [
+        {
+          "condition": "Office elevated; home or ambulatory average below its diagnostic threshold",
+          "actions": [
+            "Document possible white-coat hypertension and continue risk-based surveillance."
+          ]
+        },
+        {
+          "condition": "Office below threshold; home or ambulatory average elevated",
+          "actions": [
+            "Document possible masked hypertension and complete cardiovascular and organ-damage assessment."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "evaluate",
+      "title": "Assess risk, organ damage and secondary causes",
+      "timeframe": "At confirmation or while confirmation is arranged",
+      "actions": [
+        "Record previous readings, family history, cardiovascular and renal disease, medicines and substances, exercise, weight change, diet, smoking, sleep and pregnancy possibility (NHC/SHA 2023, section 3.4, Table 6).",
+        "Perform the baseline laboratory panel, urinalysis and electrocardiogram. Add targeted testing only when history, examination or baseline results suggest a secondary cause.",
+        "Consider echocardiography when the electrocardiogram is abnormal or left-ventricular dysfunction or coronary disease is strongly suspected."
+      ]
+    },
+    {
+      "id": "escalate",
+      "title": "Escalate suspected hypertensive emergency",
+      "timeframe": "Immediately",
+      "actions": [
+        "Use an emergency pathway when blood pressure is above 190/120 mmHg with new or worsening hypertension-mediated organ damage (NHC/SHA 2023, Table 20).",
+        "Send severe elevation with chest pain, dyspnoea, acute neurological deficit, confusion or visual loss for urgent hospital assessment.",
+        "Use a pregnancy-specific pathway for any pregnant patient with elevated blood pressure."
+      ]
+    },
+    {
+      "id": "follow-up",
+      "title": "Document and arrange follow-up",
+      "timeframe": "Before the encounter ends",
+      "actions": [
+        "Record the measurement method, arm, cuff, readings, average, symptoms, organ-damage assessment and confirmation plan.",
+        "After treatment begins or while blood pressure remains uncontrolled, review in 1-2 months; once controlled, review every 3-6 months (NHC/SHA 2023, section 3.3.2, Table 5).",
+        "Give lifestyle advice and clear instructions for urgent symptoms; treatment choice belongs in the full hypertension-management pathway."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "no-drug-indicated",
+    "regimens": [],
+    "note": "This topic covers screening and confirmation. It does not prescribe medicines. Use the governed hypertension-treatment pathway after diagnosis and risk assessment."
+  },
+  "teaching": {
+    "scope": "Adult hypertension screening and confirmation in Saudi primary care.",
+    "learningObjectives": [
+      "Perform a standardised office blood-pressure assessment and select the correct out-of-office confirmation method.",
+      "Keep Saudi diagnostic thresholds separate from treatment-consideration thresholds.",
+      "Recognise organ-damage features that require immediate escalation."
+    ],
+    "pitfalls": [
+      "Diagnosing sustained hypertension from one poorly performed office reading.",
+      "Combining office, home and ambulatory thresholds as if they were interchangeable.",
+      "Missing masked hypertension because the office reading is below threshold.",
+      "Delaying emergency assessment when severe elevation accompanies new organ damage."
+    ],
+    "keyPoints": [
+      "Standardise technique before interpreting the number.",
+      "Use home or ambulatory averages to confirm and phenotype hypertension.",
+      "Assess cardiovascular risk, target-organ damage and secondary causes after suspected hypertension."
+    ],
+    "references": [
+      {
+        "title": "National Heart Center/Saudi Heart Association 2023 Guidelines on the Management of Hypertension",
+        "edition": "Journal of the Saudi Heart Association 2023;35:16-39",
+        "url": "https://saudi-heart.com/wp-content/uploads/2023/12/NHC_SHA-2023-Guidelines-on-the-management-of-Hypertension..pdf",
+        "locator": "pp. 17-23, sections 3.1-3.4, Tables 2-8 and Figure 1; p. 32, Table 20"
+      },
+      {
+        "title": "Cardiovascular Diseases - Hypertension",
+        "edition": "Saudi Ministry of Health, updated 24 August 2023",
+        "url": "https://www.moh.gov.sa/en/healthawareness/educationalcontent/diseases/heartcirculatory/pages/0011.aspx",
+        "locator": "Classification; causes and risk factors; symptoms; complications; diagnosis; treatment and prevention"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Hypertension is often symptom-free; follow-up depends on measured averages, not symptoms.",
+      "Show how to sit, position the arm and use a validated home monitor before relying on home readings.",
+      "Seek urgent care for chest pain, severe breathlessness, new neurological deficit, confusion or visual loss with a severe reading."
+    ],
+    "lifestyleAndDiet": [
+      "Offer regular physical activity, weight management, smoking cessation and a balanced eating pattern.",
+      "Saudi MOH public advice recommends reducing salt to less than 5 g per day; individualise advice for comorbidity and local diet."
+    ],
+    "mdtReferrals": [
+      "Primary care or family medicine for confirmation and cardiovascular-risk review.",
+      "Emergency care for suspected acute target-organ injury.",
+      "Relevant specialist service when a secondary cause or established organ damage is suspected.",
+      "Obstetric care for pregnancy-associated hypertension."
+    ],
+    "dischargeCriteria": [
+      "No feature requiring immediate hospital assessment.",
+      "Measurement method and results are documented.",
+      "Home or ambulatory confirmation and follow-up responsibility are arranged.",
+      "The patient understands urgent symptoms and home-monitoring technique."
+    ],
+    "followUpPlan": "The ordering primary-care clinician reviews the home or ambulatory average and baseline tests. Review in 1-2 months after treatment initiation or adjustment and every 3-6 months once controlled; use a shorter interval when organ damage, pregnancy or secondary hypertension is suspected."
+  }
+}
