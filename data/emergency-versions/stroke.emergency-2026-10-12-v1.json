@@ -1,0 +1,464 @@
+{
+  "id": "c2c404f2-5f47-4e4d-9ce7-fb32a9c1e105",
+  "title": "Acute Ischemic Stroke",
+  "specialty": "Emergency Medicine and Neurology",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "emergency-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Adults with suspected acute stroke in the emergency department: recognition, imaging, thrombolysis, thrombectomy referral and early care. Verified against NICE NG128, the European Stroke Organisation IV thrombolysis guideline (2021) and the alteplase prescribing information. No Saudi national stroke guideline was found in open sources; follow the local stroke-code protocol.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Saudi national stroke guideline not located — local stroke-code protocol applies",
+      "AHA/ASA guideline text not accessible (publisher block)",
+      "Tenecteplase maximum dose — product label"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "c2c404f2-5f47-4e4d-9ce7-fb32a9c1e105"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Ischaemic stroke is sudden focal neurological loss from arterial occlusion (thrombosis or embolism). Around the irreversibly infarcted core lies the ischaemic penumbra — tissue that can be saved if blood flow is restored quickly, which is why treatment is time-critical.",
+    "keyMechanisms": [
+      "Causes: large-artery atherosclerosis, cardioembolism (atrial fibrillation, recent MI, endocarditis), small-vessel (lacunar) disease, arterial dissection and other rarer causes.",
+      "Penumbra survival falls with every minute of occlusion; thrombolysis and thrombectomy aim to reperfuse it. Advanced imaging (CT perfusion or MRI) identifies salvageable tissue beyond standard time windows.",
+      "Thrombolysis risks symptomatic intracranial haemorrhage — hence strict exclusion of haemorrhage on CT and control of BP to 185/110 mmHg or lower.",
+      "Hyperglycaemia, hypoxaemia and fever worsen the injury; aspiration is common with dysphagia."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Sudden facial weakness, arm or leg weakness, speech disturbance (FAST).",
+      "Visual field loss, diplopia, vertigo, ataxia (posterior circulation).",
+      "Severe headache at onset, vomiting or reduced consciousness suggest haemorrhage."
+    ],
+    "physicalSigns": [
+      "Focal deficit — use ROSIER in the ED and record NIHSS for treatment decisions.",
+      "Irregular pulse (AF), carotid bruit, murmurs (embolic source).",
+      "BP often raised; check glucose immediately (hypoglycaemia mimics stroke)."
+    ],
+    "redFlags": [
+      "Last known well within 4.5 h → stroke code, immediate CT",
+      "Severe deficit — possible large vessel occlusion → CTA for thrombectomy",
+      "Anticoagulant use, bleeding tendency, GCS below 13, fluctuating symptoms, severe headache, fever/neck stiffness → immediate CT",
+      "Seizure at onset, hypoglycaemia (mimics)"
+    ],
+    "precipitants": [
+      "Atrial fibrillation.",
+      "Hypertension, diabetes, smoking, dyslipidaemia.",
+      "Carotid stenosis; arterial dissection.",
+      "Recent MI; endocarditis."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Intracerebral haemorrhage",
+      "distinguishingFeatures": "Only reliably excluded by CT; manage BP and reverse anticoagulation (NICE)."
+    },
+    {
+      "condition": "Hypoglycaemia",
+      "distinguishingFeatures": "Check capillary glucose immediately."
+    },
+    {
+      "condition": "Seizure with post-ictal (Todd's) paresis",
+      "distinguishingFeatures": "Witnessed seizure; ESO suggests IVT if no suspicion of mimic or head trauma."
+    },
+    {
+      "condition": "Migraine with aura, functional disorder, tumour, subdural haematoma",
+      "distinguishingFeatures": "History and imaging."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Capillary blood glucose",
+        "modalityTarget": "Immediately",
+        "targetCondition": "Mimic; glycaemic control",
+        "expectedFinding": "Low glucose mimics stroke; high glucose worsens outcome.",
+        "clinicalRationale": "Keep glucose 4–11 mmol/L (NICE).",
+        "normalValue": "4–11 mmol/L target",
+        "references": [
+          {
+            "title": "NICE NG128: Stroke and transient ischaemic attack in over 16s: diagnosis and initial management",
+            "edition": "NICE guideline, 2019 (updated 2025)",
+            "url": "https://www.nice.org.uk/guidance/ng128"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Coagulation (INR, aPTT) and platelets",
+        "modalityTarget": "Before or during thrombolysis",
+        "targetCondition": "Bleeding risk",
+        "expectedFinding": "INR above 1.7 or raised aPTT; platelets below 100 × 10⁹/L.",
+        "clinicalRationale": "Without recent anticoagulant use, alteplase may start before results; stop if INR above 1.7 or aPTT raised (label). Platelets below 100: ESO suggests no IVT.",
+        "normalValue": "INR 0.8–1.2; platelets 150–400 × 10⁹/L",
+        "references": [
+          {
+            "title": "Activase (alteplase) US prescribing information (Genentech)",
+            "edition": "Revised label",
+            "url": "https://www.gene.com/download/pdf/activase_prescribing.pdf"
+          },
+          {
+            "title": "European Stroke Organisation (ESO) guidelines on intravenous thrombolysis for acute ischaemic stroke",
+            "edition": "Eur Stroke J 2021;6(1):I–LXII (Berge E et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7995316/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "FBC, electrolytes, renal function, troponin",
+        "modalityTarget": "Arrival",
+        "targetCondition": "Comorbidity and mimics",
+        "expectedFinding": "Anaemia, polycythaemia, hyponatraemia, renal impairment.",
+        "clinicalRationale": "Do not delay thrombolysis for these unless a specific concern exists.",
+        "references": [
+          {
+            "title": "NICE NG128: Stroke and transient ischaemic attack in over 16s: diagnosis and initial management",
+            "edition": "NICE guideline, 2019 (updated 2025)",
+            "url": "https://www.nice.org.uk/guidance/ng128"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "12-lead ECG and cardiac monitoring",
+        "modalityTarget": "Arrival",
+        "targetCondition": "AF, recent MI",
+        "expectedFinding": "Atrial fibrillation; ST changes.",
+        "clinicalRationale": "Embolic source; recent STEMI affects IVT decisions (ESO).",
+        "normalValue": "Sinus rhythm",
+        "references": [
+          {
+            "title": "European Stroke Organisation (ESO) guidelines on intravenous thrombolysis for acute ischaemic stroke",
+            "edition": "Eur Stroke J 2021;6(1):I–LXII (Berge E et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7995316/"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Swallow screen",
+        "modalityTarget": "Before any oral food, fluid or medication",
+        "targetCondition": "Aspiration risk",
+        "expectedFinding": "Failed screen.",
+        "clinicalRationale": "Specialist swallow assessment within 24 h (no later than 72 h); aspirin by rectal or enteral route if dysphagic.",
+        "references": [
+          {
+            "title": "NICE NG128: Stroke and transient ischaemic attack in over 16s: diagnosis and initial management",
+            "edition": "NICE guideline, 2019 (updated 2025)",
+            "url": "https://www.nice.org.uk/guidance/ng128"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Non-contrast CT brain",
+        "modalityTarget": "Immediately if thrombolysis/thrombectomy candidate, anticoagulated, bleeding tendency, GCS below 13, progressive symptoms, papilloedema/neck stiffness/fever, or severe headache; otherwise within 24 h",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Haemorrhage; early ischaemic changes; mimics.",
+        "clinicalRationale": "Excludes haemorrhage before thrombolysis. Within 4.5 h, plain CT is enough for IVT.",
+        "references": [
+          {
+            "title": "NICE NG128: Stroke and transient ischaemic attack in over 16s: diagnosis and initial management",
+            "edition": "NICE guideline, 2019 (updated 2025)",
+            "url": "https://www.nice.org.uk/guidance/ng128"
+          },
+          {
+            "title": "European Stroke Organisation (ESO) guidelines on intravenous thrombolysis for acute ischaemic stroke",
+            "edition": "Eur Stroke J 2021;6(1):I–LXII (Berge E et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7995316/"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "CT angiography (± CT perfusion)",
+        "modalityTarget": "After plain CT if thrombectomy might be indicated; add perfusion (or MRI) beyond 6 h or with unknown onset",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Proximal anterior or posterior circulation occlusion; core/perfusion mismatch.",
+        "clinicalRationale": "Selects thrombectomy (up to 24 h) and IVT in the 4.5–9 h / wake-up window.",
+        "references": [
+          {
+            "title": "NICE NG128: Stroke and transient ischaemic attack in over 16s: diagnosis and initial management",
+            "edition": "NICE guideline, 2019 (updated 2025)",
+            "url": "https://www.nice.org.uk/guidance/ng128"
+          },
+          {
+            "title": "European Stroke Organisation (ESO) guidelines on intravenous thrombolysis for acute ischaemic stroke",
+            "edition": "Eur Stroke J 2021;6(1):I–LXII (Berge E et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7995316/"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "recognise",
+      "title": "Recognise and activate stroke code",
+      "timeframe": "Door",
+      "actions": [
+        "ROSIER in the ED; establish time last known well; check glucose.",
+        "Immediate non-contrast CT for thrombolysis/thrombectomy candidates; CTA if thrombectomy possible.",
+        "Admit directly to an acute stroke unit after assessment."
+      ]
+    },
+    {
+      "id": "ivt",
+      "title": "IV thrombolysis (haemorrhage excluded)",
+      "timeframe": "Within 4.5 h of onset",
+      "actions": [
+        "Alteplase 0.9 mg/kg (maximum 90 mg): 10% IV bolus over 1 min, remainder over 60 min. Standard dose over low dose (ESO).",
+        "Tenecteplase 0.25 mg/kg single IV bolus is suggested over alteplase for large vessel occlusion when IVT is given before thrombectomy (ESO); NICE TA990 recommends tenecteplase as an option within 4.5 h.",
+        "BP must be 185/110 mmHg or lower before and maintained for 24 h; persistently above despite treatment → no IVT.",
+        "4.5–9 h (known onset) or wake-up stroke (within 9 h of sleep midpoint): IVT only with CT/MRI core–perfusion mismatch (or DWI-FLAIR mismatch) and when thrombectomy is not planned; plain CT only → no IVT.",
+        "No antithrombotics within 24 h after IVT.",
+        "Deliver only within an organised stroke service with trained staff and post-thrombolysis protocols."
+      ],
+      "branches": [
+        {
+          "condition": "Anticoagulated",
+          "actions": [
+            "VKA with unknown INR → no IVT. Dabigatran within 48 h → idarucizumab then IVT may be considered (ESO, 8/9). Factor Xa inhibitors within 48 h → no andexanet-then-IVT."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "evt",
+      "title": "Mechanical thrombectomy",
+      "timeframe": "As soon as possible",
+      "actions": [
+        "Within 6 h: proximal anterior circulation occlusion on CTA/MRA → thrombectomy plus IVT if eligible.",
+        "6–24 h (including wake-up): anterior occlusion with salvageable tissue on perfusion/DWI → thrombectomy.",
+        "Posterior circulation (basilar/PCA) up to 24 h with salvageable tissue: consider thrombectomy.",
+        "Select pre-stroke mRS below 3 and consider overall status and extent of infarction."
+      ]
+    },
+    {
+      "id": "antiplatelet",
+      "title": "Antiplatelet if not thrombolysed (after haemorrhage excluded)",
+      "timeframe": "Within 24 h",
+      "actions": [
+        "Aspirin 300 mg orally (or rectally/enteral tube if dysphagic) daily for 2 weeks, then long-term antithrombotic.",
+        "AF with disabling stroke: aspirin 300 mg for 2 weeks before considering anticoagulation.",
+        "No routine anticoagulation for acute stroke. Do not start a statin immediately; continue an existing statin."
+      ]
+    },
+    {
+      "id": "homeostasis",
+      "title": "Early supportive care",
+      "timeframe": "First 24–72 h",
+      "actions": [
+        "Oxygen only if SpO2 below 95%.",
+        "Glucose 4–11 mmol/L.",
+        "BP lowering in ischaemic stroke only for hypertensive emergency (encephalopathy, nephropathy, cardiac failure/MI, aortic dissection, pre-eclampsia) or to reach 185/110 for thrombolysis.",
+        "Swallow screen before oral intake."
+      ]
+    },
+    {
+      "id": "ich",
+      "title": "If CT shows intracerebral haemorrhage",
+      "timeframe": "Immediately",
+      "actions": [
+        "Warfarin with raised INR: reverse with prothrombin complex concentrate plus IV vitamin K.",
+        "Within 6 h and SBP 150–220 mmHg: consider rapid lowering to 140 mmHg or lower, drop no more than 60 mmHg in 1 h (exclusions: structural cause, GCS below 6, early surgery, massive haematoma).",
+        "Neurosurgical opinion as indicated."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Recognise, investigate and manage acute ischemic stroke in the emergency department."
+    ],
+    "references": [
+      {
+        "title": "NICE NG128: Stroke and transient ischaemic attack in over 16s: diagnosis and initial management",
+        "edition": "NICE guideline, 2019 (updated 2025)",
+        "url": "https://www.nice.org.uk/guidance/ng128",
+        "locator": "Sections 1.1–1.6"
+      },
+      {
+        "title": "European Stroke Organisation (ESO) guidelines on intravenous thrombolysis for acute ischaemic stroke",
+        "edition": "Eur Stroke J 2021;6(1):I–LXII (Berge E et al.)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7995316/",
+        "locator": "Recommendations on time windows, imaging selection, tenecteplase vs alteplase, blood pressure, antithrombotics, anticoagulant use and specific situations"
+      },
+      {
+        "title": "Activase (alteplase) US prescribing information (Genentech)",
+        "edition": "Revised label",
+        "url": "https://www.gene.com/download/pdf/activase_prescribing.pdf",
+        "locator": "Sections 1.1, 2.1, 4.1 (acute ischaemic stroke)"
+      },
+      {
+        "title": "SFDA Saudi Drug Information System (registration search)",
+        "edition": "Accessed 11–12 Oct 2026",
+        "url": "https://sdi.sfda.gov.sa/"
+      }
+    ],
+    "keyPoints": [
+      "Time is brain: CT immediately for thrombolysis candidates.",
+      "Alteplase 0.9 mg/kg (max 90 mg), 10% bolus, within 4.5 h.",
+      "BP 185/110 or lower before and for 24 h after IVT.",
+      "CTA for possible LVO — thrombectomy up to 24 h with salvageable tissue.",
+      "Not thrombolysed: aspirin 300 mg within 24 h after CT; swallow screen first."
+    ],
+    "pitfalls": [
+      "Missing hypoglycaemia as a mimic.",
+      "Giving aspirin before haemorrhage is excluded.",
+      "Aggressive BP lowering in ischaemic stroke not receiving IVT.",
+      "Oral medication before swallow screen.",
+      "Antithrombotics within 24 h of IVT."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Stroke warning signs (FAST) and calling for help immediately.",
+      "Secondary prevention and AF anticoagulation plan."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable in the acute phase."
+    ],
+    "mdtReferrals": [
+      "Acute stroke unit; neurology/stroke physician.",
+      "Interventional neuroradiology for thrombectomy; neurosurgery for ICH.",
+      "Rehabilitation, speech and language therapy."
+    ],
+    "dischargeCriteria": [
+      "Managed on an acute stroke unit; swallow assessed; secondary prevention started.",
+      "Discharge per stroke team after rehabilitation needs assessed."
+    ],
+    "followUpPlan": "Secondary prevention (antithrombotic, statin, BP, AF anticoagulation timing); carotid imaging and urgent endarterectomy if 50–99% (NASCET) symptomatic stenosis; rehabilitation; driving advice."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "IVT standard window",
+      "threshold": "Within 4.5 h of onset; haemorrhage excluded; BP 185/110 or lower"
+    },
+    {
+      "criterion": "IVT extended window (ESO)",
+      "threshold": "4.5–9 h or wake-up with CT/MRI core–perfusion (or DWI-FLAIR) mismatch, thrombectomy not planned"
+    },
+    {
+      "criterion": "Thrombectomy (NICE)",
+      "threshold": "Proximal anterior occlusion within 6 h; or 6–24 h with salvageable tissue; posterior circulation up to 24 h (consider)"
+    },
+    {
+      "criterion": "No IVT (examples)",
+      "threshold": "ICH on CT; persistent BP above 185/110; platelets below 100 × 10⁹/L; VKA with unknown INR; infective endocarditis; aortic arch dissection"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Acute ischaemic stroke — IV thrombolysis",
+        "patientGroup": "Adults within the treatment window",
+        "genericName": "Alteplase",
+        "dose": "0.9 mg/kg (maximum 90 mg); 10% as IV bolus over 1 min, remainder infused over 60 min",
+        "route": "IV",
+        "frequency": "Single course",
+        "duration": "Once",
+        "adjustments": [
+          "Stop if pre-treatment INR above 1.7 or aPTT raised",
+          "No antithrombotics for 24 h after",
+          "US label window 3 h; ESO/NICE 4.5 h"
+        ],
+        "monitoring": [
+          "BP 185/110 or lower for 24 h; neuro observations; angio-oedema; bleeding"
+        ],
+        "sourceTitle": "Activase (alteplase) prescribing information",
+        "sourceUrl": "https://www.gene.com/download/pdf/activase_prescribing.pdf",
+        "sourceEdition": "Section 2.1"
+      },
+      {
+        "indication": "LVO before thrombectomy (alternative)",
+        "patientGroup": "Adults within 4.5 h, thrombectomy candidates",
+        "genericName": "Tenecteplase",
+        "dose": "0.25 mg/kg",
+        "route": "IV bolus",
+        "frequency": "Single dose",
+        "duration": "Once",
+        "adjustments": [
+          "Maximum dose per product label/local protocol",
+          "NICE TA990: option within 4.5 h"
+        ],
+        "monitoring": [
+          "As for alteplase"
+        ],
+        "sourceTitle": "ESO IVT guideline 2021",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7995316/",
+        "sourceEdition": "Eur Stroke J 2021"
+      },
+      {
+        "indication": "Ischaemic stroke not thrombolysed, haemorrhage excluded",
+        "patientGroup": "Adults",
+        "genericName": "Aspirin",
+        "dose": "300 mg",
+        "route": "PO, or rectal/enteral if dysphagic",
+        "frequency": "Daily",
+        "duration": "2 weeks, then long-term antithrombotic",
+        "adjustments": [
+          "PPI if previous aspirin dyspepsia",
+          "Alternative antiplatelet if aspirin allergy/intolerance"
+        ],
+        "monitoring": [
+          "Bleeding"
+        ],
+        "sourceTitle": "NICE NG128",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng128",
+        "sourceEdition": "Recs 1.4.9–1.4.11"
+      }
+    ],
+    "note": "Alteplase dose from the prescribing information and ESO; tenecteplase dose from ESO. Check SFDA registration, formulary and the hospital stroke-code protocol."
+  },
+  "guidelineComparison": {
+    "title": "NICE NG128 vs ESO 2021 vs alteplase label",
+    "columns": [
+      "NICE NG128",
+      "ESO 2021",
+      "Alteplase US label"
+    ],
+    "rows": [
+      {
+        "parameter": "Time window",
+        "values": [
+          "Within 4.5 h (alteplase or tenecteplase TAs)",
+          "Within 4.5 h; 4.5–9 h or wake-up with perfusion/DWI-FLAIR mismatch",
+          "Within 3 h"
+        ]
+      },
+      {
+        "parameter": "Tenecteplase",
+        "values": [
+          "Option within 4.5 h (TA990)",
+          "0.25 mg/kg suggested for LVO before thrombectomy; alteplase suggested if not a thrombectomy candidate",
+          "Not applicable"
+        ]
+      },
+      {
+        "parameter": "BP threshold",
+        "values": [
+          "Consider lowering to 185/110 or lower",
+          "IVT if lowered below 185/110; not if persistently above",
+          "Severe uncontrolled hypertension is a contraindication"
+        ]
+      }
+    ],
+    "note": "All agree on excluding haemorrhage with CT and standard-dose alteplase 0.9 mg/kg (max 90 mg). Follow the hospital protocol for time window and agent."
+  }
+}

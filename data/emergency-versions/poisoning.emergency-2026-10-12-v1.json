@@ -1,0 +1,473 @@
+{
+  "id": "b2e88f9f-f504-436b-b521-b20ae8767b15",
+  "title": "Acute Poisoning and Overdose",
+  "specialty": "Emergency Medicine / Toxicology",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "emergency-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Adults with acute poisoning in the emergency department: general approach, paracetamol, opioids, benzodiazepines, alcohol and stimulants (including amphetamine-type stimulants such as Captagon). Verified against the Saudi MOH alcohol and drugs treatment protocols (intoxication chapters) and the Australia/New Zealand paracetamol poisoning guideline (2020). Always discuss with the regional poison control centre.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Paracetamol nomogram line values (image in source) — use the hospital's nomogram",
+      "Saudi poison control centre contact details — local directory",
+      "Other specific antidotes (e.g. for toxic alcohols, organophosphates) not covered by these sources"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "b2e88f9f-f504-436b-b521-b20ae8767b15"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Poisoning causes harm through the toxin's specific mechanism (e.g. opioid receptor agonism, GABA potentiation, sympathomimetic excess, hepatotoxic metabolite) plus secondary effects: airway loss and aspiration, hypoventilation, hypoglycaemia, hypothermia or hyperthermia, seizures, arrhythmias and rhabdomyolysis.",
+    "keyMechanisms": [
+      "Opioids: mu-receptor agonism → the overdose triad of pinpoint pupils, unconsciousness and respiratory depression.",
+      "Benzodiazepines: GABA-A potentiation → sedation, slurred speech, ataxia; respiratory depression is rare with oral use alone but more likely with IV use or co-ingestion (alcohol, opioids).",
+      "Alcohol: CNS depression in proportion to blood level (wide individual variation); hypoglycaemia, hypothermia, aspiration; Wernicke's encephalopathy if glucose is given without thiamine in chronic heavy drinkers.",
+      "Psychostimulants (cocaine, amphetamines, Captagon/fenethylline, khat): sympathomimetic excess → agitation, psychosis, hypertension, tachyarrhythmia, ACS, hyperthermia, seizures, rhabdomyolysis.",
+      "Paracetamol: excess NAPQI depletes glutathione → centrilobular liver necrosis over 24–72 h; acetylcysteine replenishes glutathione and is most effective when started early."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Reduced consciousness, confusion, agitation or psychosis.",
+      "Nausea and vomiting, abdominal pain (paracetamol, alcohol).",
+      "Palpitations, chest pain (stimulants).",
+      "Often asymptomatic early after paracetamol overdose."
+    ],
+    "physicalSigns": [
+      "Opioid toxidrome: pinpoint pupils, coma, RR low.",
+      "Sedative: slurred speech, nystagmus, ataxia, coma.",
+      "Sympathomimetic: tachycardia, hypertension, hyperthermia, dilated pupils, agitation, seizures.",
+      "Right upper quadrant tenderness (paracetamol hepatotoxicity)."
+    ],
+    "redFlags": [
+      "Respiratory depression (RR below 10/min or SpO2 below 90%) or unprotected airway",
+      "Seizures; temperature above 38.5 °C (stimulants)",
+      "Severe hypertension (diastolic above 120 mmHg for more than 15 min), chest pain, arrhythmia",
+      "Paracetamol: INR above 3.0 at 48 h or above 4.5, creatinine above 200 µmol/L, pH below 7.3 or lactate above 3, SBP below 80, encephalopathy → liver transplant unit",
+      "Suicidal intent — mental health assessment and safe observation"
+    ],
+    "precipitants": [
+      "Deliberate self-poisoning.",
+      "Recreational drug use (opioids, amphetamines/Captagon, cannabis, alcohol).",
+      "Therapeutic misadventure (repeated supratherapeutic paracetamol)."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Hypoglycaemia, hypoxia, hypothermia",
+      "distinguishingFeatures": "Common and can coexist with opioid or alcohol toxicity — test immediately."
+    },
+    {
+      "condition": "Head injury, CNS infection, intracranial bleed",
+      "distinguishingFeatures": "Focal signs, neck stiffness, trauma; especially in agitated stimulant users."
+    },
+    {
+      "condition": "Toxic alcohols (methanol, ethylene glycol)",
+      "distinguishingFeatures": "Often missed with ethanol intoxication; high anion gap acidosis."
+    },
+    {
+      "condition": "Psychiatric illness",
+      "distinguishingFeatures": "Stimulant psychosis can resemble acute schizophrenia."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Capillary glucose",
+        "modalityTarget": "Immediately in all with altered consciousness",
+        "targetCondition": "Hypoglycaemia",
+        "expectedFinding": "Low glucose.",
+        "clinicalRationale": "Give glucose (after thiamine in chronic heavy drinkers).",
+        "normalValue": "4–11 mmol/L",
+        "references": [
+          {
+            "title": "MOH Pharmacological Treatment Protocols of Alcohol and Drugs Abuse, Saudi Ministry of Health",
+            "edition": "MOH therapeutic protocols",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Serum paracetamol concentration",
+        "modalityTarget": "All deliberate self-poisoning regardless of stated dose; at 4 h or later after acute immediate-release ingestion (2 h in a well child under 6 with liquid)",
+        "targetCondition": "Need for acetylcysteine",
+        "expectedFinding": "Above the nomogram treatment line.",
+        "clinicalRationale": "Plot on the nomogram only for acute immediate-release ingestion with known time — check units (mg/L vs µmol/L). Above double the line: increased acetylcysteine dose.",
+        "normalValue": "Undetectable / below treatment line",
+        "references": [
+          {
+            "title": "Updated guidelines for the management of paracetamol poisoning in Australia and New Zealand",
+            "edition": "Med J Aust 2020;212(4) (Chiew AL et al.)",
+            "url": "https://www.mja.com.au/journal/2020/212/4/updated-guidelines-management-paracetamol-poisoning-australia-and-new-zealand"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "ALT (± AST), INR, creatinine, glucose, blood gas/lactate",
+        "modalityTarget": "Baseline in paracetamol poisoning; repeat ALT 2 h before acetylcysteine ends",
+        "targetCondition": "Liver injury",
+        "expectedFinding": "ALT above 50 U/L and rising; ALT above 1000 U/L = hepatotoxicity.",
+        "clinicalRationale": "Continue acetylcysteine if ALT rising or paracetamol above 10 mg/L (66 µmol/L); liver unit criteria as above.",
+        "normalValue": "ALT below about 40–50 U/L; INR 0.8–1.2",
+        "references": [
+          {
+            "title": "Updated guidelines for the management of paracetamol poisoning in Australia and New Zealand",
+            "edition": "Med J Aust 2020;212(4) (Chiew AL et al.)",
+            "url": "https://www.mja.com.au/journal/2020/212/4/updated-guidelines-management-paracetamol-poisoning-australia-and-new-zealand"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Breath or blood alcohol; urine drug screen",
+        "modalityTarget": "Altered mental state",
+        "targetCondition": "Confirm exposure",
+        "expectedFinding": "Ethanol level (mg%) correlates loosely with signs.",
+        "clinicalRationale": "Look for co-ingestants; levels vary widely by tolerance.",
+        "references": [
+          {
+            "title": "MOH Pharmacological Treatment Protocols of Alcohol and Drugs Abuse, Saudi Ministry of Health",
+            "edition": "MOH therapeutic protocols",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "12-lead ECG",
+        "modalityTarget": "All significant poisonings, stimulants and unknown ingestions",
+        "targetCondition": "Cardiotoxicity",
+        "expectedFinding": "Tachyarrhythmia, ischaemia, QRS widening (sodium-channel blockade after cocaine).",
+        "clinicalRationale": "Early arrhythmia after cocaine may respond to sodium bicarbonate; later arrhythmia usually ischaemic.",
+        "normalValue": "Sinus rhythm, normal QRS",
+        "references": [
+          {
+            "title": "MOH Pharmacological Treatment Protocols of Alcohol and Drugs Abuse, Saudi Ministry of Health",
+            "edition": "MOH therapeutic protocols",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Electrolytes, renal function, CK, temperature",
+        "modalityTarget": "Stimulants, prolonged immobility",
+        "targetCondition": "Rhabdomyolysis, hyperthermia",
+        "expectedFinding": "Raised CK, AKI, hyperkalaemia; temperature above 38.5 °C.",
+        "clinicalRationale": "Aggressive cooling; fluids; avoid restraints (worsen hyperthermia and rhabdomyolysis).",
+        "references": [
+          {
+            "title": "MOH Pharmacological Treatment Protocols of Alcohol and Drugs Abuse, Saudi Ministry of Health",
+            "edition": "MOH therapeutic protocols",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "abc",
+      "title": "Resuscitate and assess",
+      "timeframe": "Arrival",
+      "actions": [
+        "Airway, breathing, circulation; protect the airway, intubate and ventilate if needed.",
+        "Check glucose, temperature, ECG; hourly GCS; look for a toxidrome.",
+        "Get a history of agents, amounts, timing and intent; contact the regional poison control centre."
+      ]
+    },
+    {
+      "id": "opioid",
+      "title": "Opioid toxicity",
+      "timeframe": "Immediately",
+      "actions": [
+        "Naloxone: start 0.05 mg IV in most patients, increase to 0.4 mg, then 2 mg, then 10 mg as needed (0.4 mg is an appropriate start in non-dependent patients). No response to 10 mg → opioid unlikely.",
+        "Goal: reverse respiratory depression without precipitating withdrawal (risk of vomiting and aspiration).",
+        "Re-sedation: repeat doses or bolus plus infusion. IM/SC route if no IV (onset delayed 5–15 min after 1 mg).",
+        "Discharge only if normal for several hours after naloxone with no other concerns (e.g. suicide risk)."
+      ]
+    },
+    {
+      "id": "benzo",
+      "title": "Benzodiazepine toxicity",
+      "timeframe": "Immediately",
+      "actions": [
+        "Supportive care: oxygen, positioning (not face down), airway protection.",
+        "Flumazenil if benzodiazepine-induced respiratory depression is suspected; its short half-life requires close observation for several hours."
+      ]
+    },
+    {
+      "id": "alcohol",
+      "title": "Alcohol intoxication",
+      "timeframe": "Arrival",
+      "actions": [
+        "Supportive: airway, glucose and thiamine, treat seizures, gradual rewarming.",
+        "Thiamine 100 mg slow IV (over 5 min) or IM before glucose in chronic heavy drinkers; may repeat 50–100 mg every 8 h.",
+        "Glucose for coma: 50–100 mL of 50% dextrose (25–50 g) slowly IV. Glucagon is ineffective for alcohol-induced hypoglycaemia.",
+        "No activated charcoal for ethanol alone; consider if other toxins ingested. Look for co-ingestants and toxic alcohols."
+      ]
+    },
+    {
+      "id": "stimulant",
+      "title": "Stimulant toxicity (amphetamines, Captagon, cocaine, khat)",
+      "timeframe": "Arrival",
+      "actions": [
+        "Calm environment ('ART': acceptance, reassurance, talk-down); avoid physical restraint if possible.",
+        "Benzodiazepines first-line for agitation and cardiovascular/CNS toxicity: diazepam 2–10 mg IV/IM (or 10–30 mg PO) or lorazepam 1–2 mg IV/IM (2–4 mg PO), repeated every 5–10 min until lightly sedated.",
+        "Psychosis: haloperidol 5–10 mg PO/IM/IV or risperidone 2–4 mg PO; avoid anticholinergic drugs.",
+        "Hypertension/tachycardia not settling with sedation: phentolamine 2–10 mg IV over 10 min; then nitroprusside or nitroglycerin. Avoid beta-blockers and labetalol in stimulant-associated ACS; PCI preferred to lysis.",
+        "Temperature above 38.5 °C: active cooling. Seizures: diazepam 5–10 mg or lorazepam 1–2 mg IV over 2 min, repeat as needed; phenobarbital 15–20 mg/kg over 20 min."
+      ]
+    },
+    {
+      "id": "paracetamol",
+      "title": "Paracetamol overdose",
+      "timeframe": "From arrival",
+      "actions": [
+        "Potentially toxic: 10 g or 200 mg/kg or more (whichever is less) in 24 h; or 12 g / 300 mg/kg over 48 h (repeated supratherapeutic).",
+        "Activated charcoal 50 g to a cooperative awake adult within 2 h of a toxic immediate-release ingestion (within 4 h if 30 g or more).",
+        "4-h paracetamol level on the nomogram; if the level will not be available until 8 h or later after ingestion, start acetylcysteine while waiting.",
+        "Acetylcysteine two-bag regimen: 200 mg/kg (max 22 g) IV over 4 h, then 100 mg/kg (max 11 g) over 16 h. Weight = actual, rounded up to nearest 10 kg, ceiling 110 kg.",
+        "Modified-release 10 g/200 mg/kg or more: full acetylcysteine course (nomogram not valid); 30 g/500 mg/kg or more, or level above double the line: increased dose.",
+        "Repeat ALT (± paracetamol level) 2 h before the infusion ends; continue if ALT rising or level above 10 mg/L."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Recognise, investigate and manage acute poisoning and overdose in the emergency department."
+    ],
+    "references": [
+      {
+        "title": "MOH Pharmacological Treatment Protocols of Alcohol and Drugs Abuse, Saudi Ministry of Health",
+        "edition": "MOH therapeutic protocols",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/",
+        "locator": "Chapters 1–4: alcohol, benzodiazepine, opioid and psychostimulant intoxication"
+      },
+      {
+        "title": "Updated guidelines for the management of paracetamol poisoning in Australia and New Zealand",
+        "edition": "Med J Aust 2020;212(4) (Chiew AL et al.)",
+        "url": "https://www.mja.com.au/journal/2020/212/4/updated-guidelines-management-paracetamol-poisoning-australia-and-new-zealand",
+        "locator": "Boxes 1–8; acetylcysteine two-bag regimen; decontamination; liver unit referral criteria"
+      },
+      {
+        "title": "SFDA Saudi Drug Information System (registration search)",
+        "edition": "Accessed 11–12 Oct 2026",
+        "url": "https://sdi.sfda.gov.sa/"
+      }
+    ],
+    "keyPoints": [
+      "ABC, glucose, ECG, temperature — then the toxidrome.",
+      "Naloxone titrated from 0.05 mg to avoid precipitated withdrawal.",
+      "Paracetamol: level at 4 h on the nomogram; two-bag acetylcysteine.",
+      "Stimulants: benzodiazepines first, cool if hyperthermic, avoid beta-blockers in ACS.",
+      "Thiamine before glucose in heavy drinkers; look for co-ingestants."
+    ],
+    "pitfalls": [
+      "Relying on the stated paracetamol dose rather than measuring a level.",
+      "Using the nomogram for staggered or modified-release ingestions.",
+      "Large naloxone boluses causing violent withdrawal and aspiration.",
+      "Physical restraint in hyperthermic stimulant toxicity.",
+      "Missing hypoglycaemia, head injury or toxic alcohols."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Medication safety; locked storage of medicines.",
+      "Return precautions after paracetamol overdose.",
+      "Addiction treatment and support services."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable in the acute phase."
+    ],
+    "mdtReferrals": [
+      "Regional poison control centre / clinical toxicology.",
+      "Psychiatry for deliberate self-harm; addiction services.",
+      "ICU for airway compromise, seizures or severe toxicity; liver unit per criteria."
+    ],
+    "dischargeCriteria": [
+      "Medically clear: normal observations and investigations, no ongoing toxin effect for the appropriate observation period.",
+      "Acetylcysteine completed with ALT falling/normal and paracetamol below 10 mg/L where required.",
+      "Mental health assessment completed for all deliberate self-poisoning."
+    ],
+    "followUpPlan": "Psychiatric follow-up for deliberate self-poisoning; addiction services referral (MOH substance protocols); return immediately with abdominal pain, vomiting or jaundice after paracetamol overdose."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Opioid overdose triad",
+      "threshold": "Pinpoint pupils, unconsciousness, respiratory depression"
+    },
+    {
+      "criterion": "Toxic paracetamol dose",
+      "threshold": "10 g or 200 mg/kg or more (whichever is less) — acute or within 24 h"
+    },
+    {
+      "criterion": "Liver transplant unit referral (paracetamol)",
+      "threshold": "INR above 3.0 at 48 h or above 4.5; creatinine above 200 µmol/L; pH below 7.3 or lactate above 3; SBP below 80; hypoglycaemia; encephalopathy"
+    },
+    {
+      "criterion": "Stimulant danger signs",
+      "threshold": "Temperature above 38.5 °C; diastolic BP above 120 for more than 15 min; seizures; chest pain"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Opioid-induced respiratory depression",
+        "patientGroup": "Adults",
+        "genericName": "Naloxone",
+        "dose": "Start 0.05 mg (0.4 mg if not opioid-dependent); escalate 0.4 → 2 → 10 mg",
+        "route": "IV (IM/SC if no IV)",
+        "frequency": "Titrate every few minutes to response",
+        "duration": "Repeat or infuse for re-sedation",
+        "adjustments": [
+          "Anticipate withdrawal and vomiting in dependent patients"
+        ],
+        "monitoring": [
+          "RR, SpO2, GCS — continuously"
+        ],
+        "sourceTitle": "MOH alcohol and drugs protocol",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/",
+        "sourceEdition": "Chapters 1–4"
+      },
+      {
+        "indication": "Paracetamol poisoning",
+        "patientGroup": "Adults (weight rounded up to nearest 10 kg, max 110 kg)",
+        "genericName": "Acetylcysteine",
+        "dose": "Bag 1: 200 mg/kg (max 22 g) in 500 mL; bag 2: 100 mg/kg (max 11 g) in 1000 mL",
+        "route": "IV infusion",
+        "frequency": "Bag 1 over 4 h, bag 2 over 16 h",
+        "duration": "20 h; continue at bag-2 rate if criteria not met",
+        "adjustments": [
+          "Increased dose for massive or modified-release overdoses — toxicologist advice"
+        ],
+        "monitoring": [
+          "ALT and paracetamol 2 h before end"
+        ],
+        "sourceTitle": "ANZ paracetamol poisoning guideline 2020",
+        "sourceUrl": "https://www.mja.com.au/journal/2020/212/4/updated-guidelines-management-paracetamol-poisoning-australia-and-new-zealand",
+        "sourceEdition": "Box 7"
+      },
+      {
+        "indication": "Paracetamol early presentation",
+        "patientGroup": "Cooperative awake adults",
+        "genericName": "Activated charcoal",
+        "dose": "50 g",
+        "route": "PO",
+        "frequency": "Once",
+        "duration": "Single dose",
+        "adjustments": [
+          "Within 2 h of toxic IR ingestion; within 4 h if 30 g or more"
+        ],
+        "monitoring": [
+          "Airway"
+        ],
+        "sourceTitle": "ANZ paracetamol poisoning guideline 2020",
+        "sourceUrl": "https://www.mja.com.au/journal/2020/212/4/updated-guidelines-management-paracetamol-poisoning-australia-and-new-zealand",
+        "sourceEdition": "Decontamination"
+      },
+      {
+        "indication": "Stimulant agitation, seizures, cardiovascular toxicity",
+        "patientGroup": "Adults",
+        "genericName": "Diazepam",
+        "dose": "Agitation 2–10 mg IV/IM (10–30 mg PO); seizures 5–10 mg IV over 2 min",
+        "route": "IV/IM/PO",
+        "frequency": "Repeat every 5–10 min as needed",
+        "duration": "Until lightly sedated",
+        "adjustments": [
+          "Alternative: lorazepam 1–2 mg IV/IM (2–4 mg PO)"
+        ],
+        "monitoring": [
+          "RR, SpO2, BP"
+        ],
+        "sourceTitle": "MOH alcohol and drugs protocol",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/",
+        "sourceEdition": "Chapters 1–4"
+      },
+      {
+        "indication": "Wernicke prevention in chronic heavy drinkers",
+        "patientGroup": "Adults",
+        "genericName": "Thiamine",
+        "dose": "100 mg",
+        "route": "Slow IV over 5 min or IM",
+        "frequency": "May repeat 50–100 mg every 8 h",
+        "duration": "As clinically indicated",
+        "adjustments": [
+          "Give before glucose"
+        ],
+        "monitoring": [
+          "Mental state"
+        ],
+        "sourceTitle": "MOH alcohol and drugs protocol",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/",
+        "sourceEdition": "Chapters 1–4"
+      },
+      {
+        "indication": "Hypoglycaemia / empirical for coma",
+        "patientGroup": "Adults",
+        "genericName": "Glucose 50%",
+        "dose": "50–100 mL (25–50 g)",
+        "route": "Slow IV (about 3 mL/min) via secure line",
+        "frequency": "Once, repeat by glucose",
+        "duration": "As needed",
+        "adjustments": [
+          "Thiamine first if chronic alcohol use suspected"
+        ],
+        "monitoring": [
+          "Glucose"
+        ],
+        "sourceTitle": "MOH alcohol and drugs protocol",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/",
+        "sourceEdition": "Chapters 1–4"
+      }
+    ],
+    "note": "Doses as stated in the Saudi MOH alcohol and drugs protocol and the ANZ paracetamol guideline. Seek poison control centre advice for unfamiliar agents and massive ingestions. Check SFDA registration and formulary."
+  },
+  "guidelineComparison": {
+    "title": "Paracetamol: ANZ 2020 two-bag vs older three-bag acetylcysteine regimen",
+    "columns": [
+      "ANZ 2020 (recommended)",
+      "Previous three-bag regimen"
+    ],
+    "rows": [
+      {
+        "parameter": "Infusion",
+        "values": [
+          "200 mg/kg over 4 h, then 100 mg/kg over 16 h",
+          "150 mg/kg over 15–60 min, 50 mg/kg over 4 h, 100 mg/kg over 16 h"
+        ]
+      },
+      {
+        "parameter": "Total",
+        "values": [
+          "300 mg/kg over 20 h",
+          "300 mg/kg over about 21 h"
+        ]
+      },
+      {
+        "parameter": "Adverse reactions",
+        "values": [
+          "Significantly fewer",
+          "More anaphylactoid reactions"
+        ]
+      }
+    ],
+    "note": "Same total dose and efficacy; follow the regimen adopted by the hospital and poison control centre."
+  }
+}
