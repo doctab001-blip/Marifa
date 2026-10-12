@@ -12,6 +12,7 @@ import {
   ChevronRight,
   ClipboardCheck,
   ClipboardList,
+  Calculator as CalculatorIcon,
   FileCheck2,
   FileClock,
   House,
@@ -38,6 +39,7 @@ export const navigation: NavItem[] = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { href: "/dashboard/diseases", label: "Disease Management", icon: Stethoscope },
   { href: "/dashboard/clinical-guidelines", label: "Clinical Guidelines", icon: Library },
+  { href: "/dashboard/medical-calculators", label: "Medical Calculators", icon: CalculatorIcon },
   { href: "/dashboard/hospital-protocols", label: "Hospital Protocols", icon: FileCheck2 },
   { href: "/dashboard/medicines-formulary", label: "Medicines and Formulary", icon: Pill },
   { href: "/dashboard/competencies", label: "Competencies", icon: ClipboardCheck },
@@ -53,12 +55,12 @@ export const navigation: NavItem[] = [
 ];
 
 const sections = [
-  { label: "Workspace", items: navigation.slice(0, 7) },
-  { label: "Hospital", items: navigation.slice(7, 14) },
-  { label: "Administration", items: navigation.slice(14) },
+  { label: "Workspace", items: navigation.slice(0, 8) },
+  { label: "Hospital", items: navigation.slice(8, 15) },
+  { label: "Administration", items: navigation.slice(15) },
 ];
 
-const mobileItems = [navigation[0], navigation[1], navigation[2], navigation[5]];
+const mobileItems = [navigation[0], navigation[1], navigation[2], navigation[6]];
 
 const diseaseLinks: NavItem[] = [
   { href: "/dashboard/diseases", label: "Disease directory", icon: Stethoscope },
