@@ -10,6 +10,7 @@ const allBatchPaths = [
   "data/seeds/batch_02_nhs_adapted.json",
   "data/seeds/batch_03_pillars.json",
   "data/seeds/batch_04_textbook_sourced_drafts.json",
+  "data/seeds/batch_05_topic_list_drafts.json",
 ] as const;
 const selectedBatch = process.argv.find((argument) => argument.startsWith("--batch="))?.slice("--batch=".length);
 const batchPaths = selectedBatch
@@ -49,6 +50,16 @@ const sourceMetadata: Record<string, SourceMetadata> = {
   "d47f0125-8e64-4b93-8c72-9f16a4d0e738": { sourceTitle: "Marifa elective cholecystectomy pre-operative pathway synthesis for local governance", sourceUrl: "https://www.moh.gov.sa/ministry/mediacenter/publications/pages/protocols.aspx", publicationDate: "2026-10-10", sourceType: "curated-saudi-guideline", approval: { approvedBy: "310a1d7b-646d-4adb-b822-8d79453237cf", approvedAt: "2026-10-10T00:00:00+03:00" } },
   "e58a1236-9f75-4ca4-a398-0e27b5c1f849": { sourceTitle: "MOH Gestational Diabetes guidance and Pocket Manual in Obstetrics & Gynaecology", sourceUrl: "https://www.moh.gov.sa/en/awarenessplateform/WomensHealth/DuringPregnancy/pages/default.aspx", publicationDate: "2026-06-13", sourceType: "curated-saudi-guideline", approval: { approvedBy: "310a1d7b-646d-4adb-b822-8d79453237cf", approvedAt: "2026-10-10T00:00:00+03:00" } },
   "f69b2347-a086-4db5-b509-1f38c6d2a950": { sourceTitle: "MOH Protocols for Palliative Care Patients — End of Life Care", sourceUrl: "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf", publicationDate: "2019-01-01", sourceType: "curated-saudi-guideline", approval: { approvedBy: "310a1d7b-646d-4adb-b822-8d79453237cf", approvedAt: "2026-10-10T00:00:00+03:00" } },
+  "ebb76601-6f86-436e-89f8-0e2af4de8791": { sourceTitle: "Marifa topic-list intake; clinical sources not yet reviewed", sourceUrl: "https://github.com/doctab001-blip/Marifa", publicationDate: "2026-10-12", sourceType: "curated-saudi-draft" },
+  "25a72fe4-a384-46d3-a668-068544c6003f": { sourceTitle: "Marifa topic-list intake; clinical sources not yet reviewed", sourceUrl: "https://github.com/doctab001-blip/Marifa", publicationDate: "2026-10-12", sourceType: "curated-saudi-draft" },
+  "f92e26f9-7a0e-41fb-9734-83d30117933c": { sourceTitle: "Marifa topic-list intake; clinical sources not yet reviewed", sourceUrl: "https://github.com/doctab001-blip/Marifa", publicationDate: "2026-10-12", sourceType: "curated-saudi-draft" },
+  "d7dccbd3-15df-42d3-b6ca-db28e8586137": { sourceTitle: "Marifa topic-list intake; clinical sources not yet reviewed", sourceUrl: "https://github.com/doctab001-blip/Marifa", publicationDate: "2026-10-12", sourceType: "curated-saudi-draft" },
+  "e9ab6c1d-4283-4ac1-b662-93d5fd35c444": { sourceTitle: "Marifa topic-list intake; clinical sources not yet reviewed", sourceUrl: "https://github.com/doctab001-blip/Marifa", publicationDate: "2026-10-12", sourceType: "curated-saudi-draft" },
+  "9c2bdfee-ee19-4b0e-9d47-d44467542a0d": { sourceTitle: "Marifa topic-list intake; clinical sources not yet reviewed", sourceUrl: "https://github.com/doctab001-blip/Marifa", publicationDate: "2026-10-12", sourceType: "curated-saudi-draft" },
+  "4ef4de75-7605-4961-8986-22a95b0b202d": { sourceTitle: "Marifa topic-list intake; clinical sources not yet reviewed", sourceUrl: "https://github.com/doctab001-blip/Marifa", publicationDate: "2026-10-12", sourceType: "curated-saudi-draft" },
+  "821cc66c-474a-45b9-b9ae-4cb38ee13712": { sourceTitle: "Marifa topic-list intake; clinical sources not yet reviewed", sourceUrl: "https://github.com/doctab001-blip/Marifa", publicationDate: "2026-10-12", sourceType: "curated-saudi-draft" },
+  "f732cdaf-3b89-48d7-8cd0-33d108bb8360": { sourceTitle: "Marifa topic-list intake; clinical sources not yet reviewed", sourceUrl: "https://github.com/doctab001-blip/Marifa", publicationDate: "2026-10-12", sourceType: "curated-saudi-draft" },
+  "033fa49b-a4f9-4d54-ac6f-e459ef03e218": { sourceTitle: "Marifa topic-list intake; clinical sources not yet reviewed", sourceUrl: "https://github.com/doctab001-blip/Marifa", publicationDate: "2026-10-12", sourceType: "curated-saudi-draft" },
 };
 
 type SeedRecord = { disease: DiseaseDetail; source: SourceMetadata };
