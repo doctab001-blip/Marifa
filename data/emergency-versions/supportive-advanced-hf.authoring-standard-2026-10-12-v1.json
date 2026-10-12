@@ -1,0 +1,302 @@
+{
+  "id": "1f3a8674-fb1a-4c14-9744-8ae2d3eed686",
+  "title": "Advanced Heart Failure Supportive Care",
+  "specialty": "Cardiology / Palliative Medicine",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Palliative Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Adults with advanced heart failure and worsening symptoms despite optimal specialist treatment: palliative needs assessment, ICD review, breathlessness and symptom control, and end-of-life planning. Verified against NICE NG106 (palliative care section), NG31 and Saudi MOH Protocol-010.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Opioid dosing for breathlessness specifically — local protocol",
+      "SFDA registration not checked"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "1f3a8674-fb1a-4c14-9744-8ae2d3eed686"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Advanced heart failure is persistent severe symptoms and recurrent decompensation despite optimised therapy. Prognosis is uncertain, so palliative care runs alongside heart failure treatment rather than replacing it.",
+    "keyMechanisms": [
+      "Low cardiac output and congestion cause breathlessness, fatigue, oedema and cachexia.",
+      "Renal dysfunction and hypotension limit disease-modifying medicines in late disease.",
+      "Implanted defibrillators may deliver distressing shocks near death — review deactivation (NICE NG106)."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Breathlessness at rest, fatigue, oedema, poor appetite, low mood.",
+      "Recurrent admissions."
+    ],
+    "physicalSigns": [
+      "Congestion, hypotension, cachexia."
+    ],
+    "redFlags": [
+      "Worsening symptoms despite optimal treatment — palliative needs assessment (NICE NG106)",
+      "Entering last 2–3 days of life — follow NG31"
+    ],
+    "precipitants": [
+      "Progressive HFrEF or HFpEF",
+      "Renal impairment limiting therapy",
+      "Recurrent decompensation"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Reversible decompensation",
+      "distinguishingFeatures": "Infection, arrhythmia, non-adherence — treat if consistent with goals."
+    },
+    {
+      "condition": "Depression",
+      "distinguishingFeatures": "Low mood, anhedonia."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Holistic needs assessment",
+        "modalityTarget": "When symptoms worsen despite optimal specialist treatment",
+        "targetCondition": "Palliative needs",
+        "expectedFinding": "Unmet physical, psychological, social or spiritual needs.",
+        "clinicalRationale": "Discuss with heart failure MDT; involve palliative care skills (NICE NG106 1.12.3–1.12.4). Do not use prognostic tools alone to decide referral.",
+        "normalValue": "Needs met by current care",
+        "references": [
+          {
+            "title": "NICE NG106: Chronic heart failure in adults: diagnosis and management",
+            "edition": "NICE guideline, 2018 (updated 2025), Recommendations 1.12.1–1.12.5 (palliative care); 1.10.5 (ICD review)",
+            "url": "https://www.nice.org.uk/guidance/ng106"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "ICD status review",
+        "modalityTarget": "Each 6-monthly review, when goals change, and in advance care planning near end of life",
+        "targetCondition": "Device deactivation",
+        "expectedFinding": "Shocks no longer consistent with goals.",
+        "clinicalRationale": "Discuss deactivation with person and family (NICE NG106).",
+        "normalValue": "Device settings consistent with goals",
+        "references": [
+          {
+            "title": "NICE NG106: Chronic heart failure in adults: diagnosis and management",
+            "edition": "NICE guideline, 2018 (updated 2025), Recommendations 1.12.1–1.12.5 (palliative care); 1.10.5 (ICD review)",
+            "url": "https://www.nice.org.uk/guidance/ng106"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Renal function and electrolytes",
+        "modalityTarget": "When changing diuretics or other medicines",
+        "targetCondition": "Renal impairment, hyperkalaemia",
+        "expectedFinding": "Rising creatinine, potassium above 5.5.",
+        "clinicalRationale": "Rationalise medicines toward symptom benefit.",
+        "normalValue": "K 3.5–5.0 mmol/L; stable creatinine",
+        "references": [
+          {
+            "title": "NICE NG106: Chronic heart failure in adults: diagnosis and management",
+            "edition": "NICE guideline, 2018 (updated 2025), Recommendations 1.7.4–1.7.5",
+            "url": "https://www.nice.org.uk/guidance/ng106"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "assess",
+      "title": "Recognise and assess",
+      "timeframe": "When symptoms worsen",
+      "actions": [
+        "Palliative needs assessment with the heart failure MDT; access to palliative care skills (NICE NG106).",
+        "Advance care planning, including ICD deactivation discussion."
+      ]
+    },
+    {
+      "id": "symptoms",
+      "title": "Symptom control",
+      "timeframe": "Ongoing",
+      "actions": [
+        "Continue diuretics for congestion at the lowest effective dose.",
+        "Do not offer long-term home oxygen for advanced heart failure (NICE NG106 1.12.1).",
+        "Breathlessness: opioid (MOH Protocol-010 morphine starting doses) and non-drug measures (fan, positioning).",
+        "Stop medicines no longer providing benefit as death approaches (NICE NG31)."
+      ]
+    },
+    {
+      "id": "eol",
+      "title": "Last days",
+      "timeframe": "When dying",
+      "actions": [
+        "Follow NICE NG31 for the last 2–3 days of life (NICE NG106 1.12.5)."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Provide palliative support alongside heart failure treatment for people with advanced disease."
+    ],
+    "references": [
+      {
+        "title": "NICE NG106: Chronic heart failure in adults: diagnosis and management",
+        "edition": "NICE guideline, 2018 (updated 2025)",
+        "url": "https://www.nice.org.uk/guidance/ng106",
+        "locator": "Recommendations 1.12.1–1.12.5 (palliative care); 1.10.5 (ICD review)"
+      },
+      {
+        "title": "NICE NG31: Care of dying adults in the last days of life",
+        "edition": "NICE guideline, 2015",
+        "url": "https://www.nice.org.uk/guidance/ng31",
+        "locator": "Recommendations 1.5"
+      },
+      {
+        "title": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+        "edition": "Saudi MOH, General Administration of Pharmaceutical Care",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf",
+        "locator": "p. 9"
+      },
+      {
+        "title": "Morphine sulfate tablets prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=07593aa4-f2c4-4d6e-b186-ab2a4ecaa38a",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Furosemide prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01a5f094-b473-4e46-9e61-69d5ec6dd766",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ],
+    "keyPoints": [
+      "Palliative care alongside HF treatment.",
+      "Needs, not prognostic scores, trigger referral.",
+      "Discuss ICD deactivation.",
+      "No home oxygen for HF alone.",
+      "Opioid for refractory breathlessness."
+    ],
+    "pitfalls": [
+      "Waiting for a prognostic estimate before palliative input.",
+      "ICD shocks at end of life.",
+      "Continuing medicines without benefit."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain uncertain prognosis; plan ahead.",
+      "Fluid and weight self-monitoring as appropriate."
+    ],
+    "lifestyleAndDiet": [
+      "Activity within limits; comfort-focused nutrition."
+    ],
+    "mdtReferrals": [
+      "Specialist palliative care.",
+      "Community heart failure nurse."
+    ],
+    "dischargeCriteria": [
+      "Symptoms controlled in the preferred place of care; anticipatory plan documented.",
+      "Family/carers know whom to contact."
+    ],
+    "followUpPlan": "Review at least every 6 months or sooner with symptom change; community heart failure and palliative teams."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Palliative needs assessment",
+      "threshold": "Worsening symptoms despite optimal specialist treatment"
+    },
+    {
+      "criterion": "Home oxygen",
+      "threshold": "Not for advanced heart failure alone (NICE NG106)"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Breathlessness in advanced heart failure",
+        "patientGroup": "Adults, opioid-naïve",
+        "genericName": "Morphine (immediate release)",
+        "dose": "5–10 mg PO (usual 5–15 mg), or 2.5–5 mg IV",
+        "route": "PO / IV",
+        "frequency": "Every 4 h as needed (IV every 3–4 h)",
+        "duration": "Titrate; regular laxative",
+        "adjustments": [
+          "Start low in frailty and renal impairment — seek specialist advice (NICE CG140)"
+        ],
+        "monitoring": [
+          "Breathlessness/pain score, sedation, bowels"
+        ],
+        "sourceTitle": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf",
+        "sourceEdition": "Saudi MOH, General Administration of Pharmaceutical Care, p. 9 (morphine initial doses)",
+        "contraindications": [
+          "Significant respiratory depression",
+          "Acute or severe asthma without monitoring/resuscitation",
+          "MAOI use within 14 days",
+          "Known or suspected GI obstruction including paralytic ileus",
+          "Hypersensitivity"
+        ]
+      },
+      {
+        "indication": "Congestion",
+        "patientGroup": "Adults",
+        "genericName": "Furosemide",
+        "dose": "20–80 mg as a single dose; increase by 20–40 mg no sooner than 6–8 h",
+        "route": "PO",
+        "frequency": "Once or twice daily",
+        "duration": "Lowest effective dose",
+        "adjustments": [
+          "Anuria contraindicates"
+        ],
+        "monitoring": [
+          "Weight, renal function, electrolytes"
+        ],
+        "sourceTitle": "Furosemide prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01a5f094-b473-4e46-9e61-69d5ec6dd766",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "contraindications": [
+          "Anuria",
+          "Hypersensitivity to furosemide"
+        ]
+      }
+    ],
+    "note": "Morphine starting doses from MOH Protocol-010 (stated for pain; NICE recommends opioids for breathlessness without a dose); furosemide from the FDA label. Check SFDA registration."
+  },
+  "guidelineComparison": {
+    "title": "Advanced HF supportive measures (NICE NG106)",
+    "columns": [
+      "Do",
+      "Do not"
+    ],
+    "rows": [
+      {
+        "parameter": "Referral",
+        "values": [
+          "Needs-based palliative assessment",
+          "Use prognostic risk tools alone"
+        ]
+      },
+      {
+        "parameter": "Oxygen",
+        "values": [
+          "Only for comorbidity (e.g. COPD)",
+          "Long-term home oxygen for HF"
+        ]
+      }
+    ],
+    "note": "ICD review at each 6-monthly review."
+  }
+}

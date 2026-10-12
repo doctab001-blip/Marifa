@@ -1,0 +1,303 @@
+{
+  "id": "5a547d53-3e80-4901-b33f-43e180bf1ae7",
+  "title": "Progressive Neurological Disease Support",
+  "specialty": "Palliative Medicine / Neurology",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Palliative Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Adults with progressive neurological disease (exemplified by motor neurone disease): respiratory monitoring and NIV, nutrition and gastrostomy, cramps, spasticity, saliva and end-of-life planning. Verified against NICE NG42 (MND); doses from FDA labels and MOH Protocol-010.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Quinine and glycopyrronium doses — local protocol",
+      "Other progressive neurological diseases (Parkinson's, MS) not individually covered",
+      "SFDA registration not checked"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "5a547d53-3e80-4901-b33f-43e180bf1ae7"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Progressive neurological diseases cause worsening weakness, swallowing and respiratory failure. In MND, respiratory muscle weakness is the main cause of death, so regular respiratory assessment and timely NIV and gastrostomy discussions are central.",
+    "keyMechanisms": [
+      "Motor neurone loss weakens limb, bulbar and respiratory muscles.",
+      "Bulbar weakness → dysphagia, drooling, aspiration, weight loss.",
+      "Respiratory weakness → nocturnal hypoventilation (orthopnoea, morning headache) then hypercapnic failure."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Weakness, cramps, stiffness, drooling, choking, breathlessness, orthopnoea, poor sleep, morning headache, weight loss."
+    ],
+    "physicalSigns": [
+      "Wasting, fasciculations, spasticity, weak cough; reduced FVC."
+    ],
+    "redFlags": [
+      "PaCO2 above 6 kPa — urgent respiratory ventilation service referral within 1 week (NICE NG42)",
+      "Choking or aspiration pneumonia",
+      "Rapid weight loss"
+    ],
+    "precipitants": [
+      "Motor neurone disease; other progressive neurological disease",
+      "Aspiration, respiratory infection"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Other neuromuscular disease",
+      "distinguishingFeatures": "Specialist neurology diagnosis."
+    },
+    {
+      "condition": "Depression/anxiety",
+      "distinguishingFeatures": "Treat alongside."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Respiratory function (FVC/VC, SNIP/MIP)",
+        "modalityTarget": "Every 2–3 months (NICE NG42)",
+        "targetCondition": "Respiratory muscle weakness",
+        "expectedFinding": "FVC/VC below 50% predicted; SNIP/MIP below 40 cmH2O; or FVC below 80% / SNIP below 65 (men) or 55 (women) cmH2O with symptoms; SNIP fall above 10 cmH2O per 3 months.",
+        "clinicalRationale": "Discuss impairment and consider referral to respiratory ventilation service (NICE NG42 Table 2).",
+        "normalValue": "FVC 80% predicted or more; SNIP above 65 (men) / 55 (women) cmH2O",
+        "references": [
+          {
+            "title": "NICE NG42: Motor neurone disease: assessment and management",
+            "edition": "NICE guideline, 2016 (updated 2019), Recommendations 1.7 (end of life), 1.8 (cramps, spasticity, saliva), 1.15 (respiratory tests and NIV, Table 2)",
+            "url": "https://www.nice.org.uk/guidance/ng42"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Resting SpO2; blood gas if low",
+        "modalityTarget": "With respiratory assessment",
+        "targetCondition": "Hypoventilation",
+        "expectedFinding": "SpO2 94% or less (92% or less with lung disease) → blood gas; PaCO2 above 6 kPa → urgent referral.",
+        "clinicalRationale": "NIV assessment (NICE NG42 1.15).",
+        "normalValue": "SpO2 above 94%; PaCO2 6 kPa or less",
+        "references": [
+          {
+            "title": "NICE NG42: Motor neurone disease: assessment and management",
+            "edition": "NICE guideline, 2016 (updated 2019), Recommendations 1.7 (end of life), 1.8 (cramps, spasticity, saliva), 1.15 (respiratory tests and NIV, Table 2)",
+            "url": "https://www.nice.org.uk/guidance/ng42"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Weight and swallow review",
+        "modalityTarget": "Each visit",
+        "targetCondition": "Nutrition",
+        "expectedFinding": "Weight loss, choking, effortful eating.",
+        "clinicalRationale": "Discuss gastrostomy early and regularly (NICE NG42).",
+        "normalValue": "Stable weight, safe swallow",
+        "references": [
+          {
+            "title": "NICE NG42: Motor neurone disease: assessment and management",
+            "edition": "NICE guideline, 2016 (updated 2019), Recommendations 1.7 (end of life), 1.8 (cramps, spasticity, saliva), 1.15 (respiratory tests and NIV, Table 2)",
+            "url": "https://www.nice.org.uk/guidance/ng42"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "resp",
+      "title": "Respiratory",
+      "timeframe": "Every 2–3 months",
+      "actions": [
+        "Offer NIV for respiratory impairment, decided by MDT with the ventilation service; explain it can be stopped at any time (NICE NG42)."
+      ]
+    },
+    {
+      "id": "nutrition",
+      "title": "Nutrition",
+      "timeframe": "Ongoing",
+      "actions": [
+        "Discuss gastrostomy early and at intervals, considering swallow, weight, respiratory function and choking risk (NICE NG42)."
+      ]
+    },
+    {
+      "id": "symptoms",
+      "title": "Symptoms",
+      "timeframe": "As needed",
+      "actions": [
+        "Cramps: quinine first line; baclofen second line (NICE NG42) — baclofen 5 mg three times daily, increasing every 3 days (label).",
+        "Stiffness/spasticity: baclofen, tizanidine, dantrolene or gabapentin (NICE NG42).",
+        "Drooling: advice on posture and oral care; glycopyrronium first line if cognitive impairment (NICE NG42) — dose per local protocol."
+      ]
+    },
+    {
+      "id": "eol",
+      "title": "End of life",
+      "timeframe": "At trigger points",
+      "actions": [
+        "Discuss preferences at diagnosis, respiratory change or before gastrostomy/NIV; review advance decisions (NICE NG42 1.7).",
+        "Prompt access to anticipatory opioids and benzodiazepines for breathlessness and antimuscarinics for secretions (NICE NG42)."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Support people with progressive neurological disease through respiratory, nutritional, symptom and end-of-life care."
+    ],
+    "references": [
+      {
+        "title": "NICE NG42: Motor neurone disease: assessment and management",
+        "edition": "NICE guideline, 2016 (updated 2019)",
+        "url": "https://www.nice.org.uk/guidance/ng42",
+        "locator": "Recommendations 1.7 (end of life), 1.8 (cramps, spasticity, saliva), 1.15 (respiratory tests and NIV, Table 2)"
+      },
+      {
+        "title": "NICE NG31: Care of dying adults in the last days of life",
+        "edition": "NICE guideline, 2015",
+        "url": "https://www.nice.org.uk/guidance/ng31",
+        "locator": "Recommendations 1.5"
+      },
+      {
+        "title": "Baclofen tablets prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=020632f4-5e8a-f4a0-e063-6294a90a6301",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Gabapentin prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01b810b7-f4c8-4412-bbc5-b9220d8770d8",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ],
+    "keyPoints": [
+      "Respiratory tests every 2–3 months.",
+      "PaCO2 above 6 kPa → urgent ventilation referral.",
+      "Discuss gastrostomy early.",
+      "Plan end-of-life care at trigger points."
+    ],
+    "pitfalls": [
+      "Late gastrostomy discussion when respiratory function is poor.",
+      "Missing nocturnal hypoventilation symptoms."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "NIV and gastrostomy choices; NIV can be stopped any time.",
+      "Carer support."
+    ],
+    "lifestyleAndDiet": [
+      "Energy conservation; posture and positioning."
+    ],
+    "mdtReferrals": [
+      "Neurology MDT, respiratory ventilation service, SLT, dietitian, palliative care."
+    ],
+    "dischargeCriteria": [
+      "Symptoms controlled in the preferred place of care; anticipatory plan documented.",
+      "Family/carers know whom to contact."
+    ],
+    "followUpPlan": "MDT review every 2–3 months, sooner with progression."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Respiratory concern (NICE NG42)",
+      "threshold": "FVC below 50% or SNIP/MIP below 40 cmH2O"
+    },
+    {
+      "criterion": "Urgent ventilation referral",
+      "threshold": "PaCO2 above 6 kPa"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Cramps (second line) or spasticity",
+        "patientGroup": "Adults",
+        "genericName": "Baclofen",
+        "dose": "5 mg",
+        "route": "PO",
+        "frequency": "Three times daily; increase by 5 mg per dose every 3 days",
+        "duration": "Maximum 80 mg/day (label)",
+        "adjustments": [
+          "Withdraw slowly — abrupt withdrawal warning (label)",
+          "Reduce in renal impairment"
+        ],
+        "monitoring": [
+          "Sedation, weakness"
+        ],
+        "sourceTitle": "Baclofen tablets prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=020632f4-5e8a-f4a0-e063-6294a90a6301",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "contraindications": [
+          "Hypersensitivity to baclofen"
+        ]
+      },
+      {
+        "indication": "Spasticity (alternative)",
+        "patientGroup": "Adults",
+        "genericName": "Gabapentin",
+        "dose": "300 mg at night (frail: 100 mg)",
+        "route": "PO",
+        "frequency": "Increase by 300 mg every 2–3 days",
+        "duration": "Maximum 600 mg three times daily (MOH)",
+        "adjustments": [
+          "Reduce in renal impairment"
+        ],
+        "monitoring": [
+          "Sedation"
+        ],
+        "sourceTitle": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf",
+        "sourceEdition": "Saudi MOH, General Administration of Pharmaceutical Care, p. 5 (gabapentin titration)",
+        "contraindications": [
+          "Hypersensitivity"
+        ]
+      }
+    ],
+    "note": "Baclofen from FDA label; gabapentin titration from MOH Protocol-010; NICE NG42 recommends these agents without doses. Quinine and glycopyrronium doses per local protocol. Check SFDA registration."
+  },
+  "guidelineComparison": {
+    "title": "MND symptom drugs (NICE NG42)",
+    "columns": [
+      "Symptom",
+      "Options"
+    ],
+    "rows": [
+      {
+        "parameter": "Cramps",
+        "values": [
+          "First/second line",
+          "Quinine, then baclofen"
+        ]
+      },
+      {
+        "parameter": "Spasticity",
+        "values": [
+          "Options",
+          "Baclofen, tizanidine, dantrolene, gabapentin"
+        ]
+      },
+      {
+        "parameter": "Sialorrhoea",
+        "values": [
+          "First line with cognitive impairment",
+          "Glycopyrronium"
+        ]
+      }
+    ],
+    "note": "Doses not given by NICE."
+  }
+}

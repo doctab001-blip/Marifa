@@ -1,0 +1,281 @@
+{
+  "id": "7c1b7028-68a7-4fdb-ae44-be27da67e5e1",
+  "title": "Advanced Dementia and Comfort-Focused Care",
+  "specialty": "Geriatrics / Palliative Medicine",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Palliative Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "People living with advanced dementia: needs-based palliative care, distress and agitation, pain assessment, eating and drinking, and anticipatory planning. Verified against NICE NG97 and NG31; pain doses from MOH Protocol-010.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Antipsychotic doses — specialist (off-label)",
+      "SFDA registration not checked"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "7c1b7028-68a7-4fdb-ae44-be27da67e5e1"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Advanced dementia brings severe cognitive and functional decline, inability to communicate needs, swallowing difficulty and frailty. Progression is unpredictable, so palliative care should be offered from diagnosis (NICE NG97).",
+    "keyMechanisms": [
+      "Neurodegeneration impairs memory, language and executive function; pain and discomfort may show only as behaviour change.",
+      "Swallowing difficulty causes aspiration and weight loss; tube feeding does not improve outcomes in severe dementia (NICE NG97).",
+      "Antipsychotics increase harm and can cause severe sensitivity reactions in Lewy body or Parkinson's dementia (NICE NG97)."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Agitation, distress, withdrawal, poor intake, sleep disturbance."
+    ],
+    "physicalSigns": [
+      "Pain behaviours; weight loss; pressure areas; signs of infection or retention."
+    ],
+    "redFlags": [
+      "Severe distress with risk to self or others",
+      "Choking or recurrent aspiration",
+      "Unexplained behaviour change — check pain, delirium"
+    ],
+    "precipitants": [
+      "Alzheimer's, vascular, Lewy body or mixed dementia",
+      "Intercurrent infection, constipation, pain"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Delirium",
+      "distinguishingFeatures": "Acute change — look for infection, drugs, retention."
+    },
+    {
+      "condition": "Pain",
+      "distinguishingFeatures": "Use an observational pain tool."
+    },
+    {
+      "condition": "Depression",
+      "distinguishingFeatures": "Withdrawal, poor intake."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Structured observational pain assessment",
+        "modalityTarget": "Moderate–severe dementia or unable to self-report; repeat after changes",
+        "targetCondition": "Pain",
+        "expectedFinding": "Pain behaviours on validated tool.",
+        "clinicalRationale": "Stepwise analgesia; reassess after each intervention (NICE NG97 1.8).",
+        "normalValue": "No pain behaviours",
+        "references": [
+          {
+            "title": "NICE NG97: Dementia: assessment, management and support for people living with dementia and their carers",
+            "edition": "NICE guideline, 2018, Recommendations 1.7 (agitation; antipsychotics), 1.8 (pain), 1.10 (palliative care, nutrition)",
+            "url": "https://www.nice.org.uk/guidance/ng97"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Structured assessment of distress",
+        "modalityTarget": "Before any treatment for distress",
+        "targetCondition": "Causes of agitation",
+        "expectedFinding": "Pain, delirium, environmental or care factors.",
+        "clinicalRationale": "Address causes; personalised activities (NICE NG97 1.7).",
+        "normalValue": "No unmet need identified",
+        "references": [
+          {
+            "title": "NICE NG97: Dementia: assessment, management and support for people living with dementia and their carers",
+            "edition": "NICE guideline, 2018, Recommendations 1.7 (agitation; antipsychotics), 1.8 (pain), 1.10 (palliative care, nutrition)",
+            "url": "https://www.nice.org.uk/guidance/ng97"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Eating and drinking review",
+        "modalityTarget": "Ongoing",
+        "targetCondition": "Swallow safety and nutrition",
+        "expectedFinding": "Coughing with meals, weight loss.",
+        "clinicalRationale": "Speech and language therapy if concern; do not routinely tube feed (NICE NG97 1.10).",
+        "normalValue": "Safe swallow, stable weight",
+        "references": [
+          {
+            "title": "NICE NG97: Dementia: assessment, management and support for people living with dementia and their carers",
+            "edition": "NICE guideline, 2018, Recommendations 1.7 (agitation; antipsychotics), 1.8 (pain), 1.10 (palliative care, nutrition)",
+            "url": "https://www.nice.org.uk/guidance/ng97"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "plan",
+      "title": "Palliative approach",
+      "timeframe": "From diagnosis",
+      "actions": [
+        "Offer flexible, needs-based palliative care; anticipatory planning with person and family (NICE NG97 1.10)."
+      ]
+    },
+    {
+      "id": "distress",
+      "title": "Distress and agitation",
+      "timeframe": "When present",
+      "actions": [
+        "Assess and treat causes first; personalised activities.",
+        "Antipsychotic only if risk of harm or severe distress from agitation, hallucinations or delusions; lowest dose, shortest time, review every 6 weeks; stop if no clear benefit (NICE NG97).",
+        "Avoid in Lewy body/Parkinson's dementia where possible; no valproate for agitation."
+      ]
+    },
+    {
+      "id": "pain",
+      "title": "Pain",
+      "timeframe": "Ongoing",
+      "actions": [
+        "Stepwise analgesia — start with paracetamol (MOH Protocol-010 dose); reassess with observational tool."
+      ]
+    },
+    {
+      "id": "nutrition",
+      "title": "Eating and drinking",
+      "timeframe": "Ongoing",
+      "actions": [
+        "Support eating and drinking; SLT if unsafe; no routine enteral feeding (NICE NG97).",
+        "Last days: follow NICE NG31."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Provide comfort-focused, needs-based care for people living with advanced dementia."
+    ],
+    "references": [
+      {
+        "title": "NICE NG97: Dementia: assessment, management and support for people living with dementia and their carers",
+        "edition": "NICE guideline, 2018",
+        "url": "https://www.nice.org.uk/guidance/ng97",
+        "locator": "Recommendations 1.7 (agitation; antipsychotics), 1.8 (pain), 1.10 (palliative care, nutrition)"
+      },
+      {
+        "title": "NICE NG31: Care of dying adults in the last days of life",
+        "edition": "NICE guideline, 2015",
+        "url": "https://www.nice.org.uk/guidance/ng31",
+        "locator": "Recommendations 1.1–1.5"
+      },
+      {
+        "title": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+        "edition": "Saudi MOH, General Administration of Pharmaceutical Care",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf",
+        "locator": "p. 7"
+      },
+      {
+        "title": "Acetaminophen (paracetamol) injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0f67c1bd-915b-4681-88dd-22f5154a80b3",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ],
+    "keyPoints": [
+      "Palliative care from diagnosis.",
+      "Behaviour change → look for pain and delirium.",
+      "Antipsychotics only for harm or severe distress.",
+      "No routine tube feeding.",
+      "Plan ahead with family."
+    ],
+    "pitfalls": [
+      "Antipsychotics as first response.",
+      "Missing pain in non-verbal patients.",
+      "Tube feeding in severe dementia."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Support carers; explain expected course.",
+      "Comfort feeding approaches."
+    ],
+    "lifestyleAndDiet": [
+      "Familiar routine and environment; meaningful activity."
+    ],
+    "mdtReferrals": [
+      "Specialist palliative care; old-age psychiatry; SLT; dietitian."
+    ],
+    "dischargeCriteria": [
+      "Symptoms controlled in the preferred place of care; anticipatory plan documented.",
+      "Family/carers know whom to contact."
+    ],
+    "followUpPlan": "Review at least every 6 weeks if on an antipsychotic; regular needs review with family."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Antipsychotic only if",
+      "threshold": "Risk of harm, or severe distress from agitation/hallucinations/delusions (NICE NG97)"
+    },
+    {
+      "criterion": "Antipsychotic review",
+      "threshold": "At least every 6 weeks"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Pain (first step)",
+        "patientGroup": "Adults with dementia",
+        "genericName": "Paracetamol (acetaminophen)",
+        "dose": "500–1,000 mg",
+        "route": "PO",
+        "frequency": "Every 4–6 h",
+        "duration": "Maximum 4,000 mg/day; review need",
+        "adjustments": [
+          "Avoid in liver dysfunction (MOH)",
+          "Consider lower total dose in low body weight — local protocol"
+        ],
+        "monitoring": [
+          "Pain tool score, liver function"
+        ],
+        "sourceTitle": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf",
+        "sourceEdition": "Saudi MOH, General Administration of Pharmaceutical Care, p. 7 (mild pain: paracetamol)",
+        "contraindications": [
+          "Severe hepatic impairment or severe active liver disease",
+          "Hypersensitivity"
+        ]
+      }
+    ],
+    "note": "Paracetamol dose from MOH Protocol-010; antipsychotic dosing is not given by NICE NG97 (off-label) — specialist only. Check SFDA registration."
+  },
+  "guidelineComparison": {
+    "title": "Antipsychotics in dementia (NICE NG97)",
+    "columns": [
+      "Use",
+      "Avoid"
+    ],
+    "rows": [
+      {
+        "parameter": "When",
+        "values": [
+          "Risk of harm or severe distress",
+          "Mild agitation; Lewy body/Parkinson's dementia where possible"
+        ]
+      },
+      {
+        "parameter": "How",
+        "values": [
+          "Lowest dose, shortest time, review 6-weekly",
+          "Valproate for agitation"
+        ]
+      }
+    ],
+    "note": "Non-drug interventions continue throughout."
+  }
+}

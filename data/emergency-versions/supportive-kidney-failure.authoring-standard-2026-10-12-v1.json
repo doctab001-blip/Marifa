@@ -1,0 +1,281 @@
+{
+  "id": "2886cf83-6050-45de-a152-ea9bced0afb7",
+  "title": "Kidney Failure Planning and Dialysis Access",
+  "specialty": "Nephrology / Vascular Surgery",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Planned Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Adults with progressive CKD likely to need renal replacement therapy: timing of preparation, modality choice (transplant, haemodialysis, peritoneal dialysis, conservative care), access planning and when to start dialysis. Verified against NICE NG107 and NG203; antibiotic prophylaxis for access surgery from Saudi MOH Protocol-015.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Central venous catheter use not detailed",
+      "SFDA registration not checked"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "2886cf83-6050-45de-a152-ea9bced0afb7"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "When kidney function approaches failure, people need time to choose and prepare for a treatment: pre-emptive transplant, home or centre dialysis, or conservative care. Arteriovenous fistulae need months to mature, so planning must start early.",
+    "keyMechanisms": [
+      "Progressive nephron loss leads to uraemia, fluid overload, hyperkalaemia and acidosis.",
+      "A fistula joins an artery to a vein so the vein dilates and thickens (matures) for repeated needling — about 6 months (NICE NG107).",
+      "A peritoneal dialysis catheter placed surgically needs about 2 weeks before use (NICE NG107)."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Uraemic symptoms affecting daily life (fatigue, nausea, itch, breathlessness).",
+      "Fluid overload."
+    ],
+    "physicalSigns": [
+      "Oedema, hypertension, pericardial rub (late)."
+    ],
+    "redFlags": [
+      "Potassium 6.0 mmol/L or more, severe acidosis, refractory fluid overload, uraemic pericarditis or encephalopathy — urgent dialysis",
+      "Rapid eGFR decline"
+    ],
+    "precipitants": [
+      "Diabetic kidney disease",
+      "Hypertension",
+      "Glomerulonephritis, polycystic kidney disease"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "AKI on CKD",
+      "distinguishingFeatures": "Recent sharp creatinine rise — reversible causes."
+    },
+    {
+      "condition": "Non-renal symptom causes",
+      "distinguishingFeatures": "Heart failure, depression (NICE NG107 1.1.4)."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "eGFR, ACR and Kidney Failure Risk Equation",
+        "modalityTarget": "At each review",
+        "targetCondition": "Timing of preparation",
+        "expectedFinding": "5-year kidney failure risk above 5% → nephrology (NICE NG203); prepare at least 1 year before RRT is likely (NICE NG107).",
+        "clinicalRationale": "Triggers preparation and modality education.",
+        "normalValue": "eGFR 60 or more; KFRE below 5% at 5 years",
+        "references": [
+          {
+            "title": "NICE NG203: Chronic kidney disease: assessment and management",
+            "edition": "NICE guideline, 2021 (updated 2025), Recommendation 1.5.5",
+            "url": "https://www.nice.org.uk/guidance/ng203"
+          },
+          {
+            "title": "NICE NG107: Renal replacement therapy and conservative management",
+            "edition": "NICE guideline, 2018, Recommendations 1.2–1.4 (preparation, modality choice, dialysis access timing)",
+            "url": "https://www.nice.org.uk/guidance/ng107"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Potassium, bicarbonate, haemoglobin",
+        "modalityTarget": "Each review",
+        "targetCondition": "Complications",
+        "expectedFinding": "K above 6.0; bicarbonate below 20; Hb low.",
+        "clinicalRationale": "May prompt earlier start or treatment.",
+        "normalValue": "K 3.5–5.0; HCO3 22–29; Hb above 110 g/L",
+        "references": [
+          {
+            "title": "NICE NG203: Chronic kidney disease: assessment and management",
+            "edition": "NICE guideline, 2021 (updated 2025), Recommendations 1.7, 1.12.8",
+            "url": "https://www.nice.org.uk/guidance/ng203"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "advancedImaging",
+        "testName": "Vascular mapping ultrasound",
+        "modalityTarget": "Before AV fistula creation (NICE NG107 1.4.4)",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Suitable artery and vein.",
+        "clinicalRationale": "Chooses fistula site.",
+        "normalValue": "Adequate vessels for fistula",
+        "references": [
+          {
+            "title": "NICE NG107: Renal replacement therapy and conservative management",
+            "edition": "NICE guideline, 2018, Recommendations 1.2–1.4 (preparation, modality choice, dialysis access timing)",
+            "url": "https://www.nice.org.uk/guidance/ng107"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "prepare",
+      "title": "Prepare early",
+      "timeframe": "At least 1 year before RRT",
+      "actions": [
+        "Start assessment for RRT or conservative management at least 1 year before it is likely to be needed (NICE NG107 1.2.1).",
+        "Offer choice: pre-emptive living-donor transplant or pre-emptive listing if eligible; dialysis at home or in centre; conservative care (NICE NG107 1.3). Do not exclude from transplant on BMI alone.",
+        "Peritoneal dialysis: offer CAPD or APD where appropriate."
+      ]
+    },
+    {
+      "id": "access",
+      "title": "Access",
+      "timeframe": "Planned",
+      "actions": [
+        "AV fistula about 6 months before expected start (NICE NG107 1.4.3); ultrasound mapping first.",
+        "Surgically placed PD catheter about 2 weeks before expected start (NICE NG107 1.4.2).",
+        "Access surgery antibiotic prophylaxis per MOH Protocol-015 (vascular: cefazolin 2 g IV; allergy clindamycin 900 mg or vancomycin 15 mg/kg, max 2 g)."
+      ]
+    },
+    {
+      "id": "start",
+      "title": "When to start dialysis",
+      "timeframe": "Joint decision",
+      "actions": [
+        "Start for symptoms of uraemia affecting daily life, biochemical measures or uncontrollable fluid overload, or at eGFR about 5–7 mL/min/1.73 m² if asymptomatic (NICE NG107 1.1.2).",
+        "Check whether symptoms are due to non-renal conditions before starting (NICE NG107 1.1.4)."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Plan renal replacement therapy, access and timing of dialysis for people approaching kidney failure."
+    ],
+    "references": [
+      {
+        "title": "NICE NG107: Renal replacement therapy and conservative management",
+        "edition": "NICE guideline, 2018",
+        "url": "https://www.nice.org.uk/guidance/ng107",
+        "locator": "Recommendations 1.1–1.4"
+      },
+      {
+        "title": "NICE NG203: Chronic kidney disease: assessment and management",
+        "edition": "NICE guideline, 2021 (updated 2025)",
+        "url": "https://www.nice.org.uk/guidance/ng203",
+        "locator": "Recommendation 1.5.5"
+      },
+      {
+        "title": "Antibiotics Surgical Prophylaxis (MOH Protocol-015)",
+        "edition": "Saudi MOH, updated 2021",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-015.pdf",
+        "locator": "p. 3 (vascular)"
+      },
+      {
+        "title": "Cefazolin for injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00dd6da7-50a8-44c9-b2dc-7948973df392",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ],
+    "keyPoints": [
+      "Plan at least 1 year ahead.",
+      "Offer transplant, dialysis or conservative care.",
+      "Fistula about 6 months early.",
+      "Start dialysis for symptoms or eGFR about 5–7."
+    ],
+    "pitfalls": [
+      "Late referral leading to catheter starts.",
+      "Excluding from transplant on BMI alone.",
+      "Starting dialysis for symptoms from another cause."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Modality education and home dialysis options.",
+      "Discuss risks and benefits of each access type (NICE NG107 1.4.1)."
+    ],
+    "lifestyleAndDiet": [
+      "Renal diet; stop smoking."
+    ],
+    "mdtReferrals": [
+      "Nephrology, vascular access surgery, transplant team, renal dietitian."
+    ],
+    "dischargeCriteria": [
+      "Not applicable — outpatient planning."
+    ],
+    "followUpPlan": "Nephrology follow-up with eGFR/ACR monitoring per NICE NG203 Table 2; access surgery follow-up for maturation."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Start preparation",
+      "threshold": "At least 1 year before RRT likely (NICE NG107)"
+    },
+    {
+      "criterion": "AV fistula",
+      "threshold": "About 6 months before start"
+    },
+    {
+      "criterion": "PD catheter (open surgery)",
+      "threshold": "About 2 weeks before start"
+    },
+    {
+      "criterion": "Start dialysis if asymptomatic",
+      "threshold": "eGFR about 5–7 mL/min/1.73 m²"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Vascular access surgery prophylaxis",
+        "patientGroup": "Adults",
+        "genericName": "Cefazolin",
+        "dose": "2 g (3 g if weight 120 kg or more)",
+        "route": "IV",
+        "frequency": "Single dose within 60 min before incision",
+        "duration": "Stop within 24 h",
+        "adjustments": [
+          "Cephalosporin allergy: clindamycin 900 mg or vancomycin 15 mg/kg (max 2 g)"
+        ],
+        "monitoring": [
+          "Allergy"
+        ],
+        "sourceTitle": "Antibiotics Surgical Prophylaxis (MOH Protocol-015)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-015.pdf",
+        "sourceEdition": "Saudi MOH, updated 2021, p. 3 (vascular procedures)",
+        "contraindications": [
+          "Known allergy to cephalosporins"
+        ]
+      }
+    ],
+    "note": "Access prophylaxis from MOH Protocol-015; contraindications from the FDA label. Check SFDA registration."
+  },
+  "guidelineComparison": {
+    "title": "Access timing (NICE NG107)",
+    "columns": [
+      "Access",
+      "Create before start"
+    ],
+    "rows": [
+      {
+        "parameter": "AV fistula",
+        "values": [
+          "Haemodialysis/HDF",
+          "About 6 months"
+        ]
+      },
+      {
+        "parameter": "PD catheter (open surgery)",
+        "values": [
+          "Peritoneal dialysis",
+          "About 2 weeks"
+        ]
+      }
+    ],
+    "note": "Central venous catheters are a fallback; discuss risks and benefits of each access."
+  }
+}

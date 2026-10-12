@@ -1,0 +1,270 @@
+{
+  "id": "17fa021f-7661-44bf-9e70-1754632b4e9c",
+  "title": "Advanced COPD Supportive Care",
+  "specialty": "Respiratory Medicine / Palliative Medicine",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Palliative Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Adults with end-stage COPD and refractory breathlessness: oxygen criteria, home NIV, opioid and other drug options, palliative and hospice access. Verified against the Saudi Thoracic Society COPD guideline 2025, NICE NG115 (palliative care) and MOH Protocol-010.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Benzodiazepine and other agent doses — local protocol",
+      "SFDA registration not checked"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "17fa021f-7661-44bf-9e70-1754632b4e9c"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "End-stage COPD causes severe breathlessness, frequent exacerbations and chronic respiratory failure despite maximal inhaled therapy. Supportive care targets breathlessness, anxiety and planning for deterioration.",
+    "keyMechanisms": [
+      "Hyperinflation and gas-exchange failure cause breathlessness and hypoxaemia; some develop chronic hypercapnia.",
+      "Chronic hypoxaemia → pulmonary hypertension and cor pulmonale (STS).",
+      "Opioids reduce the sensation of breathlessness (NICE NG115)."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Breathlessness at rest or minimal exertion, fatigue, weight loss, anxiety, frequent admissions."
+    ],
+    "physicalSigns": [
+      "Cyanosis, oedema (cor pulmonale), cachexia, accessory muscle use."
+    ],
+    "redFlags": [
+      "Persistent hypercapnia 2 weeks after an exacerbation — consider home NIV (STS)",
+      "Drowsiness/confusion — hypercapnic failure",
+      "Refractory breathlessness — palliative care"
+    ],
+    "precipitants": [
+      "Smoking/shisha history",
+      "Frequent exacerbations",
+      "Chronic respiratory failure"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Exacerbation",
+      "distinguishingFeatures": "Acute change — treat per AECOPD topic if consistent with goals."
+    },
+    {
+      "condition": "Heart failure, PE",
+      "distinguishingFeatures": "Different treatment."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Resting SpO2 and arterial blood gas (stable)",
+        "modalityTarget": "When SpO2 88% or less",
+        "targetCondition": "Chronic hypoxaemia/hypercapnia",
+        "expectedFinding": "PaO2 below 55 mmHg (7.3 kPa), or 55–60 with cor pulmonale/oedema/haematocrit 55%+; persistent PaCO2 rise.",
+        "clinicalRationale": "LTOT if criteria met; NIV if hypercapnic 2 weeks after exacerbation (STS).",
+        "normalValue": "PaO2 above 60 mmHg; normal PaCO2",
+        "references": [
+          {
+            "title": "The Saudi Thoracic Society evidence-based guidelines for the diagnosis and management of COPD",
+            "edition": "Ann Thorac Med 2025;20(1):1–35 (Al-Jahdali H et al.), Long-term oxygen therapy section; Recommendations on LTOT and NIV (Q5, Q11)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11804957/"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Breathlessness and anxiety assessment",
+        "modalityTarget": "Each review",
+        "targetCondition": "Symptom burden",
+        "expectedFinding": "Refractory breathlessness despite maximal therapy.",
+        "clinicalRationale": "Consider opioids and other options (NICE NG115).",
+        "normalValue": "Breathlessness controlled",
+        "references": [
+          {
+            "title": "NICE NG115: Chronic obstructive pulmonary disease in over 16s: diagnosis and management",
+            "edition": "NICE guideline, 2018 (updated 2019), Recommendations 1.2.108–1.2.110 (palliative care: opioids, benzodiazepines, tricyclics, major tranquillisers, oxygen, hospice access)",
+            "url": "https://www.nice.org.uk/guidance/ng115"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "optimise",
+      "title": "Optimise",
+      "timeframe": "Ongoing",
+      "actions": [
+        "Maximal inhaled therapy, pulmonary rehabilitation where possible, smoking cessation (see COPD topic)."
+      ]
+    },
+    {
+      "id": "oxygen",
+      "title": "Oxygen and ventilation",
+      "timeframe": "When criteria met",
+      "actions": [
+        "LTOT only if STS criteria met; at least 18 h/day, 1–2.5 L/min, target SaO2 88–94% (STS).",
+        "Home NIV if persistently hypercapnic 2 weeks after exacerbation (STS)."
+      ]
+    },
+    {
+      "id": "palliate",
+      "title": "Palliate breathlessness",
+      "timeframe": "Refractory symptoms",
+      "actions": [
+        "Use opioids for refractory breathlessness (NICE NG115); morphine starting doses per MOH Protocol-010.",
+        "Consider benzodiazepines, tricyclic antidepressants or major tranquillisers when appropriate (NICE NG115).",
+        "Access to multidisciplinary palliative care and hospice (NICE NG115)."
+      ]
+    },
+    {
+      "id": "plan",
+      "title": "Advance care planning",
+      "timeframe": "Early",
+      "actions": [
+        "Discuss ceilings of care (NIV, intubation), preferred place of care; anticipatory medicines (NICE NG31)."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Relieve symptoms and plan care for people with end-stage COPD."
+    ],
+    "references": [
+      {
+        "title": "NICE NG115: Chronic obstructive pulmonary disease in over 16s: diagnosis and management",
+        "edition": "NICE guideline, 2018 (updated 2019)",
+        "url": "https://www.nice.org.uk/guidance/ng115",
+        "locator": "Recommendations 1.2.108–1.2.110 (palliative care: opioids, benzodiazepines, tricyclics, major tranquillisers, oxygen, hospice access)"
+      },
+      {
+        "title": "The Saudi Thoracic Society evidence-based guidelines for the diagnosis and management of COPD",
+        "edition": "Ann Thorac Med 2025;20(1):1–35 (Al-Jahdali H et al.)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11804957/",
+        "locator": "Long-term oxygen therapy section; Recommendations on LTOT and NIV (Q5, Q11)"
+      },
+      {
+        "title": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+        "edition": "Saudi MOH, General Administration of Pharmaceutical Care",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf",
+        "locator": "p. 9"
+      },
+      {
+        "title": "NICE NG31: Care of dying adults in the last days of life",
+        "edition": "NICE guideline, 2015",
+        "url": "https://www.nice.org.uk/guidance/ng31",
+        "locator": "Recommendations 1.5.15–1.5.17"
+      },
+      {
+        "title": "Morphine sulfate tablets prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=07593aa4-f2c4-4d6e-b186-ab2a4ecaa38a",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ],
+    "keyPoints": [
+      "LTOT only if criteria met.",
+      "Home NIV for persistent hypercapnia.",
+      "Opioids for refractory breathlessness.",
+      "Early advance care planning.",
+      "Hospice access."
+    ],
+    "pitfalls": [
+      "Oxygen for breathlessness without hypoxaemia criteria.",
+      "Avoiding opioids from fear of respiratory depression."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Breathing techniques, fan, pacing.",
+      "Action plan for exacerbations and goals of care."
+    ],
+    "lifestyleAndDiet": [
+      "Stop smoking/shisha; pulmonary rehabilitation as able."
+    ],
+    "mdtReferrals": [
+      "Specialist palliative care, hospice.",
+      "Respiratory/NIV service."
+    ],
+    "dischargeCriteria": [
+      "Symptoms controlled in the preferred place of care; anticipatory plan documented.",
+      "Family/carers know whom to contact."
+    ],
+    "followUpPlan": "Respiratory and palliative review after each admission and when symptoms change; LTOT review at 3 months and 1 year (STS)."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "LTOT",
+      "threshold": "PaO2 below 55 mmHg, or 55–60 with cor pulmonale/oedema/haematocrit 55% or more (STS)"
+    },
+    {
+      "criterion": "Home NIV",
+      "threshold": "Hypercapnia persisting 2 weeks after exacerbation (STS)"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Refractory breathlessness in end-stage COPD",
+        "patientGroup": "Adults, opioid-naïve",
+        "genericName": "Morphine (immediate release)",
+        "dose": "5–10 mg PO (usual 5–15 mg), or 2.5–5 mg IV",
+        "route": "PO / IV",
+        "frequency": "Every 4 h as needed (IV every 3–4 h)",
+        "duration": "Titrate; regular laxative",
+        "adjustments": [
+          "Start low in frailty and renal impairment — seek specialist advice (NICE CG140)"
+        ],
+        "monitoring": [
+          "Breathlessness/pain score, sedation, bowels"
+        ],
+        "sourceTitle": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf",
+        "sourceEdition": "Saudi MOH, General Administration of Pharmaceutical Care, p. 9 (morphine initial doses)",
+        "contraindications": [
+          "Significant respiratory depression",
+          "Acute or severe asthma without monitoring/resuscitation",
+          "MAOI use within 14 days",
+          "Known or suspected GI obstruction including paralytic ileus",
+          "Hypersensitivity"
+        ]
+      }
+    ],
+    "note": "Morphine starting doses from MOH Protocol-010 (pain indication); NICE NG115 recommends opioids for refractory breathlessness without a dose. Check SFDA registration and controlled-drug rules."
+  },
+  "guidelineComparison": {
+    "title": "Breathlessness options in end-stage COPD",
+    "columns": [
+      "NICE NG115",
+      "STS 2025"
+    ],
+    "rows": [
+      {
+        "parameter": "Opioids",
+        "values": [
+          "Use when appropriate",
+          "Not addressed"
+        ]
+      },
+      {
+        "parameter": "Oxygen",
+        "values": [
+          "Listed as an option",
+          "LTOT only if criteria met; not for moderate desaturation"
+        ]
+      }
+    ],
+    "note": "Shown side by side; STS oxygen criteria are stricter."
+  }
+}
