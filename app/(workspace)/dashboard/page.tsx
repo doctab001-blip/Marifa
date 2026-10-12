@@ -20,7 +20,6 @@ import { AlertBanner } from "@/components/dashboard/alert-banner";
 import { HospitalOperations } from "@/components/dashboard/hospital-operations";
 import { ProgressRing } from "@/components/dashboard/progress-ring";
 import { hospitalAlerts, operationsSnapshot, type HospitalAlert } from "@/lib/dashboard/hospital-feed";
-import { CLINICAL_DIRECTORY_DRAFT_TOPIC_COUNT } from "@/lib/data/clinical-directory-eligibility";
 import { getApprovedDiseaseGuidelines } from "@/lib/data/disease-guidelines";
 import { getCurrentViewer } from "@/lib/supabase/session";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
@@ -55,7 +54,8 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
   const overdue = assignments.filter((item) => item.state === "overdue").length;
   const guidelines = await getApprovedDiseaseGuidelines();
   const liveTopics = guidelines.diseases.length;
-  const directoryTotal = liveTopics + CLINICAL_DIRECTORY_DRAFT_TOPIC_COUNT;
+  const correctionQueue = guidelines.withheldCount;
+  const directoryTotal = liveTopics + correctionQueue;
   const livePercent = directoryTotal ? Math.round((liveTopics / directoryTotal) * 100) : 0;
   const urgentAlert = hospitalAlerts.find(({ severity }) => severity === "urgent");
 
@@ -118,7 +118,7 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
         <article className="card metric-card metric-magenta">
           <div className="metric-top"><span>Published guidelines</span><span className="metric-icon metric-icon-magenta"><Library size={18} aria-hidden="true" /></span></div>
           <div className="metric-value">{liveTopics}</div>
-          <div className="metric-note">Live directory · {CLINICAL_DIRECTORY_DRAFT_TOPIC_COUNT} in correction queue</div>
+          <div className="metric-note">Live directory · {correctionQueue} in correction queue</div>
           <div className="meter meter-split" role="img" aria-label={`${livePercent}% of directory topics are live`}>
             <span className="meter-teal" style={{ width: `${livePercent}%` }} />
           </div>

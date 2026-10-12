@@ -9,7 +9,7 @@ import { DiseaseDetailSchema, type DiseaseDetail } from "@/lib/validations/disea
 import { isSupabaseConfigured } from "@/lib/supabase/config";
 import { createSupabaseDataClient } from "@/lib/supabase/data-client";
 import { hasMedicalSpeciality, inferMedicalSpecialityTags } from "@/lib/medical-specialities";
-import { CLINICAL_DIRECTORY_DRAFT_TOPIC_COUNT, isClinicalDirectoryEligible } from "@/lib/data/clinical-directory-eligibility";
+import { isClinicalDirectoryEligible } from "@/lib/data/clinical-directory-eligibility";
 
 export type DiseaseGuidelineSummary = Pick<DiseaseDetail, "id" | "title" | "specialty" | "authority" | "status" | "version" | "lastReviewed" | "pillar" | "clinicalReviewStatus"> & { summary: string; sourceType?: string; speciality?: string; subSpecialities?: string[] };
 type GuidelineVersionJoin = { content: unknown; source_title?: string | null; source_url?: string | null };
@@ -48,7 +48,7 @@ function toSummary(disease: DiseaseDetail, row: GuidelineRow): Omit<DiseaseGuide
 export { CLINICAL_DIRECTORY_TAG };
 const CROSS_REQUEST_CACHE_SECONDS = 300;
 
-type DirectoryPayload = { diseases: DiseaseGuidelineSummary[]; rejectedCount: number };
+type DirectoryPayload = { diseases: DiseaseGuidelineSummary[]; rejectedCount: number; withheldCount: number };
 
 // Loads and validates the complete published catalogue. Throws on failure so a failed load is never cached.
 async function loadDirectory(): Promise<DirectoryPayload> {
@@ -65,6 +65,7 @@ async function loadDirectory(): Promise<DirectoryPayload> {
 
   const diseases: DiseaseGuidelineSummary[] = [];
   let rejectedCount = 0;
+  let withheldCount = 0;
   for (const row of (data ?? []) as unknown as GuidelineRow[]) {
     if (Object.hasOwn(mergedTopics, row.id)) continue;
     const parsed = DiseaseDetailSchema.safeParse(currentContent(row));
@@ -72,14 +73,15 @@ async function loadDirectory(): Promise<DirectoryPayload> {
       rejectedCount += 1;
       continue;
     }
-    if (!isClinicalDirectoryEligible(row.id, parsed.data.version)) {
+    // Live automatically when the current version scores >= 80% on the authoring audit; otherwise it stays in Draft.
+    if (!isClinicalDirectoryEligible(parsed.data)) {
+      withheldCount += 1;
       continue;
     }
     diseases.push({ ...toSummary(parsed.data, row), sourceType: row.source_type });
   }
 
   for (const [reviewId, reviewVersion] of Object.entries(clinicalReviewOverrides)) {
-    if (!isClinicalDirectoryEligible(reviewId)) continue;
     let reviewQuery = supabase
       .from("clinical_guidelines")
       .select("id,title,specialty,status,source_type,guideline_versions!inner(content)")
@@ -94,7 +96,7 @@ async function loadDirectory(): Promise<DirectoryPayload> {
     if (reviewData) {
       const row = reviewData as unknown as GuidelineRow;
       const parsed = DiseaseDetailSchema.safeParse(currentContent(row));
-      if (parsed.success && parsed.data.status === "under_review" && parsed.data.id === row.id) {
+      if (parsed.success && parsed.data.status === "under_review" && parsed.data.id === row.id && isClinicalDirectoryEligible(parsed.data)) {
         const index = diseases.findIndex((disease) => disease.id === row.id);
         if (index >= 0) diseases[index] = { ...toSummary(parsed.data, row), sourceType: row.source_type };
       } else {
@@ -102,13 +104,13 @@ async function loadDirectory(): Promise<DirectoryPayload> {
       }
     }
   }
-  return { diseases, rejectedCount };
+  return { diseases, rejectedCount, withheldCount };
 }
 
 // With temporary open administration, clinical data is read with a server key rather than the viewer's
 // cookies, so one validated catalogue can be shared across requests. Otherwise row-level security depends
 // on the signed-in viewer and the catalogue is only reused within a single request.
-const loadSharedDirectory = unstable_cache(loadDirectory, ["clinical-directory-v1"], { tags: [CLINICAL_DIRECTORY_TAG], revalidate: CROSS_REQUEST_CACHE_SECONDS });
+const loadSharedDirectory = unstable_cache(loadDirectory, ["clinical-directory-v2"], { tags: [CLINICAL_DIRECTORY_TAG], revalidate: CROSS_REQUEST_CACHE_SECONDS });
 
 const getDirectoryForRequest = cache(async (): Promise<DirectoryPayload | null> => {
   if (!isSupabaseConfigured()) return null;
@@ -128,7 +130,7 @@ export async function getApprovedDiseaseGuidelines(filters: { speciality?: strin
     if (filters.carePillar && summary.pillar !== filters.carePillar) return false;
     return true;
   });
-  return { diseases, state: "ready", rejectedCount: payload.rejectedCount, withheldCount: CLINICAL_DIRECTORY_DRAFT_TOPIC_COUNT };
+  return { diseases, state: "ready", rejectedCount: payload.rejectedCount, withheldCount: payload.withheldCount };
 }
 
 type TopicPayload = Exclude<DiseaseDetailResult, { state: "unavailable" }>;
@@ -153,7 +155,7 @@ async function loadTopic(id: string): Promise<TopicPayload> {
       const reviewRow = reviewData as unknown as GuidelineRow;
       const reviewContent = DiseaseDetailSchema.safeParse(currentContent(reviewRow));
       if (!reviewContent.success || reviewContent.data.id !== reviewRow.id || reviewContent.data.status !== "under_review") return { state: "invalid" };
-      if (!isClinicalDirectoryEligible(id, reviewContent.data.version)) return { state: "not-found" };
+      if (!isClinicalDirectoryEligible(reviewContent.data)) return { state: "not-found" };
       return { state: "ready", disease: reviewContent.data, investigationSource: currentSource(reviewRow) };
     }
   }
@@ -172,15 +174,14 @@ async function loadTopic(id: string): Promise<TopicPayload> {
   const row = data as unknown as GuidelineRow;
   const parsed = DiseaseDetailSchema.safeParse(currentContent(row));
   if (!parsed.success || !isApproved(parsed.data) || parsed.data.id !== row.id) return { state: "invalid" };
-  if (!isClinicalDirectoryEligible(id, parsed.data.version)) return { state: "not-found" };
+  if (!isClinicalDirectoryEligible(parsed.data)) return { state: "not-found" };
   return { state: "ready", disease: parsed.data, investigationSource: currentSource(row) };
 }
 
-const loadSharedTopic = unstable_cache(loadTopic, ["clinical-topic-v1"], { tags: [CLINICAL_DIRECTORY_TAG], revalidate: CROSS_REQUEST_CACHE_SECONDS });
+const loadSharedTopic = unstable_cache(loadTopic, ["clinical-topic-v2"], { tags: [CLINICAL_DIRECTORY_TAG], revalidate: CROSS_REQUEST_CACHE_SECONDS });
 
 export const getApprovedDiseaseGuideline = cache(async (id: string): Promise<DiseaseDetailResult> => {
   if (!isSupabaseConfigured()) return { state: "unavailable" };
-  if (!isClinicalDirectoryEligible(id)) return { state: "not-found" };
   try {
     return isTemporaryOpenAdminMode() ? await loadSharedTopic(id) : await loadTopic(id);
   } catch (error) {

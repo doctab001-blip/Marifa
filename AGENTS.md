@@ -18,6 +18,6 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 ## Clinical topic authoring
 
 - Before creating or correcting any clinical topic, read and follow `docs/clinical-topic-authoring-standard.md`. It is the default authoring, evidence and reporting contract for every topic.
-- Never edit current or published clinical content in place. Corrections must be additive versions with `status: "under_review"`, `is_current: false` and `clinicalReviewStatus: "pending"`; approval and publication remain clinician actions.
+- Never edit current or published clinical content in place. Corrections must be additive versions saved with `status: "under_review"`, `is_current: false` and `clinicalReviewStatus: "pending"`. A version that scores 80% or more on the authoring audit goes live automatically via `scripts/publish-if-eligible.ts` (new `-live` row; publication authorised by the platform owner, 12 Oct 2026). Clinical approval remains a clinician action: live topics keep `clinicalReviewStatus: "pending"` and the unreviewed notice.
 - Treat older topic formats as an audit queue. Preserve every historical row and supersede its visible draft only after the replacement passes the canonical schemas, pathway validation and the source checks in the authoring standard.
 - Preserve topics that score 80% or higher in `outputs/authoring-standard-audit/report.json`; do not create a replacement for them. Correct only topics below 80%, then require the replacement to score at least 80% before insertion.

@@ -11,7 +11,7 @@ These rules are strict. Do not relax them for speed, and do not report a rule as
 1. **No invented facts.** Every dose, threshold, cut-off, timing, percentage and drug name must come from a source you opened in this task. Do not cite from memory. If you could not open a source, write that in the report and leave the item out or mark it unverified.
 2. **Cite the exact place.** Each reference gives the page, section, table or figure (e.g. "SDCPG 2021, pp. 76–79", "SSC 2021, Rec. 31"). A citation must support the specific sentence it is attached to, not just the topic.
 3. **No fake URLs.** Only use URLs you actually loaded. No guessed DOIs, no guessed PubMed IDs.
-4. **Never touch published content.** Never edit a published or current version in place. Every change is a new version with `status: "under_review"`, `is_current: false`, `clinicalReviewStatus: "pending"`. Never approve, publish or mark anything as clinically reviewed.
+4. **Never touch published content.** Never edit a published or current version in place. Every change is first saved as a new version with `status: "under_review"`, `is_current: false`, `clinicalReviewStatus: "pending"`. **Automatic publication:** if that version scores at least 80% on the authoring audit (`lib/clinical-authoring-audit.ts`), publish it with `scripts/publish-if-eligible.ts` — this adds a new `-live` row and leaves history intact. Below 80% it stays a draft. Publication never means clinical approval: keep `clinicalReviewStatus: "pending"` and the unreviewed notice, and never mark anything as clinically reviewed.
 5. **Never merge disagreeing sources.** If two guidelines give different numbers, show both side by side in `guidelineComparison`, with the source for each. Do not average them, pick one silently, or blend them into a range neither source states.
 6. **Adults only unless stated.** Paediatric doses only from a paediatric source, and labelled as paediatric.
 7. **Numbers must match across the topic.** The same threshold or dose must be identical in Investigations, Management and the comparison table.
@@ -103,7 +103,7 @@ Before writing, open one existing under-review topic in the same pillar and matc
 3. **Draft** the four headings + references.
 4. **Self-check** against section 7. Fix every failure before going on.
 5. **Validate:** run type check, lint and tests. All must pass.
-6. **Save** as a new version via Supabase REST (`status: "under_review"`, `is_current: false`). Only add an entry to `lib/data/clinical-review-overrides.ts` if the task says to.
+6. **Save** as a new version via Supabase REST (`status: "under_review"`, `is_current: false`), then run `npx tsx scripts/publish-if-eligible.ts <guideline_id>:<version>`. It audits the version and makes it live only if it scores 80% or more; the live directory shows any current published version at or above 80% automatically (no allow-list to edit). Only add an entry to `lib/data/clinical-review-overrides.ts` if the task says to.
 7. **Commit** on a feature branch, never on `main`. If you cannot push, print the exact commands for the user to run, e.g.:
    ```
    cd ~/Desktop/Pulse && git checkout <branch> && git push -u origin <branch>
@@ -124,7 +124,7 @@ Before writing, open one existing under-review topic in the same pillar and matc
 - [ ] Every drug has dose, route, frequency, max, and SFDA status.
 - [ ] The same number is identical everywhere it appears.
 - [ ] Only four clinical headings + references; no filler phrases.
-- [ ] Nothing published was edited; new version is under_review and not current.
+- [ ] Nothing published was edited; the new version was saved as under_review, then published by `publish-if-eligible.ts` only if it scored 80% or more (score reported).
 - [ ] Unverified items are listed in `unverifiedSections`.
 - [ ] Type check, lint and tests pass.
 - [ ] Only the named topic(s) were changed.

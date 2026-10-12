@@ -1,25 +1,30 @@
 import { describe, expect, it } from "vitest";
-import {
-  CLINICAL_DIRECTORY_DRAFT_TOPIC_COUNT,
-  CLINICAL_DIRECTORY_MINIMUM_SCORE,
-  clinicalDirectoryEligibility,
-  isClinicalDirectoryEligible,
-} from "@/lib/data/clinical-directory-eligibility";
+import heartFailure from "../data/emergency-versions/heart-failure.emergency-2026-10-12-v1.json";
+import { auditTopicContent } from "@/lib/clinical-authoring-audit";
+import { CLINICAL_DIRECTORY_MINIMUM_SCORE, isClinicalDirectoryEligible } from "@/lib/data/clinical-directory-eligibility";
 
 describe("clinical directory release boundary", () => {
-  it("contains only the 36 topics that passed the 80% authoring threshold", () => {
-    const records = Object.entries(clinicalDirectoryEligibility);
-    expect(records).toHaveLength(36);
-    expect(records.every(([, record]) => record.score >= CLINICAL_DIRECTORY_MINIMUM_SCORE)).toBe(true);
+  it("uses the 80% authoring threshold", () => {
+    expect(CLINICAL_DIRECTORY_MINIMUM_SCORE).toBe(80);
   });
 
-  it("tracks the complete below-threshold correction queue", () => {
-    expect(CLINICAL_DIRECTORY_DRAFT_TOPIC_COUNT).toBe(45);
+  it("makes a topic live automatically when its content passes the threshold", () => {
+    expect(auditTopicContent(heartFailure).score).toBeGreaterThanOrEqual(80);
+    expect(isClinicalDirectoryEligible(heartFailure)).toBe(true);
   });
 
-  it("requires both an eligible topic and its audited live version", () => {
-    expect(isClinicalDirectoryEligible("625f0d83-3863-47f9-a64e-55c0355f3240", "emergency-2026-10-12-v1-live")).toBe(true);
-    expect(isClinicalDirectoryEligible("625f0d83-3863-47f9-a64e-55c0355f3240", "older-version")).toBe(false);
-    expect(isClinicalDirectoryEligible("c36e9014-7d53-4a82-b641-8e05a3c9d627")).toBe(false);
+  it("withholds a topic whose content falls below the threshold", () => {
+    const weakened = structuredClone(heartFailure) as Record<string, unknown> & { presentation: Record<string, unknown>; teaching: Record<string, unknown> };
+    delete weakened.diagnosticCriteria;
+    delete weakened.medicationPlan;
+    delete weakened.presentation.precipitants;
+    delete weakened.teaching.keyPoints;
+    delete weakened.teaching.pitfalls;
+    expect(auditTopicContent(weakened).score).toBeLessThan(80);
+    expect(isClinicalDirectoryEligible(weakened)).toBe(false);
+  });
+
+  it("withholds content that fails the schema", () => {
+    expect(isClinicalDirectoryEligible({ id: "x" })).toBe(false);
   });
 });
