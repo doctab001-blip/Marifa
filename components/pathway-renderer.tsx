@@ -4,7 +4,7 @@ import type { DiseaseTopic } from "@/lib/types";
 export function PathwayRenderer({ pathway }: { pathway: DiseaseTopic["pathway"] }) {
   return (
     <section className="card pathway" id="quick-pathway">
-      <div className="section-head"><div><div className="eyebrow">Quick pathway</div><h2 style={{ marginTop: 5 }}>{pathway.title}</h2></div><GitBranch size={20} color="#1f3c88" /></div>
+      <div className="section-head"><div><div className="eyebrow">Quick pathway</div><h2 style={{ marginTop: 5 }}>{pathway.title}</h2></div><GitBranch size={20} style={{ color: "var(--royal)" }} /></div>
       <div className="pathway-list">
         {pathway.nodes.map((node, index) => {
           const outgoing = pathway.transitions.filter((edge) => edge.from === node.id);

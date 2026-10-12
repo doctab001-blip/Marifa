@@ -4,7 +4,7 @@ const mocks = vi.hoisted(() => ({
   rpc: vi.fn(), receipt: vi.fn(), context: vi.fn(), redirect: vi.fn((url: string) => { throw new Error(`REDIRECT:${url}`); }),
 }));
 vi.mock("next/navigation", () => ({ redirect: mocks.redirect }));
-vi.mock("next/cache", () => ({ revalidatePath: vi.fn() }));
+vi.mock("next/cache", () => ({ revalidatePath: vi.fn(), updateTag: vi.fn() }));
 vi.mock("@/lib/admin/data", () => ({ requireOrganizationAdmin: mocks.context }));
 vi.mock("@/lib/access-mode", () => ({ isTemporaryOpenAdminMode: () => false }));
 vi.mock("@/lib/supabase/data-client", () => ({ createSupabaseDataClient: async () => ({

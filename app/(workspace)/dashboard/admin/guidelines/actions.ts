@@ -1,6 +1,7 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
+import { revalidatePath, updateTag } from "next/cache";
+import { CLINICAL_DIRECTORY_TAG } from "@/lib/data/cache-tags";
 import { redirect } from "next/navigation";
 import { createSupabaseDataClient } from "@/lib/supabase/data-client";
 import { requireOrganizationAdmin } from "@/lib/admin/data";
@@ -69,6 +70,7 @@ export async function saveDraftGuideline(formData: FormData) {
 
   revalidatePath(editPath);
   revalidatePath("/dashboard/admin/governance");
+  updateTag(CLINICAL_DIRECTORY_TAG);
   revalidatePath("/dashboard/diseases");
   revalidatePath("/dashboard/diseases/drafts");
   revalidatePath(`/dashboard/diseases/${encodeURIComponent(id)}`);
@@ -103,6 +105,7 @@ export async function approveGuidelineVersion(formData: FormData) {
         .select("status,is_current,approved_by,approved_at")
         .eq("id", versionId).eq("guideline_id", id).maybeSingle();
       if (receipt?.is_current && ["approved", "published"].includes(receipt.status) && receipt.approved_by && receipt.approved_at) {
+        updateTag(CLINICAL_DIRECTORY_TAG);
         revalidatePath("/dashboard/diseases/drafts");
         redirect(destination === "drafts" ? "/dashboard/diseases/drafts?approved=1" : "/dashboard/admin/governance?approved=1");
       }
@@ -114,6 +117,7 @@ export async function approveGuidelineVersion(formData: FormData) {
 
   revalidatePath("/dashboard/admin/governance");
   revalidatePath("/dashboard/diseases/drafts");
+  updateTag(CLINICAL_DIRECTORY_TAG);
   revalidatePath("/dashboard/diseases");
   revalidatePath(`/dashboard/diseases/${encodeURIComponent(id)}`);
   redirect(destination === "drafts" ? "/dashboard/diseases/drafts?approved=1" : "/dashboard/admin/governance?approved=1");

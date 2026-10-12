@@ -252,6 +252,6 @@ export async function getAdminSettings() {
       displayName: profileResult.data?.display_name ?? "Marifa Administrator",
       professionalLevel: membershipResult.data?.professional_level ?? "consultant",
     },
-    settings: settingsResult.data ?? { primary_color: "#1f3c88", locale: "en-SA", timezone: "Asia/Riyadh" },
+    settings: settingsResult.data ?? { primary_color: "#0f766e", locale: "en-SA", timezone: "Asia/Riyadh" },
   };
 }

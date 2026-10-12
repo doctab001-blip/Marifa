@@ -1,4 +1,8 @@
 import "server-only";
+import { cache } from "react";
+import { unstable_cache } from "next/cache";
+import { isTemporaryOpenAdminMode } from "@/lib/access-mode";
+import { CLINICAL_DIRECTORY_TAG } from "@/lib/data/cache-tags";
 import { clinicalReviewOverrides } from "@/lib/data/clinical-review-overrides";
 import { mergedTopics } from "@/lib/data/merged-topics";
 import { DiseaseDetailSchema, type DiseaseDetail } from "@/lib/validations/disease";
@@ -41,114 +45,146 @@ function toSummary(disease: DiseaseDetail, row: GuidelineRow): Omit<DiseaseGuide
   return { id: disease.id, title: disease.title, specialty: disease.specialty, speciality, subSpecialities: disease.sub_specialities ?? row.sub_specialities ?? inferred.filter((tag) => tag !== speciality), authority: disease.authority, clinicalReviewStatus: disease.clinicalReviewStatus, status: disease.status, version: disease.version, lastReviewed: disease.lastReviewed, pillar: disease.pillar, summary: disease.pathophysiology.summary };
 }
 
-export async function getApprovedDiseaseGuidelines(filters: { speciality?: string; carePillar?: string } = {}): Promise<DiseaseDirectoryResult> {
-  if (!isSupabaseConfigured()) return { diseases: [], state: "unavailable", rejectedCount: 0, withheldCount: 0 };
-  try {
-    const supabase = await createSupabaseDataClient();
-    const { data, error } = await supabase
+export { CLINICAL_DIRECTORY_TAG };
+const CROSS_REQUEST_CACHE_SECONDS = 300;
+
+type DirectoryPayload = { diseases: DiseaseGuidelineSummary[]; rejectedCount: number };
+
+// Loads and validates the complete published catalogue. Throws on failure so a failed load is never cached.
+async function loadDirectory(): Promise<DirectoryPayload> {
+  const supabase = await createSupabaseDataClient();
+  const { data, error } = await supabase
+    .from("clinical_guidelines")
+    .select("id,title,specialty,speciality_id,speciality:specialties!clinical_guidelines_speciality_id_fkey(name),sub_specialities,status,source_type,guideline_versions!inner(content)")
+    .is("organization_id", null)
+    .in("status", [...approvedStatuses])
+    .eq("guideline_versions.is_current", true)
+    .in("guideline_versions.status", [...approvedStatuses])
+    .order("title", { ascending: true });
+  if (error) throw error;
+
+  const diseases: DiseaseGuidelineSummary[] = [];
+  let rejectedCount = 0;
+  for (const row of (data ?? []) as unknown as GuidelineRow[]) {
+    if (Object.hasOwn(mergedTopics, row.id)) continue;
+    const parsed = DiseaseDetailSchema.safeParse(currentContent(row));
+    if (!parsed.success || !isApproved(parsed.data) || parsed.data.id !== row.id || row.status !== parsed.data.status || row.title !== parsed.data.title || row.specialty !== parsed.data.specialty) {
+      rejectedCount += 1;
+      continue;
+    }
+    if (!isClinicalDirectoryEligible(row.id, parsed.data.version)) {
+      continue;
+    }
+    diseases.push({ ...toSummary(parsed.data, row), sourceType: row.source_type });
+  }
+
+  for (const [reviewId, reviewVersion] of Object.entries(clinicalReviewOverrides)) {
+    if (!isClinicalDirectoryEligible(reviewId)) continue;
+    let reviewQuery = supabase
       .from("clinical_guidelines")
-      .select("id,title,specialty,speciality_id,speciality:specialties!clinical_guidelines_speciality_id_fkey(name),sub_specialities,status,source_type,guideline_versions!inner(content)")
+      .select("id,title,specialty,status,source_type,guideline_versions!inner(content)")
+      .eq("id", reviewId)
       .is("organization_id", null)
       .in("status", [...approvedStatuses])
-      .eq("guideline_versions.is_current", true)
-      .in("guideline_versions.status", [...approvedStatuses])
-      .order("title", { ascending: true });
-    if (error) throw error;
-
-    const diseases: DiseaseGuidelineSummary[] = [];
-    let rejectedCount = 0;
-    for (const row of (data ?? []) as unknown as GuidelineRow[]) {
-      if (Object.hasOwn(mergedTopics, row.id)) continue;
+      .eq("guideline_versions.is_current", false)
+      .eq("guideline_versions.status", "under_review");
+    if (reviewVersion) reviewQuery = reviewQuery.eq("guideline_versions.version", reviewVersion);
+    const { data: reviewData, error: reviewError } = await reviewQuery.maybeSingle();
+    if (reviewError) throw reviewError;
+    if (reviewData) {
+      const row = reviewData as unknown as GuidelineRow;
       const parsed = DiseaseDetailSchema.safeParse(currentContent(row));
-      if (!parsed.success || !isApproved(parsed.data) || parsed.data.id !== row.id || row.status !== parsed.data.status || row.title !== parsed.data.title || row.specialty !== parsed.data.specialty) {
+      if (parsed.success && parsed.data.status === "under_review" && parsed.data.id === row.id) {
+        const index = diseases.findIndex((disease) => disease.id === row.id);
+        if (index >= 0) diseases[index] = { ...toSummary(parsed.data, row), sourceType: row.source_type };
+      } else {
         rejectedCount += 1;
-        continue;
-      }
-      if (!isClinicalDirectoryEligible(row.id, parsed.data.version)) {
-        continue;
-      }
-      const summary = toSummary(parsed.data, row);
-      if (filters.speciality && ![summary.speciality ?? summary.specialty, ...(summary.subSpecialities ?? [])].some((tag) => hasMedicalSpeciality(tag, filters.speciality!))) continue;
-      if (filters.carePillar && parsed.data.pillar !== filters.carePillar) continue;
-      diseases.push({ ...summary, sourceType: row.source_type });
-    }
-
-    for (const [reviewId, reviewVersion] of Object.entries(clinicalReviewOverrides)) {
-      if (!isClinicalDirectoryEligible(reviewId)) continue;
-      let reviewQuery = supabase
-        .from("clinical_guidelines")
-        .select("id,title,specialty,status,source_type,guideline_versions!inner(content)")
-        .eq("id", reviewId)
-        .is("organization_id", null)
-        .in("status", [...approvedStatuses])
-        .eq("guideline_versions.is_current", false)
-        .eq("guideline_versions.status", "under_review");
-      if (reviewVersion) reviewQuery = reviewQuery.eq("guideline_versions.version", reviewVersion);
-      const { data: reviewData, error: reviewError } = await reviewQuery.maybeSingle();
-      if (reviewError) throw reviewError;
-      if (reviewData) {
-        const row = reviewData as unknown as GuidelineRow;
-        const parsed = DiseaseDetailSchema.safeParse(currentContent(row));
-        if (parsed.success && parsed.data.status === "under_review" && parsed.data.id === row.id) {
-          const index = diseases.findIndex((disease) => disease.id === row.id);
-          if (index >= 0) diseases[index] = { ...toSummary(parsed.data, row), sourceType: row.source_type };
-        } else {
-          rejectedCount += 1;
-        }
       }
     }
-    return { diseases, state: "ready", rejectedCount, withheldCount: CLINICAL_DIRECTORY_DRAFT_TOPIC_COUNT };
-  } catch (error) {
-    console.error("[disease-guidelines] directory load failed", error);
-    return { diseases: [], state: "unavailable", rejectedCount: 0, withheldCount: 0 };
   }
+  return { diseases, rejectedCount };
 }
 
-export async function getApprovedDiseaseGuideline(id: string): Promise<DiseaseDetailResult> {
-  if (!isSupabaseConfigured()) return { state: "unavailable" };
-  if (!isClinicalDirectoryEligible(id)) return { state: "not-found" };
+// With temporary open administration, clinical data is read with a server key rather than the viewer's
+// cookies, so one validated catalogue can be shared across requests. Otherwise row-level security depends
+// on the signed-in viewer and the catalogue is only reused within a single request.
+const loadSharedDirectory = unstable_cache(loadDirectory, ["clinical-directory-v1"], { tags: [CLINICAL_DIRECTORY_TAG], revalidate: CROSS_REQUEST_CACHE_SECONDS });
+
+const getDirectoryForRequest = cache(async (): Promise<DirectoryPayload | null> => {
+  if (!isSupabaseConfigured()) return null;
   try {
-    const supabase = await createSupabaseDataClient();
-    if (Object.hasOwn(clinicalReviewOverrides, id)) {
-      let reviewQuery = supabase
-        .from("clinical_guidelines")
-        .select("id,guideline_versions!inner(content,source_title,source_url)")
-        .eq("id", id)
-        .is("organization_id", null)
-        .in("status", [...approvedStatuses])
-        .eq("guideline_versions.is_current", false)
-        .eq("guideline_versions.status", "under_review");
-      const reviewVersion = clinicalReviewOverrides[id];
-      if (reviewVersion) reviewQuery = reviewQuery.eq("guideline_versions.version", reviewVersion);
-      const { data: reviewData, error: reviewError } = await reviewQuery.maybeSingle();
-      if (reviewError) throw reviewError;
-      if (reviewData) {
-        const reviewRow = reviewData as unknown as GuidelineRow;
-        const reviewContent = DiseaseDetailSchema.safeParse(currentContent(reviewRow));
-        if (!reviewContent.success || reviewContent.data.id !== reviewRow.id || reviewContent.data.status !== "under_review") return { state: "invalid" };
-        if (!isClinicalDirectoryEligible(id, reviewContent.data.version)) return { state: "not-found" };
-        return { state: "ready", disease: reviewContent.data, investigationSource: currentSource(reviewRow) };
-      }
-    }
-    const { data, error } = await supabase
+    return isTemporaryOpenAdminMode() ? await loadSharedDirectory() : await loadDirectory();
+  } catch (error) {
+    console.error("[disease-guidelines] directory load failed", error);
+    return null;
+  }
+});
+
+export async function getApprovedDiseaseGuidelines(filters: { speciality?: string; carePillar?: string } = {}): Promise<DiseaseDirectoryResult> {
+  const payload = await getDirectoryForRequest();
+  if (!payload) return { diseases: [], state: "unavailable", rejectedCount: 0, withheldCount: 0 };
+  const diseases = payload.diseases.filter((summary) => {
+    if (filters.speciality && ![summary.speciality ?? summary.specialty, ...(summary.subSpecialities ?? [])].some((tag) => hasMedicalSpeciality(tag, filters.speciality!))) return false;
+    if (filters.carePillar && summary.pillar !== filters.carePillar) return false;
+    return true;
+  });
+  return { diseases, state: "ready", rejectedCount: payload.rejectedCount, withheldCount: CLINICAL_DIRECTORY_DRAFT_TOPIC_COUNT };
+}
+
+type TopicPayload = Exclude<DiseaseDetailResult, { state: "unavailable" }>;
+
+// Loads one validated topic. Throws on failure so a failed load is never cached.
+async function loadTopic(id: string): Promise<TopicPayload> {
+  const supabase = await createSupabaseDataClient();
+  if (Object.hasOwn(clinicalReviewOverrides, id)) {
+    let reviewQuery = supabase
       .from("clinical_guidelines")
       .select("id,guideline_versions!inner(content,source_title,source_url)")
       .eq("id", id)
       .is("organization_id", null)
       .in("status", [...approvedStatuses])
-      .eq("guideline_versions.is_current", true)
-      .in("guideline_versions.status", [...approvedStatuses])
-      .maybeSingle();
-    if (error) throw error;
-    if (!data) return { state: "not-found" };
+      .eq("guideline_versions.is_current", false)
+      .eq("guideline_versions.status", "under_review");
+    const reviewVersion = clinicalReviewOverrides[id];
+    if (reviewVersion) reviewQuery = reviewQuery.eq("guideline_versions.version", reviewVersion);
+    const { data: reviewData, error: reviewError } = await reviewQuery.maybeSingle();
+    if (reviewError) throw reviewError;
+    if (reviewData) {
+      const reviewRow = reviewData as unknown as GuidelineRow;
+      const reviewContent = DiseaseDetailSchema.safeParse(currentContent(reviewRow));
+      if (!reviewContent.success || reviewContent.data.id !== reviewRow.id || reviewContent.data.status !== "under_review") return { state: "invalid" };
+      if (!isClinicalDirectoryEligible(id, reviewContent.data.version)) return { state: "not-found" };
+      return { state: "ready", disease: reviewContent.data, investigationSource: currentSource(reviewRow) };
+    }
+  }
+  const { data, error } = await supabase
+    .from("clinical_guidelines")
+    .select("id,guideline_versions!inner(content,source_title,source_url)")
+    .eq("id", id)
+    .is("organization_id", null)
+    .in("status", [...approvedStatuses])
+    .eq("guideline_versions.is_current", true)
+    .in("guideline_versions.status", [...approvedStatuses])
+    .maybeSingle();
+  if (error) throw error;
+  if (!data) return { state: "not-found" };
 
-    const row = data as unknown as GuidelineRow;
-    const parsed = DiseaseDetailSchema.safeParse(currentContent(row));
-    if (!parsed.success || !isApproved(parsed.data) || parsed.data.id !== row.id) return { state: "invalid" };
-    if (!isClinicalDirectoryEligible(id, parsed.data.version)) return { state: "not-found" };
-    return { state: "ready", disease: parsed.data, investigationSource: currentSource(row) };
+  const row = data as unknown as GuidelineRow;
+  const parsed = DiseaseDetailSchema.safeParse(currentContent(row));
+  if (!parsed.success || !isApproved(parsed.data) || parsed.data.id !== row.id) return { state: "invalid" };
+  if (!isClinicalDirectoryEligible(id, parsed.data.version)) return { state: "not-found" };
+  return { state: "ready", disease: parsed.data, investigationSource: currentSource(row) };
+}
+
+const loadSharedTopic = unstable_cache(loadTopic, ["clinical-topic-v1"], { tags: [CLINICAL_DIRECTORY_TAG], revalidate: CROSS_REQUEST_CACHE_SECONDS });
+
+export const getApprovedDiseaseGuideline = cache(async (id: string): Promise<DiseaseDetailResult> => {
+  if (!isSupabaseConfigured()) return { state: "unavailable" };
+  if (!isClinicalDirectoryEligible(id)) return { state: "not-found" };
+  try {
+    return isTemporaryOpenAdminMode() ? await loadSharedTopic(id) : await loadTopic(id);
   } catch (error) {
     console.error("[disease-guidelines] topic load failed", error);
     return { state: "unavailable" };
   }
-}
+});

@@ -15,5 +15,10 @@ export async function GET(request: Request) {
   }
   const result = await getApprovedDiseaseGuidelines({ speciality, carePillar });
   if (result.state === "unavailable") return NextResponse.json({ error: "Clinical directory unavailable." }, { status: 503 });
+  if (params.get("view") === "nav") {
+    // Compact payload for the workspace side panel.
+    const topics = result.diseases.map(({ id, title, pillar }) => ({ id, title, pillar }));
+    return NextResponse.json({ topics }, { headers: { "Cache-Control": "private, max-age=60" } });
+  }
   return NextResponse.json({ topics: result.diseases, rejectedCount: result.rejectedCount, withheldCount: result.withheldCount });
 }

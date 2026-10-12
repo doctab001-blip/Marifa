@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import { Bell, LogOut, Search, Settings2 } from "lucide-react";
 import { getCurrentViewer } from "@/lib/supabase/session";
 import { CollapsibleShell } from "@/components/collapsible-shell";
-import { MobileNavigation, SidebarNavigation } from "@/components/app-navigation";
+import { MobileNavigation, WorkspaceSidebar } from "@/components/app-navigation";
 import { isTemporaryOpenAdminMode } from "@/lib/access-mode";
 
 export async function AppShell({ children }: { children: React.ReactNode }) {
@@ -12,15 +12,11 @@ export async function AppShell({ children }: { children: React.ReactNode }) {
   const temporaryAdminMode = isTemporaryOpenAdminMode();
   return (
     <CollapsibleShell primaryColor={user.primaryColor}>
-      <aside id="workspace-sidebar" className="sidebar" aria-label="Main navigation">
-        <Link href="/dashboard" className="brand">
-          <div className="brand-mark">M</div>
-          <div className="brand-copy"><div className="brand-name">Marifa</div><div className="brand-sub">Clinical knowledge & governance</div></div>
-        </Link>
-        <SidebarNavigation />
-        <div className="nav-spacer" />
-        <div className="org-card"><strong>{user.organizationName}</strong><span>{temporaryAdminMode ? "Temporary no-login admin mode" : "Isolated demo tenant · Riyadh"}</span></div>
-      </aside>
+      <WorkspaceSidebar
+        organizationName={user.organizationName}
+        organizationNote={temporaryAdminMode ? "Temporary no-login admin mode" : "Isolated demo tenant · Riyadh"}
+        temporaryAdminMode={temporaryAdminMode}
+      />
       <section className="workspace">
         <header className="topbar">
           <form className="global-search" action="/dashboard/diseases">

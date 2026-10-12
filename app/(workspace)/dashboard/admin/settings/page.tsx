@@ -3,8 +3,8 @@ import { getAdminSettings } from "@/lib/admin/data";
 import { saveAdminSettings } from "./actions";
 
 const themes = [
-  { value: "#1f3c88", label: "Marifa blue" },
-  { value: "#0f766e", label: "Teal" },
+  { value: "#0f766e", label: "Marifa teal" },
+  { value: "#1f3c88", label: "Classic blue" },
   { value: "#166534", label: "Forest" },
   { value: "#7c3aed", label: "Violet" },
   { value: "#be123c", label: "Rose" },
