@@ -1,6 +1,7 @@
 /** Explicit review previews; approved versions remain unchanged in the history. */
 export const clinicalReviewOverrides: Record<string, string | undefined> = {
-  "05481a2b-c95c-440a-a4d0-0c520e8129a4": "aecopd-user-content-2026-10-11-v1",
+  // AECOPD: emergency rewrite supersedes the earlier preview (aecopd-user-content-2026-10-11-v1 stays in history).
+  "05481a2b-c95c-440a-a4d0-0c520e8129a4": "emergency-2026-10-12-v1",
   "a14c7e92-5b31-4d68-9f20-6c83e1b7a405": undefined,
   "c2c404f2-5f47-4e4d-9ce7-fb32a9c1e103": "acs-user-revision-2026-10-11-v1",
   // Teaching-format demonstrations (unreviewed; the published originals stay in history).
@@ -14,4 +15,8 @@ export const clinicalReviewOverrides: Record<string, string | undefined> = {
   "8091cd18-2256-40b7-8c6d-7557ac5e2fdf": "emergency-2026-10-12-v1",
   "c2c404f2-5f47-4e4d-9ce7-fb32a9c1e102": "emergency-2026-10-12-v1",
   "a1010000-0000-4000-8000-000000000002": "emergency-2026-10-12-v1",
+  "c2c404f2-5f47-4e4d-9ce7-fb32a9c1e101": "emergency-2026-10-12-v1",
+  "a1010000-0000-4000-8000-000000000001": "emergency-2026-10-12-v1",
+  "cb0f8932-f4c5-4a6a-9d44-d320713a366b": "emergency-2026-10-12-v1",
+  "c2c404f2-5f47-4e4d-9ce7-fb32a9c1e104": "emergency-2026-10-12-v1",
 };

@@ -1,0 +1,579 @@
+{
+  "id": "05481a2b-c95c-440a-a4d0-0c520e8129a4",
+  "title": "Acute Exacerbation of COPD",
+  "specialty": "Respiratory Medicine / Emergency Medicine",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "emergency-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Adults with known or suspected COPD presenting with an acute exacerbation to the emergency department. Verified against GOLD 2024 (Chapter 4), NICE NG115 (section 1.3) and the Saudi Thoracic Society 2025 COPD guideline.",
+    "findings": [
+      "GOLD Figures 4.3 and 4.8 (ROME thresholds and NIV indications) are images in the PDF and were not text-extractable; NIV triggers are therefore stated as NICE/GOLD text describes them.",
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Exact pH/PaCO2 thresholds to start NIV (GOLD Figure 4.8) — follow local NIV protocol",
+      "Bronchodilator and antibiotic doses — hospital formulary",
+      "Local formulary availability"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "05481a2b-c95c-440a-a4d0-0c520e8129a4"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "An exacerbation (ECOPD) is increased dyspnoea and/or cough and sputum worsening over less than 14 days, often with tachypnoea and tachycardia. Airway infection (mostly viral), pollution or other insults increase airway and systemic inflammation, mucus and gas trapping. Dyspnoea is the key symptom.",
+    "keyMechanisms": [
+      "Triggers: respiratory viruses (rhinovirus, influenza, parainfluenza, metapneumovirus) are the main cause; bacteria (H. influenzae, S. pneumoniae, M. catarrhalis; Pseudomonas in severe or long-standing COPD), fine particulate air pollution and excess heat also trigger events.",
+      "Increased airway inflammation and mucus with expiratory flow limitation cause dynamic hyperinflation (gas trapping), increased work of breathing and breathlessness.",
+      "Ventilation–perfusion mismatch causes hypoxaemia; respiratory muscle fatigue and hypoventilation cause hypercapnia and respiratory acidosis.",
+      "High-concentration oxygen and oxygen-driven nebulisers can raise PaCO2 in hypercapnic patients — hence controlled oxygen to SpO2 88–92% and air-driven nebulisers.",
+      "Sputum or blood eosinophilia marks events that may respond better to systemic steroids.",
+      "Recovery takes 7–10 days on average; at 8 weeks up to 20% have not returned to baseline. Frequent exacerbations (2 or more a year) speed lung-function decline."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Increased breathlessness (key symptom).",
+      "Increased cough and wheeze.",
+      "Increased sputum volume and purulence (purulence suggests bacterial infection).",
+      "Reduced activity; may be confined to bed."
+    ],
+    "physicalSigns": [
+      "Tachypnoea (over 24/min) and tachycardia (95/min or more) suggest respiratory failure (GOLD hospital classification).",
+      "Use of accessory muscles; pursed-lip breathing; wheeze or reduced air entry.",
+      "Central cyanosis; worsening peripheral oedema (cor pulmonale).",
+      "Acute confusion or drowsiness (hypercapnia)."
+    ],
+    "redFlags": [
+      "Acute change in mental status, drowsiness or confusion",
+      "Hypoxaemia not corrected by Venturi mask or needing FiO2 above 40%",
+      "PaCO2 above 60 mmHg or pH 7.25 or less (life-threatening respiratory failure, GOLD)",
+      "pH below 7.35 or PaO2 below 7 kPa — treat in hospital (NICE)",
+      "Haemodynamic instability, or failure to respond to initial treatment"
+    ],
+    "precipitants": [
+      "Viral respiratory infection (most common).",
+      "Bacterial infection (purulent sputum).",
+      "Air pollution (PM2.5/PM10), excess heat.",
+      "Poor inhaler adherence or technique.",
+      "Comorbidities: heart failure, PE, pneumonia may mimic or aggravate."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Pneumonia",
+      "distinguishingFeatures": "Fever, focal signs, new consolidation on chest X-ray."
+    },
+    {
+      "condition": "Acute heart failure",
+      "distinguishingFeatures": "Orthopnoea, crackles, raised JVP, oedema; congestion on X-ray; echocardiography and natriuretic peptide."
+    },
+    {
+      "condition": "Pulmonary embolism",
+      "distinguishingFeatures": "Found in up to 5.9% of patients admitted with a suspected exacerbation; pleuritic pain, haemoptysis, no infective features — CT pulmonary angiography."
+    },
+    {
+      "condition": "Pneumothorax",
+      "distinguishingFeatures": "Sudden pain and breathlessness, unilateral reduced breath sounds; chest X-ray."
+    },
+    {
+      "condition": "Acute coronary syndrome / arrhythmia",
+      "distinguishingFeatures": "ECG and troponin."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Arterial blood gas (record FiO2)",
+        "modalityTarget": "All patients arriving at hospital; repeat frequently after starting oxygen and according to response",
+        "targetCondition": "Respiratory failure",
+        "expectedFinding": "Hypercapnia with acidaemia: pH below 7.35 = treat in hospital (NICE); pH 7.25 or less or PaCO2 above 60 mmHg = life-threatening (GOLD). PaO2 below 7 kPa = hospital.",
+        "clinicalRationale": "Hypercapnic acidosis persisting despite optimal medical therapy is the trigger for NIV. Compare with the patient's baseline PaCO2 and bicarbonate (chronic retainers have raised HCO3-).",
+        "normalValue": "pH 7.35–7.45; PaCO2 4.7–6.0 kPa (35–45 mmHg); PaO2 above 10.6 kPa (80 mmHg) on air; HCO3- 22–26 mmol/L",
+        "pros": [
+          "Gives PaCO2 and pH, which pulse oximetry cannot."
+        ],
+        "cons": [
+          "Painful; VBG is accurate for pH and bicarbonate but not PaCO2 or PaO2 (GOLD)."
+        ],
+        "references": [
+          {
+            "title": "NICE NG115: Chronic obstructive pulmonary disease in over 16s: diagnosis and management",
+            "edition": "NICE guideline, 2018 (updated 2019)",
+            "url": "https://www.nice.org.uk/guidance/ng115"
+          },
+          {
+            "title": "Global Strategy for Prevention, Diagnosis and Management of COPD: 2024 Report (GOLD)",
+            "edition": "2024 report, v1.2",
+            "url": "https://goldcopd.org/2024-gold-report/"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Pulse oximetry",
+        "modalityTarget": "Continuous",
+        "targetCondition": "Hypoxaemia",
+        "expectedFinding": "SaO2 below 90% → treat in hospital (NICE Table 7).",
+        "clinicalRationale": "Titrate oxygen to SpO2 88–92%. Oximeters may overestimate saturation in darker skin.",
+        "normalValue": "94–98% on air (target 88–92% in exacerbation)",
+        "references": [
+          {
+            "title": "NICE NG115: Chronic obstructive pulmonary disease in over 16s: diagnosis and management",
+            "edition": "NICE guideline, 2018 (updated 2019)",
+            "url": "https://www.nice.org.uk/guidance/ng115"
+          },
+          {
+            "title": "Global Strategy for Prevention, Diagnosis and Management of COPD: 2024 Report (GOLD)",
+            "edition": "2024 report, v1.2",
+            "url": "https://goldcopd.org/2024-gold-report/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count with eosinophil count",
+        "modalityTarget": "All admitted patients",
+        "targetCondition": "Infection; steroid responsiveness",
+        "expectedFinding": "Leucocytosis in infection; blood eosinophils 300 cells/µL or more.",
+        "clinicalRationale": "Eosinophilia supports steroid use and later ICS in maintenance (STS); polycythaemia suggests chronic hypoxaemia.",
+        "normalValue": "WBC 4–11 × 10⁹/L; eosinophils below 0.3 × 10⁹/L (300 cells/µL)",
+        "references": [
+          {
+            "title": "NICE NG115: Chronic obstructive pulmonary disease in over 16s: diagnosis and management",
+            "edition": "NICE guideline, 2018 (updated 2019)",
+            "url": "https://www.nice.org.uk/guidance/ng115"
+          },
+          {
+            "title": "The Saudi Thoracic Society evidence-based guidelines for the diagnosis and management of COPD",
+            "edition": "Ann Thorac Med 2025;20(1):1–35 (Al-Jahdali H et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11804957/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Urea and electrolytes",
+        "modalityTarget": "All admitted patients",
+        "targetCondition": "Kidney function, potassium",
+        "expectedFinding": "Hypokalaemia (beta-agonists, steroids), renal impairment.",
+        "clinicalRationale": "Corrects drug dosing and identifies comorbid decompensation.",
+        "normalValue": "Potassium 3.5–5.0 mmol/L; sodium 135–145 mmol/L",
+        "references": [
+          {
+            "title": "NICE NG115: Chronic obstructive pulmonary disease in over 16s: diagnosis and management",
+            "edition": "NICE guideline, 2018 (updated 2019)",
+            "url": "https://www.nice.org.uk/guidance/ng115"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "C-reactive protein",
+        "modalityTarget": "Where available",
+        "targetCondition": "Bacterial infection, severity",
+        "expectedFinding": "Raised.",
+        "clinicalRationale": "Part of the ROME severity proposal; low CRP has been used to reduce antibiotic use safely (GOLD). Procalcitonin-guided protocols are not recommended (GOLD).",
+        "normalValue": "Below 5 mg/L",
+        "references": [
+          {
+            "title": "Global Strategy for Prevention, Diagnosis and Management of COPD: 2024 Report (GOLD)",
+            "edition": "2024 report, v1.2",
+            "url": "https://goldcopd.org/2024-gold-report/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Sputum microscopy and culture",
+        "modalityTarget": "If sputum is purulent; frequent exacerbators, severe obstruction or ventilated patients",
+        "targetCondition": "Bacterial pathogen, resistance",
+        "expectedFinding": "H. influenzae, S. pneumoniae, M. catarrhalis; Pseudomonas or resistant Gram-negatives in severe disease.",
+        "clinicalRationale": "Guides therapy if empirical antibiotics fail.",
+        "references": [
+          {
+            "title": "NICE NG115: Chronic obstructive pulmonary disease in over 16s: diagnosis and management",
+            "edition": "NICE guideline, 2018 (updated 2019)",
+            "url": "https://www.nice.org.uk/guidance/ng115"
+          },
+          {
+            "title": "Global Strategy for Prevention, Diagnosis and Management of COPD: 2024 Report (GOLD)",
+            "edition": "2024 report, v1.2",
+            "url": "https://goldcopd.org/2024-gold-report/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Blood cultures",
+        "modalityTarget": "If febrile",
+        "targetCondition": "Bacteraemia",
+        "expectedFinding": "Positive culture.",
+        "clinicalRationale": "Sepsis pathway if present.",
+        "references": [
+          {
+            "title": "NICE NG115: Chronic obstructive pulmonary disease in over 16s: diagnosis and management",
+            "edition": "NICE guideline, 2018 (updated 2019)",
+            "url": "https://www.nice.org.uk/guidance/ng115"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Theophylline level",
+        "modalityTarget": "On admission if taking theophylline",
+        "targetCondition": "Toxicity",
+        "expectedFinding": "Raised level (macrolides and quinolones interact).",
+        "clinicalRationale": "Reduce dose if interacting antibiotics are started.",
+        "references": [
+          {
+            "title": "NICE NG115: Chronic obstructive pulmonary disease in over 16s: diagnosis and management",
+            "edition": "NICE guideline, 2018 (updated 2019)",
+            "url": "https://www.nice.org.uk/guidance/ng115"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "25-OH vitamin D",
+        "modalityTarget": "Patients hospitalised with an exacerbation",
+        "targetCondition": "Severe deficiency",
+        "expectedFinding": "Below 10 ng/mL (below 25 nmol/L).",
+        "clinicalRationale": "Supplement if severely deficient (GOLD).",
+        "references": [
+          {
+            "title": "Global Strategy for Prevention, Diagnosis and Management of COPD: 2024 Report (GOLD)",
+            "edition": "2024 report, v1.2",
+            "url": "https://goldcopd.org/2024-gold-report/"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "12-lead ECG",
+        "modalityTarget": "All admitted patients",
+        "targetCondition": "Comorbidity",
+        "expectedFinding": "Arrhythmia (e.g. atrial fibrillation), ischaemia, right heart strain.",
+        "clinicalRationale": "Excludes cardiac mimics and contributors.",
+        "normalValue": "Sinus rhythm",
+        "references": [
+          {
+            "title": "NICE NG115: Chronic obstructive pulmonary disease in over 16s: diagnosis and management",
+            "edition": "NICE guideline, 2018 (updated 2019)",
+            "url": "https://www.nice.org.uk/guidance/ng115"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Chest X-ray",
+        "modalityTarget": "All patients presenting to hospital",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Pneumonia, pneumothorax, heart failure, effusion.",
+        "clinicalRationale": "Changes on chest radiograph favour hospital treatment (NICE Table 7) and identify mimics.",
+        "references": [
+          {
+            "title": "NICE NG115: Chronic obstructive pulmonary disease in over 16s: diagnosis and management",
+            "edition": "NICE guideline, 2018 (updated 2019)",
+            "url": "https://www.nice.org.uk/guidance/ng115"
+          },
+          {
+            "title": "Global Strategy for Prevention, Diagnosis and Management of COPD: 2024 Report (GOLD)",
+            "edition": "2024 report, v1.2",
+            "url": "https://goldcopd.org/2024-gold-report/"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "CT pulmonary angiography",
+        "modalityTarget": "If PE is suspected (no infective trigger, pleuritic pain, unexplained hypoxaemia)",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Pulmonary embolism.",
+        "clinicalRationale": "PE may mimic or aggravate an exacerbation.",
+        "references": [
+          {
+            "title": "Global Strategy for Prevention, Diagnosis and Management of COPD: 2024 Report (GOLD)",
+            "edition": "2024 report, v1.2",
+            "url": "https://goldcopd.org/2024-gold-report/"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "assess",
+      "title": "Assess severity and setting",
+      "timeframe": "Arrival",
+      "actions": [
+        "Check RR, HR, SpO2, mental status and accessory-muscle use; take ABG with FiO2 recorded.",
+        "Treat in hospital if: severe breathlessness, poor or deteriorating condition, cyanosis, worsening oedema, impaired consciousness or confusion, on long-term oxygen, SaO2 below 90%, pH below 7.35, PaO2 below 7 kPa, new X-ray changes, significant comorbidity, rapid onset or not coping at home (NICE Table 7).",
+        "Grade hospitalised patients: no respiratory failure; non-life-threatening; or life-threatening respiratory failure (GOLD)."
+      ]
+    },
+    {
+      "id": "oxygen",
+      "title": "Controlled oxygen",
+      "timeframe": "Immediately",
+      "actions": [
+        "Venturi mask preferred (more accurate than nasal prongs); titrate to SpO2 88–92%.",
+        "Repeat blood gas after starting or changing oxygen to detect rising PaCO2 or falling pH.",
+        "High-flow nasal oxygen: ERS advises trialling NIV first in hypercapnic respiratory failure (cited in GOLD)."
+      ]
+    },
+    {
+      "id": "bronchodilate",
+      "title": "Short-acting bronchodilators",
+      "timeframe": "First hour, then 2–4 hourly",
+      "actions": [
+        "Short-acting beta2-agonist (salbutamol) with or without short-acting anticholinergic (ipratropium).",
+        "MDI with spacer: 1–2 puffs every hour for 2–3 doses, then every 2–4 h by response (GOLD). Avoid continuous nebulisation.",
+        "If nebulised and hypercapnic or acidotic: drive with compressed AIR, give oxygen by nasal cannula at the same time; always prescribe the driving gas (NICE 1.3.11–1.3.12).",
+        "Continue or start long-acting bronchodilators as soon as possible before discharge."
+      ]
+    },
+    {
+      "id": "steroids",
+      "title": "Systemic corticosteroid",
+      "timeframe": "Within the first hours",
+      "actions": [
+        "Prednisolone 30 mg orally once daily for 5 days (NICE) — GOLD recommends 40 mg prednisone-equivalent for 5 days. Oral is as effective as IV.",
+        "Do not exceed 5–7 days (STS: 5–7 days preferred over longer courses)."
+      ]
+    },
+    {
+      "id": "antibiotics",
+      "title": "Antibiotics when indicated",
+      "timeframe": "After cultures if obtained",
+      "actions": [
+        "Give if all three cardinal symptoms (more dyspnoea, sputum volume and purulence), OR two including purulence, OR needs NIV or invasive ventilation (GOLD).",
+        "Empirical choice by local resistance: amoxicillin–clavulanate, macrolide, doxycycline (tetracycline), second-generation cephalosporin, or a respiratory quinolone in selected patients (GOLD, STS).",
+        "Duration 5 days (GOLD; STS 5–7 days). Prefer oral when able to swallow."
+      ]
+    },
+    {
+      "id": "niv",
+      "title": "Ventilatory support",
+      "timeframe": "Any time hypercapnic acidosis persists",
+      "actions": [
+        "NIV is first-line for hypercapnic respiratory failure persisting despite optimal medical therapy (NICE 1.3.30; GOLD; STS — ward, HDU or ICU).",
+        "Deliver NIV in a dedicated area with trained staff; document a plan for deterioration and the ceiling of treatment before starting.",
+        "Stop NIV directly (no weaning needed) once the patient tolerates at least 4 h of unassisted breathing (GOLD).",
+        "Invasive ventilation: NIV failure, or contraindication to NIV; decide on functional status, BMI, oxygen need when stable, comorbidities and previous ICU — not age or FEV1 alone (NICE 1.3.34).",
+        "Respiratory stimulants (doxapram) only if NIV is unavailable or inappropriate (NICE); GOLD does not recommend them."
+      ],
+      "branches": [
+        {
+          "condition": "Life-threatening respiratory failure",
+          "actions": [
+            "Confusion, FiO2 above 40% needed, PaCO2 above 60 mmHg or pH 7.25 or less: senior and ICU review now."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "adjunct",
+      "title": "Adjuncts",
+      "timeframe": "Admission",
+      "actions": [
+        "VTE prophylaxis for admitted patients (GOLD).",
+        "Fluid balance, diuretics if heart failure, treat comorbidities, nutrition.",
+        "Intravenous theophylline/aminophylline: GOLD does not recommend (side effects); NICE allows only as an adjunct if response to nebulised bronchodilators is inadequate, with level monitoring.",
+        "Smoking cessation support."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Recognise, investigate and manage acute exacerbation of copd in the emergency department."
+    ],
+    "references": [
+      {
+        "title": "Global Strategy for Prevention, Diagnosis and Management of COPD: 2024 Report (GOLD)",
+        "edition": "2024 report, v1.2",
+        "url": "https://goldcopd.org/2024-gold-report/",
+        "locator": "Chapter 4: Management of exacerbations (pp. 98–111)"
+      },
+      {
+        "title": "NICE NG115: Chronic obstructive pulmonary disease in over 16s: diagnosis and management",
+        "edition": "NICE guideline, 2018 (updated 2019)",
+        "url": "https://www.nice.org.uk/guidance/ng115",
+        "locator": "Section 1.3 Managing exacerbations (recs 1.3.1–1.3.47), Table 7"
+      },
+      {
+        "title": "The Saudi Thoracic Society evidence-based guidelines for the diagnosis and management of COPD",
+        "edition": "Ann Thorac Med 2025;20(1):1–35 (Al-Jahdali H et al.)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11804957/",
+        "locator": "Executive summary Q6–Q9; section 'Management of acute exacerbations of COPD'"
+      },
+      {
+        "title": "SFDA Saudi Drug Information System (registration search)",
+        "edition": "Accessed 11–12 Oct 2026",
+        "url": "https://sdi.sfda.gov.sa/"
+      }
+    ],
+    "keyPoints": [
+      "Controlled oxygen to SpO2 88–92% and repeat the blood gas.",
+      "Air-driven nebulisers in hypercapnic patients.",
+      "Prednisolone 30–40 mg for 5 days.",
+      "Antibiotics for purulent sputum or ventilated patients, 5 days.",
+      "NIV for persisting hypercapnic acidosis, with a ceiling-of-care plan."
+    ],
+    "pitfalls": [
+      "High-flow oxygen without a blood gas in a CO2 retainer.",
+      "Oxygen-driven nebulisers in hypercapnia.",
+      "Missing PE, pneumonia or heart failure as the cause.",
+      "Steroid courses longer than 7 days.",
+      "Discharging without inhaler check, follow-up and rehabilitation referral."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Recognise exacerbation symptoms early; written action plan.",
+      "Inhaler technique; stop smoking; vaccinations.",
+      "Complete the 5-day steroid course and know how to stop it."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable in the acute phase."
+    ],
+    "mdtReferrals": [
+      "Respiratory team; ICU or HDU for NIV failure or life-threatening respiratory failure.",
+      "Pulmonary rehabilitation; smoking cessation service."
+    ],
+    "dischargeCriteria": [
+      "Clinically stable; comorbidities managed; laboratory and metabolic abnormalities corrected (STS).",
+      "Satisfactory oximetry or ABG if there was respiratory failure; spirometry measured; back on optimal maintenance inhalers with technique checked (NICE 1.3.41–1.3.45).",
+      "Long-term oxygen and home NIV needs assessed; patient and family confident to manage (NICE, STS)."
+    ],
+    "followUpPlan": "Review within 2–4 weeks (STS); pulmonary rehabilitation referral; consider home NIV if still hypercapnic about 2 weeks after the exacerbation (STS); exacerbation prevention per GOLD Chapter 3."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Exacerbation (GOLD)",
+      "threshold": "Increased dyspnoea and/or cough and sputum worsening over less than 14 days"
+    },
+    {
+      "criterion": "No respiratory failure",
+      "threshold": "RR 24 or less; HR below 95; no accessory muscles; normal mental status; hypoxaemia corrected with Venturi 24–35%; no rise in PaCO2"
+    },
+    {
+      "criterion": "Acute respiratory failure — not life-threatening",
+      "threshold": "RR above 24; accessory muscles; normal mental status; hypoxaemia corrected with Venturi above 35%; PaCO2 raised from baseline or 50–60 mmHg"
+    },
+    {
+      "criterion": "Acute respiratory failure — life-threatening",
+      "threshold": "RR above 24; accessory muscles; acute mental-status change; hypoxaemia not corrected or FiO2 above 40% needed; PaCO2 above 60 mmHg or pH 7.25 or less"
+    },
+    {
+      "criterion": "Antibiotic indication",
+      "threshold": "3 cardinal symptoms, or 2 including purulence, or needs ventilation"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Exacerbation, admitted or significant breathlessness",
+        "patientGroup": "Adults",
+        "genericName": "Prednisolone",
+        "dose": "30 mg (NICE) — GOLD: 40 mg prednisone-equivalent",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "5 days",
+        "adjustments": [
+          "IV methylprednisolone if unable to swallow; STS range prednisone 30–60 mg daily or methylprednisolone 60–125 mg 2–4 times daily",
+          "Glucose monitoring in diabetes"
+        ],
+        "monitoring": [
+          "Glucose",
+          "Pneumonia risk with repeated courses"
+        ],
+        "sourceTitle": "NICE NG115",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng115",
+        "sourceEdition": "Rec 1.3.16"
+      },
+      {
+        "indication": "Antibiotic for infective exacerbation",
+        "patientGroup": "Adults meeting antibiotic criteria",
+        "genericName": "Amoxicillin–clavulanate, macrolide, doxycycline, second-generation cephalosporin or respiratory quinolone (selected)",
+        "dose": "Dose per local formulary — not specified in GOLD or STS",
+        "route": "PO preferred",
+        "frequency": "Per agent",
+        "duration": "5 days (GOLD; STS 5–7 days)",
+        "adjustments": [
+          "Choose by local resistance",
+          "Pseudomonas risk: culture and specialist advice"
+        ],
+        "monitoring": [
+          "Clinical response: dyspnoea and sputum purulence"
+        ],
+        "sourceTitle": "GOLD 2024 Report",
+        "sourceUrl": "https://goldcopd.org/2024-gold-report/",
+        "sourceEdition": "Chapter 4"
+      }
+    ],
+    "note": "Steroid doses are from the cited sources. Bronchodilator and antibiotic doses are not stated in GOLD or STS and must follow the hospital formulary. STS notes LABA monotherapy is not marketed in Saudi Arabia (use LAMA or LAMA/LABA). Check SFDA registration and hospital formulary."
+  },
+  "guidelineComparison": {
+    "title": "GOLD 2024 vs NICE NG115 vs Saudi Thoracic Society 2025",
+    "columns": [
+      "GOLD 2024",
+      "NICE NG115",
+      "STS 2025 (Saudi)"
+    ],
+    "rows": [
+      {
+        "parameter": "Steroid dose",
+        "values": [
+          "40 mg prednisone-equivalent daily",
+          "Prednisolone 30 mg daily",
+          "Prednisone 30–60 mg daily or methylprednisolone 60–125 mg 2–4 times daily"
+        ]
+      },
+      {
+        "parameter": "Steroid duration",
+        "values": [
+          "5 days",
+          "5 days",
+          "5–7 days (7 days or less)"
+        ]
+      },
+      {
+        "parameter": "Antibiotic duration",
+        "values": [
+          "5 days",
+          "Refers to NICE NG114",
+          "Not stated (antibiotics suggested)"
+        ]
+      },
+      {
+        "parameter": "IV methylxanthines",
+        "values": [
+          "Not recommended",
+          "Adjunct only if inadequate response, with levels",
+          "Not addressed"
+        ]
+      },
+      {
+        "parameter": "NIV",
+        "values": [
+          "First mode of ventilation in acute respiratory failure",
+          "Treatment of choice for persistent hypercapnic failure",
+          "Suggested in ward, HDU or ICU"
+        ]
+      }
+    ],
+    "note": "All three agree: short-acting bronchodilators, a short steroid course, antibiotics for purulent or ventilated exacerbations and NIV for hypercapnic failure. Choose the steroid dose by local protocol."
+  }
+}

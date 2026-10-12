@@ -1,0 +1,413 @@
+{
+  "id": "c2c404f2-5f47-4e4d-9ce7-fb32a9c1e101",
+  "title": "Acute Severe Asthma Exacerbation",
+  "specialty": "Emergency Medicine",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "emergency-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Adults and adolescents with an acute asthma attack in the emergency department. Children are covered in SINA Section 10 (PRAM-based). Verified against the Saudi Initiative for Asthma (SINA) 2024 update.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Local formulary availability and hospital protocol adoption"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "c2c404f2-5f47-4e4d-9ce7-fb32a9c1e101"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Asthma is chronic airway inflammation with variable airflow obstruction. In an attack, smooth-muscle bronchospasm, airway wall oedema and mucus plugging narrow the airways, trap air (dynamic hyperinflation) and cause ventilation–perfusion mismatch.",
+    "keyMechanisms": [
+      "Airway narrowing: smooth-muscle contraction, mucosal oedema and increased mucus secretion; chronic remodelling (smooth-muscle hypertrophy, subepithelial fibrosis) adds fixed narrowing.",
+      "Type 2 (eosinophilic) inflammation is the commonest pattern (40–70%): IL-4, IL-5, IL-13, IgE and mast-cell mediators; usually steroid-responsive.",
+      "Early attack: hyperventilation lowers PaCO2. A normal or rising PaCO2 means fatigue and impending respiratory failure.",
+      "Death in acute asthma: asphyxia from severe obstruction and mucus plugging, severe auto-PEEP reducing venous return and cardiac output, and arrhythmia (risk raised by hypokalaemia and QT prolongation from high-dose beta-agonists).",
+      "Most deaths occur in chronically uncontrolled asthma with under-use of inhaled steroids and deterioration over days."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Breathlessness, wheeze, chest tightness, cough; increasing reliever use with poor response.",
+      "Severe: unable to complete sentences in one breath.",
+      "Life-threatening: exhaustion, confusion, drowsiness."
+    ],
+    "physicalSigns": [
+      "Tachypnoea, accessory muscle use, prolonged expiratory wheeze.",
+      "Severe: RR 25 or more (often above 30), HR 120 or more.",
+      "Life-threatening: silent chest, cyanosis, weak respiratory effort, bradycardia, arrhythmia, hypotension."
+    ],
+    "redFlags": [
+      "Life-threatening features: SpO2 below 92% (PaO2 below 60 mmHg) on high-flow oxygen, PEF below 30%, silent chest, cyanosis, exhaustion, confusion, coma, bradycardia, arrhythmia, hypotension, or a NORMAL or HIGH PaCO2",
+      "Raised PaCO2 or needs ventilation: near-fatal asthma — ICU",
+      "Poor prognostic history: previous near-fatal attack or ICU, admission in the last year, heavy reliever use, not on regular inhaled steroids, psychosocial problems, poor adherence"
+    ],
+    "precipitants": [
+      "Viral respiratory infection.",
+      "Allergen or irritant exposure; smoking or vaping.",
+      "Poor adherence to inhaled steroids; heavy reliever use."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Pneumothorax or pneumomediastinum",
+      "distinguishingFeatures": "Sudden pleuritic pain, unilateral reduced breath sounds; chest X-ray (mandatory in life-threatening asthma)."
+    },
+    {
+      "condition": "Pneumonia",
+      "distinguishingFeatures": "Fever, focal crackles, consolidation on X-ray; antibiotics only if bacterial pneumonia is suspected."
+    },
+    {
+      "condition": "Atelectasis / mucus plugging",
+      "distinguishingFeatures": "Lobar collapse on X-ray."
+    },
+    {
+      "condition": "Anaphylaxis",
+      "distinguishingFeatures": "Can present like life-threatening asthma; look for trigger exposure, urticaria, angioedema and hypotension — give IM adrenaline."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Peak expiratory flow (PEF)",
+        "modalityTarget": "On arrival and after each treatment; before discharge",
+        "targetCondition": "Severity",
+        "expectedFinding": "Moderate: above 50–75% of best or predicted. Severe: 30–50%. Life-threatening: below 30%.",
+        "clinicalRationale": "Grades severity and response. Hypercapnia is rare when PEF is 30% or more (or at least 150 L/min).",
+        "normalValue": "Above 80% of best or predicted",
+        "references": [
+          {
+            "title": "The Saudi Initiative for Asthma – 2024 update: Guidelines for the diagnosis and management of asthma in adults and children (Saudi Thoracic Society)",
+            "edition": "Ann Thorac Med 2024;19:1–55 (Al-Moamary MS et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10911239/"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Pulse oximetry",
+        "modalityTarget": "Continuous in severe attacks",
+        "targetCondition": "Hypoxaemia",
+        "expectedFinding": "SpO2 below 92% = severe or life-threatening.",
+        "clinicalRationale": "Target SpO2 92% or more with controlled oxygen; avoid 100% oxygen.",
+        "normalValue": "94–98% on air",
+        "references": [
+          {
+            "title": "The Saudi Initiative for Asthma – 2024 update: Guidelines for the diagnosis and management of asthma in adults and children (Saudi Thoracic Society)",
+            "edition": "Ann Thorac Med 2024;19:1–55 (Al-Moamary MS et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10911239/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Arterial blood gas",
+        "modalityTarget": "Only if PEF below 30% (or below 150 L/min) after initial treatment, unable to do PEF, deteriorating, or signs of hypercapnia; mandatory if life-threatening",
+        "targetCondition": "Ventilatory failure",
+        "expectedFinding": "Hypoxaemia; PaCO2 normal or high is an alarm sign; respiratory and lactic acidosis.",
+        "clinicalRationale": "Normal or high PaCO2 means exhaustion: ICU review.",
+        "normalValue": "PaO2 above 80 mmHg; PaCO2 35–45 mmHg; pH 7.35–7.45",
+        "references": [
+          {
+            "title": "The Saudi Initiative for Asthma – 2024 update: Guidelines for the diagnosis and management of asthma in adults and children (Saudi Thoracic Society)",
+            "edition": "Ann Thorac Med 2024;19:1–55 (Al-Moamary MS et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10911239/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Electrolytes (potassium), glucose",
+        "modalityTarget": "Severe and life-threatening attacks",
+        "targetCondition": "Treatment effects",
+        "expectedFinding": "Low potassium and high glucose from beta-agonists and steroids.",
+        "clinicalRationale": "Replace potassium; high-dose salbutamol can lower it and prolong QT.",
+        "normalValue": "Potassium 3.5–5.0 mmol/L",
+        "references": [
+          {
+            "title": "The Saudi Initiative for Asthma – 2024 update: Guidelines for the diagnosis and management of asthma in adults and children (Saudi Thoracic Society)",
+            "edition": "Ann Thorac Med 2024;19:1–55 (Al-Moamary MS et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10911239/"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "12-lead ECG",
+        "modalityTarget": "Severe and life-threatening attacks",
+        "targetCondition": "Arrhythmia",
+        "expectedFinding": "Sinus tachycardia; arrhythmia with hypoxia or acidaemia.",
+        "clinicalRationale": "Monitor ECG in life-threatening asthma.",
+        "normalValue": "Sinus rhythm",
+        "references": [
+          {
+            "title": "The Saudi Initiative for Asthma – 2024 update: Guidelines for the diagnosis and management of asthma in adults and children (Saudi Thoracic Society)",
+            "edition": "Ann Thorac Med 2024;19:1–55 (Al-Moamary MS et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10911239/"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Chest X-ray",
+        "modalityTarget": "Not routine. Do it if pneumonia or pneumothorax is suspected, in severe attacks with suspected complications, and always in life-threatening asthma",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Pneumothorax, pneumomediastinum, pneumonia, collapse.",
+        "clinicalRationale": "Changes management if a complication is found.",
+        "references": [
+          {
+            "title": "The Saudi Initiative for Asthma – 2024 update: Guidelines for the diagnosis and management of asthma in adults and children (Saudi Thoracic Society)",
+            "edition": "Ann Thorac Med 2024;19:1–55 (Al-Moamary MS et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10911239/"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "assess",
+      "title": "Assess severity and start treatment at once",
+      "timeframe": "Arrival",
+      "actions": [
+        "Assess dyspnoea, RR, HR, SpO2 and PEF; classify as moderate, severe or life-threatening (if mixed features, treat as the higher level).",
+        "Controlled oxygen to keep SpO2 92% or more; use oxygen-driven nebulisers in severe attacks.",
+        "No routine chest X-ray, ABG, antibiotics or sedatives."
+      ]
+    },
+    {
+      "id": "moderate",
+      "title": "Moderate attack (PEF above 50%)",
+      "timeframe": "First hour",
+      "actions": [
+        "Salbutamol MDI with spacer 6–12 puffs every 20 min for 1 h, then every 2–4 h; OR nebulised 2.5–5 mg every 20 min for 1 h, then every 2 h.",
+        "Prednisolone 0.5–1 mg/kg orally (maximum 50 mg) as soon as possible, for 5–7 days."
+      ]
+    },
+    {
+      "id": "severe",
+      "title": "Severe attack (PEF 30–50%, RR 25 or more, HR 120 or more, cannot finish sentences)",
+      "timeframe": "First hour",
+      "actions": [
+        "Nebulised salbutamol 2.5–5 mg back-to-back every 20 min for 1 h, then hourly.",
+        "Add ipratropium 0.5 mg nebulised every 20 min for 3 doses, then every 4–6 h (or MDI 4–8 puffs).",
+        "IV methylprednisolone 40 mg twice daily (or oral prednisolone 0.5–1 mg/kg, maximum 60 mg daily, if able to swallow).",
+        "Inadequate response: IV magnesium sulphate 1–2 g over 20 min, single dose.",
+        "Monitor SpO2; check blood gas if PEF below 30%, electrolytes, glucose and ECG."
+      ]
+    },
+    {
+      "id": "life",
+      "title": "Life-threatening attack",
+      "timeframe": "Immediately",
+      "actions": [
+        "Call ICU; prepare for intubation.",
+        "Oxygen to SpO2 92% or more; continuous nebulised salbutamol 10–15 mg with ipratropium 1.5 mg over 1 h (oxygen-driven).",
+        "Methylprednisolone 60–80 mg IV every 8–12 h.",
+        "Magnesium sulphate 2 g IV over 20 min.",
+        "ABG, chest X-ray, electrolytes, glucose, ECG."
+      ]
+    },
+    {
+      "id": "response",
+      "title": "Reassess after 1 h and decide disposition",
+      "timeframe": "1 h, then ongoing",
+      "actions": [
+        "Adequate: PEF above 60%, SpO2 92% or more on air, stable for at least 4 h → discharge track.",
+        "Partial: PEF 30–50%, SpO2 92% or more on oxygen → continue salbutamol + ipratropium every 1–4 h; prednisolone 1 mg/kg (maximum 50 mg) or IV hydrocortisone 200 mg/day or methylprednisolone 80 mg/day; admit if no adequate response after 4 h.",
+        "Poor: PEF below 30%, SpO2 below 92% on high-flow oxygen, fatigue, rising PaCO2 or respiratory acidosis → ICU."
+      ],
+      "branches": [
+        {
+          "condition": "ICU criteria",
+          "actions": [
+            "Needs ventilatory support, falling PEF/FEV1, persisting hypoxia, hypercapnia, respiratory acidosis, exhaustion, shallow breathing or drowsiness."
+          ]
+        }
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Recognise, investigate and manage acute severe asthma exacerbation in the emergency department."
+    ],
+    "references": [
+      {
+        "title": "The Saudi Initiative for Asthma – 2024 update: Guidelines for the diagnosis and management of asthma in adults and children (Saudi Thoracic Society)",
+        "edition": "Ann Thorac Med 2024;19:1–55 (Al-Moamary MS et al.)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10911239/",
+        "locator": "Section 2 (pathophysiology); Section 7 (acute asthma in adults), Boxes 7.1–7.4; medication appendix"
+      },
+      {
+        "title": "Emergency treatment of anaphylaxis (Resuscitation Council UK)",
+        "edition": "May 2021",
+        "url": "https://www.resus.org.uk/sites/default/files/2021-05/Emergency%20Treatment%20of%20Anaphylaxis%20May%202021_0.pdf",
+        "locator": "Section 3.4 differential diagnosis"
+      },
+      {
+        "title": "SFDA Saudi Drug Information System (registration search)",
+        "edition": "Accessed 11–12 Oct 2026",
+        "url": "https://sdi.sfda.gov.sa/"
+      }
+    ],
+    "keyPoints": [
+      "Grade severity with PEF, RR, HR and SpO2.",
+      "Salbutamol back-to-back, controlled oxygen to 92%, steroids early.",
+      "Add ipratropium and IV magnesium in severe attacks.",
+      "A normal PaCO2 in a severe attack is a danger sign.",
+      "Discharge only after 4 h of stable response with an action plan and ICS/LABA."
+    ],
+    "pitfalls": [
+      "Being reassured by a 'normal' PaCO2.",
+      "Routine chest X-ray, ABG or antibiotics.",
+      "Air-driven nebulisers in hypoxic patients.",
+      "Sedatives in acute asthma.",
+      "Discharging without inhaled steroid, inhaler technique check and early follow-up."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Written asthma action plan; inhaler technique with spacer.",
+      "Adherence to inhaled steroid/LABA; avoid smoking and vaping."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable in the acute phase."
+    ],
+    "mdtReferrals": [
+      "ICU for poor responders and life-threatening asthma.",
+      "Pulmonary or primary-care follow-up within days."
+    ],
+    "dischargeCriteria": [
+      "Adequate response maintained for at least 4 h: PEF above 60% predicted, SpO2 92% or more.",
+      "Stable on 4-hourly inhaled bronchodilator.",
+      "Inhaler technique checked; ICS/LABA prescribed; written action plan given."
+    ],
+    "followUpPlan": "Pulmonary or primary-care clinic within a few days; complete oral steroid 5–7 days; review asthma control and adherence."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Moderate",
+      "threshold": "Increasing symptoms; PEF above 50–75%; no severe features"
+    },
+    {
+      "criterion": "Severe (any one)",
+      "threshold": "PEF 30–50%; RR 25 or more; HR 120 or more; cannot complete sentences"
+    },
+    {
+      "criterion": "Life-threatening (any one, in severe asthma)",
+      "threshold": "SpO2 below 92% on high-flow oxygen; PEF below 30%; silent chest; cyanosis; bradycardia; arrhythmia; hypotension; normal or high PaCO2; exhaustion; confusion; coma"
+    },
+    {
+      "criterion": "Near-fatal",
+      "threshold": "Raised PaCO2 and/or needs mechanical ventilation"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Acute asthma: bronchodilator",
+        "patientGroup": "Adults and adolescents",
+        "genericName": "Salbutamol",
+        "dose": "Moderate: MDI 6–12 puffs via spacer, or 2.5–5 mg nebulised, every 20 min for 1 h. Life-threatening: 10–15 mg continuous nebulisation over 1 h",
+        "route": "Inhaled",
+        "frequency": "Every 20 min for 1 h, then every 1–4 h by response",
+        "duration": "Until stable on 4-hourly",
+        "adjustments": [
+          "IV salbutamol only if inhaled route fails or is not tolerated",
+          "Oxygen-driven nebuliser in severe attacks"
+        ],
+        "monitoring": [
+          "HR, potassium, glucose"
+        ],
+        "sourceTitle": "SINA 2024 update",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10911239/",
+        "sourceEdition": "Ann Thorac Med 2024, Section 7"
+      },
+      {
+        "indication": "Severe or life-threatening attack",
+        "patientGroup": "Adults",
+        "genericName": "Ipratropium bromide",
+        "dose": "0.5 mg nebulised every 20 min for 3 doses, then every 4–6 h (or MDI 4–8 puffs); life-threatening: 1.5 mg with continuous salbutamol over 1 h",
+        "route": "Inhaled",
+        "frequency": "As stated",
+        "duration": "Acute phase",
+        "adjustments": [
+          "Benefit shown in severe, not mild–moderate, attacks"
+        ],
+        "monitoring": [
+          "Dry mouth"
+        ],
+        "sourceTitle": "SINA 2024 update",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10911239/",
+        "sourceEdition": "Ann Thorac Med 2024, Section 7"
+      },
+      {
+        "indication": "Systemic steroid",
+        "patientGroup": "Moderate attack able to swallow",
+        "genericName": "Prednisolone",
+        "dose": "0.5–1 mg/kg (maximum 50 mg)",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "5–7 days",
+        "adjustments": [
+          "Start as soon as possible"
+        ],
+        "monitoring": [
+          "Glucose"
+        ],
+        "sourceTitle": "SINA 2024 update",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10911239/",
+        "sourceEdition": "Ann Thorac Med 2024, Section 7"
+      },
+      {
+        "indication": "Systemic steroid",
+        "patientGroup": "Severe attack",
+        "genericName": "Methylprednisolone",
+        "dose": "40 mg (life-threatening: 60–80 mg every 8–12 h)",
+        "route": "IV",
+        "frequency": "Twice daily",
+        "duration": "Switch to oral prednisolone when able",
+        "adjustments": [
+          "Alternative: hydrocortisone 200 mg/day IV (partial responders)"
+        ],
+        "monitoring": [
+          "Glucose"
+        ],
+        "sourceTitle": "SINA 2024 update",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10911239/",
+        "sourceEdition": "Ann Thorac Med 2024, Section 7"
+      },
+      {
+        "indication": "Severe attack not responding",
+        "patientGroup": "Adults",
+        "genericName": "Magnesium sulphate",
+        "dose": "1–2 g (life-threatening: 2 g)",
+        "route": "IV over 20 min",
+        "frequency": "Single dose",
+        "duration": "Once",
+        "adjustments": [
+          "Monitor BP"
+        ],
+        "monitoring": [
+          "BP, reflexes"
+        ],
+        "sourceTitle": "SINA 2024 update",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10911239/",
+        "sourceEdition": "Ann Thorac Med 2024, Section 7"
+      }
+    ],
+    "note": "Doses as stated in the cited source. Check SFDA registration and the hospital formulary."
+  }
+}
