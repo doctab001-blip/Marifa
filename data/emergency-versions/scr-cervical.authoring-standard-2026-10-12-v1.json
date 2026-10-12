@@ -1,0 +1,289 @@
+{
+  "id": "3f47a009-d923-4a43-bce4-9357e38111e7",
+  "title": "Cervical Cancer Screening and Follow-Up",
+  "specialty": "Primary Care / Gynaecology",
+  "authority": "PHA",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Keep Well",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Women with a cervix: who to screen, which test and interval, when to stop, and how abnormal results are followed up in colposcopy. Verified against the Saudi PHA Clinical Preventive Guideline 2023 (Pap smear, grade A), the USPSTF 2018 recommendation and the NHS Cervical Screening Programme colposcopy management guidance.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Saudi national cervical screening programme recall system not checked",
+      "Cytology-grade-specific colposcopy timelines not reproduced"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "3f47a009-d923-4a43-bce4-9357e38111e7"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Persistent infection with high-risk human papillomavirus (hrHPV) causes cervical intraepithelial neoplasia (CIN), which can progress over years to invasive cancer. Screening detects hrHPV and precancer so it can be treated before cancer develops.",
+    "keyMechanisms": [
+      "Most hrHPV infections clear; persistent infection drives CIN2/3 and, rarely, cancer.",
+      "Cytology detects abnormal cells; hrHPV testing is more sensitive and allows longer intervals (NHS CSP).",
+      "Excision of the transformation zone removes precancer; test of cure confirms clearance (NHS CSP)."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Usually asymptomatic.",
+      "Symptoms needing investigation rather than screening: post-coital or intermenstrual bleeding, persistent unexplained discharge (NHS CSP section 2.5)."
+    ],
+    "physicalSigns": [
+      "Speculum examination; visible cervical lesion needs referral."
+    ],
+    "redFlags": [
+      "Visible cervical lesion or abnormal bleeding — refer, do not rely on screening",
+      "High-grade cytology — colposcopy",
+      "Glandular abnormality (CGIN) — colposcopy MDT"
+    ],
+    "precipitants": [
+      "Persistent hrHPV infection",
+      "Smoking",
+      "Immunosuppression (including HIV)",
+      "Never or under-screened"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Cervicitis",
+      "distinguishingFeatures": "Discharge, contact bleeding — test for infection."
+    },
+    {
+      "condition": "Cervical ectropion",
+      "distinguishingFeatures": "Benign; confirm screening is up to date."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Cervical cytology (Pap smear)",
+        "modalityTarget": "Age 21–65 every 3 years (PHA; USPSTF)",
+        "targetCondition": "Dyskaryosis / squamous intraepithelial lesion",
+        "expectedFinding": "Low- or high-grade abnormality.",
+        "clinicalRationale": "Colposcopy per result; high grade always referred.",
+        "normalValue": "Negative for intraepithelial lesion",
+        "references": [
+          {
+            "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+            "edition": "3rd edition, 2023, PDF p. 27, footnotes 9–10 and 12 (Pap smear; mammogram; colon cancer screening)",
+            "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf"
+          },
+          {
+            "title": "USPSTF: Cervical cancer screening — final recommendation statement",
+            "edition": "US Preventive Services Task Force, August 2018, Recommendation Summary section",
+            "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/cervical-cancer-screening"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "High-risk HPV test (alone or with cytology)",
+        "modalityTarget": "Age 30–65 every 5 years as an option (PHA; USPSTF)",
+        "targetCondition": "hrHPV positive",
+        "expectedFinding": "Triage with cytology; persistent hrHPV with normal cytology needs surveillance or colposcopy (NHS CSP).",
+        "clinicalRationale": "Negative result supports a 5-year interval.",
+        "normalValue": "hrHPV negative",
+        "references": [
+          {
+            "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+            "edition": "3rd edition, 2023, PDF p. 27, footnotes 9–10 and 12 (Pap smear; mammogram; colon cancer screening)",
+            "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf"
+          },
+          {
+            "title": "Cervical screening: programme and colposcopy management — 1. Introduction and programme policy (NHS Cervical Screening Programme)",
+            "edition": "UK Health Security Agency / NHS England, current online edition, sections 2.2 and 2.4 (recall and surveillance)",
+            "url": "https://www.gov.uk/government/publications/cervical-screening-programme-and-colposcopy-management/1-introduction-and-programme-policy"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "advancedImaging",
+        "testName": "Colposcopy with directed biopsy",
+        "modalityTarget": "After abnormal screening",
+        "targetCondition": "Imaging",
+        "expectedFinding": "CIN1–3, CGIN or invasion",
+        "clinicalRationale": "High-grade CIN → excision; CGIN → MDT and excision (NHS CSP 3).",
+        "normalValue": "Adequate examination, no lesion — discharge to recall at 3 years (NHS CSP 2.2)",
+        "references": [
+          {
+            "title": "Cervical screening: programme and colposcopy management — 3. Colposcopic diagnosis, treatment and follow-up (NHS Cervical Screening Programme)",
+            "edition": "UK Health Security Agency / NHS England, current online edition, section 1.3 (colposcopic examination) and section 2.5 (excision)",
+            "url": "https://www.gov.uk/government/publications/cervical-screening-programme-and-colposcopy-management/3-colposcopic-diagnosis-treatment-and-follow-up"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "who",
+      "title": "Who and how often",
+      "timeframe": "Routine contacts",
+      "actions": [
+        "PHA 2023 / USPSTF: age 21–29 cytology every 3 years; age 30–65 cytology every 3 years, or hrHPV alone or co-testing every 5 years.",
+        "Do not screen under 21, after hysterectomy with cervix removed (no CIN2+ history), or over 65 with adequate prior screening (USPSTF)."
+      ]
+    },
+    {
+      "id": "results",
+      "title": "Act on results",
+      "timeframe": "After each test",
+      "actions": [
+        "Negative: routine recall.",
+        "Abnormal cytology or persistent hrHPV: colposcopy referral (NHS CSP).",
+        "Inadequate cytology: repeat no sooner than 3 months (NHS CSP 3, section 1.2)."
+      ]
+    },
+    {
+      "id": "colpo",
+      "title": "Colposcopy",
+      "timeframe": "Specialist",
+      "actions": [
+        "Record hrHPV result, cytology grade, transformation zone type and biopsy sites (NHS CSP 3, section 1.3).",
+        "Excise when high-grade change is extensive or invasion is suspected (NHS CSP 3, section 1.4)."
+      ]
+    },
+    {
+      "id": "toc",
+      "title": "Test of cure",
+      "timeframe": "After treatment",
+      "actions": [
+        "CGIN completely excised: test of cure at 6 months; if hrHPV negative, repeat 12 months later; both negative → recall in 3 years (NHS CSP 3, section 3.3).",
+        "hrHPV positive with abnormal cytology at test of cure → back to colposcopy."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Screen for cervical precancer and ensure abnormal results are followed up."
+    ],
+    "references": [
+      {
+        "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+        "edition": "3rd edition, 2023",
+        "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf",
+        "locator": "PDF p. 27, footnotes 9–10 and 12 (Pap smear; mammogram; colon cancer screening)"
+      },
+      {
+        "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+        "edition": "3rd edition, 2023",
+        "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf",
+        "locator": "PDF p. 25 (adult checklist 18–59 years: Pap smear, mammogram, colon cancer, vaccines)"
+      },
+      {
+        "title": "USPSTF: Cervical cancer screening — final recommendation statement",
+        "edition": "US Preventive Services Task Force, August 2018",
+        "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/cervical-cancer-screening",
+        "locator": "Recommendation Summary section"
+      },
+      {
+        "title": "Cervical screening: programme and colposcopy management — 1. Introduction and programme policy (NHS Cervical Screening Programme)",
+        "edition": "UK Health Security Agency / NHS England, current online edition",
+        "url": "https://www.gov.uk/government/publications/cervical-screening-programme-and-colposcopy-management/1-introduction-and-programme-policy",
+        "locator": "sections 2.2–2.4"
+      },
+      {
+        "title": "Cervical screening: programme and colposcopy management — 3. Colposcopic diagnosis, treatment and follow-up (NHS Cervical Screening Programme)",
+        "edition": "UK Health Security Agency / NHS England, current online edition",
+        "url": "https://www.gov.uk/government/publications/cervical-screening-programme-and-colposcopy-management/3-colposcopic-diagnosis-treatment-and-follow-up",
+        "locator": "sections 1–3"
+      }
+    ],
+    "keyPoints": [
+      "Screen 21–65.",
+      "Cytology 3-yearly or hrHPV 5-yearly from 30.",
+      "Symptoms need examination, not screening.",
+      "Abnormal results go to colposcopy.",
+      "Test of cure after treatment."
+    ],
+    "pitfalls": [
+      "Screening a woman with post-coital bleeding instead of examining her.",
+      "Screening after total hysterectomy without indication.",
+      "Losing patients to follow-up after abnormal results."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Screening prevents cancer by finding changes early.",
+      "HPV is common; a positive test does not mean cancer."
+    ],
+    "lifestyleAndDiet": [
+      "Stop smoking."
+    ],
+    "mdtReferrals": [
+      "Colposcopy clinic for abnormal results."
+    ],
+    "dischargeCriteria": [
+      "Not applicable — outpatient care."
+    ],
+    "followUpPlan": "Follow recall intervals by test type; after treatment follow test-of-cure timings (NHS CSP)."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Age 21–29",
+      "threshold": "Cytology every 3 years"
+    },
+    {
+      "criterion": "Age 30–65",
+      "threshold": "Cytology every 3 years, or hrHPV ± cytology every 5 years"
+    },
+    {
+      "criterion": "Stop",
+      "threshold": "Over 65 with adequate prior screening; after hysterectomy without CIN2+ history"
+    }
+  ],
+  "medicationPlan": {
+    "status": "no-drug-indicated",
+    "regimens": [],
+    "note": "Screening topic — no medicine indicated. HPV vaccination is covered in the immunisation topics."
+  },
+  "guidelineComparison": {
+    "title": "Screening policy: Saudi PHA (USPSTF) vs NHS England",
+    "columns": [
+      "Saudi PHA 2023 / USPSTF",
+      "NHS Cervical Screening Programme"
+    ],
+    "rows": [
+      {
+        "parameter": "Start",
+        "values": [
+          "Age 21",
+          "Age 24.5"
+        ]
+      },
+      {
+        "parameter": "Primary test",
+        "values": [
+          "Cytology 21–29; cytology or hrHPV 30–65",
+          "hrHPV with cytology triage"
+        ]
+      },
+      {
+        "parameter": "Interval",
+        "values": [
+          "3 or 5 years",
+          "5 years if hrHPV negative"
+        ]
+      }
+    ],
+    "note": "Saudi practice follows PHA; NHS colposcopy rules used for follow-up detail."
+  },
+  "_source": {
+    "title": "Saudi PHA Clinical Preventive Guideline 2023; USPSTF 2018; NHS CSP",
+    "org": "Saudi Public Health Authority / USPSTF / NHS England",
+    "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf"
+  }
+}

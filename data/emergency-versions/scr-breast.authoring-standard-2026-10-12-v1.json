@@ -1,0 +1,264 @@
+{
+  "id": "d2743507-415a-4bc7-8857-3604c97bab42",
+  "title": "Breast Cancer Screening Discussion",
+  "specialty": "Primary Care / Public Health",
+  "authority": "PHA",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Keep Well",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Women at average risk of breast cancer: who to offer screening mammography, how often, when to stop, and when a symptom needs urgent referral instead of screening. Verified against the Saudi PHA Clinical Preventive Guideline 2023 (Saudi Expert Panel recommendation), the USPSTF 2024 recommendation and NICE NG12 for symptomatic referral.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "High-risk screening (MRI, earlier start) criteria not reproduced — specialist service",
+      "Saudi national screening programme invitation process not checked"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "d2743507-415a-4bc7-8857-3604c97bab42"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Breast cancer arises from the epithelium of the ducts or lobules. Screening mammography detects cancers before they are palpable, when treatment is less extensive. It also finds some cancers that would never have caused harm (overdiagnosis) and produces false-positive recalls.",
+    "keyMechanisms": [
+      "Most breast cancers develop over years from in-situ to invasive disease, giving a window for detection.",
+      "Mammography detects microcalcification and masses; dense breast tissue lowers sensitivity (USPSTF).",
+      "Benefit rises with age-related risk; harms (false positives, overdiagnosis) are highest in younger women."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Screening is for women without symptoms.",
+      "Ask about breast lump, nipple discharge or retraction, skin change — these need diagnostic referral, not screening."
+    ],
+    "physicalSigns": [
+      "Clinical breast examination if symptomatic; axillary nodes."
+    ],
+    "redFlags": [
+      "Unexplained breast lump at 30 or over — suspected cancer referral (NICE NG12 1.4.1)",
+      "Age 50 or over with unilateral nipple discharge, retraction or other change — suspected cancer referral (NICE 1.4.1)",
+      "Skin changes suggesting cancer or unexplained axillary lump at 30 or over — consider urgent referral (NICE 1.4.2)"
+    ],
+    "precipitants": [
+      "Increasing age",
+      "Family history of breast cancer",
+      "Dense breasts",
+      "BRCA1/2 variants (high risk)",
+      "Chest radiotherapy at a young age"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "High-risk women (BRCA1/2, chest radiotherapy at a young age, previous breast cancer)",
+      "distinguishingFeatures": "Not covered by average-risk screening (USPSTF) — specialist pathway."
+    },
+    {
+      "condition": "Symptomatic breast problem",
+      "distinguishingFeatures": "Diagnostic imaging and referral, not screening."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Breast symptom check and risk history",
+        "modalityTarget": "At each screening discussion",
+        "targetCondition": "Symptoms or high-risk history",
+        "expectedFinding": "Lump, nipple change, skin change; BRCA family history or chest radiotherapy.",
+        "clinicalRationale": "Symptomatic → NICE NG12 referral; high risk → specialist pathway.",
+        "normalValue": "No symptoms; average risk",
+        "references": [
+          {
+            "title": "NICE NG12: Suspected cancer: recognition and referral",
+            "edition": "NICE guideline, 2015 (updated April 2026), Recommendations 1.4.1–1.4.3",
+            "url": "https://www.nice.org.uk/guidance/ng12"
+          },
+          {
+            "title": "USPSTF: Breast cancer screening — final recommendation statement",
+            "edition": "US Preventive Services Task Force, April 2024, Population section (who the recommendation applies to)",
+            "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Screening mammography",
+        "modalityTarget": "Women 40–69 years every 1–2 years (Saudi Expert Panel, PHA); USPSTF: every 2 years at 40–74",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Suspicious mass, distortion or calcification",
+        "clinicalRationale": "Recall for diagnostic imaging and possible biopsy; most recalls are benign.",
+        "normalValue": "No suspicious findings (routine recall)",
+        "references": [
+          {
+            "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+            "edition": "3rd edition, 2023, PDF p. 27, footnotes 9–10 and 12 (Pap smear; mammogram; colon cancer screening)",
+            "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf"
+          },
+          {
+            "title": "USPSTF: Breast cancer screening — final recommendation statement",
+            "edition": "US Preventive Services Task Force, April 2024, Recommendation Summary section",
+            "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "who",
+      "title": "Who and how often",
+      "timeframe": "Routine contacts",
+      "actions": [
+        "Saudi Expert Panel (PHA 2023): offer mammography to women 40–69 years every 1–2 years (conditional recommendation, low-quality evidence).",
+        "USPSTF 2024: every 2 years from 40 to 74.",
+        "75 or older: evidence insufficient for routine screening — individual decision (PHA; USPSTF)."
+      ]
+    },
+    {
+      "id": "discuss",
+      "title": "Shared decision",
+      "timeframe": "Before first mammogram",
+      "actions": [
+        "Explain benefits (earlier detection) and harms (false-positive recall, overdiagnosis, discomfort).",
+        "Dense breasts: evidence insufficient for supplemental ultrasound or MRI (USPSTF)."
+      ]
+    },
+    {
+      "id": "result",
+      "title": "Act on results",
+      "timeframe": "After each screen",
+      "actions": [
+        "Abnormal: recall for diagnostic assessment.",
+        "Normal: next screen in 1–2 years (PHA)."
+      ]
+    },
+    {
+      "id": "symptoms",
+      "title": "Symptoms",
+      "timeframe": "Any time",
+      "actions": [
+        "Do not wait for screening: refer per NICE NG12 1.4.1–1.4.3."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Offer and discuss breast cancer screening for average-risk women."
+    ],
+    "references": [
+      {
+        "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+        "edition": "3rd edition, 2023",
+        "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf",
+        "locator": "PDF p. 27, footnotes 9–10 and 12 (Pap smear; mammogram; colon cancer screening)"
+      },
+      {
+        "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+        "edition": "3rd edition, 2023",
+        "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf",
+        "locator": "PDF pp. 30–31, footnotes 5 and 7 (60 years and older: mammogram; colon cancer screening)"
+      },
+      {
+        "title": "USPSTF: Breast cancer screening — final recommendation statement",
+        "edition": "US Preventive Services Task Force, April 2024",
+        "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening",
+        "locator": "Recommendation Summary and Practice Considerations sections"
+      },
+      {
+        "title": "NICE NG12: Suspected cancer: recognition and referral",
+        "edition": "NICE guideline, 2015 (updated April 2026)",
+        "url": "https://www.nice.org.uk/guidance/ng12",
+        "locator": "Recommendations 1.4.1–1.4.3"
+      }
+    ],
+    "keyPoints": [
+      "Offer mammography at 40–69 every 1–2 years.",
+      "Discuss benefits and harms.",
+      "Symptoms need referral, not screening.",
+      "High-risk women need a specialist pathway."
+    ],
+    "pitfalls": [
+      "Booking a screening mammogram for a woman with a lump.",
+      "Applying average-risk screening to BRCA carriers."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Know what is normal for you and report changes promptly."
+    ],
+    "lifestyleAndDiet": [
+      "Physical activity and healthy weight."
+    ],
+    "mdtReferrals": [
+      "Breast clinic for symptoms; familial cancer service for high risk."
+    ],
+    "dischargeCriteria": [
+      "Not applicable — outpatient care."
+    ],
+    "followUpPlan": "Repeat mammography every 1–2 years from 40 to 69 (PHA)."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Saudi Expert Panel (PHA)",
+      "threshold": "Women 40–69, every 1–2 years"
+    },
+    {
+      "criterion": "USPSTF 2024",
+      "threshold": "Women 40–74, every 2 years"
+    },
+    {
+      "criterion": "75 or older",
+      "threshold": "Insufficient evidence — individual decision"
+    }
+  ],
+  "medicationPlan": {
+    "status": "no-drug-indicated",
+    "regimens": [],
+    "note": "Screening topic — no medicine indicated."
+  },
+  "guidelineComparison": {
+    "title": "Mammography screening: Saudi PHA vs USPSTF",
+    "columns": [
+      "Saudi PHA 2023 (Saudi Expert Panel)",
+      "USPSTF 2024"
+    ],
+    "rows": [
+      {
+        "parameter": "Ages",
+        "values": [
+          "40–69",
+          "40–74"
+        ]
+      },
+      {
+        "parameter": "Interval",
+        "values": [
+          "Every 1–2 years",
+          "Every 2 years"
+        ]
+      },
+      {
+        "parameter": "75 or older",
+        "values": [
+          "Insufficient evidence",
+          "Insufficient evidence"
+        ]
+      }
+    ],
+    "note": "Saudi panel recommendation is conditional (low-quality evidence)."
+  },
+  "_source": {
+    "title": "Saudi PHA Clinical Preventive Guideline 2023; USPSTF 2024",
+    "org": "Saudi Public Health Authority / USPSTF",
+    "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf"
+  }
+}

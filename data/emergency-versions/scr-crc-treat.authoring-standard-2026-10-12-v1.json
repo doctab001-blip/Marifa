@@ -1,0 +1,362 @@
+{
+  "id": "433ede2c-6a49-4169-88ca-298ccf2cb065",
+  "title": "Colorectal Cancer Diagnosis and Treatment Planning",
+  "specialty": "Colorectal Surgery / Oncology",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Planned Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Adults with suspected or confirmed colorectal cancer: urgent referral criteria, staging work-up, MDT treatment planning for colon and rectal cancer, adjuvant therapy, and follow-up. Verified against the Saudi Oncology Society colorectal cancer guideline (2014), NICE NG151 and NICE NG12; capecitabine dosing from the FDA label.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "SOS guideline is 2014 — newer systemic agents may be available",
+      "Combination chemotherapy doses not reproduced",
+      "SFDA registration not checked"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "433ede2c-6a49-4169-88ca-298ccf2cb065"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Colorectal adenocarcinoma usually develops from adenomatous polyps. Stage (depth of invasion, nodes, metastases) and mismatch repair (MMR) status guide surgery and adjuvant treatment. Colorectal cancer is the most common cancer in Saudi men (SOS 2014).",
+    "keyMechanisms": [
+      "Chromosomal instability or MMR deficiency drive progression from adenoma to cancer.",
+      "Lymph node involvement (stage III) is the main indication for adjuvant chemotherapy.",
+      "Rectal cancer is treated differently because of pelvic recurrence risk — MRI staging and preoperative (chemo)radiotherapy."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Rectal bleeding, change in bowel habit, abdominal pain, weight loss, tiredness from anaemia.",
+      "Obstruction or perforation in advanced disease."
+    ],
+    "physicalSigns": [
+      "Abdominal or rectal mass; pallor; hepatomegaly."
+    ],
+    "redFlags": [
+      "Large bowel obstruction — stent or surgery (NICE NG151 1.3.1–1.3.2)",
+      "Perforation or peritonitis — emergency surgery",
+      "FIT 10 µg Hb/g or more, rectal mass — suspected cancer referral (NICE NG12)"
+    ],
+    "precipitants": [
+      "Age",
+      "Family history; Lynch syndrome",
+      "Inflammatory bowel disease",
+      "Obesity, smoking"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Inflammatory bowel disease",
+      "distinguishingFeatures": "Colonoscopy and biopsy."
+    },
+    {
+      "condition": "Diverticular disease",
+      "distinguishingFeatures": "CT and colonoscopy to exclude cancer."
+    },
+    {
+      "condition": "Haemorrhoids",
+      "distinguishingFeatures": "Do not attribute bleeding without assessment."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "CEA, FBC, liver and renal function",
+        "modalityTarget": "Baseline (SOS 1.2, 1.4)",
+        "targetCondition": "Baseline markers",
+        "expectedFinding": "Raised CEA; anaemia; abnormal LFTs",
+        "clinicalRationale": "Baseline for follow-up; anaemia needs correction.",
+        "normalValue": "CEA below about 5 µg/L (laboratory dependent); Hb within reference range",
+        "references": [
+          {
+            "title": "Saudi Oncology Society clinical management guideline series: Colorectal cancer 2014 (Bazarbashi SN et al.)",
+            "edition": "Saudi Med J 2014;35(12):1538–1544, section 1 (pre-treatment evaluation), p. 1538",
+            "url": "https://smj.org.sa/content/35/12/1538"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Mismatch repair (MMR) status",
+        "modalityTarget": "Node-negative tumours (SOS 2.16)",
+        "targetCondition": "MMR deficiency",
+        "expectedFinding": "MMR deficient on IHC or PCR",
+        "clinicalRationale": "Stage II high-risk dMMR: observation (SOS 4.1.4.1).",
+        "normalValue": "MMR proficient",
+        "references": [
+          {
+            "title": "Saudi Oncology Society clinical management guideline series: Colorectal cancer 2014 (Bazarbashi SN et al.)",
+            "edition": "Saudi Med J 2014;35(12):1538–1544, section 4.1 (localized resectable colon cancer), pp. 1539–1540",
+            "url": "https://smj.org.sa/content/35/12/1538"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Full-length colonoscopy with biopsy",
+        "modalityTarget": "All suspected cases (SOS 1.6)",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Tumour; synchronous lesions",
+        "clinicalRationale": "Histology confirms diagnosis.",
+        "normalValue": "No tumour",
+        "references": [
+          {
+            "title": "Saudi Oncology Society clinical management guideline series: Colorectal cancer 2014 (Bazarbashi SN et al.)",
+            "edition": "Saudi Med J 2014;35(12):1538–1544, section 1 (pre-treatment evaluation), p. 1538",
+            "url": "https://smj.org.sa/content/35/12/1538"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "CT abdomen and pelvis (plus chest in rectal cancer)",
+        "modalityTarget": "Staging (SOS 1.5)",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Nodal or distant metastases",
+        "clinicalRationale": "Determines resectability and stage.",
+        "normalValue": "No metastatic disease",
+        "references": [
+          {
+            "title": "Saudi Oncology Society clinical management guideline series: Colorectal cancer 2014 (Bazarbashi SN et al.)",
+            "edition": "Saudi Med J 2014;35(12):1538–1544, section 1 (pre-treatment evaluation), p. 1538",
+            "url": "https://smj.org.sa/content/35/12/1538"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Pelvic MRI and transrectal ultrasound",
+        "modalityTarget": "Rectal cancer (SOS 1.7)",
+        "targetCondition": "Imaging",
+        "expectedFinding": "T and N stage",
+        "clinicalRationale": "cT3–4 or node-positive → preoperative chemoradiotherapy.",
+        "normalValue": "Early T stage, node negative",
+        "references": [
+          {
+            "title": "Saudi Oncology Society clinical management guideline series: Colorectal cancer 2014 (Bazarbashi SN et al.)",
+            "edition": "Saudi Med J 2014;35(12):1538–1544, section 1 (pre-treatment evaluation), p. 1538",
+            "url": "https://smj.org.sa/content/35/12/1538"
+          },
+          {
+            "title": "Saudi Oncology Society clinical management guideline series: Colorectal cancer 2014 (Bazarbashi SN et al.)",
+            "edition": "Saudi Med J 2014;35(12):1538–1544, section 4.2 (localized resectable rectal cancer), pp. 1540–1541",
+            "url": "https://smj.org.sa/content/35/12/1538"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "refer",
+      "title": "Refer",
+      "timeframe": "Primary care",
+      "actions": [
+        "Use NICE NG12 1.3.1–1.3.5 criteria (FIT 10 µg Hb/g or more, rectal mass)."
+      ]
+    },
+    {
+      "id": "stage",
+      "title": "Stage and MDT",
+      "timeframe": "Before treatment",
+      "actions": [
+        "Complete the SOS pre-treatment evaluation; discuss all cases at a colorectal MDT (SOS)."
+      ]
+    },
+    {
+      "id": "colon",
+      "title": "Colon cancer",
+      "timeframe": "MDT plan",
+      "actions": [
+        "Resection by site with 5 cm margins; laparoscopic equal to open (SOS 4.1.1).",
+        "Stage I: no adjuvant therapy. Stage II average risk: none. Stage II high risk: dMMR observe; pMMR capecitabine or 5-FU/leucovorin for 6 months (SOS 4.1.2–4.1.4).",
+        "Stage III: NICE NG151 1.3.18 — CAPOX 3 months, or FOLFOX 3–6 months, or single-agent fluoropyrimidine 6 months. SOS: FOLFOX 6 months or XELOX 8 cycles.",
+        "cT4: consider preoperative systemic therapy (NICE 1.3.16)."
+      ]
+    },
+    {
+      "id": "rectum",
+      "title": "Rectal cancer",
+      "timeframe": "MDT plan",
+      "actions": [
+        "Total mesorectal excision by a colorectal surgeon (SOS 4.2.1).",
+        "cT3–4 or node-positive: preoperative chemoradiotherapy, surgery 6–8 weeks later (SOS 4.2.3; NICE 1.3.5).",
+        "Early rectal cancer (cT1–T2 N0): no preoperative radiotherapy outside trials (NICE 1.3.4)."
+      ]
+    },
+    {
+      "id": "advanced",
+      "title": "Advanced or metastatic",
+      "timeframe": "Oncology",
+      "actions": [
+        "Liver- or lung-only metastases: consider resection (SOS 4.3.1.2).",
+        "Palliative chemotherapy choice by performance status and RAS status (SOS 4.3.2); MSI-high/dMMR immunotherapy options (NICE 1.5)."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Diagnose, stage and plan treatment for colorectal cancer."
+    ],
+    "references": [
+      {
+        "title": "Saudi Oncology Society clinical management guideline series: Colorectal cancer 2014 (Bazarbashi SN et al.)",
+        "edition": "Saudi Med J 2014;35(12):1538–1544",
+        "url": "https://smj.org.sa/content/35/12/1538",
+        "locator": "section 1 (pre-treatment evaluation), p. 1538"
+      },
+      {
+        "title": "Saudi Oncology Society clinical management guideline series: Colorectal cancer 2014 (Bazarbashi SN et al.)",
+        "edition": "Saudi Med J 2014;35(12):1538–1544",
+        "url": "https://smj.org.sa/content/35/12/1538",
+        "locator": "section 4.1 (localized resectable colon cancer), pp. 1539–1540"
+      },
+      {
+        "title": "Saudi Oncology Society clinical management guideline series: Colorectal cancer 2014 (Bazarbashi SN et al.)",
+        "edition": "Saudi Med J 2014;35(12):1538–1544",
+        "url": "https://smj.org.sa/content/35/12/1538",
+        "locator": "section 4.2 (localized resectable rectal cancer), pp. 1540–1541"
+      },
+      {
+        "title": "Saudi Oncology Society clinical management guideline series: Colorectal cancer 2014 (Bazarbashi SN et al.)",
+        "edition": "Saudi Med J 2014;35(12):1538–1544",
+        "url": "https://smj.org.sa/content/35/12/1538",
+        "locator": "section 4.3 (locally advanced unresectable or metastatic disease), pp. 1541–1542"
+      },
+      {
+        "title": "NICE NG151: Colorectal cancer",
+        "edition": "NICE guideline, 2020 (updated)",
+        "url": "https://www.nice.org.uk/guidance/ng151",
+        "locator": "Recommendations 1.3.1–1.3.18 and 1.6.1"
+      },
+      {
+        "title": "NICE NG12: Suspected cancer: recognition and referral",
+        "edition": "NICE guideline, 2015 (updated April 2026)",
+        "url": "https://www.nice.org.uk/guidance/ng12",
+        "locator": "Recommendations 1.3.1–1.3.5"
+      },
+      {
+        "title": "Capecitabine tablets prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=007e3432-c8aa-2a76-52ba-c346924c08a7",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ],
+    "keyPoints": [
+      "Refer with NICE FIT criteria.",
+      "Colonoscopy, CT, CEA; MRI for rectal cancer.",
+      "MDT for every case.",
+      "Stage III → adjuvant chemotherapy.",
+      "cT3–4/N+ rectal → preoperative chemoradiotherapy.",
+      "CEA and CT surveillance."
+    ],
+    "pitfalls": [
+      "Starting capecitabine without DPYD testing.",
+      "Missing synchronous tumours — always full colonoscopy.",
+      "Treating rectal cancer without MRI staging."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain staging, treatment options and stoma possibilities."
+    ],
+    "lifestyleAndDiet": [
+      "Physical activity and nutrition support during and after treatment."
+    ],
+    "mdtReferrals": [
+      "Colorectal MDT; stoma nurse; genetics if dMMR or young onset."
+    ],
+    "dischargeCriteria": [
+      "Not applicable — outpatient care."
+    ],
+    "followUpPlan": "SOS: examination and CEA every 6 months for 5 years; CT yearly for 3 years if node positive; colonoscopy within 6 months if not done preoperatively, then at 3 years, then 5-yearly. NICE NG151 1.6.1: CEA and CT chest/abdomen/pelvis for the first 3 years."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Stage III adjuvant (NICE)",
+      "threshold": "CAPOX 3 months; or FOLFOX 3–6 months; or fluoropyrimidine 6 months"
+    },
+    {
+      "criterion": "Rectal cT3–4 or N+",
+      "threshold": "Preoperative chemoradiotherapy (SOS; NICE)"
+    },
+    {
+      "criterion": "Follow-up",
+      "threshold": "CEA 6-monthly for 5 years (SOS)"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Adjuvant single-agent therapy (stage III colon; or stage II high-risk pMMR per SOS)",
+        "patientGroup": "Adults, oncologist-prescribed",
+        "genericName": "Capecitabine",
+        "dose": "1,250 mg/m² twice daily",
+        "route": "PO",
+        "frequency": "Days 1–14 of each 21-day cycle",
+        "duration": "Maximum 8 cycles (label); about 6 months (NICE; SOS)",
+        "adjustments": [
+          "Test for DPYD variants before starting (label boxed warning)",
+          "Renal impairment: dose modification per label Section 2",
+          "Combination regimens (CAPOX, FOLFOX) dosed by oncology protocol — not reproduced"
+        ],
+        "monitoring": [
+          "FBC, renal function, hand-foot syndrome, diarrhoea each cycle",
+          "INR if on warfarin"
+        ],
+        "sourceTitle": "Capecitabine tablets prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=007e3432-c8aa-2a76-52ba-c346924c08a7",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "contraindications": [
+          "Severe hypersensitivity to fluorouracil or capecitabine",
+          "Avoid in complete DPD deficiency — test for DPYD variants before starting (boxed warning)",
+          "Bleeding risk with vitamin K antagonists (boxed warning)"
+        ]
+      }
+    ],
+    "note": "Capecitabine dose and contraindications from the FDA label; regimen choice from NICE NG151 and SOS. Combination chemotherapy, biologics and radiotherapy doses are set by the oncology protocol. Check SFDA registration."
+  },
+  "guidelineComparison": {
+    "title": "Stage III colon adjuvant therapy",
+    "columns": [
+      "SOS 2014",
+      "NICE NG151"
+    ],
+    "rows": [
+      {
+        "parameter": "Preferred",
+        "values": [
+          "FOLFOX 6 months or XELOX 8 cycles",
+          "CAPOX 3 months"
+        ]
+      },
+      {
+        "parameter": "Alternatives",
+        "values": [
+          "Capecitabine 6 months (elderly, PS 3)",
+          "FOLFOX 3–6 months; fluoropyrimidine 6 months"
+        ]
+      }
+    ],
+    "note": "NICE reflects newer evidence on 3-month duration."
+  },
+  "_source": {
+    "title": "Saudi Oncology Society colorectal cancer guideline 2014; NICE NG151",
+    "org": "Saudi Oncology Society / NICE",
+    "url": "https://smj.org.sa/content/35/12/1538"
+  }
+}

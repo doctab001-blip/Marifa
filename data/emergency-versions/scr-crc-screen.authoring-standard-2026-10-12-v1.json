@@ -1,0 +1,287 @@
+{
+  "id": "d0389517-2846-49bc-8a01-eb7265f8e139",
+  "title": "Colorectal Cancer Screening",
+  "specialty": "Primary Care / Gastroenterology",
+  "authority": "PHA",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Keep Well",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Average-risk adults: when to start colorectal cancer screening in Saudi Arabia, which test and interval, follow-up of positive tests, and when symptoms need referral instead. Verified against the Saudi PHA Clinical Preventive Guideline 2023 (start at 45 locally), the USPSTF 2021 recommendation and NICE NG12 (symptomatic FIT pathway).",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Higher-risk (family history, Lynch) surveillance intervals not reproduced",
+      "Saudi FIT positivity thresholds by laboratory not checked"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "d0389517-2846-49bc-8a01-eb7265f8e139"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Most colorectal cancers develop from adenomatous polyps over about 10 years. Screening finds cancers early and removes polyps. Colorectal cancer is the most common cancer in Saudi men and third in Saudi women (SOS 2014).",
+    "keyMechanisms": [
+      "Adenoma–carcinoma sequence gives time for detection and polypectomy.",
+      "Faecal immunochemical test (FIT) detects human haemoglobin from bleeding lesions.",
+      "A positive stool test needs colonoscopy to find the source."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Asymptomatic for screening.",
+      "Symptoms (rectal bleeding, change in bowel habit, iron-deficiency anaemia, weight loss) need the symptomatic pathway."
+    ],
+    "physicalSigns": [
+      "Abdominal and rectal examination if symptomatic; pallor."
+    ],
+    "redFlags": [
+      "Rectal or abdominal mass — refer",
+      "Iron-deficiency anaemia — FIT and referral pathway (NICE NG12 1.3.1)",
+      "FIT 10 µg Hb/g or more in a symptomatic adult — suspected cancer referral (NICE 1.3.2)"
+    ],
+    "precipitants": [
+      "Age",
+      "Family history of colorectal cancer",
+      "Inflammatory bowel disease",
+      "Lynch syndrome",
+      "Obesity, smoking, red/processed meat"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Haemorrhoids",
+      "distinguishingFeatures": "Bright red bleeding; still assess risk."
+    },
+    {
+      "condition": "Inflammatory bowel disease",
+      "distinguishingFeatures": "Diarrhoea, blood, younger age."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Faecal immunochemical test (FIT) or guaiac FOBT",
+        "modalityTarget": "Every year from 45 (PHA)",
+        "targetCondition": "Positive test",
+        "expectedFinding": "Blood detected.",
+        "clinicalRationale": "All positive non-colonoscopy tests need timely colonoscopy (PHA).",
+        "normalValue": "Negative (below laboratory threshold)",
+        "references": [
+          {
+            "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+            "edition": "3rd edition, 2023, PDF p. 27, footnotes 9–10 and 12 (Pap smear; mammogram; colon cancer screening)",
+            "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf"
+          },
+          {
+            "title": "USPSTF: Colorectal cancer screening — final recommendation statement",
+            "edition": "US Preventive Services Task Force, May 2021, Recommendation Summary section",
+            "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/colorectal-cancer-screening"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "FIT for symptoms (not screening)",
+        "modalityTarget": "Symptomatic adults per NICE NG12 1.3.1",
+        "targetCondition": "Possible colorectal cancer",
+        "expectedFinding": "FIT 10 µg Hb/g faeces or more.",
+        "clinicalRationale": "Suspected cancer referral (NICE 1.3.2).",
+        "normalValue": "Below 10 µg Hb/g faeces — safety-net (NICE 1.3.3)",
+        "references": [
+          {
+            "title": "NICE NG12: Suspected cancer: recognition and referral",
+            "edition": "NICE guideline, 2015 (updated April 2026), Recommendations 1.3.1–1.3.3",
+            "url": "https://www.nice.org.uk/guidance/ng12"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Colonoscopy",
+        "modalityTarget": "Every 10 years as a primary screen, or after a positive stool test (PHA)",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Polyps or cancer",
+        "clinicalRationale": "Polypectomy; cancer → diagnosis pathway.",
+        "normalValue": "Normal mucosa, no polyps",
+        "references": [
+          {
+            "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+            "edition": "3rd edition, 2023, PDF p. 27, footnotes 9–10 and 12 (Pap smear; mammogram; colon cancer screening)",
+            "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Flexible sigmoidoscopy",
+        "modalityTarget": "Every 5 years (PHA)",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Distal polyps or cancer",
+        "clinicalRationale": "Colonoscopy if abnormal.",
+        "normalValue": "Normal distal colon",
+        "references": [
+          {
+            "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+            "edition": "3rd edition, 2023, PDF p. 27, footnotes 9–10 and 12 (Pap smear; mammogram; colon cancer screening)",
+            "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "who",
+      "title": "Who",
+      "timeframe": "Routine contacts",
+      "actions": [
+        "Saudi PHA: start at 45 (based on American Cancer Society); USPSTF: 45–49 (B) and 50–75 (A).",
+        "Continue to 75 (USPSTF); individualise beyond."
+      ]
+    },
+    {
+      "id": "test",
+      "title": "Choose one test (PHA)",
+      "timeframe": "Shared decision",
+      "actions": [
+        "FIT or gFOBT every year.",
+        "Flexible sigmoidoscopy every 5 years.",
+        "Colonoscopy every 10 years."
+      ]
+    },
+    {
+      "id": "positive",
+      "title": "Positive test",
+      "timeframe": "Promptly",
+      "actions": [
+        "Arrange timely colonoscopy after any positive non-colonoscopy test (PHA)."
+      ]
+    },
+    {
+      "id": "symptoms",
+      "title": "Symptoms",
+      "timeframe": "Any time",
+      "actions": [
+        "Do not use screening for symptoms: offer FIT per NICE NG12 1.3.1; refer if 10 µg Hb/g or more, rectal mass, or strong concern."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Screen average-risk adults for colorectal cancer from 45."
+    ],
+    "references": [
+      {
+        "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+        "edition": "3rd edition, 2023",
+        "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf",
+        "locator": "PDF p. 27, footnotes 9–10 and 12 (Pap smear; mammogram; colon cancer screening)"
+      },
+      {
+        "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+        "edition": "3rd edition, 2023",
+        "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf",
+        "locator": "PDF pp. 30–31, footnotes 5 and 7 (60 years and older: mammogram; colon cancer screening)"
+      },
+      {
+        "title": "USPSTF: Colorectal cancer screening — final recommendation statement",
+        "edition": "US Preventive Services Task Force, May 2021",
+        "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/colorectal-cancer-screening",
+        "locator": "Recommendation Summary section"
+      },
+      {
+        "title": "NICE NG12: Suspected cancer: recognition and referral",
+        "edition": "NICE guideline, 2015 (updated April 2026)",
+        "url": "https://www.nice.org.uk/guidance/ng12",
+        "locator": "Recommendations 1.3.1–1.3.5"
+      }
+    ],
+    "keyPoints": [
+      "Start at 45.",
+      "FIT yearly or colonoscopy every 10 years.",
+      "Positive stool test → colonoscopy.",
+      "Symptoms → NICE FIT pathway, not screening."
+    ],
+    "pitfalls": [
+      "Screening FIT in a patient with rectal bleeding and weight loss.",
+      "No colonoscopy after a positive FIT."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Screening can prevent cancer by removing polyps."
+    ],
+    "lifestyleAndDiet": [
+      "Physical activity, healthy weight, less red and processed meat, stop smoking."
+    ],
+    "mdtReferrals": [
+      "Endoscopy for positive tests; genetics for suspected Lynch syndrome."
+    ],
+    "dischargeCriteria": [
+      "Not applicable — outpatient care."
+    ],
+    "followUpPlan": "Repeat at the interval for the chosen test (PHA)."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Start (Saudi PHA)",
+      "threshold": "Age 45"
+    },
+    {
+      "criterion": "FIT/gFOBT",
+      "threshold": "Yearly"
+    },
+    {
+      "criterion": "Sigmoidoscopy",
+      "threshold": "Every 5 years"
+    },
+    {
+      "criterion": "Colonoscopy",
+      "threshold": "Every 10 years"
+    }
+  ],
+  "medicationPlan": {
+    "status": "no-drug-indicated",
+    "regimens": [],
+    "note": "Screening topic — no medicine indicated."
+  },
+  "guidelineComparison": {
+    "title": "Screening start age",
+    "columns": [
+      "Saudi PHA 2023",
+      "USPSTF 2021"
+    ],
+    "rows": [
+      {
+        "parameter": "Start",
+        "values": [
+          "45 (locally, ACS-based)",
+          "45–49 (B); 50–75 (A)"
+        ]
+      },
+      {
+        "parameter": "Tests",
+        "values": [
+          "gFOBT/FIT yearly; FSIG 5-yearly; colonoscopy 10-yearly",
+          "Same options plus others"
+        ]
+      }
+    ],
+    "note": "Consistent; PHA adopts start at 45."
+  },
+  "_source": {
+    "title": "Saudi PHA Clinical Preventive Guideline 2023; USPSTF 2021",
+    "org": "Saudi Public Health Authority / USPSTF",
+    "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf"
+  }
+}
