@@ -1,0 +1,338 @@
+{
+  "id": "83aa7315-9778-4b3a-93a8-edcac20d7c58",
+  "title": "Acute Bowel Obstruction",
+  "specialty": "Acute Care Surgery / Emergency Medicine",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "emergency-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Adults with suspected small bowel obstruction in the emergency department, focusing on adhesive small bowel obstruction (ASBO). Verified against the WSES Bologna guidelines (2017 update). Large bowel obstruction (volvulus, colorectal cancer) is not covered by this source and needs its own pathway.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Large bowel obstruction pathway (not covered)",
+      "Drug and contrast doses — local protocol"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "83aa7315-9778-4b3a-93a8-edcac20d7c58"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Bowel obstruction blocks the passage of intestinal contents. Adhesions from previous surgery are the single most common cause of small bowel obstruction; others are incarcerated hernias, tumours, Crohn's disease and volvulus.",
+    "keyMechanisms": [
+      "Proximal to the block, bowel distends with gas and fluid; vomiting and third-space losses cause dehydration, hypokalaemia and acute kidney injury.",
+      "Rising intraluminal pressure and twisting (closed loop) compromise venous then arterial flow → strangulation, ischaemia, perforation and peritonitis.",
+      "Examination detects strangulation in only about 48% of cases, so imaging and laboratory markers are essential.",
+      "Most adhesive obstructions (about 70–90%) settle with non-operative management; recurrence is common."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Colicky abdominal pain.",
+      "Vomiting (early and bilious in proximal obstruction).",
+      "Abdominal distension.",
+      "Constipation, absolute (no flatus) in complete obstruction."
+    ],
+    "physicalSigns": [
+      "Distended, tympanic abdomen; scars of previous surgery.",
+      "Check all hernial orifices (groin and abdominal wall).",
+      "Dehydration: tachycardia, dry mucosa, low urine output.",
+      "Peritonitis (guarding, rigidity, constant pain), fever or shock suggest strangulation or perforation."
+    ],
+    "redFlags": [
+      "Peritonitis, constant pain or rigidity",
+      "Signs of strangulation or ischaemia — raised lactate, fever, tachycardia, shock",
+      "CT: closed loop, reduced bowel wall enhancement (ischaemia), free fluid",
+      "Incarcerated hernia",
+      "Free air (perforation)"
+    ],
+    "precipitants": [
+      "Previous abdominal or pelvic surgery (adhesions).",
+      "Hernias (groin, incisional).",
+      "Tumour, Crohn's disease, volvulus."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Paralytic ileus",
+      "distinguishingFeatures": "Post-operative, electrolyte or drug-related; no transition point on CT."
+    },
+    {
+      "condition": "Large bowel obstruction / volvulus",
+      "distinguishingFeatures": "Colonic dilatation on CT; different management."
+    },
+    {
+      "condition": "Mesenteric ischaemia",
+      "distinguishingFeatures": "Pain out of proportion to signs, high lactate; CT angiography."
+    },
+    {
+      "condition": "Incarcerated hernia, tumour, Crohn's",
+      "distinguishingFeatures": "Non-adhesive causes identified on CT — not managed as ASBO."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count",
+        "modalityTarget": "All patients",
+        "targetCondition": "Inflammation, strangulation",
+        "expectedFinding": "WBC above 10 × 10⁹/L may indicate peritonitis (low sensitivity and specificity).",
+        "clinicalRationale": "Supports urgent surgical review with other signs.",
+        "normalValue": "WBC 4–11 × 10⁹/L",
+        "references": [
+          {
+            "title": "Bologna guidelines for diagnosis and management of adhesive small bowel obstruction (ASBO): 2017 update (WSES)",
+            "edition": "World J Emerg Surg 2018;13:24 (Ten Broek RPG et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6006983/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "C-reactive protein",
+        "modalityTarget": "All patients",
+        "targetCondition": "Peritonitis",
+        "expectedFinding": "CRP above 75 mg/L may indicate peritonitis.",
+        "clinicalRationale": "Low sensitivity — do not rely on it alone.",
+        "normalValue": "Below 5 mg/L",
+        "references": [
+          {
+            "title": "Bologna guidelines for diagnosis and management of adhesive small bowel obstruction (ASBO): 2017 update (WSES)",
+            "edition": "World J Emerg Surg 2018;13:24 (Ten Broek RPG et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6006983/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Lactate",
+        "modalityTarget": "All patients",
+        "targetCondition": "Ischaemia",
+        "expectedFinding": "Raised.",
+        "clinicalRationale": "Raised lactate with pain or peritonism suggests strangulation — urgent surgery.",
+        "normalValue": "Below 2 mmol/L",
+        "references": [
+          {
+            "title": "Bologna guidelines for diagnosis and management of adhesive small bowel obstruction (ASBO): 2017 update (WSES)",
+            "edition": "World J Emerg Surg 2018;13:24 (Ten Broek RPG et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6006983/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Electrolytes, urea and creatinine",
+        "modalityTarget": "All patients",
+        "targetCondition": "Dehydration, AKI",
+        "expectedFinding": "Hypokalaemia common; raised urea/creatinine.",
+        "clinicalRationale": "Correct potassium; resuscitate to prevent AKI.",
+        "normalValue": "Potassium 3.5–5.0 mmol/L; creatinine about 60–110 µmol/L",
+        "references": [
+          {
+            "title": "Bologna guidelines for diagnosis and management of adhesive small bowel obstruction (ASBO): 2017 update (WSES)",
+            "edition": "World J Emerg Surg 2018;13:24 (Ten Broek RPG et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6006983/"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "CT abdomen with oral water-soluble contrast",
+        "modalityTarget": "Preferred initial imaging whenever the diagnosis is in doubt or to decide on urgent surgery",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Transition point, cause, closed loop, ischaemia, free fluid.",
+        "clinicalRationale": "About 90% accurate for predicting strangulation and need for urgent surgery. Closed loop, ischaemia or free fluid → surgery without delay.",
+        "references": [
+          {
+            "title": "Bologna guidelines for diagnosis and management of adhesive small bowel obstruction (ASBO): 2017 update (WSES)",
+            "edition": "World J Emerg Surg 2018;13:24 (Ten Broek RPG et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6006983/"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Follow-up abdominal X-ray 24 h after water-soluble contrast",
+        "modalityTarget": "During non-operative management",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Contrast in the colon (or not).",
+        "clinicalRationale": "Contrast in the colon at 24 h predicts resolution; no contrast in the colon strongly predicts failure of non-operative management.",
+        "references": [
+          {
+            "title": "Bologna guidelines for diagnosis and management of adhesive small bowel obstruction (ASBO): 2017 update (WSES)",
+            "edition": "World J Emerg Surg 2018;13:24 (Ten Broek RPG et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6006983/"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Plain abdominal X-ray",
+        "modalityTarget": "Not recommended routinely",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Air–fluid levels, dilated small bowel, no colonic gas; free air on erect chest X-ray.",
+        "clinicalRationale": "Sensitivity about 70%; misses early strangulation and gives no cause.",
+        "references": [
+          {
+            "title": "Bologna guidelines for diagnosis and management of adhesive small bowel obstruction (ASBO): 2017 update (WSES)",
+            "edition": "World J Emerg Surg 2018;13:24 (Ten Broek RPG et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6006983/"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Ultrasound / MRI",
+        "modalityTarget": "Pregnancy, or when CT is unavailable",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Dilated loops, free fluid.",
+        "clinicalRationale": "Avoids radiation; MRI adds anatomical detail.",
+        "references": [
+          {
+            "title": "Bologna guidelines for diagnosis and management of adhesive small bowel obstruction (ASBO): 2017 update (WSES)",
+            "edition": "World J Emerg Surg 2018;13:24 (Ten Broek RPG et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6006983/"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "resus",
+      "title": "Resuscitate and assess",
+      "timeframe": "Arrival",
+      "actions": [
+        "IV fluid resuscitation; correct electrolytes (especially potassium); monitor urine output.",
+        "Analgesia and antiemetic; nil by mouth.",
+        "Nasogastric tube decompression (prevents aspiration).",
+        "Bloods: FBC, CRP, lactate, electrolytes, urea, creatinine. Check hernias."
+      ]
+    },
+    {
+      "id": "image",
+      "title": "CT with water-soluble contrast",
+      "timeframe": "Early",
+      "actions": [
+        "CT identifies cause and signs needing urgent surgery.",
+        "If ASBO is certain (other causes excluded on recent imaging) and no signs needing immediate surgery, a water-soluble contrast study alone is sufficient."
+      ]
+    },
+    {
+      "id": "decide",
+      "title": "Decide: surgery now or non-operative trial",
+      "timeframe": "After imaging",
+      "actions": [
+        "Peritonitis, strangulation or ischaemia (clinical, lactate or CT) → emergency surgery.",
+        "Otherwise → non-operative management for ASBO."
+      ],
+      "branches": [
+        {
+          "condition": "Diabetes or elderly/frail",
+          "actions": [
+            "Lower threshold for early surgery in diabetes (higher AKI and MI risk when delayed more than 24 h); weigh frailty and quality of life."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nom",
+      "title": "Non-operative management",
+      "timeframe": "Up to 72 h",
+      "actions": [
+        "Nil by mouth, NG (or long intestinal tube) decompression, fluids, electrolyte correction, nutritional support, aspiration prevention.",
+        "Water-soluble contrast with abdominal X-ray at 24 h: contrast in colon = resolving; no contrast = likely failure → surgery.",
+        "A 72-h non-operative trial is considered safe; operate if no resolution or any deterioration."
+      ]
+    },
+    {
+      "id": "surgery",
+      "title": "Operative management",
+      "timeframe": "When indicated",
+      "actions": [
+        "Laparotomy or carefully selected laparoscopic adhesiolysis (best for single band, few previous laparotomies).",
+        "Adhesion barriers reduce recurrence after operative treatment."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Recognise, investigate and manage acute bowel obstruction in the emergency department."
+    ],
+    "references": [
+      {
+        "title": "Bologna guidelines for diagnosis and management of adhesive small bowel obstruction (ASBO): 2017 update (WSES)",
+        "edition": "World J Emerg Surg 2018;13:24 (Ten Broek RPG et al.)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6006983/",
+        "locator": "Diagnosis (history, laboratory tests, imaging), Management (non-operative, operative), Table 5"
+      },
+      {
+        "title": "SFDA Saudi Drug Information System (registration search)",
+        "edition": "Accessed 11–12 Oct 2026",
+        "url": "https://sdi.sfda.gov.sa/"
+      }
+    ],
+    "keyPoints": [
+      "CT with water-soluble contrast is the key test.",
+      "Peritonitis, strangulation or ischaemia → operate.",
+      "Otherwise NG decompression, fluids and electrolytes for up to 72 h.",
+      "Contrast in the colon at 24 h predicts success.",
+      "Examine the hernial orifices."
+    ],
+    "pitfalls": [
+      "Relying on examination to exclude strangulation (sensitivity about 48%).",
+      "Relying on plain X-ray.",
+      "Prolonging non-operative treatment beyond 72 h without progress.",
+      "Ignoring hypokalaemia and AKI.",
+      "Missing an incarcerated hernia."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Recurrence risk after adhesive obstruction; seek care early with pain, vomiting or distension."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable in the acute phase."
+    ],
+    "mdtReferrals": [
+      "General surgery for all patients.",
+      "Dietitian for nutritional support if prolonged nil by mouth."
+    ],
+    "dischargeCriteria": [
+      "Obstruction resolved: passing flatus/stool, tolerating diet, NG removed.",
+      "Electrolytes and kidney function normal.",
+      "Pain controlled on oral analgesia."
+    ],
+    "followUpPlan": "Explain recurrence risk; return if pain, vomiting or distension recur. Surgical follow-up after operative treatment."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Emergency surgery",
+      "threshold": "Peritonitis, strangulation or bowel ischaemia (clinical, lactate, or CT: closed loop, ischaemia, free fluid)"
+    },
+    {
+      "criterion": "Non-operative trial",
+      "threshold": "ASBO without the above — up to 72 h"
+    },
+    {
+      "criterion": "Water-soluble contrast at 24 h",
+      "threshold": "In colon = likely resolution; not in colon = likely failure"
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [],
+    "note": "The WSES Bologna guideline does not specify drug or contrast doses. Use local protocols for analgesia, antiemetics, fluids, electrolytes and water-soluble contrast volume."
+  }
+}

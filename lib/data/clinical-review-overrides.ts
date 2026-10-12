@@ -19,4 +19,8 @@ export const clinicalReviewOverrides: Record<string, string | undefined> = {
   "a1010000-0000-4000-8000-000000000001": "emergency-2026-10-12-v1",
   "cb0f8932-f4c5-4a6a-9d44-d320713a366b": "emergency-2026-10-12-v2",
   "c2c404f2-5f47-4e4d-9ce7-fb32a9c1e104": "emergency-2026-10-12-v1",
+  "336de333-f235-46c4-aa57-2ea4a6e017d5": "emergency-2026-10-12-v1",
+  "6fccc942-c6f3-4ef7-94cf-26fd23edfd27": "emergency-2026-10-12-v1",
+  "83aa7315-9778-4b3a-93a8-edcac20d7c58": "emergency-2026-10-12-v1",
+  "bb3cbef9-52b1-41f8-b2ee-17078b3a2d5d": "emergency-2026-10-12-v1",
 };

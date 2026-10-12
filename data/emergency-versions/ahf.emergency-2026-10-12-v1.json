@@ -1,0 +1,468 @@
+{
+  "id": "336de333-f235-46c4-aa57-2ea4a6e017d5",
+  "title": "Acute Heart Failure and Pulmonary Oedema",
+  "specialty": "Emergency Medicine",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "emergency-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Adults with acute heart failure (new or decompensated chronic) including cardiogenic pulmonary oedema and cardiogenic shock. Verified against the Saudi Heart Association HF guidelines (2019) and the 2023 National Heart Center/SHA focused update, the SHA biomarker position statement (2022) and NICE CG187.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Vasodilator/inotrope infusion doses — local protocol",
+      "ESC 2021/2023 HF guideline text not accessible (publisher block); SHA guidance is based on ESC/ACC/AHA"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "336de333-f235-46c4-aa57-2ea4a6e017d5"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Acute heart failure (AHF) is the sudden worsening of heart failure symptoms and signs. Raised left-sided filling pressures push fluid into the lungs (pulmonary oedema); reduced cardiac output causes hypoperfusion. Patients are profiled by congestion (wet/dry) and perfusion (warm/cold).",
+    "keyMechanisms": [
+      "Congestion ('wet'): raised filling pressures → pulmonary congestion, orthopnoea/PND, peripheral oedema, raised JVP, congested liver and gut, ascites.",
+      "Hypoperfusion ('cold'): cold sweaty extremities, oliguria, confusion, dizziness, narrow pulse pressure.",
+      "'Warm and wet' needs diuresis (± vasodilators); 'cold and wet' needs vasoactive support with diuresis (SHA 2019).",
+      "Hypertensive AHF (afterload mismatch) responds to vasodilators; cardiogenic shock needs inotropes/vasopressors and treatment of the cause (e.g. ACS).",
+      "Neurohormonal activation (RAAS, sympathetic) drives sodium and water retention; acidosis on blood gas carries a worse prognosis."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Breathlessness, orthopnoea, paroxysmal nocturnal dyspnoea.",
+      "Ankle swelling, weight gain, abdominal distension.",
+      "Fatigue; confusion or dizziness if hypoperfused.",
+      "Chest pain or palpitations (ACS or arrhythmia as trigger)."
+    ],
+    "physicalSigns": [
+      "Tachypnoea, hypoxaemia, bibasal crackles, wheeze.",
+      "Raised JVP, hepatojugular reflux, peripheral oedema, hepatomegaly, ascites.",
+      "Third heart sound, murmurs (valve disease).",
+      "Cold peripheries, hypotension, oliguria (cardiogenic shock)."
+    ],
+    "redFlags": [
+      "SBP below 90 mmHg with hypoperfusion (cardiogenic shock)",
+      "SpO2 below 90% or RR above 25 despite oxygen",
+      "pH below 7.35 with PaCO2 above 50 mmHg (6.65 kPa) or PaO2 below 60 mmHg not manageable non-invasively → intubation",
+      "ACS as the cause → urgent coronary angiography",
+      "Arrhythmia (fast AF, VT, bradycardia)"
+    ],
+    "precipitants": [
+      "Acute coronary syndrome.",
+      "Arrhythmia (especially AF).",
+      "Uncontrolled hypertension.",
+      "Infection.",
+      "Non-adherence to medication, salt or fluid intake.",
+      "Valve disease; NSAIDs; renal failure."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "COPD/asthma exacerbation",
+      "distinguishingFeatures": "Wheeze, known lung disease; natriuretic peptide below rule-out threshold."
+    },
+    {
+      "condition": "Pneumonia",
+      "distinguishingFeatures": "Fever, focal consolidation; may coexist and trigger AHF."
+    },
+    {
+      "condition": "Pulmonary embolism",
+      "distinguishingFeatures": "Clear lungs, risk factors, right heart strain; CTPA."
+    },
+    {
+      "condition": "ARDS / non-cardiogenic pulmonary oedema",
+      "distinguishingFeatures": "Sepsis, aspiration; normal cardiac function on echo."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Natriuretic peptide (BNP or NT-proBNP)",
+        "modalityTarget": "On presentation in all with acute dyspnoea and suspected AHF",
+        "targetCondition": "Rule out AHF",
+        "expectedFinding": "BNP 100 pg/mL or more, or NT-proBNP 300 pg/mL or more → AHF likely; confirm with imaging.",
+        "clinicalRationale": "Below these cut-offs AHF is very unlikely (NPV 0.94–0.98) — look for another diagnosis. Values rise with age and kidney disease, fall with obesity.",
+        "normalValue": "BNP below 100 pg/mL; NT-proBNP below 300 pg/mL (acute rule-out)",
+        "references": [
+          {
+            "title": "Saudi Heart Association position statement on the use of biomarkers for the management of heart failure and acute coronary syndrome",
+            "edition": "J Saudi Heart Assoc 2022;34(2):114",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9518724/"
+          },
+          {
+            "title": "Saudi Heart Association (SHA) guidelines for the management of heart failure",
+            "edition": "J Saudi Heart Assoc 2019;31(4):204–253",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6660461/"
+          },
+          {
+            "title": "NICE CG187: Acute heart failure: diagnosis and management",
+            "edition": "NICE clinical guideline, 2014 (updated 2021)",
+            "url": "https://www.nice.org.uk/guidance/cg187"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "High-sensitivity troponin",
+        "modalityTarget": "On admission",
+        "targetCondition": "ACS trigger, myocardial injury",
+        "expectedFinding": "Raised, especially with a rise/fall pattern.",
+        "clinicalRationale": "Identify ACS as a cause (urgent angiography if shock complicates ACS).",
+        "references": [
+          {
+            "title": "2023 National Heart Center/Saudi Heart Association focused update of the 2019 SHA guidelines for the management of heart failure",
+            "edition": "J Saudi Heart Assoc 2023;35(1):71",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10263126/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Urea, creatinine, sodium, potassium",
+        "modalityTarget": "Admission and regularly during IV diuretics",
+        "targetCondition": "Renal function, electrolytes",
+        "expectedFinding": "AKI, hyponatraemia, hypokalaemia with diuretics.",
+        "clinicalRationale": "Monitor during diuresis; guide RRT/ultrafiltration decisions in refractory overload with AKI.",
+        "normalValue": "Sodium 135–145; potassium 3.5–5.0 mmol/L",
+        "references": [
+          {
+            "title": "2023 National Heart Center/Saudi Heart Association focused update of the 2019 SHA guidelines for the management of heart failure",
+            "edition": "J Saudi Heart Assoc 2023;35(1):71",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10263126/"
+          },
+          {
+            "title": "NICE CG187: Acute heart failure: diagnosis and management",
+            "edition": "NICE clinical guideline, 2014 (updated 2021)",
+            "url": "https://www.nice.org.uk/guidance/cg187"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "FBC, glucose, LFTs, TSH",
+        "modalityTarget": "Admission",
+        "targetCondition": "Precipitants and comorbidity",
+        "expectedFinding": "Anaemia, infection, congestive hepatopathy, thyroid disease.",
+        "clinicalRationale": "Identifies triggers and contributors.",
+        "references": [
+          {
+            "title": "2023 National Heart Center/Saudi Heart Association focused update of the 2019 SHA guidelines for the management of heart failure",
+            "edition": "J Saudi Heart Assoc 2023;35(1):71",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10263126/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Blood gas (venous; arterial in cardiogenic shock) ± lactate",
+        "modalityTarget": "Acute pulmonary oedema, COPD, shock",
+        "targetCondition": "Respiratory failure, hypoperfusion",
+        "expectedFinding": "Acidosis; hypercapnia; raised lactate.",
+        "clinicalRationale": "PaO2 below 60 mmHg, PaCO2 above 50 mmHg and pH below 7.35 not manageable non-invasively → intubation.",
+        "normalValue": "pH 7.35–7.45; PaCO2 35–45 mmHg; lactate below 2 mmol/L",
+        "references": [
+          {
+            "title": "2023 National Heart Center/Saudi Heart Association focused update of the 2019 SHA guidelines for the management of heart failure",
+            "edition": "J Saudi Heart Assoc 2023;35(1):71",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10263126/"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "12-lead ECG",
+        "modalityTarget": "On admission",
+        "targetCondition": "Triggers",
+        "expectedFinding": "Ischaemia/STEMI, AF, other arrhythmias, LVH.",
+        "clinicalRationale": "Treat ACS or arrhythmia triggers.",
+        "normalValue": "Sinus rhythm",
+        "references": [
+          {
+            "title": "2023 National Heart Center/Saudi Heart Association focused update of the 2019 SHA guidelines for the management of heart failure",
+            "edition": "J Saudi Heart Assoc 2023;35(1):71",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10263126/"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Pulse oximetry",
+        "modalityTarget": "Continuous",
+        "targetCondition": "Hypoxaemia",
+        "expectedFinding": "SpO2 below 90%.",
+        "clinicalRationale": "Give oxygen only if SpO2 below 90% or PaO2 below 60 mmHg.",
+        "normalValue": "94–98%",
+        "references": [
+          {
+            "title": "2023 National Heart Center/Saudi Heart Association focused update of the 2019 SHA guidelines for the management of heart failure",
+            "edition": "J Saudi Heart Assoc 2023;35(1):71",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10263126/"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Chest X-ray",
+        "modalityTarget": "On admission",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Pulmonary congestion, effusions, cardiomegaly; alternative diagnoses.",
+        "clinicalRationale": "Supports diagnosis; excludes pneumonia, pneumothorax.",
+        "references": [
+          {
+            "title": "2023 National Heart Center/Saudi Heart Association focused update of the 2019 SHA guidelines for the management of heart failure",
+            "edition": "J Saudi Heart Assoc 2023;35(1):71",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10263126/"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Echocardiography",
+        "modalityTarget": "Immediately if haemodynamically unstable; within 48 h if structure/function unknown or may have changed",
+        "targetCondition": "Imaging",
+        "expectedFinding": "LVEF, valve disease, tamponade, RV function.",
+        "clinicalRationale": "Defines HFrEF vs HFpEF and mechanical causes; guides therapy.",
+        "references": [
+          {
+            "title": "2023 National Heart Center/Saudi Heart Association focused update of the 2019 SHA guidelines for the management of heart failure",
+            "edition": "J Saudi Heart Assoc 2023;35(1):71",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10263126/"
+          },
+          {
+            "title": "NICE CG187: Acute heart failure: diagnosis and management",
+            "edition": "NICE clinical guideline, 2014 (updated 2021)",
+            "url": "https://www.nice.org.uk/guidance/cg187"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "assess",
+      "title": "Assess and profile",
+      "timeframe": "Arrival",
+      "actions": [
+        "Check airway, breathing (RR, SpO2), BP, perfusion; profile warm/cold and wet/dry.",
+        "ECG, chest X-ray, natriuretic peptide, troponin, renal function, electrolytes, FBC, glucose, LFTs, TSH; blood gas if pulmonary oedema, COPD or shock.",
+        "Identify triggers: ACS, arrhythmia, hypertension, infection, non-adherence, valve disease."
+      ]
+    },
+    {
+      "id": "oxygen",
+      "title": "Oxygen and ventilatory support",
+      "timeframe": "Immediately",
+      "actions": [
+        "Oxygen only if SpO2 below 90% or PaO2 below 60 mmHg.",
+        "Respiratory distress (RR above 25, SpO2 below 90%): start NIV (CPAP/BiPAP) as soon as possible (SHA); NICE advises NIV for cardiogenic pulmonary oedema with severe dyspnoea and acidaemia, not routinely. Caution — NIV lowers BP.",
+        "Intubate if hypoxaemia, hypercapnia and acidosis cannot be managed non-invasively, or with exhaustion or reduced consciousness."
+      ]
+    },
+    {
+      "id": "diuretic",
+      "title": "IV loop diuretic",
+      "timeframe": "Within 1 h of first medical contact",
+      "actions": [
+        "New AHF or not on oral diuretics: furosemide 20–40 mg IV (or equivalent).",
+        "On chronic diuretics: initial IV dose at least equivalent to the usual oral dose.",
+        "Bolus or infusion; adjust to symptoms, urine output, weight, renal function and electrolytes.",
+        "Resistant oedema: add a thiazide-type diuretic or acetazolamide (watch potassium, sodium, BP, renal function)."
+      ]
+    },
+    {
+      "id": "vasodilator",
+      "title": "Vasodilators",
+      "timeframe": "If SBP above 110 mmHg",
+      "actions": [
+        "SHA: IV vasodilators may be considered for symptom relief if SBP above 110 mmHg without symptomatic hypotension; first-line in hypertensive AHF. Monitor BP frequently.",
+        "NICE: do not routinely offer nitrates; use in specific circumstances (myocardial ischaemia, severe hypertension, regurgitant aortic/mitral valve disease) with close BP monitoring in level 2 care. Do not use sodium nitroprusside.",
+        "Opiates: not routinely (NICE); low-dose only with caution for severe distress (SHA)."
+      ]
+    },
+    {
+      "id": "shock",
+      "title": "Hypotension and cardiogenic shock",
+      "timeframe": "Immediately",
+      "actions": [
+        "ECG and echocardiography immediately; arterial line; consider transfer to a tertiary centre.",
+        "ACS with shock: urgent coronary angiography for revascularisation.",
+        "Fluid challenge if no overt overload or volume status uncertain.",
+        "Inotrope (dobutamine) for hypoperfusion with SBP 110 mmHg or less not responding to standard treatment; norepinephrine preferred vasopressor if persistent hypoperfusion. Not routinely (mortality concerns).",
+        "IABP not routine; short-term mechanical support in refractory shock after heart-team discussion."
+      ]
+    },
+    {
+      "id": "ongoing",
+      "title": "Ongoing care",
+      "timeframe": "Admission",
+      "actions": [
+        "VTE prophylaxis (e.g. LMWH) unless already anticoagulated; anticoagulate if AF or another indication.",
+        "Fast AF: digoxin and/or beta-blocker first-line; amiodarone may be considered.",
+        "Continue disease-modifying therapy in decompensated HFrEF unless unstable; continue beta-blocker unless HR below 50, 2nd/3rd-degree AV block or shock (NICE).",
+        "Refractory overload with AKI: RRT; ultrafiltration only for confirmed diuretic resistance."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Recognise, investigate and manage acute heart failure and pulmonary oedema in the emergency department."
+    ],
+    "references": [
+      {
+        "title": "2023 National Heart Center/Saudi Heart Association focused update of the 2019 SHA guidelines for the management of heart failure",
+        "edition": "J Saudi Heart Assoc 2023;35(1):71",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10263126/",
+        "locator": "Section 5 Acute heart failure; Tables 21–22"
+      },
+      {
+        "title": "Saudi Heart Association (SHA) guidelines for the management of heart failure",
+        "edition": "J Saudi Heart Assoc 2019;31(4):204–253",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6660461/",
+        "locator": "Section 12 Acute heart failure (12.1–12.8)"
+      },
+      {
+        "title": "Saudi Heart Association position statement on the use of biomarkers for the management of heart failure and acute coronary syndrome",
+        "edition": "J Saudi Heart Assoc 2022;34(2):114",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9518724/",
+        "locator": "Acute heart failure natriuretic peptide statements"
+      },
+      {
+        "title": "NICE CG187: Acute heart failure: diagnosis and management",
+        "edition": "NICE clinical guideline, 2014 (updated 2021)",
+        "url": "https://www.nice.org.uk/guidance/cg187",
+        "locator": "Recs 1.1–1.7"
+      },
+      {
+        "title": "SFDA Saudi Drug Information System (registration search)",
+        "edition": "Accessed 11–12 Oct 2026",
+        "url": "https://sdi.sfda.gov.sa/"
+      }
+    ],
+    "keyPoints": [
+      "Natriuretic peptide rules AHF out (BNP below 100, NT-proBNP below 300 pg/mL).",
+      "IV furosemide within 1 h: 20–40 mg if diuretic-naive; at least the oral dose if on diuretics.",
+      "NIV early for respiratory distress; oxygen only if SpO2 below 90%.",
+      "Find the trigger — ACS, arrhythmia, hypertension, infection.",
+      "Inotropes only for hypoperfusion; norepinephrine preferred vasopressor."
+    ],
+    "pitfalls": [
+      "Routine morphine.",
+      "High-flow oxygen without hypoxaemia.",
+      "Nitrates in hypotension.",
+      "Under-dosing diuretics in patients already on oral furosemide.",
+      "Stopping beta-blockers unnecessarily."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Daily weights; when to seek help.",
+      "Fluid and salt advice; medication adherence."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable in the acute phase."
+    ],
+    "mdtReferrals": [
+      "Specialist heart failure team; cardiology for ACS or valve disease.",
+      "ICU/CCU for shock or ventilation; tertiary centre for mechanical support."
+    ],
+    "dischargeCriteria": [
+      "Euvolaemic (or near), off IV diuretics, stable renal function and electrolytes.",
+      "Stable for about 48 h after starting or restarting beta-blockers (NICE).",
+      "On optimised oral disease-modifying HF therapy per SHA chronic HF guidance (NICE: ACEi or ARB and an aldosterone antagonist in HFrEF), with a plan for up-titration."
+    ],
+    "followUpPlan": "Specialist heart failure team review within 2 weeks of discharge (NICE); daily weights, fluid/salt advice, medication titration; echocardiography if not done."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "AHF unlikely",
+      "threshold": "BNP below 100 pg/mL or NT-proBNP below 300 pg/mL"
+    },
+    {
+      "criterion": "AHF likely — confirm with imaging",
+      "threshold": "BNP 100 pg/mL or more, or NT-proBNP 300 pg/mL or more"
+    },
+    {
+      "criterion": "Warm–wet / cold–wet / cold–dry / warm–dry",
+      "threshold": "Perfusion (warm/cold) × congestion (wet/dry) profile guides therapy"
+    },
+    {
+      "criterion": "Intubation",
+      "threshold": "PaO2 below 60 mmHg, PaCO2 above 50 mmHg and pH below 7.35 not manageable non-invasively"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Congestion in AHF (new or not on oral diuretics)",
+        "patientGroup": "Adults",
+        "genericName": "Furosemide",
+        "dose": "20–40 mg (or equivalent)",
+        "route": "IV",
+        "frequency": "Bolus or infusion; repeat by response",
+        "duration": "Until euvolaemic",
+        "adjustments": [
+          "On chronic diuretics: IV dose at least equal to usual oral dose",
+          "Resistant oedema: add thiazide-type diuretic or acetazolamide",
+          "Give within 1 h of first medical contact"
+        ],
+        "monitoring": [
+          "Urine output, weight, creatinine, potassium, sodium"
+        ],
+        "sourceTitle": "SHA 2023 focused update (heart failure)",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10263126/",
+        "sourceEdition": "J Saudi Heart Assoc 2023, Table 22"
+      }
+    ],
+    "note": "Furosemide dosing from the SHA 2023 focused update. Vasodilator, inotrope and vasopressor doses are not given in the cited text — use the hospital infusion protocol. Check SFDA registration and formulary."
+  },
+  "guidelineComparison": {
+    "title": "Saudi Heart Association 2019/2023 vs NICE CG187",
+    "columns": [
+      "SHA 2019/2023",
+      "NICE CG187"
+    ],
+    "rows": [
+      {
+        "parameter": "NIV",
+        "values": [
+          "Consider as soon as possible if RR above 25 and SpO2 below 90%",
+          "Not routinely; consider if severe dyspnoea and acidaemia"
+        ]
+      },
+      {
+        "parameter": "Nitrates / vasodilators",
+        "values": [
+          "Consider if SBP above 110 mmHg; first-line in hypertensive AHF",
+          "Not routinely; only for ischaemia, severe hypertension or regurgitant valve disease"
+        ]
+      },
+      {
+        "parameter": "Opiates",
+        "values": [
+          "Low dose with caution",
+          "Not routinely"
+        ]
+      },
+      {
+        "parameter": "Diuretic timing and dose",
+        "values": [
+          "Within 1 h; 20–40 mg IV furosemide if diuretic-naive",
+          "IV bolus or infusion; higher than usual dose if already on a diuretic"
+        ]
+      }
+    ],
+    "note": "Both agree on early IV loop diuretics, echocardiography within 48 h, and inotropes only for hypoperfusion/shock."
+  }
+}

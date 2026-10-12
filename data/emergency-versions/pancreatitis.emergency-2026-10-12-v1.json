@@ -1,0 +1,513 @@
+{
+  "id": "bb3cbef9-52b1-41f8-b2ee-17078b3a2d5d",
+  "title": "Acute Pancreatitis",
+  "specialty": "Gastroenterology / Emergency Medicine",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "emergency-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Adults with acute pancreatitis in the emergency department and first week of admission. Verified against the WSES 2019 severe acute pancreatitis guideline, NICE NG104 and the Saudi MOH Intra-abdominal Infections Treatment Protocol (antibiotic indications).",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Fluid volumes and analgesic doses — local protocol",
+      "ACG 2024 guideline not reviewed (not open access)"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "bb3cbef9-52b1-41f8-b2ee-17078b3a2d5d"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Acute pancreatitis is acute inflammation of the pancreas with acinar cell destruction. Premature activation of digestive enzymes injures the gland and triggers a systemic inflammatory response (SIRS) that can progress to organ failure; severity is defined by organ failure lasting more than 48 h and by local complications such as necrosis.",
+    "keyMechanisms": [
+      "Common causes: gallstones and alcohol; others include hypertriglyceridaemia (above 11.3 mmol/L), hypercalcaemia, drugs, microlithiasis, hereditary and autoimmune pancreatitis, tumours and pancreas divisum (NICE, WSES).",
+      "SIRS causes capillary leak and third-space fluid loss → hypovolaemia, haemoconcentration (rising haematocrit), rising urea and AKI; early resuscitation aims to protect pancreatic microcirculation.",
+      "Organ failure (respiratory, cardiovascular, renal) persisting more than 48 h defines severe disease; about 1 in 3 such patients die (WSES).",
+      "(Peri)pancreatic necrosis develops over days; it is best seen on contrast CT after 72 h. Infection of necrosis peaks in weeks 2–4.",
+      "Intra-abdominal hypertension and abdominal compartment syndrome can complicate severe disease."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Sudden severe epigastric pain, often radiating to the back.",
+      "Nausea and vomiting.",
+      "History of gallstones or heavy alcohol intake (but do not assume alcohol is the cause just because the patient drinks — NICE)."
+    ],
+    "physicalSigns": [
+      "Epigastric tenderness, fever, tachycardia (NICE).",
+      "Signs of hypovolaemia; jaundice suggests biliary obstruction or cholangitis.",
+      "Tachypnoea, hypoxaemia, pleural effusion; altered mental status; oliguria (organ failure).",
+      "Distended tense abdomen (intra-abdominal hypertension)."
+    ],
+    "redFlags": [
+      "Organ failure (hypotension, hypoxaemia, AKI) — especially persisting despite fluids → ICU",
+      "SIRS on admission (risk of progression to organ failure)",
+      "BISAP 2 or more",
+      "Cholangitis (fever, jaundice, deranged LFTs) → ERCP indicated",
+      "Haematocrit above 44% or urea rising"
+    ],
+    "precipitants": [
+      "Gallstones.",
+      "Alcohol.",
+      "Hypertriglyceridaemia (above 11.3 mmol/L), hypercalcaemia.",
+      "Drugs; post-ERCP; tumours; anatomical anomalies."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Perforated peptic ulcer",
+      "distinguishingFeatures": "Free air; CT if the diagnosis is uncertain."
+    },
+    {
+      "condition": "Mesenteric ischaemia",
+      "distinguishingFeatures": "High lactate, pain out of proportion; CT."
+    },
+    {
+      "condition": "Acute cholecystitis / cholangitis",
+      "distinguishingFeatures": "Right upper quadrant pain, ultrasound findings; may coexist."
+    },
+    {
+      "condition": "Acute coronary syndrome",
+      "distinguishingFeatures": "ECG and troponin in epigastric pain."
+    },
+    {
+      "condition": "Other causes of raised lipase",
+      "distinguishingFeatures": "Kidney disease, appendicitis, cholecystitis, bowel obstruction (WSES)."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Serum lipase (preferred) or amylase",
+        "modalityTarget": "Arrival",
+        "targetCondition": "Diagnosis",
+        "expectedFinding": "More than 3 times the upper limit of normal.",
+        "clinicalRationale": "Lipase is preferred (more sensitive, longer window: rises 4–8 h, peaks 24 h, elevated 8–14 days). Amylase rises 6–24 h and normalises within 3–7 days. Level does not predict severity.",
+        "normalValue": "Below the laboratory upper limit of normal",
+        "references": [
+          {
+            "title": "2019 WSES guidelines for the management of severe acute pancreatitis",
+            "edition": "World J Emerg Surg 2019;14:27 (Leppäniemi A et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6567462/"
+          },
+          {
+            "title": "NICE NG104: Pancreatitis",
+            "edition": "NICE guideline, 2018 (updated 2020)",
+            "url": "https://www.nice.org.uk/guidance/ng104"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count — haematocrit",
+        "modalityTarget": "Arrival and serially",
+        "targetCondition": "Haemoconcentration",
+        "expectedFinding": "Haematocrit above 44% or rising.",
+        "clinicalRationale": "Independent risk factor for pancreatic necrosis; guides fluid resuscitation.",
+        "normalValue": "Haematocrit about 36–44% (women) / 40–50% (men)",
+        "references": [
+          {
+            "title": "2019 WSES guidelines for the management of severe acute pancreatitis",
+            "edition": "World J Emerg Surg 2019;14:27 (Leppäniemi A et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6567462/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Urea (BUN) and creatinine",
+        "modalityTarget": "Arrival and serially",
+        "targetCondition": "Severity, AKI",
+        "expectedFinding": "BUN above 20 mg/dL (above 7.14 mmol/L) or rising.",
+        "clinicalRationale": "Independent predictor of mortality; BUN above 8.9 mmol/L scores 1 in BISAP.",
+        "normalValue": "Urea 2.5–7.8 mmol/L",
+        "references": [
+          {
+            "title": "2019 WSES guidelines for the management of severe acute pancreatitis",
+            "edition": "World J Emerg Surg 2019;14:27 (Leppäniemi A et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6567462/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "C-reactive protein",
+        "modalityTarget": "Day 3",
+        "targetCondition": "Severity",
+        "expectedFinding": "150 mg/L or more at day 3.",
+        "clinicalRationale": "Prognostic for severe disease; peaks only after 48–72 h.",
+        "normalValue": "Below 5 mg/L",
+        "references": [
+          {
+            "title": "2019 WSES guidelines for the management of severe acute pancreatitis",
+            "edition": "World J Emerg Surg 2019;14:27 (Leppäniemi A et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6567462/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Liver function tests",
+        "modalityTarget": "Arrival",
+        "targetCondition": "Biliary cause, obstruction",
+        "expectedFinding": "Raised bilirubin, ALP, ALT.",
+        "clinicalRationale": "Suggests gallstone pancreatitis or CBD obstruction; cholangitis → ERCP.",
+        "normalValue": "Bilirubin below 21 µmol/L; ALT below about 40 U/L",
+        "references": [
+          {
+            "title": "2019 WSES guidelines for the management of severe acute pancreatitis",
+            "edition": "World J Emerg Surg 2019;14:27 (Leppäniemi A et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6567462/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Triglycerides and calcium",
+        "modalityTarget": "If no gallstones and no significant alcohol history",
+        "targetCondition": "Metabolic cause",
+        "expectedFinding": "Triglycerides above 11.3 mmol/L (1000 mg/dL); hypercalcaemia.",
+        "clinicalRationale": "Triglycerides above 11.3 mmol/L identify the cause.",
+        "normalValue": "Triglycerides below 1.7 mmol/L; corrected calcium 2.15–2.55 mmol/L",
+        "references": [
+          {
+            "title": "2019 WSES guidelines for the management of severe acute pancreatitis",
+            "edition": "World J Emerg Surg 2019;14:27 (Leppäniemi A et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6567462/"
+          },
+          {
+            "title": "NICE NG104: Pancreatitis",
+            "edition": "NICE guideline, 2018 (updated 2020)",
+            "url": "https://www.nice.org.uk/guidance/ng104"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Lactate, blood gas, glucose",
+        "modalityTarget": "Unwell patients",
+        "targetCondition": "Perfusion, organ failure",
+        "expectedFinding": "Raised lactate; hypoxaemia.",
+        "clinicalRationale": "Lactate predicts severe disease and ICU admission but is suboptimal alone; monitor with haematocrit, urea and creatinine to guide fluids.",
+        "normalValue": "Lactate below 2 mmol/L",
+        "references": [
+          {
+            "title": "2019 WSES guidelines for the management of severe acute pancreatitis",
+            "edition": "World J Emerg Surg 2019;14:27 (Leppäniemi A et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6567462/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Procalcitonin",
+        "modalityTarget": "Suspected infected necrosis (usually week 2–4)",
+        "targetCondition": "Infection",
+        "expectedFinding": "Raised; low values strongly argue against infected necrosis.",
+        "clinicalRationale": "Most sensitive laboratory test for pancreatic infection.",
+        "references": [
+          {
+            "title": "2019 WSES guidelines for the management of severe acute pancreatitis",
+            "edition": "World J Emerg Surg 2019;14:27 (Leppäniemi A et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6567462/"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "BISAP score",
+        "modalityTarget": "Within 24 h",
+        "targetCondition": "Severity prediction",
+        "expectedFinding": "1 point each: BUN above 8.9 mmol/L, impaired mental status, SIRS, age above 60, pleural effusion.",
+        "clinicalRationale": "2 or more predicts severe disease, organ failure and death.",
+        "references": [
+          {
+            "title": "2019 WSES guidelines for the management of severe acute pancreatitis",
+            "edition": "World J Emerg Surg 2019;14:27 (Leppäniemi A et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6567462/"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Abdominal ultrasound",
+        "modalityTarget": "On admission (all)",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Gallstones, sludge, biliary dilatation.",
+        "clinicalRationale": "Determines biliary cause → cholecystectomy planning. In idiopathic cases repeat ultrasound and consider MRCP/EUS.",
+        "references": [
+          {
+            "title": "2019 WSES guidelines for the management of severe acute pancreatitis",
+            "edition": "World J Emerg Surg 2019;14:27 (Leppäniemi A et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6567462/"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Contrast-enhanced CT",
+        "modalityTarget": "Not routine in mild disease. If diagnosis uncertain (any time — exclude perforation or ischaemia). In severe disease at 72–96 h after symptom onset",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Necrosis extent (CT severity index), collections, haemorrhage, thrombosis.",
+        "clinicalRationale": "Early CT does not show necrosis and does not change first-week management. Follow-up CT 7–10 days later if CTSI 3 or more, or if deteriorating.",
+        "references": [
+          {
+            "title": "2019 WSES guidelines for the management of severe acute pancreatitis",
+            "edition": "World J Emerg Surg 2019;14:27 (Leppäniemi A et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6567462/"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "MRCP or endoscopic ultrasound",
+        "modalityTarget": "Unknown cause; suspected occult CBD stones without cholangitis",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Choledocholithiasis, microlithiasis.",
+        "clinicalRationale": "Preferred over diagnostic ERCP.",
+        "references": [
+          {
+            "title": "2019 WSES guidelines for the management of severe acute pancreatitis",
+            "edition": "World J Emerg Surg 2019;14:27 (Leppäniemi A et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6567462/"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "confirm",
+      "title": "Confirm the diagnosis and look for the cause",
+      "timeframe": "Arrival",
+      "actions": [
+        "Diagnosis needs 2 of 3: typical pain; lipase/amylase more than 3× ULN; characteristic imaging.",
+        "Ultrasound on admission for gallstones; LFTs; triglycerides and calcium if not biliary or alcohol.",
+        "Assess for SIRS and organ failure; calculate BISAP."
+      ]
+    },
+    {
+      "id": "fluids",
+      "title": "Early goal-directed fluid resuscitation",
+      "timeframe": "First 24–48 h",
+      "actions": [
+        "Start isotonic crystalloids early without waiting for haemodynamic worsening (Ringer's lactate may be preferred; evidence over saline is weak).",
+        "Reassess frequently (HR, BP, urine output, haematocrit, urea, creatinine, lactate) — avoid fluid overload.",
+        "WSES gives no fixed volume; adjust to age, weight, cardiac and renal function."
+      ]
+    },
+    {
+      "id": "analgesia",
+      "title": "Analgesia",
+      "timeframe": "From arrival",
+      "actions": [
+        "Adequate analgesia for all within 24 h; no evidence for restricting opioids.",
+        "Avoid NSAIDs if AKI. Multimodal approach; PCA; epidural in severe cases needing prolonged high-dose opioids."
+      ]
+    },
+    {
+      "id": "nutrition",
+      "title": "Feed early — do not starve",
+      "timeframe": "From admission",
+      "actions": [
+        "Do not make nil by mouth unless there is a clear reason such as vomiting (NICE).",
+        "Moderately severe or severe: enteral nutrition started within 72 h (gastric or jejunal); parenteral only if enteral fails or is contraindicated."
+      ]
+    },
+    {
+      "id": "antibiotics",
+      "title": "Antibiotics only for infection",
+      "timeframe": "Ongoing",
+      "actions": [
+        "No prophylactic antibiotics (WSES, NICE, MOH).",
+        "Suspected infected necrosis (deterioration, gas in collection, raised procalcitonin): antibiotics that penetrate necrosis covering Gram-negative, Gram-positive and anaerobes — e.g. piperacillin–tazobactam 4.5 g IV every 6 h (MOH Table 2 severe regimen); carbapenem only in the very critically ill; quinolones only for beta-lactam allergy.",
+        "No routine antifungal prophylaxis."
+      ]
+    },
+    {
+      "id": "biliary",
+      "title": "Gallstone pancreatitis",
+      "timeframe": "Admission",
+      "actions": [
+        "Cholangitis → ERCP. CBD obstruction → ERCP. No ERCP for predicted severe biliary pancreatitis without cholangitis or obstruction.",
+        "Mild gallstone pancreatitis: laparoscopic cholecystectomy during the same admission."
+      ]
+    },
+    {
+      "id": "severe",
+      "title": "Organ failure and complications",
+      "timeframe": "Any time",
+      "actions": [
+        "Organ dysfunction: HDU monitoring; persistent organ failure despite fluids → ICU.",
+        "Monitor for intra-abdominal hypertension; limit excess fluids and sedation.",
+        "Necrotic, infective, haemorrhagic or systemic complications: seek advice from a specialist pancreatic centre (NICE); endoscopic (or percutaneous) step-up approach for infected necrosis, delaying intervention where possible.",
+        "No specific drug therapy beyond organ support and nutrition (WSES)."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Recognise, investigate and manage acute pancreatitis in the emergency department."
+    ],
+    "references": [
+      {
+        "title": "2019 WSES guidelines for the management of severe acute pancreatitis",
+        "edition": "World J Emerg Surg 2019;14:27 (Leppäniemi A et al.)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6567462/",
+        "locator": "Statements on severity grading, imaging, laboratory parameters, risk scores (BISAP), antibiotics, ICU, fluids, analgesia, nutrition, ERCP and cholecystectomy; Tables 2–4"
+      },
+      {
+        "title": "NICE NG104: Pancreatitis",
+        "edition": "NICE guideline, 2018 (updated 2020)",
+        "url": "https://www.nice.org.uk/guidance/ng104",
+        "locator": "Section 1.2 Acute pancreatitis (recs 1.2.1–1.2.14)"
+      },
+      {
+        "title": "MOH Intra-abdominal Infections Treatment Protocol",
+        "edition": "Saudi Ministry of Health, 1st version 2022",
+        "url": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/Internal-Abdominal-infection-Treatment-Protocol.pdf",
+        "locator": "Pancreatitis section; Tables 1–2"
+      },
+      {
+        "title": "SFDA Saudi Drug Information System (registration search)",
+        "edition": "Accessed 11–12 Oct 2026",
+        "url": "https://sdi.sfda.gov.sa/"
+      }
+    ],
+    "keyPoints": [
+      "Diagnose with 2 of 3: pain, lipase over 3× ULN, imaging.",
+      "Ultrasound on admission for gallstones.",
+      "Early crystalloids with frequent reassessment; avoid overload.",
+      "Feed early; no prophylactic antibiotics.",
+      "Organ failure over 48 h = severe → ICU; CT at 72–96 h, not on day 1."
+    ],
+    "pitfalls": [
+      "CT on admission when the diagnosis is clear.",
+      "Prophylactic antibiotics.",
+      "Keeping patients nil by mouth without reason.",
+      "Assuming alcohol is the cause.",
+      "Missing cholangitis needing ERCP."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Stop alcohol and smoking.",
+      "Cholecystectomy prevents recurrence in gallstone pancreatitis.",
+      "Severe disease: long recovery; possible diabetes or enzyme insufficiency later."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable in the acute phase."
+    ],
+    "mdtReferrals": [
+      "Gastroenterology/endoscopy for ERCP; general surgery for cholecystectomy.",
+      "ICU for persistent organ failure; specialist pancreatic centre for complications.",
+      "Dietitian; alcohol services."
+    ],
+    "dischargeCriteria": [
+      "Pain controlled on oral analgesia, eating, no organ failure.",
+      "Cause identified and addressed (cholecystectomy done or planned; alcohol advice)."
+    ],
+    "followUpPlan": "Stop alcohol if alcohol-related; cholecystectomy on index admission for mild biliary pancreatitis; investigate idiopathic cases (repeat ultrasound, MRCP/EUS). Severe disease: recovery may take at least 3 times as long as the hospital stay (NICE)."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Diagnosis (2 of 3)",
+      "threshold": "Typical abdominal pain; lipase or amylase more than 3× ULN; characteristic imaging"
+    },
+    {
+      "criterion": "Mild (Revised Atlanta)",
+      "threshold": "No organ failure; no local or systemic complications"
+    },
+    {
+      "criterion": "Moderately severe",
+      "threshold": "Transient organ failure (under 48 h) and/or local or systemic complications without persistent organ failure"
+    },
+    {
+      "criterion": "Severe",
+      "threshold": "Persistent organ failure (over 48 h), single or multiple"
+    },
+    {
+      "criterion": "Critical (determinant-based)",
+      "threshold": "Persistent organ failure AND infected (peri)pancreatic necrosis"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Infected pancreatic necrosis (not prophylaxis)",
+        "patientGroup": "Adults",
+        "genericName": "Piperacillin–tazobactam",
+        "dose": "4.5 g",
+        "route": "IV",
+        "frequency": "Every 6 h",
+        "duration": "Guided by source control and cultures",
+        "adjustments": [
+          "Critically ill: meropenem 1 g IV q8h (MOH); beta-lactam allergy: quinolone + metronidazole",
+          "Renal dose adjustment"
+        ],
+        "monitoring": [
+          "Cultures, procalcitonin, clinical response"
+        ],
+        "sourceTitle": "MOH Intra-abdominal Infections Treatment Protocol",
+        "sourceUrl": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/Internal-Abdominal-infection-Treatment-Protocol.pdf",
+        "sourceEdition": "Pancreatitis section; Table 2 severe regimen"
+      }
+    ],
+    "note": "No antibiotics for sterile pancreatitis. Analgesic and fluid volumes are not specified by WSES or NICE — use local protocols. Check SFDA registration and hospital formulary."
+  },
+  "guidelineComparison": {
+    "title": "WSES 2019 vs NICE NG104 vs Saudi MOH IAI protocol",
+    "columns": [
+      "WSES 2019",
+      "NICE NG104",
+      "MOH IAI protocol"
+    ],
+    "rows": [
+      {
+        "parameter": "Prophylactic antibiotics",
+        "values": [
+          "Not recommended",
+          "Do not offer",
+          "Not recommended (including sterile necrosis)"
+        ]
+      },
+      {
+        "parameter": "When to treat",
+        "values": [
+          "Infected necrosis — agents that penetrate necrosis",
+          "Not specified",
+          "Necrotising pancreatitis with instability, persistent SIRS after 7–10 days off antibiotics, or proven infection"
+        ]
+      },
+      {
+        "parameter": "Feeding",
+        "values": [
+          "Enteral nutrition; avoid TPN",
+          "Do not keep nil by mouth without reason; enteral within 72 h if moderately severe/severe",
+          "Not addressed"
+        ]
+      },
+      {
+        "parameter": "Fluids",
+        "values": [
+          "Early isotonic crystalloids, frequent reassessment",
+          "Refers to NICE IV fluids guideline",
+          "Not addressed"
+        ]
+      }
+    ],
+    "note": "All three agree: no prophylactic antibiotics. Feed early."
+  }
+}
