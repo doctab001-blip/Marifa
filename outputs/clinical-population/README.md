@@ -73,8 +73,8 @@ current or deployed.
 
 ## Continuation
 
-Use `plan.json` as the durable master/cursor. Five full batches of ten remain
-after batch 003, plus one final remainder. Do not silently relax strict batch
+Use `plan.json` as the durable master/cursor. Four full batches of ten remain
+after batch 004, plus one final remainder. Do not silently relax strict batch
 size for the remainder. Report it separately after full batches finish.
 
 For each new batch, refresh the live catalogue/version baseline, reconcile
@@ -84,7 +84,7 @@ Do not require a new OpenAI API key: the background Codex run can research and
 prepare source-backed extracts directly with its browsing/file tools.
 
 The preparation script now derives source-text hashes from each batch folder
-and permits the official hosts used through batch 003. Review and extend its
+and permits the official hosts used through batch 004. Review and extend its
 source-host allowlist only for retrieved official sources in each future batch;
 do not bypass provenance validation.
 Persist local artifacts exclusively, never overwriting a prepared payload.
@@ -120,5 +120,30 @@ Both payload schemas and `validatePathway` accepted all ten drafts; eight
 focused tests and TypeScript checks passed. The guarded transaction inserted
 exactly ten rows. Independent read-back verified 261 total versions, exactly
 ten batch-003 rows, 81 unchanged current versions, and all 251 pre-batch records
+unchanged by ID, content hash, status and current flag. Nothing was approved,
+published, made current or deployed.
+
+## Completed batch 004
+
+The next ten alphabetical master-catalogue scenarios now have versions named
+`official-extraction-2026-10-11-b004`. Each is an additive, non-current draft
+with pending clinical review and null reviewer, approval, publication and new
+verification dates. Existing current content, IDs, references and governance
+history remain unchanged; inherited sections are explicitly described as not
+newly verified.
+
+Official NICE, USPSTF and Joint British Diabetes Societies retrieval artifacts
+are in `batch-004/sources`. Exact HTTPS URLs, editions, recommendation or PDF
+locators and patient scopes are recorded in `extractions.json`. The pneumonia
+amoxicillin and adult DKA insulin regimens were included only where the selected
+sources supported an exact dose, route, frequency and duration. Missing complete
+contraindication sets, local formulary checks and jurisdiction conflicts are
+explicit review gaps. The March 2023 DKA source is flagged for reconciliation
+with the 2024 international consensus and current Saudi protocols.
+
+Both payload schemas and `validatePathway` accepted all ten drafts; eight
+focused tests and TypeScript checks passed. The guarded transaction inserted
+exactly ten rows. Independent read-back verified 271 total versions, exactly
+ten batch-004 rows, 81 unchanged current versions, and all 261 pre-batch records
 unchanged by ID, content hash, status and current flag. Nothing was approved,
 published, made current or deployed.

@@ -6,7 +6,8 @@
   "completedBatches": [
     1,
     2,
-    3
+    3,
+    4
   ],
   "batches": [
     {
@@ -310,7 +311,7 @@
       "batch": 4,
       "size": 10,
       "version": "official-extraction-2026-10-11-b004",
-      "state": "pending",
+      "state": "database-readback-verified",
       "entries": [
         {
           "content_hash": "9f8b0791aeb428127b7be7520be53cb0",
@@ -402,7 +403,8 @@
           "version": "1.0-draft",
           "version_id": "625f0d83-3863-47f9-a64e-55c0355f3240"
         }
-      ]
+      ],
+      "readback": "batch-004/readback.json"
     },
     {
       "batch": 5,
@@ -820,6 +822,6 @@
     "status": "ACTIVE",
     "cadence": "hourly",
     "destination": "this chat",
-    "completion": "Disable after five remaining full batches; report final single-topic remainder."
+    "completion": "Disable after four remaining full batches; report final single-topic remainder."
   }
 }

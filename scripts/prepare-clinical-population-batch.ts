@@ -32,7 +32,7 @@ const master = JSON.parse(readFileSync("outputs/clinical-population/master-catal
 const allowedHosts = new Set([
   "www.nice.org.uk", "www.resus.org.uk", "pmc.ncbi.nlm.nih.gov",
   "www.cdc.gov", "www.uspreventiveservicestaskforce.org",
-  "www.gov.uk", "www.moh.gov.sa",
+  "www.gov.uk", "www.moh.gov.sa", "abcd.care",
 ]);
 const prepared = before.map(item => {
   const extraction = extracted.find(x => x.title === item.title);
