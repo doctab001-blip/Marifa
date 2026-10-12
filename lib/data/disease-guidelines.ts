@@ -11,7 +11,7 @@ import { createSupabaseDataClient } from "@/lib/supabase/data-client";
 import { hasMedicalSpeciality, inferMedicalSpecialityTags } from "@/lib/medical-specialities";
 import { isClinicalDirectoryEligible } from "@/lib/data/clinical-directory-eligibility";
 
-export type DiseaseGuidelineSummary = Pick<DiseaseDetail, "id" | "title" | "specialty" | "authority" | "status" | "version" | "lastReviewed" | "pillar" | "clinicalReviewStatus"> & { summary: string; sourceType?: string; speciality?: string; subSpecialities?: string[] };
+export type DiseaseGuidelineSummary = Pick<DiseaseDetail, "id" | "title" | "specialty" | "authority" | "status" | "version" | "lastReviewed" | "pillar" | "clinicalReviewStatus"> & { summary: string; sourceType?: string; speciality?: string; subSpecialities?: string[]; keywords?: string[] };
 type GuidelineVersionJoin = { content: unknown; source_title?: string | null; source_url?: string | null };
 type GuidelineRow = { id: string; title: string; specialty: string | null; speciality_id?: string | null; speciality?: { name: string } | { name: string }[] | null; sub_specialities?: string[] | null; status: string; source_type: string; guideline_versions: GuidelineVersionJoin | GuidelineVersionJoin[] };
 
@@ -38,11 +38,39 @@ function isApproved(disease: DiseaseDetail) {
   return disease.status === "approved" || disease.status === "published";
 }
 
+const MAX_SEARCH_KEYWORDS = 40;
+const MAX_KEYWORD_LENGTH = 80;
+
+// Search-only terms taken from the topic's own content (symptoms, signs, differentials, drugs, tests,
+// triggers). They let clinicians find a topic by what they see or prescribe, not just by its title.
+export function searchKeywords(disease: DiseaseDetail): string[] {
+  const candidates = [
+    ...disease.presentation.symptoms,
+    ...disease.presentation.physicalSigns,
+    ...(disease.presentation.precipitants ?? []),
+    ...disease.differentials.map(({ condition }) => condition),
+    ...(disease.medicationPlan?.regimens.map(({ genericName }) => genericName) ?? []),
+    ...disease.investigations.ruleIn.map(({ testName }) => testName),
+    ...(disease.diagnosticCriteria?.map(({ criterion }) => criterion) ?? []),
+  ];
+  const seen = new Set<string>();
+  const keywords: string[] = [];
+  for (const candidate of candidates) {
+    const text = candidate.trim().slice(0, MAX_KEYWORD_LENGTH);
+    const key = text.toLocaleLowerCase();
+    if (!text || seen.has(key)) continue;
+    seen.add(key);
+    keywords.push(text);
+    if (keywords.length >= MAX_SEARCH_KEYWORDS) break;
+  }
+  return keywords;
+}
+
 function toSummary(disease: DiseaseDetail, row: GuidelineRow): Omit<DiseaseGuidelineSummary, "sourceType"> {
   const inferred = inferMedicalSpecialityTags(disease.specialty);
   const catalogSpeciality = Array.isArray(row.speciality) ? row.speciality[0]?.name : row.speciality?.name;
   const speciality = catalogSpeciality ?? disease.speciality ?? inferred[0] ?? disease.specialty;
-  return { id: disease.id, title: disease.title, specialty: disease.specialty, speciality, subSpecialities: disease.sub_specialities ?? row.sub_specialities ?? inferred.filter((tag) => tag !== speciality), authority: disease.authority, clinicalReviewStatus: disease.clinicalReviewStatus, status: disease.status, version: disease.version, lastReviewed: disease.lastReviewed, pillar: disease.pillar, summary: disease.pathophysiology.summary };
+  return { id: disease.id, title: disease.title, specialty: disease.specialty, speciality, subSpecialities: disease.sub_specialities ?? row.sub_specialities ?? inferred.filter((tag) => tag !== speciality), authority: disease.authority, clinicalReviewStatus: disease.clinicalReviewStatus, status: disease.status, version: disease.version, lastReviewed: disease.lastReviewed, pillar: disease.pillar, summary: disease.pathophysiology.summary, keywords: searchKeywords(disease) };
 }
 
 export { CLINICAL_DIRECTORY_TAG };
@@ -110,7 +138,7 @@ async function loadDirectory(): Promise<DirectoryPayload> {
 // With temporary open administration, clinical data is read with a server key rather than the viewer's
 // cookies, so one validated catalogue can be shared across requests. Otherwise row-level security depends
 // on the signed-in viewer and the catalogue is only reused within a single request.
-const loadSharedDirectory = unstable_cache(loadDirectory, ["clinical-directory-v2"], { tags: [CLINICAL_DIRECTORY_TAG], revalidate: CROSS_REQUEST_CACHE_SECONDS });
+const loadSharedDirectory = unstable_cache(loadDirectory, ["clinical-directory-v3"], { tags: [CLINICAL_DIRECTORY_TAG], revalidate: CROSS_REQUEST_CACHE_SECONDS });
 
 const getDirectoryForRequest = cache(async (): Promise<DirectoryPayload | null> => {
   if (!isSupabaseConfigured()) return null;

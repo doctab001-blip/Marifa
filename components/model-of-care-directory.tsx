@@ -5,6 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import { DiseaseCard } from "@/components/diseases/DiseaseCard";
 import type { DiseaseDirectoryResult, DiseaseGuidelineSummary } from "@/lib/data/disease-guidelines";
 import type { DiseaseDetail } from "@/lib/validations/disease";
+import { searchTopics } from "@/lib/topic-search";
 
 type Pillar = DiseaseDetail["pillar"];
 type PillarFilter = Pillar | "all";
@@ -34,19 +35,18 @@ export function ModelOfCareDirectory({ diseases, state, rejectedCount = 0, initi
   initialQuery?: string;
 }) {
   const [query, setQuery] = useState(initialQuery);
-  const [debouncedQuery, setDebouncedQuery] = useState(initialQuery.trim().toLocaleLowerCase());
+  const [debouncedQuery, setDebouncedQuery] = useState(initialQuery.trim());
   const [activePillar, setActivePillar] = useState<PillarFilter>("all");
 
   useEffect(() => {
-    const timer = window.setTimeout(() => setDebouncedQuery(query.trim().toLocaleLowerCase()), 250);
+    const timer = window.setTimeout(() => setDebouncedQuery(query.trim()), 250);
     return () => window.clearTimeout(timer);
   }, [query]);
 
-  const filteredDiseases = useMemo(() => diseases.filter((disease) => {
-    const matchesPillar = activePillar === "all" || disease.pillar === activePillar;
-    const searchText = [disease.title, disease.summary, disease.specialty, disease.authority, disease.pillar].join(" ").toLocaleLowerCase();
-    return matchesPillar && (!debouncedQuery || searchText.includes(debouncedQuery));
-  }), [activePillar, debouncedQuery, diseases]);
+  const filteredDiseases = useMemo(
+    () => searchTopics(diseases, debouncedQuery).filter((disease) => activePillar === "all" || disease.pillar === activePillar),
+    [activePillar, debouncedQuery, diseases],
+  );
 
   return (
     <>

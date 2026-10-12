@@ -12,6 +12,7 @@ export function searchDiseases(items: DiseaseTopic[], query: string, specialty =
       const searchable = [item.arabicName, item.summary, item.specialty, ...item.abbreviations, ...item.synonyms, ...item.symptoms].map(normalize);
       let score = name === normalized ? 120 : name.startsWith(normalized) ? 90 : name.includes(normalized) ? 70 : 0;
       for (const term of searchable) {
+        if (!term) continue;
         if (term === normalized) score = Math.max(score, 100);
         else if (term.startsWith(normalized)) score = Math.max(score, 75);
         else if (term.includes(normalized) || normalized.includes(term)) score = Math.max(score, 50);

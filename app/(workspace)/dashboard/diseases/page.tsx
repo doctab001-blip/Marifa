@@ -5,7 +5,7 @@ import { getApprovedDiseaseGuidelines } from "@/lib/data/disease-guidelines";
 
 export default async function DiseaseDirectoryPage({ searchParams }: { searchParams: Promise<{ q?: string | string[] }> }) {
   const params = await searchParams;
-  const initialQuery = typeof params.q === "string" ? params.q : "";
+  const initialQuery = (Array.isArray(params.q) ? params.q[0] : params.q)?.trim().slice(0, 200) ?? "";
   const result = await getApprovedDiseaseGuidelines();
 
   return (
@@ -24,7 +24,7 @@ export default async function DiseaseDirectoryPage({ searchParams }: { searchPar
 
       <DiseaseManagementNavigation active="directory" />
 
-      <DiseaseDirectoryClient diseases={result.diseases} state={result.state} rejectedCount={result.rejectedCount} withheldCount={result.withheldCount} initialQuery={initialQuery} />
+      <DiseaseDirectoryClient key={initialQuery} diseases={result.diseases} state={result.state} rejectedCount={result.rejectedCount} withheldCount={result.withheldCount} initialQuery={initialQuery} />
     </main>
   );
 }

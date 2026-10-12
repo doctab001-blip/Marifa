@@ -32,6 +32,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { searchTopics } from "@/lib/topic-search";
 
 type NavItem = { href: string; label: string; icon: LucideIcon };
 
@@ -211,7 +212,7 @@ function ModulePanel({ module, pathname, temporaryAdminMode, onShowAll }: { modu
   );
 }
 
-type NavTopic = { id: string; title: string; pillar: string };
+type NavTopic = { id: string; title: string; pillar: string; speciality?: string; keywords?: string[] };
 type TopicState = { status: "loading" } | { status: "ready"; topics: NavTopic[] } | { status: "error" };
 
 // One request per browser session; the list is shared by every topic page.
@@ -246,9 +247,10 @@ function TopicNavigator({ currentId }: { currentId: string | null }) {
   }, []);
 
   const topics = useMemo(() => (state.status === "ready" ? state.topics : []), [state]);
-  const needle = query.trim().toLocaleLowerCase();
+  const needle = query.trim();
   const groups = useMemo(() => {
-    const filtered = needle ? topics.filter(({ title }) => title.toLocaleLowerCase().includes(needle)) : topics;
+    // Same engine as the directory search: abbreviations (DKA), symptoms and drugs find topics here too.
+    const filtered = needle ? searchTopics(topics, needle) : topics;
     const known = carePillars.map((pillar) => ({ pillar, items: filtered.filter((topic) => topic.pillar === pillar) }));
     const other = filtered.filter((topic) => !carePillars.includes(topic.pillar));
     return [...known, { pillar: "Other", items: other }].filter(({ items }) => items.length > 0);

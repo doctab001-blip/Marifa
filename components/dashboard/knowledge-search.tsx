@@ -3,11 +3,14 @@
 import { useState } from "react";
 import { ArrowRight, Search } from "lucide-react";
 
+// Every scope searches the published clinical library, which is where guidelines, pathways and the
+// medicines used in them live. (The Clinical Guidelines workspace and the Formulary module do not
+// have a searchable library yet, so sending queries there returned nothing.)
 const scopes = [
   { id: "diseases", label: "Diseases", action: "/dashboard/diseases", placeholder: "Search a condition, e.g. “DKA”, “asthma” or “sepsis”" },
-  { id: "guidelines", label: "Guidelines", action: "/dashboard/clinical-guidelines", placeholder: "Search NICE / NHS-aligned guidelines" },
+  { id: "guidelines", label: "Guidelines", action: "/dashboard/diseases", placeholder: "Search published guidelines, e.g. “NICE”, “antenatal” or “screening”" },
   { id: "pathways", label: "Pathways", action: "/dashboard/diseases", placeholder: "Search a clinical pathway, e.g. “chest pain” or “AKI”" },
-  { id: "formulary", label: "Formulary", action: "/dashboard/medicines-formulary", placeholder: "Search a medicine or formulary entry" },
+  { id: "formulary", label: "Formulary", action: "/dashboard/diseases", placeholder: "Search a medicine to find the guidelines that use it, e.g. “furosemide”" },
 ] as const;
 
 export function KnowledgeSearch() {

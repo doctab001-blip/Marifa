@@ -22,16 +22,24 @@ export const medicalSpecialities = [
   { name: "Anaesthesiology", terms: ["anaesthesiology", "anesthesiology", "anaesthesia", "anesthesia"] },
 ] as const;
 
+const escapeRegExp = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+// Whole-word match, so the short term "ent" (ENT) cannot match inside "Preventive" or "Management".
+function findTerm(haystack: string, term: string) {
+  const match = new RegExp(`(?<![\\p{L}\\p{N}])${escapeRegExp(term)}(?![\\p{L}\\p{N}])`, "u").exec(haystack);
+  return match ? match.index : -1;
+}
+
 export function hasMedicalSpeciality(value: string, selected: string) {
   const option = medicalSpecialities.find((item) => item.name === selected);
   const haystack = value.toLocaleLowerCase();
-  return Boolean(option && option.terms.some((term) => haystack.includes(term)));
+  return Boolean(option && option.terms.some((term) => findTerm(haystack, term) >= 0));
 }
 
 export function inferMedicalSpecialityTags(value: string) {
   const text = value.toLocaleLowerCase();
   return medicalSpecialities
-    .map(({ name, terms }) => ({ name, position: Math.min(...terms.map((term) => text.indexOf(term)).filter((position) => position >= 0)) }))
+    .map(({ name, terms }) => ({ name, position: Math.min(...terms.map((term) => findTerm(text, term)).filter((position) => position >= 0)) }))
     .filter(({ position }) => Number.isFinite(position))
     .sort((a, b) => a.position - b.position)
     .map(({ name }) => name);
