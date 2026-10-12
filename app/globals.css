@@ -1267,7 +1267,7 @@ h1, h2, h3, h4, h5, h6, .heading, .brand-name, .metric-value { font-family: var(
 /* ── Dashboard ─────────────────────────────────────────────────
    Layered surfaces: crisp 1px borders plus soft shadows on every main container,
    with light teal / yellow / baby blue for secondary surfaces and badges. */
-.dashboard-page { display: grid; gap: 20px; }
+.dashboard-page { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
 .dashboard-page > .demo-banner, .dashboard-page > .dashboard-access-notice { margin-bottom: 0; }
 .dashboard-page .card { box-shadow: var(--shadow-sm); border-color: #dde5e6; }
 .dashboard-page .section-card, .dashboard-page .ops-card, .dashboard-page .metric-card { box-shadow: var(--shadow-md); }
@@ -1315,6 +1315,7 @@ h1, h2, h3, h4, h5, h6, .heading, .brand-name, .metric-value { font-family: var(
 
 /* Metric cards */
 .metric-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.dashboard-page > * { min-width: 0; }
 .metric-card { position: relative; display: flex; flex-direction: column; gap: 4px; padding: 18px; overflow: hidden; }
 .metric-card::before { content: ""; position: absolute; inset: 0 0 auto; height: 3px; background: var(--metric-accent, var(--royal)); }
 .metric-teal { --metric-accent: #26c6da; }
@@ -1381,17 +1382,18 @@ h1, h2, h3, h4, h5, h6, .heading, .brand-name, .metric-value { font-family: var(
 .ops-met { color: #00796b; }
 .ops-missed { color: #b26a00; }
 .ops-target-note { display: block; margin-top: 4px; color: var(--muted); font-size: .72rem; }
-.ops-columns { position: relative; flex: 1; min-height: 150px; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); align-items: end; gap: 8px; padding: 18px 0 0; border-bottom: 1px solid var(--line); }
-.ops-column { height: 100%; display: grid; grid-template-rows: minmax(0, 1fr) auto; justify-items: center; gap: 4px; }
-.ops-column-bar { align-self: end; width: 100%; max-width: 26px; min-height: 4px; border-radius: 6px 6px 2px 2px; background: linear-gradient(180deg, #81d4fa, #0288d1); }
+.ops-columns { flex: 1; display: grid; grid-template-rows: minmax(130px, 1fr) auto; gap: 6px; }
+.ops-plot { position: relative; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); align-items: end; justify-items: center; gap: 8px; padding-top: 6px; border-bottom: 1px solid var(--line); }
+.ops-hours { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 8px; text-align: center; }
+.ops-hours small { color: var(--muted); font-size: .66rem; font-variant-numeric: tabular-nums; }
+.ops-column-bar { width: 100%; max-width: 26px; min-height: 4px; border-radius: 6px 6px 2px 2px; background: linear-gradient(180deg, #81d4fa, #0288d1); }
 .ops-column-over { background: linear-gradient(180deg, #f8bbd0, #c2185b); }
-.ops-column small { color: var(--muted); font-size: .66rem; font-variant-numeric: tabular-nums; }
-.ops-target { position: absolute; left: 0; right: 0; margin-bottom: 18px; border-top: 1.5px dashed #90a4ae; pointer-events: none; }
-.ops-target em { position: absolute; right: 0; top: -17px; color: #607d8b; font-size: .66rem; font-style: normal; font-weight: 600; }
+.ops-target { position: absolute; left: 0; right: 0; z-index: 1; border-top: 1.5px dashed #546e7a; pointer-events: none; }
+.ops-target em { position: absolute; left: 0; top: 2px; padding: 0 5px; border-radius: 4px; color: #455a64; background: rgba(255, 255, 255, .88); font-size: .66rem; font-style: normal; font-weight: 600; }
 
 /* Columns, update feed, empty states */
 .dashboard-columns { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(280px, .75fr); gap: 20px; align-items: start; }
-.dashboard-stack { display: grid; gap: 20px; align-content: start; }
+.dashboard-stack { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; align-content: start; min-width: 0; }
 .dashboard-page .section-head h2 { font-size: .98rem; font-weight: 700; }
 .dashboard-page .section-link { font-weight: 650; }
 .dashboard-page .topic-icon { color: var(--accent-teal-ink); background: var(--accent-teal); border: 1px solid var(--accent-teal-line); }

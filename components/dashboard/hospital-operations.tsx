@@ -47,13 +47,13 @@ export function HospitalOperations({ snapshot }: { snapshot: OperationsSnapshot 
           <div className="ops-figure">{edWait.currentMedianMinutes}<small> min median, arrival to decision</small></div>
           <p className="ops-note">Target {edWait.targetMinutes / 60} hours · {breaches ? `${breaches} of ${edWait.byHour.length} periods above target` : "all periods within target"}</p>
           <div className="ops-columns" role="img" aria-label={`ED median wait by hour: ${edWait.byHour.map(({ hour, minutes }) => `${hour}:00 ${minutes} minutes`).join(", ")}`}>
-            <span className="ops-target" style={{ bottom: `${(edWait.targetMinutes / peakMinutes) * 100}%` }} aria-hidden="true"><em>Target</em></span>
-            {edWait.byHour.map(({ hour, minutes }) => (
-              <div className="ops-column" key={hour} aria-hidden="true">
-                <span className={minutes > edWait.targetMinutes ? "ops-column-bar ops-column-over" : "ops-column-bar"} style={{ height: `${(minutes / peakMinutes) * 100}%` }} title={`${hour}:00 · ${minutes} min`} />
-                <small>{hour}</small>
-              </div>
-            ))}
+            <div className="ops-plot" aria-hidden="true">
+              <span className="ops-target" style={{ bottom: `${(edWait.targetMinutes / peakMinutes) * 100}%` }}><em>Target {edWait.targetMinutes} min</em></span>
+              {edWait.byHour.map(({ hour, minutes }) => (
+                <span key={hour} className={minutes > edWait.targetMinutes ? "ops-column-bar ops-column-over" : "ops-column-bar"} style={{ height: `${(minutes / peakMinutes) * 100}%` }} title={`${hour}:00 · ${minutes} min`} />
+              ))}
+            </div>
+            <div className="ops-hours" aria-hidden="true">{edWait.byHour.map(({ hour }) => <small key={hour}>{hour}</small>)}</div>
           </div>
         </article>
 
@@ -69,7 +69,7 @@ export function HospitalOperations({ snapshot }: { snapshot: OperationsSnapshot 
                     <span className={met ? "meter-teal" : "meter-amber"} style={{ width: `${percent}%` }} />
                     <i style={{ left: `${target}%` }} title={`Target ${target}%`} aria-hidden="true" />
                   </div>
-                  <small className="ops-target-note">Target {target}% · {met ? "met" : `${target - percent} points below`}</small>
+                  <small className="ops-target-note">Target {target}% · {met ? "met" : `${target - percent} ${target - percent === 1 ? "point" : "points"} below`}</small>
                 </li>
               );
             })}
