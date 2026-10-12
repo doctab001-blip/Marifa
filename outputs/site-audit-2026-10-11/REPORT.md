@@ -86,3 +86,29 @@ A local DKA protocol must choose one set of thresholds.
 ## 6. Next step to finish the rollout
 
 Apply the demonstrated structure to the remaining 79 topics, starting with the 60 generic published topics. Each needs the same source-first rewrite. Make it a new under-review version, cite the page or section for every claim, check SFDA registration, and record source conflicts.
+
+## Update 12 Oct 2026 — emergency-format rewrites complete for Urgent Care
+
+All 21 Urgent Care topics now have an emergency-format version (Pathophysiology · Signs & symptoms · Investigations with normal vs deranged values · Management) with a numbered references list. Every new version is `under_review` / clinical review `pending`; no clinical approval was assigned and all earlier versions remain in history.
+
+| Topic | Version shown | Main sources |
+|---|---|---|
+| DKA, HHS, hypoglycaemia | emergency-2026-10-12-v1 | Saudi Diabetes CPG 2021, MOH protocols 005/007, ADA/EASD 2024 |
+| Anaphylaxis | v1 | MOH anaphylaxis protocol v1.2, RCUK 2021 |
+| Sepsis ×2 | v1 | SSC 2021, MOH LRTI/UTI/IAI protocols |
+| CAP | v1 | MOH LRTI protocol, ATS/IDSA 2019, ATS 2025 |
+| DVT/PE | v1 | MOH DVT 2024 and PE protocols, ESC summary |
+| Asthma ×2 | v1 | SINA 2024 (Saudi Thoracic Society) |
+| AECOPD | v1 | GOLD 2024, NICE NG115, Saudi Thoracic Society 2025 |
+| AKI | v2 | KDIGO 2012, NICE NG148, UKKA hyperkalaemia 2023; KDIGO 2026 public review DRAFT shown as labelled comparison only |
+| Appendicitis | v1 | WSES 2020, MOH IAI protocol |
+| Bowel obstruction | v1 | WSES Bologna ASBO 2017 (LBO not covered) |
+| Pancreatitis | v1 | WSES 2019, NICE NG104, MOH IAI protocol |
+| Upper GI bleeding | v1 | NICE CG141, BSG bundle 2020, MOH reversal + IAI protocols |
+| Acute heart failure | v1 | Saudi Heart Association 2019 + 2023 update, SHA biomarkers 2022, NICE CG187 |
+| ACS | v2 | Australian ACS 2025, NICE NG185, SHA biomarkers; carries forward user-supplied doses (unverified) |
+| ACS escalation pathway | v1 | as above (without user-supplied doses) |
+| Acute ischaemic stroke | v1 | NICE NG128, ESO IVT 2021, alteplase label |
+| Poisoning | v1 | MOH alcohol & drugs protocol, ANZ paracetamol 2020 |
+
+Open gaps (flagged on each page): ESC/AHA/ACC texts blocked by publisher; GOLD NIV thresholds (figure); local formulary/SFDA availability; drug doses not stated by sources left to local protocol; duplicate catalogue topics (asthma, sepsis, ACS) recommended for merge.
