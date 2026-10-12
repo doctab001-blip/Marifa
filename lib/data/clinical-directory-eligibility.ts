@@ -7,6 +7,7 @@
  * in Supabase; this list changes presentation only.
  */
 export const CLINICAL_DIRECTORY_MINIMUM_SCORE = 80;
+export const CLINICAL_DIRECTORY_DRAFT_TOPIC_COUNT = 54;
 
 export const clinicalDirectoryEligibility = {
   "a1010000-0000-4000-8000-000000000005": { score: 84, version: "emergency-2026-10-12-v1-live" },

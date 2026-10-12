@@ -5,7 +5,7 @@ import { DiseaseDetailSchema, type DiseaseDetail } from "@/lib/validations/disea
 import { isSupabaseConfigured } from "@/lib/supabase/config";
 import { createSupabaseDataClient } from "@/lib/supabase/data-client";
 import { hasMedicalSpeciality, inferMedicalSpecialityTags } from "@/lib/medical-specialities";
-import { isClinicalDirectoryEligible } from "@/lib/data/clinical-directory-eligibility";
+import { CLINICAL_DIRECTORY_DRAFT_TOPIC_COUNT, isClinicalDirectoryEligible } from "@/lib/data/clinical-directory-eligibility";
 
 export type DiseaseGuidelineSummary = Pick<DiseaseDetail, "id" | "title" | "specialty" | "authority" | "status" | "version" | "lastReviewed" | "pillar" | "clinicalReviewStatus"> & { summary: string; sourceType?: string; speciality?: string; subSpecialities?: string[] };
 type GuidelineVersionJoin = { content: unknown; source_title?: string | null; source_url?: string | null };
@@ -57,7 +57,6 @@ export async function getApprovedDiseaseGuidelines(filters: { speciality?: strin
 
     const diseases: DiseaseGuidelineSummary[] = [];
     let rejectedCount = 0;
-    let withheldCount = 0;
     for (const row of (data ?? []) as unknown as GuidelineRow[]) {
       if (Object.hasOwn(mergedTopics, row.id)) continue;
       const parsed = DiseaseDetailSchema.safeParse(currentContent(row));
@@ -66,7 +65,6 @@ export async function getApprovedDiseaseGuidelines(filters: { speciality?: strin
         continue;
       }
       if (!isClinicalDirectoryEligible(row.id, parsed.data.version)) {
-        withheldCount += 1;
         continue;
       }
       const summary = toSummary(parsed.data, row);
@@ -99,7 +97,7 @@ export async function getApprovedDiseaseGuidelines(filters: { speciality?: strin
         }
       }
     }
-    return { diseases, state: "ready", rejectedCount, withheldCount };
+    return { diseases, state: "ready", rejectedCount, withheldCount: CLINICAL_DIRECTORY_DRAFT_TOPIC_COUNT };
   } catch (error) {
     console.error("[disease-guidelines] directory load failed", error);
     return { diseases: [], state: "unavailable", rejectedCount: 0, withheldCount: 0 };

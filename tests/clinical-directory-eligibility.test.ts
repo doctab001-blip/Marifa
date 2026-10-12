@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  CLINICAL_DIRECTORY_DRAFT_TOPIC_COUNT,
   CLINICAL_DIRECTORY_MINIMUM_SCORE,
   clinicalDirectoryEligibility,
   isClinicalDirectoryEligible,
@@ -10,6 +11,10 @@ describe("clinical directory release boundary", () => {
     const records = Object.entries(clinicalDirectoryEligibility);
     expect(records).toHaveLength(27);
     expect(records.every(([, record]) => record.score >= CLINICAL_DIRECTORY_MINIMUM_SCORE)).toBe(true);
+  });
+
+  it("tracks the complete below-threshold correction queue", () => {
+    expect(CLINICAL_DIRECTORY_DRAFT_TOPIC_COUNT).toBe(54);
   });
 
   it("requires both an eligible topic and its audited live version", () => {
