@@ -10,7 +10,7 @@ export async function proxy(request: NextRequest) {
 
   if (isTemporaryOpenAdminMode()) {
     return isAuthRoute
-      ? NextResponse.redirect(new URL("/dashboard/diseases/drafts", request.url))
+      ? NextResponse.redirect(new URL("/dashboard", request.url))
       : NextResponse.next({ request });
   }
 

@@ -1587,3 +1587,23 @@ h1, h2, h3, h4, h5, h6, .heading, .brand-name, .metric-value { font-family: var(
 @media (prefers-reduced-motion: reduce) {
   .calculator-completion span,.calculator-evidence summary > svg { transition: none; }
 }
+
+/* Knowledge & Governance Hub */
+.knowledge-hub { display: grid; gap: 18px; }
+.scope-chip { padding: 5px 13px; border: 1px solid var(--accent-blue-line); border-radius: 999px; color: var(--accent-blue-ink); background: rgba(255, 255, 255, .8); font-size: .78rem; font-weight: 600; cursor: pointer; transition: background .12s ease, border-color .12s ease; }
+.scope-chip:hover { border-color: #4fb3e8; background: #fff; }
+.scope-chip-active { color: #fff; border-color: #0288d1; background: linear-gradient(135deg, #0288d1, var(--royal)); }
+.hub-columns { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+.guideline-feed { display: grid; margin: 0; padding: 0; list-style: none; }
+.guideline-feed li + li { border-top: 1px solid #eef1f5; }
+.guideline-feed-row { display: flex; align-items: center; gap: 13px; padding: 12px 0; }
+.guideline-feed-main { display: grid; flex: 1; min-width: 0; gap: 3px; }
+.guideline-feed-main strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.guideline-feed-meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; color: #5b6b76; font-size: .76rem; }
+.pathway-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+.pathway-card { display: grid; gap: 8px; padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: #fff; transition: border-color .12s ease, box-shadow .12s ease; }
+.pathway-card:hover { border-color: #4fb3e8; box-shadow: var(--shadow-sm); }
+.pathway-card h3 { margin: 0; font-size: .95rem; }
+.pathway-card p { margin: 0; color: #4a5b66; font-size: .8rem; }
+.pathway-card .pathway-cta { display: inline-flex; align-items: center; gap: 4px; color: var(--accent-blue-ink); font-size: .78rem; font-weight: 650; }
+@media (max-width: 960px) { .hub-columns { grid-template-columns: minmax(0, 1fr); } }
