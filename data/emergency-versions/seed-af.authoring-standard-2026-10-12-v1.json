@@ -1,0 +1,406 @@
+{
+  "id": "a1020000-0000-4000-8000-000000000001",
+  "title": "Atrial Fibrillation [Adapted from NICE]",
+  "specialty": "Cardiology and Internal Medicine",
+  "authority": "MOH",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Adults with atrial fibrillation (AF) or flutter: detection, stroke and bleeding risk, anticoagulation, rate and rhythm control, and acute presentations. Verified against the Saudi MOH/SCEBHC antithrombotic guideline for non-valvular AF (2014, Saudi Heart Association panel) and NICE NG196; anticoagulant doses from the Saudi guideline and FDA labels.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Saudi guideline (2014) does not cover edoxaban or CHA2DS2-VASc",
+      "Rate/rhythm drug doses not reproduced",
+      "SFDA registration and formulary not checked"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "a1020000-0000-4000-8000-000000000001"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "AF is a supraventricular arrhythmia with disorganised atrial activity and an irregular ventricular response. Loss of atrial contraction causes stasis in the left atrial appendage, so thrombus and stroke are the main risks; fast ventricular rates cause symptoms and can impair left ventricular function.",
+    "keyMechanisms": [
+      "Triggers (often pulmonary vein ectopy) act on a remodelled atrium (hypertension, valve disease, ageing, obesity).",
+      "Atrial stasis → left atrial appendage thrombus → embolic stroke.",
+      "Persistent fast rates → tachycardia-mediated cardiomyopathy."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Palpitations, breathlessness, dizziness or syncope, chest discomfort; may be asymptomatic (NICE 1.1.1).",
+      "Stroke or TIA may be the first presentation."
+    ],
+    "physicalSigns": [
+      "Irregularly irregular pulse; pulse deficit; signs of heart failure or valve disease."
+    ],
+    "redFlags": [
+      "Haemodynamic instability (shock, ischaemia, acute heart failure) — emergency electrical cardioversion (NICE 1.8.1)",
+      "Acute decompensated heart failure — senior input; avoid calcium-channel blockers (NICE 1.8.3)",
+      "Stroke symptoms — stroke pathway"
+    ],
+    "precipitants": [
+      "Hypertension",
+      "Valve disease",
+      "Heart failure",
+      "Thyrotoxicosis",
+      "Alcohol",
+      "Obesity, sleep apnoea",
+      "Acute illness, surgery"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Atrial flutter",
+      "distinguishingFeatures": "Regular sawtooth flutter waves; same stroke risk assessment (NICE 1.2.1)."
+    },
+    {
+      "condition": "Multifocal atrial tachycardia",
+      "distinguishingFeatures": "Discrete P waves of varying shape."
+    },
+    {
+      "condition": "Frequent ectopics",
+      "distinguishingFeatures": "ECG distinguishes."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "12-lead ECG",
+        "modalityTarget": "Irregular pulse on palpation (NICE 1.1.2)",
+        "targetCondition": "AF",
+        "expectedFinding": "Irregular RR intervals without P waves.",
+        "clinicalRationale": "Confirms diagnosis; ambulatory ECG if paroxysmal (NICE 1.1.3).",
+        "normalValue": "Sinus rhythm",
+        "references": [
+          {
+            "title": "NICE NG196: Atrial fibrillation: diagnosis and management",
+            "edition": "NICE guideline, 2021, Recommendations 1.1.1–1.1.3",
+            "url": "https://www.nice.org.uk/guidance/ng196"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "CHA2DS2-VASc and ORBIT scores",
+        "modalityTarget": "At diagnosis and review (NICE 1.2.1–1.2.2)",
+        "targetCondition": "Stroke and bleeding risk",
+        "expectedFinding": "CHA2DS2-VASc 2 or more: offer DOAC; men with 1: consider.",
+        "clinicalRationale": "ORBIT guides modification of bleeding risk, not withholding anticoagulation.",
+        "normalValue": "CHA2DS2-VASc 0 (men) or 1 (women) — no anticoagulation",
+        "references": [
+          {
+            "title": "NICE NG196: Atrial fibrillation: diagnosis and management",
+            "edition": "NICE guideline, 2021, Recommendations 1.2.1–1.2.3, 1.6.3–1.6.7",
+            "url": "https://www.nice.org.uk/guidance/ng196"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "FBC, renal function (creatinine clearance), liver function, thyroid function",
+        "modalityTarget": "Baseline and on anticoagulation review",
+        "targetCondition": "Anaemia, renal impairment, thyrotoxicosis",
+        "expectedFinding": "Low CrCl changes DOAC dose; anaemia raises bleeding risk.",
+        "clinicalRationale": "Adjust dose; correct reversible bleeding risks (NICE 1.2.3).",
+        "normalValue": "Hb within reference range; CrCl above 50 mL/min; TSH within reference range",
+        "references": [
+          {
+            "title": "Clinical Practice Guideline on Antithrombotic Treatment of Patients with Non-valvular Atrial Fibrillation (Saudi Center for Evidence Based Health Care, MOH; Saudi Heart Association panel)",
+            "edition": "April 2014, PDF p. 20, Recommendation 10 and remarks (NOAC doses and adjustments)",
+            "url": "https://www.moh.gov.sa/en/Ministry/Structure/Programs/TCP/Documents/2.%20Atrial%20Fibrillation%20-%20Antithrombotic%20Treatment%20of%20Patients%20with%20Non-valvular%20Atrial%20Fibrillation.pdf"
+          },
+          {
+            "title": "NICE NG196: Atrial fibrillation: diagnosis and management",
+            "edition": "NICE guideline, 2021, Recommendation 1.2.3",
+            "url": "https://www.nice.org.uk/guidance/ng196"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Transthoracic echocardiography",
+        "modalityTarget": "Baseline if it will change management, before rhythm control, or suspected structural disease (NICE 1.3.1)",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Structural or valve disease, LV dysfunction",
+        "clinicalRationale": "Guides drug choice (e.g. avoid flecainide in structural disease).",
+        "normalValue": "Normal LV function and valves",
+        "references": [
+          {
+            "title": "NICE NG196: Atrial fibrillation: diagnosis and management",
+            "edition": "NICE guideline, 2021, Recommendations 1.3.1–1.3.3",
+            "url": "https://www.nice.org.uk/guidance/ng196"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "acute",
+      "title": "Acute presentation",
+      "timeframe": "Emergency department",
+      "actions": [
+        "Life-threatening instability: emergency electrical cardioversion without waiting for anticoagulation (NICE 1.8.1).",
+        "Stable, onset under 48 hours: rate or rhythm control; over 48 hours or uncertain: rate control (NICE 1.8.2).",
+        "Pharmacological cardioversion: flecainide or amiodarone if no structural heart disease; amiodarone if structural disease (NICE 1.8.5).",
+        "Start heparin at presentation if not anticoagulated (NICE 1.8.8)."
+      ]
+    },
+    {
+      "id": "stroke",
+      "title": "Stroke prevention",
+      "timeframe": "All patients",
+      "actions": [
+        "Saudi MOH: oral anticoagulation for intermediate or high stroke risk; suggests NOAC rather than VKA (dabigatran 150 mg twice daily, rivaroxaban 20 mg once daily or apixaban 5 mg twice daily).",
+        "NICE: DOAC if CHA2DS2-VASc 2 or more; consider for men with 1; none if 0 (men) or 1 (women) under 65.",
+        "Do not use aspirin alone for stroke prevention (NICE 1.6.14); do not withhold for age or falls (NICE 1.6.8).",
+        "Warfarin if DOACs are unsuitable (including mechanical valves); aim TTR 65% or more (NICE 1.6.11)."
+      ]
+    },
+    {
+      "id": "rate",
+      "title": "Rate control (first line for most)",
+      "timeframe": "Clinic",
+      "actions": [
+        "Beta-blocker (not sotalol) or diltiazem/verapamil (NICE 1.7.2); in heart failure follow heart-failure guidance (NICE 1.7.3).",
+        "Digoxin monotherapy if sedentary or other options unsuitable (NICE 1.7.4); combination if needed (1.7.5).",
+        "No amiodarone for long-term rate control (NICE 1.7.6)."
+      ]
+    },
+    {
+      "id": "rhythm",
+      "title": "Rhythm control",
+      "timeframe": "Specialist",
+      "actions": [
+        "Consider if symptoms persist despite rate control, reversible cause, AF-caused heart failure or new onset (NICE 1.7.1, 1.7.7).",
+        "AF over 48 hours: anticoagulate at least 3 weeks before cardioversion (NICE 1.8.6).",
+        "No flecainide/propafenone in ischaemic or structural heart disease (NICE 1.7.9); amiodarone in LV impairment (NICE 1.7.13).",
+        "Catheter ablation if drugs fail or are unsuitable (NICE 1.7.19)."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Diagnose AF, prevent stroke and control rate or rhythm."
+    ],
+    "references": [
+      {
+        "title": "Clinical Practice Guideline on Antithrombotic Treatment of Patients with Non-valvular Atrial Fibrillation (Saudi Center for Evidence Based Health Care, MOH; Saudi Heart Association panel)",
+        "edition": "April 2014",
+        "url": "https://www.moh.gov.sa/en/Ministry/Structure/Programs/TCP/Documents/2.%20Atrial%20Fibrillation%20-%20Antithrombotic%20Treatment%20of%20Patients%20with%20Non-valvular%20Atrial%20Fibrillation.pdf",
+        "locator": "PDF pp. 6–7, Recommendations 1–10 (summary)"
+      },
+      {
+        "title": "Clinical Practice Guideline on Antithrombotic Treatment of Patients with Non-valvular Atrial Fibrillation (Saudi Center for Evidence Based Health Care, MOH; Saudi Heart Association panel)",
+        "edition": "April 2014",
+        "url": "https://www.moh.gov.sa/en/Ministry/Structure/Programs/TCP/Documents/2.%20Atrial%20Fibrillation%20-%20Antithrombotic%20Treatment%20of%20Patients%20with%20Non-valvular%20Atrial%20Fibrillation.pdf",
+        "locator": "PDF p. 20, Recommendation 10 and remarks (NOAC doses and adjustments)"
+      },
+      {
+        "title": "NICE NG196: Atrial fibrillation: diagnosis and management",
+        "edition": "NICE guideline, 2021",
+        "url": "https://www.nice.org.uk/guidance/ng196",
+        "locator": "Recommendations 1.1–1.8"
+      },
+      {
+        "title": "Apixaban prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=095a08ac-cf0e-497e-a682-ddef38d6b29c",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Rivaroxaban (Xarelto) prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=10db92f9-2300-4a80-836b-673e1ae91610",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Dabigatran etexilate (Pradaxa) prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ba74e3cd-b06f-4145-b284-5fd6b84ff3c9",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Warfarin sodium prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0cbce382-9c88-4f58-ae0f-532a841e8f95",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ],
+    "keyPoints": [
+      "ECG to confirm AF.",
+      "CHA2DS2-VASc 2+ → DOAC.",
+      "No aspirin for stroke prevention.",
+      "Rate control first for most.",
+      "Unstable → immediate DC cardioversion.",
+      "Dose DOACs by age, weight and renal function."
+    ],
+    "pitfalls": [
+      "Withholding anticoagulation for age or falls.",
+      "Wrong DOAC dose in renal impairment.",
+      "Cardioverting AF over 48 hours without anticoagulation.",
+      "Flecainide in structural heart disease."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Stroke symptoms (FAST); bleeding signs; adherence to anticoagulation."
+    ],
+    "lifestyleAndDiet": [
+      "Reduce alcohol; weight loss; treat sleep apnoea and hypertension."
+    ],
+    "mdtReferrals": [
+      "Cardiology for rhythm control or ablation; anticoagulation clinic."
+    ],
+    "dischargeCriteria": [
+      "Stable rate, anticoagulation started with counselling, follow-up arranged."
+    ],
+    "followUpPlan": "Review anticoagulation need, bleeding risk and renal function at least annually (NICE 1.6.16–1.6.17); review stroke risk at 65 or new comorbidity if not anticoagulated (NICE 1.6.15)."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Anticoagulate (NICE)",
+      "threshold": "CHA2DS2-VASc 2 or more; consider men with 1"
+    },
+    {
+      "criterion": "Anticoagulate (Saudi MOH)",
+      "threshold": "Intermediate or high risk (CHADS2 1 or more)"
+    },
+    {
+      "criterion": "Cardioversion over 48 h",
+      "threshold": "After at least 3 weeks therapeutic anticoagulation"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Stroke prevention, non-valvular AF",
+        "patientGroup": "Adults",
+        "genericName": "Apixaban",
+        "dose": "5 mg",
+        "route": "PO",
+        "frequency": "Twice daily",
+        "duration": "Long term",
+        "adjustments": [
+          "2.5 mg twice daily if 2 of: age 80 or over, weight 60 kg or less, creatinine 1.5 mg/dL or more (label)",
+          "Not studied below CrCl 30 (Saudi MOH remarks)"
+        ],
+        "monitoring": [
+          "Renal function, Hb, bleeding at least annually"
+        ],
+        "sourceTitle": "Clinical Practice Guideline on Antithrombotic Treatment of Patients with Non-valvular Atrial Fibrillation (Saudi Center for Evidence Based Health Care, MOH; Saudi Heart Association panel)",
+        "sourceUrl": "https://www.moh.gov.sa/en/Ministry/Structure/Programs/TCP/Documents/2.%20Atrial%20Fibrillation%20-%20Antithrombotic%20Treatment%20of%20Patients%20with%20Non-valvular%20Atrial%20Fibrillation.pdf",
+        "sourceEdition": "April 2014, PDF p. 20, Recommendation 10 and remarks (NOAC doses and adjustments)",
+        "contraindications": [
+          "Active pathological bleeding",
+          "Severe hypersensitivity"
+        ]
+      },
+      {
+        "indication": "Stroke prevention, non-valvular AF",
+        "patientGroup": "Adults",
+        "genericName": "Rivaroxaban",
+        "dose": "20 mg",
+        "route": "PO",
+        "frequency": "Once daily with the evening meal",
+        "duration": "Long term",
+        "adjustments": [
+          "15 mg once daily if CrCl 50 mL/min or less (label); Saudi MOH: 15 mg in mild renal impairment (CrCl 30–60)"
+        ],
+        "monitoring": [
+          "Renal function, Hb, bleeding"
+        ],
+        "sourceTitle": "Clinical Practice Guideline on Antithrombotic Treatment of Patients with Non-valvular Atrial Fibrillation (Saudi Center for Evidence Based Health Care, MOH; Saudi Heart Association panel)",
+        "sourceUrl": "https://www.moh.gov.sa/en/Ministry/Structure/Programs/TCP/Documents/2.%20Atrial%20Fibrillation%20-%20Antithrombotic%20Treatment%20of%20Patients%20with%20Non-valvular%20Atrial%20Fibrillation.pdf",
+        "sourceEdition": "April 2014, PDF p. 20, Recommendation 10 and remarks (NOAC doses and adjustments)",
+        "contraindications": [
+          "Active pathological bleeding",
+          "Severe hypersensitivity"
+        ]
+      },
+      {
+        "indication": "Stroke prevention, non-valvular AF",
+        "patientGroup": "Adults",
+        "genericName": "Dabigatran etexilate",
+        "dose": "150 mg",
+        "route": "PO",
+        "frequency": "Twice daily",
+        "duration": "Long term",
+        "adjustments": [
+          "110 mg twice daily an alternative over 75 years or higher bleeding risk (Saudi MOH)",
+          "CrCl 15–30: 75 mg twice daily (US label)",
+          "Contraindicated with mechanical heart valve (label)"
+        ],
+        "monitoring": [
+          "Renal function at least annually",
+          "Bleeding, dyspepsia"
+        ],
+        "sourceTitle": "Clinical Practice Guideline on Antithrombotic Treatment of Patients with Non-valvular Atrial Fibrillation (Saudi Center for Evidence Based Health Care, MOH; Saudi Heart Association panel)",
+        "sourceUrl": "https://www.moh.gov.sa/en/Ministry/Structure/Programs/TCP/Documents/2.%20Atrial%20Fibrillation%20-%20Antithrombotic%20Treatment%20of%20Patients%20with%20Non-valvular%20Atrial%20Fibrillation.pdf",
+        "sourceEdition": "April 2014, PDF p. 20, Recommendation 10 and remarks (NOAC doses and adjustments)",
+        "contraindications": [
+          "Active pathological bleeding",
+          "Serious hypersensitivity to dabigatran or excipients",
+          "Mechanical prosthetic heart valve"
+        ]
+      }
+    ],
+    "note": "DOAC doses from the Saudi MOH/SCEBHC guideline (Recommendation 10) and FDA labels; strategy from NICE NG196. Rate- and rhythm-control drug doses are not reproduced — follow product information and cardiology advice. Check SFDA registration and formulary."
+  },
+  "guidelineComparison": {
+    "title": "Who to anticoagulate: Saudi MOH 2014 vs NICE 2021",
+    "columns": [
+      "Saudi MOH/SCEBHC 2014",
+      "NICE NG196"
+    ],
+    "rows": [
+      {
+        "parameter": "Risk score",
+        "values": [
+          "CHADS2 (plus non-CHADS2 factors)",
+          "CHA2DS2-VASc; ORBIT for bleeding"
+        ]
+      },
+      {
+        "parameter": "Threshold",
+        "values": [
+          "CHADS2 1 or more: anticoagulate",
+          "CHA2DS2-VASc 2 or more; consider men with 1"
+        ]
+      },
+      {
+        "parameter": "Agent",
+        "values": [
+          "NOAC preferred over VKA (weak)",
+          "DOAC first; VKA if unsuitable"
+        ]
+      },
+      {
+        "parameter": "Aspirin",
+        "values": [
+          "Not preferred to anticoagulation",
+          "Not for stroke prevention"
+        ]
+      }
+    ],
+    "note": "Saudi guideline predates CHA2DS2-VASc adoption; NICE scoring used for decisions."
+  },
+  "_source": {
+    "title": "Saudi MOH/SCEBHC AF antithrombotic guideline 2014; NICE NG196",
+    "org": "Saudi Ministry of Health / Saudi Heart Association / NICE",
+    "url": "https://www.moh.gov.sa/en/Ministry/Structure/Programs/TCP/Documents/2.%20Atrial%20Fibrillation%20-%20Antithrombotic%20Treatment%20of%20Patients%20with%20Non-valvular%20Atrial%20Fibrillation.pdf"
+  }
+}

@@ -1,0 +1,446 @@
+{
+  "id": "a1020000-0000-4000-8000-000000000002",
+  "title": "Hypertension in Adults [Adapted from NICE]",
+  "specialty": "Family Medicine, Internal Medicine and Cardiology",
+  "authority": "SHC",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Adults with raised blood pressure: confirming the diagnosis, assessing risk and organ damage, lifestyle, stepwise drug treatment, targets, resistant hypertension and same-day referral. Verified against the National Heart Center/Saudi Heart Association 2023 hypertension guideline and NICE NG136; doses from FDA labels.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Single-pill combination products and doses not reproduced",
+      "Hypertensive emergency drug doses not covered (see emergency topic)",
+      "SFDA registration not checked"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "a1020000-0000-4000-8000-000000000002"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Sustained high blood pressure reflects raised vascular resistance, sodium–volume excess and neurohormonal (renin–angiotensin, sympathetic) activation. Chronic pressure load damages the heart, brain, kidneys, eyes and arteries.",
+    "keyMechanisms": [
+      "Arterial stiffening and endothelial dysfunction increase resistance.",
+      "RAS activation and salt retention raise volume and vascular tone — targets for ACE inhibitors/ARBs and diuretics.",
+      "Organ damage: left ventricular hypertrophy, albuminuria, retinopathy, stroke."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Usually asymptomatic.",
+      "Headache, visual change, chest pain or confusion with very high BP suggest emergency."
+    ],
+    "physicalSigns": [
+      "BP both arms (repeat if difference over 15 mmHg) (NICE 1.2.1); fundi; signs of heart failure; secondary-cause clues."
+    ],
+    "redFlags": [
+      "BP 180/120 or more with retinal haemorrhage/papilloedema or life-threatening symptoms — same-day referral (NICE 1.5.2)",
+      "Suspected phaeochromocytoma — same-day referral (NICE 1.5.3)",
+      "BP 180/120 or more without symptoms — test for organ damage urgently (NICE 1.5.1)"
+    ],
+    "precipitants": [
+      "High salt intake",
+      "Obesity, inactivity",
+      "Alcohol",
+      "Diabetes, CKD",
+      "Sleep apnoea",
+      "NSAIDs, steroids, licorice"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "White-coat hypertension",
+      "distinguishingFeatures": "High clinic, normal ABPM/HBPM."
+    },
+    {
+      "condition": "Secondary hypertension",
+      "distinguishingFeatures": "Young age, resistant BP, hypokalaemia, renal disease — specialist (NICE 1.4.14)."
+    },
+    {
+      "condition": "Pain, anxiety, drugs (NSAIDs, decongestants, licorice)",
+      "distinguishingFeatures": "Ask; SHA advises avoiding excess licorice."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Clinic BP with ABPM or HBPM confirmation",
+        "modalityTarget": "Clinic BP 140/90 or more (NICE 1.2.3)",
+        "targetCondition": "Hypertension",
+        "expectedFinding": "SHA: 130/80 or more diagnoses hypertension; treatment considered at 140/90 clinic or 135/85 home. NICE: confirm with ABPM/HBPM 135/85 or more.",
+        "clinicalRationale": "Confirms diagnosis before treatment.",
+        "normalValue": "Below 120/80 mmHg (optimal, SHA Table 8)",
+        "references": [
+          {
+            "title": "National Heart Center/Saudi Heart Association 2023 Guidelines on the Management of Hypertension (Alhabeeb W et al.)",
+            "edition": "J Saudi Heart Assoc 2023;35(1):16–39, p. 18, Table 2 (definition and treatment thresholds)",
+            "url": "https://www.j-saudi-heart.com/jsha/vol35/iss1/3"
+          },
+          {
+            "title": "NICE NG136: Hypertension in adults: diagnosis and management",
+            "edition": "NICE guideline, 2019 (updated February 2026), Recommendations 1.2.2–1.2.8",
+            "url": "https://www.nice.org.uk/guidance/ng136"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Urine ACR and dipstick; HbA1c, electrolytes, creatinine, eGFR, lipids",
+        "modalityTarget": "All newly diagnosed (NICE 1.3.3)",
+        "targetCondition": "Target organ damage and risk",
+        "expectedFinding": "Albuminuria, low eGFR, diabetes, dyslipidaemia.",
+        "clinicalRationale": "Informs drug choice and cardiovascular risk.",
+        "normalValue": "ACR below 3 mg/mmol; eGFR 60 or more; HbA1c below 5.7%",
+        "references": [
+          {
+            "title": "NICE NG136: Hypertension in adults: diagnosis and management",
+            "edition": "NICE guideline, 2019 (updated February 2026), Recommendation 1.3.3",
+            "url": "https://www.nice.org.uk/guidance/ng136"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "12-lead ECG and fundoscopy",
+        "modalityTarget": "All newly diagnosed (NICE 1.3.3)",
+        "targetCondition": "LVH, retinopathy",
+        "expectedFinding": "LVH voltage criteria; hypertensive retinopathy.",
+        "clinicalRationale": "Organ damage supports treatment.",
+        "normalValue": "No LVH; normal fundi",
+        "references": [
+          {
+            "title": "NICE NG136: Hypertension in adults: diagnosis and management",
+            "edition": "NICE guideline, 2019 (updated February 2026), Recommendation 1.3.3",
+            "url": "https://www.nice.org.uk/guidance/ng136"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "confirm",
+      "title": "Confirm and assess",
+      "timeframe": "Primary care",
+      "actions": [
+        "Repeat clinic readings; confirm with ABPM (or HBPM) (NICE 1.2.3–1.2.8).",
+        "Screen adults at every visit where feasible; yearly from 40 or with risk factors (SHA Table 4).",
+        "Organ damage tests and cardiovascular risk while confirming (NICE 1.2.5)."
+      ]
+    },
+    {
+      "id": "lifestyle",
+      "title": "Lifestyle for all",
+      "timeframe": "From diagnosis",
+      "actions": [
+        "Salt to 2–4 g/day maximum, more fruit and vegetables, 30 minutes moderate exercise 5–7 days a week, stop tobacco, weight control, limit sugar-sweetened drinks and licorice (SHA)."
+      ]
+    },
+    {
+      "id": "treat",
+      "title": "Drug treatment",
+      "timeframe": "When thresholds met",
+      "actions": [
+        "SHA: single-pill combination (RAS blocker with CCB or diuretic) as initial therapy for most; monotherapy for low-risk stage 1 with SBP below 150, very high risk with elevated BP, or frail older people.",
+        "NICE step 1: ACE inhibitor or ARB if diabetes or under 55; CCB if 55 or over without diabetes.",
+        "Step 2: add CCB or thiazide-like diuretic; step 3: ACEi/ARB + CCB + thiazide-like diuretic (NICE 1.4.41–1.4.45; SHA Table 10).",
+        "Never combine ACE inhibitor with ARB (NICE 1.4.34)."
+      ]
+    },
+    {
+      "id": "resistant",
+      "title": "Resistant hypertension",
+      "timeframe": "Uncontrolled on 3 drugs",
+      "actions": [
+        "Confirm with ABPM/HBPM, check adherence and postural BP (NICE 1.4.47).",
+        "Low-dose spironolactone if K+ 4.5 mmol/L or less; alpha- or beta-blocker if K+ above 4.5 (NICE 1.4.49–1.4.51; SHA).",
+        "Check sodium, potassium and renal function within 1 month (NICE 1.4.50).",
+        "Specialist referral if still uncontrolled (NICE 1.4.52; SHA)."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Confirm, assess and treat hypertension to target."
+    ],
+    "references": [
+      {
+        "title": "National Heart Center/Saudi Heart Association 2023 Guidelines on the Management of Hypertension (Alhabeeb W et al.)",
+        "edition": "J Saudi Heart Assoc 2023;35(1):16–39",
+        "url": "https://www.j-saudi-heart.com/jsha/vol35/iss1/3",
+        "locator": "p. 18, Table 2 (definition and treatment thresholds)"
+      },
+      {
+        "title": "National Heart Center/Saudi Heart Association 2023 Guidelines on the Management of Hypertension (Alhabeeb W et al.)",
+        "edition": "J Saudi Heart Assoc 2023;35(1):16–39",
+        "url": "https://www.j-saudi-heart.com/jsha/vol35/iss1/3",
+        "locator": "p. 21, Tables 4–5 (screening and follow-up schedule)"
+      },
+      {
+        "title": "National Heart Center/Saudi Heart Association 2023 Guidelines on the Management of Hypertension (Alhabeeb W et al.)",
+        "edition": "J Saudi Heart Assoc 2023;35(1):16–39",
+        "url": "https://www.j-saudi-heart.com/jsha/vol35/iss1/3",
+        "locator": "p. 24, Table 10 (pharmacological management)"
+      },
+      {
+        "title": "National Heart Center/Saudi Heart Association 2023 Guidelines on the Management of Hypertension (Alhabeeb W et al.)",
+        "edition": "J Saudi Heart Assoc 2023;35(1):16–39",
+        "url": "https://www.j-saudi-heart.com/jsha/vol35/iss1/3",
+        "locator": "Table 11 (resistant hypertension) and Table 12 (diabetes)"
+      },
+      {
+        "title": "NICE NG136: Hypertension in adults: diagnosis and management",
+        "edition": "NICE guideline, 2019 (updated February 2026)",
+        "url": "https://www.nice.org.uk/guidance/ng136",
+        "locator": "Recommendations 1.2–1.5"
+      },
+      {
+        "title": "Amlodipine prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=003dd1ec-16f8-4f96-b6a8-c4689d35892a",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Ramipril prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01da05d8-e72e-4208-bf92-a5cd929f15ab",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Losartan potassium prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=021cd76a-b093-4704-8410-5e7d01e20a54",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Indapamide tablets prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0687ed93-4761-4f9c-887d-95309c03f60e",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Spironolactone prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0c45d793-6f2f-4622-b5ed-6875acfbc02b",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ],
+    "keyPoints": [
+      "Confirm with ABPM or HBPM.",
+      "Check organ damage.",
+      "Lifestyle for everyone; limit salt and licorice.",
+      "SHA: start with a single-pill combination for most.",
+      "ACEi/ARB + CCB + thiazide-like before step 4.",
+      "Same-day referral for accelerated hypertension."
+    ],
+    "pitfalls": [
+      "Diagnosing from one clinic reading.",
+      "ACE inhibitor + ARB together.",
+      "Spironolactone without potassium checks.",
+      "ACEi/ARB in pregnancy."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Home BP technique; adherence; salt reduction."
+    ],
+    "lifestyleAndDiet": [
+      "Salt 2–4 g/day maximum; 30 min exercise 5–7 days a week; weight control; stop tobacco."
+    ],
+    "mdtReferrals": [
+      "Specialist for resistant or secondary hypertension, or under 40."
+    ],
+    "dischargeCriteria": [
+      "Not applicable — outpatient care unless hypertensive emergency."
+    ],
+    "followUpPlan": "SHA: review 1–2 months after starting or changing treatment; every 3–6 months once controlled. NICE: annual review. Targets: NICE below 140/90 (under 80) or 150/90 (80 and over); SHA: below 130/80 in diabetes."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Diagnosis (SHA)",
+      "threshold": "130/80 or more by appropriate method"
+    },
+    {
+      "criterion": "Treatment threshold (SHA)",
+      "threshold": "Clinic 140/90; home 135/85; 24-h ambulatory 130/80"
+    },
+    {
+      "criterion": "Confirmation (NICE)",
+      "threshold": "Clinic 140/90 and ABPM/HBPM 135/85 or more"
+    },
+    {
+      "criterion": "Same-day referral (NICE)",
+      "threshold": "180/120 with retinal changes or life-threatening symptoms"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Step 1 (55 or over without diabetes) or add-on",
+        "patientGroup": "Adults",
+        "genericName": "Amlodipine",
+        "dose": "5 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term",
+        "adjustments": [
+          "Maximum 10 mg once daily (label)",
+          "Oedema: switch to thiazide-like diuretic (NICE 1.4.36)"
+        ],
+        "monitoring": [
+          "BP, ankle oedema"
+        ],
+        "sourceTitle": "Amlodipine prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=003dd1ec-16f8-4f96-b6a8-c4689d35892a",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "contraindications": [
+          "Hypersensitivity to amlodipine"
+        ]
+      },
+      {
+        "indication": "Step 1 (diabetes or under 55) or add-on",
+        "patientGroup": "Adults",
+        "genericName": "Ramipril",
+        "dose": "2.5 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term",
+        "adjustments": [
+          "Usual range 2.5–20 mg daily (label)",
+          "Not in pregnancy (boxed warning)"
+        ],
+        "monitoring": [
+          "Potassium and creatinine before and after starting"
+        ],
+        "sourceTitle": "Ramipril prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01da05d8-e72e-4208-bf92-a5cd929f15ab",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "contraindications": [
+          "ACE-inhibitor angioedema or hereditary/idiopathic angioedema",
+          "Hypersensitivity to ACE inhibitors",
+          "Pregnancy (fetal toxicity — boxed warning)"
+        ]
+      },
+      {
+        "indication": "ACE-inhibitor intolerant (e.g. cough)",
+        "patientGroup": "Adults",
+        "genericName": "Losartan",
+        "dose": "50 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term",
+        "adjustments": [
+          "Not with an ACE inhibitor (NICE 1.4.34)",
+          "Not in pregnancy (boxed warning)"
+        ],
+        "monitoring": [
+          "Potassium and creatinine"
+        ],
+        "sourceTitle": "Losartan potassium prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=021cd76a-b093-4704-8410-5e7d01e20a54",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "contraindications": [
+          "Hypersensitivity",
+          "With aliskiren in diabetes",
+          "Pregnancy (boxed warning)"
+        ]
+      },
+      {
+        "indication": "Thiazide-like diuretic (step 2–3)",
+        "patientGroup": "Adults",
+        "genericName": "Indapamide",
+        "dose": "1.25 mg",
+        "route": "PO",
+        "frequency": "Once daily in the morning",
+        "duration": "Long term",
+        "adjustments": [
+          "May increase to 2.5 mg after 4 weeks (label)"
+        ],
+        "monitoring": [
+          "Sodium, potassium, urate"
+        ],
+        "sourceTitle": "Indapamide tablets prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0687ed93-4761-4f9c-887d-95309c03f60e",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "contraindications": [
+          "Anuria",
+          "Hypersensitivity to indapamide or other sulfonamide-derived drugs"
+        ]
+      },
+      {
+        "indication": "Resistant hypertension, K+ 4.5 mmol/L or less (step 4)",
+        "patientGroup": "Adults",
+        "genericName": "Spironolactone",
+        "dose": "25 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term with monitoring",
+        "adjustments": [
+          "Low dose per NICE; label range 25–100 mg daily",
+          "Caution with reduced eGFR (NICE 1.4.49)"
+        ],
+        "monitoring": [
+          "Sodium, potassium, renal function within 1 month (NICE 1.4.50)"
+        ],
+        "sourceTitle": "NICE NG136: Hypertension in adults: diagnosis and management",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng136",
+        "sourceEdition": "NICE guideline, 2019 (updated February 2026), Recommendations 1.4.49–1.4.50",
+        "contraindications": [
+          "Hyperkalaemia",
+          "Addison's disease",
+          "Concomitant eplerenone"
+        ]
+      }
+    ],
+    "note": "Drug classes and sequence from SHA 2023 (Table 10) and NICE NG136; starting doses from FDA labels; spironolactone low dose per NICE (25 mg is the lowest labelled dose). Check SFDA registration and single-pill combinations available locally."
+  },
+  "guidelineComparison": {
+    "title": "Thresholds and initial therapy: SHA 2023 vs NICE NG136",
+    "columns": [
+      "NHC/SHA 2023",
+      "NICE NG136"
+    ],
+    "rows": [
+      {
+        "parameter": "Diagnosis",
+        "values": [
+          "130/80 or more",
+          "Clinic 140/90 + ABPM/HBPM 135/85"
+        ]
+      },
+      {
+        "parameter": "Initial therapy",
+        "values": [
+          "Single-pill combination for most",
+          "Monotherapy by age/diabetes"
+        ]
+      },
+      {
+        "parameter": "Resistant",
+        "values": [
+          "Spironolactone; then eplerenone, amiloride, doxazosin",
+          "Spironolactone if K+ 4.5 or less; else alpha/beta-blocker"
+        ]
+      }
+    ],
+    "note": "Saudi guideline favours earlier combination therapy."
+  },
+  "_source": {
+    "title": "NHC/SHA 2023 hypertension guideline; NICE NG136",
+    "org": "National Heart Center / Saudi Heart Association / NICE",
+    "url": "https://www.j-saudi-heart.com/jsha/vol35/iss1/3"
+  }
+}
