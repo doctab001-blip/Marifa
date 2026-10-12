@@ -1,10 +1,10 @@
-import { Activity, BookOpenCheck, Building2, FileCheck2, GraduationCap, Landmark, Megaphone, Pill, Settings, ShieldCheck, UserRoundCheck, UsersRound } from "lucide-react";
+import { Activity, BookOpenCheck, Building2, FileCheck2, BookOpen, Landmark, Megaphone, Pill, Settings, ShieldCheck, UserRoundCheck, UsersRound } from "lucide-react";
 import { DemoBanner } from "@/components/demo-banner";
 
 const modules = [
   { title: "Hospital Protocols", copy: "Private, versioned protocols with document ownership and review dates.", icon: FileCheck2, state: "Foundation ready" },
   { title: "Medicines & Formulary", copy: "Structured references, local formulary status and source metadata without invented doses.", icon: Pill, state: "Schema designed" },
-  { title: "Learning Centre", copy: "Courses, learning pathways, assessments and completion tracking.", icon: GraduationCap, state: "Competency-linked" },
+  { title: "Learning Centre", copy: "Courses, learning pathways, assessments and completion tracking.", icon: BookOpen, state: "Competency-linked" },
   { title: "Policies & SOPs", copy: "Governed policies, acknowledgements, private files and scheduled review.", icon: BookOpenCheck, state: "Foundation ready" },
   { title: "Clinical Governance", copy: "Audit registers, actions, risks, committees and quality-improvement evidence.", icon: ShieldCheck, state: "Schema designed" },
   { title: "Accreditation & Audits", copy: "Configurable, sourced standards and evidence-gap reporting.", icon: Landmark, state: "Schema designed" },
