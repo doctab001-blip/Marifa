@@ -1,0 +1,467 @@
+{
+  "id": "a1010000-0000-4000-8000-000000000008",
+  "title": "Adult Periodic Health Examination",
+  "specialty": "Family Medicine and Preventive Medicine",
+  "authority": "PHA",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Keep Well",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Adult preventive care in Saudi primary care, including age- and risk-based blood-pressure, metabolic, cancer, osteoporosis and abdominal-aortic-aneurysm screening. The Saudi PHA 2023 guideline was checked against current opened USPSTF recommendations where newer recommendations differ.",
+    "findings": [
+      "The Saudi PHA guideline is the local organising source and adapts international recommendations for Saudi primary care.",
+      "Screening eligibility and interval depend on age, sex, smoking exposure, body-mass index and other risk factors.",
+      "An abnormal screening result requires the named confirmatory or diagnostic pathway; screening alone does not establish every diagnosis.",
+      "The 2024 USPSTF breast-screening interval differs from the 2023 Saudi recommendation and is displayed separately."
+    ],
+    "unverifiedSections": [
+      "The opened Saudi PHA guideline states that it should be updated every 2 years; no later official Saudi edition was located during this run.",
+      "Cervical-screening and adult-immunisation schedules were not made actionable because no post-2023 Saudi update was reconciled during this run.",
+      "Laboratory and radiology reference intervals remain service-specific.",
+      "No medicine regimen is prescribed in this preventive-examination topic; SFDA medicine-register verification is therefore not applicable.",
+      "Local referral capacity and programme-specific booking rules require clinician confirmation."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "a1010000-0000-4000-8000-000000000008",
+      "a326783d-e111-4e09-a483-cdeea297fd59",
+      "70ef2b83-f999-48d2-8eeb-e8bff5f2e490"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Periodic health examination is a structured preventive-care process for people who may have no symptoms. It applies screening only when the expected benefit exceeds harm, then closes the loop on abnormal results.",
+    "keyMechanisms": [
+      "Age, sex, smoking exposure, body-mass index and comorbidity change baseline risk and therefore screening eligibility.",
+      "Repeated or confirmatory measurement reduces misclassification from a single abnormal screening result.",
+      "Defined screening intervals aim to detect selected disease before symptoms while limiting unnecessary intervention.",
+      "A positive screen changes the pathway from prevention to diagnostic confirmation and condition-specific care."
+    ],
+    "references": [
+      {
+        "title": "Saudi Clinical Preventive Guideline",
+        "edition": "Public Health Authority, third edition 2023, PDF pp. 8-16 (printed pp. 2-10), methodology and grading",
+        "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Usually an asymptomatic attendance for preventive review.",
+      "A symptom disclosed during the visit moves that problem from screening to a diagnostic assessment."
+    ],
+    "physicalSigns": [
+      "Blood pressure measured with a validated clinical method.",
+      "Body-mass index and waist circumference recorded at the recommended interval.",
+      "In older adults, fall history and mobility performance may identify a need for a falls pathway."
+    ],
+    "redFlags": [
+      "Any acute symptom or unstable clinical finding: stop routine screening and use the relevant urgent diagnostic pathway.",
+      "Any abnormal screen without a named owner and diagnostic follow-up plan: resolve before closing the encounter."
+    ],
+    "precipitants": [
+      "Age and sex determine eligibility for several cancer, osteoporosis and aneurysm screening programmes.",
+      "Smoking exposure determines lung-cancer and abdominal-aortic-aneurysm screening eligibility.",
+      "Body-mass index and metabolic risk factors alter diabetes-screening eligibility.",
+      "Prior screening date and result determine whether a test is due or requires diagnostic follow-up."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Asymptomatic preventive need",
+      "distinguishingFeatures": "No related symptoms; the person meets an age- or risk-based screening criterion."
+    },
+    {
+      "condition": "Symptomatic undiagnosed disease",
+      "distinguishingFeatures": "Symptoms or abnormal examination findings require diagnostic testing rather than a screening interval."
+    },
+    {
+      "condition": "Established disease follow-up",
+      "distinguishingFeatures": "A confirmed diagnosis requires its governed chronic-care or treatment pathway rather than screening thresholds."
+    },
+    {
+      "condition": "Abnormal screening result awaiting confirmation",
+      "distinguishingFeatures": "The screening test is positive or abnormal, but the condition has not yet been confirmed."
+    }
+  ],
+  "diagnosticCriteria": [
+    {
+      "criterion": "Blood-pressure screening eligibility",
+      "threshold": "All adults aged 18 years or older; annually from age 40 years or with increased risk, otherwise every 3-5 years after a prior normal reading."
+    },
+    {
+      "criterion": "Saudi diabetes-screening eligibility",
+      "threshold": "Fasting glucose, HbA1c or random blood sugar from age 35 years every 3 years; also screen adults with BMI 25 kg/m² or higher plus a listed risk factor."
+    },
+    {
+      "criterion": "Saudi breast-screening eligibility",
+      "threshold": "Women aged 40-69 years: mammography every 1-2 years; evidence is insufficient for routine screening from age 75 years."
+    },
+    {
+      "criterion": "Colorectal-screening eligibility",
+      "threshold": "Adults aged 45-75 years; use yearly FIT or gFOBT, flexible sigmoidoscopy every 5 years, or colonoscopy every 10 years."
+    },
+    {
+      "criterion": "Lung-cancer screening eligibility",
+      "threshold": "Annual low-dose CT for adults aged 50-80 years with at least 20 pack-years who currently smoke or quit within 15 years; stop after 15 years without smoking or when health or treatment preference precludes curative surgery."
+    },
+    {
+      "criterion": "Abdominal-aortic-aneurysm screening eligibility",
+      "threshold": "One-time ultrasonography for men aged 65-75 years who have ever smoked."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Blood-pressure measurement",
+        "modalityTarget": "Screen all adults; select the interval by age and hypertension risk.",
+        "targetCondition": "Hypertension",
+        "expectedFinding": "An elevated clinic reading requires measurement outside the clinical setting before treatment is started.",
+        "clinicalRationale": "Screen annually from age 40 years or with high-normal blood pressure, overweight or obesity. Screen every 3-5 years at ages 18-39 when risk is low and the prior reading was normal.",
+        "normalValue": "Prior normal blood pressure; use the governed hypertension pathway for numeric diagnostic thresholds and confirmation.",
+        "references": [
+          {
+            "title": "Saudi Clinical Preventive Guideline",
+            "edition": "Public Health Authority 2023, page 25 and page 28 (printed page 18 and page 21), footnote section 6",
+            "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf"
+          },
+          {
+            "title": "Screening for Hypertension in Adults",
+            "edition": "USPSTF 2021, Recommendation Statement, section Screening Tests and Screening Intervals",
+            "url": "https://www.uspreventiveservicestaskforce.org/uspstf/document/RecommendationStatementFinal/hypertension-in-adults-screening"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Body-mass index and waist circumference",
+        "modalityTarget": "Measure adults aged over 18 years every 2 years.",
+        "targetCondition": "Overweight, obesity and metabolic risk",
+        "expectedFinding": "BMI of 25 kg/m² or higher changes diabetes-screening eligibility; BMI of 30 kg/m² or higher is the Saudi threshold for offering or referring to intensive multicomponent behavioural intervention.",
+        "clinicalRationale": "Record both measures and use them with age and risk factors rather than as a stand-alone diagnosis.",
+        "normalValue": "BMI below 25 kg/m² is below the PHA overweight threshold used in the diabetes-screening rule; interpret waist circumference with the applicable local standard.",
+        "references": [
+          {
+            "title": "Saudi Clinical Preventive Guideline",
+            "edition": "Public Health Authority 2023, page 27 (printed page 20), footnote sections 3 and 5; page 28 (printed page 21), footnote section 7",
+            "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Fasting plasma glucose, HbA1c or random blood sugar",
+        "modalityTarget": "Screen from age 35 years every 3 years and apply the Saudi BMI-plus-risk-factor rule.",
+        "targetCondition": "Prediabetes or type 2 diabetes",
+        "expectedFinding": "A result in the prediabetes or diabetes range requires repeat or condition-specific diagnostic assessment.",
+        "clinicalRationale": "The USPSTF diagnostic ranges are fasting plasma glucose 100-125 mg/dL or HbA1c 5.7%-6.4% for prediabetes, and fasting plasma glucose 126 mg/dL or higher or HbA1c 6.5% or higher for diabetes; confirm diagnosis according to the diabetes pathway.",
+        "normalValue": "Fasting plasma glucose below 100 mg/dL and HbA1c below 5.7% under the opened USPSTF ranges; local laboratory ranges apply.",
+        "references": [
+          {
+            "title": "Saudi Clinical Preventive Guideline",
+            "edition": "Public Health Authority 2023, page 25 and page 28 (printed page 18 and page 21), footnote section 7; page 30 (printed page 23), footnote section 4",
+            "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf"
+          },
+          {
+            "title": "Prediabetes and Type 2 Diabetes: Screening",
+            "edition": "USPSTF 2021, Practice Considerations, section Screening Tests and intervals",
+            "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/screening-for-prediabetes-and-type-2-diabetes/"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Screening mammography",
+        "modalityTarget": "Apply age and shared-decision criteria; keep Saudi and current USPSTF intervals separate.",
+        "targetCondition": "Preclinical breast cancer",
+        "expectedFinding": "A suspicious or incomplete screening result requires diagnostic breast assessment.",
+        "clinicalRationale": "Saudi PHA 2023 suggests every 1-2 years at ages 40-69. USPSTF 2024 recommends every 2 years at ages 40-74. Use the Saudi programme route while documenting the interval decision.",
+        "normalValue": "Screening report without a suspicious finding; the reporting service's classification and recall advice apply.",
+        "references": [
+          {
+            "title": "Saudi Clinical Preventive Guideline",
+            "edition": "Public Health Authority 2023, page 27 (printed page 20), footnote section 10; pages 30-31 (printed pages 23-24), footnote section 5",
+            "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf"
+          },
+          {
+            "title": "Breast Cancer: Screening",
+            "edition": "USPSTF 2024, Clinician Summary, section Population and Recommendation",
+            "url": "https://www.uspreventiveservicestaskforce.org/uspstf/document/ClinicalSummaryFinal/breast-cancer-screening"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Colorectal-cancer screening",
+        "modalityTarget": "Adults aged 45-75 years without symptoms who are eligible for average-risk screening.",
+        "targetCondition": "Preclinical colorectal cancer or advanced adenoma",
+        "expectedFinding": "A positive FIT or gFOBT, or an abnormal endoscopic result, requires diagnostic follow-up.",
+        "clinicalRationale": "Choose one supported strategy: FIT or gFOBT yearly, flexible sigmoidoscopy every 5 years, or colonoscopy every 10 years. A positive non-colonoscopy test requires timely colonoscopy.",
+        "normalValue": "Negative stool test at the stated interval or no clinically significant lesion on endoscopy; symptoms require diagnostic assessment irrespective of screening status.",
+        "references": [
+          {
+            "title": "Saudi Clinical Preventive Guideline",
+            "edition": "Public Health Authority 2023, page 27 (printed page 20), footnote section 12; page 30 (printed page 23), footnote section 7",
+            "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf"
+          },
+          {
+            "title": "Colorectal Cancer: Screening",
+            "edition": "USPSTF 2021, Recommendation Summary, section Adults aged 45 to 75 years",
+            "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/colorectal-cancer-screening?ftag=MSF0951a18"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Annual low-dose chest CT",
+        "modalityTarget": "Adults aged 50-80 years with at least 20 pack-years who currently smoke or quit within 15 years.",
+        "targetCondition": "Preclinical lung cancer",
+        "expectedFinding": "A suspicious nodule or other abnormality requires the local diagnostic lung-cancer pathway.",
+        "clinicalRationale": "Stop screening once 15 years have elapsed since quitting or when health status or treatment preference substantially limits life expectancy or curative lung surgery.",
+        "normalValue": "No screen-positive lesion under the reporting programme's classification; continue only while eligibility remains.",
+        "references": [
+          {
+            "title": "Saudi Clinical Preventive Guideline",
+            "edition": "Public Health Authority 2023, page 27 (printed page 20), footnote section 11; page 30 (printed page 23), footnote section 6",
+            "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Bone-density measurement by DEXA",
+        "modalityTarget": "Women aged 65 years or older; use a clinical risk tool for postmenopausal women younger than 65 years with a risk factor.",
+        "targetCondition": "Osteoporosis and fracture risk",
+        "expectedFinding": "Low bone density or elevated fracture risk requires the osteoporosis pathway.",
+        "clinicalRationale": "The opened Saudi guideline states that evidence is insufficient to recommend routine screening of asymptomatic men.",
+        "normalValue": "No osteoporosis on the reporting service's interpretation; numeric classification is not asserted from the opened PHA pages.",
+        "references": [
+          {
+            "title": "Saudi Clinical Preventive Guideline",
+            "edition": "Public Health Authority 2023, page 27 (printed page 20), footnote section 13; page 30 (printed page 23), footnote section 8",
+            "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "One-time abdominal ultrasonography",
+        "modalityTarget": "Men aged 65-75 years who have ever smoked.",
+        "targetCondition": "Abdominal aortic aneurysm",
+        "expectedFinding": "A screen-detected aortic abnormality requires vascular diagnostic assessment and size-based management.",
+        "clinicalRationale": "Offer once to the Saudi PHA eligibility group; do not apply this rule to people outside that defined group without a separate indication.",
+        "normalValue": "No aneurysm on the reporting ultrasonography service; the opened PHA page does not state a numeric diameter threshold.",
+        "references": [
+          {
+            "title": "Saudi Clinical Preventive Guideline",
+            "edition": "Public Health Authority 2023, pages 29-30 (printed pages 22-23), checklist and footnote section 9",
+            "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Diagnostic colonoscopy after a positive non-colonoscopy screen",
+        "modalityTarget": "Positive FIT, positive gFOBT or another abnormal non-colonoscopy colorectal screen.",
+        "targetCondition": "Colorectal cancer or advanced adenoma",
+        "expectedFinding": "Colonoscopy confirms or excludes a clinically significant colorectal lesion and directs pathology or treatment.",
+        "clinicalRationale": "Do not repeat a positive stool screen as a substitute for diagnostic colonoscopy; arrange timely completion and track the result.",
+        "normalValue": "No clinically significant lesion on diagnostic colonoscopy; subsequent interval is set by the endoscopy report and risk pathway.",
+        "references": [
+          {
+            "title": "Saudi Clinical Preventive Guideline",
+            "edition": "Public Health Authority 2023, page 27 (printed page 20), footnote section 12; page 30 (printed page 23), footnote section 7",
+            "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "define-scope",
+      "title": "Confirm that this is a preventive encounter",
+      "timeframe": "At the start of the visit",
+      "actions": [
+        "Record age, sex, smoking exposure, body-mass index, relevant comorbidity, prior screening dates and results.",
+        "Move any symptom or unstable finding to the relevant diagnostic or urgent pathway.",
+        "Identify every prior abnormal screen that still lacks diagnostic closure."
+      ]
+    },
+    {
+      "id": "measure-core-risk",
+      "title": "Complete due core measurements",
+      "timeframe": "During the visit",
+      "actions": [
+        "Measure blood pressure and select the next interval: annually from age 40 years or with increased risk; every 3-5 years at ages 18-39 when low risk with a prior normal reading.",
+        "Measure BMI and waist circumference every 2 years in adults aged over 18 years.",
+        "Offer glucose testing from age 35 years every 3 years and apply the Saudi BMI-plus-risk-factor rule."
+      ]
+    },
+    {
+      "id": "offer-eligible-screening",
+      "title": "Offer only eligible screening",
+      "timeframe": "During the visit or booked preventive appointment",
+      "actions": [
+        "Use the age, sex, smoking and risk criteria in the investigation table before ordering breast, colorectal, lung, osteoporosis or aneurysm screening.",
+        "Explain the expected next step before the test, including diagnostic follow-up after an abnormal result.",
+        "Document the Saudi recommendation and any current international difference used in shared decision making."
+      ],
+      "branches": [
+        {
+          "condition": "Screen is not yet due or eligibility is not met",
+          "actions": [
+            "Record the reason and the next review date; do not order the test as routine screening."
+          ]
+        },
+        {
+          "condition": "Screen is due and the person accepts",
+          "actions": [
+            "Place the order and name the clinician or service responsible for reviewing the result."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "close-loop",
+      "title": "Act on every result",
+      "timeframe": "When each result becomes available",
+      "actions": [
+        "Communicate the result and its meaning.",
+        "For an elevated blood-pressure screen, obtain out-of-office confirmation before treatment.",
+        "For a positive non-colonoscopy colorectal screen, arrange timely diagnostic colonoscopy.",
+        "Send other abnormal results to the matching diagnostic or specialty pathway and track completion."
+      ]
+    },
+    {
+      "id": "finish-plan",
+      "title": "Set the recall and responsibility plan",
+      "timeframe": "Before the encounter ends",
+      "actions": [
+        "Record completed, deferred and declined screening decisions.",
+        "Set the next due date for each selected intervention.",
+        "Name the responsible clinician or service for every pending test, referral and abnormal result."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "no-drug-indicated",
+    "regimens": [],
+    "note": "This topic selects and closes preventive screening. It does not prescribe preventive medicines. Use the governed condition-specific pathway when medication is indicated."
+  },
+  "guidelineComparison": {
+    "title": "Opened Saudi and USPSTF screening recommendations",
+    "columns": [
+      "Saudi PHA 2023",
+      "Current opened USPSTF source"
+    ],
+    "rows": [
+      {
+        "parameter": "Screening mammography",
+        "values": [
+          "Women aged 40-69 years every 1-2 years; insufficient evidence from age 75 years.",
+          "Women aged 40-74 years every 2 years; insufficient evidence from age 75 years (2024)."
+        ]
+      },
+      {
+        "parameter": "Diabetes screening population",
+        "values": [
+          "Start at age 35 years every 3 years; also screen adults with BMI at least 25 kg/m² plus a listed risk factor.",
+          "Adults aged 35-70 years with overweight or obesity; screening every 3 years may be reasonable after a normal result (2021)."
+        ]
+      },
+      {
+        "parameter": "Colorectal screening age",
+        "values": [
+          "Offer from age 45 years through age 75 years using the listed stool or endoscopic intervals.",
+          "Screen ages 45-75 years; selectively offer at ages 76-85 years according to health, prior screening and preference (2021)."
+        ]
+      }
+    ],
+    "note": "Use the Saudi PHA pathway as the local default. Record the source and shared decision when a newer international recommendation differs; clinician governance is required before adopting a different local interval."
+  },
+  "teaching": {
+    "scope": "Adult periodic health examination in Saudi primary care.",
+    "learningObjectives": [
+      "Separate asymptomatic screening from symptom-led diagnostic assessment.",
+      "Apply age, sex, smoking and metabolic-risk eligibility before ordering a screening test.",
+      "Close every abnormal screening result through the named diagnostic pathway.",
+      "Explain the breast-screening and diabetes-population differences between the opened Saudi and current USPSTF sources."
+    ],
+    "pitfalls": [
+      "Ordering a screening test for a symptomatic problem instead of starting diagnostic assessment.",
+      "Repeating a positive stool test instead of arranging diagnostic colonoscopy.",
+      "Applying a screening interval without checking the last result and current eligibility.",
+      "Merging different Saudi and USPSTF age ranges into a new unsupported range.",
+      "Closing the encounter without assigning ownership for pending results."
+    ],
+    "keyPoints": [
+      "Screening is risk- and interval-based; more testing is not automatically better.",
+      "The local Saudi guideline remains the organising source while differences are shown explicitly.",
+      "A screening programme is incomplete until abnormal results receive diagnostic follow-up."
+    ],
+    "references": [
+      {
+        "title": "Saudi Clinical Preventive Guideline",
+        "edition": "Public Health Authority, third edition 2023",
+        "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf",
+        "locator": "PDF pp. 8-16 (printed pp. 2-10), methodology; PDF pp. 25-31 (printed pp. 18-24), adult checklists and footnotes"
+      },
+      {
+        "title": "Breast Cancer: Screening",
+        "edition": "USPSTF final recommendation, 30 April 2024",
+        "url": "https://www.uspreventiveservicestaskforce.org/uspstf/document/ClinicalSummaryFinal/breast-cancer-screening",
+        "locator": "Clinician Summary, Population and Recommendation"
+      },
+      {
+        "title": "Colorectal Cancer: Screening",
+        "edition": "USPSTF final recommendation, 18 May 2021",
+        "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/colorectal-cancer-screening?ftag=MSF0951a18",
+        "locator": "Recommendation Summary and Clinician Summary, adults aged 45-85 years"
+      },
+      {
+        "title": "Prediabetes and Type 2 Diabetes: Screening",
+        "edition": "USPSTF final recommendation, 24 August 2021",
+        "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/screening-for-prediabetes-and-type-2-diabetes/",
+        "locator": "Recommendation Summary and Practice Considerations, Screening Tests and Screening Intervals"
+      },
+      {
+        "title": "Screening for Hypertension in Adults",
+        "edition": "USPSTF final recommendation, 27 April 2021",
+        "url": "https://www.uspreventiveservicestaskforce.org/uspstf/document/RecommendationStatementFinal/hypertension-in-adults-screening",
+        "locator": "Recommendation Statement, Screening Tests and Screening Intervals"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain why each selected test is due and what will happen after a normal or abnormal result.",
+      "Explain that symptoms require diagnostic assessment even when a screening test was recently normal.",
+      "Use shared decision making when the Saudi and current international recommendations differ."
+    ],
+    "lifestyleAndDiet": [
+      "Offer smoking-cessation support to people who smoke.",
+      "For BMI of 30 kg/m² or higher, offer or refer to an intensive multicomponent behavioural intervention.",
+      "Match nutrition and physical-activity advice to the person's measured risk and condition-specific pathway."
+    ],
+    "mdtReferrals": [
+      "Primary-care preventive-care coordinator for recall and result tracking.",
+      "Diagnostic breast, colorectal, lung, osteoporosis or vascular service after an abnormal relevant screen.",
+      "Diabetes or hypertension pathway after confirmatory testing.",
+      "Behavioural support service for smoking cessation or obesity intervention."
+    ],
+    "dischargeCriteria": [
+      "No acute symptom or unstable finding remains in the preventive pathway.",
+      "Eligibility, completed tests, declined tests and next due dates are documented.",
+      "Every pending or abnormal result has a named owner and follow-up route.",
+      "The person knows when and how results will be communicated."
+    ],
+    "followUpPlan": "The ordering primary-care clinician reviews each result when available and moves abnormal results to the named diagnostic pathway. The preventive-care coordinator maintains the recall dates defined in the investigation table and rechecks eligibility when age, smoking exposure, body-mass index, health status or prior results change."
+  }
+}

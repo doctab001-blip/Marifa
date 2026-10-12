@@ -1,0 +1,179 @@
+{
+  "id": "a1010000-0000-4000-8000-000000000008",
+  "title": "Adult Periodic Health Examination",
+  "pillar": "Keep Well",
+  "status": "draft",
+  "version": "2023-marifa",
+  "authority": "PHA",
+  "specialty": "Family Medicine and Preventive Medicine",
+  "lastReviewed": "2023-01-01",
+  "presentation": {
+    "redFlags": [
+      "Chest pain, focal neurological deficit, severe breathlessness or syncope discovered during screening",
+      "Markedly elevated blood pressure with acute target-organ symptoms",
+      "Suicidal ideation or immediate safeguarding concern",
+      "Alarm cancer symptoms such as unexplained bleeding, persistent mass or major unintentional weight loss"
+    ],
+    "symptoms": [
+      "Often asymptomatic attendance for preventive review",
+      "May disclose fatigue, low mood, sleep problems or reduced function during structured history",
+      "May report tobacco exposure, inactivity, unhealthy diet or occupational risk",
+      "May have overdue vaccination or cancer screening"
+    ],
+    "physicalSigns": [
+      "Elevated or discrepant blood-pressure readings",
+      "Raised body-mass index or waist circumference",
+      "Oral-health, vision, hearing or mobility concerns",
+      "Abnormal findings requiring conversion from screening to a diagnostic pathway"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Routine preventive need",
+      "distinguishingFeatures": "Asymptomatic, eligible by age or risk and suitable for a validated screening intervention."
+    },
+    {
+      "condition": "Established disease requiring chronic-care review",
+      "distinguishingFeatures": "Known diagnosis or repeated abnormal result requiring disease-specific targets rather than screening thresholds."
+    },
+    {
+      "condition": "Symptomatic undiagnosed disease",
+      "distinguishingFeatures": "Symptoms or signs raise pre-test probability and require diagnostic, not screening, tests."
+    },
+    {
+      "condition": "Transient measurement abnormality",
+      "distinguishingFeatures": "Single clinic value is not confirmed on repeat or out-of-office measurement."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Standardised blood-pressure measurement with out-of-office confirmation",
+        "modalityTarget": "Standardised blood-pressure measurement with out-of-office confirmation — Hypertension",
+        "expectedFinding": "Persistently elevated readings confirmed outside the clinic when indicated.",
+        "targetCondition": "Hypertension",
+        "clinicalRationale": "Reduces misclassification from technique, white-coat effect and isolated readings."
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Risk-based glucose testing",
+        "modalityTarget": "Risk-based glucose testing — Prediabetes or diabetes",
+        "expectedFinding": "Abnormal fasting glucose, random glucose in context or glycated haemoglobin confirmed through the diagnostic pathway.",
+        "targetCondition": "Prediabetes or diabetes",
+        "clinicalRationale": "PHA guidance begins routine adult testing at the defined age and earlier with overweight plus risk factors."
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Age-, sex- and risk-appropriate cancer screening",
+        "modalityTarget": "Age-, sex- and risk-appropriate cancer screening — Preclinical breast, colorectal, cervical or lung cancer",
+        "expectedFinding": "Negative screening at the recommended interval or an abnormal result requiring timely diagnostic confirmation.",
+        "targetCondition": "Preclinical breast, colorectal, cervical or lung cancer",
+        "clinicalRationale": "Benefit depends on eligibility, interval and complete follow-through after an abnormal screen."
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Repeat or confirmatory diagnostic test after an abnormal screen",
+        "modalityTarget": "Repeat or confirmatory diagnostic test after an abnormal screen — False-positive screening result",
+        "expectedFinding": "Diagnostic testing does not confirm disease.",
+        "targetCondition": "False-positive screening result",
+        "clinicalRationale": "Screening tests do not by themselves establish many diagnoses."
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Medication and comorbidity review",
+        "modalityTarget": "Medication and comorbidity review — Secondary or iatrogenic risk",
+        "expectedFinding": "A medicine, pregnancy state, renal disease or other condition explains or changes the preventive finding.",
+        "targetCondition": "Secondary or iatrogenic risk",
+        "clinicalRationale": "Prevents inappropriate application of general-population screening or treatment advice."
+      }
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Periodic health examination is a risk-based preventive-care process rather than a disease episode. It identifies modifiable cardiovascular, metabolic, cancer, infectious, mental-health and functional risks before symptoms or irreversible complications develop, while avoiding screening that has an unfavourable balance of benefit and harm.",
+    "keyMechanisms": [
+      "Age, sex, family history, exposures and comorbidity alter baseline disease probability and screening benefit.",
+      "Repeated measurement can detect trajectories in blood pressure, adiposity, glycaemia and lipids before complications emerge.",
+      "Evidence-based screening shifts selected cancers and chronic diseases toward earlier diagnosis.",
+      "Shared decisions reduce harms from false positives, overdiagnosis and preventive medicines with small net benefit."
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "risk-inventory",
+      "title": "Build an individual risk inventory",
+      "actions": [
+        "Record age, sex, pregnancy potential, family history, tobacco exposure, occupation, medicines, comorbidity and prior screening.",
+        "Assess mental health, safety, function and social determinants with validated tools where appropriate.",
+        "Separate asymptomatic screening from symptoms that require diagnostic evaluation."
+      ],
+      "timeframe": "At each periodic examination"
+    },
+    {
+      "id": "measure",
+      "title": "Complete core measurements",
+      "actions": [
+        "Measure blood pressure using validated technique and assess body-mass index and waist circumference at the PHA interval.",
+        "Order glucose and lipid testing according to age and risk.",
+        "Review oral health, vaccination status and age-related vision, hearing, falls or cognition needs."
+      ],
+      "timeframe": "During the visit"
+    },
+    {
+      "id": "screen",
+      "title": "Offer eligible screening",
+      "actions": [
+        "Offer breast, cervical, colorectal, lung, osteoporosis and abdominal-aortic-aneurysm screening only when age, sex and risk criteria are met.",
+        "Explain likely benefits, limitations and follow-up before testing.",
+        "Create a closed-loop plan for every abnormal result."
+      ],
+      "timeframe": "At the guideline-defined interval"
+    },
+    {
+      "id": "prevent",
+      "title": "Deliver preventive interventions",
+      "actions": [
+        "Provide indicated immunisation under the current Saudi schedule.",
+        "Offer tobacco-cessation treatment, physical-activity and dietary support.",
+        "Use generic preventive pharmacotherapy only after formal cardiovascular-risk, contraindication and shared-decision assessment."
+      ],
+      "timeframe": "At the same visit or scheduled follow-up"
+    },
+    {
+      "id": "close-loop",
+      "title": "Close the preventive-care loop",
+      "actions": [
+        "Communicate normal and abnormal results in understandable language.",
+        "Convert confirmed abnormalities to the relevant diagnostic or chronic-care pathway.",
+        "Update the recall date and assign ownership for referrals and pending tests."
+      ],
+      "timeframe": "After results are available"
+    }
+  ],
+  "nonClinicalManagement": {
+    "followUpPlan": "Maintain a personalised recall schedule based on the 2023 PHA age and risk tables, review abnormal results promptly, and update eligibility whenever health status, family history, pregnancy status or exposure changes.",
+    "mdtReferrals": [
+      "Primary-care nurse or preventive-care coordinator for recall and result tracking",
+      "Dietitian, tobacco-cessation service or exercise professional according to risk",
+      "Mental-health service for confirmed depression, anxiety or safety concern",
+      "Diagnostic specialty pathway for any abnormal screening result"
+    ],
+    "lifestyleAndDiet": [
+      "Support a sustainable dietary pattern rich in vegetables, fruit, whole grains and minimally processed foods while accounting for culture and comorbidity.",
+      "Encourage regular aerobic and strengthening activity adapted to ability.",
+      "Provide tobacco cessation, sleep, weight and oral-health support without stigma."
+    ],
+    "patientEducation": [
+      "Explain that preventive tests are selected by personal risk and that more testing is not always safer.",
+      "Use shared decision making for preference-sensitive cancer screening and preventive medicines.",
+      "Give accessible instructions for preparation, result access and the next step after an abnormal result."
+    ],
+    "dischargeCriteria": [
+      "Risk profile, due interventions and deferred shared decisions are documented.",
+      "Every test and referral has a named owner and result-communication method.",
+      "Urgent symptoms or severe abnormalities have been diverted to immediate assessment."
+    ]
+  }
+}
