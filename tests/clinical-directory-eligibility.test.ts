@@ -7,14 +7,14 @@ import {
 } from "@/lib/data/clinical-directory-eligibility";
 
 describe("clinical directory release boundary", () => {
-  it("contains only the 27 topics that passed the 80% authoring threshold", () => {
+  it("contains only the 36 topics that passed the 80% authoring threshold", () => {
     const records = Object.entries(clinicalDirectoryEligibility);
-    expect(records).toHaveLength(27);
+    expect(records).toHaveLength(36);
     expect(records.every(([, record]) => record.score >= CLINICAL_DIRECTORY_MINIMUM_SCORE)).toBe(true);
   });
 
   it("tracks the complete below-threshold correction queue", () => {
-    expect(CLINICAL_DIRECTORY_DRAFT_TOPIC_COUNT).toBe(54);
+    expect(CLINICAL_DIRECTORY_DRAFT_TOPIC_COUNT).toBe(45);
   });
 
   it("requires both an eligible topic and its audited live version", () => {

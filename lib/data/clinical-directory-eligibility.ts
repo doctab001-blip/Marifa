@@ -7,7 +7,7 @@
  * in Supabase; this list changes presentation only.
  */
 export const CLINICAL_DIRECTORY_MINIMUM_SCORE = 80;
-export const CLINICAL_DIRECTORY_DRAFT_TOPIC_COUNT = 54;
+export const CLINICAL_DIRECTORY_DRAFT_TOPIC_COUNT = 45;
 
 export const clinicalDirectoryEligibility = {
   "a1010000-0000-4000-8000-000000000005": { score: 84, version: "emergency-2026-10-12-v1-live" },
@@ -37,6 +37,16 @@ export const clinicalDirectoryEligibility = {
   "c2c404f2-5f47-4e4d-9ce7-fb32a9c1e102": { score: 84, version: "emergency-2026-10-12-v1-live" },
   "8091cd18-2256-40b7-8c6d-7557ac5e2fdf": { score: 84, version: "emergency-2026-10-12-v1-live" },
   "cbd9f91f-e176-4601-9bf4-b4f2f7e96deb": { score: 88, version: "emergency-2026-10-12-v1-live" },
+  // Chronic Care / GDM rewrites published 12 Oct 2026 (clinical review pending); audited with scripts/audit-clinical-authoring-standard.ts.
+  "e58a1236-9f75-4ca4-a398-0e27b5c1f849": { score: 91, version: "emergency-2026-10-12-v1-live" },
+  "35d6fe28-9862-4850-a9ea-7f1d24306001": { score: 91, version: "emergency-2026-10-12-v1-live" },
+  "ce9316d7-2fe5-415d-a633-b0ebb79a4693": { score: 88, version: "emergency-2026-10-12-v1-live" },
+  "e5bf7644-f824-4eca-8828-aacf30dad973": { score: 88, version: "emergency-2026-10-12-v1-live" },
+  "06bb691f-eef3-4b1f-a0fc-29b94afd9254": { score: 91, version: "emergency-2026-10-12-v1-live" },
+  "65fce08b-a289-44bd-9c91-79b2243f824c": { score: 91, version: "emergency-2026-10-12-v1-live" },
+  "2a6b90b6-13a1-443f-a212-1c2f3975327d": { score: 91, version: "emergency-2026-10-12-v1-live" },
+  "c1e45d3f-fa28-49f1-ab69-3ee4ab9cac6f": { score: 91, version: "emergency-2026-10-12-v1-live" },
+  "3f198bb7-8829-4e91-b35c-e46ad1e07eb5": { score: 84, version: "emergency-2026-10-12-v1-live" },
 } as const;
 
 export function isClinicalDirectoryEligible(id: string, version?: string) {
