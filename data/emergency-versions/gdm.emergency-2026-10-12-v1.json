@@ -1,0 +1,536 @@
+{
+  "id": "e58a1236-9f75-4ca4-a398-0e27b5c1f849",
+  "title": "Gestational Diabetes Identification and Management Pathway",
+  "specialty": "Obstetrics, Maternal-Fetal Medicine, and Diabetes Care",
+  "authority": "MOH",
+  "status": "under_review",
+  "version": "emergency-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Safe Birth",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Pregnant women: screening, diagnosis, glucose targets, treatment escalation, intrapartum glucose control, timing of birth and postnatal testing for gestational diabetes (GDM). Verified against the Saudi MOH Pocket Manual in Obstetrics & Gynaecology (GDM chapter) and NICE NG3; contraindications from US FDA prescribing information.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Glyburide and metformin pregnancy-specific dose titration — local protocol",
+      "Saudi Diabetes Clinical Practice Guideline has no GDM chapter",
+      "MOH manual (2014) is older than NICE NG3 updates"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "e58a1236-9f75-4ca4-a398-0e27b5c1f849"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "GDM is hyperglycaemia first recognised in pregnancy. Placental hormones (human placental lactogen, progesterone, cortisol, placental growth hormone) increase insulin resistance in the second and third trimesters; women whose beta cells cannot raise insulin secretion enough develop hyperglycaemia.",
+    "keyMechanisms": [
+      "Maternal glucose crosses the placenta; insulin does not → fetal hyperinsulinaemia → macrosomia, organomegaly, polyhydramnios and shoulder dystocia risk.",
+      "After birth the glucose supply stops but fetal hyperinsulinaemia persists → neonatal hypoglycaemia.",
+      "Insulin resistance resolves after delivery of the placenta, so most women return to normoglycaemia — but carry a high lifetime risk of type 2 diabetes and recurrence in future pregnancies.",
+      "Glucose found before 13 weeks at diabetic levels (fasting above 126 mg/dL, random above 200 mg/dL or HbA1c above 6.5%) indicates overt (pre-existing) diabetes, not GDM."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Usually asymptomatic — found by screening.",
+      "Occasionally thirst, polyuria, recurrent infections (vulvovaginal candidiasis, UTI)."
+    ],
+    "physicalSigns": [
+      "Fundal height large for dates; polyhydramnios.",
+      "Glycosuria on reagent strip (2+ once, or 1+ on 2 or more occasions should prompt testing — NICE).",
+      "Risk features: BMI 30 or more, previous baby 4.5 kg or more, previous GDM, first-degree relative with diabetes, high-prevalence ethnicity (NICE)."
+    ],
+    "redFlags": [
+      "Fasting plasma glucose 7.0 mmol/L or more at diagnosis — start insulin immediately (NICE)",
+      "Overt diabetes values at booking (fasting above 126 mg/dL, HbA1c above 6.5%)",
+      "Ketosis or vomiting with hyperglycaemia; maternal hypoglycaemia on insulin or glyburide",
+      "Macrosomia or polyhydramnios on scan; reduced fetal movements"
+    ],
+    "precipitants": [
+      "BMI 30 or more",
+      "Previous macrosomic baby (4.5 kg or more)",
+      "Previous GDM",
+      "First-degree relative with diabetes",
+      "Ethnicity with high diabetes prevalence (includes Middle Eastern populations)",
+      "Polycystic ovary syndrome"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Pre-existing type 2 (or type 1) diabetes",
+      "distinguishingFeatures": "Diagnostic-range glucose or HbA1c before 13 weeks; persists after birth."
+    },
+    {
+      "condition": "Steroid-induced hyperglycaemia",
+      "distinguishingFeatures": "Follows antenatal corticosteroids; transient."
+    },
+    {
+      "condition": "Renal glycosuria of pregnancy",
+      "distinguishingFeatures": "Glycosuria with normal OGTT."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Booking glucose (fasting, random) and HbA1c",
+        "modalityTarget": "First visit, before 13 weeks (MOH)",
+        "targetCondition": "Overt diabetes vs early GDM",
+        "expectedFinding": "Overt diabetes: fasting above 126 mg/dL, random above 200 mg/dL or HbA1c above 6.5%. GDM: fasting 95–125 mg/dL.",
+        "clinicalRationale": "Separates pre-existing diabetes from GDM at booking (MOH). NICE does not use fasting glucose or HbA1c to screen for GDM.",
+        "normalValue": "Fasting below 95 mg/dL (MOH booking criterion)",
+        "references": [
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          },
+          {
+            "title": "NICE NG3: Diabetes in pregnancy: management from preconception to the postnatal period",
+            "edition": "NICE guideline, 2015 (updated 2020)",
+            "url": "https://www.nice.org.uk/guidance/ng3"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "50-g 1-hour glucose challenge test (non-fasting)",
+        "modalityTarget": "All women (MOH screening)",
+        "targetCondition": "Screen for GDM",
+        "expectedFinding": "1-hour value 7.8 mmol/L or more → proceed to OGTT.",
+        "clinicalRationale": "Below 7.8 mmol/L early in pregnancy: repeat at 24–28 weeks (MOH). NICE uses risk factors instead and does not recommend the challenge test.",
+        "normalValue": "Below 7.8 mmol/L",
+        "references": [
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "75-g 2-hour oral glucose tolerance test (OGTT)",
+        "modalityTarget": "24–28 weeks (MOH; NICE for risk factors); as soon as possible after booking if previous GDM (NICE)",
+        "targetCondition": "Diagnose GDM",
+        "expectedFinding": "MOH: fasting 92–125 mg/dL, 1-h 180 mg/dL or more, or 2-h 153–199 mg/dL — one abnormal value diagnoses GDM. NICE: fasting 5.6 mmol/L or more or 2-h 7.8 mmol/L or more.",
+        "clinicalRationale": "Overt diabetes if fasting above 126 or 2-h above 200 mg/dL (MOH). Diagnostic thresholds differ between MOH and NICE — follow the local laboratory pathway.",
+        "normalValue": "MOH: fasting below 92, 1-h below 180, 2-h below 153 mg/dL; NICE: fasting below 5.6 and 2-h below 7.8 mmol/L",
+        "references": [
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          },
+          {
+            "title": "NICE NG3: Diabetes in pregnancy: management from preconception to the postnatal period",
+            "edition": "NICE guideline, 2015 (updated 2020)",
+            "url": "https://www.nice.org.uk/guidance/ng3"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Capillary blood glucose self-monitoring",
+        "modalityTarget": "Daily from diagnosis: before meals and 1 or 2 h after meals, and at bedtime",
+        "targetCondition": "Glycaemic control",
+        "expectedFinding": "Above target on repeated readings.",
+        "clinicalRationale": "Triggers escalation to medicines.",
+        "normalValue": "MOH: pre-meal below 95 mg/dL, 1-h below 140, 2-h below 120 mg/dL. NICE: fasting 5.3, 1-h 7.8, 2-h 6.4 mmol/L; above 4 mmol/L on insulin",
+        "references": [
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          },
+          {
+            "title": "NICE NG3: Diabetes in pregnancy: management from preconception to the postnatal period",
+            "edition": "NICE guideline, 2015 (updated 2020)",
+            "url": "https://www.nice.org.uk/guidance/ng3"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Postnatal glucose test",
+        "modalityTarget": "Before transfer to community; fasting plasma glucose 6–13 weeks after birth (NICE) or 75-g OGTT 6–12 weeks postpartum (MOH)",
+        "targetCondition": "Persisting diabetes",
+        "expectedFinding": "NICE fasting: below 6.0 low probability; 6.0–6.9 high risk; 7.0 or more likely type 2 diabetes. HbA1c alternative after 13 weeks.",
+        "clinicalRationale": "Identifies type 2 diabetes; annual testing thereafter.",
+        "normalValue": "Fasting plasma glucose below 6.0 mmol/L",
+        "references": [
+          {
+            "title": "NICE NG3: Diabetes in pregnancy: management from preconception to the postnatal period",
+            "edition": "NICE guideline, 2015 (updated 2020)",
+            "url": "https://www.nice.org.uk/guidance/ng3"
+          },
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Obstetric ultrasound — fetal growth and liquor",
+        "modalityTarget": "28, 32 and 36 weeks (MOH)",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Estimated fetal weight above the 90th centile, polyhydramnios.",
+        "clinicalRationale": "Macrosomia informs treatment intensity and timing/mode of birth; MOH offers caesarean if estimated fetal weight above 4,750 g.",
+        "references": [
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          },
+          {
+            "title": "NICE NG3: Diabetes in pregnancy: management from preconception to the postnatal period",
+            "edition": "NICE guideline, 2015 (updated 2020)",
+            "url": "https://www.nice.org.uk/guidance/ng3"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "screen",
+      "title": "Screen and diagnose",
+      "timeframe": "Booking and 24–28 weeks",
+      "actions": [
+        "Booking (before 13 weeks): check fasting/random glucose or HbA1c to detect overt diabetes (MOH).",
+        "MOH: 50-g glucose challenge for all; if 7.8 mmol/L or more do a fasting 75-g OGTT.",
+        "75-g OGTT at 24–28 weeks; one abnormal value (fasting 92, 1-h 180, 2-h 153 mg/dL) diagnoses GDM (MOH).",
+        "Previous GDM: early self-monitoring or OGTT soon after booking, repeated at 24–28 weeks if normal (NICE).",
+        "Review in the joint diabetes–antenatal clinic within 1 week of diagnosis (NICE)."
+      ]
+    },
+    {
+      "id": "lifestyle",
+      "title": "Diet and exercise",
+      "timeframe": "From diagnosis",
+      "actions": [
+        "Medical nutrition therapy with a dietitian; aim for normoglycaemia, no ketosis and adequate weight gain (MOH).",
+        "Daily exercise for 30 minutes, e.g. walking after meals (MOH, NICE).",
+        "Teach capillary glucose self-monitoring; targets as in investigations.",
+        "Fasting plasma glucose below 7 mmol/L at diagnosis: trial of diet and exercise for 1–2 weeks (NICE)."
+      ]
+    },
+    {
+      "id": "medicines",
+      "title": "Escalate to medicines",
+      "timeframe": "Targets not met within 1–2 weeks",
+      "actions": [
+        "NICE: metformin first; insulin if metformin is contraindicated or unacceptable; add insulin if targets still not met.",
+        "Fasting plasma glucose 7.0 mmol/L or more at diagnosis: insulin immediately, with or without metformin (NICE). Fasting 6.0–6.9 with macrosomia or polyhydramnios: consider immediate insulin.",
+        "MOH: glyburide is a suitable alternative to insulin; insulin total daily dose 0.7 units/kg (1st trimester), 0.8 units/kg (2nd), 0.9 units/kg (3rd).",
+        "Insulin: rapid-acting analogues (aspart, lispro) and isophane (NPH) are the preferred insulins in pregnancy (NICE); keep glucose above 4 mmol/L and carry fast-acting glucose.",
+        "Antenatal corticosteroids raise glucose: give additional insulin per protocol and monitor closely (NICE)."
+      ]
+    },
+    {
+      "id": "fetal",
+      "title": "Fetal surveillance",
+      "timeframe": "From 28 weeks",
+      "actions": [
+        "Growth scans at 28, 32 and 36 weeks; antenatal fetal testing usually from 32 weeks (MOH)."
+      ]
+    },
+    {
+      "id": "birth",
+      "title": "Timing and mode of birth",
+      "timeframe": "Third trimester",
+      "actions": [
+        "MOH: induction at 39 weeks if glycaemic control is good; earlier if control is suboptimal or comorbidity.",
+        "NICE: give birth no later than 40+6 weeks; consider earlier if maternal or fetal complications.",
+        "Ultrasound-diagnosed macrosomia: discuss vaginal birth, induction and caesarean (NICE); MOH offers caesarean if estimated fetal weight above 4,750 g."
+      ]
+    },
+    {
+      "id": "labour",
+      "title": "Labour and caesarean section",
+      "timeframe": "Intrapartum",
+      "actions": [
+        "Check blood glucose every 2 hours in established labour; start insulin infusion if above 120 mg/dL, adjusted to the local protocol (MOH). NICE: keep capillary glucose 4–7 mmol/L, using IV dextrose and insulin if not maintained.",
+        "MOH sliding scale example: glucose below 70 mg/dL — no insulin, dextrose 5%/saline; below 140 — no insulin, saline or Hartmann's; above 140 — 10 units insulin in 1,000 mL dextrose 5% at 100–125 mL/h, or 0.5–1 unit/h with 100 mL/h dextrose.",
+        "Scheduled caesarean: hold the morning dose, start dextrose 5% to avoid ketosis, check glucose hourly, keep 70–190 mg/dL post-operatively (MOH)."
+      ],
+      "branches": [
+        {
+          "condition": "Hypoglycaemia",
+          "actions": [
+            "Treat promptly if glucose below 50 mg/dL (MOH); stop insulin infusion and give glucose."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "postnatal",
+      "title": "After birth",
+      "timeframe": "Postnatal",
+      "actions": [
+        "Stop glucose-lowering medicines after birth in GDM; check fasting and post-meal glucose for 24 h after vaginal birth and 48 h after caesarean (MOH).",
+        "Early feeding of the baby; neonatal glucose monitoring for hypoglycaemia (NICE).",
+        "Postnatal test: fasting plasma glucose 6–13 weeks (NICE) or 75-g OGTT at 6–12 weeks (MOH); then annual testing."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Screen, diagnose and manage gestational diabetes in pregnancy, labour and the postnatal period."
+    ],
+    "references": [
+      {
+        "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+        "edition": "2014",
+        "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf",
+        "locator": "Antenatal screening (p. 162) and Gestational Diabetes Mellitus chapter (pp. 166–171)"
+      },
+      {
+        "title": "NICE NG3: Diabetes in pregnancy: management from preconception to the postnatal period",
+        "edition": "NICE guideline, 2015 (updated 2020)",
+        "url": "https://www.nice.org.uk/guidance/ng3",
+        "locator": "Recs 1.2 (gestational diabetes), 1.3.5–1.3.6 (targets), 1.4.4–1.4.5 (timing of birth), 1.6.8–1.6.13 (postnatal)"
+      },
+      {
+        "title": "Metformin hydrochloride prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=011de1a5-1ac0-4831-9e8d-26ec79ba2205",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Glyburide (glibenclamide) tablets prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=05341afe-5b7a-462a-a196-689cb09f83fc",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Insulin aspart (NovoLog) / insulin glargine prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=13891e5a-e57a-46e8-911c-2f680352b52b",
+        "locator": "Section 4 Contraindications"
+      }
+    ],
+    "keyPoints": [
+      "75-g OGTT at 24–28 weeks; one abnormal value diagnoses GDM (MOH).",
+      "Diet and exercise first; escalate within 1–2 weeks if targets not met.",
+      "Fasting glucose 7.0 mmol/L or more: insulin straight away.",
+      "Induce at 39 weeks if well controlled (MOH); birth by 40+6 (NICE).",
+      "Always test glucose after birth: 6–13 weeks then annually."
+    ],
+    "pitfalls": [
+      "Missing overt diabetes at booking.",
+      "Using HbA1c or fasting glucose to screen for GDM (NICE).",
+      "Forgetting extra insulin with antenatal steroids.",
+      "Not stopping GDM treatment after birth.",
+      "Losing women to follow-up for postnatal glucose testing."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Self-monitoring technique and targets; hypoglycaemia recognition and fast-acting glucose.",
+      "Risk of recurrence and of type 2 diabetes; annual testing.",
+      "Early and frequent feeding of the baby."
+    ],
+    "lifestyleAndDiet": [
+      "Dietitian-led medical nutrition therapy.",
+      "Walking 30 minutes daily, e.g. after meals.",
+      "Weight control after birth."
+    ],
+    "mdtReferrals": [
+      "Joint diabetes–antenatal clinic within 1 week.",
+      "Dietitian (all women).",
+      "Neonatal team for birth planning."
+    ],
+    "dischargeCriteria": [
+      "Capillary glucose back within normal range after birth (GDM).",
+      "Feeding established; neonatal glucose stable.",
+      "Postnatal glucose test booked."
+    ],
+    "followUpPlan": "Postnatal glucose test at 6–13 weeks (NICE) or OGTT at 6–12 weeks (MOH), then annual HbA1c or fasting glucose; pre-conception diabetes testing and folic acid before the next pregnancy; lifestyle advice on weight, diet and exercise."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "GDM — 75-g OGTT (MOH)",
+      "threshold": "Fasting 92–125 mg/dL, 1-h 180 mg/dL or more, or 2-h 153–199 mg/dL (any one)"
+    },
+    {
+      "criterion": "GDM — 75-g OGTT (NICE)",
+      "threshold": "Fasting 5.6 mmol/L or more, or 2-h 7.8 mmol/L or more"
+    },
+    {
+      "criterion": "Overt diabetes in pregnancy (MOH)",
+      "threshold": "Fasting above 126 mg/dL, random/2-h above 200 mg/dL, or HbA1c above 6.5%"
+    },
+    {
+      "criterion": "Start insulin immediately (NICE)",
+      "threshold": "Fasting plasma glucose 7.0 mmol/L or more at diagnosis"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "GDM not at target after 1–2 weeks of diet and exercise (NICE first-line)",
+        "patientGroup": "Pregnant women",
+        "genericName": "Metformin",
+        "dose": "500 mg twice daily (or 850 mg once daily) with meals",
+        "route": "PO",
+        "frequency": "Increase by 500 mg weekly per glucose and tolerance",
+        "duration": "Until birth; stop after birth",
+        "adjustments": [
+          "Maximum 2,550 mg/day (label)",
+          "Label dose is for type 2 diabetes; use in pregnancy follows NICE NG3",
+          "Stop before iodinated contrast if eGFR 30–60"
+        ],
+        "monitoring": [
+          "Capillary glucose profile",
+          "GI tolerance",
+          "Renal function"
+        ],
+        "sourceTitle": "Metformin hydrochloride prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=011de1a5-1ac0-4831-9e8d-26ec79ba2205",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "contraindications": [
+          "eGFR below 30 mL/min/1.73 m²",
+          "Acute or chronic metabolic acidosis including DKA",
+          "Hypersensitivity"
+        ]
+      },
+      {
+        "indication": "GDM requiring insulin (MOH)",
+        "patientGroup": "Pregnant women",
+        "genericName": "Insulin (rapid-acting analogue plus isophane/NPH)",
+        "dose": "Total daily dose 0.7 units/kg (1st trimester), 0.8 units/kg (2nd), 0.9 units/kg (3rd)",
+        "route": "SC",
+        "frequency": "Split basal/prandial per local protocol",
+        "duration": "Until birth; stop after birth in GDM",
+        "adjustments": [
+          "Titrate to capillary targets; keep glucose above 4 mmol/L",
+          "Extra insulin needed with antenatal corticosteroids"
+        ],
+        "monitoring": [
+          "Capillary glucose (fasting, pre-meal, post-meal, bedtime)",
+          "Hypoglycaemia"
+        ],
+        "sourceTitle": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+        "sourceUrl": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf",
+        "sourceEdition": "MOH 2014, GDM chapter (pp. 167–170)",
+        "contraindications": [
+          "During episodes of hypoglycaemia",
+          "Hypersensitivity to the insulin or excipients"
+        ]
+      },
+      {
+        "indication": "GDM — alternative to insulin (MOH)",
+        "patientGroup": "Pregnant women",
+        "genericName": "Glyburide (glibenclamide)",
+        "dose": "2.5–5 mg once daily with breakfast (1.25 mg if at risk of hypoglycaemia)",
+        "route": "PO",
+        "frequency": "Titrate per glucose",
+        "duration": "Until birth",
+        "adjustments": [
+          "Starting dose from the FDA label (type 2 diabetes); MOH lists glyburide as an alternative to insulin — NICE does not recommend it",
+          "Hypoglycaemia risk"
+        ],
+        "monitoring": [
+          "Capillary glucose",
+          "Hypoglycaemia (mother and neonate)"
+        ],
+        "sourceTitle": "Glyburide (glibenclamide) tablets prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=05341afe-5b7a-462a-a196-689cb09f83fc",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "contraindications": [
+          "Hypersensitivity",
+          "Diabetic ketoacidosis",
+          "Type 1 diabetes",
+          "Concomitant bosentan"
+        ]
+      },
+      {
+        "indication": "Intrapartum hyperglycaemia above 140 mg/dL (MOH)",
+        "patientGroup": "Women in labour",
+        "genericName": "Insulin, soluble (IV)",
+        "dose": "10 units in 1,000 mL dextrose 5% at 100–125 mL/h, or 0.5–1 unit/h with dextrose 5% 100 mL/h",
+        "route": "IV infusion",
+        "frequency": "Adjust to glucose every 2–4 h",
+        "duration": "Until birth",
+        "adjustments": [
+          "Hold insulin if glucose below 140 mg/dL",
+          "Treat glucose below 50 mg/dL promptly"
+        ],
+        "monitoring": [
+          "Capillary glucose every 2 h"
+        ],
+        "sourceTitle": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+        "sourceUrl": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf",
+        "sourceEdition": "MOH 2014, GDM chapter (pp. 167–170)",
+        "contraindications": [
+          "During episodes of hypoglycaemia",
+          "Hypersensitivity to the insulin or excipients"
+        ]
+      }
+    ],
+    "note": "Insulin and intrapartum regimens are from the MOH Pocket Manual; metformin and glyburide starting doses and all contraindications are from US FDA labels (written for type 2 diabetes — pregnancy use follows NICE NG3/MOH). Check SFDA registration, hospital formulary and actual availability."
+  },
+  "guidelineComparison": {
+    "title": "Saudi MOH Pocket Manual vs NICE NG3",
+    "columns": [
+      "MOH (2014)",
+      "NICE NG3"
+    ],
+    "rows": [
+      {
+        "parameter": "Screening",
+        "values": [
+          "Universal 50-g challenge, then OGTT",
+          "Risk-factor based 75-g OGTT"
+        ]
+      },
+      {
+        "parameter": "OGTT diagnosis",
+        "values": [
+          "Fasting 92, 1-h 180, 2-h 153 mg/dL (one value)",
+          "Fasting 5.6 or 2-h 7.8 mmol/L"
+        ]
+      },
+      {
+        "parameter": "Targets",
+        "values": [
+          "Pre-meal below 95; 1-h below 140; 2-h below 120 mg/dL",
+          "Fasting 5.3; 1-h 7.8; 2-h 6.4 mmol/L"
+        ]
+      },
+      {
+        "parameter": "First drug after lifestyle",
+        "values": [
+          "Insulin, or glyburide as alternative",
+          "Metformin, then insulin"
+        ]
+      },
+      {
+        "parameter": "Timing of birth",
+        "values": [
+          "Induction at 39 weeks if well controlled",
+          "No later than 40+6 weeks"
+        ]
+      },
+      {
+        "parameter": "Postnatal test",
+        "values": [
+          "75-g OGTT at 6–12 weeks",
+          "Fasting glucose 6–13 weeks; no routine OGTT"
+        ]
+      }
+    ],
+    "note": "Units: 92 mg/dL ≈ 5.1 mmol/L; 153 mg/dL ≈ 8.5 mmol/L; 180 mg/dL ≈ 10.0 mmol/L."
+  }
+}

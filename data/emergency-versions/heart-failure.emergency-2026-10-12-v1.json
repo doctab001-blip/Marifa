@@ -1,0 +1,790 @@
+{
+  "id": "35d6fe28-9862-4850-a9ea-7f1d24306001",
+  "title": "Heart Failure",
+  "specialty": "Cardiology / Primary Care",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "emergency-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Adults with chronic heart failure (HFrEF, HFmrEF, HFpEF) in primary and specialist care: diagnosis with NT-proBNP and echocardiography, the four foundational medicines, titration and monitoring, devices and follow-up. Verified against the Saudi Heart Association HF guideline 2019 and its 2023 focused update (National Heart Center/SHA), and NICE NG106 (2025 update). Starting doses and contraindications from US FDA prescribing information. Acute decompensated heart failure is covered in the Acute Heart Failure topic.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Bisoprolol HF titration (not in FDA label) — local protocol",
+      "IV iron dosing — product SmPC/local protocol",
+      "SHA device recommendation tables not reproduced"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "35d6fe28-9862-4850-a9ea-7f1d24306001"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Heart failure is a clinical syndrome of symptoms (breathlessness, fatigue, ankle swelling) caused by a structural or functional cardiac abnormality, with raised natriuretic peptides or objective congestion. It is classified by left ventricular ejection fraction (LVEF): reduced (HFrEF, 40% or less), mildly reduced (HFmrEF, 41–49%) and preserved (HFpEF, 50% or more) (SHA 2023).",
+    "keyMechanisms": [
+      "Myocardial injury (ischaemia, hypertension, cardiomyopathy, valve disease) lowers cardiac output → activation of the renin–angiotensin–aldosterone system and sympathetic nervous system.",
+      "Neurohormonal activation causes sodium and water retention, vasoconstriction and adverse remodelling (dilatation, fibrosis) — the targets of ACE inhibitor/ARNI, beta-blocker and MRA therapy.",
+      "SGLT2 inhibitors reduce HF hospitalisation and cardiovascular death across the LVEF spectrum (SHA 2023).",
+      "Raised wall stress releases BNP/NT-proBNP; levels support diagnosis and prognosis but do not separate HF types (NICE).",
+      "HFpEF: stiff ventricle with impaired filling, usually with hypertension, obesity, diabetes, AF and older age."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Breathlessness on exertion, orthopnoea, paroxysmal nocturnal dyspnoea.",
+      "Fatigue, reduced exercise tolerance.",
+      "Ankle or leg swelling; weight gain; abdominal bloating."
+    ],
+    "physicalSigns": [
+      "Raised jugular venous pressure, displaced apex beat, third heart sound.",
+      "Bibasal crackles, pleural effusion; peripheral oedema; hepatomegaly.",
+      "Tachycardia, irregular pulse (AF); murmurs.",
+      "NYHA class I–IV for symptom severity."
+    ],
+    "redFlags": [
+      "Breathlessness at rest, hypoxia, hypotension or cold peripheries — acute decompensation",
+      "Syncope, sustained palpitations, VT",
+      "Potassium above 5.5 mmol/L or creatinine rise above 50% on RAAS inhibitors/MRA",
+      "Heart rate below 50/min or second/third-degree heart block on beta-blocker",
+      "Rapid weight gain (fluid) despite diuretics"
+    ],
+    "precipitants": [
+      "Ischaemic heart disease",
+      "Hypertension",
+      "Diabetes",
+      "Valve disease",
+      "AF and other arrhythmias",
+      "Alcohol; cardiotoxic drugs",
+      "Non-adherence, NSAIDs, infection, salt excess (decompensation)"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Chronic lung disease (COPD, ILD)",
+      "distinguishingFeatures": "Spirometry/CT abnormal; NT-proBNP usually low."
+    },
+    {
+      "condition": "Obesity and deconditioning",
+      "distinguishingFeatures": "Normal echo and natriuretic peptide (obesity lowers NT-proBNP)."
+    },
+    {
+      "condition": "Anaemia, thyroid disease",
+      "distinguishingFeatures": "Blood tests; can cause or worsen HF."
+    },
+    {
+      "condition": "Nephrotic syndrome, liver disease, venous insufficiency",
+      "distinguishingFeatures": "Oedema with normal cardiac function."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "NT-proBNP (or BNP)",
+        "modalityTarget": "All with suspected HF (NICE)",
+        "targetCondition": "Heart failure",
+        "expectedFinding": "Above 2,000 ng/L: specialist assessment and echo within 2 weeks; 400–2,000 ng/L: within 6 weeks.",
+        "clinicalRationale": "Below 400 ng/L in an untreated person makes HF less likely (NICE). Obesity, diuretics and ACE inhibitors/ARNI/ARB lower levels; AF, CKD and age raise them.",
+        "normalValue": "NT-proBNP below 400 ng/L (NICE threshold for referral)",
+        "references": [
+          {
+            "title": "NICE NG106: Chronic heart failure in adults: diagnosis and management",
+            "edition": "NICE guideline, 2018 (updated 2025)",
+            "url": "https://www.nice.org.uk/guidance/ng106"
+          },
+          {
+            "title": "Saudi Heart Association position statement on the use of biomarkers for the management of heart failure and acute coronary syndrome",
+            "edition": "J Saudi Heart Assoc 2022;34(2):114",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9518724/"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "12-lead ECG",
+        "modalityTarget": "At diagnosis and before a beta-blocker",
+        "targetCondition": "Rhythm, conduction, ischaemia",
+        "expectedFinding": "AF, LBBB/QRS 130 ms or more (device candidacy), Q waves, bradycardia.",
+        "clinicalRationale": "Do not start a beta-blocker with heart rate below 50/min or 2nd/3rd-degree block without a pacemaker (NICE).",
+        "normalValue": "Sinus rhythm, rate 60–100/min, QRS below 120 ms",
+        "references": [
+          {
+            "title": "NICE NG106: Chronic heart failure in adults: diagnosis and management",
+            "edition": "NICE guideline, 2018 (updated 2025)",
+            "url": "https://www.nice.org.uk/guidance/ng106"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Urea, creatinine/eGFR, sodium, potassium",
+        "modalityTarget": "Baseline; 1–2 weeks after starting and after each dose increase of ACE inhibitor/ARNI/ARB/MRA; then every 3–6 months",
+        "targetCondition": "Renal function and hyperkalaemia",
+        "expectedFinding": "Creatinine rise above 50% or potassium above 5.5 mmol/L → follow local guideline (NICE).",
+        "clinicalRationale": "Guides titration; do not stop automatically.",
+        "normalValue": "Potassium 3.5–5.0 mmol/L; eGFR above 60 mL/min/1.73 m²",
+        "references": [
+          {
+            "title": "NICE NG106: Chronic heart failure in adults: diagnosis and management",
+            "edition": "NICE guideline, 2018 (updated 2025)",
+            "url": "https://www.nice.org.uk/guidance/ng106"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Iron studies (ferritin, transferrin saturation) and haemoglobin",
+        "modalityTarget": "All with HFrEF; repeat if symptomatic",
+        "targetCondition": "Iron deficiency",
+        "expectedFinding": "Ferritin below 100 ng/mL, or 100–299 ng/mL with TSAT below 20%.",
+        "clinicalRationale": "Consider IV iron (ferric carboxymaltose, iron sucrose or ferric derisomaltose) to improve symptoms and exercise capacity (SHA 2023; NICE if Hb below 150 g/L).",
+        "normalValue": "Ferritin 100–300 ng/mL with TSAT 20% or more",
+        "references": [
+          {
+            "title": "2023 National Heart Center/Saudi Heart Association focused update of the 2019 SHA guidelines for the management of heart failure",
+            "edition": "J Saudi Heart Assoc 2023 (Al Habeeb W et al.), doi:10.37616/2212-5043.1334",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10263126/"
+          },
+          {
+            "title": "NICE NG106: Chronic heart failure in adults: diagnosis and management",
+            "edition": "NICE guideline, 2018 (updated 2025)",
+            "url": "https://www.nice.org.uk/guidance/ng106"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "HbA1c, lipids, TSH, liver function, FBC",
+        "modalityTarget": "At diagnosis",
+        "targetCondition": "Comorbidities and causes",
+        "expectedFinding": "Diabetes, thyroid disease, anaemia, liver congestion.",
+        "clinicalRationale": "Treat contributors.",
+        "references": [
+          {
+            "title": "2023 National Heart Center/Saudi Heart Association focused update of the 2019 SHA guidelines for the management of heart failure",
+            "edition": "J Saudi Heart Assoc 2023 (Al Habeeb W et al.), doi:10.37616/2212-5043.1334",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10263126/"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Transthoracic echocardiography",
+        "modalityTarget": "Suspected HF with raised NT-proBNP",
+        "targetCondition": "Imaging",
+        "expectedFinding": "LVEF 40% or less (HFrEF), 41–49% (HFmrEF), 50% or more with structural/diastolic abnormality (HFpEF); valve disease.",
+        "clinicalRationale": "Defines HF type and therefore treatment (SHA 2023).",
+        "references": [
+          {
+            "title": "2023 National Heart Center/Saudi Heart Association focused update of the 2019 SHA guidelines for the management of heart failure",
+            "edition": "J Saudi Heart Assoc 2023 (Al Habeeb W et al.), doi:10.37616/2212-5043.1334",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10263126/"
+          },
+          {
+            "title": "NICE NG106: Chronic heart failure in adults: diagnosis and management",
+            "edition": "NICE guideline, 2018 (updated 2025)",
+            "url": "https://www.nice.org.uk/guidance/ng106"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Chest X-ray",
+        "modalityTarget": "At diagnosis",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Cardiomegaly, pulmonary venous congestion, effusions; alternative lung pathology.",
+        "clinicalRationale": "Supports diagnosis; excludes lung causes.",
+        "references": [
+          {
+            "title": "NICE NG106: Chronic heart failure in adults: diagnosis and management",
+            "edition": "NICE guideline, 2018 (updated 2025)",
+            "url": "https://www.nice.org.uk/guidance/ng106"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "diagnose",
+      "title": "Confirm and classify",
+      "timeframe": "At presentation",
+      "actions": [
+        "History, examination, ECG and NT-proBNP; refer for echocardiography by NT-proBNP band (NICE).",
+        "Classify by LVEF: HFrEF 40% or less, HFmrEF 41–49%, HFpEF 50% or more (SHA 2023).",
+        "Look for the cause: ischaemia, hypertension, valve disease, arrhythmia, cardiomyopathy, alcohol."
+      ]
+    },
+    {
+      "id": "hfref",
+      "title": "HFrEF — four foundational medicines",
+      "timeframe": "Start promptly; titrate every 1–2 weeks",
+      "actions": [
+        "Give all four: ACE inhibitor (or ARNI), beta-blocker, MRA and SGLT2 inhibitor unless contraindicated (SHA 2023, NICE 2025).",
+        "It is not necessary to reach the target dose of one medicine before starting the next (NICE).",
+        "Switch ACE inhibitor to sacubitril/valsartan if still symptomatic on maximum tolerated doses; stop the ACE inhibitor 36 h before (NICE, label).",
+        "ACE-inhibitor intolerance (not angioedema): ARNI; after angioedema: beta-blocker, MRA, SGLT2 inhibitor and consider an ARB (NICE).",
+        "SHA target doses: enalapril 20 mg twice daily, lisinopril 20–40 mg daily, ramipril 10 mg daily, bisoprolol 10 mg daily, carvedilol 25 mg twice daily, metoprolol succinate 200 mg daily, candesartan 32 mg daily, valsartan 160 mg twice daily, sacubitril/valsartan 97/103 mg twice daily, spironolactone or eplerenone 50 mg daily, ivabradine 7.5 mg twice daily."
+      ],
+      "branches": [
+        {
+          "condition": "Still symptomatic, sinus rhythm 75/min or more",
+          "actions": [
+            "Ivabradine (specialist)."
+          ]
+        },
+        {
+          "condition": "ACE inhibitor, ARNI and ARB all not tolerated",
+          "actions": [
+            "Specialist advice; consider hydralazine with a nitrate (NICE)."
+          ]
+        },
+        {
+          "condition": "Worsening or severe HFrEF despite optimised therapy",
+          "actions": [
+            "Digoxin with specialist advice (NICE)."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "congestion",
+      "title": "Congestion",
+      "timeframe": "Whenever fluid overloaded",
+      "actions": [
+        "Loop diuretic at the lowest dose that keeps the patient euvolaemic; titrate up and down (NICE). SHA usual furosemide range 40–240 mg/day.",
+        "Daily weights; flexible diuretic plan for patients who can self-manage."
+      ]
+    },
+    {
+      "id": "hfmref",
+      "title": "HFmrEF and HFpEF",
+      "timeframe": "After diagnosis",
+      "actions": [
+        "SGLT2 inhibitor for all with HFmrEF and HFpEF (SHA 2023); NICE: consider an MRA and SGLT2 inhibitor in HFpEF.",
+        "HFmrEF: consider ACE inhibitor, beta-blocker and MRA as well (NICE; SHA: may be considered).",
+        "Diuretics for congestion; treat hypertension, AF, diabetes, obesity."
+      ]
+    },
+    {
+      "id": "other",
+      "title": "Other measures",
+      "timeframe": "Ongoing",
+      "actions": [
+        "IV iron if iron deficient (see investigations).",
+        "Avoid verapamil, diltiazem and short-acting dihydropyridines in HFrEF (NICE); avoid NSAIDs and thiazolidinediones.",
+        "Devices: ICD and cardiac resynchronisation therapy per SHA 2019 Tables 13–14 — refer to cardiology.",
+        "Annual influenza and one-off pneumococcal vaccination (NICE). Anticoagulate if AF (per AF guideline).",
+        "Pregnancy: ACE inhibitors, ARBs, ARNI, MRAs, ivabradine, vericiguat and SGLT2 inhibitors are contraindicated — stop before conception (SHA 2023)."
+      ]
+    },
+    {
+      "id": "monitor",
+      "title": "Monitoring",
+      "timeframe": "Every 2 weeks while titrating; at least 6-monthly when stable",
+      "actions": [
+        "Functional capacity, fluid status, rhythm, cognition, nutrition and medicines review (NICE).",
+        "Renal function and potassium 1–2 weeks after each change; BP before and after each increment; heart rate and ECG with beta-blocker titration."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Diagnose, classify and manage chronic heart failure with guideline-directed medicines, titration and monitoring."
+    ],
+    "references": [
+      {
+        "title": "2023 National Heart Center/Saudi Heart Association focused update of the 2019 SHA guidelines for the management of heart failure",
+        "edition": "J Saudi Heart Assoc 2023 (Al Habeeb W et al.), doi:10.37616/2212-5043.1334",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10263126/",
+        "locator": "HF definitions (Table 3); HFrEF/HFmrEF/HFpEF pharmacotherapy; iron deficiency; pregnancy"
+      },
+      {
+        "title": "Saudi Heart Association (SHA) guidelines for the management of heart failure",
+        "edition": "J Saudi Heart Assoc 2019;31(4):204–253 (Al Habeeb W et al.)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6660461/",
+        "locator": "Table 12: target doses of disease-modifying agents and diuretics"
+      },
+      {
+        "title": "NICE NG106: Chronic heart failure in adults: diagnosis and management",
+        "edition": "NICE guideline, 2018 (updated 2025)",
+        "url": "https://www.nice.org.uk/guidance/ng106",
+        "locator": "Recs 1.2 (diagnosis, NT-proBNP), 1.4–1.5 (treatment), 1.7 (starting and monitoring), 1.9 (other treatments)"
+      },
+      {
+        "title": "Saudi Heart Association position statement on the use of biomarkers for the management of heart failure and acute coronary syndrome",
+        "edition": "J Saudi Heart Assoc 2022;34(2):114",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9518724/",
+        "locator": "Heart failure natriuretic peptide statements"
+      },
+      {
+        "title": "Enalapril maleate prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=074fe718-88d8-365c-e063-6394a90a299d",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Sacubitril/valsartan (Entresto) prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=000dc81d-ab91-450c-8eae-8eb74e72296f",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Carvedilol prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=010290af-81f4-0037-e063-6394a90a4638",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Metoprolol succinate prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=028049cd-d233-49f9-87fa-ec91e433a49f",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Bisoprolol fumarate prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=084308e4-3b8b-40d6-acbf-d775772a8a73",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Spironolactone prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0c45d793-6f2f-4622-b5ed-6875acfbc02b",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Eplerenone (Inspra) prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1a52bedc-8e2c-4116-a296-a87770676b4a",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Dapagliflozin (Farxiga) prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01f90c94-71cb-4a1f-81ff-8004b850529b",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Empagliflozin (Jardiance) prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1782b947-4a72-4feb-a488-1469d9af82bd",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Furosemide prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01a5f094-b473-4e46-9e61-69d5ec6dd766",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Ivabradine prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=236cc914-7eef-600c-e063-6394a90a4bd1",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Candesartan prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7eb297cb-ef1b-44e0-a49d-03727100579e",
+        "locator": "Section 4 Contraindications"
+      }
+    ],
+    "keyPoints": [
+      "NT-proBNP first; echo to classify by LVEF.",
+      "HFrEF: four pillars — ACEi/ARNI, beta-blocker, MRA, SGLT2 inhibitor.",
+      "Start low, go slow, but start all four early.",
+      "Check potassium and creatinine 1–2 weeks after each change.",
+      "SGLT2 inhibitors help every LVEF category."
+    ],
+    "pitfalls": [
+      "Waiting to reach target dose of one drug before starting the next.",
+      "Stopping RAAS blockers for a modest creatinine rise.",
+      "Starting ARNI within 36 h of an ACE inhibitor.",
+      "Non-dihydropyridine CCBs or NSAIDs in HFrEF.",
+      "Low NT-proBNP in obesity falsely reassuring."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Daily weights; act on gain of 2 kg in 3 days per local plan.",
+      "Medicine purpose, side effects and sick-day rules.",
+      "Symptoms of worsening HF and when to seek help."
+    ],
+    "lifestyleAndDiet": [
+      "Stop smoking; avoid excess alcohol.",
+      "Regular exercise as tolerated; cardiac rehabilitation.",
+      "Moderate salt intake; avoid excess fluid if hyponatraemic or congested (individualise)."
+    ],
+    "mdtReferrals": [
+      "Specialist HF team/cardiology.",
+      "Cardiac rehabilitation.",
+      "Palliative care for advanced HF."
+    ],
+    "dischargeCriteria": [
+      "Euvolaemic on a stable diuretic dose.",
+      "Foundational medicines started with a titration plan.",
+      "Bloods booked 1–2 weeks after changes; HF nurse/clinic follow-up arranged."
+    ],
+    "followUpPlan": "Review every 2 weeks during titration; stable patients at least every 6 months with renal function and potassium every 3–6 months (NICE). Specialist HF team and cardiac rehabilitation; palliative care when appropriate."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "HFrEF",
+      "threshold": "LVEF 40% or less"
+    },
+    {
+      "criterion": "HFmrEF",
+      "threshold": "LVEF 41–49%"
+    },
+    {
+      "criterion": "HFpEF",
+      "threshold": "LVEF 50% or more with HF symptoms/signs and structural or diastolic abnormality"
+    },
+    {
+      "criterion": "Urgent echo (within 2 weeks)",
+      "threshold": "NT-proBNP above 2,000 ng/L"
+    },
+    {
+      "criterion": "Iron deficiency",
+      "threshold": "Ferritin below 100 ng/mL, or 100–299 with TSAT below 20%"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "HFrEF — ACE inhibitor",
+        "patientGroup": "Adults",
+        "genericName": "Enalapril",
+        "dose": "2.5 mg",
+        "route": "PO",
+        "frequency": "Twice daily; titrate over days to weeks",
+        "duration": "Long term; SHA target 20 mg twice daily",
+        "adjustments": [
+          "Start 2.5 mg once daily if sodium below 130 mmol/L or creatinine above 1.6 mg/dL (label)",
+          "Check renal function and potassium 1–2 weeks after each change"
+        ],
+        "monitoring": [
+          "BP, creatinine, potassium"
+        ],
+        "sourceTitle": "Enalapril maleate prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=074fe718-88d8-365c-e063-6394a90a299d",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "contraindications": [
+          "History of ACE-inhibitor angioedema; hereditary or idiopathic angioedema",
+          "Within 36 h of sacubitril/valsartan",
+          "With aliskiren in diabetes",
+          "Pregnancy (fetal toxicity — boxed warning)"
+        ]
+      },
+      {
+        "indication": "HFrEF — ARNI (instead of ACE inhibitor)",
+        "patientGroup": "Adults",
+        "genericName": "Sacubitril/valsartan",
+        "dose": "49/51 mg (24/26 mg if low dose ACE inhibitor/ARB, eGFR below 30 or moderate hepatic impairment)",
+        "route": "PO",
+        "frequency": "Twice daily; double every 2–4 weeks",
+        "duration": "Long term; target 97/103 mg twice daily",
+        "adjustments": [
+          "Stop the ACE inhibitor at least 36 h before the first dose"
+        ],
+        "monitoring": [
+          "BP, creatinine, potassium, angioedema"
+        ],
+        "sourceTitle": "Sacubitril/valsartan (Entresto) prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=000dc81d-ab91-450c-8eae-8eb74e72296f",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "contraindications": [
+          "History of angioedema with ACE inhibitor or ARB",
+          "With an ACE inhibitor or within 36 h of stopping one",
+          "With aliskiren in diabetes",
+          "Pregnancy (boxed warning)"
+        ]
+      },
+      {
+        "indication": "HFrEF — beta-blocker",
+        "patientGroup": "Adults (stable, euvolaemic)",
+        "genericName": "Carvedilol",
+        "dose": "3.125 mg",
+        "route": "PO with food",
+        "frequency": "Twice daily; double every 2 weeks or more (6.25 → 12.5 → 25 mg)",
+        "duration": "Long term; SHA target 25 mg twice daily (max 50 mg twice daily if over 85 kg)",
+        "adjustments": [
+          "Do not increase until worsening HF or vasodilation is stable"
+        ],
+        "monitoring": [
+          "Heart rate, BP, fluid status"
+        ],
+        "sourceTitle": "Carvedilol prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=010290af-81f4-0037-e063-6394a90a4638",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "contraindications": [
+          "Bronchial asthma or bronchospastic conditions",
+          "Second- or third-degree AV block; sick sinus syndrome; severe bradycardia (without pacemaker)",
+          "Cardiogenic shock or decompensated HF needing IV inotropes",
+          "Severe hepatic impairment"
+        ]
+      },
+      {
+        "indication": "HFrEF — beta-blocker (alternative)",
+        "patientGroup": "Adults",
+        "genericName": "Metoprolol succinate (extended release)",
+        "dose": "25 mg (NYHA II) or 12.5 mg (more severe HF)",
+        "route": "PO",
+        "frequency": "Once daily; double every 2 weeks",
+        "duration": "Long term; SHA target 200 mg once daily",
+        "adjustments": [
+          "Taper over 1–2 weeks if stopping"
+        ],
+        "monitoring": [
+          "Heart rate, BP"
+        ],
+        "sourceTitle": "Metoprolol succinate prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=028049cd-d233-49f9-87fa-ec91e433a49f",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "contraindications": [
+          "Severe bradycardia; second- or third-degree heart block; sick sinus syndrome (without pacemaker)",
+          "Cardiogenic shock; decompensated heart failure"
+        ]
+      },
+      {
+        "indication": "HFrEF — beta-blocker (alternative)",
+        "patientGroup": "Adults",
+        "genericName": "Bisoprolol",
+        "dose": "Start low (label 2.5 mg is the lowest stated starting dose; HF titration per local protocol)",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term; SHA target 10 mg once daily",
+        "adjustments": [
+          "FDA label covers hypertension only; HF titration schedule not in the label"
+        ],
+        "monitoring": [
+          "Heart rate, BP"
+        ],
+        "sourceTitle": "Saudi Heart Association (SHA) guidelines for the management of heart failure",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6660461/",
+        "sourceEdition": "SHA 2019, Table 12 (target dose)",
+        "contraindications": [
+          "Cardiogenic shock; overt (decompensated) cardiac failure",
+          "Second- or third-degree AV block",
+          "Marked sinus bradycardia"
+        ]
+      },
+      {
+        "indication": "HFrEF (and HFpEF/HFmrEF per NICE) — MRA",
+        "patientGroup": "Adults with potassium 5.0 mmol/L or less and eGFR above 50",
+        "genericName": "Spironolactone",
+        "dose": "25 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term; SHA target 50 mg daily",
+        "adjustments": [
+          "Reduce or withhold for hyperkalaemia; eGFR 30–50: consider 25 mg every other day (label)"
+        ],
+        "monitoring": [
+          "Potassium and creatinine at 1 week, 4 weeks, then regularly"
+        ],
+        "sourceTitle": "Spironolactone prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0c45d793-6f2f-4622-b5ed-6875acfbc02b",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "contraindications": [
+          "Hyperkalaemia",
+          "Addison's disease",
+          "Concomitant eplerenone"
+        ]
+      },
+      {
+        "indication": "HFrEF — MRA (alternative)",
+        "patientGroup": "Adults",
+        "genericName": "Eplerenone",
+        "dose": "25 mg",
+        "route": "PO",
+        "frequency": "Once daily; increase to 50 mg within 4 weeks",
+        "duration": "Long term; target 50 mg daily",
+        "adjustments": [
+          "Adjust to potassium per label table; withhold if 6.0 or more"
+        ],
+        "monitoring": [
+          "Potassium, creatinine"
+        ],
+        "sourceTitle": "Eplerenone (Inspra) prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1a52bedc-8e2c-4116-a296-a87770676b4a",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "contraindications": [
+          "Potassium above 5.5 mmol/L at start",
+          "Creatinine clearance 30 mL/min or less",
+          "Strong CYP3A inhibitors (e.g. clarithromycin, ketoconazole, ritonavir)"
+        ]
+      },
+      {
+        "indication": "All HF types — SGLT2 inhibitor",
+        "patientGroup": "Adults",
+        "genericName": "Dapagliflozin",
+        "dose": "10 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term",
+        "adjustments": [
+          "Withhold 3 days before major surgery or prolonged fasting",
+          "Not for type 1 diabetes (ketoacidosis risk)"
+        ],
+        "monitoring": [
+          "Volume status, genital infection, ketoacidosis symptoms"
+        ],
+        "sourceTitle": "Dapagliflozin (Farxiga) prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01f90c94-71cb-4a1f-81ff-8004b850529b",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "contraindications": [
+          "Serious hypersensitivity to dapagliflozin"
+        ]
+      },
+      {
+        "indication": "All HF types — SGLT2 inhibitor (alternative)",
+        "patientGroup": "Adults",
+        "genericName": "Empagliflozin",
+        "dose": "10 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term",
+        "adjustments": [
+          "Not studied in HF with eGFR below 20 (label)"
+        ],
+        "monitoring": [
+          "Volume status, genital infection, ketoacidosis symptoms"
+        ],
+        "sourceTitle": "Empagliflozin (Jardiance) prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1782b947-4a72-4feb-a488-1469d9af82bd",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "contraindications": [
+          "Dialysis",
+          "Hypersensitivity"
+        ]
+      },
+      {
+        "indication": "Congestion",
+        "patientGroup": "Adults",
+        "genericName": "Furosemide",
+        "dose": "20–80 mg as a single dose; increase by 20–40 mg no sooner than 6–8 h",
+        "route": "PO",
+        "frequency": "Once or twice daily",
+        "duration": "Lowest dose that keeps euvolaemia; SHA usual 40–240 mg/day",
+        "adjustments": [
+          "Close monitoring above 80 mg/day for prolonged periods (label)"
+        ],
+        "monitoring": [
+          "Weight, electrolytes, renal function"
+        ],
+        "sourceTitle": "Furosemide prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01a5f094-b473-4e46-9e61-69d5ec6dd766",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "contraindications": [
+          "Anuria",
+          "Hypersensitivity to furosemide"
+        ]
+      },
+      {
+        "indication": "HFrEF, sinus rhythm, persistent symptoms (specialist)",
+        "patientGroup": "Adults",
+        "genericName": "Ivabradine",
+        "dose": "5 mg with food",
+        "route": "PO",
+        "frequency": "Twice daily; adjust after 2 weeks to heart rate 50–60/min",
+        "duration": "Long term; SHA target 7.5 mg twice daily",
+        "adjustments": [
+          "Not in AF"
+        ],
+        "monitoring": [
+          "Heart rate, visual phosphenes"
+        ],
+        "sourceTitle": "Ivabradine prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=236cc914-7eef-600c-e063-6394a90a4bd1",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "contraindications": [
+          "Acute decompensated heart failure; clinically significant hypotension",
+          "Sick sinus syndrome, SA block or third-degree AV block (without pacemaker); pacemaker dependence",
+          "Resting bradycardia; severe hepatic impairment",
+          "Strong CYP3A4 inhibitors"
+        ]
+      },
+      {
+        "indication": "HFrEF — ARB if ACE inhibitor and ARNI not tolerated",
+        "patientGroup": "Adults",
+        "genericName": "Candesartan",
+        "dose": "4 mg",
+        "route": "PO",
+        "frequency": "Once daily; double every 2 weeks",
+        "duration": "Long term; SHA target 32 mg daily",
+        "adjustments": [
+          "Check renal function and potassium 1–2 weeks after each change"
+        ],
+        "monitoring": [
+          "BP, creatinine, potassium"
+        ],
+        "sourceTitle": "Candesartan prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7eb297cb-ef1b-44e0-a49d-03727100579e",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "contraindications": [
+          "Hypersensitivity",
+          "With aliskiren in diabetes",
+          "Pregnancy (boxed warning)"
+        ]
+      }
+    ],
+    "note": "Target doses are from the SHA 2019 guideline (Table 12); starting doses, titration steps and contraindications are from US FDA prescribing information. Iron preparations and digoxin dosing per local protocol. Check SFDA registration, hospital formulary and actual availability."
+  },
+  "guidelineComparison": {
+    "title": "Saudi Heart Association (2019/2023) vs NICE NG106 (2025)",
+    "columns": [
+      "SHA 2019 / 2023 update",
+      "NICE NG106"
+    ],
+    "rows": [
+      {
+        "parameter": "HFrEF first line",
+        "values": [
+          "ACEi/ARB or ARNI, beta-blocker, MRA, SGLT2 inhibitor",
+          "ACE inhibitor, beta-blocker, MRA, SGLT2 inhibitor; switch to ARNI if still symptomatic"
+        ]
+      },
+      {
+        "parameter": "HFmrEF",
+        "values": [
+          "SGLT2 inhibitor for all; others may be considered",
+          "Consider ACEi, beta-blocker, MRA and SGLT2 inhibitor"
+        ]
+      },
+      {
+        "parameter": "HFpEF",
+        "values": [
+          "SGLT2 inhibitor for all",
+          "Consider MRA and SGLT2 inhibitor"
+        ]
+      },
+      {
+        "parameter": "Iron",
+        "values": [
+          "IV ferric carboxymaltose if EF below 50% and iron deficient",
+          "IV iron in HFrEF if Hb below 150 g/L and iron deficient"
+        ]
+      },
+      {
+        "parameter": "Diagnostic peptide",
+        "values": [
+          "BNP/NT-proBNP for diagnosis and prognosis",
+          "NT-proBNP bands 400 and 2,000 ng/L for referral urgency"
+        ]
+      }
+    ],
+    "note": "Both: diuretics for congestion; device therapy (ICD/CRT) for selected HFrEF."
+  }
+}
