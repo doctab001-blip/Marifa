@@ -1,16 +1,23 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
-import { ArrowLeft, ShieldAlert } from "lucide-react";
-import { ApprovalStatusBadge } from "@/components/approval-status-badge";
+import { ArrowLeft, CheckCircle2, ShieldAlert } from "lucide-react";
 import { EmergencyTopic } from "@/components/emergency-topic";
-import { TopicLibraryHeader, TopicPager, type TopicLink } from "@/components/topic-library";
+import { TopicPager, type TopicLink } from "@/components/topic-library";
+import { TopicApproveButton } from "@/components/topic-approve-button";
 import { getApprovedDiseaseGuideline, getApprovedDiseaseGuidelines } from "@/lib/data/disease-guidelines";
-import { isTemporaryOpenAdminMode } from "@/lib/access-mode";
 import { canonicalTopicId } from "@/lib/data/merged-topics";
+import { approveLiveTopic } from "./actions";
 
 function formatDate(date: string) {
   return new Intl.DateTimeFormat("en-GB", { day: "2-digit", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${date}T00:00:00Z`));
 }
+
+const approvalMessages: Record<string, string> = {
+  done: "Topic approved.",
+  already: "This topic is already approved.",
+  not_authorized: "Only an administrator can approve a topic.",
+  failed: "Approval could not be completed. Refresh and try again.",
+};
 
 function ErrorState({ invalid = false }: { invalid?: boolean }) {
   return (
@@ -25,8 +32,9 @@ function ErrorState({ invalid = false }: { invalid?: boolean }) {
   );
 }
 
-export default async function DiseaseDetailPage({ params }: { params: Promise<{ id: string }> }) {
+export default async function DiseaseDetailPage({ params, searchParams }: { params: Promise<{ id: string }>; searchParams: Promise<{ approval?: string }> }) {
   const { id } = await params;
+  const { approval } = await searchParams;
   const canonical = canonicalTopicId(id);
   if (canonical) redirect(`/dashboard/diseases/${canonical}`);
   const result = await getApprovedDiseaseGuideline(id);
@@ -38,31 +46,28 @@ export default async function DiseaseDetailPage({ params }: { params: Promise<{ 
   const directory = await getApprovedDiseaseGuidelines({ carePillar: disease.pillar });
   const topics: TopicLink[] = directory.state === "ready" ? directory.diseases.map(({ id: topicId, title }) => ({ id: topicId, title })) : [];
   const reviewIncomplete = disease.clinicalReviewStatus === "pending" || disease.status === "under_review";
-  const approvalLabel = reviewIncomplete ? "Under review" : disease.status === "published" ? "Published" : "Approved";
+  const approvalMessage = approval ? approvalMessages[approval] : undefined;
 
   return (
     <main className="page disease-detail-page topic-page">
-      <TopicLibraryHeader pillar={disease.pillar} topics={topics} currentId={disease.id} />
-
       <article className="scenario-card" aria-labelledby="scenario-title">
-        <p className="scenario-eyebrow">Clinical scenario</p>
         <h1 id="scenario-title" className="scenario-title">{disease.title}</h1>
-        <div className="scenario-chips">
-          <ApprovalStatusBadge status={approvalLabel} />
-          <span className="scenario-chip">{disease.specialty}</span>
-          <span className="scenario-chip">{disease.status === "under_review" ? `Evidence synthesis from ${disease.authority} guidance · unreviewed` : `Source: ${disease.authority}`}</span>
-          <span className="scenario-chip">Version {disease.version}</span>
-          <span className="scenario-chip">{reviewIncomplete ? "Clinical review pending" : `Last reviewed ${formatDate(disease.lastReviewed)}`}</span>
-        </div>
-
-        {reviewIncomplete ? (
-          <div className="clinical-review-draft-notice" role="alert"><strong>UNREVIEWED DRAFT — NOT FOR CLINICAL USE.</strong> The source edition and topic synthesis are awaiting full source verification and Saudi clinical governance review. This is not an approved local protocol; follow approved local pathways and seek senior clinical advice for patient care.</div>
-        ) : (
-          <div className="clinical-governance-notice" role="note"><strong>Clinical governance:</strong> Verify patient-specific factors, local formulary and pathways. Escalate emergencies immediately.{isTemporaryOpenAdminMode() ? " Approvals recorded while the temporary open-administration mode is active are not verified clinical sign-offs." : ""}</div>
-        )}
-
-        <hr className="scenario-divider" />
         <EmergencyTopic disease={disease} investigationSource={result.investigationSource} />
+
+        <section className="topic-approval-bar" aria-label="Topic approval">
+          {reviewIncomplete ? (
+            <>
+              <p><strong>Status: Under review</strong> · Version {disease.version}</p>
+              <form action={approveLiveTopic}>
+                <input type="hidden" name="id" value={disease.id} />
+                <TopicApproveButton title={disease.title} />
+              </form>
+            </>
+          ) : (
+            <p className="topic-approval-done"><CheckCircle2 size={18} aria-hidden="true" /><strong>Approved</strong> · Reviewed {formatDate(disease.lastReviewed)} · Version {disease.version}</p>
+          )}
+          {approvalMessage ? <p className="topic-approval-message" role="status">{approvalMessage}</p> : null}
+        </section>
       </article>
 
       <TopicPager topics={topics} currentId={disease.id} />
