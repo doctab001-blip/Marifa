@@ -1,0 +1,304 @@
+{
+  "id": "e1586073-d5ce-469b-a54a-2eb47edb5a33",
+  "title": "Metabolic and Bariatric Surgery Evaluation",
+  "specialty": "Bariatric / Metabolic Surgery",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Planned Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Adults considered for bariatric (metabolic) surgery: referral thresholds, expedited assessment for type 2 diabetes, multidisciplinary assessment, VTE and antibiotic prophylaxis. Verified against NICE NG246 (2025) and NG89; antibiotic prophylaxis from Saudi MOH Protocol-015 (gastroduodenal/bariatric).",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Choice of procedure not detailed",
+      "Bariatric LMWH dosing — local protocol",
+      "Saudi bariatric guidance not reviewed"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "e1586073-d5ce-469b-a54a-2eb47edb5a33"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Bariatric surgery (e.g. sleeve gastrectomy, gastric bypass) produces large sustained weight loss and improves type 2 diabetes, hypertension, sleep apnoea and fatty liver. It requires lifelong follow-up for nutrition and complications.",
+    "keyMechanisms": [
+      "Restriction and altered gut hormones reduce appetite and improve insulin sensitivity.",
+      "Bypass procedures cause malabsorption of iron, B12, calcium and vitamin D — lifelong supplements and monitoring.",
+      "Obesity and major abdominal surgery raise VTE risk (NICE NG89)."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Obesity with weight-related conditions: type 2 diabetes, hypertension, sleep apnoea, fatty liver, idiopathic intracranial hypertension."
+    ],
+    "physicalSigns": [
+      "BMI; comorbidity signs."
+    ],
+    "redFlags": [
+      "Uncontrolled psychiatric illness or eating disorder — address before surgery",
+      "Pregnancy planned within the post-operative period — discuss (NICE)"
+    ],
+    "precipitants": [
+      "Severe obesity",
+      "Type 2 diabetes",
+      "Sleep apnoea, hypertension, fatty liver"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Endocrine cause of obesity",
+      "distinguishingFeatures": "Cushing's, hypothyroidism — exclude where suspected."
+    },
+    {
+      "condition": "Binge-eating disorder",
+      "distinguishingFeatures": "Psychological assessment."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "BMI and comorbidity review",
+        "modalityTarget": "At referral",
+        "targetCondition": "Eligibility",
+        "expectedFinding": "BMI 40+, or 35–39.9 with a significant condition improved by weight loss; Middle Eastern background: 2.5 lower (NICE).",
+        "clinicalRationale": "Refer for MDT assessment; person must agree to lifelong follow-up.",
+        "normalValue": "Below referral thresholds",
+        "references": [
+          {
+            "title": "NICE NG246: Overweight and obesity management",
+            "edition": "NICE guideline, 2025, Recommendations 1.18.1–1.18.9 (referral, expedited assessment, MDT assessment)",
+            "url": "https://www.nice.org.uk/guidance/ng246"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Nutritional bloods (FBC, ferritin, B12, folate, vitamin D, calcium)",
+        "modalityTarget": "Pre-operative MDT assessment (NICE: nutritional status)",
+        "targetCondition": "Deficiencies",
+        "expectedFinding": "Iron, B12 or vitamin D deficiency.",
+        "clinicalRationale": "Correct before surgery; baseline for lifelong monitoring.",
+        "normalValue": "Within laboratory reference ranges",
+        "references": [
+          {
+            "title": "NICE NG246: Overweight and obesity management",
+            "edition": "NICE guideline, 2025, Recommendations 1.18.1–1.18.9 (referral, expedited assessment, MDT assessment)",
+            "url": "https://www.nice.org.uk/guidance/ng246"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "HbA1c",
+        "modalityTarget": "If diabetes or prediabetes",
+        "targetCondition": "Glycaemic status",
+        "expectedFinding": "Recent-onset type 2 diabetes (within 10 years).",
+        "clinicalRationale": "Expedited assessment if BMI 35+ (consider 30–34.9) (NICE).",
+        "normalValue": "HbA1c below 5.7%",
+        "references": [
+          {
+            "title": "NICE NG246: Overweight and obesity management",
+            "edition": "NICE guideline, 2025, Recommendations 1.18.1–1.18.9 (referral, expedited assessment, MDT assessment)",
+            "url": "https://www.nice.org.uk/guidance/ng246"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "refer",
+      "title": "Referral",
+      "timeframe": "Primary/secondary care",
+      "actions": [
+        "Refer for full specialist assessment if BMI 40+ or 35–39.9 with a significant health condition, and the person agrees to long-term follow-up (NICE NG246 1.18.1).",
+        "Use thresholds 2.5 kg/m² lower for Middle Eastern background (NICE 1.18.2).",
+        "Expedited assessment for recent-onset type 2 diabetes with BMI 35+; consider at 30–34.9 (NICE 1.18.3–1.18.4)."
+      ]
+    },
+    {
+      "id": "mdt",
+      "title": "MDT assessment",
+      "timeframe": "Specialist service",
+      "actions": [
+        "Assess medical, nutritional and psychological needs, previous weight-management attempts, inequalities and fitness for anaesthesia; discuss benefits, risks, pregnancy plans and lifelong requirements (NICE 1.18.7–1.18.8)."
+      ]
+    },
+    {
+      "id": "periop",
+      "title": "Peri-operative",
+      "timeframe": "Surgery",
+      "actions": [
+        "VTE: mechanical prophylaxis from admission plus pharmacological prophylaxis (NICE NG89 1.14.5–1.14.6).",
+        "Antibiotics: cefazolin 2 g IV (3 g if 120 kg or more) within 60 min; allergy clindamycin 900 mg + ciprofloxacin 400 mg (MOH p. 1); stop within 24 h."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Select and prepare adults for bariatric surgery with lifelong follow-up."
+    ],
+    "references": [
+      {
+        "title": "NICE NG246: Overweight and obesity management",
+        "edition": "NICE guideline, 2025",
+        "url": "https://www.nice.org.uk/guidance/ng246",
+        "locator": "Recommendations 1.18.1–1.18.9 (referral, expedited assessment, MDT assessment)"
+      },
+      {
+        "title": "NICE NG89: Venous thromboembolism in over 16s: reducing the risk of hospital-acquired DVT or PE",
+        "edition": "NICE guideline, 2018 (updated 2019)",
+        "url": "https://www.nice.org.uk/guidance/ng89",
+        "locator": "Recommendations 1.14.5–1.14.6"
+      },
+      {
+        "title": "Antibiotics Surgical Prophylaxis (MOH Protocol-015)",
+        "edition": "Saudi MOH, updated 22 May 2021",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-015.pdf",
+        "locator": "pp. 1, 4"
+      },
+      {
+        "title": "Cefazolin for injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00dd6da7-50a8-44c9-b2dc-7948973df392",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Enoxaparin sodium injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=014c6710-f2c4-fd1e-e063-6394a90ae525",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ],
+    "keyPoints": [
+      "Refer at BMI 40+ or 35+ with comorbidity (2.5 lower for Middle Eastern background).",
+      "Expedite for recent type 2 diabetes.",
+      "MDT assessment including psychology and nutrition.",
+      "Lifelong follow-up and supplements."
+    ],
+    "pitfalls": [
+      "Surgery without commitment to lifelong follow-up.",
+      "Missing nutritional deficiencies.",
+      "Standard LMWH doses without protocol in severe obesity."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Lifelong supplements and annual review.",
+      "Avoid pregnancy in the early post-operative period — discuss with team (NICE)."
+    ],
+    "lifestyleAndDiet": [
+      "Staged diet, protein intake and activity per bariatric team."
+    ],
+    "mdtReferrals": [
+      "Specialist obesity/bariatric MDT; dietitian; psychology."
+    ],
+    "dischargeCriteria": [
+      "Tolerating staged diet; supplements prescribed; follow-up booked."
+    ],
+    "followUpPlan": "Lifelong annual review with nutritional monitoring (NICE NG246 1.18.1)."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Refer (NICE)",
+      "threshold": "BMI 40+, or 35–39.9 with significant comorbidity"
+    },
+    {
+      "criterion": "Middle Eastern background",
+      "threshold": "Thresholds 2.5 kg/m² lower"
+    },
+    {
+      "criterion": "Expedited (diabetes ≤10 years)",
+      "threshold": "BMI 35+ (consider 30–34.9)"
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [
+      {
+        "indication": "Bariatric surgical prophylaxis",
+        "patientGroup": "Adults",
+        "genericName": "Cefazolin",
+        "dose": "2 g (3 g if weight 120 kg or more)",
+        "route": "IV",
+        "frequency": "Single dose within 60 min before incision",
+        "duration": "Re-dose after 4 h or 1,500 mL blood loss; stop within 24 h",
+        "adjustments": [
+          "Allergy: clindamycin 900 mg + ciprofloxacin 400 mg (MOH)"
+        ],
+        "monitoring": [
+          "Allergy"
+        ],
+        "sourceTitle": "Antibiotics Surgical Prophylaxis (MOH Protocol-015)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-015.pdf",
+        "sourceEdition": "Saudi MOH, updated 22 May 2021, p. 1 (gastroduodenal procedures including bariatric)",
+        "contraindications": [
+          "Known allergy to cephalosporins"
+        ]
+      },
+      {
+        "indication": "VTE prophylaxis after bariatric surgery",
+        "patientGroup": "Adults",
+        "genericName": "Enoxaparin",
+        "dose": "Dose per local bariatric protocol (label dose for abdominal surgery is 40 mg daily; higher weight-based doses are not in the label)",
+        "route": "SC",
+        "frequency": "Per protocol",
+        "duration": "Per NICE NG89 and local protocol",
+        "adjustments": [
+          "Weight-adjusted dosing is not defined in reviewed sources"
+        ],
+        "monitoring": [
+          "Platelets, bleeding, anti-Xa if used"
+        ],
+        "sourceTitle": "Enoxaparin sodium injection prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=014c6710-f2c4-fd1e-e063-6394a90ae525",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "contraindications": [
+          "Active major bleeding",
+          "Heparin-induced thrombocytopenia within 100 days or circulating HIT antibodies",
+          "Hypersensitivity to enoxaparin, heparin or pork products"
+        ]
+      }
+    ],
+    "note": "Antibiotic regimen from MOH Protocol-015; bariatric LMWH dosing is not stated in NICE NG89 or the FDA label — use the local bariatric protocol. Check SFDA registration."
+  },
+  "guidelineComparison": {
+    "title": "Referral thresholds (NICE NG246)",
+    "columns": [
+      "General",
+      "Middle Eastern background"
+    ],
+    "rows": [
+      {
+        "parameter": "Refer",
+        "values": [
+          "BMI 40+, or 35–39.9 with comorbidity",
+          "BMI 37.5+, or 32.5–37.4 with comorbidity"
+        ]
+      },
+      {
+        "parameter": "Expedited (recent T2DM)",
+        "values": [
+          "BMI 35+ (consider 30–34.9)",
+          "2.5 lower"
+        ]
+      }
+    ],
+    "note": "Lower thresholds reflect higher risk at lower BMI."
+  },
+  "_source": {
+    "title": "NICE NG246",
+    "org": "NICE",
+    "url": "https://www.nice.org.uk/guidance/ng246"
+  }
+}

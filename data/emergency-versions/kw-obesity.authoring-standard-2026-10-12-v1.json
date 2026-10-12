@@ -1,0 +1,282 @@
+{
+  "id": "96362735-4fed-4dc9-9c7b-3a8d10d1cfbd",
+  "title": "Obesity and Weight-Related Health",
+  "specialty": "Primary Care / Endocrinology",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Adults living with overweight or obesity: measurement, risk assessment (including lower BMI thresholds for Middle Eastern people), behavioural interventions, medicines and referral. Verified against NICE NG246 (2025), the Saudi PHA Clinical Preventive Guideline 2023 and the Saudi Diabetes CPG; doses from FDA labels.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "GLP-1/GIP dosing — specialist",
+      "SFDA registration not checked"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "96362735-4fed-4dc9-9c7b-3a8d10d1cfbd"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Obesity is excess adiposity that harms health. Central (visceral) fat carries the most cardiometabolic risk, and people of Middle Eastern background develop risk at a lower BMI (NICE NG246).",
+    "keyMechanisms": [
+      "Energy intake exceeding expenditure over time, shaped by genes, environment, sleep, medicines and psychology.",
+      "Visceral fat drives insulin resistance, dyslipidaemia, hypertension and fatty liver.",
+      "Weight loss of 5–10% improves blood pressure, glucose and joint symptoms."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Weight gain; breathlessness, snoring, joint pain, low mood."
+    ],
+    "physicalSigns": [
+      "BMI; waist circumference; acanthosis nigricans; signs of comorbidities."
+    ],
+    "redFlags": [
+      "Rapid unexplained weight gain — consider endocrine causes",
+      "Sleep apnoea symptoms with daytime sleepiness"
+    ],
+    "precipitants": [
+      "Inactivity, high-calorie diet",
+      "Sleep deprivation",
+      "Medicines (antipsychotics, steroids, insulin)",
+      "Pregnancy-related weight retention"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Hypothyroidism, Cushing's",
+      "distinguishingFeatures": "Clinical features; tests if suspected."
+    },
+    {
+      "condition": "Drug-induced weight gain",
+      "distinguishingFeatures": "Antipsychotics, steroids, insulin."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "BMI and waist-to-height ratio",
+        "modalityTarget": "BMI/waist every 2 years in adults (PHA); waist-to-height if BMI below 35 (NICE)",
+        "targetCondition": "Overweight, obesity, central adiposity",
+        "expectedFinding": "BMI 25–29.9 overweight; 30–34.9 class 1; 35–39.9 class 2; 40+ class 3. Middle Eastern background: overweight 23–27.4, obesity 27.5+ (NICE). Waist-to-height 0.5 or more = central adiposity.",
+        "clinicalRationale": "Guides intervention and referral.",
+        "normalValue": "BMI 18.5–24.9 (23 for Middle Eastern background); waist-to-height below 0.5",
+        "references": [
+          {
+            "title": "NICE NG246: Overweight and obesity management",
+            "edition": "NICE guideline, 2025, Recommendations 1.9.1–1.9.11 (identifying and assessing; BMI classes; lower thresholds for Middle Eastern background)",
+            "url": "https://www.nice.org.uk/guidance/ng246"
+          },
+          {
+            "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+            "edition": "3rd edition, 2023, PDF p. 27 / printed p. 20 (footnotes 3, 5, 11–13: obesity counselling, BMI/waist, DXA)",
+            "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "HbA1c, lipids, liver enzymes, BP",
+        "modalityTarget": "At assessment",
+        "targetCondition": "Comorbidities",
+        "expectedFinding": "Prediabetes/diabetes, dyslipidaemia, fatty liver, hypertension.",
+        "clinicalRationale": "Treat comorbidities; prioritise weight management.",
+        "normalValue": "HbA1c below 5.7%; ALT below about 40 U/L",
+        "references": [
+          {
+            "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+            "edition": "1st ed. 2021, pp. 19–22",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "assess",
+      "title": "Assess sensitively",
+      "timeframe": "Routine contacts",
+      "actions": [
+        "Ask permission before discussing weight; address presenting problems first (NICE NG246)."
+      ]
+    },
+    {
+      "id": "lifestyle",
+      "title": "Behavioural interventions",
+      "timeframe": "First",
+      "actions": [
+        "Refer adults with BMI 30 or more to intensive multicomponent behavioural interventions (PHA footnote 3).",
+        "Reduced-calorie diet and increased physical activity (NICE)."
+      ]
+    },
+    {
+      "id": "medicines",
+      "title": "Medicines",
+      "timeframe": "After lifestyle is started and evaluated",
+      "actions": [
+        "Options (NICE NG246 Table 1): tirzepatide, semaglutide, liraglutide (specialist services, per TAs), orlistat (BMI 30+, or 28+ with risk factors).",
+        "Use thresholds 2.5 kg/m² lower for Middle Eastern background for GLP-1-based medicines (NICE).",
+        "All medicines alongside diet and activity; avoid in pregnancy."
+      ]
+    },
+    {
+      "id": "surgery",
+      "title": "Surgery",
+      "timeframe": "If criteria met",
+      "actions": [
+        "Refer for bariatric assessment if BMI 40+, or 35–39.9 with a significant comorbidity (lower by 2.5 for Middle Eastern background) — see Bariatric topic."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Assess overweight and obesity and offer tiered treatment."
+    ],
+    "references": [
+      {
+        "title": "NICE NG246: Overweight and obesity management",
+        "edition": "NICE guideline, 2025",
+        "url": "https://www.nice.org.uk/guidance/ng246",
+        "locator": "Recommendations 1.9.1–1.9.11 (identifying and assessing; BMI classes; lower thresholds for Middle Eastern background)"
+      },
+      {
+        "title": "NICE NG246: Overweight and obesity management",
+        "edition": "NICE guideline, 2025",
+        "url": "https://www.nice.org.uk/guidance/ng246",
+        "locator": "Recommendations 1.17.1–1.17.3, Table 1 (medicines)"
+      },
+      {
+        "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+        "edition": "3rd edition, 2023",
+        "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf",
+        "locator": "PDF p. 27 / printed p. 20 (footnotes 3, 5, 11–13: obesity counselling, BMI/waist, DXA)"
+      },
+      {
+        "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+        "edition": "1st ed. 2021",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf",
+        "locator": "pp. 21–22"
+      },
+      {
+        "title": "Orlistat (Xenical) prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=6240792b-9224-2d10-e053-2a91aa0a2c3e",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ],
+    "keyPoints": [
+      "Use lower BMI thresholds for Middle Eastern people.",
+      "Measure waist-to-height if BMI below 35.",
+      "Intensive behavioural support first.",
+      "Medicines alongside diet and activity.",
+      "Refer for surgery at BMI 40+ (or 35+ with comorbidity)."
+    ],
+    "pitfalls": [
+      "Attributing every symptom to weight.",
+      "Using standard BMI cut-offs for Middle Eastern patients.",
+      "Medicines without lifestyle support."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Any weight loss helps; aim for sustainable change."
+    ],
+    "lifestyleAndDiet": [
+      "Reduced-calorie, healthy eating pattern; 150 min/week activity; sleep."
+    ],
+    "mdtReferrals": [
+      "Specialist weight management service; dietitian."
+    ],
+    "dischargeCriteria": [
+      "Not applicable — outpatient care."
+    ],
+    "followUpPlan": "Review weight, comorbidities and medicines regularly; stop orlistat if inadequate response per product information."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Obesity (general)",
+      "threshold": "BMI 30 or more"
+    },
+    {
+      "criterion": "Obesity (Middle Eastern background, NICE)",
+      "threshold": "BMI 27.5 or more"
+    },
+    {
+      "criterion": "Central adiposity",
+      "threshold": "Waist-to-height ratio 0.5 or more"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Obesity (BMI 30+, or 28+ with risk factors) alongside diet",
+        "patientGroup": "Adults",
+        "genericName": "Orlistat",
+        "dose": "120 mg",
+        "route": "PO",
+        "frequency": "Three times daily with each main meal containing fat",
+        "duration": "Review response regularly",
+        "adjustments": [
+          "Take a multivitamin at bedtime (label)",
+          "Extra contraception if severe diarrhoea (NICE)"
+        ],
+        "monitoring": [
+          "Weight, GI effects"
+        ],
+        "sourceTitle": "Orlistat (Xenical) prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=6240792b-9224-2d10-e053-2a91aa0a2c3e",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "contraindications": [
+          "Pregnancy",
+          "Chronic malabsorption syndrome",
+          "Cholestasis",
+          "Hypersensitivity"
+        ]
+      }
+    ],
+    "note": "Orlistat dose and contraindications from the FDA label; medicine options from NICE NG246. GLP-1/GIP agents per specialist service and product information. Check SFDA registration."
+  },
+  "guidelineComparison": {
+    "title": "BMI thresholds (NICE NG246)",
+    "columns": [
+      "General",
+      "Middle Eastern background"
+    ],
+    "rows": [
+      {
+        "parameter": "Overweight",
+        "values": [
+          "25–29.9",
+          "23–27.4"
+        ]
+      },
+      {
+        "parameter": "Obesity",
+        "values": [
+          "30 or more",
+          "27.5 or more"
+        ]
+      }
+    ],
+    "note": "Relevant to Saudi patients."
+  },
+  "_source": {
+    "title": "NICE NG246; Saudi PHA 2023",
+    "org": "NICE / Saudi Public Health Authority",
+    "url": "https://www.nice.org.uk/guidance/ng246"
+  }
+}

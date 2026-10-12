@@ -1,0 +1,310 @@
+{
+  "id": "e483d190-076c-49b3-881c-78ca823af167",
+  "title": "Diabetes Screening in At-Risk Adults",
+  "specialty": "Primary Care / Public Health",
+  "authority": "SHC",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Keep Well",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Asymptomatic adults (and at-risk adolescents): who to screen for prediabetes and type 2 diabetes, tests and thresholds, repeat intervals and prevention for prediabetes. Verified against the Saudi Diabetes Clinical Practice Guidelines (SDCPG 2021, pp. 19–22) and the Saudi PHA Clinical Preventive Guideline 2023.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "HbA1c reliability in haemoglobinopathies (common in KSA) not addressed in source",
+      "SFDA registration not checked"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "e483d190-076c-49b3-881c-78ca823af167"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Type 2 diabetes develops over years through insulin resistance and progressive beta-cell failure, passing through prediabetes. Saudi Arabia has a high prevalence from age 35, so screening detects disease early when lifestyle change and treatment prevent complications (SDCPG).",
+    "keyMechanisms": [
+      "Insulin resistance (obesity, inactivity) precedes hyperglycaemia; prediabetes reflects early beta-cell strain.",
+      "HbA1c reflects average glucose over about 3 months.",
+      "Intensive lifestyle change and metformin delay progression from prediabetes (SDCPG)."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Usually asymptomatic.",
+      "Risk factors: family history, previous GDM, PCOS, hypertension, dyslipidaemia, physical inactivity."
+    ],
+    "physicalSigns": [
+      "BMI 25 or more; waist 102 cm or more (men) or 88 cm or more (women) (SDCPG); acanthosis nigricans."
+    ],
+    "redFlags": [
+      "Glucose 11.1 mmol/L or more with symptoms — diagnose and treat",
+      "Ketones or vomiting — DKA/HHS pathway"
+    ],
+    "precipitants": [
+      "Obesity, inactivity",
+      "Family history",
+      "Previous GDM",
+      "PCOS",
+      "Hypertension, dyslipidaemia"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Type 1 diabetes",
+      "distinguishingFeatures": "Young, lean, ketosis — no routine screening (SDCPG)."
+    },
+    {
+      "condition": "Drug-induced hyperglycaemia",
+      "distinguishingFeatures": "Steroids, antipsychotics, statins (SDCPG risk list)."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "HbA1c, fasting glucose or 75-g OGTT",
+        "modalityTarget": "Screening per criteria",
+        "targetCondition": "Prediabetes or diabetes",
+        "expectedFinding": "Diabetes: HbA1c 6.5% or more; fasting 7.0 mmol/L (126 mg/dL) or more; 2-h OGTT 11.1 mmol/L (200 mg/dL) or more. Prediabetes: HbA1c 5.7–6.4%; fasting 5.6–6.9 mmol/L (100–125 mg/dL); 2-h 7.8–11.0 mmol/L (140–199 mg/dL).",
+        "clinicalRationale": "Without symptoms, confirm with a second abnormal test (SDCPG).",
+        "normalValue": "HbA1c below 5.7%; fasting below 5.6 mmol/L (100 mg/dL)",
+        "references": [
+          {
+            "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+            "edition": "1st ed. 2021, pp. 20–21, Table 2 (diagnosis of DM and prediabetes)",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "BMI and waist circumference",
+        "modalityTarget": "At screening",
+        "targetCondition": "Overweight/central obesity",
+        "expectedFinding": "BMI 25 or more; waist 102/88 cm or more.",
+        "clinicalRationale": "Triggers earlier screening with one other risk factor (SDCPG).",
+        "normalValue": "BMI below 25; waist below 102 (men) / 88 cm (women)",
+        "references": [
+          {
+            "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+            "edition": "1st ed. 2021, pp. 19–20 (screening criteria for asymptomatic adults and adolescents)",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Lipids (HDL, triglycerides)",
+        "modalityTarget": "At screening",
+        "targetCondition": "Risk factor",
+        "expectedFinding": "HDL below 0.90 mmol/L (35 mg/dL) or triglycerides above 2.82 mmol/L (250 mg/dL).",
+        "clinicalRationale": "Counts as a risk factor for screening (SDCPG).",
+        "normalValue": "HDL 1.0 mmol/L or more; TG below 1.7 mmol/L",
+        "references": [
+          {
+            "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+            "edition": "1st ed. 2021, pp. 19–20 (screening criteria for asymptomatic adults and adolescents)",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "who",
+      "title": "Who to screen (SDCPG)",
+      "timeframe": "Routine contacts",
+      "actions": [
+        "All adults from age 35.",
+        "Earlier if BMI 25 or more (or abdominal obesity) plus 1 or more risk factor: first-degree relative with diabetes, previous GDM, CVD, hypertension (140/90 or treated), HDL below 0.90 or TG above 2.82 mmol/L, smoking, pancreatitis, gout, fatty liver, psychiatric illness, HIV, sleep apnoea, PCOS, macrosomic baby, inactivity, diabetogenic drugs.",
+        "Adolescents after age 10 or puberty if overweight/obese with 1 or more risk factor."
+      ]
+    },
+    {
+      "id": "repeat",
+      "title": "Repeat interval",
+      "timeframe": "After testing",
+      "actions": [
+        "Normal: repeat at least every 3 years (yearly if high risk) (SDCPG).",
+        "Prediabetes: test yearly. Previous GDM: lifelong testing at least every 3 years."
+      ]
+    },
+    {
+      "id": "prevent",
+      "title": "Prediabetes",
+      "timeframe": "At diagnosis",
+      "actions": [
+        "Intensive lifestyle programme aiming for 7% weight loss and 150 min/week moderate activity (SDCPG).",
+        "Metformin for prediabetes with BMI 35 or more, previous GDM, or age under 60: 500 mg once daily, increasing to 1,500–2,000 mg/day (SDCPG).",
+        "Orlistat if BMI 28 or more (SDCPG).",
+        "Screen and manage CVD risk factors (SDCPG)."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Screen at-risk adults for prediabetes and type 2 diabetes and prevent progression."
+    ],
+    "references": [
+      {
+        "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+        "edition": "1st ed. 2021",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf",
+        "locator": "pp. 19–22"
+      },
+      {
+        "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+        "edition": "3rd edition, 2023",
+        "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf",
+        "locator": "PDF p. 28 / printed p. 21 (footnote 7)"
+      },
+      {
+        "title": "Metformin hydrochloride prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=011de1a5-1ac0-4831-9e8d-26ec79ba2205",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Orlistat (Xenical) prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=6240792b-9224-2d10-e053-2a91aa0a2c3e",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ],
+    "keyPoints": [
+      "Screen everyone from 35.",
+      "Earlier if overweight with a risk factor.",
+      "Confirm with a second test if asymptomatic.",
+      "Prediabetes: 7% weight loss, 150 min/week.",
+      "Repeat 3-yearly; yearly in prediabetes."
+    ],
+    "pitfalls": [
+      "Single abnormal test without confirmation.",
+      "Using HbA1c when it is unreliable (anaemia, haemoglobinopathy)."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Lifestyle change prevents or delays diabetes."
+    ],
+    "lifestyleAndDiet": [
+      "Mediterranean, low-calorie or low-fat eating plan; reduce sugary drinks; 150 min/week activity (SDCPG)."
+    ],
+    "mdtReferrals": [
+      "Diabetes prevention programme / dietitian."
+    ],
+    "dischargeCriteria": [
+      "Not applicable — outpatient care."
+    ],
+    "followUpPlan": "Prediabetes: glucose or HbA1c every 3–6 months on metformin, at least yearly otherwise (SDCPG)."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Screen all",
+      "threshold": "Age 35 or over (SDCPG; PHA)"
+    },
+    {
+      "criterion": "Screen earlier",
+      "threshold": "BMI 25 or more plus 1 risk factor"
+    },
+    {
+      "criterion": "Diabetes",
+      "threshold": "HbA1c 6.5%+, fasting 7.0+, 2-h 11.1+ mmol/L"
+    },
+    {
+      "criterion": "Prediabetes",
+      "threshold": "HbA1c 5.7–6.4%, fasting 5.6–6.9, 2-h 7.8–11.0 mmol/L"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Prediabetes with BMI 35 or more, prior GDM, or age under 60",
+        "patientGroup": "Adults",
+        "genericName": "Metformin",
+        "dose": "500 mg once daily, increasing as tolerated",
+        "route": "PO",
+        "frequency": "Once to twice daily with meals",
+        "duration": "Target 1,500–2,000 mg/day; long term with review",
+        "adjustments": [
+          "Do not start if eGFR 30–45; stop if below 30 (label)"
+        ],
+        "monitoring": [
+          "Glucose/HbA1c every 3–6 months; B12"
+        ],
+        "sourceTitle": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf",
+        "sourceEdition": "1st ed. 2021, pp. 21–22 (prevention: lifestyle, nutrition, metformin, orlistat)",
+        "contraindications": [
+          "eGFR below 30 mL/min/1.73 m²",
+          "Acute or chronic metabolic acidosis including DKA",
+          "Hypersensitivity"
+        ]
+      },
+      {
+        "indication": "Prediabetes with BMI 28 or more",
+        "patientGroup": "Adults",
+        "genericName": "Orlistat",
+        "dose": "120 mg",
+        "route": "PO",
+        "frequency": "Three times daily with each main meal containing fat",
+        "duration": "With reduced-calorie diet",
+        "adjustments": [
+          "Multivitamin at bedtime (label)",
+          "Contraception backup if severe diarrhoea"
+        ],
+        "monitoring": [
+          "GI effects, weight"
+        ],
+        "sourceTitle": "Orlistat (Xenical) prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=6240792b-9224-2d10-e053-2a91aa0a2c3e",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "contraindications": [
+          "Pregnancy",
+          "Chronic malabsorption syndrome",
+          "Cholestasis",
+          "Hypersensitivity"
+        ]
+      }
+    ],
+    "note": "Indications and metformin titration from SDCPG; orlistat dose and all contraindications from FDA labels. Check SFDA registration."
+  },
+  "guidelineComparison": {
+    "title": "Diabetes screening: SDCPG vs Saudi PHA 2023",
+    "columns": [
+      "SDCPG 2021",
+      "Saudi PHA 2023"
+    ],
+    "rows": [
+      {
+        "parameter": "Start age",
+        "values": [
+          "35 for all",
+          "35, every 3 years"
+        ]
+      },
+      {
+        "parameter": "Earlier",
+        "values": [
+          "BMI 25+ (or abdominal obesity) + 1 risk factor",
+          "BMI 25+ + additional risk factors"
+        ]
+      }
+    ],
+    "note": "Consistent; SDCPG lists more risk factors."
+  },
+  "_source": {
+    "title": "Saudi Diabetes Clinical Practice Guidelines 2021",
+    "org": "Saudi National Diabetes Center / Saudi Health Council",
+    "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf"
+  }
+}

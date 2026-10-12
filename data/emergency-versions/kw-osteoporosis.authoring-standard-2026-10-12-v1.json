@@ -1,0 +1,293 @@
+{
+  "id": "267bf607-b37b-4029-b76a-761cc3d9e3be",
+  "title": "Osteoporosis Risk Assessment and Fracture Prevention",
+  "specialty": "Primary Care / Endocrinology",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Keep Well",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Adults at risk of fragility fracture: who to assess, FRAX/QFracture and DXA, treatment thresholds and bisphosphonate therapy. Verified against NICE NG259 (Osteoporosis: risk assessment, 2026), NICE TA464 (bisphosphonates) and the Saudi PHA Clinical Preventive Guideline 2023 (DXA); doses from FDA labels.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Vitamin D/calcium supplement doses — local protocol",
+      "SFDA registration not checked"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "267bf607-b37b-4029-b76a-761cc3d9e3be"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Osteoporosis is low bone mass and micro-architectural deterioration causing fragility fractures (from a fall from standing height or less), especially hip, vertebra and wrist.",
+    "keyMechanisms": [
+      "Bone resorption exceeds formation after menopause (oestrogen loss), with ageing and with glucocorticoids.",
+      "Low BMD (T-score -2.5 or less) and previous fracture predict future fracture.",
+      "Bisphosphonates inhibit osteoclasts and reduce fracture risk."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Often silent until fracture; height loss, back pain (vertebral fracture)."
+    ],
+    "physicalSigns": [
+      "Kyphosis, height loss; low BMI; fall risk."
+    ],
+    "redFlags": [
+      "Hip or vertebral fragility fracture — treat",
+      "Glucocorticoids 15 mg or more prednisolone daily for 3 months or more — consider treatment (NICE)",
+      "Under 50 with major fracture — specialist (NICE)"
+    ],
+    "precipitants": [
+      "Menopause, age",
+      "Glucocorticoids",
+      "Low BMI, smoking, alcohol over 14 units/week",
+      "Previous fracture, parental hip fracture",
+      "Endocrine, GI, rheumatological diseases (NICE Table 1)"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Osteomalacia",
+      "distinguishingFeatures": "Low vitamin D, raised ALP."
+    },
+    {
+      "condition": "Myeloma or metastases",
+      "distinguishingFeatures": "Unexplained fracture, anaemia, raised calcium."
+    },
+    {
+      "condition": "Hyperparathyroidism",
+      "distinguishingFeatures": "Raised calcium and PTH."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Fracture risk tool (FRAX or QFracture)",
+        "modalityTarget": "Assess people 50+ and post-menopausal women with previous fragility fracture or glucocorticoid use; consider in men 75+, women 65+, and others with risk factors (NICE)",
+        "targetCondition": "10-year fracture risk",
+        "expectedFinding": "High risk of major osteoporotic fracture.",
+        "clinicalRationale": "Shared treatment decision (NICE 1.7.1).",
+        "normalValue": "Low 10-year risk",
+        "references": [
+          {
+            "title": "NICE NG259: Osteoporosis: risk assessment",
+            "edition": "NICE guideline, 2026, Recommendations 1.1.1–1.1.4, Table 1 (who to assess; risk factors)",
+            "url": "https://www.nice.org.uk/guidance/ng259"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Calcium, vitamin D, renal and liver function, TSH",
+        "modalityTarget": "Before treatment",
+        "targetCondition": "Secondary causes; drug safety",
+        "expectedFinding": "Hypocalcaemia, low vitamin D, low eGFR, hyperthyroidism.",
+        "clinicalRationale": "Correct hypocalcaemia before bisphosphonate (label).",
+        "normalValue": "Corrected calcium 2.2–2.6 mmol/L",
+        "references": [
+          {
+            "title": "NICE NG259: Osteoporosis: risk assessment",
+            "edition": "NICE guideline, 2026, Recommendations 1.1.1–1.1.4, Table 1 (who to assess; risk factors)",
+            "url": "https://www.nice.org.uk/guidance/ng259"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "DXA scan (BMD)",
+        "modalityTarget": "Per NICE risk assessment; PHA: post-menopausal women under 65 with a risk factor (parental hip fracture, smoking, excess alcohol, low weight)",
+        "targetCondition": "Imaging",
+        "expectedFinding": "T-score -2.5 or less (osteoporosis).",
+        "clinicalRationale": "Treatment threshold; T-score -1.5 or less with fracture, glucocorticoids or bone-loss drugs also qualifies (NICE).",
+        "normalValue": "T-score above -1.0",
+        "references": [
+          {
+            "title": "NICE NG259: Osteoporosis: risk assessment",
+            "edition": "NICE guideline, 2026, Recommendations 1.7.1–1.7.5 (criteria for pharmacological treatment)",
+            "url": "https://www.nice.org.uk/guidance/ng259"
+          },
+          {
+            "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+            "edition": "3rd edition, 2023, PDF p. 27 / printed p. 20 (footnotes 3, 5, 11–13: obesity counselling, BMI/waist, DXA)",
+            "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "assess",
+      "title": "Assess risk",
+      "timeframe": "Opportunistic",
+      "actions": [
+        "Use NICE NG259 criteria and Table 1 risk factors; FRAX or QFracture; DXA when it will inform the decision."
+      ]
+    },
+    {
+      "id": "treat",
+      "title": "Treat",
+      "timeframe": "If criteria met",
+      "actions": [
+        "Consider treatment in people 50+ / post-menopausal women with previous hip or vertebral fragility fracture, very high-dose glucocorticoids, T-score -2.5 or less, or T-score -1.5 or less with fracture, glucocorticoids or bone-loss medicines (NICE 1.7.3).",
+        "Bisphosphonates (alendronic acid, ibandronic acid, risedronate, zoledronic acid) are options (NICE TA464); e.g. alendronate 70 mg once weekly (label).",
+        "Specialist advice for under-50s with major fracture or rare bone disease (NICE 1.7.5)."
+      ]
+    },
+    {
+      "id": "falls",
+      "title": "Falls and lifestyle",
+      "timeframe": "All",
+      "actions": [
+        "Falls assessment; stop smoking; limit alcohol; adequate calcium and vitamin D."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Assess fragility fracture risk and start fracture-preventing treatment when indicated."
+    ],
+    "references": [
+      {
+        "title": "NICE NG259: Osteoporosis: risk assessment",
+        "edition": "NICE guideline, 2026",
+        "url": "https://www.nice.org.uk/guidance/ng259",
+        "locator": "Recommendations 1.1–1.7"
+      },
+      {
+        "title": "NICE TA464: Bisphosphonates for treating osteoporosis",
+        "edition": "NICE technology appraisal, 2017",
+        "url": "https://www.nice.org.uk/guidance/ta464",
+        "locator": "Section 1 (Recommendations)"
+      },
+      {
+        "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+        "edition": "3rd edition, 2023",
+        "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf",
+        "locator": "PDF p. 27 / printed p. 20 (footnotes 3, 5, 11–13: obesity counselling, BMI/waist, DXA)"
+      },
+      {
+        "title": "Alendronate sodium (Binosto) prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=09765234-01bc-40f7-b9bb-c167056f3909",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ],
+    "keyPoints": [
+      "Assess after fragility fracture or steroid use.",
+      "FRAX/QFracture plus DXA when useful.",
+      "T-score -2.5 or less → treat.",
+      "Bisphosphonate first line; alendronate 70 mg weekly.",
+      "Prevent falls."
+    ],
+    "pitfalls": [
+      "Not treating after a hip or vertebral fracture.",
+      "Bisphosphonate with hypocalcaemia.",
+      "Wrong administration technique."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "How to take alendronate correctly; dental hygiene."
+    ],
+    "lifestyleAndDiet": [
+      "Weight-bearing exercise; calcium and vitamin D intake; stop smoking."
+    ],
+    "mdtReferrals": [
+      "Specialist for under-50s, rare bone disease or treatment failure."
+    ],
+    "dischargeCriteria": [
+      "Not applicable — outpatient care."
+    ],
+    "followUpPlan": "Reassess risk if new risk factors develop; review bisphosphonate treatment periodically."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Osteoporosis",
+      "threshold": "T-score -2.5 or less"
+    },
+    {
+      "criterion": "Consider treatment",
+      "threshold": "Hip/vertebral fracture; prednisolone 15 mg+ for 3 months+; T -2.5 or less; T -1.5 or less with risk factors"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Osteoporosis meeting treatment criteria",
+        "patientGroup": "Adults",
+        "genericName": "Alendronate",
+        "dose": "70 mg",
+        "route": "PO (effervescent tablet dissolved in water, or tablet)",
+        "frequency": "Once weekly",
+        "duration": "Long term with periodic review",
+        "adjustments": [
+          "Take on waking with water; stay upright 30 min; nothing else by mouth for 30 min (label)",
+          "Correct hypocalcaemia first"
+        ],
+        "monitoring": [
+          "Calcium, renal function, dental health"
+        ],
+        "sourceTitle": "Alendronate sodium (Binosto) prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=09765234-01bc-40f7-b9bb-c167056f3909",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "contraindications": [
+          "Oesophageal abnormalities delaying emptying (stricture, achalasia)",
+          "Unable to sit or stand upright for 30 minutes",
+          "Increased aspiration risk",
+          "Hypocalcaemia",
+          "Hypersensitivity"
+        ]
+      }
+    ],
+    "note": "Treatment criteria from NICE NG259; bisphosphonates as options from NICE TA464; alendronate dose and contraindications from the FDA label. Check SFDA registration."
+  },
+  "guidelineComparison": {
+    "title": "Who to assess: NICE NG259 vs Saudi PHA 2023",
+    "columns": [
+      "NICE NG259",
+      "Saudi PHA 2023"
+    ],
+    "rows": [
+      {
+        "parameter": "Routine",
+        "values": [
+          "Consider in women 65+ and men 75+",
+          "DXA for post-menopausal women at risk"
+        ]
+      },
+      {
+        "parameter": "Under 65 women",
+        "values": [
+          "Post-menopausal with risk factors",
+          "Post-menopausal under 65 with 1 risk factor using a risk tool"
+        ]
+      },
+      {
+        "parameter": "Men",
+        "values": [
+          "Consider at 75+",
+          "No recommendation for asymptomatic men (USPSTF)"
+        ]
+      }
+    ],
+    "note": "Shown side by side."
+  },
+  "_source": {
+    "title": "NICE NG259; TA464; Saudi PHA 2023",
+    "org": "NICE / Saudi Public Health Authority",
+    "url": "https://www.nice.org.uk/guidance/ng259"
+  }
+}
