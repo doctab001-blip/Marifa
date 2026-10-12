@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ClipboardList, Settings2, ShieldCheck, UsersRound } from "lucide-react";
+import { ClipboardList, Settings2, ShieldCheck, UsersRound } from "@/components/icons-3d";
 
 type AdminLink = { href: string; label: string; icon: "overview" | "staff" | "governance" | "settings" };
 

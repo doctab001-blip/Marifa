@@ -1,4 +1,4 @@
-import { TriangleAlert } from "lucide-react";
+import { TriangleAlert } from "@/components/icons-3d";
 
 export function ClinicalWarning({ title = "Emergency red flags", items }: { title?: string; items: string[] }) {
   return (

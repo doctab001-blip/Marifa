@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ExternalLink, FileText, ShieldAlert } from "lucide-react";
+import { ArrowLeft, ExternalLink, FileText, ShieldAlert } from "@/components/icons-3d";
 import { DemoBanner } from "@/components/demo-banner";
 import { BookmarkButton } from "@/components/bookmark-button";
 import { PathwayRenderer } from "@/components/pathway-renderer";

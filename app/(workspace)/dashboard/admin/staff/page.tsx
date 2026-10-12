@@ -1,4 +1,4 @@
-import { UserRoundCheck } from "lucide-react";
+import { UserRoundCheck } from "@/components/icons-3d";
 import { StaffTable } from "@/components/admin/staff-table";
 import { getAdminStaff } from "@/lib/admin/data";
 

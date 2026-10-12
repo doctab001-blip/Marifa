@@ -1,6 +1,6 @@
 "use client";
 
-import { Baby, CalendarCheck, HeartHandshake, HeartPulse, Search, ShieldCheck, Siren, X } from "lucide-react";
+import { Baby, CalendarCheck, HeartHandshake, HeartPulse, Search, ShieldCheck, Siren, X } from "@/components/icons-3d";
 import { useEffect, useMemo, useState } from "react";
 import { DiseaseCard } from "@/components/diseases/DiseaseCard";
 import type { DiseaseDirectoryResult, DiseaseGuidelineSummary } from "@/lib/data/disease-guidelines";

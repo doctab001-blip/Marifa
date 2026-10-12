@@ -1,4 +1,4 @@
-import { Clock3, type LucideIcon } from "lucide-react";
+import { Clock3, type LucideIcon } from "@/components/icons-3d";
 
 type ModulePlaceholderProps = {
   title: string;

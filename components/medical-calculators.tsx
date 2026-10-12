@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Activity, HeartPulse } from "lucide-react";
+import { Activity, Calculator, HeartPulse, Stethoscope } from "@/components/icons-3d";
 import { ClinicalCalculator } from "@/components/clinical-calculator";
 import { clinicalCalculators } from "@/lib/clinical-calculators";
 
@@ -13,11 +13,11 @@ export function MedicalCalculators() {
     <>
       <div className="calculator-switcher" role="tablist" aria-label="Choose a medical calculator">
         {clinicalCalculators.map((item, index) => {
-          const Icon = index === 0 ? Activity : HeartPulse;
+          const Icon = [Activity, HeartPulse, Stethoscope, Calculator][index % 4] ?? Calculator;
           const selected = item.id === calculator.id;
           return (
             <button key={item.id} type="button" role="tab" aria-selected={selected} aria-controls="active-calculator" className={selected ? "is-active" : ""} onClick={() => setCalculatorId(item.id)}>
-              <Icon size={18} aria-hidden="true" /><span><strong>{item.shortTitle}</strong><small>{index === 0 ? "Pulmonary embolism" : "AF stroke risk"}</small></span>
+              <Icon size={18} aria-hidden="true" /><span><strong>{item.shortTitle}</strong><small>{item.specialty}</small></span>
             </button>
           );
         })}

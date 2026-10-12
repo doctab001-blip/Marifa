@@ -1,4 +1,4 @@
-import { FileCheck2 } from "lucide-react";
+import { FileCheck2 } from "@/components/icons-3d";
 import { ModulePlaceholder } from "@/components/module-placeholder";
 
 export default function HospitalProtocolsPage() {

@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState, type FormEvent } from "react";
 import Link from "next/link";
-import { Baby, CalendarCheck, FileSearch, HeartHandshake, HeartPulse, LayoutGrid, List, Search, ShieldCheck, Siren, X } from "lucide-react";
+import { Baby, CalendarCheck, FileSearch, HeartHandshake, HeartPulse, LayoutGrid, List, Search, ShieldCheck, Siren, X } from "@/components/icons-3d";
 import { DiseaseCard } from "@/components/diseases/DiseaseCard";
 import type { DiseaseDirectoryResult, DiseaseGuidelineSummary } from "@/lib/data/disease-guidelines";
 import type { DiseaseDetail } from "@/lib/validations/disease";

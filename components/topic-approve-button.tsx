@@ -1,7 +1,7 @@
 "use client";
 
 import { useFormStatus } from "react-dom";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "@/components/icons-3d";
 
 export function TopicApproveButton({ title }: { title: string }) {
   const { pending } = useFormStatus();

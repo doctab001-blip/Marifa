@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, BookOpenCheck } from "lucide-react";
+import { ArrowLeft, BookOpenCheck } from "@/components/icons-3d";
 import { getDraftGuideline } from "@/lib/admin/data";
 import { approveGuidelineVersion, saveDraftGuideline } from "../actions";
 import { InvestigationCards } from "@/components/investigation-cards";

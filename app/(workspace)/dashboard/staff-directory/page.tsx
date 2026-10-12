@@ -1,4 +1,4 @@
-import { UsersRound } from "lucide-react";
+import { UsersRound } from "@/components/icons-3d";
 import { ModulePlaceholder } from "@/components/module-placeholder";
 
 export default function StaffDirectoryPage() {

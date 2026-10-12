@@ -1,0 +1,528 @@
+/* ═══ Dark theme (opt-in via the header toggle: <html data-theme="dark">) ═══ */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --font-color-body: #d5deef;
+  --font-color-subheading: #f1f5ff;
+  --font-color-heading: #f8faff;
+  --cerulean: #38bdf8;
+  --gold: #e0b95a;
+  --ink: #f4f7ff;
+  --text-2: #cfd9ec;
+  --text-3: #a3b1cd;
+  --muted: #a3b1cd;
+  --line: rgb(148 163 210 / .16);
+  --line-soft: rgb(148 163 210 / .09);
+  --line-strong: rgb(148 163 210 / .3);
+  --surface: #0d1427;
+  --surface-2: #121b33;
+  --surface-3: #18233f;
+  --background: #060a16;
+  --danger: #fb7185;
+  --warning: #fbbf24;
+  --success: #4ade80;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .45), 0 1px 3px rgba(0, 0, 0, .3);
+  --shadow-md: 0 1px 2px rgba(0, 0, 0, .45), 0 14px 32px -14px rgba(0, 0, 0, .65);
+  --accent-teal: hsl(187 80% 55% / .14);
+  --accent-teal-line: hsl(187 80% 60% / .38);
+  --accent-teal-ink: #8ee9f3;
+  --accent-yellow: hsl(48 95% 55% / .14);
+  --accent-yellow-line: hsl(48 95% 60% / .38);
+  --accent-yellow-ink: #fde68a;
+  --accent-blue: hsl(200 95% 60% / .14);
+  --accent-blue-line: hsl(200 95% 65% / .38);
+  --accent-blue-ink: #9bd8ff;
+  --nav-active: hsl(330 85% 62% / .18);
+  --nav-active-line: hsl(330 90% 70% / .5);
+  --nav-active-ink: #ffd6e8;
+  --c-aqua-text: #7ee7f2; --c-emerald-text: #6ee7b7; --c-amber-text: #fcd34d; --c-rose-text: #fda4af; --c-violet-text: #c4b5fd; --c-sky-text: #7dd3fc;
+}
+html[data-theme="dark"], html[data-theme="dark"] .app-shell {
+  --royal-hover: color-mix(in srgb, var(--royal) 80%, #fff);
+  --royal-deep: color-mix(in srgb, var(--royal) 55%, #02060f);
+  --royal-ink: color-mix(in srgb, var(--royal) 42%, #fff);
+  --royal-text: color-mix(in srgb, var(--royal) 48%, #fff);
+  --royal-soft: color-mix(in srgb, var(--royal) 20%, transparent);
+  --royal-faint: color-mix(in srgb, var(--royal) 10%, transparent);
+  --royal-line: color-mix(in srgb, var(--royal) 38%, transparent);
+  --royal-line-strong: color-mix(in srgb, var(--royal) 60%, transparent);
+  --nav-highlight: var(--nav-active);
+  --nav-highlight-text: var(--nav-active-ink);
+}
+html[data-theme="dark"] .topic-page { --tp-body: var(--font-color-body); --tp-muted: var(--text-3); --tp-hairline: var(--line); --tp-hairline-strong: var(--line-strong); --tp-surface: var(--surface-2); --tp-tile: var(--royal-soft); --tp-amber: #fbbf24; }
+
+/* Dark theme overrides for the legacy component rules — only the colour declarations that differ from the light rules in globals.css. */
+:where(html[data-theme="dark"]) .card { background: var(--surface); }
+:where(html[data-theme="dark"]) .eyebrow { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .status-demo { color: hsl(8 65% 76%); background: hsl(5 86% 62% / 0.13); border: 1px solid hsl(3 90% 64% / 0.34); }
+:where(html[data-theme="dark"]) .status-draft { color: hsl(258 54% 76%); background: hsl(245 90% 62% / 0.13); border: 1px solid hsl(244 90% 64% / 0.34); }
+:where(html[data-theme="dark"]) .status-good { background: hsl(145 81% 62% / 0.13); border: 1px solid hsl(144 68% 64% / 0.34); }
+:where(html[data-theme="dark"]) .status-warn { background: hsl(45 90% 62% / 0.13); border: 1px solid hsl(42 90% 62% / .4); }
+:where(html[data-theme="dark"]) .button-secondary { background: var(--surface); }
+:where(html[data-theme="dark"]) .sidebar { background: var(--surface); }
+:where(html[data-theme="dark"]) .sidebar-panel { scrollbar-color: rgba(148,163,210,.3) transparent; }
+:where(html[data-theme="dark"]) .nav-label { color: var(--text-3); }
+:where(html[data-theme="dark"]) .nav-link { color: var(--ink); }
+:where(html[data-theme="dark"]) .nav-link > svg { color: var(--text-3); }
+:where(html[data-theme="dark"]) .nav-link:hover { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .nav-link:hover > svg { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .panel-home { background: var(--surface); }
+:where(html[data-theme="dark"]) .panel-home:hover { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .panel-home svg { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .panel-all-modules { color: var(--text-2); background: var(--surface); }
+:where(html[data-theme="dark"]) .panel-all-modules:hover { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .panel-title { background: linear-gradient(135deg, var(--royal-soft), var(--surface) 80%); }
+:where(html[data-theme="dark"]) .panel-return { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .topic-nav-count { color: var(--text-2); background: var(--surface-2); }
+:where(html[data-theme="dark"]) .topic-nav-search { color: var(--text-3); }
+:where(html[data-theme="dark"]) .topic-nav-search input { background: var(--surface-2); }
+:where(html[data-theme="dark"]) .topic-nav-search input:focus { background: var(--surface); }
+:where(html[data-theme="dark"]) .topic-nav-search button { color: var(--text-3); }
+:where(html[data-theme="dark"]) .topic-nav-search button:hover { background: var(--surface-2); }
+:where(html[data-theme="dark"]) .topic-nav-group > summary { color: var(--ink); }
+:where(html[data-theme="dark"]) .topic-nav-group a { color: var(--text-2); }
+:where(html[data-theme="dark"]) .topic-nav-group a:hover { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .topic-nav-skeleton span, :where(html[data-theme="dark"]) .skeleton { background: linear-gradient(90deg, var(--surface-2) 0%, var(--surface-2) 50%, var(--surface-2) 100%); }
+:where(html[data-theme="dark"]) .sidebar-toggle { color: var(--text-2); background: var(--surface); }
+:where(html[data-theme="dark"]) .sidebar-toggle:hover { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .topbar { background: var(--surface); }
+:where(html[data-theme="dark"]) .global-search input { background: var(--surface-2); }
+:where(html[data-theme="dark"]) .global-search input::placeholder { color: var(--text-3); }
+:where(html[data-theme="dark"]) .global-search input:focus { background: var(--surface); }
+:where(html[data-theme="dark"]) .global-search svg { color: var(--text-3); }
+:where(html[data-theme="dark"]) .top-action-link { color: var(--text-2); }
+:where(html[data-theme="dark"]) .top-action-link:hover, :where(html[data-theme="dark"]) .top-action-link:focus-visible { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .avatar { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .module-title { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .module-placeholder-icon { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .module-placeholder-label { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .metric-icon { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .hero-search { background: linear-gradient(125deg, var(--royal-deep) 0%, var(--royal) 55%, var(--royal-bright) 100%); }
+:where(html[data-theme="dark"]) .hero-input input { background: var(--surface); }
+:where(html[data-theme="dark"]) .hero-input svg { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .demo-banner { color: hsl(8 65% 76%); background: hsl(9 90% 62% / 0.13); border: 1px solid hsl(3 90% 64% / 0.34); }
+:where(html[data-theme="dark"]) .section-link { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .topic-row { border-top: 1px solid var(--line); }
+:where(html[data-theme="dark"]) .topic-icon { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .progress { background: var(--surface-2); }
+:where(html[data-theme="dark"]) .directory-tools input, :where(html[data-theme="dark"]) .directory-tools select { background: var(--surface); }
+:where(html[data-theme="dark"]) .result-icon { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .result-meta { color: var(--text-2); }
+:where(html[data-theme="dark"]) .result-action { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .empty svg { color: var(--text-3); }
+:where(html[data-theme="dark"]) .dashboard-access-notice { border: 1px solid hsl(42 90% 62% / .4); color: hsl(18 79% 76%); background: hsl(45 90% 62% / 0.13); }
+:where(html[data-theme="dark"]) .admin-heading .page-title { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .admin-scope { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .admin-tab { color: var(--text-2); }
+:where(html[data-theme="dark"]) .admin-tab:hover { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .admin-tab.is-active { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .admin-metric-card { background: var(--surface); }
+:where(html[data-theme="dark"]) .admin-metric-top { color: var(--text-2); }
+:where(html[data-theme="dark"]) .admin-metric-icon.tone-blue { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .admin-metric-icon.tone-amber { color: hsl(40 90% 76%); background: hsl(42 90% 62% / 0.13); }
+:where(html[data-theme="dark"]) .admin-metric-icon.tone-red { color: hsl(4 76% 76%); background: hsl(7 90% 62% / 0.13); }
+:where(html[data-theme="dark"]) .admin-metric-icon.tone-green { color: hsl(153 87% 76%); background: hsl(145 81% 62% / 0.13); }
+:where(html[data-theme="dark"]) .admin-metric-value { color: var(--text-2); }
+:where(html[data-theme="dark"]) .admin-metric-detail { color: var(--text-3); }
+:where(html[data-theme="dark"]) .admin-preview-note { color: var(--text-3); }
+:where(html[data-theme="dark"]) .admin-timeline li { border-top: 1px solid var(--line); }
+:where(html[data-theme="dark"]) .admin-timeline strong { color: var(--text-2); }
+:where(html[data-theme="dark"]) .admin-timeline p { color: var(--text-2); }
+:where(html[data-theme="dark"]) .admin-timeline time { color: var(--text-3); }
+:where(html[data-theme="dark"]) .admin-section-heading h2 { color: var(--text-2); }
+:where(html[data-theme="dark"]) .admin-section-heading p:not(.eyebrow) { color: var(--text-2); }
+:where(html[data-theme="dark"]) .admin-section-icon { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .staff-table-caption { color: var(--text-3); }
+:where(html[data-theme="dark"]) .staff-search { color: var(--text-3); }
+:where(html[data-theme="dark"]) .ui-input { color: var(--text-2); background: var(--surface); }
+:where(html[data-theme="dark"]) .ui-input::placeholder { color: #7f8db0; }
+:where(html[data-theme="dark"]) .ui-button { background: var(--surface); color: var(--text-2); }
+:where(html[data-theme="dark"]) .ui-button-danger { border-color: hsl(6 61% 64% / 0.34); color: hsl(4 76% 76%); background: var(--surface); }
+:where(html[data-theme="dark"]) .ui-button-danger:hover { border-color: hsl(6 90% 64% / .4); background: hsl(6 90% 62% / 0.13); }
+:where(html[data-theme="dark"]) .ui-table th { color: var(--text-2); }
+:where(html[data-theme="dark"]) .ui-table td { border-bottom: 1px solid var(--line); color: var(--text-2); }
+:where(html[data-theme="dark"]) .staff-name { color: var(--text-2); }
+:where(html[data-theme="dark"]) .role-pill { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .role-editor { border-color: hsl(260 77% 64% / 0.34); color: hsl(258 54% 76%); background: hsl(258 90% 62% / 0.13); }
+:where(html[data-theme="dark"]) .role-clinician { border-color: var(--line); color: var(--text-2); background: var(--surface-2); }
+:where(html[data-theme="dark"]) .staff-status { color: var(--text-2); }
+:where(html[data-theme="dark"]) .staff-status.is-active { color: hsl(153 87% 76%); }
+:where(html[data-theme="dark"]) .staff-actions-menu summary { color: var(--text-2); }
+:where(html[data-theme="dark"]) .staff-actions-menu[open] summary, :where(html[data-theme="dark"]) .staff-actions-menu summary:hover { background: var(--surface); }
+:where(html[data-theme="dark"]) .staff-actions-popover { background: var(--surface); }
+:where(html[data-theme="dark"]) .staff-actions-popover button { color: var(--text-2); }
+:where(html[data-theme="dark"]) .staff-actions-popover button.is-danger { color: hsl(4 76% 76%); }
+:where(html[data-theme="dark"]) .admin-table-footer { color: var(--text-3); }
+:where(html[data-theme="dark"]) .admin-empty { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .admin-empty p { color: var(--text-2); }
+:where(html[data-theme="dark"]) .staff-empty p { color: var(--text-2); }
+:where(html[data-theme="dark"]) .admin-dialog { border: 1px solid var(--line); background: var(--surface); }
+:where(html[data-theme="dark"]) .admin-dialog-header h2, :where(html[data-theme="dark"]) .admin-dialog-header [data-radix-dialog-title] { color: var(--text-2); }
+:where(html[data-theme="dark"]) .admin-dialog-header p, :where(html[data-theme="dark"]) .admin-dialog-header [data-radix-dialog-description] { color: var(--text-2); }
+:where(html[data-theme="dark"]) .dialog-close { color: var(--text-2); background: var(--surface); }
+:where(html[data-theme="dark"]) .admin-field { color: var(--text-2); }
+:where(html[data-theme="dark"]) .admin-field select { color: var(--text-2); background: var(--surface); }
+:where(html[data-theme="dark"]) .admin-form-note { color: var(--text-3); }
+:where(html[data-theme="dark"]) .admin-topic-approval span { color: var(--text-3); }
+:where(html[data-theme="dark"]) .admin-queue-copy h3 { color: var(--text-2); }
+:where(html[data-theme="dark"]) .admin-queue-copy p { color: var(--text-3); }
+:where(html[data-theme="dark"]) .admin-queue-status { border: 1px solid hsl(253 76% 64% / 0.34); color: hsl(258 54% 76%); background: hsl(252 90% 62% / 0.13); }
+:where(html[data-theme="dark"]) .admin-queue-status.status-under_review { border-color: hsl(42 90% 62% / .4); color: hsl(40 90% 76%); background: hsl(45 90% 62% / 0.13); }
+:where(html[data-theme="dark"]) .admin-save-message, :where(html[data-theme="dark"]) .admin-save-error { border: 1px solid hsl(144 68% 64% / 0.34); color: hsl(155 90% 76%); background: hsl(143 76% 62% / 0.13); }
+:where(html[data-theme="dark"]) .admin-save-error { border-color: hsl(3 90% 64% / 0.34); color: hsl(4 76% 76%); background: hsl(5 90% 62% / 0.13); }
+:where(html[data-theme="dark"]) .admin-source-summary { color: var(--text-2); }
+:where(html[data-theme="dark"]) .admin-source-summary > svg { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .admin-source-summary span, :where(html[data-theme="dark"]) .admin-source-summary small { color: var(--text-2); }
+:where(html[data-theme="dark"]) .admin-source-summary a { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .admin-scenario-preview p:last-child { color: var(--text-2); }
+:where(html[data-theme="dark"]) .admin-json-form > label { color: var(--text-2); }
+:where(html[data-theme="dark"]) .admin-json-editor { border: 1px solid var(--line-strong); color: var(--text-2); background: var(--surface); }
+:where(html[data-theme="dark"]) .admin-json-actions > span { color: var(--text-2); }
+:where(html[data-theme="dark"]) .pathway-form-section > header { border-bottom: 1px solid var(--line); }
+:where(html[data-theme="dark"]) .pathway-form-section > header h3 { color: var(--text-2); }
+:where(html[data-theme="dark"]) .pathway-form-section > header p { color: var(--text-2); }
+:where(html[data-theme="dark"]) .pathway-input-field { color: var(--text-2); }
+:where(html[data-theme="dark"]) .pathway-input-field input, :where(html[data-theme="dark"]) .pathway-input-field select, :where(html[data-theme="dark"]) .pathway-input-field textarea, :where(html[data-theme="dark"]) .pathway-array-item > textarea { border: 1px solid var(--line); color: var(--text-2); background: var(--surface); }
+:where(html[data-theme="dark"]) .pathway-object-field { background: var(--surface-2); }
+:where(html[data-theme="dark"]) .pathway-object-field legend { color: var(--text-2); }
+:where(html[data-theme="dark"]) .pathway-field-heading h4 { color: var(--text-2); }
+:where(html[data-theme="dark"]) .pathway-array-item { background: var(--surface); }
+:where(html[data-theme="dark"]) .pathway-remove-button { border: 1px solid hsl(5 64% 64% / 0.34); color: hsl(4 76% 76%); background: hsl(7 90% 62% / 0.13); }
+:where(html[data-theme="dark"]) .pathway-empty-list { border: 1px dashed var(--line); color: var(--text-3); }
+:where(html[data-theme="dark"]) .pathway-checkbox { color: var(--text-2); }
+:where(html[data-theme="dark"]) .pathway-save-bar span { color: var(--text-2); }
+:where(html[data-theme="dark"]) .admin-queue-empty-icon { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .admin-queue-count { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .settings-card-heading h3 { color: var(--text-2); }
+:where(html[data-theme="dark"]) .settings-card-heading p { color: var(--text-3); }
+:where(html[data-theme="dark"]) .settings-field { color: var(--text-2); }
+:where(html[data-theme="dark"]) .settings-field input, :where(html[data-theme="dark"]) .settings-field select { color: var(--text-2); background: var(--surface); }
+:where(html[data-theme="dark"]) .settings-help { color: var(--text-3); }
+:where(html[data-theme="dark"]) .theme-options legend { color: var(--text-2); }
+:where(html[data-theme="dark"]) .theme-choice { color: var(--text-2); }
+:where(html[data-theme="dark"]) .theme-choice:has(input:checked) { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .settings-save-row > span { color: var(--text-3); }
+:where(html[data-theme="dark"]) .settings-feedback-success { border-color: hsl(144 68% 64% / 0.34); color: hsl(153 87% 76%); background: hsl(145 81% 62% / 0.13); }
+:where(html[data-theme="dark"]) .settings-feedback-error { border-color: hsl(3 90% 64% / 0.34); color: hsl(4 76% 76%); background: hsl(5 86% 62% / 0.13); }
+:where(html[data-theme="dark"]) .admin-setting-label { color: var(--text-3); }
+:where(html[data-theme="dark"]) .admin-setting-card strong { color: var(--text-2); }
+:where(html[data-theme="dark"]) .admin-setting-card p { color: var(--text-3); }
+:where(html[data-theme="dark"]) .content-section.critical { background: hsl(0 90% 62% / 0.13); }
+:where(html[data-theme="dark"]) .content-section p { color: var(--text-2); }
+:where(html[data-theme="dark"]) .step-box { background: var(--surface); }
+:where(html[data-theme="dark"]) .step-box.warning { border-color: hsl(42 90% 62% / .4); background: hsl(46 90% 62% / 0.13); }
+:where(html[data-theme="dark"]) .step-box.critical { border-color: hsl(3 90% 64% / 0.34); background: hsl(7 90% 62% / 0.13); }
+:where(html[data-theme="dark"]) .branch-label { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .module-card .module-icon { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .module-card footer { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .login-page { background: var(--surface); }
+:where(html[data-theme="dark"]) .demo-account { background: var(--surface); }
+:where(html[data-theme="dark"]) .login-disclaimer { background: hsl(45 90% 62% / 0.13); color: hsl(42 74% 76%); }
+:where(html[data-theme="dark"]) .auth-form label { color: var(--text-2); }
+:where(html[data-theme="dark"]) .auth-field { background: var(--surface); }
+:where(html[data-theme="dark"]) .auth-divider { color: var(--text-3); }
+:where(html[data-theme="dark"]) .auth-layout { background: var(--surface); }
+:where(html[data-theme="dark"]) .auth-panel { background: var(--surface); }
+:where(html[data-theme="dark"]) .auth-heading-icon { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .auth-eyebrow { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .auth-card-heading h2 { color: var(--text-2); }
+:where(html[data-theme="dark"]) .auth-intro { color: var(--text-2); }
+:where(html[data-theme="dark"]) .auth-google-button { border: 1px solid var(--line); color: var(--text-2); background: var(--surface); }
+:where(html[data-theme="dark"]) .auth-or-divider { color: var(--text-3); }
+:where(html[data-theme="dark"]) .auth-or-divider::before, :where(html[data-theme="dark"]) .auth-or-divider::after { background: var(--surface-3); }
+:where(html[data-theme="dark"]) .auth-label { color: var(--text-2); }
+:where(html[data-theme="dark"]) .auth-input { border: 1px solid var(--line); color: var(--text-2); background: var(--surface); }
+:where(html[data-theme="dark"]) .auth-input::placeholder { color: var(--text-3); }
+:where(html[data-theme="dark"]) .auth-field-error { color: hsl(4 76% 76%); }
+:where(html[data-theme="dark"]) .auth-field-hint { color: var(--text-3); }
+:where(html[data-theme="dark"]) .ui-alert { border: 1px solid hsl(3 90% 64% / 0.34); color: hsl(4 72% 76%); background: hsl(7 90% 62% / 0.13); }
+:where(html[data-theme="dark"]) .ui-alert-success { border-color: hsl(144 68% 64% / 0.34); color: hsl(155 90% 76%); background: hsl(143 76% 62% / 0.13); }
+:where(html[data-theme="dark"]) .auth-switch { color: var(--text-2); }
+:where(html[data-theme="dark"]) .auth-switch a, :where(html[data-theme="dark"]) .auth-mobile-signup a { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .auth-trust-note { color: var(--text-2); }
+:where(html[data-theme="dark"]) .auth-trust-note svg { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .auth-terms { color: var(--text-3); }
+:where(html[data-theme="dark"]) .auth-panel-footer { color: var(--text-3); }
+@media (max-width: 700px) {
+  :where(html[data-theme="dark"]) .auth-layout { background: var(--surface); }
+  :where(html[data-theme="dark"]) .auth-mobile-brand { color: var(--royal-text); }
+  :where(html[data-theme="dark"]) .auth-mobile-brand .auth-brand-mark { color: var(--royal-text); }
+  :where(html[data-theme="dark"]) .auth-mobile-signup { color: var(--text-2); }
+}
+:where(html[data-theme="dark"]) .disease-kicker { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .disease-directory-hero h1, :where(html[data-theme="dark"]) .disease-profile-header h1 { color: var(--text-2); }
+:where(html[data-theme="dark"]) .directory-governance-note { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .directory-governance-note span { color: var(--text-2); }
+:where(html[data-theme="dark"]) .disease-management-tabs { border-bottom: 1px solid var(--line); }
+:where(html[data-theme="dark"]) .disease-management-tabs a { color: var(--text-2); }
+:where(html[data-theme="dark"]) .disease-management-tabs a:hover { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .disease-management-tabs a[aria-current="page"] { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .disease-draft-version, :where(html[data-theme="dark"]) .disease-draft-meta, :where(html[data-theme="dark"]) .disease-draft-source { color: var(--text-2); }
+:where(html[data-theme="dark"]) .disease-draft-card h3 { color: var(--text-2); }
+:where(html[data-theme="dark"]) .disease-draft-action { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .directory-search { border: 1px solid var(--line); background: var(--surface); }
+:where(html[data-theme="dark"]) .directory-search-control > svg { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .directory-search-control input { background: var(--surface-2); }
+:where(html[data-theme="dark"]) .directory-search-control input:focus { background: var(--surface); }
+:where(html[data-theme="dark"]) .directory-search-control button { color: var(--text-2); }
+:where(html[data-theme="dark"]) .directory-search-control button:hover { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .directory-reset { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .care-pillar-card { background: var(--surface); }
+:where(html[data-theme="dark"]) .care-pillar-icon { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .care-pillar-copy strong { color: var(--text-2); }
+:where(html[data-theme="dark"]) .care-pillar-count { color: var(--text-2); background: var(--surface-2); }
+:where(html[data-theme="dark"]) .care-pillar-tab { border: 1px solid var(--line); color: var(--text-2); background: var(--surface); }
+:where(html[data-theme="dark"]) .care-pillar-tab:hover { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .care-pillar-tab-count { color: var(--text-2); background: var(--surface-2); }
+:where(html[data-theme="dark"]) .care-pillar-tab.is-active .care-pillar-tab-count { color: var(--text-2); background: var(--surface); }
+:where(html[data-theme="dark"]) .speciality-filter-section { background: var(--surface); }
+:where(html[data-theme="dark"]) .speciality-filter-control { color: var(--text-2); }
+:where(html[data-theme="dark"]) .speciality-filter-control select { border: 1px solid var(--line); color: var(--text-2); background: var(--surface); }
+:where(html[data-theme="dark"]) .disease-speciality-badge { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .disease-sub-speciality-badge { color: var(--text-2); background: var(--surface-2); }
+:where(html[data-theme="dark"]) .disease-card { border: 1px solid var(--line); background: var(--surface); }
+:where(html[data-theme="dark"]) .disease-card:hover { border-color: var(--line); }
+:where(html[data-theme="dark"]) .disease-card-top > span:first-child { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .disease-card h3 { color: var(--text-2); }
+:where(html[data-theme="dark"]) .disease-card-footer { border-top: 1px solid var(--line); color: var(--text-2); }
+:where(html[data-theme="dark"]) .disease-card-footer span:last-child { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .disease-authority-badge { color: var(--text-2); background: var(--surface-2); }
+:where(html[data-theme="dark"]) .disease-status-badge { color: var(--text-2); background: var(--surface-2); }
+:where(html[data-theme="dark"]) .disease-status-badge.is-approved { color: hsl(155 90% 76%); background: hsl(145 81% 62% / 0.13); }
+:where(html[data-theme="dark"]) .disease-status-badge.is-draft { color: hsl(22 90% 76%); background: hsl(45 90% 62% / 0.13); }
+:where(html[data-theme="dark"]) .disease-status-badge.is-review { color: hsl(31 89% 76%); background: hsl(42 90% 62% / 0.13); }
+:where(html[data-theme="dark"]) .approval-badge-approved { color: hsl(153 87% 76%); border-color: hsl(148 57% 64% / 0.34); background: hsl(146 80% 62% / 0.13); }
+:where(html[data-theme="dark"]) .approval-badge-published { color: hsl(153 87% 76%); border-color: hsl(148 57% 64% / 0.34); background: hsl(146 80% 62% / 0.13); }
+:where(html[data-theme="dark"]) .approval-badge-draft { color: hsl(258 54% 76%); border-color: hsl(251 61% 64% / 0.34); background: hsl(250 90% 62% / 0.13); }
+:where(html[data-theme="dark"]) .approval-badge-under-review { color: hsl(31 89% 76%); border-color: hsl(42 90% 62% / .4); background: hsl(42 90% 62% / 0.13); }
+:where(html[data-theme="dark"]) .directory-empty { background: var(--surface); border: 1px solid var(--line); }
+:where(html[data-theme="dark"]) .directory-empty svg { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .directory-empty h3 { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .directory-empty button { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .directory-validation-note { color: hsl(31 89% 76%); }
+:where(html[data-theme="dark"]) .recent-protocol-list { border-top: 1px solid var(--line); }
+:where(html[data-theme="dark"]) .recent-protocol-row { border-bottom: 1px solid var(--line); }
+:where(html[data-theme="dark"]) .recent-protocol-arrow { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .disease-back-link { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .disease-profile-labels > span:first-child { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .disease-source-card { background: var(--surface); }
+:where(html[data-theme="dark"]) .disease-source-card > div { border-bottom: 1px solid var(--line); }
+:where(html[data-theme="dark"]) .disease-source-card dd { color: var(--text-2); }
+:where(html[data-theme="dark"]) .clinical-demo-notice { color: var(--text-2); background: var(--surface-2); }
+:where(html[data-theme="dark"]) .clinical-governance-notice { color: var(--text-2); background: var(--surface-2); }
+:where(html[data-theme="dark"]) .clinical-warning { background: hsl(42 90% 62% / 0.13); }
+:where(html[data-theme="dark"]) .clinical-warning-icon { color: hsl(42 62% 76%); }
+:where(html[data-theme="dark"]) .clinical-warning-kicker { color: hsl(42 62% 76%); }
+:where(html[data-theme="dark"]) .clinical-warning h2 { color: hsl(43 71% 76%); }
+:where(html[data-theme="dark"]) .clinical-warning ul { color: hsl(42 28% 76%); }
+:where(html[data-theme="dark"]) .pathway-sequence { background: var(--surface); }
+:where(html[data-theme="dark"]) .pathway-sequence-header { border-bottom: 1px solid var(--line); }
+:where(html[data-theme="dark"]) .pathway-sequence-icon { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .pathway-step-content { background: var(--surface); }
+:where(html[data-theme="dark"]) .pathway-step-heading { border-bottom: 1px solid var(--line); }
+:where(html[data-theme="dark"]) .pathway-actions { color: var(--text-2); }
+:where(html[data-theme="dark"]) .pathway-branches-label { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .pathway-branch { background: var(--surface); }
+:where(html[data-theme="dark"]) .pathway-branch strong { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .pathway-branch p, :where(html[data-theme="dark"]) .pathway-branch ul { color: var(--text-2); }
+:where(html[data-theme="dark"]) .pathway-placeholder { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .clinical-tier { background: var(--surface); }
+:where(html[data-theme="dark"]) .clinical-tier-heading { color: var(--text-2); background: var(--surface); }
+:where(html[data-theme="dark"]) .clinical-tier-heading:hover, :where(html[data-theme="dark"]) .clinical-tier.is-open .clinical-tier-heading { background: var(--surface-2); }
+:where(html[data-theme="dark"]) .clinical-tier-icon { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .clinical-tier-chevron { color: var(--text-2); }
+:where(html[data-theme="dark"]) .clinical-tier-body { border-top: 1px solid var(--line); }
+:where(html[data-theme="dark"]) .clinical-summary { color: var(--text-2); }
+:where(html[data-theme="dark"]) .clinical-references { border-top: 1px solid var(--line); }
+:where(html[data-theme="dark"]) .clinical-references h3 { color: var(--text-2); }
+:where(html[data-theme="dark"]) .clinical-references ul { color: var(--text-2); }
+:where(html[data-theme="dark"]) .clinical-references a { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .clinical-review-draft-notice { border: 1px solid hsl(42 90% 62% / .4); color: hsl(28 73% 76%); background: hsl(42 90% 62% / 0.13); }
+:where(html[data-theme="dark"]) .clinical-content-list { color: var(--text-2); }
+:where(html[data-theme="dark"]) .clinical-references { border-top: 1px solid var(--line); }
+:where(html[data-theme="dark"]) .clinical-references h3 { color: var(--text-2); }
+:where(html[data-theme="dark"]) .clinical-references ul { color: var(--text-2); }
+:where(html[data-theme="dark"]) .clinical-references a { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .clinical-record-grid h3 { color: var(--text-2); }
+:where(html[data-theme="dark"]) .clinical-record-grid p { color: var(--text-2); }
+:where(html[data-theme="dark"]) .investigation-intro { color: var(--text-2); }
+:where(html[data-theme="dark"]) .investigation-card { background: var(--surface); }
+:where(html[data-theme="dark"]) .investigation-card h4 { color: var(--text-2); }
+:where(html[data-theme="dark"]) .investigation-purpose { color: hsl(186 32% 76%); background: hsl(168 55% 62% / 0.13); }
+:where(html[data-theme="dark"]) .investigation-details dt { color: hsl(203 48% 76%); }
+:where(html[data-theme="dark"]) .investigation-details dd { color: var(--text-2); }
+:where(html[data-theme="dark"]) .investigation-details > .investigation-finding { background: var(--surface-2); }
+:where(html[data-theme="dark"]) .investigation-tier > h3 { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .investigation-count { background: var(--surface-2); color: var(--text-2); }
+:where(html[data-theme="dark"]) .investigation-review-note { border: 1px solid hsl(42 90% 62% / .4); color: hsl(36 68% 76%); background: hsl(40 90% 62% / 0.13); }
+:where(html[data-theme="dark"]) .investigation-review-label { color: hsl(36 68% 76%); }
+:where(html[data-theme="dark"]) .investigation-sources, :where(html[data-theme="dark"]) .investigation-card-sources { border-top: 1px solid var(--line); color: var(--text-2); }
+:where(html[data-theme="dark"]) .investigation-sources a, :where(html[data-theme="dark"]) .investigation-card-sources a { color: var(--royal-text); }
+@media print {
+  :where(html[data-theme="dark"]) .investigation-details dd { color: var(--ink); }
+}
+:where(html[data-theme="dark"]) .follow-up-plan strong { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .follow-up-plan p { color: var(--text-2); }
+:where(html[data-theme="dark"]) .guideline-error svg { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .disease-profile-header { background: linear-gradient(110deg, var(--royal-faint) 0%, var(--surface) 70%); }
+:where(html[data-theme="dark"]) .clinical-scenario-card { background: linear-gradient(130deg,var(--royal-faint),var(--surface)); }
+:where(html[data-theme="dark"]) .clinical-scenario-card > p:last-child { color: var(--text-2); }
+:where(html[data-theme="dark"]) .clinical-content-list li > strong { color: var(--text-2); }
+:where(html[data-theme="dark"]) .medication-plan h3 { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .medication-plan-status { border: 1px solid var(--line); background: var(--surface); color: var(--text-2); }
+:where(html[data-theme="dark"]) .medication-plan-list > li { background: var(--surface); }
+:where(html[data-theme="dark"]) .medication-plan-list h4 { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .medication-plan-list dt { color: var(--text-2); }
+:where(html[data-theme="dark"]) .medication-plan-list dd { color: var(--text-2); }
+:where(html[data-theme="dark"]) .medication-plan-list a { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .presentation-observation { background: var(--surface); }
+:where(html[data-theme="dark"]) .presentation-observation .clinical-content-list li::marker { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .presentation-red-flags .clinical-warning { border-color: hsl(316 69% 64% / 0.34); background: hsl(320 90% 62% / 0.13); }
+:where(html[data-theme="dark"]) .presentation-red-flags .clinical-warning-icon { color: hsl(319 72% 76%); background: hsl(317 73% 62% / 0.18); }
+:where(html[data-theme="dark"]) .presentation-red-flags .clinical-warning-kicker { color: hsl(319 72% 76%); }
+:where(html[data-theme="dark"]) .presentation-red-flags .clinical-warning h2 { color: hsl(319 70% 76%); }
+:where(html[data-theme="dark"]) .presentation-red-flags .clinical-warning ul { color: hsl(322 52% 76%); }
+@media (max-width: 760px) {
+  :where(html[data-theme="dark"]) .mobile-nav { background: var(--surface); }
+  :where(html[data-theme="dark"]) .mobile-nav a { color: var(--text-2); }
+  :where(html[data-theme="dark"]) .mobile-nav a:hover { color: var(--royal-text); }
+  :where(html[data-theme="dark"]) .mobile-nav-more { color: var(--text-2); }
+  :where(html[data-theme="dark"]) .mobile-nav-more:hover { color: var(--royal-text); }
+  :where(html[data-theme="dark"]) .mobile-module-menu { background: var(--surface); }
+  :where(html[data-theme="dark"]) .mobile-module-menu a { color: var(--text-2); }
+}
+:where(html[data-theme="dark"]) .directory-view-toggle { background: var(--surface); }
+:where(html[data-theme="dark"]) .directory-view-toggle button { color: var(--text-2); }
+:where(html[data-theme="dark"]) .directory-view-toggle button[aria-pressed="true"] { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .topic-switcher-list a[aria-current="page"] { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .scenario-card { background: var(--surface); }
+:where(html[data-theme="dark"]) .topic-approval-bar { border: 1px solid var(--tp-hairline, var(--line)); background: var(--tp-surface, var(--surface-2)); }
+:where(html[data-theme="dark"]) .topic-approval-bar p { color: var(--tp-ink, var(--text-2)); }
+:where(html[data-theme="dark"]) .topic-approval-done svg { color: hsl(142 72% 76%); }
+:where(html[data-theme="dark"]) .topic-approval-message { color: var(--tp-muted, var(--text-2)) !important; }
+:where(html[data-theme="dark"]) .scenario-chip { background: var(--surface); }
+:where(html[data-theme="dark"]) .teach-list li::marker { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .teach-step-title a:hover { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .teach-checkpoint { background: var(--surface); }
+:where(html[data-theme="dark"]) .teach-refs a { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .teaching-cue { background: hsl(166 76% 62% / 0.13); color: hsl(176 61% 76%); }
+:where(html[data-theme="dark"]) .topic-pager-link { background: var(--surface); }
+:where(html[data-theme="dark"]) .em-nav { background: var(--surface); border-bottom: 1px solid var(--tp-hairline, var(--line)); }
+:where(html[data-theme="dark"]) .em-nav a { border: 1px solid var(--tp-hairline, var(--line)); background: var(--surface); color: var(--tp-ink, var(--text-2)); }
+:where(html[data-theme="dark"]) .em-nav a:hover { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .em-section + .em-section { border-top: 1px solid var(--tp-hairline, var(--line)); }
+:where(html[data-theme="dark"]) .em-heading { color: var(--tp-ink, var(--text-2)); }
+:where(html[data-theme="dark"]) .em-section h3 { color: var(--tp-ink, var(--text-2)); }
+:where(html[data-theme="dark"]) .em-section h4 { color: var(--tp-ink, var(--text-2)); }
+:where(html[data-theme="dark"]) .em-lead { color: var(--tp-body, var(--text-2)); }
+:where(html[data-theme="dark"]) .em-list li::marker { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .em-alert { border: 1px solid hsl(353 90% 64% / 0.34); background: hsl(356 90% 62% / 0.13); color: hsl(343 88% 76%); }
+:where(html[data-theme="dark"]) .em-alert > svg { color: hsl(345 83% 76%); }
+:where(html[data-theme="dark"]) .em-alert .em-list li::marker { color: hsl(345 83% 76%); }
+:where(html[data-theme="dark"]) .em-box { border: 1px solid var(--tp-hairline, var(--line)); background: var(--tp-surface, var(--surface-2)); }
+:where(html[data-theme="dark"]) .em-pearls { background: hsl(166 76% 62% / 0.13); }
+:where(html[data-theme="dark"]) .em-pitfalls { background: hsl(48 90% 62% / 0.13); }
+:where(html[data-theme="dark"]) .em-criteria dt { color: var(--tp-ink, var(--text-2)); }
+:where(html[data-theme="dark"]) .em-table-wrap { border: 1px solid var(--tp-hairline, var(--line)); }
+:where(html[data-theme="dark"]) .em-table th, :where(html[data-theme="dark"]) .em-table td { border-bottom: 1px solid var(--tp-hairline, var(--line)); }
+:where(html[data-theme="dark"]) .em-table thead th { background: var(--tp-surface, var(--surface-2)); color: var(--tp-muted, var(--text-2)); }
+:where(html[data-theme="dark"]) .em-table tbody th { color: var(--tp-ink, var(--text-2)); }
+:where(html[data-theme="dark"]) .em-table small { color: var(--tp-muted, var(--text-2)); }
+:where(html[data-theme="dark"]) .em-deranged { color: hsl(343 80% 76%); }
+:where(html[data-theme="dark"]) .em-footnote { color: var(--tp-muted, var(--text-2)); }
+:where(html[data-theme="dark"]) .em-pros { background: hsl(138 76% 62% / 0.13); border: 1px solid hsl(141 79% 64% / 0.34); }
+:where(html[data-theme="dark"]) .em-cons { background: hsl(0 86% 62% / 0.13); border: 1px solid hsl(0 90% 64% / 0.34); }
+:where(html[data-theme="dark"]) .em-source-link { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .em-followup { background: var(--tp-surface, var(--surface-2)); }
+:where(html[data-theme="dark"]) .em-more { border: 1px solid var(--tp-hairline, var(--line)); }
+:where(html[data-theme="dark"]) .em-more > summary { color: var(--tp-ink, var(--text-2)); }
+:where(html[data-theme="dark"]) .em-more[open] > summary { border-bottom: 1px solid var(--tp-hairline, var(--line)); }
+@media (max-width: 720px) {
+  :where(html[data-theme="dark"]) .em-investigation-table tr { border-bottom: 1px solid var(--tp-hairline, var(--line)); }
+  :where(html[data-theme="dark"]) .em-investigation-table td::before { color: var(--tp-muted, var(--text-2)); }
+}
+:where(html[data-theme="dark"]) .em-references { border: 1px solid var(--tp-hairline, var(--line)); background: var(--tp-surface, var(--surface-2)); }
+:where(html[data-theme="dark"]) .em-references h2 { color: var(--tp-ink, var(--text-2)); }
+:where(html[data-theme="dark"]) .em-references a { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .em-references span { color: var(--tp-muted, var(--text-2)); }
+:where(html[data-theme="dark"]) .em-dose-table .em-contra { color: hsl(343 80% 76%); }
+:where(html[data-theme="dark"]) .em-dose-table .em-contra li::marker { color: hsl(345 83% 76%); }
+:where(html[data-theme="dark"]) .em-muted { color: var(--tp-muted, var(--text-2)); }
+:where(html[data-theme="dark"]) .dashboard-page .card { border-color: var(--line); }
+:where(html[data-theme="dark"]) .badge-urgent { color: hsl(343 80% 76%); background: hsl(342 90% 62% / 0.13); border-color: hsl(342 90% 64% / 0.34); }
+:where(html[data-theme="dark"]) .alert-banner { border: 1px solid hsl(343 75% 64% / 0.34); background: linear-gradient(100deg, hsl(340 90% 62% / 0.13) 0%, var(--surface) 70%); }
+:where(html[data-theme="dark"]) .alert-banner-advisory { background: linear-gradient(100deg, var(--accent-yellow), var(--surface) 70%); }
+:where(html[data-theme="dark"]) .alert-banner-copy strong { color: hsl(333 72% 76%); }
+:where(html[data-theme="dark"]) .alert-banner-copy p { color: hsl(335 18% 76%); }
+:where(html[data-theme="dark"]) .alert-banner-dismiss { color: hsl(335 21% 76%); }
+:where(html[data-theme="dark"]) .alert-banner-dismiss:hover { border-color: hsl(343 75% 64% / 0.34); background: var(--surface); color: hsl(333 72% 76%); }
+:where(html[data-theme="dark"]) .ai-search-badge { background: var(--surface); }
+:where(html[data-theme="dark"]) .ai-search-intro p { color: var(--text-2); }
+:where(html[data-theme="dark"]) .ai-search-form input { background: var(--surface); }
+:where(html[data-theme="dark"]) .ai-search-form input::placeholder { color: var(--text-3); }
+:where(html[data-theme="dark"]) .ai-search-icon { color: hsl(201 90% 76%); }
+:where(html[data-theme="dark"]) .ai-search-suggestions a:hover { background: var(--surface); }
+:where(html[data-theme="dark"]) .metric-card .metric-top { color: var(--text-2); }
+:where(html[data-theme="dark"]) .metric-icon-magenta { background: hsl(336 86% 62% / 0.13); }
+:where(html[data-theme="dark"]) .progress-ring-track { stroke: rgba(148,163,210,.18); }
+:where(html[data-theme="dark"]) .meter { background: var(--surface-2); }
+:where(html[data-theme="dark"]) .ops-section { border: 1px solid var(--line); background: linear-gradient(180deg, hsl(180 55% 62% / 0.13), hsl(180 55% 62% / 0.13)); }
+:where(html[data-theme="dark"]) .ops-bar-label { color: var(--ink); }
+:where(html[data-theme="dark"]) .ops-met { color: hsl(173 90% 76%); }
+:where(html[data-theme="dark"]) .ops-missed { color: hsl(36 90% 76%); }
+:where(html[data-theme="dark"]) .ops-column-over { background: linear-gradient(180deg, hsl(339 81% 62% / 0.18), #c2185b); }
+:where(html[data-theme="dark"]) .ops-target em { color: hsl(199 18% 76%); }
+:where(html[data-theme="dark"]) .dashboard-page .topic-icon-alert { color: hsl(343 80% 76%); background: hsl(342 90% 62% / 0.13); border-color: hsl(342 90% 64% / 0.34); }
+:where(html[data-theme="dark"]) .update-icon-urgent { color: hsl(343 80% 76%); background: hsl(342 90% 62% / 0.13); border-color: hsl(342 90% 64% / 0.34); }
+:where(html[data-theme="dark"]) .update-sample { color: var(--text-3); }
+:where(html[data-theme="dark"]) .update-chevron { color: var(--text-3); }
+:where(html[data-theme="dark"]) .empty-state { background: linear-gradient(180deg, var(--accent-teal), var(--surface)); }
+:where(html[data-theme="dark"]) .empty-state-icon { background: var(--surface); }
+:where(html[data-theme="dark"]) .flagship-card { background: linear-gradient(135deg, var(--accent-teal), var(--surface) 70%); }
+:where(html[data-theme="dark"]) .flagship-arrow { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .calculator-switcher { background: var(--surface-2); }
+:where(html[data-theme="dark"]) .calculator-switcher button { color: var(--text-2); }
+:where(html[data-theme="dark"]) .calculator-switcher button.is-active { background: var(--surface); }
+:where(html[data-theme="dark"]) .calculator-switcher small { color: var(--text-3); }
+:where(html[data-theme="dark"]) .calculator-heading h2 { color: hsl(198 30% 76%); }
+:where(html[data-theme="dark"]) .calculator-heading p:last-child { color: var(--text-2); }
+:where(html[data-theme="dark"]) .calculator-indication { color: hsl(200 64% 76%); }
+:where(html[data-theme="dark"]) .calculator-indication span { color: hsl(200 41% 76%); }
+:where(html[data-theme="dark"]) .calculator-question legend { color: hsl(199 22% 76%); }
+:where(html[data-theme="dark"]) .calculator-question legend small { color: var(--text-2); }
+:where(html[data-theme="dark"]) .calculator-option-grid button { border: 1px solid var(--line-strong); color: var(--ink); background: var(--surface); }
+:where(html[data-theme="dark"]) .calculator-option-grid button:hover { background: hsl(180 55% 62% / 0.13); }
+:where(html[data-theme="dark"]) .calculator-choice-marker { background: var(--surface); }
+:where(html[data-theme="dark"]) .calculator-option-grid small { color: var(--text-2); }
+:where(html[data-theme="dark"]) .calculator-option-grid em { color: var(--text-2); }
+:where(html[data-theme="dark"]) .calculator-number-row input { border: 1px solid var(--line-strong); color: hsl(198 30% 76%); background: var(--surface); }
+:where(html[data-theme="dark"]) .calculator-units { border: 1px solid var(--line-strong); background: var(--surface-2); }
+:where(html[data-theme="dark"]) .calculator-units button, :where(html[data-theme="dark"]) .calculator-fixed-unit { color: var(--text-2); }
+:where(html[data-theme="dark"]) .calculator-units button.is-active { background: var(--surface); }
+:where(html[data-theme="dark"]) .calculator-result-top { color: var(--text-2); }
+:where(html[data-theme="dark"]) .calculator-result-top button { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .calculator-result-top button:disabled { color: var(--text-3); }
+:where(html[data-theme="dark"]) .calculator-score { color: hsl(198 30% 76%); }
+:where(html[data-theme="dark"]) .calculator-score small { color: var(--text-3); }
+:where(html[data-theme="dark"]) .calculator-completion { background: var(--surface-3); }
+:where(html[data-theme="dark"]) .calculator-progress-copy { color: var(--text-3); }
+:where(html[data-theme="dark"]) .calculator-tone-low { color: hsl(155 86% 76%); background: hsl(148 71% 62% / 0.13); }
+:where(html[data-theme="dark"]) .calculator-tone-moderate { border-color: hsl(42 90% 62% / .4); color: hsl(48 90% 76%); background: hsl(52 90% 62% / 0.13); }
+:where(html[data-theme="dark"]) .calculator-tone-high { border-color: hsl(6 73% 64% / 0.34); color: hsl(5 68% 76%); background: hsl(7 90% 62% / 0.13); }
+:where(html[data-theme="dark"]) .calculator-incomplete { border: 1px dashed var(--line-strong); background: var(--surface-2); }
+:where(html[data-theme="dark"]) .calculator-incomplete strong { color: var(--text-2); }
+:where(html[data-theme="dark"]) .calculator-incomplete p { color: var(--text-3); }
+:where(html[data-theme="dark"]) .calculator-safety-note { color: var(--text-3); }
+:where(html[data-theme="dark"]) .calculator-evidence summary strong { color: hsl(199 22% 76%); }
+:where(html[data-theme="dark"]) .calculator-evidence summary small { color: var(--text-3); }
+:where(html[data-theme="dark"]) .calculator-evidence summary > svg { color: var(--text-2); }
+:where(html[data-theme="dark"]) .calculator-evidence-grid { background: var(--surface); }
+:where(html[data-theme="dark"]) .calculator-evidence-grid h3 { color: var(--ink); }
+:where(html[data-theme="dark"]) .calculator-evidence-grid p, :where(html[data-theme="dark"]) .calculator-evidence-grid li { color: var(--text-2); }
+:where(html[data-theme="dark"]) .calculator-sources a { color: var(--royal-text); }
+:where(html[data-theme="dark"]) .calculator-sources span { color: var(--text-3); }
+:where(html[data-theme="dark"]) .scope-chip:hover { background: var(--surface); }
+:where(html[data-theme="dark"]) .guideline-feed li + li { border-top: 1px solid var(--line); }
+:where(html[data-theme="dark"]) .guideline-feed-meta { color: var(--text-2); }
+:where(html[data-theme="dark"]) .pathway-card { background: var(--surface); }
+:where(html[data-theme="dark"]) .pathway-card p { color: var(--text-2); }
+:where(html[data-theme="dark"]) .ai-search { background: radial-gradient(circle at 100% 0%, rgba(129, 212, 250, .18), transparent 42%), linear-gradient(135deg, var(--accent-blue) 0%, hsl(202 90% 62% / 0.1) 55%, var(--accent-teal) 100%); }

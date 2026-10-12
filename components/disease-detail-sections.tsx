@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown } from "@/components/icons-3d";
 import { ClinicalWarning } from "@/components/clinical-warning";
 import { PathwaySequence } from "@/components/pathway-sequence";
 import { InvestigationCards } from "@/components/investigation-cards";
@@ -15,13 +15,13 @@ import { teachingSections, type TeachingSectionKey } from "@/lib/teaching";
 
 function TextList({ items }: { items: string[] }) {
   return (
-    <ul className="m-0 list-disc space-y-2 ps-5 text-sm leading-relaxed text-slate-700 marker:text-blue-700">
+    <ul className="m-0 list-disc space-y-2 ps-5 text-sm leading-relaxed text-body marker:text-aqua-300">
       {items.map((item, index) => {
         const separator = item.indexOf(":");
         return (
           <li key={`${index}-${item}`}>
             {separator > 0 ? (
-              <><strong className="font-semibold text-slate-900">{item.slice(0, separator)}:</strong>{item.slice(separator + 1)}</>
+              <><strong className="font-semibold text-ink">{item.slice(0, separator)}:</strong>{item.slice(separator + 1)}</>
             ) : item}
           </li>
         );
@@ -138,7 +138,7 @@ export function DiseaseDetailSections({ disease, investigationSource }: { diseas
               </dl>
               <SourceCitation sources={[{ title: regimen.sourceTitle, url: regimen.sourceUrl, edition: regimen.sourceEdition }]} />
             </li>)}
-          </ul> : <p className="m-0 rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm leading-relaxed text-slate-500">{medicationPlan?.note ?? "No exact-dose medicine plan is linked to this topic. Consult the current Saudi/local protocol and hospital formulary for prescribing details."}</p>}
+          </ul> : <p className="m-0 rounded-lg border border-edge bg-panel px-4 py-3 text-sm leading-relaxed text-muted">{medicationPlan?.note ?? "No exact-dose medicine plan is linked to this topic. Consult the current Saudi/local protocol and hospital formulary for prescribing details."}</p>}
         </section>
         <SourceCitation sources={topicSources} />
       </Section>

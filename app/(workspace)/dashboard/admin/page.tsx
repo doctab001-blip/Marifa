@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Activity, ArrowRight, BookOpenCheck, ClipboardCheck, ShieldCheck, UsersRound } from "lucide-react";
+import { Activity, ArrowRight, BookOpenCheck, ClipboardCheck, ShieldCheck, UsersRound } from "@/components/icons-3d";
 import { getAdminOverview } from "@/lib/admin/data";
 import GenerateGuidelineForm from "./components/GenerateGuidelineForm";
 

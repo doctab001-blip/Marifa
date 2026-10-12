@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, Search } from "lucide-react";
+import { ArrowRight, Search } from "@/components/icons-3d";
 
 // Every scope searches the published clinical library, which is where guidelines, pathways and the
 // medicines used in them live. (The Clinical Guidelines workspace and the Formulary module do not

@@ -1,4 +1,4 @@
-import { Bell } from "lucide-react";
+import { Bell } from "@/components/icons-3d";
 import { ModulePlaceholder } from "@/components/module-placeholder";
 
 export default function NotificationsPage() {

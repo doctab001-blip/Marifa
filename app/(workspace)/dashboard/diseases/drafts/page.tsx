@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, FileClock, FileSearch, ShieldAlert } from "lucide-react";
+import { ArrowRight, FileClock, FileSearch, ShieldAlert } from "@/components/icons-3d";
 import { DiseaseManagementNavigation } from "@/components/diseases/DiseaseManagementNavigation";
 import { getDiseaseDrafts } from "@/lib/data/disease-drafts";
 import { approveGuidelineVersion } from "@/app/(workspace)/dashboard/admin/guidelines/actions";

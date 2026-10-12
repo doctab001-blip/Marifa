@@ -1,6 +1,6 @@
 "use client";
 
-import { Bookmark } from "lucide-react";
+import { Bookmark } from "@/components/icons-3d";
 import { useSyncExternalStore } from "react";
 
 const bookmarkEvent = "marifa-bookmark-change";

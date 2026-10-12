@@ -1,4 +1,4 @@
-import { Award } from "lucide-react";
+import { Award } from "@/components/icons-3d";
 import { ModulePlaceholder } from "@/components/module-placeholder";
 
 export default function MyCertificatesPage() {

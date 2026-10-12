@@ -1,4 +1,4 @@
-import { Pill } from "lucide-react";
+import { Pill } from "@/components/icons-3d";
 import { ModulePlaceholder } from "@/components/module-placeholder";
 
 export default function MedicinesFormularyPage() {

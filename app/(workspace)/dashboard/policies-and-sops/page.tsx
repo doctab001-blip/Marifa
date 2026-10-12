@@ -1,4 +1,4 @@
-import { BookOpenCheck } from "lucide-react";
+import { BookOpenCheck } from "@/components/icons-3d";
 import { ModulePlaceholder } from "@/components/module-placeholder";
 
 export default function PoliciesAndSopsPage() {

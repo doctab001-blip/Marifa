@@ -1,4 +1,4 @@
-import { ShieldCheck } from "lucide-react";
+import { ShieldCheck } from "@/components/icons-3d";
 import { DiseaseDirectoryClient } from "@/components/diseases/DiseaseDirectoryClient";
 import { DiseaseManagementNavigation } from "@/components/diseases/DiseaseManagementNavigation";
 import { getApprovedDiseaseGuidelines } from "@/lib/data/disease-guidelines";

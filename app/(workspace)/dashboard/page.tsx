@@ -17,7 +17,7 @@ import {
   Pill,
   Stethoscope,
   TriangleAlert,
-} from "lucide-react";
+} from "@/components/icons-3d";
 import { DemoBanner } from "@/components/demo-banner";
 import { AlertBanner } from "@/components/dashboard/alert-banner";
 import { KnowledgeSearch } from "@/components/dashboard/knowledge-search";

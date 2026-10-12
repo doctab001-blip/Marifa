@@ -1,6 +1,36 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+@theme inline {
+  /* Marifa tokens for Tailwind utilities (bg-panel, text-ink, shadow-glow-aqua …). They read the live CSS
+     variables, so every utility follows the light/dark switch automatically. */
+  --color-void: var(--background);
+  --color-panel: var(--surface);
+  --color-panel-2: var(--surface-2);
+  --color-panel-3: var(--surface-3);
+  --color-ink: var(--ink);
+  --color-body: var(--text-2);
+  --color-muted: var(--text-3);
+  --color-edge: var(--line);
+  --color-aqua-300: var(--c-aqua-text);
+  --color-aqua-400: #22d3ee;
+  --color-aqua-500: #12b8d0;
+  --color-emerald-300: var(--c-emerald-text);
+  --color-amber-300: var(--c-amber-text);
+  --color-rose-300: var(--c-rose-text);
+  --color-violet-300: var(--c-violet-text);
+  --color-sky-300: var(--c-sky-text);
+}
+@theme {
+  --shadow-glow-aqua: 0 0 0 1px rgb(34 211 238 / .4), 0 0 18px rgb(34 211 238 / .3), 0 0 42px -6px rgb(34 211 238 / .24);
+  --shadow-glow-aqua-hover: 0 0 0 1px rgb(34 211 238 / .65), 0 0 26px rgb(34 211 238 / .48), 0 0 56px -4px rgb(34 211 238 / .36);
+  --shadow-glow-emerald: 0 0 0 1px rgb(52 211 153 / .4), 0 0 18px rgb(52 211 153 / .28), 0 0 42px -6px rgb(52 211 153 / .22);
+  --shadow-glow-amber: 0 0 0 1px rgb(251 191 36 / .42), 0 0 18px rgb(251 191 36 / .28), 0 0 42px -6px rgb(251 191 36 / .22);
+  --shadow-glow-rose: 0 0 0 1px rgb(251 113 133 / .44), 0 0 18px rgb(251 113 133 / .3), 0 0 42px -6px rgb(251 113 133 / .24);
+  --shadow-glow-violet: 0 0 0 1px rgb(167 139 250 / .42), 0 0 18px rgb(167 139 250 / .3), 0 0 42px -6px rgb(167 139 250 / .24);
+}
+
+
 /* ── Design tokens ─────────────────────────────────────────────
    One theme colour (--royal, set per organisation) drives every tint, so the whole
    interface stays consistent whichever colour an administrator chooses. */
@@ -15,10 +45,16 @@
   --royal: #0f766e;
   --cerulean: #0284c7;
   --gold: #c8a24d;
+  --c-aqua-text: #0e7490; --c-emerald-text: #047857; --c-amber-text: #b45309; --c-rose-text: #be123c; --c-violet-text: #6d28d9; --c-sky-text: #0369a1;
   --ink: var(--font-color-heading);
   --muted: var(--font-color-body);
   --line: #e3e8e8;
   --line-soft: #eef2f2;
+  --line-strong: #cbd5e1;
+  --text-2: #344054;
+  --text-3: #667085;
+  --surface-2: #f8fafc;
+  --surface-3: #f1f5f9;
   --surface: #ffffff;
   --background: #f4f7f6;
   --danger: #b42318;
@@ -49,6 +85,8 @@
   --royal-faint: color-mix(in srgb, var(--royal) 4%, #fff);
   --royal-line: color-mix(in srgb, var(--royal) 17%, #fff);
   --royal-line-strong: color-mix(in srgb, var(--royal) 34%, #fff);
+  --royal-text: var(--royal);
+  --royal-deep: color-mix(in srgb, var(--royal) 64%, #000);
   --nav-highlight: var(--nav-active);
   --nav-highlight-text: var(--nav-active-ink);
 }

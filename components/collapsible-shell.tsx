@@ -1,7 +1,7 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
-import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
+import { PanelLeftClose, PanelLeftOpen } from "@/components/icons-3d";
 
 const STORAGE_KEY = "marifa.sidebar-collapsed";
 const CHANGE_EVENT = "marifa:sidebar-collapsed";

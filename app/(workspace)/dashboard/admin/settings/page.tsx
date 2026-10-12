@@ -1,4 +1,4 @@
-import { Check, Palette, UserRound } from "lucide-react";
+import { Check, Palette, UserRound } from "@/components/icons-3d";
 import { getAdminSettings } from "@/lib/admin/data";
 import { saveAdminSettings } from "./actions";
 

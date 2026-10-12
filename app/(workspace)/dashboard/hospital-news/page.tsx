@@ -1,4 +1,4 @@
-import { Megaphone } from "lucide-react";
+import { Megaphone } from "@/components/icons-3d";
 import { ModulePlaceholder } from "@/components/module-placeholder";
 
 export default function HospitalNewsPage() {

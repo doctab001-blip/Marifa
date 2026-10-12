@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckCircle2, Clock3, FilePenLine, History, Send, ShieldCheck } from "lucide-react";
+import { CheckCircle2, Clock3, FilePenLine, History, Send, ShieldCheck } from "@/components/icons-3d";
 import { useState } from "react";
 
 type Step = "draft" | "under_review" | "approved" | "published";

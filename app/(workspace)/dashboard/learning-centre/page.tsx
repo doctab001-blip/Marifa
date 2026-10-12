@@ -1,4 +1,4 @@
-import { BookOpen } from "lucide-react";
+import { BookOpen } from "@/components/icons-3d";
 import { ModulePlaceholder } from "@/components/module-placeholder";
 
 export default function LearningCentrePage() {

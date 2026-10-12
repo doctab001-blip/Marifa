@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Plus, Save, Trash2 } from "lucide-react";
+import { Plus, Save, Trash2 } from "@/components/icons-3d";
 import type { DiseaseDetail } from "@/lib/validations/disease";
 import { DiseaseDetailSchema } from "@/lib/validations/disease";
 

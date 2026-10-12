@@ -1,4 +1,4 @@
-import { BedDouble, ClipboardCheck, Hourglass, Info } from "lucide-react";
+import { BedDouble, ClipboardCheck, Hourglass, Info } from "@/components/icons-3d";
 import { ProgressRing } from "@/components/dashboard/progress-ring";
 import type { OperationsSnapshot } from "@/lib/dashboard/hospital-feed";
 

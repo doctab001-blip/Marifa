@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, CalendarDays, FileWarning, Search, ShieldAlert, Stethoscope } from "lucide-react";
+import { ArrowRight, CalendarDays, FileWarning, Search, ShieldAlert, Stethoscope } from "@/components/icons-3d";
 import { useMemo, useState } from "react";
 import { searchDiseases } from "@/lib/search";
 import type { DiseaseTopic } from "@/lib/types";

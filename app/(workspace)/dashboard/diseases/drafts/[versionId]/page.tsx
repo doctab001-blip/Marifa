@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ShieldAlert } from "lucide-react";
+import { ArrowLeft, ShieldAlert } from "@/components/icons-3d";
 import { EmergencyTopic } from "@/components/emergency-topic";
 import { getDiseaseDraftVersion } from "@/lib/data/disease-drafts";
 

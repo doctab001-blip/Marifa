@@ -1,4 +1,4 @@
-import { ShieldCheck } from "lucide-react";
+import { ShieldCheck } from "@/components/icons-3d";
 import { AdminSubNavigation } from "@/components/admin/admin-sub-navigation";
 import { requireOrganizationAdmin } from "@/lib/admin/data";
 import { isTemporaryOpenAdminMode } from "@/lib/access-mode";

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
-import { ArrowLeft, CheckCircle2, ShieldAlert } from "lucide-react";
+import { ArrowLeft, CalendarCheck, CheckCircle2, FileText, Hourglass, ShieldAlert, Stethoscope } from "@/components/icons-3d";
 import { EmergencyTopic } from "@/components/emergency-topic";
 import { TopicPager, type TopicLink } from "@/components/topic-library";
 import { TopicApproveButton } from "@/components/topic-approve-button";
@@ -51,20 +51,27 @@ export default async function DiseaseDetailPage({ params, searchParams }: { para
   return (
     <main className="page disease-detail-page topic-page">
       <article className="scenario-card" aria-labelledby="scenario-title">
-        <h1 id="scenario-title" className="scenario-title">{disease.title}</h1>
+        <header className="sc-hero">
+          <div className="sc-eyebrow-row">
+            <span className="sc-icon-tile" aria-hidden="true"><Stethoscope size={24} /></span>
+            <span className="pill pill-aqua">Clinical scenario</span>
+            <span className="pill pill-sky">{disease.pillar}</span>
+          </div>
+          <h1 id="scenario-title" className="scenario-title">{disease.title}</h1>
+        </header>
         <EmergencyTopic disease={disease} investigationSource={result.investigationSource} />
 
         <section className="topic-approval-bar" aria-label="Topic approval">
           {reviewIncomplete ? (
             <>
-              <p><strong>Status: Under review</strong> · Version {disease.version}</p>
+              <p><span className="pill pill-amber"><Hourglass size={16} aria-hidden="true" /><strong>Status: Under review</strong></span><span className="pill pill-slate pill-sm"><FileText size={14} aria-hidden="true" />Version {disease.version}</span></p>
               <form action={approveLiveTopic}>
                 <input type="hidden" name="id" value={disease.id} />
                 <TopicApproveButton title={disease.title} />
               </form>
             </>
           ) : (
-            <p className="topic-approval-done"><CheckCircle2 size={18} aria-hidden="true" /><strong>Approved</strong> · Reviewed {formatDate(disease.lastReviewed)} · Version {disease.version}</p>
+            <p className="topic-approval-done"><span className="pill pill-emerald"><CheckCircle2 size={16} aria-hidden="true" /><strong>Approved</strong></span><span className="pill pill-slate pill-sm"><CalendarCheck size={14} aria-hidden="true" />Reviewed {formatDate(disease.lastReviewed)}</span><span className="pill pill-slate pill-sm"><FileText size={14} aria-hidden="true" />Version {disease.version}</span></p>
           )}
           {approvalMessage ? <p className="topic-approval-message" role="status">{approvalMessage}</p> : null}
         </section>

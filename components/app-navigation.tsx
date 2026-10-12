@@ -3,14 +3,9 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import {
-  Activity,
   ArrowLeft,
-  Award,
   Bell,
-  BookOpen,
-  BookOpenCheck,
   ChevronRight,
-  ClipboardCheck,
   ClipboardList,
   Calculator as CalculatorIcon,
   FileCheck2,
@@ -18,19 +13,16 @@ import {
   House,
   LayoutDashboard,
   LayoutGrid,
-  Library,
-  Megaphone,
   Menu,
   Pill,
   Search,
-  Settings,
   Settings2,
   ShieldCheck,
   Stethoscope,
   UsersRound,
   X,
   type LucideIcon,
-} from "lucide-react";
+} from "@/components/icons-3d";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { searchTopics } from "@/lib/topic-search";
 
@@ -38,30 +30,21 @@ type NavItem = { href: string; label: string; icon: LucideIcon };
 
 export const navigation: NavItem[] = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
-  { href: "/dashboard/diseases", label: "Disease Management", icon: Stethoscope },
-  { href: "/dashboard/clinical-guidelines", label: "Clinical Guidelines", icon: Library },
+  { href: "/dashboard/disease-management", label: "Disease Management", icon: Stethoscope },
   { href: "/dashboard/medical-calculators", label: "Medical Calculators", icon: CalculatorIcon },
-  { href: "/dashboard/hospital-protocols", label: "Hospital Protocols", icon: FileCheck2 },
-  { href: "/dashboard/medicines-formulary", label: "Medicines and Formulary", icon: Pill },
-  { href: "/dashboard/competencies", label: "Competencies", icon: ClipboardCheck },
-  { href: "/dashboard/learning-centre", label: "Learning Centre", icon: BookOpen },
-  { href: "/dashboard/policies-and-sops", label: "Policies and SOPs", icon: BookOpenCheck },
-  { href: "/dashboard/clinical-governance", label: "Clinical Governance", icon: ShieldCheck },
-  { href: "/dashboard/accreditation-and-audits", label: "Accreditation and Audits", icon: Activity },
-  { href: "/dashboard/staff-directory", label: "Staff Directory", icon: UsersRound },
-  { href: "/dashboard/hospital-news", label: "Hospital News", icon: Megaphone },
-  { href: "/dashboard/my-certificates", label: "My Certificates", icon: Award },
+  { href: "/dashboard/formulary", label: "Medicines and Formulary", icon: Pill },
+  { href: "/dashboard/protocols", label: "Local Protocols & SOPs", icon: FileCheck2 },
+  { href: "/dashboard/governance", label: "Clinical Governance", icon: ShieldCheck },
+  { href: "/dashboard/directory", label: "Staff Directory", icon: UsersRound },
   { href: "/dashboard/notifications", label: "Notifications", icon: Bell },
-  { href: "/dashboard/admin", label: "Administration and Settings", icon: Settings },
 ];
 
 const sections = [
-  { label: "Workspace", items: navigation.slice(0, 8) },
-  { label: "Hospital", items: navigation.slice(8, 15) },
-  { label: "Administration", items: navigation.slice(15) },
+  { label: "Workspace", items: navigation.slice(0, 4) },
+  { label: "Hospital", items: navigation.slice(4) },
 ];
 
-const mobileItems = [navigation[0], navigation[1], navigation[2], navigation[6]];
+const mobileItems = [navigation[0], navigation[1], navigation[2], navigation[7]];
 
 const diseaseLinks: NavItem[] = [
   { href: "/dashboard/diseases", label: "Disease directory", icon: Stethoscope },
@@ -82,10 +65,15 @@ function canonicalPath(pathname: string) {
     "/clinical-library": "/dashboard/clinical-guidelines",
     "/competencies": "/dashboard/competencies",
     "/modules": "/dashboard/hospital-protocols",
+    "/dashboard/diseases": "/dashboard/disease-management",
+    "/dashboard/medicines-formulary": "/dashboard/formulary",
+    "/dashboard/hospital-protocols": "/dashboard/protocols",
+    "/dashboard/clinical-governance": "/dashboard/governance",
+    "/dashboard/staff-directory": "/dashboard/directory",
   }[pathname] ?? pathname;
 }
 
-function getActiveItem(pathname: string) {
+export function getActiveItem(pathname: string) {
   const path = canonicalPath(pathname);
   return navigation
     .filter(({ href }) => path === href || path.startsWith(`${href}/`))
@@ -164,7 +152,7 @@ function HomePanel({ activeLabel, returnTo, onReturn }: { activeLabel?: string; 
 function ModulePanel({ module, pathname, temporaryAdminMode, onShowAll }: { module: NavItem; pathname: string; temporaryAdminMode: boolean; onShowAll: () => void }) {
   const Icon = module.icon;
   const section = sections.find(({ items }) => items.includes(module));
-  const isDiseases = module.href === "/dashboard/diseases";
+  const isDiseases = module.href === "/dashboard/disease-management";
   const isAdmin = module.href === "/dashboard/admin";
   const links = isDiseases
     ? diseaseLinks

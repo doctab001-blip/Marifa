@@ -1,4 +1,4 @@
-import { UserPlus, UsersRound } from "lucide-react";
+import { UserPlus, UsersRound } from "@/components/icons-3d";
 import type { StaffMember } from "@/lib/admin/data";
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";

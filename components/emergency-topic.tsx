@@ -1,4 +1,5 @@
-import { TriangleAlert } from "lucide-react";
+import { Activity, ClipboardCheck, Clock3, FileSearch, Stethoscope, TriangleAlert, type LucideIcon } from "@/components/icons-3d";
+import { SectionNav } from "@/components/section-nav";
 import type { DiseaseDetail } from "@/lib/validations/disease";
 import { PathwaySequence } from "@/components/pathway-sequence";
 import type { CitationSource } from "@/components/source-citation";
@@ -25,8 +26,11 @@ function List({ items, className = "em-list" }: { items: string[]; className?: s
   return <ul className={className}>{items.map((item, index) => <li key={`${index}-${item}`}><Labelled text={item} /></li>)}</ul>;
 }
 
+const sectionIcons: Record<string, LucideIcon> = { pathophysiology: Activity, "signs-symptoms": Stethoscope, investigations: FileSearch, management: ClipboardCheck };
+
 function Heading({ id, number, title }: { id: string; number: number; title: string }) {
-  return <h2 className="em-heading" id={`${id}-title`}><span className="em-heading-number">{number}</span>{title}</h2>;
+  const Icon = sectionIcons[id] ?? Activity;
+  return <h2 className="em-heading" id={`${id}-title`}><span className="em-heading-number" aria-hidden="true"><Icon size={24} /></span><span className="em-heading-text"><small aria-hidden="true">Section {number}</small>{title}</span></h2>;
 }
 
 const isImaging = (item: Investigation) => item.tier === "firstLineImaging" || item.tier === "advancedImaging";
@@ -46,9 +50,7 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
 
   return (
     <div className="em-topic">
-      <nav className="em-nav" aria-label="Jump to section">
-        {emergencySections.map((section, index) => <a key={section.id} href={`#${section.id}`}><span>{index + 1}</span>{section.label}</a>)}
-      </nav>
+      <SectionNav sections={emergencySections} />
 
       <section id="pathophysiology" className="em-section" aria-labelledby="pathophysiology-title">
         <Heading id="pathophysiology" number={1} title="Pathophysiology" />
@@ -59,7 +61,7 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
       <section id="signs-symptoms" className="em-section" aria-labelledby="signs-symptoms-title">
         <Heading id="signs-symptoms" number={2} title="Signs & symptoms" />
         <div className="em-alert" role="note">
-          <TriangleAlert size={20} aria-hidden="true" />
+          <TriangleAlert size={30} tone="rose" aria-hidden="true" />
           <div><strong>Red flags — escalate now</strong><List items={disease.presentation.redFlags} /></div>
         </div>
         <div className="em-two-col">
@@ -140,7 +142,7 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
                 <tbody>{medicationPlan.regimens.map((regimen) => (
                   <tr key={`${regimen.genericName}-${regimen.indication}`}>
                     <th scope="row">{regimen.genericName}<small>{regimen.indication} · {regimen.patientGroup}</small></th>
-                    <td>{regimen.dose}<small>{regimen.route} · {regimen.frequency} · {regimen.duration}</small></td>
+                    <td>{regimen.dose}<span className="em-regimen-pills"><span className="pill pill-sky pill-sm">{regimen.route}</span><span className="pill pill-violet pill-sm">{regimen.frequency}</span><span className="pill pill-amber pill-sm"><Clock3 size={13} aria-hidden="true" />{regimen.duration}</span></span></td>
                     {hasContraindications ? <td className="em-contra">{regimen.contraindications?.length ? <List items={regimen.contraindications} /> : <span className="em-muted">See product label</span>}</td> : null}
                     <td><List items={[...regimen.adjustments, ...regimen.monitoring.map((item) => `Monitor: ${item}`)]} /><a href={regimen.sourceUrl} target="_blank" rel="noreferrer" className="em-source-link">{regimen.sourceEdition}</a></td>
                   </tr>

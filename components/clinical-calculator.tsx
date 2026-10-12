@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Calculator, Check, ChevronDown, CircleAlert, RotateCcw } from "lucide-react";
+import { Calculator, Check, ChevronDown, CircleAlert, RotateCcw } from "@/components/icons-3d";
 import {
   calculateScore,
   fromCanonicalValue,
@@ -119,7 +119,7 @@ function QuestionField({ question, answer, index, onChange }: {
       <legend><span>{index}</span><span>{question.label}{question.help && <small>{question.help}</small>}</span></legend>
       {question.type === "single-select" && (
         <div className="calculator-option-grid">
-          {question.options.map((option) => {
+          {(question.options ?? []).map((option) => {
             const selected = answer === option.value;
             return <button key={option.value} type="button" className={selected ? "is-selected" : ""} aria-pressed={selected} onClick={() => onChange(option.value)}><span className="calculator-choice-marker">{selected && <Check size={16} />}</span><span><strong>{option.label}</strong>{option.description && <small>{option.description}</small>}</span><em>{formatPoints(option.points)}</em></button>;
           })}
@@ -129,7 +129,7 @@ function QuestionField({ question, answer, index, onChange }: {
         const values = Array.isArray(answer) ? answer : undefined;
         return (
           <div className="calculator-option-grid calculator-option-stack">
-            {question.options.map((option) => {
+            {(question.options ?? []).map((option) => {
               const selected = values?.includes(option.value) ?? false;
               return <button key={option.value} type="button" className={selected ? "is-selected" : ""} aria-pressed={selected} onClick={() => onChange(selected ? values!.filter((value) => value !== option.value) : [...(values ?? []), option.value])}><span className="calculator-choice-marker">{selected && <Check size={16} />}</span><span><strong>{option.label}</strong>{option.description && <small>{option.description}</small>}</span><em>{formatPoints(option.points)}</em></button>;
             })}
@@ -149,10 +149,11 @@ function NumericField({ question, answer, onChange }: {
   answer?: NumericAnswer;
   onChange: (answer: NumericAnswer | undefined) => void;
 }) {
-  const activeUnit = question.units.find(({ value }) => value === answer?.unit) ?? question.units[0];
+  const units = question.units?.length ? question.units : [{ value: "default", label: "" }];
+  const activeUnit = units.find(({ value }) => value === answer?.unit) ?? units[0];
 
   function changeUnit(unitValue: string) {
-    const nextUnit = question.units.find(({ value }) => value === unitValue);
+    const nextUnit = units.find(({ value }) => value === unitValue);
     if (!nextUnit) return;
     if (!answer) return onChange({ value: Number.NaN, unit: nextUnit.value });
     const canonical = toCanonicalValue(answer.value, activeUnit);
@@ -175,7 +176,7 @@ function NumericField({ question, answer, onChange }: {
         />
       </label>
       <div className="calculator-units" id={`${question.id}-unit`} aria-label={`${question.label} unit`}>
-        {question.units.map((unit) => question.units.length === 1
+        {units.map((unit) => units.length === 1
           ? <span key={unit.value} className="calculator-fixed-unit">{unit.label}</span>
           : <button key={unit.value} type="button" className={activeUnit.value === unit.value ? "is-active" : ""} aria-pressed={activeUnit.value === unit.value} onClick={() => changeUnit(unit.value)}>{unit.label}</button>)}
       </div>
@@ -187,6 +188,7 @@ function formatPoints(points: number) {
   return points === 0 ? "0" : `+${formatScore(points)}`;
 }
 
-function formatScore(score: number) {
+function formatScore(score: number | string) {
+  if (typeof score === "string") return score;
   return Number.isInteger(score) ? String(score) : score.toFixed(1);
 }

@@ -1,4 +1,4 @@
-import { Award, CheckCircle2, Clock3, ShieldCheck, TriangleAlert, UserCheck } from "lucide-react";
+import { Award, CheckCircle2, Clock3, ShieldCheck, TriangleAlert, UserCheck } from "@/components/icons-3d";
 import { DemoBanner } from "@/components/demo-banner";
 import { competencies, demoUser } from "@/lib/demo-data";
 

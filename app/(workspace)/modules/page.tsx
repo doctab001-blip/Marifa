@@ -1,4 +1,4 @@
-import { Activity, BookOpenCheck, Building2, FileCheck2, BookOpen, Landmark, Megaphone, Pill, Settings, ShieldCheck, UserRoundCheck, UsersRound } from "lucide-react";
+import { Activity, BookOpenCheck, Building2, FileCheck2, BookOpen, Landmark, Megaphone, Pill, Settings, ShieldCheck, UserRoundCheck, UsersRound } from "@/components/icons-3d";
 import { DemoBanner } from "@/components/demo-banner";
 
 const modules = [

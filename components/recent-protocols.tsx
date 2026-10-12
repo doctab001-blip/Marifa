@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, Building2, CalendarDays } from "lucide-react";
+import { ArrowUpRight, Building2, CalendarDays } from "@/components/icons-3d";
 import { ApprovalStatusBadge } from "@/components/approval-status-badge";
 import type { MockDisease } from "@/data/mockDiseases";
 

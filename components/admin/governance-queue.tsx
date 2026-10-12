@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import * as Dialog from "@radix-ui/react-dialog";
-import { Check, X, XCircle } from "lucide-react";
+import { Check, X, XCircle } from "@/components/icons-3d";
 import type { GovernanceItem } from "@/lib/admin/data";
 import { Button } from "@/components/ui/button";
 import { approveGuidelineVersion } from "@/app/(workspace)/dashboard/admin/guidelines/actions";

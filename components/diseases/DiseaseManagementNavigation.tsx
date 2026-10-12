@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FileClock, Stethoscope } from "lucide-react";
+import { FileClock, Stethoscope } from "@/components/icons-3d";
 
 export function DiseaseManagementNavigation({ active }: { active: "directory" | "drafts" }) {
   return (

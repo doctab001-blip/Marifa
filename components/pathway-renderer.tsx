@@ -1,4 +1,4 @@
-import { ArrowRight, GitBranch } from "lucide-react";
+import { ArrowRight, GitBranch } from "@/components/icons-3d";
 import type { DiseaseTopic } from "@/lib/types";
 
 export function PathwayRenderer({ pathway }: { pathway: DiseaseTopic["pathway"] }) {

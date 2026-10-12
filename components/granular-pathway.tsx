@@ -27,10 +27,10 @@ function Medicines({ medicines }: { medicines: Medicines_Doses[] }) {
 export function Investigations({ phases }: { phases: ClinicalPathwayPayload["Investigations"] }) {
   return <div className="prose prose-slate max-w-none"><ol className="list-decimal">
     {phases.map((phase) => <li key={phase.id}>
-      <h3>{phase.title}</h3><strong className="font-semibold text-slate-900">{phase.timeframe}</strong>
+      <h3>{phase.title}</h3><strong className="font-semibold text-ink">{phase.timeframe}</strong>
       <ol className="list-decimal">{phase.steps.map((step, i) => <li key={i}>
         <strong>{step.test}</strong><ul className="list-disc">
-          <li><strong className="font-semibold text-slate-900">{step.timeframe}</strong></li>
+          <li><strong className="font-semibold text-ink">{step.timeframe}</strong></li>
           <li>Clinical question: {step.clinical_question}</li>
           <li>Expected finding: {step.expected_finding}</li>
           <li>Decision rationale: {step.decision_rationale}</li>
@@ -43,12 +43,12 @@ export function Investigations({ phases }: { phases: ClinicalPathwayPayload["Inv
 export function TreatmentDetails({ plans }: { plans: ClinicalPathwayPayload["Treatment_Plan"] }) {
   return <div className="prose prose-slate max-w-none"><ol className="list-decimal">
     {plans.map((plan) => <li key={plan.id}>
-      <h3>{plan.title}</h3><strong className="font-semibold text-slate-900">{plan.timeframe}</strong>
-      <ol>{plan.actions.map((action, i) => <li key={i}><strong className="font-semibold text-slate-900">{action.timeframe}</strong>: <ClinicalTimeframe text={action.instruction} /></li>)}</ol>
+      <h3>{plan.title}</h3><strong className="font-semibold text-ink">{plan.timeframe}</strong>
+      <ol>{plan.actions.map((action, i) => <li key={i}><strong className="font-semibold text-ink">{action.timeframe}</strong>: <ClinicalTimeframe text={action.instruction} /></li>)}</ol>
       <Medicines medicines={plan.Medicines_Doses} />
       <ul>{plan.branches.map((branch) => <li key={branch.id}>
         <h4>{branch.condition}</h4>
-        <ol>{branch.actions.map((action, i) => <li key={i}><strong className="font-semibold text-slate-900">{action.timeframe}</strong>: <ClinicalTimeframe text={action.instruction} /></li>)}</ol>
+        <ol>{branch.actions.map((action, i) => <li key={i}><strong className="font-semibold text-ink">{action.timeframe}</strong>: <ClinicalTimeframe text={action.instruction} /></li>)}</ol>
         <Medicines medicines={branch.Medicines_Doses} />
         <SourceCitation sources={branch.evidence.sources} selectionRationale={branch.evidence.selection_rationale} />
       </li>)}</ul>

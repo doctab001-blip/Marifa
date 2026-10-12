@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LockKeyhole, ShieldCheck } from "lucide-react";
+import { LockKeyhole, ShieldCheck } from "@/components/icons-3d";
 import { SignInForm } from "@/components/auth/auth-forms";
 import { Alert } from "@/components/ui/alert";
 

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, ChevronDown, ChevronLeft, ChevronRight } from "@/components/icons-3d";
 
 export type TopicLink = { id: string; title: string };
 

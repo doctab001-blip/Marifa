@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useSyncExternalStore } from "react";
-import { ArrowRight, BellRing, X } from "lucide-react";
+import { ArrowRight, BellRing, X } from "@/components/icons-3d";
 import type { HospitalAlert } from "@/lib/dashboard/hospital-feed";
 
 const STORAGE_KEY = "marifa.dismissed-alerts";
