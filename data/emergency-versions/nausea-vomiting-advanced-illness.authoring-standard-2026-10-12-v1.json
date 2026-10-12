@@ -1,0 +1,444 @@
+{
+  "id": "f7b63e19-fee5-4238-a31a-f115d1beb66e",
+  "title": "Nausea and Vomiting in Advanced Illness",
+  "specialty": "Palliative Medicine",
+  "authority": "MOH",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Palliative Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Adults with advanced illness and nausea or vomiting: cause-based assessment and antiemetic choice by mechanism. Verified against Saudi MOH Protocol-010 (Palliative Care — End of Life Care, nausea and vomiting table) and NICE NG31.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Levomepromazine, domperidone and cyclizine have no FDA label — contraindications from guideline cautions only",
+      "SFDA registration not checked per drug"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "f7b63e19-fee5-4238-a31a-f115d1beb66e"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Nausea and vomiting in advanced illness usually has an identifiable cause — drugs, metabolic disturbance, gastric stasis, bowel obstruction, raised intracranial pressure or anxiety. The cause predicts the pathway involved (chemoreceptor trigger zone, gut, vestibular, cortical) and therefore the antiemetic.",
+    "keyMechanisms": [
+      "Chemical causes (opioids, hypercalcaemia, renal failure, infection, toxins) act on the chemoreceptor trigger zone via dopamine D2 — haloperidol is first line (MOH).",
+      "Gastric stasis or functional obstruction (tumour, ascites, hepatomegaly, opioids, anticholinergics) — prokinetic metoclopramide or domperidone (MOH).",
+      "Raised intracranial pressure and vestibular causes act via histamine H1/muscarinic pathways — cyclizine, with steroids for raised ICP (MOH).",
+      "Visceral damage from tumour or radiotherapy releases serotonin — ondansetron with or without corticosteroids (MOH).",
+      "Anxiety and anticipation act via the cortex — non-drug measures, then benzodiazepine or levomepromazine (MOH)."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Persistent nausea unrelieved by vomiting (chemical cause).",
+      "Fullness, regurgitation, large-volume undigested vomit relieved by vomiting (gastric stasis).",
+      "Headache, visual disturbance, worse with movement (raised ICP/vestibular); anticipatory nausea (anxiety)."
+    ],
+    "physicalSigns": [
+      "Dehydration; abdominal distension, succussion splash, hepatomegaly, ascites.",
+      "Bowel sounds absent or tinkling, colic (obstruction).",
+      "Papilloedema, focal neurology (raised ICP); oral candidiasis."
+    ],
+    "redFlags": [
+      "Faeculent vomiting, colic, distension, no flatus — bowel obstruction",
+      "Headache with vomiting and neurology — raised intracranial pressure",
+      "Confusion with high calcium — hypercalcaemia",
+      "Haematemesis",
+      "Extrapyramidal reaction to metoclopramide or haloperidol"
+    ],
+    "precipitants": [
+      "Opioid start or increase",
+      "Constipation",
+      "Hypercalcaemia, renal failure, infection",
+      "Chemotherapy or radiotherapy",
+      "Anxiety"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Malignant bowel obstruction",
+      "distinguishingFeatures": "Colic, distension, absent flatus — see Malignant Bowel Obstruction topic."
+    },
+    {
+      "condition": "Drug toxicity (opioid, digoxin, antibiotics)",
+      "distinguishingFeatures": "Temporal link to a new drug or dose."
+    },
+    {
+      "condition": "Gastritis/ulceration",
+      "distinguishingFeatures": "Epigastric pain, NSAID or steroid use."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Urea, creatinine and electrolytes",
+        "modalityTarget": "When a metabolic cause is possible and results would change care",
+        "targetCondition": "Renal impairment, dehydration",
+        "expectedFinding": "Raised urea/creatinine.",
+        "clinicalRationale": "Metabolic cause → haloperidol; review renally cleared drugs (MOH).",
+        "normalValue": "Urea 2.5–7.8 mmol/L; creatinine about 60–110 µmol/L",
+        "references": [
+          {
+            "title": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+            "edition": "Saudi MOH, General Administration of Pharmaceutical Care, pp. 10–11 (nausea and vomiting: cause, indication and drug table)",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Corrected calcium",
+        "modalityTarget": "Same",
+        "targetCondition": "Hypercalcaemia",
+        "expectedFinding": "Raised corrected calcium.",
+        "clinicalRationale": "Treatable metabolic cause (MOH; NICE NG31).",
+        "normalValue": "2.2–2.6 mmol/L",
+        "references": [
+          {
+            "title": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+            "edition": "Saudi MOH, General Administration of Pharmaceutical Care, pp. 10–11 (nausea and vomiting: cause, indication and drug table)",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf"
+          },
+          {
+            "title": "NICE NG31: Care of dying adults in the last days of life",
+            "edition": "NICE guideline, 2015, Recommendations 1.5.18–1.5.22 (nausea and vomiting)",
+            "url": "https://www.nice.org.uk/guidance/ng31"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Medication review",
+        "modalityTarget": "Every assessment",
+        "targetCondition": "Drug-related nausea",
+        "expectedFinding": "Opioid, diuretic, NSAID, antibiotic or chemotherapy temporally linked.",
+        "clinicalRationale": "Reduce or switch the causative drug where possible.",
+        "normalValue": "No emetogenic drug started or increased",
+        "references": [
+          {
+            "title": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+            "edition": "Saudi MOH, General Administration of Pharmaceutical Care, pp. 10–11 (nausea and vomiting: cause, indication and drug table)",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf"
+          },
+          {
+            "title": "NICE NG31: Care of dying adults in the last days of life",
+            "edition": "NICE guideline, 2015, Recommendations 1.5.18–1.5.22 (nausea and vomiting)",
+            "url": "https://www.nice.org.uk/guidance/ng31"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Abdominal X-ray or CT",
+        "modalityTarget": "Suspected obstruction and further treatment would change management",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Dilated loops, transition point.",
+        "clinicalRationale": "Obstruction changes drug choice (avoid prokinetics in complete obstruction).",
+        "normalValue": "No dilated bowel loops",
+        "references": [
+          {
+            "title": "NICE NG31: Care of dying adults in the last days of life",
+            "edition": "NICE guideline, 2015, Recommendations 1.5.18–1.5.22 (nausea and vomiting)",
+            "url": "https://www.nice.org.uk/guidance/ng31"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "cause",
+      "title": "Find the cause",
+      "timeframe": "At presentation",
+      "actions": [
+        "Assess pattern of nausea and vomiting, drugs, bowels, calcium/renal function and neurology (NICE NG31 1.5.18).",
+        "Treat reversible causes: constipation, hypercalcaemia, infection, offending drugs.",
+        "Choose the antiemetic by mechanism; consider non-drug measures (NICE NG31 1.5.20)."
+      ]
+    },
+    {
+      "id": "drug",
+      "title": "First antiemetic by cause (MOH Protocol-010)",
+      "timeframe": "Start now; review in 24 h",
+      "actions": [
+        "Chemical/metabolic/drug: haloperidol 0.5–3 mg PO/SC at night, or 0.5–3 mg/24 h by syringe driver (maximum 5 mg); alternative levomepromazine 6.25–25 mg at night.",
+        "Gastric stasis/functional obstruction: metoclopramide 10 mg PO/SC three to four times daily, or 30–40 mg/24 h by syringe driver; or domperidone 10 mg PO three times daily (QT risk).",
+        "Raised ICP/vestibular: cyclizine 50 mg PO/SC three times daily, or 150 mg/24 h by syringe driver; consider steroids.",
+        "Visceral/radiotherapy damage: ondansetron 4–8 mg PO/SC two to three times daily, or 16 mg/24 h by syringe driver; with or without corticosteroids.",
+        "Anxiety: non-drug measures first, then a benzodiazepine, then levomepromazine."
+      ]
+    },
+    {
+      "id": "refractory",
+      "title": "Refractory nausea",
+      "timeframe": "If not settled after 24–48 h",
+      "actions": [
+        "Dexamethasone 8–16 mg daily for refractory nausea and vomiting (MOH Protocol-010 p. 4).",
+        "Use a subcutaneous syringe driver if oral absorption is unreliable or more than 2–3 PRN doses are needed in 24 h (NICE NG31 1.5.6).",
+        "Seek specialist palliative care advice."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Identify the cause of nausea and vomiting in advanced illness and choose a mechanism-based antiemetic."
+    ],
+    "references": [
+      {
+        "title": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+        "edition": "Saudi MOH, General Administration of Pharmaceutical Care",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf",
+        "locator": "pp. 4, 10–11"
+      },
+      {
+        "title": "NICE NG31: Care of dying adults in the last days of life",
+        "edition": "NICE guideline, 2015",
+        "url": "https://www.nice.org.uk/guidance/ng31",
+        "locator": "Recommendations 1.5.3, 1.5.6, 1.5.18–1.5.22"
+      },
+      {
+        "title": "Haloperidol tablets prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00bb61c8-db35-4c04-9ef7-47d447d2496b",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Metoclopramide prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0034a97a-fb05-418a-a234-de278907cd2a",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Ondansetron prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=02ddd5f5-76d3-4f1c-9af3-d39e05a19c29",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Dexamethasone sodium phosphate injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0277cc0a-2fd4-4605-a310-b613be84ee26",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ],
+    "keyPoints": [
+      "Treat the cause, then pick the antiemetic by mechanism.",
+      "Haloperidol for chemical causes.",
+      "Metoclopramide for stasis — not in complete obstruction.",
+      "Dexamethasone 8–16 mg for refractory cases.",
+      "Syringe driver if more than 2–3 PRN doses/day."
+    ],
+    "pitfalls": [
+      "Metoclopramide with colic or complete obstruction.",
+      "Missing hypercalcaemia or constipation.",
+      "Cyclizine in heart failure.",
+      "Combining metoclopramide with cyclizine (opposing actions)."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Small frequent meals; avoid strong smells.",
+      "Report colic, vomiting faeculent material, headache."
+    ],
+    "lifestyleAndDiet": [
+      "Small, frequent, bland meals; oral hygiene."
+    ],
+    "mdtReferrals": [
+      "Specialist palliative care if refractory.",
+      "Oncology if treatment-related."
+    ],
+    "dischargeCriteria": [
+      "Symptoms controlled for the chosen place of care, or safe transfer arranged.",
+      "Patient and family know the plan, the medicines and whom to call."
+    ],
+    "followUpPlan": "Review antiemetic response at least daily until controlled; reassess the cause if the pattern changes."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Chemical cause pattern",
+      "threshold": "Persistent nausea unrelieved by vomiting"
+    },
+    {
+      "criterion": "Gastric stasis pattern",
+      "threshold": "Fullness, large-volume vomit relieving nausea"
+    },
+    {
+      "criterion": "Syringe driver",
+      "threshold": "More than 2–3 PRN doses in 24 h (NICE NG31)"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Chemical, metabolic or drug-related nausea (first line)",
+        "patientGroup": "Adults",
+        "genericName": "Haloperidol",
+        "dose": "0.5–3 mg (syringe driver 0.5–3 mg/24 h, maximum 5 mg)",
+        "route": "PO/SC",
+        "frequency": "At night",
+        "duration": "Review daily",
+        "adjustments": [
+          "Lower doses in frail elderly"
+        ],
+        "monitoring": [
+          "Sedation, extrapyramidal effects"
+        ],
+        "sourceTitle": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf",
+        "sourceEdition": "Saudi MOH, General Administration of Pharmaceutical Care, pp. 10–11 (nausea and vomiting: cause, indication and drug table)",
+        "contraindications": [
+          "Severe toxic CNS depression or coma",
+          "Parkinson's disease",
+          "Hypersensitivity"
+        ]
+      },
+      {
+        "indication": "Gastric stasis / functional obstruction",
+        "patientGroup": "Adults",
+        "genericName": "Metoclopramide",
+        "dose": "10 mg (syringe driver 30–40 mg/24 h)",
+        "route": "PO/SC",
+        "frequency": "Three to four times daily",
+        "duration": "Higher doses and long-term use under specialist supervision (MOH)",
+        "adjustments": [
+          "Not in complete mechanical obstruction or with colic"
+        ],
+        "monitoring": [
+          "Extrapyramidal effects, colic"
+        ],
+        "sourceTitle": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf",
+        "sourceEdition": "Saudi MOH, General Administration of Pharmaceutical Care, pp. 10–11 (nausea and vomiting: cause, indication and drug table)",
+        "contraindications": [
+          "GI haemorrhage, mechanical obstruction or perforation",
+          "Phaeochromocytoma",
+          "Epilepsy or drugs causing extrapyramidal reactions",
+          "Hypersensitivity"
+        ]
+      },
+      {
+        "indication": "Visceral or radiotherapy-related nausea",
+        "patientGroup": "Adults",
+        "genericName": "Ondansetron",
+        "dose": "4–8 mg (syringe driver 16 mg/24 h)",
+        "route": "PO/SC",
+        "frequency": "Two to three times daily",
+        "duration": "Review daily",
+        "adjustments": [
+          "Constipating — review laxatives"
+        ],
+        "monitoring": [
+          "Constipation, headache, QT if risk factors"
+        ],
+        "sourceTitle": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf",
+        "sourceEdition": "Saudi MOH, General Administration of Pharmaceutical Care, pp. 10–11 (nausea and vomiting: cause, indication and drug table)",
+        "contraindications": [
+          "Hypersensitivity",
+          "Concomitant apomorphine"
+        ]
+      },
+      {
+        "indication": "Raised intracranial pressure or vestibular cause",
+        "patientGroup": "Adults",
+        "genericName": "Cyclizine",
+        "dose": "50 mg (syringe driver 150 mg/24 h)",
+        "route": "PO/SC",
+        "frequency": "Three times daily",
+        "duration": "Review daily",
+        "adjustments": [
+          "Dilute maximally if SC skin irritation (MOH)",
+          "May exacerbate heart failure (NICE NG31 1.5.3)"
+        ],
+        "monitoring": [
+          "Sedation, anticholinergic effects"
+        ],
+        "sourceTitle": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf",
+        "sourceEdition": "Saudi MOH, General Administration of Pharmaceutical Care, pp. 10–11 (nausea and vomiting: cause, indication and drug table)",
+        "contraindications": [
+          "Caution: heart failure (NICE NG31)",
+          "Anticholinergic effects — no FDA label available"
+        ]
+      },
+      {
+        "indication": "Refractory nausea and vomiting",
+        "patientGroup": "Adults",
+        "genericName": "Dexamethasone",
+        "dose": "8–16 mg daily",
+        "route": "PO/SC",
+        "frequency": "Once daily before noon",
+        "duration": "Review within 7 days; taper per MOH rules",
+        "adjustments": [
+          "Taper if 3 weeks or more, or more than 6 mg/day"
+        ],
+        "monitoring": [
+          "Glucose, mood, candidiasis"
+        ],
+        "sourceTitle": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf",
+        "sourceEdition": "Saudi MOH, General Administration of Pharmaceutical Care, p. 4 (refractory nausea and vomiting: 8–16 mg daily)",
+        "contraindications": [
+          "Systemic fungal infections"
+        ]
+      }
+    ],
+    "note": "Antiemetic doses are from Saudi MOH Protocol-010 (pp. 4, 10–11); contraindications from US FDA labels where a label exists (cyclizine, levomepromazine and domperidone are not FDA-labelled). Check SFDA registration and formulary."
+  },
+  "guidelineComparison": {
+    "title": "Cause-based antiemetic choice (MOH Protocol-010)",
+    "columns": [
+      "Cause",
+      "First choice"
+    ],
+    "rows": [
+      {
+        "parameter": "Chemical/metabolic/drug",
+        "values": [
+          "CTZ (D2)",
+          "Haloperidol; levomepromazine"
+        ]
+      },
+      {
+        "parameter": "Gastric stasis",
+        "values": [
+          "Gut motility",
+          "Metoclopramide or domperidone"
+        ]
+      },
+      {
+        "parameter": "Raised ICP/vestibular",
+        "values": [
+          "H1/muscarinic",
+          "Cyclizine ± steroids"
+        ]
+      },
+      {
+        "parameter": "Visceral/radiotherapy",
+        "values": [
+          "5-HT3",
+          "Ondansetron ± steroids"
+        ]
+      },
+      {
+        "parameter": "Anxiety",
+        "values": [
+          "Cortical",
+          "Non-drug, benzodiazepine, levomepromazine"
+        ]
+      }
+    ],
+    "note": "NICE NG31 asks clinicians to choose by likely cause, side effects and interactions; it gives no doses."
+  }
+}

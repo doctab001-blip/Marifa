@@ -24,6 +24,13 @@ describe("clinical directory release boundary", () => {
     expect(isClinicalDirectoryEligible(weakened)).toBe(false);
   });
 
+  it("accepts multi-digit page locators such as 'pp. 10–11'", () => {
+    const content = structuredClone(heartFailure);
+    const regimen = content.medicationPlan.regimens[0];
+    regimen.sourceEdition = "MOH protocol, pp. 10–11";
+    expect(auditTopicContent(content).failures.some((failure) => failure.includes(regimen.genericName) && failure.includes("locator"))).toBe(false);
+  });
+
   it("withholds content that fails the schema", () => {
     expect(isClinicalDirectoryEligible({ id: "x" })).toBe(false);
   });

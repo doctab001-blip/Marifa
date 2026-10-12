@@ -1,0 +1,348 @@
+{
+  "id": "0f7cd64a-5778-4674-a0e5-e20fa64dc6a2",
+  "title": "Malignant Bowel Obstruction Support",
+  "specialty": "Palliative Medicine / General Surgery",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Palliative Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Adults with advanced cancer and suspected malignant bowel obstruction: confirming obstruction, goal-concordant decisions about surgery or endoscopy, and medical symptom control. Verified against NICE NG31 and Saudi MOH Protocol-010; CT diagnosis from the WSES Bologna bowel-obstruction guideline; contraindications from US FDA labels.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Hyoscine butylbromide and octreotide MBO doses — local formulary",
+      "Surgical/endoscopic selection criteria not reviewed",
+      "SFDA registration not checked"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "0f7cd64a-5778-4674-a0e5-e20fa64dc6a2"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Malignant bowel obstruction is mechanical or functional blockage of the small or large bowel by intra-abdominal or pelvic cancer (commonly ovarian or colorectal). It may be partial or complete, at one or several levels, and often relapses.",
+    "keyMechanisms": [
+      "Tumour, peritoneal disease or adhesions block the lumen; motility failure from infiltration of mesentery or nerves causes functional obstruction.",
+      "Proximal distension → secretion of fluid and electrolytes → more distension, colic and vomiting.",
+      "Inflammation and oedema around tumour worsen obstruction — the rationale for dexamethasone (MOH).",
+      "Antisecretory drugs (hyoscine butylbromide, octreotide) reduce gut secretions and colic (NICE NG31)."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Nausea, vomiting (faeculent in low obstruction), colicky and continuous abdominal pain.",
+      "Abdominal distension; absent flatus and stool in complete obstruction (some flatus in partial obstruction)."
+    ],
+    "physicalSigns": [
+      "Distension, tympanic abdomen, visible peristalsis; tinkling or absent bowel sounds.",
+      "Dehydration; palpable masses or ascites.",
+      "Peritonism (perforation or ischaemia)."
+    ],
+    "redFlags": [
+      "Peritonism, fever, tachycardia — perforation or ischaemia",
+      "Uncontrolled faeculent vomiting",
+      "Severe dehydration or electrolyte disturbance"
+    ],
+    "precipitants": [
+      "Ovarian, colorectal, gastric or pancreatic cancer with peritoneal disease",
+      "Opioids and anticholinergics (functional)",
+      "Constipation"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Constipation / faecal impaction",
+      "distinguishingFeatures": "Loaded rectum or colon on examination or imaging; settles with laxatives."
+    },
+    {
+      "condition": "Opioid-induced ileus",
+      "distinguishingFeatures": "Recent opioid increase; no transition point."
+    },
+    {
+      "condition": "Adhesive obstruction (non-malignant)",
+      "distinguishingFeatures": "Previous surgery, no new tumour — may be surgically treatable."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Urea, creatinine, electrolytes",
+        "modalityTarget": "At presentation if treatment fits goals",
+        "targetCondition": "Dehydration and electrolyte loss",
+        "expectedFinding": "Raised urea, hypokalaemia, hyponatraemia.",
+        "clinicalRationale": "Guides fluid replacement.",
+        "normalValue": "Na 135–145; K 3.5–5.0 mmol/L; urea 2.5–7.8 mmol/L",
+        "references": [
+          {
+            "title": "Bologna guidelines for diagnosis and management of adhesive small bowel obstruction (ASBO): 2017 update (WSES)",
+            "edition": "World J Emerg Surg 2018;13:24 (Ten Broek RPG et al.), Imaging studies; Table 5 (diagnosis recommendations: CT preferred)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6006983/"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Abdominal and rectal examination",
+        "modalityTarget": "At presentation",
+        "targetCondition": "Obstruction vs constipation",
+        "expectedFinding": "Distension, bowel sounds, rectal loading.",
+        "clinicalRationale": "Constipation is treated differently.",
+        "normalValue": "Soft non-distended abdomen, normal bowel sounds",
+        "references": [
+          {
+            "title": "NICE NG31: Care of dying adults in the last days of life",
+            "edition": "NICE guideline, 2015, Recommendation 1.5.22 (obstructive bowel disorders: hyoscine butylbromide, then octreotide)",
+            "url": "https://www.nice.org.uk/guidance/ng31"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "advancedImaging",
+        "testName": "CT abdomen and pelvis (with contrast)",
+        "modalityTarget": "Suspected obstruction when results would change management",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Dilated loops with transition point; level and number of obstructions; ascites; perforation.",
+        "clinicalRationale": "Distinguishes mechanical from functional obstruction and guides surgical/endoscopic options.",
+        "normalValue": "No dilated loops or transition point",
+        "references": [
+          {
+            "title": "Bologna guidelines for diagnosis and management of adhesive small bowel obstruction (ASBO): 2017 update (WSES)",
+            "edition": "World J Emerg Surg 2018;13:24 (Ten Broek RPG et al.), Imaging studies; Table 5 (diagnosis recommendations: CT preferred)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6006983/"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "decide",
+      "title": "Confirm and decide goals",
+      "timeframe": "At presentation",
+      "actions": [
+        "Confirm obstruction (CT if it will change management) and agree goals with patient and family.",
+        "Ask the surgical and oncology teams whether any intervention fits the person's goals — selection criteria were not reviewed in these sources."
+      ]
+    },
+    {
+      "id": "medical",
+      "title": "Medical management",
+      "timeframe": "Start now",
+      "actions": [
+        "Stop prokinetics if there is colic or complete obstruction (metoclopramide label: contraindicated in mechanical obstruction; MOH p. 10).",
+        "Antisecretory: hyoscine butylbromide first line; octreotide if no improvement within 24 h (NICE NG31 1.5.22).",
+        "Dexamethasone 6–16 mg daily for obstructive syndromes (MOH Protocol-010 p. 4); review within 7 days.",
+        "Antiemetic: haloperidol for nausea (MOH); metoclopramide only in partial/functional obstruction without colic (MOH p. 10).",
+        "Pain: parenteral (SC/IV) opioid — oral opioid labels list GI obstruction as a contraindication; use SC route with specialist advice.",
+        "Hydration: discuss clinically assisted hydration and review benefit or harm at least every 12 h (NICE NG31 1.4)."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Recognise malignant bowel obstruction and provide goal-concordant medical symptom control."
+    ],
+    "references": [
+      {
+        "title": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+        "edition": "Saudi MOH, General Administration of Pharmaceutical Care",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf",
+        "locator": "pp. 4, 10"
+      },
+      {
+        "title": "NICE NG31: Care of dying adults in the last days of life",
+        "edition": "NICE guideline, 2015",
+        "url": "https://www.nice.org.uk/guidance/ng31",
+        "locator": "Recommendation 1.5.22"
+      },
+      {
+        "title": "Bologna guidelines for diagnosis and management of adhesive small bowel obstruction (ASBO): 2017 update (WSES)",
+        "edition": "World J Emerg Surg 2018;13:24 (Ten Broek RPG et al.)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6006983/",
+        "locator": "Imaging studies; Table 5"
+      },
+      {
+        "title": "Octreotide acetate injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01962c67-e551-47b6-a276-e1ae1860d2a4",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Dexamethasone sodium phosphate injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0277cc0a-2fd4-4605-a310-b613be84ee26",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Haloperidol tablets prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00bb61c8-db35-4c04-9ef7-47d447d2496b",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Metoclopramide prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0034a97a-fb05-418a-a234-de278907cd2a",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Morphine sulfate tablets prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=07593aa4-f2c4-4d6e-b186-ab2a4ecaa38a",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ],
+    "keyPoints": [
+      "Confirm obstruction and agree goals first.",
+      "Hyoscine butylbromide, then octreotide at 24 h.",
+      "Dexamethasone 6–16 mg daily.",
+      "No prokinetic with colic or complete obstruction.",
+      "SC route for opioids."
+    ],
+    "pitfalls": [
+      "Metoclopramide in complete obstruction.",
+      "Oral opioids in complete obstruction.",
+      "Missing faecal impaction."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain that obstruction may settle and recur.",
+      "Small sips and mouth care; venting options if vomiting persists."
+    ],
+    "lifestyleAndDiet": [
+      "Sips of fluid and small soft meals as tolerated when partially obstructed."
+    ],
+    "mdtReferrals": [
+      "Surgical and oncology review for intervention options.",
+      "Specialist palliative care."
+    ],
+    "dischargeCriteria": [
+      "Symptoms controlled for the chosen place of care, or safe transfer arranged.",
+      "Patient and family know the plan, the medicines and whom to call."
+    ],
+    "followUpPlan": "Review at least daily; reassess goals if obstruction resolves or recurs."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Escalate antisecretory",
+      "threshold": "No improvement 24 h after hyoscine butylbromide (NICE NG31)"
+    },
+    {
+      "criterion": "Avoid prokinetic",
+      "threshold": "Colic or complete mechanical obstruction"
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [
+      {
+        "indication": "Obstructive syndromes including bowel obstruction",
+        "patientGroup": "Adults",
+        "genericName": "Dexamethasone",
+        "dose": "6–16 mg daily",
+        "route": "SC/IV",
+        "frequency": "Once daily (before noon)",
+        "duration": "Review within 7 days; taper per MOH rules",
+        "adjustments": [
+          "Stop if no benefit"
+        ],
+        "monitoring": [
+          "Glucose, mood, candidiasis"
+        ],
+        "sourceTitle": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf",
+        "sourceEdition": "Saudi MOH, General Administration of Pharmaceutical Care, p. 4 (obstructive syndromes, e.g. bowel obstruction: dexamethasone 6–16 mg daily)",
+        "contraindications": [
+          "Systemic fungal infections"
+        ]
+      },
+      {
+        "indication": "Nausea in malignant bowel obstruction",
+        "patientGroup": "Adults",
+        "genericName": "Haloperidol",
+        "dose": "0.5–3 mg (syringe driver 0.5–3 mg/24 h, maximum 5 mg)",
+        "route": "SC",
+        "frequency": "At night or continuous",
+        "duration": "Review daily",
+        "adjustments": [
+          "Extrapyramidal effects"
+        ],
+        "monitoring": [
+          "Sedation"
+        ],
+        "sourceTitle": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf",
+        "sourceEdition": "Saudi MOH, General Administration of Pharmaceutical Care, p. 10 (haloperidol for nausea)",
+        "contraindications": [
+          "Severe toxic CNS depression or coma",
+          "Parkinson's disease",
+          "Hypersensitivity"
+        ]
+      },
+      {
+        "indication": "Refractory secretions/vomiting after 24 h of hyoscine butylbromide",
+        "patientGroup": "Adults",
+        "genericName": "Octreotide",
+        "dose": "Dose per local palliative protocol (FDA label carcinoid range 100–600 µg/day in 2–4 divided doses is for a different indication)",
+        "route": "SC",
+        "frequency": "Divided doses or continuous",
+        "duration": "Review at 24–72 h",
+        "adjustments": [
+          "Off-label in malignant bowel obstruction (NICE NG31)"
+        ],
+        "monitoring": [
+          "Glucose, injection-site reactions"
+        ],
+        "sourceTitle": "NICE NG31: Care of dying adults in the last days of life",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng31",
+        "sourceEdition": "NICE guideline, 2015, Recommendation 1.5.22 (obstructive bowel disorders: hyoscine butylbromide, then octreotide)",
+        "contraindications": [
+          "Hypersensitivity to octreotide or components"
+        ]
+      }
+    ],
+    "note": "NICE NG31 names hyoscine butylbromide then octreotide without doses; MOH Protocol-010 gives dexamethasone and haloperidol doses. Hyoscine butylbromide is not FDA-labelled; its dose and the octreotide dose for MBO must come from the local palliative formulary."
+  },
+  "guidelineComparison": {
+    "title": "MBO drug options: NICE NG31 vs MOH Protocol-010",
+    "columns": [
+      "NICE NG31",
+      "MOH Protocol-010"
+    ],
+    "rows": [
+      {
+        "parameter": "Antisecretory",
+        "values": [
+          "Hyoscine butylbromide, then octreotide at 24 h",
+          "Not specified"
+        ]
+      },
+      {
+        "parameter": "Steroid",
+        "values": [
+          "Not specified",
+          "Dexamethasone 6–16 mg daily"
+        ]
+      },
+      {
+        "parameter": "Prokinetic",
+        "values": [
+          "Not specified",
+          "Metoclopramide only for functional/partial obstruction"
+        ]
+      }
+    ],
+    "note": "Surgical/endoscopic options were not reviewed in these sources."
+  }
+}

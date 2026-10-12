@@ -1,0 +1,641 @@
+{
+  "id": "cc78da1f-1df1-477a-b691-56ef783e4054",
+  "title": "Cancer Pain Assessment and Support",
+  "specialty": "Palliative Medicine / Oncology",
+  "authority": "MOH",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Palliative Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Adults with cancer-related pain in any setting: pain assessment, WHO-ladder analgesia, strong-opioid initiation and titration, neuropathic and adjuvant analgesia, and opioid side-effect prevention. Verified against Saudi MOH Protocol-003 (Cancer Pain Management), MOH Protocol-010 (Palliative Care — End of Life Care) and NICE CG140.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "SFDA registration and controlled-drug availability not checked per drug",
+      "Pregabalin and hydromorphone regimens given in text only",
+      "MOH Protocol-003 typographical dose errors noted"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "cc78da1f-1df1-477a-b691-56ef783e4054"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Cancer pain arises from tumour invasion of bone, viscera, nerves and soft tissue, from treatment (surgery, chemotherapy, radiotherapy) and from unrelated causes. Most patients have mixed nociceptive and neuropathic pain, and pain often has background and breakthrough components.",
+    "keyMechanisms": [
+      "Nociceptive somatic pain (bone, soft tissue) is well localised; visceral pain (liver capsule, bowel) is poorly localised and may be colicky.",
+      "Neuropathic pain from nerve compression or infiltration is burning, tingling or shooting and responds partially to opioids — adjuvants such as amitriptyline or gabapentin are needed (MOH Protocol-010).",
+      "Tumour-related oedema and inflammation (nerve compression, liver capsule stretch, raised intracranial pressure) respond to corticosteroids.",
+      "Opioids act on mu receptors; side effects (constipation in nearly all, transient nausea, sedation, respiratory depression) are predictable (NICE CG140)."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Pain site, character, intensity (0–10), timing, background versus breakthrough, response to previous analgesics.",
+      "Burning or shooting pain, numbness (neuropathic); colic (bowel); headache with vomiting (raised intracranial pressure).",
+      "Impact on sleep, mood, mobility; fears about opioids (addiction, tolerance, 'final stage')."
+    ],
+    "physicalSigns": [
+      "Bone tenderness, pathological fracture; neurological deficit (cord or root compression).",
+      "Hepatomegaly; bowel distension; signs of opioid toxicity (pinpoint pupils, myoclonus, drowsiness).",
+      "Behavioural pain signs if communication is limited (grimacing, guarding, restlessness)."
+    ],
+    "redFlags": [
+      "New back pain with leg weakness, sensory level or sphincter change — spinal cord compression: dexamethasone 16 mg daily and urgent oncology/radiotherapy",
+      "Pain 7–10/10 uncontrolled after titration (severe pain band)",
+      "Opioid toxicity: drowsiness, confusion, myoclonus, respiratory depression",
+      "Pathological fracture; signs of bowel obstruction or perforation"
+    ],
+    "precipitants": [
+      "Bone metastases, nerve infiltration, visceral involvement",
+      "Constipation, urinary retention",
+      "Anxiety, insomnia, fear",
+      "Inadequate background dosing or poor adherence"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Spinal cord compression",
+      "distinguishingFeatures": "Back pain with neurological signs; needs urgent MRI and steroids."
+    },
+    {
+      "condition": "Pathological fracture",
+      "distinguishingFeatures": "Sudden severe localised bone pain, deformity."
+    },
+    {
+      "condition": "Opioid-induced hyperalgesia or toxicity",
+      "distinguishingFeatures": "Worsening pain with escalating dose, allodynia, myoclonus."
+    },
+    {
+      "condition": "Non-cancer cause (e.g. urinary retention, constipation)",
+      "distinguishingFeatures": "Reversible cause; NICE NG31 lists urinary retention."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Numeric pain intensity scale (0–10)",
+        "modalityTarget": "At presentation and every review; after each dose change",
+        "targetCondition": "Pain severity",
+        "expectedFinding": "1–3 mild; 4–6 moderate; 7–10 severe.",
+        "clinicalRationale": "Selects ladder step and titration; MOH Protocol-003 starts strong opioids at 5 or more.",
+        "normalValue": "0/10 (no pain)",
+        "references": [
+          {
+            "title": "Cancer Pain Management (MOH Protocol-003)",
+            "edition": "Saudi MOH, General Administration of Pharmaceutical Care, p. 6, Table 3 (0–10 numeric pain scale bands)",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-003.pdf"
+          },
+          {
+            "title": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+            "edition": "Saudi MOH, General Administration of Pharmaceutical Care, p. 7 (WHO-ladder steps; mild and moderate pain doses)",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Breakthrough-dose count",
+        "modalityTarget": "Daily during titration",
+        "targetCondition": "Inadequate background analgesia",
+        "expectedFinding": "More than 3 PRN doses in 24 h.",
+        "clinicalRationale": "Increase total daily opioid dose by 25–75%, or add the 24-h PRN total to the regular dose and divide by 6 for 4-hourly dosing (MOH Protocol-003).",
+        "normalValue": "3 or fewer PRN doses per 24 h",
+        "references": [
+          {
+            "title": "Cancer Pain Management (MOH Protocol-003)",
+            "edition": "Saudi MOH, General Administration of Pharmaceutical Care, p. 5 (titration: more than 3 PRN doses/day; increase total daily dose by 25–75%)",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-003.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Renal function (creatinine, eGFR)",
+        "modalityTarget": "Before starting strong opioids or NSAIDs",
+        "targetCondition": "Renal impairment",
+        "expectedFinding": "Raised creatinine / low eGFR.",
+        "clinicalRationale": "Seek specialist advice before strong opioids in moderate–severe renal impairment (NICE CG140); NSAIDs contraindicated in renal dysfunction (MOH).",
+        "normalValue": "eGFR 60 or more mL/min/1.73 m²",
+        "references": [
+          {
+            "title": "NICE CG140: Palliative care for adults: strong opioids for pain relief",
+            "edition": "NICE clinical guideline, 2012 (updated 2016), Recommendations 1.1.4–1.1.5 (starting dose), 1.1.8–1.1.15 (maintenance, patches, breakthrough), 1.1.17–1.1.23 (constipation, nausea)",
+            "url": "https://www.nice.org.uk/guidance/cg140"
+          },
+          {
+            "title": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+            "edition": "Saudi MOH, General Administration of Pharmaceutical Care, p. 7 (WHO-ladder steps; mild and moderate pain doses)",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Liver function tests",
+        "modalityTarget": "Before paracetamol and strong opioids",
+        "targetCondition": "Hepatic impairment",
+        "expectedFinding": "Raised bilirubin/transaminases, low albumin.",
+        "clinicalRationale": "Paracetamol contraindicated in liver dysfunction (MOH); specialist advice for strong opioids in hepatic impairment (NICE).",
+        "normalValue": "ALT below about 40 U/L; bilirubin below about 21 µmol/L",
+        "references": [
+          {
+            "title": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+            "edition": "Saudi MOH, General Administration of Pharmaceutical Care, p. 7 (WHO-ladder steps; mild and moderate pain doses)",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf"
+          },
+          {
+            "title": "NICE CG140: Palliative care for adults: strong opioids for pain relief",
+            "edition": "NICE clinical guideline, 2012 (updated 2016), Recommendations 1.1.4–1.1.5 (starting dose), 1.1.8–1.1.15 (maintenance, patches, breakthrough), 1.1.17–1.1.23 (constipation, nausea)",
+            "url": "https://www.nice.org.uk/guidance/cg140"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Serum calcium (corrected)",
+        "modalityTarget": "New confusion, constipation, vomiting or bone pain",
+        "targetCondition": "Hypercalcaemia of malignancy",
+        "expectedFinding": "Raised corrected calcium.",
+        "clinicalRationale": "Treat cause; worsens pain, nausea and confusion.",
+        "normalValue": "Corrected calcium 2.2–2.6 mmol/L",
+        "references": [
+          {
+            "title": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+            "edition": "Saudi MOH, General Administration of Pharmaceutical Care, p. 10 (metabolic causes of nausea: hypercalcaemia)",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Plain X-ray or MRI of painful bone/spine",
+        "modalityTarget": "Localised bone pain; neurological signs (urgent MRI spine)",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Lytic/sclerotic metastasis, fracture, cord compression.",
+        "clinicalRationale": "Guides radiotherapy, stabilisation or steroid treatment (MOH Protocol-010 lists radiotherapy and surgical stabilisation).",
+        "normalValue": "No bone lesion or cord compression",
+        "references": [
+          {
+            "title": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+            "edition": "Saudi MOH, General Administration of Pharmaceutical Care, p. 4 (corticosteroid indications and doses)",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "assess",
+      "title": "Assess",
+      "timeframe": "At presentation and every review",
+      "actions": [
+        "Score pain 0–10 and classify mild (1–3), moderate (4–6) or severe (7–10); identify neuropathic, bone and visceral components.",
+        "Give analgesia within 30 minutes of presentation (MOH Protocol-003).",
+        "Ask about fears of addiction and side effects; give written information on background and breakthrough dosing (NICE CG140)."
+      ]
+    },
+    {
+      "id": "mild",
+      "title": "Mild pain (1–3/10)",
+      "timeframe": "Start now",
+      "actions": [
+        "Paracetamol 500–1,000 mg PO every 4–6 h, maximum 4,000 mg/day — avoid in liver dysfunction (MOH Protocol-010 p. 7).",
+        "Or an NSAID (one only) if no renal dysfunction, GI bleeding or coagulopathy: ibuprofen 400–800 mg PO every 6–8 h, maximum 3,200 mg/day.",
+        "Or a weak opioid: codeine 30–60 mg PO every 4 h (maximum 400 mg/day, MOH Protocol-003) or tramadol 50–100 mg every 4–6 h (maximum 400 mg/day)."
+      ]
+    },
+    {
+      "id": "strong",
+      "title": "Moderate–severe pain (5 or more/10)",
+      "timeframe": "Start a strong opioid",
+      "actions": [
+        "Morphine is first line (MOH, NICE). MOH Protocol-003: morphine 5 mg PO every 4 h regularly plus 2.5–5 mg every 1 h PRN.",
+        "NICE CG140 (no renal/hepatic disease): 20–30 mg oral morphine per day, e.g. 10–15 mg sustained-release twice daily, plus 5 mg immediate-release for breakthrough.",
+        "Alternatives: oxycodone 5 mg PO every 4 h plus 5 mg every 1 h PRN; hydromorphone 1 mg every 4 h plus 0.5–1 mg PRN (MOH Protocol-003).",
+        "Prescribe a regular laxative for everyone starting a strong opioid (NICE CG140)."
+      ]
+    },
+    {
+      "id": "titrate",
+      "title": "Titrate",
+      "timeframe": "Daily during titration",
+      "actions": [
+        "More than 3 PRN doses a day: raise the total daily dose by 25–75%, or add the 24-h PRN total to the regular total and divide by 6 for the 4-hourly dose (MOH Protocol-003).",
+        "Switch opioid if pain is uncontrolled despite titration or toxicity occurs; optimise laxatives before switching for constipation (NICE).",
+        "Use transdermal patches only when oral opioids are unsuitable and requirements are stable; no fast-acting fentanyl as first-line rescue (NICE CG140).",
+        "Patch to oral: remove patch 6 h before the first oral modified-release dose and give half the equivalent dose for the first 24 h (MOH Protocol-010 p. 9)."
+      ]
+    },
+    {
+      "id": "adjuvant",
+      "title": "Neuropathic and adjuvant analgesia",
+      "timeframe": "Alongside any step",
+      "actions": [
+        "Neuropathic pain: step 1 gabapentin/pregabalin or amitriptyline; step 2 combine; step 3 specialist palliative care advice (MOH Protocol-010 p. 5).",
+        "Corticosteroid adjuvant: dexamethasone 8–16 mg daily for liver capsule pain or nerve compression; give before noon; review within 7 days (MOH Protocol-010 p. 4).",
+        "Spinal cord compression: dexamethasone 16 mg daily for 5 days, 8 mg during radiotherapy, then reduce over 2 weeks (MOH Protocol-010 p. 4).",
+        "Co-prescribe a PPI when combining NSAIDs, steroids, SSRIs or anticoagulants (MOH Protocol-010)."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Assess cancer pain and manage it with stepwise, titrated analgesia and side-effect prevention."
+    ],
+    "references": [
+      {
+        "title": "Cancer Pain Management (MOH Protocol-003)",
+        "edition": "Saudi MOH, General Administration of Pharmaceutical Care",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-003.pdf",
+        "locator": "pp. 3–6"
+      },
+      {
+        "title": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+        "edition": "Saudi MOH, General Administration of Pharmaceutical Care",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf",
+        "locator": "pp. 3–10"
+      },
+      {
+        "title": "NICE CG140: Palliative care for adults: strong opioids for pain relief",
+        "edition": "NICE clinical guideline, 2012 (updated 2016)",
+        "url": "https://www.nice.org.uk/guidance/cg140",
+        "locator": "Recommendations 1.1.1–1.1.23"
+      },
+      {
+        "title": "Morphine sulfate tablets prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=07593aa4-f2c4-4d6e-b186-ab2a4ecaa38a",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Oxycodone hydrochloride prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01db4606-d49c-4b10-a78a-1cf41880a9fb",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Acetaminophen (paracetamol) injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0f67c1bd-915b-4681-88dd-22f5154a80b3",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Ibuprofen tablets prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00872852-680a-41b3-901b-b991b12a176d",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Codeine sulfate tablets prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=010905f9-3bcb-4b50-9fe8-a3ad0010f14c",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Tramadol hydrochloride prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=004de5a4-80f8-4040-a6ea-be5e99352a36",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Amitriptyline hydrochloride prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0067b698-ee1d-4524-b1cc-af1028d13736",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Gabapentin prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01b810b7-f4c8-4412-bbc5-b9220d8770d8",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Dexamethasone sodium phosphate injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0277cc0a-2fd4-4605-a310-b613be84ee26",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ],
+    "keyPoints": [
+      "Score pain 0–10 and treat within 30 minutes.",
+      "Morphine is first-line strong opioid.",
+      "More than 3 PRN doses/day → increase daily dose 25–75%.",
+      "Laxative for everyone on strong opioids.",
+      "Neuropathic pain needs adjuvants."
+    ],
+    "pitfalls": [
+      "Under-dosing from fear of addiction.",
+      "No regular laxative.",
+      "Two NSAIDs at once, or NSAID with renal dysfunction.",
+      "Fast-acting fentanyl as first rescue.",
+      "Missing spinal cord compression."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Background versus breakthrough doses; safe storage of opioids.",
+      "Constipation is expected — take laxatives regularly.",
+      "Nausea at the start is usually transient (NICE)."
+    ],
+    "lifestyleAndDiet": [
+      "Activity pacing; heat, positioning, TENS where helpful (MOH).",
+      "Sleep and mood support."
+    ],
+    "mdtReferrals": [
+      "Specialist palliative care if uncontrolled.",
+      "Oncology/radiotherapy for bone pain or cord compression.",
+      "Physiotherapy, occupational therapy, psychology."
+    ],
+    "dischargeCriteria": [
+      "Symptoms controlled for the chosen place of care, or safe transfer arranged.",
+      "Patient and family know the plan, the medicines and whom to call."
+    ],
+    "followUpPlan": "Review frequently during titration (NICE CG140), at least daily as an inpatient; specialist palliative care referral if pain is not controlled after a few dose adjustments or adverse effects persist."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Mild pain",
+      "threshold": "1–3/10"
+    },
+    {
+      "criterion": "Moderate pain",
+      "threshold": "4–6/10"
+    },
+    {
+      "criterion": "Severe pain",
+      "threshold": "7–10/10"
+    },
+    {
+      "criterion": "Background dose inadequate",
+      "threshold": "More than 3 PRN doses in 24 h"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Mild pain, or added at any step",
+        "patientGroup": "Adults",
+        "genericName": "Paracetamol (acetaminophen)",
+        "dose": "500–1,000 mg",
+        "route": "PO",
+        "frequency": "Every 4–6 h",
+        "duration": "Ongoing; maximum 4,000 mg/day",
+        "adjustments": [
+          "Contraindicated in liver dysfunction (MOH)",
+          "MOH Protocol-003 states '500 mg q4h' — use the Protocol-010 range above"
+        ],
+        "monitoring": [
+          "Liver function"
+        ],
+        "sourceTitle": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf",
+        "sourceEdition": "Saudi MOH, General Administration of Pharmaceutical Care, p. 7 (WHO-ladder steps; mild and moderate pain doses)",
+        "contraindications": [
+          "Severe hepatic impairment or severe active liver disease",
+          "Hypersensitivity"
+        ]
+      },
+      {
+        "indication": "Mild–moderate pain (one NSAID only)",
+        "patientGroup": "Adults without renal dysfunction, GI bleeding or coagulopathy",
+        "genericName": "Ibuprofen",
+        "dose": "400–800 mg",
+        "route": "PO",
+        "frequency": "Every 6–8 h as needed",
+        "duration": "Shortest course; maximum 3,200 mg/day",
+        "adjustments": [
+          "Co-prescribe PPI with steroids, SSRIs or anticoagulants"
+        ],
+        "monitoring": [
+          "Renal function, GI bleeding"
+        ],
+        "sourceTitle": "Cancer Pain Management (MOH Protocol-003)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-003.pdf",
+        "sourceEdition": "Saudi MOH, General Administration of Pharmaceutical Care, p. 3 (mild and moderate–severe pain regimens)",
+        "contraindications": [
+          "Asthma, urticaria or allergic reaction after aspirin/NSAIDs",
+          "Peri-operative CABG pain",
+          "Hypersensitivity"
+        ]
+      },
+      {
+        "indication": "Mild–moderate pain (weak opioid)",
+        "patientGroup": "Adults",
+        "genericName": "Codeine",
+        "dose": "30–60 mg",
+        "route": "PO (SC if unable to swallow — MOH)",
+        "frequency": "Every 4 h regularly; every 1 h PRN rescue",
+        "duration": "Maximum 400 mg/day (MOH Protocol-003); Protocol-010 combination maximum 360 mg/day",
+        "adjustments": [
+          "Switch to a strong opioid if pain persists despite optimisation"
+        ],
+        "monitoring": [
+          "Constipation, sedation"
+        ],
+        "sourceTitle": "Cancer Pain Management (MOH Protocol-003)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-003.pdf",
+        "sourceEdition": "Saudi MOH, General Administration of Pharmaceutical Care, p. 3 (mild and moderate–severe pain regimens)",
+        "contraindications": [
+          "Children under 12",
+          "Significant respiratory depression",
+          "Acute or severe asthma without monitoring",
+          "Known or suspected GI obstruction",
+          "MAOI within 14 days"
+        ]
+      },
+      {
+        "indication": "Mild–moderate pain (weak opioid, alternative)",
+        "patientGroup": "Adults",
+        "genericName": "Tramadol (immediate release)",
+        "dose": "25–50 mg every 6 h, increasing to 50–100 mg every 4–6 h",
+        "route": "PO",
+        "frequency": "As stated",
+        "duration": "Maximum 400 mg/day",
+        "adjustments": [
+          "Avoid with MAOIs, renal impairment, severe asthma, GI obstruction (MOH)"
+        ],
+        "monitoring": [
+          "Sedation, seizures, serotonin toxicity"
+        ],
+        "sourceTitle": "Cancer Pain Management (MOH Protocol-003)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-003.pdf",
+        "sourceEdition": "Saudi MOH, General Administration of Pharmaceutical Care, p. 3 (mild and moderate–severe pain regimens)",
+        "contraindications": [
+          "Children under 12",
+          "Significant respiratory depression",
+          "Acute or severe asthma without monitoring",
+          "Known or suspected GI obstruction",
+          "MAOI within 14 days"
+        ]
+      },
+      {
+        "indication": "Moderate–severe pain (first-line strong opioid)",
+        "patientGroup": "Adults, opioid-naïve",
+        "genericName": "Morphine (immediate release)",
+        "dose": "5 mg regularly plus 2.5–5 mg PRN (MOH); or 20–30 mg/day total, e.g. 10–15 mg sustained-release twice daily plus 5 mg IR rescue (NICE)",
+        "route": "PO",
+        "frequency": "Every 4 h regularly; PRN every 1 h",
+        "duration": "Titrate daily; laxative for all",
+        "adjustments": [
+          "Specialist advice in moderate–severe renal or hepatic impairment (NICE)",
+          "IV start 2.5–5 mg every 3–4 h (MOH Protocol-010)"
+        ],
+        "monitoring": [
+          "Pain score, PRN use, sedation, respiratory rate, bowels"
+        ],
+        "sourceTitle": "Cancer Pain Management (MOH Protocol-003)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-003.pdf",
+        "sourceEdition": "Saudi MOH, General Administration of Pharmaceutical Care, p. 3 (mild and moderate–severe pain regimens)",
+        "contraindications": [
+          "Significant respiratory depression",
+          "Acute or severe asthma without monitoring/resuscitation",
+          "MAOI use within 14 days",
+          "Known or suspected GI obstruction including paralytic ileus",
+          "Hypersensitivity"
+        ]
+      },
+      {
+        "indication": "Moderate–severe pain (alternative strong opioid)",
+        "patientGroup": "Adults",
+        "genericName": "Oxycodone (immediate release)",
+        "dose": "5 mg regularly plus 5 mg PRN",
+        "route": "PO",
+        "frequency": "Every 4 h; PRN every 1 h",
+        "duration": "Titrate; 1.5–2 times as potent as morphine (MOH)",
+        "adjustments": [
+          "Restart at the lowest converted dose when switching"
+        ],
+        "monitoring": [
+          "Pain score, sedation, bowels"
+        ],
+        "sourceTitle": "Cancer Pain Management (MOH Protocol-003)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-003.pdf",
+        "sourceEdition": "Saudi MOH, General Administration of Pharmaceutical Care, p. 3 (mild and moderate–severe pain regimens)",
+        "contraindications": [
+          "Significant respiratory depression",
+          "Acute or severe asthma without monitoring, or hypercarbia",
+          "Known or suspected GI obstruction including paralytic ileus",
+          "Hypersensitivity"
+        ]
+      },
+      {
+        "indication": "Neuropathic pain (step 1)",
+        "patientGroup": "Adults",
+        "genericName": "Amitriptyline",
+        "dose": "10 mg at night",
+        "route": "PO",
+        "frequency": "Increase by 25 mg every 1–2 weeks",
+        "duration": "Maximum 150 mg at night",
+        "adjustments": [
+          "Avoid in arrhythmia, heart block, ischaemic heart disease, heart failure (MOH)",
+          "Glaucoma, hepatic impairment"
+        ],
+        "monitoring": [
+          "Sedation, postural hypotension, hyponatraemia"
+        ],
+        "sourceTitle": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf",
+        "sourceEdition": "Saudi MOH, General Administration of Pharmaceutical Care, p. 5 (neuropathic pain step-wise table: amitriptyline, gabapentin, pregabalin)",
+        "contraindications": [
+          "Hypersensitivity",
+          "MAOI within 14 days",
+          "Acute recovery phase after myocardial infarction"
+        ]
+      },
+      {
+        "indication": "Neuropathic pain (step 1)",
+        "patientGroup": "Adults",
+        "genericName": "Gabapentin",
+        "dose": "300 mg at night (frail: 100 mg at night)",
+        "route": "PO",
+        "frequency": "Increase by 300 mg (frail: 100 mg) every 2–3 days",
+        "duration": "Maximum 600 mg three times daily",
+        "adjustments": [
+          "Reduce dose in renal impairment (MOH)"
+        ],
+        "monitoring": [
+          "Sedation, dizziness"
+        ],
+        "sourceTitle": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf",
+        "sourceEdition": "Saudi MOH, General Administration of Pharmaceutical Care, p. 5 (neuropathic pain step-wise table: amitriptyline, gabapentin, pregabalin)",
+        "contraindications": [
+          "Hypersensitivity"
+        ]
+      },
+      {
+        "indication": "Adjuvant: nerve compression, liver capsule pain",
+        "patientGroup": "Adults",
+        "genericName": "Dexamethasone",
+        "dose": "8–16 mg daily",
+        "route": "PO/SC",
+        "frequency": "Once daily before noon",
+        "duration": "Review within 7 days; titrate to lowest effective dose",
+        "adjustments": [
+          "Taper if 3 or more weeks or more than 6 mg/day (MOH)",
+          "Steroid card if more than 3 weeks"
+        ],
+        "monitoring": [
+          "Glucose, mood, oral candidiasis"
+        ],
+        "sourceTitle": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf",
+        "sourceEdition": "Saudi MOH, General Administration of Pharmaceutical Care, p. 4 (corticosteroid indications and doses)",
+        "contraindications": [
+          "Systemic fungal infections"
+        ]
+      }
+    ],
+    "note": "Doses are from Saudi MOH Protocols 003 and 010 and NICE CG140; contraindications from US FDA labels. MOH Protocol-003 contains typographical errors (e.g. paracetamol 'max 4mg/day') — the Protocol-010 range is used. Check SFDA registration, controlled-drug rules and hospital formulary."
+  },
+  "guidelineComparison": {
+    "title": "Starting strong opioid: MOH vs NICE",
+    "columns": [
+      "MOH Protocol-003 / 010",
+      "NICE CG140"
+    ],
+    "rows": [
+      {
+        "parameter": "First choice",
+        "values": [
+          "Morphine",
+          "Oral morphine (SR or IR)"
+        ]
+      },
+      {
+        "parameter": "Starting dose",
+        "values": [
+          "5 mg PO every 4 h + 2.5–5 mg hourly PRN (003); 5–10 mg every 4 h PRN (010)",
+          "20–30 mg/day, e.g. 10–15 mg SR twice daily + 5 mg IR rescue"
+        ]
+      },
+      {
+        "parameter": "Codeine maximum",
+        "values": [
+          "400 mg/day (003); 360 mg/day in combination (010)",
+          "Not covered"
+        ]
+      },
+      {
+        "parameter": "Patches",
+        "values": [
+          "Conversion rules (010 p. 9)",
+          "Not first line if oral suitable"
+        ]
+      }
+    ],
+    "note": "Both: titrate to effect, regular laxative, specialist advice if uncontrolled."
+  }
+}
