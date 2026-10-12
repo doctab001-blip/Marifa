@@ -5,12 +5,13 @@ import { DiseaseDetailSchema, type DiseaseDetail } from "@/lib/validations/disea
 import { isSupabaseConfigured } from "@/lib/supabase/config";
 import { createSupabaseDataClient } from "@/lib/supabase/data-client";
 import { hasMedicalSpeciality, inferMedicalSpecialityTags } from "@/lib/medical-specialities";
+import { isClinicalDirectoryEligible } from "@/lib/data/clinical-directory-eligibility";
 
 export type DiseaseGuidelineSummary = Pick<DiseaseDetail, "id" | "title" | "specialty" | "authority" | "status" | "version" | "lastReviewed" | "pillar" | "clinicalReviewStatus"> & { summary: string; sourceType?: string; speciality?: string; subSpecialities?: string[] };
 type GuidelineVersionJoin = { content: unknown; source_title?: string | null; source_url?: string | null };
 type GuidelineRow = { id: string; title: string; specialty: string | null; speciality_id?: string | null; speciality?: { name: string } | { name: string }[] | null; sub_specialities?: string[] | null; status: string; source_type: string; guideline_versions: GuidelineVersionJoin | GuidelineVersionJoin[] };
 
-export type DiseaseDirectoryResult = { diseases: DiseaseGuidelineSummary[]; state: "ready" | "unavailable"; rejectedCount: number };
+export type DiseaseDirectoryResult = { diseases: DiseaseGuidelineSummary[]; state: "ready" | "unavailable"; rejectedCount: number; withheldCount: number };
 export type DiseaseDetailResult =
   | { state: "ready"; disease: DiseaseDetail; investigationSource?: { title: string; url: string } }
   | { state: "not-found" }
@@ -41,7 +42,7 @@ function toSummary(disease: DiseaseDetail, row: GuidelineRow): Omit<DiseaseGuide
 }
 
 export async function getApprovedDiseaseGuidelines(filters: { speciality?: string; carePillar?: string } = {}): Promise<DiseaseDirectoryResult> {
-  if (!isSupabaseConfigured()) return { diseases: [], state: "unavailable", rejectedCount: 0 };
+  if (!isSupabaseConfigured()) return { diseases: [], state: "unavailable", rejectedCount: 0, withheldCount: 0 };
   try {
     const supabase = await createSupabaseDataClient();
     const { data, error } = await supabase
@@ -56,11 +57,16 @@ export async function getApprovedDiseaseGuidelines(filters: { speciality?: strin
 
     const diseases: DiseaseGuidelineSummary[] = [];
     let rejectedCount = 0;
+    let withheldCount = 0;
     for (const row of (data ?? []) as unknown as GuidelineRow[]) {
       if (Object.hasOwn(mergedTopics, row.id)) continue;
       const parsed = DiseaseDetailSchema.safeParse(currentContent(row));
       if (!parsed.success || !isApproved(parsed.data) || parsed.data.id !== row.id || row.status !== parsed.data.status || row.title !== parsed.data.title || row.specialty !== parsed.data.specialty) {
         rejectedCount += 1;
+        continue;
+      }
+      if (!isClinicalDirectoryEligible(row.id, parsed.data.version)) {
+        withheldCount += 1;
         continue;
       }
       const summary = toSummary(parsed.data, row);
@@ -70,6 +76,7 @@ export async function getApprovedDiseaseGuidelines(filters: { speciality?: strin
     }
 
     for (const [reviewId, reviewVersion] of Object.entries(clinicalReviewOverrides)) {
+      if (!isClinicalDirectoryEligible(reviewId)) continue;
       let reviewQuery = supabase
         .from("clinical_guidelines")
         .select("id,title,specialty,status,source_type,guideline_versions!inner(content)")
@@ -92,15 +99,16 @@ export async function getApprovedDiseaseGuidelines(filters: { speciality?: strin
         }
       }
     }
-    return { diseases, state: "ready", rejectedCount };
+    return { diseases, state: "ready", rejectedCount, withheldCount };
   } catch (error) {
     console.error("[disease-guidelines] directory load failed", error);
-    return { diseases: [], state: "unavailable", rejectedCount: 0 };
+    return { diseases: [], state: "unavailable", rejectedCount: 0, withheldCount: 0 };
   }
 }
 
 export async function getApprovedDiseaseGuideline(id: string): Promise<DiseaseDetailResult> {
   if (!isSupabaseConfigured()) return { state: "unavailable" };
+  if (!isClinicalDirectoryEligible(id)) return { state: "not-found" };
   try {
     const supabase = await createSupabaseDataClient();
     if (Object.hasOwn(clinicalReviewOverrides, id)) {
@@ -120,6 +128,7 @@ export async function getApprovedDiseaseGuideline(id: string): Promise<DiseaseDe
         const reviewRow = reviewData as unknown as GuidelineRow;
         const reviewContent = DiseaseDetailSchema.safeParse(currentContent(reviewRow));
         if (!reviewContent.success || reviewContent.data.id !== reviewRow.id || reviewContent.data.status !== "under_review") return { state: "invalid" };
+        if (!isClinicalDirectoryEligible(id, reviewContent.data.version)) return { state: "not-found" };
         return { state: "ready", disease: reviewContent.data, investigationSource: currentSource(reviewRow) };
       }
     }
@@ -138,6 +147,7 @@ export async function getApprovedDiseaseGuideline(id: string): Promise<DiseaseDe
     const row = data as unknown as GuidelineRow;
     const parsed = DiseaseDetailSchema.safeParse(currentContent(row));
     if (!parsed.success || !isApproved(parsed.data) || parsed.data.id !== row.id) return { state: "invalid" };
+    if (!isClinicalDirectoryEligible(id, parsed.data.version)) return { state: "not-found" };
     return { state: "ready", disease: parsed.data, investigationSource: currentSource(row) };
   } catch (error) {
     console.error("[disease-guidelines] topic load failed", error);

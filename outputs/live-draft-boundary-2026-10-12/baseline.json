@@ -1,0 +1,502 @@
+{
+  "captured_at": "2026-10-12T07:21:49.085Z",
+  "project_ref": "peuusnbucyazatkngvxw",
+  "topics": [
+    {
+      "id": "b25d8f03-6c42-4e79-a130-7d94f2c8b516",
+      "title": "Type 2 Diabetes Mellitus Longitudinal Care Pathway",
+      "status": "approved",
+      "specialty": "Family Medicine and Endocrinology",
+      "source_type": "curated-saudi-guideline",
+      "guideline_versions": [
+        {
+          "id": "b25d8f03-6c42-4e79-a130-7d94f2c8b516",
+          "status": "approved",
+          "content": {
+            "id": "b25d8f03-6c42-4e79-a130-7d94f2c8b516",
+            "title": "Type 2 Diabetes Mellitus Longitudinal Care Pathway",
+            "pillar": "Chronic Care",
+            "status": "approved",
+            "version": "1.0",
+            "authority": "SHC",
+            "specialty": "Family Medicine and Endocrinology",
+            "lastReviewed": "2026-10-10",
+            "presentation": {
+              "redFlags": [
+                "Altered mental status, severe dehydration, or inability to maintain intake",
+                "Vomiting, abdominal pain, deep breathing, or suspected metabolic crisis",
+                "Severe hypoglycaemia or infected, ischaemic, or ulcerated foot"
+              ],
+              "symptoms": [
+                "May be asymptomatic and found on screening",
+                "Increased thirst, urination, or hunger",
+                "Fatigue, blurred vision, recurrent infections, or unintentional weight change"
+              ],
+              "physicalSigns": [
+                "Central adiposity or other metabolic risk features",
+                "Acanthosis nigricans in some patients",
+                "Possible peripheral sensory loss, foot lesions, or vascular disease"
+              ]
+            },
+            "differentials": [
+              {
+                "condition": "Type 1 diabetes mellitus",
+                "distinguishingFeatures": "May have rapid onset, ketosis, or insulin deficiency; investigate classification when uncertain."
+              },
+              {
+                "condition": "Medication-associated hyperglycaemia",
+                "distinguishingFeatures": "Temporal association with glucocorticoids or other glucose-affecting medicines."
+              },
+              {
+                "condition": "Secondary diabetes",
+                "distinguishingFeatures": "Pancreatic disease, endocrinopathy, or another underlying cause suggested by history or course."
+              },
+              {
+                "condition": "Transient stress hyperglycaemia",
+                "distinguishingFeatures": "Occurs during acute illness and may resolve; confirm persistent diabetes when appropriate."
+              }
+            ],
+            "investigations": {
+              "ruleIn": [
+                {
+                  "tier": "laboratory",
+                  "testName": "Laboratory HbA1c",
+                  "modalityTarget": "Laboratory HbA1c — Chronic hyperglycaemia consistent with diabetes",
+                  "expectedFinding": "At or above locally adopted diagnostic threshold, confirmed as required",
+                  "targetCondition": "Chronic hyperglycaemia consistent with diabetes",
+                  "clinicalRationale": "Estimate average glycaemia when assay and patient factors permit."
+                },
+                {
+                  "tier": "laboratory",
+                  "testName": "Fasting plasma glucose",
+                  "modalityTarget": "Fasting plasma glucose — Diabetes mellitus",
+                  "expectedFinding": "At or above locally adopted diagnostic threshold, confirmed as required",
+                  "targetCondition": "Diabetes mellitus",
+                  "clinicalRationale": "Assess fasting glycaemia using laboratory criteria."
+                },
+                {
+                  "tier": "laboratory",
+                  "testName": "Random plasma glucose with classic symptoms or crisis",
+                  "modalityTarget": "Random plasma glucose with classic symptoms or crisis — Diabetes mellitus",
+                  "expectedFinding": "Marked hyperglycaemia meeting accepted criteria in the clinical context",
+                  "targetCondition": "Diabetes mellitus",
+                  "clinicalRationale": "May establish diagnosis in symptomatic patients while acute status is assessed."
+                },
+                {
+                  "tier": "laboratory",
+                  "testName": "Urine albumin-to-creatinine ratio and estimated glomerular filtration rate",
+                  "modalityTarget": "Urine albumin-to-creatinine ratio and estimated glomerular filtration rate — Diabetic kidney disease risk",
+                  "expectedFinding": "Albuminuria and/or reduced estimated filtration",
+                  "targetCondition": "Diabetic kidney disease risk",
+                  "clinicalRationale": "Identify kidney involvement and inform risk and treatment planning."
+                }
+              ],
+              "ruleOut": [
+                {
+                  "tier": "laboratory",
+                  "testName": "Repeat laboratory HbA1c or plasma glucose",
+                  "modalityTarget": "Repeat laboratory HbA1c or plasma glucose — Persistent diabetes after borderline or discordant result",
+                  "expectedFinding": "Repeat result below diagnostic thresholds without other diagnostic evidence",
+                  "targetCondition": "Persistent diabetes after borderline or discordant result",
+                  "clinicalRationale": "Resolve uncertain results and consider factors affecting HbA1c."
+                },
+                {
+                  "tier": "laboratory",
+                  "testName": "Blood ketones, electrolytes, renal function, and acid-base assessment when acutely unwell",
+                  "modalityTarget": "Blood ketones, electrolytes, renal function, and acid-base assessment when acutely unwell — Diabetic ketoacidosis or acute metabolic emergency",
+                  "expectedFinding": "No significant ketonaemia, acidosis, or related derangement",
+                  "targetCondition": "Diabetic ketoacidosis or acute metabolic emergency",
+                  "clinicalRationale": "Assess an acute emergency when symptoms suggest it."
+                },
+                {
+                  "tier": "laboratory",
+                  "testName": "Lipid profile and cardiovascular risk assessment",
+                  "modalityTarget": "Lipid profile and cardiovascular risk assessment — Associated cardiovascular risk",
+                  "expectedFinding": "Risk profile characterised for management",
+                  "targetCondition": "Associated cardiovascular risk",
+                  "clinicalRationale": "These assess associated risk rather than exclude diabetes."
+                }
+              ]
+            },
+            "pathophysiology": {
+              "summary": "Type 2 diabetes is chronic hyperglycaemia associated with insulin resistance and progressive impairment of insulin secretion, with risk of vascular and other complications.",
+              "keyMechanisms": [
+                "Reduced insulin sensitivity in liver, muscle, and adipose tissue",
+                "Progressive pancreatic beta-cell dysfunction",
+                "Chronic hyperglycaemia contributing to microvascular and macrovascular injury"
+              ]
+            },
+            "clinicalManagement": [
+              {
+                "id": "t2dm-1",
+                "title": "Confirm diagnosis and baseline risk",
+                "actions": [
+                  "Confirm diabetes using accepted laboratory criteria and repeat when required.",
+                  "Review symptoms, medicines, pregnancy potential, cardiovascular history, and patient priorities.",
+                  "Assess blood pressure, weight, smoking, lipids, kidney health, and feet.",
+                  "Arrange complication screening under local guidance."
+                ],
+                "branches": [
+                  {
+                    "actions": [
+                      "Arrange urgent specialist assessment and evaluate acute metabolic status.",
+                      "Do not delay necessary treatment while classification is clarified."
+                    ],
+                    "condition": "Possible type 1 diabetes, ketosis, or rapid deterioration"
+                  },
+                  {
+                    "actions": [
+                      "Arrange emergency assessment.",
+                      "Use the local acute hyperglycaemia protocol."
+                    ],
+                    "condition": "Hyperglycaemic crisis or severe dehydration suspected"
+                  }
+                ],
+                "timeframe": "At diagnosis or transfer of care"
+              },
+              {
+                "id": "t2dm-2",
+                "title": "Agree an individualised management plan",
+                "actions": [
+                  "Agree glycaemic and cardiovascular goals with the patient.",
+                  "Offer structured education, nutrition support, activity advice, and tobacco cessation.",
+                  "Select glucose-lowering therapy using current local guidance, comorbidities, renal function, contraindications, and preference.",
+                  "Review response, adverse effects, adherence barriers, and hypoglycaemia risk."
+                ],
+                "branches": [
+                  {
+                    "actions": [
+                      "Consider therapies with relevant outcome benefits under current local guidance and eligibility.",
+                      "Coordinate with relevant specialists."
+                    ],
+                    "condition": "Cardiovascular disease, heart failure, or chronic kidney disease"
+                  },
+                  {
+                    "actions": [
+                      "Arrange prompt preconception or obstetric-diabetes review.",
+                      "Review medicines for pregnancy suitability with the specialist team."
+                    ],
+                    "condition": "Pregnant, planning pregnancy, or pregnancy possible"
+                  }
+                ],
+                "timeframe": "At diagnosis and reviewed regularly"
+              },
+              {
+                "id": "t2dm-3",
+                "title": "Monitor complications and revise care",
+                "actions": [
+                  "Monitor glycaemia and treatment safety at an appropriate interval.",
+                  "Review kidney function, urine albumin, blood pressure, lipids, feet, eyes, and cardiovascular risk.",
+                  "Provide medicine-specific sick-day advice under local guidance.",
+                  "Escalate persistent poor control, recurrent hypoglycaemia, or progressive complications."
+                ],
+                "branches": [
+                  {
+                    "actions": [
+                      "Arrange timely foot-team or vascular assessment based on severity.",
+                      "Use an urgent pathway for infection or threatened limb."
+                    ],
+                    "condition": "Foot ulcer, infection, ischaemia, or new sensory loss"
+                  },
+                  {
+                    "actions": [
+                      "Review diagnosis, adherence barriers, tolerance, and social context.",
+                      "Adjust treatment or refer according to local guidance."
+                    ],
+                    "condition": "Targets unmet or complications progressing"
+                  }
+                ],
+                "timeframe": "At least annually and more often when indicated"
+              }
+            ],
+            "nonClinicalManagement": {
+              "followUpPlan": "Review glycaemia, medicines, cardiovascular risk, kidneys, eyes, and feet regularly; increase review frequency after treatment changes or when control requires closer monitoring.",
+              "mdtReferrals": [
+                "Diabetes educator or nurse",
+                "Dietitian",
+                "Retinal screening service",
+                "Foot-care service",
+                "Endocrinology when indicated",
+                "Nephrology, cardiology, or vascular service when indicated"
+              ],
+              "lifestyleAndDiet": [
+                "Offer culturally appropriate nutrition counselling and sustainable goals.",
+                "Encourage regular activity adapted to ability and health.",
+                "Offer support for weight management, sleep, and tobacco cessation where relevant."
+              ],
+              "patientEducation": [
+                "Explain diabetes, monitoring, treatment choices, and when to seek urgent help.",
+                "Provide accessible self-management education in the preferred language.",
+                "Discuss foot care and regular eye, kidney, and cardiovascular checks."
+              ],
+              "dischargeCriteria": [
+                "Patient is clinically stable with an agreed self-management and follow-up plan.",
+                "Acute metabolic emergencies and limb-threatening complications are addressed.",
+                "Patient knows how to access help and seek urgent review."
+              ]
+            }
+          },
+          "version": "1.0",
+          "created_at": "2026-10-10T15:13:32.980627+00:00",
+          "created_by": null,
+          "is_current": true,
+          "source_url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf",
+          "approved_at": "2026-10-09T21:00:00+00:00",
+          "approved_by": "310a1d7b-646d-4adb-b822-8d79453237cf",
+          "review_date": "2026-10-10",
+          "guideline_id": "b25d8f03-6c42-4e79-a130-7d94f2c8b516",
+          "jurisdiction": "Saudi Arabia",
+          "published_at": null,
+          "source_title": "Saudi Diabetes Clinical Practice Guidelines, Saudi National Diabetes Center, Saudi Health Council",
+          "change_summary": "Curated Saudi pathway approved by the designated Marifa platform administrator; source provenance is recorded below.",
+          "effective_date": null,
+          "version_number": "1.0",
+          "publication_date": "2021-08-22",
+          "last_verified_date": "2026-10-10",
+          "issuing_organization": "Saudi Health Council",
+          "content_hash": "b1ede41da5e870243cdeaf10b8a4b82c893701e47897c8c5fa7ce244867f850a"
+        }
+      ]
+    },
+    {
+      "id": "f69b2347-a086-4db5-b509-1f38c6d2a950",
+      "title": "Palliative Management of End-of-Life Dyspnoea and Pain",
+      "status": "approved",
+      "specialty": "Palliative Medicine",
+      "source_type": "curated-saudi-guideline",
+      "guideline_versions": [
+        {
+          "id": "f69b2347-a086-4db5-b509-1f38c6d2a950",
+          "status": "approved",
+          "content": {
+            "id": "f69b2347-a086-4db5-b509-1f38c6d2a950",
+            "title": "Palliative Management of End-of-Life Dyspnoea and Pain",
+            "pillar": "Palliative Care",
+            "status": "approved",
+            "version": "1.0",
+            "authority": "MOH",
+            "specialty": "Palliative Medicine",
+            "lastReviewed": "2026-10-10",
+            "presentation": {
+              "redFlags": [
+                "New potentially reversible emergency consistent with goals of care",
+                "Sudden severe dyspnoea, airway obstruction, major bleeding, or rapidly worsening consciousness",
+                "Uncontrolled pain or dyspnoea despite plan",
+                "Suspected medication toxicity or administration error"
+              ],
+              "symptoms": [
+                "Subjective breathlessness, air hunger, or breathing-related distress",
+                "Pain reported by patient or inferred from behaviour when communication is limited",
+                "Anxiety, restlessness, sleep disruption, or reduced function"
+              ],
+              "physicalSigns": [
+                "Increased work of breathing, altered respiratory rate, or accessory-muscle use",
+                "Guarding, grimacing, vocalisation, or reduced movement",
+                "Possible agitation, altered alertness, or signs of underlying illness"
+              ]
+            },
+            "differentials": [
+              {
+                "condition": "Acute reversible respiratory or cardiac illness",
+                "distinguishingFeatures": "Abrupt onset, new examination findings, or treatable cause; assess when consistent with goals."
+              },
+              {
+                "condition": "Anxiety or panic contributing to dyspnoea",
+                "distinguishingFeatures": "Prominent fear or episodic distress may contribute, but physical causes still merit consideration."
+              },
+              {
+                "condition": "Delirium affecting symptom report",
+                "distinguishingFeatures": "Fluctuating attention or altered cognition; use observational assessment and collateral history."
+              },
+              {
+                "condition": "Medication-related symptom or toxicity",
+                "distinguishingFeatures": "Temporal association with medicine change, sedation, confusion, respiratory suppression, or other adverse effect."
+              }
+            ],
+            "investigations": {
+              "ruleIn": [
+                {
+                  "tier": "laboratory",
+                  "testName": "Patient-reported symptom assessment or validated observational tool",
+                  "modalityTarget": "Patient-reported symptom assessment or validated observational tool — Clinically significant pain or dyspnoea",
+                  "expectedFinding": "Reported or observed distress requiring an individualised comfort plan",
+                  "targetCondition": "Clinically significant pain or dyspnoea",
+                  "clinicalRationale": "Measure symptoms in a way suited to communication ability and reassess response."
+                },
+                {
+                  "tier": "laboratory",
+                  "testName": "Focused history, examination, and medication review",
+                  "modalityTarget": "Focused history, examination, and medication review — Potentially treatable symptom contributor",
+                  "expectedFinding": "Clinical evidence identifying a cause or medicine-related factor",
+                  "targetCondition": "Potentially treatable symptom contributor",
+                  "clinicalRationale": "Identify reversible causes when assessment and treatment align with goals."
+                },
+                {
+                  "tier": "laboratory",
+                  "testName": "Targeted investigation after goals-of-care discussion",
+                  "modalityTarget": "Targeted investigation after goals-of-care discussion — Specific suspected reversible cause",
+                  "expectedFinding": "Result likely to change a goal-concordant plan",
+                  "targetCondition": "Specific suspected reversible cause",
+                  "clinicalRationale": "Avoid burdensome testing unlikely to improve comfort or alter decisions."
+                }
+              ],
+              "ruleOut": [
+                {
+                  "tier": "laboratory",
+                  "testName": "Medication reconciliation and focused reassessment",
+                  "modalityTarget": "Medication reconciliation and focused reassessment — Medication-related toxicity",
+                  "expectedFinding": "No significant medication association or toxicity signs",
+                  "targetCondition": "Medication-related toxicity",
+                  "clinicalRationale": "Review medicines and recent changes before escalating symptom treatment."
+                },
+                {
+                  "tier": "laboratory",
+                  "testName": "Targeted assessment for suspected reversible emergency",
+                  "modalityTarget": "Targeted assessment for suspected reversible emergency — Acute reversible cause requiring urgent treatment",
+                  "expectedFinding": "No evidence of suspected cause on proportionate assessment",
+                  "targetCondition": "Acute reversible cause requiring urgent treatment",
+                  "clinicalRationale": "Select investigations likely to change a goal-concordant plan; no test excludes every cause."
+                }
+              ]
+            },
+            "pathophysiology": {
+              "summary": "Dyspnoea and pain are distressing symptoms in serious illness. At end of life they may arise from disease, complications, treatment effects, or interacting causes; care should reflect patient goals.",
+              "keyMechanisms": [
+                "Dyspnoea may reflect respiratory, cardiac, metabolic, psychological, or multifactorial processes",
+                "Pain may arise from tissue injury, inflammation, nerve involvement, or disease-related pressure",
+                "Fear, fatigue, delirium, and caregiver distress may amplify symptoms"
+              ]
+            },
+            "clinicalManagement": [
+              {
+                "id": "pall-1",
+                "title": "Assess distress, goals, and reversible contributors",
+                "actions": [
+                  "Ask about symptom severity, comfort goals, fears, and preferred support; use an observational tool if needed.",
+                  "Review care plan, advance-care documentation, capacity, and expressed goals.",
+                  "Assess reversible contributors and review medicines, allergies, organ function, and prior responses.",
+                  "Include family or caregivers with consent and respect privacy and cultural preferences."
+                ],
+                "branches": [
+                  {
+                    "actions": [
+                      "Arrange urgent assessment and treatment through the appropriate pathway.",
+                      "Continue comfort measures and communicate the plan."
+                    ],
+                    "condition": "Potentially reversible emergency identified and treatment aligns with goals"
+                  },
+                  {
+                    "actions": [
+                      "Use proportionate assessment focused on acceptable comfort measures.",
+                      "Document goals, limits, and escalation preferences."
+                    ],
+                    "condition": "Comfort is the priority and burdensome tests would not change care"
+                  }
+                ],
+                "timeframe": "At escalation and whenever the situation changes"
+              },
+              {
+                "id": "pall-2",
+                "title": "Provide individualised symptom relief",
+                "actions": [
+                  "Use positioning, calm presence, airflow or a fan when acceptable, and other low-burden measures.",
+                  "Follow the local palliative formulary and senior guidance; individualise medicines to prior exposure, organ function, route, and goals.",
+                  "Assess pain type and use appropriate non-pharmacological and pharmacological measures.",
+                  "Reassess comfort, alertness, adverse effects, and patient preferences."
+                ],
+                "branches": [
+                  {
+                    "actions": [
+                      "Request urgent palliative or senior review.",
+                      "Reconsider setting, route, cause, and proportionality of further intervention."
+                    ],
+                    "condition": "Severe symptoms persist despite initial plan"
+                  },
+                  {
+                    "actions": [
+                      "Arrange prompt clinical review for toxicity or other causes.",
+                      "Adjust or withhold medicines only through responsible clinician and local protocol."
+                    ],
+                    "condition": "Sedation, confusion, respiratory suppression, or adverse effect suspected"
+                  }
+                ],
+                "timeframe": "Promptly, with reassessment after each intervention"
+              },
+              {
+                "id": "pall-3",
+                "title": "Coordinate continuing care and support",
+                "actions": [
+                  "Agree a written symptom plan, contacts, worsening-symptom steps, and preferred place of care when feasible.",
+                  "Ensure access to prescribed medicines, equipment, and trained support.",
+                  "Coordinate patient, family, palliative, primary-care, and specialist communication.",
+                  "Review caregiver burden and psychosocial, cultural, and spiritual needs."
+                ],
+                "branches": [
+                  {
+                    "actions": [
+                      "Arrange urgent specialist review and consider transfer consistent with goals.",
+                      "Provide structured handover of symptoms, medicines, response, allergies, and preferences."
+                    ],
+                    "condition": "Symptoms cannot be safely controlled in current setting"
+                  },
+                  {
+                    "actions": [
+                      "Continue documented comfort plan and scheduled review.",
+                      "Provide caregivers clear contact details and practical support."
+                    ],
+                    "condition": "Symptoms acceptably controlled in preferred setting"
+                  }
+                ],
+                "timeframe": "Throughout care and at transitions"
+              }
+            ],
+            "nonClinicalManagement": {
+              "followUpPlan": "Arrange palliative follow-up based on symptom burden and setting, with an urgent route for worsening pain, dyspnoea, or adverse effects.",
+              "mdtReferrals": [
+                "Palliative-care physician and nurse",
+                "Primary-care or treating specialist team",
+                "Clinical pharmacist",
+                "Psychology, social work, or spiritual care by preference",
+                "Home healthcare or hospice when available and appropriate",
+                "Family and caregiver support"
+              ],
+              "lifestyleAndDiet": [
+                "Prioritise comfort, rest, preferred food and fluids as tolerated, and patient choices.",
+                "Offer positioning, calm environment, and activity pacing to reduce distress."
+              ],
+              "patientEducation": [
+                "Explain palliative care aims to relieve suffering and support patient and family.",
+                "Describe comfort measures and how to use the symptom plan and contact the team.",
+                "Invite discussion of preferences, privacy, culture, and spiritual support."
+              ],
+              "dischargeCriteria": [
+                "Symptoms acceptably controlled for chosen setting or safe transfer arranged.",
+                "Patient and caregivers understand symptom plan, medicine instructions, and contact route.",
+                "Goals, escalation preferences, and handover are documented and communicated."
+              ]
+            }
+          },
+          "version": "1.0",
+          "created_at": "2026-10-10T15:13:32.980627+00:00",
+          "created_by": null,
+          "is_current": true,
+          "source_url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf",
+          "approved_at": "2026-10-09T21:00:00+00:00",
+          "approved_by": "310a1d7b-646d-4adb-b822-8d79453237cf",
+          "review_date": "2026-10-10",
+          "guideline_id": "f69b2347-a086-4db5-b509-1f38c6d2a950",
+          "jurisdiction": "Saudi Arabia",
+          "published_at": null,
+          "source_title": "MOH Protocols for Palliative Care Patients — End of Life Care",
+          "change_summary": "Curated Saudi pathway approved by the designated Marifa platform administrator; source provenance is recorded below.",
+          "effective_date": null,
+          "version_number": "1.0",
+          "publication_date": "2019-01-01",
+          "last_verified_date": "2026-10-10",
+          "issuing_organization": "Saudi Ministry of Health",
+          "content_hash": "97f88a3de3238ff47a30c47cbf281ed0a07e5c1aafb842dcca941e15beddcb2a"
+        }
+      ]
+    }
+  ]
+}

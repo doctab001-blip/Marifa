@@ -14,7 +14,7 @@ export default async function DiseaseDirectoryPage({ searchParams }: { searchPar
         <div>
           <p className="disease-kicker">Disease management</p>
           <h1>Clinical pathways, organised around care</h1>
-          <p>Explore clinical scenarios across the six Saudi Model of Care pillars. Each record shows its source and clinical review status; published learning content may still be awaiting clinical review.</p>
+          <p>Explore clinical scenarios across the six Saudi Model of Care pillars. The live directory contains only topics meeting the current authoring standard; all other topics remain in Draft for correction and review.</p>
         </div>
         <div className="directory-governance-note">
           <ShieldCheck size={19} strokeWidth={1.5} aria-hidden="true" />
@@ -24,7 +24,7 @@ export default async function DiseaseDirectoryPage({ searchParams }: { searchPar
 
       <DiseaseManagementNavigation active="directory" />
 
-      <DiseaseDirectoryClient diseases={result.diseases} state={result.state} rejectedCount={result.rejectedCount} initialQuery={initialQuery} />
+      <DiseaseDirectoryClient diseases={result.diseases} state={result.state} rejectedCount={result.rejectedCount} withheldCount={result.withheldCount} initialQuery={initialQuery} />
     </main>
   );
 }

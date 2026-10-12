@@ -4,6 +4,7 @@ import { getCurrentViewer } from "@/lib/supabase/session";
 import { isSupabaseConfigured } from "@/lib/supabase/config";
 import { createSupabaseDataClient } from "@/lib/supabase/data-client";
 import { DiseaseDetailSchema } from "@/lib/validations/disease";
+import { isClinicalDirectoryEligible } from "@/lib/data/clinical-directory-eligibility";
 
 export type DiseaseDraft = {
   id: string;
@@ -50,6 +51,7 @@ export async function getDiseaseDrafts(): Promise<{
       if (error || !data) return { drafts: [], state: "unavailable", isAdmin };
 
       for (const item of data) {
+        if (item.is_shared_reference && isClinicalDirectoryEligible(item.id)) continue;
         const related = item.guideline_versions as unknown as Array<{
           id: string;
           version: string;

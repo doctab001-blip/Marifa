@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
 import { Baby, CalendarCheck, FileSearch, HeartHandshake, HeartPulse, LayoutGrid, List, Search, ShieldCheck, Siren, X } from "lucide-react";
 import { DiseaseCard } from "@/components/diseases/DiseaseCard";
 import type { DiseaseDirectoryResult, DiseaseGuidelineSummary } from "@/lib/data/disease-guidelines";
@@ -23,11 +24,13 @@ export function DiseaseDirectoryClient({
   diseases,
   state,
   rejectedCount = 0,
+  withheldCount = 0,
   initialQuery = "",
 }: {
   diseases: DiseaseGuidelineSummary[];
   state: DiseaseDirectoryResult["state"];
   rejectedCount?: number;
+  withheldCount?: number;
   initialQuery?: string;
 }) {
   const [view, setView] = useState<"grid" | "list">("grid");
@@ -92,7 +95,7 @@ export function DiseaseDirectoryClient({
 
       <section className="directory-results" aria-labelledby="directory-results-title" aria-live="polite">
         <div className="directory-section-heading">
-          <div><p className="disease-kicker">{activePillar === "all" ? "All care pillars" : activePillar}</p><h2 id="directory-results-title">Clinical guidelines and review candidates</h2></div>
+          <div><p className="disease-kicker">{activePillar === "all" ? "All care pillars" : activePillar}</p><h2 id="directory-results-title">Published clinical topics</h2></div>
           <div className="directory-result-tools">
             <p role="status">{filteredDiseases.length} {filteredDiseases.length === 1 ? "guideline" : "guidelines"}</p>
             <div className="directory-view-toggle" role="group" aria-label="Directory view">
@@ -114,6 +117,7 @@ export function DiseaseDirectoryClient({
           </div>
         )}
         {rejectedCount > 0 && <p className="directory-validation-note" role="status">{rejectedCount} published {rejectedCount === 1 ? "record was" : "records were"} hidden because validation failed.</p>}
+        {withheldCount > 0 && <p className="directory-validation-note" role="status">{withheldCount} {withheldCount === 1 ? "topic is" : "topics are"} below the current authoring standard and available in <Link href="/dashboard/diseases/drafts">Draft</Link>.</p>}
       </section>
     </>
   );
