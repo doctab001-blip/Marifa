@@ -262,7 +262,7 @@ a.card:hover, .disease-card:hover, .care-pillar-card:hover { border-color: rgb(3
 }
 @media (max-width: 720px) {
   .topbar { top: 8px; margin: 0 10px; border-radius: 22px; padding: 8px; }
-  .top-actions-group { display: none; }
+  .top-actions-group > :not(.theme-toggle) { display: none; }
   .page { padding-inline: 14px; }
 }
 

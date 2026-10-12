@@ -1,0 +1,688 @@
+{
+ "id": "f92e26f9-7a0e-41fb-9734-83d30117933c",
+ "title": "Acute Pulmonary Embolism",
+ "specialty": "Emergency Medicine, Internal Medicine and Pulmonology",
+ "authority": "Other",
+ "status": "under_review",
+ "version": "authoring-standard-2026-10-12-v1",
+ "lastReviewed": "2026-10-13",
+ "pillar": "Urgent Care",
+ "clinicalReviewStatus": "pending",
+ "evidenceAudit": {
+  "checkedOn": "2026-10-13",
+  "status": "incomplete",
+  "scope": "Adults with suspected or confirmed acute pulmonary embolism: clinical probability, diagnostic pathway, interim and definitive anticoagulation, haemodynamically unstable PE, treatment setting and duration. Verified against NICE NG158, the Saudi MoH VTE guideline and FDA drug labels; ESC and AHA/ACC severity stratification not covered.",
+  "findings": [
+   "NICE NG158 recommendation text and tables were read in full on 13 Oct 2026; doses and contraindications were read from US FDA labels via openFDA on the same date; the Saudi VTE guideline was read from the PMC full text.",
+   "The Saudi VTE guideline addresses only the treatment setting (outpatient versus inpatient); it does not address diagnosis, drug choice or thrombolysis.",
+   "Normal values are typical adult ranges; laboratories differ."
+  ],
+  "unverifiedSections": [
+   "SFDA registration and formulary not checked (SFDA register could not be reached from the authoring environment)",
+   "ESC 2019 and AHA/ACC PE guidelines could not be opened, so severity classification (including definitions of haemodynamic instability, intermediate-risk PE and sPESI thresholds) is not given",
+   "PERC criteria items and the age-adjusted D-dimer formula are not listed in NICE NG158 and are not reproduced",
+   "Doses of vitamin K antagonists, edoxaban and dabigatran not reproduced",
+   "Presenting signs of PE beyond those used in the Wells score are not listed in the cited sources",
+   "FDA labels are US labels; Saudi product information may differ"
+  ],
+  "medscapeStatus": "unavailable",
+  "originalVersionIds": [
+   "f92e26f9-7a0e-41fb-9734-83d30117933c"
+  ]
+ },
+ "pathophysiology": {
+  "summary": "Pulmonary embolism (PE) is one of the two forms of venous thromboembolism (VTE), the other being deep vein thrombosis (DVT). The practical task is to estimate clinical probability, confirm or exclude PE quickly without delaying anticoagulation, and separate haemodynamically unstable PE, which needs heparin infusion and consideration of thrombolysis, from stable PE.",
+  "keyMechanisms": [
+   "VTE comprises DVT and PE and affects approximately 100 per 100,000 people per year, an estimated 25,000 people annually in Saudi Arabia (Saudi VTE guideline, Introduction).",
+   "Major risk factors for VTE are age, surgery, hospitalisation, immobility, trauma, cancer, pregnancy and puerperium, hormone use, obesity, and inherited and acquired hypercoagulable states (Saudi VTE guideline, Introduction).",
+   "Provoked PE follows a recent (within 3 months) transient major risk factor such as surgery, trauma, significant immobility, pregnancy or puerperium, or hormonal therapy; unprovoked PE has no such factor (NICE NG158, Terms used).",
+   "Concurrent DVT matters: PE and proximal DVT are treated with the same anticoagulation, and a leg vein ultrasound is considered if DVT is suspected and CT or V/Q scanning does not show PE (NICE NG158 Recs 1.1.20 and 1.3.5).",
+   "Haemodynamic instability changes treatment: continuous unfractionated heparin infusion and consideration of systemic thrombolysis (NICE NG158 Recs 1.3.12 and 1.6.2)."
+  ],
+  "references": [
+   {
+    "title": "The Saudi Clinical Practice Guideline for the treatment of venous thromboembolism: Outpatient versus inpatient management (Saudi Ministry of Health, Saudi Association for Venous Thromboembolism and Saudi Scientific Hematology Society)",
+    "edition": "Saudi Med J 2015;36(8):1004-1010; the Ministry of Health guideline was issued in 2014, Introduction",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4549580/"
+   },
+   {
+    "title": "NICE NG158: Venous thromboembolic diseases: diagnosis, management and thrombophilia testing",
+    "edition": "NICE guideline, updated 2 August 2023, Recommendations 1.1.20, 1.3.5, 1.3.12 and 1.6.2; Terms used in this guideline",
+    "url": "https://www.nice.org.uk/guidance/ng158"
+   }
+  ]
+ },
+ "presentation": {
+  "symptoms": [
+   "Chest pain, shortness of breath or coughing up blood (NICE NG158 Rec. 1.1.15).",
+   "Signs or symptoms of DVT may coexist: a swollen or painful leg (NICE NG158 Recs 1.1.1 and 1.1.22).",
+   "Neither source lists further presenting symptoms of PE."
+  ],
+  "physicalSigns": [
+   "Heart rate over 100 per minute scores 1.5 on the PE Wells score (NICE NG158 Table 2).",
+   "Clinical signs of DVT (minimum leg swelling and pain on palpation of the deep veins) score 3 (NICE NG158 Table 2).",
+   "Haemoptysis scores 1 (NICE NG158 Table 2).",
+   "Haemodynamic status determines treatment: instability needs UFH infusion and consideration of thrombolysis (NICE NG158 Recs 1.3.12 and 1.6.2). The source does not define the blood pressure or shock threshold."
+  ],
+  "redFlags": [
+   "PE with haemodynamic instability: continuous UFH infusion and consider systemic thrombolytic therapy (NICE NG158 Recs 1.3.12 and 1.6.2).",
+   "PE Wells score above 4 (PE likely): CTPA immediately if possible, otherwise interim therapeutic anticoagulation (NICE NG158 Rec. 1.1.18).",
+   "Chest pain with haemodynamic instability needs emergency referral and a search for coronary and non-coronary causes including PE (NICE CG95 Recs 1.2.1.3 and 1.2.2.8).",
+   "PE that occurs during anticoagulation treatment: check adherence and other hypercoagulability before changing treatment or considering an IVC filter (NICE NG158 Recs 1.3.21 and 1.7.3)."
+  ],
+  "precipitants": [
+   "Immobilisation for more than 3 days or surgery in the previous 4 weeks (NICE NG158 Table 2).",
+   "Previous DVT or PE (NICE NG158 Table 2).",
+   "Malignancy on treatment, treated in the last 6 months, or palliative (NICE NG158 Table 2).",
+   "Age, hospitalisation, trauma, pregnancy and puerperium, hormone use, obesity, and inherited and acquired hypercoagulable states (Saudi VTE guideline, Introduction).",
+   "Combined oral contraceptive pill or hormone replacement therapy counts as a provoking factor (NICE NG158, Terms used)."
+  ]
+ },
+ "differentials": [
+  {
+   "condition": "Acute coronary syndrome",
+   "distinguishingFeatures": "Chest pain with ischaemic ECG change and a rise and fall of troponin; troponin can also rise in PE, so reassess for PE when troponin is raised (NICE CG95 Rec. 1.2.6.2)."
+  },
+  {
+   "condition": "Pneumonia or pneumothorax",
+   "distinguishingFeatures": "Chest X-ray, offered to everyone with suspected PE, helps exclude other causes (NICE NG158 Rec. 1.1.15; NICE CG95 Rec. 1.2.6.8)."
+  },
+  {
+   "condition": "Aortic dissection",
+   "distinguishingFeatures": "Another life-threatening cause of chest pain to exclude; early CT is used for this (NICE CG95 Recs 1.2.2.8 and 1.2.6.7). Neither source lists distinguishing symptoms."
+  },
+  {
+   "condition": "Deep vein thrombosis without PE",
+   "distinguishingFeatures": "Leg swelling and pain; the 2-level DVT Wells score of 2 points or more means DVT likely, 1 point or less unlikely (NICE NG158 Table 1). If PE is excluded but DVT is suspected, consider proximal leg vein ultrasound (Rec. 1.1.20)."
+  },
+  {
+   "condition": "Another diagnosis at least as likely as PE",
+   "distinguishingFeatures": "On the PE Wells score, 'alternative diagnosis less likely than PE' scores 3; if an alternative is at least as likely, those points are not scored (NICE NG158 Table 2). Think about alternatives after a negative D-dimer or imaging (Recs 1.1.20–1.1.21)."
+  }
+ ],
+ "diagnosticCriteria": [
+  {
+   "criterion": "PE Wells: clinical signs and symptoms of DVT (NICE NG158 Table 2)",
+   "threshold": "3 points (minimum leg swelling and pain with palpation of the deep veins)"
+  },
+  {
+   "criterion": "PE Wells: alternative diagnosis less likely than PE (NICE NG158 Table 2)",
+   "threshold": "3 points"
+  },
+  {
+   "criterion": "PE Wells: heart rate (NICE NG158 Table 2)",
+   "threshold": "More than 100 beats per minute = 1.5 points"
+  },
+  {
+   "criterion": "PE Wells: immobilisation or surgery (NICE NG158 Table 2)",
+   "threshold": "Immobilisation for more than 3 days or surgery in the previous 4 weeks = 1.5 points"
+  },
+  {
+   "criterion": "PE Wells: previous DVT or PE (NICE NG158 Table 2)",
+   "threshold": "1.5 points"
+  },
+  {
+   "criterion": "PE Wells: haemoptysis (NICE NG158 Table 2)",
+   "threshold": "1 point"
+  },
+  {
+   "criterion": "PE Wells: malignancy (NICE NG158 Table 2)",
+   "threshold": "On treatment, treated in the last 6 months, or palliative = 1 point"
+  },
+  {
+   "criterion": "PE Wells: clinical probability (NICE NG158 Table 2)",
+   "threshold": "PE likely: more than 4 points. PE unlikely: 4 points or less"
+  },
+  {
+   "criterion": "Imaging alternative to CTPA (NICE NG158 Rec. 1.1.18)",
+   "threshold": "Contrast allergy, estimated creatinine clearance below 30 mL/min, or high risk from irradiation: assess for V/Q SPECT, or V/Q planar scan if SPECT is unavailable"
+  },
+  {
+   "criterion": "D-dimer timing (NICE NG158 Rec. 1.1.21)",
+   "threshold": "Result available within 4 hours if possible; if not, give interim therapeutic anticoagulation while waiting"
+  },
+  {
+   "criterion": "Provoked versus unprovoked PE (NICE NG158, Terms used)",
+   "threshold": "Provoked: recent (within 3 months) transient major risk factor or hormonal therapy. Unprovoked: none of these"
+  },
+  {
+   "criterion": "Extremes of body weight (NICE NG158 Rec. 1.3.11)",
+   "threshold": "Less than 50 kg or more than 120 kg: consider treatment with regular monitoring of therapeutic levels"
+  },
+  {
+   "criterion": "Renal impairment bands (NICE NG158 Recs 1.3.13–1.3.14)",
+   "threshold": "Estimated creatinine clearance 15 to 50 mL/min = renal impairment; below 15 mL/min = established renal failure"
+  }
+ ],
+ "investigations": {
+  "ruleIn": [
+   {
+    "tier": "firstLineImaging",
+    "testName": "CT pulmonary angiogram (CTPA)",
+    "modalityTarget": "CT, immediately if possible when PE is likely",
+    "targetCondition": "Pulmonary embolism",
+    "expectedFinding": "Filling defect in the pulmonary arteries confirms PE.",
+    "clinicalRationale": "Offer immediately if possible when the PE Wells score is above 4, or after a positive D-dimer when PE is unlikely. If CTPA cannot be done immediately, give interim therapeutic anticoagulation (NICE NG158 Recs 1.1.18 and 1.1.21).",
+    "normalValue": "No filling defect in the pulmonary arteries",
+    "references": [
+     {
+      "title": "NICE NG158: Venous thromboembolic diseases: diagnosis, management and thrombophilia testing",
+      "edition": "NICE guideline, updated 2 August 2023, Recommendations 1.1.18 and 1.1.21",
+      "url": "https://www.nice.org.uk/guidance/ng158"
+     }
+    ]
+   },
+   {
+    "tier": "advancedImaging",
+    "testName": "Ventilation/perfusion SPECT, or planar V/Q scan",
+    "modalityTarget": "Nuclear medicine, when CTPA is unsuitable",
+    "targetCondition": "Pulmonary embolism",
+    "expectedFinding": "A positive scan identifies PE.",
+    "clinicalRationale": "Assess suitability as an alternative to CTPA in people with contrast allergy, severe renal impairment (estimated creatinine clearance below 30 mL/min) or a high risk from irradiation; use planar V/Q if SPECT is not available (NICE NG158 Rec. 1.1.18).",
+    "normalValue": "No perfusion defect indicating PE",
+    "references": [
+     {
+      "title": "NICE NG158: Venous thromboembolic diseases: diagnosis, management and thrombophilia testing",
+      "edition": "NICE guideline, updated 2 August 2023, Recommendation 1.1.18",
+      "url": "https://www.nice.org.uk/guidance/ng158"
+     }
+    ]
+   },
+   {
+    "tier": "firstLineImaging",
+    "testName": "Chest X-ray",
+    "modalityTarget": "Portable or department",
+    "targetCondition": "Alternative causes of chest symptoms",
+    "expectedFinding": "May show pneumonia, pneumothorax or other causes; does not confirm PE.",
+    "clinicalRationale": "Offer to all people with signs or symptoms of PE, such as chest pain, shortness of breath or coughing up blood, to exclude other causes (NICE NG158 Rec. 1.1.15).",
+    "normalValue": "Normal heart size and lung fields; no consolidation or pneumothorax",
+    "references": [
+     {
+      "title": "NICE NG158: Venous thromboembolic diseases: diagnosis, management and thrombophilia testing",
+      "edition": "NICE guideline, updated 2 August 2023, Recommendation 1.1.15",
+      "url": "https://www.nice.org.uk/guidance/ng158"
+     }
+    ]
+   },
+   {
+    "tier": "laboratory",
+    "testName": "Baseline bloods: full blood count, renal and hepatic function, PT and APTT",
+    "modalityTarget": "Venous blood before or at the start of anticoagulation",
+    "targetCondition": "Anticoagulation safety and dose choice",
+    "expectedFinding": "Abnormal renal function (creatinine clearance 15 to 50 mL/min, or below 15 mL/min) changes the choice of anticoagulant; coagulation and platelet abnormalities flag bleeding risk.",
+    "clinicalRationale": "Take at the start of interim or definitive anticoagulation. Do not wait for the results before starting treatment; review and act on them within 24 hours (NICE NG158 Recs 1.3.4 and 1.3.6).",
+    "normalValue": "Local laboratory adult reference ranges apply (not defined in the source)",
+    "references": [
+     {
+      "title": "NICE NG158: Venous thromboembolic diseases: diagnosis, management and thrombophilia testing",
+      "edition": "NICE guideline, updated 2 August 2023, Recommendations 1.3.4, 1.3.6 and 1.3.13–1.3.14",
+      "url": "https://www.nice.org.uk/guidance/ng158"
+     }
+    ]
+   },
+   {
+    "tier": "specializedAdjunctive",
+    "testName": "Proximal leg vein ultrasound",
+    "modalityTarget": "Ultrasound, if DVT is also suspected",
+    "targetCondition": "Coexisting proximal DVT",
+    "expectedFinding": "A positive scan confirms proximal DVT, which is treated with the same anticoagulation.",
+    "clinicalRationale": "Consider if PE is not identified on imaging but DVT is suspected (NICE NG158 Rec. 1.1.20). Offer anticoagulation for a positive scan (Rec. 1.1.5).",
+    "normalValue": "Compressible proximal veins with no thrombus",
+    "references": [
+     {
+      "title": "NICE NG158: Venous thromboembolic diseases: diagnosis, management and thrombophilia testing",
+      "edition": "NICE guideline, updated 2 August 2023, Recommendations 1.1.5 and 1.1.20",
+      "url": "https://www.nice.org.uk/guidance/ng158"
+     }
+    ]
+   },
+   {
+    "tier": "specializedAdjunctive",
+    "testName": "12-lead ECG",
+    "modalityTarget": "Bedside",
+    "targetCondition": "Overall clinical impression and alternative diagnoses",
+    "expectedFinding": "NICE NG158 does not list ECG findings of PE; the ECG is used with the history, examination and chest X-ray to form the overall impression and to look for acute coronary syndrome.",
+    "clinicalRationale": "Initial investigations such as ECG and chest X-ray inform the clinical suspicion and whether the PERC rule can be used (NICE NG158 Rec. 1.1.16). For chest pain, record an ECG as soon as possible (NICE CG95 Rec. 1.2.2.1).",
+    "normalValue": "Sinus rhythm with no ST-segment or T-wave change",
+    "references": [
+     {
+      "title": "NICE NG158: Venous thromboembolic diseases: diagnosis, management and thrombophilia testing",
+      "edition": "NICE guideline, updated 2 August 2023, Recommendation 1.1.16",
+      "url": "https://www.nice.org.uk/guidance/ng158"
+     },
+     {
+      "title": "NICE CG95: Recent-onset chest pain of suspected cardiac origin: assessment and diagnosis",
+      "edition": "NICE guideline, updated 30 November 2016, Recommendation 1.2.2.1",
+      "url": "https://www.nice.org.uk/guidance/cg95"
+     }
+    ]
+   }
+  ],
+  "ruleOut": [
+   {
+    "tier": "laboratory",
+    "testName": "D-dimer (only if PE unlikely, Wells 4 or less)",
+    "modalityTarget": "Venous blood or fully quantitative point-of-care test",
+    "targetCondition": "Pulmonary embolism",
+    "expectedFinding": "Positive result: proceed to CTPA or V/Q. Negative result: stop interim anticoagulation and think of alternative diagnoses.",
+    "clinicalRationale": "Result available within 4 hours if possible. Consider a point-of-care test if laboratory facilities are not immediately available, and choose a fully quantitative test. Consider an age-adjusted threshold over 50 years (NICE NG158 Recs 1.1.12–1.1.14 and 1.1.21).",
+    "normalValue": "Below the assay threshold (age-adjusted threshold may be used over 50 years; the source gives no numeric cut-off)",
+    "references": [
+     {
+      "title": "NICE NG158: Venous thromboembolic diseases: diagnosis, management and thrombophilia testing",
+      "edition": "NICE guideline, updated 2 August 2023, Recommendations 1.1.12–1.1.14 and 1.1.21",
+      "url": "https://www.nice.org.uk/guidance/ng158"
+     }
+    ]
+   },
+   {
+    "tier": "specializedAdjunctive",
+    "testName": "Pulmonary embolism rule-out criteria (PERC)",
+    "modalityTarget": "Bedside clinical rule",
+    "targetCondition": "Pulmonary embolism when clinical suspicion is low",
+    "expectedFinding": "If suspicion is low and other diagnoses are feasible, PERC can help decide whether further investigation for PE is needed.",
+    "clinicalRationale": "Consider PERC only when clinical suspicion is low after history, examination and initial investigations. It has not been validated in people with COVID-19 (NICE NG158 Rec. 1.1.16). The individual PERC items are not listed in NG158 and are not reproduced here.",
+    "normalValue": "All PERC items negative (items not listed in the source)",
+    "references": [
+     {
+      "title": "NICE NG158: Venous thromboembolic diseases: diagnosis, management and thrombophilia testing",
+      "edition": "NICE guideline, updated 2 August 2023, Recommendation 1.1.16",
+      "url": "https://www.nice.org.uk/guidance/ng158"
+     }
+    ]
+   },
+   {
+    "tier": "firstLineImaging",
+    "testName": "CTPA, V/Q SPECT or planar V/Q scan negative for PE",
+    "modalityTarget": "Imaging",
+    "targetCondition": "Pulmonary embolism",
+    "expectedFinding": "No PE identified: if DVT is not suspected, stop interim anticoagulation (unless it is long-term secondary prevention), think of alternative diagnoses, and tell the person PE is not likely.",
+    "clinicalRationale": "Follow NICE NG158 Rec. 1.1.20 after a negative scan.",
+    "normalValue": "No filling defect or perfusion mismatch",
+    "references": [
+     {
+      "title": "NICE NG158: Venous thromboembolic diseases: diagnosis, management and thrombophilia testing",
+      "edition": "NICE guideline, updated 2 August 2023, Recommendation 1.1.20",
+      "url": "https://www.nice.org.uk/guidance/ng158"
+     }
+    ]
+   }
+  ]
+ },
+ "clinicalManagement": [
+  {
+   "id": "assess",
+   "title": "Initial assessment and clinical probability",
+   "timeframe": "Immediately",
+   "actions": [
+    "Take the medical history, examine, and offer a chest X-ray to exclude other causes in anyone with chest pain, shortness of breath or coughing up blood (NICE NG158 Rec. 1.1.15).",
+    "If suspicion of PE is low and other diagnoses are feasible, consider the PERC rule to decide whether any further investigation is needed (NICE NG158 Rec. 1.1.16).",
+    "If PE is suspected, score the 2-level PE Wells score (NICE NG158 Rec. 1.1.17).",
+    "If signs or symptoms of both DVT and PE are present, base the choice of investigation on clinical judgement (NICE NG158 Rec. 1.1.22).",
+    "If haemodynamically unstable, go to the unstable branch below without waiting for imaging."
+   ]
+  },
+  {
+   "id": "diagnose",
+   "title": "Diagnostic pathway by Wells score",
+   "timeframe": "Same day; D-dimer result within 4 hours if possible",
+   "actions": [
+    "Choose the pathway from the PE Wells score. Interim therapeutic anticoagulation covers any delay (NICE NG158 Recs 1.1.18 and 1.1.21)."
+   ],
+   "branches": [
+    {
+     "condition": "PE likely (Wells score above 4)",
+     "actions": [
+      "Offer CTPA immediately if possible (NICE NG158 Rec. 1.1.18).",
+      "If CTPA is unsuitable (contrast allergy, estimated creatinine clearance below 30 mL/min, or high irradiation risk), assess V/Q SPECT, or planar V/Q if SPECT is unavailable (NICE NG158 Rec. 1.1.18).",
+      "If no imaging can be done immediately, give interim therapeutic anticoagulation (NICE NG158 Rec. 1.1.18)."
+     ]
+    },
+    {
+     "condition": "PE unlikely (Wells score 4 or less)",
+     "actions": [
+      "Offer D-dimer with the result within 4 hours if possible; if not available in 4 hours, give interim therapeutic anticoagulation while waiting (NICE NG158 Rec. 1.1.21).",
+      "D-dimer positive: follow the PE likely pathway (CTPA or V/Q) (NICE NG158 Rec. 1.1.21).",
+      "D-dimer negative: stop interim anticoagulation, think of alternative diagnoses, and tell the person PE is not likely, discussing symptoms and when to seek help (NICE NG158 Rec. 1.1.21)."
+     ]
+    },
+    {
+     "condition": "Imaging negative for PE",
+     "actions": [
+      "Consider proximal leg vein ultrasound if DVT is suspected. If DVT is not suspected, stop interim anticoagulation and think about alternative diagnoses (NICE NG158 Rec. 1.1.20)."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "interim",
+   "title": "Interim therapeutic anticoagulation",
+   "timeframe": "Start without waiting for results",
+   "actions": [
+    "Choose an interim anticoagulant that can be continued if PE is confirmed (NICE NG158 Rec. 1.3.3).",
+    "Take baseline FBC, renal and hepatic function, PT and APTT; do not wait for results before starting; review and act on them within 24 hours (NICE NG158 Rec. 1.3.4).",
+    "Direct oral anticoagulants and some LMWHs were off label for suspected DVT or PE in March 2020 (NICE NG158, note to Rec. 1.3.3)."
+   ]
+  },
+  {
+   "id": "treat-stable",
+   "title": "Confirmed PE: haemodynamically stable",
+   "timeframe": "From confirmation",
+   "actions": [
+    "Offer anticoagulation for at least 3 months (NICE NG158 Rec. 1.3.5).",
+    "Offer apixaban or rivaroxaban. If neither is suitable: LMWH for at least 5 days followed by dabigatran or edoxaban, or LMWH concurrently with a vitamin K antagonist for at least 5 days or until INR is at least 2.0 on 2 consecutive readings, then the VKA alone (NICE NG158 Rec. 1.3.8).",
+    "Do not routinely give UFH with a VKA unless there is renal impairment, established renal failure or increased bleeding risk (NICE NG158 Rec. 1.3.9).",
+    "Do not offer systemic thrombolysis to haemodynamically stable people, with or without right ventricular dysfunction (NICE NG158 Rec. 1.6.3).",
+    "Consider outpatient treatment of low-risk PE using a validated risk stratification tool (NICE NG158 Rec. 1.2.1). The Saudi panel suggests early over late discharge for low-risk acute PE and advocates a validated tool such as the Pulmonary Embolism Severity Index (Saudi VTE guideline, Question 2 and Discussion)."
+   ],
+   "branches": [
+    {
+     "condition": "Renal impairment (estimated creatinine clearance 15 to 50 mL/min)",
+     "actions": [
+      "Offer apixaban, rivaroxaban, LMWH for at least 5 days then edoxaban (or dabigatran if clearance is 30 mL/min or above), or LMWH or UFH with a VKA (NICE NG158 Rec. 1.3.13)."
+     ]
+    },
+    {
+     "condition": "Established renal failure (estimated creatinine clearance below 15 mL/min)",
+     "actions": [
+      "Offer LMWH, UFH, or LMWH or UFH concurrently with a VKA followed by the VKA alone (NICE NG158 Rec. 1.3.14)."
+     ]
+    },
+    {
+     "condition": "Active cancer",
+     "actions": [
+      "Anticoagulate for 3 to 6 months and review; consider a DOAC, otherwise LMWH alone or LMWH with a VKA (NICE NG158 Recs 1.3.15–1.3.18)."
+     ]
+    },
+    {
+     "condition": "Triple-positive antiphospholipid syndrome",
+     "actions": [
+      "LMWH concurrently with a VKA for at least 5 days or until INR is at least 2.0 on 2 consecutive readings, then the VKA alone (NICE NG158 Rec. 1.3.20)."
+     ]
+    },
+    {
+     "condition": "Weight below 50 kg or above 120 kg",
+     "actions": [
+      "Consider regular monitoring of therapeutic levels and follow the product information and local protocol (NICE NG158 Rec. 1.3.11)."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "treat-unstable",
+   "title": "Confirmed PE with haemodynamic instability",
+   "timeframe": "Immediately",
+   "actions": [
+    "Offer continuous UFH infusion and consider systemic pharmacological thrombolytic therapy (NICE NG158 Recs 1.3.12 and 1.6.2).",
+    "If anticoagulation is contraindicated, consider a mechanical intervention (NICE NG158 Rec. 1.1.19). Consider an IVC filter when anticoagulation is contraindicated, and remove it once anticoagulation is established (NICE NG158 Rec. 1.7.2).",
+    "If PE occurs despite anticoagulation, check adherence, address other sources of hypercoagulability, then increase the dose or change to an anticoagulant with a different mode of action before considering an IVC filter (NICE NG158 Recs 1.3.21 and 1.7.3)."
+   ]
+  },
+  {
+   "id": "duration",
+   "title": "Duration and review",
+   "timeframe": "At 3 months (3 to 6 months with active cancer)",
+   "actions": [
+    "Discuss benefits and risks of continuing, stopping or changing the anticoagulant (NICE NG158 Rec. 1.4.1).",
+    "Provoked PE: consider stopping at 3 months if the provoking factor has gone and the course was uncomplicated, giving written advice and contact details (NICE NG158 Rec. 1.4.2).",
+    "Unprovoked PE: consider continuing beyond 3 months, balancing recurrence against bleeding risk; HAS-BLED may be used, and stopping should be discussed if the score is 4 or more and cannot be modified (NICE NG158 Recs 1.4.3 and 1.4.6).",
+    "If the person declines anticoagulation, consider aspirin 75 mg or 150 mg daily (off label in March 2020) (NICE NG158 Rec. 1.4.11).",
+    "Review general health, recurrence risk, bleeding risk and preferences at least once a year (NICE NG158 Rec. 1.4.12).",
+    "For unprovoked PE, review history, bloods and examination for cancer; do not do further cancer investigations without relevant symptoms or signs (NICE NG158 Recs 1.8.1–1.8.2). Do not test for thrombophilia after provoked PE (NICE NG158 Rec. 1.9.2)."
+   ]
+  }
+ ],
+ "medicationPlan": {
+  "status": "source-verified",
+  "regimens": [
+   {
+    "indication": "Confirmed PE, stable, first-line",
+    "patientGroup": "Adults with confirmed PE without haemodynamic instability",
+    "genericName": "Apixaban",
+    "dose": "10 mg twice daily for 7 days, then 5 mg twice daily; after at least 6 months, 2.5 mg twice daily to reduce recurrence",
+    "route": "Oral",
+    "frequency": "Twice daily",
+    "duration": "At least 3 months (NICE NG158 Rec. 1.3.5); extended treatment per Recs 1.4.1–1.4.8",
+    "adjustments": [
+     "NICE advises following the cautions and dose adjustment in the product information for renal impairment (clearance 15 to 50 mL/min) and for weight below 50 kg or above 120 kg (NICE NG158 Recs 1.3.11 and 1.3.13)",
+     "VTE-treatment dose adjustments are not stated in the label sections read"
+    ],
+    "monitoring": [
+     "Baseline FBC, renal and hepatic function, PT and APTT; review within 24 hours (NICE NG158 Rec. 1.3.4)",
+     "Annual review of bleeding risk and treatment (NICE NG158 Rec. 1.4.12)",
+     "Contains lactose from cow's milk (NICE NG158 Rec. 1.5.3)"
+    ],
+    "contraindications": [
+     "Active pathological bleeding",
+     "Severe hypersensitivity reaction to apixaban (FDA label section 4)"
+    ],
+    "sourceTitle": "FDA label: Apixaban tablets (set ID 095a08ac-cf0e-497e-a682-ddef38d6b29c)",
+    "sourceUrl": "https://api.fda.gov/drug/label.json?search=set_id:095a08ac-cf0e-497e-a682-ddef38d6b29c",
+    "sourceEdition": "FDA label version 7, effective 15 June 2021, sections 2.1 and 4; use per NICE NG158 Rec. 1.3.8"
+   },
+   {
+    "indication": "Confirmed PE, stable, first-line alternative",
+    "patientGroup": "Adults with confirmed PE without haemodynamic instability",
+    "genericName": "Rivaroxaban",
+    "dose": "15 mg twice daily with food for 21 days, then 20 mg once daily with food; 10 mg once daily after at least 6 months of standard treatment to reduce recurrence",
+    "route": "Oral",
+    "frequency": "Twice daily for 21 days, then once daily",
+    "duration": "At least 3 months (NICE NG158 Rec. 1.3.5)",
+    "adjustments": [
+     "Creatinine clearance below 15 mL/min: avoid use (label Table 1)",
+     "Renal impairment 15 to 50 mL/min: NICE advises following the product information cautions (NICE NG158 Rec. 1.3.13)"
+    ],
+    "monitoring": [
+     "Baseline FBC, renal and hepatic function, PT and APTT; review within 24 hours (NICE NG158 Rec. 1.3.4)",
+     "Contains lactose from cow's milk (NICE NG158 Rec. 1.5.3)"
+    ],
+    "contraindications": [
+     "Active pathological bleeding",
+     "Severe hypersensitivity reaction to rivaroxaban (FDA label section 4)"
+    ],
+    "sourceTitle": "FDA label: Xarelto (rivaroxaban) (set ID 10db92f9-2300-4a80-836b-673e1ae91610)",
+    "sourceUrl": "https://api.fda.gov/drug/label.json?search=set_id:10db92f9-2300-4a80-836b-673e1ae91610",
+    "sourceEdition": "FDA label version 65, effective 10 September 2026, Table 1 and section 4; use per NICE NG158 Rec. 1.3.8"
+   },
+   {
+    "indication": "Confirmed PE with haemodynamic instability, or renal failure",
+    "patientGroup": "Adults with unstable PE or estimated creatinine clearance below 15 mL/min",
+    "genericName": "Unfractionated heparin",
+    "dose": "Label (full-dose therapeutic anticoagulation): initial 5,000 units intravenously, then continuous infusion of 20,000 to 40,000 units per 24 hours; adjust to laboratory monitoring (label doses are based on a 68 kg patient)",
+    "route": "Intravenous infusion",
+    "frequency": "Continuous",
+    "duration": "Until transition to long-term anticoagulation; NICE advises continuous infusion in unstable PE (NICE NG158 Rec. 1.3.12)",
+    "adjustments": [
+     "Adjust the dose to laboratory monitoring (label)",
+     "Not routinely combined with a VKA unless renal impairment, established renal failure or increased bleeding risk (NICE NG158 Rec. 1.3.9)"
+    ],
+    "monitoring": [
+     "Coagulation tests at appropriate intervals during full-dose therapy (FDA label section 4)"
+    ],
+    "contraindications": [
+     "History of heparin-induced thrombocytopenia (with or without thrombosis)",
+     "Known hypersensitivity to heparin or pork products",
+     "Full-dose therapy when suitable coagulation tests cannot be done at appropriate intervals",
+     "Uncontrolled active bleeding, except when due to disseminated intravascular coagulation (FDA label section 4)"
+    ],
+    "sourceTitle": "FDA label: Heparin sodium injection (set ID 02fb700d-a28c-4d45-b78d-382dc0d5986c)",
+    "sourceUrl": "https://api.fda.gov/drug/label.json?search=set_id:02fb700d-a28c-4d45-b78d-382dc0d5986c",
+    "sourceEdition": "FDA label version 12, effective 26 September 2025, sections 2 and 4; use per NICE NG158 Recs 1.3.12 and 1.3.14"
+   },
+   {
+    "indication": "Haemodynamically unstable PE: thrombolysis",
+    "patientGroup": "Adults with PE and haemodynamic instability",
+    "genericName": "Alteplase",
+    "dose": "100 mg intravenous infusion over 2 hours (label, acute massive PE)",
+    "route": "Intravenous infusion",
+    "frequency": "Single course",
+    "duration": "2 hours",
+    "adjustments": [
+     "Do not add other medications to infusions containing Activase (label section 2.5)",
+     "Not for haemodynamically stable PE (NICE NG158 Rec. 1.6.3)"
+    ],
+    "monitoring": [
+     "Bleeding; the label names bleeding risk as the main hazard"
+    ],
+    "contraindications": [
+     "Active internal bleeding",
+     "History of recent stroke",
+     "Recent (within 3 months) intracranial or intraspinal surgery or serious head trauma",
+     "Intracranial conditions that may increase bleeding risk",
+     "Bleeding diathesis",
+     "Current severe uncontrolled hypertension (FDA label section 4.2, acute MI or PE)"
+    ],
+    "sourceTitle": "FDA label: Activase (alteplase) (set ID c669f77c-fa48-478b-a14b-80b20a0139c2)",
+    "sourceUrl": "https://api.fda.gov/drug/label.json?search=set_id:c669f77c-fa48-478b-a14b-80b20a0139c2",
+    "sourceEdition": "FDA label version 15, effective 20 January 2026, sections 2 and 4.2; use per NICE NG158 Rec. 1.6.2"
+   },
+   {
+    "indication": "Confirmed PE, LMWH option",
+    "patientGroup": "Adults needing LMWH (for example neither apixaban nor rivaroxaban suitable)",
+    "genericName": "Enoxaparin",
+    "dose": "1 mg/kg every 12 hours, or 1.5 mg/kg once daily, for inpatient treatment of DVT with PE (label)",
+    "route": "Subcutaneous",
+    "frequency": "Every 12 hours or once daily",
+    "duration": "At least 5 days; with a VKA until INR is at least 2.0 on 2 consecutive readings (NICE NG158 Rec. 1.3.8)",
+    "adjustments": [
+     "Creatinine clearance below 30 mL/min: 1 mg/kg once daily for inpatient DVT treatment with or without PE (FDA label Table 1)",
+     "Some LMWHs were off label in severe renal impairment in March 2020 (NICE NG158 note to Rec. 1.3.13)"
+    ],
+    "monitoring": [
+     "Evaluate for a bleeding disorder before starting unless urgent (FDA label section 2.1)"
+    ],
+    "contraindications": [
+     "Active major bleeding",
+     "History of immune-mediated heparin-induced thrombocytopenia within 100 days or circulating antibodies",
+     "Hypersensitivity to enoxaparin, heparin or pork products (FDA label section 4)"
+    ],
+    "sourceTitle": "FDA label: Enoxaparin sodium injection (set ID 014c6710-f2c4-fd1e-e063-6394a90ae525)",
+    "sourceUrl": "https://api.fda.gov/drug/label.json?search=set_id:014c6710-f2c4-fd1e-e063-6394a90ae525",
+    "sourceEdition": "FDA label version 3, effective 21 June 2024, sections 2.2, 2.3 and 4; use per NICE NG158 Rec. 1.3.8"
+   },
+   {
+    "indication": "Secondary prevention when anticoagulation is declined",
+    "patientGroup": "Adults who decline continued anticoagulation after PE",
+    "genericName": "Aspirin",
+    "dose": "75 mg or 150 mg",
+    "route": "Oral",
+    "frequency": "Once daily",
+    "duration": "Not stated; review at least annually (NICE NG158 Rec. 1.4.12)",
+    "adjustments": [
+     "Off-label use for secondary prevention of DVT or PE (March 2020)"
+    ],
+    "monitoring": [
+     "Annual review of general health, recurrence risk, bleeding risk and preferences (NICE NG158 Rec. 1.4.12)"
+    ],
+    "contraindications": [
+     "Contraindications not stated in NICE NG158; follow the product information"
+    ],
+    "sourceTitle": "NICE NG158: Venous thromboembolic diseases: diagnosis, management and thrombophilia testing",
+    "sourceUrl": "https://www.nice.org.uk/guidance/ng158",
+    "sourceEdition": "NICE guideline, updated 2 August 2023, Recommendation 1.4.11"
+   }
+  ],
+  "note": "Doses for apixaban, rivaroxaban, heparin, alteplase and enoxaparin come from US FDA labels; NICE NG158 gives choices of agent and duration but not doses. Vitamin K antagonist, edoxaban and dabigatran doses are not reproduced. Check SFDA registration, local protocol and the hospital formulary."
+ },
+ "teaching": {
+  "learningObjectives": [
+   "Estimate clinical probability with the PE Wells score and choose D-dimer or imaging accordingly.",
+   "Start interim anticoagulation when imaging or D-dimer is delayed.",
+   "Treat haemodynamically unstable PE with UFH infusion and consider thrombolysis, and stable PE with a DOAC."
+  ],
+  "keyPoints": [
+   "PE Wells: above 4 = likely (CTPA immediately); 4 or less = unlikely (D-dimer within 4 hours).",
+   "Do not wait for baseline blood results before starting anticoagulation.",
+   "Apixaban or rivaroxaban first line for stable PE; at least 3 months of treatment.",
+   "No systemic thrombolysis in haemodynamically stable PE."
+  ],
+  "pitfalls": [
+   "Delaying anticoagulation while waiting for imaging when a scan or D-dimer cannot be done in time (NICE NG158 Recs 1.1.18 and 1.1.21).",
+   "Using D-dimer when the PE Wells score is above 4 (NICE NG158 Recs 1.1.18 and 1.1.21).",
+   "Using thrombolysis in a stable patient with right ventricular dysfunction (NICE NG158 Rec. 1.6.3).",
+   "Testing for thrombophilia after provoked PE or investigating for cancer without symptoms or signs (NICE NG158 Recs 1.8.2 and 1.9.2).",
+   "Forgetting that heparins are of animal origin and DOACs contain lactose from cow's milk when counselling people with religious or ethical concerns (NICE NG158 Rec. 1.5.3)."
+  ],
+  "references": [
+   {
+    "title": "NICE NG158: Venous thromboembolic diseases: diagnosis, management and thrombophilia testing",
+    "edition": "NICE guideline, updated 2 August 2023",
+    "url": "https://www.nice.org.uk/guidance/ng158",
+    "locator": "Recommendations 1.1.12–1.1.22, 1.2.1–1.2.4, 1.3.3–1.3.21, 1.4.1–1.4.12, 1.5.1–1.5.3, 1.6.2–1.6.3, 1.7.1–1.7.4, 1.8.1–1.8.2 and 1.9.2; Table 2"
+   },
+   {
+    "title": "The Saudi Clinical Practice Guideline for the treatment of venous thromboembolism: Outpatient versus inpatient management (Saudi Ministry of Health, Saudi Association for Venous Thromboembolism and Saudi Scientific Hematology Society)",
+    "edition": "Saudi Med J 2015;36(8):1004-1010; the Ministry of Health guideline was issued in 2014",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4549580/",
+    "locator": "Introduction; Results, Question 2; Discussion"
+   },
+   {
+    "title": "NICE CG95: Recent-onset chest pain of suspected cardiac origin: assessment and diagnosis",
+    "edition": "NICE guideline, updated 30 November 2016",
+    "url": "https://www.nice.org.uk/guidance/cg95",
+    "locator": "Recommendations 1.2.2.1, 1.2.2.8, 1.2.6.2 and 1.2.6.7"
+   }
+  ]
+ },
+ "nonClinicalManagement": {
+  "patientEducation": [
+   "Give verbal and written information on how to use anticoagulants, how long to take them, side effects, interactions with other medicines, foods and alcohol, monitoring, dental treatment, pregnancy, sports and travel, and when to seek help (NICE NG158 Rec. 1.5.1).",
+   "Give an anticoagulant alert card specific to the treatment and advise carrying it at all times (NICE NG158 Rec. 1.5.2).",
+   "Heparins are of animal origin, and apixaban and rivaroxaban contain lactose from cow's milk; discuss with people who have religious, ethical or dietary concerns (NICE NG158 Rec. 1.5.3).",
+   "If anticoagulation is stopped, explain the risk of recurrence and give written symptom information and contact details of a thrombosis team (NICE NG158 Rec. 1.4.2)."
+  ],
+  "lifestyleAndDiet": [
+   "Explain how foods and alcohol can affect oral anticoagulation (NICE NG158 Rec. 1.5.1).",
+   "The sources give no further lifestyle or diet recommendations for PE."
+  ],
+  "mdtReferrals": [
+   "Thrombosis service or expert team with direct contact and out-of-hours information for people treated as outpatients (NICE NG158 Rec. 1.2.4).",
+   "Specialist or multidisciplinary advice for extremes of body weight, renal impairment, active cancer or triple-positive antiphospholipid syndrome (NICE NG158 Recs 1.3.7 and 1.3.11).",
+   "Interventional radiology or vascular teams where an IVC filter is considered, with a removal strategy documented first (NICE NG158 Rec. 1.7.4)."
+  ],
+  "dischargeCriteria": [
+   "Low-risk PE on a validated risk stratification tool, with an agreed monitoring and follow-up plan (NICE NG158 Recs 1.2.1 and 1.2.4).",
+   "Anticoagulation started, baseline blood tests reviewed within 24 hours, and information and an alert card given (NICE NG158 Recs 1.3.4 and 1.5.1–1.5.2).",
+   "The Saudi panel notes that early discharge needs 24-hour clinic coverage (Saudi VTE guideline, Question 2)."
+  ],
+  "followUpPlan": "Review at 3 months (3 to 6 months with active cancer) to decide whether to stop, continue or change the anticoagulant (NICE NG158 Rec. 1.4.1), then at least annually while on long-term anticoagulation or aspirin (NICE NG158 Rec. 1.4.12)."
+ },
+ "guidelineComparison": {
+  "title": "Pulmonary embolism: NICE NG158 vs Saudi VTE guideline",
+  "columns": [
+   "NICE NG158 (updated 2023)",
+   "Saudi VTE guideline (MoH, 2014)"
+  ],
+  "rows": [
+   {
+    "parameter": "Treatment setting for low-risk PE",
+    "values": [
+     "Consider outpatient treatment for suspected or confirmed low-risk PE (Rec. 1.2.1)",
+     "Suggests early discharge over late discharge for low-risk acute PE; conditional recommendation (Question 2)"
+    ]
+   },
+   {
+    "parameter": "Risk tool",
+    "values": [
+     "A validated risk stratification tool, not named (Rec. 1.2.1)",
+     "A validated tool such as the Pulmonary Embolism Severity Index (Question 2, other considerations)"
+    ]
+   },
+   {
+    "parameter": "Initial anticoagulant",
+    "values": [
+     "Apixaban or rivaroxaban; alternatives if unsuitable (Rec. 1.3.8)",
+     "Direct oral anticoagulants not addressed by this guideline (Discussion)"
+    ]
+   },
+   {
+    "parameter": "Safety net after discharge",
+    "values": [
+     "Written information, direct contact with a thrombosis team and out-of-hours information (Rec. 1.2.4)",
+     "24-hour clinic coverage, for example thrombosis services, needed for early discharge (Question 2, implementation)"
+    ]
+   }
+  ],
+  "note": "The two documents agree on the direction for low-risk PE; the Saudi guideline is narrower in scope and does not address drug choice. The Saudi evidence rested on 2 trials (471 participants) for PE, with moderate-quality evidence of possible small increases in recurrence and major bleeding that were imprecise (Question 2)."
+ }
+}
