@@ -1,0 +1,459 @@
+{
+  "id": "3f22251d-c5e6-4dfa-b52c-599b05e0bd4c",
+  "title": "Antenatal Care for Uncomplicated Pregnancy",
+  "specialty": "Obstetrics",
+  "authority": "MOH",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Safe Birth",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Pregnant women at low risk: booking, risk stratification, routine tests, scheduled reviews, supplements and referral triggers. Verified against the Saudi MOH Pocket Manual in Obstetrics & Gynaecology (antenatal care chapter) and NICE NG201 (antenatal care), with NG133 (hypertension) and NG3 (gestational diabetes) for referral thresholds.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "MOH manual (2014) not updated to NG201 schedule",
+      "Local anti-D protocol not reviewed",
+      "SFDA registration not checked"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "3f22251d-c5e6-4dfa-b52c-599b05e0bd4c"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Routine antenatal care aims to confirm gestation, detect conditions that threaten mother or baby (anaemia, hypertensive disorders, diabetes, infection, fetal growth problems, malpresentation) early, and prepare for birth and feeding. Most women remain low risk; risk is reassessed at each contact.",
+    "keyMechanisms": [
+      "Pregnancy increases plasma volume more than red-cell mass (haemodilution) and iron demand — the reason for serial haemoglobin checks and iron (MOH).",
+      "Placental hormones increase insulin resistance from the second trimester — the window for GDM screening at 24–28 weeks.",
+      "Abnormal placentation can present later as hypertension, proteinuria or growth restriction — hence BP, urine and fundal-height checks at every visit.",
+      "Early ultrasound dates the pregnancy more accurately than the last menstrual period (MOH)."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Usually none; ask about bleeding, pain, fluid loss, headache, visual change, reduced fetal movements at every visit (MOH records fetal movements).",
+      "Mood, domestic abuse, smoking and medicines at booking (NICE NG201)."
+    ],
+    "physicalSigns": [
+      "BP (sitting); weight and BMI; urine dipstick (protein, ketones, sugar) at every visit (MOH).",
+      "Symphysis–fundal height within ±3 cm of gestation in weeks from 26–36 weeks (MOH); presentation documented."
+    ],
+    "redFlags": [
+      "BP 140/90 mmHg or more after 20 weeks — refer within 24 h; 160/110 or more — same day (NICE NG201)",
+      "Vaginal bleeding, severe headache, visual disturbance, epigastric pain",
+      "Reduced fetal movements after 24+0 weeks — contact maternity services immediately (NICE)",
+      "Fundal height small or large for dates — growth scan",
+      "Hb below 9 g/dL (check ferritin) (MOH)"
+    ],
+    "precipitants": [
+      "Pre-existing medical disease",
+      "Previous obstetric complications",
+      "Late booking",
+      "Social risk factors"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "High-risk pregnancy",
+      "distinguishingFeatures": "Previous complications, medical disease, multiple pregnancy — consultant-led care (MOH)."
+    },
+    {
+      "condition": "Pre-eclampsia",
+      "distinguishingFeatures": "New hypertension after 20 weeks with proteinuria or organ dysfunction."
+    },
+    {
+      "condition": "Gestational diabetes",
+      "distinguishingFeatures": "Abnormal OGTT at 24–28 weeks."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count",
+        "modalityTarget": "Booking, 28 and 36 weeks (MOH)",
+        "targetCondition": "Anaemia",
+        "expectedFinding": "Hb below 10 g/dL: repeat monthly; below 9 g/dL: check ferritin (MOH).",
+        "clinicalRationale": "Iron twice daily if Hb below 10 g/dL (MOH).",
+        "normalValue": "Hb 10 g/dL or more (MOH threshold)",
+        "references": [
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014, Antenatal care chapter, laboratory tests, pp. 162–163",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Blood group and Rh type; antibody screen",
+        "modalityTarget": "Booking",
+        "targetCondition": "Rh disease",
+        "expectedFinding": "Rh positive without antibodies: once only; with antibodies: antibody screen monthly (MOH).",
+        "clinicalRationale": "Plan anti-D and fetal surveillance per obstetric protocol.",
+        "normalValue": "No red-cell antibodies",
+        "references": [
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014, Antenatal care chapter, laboratory tests, pp. 162–163",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Sickling test, rubella antibodies, hepatitis screen, VDRL/RPR",
+        "modalityTarget": "Booking (MOH)",
+        "targetCondition": "Haemoglobinopathy and infections",
+        "expectedFinding": "Positive sickling, non-immune rubella, hepatitis B/C positive, positive syphilis serology.",
+        "clinicalRationale": "Specialist referral; postnatal rubella vaccination; treat syphilis; neonatal hepatitis B plan.",
+        "normalValue": "Negative / rubella immune",
+        "references": [
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014, Antenatal care chapter, laboratory tests, pp. 162–163",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Glucose screening",
+        "modalityTarget": "50-g challenge for all; repeat at 24–28 weeks if under 7.8 mmol/L (MOH); NICE uses risk factors and 75-g OGTT",
+        "targetCondition": "Gestational diabetes",
+        "expectedFinding": "Challenge 7.8 mmol/L or more → OGTT.",
+        "clinicalRationale": "See Gestational Diabetes topic.",
+        "normalValue": "Below 7.8 mmol/L at 1 h",
+        "references": [
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014, GDM screening, pp. 162–163",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          },
+          {
+            "title": "NICE NG3: Diabetes in pregnancy: management from preconception to the postnatal period",
+            "edition": "NICE guideline, 2015 (updated 2020), Recommendations 1.2.2–1.2.8",
+            "url": "https://www.nice.org.uk/guidance/ng3"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Urine analysis (MSU) and dipstick",
+        "modalityTarget": "Booking; dipstick every visit",
+        "targetCondition": "Asymptomatic bacteriuria, proteinuria",
+        "expectedFinding": "Infection or protein 1+ or more.",
+        "clinicalRationale": "Treat bacteriuria; protein with hypertension → pre-eclampsia pathway (NICE NG133).",
+        "normalValue": "No growth; dipstick negative",
+        "references": [
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014, Antenatal care chapter, laboratory tests, pp. 162–163",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          },
+          {
+            "title": "NICE NG201: Antenatal care",
+            "edition": "NICE guideline, 2021, Recommendations 1.2 (blood pressure at every appointment; 140/90 refer within 24 h; 160/110 same day; urine dipstick)",
+            "url": "https://www.nice.org.uk/guidance/ng201"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Blood pressure",
+        "modalityTarget": "Every visit (sitting, MOH)",
+        "targetCondition": "Hypertension",
+        "expectedFinding": "MOH: above 130/90 rechecked by doctor. NICE: 140/90 or more after 20 weeks → seen within 24 h; 160/110 or more → same day.",
+        "clinicalRationale": "Thresholds differ — both shown in comparison.",
+        "normalValue": "Below 130/90 mmHg (MOH recheck threshold)",
+        "references": [
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014, Antenatal care chapter, subsequent visits and medications, pp. 163–165",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          },
+          {
+            "title": "NICE NG201: Antenatal care",
+            "edition": "NICE guideline, 2021, Recommendations 1.2 (blood pressure at every appointment; 140/90 refer within 24 h; 160/110 same day; urine dipstick)",
+            "url": "https://www.nice.org.uk/guidance/ng201"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Symphysis–fundal height",
+        "modalityTarget": "Each visit 26–36 weeks (MOH); after 24+0 weeks, no more than 2-weekly (NICE)",
+        "targetCondition": "Fetal growth",
+        "expectedFinding": "More than 3 cm from gestation in weeks.",
+        "clinicalRationale": "Small → ultrasound for growth; large → consider scan (NICE).",
+        "normalValue": "Within ±3 cm of gestational age in weeks",
+        "references": [
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014, Antenatal care chapter, subsequent visits and medications, pp. 163–165",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          },
+          {
+            "title": "NICE NG201: Antenatal care",
+            "edition": "NICE guideline, 2021, Recommendations 1.2 (fetal growth: risk assessment; symphysis fundal height after 24+0 weeks; no routine scans after 28 weeks; fetal movements)",
+            "url": "https://www.nice.org.uk/guidance/ng201"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Ultrasound scans",
+        "modalityTarget": "Dating scan early (MOH; NICE 11+2 to 14+1 weeks); anomaly scan 18–22 weeks (MOH; NICE 18+0 to 20+6)",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Gestational age, viability, number of fetuses, structural anomalies, placental site.",
+        "clinicalRationale": "No routine scans after 28 weeks in uncomplicated singleton pregnancy (NICE).",
+        "normalValue": "Singleton, dates consistent, no anomaly",
+        "references": [
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014, Antenatal care chapter, pp. 161–165",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          },
+          {
+            "title": "NICE NG201: Antenatal care",
+            "edition": "NICE guideline, 2021, Recommendations 1.2 (booking assessment, screening, scans at 11+2 to 14+1 and 18+0 to 20+6 weeks)",
+            "url": "https://www.nice.org.uk/guidance/ng201"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "booking",
+      "title": "Booking",
+      "timeframe": "First trimester (NICE: by 10+0 weeks)",
+      "actions": [
+        "History and examination; classify low or high risk — high risk seen by a consultant (MOH).",
+        "Calculate EDD by LMP and confirm with early ultrasound (MOH).",
+        "Booking bloods and urine as above; assess VTE, GDM and pre-eclampsia risk (NICE NG201).",
+        "Aspirin for women at risk of pre-eclampsia per NICE NG133 (see Hypertensive Disorders of Pregnancy topic)."
+      ]
+    },
+    {
+      "id": "schedule",
+      "title": "Scheduled visits",
+      "timeframe": "Through pregnancy",
+      "actions": [
+        "Low-risk women may be followed in primary care up to 36 weeks (MOH).",
+        "NICE plans 10 appointments for nulliparous and 7 for parous women.",
+        "Every visit: fetal movements, complaints, BP, weight, urine dipstick; fundal height 26–36 weeks; presentation; palpation for breech after 36 weeks (NICE).",
+        "CBC at 28 and 36 weeks; GDM screening at 24–28 weeks."
+      ]
+    },
+    {
+      "id": "medicines",
+      "title": "Supplements",
+      "timeframe": "From booking",
+      "actions": [
+        "Folic acid 1 mg daily for the first 3 months (MOH).",
+        "Iron: ferrous fumarate 200 mg or ferrous sulfate 60 mg once daily if Hb above 10 g/dL, twice daily if below 10 g/dL (MOH)."
+      ]
+    },
+    {
+      "id": "education",
+      "title": "Education and referral",
+      "timeframe": "Ongoing",
+      "actions": [
+        "Physiological changes, birth preparation, breastfeeding, nutrition; genetic counselling for family history, previous affected child or recurrent miscarriage (MOH).",
+        "Contact maternity services immediately for reduced fetal movements after 24+0 weeks (NICE).",
+        "Refer for hypertension, abnormal glucose, anaemia below 9 g/dL, abnormal growth or presentation."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Provide structured routine antenatal care and recognise when to escalate."
+    ],
+    "references": [
+      {
+        "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+        "edition": "2014",
+        "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf",
+        "locator": "Antenatal care chapter, pp. 161–165"
+      },
+      {
+        "title": "NICE NG201: Antenatal care",
+        "edition": "NICE guideline, 2021",
+        "url": "https://www.nice.org.uk/guidance/ng201",
+        "locator": "Recommendations 1.1–1.2"
+      },
+      {
+        "title": "NICE NG133: Hypertension in pregnancy: diagnosis and management",
+        "edition": "NICE guideline, 2019 (updated 2023)",
+        "url": "https://www.nice.org.uk/guidance/ng133",
+        "locator": "Recommendations 1.1"
+      },
+      {
+        "title": "NICE NG3: Diabetes in pregnancy: management from preconception to the postnatal period",
+        "edition": "NICE guideline, 2015 (updated 2020)",
+        "url": "https://www.nice.org.uk/guidance/ng3",
+        "locator": "Recommendations 1.2"
+      },
+      {
+        "title": "Folic acid tablets prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=03b0aee4-804a-de63-e063-6394a90a6635",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ],
+    "keyPoints": [
+      "Book in the first trimester.",
+      "BP, urine and fetal movements every visit.",
+      "CBC at booking, 28 and 36 weeks.",
+      "Fundal height ±3 cm from 26 weeks.",
+      "Folic acid 1 mg and iron per Hb (MOH)."
+    ],
+    "pitfalls": [
+      "Late booking without exploring reasons.",
+      "Ignoring a rising BP below 140/90.",
+      "Routine late scans in low-risk pregnancy (NICE).",
+      "Missing reduced fetal movements."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Warning signs: bleeding, headache, visual change, reduced movements, fluid loss.",
+      "Breastfeeding preparation; nutrition and activity."
+    ],
+    "lifestyleAndDiet": [
+      "Balanced diet, iron-rich foods; stop smoking; avoid alcohol.",
+      "Regular moderate physical activity."
+    ],
+    "mdtReferrals": [
+      "Consultant obstetric clinic for any high-risk feature.",
+      "Genetic counselling where indicated (MOH).",
+      "Dietitian for anaemia or diabetes."
+    ],
+    "dischargeCriteria": [
+      "Not applicable — outpatient care; birth plan agreed by 36 weeks."
+    ],
+    "followUpPlan": "Visits per MOH/NICE schedule (10 nulliparous, 7 parous — NICE); transfer to consultant care if any risk factor develops."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Refer within 24 h (NICE)",
+      "threshold": "BP 140/90 mmHg or more after 20 weeks"
+    },
+    {
+      "criterion": "Same-day referral (NICE)",
+      "threshold": "BP 160/110 mmHg or more"
+    },
+    {
+      "criterion": "Check ferritin (MOH)",
+      "threshold": "Hb below 9 g/dL"
+    },
+    {
+      "criterion": "Fundal height concern (MOH)",
+      "threshold": "More than ±3 cm from gestation"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "All pregnant women, first trimester",
+        "patientGroup": "Pregnant women",
+        "genericName": "Folic acid",
+        "dose": "1 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "First 3 months of pregnancy",
+        "adjustments": [
+          "Higher dose for high-risk women — see Preconception topic"
+        ],
+        "monitoring": [
+          "Adherence"
+        ],
+        "sourceTitle": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+        "sourceUrl": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf",
+        "sourceEdition": "2014, Antenatal care chapter, medications, p. 164",
+        "contraindications": [
+          "Previous intolerance to folic acid",
+          "Caution: not adequate alone for pernicious anaemia/B12 deficiency (may mask it)"
+        ]
+      },
+      {
+        "indication": "Iron supplementation",
+        "patientGroup": "Pregnant women",
+        "genericName": "Ferrous fumarate (200 mg) or ferrous sulfate (60 mg)",
+        "dose": "1 tablet",
+        "route": "PO",
+        "frequency": "Once daily if Hb above 10 g/dL; twice daily if below 10 g/dL",
+        "duration": "Through pregnancy",
+        "adjustments": [
+          "Repeat Hb monthly if below 10 g/dL"
+        ],
+        "monitoring": [
+          "Hb, GI side effects"
+        ],
+        "sourceTitle": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+        "sourceUrl": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf",
+        "sourceEdition": "2014, Antenatal care chapter, medications, p. 164",
+        "contraindications": [
+          "No FDA prescription label reviewed — apply the product leaflet contraindications",
+          "MOH: check ferritin if Hb below 9 g/dL"
+        ]
+      }
+    ],
+    "note": "Supplement doses are from the MOH Pocket Manual; folic acid contraindications from the FDA label. Iron preparations are not FDA-labelled prescription products — cautions are general. Check SFDA registration and formulary."
+  },
+  "guidelineComparison": {
+    "title": "MOH Pocket Manual vs NICE NG201",
+    "columns": [
+      "MOH (2014)",
+      "NICE NG201"
+    ],
+    "rows": [
+      {
+        "parameter": "Booking",
+        "values": [
+          "First trimester",
+          "By 10+0 weeks"
+        ]
+      },
+      {
+        "parameter": "BP action",
+        "values": [
+          "Above 130/90: doctor recheck",
+          "140/90 after 20 weeks: seen within 24 h; 160/110: same day"
+        ]
+      },
+      {
+        "parameter": "GDM screening",
+        "values": [
+          "50-g challenge for all",
+          "Risk-factor 75-g OGTT"
+        ]
+      },
+      {
+        "parameter": "Fundal height",
+        "values": [
+          "26–36 weeks, ±3 cm",
+          "After 24+0 weeks, plotted on chart"
+        ]
+      },
+      {
+        "parameter": "Folic acid",
+        "values": [
+          "1 mg daily, first 3 months",
+          "Information on supplements at booking"
+        ]
+      }
+    ],
+    "note": "MOH 2014 is older than NICE NG201; both shown, not merged."
+  }
+}

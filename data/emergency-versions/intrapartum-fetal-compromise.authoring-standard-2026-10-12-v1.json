@@ -1,0 +1,337 @@
+{
+  "id": "fb440d70-f345-4ece-be8b-181f403de434",
+  "title": "Intrapartum Fetal Compromise",
+  "specialty": "Obstetrics / Neonatology",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Safe Birth",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Women in labour: choosing intermittent auscultation or CTG, classifying the CTG, conservative measures and expediting birth for suspected fetal compromise. Verified against NICE NG229 (fetal monitoring in labour, 2022, updated 2025); the Saudi MOH Pocket Manual has no dedicated intrapartum CTG chapter.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Fetal blood sampling — NICE makes no recommendation",
+      "Saudi MOH intrapartum CTG guidance not found"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "fb440d70-f345-4ece-be8b-181f403de434"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Intrapartum fetal compromise is hypoxia developing during labour, when contractions intermittently reduce placental blood flow. A healthy fetus tolerates this; a fetus with reduced reserve, or one exposed to excessive contractions, cord compression or acute events, can become acidotic.",
+    "keyMechanisms": [
+      "Each contraction transiently reduces uteroplacental flow; too-frequent contractions (5 or more in 10 minutes or hypertonus) shorten recovery time (NICE).",
+      "Cord compression causes variable decelerations; uteroplacental insufficiency causes late decelerations.",
+      "Developing hypoxia or infection raises the baseline heart rate; worsening hypoxia reduces variability (NICE).",
+      "Acute events — cord prolapse, abruption, uterine rupture — cause sudden bradycardia."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Often none; meconium-stained liquor, fever, bleeding, abdominal pain or slow progress raise concern (NICE lists slow progress, sepsis, meconium)."
+    ],
+    "physicalSigns": [
+      "Fetal heart abnormalities on auscultation or CTG.",
+      "Maternal tachycardia, fever, hypotension; abnormal uterine tone."
+    ],
+    "redFlags": [
+      "Acute bradycardia or a single prolonged deceleration of 3 minutes or more",
+      "Pathological CTG",
+      "Absent variability",
+      "Cord prolapse, suspected abruption or uterine rupture",
+      "No acceleration after fetal scalp stimulation"
+    ],
+    "precipitants": [
+      "Excessive contractions or oxytocin",
+      "Maternal fever/sepsis, meconium",
+      "Growth restriction, pre-eclampsia",
+      "Epidural-related hypotension",
+      "Cord prolapse, abruption, uterine rupture"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Maternal heart rate recorded as fetal",
+      "distinguishingFeatures": "Accelerations in second stage often maternal — confirm fetal heart at least every 5 minutes (NICE)."
+    },
+    {
+      "condition": "Medication effect",
+      "distinguishingFeatures": "Opioids can reduce variability (NICE)."
+    },
+    {
+      "condition": "Sleep cycle",
+      "distinguishingFeatures": "Short periods of reduced variability are normal."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Intermittent auscultation (low-risk labour)",
+        "modalityTarget": "After a contraction for at least 1 minute: every 15 min in first stage, every 5 min in second stage",
+        "targetCondition": "Fetal heart rate",
+        "expectedFinding": "Rise of 20 beats/min or more from start of labour, or a deceleration heard.",
+        "clinicalRationale": "Auscultate more often; if concern persists advise continuous CTG (NICE).",
+        "normalValue": "Stable rate 110–160 beats/min",
+        "references": [
+          {
+            "title": "NICE NG229: Fetal monitoring in labour",
+            "edition": "NICE guideline, 2022 (updated 2025), Recommendations 1.2 (intermittent auscultation: every 15 min first stage, every 5 min second stage)",
+            "url": "https://www.nice.org.uk/guidance/ng229"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "CTG — baseline",
+        "modalityTarget": "Continuous CTG",
+        "targetCondition": "Fetal heart baseline",
+        "expectedFinding": "Amber: 100–109, rise of 20 or more, or undeterminable. Red: below 100 or above 160.",
+        "clinicalRationale": "Rise may mean infection or hypoxia.",
+        "normalValue": "110–160 beats/min (white)",
+        "references": [
+          {
+            "title": "NICE NG229: Fetal monitoring in labour",
+            "edition": "NICE guideline, 2022 (updated 2025), Recommendations 1.4.11–1.4.32 (contractions, baseline, variability, decelerations; normal/suspicious/pathological)",
+            "url": "https://www.nice.org.uk/guidance/ng229"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "CTG — variability",
+        "modalityTarget": "Continuous CTG",
+        "targetCondition": "Fetal reserve",
+        "expectedFinding": "Amber: below 5 for 30–50 min, or above 25 for up to 10 min. Red: below 5 for more than 50 min, above 25 for more than 10 min, or sinusoidal.",
+        "clinicalRationale": "Absent variability → low threshold for expedited birth.",
+        "normalValue": "5–25 beats/min (white)",
+        "references": [
+          {
+            "title": "NICE NG229: Fetal monitoring in labour",
+            "edition": "NICE guideline, 2022 (updated 2025), Recommendations 1.4.11–1.4.32 (contractions, baseline, variability, decelerations; normal/suspicious/pathological)",
+            "url": "https://www.nice.org.uk/guidance/ng229"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "CTG — decelerations and contractions",
+        "modalityTarget": "Continuous CTG",
+        "targetCondition": "Hypoxic stress",
+        "expectedFinding": "Red: repetitive concerning variables for more than 30 min, late decelerations, acute bradycardia or prolonged deceleration 3 min or more. Contractions amber: 5 or more in 10 min or hypertonus.",
+        "clinicalRationale": "Classify overall: normal (all white), suspicious (1 amber), pathological (1 red or 2 or more amber).",
+        "normalValue": "No decelerations or early/benign variables; fewer than 5 contractions in 10 min",
+        "references": [
+          {
+            "title": "NICE NG229: Fetal monitoring in labour",
+            "edition": "NICE guideline, 2022 (updated 2025), Recommendations 1.4.11–1.4.32 (contractions, baseline, variability, decelerations; normal/suspicious/pathological)",
+            "url": "https://www.nice.org.uk/guidance/ng229"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Fetal scalp stimulation",
+        "modalityTarget": "Suspicious CTG with risk factors",
+        "targetCondition": "Fetal wellbeing",
+        "expectedFinding": "No acceleration.",
+        "clinicalRationale": "Acceleration with sustained improvement is reassuring; absence is worrying (NICE).",
+        "normalValue": "Acceleration of 15 beats/min or more for 15 s or more",
+        "references": [
+          {
+            "title": "NICE NG229: Fetal monitoring in labour",
+            "edition": "NICE guideline, 2022 (updated 2025), Recommendations 1.6.1–1.6.2 (fetal scalp stimulation)",
+            "url": "https://www.nice.org.uk/guidance/ng229"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "method",
+      "title": "Choose monitoring",
+      "timeframe": "Onset of labour",
+      "actions": [
+        "Assess antenatal risk factors; low risk → intermittent auscultation; risk factors → continuous CTG (NICE NG229).",
+        "Return to auscultation if CTG started for auscultation concerns is normal after 20 minutes (unless the woman prefers CTG)."
+      ]
+    },
+    {
+      "id": "review",
+      "title": "Hourly review",
+      "timeframe": "Throughout labour",
+      "actions": [
+        "Assess fetal wellbeing every hour with the whole clinical picture; categorise the CTG.",
+        "Normal: continue usual care. Suspicious without other risk factors: full assessment and conservative measures.",
+        "Suspicious with slow progress, sepsis or meconium: urgent obstetric review; consider scalp stimulation or expediting birth."
+      ]
+    },
+    {
+      "id": "conservative",
+      "title": "Conservative measures",
+      "timeframe": "When concerned",
+      "actions": [
+        "Mobilise or change position; avoid supine.",
+        "IV fluids only if hypotensive or septic; epidural hypotension → fluids, left lateral, anaesthetist.",
+        "5 or more contractions in 10 minutes: reduce or stop oxytocin; offer tocolysis — terbutaline 0.25 mg SC.",
+        "Do not give maternal facial oxygen for fetal concerns; do not use amnioinfusion (NICE)."
+      ]
+    },
+    {
+      "id": "pathological",
+      "title": "Pathological CTG or acute bradycardia",
+      "timeframe": "Immediately",
+      "actions": [
+        "Urgent obstetric and senior midwife review; exclude cord prolapse, abruption, uterine rupture.",
+        "Still pathological after conservative measures → consider expediting birth.",
+        "Acute bradycardia/prolonged deceleration: prepare for urgent birth with neonatal support; expedite if it persists for 9 minutes (sooner with risk factors); document decision times.",
+        "Second stage: obstetric review; consider stopping pushing and oxytocin unless birth is imminent."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Monitor fetal wellbeing in labour, classify CTGs and act on suspected compromise."
+    ],
+    "references": [
+      {
+        "title": "NICE NG229: Fetal monitoring in labour",
+        "edition": "NICE guideline, 2022 (updated 2025)",
+        "url": "https://www.nice.org.uk/guidance/ng229",
+        "locator": "Recommendations 1.1–1.8"
+      },
+      {
+        "title": "Terbutaline sulfate prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0a95bc4f-34d3-4b5e-841b-6839e1c1e0c7",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ],
+    "keyPoints": [
+      "Low risk → intermittent auscultation.",
+      "Classify CTG: normal, suspicious, pathological.",
+      "Treat the cause: position, fluids if hypotensive, stop oxytocin, terbutaline 0.25 mg SC.",
+      "Acute bradycardia → expedite if 9 minutes.",
+      "No facial oxygen for fetal concerns."
+    ],
+    "pitfalls": [
+      "Recording maternal pulse as fetal heart.",
+      "Oxygen to the mother for CTG changes.",
+      "IV fluids without hypotension.",
+      "Delaying review of a pathological CTG."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain monitoring choice and its trade-offs.",
+      "Discuss findings and decisions with the woman and companion."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable."
+    ],
+    "mdtReferrals": [
+      "Senior obstetrician and midwife for pathological CTG.",
+      "Neonatal team for expedited birth."
+    ],
+    "dischargeCriteria": [
+      "Not applicable — intrapartum care."
+    ],
+    "followUpPlan": "Neonatal review after birth following suspected compromise; keep CTG traces 25 years (NICE)."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Normal CTG",
+      "threshold": "All four features white"
+    },
+    {
+      "criterion": "Suspicious CTG",
+      "threshold": "One amber feature"
+    },
+    {
+      "criterion": "Pathological CTG",
+      "threshold": "One red feature or two or more amber"
+    },
+    {
+      "criterion": "Expedite birth",
+      "threshold": "Acute bradycardia persisting 9 minutes (sooner with risk factors)"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Excessive uterine activity with fetal heart concern (tocolysis)",
+        "patientGroup": "Women in labour",
+        "genericName": "Terbutaline",
+        "dose": "0.25 mg",
+        "route": "SC",
+        "frequency": "Single dose",
+        "duration": "Once; reassess",
+        "adjustments": [
+          "Stop or reduce oxytocin first",
+          "Boxed warning: injectable terbutaline not for prolonged tocolysis (label)"
+        ],
+        "monitoring": [
+          "Maternal heart rate, BP, glucose; CTG"
+        ],
+        "sourceTitle": "NICE NG229: Fetal monitoring in labour",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng229",
+        "sourceEdition": "NICE guideline, 2022 (updated 2025), Recommendation 1.5.11 (suggested regimen: subcutaneous terbutaline 0.25 mg)",
+        "contraindications": [
+          "Oral terbutaline must not be used for acute or maintenance tocolysis (boxed warning); injectable not for prolonged tocolysis",
+          "Hypersensitivity to sympathomimetic amines"
+        ]
+      }
+    ],
+    "note": "Terbutaline regimen from NICE NG229; contraindications from the FDA label. Check SFDA registration and formulary."
+  },
+  "guidelineComparison": {
+    "title": "NICE NG229 CTG feature categories",
+    "columns": [
+      "White",
+      "Red"
+    ],
+    "rows": [
+      {
+        "parameter": "Baseline",
+        "values": [
+          "110–160 beats/min",
+          "Below 100 or above 160"
+        ]
+      },
+      {
+        "parameter": "Variability",
+        "values": [
+          "5–25 beats/min",
+          "Below 5 for more than 50 min; above 25 for more than 10 min; sinusoidal"
+        ]
+      },
+      {
+        "parameter": "Decelerations",
+        "values": [
+          "None, early, or benign variable",
+          "Late; repetitive concerning variables more than 30 min; prolonged 3 min or more"
+        ]
+      },
+      {
+        "parameter": "Contractions",
+        "values": [
+          "Fewer than 5 in 10 min",
+          "— (amber: 5 or more, or hypertonus)"
+        ]
+      }
+    ],
+    "note": "Amber features are intermediate (see Investigations)."
+  }
+}

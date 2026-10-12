@@ -1,0 +1,304 @@
+{
+  "id": "cbf215a8-cc12-4b87-a821-cef2f005f43c",
+  "title": "Fetal Growth Restriction Assessment",
+  "specialty": "Maternal-Fetal Medicine",
+  "authority": "MOH",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Safe Birth",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Pregnant women with a suspected small-for-gestational-age (SGA) or growth-restricted fetus: risk screening, ultrasound biometry and Doppler surveillance, and timing of birth. Verified against the Saudi MOH Pocket Manual (small for gestational age chapter, based on RCOG Green-top 31) and NICE NG201.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "RCOG Green-top 31 (cited by MOH) not opened directly",
+      "Aspirin prophylaxis for FGR risk not covered here"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "cbf215a8-cc12-4b87-a821-cef2f005f43c"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "SGA describes a fetus or baby with estimated fetal weight or birth weight below the 10th centile (MOH). Fetal growth restriction (FGR) is the subset failing to reach growth potential, usually from placental insufficiency, with risk of hypoxia and stillbirth.",
+    "keyMechanisms": [
+      "Poor placentation (as in pre-eclampsia) reduces uteroplacental blood flow → nutrient and oxygen restriction → reduced growth, especially abdominal circumference.",
+      "Rising placental resistance shows as increased umbilical artery pulsatility; absent or reversed end-diastolic flow indicates severe compromise (MOH).",
+      "Fetal adaptation redistributes blood to the brain; decompensation is reflected in ductus venosus Doppler and CTG changes.",
+      "Constitutionally small but healthy fetuses have normal Doppler."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Usually asymptomatic; may present with reduced fetal movements.",
+      "History: previous SGA baby, pre-eclampsia, chronic hypertension (MOH)."
+    ],
+    "physicalSigns": [
+      "Symphysis–fundal height small for dates (more than 3 cm below gestation — MOH).",
+      "Maternal hypertension or proteinuria."
+    ],
+    "redFlags": [
+      "Absent or reversed end-diastolic flow in umbilical artery",
+      "Abnormal CTG or reduced fetal movements",
+      "Maternal pre-eclampsia",
+      "Static growth on serial scans"
+    ],
+    "precipitants": [
+      "Previous SGA baby",
+      "Pre-eclampsia, chronic hypertension",
+      "Smoking",
+      "Renal disease, antiphospholipid syndrome"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Constitutionally small fetus",
+      "distinguishingFeatures": "Normal Doppler, steady growth along a low centile."
+    },
+    {
+      "condition": "Wrong dates",
+      "distinguishingFeatures": "Early dating scan resolves."
+    },
+    {
+      "condition": "Fetal anomaly or infection",
+      "distinguishingFeatures": "Structural anomaly or early-onset symmetrical restriction — fetal medicine."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Symphysis–fundal height",
+        "modalityTarget": "Every antenatal visit after 24+0 weeks (NICE)",
+        "targetCondition": "Screening for SGA",
+        "expectedFinding": "Measurement below expected.",
+        "clinicalRationale": "Offer ultrasound for growth (NICE NG201).",
+        "normalValue": "Within ±3 cm of gestation in weeks (MOH)",
+        "references": [
+          {
+            "title": "NICE NG201: Antenatal care",
+            "edition": "NICE guideline, 2021, Recommendations 1.2 (fetal growth: risk assessment; symphysis fundal height after 24+0 weeks; no routine scans after 28 weeks; fetal movements)",
+            "url": "https://www.nice.org.uk/guidance/ng201"
+          },
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014, Antenatal care chapter, subsequent visits and medications, pp. 163–165",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Ultrasound biometry — abdominal circumference and estimated fetal weight",
+        "modalityTarget": "At diagnosis, then serially every 2–4 weeks (MOH)",
+        "targetCondition": "Imaging",
+        "expectedFinding": "AC or EFW below 10th centile; falling centiles.",
+        "clinicalRationale": "Ultrasound is the gold-standard diagnostic tool; amniotic fluid volume adds little to diagnosis (MOH).",
+        "normalValue": "AC and EFW above 10th centile with steady growth",
+        "references": [
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014, Small for gestational age chapter, pp. 40–41",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Umbilical artery Doppler",
+        "modalityTarget": "With each growth scan",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Raised pulsatility/resistance index (more than 2 SD); absent or reversed end-diastolic flow.",
+        "clinicalRationale": "Normal → scan every 2 weeks, birth by 37 weeks; abnormal → weekly; AREDF under 32 weeks → daily Doppler and CTG, birth by 32 weeks (MOH).",
+        "normalValue": "PI/RI within 2 SD; end-diastolic flow present",
+        "references": [
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014, Small for gestational age chapter, pp. 40–41",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Ductus venosus Doppler and CTG",
+        "modalityTarget": "Daily if AREDF in a preterm fetus under 32 weeks (MOH)",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Abnormal ductus venosus waveform; abnormal CTG.",
+        "clinicalRationale": "Timing of birth after steroids.",
+        "normalValue": "Normal DV waveform; normal CTG",
+        "references": [
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014, Small for gestational age chapter, pp. 40–41",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "screen",
+      "title": "Screen",
+      "timeframe": "Booking and second trimester",
+      "actions": [
+        "Assess risk factors at booking; refer high-risk women for serial ultrasound from 26–28 weeks (MOH).",
+        "NICE: FGR risk assessment at booking and in the second trimester; fundal height after 24+0 weeks."
+      ]
+    },
+    {
+      "id": "surveil",
+      "title": "Surveillance by Doppler (MOH)",
+      "timeframe": "From diagnosis",
+      "actions": [
+        "Normal umbilical artery Doppler: repeat ultrasound and Doppler every 2 weeks; birth by 37 weeks.",
+        "Abnormal Doppler (PI/RI more than 2 SD, end-diastolic flow present): weekly scans; consider birth by 37 weeks.",
+        "Absent/reversed end-diastolic flow under 32 weeks: daily umbilical artery and ductus venosus Doppler with CTG; birth by 32 weeks after steroids."
+      ]
+    },
+    {
+      "id": "birth",
+      "title": "Birth",
+      "timeframe": "As planned",
+      "actions": [
+        "Give antenatal corticosteroids if delivering by caesarean section (MOH) — dexamethasone 12 mg IM every 12 h for 2 doses (MOH preterm regimen).",
+        "Continuous intrapartum fetal monitoring (see Intrapartum Fetal Compromise topic)."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Detect and monitor a small-for-gestational-age fetus and time birth using Doppler surveillance."
+    ],
+    "references": [
+      {
+        "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+        "edition": "2014",
+        "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf",
+        "locator": "Small for gestational age chapter, pp. 40–41"
+      },
+      {
+        "title": "NICE NG201: Antenatal care",
+        "edition": "NICE guideline, 2021",
+        "url": "https://www.nice.org.uk/guidance/ng201",
+        "locator": "Recommendations 1.2 (monitoring fetal growth and wellbeing)"
+      },
+      {
+        "title": "Dexamethasone sodium phosphate injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0277cc0a-2fd4-4605-a310-b613be84ee26",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ],
+    "keyPoints": [
+      "SGA = EFW below the 10th centile.",
+      "Serial AC/EFW every 2–4 weeks.",
+      "Umbilical artery Doppler guides timing.",
+      "AREDF under 32 weeks → birth by 32 weeks after steroids.",
+      "Screen risk at booking; scans from 26–28 weeks if high risk."
+    ],
+    "pitfalls": [
+      "Relying on liquor volume alone.",
+      "Missing static growth by scanning too often (under 2 weeks apart).",
+      "No steroids before preterm caesarean."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Report reduced fetal movements immediately.",
+      "Stop smoking."
+    ],
+    "lifestyleAndDiet": [
+      "Stop smoking; manage hypertension."
+    ],
+    "mdtReferrals": [
+      "Fetal medicine unit for early-onset FGR or anomaly.",
+      "Neonatal team before birth."
+    ],
+    "dischargeCriteria": [
+      "Not applicable — surveillance continues to birth."
+    ],
+    "followUpPlan": "Serial scans every 1–2 weeks depending on Doppler; neonatal team informed before birth."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "SGA",
+      "threshold": "Estimated fetal weight or birth weight below 10th centile (MOH)"
+    },
+    {
+      "criterion": "Abnormal Doppler",
+      "threshold": "Umbilical artery PI/RI more than 2 SD"
+    },
+    {
+      "criterion": "Birth by 32 weeks",
+      "threshold": "AREDF in fetus under 32 weeks, after steroids"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Antenatal corticosteroids before planned birth (MOH: if caesarean)",
+        "patientGroup": "Pregnant women",
+        "genericName": "Dexamethasone",
+        "dose": "12 mg",
+        "route": "IM",
+        "frequency": "Every 12 h",
+        "duration": "2 doses",
+        "adjustments": [
+          "Maternal hyperglycaemia — monitor glucose in diabetes"
+        ],
+        "monitoring": [
+          "Maternal glucose"
+        ],
+        "sourceTitle": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+        "sourceUrl": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf",
+        "sourceEdition": "2014, Preterm labour chapter, pp. 29–33 (dexamethasone 12 mg IM every 12 h × 2)",
+        "contraindications": [
+          "Systemic fungal infections"
+        ]
+      }
+    ],
+    "note": "Steroid regimen from the MOH Pocket Manual preterm labour chapter; the SGA chapter recommends steroids before caesarean birth. Check SFDA registration and formulary."
+  },
+  "guidelineComparison": {
+    "title": "Doppler-based surveillance (MOH Pocket Manual)",
+    "columns": [
+      "Umbilical artery Doppler",
+      "Plan"
+    ],
+    "rows": [
+      {
+        "parameter": "Normal",
+        "values": [
+          "PI/RI within 2 SD",
+          "Scan every 2 weeks; birth by 37 weeks"
+        ]
+      },
+      {
+        "parameter": "Abnormal, EDF present",
+        "values": [
+          "PI/RI more than 2 SD",
+          "Weekly scans; consider birth by 37 weeks"
+        ]
+      },
+      {
+        "parameter": "Absent/reversed EDF, under 32 weeks",
+        "values": [
+          "AREDF",
+          "Daily UA/DV Doppler + CTG; birth by 32 weeks after steroids"
+        ]
+      }
+    ],
+    "note": "NICE NG201 covers screening (fundal height, risk assessment) but not Doppler-based timing."
+  }
+}

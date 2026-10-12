@@ -1,0 +1,303 @@
+{
+  "id": "040068a6-0d8f-4382-acf5-b28685eb6708",
+  "title": "Preconception Health and Risk Review",
+  "specialty": "Family Medicine / Obstetrics",
+  "authority": "PHA",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Keep Well",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Women planning or capable of pregnancy: folic acid, review of medical conditions and medicines, and diabetes-specific preconception care. Verified against the Saudi Public Health Authority Clinical Preventive Guideline 2023 (folic acid), NICE NG3 (preconception care in diabetes) and the Saudi MOH Pocket Manual.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Epilepsy-specific medicine changes — specialist",
+      "SFDA registration not checked"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "040068a6-0d8f-4382-acf5-b28685eb6708"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Organogenesis happens in the first weeks after conception, often before pregnancy is recognised. Neural-tube closure needs adequate folate; poorly controlled diabetes and some medicines (e.g. ACE inhibitors, statins) harm the embryo — so risks must be addressed before conception.",
+    "keyMechanisms": [
+      "Folate deficiency increases neural-tube defect risk; supplementation before conception reduces it.",
+      "Hyperglycaemia around conception raises the risk of congenital anomalies and miscarriage — the basis for preconception HbA1c targets (NICE NG3).",
+      "Teratogenic or fetotoxic medicines (ACE inhibitors, ARBs, statins, some anti-epileptics) should be reviewed before stopping contraception."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Plans for pregnancy; contraception; previous pregnancy outcomes.",
+      "Chronic conditions (diabetes, hypertension, epilepsy, thyroid disease); current medicines."
+    ],
+    "physicalSigns": [
+      "BMI, BP.",
+      "Signs of diabetes complications (retinopathy, nephropathy) in women with diabetes."
+    ],
+    "redFlags": [
+      "Diabetes with high HbA1c — advise contraception until control improves (NICE NG3)",
+      "Teratogenic medicines in a woman stopping contraception",
+      "Previous baby with neural-tube defect"
+    ],
+    "precipitants": [
+      "Diabetes, epilepsy, hypertension",
+      "Obesity",
+      "Teratogenic medicines",
+      "Previous NTD-affected pregnancy"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Already pregnant",
+      "distinguishingFeatures": "Pregnancy test before changing medicines."
+    },
+    {
+      "condition": "Subfertility",
+      "distinguishingFeatures": "Unable to conceive after a year — separate pathway."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "HbA1c (women with diabetes)",
+        "modalityTarget": "Up to monthly when planning pregnancy (NICE NG3)",
+        "targetCondition": "Glycaemic control",
+        "expectedFinding": "Above target set with the diabetes team.",
+        "clinicalRationale": "Use contraception until control is good (NICE NG3).",
+        "normalValue": "Individual target agreed with diabetes team (NICE NG3)",
+        "references": [
+          {
+            "title": "NICE NG3: Diabetes in pregnancy: management from preconception to the postnatal period",
+            "edition": "NICE guideline, 2015 (updated 2020), Recommendations 1.1.1–1.1.22 (preconception: folic acid 5 mg, HbA1c, medicines, retinal and renal assessment)",
+            "url": "https://www.nice.org.uk/guidance/ng3"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Retinal assessment (women with diabetes)",
+        "modalityTarget": "At first preconception appointment unless done in the last 6 months (NICE NG3)",
+        "targetCondition": "Diabetic retinopathy",
+        "expectedFinding": "Retinopathy present.",
+        "clinicalRationale": "Treat before rapid optimisation of glucose control.",
+        "normalValue": "No retinopathy",
+        "references": [
+          {
+            "title": "NICE NG3: Diabetes in pregnancy: management from preconception to the postnatal period",
+            "edition": "NICE guideline, 2015 (updated 2020), Recommendations 1.1.1–1.1.22 (preconception: folic acid 5 mg, HbA1c, medicines, retinal and renal assessment)",
+            "url": "https://www.nice.org.uk/guidance/ng3"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Renal assessment with albuminuria (women with diabetes)",
+        "modalityTarget": "Before stopping contraception (NICE NG3)",
+        "targetCondition": "Diabetic nephropathy",
+        "expectedFinding": "Albuminuria or reduced eGFR.",
+        "clinicalRationale": "Consider nephrology referral before pregnancy.",
+        "normalValue": "ACR below 3 mg/mmol; normal eGFR",
+        "references": [
+          {
+            "title": "NICE NG3: Diabetes in pregnancy: management from preconception to the postnatal period",
+            "edition": "NICE guideline, 2015 (updated 2020), Recommendations 1.1.1–1.1.22 (preconception: folic acid 5 mg, HbA1c, medicines, retinal and renal assessment)",
+            "url": "https://www.nice.org.uk/guidance/ng3"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "BMI and blood pressure",
+        "modalityTarget": "At review",
+        "targetCondition": "Obesity, hypertension",
+        "expectedFinding": "BMI 30 or more; BP 140/90 or more.",
+        "clinicalRationale": "Weight advice; review antihypertensives for pregnancy safety.",
+        "normalValue": "BMI 18.5–24.9; BP below 140/90",
+        "references": [
+          {
+            "title": "NICE NG3: Diabetes in pregnancy: management from preconception to the postnatal period",
+            "edition": "NICE guideline, 2015 (updated 2020), Recommendations 1.1.1–1.1.22 (preconception: folic acid 5 mg, HbA1c, medicines, retinal and renal assessment)",
+            "url": "https://www.nice.org.uk/guidance/ng3"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "folic",
+      "title": "Folic acid",
+      "timeframe": "At least 1 month before conception",
+      "actions": [
+        "All women planning or capable of pregnancy: folic acid 0.4–0.8 mg daily from at least 1 month before conception through the first 2–3 months (Saudi PHA 2023).",
+        "High risk of neural-tube defects (epilepsy, diabetes, previous NTD baby): 4 mg daily (Saudi PHA) — NICE NG3 advises 5 mg daily until 12 weeks for women with diabetes."
+      ]
+    },
+    {
+      "id": "diabetes",
+      "title": "Diabetes",
+      "timeframe": "Before stopping contraception",
+      "actions": [
+        "Explain benefits of good preconception control; agree HbA1c targets; measure up to monthly (NICE NG3).",
+        "Stop oral glucose-lowering agents except metformin and switch to insulin; stop statins before pregnancy (NICE NG3).",
+        "Retinal and renal assessment as above."
+      ]
+    },
+    {
+      "id": "general",
+      "title": "General review",
+      "timeframe": "At review",
+      "actions": [
+        "Review medicines for pregnancy safety; advise on weight, smoking and alcohol (NICE NG201 early-pregnancy information)."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Reduce preventable pregnancy risks through preconception folic acid and medical review."
+    ],
+    "references": [
+      {
+        "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+        "edition": "3rd edition, 2023",
+        "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf",
+        "locator": "PDF p. 28 / printed p. 21"
+      },
+      {
+        "title": "NICE NG3: Diabetes in pregnancy: management from preconception to the postnatal period",
+        "edition": "NICE guideline, 2015 (updated 2020)",
+        "url": "https://www.nice.org.uk/guidance/ng3",
+        "locator": "Recommendations 1.1"
+      },
+      {
+        "title": "Folic acid tablets prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=03b0aee4-804a-de63-e063-6394a90a6635",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ],
+    "keyPoints": [
+      "Folic acid 0.4–0.8 mg from 1 month before conception.",
+      "High risk: 4 mg (PHA) or 5 mg (NICE, diabetes).",
+      "Diabetes: optimise HbA1c, switch to insulin ± metformin, stop statins.",
+      "Review teratogenic medicines before stopping contraception."
+    ],
+    "pitfalls": [
+      "Starting folic acid only after a positive test.",
+      "Continuing ACE inhibitors or statins when planning pregnancy.",
+      "Rapid glucose lowering before retinal assessment."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Plan pregnancy; continue contraception until ready.",
+      "Healthy weight, stop smoking, avoid alcohol."
+    ],
+    "lifestyleAndDiet": [
+      "Healthy diet and activity; weight optimisation before pregnancy."
+    ],
+    "mdtReferrals": [
+      "Preconception diabetes clinic.",
+      "Nephrology if diabetic kidney disease (NICE NG3)."
+    ],
+    "dischargeCriteria": [
+      "Not applicable — outpatient advice."
+    ],
+    "followUpPlan": "Review before stopping contraception; women with diabetes are seen in a preconception diabetes clinic (NICE NG3)."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Standard folic acid",
+      "threshold": "0.4–0.8 mg daily (Saudi PHA)"
+    },
+    {
+      "criterion": "High-risk folic acid",
+      "threshold": "4 mg (Saudi PHA) vs 5 mg (NICE NG3, diabetes)"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "All women planning or capable of pregnancy",
+        "patientGroup": "Women of reproductive age",
+        "genericName": "Folic acid",
+        "dose": "0.4–0.8 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "From at least 1 month before conception to 2–3 months of pregnancy",
+        "adjustments": [
+          "Higher dose if high NTD risk"
+        ],
+        "monitoring": [
+          "Adherence"
+        ],
+        "sourceTitle": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+        "sourceUrl": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf",
+        "sourceEdition": "3rd edition, 2023, PDF p. 28 / printed p. 21, adult footnote 15 (folic acid)",
+        "contraindications": [
+          "Previous intolerance to folic acid",
+          "Caution: not adequate alone for pernicious anaemia/B12 deficiency (may mask it)"
+        ]
+      },
+      {
+        "indication": "High risk of neural-tube defect (epilepsy, diabetes, previous NTD)",
+        "patientGroup": "Women planning pregnancy",
+        "genericName": "Folic acid (high dose)",
+        "dose": "4 mg (Saudi PHA); 5 mg until 12 weeks in diabetes (NICE NG3)",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Preconception to 12 weeks",
+        "adjustments": [
+          "Sources disagree on 4 vs 5 mg — follow local formulary"
+        ],
+        "monitoring": [
+          "Adherence; B12 status if long term"
+        ],
+        "sourceTitle": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+        "sourceUrl": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf",
+        "sourceEdition": "3rd edition, 2023, PDF p. 28 / printed p. 21, adult footnote 15 (folic acid)",
+        "contraindications": [
+          "Previous intolerance to folic acid",
+          "Caution: not adequate alone for pernicious anaemia/B12 deficiency (may mask it)"
+        ]
+      }
+    ],
+    "note": "Folic acid doses from the Saudi PHA Clinical Preventive Guideline 2023 and NICE NG3; contraindications from the FDA label. Check SFDA registration and formulary."
+  },
+  "guidelineComparison": {
+    "title": "Folic acid before pregnancy: Saudi PHA 2023 vs NICE NG3",
+    "columns": [
+      "Saudi PHA 2023",
+      "NICE NG3"
+    ],
+    "rows": [
+      {
+        "parameter": "Standard dose",
+        "values": [
+          "0.4–0.8 mg daily, at least 1 month before to 2–3 months of pregnancy",
+          "Not covered (diabetes guideline)"
+        ]
+      },
+      {
+        "parameter": "High-risk dose",
+        "values": [
+          "4 mg daily (epilepsy, diabetes, previous NTD)",
+          "5 mg daily until 12 weeks (diabetes)"
+        ]
+      }
+    ],
+    "note": "Shown side by side; not merged."
+  }
+}

@@ -1,0 +1,262 @@
+{
+  "id": "3436a68e-5207-48f6-b840-af4d87529129",
+  "title": "Reduced Fetal Movements Assessment",
+  "specialty": "Obstetrics / Fetal Medicine",
+  "authority": "MOH",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Safe Birth",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Pregnant women reporting reduced fetal movements (RFM) after 24 weeks: confirming viability, CTG and ultrasound assessment, and follow-up. Verified against the Saudi MOH Pocket Manual (reduced fetal movement chapter, based on RCOG Green-top 57) and NICE NG201.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "RCOG Green-top 57 (cited by MOH) not opened directly",
+      "Local CTG pathway for 24–28 weeks"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "3436a68e-5207-48f6-b840-af4d87529129"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "A reduction in fetal movements can be the first sign of fetal compromise — the fetus conserves energy by moving less when placental oxygen supply falls. Most episodes are benign, but missed compromise (for example growth restriction) can lead to stillbirth (MOH).",
+    "keyMechanisms": [
+      "Placental insufficiency → fetal hypoxaemia → reduced movement as an adaptive response.",
+      "Growth restriction and reduced amniotic fluid often coexist (MOH links RFM with IUGR).",
+      "Movements are perceived from about 18–20 weeks; maternal perception varies with placental site and activity."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Mother reports fewer or weaker movements than usual, or none.",
+      "Ask about bleeding, pain, fluid loss, previous episodes."
+    ],
+    "physicalSigns": [
+      "Maternal observations; fundal height (small for dates).",
+      "Fetal heart auscultation."
+    ],
+    "redFlags": [
+      "No fetal heart detected — urgent ultrasound",
+      "Abnormal CTG",
+      "Small for gestational age or reduced liquor on ultrasound",
+      "Recurrent episodes of RFM",
+      "Associated bleeding or abdominal pain (abruption)"
+    ],
+    "precipitants": [
+      "Placental insufficiency, hypertension, growth restriction",
+      "Smoking",
+      "Previous stillbirth"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Fetal growth restriction",
+      "distinguishingFeatures": "Small biometry, abnormal Doppler — see FGR topic."
+    },
+    {
+      "condition": "Placental abruption",
+      "distinguishingFeatures": "Pain, bleeding, tender uterus."
+    },
+    {
+      "condition": "Normal variation (fetal sleep, anterior placenta)",
+      "distinguishingFeatures": "Normal CTG and growth."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Fetal heart auscultation (handheld Doppler)",
+        "modalityTarget": "24–28 weeks (MOH)",
+        "targetCondition": "Viability",
+        "expectedFinding": "Fetal heart heard.",
+        "clinicalRationale": "If present and no risk factors, reassure.",
+        "normalValue": "Fetal heart 110–160 beats/min",
+        "references": [
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014, Reduced fetal movement chapter, pp. 42–43",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Cardiotocography (CTG)",
+        "modalityTarget": "After 28 weeks — once if normal (MOH)",
+        "targetCondition": "Fetal wellbeing",
+        "expectedFinding": "Abnormal: reduced variability, decelerations, abnormal baseline.",
+        "clinicalRationale": "Normal CTG → reassure; abnormal → obstetric review and further assessment.",
+        "normalValue": "Baseline 110–160 beats/min, variability 5–25, accelerations, no decelerations",
+        "references": [
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014, Reduced fetal movement chapter, pp. 42–43",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          },
+          {
+            "title": "NICE NG229: Fetal monitoring in labour",
+            "edition": "NICE guideline, 2022 (updated 2025), Recommendations 1.4.15–1.4.18 (baseline and variability categories)",
+            "url": "https://www.nice.org.uk/guidance/ng229"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Ultrasound — fetal biometry and amniotic fluid",
+        "modalityTarget": "When RFM persists or risk factors present (MOH)",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Small for gestational age; reduced liquor.",
+        "clinicalRationale": "CTG plus liquor assessment approximates a biophysical profile (MOH).",
+        "normalValue": "Estimated fetal weight above 10th centile; normal liquor",
+        "references": [
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014, Reduced fetal movement chapter, pp. 42–43",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          },
+          {
+            "title": "NICE NG201: Antenatal care",
+            "edition": "NICE guideline, 2021, Recommendations 1.2 (fetal growth: risk assessment; symphysis fundal height after 24+0 weeks; no routine scans after 28 weeks; fetal movements)",
+            "url": "https://www.nice.org.uk/guidance/ng201"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "contact",
+      "title": "Contact",
+      "timeframe": "Immediately",
+      "actions": [
+        "Women should contact maternity services any time of day or night with concerns after 24+0 weeks (NICE NG201)."
+      ]
+    },
+    {
+      "id": "lt28",
+      "title": "24–28 weeks",
+      "timeframe": "At presentation",
+      "actions": [
+        "Confirm the fetal heart by auscultation and reassure (MOH)."
+      ]
+    },
+    {
+      "id": "gt28",
+      "title": "After 28 weeks",
+      "timeframe": "At presentation",
+      "actions": [
+        "CTG once; if normal, reassure — 70% of single RFM episodes are uncomplicated (MOH).",
+        "Ultrasound for growth and liquor if there is concern (small for dates, risk factors, recurrent RFM).",
+        "Abnormal CTG or ultrasound → obstetric review, manage as fetal compromise or growth restriction."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Assess reduced fetal movements by gestation and identify fetal compromise."
+    ],
+    "references": [
+      {
+        "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+        "edition": "2014",
+        "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf",
+        "locator": "Reduced fetal movement chapter, pp. 42–43"
+      },
+      {
+        "title": "NICE NG201: Antenatal care",
+        "edition": "NICE guideline, 2021",
+        "url": "https://www.nice.org.uk/guidance/ng201",
+        "locator": "Recommendations 1.2 (fetal movements)"
+      },
+      {
+        "title": "NICE NG229: Fetal monitoring in labour",
+        "edition": "NICE guideline, 2022 (updated 2025)",
+        "url": "https://www.nice.org.uk/guidance/ng229",
+        "locator": "Recommendations 1.4.15–1.4.32"
+      }
+    ],
+    "keyPoints": [
+      "Present the same day — do not wait.",
+      "24–28 weeks: auscultate.",
+      "After 28 weeks: CTG.",
+      "Ultrasound if risk factors or recurrence.",
+      "Missed FGR can cause stillbirth."
+    ],
+    "pitfalls": [
+      "Advising the woman to wait and count at home.",
+      "Reassuring without checking growth in recurrent RFM.",
+      "Mistaking maternal pulse for fetal heart."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Know your baby's usual pattern; report any reduction at once.",
+      "Do not use home Dopplers for reassurance."
+    ],
+    "lifestyleAndDiet": [
+      "Stop smoking."
+    ],
+    "mdtReferrals": [
+      "Obstetric review for abnormal CTG, small fetus or recurrent RFM.",
+      "Fetal medicine if growth restriction."
+    ],
+    "dischargeCriteria": [
+      "Normal fetal heart/CTG and no concerns on ultrasound or risk assessment.",
+      "Woman knows to return immediately if movements reduce again."
+    ],
+    "followUpPlan": "Return immediately with any further reduction; recurrent RFM → growth scan and obstetric review."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Auscultation only",
+      "threshold": "24–28 weeks"
+    },
+    {
+      "criterion": "CTG",
+      "threshold": "After 28 weeks"
+    },
+    {
+      "criterion": "Reassurance",
+      "threshold": "Normal CTG and no risk factors"
+    }
+  ],
+  "medicationPlan": {
+    "status": "no-drug-indicated",
+    "regimens": [],
+    "note": "No medicines are part of RFM assessment."
+  },
+  "guidelineComparison": {
+    "title": "RFM assessment by gestation (MOH)",
+    "columns": [
+      "Gestation",
+      "Action"
+    ],
+    "rows": [
+      {
+        "parameter": "24–28 weeks",
+        "values": [
+          "Viability",
+          "Auscultate fetal heart; reassure"
+        ]
+      },
+      {
+        "parameter": "After 28 weeks",
+        "values": [
+          "Wellbeing",
+          "CTG once; ultrasound if concern"
+        ]
+      }
+    ],
+    "note": "NICE NG201 advises contacting services at any time with concerns after 24+0 weeks and notes that structured awareness packages (AFFIRM) did not reduce stillbirth."
+  }
+}
