@@ -1,11 +1,12 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { ArrowLeft, ShieldAlert } from "lucide-react";
 import { ApprovalStatusBadge } from "@/components/approval-status-badge";
 import { EmergencyTopic } from "@/components/emergency-topic";
 import { TopicLibraryHeader, TopicPager, type TopicLink } from "@/components/topic-library";
 import { getApprovedDiseaseGuideline, getApprovedDiseaseGuidelines } from "@/lib/data/disease-guidelines";
 import { isTemporaryOpenAdminMode } from "@/lib/access-mode";
+import { canonicalTopicId } from "@/lib/data/merged-topics";
 
 function formatDate(date: string) {
   return new Intl.DateTimeFormat("en-GB", { day: "2-digit", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${date}T00:00:00Z`));
@@ -26,6 +27,8 @@ function ErrorState({ invalid = false }: { invalid?: boolean }) {
 
 export default async function DiseaseDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
+  const canonical = canonicalTopicId(id);
+  if (canonical) redirect(`/dashboard/diseases/${canonical}`);
   const result = await getApprovedDiseaseGuideline(id);
   if (result.state === "not-found") notFound();
   if (result.state === "invalid") return <ErrorState invalid />;

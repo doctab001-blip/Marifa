@@ -1,0 +1,579 @@
+{
+  "id": "c52eac83-6f42-4d81-b132-40d59fa4544b",
+  "title": "Postpartum Haemorrhage Response",
+  "specialty": "Obstetrics / Anaesthesia",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "emergency-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Safe Birth",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Women with postpartum haemorrhage (PPH) after vaginal or caesarean birth: prevention, objective diagnosis, the first-response bundle and escalation. Verified against the WHO/FIGO/ICM consolidated PPH guideline (2025) and the Saudi MOH Pocket Manual in Obstetrics & Gynaecology (2014); drug contraindications from US FDA prescribing information.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Saudi MOH manual dated 2014 — check for a newer local protocol",
+      "Blood product ratios — local massive transfusion protocol"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "c52eac83-6f42-4d81-b132-40d59fa4544b"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "PPH is excessive bleeding after birth — primary within 24 h, secondary from 24 h to 12 weeks. The '4 Ts' are tone (uterine atony, about 80%), trauma (cervix, vagina, uterine rupture), tissue (retained placenta) and thrombin (coagulopathy).",
+    "keyMechanisms": [
+      "After placental separation, bleeding from the placental bed is controlled mainly by myometrial contraction compressing spiral arteries ('living ligatures'); atony removes this control.",
+      "Uterine blood flow at term is about 600–700 mL/min (stable physiology), so atony can cause massive loss within minutes.",
+      "Pregnancy hypervolaemia masks loss: tachycardia and hypotension appear late; shock index above 1 is an early warning.",
+      "Massive bleeding consumes and dilutes clotting factors — fibrinogen falls early; coagulopathy (DIC) worsens bleeding.",
+      "Risk factors: placental abruption, placenta praevia/accreta, multiple pregnancy, pre-eclampsia, prolonged labour, operative delivery, retained placenta, over-distended uterus, multiparity — but most PPH has no identifiable risk factor (MOH)."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Heavy vaginal bleeding after birth (may be concealed — intra-abdominal, broad ligament or vaginal haematoma).",
+      "Dizziness, palpitations, weakness, restlessness, breathlessness."
+    ],
+    "physicalSigns": [
+      "Boggy, poorly contracted uterus above the umbilicus (atony).",
+      "Pallor, tachycardia, hypotension, SpO2 below 95%, oliguria (MOH clinical definition).",
+      "Shock index (HR ÷ SBP) above 1.",
+      "Perineal/vaginal/cervical tears; incomplete placenta."
+    ],
+    "redFlags": [
+      "Blood loss 300 mL or more with abnormal vital signs, or 500 mL or more — start the bundle (WHO)",
+      "Pulse above 100, shock index above 1, SBP below 100 or DBP below 60 mmHg",
+      "Blood loss above 2.5 L — activate the massive blood loss protocol (MOH)",
+      "Continued bleeding despite uterotonics — escalate to balloon tamponade or surgery",
+      "Bleeding with a well-contracted uterus — look for trauma, haematoma or coagulopathy"
+    ],
+    "precipitants": [
+      "Uterine atony (prolonged labour, over-distension, chorioamnionitis).",
+      "Placenta praevia/accreta, abruption.",
+      "Operative delivery; genital tract trauma.",
+      "Coagulopathy (pre-eclampsia, abruption, amniotic fluid embolism)."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Genital tract trauma",
+      "distinguishingFeatures": "Bleeding with a firm uterus; examine cervix, vagina and perineum."
+    },
+    {
+      "condition": "Retained placenta or products",
+      "distinguishingFeatures": "Incomplete placenta, persistent bleeding; ultrasound."
+    },
+    {
+      "condition": "Uterine rupture / inversion",
+      "distinguishingFeatures": "Severe pain, shock out of proportion; inverted fundus."
+    },
+    {
+      "condition": "Coagulopathy (abruption, pre-eclampsia/HELLP, amniotic fluid embolism)",
+      "distinguishingFeatures": "Oozing from sites, low fibrinogen and platelets."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Objective blood loss measurement (calibrated drape, weighing)",
+        "modalityTarget": "All births; vigilance in the first 2 h",
+        "targetCondition": "PPH diagnosis",
+        "expectedFinding": "300 mL or more with abnormal vital signs, or 500 mL or more, within 24 h.",
+        "clinicalRationale": "Triggers the first-response bundle; visual estimation underestimates loss.",
+        "normalValue": "Below 300 mL with normal vital signs",
+        "references": [
+          {
+            "title": "Consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage (WHO/FIGO/ICM)",
+            "edition": "WHO 2025",
+            "url": "https://www.who.int/publications/i/item/9789240115637"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Vital signs and shock index every 10–15 min",
+        "modalityTarget": "During PPH",
+        "targetCondition": "Haemodynamic compromise",
+        "expectedFinding": "Pulse above 100; SBP below 100 or DBP below 60; shock index above 1.",
+        "clinicalRationale": "Abnormal signs lower the diagnostic threshold to 300 mL.",
+        "normalValue": "Shock index 0.5–0.9",
+        "references": [
+          {
+            "title": "Consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage (WHO/FIGO/ICM)",
+            "edition": "WHO 2025",
+            "url": "https://www.who.int/publications/i/item/9789240115637"
+          },
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count",
+        "modalityTarget": "Baseline, then every 30 min in major bleeding",
+        "targetCondition": "Haemoglobin, platelets",
+        "expectedFinding": "Falling Hb (late sign); low platelets.",
+        "clinicalRationale": "MOH targets: Hb above 8 g/dL, platelets above 75 × 10⁹/L.",
+        "normalValue": "Hb 110–140 g/L; platelets 150–400 × 10⁹/L",
+        "references": [
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Coagulation: PT/INR, aPTT, fibrinogen, FDP/D-dimer",
+        "modalityTarget": "Baseline and repeat",
+        "targetCondition": "Coagulopathy",
+        "expectedFinding": "PT above 1.5× normal; fibrinogen falling.",
+        "clinicalRationale": "MOH targets: PT below 1.5× and fibrinogen above 1 g/L; low fibrinogen predicts severe PPH.",
+        "normalValue": "Fibrinogen in late pregnancy typically 4–6 g/L; INR 0.8–1.2",
+        "references": [
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Group and crossmatch",
+        "modalityTarget": "Immediately",
+        "targetCondition": "Transfusion",
+        "expectedFinding": "—",
+        "clinicalRationale": "Crossmatch 4 units PRBC and 2 FFP; major haemorrhage pack: 6 PRBC, 6 FFP, 6 platelets, 10 cryoprecipitate (MOH).",
+        "references": [
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Renal and liver function, blood gas (lactate)",
+        "modalityTarget": "Baseline and serially",
+        "targetCondition": "Organ perfusion",
+        "expectedFinding": "Rising lactate, falling urine output.",
+        "clinicalRationale": "Guides resuscitation and ICU referral.",
+        "references": [
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Bedside ultrasound",
+        "modalityTarget": "If retained tissue or concealed bleeding suspected",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Retained products; intraperitoneal fluid.",
+        "clinicalRationale": "Guides manual removal/evacuation or laparotomy.",
+        "references": [
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "prevent",
+      "title": "Prevention — third stage of labour",
+      "timeframe": "At every birth",
+      "actions": [
+        "Uterotonic for all births: oxytocin 10 IU IM or IV (WHO first choice), or heat-stable carbetocin 100 µg IM/IV; misoprostol 400–600 µg oral if neither is available.",
+        "MOH: oxytocin 5 IU IV or 10 IU IM, with methylergometrine 0.2 mg if no contraindication; controlled cord traction.",
+        "Crossmatch blood ready for women with risk factors.",
+        "Tranexamic acid is NOT recommended for prevention (WHO)."
+      ]
+    },
+    {
+      "id": "bundle",
+      "title": "First-response bundle (within 15 min of diagnosis)",
+      "timeframe": "Immediately",
+      "actions": [
+        "Call for help: senior obstetrician, anaesthetist, blood bank; one person records times, drugs, fluids and vital signs.",
+        "Uterine massage; empty the bladder (Foley catheter).",
+        "Oxytocin 10 IU IV slowly over 1–2 min (or in a small volume over 5–10 min), then 10–20 IU infusion over 4 h (WHO). MOH: oxytocin 40 IU in 500 mL Ringer's lactate.",
+        "Tranexamic acid 1 g IV over 10 min, within 3 h of birth; repeat 1 g if bleeding continues after 30 min or restarts within 24 h.",
+        "Two large-bore IV cannulas; isotonic crystalloid (not colloid); oxygen 10–15 L/min; keep warm.",
+        "Examine the genital tract for trauma; check the placenta is complete."
+      ]
+    },
+    {
+      "id": "second",
+      "title": "If bleeding continues — second-line uterotonics",
+      "timeframe": "Within minutes",
+      "actions": [
+        "Methylergometrine 0.2 mg IM, repeat as needed (not if hypertensive or pre-eclamptic).",
+        "Carboprost 0.25 mg IM every 15 min, maximum 8 doses (2 mg) — not in asthma.",
+        "Misoprostol 800 µg sublingual (WHO) or 1000 µg rectal (MOH).",
+        "Transfuse early: aim Hb above 8 g/dL, platelets above 75, PT below 1.5× normal, fibrinogen above 1 g/L (MOH)."
+      ],
+      "branches": [
+        {
+          "condition": "Massive haemorrhage (above 2.5 L) or shock",
+          "actions": [
+            "Activate the massive transfusion protocol; arterial/central lines; ICU."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "refractory",
+      "title": "Refractory bleeding",
+      "timeframe": "Escalate early",
+      "actions": [
+        "Bimanual uterine compression or external aortic compression as a temporising measure.",
+        "Uterine balloon tamponade (e.g. Bakri) after excluding retained tissue and trauma.",
+        "Retained placenta: manual removal under anaesthesia with prophylactic antibiotics.",
+        "Laparotomy: B-Lynch compression suture, uterine then internal iliac artery ligation, embolisation if available; hysterectomy as the last resort (two consultants, family informed — MOH)."
+      ]
+    },
+    {
+      "id": "after",
+      "title": "After control",
+      "timeframe": "Next 24 h",
+      "actions": [
+        "ICU or HDU monitoring; repeat Hb, coagulation, renal function.",
+        "Maintenance oxytocin infusion for 4 h.",
+        "Thromboprophylaxis once bleeding has stopped (see VTE in pregnancy topic).",
+        "Debrief and complete documentation."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Recognise postpartum haemorrhage early with objective measurement and deliver the first-response bundle and escalation."
+    ],
+    "references": [
+      {
+        "title": "Consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage (WHO/FIGO/ICM)",
+        "edition": "WHO 2025",
+        "url": "https://www.who.int/publications/i/item/9789240115637",
+        "locator": "Recommendations 7–12, 21–36; remarks on oxytocin and tranexamic acid dosing"
+      },
+      {
+        "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+        "edition": "2014",
+        "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf",
+        "locator": "Postpartum haemorrhage chapter (pp. 5–14)"
+      },
+      {
+        "title": "Oxytocin injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=18fe8365-86e3-414e-84dc-c98e097a2f36",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Methylergonovine maleate prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0a318b77-d280-4571-992f-82e2e0a57c9b",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Carboprost tromethamine injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1fc164ae-9964-17b3-4b92-d25b0ddb805e",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Misoprostol prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=14f73ae3-7d8d-4d10-b668-8bd5adf8032c",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Tranexamic acid injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00630e54-0e84-465d-96a5-63486c87dcd9",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "SFDA Saudi Drug Information System (registration search)",
+        "edition": "Accessed 11–12 Oct 2026",
+        "url": "https://sdi.sfda.gov.sa/"
+      }
+    ],
+    "keyPoints": [
+      "Measure blood loss: 300 mL plus abnormal vital signs, or 500 mL = PPH.",
+      "Bundle within 15 min: massage, oxytocin, tranexamic acid, fluids, examine, escalate.",
+      "Tranexamic acid 1 g IV within 3 h of birth.",
+      "No ergometrine in hypertension/pre-eclampsia; no carboprost in asthma.",
+      "Escalate early to tamponade, surgery and massive transfusion."
+    ],
+    "pitfalls": [
+      "Relying on visual estimation of blood loss.",
+      "Waiting for hypotension before acting.",
+      "Giving tranexamic acid after 3 h or as routine prevention.",
+      "Ergometrine in pre-eclampsia.",
+      "Missing concealed bleeding or trauma with a contracted uterus."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain what happened; iron and anaemia follow-up.",
+      "Recurrence risk and plan for future births."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable in the acute phase."
+    ],
+    "mdtReferrals": [
+      "Senior obstetrician, anaesthetist, blood bank and haematology at activation.",
+      "ICU after major haemorrhage; interventional radiology if available."
+    ],
+    "dischargeCriteria": [
+      "Bleeding controlled, haemodynamically stable, Hb stable and adequate for discharge.",
+      "Thromboprophylaxis plan and iron replacement arranged."
+    ],
+    "followUpPlan": "Postnatal review of anaemia; debrief the woman; counsel on recurrence risk and plan active management of the third stage in future pregnancies."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "PPH (WHO 2025)",
+      "threshold": "Blood loss 300 mL or more with any abnormal haemodynamic sign, or 500 mL or more, within 24 h of birth"
+    },
+    {
+      "criterion": "Abnormal haemodynamic sign",
+      "threshold": "Pulse above 100; shock index above 1; SBP below 100 or DBP below 60 mmHg"
+    },
+    {
+      "criterion": "Primary vs secondary",
+      "threshold": "Within 24 h vs 24 h to 12 weeks"
+    },
+    {
+      "criterion": "Massive haemorrhage (MOH)",
+      "threshold": "Blood loss above 2.5 L"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "PPH prevention",
+        "patientGroup": "All births",
+        "genericName": "Oxytocin",
+        "dose": "10 IU (MOH: 5 IU IV or 10 IU IM)",
+        "route": "IM or slow IV",
+        "frequency": "Once after birth of the baby",
+        "duration": "Single dose",
+        "adjustments": [
+          "Avoid rapid IV bolus (hypotension)"
+        ],
+        "monitoring": [
+          "Uterine tone, BP"
+        ],
+        "sourceTitle": "Consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage (WHO/FIGO/ICM)",
+        "sourceUrl": "https://www.who.int/publications/i/item/9789240115637",
+        "sourceEdition": "WHO 2025",
+        "contraindications": [
+          "(Antepartum use) significant cephalopelvic disproportion, undeliverable malpresentation, fetal distress where delivery is not imminent, hypertonic uterine patterns, cord prolapse, total placenta praevia, vasa praevia",
+          "Hypersensitivity"
+        ]
+      },
+      {
+        "indication": "PPH treatment — first line",
+        "patientGroup": "Women with PPH",
+        "genericName": "Oxytocin",
+        "dose": "10 IU IV over 1–2 min, then 10–20 IU in crystalloid over 4 h",
+        "route": "IV",
+        "frequency": "Bolus then infusion",
+        "duration": "4 h maintenance",
+        "adjustments": [
+          "Repeat dosing safe even after prophylactic oxytocin",
+          "MOH: 40 IU in 500 mL Ringer's lactate infusion"
+        ],
+        "monitoring": [
+          "Uterine tone, blood loss, BP, fluid balance (water intoxication)"
+        ],
+        "sourceTitle": "Consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage (WHO/FIGO/ICM)",
+        "sourceUrl": "https://www.who.int/publications/i/item/9789240115637",
+        "sourceEdition": "WHO 2025",
+        "contraindications": [
+          "(Antepartum use) significant cephalopelvic disproportion, undeliverable malpresentation, fetal distress where delivery is not imminent, hypertonic uterine patterns, cord prolapse, total placenta praevia, vasa praevia",
+          "Hypersensitivity"
+        ]
+      },
+      {
+        "indication": "PPH treatment",
+        "patientGroup": "Women with PPH, within 3 h of birth",
+        "genericName": "Tranexamic acid",
+        "dose": "1 g (100 mg/mL)",
+        "route": "IV at 1 mL/min (over 10 min)",
+        "frequency": "Repeat 1 g if bleeding continues after 30 min or restarts within 24 h",
+        "duration": "1–2 doses",
+        "adjustments": [
+          "Not recommended for prevention",
+          "Risk of inadvertent intrathecal injection — check the ampoule"
+        ],
+        "monitoring": [
+          "Bleeding; thrombosis"
+        ],
+        "sourceTitle": "Consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage (WHO/FIGO/ICM)",
+        "sourceUrl": "https://www.who.int/publications/i/item/9789240115637",
+        "sourceEdition": "WHO 2025, Recommendation 27 remarks",
+        "contraindications": [
+          "Subarachnoid haemorrhage",
+          "Active intravascular clotting",
+          "Hypersensitivity"
+        ]
+      },
+      {
+        "indication": "Atonic PPH not responding to oxytocin",
+        "patientGroup": "Postpartum (after delivery)",
+        "genericName": "Methylergometrine (methylergonovine)",
+        "dose": "0.2 mg",
+        "route": "IM",
+        "frequency": "Repeat as needed",
+        "duration": "Short course",
+        "adjustments": [
+          "Not with hypertension or pre-eclampsia"
+        ],
+        "monitoring": [
+          "BP"
+        ],
+        "sourceTitle": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+        "sourceUrl": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf",
+        "sourceEdition": "MOH 2014, PPH chapter",
+        "contraindications": [
+          "Hypertension",
+          "Pre-eclampsia/eclampsia (toxaemia)",
+          "Pregnancy (before delivery of the baby)",
+          "Hypersensitivity"
+        ]
+      },
+      {
+        "indication": "Refractory atonic PPH",
+        "patientGroup": "Postpartum",
+        "genericName": "Carboprost",
+        "dose": "0.25 mg",
+        "route": "IM",
+        "frequency": "Every 15 min",
+        "duration": "Maximum 8 doses (2 mg)",
+        "adjustments": [
+          "Avoid in asthma (bronchospasm)"
+        ],
+        "monitoring": [
+          "Bronchospasm, diarrhoea, fever, BP"
+        ],
+        "sourceTitle": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+        "sourceUrl": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf",
+        "sourceEdition": "MOH 2014, PPH chapter",
+        "contraindications": [
+          "Active cardiac, pulmonary (including asthma), renal or hepatic disease",
+          "Acute pelvic inflammatory disease",
+          "Hypersensitivity"
+        ]
+      },
+      {
+        "indication": "PPH when IV oxytocin unavailable or ineffective",
+        "patientGroup": "Postpartum",
+        "genericName": "Misoprostol",
+        "dose": "800 µg (WHO, sublingual) or 1000 µg (MOH, rectal)",
+        "route": "Sublingual or rectal",
+        "frequency": "Once",
+        "duration": "Single dose",
+        "adjustments": [
+          "No benefit of adding misoprostol routinely to oxytocin (WHO)"
+        ],
+        "monitoring": [
+          "Shivering, fever"
+        ],
+        "sourceTitle": "Consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage (WHO/FIGO/ICM)",
+        "sourceUrl": "https://www.who.int/publications/i/item/9789240115637",
+        "sourceEdition": "WHO 2025",
+        "contraindications": [
+          "Allergy to prostaglandins",
+          "Pregnancy when used for NSAID-ulcer prevention (not relevant to postpartum use)"
+        ]
+      },
+      {
+        "indication": "Prevention where cold chain is unreliable",
+        "patientGroup": "All births",
+        "genericName": "Carbetocin (heat-stable)",
+        "dose": "100 µg",
+        "route": "IM or IV",
+        "frequency": "Once",
+        "duration": "Single dose",
+        "adjustments": [
+          "Not for treatment of PPH"
+        ],
+        "monitoring": [
+          "Uterine tone"
+        ],
+        "sourceTitle": "Consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage (WHO/FIGO/ICM)",
+        "sourceUrl": "https://www.who.int/publications/i/item/9789240115637",
+        "sourceEdition": "WHO 2025"
+      }
+    ],
+    "note": "Doses from WHO 2025 and the Saudi MOH OB/GYN manual; contraindications from FDA prescribing information. Check SFDA registration (carbetocin, carboprost availability varies) and hospital PPH protocol."
+  },
+  "guidelineComparison": {
+    "title": "WHO 2025 vs Saudi MOH Pocket Manual (2014)",
+    "columns": [
+      "WHO 2025",
+      "MOH 2014"
+    ],
+    "rows": [
+      {
+        "parameter": "Diagnosis",
+        "values": [
+          "Objective loss 300 mL + abnormal vital signs, or 500 mL",
+          "Symptomatic bleeding; 10% Hb fall; or 500 mL vaginal / 1000 mL caesarean"
+        ]
+      },
+      {
+        "parameter": "Prevention",
+        "values": [
+          "Oxytocin 10 IU IM/IV (carbetocin or misoprostol alternatives); oxytocin–ergometrine not recommended",
+          "Oxytocin 5 IU IV or 10 IU IM with methylergometrine 0.2 mg"
+        ]
+      },
+      {
+        "parameter": "Tranexamic acid",
+        "values": [
+          "1 g IV within 3 h for all PPH, repeat once",
+          "Not mentioned"
+        ]
+      },
+      {
+        "parameter": "Misoprostol (treatment)",
+        "values": [
+          "800 µg sublingual",
+          "1000 µg rectal"
+        ]
+      },
+      {
+        "parameter": "Fluids",
+        "values": [
+          "Isotonic crystalloids in preference to colloids",
+          "Crystalloid 3:1 plus 1–2 L colloid until blood arrives"
+        ]
+      }
+    ],
+    "note": "Where they differ, follow WHO 2025 (newer evidence: tranexamic acid, crystalloids, objective diagnosis) and confirm with the local protocol."
+  }
+}

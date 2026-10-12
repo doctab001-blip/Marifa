@@ -1,0 +1,553 @@
+{
+  "id": "c2c404f2-5f47-4e4d-9ce7-fb32a9c1e103",
+  "title": "Acute Coronary Syndrome",
+  "specialty": "Emergency Medicine and Cardiology",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "emergency-2026-10-12-v3",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Adults with suspected acute coronary syndrome (ACS) in the emergency department: ECG and high-sensitivity troponin pathways, reperfusion for STEMI/occlusion MI, and early NSTE-ACS management. Verified against the Australian ACS guideline 2025 (Heart Foundation/CSANZ), NICE NG185 and the Saudi Heart Association biomarker position statement (2022). ESC 2023 and ACC/AHA 2025 texts were not accessible (publisher block).",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "v3: user-supplied unverified doses (acs-user-revision-2026-10-11-v1) replaced with FDA-label regimens for nitroglycerin, ticagrelor, clopidogrel, prasugrel and enoxaparin; contraindications added. UFH dose removed (not in sources reviewed)."
+    ],
+    "unverifiedSections": [
+      "Fondaparinux, UFH and tenecteplase ACS doses — local protocol",
+      "ESC 2023 / ACC-AHA 2025 texts not accessible",
+      "Saudi cardiogenic shock consensus not reviewed in detail"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "c2c404f2-5f47-4e4d-9ce7-fb32a9c1e103",
+      "448029d6-ef84-4ff0-81ab-30f6a47af751"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "ACS is myocardial ischaemia from an acute reduction in coronary flow, usually after atherosclerotic plaque rupture or erosion with thrombosis. It includes acute myocardial infarction (troponin rise with ischaemia) and unstable angina. Complete occlusion (STEMI or other 'acute coronary occlusion MI', ACOMI) needs emergency reperfusion.",
+    "keyMechanisms": [
+      "Plaque rupture/erosion exposes thrombogenic material → platelet aggregation and thrombus; partial occlusion gives NSTE-ACS, complete occlusion gives STEMI/ACOMI.",
+      "ACOMI includes ECG patterns beyond ST elevation: high lateral, posterior and right ventricular MI, De Winter T waves, and LBBB meeting modified Sgarbossa criteria (Australian 2025).",
+      "Myocardial necrosis releases troponin; high-sensitivity assays allow rule-in/rule-out within 1–2 h using assay-specific thresholds and deltas.",
+      "Complications: arrhythmia (VF/VT), heart failure, cardiogenic shock, mechanical complications."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Central chest pain or pressure, may radiate to arm, jaw or back; at rest or prolonged.",
+      "Breathlessness, sweating, nausea, syncope.",
+      "Atypical presentations are common in older people, women and people with diabetes."
+    ],
+    "physicalSigns": [
+      "Often normal examination.",
+      "Signs of heart failure or shock (crackles, hypotension, cold peripheries).",
+      "New murmur (mitral regurgitation, ventricular septal rupture)."
+    ],
+    "redFlags": [
+      "ST elevation or ACOMI equivalent on ECG → emergency reperfusion",
+      "Ongoing pain, haemodynamic or electrical instability, acute heart failure, cardiogenic shock (very high risk NSTE-ACS → invasive within 2 h)",
+      "Cardiac arrest — do not use level of consciousness to decide eligibility for angiography (NICE)"
+    ],
+    "precipitants": [
+      "Atherosclerotic risk factors: smoking, diabetes, hypertension, dyslipidaemia, family history.",
+      "Non-atherosclerotic causes such as spontaneous coronary artery dissection (SCAD)."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Aortic dissection",
+      "distinguishingFeatures": "Tearing pain to back, pulse/BP differential, widened mediastinum — CT aortogram before antithrombotics."
+    },
+    {
+      "condition": "Pulmonary embolism",
+      "distinguishingFeatures": "Pleuritic pain, hypoxaemia, risk factors; CTPA."
+    },
+    {
+      "condition": "Pericarditis / myocarditis",
+      "distinguishingFeatures": "Positional pain, diffuse ST elevation, rub."
+    },
+    {
+      "condition": "Type 2 MI and non-ischaemic troponin rise",
+      "distinguishingFeatures": "Sepsis, tachyarrhythmia, anaemia, renal failure — troponin rise without plaque event."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "12-lead ECG",
+        "modalityTarget": "Within 10 min of first clinical contact; repeat if symptoms persist, change or recur; right-sided/posterior leads if inconclusive",
+        "targetCondition": "STEMI/ACOMI, ischaemia",
+        "expectedFinding": "ST elevation or ACOMI patterns; ST depression/T inversion in NSTE-ACS.",
+        "clinicalRationale": "STEMI/ACOMI → emergency reperfusion. Continuous monitoring and defibrillator availability if ongoing symptoms or new ischaemic changes.",
+        "normalValue": "Normal sinus rhythm without ischaemic changes",
+        "references": [
+          {
+            "title": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+            "edition": "Med J Aust 2026;224(2):e70127 (Brieger DB et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "High-sensitivity troponin (hs-cTn) — 0/1 h or 0/2 h, or High-STEACS",
+        "modalityTarget": "On arrival and repeat per pathway",
+        "targetCondition": "Myocardial injury",
+        "expectedFinding": "Above the sex-specific 99th percentile with a rise/fall (assay-specific deltas).",
+        "clinicalRationale": "Use the assay's own thresholds and the same assay for deltas. Low risk: discharge; intermediate with elevated troponin: inpatient investigation; intermediate without: outpatient testing within about 30 days.",
+        "normalValue": "Below the assay-specific 99th percentile (e.g. hs-cTnT below 14 ng/L — SHA)",
+        "references": [
+          {
+            "title": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+            "edition": "Med J Aust 2026;224(2):e70127 (Brieger DB et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/"
+          },
+          {
+            "title": "Saudi Heart Association position statement on the use of biomarkers for the management of heart failure and acute coronary syndrome",
+            "edition": "J Saudi Heart Assoc 2022;34(2):114",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9518724/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "FBC, electrolytes, renal function, glucose, lipids",
+        "modalityTarget": "Arrival",
+        "targetCondition": "Comorbidity, drug dosing, bleeding risk",
+        "expectedFinding": "Anaemia; renal impairment (creatinine above 265 µmol/L changes anticoagulant choice — NICE).",
+        "clinicalRationale": "Guides antithrombotic selection and dosing.",
+        "references": [
+          {
+            "title": "NICE NG185: Acute coronary syndromes",
+            "edition": "NICE guideline, 2020",
+            "url": "https://www.nice.org.uk/guidance/ng185"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Risk scores (GRACE; bleeding risk)",
+        "modalityTarget": "Once NSTE-ACS is diagnosed",
+        "targetCondition": "Prognosis and invasive timing",
+        "expectedFinding": "GRACE predicted 6-month mortality above 3.0% = intermediate or higher risk (NICE).",
+        "clinicalRationale": "Supports angiography timing; bleeding scores guide antithrombotic intensity.",
+        "references": [
+          {
+            "title": "NICE NG185: Acute coronary syndromes",
+            "edition": "NICE guideline, 2020",
+            "url": "https://www.nice.org.uk/guidance/ng185"
+          },
+          {
+            "title": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+            "edition": "Med J Aust 2026;224(2):e70127 (Brieger DB et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "advancedImaging",
+        "testName": "Echocardiography",
+        "modalityTarget": "Shock, heart failure, new murmur, or diagnostic uncertainty",
+        "targetCondition": "Imaging",
+        "expectedFinding": "LV function, regional wall motion, mechanical complications.",
+        "clinicalRationale": "Identifies complications and LV impairment (beta-blocker indication).",
+        "references": [
+          {
+            "title": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+            "edition": "Med J Aust 2026;224(2):e70127 (Brieger DB et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Coronary angiography",
+        "modalityTarget": "STEMI/ACOMI (primary PCI); NSTE-ACS by risk timing",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Culprit lesion.",
+        "clinicalRationale": "Radial access preferred.",
+        "references": [
+          {
+            "title": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+            "edition": "Med J Aust 2026;224(2):e70127 (Brieger DB et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/"
+          },
+          {
+            "title": "NICE NG185: Acute coronary syndromes",
+            "edition": "NICE guideline, 2020",
+            "url": "https://www.nice.org.uk/guidance/ng185"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "initial",
+      "title": "First 10 minutes",
+      "timeframe": "Arrival",
+      "actions": [
+        "ECG within 10 min; continuous monitoring and defibrillator if ongoing symptoms or ischaemic ECG.",
+        "Aspirin 300 mg orally (chewed or dissolved) unless contraindicated.",
+        "Oxygen only if SpO2 below 90%; keep SpO2 at 96% or lower if oxygen is given.",
+        "IV fentanyl or morphine boluses for chest pain if no contraindication.",
+        "Exclude aortic dissection when suspected before antithrombotics."
+      ]
+    },
+    {
+      "id": "stemi",
+      "title": "STEMI / ACOMI — reperfusion",
+      "timeframe": "Within 12 h of onset",
+      "actions": [
+        "Primary PCI preferred if deliverable within 120 min of first medical contact (NICE: within 120 min of when fibrinolysis could have been given). PCI-capable centre: within 60 min of arrival; transfer: within 90 min of first hospital arrival.",
+        "Otherwise fibrinolysis within 30 min of first medical contact, with an antithrombin (UFH or enoxaparin). Age 70 or over: half-dose tenecteplase as part of a pharmaco-invasive strategy.",
+        "After fibrinolysis: ECG at 60–90 min — residual ST elevation → immediate angiography (do not repeat lysis); successful lysis → transfer to PCI centre, angiography within 2–24 h.",
+        "Primary PCI: DAPT with aspirin + ticagrelor or prasugrel (clopidogrel if these are contraindicated or on oral anticoagulation); UFH (or bivalirudin). No routine GP IIb/IIIa inhibitor.",
+        "Shock within 12 h → angiography ± PCI; no routine IABP or VA-ECMO."
+      ]
+    },
+    {
+      "id": "nste",
+      "title": "NSTE-ACS",
+      "timeframe": "From diagnosis",
+      "actions": [
+        "Anticoagulate: UFH, enoxaparin or fondaparinux (NICE: fondaparinux if no high bleeding risk and not going for immediate angiography; UFH if creatinine above 265 µmol/L).",
+        "Very high risk (instability, ongoing pain, shock, heart failure, arrhythmia): immediate invasive strategy within 2 h.",
+        "High risk: early invasive within 24 h (Australian); NICE: consider angiography within 72 h if GRACE 6-month mortality above 3.0%.",
+        "DAPT: aspirin + ticagrelor or prasugrel if routine invasive (prasugrel only once anatomy known and PCI intended); selective invasive: ticagrelor or clopidogrel.",
+        "Lower risk: ischaemia testing guides need for angiography."
+      ]
+    },
+    {
+      "id": "secondary",
+      "title": "In-hospital and discharge",
+      "timeframe": "Admission",
+      "actions": [
+        "DAPT 6–12 months (high ischaemic/low bleeding risk); then long-term P2Y12 inhibitor over aspirin (Australian).",
+        "On oral anticoagulation: OAC + aspirin + clopidogrel for 1–4 weeks, then stop aspirin (PPI with triple therapy).",
+        "High-intensity lipid lowering: LDL-C below 1.4 mmol/L and at least 50% reduction; beta-blocker if LV impairment; cardiac rehabilitation; vaccinations."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Recognise, investigate and manage acute coronary syndrome in the emergency department."
+    ],
+    "references": [
+      {
+        "title": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+        "edition": "Med J Aust 2026;224(2):e70127 (Brieger DB et al.)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/",
+        "locator": "Tables 1–4 (assessment and diagnosis; hospital care and reperfusion; recovery and secondary prevention); Figures 3–5"
+      },
+      {
+        "title": "NICE NG185: Acute coronary syndromes",
+        "edition": "NICE guideline, 2020",
+        "url": "https://www.nice.org.uk/guidance/ng185",
+        "locator": "Sections 1.1 (STEMI) and 1.2 (unstable angina/NSTEMI)"
+      },
+      {
+        "title": "Saudi Heart Association position statement on the use of biomarkers for the management of heart failure and acute coronary syndrome",
+        "edition": "J Saudi Heart Assoc 2022;34(2):114",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9518724/",
+        "locator": "Acute coronary syndrome troponin statements; Table 1 assay cut-offs"
+      },
+      {
+        "title": "National Heart Center – Saudi Health Council Acute Myocardial Infarction-Related Cardiogenic Shock Consensus Document",
+        "edition": "Saudi Med J 2026",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13227443/",
+        "locator": "Cited for awareness; not reviewed in detail"
+      },
+      {
+        "title": "SFDA Saudi Drug Information System (registration search)",
+        "edition": "Accessed 11–12 Oct 2026",
+        "url": "https://sdi.sfda.gov.sa/"
+      }
+    ],
+    "keyPoints": [
+      "ECG within 10 min; look for ACOMI patterns, not just ST elevation.",
+      "Aspirin 300 mg; oxygen only if SpO2 below 90%.",
+      "Primary PCI within 120 min or lysis within 30 min.",
+      "hs-troponin 0/1 or 0/2 h pathway with assay-specific values.",
+      "NSTE-ACS: very high risk within 2 h, high risk within 24 h."
+    ],
+    "pitfalls": [
+      "Routine oxygen in normoxic patients.",
+      "Missing posterior or high lateral occlusion MI.",
+      "Mixing troponin assays for deltas.",
+      "Prasugrel before coronary anatomy in NSTE-ACS.",
+      "Antithrombotics before excluding aortic dissection."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Medication adherence (DAPT); call for help with recurrent pain.",
+      "Smoking cessation, diet, exercise, cardiac rehabilitation."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable in the acute phase."
+    ],
+    "mdtReferrals": [
+      "Cardiology/cath lab activation; CCU.",
+      "Cardiac rehabilitation."
+    ],
+    "dischargeCriteria": [
+      "Low-risk pathway result with normal ECG and serial troponins below the 99th percentile; or completed in-hospital management.",
+      "On secondary prevention with cardiac rehabilitation referral."
+    ],
+    "followUpPlan": "Cardiology follow-up; cardiac rehabilitation; outpatient non-invasive testing within about 30 days for intermediate-risk patients with normal troponins; DAPT plan documented."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "STEMI/ACOMI reperfusion window",
+      "threshold": "Within 12 h of symptom onset"
+    },
+    {
+      "criterion": "Primary PCI vs fibrinolysis",
+      "threshold": "PCI if within 120 min of first medical contact; otherwise lysis within 30 min"
+    },
+    {
+      "criterion": "NSTE-ACS very high risk",
+      "threshold": "Immediate invasive within 2 h"
+    },
+    {
+      "criterion": "NSTE-ACS high risk",
+      "threshold": "Early invasive within 24 h (Australian); NICE within 72 h if GRACE 6-month mortality above 3.0%"
+    },
+    {
+      "criterion": "Oxygen",
+      "threshold": "Only if SpO2 below 90%; keep SpO2 96% or lower"
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [
+      {
+        "indication": "Suspected or confirmed ACS",
+        "patientGroup": "Adults",
+        "genericName": "Aspirin",
+        "dose": "300 mg",
+        "route": "PO, chewed or dissolved",
+        "frequency": "Once (loading), then daily low dose",
+        "duration": "Long term",
+        "adjustments": [
+          "Contraindication: true allergy, active bleeding"
+        ],
+        "monitoring": [
+          "Bleeding"
+        ],
+        "sourceTitle": "Australian ACS guideline 2025",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/",
+        "sourceEdition": "Med J Aust 2026, Table 3",
+        "contraindications": [
+          "Active bleeding",
+          "Known allergy to NSAIDs",
+          "Syndrome of asthma, rhinitis and nasal polyps",
+          "Hypersensitivity to aspirin"
+        ]
+      },
+      {
+        "indication": "Ischaemic chest pain (if SBP adequate)",
+        "patientGroup": "Adults",
+        "genericName": "Nitroglycerin (glyceryl trinitrate) sublingual",
+        "dose": "1 tablet (0.3–0.6 mg by product)",
+        "route": "Sublingual",
+        "frequency": "Repeat every 5 min if needed",
+        "duration": "Maximum 3 tablets in 15 min; if pain persists seek emergency care",
+        "adjustments": [
+          "Avoid if hypotensive or right ventricular infarction suspected (clinical caution)"
+        ],
+        "monitoring": [
+          "BP, heart rate, headache"
+        ],
+        "sourceTitle": "Nitroglycerin sublingual prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=041f127e-5166-4484-bc1a-0a373d1187ae",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "contraindications": [
+          "PDE-5 inhibitors or riociguat",
+          "Severe anaemia",
+          "Raised intracranial pressure",
+          "Circulatory failure and shock",
+          "Hypersensitivity to nitrates"
+        ]
+      },
+      {
+        "indication": "ACS — P2Y12 inhibitor (with aspirin 75–100 mg daily maintenance)",
+        "patientGroup": "Adults",
+        "genericName": "Ticagrelor",
+        "dose": "180 mg loading",
+        "route": "PO",
+        "frequency": "Then 90 mg twice daily (first maintenance dose 6–12 h after load)",
+        "duration": "First year; 60 mg twice daily thereafter",
+        "adjustments": [
+          "Aspirin maintenance above 100 mg reduces effectiveness (label boxed warning)",
+          "Avoid with strong CYP3A inhibitors/inducers"
+        ],
+        "monitoring": [
+          "Bleeding",
+          "Dyspnoea",
+          "Bradyarrhythmia"
+        ],
+        "sourceTitle": "Ticagrelor prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1225fd45-9b56-1671-ee77-cd0c9f2174a5",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "contraindications": [
+          "History of intracranial haemorrhage",
+          "Active pathological bleeding",
+          "Hypersensitivity"
+        ]
+      },
+      {
+        "indication": "ACS — P2Y12 inhibitor (alternative)",
+        "patientGroup": "Adults",
+        "genericName": "Clopidogrel",
+        "dose": "300 mg loading",
+        "route": "PO",
+        "frequency": "Then 75 mg once daily",
+        "duration": "As per DAPT plan",
+        "adjustments": [
+          "Without a loading dose antiplatelet effect is delayed by several days",
+          "Reduced effect in CYP2C19 poor metabolisers (boxed warning)"
+        ],
+        "monitoring": [
+          "Bleeding"
+        ],
+        "sourceTitle": "Clopidogrel prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0078fb3d-3595-4ae1-a059-1d5e81c879cf",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "contraindications": [
+          "Active pathological bleeding (e.g. peptic ulcer, intracranial haemorrhage)",
+          "Hypersensitivity"
+        ]
+      },
+      {
+        "indication": "ACS managed with PCI (coronary anatomy known)",
+        "patientGroup": "Adults",
+        "genericName": "Prasugrel",
+        "dose": "60 mg loading",
+        "route": "PO",
+        "frequency": "Then 10 mg once daily",
+        "duration": "As per DAPT plan",
+        "adjustments": [
+          "Consider 5 mg daily if under 60 kg",
+          "Generally not recommended at 75 years or over",
+          "Do not start before coronary anatomy is defined in NSTE-ACS (guideline pitfall)"
+        ],
+        "monitoring": [
+          "Bleeding"
+        ],
+        "sourceTitle": "Prasugrel prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=35aa7f3e-bbd8-4eae-b61f-29d1abca2224",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "contraindications": [
+          "Active pathological bleeding",
+          "Prior TIA or stroke",
+          "Hypersensitivity"
+        ]
+      },
+      {
+        "indication": "Unstable angina / NSTEMI (with aspirin)",
+        "patientGroup": "Adults",
+        "genericName": "Enoxaparin",
+        "dose": "1 mg/kg",
+        "route": "SC",
+        "frequency": "Every 12 hours",
+        "duration": "Usually 2–8 days (label)",
+        "adjustments": [
+          "CrCl below 30 mL/min: dose adjustment per label",
+          "Spinal/epidural haematoma risk (boxed warning)"
+        ],
+        "monitoring": [
+          "Bleeding, platelet count, renal function"
+        ],
+        "sourceTitle": "Enoxaparin sodium injection prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=014c6710-f2c4-fd1e-e063-6394a90ae525",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "contraindications": [
+          "Active major bleeding",
+          "Heparin-induced thrombocytopenia within 100 days or circulating HIT antibodies",
+          "Hypersensitivity to enoxaparin, heparin or pork products"
+        ]
+      },
+      {
+        "indication": "STEMI (with fibrinolysis or as per label)",
+        "patientGroup": "Adults under 75 years",
+        "genericName": "Enoxaparin",
+        "dose": "30 mg IV bolus plus 1 mg/kg SC",
+        "route": "IV then SC",
+        "frequency": "Then 1 mg/kg SC every 12 hours",
+        "duration": "Per label",
+        "adjustments": [
+          "Maximum 100 mg for the first two SC doses only",
+          "Age 75 or over: no IV bolus and reduced dose per label",
+          "CrCl below 30 mL/min: adjust per label"
+        ],
+        "monitoring": [
+          "Bleeding, platelet count, renal function"
+        ],
+        "sourceTitle": "Enoxaparin sodium injection prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=014c6710-f2c4-fd1e-e063-6394a90ae525",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "contraindications": [
+          "Active major bleeding",
+          "Heparin-induced thrombocytopenia within 100 days or circulating HIT antibodies",
+          "Hypersensitivity to enoxaparin, heparin or pork products"
+        ]
+      }
+    ],
+    "note": "Aspirin 300 mg loading is from the Australian ACS guideline 2025. Nitroglycerin, ticagrelor, clopidogrel, prasugrel and enoxaparin doses and contraindications are from the US FDA prescribing information (DailyMed). Fondaparinux and unfractionated heparin ACS doses, and fibrinolytic doses, were not found in the sources reviewed (the fondaparinux US label has no ACS indication) — use the hospital ACS/STEMI protocol. Check SFDA registration, hospital formulary and actual availability; registration does not mean the drug is stocked."
+  },
+  "guidelineComparison": {
+    "title": "Australian ACS guideline 2025 vs NICE NG185",
+    "columns": [
+      "Australian 2025",
+      "NICE NG185"
+    ],
+    "rows": [
+      {
+        "parameter": "Occlusion MI",
+        "values": [
+          "ACOMI includes STEMI-equivalent ECG patterns",
+          "STEMI"
+        ]
+      },
+      {
+        "parameter": "Older patients and lysis",
+        "values": [
+          "Half-dose tenecteplase if 70 or over (pharmaco-invasive)",
+          "Not specified"
+        ]
+      },
+      {
+        "parameter": "NSTE-ACS timing",
+        "values": [
+          "Very high risk within 2 h; high risk within 24 h",
+          "Immediate if unstable; within 72 h if GRACE above 3.0%"
+        ]
+      },
+      {
+        "parameter": "NSTE-ACS anticoagulant",
+        "values": [
+          "UFH, enoxaparin or fondaparinux",
+          "Fondaparinux preferred unless high bleeding risk/immediate angiography"
+        ]
+      },
+      {
+        "parameter": "Oxygen",
+        "values": [
+          "Only if SpO2 below 90%; max 96%",
+          "Not detailed in NG185 recommendations reviewed"
+        ]
+      }
+    ],
+    "note": "Both: aspirin, primary PCI within 120 min or lysis, potent P2Y12 inhibitor for invasive strategy, radial access."
+  }
+}

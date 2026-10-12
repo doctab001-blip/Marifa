@@ -39,6 +39,7 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
   const showNormal = labs.some((item) => item.normalValue);
   const testChoices = allTests.filter((item) => item.pros?.length || item.cons?.length);
   const medicationPlan = disease.medicationPlan ?? getMedicationPlan(disease.id);
+  const hasContraindications = Boolean(medicationPlan?.regimens.some((regimen) => regimen.contraindications?.length));
   const care = disease.nonClinicalManagement;
   const pitfalls = disease.teaching?.pitfalls ?? [];
   const pearls = disease.teaching?.keyPoints ?? [];
@@ -135,11 +136,12 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
             <p className="em-footnote">{medicationPlan.note}</p>
             <div className="em-table-wrap">
               <table className="em-table em-dose-table">
-                <thead><tr><th scope="col">Medicine and indication</th><th scope="col">Dose, route, frequency</th><th scope="col">Cautions and monitoring</th></tr></thead>
+                <thead><tr><th scope="col">Medicine and indication</th><th scope="col">Dose, route, frequency</th>{hasContraindications ? <th scope="col">Contraindications</th> : null}<th scope="col">Cautions and monitoring</th></tr></thead>
                 <tbody>{medicationPlan.regimens.map((regimen) => (
                   <tr key={`${regimen.genericName}-${regimen.indication}`}>
                     <th scope="row">{regimen.genericName}<small>{regimen.indication} · {regimen.patientGroup}</small></th>
                     <td>{regimen.dose}<small>{regimen.route} · {regimen.frequency} · {regimen.duration}</small></td>
+                    {hasContraindications ? <td className="em-contra">{regimen.contraindications?.length ? <List items={regimen.contraindications} /> : <span className="em-muted">See product label</span>}</td> : null}
                     <td><List items={[...regimen.adjustments, ...regimen.monitoring.map((item) => `Monitor: ${item}`)]} /><a href={regimen.sourceUrl} target="_blank" rel="noreferrer" className="em-source-link">{regimen.sourceEdition}</a></td>
                   </tr>
                 ))}</tbody>

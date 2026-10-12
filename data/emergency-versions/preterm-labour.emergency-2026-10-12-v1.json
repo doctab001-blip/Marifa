@@ -1,0 +1,497 @@
+{
+  "id": "26995ba0-e325-44a3-a579-c02e7656b14d",
+  "title": "Preterm Labour and Threatened Preterm Birth",
+  "specialty": "Obstetrics / Neonatology",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "emergency-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Safe Birth",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Women with symptoms of preterm labour (intact membranes) between 22 and 37 weeks: diagnosis, tocolysis, corticosteroids, magnesium neuroprotection and preparation for preterm birth. Verified against NICE NG25 and the Saudi MOH OB/GYN Pocket Manual (preterm labour chapter); contraindications from FDA labels.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Betamethasone regimen not in reviewed sources",
+      "Atosiban availability on SFDA register"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "26995ba0-e325-44a3-a579-c02e7656b14d"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Preterm labour is regular painful contractions with cervical change before 37 completed weeks. Causes include infection/inflammation (chorioamnionitis), uterine over-distension (multiple pregnancy, polyhydramnios), decidual haemorrhage (abruption), cervical insufficiency and stress pathways; prematurity is a leading cause of neonatal death.",
+    "keyMechanisms": [
+      "Inflammation (cytokines, prostaglandins) ripens the cervix and triggers myometrial contractions — the basis for prostaglandin-synthetase inhibitors and oxytocin antagonists as tocolytics.",
+      "Tocolysis does not improve neonatal outcome itself; it buys up to 48 h for corticosteroids and in-utero transfer.",
+      "Antenatal corticosteroids accelerate surfactant production and lung maturation, reducing respiratory distress, intraventricular haemorrhage and necrotising enterocolitis.",
+      "Magnesium sulfate before birth under 30 weeks reduces cerebral palsy (neuroprotection).",
+      "Risk markers: previous preterm birth or mid-trimester loss, short cervix (25 mm or less at 16–24 weeks) — prevention with vaginal progesterone or cerclage (NICE)."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Regular painful contractions or tightenings; low back ache; pelvic pressure.",
+      "Vaginal discharge, show or bleeding."
+    ],
+    "physicalSigns": [
+      "Palpable regular contractions.",
+      "Cervical dilatation more than 2 cm or effacement more than 50%, or change on serial examination (MOH).",
+      "Check fetal presentation and heart rate; signs of infection (fever, uterine tenderness)."
+    ],
+    "redFlags": [
+      "Advanced cervical dilatation — prepare for birth and neonatal team",
+      "Fever, uterine tenderness, fetal tachycardia — chorioamnionitis (no tocolysis)",
+      "Antepartum haemorrhage (abruption)",
+      "Gestation below 30 weeks — magnesium neuroprotection and neonatal intensive care planning"
+    ],
+    "precipitants": [
+      "Previous preterm birth or mid-trimester loss; short cervix.",
+      "Infection (urinary, genital, intra-amniotic).",
+      "Multiple pregnancy, polyhydramnios, uterine anomaly, abruption."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Braxton Hicks contractions",
+      "distinguishingFeatures": "Irregular, painless, no cervical change; cervical length above 15 mm."
+    },
+    {
+      "condition": "Placental abruption",
+      "distinguishingFeatures": "Pain, bleeding, tense uterus."
+    },
+    {
+      "condition": "Urinary tract infection / pyelonephritis",
+      "distinguishingFeatures": "Dysuria, loin pain — may trigger contractions."
+    },
+    {
+      "condition": "P-PROM",
+      "distinguishingFeatures": "Fluid leakage — speculum for pooling."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Speculum (then digital) examination",
+        "modalityTarget": "All women with symptoms; take fetal fibronectin swab before digital exam if it may be used",
+        "targetCondition": "Cervical change, P-PROM",
+        "expectedFinding": "Dilatation, effacement, pooling of fluid.",
+        "clinicalRationale": "29+6 weeks or less with suspected preterm labour → treat (NICE).",
+        "references": [
+          {
+            "title": "NICE NG25: Preterm labour and birth",
+            "edition": "NICE guideline, 2015 (updated 2022)",
+            "url": "https://www.nice.org.uk/guidance/ng25"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Fetal fibronectin",
+        "modalityTarget": "30+0 weeks or more if cervical length is unavailable/unacceptable",
+        "targetCondition": "Likelihood of birth within 48 h",
+        "expectedFinding": "More than 50 ng/mL = diagnosed preterm labour; 50 ng/mL or less = unlikely.",
+        "clinicalRationale": "Do not combine with cervical length to diagnose (NICE).",
+        "normalValue": "50 ng/mL or less",
+        "references": [
+          {
+            "title": "NICE NG25: Preterm labour and birth",
+            "edition": "NICE guideline, 2015 (updated 2022)",
+            "url": "https://www.nice.org.uk/guidance/ng25"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "CTG / fetal heart monitoring; ultrasound for presentation and anomalies",
+        "modalityTarget": "On admission",
+        "targetCondition": "Fetal wellbeing",
+        "expectedFinding": "Abnormal CTG; malpresentation.",
+        "clinicalRationale": "No fetal scalp electrode or fetal blood sampling below 34 weeks (NICE).",
+        "references": [
+          {
+            "title": "NICE NG25: Preterm labour and birth",
+            "edition": "NICE guideline, 2015 (updated 2022)",
+            "url": "https://www.nice.org.uk/guidance/ng25"
+          },
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Urine culture, high vaginal swab (GBS), FBC/CRP if infection suspected",
+        "modalityTarget": "On admission",
+        "targetCondition": "Infection",
+        "expectedFinding": "Bacteriuria, GBS, raised CRP.",
+        "clinicalRationale": "Treat infection; GBS prophylaxis in labour.",
+        "references": [
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Transvaginal cervical length",
+        "modalityTarget": "Suspected preterm labour at 30+0 weeks or more",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Likelihood of birth within 48 h",
+        "clinicalRationale": "15 mm or less = diagnosed preterm labour; more than 15 mm = unlikely.",
+        "references": [
+          {
+            "title": "NICE NG25: Preterm labour and birth",
+            "edition": "NICE guideline, 2015 (updated 2022)",
+            "url": "https://www.nice.org.uk/guidance/ng25"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "assess",
+      "title": "Assess and diagnose",
+      "timeframe": "Arrival",
+      "actions": [
+        "Senior obstetrician and neonatal team decide the plan; arrange in-utero transfer if needed.",
+        "29+6 weeks or less: treat as preterm labour. 30+0 weeks or more: cervical length (or fetal fibronectin) to decide."
+      ]
+    },
+    {
+      "id": "steroids",
+      "title": "Corticosteroids",
+      "timeframe": "As soon as preterm birth likely",
+      "actions": [
+        "Offer at 24+0 to 33+6 weeks; consider at 34+0 to 35+6 weeks; discuss at 22+0 to 23+6 weeks (NICE).",
+        "Dexamethasone 12 mg IM every 12 h × 2 (MOH). One repeat course only if the first was more than 7 days ago and still under 34 weeks; never more than 2 courses."
+      ]
+    },
+    {
+      "id": "tocolysis",
+      "title": "Tocolysis (to allow steroids/transfer, up to 48 h)",
+      "timeframe": "If contractions and no contraindication",
+      "actions": [
+        "Nifedipine: offer at 26+0 to 33+6 weeks, consider at 24+0 to 25+6 weeks (NICE). MOH dose: 20 mg orally, then 10–20 mg every 6–8 h for up to 48 h.",
+        "If nifedipine contraindicated: atosiban 6.75 mg IV over 1 min, then 18 mg/h for 3 h, then 6 mg/h for up to 45 h (maximum 330 mg).",
+        "Do not use betamimetics (NICE) — oral terbutaline must not be used for tocolysis (FDA boxed warning). Indomethacin (MOH option at 24–32 weeks) carries fetal ductal and renal risks.",
+        "No tocolysis with chorioamnionitis, abruption, fetal compromise or advanced labour."
+      ]
+    },
+    {
+      "id": "mg",
+      "title": "Magnesium sulfate neuroprotection",
+      "timeframe": "Birth expected within 24 h",
+      "actions": [
+        "Offer at 24+0 to 29+6 weeks; consider at 30+0 to 33+6 weeks; discuss at 23+0 to 23+6 weeks.",
+        "4 g IV over 15 min, then 1 g/h until birth or 24 h; monitor for toxicity at least every 4 h."
+      ]
+    },
+    {
+      "id": "birth",
+      "title": "Intrapartum care",
+      "timeframe": "In labour",
+      "actions": [
+        "GBS prophylaxis in labour: ampicillin 2 g IV every 6 h (MOH) — avoid other broad-spectrum antibiotics unless infection.",
+        "CTG or intermittent auscultation; delayed cord clamping per neonatal protocol."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Diagnose preterm labour and give corticosteroids, tocolysis and magnesium neuroprotection appropriately."
+    ],
+    "references": [
+      {
+        "title": "NICE NG25: Preterm labour and birth",
+        "edition": "NICE guideline, 2015 (updated 2022)",
+        "url": "https://www.nice.org.uk/guidance/ng25",
+        "locator": "Recs 1.1–1.10 (prevention, P-PROM diagnosis and antibiotics, diagnosis of preterm labour, tocolysis, corticosteroids, magnesium sulfate)"
+      },
+      {
+        "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+        "edition": "2014",
+        "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf",
+        "locator": "Preterm labour chapter (pp. 29–33)"
+      },
+      {
+        "title": "Nifedipine prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=09a04e5f-d3b0-4ee3-b12d-f74203262179",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Indomethacin prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=009097a5-2c1e-4f5d-8054-896cf896cb3d",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Terbutaline sulfate prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0a95bc4f-34d3-4b5e-841b-6839e1c1e0c7",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Magnesium sulfate in 5% dextrose injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=03ebeabb-8386-4af4-3086-bdf3c3fc4a5a",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Dexamethasone sodium phosphate injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0277cc0a-2fd4-4605-a310-b613be84ee26",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Ampicillin sodium prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=06ca924c-5f3a-4924-90f4-5ba623daaa0e",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "SFDA Saudi Drug Information System (registration search)",
+        "edition": "Accessed 11–12 Oct 2026",
+        "url": "https://sdi.sfda.gov.sa/"
+      }
+    ],
+    "keyPoints": [
+      "Steroids 24–34 weeks: dexamethasone 12 mg IM ×2, 12 h apart.",
+      "Nifedipine first-line tocolysis; atosiban if contraindicated.",
+      "Magnesium 4 g + 1 g/h for birth under 30 weeks.",
+      "Cervical length 15 mm or fibronectin 50 ng/mL to decide at 30+ weeks.",
+      "No betamimetics; no tocolysis with infection or abruption."
+    ],
+    "pitfalls": [
+      "Tocolysis in chorioamnionitis or abruption.",
+      "More than 2 steroid courses.",
+      "Magnesium beyond 24 h.",
+      "Indomethacin after 30 weeks.",
+      "Digital examination before fibronectin swab."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Signs of labour, bleeding or fluid loss to report.",
+      "Neonatal unit visit and counselling."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable in the acute phase."
+    ],
+    "mdtReferrals": [
+      "Neonatology; maternal–fetal medicine; in-utero transfer to a unit with NICU."
+    ],
+    "dischargeCriteria": [
+      "Contractions settled with no cervical change for at least 24–48 h and fetal wellbeing reassuring.",
+      "Steroid course complete or not required; follow-up plan arranged."
+    ],
+    "followUpPlan": "Increased surveillance; cervical length screening and progesterone/cerclage discussion in future pregnancies if previous preterm birth."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Preterm labour (MOH)",
+      "threshold": "24 to under 37 weeks; at least 2 painful contractions per 10 min plus dilatation above 2 cm or effacement above 50% or progressive change"
+    },
+    {
+      "criterion": "Diagnosed preterm labour at 30+ weeks (NICE)",
+      "threshold": "Cervical length 15 mm or less, or fetal fibronectin above 50 ng/mL"
+    },
+    {
+      "criterion": "Steroids",
+      "threshold": "Offer 24+0–33+6; consider 34+0–35+6"
+    },
+    {
+      "criterion": "Magnesium neuroprotection",
+      "threshold": "Offer 24+0–29+6; consider 30+0–33+6"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Fetal lung maturation (24+0 to 33+6 weeks; consider to 35+6)",
+        "patientGroup": "Pregnant women with threatened/planned preterm birth or P-PROM",
+        "genericName": "Dexamethasone",
+        "dose": "12 mg",
+        "route": "IM",
+        "frequency": "Every 12 h",
+        "duration": "2 doses (one course; at most one repeat course if more than 7 days and still under 34 weeks)",
+        "adjustments": [
+          "MOH regimen; betamethasone is an alternative per local protocol",
+          "Diabetes: increase insulin cover (NICE NG3)"
+        ],
+        "monitoring": [
+          "Maternal glucose"
+        ],
+        "sourceTitle": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+        "sourceUrl": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf",
+        "sourceEdition": "MOH 2014, preterm labour chapter",
+        "contraindications": [
+          "Systemic fungal infections"
+        ]
+      },
+      {
+        "indication": "Tocolysis (first line)",
+        "patientGroup": "Intact membranes, 24+0 to 33+6 weeks",
+        "genericName": "Nifedipine",
+        "dose": "20 mg, then 10–20 mg",
+        "route": "PO",
+        "frequency": "Every 6–8 h",
+        "duration": "Up to 48 h",
+        "adjustments": [
+          "Off-label use",
+          "Avoid with hypotension; caution with magnesium sulfate"
+        ],
+        "monitoring": [
+          "Maternal BP, HR; fetal heart"
+        ],
+        "sourceTitle": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+        "sourceUrl": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf",
+        "sourceEdition": "MOH 2014, preterm labour chapter",
+        "contraindications": [
+          "Known hypersensitivity to nifedipine"
+        ]
+      },
+      {
+        "indication": "Tocolysis if nifedipine contraindicated",
+        "patientGroup": "Intact membranes",
+        "genericName": "Atosiban",
+        "dose": "6.75 mg IV over 1 min; then 18 mg/h for 3 h; then 6 mg/h",
+        "route": "IV",
+        "frequency": "Bolus then infusion",
+        "duration": "Up to 48 h (maximum 330 mg)",
+        "adjustments": [
+          "Oxytocin receptor antagonist; not marketed in the US"
+        ],
+        "monitoring": [
+          "Contractions, fetal heart"
+        ],
+        "sourceTitle": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+        "sourceUrl": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf",
+        "sourceEdition": "MOH 2014, preterm labour chapter"
+      },
+      {
+        "indication": "Tocolysis (MOH option, 24–32 weeks; not NICE)",
+        "patientGroup": "Intact membranes",
+        "genericName": "Indomethacin",
+        "dose": "50–100 mg rectal loading, then 25 mg orally",
+        "route": "PR then PO",
+        "frequency": "Every 4–6 h",
+        "duration": "Maximum 48 h",
+        "adjustments": [
+          "FDA: avoid NSAIDs from about 20 weeks (oligohydramnios, fetal renal dysfunction) and from 30 weeks (ductus closure)"
+        ],
+        "monitoring": [
+          "Amniotic fluid volume, fetal echo if prolonged"
+        ],
+        "sourceTitle": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+        "sourceUrl": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf",
+        "sourceEdition": "MOH 2014, preterm labour chapter",
+        "contraindications": [
+          "Asthma, urticaria or allergic reaction after aspirin/NSAIDs",
+          "Setting of CABG surgery",
+          "Hypersensitivity",
+          "Boxed warning: serious cardiovascular and GI events"
+        ]
+      },
+      {
+        "indication": "Fetal neuroprotection (24+0 to 29+6 weeks; consider 30+0 to 33+6)",
+        "patientGroup": "Established preterm labour or planned birth within 24 h",
+        "genericName": "Magnesium sulfate",
+        "dose": "4 g IV bolus over 15 min, then 1 g/h",
+        "route": "IV",
+        "frequency": "Infusion",
+        "duration": "Until birth or 24 h (whichever sooner)",
+        "adjustments": [
+          "Do not use beyond 24 h (MHRA: skeletal effects with prolonged use)"
+        ],
+        "monitoring": [
+          "Pulse, BP, RR, patellar reflexes at least every 4 h; urine output"
+        ],
+        "sourceTitle": "NICE NG25: Preterm labour and birth",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng25",
+        "sourceEdition": "NICE NG25",
+        "contraindications": [
+          "Heart block or myocardial damage",
+          "Myasthenia gravis",
+          "Diabetic coma"
+        ]
+      },
+      {
+        "indication": "Group B Streptococcus prophylaxis in preterm labour",
+        "patientGroup": "Women in preterm labour",
+        "genericName": "Ampicillin",
+        "dose": "2 g",
+        "route": "IV",
+        "frequency": "Every 6 h",
+        "duration": "Until birth",
+        "adjustments": [
+          "Penicillin allergy: local alternative"
+        ],
+        "monitoring": [
+          "Allergy"
+        ],
+        "sourceTitle": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+        "sourceUrl": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf",
+        "sourceEdition": "MOH 2014, preterm labour chapter",
+        "contraindications": [
+          "Previous hypersensitivity to any penicillin"
+        ]
+      }
+    ],
+    "note": "Tocolytic and steroid doses from the Saudi MOH OB/GYN manual; magnesium from NICE NG25; contraindications from FDA labels (atosiban is EU-licensed — check SFDA). NICE advises against betamimetics; MOH 2014 still lists ritodrine/terbutaline."
+  },
+  "guidelineComparison": {
+    "title": "NICE NG25 vs Saudi MOH Pocket Manual (2014)",
+    "columns": [
+      "NICE NG25",
+      "MOH 2014"
+    ],
+    "rows": [
+      {
+        "parameter": "Tocolytic",
+        "values": [
+          "Nifedipine; atosiban if contraindicated; no betamimetics",
+          "Indomethacin or nifedipine (24–32 wk); nifedipine, ritodrine or terbutaline (32–34 wk); atosiban"
+        ]
+      },
+      {
+        "parameter": "Steroid window",
+        "values": [
+          "Offer 24+0–33+6; consider to 35+6; max 2 courses",
+          "Up to 36 weeks"
+        ]
+      },
+      {
+        "parameter": "Magnesium",
+        "values": [
+          "Neuroprotection 4 g + 1 g/h up to 24 h (under 30 weeks)",
+          "4–6 g load, 2–4 g/h (listed as tocolytic)"
+        ]
+      },
+      {
+        "parameter": "Diagnosis at 30+ weeks",
+        "values": [
+          "Cervical length 15 mm or fetal fibronectin 50 ng/mL",
+          "Clinical cervical change"
+        ]
+      }
+    ],
+    "note": "Follow NICE (newer evidence) for tocolytic choice and magnesium dosing; avoid oral terbutaline for tocolysis (FDA boxed warning)."
+  }
+}

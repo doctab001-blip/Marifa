@@ -1,5 +1,6 @@
 import "server-only";
 import { clinicalReviewOverrides } from "@/lib/data/clinical-review-overrides";
+import { mergedTopics } from "@/lib/data/merged-topics";
 import { DiseaseDetailSchema, type DiseaseDetail } from "@/lib/validations/disease";
 import { isSupabaseConfigured } from "@/lib/supabase/config";
 import { createSupabaseDataClient } from "@/lib/supabase/data-client";
@@ -56,6 +57,7 @@ export async function getApprovedDiseaseGuidelines(filters: { speciality?: strin
     const diseases: DiseaseGuidelineSummary[] = [];
     let rejectedCount = 0;
     for (const row of (data ?? []) as unknown as GuidelineRow[]) {
+      if (Object.hasOwn(mergedTopics, row.id)) continue;
       const parsed = DiseaseDetailSchema.safeParse(currentContent(row));
       if (!parsed.success || !isApproved(parsed.data) || parsed.data.id !== row.id || row.status !== parsed.data.status || row.title !== parsed.data.title || row.specialty !== parsed.data.specialty) {
         rejectedCount += 1;

@@ -1,0 +1,576 @@
+{
+  "id": "1759a9d1-015f-40c7-8a11-e8e54f52991d",
+  "title": "Maternal Sepsis in Pregnancy or Postpartum",
+  "specialty": "Obstetrics / Infectious Diseases",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "emergency-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Safe Birth",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Pregnant and postpartum women (including after miscarriage or abortion) with suspected sepsis or septic shock. Verified against the SMFM Consult #67 (2023, endorsed by ACOG), the Surviving Sepsis Campaign 2021, the Saudi MOH OB/GYN manual (septic shock chapter) and the MOH intra-abdominal infection protocol (doses); contraindications from FDA labels.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "RCOG GTG 64 (2024) not accessible (not open access)",
+      "Norepinephrine dosing — ICU protocol"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "1759a9d1-015f-40c7-8a11-e8e54f52991d"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Maternal sepsis is life-threatening organ dysfunction from infection during pregnancy, childbirth, the post-abortion period or the postpartum period. A dysregulated host response causes vasodilatation, capillary leak, myocardial depression and microvascular thrombosis; normal pregnancy physiology masks early signs.",
+    "keyMechanisms": [
+      "Pregnancy raises heart rate and lowers BP and WBC thresholds overlap with normal values — most women who died of sepsis were afebrile and had delayed escalation (SMFM).",
+      "Common sources: antepartum — pyelonephritis, pneumonia, chorioamnionitis; postpartum — endometritis, wound infection, mastitis, urinary tract infection. Necrotising soft-tissue infection and group A Streptococcus cause rapid toxin-mediated shock.",
+      "Lactate rises with tissue hypoperfusion; uterine infection may need delivery/evacuation for source control.",
+      "Sepsis increases thrombotic risk (pregnancy is already prothrombotic) — give pharmacological VTE prophylaxis in septic shock.",
+      "Fetal compromise usually reflects maternal hypoperfusion — resuscitating the mother is the best fetal treatment."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Fever or hypothermia (may be absent), rigors, feeling unwell.",
+      "Abdominal or pelvic pain, offensive lochia or vaginal discharge, wound pain/redness.",
+      "Cough, breathlessness; dysuria, loin pain; breast pain.",
+      "Diarrhoea and vomiting (early sign of toxin-mediated GAS infection)."
+    ],
+    "physicalSigns": [
+      "Tachycardia above 100, tachypnoea, hypotension (SBP below 90), altered mental state.",
+      "Oliguria (below 0.5 mL/kg/h), significant oedema, ileus (MOH).",
+      "Uterine tenderness, wound cellulitis, fetal tachycardia."
+    ],
+    "redFlags": [
+      "SBP below 90 mmHg or MAP below 65 despite fluids (septic shock)",
+      "Lactate above 4 mmol/L (MOH) — any raised lactate needs action",
+      "Altered mental status; SpO2 falling; oliguria",
+      "Rapidly spreading skin changes, severe pain or toxic shock features (group A Streptococcus)",
+      "Signs of intra-amniotic infection — delivery needed regardless of gestation"
+    ],
+    "precipitants": [
+      "Caesarean birth, prolonged rupture of membranes, retained products, invasive procedures.",
+      "Urinary tract infection, pneumonia, influenza.",
+      "Group A Streptococcus contact (sore throat in family)."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Pulmonary embolism / amniotic fluid embolism",
+      "distinguishingFeatures": "Sudden collapse, hypoxia, coagulopathy."
+    },
+    {
+      "condition": "Pre-eclampsia/HELLP",
+      "distinguishingFeatures": "Hypertension, raised liver enzymes, low platelets — can mimic organ dysfunction."
+    },
+    {
+      "condition": "Haemorrhage",
+      "distinguishingFeatures": "Hypotension from bleeding; check blood loss and Hb."
+    },
+    {
+      "condition": "Acute fatty liver of pregnancy",
+      "distinguishingFeatures": "Hypoglycaemia, coagulopathy."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Serum lactate",
+        "modalityTarget": "At recognition; repeat to guide resuscitation",
+        "targetCondition": "Hypoperfusion",
+        "expectedFinding": "Raised; MOH lists above 4 mmol/L.",
+        "clinicalRationale": "Recommended in all suspected maternal sepsis (SMFM 1B).",
+        "normalValue": "Below 2 mmol/L",
+        "references": [
+          {
+            "title": "Society for Maternal-Fetal Medicine Consult Series #67: Maternal sepsis (endorsed by ACOG)",
+            "edition": "Am J Obstet Gynecol 2023 (September)",
+            "url": "https://assets.noviams.com/novi-file-uploads/smfm/Publications_and_Guidelines/Consults/Consult_Series__67_Maternal_Sepsis.pdf"
+          },
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Blood cultures (before antibiotics, if no delay) plus source cultures",
+        "modalityTarget": "At recognition",
+        "targetCondition": "Organism",
+        "expectedFinding": "Positive culture identifies the organism.",
+        "clinicalRationale": "Do not delay antibiotics beyond 1 h to obtain cultures.",
+        "references": [
+          {
+            "title": "Society for Maternal-Fetal Medicine Consult Series #67: Maternal sepsis (endorsed by ACOG)",
+            "edition": "Am J Obstet Gynecol 2023 (September)",
+            "url": "https://assets.noviams.com/novi-file-uploads/smfm/Publications_and_Guidelines/Consults/Consult_Series__67_Maternal_Sepsis.pdf"
+          },
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "FBC, CRP, renal function, LFTs, glucose, coagulation",
+        "modalityTarget": "At recognition",
+        "targetCondition": "Organ dysfunction",
+        "expectedFinding": "WBC above 12 or below 4 × 10⁹/L; thrombocytopenia; raised creatinine and bilirubin; hyperglycaemia; coagulopathy.",
+        "clinicalRationale": "Defines organ dysfunction (SOFA) and severity.",
+        "normalValue": "WBC in pregnancy up to about 15 × 10⁹/L; platelets 150–400; creatinine below 90 µmol/L in pregnancy",
+        "references": [
+          {
+            "title": "Society for Maternal-Fetal Medicine Consult Series #67: Maternal sepsis (endorsed by ACOG)",
+            "edition": "Am J Obstet Gynecol 2023 (September)",
+            "url": "https://assets.noviams.com/novi-file-uploads/smfm/Publications_and_Guidelines/Consults/Consult_Series__67_Maternal_Sepsis.pdf"
+          },
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Arterial blood gas",
+        "modalityTarget": "Respiratory compromise or shock",
+        "targetCondition": "Hypoxaemia, acidosis",
+        "expectedFinding": "Hypoxaemia; metabolic acidosis.",
+        "clinicalRationale": "Supports ICU escalation.",
+        "normalValue": "pH 7.40–7.47 in pregnancy (respiratory alkalosis); PaCO2 about 4 kPa",
+        "references": [
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Fetal heart monitoring / CTG",
+        "modalityTarget": "Pregnant women after viability",
+        "targetCondition": "Fetal compromise",
+        "expectedFinding": "Fetal tachycardia, decelerations.",
+        "clinicalRationale": "Usually improves with maternal resuscitation; delivery only for obstetric indication or uterine source.",
+        "references": [
+          {
+            "title": "Society for Maternal-Fetal Medicine Consult Series #67: Maternal sepsis (endorsed by ACOG)",
+            "edition": "Am J Obstet Gynecol 2023 (September)",
+            "url": "https://assets.noviams.com/novi-file-uploads/smfm/Publications_and_Guidelines/Consults/Consult_Series__67_Maternal_Sepsis.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Chest X-ray, pelvic/abdominal ultrasound; CT pelvis if abscess suspected",
+        "modalityTarget": "Guided by suspected source",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Pneumonia, retained products, abscess, collections.",
+        "clinicalRationale": "Rapid source identification for source control.",
+        "references": [
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          },
+          {
+            "title": "Society for Maternal-Fetal Medicine Consult Series #67: Maternal sepsis (endorsed by ACOG)",
+            "edition": "Am J Obstet Gynecol 2023 (September)",
+            "url": "https://assets.noviams.com/novi-file-uploads/smfm/Publications_and_Guidelines/Consults/Consult_Series__67_Maternal_Sepsis.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "recognise",
+      "title": "Recognise and escalate",
+      "timeframe": "Immediately",
+      "actions": [
+        "Consider sepsis with any unexplained organ dysfunction and suspected infection — even without fever.",
+        "Treat as an emergency: senior obstetrician, anaesthetist, critical care; HDU/ICU for septic shock (MOH)."
+      ]
+    },
+    {
+      "id": "hour1",
+      "title": "First hour",
+      "timeframe": "Within 1 h",
+      "actions": [
+        "Oxygen to maintain saturation; left lateral tilt if pregnant beyond 20 weeks.",
+        "Blood and source cultures, lactate — then broad-spectrum IV antibiotics within 1 h.",
+        "Hypotension or hypoperfusion: 1–2 L balanced crystalloid within the first 3 h (SMFM); reassess with dynamic measures (avoid overload — pulmonary oedema risk in pregnancy). No starches or gelatin."
+      ]
+    },
+    {
+      "id": "abx",
+      "title": "Empiric antibiotics by likely source (SMFM Table 4)",
+      "timeframe": "Within 1 h",
+      "actions": [
+        "Unknown source or septic shock: piperacillin–tazobactam 4.5 g IV every 6 h (or a carbapenem) ± vancomycin if MRSA risk.",
+        "Chorioamnionitis: ampicillin + gentamicin; add clindamycin or metronidazole if caesarean birth.",
+        "Endometritis: ampicillin + gentamicin + metronidazole (or clindamycin); alternatively ceftriaxone/cefotaxime + metronidazole.",
+        "Pyelonephritis: gentamicin + ampicillin, or carbapenem / piperacillin–tazobactam monotherapy.",
+        "Community-acquired pneumonia: ceftriaxone (or cefotaxime/ertapenem/ampicillin) + azithromycin.",
+        "Necrotising soft-tissue infection: vancomycin + piperacillin–tazobactam; if group A Streptococcus or Clostridium: penicillin G + clindamycin.",
+        "Narrow to cultures; shorter courses are usually adequate once source controlled."
+      ]
+    },
+    {
+      "id": "shock",
+      "title": "Septic shock",
+      "timeframe": "If hypotension persists after fluids",
+      "actions": [
+        "Norepinephrine is the first-line vasopressor in pregnancy and postpartum; target MAP 65 mmHg.",
+        "Persistent vasopressor need: hydrocortisone 200 mg/day IV (50 mg every 6 h or infusion).",
+        "Pharmacological VTE prophylaxis (LMWH) in septic shock.",
+        "Insulin if glucose above 180 mg/dL (10 mmol/L)."
+      ]
+    },
+    {
+      "id": "source",
+      "title": "Source control and delivery",
+      "timeframe": "As soon as identified",
+      "actions": [
+        "Rapidly identify/exclude an anatomical source; drain abscesses, debride necrotising infection.",
+        "Uterine source (intra-amniotic infection, retained products): prompt delivery or evacuation regardless of gestation.",
+        "Sepsis alone is not an indication for immediate delivery — decide on gestation and maternal/fetal condition; stabilise the mother first. Give antenatal steroids if preterm birth is likely."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Recognise maternal sepsis early, start the first-hour bundle and achieve source control."
+    ],
+    "references": [
+      {
+        "title": "Society for Maternal-Fetal Medicine Consult Series #67: Maternal sepsis (endorsed by ACOG)",
+        "edition": "Am J Obstet Gynecol 2023 (September)",
+        "url": "https://assets.noviams.com/novi-file-uploads/smfm/Publications_and_Guidelines/Consults/Consult_Series__67_Maternal_Sepsis.pdf",
+        "locator": "Recommendations 1–19; Table 4 empiric antibiotics; corticosteroids and delivery sections"
+      },
+      {
+        "title": "Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2021",
+        "edition": "Intensive Care Med 2021;47:1181–1247 (Evans L et al.)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8486643/",
+        "locator": "Antimicrobials, fluids, vasopressors, corticosteroids"
+      },
+      {
+        "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+        "edition": "2014",
+        "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf",
+        "locator": "Septic shock in OB/GYN chapter (pp. 123–127)"
+      },
+      {
+        "title": "MOH Intra-abdominal Infections Treatment Protocol",
+        "edition": "Saudi Ministry of Health, 1st version 2022",
+        "url": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/Internal-Abdominal-infection-Treatment-Protocol.pdf",
+        "locator": "Tables 1–2 (doses)"
+      },
+      {
+        "title": "Piperacillin and tazobactam prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1aba753c-d0c2-4b35-917a-9143dd4be468",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Ampicillin sodium prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=06ca924c-5f3a-4924-90f4-5ba623daaa0e",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Gentamicin prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=09cf88af-59da-f147-e063-6294a90aac99",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Clindamycin phosphate injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=05a75685-0af5-407c-ac57-e380c882b49d",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Metronidazole prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=02046a22-a5eb-4bb7-bec7-e5a2aa55e142",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Ceftriaxone for injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=03283208-8616-4117-9d2b-aa8046017a4f",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Azithromycin prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=003307c5-3f73-4a5d-a704-bfdea3c656e8",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "SFDA Saudi Drug Information System (registration search)",
+        "edition": "Accessed 11–12 Oct 2026",
+        "url": "https://sdi.sfda.gov.sa/"
+      }
+    ],
+    "keyPoints": [
+      "Think sepsis without fever — unexplained organ dysfunction + infection.",
+      "Cultures, lactate, antibiotics within 1 h.",
+      "1–2 L balanced crystalloid; norepinephrine first-line.",
+      "Find and control the source — uterine source means delivery/evacuation.",
+      "VTE prophylaxis in septic shock."
+    ],
+    "pitfalls": [
+      "Attributing tachycardia to pregnancy.",
+      "Delaying antibiotics for cultures or imaging.",
+      "Fluid overload causing pulmonary oedema.",
+      "Missing group A Streptococcus (diarrhoea, severe pain).",
+      "Rushing delivery in an unstable mother when the source is not uterine."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Warning signs after discharge (fever, offensive lochia, wound redness).",
+      "Hand hygiene; complete antibiotic course."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable in the acute phase."
+    ],
+    "mdtReferrals": [
+      "Critical care, anaesthesia, microbiology/infectious diseases, neonatology.",
+      "Surgery/interventional radiology for source control."
+    ],
+    "dischargeCriteria": [
+      "Afebrile and haemodynamically stable off vasopressors.",
+      "Source controlled; on oral antibiotics where appropriate.",
+      "Follow-up and support plan for sepsis survivors."
+    ],
+    "followUpPlan": "Review culture results and complete the antibiotic course; postnatal debrief; screen for physical, cognitive and emotional effects after sepsis (SMFM)."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Maternal sepsis (WHO definition quoted by SMFM)",
+      "threshold": "Life-threatening condition from organ dysfunction due to infection during pregnancy, childbirth, post-abortion or postpartum"
+    },
+    {
+      "criterion": "Septic shock",
+      "threshold": "Vasopressor needed for MAP 65 mmHg or more and lactate above 2 mmol/L despite adequate fluids"
+    },
+    {
+      "criterion": "MOH clinical markers",
+      "threshold": "Temp above 38 °C or hypothermia; HR above 100; SBP below 90; oliguria below 0.5 mL/kg/h; lactate above 4"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Empiric broad-spectrum (unknown source, septic shock, uterine/abdominal source)",
+        "patientGroup": "Pregnant/postpartum adults",
+        "genericName": "Piperacillin–tazobactam",
+        "dose": "4.5 g",
+        "route": "IV",
+        "frequency": "Every 6 h",
+        "duration": "Narrow with cultures",
+        "adjustments": [
+          "Renal dose adjustment"
+        ],
+        "monitoring": [
+          "Renal function; cultures"
+        ],
+        "sourceTitle": "MOH Intra-abdominal Infections Treatment Protocol",
+        "sourceUrl": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/Internal-Abdominal-infection-Treatment-Protocol.pdf",
+        "sourceEdition": "MOH IAI protocol, Tables 1–2",
+        "contraindications": [
+          "Allergy to any penicillin, cephalosporin or beta-lactamase inhibitor"
+        ]
+      },
+      {
+        "indication": "Endometritis or abdominal source (alternative)",
+        "patientGroup": "Pregnant/postpartum adults",
+        "genericName": "Ceftriaxone + metronidazole",
+        "dose": "Ceftriaxone 2 g; metronidazole 500 mg",
+        "route": "IV (metronidazole IV/PO)",
+        "frequency": "Ceftriaxone every 24 h; metronidazole every 8 h",
+        "duration": "Per source control",
+        "adjustments": [
+          "Avoid alcohol with metronidazole"
+        ],
+        "monitoring": [
+          "Clinical response"
+        ],
+        "sourceTitle": "MOH Intra-abdominal Infections Treatment Protocol",
+        "sourceUrl": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/Internal-Abdominal-infection-Treatment-Protocol.pdf",
+        "sourceEdition": "MOH IAI protocol, Tables 1–2",
+        "contraindications": [
+          "Hypersensitivity to ceftriaxone or any cephalosporin",
+          "Neonates: prematurity (post-menstrual age up to 41 weeks); with IV calcium in neonates",
+          "Hypersensitivity to nitroimidazoles",
+          "Disulfiram within the last 2 weeks",
+          "Alcohol during and for 3 days after therapy",
+          "Trichomoniasis treatment in the first trimester"
+        ]
+      },
+      {
+        "indication": "Chorioamnionitis, endometritis, pyelonephritis (with ampicillin)",
+        "patientGroup": "Pregnant/postpartum adults",
+        "genericName": "Gentamicin",
+        "dose": "3 mg/kg/day in 3 doses every 8 h; up to 5 mg/kg/day in life-threatening infection (label)",
+        "route": "IV",
+        "frequency": "Every 8 h",
+        "duration": "Short course",
+        "adjustments": [
+          "Use lean body weight in obesity",
+          "Nephro- and ototoxicity; avoid with other nephrotoxins"
+        ],
+        "monitoring": [
+          "Peak/trough levels, creatinine, hearing"
+        ],
+        "sourceTitle": "Gentamicin prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=09cf88af-59da-f147-e063-6294a90aac99",
+        "sourceEdition": "Dosage section (normal renal function)",
+        "contraindications": [
+          "Hypersensitivity to gentamicin or other aminoglycosides"
+        ]
+      },
+      {
+        "indication": "Chorioamnionitis, endometritis, pyelonephritis (with gentamicin)",
+        "patientGroup": "Pregnant/postpartum adults",
+        "genericName": "Ampicillin",
+        "dose": "2 g",
+        "route": "IV",
+        "frequency": "Every 4 h (MOH IAI enterococcal-cover dose)",
+        "duration": "Per source",
+        "adjustments": [
+          "Penicillin allergy: seek alternative"
+        ],
+        "monitoring": [
+          "Rash, anaphylaxis"
+        ],
+        "sourceTitle": "MOH Intra-abdominal Infections Treatment Protocol",
+        "sourceUrl": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/Internal-Abdominal-infection-Treatment-Protocol.pdf",
+        "sourceEdition": "MOH IAI protocol, Tables 1–2",
+        "contraindications": [
+          "Previous hypersensitivity to any penicillin"
+        ]
+      },
+      {
+        "indication": "Group A Streptococcus/toxin-mediated or anaerobic cover",
+        "patientGroup": "Adults",
+        "genericName": "Clindamycin",
+        "dose": "1200–2700 mg/day in 2–4 divided doses for severe infection (label)",
+        "route": "IV",
+        "frequency": "Every 6–12 h",
+        "duration": "Per source",
+        "adjustments": [
+          "Combine with penicillin G for GAS (SMFM)",
+          "C. difficile risk"
+        ],
+        "monitoring": [
+          "Diarrhoea"
+        ],
+        "sourceTitle": "Clindamycin phosphate injection prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=05a75685-0af5-407c-ac57-e380c882b49d",
+        "sourceEdition": "Dosage section",
+        "contraindications": [
+          "Hypersensitivity to clindamycin or lincomycin"
+        ]
+      },
+      {
+        "indication": "MRSA risk or necrotising infection",
+        "patientGroup": "Adults",
+        "genericName": "Vancomycin",
+        "dose": "15–20 mg/kg",
+        "route": "IV over at least 60 min",
+        "frequency": "Every 8–12 h",
+        "duration": "Per cultures",
+        "adjustments": [
+          "Infuse no faster than 10 mg/min"
+        ],
+        "monitoring": [
+          "Trough/AUC levels, creatinine"
+        ],
+        "sourceTitle": "MOH Intra-abdominal Infections Treatment Protocol",
+        "sourceUrl": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/Internal-Abdominal-infection-Treatment-Protocol.pdf",
+        "sourceEdition": "MOH IAI protocol, Tables 1–2",
+        "contraindications": [
+          "Known hypersensitivity to vancomycin"
+        ]
+      },
+      {
+        "indication": "Septic shock needing ongoing vasopressor",
+        "patientGroup": "Adults",
+        "genericName": "Hydrocortisone",
+        "dose": "200 mg/day (50 mg every 6 h or continuous infusion)",
+        "route": "IV",
+        "frequency": "Daily",
+        "duration": "Typically 7 days (SMFM)",
+        "adjustments": [
+          "Hyperglycaemia"
+        ],
+        "monitoring": [
+          "Glucose"
+        ],
+        "sourceTitle": "Society for Maternal-Fetal Medicine Consult Series #67: Maternal sepsis (endorsed by ACOG)",
+        "sourceUrl": "https://assets.noviams.com/novi-file-uploads/smfm/Publications_and_Guidelines/Consults/Consult_Series__67_Maternal_Sepsis.pdf",
+        "sourceEdition": "SMFM 2023"
+      }
+    ],
+    "note": "Antibiotic choice by source from SMFM 2023 Table 4; doses from the Saudi MOH intra-abdominal infection protocol and FDA labels; follow the local antibiogram. Norepinephrine dosing per ICU protocol."
+  },
+  "guidelineComparison": {
+    "title": "SMFM 2023 / SSC 2021 vs Saudi MOH Pocket Manual (2014)",
+    "columns": [
+      "SMFM 2023 / SSC 2021",
+      "MOH 2014"
+    ],
+    "rows": [
+      {
+        "parameter": "Fluids",
+        "values": [
+          "1–2 L balanced crystalloid in first 3 h; dynamic reassessment",
+          "20–40 mL/kg crystalloid; mean 5 L in 6 h"
+        ]
+      },
+      {
+        "parameter": "Resuscitation targets",
+        "values": [
+          "MAP 65; lactate-guided; no CVP/ScvO2 protocol",
+          "CVP 8–12, ScvO2 above 70%, MAP above 65, urine above 0.5 mL/kg/h (early goal-directed)"
+        ]
+      },
+      {
+        "parameter": "Steroids",
+        "values": [
+          "Hydrocortisone 200 mg/day if ongoing vasopressor",
+          "Steroids in severe shock, within 8 h"
+        ]
+      },
+      {
+        "parameter": "Empiric antibiotics",
+        "values": [
+          "Source-based (Table 4)",
+          "Vancomycin + 3rd-gen cephalosporin, beta-lactam/beta-lactamase inhibitor or carbapenem"
+        ]
+      }
+    ],
+    "note": "MOH 2014 reflects earlier early-goal-directed therapy; follow SMFM/SSC targets (newer evidence) and the local antibiogram."
+  }
+}

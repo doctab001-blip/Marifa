@@ -1,0 +1,483 @@
+{
+  "id": "cbd9f91f-e176-4601-9bf4-b4f2f7e96deb",
+  "title": "Venous Thromboembolism in Pregnancy and Postpartum",
+  "specialty": "Maternal-Fetal Medicine / Haematology",
+  "authority": "MOH",
+  "status": "under_review",
+  "version": "emergency-2026-10-12-v1",
+  "lastReviewed": "2026-10-12",
+  "pillar": "Safe Birth",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-12",
+    "status": "incomplete",
+    "scope": "Pregnant and postpartum women: VTE risk assessment and thromboprophylaxis, diagnosis of suspected DVT/PE, and treatment around labour and breastfeeding. Verified against the Saudi MOH VTE prophylaxis protocol (RCOG-based obstetric tool), MOH DVT (2024) and PE (2022) protocols and the ESC/ERS 2019 PE guideline summary; contraindications from FDA labels.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "RCOG GTG 37a/b full text not reviewed (MOH tool is RCOG-based)",
+      "Fondaparinux treatment dose — product label and specialist advice"
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "cbd9f91f-e176-4601-9bf4-b4f2f7e96deb"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Pregnancy is a hypercoagulable state (Virchow's triad): raised clotting factors and fibrinogen, reduced protein S and fibrinolysis, venous stasis from progesterone and uterine compression of the iliac veins, and vessel injury at delivery. Risk is highest postpartum, especially after caesarean birth.",
+    "keyMechanisms": [
+      "Hypercoagulability is physiological preparation for blood loss at birth and persists for about 6 weeks postpartum.",
+      "Left iliac vein compression explains the predominance of left-sided and iliofemoral DVT in pregnancy.",
+      "Added risks: previous VTE, thrombophilia, obesity, age over 35, parity 3 or more, caesarean section, PPH, pre-eclampsia, infection, immobility, IVF/OHSS, hyperemesis (MOH/RCOG tool).",
+      "D-dimer rises through pregnancy — above 500 µg/L in up to 25% in the third trimester — so it cannot be used alone (ESC).",
+      "Warfarin crosses the placenta (teratogenic, fetal bleeding); heparins do not — LMWH is the anticoagulant of choice."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "DVT: unilateral leg pain and swelling (usually left), especially of the calf or whole leg.",
+      "PE: breathlessness, pleuritic chest pain, haemoptysis, syncope — overlap with normal pregnancy symptoms."
+    ],
+    "physicalSigns": [
+      "Leg swelling (calf circumference difference), tenderness, warmth.",
+      "Tachycardia, tachypnoea, hypoxaemia; hypotension in massive PE."
+    ],
+    "redFlags": [
+      "Haemodynamic instability (massive PE) — manage with the same emergency algorithm as non-pregnant patients",
+      "Hypoxaemia (SpO2 below 90%)",
+      "Recent (within 1 month) acute VTE near term — plan IV UFH around delivery"
+    ],
+    "precipitants": [
+      "Caesarean section (especially in labour), PPH above 1 L, preterm birth, stillbirth.",
+      "Obesity, age over 35, parity 3+, smoking, immobility, dehydration, infection.",
+      "Previous VTE, thrombophilia, IVF/OHSS, hyperemesis."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Physiological leg oedema of pregnancy",
+      "distinguishingFeatures": "Bilateral, non-tender."
+    },
+    {
+      "condition": "Pre-eclampsia with oedema",
+      "distinguishingFeatures": "Hypertension, proteinuria."
+    },
+    {
+      "condition": "Peripartum cardiomyopathy, amniotic fluid embolism, pneumonia",
+      "distinguishingFeatures": "Echocardiography, chest X-ray."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Obstetric VTE risk score (MOH/RCOG tool)",
+        "modalityTarget": "At booking, any admission, and after birth",
+        "targetCondition": "Thromboprophylaxis need",
+        "expectedFinding": "Antenatal score 4 or more → from first trimester; score 3 → from 28 weeks; postnatal score 2 or more → at least 10 days.",
+        "clinicalRationale": "Previous VTE scores 4; high-risk thrombophilia or significant comorbidity 3; obesity 1–2; age above 35, parity 3+, smoking, varicose veins, pre-eclampsia, caesarean, PPH above 1 L, preterm birth each 1 (MOH).",
+        "references": [
+          {
+            "title": "MOH VTE Prophylaxis Protocol (Adult) — RCOG-based obstetric risk assessment, Saudi Ministry of Health",
+            "edition": "MOH therapeutic protocols",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "D-dimer (within a validated pregnancy-adapted algorithm, e.g. pregnancy-adapted YEARS)",
+        "modalityTarget": "Only as part of a formal pathway",
+        "targetCondition": "Exclusion of PE",
+        "expectedFinding": "Often raised in normal pregnancy.",
+        "clinicalRationale": "Not usable alone (above 500 µg/L in up to 25% in the third trimester).",
+        "references": [
+          {
+            "title": "Management of acute pulmonary embolism 2019: what is new in the updated European guidelines? (ESC/ERS 2019 summary)",
+            "edition": "Intern Emerg Med 2020;15:957–966 (Konstantinides S, Meyer G)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7467952/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "FBC (platelets), creatinine, clotting, weight",
+        "modalityTarget": "Before starting LMWH",
+        "targetCondition": "Dosing and safety",
+        "expectedFinding": "Thrombocytopenia; CrCl below 30 mL/min.",
+        "clinicalRationale": "Weight sets prophylactic/treatment dose; renal failure → UFH; baseline platelets for HIT monitoring.",
+        "normalValue": "Platelets 150–400 × 10⁹/L",
+        "references": [
+          {
+            "title": "MOH VTE Prophylaxis Protocol (Adult) — RCOG-based obstetric risk assessment, Saudi Ministry of Health",
+            "edition": "MOH therapeutic protocols",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/"
+          },
+          {
+            "title": "MOH Deep Vein Thrombosis Treatment Protocol, Saudi Ministry of Health",
+            "edition": "2024",
+            "url": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/DVT_Deep_Vein_Thrombosis_treatment_protocol_2024.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Compression duplex ultrasound of the leg veins",
+        "modalityTarget": "Suspected DVT; also first step in suspected PE with leg symptoms",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Non-compressible vein.",
+        "clinicalRationale": "Confirms DVT and avoids chest imaging radiation if positive.",
+        "references": [
+          {
+            "title": "Management of acute pulmonary embolism 2019: what is new in the updated European guidelines? (ESC/ERS 2019 summary)",
+            "edition": "Intern Emerg Med 2020;15:957–966 (Konstantinides S, Meyer G)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7467952/"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "CT pulmonary angiography or ventilation–perfusion scan",
+        "modalityTarget": "Suspected PE not excluded by the pregnancy pathway",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Filling defect / mismatched perfusion defect.",
+        "clinicalRationale": "Do not hesitate to image to confirm or exclude PE in pregnancy (ESC).",
+        "references": [
+          {
+            "title": "Management of acute pulmonary embolism 2019: what is new in the updated European guidelines? (ESC/ERS 2019 summary)",
+            "edition": "Intern Emerg Med 2020;15:957–966 (Konstantinides S, Meyer G)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7467952/"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "assess",
+      "title": "Assess risk at every stage",
+      "timeframe": "Booking, admission, after birth",
+      "actions": [
+        "Score with the MOH/RCOG obstetric tool; reassess on admission and after delivery.",
+        "Low risk: mobilise, avoid dehydration. Intermediate/high risk: LMWH plus mechanical methods.",
+        "Avoid or delay pharmacological prophylaxis in women at risk of bleeding after weighing risks."
+      ]
+    },
+    {
+      "id": "prophylaxis",
+      "title": "Thromboprophylaxis",
+      "timeframe": "As scored",
+      "actions": [
+        "Enoxaparin once daily by weight: below 50 kg 20 mg; 50–90 kg 40 mg; 91–130 kg 60 mg; 131–170 kg 80 mg; above 170 kg 0.6 mg/kg/day (MOH). UFH 5000 units SC twice daily is the alternative.",
+        "Antenatal: high risk from first trimester; intermediate from 28 weeks. Postnatal: at least 10 days; 6 weeks if on antenatal LMWH.",
+        "LMWH is safe with breastfeeding."
+      ]
+    },
+    {
+      "id": "diagnose",
+      "title": "Suspected DVT or PE",
+      "timeframe": "Same day",
+      "actions": [
+        "Start treatment-dose LMWH while awaiting imaging unless contraindicated (stabilise and anticoagulate before confirmation — MOH PE approach).",
+        "Use a formal pregnancy diagnostic pathway: clinical probability, D-dimer within the algorithm, leg compression ultrasound, then CTPA or V/Q scan.",
+        "Unstable PE: same emergency algorithm as non-pregnant (oxygen to SpO2 90% or more, consider reperfusion)."
+      ]
+    },
+    {
+      "id": "treat",
+      "title": "Treatment of confirmed VTE",
+      "timeframe": "Throughout pregnancy and at least 6 weeks postpartum",
+      "actions": [
+        "LMWH (prefilled single-dose syringes — multi-dose vials contain preservatives and are contraindicated): enoxaparin 1 mg/kg every 12 h (MOH).",
+        "CrCl below 30 mL/min: UFH (IV 80 units/kg bolus then 18 units/kg/h, or SC) instead of LMWH.",
+        "No warfarin in pregnancy (teratogenic); no rivaroxaban or apixaban in pregnancy or breastfeeding. Fondaparinux if heparin-induced thrombocytopenia."
+      ]
+    },
+    {
+      "id": "delivery",
+      "title": "Labour and birth",
+      "timeframe": "Plan from 36 weeks",
+      "actions": [
+        "Stop LMWH at least 24 h before planned delivery; no neuraxial anaesthesia if fully anticoagulated when labour starts.",
+        "VTE within the last month: switch to IV UFH (stop 4–6 h before delivery). Preterm delivery risk: switch to IV UFH at 36 weeks (MOH).",
+        "Restart LMWH 6 h after vaginal birth or 12 h after caesarean if no significant bleeding.",
+        "Postpartum: LMWH or warfarin (both safe with breastfeeding)."
+      ]
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Assess VTE risk in pregnancy and the puerperium, give weight-based thromboprophylaxis, and diagnose and treat DVT/PE safely around birth."
+    ],
+    "references": [
+      {
+        "title": "MOH VTE Prophylaxis Protocol (Adult) — RCOG-based obstetric risk assessment, Saudi Ministry of Health",
+        "edition": "MOH therapeutic protocols",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/",
+        "locator": "Obstetric (antenatal/postnatal) risk tool, score thresholds, enoxaparin weight bands, medication table"
+      },
+      {
+        "title": "MOH Deep Vein Thrombosis Treatment Protocol, Saudi Ministry of Health",
+        "edition": "2024",
+        "url": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/DVT_Deep_Vein_Thrombosis_treatment_protocol_2024.pdf",
+        "locator": "Section II Pregnancy; labour and delivery; after delivery"
+      },
+      {
+        "title": "MOH Pulmonary Embolism Protocol, Saudi Ministry of Health",
+        "edition": "2022",
+        "url": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/PE_Pulmonary_Embolism_Protocol.pdf",
+        "locator": "Anticoagulant dosing table"
+      },
+      {
+        "title": "Management of acute pulmonary embolism 2019: what is new in the updated European guidelines? (ESC/ERS 2019 summary)",
+        "edition": "Intern Emerg Med 2020;15:957–966 (Konstantinides S, Meyer G)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7467952/",
+        "locator": "Diagnosis of PE in pregnancy"
+      },
+      {
+        "title": "Enoxaparin sodium injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=014c6710-f2c4-fd1e-e063-6394a90ae525",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Heparin sodium injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=02fb700d-a28c-4d45-b78d-382dc0d5986c",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Warfarin sodium prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0cbce382-9c88-4f58-ae0f-532a841e8f95",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Fondaparinux sodium prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=49e0d7bc-3f49-849b-c77c-98682d1c0d19",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "SFDA Saudi Drug Information System (registration search)",
+        "edition": "Accessed 11–12 Oct 2026",
+        "url": "https://sdi.sfda.gov.sa/"
+      }
+    ],
+    "keyPoints": [
+      "Score VTE risk at booking, admission and after birth.",
+      "Enoxaparin prophylaxis by weight band; 10 days or 6 weeks postnatally.",
+      "Treat with enoxaparin 1 mg/kg twice daily; start before imaging.",
+      "No warfarin or DOACs in pregnancy.",
+      "Stop LMWH 24 h before planned birth; restart 6 h (vaginal) or 12 h (caesarean)."
+    ],
+    "pitfalls": [
+      "Using D-dimer alone to exclude VTE in pregnancy.",
+      "Withholding CTPA/V/Q out of radiation concern when PE is suspected.",
+      "Multi-dose LMWH vials (preservative) in pregnancy.",
+      "Neuraxial anaesthesia within the LMWH window.",
+      "Forgetting postnatal prophylaxis after caesarean birth."
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Signs of DVT/PE to report urgently.",
+      "Self-injection technique; timing around labour.",
+      "Contraception and future pregnancy planning."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable in the acute phase."
+    ],
+    "mdtReferrals": [
+      "Haematology / obstetric medicine.",
+      "Anaesthesia for delivery planning."
+    ],
+    "dischargeCriteria": [
+      "Anticoagulation plan documented with duration (at least 6 weeks postpartum and 3 months total for treatment).",
+      "Injection technique taught; sharps disposal."
+    ],
+    "followUpPlan": "Haematology/obstetric medicine follow-up; plan prophylaxis in future pregnancies; review contraception (avoid oestrogen after VTE)."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Antenatal prophylaxis (MOH/RCOG)",
+      "threshold": "Score 4 or more: from first trimester; score 3: from 28 weeks"
+    },
+    {
+      "criterion": "Postnatal prophylaxis",
+      "threshold": "Score 2 or more: at least 10 days; on antenatal LMWH: 6 weeks"
+    },
+    {
+      "criterion": "Diagnosis",
+      "threshold": "Compression ultrasound and CTPA/V/Q within a formal pregnancy pathway; D-dimer not alone"
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Thromboprophylaxis",
+        "patientGroup": "Pregnant/postpartum women (by booking or current weight)",
+        "genericName": "Enoxaparin",
+        "dose": "Below 50 kg 20 mg; 50–90 kg 40 mg; 91–130 kg 60 mg; 131–170 kg 80 mg; above 170 kg 0.6 mg/kg",
+        "route": "SC",
+        "frequency": "Once daily",
+        "duration": "Antenatal per score; postnatal 10 days or 6 weeks",
+        "adjustments": [
+          "CrCl below 30: UFH preferred, or reduce LMWH dose 50%",
+          "Hold before neuraxial procedures"
+        ],
+        "monitoring": [
+          "Platelets if HIT suspected; bleeding"
+        ],
+        "sourceTitle": "MOH VTE Prophylaxis Protocol (Adult) — RCOG-based obstetric risk assessment, Saudi Ministry of Health",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/",
+        "sourceEdition": "MOH VTE prophylaxis — obstetric section",
+        "contraindications": [
+          "Active major bleeding",
+          "Heparin-induced thrombocytopenia within 100 days or circulating HIT antibodies",
+          "Hypersensitivity to enoxaparin, heparin or pork products"
+        ]
+      },
+      {
+        "indication": "Treatment of DVT/PE in pregnancy",
+        "patientGroup": "Pregnant/postpartum women",
+        "genericName": "Enoxaparin",
+        "dose": "1 mg/kg",
+        "route": "SC (prefilled single-dose syringes)",
+        "frequency": "Every 12 h",
+        "duration": "Rest of pregnancy and at least 6 weeks postpartum (minimum 3 months total)",
+        "adjustments": [
+          "Stop at least 24 h before planned delivery",
+          "CrCl below 30: UFH instead"
+        ],
+        "monitoring": [
+          "Weight, platelets, renal function"
+        ],
+        "sourceTitle": "MOH Pulmonary Embolism Protocol, Saudi Ministry of Health",
+        "sourceUrl": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/PE_Pulmonary_Embolism_Protocol.pdf",
+        "sourceEdition": "MOH PE protocol, dosing table",
+        "contraindications": [
+          "Active major bleeding",
+          "Heparin-induced thrombocytopenia within 100 days or circulating HIT antibodies",
+          "Hypersensitivity to enoxaparin, heparin or pork products"
+        ]
+      },
+      {
+        "indication": "Severe renal failure or around delivery",
+        "patientGroup": "Pregnant women",
+        "genericName": "Unfractionated heparin",
+        "dose": "IV: 80 units/kg bolus, then 18 units/kg/h (adjust to aPTT); SC: 333 units/kg then 250 units/kg every 12 h",
+        "route": "IV or SC",
+        "frequency": "As stated",
+        "duration": "Until delivery/LMWH restart",
+        "adjustments": [
+          "Stop IV infusion 4–6 h before delivery"
+        ],
+        "monitoring": [
+          "aPTT (IV), platelets"
+        ],
+        "sourceTitle": "MOH Pulmonary Embolism Protocol, Saudi Ministry of Health",
+        "sourceUrl": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/PE_Pulmonary_Embolism_Protocol.pdf",
+        "sourceEdition": "MOH PE protocol, dosing table",
+        "contraindications": [
+          "History of heparin-induced thrombocytopenia (± thrombosis)",
+          "Hypersensitivity to heparin or pork products",
+          "When coagulation tests cannot be performed at appropriate intervals (full-dose)",
+          "Uncontrolled active bleeding (except DIC)"
+        ]
+      },
+      {
+        "indication": "Prophylaxis (alternative)",
+        "patientGroup": "Pregnant/postpartum women",
+        "genericName": "Unfractionated heparin",
+        "dose": "5000 units",
+        "route": "SC",
+        "frequency": "Twice daily",
+        "duration": "As for LMWH",
+        "adjustments": [
+          "When LMWH unavailable or renal failure"
+        ],
+        "monitoring": [
+          "Platelets"
+        ],
+        "sourceTitle": "MOH VTE Prophylaxis Protocol (Adult) — RCOG-based obstetric risk assessment, Saudi Ministry of Health",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/",
+        "sourceEdition": "MOH VTE prophylaxis — obstetric section",
+        "contraindications": [
+          "History of heparin-induced thrombocytopenia (± thrombosis)",
+          "Hypersensitivity to heparin or pork products",
+          "When coagulation tests cannot be performed at appropriate intervals (full-dose)",
+          "Uncontrolled active bleeding (except DIC)"
+        ]
+      },
+      {
+        "indication": "Heparin-induced thrombocytopenia in pregnancy",
+        "patientGroup": "Pregnant women",
+        "genericName": "Fondaparinux",
+        "dose": "Treatment dose per weight (label)",
+        "route": "SC",
+        "frequency": "Once daily",
+        "duration": "Specialist-guided",
+        "adjustments": [
+          "Limited pregnancy safety data (MOH)"
+        ],
+        "monitoring": [
+          "Renal function, bleeding"
+        ],
+        "sourceTitle": "MOH Deep Vein Thrombosis Treatment Protocol, Saudi Ministry of Health",
+        "sourceUrl": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/DVT_Deep_Vein_Thrombosis_treatment_protocol_2024.pdf",
+        "sourceEdition": "Section II Pregnancy",
+        "contraindications": [
+          "Creatinine clearance below 30 mL/min",
+          "Active major bleeding",
+          "Bacterial endocarditis",
+          "Thrombocytopenia with positive anti-platelet antibody test on fondaparinux"
+        ]
+      }
+    ],
+    "note": "Doses from the Saudi MOH VTE prophylaxis, DVT and PE protocols; contraindications from FDA labels. Avoid warfarin and DOACs in pregnancy; warfarin is acceptable postpartum with breastfeeding."
+  },
+  "guidelineComparison": {
+    "title": "Anticoagulant choice by stage (MOH DVT 2024)",
+    "columns": [
+      "Pregnancy",
+      "Breastfeeding"
+    ],
+    "rows": [
+      {
+        "parameter": "LMWH",
+        "values": [
+          "Agent of choice (prophylaxis and treatment)",
+          "Safe"
+        ]
+      },
+      {
+        "parameter": "Warfarin",
+        "values": [
+          "Avoid — teratogenic (first trimester) and fetal bleeding",
+          "Safe"
+        ]
+      },
+      {
+        "parameter": "Rivaroxaban / apixaban / dabigatran",
+        "values": [
+          "Do not use — convert to LMWH",
+          "Do not use"
+        ]
+      },
+      {
+        "parameter": "Fondaparinux",
+        "values": [
+          "Only if HIT (limited data)",
+          "Do not use for acute VTE during lactation"
+        ]
+      }
+    ],
+    "note": "UFH is the alternative when CrCl is below 30 mL/min or for flexibility around delivery."
+  }
+}

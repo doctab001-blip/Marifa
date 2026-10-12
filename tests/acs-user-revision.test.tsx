@@ -4,23 +4,27 @@ import replacement from "../data/reviews/acs-user-revision.json";
 import { DiseaseDetailSchema } from "@/lib/validations/disease";
 import { DiseaseDetailSections } from "@/components/disease-detail-sections";
 import { clinicalReviewOverrides } from "@/lib/data/clinical-review-overrides";
-import emergency from "../data/emergency-versions/acs.emergency-2026-10-12-v2.json";
+import emergency from "../data/emergency-versions/acs.emergency-2026-10-12-v3.json";
 
 describe("ACS user revision", () => {
-  it("retains pending review; the newer emergency version carries its doses forward unverified", () => {
+  it("retains pending review; the newer emergency version uses label-sourced doses with contraindications", () => {
     const disease = DiseaseDetailSchema.parse(replacement);
     expect(disease.status).toBe("under_review");
     expect(disease.clinicalReviewStatus).toBe("pending");
     expect(disease.medicationPlan?.status).toBe("local-protocol-required");
 
     const next = DiseaseDetailSchema.parse(emergency);
-    expect(clinicalReviewOverrides[next.id]).toBe(next.version);
+    expect(clinicalReviewOverrides[next.id]).toBeUndefined();
     expect(next.status).toBe("under_review");
     expect(next.clinicalReviewStatus).toBe("pending");
     expect(next.medicationPlan?.status).toBe("local-protocol-required");
     const names = next.medicationPlan?.regimens.map((r) => r.genericName) ?? [];
-    for (const medicine of ["Nitroglycerin", "Ticagrelor", "Clopidogrel", "Enoxaparin", "Unfractionated Heparin (UFH)"]) {
+    for (const medicine of ["Ticagrelor", "Clopidogrel", "Prasugrel", "Enoxaparin"]) {
       expect(names).toContain(medicine);
+    }
+    expect(names).not.toContain("Unfractionated Heparin (UFH)");
+    for (const regimen of next.medicationPlan?.regimens ?? []) {
+      expect(regimen.contraindications?.length).toBeGreaterThan(0);
     }
   });
 

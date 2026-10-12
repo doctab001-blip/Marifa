@@ -72,6 +72,8 @@ export const MedicationRegimenSchema = z.object({
   duration: nonEmptyText,
   adjustments: nonEmptyTextArray,
   monitoring: nonEmptyTextArray,
+  // Optional; legacy regimens without contraindications remain valid.
+  contraindications: nonEmptyTextArray.optional(),
   sourceTitle: nonEmptyText,
   sourceUrl: z.url(),
   sourceEdition: nonEmptyText,
