@@ -73,8 +73,8 @@ current or deployed.
 
 ## Continuation
 
-Use `plan.json` as the durable master/cursor. Four full batches of ten remain
-after batch 004, plus one final remainder. Do not silently relax strict batch
+Use `plan.json` as the durable master/cursor. Three full batches of ten remain
+after batch 005, plus one final remainder. Do not silently relax strict batch
 size for the remainder. Report it separately after full batches finish.
 
 For each new batch, refresh the live catalogue/version baseline, reconcile
@@ -84,7 +84,7 @@ Do not require a new OpenAI API key: the background Codex run can research and
 prepare source-backed extracts directly with its browsing/file tools.
 
 The preparation script now derives source-text hashes from each batch folder
-and permits the official hosts used through batch 004. Review and extend its
+and permits the official hosts used through batch 005. Review and extend its
 source-host allowlist only for retrieved official sources in each future batch;
 do not bypass provenance validation.
 Persist local artifacts exclusively, never overwriting a prepared payload.
@@ -145,5 +145,29 @@ Both payload schemas and `validatePathway` accepted all ten drafts; eight
 focused tests and TypeScript checks passed. The guarded transaction inserted
 exactly ten rows. Independent read-back verified 271 total versions, exactly
 ten batch-004 rows, 81 unchanged current versions, and all 261 pre-batch records
+unchanged by ID, content hash, status and current flag. Nothing was approved,
+published, made current or deployed.
+
+## Completed batch 005
+
+The next ten alphabetical master-catalogue scenarios now have versions named
+`official-extraction-2026-10-11-b005`. Each is an additive, non-current draft
+with pending clinical review and null reviewer, approval, publication and new
+verification dates. Existing current content, IDs, references and governance
+history remain unchanged; inherited sections are explicitly described as not
+newly verified.
+
+Official NICE and RCOG guidance plus the open-access HerniaSurge update are
+stored in `batch-005/sources`. Exact HTTPS URLs, editions, section locators and
+patient scopes are recorded in `extractions.json`. No medicine regimen was
+encoded because the retrieved recommendations did not provide a complete exact
+dose, route, frequency, duration and contraindication set. Source-backed drug
+names and partial details remain in actions with their missing elements and
+Saudi/local reconciliation requirements clearly marked as review gaps.
+
+Both payload schemas and `validatePathway` accepted all ten drafts; eight
+focused tests and TypeScript checks passed. The guarded transaction inserted
+exactly ten rows. Independent read-back verified 281 total versions, exactly
+ten batch-005 rows, 81 unchanged current versions, and all 271 pre-batch records
 unchanged by ID, content hash, status and current flag. Nothing was approved,
 published, made current or deployed.
