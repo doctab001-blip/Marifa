@@ -1,341 +1,202 @@
+/** Five-layer, MDCalc-inspired clinical calculator schema. */
 export type RiskTone = "low" | "moderate" | "high";
-
-type BaseQuestion = {
-  id: string;
-  label: string;
-  help?: string;
-  required?: boolean;
-};
-
-export type CalculatorOption = {
-  value: string;
-  label: string;
-  description?: string;
-  points: number;
-};
-
-export type SingleSelectQuestion = BaseQuestion & {
-  type: "single-select";
-  options: CalculatorOption[];
-};
-
-export type MultiSelectQuestion = BaseQuestion & {
-  type: "multi-select";
-  options: CalculatorOption[];
-  noneLabel?: string;
-};
-
-export type CalculatorUnit = {
-  value: string;
-  label: string;
-  canonicalMultiplier?: number;
-  canonicalOffset?: number;
-};
-
-export type NumericScoreRange = {
-  min?: number;
-  minInclusive?: boolean;
-  max?: number;
-  maxInclusive?: boolean;
-  points: number;
-};
-
-export type NumericQuestion = BaseQuestion & {
-  type: "number";
-  min?: number;
-  max?: number;
-  step?: number;
-  units: CalculatorUnit[];
-  scoring: NumericScoreRange[];
-};
-
-export type CalculatorQuestion = SingleSelectQuestion | MultiSelectQuestion | NumericQuestion;
-
-export type NumericAnswer = { value: number; unit: string };
-export type CalculatorAnswer = string | string[] | NumericAnswer;
-export type CalculatorAnswers = Record<string, CalculatorAnswer | undefined>;
-
-export type ResultMatch = {
-  minScore?: number;
-  maxScore?: number;
-  answerEquals?: Record<string, string>;
-};
-
-export type CalculatorResult = {
-  id: string;
-  label: string;
-  tone: RiskTone;
-  match: ResultMatch;
-  summary: string;
-  management: string[];
-};
-
-export type CalculatorEvidence = {
-  formula: string[];
-  validation: string;
-  limitations: string[];
-  sources: Array<{ label: string; detail: string; url: string }>;
-};
-
-export type ClinicalCalculatorSchema = {
-  id: string;
-  shortTitle: string;
-  title: string;
-  objective: string;
-  indication: string;
-  scoreLabel: string;
-  questions: CalculatorQuestion[];
-  results: CalculatorResult[];
-  evidence: CalculatorEvidence;
-};
-
-function isInRange(value: number, range: NumericScoreRange) {
-  const aboveMinimum = range.min === undefined
-    || (range.minInclusive === false ? value > range.min : value >= range.min);
-  const belowMaximum = range.max === undefined
-    || (range.maxInclusive === true ? value <= range.max : value < range.max);
-  return aboveMinimum && belowMaximum;
+export type CalculatorInputType = "numeric" | "binary" | "multi-select";
+export interface CalculatorOption { value:string; label:string; points:number; description?:string }
+export interface CalculatorUnit { value:string; label:string; system?:"SI"|"US"; canonicalMultiplier?:number; canonicalOffset?:number }
+export interface CalculatorInput { id:string; label:string; type:CalculatorInputType; options?:CalculatorOption[]; units?:CalculatorUnit[]; min?:number; max?:number; step?:number; required?:boolean }
+export interface CalculatorTier { min?:number; max?:number; riskLabel:string; managementAdvice:string; colorCode:string; tone?:RiskTone; label?:string; summary?:string; management?:string[] }
+export interface ClinicalReference { citation:string; url:string }
+export interface LegacyEvidence { formula:string[]; validation:string; limitations:string[]; sources:Array<{label:string;detail:string;url:string}> }
+export interface LegacyResult { id:string; label:string; tone:RiskTone; match:{minScore?:number;maxScore?:number}; summary:string; management:string[] }
+export interface LegacySingleQuestion { id:string; label:string; type:"single-select"; options:CalculatorOption[]; help?:string; required?:boolean }
+export interface LegacyMultiQuestion { id:string; label:string; type:"multi-select"; options:CalculatorOption[]; noneLabel?:string; help?:string; required?:boolean }
+export interface LegacyNumberQuestion { id:string; label:string; type:"number"; units:CalculatorUnit[]; min?:number; max?:number; step?:number; scoring?:any[]; help?:string; required?:boolean }
+export interface ClinicalCalculatorSchema {
+ id:string; name:string; shortName:string; specialty:string; description:string; inputs:CalculatorInput[];
+ calculate:(inputs:Record<string,any>)=>number|string; tiers:CalculatorTier[]; pearls:string[]; whyUseIt:string; references:ClinicalReference[];
+ /** Compatibility aliases for the existing calculator renderer. */ shortTitle:string; title:string; objective:string; indication:string; scoreLabel:string; questions:Array<LegacySingleQuestion|LegacyMultiQuestion|LegacyNumberQuestion>; results:LegacyResult[]; evidence:LegacyEvidence;
 }
-
-export function toCanonicalValue(value: number, unit: CalculatorUnit) {
-  return value * (unit.canonicalMultiplier ?? 1) + (unit.canonicalOffset ?? 0);
-}
-
-export function fromCanonicalValue(value: number, unit: CalculatorUnit) {
-  return (value - (unit.canonicalOffset ?? 0)) / (unit.canonicalMultiplier ?? 1);
-}
-
-export function questionScore(question: CalculatorQuestion, answer: CalculatorAnswer | undefined) {
-  if (answer === undefined) return 0;
-  if (question.type === "single-select") {
-    return question.options.find((option) => option.value === answer)?.points ?? 0;
-  }
-  if (question.type === "multi-select") {
-    if (!Array.isArray(answer)) return 0;
-    return answer.reduce((total, value) => total + (question.options.find((option) => option.value === value)?.points ?? 0), 0);
-  }
-  if (typeof answer !== "object" || Array.isArray(answer)) return 0;
-  const unit = question.units.find(({ value }) => value === answer.unit) ?? question.units[0];
-  const canonicalValue = toCanonicalValue(answer.value, unit);
-  return question.scoring.find((range) => isInRange(canonicalValue, range))?.points ?? 0;
-}
-
-export function calculateScore(schema: ClinicalCalculatorSchema, answers: CalculatorAnswers) {
-  return schema.questions.reduce((total, question) => total + questionScore(question, answers[question.id]), 0);
-}
-
-export function isQuestionComplete(question: CalculatorQuestion, answer: CalculatorAnswer | undefined) {
-  if (question.required === false) return true;
-  if (question.type === "multi-select") return Array.isArray(answer);
-  if (question.type === "single-select") return typeof answer === "string";
-  return typeof answer === "object" && !Array.isArray(answer) && Number.isFinite(answer.value);
-}
-
-export function getCalculatorResult(schema: ClinicalCalculatorSchema, score: number, answers: CalculatorAnswers) {
-  return schema.results.find(({ match }) => {
-    if (match.minScore !== undefined && score < match.minScore) return false;
-    if (match.maxScore !== undefined && score > match.maxScore) return false;
-    return Object.entries(match.answerEquals ?? {}).every(([questionId, value]) => answers[questionId] === value);
-  });
-}
-
-export const clinicalCalculators: ClinicalCalculatorSchema[] = [
-  {
-    id: "wells-pe",
-    shortTitle: "Wells' PE",
-    title: "Wells' Criteria for Pulmonary Embolism",
-    objective: "Estimate the pre-test probability of pulmonary embolism in an adult with suspected PE.",
-    indication: "Use only after clinical assessment has raised suspicion of PE. This score supports, but does not replace, clinical judgement or the local diagnostic pathway.",
-    scoreLabel: "Wells score",
-    questions: [
-      {
-        id: "dvt-signs",
-        type: "single-select",
-        label: "Clinical signs and symptoms of DVT",
-        help: "Minimum of leg swelling and pain with palpation of the deep veins.",
-        options: [
-          { value: "no", label: "No", points: 0 },
-          { value: "yes", label: "Yes", points: 3 },
-        ],
-      },
-      {
-        id: "alternative-less-likely",
-        type: "single-select",
-        label: "Alternative diagnosis less likely than PE",
-        help: "A clinician-assessed criterion; do not infer it from the other answers.",
-        options: [
-          { value: "no", label: "No", points: 0 },
-          { value: "yes", label: "Yes", points: 3 },
-        ],
-      },
-      {
-        id: "heart-rate",
-        type: "number",
-        label: "Heart rate",
-        min: 0,
-        max: 300,
-        step: 1,
-        units: [{ value: "bpm", label: "beats/min" }],
-        scoring: [
-          { max: 100, maxInclusive: true, points: 0 },
-          { min: 100, minInclusive: false, points: 1.5 },
-        ],
-      },
-      {
-        id: "history",
-        type: "multi-select",
-        label: "History and associated features",
-        help: "Select every feature that applies, or explicitly select none.",
-        noneLabel: "None of these",
-        options: [
-          { value: "immobilisation-surgery", label: "Immobilisation >3 days or surgery in previous 4 weeks", points: 1.5 },
-          { value: "previous-vte", label: "Previous DVT or PE", points: 1.5 },
-          { value: "haemoptysis", label: "Haemoptysis", points: 1 },
-          { value: "malignancy", label: "Malignancy", description: "On treatment, treated in the last 6 months, or palliative.", points: 1 },
-        ],
-      },
-    ],
-    results: [
-      {
-        id: "pe-unlikely",
-        label: "PE unlikely",
-        tone: "low",
-        match: { maxScore: 4 },
-        summary: "Two-level Wells classification: 4 points or less.",
-        management: [
-          "Obtain a D-dimer result within 4 hours if possible.",
-          "If the D-dimer is positive, proceed to the imaging pathway. If it is negative, consider an alternative diagnosis.",
-          "If the D-dimer result cannot be obtained within 4 hours, follow the local pathway for interim therapeutic anticoagulation while awaiting the result.",
-        ],
-      },
-      {
-        id: "pe-likely",
-        label: "PE likely",
-        tone: "high",
-        match: { minScore: 4.5 },
-        summary: "Two-level Wells classification: more than 4 points.",
-        management: [
-          "Arrange CTPA immediately if possible; assess V/Q imaging suitability when CTPA is unsuitable.",
-          "If diagnostic imaging cannot be performed immediately, follow the local pathway for interim therapeutic anticoagulation.",
-        ],
-      },
-    ],
-    evidence: {
-      formula: [
-        "DVT signs +3; alternative diagnosis less likely than PE +3.",
-        "Heart rate >100/min +1.5; immobilisation >3 days or surgery in the previous 4 weeks +1.5; previous DVT/PE +1.5.",
-        "Haemoptysis +1; malignancy on treatment, treated in the last 6 months, or palliative +1.",
-      ],
-      validation: "The simplified rule was derived by Wells and colleagues in 2000. A prospective management study published in 2001 reported a 99.5% negative predictive value when a low clinical probability was combined with a negative D-dimer in the studied cohort.",
-      limitations: [
-        "Use in patients with suspected PE; it is not a population screening tool.",
-        "The ‘alternative diagnosis’ item is subjective and requires clinician judgement.",
-        "Apply local imaging, anticoagulation, pregnancy and renal-impairment protocols.",
-      ],
-      sources: [
-        { label: "NICE NG158", detail: "Recommendations 1.1.17–1.1.21 and Table 2 (updated 2023)", url: "https://www.nice.org.uk/guidance/ng158/chapter/Recommendations" },
-        { label: "Wells et al., 2000", detail: "Derivation of the simplified clinical model", url: "https://pubmed.ncbi.nlm.nih.gov/10744147/" },
-        { label: "Wells et al., 2001", detail: "Prospective management study, Annals of Internal Medicine 135(2):98–107", url: "https://pubmed.ncbi.nlm.nih.gov/11453709/" },
-      ],
-    },
-  },
-  {
-    id: "cha2ds2-vasc",
-    shortTitle: "CHA₂DS₂-VASc",
-    title: "CHA₂DS₂-VASc Stroke Risk Score",
-    objective: "Estimate thromboembolic stroke risk factors in an adult with atrial fibrillation.",
-    indication: "Use for people with atrial fibrillation to support stroke-prevention decisions. Assess bleeding risk, contraindications and patient preferences separately.",
-    scoreLabel: "CHA₂DS₂-VASc",
-    questions: [
-      {
-        id: "sex",
-        type: "single-select",
-        label: "Sex category",
-        help: "The original score assigns 1 point for female sex.",
-        options: [
-          { value: "male", label: "Male", points: 0 },
-          { value: "female", label: "Female", points: 1 },
-        ],
-      },
-      {
-        id: "age",
-        type: "number",
-        label: "Age",
-        min: 18,
-        max: 120,
-        step: 1,
-        units: [{ value: "years", label: "years" }],
-        scoring: [
-          { max: 65, points: 0 },
-          { min: 65, max: 75, points: 1 },
-          { min: 75, points: 2 },
-        ],
-      },
-      {
-        id: "risk-factors",
-        type: "multi-select",
-        label: "Clinical risk factors",
-        help: "Select every documented factor that applies, or explicitly select none.",
-        noneLabel: "None of these",
-        options: [
-          { value: "heart-failure", label: "Congestive heart failure or left ventricular dysfunction", points: 1 },
-          { value: "hypertension", label: "Hypertension", points: 1 },
-          { value: "diabetes", label: "Diabetes mellitus", points: 1 },
-          { value: "stroke", label: "Previous stroke, TIA or systemic thromboembolism", points: 2 },
-          { value: "vascular", label: "Vascular disease", description: "Previous myocardial infarction, peripheral artery disease or aortic plaque.", points: 1 },
-        ],
-      },
-    ],
-    results: [
-      {
-        id: "very-low-male",
-        label: "Very low risk",
-        tone: "low",
-        match: { maxScore: 0, answerEquals: { sex: "male" } },
-        summary: "CHA₂DS₂-VASc 0 in a man.",
-        management: ["Do not offer anticoagulation solely for stroke prevention when there are no other risk factors."],
-      },
-      {
-        id: "very-low-female",
-        label: "Very low risk",
-        tone: "low",
-        match: { minScore: 1, maxScore: 1, answerEquals: { sex: "female" } },
-        summary: "CHA₂DS₂-VASc 1 due to sex category alone.",
-        management: ["Do not offer anticoagulation solely for stroke prevention when sex is the only risk factor and the patient is under 65."],
-      },
-      {
-        id: "intermediate-male",
-        label: "Intermediate risk",
-        tone: "moderate",
-        match: { minScore: 1, maxScore: 1, answerEquals: { sex: "male" } },
-        summary: "CHA₂DS₂-VASc 1 in a man.",
-        management: ["Consider anticoagulation with a direct-acting oral anticoagulant after assessing bleeding risk, contraindications and patient preferences."],
-      },
-      {
-        id: "anticoagulation-threshold",
-        label: "Anticoagulation indicated",
-        tone: "high",
-        match: { minScore: 2 },
-        summary: "CHA₂DS₂-VASc 2 or above.",
-        management: ["Offer anticoagulation with a direct-acting oral anticoagulant, taking bleeding risk, contraindications and patient preferences into account.", "Use a vitamin K antagonist if direct-acting oral anticoagulants are contraindicated, not tolerated or unsuitable."],
-      },
-    ],
-    evidence: {
-      formula: [
-        "Congestive heart failure/LV dysfunction +1; hypertension +1; diabetes +1; vascular disease +1; female sex +1.",
-        "Age 65–74 +1; age ≥75 +2. Age bands are mutually exclusive.",
-        "Previous stroke, TIA or systemic thromboembolism +2. Maximum score: 9.",
-      ],
-      validation: "Lip and colleagues introduced and evaluated CHA₂DS₂-VASc using the Euro Heart Survey on atrial fibrillation in 2010. NICE uses it to assess stroke risk and identifies a score of 2 or more as the anticoagulation threshold, with men scoring 1 considered separately.",
-      limitations: [
-        "The score estimates stroke-risk factors; it does not calculate bleeding risk or choose a drug or dose.",
-        "Reassess risk when age or comorbidities change and after cardioversion or ablation when recurrence remains possible.",
-        "Follow local and Saudi formulary requirements before prescribing.",
-      ],
-      sources: [
-        { label: "NICE NG196", detail: "Recommendations 1.2.3 and 1.6.1–1.6.8 (2021)", url: "https://www.nice.org.uk/guidance/ng196/chapter/Recommendations" },
-        { label: "Lip et al., 2010", detail: "Original CHA₂DS₂-VASc validation, Chest 137(2):263–272", url: "https://pubmed.ncbi.nlm.nih.gov/19762550/" },
-      ],
-    },
-  },
+export type NumericAnswer={value:number;unit?:string}; export type CalculatorAnswer=string|string[]|NumericAnswer; export type CalculatorAnswers=Record<string,CalculatorAnswer|undefined>;
+export type NumericQuestion=LegacyNumberQuestion;
+export type CalculatorQuestion=LegacySingleQuestion|LegacyMultiQuestion|LegacyNumberQuestion;
+const N=(x:any)=>typeof x==='number'&&Number.isFinite(x)?x:undefined; const num=(i:any,k:string)=>N(typeof i[k]==='object'?i[k]?.value:i[k]); const Y=(i:any,k:string)=>i[k]===true||i[k]==='yes'||i[k]===1; const H=(i:any,k:string,v:string)=>Array.isArray(i[k])&&i[k].includes(v);
+const T=(min:number|undefined,max:number|undefined,riskLabel:string,managementAdvice:string,colorCode:string):CalculatorTier=>({min,max,riskLabel,managementAdvice,colorCode}); const R=(citation:string,url:string)=>({citation,url});
+function make(x:any):ClinicalCalculatorSchema { const results=x.tiers.map((t:any,n:number)=>({id:x.id==='wells-pe'?(n===0?'pe-unlikely':'pe-likely'):`${x.id}-${n}`,label:t.riskLabel,tone:t.colorCode.includes('red')?'high':t.colorCode.includes('yellow')?'moderate':'low',match:{minScore:t.min,maxScore:t.max},summary:t.riskLabel,management:[t.managementAdvice]})); x.tiers=x.tiers.map((t:any)=>({...t,label:t.riskLabel,summary:t.riskLabel,management:[t.managementAdvice],tone:t.colorCode.includes('red')?'high':t.colorCode.includes('yellow')?'moderate':'low'})); const questions=x.inputs.map((q:any)=>({...q,type:q.type==='binary'?'single-select':q.type==='numeric'?'number':q.type})); return {...x,shortTitle:x.shortName,title:x.name,objective:x.description,indication:x.whyUseIt,scoreLabel:x.shortName,questions,results,evidence:{formula:x.pearls,validation:x.whyUseIt,limitations:[],sources:x.references.map((r:any)=>({label:r.citation,detail:'',url:r.url}))}} }
+const bin=(id:string,label:string)=>({id,label,type:'binary',options:[{value:'no',label:'No',points:0},{value:'yes',label:'Yes',points:1}]});
+const age=(id='age')=>({id,label:'Age',type:'numeric',min:0,max:120,units:[{value:'years',label:'years'}]});
+export const calculators:ClinicalCalculatorSchema[]=[
+make({id:'wells-pe',name:"Wells' Criteria for Pulmonary Embolism",shortName:"Wells' PE",specialty:'Emergency medicine',description:'Estimate pre-test probability of pulmonary embolism.',inputs:[{...bin('dvt-signs','Clinical signs of DVT'),options:[{value:'no',label:'No',points:0},{value:'yes',label:'Yes',points:3}]},{...bin('alternative-less-likely','Alternative diagnosis less likely than PE'),options:[{value:'no',label:'No',points:0},{value:'yes',label:'Yes',points:3}]},{id:'heart-rate',label:'Heart rate',type:'numeric',units:[{value:'bpm',label:'beats/min'}]},{id:'history',label:'Associated features',type:'multi-select',options:[{value:'immobilisation-surgery',label:'Immobilisation/surgery',points:1.5},{value:'previous-vte',label:'Previous VTE',points:1.5},{value:'haemoptysis',label:'Haemoptysis',points:1},{value:'malignancy',label:'Malignancy',points:1}]}],calculate:(i:any)=>(Y(i,'dvt-signs')?3:0)+(Y(i,'alternative-less-likely')?3:0)+((num(i,'heart-rate')??0)>100?1.5:0)+(['immobilisation-surgery','previous-vte','haemoptysis','malignancy'] as const).reduce((s,k)=>s+(H(i,'history',k)?({ 'immobilisation-surgery':1.5,'previous-vte':1.5,haemoptysis:1,malignancy:1} as any)[k]:0),0),tiers:[T(undefined,4,'PE unlikely','Follow the D-dimer pathway when appropriate.','bg-emerald-50 text-emerald-800'),T(4.5,undefined,'PE likely','Proceed to definitive imaging and local anticoagulation pathway.','bg-red-50 text-red-800')],pearls:['DVT signs +3; alternative diagnosis less likely +3; HR >100 +1.5.'],whyUseIt:'Use after clinical assessment raises suspicion of PE.',references:[R('NICE NG158','https://www.nice.org.uk/guidance/ng158/chapter/Recommendations'),R('Wells et al.','https://pubmed.ncbi.nlm.nih.gov/10744147/')]}),
+make({id:'cha2ds2-vasc',name:'CHA₂DS₂-VASc Score',shortName:'CHA₂DS₂-VASc',specialty:'Cardiology',description:'Estimate thromboembolic stroke risk in atrial fibrillation.',inputs:[age(),{id:'sex',label:'Sex category',type:'binary',options:[{value:'male',label:'Male',points:0},{value:'female',label:'Female',points:1}]},{id:'risk-factors',label:'Risk factors',type:'multi-select',options:[{value:'chf',label:'Heart failure',points:1},{value:'hypertension',label:'Hypertension',points:1},{value:'diabetes',label:'Diabetes',points:1},{value:'stroke-tia',label:'Prior stroke/TIA/embolism',points:2},{value:'stroke',label:'Prior stroke/TIA/embolism',points:2},{value:'vascular',label:'Vascular disease',points:1}]}],calculate:(i:any)=>{const a=num(i,'age')??0;const stroke=H(i,'risk-factors','stroke-tia')||H(i,'risk-factors','stroke');return(a>=75?2:a>=65?1:0)+(i.sex==='female'?1:0)+['chf','hypertension','diabetes','vascular'].reduce((s,k)=>s+(H(i,'risk-factors',k)?1:0),0)+(stroke?2:0)},tiers:[T(0,0,'Low risk','Confirm guideline and patient factors before deciding therapy.','bg-emerald-50 text-emerald-800'),T(1,1,'Intermediate risk','Discuss stroke prevention and bleeding risk.','bg-yellow-50 text-yellow-800'),T(2,undefined,'Higher risk','Assess for oral anticoagulation unless contraindicated.','bg-red-50 text-red-800')],pearls:['Age 65–74 scores 1; age ≥75 scores 2.'],whyUseIt:'Support stroke-prevention decisions in atrial fibrillation.',references:[R('NICE NG196','https://www.nice.org.uk/guidance/ng196/chapter/Recommendations'),R('Lip et al.','https://pubmed.ncbi.nlm.nih.gov/19762550/')]}),
+make({id:'heart-score',name:'HEART Score',shortName:'HEART',specialty:'Emergency medicine',description:'Risk-stratify chest pain for short-term major adverse cardiac events.',inputs:['history','ecg','age','risk-factors','troponin'].map(id=>({id,label:id,type:'numeric',min:0,max:2})) ,calculate:(i:any)=>['history','ecg','age','risk-factors','troponin'].reduce((s,k)=>s+Math.max(0,Math.min(2,num(i,k)??0)),0),tiers:[T(0,3,'Low risk','Use serial assessment and local chest-pain protocol.','bg-emerald-50 text-emerald-800'),T(4,6,'Moderate risk','Observation and serial ECG/troponin.','bg-yellow-50 text-yellow-800'),T(7,10,'High risk','Urgent cardiology/ACS pathway.','bg-red-50 text-red-800')],pearls:['Score history, ECG, age, risk factors and troponin from 0–2.'],whyUseIt:'Support short-term ACS risk assessment with serial clinical evaluation.',references:[R('HEART validation','https://pubmed.ncbi.nlm.nih.gov/20026267/')]}),
 ];
+const simple=(id:string,name:string,shortName:string,specialty:string,description:string,inputs:any[],calculate:any,tiers:CalculatorTier[],pearls:string[],whyUseIt:string,url:string)=>make({id,name,shortName,specialty,description,inputs,calculate,tiers,pearls,whyUseIt,references:[R(name,url)]});
+calculators.push(simple('ckd-epi-egfr','CKD-EPI eGFR','CKD-EPI eGFR','Nephrology','Estimate GFR from creatinine, age and sex.',[{id:'creatinine',label:'Creatinine',type:'numeric',units:[{value:'mg-dl',label:'mg/dL'},{value:'umol-l',label:'µmol/L',canonicalMultiplier:.0113122}]},age(),bin('sex','Female sex')],(i:any)=>{const c=num(i,'creatinine')??0,a=num(i,'age')??0,f=i.sex==='female';const k=f?.7:.9,aa=f?-.241:-.302;return 142*Math.pow(Math.min(c/k,1),aa)*Math.pow(Math.max(c/k,1),-1.2)*Math.pow(.9938,a)*(f?1.012:1)},[T(90,undefined,'G1','Interpret with albuminuria and chronicity.','bg-emerald-50 text-emerald-800'),T(60,89.99,'G2','Confirm chronicity and albuminuria.','bg-yellow-50 text-yellow-800'),T(undefined,59.99,'G3–G5','Review kidney-risk management and medicines.','bg-red-50 text-red-800')],['Reports mL/min/1.73 m².'],'Support CKD staging; do not diagnose CKD from one result.','https://pubmed.ncbi.nlm.nih.gov/34554658/'));
+calculators.push(simple('cockcroft-gault','Cockcroft-Gault Creatinine Clearance','Cockcroft-Gault','Nephrology','Estimate creatinine clearance for drug dosing.',[age(),{id:'weight',label:'Weight',type:'numeric',units:[{value:'kg',label:'kg'},{value:'lb',label:'lb',canonicalMultiplier:.45359237}]},{id:'creatinine',label:'Creatinine',type:'numeric',units:[{value:'mg-dl',label:'mg/dL'},{value:'umol-l',label:'µmol/L',canonicalMultiplier:.0113122}]},bin('sex','Female sex')],(i:any)=>{const c=num(i,'creatinine')??0;return c?((140-(num(i,'age')??0))*(num(i,'weight')??0))/(72*c)*(i.sex==='female'?.85:1):0},[T(60,undefined,'≥60 mL/min','Use product-specific dosing guidance.','bg-emerald-50 text-emerald-800'),T(30,59.99,'30–59 mL/min','Review renal dose adjustments.','bg-yellow-50 text-yellow-800'),T(undefined,29.99,'<30 mL/min','Review urgent dose adjustment.','bg-red-50 text-red-800')],['Uses weight in kg and creatinine in mg/dL.'],'Use when drug labeling specifies Cockcroft-Gault.','https://pubmed.ncbi.nlm.nih.gov/1244564/'));
+for(const [id,name,short,specialty,desc,keys,url] of [['curb-65','CURB-65 Pneumonia Severity Score','CURB-65','Respiratory medicine','Assess adult community-acquired pneumonia severity',['confusion','urea','respiratory-rate','blood-pressure','age'], 'https://www.nice.org.uk/guidance/ng138/chapter/Recommendations'],['glasgow-coma-scale','Glasgow Coma Scale','GCS','Emergency medicine','Record eye, verbal and motor responses',['eye','verbal','motor'],'https://pubmed.ncbi.nlm.nih.gov/4136544/'],['qsofa','qSOFA Score','qSOFA','Critical care','Identify higher-risk adults with suspected infection',['respiratory-rate','systolic-bp','altered-mentation'],'https://pubmed.ncbi.nlm.nih.gov/26903338/'],['meld-na','MELD-Na Score','MELD-Na','Hepatology','Estimate short-term mortality risk in advanced liver disease',['bilirubin','inr','creatinine','sodium','dialysis'],'https://optn.transplant.hrsa.gov/media/1575/policys_notice_12-2016.pdf'],['has-bled','HAS-BLED Bleeding Risk Score','HAS-BLED','Cardiology','Identify modifiable bleeding risks in atrial fibrillation',['hypertension','renal','liver','stroke','bleeding','labile-inr','elderly','drugs-alcohol'],'https://pubmed.ncbi.nlm.nih.gov/20299623/'] ] as any[]){const inputs=keys.map((k:string)=>({id:k,label:k,type:k==='drugs-alcohol'?'multi-select':k==='urea'||k==='respiratory-rate'||k==='eye'||k==='verbal'||k==='motor'||k==='bilirubin'||k==='inr'||k==='creatinine'||k==='sodium'?'numeric':'binary',options:k==='drugs-alcohol'?[{value:'drugs',label:'Drugs',points:1},{value:'alcohol',label:'Alcohol',points:1}]:k==='confusion'||k==='blood-pressure'||k==='age'||k==='systolic-bp'||k==='altered-mentation'||k==='dialysis'||k==='hypertension'||k==='renal'||k==='liver'||k==='stroke'||k==='bleeding'||k==='labile-inr'||k==='elderly'?[{value:'no',label:'No',points:0},{value:'yes',label:'Yes',points:1}]:undefined}));calculators.push(simple(id,name,short,specialty,desc,inputs,(i:any)=>keys.reduce((s:number,k:string)=>s+(k==='age'?((num(i,k)??0)>=65?1:0):k==='urea'?((num(i,k)??0)>=7?1:0):k==='respiratory-rate'?((num(i,k)??0)>=30?1:0):k==='eye'||k==='verbal'||k==='motor'?(num(i,k)??0):k==='drugs-alcohol'?((H(i,k,'drugs')?1:0)+(H(i,k,'alcohol')?1:0)):Y(i,k)?1:0),0),[T(0,1,'Lower risk','Continue structured clinical assessment.','bg-emerald-50 text-emerald-800'),T(2,undefined,'Higher risk','Urgent senior review and escalation assessment.','bg-red-50 text-red-800')],['Interpret with the full clinical context.'],'Support structured clinical assessment; never delay treatment. ',url))}
+const gcs = calculators.find((calculator) => calculator.id === "glasgow-coma-scale");
+if (gcs) {
+  const eye = [{ value: "4", label: "Spontaneously", points: 4 }, { value: "3", label: "To verbal command", points: 3 }, { value: "2", label: "To pain", points: 2 }, { value: "1", label: "No eye opening", points: 1 }, { value: "NT", label: "Not testable (NT)", points: 0 }];
+  const verbal = [{ value: "5", label: "Oriented", points: 5 }, { value: "4", label: "Confused", points: 4 }, { value: "3", label: "Inappropriate words", points: 3 }, { value: "2", label: "Incomprehensible sounds", points: 2 }, { value: "1", label: "No verbal response", points: 1 }, { value: "NT", label: "Not testable / intubated (NT)", points: 0 }];
+  const motor = [{ value: "6", label: "Obeys commands", points: 6 }, { value: "5", label: "Localizes pain", points: 5 }, { value: "4", label: "Withdraws from pain", points: 4 }, { value: "3", label: "Flexion to pain", points: 3 }, { value: "2", label: "Extension to pain", points: 2 }, { value: "1", label: "No motor response", points: 1 }, { value: "NT", label: "Not testable (NT)", points: 0 }];
+  gcs.inputs = [{ id: "eye", label: "Best eye response", type: "binary", options: eye }, { id: "verbal", label: "Best verbal response", type: "binary", options: verbal }, { id: "motor", label: "Best motor response", type: "binary", options: motor }];
+  gcs.questions = gcs.inputs.map((question) => ({ ...question, type: "single-select" as const })) as any;
+  gcs.calculate = (inputs) => {
+    const values = [inputs.eye, inputs.verbal, inputs.motor].map((value) => typeof value === "object" ? value?.value : value);
+    if (values.some((value) => value === undefined || value === "NT")) return values.map((value, index) => `${["E", "V", "M"][index]}${value ?? "?"}`).join(" ");
+    return values.reduce((total, value) => total + Number(value), 0);
+  };
+  gcs.tiers = [T(13, 15, "GCS 13–15", "Repeat and trend the score; assess the cause and clinical context. A score of 15 does not exclude serious illness.", "bg-emerald-50 text-emerald-800"), T(9, 12, "GCS 9–12", "Urgent senior assessment, serial observations and airway-risk review.", "bg-yellow-50 text-yellow-800"), T(undefined, 8, "GCS ≤8", "Immediate airway and neurological emergency assessment; consider intubation when the patient cannot protect the airway or deterioration is expected.", "bg-red-50 text-red-800")];
+  gcs.results = gcs.tiers.map((tier, index) => ({ id: `gcs-${index}`, label: tier.riskLabel, tone: tier.tone, match: { minScore: tier.min, maxScore: tier.max }, summary: tier.managementAdvice, management: [tier.managementAdvice] })) as any;
+  gcs.pearls = ["Record component scores as E4 V5 M6, not only the total.", "If any component is not testable, document NT and do not report a misleading total.", "A declining GCS requires airway and neurological reassessment; do not use the score alone to make management decisions."];
+  gcs.whyUseIt = "Assess impaired consciousness using eye, verbal and motor responses. For preverbal children aged 2 years or younger, use a paediatric GCS instead.";
+}
+const meld = calculators.find((calculator) => calculator.id === "meld-na");
+if (meld) {
+  meld.inputs = [
+    { id: "dialysis", label: "Dialysis at least twice in the past week or CVVHD for ≥24 hours", type: "binary", options: [{ value: "no", label: "No", points: 0 }, { value: "yes", label: "Yes", points: 0 }] },
+    { id: "creatinine", label: "Creatinine", type: "numeric", units: [{ value: "mg-dl", label: "mg/dL", system: "US" }, { value: "umol-l", label: "µmol/L", system: "SI", canonicalMultiplier: 0.0113122 }] },
+    { id: "bilirubin", label: "Total bilirubin", type: "numeric", units: [{ value: "mg-dl", label: "mg/dL", system: "US" }, { value: "umol-l", label: "µmol/L", system: "SI", canonicalMultiplier: 0.058479 }] },
+    { id: "inr", label: "INR", type: "numeric", units: [{ value: "ratio", label: "ratio" }] },
+    { id: "sodium", label: "Sodium", type: "numeric", units: [{ value: "mmol-l", label: "mmol/L", system: "SI" }] },
+  ];
+  meld.questions = meld.inputs.map((question) => ({ ...question, type: question.type === "binary" ? "single-select" : "number" as any })) as any;
+  meld.calculate = (inputs) => {
+    const bilirubin = Math.max(1, num(inputs, "bilirubin") ?? 1);
+    const inr = Math.max(1, num(inputs, "inr") ?? 1);
+    const creatinine = Y(inputs, "dialysis") ? 4 : Math.min(4, Math.max(1, num(inputs, "creatinine") ?? 1));
+    const sodium = Math.min(137, Math.max(125, num(inputs, "sodium") ?? 137));
+    const meldBase = 3.78 * Math.log(bilirubin) + 11.2 * Math.log(inr) + 9.57 * Math.log(creatinine) + 6.43;
+    return Math.round(meldBase + 1.32 * (137 - sodium) - 0.033 * meldBase * (137 - sodium));
+  };
+  meld.pearls = ["Use in patients aged 12 years or older.", "Creatinine >4.0 mg/dL is assigned a value of 4.0; sodium is bounded to 125–137 mmol/L.", "Reassess periodically because the score changes with laboratory values."];
+  meld.whyUseIt = "Quantify end-stage liver disease for transplant planning with sodium; interpret with hepatology/transplant guidance and local policy.";
+  meld.tiers = [T(undefined, 9, "MELD-Na <10", "Continue specialist follow-up and periodically reassess laboratory values.", "bg-emerald-50 text-emerald-800"), T(10, 19, "MELD-Na 10–19", "Consider referral to a hepatologist or liver transplant center.", "bg-yellow-50 text-yellow-800"), T(20, undefined, "MELD-Na ≥20", "Urgent hepatology/transplant review and complication assessment.", "bg-red-50 text-red-800")];
+  meld.results = meld.tiers.map((tier, index) => ({ id: `meld-na-${index}`, label: tier.riskLabel, tone: tier.tone, match: { minScore: tier.min, maxScore: tier.max }, summary: tier.managementAdvice, management: [tier.managementAdvice] })) as any;
+}
+const hasBled = calculators.find((calculator) => calculator.id === "has-bled");
+if (hasBled) {
+  const yesNo = (id: string, label: string) => ({ id, label, type: "binary" as const, options: [{ value: "no", label: "No", points: 0 }, { value: "yes", label: "Yes", points: 1 }] });
+  hasBled.inputs = [yesNo("hypertension", "Uncontrolled hypertension (>160 mmHg systolic)"), yesNo("renal", "Renal disease (dialysis, transplant, or creatinine >2.26 mg/dL / >200 µmol/L)"), yesNo("liver", "Liver disease (cirrhosis or significant bilirubin/transaminase abnormality)"), yesNo("stroke", "Previous stroke"), yesNo("bleeding", "Prior major bleeding or bleeding predisposition"), yesNo("labile-inr", "Labile INR (unstable/high INRs or time in therapeutic range <60%)"), yesNo("elderly", "Age >65"), yesNo("medications", "Medication predisposing to bleeding (aspirin, clopidogrel, NSAIDs)"), yesNo("alcohol", "Alcohol use (≥8 drinks/week)")];
+  hasBled.questions = hasBled.inputs.map((question) => ({ ...question, type: "single-select" as const })) as any;
+  hasBled.calculate = (inputs) => ["hypertension", "renal", "liver", "stroke", "bleeding", "labile-inr", "elderly", "medications", "alcohol"].reduce((score, key) => score + (Y(inputs, key) ? 1 : 0), 0);
+  hasBled.pearls = ["Each positive item scores 1 point; the maximum score is 9.", "A high score identifies modifiable bleeding risks and is not, by itself, a reason to withhold indicated anticoagulation.", "Medication and alcohol are separate one-point items in the MDCalc format."];
+  hasBled.whyUseIt = "Estimate major bleeding risk in people with atrial fibrillation being considered for anticoagulation, then correct modifiable risks and weigh individual benefits and harms.";
+  hasBled.tiers = [T(0, 1, "Lower bleeding risk", "Address reversible risk factors and continue shared anticoagulation decision-making.", "bg-emerald-50 text-emerald-800"), T(2, 2, "Moderate bleeding risk", "Review and correct modifiable risk factors; do not withhold anticoagulation solely for this score.", "bg-yellow-50 text-yellow-800"), T(3, undefined, "Higher bleeding risk", "Perform structured bleeding-risk review and arrange closer follow-up; do not use as an automatic anticoagulation exclusion.", "bg-red-50 text-red-800")];
+  hasBled.results = hasBled.tiers.map((tier, index) => ({ id: `has-bled-${index}`, label: tier.riskLabel, tone: tier.tone, match: { minScore: tier.min, maxScore: tier.max }, summary: tier.managementAdvice, management: [tier.managementAdvice] })) as any;
+}
+const sofa2 = calculators.find((calculator) => calculator.id === "qsofa");
+if (sofa2) {
+  const choices = (id: string, label: string, values: Array<[string, string, number]>) => ({ id, label, type: "binary" as const, options: values.map(([value, text, points]) => ({ value, label: text, points })) });
+  sofa2.name = "Sequential Organ Failure Assessment (SOFA)-2 Score";
+  sofa2.shortName = "SOFA-2";
+  sofa2.shortTitle = "SOFA-2";
+  sofa2.title = sofa2.name;
+  sofa2.scoreLabel = "SOFA-2";
+  sofa2.description = "Assess severity of acute organ dysfunction in critically ill adults.";
+  sofa2.objective = sofa2.description;
+  sofa2.inputs = [
+    choices("brain", "Brain (GCS)", [["0", "15 (or thumbs-up, fist, or peace sign)", 0], ["1", "13–14 or localizing to pain; delirium drugs", 1], ["2", "9–12 or withdrawal to pain", 2], ["3", "6–8 or flexion to pain", 3], ["4", "3–5 or extension/no response/generalized myoclonus", 4]]),
+    choices("respiratory", "Respiratory (PaO₂:FiO₂ ratio)", [["0", ">300 mmHg (>40 kPa)", 0], ["1", "≤300 mmHg (≤40 kPa)", 1], ["2", "≤225 mmHg (≤30 kPa)", 2], ["3", "≤150 mmHg (≤20 kPa) with advanced ventilatory support", 3], ["4", "≤75 mmHg (≤10 kPa) with advanced support or ECMO", 4]]),
+    choices("cardiovascular", "Cardiovascular", [["0", "MAP ≥70 mmHg; no vasopressor/inotrope", 0], ["1", "MAP <70 mmHg; no vasopressor/inotrope", 1], ["2", "Low-dose vasopressor or any other vasopressor/inotrope", 2], ["3", "Medium-dose vasopressor or combination support", 3], ["4", "High-dose vasopressor or mechanical support", 4]]),
+    choices("liver", "Liver (total bilirubin)", [["0", "≤1.20 mg/dL (≤20.6 µmol/L)", 0], ["1", "≤3.0 mg/dL (≤51.3 µmol/L)", 1], ["2", "≤6.0 mg/dL (≤102.6 µmol/L)", 2], ["3", "≤12.0 mg/dL (≤205 µmol/L)", 3], ["4", ">12 mg/dL (>205 µmol/L)", 4]]),
+    choices("kidney", "Kidney (creatinine/urine output/RRT)", [["0", "Creatinine ≤1.20 mg/dL", 0], ["1", "Creatinine ≤2.0 mg/dL or low urine output 6–12 h", 1], ["2", "Creatinine ≤3.50 mg/dL or low urine output ≥12 h", 2], ["3", "Creatinine >3.50 mg/dL or prolonged oliguria/anuria", 3], ["4", "Receiving or meeting criteria for renal replacement therapy", 4]]),
+    choices("hemostasis", "Hemostasis (platelets ×10³/µL)", [["0", ">150", 0], ["1", "≤150", 1], ["2", "≤100", 2], ["3", "≤80", 3], ["4", "≤50", 4]]),
+  ];
+  sofa2.questions = sofa2.inputs.map((question) => ({ ...question, type: "single-select" as const })) as any;
+  sofa2.calculate = (inputs) => ["brain", "respiratory", "cardiovascular", "liver", "kidney", "hemostasis"].reduce((score, key) => score + Number(inputs[key] ?? 0), 0);
+  sofa2.pearls = ["SOFA-2 is newly derived and requires additional external validation.", "It should not replace established tools such as the original SOFA.", "Higher scores reflect greater organ dysfunction and must be interpreted with the full clinical evaluation."];
+  sofa2.whyUseIt = "Assess acute organ dysfunction in critically ill adults; this is a severity-assessment aid, not a prescriptive treatment algorithm or individualized mortality calculator.";
+  sofa2.indication = sofa2.whyUseIt;
+  sofa2.tiers = [T(0, 24, "SOFA-2 total", "Interpret alongside comprehensive clinical assessment; do not use this score alone to guide treatment.", "bg-yellow-50 text-yellow-800")];
+  sofa2.results = sofa2.tiers.map((tier, index) => ({ id: `sofa-2-${index}`, label: tier.riskLabel, tone: tier.tone, match: { minScore: tier.min, maxScore: tier.max }, summary: tier.managementAdvice, management: [tier.managementAdvice] })) as any;
+}
+const curb = calculators.find((calculator) => calculator.id === "curb-65");
+if (curb) {
+  const yesNo = (id: string, label: string) => ({ id, label, type: "binary" as const, options: [{ value: "no", label: "No", points: 0 }, { value: "yes", label: "Yes", points: 1 }] });
+  curb.inputs = [yesNo("confusion", "Confusion"), yesNo("urea-high", "BUN >19 mg/dL (>7 mmol/L urea)"), yesNo("respiratory-rate-high", "Respiratory rate ≥30/min"), yesNo("blood-pressure-low", "Systolic BP <90 mmHg or diastolic BP ≤60 mmHg"), yesNo("age-high", "Age ≥65")];
+  curb.questions = curb.inputs.map((question) => ({ ...question, type: "single-select" as const })) as any;
+  curb.calculate = (inputs) => ["confusion", "urea-high", "respiratory-rate-high", "blood-pressure-low", "age-high"].reduce((score, key) => score + (Y(inputs, key) ? 1 : 0), 0);
+  curb.pearls = ["CURB-65 ranges from 0 to 5.", "Use clinical judgement alongside the score; assess for sepsis and other reasons for admission."];
+  curb.whyUseIt = "Estimate community-acquired pneumonia severity to support inpatient versus outpatient disposition decisions.";
+  curb.tiers = [T(0, 1, "Low risk", "Outpatient care may be appropriate when clinically safe and follow-up is reliable.", "bg-emerald-50 text-emerald-800"), T(2, 2, "Moderate risk", "Consider inpatient versus observation admission.", "bg-yellow-50 text-yellow-800"), T(3, undefined, "High risk", "Inpatient admission; consider ICU admission with a score of 4 or 5.", "bg-red-50 text-red-800")];
+  curb.results = curb.tiers.map((tier, index) => ({ id: `curb-65-${index}`, label: tier.riskLabel, tone: tier.tone, match: { minScore: tier.min, maxScore: tier.max }, summary: tier.managementAdvice, management: [tier.managementAdvice] })) as any;
+}
+const egfr = calculators.find((calculator) => calculator.id === "ckd-epi-egfr");
+if (egfr) {
+  const yesNo = (id: string, label: string) => ({ id, label, type: "binary" as const, options: [{ value: "no", label: "Male", points: 0 }, { value: "yes", label: "Female", points: 0 }] });
+  egfr.inputs = [
+    { id: "equation", label: "Equation", type: "binary", options: [{ value: "2021-creatinine", label: "2021 CKD-EPI Creatinine", points: 0 }, { value: "2021-creatinine-cystatin", label: "2021 CKD-EPI Creatinine-Cystatin C", points: 0 }, { value: "2009-creatinine", label: "2009 CKD-EPI Creatinine", points: 0 }, { value: "2012-cystatin", label: "2012 CKD-EPI Cystatin C", points: 0 }, { value: "2012-creatinine-cystatin", label: "2012 CKD-EPI Creatinine-Cystatin C", points: 0 }] },
+    yesNo("sex", "Sex"),
+    { id: "age", label: "Age", type: "numeric", units: [{ value: "years", label: "years" }] },
+    { id: "creatinine", label: "Serum creatinine", type: "numeric", units: [{ value: "mg-dl", label: "mg/dL", system: "US" }, { value: "umol-l", label: "µmol/L", system: "SI", canonicalMultiplier: 0.0113122 }] },
+    { id: "cystatin-c", label: "Cystatin C", type: "numeric", units: [{ value: "mg-l", label: "mg/L", system: "SI" }] },
+  ];
+  egfr.questions = egfr.inputs.map((question) => ({ ...question, type: question.type === "binary" ? "single-select" : "number" as any })) as any;
+  egfr.calculate = (inputs) => {
+    const ageValue = num(inputs, "age") ?? 0;
+    const creatinine = num(inputs, "creatinine") ?? 0;
+    const cystatin = num(inputs, "cystatin-c") ?? 0;
+    if (ageValue <= 0) return 0;
+    const female = inputs.sex === "yes" || inputs.sex === "female";
+    const equation = inputs.equation ?? "2021-creatinine";
+    const k = female ? 0.7 : 0.9;
+    const a = female ? -0.241 : -0.302;
+    const crRatio = creatinine / k;
+    const cysRatio = cystatin / 0.8;
+    if (equation === "2021-creatinine-cystatin") return creatinine > 0 && cystatin > 0 ? 135 * Math.pow(Math.min(crRatio, 1), a) * Math.pow(Math.max(crRatio, 1), -0.544) * Math.pow(Math.min(cysRatio, 1), -0.323) * Math.pow(Math.max(cysRatio, 1), -0.778) * Math.pow(0.9961, ageValue) * (female ? 0.963 : 1) : 0;
+    if (equation === "2009-creatinine") return 141 * Math.pow(Math.min(crRatio, 1), female ? -0.329 : -0.411) * Math.pow(Math.max(crRatio, 1), -1.209) * Math.pow(0.993, ageValue) * (female ? 1.018 : 1);
+    if (equation === "2012-cystatin") return cystatin > 0 ? 133 * Math.pow(Math.min(cysRatio, 1), -0.499) * Math.pow(Math.max(cysRatio, 1), -1.328) * Math.pow(0.996, ageValue) * (female ? 0.932 : 1) : 0;
+    if (equation === "2012-creatinine-cystatin") return creatinine > 0 && cystatin > 0 ? 135 * Math.pow(Math.min(crRatio, 1), female ? -0.248 : -0.207) * Math.pow(Math.max(crRatio, 1), -0.601) * Math.pow(Math.min(cysRatio, 1), -0.375) * Math.pow(Math.max(cysRatio, 1), -0.711) * Math.pow(0.995, ageValue) * (female ? 0.969 : 1) : 0;
+    return creatinine > 0 ? 142 * Math.pow(Math.min(crRatio, 1), a) * Math.pow(Math.max(crRatio, 1), -1.2) * Math.pow(0.9938, ageValue) * (female ? 1.012 : 1) : 0;
+  };
+  egfr.pearls = ["The 2021 CKD-EPI creatinine equation is the recommended standard and does not include race.", "The calculator provides indexed eGFR in mL/min/1.73 m²; classify CKD using both eGFR and albuminuria.", "Use the cystatin C or combined equation when clinically appropriate and interpret medication dosing with current guidance."];
+  egfr.whyUseIt = "Estimate GFR in adults with CKD using serum creatinine, cystatin C, or both; choose the equation that matches the available laboratory data.";
+  egfr.indication = egfr.whyUseIt;
+  egfr.tiers = [T(90, undefined, "G1 / ≥90", "Interpret with albuminuria and chronicity; a single value does not diagnose CKD.", "bg-emerald-50 text-emerald-800"), T(60, 89.99, "G2 / 60–89", "Confirm chronicity and albuminuria; review contributing risk factors.", "bg-yellow-50 text-yellow-800"), T(30, 59.99, "G3 / 30–59", "Review kidney-risk management and medication dosing.", "bg-yellow-50 text-yellow-800"), T(undefined, 29.99, "G4–G5 / <30", "Consider nephrology assessment and urgent medication review.", "bg-red-50 text-red-800")];
+  egfr.results = egfr.tiers.map((tier, index) => ({ id: `ckd-epi-${index}`, label: tier.riskLabel, tone: tier.tone, match: { minScore: tier.min, maxScore: tier.max }, summary: tier.managementAdvice, management: [tier.managementAdvice] })) as any;
+}
+const cha = calculators.find((calculator) => calculator.id === "cha2ds2-vasc");
+if (cha) {
+  const yesNo = (id: string, label: string, points = 1) => ({ id, label, type: "binary" as const, options: [{ value: "no", label: "No", points: 0 }, { value: "yes", label: "Yes", points }] });
+  cha.inputs = [{ id: "age-band", label: "Age", type: "binary", options: [{ value: "under-65", label: "<65", points: 0 }, { value: "65-74", label: "65–74", points: 1 }, { value: "75-plus", label: "≥75", points: 2 }] }, { id: "sex", label: "Sex", type: "binary", options: [{ value: "male", label: "Male", points: 0 }, { value: "female", label: "Female", points: 1 }] }, yesNo("chf", "CHF history"), yesNo("hypertension", "Hypertension history"), yesNo("stroke-tia", "Stroke/TIA/thromboembolism history", 2), yesNo("vascular", "Vascular disease history (prior MI, PAD, or aortic plaque)"), yesNo("diabetes", "Diabetes history")];
+  cha.questions = cha.inputs.map((question) => ({ ...question, type: "single-select" as const })) as any;
+  cha.calculate = (inputs) => { const agePoints = inputs["age-band"] ? (inputs["age-band"] === "75-plus" ? 2 : inputs["age-band"] === "65-74" ? 1 : 0) : ((num(inputs, "age") ?? 0) >= 75 ? 2 : (num(inputs, "age") ?? 0) >= 65 ? 1 : 0); const legacy = Array.isArray(inputs["risk-factors"]) ? inputs["risk-factors"] : []; return agePoints + (inputs.sex === "female" ? 1 : 0) + ["chf", "hypertension", "stroke-tia", "vascular", "diabetes"].reduce((score, key) => score + (Y(inputs, key) || legacy.includes(key) || (key === "stroke-tia" && legacy.includes("stroke")) ? key === "stroke-tia" ? 2 : 1 : 0), 0); };
+  cha.pearls = ["Do not apply to valvular atrial fibrillation.", "Scores of 0 in men or 1 in women generally do not require anticoagulation; consider patient preferences and guideline context.", "Scores ≥2 in men or ≥3 in women generally support anticoagulation unless contraindicated."];
+  cha.whyUseIt = "Calculate stroke risk in atrial fibrillation and support shared anticoagulation decisions; assess bleeding risk and reversible factors separately.";
+  cha.indication = cha.whyUseIt;
+  cha.tiers = [T(0, 0, "Low score", "Anticoagulation is generally not recommended solely on this score; confirm sex-specific guidance.", "bg-emerald-50 text-emerald-800"), T(1, 1, "Intermediate score", "Individualise the decision and discuss stroke and bleeding risks.", "bg-yellow-50 text-yellow-800"), T(2, undefined, "Higher score", "Anticoagulation is generally recommended when not contraindicated; confirm sex-specific thresholds.", "bg-red-50 text-red-800")];
+  cha.results = cha.tiers.map((tier, index) => ({ id: `cha2ds2-vasc-${index}`, label: tier.riskLabel, tone: tier.tone, match: { minScore: tier.min, maxScore: tier.max }, summary: tier.managementAdvice, management: [tier.managementAdvice] })) as any;
+}
+const cockcroft = calculators.find((calculator) => calculator.id === "cockcroft-gault");
+if (cockcroft) {
+  const sex = { id: "sex", label: "Sex", type: "binary" as const, options: [{ value: "female", label: "Female", points: 0 }, { value: "male", label: "Male", points: 0 }] };
+  cockcroft.inputs = [sex, { id: "age", label: "Age", type: "numeric", units: [{ value: "years", label: "years" }] }, { id: "weight", label: "Weight", type: "numeric", units: [{ value: "kg", label: "kg", system: "SI" }, { value: "lb", label: "lb", system: "US", canonicalMultiplier: 0.45359237 }] }, { id: "creatinine", label: "Creatinine", type: "numeric", units: [{ value: "mg-dl", label: "mg/dL", system: "US" }, { value: "umol-l", label: "µmol/L", system: "SI", canonicalMultiplier: 0.0113122 }] }, { id: "height", label: "Height (optional)", type: "numeric", units: [{ value: "cm", label: "cm", system: "SI" }, { value: "in", label: "in", system: "US", canonicalMultiplier: 2.54 }] }];
+  cockcroft.questions = cockcroft.inputs.map((question) => ({ ...question, type: question.type === "binary" ? "single-select" : "number" as any, required: question.id !== "height" })) as any;
+  cockcroft.calculate = (inputs) => { const ageValue = num(inputs, "age") ?? 0; const weight = num(inputs, "weight") ?? 0; const creatinine = num(inputs, "creatinine") ?? 0; if (!ageValue || !weight || !creatinine) return 0; return ((140 - ageValue) * weight) / (72 * creatinine) * (inputs.sex === "female" ? 0.85 : 1); };
+  cockcroft.pearls = ["Use in patients with stable renal function.", "The equation may be inaccurate depending on body weight and BMI; height is included as an optional clinical context field.", "Creatinine clearance and eGFR are physiologically different; use the method specified by the medication label or guideline."];
+  cockcroft.whyUseIt = "Calculate creatinine clearance according to Cockcroft–Gault for medication dosing and renal-function assessment when appropriate.";
+  cockcroft.indication = cockcroft.whyUseIt;
+  cockcroft.tiers = [T(60, undefined, "CrCl ≥60 mL/min", "Use medication-specific dosing guidance and current renal function.", "bg-emerald-50 text-emerald-800"), T(30, 59.99, "CrCl 30–59 mL/min", "Review renal dose adjustments and reassess when renal function changes.", "bg-yellow-50 text-yellow-800"), T(undefined, 29.99, "CrCl <30 mL/min", "Review urgent medication dose adjustment and specialist guidance.", "bg-red-50 text-red-800")];
+  cockcroft.results = cockcroft.tiers.map((tier, index) => ({ id: `cockcroft-${index}`, label: tier.riskLabel, tone: tier.tone, match: { minScore: tier.min, maxScore: tier.max }, summary: tier.managementAdvice, management: [tier.managementAdvice] })) as any;
+}
+const heartPathway = calculators.find((calculator) => calculator.id === "heart-score");
+if (heartPathway) {
+  const options = (id: string, label: string, values: Array<[string, string, number]>) => ({ id, label, type: "binary" as const, options: values.map(([value, text, points]) => ({ value, label: text, points })) });
+  heartPathway.name = "HEART Pathway for Early Discharge in Acute Chest Pain";
+  heartPathway.shortName = "HEART Pathway";
+  heartPathway.shortTitle = "HEART Pathway";
+  heartPathway.title = heartPathway.name;
+  heartPathway.scoreLabel = "HEART Pathway";
+  heartPathway.description = "Identify emergency-department patients with acute chest pain who may be suitable for early discharge.";
+  heartPathway.objective = heartPathway.description;
+  heartPathway.inputs = [options("history", "History", [["0", "Slightly suspicious", 0], ["1", "Moderately suspicious", 1], ["2", "Highly suspicious", 2]]), options("ecg", "ECG", [["0", "Normal", 0], ["1", "Non-specific repolarization disturbance", 1], ["2", "Significant ST depression", 2]]), options("age-band", "Age", [["0", "<45", 0], ["1", "45–64", 1], ["2", "≥65", 2]]), options("risk-factors", "Risk factors", [["0", "No known risk factors", 0], ["1", "1–2 risk factors", 1], ["2", "≥3 risk factors or atherosclerotic disease", 2]]), options("troponin", "Initial troponin", [["0", "≤ normal limit", 0], ["1", "1–3× normal limit", 1], ["2", ">3× normal limit", 2]])];
+  heartPathway.questions = heartPathway.inputs.map((question) => ({ ...question, type: "single-select" as const })) as any;
+  heartPathway.calculate = (inputs) => ["history", "ecg", "age-band", "risk-factors", "troponin"].reduce((score, key) => score + Number(inputs[key] ?? 0), 0);
+  heartPathway.pearls = ["Use in adults ≥21 years with symptoms suggestive of ACS.", "Do not use with new ST elevation ≥1 mm, hypotension, life expectancy <1 year, or another condition requiring admission.", "The pathway requires a follow-up troponin at 3 hours for low-risk discharge consideration."];
+  heartPathway.whyUseIt = "Identify ED patients with acute chest pain who may be candidates for early discharge after serial evaluation; clinical judgement supersedes the score.";
+  heartPathway.indication = heartPathway.whyUseIt;
+  heartPathway.tiers = [T(0, 3, "Low-risk HEART Pathway", "If the 3-hour follow-up troponin is negative and the clinical assessment is reassuring, consider discharge with close follow-up and return precautions.", "bg-emerald-50 text-emerald-800"), T(4, 6, "Intermediate risk", "Observe or admit for serial ECGs, biomarkers and comprehensive cardiac evaluation with shared decision-making.", "bg-yellow-50 text-yellow-800"), T(7, 10, "High risk", "Admit or observe with serial ECGs, cardiac biomarkers and/or cardiology consultation.", "bg-red-50 text-red-800")];
+  heartPathway.results = heartPathway.tiers.map((tier, index) => ({ id: `heart-pathway-${index}`, label: tier.riskLabel, tone: tier.tone, match: { minScore: tier.min, maxScore: tier.max }, summary: tier.managementAdvice, management: [tier.managementAdvice] })) as any;
+}
+export const clinicalCalculators=calculators;
+export function toCanonicalValue(value:number,unit:CalculatorUnit){return value*(unit.canonicalMultiplier??1)+(unit.canonicalOffset??0)} export function fromCanonicalValue(value:number,unit:CalculatorUnit){return(value-(unit.canonicalOffset??0))/(unit.canonicalMultiplier??1)} export function questionScore(q:any,a:any){if(a===undefined)return 0;if(q.type==='multi-select')return Array.isArray(a)?a.reduce((s:number,v:string)=>s+(q.options?.find((o:any)=>o.value===v)?.points??0),0):0;if(q.type==='number'){const value=typeof a==='object'?a.value:a;const unit=q.units?.find((u:any)=>u.value===a?.unit)??q.units?.[0];const canonical=unit?toCanonicalValue(value,unit):value;return q.scoring?.find((r:any)=>(r.min===undefined||canonical>=r.min)&&(r.max===undefined||canonical<r.max))?.points??0}return q.options?.find((o:any)=>o.value===a)?.points??0} export function calculateScore(s:ClinicalCalculatorSchema,a:CalculatorAnswers){return s.calculate(a)} export function isQuestionComplete(q?:any,a?:any){if(!q)return false;if(q.required===false)return true;if(q.type==='multi-select')return Array.isArray(a);if(q.type==='number')return Boolean(a&&typeof a==='object'&&!Array.isArray(a)&&Number.isFinite(a.value));return typeof a==='string'} export function getCalculatorResult(s:ClinicalCalculatorSchema,score:number|string,_a?:CalculatorAnswers):LegacyResult|undefined{if(typeof score!=='number')return undefined;return s.results.find(t=>(t.match.minScore===undefined||score>=t.match.minScore)&&(t.match.maxScore===undefined||score<=t.match.maxScore))}

@@ -59,6 +59,6 @@ describe("ClinicalCalculator", () => {
     expect(screen.getByText("3", { selector: ".calculator-score" })).toBeInTheDocument();
     await user.click(screen.getByRole("tab", { name: /cha₂ds₂-vasc/i }));
     expect(screen.getByText("0", { selector: ".calculator-score" })).toBeInTheDocument();
-    expect(screen.getByText(/0 of 3 sections complete/i)).toBeInTheDocument();
+    expect(screen.getByText(/0 of 7 sections complete/i)).toBeInTheDocument();
   });
 });
