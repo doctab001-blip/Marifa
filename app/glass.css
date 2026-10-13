@@ -429,12 +429,12 @@ html:not([data-theme="dark"]) {
   .topic-approval-done svg { color: #059669; }
   .em-lead, .em-list, .em-table td, .em-criteria dd { color: var(--text-2); }
   .em-nav { background: rgb(255 255 255 / .62); }
-  .nav-link[aria-current="page"] { color: #831843; }
-  .topic-nav-group a[aria-current="page"] { color: #831843; }
+  .nav-link[aria-current="page"] { color: var(--strong); }
+  .topic-nav-group a[aria-current="page"] { color: var(--strong); }
   .scenario-title { text-shadow: none; }
   .em-pearls, .em-pitfalls, .em-pros, .em-cons, .em-alert { box-shadow: none; }
-  .card, .section-card, .result-card, .disease-card, .care-pillar-card, .metric, .teach-steps > li, .admin-table-card, .module-placeholder-card, .scenario-card, .topbar { box-shadow: inset 0 1px 0 rgb(255 255 255 / .9), 0 18px 40px -26px rgb(30 41 59 / .35); }
-  .scenario-card { background: radial-gradient(700px 260px at 0% 0%, color-mix(in srgb, var(--royal-bright) 12%, transparent), transparent 70%), radial-gradient(520px 240px at 100% 0%, rgb(167 139 250 / .1), transparent 70%), rgb(255 255 255 / .78); }
+  .card, .section-card, .result-card, .disease-card, .care-pillar-card, .metric, .teach-steps > li, .admin-table-card, .module-placeholder-card, .scenario-card, .topbar { box-shadow: inset 0 1px 0 rgb(255 255 255 / .9), 0 1px 2px rgb(30 41 59 / .06), 0 16px 32px -28px rgb(30 41 59 / .3); }
+  .scenario-card { background: rgb(255 255 255 / .85); }
   .topbar { background: rgb(255 255 255 / .62); border-color: rgb(255 255 255 / .9); }
   .sidebar { background: rgb(255 255 255 / .72); border-right-color: rgb(15 23 42 / .08); box-shadow: 20px 0 50px -34px rgb(30 41 59 / .3); }
   .em-table-wrap { background: rgb(255 255 255 / .6); }
@@ -442,6 +442,130 @@ html:not([data-theme="dark"]) {
   .topic-nav-search input, .global-search input { background: rgb(255 255 255 / .75); color: var(--ink); box-shadow: inset 0 1px 2px rgb(15 23 42 / .08); border-color: rgb(15 23 42 / .12); }
   .mobile-nav { background: rgb(255 255 255 / .78); }
 }
+
+/* ═══ Calm pass — restraint over spectacle ═══════════════════════════════════════════════
+   Late-loaded refinements: flat tinted icon tiles, hairline pills, glow only on hover/focus,
+   flat surfaces, neutral canvas. Overrides the richer rules above on purpose. */
+:root { --page-bg: radial-gradient(1000px 480px at 6% -8%, rgb(20 184 166 / .07), transparent 62%), #f4f6fa; }
+html[data-theme="dark"] { --page-bg: radial-gradient(1000px 480px at 6% -8%, rgb(20 184 166 / .08), transparent 62%), #0a0f1c; }
+
+/* Icons: one clean gradient glyph, a single soft shadow; no bevel, edge or halo. */
+.i3d { filter: drop-shadow(0 1px 1.5px rgb(var(--shade) / .22)); }
+.i3d-aqua { --glyph: url(#i3d-aqua); } .i3d-sky { --glyph: url(#i3d-sky); } .i3d-violet { --glyph: url(#i3d-violet); }
+.i3d-rose { --glyph: url(#i3d-rose); } .i3d-amber { --glyph: url(#i3d-amber); } .i3d-emerald { --glyph: url(#i3d-emerald); }
+.i3d-slate { --glyph: url(#i3d-slate); }
+a:hover > .i3d, button:hover > .i3d, .pill:hover .i3d { transform: none; }
+
+/* Tiles: flat soft tint of the tone, coloured glyph (no gloss, no white glyph, no glow). */
+.nav-link > .i3d, .panel-title-icon > .i3d, .metric-icon > .i3d, .topic-icon > .i3d, .result-icon > .i3d,
+.module-placeholder-icon > .i3d, .clinical-warning-icon > .i3d, .pathway-sequence-icon > .i3d, .care-pillar-icon > .i3d,
+.flagship-icon > .i3d, .alert-banner-icon > .i3d, .em-heading-number > .i3d, .sc-icon-tile > .i3d, .top-action-link > .i3d {
+  stroke: var(--glyph, currentColor);
+}
+.panel-title-icon, .metric-icon, .topic-icon, .result-icon, .module-placeholder-icon, .clinical-warning-icon,
+.pathway-sequence-icon, .care-pillar-icon, .flagship-icon, .alert-banner-icon, .em-heading-number, .sc-icon-tile {
+  color: inherit;
+  border: 1px solid color-mix(in srgb, var(--tile, #5f7396) 22%, transparent);
+  background: color-mix(in srgb, var(--tile, #5f7396) 11%, transparent);
+  box-shadow: none;
+}
+.nav-link > svg {
+  border: 1px solid color-mix(in srgb, var(--tile, #5f7396) 20%, transparent);
+  background: color-mix(in srgb, var(--tile, #5f7396) 10%, transparent);
+  box-shadow: none;
+}
+.nav-link:hover > svg { transform: none; }
+.brand-mark { background: color-mix(in srgb, var(--royal-bright) 90%, #0b1226); border: 0; box-shadow: none; text-shadow: none; color: #fff; }
+.alert-banner-icon { --tile: #e11d48; } .clinical-warning-icon { --tile: #d97706; }
+.top-action-link { background: transparent; border: 1px solid transparent; box-shadow: none; color: var(--text-2); }
+.top-action-link:hover, .top-action-link:focus-visible { background: rgb(var(--ov) / .07); border-color: rgb(var(--ov) / .12); box-shadow: none; color: var(--strong); }
+
+/* Pills: quiet translucent fill + hairline; the glow only appears on hover / focus. */
+.pill, .status, .scenario-chip, .module-placeholder-label, .role-pill, .approval-badge, .disease-speciality-badge,
+.disease-sub-speciality-badge, .disease-authority-badge, .disease-status-badge, .admin-queue-status, .topic-back-pill,
+.care-pillar-tab, .disease-management-tabs a, .admin-tab, .scope-chip, .topic-nav-count, .care-pillar-count, .care-pillar-tab-count {
+  border: 1px solid color-mix(in srgb, var(--pc) 32%, transparent);
+  background: color-mix(in srgb, var(--pc) 11%, transparent);
+  box-shadow: none;
+}
+.pill:hover, .status:hover, .scenario-chip:hover, .module-placeholder-label:hover, .role-pill:hover, .approval-badge:hover,
+.disease-speciality-badge:hover, .disease-sub-speciality-badge:hover, .disease-authority-badge:hover, .disease-status-badge:hover,
+.topic-back-pill:hover, .care-pillar-tab:hover, .disease-management-tabs a:hover, .admin-tab:hover, .scope-chip:hover {
+  border-color: color-mix(in srgb, var(--pc) 55%, transparent);
+  background: color-mix(in srgb, var(--pc) 16%, transparent);
+  box-shadow: 0 0 14px color-mix(in srgb, var(--pc) 26%, transparent);
+}
+.care-pillar-tab.is-active, .admin-tab.is-active, .disease-management-tabs a[aria-current="page"], .scope-chip-active {
+  border-color: color-mix(in srgb, var(--pc) 50%, transparent); background: color-mix(in srgb, var(--pc) 18%, transparent); box-shadow: none;
+}
+.topic-nav-count, .care-pillar-count, .care-pillar-tab-count { border-color: transparent; background: rgb(var(--ov) / .07); }
+
+/* Buttons */
+.button-secondary, .ui-button, .ui-button-danger, .panel-home, .panel-all-modules, .sidebar-toggle { background: transparent; box-shadow: none; }
+.button-secondary:hover, .ui-button:hover, .panel-home:hover, .panel-all-modules:hover, .sidebar-toggle:hover {
+  background: rgb(var(--ov) / .06); border-color: rgb(var(--ov) / .25); box-shadow: none;
+}
+.ui-button-danger:hover { box-shadow: none; background: rgb(251 113 133 / .1); }
+.button-primary, .ui-button-primary, .global-search-submit, .hero-input button, .ai-search-form button, .topic-approve-button, .alert-banner-action {
+  border: 1px solid color-mix(in srgb, var(--pc) 55%, transparent);
+  background: color-mix(in srgb, var(--pc) 24%, transparent);
+  text-shadow: none; box-shadow: none;
+}
+.button-primary:hover, .ui-button-primary:hover, .global-search-submit:hover, .hero-input button:hover, .ai-search-form button:hover,
+.topic-approve-button:hover, .alert-banner-action:hover {
+  border-color: color-mix(in srgb, var(--pc) 80%, transparent);
+  background: color-mix(in srgb, var(--pc) 34%, transparent);
+  box-shadow: 0 0 16px color-mix(in srgb, var(--pc) 34%, transparent); transform: none;
+}
+.alert-banner-action { --pc: #e11d48; }
+
+/* Surfaces: flat glass, hairline border, a whisper of shadow. */
+.card, .section-card, .result-card, .disease-card, .care-pillar-card, .metric, .teach-steps > li, .admin-table-card, .module-placeholder-card {
+  background: rgb(var(--glass) / .78); border: 1px solid rgb(var(--ov) / .09); box-shadow: 0 1px 2px rgb(var(--shade) / .06);
+}
+a.card:hover, .disease-card:hover, .care-pillar-card:hover { border-color: rgb(var(--ov) / .22); box-shadow: 0 6px 18px -10px rgb(var(--shade) / .35); }
+.sidebar { background: rgb(var(--glass) / .8); box-shadow: none; }
+.panel-title { background: rgb(var(--ov) / .03); }
+.org-card { background: rgb(var(--ov) / .03); }
+
+/* Navigation: active = soft tint, hover = hairline. No pink halo. */
+.nav-link:hover { background: rgb(var(--ov) / .05); border-color: transparent; box-shadow: none; }
+.nav-link[aria-current="page"], .sidebar-collapsed .nav-link[aria-current="page"] {
+  background: color-mix(in srgb, var(--royal-bright) 13%, transparent); border-color: color-mix(in srgb, var(--royal-bright) 30%, transparent); box-shadow: none;
+}
+.topic-nav-group a:hover { background: rgb(var(--ov) / .05); }
+.topic-nav-group a[aria-current="page"] { background: color-mix(in srgb, var(--royal-bright) 13%, transparent); box-shadow: none; }
+.topic-nav-search input:focus, .global-search input:focus { box-shadow: 0 0 0 3px rgb(34 211 238 / .16); border-color: rgb(34 211 238 / .6); }
+.topic-nav-search input, .global-search input { box-shadow: none; }
+
+/* Header: still frosted and floating, but quiet. */
+.topbar { background: rgb(var(--glass) / .7); box-shadow: 0 8px 24px -16px rgb(var(--shade) / .4); }
+.top-actions-group, .user-chip { background: transparent; box-shadow: none; }
+.user-chip:hover { background: rgb(var(--ov) / .05); border-color: rgb(var(--ov) / .16); }
+.avatar { background: color-mix(in srgb, var(--royal-bright) 22%, transparent); box-shadow: none; }
+
+/* Scenario page */
+.scenario-card { background: rgb(var(--glass) / .8); box-shadow: 0 1px 2px rgb(var(--shade) / .06), 0 24px 48px -36px rgb(var(--shade) / .5); }
+.scenario-title { text-shadow: none; }
+.em-nav { background: rgb(var(--glass) / .78); }
+.em-nav a { background: transparent; box-shadow: none; border-color: rgb(var(--ov) / .14); }
+.em-nav a span { background: color-mix(in srgb, var(--royal-bright) 85%, #0b1226); box-shadow: none; }
+.em-nav a:hover { border-color: rgb(var(--ov) / .3); box-shadow: none; }
+.em-nav a[aria-current="true"] { background: rgb(34 211 238 / .16); border-color: rgb(34 211 238 / .5); box-shadow: none; }
+.em-section { background: transparent; box-shadow: none; }
+.em-alert { background: rgb(251 113 133 / .09); border-color: rgb(251 113 133 / .35); box-shadow: none; }
+.em-alert > div > strong { box-shadow: none; background: rgb(251 113 133 / .14); border-color: rgb(251 113 133 / .4); }
+.em-pearls, .em-pitfalls, .em-pros, .em-cons { box-shadow: none; }
+.em-pearls { background: rgb(34 211 238 / .07); border-color: rgb(34 211 238 / .3); }
+.em-pitfalls { background: rgb(251 191 36 / .08); border-color: rgb(251 191 36 / .32); }
+.em-criteria { background: rgb(34 211 238 / .06); border-color: rgb(34 211 238 / .25); }
+.em-pros { background: rgb(52 211 153 / .08); border-color: rgb(52 211 153 / .32); }
+.em-cons { background: rgb(251 113 133 / .08); border-color: rgb(251 113 133 / .32); }
+.em-pros > strong, .em-cons > strong { background: transparent; }
+.pathway-marker { background: color-mix(in srgb, var(--royal-bright) 85%, #0b1226); border: 0; box-shadow: none; text-shadow: none; }
+.pathway-sequence-step:not(:last-child)::before { box-shadow: none; }
+.pathway-step-content, .topic-approval-bar, .topic-pager-link { background: rgb(var(--glass) / .6); box-shadow: none; }
+.topic-pager-link:hover { box-shadow: none; border-color: rgb(var(--ov) / .25); }
 
 /* Paper stays paper: print in black on white regardless of the on-screen theme. */
 @media print {
