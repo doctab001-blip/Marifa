@@ -11,6 +11,7 @@ const allBatchPaths = [
   "data/seeds/batch_03_pillars.json",
   "data/seeds/batch_04_textbook_sourced_drafts.json",
   "data/seeds/batch_05_topic_list_drafts.json",
+  "data/seeds/batch_06_topic_list_drafts.json",
 ] as const;
 const selectedBatch = process.argv.find((argument) => argument.startsWith("--batch="))?.slice("--batch=".length);
 const batchPaths = selectedBatch
@@ -60,6 +61,14 @@ const sourceMetadata: Record<string, SourceMetadata> = {
   "821cc66c-474a-45b9-b9ae-4cb38ee13712": { sourceTitle: "Marifa topic-list intake; clinical sources not yet reviewed", sourceUrl: "https://github.com/doctab001-blip/Marifa", publicationDate: "2026-10-12", sourceType: "curated-saudi-draft" },
   "f732cdaf-3b89-48d7-8cd0-33d108bb8360": { sourceTitle: "Marifa topic-list intake; clinical sources not yet reviewed", sourceUrl: "https://github.com/doctab001-blip/Marifa", publicationDate: "2026-10-12", sourceType: "curated-saudi-draft" },
   "033fa49b-a4f9-4d54-ac6f-e459ef03e218": { sourceTitle: "Marifa topic-list intake; clinical sources not yet reviewed", sourceUrl: "https://github.com/doctab001-blip/Marifa", publicationDate: "2026-10-12", sourceType: "curated-saudi-draft" },
+  "0dcb804b-ce96-4960-9bc2-2c2c67f68685": { sourceTitle: "Marifa topic-list intake; clinical sources not yet reviewed", sourceUrl: "https://github.com/doctab001-blip/Marifa", publicationDate: "2026-10-13", sourceType: "curated-saudi-draft" },
+  "295b56c9-7969-47b6-8944-7c803c39e732": { sourceTitle: "Marifa topic-list intake; clinical sources not yet reviewed", sourceUrl: "https://github.com/doctab001-blip/Marifa", publicationDate: "2026-10-13", sourceType: "curated-saudi-draft" },
+  "135e5254-3229-43c3-92b9-0c5acdc921aa": { sourceTitle: "Marifa topic-list intake; clinical sources not yet reviewed", sourceUrl: "https://github.com/doctab001-blip/Marifa", publicationDate: "2026-10-13", sourceType: "curated-saudi-draft" },
+  "ac59eded-f1e9-4a52-afde-467300c4fda4": { sourceTitle: "Marifa topic-list intake; clinical sources not yet reviewed", sourceUrl: "https://github.com/doctab001-blip/Marifa", publicationDate: "2026-10-13", sourceType: "curated-saudi-draft" },
+  "bdff4827-8548-4272-bd54-827888a2cf15": { sourceTitle: "Marifa topic-list intake; clinical sources not yet reviewed", sourceUrl: "https://github.com/doctab001-blip/Marifa", publicationDate: "2026-10-13", sourceType: "curated-saudi-draft" },
+  "b04002c0-c9b2-4971-88f3-7a82e9279376": { sourceTitle: "Marifa topic-list intake; clinical sources not yet reviewed", sourceUrl: "https://github.com/doctab001-blip/Marifa", publicationDate: "2026-10-13", sourceType: "curated-saudi-draft" },
+  "3b6ad593-93d7-40b2-84b4-96990bc0008e": { sourceTitle: "Marifa topic-list intake; clinical sources not yet reviewed", sourceUrl: "https://github.com/doctab001-blip/Marifa", publicationDate: "2026-10-13", sourceType: "curated-saudi-draft" },
+  "b3b08de9-632d-488a-b9f3-0bc3ac0114ce": { sourceTitle: "Marifa topic-list intake; clinical sources not yet reviewed", sourceUrl: "https://github.com/doctab001-blip/Marifa", publicationDate: "2026-10-13", sourceType: "curated-saudi-draft" },
 };
 
 type SeedRecord = { disease: DiseaseDetail; source: SourceMetadata };
