@@ -55,10 +55,6 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
 
   return (
     <main className="page dashboard-page">
-      {urgentAlert && <AlertBanner alert={urgentAlert} />}
-      <DemoBanner />
-      {error === "unauthorized" && <aside className="dashboard-access-notice" role="alert">You don’t have permission to open Administration. Ask your hospital administrator if you need access.</aside>}
-
       <header className="dashboard-header">
         <div>
           <div className="eyebrow">Your workspace at a glance</div>
@@ -67,6 +63,15 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
         </div>
         <div className="dashboard-date"><CalendarClock size={15} aria-hidden="true" />{dateFormat.format(new Date())}</div>
       </header>
+
+      {(urgentAlert || error === "unauthorized") && (
+        <div className="dashboard-notices">
+          {urgentAlert && <AlertBanner alert={urgentAlert} />}
+          {error === "unauthorized" && <aside className="dashboard-access-notice" role="alert">You don’t have permission to open Administration. Ask your hospital administrator if you need access.</aside>}
+        </div>
+      )}
+
+      <DemoBanner />
 
       <section className="knowledge-hub" aria-labelledby="hub-title">
         <div className="ai-search">
@@ -216,7 +221,7 @@ function RecentGuidelines({ diseases }: { diseases: Awaited<ReturnType<typeof ge
                 <strong>{disease.title}</strong>
                 <span className="guideline-feed-meta">
                   <span>{disease.authority}</span>
-                  <span>v{disease.version}</span>
+                  <span className="pill pill-slate pill-sm">v{disease.version}</span>
                   <span>Revised {Number.isNaN(reviewed.getTime()) ? disease.lastReviewed : dateFormat.format(reviewed)}</span>
                 </span>
               </div>

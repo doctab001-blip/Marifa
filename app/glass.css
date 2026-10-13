@@ -567,6 +567,81 @@ a.card:hover, .disease-card:hover, .care-pillar-card:hover { border-color: rgb(v
 .pathway-step-content, .topic-approval-bar, .topic-pager-link { background: rgb(var(--glass) / .6); box-shadow: none; }
 .topic-pager-link:hover { box-shadow: none; border-color: rgb(var(--ov) / .25); }
 
+/* No glow around pills or pill-shaped buttons: hover is shown by a stronger border and fill only. */
+.pill, .status, .scenario-chip, .module-placeholder-label, .role-pill, .approval-badge, .disease-speciality-badge,
+.disease-sub-speciality-badge, .disease-authority-badge, .disease-status-badge, .admin-queue-status, .topic-back-pill,
+.care-pillar-tab, .disease-management-tabs a, .admin-tab, .scope-chip, .topic-nav-count, .care-pillar-count, .care-pillar-tab-count,
+.pill:hover, .status:hover, .scenario-chip:hover, .module-placeholder-label:hover, .role-pill:hover, .approval-badge:hover,
+.disease-speciality-badge:hover, .disease-sub-speciality-badge:hover, .disease-authority-badge:hover, .disease-status-badge:hover,
+.topic-back-pill:hover, .care-pillar-tab:hover, .disease-management-tabs a:hover, .admin-tab:hover, .scope-chip:hover,
+.button-primary, .ui-button-primary, .global-search-submit, .hero-input button, .ai-search-form button, .topic-approve-button, .alert-banner-action,
+.button-primary:hover, .ui-button-primary:hover, .global-search-submit:hover, .hero-input button:hover, .ai-search-form button:hover,
+.topic-approve-button:hover, .alert-banner-action:hover, .em-nav a:hover, .em-nav a[aria-current="true"], .em-alert > div > strong {
+  box-shadow: none;
+}
+
+/* ═══ Dashboard polish ═══════════════════════════════════════════════════════════════════
+   Hierarchy first: welcome → what needs attention → search → numbers → work. */
+.dashboard-page { gap: 18px; }
+.dashboard-header { padding-top: 4px; align-items: flex-start; }
+.dashboard-header .page-title { font-size: clamp(1.7rem, 3vw, 2.15rem); font-weight: 750; letter-spacing: -.03em; color: var(--strong); margin: 6px 0 4px; }
+.dashboard-header .page-copy { color: var(--text-2); max-width: 72ch; }
+.dashboard-date { background: transparent; box-shadow: none; border-color: rgb(var(--ov) / .14); color: var(--text-2); }
+.dashboard-notices { display: grid; gap: 12px; }
+.dashboard-page > .demo-banner { padding: 7px 14px; font-size: .8rem; font-weight: 600; border-radius: 999px; justify-self: start; max-width: 100%; }
+.dashboard-page .alert-banner { margin: 0; }
+
+/* Search hub: a flat, confident card; the search field is the focal point. */
+.ai-search { background: rgb(var(--glass) / .8); border-color: rgb(var(--ov) / .1); box-shadow: 0 1px 2px rgb(var(--shade) / .06); padding: 26px 28px 22px; gap: 16px; }
+.ai-search-badge { background: transparent; }
+.ai-search-intro h2 { font-size: 1.3rem; margin-top: 12px; color: var(--strong); }
+.ai-search-intro p { color: var(--text-2); font-size: .9rem; }
+.ai-search-form { max-width: none; }
+.ai-search-form input { height: 54px; border-radius: 999px; border: 1px solid rgb(var(--ov) / .16); background: rgb(var(--glass) / .95); box-shadow: none; }
+.ai-search-form input:focus { border-color: rgb(34 211 238 / .7); box-shadow: 0 0 0 4px rgb(34 211 238 / .14); }
+.ai-search-form button { height: 42px; border-radius: 999px; }
+/* The header already carries a global search; on the dashboard the hub is the search, so don't show two. */
+.workspace:has(.knowledge-hub) .topbar .global-search { visibility: hidden; }
+
+/* Metrics: number-led cards, no coloured edge, tone lives in the icon only. */
+.metric-card::before { display: none; }
+.metric-card { padding: 20px; gap: 2px; }
+.metric-card .metric-top { color: var(--text-2); font-size: .84rem; font-weight: 650; }
+.metric-card .metric-value { margin-top: 14px; font-size: 2.25rem; font-weight: 750; letter-spacing: -.035em; font-variant-numeric: tabular-nums; color: var(--strong); }
+.metric-card .metric-note { color: var(--text-3); font-size: .8rem; }
+.metric-card .metric-link { margin-top: 14px; color: var(--text-2); }
+.metric-card .metric-link:hover { color: var(--strong); text-decoration: none; }
+.metric-card:hover { border-color: rgb(var(--ov) / .2); }
+.metric-icon-teal { --tile: #0fa5c6; } .metric-icon-blue { --tile: #3b82f0; } .metric-icon-yellow { --tile: #e08e0b; } .metric-icon-magenta { --tile: #e5456b; }
+.metric-icon-teal, .metric-icon-blue, .metric-icon-yellow, .metric-icon-magenta { color: var(--tile); background: color-mix(in srgb, var(--tile) 11%, transparent); border: 1px solid color-mix(in srgb, var(--tile) 22%, transparent); }
+
+/* Empty states: quiet, not a dashed teal box. */
+.empty-state { border: 1px dashed rgb(var(--ov) / .18); background: rgb(var(--ov) / .025); }
+.empty-state-icon { background: rgb(var(--ov) / .05); border-color: rgb(var(--ov) / .1); box-shadow: none; color: var(--text-2); }
+
+/* Core pathways: one scannable row each instead of an uneven 2×2 grid. */
+.pathway-grid { grid-template-columns: 1fr; gap: 10px; }
+.pathway-card {
+  grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: "icon title cta" "icon desc cta"; column-gap: 14px; row-gap: 2px; align-items: center; padding: 14px 16px;
+  background: rgb(var(--glass) / .6); border-color: rgb(var(--ov) / .1);
+}
+.pathway-card:hover { border-color: rgb(var(--ov) / .22); box-shadow: none; background: rgb(var(--ov) / .04); }
+.pathway-card .metric-icon { grid-area: icon; width: 40px; height: 40px; }
+.pathway-card h3 { grid-area: title; color: var(--strong); }
+.pathway-card p { grid-area: desc; color: var(--text-3); }
+.pathway-card .pathway-cta { grid-area: cta; color: var(--text-2); }
+.pathway-card:hover .pathway-cta { color: var(--strong); }
+
+/* Lists */
+.guideline-feed li + li, .update-list li + li .update-row { border-top-color: rgb(var(--ov) / .08); }
+.guideline-feed-meta { color: var(--text-3); }
+.guideline-feed-row:hover strong, .update-row:hover strong { color: var(--strong); }
+.update-row:hover { background: rgb(var(--ov) / .045); }
+.dashboard-page .section-head h2 { color: var(--strong); }
+.section-link { color: var(--text-2); font-weight: 650; }
+.section-link:hover { color: var(--strong); }
+.flagship-card:hover { border-color: rgb(var(--ov) / .22); }
+
 /* Paper stays paper: print in black on white regardless of the on-screen theme. */
 @media print {
   html, body { background: #fff !important; }
