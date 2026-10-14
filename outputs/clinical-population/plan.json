@@ -8,7 +8,8 @@
     2,
     3,
     4,
-    5
+    5,
+    6
   ],
   "batches": [
     {
@@ -510,7 +511,7 @@
       "batch": 6,
       "size": 10,
       "version": "official-extraction-2026-10-11-b006",
-      "state": "pending",
+      "state": "database-readback-verified",
       "entries": [
         {
           "content_hash": "9eec0b67458f167848c7824d97e0bcb3",
@@ -602,7 +603,8 @@
           "version": "1.0-draft",
           "version_id": "0f7cd64a-5778-4674-a0e5-e20fa64dc6a2"
         }
-      ]
+      ],
+      "readback": "batch-006/readback.json"
     },
     {
       "batch": 7,
@@ -824,6 +826,6 @@
     "status": "ACTIVE",
     "cadence": "hourly",
     "destination": "this chat",
-    "completion": "Disable after three remaining full batches; report final single-topic remainder."
+    "completion": "Disable after two remaining full batches; report final single-topic remainder."
   }
 }

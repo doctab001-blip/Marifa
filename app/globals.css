@@ -51,8 +51,10 @@
   --line: #e3e8e8;
   --line-soft: #eef2f2;
   --line-strong: #cbd5e1;
-  --text-2: #344054;
-  --text-3: #667085;
+  /* Readable copy is always true black. Accent colours remain reserved for
+     links, status badges, warnings, icons and other functional UI. */
+  --text-2: var(--font-color-body);
+  --text-3: var(--font-color-body);
   --surface-2: #f8fafc;
   --surface-3: #f1f5f9;
   --surface: #ffffff;
@@ -96,6 +98,10 @@ html { background: var(--background); }
 body { font-size: var(--font-size-body); line-height: 1.6; margin: 0; color: var(--font-color-body); background: var(--background); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
 h1 { color: var(--font-color-heading); font-size: var(--font-size-heading); line-height: 1.25; letter-spacing: -.02em; }
 h2, h3, h4, h5, h6, [role="heading"] { color: var(--font-color-subheading); font-size: var(--font-size-subheading); line-height: 1.4; letter-spacing: -.01em; }
+/* Body copy must remain true black across legacy and utility-styled components.
+   Interactive and semantic UI keeps colour on its own element (links, buttons,
+   icons, badges and alerts), rather than weakening the readable copy. */
+body :is(p, li, dd, dt, label, th, td, figcaption, blockquote) { color: var(--font-color-body) !important; }
 button, input, select, textarea { font: inherit; }
 a { color: inherit; text-decoration: none; }
 ::selection { background: var(--royal-line); }
@@ -808,28 +814,29 @@ a.topic-row:focus-visible { outline: 3px solid color-mix(in srgb, var(--cerulean
 
 .pathway-sequence { padding: 23px; border: 1px solid var(--line); border-radius: 17px; background: #fff; box-shadow: 0 7px 24px color-mix(in srgb, var(--royal) 5%, transparent); }
 .pathway-sequence-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; padding-bottom: 18px; border-bottom: 1px solid #edf0f5; }
-.pathway-sequence-header > div:first-child > p:last-child { margin: 7px 0 0; color: var(--muted); font-size: var(--font-size-body); line-height: 1.5; }
+.pathway-sequence-header > div:first-child > p:last-child { margin: 7px 0 0; color: var(--font-color-body); font-size: var(--font-size-body); line-height: 1.6; }
 .pathway-sequence-icon { display: grid; place-items: center; width: 42px; height: 42px; flex: 0 0 auto; border-radius: 11px; color: var(--royal); background: var(--royal-soft); }
 .pathway-sequence-list { max-width: 980px; margin: 22px 0 0; padding: 0; list-style: none; }
 .pathway-sequence-step { position: relative; display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 15px; padding-bottom: 20px; }
 .pathway-sequence-step:last-child { padding-bottom: 0; }
 .pathway-sequence-step:not(:last-child)::before { content: ""; position: absolute; top: 40px; bottom: 0; left: 19px; width: 2px; background: var(--royal-line); }
 .pathway-marker { position: relative; z-index: 1; width: 40px; height: 40px; display: grid; place-items: center; border: 4px solid var(--royal-soft); border-radius: 50%; color: #fff; background: var(--royal); font-size: var(--font-size-body); font-weight: 850; }
-.pathway-step-content { overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
-.pathway-step-heading { padding: 16px 18px 13px; background: var(--royal-faint); border-bottom: 1px solid #edf0f5; }
+.pathway-step-content { overflow: hidden; border: 1px solid var(--line-strong); border-radius: 14px; background: #fff; box-shadow: 0 4px 14px rgba(15,23,42,.04); }
+.pathway-step-heading { padding: 16px 18px 13px; background: var(--royal-faint); border-bottom: 1px solid var(--line); }
 .pathway-step-heading > span { color: var(--cerulean); font-size: var(--font-size-body); font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
 .pathway-step-heading h3 { margin: 4px 0 4px; font: 700 var(--font-size-subheading) var(--font-sans); }
-.pathway-step-heading p { margin: 0; color: var(--muted); font-size: var(--font-size-body); line-height: 1.5; }
-.pathway-actions { margin: 0; padding: 14px 20px 15px 36px; color: #3c485b; font-size: var(--font-size-body); line-height: 1.58; }
-.pathway-actions li + li { margin-top: 6px; }
-.pathway-actions li::marker { color: var(--cerulean); }
+.pathway-step-heading p { margin: 0; color: var(--font-color-body); font-size: var(--font-size-body); line-height: 1.5; }
+.pathway-actions { margin: 0; padding: 8px 20px 10px 42px; color: var(--font-color-body); font-size: var(--font-size-body); line-height: 1.7; }
+.pathway-actions li { padding: 9px 0 9px 4px; color: var(--font-color-body); }
+.pathway-actions li + li { border-top: 1px solid var(--line-soft); }
+.pathway-actions li::marker { color: var(--cerulean); font-weight: 800; }
 .pathway-branches { padding: 14px 17px 17px; border-top: 1px solid var(--royal-line); background: var(--royal-faint); }
 .pathway-branches-label { display: flex; align-items: center; gap: 6px; margin-bottom: 10px; color: var(--royal); font-size: var(--font-size-body); font-weight: 850; text-transform: uppercase; letter-spacing: .07em; }
 .pathway-branch-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
 .pathway-branch { display: grid; grid-template-columns: minmax(0, 1fr) 14px; align-items: center; gap: 7px; padding: 11px; border: 1px solid var(--royal-line); border-radius: 10px; background: #fff; }
 .pathway-branch strong { color: var(--royal); font-size: var(--font-size-body); line-height: 1.4; }
 .pathway-branch svg { color: var(--cerulean); }
-.pathway-branch p, .pathway-branch ul { grid-column: 1 / -1; margin: 0; color: #52617a; font-size: var(--font-size-body); line-height: 1.5; }
+.pathway-branch p, .pathway-branch ul { grid-column: 1 / -1; margin: 0; color: var(--font-color-body); font-size: var(--font-size-body); line-height: 1.5; }
 .pathway-branch ul { padding-left: 17px; }
 .pathway-branch li + li { margin-top: 4px; }
 .pathway-placeholder { display: flex; align-items: flex-start; gap: 15px; padding: 24px; color: var(--royal); }
@@ -850,14 +857,14 @@ a.topic-row:focus-visible { outline: 3px solid color-mix(in srgb, var(--cerulean
 .clinical-tier-panel-inner { min-height: 0; overflow: hidden; }
 .clinical-tier-body { padding: 20px; border-top: 1px solid #edf0f5; }
 .clinical-tier-body > h3, .clinical-two-column h3, .investigation-groups h3, .non-clinical-grid h3 { margin: 0 0 9px; font: 700 var(--font-size-subheading) var(--font-sans); }
-.clinical-summary { margin: 0 0 18px; color: #3c485b; font-size: var(--font-size-body); line-height: 1.7; }
+.clinical-summary { margin: 0 0 18px; color: var(--font-color-body); font-size: var(--font-size-body); line-height: 1.7; }
 .clinical-references { margin-top: 18px; padding-top: 14px; border-top: 1px solid #e2e8f0; }
 .clinical-references h3 { margin: 0 0 7px; color: #475569; font-size: var(--font-size-subheading); font-weight: 700; }
 .clinical-references ul { display: grid; gap: 5px; margin: 0; padding-left: 18px; color: #475569; font-size: var(--font-size-body); }
 .clinical-references li::marker { color: var(--cerulean); }
 .clinical-references a { color: var(--royal); text-decoration: underline; text-underline-offset: 2px; }
 .clinical-review-draft-notice { margin: 12px 0; padding: 14px 16px; border: 1px solid #f4cf82; border-left: 5px solid #d97706; border-radius: 10px; color: #713f12; background: #fff8e7; font-size: var(--font-size-body); line-height: 1.55; }
-.clinical-content-list { margin: 0; padding-left: 20px; color: #3c485b; font-size: var(--font-size-body); line-height: 1.65; }
+.clinical-content-list { margin: 0; padding-left: 20px; color: var(--font-color-body); font-size: var(--font-size-body); line-height: 1.65; }
 .clinical-content-list li + li { margin-top: 5px; }
 .clinical-content-list li::marker { color: var(--cerulean); }
 .differential-list { padding-left: 21px; }

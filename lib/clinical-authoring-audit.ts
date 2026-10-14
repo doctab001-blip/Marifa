@@ -2,6 +2,8 @@ import { DiseaseDetailSchema, type DiseaseDetail } from "@/lib/validations/disea
 
 /** Minimum authoring-standard score for a topic to appear live (docs/clinical-topic-authoring-standard.md). */
 export const CLINICAL_DIRECTORY_MINIMUM_SCORE = 80;
+/** Smallest investigation panel a topic can carry (bedside, laboratory, imaging and specialist tests together). */
+export const MINIMUM_INVESTIGATIONS = 5;
 
 export type AuthoringAudit = { compliant: boolean; meetsEightyPercent: boolean; score: number; passedChecks: number; totalChecks: number; failures: string[] };
 
@@ -54,6 +56,18 @@ export function auditTopicContent(content: unknown): AuthoringAudit {
     });
   });
   check(investigations.length > 0);
+  // Investigation panel completeness: list every relevant test, with a usable normal value and a distinct finding.
+  const vagueNormal = /^(within )?(the )?local( adult)?( laboratory)?( reference)?( range)?s?\.?$/i;
+  check(investigations.length >= MINIMUM_INVESTIGATIONS);
+  if (investigations.length < MINIMUM_INVESTIGATIONS) failures.push(`Investigations list ${investigations.length} tests; list every relevant bedside, laboratory, imaging and specialist test (at least ${MINIMUM_INVESTIGATIONS}).`);
+  check(new Set(investigations.map((entry) => entry.tier)).size >= 2);
+  if (new Set(investigations.map((entry) => entry.tier)).size < 2) failures.push("Investigations cover only one tier; include laboratory and imaging or bedside tests where relevant.");
+  const weakNormal = investigations.filter((entry) => entry.normalValue && vagueNormal.test(entry.normalValue.trim()));
+  check(weakNormal.length === 0);
+  weakNormal.forEach((entry) => failures.push(`Investigation “${entry.testName}” normal value is only “${entry.normalValue}”; give the typical adult range or the target.`));
+  const echoed = investigations.filter((entry) => entry.normalValue && entry.normalValue.trim().toLowerCase() === entry.expectedFinding.trim().toLowerCase());
+  check(echoed.length === 0);
+  echoed.forEach((entry) => failures.push(`Investigation “${entry.testName}” repeats the normal value as the expected finding.`));
   check(investigations.every((item) => Boolean(item.normalValue)));
   check(investigations.every((item) => Boolean(item.expectedFinding)));
   check(investigations.every((item) => Boolean(item.clinicalRationale)));
@@ -97,6 +111,10 @@ export function auditTopicContent(content: unknown): AuthoringAudit {
   check(Boolean(item.teaching?.keyPoints?.length));
   check(Boolean(item.teaching?.pitfalls?.length));
   check(Boolean(item.teaching?.references?.length));
+  // A publishable topic needs the teaching layer as one coherent safety bundle;
+  // passing isolated subchecks must not keep a topic above threshold when the
+  // objectives, key points and pitfalls have all been removed.
+  check(Boolean(item.teaching?.learningObjectives.length && item.teaching?.keyPoints?.length && item.teaching?.pitfalls?.length));
   check(Boolean(item.teaching?.references?.every((reference) => Boolean(reference.locator))));
   check(!filler.test(text(item)));
   check(item.nonClinicalManagement.patientEducation.length > 0);

@@ -27,7 +27,7 @@ export function PathwaySequence({ steps, sources = [], compact = false }: { step
                 <h3>{step.title}</h3>
                 <p className="pathway-timeframe"><span className="pill pill-amber pill-sm pill-wrap"><Clock3 size={14} aria-hidden="true" /><span className="sr-only">Timeframe: </span>{step.timeframe}</span></p>
               </div>
-              <ol className="m-0 list-decimal space-y-2 py-4 pe-4 ps-9 text-sm leading-relaxed text-body marker:font-semibold marker:text-aqua-300 sm:pe-5 sm:ps-10">
+              <ol className="pathway-actions list-decimal">
                 {step.actions.map((action, actionIndex) => <li key={`${actionIndex}-${action}`}><ClinicalTimeframe text={action} /></li>)}
               </ol>
               {step.branches && (

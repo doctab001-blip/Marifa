@@ -13,7 +13,7 @@ export function InvestigationCards({ investigations, source }: {
   const tableData = mapInvestigationTableRows(investigations);
   const references = tests.flatMap((test) => (test.references ?? []).map((reference) => ({ ...reference, investigation: test.testName })));
   return <div className="investigation-groups">
-    <p className="investigation-intro">Read each assessment with its clinical question, findings and reason for testing. Select tests according to the patient and the current local pathway.</p>
+    <p className="investigation-intro">Each test shows the normal adult value, the expected finding in this condition and what to do with the result. Local laboratory ranges apply; choose tests for the individual patient and the current local pathway.</p>
     {incomplete && <p className="investigation-review-note" role="note"><strong>Investigation detail needs clinical review.</strong> Some saved entries contain general assessment advice. Their exact tests, findings and decision rationale still need source verification; they are marked below.</p>}
     <InvestigationTable data={tableData} />
     {references.length ? <div className="investigation-sources"><strong>Investigation references</strong><ul>{references.map((reference) => <li key={`${reference.investigation}-${reference.url}`}><strong>{reference.investigation}:</strong> <a href={reference.url} target="_blank" rel="noreferrer">{reference.title} ({reference.edition})</a></li>)}</ul></div> : null}
