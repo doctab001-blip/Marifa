@@ -138,7 +138,7 @@ async function loadDirectory(): Promise<DirectoryPayload> {
 // With temporary open administration, clinical data is read with a server key rather than the viewer's
 // cookies, so one validated catalogue can be shared across requests. Otherwise row-level security depends
 // on the signed-in viewer and the catalogue is only reused within a single request.
-const loadSharedDirectory = unstable_cache(loadDirectory, ["clinical-directory-v3"], { tags: [CLINICAL_DIRECTORY_TAG], revalidate: CROSS_REQUEST_CACHE_SECONDS });
+const loadSharedDirectory = unstable_cache(loadDirectory, ["clinical-directory-v4"], { tags: [CLINICAL_DIRECTORY_TAG], revalidate: CROSS_REQUEST_CACHE_SECONDS });
 
 const getDirectoryForRequest = cache(async (): Promise<DirectoryPayload | null> => {
   if (!isSupabaseConfigured()) return null;
@@ -206,7 +206,7 @@ async function loadTopic(id: string): Promise<TopicPayload> {
   return { state: "ready", disease: parsed.data, investigationSource: currentSource(row) };
 }
 
-const loadSharedTopic = unstable_cache(loadTopic, ["clinical-topic-v2"], { tags: [CLINICAL_DIRECTORY_TAG], revalidate: CROSS_REQUEST_CACHE_SECONDS });
+const loadSharedTopic = unstable_cache(loadTopic, ["clinical-topic-v3"], { tags: [CLINICAL_DIRECTORY_TAG], revalidate: CROSS_REQUEST_CACHE_SECONDS });
 
 export const getApprovedDiseaseGuideline = cache(async (id: string): Promise<DiseaseDetailResult> => {
   if (!isSupabaseConfigured()) return { state: "unavailable" };
