@@ -1,3 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars --
+ * This file contains the legacy calculator adapter alongside the canonical schema.
+ * The adapter intentionally accepts historical, heterogeneous answer/question shapes;
+ * runtime guards below normalise those values before calculations use them.
+ */
 /** Five-layer, MDCalc-inspired clinical calculator schema. */
 export type RiskTone = "low" | "moderate" | "high";
 export type CalculatorInputType = "numeric" | "binary" | "multi-select";
