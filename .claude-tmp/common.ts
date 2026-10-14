@@ -1,8 +1,8 @@
 import fs from "node:fs";
-import { DiseaseDetailSchema, type DiseaseDetail } from "../mnt/Marifa/lib/validations/disease";
+import { DiseaseDetailSchema, type DiseaseDetail } from "../lib/validations/disease";
 export const DATE = "2026-10-14";
 export const VERSION = "authoring-standard-2026-10-14-v1";
-const REPO = process.env.HOME + "/mnt/Marifa/data/emergency-versions/";
+const REPO = new URL("../data/emergency-versions/", import.meta.url).pathname;
 export type Ref = { title: string; url: string };
 export const SRC = {
   SDCPG: { title: "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)", url: "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf" },
@@ -16,6 +16,16 @@ export const SRC = {
   NG232: { title: "NICE NG232: Head injury: assessment and early management", url: "https://www.nice.org.uk/guidance/ng232" },
   NG185: { title: "NICE NG185: Acute coronary syndromes", url: "https://www.nice.org.uk/guidance/ng185" },
   SFDA: { title: "SFDA Saudi Drug Information System (registration search)", url: "https://sdi.sfda.gov.sa/" },
+  SINA2024: { title: "Saudi Initiative for Asthma 2024 update", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10911239/" },
+  NG39: { title: "NICE NG39: Major trauma: assessment and initial management", url: "https://www.nice.org.uk/guidance/ng39/chapter/Recommendations" },
+  BSG_LGIB: { title: "British Society of Gastroenterology guideline: acute lower gastrointestinal bleeding", url: "https://gut.bmj.com/content/68/5/776" },
+  NG185: { title: "NICE NG185: Acute coronary syndromes", url: "https://www.nice.org.uk/guidance/ng185/chapter/Recommendations" },
+  NG246: { title: "NICE NG246: Overweight and obesity management", url: "https://www.nice.org.uk/guidance/ng246" },
+  CG126: { title: "NICE CG126: Stable angina: management", url: "https://www.nice.org.uk/guidance/cg126/chapter/Recommendations" },
+  NG242: { title: "NICE NG242: Diabetic retinopathy: management and monitoring", url: "https://www.nice.org.uk/guidance/ng242/chapter/Recommendations" },
+  NG217: { title: "NICE NG217: Epilepsies in children, young people and adults", url: "https://www.nice.org.uk/guidance/ng217/chapter/diagnosis-and-assessment-of-epilepsy" },
+  NG17: { title: "NICE NG17: Type 1 diabetes in adults", url: "https://www.nice.org.uk/guidance/ng17/chapter/Recommendations" },
+  CG151: { title: "NICE CG151: Neutropenic sepsis", url: "https://www.nice.org.uk/guidance/cg151/chapter/Recommendations" },
 } satisfies Record<string, Ref>;
 export const cite = (r: Ref, edition: string) => ({ title: r.title, edition, url: r.url });
 

@@ -1,0 +1,263 @@
+{
+  "id": "b7094a86-5aa2-4e91-856f-0ea66a94c988",
+  "title": "Acute Asthma Exacerbation in Children: ED Pathway",
+  "specialty": "Paediatrics / Emergency Medicine",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-14-v1",
+  "lastReviewed": "2026-10-14",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-14",
+    "status": "incomplete",
+    "scope": "Paediatric acute asthma assessment and ED treatment for children aged 2–12 years using SINA 2024.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 14 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "SFDA product registration was not confirmed for salbutamol, ipratropium or prednisolone."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "b7094a86-5aa2-4e91-856f-0ea66a94c988"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Airway inflammation and oedema narrow the lumen. Bronchial smooth-muscle constriction causes variable expiratory obstruction. Mucus plugging increases ventilation-perfusion mismatch. Fatigue and rising carbon dioxide signal impending respiratory failure.",
+    "keyMechanisms": [
+      "Airway inflammation and oedema narrow the lumen.",
+      "Bronchial smooth-muscle constriction causes variable expiratory obstruction.",
+      "Mucus plugging increases ventilation-perfusion mismatch.",
+      "Fatigue and rising carbon dioxide signal impending respiratory failure."
+    ],
+    "references": [
+      {
+        "title": "Saudi Initiative for Asthma 2024 update",
+        "edition": "SINA 2024, Section 10, Boxes 10.1–10.3",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10911239/"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Wheeze, cough, breathlessness, chest tightness and reduced activity or feeding."
+    ],
+    "physicalSigns": [
+      "Tachypnoea, accessory-muscle use, reduced air entry, wheeze and low oxygen saturation."
+    ],
+    "redFlags": [
+      "Unable to speak a few words, cyanosis, exhaustion, altered consciousness, silent chest, bradycardia or poor response to initial SABA."
+    ],
+    "precipitants": [
+      "Viral infection, allergens, smoke or vaping exposure, pollutants, poor controller adherence and incorrect inhaler technique."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Anaphylaxis",
+      "distinguishingFeatures": "Acute airway or breathing compromise with urticaria, angioedema or circulatory features."
+    },
+    {
+      "condition": "Foreign-body aspiration",
+      "distinguishingFeatures": "Sudden onset with choking or focal/unilateral findings."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "PRAM score",
+        "modalityTarget": "Oxygen saturation, retractions, scalene use, air entry and wheeze",
+        "targetCondition": "Acute asthma severity",
+        "expectedFinding": "1–3 mild; 4–7 moderate; 8–12 severe",
+        "clinicalRationale": "Record at baseline and after treatment to guide disposition.",
+        "normalValue": "0",
+        "references": [
+          {
+            "title": "Saudi Initiative for Asthma 2024 update",
+            "edition": "SINA 2024, Section 10, Boxes 10.1–10.3",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10911239/"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Pulse oximetry",
+        "modalityTarget": "Oxygenation",
+        "targetCondition": "Hypoxaemia",
+        "expectedFinding": "Reduced saturation, especially with severe distress",
+        "clinicalRationale": "Give oxygen during transfer to maintain above 94%; use the ED target in the local pathway.",
+        "normalValue": ">94% during emergency transfer",
+        "references": [
+          {
+            "title": "Saudi Initiative for Asthma 2024 update",
+            "edition": "SINA 2024, Section 10, Boxes 10.1–10.3",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10911239/"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Chest radiograph",
+        "modalityTarget": "Alternative thoracic pathology",
+        "targetCondition": "Pneumonia, pneumothorax or foreign body",
+        "expectedFinding": "Only if an alternative diagnosis or complication is suspected",
+        "clinicalRationale": "Routine radiography is not indicated in a typical responding attack.",
+        "normalValue": "No acute focal abnormality",
+        "references": [
+          {
+            "title": "Saudi Initiative for Asthma 2024 update",
+            "edition": "SINA 2024, Section 7 Box 7.1 and Section 10",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10911239/"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "assess-treat",
+      "title": "Assess and start bronchodilation",
+      "timeframe": "First minutes",
+      "actions": [
+        "Record PRAM and oxygen saturation, identify ICU-risk history and start inhaled salbutamol.",
+        "Provide oxygen for hypoxaemia; during transfer maintain saturation above 94%."
+      ]
+    },
+    {
+      "id": "first-hour",
+      "title": "First-hour treatment",
+      "timeframe": "Every 20 minutes for 1 hour",
+      "actions": [
+        "Repeat salbutamol by spacer; add ipratropium for moderate or severe attacks.",
+        "Start oral prednisolone for moderate or severe disease or poor response to the first salbutamol dose."
+      ]
+    },
+    {
+      "id": "reassess",
+      "title": "Reassess and disposition",
+      "timeframe": "At 1 hour",
+      "actions": [
+        "Repeat PRAM. Escalate severe, worsening or exhausted children to paediatric critical care.",
+        "For PRAM 1–3 with sustained response, discharge with salbutamol and inhaled corticosteroid plan, spacer technique, written action plan and follow-up within 1 week."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Acute bronchospasm",
+        "patientGroup": "Children aged 2–12 years with acute asthma",
+        "genericName": "Salbutamol",
+        "dose": "4–8 puffs by metered-dose inhaler with spacer; use the PRAM-directed dose",
+        "route": "Inhaled",
+        "frequency": "Every 20 minutes for the first hour",
+        "duration": "First hour, then reassess PRAM and continue according to response",
+        "adjustments": [
+          "Use oxygen-driven nebulisation if a nebuliser is required; local weight- and severity-based protocol applies"
+        ],
+        "monitoring": [
+          "PRAM score and oxygen saturation at baseline and after 1 hour"
+        ],
+        "contraindications": [
+          "Hypersensitivity; use caution with clinically significant tachyarrhythmia"
+        ],
+        "sourceTitle": "Saudi Initiative for Asthma 2024 update",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10911239/",
+        "sourceEdition": "SINA 2024, Section 10, Management in the ED, Box 10.3"
+      },
+      {
+        "indication": "Moderate or severe acute asthma, or poor response to initial salbutamol",
+        "patientGroup": "Children younger than 12 years",
+        "genericName": "Prednisolone",
+        "dose": "1–2 mg/kg; maximum 20 mg if under 2 years, 30 mg if 2–5 years, and 60 mg if 5–12 years",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Total 3–5 days when a course is started",
+        "adjustments": [
+          "Use the age-specific maximum dose; seek specialist advice if oral treatment cannot be tolerated"
+        ],
+        "monitoring": [
+          "Clinical response, vomiting, glucose in children at risk of hyperglycaemia"
+        ],
+        "contraindications": [
+          "Hypersensitivity; evaluate active serious infection while treating the asthma emergency"
+        ],
+        "sourceTitle": "Saudi Initiative for Asthma 2024 update",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10911239/",
+        "sourceEdition": "SINA 2024, Section 10, Box 10.3 and discharge text"
+      },
+      {
+        "indication": "Moderate or severe acute asthma during the first hour",
+        "patientGroup": "Children with PRAM-directed moderate or severe attack",
+        "genericName": "Ipratropium bromide",
+        "dose": "4 puffs by metered-dose inhaler with spacer or 250 micrograms by nebuliser",
+        "route": "Inhaled",
+        "frequency": "Every 20 minutes",
+        "duration": "First hour only",
+        "adjustments": [
+          "Use local device equivalence and infection-control policy"
+        ],
+        "monitoring": [
+          "PRAM score, heart rate, dry mouth"
+        ],
+        "contraindications": [
+          "Hypersensitivity to ipratropium or atropine derivatives"
+        ],
+        "sourceTitle": "Saudi Initiative for Asthma 2024 update",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10911239/",
+        "sourceEdition": "SINA 2024, Section 10, Box 10.3"
+      }
+    ],
+    "note": "Paediatric doses are from SINA 2024 Section 10. SFDA product registration was not confirmed; check the Saudi hospital formulary."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "PRAM severity",
+      "threshold": "Score 1–3 mild, 4–7 moderate, 8–12 severe; applies to ages 2–17 years."
+    }
+  ],
+  "teaching": {
+    "scope": "Paediatric acute asthma assessment and ED treatment for children aged 2–12 years using SINA 2024.",
+    "learningObjectives": [
+      "Use PRAM to stage and reassess acute asthma.",
+      "Apply age-specific steroid maximum doses."
+    ],
+    "pitfalls": [
+      "Using adult doses in children.",
+      "Discharging without spacer technique and a written action plan."
+    ],
+    "keyPoints": [
+      "Treat first, then reassess at 1 hour.",
+      "A silent chest or altered consciousness is life-threatening."
+    ],
+    "references": [
+      {
+        "title": "Saudi Initiative for Asthma 2024 update",
+        "edition": "SINA 2024, Section 10, Boxes 10.1–10.3",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10911239/",
+        "locator": "Section 10; Boxes 10.1–10.3"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Demonstrate inhaler and spacer technique and provide a written asthma action plan."
+    ],
+    "lifestyleAndDiet": [
+      "Avoid tobacco smoke, vaping and known triggers; resume age-appropriate activity after recovery."
+    ],
+    "mdtReferrals": [
+      "Paediatric ED, respiratory team and critical care for severe or poorly responding attacks."
+    ],
+    "dischargeCriteria": [
+      "PRAM 1–3 after treatment, stable oxygenation, sustained clinical response and caregiver able to deliver the plan."
+    ],
+    "followUpPlan": "Arrange appropriate asthma-clinic or primary-care review within 1 week."
+  }
+}

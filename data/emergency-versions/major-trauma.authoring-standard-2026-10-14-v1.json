@@ -1,0 +1,215 @@
+{
+  "id": "8308b72f-3d4e-4632-8f98-24fc08841f57",
+  "title": "Major Trauma: ED Primary Survey and Massive Haemorrhage Protocol",
+  "specialty": "Emergency Medicine / Trauma Surgery",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-14-v1",
+  "lastReviewed": "2026-10-14",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-14",
+    "status": "incomplete",
+    "scope": "Adult ED primary survey, haemorrhage recognition, imaging and escalation from NICE NG39.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 14 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "No Saudi national major-trauma protocol was opened.",
+      "Tranexamic-acid dose and local blood-component ratio require the hospital major-haemorrhage protocol.",
+      "SFDA status was not checked."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "8308b72f-3d4e-4632-8f98-24fc08841f57"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "High-energy injury can disrupt airway, ventilation, circulation and neurological function at the same time. Uncontrolled haemorrhage reduces circulating volume and tissue oxygen delivery. Traumatic brain injury makes excessive hypotension especially harmful. Hypothermia and coagulopathy can amplify ongoing bleeding.",
+    "keyMechanisms": [
+      "High-energy injury can disrupt airway, ventilation, circulation and neurological function at the same time.",
+      "Uncontrolled haemorrhage reduces circulating volume and tissue oxygen delivery.",
+      "Traumatic brain injury makes excessive hypotension especially harmful.",
+      "Hypothermia and coagulopathy can amplify ongoing bleeding."
+    ],
+    "references": [
+      {
+        "title": "NICE NG39: Major trauma: assessment and initial management",
+        "edition": "NICE NG39, Recommendations 1.5.1–1.5.33 and 1.8.1–1.8.6",
+        "url": "https://www.nice.org.uk/guidance/ng39/chapter/Recommendations"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Pain, breathlessness, weakness, confusion or amnesia after high-energy trauma."
+    ],
+    "physicalSigns": [
+      "External bleeding, airway compromise, abnormal chest movement, shock, reduced Glasgow Coma Scale or focal deficit."
+    ],
+    "redFlags": [
+      "Uncontrolled external bleeding, absent central pulse, airway obstruction, tension physiology, deteriorating consciousness or non-response to resuscitation."
+    ],
+    "precipitants": [
+      "Road collision, fall from height, crush injury, penetrating injury or blast."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Medical collapse preceding trauma",
+      "distinguishingFeatures": "Witness history or ECG/glucose abnormality suggesting seizure, arrhythmia or hypoglycaemia before injury."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Structured CABCDE primary survey",
+        "modalityTarget": "Life threats",
+        "targetCondition": "Major trauma",
+        "expectedFinding": "Catastrophic haemorrhage, airway, breathing, circulation, disability and exposure findings",
+        "clinicalRationale": "Treat each life threat as it is found and repeat after intervention.",
+        "normalValue": "No life-threatening abnormality",
+        "references": [
+          {
+            "title": "NICE NG39: Major trauma: assessment and initial management",
+            "edition": "NICE NG39 Recommendations 1.8.1–1.8.2",
+            "url": "https://www.nice.org.uk/guidance/ng39/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Haemodynamic response",
+        "modalityTarget": "Circulation",
+        "targetCondition": "Active haemorrhage",
+        "expectedFinding": "Persistent instability or loss of central circulation",
+        "clinicalRationale": "Activate local major-haemorrhage protocol and move rapidly to haemorrhage control.",
+        "normalValue": "Stable haemodynamics with central circulation",
+        "references": [
+          {
+            "title": "NICE NG39: Major trauma: assessment and initial management",
+            "edition": "NICE NG39 Recommendations 1.5.13–1.5.20",
+            "url": "https://www.nice.org.uk/guidance/ng39/chapter/Recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "advancedImaging",
+        "testName": "Urgent CT trauma imaging",
+        "modalityTarget": "Head, chest, abdomen and pelvis as indicated",
+        "targetCondition": "Occult traumatic injury",
+        "expectedFinding": "Injury requiring operative, endovascular or specialist treatment",
+        "clinicalRationale": "Use immediate CT when haemodynamics are normal or responding; unstable non-responders need only imaging that directs intervention.",
+        "normalValue": "No acute traumatic injury",
+        "references": [
+          {
+            "title": "NICE NG39: Major trauma: assessment and initial management",
+            "edition": "NICE NG39 Recommendations 1.5.28–1.5.33",
+            "url": "https://www.nice.org.uk/guidance/ng39/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "FAST",
+        "modalityTarget": "Peritoneal and pericardial fluid",
+        "targetCondition": "Haemorrhage",
+        "expectedFinding": "Free fluid may support rapid intervention",
+        "clinicalRationale": "A negative FAST does not exclude intraperitoneal or retroperitoneal haemorrhage.",
+        "normalValue": "No free fluid seen",
+        "references": [
+          {
+            "title": "NICE NG39: Major trauma: assessment and initial management",
+            "edition": "NICE NG39 Recommendations 1.5.29–1.5.33",
+            "url": "https://www.nice.org.uk/guidance/ng39/chapter/Recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "primary-survey",
+      "title": "CABCDE with simultaneous treatment",
+      "timeframe": "Immediately on arrival",
+      "actions": [
+        "Identify and control catastrophic external haemorrhage with direct pressure; use a tourniquet for life-threatening limb bleeding when pressure fails.",
+        "Secure airway with spinal precautions; assess breathing, circulation, disability and exposure, then repeat the survey."
+      ]
+    },
+    {
+      "id": "haemorrhage",
+      "title": "Activate haemorrhage pathway",
+      "timeframe": "During the primary survey",
+      "actions": [
+        "Activate the local major-haemorrhage protocol using physiology and response to resuscitation.",
+        "Use peripheral IV access; if it fails, use intra-osseous access while central access is obtained.",
+        "Use restrictive volume resuscitation until bleeding control, except when traumatic brain injury dominates and cerebral perfusion requires a less restrictive approach."
+      ]
+    },
+    {
+      "id": "imaging-control",
+      "title": "Imaging and definitive control",
+      "timeframe": "Without avoidable delay",
+      "actions": [
+        "For unstable non-responders, limit imaging to what directs immediate intervention.",
+        "For normal haemodynamics or response to resuscitation, proceed to immediate CT and immediate expert interpretation.",
+        "Escalate to trauma surgery, interventional radiology, anaesthesia and critical care according to the identified injury."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [],
+    "note": "NICE NG39 recommends IV tranexamic acid as soon as possible for active or suspected active bleeding, but the opened recommendation does not specify a dose. Use the approved local major-haemorrhage protocol."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Major-haemorrhage activation",
+      "threshold": "Physiological criteria: haemodynamic status and response to immediate volume resuscitation; do not rely on a single risk score."
+    }
+  ],
+  "teaching": {
+    "scope": "Adult ED primary survey, haemorrhage recognition, imaging and escalation from NICE NG39.",
+    "learningObjectives": [
+      "Run a structured primary survey while treating immediate threats.",
+      "Choose imaging according to haemodynamic response."
+    ],
+    "pitfalls": [
+      "Delaying haemorrhage control for non-essential imaging.",
+      "Applying restrictive resuscitation without considering dominant traumatic brain injury."
+    ],
+    "keyPoints": [
+      "Physiological response, not one score, triggers major-haemorrhage activation.",
+      "Negative FAST does not exclude major bleeding."
+    ],
+    "references": [
+      {
+        "title": "NICE NG39: Major trauma: assessment and initial management",
+        "edition": "NICE NG39, Recommendations 1.5.1–1.5.33 and 1.8.1–1.8.6",
+        "url": "https://www.nice.org.uk/guidance/ng39/chapter/Recommendations",
+        "locator": "Recommendations 1.5.1–1.5.33; 1.8.1–1.8.6"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain injuries and planned interventions to the patient or family when time permits."
+    ],
+    "lifestyleAndDiet": [
+      "Prevent hypothermia during exposure and transfer."
+    ],
+    "mdtReferrals": [
+      "Trauma lead, anaesthesia, surgery, interventional radiology, transfusion laboratory and critical care."
+    ],
+    "dischargeCriteria": [
+      "Not an ED discharge pathway; disposition follows definitive injury assessment and trauma-team decision."
+    ],
+    "followUpPlan": "Document serial CABCDE findings, treatments, response and the named team accepting ongoing care."
+  }
+}

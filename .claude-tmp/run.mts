@@ -1,13 +1,13 @@
 import fs from "node:fs";
 import { randomUUID } from "node:crypto";
 import { createClient } from "@supabase/supabase-js";
-import { auditTopicContent } from "../mnt/Marifa/lib/clinical-authoring-audit";
+import { auditTopicContent } from "../lib/clinical-authoring-audit";
 import { build, VERSION, DATE, type Spec } from "./common.ts";
 const [mod, ...flags] = process.argv.slice(2);
 const only = flags.find((f) => f.startsWith("--only="))?.slice(7).split(",");
 const { specs } = (await import(`./${mod}.ts`)) as { specs: Spec[] };
 const db = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SECRET_KEY!, { auth: { persistSession: false } });
-const OUT = process.env.HOME + "/mnt/Marifa/data/emergency-versions/";
+const OUT = new URL("../data/emergency-versions/", import.meta.url).pathname;
 const apply = flags.includes("--apply");
 const ids: string[] = [];
 for (const s of specs.filter((x) => !only || only.includes(x.key))) {
@@ -29,4 +29,4 @@ for (const s of specs.filter((x) => !only || only.includes(x.key))) {
   if (ie) { console.log("  INSERT FAIL", ie.message); continue; }
   console.log("  inserted under_review", g.id); ids.push(`${g.id}:${VERSION}`);
 }
-if (ids.length) fs.writeFileSync(process.env.HOME + `/topics/ids_${mod}.txt`, ids.join(" "));
+if (ids.length) fs.writeFileSync(new URL(`ids_${mod}.txt`, import.meta.url), ids.join(" "));
