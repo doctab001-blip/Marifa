@@ -18,7 +18,7 @@ const asthmaMeds = {
   ],
 };
 
-export const specs: Spec[] = [
+const baseSpecs: Spec[] = [
   {
     key: "major-trauma", draftTitle: "Major Trauma: ED Primary Survey and Massive Haemorrhage Protocol", pillar: "Urgent Care", authority: "NICE",
     scope: "Adult ED primary survey, haemorrhage recognition, imaging and escalation from NICE NG39.", unverified: ["No Saudi national major-trauma protocol was opened.", "Tranexamic-acid dose and local blood-component ratio require the hospital major-haemorrhage protocol.", "SFDA status was not checked."],
@@ -117,3 +117,131 @@ export const specs: Spec[] = [
     teach:teach(SRC.CG151,"NICE CG151 Recommendations 1.3.1.1–1.5.4.2","Recommendations 1.3.1.1–1.5.4.2",["Recognise neutropenic sepsis before the count returns.","Deliver immediate empiric therapy and risk-led disposition."],["The NICE diagnostic neutrophil threshold is 0.5 × 10^9/L or lower.","Routine aminoglycoside or glycopeptide addition is not recommended."],["Waiting for neutrophil count or imaging before antibiotics.","Treating persistent fever alone as automatic antibiotic failure."]),edu:["Give oncology emergency contact instructions and advise immediate return for any deterioration."],life:["Follow oncology infection-prevention advice; do not delay care to self-manage fever."],mdt:["Acute oncology/haematology, infectious diseases or microbiology, pharmacy and critical care."],discharge:["Only after competent low-risk reassessment, clinical stability, suitable social circumstances and rapid return access."],follow:"Daily specialist reassessment while high risk; outpatient follow-up frequency is set by the oncology team and local protocol."
   },
 ];
+
+const extraInvestigations: Record<string, { rule_in: Spec["rule_in"]; rule_out: Spec["rule_out"] }> = {
+  "major-trauma": {
+    rule_in: [
+      inv("Continuous vital signs and temperature", "Physiological trend", "Shock and hypothermia", "Tachycardia, hypotension, hypoxaemia or falling temperature", "Trend response to each intervention and identify deterioration; a single normal reading does not end reassessment.", "Stable age-appropriate observations and normothermia", cite(SRC.NG39, "NICE NG39 Recommendations 1.8.1–1.8.2"), "specializedAdjunctive"),
+      inv("Full blood count", "Haemoglobin and platelets", "Blood loss and haemostatic reserve", "Anaemia or thrombocytopenia; early haemoglobin may not reflect total acute loss", "Establish baseline and repeat according to physiology and ongoing bleeding.", "Within local adult laboratory reference range", cite(SRC.EUROTRAUMA6, "European trauma guideline sixth edition, Recommendations 9 and 11")),
+      inv("Blood group, antibody screen and crossmatch", "Transfusion compatibility", "Major haemorrhage", "Compatible components available", "Send immediately when major bleeding is suspected; do not delay emergency-release blood when clinically required.", "Compatible blood identified; no unexpected antibody detected", cite(SRC.NG39, "NICE NG39 Recommendations 1.5.22–1.5.27")),
+      inv("Coagulation screen and fibrinogen", "Haemostasis", "Trauma-associated coagulopathy", "Coagulation abnormality or low fibrinogen", "Move from the initial fixed-ratio component protocol to laboratory-guided replacement at the earliest opportunity.", "Within local coagulation and fibrinogen reference ranges", cite(SRC.EUROTRAUMA6, "European trauma guideline sixth edition, Recommendation 11")),
+      inv("Blood gas with lactate and base deficit", "Ventilation and tissue perfusion", "Shock and ventilatory failure", "Acidaemia, lactate elevation or worsening base deficit", "Trend response to resuscitation and trigger senior trauma/critical-care escalation.", "pH, lactate and base excess within local reference ranges", cite(SRC.EUROTRAUMA6, "European trauma guideline sixth edition, Recommendation 10")),
+    ],
+    rule_out: [
+      inv("Portable chest radiograph", "Chest and immediately life-threatening thoracic injury", "Pneumothorax, haemothorax or major thoracic injury", "Acute thoracic injury requiring immediate treatment", "Use only when it will direct intervention in an unstable non-responder; do not delay immediate CT in a responder.", "No acute thoracic injury", cite(SRC.NG39, "NICE NG39 Recommendations 1.4.1–1.4.7 and 1.5.29–1.5.32"), "firstLineImaging"),
+      inv("Pelvic radiograph", "Pelvic ring", "Unstable pelvic injury", "Pelvic disruption supporting urgent haemorrhage control", "Use selectively when it changes immediate management; apply a pelvic binder when active pelvic bleeding is suspected after blunt high-energy trauma.", "No acute pelvic ring injury", cite(SRC.NG39, "NICE NG39 Recommendations 1.5.3 and 1.5.29"), "firstLineImaging"),
+    ],
+  },
+  "asthma-child-ed": {
+    rule_in: [
+      inv("Serial respiratory rate and work of breathing", "Respiratory distress", "Attack severity and fatigue", "Persistent tachypnoea, recession, accessory-muscle use or decreasing effort with exhaustion", "Repeat with PRAM after bronchodilator therapy and escalate any deterioration.", "Age-appropriate breathing without recession or accessory-muscle use", cite(SRC.SINA2024, "SINA 2024 Section 10, Assessment of severity in the ED"), "specializedAdjunctive"),
+      inv("Peak expiratory flow or spirometry when feasible", "Expiratory airflow", "Reversible airflow obstruction", "Reduced flow with improvement after bronchodilator", "Use only in a cooperative child without delaying treatment; younger children are assessed clinically with PRAM.", "At the child's personal best or expected value", cite(SRC.SINA2024, "SINA 2024 Sections 9–10, spirometry and ED severity assessment"), "specializedAdjunctive"),
+    ],
+    rule_out: [
+      inv("Blood gas", "Ventilation and acid-base status", "Impending respiratory failure", "Carbon-dioxide retention, acidaemia or severe hypoxaemia", "Not routine; obtain for life-threatening features, exhaustion, altered consciousness or failure to respond.", "No hypercapnia or acidaemia", cite(SRC.SINA2024, "SINA 2024 Section 7 Box 7.1 and Section 10 severe attack assessment")),
+      inv("Targeted infection testing", "Viral or bacterial trigger", "Infection requiring separate management", "Result compatible with the suspected pathogen", "Use only when the result will change isolation or treatment; antibiotics are not routine for an asthma attack.", "No clinically relevant pathogen detected", cite(SRC.SINA2024, "SINA 2024 Section 7 Box 7.1 and Section 10"), "specializedAdjunctive"),
+    ],
+  },
+  "lower-gi-bleed": {
+    rule_in: [
+      inv("Serial haemoglobin", "Blood-loss trend", "Ongoing or clinically important bleeding", "Falling haemoglobin or anaemia", "Trend with haemodynamics; one early value can underestimate acute blood loss.", "Within local adult reference range and stable on repeat", cite(SRC.BSG_LGIB, "BSG 2019 Section Diagnosis and initial management")),
+      inv("Group and screen/crossmatch", "Transfusion compatibility", "Major lower GI bleeding", "Compatible blood available", "Send when major bleeding, anaemia or ongoing blood loss makes transfusion plausible.", "Compatible blood identified; no unexpected antibody detected", cite(SRC.BSG_LGIB, "BSG 2019 Section Diagnosis and initial management")),
+      inv("Coagulation profile", "Coagulation and anticoagulant effect", "Bleeding severity or treatment-related coagulopathy", "Abnormal clotting result", "Identify a correctable haemostatic problem and inform indication-specific reversal decisions.", "Within local coagulation reference range", cite(SRC.BSG_LGIB, "BSG 2019 Sections Diagnosis and initial management; Antiplatelet and anticoagulant treatment")),
+      inv("Renal profile", "Urea, creatinine and electrolytes", "Volume depletion and possible upper-GI source", "Renal impairment or disproportionate urea rise", "Assess resuscitation risk and provide a clue to an upper-GI source in an unstable patient.", "Within local adult laboratory reference range", cite(SRC.BSG_LGIB, "BSG 2019 Section Diagnosis and initial management")),
+    ],
+    rule_out: [
+      inv("Colonoscopy", "Colon and terminal ileum when reached", "Lower-GI bleeding source", "Stigmata of bleeding, colitis, neoplasia, diverticular or vascular lesion", "Primary inpatient investigation for a stable major bleed after preparation; permits endoscopic therapy when appropriate.", "No bleeding lesion identified", cite(SRC.BSG_LGIB, "BSG 2019 Sections Colonoscopy and timing of investigations"), "specializedAdjunctive"),
+      inv("Catheter mesenteric angiography", "Mesenteric arterial bleeding", "Ongoing bleeding localised by CTA", "Angiographic extravasation or culprit vessel", "Proceed rapidly after a positive CTA when embolisation is required.", "No active arterial extravasation", cite(SRC.BSG_LGIB, "BSG 2019 Section Radiology"), "advancedImaging"),
+    ],
+  },
+  "post-pci": {
+    rule_in: [
+      inv("Full blood count", "Haemoglobin and platelets", "Bleeding or antiplatelet complication", "Anaemia or thrombocytopenia", "Check promptly for bleeding symptoms and use the result in antithrombotic risk review.", "Within local adult reference range", cite(SRC.NG185, "NICE NG185 Recommendations 1.4.3 and 1.4.13–1.4.25")),
+      inv("Fasting or non-fasting lipid profile", "LDL, non-HDL cholesterol and triglycerides", "Residual atherosclerotic risk and statin response", "Lipids above the secondary-prevention target or poor expected response", "Confirm adherence and optimise lipid-lowering treatment through the lipid pathway.", "At the current secondary-prevention target", cite(SRC.NG238, "NICE NG238 Recommendations 1.11.1–1.11.5")),
+      inv("ALT or AST", "Hepatic safety", "Statin adverse effect", "Transaminase elevation", "Check at baseline and after treatment according to the lipid guideline; investigate symptoms of liver disease.", "Within local laboratory reference range", cite(SRC.NG238, "NICE NG238 Recommendations 1.11.1–1.11.5")),
+      inv("HbA1c or plasma glucose", "Diabetes status and control", "Cardiometabolic risk", "Diabetes-range or above-target glycaemia", "Detect or optimise diabetes as part of secondary prevention.", "Within the individual non-diabetes or diabetes target", cite(SRC.NG185, "NICE NG185 Section 1.8 Cardiac rehabilitation and secondary prevention")),
+    ],
+    rule_out: [
+      inv("Echocardiography", "Left-ventricular function and structure", "Post-infarction ventricular dysfunction", "Reduced ejection fraction, regional wall-motion abnormality or mechanical complication", "Confirm that LV function was assessed after STEMI and use it to guide heart-failure and device pathways.", "Preserved LV function without significant structural complication", cite(SRC.NG185, "NICE NG185 Recommendation 1.1.27 and Section 1.4"), "firstLineImaging"),
+      inv("Troponin in acute recurrent symptoms", "Myocardial injury", "Recurrent acute coronary syndrome", "Dynamic troponin elevation with compatible presentation", "Use in the emergency ACS pathway, not as routine community surveillance.", "No dynamic myocardial-injury pattern", cite(SRC.NG185, "NICE NG185 Sections 1.1–1.2")),
+    ],
+  },
+  "obesity-primary": {
+    rule_in: [
+      inv("Blood pressure", "Cardiovascular risk", "Obesity-associated hypertension", "Persistently raised clinic or out-of-office pressure", "Confirm and manage through the hypertension pathway rather than attributing symptoms to weight alone.", "Within the person's agreed target", cite(SRC.NG246, "NICE NG246 Recommendations 1.11.1–1.11.6"), "specializedAdjunctive"),
+      inv("HbA1c or fasting plasma glucose", "Glycaemia", "Prediabetes or type 2 diabetes", "Result in the relevant diagnostic range", "Identify a weight-related metabolic complication and start the appropriate diabetes pathway.", "Below the local diagnostic threshold for dysglycaemia", cite(SRC.NG246, "NICE NG246 Recommendations 1.11.1–1.11.6")),
+      inv("Lipid profile", "Atherogenic lipids", "Cardiovascular risk", "Raised non-HDL/LDL cholesterol or triglycerides", "Calculate and manage cardiovascular risk using the lipid pathway.", "Within local reference and individual cardiovascular-risk targets", cite(SRC.NG246, "NICE NG246 Recommendations 1.11.1–1.11.6")),
+      inv("Liver profile", "Hepatic injury", "Metabolic dysfunction-associated steatotic liver disease or alternative liver disease", "Persistent transaminase abnormality", "Investigate abnormal results through the liver-disease pathway; normal enzymes do not exclude steatosis.", "Within local laboratory reference range", cite(SRC.NG246, "NICE NG246 Recommendations 1.11.1–1.11.6")),
+    ],
+    rule_out: [
+      inv("Sleep-apnoea assessment", "Sleep-disordered breathing", "Obstructive sleep apnoea", "High-risk symptoms or abnormal validated screening followed by diagnostic sleep testing", "Refer snoring, witnessed apnoea or daytime sleepiness to the sleep pathway.", "No clinically significant sleep-disordered breathing identified", cite(SRC.NG246, "NICE NG246 Recommendations 1.11.1–1.11.6"), "specializedAdjunctive"),
+      inv("Targeted endocrine tests", "Secondary endocrine cause", "Hypothyroidism, Cushing syndrome or another suspected cause", "Abnormal result matching the clinical phenotype", "Do not screen indiscriminately; order when history or examination suggests a secondary cause.", "No biochemical evidence of the suspected endocrine disorder", cite(SRC.NG246, "NICE NG246 Recommendations 1.9.1 and 1.11.1–1.11.6")),
+    ],
+  },
+  "stable-cad": {
+    rule_in: [
+      inv("12-lead ECG", "Rhythm, prior infarction and ischaemic change", "Coronary disease or alternative cardiac cause", "Q waves, ST-T abnormality, arrhythmia or conduction disease", "Establish a baseline and send acute changes with symptoms to the ACS pathway.", "Sinus rhythm without acute ischaemic change", cite(SRC.CG126, "NICE CG126 Sections 1.1 and 1.5"), "specializedAdjunctive"),
+      inv("Full blood count", "Haemoglobin", "Anaemia aggravating myocardial ischaemia", "Anaemia", "Identify a reversible contributor to angina burden and investigate the cause.", "Within local adult reference range", cite(SRC.CG126, "NICE CG126 Recommendations 1.4.4–1.4.6")),
+      inv("Renal profile and electrolytes", "Kidney function and treatment safety", "ACE inhibitor/ARB or anti-anginal safety", "Renal impairment or electrolyte abnormality", "Guide medicine selection, dosing and monitoring.", "Within local adult laboratory reference range", cite(SRC.CG126, "NICE CG126 Recommendations 1.3.5–1.4.9")),
+      inv("Lipid profile and HbA1c", "Atherosclerotic and metabolic risk", "Secondary-prevention gap", "Lipids or glycaemia above individual target", "Optimise statin, diabetes and lifestyle pathways.", "At individual secondary-prevention targets", cite(SRC.CG126, "NICE CG126 Recommendations 1.3.5–1.3.8")),
+    ],
+    rule_out: [
+      inv("Transthoracic echocardiogram", "LV function, valves and wall motion", "Structural heart disease or ventricular dysfunction", "Reduced function, regional wall-motion or significant valve abnormality", "Use when examination, ECG or symptoms suggest structural disease or heart failure.", "Preserved ventricular function without significant structural disease", cite(SRC.CG126, "NICE CG126 Sections 1.1 and 1.5"), "firstLineImaging"),
+      inv("Coronary angiography", "Coronary anatomy", "Flow-limiting or prognostically important disease", "Left-main, proximal multivessel or lesion suitable for revascularisation", "Offer to guide strategy when symptoms remain uncontrolled on optimal medical treatment.", "No anatomy requiring revascularisation", cite(SRC.CG126, "NICE CG126 Recommendations 1.5.1–1.5.14"), "advancedImaging"),
+    ],
+  },
+  "retinopathy-screen": {
+    rule_in: [
+      inv("Dilated slit-lamp biomicroscopy", "Retina, optic disc and macula", "Diabetic retinopathy severity", "Microaneurysms, haemorrhages, exudates, venous changes or neovascularisation", "Confirm and stage abnormalities when photography is inadequate or specialist assessment is required.", "No diabetic retinopathy", cite(SRC.NG242, "NICE NG242 Sections 1.1–1.5"), "specializedAdjunctive"),
+      inv("Optical coherence tomography", "Macular thickness and retinal architecture", "Diabetic macular oedema", "Intraretinal or subretinal fluid and retinal thickening", "Quantify centre-involving oedema and monitor specialist treatment response.", "No macular fluid or clinically significant thickening", cite(SRC.NG242, "NICE NG242 Recommendations 1.2.1–1.2.7"), "advancedImaging"),
+      inv("Intraocular pressure", "Ocular pressure", "Coexisting glaucoma or treatment-related pressure rise", "Pressure outside the ophthalmic target", "Detect coexisting disease and monitor when treatment can alter pressure.", "Within the ophthalmology service reference range", cite(SRC.NG242, "NICE NG242 Sections 1.2–1.5"), "specializedAdjunctive"),
+    ],
+    rule_out: [
+      inv("Fluorescein angiography", "Retinal perfusion and leakage", "Ischaemia, neovascularisation or focal leakage", "Capillary non-perfusion, leakage or neovascular pattern", "Use selectively when the result will guide laser or other specialist treatment.", "No clinically significant leakage or non-perfusion", cite(SRC.NG242, "NICE NG242 Sections 1.2–1.5"), "advancedImaging"),
+      inv("B-scan ocular ultrasound", "Posterior segment when fundus view is obscured", "Retinal detachment behind vitreous haemorrhage", "Detached retina, vitreous opacity or mass", "Use urgently when dense haemorrhage prevents retinal visualisation and detachment must be excluded.", "Attached retina without posterior-segment mass", cite(SRC.NG242, "NICE NG242 Section 1.5 Proliferative diabetic retinopathy"), "advancedImaging"),
+    ],
+  },
+  "first-seizure": {
+    rule_in: [
+      inv("Full blood count", "Anaemia, infection and platelets", "Provoking illness or bleeding risk", "Leucocytosis, anaemia or thrombocytopenia relevant to the presentation", "Order as part of ED first-seizure assessment and interpret against the clinical presentation.", "Within local adult reference range", cite(SRC.IAEM_SEIZURE, "IAEM 2024 Section Investigations, p. 11")),
+      inv("Renal profile, sodium, calcium and magnesium", "Metabolic seizure triggers", "Electrolyte or renal disturbance", "Clinically significant electrolyte abnormality or renal failure", "Correct a provoking disturbance urgently and investigate its cause.", "Within local adult laboratory reference ranges", cite(SRC.IAEM_SEIZURE, "IAEM 2024 Section Investigations, p. 11")),
+      inv("Pregnancy test when pregnancy is possible", "Pregnancy status", "Pregnancy-specific differential and imaging/medicine planning", "Positive test", "Changes diagnostic priorities and medicine/radiation decisions; obtain with consent.", "Negative", cite(SRC.IAEM_SEIZURE, "IAEM 2024 Section Investigations, p. 11"), "specializedAdjunctive"),
+      inv("Targeted toxicology and alcohol assessment", "Substance exposure or withdrawal", "Provoked seizure", "Exposure or withdrawal consistent with the event", "Order only when history or examination supports it; treat withdrawal or toxicity through the appropriate pathway.", "No relevant exposure identified", cite(SRC.IAEM_SEIZURE, "IAEM 2024 Section Investigations, p. 11"), "specializedAdjunctive"),
+    ],
+    rule_out: [
+      inv("MRI brain", "Structural cerebral lesion", "Tumour, previous stroke, cortical malformation or other cause", "Causative structural abnormality", "Preferred specialist structural imaging when epilepsy is diagnosed or a lesion is suspected and emergency CT is not the question.", "No causative structural lesion", cite(SRC.NG217, "NICE NG217 Section 1.3 Neuroimaging"), "advancedImaging"),
+      inv("Lumbar puncture", "Cerebrospinal fluid", "Meningitis or encephalitis", "CSF inflammation or pathogen evidence", "Perform only when CNS infection is suspected and after evaluating contraindications; do not delay emergency antimicrobials.", "No CSF evidence of infection or inflammation", cite(SRC.IAEM_SEIZURE, "IAEM 2024 Section Investigations, p. 11"), "specializedAdjunctive"),
+    ],
+  },
+  "t1d-annual": {
+    rule_in: [
+      inv("Continuous or flash glucose data review", "Time in range, hypoglycaemia and variability", "Daily glucose-management pattern", "Recurrent hypoglycaemia, sustained hyperglycaemia or high variability", "Use with HbA1c to adjust education, insulin delivery and technology support.", "Within the person's agreed glucose targets without problematic hypoglycaemia", cite(SRC.NG17, "NICE NG17 Sections 1.6–1.8"), "specializedAdjunctive"),
+      inv("Urine albumin:creatinine ratio", "Albuminuria", "Diabetic kidney disease", "Persistent albuminuria", "Confirm and manage through the kidney-disease pathway with eGFR and BP.", "Below the local albuminuria threshold", cite(SRC.NG17, "NICE NG17 Section 1.11 Kidney disease")),
+      inv("Serum creatinine and eGFR", "Kidney filtration", "Diabetic kidney disease and medicine safety", "Reduced or declining eGFR", "Trend with albuminuria and refer according to the CKD pathway.", "Stable eGFR without evidence of CKD", cite(SRC.NG17, "NICE NG17 Section 1.11 Kidney disease")),
+      inv("Lipid profile", "Cardiovascular risk", "Dyslipidaemia", "Lipids above the individual target", "Apply the cardiovascular-risk and lipid-treatment pathway.", "At the individual cardiovascular target", cite(SRC.NG17, "NICE NG17 Section 1.13 Control of cardiovascular risk")),
+      inv("Blood pressure", "Cardiovascular and renal risk", "Hypertension", "Persistent pressure above individual target", "Confirm and manage without delaying kidney assessment.", "Within the individual target", cite(SRC.NG17, "NICE NG17 Section 1.13 Control of cardiovascular risk"), "specializedAdjunctive"),
+    ],
+    rule_out: [
+      inv("Foot examination", "Skin, pulses, sensation and deformity", "Diabetic foot risk", "Ulcer, infection, ischaemia, neuropathy or deformity", "Route active ulceration or infection urgently and record risk category.", "Intact skin, palpable perfusion and protective sensation", cite(SRC.NG17, "NICE NG17 Section 1.12 Diabetic foot problems"), "specializedAdjunctive"),
+      inv("Retinal screening result", "Diabetic retinopathy", "Sight-threatening retinal disease", "Screen-positive retinopathy or maculopathy", "Verify attendance and outcome; acute visual symptoms bypass routine screening.", "No screen-detected retinopathy", cite(SRC.NG17, "NICE NG17 Section 1.12–1.14 Complications monitoring"), "firstLineImaging"),
+    ],
+  },
+  "neutropenic-sepsis": {
+    rule_in: [
+      inv("Renal function and electrolytes", "Kidney function and metabolic status", "Sepsis organ dysfunction and antibiotic dosing", "Acute kidney injury or electrolyte disturbance", "Guide resuscitation and local-protocol antimicrobial dosing.", "Within local adult laboratory reference range", cite(SRC.CG151, "NICE CG151 Recommendation 1.4.1.2")),
+      inv("Liver function tests including albumin", "Hepatic function and illness severity", "Sepsis organ dysfunction or treatment toxicity", "Hepatic abnormality or low albumin", "Establish baseline and guide treatment review.", "Within local adult laboratory reference range", cite(SRC.CG151, "NICE CG151 Recommendation 1.4.1.2")),
+      inv("C-reactive protein", "Inflammatory response", "Infection trend", "Elevated or rising CRP", "Use as one trend alongside physiology and microbiology; a low value does not exclude early neutropenic sepsis.", "Within local laboratory reference range", cite(SRC.CG151, "NICE CG151 Recommendation 1.4.1.2")),
+      inv("Peripheral blood cultures", "Bloodstream pathogen", "Bacteraemia or fungaemia", "Organism isolated with susceptibilities", "Collect before antibiotics when this causes no delay; tailor treatment with microbiology.", "No growth", cite(SRC.CG151, "NICE CG151 Recommendation 1.4.1.2")),
+      inv("Central-line and additional peripheral cultures", "Catheter-related bloodstream infection", "Central venous access infection", "Concordant or differential culture positivity", "Obtain an additional peripheral culture when a central line is present and it is clinically feasible.", "No growth from line or peripheral samples", cite(SRC.CG151, "NICE CG151 Recommendation 1.4.2.1")),
+    ],
+    rule_out: [
+      inv("Chest radiograph", "Pulmonary infection or alternative thoracic cause", "Pneumonia", "Focal infiltrate or other acute abnormality", "Do not perform routinely; request only for respiratory signs or another clinical indication.", "No acute pulmonary abnormality", cite(SRC.CG151, "NICE CG151 Recommendation 1.4.2.2"), "firstLineImaging"),
+    ],
+  },
+};
+
+export const specs: Spec[] = baseSpecs.map((spec) => {
+  const extra = extraInvestigations[spec.key];
+  if (!extra) return spec;
+  return { ...spec, rule_in: [...spec.rule_in, ...extra.rule_in], rule_out: [...spec.rule_out, ...extra.rule_out] };
+});

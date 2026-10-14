@@ -1,0 +1,277 @@
+{
+  "id": "6b2f85f8-a9b6-47e4-8a86-d864d1e773b9",
+  "title": "Diabetic Retinopathy Screening",
+  "specialty": "Ophthalmology / Endocrinology / Primary Care",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-14-v2-investigations",
+  "lastReviewed": "2026-10-14",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-14",
+    "status": "incomplete",
+    "scope": "Diabetes retinal screening, urgent visual-symptom escalation and handoff to ophthalmology; treatment decisions remain specialist-led.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 14 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "No Saudi national retinal-screening interval document was opened.",
+      "NG242 addresses management after detection; the Saudi programme interval requires local confirmation.",
+      "SFDA status is not applicable because screening does not prescribe a medicine."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "6b2f85f8-a9b6-47e4-8a86-d864d1e773b9"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Chronic hyperglycaemia damages retinal microvasculature. Capillary leakage causes retinal oedema and maculopathy. Capillary closure drives retinal ischaemia and neovascularisation. Fragile new vessels can bleed or cause tractional retinal detachment.",
+    "keyMechanisms": [
+      "Chronic hyperglycaemia damages retinal microvasculature.",
+      "Capillary leakage causes retinal oedema and maculopathy.",
+      "Capillary closure drives retinal ischaemia and neovascularisation.",
+      "Fragile new vessels can bleed or cause tractional retinal detachment."
+    ],
+    "references": [
+      {
+        "title": "NICE NG242: Diabetic retinopathy: management and monitoring",
+        "edition": "NICE NG242 Recommendations 1.1.1–1.5.11 and Terms used",
+        "url": "https://www.nice.org.uk/guidance/ng242/chapter/Recommendations"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Early disease may be asymptomatic; later blurred vision, floaters, field loss or sudden visual loss may occur."
+    ],
+    "physicalSigns": [
+      "Retinal microaneurysms, haemorrhages, exudates, macular oedema or neovascularisation on retinal imaging."
+    ],
+    "redFlags": [
+      "Sudden visual loss, new shower of floaters, curtain-like field defect, painful red eye or pregnancy with known retinopathy and visual change."
+    ],
+    "precipitants": [
+      "Longer diabetes duration, poor glycaemic control, hypertension, kidney disease and pregnancy."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Retinal detachment or vitreous haemorrhage",
+      "distinguishingFeatures": "Sudden floaters, flashes, curtain or marked visual loss needs same-day eye assessment."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Digital retinal imaging",
+        "modalityTarget": "Retina and macula",
+        "targetCondition": "Diabetic retinopathy",
+        "expectedFinding": "Microvascular lesions, maculopathy or proliferative changes",
+        "clinicalRationale": "Grade and refer through the accredited screening/ophthalmology pathway.",
+        "normalValue": "No diabetic retinopathy",
+        "references": [
+          {
+            "title": "NICE NG242: Diabetic retinopathy: management and monitoring",
+            "edition": "NICE NG242 Section Terms used: diabetic retinopathy and high-risk characteristics",
+            "url": "https://www.nice.org.uk/guidance/ng242/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Visual acuity",
+        "modalityTarget": "Central vision",
+        "targetCondition": "Visual impairment",
+        "expectedFinding": "Reduced acuity or inter-eye change",
+        "clinicalRationale": "Visual symptoms or reduced acuity require clinical eye assessment; screening photography is not an emergency service.",
+        "normalValue": "Documented baseline acuity without clinically significant loss",
+        "references": [
+          {
+            "title": "NICE NG242: Diabetic retinopathy: management and monitoring",
+            "edition": "NICE NG242 Recommendations 1.1.1–1.1.6",
+            "url": "https://www.nice.org.uk/guidance/ng242/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Dilated slit-lamp biomicroscopy",
+        "modalityTarget": "Retina, optic disc and macula",
+        "targetCondition": "Diabetic retinopathy severity",
+        "expectedFinding": "Microaneurysms, haemorrhages, exudates, venous changes or neovascularisation",
+        "clinicalRationale": "Confirm and stage abnormalities when photography is inadequate or specialist assessment is required.",
+        "normalValue": "No diabetic retinopathy",
+        "references": [
+          {
+            "title": "NICE NG242: Diabetic retinopathy: management and monitoring",
+            "edition": "NICE NG242 Sections 1.1–1.5",
+            "url": "https://www.nice.org.uk/guidance/ng242/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Optical coherence tomography",
+        "modalityTarget": "Macular thickness and retinal architecture",
+        "targetCondition": "Diabetic macular oedema",
+        "expectedFinding": "Intraretinal or subretinal fluid and retinal thickening",
+        "clinicalRationale": "Quantify centre-involving oedema and monitor specialist treatment response.",
+        "normalValue": "No macular fluid or clinically significant thickening",
+        "references": [
+          {
+            "title": "NICE NG242: Diabetic retinopathy: management and monitoring",
+            "edition": "NICE NG242 Recommendations 1.2.1–1.2.7",
+            "url": "https://www.nice.org.uk/guidance/ng242/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Intraocular pressure",
+        "modalityTarget": "Ocular pressure",
+        "targetCondition": "Coexisting glaucoma or treatment-related pressure rise",
+        "expectedFinding": "Pressure outside the ophthalmic target",
+        "clinicalRationale": "Detect coexisting disease and monitor when treatment can alter pressure.",
+        "normalValue": "Within the ophthalmology service reference range",
+        "references": [
+          {
+            "title": "NICE NG242: Diabetic retinopathy: management and monitoring",
+            "edition": "NICE NG242 Sections 1.2–1.5",
+            "url": "https://www.nice.org.uk/guidance/ng242/chapter/Recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "advancedImaging",
+        "testName": "Ophthalmic examination/OCT",
+        "modalityTarget": "Macula and alternative eye pathology",
+        "targetCondition": "Diabetic macular oedema or other eye disease",
+        "expectedFinding": "Oedema, traction, cataract or non-diabetic pathology",
+        "clinicalRationale": "Ophthalmology selects OCT and treatment monitoring after abnormal screening or symptoms.",
+        "normalValue": "No macular oedema or alternative sight-threatening lesion",
+        "references": [
+          {
+            "title": "NICE NG242: Diabetic retinopathy: management and monitoring",
+            "edition": "NICE NG242 Sections 1.1–1.5",
+            "url": "https://www.nice.org.uk/guidance/ng242/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Fluorescein angiography",
+        "modalityTarget": "Retinal perfusion and leakage",
+        "targetCondition": "Ischaemia, neovascularisation or focal leakage",
+        "expectedFinding": "Capillary non-perfusion, leakage or neovascular pattern",
+        "clinicalRationale": "Use selectively when the result will guide laser or other specialist treatment.",
+        "normalValue": "No clinically significant leakage or non-perfusion",
+        "references": [
+          {
+            "title": "NICE NG242: Diabetic retinopathy: management and monitoring",
+            "edition": "NICE NG242 Sections 1.2–1.5",
+            "url": "https://www.nice.org.uk/guidance/ng242/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "B-scan ocular ultrasound",
+        "modalityTarget": "Posterior segment when fundus view is obscured",
+        "targetCondition": "Retinal detachment behind vitreous haemorrhage",
+        "expectedFinding": "Detached retina, vitreous opacity or mass",
+        "clinicalRationale": "Use urgently when dense haemorrhage prevents retinal visualisation and detachment must be excluded.",
+        "normalValue": "Attached retina without posterior-segment mass",
+        "references": [
+          {
+            "title": "NICE NG242: Diabetic retinopathy: management and monitoring",
+            "edition": "NICE NG242 Section 1.5 Proliferative diabetic retinopathy",
+            "url": "https://www.nice.org.uk/guidance/ng242/chapter/Recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "invite",
+      "title": "Confirm screening status",
+      "timeframe": "At each diabetes review",
+      "actions": [
+        "Check the date and outcome of the last accredited retinal screen and any ophthalmology follow-up.",
+        "Use the Saudi local programme interval; do not substitute a routine diabetes review for retinal imaging."
+      ]
+    },
+    {
+      "id": "triage",
+      "title": "Triage symptoms and results",
+      "timeframe": "Same day for acute visual red flags",
+      "actions": [
+        "Send sudden visual loss, new floaters/curtain or painful red eye for urgent ophthalmic assessment.",
+        "Route abnormal screening grades to ophthalmology according to the local screening programme."
+      ]
+    },
+    {
+      "id": "risk",
+      "title": "Reduce progression risk",
+      "timeframe": "Ongoing",
+      "actions": [
+        "Optimise glycaemia and blood pressure without delaying ophthalmology care.",
+        "Warn that rapid, substantial HbA1c reduction can be associated with early worsening and coordinate monitoring when retinopathy is present."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "no-drug-indicated",
+    "regimens": [],
+    "note": "Screening does not initiate retinal medicines. Laser, intravitreal and surgical treatment belong to ophthalmology pathways."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "High-risk proliferative retinopathy",
+      "threshold": "Neovascularisation at the disc above one-quarter to one-third disc area, or elsewhere above one-half disc area with preretinal/vitreous haemorrhage, or any disc neovascularisation with such haemorrhage."
+    }
+  ],
+  "teaching": {
+    "scope": "Diabetes retinal screening, urgent visual-symptom escalation and handoff to ophthalmology; treatment decisions remain specialist-led.",
+    "learningObjectives": [
+      "Distinguish routine screening from urgent symptomatic assessment.",
+      "Recognise proliferative and macular disease as specialist pathways."
+    ],
+    "pitfalls": [
+      "Recording screening as complete without a result.",
+      "Delaying urgent eye assessment because a routine screen is booked."
+    ],
+    "keyPoints": [
+      "Normal vision does not exclude early retinopathy.",
+      "Screening photography does not replace urgent examination for acute symptoms."
+    ],
+    "references": [
+      {
+        "title": "NICE NG242: Diabetic retinopathy: management and monitoring",
+        "edition": "NICE NG242 Recommendations 1.1.1–1.5.11 and Terms used",
+        "url": "https://www.nice.org.uk/guidance/ng242/chapter/Recommendations",
+        "locator": "Recommendations 1.1.1–1.5.11; Terms used"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain that early retinopathy can be symptom-free and attendance protects sight."
+    ],
+    "lifestyleAndDiet": [
+      "Support glucose, blood-pressure and smoking-risk management."
+    ],
+    "mdtReferrals": [
+      "Accredited retinal screening programme, ophthalmology, diabetes team and primary care."
+    ],
+    "dischargeCriteria": [
+      "Screening result documented, referral completed if abnormal and no acute visual red flags."
+    ],
+    "followUpPlan": "Use the Saudi screening programme interval and ophthalmology plan; verify attendance and outcome at the next diabetes review."
+  }
+}

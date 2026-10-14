@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import { DiseaseDetailSchema, type DiseaseDetail } from "../lib/validations/disease";
 export const DATE = "2026-10-14";
-export const VERSION = "authoring-standard-2026-10-14-v1";
+export const VERSION = "authoring-standard-2026-10-14-v2-investigations";
 const REPO = new URL("../data/emergency-versions/", import.meta.url).pathname;
 export type Ref = { title: string; url: string };
 export const SRC = {
@@ -26,6 +26,8 @@ export const SRC = {
   NG217: { title: "NICE NG217: Epilepsies in children, young people and adults", url: "https://www.nice.org.uk/guidance/ng217/chapter/diagnosis-and-assessment-of-epilepsy" },
   NG17: { title: "NICE NG17: Type 1 diabetes in adults", url: "https://www.nice.org.uk/guidance/ng17/chapter/Recommendations" },
   CG151: { title: "NICE CG151: Neutropenic sepsis", url: "https://www.nice.org.uk/guidance/cg151/chapter/Recommendations" },
+  EUROTRAUMA6: { title: "European guideline on management of major bleeding and coagulopathy following trauma: sixth edition", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9977110/" },
+  IAEM_SEIZURE: { title: "Irish Association for Emergency Medicine: Management of First Seizure in Adults in the Emergency Department", url: "https://iaem.ie/download/198/adult/101108/management-of-first-seizure-in-adults-in-the-emergency-department-v1-0.pdf" },
 } satisfies Record<string, Ref>;
 export const cite = (r: Ref, edition: string) => ({ title: r.title, edition, url: r.url });
 
