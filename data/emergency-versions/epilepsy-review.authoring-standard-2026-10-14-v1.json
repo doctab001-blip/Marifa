@@ -1,0 +1,249 @@
+{
+  "id": "f67c984a-9189-44c8-9980-563260c60c5d",
+  "title": "Epilepsy in Adults: Medication Review and Safety Counselling",
+  "specialty": "Neurology / Primary Care",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-14-v1",
+  "lastReviewed": "2026-10-14",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-14",
+    "status": "incomplete",
+    "scope": "Adult epilepsy structured review, antiseizure-medicine safety, pregnancy risk, adherence, driving and withdrawal decisions.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 14 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "No Saudi national epilepsy guideline was identified in the sources opened on 14 October 2026. NICE guidance is an international comparator pending Saudi/local adaptation.",
+      "SFDA product registration was not verified; any medicine selection requires the current Saudi Drug Information register and hospital formulary.",
+      "Current Saudi driving restrictions and exact product-specific dosing require authoritative local sources."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "f67c984a-9189-44c8-9980-563260c60c5d"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Recurrent unprovoked seizures arise from abnormal cortical network activity. Seizure type and syndrome determine effective treatment. Antiseizure medicines reduce recurrence but can cause dose-related and idiosyncratic harm. Missed doses, sleep deprivation and interacting substances can lower seizure control.",
+    "keyMechanisms": [
+      "Recurrent unprovoked seizures arise from abnormal cortical network activity.",
+      "Seizure type and syndrome determine effective treatment.",
+      "Antiseizure medicines reduce recurrence but can cause dose-related and idiosyncratic harm.",
+      "Missed doses, sleep deprivation and interacting substances can lower seizure control."
+    ],
+    "references": [
+      {
+        "title": "NICE NG217: Epilepsies in children, young people and adults",
+        "edition": "NICE NG217, Sections 4.1–4.6",
+        "url": "https://www.nice.org.uk/guidance/ng217/chapter/4-principles-of-treatment-safety-monitoring-and-withdrawal"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Breakthrough events, aura, impaired awareness, convulsions, post-ictal confusion, injuries or medicine adverse effects."
+    ],
+    "physicalSigns": [
+      "Neurological deficit, injury, cognitive/mental-health change or signs of medicine toxicity."
+    ],
+    "redFlags": [
+      "Seizure lasting 5 minutes or repeated seizures without recovery, injury, pregnancy with seizure, persistent deficit or suspected serious adverse reaction needs emergency assessment."
+    ],
+    "precipitants": [
+      "Missed doses, sleep deprivation, alcohol/substance use, fever, flashing-light trigger in susceptible people and drug interactions."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Syncope",
+      "distinguishingFeatures": "Trigger and prodrome with rapid recovery and less prolonged confusion."
+    },
+    {
+      "condition": "Functional dissociative seizure",
+      "distinguishingFeatures": "Specialist video/EEG-supported diagnosis; do not infer from one feature."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Seizure diary and witness/video review",
+        "modalityTarget": "Event frequency and semiology",
+        "targetCondition": "Breakthrough epilepsy",
+        "expectedFinding": "Increase or change from documented baseline",
+        "clinicalRationale": "Check adherence and triggers, then obtain specialist advice.",
+        "normalValue": "No seizures since the agreed baseline review",
+        "references": [
+          {
+            "title": "NICE NG217: Epilepsies in children, young people and adults",
+            "edition": "NICE NG217 Sections 4.1–4.6",
+            "url": "https://www.nice.org.uk/guidance/ng217/chapter/4-principles-of-treatment-safety-monitoring-and-withdrawal"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Antiseizure medicine reconciliation",
+        "modalityTarget": "Medicine, dose timing and adherence",
+        "targetCondition": "Treatment failure or harm",
+        "expectedFinding": "Missed doses, interaction or adverse-effect pattern",
+        "clinicalRationale": "Resolve supply/adherence issues and review regimen with epilepsy specialist.",
+        "normalValue": "All doses taken as prescribed without important interaction",
+        "references": [
+          {
+            "title": "NICE NG217: Epilepsies in children, young people and adults",
+            "edition": "NICE NG217 Sections 4.1–4.4",
+            "url": "https://www.nice.org.uk/guidance/ng217/chapter/4-principles-of-treatment-safety-monitoring-and-withdrawal"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Pregnancy test when pregnancy is possible",
+        "modalityTarget": "Pregnancy status",
+        "targetCondition": "Pregnancy-related treatment risk",
+        "expectedFinding": "Positive result",
+        "clinicalRationale": "Urgently coordinate neurology and obstetric review; do not stop treatment abruptly.",
+        "normalValue": "Negative",
+        "references": [
+          {
+            "title": "NICE NG217: Epilepsies in children, young people and adults",
+            "edition": "NICE NG217 Sections 4.2 and 4.5",
+            "url": "https://www.nice.org.uk/guidance/ng217/chapter/4-principles-of-treatment-safety-monitoring-and-withdrawal"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count",
+        "modalityTarget": "Cytopenia",
+        "targetCondition": "Medicine toxicity",
+        "expectedFinding": "New cytopenia",
+        "clinicalRationale": "Apply the medicine-specific toxicity pathway.",
+        "normalValue": "Haemoglobin, leukocytes and platelets within local adult ranges",
+        "references": [
+          {
+            "title": "NICE NG217: Epilepsies in children, young people and adults",
+            "edition": "NICE NG217 Section 4.4 Review and monitoring",
+            "url": "https://www.nice.org.uk/guidance/ng217/chapter/4-principles-of-treatment-safety-monitoring-and-withdrawal"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Renal and liver profile",
+        "modalityTarget": "Drug clearance and organ toxicity",
+        "targetCondition": "Medicine accumulation or injury",
+        "expectedFinding": "New kidney or liver dysfunction",
+        "clinicalRationale": "Review dose and product choice with pharmacy/neurology.",
+        "normalValue": "Stable kidney function and liver tests within local ranges",
+        "references": [
+          {
+            "title": "NICE NG217: Epilepsies in children, young people and adults",
+            "edition": "NICE NG217 Section 4.4 Review and monitoring",
+            "url": "https://www.nice.org.uk/guidance/ng217/chapter/4-principles-of-treatment-safety-monitoring-and-withdrawal"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "EEG or brain imaging review",
+        "modalityTarget": "Epileptiform activity or structural cause",
+        "targetCondition": "Misclassification or new lesion",
+        "expectedFinding": "New electroclinical or structural finding",
+        "clinicalRationale": "Specialist-directed; do not use a normal EEG alone to exclude epilepsy.",
+        "normalValue": "No new epileptiform or structural finding",
+        "references": [
+          {
+            "title": "NICE NG217: Epilepsies in children, young people and adults",
+            "edition": "NICE NG217 Sections 1.2–1.3",
+            "url": "https://www.nice.org.uk/guidance/ng217/chapter/diagnosis-and-assessment-of-epilepsy"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "emergency",
+      "title": "Identify an emergency",
+      "timeframe": "Immediately",
+      "actions": [
+        "Use the status-epilepticus pathway for a convulsive seizure lasting 5 minutes or more or recurrent seizures without recovery.",
+        "Assess injury, glucose, pregnancy, infection and persistent neurological deficit."
+      ]
+    },
+    {
+      "id": "review",
+      "title": "Structured epilepsy review",
+      "timeframe": "At least annually and after any breakthrough event or adverse effect",
+      "actions": [
+        "Review seizure type/frequency, adherence, adverse effects, mood, cognition, injuries, bone health and sudden-death risk.",
+        "Discuss driving, work, bathing/swimming, heights, sleep, alcohol and rescue plans according to current local rules."
+      ]
+    },
+    {
+      "id": "change",
+      "title": "Change treatment only with shared specialist planning",
+      "timeframe": "Promptly when control or tolerability is poor",
+      "actions": [
+        "Match medicine choice to seizure type, sex/pregnancy potential, comorbidity and interactions.",
+        "Do not stop abruptly; withdrawal after sustained seizure freedom requires individual specialist risk assessment and gradual reduction."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [],
+    "note": "Antiseizure treatment is medicine- and syndrome-specific. Use the neurologist's regimen, current SFDA/product information and formulary; do not infer exact doses or withdrawal schedules from this topic."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Emergency prolonged seizure",
+      "threshold": "Convulsive seizure lasting 5 minutes or more, or repeated seizures without recovery."
+    }
+  ],
+  "teaching": {
+    "scope": "Adult epilepsy structured review, antiseizure-medicine safety, pregnancy risk, adherence, driving and withdrawal decisions.",
+    "learningObjectives": [
+      "Run a structured safety review.",
+      "Escalate prolonged seizures and pregnancy-related risk."
+    ],
+    "pitfalls": [
+      "Treating one unverified event description as definitive epilepsy.",
+      "Omitting driving and sudden-death counselling."
+    ],
+    "keyPoints": [
+      "Do not stop antiseizure medicine abruptly.",
+      "Medicine choice must match seizure type and reproductive risk."
+    ],
+    "references": [
+      {
+        "title": "NICE NG217: Epilepsies in children, young people and adults",
+        "edition": "NICE NG217, Sections 4.1–4.6",
+        "url": "https://www.nice.org.uk/guidance/ng217/chapter/4-principles-of-treatment-safety-monitoring-and-withdrawal",
+        "locator": "Sections 4.1–4.6"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Provide a written seizure first-aid, emergency and missed-dose plan."
+    ],
+    "lifestyleAndDiet": [
+      "Support regular sleep, adherence, safe alcohol limits and risk-adjusted activity."
+    ],
+    "mdtReferrals": [
+      "Neurology/epilepsy specialist nurse, pharmacy, primary care and obstetric medicine when relevant."
+    ],
+    "dischargeCriteria": [
+      "Seizure plan, medicine list, emergency thresholds and follow-up ownership documented."
+    ],
+    "followUpPlan": "Review at least annually and sooner after any seizure, pregnancy planning, adverse effect, interaction or adherence problem."
+  }
+}

@@ -1,0 +1,248 @@
+{
+  "id": "02f0845b-f791-41e3-8eaa-137efd58f686",
+  "title": "Suspected Parkinson's Disease: Recognition and Referral",
+  "specialty": "Neurology / Primary Care",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-14-v1",
+  "lastReviewed": "2026-10-14",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-14",
+    "status": "incomplete",
+    "scope": "Adult recognition of parkinsonism, exclusion of urgent mimics and rapid specialist referral before dopaminergic treatment.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 14 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "No Saudi national Parkinson's disease guideline was identified in the sources opened on 14 October 2026. NICE guidance is an international comparator pending Saudi/local adaptation.",
+      "SFDA product registration was not verified; any medicine selection requires the current Saudi Drug Information register and hospital formulary."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "02f0845b-f791-41e3-8eaa-137efd58f686"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Degeneration of nigrostriatal dopaminergic neurons impairs movement scaling. Bradykinesia combines with rigidity, rest tremor or postural instability. Non-motor autonomic, sleep, mood and cognitive symptoms can precede motor diagnosis. Atypical features may indicate another parkinsonian disorder.",
+    "keyMechanisms": [
+      "Degeneration of nigrostriatal dopaminergic neurons impairs movement scaling.",
+      "Bradykinesia combines with rigidity, rest tremor or postural instability.",
+      "Non-motor autonomic, sleep, mood and cognitive symptoms can precede motor diagnosis.",
+      "Atypical features may indicate another parkinsonian disorder."
+    ],
+    "references": [
+      {
+        "title": "NICE NG71: Parkinson's disease in adults",
+        "edition": "NICE NG71, Recommendations 1.2.1–1.2.7",
+        "url": "https://www.nice.org.uk/guidance/ng71/chapter/recommendations"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Slowness, reduced dexterity, shuffling, rest tremor, stiffness, falls, constipation, REM-sleep behaviour, low mood or reduced smell."
+    ],
+    "physicalSigns": [
+      "Bradykinesia, rigidity, rest tremor, reduced arm swing, hypomimia and gait/postural abnormality."
+    ],
+    "redFlags": [
+      "Acute onset, focal deficit, encephalopathy, severe autonomic collapse or rapidly progressive falls needs urgent alternative-diagnosis assessment."
+    ],
+    "precipitants": [
+      "Dopamine-blocking medicines and vascular or neurodegenerative disease can produce parkinsonism."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Drug-induced parkinsonism",
+      "distinguishingFeatures": "Temporal relationship to a dopamine-blocking medicine, often with symmetric signs."
+    },
+    {
+      "condition": "Essential tremor",
+      "distinguishingFeatures": "Action/postural tremor without bradykinesia or rigidity."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Neurological motor examination",
+        "modalityTarget": "Bradykinesia, rigidity, tremor and gait",
+        "targetCondition": "Parkinsonism",
+        "expectedFinding": "Bradykinesia with another parkinsonian sign",
+        "clinicalRationale": "Refer untreated to a specialist with expertise in differential diagnosis.",
+        "normalValue": "Normal speed, tone, gait and postural stability",
+        "references": [
+          {
+            "title": "NICE NG71: Parkinson's disease in adults",
+            "edition": "NICE NG71 Recommendations 1.2.1–1.2.4",
+            "url": "https://www.nice.org.uk/guidance/ng71/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Medication review",
+        "modalityTarget": "Dopamine-blocking and other causative medicines",
+        "targetCondition": "Drug-induced parkinsonism",
+        "expectedFinding": "Exposure temporally related to symptoms",
+        "clinicalRationale": "Discuss safe change with the responsible prescriber; do not stop abruptly.",
+        "normalValue": "No causative medicine exposure",
+        "references": [
+          {
+            "title": "NICE NG71: Parkinson's disease in adults",
+            "edition": "NICE NG71 Recommendations 1.2.1–1.2.4",
+            "url": "https://www.nice.org.uk/guidance/ng71/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Lying and standing blood pressure",
+        "modalityTarget": "Autonomic function",
+        "targetCondition": "Orthostatic hypotension",
+        "expectedFinding": "Sustained symptomatic postural fall",
+        "clinicalRationale": "Address falls and medicine contributors while specialist assessment proceeds.",
+        "normalValue": "No symptomatic postural fall",
+        "references": [
+          {
+            "title": "NICE NG71: Parkinson's disease in adults",
+            "edition": "NICE NG71 Section 1.5 Non-motor symptoms",
+            "url": "https://www.nice.org.uk/guidance/ng71/chapter/recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count and metabolic profile",
+        "modalityTarget": "Anaemia, infection, renal, liver and electrolyte disturbance",
+        "targetCondition": "Systemic mimic",
+        "expectedFinding": "Clinically significant abnormality",
+        "clinicalRationale": "Treat an alternative reversible cause without delaying neurological referral when parkinsonism persists.",
+        "normalValue": "Results within local adult ranges",
+        "references": [
+          {
+            "title": "NICE NG71: Parkinson's disease in adults",
+            "edition": "NICE NG71 Recommendations 1.2.1–1.2.4",
+            "url": "https://www.nice.org.uk/guidance/ng71/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Thyroid function",
+        "modalityTarget": "Thyroid dysfunction",
+        "targetCondition": "Movement/cognitive mimic",
+        "expectedFinding": "TSH or free T4 abnormality",
+        "clinicalRationale": "Treat confirmed thyroid disease and reassess.",
+        "normalValue": "TSH within local adult range",
+        "references": [
+          {
+            "title": "NICE NG71: Parkinson's disease in adults",
+            "edition": "NICE NG71 Recommendations 1.2.1–1.2.4",
+            "url": "https://www.nice.org.uk/guidance/ng71/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Structural brain imaging",
+        "modalityTarget": "Vascular or structural cause",
+        "targetCondition": "Atypical or acute parkinsonism",
+        "expectedFinding": "Lesion explaining atypical presentation",
+        "clinicalRationale": "Not a routine diagnostic test for typical Parkinson's disease; use when a mimic is suspected.",
+        "normalValue": "No explanatory structural lesion",
+        "references": [
+          {
+            "title": "NICE NG71: Parkinson's disease in adults",
+            "edition": "NICE NG71 Recommendations 1.2.5–1.2.7",
+            "url": "https://www.nice.org.uk/guidance/ng71/chapter/recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "acute",
+      "title": "Exclude acute neurological disease",
+      "timeframe": "At first contact",
+      "actions": [
+        "Use an emergency pathway for acute onset, focal deficit, encephalopathy or rapid deterioration.",
+        "Record onset, progression, falls, autonomic and cognitive symptoms and medicine exposure."
+      ]
+    },
+    {
+      "id": "refer",
+      "title": "Refer before treatment",
+      "timeframe": "Quickly and untreated",
+      "actions": [
+        "Refer suspected Parkinson's disease to a specialist with expertise in differential diagnosis.",
+        "Do not start dopaminergic treatment solely as a diagnostic test."
+      ]
+    },
+    {
+      "id": "support",
+      "title": "Reduce risk while awaiting assessment",
+      "timeframe": "Until specialist review",
+      "actions": [
+        "Address falls, driving, swallowing or occupational risk according to symptoms.",
+        "Provide an escalation route for rapid deterioration, aspiration, recurrent falls or confusion."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "no-drug-indicated",
+    "regimens": [],
+    "note": "Do not initiate dopaminergic medicine before specialist diagnostic assessment in this recognition pathway."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Suspect Parkinson's disease",
+      "threshold": "Tremor, stiffness, slowness, balance or gait disorder suggesting parkinsonism."
+    }
+  ],
+  "teaching": {
+    "scope": "Adult recognition of parkinsonism, exclusion of urgent mimics and rapid specialist referral before dopaminergic treatment.",
+    "learningObjectives": [
+      "Recognise bradykinesia-based parkinsonism.",
+      "Refer untreated for specialist diagnosis."
+    ],
+    "pitfalls": [
+      "Using levodopa response as a primary-care diagnostic test.",
+      "Missing drug-induced or acute vascular parkinsonism."
+    ],
+    "keyPoints": [
+      "Diagnosis is clinical and should be reviewed over time.",
+      "Structural imaging is for selected mimics, not routine confirmation."
+    ],
+    "references": [
+      {
+        "title": "NICE NG71: Parkinson's disease in adults",
+        "edition": "NICE NG71, Recommendations 1.2.1–1.2.7",
+        "url": "https://www.nice.org.uk/guidance/ng71/chapter/recommendations",
+        "locator": "Recommendations 1.2.1–1.2.7"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain diagnostic uncertainty and why specialist assessment precedes treatment."
+    ],
+    "lifestyleAndDiet": [
+      "Maintain safe activity and falls precautions while awaiting review."
+    ],
+    "mdtReferrals": [
+      "Neurology or movement-disorders service; physiotherapy, speech therapy or occupational therapy if urgent functional needs arise."
+    ],
+    "dischargeCriteria": [
+      "Not discharged until referral outcome, risk advice and safety-net are documented."
+    ],
+    "followUpPlan": "Track specialist assessment and reassess sooner for falls, aspiration, confusion or rapid progression."
+  }
+}

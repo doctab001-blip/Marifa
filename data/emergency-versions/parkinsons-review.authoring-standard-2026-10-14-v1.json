@@ -1,0 +1,245 @@
+{
+  "id": "c826aeb0-2c9a-4ee3-b61c-11332139d87c",
+  "title": "Parkinson's Disease: Medication Timing and Complication Review",
+  "specialty": "Neurology",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-14-v1",
+  "lastReviewed": "2026-10-14",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-14",
+    "status": "incomplete",
+    "scope": "Adults with established Parkinson's disease: exact medicine timing, motor/non-motor complications, swallowing, falls and urgent dopaminergic continuity.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 14 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "No Saudi national Parkinson's disease guideline was identified in the sources opened on 14 October 2026. NICE guidance is an international comparator pending Saudi/local adaptation.",
+      "SFDA product registration was not verified; any medicine selection requires the current Saudi Drug Information register and hospital formulary.",
+      "Exact medicine doses and adjustment sequences remain the movement-disorders specialist's plan."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "c826aeb0-2c9a-4ee3-b61c-11332139d87c"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Dopamine replacement improves motor function but response fluctuates as disease progresses. Delayed or omitted doses can cause severe immobility and potentially dangerous deterioration. Dopaminergic treatment can cause dyskinesia, hallucinations, sleepiness and impulse-control disorders. Swallowing, autonomic and cognitive complications increase falls and aspiration risk.",
+    "keyMechanisms": [
+      "Dopamine replacement improves motor function but response fluctuates as disease progresses.",
+      "Delayed or omitted doses can cause severe immobility and potentially dangerous deterioration.",
+      "Dopaminergic treatment can cause dyskinesia, hallucinations, sleepiness and impulse-control disorders.",
+      "Swallowing, autonomic and cognitive complications increase falls and aspiration risk."
+    ],
+    "references": [
+      {
+        "title": "NICE NG71: Parkinson's disease in adults",
+        "edition": "NICE NG71, Sections 1.3–1.7",
+        "url": "https://www.nice.org.uk/guidance/ng71/chapter/recommendations"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Wearing-off, freezing, dyskinesia, falls, hallucinations, sleepiness, constipation, urinary symptoms, swallowing difficulty or impulsive behaviour."
+    ],
+    "physicalSigns": [
+      "On/off variation, postural instability, orthostatic hypotension, dyskinesia, cognitive change or aspiration signs."
+    ],
+    "redFlags": [
+      "Abrupt severe immobility after missed medicine, fever/rigidity, aspiration, recurrent syncope, acute psychosis or dangerous impulse-control behaviour needs urgent assessment."
+    ],
+    "precipitants": [
+      "Late/omitted doses, infection, dehydration, constipation, interacting antiemetics/antipsychotics and reduced absorption."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Delirium from infection or medicine toxicity",
+      "distinguishingFeatures": "Acute fluctuating attention and systemic trigger rather than gradual Parkinson progression."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Timed motor diary",
+        "modalityTarget": "Dose time, on/off state and dyskinesia",
+        "targetCondition": "Motor fluctuation",
+        "expectedFinding": "Reproducible wearing-off or dyskinesia linked to dose timing",
+        "clinicalRationale": "Use for specialist regimen review.",
+        "normalValue": "Stable function without clinically important fluctuation",
+        "references": [
+          {
+            "title": "NICE NG71: Parkinson's disease in adults",
+            "edition": "NICE NG71 Sections 1.3–1.4",
+            "url": "https://www.nice.org.uk/guidance/ng71/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Medication administration audit",
+        "modalityTarget": "Prescribed versus actual dose times",
+        "targetCondition": "Omitted/delayed treatment",
+        "expectedFinding": "Any clinically important delay or omission",
+        "clinicalRationale": "Correct immediately through the Parkinson medicine protocol and obtain specialist advice.",
+        "normalValue": "Every dose given at the individually prescribed time",
+        "references": [
+          {
+            "title": "NICE NG71: Parkinson's disease in adults",
+            "edition": "NICE NG71 Recommendations 1.3.1–1.3.4",
+            "url": "https://www.nice.org.uk/guidance/ng71/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Lying and standing blood pressure",
+        "modalityTarget": "Autonomic function",
+        "targetCondition": "Orthostatic hypotension",
+        "expectedFinding": "Symptomatic postural fall",
+        "clinicalRationale": "Review hydration and causative medicines; treat through the specialist plan.",
+        "normalValue": "No symptomatic postural fall",
+        "references": [
+          {
+            "title": "NICE NG71: Parkinson's disease in adults",
+            "edition": "NICE NG71 Section 1.5",
+            "url": "https://www.nice.org.uk/guidance/ng71/chapter/recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Swallow assessment",
+        "modalityTarget": "Oropharyngeal safety",
+        "targetCondition": "Aspiration risk",
+        "expectedFinding": "Cough, wet voice or unsafe swallow",
+        "clinicalRationale": "Urgent speech-and-language and nutrition plan; change formulation only with specialist/pharmacy advice.",
+        "normalValue": "Safe swallow without aspiration signs",
+        "references": [
+          {
+            "title": "NICE NG71: Parkinson's disease in adults",
+            "edition": "NICE NG71 Sections 1.7.13–1.7.16",
+            "url": "https://www.nice.org.uk/guidance/ng71/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Cognitive and hallucination review",
+        "modalityTarget": "Attention, cognition and perception",
+        "targetCondition": "Dementia, delirium or treatment effect",
+        "expectedFinding": "New hallucination, fluctuation or functional decline",
+        "clinicalRationale": "Look for infection/medicine triggers and involve the specialist.",
+        "normalValue": "No new cognitive or perceptual change",
+        "references": [
+          {
+            "title": "NICE NG71: Parkinson's disease in adults",
+            "edition": "NICE NG71 Sections 1.5.11–1.5.18",
+            "url": "https://www.nice.org.uk/guidance/ng71/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Renal, liver and infection screen",
+        "modalityTarget": "Organ function and systemic trigger",
+        "targetCondition": "Treatment accumulation or delirium trigger",
+        "expectedFinding": "New organ dysfunction or infection",
+        "clinicalRationale": "Correct the trigger and review treatment safety.",
+        "normalValue": "Stable organ function without infection",
+        "references": [
+          {
+            "title": "NICE NG71: Parkinson's disease in adults",
+            "edition": "NICE NG71 Sections 1.3–1.5",
+            "url": "https://www.nice.org.uk/guidance/ng71/chapter/recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "continuity",
+      "title": "Protect exact medicine timing",
+      "timeframe": "At every transfer, admission and review",
+      "actions": [
+        "Reconcile the exact preparation, dose and clock time with the patient/carer and Parkinson record.",
+        "Do not stop abruptly; if oral delivery is unsafe, obtain urgent movement-disorders and pharmacy advice for an alternative route/formulation."
+      ]
+    },
+    {
+      "id": "complications",
+      "title": "Screen motor and non-motor complications",
+      "timeframe": "At each review and after any deterioration",
+      "actions": [
+        "Review wearing-off, dyskinesia, falls, sleepiness, hallucinations, cognition, impulse-control symptoms, blood pressure, constipation and swallowing.",
+        "Check for infection, dehydration, interacting medicines and delayed doses before attributing deterioration to progression."
+      ]
+    },
+    {
+      "id": "specialist-adjust",
+      "title": "Adjust through specialist shared decision",
+      "timeframe": "Promptly when complications impair safety or function",
+      "actions": [
+        "Movement-disorders specialists individualise dopaminergic and adjunct treatment.",
+        "Refer to physiotherapy, occupational therapy, speech-and-language therapy and dietetics according to functional findings."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [],
+    "note": "Continue the individual's exact specialist-prescribed regimen at exact times. This topic intentionally does not reproduce doses because regimens are patient-specific; use the medication record, movement-disorders plan, current SFDA/product information and formulary."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Time-critical medicines",
+      "threshold": "Administer at the person's individually prescribed times; do not substitute standard drug-round times."
+    }
+  ],
+  "teaching": {
+    "scope": "Adults with established Parkinson's disease: exact medicine timing, motor/non-motor complications, swallowing, falls and urgent dopaminergic continuity.",
+    "learningObjectives": [
+      "Treat Parkinson medicines as time-critical.",
+      "Screen motor and non-motor complications."
+    ],
+    "pitfalls": [
+      "Moving doses to routine drug-round times.",
+      "Using dopamine-blocking medicines without specialist review."
+    ],
+    "keyPoints": [
+      "Never stop dopaminergic therapy abruptly.",
+      "New deterioration often has a reversible trigger."
+    ],
+    "references": [
+      {
+        "title": "NICE NG71: Parkinson's disease in adults",
+        "edition": "NICE NG71, Sections 1.3–1.7",
+        "url": "https://www.nice.org.uk/guidance/ng71/chapter/recommendations",
+        "locator": "Sections 1.3–1.7"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Give the patient/carer a current timed medicine list and emergency contact route."
+    ],
+    "lifestyleAndDiet": [
+      "Support falls prevention, exercise, constipation plan and safe driving/occupation review."
+    ],
+    "mdtReferrals": [
+      "Movement-disorders neurology, Parkinson nurse, pharmacy, physiotherapy, occupational therapy, speech-and-language therapy and dietetics."
+    ],
+    "dischargeCriteria": [
+      "Exact dose times reconciled, swallowing safe or alternative plan active, reversible triggers addressed and follow-up booked."
+    ],
+    "followUpPlan": "Specialist review after any regimen change, admission, fall, hallucination, impulse-control concern or swallowing deterioration."
+  }
+}

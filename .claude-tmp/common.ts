@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import { DiseaseDetailSchema, type DiseaseDetail } from "../lib/validations/disease";
 export const DATE = "2026-10-14";
-export const VERSION = "authoring-standard-2026-10-14-v2-investigations";
+export const VERSION = process.env.CLINICAL_VERSION ?? "authoring-standard-2026-10-14-v2-investigations";
 const REPO = new URL("../data/emergency-versions/", import.meta.url).pathname;
 export type Ref = { title: string; url: string };
 export const SRC = {
@@ -28,6 +28,13 @@ export const SRC = {
   CG151: { title: "NICE CG151: Neutropenic sepsis", url: "https://www.nice.org.uk/guidance/cg151/chapter/Recommendations" },
   EUROTRAUMA6: { title: "European guideline on management of major bleeding and coagulopathy following trauma: sixth edition", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9977110/" },
   IAEM_SEIZURE: { title: "Irish Association for Emergency Medicine: Management of First Seizure in Adults in the Emergency Department", url: "https://iaem.ie/download/198/adult/101108/management-of-first-seizure-in-adults-in-the-emergency-department-v1-0.pdf" },
+  NG100: { title: "NICE NG100: Rheumatoid arthritis in adults: management", url: "https://www.nice.org.uk/guidance/ng100/chapter/recommendations" },
+  CG61: { title: "NICE CG61: Irritable bowel syndrome in adults: diagnosis and management", url: "https://www.nice.org.uk/guidance/cg61/chapter/recommendations" },
+  NG129: { title: "NICE NG129: Crohn's disease: management", url: "https://www.nice.org.uk/guidance/ng129/chapter/recommendations" },
+  NG130: { title: "NICE NG130: Ulcerative colitis: management", url: "https://www.nice.org.uk/guidance/ng130/chapter/recommendations" },
+  NG217_TREATMENT: { title: "NICE NG217: Epilepsies in children, young people and adults", url: "https://www.nice.org.uk/guidance/ng217/chapter/4-principles-of-treatment-safety-monitoring-and-withdrawal" },
+  NG71: { title: "NICE NG71: Parkinson's disease in adults", url: "https://www.nice.org.uk/guidance/ng71/chapter/recommendations" },
+  NG97: { title: "NICE NG97: Dementia: assessment, management and support", url: "https://www.nice.org.uk/guidance/ng97/chapter/recommendations" },
 } satisfies Record<string, Ref>;
 export const cite = (r: Ref, edition: string) => ({ title: r.title, edition, url: r.url });
 
@@ -48,20 +55,23 @@ export type Spec = {
   steps: { id: string; title: string; timeframe: string; actions: string[] }[];
   meds: NonNullable<DiseaseDetail["medicationPlan"]>;
   comparison?: DiseaseDetail["guidelineComparison"];
-  teach: { objectives: string[]; keyPoints: string[]; pitfalls: string[]; refs: { ref: Ref; edition: string; locator: string }[]; patho?: ReturnType<typeof cite>[] };
+  teach?: { objectives: string[]; keyPoints: string[]; pitfalls: string[]; refs: { ref: Ref; edition: string; locator: string }[]; patho?: ReturnType<typeof cite>[] };
+  teaching?: { objectives: string[]; keyPoints: string[]; pitfalls: string[]; refs: { ref: Ref; edition: string; locator: string }[]; patho?: ReturnType<typeof cite>[] };
   edu: string[]; life: string[]; mdt: string[]; discharge: string[]; follow: string;
 };
 const mapInv = (i: Inv) => ({ tier: i.tier ?? "laboratory", testName: i.name, modalityTarget: i.target, targetCondition: i.condition, expectedFinding: i.finding, clinicalRationale: i.why, normalValue: i.normal, references: [i.ref] });
 export function build(s: Spec, cat: { id: string; title: string; specialty: string }): DiseaseDetail {
+  const guide = s.teach ?? s.teaching;
+  if (!guide) throw new Error(`Teaching guide missing for ${s.key}`);
   return DiseaseDetailSchema.parse({
     id: cat.id, title: cat.title, specialty: cat.specialty, authority: s.authority, status: "under_review", version: VERSION, lastReviewed: DATE, pillar: s.pillar, clinicalReviewStatus: "pending",
     evidenceAudit: { checkedOn: DATE, status: "incomplete", scope: s.scope, findings: ["Every dose, threshold and timing was checked against the cited source section on 14 Oct 2026.", "Normal values are typical adult reference ranges; laboratories differ."], unverifiedSections: s.unverified, medscapeStatus: "unavailable", originalVersionIds: [cat.id] },
-    pathophysiology: { summary: s.mech.join(" "), keyMechanisms: s.mech, ...(s.teach.patho ? { references: s.teach.patho } : {}) },
+    pathophysiology: { summary: s.mech.join(" "), keyMechanisms: s.mech, ...(guide.patho ? { references: guide.patho } : {}) },
     presentation: { symptoms: s.symptoms, physicalSigns: s.signs, redFlags: s.red, precipitants: s.precip },
     differentials: s.diffs, diagnosticCriteria: s.criteria,
     investigations: { ruleIn: s.rule_in.map(mapInv), ruleOut: s.rule_out.map(mapInv) },
     clinicalManagement: s.steps, medicationPlan: s.meds, ...(s.comparison ? { guidelineComparison: s.comparison } : {}),
-    teaching: { scope: s.scope, learningObjectives: s.teach.objectives, keyPoints: s.teach.keyPoints, pitfalls: s.teach.pitfalls, references: s.teach.refs.map((r) => ({ ...cite(r.ref, r.edition), locator: r.locator })) },
+    teaching: { scope: s.scope, learningObjectives: guide.objectives, keyPoints: guide.keyPoints, pitfalls: guide.pitfalls, references: guide.refs.map((r) => ({ ...cite(r.ref, r.edition), locator: r.locator })) },
     nonClinicalManagement: { patientEducation: s.edu, lifestyleAndDiet: s.life, mdtReferrals: s.mdt, dischargeCriteria: s.discharge, followUpPlan: s.follow },
   });
 }

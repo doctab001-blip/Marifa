@@ -1,0 +1,250 @@
+{
+  "id": "63c0932f-5e7f-4f9d-b4ac-8db3b23e6453",
+  "title": "Rheumatoid Arthritis: DMARD Initiation and Monitoring",
+  "specialty": "Rheumatology",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-14-v1",
+  "lastReviewed": "2026-10-14",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-14",
+    "status": "incomplete",
+    "scope": "Specialist-led treat-to-target DMARD initiation, monitoring, flare access and multidisciplinary support in adults.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 14 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "No Saudi national rheumatoid arthritis guideline was identified in the sources opened on 14 October 2026. NICE guidance is an international comparator pending Saudi/local adaptation.",
+      "SFDA product registration was not verified; any medicine selection requires the current Saudi Drug Information register and hospital formulary.",
+      "Exact DMARD doses, laboratory intervals, contraception rules and organ-function adjustments require the specialist protocol and product information."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "63c0932f-5e7f-4f9d-b4ac-8db3b23e6453"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Persistent immune activation drives synovitis. Unchecked synovitis causes erosive damage and disability. Disease-modifying treatment suppresses inflammation rather than only relieving pain. Comorbidity and medicine toxicity influence drug choice and monitoring.",
+    "keyMechanisms": [
+      "Persistent immune activation drives synovitis.",
+      "Unchecked synovitis causes erosive damage and disability.",
+      "Disease-modifying treatment suppresses inflammation rather than only relieving pain.",
+      "Comorbidity and medicine toxicity influence drug choice and monitoring."
+    ],
+    "references": [
+      {
+        "title": "NICE NG100: Rheumatoid arthritis in adults: management",
+        "edition": "NICE NG100, Recommendations 1.2.1–1.3.10 and 1.9.1–1.9.2",
+        "url": "https://www.nice.org.uk/guidance/ng100/chapter/recommendations"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Pain, swelling, stiffness, fatigue, sleep disturbance and reduced function."
+    ],
+    "physicalSigns": [
+      "Swollen and tender joints, restricted movement, deformity or extra-articular disease."
+    ],
+    "redFlags": [
+      "Fever or infection while immunosuppressed, severe cytopenia symptoms, jaundice, new breathlessness or acute neurological deficit require urgent assessment."
+    ],
+    "precipitants": [
+      "Missed treatment, infection, smoking, pregnancy planning and drug toxicity can alter control or treatment safety."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Septic arthritis",
+      "distinguishingFeatures": "Acute hot joint with systemic illness; aspirate urgently."
+    },
+    {
+      "condition": "Mechanical pain",
+      "distinguishingFeatures": "Pain without objective synovitis or inflammatory-marker change."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Disease activity score",
+        "modalityTarget": "Tender/swollen joints, patient assessment and inflammatory marker",
+        "targetCondition": "Active rheumatoid arthritis",
+        "expectedFinding": "Persistent moderate or high activity",
+        "clinicalRationale": "Escalate in the treat-to-target pathway.",
+        "normalValue": "Remission or agreed low disease activity",
+        "references": [
+          {
+            "title": "NICE NG100: Rheumatoid arthritis in adults: management",
+            "edition": "NICE NG100 Recommendations 1.2.1–1.2.4",
+            "url": "https://www.nice.org.uk/guidance/ng100/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "CRP",
+        "modalityTarget": "Systemic inflammation",
+        "targetCondition": "Active disease",
+        "expectedFinding": "Raised or rising result with active synovitis",
+        "clinicalRationale": "Measure monthly in active disease until the target is achieved.",
+        "normalValue": "Within the local laboratory range",
+        "references": [
+          {
+            "title": "NICE NG100: Rheumatoid arthritis in adults: management",
+            "edition": "NICE NG100 Recommendation 1.2.1",
+            "url": "https://www.nice.org.uk/guidance/ng100/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count",
+        "modalityTarget": "Marrow toxicity and inflammation",
+        "targetCondition": "DMARD toxicity",
+        "expectedFinding": "New cytopenia or falling counts",
+        "clinicalRationale": "Hold/escalate according to the drug-monitoring protocol.",
+        "normalValue": "Haemoglobin, leukocytes and platelets within local adult ranges",
+        "references": [
+          {
+            "title": "NICE NG100: Rheumatoid arthritis in adults: management",
+            "edition": "NICE NG100 Sections 1.3 and 1.9",
+            "url": "https://www.nice.org.uk/guidance/ng100/chapter/recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Liver profile",
+        "modalityTarget": "Hepatic toxicity",
+        "targetCondition": "DMARD adverse effect",
+        "expectedFinding": "Transaminase or bilirubin abnormality",
+        "clinicalRationale": "Apply the specific medicine protocol before continuing or changing treatment.",
+        "normalValue": "Within local adult laboratory ranges",
+        "references": [
+          {
+            "title": "NICE NG100: Rheumatoid arthritis in adults: management",
+            "edition": "NICE NG100 Sections 1.3 and 1.9",
+            "url": "https://www.nice.org.uk/guidance/ng100/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Creatinine and eGFR",
+        "modalityTarget": "Renal clearance",
+        "targetCondition": "DMARD accumulation risk",
+        "expectedFinding": "Reduced or declining filtration",
+        "clinicalRationale": "Adjust or avoid the responsible medicine under specialist guidance.",
+        "normalValue": "Stable eGFR without acute kidney injury",
+        "references": [
+          {
+            "title": "NICE NG100: Rheumatoid arthritis in adults: management",
+            "edition": "NICE NG100 Sections 1.3 and 1.9",
+            "url": "https://www.nice.org.uk/guidance/ng100/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Chest assessment",
+        "modalityTarget": "Respiratory symptoms and oxygenation",
+        "targetCondition": "Infection or drug-related lung disease",
+        "expectedFinding": "New cough, breathlessness, hypoxaemia or imaging abnormality",
+        "clinicalRationale": "Stop and urgently assess suspected serious infection or lung toxicity.",
+        "normalValue": "No new respiratory symptoms and oxygenation at baseline",
+        "references": [
+          {
+            "title": "NICE NG100: Rheumatoid arthritis in adults: management",
+            "edition": "NICE NG100 Sections 1.3.8 and 1.9",
+            "url": "https://www.nice.org.uk/guidance/ng100/chapter/recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "baseline",
+      "title": "Specialist baseline and shared decision",
+      "timeframe": "Before the first DMARD",
+      "actions": [
+        "Confirm disease activity, comorbidity, infection risk, pregnancy plans, vaccination status and baseline blood, liver and kidney results.",
+        "Agree a treat-to-target plan and explain benefits, toxicity warning symptoms and monitoring responsibilities."
+      ]
+    },
+    {
+      "id": "initiate",
+      "title": "Start specialist-led disease-modifying treatment",
+      "timeframe": "As soon as possible and ideally within 3 months of persistent symptom onset",
+      "actions": [
+        "Use the NICE conventional DMARD strategy chosen by rheumatology; do not delay disease modification for analgesic response.",
+        "Use short-term bridging glucocorticoid only through the specialist plan."
+      ]
+    },
+    {
+      "id": "monitor",
+      "title": "Measure activity and toxicity",
+      "timeframe": "Monthly while active until target, then at agreed intervals",
+      "actions": [
+        "Record CRP and a validated disease-activity measure; escalate treatment if the target is not reached.",
+        "Review blood count, liver and kidney tests under the medicine-specific protocol.",
+        "Provide rapid specialist access for flares, infection or suspected toxicity."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [],
+    "note": "DMARD and glucocorticoid selection is clinically necessary, but NICE NG100 does not supply complete dose, route, frequency, duration, maximum and organ-adjustment regimens. Use the rheumatology shared-care protocol and current SFDA/product information."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Treatment target",
+      "threshold": "Remission or low disease activity, with monthly CRP and disease-activity assessment in active disease until target is reached."
+    }
+  ],
+  "teaching": {
+    "scope": "Specialist-led treat-to-target DMARD initiation, monitoring, flare access and multidisciplinary support in adults.",
+    "learningObjectives": [
+      "Use treat-to-target monitoring.",
+      "Separate inflammatory activity from toxicity or infection."
+    ],
+    "pitfalls": [
+      "Using analgesia as a substitute for disease modification.",
+      "Continuing therapy despite serious infection or toxicity warning signs."
+    ],
+    "keyPoints": [
+      "DMARD initiation is specialist-led.",
+      "Active disease needs monthly objective review until target."
+    ],
+    "references": [
+      {
+        "title": "NICE NG100: Rheumatoid arthritis in adults: management",
+        "edition": "NICE NG100, Recommendations 1.2.1–1.3.10 and 1.9.1–1.9.2",
+        "url": "https://www.nice.org.uk/guidance/ng100/chapter/recommendations",
+        "locator": "Recommendations 1.2.1–1.3.10; 1.9.1–1.9.2"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Give written instructions for infection, pregnancy planning, missed monitoring and medicine adverse effects."
+    ],
+    "lifestyleAndDiet": [
+      "Support smoking cessation, exercise, vaccination and cardiovascular-risk reduction."
+    ],
+    "mdtReferrals": [
+      "Rheumatology, specialist pharmacist, primary care, physiotherapy, occupational therapy and podiatry as needed."
+    ],
+    "dischargeCriteria": [
+      "Stable target reached, monitoring ownership documented and rapid-access flare route provided."
+    ],
+    "followUpPlan": "Continue structured disease-activity and toxicity review; re-enter specialist care promptly for flare, adverse effect or target failure."
+  }
+}

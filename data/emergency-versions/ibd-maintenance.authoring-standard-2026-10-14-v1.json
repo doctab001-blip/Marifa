@@ -1,0 +1,250 @@
+{
+  "id": "18b396ce-59c2-4846-8501-8be0d31c802b",
+  "title": "Inflammatory Bowel Disease: Maintenance Monitoring and Flare Plan",
+  "specialty": "Gastroenterology",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-14-v1",
+  "lastReviewed": "2026-10-14",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-14",
+    "status": "incomplete",
+    "scope": "Adults with established Crohn's disease or ulcerative colitis: maintenance review, flare triage, treatment safety and surveillance coordination.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 14 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "No Saudi national inflammatory bowel disease guideline was identified in the sources opened on 14 October 2026. NICE guidance is an international comparator pending Saudi/local adaptation.",
+      "SFDA product registration was not verified; any medicine selection requires the current Saudi Drug Information register and hospital formulary.",
+      "Exact medicine regimens, biologic screening, laboratory intervals and colorectal-surveillance schedule require the gastroenterology protocol and current product information."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "18b396ce-59c2-4846-8501-8be0d31c802b"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Relapsing mucosal inflammation causes symptoms and cumulative bowel damage. Transmural Crohn's disease can cause strictures, fistulas and abscesses. Ulcerative colitis can cause severe colitis and toxic megacolon. Immunosuppressive treatment raises infection and toxicity risks.",
+    "keyMechanisms": [
+      "Relapsing mucosal inflammation causes symptoms and cumulative bowel damage.",
+      "Transmural Crohn's disease can cause strictures, fistulas and abscesses.",
+      "Ulcerative colitis can cause severe colitis and toxic megacolon.",
+      "Immunosuppressive treatment raises infection and toxicity risks."
+    ],
+    "references": [
+      {
+        "title": "NICE NG130: Ulcerative colitis: management",
+        "edition": "NICE NG130, Sections 1.1–1.5",
+        "url": "https://www.nice.org.uk/guidance/ng130/chapter/recommendations"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Change in stool frequency, bleeding, urgency, nocturnal stooling, pain, weight loss, fatigue or extra-intestinal symptoms."
+    ],
+    "physicalSigns": [
+      "Weight change, fever, tachycardia, pallor, abdominal tenderness/distension, perianal disease or extra-intestinal inflammation."
+    ],
+    "redFlags": [
+      "Systemic toxicity, severe bleeding, distension, guarding, obstruction, abscess, dehydration or sepsis requires same-day hospital assessment."
+    ],
+    "precipitants": [
+      "Infection, missed treatment, NSAIDs, smoking in Crohn's disease and treatment toxicity."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Enteric infection",
+      "distinguishingFeatures": "Acute exposure or positive stool testing, including C. difficile."
+    },
+    {
+      "condition": "IBS-like symptoms in remission",
+      "distinguishingFeatures": "Symptoms without objective inflammatory activity after adequate assessment."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Symptom and disease-activity review",
+        "modalityTarget": "Stool frequency, bleeding, pain and function",
+        "targetCondition": "Possible flare",
+        "expectedFinding": "Meaningful deterioration from the patient's baseline",
+        "clinicalRationale": "Trigger objective testing and the written flare pathway.",
+        "normalValue": "Patient's documented remission baseline",
+        "references": [
+          {
+            "title": "NICE NG130: Ulcerative colitis: management",
+            "edition": "NICE NG130 Sections 1.1–1.5",
+            "url": "https://www.nice.org.uk/guidance/ng130/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count",
+        "modalityTarget": "Anaemia, leukocytes and platelets",
+        "targetCondition": "Inflammation, bleeding or medicine toxicity",
+        "expectedFinding": "Anaemia, leukocytosis, thrombocytosis or cytopenia",
+        "clinicalRationale": "Escalate severity or toxicity review.",
+        "normalValue": "Haemoglobin, leukocytes and platelets within local adult ranges",
+        "references": [
+          {
+            "title": "NICE NG130: Ulcerative colitis: management",
+            "edition": "NICE NG130 Sections 1.1–1.5",
+            "url": "https://www.nice.org.uk/guidance/ng130/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "CRP and faecal calprotectin",
+        "modalityTarget": "Systemic and intestinal inflammation",
+        "targetCondition": "Active IBD",
+        "expectedFinding": "Rise above the patient's remission baseline or local threshold",
+        "clinicalRationale": "Use with symptoms and specialist plan to confirm activity and response.",
+        "normalValue": "At the patient's remission baseline and below the local low-risk threshold",
+        "references": [
+          {
+            "title": "NICE NG129: Crohn's disease: management",
+            "edition": "NICE NG129 Sections 1.2 and 1.7",
+            "url": "https://www.nice.org.uk/guidance/ng129/chapter/recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Stool pathogen testing",
+        "modalityTarget": "Enteric infection",
+        "targetCondition": "Infectious mimic",
+        "expectedFinding": "Pathogen detected",
+        "clinicalRationale": "Treat infection and avoid reflex immunosuppression escalation.",
+        "normalValue": "No pathogen detected",
+        "references": [
+          {
+            "title": "NICE NG130: Ulcerative colitis: management",
+            "edition": "NICE NG130 Section 1.1",
+            "url": "https://www.nice.org.uk/guidance/ng130/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Renal and liver profile",
+        "modalityTarget": "Organ function and treatment toxicity",
+        "targetCondition": "Medicine toxicity/dehydration",
+        "expectedFinding": "Acute kidney injury or liver-test abnormality",
+        "clinicalRationale": "Apply the medicine protocol and correct dehydration.",
+        "normalValue": "Stable kidney function and liver tests within local ranges",
+        "references": [
+          {
+            "title": "NICE NG129: Crohn's disease: management",
+            "edition": "NICE NG129 Sections 1.2 and 1.7",
+            "url": "https://www.nice.org.uk/guidance/ng129/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Cross-sectional imaging or endoscopy",
+        "modalityTarget": "Bowel inflammation and complications",
+        "targetCondition": "Stricture, fistula, abscess or uncontrolled colitis",
+        "expectedFinding": "Active disease or complication",
+        "clinicalRationale": "Specialist investigation when biomarkers/symptoms persist or complication is suspected.",
+        "normalValue": "No active inflammation or complication",
+        "references": [
+          {
+            "title": "NICE NG129: Crohn's disease: management",
+            "edition": "NICE NG129 Sections 1.1–1.2",
+            "url": "https://www.nice.org.uk/guidance/ng129/chapter/recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "triage",
+      "title": "Use the written flare and emergency plan",
+      "timeframe": "At symptom change",
+      "actions": [
+        "Admit or obtain same-day specialist review for systemic toxicity, severe bleeding, obstruction, abscess, perforation, dehydration or sepsis.",
+        "For a stable possible flare, obtain bloods, stool pathogens and objective inflammatory assessment before changing maintenance treatment."
+      ]
+    },
+    {
+      "id": "maintenance",
+      "title": "Review maintenance and treatment safety",
+      "timeframe": "At each scheduled review",
+      "actions": [
+        "Confirm adherence, adverse effects, infection risk, vaccination, nutrition, bone health, smoking status and pregnancy plans.",
+        "Review FBC, renal and liver tests at the interval specified for the current medicine.",
+        "Assess steroid exposure and avoid unsupervised repeat courses."
+      ]
+    },
+    {
+      "id": "specialist",
+      "title": "Coordinate escalation and surveillance",
+      "timeframe": "Promptly when control is inadequate",
+      "actions": [
+        "Gastroenterology confirms inflammatory activity and chooses optimisation, class change, surgery or other escalation.",
+        "Maintain the documented colorectal-cancer surveillance plan and post-operative monitoring where applicable."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [],
+    "note": "Maintenance and flare medicines are diagnosis-, severity- and product-specific. The opened NICE guidance does not provide one complete regimen with all dose, route, frequency, duration, maximum and organ-adjustment fields; use gastroenterology protocols, current SFDA/product information and the hospital formulary."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Flare",
+      "threshold": "New or worsening symptoms plus objective assessment; do not define from symptoms alone when infection or complication is possible."
+    }
+  ],
+  "teaching": {
+    "scope": "Adults with established Crohn's disease or ulcerative colitis: maintenance review, flare triage, treatment safety and surveillance coordination.",
+    "learningObjectives": [
+      "Separate flare from infection and complication.",
+      "Monitor treatment safety and long-term risks."
+    ],
+    "pitfalls": [
+      "Repeated steroids without maintenance review.",
+      "Missing obstruction, abscess or toxic colitis."
+    ],
+    "keyPoints": [
+      "Do not escalate immunosuppression from symptoms alone when infection is plausible.",
+      "Every patient needs a written flare route."
+    ],
+    "references": [
+      {
+        "title": "NICE NG130: Ulcerative colitis: management",
+        "edition": "NICE NG130, Sections 1.1–1.5",
+        "url": "https://www.nice.org.uk/guidance/ng130/chapter/recommendations",
+        "locator": "Sections 1.1–1.5"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Provide a written flare, infection and medicine-toxicity plan."
+    ],
+    "lifestyleAndDiet": [
+      "Support nutrition, exercise, vaccination and smoking cessation; avoid non-prescribed NSAIDs."
+    ],
+    "mdtReferrals": [
+      "Gastroenterology, IBD nurse, specialist pharmacist, dietitian, colorectal surgery and obstetric medicine when relevant."
+    ],
+    "dischargeCriteria": [
+      "Stable remission/low activity, monitoring and surveillance scheduled, and rapid-access flare route understood."
+    ],
+    "followUpPlan": "Review at the disease- and treatment-specific interval; earlier for symptom change, infection, toxicity or pregnancy planning."
+  }
+}

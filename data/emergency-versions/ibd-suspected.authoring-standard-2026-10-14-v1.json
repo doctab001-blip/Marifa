@@ -1,0 +1,249 @@
+{
+  "id": "1a390b45-ce58-44af-9818-fffa24fecce0",
+  "title": "Suspected Inflammatory Bowel Disease: Faecal Calprotectin and Referral Pathway",
+  "specialty": "Gastroenterology / Primary Care",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-14-v1",
+  "lastReviewed": "2026-10-14",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-14",
+    "status": "incomplete",
+    "scope": "Adult suspected IBD assessment, stool and blood testing, infection exclusion and urgent referral for severe disease.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 14 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "No Saudi national inflammatory bowel disease guideline was identified in the sources opened on 14 October 2026. NICE guidance is an international comparator pending Saudi/local adaptation.",
+      "SFDA product registration was not verified; any medicine selection requires the current Saudi Drug Information register and hospital formulary.",
+      "The local faecal-calprotectin threshold and two-week referral route require Saudi service confirmation."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "1a390b45-ce58-44af-9818-fffa24fecce0"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Immune-mediated mucosal inflammation causes ulceration and bleeding. Crohn's disease may affect any gastrointestinal segment and can be transmural. Ulcerative colitis is continuous colonic mucosal inflammation beginning at the rectum. Inflammation impairs absorption and can cause anaemia, weight loss and extra-intestinal disease.",
+    "keyMechanisms": [
+      "Immune-mediated mucosal inflammation causes ulceration and bleeding.",
+      "Crohn's disease may affect any gastrointestinal segment and can be transmural.",
+      "Ulcerative colitis is continuous colonic mucosal inflammation beginning at the rectum.",
+      "Inflammation impairs absorption and can cause anaemia, weight loss and extra-intestinal disease."
+    ],
+    "references": [
+      {
+        "title": "NICE NG129: Crohn's disease: management",
+        "edition": "NICE NG129, Sections 1.1–1.2",
+        "url": "https://www.nice.org.uk/guidance/ng129/chapter/recommendations"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Persistent diarrhoea, rectal bleeding, urgency, abdominal pain, nocturnal stooling, weight loss or fatigue."
+    ],
+    "physicalSigns": [
+      "Pallor, fever, tachycardia, abdominal tenderness, perianal disease, weight loss or extra-intestinal findings."
+    ],
+    "redFlags": [
+      "Haemodynamic instability, severe bleeding, toxic megacolon concern, obstruction, perforation, sepsis or marked dehydration needs emergency admission."
+    ],
+    "precipitants": [
+      "Infection can mimic or precipitate a flare; NSAIDs and smoking affect risk or course."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Infectious colitis",
+      "distinguishingFeatures": "Pathogen or exposure history with acute onset."
+    },
+    {
+      "condition": "Irritable bowel syndrome",
+      "distinguishingFeatures": "No bleeding, weight loss, nocturnal progression or objective inflammation."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Faecal calprotectin",
+        "modalityTarget": "Neutrophilic intestinal inflammation",
+        "targetCondition": "IBD",
+        "expectedFinding": "Above the locally validated assay threshold",
+        "clinicalRationale": "Use the local pathway for repeat testing or gastroenterology referral; it is not a cancer test.",
+        "normalValue": "Below the locally validated low-risk threshold",
+        "references": [
+          {
+            "title": "NICE NG129: Crohn's disease: management",
+            "edition": "NICE NG129 Sections 1.1 and 1.2; linked Diagnostics Guidance DG11",
+            "url": "https://www.nice.org.uk/guidance/ng129/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count",
+        "modalityTarget": "Anaemia, leukocytes and platelets",
+        "targetCondition": "Inflammation or blood loss",
+        "expectedFinding": "Anaemia, thrombocytosis or leukocytosis",
+        "clinicalRationale": "Assess severity and urgency.",
+        "normalValue": "Haemoglobin, leukocytes and platelets within local adult ranges",
+        "references": [
+          {
+            "title": "NICE NG129: Crohn's disease: management",
+            "edition": "NICE NG129 Section 1.1 Assessing suspected Crohn's disease",
+            "url": "https://www.nice.org.uk/guidance/ng129/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "CRP and ESR",
+        "modalityTarget": "Systemic inflammation",
+        "targetCondition": "Active IBD",
+        "expectedFinding": "Raised inflammatory markers",
+        "clinicalRationale": "Support urgency but normal markers do not exclude isolated bowel inflammation.",
+        "normalValue": "Within local laboratory ranges",
+        "references": [
+          {
+            "title": "NICE NG129: Crohn's disease: management",
+            "edition": "NICE NG129 Section 1.1 Assessing suspected Crohn's disease",
+            "url": "https://www.nice.org.uk/guidance/ng129/chapter/recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Stool pathogen testing",
+        "modalityTarget": "Bacterial and parasitic infection including C. difficile when relevant",
+        "targetCondition": "Infectious diarrhoea",
+        "expectedFinding": "Pathogen detected",
+        "clinicalRationale": "Treat/contain infection and reassess persistent inflammatory symptoms.",
+        "normalValue": "No enteric pathogen detected",
+        "references": [
+          {
+            "title": "NICE NG130: Ulcerative colitis: management",
+            "edition": "NICE NG130 Section 1.1 Information and treatment planning",
+            "url": "https://www.nice.org.uk/guidance/ng130/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Coeliac serology",
+        "modalityTarget": "Coeliac autoantibodies",
+        "targetCondition": "Coeliac disease",
+        "expectedFinding": "Positive serology",
+        "clinicalRationale": "Use the coeliac confirmation pathway.",
+        "normalValue": "Negative",
+        "references": [
+          {
+            "title": "NICE NG129: Crohn's disease: management",
+            "edition": "NICE NG129 Section 1.1 Assessing suspected Crohn's disease",
+            "url": "https://www.nice.org.uk/guidance/ng129/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Ileocolonoscopy with biopsy",
+        "modalityTarget": "Colon and terminal ileum",
+        "targetCondition": "IBD and mimics",
+        "expectedFinding": "Characteristic inflammation and histology",
+        "clinicalRationale": "Specialist test to establish extent and diagnosis.",
+        "normalValue": "Normal mucosa and histology",
+        "references": [
+          {
+            "title": "NICE NG129: Crohn's disease: management",
+            "edition": "NICE NG129 Sections 1.1–1.2",
+            "url": "https://www.nice.org.uk/guidance/ng129/chapter/recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "stabilise",
+      "title": "Identify severe or complicated disease",
+      "timeframe": "At first contact",
+      "actions": [
+        "Admit urgently for instability, severe bleeding, systemic toxicity, obstruction, perforation, abscess or severe dehydration.",
+        "Assess hydration, weight, abdominal/perianal findings and extra-intestinal symptoms."
+      ]
+    },
+    {
+      "id": "tests",
+      "title": "Obtain targeted tests",
+      "timeframe": "Promptly",
+      "actions": [
+        "Request FBC, CRP/ESR, renal/liver profile, coeliac serology, stool pathogens and faecal calprotectin when cancer is not suspected.",
+        "Use the urgent suspected-cancer pathway instead when cancer alarm features dominate."
+      ]
+    },
+    {
+      "id": "refer",
+      "title": "Refer for diagnostic endoscopy",
+      "timeframe": "Urgency based on severity and local pathway",
+      "actions": [
+        "Refer raised calprotectin or persistent inflammatory features to gastroenterology for ileocolonoscopy and biopsy.",
+        "Safety-net normal or borderline results when bleeding, weight loss, nocturnal symptoms or clinical concern persists."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "no-drug-indicated",
+    "regimens": [],
+    "note": "Do not start IBD-specific anti-inflammatory or immunosuppressive treatment before diagnostic assessment unless directed by gastroenterology."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Use faecal calprotectin",
+      "threshold": "Adults with recent-onset lower-GI symptoms when specialist assessment is being considered and cancer is not suspected."
+    }
+  ],
+  "teaching": {
+    "scope": "Adult suspected IBD assessment, stool and blood testing, infection exclusion and urgent referral for severe disease.",
+    "learningObjectives": [
+      "Use calprotectin in the correct population.",
+      "Exclude infection and recognise severe disease."
+    ],
+    "pitfalls": [
+      "Using calprotectin when cancer is suspected.",
+      "Delaying admission in systemic toxicity or obstruction."
+    ],
+    "keyPoints": [
+      "Calprotectin indicates inflammation but does not diagnose IBD by itself.",
+      "Normal blood inflammatory markers do not exclude bowel-limited disease."
+    ],
+    "references": [
+      {
+        "title": "NICE NG129: Crohn's disease: management",
+        "edition": "NICE NG129, Sections 1.1–1.2",
+        "url": "https://www.nice.org.uk/guidance/ng129/chapter/recommendations",
+        "locator": "Sections 1.1–1.2"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain the purpose and limitations of calprotectin and endoscopy."
+    ],
+    "lifestyleAndDiet": [
+      "Maintain hydration and nutrition; avoid non-prescribed NSAIDs and smoking."
+    ],
+    "mdtReferrals": [
+      "Gastroenterology, endoscopy, radiology and dietetics according to severity."
+    ],
+    "dischargeCriteria": [
+      "Stable for outpatient work-up, able to hydrate, no emergency feature and referral/safety-net documented."
+    ],
+    "followUpPlan": "Track results and referral; reassess urgently for heavier bleeding, fever, severe pain, distension, vomiting or dehydration."
+  }
+}
