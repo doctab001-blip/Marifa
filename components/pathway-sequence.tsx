@@ -54,7 +54,7 @@ export function PathwaySequence({ steps, sources = [], compact = false }: { step
           </li>
         ))}
       </ol>
-      <SourceCitation sources={sources} />
+      {compact ? null : <SourceCitation sources={sources} />}
     </section>
   );
 }

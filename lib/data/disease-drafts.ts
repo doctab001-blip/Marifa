@@ -4,7 +4,6 @@ import { getCurrentViewer } from "@/lib/supabase/session";
 import { isSupabaseConfigured } from "@/lib/supabase/config";
 import { createSupabaseDataClient } from "@/lib/supabase/data-client";
 import { DiseaseDetailSchema } from "@/lib/validations/disease";
-import { isClinicalDirectoryEligible } from "@/lib/data/clinical-directory-eligibility";
 
 export type DiseaseDraft = {
   id: string;
@@ -39,23 +38,6 @@ export async function getDiseaseDrafts(): Promise<{
     const drafts: DiseaseDraft[] = [];
     const pageSize = 500;
 
-    // Shared topics whose current published version passes the authoring threshold are live, not drafts.
-    const liveSharedIds = new Set<string>();
-    const { data: liveRows, error: liveError } = await supabase
-      .from("clinical_guidelines")
-      .select("id,guideline_versions!inner(content)")
-      .is("organization_id", null)
-      .eq("is_shared_reference", true)
-      .in("status", ["approved", "published"])
-      .eq("guideline_versions.is_current", true)
-      .in("guideline_versions.status", ["approved", "published"]);
-    if (liveError) return { drafts: [], state: "unavailable", isAdmin };
-    for (const row of liveRows ?? []) {
-      const versions = row.guideline_versions as unknown as Array<{ content: unknown }> | { content: unknown };
-      const content = Array.isArray(versions) ? versions[0]?.content : versions?.content;
-      if (isClinicalDirectoryEligible(content)) liveSharedIds.add(row.id);
-    }
-
     for (let start = 0; ; start += pageSize) {
       const { data, error } = await supabase
         .from("clinical_guidelines")
@@ -68,7 +50,6 @@ export async function getDiseaseDrafts(): Promise<{
       if (error || !data) return { drafts: [], state: "unavailable", isAdmin };
 
       for (const item of data) {
-        if (item.is_shared_reference && liveSharedIds.has(item.id)) continue;
         const related = item.guideline_versions as unknown as Array<{
           id: string;
           version: string;

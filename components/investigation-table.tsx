@@ -83,7 +83,6 @@ export function InvestigationTable({ data }: InvestigationTableProps) {
                   </Cell>
                   <Cell label="What it means / next step" width={columns[3].width}>
                     <span className="whitespace-pre-line break-words">{row.meaning}</span>
-                    {row.source ? <span className="mt-2 block text-xs text-body">Source: {row.source}</span> : null}
                   </Cell>
                 </tr>
               ))}
