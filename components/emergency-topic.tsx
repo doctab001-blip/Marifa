@@ -85,7 +85,7 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
         {disease.diagnosticCriteria?.length ? (
           <div className="em-criteria">
             <h3>Diagnostic criteria</h3>
-            <dl>{disease.diagnosticCriteria.map((item) => <div key={item.criterion}><dt>{item.criterion}</dt><dd>{withoutInlineSourceLocators(item.threshold)}</dd></div>)}</dl>
+            <dl>{disease.diagnosticCriteria.map((item) => <div key={item.criterion}><dt>{withoutInlineSourceLocators(item.criterion)}</dt><dd>{withoutInlineSourceLocators(item.threshold)}</dd></div>)}</dl>
           </div>
         ) : null}
         <div className="em-table-wrap">
@@ -127,7 +127,7 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
           </>
         ) : null}
 
-        {disease.granularPathway ? <details className="em-more"><summary>Monitoring schedule and decision points</summary><MonitoringSchedule phases={disease.granularPathway.Investigations} /></details> : null}
+        {disease.granularPathway ? <details className="em-more"><summary>Monitoring schedule and decision points</summary><MonitoringSchedule phases={disease.granularPathway.Investigations} showSources={false} /></details> : null}
       </section>
 
       <section id="management" className="em-section" aria-labelledby="management-title">
@@ -144,7 +144,7 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
                 <tbody>{medicationPlan.regimens.map((regimen) => (
                   <tr key={`${regimen.genericName}-${regimen.indication}`}>
                     <th scope="row">{regimen.genericName}<small>{withoutInlineSourceLocators(regimen.indication)} · {withoutInlineSourceLocators(regimen.patientGroup)}</small></th>
-                    <td>{withoutInlineSourceLocators(regimen.dose)}<span className="em-regimen-pills"><span className="pill pill-sky pill-sm">{regimen.route}</span><span className="pill pill-violet pill-sm">{regimen.frequency}</span><span className="pill pill-amber pill-sm"><Clock3 size={13} aria-hidden="true" />{regimen.duration}</span></span></td>
+                    <td>{withoutInlineSourceLocators(regimen.dose)}<span className="em-regimen-pills"><span className="pill pill-sky pill-sm">{withoutInlineSourceLocators(regimen.route)}</span><span className="pill pill-violet pill-sm">{withoutInlineSourceLocators(regimen.frequency)}</span><span className="pill pill-amber pill-sm"><Clock3 size={13} aria-hidden="true" />{withoutInlineSourceLocators(regimen.duration)}</span></span></td>
                     {hasContraindications ? <td className="em-contra">{regimen.contraindications?.length ? <List items={regimen.contraindications} /> : <span className="em-muted">See product label</span>}</td> : null}
                     <td><List items={[...regimen.adjustments, ...regimen.monitoring.map((item) => `Monitor: ${item}`)]} /></td>
                   </tr>
@@ -154,18 +154,7 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
           </>
         ) : medicationPlan?.note ? <p className="em-footnote">{withoutInlineSourceLocators(medicationPlan.note)}</p> : null}
 
-        {disease.guidelineComparison ? (
-          <>
-            <h3>{disease.guidelineComparison.title}</h3>
-            <div className="em-table-wrap">
-              <table className="em-table">
-                <thead><tr><th scope="col">Parameter</th>{disease.guidelineComparison.columns.map((column) => <th scope="col" key={column}>{column}</th>)}</tr></thead>
-                <tbody>{disease.guidelineComparison.rows.map((row) => <tr key={row.parameter}><th scope="row">{row.parameter}</th>{row.values.map((value, index) => <td key={`${row.parameter}-${index}`}>{withoutInlineSourceLocators(value)}</td>)}</tr>)}</tbody>
-              </table>
-            </div>
-            {disease.guidelineComparison.note ? <p className="em-footnote">{withoutInlineSourceLocators(disease.guidelineComparison.note)}</p> : null}
-          </>
-        ) : disease.granularPathway ? <TreatmentDetails plans={disease.granularPathway.Treatment_Plan} /> : null}
+        {disease.granularPathway ? <TreatmentDetails plans={disease.granularPathway.Treatment_Plan} showSources={false} /> : null}
 
         {pearls.length || pitfalls.length ? (
           <div className="em-two-col">
@@ -205,7 +194,7 @@ export function collectReferences(disease: DiseaseDetail, versionSource?: Citati
   disease.teaching?.references?.forEach((ref) => add(ref.title, ref.url, [ref.edition, ref.locator].filter(Boolean).join(" · ")));
   disease.pathophysiology.references?.forEach((ref) => add(ref.title, ref.url, ref.edition));
   [...disease.investigations.ruleIn, ...disease.investigations.ruleOut].forEach((item) => item.references?.forEach((ref) => add(ref.title, ref.url, ref.edition)));
-  disease.medicationPlan?.regimens.forEach((regimen) => add(regimen.sourceTitle, regimen.sourceUrl, regimen.sourceEdition));
+  (disease.medicationPlan ?? getMedicationPlan(disease.id))?.regimens.forEach((regimen) => add(regimen.sourceTitle, regimen.sourceUrl, regimen.sourceEdition));
   const pathway = disease.granularPathway;
   if (pathway) {
     const sources = [pathway.evidence, ...pathway.Investigations.map((item) => item.evidence), ...pathway.Treatment_Plan.flatMap((plan) => [plan.evidence, ...plan.branches.map((branch) => branch.evidence)])].flatMap((evidence) => evidence.sources);

@@ -7,6 +7,7 @@ import { TopicApproveButton } from "@/components/topic-approve-button";
 import { getApprovedDiseaseGuideline, getApprovedDiseaseGuidelines } from "@/lib/data/disease-guidelines";
 import { canonicalTopicId } from "@/lib/data/merged-topics";
 import { approveLiveTopic } from "./actions";
+import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
 
 function formatDate(date: string) {
   return new Intl.DateTimeFormat("en-GB", { day: "2-digit", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${date}T00:00:00Z`));
@@ -57,7 +58,7 @@ export default async function DiseaseDetailPage({ params, searchParams }: { para
             <span className="pill pill-aqua">Clinical scenario</span>
             <span className="pill pill-sky">{disease.pillar}</span>
           </div>
-          <h1 id="scenario-title" className="scenario-title">{disease.title}</h1>
+          <h1 id="scenario-title" className="scenario-title">{withoutInlineSourceLocators(disease.title)}</h1>
         </header>
         <EmergencyTopic disease={disease} investigationSource={result.investigationSource} />
 

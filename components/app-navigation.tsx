@@ -25,6 +25,7 @@ import {
 } from "@/components/icons-3d";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { searchTopics } from "@/lib/topic-search";
+import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
 
 type NavItem = { href: string; label: string; icon: LucideIcon };
 
@@ -61,11 +62,13 @@ const adminLinks: NavItem[] = [
 const carePillars = ["Urgent Care", "Chronic Care", "Keep Well", "Planned Care", "Safe Birth", "Palliative Care"];
 
 function canonicalPath(pathname: string) {
+  if (pathname === "/dashboard/diseases" || pathname.startsWith("/dashboard/diseases/")) {
+    return pathname.replace("/dashboard/diseases", "/dashboard/disease-management");
+  }
   return {
     "/clinical-library": "/dashboard/clinical-guidelines",
     "/competencies": "/dashboard/competencies",
     "/modules": "/dashboard/hospital-protocols",
-    "/dashboard/diseases": "/dashboard/disease-management",
     "/dashboard/medicines-formulary": "/dashboard/formulary",
     "/dashboard/hospital-protocols": "/dashboard/protocols",
     "/dashboard/clinical-governance": "/dashboard/governance",
@@ -290,9 +293,9 @@ function TopicNavigator({ currentId }: { currentId: string | null }) {
                       onMouseEnter={() => router.prefetch(href)}
                       onFocus={() => router.prefetch(href)}
                       aria-current={topic.id === currentId ? "page" : undefined}
-                      title={topic.title}
+                      title={withoutInlineSourceLocators(topic.title)}
                     >
-                      {topic.title}
+                      {withoutInlineSourceLocators(topic.title)}
                     </Link>
                   </li>
                 );

@@ -15,5 +15,11 @@ describe("clinical display text", () => {
       .toBe("Low, moderate, high, active.");
     expect(withoutInlineSourceLocators("See the BNF for dosing in renal impairment (NG19 Table 2)."))
       .toBe("Check dosing in renal impairment.");
+    expect(withoutInlineSourceLocators("NICE: call an ambulance if pain persists."))
+      .toBe("call an ambulance if pain persists.");
+    expect(withoutInlineSourceLocators("Hypertension in Adults [Adapted from NICE]"))
+      .toBe("Hypertension in Adults");
+    expect(withoutInlineSourceLocators("NICE finds not enough evidence to support a specific diet."))
+      .toBe("There is not enough evidence to support a specific diet.");
   });
 });
