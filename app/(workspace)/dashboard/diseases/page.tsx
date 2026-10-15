@@ -2,11 +2,12 @@ import { ShieldCheck } from "@/components/icons-3d";
 import { DiseaseDirectoryClient } from "@/components/diseases/DiseaseDirectoryClient";
 import { DiseaseManagementNavigation } from "@/components/diseases/DiseaseManagementNavigation";
 import { getApprovedDiseaseGuidelines } from "@/lib/data/disease-guidelines";
+import { getDiseaseDraftTopicCount } from "@/lib/data/disease-drafts";
 
 export default async function DiseaseDirectoryPage({ searchParams }: { searchParams: Promise<{ q?: string | string[] }> }) {
   const params = await searchParams;
   const initialQuery = (Array.isArray(params.q) ? params.q[0] : params.q)?.trim().slice(0, 200) ?? "";
-  const result = await getApprovedDiseaseGuidelines();
+  const [result, draftTopicCount] = await Promise.all([getApprovedDiseaseGuidelines(), getDiseaseDraftTopicCount()]);
 
   return (
     <main className="page disease-directory-page">
@@ -22,7 +23,7 @@ export default async function DiseaseDirectoryPage({ searchParams }: { searchPar
         </div>
       </header>
 
-      <DiseaseManagementNavigation active="directory" />
+      <DiseaseManagementNavigation active="directory" draftTopicCount={draftTopicCount} />
 
       <DiseaseDirectoryClient key={initialQuery} diseases={result.diseases} state={result.state} rejectedCount={result.rejectedCount} withheldCount={result.withheldCount} initialQuery={initialQuery} />
     </main>

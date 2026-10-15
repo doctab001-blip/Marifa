@@ -28,6 +28,7 @@ import { getApprovedDiseaseGuidelines } from "@/lib/data/disease-guidelines";
 import { isTemporaryOpenAdminMode } from "@/lib/access-mode";
 import { getCurrentViewer } from "@/lib/supabase/session";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { getDiseaseDraftTopicCount } from "@/lib/data/disease-drafts";
 
 const dateFormat = new Intl.DateTimeFormat("en-SA", { dateStyle: "medium", timeZone: "Asia/Riyadh" });
 
@@ -66,12 +67,12 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
 
 async function DashboardContent({ viewerId }: { viewerId?: string }) {
   const assignmentsPromise = loadAssignments(viewerId);
-  const [guidelines, assignments] = await Promise.all([
+  const [guidelines, assignments, draftTopicCount] = await Promise.all([
     getApprovedDiseaseGuidelines(),
     assignmentsPromise,
+    getDiseaseDraftTopicCount(),
   ]);
   const activeGuidelines = guidelines.diseases.length;
-  const draftsPending = guidelines.withheldCount;
   const recentGuidelines = [...guidelines.diseases].sort((x, y) => String(y.lastReviewed).localeCompare(String(x.lastReviewed))).slice(0, 6);
   const formularyUpdates = hospitalAlerts.filter(({ id }) => id.startsWith("formulary")).length;
 
@@ -90,7 +91,7 @@ async function DashboardContent({ viewerId }: { viewerId?: string }) {
 
         <div className="metric-grid" aria-label="Library metrics">
           <MetricCard tone="teal" label="Active guidelines" value={activeGuidelines} note="Live in the clinical directory" href="/dashboard/diseases" icon={<Library size={18} aria-hidden="true" />} />
-          <MetricCard tone="yellow" label="Draft reviews pending" value={draftsPending} note="Awaiting authoring or clinical review" href="/dashboard/diseases/drafts" icon={<FileClock size={18} aria-hidden="true" />} />
+          <MetricCard tone="yellow" label={`Draft topics (${draftTopicCount})`} value={draftTopicCount} note="Awaiting authoring or clinical review" href="/dashboard/diseases/drafts" icon={<FileClock size={18} aria-hidden="true" />} />
           <MetricCard tone="blue" label="Medical calculators" value={clinicalCalculators.length} note="Evidence-linked point-of-care tools" href="/dashboard/medical-calculators" icon={<Calculator size={18} aria-hidden="true" />} />
           <MetricCard tone="magenta" label="Formulary updates" value={formularyUpdates} note="Recent changes (sample data)" href="/dashboard/medicines-formulary" icon={<Pill size={18} aria-hidden="true" />} />
         </div>

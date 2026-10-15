@@ -85,10 +85,11 @@ function currentTopicId(pathname: string) {
   return match && match[1] !== "drafts" ? decodeURIComponent(match[1]) : null;
 }
 
-export function WorkspaceSidebar({ organizationName, organizationNote, temporaryAdminMode }: {
+export function WorkspaceSidebar({ organizationName, organizationNote, temporaryAdminMode, draftTopicCount }: {
   organizationName: string;
   organizationNote: string;
   temporaryAdminMode: boolean;
+  draftTopicCount: number;
 }) {
   const pathname = usePathname() ?? "";
   const activeModule = getActiveItem(pathname);
@@ -116,6 +117,7 @@ export function WorkspaceSidebar({ organizationName, organizationNote, temporary
             module={moduleItem}
             pathname={pathname}
             temporaryAdminMode={temporaryAdminMode}
+            draftTopicCount={draftTopicCount}
             onShowAll={() => setPeekPath(pathname)}
           />
         )}
@@ -149,7 +151,7 @@ function HomePanel({ activeLabel, returnTo, onReturn }: { activeLabel?: string; 
   );
 }
 
-function ModulePanel({ module, pathname, temporaryAdminMode, onShowAll }: { module: NavItem; pathname: string; temporaryAdminMode: boolean; onShowAll: () => void }) {
+function ModulePanel({ module, pathname, temporaryAdminMode, draftTopicCount, onShowAll }: { module: NavItem; pathname: string; temporaryAdminMode: boolean; draftTopicCount: number; onShowAll: () => void }) {
   const Icon = module.icon;
   const section = sections.find(({ items }) => items.includes(module));
   const isDiseases = module.href === "/dashboard/disease-management";
@@ -179,11 +181,12 @@ function ModulePanel({ module, pathname, temporaryAdminMode, onShowAll }: { modu
         <div><small>{section?.label ?? "Workspace"}</small><strong>{module.label}</strong></div>
       </div>
       <div className="sidebar-nav-section">
-        {links.map(({ href, label, icon: LinkIcon }) => (
-          <Link key={href} href={href} className="nav-link" title={label} aria-label={label} aria-current={activeLink?.href === href ? "page" : undefined}>
-            <LinkIcon size={18} strokeWidth={1.8} aria-hidden="true" /><span>{label}</span>
+        {links.map(({ href, label, icon: LinkIcon }) => {
+          const displayLabel = href === "/dashboard/diseases/drafts" ? `${label} (${draftTopicCount})` : label;
+          return <Link key={href} href={href} className="nav-link" title={displayLabel} aria-label={displayLabel} aria-current={activeLink?.href === href ? "page" : undefined}>
+            <LinkIcon size={18} strokeWidth={1.8} aria-hidden="true" /><span>{displayLabel}</span>
           </Link>
-        ))}
+        })}
       </div>
       {isDiseases && <TopicNavigator currentId={currentTopicId(pathname)} />}
       {related.length > 0 && (

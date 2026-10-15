@@ -1,14 +1,14 @@
 import Link from "next/link";
 import { FileClock, Stethoscope } from "@/components/icons-3d";
 
-export function DiseaseManagementNavigation({ active }: { active: "directory" | "drafts" }) {
+export function DiseaseManagementNavigation({ active, draftTopicCount }: { active: "directory" | "drafts"; draftTopicCount: number }) {
   return (
     <nav className="disease-management-tabs" aria-label="Disease Management menu">
       <Link href="/dashboard/diseases" aria-current={active === "directory" ? "page" : undefined}>
         <Stethoscope size={16} aria-hidden="true" /> Disease directory
       </Link>
       <Link href="/dashboard/diseases/drafts" aria-current={active === "drafts" ? "page" : undefined}>
-        <FileClock size={16} aria-hidden="true" /> Draft
+        <FileClock size={16} aria-hidden="true" /> Drafts ({draftTopicCount})
       </Link>
     </nav>
   );

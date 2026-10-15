@@ -1,5 +1,6 @@
 import "server-only";
 
+import { cache } from "react";
 import { getCurrentViewer } from "@/lib/supabase/session";
 import { isSupabaseConfigured } from "@/lib/supabase/config";
 import { createSupabaseDataClient } from "@/lib/supabase/data-client";
@@ -21,8 +22,9 @@ export type DiseaseDraft = {
   auditSummary?: string;
 };
 
-export async function getDiseaseDrafts(): Promise<{
+async function loadDiseaseDrafts(): Promise<{
   drafts: DiseaseDraft[];
+  topicCount: number;
   state: "ready" | "unavailable";
   isAdmin: boolean;
 }> {
@@ -30,13 +32,26 @@ export async function getDiseaseDrafts(): Promise<{
   const isAdmin = Boolean(viewer?.isAdmin);
   const isPlatformAdmin = viewer?.role === "Platform Admin";
   if (!viewer || !isSupabaseConfigured() || viewer.organizationId === "pending-membership") {
-    return { drafts: [], state: "unavailable", isAdmin };
+    return { drafts: [], topicCount: 0, state: "unavailable", isAdmin };
   }
 
   try {
     const supabase = await createSupabaseDataClient();
     const drafts: DiseaseDraft[] = [];
     const pageSize = 500;
+
+    // A published current copy takes precedence in the platform. Draft versions remain in
+    // version history but are not listed again in Drafts, preventing duplicate topics.
+    const publishedTopicIds = new Set<string>();
+    const { data: publishedRows, error: publishedError } = await supabase
+      .from("clinical_guidelines")
+      .select("id,guideline_versions!inner(id)")
+      .or(`organization_id.eq.${viewer.organizationId},and(organization_id.is.null,is_shared_reference.eq.true)`)
+      .in("status", ["approved", "published"])
+      .eq("guideline_versions.is_current", true)
+      .in("guideline_versions.status", ["approved", "published"]);
+    if (publishedError) return { drafts: [], topicCount: 0, state: "unavailable", isAdmin };
+    for (const row of publishedRows ?? []) publishedTopicIds.add(row.id);
 
     for (let start = 0; ; start += pageSize) {
       const { data, error } = await supabase
@@ -47,9 +62,10 @@ export async function getDiseaseDrafts(): Promise<{
         .order("created_at", { ascending: false })
         .range(start, start + pageSize - 1);
 
-      if (error || !data) return { drafts: [], state: "unavailable", isAdmin };
+      if (error || !data) return { drafts: [], topicCount: 0, state: "unavailable", isAdmin };
 
       for (const item of data) {
+        if (publishedTopicIds.has(item.id)) continue;
         const related = item.guideline_versions as unknown as Array<{
           id: string;
           version: string;
@@ -83,10 +99,17 @@ export async function getDiseaseDrafts(): Promise<{
     }
 
     drafts.sort((a, b) => a.title.localeCompare(b.title, "en") || b.createdAt.localeCompare(a.createdAt));
-    return { drafts, state: "ready", isAdmin };
+    return { drafts, topicCount: new Set(drafts.map((draft) => draft.id)).size, state: "ready", isAdmin };
   } catch {
-    return { drafts: [], state: "unavailable", isAdmin };
+    return { drafts: [], topicCount: 0, state: "unavailable", isAdmin };
   }
+}
+
+export const getDiseaseDrafts = cache(loadDiseaseDrafts);
+
+export async function getDiseaseDraftTopicCount() {
+  const result = await getDiseaseDrafts();
+  return result.state === "ready" ? result.topicCount : 0;
 }
 
 export async function getDiseaseDraftVersion(versionId: string) {

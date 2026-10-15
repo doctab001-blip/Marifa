@@ -27,7 +27,7 @@ export default async function DiseaseDraftsPage({ searchParams }: { searchParams
         </div>
       </header>
 
-      <DiseaseManagementNavigation active="drafts" />
+      <DiseaseManagementNavigation active="drafts" draftTopicCount={result.topicCount} />
 
       <p className="clinical-review-draft-notice" role="note"><strong>Temporary admin access:</strong> sign-in is disabled for this development phase. Anyone with this site link can open the editor and use the approval controls. Every approved version still records the configured Marifa administrator and approval time.</p>
 
@@ -51,7 +51,7 @@ export default async function DiseaseDraftsPage({ searchParams }: { searchParams
         <section className="disease-draft-list" aria-labelledby="disease-draft-list-title">
           <div className="directory-section-heading">
             <div><p className="disease-kicker">Organization workspace</p><h2 id="disease-draft-list-title">Draft topics</h2></div>
-            <p role="status">{result.drafts.length} draft versions across {new Set(result.drafts.map((draft) => draft.id)).size} topics</p>
+            <p role="status">{result.drafts.length} draft versions across {result.topicCount} topics</p>
           </div>
           <div className="disease-draft-grid">
             {result.drafts.map((draft) => (
