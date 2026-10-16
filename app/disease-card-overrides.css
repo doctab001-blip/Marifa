@@ -1,0 +1,83 @@
+/* Overrides for disease card tile to match the older tile design shown in the screenshot.
+   Added as a small global override file so we don't need to touch many places.
+   This file intentionally uses existing CSS class names already present in the project
+   and leverages the design tokens defined in globals.css.
+*/
+
+/* Container */
+.disease-card {
+  border-radius: 12px;
+  border: 1px solid #e6f3ef; /* neutral soft outline */
+  background: linear-gradient(180deg, #ffffff, #fff);
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(38, 47, 77, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform .06s ease, box-shadow .06s ease, border-color .12s ease;
+}
+.disease-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 26px rgba(38,47,77,0.08);
+}
+
+/* Urgent outline variant */
+.disease-card.is-urgent {
+  border-color: #ffd9c2; /* soft orange outline */
+  background: linear-gradient(180deg, #fff, #fff);
+}
+
+/* Top row */
+.disease-card-top { display:flex; justify-content:space-between; gap:12px; align-items:flex-start; margin-bottom:6px; }
+.disease-pillar-label {
+  font-size: 12px;
+  color: var(--royal);
+  background: var(--royal-soft);
+  padding: 6px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+/* Status badge */
+.disease-status-badge {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.04);
+  background: #fff;
+  color: var(--royal-ink);
+  font-weight: 700;
+}
+.disease-status-badge.is-approved { color: #067647; background: #ecfdf3; border-color: #dbf7ee; }
+.disease-status-badge.is-draft { color: #6941c6; background: #f4f3ff; border-color: #d9d6fe; }
+.disease-status-badge.is-review { color: #b54708; background: #fff8e7; border-color: #ffecd1; }
+
+/* Title and speciality badges */
+.disease-card-copy h3 { margin:0 0 8px; font-size:16px; font-weight:700; color:#0f172a; }
+.disease-speciality-badges { display:flex; gap:8px; flex-wrap:wrap; }
+.disease-speciality-badge, .disease-sub-speciality-badge {
+  font-size:12px;
+  padding:6px 8px;
+  border-radius:999px;
+  font-weight:600;
+}
+.disease-speciality-badge { color: var(--royal-ink); background: var(--royal-soft); }
+.disease-sub-speciality-badge { color: #475569; background: #f1f5f9; font-weight:500; }
+
+/* Footer */
+.disease-card-footer { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:12px; padding-top:8px; border-top:1px solid #eef1f5; }
+.disease-authority-badge { padding:6px 8px; border-radius:999px; color:#344054; background:#f2f4f7; font-weight:600; }
+.disease-source-type { color: var(--muted); margin-left:8px; }
+.disease-card-link-label { color: var(--royal); font-weight:700; display:flex; align-items:center; gap:8px; }
+
+/* Ensure link label sits to the right on wider cards but flows on small screens */
+.disease-card-footer .disease-card-link-label { margin-left:auto; }
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .disease-card { padding: 14px; }
+  .disease-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Small accessibility tweak: increase hit area */
+a.disease-card { text-decoration: none; }
