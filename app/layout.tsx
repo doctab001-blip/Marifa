@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import "./theme-dark.css";
 import "./glass.css";
+import "./disease-card-overrides.css";
 import { Icon3DDefs } from "@/components/icons-3d";
 
 // Inter: one variable font file serves every weight, chosen for clinical legibility.
