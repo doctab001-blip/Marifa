@@ -18,9 +18,9 @@ export function PathwaySequence({ steps, sources = [], compact = false }: { step
         </div>
       </header>
 
-      <ol className="pathway-sequence-list">
+      <div className="pathway-sequence-list" role="list">
         {steps.map((step, index) => (
-          <li className="pathway-sequence-step" key={step.id}>
+          <div className="pathway-sequence-step" key={step.id} role="listitem">
             <div className="pathway-marker" aria-hidden="true">{index + 1}</div>
             <article className="pathway-step-content">
               <div className="pathway-step-heading">
@@ -28,9 +28,9 @@ export function PathwaySequence({ steps, sources = [], compact = false }: { step
                 <h3>{withoutInlineSourceLocators(step.title)}</h3>
                 <p className="pathway-timeframe"><span className="pill pill-amber pill-sm pill-wrap"><Clock3 size={14} aria-hidden="true" /><span className="sr-only">Timeframe: </span>{withoutInlineSourceLocators(step.timeframe)}</span></p>
               </div>
-              <ol className="pathway-actions list-decimal">
+              <ul className="pathway-actions">
                 {step.actions.map((action, actionIndex) => <li key={`${actionIndex}-${action}`}><ClinicalTimeframe text={withoutInlineSourceLocators(action)} /></li>)}
-              </ol>
+              </ul>
               {step.branches && (
                 <div className="pathway-branches" aria-label={`Decision branches for ${step.title}`}>
                   <div className="pathway-branches-label">
@@ -52,9 +52,9 @@ export function PathwaySequence({ steps, sources = [], compact = false }: { step
                 </div>
               )}
             </article>
-          </li>
+          </div>
         ))}
-      </ol>
+      </div>
       {compact ? null : <SourceCitation sources={sources} />}
     </section>
   );

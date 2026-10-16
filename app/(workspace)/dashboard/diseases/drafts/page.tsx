@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, FileClock, FileSearch, ShieldAlert } from "@/components/icons-3d";
 import { DiseaseManagementNavigation } from "@/components/diseases/DiseaseManagementNavigation";
 import { getDiseaseDrafts } from "@/lib/data/disease-drafts";
-import { approveGuidelineVersion } from "@/app/(workspace)/dashboard/admin/guidelines/actions";
+import { deleteDraftVersion, transitionGuidelineVersion } from "@/app/(workspace)/dashboard/admin/guidelines/actions";
 import { approvalErrorMessages } from "@/lib/approval-errors";
 
 function formatDate(date: string) {
@@ -51,7 +51,7 @@ export default async function DiseaseDraftsPage({ searchParams }: { searchParams
         <section className="disease-draft-list" aria-labelledby="disease-draft-list-title">
           <div className="directory-section-heading">
             <div><p className="disease-kicker">Organization workspace</p><h2 id="disease-draft-list-title">Draft topics</h2></div>
-            <p role="status">{result.drafts.length} draft versions across {result.topicCount} topics</p>
+            <p role="status">{result.topicCount} draft topics</p>
           </div>
           <div className="disease-draft-grid">
             {result.drafts.map((draft) => (
@@ -62,12 +62,12 @@ export default async function DiseaseDraftsPage({ searchParams }: { searchParams
                 </div>
                 {draft.canEdit && <div className="disease-draft-actions disease-draft-actions-top">
                   <Link className="ui-button ui-button-secondary" href={`/dashboard/admin/guidelines/${encodeURIComponent(draft.id)}?version=${encodeURIComponent(draft.versionId)}`}>Edit topic <ArrowRight size={15} aria-hidden="true" /></Link>
-                  {draft.canApprove && <form action={approveGuidelineVersion}>
+                  {draft.canApprove && <form action={transitionGuidelineVersion}>
                     <input type="hidden" name="id" value={draft.id} />
                     <input type="hidden" name="versionId" value={draft.versionId} />
-                    <input type="hidden" name="destination" value="drafts" />
-                    <button className="ui-button ui-button-primary" type="submit">Approve version</button>
-                  </form>}
+                    <input type="hidden" name="target" value="published" />
+                    <button className="ui-button ui-button-primary" type="submit">Submit to Published</button>
+                  </form>}{draft.canEdit && <form action={deleteDraftVersion}><input type="hidden" name="id" value={draft.id} /><input type="hidden" name="versionId" value={draft.versionId} /><button className="ui-button ui-button-secondary" type="submit">Delete</button></form>}
                 </div>}
                 <h3><Link className="disease-draft-card-link" href={draft.canEdit ? `/dashboard/admin/guidelines/${encodeURIComponent(draft.id)}?version=${encodeURIComponent(draft.versionId)}` : `/dashboard/diseases/drafts/${encodeURIComponent(draft.versionId)}`} aria-label={`Open ${draft.title}, version ${draft.version}`}>{draft.title}</Link></h3>
                 <p className="disease-draft-meta">{draft.specialty} <span aria-hidden="true">·</span> Prepared {formatDate(draft.createdAt)}</p>

@@ -207,7 +207,7 @@ export async function getDraftGuideline(id: string, requestedVersionId?: string)
     .select("id,title,specialty,status,guideline_versions!inner(id,version,status,content,source_title,source_url,publication_date,review_date,is_current)")
     .eq("id", id);
   if (requestedVersionId) {
-    query = query.eq("guideline_versions.id", requestedVersionId).in("guideline_versions.status", ["draft", "under_review"]);
+    query = query.eq("guideline_versions.id", requestedVersionId).in("guideline_versions.status", ["draft", "under_review", "published", "approved"]);
   } else {
     query = query.eq("guideline_versions.is_current", true);
   }
@@ -233,7 +233,8 @@ export async function getDraftGuideline(id: string, requestedVersionId?: string)
     reviewDate: version.review_date,
     versionId: version.id,
     versionStatus: version.status,
-    isLive: version.is_current && ["approved", "published"].includes(version.status),
+    isLive: version.is_current && version.status === "approved",
+    isPublished: version.is_current && version.status === "published",
     canApprove: ["draft", "under_review"].includes(version.status),
   };
 }
@@ -252,6 +253,6 @@ export async function getAdminSettings() {
       displayName: profileResult.data?.display_name ?? "Marifa Administrator",
       professionalLevel: membershipResult.data?.professional_level ?? "consultant",
     },
-    settings: settingsResult.data ?? { primary_color: "#0f766e", locale: "en-SA", timezone: "Asia/Riyadh" },
+    settings: settingsResult.data ?? { primary_color: "#0e7490", locale: "en-SA", timezone: "Asia/Riyadh" },
   };
 }

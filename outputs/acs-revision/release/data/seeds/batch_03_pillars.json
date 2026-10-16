@@ -1,0 +1,1317 @@
+[
+  {
+    "id": "a14c7e92-5b31-4d68-9f20-6c83e1b7a405",
+    "title": "Acute Coronary Syndrome Assessment and Escalation Pathway",
+    "specialty": "Emergency Medicine and Cardiology",
+    "pillar": "Urgent Care",
+    "authority": "MOH",
+    "status": "under_review",
+    "version": "1.1",
+    "lastReviewed": "2026-10-10",
+    "pathophysiology": {
+      "summary": "Acute coronary syndrome (ACS) describes an acute spectrum of myocardial ischaemia caused by an abrupt imbalance between oxygen supply and myocardial demand. A common initiating event is disruption or erosion of an atherosclerotic coronary plaque. Exposure of thrombogenic material activates platelets and the coagulation cascade, producing a thrombus that may partially or completely obstruct coronary flow. Vasoconstriction, distal microembolisation, and pre-existing fixed stenoses can further reduce perfusion. Less commonly, coronary spasm, spontaneous dissection, embolism, or severe supply–demand mismatch produces an ACS-like presentation without acute plaque thrombosis.\n\nThe amount and duration of flow reduction, collateral circulation, and myocardial oxygen demand determine whether injury remains transient or progresses to irreversible necrosis. Ischaemic myocardium develops electrical instability and impaired contractility; this can cause dynamic ECG changes, ventricular dysfunction, acute heart failure, shock, or malignant arrhythmia. When cardiomyocyte injury occurs, intracellular proteins including cardiac troponin enter the circulation. A rise or fall in troponin indicates acute myocardial injury, but infarction requires interpretation alongside evidence of ischaemia such as symptoms, ECG findings, imaging, or coronary thrombus. Therefore, ACS is not defined by a single symptom, ECG, or biomarker result. The clinical spectrum includes unstable angina and myocardial infarction with or without persistent ST elevation; the pattern reflects the severity and persistence of ischaemia and the presence of myocardial necrosis. Older adults, women, and people with diabetes may have less typical symptoms, so assessment integrates the history, serial ECGs, assay-specific troponin pathways, haemodynamic state, and competing time-critical diagnoses. This explanation is an educational synthesis; classification and treatment decisions must follow current local protocols and specialist assessment.",
+      "keyMechanisms": [
+        "Atherosclerotic plaque disruption or erosion with platelet activation and thrombus formation",
+        "Reduced coronary oxygen supply relative to myocardial demand, sometimes without plaque thrombosis",
+        "Time-dependent ischaemia causing electrical dysfunction, impaired contraction, and potentially irreversible myocyte injury",
+        "Troponin release from injured cardiomyocytes; infarction requires clinical evidence of ischaemia as well as myocardial injury"
+      ],
+      "references": [
+        {
+          "title": "Harrison's Principles of Internal Medicine",
+          "edition": "22nd edition (2025)",
+          "url": "https://accessmedicine.mhmedical.com/book.aspx?bookid=3541"
+        },
+        {
+          "title": "2025 ACC/AHA/ACEP/NAEMSP/SCAI Guideline for the Management of Patients With Acute Coronary Syndromes",
+          "edition": "2025 guideline",
+          "url": "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001309"
+        }
+      ]
+    },
+    "presentation": {
+      "symptoms": [
+        "Chest pressure, tightness, heaviness, or discomfort",
+        "Discomfort radiating to arm, shoulder, jaw, back, or upper abdomen",
+        "Dyspnoea, nausea, sweating, or unusual fatigue",
+        "Atypical or minimal symptoms, especially in older adults and people with diabetes"
+      ],
+      "physicalSigns": [
+        "Pallor, diaphoresis, or respiratory distress",
+        "Tachycardia, bradycardia, hypotension, or irregular pulse",
+        "Possible heart-failure signs such as crackles or raised jugular venous pressure"
+      ],
+      "redFlags": [
+        "Persistent or recurrent suspected cardiac chest discomfort",
+        "Acute ischaemic ECG pattern",
+        "Syncope, shock, pulmonary oedema, or life-threatening arrhythmia",
+        "Cardiac arrest or new neurological deficit"
+      ]
+    },
+    "differentials": [
+      {
+        "condition": "Aortic dissection",
+        "distinguishingFeatures": "Abrupt severe chest or back pain, pulse or blood-pressure asymmetry, or new aortic regurgitation."
+      },
+      {
+        "condition": "Pulmonary embolism",
+        "distinguishingFeatures": "Acute dyspnoea, pleuritic pain, hypoxaemia, or venous thromboembolism risk factors."
+      },
+      {
+        "condition": "Acute pericarditis",
+        "distinguishingFeatures": "Often pleuritic or positional pain with compatible ECG findings."
+      },
+      {
+        "condition": "Gastro-oesophageal or musculoskeletal pain",
+        "distinguishingFeatures": "May be meal-related, reflux-associated, movement-related, or reproducible; these features alone do not exclude ACS."
+      }
+    ],
+    "investigations": {
+      "ruleIn": [
+        {
+          "testName": "12-lead electrocardiogram",
+          "targetCondition": "Acute myocardial ischaemia or infarction",
+          "expectedFinding": "ST elevation or depression, dynamic T-wave change, or another acute ischaemic pattern",
+          "clinicalRationale": "Identify immediately actionable ischaemia and guide escalation.",
+          "tier": "specializedAdjunctive",
+          "modalityTarget": "12-lead electrocardiogram — Acute myocardial ischaemia or infarction"
+        },
+        {
+          "testName": "Serial high-sensitivity cardiac troponin",
+          "targetCondition": "Acute myocardial injury",
+          "expectedFinding": "Rise or fall with at least one value above the assay-specific 99th percentile, interpreted with symptoms and ECG",
+          "clinicalRationale": "Detect myocardial injury using symptom timing and the local assay pathway.",
+          "tier": "laboratory",
+          "modalityTarget": "Serial high-sensitivity cardiac troponin — Acute myocardial injury"
+        },
+        {
+          "testName": "Bedside echocardiography when indicated",
+          "targetCondition": "Regional ventricular dysfunction or mechanical complication",
+          "expectedFinding": "New regional wall-motion abnormality or cardiac dysfunction",
+          "clinicalRationale": "Assess instability or complications when clinically indicated.",
+          "tier": "specializedAdjunctive",
+          "modalityTarget": "Bedside echocardiography when indicated — Regional ventricular dysfunction or mechanical complication"
+        }
+      ],
+      "ruleOut": [
+        {
+          "testName": "Serial 12-lead electrocardiograms",
+          "targetCondition": "Evolving acute myocardial ischaemia",
+          "expectedFinding": "No dynamic ischaemic changes during assessment",
+          "clinicalRationale": "Repeat ECG when symptoms persist or recur; one normal ECG does not exclude ACS.",
+          "tier": "specializedAdjunctive",
+          "modalityTarget": "Serial 12-lead electrocardiograms — Evolving acute myocardial ischaemia"
+        },
+        {
+          "testName": "Serial high-sensitivity cardiac troponin using a validated local pathway",
+          "targetCondition": "Acute myocardial infarction",
+          "expectedFinding": "Values and change below pathway rule-out thresholds with appropriate timing",
+          "clinicalRationale": "Support rule-out only when the complete validated pathway and clinical assessment permit.",
+          "tier": "laboratory",
+          "modalityTarget": "Serial high-sensitivity cardiac troponin using a validated local pathway — Acute myocardial infarction"
+        },
+        {
+          "testName": "Chest radiograph when indicated",
+          "targetCondition": "Selected alternative acute thoracic causes",
+          "expectedFinding": "No finding supporting an alternative such as pulmonary oedema or pneumothorax",
+          "clinicalRationale": "Assess relevant alternatives; a normal result does not rule out ACS.",
+          "tier": "firstLineImaging",
+          "modalityTarget": "Chest radiograph when indicated — Selected alternative acute thoracic causes"
+        }
+      ]
+    },
+    "clinicalManagement": [
+      {
+        "id": "acs-1",
+        "title": "Immediate assessment and stabilisation",
+        "timeframe": "Immediately",
+        "actions": [
+          "Assess airway, breathing, circulation, mental status, vital signs, and pain.",
+          "Obtain and interpret a 12-lead ECG promptly; repeat for persistent or changing symptoms.",
+          "Monitor and establish access according to acuity and local protocol.",
+          "Take focused history including onset, risk factors, medicines, allergies, and bleeding risk.",
+          "Activate local emergency, cardiology, and reperfusion pathways when indicated."
+        ],
+        "branches": [
+          {
+            "condition": "Arrest, shock, life-threatening arrhythmia, or pulmonary oedema",
+            "actions": [
+              "Begin the relevant resuscitation or emergency stabilisation pathway.",
+              "Request immediate senior, critical-care, and cardiology support.",
+              "Do not delay escalation for routine investigations."
+            ]
+          },
+          {
+            "condition": "Aortic dissection or another time-critical alternative is suspected",
+            "actions": [
+              "Escalate urgently for senior assessment and targeted evaluation.",
+              "Assess competing diagnoses and contraindications before ACS-directed treatment."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "acs-2",
+        "title": "Confirm working diagnosis and risk",
+        "timeframe": "Initial emergency assessment",
+        "actions": [
+          "Use serial ECG and biomarker testing under the local validated pathway.",
+          "Order blood count, renal function, electrolytes, glucose, and other tests as indicated.",
+          "Assess haemodynamic status, bleeding risk, comorbidities, and suitability for invasive or reperfusion strategies.",
+          "Document diagnostic uncertainty and escalation plan."
+        ],
+        "branches": [
+          {
+            "condition": "ECG or clinical status indicates immediate reperfusion",
+            "actions": [
+              "Activate the local reperfusion pathway without waiting for routine serial biomarkers.",
+              "Arrange urgent transfer if required by local capability."
+            ]
+          },
+          {
+            "condition": "Initial ECG is non-diagnostic but ACS remains possible",
+            "actions": [
+              "Continue observation and serial ECG and biomarker assessment.",
+              "Escalate for recurrent pain, ECG changes, or deterioration."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "acs-3",
+        "title": "Disposition and prevention planning",
+        "timeframe": "After initial risk assessment",
+        "actions": [
+          "Admit or transfer confirmed ACS, high-risk cases, or unresolved diagnostic concern.",
+          "Use the approved ACS protocol and specialist input for treatment decisions.",
+          "For discharged patients, document stability, follow-up, and return precautions.",
+          "Arrange cardiology and cardiac-rehabilitation follow-up after confirmed ACS."
+        ],
+        "branches": [
+          {
+            "condition": "ACS confirmed or high-risk features persist",
+            "actions": [
+              "Continue monitored hospital care and specialist-led management.",
+              "Document receiving team and structured handover."
+            ]
+          },
+          {
+            "condition": "ACS excluded through local pathway and no emergency alternative suspected",
+            "actions": [
+              "Provide a documented explanation and follow-up plan.",
+              "Advise emergency reassessment for recurrent or worsening symptoms."
+            ]
+          }
+        ]
+      }
+    ],
+    "nonClinicalManagement": {
+      "patientEducation": [
+        "Explain urgent ECGs, blood tests, monitoring, and possible transfer.",
+        "Discuss warning symptoms requiring emergency reassessment.",
+        "For confirmed ACS, explain follow-up and prescribed risk-reduction plan."
+      ],
+      "lifestyleAndDiet": [
+        "Offer individualised tobacco-cessation support, heart-healthy eating, physical activity, and cardiovascular risk reduction after acute assessment."
+      ],
+      "mdtReferrals": [
+        "Emergency medicine",
+        "Cardiology",
+        "Critical care when indicated",
+        "Cardiac rehabilitation",
+        "Primary care"
+      ],
+      "dischargeCriteria": [
+        "Time-critical causes have been assessed using an appropriate pathway.",
+        "Patient is clinically stable and disposition is documented.",
+        "Follow-up instructions and return precautions are communicated."
+      ],
+      "followUpPlan": "Arrange follow-up for the final diagnosis; confirmed ACS requires a documented cardiology and cardiac-rehabilitation plan."
+    }
+  },
+  {
+    "id": "b25d8f03-6c42-4e79-a130-7d94f2c8b516",
+    "title": "Type 2 Diabetes Mellitus Longitudinal Care Pathway",
+    "specialty": "Family Medicine and Endocrinology",
+    "pillar": "Chronic Care",
+    "authority": "SHC",
+    "status": "approved",
+    "version": "1.0",
+    "lastReviewed": "2026-10-10",
+    "pathophysiology": {
+      "summary": "Type 2 diabetes is chronic hyperglycaemia associated with insulin resistance and progressive impairment of insulin secretion, with risk of vascular and other complications.",
+      "keyMechanisms": [
+        "Reduced insulin sensitivity in liver, muscle, and adipose tissue",
+        "Progressive pancreatic beta-cell dysfunction",
+        "Chronic hyperglycaemia contributing to microvascular and macrovascular injury"
+      ]
+    },
+    "presentation": {
+      "symptoms": [
+        "May be asymptomatic and found on screening",
+        "Increased thirst, urination, or hunger",
+        "Fatigue, blurred vision, recurrent infections, or unintentional weight change"
+      ],
+      "physicalSigns": [
+        "Central adiposity or other metabolic risk features",
+        "Acanthosis nigricans in some patients",
+        "Possible peripheral sensory loss, foot lesions, or vascular disease"
+      ],
+      "redFlags": [
+        "Altered mental status, severe dehydration, or inability to maintain intake",
+        "Vomiting, abdominal pain, deep breathing, or suspected metabolic crisis",
+        "Severe hypoglycaemia or infected, ischaemic, or ulcerated foot"
+      ]
+    },
+    "differentials": [
+      {
+        "condition": "Type 1 diabetes mellitus",
+        "distinguishingFeatures": "May have rapid onset, ketosis, or insulin deficiency; investigate classification when uncertain."
+      },
+      {
+        "condition": "Medication-associated hyperglycaemia",
+        "distinguishingFeatures": "Temporal association with glucocorticoids or other glucose-affecting medicines."
+      },
+      {
+        "condition": "Secondary diabetes",
+        "distinguishingFeatures": "Pancreatic disease, endocrinopathy, or another underlying cause suggested by history or course."
+      },
+      {
+        "condition": "Transient stress hyperglycaemia",
+        "distinguishingFeatures": "Occurs during acute illness and may resolve; confirm persistent diabetes when appropriate."
+      }
+    ],
+    "investigations": {
+      "ruleIn": [
+        {
+          "testName": "Laboratory HbA1c",
+          "targetCondition": "Chronic hyperglycaemia consistent with diabetes",
+          "expectedFinding": "At or above locally adopted diagnostic threshold, confirmed as required",
+          "clinicalRationale": "Estimate average glycaemia when assay and patient factors permit.",
+          "tier": "laboratory",
+          "modalityTarget": "Laboratory HbA1c — Chronic hyperglycaemia consistent with diabetes"
+        },
+        {
+          "testName": "Fasting plasma glucose",
+          "targetCondition": "Diabetes mellitus",
+          "expectedFinding": "At or above locally adopted diagnostic threshold, confirmed as required",
+          "clinicalRationale": "Assess fasting glycaemia using laboratory criteria.",
+          "tier": "laboratory",
+          "modalityTarget": "Fasting plasma glucose — Diabetes mellitus"
+        },
+        {
+          "testName": "Random plasma glucose with classic symptoms or crisis",
+          "targetCondition": "Diabetes mellitus",
+          "expectedFinding": "Marked hyperglycaemia meeting accepted criteria in the clinical context",
+          "clinicalRationale": "May establish diagnosis in symptomatic patients while acute status is assessed.",
+          "tier": "laboratory",
+          "modalityTarget": "Random plasma glucose with classic symptoms or crisis — Diabetes mellitus"
+        },
+        {
+          "testName": "Urine albumin-to-creatinine ratio and estimated glomerular filtration rate",
+          "targetCondition": "Diabetic kidney disease risk",
+          "expectedFinding": "Albuminuria and/or reduced estimated filtration",
+          "clinicalRationale": "Identify kidney involvement and inform risk and treatment planning.",
+          "tier": "laboratory",
+          "modalityTarget": "Urine albumin-to-creatinine ratio and estimated glomerular filtration rate — Diabetic kidney disease risk"
+        }
+      ],
+      "ruleOut": [
+        {
+          "testName": "Repeat laboratory HbA1c or plasma glucose",
+          "targetCondition": "Persistent diabetes after borderline or discordant result",
+          "expectedFinding": "Repeat result below diagnostic thresholds without other diagnostic evidence",
+          "clinicalRationale": "Resolve uncertain results and consider factors affecting HbA1c.",
+          "tier": "laboratory",
+          "modalityTarget": "Repeat laboratory HbA1c or plasma glucose — Persistent diabetes after borderline or discordant result"
+        },
+        {
+          "testName": "Blood ketones, electrolytes, renal function, and acid-base assessment when acutely unwell",
+          "targetCondition": "Diabetic ketoacidosis or acute metabolic emergency",
+          "expectedFinding": "No significant ketonaemia, acidosis, or related derangement",
+          "clinicalRationale": "Assess an acute emergency when symptoms suggest it.",
+          "tier": "laboratory",
+          "modalityTarget": "Blood ketones, electrolytes, renal function, and acid-base assessment when acutely unwell — Diabetic ketoacidosis or acute metabolic emergency"
+        },
+        {
+          "testName": "Lipid profile and cardiovascular risk assessment",
+          "targetCondition": "Associated cardiovascular risk",
+          "expectedFinding": "Risk profile characterised for management",
+          "clinicalRationale": "These assess associated risk rather than exclude diabetes.",
+          "tier": "laboratory",
+          "modalityTarget": "Lipid profile and cardiovascular risk assessment — Associated cardiovascular risk"
+        }
+      ]
+    },
+    "clinicalManagement": [
+      {
+        "id": "t2dm-1",
+        "title": "Confirm diagnosis and baseline risk",
+        "timeframe": "At diagnosis or transfer of care",
+        "actions": [
+          "Confirm diabetes using accepted laboratory criteria and repeat when required.",
+          "Review symptoms, medicines, pregnancy potential, cardiovascular history, and patient priorities.",
+          "Assess blood pressure, weight, smoking, lipids, kidney health, and feet.",
+          "Arrange complication screening under local guidance."
+        ],
+        "branches": [
+          {
+            "condition": "Possible type 1 diabetes, ketosis, or rapid deterioration",
+            "actions": [
+              "Arrange urgent specialist assessment and evaluate acute metabolic status.",
+              "Do not delay necessary treatment while classification is clarified."
+            ]
+          },
+          {
+            "condition": "Hyperglycaemic crisis or severe dehydration suspected",
+            "actions": [
+              "Arrange emergency assessment.",
+              "Use the local acute hyperglycaemia protocol."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "t2dm-2",
+        "title": "Agree an individualised management plan",
+        "timeframe": "At diagnosis and reviewed regularly",
+        "actions": [
+          "Agree glycaemic and cardiovascular goals with the patient.",
+          "Offer structured education, nutrition support, activity advice, and tobacco cessation.",
+          "Select glucose-lowering therapy using current local guidance, comorbidities, renal function, contraindications, and preference.",
+          "Review response, adverse effects, adherence barriers, and hypoglycaemia risk."
+        ],
+        "branches": [
+          {
+            "condition": "Cardiovascular disease, heart failure, or chronic kidney disease",
+            "actions": [
+              "Consider therapies with relevant outcome benefits under current local guidance and eligibility.",
+              "Coordinate with relevant specialists."
+            ]
+          },
+          {
+            "condition": "Pregnant, planning pregnancy, or pregnancy possible",
+            "actions": [
+              "Arrange prompt preconception or obstetric-diabetes review.",
+              "Review medicines for pregnancy suitability with the specialist team."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "t2dm-3",
+        "title": "Monitor complications and revise care",
+        "timeframe": "At least annually and more often when indicated",
+        "actions": [
+          "Monitor glycaemia and treatment safety at an appropriate interval.",
+          "Review kidney function, urine albumin, blood pressure, lipids, feet, eyes, and cardiovascular risk.",
+          "Provide medicine-specific sick-day advice under local guidance.",
+          "Escalate persistent poor control, recurrent hypoglycaemia, or progressive complications."
+        ],
+        "branches": [
+          {
+            "condition": "Foot ulcer, infection, ischaemia, or new sensory loss",
+            "actions": [
+              "Arrange timely foot-team or vascular assessment based on severity.",
+              "Use an urgent pathway for infection or threatened limb."
+            ]
+          },
+          {
+            "condition": "Targets unmet or complications progressing",
+            "actions": [
+              "Review diagnosis, adherence barriers, tolerance, and social context.",
+              "Adjust treatment or refer according to local guidance."
+            ]
+          }
+        ]
+      }
+    ],
+    "nonClinicalManagement": {
+      "patientEducation": [
+        "Explain diabetes, monitoring, treatment choices, and when to seek urgent help.",
+        "Provide accessible self-management education in the preferred language.",
+        "Discuss foot care and regular eye, kidney, and cardiovascular checks."
+      ],
+      "lifestyleAndDiet": [
+        "Offer culturally appropriate nutrition counselling and sustainable goals.",
+        "Encourage regular activity adapted to ability and health.",
+        "Offer support for weight management, sleep, and tobacco cessation where relevant."
+      ],
+      "mdtReferrals": [
+        "Diabetes educator or nurse",
+        "Dietitian",
+        "Retinal screening service",
+        "Foot-care service",
+        "Endocrinology when indicated",
+        "Nephrology, cardiology, or vascular service when indicated"
+      ],
+      "dischargeCriteria": [
+        "Patient is clinically stable with an agreed self-management and follow-up plan.",
+        "Acute metabolic emergencies and limb-threatening complications are addressed.",
+        "Patient knows how to access help and seek urgent review."
+      ],
+      "followUpPlan": "Review glycaemia, medicines, cardiovascular risk, kidneys, eyes, and feet regularly; increase review frequency after treatment changes or when control requires closer monitoring."
+    }
+  },
+  {
+    "id": "c36e9014-7d53-4a82-b641-8e05a3c9d627",
+    "title": "Adult Essential Hypertension Screening and Confirmation",
+    "specialty": "Primary Care and Family Medicine",
+    "pillar": "Keep Well",
+    "authority": "MOH",
+    "status": "approved",
+    "version": "1.0",
+    "lastReviewed": "2026-10-10",
+    "pathophysiology": {
+      "summary": "Essential hypertension is persistently elevated arterial blood pressure without an identified secondary cause. It is often asymptomatic and increases cardiovascular, cerebrovascular, and kidney risk.",
+      "keyMechanisms": [
+        "Interactions among genetic, renal, vascular, neurohormonal, and environmental factors",
+        "Increased systemic vascular resistance and altered sodium-volume regulation",
+        "Cumulative pressure-related vascular and target-organ injury"
+      ]
+    },
+    "presentation": {
+      "symptoms": [
+        "Usually asymptomatic",
+        "Occasional non-specific headache or dizziness, which cannot establish diagnosis"
+      ],
+      "physicalSigns": [
+        "Elevated pressure on correctly performed measurement",
+        "Possible target-organ disease in established hypertension",
+        "Possible clinical clues to a secondary cause"
+      ],
+      "redFlags": [
+        "Severe elevation with chest pain, dyspnoea, neurological deficit, confusion, visual loss, or acute kidney injury",
+        "Pregnancy with elevated pressure or pre-eclampsia symptoms",
+        "Abrupt onset, resistant readings, or suspected secondary cause"
+      ]
+    },
+    "differentials": [
+      {
+        "condition": "White-coat hypertension",
+        "distinguishingFeatures": "Clinic readings elevated but validated out-of-office average not persistently elevated."
+      },
+      {
+        "condition": "Masked hypertension",
+        "distinguishingFeatures": "Clinic readings may be below threshold while home or ambulatory readings are elevated."
+      },
+      {
+        "condition": "Secondary hypertension",
+        "distinguishingFeatures": "Young onset, abrupt worsening, resistance, relevant medicines, renal or endocrine clues."
+      },
+      {
+        "condition": "Transient elevation",
+        "distinguishingFeatures": "Pain, anxiety, acute illness, stimulants, or measurement error; repeat under standardised conditions."
+      }
+    ],
+    "investigations": {
+      "ruleIn": [
+        {
+          "testName": "Repeated standardised clinic blood-pressure measurement",
+          "targetCondition": "Persistently elevated blood pressure",
+          "expectedFinding": "Repeated readings meeting locally adopted threshold using validated device and correct cuff",
+          "clinicalRationale": "Reduce misclassification from poor technique or transient elevation.",
+          "tier": "laboratory",
+          "modalityTarget": "Repeated standardised clinic blood-pressure measurement — Persistently elevated blood pressure"
+        },
+        {
+          "testName": "Home or ambulatory blood-pressure monitoring",
+          "targetCondition": "Sustained hypertension",
+          "expectedFinding": "Out-of-office average meeting locally adopted threshold",
+          "clinicalRationale": "Confirm persistence and identify white-coat or masked hypertension.",
+          "tier": "specializedAdjunctive",
+          "modalityTarget": "Home or ambulatory blood-pressure monitoring — Sustained hypertension"
+        },
+        {
+          "testName": "Creatinine, estimated glomerular filtration rate, electrolytes, urine albumin, and urinalysis",
+          "targetCondition": "Target-organ involvement or possible secondary hypertension",
+          "expectedFinding": "Renal impairment, albuminuria, electrolyte abnormality, or other finding needing assessment",
+          "clinicalRationale": "Assess baseline kidney health and direct further evaluation.",
+          "tier": "laboratory",
+          "modalityTarget": "Creatinine, estimated glomerular filtration rate, electrolytes, urine albumin, and urinalysis — Target-organ involvement or possible secondary hypertension"
+        },
+        {
+          "testName": "Electrocardiogram",
+          "targetCondition": "Cardiac target-organ involvement",
+          "expectedFinding": "Possible left ventricular hypertrophy, rhythm abnormality, or prior cardiac disease",
+          "clinicalRationale": "Assess cardiovascular context; normal ECG does not exclude hypertension.",
+          "tier": "specializedAdjunctive",
+          "modalityTarget": "Electrocardiogram — Cardiac target-organ involvement"
+        }
+      ],
+      "ruleOut": [
+        {
+          "testName": "Repeat standardised readings after rest",
+          "targetCondition": "Transient or measurement-related elevation",
+          "expectedFinding": "Repeat readings below locally adopted threshold",
+          "clinicalRationale": "Check for technique-related or transient elevation.",
+          "tier": "laboratory",
+          "modalityTarget": "Repeat standardised readings after rest — Transient or measurement-related elevation"
+        },
+        {
+          "testName": "Validated home or ambulatory monitoring",
+          "targetCondition": "White-coat hypertension",
+          "expectedFinding": "Out-of-office average below local threshold despite elevated clinic readings",
+          "clinicalRationale": "Avoid relying on clinic readings alone when results are discordant.",
+          "tier": "specializedAdjunctive",
+          "modalityTarget": "Validated home or ambulatory monitoring — White-coat hypertension"
+        },
+        {
+          "testName": "Targeted secondary-hypertension investigations",
+          "targetCondition": "Secondary cause of elevated blood pressure",
+          "expectedFinding": "No targeted evidence for the suspected cause",
+          "clinicalRationale": "Select testing using clinical indications rather than broad routine testing.",
+          "tier": "laboratory",
+          "modalityTarget": "Targeted secondary-hypertension investigations — Secondary cause of elevated blood pressure"
+        }
+      ]
+    },
+    "clinicalManagement": [
+      {
+        "id": "htn-1",
+        "title": "Screen and measure accurately",
+        "timeframe": "Preventive and primary-care encounters, or when indicated",
+        "actions": [
+          "Use a validated device, correct cuff, and standardised seated measurement after rest.",
+          "Obtain repeat readings and document method, values, symptoms, and context.",
+          "Review medicines, supplements, stimulants, tobacco, pain, and acute illness.",
+          "Do not diagnose from one isolated value unless urgent circumstances require action."
+        ],
+        "branches": [
+          {
+            "condition": "Elevated screening measurement without acute symptoms",
+            "actions": [
+              "Arrange repeat and out-of-office confirmation within a risk-appropriate interval.",
+              "Explain follow-up and symptoms needing urgent assessment."
+            ]
+          },
+          {
+            "condition": "Severe elevation with possible acute target-organ injury",
+            "actions": [
+              "Arrange immediate emergency assessment.",
+              "Avoid rapid unsupervised outpatient lowering."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "htn-2",
+        "title": "Confirm diagnosis and assess risk",
+        "timeframe": "After elevated screening readings",
+        "actions": [
+          "Confirm sustained hypertension with repeated clinic and/or validated out-of-office readings.",
+          "Assess cardiovascular risk, kidney function, diabetes, lipids, smoking, and target-organ injury.",
+          "Investigate secondary causes when clinical indications are present.",
+          "Agree an individualised plan and follow-up interval."
+        ],
+        "branches": [
+          {
+            "condition": "Out-of-office values are not persistently elevated",
+            "actions": [
+              "Consider white-coat hypertension rather than labelling sustained disease.",
+              "Continue monitoring based on overall risk."
+            ]
+          },
+          {
+            "condition": "Secondary cause or target-organ injury suspected",
+            "actions": [
+              "Arrange targeted work-up and specialist input as appropriate.",
+              "Address urgent complications through emergency care."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "htn-3",
+        "title": "Reduce risk and provide ongoing care",
+        "timeframe": "After diagnosis and at regular follow-up",
+        "actions": [
+          "Offer lifestyle measures and treatment options under current local guidance.",
+          "Select medication when indicated based on comorbidities, renal function, pregnancy potential, contraindications, and preference.",
+          "Review pressure, adherence, adverse effects, renal function, and risk after treatment changes.",
+          "Escalate persistent uncontrolled readings or suspected complications."
+        ],
+        "branches": [
+          {
+            "condition": "Pregnancy or pregnancy potential",
+            "actions": [
+              "Use a pregnancy-specific assessment and treatment pathway.",
+              "Review medicines promptly and involve obstetric care when indicated."
+            ]
+          },
+          {
+            "condition": "Pressure remains above agreed target",
+            "actions": [
+              "Confirm measurement technique and adherence; review interfering medicines and secondary causes.",
+              "Adjust treatment or refer under local guidance."
+            ]
+          }
+        ]
+      }
+    ],
+    "nonClinicalManagement": {
+      "patientEducation": [
+        "Explain that hypertension is often symptom-free and needs accurate measurement and follow-up.",
+        "Teach home-monitoring technique when used.",
+        "Explain urgent symptoms requiring immediate assessment."
+      ],
+      "lifestyleAndDiet": [
+        "Discuss balanced eating and sodium reduction where appropriate.",
+        "Encourage regular activity, healthy weight goals, and tobacco cessation.",
+        "Discuss alcohol use consistent with health needs and local advice."
+      ],
+      "mdtReferrals": [
+        "Primary care or family medicine",
+        "Dietitian or lifestyle support",
+        "Cardiology, nephrology, or endocrinology when indicated",
+        "Obstetrics for pregnancy-associated hypertension"
+      ],
+      "dischargeCriteria": [
+        "Measurement result, confirmation plan, and precautions are documented.",
+        "Acute target-organ injury is assessed and disposition determined.",
+        "Patient knows when blood pressure will be reassessed."
+      ],
+      "followUpPlan": "Arrange repeat clinic or out-of-office measurements and cardiovascular-risk review according to results, patient risk, and local guidance."
+    }
+  },
+  {
+    "id": "d47f0125-8e64-4b93-8c72-9f16a4d0e738",
+    "title": "Elective Cholecystectomy Pre-operative Assessment Pathway",
+    "specialty": "General Surgery and Anaesthesia",
+    "pillar": "Planned Care",
+    "authority": "MOH",
+    "status": "approved",
+    "version": "1.0",
+    "lastReviewed": "2026-10-10",
+    "pathophysiology": {
+      "summary": "Gallstones may cause biliary colic or complications including cholecystitis, choledocholithiasis, or pancreatitis. This pathway supports pre-operative review after a decision for elective cholecystectomy.",
+      "keyMechanisms": [
+        "Gallstone formation from altered bile composition or gallbladder emptying",
+        "Transient cystic-duct obstruction causing biliary pain",
+        "Persistent obstruction or ductal migration causing inflammation or cholestasis"
+      ]
+    },
+    "presentation": {
+      "symptoms": [
+        "Episodic right-upper-quadrant or epigastric pain, sometimes after meals",
+        "Possible nausea or vomiting during biliary colic",
+        "Known symptomatic gallstones with a documented surgical plan"
+      ],
+      "physicalSigns": [
+        "Often normal between episodes",
+        "Possible right-upper-quadrant tenderness",
+        "Jaundice, fever, or marked tenderness suggests complication and needs reassessment"
+      ],
+      "redFlags": [
+        "Fever, persistent pain, or systemic illness",
+        "Jaundice, dark urine, pale stools, or suspected duct obstruction",
+        "Severe persistent epigastric pain radiating to the back",
+        "Pregnancy, anticoagulation, or significant cardiopulmonary instability requiring modified planning"
+      ]
+    },
+    "differentials": [
+      {
+        "condition": "Acute cholecystitis",
+        "distinguishingFeatures": "Persistent right-upper-quadrant pain and tenderness, often with fever or inflammatory findings."
+      },
+      {
+        "condition": "Choledocholithiasis or cholangitis",
+        "distinguishingFeatures": "Jaundice or cholestatic laboratory pattern; fever and systemic illness raise concern for cholangitis."
+      },
+      {
+        "condition": "Acute pancreatitis",
+        "distinguishingFeatures": "Persistent severe epigastric pain, often radiating to back, with supportive enzyme findings."
+      },
+      {
+        "condition": "Peptic, hepatic, or cardiac cause",
+        "distinguishingFeatures": "Alternative history, examination, ECG, or laboratory findings; investigate atypical symptoms."
+      }
+    ],
+    "investigations": {
+      "ruleIn": [
+        {
+          "testName": "Review prior abdominal ultrasonography",
+          "targetCondition": "Gallstones supporting elective indication",
+          "expectedFinding": "Gallstones or relevant gallbladder findings consistent with history",
+          "clinicalRationale": "Confirm available imaging and indication; repeat only when warranted.",
+          "tier": "laboratory",
+          "modalityTarget": "Review prior abdominal ultrasonography — Gallstones supporting elective indication"
+        },
+        {
+          "testName": "Liver function tests",
+          "targetCondition": "Possible common bile-duct obstruction",
+          "expectedFinding": "Cholestatic or other abnormal pattern requiring evaluation",
+          "clinicalRationale": "Identify findings that may change operative planning or require ductal assessment.",
+          "tier": "laboratory",
+          "modalityTarget": "Liver function tests — Possible common bile-duct obstruction"
+        },
+        {
+          "testName": "Complete blood count and inflammatory markers when indicated",
+          "targetCondition": "Intercurrent inflammation or infection",
+          "expectedFinding": "Inflammatory abnormality interpreted with symptoms and examination",
+          "clinicalRationale": "Identify acute complications that make routine scheduling inappropriate.",
+          "tier": "laboratory",
+          "modalityTarget": "Complete blood count and inflammatory markers when indicated — Intercurrent inflammation or infection"
+        },
+        {
+          "testName": "Pregnancy test when appropriate and with consent",
+          "targetCondition": "Pregnancy affecting perioperative planning",
+          "expectedFinding": "Positive result prompting pregnancy-specific shared planning",
+          "clinicalRationale": "Adapt elective timing and anaesthetic planning.",
+          "tier": "laboratory",
+          "modalityTarget": "Pregnancy test when appropriate and with consent — Pregnancy affecting perioperative planning"
+        }
+      ],
+      "ruleOut": [
+        {
+          "testName": "Clinical review, liver tests, and targeted ductal imaging when indicated",
+          "targetCondition": "Common bile-duct stone or obstruction",
+          "expectedFinding": "No clinical, biochemical, or imaging evidence of obstruction",
+          "clinicalRationale": "Further testing depends on local risk criteria and overall assessment.",
+          "tier": "laboratory",
+          "modalityTarget": "Clinical review, liver tests, and targeted ductal imaging when indicated — Common bile-duct stone or obstruction"
+        },
+        {
+          "testName": "Clinical assessment and inflammatory investigations when indicated",
+          "targetCondition": "Acute cholecystitis or cholangitis",
+          "expectedFinding": "No persistent inflammatory symptoms or supportive findings",
+          "clinicalRationale": "Identify acute disease requiring urgent rather than elective management.",
+          "tier": "laboratory",
+          "modalityTarget": "Clinical assessment and inflammatory investigations when indicated — Acute cholecystitis or cholangitis"
+        },
+        {
+          "testName": "Anaesthetic assessment and targeted cardiopulmonary investigations",
+          "targetCondition": "Perioperative risk requiring optimisation",
+          "expectedFinding": "No unresolved active condition making the procedure unsafe at this time",
+          "clinicalRationale": "Select tests based on history, examination, functional status, and local guidance.",
+          "tier": "laboratory",
+          "modalityTarget": "Anaesthetic assessment and targeted cardiopulmonary investigations — Perioperative risk requiring optimisation"
+        }
+      ]
+    },
+    "clinicalManagement": [
+      {
+        "id": "chole-1",
+        "title": "Confirm indication and exclude acute complication",
+        "timeframe": "At surgical review and again if symptoms change",
+        "actions": [
+          "Confirm symptoms, imaging, indication, and informed preference.",
+          "Review comorbidities, medicines, allergies, anticoagulants, and anaesthetic history.",
+          "Assess for fever, persistent pain, jaundice, pancreatitis, or other acute complication.",
+          "Plan further biliary assessment if history, laboratory results, or imaging indicate."
+        ],
+        "branches": [
+          {
+            "condition": "Acute cholecystitis, cholangitis, pancreatitis, or ductal obstruction suspected",
+            "actions": [
+              "Pause routine elective preparation and arrange urgent reassessment.",
+              "Use the locally approved acute biliary pathway."
+            ]
+          },
+          {
+            "condition": "Elective indication remains appropriate without acute complication",
+            "actions": [
+              "Proceed with pre-operative assessment and shared decision-making.",
+              "Confirm procedure, consent, and expected care pathway."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "chole-2",
+        "title": "Optimise and complete anaesthetic review",
+        "timeframe": "Before scheduled procedure",
+        "actions": [
+          "Complete history, examination, and investigations based on patient risk and local policy.",
+          "Review anticoagulants, antiplatelets, diabetes medicines, allergies, and other medicines with the responsible clinician.",
+          "Optimise active conditions and discuss anaesthetic risk, fasting, and perioperative expectations.",
+          "Assess thrombosis-prevention and infection-prevention needs under local protocols."
+        ],
+        "branches": [
+          {
+            "condition": "Uncontrolled comorbidity, infection, or important new abnormality",
+            "actions": [
+              "Discuss optimisation, further testing, or postponement with surgery and anaesthesia.",
+              "Communicate the revised plan and safety-net advice."
+            ]
+          },
+          {
+            "condition": "Pregnancy confirmed or suspected",
+            "actions": [
+              "Arrange obstetric, surgical, and anaesthetic discussion.",
+              "Reassess timing and necessity through shared decisions and local policy."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "chole-3",
+        "title": "Confirm readiness and hand over",
+        "timeframe": "Day of surgery",
+        "actions": [
+          "Confirm identity, procedure, consent, allergies, fasting, results, and perioperative plan.",
+          "Reassess interval symptoms and vital signs.",
+          "Confirm team, equipment, and post-operative disposition.",
+          "Document handover and deviations from plan."
+        ],
+        "branches": [
+          {
+            "condition": "New jaundice, fever, persistent severe pain, or instability",
+            "actions": [
+              "Stop routine elective progression and request urgent senior review.",
+              "Reassess for biliary complication or alternative acute diagnosis."
+            ]
+          },
+          {
+            "condition": "Checks satisfactory and patient remains appropriate",
+            "actions": [
+              "Proceed under the approved surgical and anaesthetic plan.",
+              "Provide post-operative instructions and follow-up arrangements."
+            ]
+          }
+        ]
+      }
+    ],
+    "nonClinicalManagement": {
+      "patientEducation": [
+        "Explain indication, alternatives, material risks, and expected recovery using approved surgical information.",
+        "Give fasting, arrival, medicine-review, and pre-operative contact instructions.",
+        "Advise prompt review for fever, jaundice, or persistent severe pain."
+      ],
+      "lifestyleAndDiet": [
+        "Offer balanced eating and symptom-aware meal advice while awaiting surgery.",
+        "Encourage smoking cessation and feasible general-health optimisation."
+      ],
+      "mdtReferrals": [
+        "General surgery",
+        "Anaesthesia",
+        "Primary care or relevant specialist for optimisation",
+        "Obstetrics if pregnant or pregnancy suspected",
+        "Hepatobiliary service when ductal disease is suspected"
+      ],
+      "dischargeCriteria": [
+        "Assessment and consent are complete and documented.",
+        "Acute complications and significant unoptimised conditions have been addressed.",
+        "Patient has preparation instructions and contact details for worsening symptoms."
+      ],
+      "followUpPlan": "Confirm pre-operative review and procedure arrangements; after surgery follow the operating team's wound, pathology, recovery, and escalation instructions."
+    }
+  },
+  {
+    "id": "e58a1236-9f75-4ca4-a398-0e27b5c1f849",
+    "title": "Gestational Diabetes Identification and Management Pathway",
+    "specialty": "Obstetrics, Maternal-Fetal Medicine, and Diabetes Care",
+    "pillar": "Safe Birth",
+    "authority": "MOH",
+    "status": "approved",
+    "version": "1.0",
+    "lastReviewed": "2026-10-10",
+    "pathophysiology": {
+      "summary": "Gestational diabetes is glucose intolerance first recognised during pregnancy. Pregnancy-related insulin resistance may exceed pancreatic insulin-secretory capacity, increasing maternal glucose and fetal exposure.",
+      "keyMechanisms": [
+        "Placental hormones increase maternal insulin resistance",
+        "Insufficient compensatory insulin secretion leads to hyperglycaemia",
+        "Maternal glucose crosses the placenta and may affect fetal growth and perinatal risk"
+      ]
+    },
+    "presentation": {
+      "symptoms": [
+        "Often asymptomatic and detected through antenatal screening",
+        "Possible increased thirst or urination, which may overlap with normal pregnancy changes"
+      ],
+      "physicalSigns": [
+        "Usually no specific examination finding",
+        "Risk factors may include previous gestational diabetes, prior macrosomia, obesity, or family history"
+      ],
+      "redFlags": [
+        "Marked hyperglycaemia with vomiting, dehydration, altered mental status, or ketones",
+        "Reduced fetal movement, bleeding, or severe abdominal pain",
+        "Symptoms concerning for pre-eclampsia"
+      ]
+    },
+    "differentials": [
+      {
+        "condition": "Previously unrecognised pre-existing diabetes",
+        "distinguishingFeatures": "Hyperglycaemia meeting overt diabetes criteria early in pregnancy or evidence predating pregnancy."
+      },
+      {
+        "condition": "Transient stress hyperglycaemia",
+        "distinguishingFeatures": "Elevated glucose during acute illness or medication exposure; interpret timing and repeat as appropriate."
+      },
+      {
+        "condition": "Normal pregnancy-related changes",
+        "distinguishingFeatures": "Thirst or urinary frequency without diagnostic hyperglycaemia; symptoms alone do not establish GDM."
+      }
+    ],
+    "investigations": {
+      "ruleIn": [
+        {
+          "testName": "Pregnancy-specific oral glucose tolerance test using local protocol",
+          "targetCondition": "Gestational diabetes",
+          "expectedFinding": "One or more glucose values meet locally adopted diagnostic thresholds",
+          "clinicalRationale": "Apply the approved screening and diagnostic protocol consistently.",
+          "tier": "laboratory",
+          "modalityTarget": "Pregnancy-specific oral glucose tolerance test using local protocol — Gestational diabetes"
+        },
+        {
+          "testName": "Laboratory fasting or random plasma glucose when indicated",
+          "targetCondition": "Overt diabetes in pregnancy",
+          "expectedFinding": "Value meets accepted overt-diabetes criteria or local pregnancy pathway",
+          "clinicalRationale": "Identify significant hyperglycaemia that may represent pre-existing diabetes.",
+          "tier": "laboratory",
+          "modalityTarget": "Laboratory fasting or random plasma glucose when indicated — Overt diabetes in pregnancy"
+        },
+        {
+          "testName": "Serial self-monitored blood glucose",
+          "targetCondition": "Glycaemic control during pregnancy",
+          "expectedFinding": "Repeated readings outside individualised targets",
+          "clinicalRationale": "Guide timely adjustment and assess response.",
+          "tier": "laboratory",
+          "modalityTarget": "Serial self-monitored blood glucose — Glycaemic control during pregnancy"
+        },
+        {
+          "testName": "Obstetric ultrasound when indicated",
+          "targetCondition": "Fetal growth or fluid concern",
+          "expectedFinding": "Growth or fluid finding requiring obstetric review",
+          "clinicalRationale": "Assess pregnancy concerns and guide obstetric planning.",
+          "tier": "specializedAdjunctive",
+          "modalityTarget": "Obstetric ultrasound when indicated — Fetal growth or fluid concern"
+        }
+      ],
+      "ruleOut": [
+        {
+          "testName": "Pregnancy-specific oral glucose tolerance test using local protocol",
+          "targetCondition": "Gestational diabetes",
+          "expectedFinding": "All measured values below adopted diagnostic thresholds",
+          "clinicalRationale": "A correctly timed test can exclude GDM at that screening point.",
+          "tier": "laboratory",
+          "modalityTarget": "Pregnancy-specific oral glucose tolerance test using local protocol — Gestational diabetes"
+        },
+        {
+          "testName": "Repeat glucose assessment when initial testing is incomplete or concern persists",
+          "targetCondition": "Missed or evolving gestational hyperglycaemia",
+          "expectedFinding": "Repeat values below diagnostic thresholds under appropriate protocol",
+          "clinicalRationale": "Consider timing, risk, test quality, and evolving pregnancy.",
+          "tier": "laboratory",
+          "modalityTarget": "Repeat glucose assessment when initial testing is incomplete or concern persists — Missed or evolving gestational hyperglycaemia"
+        }
+      ]
+    },
+    "clinicalManagement": [
+      {
+        "id": "gdm-1",
+        "title": "Screen, diagnose, and communicate",
+        "timeframe": "At timing defined by local antenatal protocol",
+        "actions": [
+          "Review diabetes history, prior GDM, pregnancy history, medicines, and risk factors.",
+          "Use the locally adopted pregnancy-specific screening and diagnostic protocol.",
+          "Distinguish GDM from overt pre-existing diabetes when early or marked hyperglycaemia is found.",
+          "Communicate results promptly to patient and antenatal team."
+        ],
+        "branches": [
+          {
+            "condition": "Overt diabetes, severe hyperglycaemia, or acute metabolic illness suspected",
+            "actions": [
+              "Arrange urgent obstetric-diabetes or emergency assessment based on status.",
+              "Use pregnancy-specific acute management guidance."
+            ]
+          },
+          {
+            "condition": "GDM diagnosed without acute instability",
+            "actions": [
+              "Refer promptly to obstetric-diabetes care.",
+              "Provide initial education and arrange monitoring and review."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "gdm-2",
+        "title": "Monitor glucose and individualise treatment",
+        "timeframe": "From diagnosis through pregnancy",
+        "actions": [
+          "Teach self-monitoring and agree pregnancy-specific targets with the team.",
+          "Offer nutrition counselling and safe activity advice.",
+          "Review glucose records, symptoms, treatment tolerance, and obstetric concerns.",
+          "If targets are unmet, consider pregnancy-appropriate medicines under local protocol and specialist care."
+        ],
+        "branches": [
+          {
+            "condition": "Values remain above agreed targets",
+            "actions": [
+              "Review technique, nutrition, adherence barriers, and intercurrent illness.",
+              "Escalate treatment under pregnancy-specific local guidance."
+            ]
+          },
+          {
+            "condition": "Reduced fetal movement or another obstetric warning symptom",
+            "actions": [
+              "Arrange immediate maternity triage or emergency assessment.",
+              "Do not defer assessment to routine diabetes follow-up."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "gdm-3",
+        "title": "Plan birth and postpartum reassessment",
+        "timeframe": "Later pregnancy, birth, and after delivery",
+        "actions": [
+          "Coordinate timing and place of birth based on maternal control and fetal assessment.",
+          "Document intrapartum glucose and newborn-care plans under local policy.",
+          "Review glucose-lowering treatment after delivery as requirements may change.",
+          "Arrange postpartum testing and longer-term primary-care follow-up."
+        ],
+        "branches": [
+          {
+            "condition": "Persistent postpartum hyperglycaemia or pre-existing diabetes concern",
+            "actions": [
+              "Arrange timely medical assessment and diagnostic testing.",
+              "Continue the appropriate diabetes-care pathway."
+            ]
+          },
+          {
+            "condition": "Glucose normalises after birth",
+            "actions": [
+              "Still arrange postpartum testing at the locally recommended interval.",
+              "Discuss future risk reduction and screening in subsequent pregnancies."
+            ]
+          }
+        ]
+      }
+    ],
+    "nonClinicalManagement": {
+      "patientEducation": [
+        "Explain GDM, monitoring, and how results guide parent and baby care.",
+        "Teach monitoring and whom to contact for repeated out-of-range readings.",
+        "Provide maternity warning signs including reduced fetal movement."
+      ],
+      "lifestyleAndDiet": [
+        "Offer culturally appropriate nutrition advice supporting pregnancy and glucose management.",
+        "Encourage safe regular activity when not contraindicated.",
+        "Avoid restrictive diets or weight-loss advice during pregnancy unless directed by the team."
+      ],
+      "mdtReferrals": [
+        "Obstetric or maternal-fetal medicine team",
+        "Diabetes nurse or educator",
+        "Dietitian",
+        "Neonatal team when indicated",
+        "Primary care or diabetes service postpartum"
+      ],
+      "dischargeCriteria": [
+        "Maternal and fetal status are appropriate for planned setting.",
+        "Patient has monitoring instructions, contact routes, and follow-up plan.",
+        "Postpartum testing responsibilities are documented before birth discharge."
+      ],
+      "followUpPlan": "Continue antenatal review based on glucose control and obstetric risk; arrange postpartum testing according to local protocol and ongoing primary-care screening."
+    }
+  },
+  {
+    "id": "f69b2347-a086-4db5-b509-1f38c6d2a950",
+    "title": "Palliative Management of End-of-Life Dyspnoea and Pain",
+    "specialty": "Palliative Medicine",
+    "pillar": "Palliative Care",
+    "authority": "MOH",
+    "status": "approved",
+    "version": "1.0",
+    "lastReviewed": "2026-10-10",
+    "pathophysiology": {
+      "summary": "Dyspnoea and pain are distressing symptoms in serious illness. At end of life they may arise from disease, complications, treatment effects, or interacting causes; care should reflect patient goals.",
+      "keyMechanisms": [
+        "Dyspnoea may reflect respiratory, cardiac, metabolic, psychological, or multifactorial processes",
+        "Pain may arise from tissue injury, inflammation, nerve involvement, or disease-related pressure",
+        "Fear, fatigue, delirium, and caregiver distress may amplify symptoms"
+      ]
+    },
+    "presentation": {
+      "symptoms": [
+        "Subjective breathlessness, air hunger, or breathing-related distress",
+        "Pain reported by patient or inferred from behaviour when communication is limited",
+        "Anxiety, restlessness, sleep disruption, or reduced function"
+      ],
+      "physicalSigns": [
+        "Increased work of breathing, altered respiratory rate, or accessory-muscle use",
+        "Guarding, grimacing, vocalisation, or reduced movement",
+        "Possible agitation, altered alertness, or signs of underlying illness"
+      ],
+      "redFlags": [
+        "New potentially reversible emergency consistent with goals of care",
+        "Sudden severe dyspnoea, airway obstruction, major bleeding, or rapidly worsening consciousness",
+        "Uncontrolled pain or dyspnoea despite plan",
+        "Suspected medication toxicity or administration error"
+      ]
+    },
+    "differentials": [
+      {
+        "condition": "Acute reversible respiratory or cardiac illness",
+        "distinguishingFeatures": "Abrupt onset, new examination findings, or treatable cause; assess when consistent with goals."
+      },
+      {
+        "condition": "Anxiety or panic contributing to dyspnoea",
+        "distinguishingFeatures": "Prominent fear or episodic distress may contribute, but physical causes still merit consideration."
+      },
+      {
+        "condition": "Delirium affecting symptom report",
+        "distinguishingFeatures": "Fluctuating attention or altered cognition; use observational assessment and collateral history."
+      },
+      {
+        "condition": "Medication-related symptom or toxicity",
+        "distinguishingFeatures": "Temporal association with medicine change, sedation, confusion, respiratory suppression, or other adverse effect."
+      }
+    ],
+    "investigations": {
+      "ruleIn": [
+        {
+          "testName": "Patient-reported symptom assessment or validated observational tool",
+          "targetCondition": "Clinically significant pain or dyspnoea",
+          "expectedFinding": "Reported or observed distress requiring an individualised comfort plan",
+          "clinicalRationale": "Measure symptoms in a way suited to communication ability and reassess response.",
+          "tier": "laboratory",
+          "modalityTarget": "Patient-reported symptom assessment or validated observational tool — Clinically significant pain or dyspnoea"
+        },
+        {
+          "testName": "Focused history, examination, and medication review",
+          "targetCondition": "Potentially treatable symptom contributor",
+          "expectedFinding": "Clinical evidence identifying a cause or medicine-related factor",
+          "clinicalRationale": "Identify reversible causes when assessment and treatment align with goals.",
+          "tier": "laboratory",
+          "modalityTarget": "Focused history, examination, and medication review — Potentially treatable symptom contributor"
+        },
+        {
+          "testName": "Targeted investigation after goals-of-care discussion",
+          "targetCondition": "Specific suspected reversible cause",
+          "expectedFinding": "Result likely to change a goal-concordant plan",
+          "clinicalRationale": "Avoid burdensome testing unlikely to improve comfort or alter decisions.",
+          "tier": "laboratory",
+          "modalityTarget": "Targeted investigation after goals-of-care discussion — Specific suspected reversible cause"
+        }
+      ],
+      "ruleOut": [
+        {
+          "testName": "Medication reconciliation and focused reassessment",
+          "targetCondition": "Medication-related toxicity",
+          "expectedFinding": "No significant medication association or toxicity signs",
+          "clinicalRationale": "Review medicines and recent changes before escalating symptom treatment.",
+          "tier": "laboratory",
+          "modalityTarget": "Medication reconciliation and focused reassessment — Medication-related toxicity"
+        },
+        {
+          "testName": "Targeted assessment for suspected reversible emergency",
+          "targetCondition": "Acute reversible cause requiring urgent treatment",
+          "expectedFinding": "No evidence of suspected cause on proportionate assessment",
+          "clinicalRationale": "Select investigations likely to change a goal-concordant plan; no test excludes every cause.",
+          "tier": "laboratory",
+          "modalityTarget": "Targeted assessment for suspected reversible emergency — Acute reversible cause requiring urgent treatment"
+        }
+      ]
+    },
+    "clinicalManagement": [
+      {
+        "id": "pall-1",
+        "title": "Assess distress, goals, and reversible contributors",
+        "timeframe": "At escalation and whenever the situation changes",
+        "actions": [
+          "Ask about symptom severity, comfort goals, fears, and preferred support; use an observational tool if needed.",
+          "Review care plan, advance-care documentation, capacity, and expressed goals.",
+          "Assess reversible contributors and review medicines, allergies, organ function, and prior responses.",
+          "Include family or caregivers with consent and respect privacy and cultural preferences."
+        ],
+        "branches": [
+          {
+            "condition": "Potentially reversible emergency identified and treatment aligns with goals",
+            "actions": [
+              "Arrange urgent assessment and treatment through the appropriate pathway.",
+              "Continue comfort measures and communicate the plan."
+            ]
+          },
+          {
+            "condition": "Comfort is the priority and burdensome tests would not change care",
+            "actions": [
+              "Use proportionate assessment focused on acceptable comfort measures.",
+              "Document goals, limits, and escalation preferences."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pall-2",
+        "title": "Provide individualised symptom relief",
+        "timeframe": "Promptly, with reassessment after each intervention",
+        "actions": [
+          "Use positioning, calm presence, airflow or a fan when acceptable, and other low-burden measures.",
+          "Follow the local palliative formulary and senior guidance; individualise medicines to prior exposure, organ function, route, and goals.",
+          "Assess pain type and use appropriate non-pharmacological and pharmacological measures.",
+          "Reassess comfort, alertness, adverse effects, and patient preferences."
+        ],
+        "branches": [
+          {
+            "condition": "Severe symptoms persist despite initial plan",
+            "actions": [
+              "Request urgent palliative or senior review.",
+              "Reconsider setting, route, cause, and proportionality of further intervention."
+            ]
+          },
+          {
+            "condition": "Sedation, confusion, respiratory suppression, or adverse effect suspected",
+            "actions": [
+              "Arrange prompt clinical review for toxicity or other causes.",
+              "Adjust or withhold medicines only through responsible clinician and local protocol."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pall-3",
+        "title": "Coordinate continuing care and support",
+        "timeframe": "Throughout care and at transitions",
+        "actions": [
+          "Agree a written symptom plan, contacts, worsening-symptom steps, and preferred place of care when feasible.",
+          "Ensure access to prescribed medicines, equipment, and trained support.",
+          "Coordinate patient, family, palliative, primary-care, and specialist communication.",
+          "Review caregiver burden and psychosocial, cultural, and spiritual needs."
+        ],
+        "branches": [
+          {
+            "condition": "Symptoms cannot be safely controlled in current setting",
+            "actions": [
+              "Arrange urgent specialist review and consider transfer consistent with goals.",
+              "Provide structured handover of symptoms, medicines, response, allergies, and preferences."
+            ]
+          },
+          {
+            "condition": "Symptoms acceptably controlled in preferred setting",
+            "actions": [
+              "Continue documented comfort plan and scheduled review.",
+              "Provide caregivers clear contact details and practical support."
+            ]
+          }
+        ]
+      }
+    ],
+    "nonClinicalManagement": {
+      "patientEducation": [
+        "Explain palliative care aims to relieve suffering and support patient and family.",
+        "Describe comfort measures and how to use the symptom plan and contact the team.",
+        "Invite discussion of preferences, privacy, culture, and spiritual support."
+      ],
+      "lifestyleAndDiet": [
+        "Prioritise comfort, rest, preferred food and fluids as tolerated, and patient choices.",
+        "Offer positioning, calm environment, and activity pacing to reduce distress."
+      ],
+      "mdtReferrals": [
+        "Palliative-care physician and nurse",
+        "Primary-care or treating specialist team",
+        "Clinical pharmacist",
+        "Psychology, social work, or spiritual care by preference",
+        "Home healthcare or hospice when available and appropriate",
+        "Family and caregiver support"
+      ],
+      "dischargeCriteria": [
+        "Symptoms acceptably controlled for chosen setting or safe transfer arranged.",
+        "Patient and caregivers understand symptom plan, medicine instructions, and contact route.",
+        "Goals, escalation preferences, and handover are documented and communicated."
+      ],
+      "followUpPlan": "Arrange palliative follow-up based on symptom burden and setting, with an urgent route for worsening pain, dyspnoea, or adverse effects."
+    }
+  }
+]

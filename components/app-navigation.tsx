@@ -65,6 +65,7 @@ function canonicalPath(pathname: string) {
   if (pathname === "/dashboard/diseases" || pathname.startsWith("/dashboard/diseases/")) {
     return pathname.replace("/dashboard/diseases", "/dashboard/disease-management");
   }
+  if (pathname.startsWith("/dashboard/admin/guidelines/")) return "/dashboard/disease-management";
   return {
     "/clinical-library": "/dashboard/clinical-guidelines",
     "/competencies": "/dashboard/competencies",
@@ -191,7 +192,9 @@ function ModulePanel({ module, pathname, temporaryAdminMode, draftTopicCount, on
           </Link>
         })}
       </div>
-      {isDiseases && <TopicNavigator currentId={currentTopicId(pathname)} />}
+      {isDiseases && (pathname.startsWith("/dashboard/diseases/drafts") || pathname.startsWith("/dashboard/admin/guidelines/")
+        ? <DraftTopicNavigator />
+        : <TopicNavigator currentId={currentTopicId(pathname)} />)}
       {related.length > 0 && (
         <section className="sidebar-nav-section panel-related" aria-label={`Also in ${section?.label}`}>
           <div className="nav-label">Also in {section?.label}</div>
@@ -304,6 +307,43 @@ function TopicNavigator({ currentId }: { currentId: string | null }) {
           </details>
         ))}
       </div>
+    </section>
+  );
+}
+
+type DraftNavTopic = { id: string; title: string; versionId: string; version: string };
+
+function DraftTopicNavigator() {
+  const router = useRouter();
+  const pathname = usePathname() ?? "";
+  const activeVersionId = pathname.startsWith("/dashboard/diseases/drafts/")
+    ? pathname.split("/").at(-1)
+    : null;
+  const [state, setState] = useState<{ status: "loading" } | { status: "ready"; topics: DraftNavTopic[] } | { status: "error" }>({ status: "loading" });
+  const [query, setQuery] = useState("");
+
+  useEffect(() => {
+    let active = true;
+    fetch("/api/topics?view=drafts", { credentials: "same-origin" })
+      .then((response) => response.ok ? response.json() as Promise<{ topics: DraftNavTopic[] }> : Promise.reject(new Error("Draft topics unavailable")))
+      .then(({ topics }) => { if (active) setState({ status: "ready", topics }); }, () => { if (active) setState({ status: "error" }); });
+    return () => { active = false; };
+  }, []);
+
+  const topics = state.status === "ready" ? state.topics : [];
+  const needle = query.trim().toLocaleLowerCase();
+  const filtered = needle ? topics.filter((topic) => topic.title.toLocaleLowerCase().includes(needle)) : topics;
+
+  return (
+    <section className="topic-nav" aria-label="Draft clinical topics">
+      <div className="nav-label topic-nav-label"><span>Draft topics</span>{state.status === "ready" && <span className="topic-nav-count">{topics.length}</span>}</div>
+      <label className="topic-nav-search"><Search size={14} aria-hidden="true" /><span className="sr-only">Filter draft topics</span><input type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Filter drafts…" />{query && <button type="button" onClick={() => setQuery("")} aria-label="Clear draft filter"><X size={13} /></button>}</label>
+      {state.status === "loading" && <div className="topic-nav-skeleton" aria-label="Loading draft topics" role="status">{Array.from({ length: 7 }, (_, index) => <span key={index} />)}</div>}
+      {state.status === "error" && <p className="topic-nav-empty">Draft topics could not be loaded.</p>}
+      {state.status === "ready" && <ul className="topic-nav-drafts">{filtered.map((topic) => {
+        const href = `/dashboard/admin/guidelines/${encodeURIComponent(topic.id)}?version=${encodeURIComponent(topic.versionId)}`;
+        return <li key={topic.versionId}><Link href={href} prefetch={false} onMouseEnter={() => router.prefetch(href)} onFocus={() => router.prefetch(href)} aria-current={topic.versionId === activeVersionId ? "page" : undefined} title={withoutInlineSourceLocators(topic.title)}>{withoutInlineSourceLocators(topic.title)}<small>{topic.version}</small></Link></li>;
+      })}</ul>}
     </section>
   );
 }

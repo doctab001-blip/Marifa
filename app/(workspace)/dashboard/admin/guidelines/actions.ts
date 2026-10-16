@@ -26,7 +26,7 @@ export async function saveDraftGuideline(formData: FormData) {
   }
 
   const parsed = DiseaseDetailSchema.safeParse(input);
-  if (!parsed.success || parsed.data.id !== id || !["draft", "under_review"].includes(parsed.data.status)) {
+  if (!parsed.success || parsed.data.id !== id || !["draft", "under_review", "published"].includes(parsed.data.status)) {
     redirect(`${editPath}&error=invalid_content`);
   }
 
@@ -46,13 +46,13 @@ export async function saveDraftGuideline(formData: FormData) {
     .eq("guideline_id", id)
     .maybeSingle();
   if (versionError || !version) redirect(`${editPath}&error=version_not_editable`);
-  if (version.status !== parsed.data.status || !["draft", "under_review"].includes(version.status)) redirect(`${editPath}&error=version_not_editable`);
+  if (version.status !== parsed.data.status || !["draft", "under_review", "published"].includes(version.status)) redirect(`${editPath}&error=version_not_editable`);
 
   const { error: contentError } = await supabase
     .from("guideline_versions")
     .update({
       content: parsed.data,
-      change_summary: "Draft content updated in the Marifa editor; clinical and local governance review remains pending.",
+      change_summary: version.status === "published" ? "Published content updated in the Marifa editor; the approved version history remains preserved." : "Draft content updated in the Marifa editor; clinical and local governance review remains pending.",
     })
     .eq("id", version.id)
     .eq("guideline_id", id)
@@ -73,6 +73,7 @@ export async function saveDraftGuideline(formData: FormData) {
   updateTag(CLINICAL_DIRECTORY_TAG);
   revalidatePath("/dashboard/diseases");
   revalidatePath("/dashboard/diseases/drafts");
+  revalidatePath("/dashboard/diseases/approved");
   revalidatePath(`/dashboard/diseases/${encodeURIComponent(id)}`);
   redirect(`${editPath}&saved=1`);
 }
@@ -117,8 +118,60 @@ export async function approveGuidelineVersion(formData: FormData) {
 
   revalidatePath("/dashboard/admin/governance");
   revalidatePath("/dashboard/diseases/drafts");
+  revalidatePath("/dashboard/diseases/approved");
   updateTag(CLINICAL_DIRECTORY_TAG);
   revalidatePath("/dashboard/diseases");
   revalidatePath(`/dashboard/diseases/${encodeURIComponent(id)}`);
   redirect(destination === "drafts" ? "/dashboard/diseases/drafts?approved=1" : "/dashboard/admin/governance?approved=1");
+}
+
+/** Moves a draft through the administrator-only staging workflow. */
+export async function transitionGuidelineVersion(formData: FormData) {
+  const id = String(formData.get("id") ?? "");
+  const versionId = String(formData.get("versionId") ?? "");
+  const target = String(formData.get("target") ?? "");
+  const destination = target === "approved" ? "/dashboard/diseases/approved" : target === "published" ? "/dashboard/diseases/published" : "/dashboard/diseases/drafts";
+  if (!uuid.test(id) || !uuid.test(versionId) || !["draft", "published", "approved"].includes(target)) redirect(destination);
+  const context = await requireOrganizationAdmin();
+  const supabase = await createSupabaseDataClient();
+  const { data: version } = await supabase.from("guideline_versions").select("id,status,is_current,content").eq("id", versionId).eq("guideline_id", id).maybeSingle();
+  if (!version) redirect(destination);
+  const allowed = (version.status === "draft" || version.status === "under_review") && target === "published"
+    || version.status === "published" && (target === "draft" || target === "approved");
+  const parsed = DiseaseDetailSchema.safeParse(version.content);
+  if (!allowed || !parsed.success) redirect(destination);
+  const content = { ...parsed.data, status: target as "draft" | "published" | "approved" };
+  if (target === "approved") delete content.clinicalReviewStatus;
+  const { error } = await supabase.from("guideline_versions").update({ status: target, content, approved_by: target === "approved" ? context.userId : null, approved_at: target === "approved" ? new Date().toISOString() : null }).eq("id", versionId);
+  if (error) redirect(destination);
+  if (target === "approved" && !version.is_current) {
+    await supabase.from("guideline_versions").update({ is_current: false }).eq("guideline_id", id).eq("is_current", true);
+    await supabase.from("guideline_versions").update({ is_current: true }).eq("id", versionId);
+  }
+  if (version.is_current || target === "approved") await supabase.from("clinical_guidelines").update({ status: target }).eq("id", id);
+  updateTag(CLINICAL_DIRECTORY_TAG);
+  revalidatePath("/dashboard/diseases"); revalidatePath("/dashboard/diseases/drafts"); revalidatePath("/dashboard/diseases/published"); revalidatePath("/dashboard/diseases/approved");
+  redirect(destination);
+}
+
+/** Starts a new editable draft while leaving the live approved version intact. */
+export async function createDraftFromApproved(formData: FormData) {
+  const id = String(formData.get("id") ?? ""); const versionId = String(formData.get("versionId") ?? "");
+  if (!uuid.test(id) || !uuid.test(versionId)) redirect("/dashboard/diseases/approved");
+  const context = await requireOrganizationAdmin(); const supabase = await createSupabaseDataClient();
+  const { data: source } = await supabase.from("guideline_versions").select("*").eq("id", versionId).eq("guideline_id", id).eq("status", "approved").maybeSingle();
+  const parsed = DiseaseDetailSchema.safeParse(source?.content);
+  if (!source || !parsed.success) redirect("/dashboard/diseases/approved");
+  const version = `${source.version}-draft-${Date.now()}`;
+  const { error } = await supabase.from("guideline_versions").insert({ ...source, id: undefined, version, version_number: version, status: "draft", is_current: false, approved_by: null, approved_at: null, created_by: context.userId, content: { ...parsed.data, version, status: "draft", clinicalReviewStatus: "pending" }, change_summary: `Editable draft created from approved version ${source.version}; approved version preserved.` });
+  if (error) redirect("/dashboard/diseases/approved");
+  revalidatePath("/dashboard/diseases/drafts"); redirect("/dashboard/diseases/drafts");
+}
+
+export async function deleteDraftVersion(formData: FormData) {
+  const id = String(formData.get("id") ?? ""); const versionId = String(formData.get("versionId") ?? "");
+  if (!uuid.test(id) || !uuid.test(versionId)) redirect("/dashboard/diseases/drafts");
+  await requireOrganizationAdmin(); const supabase = await createSupabaseDataClient();
+  await supabase.from("guideline_versions").delete().eq("id", versionId).eq("guideline_id", id).in("status", ["draft", "under_review"]);
+  revalidatePath("/dashboard/diseases/drafts"); redirect("/dashboard/diseases/drafts");
 }

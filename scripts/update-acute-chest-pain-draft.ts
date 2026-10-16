@@ -1,0 +1,154 @@
+import { createClient } from "@supabase/supabase-js";
+import { DiseaseDetailSchema } from "../lib/validations/disease";
+import { auditTopicContent } from "../lib/clinical-authoring-audit";
+
+const guidelineId = "25a72fe4-a384-46d3-a668-068544c6003f";
+const reviewedOn = "2026-10-15";
+const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const key = process.env.SUPABASE_SECRET_KEY;
+if (!url || !key) throw new Error("Missing Supabase environment");
+const db = createClient(url, key, { auth: { persistSession: false } });
+
+const { data: current, error: currentError } = await db
+  .from("guideline_versions")
+  .select("id,content,source_url")
+  .eq("guideline_id", guidelineId)
+  .eq("is_current", true)
+  .single();
+if (currentError) throw currentError;
+if (current.content?.status !== "draft") throw new Error("Acute Chest Pain must remain a draft while this revision is edited.");
+
+const sourceUrl = current.source_url || "https://www.nice.org.uk/guidance/ng185/chapter/Recommendations";
+const userSource = {
+  sourceTitle: "User-supplied Acute Chest Pain draft — pending clinical source verification",
+  sourceUrl,
+  sourceEdition: "Submitted 15 October 2026; not independently source-verified",
+};
+const NICE_ACS = { title: "NICE NG185: Acute coronary syndromes", edition: "Recommendations 1.1.3–1.1.6 and 1.1.19–1.1.20", url: "https://www.nice.org.uk/guidance/ng185/chapter/Recommendations" };
+const NICE_CHEST_PAIN = { title: "NICE CG95: Recent-onset chest pain of suspected cardiac origin", edition: "Recommendations 1.2.1.3 and 1.2.1.7–1.2.1.9", url: "https://www.nice.org.uk/guidance/CG95/chapter/recommendations" };
+
+const content = DiseaseDetailSchema.parse({
+  ...current.content,
+  status: "draft",
+  clinicalReviewStatus: "pending",
+  lastReviewed: reviewedOn,
+  clinicalScenario: "Adults with acute chest pain requiring emergency differentiation of ACS from aortic dissection, pulmonary embolism, tension pneumothorax, and other life-threatening alternatives.",
+  evidenceAudit: {
+    checkedOn: reviewedOn,
+    status: "incomplete",
+    scope: "User-supplied Acute Chest Pain revision, including emergency triage, investigations, reperfusion strategy, antithrombotic therapy, and discharge safety netting.",
+    findings: [
+      "This draft incorporates user-supplied clinical content on 15 October 2026.",
+      "The submitted text contains exact doses, timing targets, and treatment choices without claim-level source locators.",
+      "NICE NG185 and CG95 were checked as context only; local Saudi protocols, product labelling, contraindications, and patient-specific dosing remain to be reconciled before approval.",
+    ],
+    unverifiedSections: [
+      "All exact medicine doses, anticoagulant selection, fibrinolysis timing, and contraindications.",
+      "Saudi/local pathway applicability, formulary availability, and service-specific transfer targets.",
+      "Discharge thresholds and secondary-prevention prescribing in the individual patient.",
+    ],
+    medscapeStatus: "unavailable",
+    originalVersionIds: [current.id],
+  },
+  pathophysiology: {
+    summary: "Acute coronary syndrome results from an acute reduction in myocardial blood flow, typically following atheromatous plaque erosion or rupture with superimposed thrombus formation.",
+    keyMechanisms: [
+      "Plaque disruption and thrombosis: partial or transient occlusion may lead to NSTEMI or unstable angina; complete coronary occlusion typically causes STEMI.",
+      "Myocardial oxygen supply-demand mismatch leads to ischaemia progressing to acute cellular necrosis.",
+      "Cardiac troponin elevation reflects myocardial injury; dynamic change helps distinguish acute injury from chronic baseline elevation in clinical context.",
+    ],
+  },
+  presentation: {
+    symptoms: [
+      "Heavy, crushing, or retrosternal pressure lasting more than 15 minutes.",
+      "Radiation to the left arm, neck, jaw, back, or epigastrium.",
+      "Diaphoresis, dyspnoea, nausea, vomiting, lightheadedness, or syncope.",
+    ],
+    physicalSigns: [
+      "Pallor, diaphoresis, tachycardia, bradycardia, or a new arrhythmia.",
+      "Hypotension, elevated JVP, or bibasal crackles may suggest acute heart failure or cardiogenic shock.",
+      "A normal physical examination does not exclude ACS.",
+    ],
+    redFlags: [
+      "ST elevation of at least 1 mm in 2 contiguous leads, new or presumed-new LBBB, or posterior MI pattern.",
+      "Cardiogenic shock, acute pulmonary oedema, sustained VT/VF, or high-grade AV block.",
+      "Abrupt tearing pain, inter-arm blood-pressure difference over 20 mmHg, pulse deficit, or acute neurological deficit.",
+      "Unilateral absent breath sounds, hyper-resonance, tracheal deviation, or obstructive shock.",
+    ],
+    precipitants: ["Known coronary artery disease or previous ACS", "Cardiovascular risk factors or recent exertional symptoms", "Recent cocaine or stimulant exposure", "Aortic disease, venous thromboembolism, or pneumothorax risk factors when clinically relevant"],
+  },
+  differentials: [
+    { condition: "Aortic dissection", distinguishingFeatures: "Abrupt maximal-onset tearing pain, blood-pressure asymmetry, pulse deficit, neurological deficit, or new aortic regurgitation murmur. Prioritise urgent aortic imaging and haemodynamic management; avoid antiplatelet or anticoagulant treatment until dissection is excluded." },
+    { condition: "Pulmonary embolism", distinguishingFeatures: "Pleuritic pain, sudden dyspnoea, tachycardia, hypoxaemia, or features of DVT. Use the locally validated PE pathway for imaging and treatment decisions." },
+    { condition: "Tension pneumothorax", distinguishingFeatures: "Severe respiratory distress, unilateral absent breath sounds, hyper-resonance, tracheal shift, and hypotension. Immediate decompression takes priority over diagnostic imaging when clinically suspected." },
+    { condition: "Gastrointestinal or musculoskeletal pain", distinguishingFeatures: "Burning epigastric pain, positional discomfort, or reproducible chest-wall tenderness. Consider only after ACS and vascular emergencies have been clinically excluded." },
+  ],
+  investigations: {
+    ruleIn: [
+      { tier: "specializedAdjunctive", testName: "12-lead ECG", modalityTarget: "Perform and interpret within 10 minutes of first medical contact; repeat at 15–30 minute intervals if pain persists or recurs.", targetCondition: "STEMI, NSTE-ACS, or ischaemia", normalValue: "Sinus rhythm without acute ischaemic ST-segment or T-wave change", expectedFinding: "ST elevation, ischaemic ST depression, T-wave inversion, new LBBB, or posterior MI pattern.", clinicalRationale: "A normal ECG does not exclude ACS; serial ECG assessment guides emergency reperfusion and escalation.", references: [NICE_CHEST_PAIN, NICE_ACS] },
+      { tier: "laboratory", testName: "High-sensitivity troponin (hs-cTn)", modalityTarget: "Draw at presentation and repeat at 1, 2, or 3 hours using the local validated assay pathway.", targetCondition: "Acute myocardial injury", normalValue: "Below the assay-specific 99th percentile upper reference limit", expectedFinding: "Dynamic rise and/or fall above the assay-specific 99th percentile.", clinicalRationale: "Interpret assay-specific change with symptoms, ECG, and clinical context; a biomarker rise alone does not establish ACS.", references: [NICE_CHEST_PAIN] },
+      { tier: "laboratory", testName: "Baseline laboratories", modalityTarget: "FBC, U&Es, LFTs, glucose, coagulation profile, and lipid panel.", targetCondition: "Renal function, bleeding risk, metabolic abnormality, and contrast suitability", normalValue: "Use local adult laboratory reference intervals; no clinically important renal impairment, anaemia, coagulopathy, or electrolyte disturbance", expectedFinding: "Findings that modify antithrombotic selection, dosing, and acute risk assessment.", clinicalRationale: "Establish baseline renal function and bleeding risk before antithrombotic treatment or contrast exposure.", references: [NICE_ACS] },
+    ],
+    ruleOut: [
+      { tier: "firstLineImaging", testName: "Chest radiograph", modalityTarget: "When clinically stable and indicated.", targetCondition: "Pulmonary oedema, pneumothorax, widened mediastinum, or consolidation", normalValue: "No acute pulmonary oedema, pneumothorax, focal consolidation, or widened mediastinal contour", expectedFinding: "Features supporting an alternative thoracic cause or complication.", clinicalRationale: "A chest radiograph may support an alternative diagnosis but does not exclude ACS or reliably exclude aortic dissection.", references: [NICE_CHEST_PAIN] },
+      { tier: "advancedImaging", testName: "CT pulmonary angiogram or CT aortogram", modalityTarget: "High clinical suspicion for PE or aortic dissection.", targetCondition: "Pulmonary arterial occlusion or aortic intimal flap", normalValue: "No pulmonary arterial filling defect or aortic intimal flap", expectedFinding: "Imaging evidence of PE or aortic dissection.", clinicalRationale: "Use targeted imaging when the clinical suspicion is high; do not delay time-critical primary PCI for diagnostic imaging in STEMI.", references: [NICE_ACS] },
+    ],
+  },
+  diagnosticCriteria: [
+    { criterion: "STEMI pattern", threshold: "ST elevation of at least 1 mm in 2 contiguous leads or another diagnostic ECG pattern requiring immediate specialist interpretation." },
+    { criterion: "Acute myocardial injury", threshold: "hs-cTn above the assay-specific 99th percentile with a dynamic rise and/or fall, interpreted with symptoms and ECG." },
+    { criterion: "Low-risk rule-out", threshold: "Negative validated serial hs-cTn pathway, HEART score 3 or lower, non-dynamic ECGs, and no alternative life-threatening diagnosis." },
+  ],
+  clinicalManagement: [
+    { id: "immediate-assessment", title: "Immediate emergency assessment", timeframe: "0–10 minutes", actions: ["Assess airway, breathing, circulation, observations, and pain score; maintain continuous cardiac monitoring and pulse oximetry.", "Obtain a 12-lead ECG within 10 minutes, establish IV access, and draw hs-troponin and baseline laboratory tests.", "Give oxygen only for saturation below 90% or severe respiratory distress.", "Before antithrombotic treatment, assess for aortic dissection, tension pneumothorax, PE, and other life-threatening alternatives."], branches: [{ condition: "Persistent severe pain after initial assessment", actions: ["Use GTN and opioid analgesia only after contraindication and haemodynamic review under the local emergency protocol."] }] },
+    { id: "stemi-reperfusion", title: "STEMI reperfusion pathway", timeframe: "Immediately after diagnostic ECG", actions: ["Activate the catheterisation laboratory for primary PCI when the local first-medical-contact to device target can be met.", "When timely PCI is not available, consider fibrinolysis only after confirming eligibility and absence of absolute contraindications, followed by immediate transfer to a PCI-capable centre.", "Select antiplatelet and anticoagulant treatment through the current Saudi/local ACS pathway, with renal function, bleeding risk, and reperfusion strategy documented."] },
+    { id: "nste-acs-strategy", title: "NSTE-ACS risk stratification and strategy", timeframe: "From diagnosis", actions: ["Use serial ECGs, hs-troponin trends, and validated HEART and GRACE risk assessment.", "Escalate immediately for refractory angina, haemodynamic instability, cardiogenic shock, acute heart failure, or sustained VT/VF.", "Consider early invasive assessment for confirmed NSTEMI, dynamic ST-T changes, or high-risk GRACE score, following the local pathway.", "Choose DAPT and anticoagulation only after individual bleeding risk, renal function, and planned invasive strategy are reviewed." ] },
+    { id: "low-risk-rule-out", title: "Low-risk rule-out and safety net", timeframe: "After validated serial assessment", actions: ["Consider discharge only after a negative validated rapid hs-troponin pathway, HEART score of 3 or lower, non-dynamic ECGs, and clinical exclusion of non-coronary emergencies.", "Arrange rapid-access chest-pain clinic or outpatient cardiology follow-up within the locally approved timeframe.", "Give clear emergency return precautions for recurrent or worsening symptoms." ] },
+  ],
+  medicationPlan: {
+    status: "local-protocol-required",
+    note: "UNREVIEWED DRAFT — NOT FOR CLINICAL USE. Exact doses below were supplied by the user and require reconciliation with current Saudi/local ACS protocols, product labelling, contraindications, renal function, bleeding risk, and the selected reperfusion pathway before clinical approval.",
+    regimens: [
+      { indication: "Ischaemic pain relief", patientGroup: "Adults with suspected ACS; local protocol required", genericName: "Glyceryl trinitrate", dose: "0.4 mg", route: "Sublingual spray or tablet", frequency: "Every 5 minutes", duration: "Maximum 3 doses", adjustments: ["Avoid with systolic blood pressure below 90 mmHg, suspected right-ventricular infarction, or recent PDE-5 inhibitor use."], monitoring: ["Blood pressure, symptom response, and clinical stability."], contraindications: ["Hypotension, suspected right-ventricular infarction, recent PDE-5 inhibitor use."], ...userSource },
+      { indication: "Severe refractory chest pain", patientGroup: "Adults with suspected ACS; local protocol required", genericName: "Morphine", dose: "2–4 mg", route: "IV slow push with antiemetic", frequency: "As clinically required", duration: "Shortest necessary duration", adjustments: ["Use cautiously in hypotension, respiratory compromise, or altered consciousness."], monitoring: ["Respiratory rate, oxygen saturation, blood pressure, consciousness, and analgesic response."], contraindications: ["Clinically significant respiratory depression or instability requiring immediate resuscitation."], ...userSource },
+      { indication: "ACS antiplatelet loading", patientGroup: "Adults with suspected or confirmed ACS; local protocol required", genericName: "Aspirin", dose: "300 mg loading dose; 75–100 mg daily stated for maintenance", route: "Oral, chewable for loading", frequency: "Immediately, then daily", duration: "Per local ACS pathway", adjustments: ["Review allergy, active bleeding, anticoagulation, and gastroprotection needs."], monitoring: ["Bleeding, hypersensitivity, haemoglobin, and clinical response."], contraindications: ["Documented hypersensitivity or active clinically significant bleeding."], ...userSource },
+      { indication: "P2Y12 inhibitor loading", patientGroup: "Adults with ACS; selection requires local pathway and cardiology review", genericName: "Ticagrelor", dose: "180 mg loading dose", route: "Oral", frequency: "Once for loading", duration: "Per local ACS pathway", adjustments: ["Do not combine routinely with an anticoagulant needed for a separate ongoing indication without specialist review."], monitoring: ["Bleeding, dyspnoea, rhythm, and treatment interactions."], contraindications: ["Active bleeding, prior intracranial haemorrhage, or other contraindications in current product information."], ...userSource },
+      { indication: "Alternative P2Y12 inhibitor", patientGroup: "Adults with ACS when selected by local pathway", genericName: "Clopidogrel", dose: "600 mg loading dose", route: "Oral", frequency: "Once for loading", duration: "Per local ACS pathway", adjustments: ["The selected loading dose and use with fibrinolysis require current pathway confirmation."], monitoring: ["Bleeding and treatment response."], contraindications: ["Active bleeding or documented hypersensitivity."], ...userSource },
+      { indication: "Primary PCI anticoagulation", patientGroup: "Adults undergoing primary PCI; cath-lab/local protocol required", genericName: "Unfractionated heparin", dose: "70 units/kg IV bolus; stated maximum 5,000 units", route: "Intravenous", frequency: "Single procedural bolus", duration: "During primary PCI", adjustments: ["Confirm dosing, concurrent antithrombotics, renal function, and procedural protocol."], monitoring: ["Bleeding, activated clotting time when locally used, platelet count, and procedural response."], contraindications: ["Active bleeding or heparin-induced thrombocytopenia history."], ...userSource },
+      { indication: "PCI or NSTE-ACS anticoagulation", patientGroup: "Adults with ACS; local protocol required", genericName: "Enoxaparin", dose: "0.5 mg/kg IV bolus during primary PCI; 1 mg/kg SC twice daily stated for NSTE-ACS", route: "Intravenous or subcutaneous", frequency: "According to the selected strategy", duration: "Per local ACS pathway", adjustments: ["Renal function, body weight, age, bleeding risk, and timing of invasive procedures require review."], monitoring: ["Bleeding, renal function, platelet count, and response."], contraindications: ["Active bleeding, history of heparin-induced thrombocytopenia, or contraindication in current product information."], ...userSource },
+      { indication: "NSTE-ACS anticoagulation", patientGroup: "Adults with NSTE-ACS when selected by local pathway", genericName: "Fondaparinux", dose: "2.5 mg", route: "Subcutaneous", frequency: "Daily", duration: "Per local ACS pathway", adjustments: ["Confirm renal function, invasive strategy, and local procedural anticoagulation requirements."], monitoring: ["Bleeding, renal function, platelet count, and clinical response."], contraindications: ["Active bleeding or contraindication in current product information."], ...userSource },
+      { indication: "Secondary prevention", patientGroup: "Adults after confirmed ACS; specialist and local protocol required", genericName: "Atorvastatin", dose: "80 mg", route: "Oral", frequency: "Daily", duration: "Long-term according to secondary prevention plan", adjustments: ["Review interactions, liver disease, pregnancy potential, and tolerability."], monitoring: ["Lipid response, adverse effects, liver tests when indicated, and adherence."], contraindications: ["Active liver disease, pregnancy, or contraindication in current product information."], ...userSource },
+    ],
+  },
+  nonClinicalManagement: {
+    patientEducation: ["Call emergency services immediately if chest pain recurs, radiates to the arm or jaw, or is accompanied by diaphoresis or dyspnoea.", "Explain the follow-up plan, medicines, and warning signs using teach-back where possible."],
+    lifestyleAndDiet: ["Provide smoking-cessation support, dietary advice, and activity guidance after stabilisation.", "Offer formal cardiac rehabilitation after confirmed ACS when appropriate."],
+    mdtReferrals: ["Cardiology", "Cardiac rehabilitation", "Pharmacy and primary care for medicine reconciliation and cardiovascular risk reduction"],
+    dischargeCriteria: ["Validated ACS diagnostic pathway completed with serial hs-troponin assessment and non-ischaemic or non-dynamic ECGs when discharge is appropriate.", "Chest pain resolved and vital signs stable.", "Clear follow-up plan, secondary-prevention plan where indicated, and emergency return precautions documented."],
+    followUpPlan: "For low-risk discharge, arrange rapid-access chest-pain clinic or outpatient cardiology follow-up within the locally approved timeframe. For confirmed ACS, arrange cardiology follow-up and cardiac rehabilitation.",
+  },
+  teaching: {
+    scope: "Educational draft for adult acute chest-pain triage. Follow current Saudi/local emergency, cardiology, and formulary pathways for patient care.",
+    learningObjectives: ["Recognise ACS red flags and life-threatening non-coronary alternatives.", "Use serial ECG and hs-troponin assessment in a validated local pathway.", "Escalate immediately for STEMI, shock, pulmonary oedema, malignant arrhythmia, or suspected aortic dissection."],
+    keyPoints: ["A normal initial ECG does not exclude ACS.", "Troponin must be interpreted as a dynamic biomarker in the clinical context.", "Exclude aortic dissection before antithrombotic treatment when the presentation is suggestive."],
+    pitfalls: ["Do not delay indicated reperfusion for non-essential imaging.", "Do not use this draft as a prescribing protocol or substitute for local pathway confirmation.", "Do not attribute atypical or persistent symptoms to a benign diagnosis before dangerous causes are considered."],
+    references: [
+      { ...NICE_ACS, locator: "Recommendations 1.1.3–1.1.6 and 1.1.19–1.1.20" },
+      { ...NICE_CHEST_PAIN, locator: "Recommendations 1.2.1.3 and 1.2.1.7–1.2.1.9" },
+    ],
+  },
+});
+
+const { error: updateError } = await db.from("guideline_versions").update({
+  content,
+  status: "draft",
+  approved_by: null,
+  approved_at: null,
+  published_at: null,
+  last_verified_date: null,
+  change_summary: "User-supplied Acute Chest Pain revision applied on 15 Oct 2026. Remains a draft pending claim-level sources, Saudi/local protocol reconciliation, and clinical approval.",
+}).eq("id", current.id);
+if (updateError) throw updateError;
+
+const audit = auditTopicContent(content);
+console.log(JSON.stringify({ guidelineId, versionId: current.id, title: content.title, status: "draft", investigationCount: content.investigations.ruleIn.length + content.investigations.ruleOut.length, medicineCount: content.medicationPlan?.regimens.length, auditScore: audit.score, meetsPublicationThreshold: audit.meetsEightyPercent, remainingFailures: audit.failures.length }));

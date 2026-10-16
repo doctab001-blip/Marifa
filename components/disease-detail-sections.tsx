@@ -152,6 +152,18 @@ export function DiseaseDetailSections({ disease, investigationSource }: { diseas
         </div>
         <div className="follow-up-plan"><strong>Follow-up plan</strong><p>{disease.nonClinicalManagement.followUpPlan}</p></div>
       </Section>
+      {disease.teaching?.guidedApproach?.length ? (
+        <section className="topic-teaching-appendix" aria-labelledby="topic-teaching-appendix-title">
+          <h2 id="topic-teaching-appendix-title">Additional clinical reference</h2>
+          {disease.teaching.guidedApproach.map((item) => (
+            <article className="topic-teaching-appendix-block" key={item.title}>
+              <h3>{item.title}</h3>
+              <p className="topic-teaching-appendix-prompt">{item.prompt}</p>
+              <div className="topic-teaching-appendix-guidance">{item.guidance.split("\n").map((line, index) => <p key={`${item.title}-${index}`}>{line}</p>)}</div>
+            </article>
+          ))}
+        </section>
+      ) : null}
       <SourceCitation sources={topicSources} />
     </section>
   );

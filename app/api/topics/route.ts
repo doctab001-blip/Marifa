@@ -1,10 +1,16 @@
 import { NextResponse } from "next/server";
 import { getApprovedDiseaseGuidelines } from "@/lib/data/disease-guidelines";
+import { getDiseaseDrafts } from "@/lib/data/disease-drafts";
 import { medicalSpecialities } from "@/lib/medical-specialities";
 import { ModelOfCarePillarSchema } from "@/lib/validations/disease";
 
 export async function GET(request: Request) {
   const params = new URL(request.url).searchParams;
+  if (params.get("view") === "drafts") {
+    const result = await getDiseaseDrafts();
+    if (result.state === "unavailable") return NextResponse.json({ error: "Draft topics unavailable." }, { status: 503 });
+    return NextResponse.json({ topics: result.drafts.map(({ id, title, versionId, version }) => ({ id, title, versionId, version })) }, { headers: { "Cache-Control": "private, max-age=60" } });
+  }
   const speciality = params.get("speciality")?.trim();
   const carePillar = params.get("care_pillar")?.trim();
   if (speciality && !medicalSpecialities.some(({ name }) => name.toLocaleLowerCase() === speciality.toLocaleLowerCase())) {

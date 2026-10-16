@@ -85,7 +85,14 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
         {disease.diagnosticCriteria?.length ? (
           <div className="em-criteria">
             <h3>Diagnostic criteria</h3>
-            <dl>{disease.diagnosticCriteria.map((item) => <div key={item.criterion}><dt>{withoutInlineSourceLocators(item.criterion)}</dt><dd>{withoutInlineSourceLocators(item.threshold)}</dd></div>)}</dl>
+            <ul className="em-criteria-list">
+              {disease.diagnosticCriteria.map((item) => (
+                <li key={item.criterion}>
+                  <strong>{withoutInlineSourceLocators(item.criterion)}:</strong>{" "}
+                  {withoutInlineSourceLocators(item.threshold)}
+                </li>
+              ))}
+            </ul>
           </div>
         ) : null}
         <div className="em-table-wrap">

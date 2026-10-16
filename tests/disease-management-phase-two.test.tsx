@@ -7,6 +7,7 @@ import { DiseaseDirectoryClient } from "@/components/diseases/DiseaseDirectoryCl
 import { CollapsibleShell } from "@/components/collapsible-shell";
 import { DiseaseCard } from "@/components/diseases/DiseaseCard";
 import type { DiseaseGuidelineSummary } from "@/lib/data/disease-guidelines";
+import { selectNewestDraftPerTopic } from "@/lib/data/draft-topic-selection";
 
 const diseases: DiseaseGuidelineSummary[] = [
   { id: "a1010000-0000-4000-8000-000000000001", title: "Acute Severe Asthma Exacerbation (Adult)", specialty: "Emergency Medicine", speciality: "Emergency Medicine", subSpecialities: [], authority: "MOH", status: "approved", version: "1.0", lastReviewed: "2026-09-01", pillar: "Urgent Care", summary: "Acute airflow obstruction requiring urgent assessment." },
@@ -14,6 +15,20 @@ const diseases: DiseaseGuidelineSummary[] = [
 ];
 
 describe("Disease management UI", () => {
+  it("shows one newest actionable draft per topic while preserving version history", () => {
+    const base = {
+      title: "Example topic", specialty: "Primary Care", guidelineStatus: "draft", isSharedReference: true,
+      versionStatus: "draft", sourceTitle: "Source", canEdit: true, canApprove: true,
+    };
+    const visible = selectNewestDraftPerTopic([
+      { ...base, id: "topic-a", versionId: "old", version: "draft-v1", createdAt: "2026-10-12T08:00:00.000Z" },
+      { ...base, id: "topic-a", versionId: "new", version: "draft-v2", createdAt: "2026-10-16T08:00:00.000Z" },
+      { ...base, id: "topic-b", versionId: "only", version: "draft-v1", createdAt: "2026-10-14T08:00:00.000Z" },
+    ]);
+    expect(visible).toHaveLength(2);
+    expect(visible.find((draft) => draft.id === "topic-a")?.versionId).toBe("new");
+  });
+
   it("switches directory views without losing filters or pending review notices", () => {
     render(<DiseaseDirectoryClient diseases={[{ ...diseases[0], clinicalReviewStatus: "pending" }, diseases[1]]} state="ready" />);
     fireEvent.click(screen.getByRole("button", { name: "List" }));
@@ -79,5 +94,8 @@ describe("Disease management UI", () => {
     expect(screen.getByText("Within 10 minutes")).toBeInTheDocument();
     expect(screen.getByText("If unstable")).toBeInTheDocument();
     expect(screen.getByText("Activate emergency response")).toBeInTheDocument();
+    expect(document.querySelector(".pathway-sequence-list")?.tagName).toBe("DIV");
+    expect(document.querySelectorAll(".pathway-sequence-list > li")).toHaveLength(0);
+    expect(document.querySelectorAll(".pathway-actions > li")).toHaveLength(1);
   });
 });

@@ -5,6 +5,7 @@ import { getCurrentViewer } from "@/lib/supabase/session";
 import { isSupabaseConfigured } from "@/lib/supabase/config";
 import { createSupabaseDataClient } from "@/lib/supabase/data-client";
 import { DiseaseDetailSchema } from "@/lib/validations/disease";
+import { selectNewestDraftPerTopic } from "@/lib/data/draft-topic-selection";
 
 export type DiseaseDraft = {
   id: string;
@@ -20,6 +21,11 @@ export type DiseaseDraft = {
   canEdit: boolean;
   canApprove: boolean;
   auditSummary?: string;
+};
+
+export type DiseaseManagementVersion = Omit<DiseaseDraft, "guidelineStatus" | "versionStatus" | "canApprove" | "auditSummary"> & {
+  guidelineStatus: "approved" | "published";
+  versionStatus: "approved" | "published";
 };
 
 async function loadDiseaseDrafts(): Promise<{
@@ -40,24 +46,15 @@ async function loadDiseaseDrafts(): Promise<{
     const drafts: DiseaseDraft[] = [];
     const pageSize = 500;
 
-    // A published current copy takes precedence in the platform. Draft versions remain in
-    // version history but are not listed again in Drafts, preventing duplicate topics.
-    const publishedTopicIds = new Set<string>();
-    const { data: publishedRows, error: publishedError } = await supabase
-      .from("clinical_guidelines")
-      .select("id,guideline_versions!inner(id)")
-      .or(`organization_id.eq.${viewer.organizationId},and(organization_id.is.null,is_shared_reference.eq.true)`)
-      .in("status", ["approved", "published"])
-      .eq("guideline_versions.is_current", true)
-      .in("guideline_versions.status", ["approved", "published"]);
-    if (publishedError) return { drafts: [], topicCount: 0, state: "unavailable", isAdmin };
-    for (const row of publishedRows ?? []) publishedTopicIds.add(row.id);
-
     for (let start = 0; ; start += pageSize) {
       const { data, error } = await supabase
         .from("clinical_guidelines")
         .select("id,title,specialty,status,is_shared_reference,organization_id,created_at,guideline_versions!inner(id,version,status,is_current,created_at,source_title,audit:content->evidenceAudit)")
         .or(`organization_id.eq.${viewer.organizationId},and(organization_id.is.null,is_shared_reference.eq.true)`)
+        // A topic is shown in exactly one queue. Historical draft versions of
+        // a topic already moved to Published or Approved remain in storage,
+        // but are not repeated in the Drafts queue.
+        .in("status", ["draft", "under_review"])
         .in("guideline_versions.status", ["draft", "under_review"])
         .order("created_at", { ascending: false })
         .range(start, start + pageSize - 1);
@@ -65,7 +62,6 @@ async function loadDiseaseDrafts(): Promise<{
       if (error || !data) return { drafts: [], topicCount: 0, state: "unavailable", isAdmin };
 
       for (const item of data) {
-        if (publishedTopicIds.has(item.id)) continue;
         const related = item.guideline_versions as unknown as Array<{
           id: string;
           version: string;
@@ -98,8 +94,9 @@ async function loadDiseaseDrafts(): Promise<{
       if (data.length < pageSize) break;
     }
 
-    drafts.sort((a, b) => a.title.localeCompare(b.title, "en") || b.createdAt.localeCompare(a.createdAt));
-    return { drafts, topicCount: new Set(drafts.map((draft) => draft.id)).size, state: "ready", isAdmin };
+    const visibleDrafts = selectNewestDraftPerTopic(drafts);
+    visibleDrafts.sort((a, b) => a.title.localeCompare(b.title, "en") || b.createdAt.localeCompare(a.createdAt));
+    return { drafts: visibleDrafts, topicCount: visibleDrafts.length, state: "ready", isAdmin };
   } catch {
     return { drafts: [], topicCount: 0, state: "unavailable", isAdmin };
   }
@@ -110,6 +107,64 @@ export const getDiseaseDrafts = cache(loadDiseaseDrafts);
 export async function getDiseaseDraftTopicCount() {
   const result = await getDiseaseDrafts();
   return result.state === "ready" ? result.topicCount : 0;
+}
+
+/** Current versions grouped by their explicit governance state for Disease Management. */
+export async function getDiseaseManagementVersions(status: "approved" | "published"): Promise<{
+  versions: DiseaseManagementVersion[];
+  topicCount: number;
+  state: "ready" | "unavailable";
+}> {
+  const viewer = await getCurrentViewer();
+  const isAdmin = Boolean(viewer?.isAdmin);
+  const isPlatformAdmin = viewer?.role === "Platform Admin";
+  if (!viewer || !isSupabaseConfigured() || viewer.organizationId === "pending-membership") {
+    return { versions: [], topicCount: 0, state: "unavailable" };
+  }
+
+  try {
+    const supabase = await createSupabaseDataClient();
+    const query = supabase
+      .from("clinical_guidelines")
+      .select("id,title,specialty,status,is_shared_reference,guideline_versions!inner(id,version,status,is_current,created_at,source_title)")
+      .or(`organization_id.eq.${viewer.organizationId},and(organization_id.is.null,is_shared_reference.eq.true)`)
+      // A topic belongs to exactly one governance tab. Once its parent record
+      // is approved, older published versions remain history but are excluded
+      // from the Published queue.
+      .eq("status", status)
+      .eq("guideline_versions.status", status)
+      .eq("guideline_versions.is_current", true)
+      .order("title", { ascending: true });
+    const { data, error } = await query;
+    if (error) return { versions: [], topicCount: 0, state: "unavailable" };
+
+    const versions: DiseaseManagementVersion[] = [];
+    for (const item of data ?? []) {
+      const version = (Array.isArray(item.guideline_versions) ? item.guideline_versions[0] : item.guideline_versions) as unknown as {
+        id: string; version: string; status: "approved" | "published"; created_at: string; source_title: string;
+      } | null;
+      if (!version) continue;
+      const canManage = isAdmin && (!item.is_shared_reference || isPlatformAdmin);
+      versions.push({
+        id: item.id,
+        title: item.title,
+        specialty: item.specialty ?? "Unassigned",
+        guidelineStatus: status,
+        isSharedReference: item.is_shared_reference,
+        versionId: version.id,
+        version: version.version,
+        versionStatus: status,
+        sourceTitle: version.source_title,
+        createdAt: version.created_at,
+        // Published versions are editable; Approved exposes a separate action that
+        // creates a draft copy instead of mutating the live approval record.
+        canEdit: canManage,
+      });
+    }
+    return { versions, topicCount: new Set(versions.map((version) => version.id)).size, state: "ready" };
+  } catch {
+    return { versions: [], topicCount: 0, state: "unavailable" };
+  }
 }
 
 export async function getDiseaseDraftVersion(versionId: string) {

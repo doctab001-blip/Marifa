@@ -6,7 +6,7 @@ import { requireOrganizationAdmin } from "@/lib/admin/data";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { isTemporaryOpenAdminMode } from "@/lib/access-mode";
 
-const themes = ["#1f3c88", "#0f766e", "#166534", "#7c3aed", "#be123c"] as const;
+const themes = ["#1f3c88", "#0e7490", "#166534", "#7c3aed", "#be123c"] as const;
 const levels = ["mbbs_gp", "specialist", "consultant"] as const;
 const locales = ["en-SA", "ar-SA"] as const;
 const timezones = ["Asia/Riyadh", "UTC"] as const;

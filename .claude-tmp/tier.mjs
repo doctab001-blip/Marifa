@@ -1,0 +1,13 @@
+import { createClient } from "@supabase/supabase-js";
+import { writeFileSync } from "node:fs";
+const db = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SECRET_KEY, { auth: { persistSession: false } });
+const T4=/Tonsillectomy|Thyroidectomy|Varicose|Joint Injection|Surgical Release|Colonoscopy: Pre|Bariatric Surgery: Post|Premarital|Prostate Cancer Survivorship|Endoscopy: Referral/;
+const T3=/Cauda Equina|Sensorineural|Spinal Cord Compression|Neutropenic|Ectopic|Ruptured Ovarian|Deep Neck|Status Epilepticus|Meningitis|Eclampsia: Emergency|Shoulder Dystocia|Postpartum Psychosis|Familial Hyper|Suspected Melanoma|Palliative Sedation|Motor Neurone/;
+const T1=/Type 2 Diabetes|Diabetic Kidney|Diabetic Foot|Hypertension: Primary|Resistant Hypertension|Stable Coronary|Dyslipidaemia: Statin|Transient Ischaemic|Major Trauma|Children: ED Pathway|Heart Failure Exacerbation|Minor Head Injury in Adults|Pre-Eclampsia: Antenatal|Gestational Diabetes: Screening|Gestational Diabetes: Antenatal|Obesity in Adults: Primary|Post-Myocardial|Post-PCI|Diabetic Retinopathy|Lower Gastrointestinal Bleeding|First Seizure|Type 1 Diabetes in Adults: Annual/;
+const LAB={1:"Tier 1 (high volume, high risk): build hyper-detailed and review regularly.",2:"Tier 2 (high volume, low/moderate risk): build as a concise rapid-reference primary care algorithm.",3:"Tier 3 (low volume, high risk, red flag): keep strictly algorithm-focused with clear referral triggers.",4:"Tier 4 (low volume, low risk): deprioritised; build last."};
+const { data } = await db.from("guideline_versions").select("id,guideline_id,clinical_guidelines!inner(title)").eq("version","topic-list-draft-2026-10-13-b003");
+const rows=data.map(r=>{const t=r.clinical_guidelines.title;return {id:r.id,title:t,tier:T4.test(t)?4:T3.test(t)?3:T1.test(t)?1:2};});
+for(const r of rows){const {error}=await db.from("guideline_versions").update({change_summary:`Topic added to the draft queue at the owner's request. Intake shell only; no clinical content authored; clinical review pending. Build priority: ${LAB[r.tier]}`}).eq("id",r.id); if(error) console.log("FAIL",r.title,error.message);}
+const order=[1,2,3,4]; let md="# Marifa draft build order (Risk x Volume), 13 Oct 2026\n";
+for(const t of order){const x=rows.filter(r=>r.tier===t).sort((a,b)=>a.title.localeCompare(b.title)); md+=`\n## ${LAB[t].split(":")[0]} - ${x.length} topics\n${LAB[t].split(": ")[1]}\n`+x.map(r=>`- ${r.title}`).join("\n")+"\n";}
+writeFileSync("data/seeds/batch_07_build_order.md",md); console.log(order.map(t=>t+":"+rows.filter(r=>r.tier===t).length).join("  "), rows.length);

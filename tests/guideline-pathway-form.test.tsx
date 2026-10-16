@@ -56,4 +56,21 @@ describe("GuidelinePathwayForm", () => {
     expect(await screen.findByRole("alert")).toHaveTextContent("presentation → symptoms");
     expect(saveAction).not.toHaveBeenCalled();
   });
+
+  it("merges a pasted Bulk Text draft into the save payload", async () => {
+    const user = userEvent.setup();
+    render(<GuidelinePathwayForm disease={disease} guidelineId={disease.id} versionId="22222222-2222-4222-8222-222222222222" saveAction={vi.fn()} />);
+    await user.click(screen.getByRole("button", { name: "📝 Bulk Text View" }));
+    const canvas = screen.getByRole("textbox", { name: "Bulk Markdown draft" });
+    const pasted = (canvas as HTMLTextAreaElement).value
+      .replace("# Test pathway", "# Replaced pasted topic")
+      .replace("Original summary.", "Replacement summary from the pasted draft.")
+      .replace("- Original symptom", "- Replacement symptom");
+    fireEvent.change(canvas, { target: { value: pasted } });
+    const compiled = JSON.parse((document.querySelector('input[name="content"]') as HTMLInputElement).value);
+    expect(compiled.title).toBe("Replaced pasted topic");
+    expect(compiled.pathophysiology.summary).toBe("Replacement summary from the pasted draft.");
+    expect(compiled.presentation.symptoms).toEqual(["Replacement symptom"]);
+    expect(DiseaseDetailSchema.safeParse(compiled).success).toBe(true);
+  });
 });

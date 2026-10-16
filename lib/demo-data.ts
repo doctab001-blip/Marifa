@@ -7,7 +7,7 @@ export const demoUser: DemoUser = {
   role: "Specialist",
   designation: "Specialist",
   isAdmin: false,
-  primaryColor: "#0f766e",
+  primaryColor: "#0e7490",
   specialty: "General Medicine",
   organizationId: "org_nour_demo",
   organizationName: "Nour Medical Centre — Demo"
@@ -20,7 +20,7 @@ export const governanceUser: DemoUser = {
   role: "Clinical Governance Lead",
   designation: "Consultant",
   isAdmin: false,
-  primaryColor: "#0f766e",
+  primaryColor: "#0e7490",
   specialty: "Clinical Governance",
   organizationId: "org_nour_demo",
   organizationName: "Nour Medical Centre — Demo"
@@ -33,7 +33,7 @@ export const temporaryAdminUser: DemoUser = {
   role: "Platform Admin",
   designation: "Temporary access mode",
   isAdmin: true,
-  primaryColor: "#0f766e",
+  primaryColor: "#0e7490",
   specialty: "Clinical Governance",
   organizationId: process.env.MARIFA_TEMPORARY_ADMIN_ORGANIZATION_ID ?? "temporary-admin-organization",
   organizationName: "Marifa Platform",

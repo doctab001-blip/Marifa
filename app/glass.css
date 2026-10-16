@@ -414,10 +414,32 @@ a.card:hover, .disease-card:hover, .care-pillar-card:hover { border-color: rgb(3
   .scenario-card { border-radius: 24px; }
 }
 
+/* Selected pills use a light magenta state consistently across topic navigation. */
+.care-pillar-tab.is-active,
+.admin-tab.is-active,
+.disease-management-tabs a[aria-current="page"],
+.scope-chip-active,
+.em-nav a[aria-current="true"],
+.topic-switcher-list a[aria-current="page"] {
+  --pc: #f9a8d4 !important;
+  background: #fce7f3 !important;
+  border-color: #f9a8d4 !important;
+  color: #831843 !important;
+  box-shadow: none !important;
+}
+.care-pillar-tab.is-active .care-pillar-tab-count {
+  background: #fff !important;
+  color: #831843 !important;
+}
+.em-nav a[aria-current="true"] span {
+  background: #f9a8d4 !important;
+  color: #831843 !important;
+}
+
 /* ═══ Light-mode colour overrides (dark text on tinted glass) ═══════════════════════════════ */
 html:not([data-theme="dark"]) {
   .care-pillar-tab.is-active, .admin-tab.is-active, .disease-management-tabs a[aria-current="page"], .scope-chip-active,
-  .em-nav a[aria-current="true"], .topic-switcher-list a[aria-current="page"] { color: #064a5c; }
+  .em-nav a[aria-current="true"], .topic-switcher-list a[aria-current="page"] { color: #831843 !important; }
   .button-primary, .ui-button-primary, .global-search-submit, .hero-input button, .ai-search-form button, .topic-approve-button, .alert-banner-action { color: #04313c; text-shadow: none; }
   .ui-button-danger { color: #be123c; } .ui-button-danger:hover { color: #881337; }
   .em-list li::marker { color: #0891b2; }
@@ -537,6 +559,18 @@ a.card:hover, .disease-card:hover, .care-pillar-card:hover { border-color: rgb(v
 .topic-nav-group a[aria-current="page"] { background: color-mix(in srgb, var(--royal-bright) 13%, transparent); box-shadow: none; }
 .topic-nav-search input:focus, .global-search input:focus { box-shadow: 0 0 0 3px rgb(34 211 238 / .16); border-color: rgb(34 211 238 / .6); }
 .topic-nav-search input, .global-search input { box-shadow: none; }
+
+/* The side panel has its own selection language: orange, not the pill colour. */
+.sidebar .nav-link[aria-current="page"],
+.sidebar-collapsed .nav-link[aria-current="page"],
+.sidebar .topic-nav-group a[aria-current="page"],
+.sidebar .topic-nav-drafts a[aria-current="page"] {
+  background: #ffedd5;
+  border-color: #fdba74;
+  color: #9a3412;
+  box-shadow: inset 3px 0 0 #ea580c;
+}
+.sidebar .nav-link[aria-current="page"] > svg { color: #9a3412; }
 
 /* Header: still frosted and floating, but quiet. */
 .topbar { background: rgb(var(--glass) / .7); box-shadow: 0 8px 24px -16px rgb(var(--shade) / .4); }

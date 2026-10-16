@@ -1,0 +1,148 @@
+{
+  "title": "Acute appendicitis adult emergency pathway",
+  "nodes": [
+    {
+      "id": "start",
+      "type": "start",
+      "title": "Suspected appendicitis",
+      "detail": "Nonpregnant adult with acute right iliac fossa or compatible abdominal pain",
+      "referenceIds": [
+        "89d14721-c990-4d43-bf82-81bd777b7a39"
+      ]
+    },
+    {
+      "id": "stability",
+      "type": "assessment",
+      "title": "Assess stability and peritonitis",
+      "detail": "Resuscitate and escalate shock, sepsis, generalized peritonitis or suspected perforation",
+      "emphasis": "critical",
+      "referenceIds": [
+        "89d14721-c990-4d43-bf82-81bd777b7a39",
+        "80eaa7d3-d7bd-48c2-96d6-83aa7db183b5"
+      ]
+    },
+    {
+      "id": "risk",
+      "type": "assessment",
+      "title": "Risk stratify",
+      "detail": "AIR/AAS plus laboratory assessment; account for age, sex and comorbidity",
+      "referenceIds": [
+        "89d14721-c990-4d43-bf82-81bd777b7a39",
+        "1919c9db-1113-438a-8a27-9a074856e244"
+      ]
+    },
+    {
+      "id": "imaging",
+      "type": "action",
+      "title": "Selective imaging",
+      "detail": "Ultrasound first when appropriate; CT for unresolved adult uncertainty; pregnancy-specific pathway when relevant",
+      "referenceIds": [
+        "1919c9db-1113-438a-8a27-9a074856e244"
+      ]
+    },
+    {
+      "id": "severity",
+      "type": "decision",
+      "title": "Uncomplicated or complicated?",
+      "detail": "Use clinical, imaging and operative findings",
+      "referenceIds": [
+        "89d14721-c990-4d43-bf82-81bd777b7a39",
+        "1919c9db-1113-438a-8a27-9a074856e244"
+      ]
+    },
+    {
+      "id": "uncomplicated",
+      "type": "action",
+      "title": "Uncomplicated branch",
+      "detail": "Laparoscopic appendectomy within 24 hours or selected antibiotic-first care with shared decision-making and monitoring",
+      "referenceIds": [
+        "89d14721-c990-4d43-bf82-81bd777b7a39",
+        "1919c9db-1113-438a-8a27-9a074856e244"
+      ]
+    },
+    {
+      "id": "prophylaxis",
+      "type": "action",
+      "title": "Pre-incision prophylaxis",
+      "detail": "Saudi MOH cefazolin plus metronidazole single-dose regimen after contraindication and formulary check",
+      "referenceIds": [
+        "579048c4-20f8-448a-b027-c0f73568494e",
+        "622df988-3fac-4148-8d45-7e94f7da26ec",
+        "fc6d34fc-146a-4f5a-a211-ab1f74ae3e52"
+      ]
+    },
+    {
+      "id": "complicated",
+      "type": "escalation",
+      "title": "Complicated branch",
+      "detail": "Urgent source control and local antimicrobial pathway; resolve duration conflict before prescribing",
+      "emphasis": "critical",
+      "referenceIds": [
+        "89d14721-c990-4d43-bf82-81bd777b7a39",
+        "80eaa7d3-d7bd-48c2-96d6-83aa7db183b5"
+      ]
+    },
+    {
+      "id": "followup",
+      "type": "end",
+      "title": "Disposition and follow-up",
+      "detail": "Histopathology, recurrence plan and neoplasm assessment after periappendiceal abscess",
+      "referenceIds": [
+        "89d14721-c990-4d43-bf82-81bd777b7a39",
+        "1919c9db-1113-438a-8a27-9a074856e244"
+      ]
+    }
+  ],
+  "transitions": [
+    {
+      "from": "start",
+      "to": "stability"
+    },
+    {
+      "from": "stability",
+      "to": "risk",
+      "label": "stable"
+    },
+    {
+      "from": "stability",
+      "to": "complicated",
+      "label": "unstable/peritonitis"
+    },
+    {
+      "from": "risk",
+      "to": "imaging"
+    },
+    {
+      "from": "imaging",
+      "to": "severity"
+    },
+    {
+      "from": "severity",
+      "to": "uncomplicated",
+      "label": "uncomplicated"
+    },
+    {
+      "from": "severity",
+      "to": "complicated",
+      "label": "complicated"
+    },
+    {
+      "from": "uncomplicated",
+      "to": "prophylaxis",
+      "label": "operation"
+    },
+    {
+      "from": "uncomplicated",
+      "to": "followup",
+      "label": "selected nonoperative"
+    },
+    {
+      "from": "prophylaxis",
+      "to": "followup"
+    },
+    {
+      "from": "complicated",
+      "to": "followup"
+    }
+  ]
+}

@@ -7,6 +7,13 @@ export const MINIMUM_INVESTIGATIONS = 5;
 
 export type AuthoringAudit = { compliant: boolean; meetsEightyPercent: boolean; score: number; passedChecks: number; totalChecks: number; failures: string[] };
 
+/**
+ * Global authoring instruction shared by topic-generation and review workflows.
+ * Keep this in one place so a new authoring surface cannot silently omit it.
+ */
+export const ABBREVIATION_EXPANSION_RULE =
+  "On first occurrence within a topic, write the full medical term, syndrome, drug class, or scoring system followed by its abbreviation in parentheses; use only the abbreviation thereafter and never repeat the expansion.";
+
 const filler = /\b(it is important to note|plays a crucial role|a wide range of|comprehensive|in conclusion)\b/i;
 const locator = /\b(p{1,2}\.?\s*\d+|page\s*\d|section\s*[\w.]+|table\s*[\w.]+|figure\s*[\w.]+|recommendation\s*[\w.]+|rec\.?\s*\d|appendix\s*[\w.]+)\b/i;
 
@@ -117,6 +124,33 @@ export function auditTopicContent(content: unknown): AuthoringAudit {
   check(Boolean(item.teaching?.learningObjectives.length && item.teaching?.keyPoints?.length && item.teaching?.pitfalls?.length));
   check(Boolean(item.teaching?.references?.every((reference) => Boolean(reference.locator))));
   check(!filler.test(text(item)));
+  // This is a structural guard for the most common clinical abbreviations. It
+  // catches a bare abbreviation when its required first-use expansion is absent.
+  // The list is intentionally conservative: unknown abbreviations still require
+  // human review, while known terms are enforced consistently across all topics.
+  const knownExpansions: Record<string, string[]> = {
+    ACS: ["acute coronary syndrome"],
+    AKI: ["acute kidney injury"],
+    COPD: ["chronic obstructive pulmonary disease"],
+    CPR: ["cardiopulmonary resuscitation"],
+    CT: ["computed tomography"],
+    DKA: ["diabetic ketoacidosis"],
+    ECG: ["electrocardiogram"],
+    ED: ["emergency department"],
+    ICU: ["intensive care unit"],
+    MRI: ["magnetic resonance imaging"],
+    PCI: ["percutaneous coronary intervention"],
+    ROSC: ["return of spontaneous circulation"],
+    STEMI: ["ST-elevation myocardial infarction", "ST elevation myocardial infarction"],
+  };
+  const topicText = text(item).toLowerCase();
+  const abbreviationFailures = Object.entries(knownExpansions).filter(([abbreviation, expansions]) => {
+    const token = new RegExp(`\\b${abbreviation}\\b`, "i");
+    if (!token.test(topicText)) return false;
+    return !expansions.some((expansion) => new RegExp(`${expansion}\\s*\\(${abbreviation}\\)`, "i").test(topicText));
+  });
+  check(abbreviationFailures.length === 0);
+  abbreviationFailures.forEach(([abbreviation, expansions]) => failures.push(`Abbreviation ${abbreviation} must first appear as ${expansions[0]} (${abbreviation}).`));
   check(item.nonClinicalManagement.patientEducation.length > 0);
   check(item.nonClinicalManagement.lifestyleAndDiet.length > 0);
   check(item.nonClinicalManagement.mdtReferrals.length > 0);

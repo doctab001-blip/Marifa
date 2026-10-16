@@ -1,0 +1,463 @@
+
+      Updated guidelines for the management of paracetamol poisoning in Australia and New Zealand | The Medical Journal of Australia
+Updated guidelines for the… | Medical Journal of Australia (MJA)
+      Skip to main content
+		View this article online at www.mja.com.au
+        Download PDF
+                  (2 MB)
+      Print
+  Share:
+    Share on Blue Sky
+    Share on Facebook
+    Share on LinkedIn
+    Share by email
+        Abstract
+      Introduction: Paracetamol is a common agent taken in deliberate self‐poisoning and in accidental overdose in adults and children. Paracetamol poisoning is the commonest cause of severe acute liver injury. Since the publication of the previous guidelines in 2015, several studies have changed practice. A working group of experts in the area, with representation from all Poisons Information Centres of Australia and New Zealand, were brought together to produce an updated evidence‐based guidance.
+Main recommendations (unchanged from previous guidelines): 
+	The optimal management of most patients with paracetamol overdose is usually straightforward. Patients who present early should be given activated charcoal. Patients at risk of hepatotoxicity should receive intravenous acetylcysteine.
+	The paracetamol nomogram is used to assess the need for treatment in acute immediate release paracetamol ingestions with a known time of ingestion.
+	Cases that require different management include modified release paracetamol overdoses, large or massive overdoses, accidental liquid ingestion in children, and repeated supratherapeutic ingestions.
+Major changes in management in the guidelines: 
+	The new guidelines recommend a two‐bag acetylcysteine infusion regimen (200 mg/kg over 4 h, then 100 mg/kg over 16 h). This has similar efficacy but significantly reduced adverse reactions compared with the previous three‐bag regimen.
+	Massive paracetamol overdoses that result in high paracetamol concentrations more than double the nomogram line should be managed with an increased dose of acetylcysteine.
+	All potentially toxic modified release paracetamol ingestions (≥ 10 g or ≥ 200 mg/kg, whichever is less) should receive a full course of acetylcysteine. Patients ingesting ≥ 30 g or ≥ 500 mg/kg should receive increased doses of acetylcysteine.
+   {
+            if (value !== null) {
+              this.lockBodyScroll();
+            } else {
+              this.unlockBodyScroll();
+            }
+          });
+          const legacyBoxes = Array.from(root.querySelectorAll(".Tb"));
+          const parsedBoxes = [];
+          legacyBoxes.forEach((node) => {
+            const box = this.parseBox(node, parsedBoxes.length);
+            if (!box) {
+              return;
+            }
+            const boxIndex = parsedBoxes.push(box) - 1;
+            const teaser = this.createBoxTeaser(box, boxIndex);
+            if (this.insertBoxTeaser(root, box.id, teaser)) {
+              node.remove();
+            } else {
+              node.replaceWith(teaser);
+            }
+          });
+          this.$el.classList.add("content-block__legacy-boxes-ready");
+          this.boxes = parsedBoxes;
+        },
+        handleDialogCitationClick(event) {
+          const link = event.target instanceof Element ? event.target.closest("a.SupXRef") : null;
+          if (!link) {
+            return;
+          }
+          const targetHash = link.getAttribute("href") || "";
+          event.preventDefault();
+          this.openIndex = null;
+          if (!targetHash.startsWith("#")) {
+            return;
+          }
+          this.$nextTick(() => {
+            requestAnimationFrame(() => {
+              document.dispatchEvent(
+                new CustomEvent("mja:scroll-to-hash", { detail: { hash: targetHash } })
+              );
+            });
+          });
+        },
+        stripTitleLabelPrefix(titleHtml, label) {
+          if (!titleHtml || !label) {
+            return titleHtml;
+          }
+          const escapedLabel = label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+          const prefixPattern = new RegExp(
+            `^\\s*${escapedLabel}(?:\\s| | |\\u00a0)*(?:]+>\\s*)*[–—\\-](?:\\s| | |\\u00a0)*`,
+            "i"
+          );
+          const stripped = titleHtml.replace(prefixPattern, "").trim();
+          return stripped || titleHtml;
+        },
+        createBoxTeaser(box, boxIndex) {
+          const teaser = document.createElement("section");
+          teaser.id = box.id;
+          teaser.className = "content-block__table-box-card flex items-start gap-4 rounded-lg border border-brandBorder bg-brandGrayLightest p-5 mt-3 mb-5 lg:mt-5 lg:mb-8 text-brandText scroll-mt-16";
+          const teaserIconWrap = document.createElement("div");
+          teaserIconWrap.className =
+            "content-block__table-box-card__icon flex size-14 shrink-0 items-center justify-center rounded-lg bg-brandPrimary text-white lg:size-16";
+          teaserIconWrap.innerHTML = `
+          `;
+          const teaserInner = document.createElement("div");
+          teaserInner.className = "min-w-0 flex flex-1 flex-col gap-3";
+          const teaserHeader = document.createElement("div");
+          teaserHeader.className = "flex flex-col gap-0.5 lg:gap-1.5";
+          const teaserEyebrow = document.createElement("p");
+          teaserEyebrow.className = "!m-0 text-base lg:text-lg/normal font-bold text-brandBlack";
+          teaserEyebrow.textContent = box.label;
+          const teaserTitle = document.createElement("h3");
+          teaserTitle.className = "!m-0 !text-base lg:!text-lg/normal !font-bold text-brandBlack";
+          if (box.titleHtml) {
+            teaserTitle.innerHTML = box.titleHtml;
+          } else {
+            teaserTitle.textContent = box.summary;
+          }
+          const teaserButton = document.createElement("button");
+          teaserButton.type = "button";
+          teaserButton.className = "inline-flex items-center gap-1 text-xs lg:text-sm font-bold uppercase text-brandBlack transition-colors hover:!text-brandSecondary";
+          teaserButton.setAttribute("aria-haspopup", "dialog");
+          if (this.dialogId) {
+            teaserButton.setAttribute("aria-controls", this.dialogId);
+          }
+          teaserButton.innerHTML = `
+            View box
+          `;
+          teaserButton.addEventListener("click", () => {
+            this.openIndex = boxIndex;
+          });
+          teaserHeader.appendChild(teaserEyebrow);
+          teaserHeader.appendChild(teaserTitle);
+          teaserInner.appendChild(teaserHeader);
+          teaserInner.appendChild(teaserButton);
+          teaser.appendChild(teaserIconWrap);
+          teaser.appendChild(teaserInner);
+          return teaser;
+        },
+        insertBoxTeaser(root, boxId, teaser) {
+          const link = root.querySelector(`a[href="#${boxId}"]`);
+          if (!link) {
+            return false;
+          }
+          const container = link.closest("p, ul, ol");
+          if (!container) {
+            link.parentElement?.after(teaser);
+            return true;
+          }
+          if (
+            container.tagName === "P" &&
+            container.textContent.trim().endsWith(":") &&
+            container.nextElementSibling &&
+            /^(UL|OL)$/i.test(container.nextElementSibling.tagName)
+          ) {
+            container.nextElementSibling.after(teaser);
+            return true;
+          }
+          let nextSibling = container.nextElementSibling;
+          while (nextSibling && nextSibling.classList.contains("content-block__table-box-card")) {
+            nextSibling = nextSibling.nextElementSibling;
+          }
+          if (!nextSibling) {
+            container.after(teaser);
+            return true;
+          }
+          nextSibling.before(teaser);
+          return true;
+        },
+        parseBox(node, index) {
+          const anchor = node.querySelector("a[id], a[name]");
+          const titleNode = node.querySelector(".Ti");
+          const titleHtml = titleNode ? titleNode.innerHTML.trim() : "";
+          const parsedTitle = this.parseTitle(titleNode ? titleNode.textContent : "", index);
+          const titleBodyHtml = this.stripTitleLabelPrefix(titleHtml, parsedTitle.label);
+          const dialogNode = node.cloneNode(true);
+          dialogNode.querySelectorAll("a[id], a[name], .Ti").forEach((el) => el.remove());
+          dialogNode.querySelectorAll("p").forEach((el) => {
+            if (!el.textContent.trim() && !el.querySelector("img, svg, table, figure")) {
+              el.remove();
+            }
+          });
+          const dialogHtml = dialogNode.innerHTML.trim();
+          if (!dialogHtml) {
+            return null;
+          }
+          return {
+            id: anchor ? (anchor.id || anchor.getAttribute("name") || `legacy-box-${index + 1}`) : `legacy-box-${index + 1}`,
+            label: parsedTitle.label,
+            summary: parsedTitle.summary,
+            titleHtml: titleBodyHtml,
+            dialogTitleHtml: titleHtml,
+            dialogHtml
+          };
+        },
+        parseTitle(rawTitle, index) {
+          const cleaned = (rawTitle || "").replace(/\u00A0/g, " ").replace(/\s+/g, " ").trim();
+          if (!cleaned) {
+            return {
+              label: `Box ${index + 1}`,
+              summary: ""
+            };
+          }
+          const match = cleaned.match(/^(.+?)\s*[–—-]\s*(.+)$/);
+          if (match) {
+            return {
+              label: match[1].trim(),
+              summary: match[2].trim()
+            };
+          }
+          return {
+            label: `Box ${index + 1}`,
+            summary: cleaned
+          };
+        },
+        makeDialogId() {
+          if (globalThis.crypto && typeof globalThis.crypto.randomUUID === "function") {
+            return `legacy-inline-box-dialog-${globalThis.crypto.randomUUID()}`;
+          }
+          return `legacy-inline-box-dialog-${Math.random().toString(36).slice(2, 11)}`;
+        },
+        lockBodyScroll() {
+          if (this.scrollLocked) {
+            return;
+          }
+          const body = document.body;
+          const html = document.documentElement;
+          const currentCount = Number(body.dataset.legacyDialogLockCount || 0);
+          const nextCount = currentCount + 1;
+          body.dataset.legacyDialogLockCount = String(nextCount);
+          this.scrollLocked = true;
+          body.classList.toggle("overflow-hidden", nextCount > 0);
+          html.classList.toggle("overflow-hidden", nextCount > 0);
+        },
+        unlockBodyScroll() {
+          if (!this.scrollLocked) {
+            return;
+          }
+          const body = document.body;
+          const html = document.documentElement;
+          const currentCount = Number(body.dataset.legacyDialogLockCount || 0);
+          const nextCount = Math.max(0, currentCount - 1);
+          body.dataset.legacyDialogLockCount = String(nextCount);
+          this.scrollLocked = false;
+          body.classList.toggle("overflow-hidden", nextCount > 0);
+          html.classList.toggle("overflow-hidden", nextCount > 0);
+        }
+      }'
+      @keydown.escape.window="openIndex = null"
+      >
+      Paracetamol poisoning is the commonest cause of severe acute liver injury in Western countries.1,2 It is also the most common reason for calls to Poisons Information Centres in Australia and New Zealand.3 Not only is it one of the commonest medications involved in deliberate self‐poisoning, it is also involved in a large proportion of accidental paediatric exposures and in overdoses with therapeutic intent when taken for symptoms such as pain or fever (repeated supratherapeutic ingestions). Since the publication of the previous guidelines in the Medical Journal of Australia in 2015, further research has emerged, particularly regarding acetylcysteine regimens, massive paracetamol ingestions, and modified release paracetamol ingestion. These have led to a change in management of paracetamol poisoning, and the 2015 guidelines do not reflect the current practice recommended by clinical toxicologists. The key changes from the previous guidelines are acetylcysteine regimen (two‐bag regimen) and dosage, management of patients taking large or massive overdoses, staggered ingestions, modified release paracetamol ingestions and repeated supratherapeutic ingestion. The full guidelines are available online Supporting Information.
+Methods
+The Treatment of Paracetamol Poisoning Writing Group was comprised of clinical toxicologists and pharmacologists from Australia and New Zealand. All members completed a detailed literature review and critically appraised existing evidence, including reviewing the relevant chapters from the newly updated Australian Therapeutic Guidelines — Toxicology and toxinology.4 Drafts of evidence‐based recommendations, practice points and a background manuscript were developed. We conducted a face‐to‐face meeting in May 2019 to draft the guideline. Further revisions were made via email and teleconference. The summary recommendations follow the National Health and Medical Research Council levels of evidence (https://www.mja.com.au/sites/default/files/NHMRC.levels.of.evidence.2008-09.pdf) and the Grading of Recommendations Assessment, Development and Evaluation (GRADE) system (www.gradeworkinggroup.org) to determine the strength of the recommendations.
+Recommendations
+Acute deliberate self‐poisoning, accidental paediatric exposure and inadvertent repeated supratherapeutic ingestions all require specific approaches to risk assessment and management.
+The initial approach focuses on risk assessment (Box 1). Key factors to consider for paracetamol poisoning are the formulation and dose ingested, time since ingestion, and serum paracetamol concentration (early), or clinical and laboratory features suggesting acute liver injury (late). Serum paracetamol concentration should be used to assess the need for acetylcysteine administration in all patients presenting with deliberate self‐poisoning with paracetamol, regardless of the stated dose. The paracetamol treatment nomogram (Box 2) can only be used in acute immediate release paracetamol ingestions with a known time of ingestion.
+We have summarised with flow charts the management of acute immediate release paracetamol ingestion (Box 3), acute modified release paracetamol ingestion (Box 4), repeated supratherapeutic ingestion (Box 5), and a management flow chart for rural and remote centres with limited pathology facilities (Box 6).
+Acetylcysteine infusions
+Acetylcysteine should be administered as a two‐bag regimen (Box 7) — this has changed from previous guidelines. The standard three‐bag intravenous weight‐based dosage regimen (150 mg/kg body weight over 15–60 min, then 50 mg/kg over 4 h and 100 mg/kg over 16 h; 300 mg/kg total) developed in the 1970s was empirically derived and not subject to dose ranging studies.5 This regimen has proven to be highly efficacious when compared with no treatment, but it causes frequent adverse reactions and the dosing regimen is complex and prone to error.6,7 A two‐bag acetylcysteine regimen slows the initial loading dose and simplifies the protocol (ie, 200 mg/kg over 4 h followed by 100 mg/kg over 16 h). This is widely used in toxicology units around Australia and has been shown to significantly reduce the rates of adverse reactions.8,9,10,11,12GRADE: Strong; Evidence: Low.
+Immediate release paracetamol ingestion
+The management of acute immediate release paracetamol ingestion — defined as any intentional or deliberate self‐poisoning — is summarised in Box 3.
+Recommendations on gastric decontamination have not changed since 2015. Fifty grams of activated charcoal should be administered to a cooperative, awake adult if they present within 2 hours of ingestion of a toxic dose (Box 1) of immediate release paracetamol, or within 4 hours of immediate release paracetamol overdoses greater than 30 g.13,14,15GRADE: Strong; Evidence: Low.
+The paracetamol treatment nomogram has been validated as an excellent predictor of risk but only for acute ingestions of immediate release paracetamol with a known time of ingestion. The current nomogram used in Australia and New Zealand has not changed (Box 3),7 except the units on the left and right axis have now been swapped. It is important to check the units used, with many laboratories recently changing from μmol/L (right axis) to mg/L (left axis). GRADE: Strong; Evidence: Strong.
+Patients with a high initial paracetamol concentration (greater than double the nomogram line) are at increased risk of acute liver injury if given standard acetylcysteine regimens.13,16,17 Only a small percentage of paracetamol overdoses will have a paracetamol concentration greater than double the nomogram line and they typically have ingested 30 g or more of paracetamol. Those with an initial paracetamol concentration greater than double the nomogram line may benefit from an increased dose of acetylcysteine.5,13 The second bag in the two‐bag acetylcysteine regimen should be doubled to 200 mg/kg intravenous acetylcysteine over 16 hours (instead of 100 mg/kg over 16 h). Patients with even higher concentrations (eg, ≥ triple the nomogram line) may benefit from even higher acetylcysteine doses.5,18 These patients should be discussed with a clinical toxicologist or a Poisons Information Centre. GRADE: Strong; Evidence: Low.
+Near the completion of acetylcysteine (ie, 2 h before completion of the infusion), alanine aminotransferase (ALT) should be repeated in all patients. For patients with an initial paracetamol level greater than double the nomogram line, a paracetamol concentration should also be repeated. Acetylcysteine should be continued if the paracetamol concentration is greater than 10 mg/L (66 μmol/L) or ALT is elevated (> 50 U/L) and increasing (if baseline ALT > 50 U/L). The normal reference range for ALT varies between pathology laboratories and with patient age; an elevated ALT greater than 50 U/L is considered significant. Small fluctuations in ALT (eg, ± 20 U/L or ± 10%) are common and do not on their own indicate the need for ongoing acetylcysteine. ALT should be repeated in all cases as there is a small (< 1%) risk of developing acute liver injury despite treatment with acetylcysteine within 8 hours.5,17,19,20GRADE: Strong; Evidence: Low.
+Multiple or staggered immediate release paracetamol ingestions
+Any multiple or staggered paracetamol ingestions over more than 2 hours for the purpose of deliberate self‐harm are distinct from repeated supratherapeutic ingestions, which are ingestions of excessive paracetamol for therapeutic purposes (Box 5). Staggered ingestions should be treated as per acute immediate release paracetamol ingestion (Box 3) using the earliest time of ingestion for the paracetamol nomogram. Hence, if it is more than 8 hours since the first dose of paracetamol or the paracetamol concentration cannot be obtained within 8 hours, then commence treatment with acetylcysteine. If the first paracetamol concentration was measured within 2 hours of the last ingested paracetamol dose, it should be repeated after 2 hours to ensure there is no ongoing absorption. If either concentration is above the nomogram line (using time from the earliest ingestion), start or continue treatment with acetylcysteine. GRADE: Weak; Evidence: Very low.
+Modified release paracetamol ingestions
+Modified release paracetamol contains 69% modified release and 31% immediate release paracetamol in a 665 mg tablet. In the previous guidelines, management was very similar to that for immediate release paracetamol. However, evidence from case series from Australia and Europe has shown that this approach appears inadequate.21,22,23 Patients developed acute liver injury despite standard treatment such as early acetylcysteine and decontamination. Therefore, the recommended management has changed considerably (Box 4). All modified release paracetamol overdoses (including mixed ingestion of immediate and modified release paracetamol) of 10 g or more or 200 mg/kg or more (whichever is less) should be offered activated charcoal up to 4 hours after ingestion. For massive modified release paracetamol overdoses (≥ 30 g or ≥ 500 mg/kg), absorption may continue up to 24 hours after ingestion; patients may benefit from activated charcoal beyond 4 hours.21
+The nomogram should not be used to assess the need for treatment of potentially toxic modified release paracetamol ingestions. Paracetamol concentrations are useful to guide further management such as acetylcysteine dosage (eg, the need for increased or prolonged treatment) and the need for further decontamination (eg, further doses of activated charcoal if paracetamol concentrations remain unchanged or rise). Importantly, all patients who ingest 10 g or more or 200 mg/kg or more (whichever is less) of paracetamol should immediately commence treatment with acetylcysteine (Box 4) and receive a full 20‐hour course of acetylcysteine regardless of their serum paracetamol concentration.
+All patients who ingest 30 g or more or 500 mg/kg or more of modified release paracetamol or have a paracetamol concentration greater than double the nomogram line should receive an increased dose of acetylcysteine.21 The second bag in the current standard intravenous acetylcysteine regimen should be doubled to 200 mg/kg intravenous acetylcysteine over 16 hours. This is because the majority of the preparation is modified release and initial paracetamol concentrations may only reflect the immediate release component of the preparation. Hence, following large modified release paracetamol ingestions, acetylcysteine doses may be inadequate due to ongoing paracetamol absorption. Patients who report ingesting less than a toxic dose (< 10 g and < 200 mg/kg) should have two serum paracetamol concentrations 4 hours apart, starting at least 4 hours after ingestion. If either is above the nomogram line, a standard course of acetylcysteine should be given.
+Acetylcysteine is often required for much longer durations. ALT and a paracetamol concentration should be checked near the completion of the second bag of acetylcysteine. Acetylcysteine should be continued if ALT is elevated (> 50 U/L) and increasing (if baseline ALT > 50 U/L) or if the paracetamol concentration is 10 mg/L or over (66 μmol/L). Higher doses of acetylcysteine may be required in subsequent infusions if the paracetamol concentration remains 100 mg/L or over (> 660 μmol/L) and further advice should be sought. GRADE: Strong; Evidence: Very low.
+Rural and remote centres
+Many rural and remote health care facilities do not have access to 24‐hour pathology or have very limited pathology services (eg, point of care testing only). These facilities can still manage certain acute paracetamol poisoning cases, provided acetylcysteine is available and the patient is not at high risk of developing acute liver injury. Box 6 outlines the management of acute immediate release paracetamol ingestion for rural and remote facilities and the criteria for determining when transfer is required. GRADE: Weak; Evidence: Very low.
+Paediatric liquid paracetamol ingestion
+These recommendations are unchanged from the 2015 guidelines. In children under 6 years of age where ingestion of more than 200 mg/kg of liquid paracetamol is suspected, a serum paracetamol concentration should be measured at least 2 hours after ingestion.24 If the 2–4‐hour concentration is below 150 mg/L (1000 μmol/L), acetylcysteine is not required. If the 2‐hour paracetamol concentration is greater than 150 mg/L (1000 μmol/L), this should be repeated 4 hours after ingestion and acetylcysteine commenced if this is 150 mg/L or more (1000 μmol/L).
+A 2‐hour concentration should only be used in a well child under 6 years of age with isolated liquid paracetamol ingestion. In all other cases, a 4‐hour concentration should be performed. Further, for children who present later than 4 hours after ingestion or in children older than 6 years of age, treatment is as per the adult acute paracetamol exposure guideline. GRADE: Strong; Evidence: Very low.
+Repeated supratherapeutic ingestion
+Patients who ingest excessive paracetamol for a therapeutic purpose (eg, pain, viral illness) or ingest therapeutic doses of paracetamol and have symptoms of acute liver injury (eg, abdominal pain, nausea and vomiting) are managed as per repeated supratherapeutic ingestion (Box 5). If the ingestion is deliberate or intentional, they should be managed as per acute intentional ingestion. There is little evidence to guide risk assessment for repeated ingestion of high doses of paracetamol. The margin of safety has for many years been assumed to be high.25 Minor subclinical elevations of serum ALT are quite common with prolonged therapy.26 Hepatotoxicity has been reported at doses within the therapeutic range of paracetamol (in some cases at doses less than the recommended 4 g/day). The reasons why certain individuals are at greater risk of toxicity are unclear,27 but toxicity could be influenced by age, comorbidities, alcohol use, nutritional status (eg, prolonged fasting), concurrent medicine use, and genetics. Some patients are likely to be at increased risk for acute liver injury after repeated supratherapeutic ingestion due to glutathione depletion or cytochrome P450 (CYP450) induction. Clinical flags would include pregnancy, prolonged fasting, chronic alcoholism, febrile illness and chronic use of CYP450‐inducing drugs, such as carbamazepine.28 Hence, the threshold for a potentially toxic dose has been made deliberately and conservatively low in these and previous guidelines. Patients who meet the criteria for supratherapeutic ingestion (Box 1) should have the paracetamol concentration and ALT measured. There is evidence that the combination of a low paracetamol concentration and normal ALT at any time indicates there is minimal risk of subsequent hepatotoxicity.29,30,31 If the paracetamol concentration is greater than 20 mg/L (132 μmol/L) or ALT is greater than 50 U/L, then acetylcysteine is commenced, and pathology repeated 8 hours after the initial sampling. Acetylcysteine can be ceased at this stage if the paracetamol concentration is less than 10 mg/L and ALT is less than 50 U/L or static. Patients with significant acute liver injury secondary to paracetamol will have a very high and/or rapidly rising ALT.30,32 Small fluctuations in ALT (eg, ± 20 U/L or ± 10%) are common and do not on their own indicate the need for ongoing acetylcysteine. All patients with an initial ALT greater than 1000 U/L should receive at least a full 20‐hour course of intravenous acetylcysteine. GRADE: Strong; Evidence: Very low.
+Cessation of acetylcysteine
+Some patients will require ongoing treatment with acetylcysteine if they have a persistently high paracetamol concentration greater than 10 mg/L (66 μmol/L) or ALT greater than 50 U/L and increasing (if baseline ALT > 50 U/L) — small fluctuations in ALT (eg, ± 20 U/L or ± 10%) are common and do not on their own indicate the need for ongoing acetylcysteine. There is very little evidence to guide when is the optimum time to cease acetylcysteine, with no published data on what is an acceptable rate of decline in transaminases. In patients requiring ongoing acetylcysteine, treatment should be continued until the patient has met all the criteria outlined in Box 8, with international normalised ratio (INR) below 2 and the patient being clinically well likely more important than the ALT/aspartate aminotransferase (AST) decline. Acetylcysteine is generally continued at the rate of the second infusion (eg, 100 mg/kg over 16 h) (Box 7). Higher infusion rates may be warranted for massive paracetamol ingestions, especially if the paracetamol concentration is 100 mg/L or more (660 μmol/L) at the completion of the initial acetylcysteine infusion — a clinical toxicologist should be consulted in such cases. Regular clinical review and blood tests at least every 12 hours are recommended for patients requiring prolonged treatment. GRADE: Strong; Evidence: Low.
+Hepatotoxicity and subsequent liver failure
+Only a small proportion of patients develop hepatotoxicity (ALT > 1000 U/L). Early symptoms include nausea, vomiting, abdominal pain, and right upper quadrant tenderness. Of these, only a minority will develop fulminant hepatic failure, and most patients recover fully with standard treatments.33,34 Typically, in patients with paracetamol‐induced acute liver injury, ALT and AST will rise for 3–4 days before recovering.35 Acetylcysteine is continued until the criteria in Box 8 are met. Investigations that monitor liver function and guide prognosis should be performed regularly in all patients with hepatotoxicity, including electrolytes, urea, creatinine, liver function tests, INR, blood sugar, phosphate, and venous blood gas (looking at the pH and lactate levels).
+A liver transplant unit should be consulted if any of the following criteria are met:
+	INR greater than 3.0 at 48 hours or greater than 4.5 at any time;
+	oliguria or creatinine greater than 200 μmol/L;
+	persistent acidosis (pH < 7.3) or arterial lactate greater than 3 mmol/L;
+	systolic hypotension with blood pressure below 80 mmHg, despite resuscitation;
+	hypoglycaemia, severe thrombocytopenia, or encephalopathy of any degree; or
+	any alteration of consciousness (Glasgow Coma Score < 15) not associated with sedative co‐ingestions.
+Do not give clotting factors unless the patient is bleeding or after discussion with a liver transplant unit. GRADE: Strong; Evidence: Strong.
+Seeking advice from a Poisons Information Centre
+It is recommended to seek advice from a Poisons Information Centre in the following situations:
+	very large overdoses — immediate release or modified release paracetamol overdoses of 50 g or over or 1 g/kg (whichever is less);
+	high paracetamol concentration, more than triple the nomogram line;
+	intravenous paracetamol errors or overdoses, as the treatment threshold is lower;
+	patients with hepatotoxicity (ie, ALT > 1000 IU/L); and
+	neonatal paracetamol poisonings.
+These are situations where the risk of hepatotoxicity and complications is greater, where the optimum advice is potentially changing, and where it may be most useful to seek advice.
+Conclusion
+This is a summary of the updated guidelines for the management of paracetamol poisoning in Australia and New Zealand, for more detailed information please access the full guidelines, available in the online Supporting Information.
+If there are any concerns regarding the management of paracetamol ingestion, advice can always be sought from a clinical toxicologist or a Poisons Information Centre (dialling 131126, in Australia, or 0800 764766, in New Zealand).
+Box 1 – Paracetamol dosing that may be associated with acute liver injury
+			Acute single ingestion*
+			Repeated supratherapeutic ingestion†
+			≥ 10g or ≥ 200 mg/kg (whichever is less)
+			≥ 10 g or ≥ 200 mg/kg (whichever is less) over a single 24‐hour period
+			Or
+			≥ 12 g or ≥ 300 mg/kg (whichever is less) over a single 48‐hour period
+			Or
+			≥ a daily therapeutic dose‡ per day for more than 48 hours in patients who also have abdominal pain or nausea or vomiting
+			*Acute ingestion is defined as any intentional or deliberate paracetamol overdose, including staggered or multiple paracetamol ingestions over more than 2 hours.†Repeated supratherapeutic ingestion refers to any patient who ingests paracetamol for therapeutic intent. These doses are a guide for asymptomatic patients at risk for acute liver injury. All symptomatic patients should be assessed with a paracetamol concentration and alanine aminotransferase (ALT).‡Therapeutic daily dose of paracetamol in adults is a total dose of 60 mg/kg over 24 hours and up to a maximum dose of 4 g/day. For paediatric dosage, please refer to local guidelines.
+Box 2 – Paracetamol treatment nomogram (Rumack–Matthew nomogram)
+Box 3 – Acute immediate release paracetamol ingestion management flow chart
+ALT = alanine aminotransferase. * Cooperative adult patients who have potentially ingested ≥ 10 g or ≥ 200 mg/kg (whichever is less). For paracetamol ingestions ≥ 30 g, activated charcoal should be offered until 4 hours after ingestion. † Baseline ALT measurement. ‡ If paracetamol concentration will not be available until ≥ 8 hours after ingestion, commence acetylcysteine while awaiting paracetamol concentration. § For acetylcysteine dosage, see Box 7. ¶ Patients should be advised that if they develop abdominal pain, nausea or vomiting, further assessment is required. For patients in rural or remote regions where pathology services are not available, see Box 6.
+Box 4 – Acute ingestion modified release paracetamol management flow chart
+ALT = alanine aminotransferase; MR = modified release. * Patients should be advised that if they develop abdominal pain, nausea or vomiting, further assessment is required. † If paracetamol concentration is static or rising, a repeat dose of activated charcoal may be beneficial; please seek further advice. ‡ For acetylcysteine dosage, see Box 7.
+Box 5 – Repeated supratherapeutic ingestion management flow chart
+ALT = alanine aminotransferase. * Therapeutic daily dose of paracetamol in adults is a total dose of 60 mg/kg over 24 hours and up to a maximum dose of 4 g/day. For paediatric dosage, refer to local guidelines. † Patients with abnormal liver function tests, not felt to relate to paracetamol ingestion, should have further investigation by their local medical provider for other causes. ‡ For acetylcysteine dosage, see Box 7. § If ALT > 1000 U/L, a 20‐hour course of acetylcysteine should be completed and a clinical toxicologist or Poisons Information Centre should be consulted. ¶ Patients with significant acute liver injury secondary to paracetamol will have a very high and/or rapidly rising ALT. Small fluctuations in ALT (eg, ± 20 U/L or ± 10%) are common and do not on their own indicate the need for ongoing acetylcysteine. ** For criteria of when to cease acetylcysteine, see Box 8.
+Box 6 – Acute immediate release paracetamol ingestion management flow chart for rural and remote facilities* (no pathology availability)
+*This flow chart applies to facilities that do not have the capacity to measure a paracetamol concentration and/or alanine aminotransferase (ALT) but are able to administer intravenous acetylcysteine. All other facilities should follow the immediate release paracetamol ingestion management flow chart (Box 3). Patients who have ingested modified release overdoses ≥ 10 g or ≥ 200 mg/kg (whichever is less) should have activated charcoal and acetylcysteine started and transfer arranged. † For acetylcysteine regimen, see Box 7. ‡ These patients are at increased risk of acute liver injury and so require further assessment at a hospital that has pathology services.
+Box 7 – Standard acetylcysteine regimen
+			Standard two‐bag regimen*†
+				Initial infusion
+					acetylcysteine 200 mg/kg (maximum 22 g) in glucose 5% 500 mL (child, 7 mL/kg up to 500 mL) or sodium chloride 0.9% 500 mL (child, 7 mL/kg up to 500 mL) intravenously, over 4 hours
+				Second acetylcysteine infusion
+					acetylcysteine 100 mg/kg (maximum 11 g) in glucose 5% 1000 mL (child, 14 mL/kg up to 1000 mL) or sodium chloride 0.9% 1000 mL (child, 14 mL/kg up to 1000 mL) intravenously, over 16 hours†‡
+				If ongoing acetylcysteine is required, continue at the rate of the second infusion (eg, 100 mg/kg over 16 h). Higher ongoing infusion rates (eg, 200 mg/kg over 16 h) may be required for massive paracetamol ingestions and a clinical toxicologist should be consulted
+			*Acetylcysteine is also compatible with 0.45% saline + 5% dextrose.†For adults (aged ≥ 14 years), dosing should be based on actual body weight rounded up to the nearest 10 kg, with a ceiling weight of 110 kg. For children (aged < 14 years), use actual body weight.‡If the initial paracetamol concentration was more than double the nomogram line following an acute ingestion, increase acetylcysteine dose to 200 mg/kg (maximum 22 g) in glucose 5% 1000 mL (child, 14 mL/kg up to 1000 mL) or sodium chloride 0.9% 1000 mL (child, 14 mL/kg up to 1000 mL) intravenously, over 16 hours. Monitoring with pulse oximetry for the first 2 hours of the infusion is recommended.
+Box 8 – Criteria for the cessation of ongoing treatment with acetylcysteine
+			Cessation of acetylcysteine
+				In patients who require acetylcysteine beyond 20 hours, acetylcysteine can be ceased if all the following criteria have been met:
+					ALT or AST are decreasing;
+					INR < 2.0; and
+					patient is clinically well
+			And
+				For modified release ingestions and patients with an initial paracetamol concentration greater than double the nomogram line, paracetamol concentration < 10 mg/L (66 μmol/L)
+			ALT = alanine aminotransferase; AST = aspartate aminotransferase; INR = international normalised ratio.
+        Authors
+                    Angela L Chiew1,2
+                    David Reith3
+                    Adam Pomerleau3
+                    Anselm Wong4,5
+                    Katherine Z Isoardi6,7
+                    Jessamine Soderstrom8,9
+                    Nicholas A Buckley2,10
+                                          1.
+                                                             Prince of Wales Hospital and Community Health Services, Sydney, NSW
+                                          2.
+                                                             NSW Poisons Information Centre, Children's Hospital at Westmead, Sydney, NSW
+                                          3.
+                                                             University of Otago, Dunedin, New Zealand
+                                          4.
+                                                             Victorian Poisons Information Centre, Austin Hospital, Melbourne, VIC
+                                          5.
+                                                             Monash Health, Monash University, Melbourne, VIC
+                                          6.
+                                                             Princess Alexandra Hospital, Brisbane, QLD
+                                          7.
+                                                             Queensland Poisons Information Centre, Queensland Children's Hospital, Brisbane, QLD
+                                          8.
+                                                             Royal Perth Hospital, Perth, WA
+                                          9.
+                                                             Western Australia Poisons Information Centre, Sir Charles Gairdner Hospital, Perth, WA
+                                          10.
+                                                             University of Sydney, Sydney, NSW
+                  Correspondence:
+                  angela.chiew@health.nsw.gov.au
+                  Competing interests
+      Angela Chiew, Katherine Isoardi, Jessamine Soderstrom and Nicholas Buckley were involved in the 2019 Australian Therapeutic Guidelines — Toxicology and Toxinology Guidelines Writing Group and received travel and meeting expenses. Jessamine Soderstrom receives royalties from the Toxicology handbook from Elselvier. David Reith chairs the Medicines Adverse Reactions Committee for Medsafe.
+        Acknowledgements
+      Angela Chiew receives funding from a National Health and Medical Research Council Early Career Fellowship (ID 1159907).
+        References
+                                   Fontana RJ. Acute liver failure including acetaminophen overdose. Med Clin North Am 2008; 92: 761–794.
+                                   Lancaster EM, Hiatt JR, Zarrinpar A. Acetaminophen hepatotoxicity: an updated review. Arch Toxicol 2015; 89: 193–199.
+                                   Huynh A, Cairns R, Brown JA, et al. Patterns of poisoning exposure at different ages: the 2015 annual report of the Australian Poisons Information Centres. Med J Aust 2018; 209: 74–79. https://www.mja.com.au/journal/2018/209/2/patterns-poisoning-exposure-different-ages-2015-annual-report-australian-poisons.
+                                   eTG complete. Paracetamol poisoning [website]. Melbourne: Therapeutic Guidelines. https://www.tg.org.au. In press.
+                                   Rumack BH, Bateman DN. Acetaminophen and acetylcysteine dose and duration: past, present and future. Clin Toxicol (Phila) 2012; 50: 91–98.
+                                   Chiew AL, Isbister GK, Duffull SB, Buckley NA. Evidence for the changing regimens of acetylcysteine. Br J Clin Pharmacol 2016; 81: 471–481.
+                                   Chiew AL, Gluud C, Brok J, Buckley NA. Interventions for paracetamol (acetaminophen) overdose. Cochrane Database Syst Rev 2018; (2): CD003328.
+                                   Wong A, Graudins A. Simplification of the standard three‐bag intravenous acetylcysteine regimen for paracetamol poisoning results in a lower incidence of adverse drug reactions. Clin Toxicol (Phila) 2016; 54: 115–119.
+                                   McNulty R, Lim JME, Chandru P, Gunja N. Fewer adverse effects with a modified two‐bag acetylcysteine protocol in paracetamol overdose. Clin Toxicol (Phila) 2018; 56: 618–621.
+                                   Schmidt LE, Rasmussen DN, Petersen TS, et al. Fewer adverse effects associated with a modified two‐bag intravenous acetylcysteine protocol compared with traditional three‐bag regimen in paracetamol overdose. Clin Toxicol (Phila) 2018; 56: 1128–1134.
+                                   Isbister GK, Downes MA, McNamara K, et al. A prospective observational study of a novel 2‐phase infusion protocol for the administration of acetylcysteine in paracetamol poisoning. Clin Toxicol (Phila) 2016; 54: 120–126.
+                                   Wong A, Isbister GK, McNulty R, et al. Efficacy of a two bag acetylcysteine regimen to treat paracetamol overdose [Abstract], 39th International Congress of the European Association of Poisons Centres and Clinical Toxicologists (EAPCCT); 21–24 May 2019, Naples, Italy. Clin Toxicol (Phila) 2019; 57: 535.
+                                   Chiew AL, Isbister GK, Kirby KA, et al. Massive paracetamol overdose: an observational study of the effect of activated charcoal and increased acetylcysteine dose (ATOM‐2). Clin Toxicol (Phila) 2017; 55: 1055–1065.
+                                   Duffull SB, Isbister GK. Predicting the requirement for N‐acetylcysteine in paracetamol poisoning from reported dose. Clin Toxicol (Phila) 2013; 51: 772–776.
+                                   Buckley NA, Whyte IM, O'Connell DL, Dawson AH. Activated charcoal reduces the need for N‐acetylcysteine treatment after acetaminophen (paracetamol) overdose. Clin Toxicol (Phila) 1999; 37: 753–757.
+                                   Marks DJB, Dargan PI, Archer JRH, et al. Outcomes from massive paracetamol overdose: a retrospective observational study. Br J Clin Pharmacol 2017; 83: 1263–1272.
+                                   Cairney DG, Beckwith HK, Al‐Hourani K, et al. Plasma paracetamol concentration at hospital presentation has a dose‐dependent relationship with liver injury despite prompt treatment with intravenous acetylcysteine. Clin Toxicol (Phila) 2016; 54: 405–410.
+                                   Hendrickson RG. What is the most appropriate dose of N‐acetylcysteine after massive acetaminophen overdose? Clin Toxicol (Phila) 2019; 57: 686–691.
+                                   Rumack BH. Acetaminophen hepatotoxicity: the first 35 years. Clin Toxicol (Phila) 2002; 40: 3–20.
+                                   Doyon S, Klein‐Schwartz W. Hepatotoxicity despite early administration of intravenous N‐acetylcysteine for acute acetaminophen overdose. Acad Emerg Med 2009; 16: 34–39.
+                                   Chiew AL, Isbister GK, Page CB, et al. Modified release paracetamol overdose: a prospective observational study (ATOM‐3). Clin Toxicol (Phila) 2018; 56: 810–819.
+                                   Graudins A, Chiew A, Chan B. Overdose with modified‐release paracetamol results in delayed and prolonged absorption of paracetamol. J Intern Med 2010; 40: 72–76.
+                                   Salmonson H, Sjoberg G, Brogren J. The standard treatment protocol for paracetamol poisoning may be inadequate following overdose with modified release formulation: a pharmacokinetic and clinical analysis of 53 cases. Clin Toxicol (Phila) 2018; 56: 63–68.
+                                   Anderson BJ, Holford NH, Armishaw JC, Aicken R. Predicting concentrations in children presenting with acetaminophen overdose. J Pediatr 1999; 135: 290–295.
+                                   Prescott LF. Therapeutic misadventure with paracetamol: fact or fiction? Am J Ther 2000; 7: 99–114.
+                                   Watkins PB, Kaplowitz N, Slattery JT, et al. Aminotransferase elevations in healthy adults receiving 4 grams of acetaminophen daily: a randomized controlled trial. JAMA 2006; 296: 87–93.
+                                   Amar PJ, Schiff ER. Acetaminophen safety and hepatotoxicity — where do we go from here? Expert Opin Drug Saf 2007; 6: 341–355.
+                                   Kalsi SS, Dargan PI, Waring WS, Wood DM. A review of the evidence concerning hepatic glutathione depletion and susceptibility to hepatotoxicity after paracetamol overdose. Open Access Emerg Med 2011; 3: 87–96.
+                                   Daly FF, O'Malley GF, Heard K, et al. Prospective evaluation of repeated supratherapeutic acetaminophen (paracetamol) ingestion. Ann Emerg Med 2004; 44: 393–398.
+                                   Egan H, Isbister GK, Robinson J, et al. Retrospective evaluation of repeated supratherapeutic ingestion (RSTI) of paracetamol. Clin Toxicol (Phila) 2019; 57: 703–711.
+                                   Acheampong P, Thomas SH. Determinants of hepatotoxicity after repeated supratherapeutic paracetamol ingestion: systematic review of reported cases. Br J Clin Pharmacol 2016; 82: 923–931.
+                                   Wong A, Gunja N, McNulty R, Graudins A. Analysis of an 8‐hour acetylcysteine infusion protocol for repeated supratherapeutic ingestion (RSTI) of paracetamol. Clin Toxicol (Phila) 2018; 56: 199–203.
+                                   Smilkstein MJ, Knapp GL, Kulig KW, Rumack BH. Efficacy of oral N‐acetylcysteine in the treatment of acetaminophen overdose. Analysis of the national multicenter study (1976 to 1985). N Engl J Med 1988; 319: 1557–1562.
+                                   Cairns R, Brown JA, Wylie CE, et al. Paracetamol poisoning in Australia, 2004‐2017: an analysis of overdose frequency, overdose size, liver injury and deaths. Med J Aust 2019; 211: 218–223. https://www.mja.com.au/journal/2019/211/5/paracetamol-poisoning-related-hospital-admissions-and-deaths-australia-2004-2017
+                                   Green TJ, Sivilotti ML, Langmann C, et al. When do the aminotransferases rise after acute acetaminophen overdose? Clin Toxicol (Phila) 2010; 48: 787–792.
+        Linked content
+                                  MJA Podcast: Dr Angela Chiew
+                                  InSight+: Changes to management of paracetamol poisoning
+      Provenance: Not commissioned; externally peer reviewed.
+                          View this article on Wiley Online Library
+              Read more Issue 4
+        Cancer
+        Editorials
+          2 March 2020
+  Free
+            Overdiagnosis of cancer in Australia: the role of screening
+      David M Roder, Elizabeth Buckley
+        Environmental health
+        Editorials
+          2 March 2020
+  Free
+            Blood lead levels in children have fallen, but vigilance is still needed
+      Mark P Taylor, Bruce P Lanphear
+        Neurology
+        Letters
+          2 March 2020
+  Free
+            Expanding the availability of medications for amyotrophic lateral sclerosis in Australia
+      Colin J Mahoney, Matthew C Kiernan
+        Dermatology
+        Medical education
+          2 March 2020
+  Free
+            How to perform a skin biopsy
+      Kirsty JL Wark, Saxon D Smith, Deshan F Sebaratnam
+            View more Issue 4
+            More like this
+            View more
+        Toxicology
+        Research letter
+          1 September 2026
+  Open Access
+            Gabapentinoid Poisoning Presentations to Victorian Emergency Departments: A 15-Year Trend Analysis
+      Bishaal Tej Gurung, Amy McNeilage, Angus Skeen, Tina Lam, Joanna F. Dipnall, Jane Hayman, Suzanne Nielsen, Ting Xia
+        Toxicology
+        Research letter
+          1 July 2026
+  Open Access
+            Self-Poisoning With Prazosin and Its Off-Label Use in Australia, 2014–2024: Analysis of NSW Poisons Information Centre Data
+      Olivia B. E. Lal, Nicholas A. Buckley, Rose Cairns
+        Toxicology
+        Research
+          8 December 2025
+  Open Access
+            The risk of death after hospitalisation following intentional self‐poisoning: a retrospective observational study (PAVLOVA‐2)
+      Firouzeh Noghrehchi, Nicholas A Buckley, Rose Cairns
+        Toxicology
+        Narrative review
+          25 August 2025
+  Open Access
+            The public health impacts of mining in Australia
+      Javier Cortes‐Ramirez, Ruby N Michael, Leisa‐Maree Toms, Melissa Haswell
+        Toxicology
+        Medical education
+          21 July 2025
+  Open Access
+            No silver lining with health misinformation: argyria caused by intentional silver consumption
+      Luke Collins, Logesh Palanikumar, Stephen Bacchi
+        Toxicology
+        Medical education
+          16 June 2025
+  Free
+            Hyperkalaemic cardiac arrest due to cream of tartar ingestion
+      Daniel Yee Lee Ng, Laksmi Govindasamy, Andrew Hughes, Hwee Min Lee
+            View more
+
