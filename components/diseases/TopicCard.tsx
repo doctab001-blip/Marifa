@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FilePenLine, Send, Trash2 } from "@/components/icons-3d";
+import { ClipboardList, FilePenLine, Send, Trash2 } from "@/components/icons-3d";
 import type { DiseaseDraft } from "@/lib/data/disease-drafts";
 import { ManagedTopicTile } from "@/components/diseases/ManagedTopicTile";
 import { deleteDraftVersion, transitionGuidelineVersion } from "@/app/(workspace)/dashboard/admin/guidelines/actions";
@@ -14,6 +14,7 @@ export function TopicCard({ topic, preparedDate }: TopicCardProps) {
   const href = topic.canEdit
     ? `/dashboard/admin/guidelines/${encodeURIComponent(topic.id)}?version=${encodeURIComponent(topic.versionId)}`
     : `/dashboard/diseases/drafts/${encodeURIComponent(topic.versionId)}`;
+  const pasteHref = `/dashboard/admin/guidelines/${encodeURIComponent(topic.id)}/paste?version=${encodeURIComponent(topic.versionId)}`;
   const source = topic.isSharedReference ? `Shared reference · prepared ${preparedDate}` : `${topic.sourceTitle} · prepared ${preparedDate}`;
 
   return (
@@ -29,6 +30,7 @@ export function TopicCard({ topic, preparedDate }: TopicCardProps) {
       actions={topic.canEdit ? (
         <>
           <Link className="topic-tile-action" href={href} aria-label={`Edit ${topic.title}`} title="Edit topic"><FilePenLine size={15} aria-hidden="true" /></Link>
+          <Link className="topic-tile-action" href={pasteHref} aria-label={`Paste full content into ${topic.title}`} title="Paste full content"><ClipboardList size={15} aria-hidden="true" /></Link>
           {topic.canApprove ? (
             <form action={transitionGuidelineVersion}>
               <input type="hidden" name="id" value={topic.id} />

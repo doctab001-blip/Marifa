@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FileSearch, FilePenLine, FileText, RotateCcw, CheckCircle2 } from "@/components/icons-3d";
+import { ClipboardList, FileSearch, FilePenLine, FileText, RotateCcw, CheckCircle2 } from "@/components/icons-3d";
 import { DiseaseManagementNavigation } from "@/components/diseases/DiseaseManagementNavigation";
 import { ManagedTopicTile } from "@/components/diseases/ManagedTopicTile";
 import { getDiseaseManagementCounts, getDiseaseManagementVersions } from "@/lib/data/disease-drafts";
@@ -28,6 +28,7 @@ export default async function DiseasePublishedPage() {
           <div className="topic-tile-grid">
             {result.versions.map((version) => {
               const editHref = `/dashboard/admin/guidelines/${encodeURIComponent(version.id)}?version=${encodeURIComponent(version.versionId)}`;
+              const pasteHref = `/dashboard/admin/guidelines/${encodeURIComponent(version.id)}/paste?version=${encodeURIComponent(version.versionId)}`;
               return (
                 <ManagedTopicTile
                   key={version.versionId}
@@ -42,6 +43,7 @@ export default async function DiseasePublishedPage() {
                   actions={version.canEdit ? (
                     <>
                       <Link className="topic-tile-action" href={editHref} aria-label={`Edit ${version.title}`} title="Edit topic"><FilePenLine size={15} aria-hidden="true" /></Link>
+                      <Link className="topic-tile-action" href={pasteHref} aria-label={`Paste full content into ${version.title}`} title="Paste full content"><ClipboardList size={15} aria-hidden="true" /></Link>
                       <form action={transitionGuidelineVersion}>
                         <input type="hidden" name="id" value={version.id} /><input type="hidden" name="versionId" value={version.versionId} /><input type="hidden" name="target" value="draft" />
                         <button className="topic-tile-action" type="submit" aria-label={`Revert ${version.title} to Draft`} title="Revert to Draft"><RotateCcw size={15} aria-hidden="true" /></button>

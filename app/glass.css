@@ -771,3 +771,48 @@ a.card:hover, .disease-card:hover, .care-pillar-card:hover { border-color: rgb(v
 .disease-directory-page .directory-section-heading { margin-bottom: 10px; }
 .disease-directory-page .directory-section-heading h2 { margin: 2px 0 0; font-size: 1rem; }
 .disease-directory-page .directory-section-heading > p, .disease-directory-page .directory-section-heading [role="status"] { font-size: .8rem; }
+
+/* Paste editor: paste one full topic, see what was read and the 80% score, then publish. */
+.paste-editor { display: grid; gap: 14px; }
+.paste-editor-head { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 14px; }
+.paste-editor-head h1 { margin: 2px 0 4px; font-size: 1.4rem; letter-spacing: -.02em; }
+.paste-editor-sub { max-width: 720px; margin: 0; font-size: .86rem; line-height: 1.5; color: var(--muted); }
+.paste-editor-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(300px, .95fr); gap: 14px; align-items: start; }
+.paste-editor-main { display: grid; gap: 10px; padding: 14px; }
+.paste-editor-label { font-size: .8rem; font-weight: 650; }
+.paste-editor-textarea { width: 100%; min-height: 62vh; resize: vertical; padding: 12px; border: 1px solid var(--line-strong, var(--line)); border-radius: 10px; background: var(--surface); color: var(--ink); font: inherit; font-size: .88rem; line-height: 1.5; }
+.paste-editor-textarea:focus-visible { outline: 2px solid var(--royal); outline-offset: 1px; }
+.paste-editor-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.paste-editor-check { display: flex; align-items: center; gap: 8px; font-size: .84rem; }
+.paste-editor-note { margin: 0; font-size: .76rem; line-height: 1.45; color: var(--muted); }
+.paste-editor-copy { display: inline-flex; align-items: center; gap: 6px; }
+.paste-editor-side { display: grid; gap: 10px; position: sticky; top: 12px; max-height: calc(100vh - 24px); overflow: auto; }
+.paste-verdict { display: flex; gap: 10px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+.paste-verdict > div { display: grid; gap: 3px; flex: 1; font-size: .82rem; line-height: 1.4; }
+.paste-verdict strong { font-size: .95rem; }
+.paste-verdict.is-good { border-color: color-mix(in srgb, var(--success) 55%, var(--line)); background: color-mix(in srgb, var(--success) 9%, var(--surface)); }
+.paste-verdict.is-warn { border-color: color-mix(in srgb, var(--warning) 55%, var(--line)); background: color-mix(in srgb, var(--warning) 9%, var(--surface)); }
+.paste-verdict.is-bad { border-color: color-mix(in srgb, var(--danger) 55%, var(--line)); background: color-mix(in srgb, var(--danger) 8%, var(--surface)); }
+.paste-meter { position: relative; height: 8px; margin-top: 6px; border-radius: 99px; background: var(--line); overflow: visible; }
+.paste-meter-fill { height: 100%; border-radius: 99px; background: var(--royal); }
+.paste-verdict.is-good .paste-meter-fill { background: var(--success); }
+.paste-verdict.is-warn .paste-meter-fill { background: var(--warning); }
+.paste-meter-mark { position: absolute; top: -3px; width: 2px; height: 14px; background: var(--ink); }
+.paste-panel { display: grid; gap: 8px; padding: 12px 14px; }
+.paste-panel h2 { margin: 0; font-size: .86rem; }
+.paste-panel-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
+.paste-panel ul, .paste-panel ol { margin: 0; padding-left: 18px; display: grid; gap: 5px; font-size: .8rem; line-height: 1.4; }
+.paste-sections { list-style: none; padding-left: 0 !important; }
+.paste-sections li { display: flex; gap: 8px; align-items: baseline; }
+.paste-sections small { color: var(--muted); }
+.paste-mark { display: inline-grid; place-items: center; width: 18px; height: 18px; flex: none; border-radius: 50%; font-size: .72rem; font-weight: 700; background: var(--line-soft, var(--line)); }
+.paste-sections .is-parsed .paste-mark { background: color-mix(in srgb, var(--success) 18%, var(--surface)); color: var(--success); }
+.paste-sections .is-missing .paste-mark { background: color-mix(in srgb, var(--danger) 16%, var(--surface)); color: var(--danger); }
+.paste-sections .is-kept .paste-mark { background: color-mix(in srgb, var(--warning) 16%, var(--surface)); color: var(--warning); }
+.paste-info { color: var(--muted); }
+.paste-refs small { display: block; color: var(--muted); }
+@media (max-width: 960px) {
+  .paste-editor-grid { grid-template-columns: minmax(0, 1fr); }
+  .paste-editor-side { position: static; max-height: none; }
+  .paste-editor-textarea { min-height: 44vh; }
+}
