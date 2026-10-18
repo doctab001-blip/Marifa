@@ -4,9 +4,12 @@ import { ArrowLeft, CalendarCheck, CheckCircle2, FileText, Hourglass, ShieldAler
 import { EmergencyTopic } from "@/components/emergency-topic";
 import { TopicPager, type TopicLink } from "@/components/topic-library";
 import { TopicApproveButton } from "@/components/topic-approve-button";
-import { getApprovedDiseaseGuideline, getApprovedDiseaseGuidelines } from "@/lib/data/disease-guidelines";
+import { getApprovedDiseaseGuideline, getApprovedDiseaseGuidelineVersion, getApprovedDiseaseGuidelines } from "@/lib/data/disease-guidelines";
 import { canonicalTopicId } from "@/lib/data/merged-topics";
+import { getFamilyCanonicalTopic, getFamilyTopics, getTopicFamily } from "@/lib/data/topic-families";
 import { approveLiveTopic } from "./actions";
+import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
+import type { DiseaseDetail } from "@/lib/validations/disease";
 
 function formatDate(date: string) {
   return new Intl.DateTimeFormat("en-GB", { day: "2-digit", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${date}T00:00:00Z`));
@@ -32,20 +35,51 @@ function ErrorState({ invalid = false }: { invalid?: boolean }) {
   );
 }
 
-export default async function DiseaseDetailPage({ params, searchParams }: { params: Promise<{ id: string }>; searchParams: Promise<{ approval?: string }> }) {
+function TopicApprovalBar({ disease, message }: { disease: DiseaseDetail; message?: string }) {
+  const reviewIncomplete = disease.clinicalReviewStatus === "pending" || disease.status === "under_review";
+  return (
+    <section className="topic-approval-bar" aria-label={`${disease.title} approval`}>
+      {reviewIncomplete ? (
+        <>
+          <p><span className="pill pill-amber"><Hourglass size={16} aria-hidden="true" /><strong>Status: Under review</strong></span><span className="pill pill-slate pill-sm"><FileText size={14} aria-hidden="true" />Version {disease.version}</span></p>
+          <form action={approveLiveTopic}>
+            <input type="hidden" name="id" value={disease.id} />
+            <TopicApproveButton title={disease.title} />
+          </form>
+        </>
+      ) : (
+        <p className="topic-approval-done"><span className="pill pill-emerald"><CheckCircle2 size={16} aria-hidden="true" /><strong>Approved</strong></span><span className="pill pill-slate pill-sm"><CalendarCheck size={14} aria-hidden="true" />Reviewed {formatDate(disease.lastReviewed)}</span><span className="pill pill-slate pill-sm"><FileText size={14} aria-hidden="true" />Version {disease.version}</span></p>
+      )}
+      {message ? <p className="topic-approval-message" role="status">{message}</p> : null}
+    </section>
+  );
+}
+
+export default async function DiseaseDetailPage({ params, searchParams }: { params: Promise<{ id: string }>; searchParams: Promise<{ approval?: string; version?: string }> }) {
   const { id } = await params;
-  const { approval } = await searchParams;
+  const { approval, version } = await searchParams;
   const canonical = canonicalTopicId(id);
   if (canonical) redirect(`/dashboard/diseases/${canonical}`);
-  const result = await getApprovedDiseaseGuideline(id);
+  const result = version ? await getApprovedDiseaseGuidelineVersion(id, version) : await getApprovedDiseaseGuideline(id);
   if (result.state === "not-found") notFound();
   if (result.state === "invalid") return <ErrorState invalid />;
   if (result.state === "unavailable") return <ErrorState />;
 
   const disease = result.disease;
-  const directory = await getApprovedDiseaseGuidelines({ carePillar: disease.pillar });
-  const topics: TopicLink[] = directory.state === "ready" ? directory.diseases.map(({ id: topicId, title }) => ({ id: topicId, title })) : [];
-  const reviewIncomplete = disease.clinicalReviewStatus === "pending" || disease.status === "under_review";
+  const [directory, pillarDirectory] = await Promise.all([
+    getApprovedDiseaseGuidelines({ includeFamilyMembers: true }),
+    getApprovedDiseaseGuidelines({ carePillar: disease.pillar, includeFamilyMembers: true }),
+  ]);
+  const allTopics = directory.state === "ready" ? directory.diseases : [];
+  const family = version ? undefined : getTopicFamily(disease.title);
+  const canonicalFamilyTopic = family ? getFamilyCanonicalTopic(family, allTopics) : undefined;
+  if (canonicalFamilyTopic && canonicalFamilyTopic.id !== disease.id) redirect(`/dashboard/diseases/${canonicalFamilyTopic.id}`);
+  const familyTopics = family && canonicalFamilyTopic ? getFamilyTopics(family, allTopics) : [];
+  const relatedResults = await Promise.all(familyTopics.filter((topic) => topic.id !== disease.id).map((topic) => getApprovedDiseaseGuideline(topic.id)));
+  const relatedTopics = relatedResults.flatMap((topic) => topic.state === "ready" ? [topic] : []);
+  const displayedTopics = [{ disease, investigationSource: result.investigationSource }, ...relatedTopics];
+  const pillarTopics = pillarDirectory.state === "ready" ? pillarDirectory.diseases : [];
+  const topics: TopicLink[] = (family && canonicalFamilyTopic ? [canonicalFamilyTopic] : pillarTopics).map(({ id: topicId, title }) => ({ id: topicId, title }));
   const approvalMessage = approval ? approvalMessages[approval] : undefined;
 
   return (
@@ -57,24 +91,15 @@ export default async function DiseaseDetailPage({ params, searchParams }: { para
             <span className="pill pill-aqua">Clinical scenario</span>
             <span className="pill pill-sky">{disease.pillar}</span>
           </div>
-          <h1 id="scenario-title" className="scenario-title">{disease.title}</h1>
+          <h1 id="scenario-title" className="scenario-title">{withoutInlineSourceLocators(family?.title ?? disease.title)}</h1>
         </header>
-        <EmergencyTopic disease={disease} investigationSource={result.investigationSource} />
-
-        <section className="topic-approval-bar" aria-label="Topic approval">
-          {reviewIncomplete ? (
-            <>
-              <p><span className="pill pill-amber"><Hourglass size={16} aria-hidden="true" /><strong>Status: Under review</strong></span><span className="pill pill-slate pill-sm"><FileText size={14} aria-hidden="true" />Version {disease.version}</span></p>
-              <form action={approveLiveTopic}>
-                <input type="hidden" name="id" value={disease.id} />
-                <TopicApproveButton title={disease.title} />
-              </form>
-            </>
-          ) : (
-            <p className="topic-approval-done"><span className="pill pill-emerald"><CheckCircle2 size={16} aria-hidden="true" /><strong>Approved</strong></span><span className="pill pill-slate pill-sm"><CalendarCheck size={14} aria-hidden="true" />Reviewed {formatDate(disease.lastReviewed)}</span><span className="pill pill-slate pill-sm"><FileText size={14} aria-hidden="true" />Version {disease.version}</span></p>
-          )}
-          {approvalMessage ? <p className="topic-approval-message" role="status">{approvalMessage}</p> : null}
-        </section>
+        {displayedTopics.map((topic, index) => (
+          <section className="topic-family-member" key={topic.disease.id} aria-labelledby={`family-topic-${topic.disease.id}`}>
+            {family ? <header className="topic-family-member-header"><p>Topic section {index + 1}</p><h2 id={`family-topic-${topic.disease.id}`}>{withoutInlineSourceLocators(topic.disease.title)}</h2></header> : null}
+            <EmergencyTopic disease={topic.disease} investigationSource={topic.investigationSource} />
+            <TopicApprovalBar disease={topic.disease} message={index === 0 ? approvalMessage : undefined} />
+          </section>
+        ))}
       </article>
 
       <TopicPager topics={topics} currentId={disease.id} />

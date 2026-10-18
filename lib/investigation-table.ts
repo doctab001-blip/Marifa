@@ -1,18 +1,21 @@
 import type { InvestigationTableRow } from "@/components/investigation-table";
-import { investigationMethod, investigationNeedsReview } from "@/lib/investigation-display";
+import { investigationDisplayTier, investigationMethod, investigationNeedsReview } from "@/lib/investigation-display";
 import type { DiseaseDetail } from "@/lib/validations/disease";
 
 export function mapInvestigationTableRows(
   investigations: DiseaseDetail["investigations"],
 ): InvestigationTableRow[] {
-  return (["ruleIn", "ruleOut"] as const).flatMap((group) =>
-    investigations[group].map((item) => ({
+  return (["ruleIn", "ruleOut"] as const).flatMap((purposeGroup) =>
+    investigations[purposeGroup].map((item) => ({
       investigation: item.testName,
-      target: [item.targetCondition, investigationMethod(item) ? `Method & clinical context: ${investigationMethod(item)}` : null]
-        .filter(Boolean)
-        .join("\n"),
-      rationale: item.clinicalRationale,
-      interpretation: item.expectedFinding,
+      measures: investigationMethod(item) ?? undefined,
+      target: item.targetCondition,
+      normal: item.normalValue ?? "Not stated",
+      finding: item.expectedFinding,
+      meaning: item.clinicalRationale,
+      source: item.references?.[0]?.edition,
+      group: investigationDisplayTier(item),
+      purpose: purposeGroup === "ruleIn" ? ("confirms" as const) : ("excludes" as const),
       ...(investigationNeedsReview(item) ? { badge: "Specific details awaiting review" } : {}),
     })),
   );

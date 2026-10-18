@@ -1,0 +1,97 @@
+{
+  "disease_name": "Acne Vulgaris",
+  "is_verified": false,
+  "presentation_and_red_flags": {
+    "cardinal_symptoms": [
+      "Non-inflammatory lesions (open and closed comedones)",
+      "Inflammatory lesions (papules, pustules, nodules, and cysts)"
+    ],
+    "urgent_escalation_criteria": [
+      "Acne fulminans (requires same-day urgent referral to on-call hospital dermatology team to be assessed within 24 hours)",
+      "Significant psychological distress, suicidal ideation, or self-harm",
+      "Presence of nodulocystic acne failing two different 3-6 month oral antibiotic courses"
+    ]
+  },
+  "differential_diagnoses": [
+    {
+      "condition": "Polycystic Ovary Syndrome (PCOS)",
+      "distinguishing_features": "Presence of menstrual irregularities alongside acne"
+    },
+    {
+      "condition": "Medication-induced acne",
+      "distinguishing_features": "Current use of oral steroids, anabolic steroids, progesterone-only contraception, or certain anticonvulsants"
+    }
+  ],
+  "investigations": [
+    {
+      "test_name": "NULL",
+      "rationale": "Acne vulgaris is diagnosed clinically. Routine microbiological and endocrinological investigations are not recommended unless ruling out underlying mimicking conditions.",
+      "interpretation_threshold": "NULL"
+    }
+  ],
+  "acute_management_sequence": [
+    {
+      "step_order": 1,
+      "intervention_type": "Skincare and Lifestyle Management",
+      "details": "Advise the patient to use a non-alkaline (skin pH neutral or slightly acidic) synthetic detergent cleansing product twice daily. Make-up, moisturisers, and sunscreens must be non oil-based and non-comedogenic. Inform patients that picking lesions increases scarring risk.",
+      "specific_drugs": []
+    },
+    {
+      "step_order": 2,
+      "intervention_type": "Pharmacological Therapy (Mild to Moderate Severity)",
+      "details": "Offer a 12-week course of topical treatment. To reduce initial skin irritation, advise starting with alternate-day or short-contact application (washing off after one hour), progressing to standard application as tolerated. Positive effects take 6-8 weeks.",
+      "specific_drugs": [
+        {
+          "drug_name": "Adapalene with Benzoyl peroxide fixed combination",
+          "dosage": "Standard application",
+          "route": "Topical",
+          "frequency": "Once daily in the evening"
+        },
+        {
+          "drug_name": "Benzoyl peroxide with Clindamycin fixed combination",
+          "dosage": "Standard application",
+          "route": "Topical",
+          "frequency": "Once daily in the evening"
+        }
+      ]
+    },
+    {
+      "step_order": 3,
+      "intervention_type": "Pharmacological Therapy (Moderate to Severe Severity)",
+      "details": "Offer a 12-week course combining a fixed topical treatment (such as Adapalene with Benzoyl peroxide or topical Azelaic acid) with a systemic oral antibiotic. Oral and topical antibiotics should NOT be used in combination to prevent resistance.",
+      "specific_drugs": [
+        {
+          "drug_name": "Lymecycline",
+          "dosage": "408 mg",
+          "route": "Oral",
+          "frequency": "Once daily"
+        },
+        {
+          "drug_name": "Doxycycline",
+          "dosage": "100 mg",
+          "route": "Oral",
+          "frequency": "Once daily"
+        }
+      ]
+    },
+    {
+      "step_order": 4,
+      "intervention_type": "Maintenance Therapy",
+      "details": "Following completion of oral antibiotics, consider fixed combination topical adapalene and benzoyl peroxide as maintenance treatment to reduce the risk of relapse.",
+      "specific_drugs": [
+        {
+          "drug_name": "Adapalene with Benzoyl peroxide",
+          "dosage": "Standard application",
+          "route": "Topical",
+          "frequency": "As tolerated"
+        }
+      ]
+    }
+  ],
+  "disposition_criteria": {
+    "discharge_requirements": [
+      "NULL"
+    ],
+    "follow_up_timeline": "Review at 12 weeks to assess clinical response and adverse effects."
+  }
+}

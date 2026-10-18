@@ -1,0 +1,546 @@
+{
+  "id": "bdc4cb8d-5417-4a77-99c8-6c48d8f79897",
+  "title": "Status Epilepticus and Acute Seizures: ED Stabilisation",
+  "specialty": "Neurology / Emergency Medicine",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-18-tier3a-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adult convulsive status epilepticus in the emergency department (ED): airway and glucose, benzodiazepine, second-line and refractory therapy, using NICE NG217, the American Epilepsy Society guideline and the Neurocritical Care Society guideline.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 2026-10-18.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "NICE NG217 section 7 gives timing and drug order but no doses; doses come from the Neurocritical Care Society 2012 and American Epilepsy Society 2016 guidelines.",
+      "The Saudi adapted guideline for paediatric convulsive status epilepticus was found but is paediatric and was not used; no Saudi adult guideline was opened.",
+      "Pregnancy-specific advice was not found in the opened NG217 section; for eclampsia use the pre-eclampsia pathway.",
+      "Thiamine and dextrose doses are not given in the opened sources.",
+      "SFDA registration of fosphenytoin, levetiracetam IV, valproate IV and lacosamide was not verified.",
+      "Non-convulsive status epilepticus management was not covered in the opened sources.",
+      "Source pages were read through automated page extraction rather than page-by-page in the original documents, so each figure should be spot-checked against the source during clinical review."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "bdc4cb8d-5417-4a77-99c8-6c48d8f79897"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Convulsive status epilepticus is seizure activity lasting 5 minutes or more (NG217). Airway, gas exchange, glucose and blood pressure need active management from the first minutes (NCS Table 5). A benzodiazepine is first-line treatment and is repeated once if the seizure continues (NG217, AES). Refractory status epilepticus persists after first- and second-line therapy and needs anaesthetic control under continuous electroencephalogram (EEG) monitoring.",
+    "keyMechanisms": [
+      "Convulsive status epilepticus is seizure activity lasting 5 minutes or more (NG217).",
+      "Airway, gas exchange, glucose and blood pressure need active management from the first minutes (NCS Table 5).",
+      "A benzodiazepine is first-line treatment and is repeated once if the seizure continues (NG217, AES).",
+      "Refractory status epilepticus persists after first- and second-line therapy and needs anaesthetic control under continuous electroencephalogram (EEG) monitoring."
+    ],
+    "references": [
+      {
+        "title": "NICE NG217: Epilepsies in children, young people and adults: Treating status epilepticus",
+        "edition": "NICE NG217, Section 7 (Treating status epilepticus)",
+        "url": "https://www.nice.org.uk/guidance/NG217/chapter/7-Treating-status-epilepticus"
+      },
+      {
+        "title": "Glauser et al: Evidence-Based Guideline: Treatment of Convulsive Status Epilepticus in Children and Adults, American Epilepsy Society (Epilepsy Curr 2016;16(1):48-61)",
+        "edition": "AES status epilepticus guideline 2016, Treatment algorithm",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4749120/"
+      },
+      {
+        "title": "Brophy et al: Guidelines for the Evaluation and Management of Status Epilepticus, Neurocritical Care Society (Neurocrit Care 2012)",
+        "edition": "NCS status epilepticus guideline 2012, Tables 3, 5, 7, 8, 10, 11",
+        "url": "https://www.neurocriticalcare.org/Portals/0/Docs/Resources/SE_Guidelines_NCS_0412.pdf"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Tonic-clonic movements lasting 5 minutes or more.",
+      "Repeated seizures without recovery between them."
+    ],
+    "physicalSigns": [
+      "Altered consciousness, cyanosis, tongue injury.",
+      "Hypoglycaemia, hypoxia or hypotension on first check."
+    ],
+    "redFlags": [
+      "Seizure lasting 5 minutes or more.",
+      "No response to two benzodiazepine doses.",
+      "Airway or gas exchange compromise, systolic blood pressure below 90 mmHg or mean arterial pressure below 70 mmHg.",
+      "Suspected meningitis, encephalitis or raised intracranial pressure.",
+      "Pregnancy: treat as eclampsia with magnesium sulfate."
+    ],
+    "precipitants": [
+      "Known epilepsy with missed medicine.",
+      "Hypoglycaemia or metabolic disturbance.",
+      "Infection, stroke, tumour, trauma.",
+      "Alcohol or drug withdrawal or toxicity."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Hypoglycaemia",
+      "distinguishingFeatures": "Fingerstick glucose at 0–2 minutes; give thiamine before dextrose."
+    },
+    {
+      "condition": "Non-convulsive status epilepticus",
+      "distinguishingFeatures": "Altered mental state without convulsion; continuous EEG within 1 hour of suspicion."
+    },
+    {
+      "condition": "Eclampsia",
+      "distinguishingFeatures": "Pregnancy with severe hypertension; use magnesium sulfate."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Fingerstick glucose",
+        "modalityTarget": "Blood glucose",
+        "targetCondition": "Hypoglycaemia",
+        "expectedFinding": "Low glucose",
+        "clinicalRationale": "Check at 0–2 minutes; give thiamine before dextrose.",
+        "normalValue": "Typical fasting adult 3.9–5.6 mmol/L; treat low values immediately",
+        "references": [
+          {
+            "title": "Brophy et al: Guidelines for the Evaluation and Management of Status Epilepticus, Neurocritical Care Society (Neurocrit Care 2012)",
+            "edition": "NCS status epilepticus guideline 2012, Table 5",
+            "url": "https://www.neurocriticalcare.org/Portals/0/Docs/Resources/SE_Guidelines_NCS_0412.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Continuous EEG",
+        "modalityTarget": "Electrical seizure activity",
+        "targetCondition": "Non-convulsive seizures and treatment endpoint",
+        "expectedFinding": "Ongoing electrographic seizures",
+        "clinicalRationale": "Start within 1 hour of suspected status; at least 48 hours in comatose patients; guides anaesthetic titration.",
+        "normalValue": "No electrographic seizures",
+        "references": [
+          {
+            "title": "Brophy et al: Guidelines for the Evaluation and Management of Status Epilepticus, Neurocritical Care Society (Neurocrit Care 2012)",
+            "edition": "NCS status epilepticus guideline 2012, Table 10; Table 11",
+            "url": "https://www.neurocriticalcare.org/Portals/0/Docs/Resources/SE_Guidelines_NCS_0412.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Head computed tomography (CT)",
+        "modalityTarget": "Structural cause",
+        "targetCondition": "Mass, haemorrhage, trauma",
+        "expectedFinding": "Structural lesion",
+        "clinicalRationale": "Do in most cases once stabilised; do not delay seizure treatment.",
+        "normalValue": "No acute lesion",
+        "references": [
+          {
+            "title": "Brophy et al: Guidelines for the Evaluation and Management of Status Epilepticus, Neurocritical Care Society (Neurocrit Care 2012)",
+            "edition": "NCS status epilepticus guideline 2012, Table 3",
+            "url": "https://www.neurocriticalcare.org/Portals/0/Docs/Resources/SE_Guidelines_NCS_0412.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count, basic metabolic panel, total and ionised calcium, magnesium",
+        "modalityTarget": "Metabolic and haematological cause",
+        "targetCondition": "Provoked seizure",
+        "expectedFinding": "Electrolyte or calcium disturbance, infection",
+        "clinicalRationale": "Send at 5 minutes; correct abnormalities.",
+        "normalValue": "Within the reporting laboratory's adult reference ranges",
+        "references": [
+          {
+            "title": "Brophy et al: Guidelines for the Evaluation and Management of Status Epilepticus, Neurocritical Care Society (Neurocrit Care 2012)",
+            "edition": "NCS status epilepticus guideline 2012, Table 3",
+            "url": "https://www.neurocriticalcare.org/Portals/0/Docs/Resources/SE_Guidelines_NCS_0412.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Antiseizure medicine level",
+        "modalityTarget": "Drug adherence",
+        "targetCondition": "Missed doses",
+        "expectedFinding": "Subtherapeutic level",
+        "clinicalRationale": "Guides cause; clinical and EEG findings, not levels, guide therapy.",
+        "normalValue": "Within the laboratory's therapeutic range",
+        "references": [
+          {
+            "title": "Brophy et al: Guidelines for the Evaluation and Management of Status Epilepticus, Neurocritical Care Society (Neurocrit Care 2012)",
+            "edition": "NCS status epilepticus guideline 2012, Table 3",
+            "url": "https://www.neurocriticalcare.org/Portals/0/Docs/Resources/SE_Guidelines_NCS_0412.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Lumbar puncture and toxicology (selected cases)",
+        "modalityTarget": "Infection and toxins",
+        "targetCondition": "Meningitis, encephalitis, toxic cause",
+        "expectedFinding": "Positive cerebrospinal fluid or toxicology",
+        "clinicalRationale": "Consider by presentation within 60 minutes.",
+        "normalValue": "Normal cerebrospinal fluid; negative toxicology",
+        "references": [
+          {
+            "title": "Brophy et al: Guidelines for the Evaluation and Management of Status Epilepticus, Neurocritical Care Society (Neurocrit Care 2012)",
+            "edition": "NCS status epilepticus guideline 2012, Table 3; Table 5",
+            "url": "https://www.neurocriticalcare.org/Portals/0/Docs/Resources/SE_Guidelines_NCS_0412.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "stabilise",
+      "title": "Stabilise",
+      "timeframe": "0–5 minutes",
+      "actions": [
+        "Position the airway, give oxygen, check vital signs and fingerstick glucose at 0–2 minutes; obtain IV access by 5 minutes.",
+        "Intubate within 0–10 minutes if the airway or gas exchange is compromised or raised intracranial pressure is suspected.",
+        "Give thiamine before dextrose if hypoglycaemic."
+      ]
+    },
+    {
+      "id": "first-line",
+      "title": "First-line benzodiazepine",
+      "timeframe": "Immediately at 5 minutes",
+      "actions": [
+        "IV lorazepam 4 mg (0.1 mg/kg, maximum 4 mg per dose), repeat once in 5–10 minutes; or IM midazolam 10 mg; or IV diazepam 10 mg (0.15 mg/kg), repeat once.",
+        "Give an adequate single full dose, not split small doses.",
+        "Without IV access: IM midazolam, or buccal or rectal options per local protocol."
+      ]
+    },
+    {
+      "id": "second-line",
+      "title": "Second-line antiseizure medicine",
+      "timeframe": "From 5–10 minutes after the first benzodiazepine dose (NCS); AES second therapy starts at 20 minutes",
+      "actions": [
+        "If two benzodiazepine doses fail, give levetiracetam, phenytoin or sodium valproate IV; levetiracetam may be quicker and have fewer adverse effects.",
+        "Levetiracetam 1,000–3,000 mg IV; valproate 20–40 mg/kg IV; phenytoin 20 mg/kg IV with cardiac monitoring; phenobarbital 20 mg/kg IV if none available."
+      ]
+    },
+    {
+      "id": "refractory",
+      "title": "Refractory status epilepticus",
+      "timeframe": "20–60 minutes after the second drug",
+      "actions": [
+        "Seek expert guidance; consider an alternative second-line drug or phenobarbital or general anaesthesia (NG217).",
+        "NCS infusions: midazolam bolus 0.2 mg/kg then 0.05–2 mg/kg per hour, or propofol 1–2 mg/kg load then 30–200 µg/kg per minute.",
+        "Admit to the intensive care unit (ICU) with continuous EEG; titrate to EEG endpoints."
+      ]
+    },
+    {
+      "id": "cause",
+      "title": "Find the cause",
+      "timeframe": "Within 60 minutes",
+      "actions": [
+        "Send blood tests, consider head CT, lumbar puncture and toxicology by presentation.",
+        "Treat the cause; consider vasopressors if systolic pressure is below 90 mmHg."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "First-line for status epilepticus",
+        "patientGroup": "Adults",
+        "genericName": "Lorazepam",
+        "dose": "0.1 mg/kg, maximum 4 mg per dose (4 mg in AES)",
+        "route": "IV",
+        "frequency": "Repeat once after 5–10 minutes (NG217 5–10 minutes; AES once)",
+        "duration": "Two doses at most before second-line",
+        "adjustments": [
+          "Maximum rate 2 mg per minute; dilute 1:1 with saline."
+        ],
+        "monitoring": [
+          "Respiratory rate, oxygen saturation, blood pressure."
+        ],
+        "contraindications": [
+          "Respiratory depression risk; contraindications not listed in the source."
+        ],
+        "sourceTitle": "Brophy et al: Guidelines for the Evaluation and Management of Status Epilepticus, Neurocritical Care Society (Neurocrit Care 2012)",
+        "sourceUrl": "https://www.neurocriticalcare.org/Portals/0/Docs/Resources/SE_Guidelines_NCS_0412.pdf",
+        "sourceEdition": "NCS status epilepticus guideline 2012, Table 7"
+      },
+      {
+        "indication": "First-line when IV access is not available",
+        "patientGroup": "Adults",
+        "genericName": "Midazolam",
+        "dose": "0.2 mg/kg, maximum 10 mg (10 mg in AES)",
+        "route": "IM",
+        "frequency": "Single dose; AES: not repeated",
+        "duration": "Single dose",
+        "adjustments": [
+          "AES: single full dose, not split."
+        ],
+        "monitoring": [
+          "Respiratory rate, oxygen saturation, blood pressure."
+        ],
+        "contraindications": [
+          "Respiratory depression risk; contraindications not listed in the source."
+        ],
+        "sourceTitle": "Brophy et al: Guidelines for the Evaluation and Management of Status Epilepticus, Neurocritical Care Society (Neurocrit Care 2012)",
+        "sourceUrl": "https://www.neurocriticalcare.org/Portals/0/Docs/Resources/SE_Guidelines_NCS_0412.pdf",
+        "sourceEdition": "NCS status epilepticus guideline 2012, Table 7; AES 2016 initial therapy"
+      },
+      {
+        "indication": "First-line alternative",
+        "patientGroup": "Adults",
+        "genericName": "Diazepam",
+        "dose": "0.15 mg/kg, maximum 10 mg (10 mg in AES)",
+        "route": "IV",
+        "frequency": "Repeat once in 5 minutes",
+        "duration": "Two doses at most before second-line",
+        "adjustments": [
+          "Maximum rate 5 mg per minute."
+        ],
+        "monitoring": [
+          "Respiratory rate, oxygen saturation, blood pressure."
+        ],
+        "contraindications": [
+          "Respiratory depression risk; contraindications not listed in the source."
+        ],
+        "sourceTitle": "Brophy et al: Guidelines for the Evaluation and Management of Status Epilepticus, Neurocritical Care Society (Neurocrit Care 2012)",
+        "sourceUrl": "https://www.neurocriticalcare.org/Portals/0/Docs/Resources/SE_Guidelines_NCS_0412.pdf",
+        "sourceEdition": "NCS status epilepticus guideline 2012, Table 7"
+      },
+      {
+        "indication": "Second-line after two benzodiazepine doses",
+        "patientGroup": "Adults",
+        "genericName": "Levetiracetam",
+        "dose": "1,000–3,000 mg",
+        "route": "IV",
+        "frequency": "Single loading dose",
+        "duration": "Single loading dose",
+        "adjustments": [
+          "Infusion 2–5 mg/kg per minute; off-label in this use as of April 2022 per NG217."
+        ],
+        "monitoring": [
+          "Seizure control, level of consciousness."
+        ],
+        "contraindications": [
+          "Contraindications not listed in the source; check product information."
+        ],
+        "sourceTitle": "Brophy et al: Guidelines for the Evaluation and Management of Status Epilepticus, Neurocritical Care Society (Neurocrit Care 2012)",
+        "sourceUrl": "https://www.neurocriticalcare.org/Portals/0/Docs/Resources/SE_Guidelines_NCS_0412.pdf",
+        "sourceEdition": "NCS status epilepticus guideline 2012, Table 7; NICE NG217 section 7"
+      },
+      {
+        "indication": "Second-line after two benzodiazepine doses",
+        "patientGroup": "Adults",
+        "genericName": "Sodium valproate",
+        "dose": "20–40 mg/kg",
+        "route": "IV",
+        "frequency": "Single loading dose; additional 20 mg/kg if needed",
+        "duration": "Single loading dose",
+        "adjustments": [
+          "Infusion 3–6 mg/kg per minute; follow MHRA valproate safety advice for people who may become pregnant (NG217)."
+        ],
+        "monitoring": [
+          "Seizure control, liver function."
+        ],
+        "contraindications": [
+          "Valproate safety advice for people who could become pregnant; other contraindications not listed in the source."
+        ],
+        "sourceTitle": "Brophy et al: Guidelines for the Evaluation and Management of Status Epilepticus, Neurocritical Care Society (Neurocrit Care 2012)",
+        "sourceUrl": "https://www.neurocriticalcare.org/Portals/0/Docs/Resources/SE_Guidelines_NCS_0412.pdf",
+        "sourceEdition": "NCS status epilepticus guideline 2012, Table 7; NICE NG217 section 7"
+      },
+      {
+        "indication": "Second-line after two benzodiazepine doses",
+        "patientGroup": "Adults",
+        "genericName": "Phenytoin",
+        "dose": "20 mg/kg",
+        "route": "IV",
+        "frequency": "Single loading dose; further 5–10 mg/kg if needed",
+        "duration": "Single loading dose",
+        "adjustments": [
+          "Infusion up to 50 mg per minute; fosphenytoin 20 mg PE/kg up to 150 mg PE/min is the alternative."
+        ],
+        "monitoring": [
+          "Cardiac monitoring required."
+        ],
+        "contraindications": [
+          "Contraindications not listed in the source; check product information."
+        ],
+        "sourceTitle": "Brophy et al: Guidelines for the Evaluation and Management of Status Epilepticus, Neurocritical Care Society (Neurocrit Care 2012)",
+        "sourceUrl": "https://www.neurocriticalcare.org/Portals/0/Docs/Resources/SE_Guidelines_NCS_0412.pdf",
+        "sourceEdition": "NCS status epilepticus guideline 2012, Table 7"
+      },
+      {
+        "indication": "Third-line or second-line if others unavailable",
+        "patientGroup": "Adults",
+        "genericName": "Phenobarbital",
+        "dose": "20 mg/kg (18 mg/kg in the VA trial)",
+        "route": "IV",
+        "frequency": "Single loading dose; further 5–10 mg/kg if needed",
+        "duration": "Single loading dose",
+        "adjustments": [
+          "Infusion 50–100 mg per minute."
+        ],
+        "monitoring": [
+          "Respiratory rate, blood pressure."
+        ],
+        "contraindications": [
+          "Contraindications not listed in the source; check product information."
+        ],
+        "sourceTitle": "Brophy et al: Guidelines for the Evaluation and Management of Status Epilepticus, Neurocritical Care Society (Neurocrit Care 2012)",
+        "sourceUrl": "https://www.neurocriticalcare.org/Portals/0/Docs/Resources/SE_Guidelines_NCS_0412.pdf",
+        "sourceEdition": "NCS status epilepticus guideline 2012, Table 7; AES 2016 initial therapy"
+      },
+      {
+        "indication": "Refractory status epilepticus (ICU)",
+        "patientGroup": "Intubated adults",
+        "genericName": "Midazolam infusion",
+        "dose": "Bolus 0.2 mg/kg at 2 mg/min, then 0.05–2 mg/kg per hour",
+        "route": "IV",
+        "frequency": "Continuous infusion",
+        "duration": "Titrate to EEG endpoint; maintain 24–48 hours of electrographic control before weaning",
+        "adjustments": [
+          "Increase by 0.05–0.1 mg/kg per hour every 3–4 hours."
+        ],
+        "monitoring": [
+          "Continuous EEG; haemodynamics."
+        ],
+        "contraindications": [
+          "Contraindications not listed in the source; check product information."
+        ],
+        "sourceTitle": "Brophy et al: Guidelines for the Evaluation and Management of Status Epilepticus, Neurocritical Care Society (Neurocrit Care 2012)",
+        "sourceUrl": "https://www.neurocriticalcare.org/Portals/0/Docs/Resources/SE_Guidelines_NCS_0412.pdf",
+        "sourceEdition": "NCS status epilepticus guideline 2012, Table 8"
+      },
+      {
+        "indication": "Refractory status epilepticus (ICU)",
+        "patientGroup": "Intubated adults",
+        "genericName": "Propofol",
+        "dose": "Loading 1–2 mg/kg then 30–200 µg/kg per minute",
+        "route": "IV",
+        "frequency": "Continuous infusion",
+        "duration": "Titrate to EEG endpoint",
+        "adjustments": [
+          "Use care above 80 µg/kg per minute for more than 48 hours."
+        ],
+        "monitoring": [
+          "Continuous EEG; haemodynamics."
+        ],
+        "contraindications": [
+          "Contraindications not listed in the source; check product information."
+        ],
+        "sourceTitle": "Brophy et al: Guidelines for the Evaluation and Management of Status Epilepticus, Neurocritical Care Society (Neurocrit Care 2012)",
+        "sourceUrl": "https://www.neurocriticalcare.org/Portals/0/Docs/Resources/SE_Guidelines_NCS_0412.pdf",
+        "sourceEdition": "NCS status epilepticus guideline 2012, Table 8"
+      }
+    ],
+    "note": "NICE NG217 gives the drug order but no doses; doses are from the Neurocritical Care Society 2012 (Table 7, Table 8) and the American Epilepsy Society 2016 guideline. Adult doses only. SFDA registration was not verified; check hospital formulary."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Convulsive status epilepticus",
+      "threshold": "Seizures lasting 5 minutes or more (NG217)."
+    },
+    {
+      "criterion": "Second benzodiazepine dose",
+      "threshold": "If seizure has not stopped 5 to 10 minutes after the first dose (NG217)."
+    },
+    {
+      "criterion": "Definitive control",
+      "threshold": "Establish within 60 minutes of onset (NCS)."
+    }
+  ],
+  "guidelineComparison": {
+    "title": "First-line benzodiazepine: NICE NG217 versus AES 2016 versus NCS 2012",
+    "columns": [
+      "NICE NG217",
+      "AES 2016",
+      "NCS 2012"
+    ],
+    "rows": [
+      {
+        "parameter": "Options",
+        "values": [
+          "IV lorazepam if IV access; otherwise buccal midazolam or rectal diazepam.",
+          "IM midazolam, IV lorazepam or IV diazepam (all Level A).",
+          "IV lorazepam (drug of choice IV) or IM midazolam (drug of choice IM)."
+        ]
+      },
+      {
+        "parameter": "Repeat dose",
+        "values": [
+          "Second dose if not stopped within 5 to 10 minutes.",
+          "Lorazepam and diazepam once; midazolam IM not repeated.",
+          "Lorazepam may repeat in 5–10 minutes; diazepam in 5 minutes."
+        ]
+      },
+      {
+        "parameter": "Doses",
+        "values": [
+          "None stated.",
+          "Midazolam 10 mg IM; lorazepam 4 mg IV; diazepam 10 mg IV.",
+          "Lorazepam 0.1 mg/kg (max 4 mg); midazolam 0.2 mg/kg (max 10 mg); diazepam 0.15 mg/kg (max 10 mg)."
+        ]
+      }
+    ],
+    "note": "Shown side by side and not merged; follow the hospital protocol for which to use."
+  },
+  "teaching": {
+    "scope": "Adult convulsive status epilepticus in the emergency department (ED): airway and glucose, benzodiazepine, second-line and refractory therapy, using NICE NG217, the American Epilepsy Society guideline and the Neurocritical Care Society guideline.",
+    "learningObjectives": [
+      "Give a benzodiazepine at 5 minutes and escalate on time.",
+      "Manage refractory status epilepticus with expert help and continuous EEG."
+    ],
+    "pitfalls": [
+      "Underdosed benzodiazepine.",
+      "Delay to second-line therapy.",
+      "Withholding thiamine before dextrose."
+    ],
+    "keyPoints": [
+      "Treat at 5 minutes.",
+      "Give adequate full doses.",
+      "Aim for control within 60 minutes."
+    ],
+    "references": [
+      {
+        "title": "NICE NG217: Epilepsies in children, young people and adults: Treating status epilepticus",
+        "edition": "NICE NG217, Section 7 (Treating status epilepticus)",
+        "url": "https://www.nice.org.uk/guidance/NG217/chapter/7-Treating-status-epilepticus",
+        "locator": "Section 7"
+      },
+      {
+        "title": "Glauser et al: Evidence-Based Guideline: Treatment of Convulsive Status Epilepticus in Children and Adults, American Epilepsy Society (Epilepsy Curr 2016;16(1):48-61)",
+        "edition": "AES status epilepticus guideline 2016, Treatment algorithm",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4749120/",
+        "locator": "Treatment algorithm; initial therapy"
+      },
+      {
+        "title": "Brophy et al: Guidelines for the Evaluation and Management of Status Epilepticus, Neurocritical Care Society (Neurocrit Care 2012)",
+        "edition": "NCS status epilepticus guideline 2012, Tables 3, 5, 7, 8, 10, 11",
+        "url": "https://www.neurocriticalcare.org/Portals/0/Docs/Resources/SE_Guidelines_NCS_0412.pdf",
+        "locator": "Tables 3, 5, 7, 8, 10, 11"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain the event and cause to the patient and family; give written seizure advice.",
+      "Advise on driving restrictions according to current Saudi guidance (not verified here)."
+    ],
+    "lifestyleAndDiet": [
+      "Avoid triggers such as sleep deprivation and alcohol; adhere to antiseizure medicine."
+    ],
+    "mdtReferrals": [
+      "Neurology; critical care; emergency medicine; neurophysiology for EEG; pharmacy."
+    ],
+    "dischargeCriteria": [
+      "Disposition after status epilepticus is not specified in the opened sources; follow local policy and neurology advice.",
+      "Seizure free, back to baseline and cause identified before any discharge decision."
+    ],
+    "followUpPlan": "Neurology follow-up; level and medicine review; discuss driving and safety advice."
+  }
+}

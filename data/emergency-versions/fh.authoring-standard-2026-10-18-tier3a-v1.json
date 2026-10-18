@@ -1,0 +1,335 @@
+{
+  "id": "812a3fe4-68fd-49f2-928e-cbcb2bdb38a6",
+  "title": "Familial Hypercholesterolaemia: Identification and Referral",
+  "specialty": "Cardiology / Endocrinology",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-18-tier3a-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adult and child identification of familial hypercholesterolaemia (FH) in primary care, referral for DNA testing and specialist review, cascade testing, statin target and pregnancy advice, from NICE CG71.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 2026-10-18.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "The Simon Broome criteria and Dutch Lipid Clinic Network point values are in CG71 appendices that were not opened.",
+      "No Saudi national FH guideline was opened.",
+      "Statin dosing frequency, renal and hepatic adjustments and SFDA registration were not verified.",
+      "CG71 dates from 2008 with later updates; later lipid guidance (NICE NG238) was not compared here.",
+      "Paediatric statin doses are in the British National Formulary for Children and were not opened.",
+      "Source pages were read through automated page extraction rather than page-by-page in the original documents, so each figure should be spot-checked against the source during clinical review."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "812a3fe4-68fd-49f2-928e-cbcb2bdb38a6"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "FH is characterised by raised low-density lipoprotein cholesterol (LDL-C) and premature coronary heart disease (CHD), defined in CG71 as a coronary event before 60 years of age in the patient or a first-degree relative. Diagnosis combines cholesterol level, personal and family history, tendon xanthomata and DNA testing. An identified disease-causing mutation gives an unequivocal diagnosis even if LDL-C does not meet the criteria. Homozygous FH, including compound heterozygous FH, carries similarly high cardiovascular risk. Cascade testing uses DNA testing to find affected first-, second- and, where possible, third-degree relatives.",
+    "keyMechanisms": [
+      "FH is characterised by raised low-density lipoprotein cholesterol (LDL-C) and premature coronary heart disease (CHD), defined in CG71 as a coronary event before 60 years of age in the patient or a first-degree relative.",
+      "Diagnosis combines cholesterol level, personal and family history, tendon xanthomata and DNA testing.",
+      "An identified disease-causing mutation gives an unequivocal diagnosis even if LDL-C does not meet the criteria.",
+      "Homozygous FH, including compound heterozygous FH, carries similarly high cardiovascular risk.",
+      "Cascade testing uses DNA testing to find affected first-, second- and, where possible, third-degree relatives."
+    ],
+    "references": [
+      {
+        "title": "NICE CG71: Familial hypercholesterolaemia: identification and management",
+        "edition": "NICE CG71, Rec 1.1.1–1.5.1.5",
+        "url": "https://www.nice.org.uk/guidance/cg71/resources/familial-hypercholesterolaemia-identification-and-management-pdf-975623384005"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Usually none until coronary events occur.",
+      "Family history of premature CHD or very high cholesterol.",
+      "Chest pain or other CHD symptoms in a person with a raised cholesterol."
+    ],
+    "physicalSigns": [
+      "Tendon xanthomata; their absence does not exclude FH."
+    ],
+    "redFlags": [
+      "LDL-C above 13 mmol/L in an adult, or above 11 mmol/L in a child or young person: consider homozygous FH.",
+      "Premature CHD symptoms in a person with suspected FH.",
+      "Conception while taking a statin: stop at once and refer urgently to obstetrics for fetal assessment."
+    ],
+    "precipitants": [
+      "Secondary causes of raised cholesterol, which must be excluded before diagnosing FH.",
+      "A first-degree relative with premature CHD or with a confirmed FH mutation."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Secondary hypercholesterolaemia",
+      "distinguishingFeatures": "Exclude secondary causes before an FH diagnosis; the cholesterol falls when the cause is treated."
+    },
+    {
+      "condition": "Relative who tests negative for the family mutation",
+      "distinguishingFeatures": "Manage as the general population."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Total cholesterol",
+        "modalityTarget": "Lipid level",
+        "targetCondition": "Suspected FH",
+        "expectedFinding": "Above 7.5 mmol/L (above 9.0 mmol/L at 30 or over in a record search)",
+        "clinicalRationale": "Triggers FH assessment; offer measurement if premature CHD in the person or a first-degree relative and no level is known.",
+        "normalValue": "Below the CG71 suspicion threshold of 7.5 mmol/L; local laboratory range applies",
+        "references": [
+          {
+            "title": "NICE CG71: Familial hypercholesterolaemia: identification and management",
+            "edition": "NICE CG71, Rec 1.1.1–1.1.3",
+            "url": "https://www.nice.org.uk/guidance/cg71/resources/familial-hypercholesterolaemia-identification-and-management-pdf-975623384005"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "LDL-C (two measurements)",
+        "modalityTarget": "LDL cholesterol",
+        "targetCondition": "FH confirmation and homozygous screen",
+        "expectedFinding": "Persistently raised on two measurements; above 13 mmol/L (adult) suggests homozygous FH",
+        "clinicalRationale": "Use for confirmation and for the 50% reduction target.",
+        "normalValue": "Laboratory adult reference range; CG71 gives no single normal cut-off",
+        "references": [
+          {
+            "title": "NICE CG71: Familial hypercholesterolaemia: identification and management",
+            "edition": "NICE CG71, Rec 1.1.8–1.1.9",
+            "url": "https://www.nice.org.uk/guidance/cg71/resources/familial-hypercholesterolaemia-identification-and-management-pdf-975623384005"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Examination for tendon xanthomata",
+        "modalityTarget": "Tendons",
+        "targetCondition": "FH clinical sign",
+        "expectedFinding": "Tendon xanthomata present",
+        "clinicalRationale": "Supports the Simon Broome or Dutch Lipid Clinic Network score; absence does not exclude FH.",
+        "normalValue": "No xanthomata; absence does not exclude FH",
+        "references": [
+          {
+            "title": "NICE CG71: Familial hypercholesterolaemia: identification and management",
+            "edition": "NICE CG71, Rec 1.1.7",
+            "url": "https://www.nice.org.uk/guidance/cg71/resources/familial-hypercholesterolaemia-identification-and-management-pdf-975623384005"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Simon Broome or Dutch Lipid Clinic Network score",
+        "modalityTarget": "Diagnostic scoring",
+        "targetCondition": "Possible or definite FH",
+        "expectedFinding": "Simon Broome possible or definite, or Dutch Lipid Clinic Network score above 5",
+        "clinicalRationale": "Refer for DNA testing; the criteria are applied by a competent healthcare professional.",
+        "normalValue": "Dutch Lipid Clinic Network score of 5 or below",
+        "references": [
+          {
+            "title": "NICE CG71: Familial hypercholesterolaemia: identification and management",
+            "edition": "NICE CG71, Rec 1.1.5–1.1.6",
+            "url": "https://www.nice.org.uk/guidance/cg71/resources/familial-hypercholesterolaemia-identification-and-management-pdf-975623384005"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "DNA test for FH mutation",
+        "modalityTarget": "Genetic variant",
+        "targetCondition": "FH diagnosis and cascade testing",
+        "expectedFinding": "Disease-causing mutation identified",
+        "clinicalRationale": "Unequivocal diagnosis even if LDL-C is below criteria; start cascade testing.",
+        "normalValue": "No disease-causing mutation",
+        "references": [
+          {
+            "title": "NICE CG71: Familial hypercholesterolaemia: identification and management",
+            "edition": "NICE CG71, Rec 1.1.13–1.1.15; 1.2.1–1.2.2",
+            "url": "https://www.nice.org.uk/guidance/cg71/resources/familial-hypercholesterolaemia-identification-and-management-pdf-975623384005"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Directed tests for secondary causes",
+        "modalityTarget": "Secondary hypercholesterolaemia",
+        "targetCondition": "Non-genetic cause of raised cholesterol",
+        "expectedFinding": "A secondary cause identified",
+        "clinicalRationale": "FH should not be diagnosed until secondary causes are excluded.",
+        "normalValue": "No secondary cause found",
+        "references": [
+          {
+            "title": "NICE CG71: Familial hypercholesterolaemia: identification and management",
+            "edition": "NICE CG71, Rec 1.1.4",
+            "url": "https://www.nice.org.uk/guidance/cg71/resources/familial-hypercholesterolaemia-identification-and-management-pdf-975623384005"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Fasting lipid profile at annual review",
+        "modalityTarget": "Treatment response",
+        "targetCondition": "Statin effect",
+        "expectedFinding": "LDL-C reduction of at least 50% from baseline",
+        "clinicalRationale": "If the maximum tolerated high-intensity statin plus ezetimibe does not give more than 50%, refer to an FH specialist.",
+        "normalValue": "Not applicable to a healthy person; target is at least a 50% fall from untreated baseline",
+        "references": [
+          {
+            "title": "NICE CG71: Familial hypercholesterolaemia: identification and management",
+            "edition": "NICE CG71, Rec 1.3.1.2; 1.3.1.11; 1.5.1.5",
+            "url": "https://www.nice.org.uk/guidance/cg71/resources/familial-hypercholesterolaemia-identification-and-management-pdf-975623384005"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Baseline electrocardiogram (ECG)",
+        "modalityTarget": "Cardiac rhythm and ischaemia",
+        "targetCondition": "Coexisting CHD",
+        "expectedFinding": "Ischaemic changes or arrhythmia",
+        "clinicalRationale": "Consider a baseline ECG in adults with FH.",
+        "normalValue": "Sinus rhythm without ischaemic change",
+        "references": [
+          {
+            "title": "NICE CG71: Familial hypercholesterolaemia: identification and management",
+            "edition": "NICE CG71, Rec 1.5.1.2",
+            "url": "https://www.nice.org.uk/guidance/cg71/resources/familial-hypercholesterolaemia-identification-and-management-pdf-975623384005"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "identify",
+      "title": "Identify possible FH",
+      "timeframe": "At any primary-care contact",
+      "actions": [
+        "Suspect FH in adults with total cholesterol above 7.5 mmol/L or a personal or family history of premature CHD.",
+        "Search records for under-30s with total cholesterol above 7.5 mmol/L and people aged 30 or over with total cholesterol above 9.0 mmol/L.",
+        "Exclude secondary causes first; do not use QRISK2 or Framingham risk tools in FH."
+      ]
+    },
+    {
+      "id": "confirm",
+      "title": "Confirm and refer",
+      "timeframe": "After two LDL-C results",
+      "actions": [
+        "Confirm with two LDL-C measurements and score with Simon Broome or Dutch Lipid Clinic Network criteria.",
+        "Refer for DNA testing if possible or definite FH, or Dutch Lipid Clinic Network score above 5.",
+        "Refer all people with FH to an FH specialist for confirmation and to start cascade testing.",
+        "CG71 defines urgent referral as as soon as possible with a maximum of 14 days."
+      ]
+    },
+    {
+      "id": "treat",
+      "title": "Start and titrate lipid-lowering treatment",
+      "timeframe": "On confirmed FH",
+      "actions": [
+        "Offer a high-intensity statin with the lowest acquisition cost, aiming for at least a 50% LDL-C reduction.",
+        "Increase to the maximum licensed or tolerated dose if a reduction above 50% is not reached.",
+        "If maximum tolerated high-intensity statin plus ezetimibe does not give above 50%, refer to an FH specialist.",
+        "Tell adults that treatment is lifelong."
+      ]
+    },
+    {
+      "id": "children",
+      "title": "Children and young people",
+      "timeframe": "At diagnosis",
+      "actions": [
+        "Offer a DNA test to children aged 0–10 with one affected parent at the earliest opportunity, and again if not tested by age 10.",
+        "Refer to a child- and young person-focused FH service; offer a statin by age 10 or at the earliest opportunity afterwards.",
+        "Monitor growth and pubertal development."
+      ]
+    },
+    {
+      "id": "pregnancy",
+      "title": "Pregnancy and contraception",
+      "timeframe": "At first consideration of treatment, then at least annually",
+      "actions": [
+        "Discuss pregnancy risks when lipid-modifying therapy is first considered and revisit at least annually.",
+        "Stop lipid-modifying treatment 3 months before trying to conceive; if conception occurs on a statin, stop at once and refer urgently to obstetrics.",
+        "Combined oral contraceptives are not generally contraindicated, but consider other methods because of a small possible rise in cardiovascular risk.",
+        "Do not routinely measure cholesterol during pregnancy."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [],
+    "note": "CG71 defines high-intensity statins as atorvastatin 20 to 80 mg and rosuvastatin 10 to 40 mg and requires at least a 50% LDL-C reduction. Dosing frequency, renal and hepatic adjustment, interactions and SFDA registration were not verified; follow the product information and hospital formulary. Paediatric doses use the British National Formulary for Children (not opened)."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Suspect FH",
+      "threshold": "Total cholesterol above 7.5 mmol/L, or personal or family history of premature CHD (Rec 1.1.1)."
+    },
+    {
+      "criterion": "Primary-care record search",
+      "threshold": "Total cholesterol above 7.5 mmol/L under age 30, or above 9.0 mmol/L at age 30 or over (Rec 1.1.2)."
+    },
+    {
+      "criterion": "Confirmation",
+      "threshold": "Two LDL-C measurements (Rec 1.1.9)."
+    },
+    {
+      "criterion": "Refer for DNA testing",
+      "threshold": "Simon Broome possible or definite FH, or Dutch Lipid Clinic Network score above 5 (Rec 1.1.6)."
+    },
+    {
+      "criterion": "Consider homozygous FH",
+      "threshold": "LDL-C above 13 mmol/L in adults or above 11 mmol/L in children and young people (Rec 1.1.8)."
+    }
+  ],
+  "teaching": {
+    "scope": "Adult and child identification of familial hypercholesterolaemia (FH) in primary care, referral for DNA testing and specialist review, cascade testing, statin target and pregnancy advice, from NICE CG71.",
+    "learningObjectives": [
+      "Apply CG71 case-finding thresholds in primary care.",
+      "Refer for DNA testing and cascade testing."
+    ],
+    "pitfalls": [
+      "Using QRISK2 or Framingham in FH.",
+      "Diagnosing FH before secondary causes are excluded.",
+      "Continuing a statin through conception."
+    ],
+    "keyPoints": [
+      "FH is suspected at total cholesterol above 7.5 mmol/L with or without premature CHD.",
+      "The statin goal is at least a 50% LDL-C fall.",
+      "A negative mutation test in a relative returns them to general-population care."
+    ],
+    "references": [
+      {
+        "title": "NICE CG71: Familial hypercholesterolaemia: identification and management",
+        "edition": "NICE CG71, Rec 1.1.1–1.5.1.5",
+        "url": "https://www.nice.org.uk/guidance/cg71/resources/familial-hypercholesterolaemia-identification-and-management-pdf-975623384005",
+        "locator": "Rec 1.1.1–1.1.15; 1.2.1–1.2.2; 1.3.1.1–1.3.1.27; 1.4.2.1–1.4.3.6; 1.5.1.1–1.5.1.5"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain that FH is inherited and that treatment is lifelong.",
+      "Advise relatives to have cascade testing through the FH service."
+    ],
+    "lifestyleAndDiet": [
+      "Stop smoking, healthy diet and regular physical activity; review at each annual structured review."
+    ],
+    "mdtReferrals": [
+      "FH specialist service; paediatric FH service for children; obstetrics and cardiology shared care in pregnancy; family-tracing (cascade testing) team."
+    ],
+    "dischargeCriteria": [
+      "Not applicable as an admission topic; transfer to shared care once the specialist plan and statin target are set."
+    ],
+    "followUpPlan": "Structured review at least annually, covering CHD symptoms, smoking, fasting lipid profile, adherence and side effects, and cascade testing progress."
+  }
+}

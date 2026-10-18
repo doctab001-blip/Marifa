@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Plus, Save, Trash2 } from "@/components/icons-3d";
 import type { DiseaseDetail } from "@/lib/validations/disease";
 import { DiseaseDetailSchema } from "@/lib/validations/disease";
+import { DraftMarkdownCanvas } from "@/components/admin/draft-markdown-canvas";
+import type { DraftTopic } from "@/lib/draft-markdown";
 
 type Path = Array<string | number>;
 type JsonObject = Record<string, unknown>;
@@ -140,12 +142,59 @@ function OptionalSection({ title, present, onAdd, onRemove, children }: { title:
 }
 
 function SavePathwayButton() {
-  return <button className="ui-button ui-button-primary" type="submit"><Save size={15} />Save draft</button>;
+  return <button className="ui-button ui-button-primary" type="submit"><Save size={15} />Create new version</button>;
+}
+
+function toMarkdownTopic(disease: DiseaseDetail): DraftTopic {
+  const investigations = [...disease.investigations.ruleIn, ...disease.investigations.ruleOut];
+  return {
+    title: disease.title, specialty: disease.specialty, authority: disease.authority, pillar: disease.pillar, lastReviewed: disease.lastReviewed,
+    pathophysiology: { summary: disease.pathophysiology.summary, keyMechanisms: disease.pathophysiology.keyMechanisms },
+    // The canvas exposes the same clinical facts as the first investigation; the
+    // canonical schema keeps those facts on each investigation rather than at topic level.
+    expectedFinding: investigations[0]?.expectedFinding ?? "Not recorded.", clinicalRationale: investigations[0]?.clinicalRationale ?? "Not recorded.",
+    symptoms: disease.presentation.symptoms, physicalSigns: disease.presentation.physicalSigns, redFlags: disease.presentation.redFlags,
+    differentials: disease.differentials,
+    investigations: investigations.map(({ tier, testName, expectedFinding, clinicalRationale }) => ({ tier, testName, expectedFinding, clinicalRationale })),
+    management: {
+      firstLine: disease.clinicalManagement[0]?.actions ?? ["Not recorded."],
+      secondLine: disease.clinicalManagement.slice(1).flatMap((step) => step.actions),
+      nonPharmacological: disease.nonClinicalManagement.patientEducation,
+      urgentReferralCriteria: disease.presentation.redFlags,
+    },
+  };
+}
+
+function applyMarkdownTopic(disease: DiseaseDetail, topic: DraftTopic): DiseaseDetail {
+  const currentGroups = new Map<string, "ruleIn" | "ruleOut">();
+  disease.investigations.ruleIn.forEach((item) => currentGroups.set(item.testName, "ruleIn"));
+  disease.investigations.ruleOut.forEach((item) => currentGroups.set(item.testName, "ruleOut"));
+  const existing = new Map([...disease.investigations.ruleIn, ...disease.investigations.ruleOut].map((item) => [item.testName, item]));
+  const ruleIn: DiseaseDetail["investigations"]["ruleIn"] = [];
+  const ruleOut: DiseaseDetail["investigations"]["ruleOut"] = [];
+  topic.investigations.forEach((item) => {
+    const prior = existing.get(item.testName);
+    const next = { ...prior, tier: prior?.tier ?? "laboratory", testName: item.testName, expectedFinding: item.expectedFinding, clinicalRationale: item.clinicalRationale, modalityTarget: prior?.modalityTarget ?? item.testName, targetCondition: prior?.targetCondition ?? topic.title };
+    (currentGroups.get(item.testName) === "ruleOut" ? ruleOut : ruleIn).push(next);
+  });
+  // Both canonical investigation groups are required. Keep an unchanged item in
+  // a group if the Markdown author removed every item from it.
+  if (!ruleIn.length) ruleIn.push(disease.investigations.ruleIn[0]);
+  if (!ruleOut.length) ruleOut.push(disease.investigations.ruleOut[0]);
+  return {
+    ...disease, title: topic.title, specialty: topic.specialty, authority: topic.authority as DiseaseDetail["authority"], pillar: topic.pillar as DiseaseDetail["pillar"], lastReviewed: topic.lastReviewed,
+    pathophysiology: { ...disease.pathophysiology, ...topic.pathophysiology },
+    presentation: { ...disease.presentation, symptoms: topic.symptoms, physicalSigns: topic.physicalSigns, redFlags: topic.redFlags },
+    differentials: topic.differentials, investigations: { ruleIn, ruleOut },
+    clinicalManagement: disease.clinicalManagement.map((step, index) => index === 0 ? { ...step, actions: topic.management.firstLine } : index === 1 && topic.management.secondLine.length ? { ...step, actions: topic.management.secondLine } : step),
+    nonClinicalManagement: { ...disease.nonClinicalManagement, patientEducation: topic.management.nonPharmacological },
+  };
 }
 
 export function GuidelinePathwayForm({ disease, guidelineId, versionId, saveAction }: { disease: DiseaseDetail; guidelineId: string; versionId: string; saveAction: (formData: FormData) => Promise<void> }) {
   const [payload, setPayload] = useState(disease);
   const [issues, setIssues] = useState<string[]>([]);
+  const [editorMode, setEditorMode] = useState<"fields" | "markdown">("fields");
   const update = (path: Path, value: unknown) => setPayload((current) => setAtPath(current, path, value));
   const validate = (event: React.FormEvent<HTMLFormElement>) => {
     const result = DiseaseDetailSchema.safeParse(payload);
@@ -160,8 +209,10 @@ export function GuidelinePathwayForm({ disease, guidelineId, versionId, saveActi
     <input type="hidden" name="content" value={JSON.stringify(payload)} readOnly />
 
     {issues.length > 0 && <div className="admin-save-error pathway-validation-errors" role="alert"><strong>Correct these fields before saving:</strong><ul>{issues.map((issue) => <li key={issue}>{issue}</li>)}</ul></div>}
+    <div className="pathway-editor-mode" role="group" aria-label="Editor mode"><button type="button" className={`ui-button ${editorMode === "fields" ? "ui-button-primary" : "ui-button-secondary"}`} onClick={() => setEditorMode("fields")}>📋 Form View</button><button type="button" className={`ui-button ${editorMode === "markdown" ? "ui-button-primary" : "ui-button-secondary"}`} onClick={() => setEditorMode("markdown")}>📝 Bulk Text View</button></div>
+    {editorMode === "markdown" && <DraftMarkdownCanvas topic={toMarkdownTopic(payload)} onApply={(topic) => setPayload((current) => applyMarkdownTopic(current, topic))} />}
 
-    <section className="card pathway-form-section"><header><p className="eyebrow">Topic details</p><h3>Clinical topic</h3><p>Governance identifiers, status, and version are preserved automatically.</p></header><div className="pathway-object-grid">
+    {editorMode === "fields" && <><section className="card pathway-form-section"><header><p className="eyebrow">Topic details</p><h3>Clinical topic</h3><p>Governance identifiers, status, and version are preserved automatically.</p></header><div className="pathway-object-grid">
       <FieldEditor name="title" value={payload.title} path={["title"]} update={update} />
       <FieldEditor name="specialty" value={payload.specialty} path={["specialty"]} update={update} />
       {payload.speciality !== undefined && <FieldEditor name="speciality" value={payload.speciality} path={["speciality"]} update={update} />}
@@ -185,8 +236,8 @@ export function GuidelinePathwayForm({ disease, guidelineId, versionId, saveActi
 
     <section className="card pathway-form-section"><header><span>7</span><div><h3>Teaching guide</h3><p>Learning objectives, guided approach, check-your-understanding questions and pitfalls. Do not add doses, thresholds or timings that the clinical sections and sources do not already support.</p></div></header>
       <OptionalSection title="Teaching guide" present={Boolean(payload.teaching)} onAdd={() => update(["teaching"], { learningObjectives: [""], guidedApproach: [{ title: "", prompt: "", guidance: "" }], checkpoints: [{ question: "", answer: "" }], pitfalls: [""], keyPoints: [""] })} onRemove={() => { const next = structuredClone(payload) as unknown as JsonObject; delete next.teaching; setPayload(next as unknown as DiseaseDetail); }}><ValueEditor value={payload.teaching} path={["teaching"]} update={update} /></OptionalSection>
-    </section>
+    </section></>}
 
-    <div className="card pathway-save-bar"><span>The pathway remains a governed draft until an authorised reviewer approves it.</span><SavePathwayButton /></div>
+    <div className="card pathway-save-bar"><span>Saving preserves this version and creates a new one. Versions scoring 80% or more publish automatically; clinical review remains pending.</span><SavePathwayButton /></div>
   </form>;
 }

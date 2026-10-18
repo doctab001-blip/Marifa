@@ -3,21 +3,25 @@ import { redirect } from "next/navigation";
 import { Bell, LogOut, Search, Settings2 } from "@/components/icons-3d";
 import { getCurrentViewer } from "@/lib/supabase/session";
 import { CollapsibleShell } from "@/components/collapsible-shell";
-import { MobileNavigation, WorkspaceSidebar } from "@/components/app-navigation";
+import { MobileNavigation } from "@/components/app-navigation";
+import { Sidebar } from "@/components/Sidebar";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { HeaderContext } from "@/components/header-context";
 import { isTemporaryOpenAdminMode } from "@/lib/access-mode";
+import { getDiseaseDraftTopicCount } from "@/lib/data/disease-drafts";
 
 export async function AppShell({ children }: { children: React.ReactNode }) {
   const user = await getCurrentViewer();
   if (!user) redirect("/login");
   const temporaryAdminMode = isTemporaryOpenAdminMode();
+  const draftTopicCount = await getDiseaseDraftTopicCount();
   return (
     <CollapsibleShell primaryColor={user.primaryColor}>
-      <WorkspaceSidebar
+      <Sidebar
         organizationName={user.organizationName}
         organizationNote={temporaryAdminMode ? "Temporary no-login admin mode" : "Isolated demo tenant · Riyadh"}
         temporaryAdminMode={temporaryAdminMode}
+        draftTopicCount={draftTopicCount}
       />
       <section className="workspace">
         {/* Floating glass header, three zones: where you are · search · your actions */}

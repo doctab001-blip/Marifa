@@ -6,6 +6,7 @@ import type { CitationSource } from "@/components/source-citation";
 import { Investigations as MonitoringSchedule, TreatmentDetails } from "@/components/granular-pathway";
 import { ClinicalEvidenceAudit } from "@/components/clinical-evidence-audit";
 import { getMedicationPlan } from "@/lib/data/medication-plans";
+import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
 
 type Investigation = DiseaseDetail["investigations"]["ruleIn"][number];
 
@@ -17,9 +18,10 @@ export const emergencySections = [
 ] as const;
 
 function Labelled({ text }: { text: string }) {
-  const separator = text.indexOf(":");
-  if (separator > 0 && separator < 60) return <><strong>{text.slice(0, separator)}:</strong>{text.slice(separator + 1)}</>;
-  return <>{text}</>;
+  const displayText = withoutInlineSourceLocators(text);
+  const separator = displayText.indexOf(":");
+  if (separator > 0 && separator < 60) return <><strong>{displayText.slice(0, separator)}:</strong>{displayText.slice(separator + 1)}</>;
+  return <>{displayText}</>;
 }
 
 function List({ items, className = "em-list" }: { items: string[]; className?: string }) {
@@ -54,7 +56,7 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
 
       <section id="pathophysiology" className="em-section" aria-labelledby="pathophysiology-title">
         <Heading id="pathophysiology" number={1} title="Pathophysiology" />
-        <p className="em-lead">{disease.pathophysiology.summary}</p>
+        <p className="em-lead">{withoutInlineSourceLocators(disease.pathophysiology.summary)}</p>
         <List items={disease.pathophysiology.keyMechanisms} />
       </section>
 
@@ -73,7 +75,7 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
         <div className="em-table-wrap">
           <table className="em-table">
             <thead><tr><th scope="col">Condition</th><th scope="col">How to tell it apart</th></tr></thead>
-            <tbody>{disease.differentials.map((item) => <tr key={item.condition}><th scope="row">{item.condition}</th><td>{item.distinguishingFeatures}</td></tr>)}</tbody>
+            <tbody>{disease.differentials.map((item) => <tr key={item.condition}><th scope="row">{item.condition}</th><td>{withoutInlineSourceLocators(item.distinguishingFeatures)}</td></tr>)}</tbody>
           </table>
         </div>
       </section>
@@ -83,7 +85,14 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
         {disease.diagnosticCriteria?.length ? (
           <div className="em-criteria">
             <h3>Diagnostic criteria</h3>
-            <dl>{disease.diagnosticCriteria.map((item) => <div key={item.criterion}><dt>{item.criterion}</dt><dd>{item.threshold}</dd></div>)}</dl>
+            <ul className="em-criteria-list">
+              {disease.diagnosticCriteria.map((item) => (
+                <li key={item.criterion}>
+                  <strong>{withoutInlineSourceLocators(item.criterion)}:</strong>{" "}
+                  {withoutInlineSourceLocators(item.threshold)}
+                </li>
+              ))}
+            </ul>
           </div>
         ) : null}
         <div className="em-table-wrap">
@@ -93,9 +102,9 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
               {labs.map((item) => (
                 <tr key={item.testName}>
                   <th scope="row">{item.testName}<small>{item.modalityTarget}</small></th>
-                  {showNormal ? <td data-label="Normal">{item.normalValue ?? "—"}</td> : null}
-                  <td data-label="In this condition" className="em-deranged">{item.expectedFinding}</td>
-                  <td data-label="What it means">{item.clinicalRationale}</td>
+                  {showNormal ? <td data-label="Normal">{withoutInlineSourceLocators(item.normalValue ?? "—")}</td> : null}
+                  <td data-label="In this condition" className="em-deranged">{withoutInlineSourceLocators(item.expectedFinding)}</td>
+                  <td data-label="What it means">{withoutInlineSourceLocators(item.clinicalRationale)}</td>
                 </tr>
               ))}
             </tbody>
@@ -119,13 +128,13 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
             <div className="em-table-wrap">
               <table className="em-table">
                 <thead><tr><th scope="col">Imaging</th><th scope="col">When to order</th><th scope="col">What you are looking for</th></tr></thead>
-                <tbody>{imaging.map((item) => <tr key={item.testName}><th scope="row">{item.testName}</th><td>{item.modalityTarget}</td><td>{item.expectedFinding} {item.clinicalRationale}</td></tr>)}</tbody>
+                <tbody>{imaging.map((item) => <tr key={item.testName}><th scope="row">{item.testName}</th><td>{withoutInlineSourceLocators(item.modalityTarget)}</td><td>{withoutInlineSourceLocators(`${item.expectedFinding} ${item.clinicalRationale}`)}</td></tr>)}</tbody>
               </table>
             </div>
           </>
         ) : null}
 
-        {disease.granularPathway ? <details className="em-more"><summary>Monitoring schedule and decision points</summary><MonitoringSchedule phases={disease.granularPathway.Investigations} /></details> : null}
+        {disease.granularPathway ? <details className="em-more"><summary>Monitoring schedule and decision points</summary><MonitoringSchedule phases={disease.granularPathway.Investigations} showSources={false} /></details> : null}
       </section>
 
       <section id="management" className="em-section" aria-labelledby="management-title">
@@ -135,35 +144,24 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
         {medicationPlan?.regimens.length ? (
           <>
             <h3>Medicines and doses</h3>
-            <p className="em-footnote">{medicationPlan.note}</p>
+            <p className="em-footnote">{withoutInlineSourceLocators(medicationPlan.note)}</p>
             <div className="em-table-wrap">
               <table className="em-table em-dose-table">
                 <thead><tr><th scope="col">Medicine and indication</th><th scope="col">Dose, route, frequency</th>{hasContraindications ? <th scope="col">Contraindications</th> : null}<th scope="col">Cautions and monitoring</th></tr></thead>
                 <tbody>{medicationPlan.regimens.map((regimen) => (
                   <tr key={`${regimen.genericName}-${regimen.indication}`}>
-                    <th scope="row">{regimen.genericName}<small>{regimen.indication} · {regimen.patientGroup}</small></th>
-                    <td>{regimen.dose}<span className="em-regimen-pills"><span className="pill pill-sky pill-sm">{regimen.route}</span><span className="pill pill-violet pill-sm">{regimen.frequency}</span><span className="pill pill-amber pill-sm"><Clock3 size={13} aria-hidden="true" />{regimen.duration}</span></span></td>
+                    <th scope="row">{regimen.genericName}<small>{withoutInlineSourceLocators(regimen.indication)} · {withoutInlineSourceLocators(regimen.patientGroup)}</small></th>
+                    <td>{withoutInlineSourceLocators(regimen.dose)}<span className="em-regimen-pills"><span className="pill pill-sky pill-sm">{withoutInlineSourceLocators(regimen.route)}</span><span className="pill pill-violet pill-sm">{withoutInlineSourceLocators(regimen.frequency)}</span><span className="pill pill-amber pill-sm"><Clock3 size={13} aria-hidden="true" />{withoutInlineSourceLocators(regimen.duration)}</span></span></td>
                     {hasContraindications ? <td className="em-contra">{regimen.contraindications?.length ? <List items={regimen.contraindications} /> : <span className="em-muted">See product label</span>}</td> : null}
-                    <td><List items={[...regimen.adjustments, ...regimen.monitoring.map((item) => `Monitor: ${item}`)]} /><a href={regimen.sourceUrl} target="_blank" rel="noreferrer" className="em-source-link">{regimen.sourceEdition}</a></td>
+                    <td><List items={[...regimen.adjustments, ...regimen.monitoring.map((item) => `Monitor: ${item}`)]} /></td>
                   </tr>
                 ))}</tbody>
               </table>
             </div>
           </>
-        ) : medicationPlan?.note ? <p className="em-footnote">{medicationPlan.note}</p> : null}
+        ) : medicationPlan?.note ? <p className="em-footnote">{withoutInlineSourceLocators(medicationPlan.note)}</p> : null}
 
-        {disease.guidelineComparison ? (
-          <>
-            <h3>{disease.guidelineComparison.title}</h3>
-            <div className="em-table-wrap">
-              <table className="em-table">
-                <thead><tr><th scope="col">Parameter</th>{disease.guidelineComparison.columns.map((column) => <th scope="col" key={column}>{column}</th>)}</tr></thead>
-                <tbody>{disease.guidelineComparison.rows.map((row) => <tr key={row.parameter}><th scope="row">{row.parameter}</th>{row.values.map((value, index) => <td key={`${row.parameter}-${index}`}>{value}</td>)}</tr>)}</tbody>
-              </table>
-            </div>
-            {disease.guidelineComparison.note ? <p className="em-footnote">{disease.guidelineComparison.note}</p> : null}
-          </>
-        ) : disease.granularPathway ? <TreatmentDetails plans={disease.granularPathway.Treatment_Plan} /> : null}
+        {disease.granularPathway ? <TreatmentDetails plans={disease.granularPathway.Treatment_Plan} showSources={false} /> : null}
 
         {pearls.length || pitfalls.length ? (
           <div className="em-two-col">
@@ -177,7 +175,7 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
           <div><h4>Discharge when</h4><List items={care.dischargeCriteria} /></div>
           <div><h4>Before they leave</h4><List items={[...care.patientEducation, ...care.lifestyleAndDiet, ...care.mdtReferrals].filter((item) => !/^not applicable/i.test(item))} /></div>
         </div>
-        <p className="em-followup"><strong>Follow-up:</strong> {care.followUpPlan}</p>
+        <p className="em-followup"><strong>Follow-up:</strong> {withoutInlineSourceLocators(care.followUpPlan)}</p>
       </section>
 
       {disease.evidenceAudit ? <details className="em-more"><summary>Evidence and review status</summary><ClinicalEvidenceAudit audit={disease.evidenceAudit} /></details> : null}
@@ -203,7 +201,7 @@ export function collectReferences(disease: DiseaseDetail, versionSource?: Citati
   disease.teaching?.references?.forEach((ref) => add(ref.title, ref.url, [ref.edition, ref.locator].filter(Boolean).join(" · ")));
   disease.pathophysiology.references?.forEach((ref) => add(ref.title, ref.url, ref.edition));
   [...disease.investigations.ruleIn, ...disease.investigations.ruleOut].forEach((item) => item.references?.forEach((ref) => add(ref.title, ref.url, ref.edition)));
-  disease.medicationPlan?.regimens.forEach((regimen) => add(regimen.sourceTitle, regimen.sourceUrl, regimen.sourceEdition));
+  (disease.medicationPlan ?? getMedicationPlan(disease.id))?.regimens.forEach((regimen) => add(regimen.sourceTitle, regimen.sourceUrl, regimen.sourceEdition));
   const pathway = disease.granularPathway;
   if (pathway) {
     const sources = [pathway.evidence, ...pathway.Investigations.map((item) => item.evidence), ...pathway.Treatment_Plan.flatMap((plan) => [plan.evidence, ...plan.branches.map((branch) => branch.evidence)])].flatMap((evidence) => evidence.sources);

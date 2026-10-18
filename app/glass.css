@@ -414,10 +414,32 @@ a.card:hover, .disease-card:hover, .care-pillar-card:hover { border-color: rgb(3
   .scenario-card { border-radius: 24px; }
 }
 
+/* Selected pills use a light magenta state consistently across topic navigation. */
+.care-pillar-tab.is-active,
+.admin-tab.is-active,
+.disease-management-tabs a[aria-current="page"],
+.scope-chip-active,
+.em-nav a[aria-current="true"],
+.topic-switcher-list a[aria-current="page"] {
+  --pc: #f9a8d4 !important;
+  background: #fce7f3 !important;
+  border-color: #f9a8d4 !important;
+  color: #831843 !important;
+  box-shadow: none !important;
+}
+.care-pillar-tab.is-active .care-pillar-tab-count {
+  background: #fff !important;
+  color: #831843 !important;
+}
+.em-nav a[aria-current="true"] span {
+  background: #f9a8d4 !important;
+  color: #831843 !important;
+}
+
 /* ═══ Light-mode colour overrides (dark text on tinted glass) ═══════════════════════════════ */
 html:not([data-theme="dark"]) {
   .care-pillar-tab.is-active, .admin-tab.is-active, .disease-management-tabs a[aria-current="page"], .scope-chip-active,
-  .em-nav a[aria-current="true"], .topic-switcher-list a[aria-current="page"] { color: #064a5c; }
+  .em-nav a[aria-current="true"], .topic-switcher-list a[aria-current="page"] { color: #831843 !important; }
   .button-primary, .ui-button-primary, .global-search-submit, .hero-input button, .ai-search-form button, .topic-approve-button, .alert-banner-action { color: #04313c; text-shadow: none; }
   .ui-button-danger { color: #be123c; } .ui-button-danger:hover { color: #881337; }
   .em-list li::marker { color: #0891b2; }
@@ -538,6 +560,18 @@ a.card:hover, .disease-card:hover, .care-pillar-card:hover { border-color: rgb(v
 .topic-nav-search input:focus, .global-search input:focus { box-shadow: 0 0 0 3px rgb(34 211 238 / .16); border-color: rgb(34 211 238 / .6); }
 .topic-nav-search input, .global-search input { box-shadow: none; }
 
+/* Keep the side panel aligned with the product's magenta selection language. */
+.sidebar .nav-link[aria-current="page"],
+.sidebar-collapsed .nav-link[aria-current="page"],
+.sidebar .topic-nav-group a[aria-current="page"],
+.sidebar .topic-nav-drafts a[aria-current="page"] {
+  background: #fce7f3;
+  border-color: #f9a8d4;
+  color: #831843;
+  box-shadow: inset 3px 0 0 #db2777;
+}
+.sidebar .nav-link[aria-current="page"] > svg { color: #831843; }
+
 /* Header: still frosted and floating, but quiet. */
 .topbar { background: rgb(var(--glass) / .7); box-shadow: 0 8px 24px -16px rgb(var(--shade) / .4); }
 .top-actions-group, .user-chip { background: transparent; box-shadow: none; }
@@ -647,4 +681,138 @@ a.card:hover, .disease-card:hover, .care-pillar-card:hover { border-color: rgb(v
   html, body { background: #fff !important; }
   *, *::before, *::after { color: #000 !important; background: transparent !important; box-shadow: none !important; text-shadow: none !important; backdrop-filter: none !important; filter: none !important; border-color: #bbb !important; }
   .topbar, .sidebar, .em-nav, .mobile-nav, .sidebar-toggle { display: none !important; }
+}
+
+/* ═══ Compact topic tiles (Disease Management tabs + clinical directory) ═══════════════════════
+   One tile language for Draft, Approved, Published and the public directory: roughly half the
+   old height, a light tint per state or care pillar, Inter at small optical sizes, actions as
+   icon controls. Colour comes from --tone (an "r g b" triple) so it works in light and dark. */
+.topic-tile-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(236px, 1fr)); gap: 10px; }
+.topic-tile, .disease-card-grid .disease-card {
+  --tone: 14 116 144;
+  position: relative; display: flex; flex-direction: column; gap: 5px; min-width: 0; min-height: 0; padding: 10px 12px 11px;
+  border: 1px solid rgb(var(--tone) / .2); border-radius: 12px;
+  background: linear-gradient(160deg, rgb(var(--tone) / .10), rgb(var(--tone) / .03) 62%), rgb(var(--glass) / .9);
+  box-shadow: 0 1px 2px rgb(var(--shade) / .05);
+  transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease;
+}
+.topic-tile::before, .disease-card-grid:not(.disease-card-list) .disease-card::before {
+  content: ""; position: absolute; top: 0; left: 12px; right: 12px; height: 2px; border-radius: 0 0 3px 3px; background: rgb(var(--tone) / .5);
+}
+.topic-tile:hover, .topic-tile:focus-within, .disease-card-grid .disease-card:hover {
+  transform: translateY(-1px); border-color: rgb(var(--tone) / .42); box-shadow: 0 8px 20px -12px rgb(var(--tone) / .5);
+}
+.topic-tile.is-approved { --tone: 16 166 116; }
+.topic-tile.is-draft { --tone: 217 119 6; }
+.disease-card-grid .disease-card[data-pillar="Urgent Care"] { --tone: 225 29 72; }
+.disease-card-grid .disease-card[data-pillar="Chronic Care"] { --tone: 14 116 144; }
+.disease-card-grid .disease-card[data-pillar="Keep Well"] { --tone: 16 166 116; }
+.disease-card-grid .disease-card[data-pillar="Planned Care"] { --tone: 99 102 241; }
+.disease-card-grid .disease-card[data-pillar="Safe Birth"] { --tone: 219 39 119; }
+.disease-card-grid .disease-card[data-pillar="Palliative Care"] { --tone: 124 92 224; }
+.disease-card-grid .disease-card.is-urgent { border-left: 1px solid rgb(var(--tone) / .2); padding-left: 12px; }
+
+.topic-tile-meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: .68rem; line-height: 1.2; }
+.topic-tile-status {
+  padding: 2px 7px; border-radius: 999px; background: rgb(var(--tone) / .13);
+  color: color-mix(in srgb, rgb(var(--tone)) 72%, var(--strong)); font-weight: 650; letter-spacing: .05em; text-transform: uppercase;
+}
+.topic-tile-version { min-width: 0; max-width: 55%; overflow: hidden; color: var(--text-3, #64748b); font-variant-numeric: tabular-nums; text-overflow: ellipsis; white-space: nowrap; transition: opacity .15s; }
+.topic-tile-title, .disease-card-grid .disease-card h3 {
+  margin: 0; color: var(--strong); font: 600 .9rem/1.32 var(--font-sans); letter-spacing: -.012em;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden;
+}
+.topic-tile-link { color: inherit; text-decoration: none; }
+.topic-tile-link::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+.topic-tile-link:focus-visible { outline: 0; }
+.topic-tile:has(.topic-tile-link:focus-visible) { outline: 2px solid rgb(var(--tone) / .7); outline-offset: 2px; }
+.topic-tile-sub { display: flex; align-items: center; gap: 6px; min-width: 0; margin: auto 0 0; padding-top: 2px; color: var(--text-3, #64748b); font-size: .72rem; line-height: 1.3; }
+.topic-tile-spec, .topic-tile-more { flex: 0 0 auto; padding: 1px 7px; border-radius: 999px; background: rgb(var(--ov) / .06); color: var(--text-2, #475569); font-weight: 550; white-space: nowrap; }
+.topic-tile-more { padding: 1px 5px; font-weight: 500; }
+.topic-tile-source { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.topic-tile-actions {
+  position: absolute; top: 5px; right: 6px; z-index: 2; display: flex; align-items: center; gap: 1px; padding: 2px; border-radius: 9px;
+  background: rgb(var(--glass) / .94); box-shadow: 0 1px 4px rgb(var(--shade) / .18); opacity: 0; pointer-events: none; transition: opacity .15s ease;
+}
+.topic-tile:hover .topic-tile-actions, .topic-tile:focus-within .topic-tile-actions { opacity: 1; pointer-events: auto; }
+.topic-tile:hover .topic-tile-version, .topic-tile:focus-within .topic-tile-version { opacity: 0; }
+.topic-tile-actions form { display: contents; }
+.topic-tile-action { display: inline-grid; place-items: center; width: 26px; height: 26px; padding: 0; border: 0; border-radius: 7px; background: transparent; color: var(--text-2, #475569); cursor: pointer; }
+.topic-tile-action:hover { background: rgb(var(--tone) / .16); color: var(--strong); }
+.topic-tile-action.is-approve:hover { background: rgb(16 166 116 / .18); color: #047857; }
+.topic-tile-action.is-delete:hover { background: rgb(225 29 72 / .14); color: #be123c; }
+.topic-tile-action:focus-visible { outline: 2px solid rgb(var(--tone) / .8); outline-offset: 1px; }
+/* Touch screens have no hover: show the controls as a quiet row under the tile text. */
+@media (hover: none) {
+  .topic-tile-actions { position: static; align-self: flex-end; opacity: 1; pointer-events: auto; background: transparent; box-shadow: none; padding: 0; }
+  .topic-tile:hover .topic-tile-version { opacity: 1; }
+}
+
+/* Public directory cards (DiseaseCard), grid view only: same density, quieter chrome. */
+.disease-card-grid:not(.disease-card-list) .disease-card { gap: 6px; }
+.disease-card-grid:not(.disease-card-list) .disease-card-top > span:first-child { color: color-mix(in srgb, rgb(var(--tone)) 72%, var(--strong)); font-size: .68rem; font-weight: 650; letter-spacing: .05em; text-transform: uppercase; }
+.disease-card-grid:not(.disease-card-list) .disease-status-badge { padding: 2px 7px; font-size: .68rem; }
+.disease-card-grid:not(.disease-card-list) .disease-speciality-badges { margin-top: 2px; }
+.disease-card-grid:not(.disease-card-list) .disease-sub-speciality-badge { display: none; }
+.disease-card-grid:not(.disease-card-list) .disease-card-footer { padding-top: 0; border-top: 0; font-size: .72rem; }
+.disease-card-grid:not(.disease-card-list) { grid-template-columns: repeat(auto-fill, minmax(236px, 1fr)); gap: 10px; }
+
+/* Disease Management page chrome, scaled down so the tiles lead. */
+.disease-directory-page .disease-directory-hero { align-items: center; margin-bottom: 12px; gap: 20px; }
+.disease-directory-page .disease-directory-hero h1 { margin: 2px 0 3px; font-size: 1.35rem; letter-spacing: -.025em; }
+.disease-directory-page .disease-directory-hero > div:first-child > p:last-child { max-width: 640px; font-size: .84rem; line-height: 1.5; }
+.disease-directory-page .disease-kicker { font-size: .66rem; letter-spacing: .12em; }
+.disease-directory-page .directory-governance-note { max-width: 250px; gap: 8px; padding: 8px 11px; border-radius: 10px; }
+.disease-directory-page .directory-governance-note strong { font-size: .8rem; }
+.disease-directory-page .directory-governance-note span { font-size: .74rem; line-height: 1.35; }
+.disease-directory-page .disease-management-tabs { margin: 0 0 14px; padding-bottom: 6px; }
+.disease-directory-page .disease-management-tabs a { min-height: 32px; padding: 0 11px; font-size: .84rem; }
+.disease-directory-page .directory-section-heading { margin-bottom: 10px; }
+.disease-directory-page .directory-section-heading h2 { margin: 2px 0 0; font-size: 1rem; }
+.disease-directory-page .directory-section-heading > p, .disease-directory-page .directory-section-heading [role="status"] { font-size: .8rem; }
+
+/* Paste editor: paste one full topic, see what was read and the 80% score, then publish. */
+.paste-editor { display: grid; gap: 14px; }
+.paste-editor-head { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 14px; }
+.paste-editor-head h1 { margin: 2px 0 4px; font-size: 1.4rem; letter-spacing: -.02em; }
+.paste-editor-sub { max-width: 720px; margin: 0; font-size: .86rem; line-height: 1.5; color: var(--muted); }
+.paste-editor-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(300px, .95fr); gap: 14px; align-items: start; }
+.paste-editor-main { display: grid; gap: 10px; padding: 14px; }
+.paste-editor-label { font-size: .8rem; font-weight: 650; }
+.paste-editor-textarea { width: 100%; min-height: 62vh; resize: vertical; padding: 12px; border: 1px solid var(--line-strong, var(--line)); border-radius: 10px; background: var(--surface); color: var(--ink); font: inherit; font-size: .88rem; line-height: 1.5; }
+.paste-editor-textarea:focus-visible { outline: 2px solid var(--royal); outline-offset: 1px; }
+.paste-editor-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.paste-editor-check { display: flex; align-items: center; gap: 8px; font-size: .84rem; }
+.paste-editor-note { margin: 0; font-size: .76rem; line-height: 1.45; color: var(--muted); }
+.paste-editor-copy { display: inline-flex; align-items: center; gap: 6px; }
+.paste-editor-side { display: grid; gap: 10px; position: sticky; top: 12px; max-height: calc(100vh - 24px); overflow: auto; }
+.paste-verdict { display: flex; gap: 10px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+.paste-verdict > div { display: grid; gap: 3px; flex: 1; font-size: .82rem; line-height: 1.4; }
+.paste-verdict strong { font-size: .95rem; }
+.paste-verdict.is-good { border-color: color-mix(in srgb, var(--success) 55%, var(--line)); background: color-mix(in srgb, var(--success) 9%, var(--surface)); }
+.paste-verdict.is-warn { border-color: color-mix(in srgb, var(--warning) 55%, var(--line)); background: color-mix(in srgb, var(--warning) 9%, var(--surface)); }
+.paste-verdict.is-bad { border-color: color-mix(in srgb, var(--danger) 55%, var(--line)); background: color-mix(in srgb, var(--danger) 8%, var(--surface)); }
+.paste-meter { position: relative; height: 8px; margin-top: 6px; border-radius: 99px; background: var(--line); overflow: visible; }
+.paste-meter-fill { height: 100%; border-radius: 99px; background: var(--royal); }
+.paste-verdict.is-good .paste-meter-fill { background: var(--success); }
+.paste-verdict.is-warn .paste-meter-fill { background: var(--warning); }
+.paste-meter-mark { position: absolute; top: -3px; width: 2px; height: 14px; background: var(--ink); }
+.paste-panel { display: grid; gap: 8px; padding: 12px 14px; }
+.paste-panel h2 { margin: 0; font-size: .86rem; }
+.paste-panel-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
+.paste-panel ul, .paste-panel ol { margin: 0; padding-left: 18px; display: grid; gap: 5px; font-size: .8rem; line-height: 1.4; }
+.paste-sections { list-style: none; padding-left: 0 !important; }
+.paste-sections li { display: flex; gap: 8px; align-items: baseline; }
+.paste-sections small { color: var(--muted); }
+.paste-mark { display: inline-grid; place-items: center; width: 18px; height: 18px; flex: none; border-radius: 50%; font-size: .72rem; font-weight: 700; background: var(--line-soft, var(--line)); }
+.paste-sections .is-parsed .paste-mark { background: color-mix(in srgb, var(--success) 18%, var(--surface)); color: var(--success); }
+.paste-sections .is-missing .paste-mark { background: color-mix(in srgb, var(--danger) 16%, var(--surface)); color: var(--danger); }
+.paste-sections .is-kept .paste-mark { background: color-mix(in srgb, var(--warning) 16%, var(--surface)); color: var(--warning); }
+.paste-info { color: var(--muted); }
+.paste-refs small { display: block; color: var(--muted); }
+@media (max-width: 960px) {
+  .paste-editor-grid { grid-template-columns: minmax(0, 1fr); }
+  .paste-editor-side { position: static; max-height: none; }
+  .paste-editor-textarea { min-height: 44vh; }
 }

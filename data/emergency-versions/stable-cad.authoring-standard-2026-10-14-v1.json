@@ -1,0 +1,201 @@
+{
+  "id": "4aa13e79-ceb9-4793-ad66-9daeb425431c",
+  "title": "Stable Coronary Artery Disease: Medical Management and Referral Triggers",
+  "specialty": "Cardiology / Primary Care",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-14-v1",
+  "lastReviewed": "2026-10-14",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-14",
+    "status": "incomplete",
+    "scope": "Adults with diagnosed stable angina: symptom treatment, secondary prevention and revascularisation referral using NICE CG126.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 14 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "No Saudi stable-coronary-disease guideline was opened.",
+      "Exact anti-anginal doses require patient-specific prescribing and the local formulary.",
+      "SFDA registration was not verified."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "4aa13e79-ceb9-4793-ad66-9daeb425431c"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Fixed coronary atherosclerotic narrowing limits flow reserve during increased myocardial demand. Transient myocardial ischaemia produces predictable exertional chest discomfort. Plaque progression or rupture can convert stable symptoms to acute coronary syndrome. Risk-factor treatment targets events, while anti-anginal treatment targets symptoms.",
+    "keyMechanisms": [
+      "Fixed coronary atherosclerotic narrowing limits flow reserve during increased myocardial demand.",
+      "Transient myocardial ischaemia produces predictable exertional chest discomfort.",
+      "Plaque progression or rupture can convert stable symptoms to acute coronary syndrome.",
+      "Risk-factor treatment targets events, while anti-anginal treatment targets symptoms."
+    ],
+    "references": [
+      {
+        "title": "NICE CG126: Stable angina: management",
+        "edition": "NICE CG126 Recommendations 1.2.1–1.5.14",
+        "url": "https://www.nice.org.uk/guidance/cg126/chapter/Recommendations"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Predictable chest pressure with exertion, emotional stress, cold or a heavy meal, relieved by rest or prescribed short-acting nitrate."
+    ],
+    "physicalSigns": [
+      "Often normal between episodes; hypertension, vascular disease or heart-failure signs may coexist."
+    ],
+    "redFlags": [
+      "Pain at rest, sudden increase in frequency or severity, syncope, acute breathlessness or symptoms not resolving after the emergency nitrate plan."
+    ],
+    "precipitants": [
+      "Exertion, emotional stress, cold exposure, heavy meal, anaemia, uncontrolled BP and missed medicines."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Acute coronary syndrome",
+      "distinguishingFeatures": "New, rest or crescendo pain requires emergency assessment."
+    },
+    {
+      "condition": "Non-cardiac chest pain",
+      "distinguishingFeatures": "Features reproducible by movement/palpation or linked to another organ system, after cardiac red flags are excluded."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Symptom and medicine review",
+        "modalityTarget": "Angina burden and treatment tolerance",
+        "targetCondition": "Stable angina control",
+        "expectedFinding": "Frequency, triggers, activity limitation and adverse effects",
+        "clinicalRationale": "Review 2–4 weeks after starting or changing anti-anginal treatment.",
+        "normalValue": "No angina limiting agreed activity",
+        "references": [
+          {
+            "title": "NICE CG126: Stable angina: management",
+            "edition": "NICE CG126 Recommendations 1.4.1–1.4.9",
+            "url": "https://www.nice.org.uk/guidance/cg126/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Blood pressure and lipid review",
+        "modalityTarget": "Cardiovascular risk",
+        "targetCondition": "Secondary prevention",
+        "expectedFinding": "Above individual target or treatment gap",
+        "clinicalRationale": "Optimise hypertension and statin pathways.",
+        "normalValue": "Within individual target",
+        "references": [
+          {
+            "title": "NICE CG126: Stable angina: management",
+            "edition": "NICE CG126 Recommendations 1.3.5–1.3.8",
+            "url": "https://www.nice.org.uk/guidance/cg126/chapter/Recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "advancedImaging",
+        "testName": "Functional or anatomical coronary test",
+        "modalityTarget": "Inducible ischaemia or high-risk anatomy",
+        "targetCondition": "Prognostically important CAD",
+        "expectedFinding": "Extensive ischaemia or possible left-main/proximal three-vessel disease",
+        "clinicalRationale": "Discuss testing even when symptoms are controlled if identifying a surgical prognostic group would change care.",
+        "normalValue": "No high-risk ischaemia or anatomy",
+        "references": [
+          {
+            "title": "NICE CG126: Stable angina: management",
+            "edition": "NICE CG126 Recommendations 1.5.11–1.5.14",
+            "url": "https://www.nice.org.uk/guidance/cg126/chapter/Recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "safety",
+      "title": "Confirm stability and emergency plan",
+      "timeframe": "At every review",
+      "actions": [
+        "Send new, rest or crescendo pain for acute coronary syndrome assessment.",
+        "Ensure the person understands their short-acting nitrate and ambulance plan from the prescribing clinician."
+      ]
+    },
+    {
+      "id": "medical",
+      "title": "Optimise drug treatment",
+      "timeframe": "Review 2–4 weeks after each change",
+      "actions": [
+        "Use one or two anti-anginal drugs as needed, starting with a beta blocker or calcium-channel blocker according to comorbidity, contraindication and preference.",
+        "Provide aspirin when appropriate, statin treatment and blood-pressure management for secondary prevention."
+      ]
+    },
+    {
+      "id": "refer",
+      "title": "Refer for coronary assessment",
+      "timeframe": "When symptoms remain uncontrolled or high-risk anatomy is suspected",
+      "actions": [
+        "Offer coronary angiography to guide strategy when symptoms are not controlled on optimal medical therapy.",
+        "Use multidisciplinary discussion when anatomy or comorbidity makes PCI versus CABG uncertain."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [],
+    "note": "Prescribe the short-acting nitrate and anti-anginal doses from the patient-specific cardiology plan and Saudi formulary. NICE CG126 defines drug classes and review timing but does not provide a complete dose table."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Treatment failure",
+      "threshold": "Symptoms not satisfactorily controlled on optimal drug treatment."
+    }
+  ],
+  "teaching": {
+    "scope": "Adults with diagnosed stable angina: symptom treatment, secondary prevention and revascularisation referral using NICE CG126.",
+    "learningObjectives": [
+      "Separate symptom relief from event prevention.",
+      "Recognise revascularisation referral triggers."
+    ],
+    "pitfalls": [
+      "Treating crescendo pain as stable angina.",
+      "Combining a beta blocker with a rate-limiting calcium-channel blocker without specialist review."
+    ],
+    "keyPoints": [
+      "Review response 2–4 weeks after a change.",
+      "Uncontrolled symptoms despite optimal treatment warrant angiography consideration."
+    ],
+    "references": [
+      {
+        "title": "NICE CG126: Stable angina: management",
+        "edition": "NICE CG126 Recommendations 1.2.1–1.5.14",
+        "url": "https://www.nice.org.uk/guidance/cg126/chapter/Recommendations",
+        "locator": "Recommendations 1.2.1–1.5.14"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain triggers, medicine purpose, emergency nitrate plan and when to call an ambulance."
+    ],
+    "lifestyleAndDiet": [
+      "Smoking cessation, physical activity within symptoms, heart-healthy diet and weight/BP control."
+    ],
+    "mdtReferrals": [
+      "Cardiology, cardiac rehabilitation, pharmacy and primary care; heart team for complex revascularisation decisions."
+    ],
+    "dischargeCriteria": [
+      "Stable symptoms at the agreed activity level, emergency plan understood and risk-factor treatment arranged."
+    ],
+    "followUpPlan": "Review 2–4 weeks after treatment changes, then at intervals based on symptoms and cardiovascular risk."
+  }
+}

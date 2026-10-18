@@ -1,0 +1,233 @@
+{
+  "id": "35b4d5dc-9797-438b-8c3b-c9f0b37e587f",
+  "title": "First Seizure in Adults: Assessment and Referral",
+  "specialty": "Neurology / Emergency Medicine",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-14-v1",
+  "lastReviewed": "2026-10-14",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-14",
+    "status": "incomplete",
+    "scope": "Adult first suspected seizure: immediate reversible causes, mimic assessment, investigation and urgent specialist referral using NICE NG217.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 14 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "No Saudi first-seizure guideline was opened.",
+      "Driving restrictions require current Saudi legal guidance.",
+      "SFDA status is not applicable because routine antiseizure treatment is not initiated here."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "35b4d5dc-9797-438b-8c3b-c9f0b37e587f"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Transient hypersynchronous cortical activity can produce motor, sensory, autonomic or awareness changes. Metabolic disturbance, infection, toxin or structural brain disease may provoke an acute symptomatic seizure. Syncope and cardiac arrhythmia can mimic epileptic seizure. Recurrence risk depends on cause, examination, EEG and imaging findings.",
+    "keyMechanisms": [
+      "Transient hypersynchronous cortical activity can produce motor, sensory, autonomic or awareness changes.",
+      "Metabolic disturbance, infection, toxin or structural brain disease may provoke an acute symptomatic seizure.",
+      "Syncope and cardiac arrhythmia can mimic epileptic seizure.",
+      "Recurrence risk depends on cause, examination, EEG and imaging findings."
+    ],
+    "references": [
+      {
+        "title": "NICE NG217: Epilepsies in children, young people and adults",
+        "edition": "NICE NG217 Recommendations 1.1.1–1.2.8",
+        "url": "https://www.nice.org.uk/guidance/ng217/chapter/diagnosis-and-assessment-of-epilepsy"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Witnessed tonic-clonic movement, focal symptoms, altered awareness, tongue injury, incontinence or post-event confusion."
+    ],
+    "physicalSigns": [
+      "Postictal confusion, focal neurological deficit, injury or abnormal vital signs; examination may normalise."
+    ],
+    "redFlags": [
+      "Ongoing seizure, repeated seizure without recovery, persistent focal deficit, meningism, severe headache, pregnancy, major injury, hypoglycaemia or cardiorespiratory instability."
+    ],
+    "precipitants": [
+      "Sleep deprivation, alcohol or substance use/withdrawal, metabolic disturbance, infection, stroke, tumour and interacting medicines."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Syncope",
+      "distinguishingFeatures": "Prodrome, posture and rapid recovery may suggest circulatory cause; obtain a 12-lead ECG."
+    },
+    {
+      "condition": "Psychogenic non-epileptic event",
+      "distinguishingFeatures": "Diagnosis requires expert assessment and should not be inferred from one atypical feature."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Witness history and video",
+        "modalityTarget": "Event semiology",
+        "targetCondition": "Suspected epileptic seizure",
+        "expectedFinding": "Features before, during and after the event",
+        "clinicalRationale": "Use eyewitness account and available video alongside examination.",
+        "normalValue": "No seizure features identified",
+        "references": [
+          {
+            "title": "NICE NG217: Epilepsies in children, young people and adults",
+            "edition": "NICE NG217 Recommendations 1.1.1–1.2.4",
+            "url": "https://www.nice.org.uk/guidance/ng217/chapter/diagnosis-and-assessment-of-epilepsy"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "12-lead ECG",
+        "modalityTarget": "Cardiac rhythm and conduction",
+        "targetCondition": "Cardiac seizure mimic",
+        "expectedFinding": "Arrhythmia or conduction abnormality",
+        "clinicalRationale": "Identify cardiac conditions that can mimic seizure and escalate accordingly.",
+        "normalValue": "Sinus rhythm without acute conduction or ischaemic abnormality",
+        "references": [
+          {
+            "title": "NICE NG217: Epilepsies in children, young people and adults",
+            "edition": "NICE NG217 Recommendation 1.2.2",
+            "url": "https://www.nice.org.uk/guidance/ng217/chapter/diagnosis-and-assessment-of-epilepsy"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Capillary glucose and directed metabolic tests",
+        "modalityTarget": "Reversible metabolic cause",
+        "targetCondition": "Provoked seizure",
+        "expectedFinding": "Hypoglycaemia or clinically suspected metabolic disturbance",
+        "clinicalRationale": "Correct immediately and investigate the cause.",
+        "normalValue": "Glucose and directed tests within local range",
+        "references": [
+          {
+            "title": "NICE NG217: Epilepsies in children, young people and adults",
+            "edition": "NICE NG217 Recommendation 1.2.3",
+            "url": "https://www.nice.org.uk/guidance/ng217/chapter/diagnosis-and-assessment-of-epilepsy"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "EEG",
+        "modalityTarget": "Epileptiform activity",
+        "targetCondition": "Epilepsy syndrome support",
+        "expectedFinding": "Epileptiform abnormality may support diagnosis",
+        "clinicalRationale": "If requested after the first seizure, perform as soon as possible, ideally within 72 hours; never use a normal EEG to exclude epilepsy.",
+        "normalValue": "No epileptiform activity; this does not exclude epilepsy",
+        "references": [
+          {
+            "title": "NICE NG217: Epilepsies in children, young people and adults",
+            "edition": "NICE NG217 Recommendations 1.2.5–1.2.8",
+            "url": "https://www.nice.org.uk/guidance/ng217/chapter/diagnosis-and-assessment-of-epilepsy"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Brain imaging",
+        "modalityTarget": "Structural brain cause",
+        "targetCondition": "Stroke, tumour, trauma or other lesion",
+        "expectedFinding": "Structural abnormality",
+        "clinicalRationale": "Offer imaging when a structural cause is suspected.",
+        "normalValue": "No acute or causative structural lesion",
+        "references": [
+          {
+            "title": "NICE NG217: Epilepsies in children, young people and adults",
+            "edition": "NICE NG217 Recommendation 1.2.4",
+            "url": "https://www.nice.org.uk/guidance/ng217/chapter/diagnosis-and-assessment-of-epilepsy"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "stabilise",
+      "title": "Stabilise and identify emergencies",
+      "timeframe": "Immediately",
+      "actions": [
+        "Treat ongoing seizure, hypoglycaemia, injury, infection or cardiorespiratory instability through the relevant emergency pathway.",
+        "Document witness history, postictal state, neurological examination and medicines/substances."
+      ]
+    },
+    {
+      "id": "investigate",
+      "title": "Check mimics and causes",
+      "timeframe": "During initial assessment",
+      "actions": [
+        "Obtain 12-lead ECG and capillary glucose; add laboratory and imaging tests based on clinical suspicion.",
+        "Do not use EEG to exclude epilepsy."
+      ]
+    },
+    {
+      "id": "refer",
+      "title": "Urgent specialist referral and safety advice",
+      "timeframe": "Appointment within 2 weeks",
+      "actions": [
+        "Refer to a clinician with expertise in first seizures and epilepsy.",
+        "Advise against driving pending current Saudi specialist/legal guidance and discuss bathing, heights, machinery and supervision risks."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "no-drug-indicated",
+    "regimens": [],
+    "note": "Do not initiate routine long-term antiseizure medicine solely from this pathway; treatment depends on expert diagnosis, recurrence risk and cause."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Specialist referral",
+      "threshold": "Appointment within 2 weeks after a first suspected seizure."
+    }
+  ],
+  "teaching": {
+    "scope": "Adult first suspected seizure: immediate reversible causes, mimic assessment, investigation and urgent specialist referral using NICE NG217.",
+    "learningObjectives": [
+      "Identify reversible and cardiac causes.",
+      "Arrange timely first-seizure expertise."
+    ],
+    "pitfalls": [
+      "Missing an ECG.",
+      "Starting long-term treatment before cause and recurrence risk are assessed, unless an emergency specialist indication exists."
+    ],
+    "keyPoints": [
+      "Referral is within 2 weeks.",
+      "A normal EEG does not exclude epilepsy."
+    ],
+    "references": [
+      {
+        "title": "NICE NG217: Epilepsies in children, young people and adults",
+        "edition": "NICE NG217 Recommendations 1.1.1–1.2.8",
+        "url": "https://www.nice.org.uk/guidance/ng217/chapter/diagnosis-and-assessment-of-epilepsy",
+        "locator": "Recommendations 1.1.1–1.2.8"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Give written seizure first-aid and safety advice to the patient and family."
+    ],
+    "lifestyleAndDiet": [
+      "Avoid sleep deprivation, alcohol binges, unsupervised swimming, heights and hazardous machinery until specialist advice."
+    ],
+    "mdtReferrals": [
+      "First-seizure/neurology clinic, cardiology if ECG abnormal, and emergency specialties for identified causes."
+    ],
+    "dischargeCriteria": [
+      "Returned to baseline, no acute red flag, responsible supervision and urgent referral plus written safety advice arranged."
+    ],
+    "followUpPlan": "Ensure first-seizure assessment within 2 weeks; if EEG is requested, target completion within 72 hours of the event."
+  }
+}

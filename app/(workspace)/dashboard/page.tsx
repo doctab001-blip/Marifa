@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import {
   Activity,
   ArrowRight,
@@ -23,10 +24,11 @@ import { AlertBanner } from "@/components/dashboard/alert-banner";
 import { KnowledgeSearch } from "@/components/dashboard/knowledge-search";
 import { clinicalCalculators } from "@/lib/clinical-calculators";
 import { hospitalAlerts, type HospitalAlert } from "@/lib/dashboard/hospital-feed";
-import { getDiseaseDrafts } from "@/lib/data/disease-drafts";
 import { getApprovedDiseaseGuidelines } from "@/lib/data/disease-guidelines";
+import { isTemporaryOpenAdminMode } from "@/lib/access-mode";
 import { getCurrentViewer } from "@/lib/supabase/session";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { getDiseaseDraftTopicCount } from "@/lib/data/disease-drafts";
 
 const dateFormat = new Intl.DateTimeFormat("en-SA", { dateStyle: "medium", timeZone: "Asia/Riyadh" });
 
@@ -34,23 +36,6 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
   const { error } = await searchParams;
   const viewer = await getCurrentViewer();
   const firstName = viewer?.name.split(/\s+/).slice(0, 2).join(" ") ?? "Clinician";
-  const supabase = await createSupabaseServerClient();
-  const { data: auth } = await supabase.auth.getClaims();
-  const userId = auth?.claims?.sub;
-  let assignments: Array<{ id: string; state: string; due_at: string | null; competency_templates: { title: string } | { title: string }[] | null }> = [];
-  if (typeof userId === "string") {
-    const { data: memberships } = await supabase.from("organization_memberships").select("id").eq("user_id", userId).eq("account_status", "active").limit(1);
-    const membership = memberships?.[0];
-    if (membership) {
-      const { data } = await supabase.from("competency_assignments").select("id, state, due_at, competency_templates(title)").eq("membership_id", membership.id).order("due_at", { ascending: true }).limit(4);
-      assignments = (data ?? []) as typeof assignments;
-    }
-  }
-  const [guidelines, draftResult] = await Promise.all([getApprovedDiseaseGuidelines(), getDiseaseDrafts()]);
-  const activeGuidelines = guidelines.diseases.length;
-  const draftsPending = draftResult.state === "ready" ? draftResult.drafts.length : guidelines.withheldCount;
-  const recentGuidelines = [...guidelines.diseases].sort((x, y) => String(y.lastReviewed).localeCompare(String(x.lastReviewed))).slice(0, 6);
-  const formularyUpdates = hospitalAlerts.filter(({ id }) => id.startsWith("formulary")).length;
   const urgentAlert = hospitalAlerts.find(({ severity }) => severity === "urgent");
 
   return (
@@ -73,6 +58,27 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
 
       <DemoBanner />
 
+      <Suspense fallback={<DashboardLoadingState />}>
+        <DashboardContent viewerId={viewer?.id} />
+      </Suspense>
+    </main>
+  );
+}
+
+async function DashboardContent({ viewerId }: { viewerId?: string }) {
+  const assignmentsPromise = loadAssignments(viewerId);
+  const [guidelines, assignments, draftTopicCount] = await Promise.all([
+    getApprovedDiseaseGuidelines(),
+    assignmentsPromise,
+    getDiseaseDraftTopicCount(),
+  ]);
+  const activeGuidelines = guidelines.diseases.length;
+  const recentGuidelines = [...guidelines.diseases].sort((x, y) => String(y.lastReviewed).localeCompare(String(x.lastReviewed))).slice(0, 6);
+  const formularyUpdates = hospitalAlerts.filter(({ id }) => id.startsWith("formulary")).length;
+
+  return (
+    <>
+
       <section className="knowledge-hub" aria-labelledby="hub-title">
         <div className="ai-search">
           <div className="ai-search-intro">
@@ -85,7 +91,7 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
 
         <div className="metric-grid" aria-label="Library metrics">
           <MetricCard tone="teal" label="Active guidelines" value={activeGuidelines} note="Live in the clinical directory" href="/dashboard/diseases" icon={<Library size={18} aria-hidden="true" />} />
-          <MetricCard tone="yellow" label="Draft reviews pending" value={draftsPending} note="Awaiting authoring or clinical review" href="/dashboard/diseases/drafts" icon={<FileClock size={18} aria-hidden="true" />} />
+          <MetricCard tone="yellow" label={`Draft topics (${draftTopicCount})`} value={draftTopicCount} note="Awaiting authoring or clinical review" href="/dashboard/diseases/drafts" icon={<FileClock size={18} aria-hidden="true" />} />
           <MetricCard tone="blue" label="Medical calculators" value={clinicalCalculators.length} note="Evidence-linked point-of-care tools" href="/dashboard/medical-calculators" icon={<Calculator size={18} aria-hidden="true" />} />
           <MetricCard tone="magenta" label="Formulary updates" value={formularyUpdates} note="Recent changes (sample data)" href="/dashboard/medicines-formulary" icon={<Pill size={18} aria-hidden="true" />} />
         </div>
@@ -154,7 +160,47 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
           </Link>
         </div>
       </div>
-    </main>
+    </>
+  );
+}
+
+type Assignment = { id: string; state: string; due_at: string | null; competency_templates: { title: string } | { title: string }[] | null };
+
+async function loadAssignments(viewerId?: string): Promise<Assignment[]> {
+  if (!viewerId || isTemporaryOpenAdminMode()) return [];
+  const supabase = await createSupabaseServerClient();
+  const { data: memberships } = await supabase
+    .from("organization_memberships")
+    .select("id")
+    .eq("user_id", viewerId)
+    .eq("account_status", "active")
+    .limit(1);
+  const membership = memberships?.[0];
+  if (!membership) return [];
+  const { data } = await supabase
+    .from("competency_assignments")
+    .select("id, state, due_at, competency_templates(title)")
+    .eq("membership_id", membership.id)
+    .order("due_at", { ascending: true })
+    .limit(4);
+  return (data ?? []) as Assignment[];
+}
+
+function DashboardLoadingState() {
+  return (
+    <section className="knowledge-hub" aria-busy="true" aria-label="Loading dashboard data">
+      <div className="ai-search">
+        <div className="ai-search-intro">
+          <span className="ai-search-badge"><Library size={14} aria-hidden="true" /> Knowledge &amp; Governance Hub</span>
+          <h2>Quick clinical directory</h2>
+          <p>Search diseases, guidelines, pathways and the formulary across the governed library.</p>
+        </div>
+        <KnowledgeSearch />
+      </div>
+      <div className="metric-grid" aria-hidden="true">
+        {["teal", "yellow", "blue", "magenta"].map((tone) => <div className={`card metric-card metric-card-${tone} page-loading-card`} key={tone} />)}
+      </div>
+    </section>
   );
 }
 

@@ -2,8 +2,17 @@ import { DiseaseDetailSchema, type DiseaseDetail } from "@/lib/validations/disea
 
 /** Minimum authoring-standard score for a topic to appear live (docs/clinical-topic-authoring-standard.md). */
 export const CLINICAL_DIRECTORY_MINIMUM_SCORE = 80;
+/** Smallest investigation panel a topic can carry (bedside, laboratory, imaging and specialist tests together). */
+export const MINIMUM_INVESTIGATIONS = 5;
 
 export type AuthoringAudit = { compliant: boolean; meetsEightyPercent: boolean; score: number; passedChecks: number; totalChecks: number; failures: string[] };
+
+/**
+ * Global authoring instruction shared by topic-generation and review workflows.
+ * Keep this in one place so a new authoring surface cannot silently omit it.
+ */
+export const ABBREVIATION_EXPANSION_RULE =
+  "On first occurrence within a topic, write the full medical term, syndrome, drug class, or scoring system followed by its abbreviation in parentheses; use only the abbreviation thereafter and never repeat the expansion.";
 
 const filler = /\b(it is important to note|plays a crucial role|a wide range of|comprehensive|in conclusion)\b/i;
 const locator = /\b(p{1,2}\.?\s*\d+|page\s*\d|section\s*[\w.]+|table\s*[\w.]+|figure\s*[\w.]+|recommendation\s*[\w.]+|rec\.?\s*\d|appendix\s*[\w.]+)\b/i;
@@ -54,6 +63,18 @@ export function auditTopicContent(content: unknown): AuthoringAudit {
     });
   });
   check(investigations.length > 0);
+  // Investigation panel completeness: list every relevant test, with a usable normal value and a distinct finding.
+  const vagueNormal = /^(within )?(the )?local( adult)?( laboratory)?( reference)?( range)?s?\.?$/i;
+  check(investigations.length >= MINIMUM_INVESTIGATIONS);
+  if (investigations.length < MINIMUM_INVESTIGATIONS) failures.push(`Investigations list ${investigations.length} tests; list every relevant bedside, laboratory, imaging and specialist test (at least ${MINIMUM_INVESTIGATIONS}).`);
+  check(new Set(investigations.map((entry) => entry.tier)).size >= 2);
+  if (new Set(investigations.map((entry) => entry.tier)).size < 2) failures.push("Investigations cover only one tier; include laboratory and imaging or bedside tests where relevant.");
+  const weakNormal = investigations.filter((entry) => entry.normalValue && vagueNormal.test(entry.normalValue.trim()));
+  check(weakNormal.length === 0);
+  weakNormal.forEach((entry) => failures.push(`Investigation “${entry.testName}” normal value is only “${entry.normalValue}”; give the typical adult range or the target.`));
+  const echoed = investigations.filter((entry) => entry.normalValue && entry.normalValue.trim().toLowerCase() === entry.expectedFinding.trim().toLowerCase());
+  check(echoed.length === 0);
+  echoed.forEach((entry) => failures.push(`Investigation “${entry.testName}” repeats the normal value as the expected finding.`));
   check(investigations.every((item) => Boolean(item.normalValue)));
   check(investigations.every((item) => Boolean(item.expectedFinding)));
   check(investigations.every((item) => Boolean(item.clinicalRationale)));
@@ -97,8 +118,39 @@ export function auditTopicContent(content: unknown): AuthoringAudit {
   check(Boolean(item.teaching?.keyPoints?.length));
   check(Boolean(item.teaching?.pitfalls?.length));
   check(Boolean(item.teaching?.references?.length));
+  // A publishable topic needs the teaching layer as one coherent safety bundle;
+  // passing isolated subchecks must not keep a topic above threshold when the
+  // objectives, key points and pitfalls have all been removed.
+  check(Boolean(item.teaching?.learningObjectives.length && item.teaching?.keyPoints?.length && item.teaching?.pitfalls?.length));
   check(Boolean(item.teaching?.references?.every((reference) => Boolean(reference.locator))));
   check(!filler.test(text(item)));
+  // This is a structural guard for the most common clinical abbreviations. It
+  // catches a bare abbreviation when its required first-use expansion is absent.
+  // The list is intentionally conservative: unknown abbreviations still require
+  // human review, while known terms are enforced consistently across all topics.
+  const knownExpansions: Record<string, string[]> = {
+    ACS: ["acute coronary syndrome"],
+    AKI: ["acute kidney injury"],
+    COPD: ["chronic obstructive pulmonary disease"],
+    CPR: ["cardiopulmonary resuscitation"],
+    CT: ["computed tomography"],
+    DKA: ["diabetic ketoacidosis"],
+    ECG: ["electrocardiogram"],
+    ED: ["emergency department"],
+    ICU: ["intensive care unit"],
+    MRI: ["magnetic resonance imaging"],
+    PCI: ["percutaneous coronary intervention"],
+    ROSC: ["return of spontaneous circulation"],
+    STEMI: ["ST-elevation myocardial infarction", "ST elevation myocardial infarction"],
+  };
+  const topicText = text(item).toLowerCase();
+  const abbreviationFailures = Object.entries(knownExpansions).filter(([abbreviation, expansions]) => {
+    const token = new RegExp(`\\b${abbreviation}\\b`, "i");
+    if (!token.test(topicText)) return false;
+    return !expansions.some((expansion) => new RegExp(`${expansion}\\s*\\(${abbreviation}\\)`, "i").test(topicText));
+  });
+  check(abbreviationFailures.length === 0);
+  abbreviationFailures.forEach(([abbreviation, expansions]) => failures.push(`Abbreviation ${abbreviation} must first appear as ${expansions[0]} (${abbreviation}).`));
   check(item.nonClinicalManagement.patientEducation.length > 0);
   check(item.nonClinicalManagement.lifestyleAndDiet.length > 0);
   check(item.nonClinicalManagement.mdtReferrals.length > 0);

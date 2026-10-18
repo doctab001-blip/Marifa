@@ -62,7 +62,7 @@ export const getCurrentViewer = cache(async (): Promise<DemoUser | null> => {
     role: adminRoleLabel ?? designation,
     designation,
     isAdmin: Boolean(adminRole),
-    primaryColor: organizationSettings?.primary_color ?? "#0f766e",
+    primaryColor: organizationSettings?.primary_color ?? "#0e7490",
     specialty: "Unassigned",
     organizationId: membership?.organization_id ?? "pending-membership",
     organizationName: organization?.name ?? "Membership pending"

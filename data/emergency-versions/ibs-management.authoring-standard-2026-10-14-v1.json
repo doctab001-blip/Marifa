@@ -1,0 +1,246 @@
+{
+  "id": "260f572e-3ef5-4d3a-b138-bb56857e0d1e",
+  "title": "Irritable Bowel Syndrome: Dietary and Medical Management Ladder",
+  "specialty": "Gastroenterology / Primary Care",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-14-v1",
+  "lastReviewed": "2026-10-14",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-14",
+    "status": "incomplete",
+    "scope": "Adult IBS explanation, diet, lifestyle, symptom-led medicine classes and referral for refractory symptoms.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 14 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "No Saudi national irritable bowel syndrome guideline was identified in the sources opened on 14 October 2026. NICE guidance is an international comparator pending Saudi/local adaptation.",
+      "SFDA product registration was not verified; any medicine selection requires the current Saudi Drug Information register and hospital formulary.",
+      "NICE CG61 does not provide complete product-level doses, maximums or renal/hepatic adjustments for every IBS medicine."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "260f572e-3ef5-4d3a-b138-bb56857e0d1e"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Visceral hypersensitivity amplifies pain from normal gut activity. Altered motility contributes to diarrhoea or constipation. Dietary triggers vary between individuals. Psychological stress can amplify gut-brain symptoms without making them imaginary.",
+    "keyMechanisms": [
+      "Visceral hypersensitivity amplifies pain from normal gut activity.",
+      "Altered motility contributes to diarrhoea or constipation.",
+      "Dietary triggers vary between individuals.",
+      "Psychological stress can amplify gut-brain symptoms without making them imaginary."
+    ],
+    "references": [
+      {
+        "title": "NICE CG61: Irritable bowel syndrome in adults: diagnosis and management",
+        "edition": "NICE CG61, Recommendations 1.2.1.1–1.2.4.1",
+        "url": "https://www.nice.org.uk/guidance/cg61/chapter/recommendations"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Pain, bloating, urgency, diarrhoea, constipation or mixed bowel habit."
+    ],
+    "physicalSigns": [
+      "Abdominal tenderness may occur; reassess for new mass, weight loss, bleeding or dehydration."
+    ],
+    "redFlags": [
+      "New bleeding, weight loss, anaemia, mass, fever, nocturnal progression or severe dehydration requires reassessment."
+    ],
+    "precipitants": [
+      "Irregular meals, caffeine, alcohol, fizzy drinks, resistant starch, stress and individual foods."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Coeliac disease or IBD",
+      "distinguishingFeatures": "Positive serology, bleeding, weight loss or objective inflammation."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Symptom severity and bowel diary",
+        "modalityTarget": "Pain, bloating and stool pattern",
+        "targetCondition": "Dominant IBS symptom",
+        "expectedFinding": "Reproducible symptom pattern and treatment response",
+        "clinicalRationale": "Select one intervention at a time and document benefit.",
+        "normalValue": "Minimal symptoms without functional impairment",
+        "references": [
+          {
+            "title": "NICE CG61: Irritable bowel syndrome in adults: diagnosis and management",
+            "edition": "NICE CG61 Recommendations 1.2.1.1–1.2.1.4",
+            "url": "https://www.nice.org.uk/guidance/cg61/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Weight and nutrition screen",
+        "modalityTarget": "Weight trend and restrictive intake",
+        "targetCondition": "Malnutrition risk",
+        "expectedFinding": "Weight loss or nutritionally inadequate restriction",
+        "clinicalRationale": "Refer to dietetics and reassess the diagnosis.",
+        "normalValue": "Stable weight with adequate intake",
+        "references": [
+          {
+            "title": "NICE CG61: Irritable bowel syndrome in adults: diagnosis and management",
+            "edition": "NICE CG61 Recommendations 1.2.1.1–1.2.1.4",
+            "url": "https://www.nice.org.uk/guidance/cg61/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Medication review",
+        "modalityTarget": "Constipating/diarrhoea-provoking medicines",
+        "targetCondition": "Iatrogenic symptoms",
+        "expectedFinding": "Temporal link to a medicine",
+        "clinicalRationale": "Adjust with the responsible prescriber.",
+        "normalValue": "No medicine-related bowel adverse effect",
+        "references": [
+          {
+            "title": "NICE CG61: Irritable bowel syndrome in adults: diagnosis and management",
+            "edition": "NICE CG61 Recommendations 1.2.2.1–1.2.2.4",
+            "url": "https://www.nice.org.uk/guidance/cg61/chapter/recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count",
+        "modalityTarget": "Anaemia",
+        "targetCondition": "New organic disease",
+        "expectedFinding": "New anaemia",
+        "clinicalRationale": "Re-enter the diagnostic pathway when the clinical pattern changes.",
+        "normalValue": "Haemoglobin, leukocytes and platelets within local adult ranges",
+        "references": [
+          {
+            "title": "NICE CG61: Irritable bowel syndrome in adults: diagnosis and management",
+            "edition": "NICE CG61 Recommendation 1.1.2.1",
+            "url": "https://www.nice.org.uk/guidance/cg61/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "CRP",
+        "modalityTarget": "Inflammation",
+        "targetCondition": "IBD or infection",
+        "expectedFinding": "New elevation",
+        "clinicalRationale": "Do not attribute a changed inflammatory presentation to IBS.",
+        "normalValue": "Within local laboratory range",
+        "references": [
+          {
+            "title": "NICE CG61: Irritable bowel syndrome in adults: diagnosis and management",
+            "edition": "NICE CG61 Recommendation 1.1.2.1",
+            "url": "https://www.nice.org.uk/guidance/cg61/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Targeted endoscopic or imaging referral",
+        "modalityTarget": "Bowel or pelvic pathology",
+        "targetCondition": "Alternative diagnosis",
+        "expectedFinding": "Abnormality explaining alarm symptoms",
+        "clinicalRationale": "Use only for new alarm features or diagnostic uncertainty.",
+        "normalValue": "No structural explanation found",
+        "references": [
+          {
+            "title": "NICE CG61: Irritable bowel syndrome in adults: diagnosis and management",
+            "edition": "NICE CG61 Recommendations 1.1.1.1 and 1.1.2.2",
+            "url": "https://www.nice.org.uk/guidance/cg61/chapter/recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "foundation",
+      "title": "Education, meals and activity",
+      "timeframe": "First-line for at least one planned review cycle",
+      "actions": [
+        "Use regular meals, adequate fluid, activity and individual reduction of caffeine, alcohol, fizzy drinks and resistant starch.",
+        "For diarrhoea avoid sorbitol; for wind/bloating trial oats or linseeds; adjust fibre toward soluble rather than insoluble sources."
+      ]
+    },
+    {
+      "id": "dietitian",
+      "title": "Dietitian-led restriction when needed",
+      "timeframe": "If first-line advice fails",
+      "actions": [
+        "Refer for a structured single-food or low-FODMAP exclusion and reintroduction programme delivered by a clinician with dietary expertise.",
+        "Avoid long-term unsupervised restriction and monitor weight and nutritional adequacy."
+      ]
+    },
+    {
+      "id": "symptom-treatment",
+      "title": "Use symptom-led medicines through the local formulary",
+      "timeframe": "Review after each trial",
+      "actions": [
+        "Select an antispasmodic, laxative or antidiarrhoeal class according to the dominant symptom and stool consistency.",
+        "If symptoms persist, specialist-supervised neuromodulator or psychological therapy may be appropriate.",
+        "Stop ineffective treatment and reassess alarm features before escalation."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [],
+    "note": "NICE CG61 recommends medicine classes and dose titration but the opened guidance does not provide complete dose, route, frequency, duration, maximum and organ-adjustment details for every product. Use current SFDA product information and the Saudi/local formulary."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Dietitian-led exclusion diet",
+      "threshold": "Use only when symptoms persist despite general dietary and lifestyle advice."
+    }
+  ],
+  "teaching": {
+    "scope": "Adult IBS explanation, diet, lifestyle, symptom-led medicine classes and referral for refractory symptoms.",
+    "learningObjectives": [
+      "Build a staged diet and symptom-management plan.",
+      "Avoid harmful unsupervised restriction."
+    ],
+    "pitfalls": [
+      "Starting several changes together.",
+      "Escalating treatment without rechecking alarm features."
+    ],
+    "keyPoints": [
+      "Match treatment to the dominant symptom.",
+      "Dietary exclusion needs planned reintroduction and nutritional oversight."
+    ],
+    "references": [
+      {
+        "title": "NICE CG61: Irritable bowel syndrome in adults: diagnosis and management",
+        "edition": "NICE CG61, Recommendations 1.2.1.1–1.2.4.1",
+        "url": "https://www.nice.org.uk/guidance/cg61/chapter/recommendations",
+        "locator": "Recommendations 1.2.1.1–1.2.4.1"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Set realistic goals around function and symptom reduction rather than a guaranteed cure."
+    ],
+    "lifestyleAndDiet": [
+      "Regular meals, hydration, activity and individual trigger reduction."
+    ],
+    "mdtReferrals": [
+      "Primary care, gastroenterology, specialist dietitian and psychological therapy service when indicated."
+    ],
+    "dischargeCriteria": [
+      "Symptoms acceptably controlled, nutrition safe, alarm features absent and self-management plan understood."
+    ],
+    "followUpPlan": "Review benefit and adverse effects after each intervention; reopen diagnosis if the pattern changes."
+  }
+}

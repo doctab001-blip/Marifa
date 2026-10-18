@@ -25,7 +25,7 @@ export function DiseaseCard({ disease }: { disease: DiseaseGuidelineSummary }) {
   const statusLabel = reviewPending ? "Clinical review pending" : approved ? "Approved" : draft ? "Draft" : disease.status.replaceAll("_", " ");
 
   return (
-    <Link href={`/dashboard/diseases/${disease.id}`} className={`disease-card${disease.pillar === "Urgent Care" ? " is-urgent" : ""}`}>
+    <Link href={`/dashboard/diseases/${disease.id}`} data-pillar={disease.pillar} className={`disease-card${disease.pillar === "Urgent Care" ? " is-urgent" : ""}`}>
       <div className="disease-card-top">
         <span className="disease-pillar-label">{disease.pillar}</span>
         <span className={`disease-status-badge ${approved ? "is-approved" : draft ? "is-draft" : underReview ? "is-review" : ""}`}>

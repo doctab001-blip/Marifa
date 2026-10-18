@@ -1,0 +1,299 @@
+{
+  "approved_at": "2026-10-11 20:10:59.267639+00",
+  "approved_by": "310a1d7b-646d-4adb-b822-8d79453237cf",
+  "content": {
+    "authority": "Other",
+    "clinicalManagement": [
+      {
+        "actions": [
+          "Arrange prompt surgical assessment, analgesia and fluid support according to clinical need.",
+          "Discuss operative care or selected nonoperative care with the surgical team; document selection criteria and recurrence risk."
+        ],
+        "id": "source-scope-correction",
+        "timeframe": "Apply according to acuity and the cited guideline; clinician verification required",
+        "title": "Topic-specific source correction — limited scope"
+      }
+    ],
+    "differentials": [
+      {
+        "condition": "Ectopic pregnancy",
+        "distinguishingFeatures": "Possible pregnancy, pelvic pain, vaginal bleeding, or instability."
+      },
+      {
+        "condition": "Ovarian torsion",
+        "distinguishingFeatures": "Acute unilateral pelvic pain with supportive adnexal imaging."
+      },
+      {
+        "condition": "Renal/ureteric colic",
+        "distinguishingFeatures": "Colicky flank-to-groin pain and possible hematuria."
+      },
+      {
+        "condition": "Gastroenteritis/mesenteric adenitis",
+        "distinguishingFeatures": "Diarrhea or diffuse symptoms may predominate; serial examination helps distinguish."
+      }
+    ],
+    "evidenceAudit": {
+      "checkedOn": "2026-10-11",
+      "findings": [
+        "Full NICE compliance and original Medscape derivation have not been established.",
+        "Adult assessment and surgical referral only; reconcile the 2025 WSES guideline before approving a definitive antibiotic or operative protocol."
+      ],
+      "medscapeStatus": "limited-comparison",
+      "originalVersionIds": [
+        "f48c5096-efe3-476f-a842-e85aa1f2eb12"
+      ],
+      "scope": "Adult assessment and surgical referral only; reconcile the 2025 WSES guideline before approving a definitive antibiotic or operative protocol.",
+      "status": "incomplete",
+      "unverifiedSections": [
+        "Inherited pathophysiology, presentation and differential detail",
+        "Investigation selection and interpretation outside the explicitly cited scope",
+        "Complete medicines, contraindications, dose adjustments and monitoring",
+        "Non-clinical care and local Saudi adaptation"
+      ]
+    },
+    "granularPathway": {
+      "Investigations": [
+        {
+          "evidence": {
+            "selection_rationale": "Limited source comparison only. Adult assessment and surgical referral only; reconcile the 2025 WSES guideline before approving a definitive antibiotic or operative protocol. Inherited sections have not been re-verified; see the evidence audit. No full NICE compliance, original Medscape derivation or clinician approval is asserted.",
+            "sources": [
+              {
+                "edition": "Public recommendation/reference page retrieved 11 October 2026; retrieval is not clinical approval",
+                "id": "efbb5ffe-dff2-4cd7-8a28-e7cedeb03067",
+                "issuer": "Other",
+                "locator": "Emergency Department Care; Nonsurgical Treatment",
+                "primary_source": true,
+                "title": "Appendicitis Treatment & Management: Approach Considerations, Emergency Department Care, Nonsurgical Treatment",
+                "url": "https://emedicine.medscape.com/article/773895-treatment"
+              },
+              {
+                "edition": "2020",
+                "id": "1919c9db-1113-438a-8a27-9a074856e244",
+                "issuer": "Other",
+                "locator": "Recommendations 1.1, 1.10, 3.1 and 7.1",
+                "primary_source": false,
+                "title": "WSES Jerusalem guidelines: acute appendicitis",
+                "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7386163/"
+              }
+            ]
+          },
+          "id": "inherited-investigations",
+          "steps": [
+            {
+              "clinical_question": "Appendicitis or peritoneal irritation",
+              "decision_rationale": "Inherited and not verified in this audit: Clinical course and serial findings support diagnosis.",
+              "expected_finding": "Persistent or evolving focal tenderness, guarding, or movement pain.",
+              "test": "Serial focused abdominal examination",
+              "timeframe": "Not newly verified"
+            },
+            {
+              "clinical_question": "Appendicitis",
+              "decision_rationale": "Inherited and not verified in this audit: Clarifies uncertain presentations and identifies complications.",
+              "expected_finding": "Imaging consistent with inflamed appendix or complication.",
+              "test": "Ultrasound or CT selected by age, pregnancy, and local protocol",
+              "timeframe": "Not newly verified"
+            },
+            {
+              "clinical_question": "Urinary infection or calculus",
+              "decision_rationale": "Inherited and not verified in this audit: Assesses common mimics but does not independently exclude appendicitis.",
+              "expected_finding": "No findings sufficient to explain symptoms when urinary disease is unlikely.",
+              "test": "Urinalysis",
+              "timeframe": "Not newly verified"
+            },
+            {
+              "clinical_question": "Pregnancy-related abdominal pain",
+              "decision_rationale": "Inherited and not verified in this audit: Informs differential, imaging, and gynecologic urgency.",
+              "expected_finding": "Negative when pregnancy is excluded.",
+              "test": "Pregnancy test when relevant",
+              "timeframe": "Not newly verified"
+            }
+          ],
+          "timeframe": "Determine from the full disease-specific pathway before clinical approval",
+          "title": "Inherited investigations — verification still required"
+        }
+      ],
+      "Treatment_Plan": [
+        {
+          "Medicines_Doses": [],
+          "actions": [
+            {
+              "instruction": "Arrange prompt surgical assessment, analgesia and fluid support according to clinical need.",
+              "timeframe": "Clinician must confirm timing for the specific patient"
+            },
+            {
+              "instruction": "Discuss operative care or selected nonoperative care with the surgical team; document selection criteria and recurrence risk.",
+              "timeframe": "Clinician must confirm timing for the specific patient"
+            }
+          ],
+          "branches": [],
+          "evidence": {
+            "selection_rationale": "Limited source comparison only. Adult assessment and surgical referral only; reconcile the 2025 WSES guideline before approving a definitive antibiotic or operative protocol. Inherited sections have not been re-verified; see the evidence audit. No full NICE compliance, original Medscape derivation or clinician approval is asserted.",
+            "sources": [
+              {
+                "edition": "Public recommendation/reference page retrieved 11 October 2026; retrieval is not clinical approval",
+                "id": "efbb5ffe-dff2-4cd7-8a28-e7cedeb03067",
+                "issuer": "Other",
+                "locator": "Emergency Department Care; Nonsurgical Treatment",
+                "primary_source": true,
+                "title": "Appendicitis Treatment & Management: Approach Considerations, Emergency Department Care, Nonsurgical Treatment",
+                "url": "https://emedicine.medscape.com/article/773895-treatment"
+              },
+              {
+                "edition": "2020",
+                "id": "1919c9db-1113-438a-8a27-9a074856e244",
+                "issuer": "Other",
+                "locator": "Recommendations 1.1, 1.10, 3.1 and 7.1",
+                "primary_source": false,
+                "title": "WSES Jerusalem guidelines: acute appendicitis",
+                "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7386163/"
+              }
+            ]
+          },
+          "id": "source-scope-correction",
+          "timeframe": "According to clinical acuity and the source pathway",
+          "title": "Limited source correction"
+        }
+      ],
+      "evidence": {
+        "selection_rationale": "Limited source comparison only. Adult assessment and surgical referral only; reconcile the 2025 WSES guideline before approving a definitive antibiotic or operative protocol. Inherited sections have not been re-verified; see the evidence audit. No full NICE compliance, original Medscape derivation or clinician approval is asserted.",
+        "sources": [
+          {
+            "edition": "Public recommendation/reference page retrieved 11 October 2026; retrieval is not clinical approval",
+            "id": "efbb5ffe-dff2-4cd7-8a28-e7cedeb03067",
+            "issuer": "Other",
+            "locator": "Emergency Department Care; Nonsurgical Treatment",
+            "primary_source": true,
+            "title": "Appendicitis Treatment & Management: Approach Considerations, Emergency Department Care, Nonsurgical Treatment",
+            "url": "https://emedicine.medscape.com/article/773895-treatment"
+          },
+          {
+            "edition": "2020",
+            "id": "1919c9db-1113-438a-8a27-9a074856e244",
+            "issuer": "Other",
+            "locator": "Recommendations 1.1, 1.10, 3.1 and 7.1",
+            "primary_source": false,
+            "title": "WSES Jerusalem guidelines: acute appendicitis",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7386163/"
+          }
+        ]
+      },
+      "schema_version": 1
+    },
+    "id": "c2c404f2-5f47-4e4d-9ce7-fb32a9c1e104",
+    "investigations": {
+      "ruleIn": [
+        {
+          "clinicalRationale": "Clinical course and serial findings support diagnosis.",
+          "expectedFinding": "Persistent or evolving focal tenderness, guarding, or movement pain.",
+          "modalityTarget": "Serial focused abdominal examination — Appendicitis or peritoneal irritation",
+          "targetCondition": "Appendicitis or peritoneal irritation",
+          "testName": "Serial focused abdominal examination",
+          "tier": "laboratory"
+        },
+        {
+          "clinicalRationale": "Clarifies uncertain presentations and identifies complications.",
+          "expectedFinding": "Imaging consistent with inflamed appendix or complication.",
+          "modalityTarget": "Ultrasound or CT selected by age, pregnancy, and local protocol — Appendicitis",
+          "targetCondition": "Appendicitis",
+          "testName": "Ultrasound or CT selected by age, pregnancy, and local protocol",
+          "tier": "advancedImaging"
+        }
+      ],
+      "ruleOut": [
+        {
+          "clinicalRationale": "Assesses common mimics but does not independently exclude appendicitis.",
+          "expectedFinding": "No findings sufficient to explain symptoms when urinary disease is unlikely.",
+          "modalityTarget": "Urinalysis — Urinary infection or calculus",
+          "targetCondition": "Urinary infection or calculus",
+          "testName": "Urinalysis",
+          "tier": "laboratory"
+        },
+        {
+          "clinicalRationale": "Informs differential, imaging, and gynecologic urgency.",
+          "expectedFinding": "Negative when pregnancy is excluded.",
+          "modalityTarget": "Pregnancy test when relevant — Pregnancy-related abdominal pain",
+          "targetCondition": "Pregnancy-related abdominal pain",
+          "testName": "Pregnancy test when relevant",
+          "tier": "laboratory"
+        }
+      ]
+    },
+    "lastReviewed": "2026-10-11",
+    "medicationPlan": {
+      "note": "UNREVIEWED DRAFT — NOT FOR CLINICAL USE. This version replaces the inherited prescribing list with a limited source comparison. It is not a complete prescribing protocol. Verify all doses, routes, contraindications, organ-function adjustments, interactions and monitoring before approval. Original medication content remains preserved in the previous versions.",
+      "regimens": [],
+      "status": "local-protocol-required"
+    },
+    "nonClinicalManagement": {
+      "dischargeCriteria": [
+        "Serious surgical and pregnancy-related causes assessed",
+        "Stable observations and manageable symptoms",
+        "Follow-up or observation plan documented",
+        "Immediate return precautions understood"
+      ],
+      "followUpPlan": "If discharged, arrange follow-up by working diagnosis and advise immediate return for worsening or persistent symptoms.",
+      "lifestyleAndDiet": [
+        "Follow fasting instructions while surgery is considered.",
+        "Resume oral intake per treating-team advice."
+      ],
+      "mdtReferrals": [
+        "General surgery",
+        "Obstetrics and gynecology if relevant",
+        "Radiology for uncertain or complex cases"
+      ],
+      "patientEducation": [
+        "Explain that symptoms can evolve and reassessment may be needed.",
+        "Review warning symptoms requiring immediate return."
+      ]
+    },
+    "pathophysiology": {
+      "keyMechanisms": [
+        "Luminal obstruction",
+        "Appendiceal wall inflammation and distension",
+        "Venous congestion and ischemia",
+        "Perforation and intra-abdominal infection"
+      ],
+      "summary": "Appendiceal obstruction and inflammation may progress to ischemia, perforation, abscess, or peritonitis."
+    },
+    "pillar": "Urgent Care",
+    "presentation": {
+      "physicalSigns": [
+        "Right lower quadrant tenderness",
+        "Localized guarding",
+        "Pain with movement or cough",
+        "Possible fever and tachycardia",
+        "Variable findings in pregnancy, older adults, and children"
+      ],
+      "redFlags": [
+        "Generalized peritonitis",
+        "Hemodynamic instability or sepsis",
+        "Rigid abdomen",
+        "Rapidly worsening pain or systemic illness",
+        "Pregnancy/immunosuppression with concerning symptoms"
+      ],
+      "symptoms": [
+        "Abdominal pain possibly migrating to right lower quadrant",
+        "Loss of appetite",
+        "Nausea or vomiting",
+        "Fever",
+        "Pain worsened by movement or cough"
+      ]
+    },
+    "specialty": "Emergency Medicine and General Surgery",
+    "status": "approved",
+    "title": "Acute Appendicitis",
+    "version": "evidence-audit-2026-10-11-v1"
+  },
+  "guideline_status": "approved",
+  "id": "c2c404f2-5f47-4e4d-9ce7-fb32a9c1e104",
+  "is_current": true,
+  "publication_date": null,
+  "review_date": "2026-10-11",
+  "source_title": "Appendicitis Treatment & Management: Approach Considerations, Emergency Department Care, Nonsurgical Treatment",
+  "source_url": "https://emedicine.medscape.com/article/773895-treatment",
+  "specialty": "Emergency Medicine and General Surgery",
+  "status": "approved",
+  "title": "Acute Appendicitis",
+  "version": "evidence-audit-2026-10-11-v1",
+  "version_id": "5e179761-2902-4ef3-8e6e-f7feb61a811b"
+}

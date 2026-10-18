@@ -1,0 +1,312 @@
+import { cite, type Ref, type Spec } from "./common.ts";
+
+const RCO: Ref = { title: "Royal College of Ophthalmologists: Management of Angle Closure Glaucoma Guideline", url: "https://www.rcophth.ac.uk/wp-content/uploads/2022/06/Management-of-Open-Angle-Closure-Glaucoma.pdf" };
+const RVEEH: Ref = { title: "Royal Victorian Eye and Ear Hospital: Acute Primary Angle Closure (APAC) Clinical Practice Guideline", url: "https://eyeandear.org.au/wp-content/uploads/2021/11/Acute-Primary-Angle-Closure-APAC-Clinical-Practice-Guideline.pdf" };
+const COLL: Ref = { title: "College of Optometrists Clinical Management Guideline: Primary angle closure / primary angle closure glaucoma", url: "https://www.college-optometrists.org/clinical-guidance/clinical-management-guidelines/primaryangleclosure_primaryangleclosureglaucoma_pa" };
+const FORM: Ref = { title: "NHS Scotland East formulary: Bacterial conjunctivitis", url: "https://formulary.nhs.scot/east/infections/eye/bacterial-conjunctivitis/" };
+const S = (n: string, title: string, url: string): Ref => ({ title: `NHS Scotland Eyecare Guidelines ${n} ${title}`, url });
+const S22 = S("2.2", "Cellulitis, Orbital", "https://www.eyes.nhs.scot/eyecare-guidelines/section-2-orbitlacrimal-system/22-cellulitis-orbital/");
+const S31 = S("3.1", "Chemical Injury, Conjunctival", "https://www.eyes.nhs.scot/eyecare-guidelines/section-3-conjunctiva/31-chemical-injury-conjunctival/");
+const S35 = S("3.5", "Conjunctivitis, Bacterial", "https://www.eyes.nhs.scot/eyecare-guidelines/section-3-conjunctiva/35-conjunctivitis-bacterial/");
+const S313 = S("3.13", "Conjunctivitis, Viral, Non-Herpetic", "https://www.eyes.nhs.scot/eyecare-guidelines/section-3-conjunctiva/313-conjunctivitis-viral-non-herpetic/");
+const S319 = S("3.19", "Sub-Conjunctival Haemorrhage", "https://www.eyes.nhs.scot/eyecare-guidelines/section-3-conjunctiva/319-sub-conjunctival-haemorrhage/");
+const S41 = S("4.1", "Episcleritis", "https://www.eyes.nhs.scot/eyecare-guidelines/section-4-scleraepisclera/41-episcleritis/");
+const S43 = S("4.3", "Scleritis", "https://www.eyes.nhs.scot/eyecare-guidelines/section-4-scleraepisclera/43-scleritis/");
+const S59 = S("5.9", "Keratitis, Peripheral, Infiltrative, Contact Lens-Associated", "https://www.eyes.nhs.scot/eyecare-guidelines/section-5-corneal/59-keratitis-peripheral-infiltrative-contact-lens-associated/");
+const S512 = S("5.12", "Keratitis, Microbial, Bacterial", "https://www.eyes.nhs.scot/eyecare-guidelines/section-5-corneal/512-keratitis-microbial-bacterial/");
+const S514 = S("5.14", "Keratitis, Viral, Herpes Simplex", "https://www.eyes.nhs.scot/eyecare-guidelines/section-5-corneal/514-keratitis-viral-herpes-simplex/");
+const S515 = S("5.15", "Penetrating Injury, Corneal", "https://www.eyes.nhs.scot/eyecare-guidelines/section-5-corneal/515-penetrating-injury-corneal/");
+const S64 = S("6.4", "Glaucoma, Acute Angle Closure", "https://www.eyes.nhs.scot/eyecare-guidelines/section-6-glaucoma/64-glaucoma-acute-angle-closure/");
+const S71 = S("7.1", "Acute Anterior Uveitis", "https://www.eyes.nhs.scot/eyecare-guidelines/section-7-uvea/71-acute-anterior-uveitis/");
+const S74 = S("7.4", "Endophthalmitis, Post-Operative (Exogenous Endophthalmitis)", "https://www.eyes.nhs.scot/eyecare-guidelines/section-7-uvea/74-endophthalmitis-post-operative-exogenous-endophthalmitis/");
+
+const rco = (loc: string) => cite(RCO, `RCOphth Angle Closure Glaucoma guideline PDF, ${loc}`);
+const rv = (loc: string) => cite(RVEEH, `RVEEH APAC clinical practice guideline, ${loc} (page markers in the source are approximate)`);
+const sc = (r: Ref, sec: string) => cite(r, `NHS Scotland Eyecare Guidelines, Section ${sec}`);
+
+const acetRV = {
+  indication: "Acute primary angle closure: initial systemic intraocular pressure lowering (Royal Victorian Eye and Ear Hospital regimen; ophthalmology-directed)",
+  patientGroup: "Adults",
+  genericName: "Acetazolamide", dose: "500 mg", route: "IV over 5 minutes, or oral (IV preferred because it acts faster)",
+  frequency: "Initial dose; repeat dosing is not specified in the source",
+  duration: "Acute phase; oral 250 mg three times daily is listed as a possible discharge medicine (RVEEH p. 6)",
+  adjustments: ["Check urgent urea, electrolytes and estimated creatinine clearance first; reduced renal function may contraindicate it or need a lower dose (RVEEH pp. 3, 5)", "Caution in elderly patients at risk of electrolyte imbalance (RVEEH p. 5)", "Maximum dose is not given in the source"],
+  monitoring: ["Give the patient supine; observations before and every 30 minutes for 1 hour afterwards (RVEEH pp. 3–4)", "Intraocular pressure about 1 hour after topical and oral medicines (RVEEH p. 4)"],
+  contraindications: ["Sulphonamide allergy; a sulphonamide antibiotic allergy is not an absolute contraindication (RVEEH p. 3)", "Reduced renal function (see adjustments)"],
+  sourceTitle: RVEEH.title, sourceUrl: RVEEH.url, sourceEdition: "RVEEH APAC clinical practice guideline, pp. 3–4 (page markers approximate)",
+};
+const acetRC = {
+  indication: "Acute angle closure when intraocular pressure is above 40 mmHg (Royal College of Ophthalmologists pathway; ophthalmology-directed)",
+  patientGroup: "Adults",
+  genericName: "Acetazolamide", dose: "250 mg", route: "IV",
+  frequency: "Stat dose in the pathway; further doses are not specified in the source",
+  duration: "Acute phase; review after 30–60 minutes (RCOphth p. 22)",
+  adjustments: ["Maximum dose is not given in the source", "Mannitol, if used, is a single dose after assessing fluid balance and renal function; repeat only after consultant review (RCOphth p. 21)"],
+  monitoring: ["Review after 30–60 minutes; if no or insufficient response by 2 hours, or laser is not possible because the cornea is oedematous, consider laser iridoplasty or diode cyclophotocoagulation (RCOphth p. 22)"],
+  contraindications: ["Sulphonamide allergy or severe nephropathy (RCOphth p. 21)", "Caution: hypokalaemia (thiazides or angiotensin receptor blockers), metabolic acidosis in sicker patients, dyspnoea, HIV or cryptococcal meningitis (RCOphth p. 21)"],
+  sourceTitle: RCO.title, sourceUrl: RCO.url, sourceEdition: "RCOphth Angle Closure Glaucoma guideline PDF, pp. 21–22",
+};
+const pilo = {
+  indication: "Acute primary angle closure: miotic after intraocular pressure lowering medicines (Royal Victorian Eye and Ear Hospital regimen)",
+  patientGroup: "Adults",
+  genericName: "Pilocarpine", dose: "2% or 4%", route: "Topical to the affected eye",
+  frequency: "Every 15 minutes (RVEEH p. 3). The Royal College of Ophthalmologists gives 2% once, then every 6 hours, and advises against intensive dosing (RCOphth pp. 20, 22); see the comparison table",
+  duration: "Until ophthalmology reassesses; the source gives no stop time",
+  adjustments: ["Miotic effect may be reduced if the iris sphincter is ischaemic (RVEEH p. 3)", "The Royal College of Ophthalmologists defers pilocarpine if intraocular pressure is above 40 mmHg (RCOphth p. 22)", "Maximum dose is not given in the source"],
+  monitoring: ["Intraocular pressure about 1 hour after medicines (RVEEH p. 4)"],
+  contraindications: ["Contraindications are not listed in the Royal Victorian source", "Lenticular or retrolenticular mechanism: the Royal College of Ophthalmologists uses atropine 1% instead of pilocarpine (RCOphth p. 22)"],
+  sourceTitle: RVEEH.title, sourceUrl: RVEEH.url, sourceEdition: "RVEEH APAC clinical practice guideline, p. 3 (page markers approximate)",
+};
+const brimTim = {
+  indication: "Acute primary angle closure: topical aqueous suppression (Royal Victorian Eye and Ear Hospital regimen)",
+  patientGroup: "Adults",
+  genericName: "Brimonidine with timolol (fixed combination)", dose: "1 drop", route: "Topical to the affected eye",
+  frequency: "Once, stat (RVEEH p. 3)", duration: "Acute phase; brimonidine with or without timolol twice daily is listed as a possible discharge medicine (RVEEH p. 6)",
+  adjustments: ["Avoid timolol if a beta-blocker is contraindicated (RVEEH p. 5)", "The Royal College of Ophthalmologists lists dorzolamide 2% with timolol 0.5% and apraclonidine 0.5% as its stat topical agents instead; see the comparison table (RCOphth p. 22)", "Maximum dose is not given in the source"],
+  monitoring: ["Intraocular pressure about 1 hour after medicines (RVEEH p. 4)"],
+  contraindications: ["Asthma and chronic obstructive pulmonary disease (COPD) for beta-blockers; cardioselective agents such as betaxolol may be used with care (RVEEH p. 5)", "Coronary artery disease with angina, previous myocardial infarction or coronary stenting contraindicate apraclonidine or brimonidine (RCOphth p. 23)"],
+  sourceTitle: RVEEH.title, sourceUrl: RVEEH.url, sourceEdition: "RVEEH APAC clinical practice guideline, pp. 3, 5 (page markers approximate)",
+};
+const cyclo = {
+  indication: "Acute anterior uveitis: pain, photophobia and synechiae prevention, after angle-closure risk is ruled out",
+  patientGroup: "Adults, first episode",
+  genericName: "Cyclopentolate 1%", dose: "1 drop", route: "Topical to the affected eye", frequency: "Up to 3 times daily; reduce or stop as the condition improves",
+  duration: "Until pain and photophobia settle; review within 48 hours where possible (Section 7.1)",
+  adjustments: ["Use only after angle-closure risk is ruled out (Section 7.1)", "Preservative-free form for chemical injury (Section 3.1)", "Maximum dose is not given in the source"],
+  monitoring: ["Review within 48 hours where possible; measure intraocular pressure at review (Section 7.1)"],
+  contraindications: ["Suspected or possible angle closure (Section 7.1)", "Blurred vision from paralysed accommodation: warn the patient"],
+  sourceTitle: S71.title, sourceUrl: S71.url, sourceEdition: "NHS Scotland Eyecare Guidelines, Section 7.1",
+};
+const pred = {
+  indication: "Acute anterior uveitis, first episode, started on ophthalmology advice (Marifa safety convention; Section 7.1 lets optometrists start it for a first uncomplicated episode)",
+  patientGroup: "Adults",
+  genericName: "Prednisolone acetate 1%", dose: "1 drop", route: "Topical to the affected eye", frequency: "Every 1–2 waking hours until inflammation is controlled, then reduce",
+  duration: "Taper over at least 6 weeks; suggested taper once controlled: every second waking hour for 1 week, then six, four, three and two times daily (1 week each), then once daily for 1 week (Section 7.1)",
+  adjustments: ["Dexamethasone 0.1% is an alternative: 1 drop four to six times daily until controlled (Section 7.1)", "Maximum dose is not given in the source"],
+  monitoring: ["Review within 48 hours where possible", "Check inflammatory response and intraocular pressure regularly during the taper and at the end (Section 7.1)"],
+  contraindications: ["Known steroid-induced ocular hypertension or hypertensive uveitis: no treatment without specialist input (Section 7.1)", "Corneal epithelial defect or suspected herpetic keratitis: withhold until ophthalmology reviews (earlier Marifa draft; not stated in Section 7.1)"],
+  sourceTitle: S71.title, sourceUrl: S71.url, sourceEdition: "NHS Scotland Eyecare Guidelines, Section 7.1",
+};
+const chlor = {
+  indication: "Bacterial conjunctivitis needing treatment (most cases self-limit in 5–7 days)",
+  patientGroup: "Adults; child dosing is not given in the opened sources",
+  genericName: "Chloramphenicol 0.5%", dose: "1 drop", route: "Topical to the affected eye", frequency: "Every 2 waking hours for 48 hours, then every 4 waking hours (Section 3.5)",
+  duration: "5 days, even if symptoms improve (Section 3.5)",
+  adjustments: ["The NHS Scotland East formulary differs: 1 drop usually every 2 hours for 2 days, then every 6 hours for up to a week, continued 48 hours after resolution; shown, not merged", "Delayed prescribing: the formulary advises starting antibiotics if symptoms have not resolved within 3 days", "Chloramphenicol 1% ointment at night if drops are used by day, or 3–4 times daily alone (Section 3.5)"],
+  monitoring: ["Refer if the condition fails to resolve or the cornea is involved (Section 3.5)"],
+  contraindications: ["If chloramphenicol is contraindicated: fusidic acid 1% eye drops, 1 drop twice daily for at least 48 hours after the eye returns to normal (Section 3.5)", "Suspected gonococcal infection: emergency referral instead (Section 3.5)", "Hypersensitivity: check the product label"],
+  sourceTitle: S35.title, sourceUrl: S35.url, sourceEdition: "NHS Scotland Eyecare Guidelines, Section 3.5; NHS Scotland East formulary bacterial conjunctivitis",
+};
+const oflox = {
+  indication: "Bacterial conjunctivitis in a contact lens wearer who needs Gram-negative cover, once keratitis is excluded (Section 3.5); same regimen for a small bacterial corneal lesion under 1 mm with no sight-threatening feature (Section 5.12)",
+  patientGroup: "Adults",
+  genericName: "Ofloxacin 3 mg/ml", dose: "1 drop", route: "Topical to the affected eye", frequency: "Every 2–4 waking hours for the first 2 days, then four times daily",
+  duration: "Do not exceed 10 days (Sections 3.5 and 5.12)",
+  adjustments: ["Gentamicin 0.3% is an alternative: 1 drop at least every 2 waking hours, reduced as infection clears, continued 48 hours after healing (Section 3.5)", "Refer the same day if the lesion is not healing or symptoms worsen (Section 5.12)"],
+  monitoring: ["Review; deterioration or any sight-threatening feature needs emergency referral and corneal scraping before antimicrobials (Section 5.12)"],
+  contraindications: ["Do not start before corneal scraping when sight-threatening features are present (Section 5.12)", "Fluoroquinolone hypersensitivity: check the product label"],
+  sourceTitle: S35.title, sourceUrl: S35.url, sourceEdition: "NHS Scotland Eyecare Guidelines, Sections 3.5 and 5.12",
+};
+
+export const specs: Spec[] = [
+{
+  key: "acute-red-eye", draftTitle: "Acute Red Eye: Conjunctivitis versus Angle-Closure Glaucoma and Uveitis", pillar: "Urgent Care", authority: "Other",
+  scope: "Adults with an acute red eye seen in an emergency department, primary care or optometry: separating sight-threatening causes (angle closure, keratitis, uveitis, chemical or penetrating injury, endophthalmitis, orbital cellulitis, scleritis) from conjunctivitis and other surface causes, with referral urgency and first-line treatment. Checked against the Royal College of Ophthalmologists angle closure guideline (pp. 5, 10–11, 20–24), the Royal Victorian Eye and Ear Hospital acute primary angle closure guideline (pp. 1–6, approximate) and NHS Scotland Eyecare Guidelines Sections 2.2, 3.1, 3.5, 3.13, 3.19, 4.1, 4.3, 5.9, 5.12, 5.14, 5.15, 6.4, 7.1 and 7.4, plus the NHS Scotland East bacterial conjunctivitis formulary page.",
+  unverified: [
+    "No Saudi ophthalmology guideline (Ministry of Health, Saudi Ophthalmological Society or Saudi Commission for Health Specialties) was found or opened; every threshold and dose is from UK, Scottish or Australian sources.",
+    "The three angle closure sources disagree on acetazolamide dose, pilocarpine frequency and topical agents; they are shown side by side and not merged. The regimen to use needs an ophthalmologist and local protocol.",
+    "NHS Scotland Sections 5.15 and 6.4 carry a 'due to be updated' notice. Section 6.4 gives first aid only; it states no signs or intraocular pressure thresholds.",
+    "The opened pages for conjunctivitis, scleritis, episcleritis, endophthalmitis and orbital cellulitis give referral urgency and treatment but not symptom or sign descriptions. Discharge, grittiness and the pain character of scleritis versus episcleritis are carried from the earlier draft and standard teaching and are not source-verified. The phenylephrine blanching test was removed.",
+    "Fluorescein staining, slit-lamp technique and gonioscopy are named from standard practice; the opened pages do not describe them. Section 5.14 does not mention fluorescein.",
+    "Typical adult normal values (intraocular pressure 10–21 mmHg, potassium 3.5–5.0 mmol/L, white cell count 4–11 x10^9/L, C-reactive protein below 5 mg/L, visual acuity 6/6) are not from the opened sources; local laboratory and clinic ranges apply.",
+    "Royal Victorian Eye and Ear Hospital page markers are inconsistent, so page numbers are approximate. The last 5,302 characters of the Royal College of Ophthalmologists PDF were not read. The College of Optometrists page was only partly visible (login required) and gave no thresholds or drug regimen.",
+    "Ophthalmia neonatorum, children's doses, endophthalmitis and orbital cellulitis antibiotic regimens, and Section 4.3 systemic work-up tests were not opened or are not given; this topic is adults only.",
+    "Starting topical steroid only on ophthalmology advice is a Marifa safety convention from the earlier draft; Section 7.1 lets an optometrist start it for a first uncomplicated episode.",
+    "Saudi Food and Drug Authority registration was not verified for any drug. Check hospital formulary.",
+  ],
+  mech: [
+    "Acute angle-closure glaucoma (AACG) follows sudden, total blockage of the trabecular meshwork, which causes extreme ocular hypertension (Royal College of Ophthalmologists [RCOphth] guideline, p. 5). Intraocular pressure (IOP) is usually above 35 mmHg, with corneal oedema (Royal Victorian Eye and Ear Hospital [RVEEH] guideline, pp. 1–2).",
+    "Vision falls because of corneal oedema, lens opacities, or a dilated unresponsive pupil from iris ischaemia (RCOphth p. 11; RVEEH pp. 1–2).",
+    "Anterior uveitis is inflammation of the iris and ciliary body. It can be linked to inflammatory back pain and spondyloarthritis (NHS Scotland Section 7.1).",
+    "Bacterial conjunctivitis usually resolves in 5–7 days (Section 3.5). Viral conjunctivitis is self-limiting over 1–2 weeks and highly contagious (Section 3.13).",
+    "Chemical injury is managed by irrigation until the ocular surface pH returns to about 6.5–7.6 (Section 3.1).",
+    "Corneal infection and herpetic keratitis threaten sight: infiltrates over 1 mm, or a dendritic ulcer, move the patient to the ophthalmology pathway (Sections 5.12 and 5.14).",
+  ],
+  symptoms: [
+    "Acute angle closure: blurred vision, haloes around lights, aching eye or brow pain, headache, red eye, nausea and vomiting (RVEEH pp. 1–2). Sudden vision loss (RCOphth p. 5).",
+    "Anterior uveitis: photophobia; ask about inflammatory back pain starting before age 45, lasting over 3 months, with early morning stiffness (Section 7.1).",
+    "Conjunctivitis: itching or grittiness, watery or purulent discharge, lids stuck on waking (earlier draft; not source-verified).",
+    "Keratitis: pain and photophobia in a contact lens wearer; ask them to keep lenses and cases for culture (Section 5.12).",
+  ],
+  signs: [
+    "Acute angle closure: corneal oedema, mid-dilated poorly reactive or unreactive pupil, shallow central and peripheral anterior chamber, IOP usually above 35 mmHg (RVEEH pp. 1–2).",
+    "Bacterial keratitis features: infiltrate over 1 mm, two or more adjacent lesions, lesion within 3 mm of the corneal centre, 10 or more anterior chamber cells in a 1 mm beam (Section 5.12).",
+    "Herpes simplex keratitis: classic dendritic ulcer in a non-contact-lens-wearing adult (Section 5.14).",
+    "Uveitis needing urgent referral: hypopyon or fibrin, granulomatous features, bilateral disease, unbroken posterior synechiae (Section 7.1).",
+    "Conjunctivitis: diffuse redness with normal vision and a clear cornea (earlier draft; not source-verified).",
+  ],
+  red: [
+    "Severe pain, significant vision loss or markedly raised IOP: emergency ophthalmology referral (Section 7.1).",
+    "Angle closure picture (corneal oedema, mid-dilated poorly reactive pupil, haloes, vomiting): emergency ophthalmology referral; Section 6.4 says emergency referral and the College of Optometrists guideline says same day.",
+    "Chemical splash: irrigate immediately, before any other assessment (Section 3.1).",
+    "Suspected penetrating injury: immediate referral; do not touch the eye (Section 5.15).",
+    "Corneal infiltrate over 1 mm, two or more adjacent lesions, within 3 mm of the centre, 10 or more anterior chamber cells, or suspected fungal or acanthamoeba keratitis (Section 5.12).",
+    "Red eye after intraocular surgery: possible endophthalmitis, emergency referral (Section 7.4).",
+    "Orbital cellulitis in any adult or child: emergency referral (Section 2.2).",
+    "Suspected gonococcal conjunctivitis: emergency referral (Section 3.5).",
+    "Necrotising scleritis is an ocular emergency (Section 4.3). Stromal herpes simplex keratitis: emergency referral (Section 5.14).",
+    "Subconjunctival haemorrhage after head trauma with no visible posterior border: possible orbital or skull base fracture or intracranial bleeding; emergency referral to the emergency department (Section 3.19).",
+  ],
+  precip: [
+    "Contact lens wear (Sections 5.9 and 5.12).",
+    "Recent intraocular surgery (Section 7.4) or trauma (Section 5.15).",
+    "Chemical exposure (Section 3.1).",
+    "Topiramate use in atypical angle closure with bilateral effusions (RCOphth p. 20).",
+    "Mydriatic or cycloplegic drops in a patient with possible angle closure (Section 7.1).",
+  ],
+  diffs: [
+    { condition: "Acute angle-closure glaucoma", distinguishingFeatures: "Corneal oedema, mid-dilated poorly reactive pupil, shallow chamber, IOP usually above 35 mmHg, haloes and vomiting (RVEEH pp. 1–2). Other causes of raised pressure: neovascular glaucoma, phacomorphic glaucoma, aqueous misdirection (Section 6.4)." },
+    { condition: "Anterior uveitis", distinguishingFeatures: "Photophobia and cells in the anterior chamber; check for inflammatory back pain. Angle closure, endophthalmitis, lens-induced uveitis and intraocular foreign body must be excluded (Section 7.1)." },
+    { condition: "Bacterial keratitis", distinguishingFeatures: "Corneal infiltrate; over 1 mm or in the central 3 mm needs emergency referral and scraping before antimicrobials (Section 5.12)." },
+    { condition: "Contact lens-associated peripheral infiltrates", distinguishingFeatures: "Appearance can mimic microbial keratitis, which must be carefully excluded; monitor closely in the first 24–48 hours if unsure (Section 5.9)." },
+    { condition: "Herpes simplex keratitis", distinguishingFeatures: "Dendritic ulcer; stromal disease is an emergency; ganciclovir 0.15% gel is first line (Section 5.14)." },
+    { condition: "Viral or bacterial conjunctivitis", distinguishingFeatures: "Viral: highly contagious, self-limiting over 1–2 weeks. Bacterial: usually resolves in 5–7 days. Corneal involvement or failure to resolve means referral (Sections 3.5 and 3.13)." },
+    { condition: "Episcleritis versus scleritis", distinguishingFeatures: "Episcleritis is typically less painful and self-limiting (Section 4.3). Scleritis needs urgent referral; necrotising scleritis is an emergency (Section 4.3)." },
+    { condition: "Subconjunctival haemorrhage", distinguishingFeatures: "Blood under the conjunctiva, benign and self-limiting, clearing in 1–2 weeks; after head trauma check the posterior border is visible (Section 3.19)." },
+  ],
+  criteria: [
+    { criterion: "Acute primary angle closure (RVEEH pp. 1–2)", threshold: "Symptoms above, IOP usually above 35 mmHg, corneal oedema, mid-dilated poorly reactive pupil, shallow anterior chamber. The guideline gives no formal criteria beyond these features; discuss with the on-call ophthalmologist if in doubt." },
+    { criterion: "Confirming angle closure (RCOphth p. 20)", threshold: "Confirm the angle is closed and IOP is raised, then exclude secondary causes. Marked asymmetry of central chamber depth suggests a lenticular or retrolenticular cause." },
+    { criterion: "Emergency ophthalmology referral for uveitis (Section 7.1)", threshold: "Severe pain, significant vision loss or markedly raised IOP." },
+    { criterion: "Urgent referral after starting treatment for uveitis (Section 7.1)", threshold: "No improvement after 1 week; granulomatous features, hypopyon or fibrin; bilateral disease; unbroken posterior synechiae; vitreous or posterior segment involvement; inadequate dilation; systemic symptoms." },
+    { criterion: "Emergency referral for corneal infection (Section 5.12)", threshold: "Infiltrate over 1 mm; two or more adjacent lesions; within 3 mm of the corneal centre; 10 or more anterior chamber cells in a 1 mm beam; suspected fungal or acanthamoeba keratitis; likely poor compliance." },
+    { criterion: "Chemical injury irrigation end point (Section 3.1)", threshold: "Ocular surface pH about 6.5–7.6 after 15–30 minutes of irrigation; recheck pH 30 minutes after it first normalises." },
+    { criterion: "Conjunctivitis referral (Section 3.5)", threshold: "Refer urgently if the condition fails to resolve or the cornea is involved; emergency if gonococcal infection is suspected." },
+    { criterion: "Safe discharge after acute angle closure (RVEEH p. 6)", threshold: "IOP controlled, for example below 21 mmHg, and ophthalmology agreement." },
+  ],
+  rule_in: [
+    { name: "Visual acuity", target: "Every red eye, before any drops", condition: "Sight-threatening red eye", finding: "Reduced or suddenly lost acuity (RCOphth p. 5); significant vision loss means emergency referral (Section 7.1).", why: "Record it even if pain or swollen lids make it hard (Section 5.15). Normal acuity with diffuse redness points to surface disease.", normal: "6/6 (20/20) or the person's usual corrected acuity", tier: "specializedAdjunctive", ref: sc(S71, "7.1") },
+    { name: "Intraocular pressure (Goldmann applanation tonometry preferred)", target: "Painful red eye with reduced vision or hazy cornea", condition: "Acute angle closure", finding: "Usually above 35 mmHg (RVEEH pp. 1–2).", why: "Repeat about 1 hour after topical and oral medicines (RVEEH p. 4). Above 40 mmHg changes the Royal College of Ophthalmologists regimen (RCOphth p. 22). Discharge target is below 21 mmHg (RVEEH p. 6).", normal: "10–21 mmHg (typical adult; local ranges apply)", tier: "specializedAdjunctive", ref: rv("pp. 1–4") },
+    { name: "Pupil assessment", target: "Painful red eye with reduced vision", condition: "Acute angle closure", finding: "Mid-dilated, poorly reactive or unreactive pupil (RVEEH pp. 1–2).", why: "Supports angle closure; no cycloplegic until angle-closure risk is ruled out (Section 7.1).", normal: "Round, equal, reactive to light", tier: "specializedAdjunctive", ref: rv("pp. 1–2") },
+    { name: "Slit-lamp examination of cornea and anterior chamber depth", target: "Painful red eye", condition: "Acute angle closure", finding: "Corneal oedema and a shallow central and peripheral anterior chamber (RVEEH pp. 1–2).", why: "A shallow chamber with oedema confirms the pattern; the fellow eye usually has a narrow chamber (RVEEH pp. 1–2).", normal: "Clear cornea; deep, quiet anterior chamber", tier: "specializedAdjunctive", ref: rv("pp. 1–2") },
+    { name: "Anterior chamber angle assessment (gonioscopy, specialist)", target: "Raised IOP with suspected angle closure", condition: "Acute primary angle closure versus secondary angle closure", finding: "Closed angle with raised pressure; asymmetric central chamber depth suggests a lenticular or retrolenticular cause (RCOphth p. 20).", why: "Confirms the diagnosis before definitive laser; secondary causes need a different pathway (RCOphth p. 20).", normal: "Open angle", tier: "specializedAdjunctive", ref: rco("p. 20") },
+    { name: "Urea, electrolytes and estimated creatinine clearance", target: "Before systemic acetazolamide", condition: "Renal or electrolyte contraindication to acetazolamide", finding: "Reduced renal function may contraindicate it or need a lower dose (RVEEH pp. 3, 5); hypokalaemia needs caution (RCOphth p. 21).", why: "Send urgently, but do not delay emergency referral. Elderly patients are at risk of electrolyte imbalance (RVEEH p. 5).", normal: "Potassium 3.5–5.0 mmol/L; creatinine and clearance within local adult range", tier: "laboratory", ref: rv("pp. 3 and 5") },
+  ],
+  rule_out: [
+    { name: "Slit-lamp corneal infiltrate and anterior chamber cell count", target: "Painful red eye, especially contact lens wearer", condition: "Bacterial keratitis", finding: "Infiltrate over 1 mm, two or more adjacent lesions, within 3 mm of the corneal centre, or 10 or more cells in a 1 mm beam (Section 5.12).", why: "Any of these means emergency referral. Lesions under 1 mm with no sight-threatening feature are treated empirically with review (Section 5.12).", normal: "No corneal infiltrate; fewer than 10 cells in a 1 mm beam", tier: "specializedAdjunctive", ref: sc(S512, "5.12") },
+    { name: "Fluorescein staining with cobalt blue light", target: "Red eye before any topical steroid", condition: "Herpes simplex keratitis or corneal ulcer", finding: "Dendritic ulcer (Section 5.14) or infiltrate with uptake (Section 5.12).", why: "Epithelial staining means withhold topical steroid and refer; first-line treatment of herpes simplex keratitis is ganciclovir 0.15% gel (Section 5.14).", normal: "No fluorescein uptake", tier: "specializedAdjunctive", ref: sc(S514, "5.14") },
+    { name: "Ocular surface pH (universal indicator paper in the fornix)", target: "Any chemical exposure", condition: "Chemical injury", finding: "pH outside about 6.5–7.6 after irrigation (Section 3.1).", why: "Continue irrigation; pause 5–10 minutes before testing and recheck 30 minutes after pH normalises (Section 3.1).", normal: "About 6.5–7.6", tier: "laboratory", ref: sc(S31, "3.1") },
+    { name: "Corneal scraping for Gram stain and culture (ophthalmology)", target: "Sight-threatening corneal infiltrate", condition: "Microbial keratitis", finding: "Organism on Gram stain or culture (Section 5.12).", why: "Take before antimicrobials when sight-threatening features are present (Section 5.12).", normal: "No organism seen; culture negative", tier: "laboratory", ref: sc(S512, "5.12") },
+    { name: "White cell count (WCC) and C-reactive protein (CRP)", target: "Suspected orbital cellulitis", condition: "Orbital cellulitis", finding: "Raised markers support infection; they sit alongside imaging and admission in secondary care (Section 2.2).", why: "Do not delay emergency referral for results (Section 2.2).", normal: "WCC 4–11 x10^9/L; CRP below 5 mg/L (typical adult)", tier: "laboratory", ref: sc(S22, "2.2") },
+    { name: "Contrast-enhanced computed tomography (CT) of orbits and sinuses", target: "Suspected orbital cellulitis", condition: "Orbital cellulitis", finding: "Orbital or sinus inflammation (Section 2.2).", why: "Done in secondary care with admission and intravenous (IV) antibiotics (Section 2.2).", normal: "No orbital or sinus inflammation", tier: "firstLineImaging", ref: sc(S22, "2.2") },
+  ],
+  steps: [
+    { id: "triage", title: "Triage the red eye in any setting", timeframe: "First 15 minutes", actions: [
+      "Chemical splash first: irrigate at once with any non-toxic liquid; in clinic use sterile saline, at least 1 litre at first, for 15–30 minutes or until the ocular surface pH is about 6.5–7.6 (Section 3.1).",
+      "Pause irrigation 5–10 minutes, test the fornix with universal indicator paper, and recheck pH 30 minutes after it first normalises (Section 3.1).",
+      "Severe chemical injury (limbal ischaemia, corneal opacity): emergency referral after irrigation, no drug treatment in primary care, and phone the receiving unit (Section 3.1).",
+      "Suspected penetrating injury: do not touch the eye; tape a rigid plastic shield over it; nil by mouth; tell the patient not to cough or strain; immediate referral (Section 5.15).",
+      "Record visual acuity, check pupils, look at the cornea, and measure IOP if a tonometer is available (RVEEH pp. 1–2; Section 5.15).",
+      "Any red flag: emergency ophthalmology referral and a call to the receiving clinician (Sections 6.4, 7.1 and 7.4).",
+    ] },
+    { id: "aacg-medical", title: "Suspected acute angle closure: medical treatment", timeframe: "Immediately; ophthalmology emergency referral in parallel", actions: [
+      "Emergency referral to ophthalmology; do not wait for tests (Section 6.4; RCOphth p. 10). The College of Optometrists advises same-day referral.",
+      "Give analgesia and an antiemetic as indicated; the sources name no drugs or doses (RVEEH p. 4).",
+      "Send urgent urea, electrolytes and creatinine clearance before systemic acetazolamide (RVEEH p. 3).",
+      "Acetazolamide: Royal Victorian Eye and Ear Hospital 500 mg IV over 5 minutes or oral; Royal College of Ophthalmologists 250 mg IV if IOP is above 40 mmHg; NHS Scotland optometrist first aid 500 mg oral plain tablet, not if vomiting. Doses disagree; see the comparison table and follow ophthalmology.",
+      "Give acetazolamide with the patient supine; take observations before and every 30 minutes for 1 hour (RVEEH pp. 3–4).",
+      "Topical agents and pilocarpine regimens differ by source; see the comparison table. Pilocarpine is deferred if IOP is above 40 mmHg (RCOphth p. 22).",
+      "Mannitol IV only if IOP does not fall with IV acetazolamide, after senior ophthalmology consultation; give supine and use caution in diabetes, heart or renal failure, dehydration or hypotension (RVEEH pp. 4–5; RCOphth p. 21).",
+      "Do not give cyclopentolate or other cycloplegics or mydriatics while angle closure is possible (Section 7.1).",
+      "Recheck IOP about 1 hour after medicines, preferably by Goldmann applanation tonometry (RVEEH p. 4).",
+    ] },
+    { id: "aacg-definitive", title: "Definitive treatment by ophthalmology", timeframe: "As soon as the corneal view allows", actions: [
+      "Laser peripheral iridotomy of the affected eye as quickly as practically possible (RCOphth p. 20; RVEEH p. 5).",
+      "If the cornea is too hazy, a drop of glycerol may improve the view (RVEEH p. 5); laser iridoplasty may help when the cornea is too hazy for iridotomy (RCOphth p. 23).",
+      "If IOP stays raised 60 minutes after medical treatment despite a patent iridotomy, or there is no or insufficient response by 2 hours, consult a senior ophthalmologist: laser iridoplasty or diode cyclophotocoagulation (RVEEH p. 5; RCOphth p. 22).",
+      "Fellow eye: laser iridotomy is recommended for all contralateral eyes after symptomatic angle closure, without delay and before discharge once IOP is controlled (RCOphth p. 20). RVEEH advises strongly considering it, with pilocarpine 2% four times daily if done as an outpatient (RVEEH p. 5).",
+      "Lens extraction should be offered once IOP is controlled and the cornea is clear, about 1–4 weeks after presentation (RCOphth p. 24).",
+    ] },
+    { id: "uveitis", title: "Anterior uveitis", timeframe: "Same visit; review within 48 hours where possible", actions: [
+      "Exclude angle closure and endophthalmitis first (Section 7.1).",
+      "Emergency referral for severe pain, significant vision loss or markedly raised IOP; urgent referral if the criteria in Diagnostic criteria are met (Section 7.1).",
+      "First episode with no referral trigger: cyclopentolate 1% for pain and synechiae prevention, only after angle-closure risk is ruled out (Section 7.1).",
+      "Topical steroid on ophthalmology advice only (Marifa convention); regimen and taper in the medication plan (Section 7.1).",
+      "Second or later episode: restart treatment and consider urgent referral; ophthalmology considers systemic work-up and rheumatology referral (Section 7.1).",
+    ] },
+    { id: "keratitis", title: "Contact lens wearer or corneal lesion", timeframe: "Same day", actions: [
+      "Treat a painful red eye in a lens wearer as possible microbial keratitis until the cornea is examined (Sections 5.9 and 5.12).",
+      "Stop lens wear; tell the patient not to discard lenses or cases, which may be needed for culture (Section 5.12).",
+      "Any sight-threatening feature: emergency referral; scrape for Gram stain and culture before antimicrobials (Section 5.12).",
+      "Small lesion under 1 mm with no sight-threatening feature: ofloxacin regimen in the medication plan, and refer the same day if not healing or worsening (Section 5.12).",
+      "Dendritic ulcer: ganciclovir 0.15% gel, 1 drop five times daily until healed, then three times daily for 7 days; usually not beyond 21 days. Stromal involvement is an emergency; no healing by 7 days needs urgent referral; suspected viral retinitis needs same-day referral (Section 5.14).",
+    ] },
+    { id: "other-emergencies", title: "Other must-not-miss causes", timeframe: "Emergency referral on recognition", actions: [
+      "Endophthalmitis after surgery: no optometric treatment; immediate attendance at the hospital eye department or emergency department; tell the receiving clinician (Section 7.4).",
+      "Orbital cellulitis: emergency referral for all adults and children; secondary care does imaging, bloods, admission and IV antibiotics (Section 2.2).",
+      "Necrotising scleritis: ocular emergency, analgesia only before referral. Non-necrotising anterior scleritis: urgent ophthalmology referral; oral anti-inflammatory painkillers if no contraindication, and paracetamol if they are contraindicated (Section 4.3).",
+      "Suspected gonococcal conjunctivitis: emergency referral (Section 3.5).",
+    ] },
+    { id: "surface", title: "Surface causes managed in primary care", timeframe: "Same visit; review per condition", actions: [
+      "Viral conjunctivitis: cold compresses and ocular lubricants; antibacterial and antiviral drops do not help; stop lens wear; avoid sharing towels; healthcare workers avoid patient-facing roles for 2 weeks after onset (Section 3.13).",
+      "Bacterial conjunctivitis: most cases self-limit in 5–7 days; if treated, chloramphenicol regimen in the medication plan; advise starting antibiotics if not resolved within 3 days (Section 3.5; East formulary).",
+      "Lens wearers with bacterial conjunctivitis need Gram-negative cover (ofloxacin or gentamicin) and no lens wear until resolved (Section 3.5).",
+      "Episcleritis: ocular lubricants, simple oral anti-inflammatory painkillers; mild topical steroid such as fluorometholone for 1–2 weeks in severe or nodular cases, after baseline IOP is measured (Section 4.1).",
+      "Subconjunctival haemorrhage: reassure, clears in 1–2 weeks; check blood pressure if appropriate and refer to the general practitioner if recurrent or there is a bleeding disorder (Section 3.19).",
+    ] },
+  ],
+  meds: { status: "source-verified", regimens: [acetRV, acetRC, pilo, brimTim, cyclo, pred, chlor, oflox], note: "The angle closure drug regimens are ophthalmology-directed and the three sources disagree; no single regimen is endorsed here. Section 6.4 treats these as first aid before referral only. Analgesic and antiemetic doses are not given in the sources. Doses are adult. Saudi Food and Drug Authority registration was not verified. Check hospital formulary." },
+  comparison: {
+    title: "Acute angle closure medical treatment: RCOphth, RVEEH and NHS Scotland Section 6.4",
+    columns: ["RCOphth guideline", "RVEEH APAC guideline", "NHS Scotland 6.4 (optometrist first aid)"],
+    rows: [
+      { parameter: "Systemic acetazolamide", values: ["250 mg IV if IOP above 40 mmHg (p. 22)", "500 mg IV over 5 minutes, or oral; IV preferred (pp. 3–4)", "Single 500 mg oral dose, plain preparation, not if vomiting or contraindicated"] },
+      { parameter: "Pilocarpine", values: ["2% stat; defer if IOP above 40 mmHg; then every 6 hours; intensive use not advised (pp. 20, 22)", "2% or 4% every 15 minutes (p. 3)", "Single drop before referral: 2% for blue eyes, 4% for brown eyes"] },
+      { parameter: "Topical pressure-lowering agents", values: ["Dorzolamide 2% with timolol 0.5%; apraclonidine 0.5% (p. 22)", "Brimonidine with timolol, 1 drop stat (p. 3)", "Not stated"] },
+      { parameter: "Topical steroid", values: ["Dexamethasone 0.1% or prednisolone 1% hourly while awake for 24 hours, then four times daily for 1 week (p. 22)", "Prednisolone acetate 1%, 1 drop stat (p. 3)", "Not stated"] },
+      { parameter: "Review and escalation", values: ["Review at 30–60 minutes; no or insufficient response by 2 hours: iridoplasty or diode cyclophotocoagulation (p. 22)", "IOP about 1 hour after medicines; mannitol IV only if IOP fails to fall on IV acetazolamide (p. 4)", "Emergency ophthalmology referral"] },
+      { parameter: "Fellow eye", values: ["Laser iridotomy before discharge once IOP controlled (p. 20)", "Strongly consider iridotomy before discharge; pilocarpine 2% four times daily if outpatient (p. 5)", "Not stated"] },
+    ],
+    note: "The sources disagree on the acetazolamide dose, pilocarpine frequency and topical agents. Do not combine columns; follow the on-call ophthalmologist and the local protocol. Section 6.4 carries a 'due to be updated' notice.",
+  },
+  teach: {
+    objectives: ["Recognise the red flags that make a red eye an emergency and refer before testing further.", "Start chemical injury irrigation at once and know the pH end point.", "State the referral class (emergency, urgent, routine) for angle closure, uveitis, keratitis, scleritis and conjunctivitis."],
+    keyPoints: ["Chemical splash: irrigate first, at least 1 litre, 15–30 minutes, pH about 6.5–7.6.", "Angle closure: IOP usually above 35 mmHg, oedematous cornea, mid-dilated poorly reactive pupil; emergency referral and no cycloplegics.", "The sources disagree on angle closure drug doses; follow ophthalmology.", "Fellow-eye iridotomy before discharge.", "Corneal infiltrate over 1 mm, or any sight-threatening feature, needs emergency referral and scraping before antimicrobials.", "Bacterial conjunctivitis usually resolves in 5–7 days; viral over 1–2 weeks."],
+    pitfalls: ["Giving cyclopentolate before angle closure is excluded.", "Discharging after angle closure without ophthalmology agreement, a patent iridotomy and a fellow-eye plan.", "Treating a painful red eye in a lens wearer as simple conjunctivitis.", "Starting topical steroid before the cornea is stained and examined.", "Missing chemical injury, penetrating injury or post-operative endophthalmitis."],
+    refs: [
+      { ref: RCO, edition: "RCOphth Management of Angle Closure Glaucoma guideline PDF", locator: "pp. 5, 10–11, 20–24" },
+      { ref: RVEEH, edition: "RVEEH Acute Primary Angle Closure clinical practice guideline", locator: "pp. 1–6 (page markers approximate)" },
+      { ref: COLL, edition: "College of Optometrists clinical management guideline", locator: "Presentation and referral sections (partly visible)" },
+      { ref: S22, edition: "NHS Scotland Eyecare Guidelines", locator: "Section 2.2" },
+      { ref: S31, edition: "NHS Scotland Eyecare Guidelines", locator: "Section 3.1" },
+      { ref: S35, edition: "NHS Scotland Eyecare Guidelines", locator: "Section 3.5" },
+      { ref: S313, edition: "NHS Scotland Eyecare Guidelines", locator: "Section 3.13" },
+      { ref: S319, edition: "NHS Scotland Eyecare Guidelines", locator: "Section 3.19" },
+      { ref: S41, edition: "NHS Scotland Eyecare Guidelines", locator: "Section 4.1" },
+      { ref: S43, edition: "NHS Scotland Eyecare Guidelines", locator: "Section 4.3" },
+      { ref: S59, edition: "NHS Scotland Eyecare Guidelines", locator: "Section 5.9" },
+      { ref: S512, edition: "NHS Scotland Eyecare Guidelines", locator: "Section 5.12" },
+      { ref: S514, edition: "NHS Scotland Eyecare Guidelines", locator: "Section 5.14" },
+      { ref: S515, edition: "NHS Scotland Eyecare Guidelines", locator: "Section 5.15" },
+      { ref: S64, edition: "NHS Scotland Eyecare Guidelines", locator: "Section 6.4" },
+      { ref: S71, edition: "NHS Scotland Eyecare Guidelines", locator: "Section 7.1" },
+      { ref: S74, edition: "NHS Scotland Eyecare Guidelines", locator: "Section 7.4" },
+      { ref: FORM, edition: "NHS Scotland East formulary", locator: "Section: when antibiotics are needed; first-line drug" },
+    ],
+  },
+  edu: [
+    "Explain that sudden severe eye pain, vision loss or vomiting needs emergency care; stress the high risk of permanent vision loss if ophthalmology follow-up is missed (RCOphth p. 5).",
+    "Contact lens wearers: stop lens wear; keep lenses and cases for culture; no lens wear until the condition has resolved (Sections 3.5, 5.9 and 5.12).",
+    "Infective conjunctivitis: wash hands, do not share towels; healthcare workers avoid patient-facing roles for 2 weeks after onset of viral conjunctivitis (Section 3.13).",
+    "Warn that cyclopentolate blurs vision and photophobia may need sunglasses (Sections 7.1 and 4.3).",
+  ],
+  life: ["No contact lens wear until the eye has resolved and treatment is complete (Sections 3.5 and 5.9).", "Sunglasses for photophobia (Section 7.1).", "Return the same day if pain, vision loss or photophobia worsens."],
+  mdt: ["Emergency ophthalmology for angle closure, corneal infiltrate over 1 mm, endophthalmitis, orbital cellulitis, penetrating or severe chemical injury (Sections 3.1, 5.12, 5.15, 6.4, 7.4 and 2.2).", "Urgent ophthalmology for non-necrotising scleritis and for uveitis meeting referral triggers (Sections 4.3 and 7.1).", "Rheumatology via ophthalmology for recurrent uveitis or scleritis with suspected systemic disease (Sections 4.3 and 7.1).", "General practitioner for blood pressure check after recurrent subconjunctival haemorrhage (Section 3.19)."],
+  discharge: [
+    "Angle closure: only with ophthalmology agreement, IOP controlled (for example below 21 mmHg, RVEEH p. 6), a patent iridotomy in the affected eye and a fellow-eye plan (RCOphth p. 20; RVEEH pp. 5–6).",
+    "Uveitis: pain controlled, no emergency or urgent referral trigger, and ophthalmology review arranged, ideally within 48 hours (Section 7.1).",
+    "Conjunctivitis: comfortable, normal vision, clear cornea, and understands hygiene and when to return (Sections 3.5 and 3.13).",
+  ],
+  follow: "Angle closure: review at 1 week or earlier (RVEEH p. 5). Uveitis: review within 48 hours where possible, steroid taper over at least 6 weeks with IOP checks (Section 7.1). Bacterial conjunctivitis: return and refer if not resolved or the cornea is involved (Section 3.5). Viral conjunctivitis: self-limiting over 1–2 weeks; review for corneal involvement or persistent infiltrates after 6 weeks (Section 3.13). Return the same day if pain, photophobia or vision change.",
+},
+];

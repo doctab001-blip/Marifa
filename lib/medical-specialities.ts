@@ -44,3 +44,18 @@ export function inferMedicalSpecialityTags(value: string) {
     .sort((a, b) => a.position - b.position)
     .map(({ name }) => name);
 }
+
+/**
+ * Display-only summary of a topic's free-text `specialty` (e.g. "Endocrinology / Podiatry / Vascular Surgery").
+ * Returns the primary speciality for a compact chip and how many further ones were left out. The stored
+ * value is never changed. Catalogue matches win; otherwise the first "/", "," or " and " segment is used.
+ */
+export function summarizeSpecialty(value: string): { primary: string; extra: number } {
+  const text = (value ?? "").trim();
+  if (!text) return { primary: "Unassigned", extra: 0 };
+  const tags = inferMedicalSpecialityTags(text);
+  const segments = text.split(/\s*(?:\/|,|;|\band\b)\s*/i).map((segment) => segment.trim()).filter(Boolean);
+  const primary = tags[0] ?? segments[0] ?? text;
+  const extra = Math.max(0, Math.max(tags.length, segments.length) - 1);
+  return { primary, extra };
+}

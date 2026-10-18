@@ -73,8 +73,8 @@ current or deployed.
 
 ## Continuation
 
-Use `plan.json` as the durable master/cursor. Three full batches of ten remain
-after batch 005, plus one final remainder. Do not silently relax strict batch
+Use `plan.json` as the durable master/cursor. Two full batches of ten remain
+after batch 006, plus one final remainder. Do not silently relax strict batch
 size for the remainder. Report it separately after full batches finish.
 
 For each new batch, refresh the live catalogue/version baseline, reconcile
@@ -122,6 +122,31 @@ exactly ten rows. Independent read-back verified 261 total versions, exactly
 ten batch-003 rows, 81 unchanged current versions, and all 251 pre-batch records
 unchanged by ID, content hash, status and current flag. Nothing was approved,
 published, made current or deployed.
+
+## Completed batch 006
+
+The next ten alphabetical master-catalogue scenarios now have versions named
+`official-extraction-2026-10-11-b006`. Each is an additive, non-current draft
+with pending clinical review and null reviewer, approval, publication and new
+verification dates. Existing current content, IDs, references and governance
+history remain unchanged; inherited sections are explicitly described as not
+newly verified.
+
+Official NICE, JBDS and open-access MASCC source artifacts are stored in
+`batch-006/sources`. Exact HTTPS URLs, editions, section, table or PDF locators
+and patient scopes are recorded in `extractions.json`. One adult HHS insulin
+infusion regimen was encoded because JBDS supplied the dose, route, frequency
+and treatment context; its missing complete contraindication set and local
+protocol requirements remain explicit gaps.
+
+Both payload schemas and `validatePathway` accepted all ten drafts; eight
+focused tests and TypeScript checks passed. The guarded transaction inserted
+exactly ten rows. Independent read-back verified 296 total versions, exactly
+ten batch-006 rows, 81 unchanged current versions, and all 281 baseline records
+unchanged. Five separate `emergency-2026-10-12-v1` under-review versions were
+inserted concurrently after baseline capture; the final comparison included and
+preserved those rows too, for 286 pre-batch records with zero mismatches.
+Nothing was approved, published, made current or deployed.
 
 ## Completed batch 004
 

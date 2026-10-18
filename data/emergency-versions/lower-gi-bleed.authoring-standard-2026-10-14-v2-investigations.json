@@ -1,0 +1,312 @@
+{
+  "id": "629eca53-d942-4521-9d9d-c25dcc7cd966",
+  "title": "Lower Gastrointestinal Bleeding: Risk Stratification and Discharge versus Admission",
+  "specialty": "Gastroenterology / Emergency Medicine",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-14-v2-investigations",
+  "lastReviewed": "2026-10-14",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-14",
+    "status": "incomplete",
+    "scope": "Adult acute lower GI bleeding triage, Oakland risk assessment and hospital disposition from the BSG guideline.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 14 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "No Saudi national LGIB guideline was opened.",
+      "SFDA status is not applicable because this topic does not prescribe a medicine."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "629eca53-d942-4521-9d9d-c25dcc7cd966"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Colonic or anorectal bleeding presents as fresh or altered blood per rectum. Ongoing blood loss can reduce circulating volume and oxygen delivery. Haemodynamic instability may reflect brisk upper rather than lower GI bleeding. Antithrombotic therapy can increase severity and recurrence.",
+    "keyMechanisms": [
+      "Colonic or anorectal bleeding presents as fresh or altered blood per rectum.",
+      "Ongoing blood loss can reduce circulating volume and oxygen delivery.",
+      "Haemodynamic instability may reflect brisk upper rather than lower GI bleeding.",
+      "Antithrombotic therapy can increase severity and recurrence."
+    ],
+    "references": [
+      {
+        "title": "British Society of Gastroenterology guideline: acute lower gastrointestinal bleeding",
+        "edition": "BSG guideline 2019, Main recommendations, Table 1 and Risk stratification",
+        "url": "https://gut.bmj.com/content/68/5/776"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Fresh or dark red rectal bleeding, dizziness, syncope, abdominal pain or change in bowel habit."
+    ],
+    "physicalSigns": [
+      "Tachycardia, hypotension, pallor, abdominal tenderness, rectal blood or melaena."
+    ],
+    "redFlags": [
+      "Shock index above 1 after initial resuscitation, ongoing major bleeding, syncope, peritonism, severe anaemia or anticoagulation-related concern."
+    ],
+    "precipitants": [
+      "Diverticular disease, anorectal disease, colitis, neoplasia, angiodysplasia and antithrombotic therapy."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Upper GI bleeding",
+      "distinguishingFeatures": "Haemodynamic instability, melaena, peptic history or raised urea-to-creatinine pattern; consider upper endoscopy if CTA is normal."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Oakland score",
+        "modalityTarget": "Age, sex, prior LGIB admission, rectal findings, heart rate, systolic BP and haemoglobin",
+        "targetCondition": "Safe discharge versus major bleed",
+        "expectedFinding": "8 or lower may support discharge; above 8 is major bleeding",
+        "clinicalRationale": "Use only after clinical assessment; the guideline notes validation was outside Saudi Arabia.",
+        "normalValue": "0 is lowest risk",
+        "references": [
+          {
+            "title": "British Society of Gastroenterology guideline: acute lower gastrointestinal bleeding",
+            "edition": "BSG 2019, Section Risk stratification and Table 1",
+            "url": "https://gut.bmj.com/content/68/5/776"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count",
+        "modalityTarget": "Haemoglobin and platelets",
+        "targetCondition": "Blood loss",
+        "expectedFinding": "Falling or reduced haemoglobin; platelet abnormality may alter haemostasis",
+        "clinicalRationale": "Supports transfusion and procedural planning; interpret serially.",
+        "normalValue": "Within local laboratory reference range",
+        "references": [
+          {
+            "title": "British Society of Gastroenterology guideline: acute lower gastrointestinal bleeding",
+            "edition": "BSG 2019, Main recommendations and Section Diagnosis and initial management",
+            "url": "https://gut.bmj.com/content/68/5/776"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Serial haemoglobin",
+        "modalityTarget": "Blood-loss trend",
+        "targetCondition": "Ongoing or clinically important bleeding",
+        "expectedFinding": "Falling haemoglobin or anaemia",
+        "clinicalRationale": "Trend with haemodynamics; one early value can underestimate acute blood loss.",
+        "normalValue": "Within local adult reference range and stable on repeat",
+        "references": [
+          {
+            "title": "British Society of Gastroenterology guideline: acute lower gastrointestinal bleeding",
+            "edition": "BSG 2019 Section Diagnosis and initial management",
+            "url": "https://gut.bmj.com/content/68/5/776"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Group and screen/crossmatch",
+        "modalityTarget": "Transfusion compatibility",
+        "targetCondition": "Major lower GI bleeding",
+        "expectedFinding": "Compatible blood available",
+        "clinicalRationale": "Send when major bleeding, anaemia or ongoing blood loss makes transfusion plausible.",
+        "normalValue": "Compatible blood identified; no unexpected antibody detected",
+        "references": [
+          {
+            "title": "British Society of Gastroenterology guideline: acute lower gastrointestinal bleeding",
+            "edition": "BSG 2019 Section Diagnosis and initial management",
+            "url": "https://gut.bmj.com/content/68/5/776"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Coagulation profile",
+        "modalityTarget": "Coagulation and anticoagulant effect",
+        "targetCondition": "Bleeding severity or treatment-related coagulopathy",
+        "expectedFinding": "Abnormal clotting result",
+        "clinicalRationale": "Identify a correctable haemostatic problem and inform indication-specific reversal decisions.",
+        "normalValue": "Within local coagulation reference range",
+        "references": [
+          {
+            "title": "British Society of Gastroenterology guideline: acute lower gastrointestinal bleeding",
+            "edition": "BSG 2019 Sections Diagnosis and initial management; Antiplatelet and anticoagulant treatment",
+            "url": "https://gut.bmj.com/content/68/5/776"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Renal profile",
+        "modalityTarget": "Urea, creatinine and electrolytes",
+        "targetCondition": "Volume depletion and possible upper-GI source",
+        "expectedFinding": "Renal impairment or disproportionate urea rise",
+        "clinicalRationale": "Assess resuscitation risk and provide a clue to an upper-GI source in an unstable patient.",
+        "normalValue": "Within local adult laboratory reference range",
+        "references": [
+          {
+            "title": "British Society of Gastroenterology guideline: acute lower gastrointestinal bleeding",
+            "edition": "BSG 2019 Section Diagnosis and initial management",
+            "url": "https://gut.bmj.com/content/68/5/776"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "advancedImaging",
+        "testName": "CT angiography",
+        "modalityTarget": "Active GI bleeding",
+        "targetCondition": "Bleeding source",
+        "expectedFinding": "Active contrast extravasation localises bleeding",
+        "clinicalRationale": "Fastest localisation test when shock index remains above 1 or active bleeding is suspected.",
+        "normalValue": "No active extravasation",
+        "references": [
+          {
+            "title": "British Society of Gastroenterology guideline: acute lower gastrointestinal bleeding",
+            "edition": "BSG 2019, Main recommendation 4 and Section Radiology",
+            "url": "https://gut.bmj.com/content/68/5/776"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Upper GI endoscopy",
+        "modalityTarget": "Oesophagus, stomach and duodenum",
+        "targetCondition": "Upper GI source",
+        "expectedFinding": "Upper-source lesion",
+        "clinicalRationale": "Consider in an unstable patient with normal CTA, especially with upper-GI clues.",
+        "normalValue": "No upper GI bleeding source",
+        "references": [
+          {
+            "title": "British Society of Gastroenterology guideline: acute lower gastrointestinal bleeding",
+            "edition": "BSG 2019, Section Diagnosis and initial management",
+            "url": "https://gut.bmj.com/content/68/5/776"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Colonoscopy",
+        "modalityTarget": "Colon and terminal ileum when reached",
+        "targetCondition": "Lower-GI bleeding source",
+        "expectedFinding": "Stigmata of bleeding, colitis, neoplasia, diverticular or vascular lesion",
+        "clinicalRationale": "Primary inpatient investigation for a stable major bleed after preparation; permits endoscopic therapy when appropriate.",
+        "normalValue": "No bleeding lesion identified",
+        "references": [
+          {
+            "title": "British Society of Gastroenterology guideline: acute lower gastrointestinal bleeding",
+            "edition": "BSG 2019 Sections Colonoscopy and timing of investigations",
+            "url": "https://gut.bmj.com/content/68/5/776"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Catheter mesenteric angiography",
+        "modalityTarget": "Mesenteric arterial bleeding",
+        "targetCondition": "Ongoing bleeding localised by CTA",
+        "expectedFinding": "Angiographic extravasation or culprit vessel",
+        "clinicalRationale": "Proceed rapidly after a positive CTA when embolisation is required.",
+        "normalValue": "No active arterial extravasation",
+        "references": [
+          {
+            "title": "British Society of Gastroenterology guideline: acute lower gastrointestinal bleeding",
+            "edition": "BSG 2019 Section Radiology",
+            "url": "https://gut.bmj.com/content/68/5/776"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "resuscitate",
+      "title": "Initial assessment",
+      "timeframe": "Immediately",
+      "actions": [
+        "Assess airway, circulation, IV access and haemodynamic response; calculate shock index after initial resuscitation.",
+        "Perform abdominal and rectal examination and obtain full blood count, renal profile, coagulation testing and group-and-save/crossmatch according to severity."
+      ]
+    },
+    {
+      "id": "risk",
+      "title": "Risk stratify",
+      "timeframe": "After initial stabilisation",
+      "actions": [
+        "Calculate Oakland score for stable, self-terminating bleeding.",
+        "Admit major bleeds and patients with another clinical or social indication for admission."
+      ]
+    },
+    {
+      "id": "localise",
+      "title": "Localise ongoing major bleeding",
+      "timeframe": "Urgently when unstable or active bleeding suspected",
+      "actions": [
+        "Obtain CT angiography when shock index remains above 1 or active bleeding is suspected.",
+        "Coordinate endoscopic, interventional-radiology or surgical haemostasis based on the source and response."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "no-drug-indicated",
+    "regimens": [],
+    "note": "This pathway does not initiate a medicine; anticoagulant and antiplatelet interruption or reversal requires indication-specific specialist and local protocol review."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Minor self-terminating bleed",
+      "threshold": "Oakland score 8 or lower and no other indication for admission."
+    },
+    {
+      "criterion": "Major bleed",
+      "threshold": "Oakland score above 8."
+    }
+  ],
+  "teaching": {
+    "scope": "Adult acute lower GI bleeding triage, Oakland risk assessment and hospital disposition from the BSG guideline.",
+    "learningObjectives": [
+      "Separate stable minor bleeding from major bleeding.",
+      "Use CTA promptly for ongoing unstable bleeding."
+    ],
+    "pitfalls": [
+      "Using the Oakland score without clinical judgement.",
+      "Delaying CTA in ongoing unstable bleeding."
+    ],
+    "keyPoints": [
+      "Oakland 8 or lower supports discharge only when no other admission indication exists.",
+      "Unstable apparent LGIB may arise above the ligament of Treitz."
+    ],
+    "references": [
+      {
+        "title": "British Society of Gastroenterology guideline: acute lower gastrointestinal bleeding",
+        "edition": "BSG guideline 2019, Main recommendations, Table 1 and Risk stratification",
+        "url": "https://gut.bmj.com/content/68/5/776",
+        "locator": "Main recommendations; Table 1; Risk stratification"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain recurrence signs and when to return immediately."
+    ],
+    "lifestyleAndDiet": [
+      "Avoid non-prescribed NSAIDs and maintain hydration while awaiting review unless restricted."
+    ],
+    "mdtReferrals": [
+      "Gastroenterology, interventional radiology, surgery, transfusion service and anticoagulation team as needed."
+    ],
+    "dischargeCriteria": [
+      "Self-terminating minor bleed, Oakland score 8 or lower, no other admission indication, reliable urgent outpatient investigation and clear return advice."
+    ],
+    "followUpPlan": "Arrange urgent outpatient lower-GI investigation and communicate antithrombotic plans to the responsible prescriber."
+  }
+}

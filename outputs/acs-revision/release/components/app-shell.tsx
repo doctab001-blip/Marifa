@@ -1,0 +1,46 @@
+import Link from "next/link";
+import { redirect } from "next/navigation";
+import { Bell, LogOut, Search, Settings2 } from "lucide-react";
+import { getCurrentViewer } from "@/lib/supabase/session";
+import { CollapsibleShell } from "@/components/collapsible-shell";
+import { MobileNavigation, SidebarNavigation } from "@/components/app-navigation";
+
+export async function AppShell({ children }: { children: React.ReactNode }) {
+  const user = await getCurrentViewer();
+  if (!user) redirect("/login");
+  return (
+    <CollapsibleShell primaryColor={user.primaryColor}>
+      <aside id="workspace-sidebar" className="sidebar" aria-label="Main navigation">
+        <Link href="/dashboard" className="brand">
+          <div className="brand-mark">M</div>
+          <div className="brand-copy"><div className="brand-name">Marifa</div><div className="brand-sub">Clinical knowledge & governance</div></div>
+        </Link>
+        <SidebarNavigation />
+        <div className="nav-spacer" />
+        <div className="org-card"><strong>{user.organizationName}</strong><span>Isolated demo tenant · Riyadh</span></div>
+      </aside>
+      <section className="workspace">
+        <header className="topbar">
+          <form className="global-search" action="/dashboard/diseases">
+            <Search size={17} aria-hidden="true" />
+            <input name="q" aria-label="Search clinical knowledge" placeholder="Search clinical knowledge…" />
+          </form>
+          <div className="top-actions">
+            <Link className="top-action-link" href="/dashboard/notifications" aria-label="Open notifications" title="Notifications"><Bell size={18} strokeWidth={1.7} /></Link>
+            {user.isAdmin && <Link className="top-action-link" href="/dashboard/admin/settings#profile" aria-label="Edit profile and appearance" title="Profile and appearance settings"><Settings2 size={18} strokeWidth={1.7} /></Link>}
+            {user.isAdmin ? (
+              <Link className="user-chip" href="/dashboard/admin/settings#profile" aria-label={`Edit profile for ${user.name}`} title="Edit profile">
+                <div className="avatar">{user.initials}</div><div><strong>{user.name}</strong><span>{user.designation} · {user.role}</span></div>
+              </Link>
+            ) : (
+              <div className="user-chip"><div className="avatar">{user.initials}</div><div><strong>{user.name}</strong><span>{user.designation}</span></div></div>
+            )}
+            <form action="/api/logout" method="post"><button type="submit" className="button-secondary" aria-label="Sign out" title="Sign out"><LogOut size={15} /></button></form>
+          </div>
+        </header>
+        {children}
+      </section>
+      <MobileNavigation />
+    </CollapsibleShell>
+  );
+}

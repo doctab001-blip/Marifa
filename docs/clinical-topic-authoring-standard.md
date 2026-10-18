@@ -75,6 +75,7 @@ A table. Every row has all four columns:
 ## 4. Writing style
 
 - Short sentences. One fact per bullet. Write for a tired registrar scanning on a phone.
+- **Abbreviation expansion is global:** on the first occurrence of any medical term, syndrome, drug class or scoring system within a topic, write the full name followed by the abbreviation in parentheses (for example, `Percutaneous Coronary Intervention (PCI)`). Use only the abbreviation thereafter in that topic. Never introduce an unexplained acronym, and do not repeat the expanded form after its first introduction.
 - No filler: no "It is important to note", "plays a crucial role", "a wide range of", "comprehensive", "in conclusion".
 - No vague advice ("consider appropriate treatment", "monitor closely", "as clinically indicated") unless followed by what, how often, and the target.
 - No repetition between sections. Say it once in the right place.

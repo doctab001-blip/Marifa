@@ -1,0 +1,3695 @@
+[
+  {
+    "id": "9c2bdfee-ee19-4b0e-9d47-d44467542a0d",
+    "title": "Cardiac Arrest",
+    "specialty": "Cardiology and Emergency Medicine",
+    "authority": "Other",
+    "status": "under_review",
+    "version": "authoring-standard-2026-10-13-v1",
+    "lastReviewed": "2026-10-13",
+    "pillar": "Urgent Care",
+    "clinicalReviewStatus": "pending",
+    "evidenceAudit": {
+      "checkedOn": "2026-10-13",
+      "status": "incomplete",
+      "scope": "Adult Cardiac Arrest assessment and management, checked against 2025 AHA Guidelines for CPR and ECC.",
+      "findings": [
+        "The cited official source was opened on 13 Oct 2026; numerical claims are limited to the cited sections."
+      ],
+      "unverifiedSections": [
+        "Saudi national topic guidance was not found in the opened sources.",
+        "SFDA registration and local formulary availability were not independently verified."
+      ],
+      "medscapeStatus": "unavailable",
+      "originalVersionIds": [
+        "9c2bdfee-ee19-4b0e-9d47-d44467542a0d"
+      ]
+    },
+    "pathophysiology": {
+      "summary": "Loss of effective cardiac mechanical activity stops systemic perfusion. Shockable VF/pVT may respond to defibrillation; asystole and PEA require CPR and treatment of reversible causes. High-quality compressions and minimal interruptions maintain coronary and cerebral perfusion until ROSC.",
+      "keyMechanisms": [
+        "Loss of effective cardiac mechanical activity stops systemic perfusion.",
+        "Shockable VF/pVT may respond to defibrillation; asystole and PEA require CPR and treatment of reversible causes.",
+        "High-quality compressions and minimal interruptions maintain coronary and cerebral perfusion until ROSC."
+      ],
+      "references": [
+        {
+          "title": "2025 AHA Guidelines for CPR and ECC",
+          "edition": "AHA 2025, Adult Advanced Life Support, Figures 5, 7 and 8; Adult Post-Cardiac Arrest Care Figure 1",
+          "url": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/algorithms"
+        }
+      ]
+    },
+    "presentation": {
+      "symptoms": [
+        "Sudden collapse and unresponsiveness",
+        "Absent normal breathing or only gasping"
+      ],
+      "physicalSigns": [
+        "No definite pulse within 10 seconds",
+        "Pulseless VF/pVT, asystole or PEA on monitor"
+      ],
+      "redFlags": [
+        "Cardiac arrest is immediately life-threatening",
+        "Persistent VF/pVT after shocks",
+        "Reversible cause requiring immediate correction"
+      ],
+      "precipitants": [
+        "Hypovolaemia, hypoxia, acidosis, hypo-/hyperkalaemia, hypothermia",
+        "Tension pneumothorax, tamponade, toxins, pulmonary or coronary thrombosis"
+      ]
+    },
+    "differentials": [
+      {
+        "condition": "Respiratory arrest",
+        "distinguishingFeatures": "Pulse remains present; ventilate and reassess frequently."
+      },
+      {
+        "condition": "Syncope",
+        "distinguishingFeatures": "Pulse and normal breathing return promptly."
+      }
+    ],
+    "investigations": {
+      "ruleIn": [
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "Rhythm analysis",
+          "modalityTarget": "Adult assessment",
+          "targetCondition": "Cardiac Arrest",
+          "expectedFinding": "VF/pVT or non-shockable asystole/PEA",
+          "clinicalRationale": "Determines shockable versus non-shockable pathway; reassess every 2 minutes.",
+          "normalValue": "Organised rhythm with a palpable pulse",
+          "references": [
+            {
+              "title": "2025 AHA Guidelines for CPR and ECC",
+              "edition": "AHA 2025, Adult Advanced Life Support, Figures 5, 7 and 8; Adult Post-Cardiac Arrest Care Figure 1",
+              "url": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/algorithms"
+            }
+          ]
+        }
+      ],
+      "ruleOut": [
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "Waveform capnography",
+          "modalityTarget": "Adult assessment",
+          "targetCondition": "Important alternatives or complications of Cardiac Arrest",
+          "expectedFinding": "Abrupt rise may indicate ROSC",
+          "clinicalRationale": "Confirms tube placement and helps assess CPR quality.",
+          "normalValue": "No single normal threshold is specified in the algorithm",
+          "references": [
+            {
+              "title": "2025 AHA Guidelines for CPR and ECC",
+              "edition": "AHA 2025, Adult Advanced Life Support, Figures 5, 7 and 8; Adult Post-Cardiac Arrest Care Figure 1",
+              "url": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/algorithms"
+            }
+          ]
+        }
+      ]
+    },
+    "clinicalManagement": [
+      {
+        "id": "step-1",
+        "title": "Recognise and start CPR",
+        "timeframe": "Immediately",
+        "actions": [
+          "Activate the resuscitation team, start high-quality CPR, attach defibrillator and give oxygen."
+        ]
+      },
+      {
+        "id": "step-2",
+        "title": "Rhythm-directed ALS",
+        "timeframe": "Every 2-minute cycle",
+        "actions": [
+          "Shock VF/pVT and resume CPR immediately; give epinephrine and amiodarone according to the algorithm.",
+          "For asystole/PEA give epinephrine as soon as feasible and continue CPR."
+        ]
+      },
+      {
+        "id": "step-3",
+        "title": "Treat causes and transition",
+        "timeframe": "Throughout",
+        "actions": [
+          "Treat reversible Hs and Ts; after ROSC move to post-cardiac-arrest care."
+        ]
+      }
+    ],
+    "medicationPlan": {
+      "status": "source-verified",
+      "regimens": [
+        {
+          "indication": "Pulseless cardiac arrest",
+          "patientGroup": "Adults in cardiac arrest",
+          "genericName": "Epinephrine",
+          "dose": "1 mg",
+          "route": "IV or IO",
+          "frequency": "Every 3–5 minutes during arrest",
+          "duration": "Until ROSC or resuscitation ends",
+          "adjustments": [
+            "The AHA arrest algorithm gives no renal or hepatic adjustment; follow the resuscitation protocol."
+          ],
+          "monitoring": [
+            "Rhythm and pulse checks every 2 minutes; continuous waveform capnography when an advanced airway is present."
+          ],
+          "contraindications": [
+            "No contraindication is listed in the cardiac-arrest algorithm."
+          ],
+          "sourceTitle": "2025 AHA Guidelines for CPR and ECC",
+          "sourceUrl": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/algorithms",
+          "sourceEdition": "AHA 2025 Adult Cardiac Arrest Algorithm, Figure 5, drug-therapy box"
+        },
+        {
+          "indication": "Refractory ventricular fibrillation or pulseless ventricular tachycardia",
+          "patientGroup": "Adults after defibrillation attempts",
+          "genericName": "Amiodarone",
+          "dose": "First dose 300 mg; second dose 150 mg",
+          "route": "IV or IO bolus",
+          "frequency": "One first dose, then one second dose if refractory",
+          "duration": "Maximum two algorithm doses",
+          "adjustments": [
+            "No renal or hepatic adjustment is specified for arrest dosing in the algorithm; do not delay defibrillation."
+          ],
+          "monitoring": [
+            "Rhythm after each 2-minute CPR cycle; ROSC and adverse haemodynamics after conversion."
+          ],
+          "contraindications": [
+            "Use only for refractory VF/pVT in this algorithm."
+          ],
+          "sourceTitle": "2025 AHA Guidelines for CPR and ECC",
+          "sourceUrl": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/algorithms",
+          "sourceEdition": "AHA 2025 Adult Cardiac Arrest Algorithm, Figure 5, drug-therapy box"
+        }
+      ],
+      "note": "AHA algorithm doses. SFDA registration was not independently verified; check the Saudi hospital formulary."
+    },
+    "diagnosticCriteria": [
+      {
+        "criterion": "Adult cardiac arrest",
+        "threshold": "Unresponsive, absent normal breathing and no definite pulse within 10 seconds"
+      }
+    ],
+    "teaching": {
+      "scope": "Adult Cardiac Arrest",
+      "learningObjectives": [
+        "Recognise Cardiac Arrest and its red flags.",
+        "Select the first investigations and next actions."
+      ],
+      "pitfalls": [
+        "Using the topic without checking local Saudi protocol and formulary."
+      ],
+      "keyPoints": [
+        "Cardiac arrest is immediately life-threatening",
+        "Persistent VF/pVT after shocks"
+      ],
+      "references": [
+        {
+          "title": "2025 AHA Guidelines for CPR and ECC",
+          "edition": "AHA 2025, Adult Advanced Life Support, Figures 5, 7 and 8; Adult Post-Cardiac Arrest Care Figure 1",
+          "url": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/algorithms",
+          "locator": "AHA 2025, Adult Advanced Life Support, Figures 5, 7 and 8; Adult Post-Cardiac Arrest Care Figure 1"
+        }
+      ]
+    },
+    "nonClinicalManagement": {
+      "patientEducation": [
+        "Explain events and prognosis to family through the resuscitation team."
+      ],
+      "lifestyleAndDiet": [
+        "Not applicable during arrest; address cause-specific prevention after recovery."
+      ],
+      "mdtReferrals": [
+        "Resuscitation team, critical care, cardiology and cause-specific specialties."
+      ],
+      "dischargeCriteria": [
+        "No emergency-department discharge; ROSC requires critical care assessment."
+      ],
+      "followUpPlan": "Survivors require structured post-arrest, neurological, cardiac and rehabilitation follow-up."
+    }
+  },
+  {
+    "id": "033fa49b-a4f9-4d54-ac6f-e459ef03e218",
+    "title": "Post-Cardiac Arrest Care",
+    "specialty": "Cardiology, Critical Care Medicine and Emergency Medicine",
+    "authority": "Other",
+    "status": "under_review",
+    "version": "authoring-standard-2026-10-13-v1",
+    "lastReviewed": "2026-10-13",
+    "pillar": "Urgent Care",
+    "clinicalReviewStatus": "pending",
+    "evidenceAudit": {
+      "checkedOn": "2026-10-13",
+      "status": "incomplete",
+      "scope": "Adult Post-Cardiac Arrest Care assessment and management, checked against 2025 AHA Guidelines for CPR and ECC.",
+      "findings": [
+        "The cited official source was opened on 13 Oct 2026; numerical claims are limited to the cited sections."
+      ],
+      "unverifiedSections": [
+        "Saudi national topic guidance was not found in the opened sources.",
+        "SFDA registration and local formulary availability were not independently verified."
+      ],
+      "medscapeStatus": "unavailable",
+      "originalVersionIds": [
+        "033fa49b-a4f9-4d54-ac6f-e459ef03e218"
+      ]
+    },
+    "pathophysiology": {
+      "summary": "Post-arrest brain injury, myocardial dysfunction and systemic ischaemia-reperfusion injury continue after ROSC. Hypoxaemia and hyperoxaemia can worsen injury, so oxygen is titrated once measurement is reliable. Hypotension reduces cerebral and coronary perfusion and requires prompt correction.",
+      "keyMechanisms": [
+        "Post-arrest brain injury, myocardial dysfunction and systemic ischaemia-reperfusion injury continue after ROSC.",
+        "Hypoxaemia and hyperoxaemia can worsen injury, so oxygen is titrated once measurement is reliable.",
+        "Hypotension reduces cerebral and coronary perfusion and requires prompt correction."
+      ],
+      "references": [
+        {
+          "title": "2025 AHA Guidelines for CPR and ECC",
+          "edition": "AHA 2025, Adult Advanced Life Support, Figures 5, 7 and 8; Adult Post-Cardiac Arrest Care Figure 1",
+          "url": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/algorithms"
+        }
+      ]
+    },
+    "presentation": {
+      "symptoms": [
+        "Coma or altered consciousness after ROSC",
+        "Possible recurrent chest pain or dyspnoea when awake"
+      ],
+      "physicalSigns": [
+        "Hypotension or shock",
+        "Abnormal oxygenation or ventilation",
+        "Seizures or persistent coma"
+      ],
+      "redFlags": [
+        "Recurrent arrest or malignant arrhythmia",
+        "ST elevation or cardiogenic shock",
+        "Unable to maintain oxygenation, ventilation or perfusion"
+      ],
+      "precipitants": [
+        "Primary coronary occlusion",
+        "Respiratory failure, pulmonary embolism, electrolyte disturbance, toxins or hypothermia"
+      ]
+    },
+    "differentials": [
+      {
+        "condition": "Sedative effect",
+        "distinguishingFeatures": "Drug exposure may delay awakening; neurological prognosis requires multimodal delayed assessment."
+      },
+      {
+        "condition": "Ongoing seizure",
+        "distinguishingFeatures": "Clinical or electrographic seizure activity needs EEG assessment."
+      }
+    ],
+    "investigations": {
+      "ruleIn": [
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "Pulse oximetry and arterial blood gas",
+          "modalityTarget": "Adult assessment",
+          "targetCondition": "Post-Cardiac Arrest Care",
+          "expectedFinding": "Hypoxaemia or hyperoxaemia; ventilation abnormality",
+          "clinicalRationale": "Use 100% oxygen until reliable measurement, then titrate to the target.",
+          "normalValue": "SpO2 90–98% target after ROSC",
+          "references": [
+            {
+              "title": "2025 AHA Guidelines for CPR and ECC",
+              "edition": "AHA 2025, Adult Advanced Life Support, Figures 5, 7 and 8; Adult Post-Cardiac Arrest Care Figure 1",
+              "url": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/algorithms"
+            }
+          ]
+        }
+      ],
+      "ruleOut": [
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "12-lead ECG",
+          "modalityTarget": "Adult assessment",
+          "targetCondition": "Important alternatives or complications of Post-Cardiac Arrest Care",
+          "expectedFinding": "ST elevation or other acute coronary-occlusion pattern",
+          "clinicalRationale": "Directs urgent coronary evaluation.",
+          "normalValue": "No acute ischaemic change",
+          "references": [
+            {
+              "title": "2025 AHA Guidelines for CPR and ECC",
+              "edition": "AHA 2025, Adult Advanced Life Support, Figures 5, 7 and 8; Adult Post-Cardiac Arrest Care Figure 1",
+              "url": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/algorithms"
+            }
+          ]
+        }
+      ]
+    },
+    "clinicalManagement": [
+      {
+        "id": "step-1",
+        "title": "Stabilise",
+        "timeframe": "Immediately after ROSC",
+        "actions": [
+          "Secure airway and ventilation; use 100% oxygen until reliable measurement, then target SpO2 90–98%.",
+          "Treat hypotension and obtain ECG."
+        ]
+      },
+      {
+        "id": "step-2",
+        "title": "Identify cause",
+        "timeframe": "First hour",
+        "actions": [
+          "Assess for coronary occlusion and non-coronary causes; arrange critical-care admission."
+        ]
+      },
+      {
+        "id": "step-3",
+        "title": "Neurological care",
+        "timeframe": "Ongoing",
+        "actions": [
+          "Prevent fever, detect seizures and use delayed multimodal prognostication rather than a single early finding."
+        ]
+      }
+    ],
+    "medicationPlan": {
+      "status": "local-protocol-required",
+      "regimens": [],
+      "note": "Vasoactive and sedation regimens depend on haemodynamics and the local ICU protocol; no drug regimen is reproduced here. Check SFDA registration and formulary."
+    },
+    "diagnosticCriteria": [
+      {
+        "criterion": "Post-cardiac-arrest state",
+        "threshold": "Sustained ROSC after adult cardiac arrest"
+      },
+      {
+        "criterion": "Oxygen target after reliable measurement",
+        "threshold": "SpO2 90–98% or PaO2 60–105 mmHg"
+      }
+    ],
+    "teaching": {
+      "scope": "Adult Post-Cardiac Arrest Care",
+      "learningObjectives": [
+        "Recognise Post-Cardiac Arrest Care and its red flags.",
+        "Select the first investigations and next actions."
+      ],
+      "pitfalls": [
+        "Using the topic without checking local Saudi protocol and formulary."
+      ],
+      "keyPoints": [
+        "Recurrent arrest or malignant arrhythmia",
+        "ST elevation or cardiogenic shock"
+      ],
+      "references": [
+        {
+          "title": "2025 AHA Guidelines for CPR and ECC",
+          "edition": "AHA 2025, Adult Advanced Life Support, Figures 5, 7 and 8; Adult Post-Cardiac Arrest Care Figure 1",
+          "url": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/algorithms",
+          "locator": "AHA 2025, Adult Advanced Life Support, Figures 5, 7 and 8; Adult Post-Cardiac Arrest Care Figure 1"
+        }
+      ]
+    },
+    "nonClinicalManagement": {
+      "patientEducation": [
+        "Explain that neurological prognosis cannot be based on one early sign."
+      ],
+      "lifestyleAndDiet": [
+        "Begin rehabilitation and secondary prevention when clinically stable."
+      ],
+      "mdtReferrals": [
+        "Critical care, cardiology, neurology, rehabilitation and cause-specific teams."
+      ],
+      "dischargeCriteria": [
+        "Stable cardiorespiratory state, neurological and rehabilitation plan, cause addressed, follow-up arranged."
+      ],
+      "followUpPlan": "Cardiac, neurological, cognitive, psychological and rehabilitation follow-up for survivors and families."
+    }
+  },
+  {
+    "id": "b04002c0-c9b2-4971-88f3-7a82e9279376",
+    "title": "Symptomatic Bradycardia",
+    "specialty": "Cardiology and Emergency Medicine",
+    "authority": "Other",
+    "status": "under_review",
+    "version": "authoring-standard-2026-10-13-v1",
+    "lastReviewed": "2026-10-13",
+    "pillar": "Urgent Care",
+    "clinicalReviewStatus": "pending",
+    "evidenceAudit": {
+      "checkedOn": "2026-10-13",
+      "status": "incomplete",
+      "scope": "Adult Symptomatic Bradycardia assessment and management, checked against 2025 AHA Guidelines for CPR and ECC.",
+      "findings": [
+        "The cited official source was opened on 13 Oct 2026; numerical claims are limited to the cited sections."
+      ],
+      "unverifiedSections": [
+        "Saudi national topic guidance was not found in the opened sources.",
+        "SFDA registration and local formulary availability were not independently verified."
+      ],
+      "medscapeStatus": "unavailable",
+      "originalVersionIds": [
+        "b04002c0-c9b2-4971-88f3-7a82e9279376"
+      ]
+    },
+    "pathophysiology": {
+      "summary": "A slow rate may reduce cardiac output when stroke volume cannot compensate. Sinus-node disease, AV block, ischaemia, hypoxia, metabolic disturbance or drugs may impair impulse generation or conduction. Treatment is driven by cardiopulmonary compromise, not heart rate alone.",
+      "keyMechanisms": [
+        "A slow rate may reduce cardiac output when stroke volume cannot compensate.",
+        "Sinus-node disease, AV block, ischaemia, hypoxia, metabolic disturbance or drugs may impair impulse generation or conduction.",
+        "Treatment is driven by cardiopulmonary compromise, not heart rate alone."
+      ],
+      "references": [
+        {
+          "title": "2025 AHA Guidelines for CPR and ECC",
+          "edition": "AHA 2025, Adult Advanced Life Support, Figures 5, 7 and 8; Adult Post-Cardiac Arrest Care Figure 1",
+          "url": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/algorithms"
+        }
+      ]
+    },
+    "presentation": {
+      "symptoms": [
+        "Presyncope, syncope or dizziness",
+        "Ischaemic chest discomfort or dyspnoea"
+      ],
+      "physicalSigns": [
+        "Heart rate typically below 50/min",
+        "Hypotension, altered mental status, shock or acute heart failure"
+      ],
+      "redFlags": [
+        "Persistent cardiopulmonary compromise",
+        "High-grade AV block",
+        "Failure of atropine requiring pacing or infusion"
+      ],
+      "precipitants": [
+        "Myocardial ischaemia, hypoxia, electrolyte disturbance",
+        "Beta-blocker, calcium-channel blocker or digoxin effect"
+      ]
+    },
+    "differentials": [
+      {
+        "condition": "Physiological bradycardia",
+        "distinguishingFeatures": "No hypotension, altered state, shock, chest discomfort or acute heart failure."
+      },
+      {
+        "condition": "Pulseless arrest",
+        "distinguishingFeatures": "No definite pulse; switch immediately to the cardiac-arrest algorithm."
+      }
+    ],
+    "investigations": {
+      "ruleIn": [
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "12-lead ECG",
+          "modalityTarget": "Adult assessment",
+          "targetCondition": "Symptomatic Bradycardia",
+          "expectedFinding": "Sinus bradycardia or AV conduction block",
+          "clinicalRationale": "Identifies rhythm and possible ischaemia without delaying stabilisation.",
+          "normalValue": "Sinus rhythm with rate 60–100/min",
+          "references": [
+            {
+              "title": "2025 AHA Guidelines for CPR and ECC",
+              "edition": "AHA 2025, Adult Advanced Life Support, Figures 5, 7 and 8; Adult Post-Cardiac Arrest Care Figure 1",
+              "url": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/algorithms"
+            }
+          ]
+        }
+      ],
+      "ruleOut": [
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "Continuous cardiorespiratory monitoring",
+          "modalityTarget": "Adult assessment",
+          "targetCondition": "Important alternatives or complications of Symptomatic Bradycardia",
+          "expectedFinding": "Persistent slow rate with hypotension or other compromise",
+          "clinicalRationale": "Determines response and need for pacing or infusion.",
+          "normalValue": "Stable pulse and blood pressure without compromise",
+          "references": [
+            {
+              "title": "2025 AHA Guidelines for CPR and ECC",
+              "edition": "AHA 2025, Adult Advanced Life Support, Figures 5, 7 and 8; Adult Post-Cardiac Arrest Care Figure 1",
+              "url": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/algorithms"
+            }
+          ]
+        }
+      ]
+    },
+    "clinicalManagement": [
+      {
+        "id": "step-1",
+        "title": "Support",
+        "timeframe": "Immediately",
+        "actions": [
+          "Maintain airway, give oxygen when required, assist ventilation, monitor rhythm, pulse and blood pressure."
+        ]
+      },
+      {
+        "id": "step-2",
+        "title": "Treat compromise",
+        "timeframe": "Immediate if persistent",
+        "actions": [
+          "Give atropine; if ineffective use transcutaneous pacing and/or dopamine or epinephrine infusion."
+        ]
+      },
+      {
+        "id": "step-3",
+        "title": "Escalate",
+        "timeframe": "Without delay if refractory",
+        "actions": [
+          "Obtain expert help, consider transvenous pacing, identify and treat the cause."
+        ]
+      }
+    ],
+    "medicationPlan": {
+      "status": "source-verified",
+      "regimens": [
+        {
+          "indication": "Persistent symptomatic bradycardia with cardiopulmonary compromise",
+          "patientGroup": "Adults with a pulse",
+          "genericName": "Atropine",
+          "dose": "1 mg",
+          "route": "IV bolus",
+          "frequency": "Repeat every 3–5 minutes",
+          "duration": "Maximum total dose 3 mg",
+          "adjustments": [
+            "The AHA algorithm gives no renal or hepatic adjustment; pacing or infusion is required if ineffective."
+          ],
+          "monitoring": [
+            "Continuous ECG, pulse, blood pressure and symptoms."
+          ],
+          "contraindications": [
+            "Do not allow atropine attempts to delay pacing in persistent compromise."
+          ],
+          "sourceTitle": "2025 AHA Guidelines for CPR and ECC",
+          "sourceUrl": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/algorithms",
+          "sourceEdition": "AHA 2025 Adult Bradycardia With a Pulse Algorithm, Figure 8, doses/details box"
+        }
+      ],
+      "note": "If atropine fails, the AHA algorithm directs transcutaneous pacing and/or dopamine or epinephrine infusion. Infusion prescribing requires the local resuscitation protocol. SFDA registration was not independently verified."
+    },
+    "diagnosticCriteria": [
+      {
+        "criterion": "Bradyarrhythmia",
+        "threshold": "Heart rate typically below 50/min, with clinical appropriateness assessed"
+      }
+    ],
+    "teaching": {
+      "scope": "Adult Symptomatic Bradycardia",
+      "learningObjectives": [
+        "Recognise Symptomatic Bradycardia and its red flags.",
+        "Select the first investigations and next actions."
+      ],
+      "pitfalls": [
+        "Using the topic without checking local Saudi protocol and formulary."
+      ],
+      "keyPoints": [
+        "Persistent cardiopulmonary compromise",
+        "High-grade AV block"
+      ],
+      "references": [
+        {
+          "title": "2025 AHA Guidelines for CPR and ECC",
+          "edition": "AHA 2025, Adult Advanced Life Support, Figures 5, 7 and 8; Adult Post-Cardiac Arrest Care Figure 1",
+          "url": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/algorithms",
+          "locator": "AHA 2025, Adult Advanced Life Support, Figures 5, 7 and 8; Adult Post-Cardiac Arrest Care Figure 1"
+        }
+      ]
+    },
+    "nonClinicalManagement": {
+      "patientEducation": [
+        "Explain warning symptoms and medication review after stabilisation."
+      ],
+      "lifestyleAndDiet": [
+        "Avoid driving or hazardous activity until syncope risk is assessed."
+      ],
+      "mdtReferrals": [
+        "Emergency medicine, cardiology/electrophysiology and toxicology when relevant."
+      ],
+      "dischargeCriteria": [
+        "Symptoms resolved, cause addressed, stable rhythm and follow-up plan; admit high-grade block or unresolved cause."
+      ],
+      "followUpPlan": "Cardiology follow-up and ambulatory rhythm monitoring when an intermittent cause remains possible."
+    }
+  },
+  {
+    "id": "3b6ad593-93d7-40b2-84b4-96990bc0008e",
+    "title": "Tachyarrhythmia With a Pulse",
+    "specialty": "Cardiology and Emergency Medicine",
+    "authority": "Other",
+    "status": "under_review",
+    "version": "authoring-standard-2026-10-13-v1",
+    "lastReviewed": "2026-10-13",
+    "pillar": "Urgent Care",
+    "clinicalReviewStatus": "pending",
+    "evidenceAudit": {
+      "checkedOn": "2026-10-13",
+      "status": "incomplete",
+      "scope": "Adult Tachyarrhythmia With a Pulse assessment and management, checked against 2025 AHA Guidelines for CPR and ECC.",
+      "findings": [
+        "The cited official source was opened on 13 Oct 2026; numerical claims are limited to the cited sections."
+      ],
+      "unverifiedSections": [
+        "Saudi national topic guidance was not found in the opened sources.",
+        "SFDA registration and local formulary availability were not independently verified."
+      ],
+      "medscapeStatus": "unavailable",
+      "originalVersionIds": [
+        "3b6ad593-93d7-40b2-84b4-96990bc0008e"
+      ]
+    },
+    "pathophysiology": {
+      "summary": "Rapid rhythm shortens ventricular filling and may reduce cardiac output. Narrow-complex rhythms usually arise above the ventricles; wide-complex rhythms may be ventricular or supraventricular with aberrancy. Instability mandates synchronized cardioversion rather than prolonged diagnostic delay.",
+      "keyMechanisms": [
+        "Rapid rhythm shortens ventricular filling and may reduce cardiac output.",
+        "Narrow-complex rhythms usually arise above the ventricles; wide-complex rhythms may be ventricular or supraventricular with aberrancy.",
+        "Instability mandates synchronized cardioversion rather than prolonged diagnostic delay."
+      ],
+      "references": [
+        {
+          "title": "2025 AHA Guidelines for CPR and ECC",
+          "edition": "AHA 2025, Adult Advanced Life Support, Figures 5, 7 and 8; Adult Post-Cardiac Arrest Care Figure 1",
+          "url": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/algorithms"
+        }
+      ]
+    },
+    "presentation": {
+      "symptoms": [
+        "Palpitations, chest discomfort, dyspnoea or dizziness",
+        "Syncope or altered mental status when perfusion is impaired"
+      ],
+      "physicalSigns": [
+        "Tachycardia with a palpable pulse",
+        "Hypotension, shock, acute heart failure or ischaemic discomfort when unstable"
+      ],
+      "redFlags": [
+        "Hypotension, altered mental status, shock, ischaemic chest discomfort or acute heart failure",
+        "Wide-complex or polymorphic rhythm",
+        "Loss of pulse"
+      ],
+      "precipitants": [
+        "Ischaemia, hypoxia, fever, pain, hypovolaemia or electrolyte disturbance",
+        "Stimulants, medicines or pre-excitation"
+      ]
+    },
+    "differentials": [
+      {
+        "condition": "Sinus tachycardia",
+        "distinguishingFeatures": "Rate reflects an underlying driver; treat the cause rather than cardiovert."
+      },
+      {
+        "condition": "Cardiac arrest",
+        "distinguishingFeatures": "No pulse; switch to the cardiac-arrest algorithm."
+      }
+    ],
+    "investigations": {
+      "ruleIn": [
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "12-lead ECG",
+          "modalityTarget": "Adult assessment",
+          "targetCondition": "Tachyarrhythmia With a Pulse",
+          "expectedFinding": "Regular or irregular narrow- or wide-complex tachyarrhythmia",
+          "clinicalRationale": "Classifies rhythm while immediate treatment proceeds.",
+          "normalValue": "Sinus rhythm 60–100/min with narrow QRS",
+          "references": [
+            {
+              "title": "2025 AHA Guidelines for CPR and ECC",
+              "edition": "AHA 2025, Adult Advanced Life Support, Figures 5, 7 and 8; Adult Post-Cardiac Arrest Care Figure 1",
+              "url": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/algorithms"
+            }
+          ]
+        }
+      ],
+      "ruleOut": [
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "Continuous monitoring",
+          "modalityTarget": "Adult assessment",
+          "targetCondition": "Important alternatives or complications of Tachyarrhythmia With a Pulse",
+          "expectedFinding": "Haemodynamic compromise or deterioration",
+          "clinicalRationale": "Determines need for immediate synchronized cardioversion.",
+          "normalValue": "Stable perfusion and blood pressure",
+          "references": [
+            {
+              "title": "2025 AHA Guidelines for CPR and ECC",
+              "edition": "AHA 2025, Adult Advanced Life Support, Figures 5, 7 and 8; Adult Post-Cardiac Arrest Care Figure 1",
+              "url": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/algorithms"
+            }
+          ]
+        }
+      ]
+    },
+    "clinicalManagement": [
+      {
+        "id": "step-1",
+        "title": "Initial support",
+        "timeframe": "Immediately",
+        "actions": [
+          "Maintain airway, support breathing, monitor rhythm and blood pressure, obtain IV access and 12-lead ECG if available."
+        ]
+      },
+      {
+        "id": "step-2",
+        "title": "Unstable pathway",
+        "timeframe": "Immediately",
+        "actions": [
+          "Perform synchronized cardioversion; sedate if feasible without delaying treatment."
+        ]
+      },
+      {
+        "id": "step-3",
+        "title": "Stable pathway",
+        "timeframe": "Promptly",
+        "actions": [
+          "For regular narrow-complex tachycardia use vagal manoeuvres then adenosine; obtain expert help for wide-complex or uncertain rhythm."
+        ]
+      }
+    ],
+    "medicationPlan": {
+      "status": "source-verified",
+      "regimens": [
+        {
+          "indication": "Regular narrow-complex tachycardia when adenosine is appropriate",
+          "patientGroup": "Adults with a pulse",
+          "genericName": "Adenosine",
+          "dose": "First dose 6 mg; second dose 12 mg if required",
+          "route": "Rapid IV push followed by saline flush",
+          "frequency": "One first dose, then one second dose",
+          "duration": "Maximum two algorithm doses",
+          "adjustments": [
+            "The algorithm gives no renal/hepatic adjustment. Use only for regular rhythms; expert consultation for wide-QRS tachycardia."
+          ],
+          "monitoring": [
+            "Continuous ECG and blood pressure; record rhythm response."
+          ],
+          "contraindications": [
+            "Do not use the regular-rhythm pathway for irregular polymorphic wide-complex tachycardia."
+          ],
+          "sourceTitle": "2025 AHA Guidelines for CPR and ECC",
+          "sourceUrl": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/algorithms",
+          "sourceEdition": "AHA 2025 Adult Tachyarrhythmia With a Pulse Algorithm, Figure 7, adenosine doses box"
+        }
+      ],
+      "note": "Unstable tachyarrhythmia requires synchronized cardioversion; sedate if feasible without delaying treatment. SFDA registration was not independently verified."
+    },
+    "diagnosticCriteria": [
+      {
+        "criterion": "Tachyarrhythmia",
+        "threshold": "Persistent rapid rhythm with a pulse; instability is defined by hypotension, altered mental status, shock, ischaemic discomfort or acute heart failure"
+      }
+    ],
+    "teaching": {
+      "scope": "Adult Tachyarrhythmia With a Pulse",
+      "learningObjectives": [
+        "Recognise Tachyarrhythmia With a Pulse and its red flags.",
+        "Select the first investigations and next actions."
+      ],
+      "pitfalls": [
+        "Using the topic without checking local Saudi protocol and formulary."
+      ],
+      "keyPoints": [
+        "Hypotension, altered mental status, shock, ischaemic chest discomfort or acute heart failure",
+        "Wide-complex or polymorphic rhythm"
+      ],
+      "references": [
+        {
+          "title": "2025 AHA Guidelines for CPR and ECC",
+          "edition": "AHA 2025, Adult Advanced Life Support, Figures 5, 7 and 8; Adult Post-Cardiac Arrest Care Figure 1",
+          "url": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/algorithms",
+          "locator": "AHA 2025, Adult Advanced Life Support, Figures 5, 7 and 8; Adult Post-Cardiac Arrest Care Figure 1"
+        }
+      ]
+    },
+    "nonClinicalManagement": {
+      "patientEducation": [
+        "Explain recurrence symptoms and when to seek emergency help."
+      ],
+      "lifestyleAndDiet": [
+        "Address stimulants and identified triggers after rhythm diagnosis."
+      ],
+      "mdtReferrals": [
+        "Emergency medicine and cardiology/electrophysiology."
+      ],
+      "dischargeCriteria": [
+        "Stable rhythm and perfusion, cause assessed, recurrence plan and follow-up arranged."
+      ],
+      "followUpPlan": "Cardiology follow-up with rhythm documentation and definitive management planning."
+    }
+  },
+  {
+    "id": "0dcb804b-ce96-4960-9bc2-2c2c67f68685",
+    "title": "Psoriasis",
+    "specialty": "Dermatology",
+    "authority": "Other",
+    "status": "under_review",
+    "version": "authoring-standard-2026-10-13-v1",
+    "lastReviewed": "2026-10-13",
+    "pillar": "Chronic Care",
+    "clinicalReviewStatus": "pending",
+    "evidenceAudit": {
+      "checkedOn": "2026-10-13",
+      "status": "incomplete",
+      "scope": "Adult Psoriasis assessment and management, checked against NICE CG153: Psoriasis assessment and management.",
+      "findings": [
+        "The cited official source was opened on 13 Oct 2026; numerical claims are limited to the cited sections."
+      ],
+      "unverifiedSections": [
+        "Saudi national topic guidance was not found in the opened sources.",
+        "SFDA registration and local formulary availability were not independently verified."
+      ],
+      "medscapeStatus": "unavailable",
+      "originalVersionIds": [
+        "0dcb804b-ce96-4960-9bc2-2c2c67f68685"
+      ]
+    },
+    "pathophysiology": {
+      "summary": "Immune-mediated epidermal inflammation accelerates keratinocyte turnover. Plaque inflammation produces scale, erythema and skin thickening. Systemic inflammation is associated with psoriatic arthritis and cardiometabolic comorbidity.",
+      "keyMechanisms": [
+        "Immune-mediated epidermal inflammation accelerates keratinocyte turnover.",
+        "Plaque inflammation produces scale, erythema and skin thickening.",
+        "Systemic inflammation is associated with psoriatic arthritis and cardiometabolic comorbidity."
+      ],
+      "references": [
+        {
+          "title": "NICE CG153: Psoriasis assessment and management",
+          "edition": "NICE CG153, Recommendations 1.2.1.1–1.2.3.5, 1.3.1.1–1.3.1.2 and 1.5.2.1–1.5.2.6",
+          "url": "https://www.nice.org.uk/guidance/cg153/chapter/recommendations"
+        }
+      ]
+    },
+    "presentation": {
+      "symptoms": [
+        "Itch, soreness or painful fissuring",
+        "Functional or psychological impact from visible or high-impact-site disease"
+      ],
+      "physicalSigns": [
+        "Well-demarcated scaly plaques; nail change may occur",
+        "Record static Physician Global Assessment and affected body surface area"
+      ],
+      "redFlags": [
+        "Generalised pustular psoriasis or erythroderma requires same-day specialist assessment",
+        "Suspected psoriatic arthritis needs rheumatology referral",
+        "Severe or extensive disease, for example more than 10% body surface area"
+      ],
+      "precipitants": [
+        "Skin trauma, infection and medicine exposure may precipitate flares; confirm individually",
+        "Treatment withdrawal or poor adherence may worsen control"
+      ]
+    },
+    "differentials": [
+      {
+        "condition": "Eczema",
+        "distinguishingFeatures": "Less sharply demarcated, often flexural and exudative; diagnostic uncertainty requires specialist review."
+      },
+      {
+        "condition": "Tinea",
+        "distinguishingFeatures": "Annular advancing edge; microscopy/culture when fungal infection is possible."
+      }
+    ],
+    "investigations": {
+      "ruleIn": [
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "Structured severity assessment",
+          "modalityTarget": "Adult assessment",
+          "targetCondition": "Psoriasis",
+          "expectedFinding": "PGA mild to very severe; document body surface area and impact",
+          "clinicalRationale": "Required at presentation, referral and treatment review.",
+          "normalValue": "Clear or nearly clear skin and minimal life impact",
+          "references": [
+            {
+              "title": "NICE CG153: Psoriasis assessment and management",
+              "edition": "NICE CG153, Recommendations 1.2.1.1–1.2.3.5, 1.3.1.1–1.3.1.2 and 1.5.2.1–1.5.2.6",
+              "url": "https://www.nice.org.uk/guidance/cg153/chapter/recommendations"
+            }
+          ]
+        }
+      ],
+      "ruleOut": [
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "PEST screening",
+          "modalityTarget": "Adult assessment",
+          "targetCondition": "Important alternatives or complications of Psoriasis",
+          "expectedFinding": "Positive screen or inflammatory joint symptoms",
+          "clinicalRationale": "Offer annual assessment; PEST does not detect axial disease.",
+          "normalValue": "No features suggesting psoriatic arthritis",
+          "references": [
+            {
+              "title": "NICE CG153: Psoriasis assessment and management",
+              "edition": "NICE CG153, Recommendations 1.2.1.1–1.2.3.5, 1.3.1.1–1.3.1.2 and 1.5.2.1–1.5.2.6",
+              "url": "https://www.nice.org.uk/guidance/cg153/chapter/recommendations"
+            }
+          ]
+        }
+      ]
+    },
+    "clinicalManagement": [
+      {
+        "id": "step-1",
+        "title": "Assess",
+        "timeframe": "At presentation",
+        "actions": [
+          "Assess severity, life impact, arthritis, comorbidities and depression."
+        ]
+      },
+      {
+        "id": "step-2",
+        "title": "Treat",
+        "timeframe": "After assessment",
+        "actions": [
+          "Offer topical treatment first line; add phototherapy or systemic options when topical therapy is unlikely to control disease."
+        ]
+      },
+      {
+        "id": "step-3",
+        "title": "Escalate",
+        "timeframe": "Same day for erythroderma or generalised pustular disease",
+        "actions": [
+          "Refer urgent severe phenotypes; dermatology manages phototherapy/systemic therapy and rheumatology assesses suspected arthritis."
+        ]
+      }
+    ],
+    "medicationPlan": {
+      "status": "local-protocol-required",
+      "regimens": [],
+      "note": "NICE gives treatment classes and refers dosing to product information/BNF. No dose is reproduced without an opened Saudi product source. Check SFDA registration and hospital formulary."
+    },
+    "diagnosticCriteria": [
+      {
+        "criterion": "Extensive psoriasis",
+        "threshold": "More than 10% body surface area affected (NICE CG153 Rec. 1.2.1.10)"
+      },
+      {
+        "criterion": "Systemic-treatment eligibility",
+        "threshold": "Uncontrolled by topical treatment with significant impact plus extensive disease, high-impact local disease, or ineffective/unsuitable phototherapy (Rec. 1.5.2.1)"
+      }
+    ],
+    "teaching": {
+      "scope": "Adult Psoriasis",
+      "learningObjectives": [
+        "Recognise Psoriasis and its red flags.",
+        "Select the first investigations and next actions."
+      ],
+      "pitfalls": [
+        "Using the topic without checking local Saudi protocol and formulary."
+      ],
+      "keyPoints": [
+        "Generalised pustular psoriasis or erythroderma requires same-day specialist assessment",
+        "Suspected psoriatic arthritis needs rheumatology referral"
+      ],
+      "references": [
+        {
+          "title": "NICE CG153: Psoriasis assessment and management",
+          "edition": "NICE CG153, Recommendations 1.2.1.1–1.2.3.5, 1.3.1.1–1.3.1.2 and 1.5.2.1–1.5.2.6",
+          "url": "https://www.nice.org.uk/guidance/cg153/chapter/recommendations",
+          "locator": "NICE CG153, Recommendations 1.2.1.1–1.2.3.5, 1.3.1.1–1.3.1.2 and 1.5.2.1–1.5.2.6"
+        }
+      ]
+    },
+    "nonClinicalManagement": {
+      "patientEducation": [
+        "Explain chronic relapsing course and treatment risks."
+      ],
+      "lifestyleAndDiet": [
+        "Support smoking cessation, healthy weight and cardiovascular risk reduction."
+      ],
+      "mdtReferrals": [
+        "Dermatology; rheumatology for suspected arthritis; primary care for cardiovascular and mental-health risks."
+      ],
+      "dischargeCriteria": [
+        "No emergency phenotype; treatment plan understood and follow-up arranged."
+      ],
+      "followUpPlan": "Review response and adverse effects; annual psoriatic-arthritis assessment and cardiovascular assessment for severe disease."
+    }
+  },
+  {
+    "id": "295b56c9-7969-47b6-8944-7c803c39e732",
+    "title": "Schizophrenia",
+    "specialty": "Psychiatry",
+    "authority": "Other",
+    "status": "under_review",
+    "version": "authoring-standard-2026-10-13-v1",
+    "lastReviewed": "2026-10-13",
+    "pillar": "Chronic Care",
+    "clinicalReviewStatus": "pending",
+    "evidenceAudit": {
+      "checkedOn": "2026-10-13",
+      "status": "incomplete",
+      "scope": "Adult Schizophrenia assessment and management, checked against NICE CG178: Psychosis and schizophrenia in adults.",
+      "findings": [
+        "The cited official source was opened on 13 Oct 2026; numerical claims are limited to the cited sections."
+      ],
+      "unverifiedSections": [
+        "Saudi national topic guidance was not found in the opened sources.",
+        "SFDA registration and local formulary availability were not independently verified."
+      ],
+      "medscapeStatus": "unavailable",
+      "originalVersionIds": [
+        "295b56c9-7969-47b6-8944-7c803c39e732"
+      ]
+    },
+    "pathophysiology": {
+      "summary": "Psychosis alters perception, thought content and thought organisation. Negative and cognitive symptoms contribute to functional impairment. Relapse risk is affected by treatment response, adherence, substance use and psychosocial stress.",
+      "keyMechanisms": [
+        "Psychosis alters perception, thought content and thought organisation.",
+        "Negative and cognitive symptoms contribute to functional impairment.",
+        "Relapse risk is affected by treatment response, adherence, substance use and psychosocial stress."
+      ],
+      "references": [
+        {
+          "title": "NICE CG178: Psychosis and schizophrenia in adults",
+          "edition": "NICE CG178, Recommendations 1.2.4.1–1.3.6.3 and 1.4.4.1–1.4.4.4",
+          "url": "https://www.nice.org.uk/guidance/cg178/chapter/recommendations"
+        }
+      ]
+    },
+    "presentation": {
+      "symptoms": [
+        "Hallucinations, delusions or disorganised thought",
+        "Social withdrawal, reduced motivation or functional decline"
+      ],
+      "physicalSigns": [
+        "Behavioural disorganisation or responding to unseen stimuli",
+        "Self-neglect, impaired function or movement disorder"
+      ],
+      "redFlags": [
+        "Immediate risk of suicide, violence, severe self-neglect or vulnerability",
+        "Catatonia or severe agitation",
+        "First presentation requiring prompt specialist assessment"
+      ],
+      "precipitants": [
+        "Substance use, sleep disruption and psychosocial stress",
+        "Medication interruption or physical illness"
+      ]
+    },
+    "differentials": [
+      {
+        "condition": "Substance-induced psychosis",
+        "distinguishingFeatures": "Temporal relation to intoxication or withdrawal; assess substance history."
+      },
+      {
+        "condition": "Delirium",
+        "distinguishingFeatures": "Acute fluctuating attention and awareness with a medical cause."
+      },
+      {
+        "condition": "Mood disorder with psychotic features",
+        "distinguishingFeatures": "Psychosis occurs in relation to a prominent mood episode."
+      }
+    ],
+    "investigations": {
+      "ruleIn": [
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "Physical and metabolic baseline",
+          "modalityTarget": "Adult assessment",
+          "targetCondition": "Schizophrenia",
+          "expectedFinding": "Baseline abnormality or treatment-related change",
+          "clinicalRationale": "NICE requires these measures before antipsychotic treatment and ongoing physical-health monitoring.",
+          "normalValue": "Local adult ranges for weight, waist, pulse, blood pressure, HbA1c/glucose, lipids and prolactin",
+          "references": [
+            {
+              "title": "NICE CG178: Psychosis and schizophrenia in adults",
+              "edition": "NICE CG178, Recommendations 1.2.4.1–1.3.6.3 and 1.4.4.1–1.4.4.4",
+              "url": "https://www.nice.org.uk/guidance/cg178/chapter/recommendations"
+            }
+          ]
+        }
+      ],
+      "ruleOut": [
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "ECG when indicated",
+          "modalityTarget": "Adult assessment",
+          "targetCondition": "Important alternatives or complications of Schizophrenia",
+          "expectedFinding": "Conduction or QT abnormality",
+          "clinicalRationale": "Offer before antipsychotic treatment when the product information requires it, cardiovascular risk/history exists, or inpatient admission is planned.",
+          "normalValue": "Sinus rhythm and QTc within the local reference range",
+          "references": [
+            {
+              "title": "NICE CG178: Psychosis and schizophrenia in adults",
+              "edition": "NICE CG178, Recommendations 1.2.4.1–1.3.6.3 and 1.4.4.1–1.4.4.4",
+              "url": "https://www.nice.org.uk/guidance/cg178/chapter/recommendations"
+            }
+          ]
+        }
+      ]
+    },
+    "clinicalManagement": [
+      {
+        "id": "step-1",
+        "title": "Safety and assessment",
+        "timeframe": "Immediately for crisis; otherwise without delay",
+        "actions": [
+          "Assess risk, mental state, physical health, substance use, capacity and safeguarding; refer first episode to early-intervention services."
+        ]
+      },
+      {
+        "id": "step-2",
+        "title": "Collaborative treatment",
+        "timeframe": "Acute phase",
+        "actions": [
+          "Specialist care combines an individual antipsychotic trial with CBT; offer family intervention when family are in close contact."
+        ]
+      },
+      {
+        "id": "step-3",
+        "title": "Review",
+        "timeframe": "4–6 weeks at optimum tolerated dose",
+        "actions": [
+          "Record benefits and adverse effects; monitor physical health and function; revise the plan if response is inadequate."
+        ]
+      }
+    ],
+    "medicationPlan": {
+      "status": "local-protocol-required",
+      "regimens": [],
+      "note": "NICE requires individual choice, starting at the lower licensed range and titration using the product information/BNF. No specific medicine or dose is reproduced without an opened Saudi product source. Check SFDA registration and formulary."
+    },
+    "diagnosticCriteria": [
+      {
+        "criterion": "Specialist diagnosis",
+        "threshold": "Diagnosis follows multidisciplinary psychiatric assessment; no single laboratory test confirms schizophrenia"
+      }
+    ],
+    "teaching": {
+      "scope": "Adult Schizophrenia",
+      "learningObjectives": [
+        "Recognise Schizophrenia and its red flags.",
+        "Select the first investigations and next actions."
+      ],
+      "pitfalls": [
+        "Using the topic without checking local Saudi protocol and formulary."
+      ],
+      "keyPoints": [
+        "Immediate risk of suicide, violence, severe self-neglect or vulnerability",
+        "Catatonia or severe agitation"
+      ],
+      "references": [
+        {
+          "title": "NICE CG178: Psychosis and schizophrenia in adults",
+          "edition": "NICE CG178, Recommendations 1.2.4.1–1.3.6.3 and 1.4.4.1–1.4.4.4",
+          "url": "https://www.nice.org.uk/guidance/cg178/chapter/recommendations",
+          "locator": "NICE CG178, Recommendations 1.2.4.1–1.3.6.3 and 1.4.4.1–1.4.4.4"
+        }
+      ]
+    },
+    "nonClinicalManagement": {
+      "patientEducation": [
+        "Discuss expected benefits, adverse effects and the person's treatment preferences."
+      ],
+      "lifestyleAndDiet": [
+        "Offer a combined healthy-eating and physical-activity programme."
+      ],
+      "mdtReferrals": [
+        "Early-intervention psychiatry, psychology, primary care, pharmacy, social and occupational services."
+      ],
+      "dischargeCriteria": [
+        "Risk manageable, follow-up accepted, medicine/psychological plan documented and physical-health monitoring arranged."
+      ],
+      "followUpPlan": "Regular mental-state, function, adherence, adverse-effect and cardiometabolic review; provide re-entry route if discharged."
+    }
+  },
+  {
+    "id": "135e5254-3229-43c3-92b9-0c5acdc921aa",
+    "title": "ST-Elevation Myocardial Infarction",
+    "specialty": "Cardiology and Emergency Medicine",
+    "authority": "Other",
+    "status": "under_review",
+    "version": "authoring-standard-2026-10-13-v1",
+    "lastReviewed": "2026-10-13",
+    "pillar": "Urgent Care",
+    "clinicalReviewStatus": "pending",
+    "evidenceAudit": {
+      "checkedOn": "2026-10-13",
+      "status": "incomplete",
+      "scope": "Adults with suspected acute coronary syndrome (ACS) in the emergency department: ECG and high-sensitivity troponin pathways, reperfusion for STEMI/occlusion MI, and early NSTE-ACS management. Verified against the Australian ACS guideline 2025 (Heart Foundation/CSANZ), NICE NG185 and the Saudi Heart Association biomarker position statement (2022). ESC 2023 and ACC/AHA 2025 texts were not accessible (publisher block).",
+      "findings": [
+        "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+        "Normal values are typical adult reference ranges; laboratories differ.",
+        "v3: user-supplied unverified doses (acs-user-revision-2026-10-11-v1) replaced with FDA-label regimens for nitroglycerin, ticagrelor, clopidogrel, prasugrel and enoxaparin; contraindications added. UFH dose removed (not in sources reviewed).",
+        "Re-scoped as ST-Elevation Myocardial Infarction; source URLs and locators were re-opened or retained from the repository evidence packet on 2026-10-13."
+      ],
+      "unverifiedSections": [
+        "Fondaparinux, UFH and tenecteplase ACS doses — local protocol",
+        "ESC 2023 / ACC-AHA 2025 texts not accessible",
+        "Saudi cardiogenic shock consensus not reviewed in detail",
+        "SFDA registration and current Saudi formulary availability were not independently verified in this run."
+      ],
+      "medscapeStatus": "unavailable",
+      "originalVersionIds": [
+        "135e5254-3229-43c3-92b9-0c5acdc921aa"
+      ]
+    },
+    "pathophysiology": {
+      "summary": "ACS is myocardial ischaemia from an acute reduction in coronary flow, usually after atherosclerotic plaque rupture or erosion with thrombosis. It includes acute myocardial infarction (troponin rise with ischaemia) and unstable angina. Complete occlusion (STEMI or other 'acute coronary occlusion MI', ACOMI) needs emergency reperfusion.",
+      "keyMechanisms": [
+        "Plaque rupture/erosion exposes thrombogenic material → platelet aggregation and thrombus; partial occlusion gives NSTE-ACS, complete occlusion gives STEMI/ACOMI.",
+        "ACOMI includes ECG patterns beyond ST elevation: high lateral, posterior and right ventricular MI, De Winter T waves, and LBBB meeting modified Sgarbossa criteria (Australian 2025).",
+        "Myocardial necrosis releases troponin; high-sensitivity assays allow rule-in/rule-out within 1–2 h using assay-specific thresholds and deltas.",
+        "Complications: arrhythmia (VF/VT), heart failure, cardiogenic shock, mechanical complications."
+      ]
+    },
+    "presentation": {
+      "symptoms": [
+        "Central chest pain or pressure, may radiate to arm, jaw or back; at rest or prolonged.",
+        "Breathlessness, sweating, nausea, syncope.",
+        "Atypical presentations are common in older people, women and people with diabetes."
+      ],
+      "physicalSigns": [
+        "Often normal examination.",
+        "Signs of heart failure or shock (crackles, hypotension, cold peripheries).",
+        "New murmur (mitral regurgitation, ventricular septal rupture)."
+      ],
+      "redFlags": [
+        "ST elevation or ACOMI equivalent on ECG → emergency reperfusion",
+        "Ongoing pain, haemodynamic or electrical instability, acute heart failure, cardiogenic shock (very high risk NSTE-ACS → invasive within 2 h)",
+        "Cardiac arrest — do not use level of consciousness to decide eligibility for angiography (NICE)"
+      ],
+      "precipitants": [
+        "Atherosclerotic risk factors: smoking, diabetes, hypertension, dyslipidaemia, family history.",
+        "Non-atherosclerotic causes such as spontaneous coronary artery dissection (SCAD)."
+      ]
+    },
+    "differentials": [
+      {
+        "condition": "Aortic dissection",
+        "distinguishingFeatures": "Tearing pain to back, pulse/BP differential, widened mediastinum — CT aortogram before antithrombotics."
+      },
+      {
+        "condition": "Pulmonary embolism",
+        "distinguishingFeatures": "Pleuritic pain, hypoxaemia, risk factors; CTPA."
+      },
+      {
+        "condition": "Pericarditis / myocarditis",
+        "distinguishingFeatures": "Positional pain, diffuse ST elevation, rub."
+      },
+      {
+        "condition": "Type 2 MI and non-ischaemic troponin rise",
+        "distinguishingFeatures": "Sepsis, tachyarrhythmia, anaemia, renal failure — troponin rise without plaque event."
+      }
+    ],
+    "investigations": {
+      "ruleIn": [
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "12-lead ECG",
+          "modalityTarget": "Within 10 min of first clinical contact; repeat if symptoms persist, change or recur; right-sided/posterior leads if inconclusive",
+          "targetCondition": "STEMI/ACOMI, ischaemia",
+          "expectedFinding": "ST elevation or ACOMI patterns; ST depression/T inversion in NSTE-ACS.",
+          "clinicalRationale": "STEMI/ACOMI → emergency reperfusion. Continuous monitoring and defibrillator availability if ongoing symptoms or new ischaemic changes.",
+          "normalValue": "Normal sinus rhythm without ischaemic changes",
+          "references": [
+            {
+              "title": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+              "edition": "Med J Aust 2026;224(2):e70127 (Brieger DB et al.)",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "High-sensitivity troponin (hs-cTn) — 0/1 h or 0/2 h, or High-STEACS",
+          "modalityTarget": "On arrival and repeat per pathway",
+          "targetCondition": "Myocardial injury",
+          "expectedFinding": "Above the sex-specific 99th percentile with a rise/fall (assay-specific deltas).",
+          "clinicalRationale": "Use the assay's own thresholds and the same assay for deltas. Low risk: discharge; intermediate with elevated troponin: inpatient investigation; intermediate without: outpatient testing within about 30 days.",
+          "normalValue": "Below the assay-specific 99th percentile (e.g. hs-cTnT below 14 ng/L — SHA)",
+          "references": [
+            {
+              "title": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+              "edition": "Med J Aust 2026;224(2):e70127 (Brieger DB et al.)",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/"
+            },
+            {
+              "title": "Saudi Heart Association position statement on the use of biomarkers for the management of heart failure and acute coronary syndrome",
+              "edition": "J Saudi Heart Assoc 2022;34(2):114",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9518724/"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "FBC, electrolytes, renal function, glucose, lipids",
+          "modalityTarget": "Arrival",
+          "targetCondition": "Comorbidity, drug dosing, bleeding risk",
+          "expectedFinding": "Anaemia; renal impairment (creatinine above 265 µmol/L changes anticoagulant choice — NICE).",
+          "clinicalRationale": "Guides antithrombotic selection and dosing.",
+          "references": [
+            {
+              "title": "NICE NG185: Acute coronary syndromes",
+              "edition": "NICE guideline, 2020",
+              "url": "https://www.nice.org.uk/guidance/ng185"
+            }
+          ]
+        },
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "Risk scores (GRACE; bleeding risk)",
+          "modalityTarget": "Once NSTE-ACS is diagnosed",
+          "targetCondition": "Prognosis and invasive timing",
+          "expectedFinding": "GRACE predicted 6-month mortality above 3.0% = intermediate or higher risk (NICE).",
+          "clinicalRationale": "Supports angiography timing; bleeding scores guide antithrombotic intensity.",
+          "references": [
+            {
+              "title": "NICE NG185: Acute coronary syndromes",
+              "edition": "NICE guideline, 2020",
+              "url": "https://www.nice.org.uk/guidance/ng185"
+            },
+            {
+              "title": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+              "edition": "Med J Aust 2026;224(2):e70127 (Brieger DB et al.)",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/"
+            }
+          ]
+        }
+      ],
+      "ruleOut": [
+        {
+          "tier": "advancedImaging",
+          "testName": "Echocardiography",
+          "modalityTarget": "Shock, heart failure, new murmur, or diagnostic uncertainty",
+          "targetCondition": "Imaging",
+          "expectedFinding": "LV function, regional wall motion, mechanical complications.",
+          "clinicalRationale": "Identifies complications and LV impairment (beta-blocker indication).",
+          "references": [
+            {
+              "title": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+              "edition": "Med J Aust 2026;224(2):e70127 (Brieger DB et al.)",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/"
+            }
+          ]
+        },
+        {
+          "tier": "advancedImaging",
+          "testName": "Coronary angiography",
+          "modalityTarget": "STEMI/ACOMI (primary PCI); NSTE-ACS by risk timing",
+          "targetCondition": "Imaging",
+          "expectedFinding": "Culprit lesion.",
+          "clinicalRationale": "Radial access preferred.",
+          "references": [
+            {
+              "title": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+              "edition": "Med J Aust 2026;224(2):e70127 (Brieger DB et al.)",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/"
+            },
+            {
+              "title": "NICE NG185: Acute coronary syndromes",
+              "edition": "NICE guideline, 2020",
+              "url": "https://www.nice.org.uk/guidance/ng185"
+            }
+          ]
+        }
+      ]
+    },
+    "clinicalManagement": [
+      {
+        "id": "initial",
+        "title": "First 10 minutes",
+        "timeframe": "Arrival",
+        "actions": [
+          "ECG within 10 min; continuous monitoring and defibrillator if ongoing symptoms or ischaemic ECG.",
+          "Aspirin 300 mg orally (chewed or dissolved) unless contraindicated.",
+          "Oxygen only if SpO2 below 90%; keep SpO2 at 96% or lower if oxygen is given.",
+          "IV fentanyl or morphine boluses for chest pain if no contraindication.",
+          "Exclude aortic dissection when suspected before antithrombotics."
+        ]
+      },
+      {
+        "id": "stemi",
+        "title": "STEMI / ACOMI — reperfusion",
+        "timeframe": "Within 12 h of onset",
+        "actions": [
+          "Primary PCI preferred if deliverable within 120 min of first medical contact (NICE: within 120 min of when fibrinolysis could have been given). PCI-capable centre: within 60 min of arrival; transfer: within 90 min of first hospital arrival.",
+          "Otherwise fibrinolysis within 30 min of first medical contact, with an antithrombin (UFH or enoxaparin). Age 70 or over: half-dose tenecteplase as part of a pharmaco-invasive strategy.",
+          "After fibrinolysis: ECG at 60–90 min — residual ST elevation → immediate angiography (do not repeat lysis); successful lysis → transfer to PCI centre, angiography within 2–24 h.",
+          "Primary PCI: DAPT with aspirin + ticagrelor or prasugrel (clopidogrel if these are contraindicated or on oral anticoagulation); UFH (or bivalirudin). No routine GP IIb/IIIa inhibitor.",
+          "Shock within 12 h → angiography ± PCI; no routine IABP or VA-ECMO."
+        ]
+      },
+      {
+        "id": "nste",
+        "title": "NSTE-ACS",
+        "timeframe": "From diagnosis",
+        "actions": [
+          "Anticoagulate: UFH, enoxaparin or fondaparinux (NICE: fondaparinux if no high bleeding risk and not going for immediate angiography; UFH if creatinine above 265 µmol/L).",
+          "Very high risk (instability, ongoing pain, shock, heart failure, arrhythmia): immediate invasive strategy within 2 h.",
+          "High risk: early invasive within 24 h (Australian); NICE: consider angiography within 72 h if GRACE 6-month mortality above 3.0%.",
+          "DAPT: aspirin + ticagrelor or prasugrel if routine invasive (prasugrel only once anatomy known and PCI intended); selective invasive: ticagrelor or clopidogrel.",
+          "Lower risk: ischaemia testing guides need for angiography."
+        ]
+      },
+      {
+        "id": "secondary",
+        "title": "In-hospital and discharge",
+        "timeframe": "Admission",
+        "actions": [
+          "DAPT 6–12 months (high ischaemic/low bleeding risk); then long-term P2Y12 inhibitor over aspirin (Australian).",
+          "On oral anticoagulation: OAC + aspirin + clopidogrel for 1–4 weeks, then stop aspirin (PPI with triple therapy).",
+          "High-intensity lipid lowering: LDL-C below 1.4 mmol/L and at least 50% reduction; beta-blocker if LV impairment; cardiac rehabilitation; vaccinations."
+        ]
+      }
+    ],
+    "medicationPlan": {
+      "status": "local-protocol-required",
+      "regimens": [
+        {
+          "indication": "Suspected or confirmed ACS",
+          "patientGroup": "Adults",
+          "genericName": "Aspirin",
+          "dose": "300 mg",
+          "route": "PO, chewed or dissolved",
+          "frequency": "Once (loading), then daily low dose",
+          "duration": "Long term",
+          "adjustments": [
+            "Contraindication: true allergy, active bleeding"
+          ],
+          "monitoring": [
+            "Bleeding"
+          ],
+          "contraindications": [
+            "Active bleeding",
+            "Known allergy to NSAIDs",
+            "Syndrome of asthma, rhinitis and nasal polyps",
+            "Hypersensitivity to aspirin"
+          ],
+          "sourceTitle": "Australian ACS guideline 2025",
+          "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/",
+          "sourceEdition": "Med J Aust 2026, Table 3"
+        },
+        {
+          "indication": "Ischaemic chest pain (if SBP adequate)",
+          "patientGroup": "Adults",
+          "genericName": "Nitroglycerin (glyceryl trinitrate) sublingual",
+          "dose": "1 tablet (0.3–0.6 mg by product)",
+          "route": "Sublingual",
+          "frequency": "Repeat every 5 min if needed",
+          "duration": "Maximum 3 tablets in 15 min; if pain persists seek emergency care",
+          "adjustments": [
+            "Avoid if hypotensive or right ventricular infarction suspected (clinical caution)"
+          ],
+          "monitoring": [
+            "BP, heart rate, headache"
+          ],
+          "contraindications": [
+            "PDE-5 inhibitors or riociguat",
+            "Severe anaemia",
+            "Raised intracranial pressure",
+            "Circulatory failure and shock",
+            "Hypersensitivity to nitrates"
+          ],
+          "sourceTitle": "Nitroglycerin sublingual prescribing information (US FDA label, DailyMed)",
+          "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=041f127e-5166-4484-bc1a-0a373d1187ae",
+          "sourceEdition": "Accessed via openFDA 12 Oct 2026"
+        },
+        {
+          "indication": "ACS — P2Y12 inhibitor (with aspirin 75–100 mg daily maintenance)",
+          "patientGroup": "Adults",
+          "genericName": "Ticagrelor",
+          "dose": "180 mg loading",
+          "route": "PO",
+          "frequency": "Then 90 mg twice daily (first maintenance dose 6–12 h after load)",
+          "duration": "First year; 60 mg twice daily thereafter",
+          "adjustments": [
+            "Aspirin maintenance above 100 mg reduces effectiveness (label boxed warning)",
+            "Avoid with strong CYP3A inhibitors/inducers"
+          ],
+          "monitoring": [
+            "Bleeding",
+            "Dyspnoea",
+            "Bradyarrhythmia"
+          ],
+          "contraindications": [
+            "History of intracranial haemorrhage",
+            "Active pathological bleeding",
+            "Hypersensitivity"
+          ],
+          "sourceTitle": "Ticagrelor prescribing information (US FDA label, DailyMed)",
+          "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1225fd45-9b56-1671-ee77-cd0c9f2174a5",
+          "sourceEdition": "Accessed via openFDA 12 Oct 2026"
+        },
+        {
+          "indication": "ACS — P2Y12 inhibitor (alternative)",
+          "patientGroup": "Adults",
+          "genericName": "Clopidogrel",
+          "dose": "300 mg loading",
+          "route": "PO",
+          "frequency": "Then 75 mg once daily",
+          "duration": "As per DAPT plan",
+          "adjustments": [
+            "Without a loading dose antiplatelet effect is delayed by several days",
+            "Reduced effect in CYP2C19 poor metabolisers (boxed warning)"
+          ],
+          "monitoring": [
+            "Bleeding"
+          ],
+          "contraindications": [
+            "Active pathological bleeding (e.g. peptic ulcer, intracranial haemorrhage)",
+            "Hypersensitivity"
+          ],
+          "sourceTitle": "Clopidogrel prescribing information (US FDA label, DailyMed)",
+          "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0078fb3d-3595-4ae1-a059-1d5e81c879cf",
+          "sourceEdition": "Accessed via openFDA 12 Oct 2026"
+        },
+        {
+          "indication": "ACS managed with PCI (coronary anatomy known)",
+          "patientGroup": "Adults",
+          "genericName": "Prasugrel",
+          "dose": "60 mg loading",
+          "route": "PO",
+          "frequency": "Then 10 mg once daily",
+          "duration": "As per DAPT plan",
+          "adjustments": [
+            "Consider 5 mg daily if under 60 kg",
+            "Generally not recommended at 75 years or over",
+            "Do not start before coronary anatomy is defined in NSTE-ACS (guideline pitfall)"
+          ],
+          "monitoring": [
+            "Bleeding"
+          ],
+          "contraindications": [
+            "Active pathological bleeding",
+            "Prior TIA or stroke",
+            "Hypersensitivity"
+          ],
+          "sourceTitle": "Prasugrel prescribing information (US FDA label, DailyMed)",
+          "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=35aa7f3e-bbd8-4eae-b61f-29d1abca2224",
+          "sourceEdition": "Accessed via openFDA 12 Oct 2026"
+        },
+        {
+          "indication": "Unstable angina / NSTEMI (with aspirin)",
+          "patientGroup": "Adults",
+          "genericName": "Enoxaparin",
+          "dose": "1 mg/kg",
+          "route": "SC",
+          "frequency": "Every 12 hours",
+          "duration": "Usually 2–8 days (label)",
+          "adjustments": [
+            "CrCl below 30 mL/min: dose adjustment per label",
+            "Spinal/epidural haematoma risk (boxed warning)"
+          ],
+          "monitoring": [
+            "Bleeding, platelet count, renal function"
+          ],
+          "contraindications": [
+            "Active major bleeding",
+            "Heparin-induced thrombocytopenia within 100 days or circulating HIT antibodies",
+            "Hypersensitivity to enoxaparin, heparin or pork products"
+          ],
+          "sourceTitle": "Enoxaparin sodium injection prescribing information (US FDA label, DailyMed)",
+          "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=014c6710-f2c4-fd1e-e063-6394a90ae525",
+          "sourceEdition": "Accessed via openFDA 12 Oct 2026"
+        },
+        {
+          "indication": "STEMI (with fibrinolysis or as per label)",
+          "patientGroup": "Adults under 75 years",
+          "genericName": "Enoxaparin",
+          "dose": "30 mg IV bolus plus 1 mg/kg SC",
+          "route": "IV then SC",
+          "frequency": "Then 1 mg/kg SC every 12 hours",
+          "duration": "Per label",
+          "adjustments": [
+            "Maximum 100 mg for the first two SC doses only",
+            "Age 75 or over: no IV bolus and reduced dose per label",
+            "CrCl below 30 mL/min: adjust per label"
+          ],
+          "monitoring": [
+            "Bleeding, platelet count, renal function"
+          ],
+          "contraindications": [
+            "Active major bleeding",
+            "Heparin-induced thrombocytopenia within 100 days or circulating HIT antibodies",
+            "Hypersensitivity to enoxaparin, heparin or pork products"
+          ],
+          "sourceTitle": "Enoxaparin sodium injection prescribing information (US FDA label, DailyMed)",
+          "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=014c6710-f2c4-fd1e-e063-6394a90ae525",
+          "sourceEdition": "Accessed via openFDA 12 Oct 2026"
+        }
+      ],
+      "note": "Aspirin 300 mg loading is from the Australian ACS guideline 2025. Nitroglycerin, ticagrelor, clopidogrel, prasugrel and enoxaparin doses and contraindications are from the US FDA prescribing information (DailyMed). Fondaparinux and unfractionated heparin ACS doses, and fibrinolytic doses, were not found in the sources reviewed (the fondaparinux US label has no ACS indication) — use the hospital ACS/STEMI protocol. Check SFDA registration, hospital formulary and actual availability; registration does not mean the drug is stocked."
+    },
+    "diagnosticCriteria": [
+      {
+        "criterion": "STEMI/ACOMI reperfusion window",
+        "threshold": "Within 12 h of symptom onset"
+      },
+      {
+        "criterion": "Primary PCI vs fibrinolysis",
+        "threshold": "PCI if within 120 min of first medical contact; otherwise lysis within 30 min"
+      },
+      {
+        "criterion": "NSTE-ACS very high risk",
+        "threshold": "Immediate invasive within 2 h"
+      },
+      {
+        "criterion": "NSTE-ACS high risk",
+        "threshold": "Early invasive within 24 h (Australian); NICE within 72 h if GRACE 6-month mortality above 3.0%"
+      },
+      {
+        "criterion": "Oxygen",
+        "threshold": "Only if SpO2 below 90%; keep SpO2 96% or lower"
+      }
+    ],
+    "guidelineComparison": {
+      "title": "Australian ACS guideline 2025 vs NICE NG185",
+      "columns": [
+        "Australian 2025",
+        "NICE NG185"
+      ],
+      "rows": [
+        {
+          "parameter": "Occlusion MI",
+          "values": [
+            "ACOMI includes STEMI-equivalent ECG patterns",
+            "STEMI"
+          ]
+        },
+        {
+          "parameter": "Older patients and lysis",
+          "values": [
+            "Half-dose tenecteplase if 70 or over (pharmaco-invasive)",
+            "Not specified"
+          ]
+        },
+        {
+          "parameter": "NSTE-ACS timing",
+          "values": [
+            "Very high risk within 2 h; high risk within 24 h",
+            "Immediate if unstable; within 72 h if GRACE above 3.0%"
+          ]
+        },
+        {
+          "parameter": "NSTE-ACS anticoagulant",
+          "values": [
+            "UFH, enoxaparin or fondaparinux",
+            "Fondaparinux preferred unless high bleeding risk/immediate angiography"
+          ]
+        },
+        {
+          "parameter": "Oxygen",
+          "values": [
+            "Only if SpO2 below 90%; max 96%",
+            "Not detailed in NG185 recommendations reviewed"
+          ]
+        }
+      ],
+      "note": "Both: aspirin, primary PCI within 120 min or lysis, potent P2Y12 inhibitor for invasive strategy, radial access."
+    },
+    "teaching": {
+      "learningObjectives": [
+        "Recognise, investigate and manage acute coronary syndrome in the emergency department."
+      ],
+      "pitfalls": [
+        "Routine oxygen in normoxic patients.",
+        "Missing posterior or high lateral occlusion MI.",
+        "Mixing troponin assays for deltas.",
+        "Prasugrel before coronary anatomy in NSTE-ACS.",
+        "Antithrombotics before excluding aortic dissection."
+      ],
+      "keyPoints": [
+        "ECG within 10 min; look for ACOMI patterns, not just ST elevation.",
+        "Aspirin 300 mg; oxygen only if SpO2 below 90%.",
+        "Primary PCI within 120 min or lysis within 30 min.",
+        "hs-troponin 0/1 or 0/2 h pathway with assay-specific values.",
+        "NSTE-ACS: very high risk within 2 h, high risk within 24 h."
+      ],
+      "references": [
+        {
+          "title": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+          "edition": "Med J Aust 2026;224(2):e70127 (Brieger DB et al.)",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/",
+          "locator": "Tables 1–4 (assessment and diagnosis; hospital care and reperfusion; recovery and secondary prevention); Figures 3–5"
+        },
+        {
+          "title": "NICE NG185: Acute coronary syndromes",
+          "edition": "NICE guideline, 2020",
+          "url": "https://www.nice.org.uk/guidance/ng185",
+          "locator": "Sections 1.1 (STEMI) and 1.2 (unstable angina/NSTEMI)"
+        },
+        {
+          "title": "Saudi Heart Association position statement on the use of biomarkers for the management of heart failure and acute coronary syndrome",
+          "edition": "J Saudi Heart Assoc 2022;34(2):114",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9518724/",
+          "locator": "Acute coronary syndrome troponin statements; Table 1 assay cut-offs"
+        },
+        {
+          "title": "National Heart Center – Saudi Health Council Acute Myocardial Infarction-Related Cardiogenic Shock Consensus Document",
+          "edition": "Saudi Med J 2026",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13227443/",
+          "locator": "Cited for awareness; not reviewed in detail"
+        },
+        {
+          "title": "SFDA Saudi Drug Information System (registration search)",
+          "edition": "Accessed 11–12 Oct 2026",
+          "url": "https://sdi.sfda.gov.sa/"
+        }
+      ]
+    },
+    "nonClinicalManagement": {
+      "patientEducation": [
+        "Medication adherence (DAPT); call for help with recurrent pain.",
+        "Smoking cessation, diet, exercise, cardiac rehabilitation."
+      ],
+      "lifestyleAndDiet": [
+        "Not applicable in the acute phase."
+      ],
+      "mdtReferrals": [
+        "Cardiology/cath lab activation; CCU.",
+        "Cardiac rehabilitation."
+      ],
+      "dischargeCriteria": [
+        "Low-risk pathway result with normal ECG and serial troponins below the 99th percentile; or completed in-hospital management.",
+        "On secondary prevention with cardiac rehabilitation referral."
+      ],
+      "followUpPlan": "Cardiology follow-up; cardiac rehabilitation; outpatient non-invasive testing within about 30 days for intermediate-risk patients with normal troponins; DAPT plan documented."
+    }
+  },
+  {
+    "id": "ac59eded-f1e9-4a52-afde-467300c4fda4",
+    "title": "Stable Angina",
+    "specialty": "Cardiology",
+    "authority": "NICE",
+    "status": "under_review",
+    "version": "authoring-standard-2026-10-13-v1",
+    "lastReviewed": "2026-10-13",
+    "pillar": "Chronic Care",
+    "clinicalReviewStatus": "pending",
+    "evidenceAudit": {
+      "checkedOn": "2026-10-13",
+      "status": "incomplete",
+      "scope": "Adults with chronic coronary syndrome/stable angina in primary and cardiology care: diagnosis (CT coronary angiography first line), symptom relief, anti-anginal drug sequence, secondary prevention and revascularisation referral. Verified against NICE CG126 (stable angina), CG95 (chest pain diagnosis) and NG238 (lipids); doses and contraindications from US FDA prescribing information. ESC 2024 chronic coronary syndrome guideline and Saudi guidance were not reviewed. Acute coronary syndrome is a separate topic.",
+      "findings": [
+        "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+        "Normal values are typical adult reference ranges; laboratories differ.",
+        "Re-scoped as Stable Angina; source URLs and locators were re-opened or retained from the repository evidence packet on 2026-10-13."
+      ],
+      "unverifiedSections": [
+        "ESC 2024 chronic coronary syndrome guideline not reviewed",
+        "No Saudi chronic coronary guidance reviewed",
+        "Ivabradine/nicorandil dosing — specialist",
+        "SFDA registration and current Saudi formulary availability were not independently verified in this run."
+      ],
+      "medscapeStatus": "unavailable",
+      "originalVersionIds": [
+        "ac59eded-f1e9-4a52-afde-467300c4fda4"
+      ]
+    },
+    "pathophysiology": {
+      "summary": "Ischaemic heart disease (coronary artery disease) is myocardial ischaemia from atherosclerotic narrowing of the coronary arteries. Stable angina is predictable chest discomfort on exertion or emotion, relieved by rest or a nitrate within minutes, caused by a fixed stenosis limiting flow when oxygen demand rises.",
+      "keyMechanisms": [
+        "Atherosclerotic plaque narrows the lumen; flow reserve is adequate at rest but insufficient when demand rises (heart rate, BP, contractility) → supply–demand mismatch → angina.",
+        "Beta-blockers lower heart rate and contractility; calcium-channel blockers dilate coronaries and reduce afterload; nitrates reduce preload — all reduce demand or improve supply.",
+        "Plaque rupture or erosion turns stable disease into an acute coronary syndrome — secondary prevention (antiplatelet, high-intensity statin, BP and risk-factor control) reduces events.",
+        "Significant CAD on CT: 70% or more stenosis in a major epicardial segment or 50% or more in the left main (NICE CG95)."
+      ]
+    },
+    "presentation": {
+      "symptoms": [
+        "Constricting chest, neck, shoulder, jaw or arm discomfort, precipitated by exertion and relieved by rest or GTN within about 5 minutes (typical angina: all three features).",
+        "Exertional breathlessness (angina equivalent), especially in older people, women and people with diabetes."
+      ],
+      "physicalSigns": [
+        "Often normal examination.",
+        "Signs of risk factors or complications: hypertension, xanthelasma, carotid bruits, signs of heart failure, aortic stenosis murmur (alternative cause of angina)."
+      ],
+      "redFlags": [
+        "Pain at rest, increasing frequency/severity or pain lasting over 15 minutes — possible ACS: call ambulance",
+        "Pain persisting 5 minutes after a second GTN dose — emergency (NICE)",
+        "Syncope or breathlessness on exertion with ejection systolic murmur (aortic stenosis)",
+        "Symptoms uncontrolled on two anti-anginal drugs — consider revascularisation"
+      ],
+      "precipitants": [
+        "Smoking",
+        "Diabetes",
+        "Hypertension",
+        "Dyslipidaemia",
+        "Obesity, inactivity",
+        "Family history of premature CHD",
+        "CKD"
+      ]
+    },
+    "differentials": [
+      {
+        "condition": "Acute coronary syndrome",
+        "distinguishingFeatures": "Rest pain, crescendo pattern, troponin rise."
+      },
+      {
+        "condition": "Aortic stenosis, hypertrophic cardiomyopathy",
+        "distinguishingFeatures": "Murmur; echo diagnosis."
+      },
+      {
+        "condition": "Oesophageal/musculoskeletal pain",
+        "distinguishingFeatures": "Not exertional; reproducible tenderness; reflux symptoms."
+      },
+      {
+        "condition": "Anaemia, thyrotoxicosis",
+        "distinguishingFeatures": "Precipitate angina; blood tests."
+      }
+    ],
+    "investigations": {
+      "ruleIn": [
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "Resting 12-lead ECG",
+          "modalityTarget": "All suspected angina",
+          "targetCondition": "Ischaemia or previous MI",
+          "expectedFinding": "Q waves, ST depression, T-wave inversion, LBBB.",
+          "clinicalRationale": "A normal ECG does not exclude CAD; ECG changes with non-anginal pain still warrant CT coronary angiography (CG95).",
+          "normalValue": "Sinus rhythm, no Q waves or ST-T changes",
+          "references": [
+            {
+              "title": "NICE CG95: Recent-onset chest pain of suspected cardiac origin: assessment and diagnosis",
+              "edition": "NICE clinical guideline, 2010 (updated 2016)",
+              "url": "https://www.nice.org.uk/guidance/cg95"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Lipids, HbA1c, renal function, FBC, TSH if indicated",
+          "modalityTarget": "At diagnosis",
+          "targetCondition": "Risk factors and precipitants",
+          "expectedFinding": "Dyslipidaemia, diabetes, CKD, anaemia, thyroid disease.",
+          "clinicalRationale": "Guides secondary prevention; treat precipitants.",
+          "references": [
+            {
+              "title": "NICE CG126: Stable angina: management",
+              "edition": "NICE clinical guideline, 2011 (updated 2016)",
+              "url": "https://www.nice.org.uk/guidance/cg126"
+            },
+            {
+              "title": "NICE NG238: Cardiovascular disease: risk assessment and reduction, including lipid modification",
+              "edition": "NICE guideline, 2023",
+              "url": "https://www.nice.org.uk/guidance/ng238"
+            }
+          ]
+        }
+      ],
+      "ruleOut": [
+        {
+          "tier": "advancedImaging",
+          "testName": "CT coronary angiography (64-slice or above)",
+          "modalityTarget": "First line if typical or atypical angina, or non-anginal pain with ST-T changes/Q waves on ECG (CG95)",
+          "targetCondition": "Imaging",
+          "expectedFinding": "Coronary stenosis; significant CAD = 70% or more in a major segment or 50% or more left main.",
+          "clinicalRationale": "Confirms or excludes CAD anatomically; non-diagnostic or uncertain significance → functional imaging.",
+          "references": [
+            {
+              "title": "NICE CG95: Recent-onset chest pain of suspected cardiac origin: assessment and diagnosis",
+              "edition": "NICE clinical guideline, 2010 (updated 2016)",
+              "url": "https://www.nice.org.uk/guidance/cg95"
+            }
+          ]
+        },
+        {
+          "tier": "advancedImaging",
+          "testName": "Non-invasive functional imaging (stress echo, MPS-SPECT, stress MRI)",
+          "modalityTarget": "Second line: CTCA uncertain/non-diagnostic, or known CAD with uncertain symptoms",
+          "targetCondition": "Imaging",
+          "expectedFinding": "Reversible ischaemia.",
+          "clinicalRationale": "Guides need for invasive angiography and revascularisation.",
+          "references": [
+            {
+              "title": "NICE CG95: Recent-onset chest pain of suspected cardiac origin: assessment and diagnosis",
+              "edition": "NICE clinical guideline, 2010 (updated 2016)",
+              "url": "https://www.nice.org.uk/guidance/cg95"
+            }
+          ]
+        },
+        {
+          "tier": "advancedImaging",
+          "testName": "Invasive coronary angiography",
+          "modalityTarget": "Third line, or when revascularisation is being considered",
+          "targetCondition": "Imaging",
+          "expectedFinding": "Anatomy for PCI or CABG.",
+          "clinicalRationale": "Defines revascularisation strategy.",
+          "references": [
+            {
+              "title": "NICE CG95: Recent-onset chest pain of suspected cardiac origin: assessment and diagnosis",
+              "edition": "NICE clinical guideline, 2010 (updated 2016)",
+              "url": "https://www.nice.org.uk/guidance/cg95"
+            },
+            {
+              "title": "NICE CG126: Stable angina: management",
+              "edition": "NICE clinical guideline, 2011 (updated 2016)",
+              "url": "https://www.nice.org.uk/guidance/cg126"
+            }
+          ]
+        },
+        {
+          "tier": "firstLineImaging",
+          "testName": "Echocardiography",
+          "modalityTarget": "Murmur, heart failure signs, previous MI",
+          "targetCondition": "Imaging",
+          "expectedFinding": "LV function, valve disease (aortic stenosis).",
+          "clinicalRationale": "Changes management and prognosis.",
+          "references": [
+            {
+              "title": "NICE CG126: Stable angina: management",
+              "edition": "NICE clinical guideline, 2011 (updated 2016)",
+              "url": "https://www.nice.org.uk/guidance/cg126"
+            }
+          ]
+        }
+      ]
+    },
+    "clinicalManagement": [
+      {
+        "id": "diagnose",
+        "title": "Diagnose",
+        "timeframe": "At presentation",
+        "actions": [
+          "Assess pain typicality; ECG; CT coronary angiography first line when angina cannot be excluded clinically (CG95).",
+          "Treat as stable angina while awaiting tests if symptoms are typical; consider aspirin until diagnosis (CG95)."
+        ]
+      },
+      {
+        "id": "relief",
+        "title": "Relieve episodes",
+        "timeframe": "From diagnosis",
+        "actions": [
+          "Short-acting GTN for treatment and before planned exertion; repeat after 5 minutes; call an ambulance if pain persists 5 minutes after the second dose (CG126)."
+        ]
+      },
+      {
+        "id": "antianginal",
+        "title": "Anti-anginal drugs",
+        "timeframe": "Review 2–4 weeks after each change",
+        "actions": [
+          "First line: a beta-blocker or a calcium-channel blocker, chosen by comorbidities and preference; titrate to maximum tolerated dose.",
+          "Not controlled: switch to the other or combine — with a beta-blocker use a dihydropyridine CCB (amlodipine, slow-release nifedipine, felodipine).",
+          "Beta-blocker and CCB both unsuitable: long-acting nitrate, ivabradine, nicorandil or ranolazine as monotherapy or add-on.",
+          "Third drug only if uncontrolled on two and awaiting or unsuitable for revascularisation."
+        ]
+      },
+      {
+        "id": "prevention",
+        "title": "Secondary prevention",
+        "timeframe": "From diagnosis",
+        "actions": [
+          "Aspirin 75 mg daily (consider, weighing bleeding risk) (CG126).",
+          "Atorvastatin 80 mg (NG238); target LDL 2.0 or non-HDL 2.6 mmol/L or less.",
+          "ACE inhibitor if diabetes; treat hypertension; stop smoking; cardiac rehabilitation-style lifestyle support.",
+          "No vitamin or fish-oil supplements for angina (CG126)."
+        ]
+      },
+      {
+        "id": "revasc",
+        "title": "Revascularisation",
+        "timeframe": "If symptoms persist on optimal medical therapy",
+        "actions": [
+          "Consider PCI or CABG when symptoms are not controlled on optimal medical treatment (CG126); multidisciplinary heart team decision."
+        ]
+      }
+    ],
+    "medicationPlan": {
+      "status": "source-verified",
+      "regimens": [
+        {
+          "indication": "Angina episodes and before exertion",
+          "patientGroup": "Adults",
+          "genericName": "Nitroglycerin (GTN) sublingual",
+          "dose": "1 tablet",
+          "route": "Sublingual",
+          "frequency": "Repeat every 5 minutes if needed",
+          "duration": "Maximum 3 tablets in 15 minutes; emergency if pain persists",
+          "adjustments": [
+            "NICE: call ambulance if pain persists 5 min after the second dose"
+          ],
+          "monitoring": [
+            "Headache, hypotension"
+          ],
+          "contraindications": [
+            "PDE-5 inhibitors or riociguat",
+            "Severe anaemia",
+            "Raised intracranial pressure",
+            "Circulatory failure and shock",
+            "Hypersensitivity to nitrates"
+          ],
+          "sourceTitle": "Nitroglycerin sublingual prescribing information (US FDA label, DailyMed)",
+          "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=041f127e-5166-4484-bc1a-0a373d1187ae",
+          "sourceEdition": "Accessed via openFDA 12 Oct 2026"
+        },
+        {
+          "indication": "First-line anti-anginal (beta-blocker)",
+          "patientGroup": "Adults",
+          "genericName": "Atenolol",
+          "dose": "50 mg",
+          "route": "PO",
+          "frequency": "Once daily; increase to 100 mg if needed after 1–2 weeks",
+          "duration": "Long term",
+          "adjustments": [
+            "Withdraw gradually (risk of rebound angina)",
+            "Reduce in renal impairment per label"
+          ],
+          "monitoring": [
+            "Heart rate, BP"
+          ],
+          "contraindications": [
+            "Sinus bradycardia; heart block greater than first degree",
+            "Cardiogenic shock; overt cardiac failure"
+          ],
+          "sourceTitle": "Atenolol prescribing information (US FDA label, DailyMed)",
+          "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=09b21985-1818-449d-9b29-98f733cf7b9f",
+          "sourceEdition": "Accessed via openFDA 12 Oct 2026"
+        },
+        {
+          "indication": "First-line anti-anginal (beta-blocker, alternative)",
+          "patientGroup": "Adults",
+          "genericName": "Metoprolol succinate (extended release)",
+          "dose": "100 mg",
+          "route": "PO",
+          "frequency": "Once daily; titrate weekly",
+          "duration": "Long term",
+          "adjustments": [
+            "Taper over 1–2 weeks if stopping"
+          ],
+          "monitoring": [
+            "Heart rate, BP"
+          ],
+          "contraindications": [
+            "Severe bradycardia; second- or third-degree heart block; sick sinus syndrome (without pacemaker)",
+            "Cardiogenic shock; decompensated heart failure"
+          ],
+          "sourceTitle": "Metoprolol succinate prescribing information (US FDA label, DailyMed)",
+          "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=028049cd-d233-49f9-87fa-ec91e433a49f",
+          "sourceEdition": "Accessed via openFDA 12 Oct 2026"
+        },
+        {
+          "indication": "First-line anti-anginal (CCB) or add-on to beta-blocker",
+          "patientGroup": "Adults",
+          "genericName": "Amlodipine",
+          "dose": "5–10 mg (lower dose in elderly or hepatic impairment)",
+          "route": "PO",
+          "frequency": "Once daily",
+          "duration": "Long term",
+          "adjustments": [
+            "Dihydropyridine — preferred CCB to combine with a beta-blocker"
+          ],
+          "monitoring": [
+            "Ankle oedema, BP"
+          ],
+          "contraindications": [
+            "Hypersensitivity to amlodipine"
+          ],
+          "sourceTitle": "Amlodipine prescribing information (US FDA label, DailyMed)",
+          "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=003dd1ec-16f8-4f96-b6a8-c4689d35892a",
+          "sourceEdition": "Accessed via openFDA 12 Oct 2026"
+        },
+        {
+          "indication": "Add-on or alternative when beta-blocker/CCB unsuitable",
+          "patientGroup": "Adults",
+          "genericName": "Isosorbide mononitrate (immediate release)",
+          "dose": "20 mg",
+          "route": "PO",
+          "frequency": "Twice daily, 7 hours apart (nitrate-free interval)",
+          "duration": "Long term",
+          "adjustments": [
+            "Never with PDE-5 inhibitors or riociguat"
+          ],
+          "monitoring": [
+            "Headache, hypotension"
+          ],
+          "contraindications": [
+            "PDE-5 inhibitors (sildenafil, tadalafil, vardenafil)",
+            "Riociguat",
+            "Hypersensitivity"
+          ],
+          "sourceTitle": "Isosorbide mononitrate prescribing information (US FDA label, DailyMed)",
+          "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=06839534-85b8-42aa-b0e3-079ed236be44",
+          "sourceEdition": "Accessed via openFDA 12 Oct 2026"
+        },
+        {
+          "indication": "Add-on or alternative when beta-blocker/CCB unsuitable",
+          "patientGroup": "Adults",
+          "genericName": "Ranolazine (extended release)",
+          "dose": "500 mg",
+          "route": "PO",
+          "frequency": "Twice daily; increase to 1,000 mg twice daily if needed",
+          "duration": "Long term",
+          "adjustments": [
+            "Maximum 1,000 mg twice daily",
+            "QT prolongation; drug interactions (CYP3A, P-gp)"
+          ],
+          "monitoring": [
+            "ECG (QTc), renal function"
+          ],
+          "contraindications": [
+            "Strong CYP3A inhibitors or CYP3A inducers",
+            "Liver cirrhosis"
+          ],
+          "sourceTitle": "Ranolazine prescribing information (US FDA label, DailyMed)",
+          "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00979fb3-d70f-493d-94ca-2914cbadaa9d",
+          "sourceEdition": "Accessed via openFDA 12 Oct 2026"
+        },
+        {
+          "indication": "Secondary prevention (antiplatelet)",
+          "patientGroup": "Adults",
+          "genericName": "Aspirin",
+          "dose": "75 mg",
+          "route": "PO",
+          "frequency": "Once daily",
+          "duration": "Long term",
+          "adjustments": [
+            "Weigh bleeding risk (CG126 'consider')"
+          ],
+          "monitoring": [
+            "Bleeding, dyspepsia"
+          ],
+          "contraindications": [
+            "Known allergy to NSAIDs",
+            "Syndrome of asthma, rhinitis and nasal polyps",
+            "Hypersensitivity to aspirin"
+          ],
+          "sourceTitle": "NICE CG126: Stable angina: management",
+          "sourceUrl": "https://www.nice.org.uk/guidance/cg126",
+          "sourceEdition": "NICE CG126 recs 1.3.3–1.3.5"
+        },
+        {
+          "indication": "Secondary prevention (statin)",
+          "patientGroup": "Adults with established CVD",
+          "genericName": "Atorvastatin",
+          "dose": "80 mg",
+          "route": "PO",
+          "frequency": "Once daily",
+          "duration": "Long term",
+          "adjustments": [
+            "Lower dose if interactions, adverse-effect risk or preference"
+          ],
+          "monitoring": [
+            "Lipids and ALT at 2–3 months"
+          ],
+          "contraindications": [
+            "Acute liver failure or decompensated cirrhosis",
+            "Hypersensitivity"
+          ],
+          "sourceTitle": "NICE NG238: Cardiovascular disease: risk assessment and reduction, including lipid modification",
+          "sourceUrl": "https://www.nice.org.uk/guidance/ng238",
+          "sourceEdition": "NICE NG238 rec 1.7.2"
+        }
+      ],
+      "note": "Drug choice and sequence are from NICE CG126; aspirin 75 mg from CG126 and atorvastatin 80 mg from NG238; other doses and contraindications from US FDA labels. Ivabradine and nicorandil: specialist use (MHRA safety advice noted in CG126). Check SFDA registration, formulary and availability."
+    },
+    "diagnosticCriteria": [
+      {
+        "criterion": "Typical angina",
+        "threshold": "Constricting discomfort, triggered by exertion, relieved by rest or GTN within about 5 minutes"
+      },
+      {
+        "criterion": "Significant CAD on CTCA",
+        "threshold": "70% or more stenosis in a major segment, or 50% or more left main"
+      },
+      {
+        "criterion": "Revascularisation",
+        "threshold": "Symptoms uncontrolled on optimal medical therapy"
+      }
+    ],
+    "guidelineComparison": {
+      "title": "NICE CG126 anti-anginal sequence",
+      "columns": [
+        "Step",
+        "Drugs"
+      ],
+      "rows": [
+        {
+          "parameter": "All",
+          "values": [
+            "Symptom relief",
+            "Sublingual GTN"
+          ]
+        },
+        {
+          "parameter": "First line",
+          "values": [
+            "One drug",
+            "Beta-blocker or calcium-channel blocker"
+          ]
+        },
+        {
+          "parameter": "Second line",
+          "values": [
+            "Switch or combine",
+            "Beta-blocker plus dihydropyridine CCB"
+          ]
+        },
+        {
+          "parameter": "If BB/CCB unsuitable",
+          "values": [
+            "Monotherapy or add-on",
+            "Long-acting nitrate, ivabradine, nicorandil or ranolazine"
+          ]
+        },
+        {
+          "parameter": "Uncontrolled on two drugs",
+          "values": [
+            "Revascularisation",
+            "PCI or CABG (heart team)"
+          ]
+        }
+      ],
+      "note": "CG126 predates ESC 2024 chronic coronary syndrome guidance, which was not reviewed."
+    },
+    "teaching": {
+      "learningObjectives": [
+        "Diagnose stable angina and manage chronic ischaemic heart disease with anti-anginal and secondary-prevention therapy."
+      ],
+      "pitfalls": [
+        "Combining a beta-blocker with verapamil or diltiazem.",
+        "Missing aortic stenosis as the cause of angina.",
+        "Nitrates with PDE-5 inhibitors.",
+        "Stopping beta-blockers abruptly.",
+        "Adding a third anti-anginal without considering revascularisation."
+      ],
+      "keyPoints": [
+        "CT coronary angiography first line for suspected angina.",
+        "GTN for episodes; ambulance if pain persists after 2 doses.",
+        "Beta-blocker or CCB first; combine with a dihydropyridine.",
+        "Aspirin 75 mg and atorvastatin 80 mg for secondary prevention.",
+        "Refer for revascularisation if uncontrolled on optimal therapy."
+      ],
+      "references": [
+        {
+          "title": "NICE CG126: Stable angina: management",
+          "edition": "NICE clinical guideline, 2011 (updated 2016)",
+          "url": "https://www.nice.org.uk/guidance/cg126",
+          "locator": "Recs 1.2–1.5 (information, secondary prevention, anti-anginal drugs, revascularisation)"
+        },
+        {
+          "title": "NICE CG95: Recent-onset chest pain of suspected cardiac origin: assessment and diagnosis",
+          "edition": "NICE clinical guideline, 2010 (updated 2016)",
+          "url": "https://www.nice.org.uk/guidance/cg95",
+          "locator": "Recs 1.3.4–1.3.6 (CT coronary angiography, functional imaging, invasive angiography)"
+        },
+        {
+          "title": "NICE NG238: Cardiovascular disease: risk assessment and reduction, including lipid modification",
+          "edition": "NICE guideline, 2023",
+          "url": "https://www.nice.org.uk/guidance/ng238",
+          "locator": "Rec 1.7.2 (atorvastatin 80 mg for CVD)"
+        },
+        {
+          "title": "Nitroglycerin sublingual prescribing information (US FDA label, DailyMed)",
+          "edition": "Accessed via openFDA 12 Oct 2026",
+          "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=041f127e-5166-4484-bc1a-0a373d1187ae",
+          "locator": "Section 4 Contraindications"
+        },
+        {
+          "title": "Atenolol prescribing information (US FDA label, DailyMed)",
+          "edition": "Accessed via openFDA 12 Oct 2026",
+          "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=09b21985-1818-449d-9b29-98f733cf7b9f",
+          "locator": "Section 4 Contraindications"
+        },
+        {
+          "title": "Metoprolol succinate prescribing information (US FDA label, DailyMed)",
+          "edition": "Accessed via openFDA 12 Oct 2026",
+          "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=028049cd-d233-49f9-87fa-ec91e433a49f",
+          "locator": "Section 4 Contraindications"
+        },
+        {
+          "title": "Amlodipine prescribing information (US FDA label, DailyMed)",
+          "edition": "Accessed via openFDA 12 Oct 2026",
+          "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=003dd1ec-16f8-4f96-b6a8-c4689d35892a",
+          "locator": "Section 4 Contraindications"
+        },
+        {
+          "title": "Isosorbide mononitrate prescribing information (US FDA label, DailyMed)",
+          "edition": "Accessed via openFDA 12 Oct 2026",
+          "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=06839534-85b8-42aa-b0e3-079ed236be44",
+          "locator": "Section 4 Contraindications"
+        },
+        {
+          "title": "Ranolazine prescribing information (US FDA label, DailyMed)",
+          "edition": "Accessed via openFDA 12 Oct 2026",
+          "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00979fb3-d70f-493d-94ca-2914cbadaa9d",
+          "locator": "Section 4 Contraindications"
+        },
+        {
+          "title": "Aspirin (aspirin component of aspirin/extended-release dipyridamole) prescribing information (US FDA label, DailyMed)",
+          "edition": "Accessed via openFDA 12 Oct 2026",
+          "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=111a4f6a-c3e4-43e2-8f0e-8c72f71cddb2",
+          "locator": "Section 4 Contraindications"
+        },
+        {
+          "title": "Atorvastatin calcium prescribing information (US FDA label, DailyMed)",
+          "edition": "Accessed via openFDA 12 Oct 2026",
+          "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00afce9b-48c9-487a-a738-e359c005c707",
+          "locator": "Section 4 Contraindications"
+        }
+      ]
+    },
+    "nonClinicalManagement": {
+      "patientEducation": [
+        "How to use GTN and when to call an ambulance.",
+        "Pacing activity; sexual activity advice.",
+        "Adherence to secondary prevention."
+      ],
+      "lifestyleAndDiet": [
+        "Stop smoking.",
+        "Regular exercise within symptom limits.",
+        "Healthy diet and weight; limit alcohol."
+      ],
+      "mdtReferrals": [
+        "Cardiology / rapid-access chest pain clinic for diagnosis.",
+        "Heart team for revascularisation.",
+        "Cardiac rehabilitation and smoking cessation."
+      ],
+      "dischargeCriteria": [
+        "Not applicable — outpatient care."
+      ],
+      "followUpPlan": "Review 2–4 weeks after starting or changing anti-anginal drugs, then at least annually: symptoms, adherence, BP, lipids, HbA1c, smoking, side effects."
+    }
+  },
+  {
+    "id": "bdff4827-8548-4272-bd54-827888a2cf15",
+    "title": "Stable Chest Pain",
+    "specialty": "Cardiology and Internal Medicine",
+    "authority": "NICE",
+    "status": "under_review",
+    "version": "authoring-standard-2026-10-13-v1",
+    "lastReviewed": "2026-10-13",
+    "pillar": "Chronic Care",
+    "clinicalReviewStatus": "pending",
+    "evidenceAudit": {
+      "checkedOn": "2026-10-13",
+      "status": "incomplete",
+      "scope": "Adults with chronic coronary syndrome/stable angina in primary and cardiology care: diagnosis (CT coronary angiography first line), symptom relief, anti-anginal drug sequence, secondary prevention and revascularisation referral. Verified against NICE CG126 (stable angina), CG95 (chest pain diagnosis) and NG238 (lipids); doses and contraindications from US FDA prescribing information. ESC 2024 chronic coronary syndrome guideline and Saudi guidance were not reviewed. Acute coronary syndrome is a separate topic.",
+      "findings": [
+        "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+        "Normal values are typical adult reference ranges; laboratories differ.",
+        "Re-scoped as Stable Chest Pain; source URLs and locators were re-opened or retained from the repository evidence packet on 2026-10-13."
+      ],
+      "unverifiedSections": [
+        "ESC 2024 chronic coronary syndrome guideline not reviewed",
+        "No Saudi chronic coronary guidance reviewed",
+        "Ivabradine/nicorandil dosing — specialist",
+        "SFDA registration and current Saudi formulary availability were not independently verified in this run."
+      ],
+      "medscapeStatus": "unavailable",
+      "originalVersionIds": [
+        "bdff4827-8548-4272-bd54-827888a2cf15"
+      ]
+    },
+    "pathophysiology": {
+      "summary": "Ischaemic heart disease (coronary artery disease) is myocardial ischaemia from atherosclerotic narrowing of the coronary arteries. Stable angina is predictable chest discomfort on exertion or emotion, relieved by rest or a nitrate within minutes, caused by a fixed stenosis limiting flow when oxygen demand rises.",
+      "keyMechanisms": [
+        "Atherosclerotic plaque narrows the lumen; flow reserve is adequate at rest but insufficient when demand rises (heart rate, BP, contractility) → supply–demand mismatch → angina.",
+        "Beta-blockers lower heart rate and contractility; calcium-channel blockers dilate coronaries and reduce afterload; nitrates reduce preload — all reduce demand or improve supply.",
+        "Plaque rupture or erosion turns stable disease into an acute coronary syndrome — secondary prevention (antiplatelet, high-intensity statin, BP and risk-factor control) reduces events.",
+        "Significant CAD on CT: 70% or more stenosis in a major epicardial segment or 50% or more in the left main (NICE CG95)."
+      ]
+    },
+    "presentation": {
+      "symptoms": [
+        "Constricting chest, neck, shoulder, jaw or arm discomfort, precipitated by exertion and relieved by rest or GTN within about 5 minutes (typical angina: all three features).",
+        "Exertional breathlessness (angina equivalent), especially in older people, women and people with diabetes."
+      ],
+      "physicalSigns": [
+        "Often normal examination.",
+        "Signs of risk factors or complications: hypertension, xanthelasma, carotid bruits, signs of heart failure, aortic stenosis murmur (alternative cause of angina)."
+      ],
+      "redFlags": [
+        "Pain at rest, increasing frequency/severity or pain lasting over 15 minutes — possible ACS: call ambulance",
+        "Pain persisting 5 minutes after a second GTN dose — emergency (NICE)",
+        "Syncope or breathlessness on exertion with ejection systolic murmur (aortic stenosis)",
+        "Symptoms uncontrolled on two anti-anginal drugs — consider revascularisation"
+      ],
+      "precipitants": [
+        "Smoking",
+        "Diabetes",
+        "Hypertension",
+        "Dyslipidaemia",
+        "Obesity, inactivity",
+        "Family history of premature CHD",
+        "CKD"
+      ]
+    },
+    "differentials": [
+      {
+        "condition": "Acute coronary syndrome",
+        "distinguishingFeatures": "Rest pain, crescendo pattern, troponin rise."
+      },
+      {
+        "condition": "Aortic stenosis, hypertrophic cardiomyopathy",
+        "distinguishingFeatures": "Murmur; echo diagnosis."
+      },
+      {
+        "condition": "Oesophageal/musculoskeletal pain",
+        "distinguishingFeatures": "Not exertional; reproducible tenderness; reflux symptoms."
+      },
+      {
+        "condition": "Anaemia, thyrotoxicosis",
+        "distinguishingFeatures": "Precipitate angina; blood tests."
+      }
+    ],
+    "investigations": {
+      "ruleIn": [
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "Resting 12-lead ECG",
+          "modalityTarget": "All suspected angina",
+          "targetCondition": "Ischaemia or previous MI",
+          "expectedFinding": "Q waves, ST depression, T-wave inversion, LBBB.",
+          "clinicalRationale": "A normal ECG does not exclude CAD; ECG changes with non-anginal pain still warrant CT coronary angiography (CG95).",
+          "normalValue": "Sinus rhythm, no Q waves or ST-T changes",
+          "references": [
+            {
+              "title": "NICE CG95: Recent-onset chest pain of suspected cardiac origin: assessment and diagnosis",
+              "edition": "NICE clinical guideline, 2010 (updated 2016)",
+              "url": "https://www.nice.org.uk/guidance/cg95"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Lipids, HbA1c, renal function, FBC, TSH if indicated",
+          "modalityTarget": "At diagnosis",
+          "targetCondition": "Risk factors and precipitants",
+          "expectedFinding": "Dyslipidaemia, diabetes, CKD, anaemia, thyroid disease.",
+          "clinicalRationale": "Guides secondary prevention; treat precipitants.",
+          "references": [
+            {
+              "title": "NICE CG126: Stable angina: management",
+              "edition": "NICE clinical guideline, 2011 (updated 2016)",
+              "url": "https://www.nice.org.uk/guidance/cg126"
+            },
+            {
+              "title": "NICE NG238: Cardiovascular disease: risk assessment and reduction, including lipid modification",
+              "edition": "NICE guideline, 2023",
+              "url": "https://www.nice.org.uk/guidance/ng238"
+            }
+          ]
+        }
+      ],
+      "ruleOut": [
+        {
+          "tier": "advancedImaging",
+          "testName": "CT coronary angiography (64-slice or above)",
+          "modalityTarget": "First line if typical or atypical angina, or non-anginal pain with ST-T changes/Q waves on ECG (CG95)",
+          "targetCondition": "Imaging",
+          "expectedFinding": "Coronary stenosis; significant CAD = 70% or more in a major segment or 50% or more left main.",
+          "clinicalRationale": "Confirms or excludes CAD anatomically; non-diagnostic or uncertain significance → functional imaging.",
+          "references": [
+            {
+              "title": "NICE CG95: Recent-onset chest pain of suspected cardiac origin: assessment and diagnosis",
+              "edition": "NICE clinical guideline, 2010 (updated 2016)",
+              "url": "https://www.nice.org.uk/guidance/cg95"
+            }
+          ]
+        },
+        {
+          "tier": "advancedImaging",
+          "testName": "Non-invasive functional imaging (stress echo, MPS-SPECT, stress MRI)",
+          "modalityTarget": "Second line: CTCA uncertain/non-diagnostic, or known CAD with uncertain symptoms",
+          "targetCondition": "Imaging",
+          "expectedFinding": "Reversible ischaemia.",
+          "clinicalRationale": "Guides need for invasive angiography and revascularisation.",
+          "references": [
+            {
+              "title": "NICE CG95: Recent-onset chest pain of suspected cardiac origin: assessment and diagnosis",
+              "edition": "NICE clinical guideline, 2010 (updated 2016)",
+              "url": "https://www.nice.org.uk/guidance/cg95"
+            }
+          ]
+        },
+        {
+          "tier": "advancedImaging",
+          "testName": "Invasive coronary angiography",
+          "modalityTarget": "Third line, or when revascularisation is being considered",
+          "targetCondition": "Imaging",
+          "expectedFinding": "Anatomy for PCI or CABG.",
+          "clinicalRationale": "Defines revascularisation strategy.",
+          "references": [
+            {
+              "title": "NICE CG95: Recent-onset chest pain of suspected cardiac origin: assessment and diagnosis",
+              "edition": "NICE clinical guideline, 2010 (updated 2016)",
+              "url": "https://www.nice.org.uk/guidance/cg95"
+            },
+            {
+              "title": "NICE CG126: Stable angina: management",
+              "edition": "NICE clinical guideline, 2011 (updated 2016)",
+              "url": "https://www.nice.org.uk/guidance/cg126"
+            }
+          ]
+        },
+        {
+          "tier": "firstLineImaging",
+          "testName": "Echocardiography",
+          "modalityTarget": "Murmur, heart failure signs, previous MI",
+          "targetCondition": "Imaging",
+          "expectedFinding": "LV function, valve disease (aortic stenosis).",
+          "clinicalRationale": "Changes management and prognosis.",
+          "references": [
+            {
+              "title": "NICE CG126: Stable angina: management",
+              "edition": "NICE clinical guideline, 2011 (updated 2016)",
+              "url": "https://www.nice.org.uk/guidance/cg126"
+            }
+          ]
+        }
+      ]
+    },
+    "clinicalManagement": [
+      {
+        "id": "diagnose",
+        "title": "Diagnose",
+        "timeframe": "At presentation",
+        "actions": [
+          "Assess pain typicality; ECG; CT coronary angiography first line when angina cannot be excluded clinically (CG95).",
+          "Treat as stable angina while awaiting tests if symptoms are typical; consider aspirin until diagnosis (CG95)."
+        ]
+      },
+      {
+        "id": "relief",
+        "title": "Relieve episodes",
+        "timeframe": "From diagnosis",
+        "actions": [
+          "Short-acting GTN for treatment and before planned exertion; repeat after 5 minutes; call an ambulance if pain persists 5 minutes after the second dose (CG126)."
+        ]
+      },
+      {
+        "id": "antianginal",
+        "title": "Anti-anginal drugs",
+        "timeframe": "Review 2–4 weeks after each change",
+        "actions": [
+          "First line: a beta-blocker or a calcium-channel blocker, chosen by comorbidities and preference; titrate to maximum tolerated dose.",
+          "Not controlled: switch to the other or combine — with a beta-blocker use a dihydropyridine CCB (amlodipine, slow-release nifedipine, felodipine).",
+          "Beta-blocker and CCB both unsuitable: long-acting nitrate, ivabradine, nicorandil or ranolazine as monotherapy or add-on.",
+          "Third drug only if uncontrolled on two and awaiting or unsuitable for revascularisation."
+        ]
+      },
+      {
+        "id": "prevention",
+        "title": "Secondary prevention",
+        "timeframe": "From diagnosis",
+        "actions": [
+          "Aspirin 75 mg daily (consider, weighing bleeding risk) (CG126).",
+          "Atorvastatin 80 mg (NG238); target LDL 2.0 or non-HDL 2.6 mmol/L or less.",
+          "ACE inhibitor if diabetes; treat hypertension; stop smoking; cardiac rehabilitation-style lifestyle support.",
+          "No vitamin or fish-oil supplements for angina (CG126)."
+        ]
+      },
+      {
+        "id": "revasc",
+        "title": "Revascularisation",
+        "timeframe": "If symptoms persist on optimal medical therapy",
+        "actions": [
+          "Consider PCI or CABG when symptoms are not controlled on optimal medical treatment (CG126); multidisciplinary heart team decision."
+        ]
+      }
+    ],
+    "medicationPlan": {
+      "status": "source-verified",
+      "regimens": [
+        {
+          "indication": "Angina episodes and before exertion",
+          "patientGroup": "Adults",
+          "genericName": "Nitroglycerin (GTN) sublingual",
+          "dose": "1 tablet",
+          "route": "Sublingual",
+          "frequency": "Repeat every 5 minutes if needed",
+          "duration": "Maximum 3 tablets in 15 minutes; emergency if pain persists",
+          "adjustments": [
+            "NICE: call ambulance if pain persists 5 min after the second dose"
+          ],
+          "monitoring": [
+            "Headache, hypotension"
+          ],
+          "contraindications": [
+            "PDE-5 inhibitors or riociguat",
+            "Severe anaemia",
+            "Raised intracranial pressure",
+            "Circulatory failure and shock",
+            "Hypersensitivity to nitrates"
+          ],
+          "sourceTitle": "Nitroglycerin sublingual prescribing information (US FDA label, DailyMed)",
+          "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=041f127e-5166-4484-bc1a-0a373d1187ae",
+          "sourceEdition": "Accessed via openFDA 12 Oct 2026"
+        },
+        {
+          "indication": "First-line anti-anginal (beta-blocker)",
+          "patientGroup": "Adults",
+          "genericName": "Atenolol",
+          "dose": "50 mg",
+          "route": "PO",
+          "frequency": "Once daily; increase to 100 mg if needed after 1–2 weeks",
+          "duration": "Long term",
+          "adjustments": [
+            "Withdraw gradually (risk of rebound angina)",
+            "Reduce in renal impairment per label"
+          ],
+          "monitoring": [
+            "Heart rate, BP"
+          ],
+          "contraindications": [
+            "Sinus bradycardia; heart block greater than first degree",
+            "Cardiogenic shock; overt cardiac failure"
+          ],
+          "sourceTitle": "Atenolol prescribing information (US FDA label, DailyMed)",
+          "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=09b21985-1818-449d-9b29-98f733cf7b9f",
+          "sourceEdition": "Accessed via openFDA 12 Oct 2026"
+        },
+        {
+          "indication": "First-line anti-anginal (beta-blocker, alternative)",
+          "patientGroup": "Adults",
+          "genericName": "Metoprolol succinate (extended release)",
+          "dose": "100 mg",
+          "route": "PO",
+          "frequency": "Once daily; titrate weekly",
+          "duration": "Long term",
+          "adjustments": [
+            "Taper over 1–2 weeks if stopping"
+          ],
+          "monitoring": [
+            "Heart rate, BP"
+          ],
+          "contraindications": [
+            "Severe bradycardia; second- or third-degree heart block; sick sinus syndrome (without pacemaker)",
+            "Cardiogenic shock; decompensated heart failure"
+          ],
+          "sourceTitle": "Metoprolol succinate prescribing information (US FDA label, DailyMed)",
+          "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=028049cd-d233-49f9-87fa-ec91e433a49f",
+          "sourceEdition": "Accessed via openFDA 12 Oct 2026"
+        },
+        {
+          "indication": "First-line anti-anginal (CCB) or add-on to beta-blocker",
+          "patientGroup": "Adults",
+          "genericName": "Amlodipine",
+          "dose": "5–10 mg (lower dose in elderly or hepatic impairment)",
+          "route": "PO",
+          "frequency": "Once daily",
+          "duration": "Long term",
+          "adjustments": [
+            "Dihydropyridine — preferred CCB to combine with a beta-blocker"
+          ],
+          "monitoring": [
+            "Ankle oedema, BP"
+          ],
+          "contraindications": [
+            "Hypersensitivity to amlodipine"
+          ],
+          "sourceTitle": "Amlodipine prescribing information (US FDA label, DailyMed)",
+          "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=003dd1ec-16f8-4f96-b6a8-c4689d35892a",
+          "sourceEdition": "Accessed via openFDA 12 Oct 2026"
+        },
+        {
+          "indication": "Add-on or alternative when beta-blocker/CCB unsuitable",
+          "patientGroup": "Adults",
+          "genericName": "Isosorbide mononitrate (immediate release)",
+          "dose": "20 mg",
+          "route": "PO",
+          "frequency": "Twice daily, 7 hours apart (nitrate-free interval)",
+          "duration": "Long term",
+          "adjustments": [
+            "Never with PDE-5 inhibitors or riociguat"
+          ],
+          "monitoring": [
+            "Headache, hypotension"
+          ],
+          "contraindications": [
+            "PDE-5 inhibitors (sildenafil, tadalafil, vardenafil)",
+            "Riociguat",
+            "Hypersensitivity"
+          ],
+          "sourceTitle": "Isosorbide mononitrate prescribing information (US FDA label, DailyMed)",
+          "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=06839534-85b8-42aa-b0e3-079ed236be44",
+          "sourceEdition": "Accessed via openFDA 12 Oct 2026"
+        },
+        {
+          "indication": "Add-on or alternative when beta-blocker/CCB unsuitable",
+          "patientGroup": "Adults",
+          "genericName": "Ranolazine (extended release)",
+          "dose": "500 mg",
+          "route": "PO",
+          "frequency": "Twice daily; increase to 1,000 mg twice daily if needed",
+          "duration": "Long term",
+          "adjustments": [
+            "Maximum 1,000 mg twice daily",
+            "QT prolongation; drug interactions (CYP3A, P-gp)"
+          ],
+          "monitoring": [
+            "ECG (QTc), renal function"
+          ],
+          "contraindications": [
+            "Strong CYP3A inhibitors or CYP3A inducers",
+            "Liver cirrhosis"
+          ],
+          "sourceTitle": "Ranolazine prescribing information (US FDA label, DailyMed)",
+          "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00979fb3-d70f-493d-94ca-2914cbadaa9d",
+          "sourceEdition": "Accessed via openFDA 12 Oct 2026"
+        },
+        {
+          "indication": "Secondary prevention (antiplatelet)",
+          "patientGroup": "Adults",
+          "genericName": "Aspirin",
+          "dose": "75 mg",
+          "route": "PO",
+          "frequency": "Once daily",
+          "duration": "Long term",
+          "adjustments": [
+            "Weigh bleeding risk (CG126 'consider')"
+          ],
+          "monitoring": [
+            "Bleeding, dyspepsia"
+          ],
+          "contraindications": [
+            "Known allergy to NSAIDs",
+            "Syndrome of asthma, rhinitis and nasal polyps",
+            "Hypersensitivity to aspirin"
+          ],
+          "sourceTitle": "NICE CG126: Stable angina: management",
+          "sourceUrl": "https://www.nice.org.uk/guidance/cg126",
+          "sourceEdition": "NICE CG126 recs 1.3.3–1.3.5"
+        },
+        {
+          "indication": "Secondary prevention (statin)",
+          "patientGroup": "Adults with established CVD",
+          "genericName": "Atorvastatin",
+          "dose": "80 mg",
+          "route": "PO",
+          "frequency": "Once daily",
+          "duration": "Long term",
+          "adjustments": [
+            "Lower dose if interactions, adverse-effect risk or preference"
+          ],
+          "monitoring": [
+            "Lipids and ALT at 2–3 months"
+          ],
+          "contraindications": [
+            "Acute liver failure or decompensated cirrhosis",
+            "Hypersensitivity"
+          ],
+          "sourceTitle": "NICE NG238: Cardiovascular disease: risk assessment and reduction, including lipid modification",
+          "sourceUrl": "https://www.nice.org.uk/guidance/ng238",
+          "sourceEdition": "NICE NG238 rec 1.7.2"
+        }
+      ],
+      "note": "Drug choice and sequence are from NICE CG126; aspirin 75 mg from CG126 and atorvastatin 80 mg from NG238; other doses and contraindications from US FDA labels. Ivabradine and nicorandil: specialist use (MHRA safety advice noted in CG126). Check SFDA registration, formulary and availability."
+    },
+    "diagnosticCriteria": [
+      {
+        "criterion": "Typical angina",
+        "threshold": "Constricting discomfort, triggered by exertion, relieved by rest or GTN within about 5 minutes"
+      },
+      {
+        "criterion": "Significant CAD on CTCA",
+        "threshold": "70% or more stenosis in a major segment, or 50% or more left main"
+      },
+      {
+        "criterion": "Revascularisation",
+        "threshold": "Symptoms uncontrolled on optimal medical therapy"
+      }
+    ],
+    "guidelineComparison": {
+      "title": "NICE CG126 anti-anginal sequence",
+      "columns": [
+        "Step",
+        "Drugs"
+      ],
+      "rows": [
+        {
+          "parameter": "All",
+          "values": [
+            "Symptom relief",
+            "Sublingual GTN"
+          ]
+        },
+        {
+          "parameter": "First line",
+          "values": [
+            "One drug",
+            "Beta-blocker or calcium-channel blocker"
+          ]
+        },
+        {
+          "parameter": "Second line",
+          "values": [
+            "Switch or combine",
+            "Beta-blocker plus dihydropyridine CCB"
+          ]
+        },
+        {
+          "parameter": "If BB/CCB unsuitable",
+          "values": [
+            "Monotherapy or add-on",
+            "Long-acting nitrate, ivabradine, nicorandil or ranolazine"
+          ]
+        },
+        {
+          "parameter": "Uncontrolled on two drugs",
+          "values": [
+            "Revascularisation",
+            "PCI or CABG (heart team)"
+          ]
+        }
+      ],
+      "note": "CG126 predates ESC 2024 chronic coronary syndrome guidance, which was not reviewed."
+    },
+    "teaching": {
+      "learningObjectives": [
+        "Diagnose stable angina and manage chronic ischaemic heart disease with anti-anginal and secondary-prevention therapy."
+      ],
+      "pitfalls": [
+        "Combining a beta-blocker with verapamil or diltiazem.",
+        "Missing aortic stenosis as the cause of angina.",
+        "Nitrates with PDE-5 inhibitors.",
+        "Stopping beta-blockers abruptly.",
+        "Adding a third anti-anginal without considering revascularisation."
+      ],
+      "keyPoints": [
+        "CT coronary angiography first line for suspected angina.",
+        "GTN for episodes; ambulance if pain persists after 2 doses.",
+        "Beta-blocker or CCB first; combine with a dihydropyridine.",
+        "Aspirin 75 mg and atorvastatin 80 mg for secondary prevention.",
+        "Refer for revascularisation if uncontrolled on optimal therapy."
+      ],
+      "references": [
+        {
+          "title": "NICE CG126: Stable angina: management",
+          "edition": "NICE clinical guideline, 2011 (updated 2016)",
+          "url": "https://www.nice.org.uk/guidance/cg126",
+          "locator": "Recs 1.2–1.5 (information, secondary prevention, anti-anginal drugs, revascularisation)"
+        },
+        {
+          "title": "NICE CG95: Recent-onset chest pain of suspected cardiac origin: assessment and diagnosis",
+          "edition": "NICE clinical guideline, 2010 (updated 2016)",
+          "url": "https://www.nice.org.uk/guidance/cg95",
+          "locator": "Recs 1.3.4–1.3.6 (CT coronary angiography, functional imaging, invasive angiography)"
+        },
+        {
+          "title": "NICE NG238: Cardiovascular disease: risk assessment and reduction, including lipid modification",
+          "edition": "NICE guideline, 2023",
+          "url": "https://www.nice.org.uk/guidance/ng238",
+          "locator": "Rec 1.7.2 (atorvastatin 80 mg for CVD)"
+        },
+        {
+          "title": "Nitroglycerin sublingual prescribing information (US FDA label, DailyMed)",
+          "edition": "Accessed via openFDA 12 Oct 2026",
+          "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=041f127e-5166-4484-bc1a-0a373d1187ae",
+          "locator": "Section 4 Contraindications"
+        },
+        {
+          "title": "Atenolol prescribing information (US FDA label, DailyMed)",
+          "edition": "Accessed via openFDA 12 Oct 2026",
+          "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=09b21985-1818-449d-9b29-98f733cf7b9f",
+          "locator": "Section 4 Contraindications"
+        },
+        {
+          "title": "Metoprolol succinate prescribing information (US FDA label, DailyMed)",
+          "edition": "Accessed via openFDA 12 Oct 2026",
+          "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=028049cd-d233-49f9-87fa-ec91e433a49f",
+          "locator": "Section 4 Contraindications"
+        },
+        {
+          "title": "Amlodipine prescribing information (US FDA label, DailyMed)",
+          "edition": "Accessed via openFDA 12 Oct 2026",
+          "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=003dd1ec-16f8-4f96-b6a8-c4689d35892a",
+          "locator": "Section 4 Contraindications"
+        },
+        {
+          "title": "Isosorbide mononitrate prescribing information (US FDA label, DailyMed)",
+          "edition": "Accessed via openFDA 12 Oct 2026",
+          "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=06839534-85b8-42aa-b0e3-079ed236be44",
+          "locator": "Section 4 Contraindications"
+        },
+        {
+          "title": "Ranolazine prescribing information (US FDA label, DailyMed)",
+          "edition": "Accessed via openFDA 12 Oct 2026",
+          "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00979fb3-d70f-493d-94ca-2914cbadaa9d",
+          "locator": "Section 4 Contraindications"
+        },
+        {
+          "title": "Aspirin (aspirin component of aspirin/extended-release dipyridamole) prescribing information (US FDA label, DailyMed)",
+          "edition": "Accessed via openFDA 12 Oct 2026",
+          "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=111a4f6a-c3e4-43e2-8f0e-8c72f71cddb2",
+          "locator": "Section 4 Contraindications"
+        },
+        {
+          "title": "Atorvastatin calcium prescribing information (US FDA label, DailyMed)",
+          "edition": "Accessed via openFDA 12 Oct 2026",
+          "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00afce9b-48c9-487a-a738-e359c005c707",
+          "locator": "Section 4 Contraindications"
+        }
+      ]
+    },
+    "nonClinicalManagement": {
+      "patientEducation": [
+        "How to use GTN and when to call an ambulance.",
+        "Pacing activity; sexual activity advice.",
+        "Adherence to secondary prevention."
+      ],
+      "lifestyleAndDiet": [
+        "Stop smoking.",
+        "Regular exercise within symptom limits.",
+        "Healthy diet and weight; limit alcohol."
+      ],
+      "mdtReferrals": [
+        "Cardiology / rapid-access chest pain clinic for diagnosis.",
+        "Heart team for revascularisation.",
+        "Cardiac rehabilitation and smoking cessation."
+      ],
+      "dischargeCriteria": [
+        "Not applicable — outpatient care."
+      ],
+      "followUpPlan": "Review 2–4 weeks after starting or changing anti-anginal drugs, then at least annually: symptoms, adherence, BP, lipids, HbA1c, smoking, side effects."
+    }
+  },
+  {
+    "id": "b3b08de9-632d-488a-b9f3-0bc3ac0114ce",
+    "title": "Unstable Angina",
+    "specialty": "Cardiology and Emergency Medicine",
+    "authority": "Other",
+    "status": "under_review",
+    "version": "authoring-standard-2026-10-13-v1",
+    "lastReviewed": "2026-10-13",
+    "pillar": "Urgent Care",
+    "clinicalReviewStatus": "pending",
+    "evidenceAudit": {
+      "checkedOn": "2026-10-13",
+      "status": "incomplete",
+      "scope": "Adults with NSTEMI and unstable angina: diagnosis, GRACE risk stratification, timing of angiography, antiplatelet and antithrombin therapy, and secondary prevention. Verified against NICE NG185, CG95, HTG552 and NG158, the Saudi Heart Association ACS guideline and FDA drug labels.",
+      "findings": [
+        "Recommendation numbers and thresholds were read from the NICE NG185 page and the Saudi Heart Association ACS guideline PDF on 13 Oct 2026; drug doses and contraindications were read from FDA labels (openFDA) on 13 Oct 2026.",
+        "The SHA guideline has no printed publication year; page locators are printed page numbers.",
+        "NICE and the SHA guideline disagree on aspirin dose and angiography timing; both are shown side by side.",
+        "Re-scoped as Unstable Angina; source URLs and locators were re-opened or retained from the repository evidence packet on 2026-10-13."
+      ],
+      "unverifiedSections": [
+        "SFDA registration and formulary not checked (SFDA register could not be reached from the authoring environment)",
+        "ESC and AHA/ACC NSTE-ACS guidelines were not opened",
+        "Doses for ACE inhibitors, beta-blockers and statins not stated in the cited sources and not reproduced",
+        "FDA labels are US labels; Saudi product information may differ",
+        "SHA GRACE score ranges overlap as printed; the score components' point tables were not reproduced",
+        "SFDA registration and current Saudi formulary availability were not independently verified in this run."
+      ],
+      "medscapeStatus": "unavailable",
+      "originalVersionIds": [
+        "b3b08de9-632d-488a-b9f3-0bc3ac0114ce"
+      ]
+    },
+    "pathophysiology": {
+      "summary": "Non-ST-elevation myocardial infarction (NSTEMI) is acute coronary syndrome without persistent ST elevation in which a typical rise and fall of cardiac biomarkers shows myocardial injury. If the same symptoms occur without a biomarker rise, the label is unstable angina. The task is early risk stratification to choose between immediate, early, delayed or conservative management.",
+      "keyMechanisms": [
+        "Partial or near-complete occlusion of a coronary artery reduces blood flow to the myocardium and causes myocardial injury (SHA printed pp. 22–23).",
+        "Typical ischaemic chest symptoms with a typical rise and fall of cardiac biomarkers are labelled NSTEMI; the same symptoms without a biomarker rise are labelled unstable angina (SHA printed p. 23).",
+        "Quantitative risk scoring predicts outcome better than clinical assessment alone in NSTE-ACS; the GRACE score gives the most accurate risk estimate on admission and at discharge (SHA printed p. 23).",
+        "Risk of future adverse events is categorised by predicted 6-month mortality: 1.5% or below lowest; over 1.5% to 3.0% low; over 3.0% to 6.0% intermediate; over 6.0% to 9.0% high; over 9.0% highest (NICE NG185 Table 1, Rec. 1.2.11).",
+        "Younger people with a low predicted mortality can still be at high risk of adverse cardiovascular events and may benefit from early angiography (NICE NG185 Rec. 1.2.15)."
+      ],
+      "references": [
+        {
+          "title": "Clinical Practice Guidelines for the Diagnosis and Management of Acute Coronary Syndrome (Saudi Heart Association, national ACS pathway)",
+          "edition": "PDF posted on saudi-heart.com January 2026; publication year not printed in the document, printed pp. 22–23",
+          "url": "https://saudi-heart.com/wp-content/uploads/2026/01/Clinical-practice-guidelines-7_260104_093736.pdf"
+        },
+        {
+          "title": "NICE NG185: Acute coronary syndromes",
+          "edition": "NICE guideline, published 18 November 2020, Recommendations 1.2.11 and 1.2.15, Table 1",
+          "url": "https://www.nice.org.uk/guidance/ng185"
+        }
+      ]
+    },
+    "presentation": {
+      "symptoms": [
+        "Chest pressure or discomfort lasting at least several minutes, sometimes with sweating, dyspnoea, nausea or anxiety (SHA printed p. 23).",
+        "Pain in the chest and/or arms, back or jaw lasting longer than 15 minutes (NICE CG95 Rec. 1.2.1.3).",
+        "New-onset chest pain, or abrupt worsening of stable angina with frequent episodes on little or no exertion (NICE CG95 Rec. 1.2.1.3).",
+        "Not every ACS presents with central chest pain; do not score symptoms differently by sex or ethnic group (NICE CG95 Recs 1.2.1.5–1.2.1.6)."
+      ],
+      "physicalSigns": [
+        "Blood pressure and heart rate, recorded as part of the formal risk assessment (NICE NG185 Rec. 1.2.8).",
+        "Signs of complications: pulmonary oedema or cardiogenic shock (NICE CG95 Rec. 1.2.4.2).",
+        "Signs of acute heart failure, haemodynamic compromise or arrhythmia, which place the patient in the very high-risk group (SHA printed p. 24)."
+      ],
+      "redFlags": [
+        "Unstable clinical condition: offer immediate coronary angiography (NICE NG185 Rec. 1.2.12).",
+        "Very high-risk features: ongoing ischaemia, haemodynamic compromise, arrhythmia, mechanical complication of MI, acute heart failure, or recurrent dynamic or widespread ST/T changes: immediate invasive strategy within 2 hours of admission (SHA printed p. 24).",
+        "Cardiac arrest at admission, ST deviation and raised cardiac markers each add points in the GRACE score (SHA printed p. 23).",
+        "Persistent ST elevation or presumed new LBBB means STEMI, a different pathway (NICE CG95 Rec. 1.2.2.2; NICE NG185 section 1.1)."
+      ],
+      "precipitants": [
+        "Risk factors that raise the likelihood of coronary disease: diabetes, smoking, hypertension, hypercholesterolaemia, family history of coronary disease, obesity, known atherosclerosis (SHA printed p. 13).",
+        "Previous MI, previous PCI or previous CABG, recorded in the clinical history for risk assessment (NICE NG185 Rec. 1.2.8).",
+        "Neither source lists specific acute triggers for NSTEMI."
+      ]
+    },
+    "differentials": [
+      {
+        "condition": "Unstable angina",
+        "distinguishingFeatures": "Same ischaemic symptoms as NSTEMI but without the typical rise and fall of cardiac biomarkers (SHA printed p. 23). NICE NG185 manages unstable angina and NSTEMI with the same recommendations (section 1.2)."
+      },
+      {
+        "condition": "ST-elevation myocardial infarction",
+        "distinguishingFeatures": "ST elevation or presumed new LBBB on the ECG; assess immediately for reperfusion (NICE CG95 Rec. 1.2.2.2; NICE NG185 Rec. 1.1.1)."
+      },
+      {
+        "condition": "Pulmonary embolism",
+        "distinguishingFeatures": "Score with the two-level PE Wells score; more than 4 points means PE likely (NICE NG158 Rec. 1.1.17). Troponin can also be raised in PE (NICE CG95 Rec. 1.2.6.2)."
+      },
+      {
+        "condition": "Aortic dissection",
+        "distinguishingFeatures": "Can raise troponin; consider it and use early CT to exclude it when troponin is raised (NICE CG95 Recs 1.2.6.2 and 1.2.6.7). The cited sources do not list distinguishing symptoms."
+      },
+      {
+        "condition": "Myocarditis",
+        "distinguishingFeatures": "Raised troponin without ACS; reassess for other causes before confirming ACS when troponin is raised (NICE CG95 Rec. 1.2.6.2)."
+      },
+      {
+        "condition": "Stable angina",
+        "distinguishingFeatures": "Constricting pain brought on by exertion and relieved by rest or GTN within about 5 minutes; no troponin rise (NICE CG95 Rec. 1.3.3.1)."
+      }
+    ],
+    "investigations": {
+      "ruleIn": [
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "Resting 12-lead ECG",
+          "modalityTarget": "Bedside, at first medical contact",
+          "targetCondition": "Non-ST-elevation ACS",
+          "expectedFinding": "ST depression or deep T-wave inversion; dynamic or widespread ST/T change places the patient in a higher-risk group. A normal ECG does not exclude ACS.",
+          "clinicalRationale": "Part of the formal risk assessment, looking particularly for dynamic or unstable patterns (NICE NG185 Rec. 1.2.8). Repeat if in doubt (NICE CG95 Rec. 1.2.2.6).",
+          "normalValue": "Sinus rhythm with no ST-segment or T-wave change, no pathological Q waves, no LBBB",
+          "references": [
+            {
+              "title": "NICE NG185: Acute coronary syndromes",
+              "edition": "NICE guideline, published 18 November 2020, Recommendation 1.2.8",
+              "url": "https://www.nice.org.uk/guidance/ng185"
+            },
+            {
+              "title": "NICE CG95: Recent-onset chest pain of suspected cardiac origin: assessment and diagnosis",
+              "edition": "NICE guideline, updated 30 November 2016, Recommendations 1.2.2.3 and 1.2.2.6",
+              "url": "https://www.nice.org.uk/guidance/cg95"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "High-sensitivity troponin I or T",
+          "modalityTarget": "Venous blood on arrival, then repeat per assay",
+          "targetCondition": "Myocardial infarction (NSTEMI)",
+          "expectedFinding": "Rise and/or fall with at least one value above the 99th percentile. A rise and fall with typical symptoms defines NSTEMI; no rise defines unstable angina.",
+          "clinicalRationale": "Take on arrival. High or moderate risk: serial samples; early rule-out options per HTG552 (single sample at or near the limit of detection, or a second sample 30 minutes to 3 hours later) (NICE CG95 Recs 1.2.4.1 and 1.2.5.1–1.2.5.3; HTG552 Rec. 1.2). Troponin rise is not specific to ACS: consider myocarditis, aortic dissection and PE (NICE CG95 Rec. 1.2.6.2).",
+          "normalValue": "Below the assay limit of detection and the 99th percentile (assay- and sex-specific; local laboratory ranges apply)",
+          "references": [
+            {
+              "title": "NICE CG95: Recent-onset chest pain of suspected cardiac origin: assessment and diagnosis",
+              "edition": "NICE guideline, updated 30 November 2016, Recommendations 1.2.4.1, 1.2.5.1–1.2.5.3, 1.2.6.2",
+              "url": "https://www.nice.org.uk/guidance/cg95"
+            },
+            {
+              "title": "NICE HTG552 (DG40): High-sensitivity troponin tests for the early rule out of NSTEMI",
+              "edition": "NICE HealthTech guidance, published 26 August 2020, Recommendations 1.1–1.3",
+              "url": "https://www.nice.org.uk/guidance/htg552"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Creatinine, glucose and haemoglobin",
+          "modalityTarget": "Venous blood on arrival",
+          "targetCondition": "Risk and treatment choice in ACS",
+          "expectedFinding": "Creatinine above 265 micromol/L is significant renal impairment and changes the antithrombin choice. Glucose of 11.1 mmol/L or more is hyperglycaemia.",
+          "clinicalRationale": "Include in the formal risk assessment (NICE NG185 Rec. 1.2.8). Consider unfractionated heparin as an alternative to fondaparinux when creatinine is above 265 micromol/L (NICE NG185 Rec. 1.2.4). Measure glycaemic status at initial evaluation in all patients (SHA printed p. 27).",
+          "normalValue": "Local laboratory adult reference ranges apply (not defined in the sources)",
+          "references": [
+            {
+              "title": "NICE NG185: Acute coronary syndromes",
+              "edition": "NICE guideline, published 18 November 2020, Recommendations 1.2.4 and 1.2.8",
+              "url": "https://www.nice.org.uk/guidance/ng185"
+            },
+            {
+              "title": "Clinical Practice Guidelines for the Diagnosis and Management of Acute Coronary Syndrome (Saudi Heart Association, national ACS pathway)",
+              "edition": "PDF posted on saudi-heart.com January 2026; publication year not printed in the document, printed p. 27",
+              "url": "https://saudi-heart.com/wp-content/uploads/2026/01/Clinical-practice-guidelines-7_260104_093736.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Lipid profile",
+          "modalityTarget": "Venous blood, as soon as possible after presentation",
+          "targetCondition": "Lipid-lowering therapy planning",
+          "expectedFinding": "LDL-C level to set the statin target; the target is below 1.8 mmol/L (70 mg/dL) or a reduction of at least 50% if baseline is 1.8–3.5 mmol/L.",
+          "clinicalRationale": "Obtain a lipid profile in all NSTE-ACS patients as soon as possible after presentation and re-check 4–6 weeks after the event (SHA printed p. 26).",
+          "normalValue": "LDL-C goal after NSTE-ACS: below 1.8 mmol/L (70 mg/dL) (SHA printed p. 26)",
+          "references": [
+            {
+              "title": "Clinical Practice Guidelines for the Diagnosis and Management of Acute Coronary Syndrome (Saudi Heart Association, national ACS pathway)",
+              "edition": "PDF posted on saudi-heart.com January 2026; publication year not printed in the document, printed p. 26",
+              "url": "https://saudi-heart.com/wp-content/uploads/2026/01/Clinical-practice-guidelines-7_260104_093736.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "firstLineImaging",
+          "testName": "Transthoracic echocardiography",
+          "modalityTarget": "Bedside or department, in hospital",
+          "targetCondition": "Left ventricular function and mechanical complications",
+          "expectedFinding": "Reduced left ventricular ejection fraction; post-MI mechanical complication; LV thrombus.",
+          "clinicalRationale": "Do routine echocardiography in all patients to assess resting LV and RV function, detect early mechanical complications and exclude LV thrombus; do it urgently in haemodynamically unstable patients (SHA printed p. 26). Assess LV function in all people who have had NSTEMI and record it (NICE NG185 Recs 1.2.27 and 1.2.29). If pre-discharge LVEF is 40% or below, repeat 6–12 weeks after MI (SHA printed p. 27).",
+          "normalValue": "Normal ventricular function, no mechanical complication, no LV thrombus (the sources give no numeric normal ejection fraction)",
+          "references": [
+            {
+              "title": "Clinical Practice Guidelines for the Diagnosis and Management of Acute Coronary Syndrome (Saudi Heart Association, national ACS pathway)",
+              "edition": "PDF posted on saudi-heart.com January 2026; publication year not printed in the document, printed pp. 26–27",
+              "url": "https://saudi-heart.com/wp-content/uploads/2026/01/Clinical-practice-guidelines-7_260104_093736.pdf"
+            },
+            {
+              "title": "NICE NG185: Acute coronary syndromes",
+              "edition": "NICE guideline, published 18 November 2020, Recommendations 1.2.27–1.2.29",
+              "url": "https://www.nice.org.uk/guidance/ng185"
+            }
+          ]
+        }
+      ],
+      "ruleOut": [
+        {
+          "tier": "laboratory",
+          "testName": "Serial high-sensitivity troponin (early rule-out)",
+          "modalityTarget": "Venous blood",
+          "targetCondition": "NSTEMI",
+          "expectedFinding": "Troponin at or below the limit of detection on a single presentation sample, or below the rule-out threshold on the repeat sample, with no new ECG change.",
+          "clinicalRationale": "A single sample below the limit of detection can rule out NSTEMI in low-risk patients; otherwise use the second-sample strategy 30 minutes to 3 hours later per HTG552 Rec. 1.2 (NICE CG95 Rec. 1.2.5.3).",
+          "normalValue": "Below the assay limit of detection and the 99th percentile (assay-specific)",
+          "references": [
+            {
+              "title": "NICE CG95: Recent-onset chest pain of suspected cardiac origin: assessment and diagnosis",
+              "edition": "NICE guideline, updated 30 November 2016, Recommendation 1.2.5.3",
+              "url": "https://www.nice.org.uk/guidance/cg95"
+            },
+            {
+              "title": "NICE HTG552 (DG40): High-sensitivity troponin tests for the early rule out of NSTEMI",
+              "edition": "NICE HealthTech guidance, published 26 August 2020, Recommendation 1.2",
+              "url": "https://www.nice.org.uk/guidance/htg552"
+            }
+          ]
+        },
+        {
+          "tier": "advancedImaging",
+          "testName": "Coronary angiography",
+          "modalityTarget": "Catheter laboratory",
+          "targetCondition": "Culprit coronary lesion; need for PCI or CABG",
+          "expectedFinding": "Culprit or multivessel coronary disease; normal coronaries argue against a coronary cause.",
+          "clinicalRationale": "Immediate if unstable (NICE NG185 Rec. 1.2.12); within 72 hours for intermediate-or-higher risk (Rec. 1.2.13); timing bands in the SHA guideline are 2, 24 and 72 hours by risk group (SHA printed p. 24). Radial access is preferred in centres experienced with it (SHA printed p. 24).",
+          "normalValue": "No obstructive coronary lesion",
+          "references": [
+            {
+              "title": "NICE NG185: Acute coronary syndromes",
+              "edition": "NICE guideline, published 18 November 2020, Recommendations 1.2.12–1.2.15",
+              "url": "https://www.nice.org.uk/guidance/ng185"
+            },
+            {
+              "title": "Clinical Practice Guidelines for the Diagnosis and Management of Acute Coronary Syndrome (Saudi Heart Association, national ACS pathway)",
+              "edition": "PDF posted on saudi-heart.com January 2026; publication year not printed in the document, printed p. 24",
+              "url": "https://saudi-heart.com/wp-content/uploads/2026/01/Clinical-practice-guidelines-7_260104_093736.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "Ischaemia testing (preferably with imaging)",
+          "modalityTarget": "Non-invasive testing",
+          "targetCondition": "Inducible ischaemia in low-risk patients",
+          "expectedFinding": "Inducible ischaemia would move the patient to the invasive pathway.",
+          "clinicalRationale": "In patients without high or intermediate risk criteria and no recurrent symptoms, test for ischaemia before deciding on invasive evaluation (SHA printed pp. 24–25). Consider ischaemia testing before discharge in people managed conservatively without angiography (NICE NG185 Rec. 1.2.26).",
+          "normalValue": "No inducible ischaemia",
+          "references": [
+            {
+              "title": "Clinical Practice Guidelines for the Diagnosis and Management of Acute Coronary Syndrome (Saudi Heart Association, national ACS pathway)",
+              "edition": "PDF posted on saudi-heart.com January 2026; publication year not printed in the document, printed pp. 24–25",
+              "url": "https://saudi-heart.com/wp-content/uploads/2026/01/Clinical-practice-guidelines-7_260104_093736.pdf"
+            },
+            {
+              "title": "NICE NG185: Acute coronary syndromes",
+              "edition": "NICE guideline, published 18 November 2020, Recommendation 1.2.26",
+              "url": "https://www.nice.org.uk/guidance/ng185"
+            }
+          ]
+        }
+      ]
+    },
+    "clinicalManagement": [
+      {
+        "id": "initial",
+        "title": "Initial treatment and monitoring",
+        "timeframe": "On diagnosis; first hours",
+        "actions": [
+          "Offer aspirin as soon as possible: a single loading dose of 300 mg unless clear allergy (NICE NG185 Rec. 1.2.2); the Saudi Heart Association gives 150–300 mg in aspirin-naive patients (SHA printed p. 25). Continue indefinitely unless bleeding risk or hypersensitivity contraindicates (NICE NG185 Rec. 1.2.1).",
+          "Do not give dual antiplatelet therapy before a diagnosis of unstable angina or NSTEMI is made (NICE NG185 Rec. 1.2.6).",
+          "Admit to a monitored unit. Continuous rhythm monitoring for at least 24 hours until NSTE-ACS is established or ruled out, and for those at intermediate or high risk of arrhythmia (SHA printed pp. 26–27).",
+          "Obtain troponin, creatinine, glucose, haemoglobin and lipid profile (NICE NG185 Rec. 1.2.8; SHA printed p. 26)."
+        ]
+      },
+      {
+        "id": "antithrombin",
+        "title": "Choose the antithrombin",
+        "timeframe": "When aspirin has been given",
+        "actions": [
+          "Fondaparinux is recommended for people without high bleeding risk unless they are having immediate coronary angiography (NICE NG185 Rec. 1.2.3). SHA: fondaparinux 2.5 mg subcutaneously daily has the most favourable efficacy–safety profile (SHA printed p. 25)."
+        ],
+        "branches": [
+          {
+            "condition": "Immediate coronary angiography planned",
+            "actions": [
+              "Use unfractionated heparin rather than fondaparinux (NICE NG185 Rec. 1.2.3 and note)."
+            ]
+          },
+          {
+            "condition": "Significant renal impairment (creatinine above 265 micromol/L)",
+            "actions": [
+              "Consider unfractionated heparin with dose adjusted to clotting monitoring (NICE NG185 Rec. 1.2.4)."
+            ]
+          },
+          {
+            "condition": "High bleeding risk (age, known bleeding, renal impairment, low body weight)",
+            "actions": [
+              "Choose the antithrombin and its dose carefully (NICE NG185 Rec. 1.2.5)."
+            ]
+          },
+          {
+            "condition": "Fondaparinux not available",
+            "actions": [
+              "Enoxaparin 1 mg/kg subcutaneously twice daily or unfractionated heparin (SHA printed p. 25). Do not cross over between unfractionated heparin and low-molecular-weight heparin (SHA printed p. 25)."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "risk",
+        "title": "Formal risk assessment",
+        "timeframe": "As soon as the diagnosis and aspirin and antithrombin therapy are done",
+        "actions": [
+          "Assess risk with an established score predicting 6-month mortality such as GRACE (NICE NG185 Rec. 1.2.7; SHA printed p. 23).",
+          "Include a full clinical history, examination with blood pressure and heart rate, a resting 12-lead ECG and blood tests (NICE NG185 Rec. 1.2.8).",
+          "Record the result in the care record and use it to balance treatment benefit against risk (NICE NG185 Recs 1.2.9–1.2.10)."
+        ]
+      },
+      {
+        "id": "angiography",
+        "title": "Timing of coronary angiography",
+        "timeframe": "Immediate, 24 hours, 72 hours or conservative, by risk group",
+        "actions": [
+          "Pick the timing from the risk group. NICE and the Saudi Heart Association give different cut-offs; both are in the comparison table."
+        ],
+        "branches": [
+          {
+            "condition": "Clinically unstable, or very high-risk features",
+            "actions": [
+              "NICE: offer immediate angiography (Rec. 1.2.12). SHA: immediate invasive strategy within 2 hours of admission (printed p. 24)."
+            ]
+          },
+          {
+            "condition": "High risk (GRACE above 140, dynamic ST/T change, or troponin rise and/or fall compatible with MI)",
+            "actions": [
+              "SHA: early invasive strategy within 24 hours of admission (printed p. 24). NICE: consider angiography within 72 hours if predicted 6-month mortality is above 3.0% (Rec. 1.2.13)."
+            ]
+          },
+          {
+            "condition": "Intermediate risk (recurrent symptoms or substantial inducible ischaemia)",
+            "actions": [
+              "SHA: invasive strategy within 72 hours (printed p. 24). NICE: consider angiography within 72 hours if predicted 6-month mortality is above 3.0% (Rec. 1.2.13)."
+            ]
+          },
+          {
+            "condition": "Low risk (predicted 6-month mortality 3.0% or less; no recurrent symptoms)",
+            "actions": [
+              "NICE: consider conservative management; consider angiography if ischaemia occurs or is shown on testing (Recs 1.2.14 and 1.2.20). SHA: non-invasive ischaemia testing, preferably with imaging, before deciding on invasive evaluation (printed pp. 24–25).",
+              "Some younger people with a low score may still be at high risk and benefit from early angiography (NICE NG185 Rec. 1.2.15)."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pci",
+        "title": "Antiplatelet and anticoagulant therapy around angiography and PCI",
+        "timeframe": "At angiography and PCI",
+        "actions": [
+          "Give unfractionated heparin systemically in the catheter laboratory to people having PCI, whether or not they received fondaparinux (NICE NG185 Rec. 1.2.16). SHA: single IV bolus of unfractionated heparin 70–85 IU/kg (50–60 IU/kg with concomitant GPIIb/IIIa inhibitors) in patients on fondaparinux (SHA printed p. 25).",
+          "Add a second antiplatelet to aspirin: prasugrel or ticagrelor if there is no separate indication for oral anticoagulation; clopidogrel if there is one. Give prasugrel only once coronary anatomy is defined and PCI is intended; think about bleeding risk at age 75 and over (NICE NG185 Rec. 1.2.17). SHA: ticagrelor, or clopidogrel if ticagrelor is unavailable, before or at the latest at PCI, for 12 months (printed p. 25).",
+          "If a stent is needed, use a drug-eluting stent (NICE NG185 Rec. 1.2.18). Glycoprotein IIb/IIIa inhibitors are an option as an adjunct to complex PCI (NICE NG185 Rec. 1.2.19).",
+          "Radial access is preferred in experienced centres (SHA printed p. 24). For multivessel disease, choose PCI or CABG with the Heart Team using clinical status, comorbidity and anatomy (SHA printed p. 24; NICE NG185 Recs 1.2.24–1.2.25)."
+        ]
+      },
+      {
+        "id": "no-pci",
+        "title": "When PCI is not indicated",
+        "timeframe": "After angiography or with conservative management",
+        "actions": [
+          "Offer ticagrelor with aspirin unless high bleeding risk (NICE NG185 Rec. 1.2.21). Consider clopidogrel with aspirin, or aspirin alone, if bleeding risk is high (NICE NG185 Rec. 1.2.22).",
+          "Consider ischaemia testing before discharge in people managed conservatively without angiography (NICE NG185 Rec. 1.2.26).",
+          "Before CABG, continue low-dose aspirin; in stabilised patients on DAPT consider stopping ticagrelor and clopidogrel 5 days before surgery (SHA printed p. 25)."
+        ]
+      },
+      {
+        "id": "secondary",
+        "title": "Secondary prevention and before discharge",
+        "timeframe": "Before discharge and at follow-up",
+        "actions": [
+          "Offer an ACE inhibitor as soon as haemodynamically stable, titrated up every 12 to 24 hours before discharge to the maximum tolerated or target dose; an ARB if intolerant; not both together (NICE NG185 Recs 1.4.6–1.4.9).",
+          "Offer a beta-blocker as soon as possible when haemodynamically stable (NICE NG185 Rec. 1.4.27). Avoid intravenous beta-blockers with hypotension, acute heart failure, AV block or severe bradycardia (SHA printed p. 26).",
+          "Start a high-dose statin as early as possible, with an LDL-C goal below 1.8 mmol/L (70 mg/dL) or a reduction of at least 50% (SHA printed p. 26).",
+          "Continue dual antiplatelet therapy for up to 12 months after MI unless contraindicated (NICE NG185 Rec. 1.4.15). Assess bleeding risk at follow-up (NICE NG185 Rec. 1.4.3).",
+          "Keep blood glucose below 11.0 mmol/L while avoiding hypoglycaemia (NICE NG185 Rec. 1.3.1). Test HbA1c before discharge in people with hyperglycaemia without known diabetes (NICE NG185 Rec. 1.3.3).",
+          "Assess left ventricular function in everyone who has had NSTEMI (NICE NG185 Rec. 1.2.27). For symptomatic heart failure with reduced ejection fraction, start an aldosterone antagonist within 3 to 14 days of MI, preferably after the ACE inhibitor (NICE NG185 Rec. 1.4.38).",
+          "Offer cardiac rehabilitation with an exercise component to everyone, starting within 10 days of discharge (NICE NG185 Recs 1.8.1 and 1.8.13)."
+        ]
+      }
+    ],
+    "medicationPlan": {
+      "status": "source-verified",
+      "regimens": [
+        {
+          "indication": "NSTEMI or unstable angina: aspirin",
+          "patientGroup": "Adults with NSTEMI or unstable angina",
+          "genericName": "Aspirin",
+          "dose": "Loading 300 mg (NICE NG185 Rec. 1.2.2); the Saudi Heart Association gives 150–300 mg in aspirin-naive patients, then 81–162 mg daily maintenance (SHA printed p. 25)",
+          "route": "Oral",
+          "frequency": "Single loading dose, then once daily",
+          "duration": "Indefinite unless contraindicated by bleeding risk or hypersensitivity (NICE NG185 Rec. 1.2.1)",
+          "adjustments": [
+            "No dose adjustment stated in the cited sources",
+            "Clopidogrel monotherapy is an alternative in aspirin hypersensitivity after MI (NICE NG185 Rec. 1.4.17)"
+          ],
+          "monitoring": [
+            "Bleeding risk at follow-up (NICE NG185 Rec. 1.4.3)",
+            "Consider the dyspepsia guideline in people with a history of dyspepsia or aspirin-induced ulcer bleeding (NICE NG185 Recs 1.4.18–1.4.19)"
+          ],
+          "contraindications": [
+            "Clear evidence of aspirin allergy (NICE NG185 Rec. 1.2.2)",
+            "Bleeding risk judged to contraindicate (NICE NG185 Rec. 1.2.1)"
+          ],
+          "sourceTitle": "NICE NG185: Acute coronary syndromes",
+          "sourceUrl": "https://www.nice.org.uk/guidance/ng185",
+          "sourceEdition": "NICE guideline, published 18 November 2020, Recs 1.2.1–1.2.2; SHA ACS guideline printed p. 25"
+        },
+        {
+          "indication": "NSTEMI second antiplatelet (with aspirin)",
+          "patientGroup": "Adults having angiography or managed without PCI, no separate indication for anticoagulation",
+          "genericName": "Ticagrelor",
+          "dose": "Loading 180 mg; first 90 mg maintenance dose 6 to 12 hours later; 90 mg twice daily in the first year, then 60 mg twice daily",
+          "route": "Oral",
+          "frequency": "Twice daily",
+          "duration": "Up to 12 months of dual antiplatelet therapy after MI (NICE NG185 Rec. 1.4.15); label: 90 mg twice daily during the first year after ACS, then 60 mg twice daily",
+          "adjustments": [
+            "Label advises aspirin maintenance 75 to 100 mg daily with ticagrelor, which differs from the SHA aspirin maintenance of 81–162 mg (see comparison)",
+            "Do not give with another oral P2Y12 inhibitor (label)"
+          ],
+          "monitoring": [
+            "Bleeding risk and dyspnoea are not detailed in the cited sections; follow the full label",
+            "Single antiplatelet therapy with ticagrelor may be considered after PCI based on thrombotic versus bleeding risk (label section 2.2)"
+          ],
+          "contraindications": [
+            "History of intracranial haemorrhage",
+            "Active pathological bleeding",
+            "Hypersensitivity to ticagrelor or any component (FDA label section 4)"
+          ],
+          "sourceTitle": "FDA label: Ticagrelor tablets (set ID 1225fd45-9b56-1671-ee77-cd0c9f2174a5)",
+          "sourceUrl": "https://api.fda.gov/drug/label.json?search=set_id:1225fd45-9b56-1671-ee77-cd0c9f2174a5",
+          "sourceEdition": "FDA label version 23, effective 30 May 2026, sections 2.2 and 4; indication per NICE NG185 Recs 1.2.17 and 1.2.21"
+        },
+        {
+          "indication": "NSTEMI second antiplatelet when anticoagulation is needed or bleeding risk high",
+          "patientGroup": "Adults with a separate indication for anticoagulation, or high bleeding risk",
+          "genericName": "Clopidogrel",
+          "dose": "Loading 300 mg, then 75 mg once daily",
+          "route": "Oral",
+          "frequency": "Once daily after loading",
+          "duration": "Up to 12 months of dual antiplatelet therapy after MI; with a new anticoagulant indication after PCI, clopidogrel for up to 12 months (NICE NG185 Recs 1.4.15 and 1.4.23)",
+          "adjustments": [
+            "Starting without a loading dose delays the antiplatelet effect by several days (label section 2.1)",
+            "Do not routinely combine prasugrel or ticagrelor with an anticoagulant needed for another indication (NICE NG185 Rec. 1.4.25)"
+          ],
+          "monitoring": [
+            "Bleeding risk: triple therapy with aspirin, clopidogrel and an anticoagulant significantly increases bleeding (NICE NG185 Rec. 1.4.21)"
+          ],
+          "contraindications": [
+            "Active pathological bleeding such as peptic ulcer or intracranial haemorrhage",
+            "Hypersensitivity to clopidogrel or any component (FDA label section 4)"
+          ],
+          "sourceTitle": "FDA label: Clopidogrel tablets (set ID 0078fb3d-3595-4ae1-a059-1d5e81c879cf)",
+          "sourceUrl": "https://api.fda.gov/drug/label.json?search=set_id:0078fb3d-3595-4ae1-a059-1d5e81c879cf",
+          "sourceEdition": "FDA label version 18, effective 17 May 2024, sections 2.1 and 4; indication per NICE NG185 Recs 1.2.17 and 1.2.22"
+        },
+        {
+          "indication": "NSTEMI second antiplatelet when PCI is intended",
+          "patientGroup": "Adults with NSTEMI, PCI planned, coronary anatomy defined, no anticoagulation indication",
+          "genericName": "Prasugrel",
+          "dose": "Loading 60 mg, then 10 mg once daily; consider 5 mg daily if body weight under 60 kg (label)",
+          "route": "Oral",
+          "frequency": "Once daily after loading",
+          "duration": "Dual antiplatelet therapy with aspirin for up to 12 months (NICE NG185 Rec. 1.4.15)",
+          "adjustments": [
+            "Under 60 kg: consider lowering to 5 mg; the 5 mg dose has not been studied prospectively (label)",
+            "Age 75 and over: think about whether bleeding risk outweighs effectiveness (NICE NG185 Rec. 1.2.17)",
+            "Label advises aspirin 75 to 325 mg daily with prasugrel"
+          ],
+          "monitoring": [
+            "Bleeding; the label notes substantial bleeding risk if urgent CABG is needed after prasugrel"
+          ],
+          "contraindications": [
+            "Active pathological bleeding",
+            "Prior transient ischaemic attack or stroke",
+            "Hypersensitivity to prasugrel or any component (FDA label section 4)"
+          ],
+          "sourceTitle": "FDA label: Prasugrel tablets (set ID 35aa7f3e-bbd8-4eae-b61f-29d1abca2224)",
+          "sourceUrl": "https://api.fda.gov/drug/label.json?search=set_id:35aa7f3e-bbd8-4eae-b61f-29d1abca2224",
+          "sourceEdition": "FDA label version 1, effective 2 March 2025, sections 2 and 4; use per NICE NG185 Rec. 1.2.17"
+        },
+        {
+          "indication": "NSTEMI antithrombin, no immediate angiography",
+          "patientGroup": "Adults without high bleeding risk",
+          "genericName": "Fondaparinux",
+          "dose": "2.5 mg (SHA printed p. 25)",
+          "route": "Subcutaneous",
+          "frequency": "Once daily",
+          "duration": "Not stated in NICE NG185 or the SHA guideline for NSTEMI; follow local protocol",
+          "adjustments": [
+            "Use unfractionated heparin instead if immediate angiography is planned (NICE NG185 Rec. 1.2.3)",
+            "Consider unfractionated heparin if creatinine is above 265 micromol/L (NICE NG185 Rec. 1.2.4)",
+            "A single IV unfractionated heparin bolus 70–85 IU/kg (50–60 IU/kg with GPIIb/IIIa inhibitors) is recommended during PCI (SHA printed p. 25)"
+          ],
+          "monitoring": [
+            "Renal function and bleeding (NICE NG185 Rec. 1.2.5)"
+          ],
+          "contraindications": [
+            "Severe renal impairment (creatinine clearance below 30 mL/min), active major bleeding, bacterial endocarditis, thrombocytopenia with positive anti-platelet antibody test, history of serious hypersensitivity (FDA label section 4; label indications are venous thromboembolism, not ACS)"
+          ],
+          "sourceTitle": "Saudi Heart Association ACS guideline and FDA label: Fondaparinux sodium (set ID 49e0d7bc-3f49-849b-c77c-98682d1c0d19)",
+          "sourceUrl": "https://saudi-heart.com/wp-content/uploads/2026/01/Clinical-practice-guidelines-7_260104_093736.pdf",
+          "sourceEdition": "PDF posted on saudi-heart.com January 2026; publication year not printed in the document, printed p. 25; FDA label version 16, effective 10 September 2021, section 4"
+        },
+        {
+          "indication": "NSTEMI antithrombin if fondaparinux unavailable",
+          "patientGroup": "Adults with NSTEMI or unstable angina",
+          "genericName": "Enoxaparin",
+          "dose": "1 mg/kg (SHA printed p. 25; FDA label for unstable angina and non-Q-wave MI)",
+          "route": "Subcutaneous",
+          "frequency": "Every 12 hours",
+          "duration": "Minimum 2 days and until clinical stabilisation; usual 2 to 8 days (FDA label), given with oral aspirin 100 to 325 mg daily (label)",
+          "adjustments": [
+            "Creatinine clearance below 30 mL/min: 1 mg/kg subcutaneously once daily (FDA label section 2.3)",
+            "Do not cross over between unfractionated heparin and low-molecular-weight heparin (SHA printed p. 25)"
+          ],
+          "monitoring": [
+            "Bleeding; evaluate for a bleeding disorder before starting unless urgent (FDA label section 2.1)"
+          ],
+          "contraindications": [
+            "Active major bleeding",
+            "History of immune-mediated heparin-induced thrombocytopenia within 100 days or circulating antibodies",
+            "Hypersensitivity to enoxaparin, heparin or pork products (FDA label section 4)"
+          ],
+          "sourceTitle": "Saudi Heart Association ACS guideline and FDA label: Enoxaparin sodium (set ID 014c6710-f2c4-fd1e-e063-6394a90ae525)",
+          "sourceUrl": "https://saudi-heart.com/wp-content/uploads/2026/01/Clinical-practice-guidelines-7_260104_093736.pdf",
+          "sourceEdition": "PDF posted on saudi-heart.com January 2026; publication year not printed in the document, printed p. 25; FDA label version 3, effective 21 June 2024, sections 2.2, 2.3 and 4"
+        },
+        {
+          "indication": "NSTEMI PCI anticoagulation",
+          "patientGroup": "Adults having PCI",
+          "genericName": "Unfractionated heparin",
+          "dose": "70–85 IU/kg intravenous bolus during PCI in patients on fondaparinux; 50–60 IU/kg if GPIIb/IIIa inhibitors are used (SHA printed p. 25)",
+          "route": "Intravenous",
+          "frequency": "Single bolus during the procedure",
+          "duration": "Procedural",
+          "adjustments": [
+            "Dose adjusted to clotting monitoring when used as treatment in significant renal impairment (NICE NG185 Rec. 1.2.4)",
+            "Do not cross over with low-molecular-weight heparin (SHA printed p. 25)"
+          ],
+          "monitoring": [
+            "Coagulation tests at appropriate intervals when full-dose heparin is used (FDA label section 4)"
+          ],
+          "contraindications": [
+            "History of heparin-induced thrombocytopenia",
+            "Known hypersensitivity to heparin or pork products",
+            "Uncontrolled active bleeding except from disseminated intravascular coagulation (FDA label section 4)"
+          ],
+          "sourceTitle": "Saudi Heart Association ACS guideline, NICE NG185 and FDA label: Heparin sodium (set ID 02fb700d-a28c-4d45-b78d-382dc0d5986c)",
+          "sourceUrl": "https://saudi-heart.com/wp-content/uploads/2026/01/Clinical-practice-guidelines-7_260104_093736.pdf",
+          "sourceEdition": "PDF posted on saudi-heart.com January 2026; publication year not printed in the document, printed p. 25; NICE NG185 Rec. 1.2.16; FDA label version 12, effective 26 September 2025, section 4"
+        }
+      ],
+      "note": "Doses of ACE inhibitors, beta-blockers and statins are not given in NICE NG185 or the SHA guideline (statins: 'high-dose' only), so follow product information. Check SFDA registration and the hospital formulary."
+    },
+    "diagnosticCriteria": [
+      {
+        "criterion": "Myocardial infarction (universal definition, NICE CG95 Rec. 1.2.6.1)",
+        "threshold": "Rise and/or fall of troponin with at least one value above the 99th percentile, plus ischaemic symptoms, new ST-T change or new LBBB, pathological Q waves, imaging evidence of new loss of viable myocardium or wall motion abnormality, or intracoronary thrombus at angiography"
+      },
+      {
+        "criterion": "NSTEMI versus unstable angina (SHA printed p. 23)",
+        "threshold": "Typical ischaemic symptoms with a typical rise and fall of cardiac biomarkers = NSTEMI; same symptoms without a biomarker rise = unstable angina"
+      },
+      {
+        "criterion": "Very high-risk criteria (SHA printed p. 24)",
+        "threshold": "Ongoing ischaemia, haemodynamic compromise, arrhythmia, mechanical complication of MI, acute heart failure, or recurrent dynamic or widespread ST/T changes: immediate invasive strategy within 2 hours of admission"
+      },
+      {
+        "criterion": "High-risk criteria (SHA printed p. 24)",
+        "threshold": "GRACE score above 140, dynamic ST and/or T-wave changes, or a troponin rise and/or fall compatible with MI: early invasive strategy within 24 hours of admission"
+      },
+      {
+        "criterion": "Intermediate-risk criteria (SHA printed p. 24)",
+        "threshold": "Recurrent symptoms or substantial inducible ischaemia on provocative testing: invasive strategy within 72 hours of admission"
+      },
+      {
+        "criterion": "Unstable condition (NICE NG185 Rec. 1.2.12)",
+        "threshold": "Clinically unstable: offer immediate coronary angiography"
+      },
+      {
+        "criterion": "Intermediate or higher risk (NICE NG185 Rec. 1.2.13)",
+        "threshold": "Predicted 6-month mortality above 3.0% with no contraindication: consider coronary angiography within 72 hours of first admission"
+      },
+      {
+        "criterion": "Low risk (NICE NG185 Recs 1.2.14 and 1.2.20)",
+        "threshold": "Predicted 6-month mortality 3.0% or less: consider conservative management; consider angiography if ischaemia later occurs or is shown on testing"
+      },
+      {
+        "criterion": "GRACE risk score ranges (SHA printed p. 23)",
+        "threshold": "Score 2 to 306. Risk of all-cause mortality by 6 months as printed: 60–100 about 3%; 100–140 about 8%; 140–180 about 20%; above 180 above 40% (ranges overlap at 100, 140 and 180 as printed)"
+      },
+      {
+        "criterion": "NICE risk categories by predicted 6-month mortality (NICE NG185 Table 1)",
+        "threshold": "1.5% or below lowest; over 1.5% to 3.0% low; over 3.0% to 6.0% intermediate; over 6.0% to 9.0% high; over 9.0% highest"
+      },
+      {
+        "criterion": "Hyperglycaemia (SHA printed p. 27)",
+        "threshold": "Glucose 11.1 mmol/L (200 mg/dL) or more"
+      }
+    ],
+    "guidelineComparison": {
+      "title": "NSTEMI strategy: NICE NG185 vs Saudi Heart Association ACS guideline",
+      "columns": [
+        "NICE NG185 (2020)",
+        "SHA ACS guideline"
+      ],
+      "rows": [
+        {
+          "parameter": "Aspirin loading dose",
+          "values": [
+            "300 mg single dose unless clear allergy (Rec. 1.2.2)",
+            "150–300 mg in aspirin-naive patients (printed p. 25)"
+          ]
+        },
+        {
+          "parameter": "Aspirin maintenance",
+          "values": [
+            "Continue indefinitely; dose not stated (Rec. 1.2.1)",
+            "81–162 mg daily long term (printed p. 25); the ticagrelor label advises 75 to 100 mg"
+          ]
+        },
+        {
+          "parameter": "Angiography timing",
+          "values": [
+            "Immediate if unstable; consider within 72 hours if predicted 6-month mortality above 3.0% (Recs 1.2.12–1.2.13)",
+            "Within 2 hours (very high risk), 24 hours (high risk, GRACE above 140) or 72 hours (intermediate risk) (printed p. 24)"
+          ]
+        },
+        {
+          "parameter": "Low-risk patients",
+          "values": [
+            "Consider conservative management (6-month mortality 3.0% or less) (Rec. 1.2.20)",
+            "Non-invasive ischaemia testing, preferably with imaging, first (printed pp. 24–25)"
+          ]
+        },
+        {
+          "parameter": "Antithrombin",
+          "values": [
+            "Fondaparinux unless high bleeding risk or immediate angiography; UFH if creatinine above 265 micromol/L (Recs 1.2.3–1.2.4)",
+            "Fondaparinux 2.5 mg daily; enoxaparin 1 mg/kg twice daily or UFH if unavailable (printed p. 25)"
+          ]
+        },
+        {
+          "parameter": "Second antiplatelet",
+          "values": [
+            "Prasugrel or ticagrelor; clopidogrel if anticoagulation is needed (Rec. 1.2.17)",
+            "Ticagrelor, or clopidogrel if ticagrelor unavailable, for 12 months (printed p. 25)"
+          ]
+        }
+      ],
+      "note": "The documents give different cut-offs. Both are shown; follow local protocol and cardiology advice. The SHA GRACE table prints overlapping score ranges."
+    },
+    "teaching": {
+      "learningObjectives": [
+        "Distinguish NSTEMI from unstable angina and from STEMI using ECG and troponin.",
+        "Risk-stratify with GRACE and choose the timing of angiography.",
+        "Select antiplatelet and antithrombin therapy and plan secondary prevention."
+      ],
+      "pitfalls": [
+        "Starting dual antiplatelet therapy before the diagnosis of NSTEMI is made (NICE NG185 Rec. 1.2.6).",
+        "Giving prasugrel before coronary anatomy is defined (NICE NG185 Rec. 1.2.17) or to patients with prior stroke or TIA (FDA label).",
+        "Crossing over between unfractionated and low-molecular-weight heparin (SHA printed p. 25).",
+        "Combining an ACE inhibitor with an ARB after MI without another reason (NICE NG185 Rec. 1.4.8).",
+        "Treating a troponin rise as ACS without considering myocarditis, aortic dissection or PE (NICE CG95 Rec. 1.2.6.2)."
+      ],
+      "keyPoints": [
+        "NSTEMI = typical symptoms plus a typical rise and fall of biomarkers; unstable angina has no rise (SHA).",
+        "Aspirin early; do not start dual antiplatelet therapy before the diagnosis is made (NICE).",
+        "Angiography timing is by risk: immediate or within 2 hours if unstable or very high risk; within 24 hours (SHA high risk); within 72 hours for intermediate risk.",
+        "Fondaparinux is first choice unless immediate angiography, high bleeding risk or creatinine above 265 micromol/L."
+      ],
+      "references": [
+        {
+          "title": "Clinical Practice Guidelines for the Diagnosis and Management of Acute Coronary Syndrome (Saudi Heart Association, national ACS pathway)",
+          "edition": "PDF posted on saudi-heart.com January 2026; publication year not printed in the document",
+          "url": "https://saudi-heart.com/wp-content/uploads/2026/01/Clinical-practice-guidelines-7_260104_093736.pdf",
+          "locator": "Printed pp. 22–27 (NSTE-ACS section: definition, GRACE, invasive strategy, antiplatelet, anticoagulant, beta-blocker, lipid, monitoring, imaging, glycaemia, rehabilitation)"
+        },
+        {
+          "title": "NICE NG185: Acute coronary syndromes",
+          "edition": "NICE guideline, published 18 November 2020",
+          "url": "https://www.nice.org.uk/guidance/ng185",
+          "locator": "Recommendations 1.2.1–1.2.29, 1.3.1–1.3.7, 1.4.1–1.4.43, 1.8.1–1.8.34 and 1.9.1–1.9.15; Tables 1 and 2"
+        },
+        {
+          "title": "NICE CG95: Recent-onset chest pain of suspected cardiac origin: assessment and diagnosis",
+          "edition": "NICE guideline, updated 30 November 2016",
+          "url": "https://www.nice.org.uk/guidance/cg95",
+          "locator": "Recommendations 1.2.1.3, 1.2.2.2–1.2.2.6, 1.2.4.1, 1.2.5.1–1.2.5.3, 1.2.6.1–1.2.6.2 and 1.2.6.7"
+        },
+        {
+          "title": "NICE HTG552 (DG40): High-sensitivity troponin tests for the early rule out of NSTEMI",
+          "edition": "NICE HealthTech guidance, published 26 August 2020",
+          "url": "https://www.nice.org.uk/guidance/htg552",
+          "locator": "Recommendations 1.1–1.3"
+        },
+        {
+          "title": "NICE NG158: Venous thromboembolic diseases: diagnosis, management and thrombophilia testing",
+          "edition": "NICE guideline, updated 2 August 2023",
+          "url": "https://www.nice.org.uk/guidance/ng158",
+          "locator": "Recommendation 1.1.17"
+        }
+      ]
+    },
+    "nonClinicalManagement": {
+      "patientEducation": [
+        "Offer clear information on the risks and benefits of each treatment, matched to the person's underlying risk and comorbidities, so they can choose a management strategy (NICE NG185 Rec. 1.2.23).",
+        "Explain that sexual activity after recovery carries no greater risk of triggering another MI; most people with an uncomplicated recovery can resume after about 4 weeks when comfortable (NICE NG185 Recs 1.8.32–1.8.33).",
+        "Give a copy of the discharge summary to the person (NICE NG185 Rec. 1.7.2).",
+        "Advise people without known diabetes who had hyperglycaemia that they are at increased risk of type 2 diabetes and should be tested at least annually (NICE NG185 Rec. 1.3.6)."
+      ],
+      "lifestyleAndDiet": [
+        "Mediterranean-style diet; do not advise omega-3 capsules or beta-carotene supplements to prevent another MI (NICE NG185 Recs 1.9.1, 1.9.3 and 1.9.5).",
+        "Physical activity for 20 to 30 minutes a day to the point of slight breathlessness, built up gradually (NICE NG185 Rec. 1.9.11).",
+        "Identify smokers and give repeated advice with follow-up support, nicotine replacement, varenicline or bupropion (SHA printed p. 27; NICE NG185 Recs 1.9.13–1.9.14).",
+        "Support to achieve and maintain a healthy weight if overweight or obese (NICE NG185 Rec. 1.9.15)."
+      ],
+      "mdtReferrals": [
+        "Cardiology and interventional cardiology; Heart Team (interventional cardiologist, cardiac surgeon and others) when the revascularisation strategy is unclear (NICE NG185 Rec. 1.2.25; SHA printed p. 24).",
+        "Cardiac rehabilitation or structured secondary prevention for all patients hospitalised with NSTE-ACS (SHA printed p. 27; NICE NG185 Rec. 1.8.1).",
+        "Cardiological assessment for revascularisation in anyone with previous MI who has not had it (NICE NG185 Rec. 1.5.1)."
+      ],
+      "dischargeCriteria": [
+        "Diagnosis confirmed, risk assessed and revascularisation decision made, with antiplatelet, beta-blocker, ACE inhibitor and statin started (NICE NG185 Recs 1.2.7, 1.4.1 and 1.5.1).",
+        "Left ventricular function assessed and recorded (NICE NG185 Rec. 1.2.27 and 1.2.29).",
+        "Discharge summary includes confirmation of acute MI, results of investigations, incomplete drug titrations, future management plans and secondary prevention advice (NICE NG185 Rec. 1.7.1)."
+      ],
+      "followUpPlan": "Send the GP a clear management plan with further drug titration, blood pressure and renal function monitoring (NICE NG185 Rec. 1.4.2). Re-check lipids 4–6 weeks after the event (SHA printed p. 26). Reassess at 3 months and then at least annually (SHA printed p. 27). If pre-discharge LVEF is 40% or below, repeat echocardiography 6–12 weeks after MI (SHA printed p. 27). Begin cardiac rehabilitation within 10 days of discharge (NICE NG185 Rec. 1.8.13)."
+    }
+  }
+]

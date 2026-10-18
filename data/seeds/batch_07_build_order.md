@@ -1,0 +1,147 @@
+# Marifa draft build order (Risk x Volume), 13 Oct 2026
+
+## Tier 1 (high volume, high risk) - 24 topics
+build hyper-detailed and review regularly.
+- Acute Asthma Exacerbation in Children: ED Pathway
+- Acute Heart Failure Exacerbation in the Community: Diuretic Titration and Admission Triggers
+- Diabetic Foot: Risk Stratification and Ulcer Referral
+- Diabetic Kidney Disease: ACR Screening and Management
+- Diabetic Retinopathy Screening
+- Dyslipidaemia: Statin Initiation and Lipid Targets
+- First Seizure in Adults: Assessment and Referral
+- Gestational Diabetes: Antenatal Glucose Management and Delivery Planning
+- Gestational Diabetes: Postnatal Follow-Up for Type 2 Diabetes Risk
+- Gestational Diabetes: Screening and Diagnosis
+- Hypertension: Primary Care Titration and Target Review
+- Lower Gastrointestinal Bleeding: Risk Stratification and Discharge versus Admission
+- Major Trauma: ED Primary Survey and Massive Haemorrhage Protocol
+- Minor Head Injury in Adults: Observation and CT Head Rules
+- Obesity in Adults: Primary Care Weight Management Pathway
+- Post-Myocardial Infarction Community Secondary Prevention and Cardiac Rehabilitation
+- Post-PCI Community Secondary Prevention
+- Pre-Eclampsia: Antenatal Risk Assessment and Aspirin Prophylaxis
+- Resistant Hypertension and Secondary Causes: Referral Triggers
+- Stable Coronary Artery Disease: Medical Management and Referral Triggers
+- Transient Ischaemic Attack: Risk Stratification and Urgent Clinic Referral
+- Type 1 Diabetes in Adults: Annual Review and Sick-Day Rules
+- Type 2 Diabetes: New Diagnosis and Initial Treatment
+- Type 2 Diabetes: Treatment Intensification and Add-On Therapy
+
+## Tier 2 (high volume, low/moderate risk) - 83 topics
+build as a concise rapid-reference primary care algorithm.
+- Abnormal Uterine Bleeding: Primary Care Workup and Urgent Referral Criteria
+- Acute Asthma Exacerbation in Children: Inhaler Technique and Oral Steroid Discharge Plan
+- Acute Cholecystitis: Admission and Surgical Pathway
+- Acute Otitis Externa: Topical Treatment and Referral
+- Acute Otitis Media: Antibiotic Prescribing Criteria
+- Acute Red Eye: Conjunctivitis versus Angle-Closure Glaucoma and Uveitis
+- Acute Soft Tissue Injuries and Sprains: Ottawa Rules and Referral Thresholds
+- Alcohol Misuse: AUDIT Screening and Brief Intervention
+- Anaemia in Pregnancy: Screening and Treatment
+- Antenatal and Postnatal Mental Health Screening
+- Anti-D Prophylaxis: Routine and Sensitising-Event Administration
+- Benign Prostatic Hyperplasia and LUTS: Medical Management and Surgical Referral Criteria
+- Bereavement and Grief Support
+- Biliary Colic: Assessment and Discharge Criteria
+- Carpal Tunnel Syndrome: Splinting and Injection in Primary Care
+- Cellulitis and Erysipelas: Outpatient versus Intravenous Antibiotic Criteria
+- Childhood and Adolescent Obesity Screening
+- Chronic Glaucoma: Pressure Monitoring and Drop Adherence
+- Coeliac Disease: Lifelong Dietary Management and Follow-Up
+- Coeliac Disease: Serology Testing Pathway
+- Compensated Cirrhosis: Surveillance and Complication Prevention
+- Contraception: Method Choice and Medical Eligibility
+- Dementia After Diagnosis: Cognitive Support and Care Planning
+- Depression and Anxiety Screening in Primary Care
+- Dyspepsia and Helicobacter pylori: Test-and-Treat and Urgent Endoscopy Triggers
+- Endometriosis: Long-Term Medical Management
+- Epilepsy in Adults: Medication Review and Safety Counselling
+- Fall Risk Assessment in Older Adults
+- Fibromyalgia: Multidisciplinary Pain Management
+- Frailty Assessment in Primary Care
+- Gallstone Disease: Conservative Management versus Elective Cholecystectomy
+- Gout and Hyperuricaemia: Flare Management
+- Gout: Long-Term Urate-Lowering Therapy Titration
+- Group B Streptococcus: Risk-Based Intrapartum Prophylaxis
+- Headache: Red Flags and Primary Headache Diagnosis
+- Hepatitis B: Screening and Serology Interpretation
+- Hepatitis C: Screening and Referral for Treatment
+- Hormone Replacement Therapy: Risk-Benefit Counselling and Prescribing Review
+- Hyperemesis Gravidarum: Assessment and Management
+- Hyperthyroidism and Thyrotoxicosis: Anti-Thyroid Drug Titration and Block-and-Replace
+- Induction of Labour: Indications and Process
+- Inflammatory Bowel Disease: Maintenance Monitoring and Flare Plan
+- Irritable Bowel Syndrome: Dietary and Medical Management Ladder
+- Irritable Bowel Syndrome: Primary Care Diagnosis and Red-Flag Exclusion
+- Kidney Stones: Urology Referral and Prevention
+- Long-Acting Reversible Contraception: Insertion and Follow-Up
+- Menopause: Diagnosis and Symptom Control
+- Migraine: Acute Treatment and Prophylaxis Ladder
+- Minor Head Injury in Children: Observation and CT Criteria
+- Miscarriage: Diagnosis and Early Pregnancy Unit Assessment
+- Miscarriage: Expectant, Medical and Surgical Management
+- Multiple Sclerosis: Relapse Recognition and Community Monitoring
+- Myalgic Encephalomyelitis / Chronic Fatigue Syndrome: Energy Management and Pacing
+- Obesity in Adults: Pharmacotherapy and Bariatric Referral Criteria
+- Obstructive Sleep Apnoea: CPAP Adherence and Driving Advice
+- Obstructive Sleep Apnoea: Screening and Referral
+- Paediatric Developmental Milestones Screening
+- Parkinson's Disease: Medication Timing and Complication Review
+- Perineal Tear: Assessment and Repair
+- Perineal Tear: Postpartum Care and Follow-Up
+- Placenta Praevia and Low-Lying Placenta: Surveillance and Delivery Planning
+- Polycystic Ovary Syndrome: Cycle, Symptom and Fertility Management
+- Polycystic Ovary Syndrome: Diagnosis and Metabolic Screening
+- Postpartum Depression: Screening and Primary Care Management
+- Prostate Cancer Screening: PSA Discussion and Risk Assessment
+- Renal Colic: ED Analgesia and Imaging
+- Respiratory Secretions at End of Life: Pharmacological Management
+- Rheumatoid Arthritis: DMARD Initiation and Monitoring
+- Routine Antenatal Care: Booking Visit and Visit Schedule
+- Routine Postnatal Care: Mother and Baby Checks
+- Sexually Transmitted Infection Screening: Who to Test and Which Tests
+- Suspected Chronic Liver Disease: Community Detection and Staging
+- Suspected Dementia: Memory Assessment and Referral
+- Suspected Endometriosis: Primary Care Recognition and Referral
+- Suspected Inflammatory Bowel Disease: Faecal Calprotectin and Referral Pathway
+- Suspected Parkinson's Disease: Recognition and Referral
+- Suspected Rheumatoid Arthritis: Primary Care Recognition and Early Referral
+- Twin Pregnancy: Antenatal Surveillance
+- Twin Pregnancy: Timing and Mode of Birth
+- Type 1 Diabetes in Adults: Newly Diagnosed Pathway
+- Vaginal Birth After Caesarean: Antenatal Counselling
+- Vaginal Birth After Caesarean: Intrapartum Care
+- Vitamin D Deficiency: Testing Indications and Treatment
+
+## Tier 3 (low volume, high risk, red flag) - 17 topics
+keep strictly algorithm-focused with clear referral triggers.
+- Deep Neck Space Infections and Quinsy: Airway Risk and Referral
+- Familial Hypercholesterolaemia: Identification and Referral
+- Motor Neurone Disease: End-of-Life Anticipatory Prescribing
+- Neutropenic Sepsis: One-Hour Door-to-Antibiotic Protocol
+- Palliative Sedation: Proportionate Sedation for Refractory Symptoms
+- Postpartum Psychosis: Emergency Assessment and Mother and Baby Unit Admission
+- Ruptured Ovarian Cyst and Acute Adnexal Pain: ED Assessment
+- Severe Pre-Eclampsia and Eclampsia: Emergency Management
+- Shoulder Dystocia: Emergency Manoeuvres and Neonatal Assessment
+- Status Epilepticus and Acute Seizures: ED Stabilisation
+- Sudden Sensorineural Hearing Loss: Urgent Assessment and Steroid Therapy
+- Suspected Cauda Equina Syndrome: Identification and Urgent MRI Pathway
+- Suspected Ectopic Pregnancy: ED Pathway
+- Suspected Melanoma: Skin Lesion Assessment and Dermatology Referral
+- Suspected Meningitis and Encephalitis: ED Investigation and Treatment Pathway
+- Suspected Meningitis: Community Recognition and Pre-Hospital Antibiotics
+- Suspected Spinal Cord Compression: Red Flags and Urgent Imaging
+
+## Tier 4 (low volume, low risk) - 10 topics
+deprioritised; build last.
+- Bariatric Surgery: Post-Operative Monitoring and Supplementation
+- Carpal Tunnel Syndrome: Surgical Release Criteria and Post-Operative Care
+- Colonoscopy: Pre-Procedure Assessment and Bowel Preparation
+- Endoscopy: Referral Criteria and Urgent Triggers
+- Joint Injection Pathways: Corticosteroid Injection for Osteoarthritis
+- Premarital and Newborn Screening Programmes
+- Prostate Cancer Survivorship: Community PSA Monitoring and Side-Effect Management
+- Thyroidectomy: Pre-Operative Assessment
+- Tonsillectomy and Adenoidectomy: Referral Criteria and Pre-Operative Assessment
+- Varicose Veins: Vascular Referral Pathway

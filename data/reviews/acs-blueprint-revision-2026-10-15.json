@@ -1,0 +1,52 @@
+{
+  "id": "25a72fe4-a384-46d3-a668-068544c6003f",
+  "title": "Acute Chest Pain",
+  "specialty": "Emergency Medicine and Cardiology",
+  "authority": "MOH",
+  "status": "under_review",
+  "version": "acute-chest-pain-blueprint-revision-2026-10-15-v1",
+  "lastReviewed": "2026-10-15",
+  "pillar": "Urgent Care",
+  "clinicalScenario": "Adults with acute chest pain requiring immediate triage for ACS and exclusion of life-threatening non-coronary causes.",
+  "clinicalReviewStatus": "pending",
+  "pathophysiology": {
+    "summary": "Acute coronary syndrome results from acute reduction in coronary blood flow, usually after atheromatous plaque disruption with superimposed thrombosis. Partial or transient occlusion may cause NSTEMI or unstable angina; complete occlusion may cause STEMI. Troponin elevation indicates myocardial injury but is not specific to ACS.",
+    "keyMechanisms": ["Atheromatous plaque disruption", "Platelet activation and coronary thrombosis", "Myocardial oxygen supply-demand imbalance", "Ischaemia progressing to myocardial necrosis"]
+  },
+  "presentation": {
+    "symptoms": ["Heavy, crushing, or pressure-like retrosternal pain lasting more than 15 minutes", "Pain radiating to the arm, neck, jaw, back, or upper abdomen", "Diaphoresis, nausea, vomiting, dyspnoea, fatigue, lightheadedness, or syncope"],
+    "physicalSigns": ["Pallor or diaphoresis", "Tachycardia, bradycardia, or arrhythmia", "Hypotension, hypertension, pulmonary oedema, or other signs of acute heart failure", "Examination may be normal"],
+    "redFlags": ["ST elevation of at least 1 mm in 2 contiguous leads, new or presumed-new LBBB, or posterior MI pattern", "Cardiogenic shock, pulmonary oedema, sustained VT/VF, or high-grade AV block", "Abrupt tearing pain, inter-arm blood-pressure difference over 20 mmHg, pulse deficit, or acute neurological deficit", "Unilateral absent breath sounds, hyper-resonance, tracheal deviation, or obstructive shock"]
+  },
+  "differentials": [
+    {"condition": "Aortic dissection", "distinguishingFeatures": "Abrupt maximal-onset tearing or stabbing chest/back pain, pulse or blood-pressure asymmetry, neurological deficit, or aortic regurgitation."},
+    {"condition": "Pulmonary embolism", "distinguishingFeatures": "Pleuritic pain, sudden dyspnoea, tachycardia, hypoxaemia, or clinical features of DVT."},
+    {"condition": "Tension pneumothorax", "distinguishingFeatures": "Sudden pleuritic pain, severe respiratory distress, unilateral reduced breath sounds, hyper-resonance, or tracheal shift."},
+    {"condition": "Gastroesophageal or musculoskeletal pain", "distinguishingFeatures": "Burning, meal-related, positional, or reproducible features may support an alternative but do not alone exclude ACS."}
+  ],
+  "investigations": {
+    "ruleIn": [
+      {"tier":"specializedAdjunctive","testName":"Resting 12-lead ECG","modalityTarget":"12-lead ECG — ACS","targetCondition":"STEMI, NSTE-ACS, or myocardial ischaemia","expectedFinding":"ST elevation, ischemic ST depression, T-wave inversion, new LBBB, or posterior MI pattern.","clinicalRationale":"Acquire and interpret within 10 minutes of first medical contact; repeat when symptoms persist, change, or recur. A normal ECG does not exclude ACS."},
+      {"tier":"laboratory","testName":"High-sensitivity troponin (hs-cTnI or hs-cTnT)","modalityTarget":"Serial hs-troponin — acute myocardial injury","targetCondition":"Acute myocardial injury","expectedFinding":"Dynamic rise and/or fall with a value above the assay-specific 99th percentile in the clinical context.","clinicalRationale":"Draw at presentation and repeat at 1, 2, or 3 hours according to the validated local assay pathway."},
+      {"tier":"laboratory","testName":"Renal function, electrolytes, glucose, and blood count","modalityTarget":"Baseline laboratory assessment — dosing and risk","targetCondition":"Renal impairment, electrolyte abnormality, hyperglycaemia, anaemia, or bleeding risk","expectedFinding":"Results that alter antithrombin dosing, bleeding-risk assessment, or acute management.","clinicalRationale":"Obtain baseline results before aggressive antithrombotic treatment and interpret them with the local ACS protocol."}
+    ],
+    "ruleOut": [
+      {"tier":"firstLineImaging","testName":"Chest radiograph","modalityTarget":"Chest radiograph — alternative thoracic causes","targetCondition":"Pneumothorax, pulmonary oedema, or other thoracic pathology","expectedFinding":"Findings supporting an alternative diagnosis or complication.","clinicalRationale":"Use when clinically indicated; it does not reliably exclude aortic dissection or ACS."},
+      {"tier":"advancedImaging","testName":"CT pulmonary angiography or CT aortogram","modalityTarget":"Targeted contrast CT — PE or aortic dissection","targetCondition":"Pulmonary embolism or aortic dissection","expectedFinding":"Imaging evidence supporting or excluding the suspected emergency.","clinicalRationale":"Select only when the clinical assessment indicates the relevant life-threatening alternative; do not delay time-critical reperfusion."}
+    ]
+  },
+  "clinicalManagement": [
+    {"id":"initial-assessment","title":"Immediate emergency assessment","timeframe":"First 10 minutes","actions":["Assess airway, breathing, circulation, observations, pain, and haemodynamic or electrical stability.","Obtain and interpret a 12-lead ECG within 10 minutes of first medical contact and repeat if symptoms persist or evolve.","Establish monitoring and IV access, draw baseline hs-troponin, and assess for aortic dissection, pulmonary embolism, tension pneumothorax, and other life-threatening alternatives."],"branches":[{"condition":"STEMI, ongoing high-risk ischaemia, shock, acute heart failure, or malignant arrhythmia","actions":["Escalate immediately to senior and cardiology teams.","Activate the local reperfusion or resuscitation pathway and arrange transfer to the appropriate capable service."]}]},
+    {"id":"stemi-reperfusion","title":"STEMI reperfusion pathway","timeframe":"Immediately after diagnostic ECG","actions":["Primary PCI is preferred when the local FMC-to-device target can be met; activate the catheterisation laboratory without delay.","If timely PCI is not available, consider fibrinolysis only when indicated and not contraindicated, followed by transfer to a PCI-capable service.","Administer antiplatelet and parenteral anticoagulant therapy only under the current Saudi/local ACS protocol and after contraindication review."]},
+    {"id":"nste-acs","title":"NSTE-ACS risk stratification and angiography","timeframe":"From diagnosis","actions":["Use serial ECG, serial hs-troponin, renal function, bleeding risk, and a validated risk pathway.","Immediate invasive assessment is required for refractory angina, haemodynamic instability, acute heart failure, or life-threatening arrhythmia.","Consider early invasive assessment for high-risk features such as dynamic ST-T changes, elevated hs-troponin, or high GRACE risk.","Use selective non-invasive testing only after validated low-risk assessment and exclusion of life-threatening alternatives."]},
+    {"id":"low-risk-disposition","title":"Low-risk chest pain rule-out and safety net","timeframe":"After validated serial assessment","actions":["Consider early discharge only after a validated rapid hs-troponin pathway, low HEART score, non-dynamic ECG, and clinical exclusion of life-threatening non-coronary causes.","Provide explicit return precautions and arrange timely cardiology or rapid-access chest-pain follow-up."]}
+  ],
+  "medicationPlan": {"status":"local-protocol-required","regimens":[],"note":"UNREVIEWED DRAFT — NOT FOR CLINICAL USE. The supplied blueprint contains exact aspirin, GTN, opioid, P2Y12, and heparin doses. Those claims must be reconciled against the applicable Saudi/local ACS protocol, product labelling, contraindications, renal function, bleeding risk, reperfusion strategy, and reviewer metadata before any medication regimen is added or approved."},
+  "nonClinicalManagement": {
+    "patientEducation":["Explain that possible ACS requires urgent assessment even if pain improves.","Call emergency services immediately if chest pain recurs, radiates to the arm or jaw, or is accompanied by sweating or breathlessness."],
+    "lifestyleAndDiet":["After stabilisation, address smoking, diet, activity, lipid risk, and adherence to secondary prevention."],
+    "mdtReferrals":["Cardiology", "Cardiac rehabilitation when appropriate", "Pharmacy and primary care for medication and risk-factor follow-up"],
+    "dischargeCriteria":["Validated ACS assessment completed", "No ongoing instability or unresolved high-risk feature", "Follow-up and medication plan documented", "Emergency return precautions understood"],
+    "followUpPlan":"For confirmed ACS, arrange cardiology follow-up and cardiac rehabilitation as appropriate. For low-risk discharge, arrange rapid-access chest-pain or primary-care follow-up within the locally approved timeframe."
+  }
+}

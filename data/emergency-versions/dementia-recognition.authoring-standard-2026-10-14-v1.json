@@ -1,0 +1,249 @@
+{
+  "id": "efcf8ca2-885a-4a23-97c9-7a2ffdc518e3",
+  "title": "Suspected Dementia: Memory Assessment and Referral",
+  "specialty": "Geriatrics / Neurology / Primary Care",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-14-v1",
+  "lastReviewed": "2026-10-14",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-14",
+    "status": "incomplete",
+    "scope": "Adult initial cognitive assessment, reversible-factor review, collateral history, imaging selection and referral for subtype diagnosis.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 14 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "No Saudi national dementia guideline was identified in the sources opened on 14 October 2026. NICE guidance is an international comparator pending Saudi/local adaptation.",
+      "SFDA product registration was not verified; any medicine selection requires the current Saudi Drug Information register and hospital formulary.",
+      "Local capacity, driving and safeguarding procedures require Saudi legal and organisational confirmation."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "efcf8ca2-885a-4a23-97c9-7a2ffdc518e3"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Neurodegeneration disrupts memory, language, executive or visuospatial networks. Different pathologies produce different cognitive and behavioural patterns. Delirium, depression, medicines and metabolic disease can mimic or worsen dementia. Diagnosis requires decline from prior function, not a low test score alone.",
+    "keyMechanisms": [
+      "Neurodegeneration disrupts memory, language, executive or visuospatial networks.",
+      "Different pathologies produce different cognitive and behavioural patterns.",
+      "Delirium, depression, medicines and metabolic disease can mimic or worsen dementia.",
+      "Diagnosis requires decline from prior function, not a low test score alone."
+    ],
+    "references": [
+      {
+        "title": "NICE NG97: Dementia: assessment, management and support",
+        "edition": "NICE NG97, Recommendations 1.2.1–1.2.17",
+        "url": "https://www.nice.org.uk/guidance/ng97/chapter/recommendations"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Progressive memory, language, planning, navigation, personality or daily-function change reported by the person or informant."
+    ],
+    "physicalSigns": [
+      "Cognitive-domain deficit, functional decline, neurological signs, gait change or behavioural symptoms."
+    ],
+    "redFlags": [
+      "Acute fluctuation, reduced consciousness, focal deficit, new seizure, head injury, infection or rapidly progressive decline needs urgent assessment."
+    ],
+    "precipitants": [
+      "Vascular disease, neurological disease, anticholinergic/sedative medicines, alcohol and sensory impairment can contribute."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Delirium",
+      "distinguishingFeatures": "Acute fluctuating attention and arousal with a precipitating illness or medicine."
+    },
+    {
+      "condition": "Depression",
+      "distinguishingFeatures": "Mood syndrome may impair concentration; cognition should be reassessed after treatment."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Collateral functional history",
+        "modalityTarget": "Change from previous cognition and daily function",
+        "targetCondition": "Suspected dementia",
+        "expectedFinding": "Progressive decline corroborated by someone who knows the person",
+        "clinicalRationale": "Establish time course, domains affected and safety impact.",
+        "normalValue": "No decline from previous cognitive or functional baseline",
+        "references": [
+          {
+            "title": "NICE NG97: Dementia: assessment, management and support",
+            "edition": "NICE NG97 Recommendations 1.2.1–1.2.6",
+            "url": "https://www.nice.org.uk/guidance/ng97/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Validated brief cognitive instrument",
+        "modalityTarget": "Multiple cognitive domains",
+        "targetCondition": "Objective cognitive impairment",
+        "expectedFinding": "Score/profile concerning in context",
+        "clinicalRationale": "Do not rule out dementia solely because a brief score is normal.",
+        "normalValue": "Performance within the instrument's expected range after sensory/language adjustment",
+        "references": [
+          {
+            "title": "NICE NG97: Dementia: assessment, management and support",
+            "edition": "NICE NG97 Recommendations 1.2.3–1.2.6",
+            "url": "https://www.nice.org.uk/guidance/ng97/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Medication and anticholinergic-burden review",
+        "modalityTarget": "Cognitive adverse effects",
+        "targetCondition": "Medicine-related cognitive impairment",
+        "expectedFinding": "High burden or temporal association",
+        "clinicalRationale": "Reduce only through safe prescriber-led review.",
+        "normalValue": "No cognition-impairing medicine burden",
+        "references": [
+          {
+            "title": "NICE NG97: Dementia: assessment, management and support",
+            "edition": "NICE NG97 Recommendations 1.2.1–1.2.2",
+            "url": "https://www.nice.org.uk/guidance/ng97/chapter/recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count and metabolic profile",
+        "modalityTarget": "Anaemia, infection, renal, liver, calcium and glucose disturbance",
+        "targetCondition": "Reversible cognitive contributor",
+        "expectedFinding": "Clinically significant abnormality",
+        "clinicalRationale": "Treat the contributor and reassess cognition.",
+        "normalValue": "Results within local adult ranges",
+        "references": [
+          {
+            "title": "NICE NG97: Dementia: assessment, management and support",
+            "edition": "NICE NG97 Recommendation 1.2.2",
+            "url": "https://www.nice.org.uk/guidance/ng97/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Thyroid function and vitamin B12/folate",
+        "modalityTarget": "Endocrine and nutritional contributors",
+        "targetCondition": "Reversible cognitive contributor",
+        "expectedFinding": "TSH/free T4 or vitamin deficiency abnormality",
+        "clinicalRationale": "Treat confirmed deficiency/dysfunction and reassess.",
+        "normalValue": "TSH and vitamin levels within local adult ranges",
+        "references": [
+          {
+            "title": "NICE NG97: Dementia: assessment, management and support",
+            "edition": "NICE NG97 Recommendation 1.2.2",
+            "url": "https://www.nice.org.uk/guidance/ng97/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Structural brain imaging",
+        "modalityTarget": "Vascular, tumour, hydrocephalus or subtype features",
+        "targetCondition": "Alternative structural cause and dementia subtype",
+        "expectedFinding": "Pattern supporting subtype or another treatable lesion",
+        "clinicalRationale": "Use CT or MRI unless dementia is already well established and subtype clear.",
+        "normalValue": "No treatable structural lesion",
+        "references": [
+          {
+            "title": "NICE NG97: Dementia: assessment, management and support",
+            "edition": "NICE NG97 Recommendations 1.2.13–1.2.17",
+            "url": "https://www.nice.org.uk/guidance/ng97/chapter/recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "urgent",
+      "title": "Separate delirium and neurological emergencies",
+      "timeframe": "At first contact",
+      "actions": [
+        "Use urgent assessment for acute fluctuation, reduced arousal, focal deficit, seizure, infection or rapid progression.",
+        "Assess immediate safety, self-neglect, exploitation, driving and medication management."
+      ]
+    },
+    {
+      "id": "initial",
+      "title": "Complete initial assessment",
+      "timeframe": "Over the first assessment cycle",
+      "actions": [
+        "Take patient and collateral histories, assess function and mood, perform physical/neurological examination and use a validated cognitive tool.",
+        "Review medicines, sensory impairment, alcohol and obtain targeted blood tests."
+      ]
+    },
+    {
+      "id": "refer",
+      "title": "Refer for specialist subtype diagnosis",
+      "timeframe": "After reversible contributors are addressed and suspicion remains",
+      "actions": [
+        "Refer to a specialist dementia diagnostic service and arrange structural imaging as appropriate.",
+        "Provide information, involve the chosen carer/advocate and record capacity and safeguarding needs."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "no-drug-indicated",
+    "regimens": [],
+    "note": "Do not start cognitive-enhancing or behavioural medicine before specialist subtype diagnosis and person-specific risk assessment."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Refer for dementia diagnosis",
+      "threshold": "Reversible causes investigated and dementia still suspected after initial assessment."
+    }
+  ],
+  "teaching": {
+    "scope": "Adult initial cognitive assessment, reversible-factor review, collateral history, imaging selection and referral for subtype diagnosis.",
+    "learningObjectives": [
+      "Distinguish delirium from progressive decline.",
+      "Use collateral history and functional change alongside testing."
+    ],
+    "pitfalls": [
+      "Diagnosing dementia from one score.",
+      "Missing safeguarding, driving or medicine-management risk."
+    ],
+    "keyPoints": [
+      "A normal brief cognitive score does not exclude dementia.",
+      "Address reversible contributors before referral, without abandoning follow-up."
+    ],
+    "references": [
+      {
+        "title": "NICE NG97: Dementia: assessment, management and support",
+        "edition": "NICE NG97, Recommendations 1.2.1–1.2.17",
+        "url": "https://www.nice.org.uk/guidance/ng97/chapter/recommendations",
+        "locator": "Recommendations 1.2.1–1.2.17"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain assessment steps, uncertainty and support options to the person and chosen supporters."
+    ],
+    "lifestyleAndDiet": [
+      "Support hearing/vision correction, activity, sleep, vascular-risk management and safe routines."
+    ],
+    "mdtReferrals": [
+      "Memory service/geriatrics/neurology, primary care, pharmacy, occupational therapy and social/safeguarding services as needed."
+    ],
+    "dischargeCriteria": [
+      "Urgent causes excluded, immediate safety addressed, tests reviewed and specialist referral with named follow-up owner recorded."
+    ],
+    "followUpPlan": "Track referral and review earlier for acute change, wandering, unsafe driving, self-neglect, falls or carer breakdown."
+  }
+}

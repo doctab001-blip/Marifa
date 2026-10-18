@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, BookOpenCheck } from "@/components/icons-3d";
+import { ArrowLeft, BookOpenCheck, CheckCircle2, FileText, Hourglass, Stethoscope } from "@/components/icons-3d";
 import { getDraftGuideline } from "@/lib/admin/data";
 import { approveGuidelineVersion, saveDraftGuideline } from "../actions";
-import { InvestigationCards } from "@/components/investigation-cards";
 import { GuidelinePathwayForm } from "@/components/admin/guideline-pathway-form";
 import { ClinicalEvidenceAudit } from "@/components/clinical-evidence-audit";
+import { EmergencyTopic } from "@/components/emergency-topic";
 
 const messages: Record<string, string> = {
   invalid_json: "The content is not valid JSON. Correct the formatting and try again.",
@@ -20,15 +20,15 @@ export default async function EditDraftGuidelinePage({
   searchParams,
 }: {
   params: Promise<{ id: string }>;
-  searchParams: Promise<{ saved?: string; error?: string; version?: string }>;
+  searchParams: Promise<{ saved?: string; error?: string; version?: string; published?: string; under_review?: string; score?: string }>;
 }) {
   const [{ id }, query] = await Promise.all([params, searchParams]);
   const result = await getDraftGuideline(id, query.version);
   if (result.state === "not-found") notFound();
 
   return (
-    <section className="admin-content">
-      <Link href="/dashboard/admin/governance" className="disease-back-link"><ArrowLeft size={15} />Back to governance queue</Link>
+    <section className="admin-content topic-page">
+      <Link href={query.version ? "/dashboard/diseases" : "/dashboard/diseases/drafts"} className="disease-back-link"><ArrowLeft size={15} />Back to Disease Management</Link>
       {result.state === "invalid" ? (
         <article className="card admin-edit-card">
           <p className="eyebrow">Draft needs repair</p>
@@ -38,29 +38,24 @@ export default async function EditDraftGuidelinePage({
         </article>
       ) : (
         <>
-          <header className="admin-section-heading admin-draft-heading">
-            <div><p className="eyebrow">Clinical content · {result.isLive ? "Published topic" : "Draft"}</p><h2>{result.isLive ? "View" : "Edit"} {result.disease.title}</h2><p>{result.disease.pillar} · {result.disease.specialty}</p></div>
-            <div className="admin-header-actions">
-              <span className={`admin-queue-status ${result.isLive ? "status-published" : "status-draft"}`}>{result.isLive ? "Published to all site users" : "Draft · not approved"}</span>
-              {!result.isLive && <a className="ui-button ui-button-secondary" href="#pathway-editor">Edit topic</a>}
-              {result.canApprove && <form action={approveGuidelineVersion}>
-                <input type="hidden" name="id" value={id} />
-                <input type="hidden" name="versionId" value={result.versionId} />
-                <input type="hidden" name="destination" value="drafts" />
-                <button className="ui-button ui-button-primary" type="submit">Approve version</button>
-              </form>}
-            </div>
-          </header>
-          {query.saved === "1" && <p className="admin-save-message" role="status">Draft saved. Its status remains draft.</p>}
+          {query.saved === "1" && query.published === "1" && <p className="admin-save-message" role="status">New version saved and published. Clinical review remains pending.</p>}
+          {query.saved === "1" && query.under_review === "1" && <p className="admin-save-message" role="status">New revision saved for review (authoring score {query.score ?? "below 80"}%). It will publish automatically once it meets the 80% threshold.</p>}
           {query.error && messages[query.error] && <p className="admin-save-error" role="alert">{messages[query.error]}</p>}
-          <div className="clinical-governance-notice" role="note"><strong>Review state:</strong> {result.isLive ? "This educational topic is live for review; local clinical validation is pending. Do not use it as an official local protocol until clinically validated." : "This is an editable draft."} Textbook edition details identify the reference used; they do not mean this content has been clinically reviewed. Check current Saudi guidance, local formulary, and service protocols.</div>
-          <article className="card admin-source-summary">
-            <BookOpenCheck size={18} aria-hidden="true" />
-            <div><strong>{result.sourceTitle ?? "Source not recorded"}</strong><span>{result.sourceUrl ? <a href={result.sourceUrl} target="_blank" rel="noreferrer">Open source reference</a> : "No source URL recorded"}</span><small>Preparation and source-check dates do not record clinical approval.</small></div>
+          <article className="scenario-card" aria-labelledby="scenario-title">
+            <header className="sc-hero">
+              <div className="sc-eyebrow-row"><span className="sc-icon-tile" aria-hidden="true"><Stethoscope size={24} /></span><span className="pill pill-aqua">Clinical scenario</span><span className="pill pill-sky">{result.disease.pillar}</span></div>
+              <h1 id="scenario-title" className="scenario-title">{result.disease.title}</h1>
+            </header>
+            {!result.isLive && !result.isPublished && <div className="clinical-review-draft-notice" role="alert"><strong>UNREVIEWED DRAFT — NOT FOR CLINICAL USE.</strong> This version is visible in Drafts only until it meets the authoring standard and completes clinical governance review.</div>}
+            <EmergencyTopic disease={result.disease} investigationSource={result.sourceUrl ? { title: result.sourceTitle, url: result.sourceUrl } : undefined} />
+            <section className="topic-approval-bar" aria-label="Draft actions">
+              <p>{result.isLive ? <><span className="pill pill-emerald"><CheckCircle2 size={16} aria-hidden="true" /><strong>Approved</strong></span><span className="pill pill-slate pill-sm"><FileText size={14} aria-hidden="true" />Version {result.disease.version}</span></> : result.isPublished ? <><span className="pill pill-sky"><FileText size={16} aria-hidden="true" /><strong>Published</strong></span><span className="pill pill-slate pill-sm"><FileText size={14} aria-hidden="true" />Version {result.disease.version}</span></> : <><span className="pill pill-amber"><Hourglass size={16} aria-hidden="true" /><strong>Status: Draft</strong></span><span className="pill pill-slate pill-sm"><FileText size={14} aria-hidden="true" />Version {result.disease.version}</span></>}</p>
+              {!result.isLive && <div className="admin-header-actions"><Link className="ui-button ui-button-primary" href={`/dashboard/admin/guidelines/${encodeURIComponent(id)}/paste?version=${encodeURIComponent(result.versionId)}`}>Paste full content</Link><a className="ui-button ui-button-secondary" href="#pathway-editor">{result.isPublished ? "Edit published version" : "Edit draft"}</a>{result.canApprove && <form action={approveGuidelineVersion}><input type="hidden" name="id" value={id} /><input type="hidden" name="versionId" value={result.versionId} /><input type="hidden" name="destination" value="drafts" /><button className="ui-button ui-button-primary" type="submit">Approve version</button></form>}</div>}
+            </section>
           </article>
+          <article className="card admin-source-summary"><BookOpenCheck size={18} aria-hidden="true" /><div><strong>{result.sourceTitle ?? "Source not recorded"}</strong><span>{result.sourceUrl ? <a href={result.sourceUrl} target="_blank" rel="noreferrer">Open source reference</a> : "No source URL recorded"}</span><small>Preparation and source-check dates do not record clinical approval.</small></div></article>
           <ClinicalEvidenceAudit audit={result.disease.evidenceAudit} />
-          <details className="card admin-source-summary"><summary>Review the six-part topic</summary><div><h3>1. Topic and mechanisms</h3><p>{result.disease.pathophysiology.summary}</p><h3>2. Presentation</h3><ul>{result.disease.presentation.symptoms.map((item) => <li key={item}>{item}</li>)}</ul><h3>3. Differential diagnoses</h3><ul>{result.disease.differentials.map((item) => <li key={item.condition}><strong>{item.condition}:</strong> {item.distinguishingFeatures}</li>)}</ul><h3>4. Investigations</h3><InvestigationCards investigations={result.disease.investigations} source={result.sourceUrl ? { title: result.sourceTitle, url: result.sourceUrl } : undefined} /><h3>5. Clinical management</h3><ul>{result.disease.clinicalManagement.map((item) => <li key={item.id}><strong>{item.title}:</strong> {item.actions.join(" ")}</li>)}</ul><h3>6. Non-clinical care</h3><ul>{result.disease.nonClinicalManagement.patientEducation.map((item) => <li key={item}>{item}</li>)}</ul></div></details>
-          {result.isLive ? <div className="clinical-governance-notice" role="note"><strong>Published versions are read-only.</strong> To correct this topic, prepare a new draft version so that the change goes through clinical review; the published version stays in the history.</div> : <GuidelinePathwayForm disease={result.disease} guidelineId={id} versionId={result.versionId} saveAction={saveDraftGuideline} />}
+          {result.isLive ? <div className="clinical-governance-notice" role="note"><strong>Approved versions are preserved.</strong> Published and draft versions remain editable in their respective Disease Management categories.</div> : <details className="card draft-editor-disclosure" id="pathway-editor"><summary>{result.isPublished ? "Edit published fields" : "Edit draft fields"}</summary><GuidelinePathwayForm disease={result.disease} guidelineId={id} versionId={result.versionId} saveAction={saveDraftGuideline} /></details>}
         </>
       )}
     </section>

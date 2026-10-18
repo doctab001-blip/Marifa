@@ -1,0 +1,210 @@
+{
+  "id": "18df6754-5d66-4ad0-a411-290d87ddbd56",
+  "title": "Neutropenic Sepsis: One-Hour Door-to-Antibiotic Protocol",
+  "specialty": "Oncology / Emergency Medicine",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-14-v1",
+  "lastReviewed": "2026-10-14",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-14",
+    "status": "incomplete",
+    "scope": "Adults receiving anticancer treatment with suspected neutropenic sepsis: emergency assessment, immediate empiric therapy and risk-led disposition using NICE CG151.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 14 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "No Saudi national neutropenic-sepsis protocol was opened.",
+      "The title's one-hour target is a local operational goal; NICE CG151 says immediately but does not state one hour in the recommendation.",
+      "Piperacillin-tazobactam dose, allergy alternative and SFDA registration require the hospital antimicrobial protocol."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "18df6754-5d66-4ad0-a411-290d87ddbd56"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Anticancer treatment can suppress neutrophil production and innate immune defence. Infection may progress rapidly with muted local inflammatory signs. Bacterial translocation and device-related infection are common potential sources. Sepsis causes vasodilation, endothelial injury and organ hypoperfusion.",
+    "keyMechanisms": [
+      "Anticancer treatment can suppress neutrophil production and innate immune defence.",
+      "Infection may progress rapidly with muted local inflammatory signs.",
+      "Bacterial translocation and device-related infection are common potential sources.",
+      "Sepsis causes vasodilation, endothelial injury and organ hypoperfusion."
+    ],
+    "references": [
+      {
+        "title": "NICE CG151: Neutropenic sepsis",
+        "edition": "NICE CG151 Recommendations 1.3.1.1–1.5.4.2",
+        "url": "https://www.nice.org.uk/guidance/cg151/chapter/Recommendations"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Fever, chills, malaise, confusion, breathlessness, urinary or GI symptoms, or simply feeling unwell during anticancer treatment."
+    ],
+    "physicalSigns": [
+      "Temperature above 38°C, hypotension, tachycardia, altered mental state, hypoxia or focal infection signs; fever may be absent."
+    ],
+    "redFlags": [
+      "Shock, lactate elevation, altered consciousness, respiratory failure, oliguria or rapidly deteriorating physiology."
+    ],
+    "precipitants": [
+      "Recent chemotherapy or radiotherapy, central venous access device, mucositis and prior resistant organism."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Non-neutropenic sepsis",
+      "distinguishingFeatures": "Same emergency physiology but neutrophil count above the diagnostic threshold; treat sepsis without delay."
+    },
+    {
+      "condition": "Treatment-related non-infectious fever",
+      "distinguishingFeatures": "Diagnosis of exclusion after immediate empiric treatment and assessment."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count with differential",
+        "modalityTarget": "Absolute neutrophil count",
+        "targetCondition": "Neutropenia",
+        "expectedFinding": "Neutrophils 0.5 × 10^9/L or lower",
+        "clinicalRationale": "Confirms neutropenia but treatment starts on suspicion without waiting.",
+        "normalValue": "Neutrophils above 0.5 × 10^9/L for this diagnostic criterion",
+        "references": [
+          {
+            "title": "NICE CG151: Neutropenic sepsis",
+            "edition": "NICE CG151 Recommendations 1.4.1.2 and 1.4.4.1",
+            "url": "https://www.nice.org.uk/guidance/cg151/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Blood cultures and lactate",
+        "modalityTarget": "Bloodstream infection and perfusion",
+        "targetCondition": "Sepsis",
+        "expectedFinding": "Positive culture or raised lactate",
+        "clinicalRationale": "Collect promptly without delaying empiric antibiotics; lactate informs resuscitation/escalation.",
+        "normalValue": "No growth; lactate within local reference range",
+        "references": [
+          {
+            "title": "NICE CG151: Neutropenic sepsis",
+            "edition": "NICE CG151 Recommendation 1.4.1.2",
+            "url": "https://www.nice.org.uk/guidance/cg151/chapter/Recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Directed source assessment",
+        "modalityTarget": "Chest, urine, line, skin, oral and GI sources",
+        "targetCondition": "Infection focus",
+        "expectedFinding": "Clinical or microbiological source",
+        "clinicalRationale": "Do not obtain routine chest X-ray unless clinically indicated.",
+        "normalValue": "No focus identified",
+        "references": [
+          {
+            "title": "NICE CG151: Neutropenic sepsis",
+            "edition": "NICE CG151 Recommendations 1.4.2.1–1.4.2.2",
+            "url": "https://www.nice.org.uk/guidance/cg151/chapter/Recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "recognise",
+      "title": "Recognise and escalate",
+      "timeframe": "Immediately at triage",
+      "actions": [
+        "Treat any unwell patient receiving anticancer treatment as suspected neutropenic sepsis until assessed.",
+        "Begin sepsis resuscitation, obtain cultures and core blood tests without delaying antibiotics."
+      ]
+    },
+    {
+      "id": "antibiotic",
+      "title": "Start empiric antibiotic",
+      "timeframe": "Immediately; local operational target within 1 hour",
+      "actions": [
+        "Give IV piperacillin-tazobactam monotherapy unless patient-specific allergy, microbiology or local resistance factors require another regimen.",
+        "Do not add an aminoglycoside or glycopeptide routinely without a patient-specific or microbiological indication."
+      ]
+    },
+    {
+      "id": "risk",
+      "title": "Confirm diagnosis and risk",
+      "timeframe": "Within 24 hours",
+      "actions": [
+        "Confirm using neutrophil count and fever or significant sepsis features.",
+        "A competent oncology clinician uses a validated risk score and clinical/social context to determine inpatient versus outpatient therapy."
+      ]
+    },
+    {
+      "id": "review",
+      "title": "Daily review and step-down",
+      "timeframe": "Daily; consider oral switch after 48 hours only if reassessed low risk",
+      "actions": [
+        "Do not switch solely for persistent fever unless deterioration or microbiology indicates.",
+        "Discharge only after competent low-risk reassessment, stable circumstances and explicit rapid-return instructions."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [],
+    "note": "NICE CG151 selects piperacillin-tazobactam IV monotherapy but does not specify the dose. Use the Saudi hospital antimicrobial protocol for dose, renal adjustment, allergy alternative and infusion method."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Confirmed neutropenic sepsis",
+      "threshold": "Anticancer treatment plus neutrophil count 0.5 × 10^9/L or lower and temperature above 38°C, or other clinically significant sepsis features."
+    }
+  ],
+  "teaching": {
+    "scope": "Adults receiving anticancer treatment with suspected neutropenic sepsis: emergency assessment, immediate empiric therapy and risk-led disposition using NICE CG151.",
+    "learningObjectives": [
+      "Recognise neutropenic sepsis before the count returns.",
+      "Deliver immediate empiric therapy and risk-led disposition."
+    ],
+    "pitfalls": [
+      "Waiting for neutrophil count or imaging before antibiotics.",
+      "Treating persistent fever alone as automatic antibiotic failure."
+    ],
+    "keyPoints": [
+      "The NICE diagnostic neutrophil threshold is 0.5 × 10^9/L or lower.",
+      "Routine aminoglycoside or glycopeptide addition is not recommended."
+    ],
+    "references": [
+      {
+        "title": "NICE CG151: Neutropenic sepsis",
+        "edition": "NICE CG151 Recommendations 1.3.1.1–1.5.4.2",
+        "url": "https://www.nice.org.uk/guidance/cg151/chapter/Recommendations",
+        "locator": "Recommendations 1.3.1.1–1.5.4.2"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Give oncology emergency contact instructions and advise immediate return for any deterioration."
+    ],
+    "lifestyleAndDiet": [
+      "Follow oncology infection-prevention advice; do not delay care to self-manage fever."
+    ],
+    "mdtReferrals": [
+      "Acute oncology/haematology, infectious diseases or microbiology, pharmacy and critical care."
+    ],
+    "dischargeCriteria": [
+      "Only after competent low-risk reassessment, clinical stability, suitable social circumstances and rapid return access."
+    ],
+    "followUpPlan": "Daily specialist reassessment while high risk; outpatient follow-up frequency is set by the oncology team and local protocol."
+  }
+}

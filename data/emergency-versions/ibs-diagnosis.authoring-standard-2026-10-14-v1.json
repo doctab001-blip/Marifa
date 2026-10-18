@@ -1,0 +1,253 @@
+{
+  "id": "42b4c547-318c-4c19-a24c-16faf732861f",
+  "title": "Irritable Bowel Syndrome: Primary Care Diagnosis and Red-Flag Exclusion",
+  "specialty": "Gastroenterology / Primary Care",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-14-v1",
+  "lastReviewed": "2026-10-14",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-14",
+    "status": "incomplete",
+    "scope": "Adult primary-care positive diagnosis of IBS, limited exclusion tests and red-flag referral.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 14 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "No Saudi national irritable bowel syndrome guideline was identified in the sources opened on 14 October 2026. NICE guidance is an international comparator pending Saudi/local adaptation.",
+      "SFDA product registration was not verified; any medicine selection requires the current Saudi Drug Information register and hospital formulary.",
+      "Local colorectal and ovarian-cancer referral pathways require confirmation."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "42b4c547-318c-4c19-a24c-16faf732861f"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Disordered gut-brain signalling alters motility and visceral sensation. Symptoms fluctuate with meals, stress and bowel habit. There is no single confirmatory biomarker. A positive symptom-based diagnosis avoids unnecessary repeated testing after red flags are excluded.",
+    "keyMechanisms": [
+      "Disordered gut-brain signalling alters motility and visceral sensation.",
+      "Symptoms fluctuate with meals, stress and bowel habit.",
+      "There is no single confirmatory biomarker.",
+      "A positive symptom-based diagnosis avoids unnecessary repeated testing after red flags are excluded."
+    ],
+    "references": [
+      {
+        "title": "NICE CG61: Irritable bowel syndrome in adults: diagnosis and management",
+        "edition": "NICE CG61, Recommendations 1.1.1.1–1.1.2.2",
+        "url": "https://www.nice.org.uk/guidance/cg61/chapter/recommendations"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Abdominal pain or discomfort, bloating and altered stool frequency or form."
+    ],
+    "physicalSigns": [
+      "Abdominal examination is often normal; document tenderness, mass, weight and hydration."
+    ],
+    "redFlags": [
+      "Unintentional weight loss, rectal bleeding, abdominal/rectal mass, anaemia or inflammatory features require the relevant urgent pathway."
+    ],
+    "precipitants": [
+      "Meals, stress, gastroenteritis and particular foods may precede symptoms."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Coeliac disease",
+      "distinguishingFeatures": "Positive coeliac serology while eating gluten."
+    },
+    {
+      "condition": "Inflammatory bowel disease",
+      "distinguishingFeatures": "Bleeding, weight loss, nocturnal symptoms or objective inflammation."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Symptom and stool-pattern assessment",
+        "modalityTarget": "Pain relationship and stool form/frequency",
+        "targetCondition": "Irritable bowel syndrome",
+        "expectedFinding": "Meets the NICE symptom cluster without alarm features",
+        "clinicalRationale": "Make a positive diagnosis after limited exclusion testing.",
+        "normalValue": "No persistent pain or bowel-habit disturbance",
+        "references": [
+          {
+            "title": "NICE CG61: Irritable bowel syndrome in adults: diagnosis and management",
+            "edition": "NICE CG61 Recommendations 1.1.1.1–1.1.1.2",
+            "url": "https://www.nice.org.uk/guidance/cg61/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count",
+        "modalityTarget": "Anaemia and leukocytes",
+        "targetCondition": "Alternative organic disease",
+        "expectedFinding": "Anaemia or leukocytosis prompts further assessment",
+        "clinicalRationale": "Include in initial exclusion tests.",
+        "normalValue": "Haemoglobin, leukocytes and platelets within local adult ranges",
+        "references": [
+          {
+            "title": "NICE CG61: Irritable bowel syndrome in adults: diagnosis and management",
+            "edition": "NICE CG61 Recommendation 1.1.2.1",
+            "url": "https://www.nice.org.uk/guidance/cg61/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Coeliac serology",
+        "modalityTarget": "Coeliac autoantibodies",
+        "targetCondition": "Coeliac disease",
+        "expectedFinding": "Positive serology while consuming gluten",
+        "clinicalRationale": "Refer/confirm through the coeliac pathway rather than label IBS.",
+        "normalValue": "Negative",
+        "references": [
+          {
+            "title": "NICE CG61: Irritable bowel syndrome in adults: diagnosis and management",
+            "edition": "NICE CG61 Recommendation 1.1.2.1",
+            "url": "https://www.nice.org.uk/guidance/cg61/chapter/recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "CRP",
+        "modalityTarget": "Systemic inflammation",
+        "targetCondition": "Inflammatory disease",
+        "expectedFinding": "Raised value increases concern for IBD, infection or another inflammatory disorder",
+        "clinicalRationale": "A normal result supports but does not prove a functional diagnosis.",
+        "normalValue": "Within local laboratory range",
+        "references": [
+          {
+            "title": "NICE CG61: Irritable bowel syndrome in adults: diagnosis and management",
+            "edition": "NICE CG61 Recommendation 1.1.2.1",
+            "url": "https://www.nice.org.uk/guidance/cg61/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "ESR or plasma viscosity",
+        "modalityTarget": "Systemic inflammation",
+        "targetCondition": "Inflammatory disease",
+        "expectedFinding": "Raised value prompts review of organic causes",
+        "clinicalRationale": "Use with symptoms and CRP; not as a stand-alone exclusion.",
+        "normalValue": "Within local laboratory range",
+        "references": [
+          {
+            "title": "NICE CG61: Irritable bowel syndrome in adults: diagnosis and management",
+            "edition": "NICE CG61 Recommendation 1.1.2.1",
+            "url": "https://www.nice.org.uk/guidance/cg61/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Targeted cancer-pathway assessment",
+        "modalityTarget": "Abdominal/rectal mass, bleeding, anaemia and weight loss",
+        "targetCondition": "Colorectal or ovarian cancer",
+        "expectedFinding": "Alarm feature present",
+        "clinicalRationale": "Use the relevant urgent suspected-cancer pathway.",
+        "normalValue": "No alarm feature",
+        "references": [
+          {
+            "title": "NICE CG61: Irritable bowel syndrome in adults: diagnosis and management",
+            "edition": "NICE CG61 Recommendation 1.1.1.1",
+            "url": "https://www.nice.org.uk/guidance/cg61/chapter/recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "red-flags",
+      "title": "Check alarm features",
+      "timeframe": "At first assessment",
+      "actions": [
+        "Record weight trend, bleeding, anaemia symptoms, masses, family history and inflammatory features.",
+        "Refer through the relevant urgent pathway when an alarm feature is present."
+      ]
+    },
+    {
+      "id": "positive-diagnosis",
+      "title": "Make a positive diagnosis",
+      "timeframe": "After initial assessment and limited tests",
+      "actions": [
+        "Apply the NICE symptom cluster and obtain FBC, CRP/ESR and coeliac serology.",
+        "Do not order colonoscopy or imaging solely to confirm typical IBS without alarm features."
+      ]
+    },
+    {
+      "id": "explain",
+      "title": "Explain and link to management",
+      "timeframe": "At diagnosis",
+      "actions": [
+        "Explain the gut-brain disorder and the reason further routine exclusion tests are not required.",
+        "Agree symptom goals, safety-net triggers and review; use the linked management-ladder topic."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "no-drug-indicated",
+    "regimens": [],
+    "note": "Diagnosis and red-flag exclusion do not require a medicine."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Consider IBS assessment",
+      "threshold": "Symptoms for at least 6 months."
+    },
+    {
+      "criterion": "Positive diagnosis",
+      "threshold": "Abdominal pain/discomfort relieved by defaecation or associated with altered stool frequency/form, plus at least 2 supporting features in NICE CG61."
+    }
+  ],
+  "teaching": {
+    "scope": "Adult primary-care positive diagnosis of IBS, limited exclusion tests and red-flag referral.",
+    "learningObjectives": [
+      "Diagnose IBS positively after limited testing.",
+      "Identify alarm features before reassurance."
+    ],
+    "pitfalls": [
+      "Diagnosing IBS in the presence of alarm features.",
+      "Repeating broad investigations without a new clinical reason."
+    ],
+    "keyPoints": [
+      "Coeliac serology is part of initial testing.",
+      "Routine colonoscopy is not required for a typical presentation without red flags."
+    ],
+    "references": [
+      {
+        "title": "NICE CG61: Irritable bowel syndrome in adults: diagnosis and management",
+        "edition": "NICE CG61, Recommendations 1.1.1.1–1.1.2.2",
+        "url": "https://www.nice.org.uk/guidance/cg61/chapter/recommendations",
+        "locator": "Recommendations 1.1.1.1–1.1.2.2"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain expected fluctuation, alarm symptoms and when to return."
+    ],
+    "lifestyleAndDiet": [
+      "Keep a symptom-food-bowel diary while maintaining a balanced diet."
+    ],
+    "mdtReferrals": [
+      "Primary care; gastroenterology or dietetics when diagnosis or control remains uncertain."
+    ],
+    "dischargeCriteria": [
+      "Positive diagnosis recorded, initial tests reviewed, no alarm feature and follow-up route agreed."
+    ],
+    "followUpPlan": "Review response and reconsider the diagnosis if bleeding, weight loss, anaemia, nocturnal progression or a mass develops."
+  }
+}

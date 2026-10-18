@@ -31,7 +31,7 @@ declare
 begin
   perform public.save_admin_settings(
     target_organization_id, 'Settings save rollback check', 'consultant',
-    '#0f766e', 'ar-SA', 'UTC'
+    '#0e7490', 'ar-SA', 'UTC'
   );
 
   if (select display_name from public.profiles where id = auth.uid())
@@ -46,7 +46,7 @@ begin
 
   select s.* into strict saved from public.organization_settings s
   where s.organization_id = target_organization_id;
-  if saved.primary_color <> '#0f766e' or saved.locale <> 'ar-SA'
+  if saved.primary_color <> '#0e7490' or saved.locale <> 'ar-SA'
       or saved.timezone <> 'UTC' or saved.updated_at <> now() then
     raise exception 'Appearance save or internal timestamp failed';
   end if;

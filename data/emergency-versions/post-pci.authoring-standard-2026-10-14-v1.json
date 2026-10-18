@@ -1,0 +1,197 @@
+{
+  "id": "b9fb2b29-d6e6-4672-b8b8-39cfd0f69774",
+  "title": "Post-PCI Community Secondary Prevention",
+  "specialty": "Cardiology / Primary Care",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-14-v1",
+  "lastReviewed": "2026-10-14",
+  "pillar": "Keep Well",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-14",
+    "status": "incomplete",
+    "scope": "Community follow-up after PCI for acute coronary syndrome, including antiplatelet safety, risk-factor treatment and rehabilitation.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 14 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "No Saudi post-PCI community guideline was opened.",
+      "Exact antiplatelet choice and duration depend on the PCI discharge plan, bleeding risk and any anticoagulation indication.",
+      "SFDA registration was not verified."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "b9fb2b29-d6e6-4672-b8b8-39cfd0f69774"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Stented coronary segments remain vulnerable to platelet-mediated thrombosis, especially when antiplatelet therapy is interrupted. Atherosclerosis persists outside the treated lesion. Left-ventricular dysfunction after infarction increases heart-failure and arrhythmic risk. Rehabilitation and risk-factor control reduce recurrent cardiovascular events.",
+    "keyMechanisms": [
+      "Stented coronary segments remain vulnerable to platelet-mediated thrombosis, especially when antiplatelet therapy is interrupted.",
+      "Atherosclerosis persists outside the treated lesion.",
+      "Left-ventricular dysfunction after infarction increases heart-failure and arrhythmic risk.",
+      "Rehabilitation and risk-factor control reduce recurrent cardiovascular events."
+    ],
+    "references": [
+      {
+        "title": "NICE NG185: Acute coronary syndromes",
+        "edition": "NICE NG185 Recommendations 1.4.1–1.4.42 and 1.8.1–1.8.18",
+        "url": "https://www.nice.org.uk/guidance/ng185/chapter/Recommendations"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Exertional chest pain, breathlessness, bleeding, medication adverse effects or reduced exercise tolerance."
+    ],
+    "physicalSigns": [
+      "Blood-pressure abnormality, congestion, access-site complication, anaemia or bradycardia."
+    ],
+    "redFlags": [
+      "Rest pain or recurrent acute coronary syndrome symptoms, syncope, pulmonary oedema, major bleeding or abrupt antiplatelet interruption."
+    ],
+    "precipitants": [
+      "Missed antiplatelet doses, smoking, uncontrolled BP or lipids, drug interaction and untreated diabetes."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Stent thrombosis or recurrent ACS",
+      "distinguishingFeatures": "New ischaemic pain or ECG change is an emergency, not a routine medication review."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Medication reconciliation",
+        "modalityTarget": "Antiplatelet, statin, ACE inhibitor and beta-blocker plan",
+        "targetCondition": "Secondary-prevention gap",
+        "expectedFinding": "Missing, interrupted or duplicated therapy",
+        "clinicalRationale": "Resolve against the interventional-cardiology discharge plan before changing treatment.",
+        "normalValue": "All discharge medicines and durations reconciled",
+        "references": [
+          {
+            "title": "NICE NG185: Acute coronary syndromes",
+            "edition": "NICE NG185 Recommendations 1.4.1–1.4.3 and 1.4.13–1.4.25",
+            "url": "https://www.nice.org.uk/guidance/ng185/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Blood pressure, renal function and electrolytes",
+        "modalityTarget": "Treatment safety",
+        "targetCondition": "ACE inhibitor/ARB titration",
+        "expectedFinding": "Hypotension, creatinine change or potassium abnormality",
+        "clinicalRationale": "Check before and 1–2 weeks after initiation or dose increases.",
+        "normalValue": "Within patient-specific target and local laboratory range",
+        "references": [
+          {
+            "title": "NICE NG185: Acute coronary syndromes",
+            "edition": "NICE NG185 Recommendations 1.4.2 and 1.4.6–1.4.10",
+            "url": "https://www.nice.org.uk/guidance/ng185/chapter/Recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "12-lead ECG",
+        "modalityTarget": "Recurrent ischaemia or arrhythmia",
+        "targetCondition": "Recurrent ACS",
+        "expectedFinding": "New ischaemic or rhythm abnormality",
+        "clinicalRationale": "Urgent hospital assessment for new ischaemic symptoms.",
+        "normalValue": "No new ischaemic or rhythm change",
+        "references": [
+          {
+            "title": "NICE NG185: Acute coronary syndromes",
+            "edition": "NICE NG185 Sections 1.1–1.2",
+            "url": "https://www.nice.org.uk/guidance/ng185/chapter/Recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "early-review",
+      "title": "Reconcile discharge plan",
+      "timeframe": "First community contact after discharge",
+      "actions": [
+        "Confirm stent/ACS indication, antiplatelet agents, planned stop dates, anticoagulation and bleeding risk.",
+        "Do not interrupt antiplatelet therapy without urgent discussion with the PCI team unless managing life-threatening bleeding."
+      ]
+    },
+    {
+      "id": "risk-reduction",
+      "title": "Optimise secondary prevention",
+      "timeframe": "Over the first 4–6 weeks",
+      "actions": [
+        "Titrate ACE inhibitor and beta-blocker per discharge plan and monitor BP, renal function and electrolytes.",
+        "Continue high-intensity statin and address smoking, diabetes, weight and physical activity."
+      ]
+    },
+    {
+      "id": "rehab",
+      "title": "Cardiac rehabilitation",
+      "timeframe": "Start as soon as possible; first session within 10 days of discharge after MI",
+      "actions": [
+        "Confirm referral and remove transport, language or scheduling barriers.",
+        "Escalate recurrent angina, heart failure, syncope, major bleeding or medication intolerance."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [],
+    "note": "Continue the PCI discharge antiplatelet and secondary-prevention regimen exactly as documented. This topic does not invent a universal post-PCI regimen because stent indication, ACS status, bleeding risk and anticoagulation change drug choice and duration."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Dual antiplatelet duration after MI",
+      "threshold": "Continue for up to 12 months unless contraindicated; follow the PCI discharge plan."
+    }
+  ],
+  "teaching": {
+    "scope": "Community follow-up after PCI for acute coronary syndrome, including antiplatelet safety, risk-factor treatment and rehabilitation.",
+    "learningObjectives": [
+      "Reconcile antithrombotic duration after PCI.",
+      "Identify urgent ischaemic and bleeding complications."
+    ],
+    "pitfalls": [
+      "Stopping an antiplatelet without the PCI team.",
+      "Missing an anticoagulant-antiplatelet interaction or triple-therapy bleeding risk."
+    ],
+    "keyPoints": [
+      "Publication is not permission to alter the PCI discharge plan.",
+      "Cardiac rehabilitation starts early and includes exercise and education."
+    ],
+    "references": [
+      {
+        "title": "NICE NG185: Acute coronary syndromes",
+        "edition": "NICE NG185 Recommendations 1.4.1–1.4.42 and 1.8.1–1.8.18",
+        "url": "https://www.nice.org.uk/guidance/ng185/chapter/Recommendations",
+        "locator": "Recommendations 1.4.1–1.4.42; 1.8.1–1.8.18"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Give written antiplatelet stop dates and emergency advice for chest pain and bleeding."
+    ],
+    "lifestyleAndDiet": [
+      "Smoking cessation, Mediterranean-style diet, graded activity through rehabilitation and weight management."
+    ],
+    "mdtReferrals": [
+      "Interventional cardiology, cardiac rehabilitation, pharmacy, primary care and anticoagulation service."
+    ],
+    "dischargeCriteria": [
+      "Community pathway remains appropriate when clinically stable, medicines are reconciled and no recurrent ischaemia, heart failure or major bleeding is present."
+    ],
+    "followUpPlan": "Review early after discharge, again during titration, and at least annually for symptoms, bleeding, adherence and cardiovascular risk factors."
+  }
+}

@@ -25,6 +25,7 @@ import {
 } from "@/components/icons-3d";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { searchTopics } from "@/lib/topic-search";
+import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
 
 type NavItem = { href: string; label: string; icon: LucideIcon };
 
@@ -61,11 +62,14 @@ const adminLinks: NavItem[] = [
 const carePillars = ["Urgent Care", "Chronic Care", "Keep Well", "Planned Care", "Safe Birth", "Palliative Care"];
 
 function canonicalPath(pathname: string) {
+  if (pathname === "/dashboard/diseases" || pathname.startsWith("/dashboard/diseases/")) {
+    return pathname.replace("/dashboard/diseases", "/dashboard/disease-management");
+  }
+  if (pathname.startsWith("/dashboard/admin/guidelines/")) return "/dashboard/disease-management";
   return {
     "/clinical-library": "/dashboard/clinical-guidelines",
     "/competencies": "/dashboard/competencies",
     "/modules": "/dashboard/hospital-protocols",
-    "/dashboard/diseases": "/dashboard/disease-management",
     "/dashboard/medicines-formulary": "/dashboard/formulary",
     "/dashboard/hospital-protocols": "/dashboard/protocols",
     "/dashboard/clinical-governance": "/dashboard/governance",
@@ -85,10 +89,11 @@ function currentTopicId(pathname: string) {
   return match && match[1] !== "drafts" ? decodeURIComponent(match[1]) : null;
 }
 
-export function WorkspaceSidebar({ organizationName, organizationNote, temporaryAdminMode }: {
+export function WorkspaceSidebar({ organizationName, organizationNote, temporaryAdminMode, draftTopicCount }: {
   organizationName: string;
   organizationNote: string;
   temporaryAdminMode: boolean;
+  draftTopicCount: number;
 }) {
   const pathname = usePathname() ?? "";
   const activeModule = getActiveItem(pathname);
@@ -116,6 +121,7 @@ export function WorkspaceSidebar({ organizationName, organizationNote, temporary
             module={moduleItem}
             pathname={pathname}
             temporaryAdminMode={temporaryAdminMode}
+            draftTopicCount={draftTopicCount}
             onShowAll={() => setPeekPath(pathname)}
           />
         )}
@@ -149,7 +155,7 @@ function HomePanel({ activeLabel, returnTo, onReturn }: { activeLabel?: string; 
   );
 }
 
-function ModulePanel({ module, pathname, temporaryAdminMode, onShowAll }: { module: NavItem; pathname: string; temporaryAdminMode: boolean; onShowAll: () => void }) {
+function ModulePanel({ module, pathname, temporaryAdminMode, draftTopicCount, onShowAll }: { module: NavItem; pathname: string; temporaryAdminMode: boolean; draftTopicCount: number; onShowAll: () => void }) {
   const Icon = module.icon;
   const section = sections.find(({ items }) => items.includes(module));
   const isDiseases = module.href === "/dashboard/disease-management";
@@ -179,13 +185,16 @@ function ModulePanel({ module, pathname, temporaryAdminMode, onShowAll }: { modu
         <div><small>{section?.label ?? "Workspace"}</small><strong>{module.label}</strong></div>
       </div>
       <div className="sidebar-nav-section">
-        {links.map(({ href, label, icon: LinkIcon }) => (
-          <Link key={href} href={href} className="nav-link" title={label} aria-label={label} aria-current={activeLink?.href === href ? "page" : undefined}>
-            <LinkIcon size={18} strokeWidth={1.8} aria-hidden="true" /><span>{label}</span>
+        {links.map(({ href, label, icon: LinkIcon }) => {
+          const displayLabel = href === "/dashboard/diseases/drafts" ? `${label} (${draftTopicCount})` : label;
+          return <Link key={href} href={href} className="nav-link" title={displayLabel} aria-label={displayLabel} aria-current={activeLink?.href === href ? "page" : undefined}>
+            <LinkIcon size={18} strokeWidth={1.8} aria-hidden="true" /><span>{displayLabel}</span>
           </Link>
-        ))}
+        })}
       </div>
-      {isDiseases && <TopicNavigator currentId={currentTopicId(pathname)} />}
+      {isDiseases && (pathname.startsWith("/dashboard/diseases/drafts") || pathname.startsWith("/dashboard/admin/guidelines/")
+        ? <DraftTopicNavigator />
+        : <TopicNavigator currentId={currentTopicId(pathname)} />)}
       {related.length > 0 && (
         <section className="sidebar-nav-section panel-related" aria-label={`Also in ${section?.label}`}>
           <div className="nav-label">Also in {section?.label}</div>
@@ -287,9 +296,9 @@ function TopicNavigator({ currentId }: { currentId: string | null }) {
                       onMouseEnter={() => router.prefetch(href)}
                       onFocus={() => router.prefetch(href)}
                       aria-current={topic.id === currentId ? "page" : undefined}
-                      title={topic.title}
+                      title={withoutInlineSourceLocators(topic.title)}
                     >
-                      {topic.title}
+                      {withoutInlineSourceLocators(topic.title)}
                     </Link>
                   </li>
                 );
@@ -298,6 +307,43 @@ function TopicNavigator({ currentId }: { currentId: string | null }) {
           </details>
         ))}
       </div>
+    </section>
+  );
+}
+
+type DraftNavTopic = { id: string; title: string; versionId: string; version: string };
+
+function DraftTopicNavigator() {
+  const router = useRouter();
+  const pathname = usePathname() ?? "";
+  const activeVersionId = pathname.startsWith("/dashboard/diseases/drafts/")
+    ? pathname.split("/").at(-1)
+    : null;
+  const [state, setState] = useState<{ status: "loading" } | { status: "ready"; topics: DraftNavTopic[] } | { status: "error" }>({ status: "loading" });
+  const [query, setQuery] = useState("");
+
+  useEffect(() => {
+    let active = true;
+    fetch("/api/topics?view=drafts", { credentials: "same-origin" })
+      .then((response) => response.ok ? response.json() as Promise<{ topics: DraftNavTopic[] }> : Promise.reject(new Error("Draft topics unavailable")))
+      .then(({ topics }) => { if (active) setState({ status: "ready", topics }); }, () => { if (active) setState({ status: "error" }); });
+    return () => { active = false; };
+  }, []);
+
+  const topics = state.status === "ready" ? state.topics : [];
+  const needle = query.trim().toLocaleLowerCase();
+  const filtered = needle ? topics.filter((topic) => topic.title.toLocaleLowerCase().includes(needle)) : topics;
+
+  return (
+    <section className="topic-nav" aria-label="Draft clinical topics">
+      <div className="nav-label topic-nav-label"><span>Draft topics</span>{state.status === "ready" && <span className="topic-nav-count">{topics.length}</span>}</div>
+      <label className="topic-nav-search"><Search size={14} aria-hidden="true" /><span className="sr-only">Filter draft topics</span><input type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Filter drafts…" />{query && <button type="button" onClick={() => setQuery("")} aria-label="Clear draft filter"><X size={13} /></button>}</label>
+      {state.status === "loading" && <div className="topic-nav-skeleton" aria-label="Loading draft topics" role="status">{Array.from({ length: 7 }, (_, index) => <span key={index} />)}</div>}
+      {state.status === "error" && <p className="topic-nav-empty">Draft topics could not be loaded.</p>}
+      {state.status === "ready" && <ul className="topic-nav-drafts">{filtered.map((topic) => {
+        const href = `/dashboard/admin/guidelines/${encodeURIComponent(topic.id)}?version=${encodeURIComponent(topic.versionId)}`;
+        return <li key={topic.versionId}><Link href={href} prefetch={false} onMouseEnter={() => router.prefetch(href)} onFocus={() => router.prefetch(href)} aria-current={topic.versionId === activeVersionId ? "page" : undefined} title={withoutInlineSourceLocators(topic.title)}>{withoutInlineSourceLocators(topic.title)}<small>{topic.version}</small></Link></li>;
+      })}</ul>}
     </section>
   );
 }

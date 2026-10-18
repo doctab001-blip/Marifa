@@ -36,13 +36,13 @@
    interface stays consistent whichever colour an administrator chooses. */
 :root {
   --font-sans: var(--font-inter), "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-size-body: 0.875rem;
-  --font-size-subheading: 1rem;
-  --font-size-heading: 1.5rem;
+  --font-size-body: 0.9625rem;
+  --font-size-subheading: 1.1rem;
+  --font-size-heading: 1.65rem;
   --font-color-body: #000000;
   --font-color-subheading: #000000;
   --font-color-heading: #000000;
-  --royal: #0f766e;
+  --royal: #0e7490;
   --cerulean: #0284c7;
   --gold: #c8a24d;
   --c-aqua-text: #0e7490; --c-emerald-text: #047857; --c-amber-text: #b45309; --c-rose-text: #be123c; --c-violet-text: #6d28d9; --c-sky-text: #0369a1;
@@ -51,8 +51,10 @@
   --line: #e3e8e8;
   --line-soft: #eef2f2;
   --line-strong: #cbd5e1;
-  --text-2: #344054;
-  --text-3: #667085;
+  /* Readable copy is always true black. Accent colours remain reserved for
+     links, status badges, warnings, icons and other functional UI. */
+  --text-2: var(--font-color-body);
+  --text-3: var(--font-color-body);
   --surface-2: #f8fafc;
   --surface-3: #f1f5f9;
   --surface: #ffffff;
@@ -80,7 +82,7 @@
 :root, .app-shell {
   --royal-hover: color-mix(in srgb, var(--royal) 84%, #000);
   --royal-ink: color-mix(in srgb, var(--royal) 64%, #000);
-  --royal-bright: color-mix(in srgb, var(--royal) 62%, #2dd4bf);
+  --royal-bright: color-mix(in srgb, var(--royal) 62%, #22d3ee);
   --royal-soft: color-mix(in srgb, var(--royal) 9%, #fff);
   --royal-faint: color-mix(in srgb, var(--royal) 4%, #fff);
   --royal-line: color-mix(in srgb, var(--royal) 17%, #fff);
@@ -96,6 +98,10 @@ html { background: var(--background); }
 body { font-size: var(--font-size-body); line-height: 1.6; margin: 0; color: var(--font-color-body); background: var(--background); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
 h1 { color: var(--font-color-heading); font-size: var(--font-size-heading); line-height: 1.25; letter-spacing: -.02em; }
 h2, h3, h4, h5, h6, [role="heading"] { color: var(--font-color-subheading); font-size: var(--font-size-subheading); line-height: 1.4; letter-spacing: -.01em; }
+/* Body copy must remain true black across legacy and utility-styled components.
+   Interactive and semantic UI keeps colour on its own element (links, buttons,
+   icons, badges and alerts), rather than weakening the readable copy. */
+body :is(p, li, dd, dt, label, th, td, figcaption, blockquote) { color: var(--font-color-body) !important; }
 button, input, select, textarea { font: inherit; }
 a { color: inherit; text-decoration: none; }
 ::selection { background: var(--royal-line); }
@@ -180,6 +186,11 @@ a.card:focus-visible { outline: 3px solid color-mix(in srgb, var(--royal) 35%, t
 .topic-nav-group a { display: block; padding: 5px 8px; border-radius: 7px; color: #4b575e; font-size: .8rem; line-height: 1.35; transition: background .12s ease, color .12s ease; }
 .topic-nav-group a:hover { background: var(--royal-faint); color: var(--royal-ink); }
 .topic-nav-group a[aria-current="page"] { background: var(--nav-active); color: var(--nav-active-ink); font-weight: 600; box-shadow: inset 2px 0 0 #d81b60; }
+.topic-nav-drafts { display: grid; gap: 2px; margin: 0 0 6px; padding: 2px 0 2px 8px; list-style: none; border-left: 1px solid var(--line); }
+.topic-nav-drafts a { display: grid; gap: 2px; padding: 6px 8px; border-radius: 7px; color: #4b575e; font-size: .8rem; line-height: 1.3; }
+.topic-nav-drafts a small { color: var(--muted); font-size: .68rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.topic-nav-drafts a:hover { background: var(--royal-faint); color: var(--royal-ink); }
+.topic-nav-drafts a[aria-current="page"] { background: var(--nav-active); color: var(--nav-active-ink); font-weight: 600; box-shadow: inset 2px 0 0 #d81b60; }
 .topic-nav-empty { margin: 6px 10px; color: var(--muted); font-size: .8rem; line-height: 1.45; }
 .topic-nav-skeleton { display: grid; gap: 11px; padding: 6px 10px; }
 .topic-nav-skeleton span, .skeleton { display: block; height: 11px; border-radius: 6px; background: linear-gradient(90deg, #edf1f1 0%, #f6f8f8 50%, #edf1f1 100%); background-size: 200% 100%; animation: shimmer 1.3s linear infinite; }
@@ -425,6 +436,19 @@ a.topic-row:focus-visible { outline: 3px solid color-mix(in srgb, var(--cerulean
 .admin-json-actions > span { color: #667085; font-size: var(--font-size-body); }
 .admin-json-actions .ui-button { display: inline-flex; align-items: center; gap: 7px; }
 .admin-pathway-form { display: grid; gap: 16px; scroll-margin-top: 20px; }
+.pathway-editor-mode { display: flex; flex-wrap: wrap; gap: 8px; }
+.markdown-canvas { display: grid; gap: 14px; padding: 21px; }
+.markdown-canvas > header { display: flex; align-items: flex-start; gap: 11px; }
+.markdown-canvas h3 { margin: 1px 0 4px; color: #253149; font: 700 var(--font-size-subheading) var(--font-sans); }
+.markdown-canvas p { margin: 0; color: #667085; font-size: var(--font-size-body); line-height: 1.5; }
+.markdown-canvas textarea { width: 100%; min-height: 70vh; resize: vertical; padding: 15px; border: 1px solid #cfd7e3; border-radius: 10px; color: #1d2939; background: #fcfcfd; font: 14px/1.55 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+.markdown-canvas textarea:focus { border-color: var(--royal); outline: 3px solid color-mix(in srgb,var(--royal) 14%,transparent); }
+.markdown-canvas footer { display: flex; align-items: center; justify-content: space-between; gap: 14px; color: #667085; font-size: var(--font-size-body); }
+.markdown-parse-status { font-weight: 750; }
+.markdown-parse-status.is-ready { color: #067647; }
+.markdown-parse-status.is-warning { color: #9a6700; }
+.markdown-warning-pills { display: flex; flex: 1; flex-wrap: wrap; justify-content: flex-end; gap: 6px; }
+.markdown-warning-pills span { max-width: 100%; padding: 4px 8px; border: 1px solid #fedf89; border-radius: 999px; color: #7a4b00; background: #fffaeb; font-size: 12px; }
 .pathway-form-section { display: grid; gap: 18px; padding: 21px; }
 .pathway-form-section > header { display: flex; align-items: flex-start; gap: 12px; padding-bottom: 14px; border-bottom: 1px solid #e8edf4; }
 .pathway-form-section > header > span { display: grid; place-items: center; width: 30px; height: 30px; flex: 0 0 auto; border-radius: 9px; color: #fff; background: var(--royal); font-size: var(--font-size-body); font-weight: 800; }
@@ -517,7 +541,7 @@ a.topic-row:focus-visible { outline: 3px solid color-mix(in srgb, var(--cerulean
   .admin-json-actions { align-items: stretch; flex-direction: column; }
   .pathway-object-grid { grid-template-columns: 1fr; }
   .pathway-form-section { padding: 16px; }
-  .pathway-field-heading,.pathway-save-bar { align-items: stretch; flex-direction: column; }
+  .pathway-field-heading,.pathway-save-bar,.markdown-canvas footer { align-items: stretch; flex-direction: column; }
   .pathway-add-button,.pathway-save-bar .ui-button { width: 100%; }
   .admin-settings-grid { grid-template-columns: 1fr; }
   .admin-sheet { width: min(100vw,440px); border-radius: 0; }
@@ -680,6 +704,21 @@ a.topic-row:focus-visible { outline: 3px solid color-mix(in srgb, var(--cerulean
 .disease-management-tabs a[aria-current="page"] { color: var(--royal); background: var(--royal-soft); }
 .disease-draft-list { margin-top: 6px; }
 .disease-draft-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; }
+.disease-draft-tile { position: relative; min-height: 214px; border-left: 3px solid #f59e0b; padding: 16px; }
+.disease-draft-tile .disease-card-top { padding-right: 4px; }
+.disease-draft-tile .disease-card-copy { display: flex; flex: 1 1 auto; flex-direction: column; justify-content: center; }
+.disease-draft-tile .disease-card-copy h3 { margin-bottom: 8px; }
+.disease-draft-tile .disease-card-copy h3 a { color: inherit; text-decoration: none; }
+.disease-draft-tile-meta { margin-top: 8px !important; font-size: .75rem !important; }
+.disease-draft-tile .disease-card-footer { min-width: 0; }
+.disease-draft-tile .disease-source-type { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.disease-draft-tile-actions { position: absolute; top: 12px; right: 12px; z-index: 2; display: flex; align-items: center; gap: 2px; opacity: 0; pointer-events: none; transition: opacity .15s ease; }
+.disease-draft-tile:hover .disease-draft-tile-actions, .disease-draft-tile:focus-within .disease-draft-tile-actions { opacity: 1; pointer-events: auto; }
+.disease-draft-tile:hover .disease-status-badge, .disease-draft-tile:focus-within .disease-status-badge { opacity: 0; }
+.disease-draft-tile-action { display: inline-grid; place-items: center; width: 28px; height: 28px; padding: 0; border: 0; border-radius: 7px; color: #52617a; background: #fff; box-shadow: 0 1px 3px rgba(15, 23, 42, .14); cursor: pointer; }
+.disease-draft-tile-action:hover { color: var(--royal); background: var(--royal-soft); }
+.disease-draft-tile-action.is-delete:hover { color: #b42318; background: #fef3f2; }
+.disease-draft-tile-action:focus-visible { outline: 2px solid var(--cerulean); outline-offset: 2px; }
 .disease-draft-card { position: relative; min-width: 0; padding: 19px; transition: border-color .16s ease, box-shadow .16s ease, transform .16s ease; }
 .disease-draft-card:has(.disease-draft-card-link:hover),.disease-draft-card:has(.disease-draft-card-link:focus-visible) { border-color: var(--royal-line-strong); box-shadow: 0 10px 24px color-mix(in srgb, var(--royal) 10%, transparent); transform: translateY(-1px); }
 .disease-draft-card-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
@@ -808,28 +847,30 @@ a.topic-row:focus-visible { outline: 3px solid color-mix(in srgb, var(--cerulean
 
 .pathway-sequence { padding: 23px; border: 1px solid var(--line); border-radius: 17px; background: #fff; box-shadow: 0 7px 24px color-mix(in srgb, var(--royal) 5%, transparent); }
 .pathway-sequence-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; padding-bottom: 18px; border-bottom: 1px solid #edf0f5; }
-.pathway-sequence-header > div:first-child > p:last-child { margin: 7px 0 0; color: var(--muted); font-size: var(--font-size-body); line-height: 1.5; }
+.pathway-sequence-header > div:first-child > p:last-child { margin: 7px 0 0; color: var(--font-color-body); font-size: var(--font-size-body); line-height: 1.6; }
 .pathway-sequence-icon { display: grid; place-items: center; width: 42px; height: 42px; flex: 0 0 auto; border-radius: 11px; color: var(--royal); background: var(--royal-soft); }
 .pathway-sequence-list { max-width: 980px; margin: 22px 0 0; padding: 0; list-style: none; }
 .pathway-sequence-step { position: relative; display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 15px; padding-bottom: 20px; }
 .pathway-sequence-step:last-child { padding-bottom: 0; }
 .pathway-sequence-step:not(:last-child)::before { content: ""; position: absolute; top: 40px; bottom: 0; left: 19px; width: 2px; background: var(--royal-line); }
 .pathway-marker { position: relative; z-index: 1; width: 40px; height: 40px; display: grid; place-items: center; border: 4px solid var(--royal-soft); border-radius: 50%; color: #fff; background: var(--royal); font-size: var(--font-size-body); font-weight: 850; }
-.pathway-step-content { overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
-.pathway-step-heading { padding: 16px 18px 13px; background: var(--royal-faint); border-bottom: 1px solid #edf0f5; }
+.pathway-step-content { overflow: hidden; border: 1px solid var(--line-strong); border-radius: 14px; background: #fff; box-shadow: 0 4px 14px rgba(15,23,42,.04); }
+.pathway-step-heading { padding: 16px 18px 13px; background: var(--royal-faint); border-bottom: 1px solid var(--line); }
 .pathway-step-heading > span { color: var(--cerulean); font-size: var(--font-size-body); font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
 .pathway-step-heading h3 { margin: 4px 0 4px; font: 700 var(--font-size-subheading) var(--font-sans); }
-.pathway-step-heading p { margin: 0; color: var(--muted); font-size: var(--font-size-body); line-height: 1.5; }
-.pathway-actions { margin: 0; padding: 14px 20px 15px 36px; color: #3c485b; font-size: var(--font-size-body); line-height: 1.58; }
-.pathway-actions li + li { margin-top: 6px; }
-.pathway-actions li::marker { color: var(--cerulean); }
+.pathway-step-heading p { margin: 0; color: var(--font-color-body); font-size: var(--font-size-body); line-height: 1.5; }
+.pathway-actions { margin: 0; padding: 8px 20px 10px 42px; color: var(--font-color-body); font-size: var(--font-size-body); line-height: 1.7; }
+.pathway-actions { list-style: disc !important; }
+.pathway-actions li { padding: 9px 0 9px 4px; color: var(--font-color-body); }
+.pathway-actions li + li { border-top: 1px solid var(--line-soft); }
+.pathway-actions li::marker { color: var(--cerulean); font-weight: 800; }
 .pathway-branches { padding: 14px 17px 17px; border-top: 1px solid var(--royal-line); background: var(--royal-faint); }
 .pathway-branches-label { display: flex; align-items: center; gap: 6px; margin-bottom: 10px; color: var(--royal); font-size: var(--font-size-body); font-weight: 850; text-transform: uppercase; letter-spacing: .07em; }
 .pathway-branch-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
 .pathway-branch { display: grid; grid-template-columns: minmax(0, 1fr) 14px; align-items: center; gap: 7px; padding: 11px; border: 1px solid var(--royal-line); border-radius: 10px; background: #fff; }
 .pathway-branch strong { color: var(--royal); font-size: var(--font-size-body); line-height: 1.4; }
 .pathway-branch svg { color: var(--cerulean); }
-.pathway-branch p, .pathway-branch ul { grid-column: 1 / -1; margin: 0; color: #52617a; font-size: var(--font-size-body); line-height: 1.5; }
+.pathway-branch p, .pathway-branch ul { grid-column: 1 / -1; margin: 0; color: var(--font-color-body); font-size: var(--font-size-body); line-height: 1.5; }
 .pathway-branch ul { padding-left: 17px; }
 .pathway-branch li + li { margin-top: 4px; }
 .pathway-placeholder { display: flex; align-items: flex-start; gap: 15px; padding: 24px; color: var(--royal); }
@@ -850,14 +891,14 @@ a.topic-row:focus-visible { outline: 3px solid color-mix(in srgb, var(--cerulean
 .clinical-tier-panel-inner { min-height: 0; overflow: hidden; }
 .clinical-tier-body { padding: 20px; border-top: 1px solid #edf0f5; }
 .clinical-tier-body > h3, .clinical-two-column h3, .investigation-groups h3, .non-clinical-grid h3 { margin: 0 0 9px; font: 700 var(--font-size-subheading) var(--font-sans); }
-.clinical-summary { margin: 0 0 18px; color: #3c485b; font-size: var(--font-size-body); line-height: 1.7; }
+.clinical-summary { margin: 0 0 18px; color: var(--font-color-body); font-size: var(--font-size-body); line-height: 1.7; }
 .clinical-references { margin-top: 18px; padding-top: 14px; border-top: 1px solid #e2e8f0; }
 .clinical-references h3 { margin: 0 0 7px; color: #475569; font-size: var(--font-size-subheading); font-weight: 700; }
 .clinical-references ul { display: grid; gap: 5px; margin: 0; padding-left: 18px; color: #475569; font-size: var(--font-size-body); }
 .clinical-references li::marker { color: var(--cerulean); }
 .clinical-references a { color: var(--royal); text-decoration: underline; text-underline-offset: 2px; }
 .clinical-review-draft-notice { margin: 12px 0; padding: 14px 16px; border: 1px solid #f4cf82; border-left: 5px solid #d97706; border-radius: 10px; color: #713f12; background: #fff8e7; font-size: var(--font-size-body); line-height: 1.55; }
-.clinical-content-list { margin: 0; padding-left: 20px; color: #3c485b; font-size: var(--font-size-body); line-height: 1.65; }
+.clinical-content-list { margin: 0; padding-left: 20px; color: var(--font-color-body); font-size: var(--font-size-body); line-height: 1.65; }
 .clinical-content-list li + li { margin-top: 5px; }
 .clinical-content-list li::marker { color: var(--cerulean); }
 .differential-list { padding-left: 21px; }
@@ -1121,6 +1162,8 @@ h1, h2, h3, h4, h5, h6, .heading, .brand-name, .metric-value { font-family: var(
   .directory-result-tools { width: 100%; justify-content: space-between; }
   .disease-card-list .disease-card { display: flex; gap: 10px; padding: 12px; }
   .disease-card-list .disease-card-top { order: -1; }
+  .disease-draft-tile-actions { opacity: 1; pointer-events: auto; }
+  .disease-draft-tile .disease-status-badge { opacity: 0; }
 }
 
 @media print { .sidebar-toggle, .directory-view-toggle { display: none; } }
@@ -1172,6 +1215,9 @@ h1, h2, h3, h4, h5, h6, .heading, .brand-name, .metric-value { font-family: var(
 .topic-approval-bar form { margin: 0; }
 .topic-approve-button { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 22px; font-weight: 700; }
 .topic-approve-button:disabled { opacity: .7; cursor: progress; }
+.draft-editor-disclosure { margin-top: 20px; padding: 0; overflow: hidden; }
+.draft-editor-disclosure > summary { padding: 18px 20px; cursor: pointer; color: var(--tp-ink); font-weight: 700; }
+.draft-editor-disclosure > .admin-pathway-form { padding: 0 20px 20px; }
 .topic-approval-done { display: inline-flex; align-items: center; gap: 8px; }
 .topic-approval-done svg { color: #15803d; }
 .topic-approval-message { flex-basis: 100%; font-size: .92rem; color: var(--tp-muted, #475569) !important; }
@@ -1221,7 +1267,7 @@ h1, h2, h3, h4, h5, h6, .heading, .brand-name, .metric-value { font-family: var(
 .topic-page .clinical-tier-title { display: grid; font: 750 1.08rem/1.3 var(--tp-heading-font); color: var(--tp-ink); }
 .topic-page .clinical-tier-title small { color: var(--tp-muted); font: 500 .8rem/1.3 var(--font-sans); letter-spacing: .02em; }
 .topic-page .clinical-tier { scroll-margin-top: 90px; }
-.teaching-cue { display: flex; gap: 10px; margin: 0 0 18px; padding: 12px 16px; border-left: 4px solid var(--tp-accent, #0f766e); border-radius: 0 12px 12px 0; background: #f0fdfa; color: #134e4a; font-size: .93rem; line-height: 1.6; }
+.teaching-cue { display: flex; gap: 10px; margin: 0 0 18px; padding: 12px 16px; border-left: 4px solid var(--tp-accent, #0e7490); border-radius: 0 12px 12px 0; background: #ecfeff; color: #164e63; font-size: .93rem; line-height: 1.6; }
 
 .topic-pager { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 26px; }
 .topic-pager-link { display: flex; align-items: center; gap: 12px; padding: 16px 18px; border: 1px solid var(--tp-hairline); border-radius: 16px; background: #fff; color: var(--tp-ink); font-weight: 650; transition: border-color .15s ease, box-shadow .15s ease; }
@@ -1240,6 +1286,25 @@ h1, h2, h3, h4, h5, h6, .heading, .brand-name, .metric-value { font-family: var(
   .topic-page .clinical-tier-heading { padding: 14px; gap: 10px; }
 }
 .topic-page .pathway-branch-grid { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); align-items: start; }
+.topic-family-member + .topic-family-member { margin-top: 38px; padding-top: 34px; border-top: 2px solid var(--tp-hairline, #e2e8f0); }
+.topic-family-member-header { margin: 0 0 20px; padding: 18px 20px; border: 1px solid var(--tp-hairline, #e2e8f0); border-left: 5px solid var(--tp-primary, var(--royal)); border-radius: 14px; background: var(--tp-surface, #f8fafc); }
+.topic-family-member-header p { margin: 0 0 4px; color: var(--tp-muted, #475569); font-size: .78rem; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+.topic-family-member-header h2 { margin: 0; color: var(--tp-ink, #0b1220); font: 800 1.3rem/1.25 var(--tp-heading-font); }
+.topic-family-member .topic-approval-bar { margin-top: 26px; }
+
+/* Saudi-first clinical topic viewer. These unlayered rules intentionally
+   protect the core surface hierarchy when legacy global styles follow the
+   Tailwind utility layer. */
+.ksa-topic-view { min-height: 100%; background: rgba(248,250,252,.72); color: #0f172a; }
+.ksa-topic-view .ksa-status-badge { border-color: #d1fae5; background: #ecfdf5; color: #047857; }
+.ksa-anchor-nav { position: sticky; top: 72px; z-index: 20; border-bottom: 1px solid rgba(226,232,240,.6); background: rgba(255,255,255,.74); backdrop-filter: blur(12px); }
+.ksa-content-card, .ksa-governance-drawer { border-color: rgba(226,232,240,.78); box-shadow: 0 2px 8px rgba(0,0,0,.04); }
+.ksa-safety-alert { border-color: rgba(253,230,138,.9); background: rgba(255,251,235,.78); }
+.ksa-governance-drawer { background: #fff; }
+
+@media (max-width: 720px) {
+  .ksa-anchor-nav { top: 70px; }
+}
 
 /* ── Emergency reference layout: four headings, scannable tables ── */
 .em-topic { display: grid; grid-template-columns: minmax(0, 1fr); gap: 22px; padding-top: 18px; min-width: 0; }
@@ -1263,14 +1328,13 @@ h1, h2, h3, h4, h5, h6, .heading, .brand-name, .metric-value { font-family: var(
 .em-alert .em-list li::marker { color: #be123c; }
 .em-box { margin-top: 18px; padding: 14px 16px; border: 1px solid var(--tp-hairline, #e2e8f0); border-radius: 12px; background: var(--tp-surface, #f8fafc); }
 .em-box h3 { margin-top: 0; }
-.em-pearls { border-left: 5px solid var(--tp-accent, #0f766e); background: #f0fdfa; }
+.em-pearls { border-left: 5px solid var(--tp-accent, #0e7490); background: #ecfeff; }
 .em-pitfalls { border-left: 5px solid #b45309; background: #fffbeb; }
 .em-criteria { margin-bottom: 16px; padding: 14px 16px; border: 1px solid var(--royal-line); border-left: 5px solid var(--tp-primary, var(--royal)); border-radius: 12px; background: var(--royal-soft); }
 .em-criteria h3 { margin-top: 0; }
-.em-criteria dl { margin: 0; display: grid; gap: 6px; }
-.em-criteria dl > div { display: grid; grid-template-columns: minmax(120px, 200px) 1fr; gap: 10px; }
-.em-criteria dt { font-weight: 750; color: var(--tp-ink, #0b1220); }
-.em-criteria dd { margin: 0; }
+.em-criteria-list { margin: 0; padding-left: 1.25rem; display: grid; gap: 14px; list-style: disc; line-height: 1.65; }
+.em-criteria-list li::marker { color: var(--tp-primary, var(--royal)); }
+.em-criteria-list strong { font-weight: 750; color: var(--tp-ink, #0b1220); }
 .em-table-wrap { overflow-x: auto; border: 1px solid var(--tp-hairline, #e2e8f0); border-radius: 12px; }
 .em-table { width: 100%; border-collapse: collapse; font-size: .93rem; line-height: 1.5; }
 .em-table th, .em-table td { padding: 10px 12px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--tp-hairline, #e2e8f0); }
@@ -1297,7 +1361,6 @@ h1, h2, h3, h4, h5, h6, .heading, .brand-name, .metric-value { font-family: var(
   .em-investigation-table tr { border-bottom: 1px solid var(--tp-hairline, #e2e8f0); padding: 6px 0; }
   .em-investigation-table td { border: 0; padding-top: 2px; }
   .em-investigation-table td::before { content: attr(data-label); display: block; color: var(--tp-muted, #475569); font-size: .72rem; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
-  .em-criteria dl > div { grid-template-columns: 1fr; gap: 2px; }
   .em-table tbody th { min-width: 100px; }
   .em-table th, .em-table td { padding: 9px 10px; }
 }
@@ -1310,6 +1373,48 @@ h1, h2, h3, h4, h5, h6, .heading, .brand-name, .metric-value { font-family: var(
 .em-dose-table .em-contra li::marker { color: #be123c; }
 .em-muted { color: var(--tp-muted, #64748b); font-size: .85em; }
 
+/* Global clinical-topic typography contract: exactly three text sizes.
+   Functional controls may retain their semantic colours, but clinical body
+   copy is always black for consistent scanning and contrast. */
+.topic-page, .em-topic {
+  --topic-heading-size: 1.65rem;
+  --topic-subheading-size: 1.1rem;
+  --topic-body-size: .9625rem;
+  color: #000;
+  font-size: var(--topic-body-size);
+}
+.topic-page :where(p, li, td, th, dd, dt, blockquote, figcaption),
+.em-topic :where(p, li, td, th, dd, dt, blockquote, figcaption) {
+  color: #000 !important;
+  font-size: var(--topic-body-size) !important;
+}
+.topic-page :where(h1, .topic-library-title, .scenario-title),
+.em-topic :where(h1) {
+  color: #000 !important;
+  font-size: var(--topic-heading-size) !important;
+}
+.topic-page :where(h2, h3, h4, h5, h6, .teach-heading, .teach-step-title, .clinical-tier-title, .em-heading, .em-section h3, .em-section h4, .em-references h2),
+.em-topic :where(h2, h3, h4, h5, h6, .em-heading, .em-section h3, .em-section h4, .em-references h2) {
+  color: #000 !important;
+  font-size: var(--topic-subheading-size) !important;
+}
+.topic-page :where(.topic-library-count, .topic-switcher-position, .topic-approval-message, .teach-label, .teach-step-guidance, .teach-derived, .teach-refs span, .topic-pager-link small, .clinical-tier-title small, .em-table small, .em-footnote, .em-references span, .em-muted),
+.em-topic :where(.em-table small, .em-footnote, .em-references span, .em-muted) {
+  color: #000 !important;
+  font-size: var(--topic-body-size) !important;
+}
+.topic-page :where(.teach-callout, .teaching-cue, .em-lead, .em-list, .em-table, .em-references ol),
+.em-topic :where(.em-lead, .em-list, .em-table, .em-references ol) {
+  color: #000 !important;
+  font-size: var(--topic-body-size) !important;
+}
+.topic-teaching-appendix { margin-top: 24px; padding: 20px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+.topic-teaching-appendix h2 { margin: 0 0 16px; color: #000; font-size: var(--font-size-heading); }
+.topic-teaching-appendix-block + .topic-teaching-appendix-block { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--line-soft); }
+.topic-teaching-appendix-block h3 { margin: 0 0 8px; color: #000; font-size: var(--font-size-subheading); }
+.topic-teaching-appendix-prompt, .topic-teaching-appendix-guidance p { margin: 0 0 8px; color: #000; font-size: var(--font-size-body); line-height: 1.6; }
+.topic-teaching-appendix-guidance p:last-child { margin-bottom: 0; }
+
 /* ── Route loading state ── */
 .page-loading-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 30px; }
 .page-loading-card { padding: 18px; min-height: 112px; }
@@ -1317,8 +1422,9 @@ h1, h2, h3, h4, h5, h6, .heading, .brand-name, .metric-value { font-family: var(
 @media (max-width: 760px) { .page-loading-grid { grid-template-columns: 1fr; } }
 
 @media (min-width: 761px) {
-  /* The sidebar module panel replaces these in-page menus on wider screens. */
-  .disease-management-tabs, .admin-tabs { display: none; }
+  /* Disease Management has a stateful workflow, so its three status tabs must
+     remain visible beside the desktop sidebar. */
+  .admin-tabs { display: none; }
   .app-shell:not(.sidebar-collapsed) .topic-switcher { display: none; }
 }
 
