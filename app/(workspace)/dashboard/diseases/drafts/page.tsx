@@ -52,7 +52,7 @@ export default async function DiseaseDraftsPage({ searchParams }: { searchParams
             <div><p className="disease-kicker">Organization workspace</p><h2 id="disease-draft-list-title">Draft topics</h2></div>
             <p role="status">{result.topicCount} draft topics</p>
           </div>
-          <div className="disease-draft-grid">
+          <div className="topic-tile-grid">
             {result.drafts.map((draft) => (
               <TopicCard key={draft.versionId} topic={draft} preparedDate={formatDate(draft.createdAt)} />
             ))}

@@ -682,3 +682,92 @@ a.card:hover, .disease-card:hover, .care-pillar-card:hover { border-color: rgb(v
   *, *::before, *::after { color: #000 !important; background: transparent !important; box-shadow: none !important; text-shadow: none !important; backdrop-filter: none !important; filter: none !important; border-color: #bbb !important; }
   .topbar, .sidebar, .em-nav, .mobile-nav, .sidebar-toggle { display: none !important; }
 }
+
+/* ═══ Compact topic tiles (Disease Management tabs + clinical directory) ═══════════════════════
+   One tile language for Draft, Approved, Published and the public directory: roughly half the
+   old height, a light tint per state or care pillar, Inter at small optical sizes, actions as
+   icon controls. Colour comes from --tone (an "r g b" triple) so it works in light and dark. */
+.topic-tile-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(236px, 1fr)); gap: 10px; }
+.topic-tile, .disease-card-grid .disease-card {
+  --tone: 14 116 144;
+  position: relative; display: flex; flex-direction: column; gap: 5px; min-width: 0; min-height: 0; padding: 10px 12px 11px;
+  border: 1px solid rgb(var(--tone) / .2); border-radius: 12px;
+  background: linear-gradient(160deg, rgb(var(--tone) / .10), rgb(var(--tone) / .03) 62%), rgb(var(--glass) / .9);
+  box-shadow: 0 1px 2px rgb(var(--shade) / .05);
+  transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease;
+}
+.topic-tile::before, .disease-card-grid:not(.disease-card-list) .disease-card::before {
+  content: ""; position: absolute; top: 0; left: 12px; right: 12px; height: 2px; border-radius: 0 0 3px 3px; background: rgb(var(--tone) / .5);
+}
+.topic-tile:hover, .topic-tile:focus-within, .disease-card-grid .disease-card:hover {
+  transform: translateY(-1px); border-color: rgb(var(--tone) / .42); box-shadow: 0 8px 20px -12px rgb(var(--tone) / .5);
+}
+.topic-tile.is-approved { --tone: 16 166 116; }
+.topic-tile.is-draft { --tone: 217 119 6; }
+.disease-card-grid .disease-card[data-pillar="Urgent Care"] { --tone: 225 29 72; }
+.disease-card-grid .disease-card[data-pillar="Chronic Care"] { --tone: 14 116 144; }
+.disease-card-grid .disease-card[data-pillar="Keep Well"] { --tone: 16 166 116; }
+.disease-card-grid .disease-card[data-pillar="Planned Care"] { --tone: 99 102 241; }
+.disease-card-grid .disease-card[data-pillar="Safe Birth"] { --tone: 219 39 119; }
+.disease-card-grid .disease-card[data-pillar="Palliative Care"] { --tone: 124 92 224; }
+.disease-card-grid .disease-card.is-urgent { border-left: 1px solid rgb(var(--tone) / .2); padding-left: 12px; }
+
+.topic-tile-meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: .68rem; line-height: 1.2; }
+.topic-tile-status {
+  padding: 2px 7px; border-radius: 999px; background: rgb(var(--tone) / .13);
+  color: color-mix(in srgb, rgb(var(--tone)) 72%, var(--strong)); font-weight: 650; letter-spacing: .05em; text-transform: uppercase;
+}
+.topic-tile-version { min-width: 0; max-width: 55%; overflow: hidden; color: var(--text-3, #64748b); font-variant-numeric: tabular-nums; text-overflow: ellipsis; white-space: nowrap; transition: opacity .15s; }
+.topic-tile-title, .disease-card-grid .disease-card h3 {
+  margin: 0; color: var(--strong); font: 600 .9rem/1.32 var(--font-sans); letter-spacing: -.012em;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden;
+}
+.topic-tile-link { color: inherit; text-decoration: none; }
+.topic-tile-link::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+.topic-tile-link:focus-visible { outline: 0; }
+.topic-tile:has(.topic-tile-link:focus-visible) { outline: 2px solid rgb(var(--tone) / .7); outline-offset: 2px; }
+.topic-tile-sub { display: flex; align-items: center; gap: 6px; min-width: 0; margin: auto 0 0; padding-top: 2px; color: var(--text-3, #64748b); font-size: .72rem; line-height: 1.3; }
+.topic-tile-spec, .topic-tile-more { flex: 0 0 auto; padding: 1px 7px; border-radius: 999px; background: rgb(var(--ov) / .06); color: var(--text-2, #475569); font-weight: 550; white-space: nowrap; }
+.topic-tile-more { padding: 1px 5px; font-weight: 500; }
+.topic-tile-source { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.topic-tile-actions {
+  position: absolute; top: 5px; right: 6px; z-index: 2; display: flex; align-items: center; gap: 1px; padding: 2px; border-radius: 9px;
+  background: rgb(var(--glass) / .94); box-shadow: 0 1px 4px rgb(var(--shade) / .18); opacity: 0; pointer-events: none; transition: opacity .15s ease;
+}
+.topic-tile:hover .topic-tile-actions, .topic-tile:focus-within .topic-tile-actions { opacity: 1; pointer-events: auto; }
+.topic-tile:hover .topic-tile-version, .topic-tile:focus-within .topic-tile-version { opacity: 0; }
+.topic-tile-actions form { display: contents; }
+.topic-tile-action { display: inline-grid; place-items: center; width: 26px; height: 26px; padding: 0; border: 0; border-radius: 7px; background: transparent; color: var(--text-2, #475569); cursor: pointer; }
+.topic-tile-action:hover { background: rgb(var(--tone) / .16); color: var(--strong); }
+.topic-tile-action.is-approve:hover { background: rgb(16 166 116 / .18); color: #047857; }
+.topic-tile-action.is-delete:hover { background: rgb(225 29 72 / .14); color: #be123c; }
+.topic-tile-action:focus-visible { outline: 2px solid rgb(var(--tone) / .8); outline-offset: 1px; }
+/* Touch screens have no hover: show the controls as a quiet row under the tile text. */
+@media (hover: none) {
+  .topic-tile-actions { position: static; align-self: flex-end; opacity: 1; pointer-events: auto; background: transparent; box-shadow: none; padding: 0; }
+  .topic-tile:hover .topic-tile-version { opacity: 1; }
+}
+
+/* Public directory cards (DiseaseCard), grid view only: same density, quieter chrome. */
+.disease-card-grid:not(.disease-card-list) .disease-card { gap: 6px; }
+.disease-card-grid:not(.disease-card-list) .disease-card-top > span:first-child { color: color-mix(in srgb, rgb(var(--tone)) 72%, var(--strong)); font-size: .68rem; font-weight: 650; letter-spacing: .05em; text-transform: uppercase; }
+.disease-card-grid:not(.disease-card-list) .disease-status-badge { padding: 2px 7px; font-size: .68rem; }
+.disease-card-grid:not(.disease-card-list) .disease-speciality-badges { margin-top: 2px; }
+.disease-card-grid:not(.disease-card-list) .disease-sub-speciality-badge { display: none; }
+.disease-card-grid:not(.disease-card-list) .disease-card-footer { padding-top: 0; border-top: 0; font-size: .72rem; }
+.disease-card-grid:not(.disease-card-list) { grid-template-columns: repeat(auto-fill, minmax(236px, 1fr)); gap: 10px; }
+
+/* Disease Management page chrome, scaled down so the tiles lead. */
+.disease-directory-page .disease-directory-hero { align-items: center; margin-bottom: 12px; gap: 20px; }
+.disease-directory-page .disease-directory-hero h1 { margin: 2px 0 3px; font-size: 1.35rem; letter-spacing: -.025em; }
+.disease-directory-page .disease-directory-hero > div:first-child > p:last-child { max-width: 640px; font-size: .84rem; line-height: 1.5; }
+.disease-directory-page .disease-kicker { font-size: .66rem; letter-spacing: .12em; }
+.disease-directory-page .directory-governance-note { max-width: 250px; gap: 8px; padding: 8px 11px; border-radius: 10px; }
+.disease-directory-page .directory-governance-note strong { font-size: .8rem; }
+.disease-directory-page .directory-governance-note span { font-size: .74rem; line-height: 1.35; }
+.disease-directory-page .disease-management-tabs { margin: 0 0 14px; padding-bottom: 6px; }
+.disease-directory-page .disease-management-tabs a { min-height: 32px; padding: 0 11px; font-size: .84rem; }
+.disease-directory-page .directory-section-heading { margin-bottom: 10px; }
+.disease-directory-page .directory-section-heading h2 { margin: 2px 0 0; font-size: 1rem; }
+.disease-directory-page .directory-section-heading > p, .disease-directory-page .directory-section-heading [role="status"] { font-size: .8rem; }

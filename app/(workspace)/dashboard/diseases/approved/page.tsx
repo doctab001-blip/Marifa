@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { FileCheck2, FileSearch } from "@/components/icons-3d";
+import { FileCheck2, FilePenLine, FileSearch } from "@/components/icons-3d";
 import { DiseaseManagementNavigation } from "@/components/diseases/DiseaseManagementNavigation";
+import { ManagedTopicTile } from "@/components/diseases/ManagedTopicTile";
 import { getDiseaseManagementCounts, getDiseaseManagementVersions } from "@/lib/data/disease-drafts";
 import { createDraftFromApproved } from "@/app/(workspace)/dashboard/admin/guidelines/actions";
 
@@ -30,7 +30,25 @@ export default async function DiseaseApprovedPage() {
       ) : (
         <section className="disease-draft-list" aria-labelledby="approved-topic-list-title">
           <div className="directory-section-heading"><div><p className="disease-kicker">Governance history</p><h2 id="approved-topic-list-title">Approved versions</h2></div><p role="status">{result.versions.length} approved versions across {result.topicCount} topics</p></div>
-          <div className="disease-draft-grid">{result.versions.map((version) => <article className="card disease-draft-card" key={version.versionId}><div className="disease-draft-card-heading"><span className="admin-queue-status status-approved">Approved</span><span className="disease-draft-version">Version {version.version}</span></div><h3><Link className="disease-draft-card-link" href={`/dashboard/diseases/${version.id}?version=${encodeURIComponent(version.versionId)}`}>{version.title}</Link></h3><p className="disease-draft-meta">{version.specialty}</p><p className="disease-draft-source">Source: {version.sourceTitle}</p><div className="disease-draft-actions disease-draft-actions-top"><Link className="ui-button ui-button-primary" href={`/dashboard/diseases/${version.id}?version=${encodeURIComponent(version.versionId)}`}>View approved topic</Link>{version.canEdit && <form action={createDraftFromApproved}><input type="hidden" name="id" value={version.id}/><input type="hidden" name="versionId" value={version.versionId}/><button className="ui-button ui-button-secondary">Create editable draft</button></form>}</div></article>)}</div>
+          <div className="topic-tile-grid">{result.versions.map((version) => (
+            <ManagedTopicTile
+              key={version.versionId}
+              tone="approved"
+              statusLabel="Approved"
+              title={version.title}
+              specialty={version.specialty}
+              version={version.version}
+              source={version.sourceTitle}
+              href={`/dashboard/diseases/${encodeURIComponent(version.id)}?version=${encodeURIComponent(version.versionId)}`}
+              linkLabel={`View approved topic ${version.title}, version ${version.version}`}
+              actions={version.canEdit ? (
+                <form action={createDraftFromApproved}>
+                  <input type="hidden" name="id" value={version.id} /><input type="hidden" name="versionId" value={version.versionId} />
+                  <button className="topic-tile-action" type="submit" aria-label={`Create editable draft of ${version.title}`} title="Create editable draft"><FilePenLine size={15} aria-hidden="true" /></button>
+                </form>
+              ) : undefined}
+            />
+          ))}</div>
         </section>
       )}
     </main>
