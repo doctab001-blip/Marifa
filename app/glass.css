@@ -937,3 +937,22 @@ html[data-theme="dark"] .metric-grid .metric-card:hover { box-shadow: inset 0 1p
   .metric-grid .metric-card, .metric-grid .metric-link { transition: none; }
   .metric-grid .metric-card:hover { transform: none; }
 }
+
+/* ═══ Sort + filter bar on the Draft / Approved / Published tabs ═══════════════════════════════ */
+.managed-toolbar { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 10px 12px; margin: 0 0 12px; padding: 10px 12px; border: 1px solid rgb(var(--ov) / .09); border-radius: 12px; background: rgb(var(--ov) / .03); }
+.managed-field { display: grid; gap: 3px; min-width: 0; }
+.managed-field > span { color: var(--text-3); font-size: .68rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+.managed-field select, .managed-field input { height: 34px; border-radius: 9px; border: 1px solid rgb(var(--ov) / .16); background: rgb(var(--glass) / .95); color: var(--strong); font: inherit; font-size: .84rem; }
+.managed-field select { padding: 0 10px; min-width: 190px; }
+.managed-field-search { flex: 1 1 200px; max-width: 300px; }
+.managed-field-search > div { position: relative; display: flex; align-items: center; color: var(--text-3); }
+.managed-field-search svg { position: absolute; left: 10px; pointer-events: none; }
+.managed-field-search input { width: 100%; padding: 0 10px 0 30px; }
+.managed-field select:focus-visible, .managed-field input:focus-visible { outline: none; border-color: rgb(34 211 238 / .7); box-shadow: 0 0 0 3px rgb(34 211 238 / .14); }
+.managed-count { margin: 0 0 6px auto; color: var(--text-3); font-size: .8rem; font-variant-numeric: tabular-nums; }
+.managed-empty { margin: 18px 0; color: var(--text-3); text-align: center; }
+.managed-cell { display: contents; }
+.topic-tile-date { margin-left: auto; color: var(--text-3, #64748b); white-space: nowrap; transition: opacity .15s; }
+.topic-tile:hover .topic-tile-date, .topic-tile:focus-within .topic-tile-date { opacity: 0; }
+@media (hover: none) { .topic-tile:hover .topic-tile-date { opacity: 1; } }
+@media (max-width: 640px) { .managed-field select, .managed-field-search { min-width: 0; max-width: none; flex: 1 1 100%; } .managed-count { margin-left: 0; } }

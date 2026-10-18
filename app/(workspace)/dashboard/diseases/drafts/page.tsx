@@ -1,5 +1,6 @@
 import { FileClock, FileSearch, ShieldAlert } from "@/components/icons-3d";
 import { DiseaseManagementNavigation } from "@/components/diseases/DiseaseManagementNavigation";
+import { ManagedTopicBrowser } from "@/components/diseases/ManagedTopicBrowser";
 import { TopicCard } from "@/components/diseases/TopicCard";
 import { getDiseaseDrafts, getDiseaseManagementCounts } from "@/lib/data/disease-drafts";
 import { approvalErrorMessages } from "@/lib/approval-errors";
@@ -52,11 +53,14 @@ export default async function DiseaseDraftsPage({ searchParams }: { searchParams
             <div><p className="disease-kicker">Organization workspace</p><h2 id="disease-draft-list-title">Draft topics</h2></div>
             <p role="status">{result.topicCount} draft topics</p>
           </div>
-          <div className="topic-tile-grid">
-            {result.drafts.map((draft) => (
-              <TopicCard key={draft.versionId} topic={draft} preparedDate={formatDate(draft.createdAt)} />
-            ))}
-          </div>
+          <ManagedTopicBrowser
+            noun="draft"
+            dateNoun="Prepared"
+            items={result.drafts.map((draft) => ({
+              key: draft.versionId, title: draft.title, specialty: draft.specialty, changedAt: draft.createdAt,
+              tile: <TopicCard topic={draft} preparedDate={formatDate(draft.createdAt)} />,
+            }))}
+          />
         </section>
       )}
     </main>

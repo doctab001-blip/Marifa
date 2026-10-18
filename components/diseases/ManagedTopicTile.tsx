@@ -11,6 +11,8 @@ type ManagedTopicTileProps = {
   specialty: string;
   version: string;
   source: string;
+  /** Pre-formatted date shown in the top row, e.g. "Published 18 Oct 2026". */
+  dateLabel?: string;
   /** Omit when the viewer has nowhere to go; the title is then plain text. */
   href?: string;
   /** Accessible name for the whole-tile link. */
@@ -24,12 +26,13 @@ type ManagedTopicTileProps = {
  * Four short lines (status · title · speciality · source). The whole tile is one link; actions are
  * small icon controls so a topic never shows a row of large buttons.
  */
-export function ManagedTopicTile({ tone, statusLabel, title, specialty, version, source, href, linkLabel, actions }: ManagedTopicTileProps) {
+export function ManagedTopicTile({ tone, statusLabel, title, specialty, version, source, dateLabel, href, linkLabel, actions }: ManagedTopicTileProps) {
   const { primary, extra } = summarizeSpecialty(specialty);
   return (
     <article className={`topic-tile is-${tone}`} title={`${title}\n${specialty}\nSource: ${source}`}>
       <div className="topic-tile-meta">
         <span className="topic-tile-status">{statusLabel}</span>
+        {dateLabel ? <span className="topic-tile-date">{dateLabel}</span> : null}
         <span className="topic-tile-version" title={`Version ${version}`}>{/^\d/.test(version) ? `v${version}` : version}</span>
       </div>
       <h3 className="topic-tile-title">

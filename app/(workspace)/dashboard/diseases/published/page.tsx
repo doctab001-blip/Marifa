@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { ClipboardList, FileSearch, FilePenLine, FileText, RotateCcw, CheckCircle2 } from "@/components/icons-3d";
 import { DiseaseManagementNavigation } from "@/components/diseases/DiseaseManagementNavigation";
+import { ManagedTopicBrowser } from "@/components/diseases/ManagedTopicBrowser";
 import { ManagedTopicTile } from "@/components/diseases/ManagedTopicTile";
 import { getDiseaseManagementCounts, getDiseaseManagementVersions } from "@/lib/data/disease-drafts";
+import { formatManagedDate } from "@/lib/dashboard/format-date";
 import { transitionGuidelineVersion } from "@/app/(workspace)/dashboard/admin/guidelines/actions";
 
 export default async function DiseasePublishedPage() {
@@ -25,19 +27,20 @@ export default async function DiseasePublishedPage() {
       ) : (
         <section className="disease-draft-list" aria-labelledby="published-topic-list-title">
           <div className="directory-section-heading"><h2 id="published-topic-list-title">Published topics</h2><p role="status">{result.topicCount} staged topics</p></div>
-          <div className="topic-tile-grid">
-            {result.versions.map((version) => {
+          <ManagedTopicBrowser noun="published" dateNoun="Published" items={result.versions.map((version) => {
               const editHref = `/dashboard/admin/guidelines/${encodeURIComponent(version.id)}?version=${encodeURIComponent(version.versionId)}`;
               const pasteHref = `/dashboard/admin/guidelines/${encodeURIComponent(version.id)}/paste?version=${encodeURIComponent(version.versionId)}`;
-              return (
+              return {
+                key: version.versionId, title: version.title, specialty: version.specialty, changedAt: version.statusChangedAt,
+                tile: (
                 <ManagedTopicTile
-                  key={version.versionId}
                   tone="published"
                   statusLabel="Published"
                   title={version.title}
                   specialty={version.specialty}
                   version={version.version}
                   source={version.sourceTitle}
+                  dateLabel={`Published ${formatManagedDate(version.statusChangedAt)}`}
                   href={version.canEdit ? editHref : undefined}
                   linkLabel={`Edit ${version.title}, version ${version.version}`}
                   actions={version.canEdit ? (
@@ -55,9 +58,9 @@ export default async function DiseasePublishedPage() {
                     </>
                   ) : undefined}
                 />
-              );
-            })}
-          </div>
+                ),
+              };
+            })} />
         </section>
       )}
     </main>

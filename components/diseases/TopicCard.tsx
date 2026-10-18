@@ -15,7 +15,7 @@ export function TopicCard({ topic, preparedDate }: TopicCardProps) {
     ? `/dashboard/admin/guidelines/${encodeURIComponent(topic.id)}?version=${encodeURIComponent(topic.versionId)}`
     : `/dashboard/diseases/drafts/${encodeURIComponent(topic.versionId)}`;
   const pasteHref = `/dashboard/admin/guidelines/${encodeURIComponent(topic.id)}/paste?version=${encodeURIComponent(topic.versionId)}`;
-  const source = topic.isSharedReference ? `Shared reference · prepared ${preparedDate}` : `${topic.sourceTitle} · prepared ${preparedDate}`;
+  const source = topic.isSharedReference ? "Shared reference" : `${topic.sourceTitle}`;
 
   return (
     <ManagedTopicTile
@@ -25,6 +25,7 @@ export function TopicCard({ topic, preparedDate }: TopicCardProps) {
       specialty={topic.specialty}
       version={topic.version}
       source={source}
+      dateLabel={`Prepared ${preparedDate}`}
       href={href}
       linkLabel={`Open ${topic.title}, version ${topic.version}`}
       actions={topic.canEdit ? (

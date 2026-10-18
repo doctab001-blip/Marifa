@@ -1,7 +1,9 @@
 import { FileCheck2, FilePenLine, FileSearch } from "@/components/icons-3d";
 import { DiseaseManagementNavigation } from "@/components/diseases/DiseaseManagementNavigation";
+import { ManagedTopicBrowser } from "@/components/diseases/ManagedTopicBrowser";
 import { ManagedTopicTile } from "@/components/diseases/ManagedTopicTile";
 import { getDiseaseManagementCounts, getDiseaseManagementVersions } from "@/lib/data/disease-drafts";
+import { formatManagedDate } from "@/lib/dashboard/format-date";
 import { createDraftFromApproved } from "@/app/(workspace)/dashboard/admin/guidelines/actions";
 
 export default async function DiseaseApprovedPage() {
@@ -30,15 +32,17 @@ export default async function DiseaseApprovedPage() {
       ) : (
         <section className="disease-draft-list" aria-labelledby="approved-topic-list-title">
           <div className="directory-section-heading"><div><p className="disease-kicker">Governance history</p><h2 id="approved-topic-list-title">Approved versions</h2></div><p role="status">{result.versions.length} approved versions across {result.topicCount} topics</p></div>
-          <div className="topic-tile-grid">{result.versions.map((version) => (
+          <ManagedTopicBrowser noun="approved" dateNoun="Approved" items={result.versions.map((version) => ({
+            key: version.versionId, title: version.title, specialty: version.specialty, changedAt: version.statusChangedAt,
+            tile: (
             <ManagedTopicTile
-              key={version.versionId}
               tone="approved"
               statusLabel="Approved"
               title={version.title}
               specialty={version.specialty}
               version={version.version}
               source={version.sourceTitle}
+              dateLabel={`Approved ${formatManagedDate(version.statusChangedAt)}`}
               href={`/dashboard/diseases/${encodeURIComponent(version.id)}?version=${encodeURIComponent(version.versionId)}`}
               linkLabel={`View approved topic ${version.title}, version ${version.version}`}
               actions={version.canEdit ? (
@@ -48,7 +52,8 @@ export default async function DiseaseApprovedPage() {
                 </form>
               ) : undefined}
             />
-          ))}</div>
+            ),
+          }))} />
         </section>
       )}
     </main>

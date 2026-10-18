@@ -26,6 +26,8 @@ export type DiseaseDraft = {
 export type DiseaseManagementVersion = Omit<DiseaseDraft, "guidelineStatus" | "versionStatus" | "canApprove" | "auditSummary"> & {
   guidelineStatus: "approved" | "published";
   versionStatus: "approved" | "published";
+  /** When the version reached this state (published_at / approved_at), falling back to its creation time. */
+  statusChangedAt: string;
 };
 
 async function loadDiseaseDrafts(): Promise<{
@@ -150,7 +152,7 @@ export const getDiseaseManagementVersions = cache(async (status: "approved" | "p
     const supabase = await createSupabaseDataClient();
     const query = supabase
       .from("clinical_guidelines")
-      .select("id,title,specialty,status,is_shared_reference,guideline_versions!inner(id,version,status,is_current,created_at,source_title)")
+      .select("id,title,specialty,status,is_shared_reference,guideline_versions!inner(id,version,status,is_current,created_at,published_at,approved_at,source_title)")
       .or(`organization_id.eq.${viewer.organizationId},and(organization_id.is.null,is_shared_reference.eq.true)`)
       // A topic belongs to exactly one governance tab. Once its parent record
       // is approved, older published versions remain history but are excluded
@@ -165,7 +167,7 @@ export const getDiseaseManagementVersions = cache(async (status: "approved" | "p
     const versions: DiseaseManagementVersion[] = [];
     for (const item of data ?? []) {
       const version = (Array.isArray(item.guideline_versions) ? item.guideline_versions[0] : item.guideline_versions) as unknown as {
-        id: string; version: string; status: "approved" | "published"; created_at: string; source_title: string;
+        id: string; version: string; status: "approved" | "published"; created_at: string; published_at: string | null; approved_at: string | null; source_title: string;
       } | null;
       if (!version) continue;
       const canManage = isAdmin && (!item.is_shared_reference || isPlatformAdmin);
@@ -180,6 +182,7 @@ export const getDiseaseManagementVersions = cache(async (status: "approved" | "p
         versionStatus: status,
         sourceTitle: version.source_title,
         createdAt: version.created_at,
+        statusChangedAt: (status === "published" ? version.published_at : version.approved_at) ?? version.created_at,
         // Published versions are editable; Approved exposes a separate action that
         // creates a draft copy instead of mutating the live approval record.
         canEdit: canManage,
