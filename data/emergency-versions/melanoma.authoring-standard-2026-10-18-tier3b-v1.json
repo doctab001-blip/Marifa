@@ -1,0 +1,285 @@
+{
+  "id": "5dfb717c-bc46-497e-9467-e144dd063872",
+  "title": "Suspected Melanoma: Skin Lesion Assessment and Dermatology Referral",
+  "specialty": "Dermatology / Primary Care",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-18-tier3b-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Planned Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adult with a pigmented skin lesion suspected to be melanoma: weighted 7-point checklist, dermoscopy, suspected cancer pathway referral, excision, staging with computed tomography (CT) and treatment overview.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 2026-10-18.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "NICE NG14 names systemic drugs (encorafenib with binimetinib, dabrafenib with trametinib, nivolumab, ipilimumab, pembrolizumab, dacarbazine) and topical imiquimod without doses; no dosing source was opened for these specialist oncology medicines.",
+      "NICE NG12 states no timeframe for melanoma referral in the text opened.",
+      "The 2 mm excision biopsy margin and the 7-point checklist features beyond those quoted were not opened in primary form.",
+      "No Saudi guideline was opened.",
+      "Source pages were read through automated page extraction rather than page-by-page in the original documents, so each figure should be spot-checked against the source during clinical review.",
+      "The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "5dfb717c-bc46-497e-9467-e144dd063872"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Melanoma arises from melanocytes and can metastasise to lymph nodes and distant sites. NICE recommends dermoscopy, carried out by trained healthcare professionals, to assess pigmented skin lesions. Stage determines excision margin, sentinel lymph node biopsy, imaging and systemic therapy. BRAF V600 mutation status guides targeted therapy in advanced disease.",
+    "keyMechanisms": [
+      "Melanoma arises from melanocytes and can metastasise to lymph nodes and distant sites.",
+      "NICE recommends dermoscopy, carried out by trained healthcare professionals, to assess pigmented skin lesions.",
+      "Stage determines excision margin, sentinel lymph node biopsy, imaging and systemic therapy.",
+      "BRAF V600 mutation status guides targeted therapy in advanced disease."
+    ],
+    "references": [
+      {
+        "title": "NICE NG14: Melanoma: assessment and management",
+        "edition": "NICE NG14, Section 1.3 to 1.9",
+        "url": "https://www.nice.org.uk/guidance/ng14/chapter/Recommendations"
+      },
+      {
+        "title": "NICE NG12: Suspected cancer: recognition and referral",
+        "edition": "NICE NG12, Section Skin cancer",
+        "url": "https://www.nice.org.uk/guidance/ng12/chapter/Recommendations"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Change in size, shape or colour of a mole.",
+      "Itch, bleeding or oozing.",
+      "Change in sensation."
+    ],
+    "physicalSigns": [
+      "Irregular shape or colour.",
+      "Largest diameter 7 mm or more.",
+      "Inflammation or oozing."
+    ],
+    "redFlags": [
+      "Weighted 7-point checklist score of 3 or more.",
+      "Dermoscopy suggests melanoma.",
+      "Spitzoid lesion of uncertain malignant potential is managed as melanoma."
+    ],
+    "precipitants": [
+      "Not covered in the sources opened."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Benign naevus",
+      "distinguishingFeatures": "Stable, symmetric, uniform colour; atypical lesions can be compared with baseline photographs at 3 months."
+    },
+    {
+      "condition": "Spitzoid lesion",
+      "distinguishingFeatures": "Managed as melanoma when malignant potential is uncertain."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Weighted 7-point checklist",
+        "modalityTarget": "Lesion features",
+        "targetCondition": "Melanoma",
+        "expectedFinding": "Score of 3 or more",
+        "clinicalRationale": "Triggers a suspected cancer pathway referral.",
+        "normalValue": "Score under 3",
+        "references": [
+          {
+            "title": "NICE NG12: Suspected cancer: recognition and referral",
+            "edition": "NICE NG12, Section Skin cancer",
+            "url": "https://www.nice.org.uk/guidance/ng12/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Dermoscopy by trained clinician",
+        "modalityTarget": "Pigmented lesion",
+        "targetCondition": "Melanoma",
+        "expectedFinding": "Dermoscopic features suggestive of melanoma",
+        "clinicalRationale": "Refer if dermoscopy suggests melanoma; do not routinely use confocal microscopy or computer-assisted tools.",
+        "normalValue": "Benign dermoscopic pattern",
+        "references": [
+          {
+            "title": "NICE NG14: Melanoma: assessment and management",
+            "edition": "NICE NG14, Section 1.3 Assessment",
+            "url": "https://www.nice.org.uk/guidance/ng14/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Excision biopsy with histology including Breslow thickness",
+        "modalityTarget": "Lesion tissue",
+        "targetCondition": "Melanoma",
+        "expectedFinding": "Melanoma with Breslow thickness",
+        "clinicalRationale": "Staging and margins depend on histology.",
+        "normalValue": "Benign naevus",
+        "references": [
+          {
+            "title": "NICE NG14: Melanoma: assessment and management",
+            "edition": "NICE NG14, Section 1.4 Staging",
+            "url": "https://www.nice.org.uk/guidance/ng14/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Whole-body and brain contrast-enhanced CT",
+        "modalityTarget": "Metastases",
+        "targetCondition": "Stage IIB to IV melanoma",
+        "expectedFinding": "Metastatic disease",
+        "clinicalRationale": "Consider for stage IIB; offer for stage IIC to IV; none for stage IA.",
+        "normalValue": "No metastases",
+        "references": [
+          {
+            "title": "NICE NG14: Melanoma: assessment and management",
+            "edition": "NICE NG14, Section 1.4 Staging",
+            "url": "https://www.nice.org.uk/guidance/ng14/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "BRAF analysis of tumour tissue",
+        "modalityTarget": "BRAF mutation",
+        "targetCondition": "Stage IIB to IV melanoma",
+        "expectedFinding": "BRAF V600 mutation",
+        "clinicalRationale": "Guides targeted therapy.",
+        "normalValue": "Wild-type BRAF",
+        "references": [
+          {
+            "title": "NICE NG14: Melanoma: assessment and management",
+            "edition": "NICE NG14, Section 1.3 Assessment",
+            "url": "https://www.nice.org.uk/guidance/ng14/chapter/Recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Sentinel lymph node biopsy",
+        "modalityTarget": "Regional nodes",
+        "targetCondition": "Nodal spread",
+        "expectedFinding": "Positive node",
+        "clinicalRationale": "Consider for Breslow thickness 0.8 mm to 1.0 mm and over 1.0 mm; not for stage IA.",
+        "normalValue": "Negative node",
+        "references": [
+          {
+            "title": "NICE NG14: Melanoma: assessment and management",
+            "edition": "NICE NG14, Section 1.4 Staging",
+            "url": "https://www.nice.org.uk/guidance/ng14/chapter/Recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "assess",
+      "title": "Assess the lesion",
+      "timeframe": "At presentation",
+      "actions": [
+        "Apply the weighted 7-point checklist and dermoscopy by trained staff.",
+        "Compare atypical lesions not needing excision with baseline photographs at 3 months."
+      ]
+    },
+    {
+      "id": "refer",
+      "title": "Refer",
+      "timeframe": "Suspected cancer pathway",
+      "actions": [
+        "Refer if the score is 3 or more or dermoscopy suggests melanoma."
+      ]
+    },
+    {
+      "id": "excise",
+      "title": "Excise and stage",
+      "timeframe": "Specialist",
+      "actions": [
+        "Wide excision margin: stage 0 at least 0.5 cm; stage I 1 cm; stage II 2 cm.",
+        "Stage with CT as above; no imaging or sentinel biopsy for stage IA."
+      ]
+    },
+    {
+      "id": "followup",
+      "title": "Follow-up",
+      "timeframe": "After treatment",
+      "actions": [
+        "Stage IA: follow-up for 1 year. Stages IB to IV: 5 years."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [],
+    "note": "NICE NG14 names topical imiquimod for stage 0 melanoma and systemic therapies for stage IV or unresectable stage III disease (encorafenib plus binimetinib, dabrafenib plus trametinib, nivolumab, ipilimumab, pembrolizumab, dacarbazine) but gives no doses. These are specialist oncology prescriptions decided by the multidisciplinary team under the hospital oncology protocol. Primary care assessment and referral need no medicine."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Suspected cancer pathway referral (NICE NG12)",
+      "threshold": "Weighted 7-point checklist score of 3 or more, or dermoscopy suggesting melanoma."
+    },
+    {
+      "criterion": "Major features (2 points each)",
+      "threshold": "Change in size, irregular shape, irregular colour."
+    },
+    {
+      "criterion": "Minor features (1 point each)",
+      "threshold": "Largest diameter 7 mm or more, inflammation, oozing, change in sensation."
+    }
+  ],
+  "teaching": {
+    "scope": "Adult with a pigmented skin lesion suspected to be melanoma: weighted 7-point checklist, dermoscopy, suspected cancer pathway referral, excision, staging with computed tomography (CT) and treatment overview.",
+    "learningObjectives": [
+      "Use the 7-point checklist and dermoscopy to decide referral.",
+      "Match excision margin to stage."
+    ],
+    "pitfalls": [
+      "Excising a suspicious lesion without histology.",
+      "Relying on confocal microscopy."
+    ],
+    "keyPoints": [
+      "Score 3 or more triggers referral.",
+      "No imaging for stage IA."
+    ],
+    "references": [
+      {
+        "title": "NICE NG14: Melanoma: assessment and management",
+        "edition": "NICE NG14, Section 1.3 to 1.9",
+        "url": "https://www.nice.org.uk/guidance/ng14/chapter/Recommendations",
+        "locator": "Section 1.3 to 1.9"
+      },
+      {
+        "title": "NICE NG12: Suspected cancer: recognition and referral",
+        "edition": "NICE NG12, Section Skin cancer",
+        "url": "https://www.nice.org.uk/guidance/ng12/chapter/Recommendations",
+        "locator": "Section Skin cancer"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Sun protection and skin self-examination.",
+      "Report new or changing lesions."
+    ],
+    "lifestyleAndDiet": [
+      "Avoid sunburn and tanning beds."
+    ],
+    "mdtReferrals": [
+      "Dermatology; plastic surgery; oncology; pathology."
+    ],
+    "dischargeCriteria": [
+      "Referral made and safety-net advice given."
+    ],
+    "followUpPlan": "Follow-up per stage as above."
+  }
+}

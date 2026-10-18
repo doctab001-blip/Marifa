@@ -1,0 +1,442 @@
+{
+  "id": "0c8cd920-a7bc-4074-8d9e-ceaf04ddb727",
+  "title": "Acute Otitis Media: Antibiotic Prescribing Criteria",
+  "specialty": "Otolaryngology (ENT) / Primary Care",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-18-tier3b-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Child or adult with acute otitis media: deciding between no antibiotic, back-up prescription and immediate antibiotic, analgesia, antibiotic choice and dose, safety-net advice and referral for complications.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 2026-10-18.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "NICE NG91 gives paediatric doses by age band but no adult doses; adult amoxicillin 500 mg and clarithromycin 500 mg are from NHS Grampian only and the page gives no erythromycin, co-amoxiclav, pregnancy or penicillin-allergy advice for adults.",
+      "NICE says to consult the local microbiologist for penicillin allergy where clarithromycin is unsuitable, and the MHRA assessment for macrolides in pregnancy; neither was opened.",
+      "Paracetamol and ibuprofen are dosed by age or weight in NICE with no numbers; adult doses come from the NHS website in this batch for the sprain topic and are not repeated here.",
+      "The NHS Grampian page does not separate adult from child doses; the 500 mg doses are read as adult doses and child doses link to the British National Formulary for Children.",
+      "Symptoms and signs are general clinical features and are not listed in the extracts opened.",
+      "No Saudi guideline was opened.",
+      "Source pages were read through automated page extraction rather than page-by-page in the original documents, so each figure should be spot-checked against the source during clinical review.",
+      "The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "0c8cd920-a7bc-4074-8d9e-ceaf04ddb727"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Acute otitis media is infection of the middle ear that often settles without antibiotics. NICE reports that antibiotics make little difference to symptoms and that acute complications such as mastoiditis are rare with or without them. Otorrhoea (discharge) through a perforated drum and bilateral infection under 2 years identify children more likely to benefit. Complications are mastoiditis, meningitis, intracranial abscess, sinus thrombosis and facial nerve paralysis.",
+    "keyMechanisms": [
+      "Acute otitis media is infection of the middle ear that often settles without antibiotics.",
+      "NICE reports that antibiotics make little difference to symptoms and that acute complications such as mastoiditis are rare with or without them.",
+      "Otorrhoea (discharge) through a perforated drum and bilateral infection under 2 years identify children more likely to benefit.",
+      "Complications are mastoiditis, meningitis, intracranial abscess, sinus thrombosis and facial nerve paralysis."
+    ],
+    "references": [
+      {
+        "title": "NICE NG91: Otitis media (acute): antimicrobial prescribing",
+        "edition": "NICE NG91, Section 1.1 to 1.2",
+        "url": "https://www.nice.org.uk/guidance/ng91/chapter/Recommendations"
+      },
+      {
+        "title": "NHS Grampian, Orkney and Shetland antimicrobial prescribing, primary care: Acute Otitis Media (Right Decisions, 2026)",
+        "edition": "NHS Grampian Acute Otitis Media 2026, Section Antibiotic doses and duration",
+        "url": "https://www.rightdecisions.scot.nhs.uk/antimicrobial-prescribing-nhs-grampian-orkney-shetland/primary-care-guidance/upper-respiratory-tract-infections/acute-otitis-media-aom"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Ear pain.",
+      "Fever.",
+      "Irritability or poor feeding in young children.",
+      "Ear discharge."
+    ],
+    "physicalSigns": [
+      "Red bulging tympanic membrane on otoscopy.",
+      "Otorrhoea.",
+      "Systemic illness."
+    ],
+    "redFlags": [
+      "Severe systemic infection (see the NICE sepsis guideline).",
+      "Mastoiditis, meningitis, intracranial abscess, sinus thrombosis or facial nerve paralysis: refer to hospital."
+    ],
+    "precipitants": [
+      "Not covered in the sources opened."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Otitis media with effusion (glue ear)",
+      "distinguishingFeatures": "Consider as alternative diagnosis if symptoms do not improve or worsen."
+    },
+    {
+      "condition": "Acute otitis externa",
+      "distinguishingFeatures": "Tenderness of the ear canal; different treatment."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Otoscopy of the tympanic membrane",
+        "modalityTarget": "Ear drum",
+        "targetCondition": "Acute otitis media",
+        "expectedFinding": "Red bulging drum or otorrhoea",
+        "clinicalRationale": "Confirms diagnosis and perforation.",
+        "normalValue": "Pearly grey, intact, mobile drum",
+        "references": [
+          {
+            "title": "NICE NG91: Otitis media (acute): antimicrobial prescribing",
+            "edition": "NICE NG91, Section 1.1 Antibiotic decision",
+            "url": "https://www.nice.org.uk/guidance/ng91/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Temperature measurement",
+        "modalityTarget": "Fever",
+        "targetCondition": "Systemic infection",
+        "expectedFinding": "Raised temperature",
+        "clinicalRationale": "Identifies systemically unwell patients who need an immediate antibiotic.",
+        "normalValue": "Adult 36.1–37.2 degrees Celsius",
+        "references": [
+          {
+            "title": "NICE NG91: Otitis media (acute): antimicrobial prescribing",
+            "edition": "NICE NG91, Section 1.1 Antibiotic decision",
+            "url": "https://www.nice.org.uk/guidance/ng91/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Assessment for sepsis and complications",
+        "modalityTarget": "Sepsis or complications",
+        "targetCondition": "Mastoiditis, meningitis, abscess, sinus thrombosis, facial palsy",
+        "expectedFinding": "Present",
+        "clinicalRationale": "Hospital referral if any is present.",
+        "normalValue": "No systemic illness or complications",
+        "references": [
+          {
+            "title": "NICE NG91: Otitis media (acute): antimicrobial prescribing",
+            "edition": "NICE NG91, Section 1.1.14",
+            "url": "https://www.nice.org.uk/guidance/ng91/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Check for otorrhoea",
+        "modalityTarget": "Perforation",
+        "targetCondition": "Perforated drum",
+        "expectedFinding": "Discharge",
+        "clinicalRationale": "Predicts benefit from antibiotics; phenazone with lidocaine drops are not used with perforation or otorrhoea.",
+        "normalValue": "Dry ear canal",
+        "references": [
+          {
+            "title": "NICE NG91: Otitis media (acute): antimicrobial prescribing",
+            "edition": "NICE NG91, Section 1.1.5 and 1.1.11",
+            "url": "https://www.nice.org.uk/guidance/ng91/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Review at 7 days",
+        "modalityTarget": "Response",
+        "targetCondition": "Treatment failure",
+        "expectedFinding": "No improvement within 7 days or worsening",
+        "clinicalRationale": "Review treatment, consider glue ear and serious illness.",
+        "normalValue": "Symptoms improving by 3 days",
+        "references": [
+          {
+            "title": "NICE NG91: Otitis media (acute): antimicrobial prescribing",
+            "edition": "NICE NG91, Section 1.1.5 and 1.1.9",
+            "url": "https://www.nice.org.uk/guidance/ng91/chapter/Recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Observation of improvement within 3 days",
+        "modalityTarget": "Natural history",
+        "targetCondition": "Need for back-up prescription",
+        "expectedFinding": "No improvement at 3 days",
+        "clinicalRationale": "Use the back-up prescription if no improvement within 3 days or rapid worsening.",
+        "normalValue": "Improvement by 3 days",
+        "references": [
+          {
+            "title": "NICE NG91: Otitis media (acute): antimicrobial prescribing",
+            "edition": "NICE NG91, Section 1.1.9 and 1.1.10",
+            "url": "https://www.nice.org.uk/guidance/ng91/chapter/Recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "assess",
+      "title": "Assess and decide",
+      "timeframe": "At presentation",
+      "actions": [
+        "Exclude sepsis and complications; refer if present.",
+        "Offer regular paracetamol or ibuprofen dosed by age or weight, with maximum doses for severe pain."
+      ]
+    },
+    {
+      "id": "decide",
+      "title": "Choose antibiotic strategy",
+      "timeframe": "At presentation",
+      "actions": [
+        "Consider no antibiotic or back-up prescription when less likely to benefit.",
+        "Consider no antibiotic, back-up or immediate antibiotic with otorrhoea or under 2 years with both ears affected.",
+        "Immediate antibiotic if very unwell, signs of more serious illness or high risk of complications."
+      ]
+    },
+    {
+      "id": "choose",
+      "title": "Choose antibiotic",
+      "timeframe": "If prescribing",
+      "actions": [
+        "First choice amoxicillin 5 to 7 days three times a day; clarithromycin for penicillin allergy; erythromycin in pregnancy; second choice co-amoxiclav if worse after 2 to 3 days."
+      ]
+    },
+    {
+      "id": "safety",
+      "title": "Safety-net",
+      "timeframe": "At discharge",
+      "actions": [
+        "Seek help if symptoms worsen rapidly, do not improve within 3 days or the child becomes very unwell.",
+        "Review if no improvement within 7 days."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "First-choice antibiotic for acute otitis media",
+        "patientGroup": "Children by age",
+        "genericName": "Amoxicillin",
+        "dose": "1 to 11 months 125 mg; 1 to 4 years 250 mg; 5 to 17 years 500 mg",
+        "route": "Oral",
+        "frequency": "Three times a day",
+        "duration": "5 to 7 days",
+        "adjustments": [
+          "Doses are for average-size children; check the British National Formulary for Children.",
+          "No renal or hepatic adjustment is given in the page opened."
+        ],
+        "monitoring": [
+          "Review if symptoms do not improve within 7 days or worsen at any time."
+        ],
+        "contraindications": [
+          "Penicillin allergy: use clarithromycin, or erythromycin in pregnancy.",
+          "Further contraindications are not listed in the extract opened."
+        ],
+        "sourceTitle": "NICE NG91: Otitis media (acute): antimicrobial prescribing",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng91/chapter/Recommendations",
+        "sourceEdition": "NICE NG91, Section 1.2.1 and Table 1"
+      },
+      {
+        "indication": "Acute otitis media in adults",
+        "patientGroup": "Adults",
+        "genericName": "Amoxicillin",
+        "dose": "500 mg",
+        "route": "Oral",
+        "frequency": "Three times a day",
+        "duration": "5 days",
+        "adjustments": [
+          "No renal, hepatic or pregnancy adjustment is given in the page opened."
+        ],
+        "monitoring": [
+          "Review if no improvement within 3 days of the back-up prescription or if worsening."
+        ],
+        "contraindications": [
+          "Penicillin allergy: the page opened gives no alternative; NICE lists clarithromycin."
+        ],
+        "sourceTitle": "NHS Grampian, Orkney and Shetland antimicrobial prescribing, primary care: Acute Otitis Media (Right Decisions, 2026)",
+        "sourceUrl": "https://www.rightdecisions.scot.nhs.uk/antimicrobial-prescribing-nhs-grampian-orkney-shetland/primary-care-guidance/upper-respiratory-tract-infections/acute-otitis-media-aom",
+        "sourceEdition": "NHS Grampian Acute Otitis Media 2026, Section Antibiotic doses and duration"
+      },
+      {
+        "indication": "Penicillin allergy or intolerance, not pregnant",
+        "patientGroup": "Children 1 month to 17 years",
+        "genericName": "Clarithromycin",
+        "dose": "Under 8 kg 7.5 mg/kg; 8 to 11 kg 62.5 mg; 12 to 19 kg 125 mg; 20 to 29 kg 187.5 mg; 30 to 40 kg 250 mg; 12 to 17 years 250 to 500 mg",
+        "route": "Oral",
+        "frequency": "Twice a day",
+        "duration": "5 to 7 days",
+        "adjustments": [
+          "Weight bands apply to ages 1 month to 11 years.",
+          "Not for pregnancy; use erythromycin."
+        ],
+        "monitoring": [
+          "Review if symptoms do not improve within 7 days."
+        ],
+        "contraindications": [
+          "Pregnancy: erythromycin preferred (MHRA assessment of macrolides referenced by NICE)."
+        ],
+        "sourceTitle": "NICE NG91: Otitis media (acute): antimicrobial prescribing",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng91/chapter/Recommendations",
+        "sourceEdition": "NICE NG91, Section 1.2.1 and Table 1"
+      },
+      {
+        "indication": "Penicillin allergy in adults",
+        "patientGroup": "Adults",
+        "genericName": "Clarithromycin",
+        "dose": "500 mg",
+        "route": "Oral",
+        "frequency": "Twice a day",
+        "duration": "5 days",
+        "adjustments": [
+          "Not for pregnancy; no renal adjustment is given in the page opened."
+        ],
+        "monitoring": [
+          "Review if no improvement."
+        ],
+        "contraindications": [
+          "Pregnancy: erythromycin preferred."
+        ],
+        "sourceTitle": "NHS Grampian, Orkney and Shetland antimicrobial prescribing, primary care: Acute Otitis Media (Right Decisions, 2026)",
+        "sourceUrl": "https://www.rightdecisions.scot.nhs.uk/antimicrobial-prescribing-nhs-grampian-orkney-shetland/primary-care-guidance/upper-respiratory-tract-infections/acute-otitis-media-aom",
+        "sourceEdition": "NHS Grampian Acute Otitis Media 2026, Section Antibiotic doses and duration"
+      },
+      {
+        "indication": "Penicillin allergy in pregnancy",
+        "patientGroup": "Pregnant young people aged 8 to 17 years (adult dose not given in the page opened)",
+        "genericName": "Erythromycin",
+        "dose": "250 to 500 mg four times a day, or 500 to 1,000 mg twice a day",
+        "route": "Oral",
+        "frequency": "Four times or twice a day",
+        "duration": "5 to 7 days",
+        "adjustments": [
+          "Preferred macrolide in pregnancy weighing benefits against harms (MHRA assessment referenced by NICE).",
+          "Doses are given by NICE for 8 to 17 years only."
+        ],
+        "monitoring": [
+          "Review if symptoms do not improve in 7 days."
+        ],
+        "contraindications": [
+          "Adult dose is not given in the page opened; check the British National Formulary."
+        ],
+        "sourceTitle": "NICE NG91: Otitis media (acute): antimicrobial prescribing",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng91/chapter/Recommendations",
+        "sourceEdition": "NICE NG91, Section 1.2.1 and Table 1"
+      },
+      {
+        "indication": "Second choice if symptoms worsen after at least 2 to 3 days of first choice",
+        "patientGroup": "Children",
+        "genericName": "Co-amoxiclav",
+        "dose": "1 to 11 months 0.25 mL/kg of 125/31 suspension; 1 to 5 years 5 mL of 125/31; 6 to 11 years 5 mL of 250/62; 12 to 17 years 250/125 mg or 500/125 mg",
+        "route": "Oral",
+        "frequency": "Three times a day",
+        "duration": "5 to 7 days",
+        "adjustments": [
+          "Doses for average-size children; check the British National Formulary for Children."
+        ],
+        "monitoring": [
+          "Reassess; refer for complications."
+        ],
+        "contraindications": [
+          "Penicillin allergy.",
+          "Further contraindications are not listed in the extract opened."
+        ],
+        "sourceTitle": "NICE NG91: Otitis media (acute): antimicrobial prescribing",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng91/chapter/Recommendations",
+        "sourceEdition": "NICE NG91, Section 1.2.1 and Table 1"
+      },
+      {
+        "indication": "Ear pain relief without immediate oral antibiotic",
+        "patientGroup": "Patients with intact drum and no otorrhoea",
+        "genericName": "Phenazone 40 mg/g with lidocaine 10 mg/g ear drops",
+        "dose": "4 drops",
+        "route": "Ear (topical)",
+        "frequency": "Two or three times a day",
+        "duration": "Up to 7 days",
+        "adjustments": [
+          "Do not use if an immediate oral antibiotic is given, or with eardrum perforation or otorrhoea."
+        ],
+        "monitoring": [
+          "Review if pain persists."
+        ],
+        "contraindications": [
+          "Eardrum perforation or otorrhoea."
+        ],
+        "sourceTitle": "NICE NG91: Otitis media (acute): antimicrobial prescribing",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng91/chapter/Recommendations",
+        "sourceEdition": "NICE NG91, Section 1.1.5 and Table 1"
+      }
+    ],
+    "note": "Paediatric doses are from NICE NG91 table 1 (average-size children; check the British National Formulary for Children). Adult doses are from NHS Grampian. The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Consider no antibiotic or back-up prescription",
+      "threshold": "Less likely to benefit (NICE 1.1.8)."
+    },
+    {
+      "criterion": "Consider no antibiotic, back-up or immediate prescription",
+      "threshold": "Otorrhoea at any age, or under 2 years with infection in both ears (NICE 1.1.11)."
+    },
+    {
+      "criterion": "Offer an immediate antibiotic",
+      "threshold": "Children who are systemically very unwell, show signs of more serious illness or are at high risk of complications (NICE 1.1.13)."
+    }
+  ],
+  "teaching": {
+    "scope": "Child or adult with acute otitis media: deciding between no antibiotic, back-up prescription and immediate antibiotic, analgesia, antibiotic choice and dose, safety-net advice and referral for complications.",
+    "learningObjectives": [
+      "Choose no antibiotic, back-up or immediate by benefit and risk.",
+      "Amoxicillin is first choice."
+    ],
+    "pitfalls": [
+      "Prescribing antibiotics to every child.",
+      "Missing complications."
+    ],
+    "keyPoints": [
+      "Decongestants and antihistamines do not help.",
+      "Back-up prescription if no improvement in 3 days."
+    ],
+    "references": [
+      {
+        "title": "NICE NG91: Otitis media (acute): antimicrobial prescribing",
+        "edition": "NICE NG91, Section 1.1 to 1.2",
+        "url": "https://www.nice.org.uk/guidance/ng91/chapter/Recommendations",
+        "locator": "Section 1.1 to 1.2"
+      },
+      {
+        "title": "NHS Grampian, Orkney and Shetland antimicrobial prescribing, primary care: Acute Otitis Media (Right Decisions, 2026)",
+        "edition": "NHS Grampian Acute Otitis Media 2026, Section Antibiotic doses and duration",
+        "url": "https://www.rightdecisions.scot.nhs.uk/antimicrobial-prescribing-nhs-grampian-orkney-shetland/primary-care-guidance/upper-respiratory-tract-infections/acute-otitis-media-aom",
+        "locator": "Section Antibiotic doses and duration"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Most children improve within 3 days without antibiotics.",
+      "Return if worse or not improving."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable."
+    ],
+    "mdtReferrals": [
+      "Primary care; ear, nose and throat specialist for complications."
+    ],
+    "dischargeCriteria": [
+      "Safety-net advice given and review arranged."
+    ],
+    "followUpPlan": "Review at 7 days if not improving; sooner if worse."
+  }
+}

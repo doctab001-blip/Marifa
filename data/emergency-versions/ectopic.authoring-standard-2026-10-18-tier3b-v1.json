@@ -1,0 +1,384 @@
+{
+  "id": "300add03-1e43-491f-bdb9-59c7f934611a",
+  "title": "Suspected Ectopic Pregnancy: ED Pathway",
+  "specialty": "Gynaecology / Emergency Medicine",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-18-tier3b-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Safe Birth",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Woman of reproductive age with pain or bleeding and a positive pregnancy test in the emergency department (ED): recognition, transvaginal ultrasound, human chorionic gonadotrophin (hCG) follow-up, expectant, medical (methotrexate) and surgical management, and anti-D immunoglobulin.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 2026-10-18.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "NICE NG126 gives no methotrexate dose, route, contraindications or analgesic agents; the dose (50 mg/m² intramuscularly) is from one Australian hospital local operating procedure (2017, review overdue) and has not been compared with a Royal College of Obstetricians and Gynaecologists or Saudi guideline.",
+      "No Saudi Ministry of Health or Saudi Society of Obstetrics guideline was opened.",
+      "NICE NG126 advises anti-D immunoglobulin only after surgical management in rhesus-negative women; local policy in Saudi Arabia may differ.",
+      "Source pages were read through automated page extraction rather than page-by-page in the original documents, so each figure should be spot-checked against the source during clinical review.",
+      "The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "300add03-1e43-491f-bdb9-59c7f934611a"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "A pregnancy implants outside the uterine cavity; NICE NG126 covers tubal ectopic pregnancy. Ectopic pregnancy can present with shoulder tip pain, collapse, tachycardia or hypotension, and moderate to large free fluid on scan may represent haemoperitoneum. About a third of women with ectopic pregnancy have no identifiable risk factors, so it must be excluded in anyone with symptoms. Serum hCG alone cannot locate the pregnancy; rise or fall over 48 hours guides follow-up.",
+    "keyMechanisms": [
+      "A pregnancy implants outside the uterine cavity; NICE NG126 covers tubal ectopic pregnancy.",
+      "Ectopic pregnancy can present with shoulder tip pain, collapse, tachycardia or hypotension, and moderate to large free fluid on scan may represent haemoperitoneum.",
+      "About a third of women with ectopic pregnancy have no identifiable risk factors, so it must be excluded in anyone with symptoms.",
+      "Serum hCG alone cannot locate the pregnancy; rise or fall over 48 hours guides follow-up."
+    ],
+    "references": [
+      {
+        "title": "NICE NG126: Ectopic pregnancy and miscarriage: diagnosis and initial management",
+        "edition": "NICE NG126, Recommendation 1.3 to 1.7",
+        "url": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations"
+      },
+      {
+        "title": "South Eastern Sydney Local Health District, Royal Hospital for Women: Methotrexate for Ectopic Pregnancy, Local Operating Procedure (approved 16/2/2017, review due February 2022)",
+        "edition": "SESLHD Methotrexate for Ectopic Pregnancy LOP 2017, p. 2",
+        "url": "https://www.seslhd.health.nsw.gov.au/sites/default/files/documents/methotrexectopic.pdf"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Abdominal or pelvic pain.",
+      "Amenorrhoea or missed period.",
+      "Vaginal bleeding with or without clots.",
+      "Shoulder tip pain.",
+      "Dizziness, fainting or collapse.",
+      "Gastrointestinal or urinary symptoms; rectal pressure or pain on defecation."
+    ],
+    "physicalSigns": [
+      "Pelvic, adnexal or abdominal tenderness.",
+      "Cervical motion tenderness.",
+      "Rebound tenderness or peritonism.",
+      "Pallor, abdominal distension.",
+      "Tachycardia over 100 beats per minute or blood pressure under 100/60 mmHg.",
+      "Shock or collapse."
+    ],
+    "redFlags": [
+      "Haemodynamic instability: refer directly to the emergency department.",
+      "Positive pregnancy test with pain and abdominal, pelvic or cervical motion tenderness: immediate early pregnancy assessment referral.",
+      "Moderate to large free fluid in the pouch of Douglas on scan."
+    ],
+    "precipitants": [
+      "Risk factors are absent in about one third of cases."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Miscarriage",
+      "distinguishingFeatures": "Intrauterine pregnancy on scan; different management."
+    },
+    {
+      "condition": "Pregnancy of unknown location",
+      "distinguishingFeatures": "No intrauterine or ectopic pregnancy seen; hCG follow-up 48 hours apart."
+    },
+    {
+      "condition": "Ruptured ovarian cyst or torsion",
+      "distinguishingFeatures": "Pregnancy test first; ultrasound findings differ."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Urine or serum pregnancy test",
+        "modalityTarget": "Pregnancy status",
+        "targetCondition": "Pregnancy",
+        "expectedFinding": "Positive",
+        "clinicalRationale": "NICE: consider a pregnancy test even when symptoms are non-specific.",
+        "normalValue": "Negative",
+        "references": [
+          {
+            "title": "NICE NG126: Ectopic pregnancy and miscarriage: diagnosis and initial management",
+            "edition": "NICE NG126, Recommendation 1.3.5",
+            "url": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Transvaginal ultrasound",
+        "modalityTarget": "Pelvis",
+        "targetCondition": "Tubal ectopic pregnancy",
+        "expectedFinding": "Adnexal mass moving separately from the ovary (sliding sign) with gestational sac and yolk sac or fetal pole; complex mass; moderate to large free fluid",
+        "clinicalRationale": "First-line imaging to locate the pregnancy and check for fetal pole and heartbeat.",
+        "normalValue": "Intrauterine gestational sac with yolk sac and no adnexal mass or free fluid",
+        "references": [
+          {
+            "title": "NICE NG126: Ectopic pregnancy and miscarriage: diagnosis and initial management",
+            "edition": "NICE NG126, Recommendation 1.4.1 and 1.4.17 to 1.4.20",
+            "url": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Serum hCG on two samples about 48 hours apart",
+        "modalityTarget": "hCG trend",
+        "targetCondition": "Pregnancy of unknown location",
+        "expectedFinding": "Rise over 63%: scan 7 to 14 days later; fall over 50%: urine test at 14 days; otherwise review within 24 hours",
+        "clinicalRationale": "Do not use serum hCG to determine pregnancy location.",
+        "normalValue": "No fixed normal; interpret the 48-hour change against the NICE thresholds (rise over 63%, fall over 50%)",
+        "references": [
+          {
+            "title": "NICE NG126: Ectopic pregnancy and miscarriage: diagnosis and initial management",
+            "edition": "NICE NG126, Recommendation 1.4.27 to 1.4.31",
+            "url": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Baseline full blood count, urea and electrolytes, liver function tests and hCG before methotrexate",
+        "modalityTarget": "Organ function",
+        "targetCondition": "Fitness for methotrexate",
+        "expectedFinding": "Normal values required",
+        "clinicalRationale": "SESLHD proceeds only if values are normal and hCG is under 5,000 units/L.",
+        "normalValue": "Normal liver function tests; hCG under 5,000 IU/L for the local protocol",
+        "references": [
+          {
+            "title": "South Eastern Sydney Local Health District, Royal Hospital for Women: Methotrexate for Ectopic Pregnancy, Local Operating Procedure (approved 16/2/2017, review due February 2022)",
+            "edition": "SESLHD Methotrexate for Ectopic Pregnancy LOP 2017, p. 2",
+            "url": "https://www.seslhd.health.nsw.gov.au/sites/default/files/documents/methotrexectopic.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "hCG on days 4 and 7 after methotrexate, then weekly until negative",
+        "modalityTarget": "Treatment response",
+        "targetCondition": "Treatment failure",
+        "expectedFinding": "Fall of more than 15% between days 4 and 7",
+        "clinicalRationale": "NICE: reassess if levels plateau or rise.",
+        "normalValue": "Negative hCG at resolution",
+        "references": [
+          {
+            "title": "NICE NG126: Ectopic pregnancy and miscarriage: diagnosis and initial management",
+            "edition": "NICE NG126, Recommendation 1.6.11",
+            "url": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Blood group and rhesus status",
+        "modalityTarget": "Rhesus status",
+        "targetCondition": "Need for anti-D immunoglobulin",
+        "expectedFinding": "Rhesus negative",
+        "clinicalRationale": "Anti-D 250 IU is offered to rhesus-negative women having surgery for ectopic pregnancy.",
+        "normalValue": "Rhesus positive (no anti-D needed)",
+        "references": [
+          {
+            "title": "NICE NG126: Ectopic pregnancy and miscarriage: diagnosis and initial management",
+            "edition": "NICE NG126, Recommendation 1.7.1 to 1.7.3",
+            "url": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "triage",
+      "title": "Triage and stabilise",
+      "timeframe": "On arrival",
+      "actions": [
+        "Refer haemodynamically unstable women or those with significant pain or bleeding directly to the emergency department.",
+        "Do a pregnancy test in any woman of reproductive age with consistent symptoms."
+      ]
+    },
+    {
+      "id": "scan",
+      "title": "Transvaginal ultrasound",
+      "timeframe": "Same visit",
+      "actions": [
+        "Locate the pregnancy; look for adnexal mass, fetal pole, heartbeat and free fluid.",
+        "If no pregnancy location is seen, repeat hCG at 48 hours and follow the rise or fall thresholds."
+      ]
+    },
+    {
+      "id": "choose",
+      "title": "Choose management",
+      "timeframe": "After scan and hCG",
+      "actions": [
+        "Expectant: repeat hCG on days 2, 4 and 7; if it falls by 15% or more, repeat weekly until under 20 IU/L.",
+        "Methotrexate: 50 mg/m² intramuscularly with hCG on days 4 and 7 then weekly.",
+        "Surgery: laparoscopic salpingectomy unless other infertility risk factors, in which case consider salpingotomy."
+      ]
+    },
+    {
+      "id": "antid",
+      "title": "Anti-D immunoglobulin",
+      "timeframe": "At surgery",
+      "actions": [
+        "Offer 250 IU (50 micrograms) to rhesus-negative women having a surgical procedure; not for medical management alone."
+      ]
+    },
+    {
+      "id": "followup",
+      "title": "Follow-up",
+      "timeframe": "After treatment",
+      "actions": [
+        "After salpingectomy: urine pregnancy test at 3 weeks. After salpingotomy: hCG at 7 days then weekly until negative."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Medical management of unruptured tubal ectopic pregnancy",
+        "patientGroup": "Women of reproductive age meeting local criteria (less than 8 weeks, mass under 4 cm, hCG under 5,000 units/L)",
+        "genericName": "Methotrexate",
+        "dose": "50 mg/m² of body surface area, capped at 2 m² (maximum 100 mg)",
+        "route": "Intramuscular (buttock or lateral thigh)",
+        "frequency": "Single dose",
+        "duration": "One dose; consider a second dose or surgery if hCG does not fall by more than 15% between days 4 and 7",
+        "adjustments": [
+          "Body surface area = square root of height in cm multiplied by weight in kg divided by 3600; capped at 2 m².",
+          "Treat only if liver function tests, urea and electrolytes and full blood count are normal; the source gives no other renal or hepatic adjustment.",
+          "Avoid pregnancy for 3 months; start oral contraception or use barrier contraception at the end of treatment."
+        ],
+        "monitoring": [
+          "hCG on day 4; day 7 hCG, full blood count, urea and electrolytes and liver function tests; weekly until hCG is zero.",
+          "Review earlier if levels plateau or rise."
+        ],
+        "contraindications": [
+          "Pain or tenderness, ruptured ectopic, haemodynamic instability, abnormal liver function tests, hCG at or above 5,000 units/L (local protocol), living far from the hospital or unable to attend follow-up.",
+          "Avoid NSAIDs (use paracetamol), folate supplements, sun exposure, alcohol, smoking and intercourse until resolved."
+        ],
+        "sourceTitle": "South Eastern Sydney Local Health District, Royal Hospital for Women: Methotrexate for Ectopic Pregnancy, Local Operating Procedure (approved 16/2/2017, review due February 2022)",
+        "sourceUrl": "https://www.seslhd.health.nsw.gov.au/sites/default/files/documents/methotrexectopic.pdf",
+        "sourceEdition": "SESLHD Methotrexate for Ectopic Pregnancy LOP 2017, p. 2 and Appendix 1"
+      },
+      {
+        "indication": "Rhesus-negative woman having surgery for ectopic pregnancy or miscarriage",
+        "patientGroup": "Rhesus-negative women",
+        "genericName": "Anti-D immunoglobulin",
+        "dose": "250 IU (50 micrograms)",
+        "route": "Route not stated in NICE NG126; confirm with product information",
+        "frequency": "Single dose at the time of surgery",
+        "duration": "One dose",
+        "adjustments": [
+          "Do not offer to women receiving solely medical management, threatened or complete miscarriage, or pregnancy of unknown location.",
+          "Do not use a Kleihauer test."
+        ],
+        "monitoring": [
+          "Document rhesus status and the dose given."
+        ],
+        "contraindications": [
+          "Route is not stated in NICE NG126; confirm with product information.",
+          "Contraindications are not listed in the source; check product information."
+        ],
+        "sourceTitle": "NICE NG126: Ectopic pregnancy and miscarriage: diagnosis and initial management",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations",
+        "sourceEdition": "NICE NG126, Recommendation 1.7.1 to 1.7.3"
+      }
+    ],
+    "note": "Methotrexate dosing is from one hospital local operating procedure because NICE NG126 gives no dose. Anti-D dose is from NICE. Analgesic agents are not specified in either source. The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Expectant management (offer)",
+      "threshold": "Clinically stable, pain free, mass under 35 mm, no visible heartbeat, hCG 1,000 IU/L or less, able to return."
+    },
+    {
+      "criterion": "Methotrexate (offer)",
+      "threshold": "No significant pain, unruptured, mass under 35 mm, no heartbeat, hCG under 1,500 IU/L, no intrauterine pregnancy, able to return."
+    },
+    {
+      "criterion": "Surgery first line",
+      "threshold": "Significant pain, mass 35 mm or larger, visible heartbeat, hCG 5,000 IU/L or more, or unable to return after methotrexate."
+    }
+  ],
+  "guidelineComparison": {
+    "title": "Methotrexate hCG limit in the two sources",
+    "columns": [
+      "NICE NG126",
+      "SESLHD local operating procedure 2017"
+    ],
+    "rows": [
+      {
+        "parameter": "hCG limit to offer methotrexate",
+        "values": [
+          "Offer if under 1,500 IU/L; choice with surgery from 1,500 to under 5,000 IU/L.",
+          "hCG under 5,000 units/L for single-dose treatment."
+        ]
+      },
+      {
+        "parameter": "Mass size",
+        "values": [
+          "Under 35 mm.",
+          "Under 4 cm."
+        ]
+      },
+      {
+        "parameter": "Follow-up",
+        "values": [
+          "hCG on days 4 and 7 then weekly until negative.",
+          "hCG on day 4; day 7 with full blood count, urea and electrolytes and liver function tests; then weekly."
+        ]
+      }
+    ],
+    "note": "Shown side by side and not merged; apply the local hospital policy."
+  },
+  "teaching": {
+    "scope": "Woman of reproductive age with pain or bleeding and a positive pregnancy test in the emergency department (ED): recognition, transvaginal ultrasound, human chorionic gonadotrophin (hCG) follow-up, expectant, medical (methotrexate) and surgical management, and anti-D immunoglobulin.",
+    "learningObjectives": [
+      "Exclude ectopic in any woman with symptoms and a positive test.",
+      "Choose expectant, medical or surgical care by pain, mass size, heartbeat and hCG."
+    ],
+    "pitfalls": [
+      "Missing ectopic because there are no risk factors.",
+      "Giving methotrexate to a woman who cannot return for follow-up."
+    ],
+    "keyPoints": [
+      "Do not use hCG to locate the pregnancy.",
+      "A third of cases have no risk factors."
+    ],
+    "references": [
+      {
+        "title": "NICE NG126: Ectopic pregnancy and miscarriage: diagnosis and initial management",
+        "edition": "NICE NG126, Recommendation 1.3 to 1.7",
+        "url": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations",
+        "locator": "Recommendation 1.3 to 1.7"
+      },
+      {
+        "title": "South Eastern Sydney Local Health District, Royal Hospital for Women: Methotrexate for Ectopic Pregnancy, Local Operating Procedure (approved 16/2/2017, review due February 2022)",
+        "edition": "SESLHD Methotrexate for Ectopic Pregnancy LOP 2017, p. 2",
+        "url": "https://www.seslhd.health.nsw.gov.au/sites/default/files/documents/methotrexectopic.pdf",
+        "locator": "p. 2"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Return urgently for severe pain, dizziness or heavy bleeding.",
+      "Avoid pregnancy for 3 months after methotrexate."
+    ],
+    "lifestyleAndDiet": [
+      "Avoid alcohol, folate supplements and sun exposure after methotrexate."
+    ],
+    "mdtReferrals": [
+      "Early pregnancy assessment service; gynaecology; radiology; pharmacy."
+    ],
+    "dischargeCriteria": [
+      "Stable, pain controlled, follow-up hCG booked and able to return."
+    ],
+    "followUpPlan": "hCG follow-up as above; urine pregnancy test at 3 weeks after salpingectomy."
+  }
+}
