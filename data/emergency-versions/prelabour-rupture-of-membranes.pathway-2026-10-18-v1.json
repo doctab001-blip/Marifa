@@ -1,0 +1,498 @@
+{
+  "id": "db633270-3fb9-4b9e-97bb-4a54376ad9ab",
+  "title": "Prelabour Rupture of Membranes",
+  "specialty": "Obstetrics",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Safe Birth",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Women with prelabour rupture of membranes — preterm (P-PROM, before 37 weeks) and at term. Verified against NICE NG25 (P-PROM) and the Saudi MOH OB/GYN Pocket Manual (PPROM and term PROM); contraindications from FDA labels. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from emergency-2026-10-12-v1-live."
+    ],
+    "unverifiedSections": [
+      "MOH manual dated 2014",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "db633270-3fb9-4b9e-97bb-4a54376ad9ab",
+      "fa7bb3e7-a607-440c-bece-e23dffef6478"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Prelabour rupture of membranes (PROM) is rupture of the fetal membranes before the onset of labour; P-PROM is PROM before 37 weeks. Membrane weakening from infection/inflammation, stretch and collagen degradation leads to rupture; the main risks are ascending infection, cord prolapse, abruption and preterm birth.",
+    "keyMechanisms": [
+      "Loss of the amniotic barrier allows ascending infection (chorioamnionitis) — the main maternal consequence (MOH).",
+      "Antibiotics after P-PROM prolong the latency period and improve neonatal outcomes.",
+      "Corticosteroids (24–34 weeks) reduce respiratory distress, intraventricular haemorrhage and necrotising enterocolitis.",
+      "Prolonged oligohydramnios at very early gestation risks pulmonary hypoplasia and limb contractures.",
+      "Term PROM: induction reduces time to birth and chorioamnionitis/endometritis (MOH)."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Sudden gush or continued leakage of fluid from the vagina.",
+      "Fever, offensive discharge or abdominal pain suggest infection."
+    ],
+    "physicalSigns": [
+      "Pooling of amniotic fluid on sterile speculum; leakage on coughing.",
+      "Maternal fever, tachycardia, uterine tenderness, fetal tachycardia (chorioamnionitis).",
+      "Cord at the introitus (prolapse)."
+    ],
+    "redFlags": [
+      "Signs of intra-amniotic infection → deliver regardless of gestation",
+      "Cord prolapse, significant abruption/bleeding, fetal compromise",
+      "Active labour"
+    ],
+    "precipitants": [
+      "Genital tract infection; previous P-PROM or preterm birth.",
+      "Polyhydramnios, multiple pregnancy, cervical procedures, smoking."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Urinary incontinence or increased vaginal discharge",
+      "distinguishingFeatures": "No pooling; negative IGFBP-1/PAMG-1 test."
+    },
+    {
+      "condition": "Preterm labour with intact membranes",
+      "distinguishingFeatures": "Contractions without fluid loss."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Sterile speculum examination",
+        "modalityTarget": "All with suspected rupture (avoid digital examination)",
+        "targetCondition": "Pooling of amniotic fluid",
+        "expectedFinding": "Pooling seen → manage as P-PROM; no further test needed (NICE).",
+        "clinicalRationale": "Digital examination increases infection risk (MOH).",
+        "references": [
+          {
+            "title": "NICE NG25: Preterm labour and birth",
+            "edition": "NICE guideline, 2015 (updated 2022)",
+            "url": "https://www.nice.org.uk/guidance/ng25"
+          },
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "IGFBP-1 or PAMG-1 test of vaginal fluid",
+        "modalityTarget": "If no pooling seen",
+        "targetCondition": "Rupture of membranes",
+        "expectedFinding": "Positive supports rupture — interpret with clinical picture.",
+        "clinicalRationale": "Negative + no fluid seen: P-PROM unlikely (NICE). MOH lists nitrazine/ferning and AmniSure.",
+        "references": [
+          {
+            "title": "NICE NG25: Preterm labour and birth",
+            "edition": "NICE guideline, 2015 (updated 2022)",
+            "url": "https://www.nice.org.uk/guidance/ng25"
+          },
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "CRP, white cell count, plus CTG fetal heart rate",
+        "modalityTarget": "Serially with clinical assessment",
+        "targetCondition": "Intrauterine infection",
+        "expectedFinding": "Rising CRP/WBC, fetal tachycardia, maternal fever.",
+        "clinicalRationale": "Use the combination — single tests are unreliable (NICE).",
+        "normalValue": "CRP below 5 mg/L; WBC up to about 15 × 10⁹/L in pregnancy",
+        "references": [
+          {
+            "title": "NICE NG25: Preterm labour and birth",
+            "edition": "NICE guideline, 2015 (updated 2022)",
+            "url": "https://www.nice.org.uk/guidance/ng25"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "High vaginal swab (GBS) and culture",
+        "modalityTarget": "At diagnosis",
+        "targetCondition": "Organisms",
+        "expectedFinding": "GBS or other pathogens.",
+        "clinicalRationale": "Guides intrapartum prophylaxis.",
+        "references": [
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Ultrasound (amniotic fluid index, presentation, growth)",
+        "modalityTarget": "At diagnosis",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Oligohydramnios, malpresentation.",
+        "clinicalRationale": "Supports diagnosis and planning.",
+        "references": [
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "confirm",
+      "title": "Confirm and look for reasons to deliver",
+      "timeframe": "Arrival",
+      "actions": [
+        "Speculum for pooling; IGFBP-1/PAMG-1 if none seen.",
+        "Deliver regardless of gestation if intra-amniotic infection, significant abruption, cord prolapse, active labour with severe bleeding, life-threatening maternal disease or fetal death (MOH)."
+      ]
+    },
+    {
+      "id": "pprom",
+      "title": "P-PROM 24–33+6 weeks: expectant management",
+      "timeframe": "Admission",
+      "actions": [
+        "Antibiotics: erythromycin 250 mg orally 4 times a day for up to 10 days or until established labour (NICE); oral penicillin if erythromycin not tolerated.",
+        "MOH alternative: ampicillin 2 g IV every 6 h + erythromycin 250 mg every 6 h for 48 h, then amoxicillin 250 mg + erythromycin 250 mg every 8 h for 5 days; penicillin allergy: clindamycin 900 mg IV every 8 h + gentamicin 7 mg/kg (ideal body weight) 2 doses 24 h apart, then clindamycin 300 mg orally every 8 h for 5 days.",
+        "Corticosteroids: dexamethasone 12 mg IM every 12 h × 2.",
+        "Magnesium neuroprotection if birth expected under 30 weeks (32 weeks per MOH).",
+        "Monitor for infection, abruption, cord prolapse and fetal wellbeing; consider delivery at 34 weeks (MOH)."
+      ]
+    },
+    {
+      "id": "previable",
+      "title": "P-PROM below 24 weeks",
+      "timeframe": "Individualised",
+      "actions": [
+        "Expectant management if stable; antibiotics and steroids not recommended before viability (MOH); outpatient follow-up possible, admit at viability."
+      ]
+    },
+    {
+      "id": "term",
+      "title": "Term PROM",
+      "timeframe": "At presentation",
+      "actions": [
+        "Induction of labour reduces time to birth and infection (MOH); no routine prophylactic antibiotics at term.",
+        "Intrapartum GBS prophylaxis if indicated."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "P-PROM infection prophylaxis",
+        "patientGroup": "P-PROM",
+        "genericName": "Erythromycin",
+        "dose": "250 mg",
+        "route": "PO",
+        "frequency": "4 times a day",
+        "duration": "Up to 10 days or until established labour",
+        "adjustments": [
+          "Oral penicillin if erythromycin not tolerated"
+        ],
+        "monitoring": [
+          "Infection markers"
+        ],
+        "contraindications": [
+          "Hypersensitivity",
+          "With terfenadine, astemizole, cisapride, pimozide, ergotamine or dihydroergotamine",
+          "With lovastatin or simvastatin"
+        ],
+        "sourceTitle": "NICE NG25: Preterm labour and birth",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng25",
+        "sourceEdition": "NICE NG25",
+        "branch": "P-PROM — infection prophylaxis",
+        "step": "Antibiotic prophylaxis",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "P-PROM (MOH regimen)",
+        "patientGroup": "P-PROM 24–33 weeks",
+        "genericName": "Ampicillin then amoxicillin (with erythromycin)",
+        "dose": "Ampicillin 2 g IV every 6 h for 48 h; then amoxicillin 250 mg PO every 8 h for 5 days",
+        "route": "IV then PO",
+        "frequency": "As stated",
+        "duration": "7 days total",
+        "adjustments": [
+          "With erythromycin 250 mg (6-hourly IV phase, 8-hourly oral phase)"
+        ],
+        "monitoring": [
+          "Allergy"
+        ],
+        "contraindications": [
+          "Previous hypersensitivity to any penicillin",
+          "Serious hypersensitivity to amoxicillin or other beta-lactams"
+        ],
+        "sourceTitle": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+        "sourceUrl": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf",
+        "sourceEdition": "MOH 2014, PPROM chapter",
+        "branch": "P-PROM — infection prophylaxis",
+        "step": "Antibiotic prophylaxis",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "MOH regimen chosen instead of erythromycin"
+      },
+      {
+        "indication": "P-PROM with penicillin allergy (MOH)",
+        "patientGroup": "P-PROM",
+        "genericName": "Clindamycin + gentamicin",
+        "dose": "Clindamycin 900 mg IV every 8 h for 48 h, then 300 mg PO every 8 h for 5 days; gentamicin 7 mg/kg (ideal body weight) 2 doses 24 h apart",
+        "route": "IV then PO",
+        "frequency": "As stated",
+        "duration": "7 days",
+        "adjustments": [
+          "Gentamicin: check renal function"
+        ],
+        "monitoring": [
+          "Diarrhoea (C. difficile); gentamicin levels"
+        ],
+        "contraindications": [
+          "Hypersensitivity to clindamycin or lincomycin",
+          "Hypersensitivity to gentamicin or other aminoglycosides"
+        ],
+        "sourceTitle": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+        "sourceUrl": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf",
+        "sourceEdition": "MOH 2014, PPROM chapter",
+        "branch": "P-PROM — infection prophylaxis",
+        "step": "Antibiotic prophylaxis",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Penicillin allergy"
+      },
+      {
+        "indication": "Fetal lung maturation (24+0 to 33+6 weeks; consider to 35+6)",
+        "patientGroup": "Pregnant women with threatened/planned preterm birth or P-PROM",
+        "genericName": "Dexamethasone",
+        "dose": "12 mg",
+        "route": "IM",
+        "frequency": "Every 12 h",
+        "duration": "2 doses (one course; at most one repeat course if more than 7 days and still under 34 weeks)",
+        "adjustments": [
+          "MOH regimen; betamethasone is an alternative per local protocol",
+          "Diabetes: increase insulin cover (NICE NG3)"
+        ],
+        "monitoring": [
+          "Maternal glucose"
+        ],
+        "contraindications": [
+          "Systemic fungal infections"
+        ],
+        "sourceTitle": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+        "sourceUrl": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf",
+        "sourceEdition": "MOH 2014, preterm labour chapter",
+        "branch": "P-PROM — fetal lung maturation",
+        "step": "Corticosteroid",
+        "selection": "all"
+      },
+      {
+        "indication": "Fetal neuroprotection (24+0 to 29+6 weeks; consider 30+0 to 33+6)",
+        "patientGroup": "Established preterm labour or planned birth within 24 h",
+        "genericName": "Magnesium sulfate",
+        "dose": "4 g IV bolus over 15 min, then 1 g/h",
+        "route": "IV",
+        "frequency": "Infusion",
+        "duration": "Until birth or 24 h (whichever sooner)",
+        "adjustments": [
+          "Do not use beyond 24 h (MHRA: skeletal effects with prolonged use)"
+        ],
+        "monitoring": [
+          "Pulse, BP, RR, patellar reflexes at least every 4 h; urine output"
+        ],
+        "contraindications": [
+          "Heart block or myocardial damage",
+          "Myasthenia gravis",
+          "Diabetic coma"
+        ],
+        "sourceTitle": "NICE NG25: Preterm labour and birth",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng25",
+        "sourceEdition": "NICE NG25",
+        "branch": "P-PROM — fetal neuroprotection",
+        "step": "Neuroprotection",
+        "selection": "all"
+      }
+    ],
+    "note": "Antibiotic regimens from NICE NG25 and the Saudi MOH OB/GYN manual; contraindications from FDA labels. Follow local antibiogram.",
+    "branches": [
+      {
+        "label": "P-PROM — infection prophylaxis",
+        "entryCriteria": "Preterm prelabour rupture of membranes"
+      },
+      {
+        "label": "P-PROM — fetal lung maturation",
+        "entryCriteria": "Pregnant woman with P-PROM or planned preterm birth"
+      },
+      {
+        "label": "P-PROM — fetal neuroprotection",
+        "entryCriteria": "Established preterm labour or planned birth within 24 hours"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "PROM",
+      "threshold": "Rupture of membranes before onset of labour"
+    },
+    {
+      "criterion": "P-PROM",
+      "threshold": "Before 37 weeks"
+    },
+    {
+      "criterion": "Diagnosis",
+      "threshold": "Pooling on speculum, or positive IGFBP-1/PAMG-1 with clinical correlation"
+    },
+    {
+      "criterion": "Deliver now",
+      "threshold": "Chorioamnionitis, abruption, cord prolapse, fetal compromise, labour"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "NICE NG25 vs Saudi MOH Pocket Manual — P-PROM antibiotics",
+    "columns": [
+      "NICE NG25",
+      "MOH 2014"
+    ],
+    "rows": [
+      {
+        "parameter": "Regimen",
+        "values": [
+          "Erythromycin 250 mg QDS orally",
+          "Ampicillin IV + erythromycin 48 h, then amoxicillin + erythromycin orally"
+        ]
+      },
+      {
+        "parameter": "Duration",
+        "values": [
+          "Up to 10 days or established labour",
+          "7 days total"
+        ]
+      },
+      {
+        "parameter": "Penicillin allergy",
+        "values": [
+          "Oral penicillin if erythromycin not tolerated",
+          "Clindamycin + gentamicin"
+        ]
+      }
+    ],
+    "note": "Both: antibiotics and steroids after P-PROM; no digital examination; delivery for infection."
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Confirm membrane rupture, start antibiotics and steroids after P-PROM, and recognise when to deliver."
+    ],
+    "pitfalls": [
+      "Digital vaginal examination.",
+      "Relying on one infection marker.",
+      "Tocolysis with infection.",
+      "Missing cord prolapse."
+    ],
+    "keyPoints": [
+      "Speculum, not digital examination.",
+      "Erythromycin 250 mg QDS for up to 10 days.",
+      "Steroids 24–34 weeks; magnesium if birth under 30 weeks.",
+      "Deliver for chorioamnionitis at any gestation.",
+      "Term PROM: induction; no routine antibiotics."
+    ],
+    "references": [
+      {
+        "title": "NICE NG25: Preterm labour and birth",
+        "edition": "NICE guideline, 2015 (updated 2022)",
+        "url": "https://www.nice.org.uk/guidance/ng25",
+        "locator": "Recs 1.1–1.10 (prevention, P-PROM diagnosis and antibiotics, diagnosis of preterm labour, tocolysis, corticosteroids, magnesium sulfate)"
+      },
+      {
+        "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+        "edition": "2014",
+        "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf",
+        "locator": "Preterm premature rupture of membranes chapter (pp. 35–39)"
+      },
+      {
+        "title": "Erythromycin (oral) prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0277341c-8513-4317-9334-c242f97630c1",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Ampicillin sodium prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=06ca924c-5f3a-4924-90f4-5ba623daaa0e",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Amoxicillin prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00fbd46e-05fd-4f8a-9f59-a7a4d01c8e54",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Clindamycin phosphate injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=05a75685-0af5-407c-ac57-e380c882b49d",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Gentamicin prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=09cf88af-59da-f147-e063-6294a90aac99",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Dexamethasone sodium phosphate injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0277cc0a-2fd4-4605-a310-b613be84ee26",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Magnesium sulfate in 5% dextrose injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=03ebeabb-8386-4af4-3086-bdf3c3fc4a5a",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "SFDA Saudi Drug Information System (registration search)",
+        "edition": "Accessed 11–12 Oct 2026",
+        "url": "https://sdi.sfda.gov.sa/"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Report fever, offensive discharge, reduced fetal movements, bleeding.",
+      "Pad checks for colour/odour if managed as outpatient."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable in the acute phase."
+    ],
+    "mdtReferrals": [
+      "Neonatology; maternal–fetal medicine."
+    ],
+    "dischargeCriteria": [
+      "Not applicable for P-PROM until birth; term PROM after birth per routine care."
+    ],
+    "followUpPlan": "Postnatal review; infection surveillance of mother and baby; counselling about recurrence and preterm-birth prevention in future pregnancies."
+  }
+}

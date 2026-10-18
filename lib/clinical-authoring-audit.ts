@@ -1,11 +1,33 @@
 import { DiseaseDetailSchema, type DiseaseDetail } from "@/lib/validations/disease";
+import { medicationPathwayIssues, type MedicationPathwayIssue } from "@/lib/medication-pathway";
 
 /** Minimum authoring-standard score for a topic to appear live (docs/clinical-topic-authoring-standard.md). */
 export const CLINICAL_DIRECTORY_MINIMUM_SCORE = 80;
 /** Smallest investigation panel a topic can carry (bedside, laboratory, imaging and specialist tests together). */
 export const MINIMUM_INVESTIGATIONS = 5;
 
-export type AuthoringAudit = { compliant: boolean; meetsEightyPercent: boolean; score: number; passedChecks: number; totalChecks: number; failures: string[] };
+export type AuthoringAudit = {
+  compliant: boolean;
+  meetsEightyPercent: boolean;
+  /** Score is at least the threshold AND the medicine plan is a valid pathway. Publication paths use this, not the score alone. */
+  publishable: boolean;
+  /** No medicine-pathway error (flat drug list, unmarked alternatives, two drugs of one exclusive class). */
+  pathwayCompliant: boolean;
+  pathwayIssues: MedicationPathwayIssue[];
+  score: number;
+  passedChecks: number;
+  totalChecks: number;
+  failures: string[];
+};
+
+export type AuditOptions = {
+  /**
+   * Count the medicine-pathway rule in the score. True (default) for new and revised topics.
+   * The live directory passes false so topics already published as flat lists stay visible until
+   * a branched replacement version is written; they remain listed in the pathway audit queue.
+   */
+  pathwayScored?: boolean;
+};
 
 /**
  * Global authoring instruction shared by topic-generation and review workflows.
@@ -22,12 +44,15 @@ function text(value: unknown): string {
 }
 
 /** Structural authoring-standard audit of one topic version's content (0–100). */
-export function auditTopicContent(content: unknown): AuthoringAudit {
+export function auditTopicContent(content: unknown, options: AuditOptions = {}): AuthoringAudit {
   const parsed = DiseaseDetailSchema.safeParse(content);
   if (!parsed.success) {
     return {
       compliant: false,
       meetsEightyPercent: false,
+      publishable: false,
+      pathwayCompliant: false,
+      pathwayIssues: [],
       score: 0,
       passedChecks: 0,
       totalChecks: 1,
@@ -104,6 +129,12 @@ export function auditTopicContent(content: unknown): AuthoringAudit {
   check(noMedicineNeeded || regimens.every((regimen) => Boolean(regimen.contraindications?.length)));
   check(noMedicineNeeded || regimens.every((regimen) => locator.test(regimen.sourceEdition)));
 
+  // Medicine pathway: branches, one-of alternatives, no two drugs of one exclusive class given together.
+  const pathwayIssues = medicationPathwayIssues(item.medicationPlan);
+  const pathwayErrors = pathwayIssues.filter((issue) => issue.severity === "error");
+  pathwayErrors.forEach((issue) => failures.push(`Medicine pathway: ${issue.message}`));
+  if (options.pathwayScored !== false) check(pathwayErrors.length === 0);
+
   if (!item.teaching?.learningObjectives.length) failures.push("Teaching learning objectives are absent.");
   if (!item.teaching?.keyPoints?.length) failures.push("Teaching key points are absent.");
   if (!item.teaching?.pitfalls?.length) failures.push("Teaching pitfalls are absent.");
@@ -163,6 +194,9 @@ export function auditTopicContent(content: unknown): AuthoringAudit {
   return {
     compliant: failures.length === 0,
     meetsEightyPercent: score >= CLINICAL_DIRECTORY_MINIMUM_SCORE,
+    publishable: score >= CLINICAL_DIRECTORY_MINIMUM_SCORE && pathwayErrors.length === 0,
+    pathwayCompliant: pathwayErrors.length === 0,
+    pathwayIssues,
     score,
     passedChecks,
     totalChecks: checks.length,
@@ -170,6 +204,10 @@ export function auditTopicContent(content: unknown): AuthoringAudit {
   };
 }
 
+/**
+ * Live-directory visibility. Deliberately does not apply the medicine-pathway rule to the score, so already
+ * published flat-list topics are not silently withdrawn; new versions are held back by `publishable` instead.
+ */
 export function meetsDirectoryThreshold(content: unknown) {
-  return auditTopicContent(content).score >= CLINICAL_DIRECTORY_MINIMUM_SCORE;
+  return auditTopicContent(content, { pathwayScored: false }).score >= CLINICAL_DIRECTORY_MINIMUM_SCORE;
 }

@@ -1,0 +1,567 @@
+{
+  "id": "f5a69651-e194-43c4-a25f-1739b8220c09",
+  "title": "Migraine: Acute Treatment and Prophylaxis Ladder",
+  "specialty": "Neurology / Primary Care",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adult with migraine: acute treatment, prophylaxis options and doses, medication-overuse headache, pregnancy and contraception cautions, using NICE CG150 and the SIGN 155 quick reference guide. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 2026-10-18.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from authoring-standard-2026-10-18-tier4a-v1-live."
+    ],
+    "unverifiedSections": [
+      "Triptan doses (sumatriptan, rizatriptan, zolmitriptan oral) and the naproxen dose are not stated in the SIGN quick reference guide, and NICE CG150 gives no doses; they are not listed here.",
+      "Prophylactic titration schedules and dosing frequency are not stated in the sources opened; candesartan 16 mg, propranolol 80 to 160 mg, amitriptyline 25 to 150 mg, topiramate 50 to 100 mg and flunarizine 10 mg are daily totals as printed.",
+      "Calcitonin gene-related peptide (CGRP) antibody and botulinum toxin doses, and atogepant and rimegepant doses, are not given.",
+      "No Saudi guideline was opened. The Saudi MOH formulary and neurology society guidance were not checked.",
+      "Source pages were read through automated page extraction rather than page-by-page in the original documents, so each figure should be spot-checked against the source during clinical review.",
+      "The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary.",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "f5a69651-e194-43c4-a25f-1739b8220c09",
+      "9e605140-ee51-45ba-be94-25b72dbd4b1c"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "NICE recommends an oral triptan combined with an NSAID or paracetamol for acute migraine, or monotherapy by preference. Overuse of acute headache medication for 3 months or more can cause medication-overuse headache; treatment is withdrawal of all overused drugs for at least 1 month. Chronic migraine is headache on 15 or more days a month for more than 3 months. Topiramate carries developmental and malformation risks and is not for women of childbearing potential unless pregnancy prevention conditions are met.",
+    "keyMechanisms": [
+      "NICE recommends an oral triptan combined with an NSAID or paracetamol for acute migraine, or monotherapy by preference.",
+      "Overuse of acute headache medication for 3 months or more can cause medication-overuse headache; treatment is withdrawal of all overused drugs for at least 1 month.",
+      "Chronic migraine is headache on 15 or more days a month for more than 3 months.",
+      "Topiramate carries developmental and malformation risks and is not for women of childbearing potential unless pregnancy prevention conditions are met."
+    ],
+    "references": [
+      {
+        "title": "NICE CG150: Headaches in over 12s: diagnosis and management",
+        "edition": "NICE CG150, Recommendation 1.3.10 to 1.3.27",
+        "url": "https://www.nice.org.uk/guidance/cg150/chapter/Recommendations"
+      },
+      {
+        "title": "SIGN 155 Pharmacological management of migraine, quick reference guide (first published February 2018, revised May 2026)",
+        "edition": "SIGN 155 QRG 2026, p. 1 to p. 7",
+        "url": "https://www.sign.ac.uk/media/2405/sign-155-qrg-2026-update.pdf"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Recurrent headache with nausea.",
+      "Aura in some people."
+    ],
+    "physicalSigns": [
+      "Normal neurological examination in uncomplicated migraine (no focal signs)."
+    ],
+    "redFlags": [
+      "Worsening headache with fever.",
+      "Sudden-onset headache reaching maximum intensity within 5 minutes.",
+      "New neurological deficit, cognitive dysfunction, personality change or impaired consciousness.",
+      "Head trauma in the past 3 months.",
+      "Headache triggered by cough, valsalva, sneezing or exercise; orthostatic headache.",
+      "Symptoms suggesting giant cell arteritis or acute narrow-angle glaucoma."
+    ],
+    "precipitants": [
+      "Medication overuse.",
+      "Menstruation (menstrual-related migraine: from 2 days before to 3 days after the start of menstruation in at least 2 of 3 cycles)."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Secondary headache",
+      "distinguishingFeatures": "Any red flag requires evaluation."
+    },
+    {
+      "condition": "Medication-overuse headache",
+      "distinguishingFeatures": "Headache developed or worsened with regular use of acute medication for 3 months or more."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Headache diary",
+        "modalityTarget": "Headache pattern",
+        "targetCondition": "Migraine and medication overuse",
+        "expectedFinding": "Pattern consistent with migraine",
+        "clinicalRationale": "Record for at least 8 weeks (NICE).",
+        "normalValue": "No migraine pattern",
+        "references": [
+          {
+            "title": "NICE CG150: Headaches in over 12s: diagnosis and management",
+            "edition": "NICE CG150, Recommendation 1.1.4",
+            "url": "https://www.nice.org.uk/guidance/cg150/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Neurological examination and red flag screen",
+        "modalityTarget": "Neurological status",
+        "targetCondition": "Secondary headache",
+        "expectedFinding": "Any red flag or deficit",
+        "clinicalRationale": "Red flags need further evaluation.",
+        "normalValue": "No red flags; normal neurological examination",
+        "references": [
+          {
+            "title": "NICE CG150: Headaches in over 12s: diagnosis and management",
+            "edition": "NICE CG150, Recommendation 1.1.1 and 1.1.2",
+            "url": "https://www.nice.org.uk/guidance/cg150/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Cardiovascular risk assessment before triptan",
+        "modalityTarget": "Ischaemic risk",
+        "targetCondition": "Triptan suitability",
+        "expectedFinding": "High risk of ischaemic cardiovascular disease, including uncontrolled hypertension",
+        "clinicalRationale": "Triptans should not be used in these patients (SIGN).",
+        "normalValue": "Low cardiovascular risk and blood pressure under 140/90 mmHg",
+        "references": [
+          {
+            "title": "SIGN 155 Pharmacological management of migraine, quick reference guide (first published February 2018, revised May 2026)",
+            "edition": "SIGN 155 QRG 2026, p. 2",
+            "url": "https://www.sign.ac.uk/media/2405/sign-155-qrg-2026-update.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Pregnancy and contraception status before topiramate or valproate",
+        "modalityTarget": "Pregnancy status",
+        "targetCondition": "Teratogenic risk",
+        "expectedFinding": "Pregnant or not using effective contraception",
+        "clinicalRationale": "Topiramate needs pregnancy prevention conditions; valproate needs contraception for 3 months after stopping.",
+        "normalValue": "Not pregnant and using effective contraception",
+        "references": [
+          {
+            "title": "SIGN 155 Pharmacological management of migraine, quick reference guide (first published February 2018, revised May 2026)",
+            "edition": "SIGN 155 QRG 2026, p. 5 and p. 6",
+            "url": "https://www.sign.ac.uk/media/2405/sign-155-qrg-2026-update.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Count of days of acute medication use per month",
+        "modalityTarget": "Medication overuse",
+        "targetCondition": "Medication-overuse headache",
+        "expectedFinding": "Overuse for 3 months or more",
+        "clinicalRationale": "Stop overused acute drugs for at least 1 month.",
+        "normalValue": "Within recommended frequency of acute treatment",
+        "references": [
+          {
+            "title": "NICE CG150: Headaches in over 12s: diagnosis and management",
+            "edition": "NICE CG150, Recommendation Medication overuse headache",
+            "url": "https://www.nice.org.uk/guidance/cg150/chapter/Recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Menstrual diary over at least 2 cycles",
+        "modalityTarget": "Menstrual relation",
+        "targetCondition": "Menstrual-related migraine",
+        "expectedFinding": "Headache from 2 days before to 3 days after menses in 2 of 3 cycles",
+        "clinicalRationale": "Confirms the pattern for targeted treatment.",
+        "normalValue": "No menstrual relation",
+        "references": [
+          {
+            "title": "NICE CG150: Headaches in over 12s: diagnosis and management",
+            "edition": "NICE CG150, Recommendation 1.1.4",
+            "url": "https://www.nice.org.uk/guidance/cg150/chapter/Recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "screen",
+      "title": "Screen for red flags and diagnose",
+      "timeframe": "First visit",
+      "actions": [
+        "Apply the red flag list; use a diary for at least 8 weeks."
+      ]
+    },
+    {
+      "id": "acute",
+      "title": "Acute treatment",
+      "timeframe": "At onset",
+      "actions": [
+        "Oral triptan plus an NSAID or paracetamol, or monotherapy; aspirin 900 mg or ibuprofen 400 mg (600 mg if ineffective) or paracetamol 1,000 mg.",
+        "Consider an antiemetic; metoclopramide or prochlorperazine 10 mg; do not offer ergots or opioids."
+      ]
+    },
+    {
+      "id": "prophylaxis",
+      "title": "Prophylaxis ladder",
+      "timeframe": "If frequent or disabling",
+      "actions": [
+        "Propranolol 80 to 160 mg daily or topiramate 50 to 100 mg daily after discussion of risks; amitriptyline 25 to 150 mg at night; candesartan 16 mg daily; flunarizine 10 mg daily.",
+        "Do not offer gabapentin; up to 10 acupuncture sessions over 5 to 8 weeks if others are unsuitable; riboflavin 400 mg once a day may help some people."
+      ]
+    },
+    {
+      "id": "mo",
+      "title": "Address medication overuse",
+      "timeframe": "Before specialist options",
+      "actions": [
+        "Withdraw overused acute drugs for at least 1 month; do not use prednisolone routinely."
+      ]
+    },
+    {
+      "id": "special",
+      "title": "Specialist options",
+      "timeframe": "After 3 or more oral prophylactics have failed",
+      "actions": [
+        "CGRP monoclonal antibodies for chronic migraine; botulinum toxin A for chronic migraine only, by trained clinicians under neurology."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "First-line acute treatment of migraine",
+        "patientGroup": "Adults",
+        "genericName": "Aspirin",
+        "dose": "900 mg",
+        "route": "Oral",
+        "frequency": "Per attack (repeat interval not stated in the source)",
+        "duration": "Per attack",
+        "adjustments": [
+          "Not an analgesic of choice in pregnancy; avoid in the third trimester."
+        ],
+        "monitoring": [
+          "Response to treatment within the attack."
+        ],
+        "contraindications": [
+          "Pregnancy third trimester.",
+          "No renal or hepatic adjustment is given in the source opened; check product information."
+        ],
+        "sourceTitle": "SIGN 155 Pharmacological management of migraine, quick reference guide (first published February 2018, revised May 2026)",
+        "sourceUrl": "https://www.sign.ac.uk/media/2405/sign-155-qrg-2026-update.pdf",
+        "sourceEdition": "SIGN 155 QRG 2026, p. 1",
+        "branch": "Acute attack",
+        "step": "Analgesic",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "Acute migraine",
+        "patientGroup": "Adults",
+        "genericName": "Ibuprofen",
+        "dose": "400 mg, increasing to 600 mg if ineffective",
+        "route": "Oral",
+        "frequency": "Per attack (repeat interval not stated in the source)",
+        "duration": "Per attack",
+        "adjustments": [
+          "Pregnancy: use with caution only up to 20 weeks if paracetamol or sumatriptan is ineffective."
+        ],
+        "monitoring": [
+          "Response to treatment."
+        ],
+        "contraindications": [
+          "Pregnancy after 20 weeks.",
+          "No renal or hepatic adjustment is given in the source opened; check product information."
+        ],
+        "sourceTitle": "SIGN 155 Pharmacological management of migraine, quick reference guide (first published February 2018, revised May 2026)",
+        "sourceUrl": "https://www.sign.ac.uk/media/2405/sign-155-qrg-2026-update.pdf",
+        "sourceEdition": "SIGN 155 QRG 2026, p. 1",
+        "branch": "Acute attack",
+        "step": "Analgesic",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Chosen instead of aspirin"
+      },
+      {
+        "indication": "Acute migraine when other therapies cannot be taken; first choice in pregnancy",
+        "patientGroup": "Adults",
+        "genericName": "Paracetamol",
+        "dose": "1,000 mg",
+        "route": "Oral",
+        "frequency": "Per attack (repeat interval not stated in the source)",
+        "duration": "Per attack",
+        "adjustments": [
+          "First choice for mild to moderate headache in any trimester."
+        ],
+        "monitoring": [
+          "Response to treatment."
+        ],
+        "contraindications": [
+          "No renal or hepatic adjustment is given in the source opened; check product information."
+        ],
+        "sourceTitle": "SIGN 155 Pharmacological management of migraine, quick reference guide (first published February 2018, revised May 2026)",
+        "sourceUrl": "https://www.sign.ac.uk/media/2405/sign-155-qrg-2026-update.pdf",
+        "sourceEdition": "SIGN 155 QRG 2026, p. 1",
+        "branch": "Acute attack",
+        "step": "Analgesic",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Other therapies cannot be taken, or pregnancy"
+      },
+      {
+        "indication": "Antiemetic with acute treatment",
+        "patientGroup": "Adults",
+        "genericName": "Metoclopramide",
+        "dose": "10 mg of each",
+        "route": "Oral or parenteral",
+        "frequency": "Per attack (repeat interval not stated in the source)",
+        "duration": "Per attack",
+        "adjustments": [
+          "Metoclopramide should not be used regularly because of extrapyramidal risk."
+        ],
+        "monitoring": [
+          "Extrapyramidal effects."
+        ],
+        "contraindications": [
+          "Regular metoclopramide use."
+        ],
+        "sourceTitle": "SIGN 155 Pharmacological management of migraine, quick reference guide (first published February 2018, revised May 2026)",
+        "sourceUrl": "https://www.sign.ac.uk/media/2405/sign-155-qrg-2026-update.pdf",
+        "sourceEdition": "SIGN 155 QRG 2026, p. 1",
+        "branch": "Acute attack",
+        "step": "Antiemetic",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "Antiemetic with acute treatment",
+        "patientGroup": "Adults",
+        "genericName": "Prochlorperazine",
+        "dose": "10 mg of each",
+        "route": "Oral or parenteral",
+        "frequency": "Per attack (repeat interval not stated in the source)",
+        "duration": "Per attack",
+        "adjustments": [
+          "Metoclopramide should not be used regularly because of extrapyramidal risk."
+        ],
+        "monitoring": [
+          "Extrapyramidal effects."
+        ],
+        "contraindications": [
+          "Regular metoclopramide use."
+        ],
+        "sourceTitle": "SIGN 155 Pharmacological management of migraine, quick reference guide (first published February 2018, revised May 2026)",
+        "sourceUrl": "https://www.sign.ac.uk/media/2405/sign-155-qrg-2026-update.pdf",
+        "sourceEdition": "SIGN 155 QRG 2026, p. 1",
+        "branch": "Acute attack",
+        "step": "Antiemetic",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Chosen instead of metoclopramide"
+      },
+      {
+        "indication": "Migraine prophylaxis (first line)",
+        "patientGroup": "Adults",
+        "genericName": "Propranolol",
+        "dose": "80 to 160 mg",
+        "route": "Oral",
+        "frequency": "Daily",
+        "duration": "Review need at 6 months (NICE)",
+        "adjustments": [
+          "Titration schedule not stated in the sources opened."
+        ],
+        "monitoring": [
+          "Review at 6 months."
+        ],
+        "contraindications": [
+          "No renal or hepatic adjustment is given in the source opened; check product information."
+        ],
+        "sourceTitle": "SIGN 155 Pharmacological management of migraine, quick reference guide (first published February 2018, revised May 2026)",
+        "sourceUrl": "https://www.sign.ac.uk/media/2405/sign-155-qrg-2026-update.pdf",
+        "sourceEdition": "SIGN 155 QRG 2026, p. 3",
+        "branch": "Prophylaxis",
+        "step": "Prophylaxis",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "Migraine prophylaxis",
+        "patientGroup": "Adults (women of childbearing potential only under pregnancy prevention conditions)",
+        "genericName": "Topiramate",
+        "dose": "50 to 100 mg",
+        "route": "Oral",
+        "frequency": "Daily",
+        "duration": "Review need at 6 months (NICE)",
+        "adjustments": [
+          "Washout of at least 4 weeks before trying to conceive; avoid during breastfeeding."
+        ],
+        "monitoring": [
+          "Pregnancy prevention programme compliance."
+        ],
+        "contraindications": [
+          "Pregnancy; not for women of childbearing potential unless pregnancy prevention conditions are met (developmental disorders, malformations, low birth weight)."
+        ],
+        "sourceTitle": "SIGN 155 Pharmacological management of migraine, quick reference guide (first published February 2018, revised May 2026)",
+        "sourceUrl": "https://www.sign.ac.uk/media/2405/sign-155-qrg-2026-update.pdf",
+        "sourceEdition": "SIGN 155 QRG 2026, p. 5",
+        "branch": "Prophylaxis",
+        "step": "Prophylaxis",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Chosen instead of propranolol"
+      },
+      {
+        "indication": "Migraine prophylaxis",
+        "patientGroup": "Adults",
+        "genericName": "Amitriptyline",
+        "dose": "25 to 150 mg",
+        "route": "Oral",
+        "frequency": "At night",
+        "duration": "Review need at 6 months (NICE)",
+        "adjustments": [
+          "Titration schedule not stated in the sources opened."
+        ],
+        "monitoring": [
+          "Review at 6 months."
+        ],
+        "contraindications": [
+          "No renal or hepatic adjustment is given in the source opened; check product information."
+        ],
+        "sourceTitle": "SIGN 155 Pharmacological management of migraine, quick reference guide (first published February 2018, revised May 2026)",
+        "sourceUrl": "https://www.sign.ac.uk/media/2405/sign-155-qrg-2026-update.pdf",
+        "sourceEdition": "SIGN 155 QRG 2026, p. 3",
+        "branch": "Prophylaxis",
+        "step": "Prophylaxis",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Chosen instead of propranolol"
+      },
+      {
+        "indication": "Migraine prophylaxis",
+        "patientGroup": "Adults",
+        "genericName": "Candesartan",
+        "dose": "16 mg",
+        "route": "Oral",
+        "frequency": "Daily",
+        "duration": "Review need at 6 months (NICE)",
+        "adjustments": [
+          "Avoid in pregnancy and breastfeeding."
+        ],
+        "monitoring": [
+          "Review at 6 months."
+        ],
+        "contraindications": [
+          "Pregnancy and breastfeeding."
+        ],
+        "sourceTitle": "SIGN 155 Pharmacological management of migraine, quick reference guide (first published February 2018, revised May 2026)",
+        "sourceUrl": "https://www.sign.ac.uk/media/2405/sign-155-qrg-2026-update.pdf",
+        "sourceEdition": "SIGN 155 QRG 2026, p. 3",
+        "branch": "Prophylaxis",
+        "step": "Prophylaxis",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Chosen instead of propranolol"
+      },
+      {
+        "indication": "Migraine prophylaxis",
+        "patientGroup": "Adults",
+        "genericName": "Flunarizine",
+        "dose": "10 mg",
+        "route": "Oral",
+        "frequency": "Daily",
+        "duration": "Review need at 6 months (NICE)",
+        "adjustments": [
+          "Avoid in pregnancy and breastfeeding."
+        ],
+        "monitoring": [
+          "Review at 6 months."
+        ],
+        "contraindications": [
+          "Pregnancy and breastfeeding."
+        ],
+        "sourceTitle": "SIGN 155 Pharmacological management of migraine, quick reference guide (first published February 2018, revised May 2026)",
+        "sourceUrl": "https://www.sign.ac.uk/media/2405/sign-155-qrg-2026-update.pdf",
+        "sourceEdition": "SIGN 155 QRG 2026, p. 6",
+        "branch": "Prophylaxis",
+        "step": "Prophylaxis",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Chosen instead of propranolol"
+      }
+    ],
+    "note": "Triptan and naproxen doses are not stated in the sources opened and are not listed. Doses below are daily totals from the SIGN quick reference guide. The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary.",
+    "branches": [
+      {
+        "label": "Acute attack",
+        "entryCriteria": "Adult with an acute migraine attack"
+      },
+      {
+        "label": "Prophylaxis",
+        "entryCriteria": "Adult needing migraine prophylaxis"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Chronic migraine",
+      "threshold": "Headache on 15 or more days per month for more than 3 months."
+    },
+    {
+      "criterion": "Medication-overuse headache review",
+      "threshold": "Review diagnosis and management 4 to 8 weeks after withdrawal starts."
+    },
+    {
+      "criterion": "Review prophylaxis",
+      "threshold": "At 6 months."
+    }
+  ],
+  "teaching": {
+    "scope": "Adult with migraine: acute treatment, prophylaxis options and doses, medication-overuse headache, pregnancy and contraception cautions, using NICE CG150 and the SIGN 155 quick reference guide.",
+    "learningObjectives": [
+      "Treat the acute attack early with triptan plus NSAID or paracetamol.",
+      "Use prophylaxis and address medication overuse."
+    ],
+    "pitfalls": [
+      "Missing medication overuse.",
+      "Prescribing topiramate without pregnancy prevention."
+    ],
+    "keyPoints": [
+      "Do not offer ergots, opioids or gabapentin.",
+      "Topiramate has strict pregnancy conditions."
+    ],
+    "references": [
+      {
+        "title": "NICE CG150: Headaches in over 12s: diagnosis and management",
+        "edition": "NICE CG150, Recommendation 1.3.10 to 1.3.27",
+        "url": "https://www.nice.org.uk/guidance/cg150/chapter/Recommendations",
+        "locator": "Recommendation 1.3.10 to 1.3.27"
+      },
+      {
+        "title": "SIGN 155 Pharmacological management of migraine, quick reference guide (first published February 2018, revised May 2026)",
+        "edition": "SIGN 155 QRG 2026, p. 1 to p. 7",
+        "url": "https://www.sign.ac.uk/media/2405/sign-155-qrg-2026-update.pdf",
+        "locator": "pp. 1 to 7"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Take acute treatment early and limit the number of days per month.",
+      "Keep a headache diary."
+    ],
+    "lifestyleAndDiet": [
+      "Regular sleep, meals and hydration; avoid known triggers."
+    ],
+    "mdtReferrals": [
+      "Primary care; neurology for chronic migraine or specialist therapies."
+    ],
+    "dischargeCriteria": [
+      "Not applicable; long-term management."
+    ],
+    "followUpPlan": "Review prophylaxis at 6 months; review medication-overuse treatment at 4 to 8 weeks."
+  }
+}

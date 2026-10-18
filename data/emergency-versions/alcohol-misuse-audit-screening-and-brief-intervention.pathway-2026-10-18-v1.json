@@ -1,0 +1,474 @@
+{
+  "id": "29a19ea3-03ed-47da-8c66-91ca212c0d9c",
+  "title": "Alcohol Misuse: AUDIT Screening and Brief Intervention",
+  "specialty": "Primary Care / Psychiatry",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Keep Well",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adult with possible hazardous or harmful drinking: Alcohol Use Disorders Identification Test (AUDIT) scoring and intervention zones, and inpatient withdrawal treatment with benzodiazepines and thiamine, using the WHO AUDIT and two NHS hospital protocols. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 2026-10-18.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from authoring-standard-2026-10-18-tier3b-v1-live."
+    ],
+    "unverifiedSections": [
+      "NICE CG115 and CG100 could not be opened; withdrawal doses are from two NHS hospital protocols (Greater Glasgow and Clyde for mental health wards and Norfolk and Norwich University Hospitals) and have not been compared with a national formulary or a Saudi protocol.",
+      "The chlordiazepoxide fixed-dose schedule tables (NNUH pages 16 to 17) were not extracted in full; only the stat dose, first-24-hour cumulative limit and symptom-triggered maximum were read.",
+      "Relapse-prevention drugs (acamprosate, naltrexone, disulfiram) were not covered by any source opened.",
+      "Pregnancy: the NNUH guideline excludes pregnancy; no pregnancy advice was obtained.",
+      "The GGC diazepam day 4 maximum is printed as 10 mg, below the scheduled 15 mg doses, and looks like a typographical error; it is not reproduced.",
+      "Symptoms and signs are general clinical features and are not all listed in the extracts opened.",
+      "Alcohol possession and treatment in Saudi Arabia are subject to local law and hospital policy; no Saudi guideline was opened.",
+      "Source pages were read through automated page extraction rather than page-by-page in the original documents, so each figure should be spot-checked against the source during clinical review.",
+      "The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary.",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "29a19ea3-03ed-47da-8c66-91ca212c0d9c",
+      "510f44bf-b365-435b-862a-e339b01d24a4"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "The protocols opened treat alcohol withdrawal with a fixed or symptom-triggered benzodiazepine regime and monitor with observations or a withdrawal scale. Wernicke's encephalopathy is a medical emergency in a patient with alcohol misuse and is treated with parenteral thiamine. Liver impairment changes the benzodiazepine choice to oxazepam. AUDIT scores guide whether education, simple advice, brief counselling or specialist referral is appropriate.",
+    "keyMechanisms": [
+      "The protocols opened treat alcohol withdrawal with a fixed or symptom-triggered benzodiazepine regime and monitor with observations or a withdrawal scale.",
+      "Wernicke's encephalopathy is a medical emergency in a patient with alcohol misuse and is treated with parenteral thiamine.",
+      "Liver impairment changes the benzodiazepine choice to oxazepam.",
+      "AUDIT scores guide whether education, simple advice, brief counselling or specialist referral is appropriate."
+    ],
+    "references": [
+      {
+        "title": "Babor et al: The Alcohol Use Disorders Identification Test: Guidelines for Use in Primary Care, 2nd edition (WHO, 2001), interview version via bpac.org.nz",
+        "edition": "WHO AUDIT 2nd edition 2001, Section Score zones",
+        "url": "https://bpac.org.nz/bt/2010/november/docs/addiction_AUDIT_interview.pdf"
+      },
+      {
+        "title": "NHS Greater Glasgow and Clyde Mental Health Services: Protocol for the management of alcohol withdrawal using a fixed benzodiazepine regime in mental health in-patient wards (MHS MRG 27, approved March 2023)",
+        "edition": "NHS GGC MHS MRG 27 2023, p. 4",
+        "url": "https://rightdecisions.scot.nhs.uk/media/fjvchtoo/mhs-mrg-27-inpatient-protocol-for-the-management-of-alcohol-withdrawl.pdf"
+      },
+      {
+        "title": "Norfolk and Norwich University Hospitals: Trust Guidelines for the Management of Acute Alcohol Withdrawal, excluding pregnancy (reference 1229, V9, May 2024)",
+        "edition": "NNUH Acute Alcohol Withdrawal V9 2024, p. 19",
+        "url": "https://www.nnuh.nhs.uk/publication/download/acute-alcohol-withdrawal-ca2074-v10"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Tremor, sweating, anxiety.",
+      "Nausea.",
+      "Insomnia."
+    ],
+    "physicalSigns": [
+      "Raised blood pressure and pulse.",
+      "Confusion, ataxia, ophthalmoplegia or nystagmus (Wernicke's).",
+      "Over-sedation on treatment."
+    ],
+    "redFlags": [
+      "Acute confusion, ataxia, reduced consciousness, unexplained hypotension with hypothermia, ophthalmoplegia or nystagmus, or memory disturbance: treat as Wernicke's encephalopathy.",
+      "Severe dependence needing doses above the standard limits."
+    ],
+    "precipitants": [
+      "Alcohol dependence.",
+      "Poor diet."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Wernicke's encephalopathy",
+      "distinguishingFeatures": "Confusion, ataxia, eye signs; urgent parenteral thiamine."
+    },
+    {
+      "condition": "Other causes of confusion",
+      "distinguishingFeatures": "Medical review as necessary."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "AUDIT questionnaire (10 items, each 0 to 4; items 9 and 10 score 0, 2 or 4)",
+        "modalityTarget": "Drinking pattern",
+        "targetCondition": "Hazardous, harmful or dependent drinking",
+        "expectedFinding": "Score 8 or more",
+        "clinicalRationale": "Choose the intervention zone; scoring 2 or more on question 4, 5 or 6, or 4 on question 9 or 10, moves to the next higher intervention level.",
+        "normalValue": "Score under 8",
+        "references": [
+          {
+            "title": "Babor et al: The Alcohol Use Disorders Identification Test: Guidelines for Use in Primary Care, 2nd edition (WHO, 2001), interview version via bpac.org.nz",
+            "edition": "WHO AUDIT 2nd edition 2001, Section Score zones",
+            "url": "https://bpac.org.nz/bt/2010/november/docs/addiction_AUDIT_interview.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Severity of Alcohol Dependence Questionnaire (SADQ)",
+        "modalityTarget": "Dependence",
+        "targetCondition": "Alcohol dependence",
+        "expectedFinding": "Completed and filed",
+        "clinicalRationale": "GGC protocol: complete the SADQ before the fixed regime; no scoring thresholds are given in the extract.",
+        "normalValue": "Not applicable",
+        "references": [
+          {
+            "title": "NHS Greater Glasgow and Clyde Mental Health Services: Protocol for the management of alcohol withdrawal using a fixed benzodiazepine regime in mental health in-patient wards (MHS MRG 27, approved March 2023)",
+            "edition": "NHS GGC MHS MRG 27 2023, p. 2",
+            "url": "https://rightdecisions.scot.nhs.uk/media/fjvchtoo/mhs-mrg-27-inpatient-protocol-for-the-management-of-alcohol-withdrawl.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Clinical Institute Withdrawal Assessment of Alcohol Scale (CIWA-Ar)",
+        "modalityTarget": "Withdrawal severity",
+        "targetCondition": "Alcohol withdrawal",
+        "expectedFinding": "Score of 10 or more",
+        "clinicalRationale": "NNUH: score 10 or more gives the as-needed chlordiazepoxide dose and review in one hour; below 10 review in 4 hours.",
+        "normalValue": "Score under 10",
+        "references": [
+          {
+            "title": "Norfolk and Norwich University Hospitals: Trust Guidelines for the Management of Acute Alcohol Withdrawal, excluding pregnancy (reference 1229, V9, May 2024)",
+            "edition": "NNUH Acute Alcohol Withdrawal V9 2024, p. 31",
+            "url": "https://www.nnuh.nhs.uk/publication/download/acute-alcohol-withdrawal-ca2074-v10"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Liver function tests",
+        "modalityTarget": "Liver damage",
+        "targetCondition": "Alcohol-related liver disease",
+        "expectedFinding": "Raised transaminases",
+        "clinicalRationale": "Liver impairment changes benzodiazepine choice to oxazepam.",
+        "normalValue": "ALT under 40 U/L in adults; laboratory range applies",
+        "references": [
+          {
+            "title": "NHS Greater Glasgow and Clyde Mental Health Services: Protocol for the management of alcohol withdrawal using a fixed benzodiazepine regime in mental health in-patient wards (MHS MRG 27, approved March 2023)",
+            "edition": "NHS GGC MHS MRG 27 2023, p. 1",
+            "url": "https://rightdecisions.scot.nhs.uk/media/fjvchtoo/mhs-mrg-27-inpatient-protocol-for-the-management-of-alcohol-withdrawl.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Serum magnesium",
+        "modalityTarget": "Electrolytes",
+        "targetCondition": "Hypomagnesaemia",
+        "expectedFinding": "Low magnesium",
+        "clinicalRationale": "GGC: check magnesium in all patients and correct any deficiency.",
+        "normalValue": "0.7 to 1.0 mmol/L",
+        "references": [
+          {
+            "title": "NHS Greater Glasgow and Clyde Mental Health Services: Protocol for the management of alcohol withdrawal using a fixed benzodiazepine regime in mental health in-patient wards (MHS MRG 27, approved March 2023)",
+            "edition": "NHS GGC MHS MRG 27 2023, p. 2",
+            "url": "https://rightdecisions.scot.nhs.uk/media/fjvchtoo/mhs-mrg-27-inpatient-protocol-for-the-management-of-alcohol-withdrawl.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Blood pressure, pulse and temperature every 4 hours",
+        "modalityTarget": "Vital signs",
+        "targetCondition": "Over-sedation or deterioration",
+        "expectedFinding": "Hypotension, bradycardia or sedation",
+        "clinicalRationale": "GGC: record every 4 hours throughout treatment.",
+        "normalValue": "Adult pulse 60 to 100 per minute, systolic 100 to 140 mmHg",
+        "references": [
+          {
+            "title": "NHS Greater Glasgow and Clyde Mental Health Services: Protocol for the management of alcohol withdrawal using a fixed benzodiazepine regime in mental health in-patient wards (MHS MRG 27, approved March 2023)",
+            "edition": "NHS GGC MHS MRG 27 2023, p. 3",
+            "url": "https://rightdecisions.scot.nhs.uk/media/fjvchtoo/mhs-mrg-27-inpatient-protocol-for-the-management-of-alcohol-withdrawl.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "screen",
+      "title": "Screen with AUDIT",
+      "timeframe": "At any contact",
+      "actions": [
+        "Score the 10 items and apply the zone-based intervention.",
+        "Use the clinical override to move up a level when questions 4, 5, 6, 9 or 10 are high."
+      ]
+    },
+    {
+      "id": "wernicke",
+      "title": "Check for Wernicke's encephalopathy",
+      "timeframe": "On admission",
+      "actions": [
+        "Give parenteral thiamine if confusion, ataxia or eye signs are present."
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "title": "Start withdrawal treatment",
+      "timeframe": "Admission",
+      "actions": [
+        "Diazepam fixed regime for adults; oxazepam for liver impairment; chlordiazepoxide per the NNUH symptom-triggered approach.",
+        "Monitor vital signs every 4 hours; watch for over-sedation."
+      ]
+    },
+    {
+      "id": "thiamine",
+      "title": "Replace thiamine",
+      "timeframe": "Throughout",
+      "actions": [
+        "Parenteral thiamine then oral thiamine; continue while problem drinking continues."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Alcohol withdrawal on general wards (symptom-triggered or fixed)",
+        "patientGroup": "Adults (excluding pregnancy)",
+        "genericName": "Chlordiazepoxide",
+        "dose": "Initial stat dose 30 mg; fixed schedules start at 20, 30 or 40 mg four times a day on days 1 and 2 by alcohol units; cumulative regular plus as-needed dose up to 200 mg in the first 24 hours",
+        "route": "Oral",
+        "frequency": "Four times a day (fixed) or as needed with CIWA-Ar score of 10 or more, then review in one hour",
+        "duration": "Fixed schedule tables on pp. 16 to 17 (not extracted); maximum 200 mg a day if symptom triggered",
+        "adjustments": [
+          "Consider oxazepam in older adults or significant liver damage; in decompensated liver disease use symptom-triggered dosing with lowest possible as-needed doses.",
+          "Lorazepam 2 mg sublingual (1 mg if over 65) when oral treatment is not possible."
+        ],
+        "monitoring": [
+          "Observations at least every 8 hours for 72 hours then daily; CIWA-Ar one to four hourly by score."
+        ],
+        "contraindications": [
+          "Pregnancy excluded from the guideline.",
+          "Haloperidol, if needed, is contraindicated in CNS depression, coma or congenital long QT syndrome."
+        ],
+        "sourceTitle": "Norfolk and Norwich University Hospitals: Trust Guidelines for the Management of Acute Alcohol Withdrawal, excluding pregnancy (reference 1229, V9, May 2024)",
+        "sourceUrl": "https://www.nnuh.nhs.uk/publication/download/acute-alcohol-withdrawal-ca2074-v10",
+        "sourceEdition": "NNUH Acute Alcohol Withdrawal V9 2024, pp. 13 and 15",
+        "branch": "Alcohol withdrawal — general wards",
+        "step": "Benzodiazepine",
+        "selection": "all"
+      },
+      {
+        "indication": "Alcohol withdrawal on mental health wards (fixed regime)",
+        "patientGroup": "Adults",
+        "genericName": "Diazepam",
+        "dose": "Day 1 to 2: 20 mg four times a day (as needed 20 mg); day 3 to 4: 15 mg four times a day; day 5: 15/10/10/15 mg; day 6: 10 mg four times a day; day 7: 10/5/5/10 mg; day 8: 5 mg four times a day; day 9: 5 mg three times; day 10: 5 mg twice; day 11: 5 mg once",
+        "route": "Oral",
+        "frequency": "Four times a day on scheduled days",
+        "duration": "11 days",
+        "adjustments": [
+          "Doses above 50 mg a day only for severe dependence with close monitoring; above 80 mg a day only for very severe dependence and never in older people or liver impairment.",
+          "Older adults: separate 10-day regime starting 10 mg four times a day.",
+          "Liver impairment: use oxazepam instead."
+        ],
+        "monitoring": [
+          "Blood pressure, pulse and temperature every 4 hours; over-sedation."
+        ],
+        "contraindications": [
+          "Respiratory disease and pregnancy cautions are not given in the source.",
+          "Diazepam injection is contraindicated in severe liver impairment (NNUH)."
+        ],
+        "sourceTitle": "NHS Greater Glasgow and Clyde Mental Health Services: Protocol for the management of alcohol withdrawal using a fixed benzodiazepine regime in mental health in-patient wards (MHS MRG 27, approved March 2023)",
+        "sourceUrl": "https://rightdecisions.scot.nhs.uk/media/fjvchtoo/mhs-mrg-27-inpatient-protocol-for-the-management-of-alcohol-withdrawl.pdf",
+        "sourceEdition": "NHS GGC MHS MRG 27 2023, p. 4 and p. 5",
+        "branch": "Alcohol withdrawal — mental health ward",
+        "step": "Benzodiazepine",
+        "selection": "all"
+      },
+      {
+        "indication": "Alcohol withdrawal with known liver impairment",
+        "patientGroup": "Adults with liver impairment",
+        "genericName": "Oxazepam",
+        "dose": "Day 1: 40 mg four times a day (as needed 40 mg); day 2: 40/30/40/40 mg; day 3: 30/30/30/40 mg; day 4: 30/20/30/30 mg; day 5: 20/20/20/30 mg; day 6: 20/10/20/20 mg; day 7: 10/10/10/20 mg; day 8: 10 mg four times a day; day 9: 10 mg twice; day 10: 10 mg once",
+        "route": "Oral",
+        "frequency": "Four times a day on scheduled days",
+        "duration": "10 days",
+        "adjustments": [
+          "Doses above 90 mg a day only for severe dependence; above 120 mg a day only for very severe dependence."
+        ],
+        "monitoring": [
+          "Vital signs every 4 hours; over-sedation."
+        ],
+        "contraindications": [
+          "Contraindications are not listed in the extract opened."
+        ],
+        "sourceTitle": "NHS Greater Glasgow and Clyde Mental Health Services: Protocol for the management of alcohol withdrawal using a fixed benzodiazepine regime in mental health in-patient wards (MHS MRG 27, approved March 2023)",
+        "sourceUrl": "https://rightdecisions.scot.nhs.uk/media/fjvchtoo/mhs-mrg-27-inpatient-protocol-for-the-management-of-alcohol-withdrawl.pdf",
+        "sourceEdition": "NHS GGC MHS MRG 27 2023, p. 6",
+        "branch": "Alcohol withdrawal — liver impairment",
+        "step": "Benzodiazepine",
+        "selection": "all"
+      },
+      {
+        "indication": "Prevention and treatment of Wernicke's encephalopathy (inpatient, high-dose)",
+        "patientGroup": "Adults",
+        "genericName": "Pabrinex (thiamine and B vitamins), two pairs of ampoules",
+        "dose": "Two pairs (ampoules 1 and 2)",
+        "route": "Intravenous infusion over 30 minutes in 100 mL sodium chloride 0.9%",
+        "frequency": "Three times a day",
+        "duration": "3 to 5 days or until clinically settled",
+        "adjustments": [
+          "GGC uses one pair intramuscularly daily as a 5-day course; oral thiamine follows."
+        ],
+        "monitoring": [
+          "Facilities for treating anaphylaxis available; very low anaphylaxis risk cited (about 1 in 1 million intravenous)."
+        ],
+        "contraindications": [
+          "Known allergy to any component or previous reaction."
+        ],
+        "sourceTitle": "Norfolk and Norwich University Hospitals: Trust Guidelines for the Management of Acute Alcohol Withdrawal, excluding pregnancy (reference 1229, V9, May 2024)",
+        "sourceUrl": "https://www.nnuh.nhs.uk/publication/download/acute-alcohol-withdrawal-ca2074-v10",
+        "sourceEdition": "NNUH Acute Alcohol Withdrawal V9 2024, p. 19",
+        "branch": "Wernicke's encephalopathy",
+        "step": "High-dose parenteral thiamine",
+        "selection": "all"
+      },
+      {
+        "indication": "Thiamine replacement",
+        "patientGroup": "Adults",
+        "genericName": "Thiamine (oral)",
+        "dose": "NNUH: 100 mg; GGC: 50 mg",
+        "route": "Oral",
+        "frequency": "NNUH three times a day; GGC four times a day",
+        "duration": "NNUH: 3 to 6 months after abstinence or indefinitely if heavy drinking continues, 28 days on discharge; GGC: indefinitely while problem drinking continues",
+        "adjustments": [
+          "Consider multivitamin with trace elements if diet is poor (GGC)."
+        ],
+        "monitoring": [
+          "Review adherence at discharge."
+        ],
+        "contraindications": [
+          "Allergy to thiamine."
+        ],
+        "sourceTitle": "Norfolk and Norwich University Hospitals: Trust Guidelines for the Management of Acute Alcohol Withdrawal, excluding pregnancy (reference 1229, V9, May 2024)",
+        "sourceUrl": "https://www.nnuh.nhs.uk/publication/download/acute-alcohol-withdrawal-ca2074-v10",
+        "sourceEdition": "NNUH Acute Alcohol Withdrawal V9 2024, pp. 19, 20 and 26",
+        "branch": "Wernicke's encephalopathy",
+        "step": "Thiamine replacement",
+        "selection": "all"
+      }
+    ],
+    "note": "Withdrawal doses are from two hospital protocols with different regimens; they are shown side by side. Relapse-prevention drugs were not covered. The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary.",
+    "branches": [
+      {
+        "label": "Alcohol withdrawal — general wards",
+        "entryCriteria": "Adult (not pregnant) with alcohol withdrawal on a general ward"
+      },
+      {
+        "label": "Alcohol withdrawal — mental health ward",
+        "entryCriteria": "Adult with alcohol withdrawal on a mental health ward"
+      },
+      {
+        "label": "Alcohol withdrawal — liver impairment",
+        "entryCriteria": "Adult with alcohol withdrawal and known liver impairment"
+      },
+      {
+        "label": "Wernicke's encephalopathy",
+        "entryCriteria": "Adult at risk of, or with, Wernicke's encephalopathy"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "AUDIT Zone I",
+      "threshold": "Score 0 to 7: alcohol education."
+    },
+    {
+      "criterion": "AUDIT Zone II",
+      "threshold": "Score 8 to 15: simple advice."
+    },
+    {
+      "criterion": "AUDIT Zone III",
+      "threshold": "Score 16 to 19: simple advice plus brief counselling and continued monitoring."
+    },
+    {
+      "criterion": "AUDIT Zone IV",
+      "threshold": "Score 20 to 40: refer to a specialist for diagnostic evaluation and treatment."
+    }
+  ],
+  "guidelineComparison": {
+    "title": "Thiamine dosing in the two hospital protocols",
+    "columns": [
+      "NHS Greater Glasgow and Clyde MHS MRG 27",
+      "Norfolk and Norwich University Hospitals V9"
+    ],
+    "rows": [
+      {
+        "parameter": "Oral thiamine",
+        "values": [
+          "50 mg four times a day, continued indefinitely while drinking.",
+          "100 mg three times a day, 3 to 6 months after abstinence; 28 days on discharge."
+        ]
+      },
+      {
+        "parameter": "Parenteral thiamine",
+        "values": [
+          "One pair Pabrinex or 250 mg intramuscularly daily for 5 days.",
+          "Two pairs Pabrinex intravenously three times a day for 3 to 5 days."
+        ]
+      }
+    ],
+    "note": "Shown side by side and not merged; follow the local hospital policy."
+  },
+  "teaching": {
+    "scope": "Adult with possible hazardous or harmful drinking: Alcohol Use Disorders Identification Test (AUDIT) scoring and intervention zones, and inpatient withdrawal treatment with benzodiazepines and thiamine, using the WHO AUDIT and two NHS hospital protocols.",
+    "learningObjectives": [
+      "Score AUDIT and match intervention to zone.",
+      "Treat withdrawal with benzodiazepines and thiamine."
+    ],
+    "pitfalls": [
+      "Missing Wernicke's encephalopathy.",
+      "Using benzodiazepines at standard doses in liver impairment."
+    ],
+    "keyPoints": [
+      "AUDIT zone 8 to 15 simple advice; 20 or more refer.",
+      "Pabrinex IV three times a day for 3 to 5 days in NNUH."
+    ],
+    "references": [
+      {
+        "title": "Babor et al: The Alcohol Use Disorders Identification Test: Guidelines for Use in Primary Care, 2nd edition (WHO, 2001), interview version via bpac.org.nz",
+        "edition": "WHO AUDIT 2nd edition 2001, Section Score zones",
+        "url": "https://bpac.org.nz/bt/2010/november/docs/addiction_AUDIT_interview.pdf",
+        "locator": "Section Score zones"
+      },
+      {
+        "title": "NHS Greater Glasgow and Clyde Mental Health Services: Protocol for the management of alcohol withdrawal using a fixed benzodiazepine regime in mental health in-patient wards (MHS MRG 27, approved March 2023)",
+        "edition": "NHS GGC MHS MRG 27 2023, p. 4",
+        "url": "https://rightdecisions.scot.nhs.uk/media/fjvchtoo/mhs-mrg-27-inpatient-protocol-for-the-management-of-alcohol-withdrawl.pdf",
+        "locator": "p. 4"
+      },
+      {
+        "title": "Norfolk and Norwich University Hospitals: Trust Guidelines for the Management of Acute Alcohol Withdrawal, excluding pregnancy (reference 1229, V9, May 2024)",
+        "edition": "NNUH Acute Alcohol Withdrawal V9 2024, p. 19",
+        "url": "https://www.nnuh.nhs.uk/publication/download/acute-alcohol-withdrawal-ca2074-v10",
+        "locator": "p. 19"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain the harms of drinking and the benefit of reducing.",
+      "Report withdrawal symptoms."
+    ],
+    "lifestyleAndDiet": [
+      "Reduce or stop alcohol with support; good nutrition."
+    ],
+    "mdtReferrals": [
+      "Addiction services; liver team; mental health team; dietitian."
+    ],
+    "dischargeCriteria": [
+      "Withdrawal completed, observations stable, thiamine supplied."
+    ],
+    "followUpPlan": "Specialist alcohol service follow-up for AUDIT zone IV."
+  }
+}

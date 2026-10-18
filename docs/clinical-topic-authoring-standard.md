@@ -18,6 +18,7 @@ These rules are strict. Do not relax them for speed, and do not report a rule as
 8. **Paraphrase sources.** Do not copy guideline paragraphs verbatim. Tables of numbers are fine; prose must be your own words.
 9. **Stay in scope.** Change only the topic(s) named in the task. No refactors, no schema changes, no UI changes, no edits to other topics. If the schema cannot hold something important, stop and report it — do not add fields.
 10. **Never expose secrets.** Read `SUPABASE_SECRET_KEY` from the environment. Never print, log or commit it.
+11. **Medicines are a pathway, not a list.** Follow "Medicine pathways" in section 3. A flat table of every drug, or alternatives presented as if all are given, fails the task.
 
 ---
 
@@ -67,6 +68,27 @@ A table. Every row has all four columns:
 - Clear escalation triggers (when to call ICU / specialty).
 - Discharge criteria and follow-up.
 
+### Medicine pathways (mandatory default for every topic)
+
+Medicines are a decision pathway, never a list of every drug used for the condition. A reader at 3 a.m. must see which drugs to give for the patient in front of them, and nothing else.
+
+1. **Branch by pathway.** Split by the patient group or pathway that changes treatment (for example STEMI and NSTEMI are separate branches, even when they share aspirin; adult and paediatric; primary PCI and fibrinolysis; mild, moderate and severe). Every drug sits under exactly one branch. Each branch has entry criteria that say who goes into it.
+2. **Name the step.** Inside a branch, group drugs by purpose (antiplatelet loading, P2Y12 inhibitor, anticoagulant, analgesia).
+3. **Give-all vs choose-one.** Drugs given together share a step and are marked `All`. Alternatives share a step: exactly one is `Preferred`; every other option is `Alternative` and states in `Use when` the condition that makes it the choice instead (for example "ticagrelor contraindicated or patient on an oral anticoagulant").
+4. **Never combine.** Two drugs of the same class (two P2Y12 inhibitors, two parenteral anticoagulants, two thrombolytics, two antibiotics for one infection) are never both `All`. No "drug A or drug B" in one row: one row per drug.
+5. **Preferred comes from the source.** If the guideline does not say which option is preferred, mark the source's first-listed option and add the choice to `evidenceAudit.unverifiedSections`.
+6. **Drug detail is unchanged.** Every row still has dose, route, frequency, duration or maximum, adjustments, monitoring, contraindications and a source locator.
+
+Pasted-topic layout (see the paste editor for the exact template):
+
+```
+### Medicines
+#### Branch: STEMI — primary PCI | Entry: persistent ST elevation, symptoms under 12 hours
+| Step | Choice | Drug | Indication | Patient group | Dose | Route | Frequency | Duration / maximum | Adjustments | Monitoring | Contraindications / cautions | Use when | Source |
+```
+
+Data format: each regimen carries optional `branch`, `step`, `selection` (`all` | `one-of`), `preferred` and `useWhen`; `medicationPlan.branches` lists `{label, entryCriteria}`. The audit (`lib/medication-pathway.ts`) fails any multi-drug plan that is not branched, has unmarked alternatives, a one-of step without exactly one preferred option, or two drugs of one strict class given together. A version with a pathway error is saved as `under_review` but is **not** published automatically, whatever its score.
+
 ### References
 - One numbered list at the end. Each entry: title, organisation, edition/year, URL, and the sections used.
 
@@ -87,7 +109,7 @@ A table. Every row has all four columns:
 
 Use the existing topic JSON shape in the repo. Keep these fields and do not invent new ones:
 
-`id, title, specialty, authority, status, version, lastReviewed, pillar, clinicalReviewStatus, evidenceAudit{checkedOn, status, scope, findings, unverifiedSections, medscapeStatus, originalVersionIds}, pathophysiology{summary, keyMechanisms}, presentation{symptoms, physicalSigns, redFlags, precipitants}, differentials[{condition, distinguishingFeatures}], diagnosticCriteria[{criterion, threshold}], investigations{ruleIn, ruleOut}, clinicalManagement, medicationPlan{status, regimens, note}, guidelineComparison, teaching{learningObjectives, keyPoints, pitfalls, references}, nonClinicalManagement{patientEducation, lifestyleAndDiet, mdtReferrals, dischargeCriteria, followUpPlan}`
+`id, title, specialty, authority, status, version, lastReviewed, pillar, clinicalReviewStatus, evidenceAudit{checkedOn, status, scope, findings, unverifiedSections, medscapeStatus, originalVersionIds}, pathophysiology{summary, keyMechanisms}, presentation{symptoms, physicalSigns, redFlags, precipitants}, differentials[{condition, distinguishingFeatures}], diagnosticCriteria[{criterion, threshold}], investigations{ruleIn, ruleOut}, clinicalManagement, medicationPlan{status, regimens (each with optional branch, step, selection, preferred, useWhen), branches[{label, entryCriteria}], note}, guidelineComparison, teaching{learningObjectives, keyPoints, pitfalls, references}, nonClinicalManagement{patientEducation, lifestyleAndDiet, mdtReferrals, dischargeCriteria, followUpPlan}`
 
 - `evidenceAudit.status` stays `"incomplete"` unless every section was checked against an opened source.
 - List every item you could not verify in `evidenceAudit.unverifiedSections`.
@@ -123,6 +145,7 @@ Before writing, open one existing under-review topic in the same pillar and matc
 - [ ] Disagreements are shown side by side, not merged.
 - [ ] Every Investigations row has normal value, value in condition, and meaning.
 - [ ] Every drug has dose, route, frequency, max, and SFDA status.
+- [ ] Medicines are branched by pathway; each branch has entry criteria; every alternative step has exactly one preferred option and a "use when"; no two same-class drugs are given together.
 - [ ] The same number is identical everywhere it appears.
 - [ ] Only four clinical headings + references; no filler phrases.
 - [ ] Nothing published was edited; the new version was saved as under_review, then published by `publish-if-eligible.ts` only if it scored 80% or more (score reported).

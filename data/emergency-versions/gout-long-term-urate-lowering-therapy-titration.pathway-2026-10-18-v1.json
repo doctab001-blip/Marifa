@@ -1,0 +1,396 @@
+{
+  "id": "d348dc66-f4e3-4a23-bcfb-fdfa0b9c9679",
+  "title": "Gout: Long-Term Urate-Lowering Therapy Titration",
+  "specialty": "Rheumatology / Primary Care",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adult with gout starting treat-to-target urate-lowering therapy: indications, allopurinol and febuxostat starting dose and titration, renal dosing, flare prophylaxis and serum urate monitoring, using NICE NG219 and a UK hospital guideline. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 2026-10-18.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from authoring-standard-2026-10-18-tier4a-v1-live."
+    ],
+    "unverifiedSections": [
+      "NICE NG219 gives no starting dose or maximum; doses are from one undated hospital guideline (UHB same-day emergency care) without page numbers.",
+      "The UHB target urate (below 300 micromol/L) differs from NICE (below 360 micromol/L for most people); both are shown.",
+      "HLA-B*5801 testing and azathioprine interaction with allopurinol are not mentioned in the sources opened.",
+      "No Saudi Ministry of Health or Saudi Society of Rheumatology/Infectious Diseases guideline was opened.",
+      "Source pages were read through automated page extraction rather than page-by-page in the original documents, so each figure should be spot-checked against the source during clinical review.",
+      "The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary.",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "d348dc66-f4e3-4a23-bcfb-fdfa0b9c9679",
+      "8503aca8-0a6f-4dac-ae8a-63943d612f82"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Urate-lowering therapy is offered for multiple or troublesome flares, chronic kidney disease stages 3 to 5, diuretic therapy, tophi or chronic gouty arthritis. Start at least 2 to 4 weeks after a flare has settled at a low dose and increase using monthly serum urate levels. Allopurinol or febuxostat is first line; allopurinol is first line in major cardiovascular disease. Flare prophylaxis with colchicine is offered when starting or titrating urate-lowering therapy if the person chooses it.",
+    "keyMechanisms": [
+      "Urate-lowering therapy is offered for multiple or troublesome flares, chronic kidney disease stages 3 to 5, diuretic therapy, tophi or chronic gouty arthritis.",
+      "Start at least 2 to 4 weeks after a flare has settled at a low dose and increase using monthly serum urate levels.",
+      "Allopurinol or febuxostat is first line; allopurinol is first line in major cardiovascular disease.",
+      "Flare prophylaxis with colchicine is offered when starting or titrating urate-lowering therapy if the person chooses it."
+    ],
+    "references": [
+      {
+        "title": "NICE NG219: Gout: diagnosis and management",
+        "edition": "NICE NG219, Recommendation 1.5.1 to 1.5.15",
+        "url": "https://www.nice.org.uk/guidance/ng219/chapter/Recommendations"
+      },
+      {
+        "title": "University Hospitals Birmingham NHS Foundation Trust: Gout Guidelines, Same Day Emergency Care (SDEC), undated",
+        "edition": "UHB SDEC Gout Guidelines, Section Urate-lowering therapy",
+        "url": "https://www.uhb.nhs.uk/media/y2tpnr4t/gout-guidelines.pdf"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Recurrent gout flares."
+    ],
+    "physicalSigns": [
+      "Tophi.",
+      "Chronic gouty arthritis."
+    ],
+    "redFlags": [
+      "Rheumatology referral for CKD stages 3b to 5, uncertain diagnosis, ineffective or contraindicated treatment, or prior organ transplant."
+    ],
+    "precipitants": [
+      "Diuretic therapy.",
+      "Chronic kidney disease."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Febuxostat unsuitable",
+      "distinguishingFeatures": "UHB: avoid in established ischaemic heart disease or heart failure."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Serum urate every 4 to 6 weeks during titration",
+        "modalityTarget": "Urate level",
+        "targetCondition": "Treat-to-target response",
+        "expectedFinding": "Above target",
+        "clinicalRationale": "Guides allopurinol increases of 50 to 100 mg every 4 to 6 weeks (UHB) or monthly (NICE).",
+        "normalValue": "Below 360 micromol/L (NICE) or below 300 micromol/L (UHB)",
+        "references": [
+          {
+            "title": "NICE NG219: Gout: diagnosis and management",
+            "edition": "NICE NG219, Recommendation 1.5.5 and 1.5.6",
+            "url": "https://www.nice.org.uk/guidance/ng219/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Estimated glomerular filtration rate (eGFR)",
+        "modalityTarget": "Renal function",
+        "targetCondition": "Renal dose limits",
+        "expectedFinding": "eGFR 10 to 50 requires lower allopurinol maximum",
+        "clinicalRationale": "Allopurinol maximum falls with eGFR; febuxostat is used with caution if eGFR under 30.",
+        "normalValue": "eGFR above 90 mL/min/1.73 m²",
+        "references": [
+          {
+            "title": "University Hospitals Birmingham NHS Foundation Trust: Gout Guidelines, Same Day Emergency Care (SDEC), undated",
+            "edition": "UHB SDEC Gout Guidelines, Section Urate-lowering therapy",
+            "url": "https://www.uhb.nhs.uk/media/y2tpnr4t/gout-guidelines.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Cardiovascular risk review (ischaemic heart disease or heart failure)",
+        "modalityTarget": "Cardiovascular disease",
+        "targetCondition": "Febuxostat suitability",
+        "expectedFinding": "Established disease",
+        "clinicalRationale": "UHB advises avoiding febuxostat; NICE advises allopurinol first line in major cardiovascular disease.",
+        "normalValue": "No established cardiovascular disease",
+        "references": [
+          {
+            "title": "University Hospitals Birmingham NHS Foundation Trust: Gout Guidelines, Same Day Emergency Care (SDEC), undated",
+            "edition": "UHB SDEC Gout Guidelines, Section Urate-lowering therapy",
+            "url": "https://www.uhb.nhs.uk/media/y2tpnr4t/gout-guidelines.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Annual serum urate after target reached",
+        "modalityTarget": "Long-term monitoring",
+        "targetCondition": "Loss of control",
+        "expectedFinding": "Above target",
+        "clinicalRationale": "NICE suggests considering annual monitoring.",
+        "normalValue": "Below target",
+        "references": [
+          {
+            "title": "NICE NG219: Gout: diagnosis and management",
+            "edition": "NICE NG219, Recommendation 1.5.15",
+            "url": "https://www.nice.org.uk/guidance/ng219/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Review of flares and tophi",
+        "modalityTarget": "Clinical response",
+        "targetCondition": "Persistent disease",
+        "expectedFinding": "Frequent flares or tophi despite urate below 360 micromol/L",
+        "clinicalRationale": "Lower the target to below 300 micromol/L.",
+        "normalValue": "No tophi and few flares",
+        "references": [
+          {
+            "title": "NICE NG219: Gout: diagnosis and management",
+            "edition": "NICE NG219, Recommendation 1.5.7",
+            "url": "https://www.nice.org.uk/guidance/ng219/chapter/Recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Time since last flare",
+        "modalityTarget": "Flare status",
+        "targetCondition": "Readiness to start",
+        "expectedFinding": "Less than 2 to 4 weeks since flare settled",
+        "clinicalRationale": "Delay starting until at least 2 to 4 weeks after the flare has settled.",
+        "normalValue": "At least 2 to 4 weeks",
+        "references": [
+          {
+            "title": "NICE NG219: Gout: diagnosis and management",
+            "edition": "NICE NG219, Recommendation 1.5.4",
+            "url": "https://www.nice.org.uk/guidance/ng219/chapter/Recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "indicate",
+      "title": "Offer urate-lowering therapy",
+      "timeframe": "After a flare",
+      "actions": [
+        "Offer for multiple or troublesome flares, CKD 3 to 5, diuretics, tophi or chronic gouty arthritis; discuss with others after a flare."
+      ]
+    },
+    {
+      "id": "start",
+      "title": "Start low",
+      "timeframe": "2 to 4 weeks after flare settles",
+      "actions": [
+        "Allopurinol 50 to 100 mg daily; febuxostat 80 mg daily if allopurinol is not suitable and no established ischaemic heart disease or heart failure."
+      ]
+    },
+    {
+      "id": "titrate",
+      "title": "Titrate to target",
+      "timeframe": "Every 4 to 6 weeks",
+      "actions": [
+        "Increase allopurinol by 50 to 100 mg until the target urate is reached (maximum 900 mg daily with eGFR above 50); febuxostat 120 mg after 4 to 6 weeks if target not achieved."
+      ]
+    },
+    {
+      "id": "prophylaxis",
+      "title": "Flare prophylaxis",
+      "timeframe": "On starting and titrating",
+      "actions": [
+        "Offer colchicine; if unsuitable, a low-dose NSAID or low-dose oral corticosteroid, with a proton pump inhibitor where needed; continue 3 to 6 months."
+      ]
+    },
+    {
+      "id": "monitor",
+      "title": "Monitor",
+      "timeframe": "Annually after target",
+      "actions": [
+        "Annual serum urate; rheumatology referral if CKD 3b to 5 or treatment fails."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Treat-to-target urate-lowering therapy (first line)",
+        "patientGroup": "Adults with gout",
+        "genericName": "Allopurinol",
+        "dose": "Start 50 to 100 mg; increase by 50 to 100 mg every 4 to 6 weeks until target urate; maximum 900 mg daily",
+        "route": "Oral",
+        "frequency": "Once daily (divided doses at higher totals)",
+        "duration": "Long term",
+        "adjustments": [
+          "Maximum by eGFR: above 50 up to 900 mg; 20 to 50 200 to 300 mg; 10 to 20 100 to 200 mg; under 10 100 mg daily or alternate days."
+        ],
+        "monitoring": [
+          "Serum urate every 4 to 6 weeks to target, then annually (NICE)."
+        ],
+        "contraindications": [
+          "HLA-B*5801 testing and interactions are not covered in the sources opened; check product information."
+        ],
+        "sourceTitle": "University Hospitals Birmingham NHS Foundation Trust: Gout Guidelines, Same Day Emergency Care (SDEC), undated",
+        "sourceUrl": "https://www.uhb.nhs.uk/media/y2tpnr4t/gout-guidelines.pdf",
+        "sourceEdition": "UHB SDEC Gout Guidelines, Section Urate-lowering therapy",
+        "branch": "Urate-lowering therapy",
+        "step": "Urate-lowering drug",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "Treat-to-target urate-lowering therapy (alternative first line)",
+        "patientGroup": "Adults with gout without established cardiovascular disease",
+        "genericName": "Febuxostat",
+        "dose": "80 mg, increasing to 120 mg after 4 to 6 weeks if target not achieved",
+        "route": "Oral",
+        "frequency": "Once daily",
+        "duration": "Long term",
+        "adjustments": [
+          "Use with caution if eGFR under 30."
+        ],
+        "monitoring": [
+          "Serum urate every 4 to 6 weeks to target."
+        ],
+        "contraindications": [
+          "Avoid in established ischaemic heart disease or heart failure (UHB)."
+        ],
+        "sourceTitle": "University Hospitals Birmingham NHS Foundation Trust: Gout Guidelines, Same Day Emergency Care (SDEC), undated",
+        "sourceUrl": "https://www.uhb.nhs.uk/media/y2tpnr4t/gout-guidelines.pdf",
+        "sourceEdition": "UHB SDEC Gout Guidelines, Section Urate-lowering therapy",
+        "branch": "Urate-lowering therapy",
+        "step": "Urate-lowering drug",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Allopurinol is unsuitable; no established cardiovascular disease"
+      },
+      {
+        "indication": "Flare prophylaxis when starting or titrating urate-lowering therapy",
+        "patientGroup": "Adults who choose prophylaxis",
+        "genericName": "Colchicine (prophylaxis)",
+        "dose": "eGFR above 60: 500 micrograms once or twice a day; 30 to 60: 500 micrograms once a day; 10 to 30: 500 micrograms every 2 to 3 days; under 10: avoid",
+        "route": "Oral",
+        "frequency": "As per eGFR band",
+        "duration": "3 to 6 months on initiation and up-titration",
+        "adjustments": [
+          "Consider dose reduction with potent CYP3A4 or P-glycoprotein inhibitors or statins."
+        ],
+        "monitoring": [
+          "Diarrhoea and muscle symptoms."
+        ],
+        "contraindications": [
+          "eGFR under 10."
+        ],
+        "sourceTitle": "University Hospitals Birmingham NHS Foundation Trust: Gout Guidelines, Same Day Emergency Care (SDEC), undated",
+        "sourceUrl": "https://www.uhb.nhs.uk/media/y2tpnr4t/gout-guidelines.pdf",
+        "sourceEdition": "UHB SDEC Gout Guidelines, Section Prophylaxis",
+        "branch": "Flare prophylaxis",
+        "step": "Prophylaxis",
+        "selection": "all"
+      }
+    ],
+    "note": "Doses and renal limits are from one undated UK hospital guideline; NICE gives none. The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary.",
+    "branches": [
+      {
+        "label": "Urate-lowering therapy",
+        "entryCriteria": "Adult with gout needing treat-to-target urate-lowering therapy"
+      },
+      {
+        "label": "Flare prophylaxis",
+        "entryCriteria": "Adult starting or titrating urate-lowering therapy who chooses prophylaxis"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Target serum urate (NICE)",
+      "threshold": "Below 360 micromol/L; below 300 micromol/L for tophi, chronic gouty arthritis or frequent flares despite below 360."
+    },
+    {
+      "criterion": "Target serum urate (UHB)",
+      "threshold": "Below 300 micromol/L, checked every 4 to 6 weeks."
+    },
+    {
+      "criterion": "Prophylaxis duration (UHB)",
+      "threshold": "Anti-inflammatory prophylaxis for 3 to 6 months on initiation and up-titration."
+    }
+  ],
+  "guidelineComparison": {
+    "title": "Urate target in the two sources",
+    "columns": [
+      "NICE NG219",
+      "UHB SDEC guideline"
+    ],
+    "rows": [
+      {
+        "parameter": "Target serum urate",
+        "values": [
+          "Below 360 micromol/L; below 300 for tophi, chronic gouty arthritis or ongoing flares.",
+          "Below 300 micromol/L."
+        ]
+      },
+      {
+        "parameter": "Titration check",
+        "values": [
+          "Monthly serum urate.",
+          "Every 4 to 6 weeks."
+        ]
+      }
+    ],
+    "note": "Shown side by side and not merged; follow the local rheumatology protocol."
+  },
+  "teaching": {
+    "scope": "Adult with gout starting treat-to-target urate-lowering therapy: indications, allopurinol and febuxostat starting dose and titration, renal dosing, flare prophylaxis and serum urate monitoring, using NICE NG219 and a UK hospital guideline.",
+    "learningObjectives": [
+      "Start low and titrate to target.",
+      "Cover with flare prophylaxis."
+    ],
+    "pitfalls": [
+      "Starting during a flare.",
+      "Using febuxostat in established heart disease."
+    ],
+    "keyPoints": [
+      "Delay starting until 2 to 4 weeks after a flare.",
+      "Renal function limits the allopurinol dose."
+    ],
+    "references": [
+      {
+        "title": "NICE NG219: Gout: diagnosis and management",
+        "edition": "NICE NG219, Recommendation 1.5.1 to 1.5.15",
+        "url": "https://www.nice.org.uk/guidance/ng219/chapter/Recommendations",
+        "locator": "Recommendation 1.5.1 to 1.5.15"
+      },
+      {
+        "title": "University Hospitals Birmingham NHS Foundation Trust: Gout Guidelines, Same Day Emergency Care (SDEC), undated",
+        "edition": "UHB SDEC Gout Guidelines, Section Urate-lowering therapy",
+        "url": "https://www.uhb.nhs.uk/media/y2tpnr4t/gout-guidelines.pdf",
+        "locator": "Section Urate-lowering therapy"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Take urate-lowering treatment every day even without flares.",
+      "Expect flares early in treatment."
+    ],
+    "lifestyleAndDiet": [
+      "Weight, alcohol and diet advice as per clinician."
+    ],
+    "mdtReferrals": [
+      "Primary care; rheumatology; pharmacist."
+    ],
+    "dischargeCriteria": [
+      "Not applicable; long-term management."
+    ],
+    "followUpPlan": "Urate every 4 to 6 weeks to target, then annually."
+  }
+}

@@ -1,0 +1,504 @@
+{
+  "id": "65fce08b-a289-44bd-9c91-79b2243f824c",
+  "title": "Dyslipidaemia and Atherosclerotic Risk",
+  "specialty": "Primary Care / Cardiology",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adults in primary care: cardiovascular risk assessment, lipid testing, statin treatment for primary and secondary prevention, lipid targets, escalation (ezetimibe, PCSK9-targeted therapy) and monitoring. Verified against NICE NG238 (December 2023); doses and contraindications from US FDA prescribing information. QRISK3 is validated in the UK population and may misestimate risk in Saudi patients. A Saudi national lipid guideline was not reviewed for this version. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from emergency-2026-10-12-v1-live."
+    ],
+    "unverifiedSections": [
+      "No Saudi national lipid guideline reviewed",
+      "QRISK3 not validated in Saudi populations",
+      "Inclisiran and alirocumab dosing — specialist protocol",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "65fce08b-a289-44bd-9c91-79b2243f824c",
+      "a398c636-c417-464c-8e8d-34fb1b7072d9"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Atherosclerosis is driven by apolipoprotein-B–containing lipoproteins (mainly LDL) entering the arterial wall, where they are oxidised and taken up by macrophages to form foam cells and plaque. The higher the LDL (or non-HDL) cholesterol and the longer the exposure, the greater the risk of myocardial infarction, stroke and peripheral arterial disease.",
+    "keyMechanisms": [
+      "Non-HDL cholesterol (total minus HDL) captures all atherogenic particles, including triglyceride-rich remnants.",
+      "Statins inhibit HMG-CoA reductase → hepatic LDL-receptor upregulation → 30–50%+ LDL reduction and fewer CVD events.",
+      "Ezetimibe blocks intestinal cholesterol absorption (NPC1L1); PCSK9 inhibitors increase LDL-receptor recycling.",
+      "Secondary causes: hypothyroidism, diabetes, nephrotic syndrome, CKD, cholestatic liver disease, alcohol, drugs (steroids, antipsychotics).",
+      "Familial hypercholesterolaemia: inherited, very high LDL from birth, premature CHD."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Usually asymptomatic until a cardiovascular event.",
+      "Family history of premature CHD (first-degree relative, men under 55, women under 65)."
+    ],
+    "physicalSigns": [
+      "Tendon xanthomas, xanthelasma, corneal arcus under 45 (familial hypercholesterolaemia).",
+      "Eruptive xanthomas, lipaemia retinalis (very high triglycerides).",
+      "Signs of established CVD: carotid bruit, absent pulses."
+    ],
+    "redFlags": [
+      "Total cholesterol above 9.0 mmol/L or non-HDL above 7.5 mmol/L — specialist assessment (NICE)",
+      "Triglycerides above 20 mmol/L (not due to alcohol or poor diabetes control) — urgent specialist review for pancreatitis risk",
+      "Unexplained muscle symptoms on a statin with CK above 5× ULN",
+      "Transaminases above 3× ULN on treatment",
+      "Pregnancy or planning pregnancy on a statin"
+    ],
+    "precipitants": [
+      "Diet high in saturated fat; obesity; inactivity",
+      "Type 2 diabetes and metabolic syndrome",
+      "Hypothyroidism, nephrotic syndrome, CKD",
+      "Drugs: corticosteroids, antipsychotics, some antiretrovirals",
+      "Familial hypercholesterolaemia"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Familial hypercholesterolaemia",
+      "distinguishingFeatures": "Very high LDL, xanthomas, family history — use the FH pathway (NICE CG71)."
+    },
+    {
+      "condition": "Secondary dyslipidaemia",
+      "distinguishingFeatures": "Hypothyroidism, nephrotic syndrome, cholestasis, poorly controlled diabetes, drugs."
+    },
+    {
+      "condition": "Mixed dyslipidaemia/hypertriglyceridaemia",
+      "distinguishingFeatures": "High triglycerides from obesity, alcohol, diabetes."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Full lipid profile (total, HDL, non-HDL, triglycerides; LDL)",
+        "modalityTarget": "Before starting; 2–3 months after starting or changing therapy; then annually",
+        "targetCondition": "Atherogenic lipids and response",
+        "expectedFinding": "Primary prevention: aim for more than 40% reduction in non-HDL. Secondary prevention target: LDL 2.0 mmol/L or less or non-HDL 2.6 mmol/L or less.",
+        "clinicalRationale": "Fasting not required routinely. Total cholesterol above 9.0 or non-HDL above 7.5 → specialist.",
+        "normalValue": "Non-HDL below 4 mmol/L in low-risk adults (laboratory dependent)",
+        "references": [
+          {
+            "title": "NICE NG238: Cardiovascular disease: risk assessment and reduction, including lipid modification",
+            "edition": "NICE guideline, 2023 (updated December 2023)",
+            "url": "https://www.nice.org.uk/guidance/ng238"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "10-year CVD risk score (QRISK3)",
+        "modalityTarget": "Adults 25–84 without CVD (including type 2 diabetes)",
+        "targetCondition": "Primary prevention threshold",
+        "expectedFinding": "10% or more → offer atorvastatin 20 mg.",
+        "clinicalRationale": "Not for type 1 diabetes, CKD or FH — treat as high risk. UK-derived; interpret with clinical judgement in Saudi patients.",
+        "normalValue": "Below 10%",
+        "references": [
+          {
+            "title": "NICE NG238: Cardiovascular disease: risk assessment and reduction, including lipid modification",
+            "edition": "NICE guideline, 2023 (updated December 2023)",
+            "url": "https://www.nice.org.uk/guidance/ng238"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "ALT/AST",
+        "modalityTarget": "Baseline, 2–3 months and 12 months after starting, then only if indicated",
+        "targetCondition": "Statin hepatotoxicity",
+        "expectedFinding": "Above 3× ULN → review.",
+        "clinicalRationale": "Raised but below 3× ULN is not a reason to withhold a statin (NICE).",
+        "normalValue": "ALT below about 40 U/L",
+        "references": [
+          {
+            "title": "NICE NG238: Cardiovascular disease: risk assessment and reduction, including lipid modification",
+            "edition": "NICE guideline, 2023 (updated December 2023)",
+            "url": "https://www.nice.org.uk/guidance/ng238"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Creatine kinase",
+        "modalityTarget": "Only with unexplained muscle symptoms (or before starting if previous symptoms)",
+        "targetCondition": "Myopathy",
+        "expectedFinding": "Above 5× ULN: do not start/stop; below 5×: symptoms unlikely due to statin.",
+        "clinicalRationale": "Do not measure in asymptomatic people (NICE).",
+        "normalValue": "Within reference range",
+        "references": [
+          {
+            "title": "NICE NG238: Cardiovascular disease: risk assessment and reduction, including lipid modification",
+            "edition": "NICE guideline, 2023 (updated December 2023)",
+            "url": "https://www.nice.org.uk/guidance/ng238"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "HbA1c, renal function, TSH (if symptoms)",
+        "modalityTarget": "Baseline",
+        "targetCondition": "Secondary causes and comorbidities",
+        "expectedFinding": "Diabetes, CKD, hypothyroidism.",
+        "clinicalRationale": "Treat secondary causes; CKD changes statin approach.",
+        "references": [
+          {
+            "title": "NICE NG238: Cardiovascular disease: risk assessment and reduction, including lipid modification",
+            "edition": "NICE guideline, 2023 (updated December 2023)",
+            "url": "https://www.nice.org.uk/guidance/ng238"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "assess",
+      "title": "Assess risk",
+      "timeframe": "Before treatment",
+      "actions": [
+        "Record smoking, alcohol, BP, BMI, full lipids, diabetes status, renal function, transaminases, TSH if symptomatic (NICE 1.5.5).",
+        "Use QRISK3 for people 25–84 without CVD; type 1 diabetes, CKD and FH are high risk without scoring.",
+        "Exclude familial hypercholesterolaemia and secondary causes."
+      ]
+    },
+    {
+      "id": "primary",
+      "title": "Primary prevention",
+      "timeframe": "After lifestyle discussion",
+      "actions": [
+        "Optimise lifestyle and other risk factors first; offer statin if lifestyle change is ineffective or inappropriate.",
+        "QRISK3 10% or more: atorvastatin 20 mg once daily; consider even below 10% if the person prefers or risk is underestimated.",
+        "Type 1 diabetes: offer atorvastatin 20 mg if older than 40, diabetes for more than 10 years, nephropathy or other risk factors.",
+        "Target: more than 40% reduction in non-HDL cholesterol; if not met check adherence and consider increasing the dose."
+      ]
+    },
+    {
+      "id": "secondary",
+      "title": "Secondary prevention (established CVD)",
+      "timeframe": "Immediately — do not delay",
+      "actions": [
+        "Atorvastatin 80 mg whatever the cholesterol, unless interactions, high adverse-effect risk or preference (then lower dose).",
+        "ACS: start in hospital; full lipids on admission and at 2–3 months.",
+        "Target LDL 2.0 mmol/L or less or non-HDL 2.6 mmol/L or less.",
+        "Not at target on maximum tolerated statin: add ezetimibe; then PCSK9-targeted therapy (alirocumab, evolocumab) or inclisiran per eligibility. Ezetimibe may be added even if at target."
+      ]
+    },
+    {
+      "id": "ckd",
+      "title": "Chronic kidney disease",
+      "timeframe": "At diagnosis of CKD",
+      "actions": [
+        "Atorvastatin 20 mg for primary or secondary prevention; increase if target not met and eGFR 30 or more; agree higher doses with a renal specialist if eGFR below 30 (NICE 1.8)."
+      ]
+    },
+    {
+      "id": "intolerance",
+      "title": "Statin intolerance",
+      "timeframe": "If muscle symptoms",
+      "actions": [
+        "Measure CK; if below 5× ULN reassure and look for other causes; consider a lower dose or alternative statin; restart after interaction-related stops.",
+        "Do not routinely use fibrates, nicotinic acid or omega-3 compounds to prevent CVD (NICE 1.12)."
+      ]
+    },
+    {
+      "id": "pregnancy",
+      "title": "Pregnancy",
+      "timeframe": "Women of childbearing potential",
+      "actions": [
+        "Statins are contraindicated in pregnancy: stop 3 months before trying to conceive and do not restart until breastfeeding has finished (NICE)."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Primary prevention (QRISK3 10% or more), CKD, type 1 diabetes",
+        "patientGroup": "Adults",
+        "genericName": "Atorvastatin",
+        "dose": "20 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term",
+        "adjustments": [
+          "Increase dose if non-HDL reduction below 40% (label range 10–80 mg)",
+          "CKD with eGFR below 30: higher doses only with renal specialist"
+        ],
+        "monitoring": [
+          "Lipids and ALT at 2–3 months; ALT at 12 months"
+        ],
+        "contraindications": [
+          "Acute liver failure or decompensated cirrhosis",
+          "Hypersensitivity"
+        ],
+        "sourceTitle": "NICE NG238: Cardiovascular disease: risk assessment and reduction, including lipid modification",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng238",
+        "sourceEdition": "NICE NG238 recs 1.6.7, 1.7.1–1.7.10, 1.8.1",
+        "branch": "Primary prevention, CKD or type 1 diabetes",
+        "step": "Statin",
+        "selection": "all"
+      },
+      {
+        "indication": "Secondary prevention (established CVD)",
+        "patientGroup": "Adults",
+        "genericName": "Atorvastatin",
+        "dose": "80 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term",
+        "adjustments": [
+          "Lower dose if interacting drugs, high adverse-effect risk or preference",
+          "Avoid strong CYP3A4 inhibitors"
+        ],
+        "monitoring": [
+          "Lipids and ALT at 2–3 months; ALT at 12 months; CK only if symptoms"
+        ],
+        "contraindications": [
+          "Acute liver failure or decompensated cirrhosis",
+          "Hypersensitivity"
+        ],
+        "sourceTitle": "NICE NG238: Cardiovascular disease: risk assessment and reduction, including lipid modification",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng238",
+        "sourceEdition": "NICE NG238 recs 1.6.7, 1.7.1–1.7.10, 1.8.1",
+        "branch": "Secondary prevention — established cardiovascular disease",
+        "step": "High-intensity statin",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "Alternative high-intensity statin",
+        "patientGroup": "Adults",
+        "genericName": "Rosuvastatin",
+        "dose": "5–40 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term",
+        "adjustments": [
+          "Asian patients: start at 5 mg (higher exposure — label)",
+          "Severe renal impairment: start 5 mg, max 10 mg (label)"
+        ],
+        "monitoring": [
+          "LDL from 4 weeks",
+          "ALT, CK if symptoms"
+        ],
+        "contraindications": [
+          "Acute liver failure or decompensated cirrhosis",
+          "Hypersensitivity"
+        ],
+        "sourceTitle": "Rosuvastatin prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=02797697-300a-43db-92cf-9b78f08626be",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "branch": "Secondary prevention — established cardiovascular disease",
+        "step": "High-intensity statin",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Atorvastatin is unsuitable or not tolerated"
+      },
+      {
+        "indication": "Not at target on maximum tolerated statin, or statin intolerant",
+        "patientGroup": "Adults",
+        "genericName": "Ezetimibe",
+        "dose": "10 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term",
+        "adjustments": [
+          "With a statin the statin's contraindications apply"
+        ],
+        "monitoring": [
+          "Lipids at 2–3 months"
+        ],
+        "contraindications": [
+          "Hypersensitivity",
+          "With a statin: the statin's contraindications apply"
+        ],
+        "sourceTitle": "Ezetimibe prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=02b00cb2-7253-4fb4-a216-53691a929a28",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "branch": "Not at lipid target on a statin",
+        "step": "Second-line add-on",
+        "selection": "all"
+      },
+      {
+        "indication": "Secondary prevention not at target despite statin and ezetimibe (eligibility per NICE TA394)",
+        "patientGroup": "Adults",
+        "genericName": "Evolocumab",
+        "dose": "140 mg every 2 weeks or 420 mg once monthly",
+        "route": "SC",
+        "frequency": "As stated",
+        "duration": "Long term",
+        "adjustments": [
+          "Specialist initiation per local criteria"
+        ],
+        "monitoring": [
+          "Lipids",
+          "Injection-site reactions"
+        ],
+        "contraindications": [
+          "Serious hypersensitivity"
+        ],
+        "sourceTitle": "Evolocumab (Repatha) prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=cd61e902-166d-4aa6-9f3c-a18c1008d07e",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "branch": "Not at lipid target on a statin",
+        "step": "Third-line add-on",
+        "selection": "all",
+        "useWhen": "Secondary prevention not at target despite a statin and ezetimibe"
+      }
+    ],
+    "note": "Atorvastatin 20 mg and 80 mg indications are from NICE NG238; other doses and all contraindications are from US FDA labels. Inclisiran and alirocumab dosing not reviewed. Check SFDA registration, formulary and availability.",
+    "branches": [
+      {
+        "label": "Primary prevention, CKD or type 1 diabetes",
+        "entryCriteria": "No established cardiovascular disease with QRISK3 10% or more, CKD or type 1 diabetes"
+      },
+      {
+        "label": "Secondary prevention — established cardiovascular disease",
+        "entryCriteria": "Established atherosclerotic cardiovascular disease"
+      },
+      {
+        "label": "Not at lipid target on a statin",
+        "entryCriteria": "Not at target on the maximum tolerated statin, or statin intolerant"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Offer statin (primary prevention)",
+      "threshold": "QRISK3 10% or more"
+    },
+    {
+      "criterion": "Primary prevention target",
+      "threshold": "More than 40% reduction in non-HDL cholesterol"
+    },
+    {
+      "criterion": "Secondary prevention target",
+      "threshold": "LDL 2.0 mmol/L or less, or non-HDL 2.6 mmol/L or less"
+    },
+    {
+      "criterion": "Specialist referral",
+      "threshold": "Total cholesterol above 9.0 or non-HDL above 7.5 mmol/L"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "NICE NG238: primary vs secondary prevention",
+    "columns": [
+      "Primary prevention",
+      "Secondary prevention"
+    ],
+    "rows": [
+      {
+        "parameter": "Who",
+        "values": [
+          "QRISK3 10% or more (or preference); T1DM; CKD",
+          "Established CVD"
+        ]
+      },
+      {
+        "parameter": "Starting statin",
+        "values": [
+          "Atorvastatin 20 mg",
+          "Atorvastatin 80 mg"
+        ]
+      },
+      {
+        "parameter": "Target",
+        "values": [
+          "More than 40% non-HDL reduction",
+          "LDL 2.0 or less / non-HDL 2.6 or less"
+        ]
+      },
+      {
+        "parameter": "Escalation",
+        "values": [
+          "Increase statin; ezetimibe per TA385",
+          "Ezetimibe, then PCSK9-targeted therapy or inclisiran"
+        ]
+      }
+    ],
+    "note": "QRISK3 was developed in the UK; Saudi-specific risk calibration was not reviewed."
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Assess cardiovascular risk and manage lipid-lowering therapy for primary and secondary prevention."
+    ],
+    "pitfalls": [
+      "Withholding statins for ALT below 3× ULN.",
+      "Checking CK in asymptomatic patients.",
+      "Missing familial hypercholesterolaemia.",
+      "Using fibrates or omega-3 for CVD prevention.",
+      "Delaying statin after ACS."
+    ],
+    "keyPoints": [
+      "QRISK3 10% or more: atorvastatin 20 mg.",
+      "Established CVD: atorvastatin 80 mg — do not delay.",
+      "Secondary target LDL 2.0 or non-HDL 2.6 mmol/L.",
+      "Lipids and ALT at 2–3 months; CK only if symptoms.",
+      "Stop statins 3 months before conception."
+    ],
+    "references": [
+      {
+        "title": "NICE NG238: Cardiovascular disease: risk assessment and reduction, including lipid modification",
+        "edition": "NICE guideline, 2023 (updated December 2023)",
+        "url": "https://www.nice.org.uk/guidance/ng238",
+        "locator": "Recs 1.1 (risk assessment), 1.5–1.9 (statins), 1.7 (secondary prevention target and escalation), 1.8 (CKD), 1.11 (monitoring), 1.12 (treatments not to use)"
+      },
+      {
+        "title": "Atorvastatin calcium prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00afce9b-48c9-487a-a738-e359c005c707",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Rosuvastatin prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=02797697-300a-43db-92cf-9b78f08626be",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Ezetimibe prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=02b00cb2-7253-4fb4-a216-53691a929a28",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Evolocumab (Repatha) prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=cd61e902-166d-4aa6-9f3c-a18c1008d07e",
+        "locator": "Section 4 Contraindications"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Statin benefits and the low risk of serious muscle effects.",
+      "Interactions (e.g. grapefruit juice, some antibiotics/antifungals).",
+      "Report unexplained muscle pain."
+    ],
+    "lifestyleAndDiet": [
+      "Cardioprotective diet (reduce saturated fat, more fibre, fruit and vegetables).",
+      "150 minutes/week moderate activity; weight management.",
+      "Stop smoking; limit alcohol."
+    ],
+    "mdtReferrals": [
+      "Lipid specialist: total cholesterol above 9.0 or non-HDL above 7.5, suspected FH, triglycerides above 20 mmol/L, intolerance to multiple statins."
+    ],
+    "dischargeCriteria": [
+      "Not applicable — outpatient care."
+    ],
+    "followUpPlan": "Lipids and ALT at 2–3 months after starting or changing treatment, ALT again at 12 months, then annual lipid review with adherence check (NICE 1.11)."
+  }
+}

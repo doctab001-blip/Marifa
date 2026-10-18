@@ -1,0 +1,540 @@
+{
+  "id": "6fccc942-c6f3-4ef7-94cf-26fd23edfd27",
+  "title": "Acute Upper Gastrointestinal Bleeding",
+  "specialty": "Gastroenterology / Emergency Medicine",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adults with acute upper GI bleeding (variceal and non-variceal) in the first 24 h. Verified against NICE CG141, the BSG-led multisociety AUGIB care bundle (2020), and Saudi MOH protocols for anticoagulant reversal and antibiotic prophylaxis in cirrhosis with GI bleeding. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from emergency-2026-10-12-v1-live."
+    ],
+    "unverifiedSections": [
+      "Tranexamic acid not addressed in the cited sources",
+      "MOH reversal protocol URL — document title verified, direct link to be confirmed",
+      "Local endoscopy out-of-hours availability",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "6fccc942-c6f3-4ef7-94cf-26fd23edfd27",
+      "f4ac75eb-1330-4fde-8a24-3a170a1ab4a1"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Bleeding proximal to the ligament of Treitz. Non-variceal causes (mainly peptic ulcer disease from H. pylori, NSAIDs or aspirin) are most common; variceal bleeding results from portal hypertension in cirrhosis and carries higher mortality.",
+    "keyMechanisms": [
+      "Peptic ulcer: acid–pepsin erosion through a vessel; 'high-risk stigmata' (active bleeding, visible vessel, adherent clot) predict rebleeding.",
+      "Varices: portal hypertension diverts blood through fragile oesophageal or gastric collaterals; bleeding is often torrential, and patients are prone to infection, encephalopathy and kidney injury.",
+      "Haemoglobin falls late (haemodilution takes hours); urea rises because blood is digested and absorbed.",
+      "Antithrombotics (aspirin, P2Y12 inhibitors, warfarin, DOACs) and coagulopathy of liver disease worsen bleeding."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Haematemesis (fresh blood or coffee-ground vomit).",
+      "Melaena (black tarry stool); fresh rectal blood with shock if bleeding is brisk.",
+      "Dizziness, syncope, breathlessness.",
+      "Epigastric pain, NSAID/aspirin/anticoagulant use, alcohol or known liver disease."
+    ],
+    "physicalSigns": [
+      "Tachycardia, hypotension, postural drop, cool peripheries (hypovolaemia).",
+      "Stigmata of chronic liver disease: jaundice, ascites, spider naevi, splenomegaly (suspect varices).",
+      "Melaena on rectal examination."
+    ],
+    "redFlags": [
+      "Haemodynamic instability despite resuscitation → major haemorrhage protocol and critical care",
+      "Suspected variceal bleeding (cirrhosis)",
+      "Ongoing haematemesis",
+      "Anticoagulant use with active bleeding",
+      "Rebleeding after endoscopic treatment"
+    ],
+    "precipitants": [
+      "Peptic ulcer (H. pylori, NSAIDs, aspirin).",
+      "Oesophageal/gastric varices (cirrhosis).",
+      "Anticoagulants and antiplatelets.",
+      "Mallory–Weiss tear, oesophagitis, malignancy."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Lower GI bleeding",
+      "distinguishingFeatures": "Fresh red blood per rectum without shock; brisk upper bleed can mimic it — urea:creatinine ratio and GBS help."
+    },
+    {
+      "condition": "Swallowed blood (epistaxis, haemoptysis)",
+      "distinguishingFeatures": "ENT or respiratory source."
+    },
+    {
+      "condition": "Iron or bismuth stool darkening",
+      "distinguishingFeatures": "No blood on testing; normal haemodynamics."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count",
+        "modalityTarget": "Arrival, then serially",
+        "targetCondition": "Blood loss",
+        "expectedFinding": "Low haemoglobin (may be normal early); low platelets in liver disease.",
+        "clinicalRationale": "Transfuse red cells if Hb below 70 g/L (target 70–100 g/L); higher threshold in ischaemic heart disease or instability. Platelets if actively bleeding and below 50 × 10⁹/L.",
+        "normalValue": "Hb 130–170 g/L (men), 120–150 g/L (women); platelets 150–400 × 10⁹/L",
+        "references": [
+          {
+            "title": "British Society of Gastroenterology (BSG)-led multisociety consensus care bundle for the early clinical management of acute upper gastrointestinal bleeding",
+            "edition": "Frontline Gastroenterol 2020;11(4):311 (Siau K et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7307267/"
+          },
+          {
+            "title": "NICE CG141: Acute upper gastrointestinal bleeding in over 16s: management",
+            "edition": "NICE clinical guideline, 2012 (updated 2016)",
+            "url": "https://www.nice.org.uk/guidance/cg141"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Urea and creatinine",
+        "modalityTarget": "Arrival",
+        "targetCondition": "Upper GI source, severity",
+        "expectedFinding": "Raised urea (digested blood).",
+        "clinicalRationale": "Part of the Glasgow-Blatchford score.",
+        "normalValue": "Urea 2.5–7.8 mmol/L",
+        "references": [
+          {
+            "title": "British Society of Gastroenterology (BSG)-led multisociety consensus care bundle for the early clinical management of acute upper gastrointestinal bleeding",
+            "edition": "Frontline Gastroenterol 2020;11(4):311 (Siau K et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7307267/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Coagulation (PT/INR, aPTT), fibrinogen",
+        "modalityTarget": "Arrival",
+        "targetCondition": "Coagulopathy, anticoagulants",
+        "expectedFinding": "INR or aPTT above 1.5× normal; fibrinogen below 1.5 g/L.",
+        "clinicalRationale": "Active bleeding: FFP if PT/INR or aPTT above 1.5× normal; cryoprecipitate if fibrinogen stays below 1.5 g/L (NICE). Warfarin + active bleeding: PCC.",
+        "normalValue": "INR 0.8–1.2; fibrinogen 2–4 g/L",
+        "references": [
+          {
+            "title": "NICE CG141: Acute upper gastrointestinal bleeding in over 16s: management",
+            "edition": "NICE clinical guideline, 2012 (updated 2016)",
+            "url": "https://www.nice.org.uk/guidance/cg141"
+          },
+          {
+            "title": "MOH Reversal Strategies for Anticoagulants protocol, Saudi Ministry of Health",
+            "edition": "MOH therapeutic protocols",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Group and save / crossmatch",
+        "modalityTarget": "Arrival",
+        "targetCondition": "Transfusion",
+        "expectedFinding": "—",
+        "clinicalRationale": "Crossmatch if unstable or Hb low.",
+        "references": [
+          {
+            "title": "NICE CG141: Acute upper gastrointestinal bleeding in over 16s: management",
+            "edition": "NICE clinical guideline, 2012 (updated 2016)",
+            "url": "https://www.nice.org.uk/guidance/cg141"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Liver function tests",
+        "modalityTarget": "Arrival",
+        "targetCondition": "Liver disease",
+        "expectedFinding": "Raised bilirubin, low albumin.",
+        "clinicalRationale": "Supports suspected cirrhosis/varices.",
+        "normalValue": "Bilirubin below 21 µmol/L; albumin 35–50 g/L",
+        "references": [
+          {
+            "title": "British Society of Gastroenterology (BSG)-led multisociety consensus care bundle for the early clinical management of acute upper gastrointestinal bleeding",
+            "edition": "Frontline Gastroenterol 2020;11(4):311 (Siau K et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7307267/"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Glasgow-Blatchford score (GBS)",
+        "modalityTarget": "At presentation",
+        "targetCondition": "Need for intervention",
+        "expectedFinding": "Uses urea, Hb, systolic BP, pulse, melaena, syncope, liver and cardiac disease.",
+        "clinicalRationale": "GBS 0–1: consider outpatient management (BSG; NICE: discharge if 0). Higher scores: admit and endoscopy within 24 h.",
+        "references": [
+          {
+            "title": "British Society of Gastroenterology (BSG)-led multisociety consensus care bundle for the early clinical management of acute upper gastrointestinal bleeding",
+            "edition": "Frontline Gastroenterol 2020;11(4):311 (Siau K et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7307267/"
+          },
+          {
+            "title": "NICE CG141: Acute upper gastrointestinal bleeding in over 16s: management",
+            "edition": "NICE clinical guideline, 2012 (updated 2016)",
+            "url": "https://www.nice.org.uk/guidance/cg141"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Full Rockall score",
+        "modalityTarget": "After endoscopy",
+        "targetCondition": "Rebleeding and mortality risk",
+        "expectedFinding": "Includes endoscopic diagnosis and stigmata.",
+        "clinicalRationale": "Use after endoscopy (NICE).",
+        "references": [
+          {
+            "title": "NICE CG141: Acute upper gastrointestinal bleeding in over 16s: management",
+            "edition": "NICE clinical guideline, 2012 (updated 2016)",
+            "url": "https://www.nice.org.uk/guidance/cg141"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Upper GI endoscopy",
+        "modalityTarget": "Immediately after resuscitation if unstable; within 24 h for all others",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Bleeding source; varices; ulcer stigmata.",
+        "clinicalRationale": "Diagnostic and therapeutic. High-risk stigmata → endoscopic therapy and high-dose PPI.",
+        "references": [
+          {
+            "title": "NICE CG141: Acute upper gastrointestinal bleeding in over 16s: management",
+            "edition": "NICE clinical guideline, 2012 (updated 2016)",
+            "url": "https://www.nice.org.uk/guidance/cg141"
+          },
+          {
+            "title": "British Society of Gastroenterology (BSG)-led multisociety consensus care bundle for the early clinical management of acute upper gastrointestinal bleeding",
+            "edition": "Frontline Gastroenterol 2020;11(4):311 (Siau K et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7307267/"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "CT angiography / interventional radiology",
+        "modalityTarget": "Unstable rebleeding after endoscopic treatment",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Active extravasation.",
+        "clinicalRationale": "Interventional radiology for unstable rebleeding; surgery if IR not promptly available.",
+        "references": [
+          {
+            "title": "NICE CG141: Acute upper gastrointestinal bleeding in over 16s: management",
+            "edition": "NICE clinical guideline, 2012 (updated 2016)",
+            "url": "https://www.nice.org.uk/guidance/cg141"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "resus",
+      "title": "Resuscitate",
+      "timeframe": "Immediately",
+      "actions": [
+        "IV access, IV fluids for all; unstable: 500 mL crystalloid bolus in under 15 min (BSG).",
+        "Restrictive transfusion: trigger Hb below 70 g/L, target 70–100 g/L (higher trigger in ischaemic heart disease or instability).",
+        "Ongoing instability: activate major haemorrhage protocol (blood, platelets, clotting factors) and critical care review.",
+        "Platelets if actively bleeding and below 50 × 10⁹/L; do not give platelets if stable and not bleeding."
+      ]
+    },
+    {
+      "id": "risk",
+      "title": "Risk-stratify",
+      "timeframe": "At presentation",
+      "actions": [
+        "Calculate GBS. GBS 0–1: consider outpatient management with early endoscopy follow-up."
+      ]
+    },
+    {
+      "id": "antithrombotic",
+      "title": "Antithrombotics and reversal",
+      "timeframe": "At presentation",
+      "actions": [
+        "Continue low-dose aspirin for secondary prevention (stop other NSAIDs).",
+        "Interrupt P2Y12 inhibitors until haemostasis — if coronary stents, decide with cardiology.",
+        "Interrupt warfarin; if actively bleeding give PCC (MOH: dose by INR — e.g. INR 2–2.5: 0.9–1.3 mL/kg Octaplex; maximum single dose 3000 IU) plus vitamin K 5–10 mg IV.",
+        "Interrupt DOAC; life-threatening bleeding: idarucizumab (dabigatran) or andexanet alfa (apixaban/rivaroxaban) where available; seek haematology advice. MOH protocol lists PCC for life-threatening DOAC bleeding."
+      ]
+    },
+    {
+      "id": "variceal",
+      "title": "Suspected variceal bleeding (cirrhosis)",
+      "timeframe": "At presentation",
+      "actions": [
+        "Terlipressin 2 mg IV four times a day (BSG); stop after definitive haemostasis or 5 days (NICE). Caution in ischaemic heart or peripheral vascular disease.",
+        "IV antibiotics: ceftriaxone 1 g IV every 24 h (MOH prophylaxis in cirrhosis with GI bleeding); oral step-down amoxicillin–clavulanate 500 mg q12h when stable.",
+        "Endoscopy: band ligation for oesophageal varices; cyanoacrylate for gastric varices; TIPS if not controlled."
+      ]
+    },
+    {
+      "id": "endoscopy",
+      "title": "Endoscopy and non-variceal treatment",
+      "timeframe": "Within 24 h (immediately after resuscitation if unstable)",
+      "actions": [
+        "No PPI before endoscopy for suspected non-variceal bleeding (NICE).",
+        "Endoscopic therapy: mechanical (clips) ± adrenaline, thermal + adrenaline, or fibrin/thrombin + adrenaline — never adrenaline alone.",
+        "High-risk stigmata after endoscopy: high-dose IV PPI (e.g. 80 mg bolus then 8 mg/h for 72 h, or intermittent IV / high-dose oral PPI as alternatives).",
+        "Rebleeding: repeat endoscopy; unstable rebleed → interventional radiology, or surgery if IR is not promptly available."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Suspected variceal bleeding",
+        "patientGroup": "Adults",
+        "genericName": "Terlipressin",
+        "dose": "2 mg",
+        "route": "IV",
+        "frequency": "Four times a day",
+        "duration": "Until haemostasis or up to 5 days",
+        "adjustments": [
+          "Caution: ischaemic heart disease, peripheral vascular disease",
+          "Check SFDA-licensed duration"
+        ],
+        "monitoring": [
+          "ECG, sodium, peripheral perfusion"
+        ],
+        "sourceTitle": "BSG AUGIB care bundle 2020",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7307267/",
+        "sourceEdition": "Frontline Gastroenterol 2020",
+        "branch": "Suspected variceal bleeding",
+        "step": "Vasoactive drug",
+        "selection": "all"
+      },
+      {
+        "indication": "Cirrhosis with GI bleeding (infection prophylaxis)",
+        "patientGroup": "Adults",
+        "genericName": "Ceftriaxone",
+        "dose": "1 g",
+        "route": "IV",
+        "frequency": "Every 24 h",
+        "duration": "Switch to oral when stable and bleeding controlled after 48 h",
+        "adjustments": [
+          "Oral step-down: amoxicillin–clavulanate 500 mg q12h",
+          "Severe beta-lactam allergy: ciprofloxacin per MOH"
+        ],
+        "monitoring": [
+          "Renal function"
+        ],
+        "sourceTitle": "MOH Intra-abdominal Infections Treatment Protocol",
+        "sourceUrl": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/Internal-Abdominal-infection-Treatment-Protocol.pdf",
+        "sourceEdition": "Prophylaxis in cirrhosis and GI bleeds",
+        "branch": "Suspected variceal bleeding",
+        "step": "Infection prophylaxis",
+        "selection": "all",
+        "useWhen": "Cirrhosis"
+      },
+      {
+        "indication": "High-risk ulcer stigmata after endoscopy",
+        "patientGroup": "Adults",
+        "genericName": "Proton pump inhibitor (e.g. pantoprazole/omeprazole)",
+        "dose": "80 mg bolus then 8 mg/h",
+        "route": "IV",
+        "frequency": "Continuous infusion",
+        "duration": "72 h",
+        "adjustments": [
+          "Intermittent IV or high-dose oral PPI are acceptable alternatives (BSG)",
+          "Not before endoscopy for suspected non-variceal bleeding (NICE)"
+        ],
+        "monitoring": [
+          "Rebleeding"
+        ],
+        "sourceTitle": "BSG AUGIB care bundle 2020",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7307267/",
+        "sourceEdition": "Frontline Gastroenterol 2020",
+        "branch": "High-risk ulcer stigmata after endoscopy",
+        "step": "Acid suppression",
+        "selection": "all"
+      },
+      {
+        "indication": "Warfarin with active major bleeding",
+        "patientGroup": "Adults",
+        "genericName": "Prothrombin complex concentrate (Octaplex)",
+        "dose": "By INR: 2–2.5 → 0.9–1.3 mL/kg; 2.5–3 → 1.3–1.6 mL/kg; 3–3.5 → 1.6–1.9 mL/kg; above 3.5 → above 1.9 mL/kg (max single dose 3000 IU)",
+        "route": "IV",
+        "frequency": "Repeat if INR not corrected",
+        "duration": "Single dose(s)",
+        "adjustments": [
+          "Give vitamin K 5–10 mg IV with PCC",
+          "Contraindicated in chronic liver disease coagulopathy and oesophageal varices (MOH)",
+          "Restricted prescriber per MOH protocol"
+        ],
+        "monitoring": [
+          "INR at baseline and 30 min",
+          "Thromboembolism"
+        ],
+        "sourceTitle": "MOH Reversal Strategies for Anticoagulants",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/",
+        "sourceEdition": "PCC dosing table",
+        "branch": "Warfarin with active major bleeding",
+        "step": "Reversal",
+        "selection": "all"
+      }
+    ],
+    "note": "PCC is contraindicated for coagulopathy of chronic liver disease and in oesophageal varices per the MOH reversal protocol — use FFP/cryoprecipitate per NICE in these patients. Check SFDA registration and formulary (terlipressin, andexanet, idarucizumab availability varies).",
+    "branches": [
+      {
+        "label": "Suspected variceal bleeding",
+        "entryCriteria": "Adult with suspected variceal bleeding"
+      },
+      {
+        "label": "High-risk ulcer stigmata after endoscopy",
+        "entryCriteria": "Adult with high-risk ulcer stigmata after endoscopy"
+      },
+      {
+        "label": "Warfarin with active major bleeding",
+        "entryCriteria": "Adult on warfarin with active major bleeding"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Transfusion trigger (BSG)",
+      "threshold": "Hb below 70 g/L; target 70–100 g/L; higher trigger in ischaemic heart disease or instability"
+    },
+    {
+      "criterion": "Outpatient management",
+      "threshold": "GBS 0–1 (BSG); GBS 0 (NICE)"
+    },
+    {
+      "criterion": "Endoscopy timing",
+      "threshold": "Unstable: immediately after resuscitation; others: within 24 h"
+    },
+    {
+      "criterion": "Platelets",
+      "threshold": "Active bleeding and platelets below 50 × 10⁹/L"
+    },
+    {
+      "criterion": "FFP / cryoprecipitate",
+      "threshold": "Active bleeding and INR or aPTT above 1.5× normal; cryo if fibrinogen below 1.5 g/L"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "NICE CG141 vs BSG care bundle 2020",
+    "columns": [
+      "NICE CG141",
+      "BSG bundle 2020"
+    ],
+    "rows": [
+      {
+        "parameter": "Early discharge",
+        "values": [
+          "Blatchford score 0",
+          "GBS 0–1"
+        ]
+      },
+      {
+        "parameter": "Transfusion",
+        "values": [
+          "Full clinical picture; avoid over-transfusion",
+          "Restrictive: trigger Hb below 70 g/L, target 70–100 g/L"
+        ]
+      },
+      {
+        "parameter": "Aspirin",
+        "values": [
+          "Continue low-dose aspirin once haemostasis achieved",
+          "Continue aspirin at presentation"
+        ]
+      },
+      {
+        "parameter": "PPI",
+        "values": [
+          "Not before endoscopy; after endoscopy if stigmata",
+          "High-dose IV PPI if high-risk stigmata (oral high-dose alternative)"
+        ]
+      }
+    ],
+    "note": "Both recommend endoscopy within 24 h (immediately after resuscitation if unstable), terlipressin and antibiotics for suspected variceal bleeding."
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Recognise, investigate and manage acute upper gastrointestinal bleeding in the emergency department."
+    ],
+    "pitfalls": [
+      "Over-transfusion.",
+      "Adrenaline monotherapy at endoscopy.",
+      "Forgetting antibiotics in cirrhosis.",
+      "Using PCC for liver-disease coagulopathy or varices (contraindicated per MOH).",
+      "Stopping aspirin without a reason; no restart plan for antithrombotics."
+    ],
+    "keyPoints": [
+      "Resuscitate; restrictive transfusion (Hb trigger 70 g/L).",
+      "GBS 0–1 can be managed as outpatients.",
+      "Suspected varices: terlipressin + antibiotics before endoscopy.",
+      "Endoscopy within 24 h; immediately if unstable.",
+      "No PPI before endoscopy (NICE); high-dose PPI after high-risk stigmata."
+    ],
+    "references": [
+      {
+        "title": "NICE CG141: Acute upper gastrointestinal bleeding in over 16s: management",
+        "edition": "NICE clinical guideline, 2012 (updated 2016)",
+        "url": "https://www.nice.org.uk/guidance/cg141",
+        "locator": "Recs 1.1–1.7"
+      },
+      {
+        "title": "British Society of Gastroenterology (BSG)-led multisociety consensus care bundle for the early clinical management of acute upper gastrointestinal bleeding",
+        "edition": "Frontline Gastroenterol 2020;11(4):311 (Siau K et al.)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7307267/",
+        "locator": "Bundle statements: resuscitation, risk stratification, variceal bleeding, antithrombotics, endoscopy, PPI"
+      },
+      {
+        "title": "MOH Reversal Strategies for Anticoagulants protocol, Saudi Ministry of Health",
+        "edition": "MOH therapeutic protocols",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/",
+        "locator": "PCC (Octaplex) dosing table; FFP; vitamin K"
+      },
+      {
+        "title": "MOH Intra-abdominal Infections Treatment Protocol",
+        "edition": "Saudi Ministry of Health, 1st version 2022",
+        "url": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/Internal-Abdominal-infection-Treatment-Protocol.pdf",
+        "locator": "Prophylaxis in patients with cirrhosis and GI bleeds"
+      },
+      {
+        "title": "SFDA Saudi Drug Information System (registration search)",
+        "edition": "Accessed 11–12 Oct 2026",
+        "url": "https://sdi.sfda.gov.sa/"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Avoid NSAIDs; H. pylori treatment.",
+      "Alcohol cessation in liver disease.",
+      "When to restart blood thinners."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable in the acute phase."
+    ],
+    "mdtReferrals": [
+      "Gastroenterology/endoscopy; hepatology for varices.",
+      "Interventional radiology and surgery for rebleeding.",
+      "Critical care for ongoing instability; haematology for anticoagulant reversal."
+    ],
+    "dischargeCriteria": [
+      "GBS 0–1 at presentation, or after endoscopy with low-risk findings and stable haemoglobin.",
+      "Haemodynamically stable; no further bleeding; clear plan for restarting antithrombotics."
+    ],
+    "followUpPlan": "H. pylori testing and eradication for ulcer disease; review NSAIDs; restart anticoagulants and antiplatelets with a documented plan; variceal surveillance and secondary prophylaxis via hepatology."
+  }
+}

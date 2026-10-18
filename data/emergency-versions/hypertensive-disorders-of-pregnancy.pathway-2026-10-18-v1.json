@@ -1,0 +1,725 @@
+{
+  "id": "b3a433fb-5f23-4e19-a23f-97de51d4ef11",
+  "title": "Hypertensive Disorders of Pregnancy",
+  "specialty": "Maternal-Fetal Medicine",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Safe Birth",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Pregnant and postnatal women with chronic hypertension, gestational hypertension, pre-eclampsia, severe pre-eclampsia, HELLP and eclampsia. Verified against NICE NG133 and the Saudi MOH Pocket Manual in Obstetrics & Gynaecology (pre-eclampsia chapter); contraindications from US FDA prescribing information. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from emergency-2026-10-12-v1-live."
+    ],
+    "unverifiedSections": [
+      "MOH manual dated 2014",
+      "Nifedipine brand-specific pregnancy restrictions — check SFDA leaflet",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "b3a433fb-5f23-4e19-a23f-97de51d4ef11",
+      "c58f0a6a-617d-47fc-b9e1-f54114664af5"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Pre-eclampsia is a placental disorder: abnormal remodelling of the spiral arteries leads to placental ischaemia, which releases anti-angiogenic factors (sFlt-1, low placental growth factor) that cause widespread maternal endothelial dysfunction — hypertension, proteinuria and multi-organ injury.",
+    "keyMechanisms": [
+      "Endothelial dysfunction → vasoconstriction, capillary leak (oedema, pulmonary oedema), platelet activation and coagulation (HELLP, DIC).",
+      "Low placental growth factor (PlGF) reflects placental dysfunction — PlGF-based testing helps rule out pre-eclampsia (20 to 36+6 weeks).",
+      "Organ involvement: kidney (creatinine 90 µmol/L or more, proteinuria), liver (transaminases above 40 IU/L, capsule stretch → epigastric/RUQ pain), brain (headache, visual disturbance, clonus, eclampsia, stroke), blood (platelets below 150 × 10⁹/L, haemolysis), placenta (fetal growth restriction, abnormal Doppler, stillbirth).",
+      "Severe hypertension (160/110 or higher) risks intracerebral haemorrhage and is treated urgently.",
+      "Delivery of the placenta is the only cure; disease can present or worsen after birth."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Often asymptomatic (detected at routine BP check).",
+      "Severe headache, visual disturbance (blurring, flashing lights, scotomata).",
+      "Epigastric or right upper quadrant pain, nausea and vomiting.",
+      "Sudden swelling of the face, hands or feet; breathlessness (pulmonary oedema).",
+      "Seizures (eclampsia)."
+    ],
+    "physicalSigns": [
+      "BP 140/90 mmHg or higher; severe 160/110 mmHg or higher.",
+      "Proteinuria on dipstick (confirm with PCR or ACR).",
+      "Hyperreflexia, clonus, papilloedema.",
+      "Epigastric/liver tenderness; reduced urine output; small-for-dates uterus."
+    ],
+    "redFlags": [
+      "Severe hypertension 160/110 mmHg or higher",
+      "Headache, visual scotomata, epigastric pain, vomiting, clonus — impending eclampsia",
+      "Platelets below 150 × 10⁹/L, rising creatinine (90 µmol/L or more) or ALT (above 70 IU/L or 2× ULN) → admit",
+      "Eclamptic seizure; pulmonary oedema; HELLP",
+      "Suspected fetal compromise"
+    ],
+    "precipitants": [
+      "First pregnancy; previous pre-eclampsia; multiple pregnancy.",
+      "Chronic hypertension, CKD, diabetes, SLE/antiphospholipid syndrome.",
+      "Age 40 or over; BMI 35 or more; family history."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Chronic (pre-existing) hypertension",
+      "distinguishingFeatures": "Present before 20 weeks or already treated."
+    },
+    {
+      "condition": "Gestational hypertension",
+      "distinguishingFeatures": "New hypertension after 20 weeks without proteinuria or organ dysfunction."
+    },
+    {
+      "condition": "Acute fatty liver of pregnancy",
+      "distinguishingFeatures": "Hypoglycaemia, coagulopathy, raised ammonia; overlaps with HELLP."
+    },
+    {
+      "condition": "TTP/HUS, lupus flare, epilepsy, cerebral venous thrombosis",
+      "distinguishingFeatures": "Seizures or thrombocytopenia from other causes."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Blood pressure (manual and automated)",
+        "modalityTarget": "Every visit; severe: every 15–30 min until below 160/110",
+        "targetCondition": "Hypertension",
+        "expectedFinding": "140/90 or higher = hypertension; 160/110 or higher = severe.",
+        "clinicalRationale": "Treat to target 135/85 mmHg; never let severe hypertension go untreated.",
+        "normalValue": "Below 140/90 mmHg",
+        "references": [
+          {
+            "title": "NICE NG133: Hypertension in pregnancy: diagnosis and management",
+            "edition": "NICE guideline, 2019 (updated 2023)",
+            "url": "https://www.nice.org.uk/guidance/ng133"
+          },
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Urine protein:creatinine ratio (or albumin:creatinine ratio)",
+        "modalityTarget": "If dipstick 1+ or more",
+        "targetCondition": "Significant proteinuria",
+        "expectedFinding": "PCR 30 mg/mmol or more; ACR 8 mg/mmol or more.",
+        "clinicalRationale": "Diagnoses pre-eclampsia with new hypertension; 24-h urine not routine (NICE).",
+        "normalValue": "PCR below 30 mg/mmol; ACR below 8 mg/mmol",
+        "references": [
+          {
+            "title": "NICE NG133: Hypertension in pregnancy: diagnosis and management",
+            "edition": "NICE guideline, 2019 (updated 2023)",
+            "url": "https://www.nice.org.uk/guidance/ng133"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count (platelets), creatinine, electrolytes, ALT/AST",
+        "modalityTarget": "At diagnosis and serially; MOH: every 6–12 h when severe",
+        "targetCondition": "Organ dysfunction",
+        "expectedFinding": "Platelets below 150 × 10⁹/L; creatinine 90 µmol/L or more; ALT/AST above 40 IU/L (admit if ALT above 70 or 2× ULN).",
+        "clinicalRationale": "Any new abnormality = pre-eclampsia (with hypertension) and severity marker.",
+        "normalValue": "Platelets 150–400 × 10⁹/L; creatinine below 90 µmol/L in pregnancy; ALT below 40 IU/L",
+        "references": [
+          {
+            "title": "NICE NG133: Hypertension in pregnancy: diagnosis and management",
+            "edition": "NICE guideline, 2019 (updated 2023)",
+            "url": "https://www.nice.org.uk/guidance/ng133"
+          },
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Placental growth factor (PlGF)-based test",
+        "modalityTarget": "Once, if pre-eclampsia suspected between 20 and 36+6 weeks",
+        "targetCondition": "Rule out pre-eclampsia",
+        "expectedFinding": "Low PlGF (or high sFlt-1/PlGF ratio).",
+        "clinicalRationale": "Normal result makes pre-eclampsia in the next 1–2 weeks unlikely.",
+        "references": [
+          {
+            "title": "NICE NG133: Hypertension in pregnancy: diagnosis and management",
+            "edition": "NICE guideline, 2019 (updated 2023)",
+            "url": "https://www.nice.org.uk/guidance/ng133"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Coagulation profile, LDH, blood film",
+        "modalityTarget": "Severe disease or low platelets",
+        "targetCondition": "HELLP, DIC",
+        "expectedFinding": "Haemolysis, prolonged clotting.",
+        "clinicalRationale": "Severity; anaesthetic planning.",
+        "references": [
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Serum magnesium",
+        "modalityTarget": "On magnesium sulfate if toxicity suspected or oliguria",
+        "targetCondition": "Magnesium toxicity",
+        "expectedFinding": "Raised level with loss of reflexes, low RR.",
+        "clinicalRationale": "Stop infusion; give calcium gluconate.",
+        "references": [
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Fetal ultrasound (growth, liquor, umbilical artery Doppler) and CTG",
+        "modalityTarget": "At diagnosis and per severity",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Fetal growth restriction or compromise: small fetus, reduced liquor, abnormal Doppler, abnormal CTG.",
+        "clinicalRationale": "Uteroplacental dysfunction counts as pre-eclampsia organ involvement; informs timing of birth.",
+        "references": [
+          {
+            "title": "NICE NG133: Hypertension in pregnancy: diagnosis and management",
+            "edition": "NICE guideline, 2019 (updated 2023)",
+            "url": "https://www.nice.org.uk/guidance/ng133"
+          },
+          {
+            "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+            "edition": "2014",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "prevent",
+      "title": "Prevention",
+      "timeframe": "From 12 weeks",
+      "actions": [
+        "Aspirin 75–150 mg once daily from 12 weeks until birth if 1 high-risk factor (previous hypertensive pregnancy, CKD, SLE/antiphospholipid syndrome, type 1 or 2 diabetes, chronic hypertension) or more than 1 moderate risk factor (first pregnancy, age 40 or over, interval above 10 years, BMI 35 or more, family history, multiple pregnancy).",
+        "Stop ACE inhibitors/ARBs (within 2 working days of pregnancy confirmation) and switch."
+      ]
+    },
+    {
+      "id": "treat",
+      "title": "Hypertension — non-severe (140/90 to 159/109)",
+      "timeframe": "Outpatient or admission per risk",
+      "actions": [
+        "Treat chronic, gestational and pre-eclampsia hypertension above 140/90; target 135/85 mmHg.",
+        "First-line labetalol; nifedipine if labetalol unsuitable (e.g. asthma); methyldopa if neither suitable (NICE).",
+        "MOH oral doses: labetalol 100–400 mg two to three times daily (max 1200 mg/day); nifedipine 10–20 mg two to three times daily (max 180 mg/day); methyldopa 250–500 mg two to four times daily (max 2 g/day).",
+        "Pre-eclampsia: admit if any concern (severe BP, abnormal bloods, impending eclampsia, fetal compromise); consider fullPIERS/PREP-S."
+      ]
+    },
+    {
+      "id": "severe",
+      "title": "Severe hypertension (160/110 or higher)",
+      "timeframe": "Immediately",
+      "actions": [
+        "Admit; treat until below 160/110 then to 135/85.",
+        "Labetalol 20 mg IV, then 20–80 mg every 30 min, or infusion 1–2 mg/min, maximum 300 mg, then switch to oral (MOH).",
+        "Or oral nifedipine 10 mg every 45 min, maximum 80 mg/day (MOH).",
+        "Or hydralazine 5 mg IV, repeat 5–10 mg every 30 min, maximum 20 mg (MOH); give up to 500 mL crystalloid before/with the first dose (NICE).",
+        "Limit maintenance fluids to 80 mL/h in severe pre-eclampsia (NICE)."
+      ]
+    },
+    {
+      "id": "mgso4",
+      "title": "Magnesium sulfate",
+      "timeframe": "Severe pre-eclampsia or eclampsia",
+      "actions": [
+        "Give if eclampsia, or severe pre-eclampsia with birth planned within 24 h, or severe features (headache, scotomata, vomiting, epigastric pain, oliguria with severe hypertension, worsening bloods).",
+        "Collaborative Eclampsia Trial regimen: 4 g IV over 5–15 min, then 1 g/h for 24 h (24 h after the last fit). Recurrent fit: further 2–4 g over 5–15 min (NICE). MOH: 4–6 g over 15–20 min then 1–2 g/h.",
+        "Monitor reflexes, RR, SpO2, urine output; toxicity → stop and give calcium gluconate 1 g (10 mL of 10%) IV over 5–10 min.",
+        "Do not use diazepam or phenytoin instead of magnesium for eclampsia."
+      ],
+      "branches": [
+        {
+          "condition": "Eclamptic seizure",
+          "actions": [
+            "Call for help, left lateral, airway, oxygen; magnesium loading dose; control BP; stabilise then plan birth."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "birth",
+      "title": "Timing of birth (pre-eclampsia)",
+      "timeframe": "By gestation",
+      "actions": [
+        "Before 34 weeks: continue surveillance unless indications for birth; give IV magnesium sulfate and antenatal corticosteroids if early birth planned.",
+        "34 to 36+6 weeks: surveillance unless indications; weigh maternal/fetal condition and neonatal cot availability.",
+        "37 weeks onwards: initiate birth within 24–48 h.",
+        "Do not use steroids to treat HELLP."
+      ]
+    },
+    {
+      "id": "postnatal",
+      "title": "Postnatal care",
+      "timeframe": "After birth",
+      "actions": [
+        "Measure BP daily for 2 days, once on days 3–5, and when treatment changes; target below 140/90.",
+        "Stop methyldopa within 2 days of birth; enalapril first-line postnatally (check creatinine and potassium); nifedipine or amlodipine for women of Black African/Caribbean origin.",
+        "Review at 2 weeks and 6–8 weeks."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Pre-eclampsia prevention",
+        "patientGroup": "High-risk pregnant women",
+        "genericName": "Aspirin",
+        "dose": "75–150 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "From 12 weeks until birth",
+        "adjustments": [
+          "Off-label use in some countries"
+        ],
+        "monitoring": [
+          "Bleeding"
+        ],
+        "contraindications": [
+          "Known allergy to NSAIDs",
+          "Syndrome of asthma, rhinitis and nasal polyps",
+          "Hypersensitivity to aspirin"
+        ],
+        "sourceTitle": "NICE NG133: Hypertension in pregnancy: diagnosis and management",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng133",
+        "sourceEdition": "NICE NG133",
+        "branch": "Pre-eclampsia prevention",
+        "step": "Antiplatelet",
+        "selection": "all"
+      },
+      {
+        "indication": "Severe hypertension in pregnancy",
+        "patientGroup": "Pregnant/postnatal women",
+        "genericName": "Labetalol",
+        "dose": "100–400 mg two to three times daily (max 1200 mg/day)",
+        "route": "PO",
+        "frequency": "As stated",
+        "duration": "Switch IV to oral when controlled",
+        "adjustments": [
+          "Avoid in asthma (use nifedipine)"
+        ],
+        "monitoring": [
+          "BP every 15–30 min, HR, fetal heart"
+        ],
+        "contraindications": [
+          "Bronchial asthma or history of obstructive airway disease",
+          "Overt cardiac failure; cardiogenic shock",
+          "Heart block greater than first degree; severe bradycardia",
+          "Conditions with severe, prolonged hypotension"
+        ],
+        "sourceTitle": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+        "sourceUrl": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf",
+        "sourceEdition": "MOH 2014, pre-eclampsia chapter",
+        "branch": "Non-severe hypertension",
+        "step": "Antihypertensive",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "Severe or non-severe hypertension",
+        "patientGroup": "Pregnant/postnatal women",
+        "genericName": "Nifedipine",
+        "dose": "10–20 mg two to three times daily (max 180 mg/day)",
+        "route": "PO",
+        "frequency": "As stated",
+        "duration": "Ongoing",
+        "adjustments": [
+          "MOH also lists 5–10 mg capsule bitten/swallowed every 30 min — rapid falls in BP possible",
+          "Caution with magnesium sulfate (hypotension)"
+        ],
+        "monitoring": [
+          "BP, headache, flushing, fetal heart"
+        ],
+        "contraindications": [
+          "Known hypersensitivity to nifedipine"
+        ],
+        "sourceTitle": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+        "sourceUrl": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf",
+        "sourceEdition": "MOH 2014, pre-eclampsia chapter",
+        "branch": "Non-severe hypertension",
+        "step": "Antihypertensive",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Labetalol is unsuitable"
+      },
+      {
+        "indication": "Non-severe hypertension (third line)",
+        "patientGroup": "Pregnant women",
+        "genericName": "Methyldopa",
+        "dose": "250–500 mg",
+        "route": "PO",
+        "frequency": "Two to four times daily (max 2 g/day)",
+        "duration": "Stop within 2 days after birth",
+        "adjustments": [
+          "Depression risk postnatally"
+        ],
+        "monitoring": [
+          "LFTs"
+        ],
+        "contraindications": [
+          "Active hepatic disease (acute hepatitis, active cirrhosis)",
+          "Previous methyldopa-associated liver disorder",
+          "Concurrent MAO inhibitor therapy"
+        ],
+        "sourceTitle": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+        "sourceUrl": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf",
+        "sourceEdition": "MOH 2014, pre-eclampsia chapter",
+        "branch": "Non-severe hypertension",
+        "step": "Antihypertensive",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Third line"
+      },
+      {
+        "indication": "Severe hypertension in pregnancy",
+        "patientGroup": "Pregnant/postnatal women",
+        "genericName": "Labetalol",
+        "dose": "20 mg IV, then 20–80 mg every 30 min (or 1–2 mg/min infusion); max 300 mg",
+        "route": "IV",
+        "frequency": "As stated",
+        "duration": "Switch IV to oral when controlled",
+        "adjustments": [
+          "Avoid in asthma (use nifedipine)"
+        ],
+        "monitoring": [
+          "BP every 15–30 min, HR, fetal heart"
+        ],
+        "contraindications": [
+          "Bronchial asthma or history of obstructive airway disease",
+          "Overt cardiac failure; cardiogenic shock",
+          "Heart block greater than first degree; severe bradycardia",
+          "Conditions with severe, prolonged hypotension"
+        ],
+        "sourceTitle": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+        "sourceUrl": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf",
+        "sourceEdition": "MOH 2014, pre-eclampsia chapter",
+        "branch": "Severe hypertension",
+        "step": "Antihypertensive",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "Severe or non-severe hypertension",
+        "patientGroup": "Pregnant/postnatal women",
+        "genericName": "Nifedipine",
+        "dose": "10 mg tablet every 45 min (max 80 mg/day)",
+        "route": "PO",
+        "frequency": "As stated",
+        "duration": "Ongoing",
+        "adjustments": [
+          "MOH also lists 5–10 mg capsule bitten/swallowed every 30 min — rapid falls in BP possible",
+          "Caution with magnesium sulfate (hypotension)"
+        ],
+        "monitoring": [
+          "BP, headache, flushing, fetal heart"
+        ],
+        "contraindications": [
+          "Known hypersensitivity to nifedipine"
+        ],
+        "sourceTitle": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+        "sourceUrl": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf",
+        "sourceEdition": "MOH 2014, pre-eclampsia chapter",
+        "branch": "Severe hypertension",
+        "step": "Antihypertensive",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Labetalol is unsuitable"
+      },
+      {
+        "indication": "Severe hypertension (alternative)",
+        "patientGroup": "Pregnant women",
+        "genericName": "Hydralazine",
+        "dose": "5 mg IV, then 5–10 mg every 30 min; max 20 mg",
+        "route": "IV",
+        "frequency": "As stated",
+        "duration": "Acute",
+        "adjustments": [
+          "Give up to 500 mL crystalloid before or with the first dose (NICE)"
+        ],
+        "monitoring": [
+          "BP, maternal tachycardia, fetal heart"
+        ],
+        "contraindications": [
+          "Coronary artery disease",
+          "Mitral valvular rheumatic heart disease",
+          "Hypersensitivity to hydralazine"
+        ],
+        "sourceTitle": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+        "sourceUrl": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf",
+        "sourceEdition": "MOH 2014, pre-eclampsia chapter",
+        "branch": "Severe hypertension",
+        "step": "Antihypertensive",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Labetalol is unsuitable"
+      },
+      {
+        "indication": "Eclampsia prevention/treatment",
+        "patientGroup": "Severe pre-eclampsia or eclampsia",
+        "genericName": "Magnesium sulfate",
+        "dose": "Load 4 g IV over 5–15 min; then 1 g/h for 24 h; recurrent fit 2–4 g over 5–15 min",
+        "route": "IV",
+        "frequency": "Infusion",
+        "duration": "24 h (after birth or last fit)",
+        "adjustments": [
+          "MOH alternative: 4–6 g load, 1–2 g/h",
+          "Reduce in oliguria/renal impairment",
+          "Antidote: calcium gluconate 1 g (10 mL 10%) IV over 5–10 min"
+        ],
+        "monitoring": [
+          "Patellar reflexes, RR, SpO2, urine output, serum magnesium"
+        ],
+        "contraindications": [
+          "Heart block or myocardial damage",
+          "Myasthenia gravis",
+          "Diabetic coma"
+        ],
+        "sourceTitle": "NICE NG133: Hypertension in pregnancy: diagnosis and management",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng133",
+        "sourceEdition": "NICE NG133",
+        "branch": "Severe pre-eclampsia or eclampsia",
+        "step": "Seizure prophylaxis and treatment",
+        "selection": "all"
+      },
+      {
+        "indication": "Postnatal hypertension",
+        "patientGroup": "Postnatal (including breastfeeding)",
+        "genericName": "Enalapril",
+        "dose": "Start 5 mg once daily; usual 10–40 mg/day (label)",
+        "route": "PO",
+        "frequency": "Once or twice daily",
+        "duration": "Review at 2 weeks",
+        "adjustments": [
+          "Not in pregnancy",
+          "Check creatinine and potassium"
+        ],
+        "monitoring": [
+          "BP, creatinine, potassium"
+        ],
+        "contraindications": [
+          "History of ACE-inhibitor angioedema; hereditary or idiopathic angioedema",
+          "Within 36 h of sacubitril/valsartan",
+          "With aliskiren in diabetes",
+          "Pregnancy (fetal toxicity — boxed warning)"
+        ],
+        "sourceTitle": "NICE NG133 (drug choice); enalapril label (dose)",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng133",
+        "sourceEdition": "Rec 1.9.4",
+        "branch": "Postnatal hypertension",
+        "step": "Antihypertensive",
+        "selection": "all"
+      }
+    ],
+    "note": "Drug choice from NICE NG133; doses from the Saudi MOH OB/GYN manual (2014) and NICE (magnesium sulfate); contraindications from FDA labels. Check SFDA registration and the hospital protocol.",
+    "branches": [
+      {
+        "label": "Pre-eclampsia prevention",
+        "entryCriteria": "High-risk pregnant woman"
+      },
+      {
+        "label": "Non-severe hypertension",
+        "entryCriteria": "Pregnant woman with non-severe hypertension"
+      },
+      {
+        "label": "Severe hypertension",
+        "entryCriteria": "Pregnant or postnatal woman with severe hypertension"
+      },
+      {
+        "label": "Severe pre-eclampsia or eclampsia",
+        "entryCriteria": "Woman with severe pre-eclampsia or eclampsia"
+      },
+      {
+        "label": "Postnatal hypertension",
+        "entryCriteria": "Postnatal woman, including breastfeeding, needing antihypertensive treatment"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Hypertension",
+      "threshold": "140/90 mmHg or higher; severe: above 160/110"
+    },
+    {
+      "criterion": "Chronic hypertension",
+      "threshold": "Before 20 weeks or already treated"
+    },
+    {
+      "criterion": "Gestational hypertension",
+      "threshold": "New after 20 weeks, no significant proteinuria"
+    },
+    {
+      "criterion": "Pre-eclampsia",
+      "threshold": "New hypertension after 20 weeks + proteinuria (PCR 30 or ACR 8 mg/mmol or more) or organ/uteroplacental dysfunction"
+    },
+    {
+      "criterion": "Severe pre-eclampsia",
+      "threshold": "Severe hypertension not responding, or severe symptoms, worsening bloods, fetal compromise"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "NICE NG133 vs Saudi MOH Pocket Manual",
+    "columns": [
+      "NICE NG133",
+      "MOH 2014"
+    ],
+    "rows": [
+      {
+        "parameter": "Magnesium sulfate",
+        "values": [
+          "4 g over 5–15 min, then 1 g/h for 24 h",
+          "4–6 g over 15–20 min, then 1–2 g/h"
+        ]
+      },
+      {
+        "parameter": "Proteinuria",
+        "values": [
+          "PCR 30 or ACR 8 mg/mmol; no routine 24-h urine",
+          "24-h urine collection"
+        ]
+      },
+      {
+        "parameter": "Treatment threshold / target",
+        "values": [
+          "Treat at 140/90; target 135/85",
+          "Severe 160/100 → IV/rapid treatment; mild → oral agents"
+        ]
+      },
+      {
+        "parameter": "Fluids",
+        "values": [
+          "Maintenance 80 mL/h in severe pre-eclampsia",
+          "Intake not above 150 mL/h; urine at least 100 mL per 4 h"
+        ]
+      }
+    ],
+    "note": "Both: labetalol/nifedipine/hydralazine for severe hypertension; magnesium (not diazepam or phenytoin) for eclampsia; avoid diuretics."
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Diagnose and classify hypertensive disorders of pregnancy and treat severe hypertension and eclampsia safely."
+    ],
+    "pitfalls": [
+      "Labetalol in asthma.",
+      "Diazepam or phenytoin instead of magnesium.",
+      "Fluid overload (pulmonary oedema).",
+      "Steroids to treat HELLP.",
+      "Continuing methyldopa after birth (depression)."
+    ],
+    "keyPoints": [
+      "Aspirin 75–150 mg from 12 weeks for high-risk women.",
+      "Treat 140/90 and above; target 135/85; severe 160/110 is an emergency.",
+      "Labetalol first, nifedipine if asthma, methyldopa third.",
+      "Magnesium sulfate 4 g load then 1 g/h for 24 h.",
+      "Birth at 37 weeks for pre-eclampsia; enalapril postnatally."
+    ],
+    "references": [
+      {
+        "title": "NICE NG133: Hypertension in pregnancy: diagnosis and management",
+        "edition": "NICE guideline, 2019 (updated 2023)",
+        "url": "https://www.nice.org.uk/guidance/ng133",
+        "locator": "Recs 1.1–1.9; terms used"
+      },
+      {
+        "title": "MOH Pocket Manual in Obstetrics & Gynaecology, Saudi Ministry of Health",
+        "edition": "2014",
+        "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Obstetrics%20and%20Gynaecology.pdf",
+        "locator": "Management of pre-eclampsia chapter (pp. 19–24)"
+      },
+      {
+        "title": "Labetalol hydrochloride prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=04f9dcdf-4023-48ee-9e7d-ca9366d9db72",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Nifedipine prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=09a04e5f-d3b0-4ee3-b12d-f74203262179",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Methyldopa prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9e22e1d8-04ec-4b67-92ea-b09c706f2703",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Hydralazine hydrochloride prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=024ac6b8-5ce0-4435-9b11-b1806c511d7b",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Magnesium sulfate in 5% dextrose injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=03ebeabb-8386-4af4-3086-bdf3c3fc4a5a",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Enalapril maleate prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=074fe718-88d8-365c-e063-6394a90a299d",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Aspirin (aspirin component of aspirin/extended-release dipyridamole) prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=111a4f6a-c3e4-43e2-8f0e-8c72f71cddb2",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "SFDA Saudi Drug Information System (registration search)",
+        "edition": "Accessed 11–12 Oct 2026",
+        "url": "https://sdi.sfda.gov.sa/"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Symptoms of pre-eclampsia to report urgently.",
+      "Home BP monitoring; aspirin adherence.",
+      "Future pregnancy and long-term cardiovascular risk."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable in the acute phase."
+    ],
+    "mdtReferrals": [
+      "Specialist in hypertensive disorders of pregnancy.",
+      "Level 2/3 critical care per NICE table 4; anaesthetics; neonatology."
+    ],
+    "dischargeCriteria": [
+      "BP controlled on oral therapy with a monitoring plan.",
+      "Blood tests stable or improving.",
+      "Plan for BP checks, medication review at 2 weeks and 6–8 weeks."
+    ],
+    "followUpPlan": "Postnatal medical review at 6–8 weeks; long-term cardiovascular risk counselling; aspirin from 12 weeks in future pregnancies."
+  }
+}

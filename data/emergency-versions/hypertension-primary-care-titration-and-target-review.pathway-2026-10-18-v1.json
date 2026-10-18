@@ -1,0 +1,629 @@
+{
+  "id": "83ef740c-07f6-4689-be0a-5d4c06a4a259",
+  "title": "Hypertension: Primary Care Titration and Target Review",
+  "specialty": "Family Medicine / Cardiology",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adults with confirmed hypertension in primary care: when to start drugs, step 1–4 drug choice, blood pressure targets, monitoring and same-day referral triggers. Checked against NICE NG136 (updated 26 Feb 2026), recommendations 1.1–1.5 and the terms used in the guideline. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 14 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Investigation tiers and added tests were checked against the cited source sections on 15 Oct 2026; additions are pending clinician review.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from authoring-standard-2026-10-15-v2-investigations-live."
+    ],
+    "unverifiedSections": [
+      "No Saudi national adult hypertension guideline was opened for this version; the thresholds and drug steps are NICE NG136.",
+      "Medicine doses were reused from the repository's earlier label-checked hypertension topic and were not re-opened on 14 Oct 2026.",
+      "Ethnicity-based drug choice (NG136 1.4.30, 1.4.35) comes from UK populations; its fit for the Saudi population was not assessed.",
+      "SFDA registration and hospital formulary availability were not independently verified.",
+      "The expanded investigation panel is not clinically approved and remains non-current pending review.",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "83ef740c-07f6-4689-be0a-5d4c06a4a259",
+      "fb2ced1a-1392-47a0-8159-7adc2b471dce"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Persistent high blood pressure damages the heart, brain, kidneys and eyes; target organ damage includes left ventricular hypertrophy, chronic kidney disease, hypertensive retinopathy and raised urine albumin:creatinine ratio (NG136, terms used). Benefit of treatment rises with absolute risk, so stage 1 hypertension is treated when target organ damage, cardiovascular disease, renal disease, diabetes or a 10-year cardiovascular risk of 10% or more is present (NG136 1.4.10). Drugs from different classes add together, so an ACE inhibitor or ARB, a calcium-channel blocker and a thiazide-like diuretic are combined in steps (NG136 1.4.41–1.4.45). Resistant hypertension is uncontrolled pressure on optimal doses of three drugs; it needs adherence checks and out-of-clinic confirmation before a fourth drug (NG136 1.4.46–1.4.48).",
+    "keyMechanisms": [
+      "Persistent high blood pressure damages the heart, brain, kidneys and eyes; target organ damage includes left ventricular hypertrophy, chronic kidney disease, hypertensive retinopathy and raised urine albumin:creatinine ratio (NG136, terms used).",
+      "Benefit of treatment rises with absolute risk, so stage 1 hypertension is treated when target organ damage, cardiovascular disease, renal disease, diabetes or a 10-year cardiovascular risk of 10% or more is present (NG136 1.4.10).",
+      "Drugs from different classes add together, so an ACE inhibitor or ARB, a calcium-channel blocker and a thiazide-like diuretic are combined in steps (NG136 1.4.41–1.4.45).",
+      "Resistant hypertension is uncontrolled pressure on optimal doses of three drugs; it needs adherence checks and out-of-clinic confirmation before a fourth drug (NG136 1.4.46–1.4.48)."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Dizziness or falls after starting or changing drugs suggest postural hypotension (NG136 1.1.5).",
+      "Cough on an ACE inhibitor or ankle oedema on a calcium-channel blocker are reasons to switch (NG136 1.4.33, 1.4.36).",
+      "Labile or postural hypotension, headache, palpitations, pallor, abdominal pain or sweating suggest phaeochromocytoma (NG136 1.5.3)."
+    ],
+    "physicalSigns": [
+      "Clinic blood pressure 140/90 mmHg or higher: take a second reading and record the lower of the last two (NG136 1.2.2).",
+      "Arm difference above 15 mmHg on repeat: use the higher arm (NG136 1.2.1).",
+      "Fall in systolic pressure of 20 mmHg or more, or diastolic of 10 mmHg or more, after 1 minute standing (NG136 1.1.6).",
+      "Retinal haemorrhage or papilloedema (NG136 1.5.2)."
+    ],
+    "redFlags": [
+      "Clinic pressure 180/120 mmHg or higher with retinal haemorrhage or papilloedema, new confusion, chest pain, signs of heart failure or acute kidney injury: same-day specialist assessment (NG136 1.5.2).",
+      "Suspected phaeochromocytoma: same-day specialist assessment (NG136 1.5.3).",
+      "Clinic pressure 180/120 mmHg or higher without those features: test for target organ damage as soon as possible and confirm within 7 days (NG136 1.5.1).",
+      "Age under 40 with hypertension: consider specialist evaluation for secondary causes (NG136 1.4.14)."
+    ],
+    "precipitants": [
+      "Missed doses or sub-optimal doses (NG136 1.4.40, 1.4.44).",
+      "Excess alcohol, caffeine and high sodium intake (NG136 1.4.3–1.4.5).",
+      "White-coat effect: clinic pressure more than 20/10 mmHg above average daytime ABPM or HBPM (NG136, terms used).",
+      "Masked hypertension: normal clinic pressure but raised ABPM or HBPM (NG136, terms used)."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "White-coat effect",
+      "distinguishingFeatures": "Clinic pressure more than 20/10 mmHg above average daytime ABPM or HBPM; use ABPM or HBPM for review (NG136 1.4.18)."
+    },
+    {
+      "condition": "Masked hypertension",
+      "distinguishingFeatures": "Clinic pressure below 140/90 mmHg but higher on ABPM or HBPM (NG136, terms used)."
+    },
+    {
+      "condition": "Postural hypotension",
+      "distinguishingFeatures": "Standing fall of 20/10 mmHg or more; set the target from standing pressure (NG136 1.1.6, 1.4.16)."
+    },
+    {
+      "condition": "Secondary hypertension",
+      "distinguishingFeatures": "Signs or symptoms suggesting a secondary cause need specialist investigation (NG136 1.2.13)."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Clinic blood pressure, both arms",
+        "modalityTarget": "Adult with suspected or treated hypertension",
+        "targetCondition": "Hypertension",
+        "expectedFinding": "140/90 mmHg or higher (take a second reading; record the lower of the last two); arm difference above 15 mmHg on repeat: use the higher arm (NG136 1.2.1–1.2.2).",
+        "clinicalRationale": "Starts the diagnostic pathway; 140/90 to 180/120 mmHg needs ABPM, or HBPM if ABPM is unsuitable (NG136 1.2.3–1.2.4).",
+        "normalValue": "Below 140/90 mmHg (clinic)",
+        "references": [
+          {
+            "title": "NICE NG136: Hypertension in adults: diagnosis and management",
+            "edition": "Recommendations 1.2.1–1.2.4",
+            "url": "https://www.nice.org.uk/guidance/ng136"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "ABPM or HBPM",
+        "modalityTarget": "Adult with clinic pressure 140/90 mmHg or higher",
+        "targetCondition": "Confirmed hypertension",
+        "expectedFinding": "Daytime average or HBPM average 135/85 mmHg or higher confirms hypertension (NG136 1.2.8).",
+        "clinicalRationale": "ABPM: at least 2 readings an hour in waking hours, average of at least 14. HBPM: 2 readings 1 minute apart, twice daily for at least 4 days (ideally 7), discard day 1 (NG136 1.2.6–1.2.7).",
+        "normalValue": "Daytime average below 135/85 mmHg",
+        "references": [
+          {
+            "title": "NICE NG136: Hypertension in adults: diagnosis and management",
+            "edition": "Recommendations 1.2.6–1.2.8",
+            "url": "https://www.nice.org.uk/guidance/ng136"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Postural blood pressure",
+        "modalityTarget": "Adult with type 2 diabetes, symptoms of postural hypotension, or aged 80 or over",
+        "targetCondition": "Postural hypotension",
+        "expectedFinding": "Systolic fall of 20 mmHg or more, or diastolic fall of 10 mmHg or more, after at least 1 minute standing (NG136 1.1.6).",
+        "clinicalRationale": "Review drugs, address causes and treat to a standing-pressure target (NG136 1.4.16).",
+        "normalValue": "Fall below 20 mmHg systolic and 10 mmHg diastolic",
+        "references": [
+          {
+            "title": "NICE NG136: Hypertension in adults: diagnosis and management",
+            "edition": "Recommendations 1.1.5–1.1.6 and 1.4.16",
+            "url": "https://www.nice.org.uk/guidance/ng136"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Urine albumin:creatinine ratio and dipstick for haematuria",
+        "modalityTarget": "Every adult with hypertension",
+        "targetCondition": "Target organ damage",
+        "expectedFinding": "ACR of 70 mg/mmol or higher in type 1 diabetes or chronic kidney disease lowers the clinic target to below 130/80 mmHg under 80 years (NG136 Table 1).",
+        "clinicalRationale": "Offer to all people with hypertension while the diagnosis is confirmed (NG136 1.3.3).",
+        "normalValue": "Urine ACR below 3 mg/mmol (30 mg/g)",
+        "references": [
+          {
+            "title": "NICE NG136: Hypertension in adults: diagnosis and management",
+            "edition": "Recommendation 1.3.3; Table 1",
+            "url": "https://www.nice.org.uk/guidance/ng136"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Blood tests: HbA1c, electrolytes, creatinine, eGFR, total and HDL cholesterol",
+        "modalityTarget": "Every adult with hypertension",
+        "targetCondition": "Diabetes, kidney disease, dyslipidaemia",
+        "expectedFinding": "Potassium above 4.5 mmol/L favours an alpha- or beta-blocker over spironolactone at step 4 (NG136 1.4.49, 1.4.51).",
+        "clinicalRationale": "Check sodium, potassium and renal function within 1 month of starting spironolactone (NG136 1.4.50).",
+        "normalValue": "Potassium 3.5–5.0 mmol/L; eGFR 60 mL/min/1.73 m² or more",
+        "references": [
+          {
+            "title": "NICE NG136: Hypertension in adults: diagnosis and management",
+            "edition": "Recommendations 1.3.3, 1.4.49–1.4.51",
+            "url": "https://www.nice.org.uk/guidance/ng136"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "12-lead ECG and fundoscopy",
+        "modalityTarget": "Every adult with hypertension",
+        "targetCondition": "Left ventricular hypertrophy and hypertensive retinopathy",
+        "expectedFinding": "Retinal haemorrhage or papilloedema with pressure 180/120 mmHg or higher needs same-day specialist assessment (NG136 1.5.2).",
+        "clinicalRationale": "Examine the fundi and arrange an ECG as part of target organ damage assessment (NG136 1.3.3).",
+        "normalValue": "Sinus rhythm; no retinopathy",
+        "references": [
+          {
+            "title": "NICE NG136: Hypertension in adults: diagnosis and management",
+            "edition": "Recommendations 1.3.3 and 1.5.2",
+            "url": "https://www.nice.org.uk/guidance/ng136"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "triage",
+      "title": "Same-day referral check",
+      "timeframe": "Every visit with pressure 180/120 mmHg or higher",
+      "actions": [
+        "Refer the same day for retinal haemorrhage or papilloedema, new confusion, chest pain, signs of heart failure, acute kidney injury or suspected phaeochromocytoma (NG136 1.5.2–1.5.3).",
+        "Without those features, check target organ damage as soon as possible; if present consider starting drugs at once; if absent repeat pressure within 7 days or use ABPM or HBPM with review within 7 days (NG136 1.5.1)."
+      ]
+    },
+    {
+      "id": "start",
+      "title": "Decide whether to start drugs",
+      "timeframe": "After diagnosis is confirmed",
+      "actions": [
+        "Offer drugs with lifestyle advice for persistent stage 2 hypertension at any age (NG136 1.4.9).",
+        "Discuss drugs for stage 1 under 80 with target organ damage, cardiovascular disease, renal disease, diabetes or 10-year risk of 10% or more; consider for under 60 with risk below 10%; consider over 80 if clinic pressure is above 150/90 mmHg (NG136 1.4.10, 1.4.12–1.4.13).",
+        "Explain individual risk and the option of no treatment; keep offering lifestyle advice either way (NG136 1.4.11)."
+      ]
+    },
+    {
+      "id": "step1",
+      "title": "Step 1",
+      "timeframe": "At treatment start",
+      "actions": [
+        "Prefer once-daily drugs and non-proprietary products (NG136 1.4.26–1.4.27). Never combine an ACE inhibitor with an ARB (NG136 1.4.34).",
+        "If starting or changing a diuretic, prefer a thiazide-like diuretic such as indapamide (NG136 1.4.38)."
+      ],
+      "branches": [
+        {
+          "condition": "Type 2 diabetes at any age, or under 55 and not of Black African or African-Caribbean origin",
+          "actions": [
+            "ACE inhibitor or ARB; ARB if the ACE inhibitor is not tolerated, for example cough (NG136 1.4.32–1.4.33)."
+          ]
+        },
+        {
+          "condition": "Aged 55 or over without type 2 diabetes, or Black African or African-Caribbean origin without type 2 diabetes",
+          "actions": [
+            "Calcium-channel blocker; thiazide-like diuretic if it is not tolerated, for example oedema (NG136 1.4.35–1.4.36). For Black African or African-Caribbean origin consider an ARB in preference to an ACE inhibitor (NG136 1.4.30)."
+          ]
+        },
+        {
+          "condition": "Heart failure",
+          "actions": [
+            "Thiazide-like diuretic and follow the chronic heart failure guideline (NG136 1.4.37)."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "step2",
+      "title": "Step 2",
+      "timeframe": "If not controlled on step 1",
+      "actions": [
+        "Check the person takes the medicine as prescribed and support adherence before adding a drug (NG136 1.4.40).",
+        "On an ACE inhibitor or ARB add a calcium-channel blocker or a thiazide-like diuretic (NG136 1.4.41).",
+        "On a calcium-channel blocker add an ACE inhibitor, an ARB or a thiazide-like diuretic (NG136 1.4.42)."
+      ]
+    },
+    {
+      "id": "step3",
+      "title": "Step 3",
+      "timeframe": "If not controlled on step 2",
+      "actions": [
+        "Review doses (optimal tolerated) and adherence (NG136 1.4.44).",
+        "Combine an ACE inhibitor or ARB, a calcium-channel blocker and a thiazide-like diuretic (NG136 1.4.45)."
+      ]
+    },
+    {
+      "id": "step4",
+      "title": "Resistant hypertension (step 4)",
+      "timeframe": "If not controlled on optimal step 3",
+      "actions": [
+        "Confirm with ABPM or HBPM, assess postural hypotension and discuss adherence before adding anything (NG136 1.4.47).",
+        "Potassium 4.5 mmol/L or less: consider low-dose spironolactone (off-label use at March 2019); take care when eGFR is reduced (NG136 1.4.49).",
+        "Potassium above 4.5 mmol/L: consider an alpha-blocker or beta-blocker (NG136 1.4.51).",
+        "Monitor sodium, potassium and renal function within 1 month of starting a further diuretic (NG136 1.4.50).",
+        "Still uncontrolled on four optimal drugs: seek specialist advice (NG136 1.4.52)."
+      ]
+    },
+    {
+      "id": "monitor",
+      "title": "Monitor against the target",
+      "timeframe": "Each review; at least yearly",
+      "actions": [
+        "Use clinic pressure to monitor response; same targets with or without cardiovascular disease (NG136 1.4.15, 1.4.23).",
+        "Target: clinic below 140/90 mmHg under 80 and below 150/90 mmHg at 80 or over; ABPM or HBPM below 135/85 mmHg under 80 and below 145/85 mmHg at 80 or over; use clinical judgement in frailty or multimorbidity (NG136 1.4.20–1.4.22).",
+        "Check postural pressure in type 2 diabetes, with symptoms, and at 80 or over (NG136 1.4.16). Advise HBPM for self-monitoring and train the person (NG136 1.4.17, 1.4.19).",
+        "Give an annual review of pressure, support, lifestyle, symptoms and medicines (NG136 1.4.24)."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Step 1 (55 or over without diabetes) or add-on",
+        "patientGroup": "Adults",
+        "genericName": "Amlodipine",
+        "dose": "5 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term",
+        "adjustments": [
+          "Maximum 10 mg once daily (label)",
+          "Oedema: switch to thiazide-like diuretic (NICE 1.4.36)"
+        ],
+        "monitoring": [
+          "BP, ankle oedema"
+        ],
+        "contraindications": [
+          "Hypersensitivity to amlodipine"
+        ],
+        "sourceTitle": "Amlodipine prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=003dd1ec-16f8-4f96-b6a8-c4689d35892a",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "branch": "Step 1 — aged 55 or over without diabetes",
+        "step": "Calcium-channel blocker",
+        "selection": "all"
+      },
+      {
+        "indication": "Step 1 (diabetes or under 55) or add-on",
+        "patientGroup": "Adults",
+        "genericName": "Ramipril",
+        "dose": "2.5 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term",
+        "adjustments": [
+          "Usual range 2.5–20 mg daily (label)",
+          "Not in pregnancy (boxed warning)"
+        ],
+        "monitoring": [
+          "Potassium and creatinine before and after starting"
+        ],
+        "contraindications": [
+          "ACE-inhibitor angioedema or hereditary/idiopathic angioedema",
+          "Hypersensitivity to ACE inhibitors",
+          "Pregnancy (fetal toxicity — boxed warning)"
+        ],
+        "sourceTitle": "Ramipril prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01da05d8-e72e-4208-bf92-a5cd929f15ab",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "branch": "Step 1 — diabetes, or aged under 55",
+        "step": "ACE inhibitor or ARB",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "ACE-inhibitor intolerant (e.g. cough)",
+        "patientGroup": "Adults",
+        "genericName": "Losartan",
+        "dose": "50 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term",
+        "adjustments": [
+          "Not with an ACE inhibitor (NICE 1.4.34)",
+          "Not in pregnancy (boxed warning)"
+        ],
+        "monitoring": [
+          "Potassium and creatinine"
+        ],
+        "contraindications": [
+          "Hypersensitivity",
+          "With aliskiren in diabetes",
+          "Pregnancy (boxed warning)"
+        ],
+        "sourceTitle": "Losartan potassium prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=021cd76a-b093-4704-8410-5e7d01e20a54",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "branch": "Step 1 — diabetes, or aged under 55",
+        "step": "ACE inhibitor or ARB",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "ACE inhibitor not tolerated, for example cough"
+      },
+      {
+        "indication": "Step 1 (diabetes or under 55) or add-on",
+        "patientGroup": "Adults",
+        "genericName": "Ramipril",
+        "dose": "2.5 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term",
+        "adjustments": [
+          "Usual range 2.5–20 mg daily (label)",
+          "Not in pregnancy (boxed warning)"
+        ],
+        "monitoring": [
+          "Potassium and creatinine before and after starting"
+        ],
+        "contraindications": [
+          "ACE-inhibitor angioedema or hereditary/idiopathic angioedema",
+          "Hypersensitivity to ACE inhibitors",
+          "Pregnancy (fetal toxicity — boxed warning)"
+        ],
+        "sourceTitle": "Ramipril prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01da05d8-e72e-4208-bf92-a5cd929f15ab",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "branch": "Step 2–3 — add-on treatment",
+        "step": "ACE inhibitor or ARB",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "ACE-inhibitor intolerant (e.g. cough)",
+        "patientGroup": "Adults",
+        "genericName": "Losartan",
+        "dose": "50 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term",
+        "adjustments": [
+          "Not with an ACE inhibitor (NICE 1.4.34)",
+          "Not in pregnancy (boxed warning)"
+        ],
+        "monitoring": [
+          "Potassium and creatinine"
+        ],
+        "contraindications": [
+          "Hypersensitivity",
+          "With aliskiren in diabetes",
+          "Pregnancy (boxed warning)"
+        ],
+        "sourceTitle": "Losartan potassium prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=021cd76a-b093-4704-8410-5e7d01e20a54",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "branch": "Step 2–3 — add-on treatment",
+        "step": "ACE inhibitor or ARB",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "ACE inhibitor not tolerated, for example cough"
+      },
+      {
+        "indication": "Step 1 (55 or over without diabetes) or add-on",
+        "patientGroup": "Adults",
+        "genericName": "Amlodipine",
+        "dose": "5 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term",
+        "adjustments": [
+          "Maximum 10 mg once daily (label)",
+          "Oedema: switch to thiazide-like diuretic (NICE 1.4.36)"
+        ],
+        "monitoring": [
+          "BP, ankle oedema"
+        ],
+        "contraindications": [
+          "Hypersensitivity to amlodipine"
+        ],
+        "sourceTitle": "Amlodipine prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=003dd1ec-16f8-4f96-b6a8-c4689d35892a",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "branch": "Step 2–3 — add-on treatment",
+        "step": "Calcium-channel blocker",
+        "selection": "all"
+      },
+      {
+        "indication": "Thiazide-like diuretic (step 2–3)",
+        "patientGroup": "Adults",
+        "genericName": "Indapamide",
+        "dose": "1.25 mg",
+        "route": "PO",
+        "frequency": "Once daily in the morning",
+        "duration": "Long term",
+        "adjustments": [
+          "May increase to 2.5 mg after 4 weeks (label)"
+        ],
+        "monitoring": [
+          "Sodium, potassium, urate"
+        ],
+        "contraindications": [
+          "Anuria",
+          "Hypersensitivity to indapamide or other sulfonamide-derived drugs"
+        ],
+        "sourceTitle": "Indapamide tablets prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0687ed93-4761-4f9c-887d-95309c03f60e",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "branch": "Step 2–3 — add-on treatment",
+        "step": "Thiazide-like diuretic",
+        "selection": "all",
+        "useWhen": "Add at step 2 or 3"
+      },
+      {
+        "indication": "Resistant hypertension, K+ 4.5 mmol/L or less (step 4)",
+        "patientGroup": "Adults",
+        "genericName": "Spironolactone",
+        "dose": "25 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term with monitoring",
+        "adjustments": [
+          "Low dose per NICE; label range 25–100 mg daily",
+          "Caution with reduced eGFR (NICE 1.4.49)"
+        ],
+        "monitoring": [
+          "Sodium, potassium, renal function within 1 month (NICE 1.4.50)"
+        ],
+        "contraindications": [
+          "Hyperkalaemia",
+          "Addison's disease",
+          "Concomitant eplerenone"
+        ],
+        "sourceTitle": "NICE NG136: Hypertension in adults: diagnosis and management",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng136",
+        "sourceEdition": "NICE guideline, 2019 (updated February 2026), Recommendations 1.4.49–1.4.50",
+        "branch": "Step 4 — resistant hypertension",
+        "step": "Mineralocorticoid receptor antagonist",
+        "selection": "all"
+      }
+    ],
+    "note": "NICE NG136 gives drug classes and steps without doses; the starting doses are from the repository's earlier label-checked hypertension topic. ACE inhibitors and ARBs must not be used in pregnancy, breastfeeding or when planning pregnancy unless absolutely necessary (NG136, note before 1.4.26). SFDA registration was not verified. Check hospital formulary.",
+    "branches": [
+      {
+        "label": "Step 1 — aged 55 or over without diabetes",
+        "entryCriteria": "Adult with hypertension aged 55 or over without type 2 diabetes"
+      },
+      {
+        "label": "Step 1 — diabetes, or aged under 55",
+        "entryCriteria": "Adult with hypertension and type 2 diabetes, or aged under 55"
+      },
+      {
+        "label": "Step 2–3 — add-on treatment",
+        "entryCriteria": "Blood pressure still above target on step 1 treatment"
+      },
+      {
+        "label": "Step 4 — resistant hypertension",
+        "entryCriteria": "Blood pressure above target despite three drugs at optimal doses, with potassium 4.5 mmol/L or less"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Hypertension",
+      "threshold": "Clinic pressure 140/90 mmHg or higher and ABPM daytime or HBPM average 135/85 mmHg or higher (NG136 1.2.8)"
+    },
+    {
+      "criterion": "Stage 1",
+      "threshold": "Clinic 140/90 to 159/99 mmHg with ABPM or HBPM average 135/85 to 149/94 mmHg (NG136, terms used)"
+    },
+    {
+      "criterion": "Stage 2",
+      "threshold": "Clinic 160/100 mmHg or higher but under 180/120 mmHg with ABPM or HBPM average 150/95 mmHg or higher (NG136, terms used)"
+    },
+    {
+      "criterion": "Severe (stage 3)",
+      "threshold": "Clinic systolic 180 mmHg or higher or diastolic 120 mmHg or higher (NG136, terms used)"
+    },
+    {
+      "criterion": "Offer drugs",
+      "threshold": "Persistent stage 2 at any age (NG136 1.4.9); discuss for stage 1 under 80 with target organ damage, cardiovascular disease, renal disease, diabetes or 10-year risk of 10% or more (1.4.10)"
+    },
+    {
+      "criterion": "Treatment target",
+      "threshold": "Clinic below 140/90 mmHg under 80 years and below 150/90 mmHg at 80 or over; ABPM or HBPM below 135/85 mmHg under 80 and below 145/85 mmHg at 80 or over (NG136 1.4.20–1.4.22)"
+    },
+    {
+      "criterion": "Resistant hypertension",
+      "threshold": "Uncontrolled on optimal tolerated doses of an ACE inhibitor or ARB plus a calcium-channel blocker plus a thiazide-like diuretic (NG136 1.4.46)"
+    }
+  ],
+  "teaching": {
+    "scope": "Adults with confirmed hypertension in primary care: when to start drugs, step 1–4 drug choice, blood pressure targets, monitoring and same-day referral triggers. Checked against NICE NG136 (updated 26 Feb 2026), recommendations 1.1–1.5 and the terms used in the guideline.",
+    "learningObjectives": [
+      "Follow the step 1 to step 4 drug ladder and the age-based blood pressure targets.",
+      "Recognise severe hypertension that needs same-day specialist assessment."
+    ],
+    "pitfalls": [
+      "Adding drugs without checking adherence and optimal dose first.",
+      "Missing postural hypotension in older people or those with type 2 diabetes.",
+      "Using spironolactone at step 4 without checking potassium and renal function."
+    ],
+    "keyPoints": [
+      "Targets: below 140/90 mmHg under 80; below 150/90 mmHg at 80 or over (clinic).",
+      "Never combine an ACE inhibitor with an ARB.",
+      "Check adherence and confirm out of clinic before calling hypertension resistant."
+    ],
+    "references": [
+      {
+        "title": "NICE NG136: Hypertension in adults: diagnosis and management",
+        "edition": "NICE NG136, updated 26 Feb 2026",
+        "url": "https://www.nice.org.uk/guidance/ng136",
+        "locator": "Recommendations 1.1–1.5; Terms used in this guideline"
+      },
+      {
+        "title": "Amlodipine prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=003dd1ec-16f8-4f96-b6a8-c4689d35892a",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Ramipril prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01da05d8-e72e-4208-bf92-a5cd929f15ab",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Losartan potassium prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=021cd76a-b093-4704-8410-5e7d01e20a54",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Indapamide tablets prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0687ed93-4761-4f9c-887d-95309c03f60e",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "NICE NG136: Hypertension in adults: diagnosis and management",
+        "edition": "NICE guideline, 2019 (updated February 2026), Recommendations 1.4.49–1.4.50",
+        "url": "https://www.nice.org.uk/guidance/ng136",
+        "locator": "NICE guideline, 2019 (updated February 2026), Recommendations 1.4.49–1.4.50"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain that hypertension usually causes no symptoms and that treatment lowers cardiovascular risk (NG136 1.4.11).",
+      "Teach home blood pressure measurement and what to do if the target is not met (NG136 1.4.19)."
+    ],
+    "lifestyleAndDiet": [
+      "Reduce salt and avoid potassium-containing salt substitutes if older, diabetic, pregnant, or on an ACE inhibitor or ARB (NG136 1.4.5).",
+      "Limit alcohol and caffeine, stop smoking, and keep a healthy diet and activity level (NG136 1.4.2–1.4.7).",
+      "Do not offer calcium, magnesium or potassium supplements to lower blood pressure (NG136 1.4.6)."
+    ],
+    "mdtReferrals": [
+      "Same-day specialist assessment for the red flags above.",
+      "Specialist advice for resistant hypertension on four optimal drugs, age under 40, or suspected secondary cause (NG136 1.4.14, 1.4.52, 1.2.13).",
+      "Renal service for chronic kidney disease drug choice (NG136 1.4.26)."
+    ],
+    "dischargeCriteria": [
+      "Pressure at or below the agreed target on a tolerated once-daily regimen.",
+      "Adherence confirmed and home monitoring understood.",
+      "Annual review booked."
+    ],
+    "followUpPlan": "Review the response to each change using clinic pressure, with an annual review of pressure, symptoms, lifestyle and medicines (NG136 1.4.15, 1.4.24)."
+  }
+}

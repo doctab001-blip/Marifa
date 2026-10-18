@@ -1,0 +1,296 @@
+{
+  "id": "9c2bdfee-ee19-4b0e-9d47-d44467542a0d",
+  "title": "Cardiac Arrest",
+  "specialty": "Cardiology and Emergency Medicine",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adult Cardiac Arrest assessment and management, checked against 2025 AHA Guidelines for CPR and ECC. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "The cited official source was opened on 13 Oct 2026; numerical claims are limited to the cited sections.",
+      "Investigation tiers and added tests were checked against the cited source sections on 15 Oct 2026; additions are pending clinician review.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from authoring-standard-2026-10-15-v2-investigations-live."
+    ],
+    "unverifiedSections": [
+      "Saudi national topic guidance was not found in the opened sources.",
+      "SFDA registration and local formulary availability were not independently verified.",
+      "The expanded investigation panel is not clinically approved and remains non-current pending review.",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "9c2bdfee-ee19-4b0e-9d47-d44467542a0d",
+      "0bc770bc-73ca-49df-8058-25712d2bf182"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Loss of effective cardiac mechanical activity stops systemic perfusion. Shockable VF/pVT may respond to defibrillation; asystole and PEA require CPR and treatment of reversible causes. High-quality compressions and minimal interruptions maintain coronary and cerebral perfusion until ROSC.",
+    "keyMechanisms": [
+      "Loss of effective cardiac mechanical activity stops systemic perfusion.",
+      "Shockable VF/pVT may respond to defibrillation; asystole and PEA require CPR and treatment of reversible causes.",
+      "High-quality compressions and minimal interruptions maintain coronary and cerebral perfusion until ROSC."
+    ],
+    "references": [
+      {
+        "title": "2025 AHA Guidelines for CPR and ECC",
+        "edition": "AHA 2025, Adult Advanced Life Support, Figures 5, 7 and 8; Adult Post-Cardiac Arrest Care Figure 1",
+        "url": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/algorithms"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Sudden collapse and unresponsiveness",
+      "Absent normal breathing or only gasping"
+    ],
+    "physicalSigns": [
+      "No definite pulse within 10 seconds",
+      "Pulseless VF/pVT, asystole or PEA on monitor"
+    ],
+    "redFlags": [
+      "Cardiac arrest is immediately life-threatening",
+      "Persistent VF/pVT after shocks",
+      "Reversible cause requiring immediate correction"
+    ],
+    "precipitants": [
+      "Hypovolaemia, hypoxia, acidosis, hypo-/hyperkalaemia, hypothermia",
+      "Tension pneumothorax, tamponade, toxins, pulmonary or coronary thrombosis"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Respiratory arrest",
+      "distinguishingFeatures": "Pulse remains present; ventilate and reassess frequently."
+    },
+    {
+      "condition": "Syncope",
+      "distinguishingFeatures": "Pulse and normal breathing return promptly."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Rhythm analysis",
+        "modalityTarget": "Adult assessment",
+        "targetCondition": "Cardiac Arrest",
+        "expectedFinding": "VF/pVT or non-shockable asystole/PEA",
+        "clinicalRationale": "Determines shockable versus non-shockable pathway; reassess every 2 minutes.",
+        "normalValue": "Organised rhythm with a palpable pulse",
+        "references": [
+          {
+            "title": "2025 AHA Guidelines for CPR and ECC",
+            "edition": "AHA 2025, Adult Advanced Life Support, Figures 5, 7 and 8; Adult Post-Cardiac Arrest Care Figure 1",
+            "url": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/algorithms"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Waveform capnography",
+        "modalityTarget": "Adult assessment",
+        "targetCondition": "Important alternatives or complications of Cardiac Arrest",
+        "expectedFinding": "Abrupt rise may indicate ROSC",
+        "clinicalRationale": "Confirms tube placement and helps assess CPR quality.",
+        "normalValue": "No single normal threshold is specified in the algorithm",
+        "references": [
+          {
+            "title": "2025 AHA Guidelines for CPR and ECC",
+            "edition": "AHA 2025, Adult Advanced Life Support, Figures 5, 7 and 8; Adult Post-Cardiac Arrest Care Figure 1",
+            "url": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/algorithms"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Point-of-care glucose, blood gas and electrolytes",
+        "modalityTarget": "During resuscitation when sampling is feasible",
+        "targetCondition": "Metabolic reversible causes",
+        "expectedFinding": "Hypoglycaemia, severe potassium abnormality, hypoxaemia or marked acid-base disturbance",
+        "clinicalRationale": "Identify and immediately correct a reversible metabolic cause without interrupting high-quality CPR.",
+        "normalValue": "Glucose 3.9–10 mmol/L; potassium 3.5–5.0 mmol/L; no severe acid-base disturbance",
+        "references": [
+          {
+            "title": "2025 AHA Guidelines for CPR and ECC: Adult Advanced Life Support",
+            "edition": "AHA 2025, Part 9 Adult Advanced Life Support, reversible causes and point-of-care ultrasonography sections; Adult Cardiac Arrest Algorithm Figure 5",
+            "url": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-advanced-life-support"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Focused point-of-care ultrasound",
+        "modalityTarget": "Only with a skilled operator and no CPR interruption",
+        "targetCondition": "Tamponade, pulmonary embolism, pneumothorax or hypovolaemia",
+        "expectedFinding": "A finding suggesting a reversible mechanical cause",
+        "clinicalRationale": "May support a cause-specific intervention, but acquisition must not prolong pulse checks or interrupt compressions.",
+        "normalValue": "No tamponade, severe right-heart strain, tension pneumothorax pattern or profound hypovolaemia",
+        "references": [
+          {
+            "title": "2025 AHA Guidelines for CPR and ECC: Adult Advanced Life Support",
+            "edition": "AHA 2025, Part 9 Adult Advanced Life Support, reversible causes and point-of-care ultrasonography sections; Adult Cardiac Arrest Algorithm Figure 5",
+            "url": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-advanced-life-support"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Medication, toxin and event review",
+        "modalityTarget": "Concurrent with resuscitation",
+        "targetCondition": "Toxins and special circumstances",
+        "expectedFinding": "Exposure, overdose, dialysis interruption, pregnancy, hypothermia or another cause-specific clue",
+        "clinicalRationale": "Directs antidote or cause-specific resuscitation while the standard arrest algorithm continues.",
+        "normalValue": "No exposure or event suggesting poisoning or a special resuscitation circumstance",
+        "references": [
+          {
+            "title": "2025 AHA Guidelines for CPR and ECC: Adult Advanced Life Support",
+            "edition": "AHA 2025, Part 9 Adult Advanced Life Support, reversible causes and point-of-care ultrasonography sections; Adult Cardiac Arrest Algorithm Figure 5",
+            "url": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-advanced-life-support"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "step-1",
+      "title": "Recognise and start CPR",
+      "timeframe": "Immediately",
+      "actions": [
+        "Activate the resuscitation team, start high-quality CPR, attach defibrillator and give oxygen."
+      ]
+    },
+    {
+      "id": "step-2",
+      "title": "Rhythm-directed ALS",
+      "timeframe": "Every 2-minute cycle",
+      "actions": [
+        "Shock VF/pVT and resume CPR immediately; give epinephrine and amiodarone according to the algorithm.",
+        "For asystole/PEA give epinephrine as soon as feasible and continue CPR."
+      ]
+    },
+    {
+      "id": "step-3",
+      "title": "Treat causes and transition",
+      "timeframe": "Throughout",
+      "actions": [
+        "Treat reversible Hs and Ts; after ROSC move to post-cardiac-arrest care."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Pulseless cardiac arrest",
+        "patientGroup": "Adults in cardiac arrest",
+        "genericName": "Epinephrine",
+        "dose": "1 mg",
+        "route": "IV or IO",
+        "frequency": "Every 3–5 minutes during arrest",
+        "duration": "Until ROSC or resuscitation ends",
+        "adjustments": [
+          "The AHA arrest algorithm gives no renal or hepatic adjustment; follow the resuscitation protocol."
+        ],
+        "monitoring": [
+          "Rhythm and pulse checks every 2 minutes; continuous waveform capnography when an advanced airway is present."
+        ],
+        "contraindications": [
+          "No contraindication is listed in the cardiac-arrest algorithm."
+        ],
+        "sourceTitle": "2025 AHA Guidelines for CPR and ECC",
+        "sourceUrl": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/algorithms",
+        "sourceEdition": "AHA 2025 Adult Cardiac Arrest Algorithm, Figure 5, drug-therapy box",
+        "branch": "Pulseless cardiac arrest",
+        "step": "Vasopressor",
+        "selection": "all"
+      },
+      {
+        "indication": "Refractory ventricular fibrillation or pulseless ventricular tachycardia",
+        "patientGroup": "Adults after defibrillation attempts",
+        "genericName": "Amiodarone",
+        "dose": "First dose 300 mg; second dose 150 mg",
+        "route": "IV or IO bolus",
+        "frequency": "One first dose, then one second dose if refractory",
+        "duration": "Maximum two algorithm doses",
+        "adjustments": [
+          "No renal or hepatic adjustment is specified for arrest dosing in the algorithm; do not delay defibrillation."
+        ],
+        "monitoring": [
+          "Rhythm after each 2-minute CPR cycle; ROSC and adverse haemodynamics after conversion."
+        ],
+        "contraindications": [
+          "Use only for refractory VF/pVT in this algorithm."
+        ],
+        "sourceTitle": "2025 AHA Guidelines for CPR and ECC",
+        "sourceUrl": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/algorithms",
+        "sourceEdition": "AHA 2025 Adult Cardiac Arrest Algorithm, Figure 5, drug-therapy box",
+        "branch": "Refractory VF or pulseless VT",
+        "step": "Antiarrhythmic",
+        "selection": "all"
+      }
+    ],
+    "note": "AHA algorithm doses. SFDA registration was not independently verified; check the Saudi hospital formulary.",
+    "branches": [
+      {
+        "label": "Pulseless cardiac arrest",
+        "entryCriteria": "Adult in cardiac arrest"
+      },
+      {
+        "label": "Refractory VF or pulseless VT",
+        "entryCriteria": "Adult with ventricular fibrillation or pulseless ventricular tachycardia after defibrillation attempts"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Adult cardiac arrest",
+      "threshold": "Unresponsive, absent normal breathing and no definite pulse within 10 seconds"
+    }
+  ],
+  "teaching": {
+    "scope": "Adult Cardiac Arrest",
+    "learningObjectives": [
+      "Recognise Cardiac Arrest and its red flags.",
+      "Select the first investigations and next actions."
+    ],
+    "pitfalls": [
+      "Using the topic without checking local Saudi protocol and formulary."
+    ],
+    "keyPoints": [
+      "Cardiac arrest is immediately life-threatening",
+      "Persistent VF/pVT after shocks"
+    ],
+    "references": [
+      {
+        "title": "2025 AHA Guidelines for CPR and ECC",
+        "edition": "AHA 2025, Adult Advanced Life Support, Figures 5, 7 and 8; Adult Post-Cardiac Arrest Care Figure 1",
+        "url": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/algorithms",
+        "locator": "AHA 2025, Adult Advanced Life Support, Figures 5, 7 and 8; Adult Post-Cardiac Arrest Care Figure 1"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain events and prognosis to family through the resuscitation team."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable during arrest; address cause-specific prevention after recovery."
+    ],
+    "mdtReferrals": [
+      "Resuscitation team, critical care, cardiology and cause-specific specialties."
+    ],
+    "dischargeCriteria": [
+      "No emergency-department discharge; ROSC requires critical care assessment."
+    ],
+    "followUpPlan": "Survivors require structured post-arrest, neurological, cardiac and rehabilitation follow-up."
+  }
+}

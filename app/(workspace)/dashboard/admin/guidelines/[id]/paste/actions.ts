@@ -101,7 +101,7 @@ export async function savePastedTopic(formData: FormData) {
 
   let published = false;
   let destinationVersionId = reviewVersion.id;
-  if (mode === "publish" && audit.score >= CLINICAL_DIRECTORY_MINIMUM_SCORE) {
+  if (mode === "publish" && audit.publishable) {
     const liveVersion = `${revision}-live`;
     const now = new Date().toISOString();
     const liveContent = { ...reviewContent, version: liveVersion, status: "published" as const };

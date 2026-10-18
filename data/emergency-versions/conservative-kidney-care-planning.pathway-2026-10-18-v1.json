@@ -1,0 +1,369 @@
+{
+  "id": "a44b31ff-1839-4db9-aec2-f73fcaef4d5f",
+  "title": "Conservative Kidney Care Planning",
+  "specialty": "Nephrology / Palliative Medicine",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Palliative Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adults approaching kidney failure who are considering or have chosen conservative (non-dialysis) kidney management: shared decisions, symptom assessment, diet, anaemia and acidosis, and end-of-life planning. Verified against NICE NG107 and NG203; MOH Protocol-010 for symptom drugs; FDA labels for doses and contraindications. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from authoring-standard-2026-10-12-v1-live."
+    ],
+    "unverifiedSections": [
+      "Bicarbonate dose — renal protocol",
+      "Opioid choice in kidney failure — specialist",
+      "SFDA registration not checked",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "a44b31ff-1839-4db9-aec2-f73fcaef4d5f",
+      "1db28b75-299b-4fe5-874d-8bcd7555a8f7"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Conservative kidney management is planned, holistic care without dialysis for people with kidney failure, chosen when the burden of dialysis is likely to outweigh benefit (often older people with multimorbidity or frailty). The aim is to slow decline, control symptoms and plan for the end of life.",
+    "keyMechanisms": [
+      "Falling GFR causes retention of fluid, potassium, phosphate and acid, and uraemic toxins (itch, nausea, fatigue, cognitive change).",
+      "Reduced erythropoietin causes anaemia; reduced phosphate excretion drives secondary hyperparathyroidism.",
+      "Symptoms may also arise from non-renal conditions — check before attributing them to uraemia (NICE NG107)."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Fatigue, breathlessness, itch, insomnia, poor appetite, nausea, cramps, restless legs, low mood, cognitive change (NICE NG107 Box 1)."
+    ],
+    "physicalSigns": [
+      "Oedema, pallor, weight change, signs of fluid overload."
+    ],
+    "redFlags": [
+      "Potassium 6.0 mmol/L or more, severe acidosis or fluid overload — discuss goals and urgent options",
+      "Uncontrolled symptoms — specialist palliative care",
+      "Change in the person's wishes about dialysis"
+    ],
+    "precipitants": [
+      "Advanced CKD with frailty or multimorbidity",
+      "Diabetes, hypertension",
+      "Intercurrent illness, nephrotoxic drugs"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Non-renal causes of symptoms",
+      "distinguishingFeatures": "Heart failure, depression, drugs — NICE NG107 1.1.4."
+    },
+    {
+      "condition": "Reversible AKI on CKD",
+      "distinguishingFeatures": "Recent rapid creatinine rise."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "eGFR and trend",
+        "modalityTarget": "Every review",
+        "targetCondition": "Progression",
+        "expectedFinding": "eGFR around 5–7 mL/min/1.73 m² is where dialysis would usually be considered if asymptomatic (NICE NG107).",
+        "clinicalRationale": "Keeps planning discussions timely; conservative care is reviewed if wishes change.",
+        "normalValue": "eGFR 60 or more mL/min/1.73 m²",
+        "references": [
+          {
+            "title": "NICE NG107: Renal replacement therapy and conservative management",
+            "edition": "NICE guideline, 2018, Recommendation 1.1.2",
+            "url": "https://www.nice.org.uk/guidance/ng107"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Potassium, bicarbonate, calcium, phosphate",
+        "modalityTarget": "Every review",
+        "targetCondition": "Electrolyte and mineral disturbance",
+        "expectedFinding": "K above 5.5; bicarbonate below 20 mmol/L; high phosphate.",
+        "clinicalRationale": "Dietary advice; bicarbonate if eGFR below 30 and bicarbonate below 20 (NICE NG203 1.12.8); phosphate binder.",
+        "normalValue": "K 3.5–5.0; HCO3 22–29 mmol/L; phosphate 0.8–1.5 mmol/L",
+        "references": [
+          {
+            "title": "NICE NG203: Chronic kidney disease: assessment and management",
+            "edition": "NICE guideline, 2021 (updated 2025), Recommendations 1.6.13–1.6.23, 1.12.8",
+            "url": "https://www.nice.org.uk/guidance/ng203"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Haemoglobin; ferritin and transferrin saturation",
+        "modalityTarget": "Hb 110 g/L or less",
+        "targetCondition": "Renal anaemia",
+        "expectedFinding": "Low Hb; iron deficiency.",
+        "clinicalRationale": "Iron first; ESA if Hb below 10 g/dL per label.",
+        "normalValue": "Hb above 110 g/L",
+        "references": [
+          {
+            "title": "NICE NG203: Chronic kidney disease: assessment and management",
+            "edition": "NICE guideline, 2021 (updated 2025), Recommendations 1.7 (anaemia)",
+            "url": "https://www.nice.org.uk/guidance/ng203"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Symptom review (NICE NG107 Box 1)",
+        "modalityTarget": "Every review",
+        "targetCondition": "Symptom burden",
+        "expectedFinding": "Fatigue, itch, nausea, breathlessness, low mood.",
+        "clinicalRationale": "Explore cause and expected control with the person (NICE NG107 1.6.2).",
+        "normalValue": "No troublesome symptoms",
+        "references": [
+          {
+            "title": "NICE NG107: Renal replacement therapy and conservative management",
+            "edition": "NICE guideline, 2018, Recommendations 1.6.1–1.6.2 (Box 1)",
+            "url": "https://www.nice.org.uk/guidance/ng107"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "decide",
+      "title": "Shared decision",
+      "timeframe": "At least 1 year before kidney failure is expected",
+      "actions": [
+        "Start assessment for RRT or conservative management at least 1 year ahead (NICE NG107 1.2.1).",
+        "Offer a choice of RRT or conservative management; decide jointly, considering preferences, comorbidities and prognosis; revisit the decision (NICE NG107 1.3)."
+      ]
+    },
+    {
+      "id": "symptoms",
+      "title": "Symptom and complication control",
+      "timeframe": "Ongoing",
+      "actions": [
+        "Renal dietitian assessment: fluid, sodium, potassium, phosphate, protein, calories (NICE NG107 1.7.1).",
+        "Phosphate binder (e.g. calcium acetate) if phosphate high; oral bicarbonate if eGFR below 30 and bicarbonate below 20 (NICE NG203).",
+        "Anaemia: iron (e.g. iron sucrose 200 mg IV, 5 doses over 14 days in non-dialysis CKD — label); epoetin if Hb below 10 g/dL per label.",
+        "Nausea and pain: see Nausea and Cancer Pain topics; start opioids low and seek specialist advice in renal impairment."
+      ]
+    },
+    {
+      "id": "eol",
+      "title": "End-of-life planning",
+      "timeframe": "As kidney function falls",
+      "actions": [
+        "Advance care planning; preferred place of care and death; anticipatory medicines (NICE NG31)."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Iron deficiency in non-dialysis CKD",
+        "patientGroup": "Adults",
+        "genericName": "Iron sucrose",
+        "dose": "200 mg",
+        "route": "IV (slow injection over 2–5 min or infusion)",
+        "frequency": "5 doses over 14 days",
+        "duration": "Repeat if iron deficiency recurs",
+        "adjustments": [
+          "Observe for hypersensitivity"
+        ],
+        "monitoring": [
+          "Ferritin, TSAT, Hb"
+        ],
+        "contraindications": [
+          "Known hypersensitivity to iron sucrose"
+        ],
+        "sourceTitle": "Iron sucrose prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3f109bdb-a412-43b2-84c7-9dad05e85a71",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "branch": "Iron deficiency",
+        "step": "Iron",
+        "selection": "all"
+      },
+      {
+        "indication": "Renal anaemia (Hb below 10 g/dL) — specialist",
+        "patientGroup": "Adults with CKD",
+        "genericName": "Epoetin alfa",
+        "dose": "50–100 units/kg",
+        "route": "IV or SC",
+        "frequency": "3 times weekly",
+        "duration": "Titrate to avoid transfusion; lowest effective dose",
+        "adjustments": [
+          "Boxed warning: higher Hb targets increase death, stroke and thrombosis"
+        ],
+        "monitoring": [
+          "Hb, BP"
+        ],
+        "contraindications": [
+          "Uncontrolled hypertension",
+          "Pure red cell aplasia after ESA",
+          "Serious allergic reaction"
+        ],
+        "sourceTitle": "Epoetin alfa (Epogen) prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1f2d0b28-9cc5-4523-80b8-637fdaf3f7a5",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "branch": "Renal anaemia",
+        "step": "Erythropoiesis-stimulating agent",
+        "selection": "all"
+      },
+      {
+        "indication": "Hyperphosphataemia",
+        "patientGroup": "Adults",
+        "genericName": "Calcium acetate",
+        "dose": "2 capsules (667 mg each) with each meal",
+        "route": "PO",
+        "frequency": "With meals",
+        "duration": "Titrate (most need 3–4 per meal); label dose is for dialysis patients",
+        "adjustments": [
+          "Avoid if hypercalcaemia"
+        ],
+        "monitoring": [
+          "Calcium, phosphate"
+        ],
+        "contraindications": [
+          "Hypercalcaemia"
+        ],
+        "sourceTitle": "Calcium acetate capsules prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=000c044a-12ef-4484-942e-99552b777d58",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "branch": "Hyperphosphataemia",
+        "step": "Phosphate binder",
+        "selection": "all"
+      }
+    ],
+    "note": "Doses from FDA labels; indications from NICE NG203/NG107. Bicarbonate dose per local renal protocol. Check SFDA registration and formulary.",
+    "branches": [
+      {
+        "label": "Iron deficiency",
+        "entryCriteria": "Adult with non-dialysis CKD and iron deficiency"
+      },
+      {
+        "label": "Renal anaemia",
+        "entryCriteria": "Adult with CKD and renal anaemia (specialist)"
+      },
+      {
+        "label": "Hyperphosphataemia",
+        "entryCriteria": "Adult with CKD and hyperphosphataemia"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Dialysis usually considered (if chosen)",
+      "threshold": "eGFR about 5–7 mL/min/1.73 m² without symptoms (NICE NG107)"
+    },
+    {
+      "criterion": "Bicarbonate supplement",
+      "threshold": "eGFR below 30 and bicarbonate below 20 mmol/L (NICE NG203)"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "Planning kidney failure care (NICE NG107)",
+    "columns": [
+      "Conservative management",
+      "Renal replacement therapy"
+    ],
+    "rows": [
+      {
+        "parameter": "Choice",
+        "values": [
+          "Offered to all likely to need RRT",
+          "Dialysis (home/centre) or transplant"
+        ]
+      },
+      {
+        "parameter": "Planning",
+        "values": [
+          "At least 1 year ahead",
+          "At least 1 year ahead; fistula about 6 months before"
+        ]
+      }
+    ],
+    "note": "Decision shared and revisited."
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Support shared decisions about conservative kidney management and control symptoms and complications."
+    ],
+    "pitfalls": [
+      "Attributing every symptom to uraemia.",
+      "Unplanned crash-landing on dialysis.",
+      "Opioid accumulation in kidney failure."
+    ],
+    "keyPoints": [
+      "Offer conservative care as a real choice.",
+      "Plan at least 1 year ahead.",
+      "Ask about the full symptom list.",
+      "Renal dietitian for everyone.",
+      "Advance care planning early."
+    ],
+    "references": [
+      {
+        "title": "NICE NG107: Renal replacement therapy and conservative management",
+        "edition": "NICE guideline, 2018",
+        "url": "https://www.nice.org.uk/guidance/ng107",
+        "locator": "Recommendations 1.1–1.7"
+      },
+      {
+        "title": "NICE NG203: Chronic kidney disease: assessment and management",
+        "edition": "NICE guideline, 2021 (updated 2025)",
+        "url": "https://www.nice.org.uk/guidance/ng203",
+        "locator": "Recommendations 1.6–1.12"
+      },
+      {
+        "title": "NICE NG31: Care of dying adults in the last days of life",
+        "edition": "NICE guideline, 2015",
+        "url": "https://www.nice.org.uk/guidance/ng31",
+        "locator": "Recommendations 1.1–1.5"
+      },
+      {
+        "title": "Iron sucrose prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3f109bdb-a412-43b2-84c7-9dad05e85a71",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Epoetin alfa (Epogen) prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1f2d0b28-9cc5-4523-80b8-637fdaf3f7a5",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Calcium acetate capsules prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=000c044a-12ef-4484-942e-99552b777d58",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "What conservative care involves and can achieve.",
+      "Diet and fluid advice; sick-day rules."
+    ],
+    "lifestyleAndDiet": [
+      "Renal diet as advised; stay active as able."
+    ],
+    "mdtReferrals": [
+      "Nephrology and specialist palliative care jointly.",
+      "Renal dietitian."
+    ],
+    "dischargeCriteria": [
+      "Symptoms controlled in the preferred place of care; anticipatory plan documented.",
+      "Family/carers know whom to contact."
+    ],
+    "followUpPlan": "Regular joint nephrology–palliative review; revisit the decision whenever symptoms or wishes change (NICE NG107 1.3)."
+  }
+}

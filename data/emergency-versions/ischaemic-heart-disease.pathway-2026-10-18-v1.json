@@ -1,0 +1,645 @@
+{
+  "id": "c1e45d3f-fa28-49f1-ab69-3ee4ab9cac6f",
+  "title": "Ischaemic Heart Disease",
+  "specialty": "Cardiology / Primary Care",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adults with chronic coronary syndrome/stable angina in primary and cardiology care: diagnosis (CT coronary angiography first line), symptom relief, anti-anginal drug sequence, secondary prevention and revascularisation referral. Verified against NICE CG126 (stable angina), CG95 (chest pain diagnosis) and NG238 (lipids); doses and contraindications from US FDA prescribing information. ESC 2024 chronic coronary syndrome guideline and Saudi guidance were not reviewed. Acute coronary syndrome is a separate topic. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from emergency-2026-10-12-v1-live."
+    ],
+    "unverifiedSections": [
+      "ESC 2024 chronic coronary syndrome guideline not reviewed",
+      "No Saudi chronic coronary guidance reviewed",
+      "Ivabradine/nicorandil dosing — specialist",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "c1e45d3f-fa28-49f1-ab69-3ee4ab9cac6f",
+      "6dc2598a-066a-4bd2-acd4-807296f2684c"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Ischaemic heart disease (coronary artery disease) is myocardial ischaemia from atherosclerotic narrowing of the coronary arteries. Stable angina is predictable chest discomfort on exertion or emotion, relieved by rest or a nitrate within minutes, caused by a fixed stenosis limiting flow when oxygen demand rises.",
+    "keyMechanisms": [
+      "Atherosclerotic plaque narrows the lumen; flow reserve is adequate at rest but insufficient when demand rises (heart rate, BP, contractility) → supply–demand mismatch → angina.",
+      "Beta-blockers lower heart rate and contractility; calcium-channel blockers dilate coronaries and reduce afterload; nitrates reduce preload — all reduce demand or improve supply.",
+      "Plaque rupture or erosion turns stable disease into an acute coronary syndrome — secondary prevention (antiplatelet, high-intensity statin, BP and risk-factor control) reduces events.",
+      "Significant CAD on CT: 70% or more stenosis in a major epicardial segment or 50% or more in the left main (NICE CG95)."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Constricting chest, neck, shoulder, jaw or arm discomfort, precipitated by exertion and relieved by rest or GTN within about 5 minutes (typical angina: all three features).",
+      "Exertional breathlessness (angina equivalent), especially in older people, women and people with diabetes."
+    ],
+    "physicalSigns": [
+      "Often normal examination.",
+      "Signs of risk factors or complications: hypertension, xanthelasma, carotid bruits, signs of heart failure, aortic stenosis murmur (alternative cause of angina)."
+    ],
+    "redFlags": [
+      "Pain at rest, increasing frequency/severity or pain lasting over 15 minutes — possible ACS: call ambulance",
+      "Pain persisting 5 minutes after a second GTN dose — emergency (NICE)",
+      "Syncope or breathlessness on exertion with ejection systolic murmur (aortic stenosis)",
+      "Symptoms uncontrolled on two anti-anginal drugs — consider revascularisation"
+    ],
+    "precipitants": [
+      "Smoking",
+      "Diabetes",
+      "Hypertension",
+      "Dyslipidaemia",
+      "Obesity, inactivity",
+      "Family history of premature CHD",
+      "CKD"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Acute coronary syndrome",
+      "distinguishingFeatures": "Rest pain, crescendo pattern, troponin rise."
+    },
+    {
+      "condition": "Aortic stenosis, hypertrophic cardiomyopathy",
+      "distinguishingFeatures": "Murmur; echo diagnosis."
+    },
+    {
+      "condition": "Oesophageal/musculoskeletal pain",
+      "distinguishingFeatures": "Not exertional; reproducible tenderness; reflux symptoms."
+    },
+    {
+      "condition": "Anaemia, thyrotoxicosis",
+      "distinguishingFeatures": "Precipitate angina; blood tests."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Resting 12-lead ECG",
+        "modalityTarget": "All suspected angina",
+        "targetCondition": "Ischaemia or previous MI",
+        "expectedFinding": "Q waves, ST depression, T-wave inversion, LBBB.",
+        "clinicalRationale": "A normal ECG does not exclude CAD; ECG changes with non-anginal pain still warrant CT coronary angiography (CG95).",
+        "normalValue": "Sinus rhythm, no Q waves or ST-T changes",
+        "references": [
+          {
+            "title": "NICE CG95: Recent-onset chest pain of suspected cardiac origin: assessment and diagnosis",
+            "edition": "NICE clinical guideline, 2010 (updated 2016)",
+            "url": "https://www.nice.org.uk/guidance/cg95"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Lipids, HbA1c, renal function, FBC, TSH if indicated",
+        "modalityTarget": "At diagnosis",
+        "targetCondition": "Risk factors and precipitants",
+        "expectedFinding": "Dyslipidaemia, diabetes, CKD, anaemia, thyroid disease.",
+        "clinicalRationale": "Guides secondary prevention; treat precipitants.",
+        "references": [
+          {
+            "title": "NICE CG126: Stable angina: management",
+            "edition": "NICE clinical guideline, 2011 (updated 2016)",
+            "url": "https://www.nice.org.uk/guidance/cg126"
+          },
+          {
+            "title": "NICE NG238: Cardiovascular disease: risk assessment and reduction, including lipid modification",
+            "edition": "NICE guideline, 2023",
+            "url": "https://www.nice.org.uk/guidance/ng238"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "advancedImaging",
+        "testName": "CT coronary angiography (64-slice or above)",
+        "modalityTarget": "First line if typical or atypical angina, or non-anginal pain with ST-T changes/Q waves on ECG (CG95)",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Coronary stenosis; significant CAD = 70% or more in a major segment or 50% or more left main.",
+        "clinicalRationale": "Confirms or excludes CAD anatomically; non-diagnostic or uncertain significance → functional imaging.",
+        "references": [
+          {
+            "title": "NICE CG95: Recent-onset chest pain of suspected cardiac origin: assessment and diagnosis",
+            "edition": "NICE clinical guideline, 2010 (updated 2016)",
+            "url": "https://www.nice.org.uk/guidance/cg95"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Non-invasive functional imaging (stress echo, MPS-SPECT, stress MRI)",
+        "modalityTarget": "Second line: CTCA uncertain/non-diagnostic, or known CAD with uncertain symptoms",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Reversible ischaemia.",
+        "clinicalRationale": "Guides need for invasive angiography and revascularisation.",
+        "references": [
+          {
+            "title": "NICE CG95: Recent-onset chest pain of suspected cardiac origin: assessment and diagnosis",
+            "edition": "NICE clinical guideline, 2010 (updated 2016)",
+            "url": "https://www.nice.org.uk/guidance/cg95"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Invasive coronary angiography",
+        "modalityTarget": "Third line, or when revascularisation is being considered",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Anatomy for PCI or CABG.",
+        "clinicalRationale": "Defines revascularisation strategy.",
+        "references": [
+          {
+            "title": "NICE CG95: Recent-onset chest pain of suspected cardiac origin: assessment and diagnosis",
+            "edition": "NICE clinical guideline, 2010 (updated 2016)",
+            "url": "https://www.nice.org.uk/guidance/cg95"
+          },
+          {
+            "title": "NICE CG126: Stable angina: management",
+            "edition": "NICE clinical guideline, 2011 (updated 2016)",
+            "url": "https://www.nice.org.uk/guidance/cg126"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Echocardiography",
+        "modalityTarget": "Murmur, heart failure signs, previous MI",
+        "targetCondition": "Imaging",
+        "expectedFinding": "LV function, valve disease (aortic stenosis).",
+        "clinicalRationale": "Changes management and prognosis.",
+        "references": [
+          {
+            "title": "NICE CG126: Stable angina: management",
+            "edition": "NICE clinical guideline, 2011 (updated 2016)",
+            "url": "https://www.nice.org.uk/guidance/cg126"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "diagnose",
+      "title": "Diagnose",
+      "timeframe": "At presentation",
+      "actions": [
+        "Assess pain typicality; ECG; CT coronary angiography first line when angina cannot be excluded clinically (CG95).",
+        "Treat as stable angina while awaiting tests if symptoms are typical; consider aspirin until diagnosis (CG95)."
+      ]
+    },
+    {
+      "id": "relief",
+      "title": "Relieve episodes",
+      "timeframe": "From diagnosis",
+      "actions": [
+        "Short-acting GTN for treatment and before planned exertion; repeat after 5 minutes; call an ambulance if pain persists 5 minutes after the second dose (CG126)."
+      ]
+    },
+    {
+      "id": "antianginal",
+      "title": "Anti-anginal drugs",
+      "timeframe": "Review 2–4 weeks after each change",
+      "actions": [
+        "First line: a beta-blocker or a calcium-channel blocker, chosen by comorbidities and preference; titrate to maximum tolerated dose.",
+        "Not controlled: switch to the other or combine — with a beta-blocker use a dihydropyridine CCB (amlodipine, slow-release nifedipine, felodipine).",
+        "Beta-blocker and CCB both unsuitable: long-acting nitrate, ivabradine, nicorandil or ranolazine as monotherapy or add-on.",
+        "Third drug only if uncontrolled on two and awaiting or unsuitable for revascularisation."
+      ]
+    },
+    {
+      "id": "prevention",
+      "title": "Secondary prevention",
+      "timeframe": "From diagnosis",
+      "actions": [
+        "Aspirin 75 mg daily (consider, weighing bleeding risk) (CG126).",
+        "Atorvastatin 80 mg (NG238); target LDL 2.0 or non-HDL 2.6 mmol/L or less.",
+        "ACE inhibitor if diabetes; treat hypertension; stop smoking; cardiac rehabilitation-style lifestyle support.",
+        "No vitamin or fish-oil supplements for angina (CG126)."
+      ]
+    },
+    {
+      "id": "revasc",
+      "title": "Revascularisation",
+      "timeframe": "If symptoms persist on optimal medical therapy",
+      "actions": [
+        "Consider PCI or CABG when symptoms are not controlled on optimal medical treatment (CG126); multidisciplinary heart team decision."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Angina episodes and before exertion",
+        "patientGroup": "Adults",
+        "genericName": "Nitroglycerin (GTN) sublingual",
+        "dose": "1 tablet",
+        "route": "Sublingual",
+        "frequency": "Repeat every 5 minutes if needed",
+        "duration": "Maximum 3 tablets in 15 minutes; emergency if pain persists",
+        "adjustments": [
+          "NICE: call ambulance if pain persists 5 min after the second dose"
+        ],
+        "monitoring": [
+          "Headache, hypotension"
+        ],
+        "contraindications": [
+          "PDE-5 inhibitors or riociguat",
+          "Severe anaemia",
+          "Raised intracranial pressure",
+          "Circulatory failure and shock",
+          "Hypersensitivity to nitrates"
+        ],
+        "sourceTitle": "Nitroglycerin sublingual prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=041f127e-5166-4484-bc1a-0a373d1187ae",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "branch": "Relief of angina episodes",
+        "step": "Symptom relief",
+        "selection": "all"
+      },
+      {
+        "indication": "First-line anti-anginal (beta-blocker)",
+        "patientGroup": "Adults",
+        "genericName": "Atenolol",
+        "dose": "50 mg",
+        "route": "PO",
+        "frequency": "Once daily; increase to 100 mg if needed after 1–2 weeks",
+        "duration": "Long term",
+        "adjustments": [
+          "Withdraw gradually (risk of rebound angina)",
+          "Reduce in renal impairment per label"
+        ],
+        "monitoring": [
+          "Heart rate, BP"
+        ],
+        "contraindications": [
+          "Sinus bradycardia; heart block greater than first degree",
+          "Cardiogenic shock; overt cardiac failure"
+        ],
+        "sourceTitle": "Atenolol prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=09b21985-1818-449d-9b29-98f733cf7b9f",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "branch": "Anti-anginal therapy — first line",
+        "step": "First-line anti-anginal",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "First-line anti-anginal (beta-blocker, alternative)",
+        "patientGroup": "Adults",
+        "genericName": "Metoprolol succinate (extended release)",
+        "dose": "100 mg",
+        "route": "PO",
+        "frequency": "Once daily; titrate weekly",
+        "duration": "Long term",
+        "adjustments": [
+          "Taper over 1–2 weeks if stopping"
+        ],
+        "monitoring": [
+          "Heart rate, BP"
+        ],
+        "contraindications": [
+          "Severe bradycardia; second- or third-degree heart block; sick sinus syndrome (without pacemaker)",
+          "Cardiogenic shock; decompensated heart failure"
+        ],
+        "sourceTitle": "Metoprolol succinate prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=028049cd-d233-49f9-87fa-ec91e433a49f",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "branch": "Anti-anginal therapy — first line",
+        "step": "First-line anti-anginal",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Chosen instead of atenolol"
+      },
+      {
+        "indication": "First-line anti-anginal (CCB) or add-on to beta-blocker",
+        "patientGroup": "Adults",
+        "genericName": "Amlodipine",
+        "dose": "5–10 mg (lower dose in elderly or hepatic impairment)",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term",
+        "adjustments": [
+          "Dihydropyridine — preferred CCB to combine with a beta-blocker"
+        ],
+        "monitoring": [
+          "Ankle oedema, BP"
+        ],
+        "contraindications": [
+          "Hypersensitivity to amlodipine"
+        ],
+        "sourceTitle": "Amlodipine prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=003dd1ec-16f8-4f96-b6a8-c4689d35892a",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "branch": "Anti-anginal therapy — first line",
+        "step": "First-line anti-anginal",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Beta-blocker is unsuitable, or as add-on to a beta-blocker"
+      },
+      {
+        "indication": "Add-on or alternative when beta-blocker/CCB unsuitable",
+        "patientGroup": "Adults",
+        "genericName": "Isosorbide mononitrate (immediate release)",
+        "dose": "20 mg",
+        "route": "PO",
+        "frequency": "Twice daily, 7 hours apart (nitrate-free interval)",
+        "duration": "Long term",
+        "adjustments": [
+          "Never with PDE-5 inhibitors or riociguat"
+        ],
+        "monitoring": [
+          "Headache, hypotension"
+        ],
+        "contraindications": [
+          "PDE-5 inhibitors (sildenafil, tadalafil, vardenafil)",
+          "Riociguat",
+          "Hypersensitivity"
+        ],
+        "sourceTitle": "Isosorbide mononitrate prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=06839534-85b8-42aa-b0e3-079ed236be44",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "branch": "Anti-anginal therapy — add-on or alternative",
+        "step": "Add-on or alternative",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "Add-on or alternative when beta-blocker/CCB unsuitable",
+        "patientGroup": "Adults",
+        "genericName": "Ranolazine (extended release)",
+        "dose": "500 mg",
+        "route": "PO",
+        "frequency": "Twice daily; increase to 1,000 mg twice daily if needed",
+        "duration": "Long term",
+        "adjustments": [
+          "Maximum 1,000 mg twice daily",
+          "QT prolongation; drug interactions (CYP3A, P-gp)"
+        ],
+        "monitoring": [
+          "ECG (QTc), renal function"
+        ],
+        "contraindications": [
+          "Strong CYP3A inhibitors or CYP3A inducers",
+          "Liver cirrhosis"
+        ],
+        "sourceTitle": "Ranolazine prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00979fb3-d70f-493d-94ca-2914cbadaa9d",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "branch": "Anti-anginal therapy — add-on or alternative",
+        "step": "Add-on or alternative",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Chosen instead of isosorbide mononitrate"
+      },
+      {
+        "indication": "Secondary prevention (antiplatelet)",
+        "patientGroup": "Adults",
+        "genericName": "Aspirin",
+        "dose": "75 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term",
+        "adjustments": [
+          "Weigh bleeding risk (CG126 'consider')"
+        ],
+        "monitoring": [
+          "Bleeding, dyspepsia"
+        ],
+        "contraindications": [
+          "Known allergy to NSAIDs",
+          "Syndrome of asthma, rhinitis and nasal polyps",
+          "Hypersensitivity to aspirin"
+        ],
+        "sourceTitle": "NICE CG126: Stable angina: management",
+        "sourceUrl": "https://www.nice.org.uk/guidance/cg126",
+        "sourceEdition": "NICE CG126 recs 1.3.3–1.3.5",
+        "branch": "Secondary prevention",
+        "step": "Antiplatelet",
+        "selection": "all"
+      },
+      {
+        "indication": "Secondary prevention (statin)",
+        "patientGroup": "Adults with established CVD",
+        "genericName": "Atorvastatin",
+        "dose": "80 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term",
+        "adjustments": [
+          "Lower dose if interactions, adverse-effect risk or preference"
+        ],
+        "monitoring": [
+          "Lipids and ALT at 2–3 months"
+        ],
+        "contraindications": [
+          "Acute liver failure or decompensated cirrhosis",
+          "Hypersensitivity"
+        ],
+        "sourceTitle": "NICE NG238: Cardiovascular disease: risk assessment and reduction, including lipid modification",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng238",
+        "sourceEdition": "NICE NG238 rec 1.7.2",
+        "branch": "Secondary prevention",
+        "step": "Statin",
+        "selection": "all"
+      }
+    ],
+    "note": "Drug choice and sequence are from NICE CG126; aspirin 75 mg from CG126 and atorvastatin 80 mg from NG238; other doses and contraindications from US FDA labels. Ivabradine and nicorandil: specialist use (MHRA safety advice noted in CG126). Check SFDA registration, formulary and availability.",
+    "branches": [
+      {
+        "label": "Relief of angina episodes",
+        "entryCriteria": "Adult with angina episodes or before exertion"
+      },
+      {
+        "label": "Anti-anginal therapy — first line",
+        "entryCriteria": "Adult needing regular anti-anginal treatment"
+      },
+      {
+        "label": "Anti-anginal therapy — add-on or alternative",
+        "entryCriteria": "Adult not controlled on, or unable to take, a beta-blocker or calcium channel blocker"
+      },
+      {
+        "label": "Secondary prevention",
+        "entryCriteria": "Adult with established cardiovascular disease"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Typical angina",
+      "threshold": "Constricting discomfort, triggered by exertion, relieved by rest or GTN within about 5 minutes"
+    },
+    {
+      "criterion": "Significant CAD on CTCA",
+      "threshold": "70% or more stenosis in a major segment, or 50% or more left main"
+    },
+    {
+      "criterion": "Revascularisation",
+      "threshold": "Symptoms uncontrolled on optimal medical therapy"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "NICE CG126 anti-anginal sequence",
+    "columns": [
+      "Step",
+      "Drugs"
+    ],
+    "rows": [
+      {
+        "parameter": "All",
+        "values": [
+          "Symptom relief",
+          "Sublingual GTN"
+        ]
+      },
+      {
+        "parameter": "First line",
+        "values": [
+          "One drug",
+          "Beta-blocker or calcium-channel blocker"
+        ]
+      },
+      {
+        "parameter": "Second line",
+        "values": [
+          "Switch or combine",
+          "Beta-blocker plus dihydropyridine CCB"
+        ]
+      },
+      {
+        "parameter": "If BB/CCB unsuitable",
+        "values": [
+          "Monotherapy or add-on",
+          "Long-acting nitrate, ivabradine, nicorandil or ranolazine"
+        ]
+      },
+      {
+        "parameter": "Uncontrolled on two drugs",
+        "values": [
+          "Revascularisation",
+          "PCI or CABG (heart team)"
+        ]
+      }
+    ],
+    "note": "CG126 predates ESC 2024 chronic coronary syndrome guidance, which was not reviewed."
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Diagnose stable angina and manage chronic ischaemic heart disease with anti-anginal and secondary-prevention therapy."
+    ],
+    "pitfalls": [
+      "Combining a beta-blocker with verapamil or diltiazem.",
+      "Missing aortic stenosis as the cause of angina.",
+      "Nitrates with PDE-5 inhibitors.",
+      "Stopping beta-blockers abruptly.",
+      "Adding a third anti-anginal without considering revascularisation."
+    ],
+    "keyPoints": [
+      "CT coronary angiography first line for suspected angina.",
+      "GTN for episodes; ambulance if pain persists after 2 doses.",
+      "Beta-blocker or CCB first; combine with a dihydropyridine.",
+      "Aspirin 75 mg and atorvastatin 80 mg for secondary prevention.",
+      "Refer for revascularisation if uncontrolled on optimal therapy."
+    ],
+    "references": [
+      {
+        "title": "NICE CG126: Stable angina: management",
+        "edition": "NICE clinical guideline, 2011 (updated 2016)",
+        "url": "https://www.nice.org.uk/guidance/cg126",
+        "locator": "Recs 1.2–1.5 (information, secondary prevention, anti-anginal drugs, revascularisation)"
+      },
+      {
+        "title": "NICE CG95: Recent-onset chest pain of suspected cardiac origin: assessment and diagnosis",
+        "edition": "NICE clinical guideline, 2010 (updated 2016)",
+        "url": "https://www.nice.org.uk/guidance/cg95",
+        "locator": "Recs 1.3.4–1.3.6 (CT coronary angiography, functional imaging, invasive angiography)"
+      },
+      {
+        "title": "NICE NG238: Cardiovascular disease: risk assessment and reduction, including lipid modification",
+        "edition": "NICE guideline, 2023",
+        "url": "https://www.nice.org.uk/guidance/ng238",
+        "locator": "Rec 1.7.2 (atorvastatin 80 mg for CVD)"
+      },
+      {
+        "title": "Nitroglycerin sublingual prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=041f127e-5166-4484-bc1a-0a373d1187ae",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Atenolol prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=09b21985-1818-449d-9b29-98f733cf7b9f",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Metoprolol succinate prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=028049cd-d233-49f9-87fa-ec91e433a49f",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Amlodipine prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=003dd1ec-16f8-4f96-b6a8-c4689d35892a",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Isosorbide mononitrate prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=06839534-85b8-42aa-b0e3-079ed236be44",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Ranolazine prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00979fb3-d70f-493d-94ca-2914cbadaa9d",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Aspirin (aspirin component of aspirin/extended-release dipyridamole) prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=111a4f6a-c3e4-43e2-8f0e-8c72f71cddb2",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Atorvastatin calcium prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00afce9b-48c9-487a-a738-e359c005c707",
+        "locator": "Section 4 Contraindications"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "How to use GTN and when to call an ambulance.",
+      "Pacing activity; sexual activity advice.",
+      "Adherence to secondary prevention."
+    ],
+    "lifestyleAndDiet": [
+      "Stop smoking.",
+      "Regular exercise within symptom limits.",
+      "Healthy diet and weight; limit alcohol."
+    ],
+    "mdtReferrals": [
+      "Cardiology / rapid-access chest pain clinic for diagnosis.",
+      "Heart team for revascularisation.",
+      "Cardiac rehabilitation and smoking cessation."
+    ],
+    "dischargeCriteria": [
+      "Not applicable — outpatient care."
+    ],
+    "followUpPlan": "Review 2–4 weeks after starting or changing anti-anginal drugs, then at least annually: symptoms, adherence, BP, lipids, HbA1c, smoking, side effects."
+  }
+}

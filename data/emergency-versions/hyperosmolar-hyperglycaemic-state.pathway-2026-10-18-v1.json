@@ -1,0 +1,593 @@
+{
+  "id": "c21a33c2-d701-4435-8ba7-e8f75db067fa",
+  "title": "Hyperosmolar Hyperglycaemic State",
+  "specialty": "Endocrinology / Emergency Medicine",
+  "authority": "SHC",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adults with HHS or mixed DKA–HHS. Haemodynamically unstable patients are resuscitated first (ICU). Verified against SDCPG 2021 pp. 75–79 and the 2024 consensus. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from emergency-2026-10-12-v1-live."
+    ],
+    "unverifiedSections": [
+      "Local formulary availability and hospital protocol adoption",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "c21a33c2-d701-4435-8ba7-e8f75db067fa",
+      "489e5110-8113-4b12-8cef-929c8273d32a"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "HHS is severe hyperglycaemia, hyperosmolality and dehydration without significant ketoacidosis. There is enough insulin to stop ketogenesis but not enough to control glucose, so osmotic diuresis runs for days and the fluid deficit is huge.",
+    "keyMechanisms": [
+      "Relative insulin deficiency plus counter-regulatory hormones: hepatic glucose output rises and uptake falls, so glucose climbs above 30 mmol/L.",
+      "Osmotic diuresis: water and electrolytes are lost over days; SDCPG notes the fluid deficit is often over 8 L.",
+      "Hyperosmolality: water shifts out of brain cells, causing confusion, seizures and coma. Correcting it too fast reverses the shift and risks cerebral oedema and osmotic demyelination.",
+      "Little ketosis: residual insulin suppresses lipolysis, so pH and bicarbonate are usually near normal (pH at least 7.3, bicarbonate at least 15).",
+      "Prothrombotic state: dehydration and hyperviscosity raise the risk of arterial and venous thrombosis.",
+      "Mortality is about ten times that of DKA (MOH: up to 20%); age, degree of dehydration and comorbidity drive prognosis."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Develops over days to a week, usually in older adults with type 2 diabetes (can be the first presentation).",
+      "Polyuria, polydipsia, weight loss, weakness, vomiting.",
+      "Drowsiness, confusion, seizures or coma; focal neurological signs can occur.",
+      "Often co-presents with another acute illness (infection, MI, stroke)."
+    ],
+    "physicalSigns": [
+      "Severe dehydration: dry mucosa, poor skin turgor, tachycardia, hypotension.",
+      "Reduced GCS; no Kussmaul breathing (no significant acidosis).",
+      "Feet: check for ulcers and pressure areas; these patients are at very high risk of heel ulceration.",
+      "Signs of the precipitant: chest, urine, skin infection; stroke; MI."
+    ],
+    "redFlags": [
+      "Systolic BP below 90 mmHg: resuscitate first; the SDCPG order sheet does not apply until SBP is at least 90",
+      "Falling GCS, seizures or new focal signs, especially during treatment: think cerebral oedema or stroke; consider CT brain",
+      "Osmolality falling more than 8 mOsm/kg/h or sodium falling more than 10 mmol/L in 24 h",
+      "Potassium below 3.3 mmol/L: hold insulin",
+      "Signs of limb ischaemia, DVT, PE or stroke (thrombosis)"
+    ],
+    "precipitants": [
+      "Infection (30–60%; pneumonia and urinary tract infection most common).",
+      "New-onset type 2 diabetes.",
+      "High-dose steroids and other drugs that raise glucose.",
+      "MI, stroke, VTE.",
+      "Poor adherence; impaired thirst or limited access to water (frail elderly)."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "DKA",
+      "distinguishingFeatures": "Ketones at least 3.0 mmol/L with pH below 7.3 or bicarbonate below 18. Onset hours to days, Kussmaul breathing."
+    },
+    {
+      "condition": "Mixed DKA–HHS",
+      "distinguishingFeatures": "Hyperosmolar AND ketotic (ketones at least 3.0, urine ketones 2+ or more, pH below 7.30 or bicarbonate below 18): start insulin at 0.1 unit/kg/h (consensus) and correct osmolality slowly."
+    },
+    {
+      "condition": "Stroke, sepsis or meningitis",
+      "distinguishingFeatures": "Focal signs, fever or neck stiffness out of proportion to the metabolic picture; confusion that does not improve as osmolality falls."
+    },
+    {
+      "condition": "Hypernatraemic dehydration without diabetes",
+      "distinguishingFeatures": "Glucose not markedly raised; osmolality driven by sodium."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Capillary / plasma glucose",
+        "modalityTarget": "Arrival, then hourly",
+        "targetCondition": "Hyperglycaemia",
+        "expectedFinding": "Above 30 mmol/L (SDCPG) / at least 33.3 mmol/L (consensus).",
+        "clinicalRationale": "Target a fall of no more than 5 mmol/L/h. Aim for 10–15 mmol/L in the first 24 h. Change to 5% dextrose in 0.9% NaCl when glucose is below 13 mmol/L.",
+        "normalValue": "Fasting below 5.6 mmol/L",
+        "references": [
+          {
+            "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+            "edition": "1st ed. 2021",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf"
+          },
+          {
+            "title": "Hyperglycaemic crises in adults with diabetes: a consensus report (ADA/EASD/JBDS/AACE/DTS)",
+            "edition": "Diabetologia 2024;67:1455–1479",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11343900/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Serum osmolality (measured, or 2 × Na + glucose + urea)",
+        "modalityTarget": "0, 3, 6, 12 h, then every 12 h (SDCPG); every 4 h (consensus)",
+        "targetCondition": "Hyperosmolality",
+        "expectedFinding": "Total above 320 mOsm/kg (SDCPG; consensus also accepts effective osmolality 2×Na + glucose above 300).",
+        "clinicalRationale": "The key treatment target. Lower by about 5 mOsm/kg/h (consensus 3–8). Falling faster: cut fluid rate by 50%. Not falling despite positive balance, or corrected Na above 150: switch to 0.45% NaCl.",
+        "normalValue": "275–295 mOsm/kg",
+        "references": [
+          {
+            "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+            "edition": "1st ed. 2021",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf"
+          },
+          {
+            "title": "Hyperglycaemic crises in adults with diabetes: a consensus report (ADA/EASD/JBDS/AACE/DTS)",
+            "edition": "Diabetologia 2024;67:1455–1479",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11343900/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Sodium (and corrected sodium)",
+        "modalityTarget": "0, 3, 6, 12 h",
+        "targetCondition": "Water deficit",
+        "expectedFinding": "Often normal or high; rises at first as glucose falls.",
+        "clinicalRationale": "A rise in sodium as glucose falls is expected and is not a reason for hypotonic fluid while osmolality is falling. Sodium must not fall more than 10 mmol/L in 24 h.",
+        "normalValue": "135–145 mmol/L",
+        "references": [
+          {
+            "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+            "edition": "1st ed. 2021",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf"
+          },
+          {
+            "title": "Hyperglycaemic crises in adults with diabetes: a consensus report (ADA/EASD/JBDS/AACE/DTS)",
+            "edition": "Diabetologia 2024;67:1455–1479",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11343900/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Potassium",
+        "modalityTarget": "0 h, then every 3 h",
+        "targetCondition": "Potassium deficit",
+        "expectedFinding": "Variable; falls with fluids and insulin.",
+        "clinicalRationale": "Above 5.2: none. 3.3–5.2: add 20–40 mmol/L to fluids (SDCPG order sheet), maximum 10 mmol/h. Below 3.3: hold insulin, ECG, cardiac monitor, 40 mmol KCl in 500 mL over 4 h.",
+        "normalValue": "3.5–5.0 mmol/L",
+        "references": [
+          {
+            "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+            "edition": "1st ed. 2021",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Venous blood gas and blood ketones",
+        "modalityTarget": "Arrival",
+        "targetCondition": "Exclude DKA / mixed state",
+        "expectedFinding": "pH at least 7.3, bicarbonate at least 15 mmol/L, ketones below 3.0 mmol/L in pure HHS.",
+        "clinicalRationale": "If ketones at least 3.0 or acidotic: treat as mixed DKA–HHS. Use an arterial gas only if hypoxic.",
+        "normalValue": "pH 7.35–7.45; bicarbonate 22–29 mmol/L; ketones below 0.6 mmol/L",
+        "references": [
+          {
+            "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+            "edition": "1st ed. 2021",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf"
+          },
+          {
+            "title": "Hyperglycaemic crises in adults with diabetes: a consensus report (ADA/EASD/JBDS/AACE/DTS)",
+            "edition": "Diabetologia 2024;67:1455–1479",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11343900/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Urea and creatinine",
+        "modalityTarget": "0, 3, 6, 12 h",
+        "targetCondition": "Pre-renal AKI",
+        "expectedFinding": "Usually raised from dehydration.",
+        "clinicalRationale": "Expect improvement with fluids; caution with potassium if oliguric. Urine output target above 0.5 mL/kg/h.",
+        "normalValue": "Creatinine about 60–110 µmol/L",
+        "references": [
+          {
+            "title": "Hyperglycaemic crises in adults with diabetes: a consensus report (ADA/EASD/JBDS/AACE/DTS)",
+            "edition": "Diabetologia 2024;67:1455–1479",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11343900/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "FBC, CRP, lactate, blood and urine cultures, troponin, amylase",
+        "modalityTarget": "Arrival",
+        "targetCondition": "Precipitant",
+        "expectedFinding": "Evidence of infection, MI or pancreatitis.",
+        "clinicalRationale": "Infection is the trigger in 30–60%; give antibiotics only when there is clinical, imaging or laboratory evidence of infection.",
+        "references": [
+          {
+            "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+            "edition": "1st ed. 2021",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf"
+          },
+          {
+            "title": "Hyperglycaemic crises in adults with diabetes: a consensus report (ADA/EASD/JBDS/AACE/DTS)",
+            "edition": "Diabetologia 2024;67:1455–1479",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11343900/"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "ECG",
+        "modalityTarget": "Arrival",
+        "targetCondition": "Potassium effects, MI",
+        "expectedFinding": "Peaked T waves (high K), U waves (low K) or ischaemia.",
+        "clinicalRationale": "Cardiac monitor if K is below 3.3 or above 5.2.",
+        "normalValue": "Sinus rhythm",
+        "references": [
+          {
+            "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+            "edition": "1st ed. 2021",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Chest X-ray",
+        "modalityTarget": "All patients (on the SDCPG order sheet)",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Pneumonia or aspiration.",
+        "clinicalRationale": "Common precipitant.",
+        "references": [
+          {
+            "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+            "edition": "1st ed. 2021",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "CT brain",
+        "modalityTarget": "Obtunded, focal signs or deterioration during treatment",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Stroke or cerebral oedema.",
+        "clinicalRationale": "SDCPG: consider CT brain if obtunded.",
+        "references": [
+          {
+            "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+            "edition": "1st ed. 2021",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "resus",
+      "title": "Resuscitate and decide level of care",
+      "timeframe": "First hour",
+      "actions": [
+        "ABC, cardiac monitor, urinary catheter if needed, foot examination.",
+        "SBP below 90: give 0.9% NaCl until SBP is at least 90, then follow the HHS protocol.",
+        "Most patients need HDU/ICU-level monitoring; start prophylactic LMWH unless contraindicated."
+      ],
+      "branches": [
+        {
+          "condition": "Ketones at least 3.0 or pH below 7.3",
+          "actions": [
+            "Mixed DKA–HHS: start insulin now (consensus 0.1 unit/kg/h); otherwise follow this pathway."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fluids",
+      "title": "Fluids are the main treatment",
+      "timeframe": "0–12 h, then 12–24 h",
+      "actions": [
+        "0.9% NaCl 1 L over the first hour (no potassium).",
+        "Then 0.9% NaCl 250 mL/h with potassium as per the algorithm (about 3 L over the next 11–12 h); aim to replace 4 L in the first 12 h.",
+        "Targets: positive balance 2–3 L by 6 h and 3–6 L by 12 h; replace the rest over the next 12 h. Rate not to exceed 250 mL/h on the order sheet.",
+        "Elderly, cardiac or renal patients: smaller volumes and frequent review."
+      ],
+      "branches": [
+        {
+          "condition": "Osmolality falling more than 5 mOsm/kg/h",
+          "actions": [
+            "Reduce the IV fluid rate by 50%."
+          ]
+        },
+        {
+          "condition": "Osmolality not falling despite positive balance, or corrected Na above 150",
+          "actions": [
+            "Change to 0.45% NaCl at the same rate."
+          ]
+        },
+        {
+          "condition": "Glucose below 13 mmol/L",
+          "actions": [
+            "Change to 5% dextrose in 0.9% NaCl and halve insulin (see below)."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "insulin",
+      "title": "Insulin: late and low",
+      "timeframe": "Only after at least 1 L of fluid",
+      "actions": [
+        "Fluid alone lowers glucose a lot in HHS. SDCPG: start insulin only after at least 1 L of fluid and if glucose is not falling, fluid balance is already positive, or there is significant ketosis.",
+        "Fixed rate 0.05 unit/kg/h (50 units in 50 mL 0.9% NaCl); never more than 0.05 unit/kg/h (e.g. 4 units/h in 80 kg).",
+        "Glucose below 13 mmol/L: reduce to 0.025 unit/kg/h. Glucose 5 mmol/L or less: add 10% dextrose at 50–100 mL/h; do not stop insulin.",
+        "Aim for glucose 10–15 mmol/L; fall no faster than 5 mmol/L/h."
+      ],
+      "branches": [
+        {
+          "condition": "Potassium below 3.3",
+          "actions": [
+            "Hold insulin for 2 h or until K is at least 3.3; replace potassium (40 mmol in 500 mL over 4 h, max 10 mmol/h)."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "complications",
+      "title": "Prevent complications",
+      "timeframe": "Throughout",
+      "actions": [
+        "Thromboprophylaxis with LMWH for all unless contraindicated; SDCPG suggests considering full anticoagulation.",
+        "Heel protectors and daily foot checks in neuropathy, deformity or vascular disease.",
+        "Treat the precipitant; antibiotics when infection is shown."
+      ]
+    },
+    {
+      "id": "recovery",
+      "title": "Recovery and transition",
+      "timeframe": "Often more than 24 h",
+      "actions": [
+        "Correction usually takes longer than 24 h; do not chase normal values quickly.",
+        "Consensus resolution: osmolality below 300 mOsm/kg, urine output above 0.5 mL/kg/h, cognition improved, glucose below 13.9 mmol/L.",
+        "Stop IV insulin once eating and drinking; most need subcutaneous insulin; some newly diagnosed or previously well-controlled patients can later go back to oral agents.",
+        "All patients see a diabetes educator."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Fluid replacement",
+        "patientGroup": "Adults with SBP at least 90",
+        "genericName": "0.9% sodium chloride",
+        "dose": "1 L over 1 h; then 250 mL/h for about 12 h; then 100–250 mL/h",
+        "route": "IV",
+        "frequency": "Continuous",
+        "duration": "Replace about 4 L in 12 h; remainder over the next 12 h",
+        "adjustments": [
+          "Halve the rate if osmolality falls more than 5 mOsm/kg/h",
+          "Switch to 0.45% NaCl if osmolality is not falling or corrected Na above 150"
+        ],
+        "monitoring": [
+          "Osmolality and Na at 0, 3, 6, 12 h",
+          "Fluid balance, urine output"
+        ],
+        "sourceTitle": "SDCPG HHS order sheet",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf",
+        "sourceEdition": "SDCPG 2021 pp. 76–79",
+        "branch": "HHS — fluids, potassium and insulin",
+        "step": "1. Fluids",
+        "selection": "all"
+      },
+      {
+        "indication": "Potassium replacement",
+        "patientGroup": "Urine output present",
+        "genericName": "Potassium chloride in IV fluid",
+        "dose": "K above 5.2: none; 3.3–5.2: 20–40 mmol/L; below 3.3: 40 mmol in 500 mL over 4 h",
+        "route": "IV",
+        "frequency": "Adjust to each result",
+        "duration": "Until normal",
+        "adjustments": [
+          "Maximum 10 mmol/h (order sheet)",
+          "Caution in renal impairment"
+        ],
+        "monitoring": [
+          "K every 3 h",
+          "ECG and cardiac monitor if below 3.3"
+        ],
+        "sourceTitle": "SDCPG HHS order sheet",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf",
+        "sourceEdition": "SDCPG 2021 pp. 76–79",
+        "branch": "HHS — fluids, potassium and insulin",
+        "step": "2. Potassium replacement",
+        "selection": "all"
+      },
+      {
+        "indication": "Glucose control (after at least 1 L fluid)",
+        "patientGroup": "Adults with HHS",
+        "genericName": "Soluble (regular) human insulin",
+        "dose": "0.05 unit/kg/h if glucose at least 13; 0.025 unit/kg/h if glucose below 13; maximum 0.05 unit/kg/h",
+        "route": "IV",
+        "frequency": "Continuous",
+        "duration": "Until eating and drinking",
+        "adjustments": [
+          "Mixed DKA–HHS: 0.1 unit/kg/h (consensus)",
+          "Hold if K below 3.3"
+        ],
+        "monitoring": [
+          "Hourly capillary glucose; aim 10–15 mmol/L, fall no more than 5 mmol/L/h"
+        ],
+        "sourceTitle": "SDCPG HHS order sheet",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf",
+        "sourceEdition": "SDCPG 2021 pp. 76–79",
+        "branch": "HHS — fluids, potassium and insulin",
+        "step": "3. Insulin (late and low)",
+        "selection": "all"
+      },
+      {
+        "indication": "Prevent hypoglycaemia",
+        "patientGroup": "Glucose below 13 mmol/L (5% dextrose) or 5 mmol/L or less (10%)",
+        "genericName": "5% dextrose in 0.9% NaCl; 10% dextrose",
+        "dose": "D5/0.9% NaCl at the same rate; D10 at 50–100 mL/h until glucose reaches 10",
+        "route": "IV",
+        "frequency": "Continuous",
+        "duration": "As needed",
+        "adjustments": [
+          "Do not stop insulin"
+        ],
+        "monitoring": [
+          "Hourly glucose"
+        ],
+        "sourceTitle": "SDCPG HHS order sheet",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf",
+        "sourceEdition": "SDCPG 2021 pp. 76–79",
+        "branch": "HHS — glucose falling",
+        "step": "Dextrose",
+        "selection": "all"
+      }
+    ],
+    "note": "Doses as stated in the cited source. Check SFDA registration and the hospital formulary.",
+    "branches": [
+      {
+        "label": "HHS — fluids, potassium and insulin",
+        "entryCriteria": "Adult with hyperosmolar hyperglycaemic state"
+      },
+      {
+        "label": "HHS — glucose falling",
+        "entryCriteria": "HHS with glucose falling"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Glucose",
+      "threshold": "Above 30 mmol/L (SDCPG) / at least 33.3 mmol/L (consensus)"
+    },
+    {
+      "criterion": "Osmolality",
+      "threshold": "Total above 320 mOsm/kg, or effective (2 × Na + glucose) above 300 mOsm/kg (consensus)"
+    },
+    {
+      "criterion": "No significant ketoacidosis",
+      "threshold": "Ketones below 3.0 mmol/L or urine ketones below 2+; pH at least 7.3 and bicarbonate above 15 mmol/L"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "SDCPG 2021 vs consensus 2024",
+    "columns": [
+      "Saudi SDCPG 2021",
+      "International consensus 2024"
+    ],
+    "rows": [
+      {
+        "parameter": "Glucose threshold",
+        "values": [
+          "Above 30 mmol/L",
+          "At least 33.3 mmol/L"
+        ]
+      },
+      {
+        "parameter": "Osmolality threshold",
+        "values": [
+          "Total above 320 mOsm/kg",
+          "Effective above 300 or total above 320"
+        ]
+      },
+      {
+        "parameter": "Insulin start",
+        "values": [
+          "After at least 1 L fluid, 0.05 unit/kg/h; only if glucose not falling or balance positive, or ketotic",
+          "0.05 unit/kg/h if no significant ketonaemia; 0.1 unit/kg/h if mixed DKA–HHS"
+        ]
+      },
+      {
+        "parameter": "Osmolality fall",
+        "values": [
+          "About 5 mOsm/kg/h",
+          "3–8 mOsm/kg/h"
+        ]
+      },
+      {
+        "parameter": "Resolution",
+        "values": [
+          "Not defined numerically",
+          "Osm below 300, urine above 0.5 mL/kg/h, cognition improved, glucose below 13.9"
+        ]
+      }
+    ]
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Recognise, investigate and manage hyperosmolar hyperglycaemic state in the emergency department."
+    ],
+    "pitfalls": [
+      "Starting insulin before fluids: circulatory collapse.",
+      "Using DKA insulin doses (0.1 unit/kg/h) in pure HHS.",
+      "Switching to hypotonic fluid just because sodium rises.",
+      "Correcting too fast: cerebral oedema and osmotic demyelination.",
+      "Forgetting foot protection and VTE prophylaxis."
+    ],
+    "keyPoints": [
+      "Fluids first, insulin late and low (0.05 unit/kg/h).",
+      "Correct slowly: osmolality about 5 mOsm/kg/h, sodium no more than 10 mmol/L per 24 h, glucose no more than 5 mmol/L/h.",
+      "Rising sodium while osmolality falls is expected.",
+      "Thromboprophylaxis and heel protection for everyone."
+    ],
+    "references": [
+      {
+        "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+        "edition": "1st ed. 2021",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf",
+        "locator": "pp. 75–79 (HHS section and adult HHS order sheet)"
+      },
+      {
+        "title": "MOH DKA/HHS Protocol (Adult), Saudi Ministry of Health (Protocol-005)",
+        "edition": "MOH therapeutic protocols",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-005.pdf",
+        "locator": "HHS protocol section (identical criteria and order sheet)"
+      },
+      {
+        "title": "Hyperglycaemic crises in adults with diabetes: a consensus report (ADA/EASD/JBDS/AACE/DTS)",
+        "edition": "Diabetologia 2024;67:1455–1479",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11343900/",
+        "locator": "Fig. 2b, Section 4, Table 3"
+      },
+      {
+        "title": "SFDA Saudi Drug Information System (registration search)",
+        "edition": "Accessed 11–12 Oct 2026",
+        "url": "https://sdi.sfda.gov.sa/"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Hydration and sick-day rules.",
+      "New insulin technique if started."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable in the acute phase."
+    ],
+    "mdtReferrals": [
+      "Diabetes educator for all.",
+      "Podiatry if foot at risk.",
+      "Geriatric or rehabilitation review if function declined."
+    ],
+    "dischargeCriteria": [
+      "Osmolality, sodium and glucose improving and stable; eating and drinking.",
+      "Precipitant treated.",
+      "Insulin or oral regimen established and taught.",
+      "Functional status assessed (older adults)."
+    ],
+    "followUpPlan": "Diabetes clinic review early after discharge; recovery depends largely on prior functional status."
+  }
+}

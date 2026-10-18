@@ -7,6 +7,7 @@ import { Investigations as MonitoringSchedule, TreatmentDetails } from "@/compon
 import { ClinicalEvidenceAudit } from "@/components/clinical-evidence-audit";
 import { getMedicationPlan } from "@/lib/data/medication-plans";
 import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
+import { groupMedicationPlan, isBranchedMedicationPlan, type MedicationRegimen } from "@/lib/medication-pathway";
 
 type Investigation = DiseaseDetail["investigations"]["ruleIn"][number];
 
@@ -22,6 +23,18 @@ function Labelled({ text }: { text: string }) {
   const separator = displayText.indexOf(":");
   if (separator > 0 && separator < 60) return <><strong>{displayText.slice(0, separator)}:</strong>{displayText.slice(separator + 1)}</>;
   return <>{displayText}</>;
+}
+
+function RegimenRow({ regimen, hasContraindications }: { regimen: MedicationRegimen; hasContraindications: boolean }) {
+  const role = regimen.selection === "one-of" ? (regimen.preferred ? "Preferred" : "Alternative") : null;
+  return (
+    <tr>
+      <th scope="row">{regimen.genericName}{role ? <span className={`pill pill-sm ${regimen.preferred ? "pill-emerald" : "pill-slate"} em-role-pill`}>{role}</span> : null}<small>{withoutInlineSourceLocators(regimen.indication)} · {withoutInlineSourceLocators(regimen.patientGroup)}</small>{regimen.useWhen ? <small className="em-use-when"><strong>Use when:</strong> {withoutInlineSourceLocators(regimen.useWhen)}</small> : null}</th>
+      <td>{withoutInlineSourceLocators(regimen.dose)}<span className="em-regimen-pills"><span className="pill pill-sky pill-sm">{withoutInlineSourceLocators(regimen.route)}</span><span className="pill pill-violet pill-sm">{withoutInlineSourceLocators(regimen.frequency)}</span><span className="pill pill-amber pill-sm"><Clock3 size={13} aria-hidden="true" />{withoutInlineSourceLocators(regimen.duration)}</span></span></td>
+      {hasContraindications ? <td className="em-contra">{regimen.contraindications?.length ? <List items={regimen.contraindications} /> : <span className="em-muted">See product label</span>}</td> : null}
+      <td><List items={[...regimen.adjustments, ...regimen.monitoring.map((item) => `Monitor: ${item}`)]} /></td>
+    </tr>
+  );
 }
 
 function List({ items, className = "em-list" }: { items: string[]; className?: string }) {
@@ -145,19 +158,30 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
           <>
             <h3>Medicines and doses</h3>
             <p className="em-footnote">{withoutInlineSourceLocators(medicationPlan.note)}</p>
+            {isBranchedMedicationPlan(medicationPlan) ? groupMedicationPlan(medicationPlan).map((branch) => (
+              <div className="em-med-branch" key={branch.label}>
+                <h4 className="em-med-branch-title"><span className="pill pill-sky pill-sm">If</span> {withoutInlineSourceLocators(branch.label)}</h4>
+                {branch.entryCriteria ? <p className="em-footnote em-med-entry">{withoutInlineSourceLocators(branch.entryCriteria)}</p> : null}
+                <div className="em-table-wrap">
+                  <table className="em-table em-dose-table">
+                    <thead><tr><th scope="col">Medicine and indication</th><th scope="col">Dose, route, frequency</th>{hasContraindications ? <th scope="col">Contraindications</th> : null}<th scope="col">Cautions and monitoring</th></tr></thead>
+                    {branch.steps.map((step) => (
+                      <tbody key={step.step}>
+                        <tr className="em-step-row"><th colSpan={hasContraindications ? 4 : 3} scope="colgroup">{withoutInlineSourceLocators(step.step)} <span className={`pill pill-sm ${step.selection === "one-of" ? "pill-amber" : "pill-violet"}`}>{step.selection === "one-of" ? "Choose ONE" : step.options.length > 1 ? "Give all" : "Give"}</span></th></tr>
+                        {step.options.map((regimen) => <RegimenRow key={`${regimen.genericName}-${regimen.indication}`} regimen={regimen} hasContraindications={hasContraindications} />)}
+                      </tbody>
+                    ))}
+                  </table>
+                </div>
+              </div>
+            )) : (
             <div className="em-table-wrap">
               <table className="em-table em-dose-table">
                 <thead><tr><th scope="col">Medicine and indication</th><th scope="col">Dose, route, frequency</th>{hasContraindications ? <th scope="col">Contraindications</th> : null}<th scope="col">Cautions and monitoring</th></tr></thead>
-                <tbody>{medicationPlan.regimens.map((regimen) => (
-                  <tr key={`${regimen.genericName}-${regimen.indication}`}>
-                    <th scope="row">{regimen.genericName}<small>{withoutInlineSourceLocators(regimen.indication)} · {withoutInlineSourceLocators(regimen.patientGroup)}</small></th>
-                    <td>{withoutInlineSourceLocators(regimen.dose)}<span className="em-regimen-pills"><span className="pill pill-sky pill-sm">{withoutInlineSourceLocators(regimen.route)}</span><span className="pill pill-violet pill-sm">{withoutInlineSourceLocators(regimen.frequency)}</span><span className="pill pill-amber pill-sm"><Clock3 size={13} aria-hidden="true" />{withoutInlineSourceLocators(regimen.duration)}</span></span></td>
-                    {hasContraindications ? <td className="em-contra">{regimen.contraindications?.length ? <List items={regimen.contraindications} /> : <span className="em-muted">See product label</span>}</td> : null}
-                    <td><List items={[...regimen.adjustments, ...regimen.monitoring.map((item) => `Monitor: ${item}`)]} /></td>
-                  </tr>
-                ))}</tbody>
+                <tbody>{medicationPlan.regimens.map((regimen) => <RegimenRow key={`${regimen.genericName}-${regimen.indication}`} regimen={regimen} hasContraindications={hasContraindications} />)}</tbody>
               </table>
             </div>
+            )}
           </>
         ) : medicationPlan?.note ? <p className="em-footnote">{withoutInlineSourceLocators(medicationPlan.note)}</p> : null}
 

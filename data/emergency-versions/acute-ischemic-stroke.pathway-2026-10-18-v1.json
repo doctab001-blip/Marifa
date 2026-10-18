@@ -1,0 +1,495 @@
+{
+  "id": "c2c404f2-5f47-4e4d-9ce7-fb32a9c1e105",
+  "title": "Acute Ischemic Stroke",
+  "specialty": "Emergency Medicine and Neurology",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Urgent Care",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adult suspected acute ischemic stroke: recognition, initial imaging, thrombolysis and thrombectomy referral, early antithrombotic and supportive care. The supplied text was reconciled only where supported by opened AHA/ASA, ESO and NICE sources. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "User-supplied revision was preserved as an additive under-review version; the current published and all historical rows remain unchanged.",
+      "The opened AHA/ASA resource confirms a 2026 acute ischemic stroke guideline exists; the opened ESO guideline supports alteplase within 4.5 hours and selected MRI-mismatch wake-up presentations when thrombectomy is not planned.",
+      "Claims not directly supported by an opened source in this task were omitted rather than treated as verified clinical instructions.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from user-pasted-replacement-2026-10-16-v1-live."
+    ],
+    "unverifiedSections": [
+      "No open Saudi national acute ischemic stroke guideline was identified in this task; apply the local Saudi stroke-code, transfer and formulary protocol.",
+      "The submitted cerebral blood-flow cut-offs, neuron-loss estimate, NIHSS category cut-offs, door-to-CT target, DAPT loading/duration, glucose target, BP-agent regimens, and named medicine maximum doses were not independently source-verified in this task.",
+      "SFDA registration and local formulary availability were not rechecked for alteplase, tenecteplase, aspirin, labetalol, nicardipine, clevidipine, clopidogrel, insulin, paracetamol or LMWH.",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "bd203075-b824-4a3f-8c9b-04cf1799f78d",
+      "062fd741-3900-464e-abfa-c05d8ea566c1"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Acute Ischemic Stroke (AIS) results from arterial occlusion and sudden cerebral hypoperfusion. Reperfusion treatment seeks to preserve potentially salvageable tissue while avoiding haemorrhagic harm.",
+    "keyMechanisms": [
+      "Large-artery atherosclerosis may cause in-situ thrombosis or artery-to-artery embolism.",
+      "Cardioembolism includes atrial fibrillation and structural cardiac sources.",
+      "Small-vessel disease can cause lacunar infarction; dissection and hypercoagulable disorders are alternative causes.",
+      "Earlier reperfusion is associated with greater benefit; eligible patients need urgent specialist imaging and treatment decisions.",
+      "Hypoxaemia, hyperglycaemia and fever may worsen acute brain injury and require protocol-directed assessment."
+    ],
+    "references": [
+      {
+        "title": "American Heart Association/American Stroke Association: Acute Ischemic Stroke Resources",
+        "edition": "2026; Section Acute Ischemic Stroke Resources",
+        "url": "https://www.stroke.org/en/professionals/stroke-resource-library/acute-ischemic-stroke-resources"
+      },
+      {
+        "title": "European Stroke Organisation guidelines on intravenous thrombolysis for acute ischaemic stroke",
+        "edition": "2021; PICO 1.1, recommendation after line 237; sections on late-window and imaging selection",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7995316/"
+      },
+      {
+        "title": "NICE NG128: Stroke and transient ischaemic attack in over 16s",
+        "edition": "2019, amended 2025; recommendations 1.3–1.6",
+        "url": "https://www.nice.org.uk/guidance/ng128"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Sudden unilateral face, arm or leg weakness or sensory loss.",
+      "Aphasia, dysarthria, neglect, gaze deviation or homonymous visual-field loss.",
+      "Vertigo, ataxia, diplopia, crossed signs or reduced consciousness can indicate posterior-circulation stroke."
+    ],
+    "physicalSigns": [
+      "Record National Institutes of Health Stroke Scale (NIHSS) score and repeat it if the deficit changes.",
+      "Assess pulse rhythm, blood pressure, oxygen saturation, glucose and signs of trauma, seizure or infection.",
+      "A severe cortical deficit raises concern for large-vessel occlusion and urgent vascular imaging."
+    ],
+    "redFlags": [
+      "Last-known-well time within a reperfusion window or unknown-onset/wake-up stroke: activate the local stroke pathway immediately.",
+      "Severe deficit, gaze deviation, aphasia, neglect, dense hemiparesis, coma or fluctuating brainstem signs: urgent stroke-team and thrombectomy-centre discussion.",
+      "Anticoagulant exposure, bleeding tendency, severe headache, vomiting, seizure or falling consciousness: urgent brain imaging to assess haemorrhage and other alternatives."
+    ],
+    "precipitants": [
+      "Atrial fibrillation",
+      "Hypertension",
+      "Diabetes mellitus",
+      "Smoking",
+      "Carotid disease",
+      "Recent myocardial infarction",
+      "Arterial dissection"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Intracranial haemorrhage",
+      "distinguishingFeatures": "Cannot be safely distinguished from ischaemia clinically; urgent brain imaging is required."
+    },
+    {
+      "condition": "Hypoglycaemia",
+      "distinguishingFeatures": "Capillary glucose can identify a reversible mimic during immediate assessment."
+    },
+    {
+      "condition": "Seizure with post-ictal paresis",
+      "distinguishingFeatures": "A witnessed seizure supports the diagnosis, but seizure at onset does not by itself exclude ischemic stroke."
+    },
+    {
+      "condition": "Migraine with aura",
+      "distinguishingFeatures": "Symptoms often spread gradually and may be positive; a new focal deficit still needs an urgent stroke assessment."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Capillary blood glucose",
+        "modalityTarget": "Capillary blood glucose",
+        "targetCondition": "Acute ischemic stroke or urgent alternative",
+        "expectedFinding": "Low glucose can mimic focal stroke; treat confirmed hypoglycaemia while maintaining the stroke assessment.",
+        "clinicalRationale": "Obtain immediately; do not delay urgent imaging.",
+        "normalValue": "Typical adult range: 4–11 mmol/L; use the local laboratory range",
+        "references": [
+          {
+            "title": "NICE NG128: Stroke and transient ischaemic attack in over 16s",
+            "edition": "2019, amended 2025; recommendations 1.3–1.6",
+            "url": "https://www.nice.org.uk/guidance/ng128"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "National Institutes of Health Stroke Scale (NIHSS)",
+        "modalityTarget": "National Institutes of Health Stroke Scale (NIHSS)",
+        "targetCondition": "Acute ischemic stroke or urgent alternative",
+        "expectedFinding": "A documented baseline and change in score quantify neurological deficit.",
+        "clinicalRationale": "Supports serial assessment and specialist communication; it does not replace imaging.",
+        "normalValue": "0 is no measured deficit",
+        "references": [
+          {
+            "title": "American Heart Association/American Stroke Association: Acute Ischemic Stroke Resources",
+            "edition": "2026; Section Acute Ischemic Stroke Resources",
+            "url": "https://www.stroke.org/en/professionals/stroke-resource-library/acute-ischemic-stroke-resources"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Non-contrast computed tomography (CT) brain",
+        "modalityTarget": "Non-contrast computed tomography (CT) brain",
+        "targetCondition": "Acute ischemic stroke or urgent alternative",
+        "expectedFinding": "Haemorrhage, early ischaemic change or a structural mimic may be seen.",
+        "clinicalRationale": "Urgently assesses haemorrhage before ischemic reperfusion treatment.",
+        "normalValue": "No acute intracranial haemorrhage",
+        "references": [
+          {
+            "title": "NICE NG128: Stroke and transient ischaemic attack in over 16s",
+            "edition": "2019, amended 2025; recommendations 1.3–1.6",
+            "url": "https://www.nice.org.uk/guidance/ng128"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Computed tomography angiography (CTA) head and neck",
+        "modalityTarget": "Computed tomography angiography (CTA) head and neck",
+        "targetCondition": "Acute ischemic stroke or urgent alternative",
+        "expectedFinding": "A proximal occlusion can support urgent thrombectomy-centre discussion.",
+        "clinicalRationale": "Use when large-vessel occlusion or thrombectomy is suspected; it must not create avoidable reperfusion delay.",
+        "normalValue": "No proximal arterial occlusion",
+        "references": [
+          {
+            "title": "NICE NG128: Stroke and transient ischaemic attack in over 16s",
+            "edition": "2019, amended 2025; recommendations 1.3–1.6",
+            "url": "https://www.nice.org.uk/guidance/ng128"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "advancedImaging",
+        "testName": "CT perfusion or magnetic resonance imaging (MRI) mismatch study",
+        "modalityTarget": "CT perfusion or magnetic resonance imaging (MRI) mismatch study",
+        "targetCondition": "Acute ischemic stroke or urgent alternative",
+        "expectedFinding": "A mismatch may support selected late-window or wake-up treatment decisions.",
+        "clinicalRationale": "Use only through the specialist imaging pathway; the ESO guideline describes MRI DWI-FLAIR mismatch selection when thrombectomy is not planned.",
+        "normalValue": "No ischaemic core–penumbra mismatch",
+        "references": [
+          {
+            "title": "European Stroke Organisation guidelines on intravenous thrombolysis for acute ischaemic stroke",
+            "edition": "2021; PICO 1.1, recommendation after line 237; sections on late-window and imaging selection",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7995316/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Platelet count and coagulation assessment",
+        "modalityTarget": "Platelet count and coagulation assessment",
+        "targetCondition": "Acute ischemic stroke or urgent alternative",
+        "expectedFinding": "Abnormal results or relevant anticoagulant exposure may change thrombolysis eligibility.",
+        "clinicalRationale": "Draw promptly and follow the local reperfusion protocol; do not introduce a delay where the protocol does not require it.",
+        "normalValue": "Platelets: typical adult range 150–400 × 10⁹/L; INR and aPTT use local reference ranges",
+        "references": [
+          {
+            "title": "European Stroke Organisation guidelines on intravenous thrombolysis for acute ischaemic stroke",
+            "edition": "2021; PICO 1.1, recommendation after line 237; sections on late-window and imaging selection",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7995316/"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Electrocardiogram (ECG) and cardiac monitoring",
+        "modalityTarget": "Electrocardiogram (ECG) and cardiac monitoring",
+        "targetCondition": "Acute ischemic stroke or urgent alternative",
+        "expectedFinding": "Atrial fibrillation or another cardiac abnormality may guide cause assessment and ongoing care.",
+        "clinicalRationale": "Obtain without delaying urgent stroke imaging and treatment decisions.",
+        "normalValue": "Sinus rhythm without acute ischaemic change",
+        "references": [
+          {
+            "title": "American Heart Association/American Stroke Association: Acute Ischemic Stroke Resources",
+            "edition": "2026; Section Acute Ischemic Stroke Resources",
+            "url": "https://www.stroke.org/en/professionals/stroke-resource-library/acute-ischemic-stroke-resources"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Swallow screen",
+        "modalityTarget": "Swallow screen",
+        "targetCondition": "Acute ischemic stroke or urgent alternative",
+        "expectedFinding": "Failure identifies aspiration risk and changes oral medicine, food and fluid administration.",
+        "clinicalRationale": "Complete before oral intake or medicines; obtain specialist swallowing input when failed.",
+        "normalValue": "Pass on the local validated screen",
+        "references": [
+          {
+            "title": "NICE NG128: Stroke and transient ischaemic attack in over 16s",
+            "edition": "2019, amended 2025; recommendations 1.3–1.6",
+            "url": "https://www.nice.org.uk/guidance/ng128"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "activate-stroke",
+      "title": "Activate the acute stroke pathway",
+      "timeframe": "Immediately",
+      "actions": [
+        "Record last-known-well and discovery times, establish airway, breathing and circulation, and obtain glucose.",
+        "Record baseline NIHSS and arrange urgent brain imaging with stroke-team review.",
+        "Keep the patient nil by mouth until a validated swallow screen is passed."
+      ]
+    },
+    {
+      "id": "image-and-reperfuse",
+      "title": "Image and make reperfusion decisions",
+      "timeframe": "As soon as possible",
+      "actions": [
+        "Use non-contrast CT to assess haemorrhage and urgent vascular imaging when large-vessel occlusion or thrombectomy is suspected.",
+        "Offer intravenous thrombolysis only through the current specialist and local-protocol eligibility pathway; the ESO guideline supports alteplase within 4.5 hours for eligible adults.",
+        "For wake-up or selected late presentations, use specialist advanced-imaging selection; do not exclude solely because the onset is unknown."
+      ]
+    },
+    {
+      "id": "thrombectomy",
+      "title": "Escalate possible large-vessel occlusion",
+      "timeframe": "Concurrent with imaging",
+      "actions": [
+        "Discuss confirmed or strongly suspected large-vessel occlusion with the stroke and neurointerventional team immediately.",
+        "Do not delay thrombectomy-centre transfer solely to observe response to intravenous thrombolysis when both treatments are indicated by the local pathway.",
+        "Use local transfer, imaging and eligibility criteria for anterior and posterior circulation occlusions."
+      ]
+    },
+    {
+      "id": "early-care",
+      "title": "Provide early stroke-unit supportive care",
+      "timeframe": "First 24 hours",
+      "actions": [
+        "Monitor neurological status, blood pressure, oxygenation, temperature and glucose using the local stroke protocol.",
+        "After intravenous thrombolysis, withhold antithrombotics and obtain follow-up brain imaging according to the local post-thrombolysis protocol before starting them.",
+        "If reperfusion is not used, initiate antithrombotic treatment only after haemorrhage is excluded and according to the local stroke protocol."
+      ]
+    },
+    {
+      "id": "disposition",
+      "title": "Admit, rehabilitate and plan secondary prevention",
+      "timeframe": "After initial stabilisation",
+      "actions": [
+        "Admit to an acute stroke unit or transfer to an appropriate specialist centre.",
+        "Assess swallowing, mobility, communication, rehabilitation needs and cardioembolic/vascular cause.",
+        "Document emergency return precautions, medication plan and stroke-service follow-up before discharge."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [
+      {
+        "indication": "Eligible adult acute ischemic stroke",
+        "patientGroup": "Adults; specialist stroke pathway only",
+        "genericName": "Alteplase",
+        "dose": "0.9 mg/kg; maximum and administration protocol must follow the local authorised product and stroke protocol",
+        "route": "Intravenous",
+        "frequency": "Single reperfusion course",
+        "duration": "One course",
+        "adjustments": [
+          "Use only after specialist eligibility review and haemorrhage assessment.",
+          "Follow local renal, hepatic, anticoagulant, bleeding-risk and blood-pressure exclusions."
+        ],
+        "monitoring": [
+          "Continuous neurological and bleeding surveillance under the post-thrombolysis protocol."
+        ],
+        "contraindications": [
+          "Use the current authorised product and local stroke-protocol exclusions; not independently reproduced in this draft."
+        ],
+        "sourceTitle": "European Stroke Organisation guidelines on intravenous thrombolysis for acute ischaemic stroke",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7995316/",
+        "sourceEdition": "2021; PICO 1.1, recommendation after line 237; sections on late-window and imaging selection",
+        "branch": "Eligible for intravenous thrombolysis",
+        "step": "Thrombolytic",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "Eligible large-vessel occlusion before thrombectomy",
+        "patientGroup": "Adults; specialist stroke and thrombectomy pathway only",
+        "genericName": "Tenecteplase",
+        "dose": "0.25 mg/kg; product-specific maximum requires local protocol confirmation",
+        "route": "Intravenous bolus",
+        "frequency": "Single reperfusion course",
+        "duration": "One course",
+        "adjustments": [
+          "Use only where the local stroke protocol authorises it.",
+          "Confirm product-specific maximum dose, exclusions and SFDA/formulary status before prescribing."
+        ],
+        "monitoring": [
+          "Continuous neurological and bleeding surveillance under the post-thrombolysis protocol."
+        ],
+        "contraindications": [
+          "Use the current authorised product and local stroke-protocol exclusions; not independently reproduced in this draft."
+        ],
+        "sourceTitle": "European Stroke Organisation guidelines on intravenous thrombolysis for acute ischaemic stroke",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7995316/",
+        "sourceEdition": "2021; PICO 1.1, recommendation after line 237; sections on late-window and imaging selection",
+        "branch": "Eligible for intravenous thrombolysis",
+        "step": "Thrombolytic",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Large-vessel occlusion before thrombectomy"
+      },
+      {
+        "indication": "Acute ischemic stroke when reperfusion-specific restrictions have been assessed",
+        "patientGroup": "Adults; local stroke protocol",
+        "genericName": "Aspirin",
+        "dose": "300 mg daily when indicated after haemorrhage is excluded; route and timing follow the local protocol",
+        "route": "Oral, rectal or enteral route according to swallowing assessment",
+        "frequency": "Once daily",
+        "duration": "Initial 2 weeks then a long-term antithrombotic strategy per specialist plan",
+        "adjustments": [
+          "Do not give orally before swallow safety is established.",
+          "Confirm allergy, bleeding risk, post-thrombolysis timing and SFDA/formulary status locally."
+        ],
+        "monitoring": [
+          "Bleeding and gastrointestinal tolerance."
+        ],
+        "contraindications": [
+          "Active bleeding or true aspirin hypersensitivity; confirm full contraindications locally."
+        ],
+        "sourceTitle": "NICE NG128: Stroke and transient ischaemic attack in over 16s",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng128",
+        "sourceEdition": "2019, amended 2025; recommendations 1.3–1.6",
+        "branch": "No reperfusion treatment",
+        "step": "Antiplatelet",
+        "selection": "all"
+      }
+    ],
+    "note": "UNREVIEWED DRAFT — not clinically approved. Alteplase and tenecteplase are specialist-reperfusion medicines; all doses, maximum doses, exclusions, blood-pressure treatment, antiplatelet selection, anticoagulation timing and SFDA/formulary status must be confirmed against the current Saudi hospital stroke protocol before prescribing.",
+    "branches": [
+      {
+        "label": "Eligible for intravenous thrombolysis",
+        "entryCriteria": "Acute ischaemic stroke within the thrombolysis window with no exclusion, through the specialist stroke pathway"
+      },
+      {
+        "label": "No reperfusion treatment",
+        "entryCriteria": "Acute ischaemic stroke when thrombolysis is not given and haemorrhage has been excluded"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Standard intravenous thrombolysis assessment",
+      "threshold": "Assess urgently when symptom onset or last-known-well time is within 4.5 hours; use local eligibility and contraindication protocol."
+    },
+    {
+      "criterion": "Unknown-onset or late-window assessment",
+      "threshold": "Use specialist advanced-imaging selection where the local pathway supports it; do not exclude solely because onset is unknown."
+    },
+    {
+      "criterion": "Large-vessel occlusion assessment",
+      "threshold": "Obtain urgent vascular imaging when thrombectomy is being considered; time-critical referral continues through the imaging decision."
+    }
+  ],
+  "guidelineComparison": {
+    "title": "Reperfusion-selection comparison",
+    "columns": [
+      "ESO IV thrombolysis guideline 2021",
+      "NICE NG128"
+    ],
+    "rows": [
+      {
+        "parameter": "Within 4.5 hours",
+        "values": [
+          "Alteplase is recommended for eligible adults.",
+          "Use the current NICE/local thrombolysis pathway and technology appraisals."
+        ]
+      },
+      {
+        "parameter": "Unknown onset or wake-up stroke",
+        "values": [
+          "Supports selected MRI DWI-FLAIR mismatch presentations when thrombectomy is not planned.",
+          "Use specialist imaging and local pathway selection."
+        ]
+      },
+      {
+        "parameter": "Thrombectomy referral",
+        "values": [
+          "This IVT guideline does not define the full thrombectomy pathway.",
+          "Use urgent vascular imaging and specialist thrombectomy pathway."
+        ]
+      }
+    ],
+    "note": "This table intentionally does not merge guideline criteria. Saudi local stroke-code criteria and transfer arrangements still govern patient-level decisions."
+  },
+  "teaching": {
+    "scope": "Adult emergency recognition and specialist escalation for acute ischemic stroke; not a substitute for the Saudi hospital stroke protocol.",
+    "learningObjectives": [
+      "Recognise possible AIS and important mimics.",
+      "Prioritise time-critical imaging and reperfusion referral.",
+      "Apply swallowing and post-reperfusion safety checks."
+    ],
+    "pitfalls": [
+      "Using a normal early CT to exclude ischemic stroke.",
+      "Treating a possible large-vessel occlusion without early vascular imaging and specialist discussion.",
+      "Copying drug doses or exclusions without confirming the current local protocol and authorised product.",
+      "Mistaking publication for clinician approval."
+    ],
+    "keyPoints": [
+      "Record last-known-well time and activate the stroke pathway immediately.",
+      "Brain imaging is required to assess haemorrhage before ischemic reperfusion treatment.",
+      "Advanced imaging can support selected wake-up and late-window decisions.",
+      "Do not give oral medicines, food or fluid before a swallow screen."
+    ],
+    "references": [
+      {
+        "title": "American Heart Association/American Stroke Association: Acute Ischemic Stroke Resources",
+        "edition": "2026; Section Acute Ischemic Stroke Resources",
+        "url": "https://www.stroke.org/en/professionals/stroke-resource-library/acute-ischemic-stroke-resources",
+        "locator": "Acute Ischemic Stroke Resources page, lines 12–15"
+      },
+      {
+        "title": "European Stroke Organisation guidelines on intravenous thrombolysis for acute ischaemic stroke",
+        "edition": "2021; PICO 1.1, recommendation after line 237; sections on late-window and imaging selection",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7995316/",
+        "locator": "PICO 1.1; recommendations 2.4–2.5, 4.1 and 5.7"
+      },
+      {
+        "title": "NICE NG128: Stroke and transient ischaemic attack in over 16s",
+        "edition": "2019, amended 2025; recommendations 1.3–1.6",
+        "url": "https://www.nice.org.uk/guidance/ng128",
+        "locator": "Recommendations 1.3–1.6"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Call emergency services immediately for recurrent focal neurological symptoms, even if they resolve.",
+      "Explain the reason for swallowing assessment and supervised rehabilitation planning.",
+      "Use teach-back for the medication and emergency-return plan before discharge."
+    ],
+    "lifestyleAndDiet": [
+      "Follow the speech-and-language therapy diet and fluid plan when dysphagia is present.",
+      "Address smoking, blood pressure, diabetes, lipids and physical activity through the stroke-prevention plan."
+    ],
+    "mdtReferrals": [
+      "Stroke neurology",
+      "Neurointerventional team when thrombectomy is considered",
+      "Speech and language therapy",
+      "Physiotherapy and occupational therapy",
+      "Cardiology when a cardiac source is suspected",
+      "Rehabilitation services"
+    ],
+    "dischargeCriteria": [
+      "Acute stroke assessment and safe specialist disposition completed.",
+      "Swallowing, mobility, communication and support needs assessed.",
+      "Secondary prevention, rehabilitation and follow-up plan documented.",
+      "Clear recurrent-stroke and emergency-return advice understood."
+    ],
+    "followUpPlan": "Arrange stroke-service follow-up, rehabilitation and aetiological assessment; communicate the prevention plan to primary care and the patient/caregiver."
+  },
+  "clinicalReviewStatus": "pending"
+}

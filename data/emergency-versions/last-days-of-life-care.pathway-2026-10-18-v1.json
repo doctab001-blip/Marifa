@@ -1,0 +1,405 @@
+{
+  "id": "92061bb4-c2ee-4146-bd7f-b8b6ffc79a54",
+  "title": "Last Days of Life Care",
+  "specialty": "Palliative Medicine / Primary Care",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Palliative Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adults who may be in the last days of life in hospital, hospice or home: recognising dying, communication and shared decisions, hydration, stopping non-beneficial treatment, and anticipatory symptom control. Verified against NICE NG31 and Saudi MOH Protocol-010 (Palliative Care — End of Life Care). Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from authoring-standard-2026-10-12-v1-live."
+    ],
+    "unverifiedSections": [
+      "Midazolam, glycopyrronium, hyoscine and SC haloperidol doses — local formulary",
+      "SFDA registration not checked per drug",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "92061bb4-c2ee-4146-bd7f-b8b6ffc79a54",
+      "4980486a-ca5e-4a17-a3c8-f429b07b1996"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "In the last days of life progressive organ failure reduces consciousness, oral intake and circulation. Care shifts to comfort, dignity and support for the person and family, while staying alert to reversible changes or temporary recovery.",
+    "keyMechanisms": [
+      "Falling cerebral perfusion and metabolic failure reduce consciousness and can cause agitation or delirium.",
+      "Reduced swallowing and cough allow pharyngeal secretions to pool — noisy breathing, which is usually not distressing to the person (NICE NG31).",
+      "Circulatory failure produces mottled skin and Cheyne–Stokes breathing.",
+      "Drug handling changes with renal and hepatic failure — start low, titrate, and prefer SC or IV routes over IM (NICE NG31)."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Increasing fatigue, loss of appetite, reduced communication and mobility, social withdrawal (NICE NG31 1.1.2).",
+      "Pain, breathlessness, nausea, anxiety, agitation, noisy secretions."
+    ],
+    "physicalSigns": [
+      "Deteriorating consciousness, Cheyne–Stokes breathing, mottled skin, noisy respiratory secretions, progressive weight loss (NICE NG31 1.1.2).",
+      "Signs of reversible problems: urinary retention, full rectum, dehydration."
+    ],
+    "redFlags": [
+      "Improvement in signs or function — may be stabilising or recovering; reassess (NICE NG31 1.1.3)",
+      "Uncontrolled symptoms or unwanted sedation — specialist palliative care",
+      "Catastrophic bleeding risk where a blood count would change care",
+      "Family distress or disagreement about goals"
+    ],
+    "precipitants": [
+      "Progressive advanced illness (cancer, organ failure, frailty, dementia)",
+      "Intercurrent infection or metabolic decline"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Reversible deterioration (sepsis, hypercalcaemia, opioid toxicity, dehydration)",
+      "distinguishingFeatures": "Recent change with a treatable cause consistent with goals."
+    },
+    {
+      "condition": "Delirium from urinary retention or constipation",
+      "distinguishingFeatures": "Agitation that settles once the bladder or rectum is relieved (NICE NG31 1.5.23)."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Structured review of signs, symptoms and function",
+        "modalityTarget": "On recognition, then at least every 24 h",
+        "targetCondition": "Dying vs deteriorating vs improving",
+        "expectedFinding": "Signs listed in NICE NG31 1.1.2.",
+        "clinicalRationale": "Update the individualised care plan every 24 h; seek experienced advice if uncertain.",
+        "normalValue": "Stable or improving signs (reassess goals)",
+        "references": [
+          {
+            "title": "NICE NG31: Care of dying adults in the last days of life",
+            "edition": "NICE guideline, 2015, Recommendations 1.1.1–1.1.7 (recognising the last days of life)",
+            "url": "https://www.nice.org.uk/guidance/ng31"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Hydration assessment",
+        "modalityTarget": "Daily",
+        "targetCondition": "Distressing dehydration",
+        "expectedFinding": "Thirst or delirium with inadequate oral intake.",
+        "clinicalRationale": "Consider a therapeutic trial of clinically assisted hydration; review every 12 h (NICE NG31 1.4.8–1.4.9).",
+        "normalValue": "Comfortable, mouth moist, no thirst",
+        "references": [
+          {
+            "title": "NICE NG31: Care of dying adults in the last days of life",
+            "edition": "NICE guideline, 2015, Recommendations 1.4.1–1.4.10 (hydration)",
+            "url": "https://www.nice.org.uk/guidance/ng31"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Symptom review (pain, breathlessness, nausea, agitation, secretions)",
+        "modalityTarget": "At least daily, and 4–12-hourly after a new medicine",
+        "targetCondition": "Uncontrolled symptoms",
+        "expectedFinding": "Use of more than 2–3 PRN doses in 24 h.",
+        "clinicalRationale": "Consider a syringe pump for continuous control (NICE NG31 1.5.6).",
+        "normalValue": "Symptoms controlled; 2 or fewer PRN doses in 24 h",
+        "references": [
+          {
+            "title": "NICE NG31: Care of dying adults in the last days of life",
+            "edition": "NICE guideline, 2015, Recommendations 1.5.1–1.5.33 (pharmacological management)",
+            "url": "https://www.nice.org.uk/guidance/ng31"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Blood tests",
+        "modalityTarget": "Only when the result would change care (e.g. platelets before transfusion to prevent catastrophic bleeding)",
+        "targetCondition": "Selected reversible problems",
+        "expectedFinding": "Result that alters a goal-concordant plan.",
+        "clinicalRationale": "Avoid investigations unlikely to affect care (NICE NG31 1.1.4).",
+        "normalValue": "Not routinely required",
+        "references": [
+          {
+            "title": "NICE NG31: Care of dying adults in the last days of life",
+            "edition": "NICE guideline, 2015, Recommendations 1.1.1–1.1.7 (recognising the last days of life)",
+            "url": "https://www.nice.org.uk/guidance/ng31"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "recognise",
+      "title": "Recognise and communicate",
+      "timeframe": "As soon as dying is suspected",
+      "actions": [
+        "Gather physical, psychological, social and spiritual needs, goals and wishes, and the views of those important to the person (NICE NG31 1.1.1).",
+        "Explain uncertainty honestly; identify the person's preferences, advance statements and anticipatory prescribing decisions.",
+        "Seek more experienced advice if signs are ambiguous or conflicting."
+      ]
+    },
+    {
+      "id": "medicines",
+      "title": "Review medicines",
+      "timeframe": "On recognition",
+      "actions": [
+        "Stop medicines that give no symptom benefit or may harm, after discussion (NICE NG31 1.5.1).",
+        "Steroids: continue at a convenient SC dose for serious symptom control; stop if given recently/low dose for appetite; if long term continue a physiological dose of dexamethasone 1 mg (MOH Protocol-010 p. 4).",
+        "Fentanyl patch: leave in place and change on schedule; add a syringe driver for extra opioid needs (MOH Protocol-010 p. 9)."
+      ]
+    },
+    {
+      "id": "anticipatory",
+      "title": "Anticipatory symptom control",
+      "timeframe": "Prescribe in advance; review daily",
+      "actions": [
+        "Use SC or IV routes — avoid IM (NICE NG31 1.5.5). Start low in opioid-naïve people and titrate (1.5.7).",
+        "Pain: opioid matched to severity; IV morphine 2.5–5 mg every 3–4 h as a starting dose (MOH Protocol-010 p. 9).",
+        "Breathlessness: opioid and/or benzodiazepine; oxygen only for symptomatic hypoxaemia (NICE NG31 1.5.16–1.5.17).",
+        "Nausea: antiemetic by cause (see Nausea topic); obstructive bowel: hyoscine butylbromide, then octreotide if no response in 24 h (NICE NG31 1.5.22).",
+        "Agitation/anxiety: benzodiazepine trial; delirium: antipsychotic trial (NICE NG31 1.5.26–1.5.27).",
+        "Noisy secretions: reassure; if distressing use atropine, glycopyrronium, hyoscine butylbromide or hyoscine hydrobromide; review every 4–12 h and change or stop after 12 h if no effect (NICE NG31 1.5.31–1.5.33).",
+        "More than 2–3 PRN doses in 24 h: syringe pump (NICE NG31 1.5.6)."
+      ]
+    },
+    {
+      "id": "hydration",
+      "title": "Hydration and mouth care",
+      "timeframe": "Daily",
+      "actions": [
+        "Support drinking if wished and able; mouth care for dry mouth.",
+        "Discuss benefits and harms of clinically assisted hydration; trial if thirst or delirium may be due to dehydration; stop if fluid overload (NICE NG31 1.4)."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [
+      {
+        "indication": "Pain or breathlessness in the last days (opioid-naïve)",
+        "patientGroup": "Adults",
+        "genericName": "Morphine",
+        "dose": "2.5–5 mg",
+        "route": "IV (SC per local protocol)",
+        "frequency": "Every 3–4 h as needed",
+        "duration": "Titrate; consider syringe pump if more than 2–3 doses/24 h",
+        "adjustments": [
+          "Start low and titrate (NICE NG31 1.5.7)",
+          "Specialist advice in renal failure"
+        ],
+        "monitoring": [
+          "Symptom relief, sedation, respiratory rate"
+        ],
+        "contraindications": [
+          "Significant respiratory depression",
+          "Acute or severe asthma without monitoring/resuscitation",
+          "MAOI use within 14 days",
+          "Known or suspected GI obstruction including paralytic ileus",
+          "Hypersensitivity"
+        ],
+        "sourceTitle": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf",
+        "sourceEdition": "Saudi MOH, General Administration of Pharmaceutical Care, p. 9 (patch to subcutaneous infusion in last hours to days; IV morphine starting dose)",
+        "branch": "Pain or breathlessness",
+        "step": "Opioid",
+        "selection": "all"
+      },
+      {
+        "indication": "Delirium or agitation (antipsychotic trial)",
+        "patientGroup": "Adults",
+        "genericName": "Haloperidol",
+        "dose": "0.5–2 mg (FDA label initial range for moderate symptoms; geriatric/debilitated same range)",
+        "route": "PO (SC per local protocol)",
+        "frequency": "Two to three times daily",
+        "duration": "Trial; review daily",
+        "adjustments": [
+          "NICE NG31 recommends an antipsychotic trial but gives no dose; label dose is for psychosis — off-label in delirium"
+        ],
+        "monitoring": [
+          "Sedation, extrapyramidal effects"
+        ],
+        "contraindications": [
+          "Severe toxic CNS depression or coma",
+          "Parkinson's disease",
+          "Hypersensitivity"
+        ],
+        "sourceTitle": "Haloperidol tablets prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00bb61c8-db35-4c04-9ef7-47d447d2496b",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "branch": "Delirium or agitation",
+        "step": "Antipsychotic",
+        "selection": "all"
+      },
+      {
+        "indication": "Anxiety or agitation (benzodiazepine trial)",
+        "patientGroup": "Adults",
+        "genericName": "Midazolam",
+        "dose": "Dose per local palliative formulary — not stated in NICE NG31 or MOH Protocol-010",
+        "route": "SC",
+        "frequency": "As needed / syringe pump",
+        "duration": "Trial; review daily",
+        "adjustments": [
+          "Unverified dose: follow local palliative protocol"
+        ],
+        "monitoring": [
+          "Sedation, respiratory rate"
+        ],
+        "contraindications": [
+          "Hypersensitivity",
+          "Acute narrow-angle glaucoma"
+        ],
+        "sourceTitle": "NICE NG31: Care of dying adults in the last days of life",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng31",
+        "sourceEdition": "NICE guideline, 2015, Recommendations 1.5.1–1.5.33 (pharmacological management)",
+        "branch": "Anxiety or agitation",
+        "step": "Benzodiazepine",
+        "selection": "all"
+      }
+    ],
+    "note": "NICE NG31 names drug classes for each symptom but gives no doses; MOH Protocol-010 gives morphine and steroid end-of-life doses. Midazolam, antisecretory and SC antipsychotic doses must come from the local palliative formulary. Check SFDA registration and controlled-drug rules.",
+    "branches": [
+      {
+        "label": "Pain or breathlessness",
+        "entryCriteria": "Opioid-naïve adult in the last days of life with pain or breathlessness"
+      },
+      {
+        "label": "Delirium or agitation",
+        "entryCriteria": "Adult in the last days of life with delirium or agitation"
+      },
+      {
+        "label": "Anxiety or agitation",
+        "entryCriteria": "Adult in the last days of life with anxiety or agitation"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Signs of dying (NICE NG31)",
+      "threshold": "Agitation, Cheyne–Stokes breathing, falling consciousness, mottled skin, noisy secretions, weight loss"
+    },
+    {
+      "criterion": "Syringe pump",
+      "threshold": "More than 2–3 PRN doses in 24 h"
+    },
+    {
+      "criterion": "Hydration trial review",
+      "threshold": "At least every 12 h"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "Last-days symptom drugs: NICE NG31 vs MOH Protocol-010",
+    "columns": [
+      "NICE NG31",
+      "MOH Protocol-010"
+    ],
+    "rows": [
+      {
+        "parameter": "Pain",
+        "values": [
+          "Match to severity; SC/IV not IM",
+          "Morphine first line; IV 2.5–5 mg every 3–4 h"
+        ]
+      },
+      {
+        "parameter": "Breathlessness",
+        "values": [
+          "Opioid and/or benzodiazepine; oxygen only if hypoxaemic",
+          "Not specified"
+        ]
+      },
+      {
+        "parameter": "Secretions",
+        "values": [
+          "Atropine, glycopyrronium, hyoscine butyl- or hydrobromide",
+          "Not specified"
+        ]
+      },
+      {
+        "parameter": "Steroids",
+        "values": [
+          "Not specified",
+          "Continue SC if serious symptoms; physiological 1 mg if long term"
+        ]
+      }
+    ],
+    "note": "Doses not given by NICE NG31 are listed as unverified."
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Recognise the last days of life and provide anticipatory, comfort-focused care with the person and family."
+    ],
+    "pitfalls": [
+      "Routine bloods and observations that do not change care.",
+      "Missing urinary retention as a cause of agitation.",
+      "Oxygen for breathlessness without hypoxaemia.",
+      "Removing a fentanyl patch in the last days."
+    ],
+    "keyPoints": [
+      "Recognise dying, but watch for improvement.",
+      "Stop non-beneficial medicines.",
+      "SC or IV, never IM; start low.",
+      "Syringe pump if more than 2–3 PRN doses/day.",
+      "Oxygen only for hypoxaemia."
+    ],
+    "references": [
+      {
+        "title": "NICE NG31: Care of dying adults in the last days of life",
+        "edition": "NICE guideline, 2015",
+        "url": "https://www.nice.org.uk/guidance/ng31",
+        "locator": "Recommendations 1.1–1.5"
+      },
+      {
+        "title": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+        "edition": "Saudi MOH, General Administration of Pharmaceutical Care",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf",
+        "locator": "pp. 4, 9"
+      },
+      {
+        "title": "Morphine sulfate tablets prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=07593aa4-f2c4-4d6e-b186-ab2a4ecaa38a",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Midazolam injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3c2fd6ee-4ede-4ee4-8c05-34c93598f381",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Haloperidol tablets prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00bb61c8-db35-4c04-9ef7-47d447d2496b",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain expected changes such as noisy breathing and reduced intake.",
+      "Invite family involvement in mouth care and comfort."
+    ],
+    "lifestyleAndDiet": [
+      "Comfort-focused: positioning, mouth care, quiet environment."
+    ],
+    "mdtReferrals": [
+      "Specialist palliative care.",
+      "Chaplaincy/spiritual care per wishes.",
+      "Social work for family support."
+    ],
+    "dischargeCriteria": [
+      "Not applicable — care continues in the preferred place; rapid transfer home if wished and feasible."
+    ],
+    "followUpPlan": "Reassess at least every 24 h and after each new medicine; specialist palliative care if symptoms do not improve promptly or sedation is unwanted (NICE NG31 1.5.9)."
+  }
+}

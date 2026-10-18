@@ -1,0 +1,326 @@
+{
+  "id": "44ad5ad7-8c67-4c70-8725-cd5ca7c34ce9",
+  "title": "Osteoarthritis and Chronic Pain",
+  "specialty": "Rheumatology / Primary Care",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adults with osteoarthritis: clinical diagnosis, therapeutic exercise and weight management, topical and oral NSAIDs, injections and referral. Verified against NICE NG226; doses and contraindications from FDA labels. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from authoring-standard-2026-10-12-v1-live."
+    ],
+    "unverifiedSections": [
+      "Joint replacement referral thresholds not in NG226",
+      "SFDA registration not checked",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "44ad5ad7-8c67-4c70-8725-cd5ca7c34ce9",
+      "25e81847-95de-41c4-8258-4b859a4e149e"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Osteoarthritis is a joint disease of cartilage loss, bone remodelling and low-grade synovial inflammation, causing activity-related pain and stiffness, most often in knees, hips and hands.",
+    "keyMechanisms": [
+      "Cartilage degradation and subchondral bone changes alter joint mechanics.",
+      "Weak muscles and excess weight increase joint loading — exercise and weight loss reduce pain (NICE).",
+      "Pain sensitisation contributes to chronic pain."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Activity-related joint pain; morning stiffness 30 minutes or less."
+    ],
+    "physicalSigns": [
+      "Crepitus, bony enlargement, reduced range of movement, effusion."
+    ],
+    "redFlags": [
+      "Hot swollen joint — exclude septic arthritis or gout",
+      "Prolonged morning stiffness — inflammatory arthritis",
+      "Rapid deterioration, night pain, weight loss — atypical: investigate"
+    ],
+    "precipitants": [
+      "Age, obesity, joint injury",
+      "Occupational loading",
+      "Family history"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Inflammatory arthritis",
+      "distinguishingFeatures": "Morning stiffness over 30 min, synovitis, raised CRP."
+    },
+    {
+      "condition": "Gout/pseudogout",
+      "distinguishingFeatures": "Acute attacks, crystals."
+    },
+    {
+      "condition": "Referred pain",
+      "distinguishingFeatures": "Hip pain felt in the knee; spine."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Clinical diagnosis",
+        "modalityTarget": "Age 45 or over with activity-related pain and morning stiffness 30 min or less (or none)",
+        "targetCondition": "Osteoarthritis",
+        "expectedFinding": "Typical features.",
+        "clinicalRationale": "Diagnose without imaging; image only if atypical (NICE).",
+        "normalValue": "No joint pain or stiffness",
+        "references": [
+          {
+            "title": "NICE NG226: Osteoarthritis in over 16s: diagnosis and management",
+            "edition": "NICE guideline, 2022, Recommendations 1.1–1.5 (diagnosis, exercise, weight, medicines, injections, follow-up)",
+            "url": "https://www.nice.org.uk/guidance/ng226"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "X-ray",
+        "modalityTarget": "Only if atypical features or alternative diagnosis suspected (NICE)",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Joint-space narrowing, osteophytes.",
+        "clinicalRationale": "Not needed for typical OA; used before surgical referral.",
+        "normalValue": "Normal joint space",
+        "references": [
+          {
+            "title": "NICE NG226: Osteoarthritis in over 16s: diagnosis and management",
+            "edition": "NICE guideline, 2022, Recommendations 1.1–1.5 (diagnosis, exercise, weight, medicines, injections, follow-up)",
+            "url": "https://www.nice.org.uk/guidance/ng226"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "core",
+      "title": "Core treatment",
+      "timeframe": "All",
+      "actions": [
+        "Information; therapeutic exercise tailored to the person (strengthening, aerobic) — pain may rise at first (NICE).",
+        "Weight loss if overweight: any loss helps; 10% better than 5% (NICE).",
+        "No acupuncture, glucosamine, strong opioids or intra-articular hyaluronan (NICE)."
+      ]
+    },
+    {
+      "id": "drugs",
+      "title": "Medicines",
+      "timeframe": "Alongside exercise",
+      "actions": [
+        "Offer a topical NSAID for knee OA; consider for other joints (NICE).",
+        "If topical unsuitable: oral NSAID at lowest dose for shortest time, with a PPI; consider GI, renal, liver and CV risk (NICE).",
+        "Do not routinely offer paracetamol or weak opioids (only infrequent short-term use when others unsuitable) (NICE).",
+        "Intra-articular corticosteroid for short-term relief (2–10 weeks) if other treatments unsuitable (NICE)."
+      ]
+    },
+    {
+      "id": "refer",
+      "title": "Referral",
+      "timeframe": "When needed",
+      "actions": [
+        "Refer for joint replacement when symptoms substantially affect quality of life despite non-surgical care (see Hip and Knee Arthroplasty topic)."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Knee osteoarthritis (first-line medicine)",
+        "patientGroup": "Adults",
+        "genericName": "Diclofenac sodium 2% topical solution",
+        "dose": "40 mg (2 pump actuations) per knee",
+        "route": "Topical",
+        "frequency": "Twice daily",
+        "duration": "Review need",
+        "adjustments": [
+          "Avoid broken skin; wash hands after use"
+        ],
+        "monitoring": [
+          "Skin reactions"
+        ],
+        "contraindications": [
+          "Hypersensitivity to diclofenac",
+          "Asthma, urticaria or allergic reaction after aspirin/NSAIDs",
+          "Peri-operative CABG"
+        ],
+        "sourceTitle": "Diclofenac sodium topical solution prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=02e90e33-384f-4e29-b508-2503def22214",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "branch": "Knee osteoarthritis — first line",
+        "step": "Topical NSAID",
+        "selection": "all"
+      },
+      {
+        "indication": "Oral NSAID if topical unsuitable",
+        "patientGroup": "Adults without GI, renal or CV contraindication",
+        "genericName": "Naproxen",
+        "dose": "250–500 mg",
+        "route": "PO",
+        "frequency": "Twice daily",
+        "duration": "Lowest dose, shortest time; maximum 1,500 mg/day short term (label)",
+        "adjustments": [
+          "With a PPI (NICE)",
+          "Boxed warnings: CV and GI risk"
+        ],
+        "monitoring": [
+          "BP, renal function, GI symptoms"
+        ],
+        "contraindications": [
+          "Hypersensitivity to naproxen",
+          "Asthma, urticaria or allergic reaction after aspirin/NSAIDs",
+          "Peri-operative CABG"
+        ],
+        "sourceTitle": "Naproxen tablets prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=000155a8-709c-44e5-a75f-cd890f3a7caf",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "branch": "Oral NSAID when topical is unsuitable",
+        "step": "Oral NSAID",
+        "selection": "all"
+      },
+      {
+        "indication": "Gastroprotection with oral NSAID",
+        "patientGroup": "Adults",
+        "genericName": "Esomeprazole",
+        "dose": "20 mg or 40 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "While on NSAID (label: up to 6 months for NSAID ulcer risk reduction)",
+        "adjustments": [
+          "Long-term PPI risks"
+        ],
+        "monitoring": [
+          "Review need"
+        ],
+        "contraindications": [
+          "Hypersensitivity to substituted benzimidazoles",
+          "Concomitant rilpivirine-containing products"
+        ],
+        "sourceTitle": "Esomeprazole magnesium prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=009794ae-8199-4176-9dc6-4c5e752d845c",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "branch": "Oral NSAID when topical is unsuitable",
+        "step": "Gastroprotection",
+        "selection": "all"
+      }
+    ],
+    "note": "Choices from NICE NG226; doses and contraindications from FDA labels. Check SFDA registration.",
+    "branches": [
+      {
+        "label": "Knee osteoarthritis — first line",
+        "entryCriteria": "Adult with knee osteoarthritis"
+      },
+      {
+        "label": "Oral NSAID when topical is unsuitable",
+        "entryCriteria": "Adult for whom topical treatment is unsuitable and without GI, renal or cardiovascular contraindication"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Clinical diagnosis",
+      "threshold": "Age 45+, activity-related pain, morning stiffness 30 min or less"
+    },
+    {
+      "criterion": "Corticosteroid injection relief",
+      "threshold": "2–10 weeks (NICE)"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "NICE NG226: offer vs do not offer",
+    "columns": [
+      "Offer/consider",
+      "Do not offer"
+    ],
+    "rows": [
+      {
+        "parameter": "Non-drug",
+        "values": [
+          "Therapeutic exercise; weight loss",
+          "Acupuncture/dry needling"
+        ]
+      },
+      {
+        "parameter": "Drugs",
+        "values": [
+          "Topical NSAID; oral NSAID + PPI; steroid injection",
+          "Glucosamine; strong opioids; hyaluronan; routine paracetamol"
+        ]
+      }
+    ],
+    "note": "Paracetamol has no strong evidence of benefit (NICE)."
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Diagnose osteoarthritis clinically and manage it with exercise, weight and stepwise medicines."
+    ],
+    "pitfalls": [
+      "Routine X-rays.",
+      "Strong opioids for OA.",
+      "Oral NSAID without PPI."
+    ],
+    "keyPoints": [
+      "Diagnose clinically.",
+      "Exercise and weight loss are core.",
+      "Topical NSAID first for knee OA.",
+      "Oral NSAID with PPI.",
+      "No strong opioids or glucosamine."
+    ],
+    "references": [
+      {
+        "title": "NICE NG226: Osteoarthritis in over 16s: diagnosis and management",
+        "edition": "NICE guideline, 2022",
+        "url": "https://www.nice.org.uk/guidance/ng226",
+        "locator": "Recommendations 1.1–1.5 (diagnosis, exercise, weight, medicines, injections, follow-up)"
+      },
+      {
+        "title": "Diclofenac sodium topical solution prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=02e90e33-384f-4e29-b508-2503def22214",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Naproxen tablets prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=000155a8-709c-44e5-a75f-cd890f3a7caf",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Esomeprazole magnesium prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=009794ae-8199-4176-9dc6-4c5e752d845c",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Exercise helps even if pain rises at first."
+    ],
+    "lifestyleAndDiet": [
+      "Regular strengthening and aerobic exercise; weight loss."
+    ],
+    "mdtReferrals": [
+      "Physiotherapy; orthopaedics when quality of life is substantially affected."
+    ],
+    "dischargeCriteria": [
+      "Not applicable — outpatient care."
+    ],
+    "followUpPlan": "Patient-initiated follow-up for most; planned follow-up when monitoring is needed (NICE 1.5)."
+  }
+}

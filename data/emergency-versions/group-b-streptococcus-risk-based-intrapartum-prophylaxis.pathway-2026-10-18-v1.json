@@ -1,0 +1,406 @@
+{
+  "id": "6d6e689e-ba36-4e82-8fdb-27b27459db7d",
+  "title": "Group B Streptococcus: Risk-Based Intrapartum Prophylaxis",
+  "specialty": "Obstetrics / Neonatology",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Safe Birth",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Woman in labour at risk of early-onset neonatal group B streptococcal (GBS) disease: indications for intrapartum antibiotic prophylaxis (IAP), antibiotic doses and timing, and neonatal observation, using one hospital guideline and one antimicrobial page. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 2026-10-18.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from authoring-standard-2026-10-18-tier4a-v1-live."
+    ],
+    "unverifiedSections": [
+      "Only the Southern Health and Social Care Trust guideline (2019, review overdue) and the NHS Forth Valley antimicrobial page were opened; the RCOG Green-top Guideline 36 itself was not opened.",
+      "Clindamycin was not mentioned in either source and no clindamycin dose is given.",
+      "The Forth Valley page has a dosing table as an image that could not be read; the penicillin allergy risk categories were not found.",
+      "The matrix on the guideline's caesarean section page was garbled in extraction and should be checked against the original.",
+      "No Saudi guideline was opened. No Saudi Ministry of Health or Saudi Society of Obstetrics and Gynaecology guideline was opened.",
+      "The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary.",
+      "Source pages were read through automated page extraction rather than page-by-page in the original documents, so each figure should be spot-checked against the source during clinical review.",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "6d6e689e-ba36-4e82-8fdb-27b27459db7d",
+      "7e10472c-3f2c-4149-9523-19b30a8f2bf5"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Early-onset GBS disease in the newborn is linked to maternal GBS carriage, so IAP is given in labour to women at risk. Antibiotics should start as soon as possible after the onset of labour and the first dose at least 4 hours before delivery for best effect. GBS bacteriuria in pregnancy needs treatment at diagnosis as well as IAP in labour. A planned caesarean section with intact membranes and no labour does not need GBS-specific prophylaxis.",
+    "keyMechanisms": [
+      "Early-onset GBS disease in the newborn is linked to maternal GBS carriage, so IAP is given in labour to women at risk.",
+      "Antibiotics should start as soon as possible after the onset of labour and the first dose at least 4 hours before delivery for best effect.",
+      "GBS bacteriuria in pregnancy needs treatment at diagnosis as well as IAP in labour.",
+      "A planned caesarean section with intact membranes and no labour does not need GBS-specific prophylaxis."
+    ],
+    "references": [
+      {
+        "title": "Southern Health and Social Care Trust (hscni.net): Guideline on prevention of early onset neonatal group B streptococcal disease (CG0249, 06/11/2019, review due November 2022)",
+        "edition": "Southern Trust GBS Guideline CG0249 2019, p. 2 to p. 7",
+        "url": "https://southerntrust.hscni.net/download/988/december-2024/20500/2760-group-b-strep-guidelines-attachment-2.pdf"
+      },
+      {
+        "title": "NHS Forth Valley antimicrobial prescribing: Group B Streptococcus Prophylaxis (Right Decisions)",
+        "edition": "NHS Forth Valley GBS Prophylaxis, Section Standard prophylaxis",
+        "url": "https://rightdecisions.scot.nhs.uk/antimicrobial-prescribing-nhs-forth-valley/surgical-prophylaxis-guidance/obstetrics/group-b-streptococcus-prophylaxis"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Not applicable; the indications are risk factors."
+    ],
+    "physicalSigns": [
+      "Maternal temperature of 38 degrees Celsius or more in labour.",
+      "Preterm labour.",
+      "Prelabour rupture of membranes."
+    ],
+    "redFlags": [
+      "Maternal pyrexia of 38 degrees Celsius or more in labour: broad-spectrum antibiotics that cover early-onset GBS.",
+      "Baby with clinical signs of early-onset GBS: penicillin and gentamicin within one hour of the treatment decision."
+    ],
+    "precipitants": [
+      "Previous baby with GBS disease.",
+      "GBS bacteriuria during this pregnancy.",
+      "GBS carriage detected incidentally or by testing.",
+      "Preterm labour (confirmed).",
+      "Intrapartum fever."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Other causes of intrapartum fever (chorioamnionitis)",
+      "distinguishingFeatures": "Broad-spectrum regimen covering GBS is used."
+    },
+    {
+      "condition": "Planned caesarean without labour and intact membranes",
+      "distinguishingFeatures": "No GBS-specific prophylaxis required."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Maternal temperature in labour",
+        "modalityTarget": "Intrapartum fever",
+        "targetCondition": "Intrapartum infection",
+        "expectedFinding": "38 degrees Celsius or more",
+        "clinicalRationale": "Triggers broad-spectrum antibiotics covering early-onset GBS.",
+        "normalValue": "Below 38 degrees Celsius",
+        "references": [
+          {
+            "title": "Southern Health and Social Care Trust (hscni.net): Guideline on prevention of early onset neonatal group B streptococcal disease (CG0249, 06/11/2019, review due November 2022)",
+            "edition": "Southern Trust GBS Guideline CG0249 2019, p. 4",
+            "url": "https://southerntrust.hscni.net/download/988/december-2024/20500/2760-group-b-strep-guidelines-attachment-2.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Urine culture",
+        "modalityTarget": "Bacteriuria",
+        "targetCondition": "GBS urinary infection",
+        "expectedFinding": "GBS growth",
+        "clinicalRationale": "Treat at diagnosis and give IAP.",
+        "normalValue": "No growth of GBS",
+        "references": [
+          {
+            "title": "Southern Health and Social Care Trust (hscni.net): Guideline on prevention of early onset neonatal group B streptococcal disease (CG0249, 06/11/2019, review due November 2022)",
+            "edition": "Southern Trust GBS Guideline CG0249 2019, p. 3",
+            "url": "https://southerntrust.hscni.net/download/988/december-2024/20500/2760-group-b-strep-guidelines-attachment-2.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "GBS swab result (incidental or intentional testing)",
+        "modalityTarget": "Carriage",
+        "targetCondition": "GBS colonisation",
+        "expectedFinding": "GBS isolated",
+        "clinicalRationale": "Carriage detected by either route warrants IAP.",
+        "normalValue": "GBS not isolated",
+        "references": [
+          {
+            "title": "Southern Health and Social Care Trust (hscni.net): Guideline on prevention of early onset neonatal group B streptococcal disease (CG0249, 06/11/2019, review due November 2022)",
+            "edition": "Southern Trust GBS Guideline CG0249 2019, p. 3",
+            "url": "https://southerntrust.hscni.net/download/988/december-2024/20500/2760-group-b-strep-guidelines-attachment-2.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Record of previous baby with GBS disease",
+        "modalityTarget": "History",
+        "targetCondition": "High-risk history",
+        "expectedFinding": "Previous affected baby",
+        "clinicalRationale": "A clinical risk factor for IAP.",
+        "normalValue": "No previous affected baby",
+        "references": [
+          {
+            "title": "Southern Health and Social Care Trust (hscni.net): Guideline on prevention of early onset neonatal group B streptococcal disease (CG0249, 06/11/2019, review due November 2022)",
+            "edition": "Southern Trust GBS Guideline CG0249 2019, p. 2",
+            "url": "https://southerntrust.hscni.net/download/988/december-2024/20500/2760-group-b-strep-guidelines-attachment-2.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Neonatal vital signs at 0, 1 and 2 hours then 2-hourly until 12 hours (when IAP inadequate)",
+        "modalityTarget": "Neonatal observations",
+        "targetCondition": "Early-onset neonatal infection",
+        "expectedFinding": "Abnormal observations",
+        "clinicalRationale": "For babies whose mothers did not receive adequate IAP.",
+        "normalValue": "Normal neonatal vital signs",
+        "references": [
+          {
+            "title": "Southern Health and Social Care Trust (hscni.net): Guideline on prevention of early onset neonatal group B streptococcal disease (CG0249, 06/11/2019, review due November 2022)",
+            "edition": "Southern Trust GBS Guideline CG0249 2019, p. 7",
+            "url": "https://southerntrust.hscni.net/download/988/december-2024/20500/2760-group-b-strep-guidelines-attachment-2.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Check time of first antibiotic dose before delivery",
+        "modalityTarget": "Adequacy of IAP",
+        "targetCondition": "Inadequate prophylaxis",
+        "expectedFinding": "First dose less than 4 hours before delivery",
+        "clinicalRationale": "Babies with adequate IAP more than 4 hours before delivery and well need no special observation.",
+        "normalValue": "More than 4 hours before delivery",
+        "references": [
+          {
+            "title": "Southern Health and Social Care Trust (hscni.net): Guideline on prevention of early onset neonatal group B streptococcal disease (CG0249, 06/11/2019, review due November 2022)",
+            "edition": "Southern Trust GBS Guideline CG0249 2019, p. 5 and p. 7",
+            "url": "https://southerntrust.hscni.net/download/988/december-2024/20500/2760-group-b-strep-guidelines-attachment-2.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "identify",
+      "title": "Identify indication",
+      "timeframe": "On admission in labour",
+      "actions": [
+        "Check for previous GBS disease in a baby, bacteriuria, carriage, preterm labour or fever."
+      ]
+    },
+    {
+      "id": "iap",
+      "title": "Give IAP",
+      "timeframe": "As soon as possible after labour starts",
+      "actions": [
+        "Benzylpenicillin 3 g intravenously then 1.5 g every 4 hours until delivery.",
+        "Non-severe penicillin allergy: cefuroxime 1.5 g then 750 mg every 8 hours. Severe allergy: vancomycin 1 g every 12 hours (Southern Trust) or teicoplanin per the Forth Valley page."
+      ]
+    },
+    {
+      "id": "prom",
+      "title": "Prelabour rupture of membranes at term",
+      "timeframe": "On presentation",
+      "actions": [
+        "Known carrier: immediate IAP and induction as soon as reasonably possible.",
+        "Negative or unknown status: offer induction after 24 hours."
+      ]
+    },
+    {
+      "id": "baby",
+      "title": "Neonatal observation",
+      "timeframe": "After birth",
+      "actions": [
+        "Adequate IAP and well: no special observation.",
+        "Inadequate IAP: vital signs at 0, 1 and 2 hours then 2-hourly until 12 hours; encourage breastfeeding."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Intrapartum prophylaxis for early-onset GBS disease (first line)",
+        "patientGroup": "Women in labour with an indication for IAP and no penicillin allergy",
+        "genericName": "Benzylpenicillin",
+        "dose": "3 g loading then 1.5 g",
+        "route": "Intravenous",
+        "frequency": "Loading dose as soon as possible after labour starts, then every 4 hours",
+        "duration": "Until delivery",
+        "adjustments": [
+          "No renal adjustment is given in the sources opened.",
+          "First dose at least 4 hours before delivery to optimise efficacy."
+        ],
+        "monitoring": [
+          "Record time of first dose relative to delivery."
+        ],
+        "contraindications": [
+          "Penicillin allergy: use cefuroxime or, if severe, vancomycin or teicoplanin."
+        ],
+        "sourceTitle": "Southern Health and Social Care Trust (hscni.net): Guideline on prevention of early onset neonatal group B streptococcal disease (CG0249, 06/11/2019, review due November 2022)",
+        "sourceUrl": "https://southerntrust.hscni.net/download/988/december-2024/20500/2760-group-b-strep-guidelines-attachment-2.pdf",
+        "sourceEdition": "Southern Trust GBS Guideline CG0249 2019, p. 5",
+        "branch": "No penicillin allergy",
+        "step": "Intrapartum antibiotic",
+        "selection": "all"
+      },
+      {
+        "indication": "Intrapartum prophylaxis in non-severe penicillin allergy",
+        "patientGroup": "Women in labour",
+        "genericName": "Cefuroxime",
+        "dose": "1.5 g loading then 750 mg",
+        "route": "Intravenous",
+        "frequency": "Every 8 hours after loading",
+        "duration": "Until delivery",
+        "adjustments": [
+          "No renal adjustment is given in the source."
+        ],
+        "monitoring": [
+          "Record time of first dose relative to delivery."
+        ],
+        "contraindications": [
+          "Severe penicillin allergy: use vancomycin or teicoplanin."
+        ],
+        "sourceTitle": "Southern Health and Social Care Trust (hscni.net): Guideline on prevention of early onset neonatal group B streptococcal disease (CG0249, 06/11/2019, review due November 2022)",
+        "sourceUrl": "https://southerntrust.hscni.net/download/988/december-2024/20500/2760-group-b-strep-guidelines-attachment-2.pdf",
+        "sourceEdition": "Southern Trust GBS Guideline CG0249 2019, p. 5",
+        "branch": "Non-severe penicillin allergy",
+        "step": "Intrapartum antibiotic",
+        "selection": "all"
+      },
+      {
+        "indication": "Intrapartum prophylaxis in severe penicillin allergy",
+        "patientGroup": "Women in labour",
+        "genericName": "Vancomycin",
+        "dose": "1 g",
+        "route": "Intravenous",
+        "frequency": "Every 12 hours",
+        "duration": "Until delivery",
+        "adjustments": [
+          "No renal adjustment is given in the source."
+        ],
+        "monitoring": [
+          "Record time of first dose relative to delivery."
+        ],
+        "contraindications": [
+          "Contraindications are not listed in the source; check product information."
+        ],
+        "sourceTitle": "Southern Health and Social Care Trust (hscni.net): Guideline on prevention of early onset neonatal group B streptococcal disease (CG0249, 06/11/2019, review due November 2022)",
+        "sourceUrl": "https://southerntrust.hscni.net/download/988/december-2024/20500/2760-group-b-strep-guidelines-attachment-2.pdf",
+        "sourceEdition": "Southern Trust GBS Guideline CG0249 2019, p. 5",
+        "branch": "Severe penicillin allergy",
+        "step": "Intrapartum antibiotic",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "Intrapartum prophylaxis in penicillin allergy (Forth Valley)",
+        "patientGroup": "Women in labour",
+        "genericName": "Teicoplanin",
+        "dose": "12 mg/kg using current weight, rounded to the nearest 100 mg, maximum single dose 800 mg",
+        "route": "Intravenous",
+        "frequency": "Every 12 hours for 3 doses then every 24 hours",
+        "duration": "Until delivery",
+        "adjustments": [
+          "Use current weight; the dosing table is an image that could not be read."
+        ],
+        "monitoring": [
+          "Record time of first dose relative to delivery."
+        ],
+        "contraindications": [
+          "Contraindications are not listed in the source; check product information."
+        ],
+        "sourceTitle": "NHS Forth Valley antimicrobial prescribing: Group B Streptococcus Prophylaxis (Right Decisions)",
+        "sourceUrl": "https://rightdecisions.scot.nhs.uk/antimicrobial-prescribing-nhs-forth-valley/surgical-prophylaxis-guidance/obstetrics/group-b-streptococcus-prophylaxis",
+        "sourceEdition": "NHS Forth Valley GBS Prophylaxis, Section Penicillin allergy",
+        "branch": "Severe penicillin allergy",
+        "step": "Intrapartum antibiotic",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Chosen instead of vancomycin"
+      }
+    ],
+    "note": "Doses are from the Southern Trust guideline (2019) and NHS Forth Valley; clindamycin dosing was not found. The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary.",
+    "branches": [
+      {
+        "label": "No penicillin allergy",
+        "entryCriteria": "Woman in labour with an indication for intrapartum prophylaxis and no penicillin allergy"
+      },
+      {
+        "label": "Non-severe penicillin allergy",
+        "entryCriteria": "Woman in labour with non-severe penicillin allergy"
+      },
+      {
+        "label": "Severe penicillin allergy",
+        "entryCriteria": "Woman in labour with severe penicillin allergy"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Offer IAP",
+      "threshold": "Previous baby with GBS disease, GBS bacteriuria, GBS carriage detected incidentally or by testing, or confirmed preterm labour irrespective of GBS status."
+    },
+    {
+      "criterion": "Term prelabour rupture of membranes, known carrier",
+      "threshold": "Offer immediate IAP and induction of labour as soon as reasonably possible."
+    },
+    {
+      "criterion": "Adequate IAP",
+      "threshold": "First dose more than 4 hours before delivery."
+    }
+  ],
+  "teaching": {
+    "scope": "Woman in labour at risk of early-onset neonatal group B streptococcal (GBS) disease: indications for intrapartum antibiotic prophylaxis (IAP), antibiotic doses and timing, and neonatal observation, using one hospital guideline and one antimicrobial page.",
+    "learningObjectives": [
+      "Offer IAP for the listed risk factors.",
+      "Start as soon as possible after labour begins and at least 4 hours before delivery."
+    ],
+    "pitfalls": [
+      "Giving the first dose too late.",
+      "Forgetting allergy assessment."
+    ],
+    "keyPoints": [
+      "Planned caesarean without labour does not need GBS-specific IAP.",
+      "Fever of 38 degrees Celsius or more needs broad-spectrum cover."
+    ],
+    "references": [
+      {
+        "title": "Southern Health and Social Care Trust (hscni.net): Guideline on prevention of early onset neonatal group B streptococcal disease (CG0249, 06/11/2019, review due November 2022)",
+        "edition": "Southern Trust GBS Guideline CG0249 2019, p. 2 to p. 7",
+        "url": "https://southerntrust.hscni.net/download/988/december-2024/20500/2760-group-b-strep-guidelines-attachment-2.pdf",
+        "locator": "pp. 2 to 7"
+      },
+      {
+        "title": "NHS Forth Valley antimicrobial prescribing: Group B Streptococcus Prophylaxis (Right Decisions)",
+        "edition": "NHS Forth Valley GBS Prophylaxis, Section Standard prophylaxis",
+        "url": "https://rightdecisions.scot.nhs.uk/antimicrobial-prescribing-nhs-forth-valley/surgical-prophylaxis-guidance/obstetrics/group-b-streptococcus-prophylaxis",
+        "locator": "Section Standard prophylaxis"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain why antibiotics are given in labour and that most babies are well.",
+      "Report fever or unwell baby promptly after discharge."
+    ],
+    "lifestyleAndDiet": [
+      "Encourage breastfeeding."
+    ],
+    "mdtReferrals": [
+      "Midwife; obstetrician; neonatal team; microbiology."
+    ],
+    "dischargeCriteria": [
+      "Baby well after observation as above."
+    ],
+    "followUpPlan": "Neonatal review if inadequate IAP or any sign of infection."
+  }
+}

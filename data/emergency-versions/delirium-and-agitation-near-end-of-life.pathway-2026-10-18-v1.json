@@ -1,0 +1,364 @@
+{
+  "id": "732644b9-0497-44a8-bfc2-0fca5dfc7392",
+  "title": "Delirium and Agitation Near End of Life",
+  "specialty": "Palliative Medicine / Geriatrics",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Palliative Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adults near the end of life with anxiety, delirium or agitation: identifying reversible causes, non-drug care, and benzodiazepine or antipsychotic trials. Verified against NICE NG31 and Saudi MOH Protocol-010 (steroid adverse effects); doses from US FDA labels where NICE gives none. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from authoring-standard-2026-10-12-v1-live."
+    ],
+    "unverifiedSections": [
+      "Doses from FDA labels for other indications (off-label in delirium)",
+      "SC dosing and midazolam — local formulary",
+      "SFDA registration not checked",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "732644b9-0497-44a8-bfc2-0fca5dfc7392",
+      "a01e46e3-8407-4b7c-b50a-959fb271a725"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Delirium is an acute, fluctuating disturbance of attention and cognition caused by physical illness or drugs. Near the end of life it is common and often multifactorial; agitation alone may reflect unrelieved pain or bodily needs (NICE NG31).",
+    "keyMechanisms": [
+      "Brain dysfunction from metabolic failure (renal failure, hyponatraemia, hypercalcaemia), infection, hypoxia or drugs.",
+      "Drugs: opioids, benzodiazepines, anticholinergics (including atropine and hyoscine hydrobromide for secretions), corticosteroids (MOH lists delirium and psychosis).",
+      "Unrelieved pain, full bladder or rectum can present as agitation (NICE NG31 1.5.23).",
+      "In the last days delirium may be irreversible; goals shift to comfort and safety."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Fluctuating confusion, inattention, disorientation; hyperactive (restless, distressed) or hypoactive (withdrawn, drowsy).",
+      "Anxiety, fear, distress; hallucinations."
+    ],
+    "physicalSigns": [
+      "Restlessness, picking at bedclothes, myoclonus (opioid toxicity).",
+      "Palpable bladder, faecal loading, pain behaviours.",
+      "Signs of infection, dehydration."
+    ],
+    "redFlags": [
+      "Risk to self or others",
+      "Unwanted sedation from treatment",
+      "No response to antipsychotic — specialist advice (NICE NG31 1.5.28)",
+      "Uncertain diagnosis of delirium versus other distress"
+    ],
+    "precipitants": [
+      "Unrelieved pain",
+      "Urinary retention, constipation",
+      "Opioids, steroids, benzodiazepines, anticholinergics",
+      "Infection, hypoxia, metabolic disturbance",
+      "Unfamiliar environment"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Pain",
+      "distinguishingFeatures": "Pain behaviours; settles with analgesia."
+    },
+    {
+      "condition": "Urinary retention / faecal impaction",
+      "distinguishingFeatures": "Palpable bladder or rectal loading; settles once relieved."
+    },
+    {
+      "condition": "Anxiety or existential distress",
+      "distinguishingFeatures": "Attention intact; responds to support."
+    },
+    {
+      "condition": "Opioid toxicity",
+      "distinguishingFeatures": "Myoclonus, pinpoint pupils, drowsiness after dose increase."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Attention and cognition check",
+        "modalityTarget": "On any change in behaviour",
+        "targetCondition": "Delirium",
+        "expectedFinding": "Inattention and fluctuating cognition.",
+        "clinicalRationale": "Distinguish delirium from anxiety; explore causes with family (NICE NG31 1.5.23).",
+        "normalValue": "Attentive, oriented, stable",
+        "references": [
+          {
+            "title": "NICE NG31: Care of dying adults in the last days of life",
+            "edition": "NICE guideline, 2015, Recommendations 1.5.23–1.5.28 (anxiety, delirium and agitation)",
+            "url": "https://www.nice.org.uk/guidance/ng31"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Bladder and bowel check",
+        "modalityTarget": "Every assessment of agitation",
+        "targetCondition": "Urinary retention, constipation",
+        "expectedFinding": "Palpable bladder, faecal loading.",
+        "clinicalRationale": "Catheterise or treat constipation (NICE NG31 1.5.23).",
+        "normalValue": "No retention or loading",
+        "references": [
+          {
+            "title": "NICE NG31: Care of dying adults in the last days of life",
+            "edition": "NICE guideline, 2015, Recommendations 1.5.23–1.5.28 (anxiety, delirium and agitation)",
+            "url": "https://www.nice.org.uk/guidance/ng31"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Medication review",
+        "modalityTarget": "Every assessment",
+        "targetCondition": "Drug-induced delirium",
+        "expectedFinding": "Recent opioid, steroid, benzodiazepine or anticholinergic.",
+        "clinicalRationale": "Reduce or switch the drug; steroids can cause delirium (MOH Protocol-010 p. 4).",
+        "normalValue": "No deliriogenic drug change",
+        "references": [
+          {
+            "title": "NICE NG31: Care of dying adults in the last days of life",
+            "edition": "NICE guideline, 2015, Recommendations 1.5.23–1.5.28 (anxiety, delirium and agitation)",
+            "url": "https://www.nice.org.uk/guidance/ng31"
+          },
+          {
+            "title": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+            "edition": "Saudi MOH, General Administration of Pharmaceutical Care, p. 4 (steroid psychiatric adverse effects)",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Sodium, calcium, urea/creatinine, glucose",
+        "modalityTarget": "If a metabolic cause is suspected and treatment fits goals",
+        "targetCondition": "Metabolic cause",
+        "expectedFinding": "Hyponatraemia, hypercalcaemia, uraemia, hypo/hyperglycaemia.",
+        "clinicalRationale": "Treat reversible causes (NICE NG31 1.5.25).",
+        "normalValue": "Na 135–145 mmol/L; corrected Ca 2.2–2.6 mmol/L; glucose 4–10 mmol/L",
+        "references": [
+          {
+            "title": "NICE NG31: Care of dying adults in the last days of life",
+            "edition": "NICE guideline, 2015, Recommendations 1.5.23–1.5.28 (anxiety, delirium and agitation)",
+            "url": "https://www.nice.org.uk/guidance/ng31"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "cause",
+      "title": "Look for causes",
+      "timeframe": "Immediately",
+      "actions": [
+        "Check pain, bladder, bowels, drugs, infection, hypoxia and metabolic causes (NICE NG31 1.5.23–1.5.25).",
+        "Treat reversible causes when consistent with the person's goals."
+      ]
+    },
+    {
+      "id": "nondrug",
+      "title": "Non-drug care",
+      "timeframe": "Always",
+      "actions": [
+        "Calm, familiar environment; family presence; reorientation; avoid restraint (NICE NG31 1.5.24)."
+      ]
+    },
+    {
+      "id": "drug",
+      "title": "Drug trial",
+      "timeframe": "If distress persists",
+      "actions": [
+        "Anxiety or agitation: trial of a benzodiazepine (NICE NG31 1.5.26) — e.g. lorazepam 2–3 mg/day in 2–3 divided doses (elderly or debilitated 1–2 mg/day) per FDA label.",
+        "Delirium or agitation: trial of an antipsychotic (NICE NG31 1.5.27) — e.g. haloperidol 0.5–2 mg two to three times daily (FDA label initial range).",
+        "Start at the low end in frail patients; review response and sedation at least daily."
+      ]
+    },
+    {
+      "id": "escalate",
+      "title": "Escalate",
+      "timeframe": "If uncertain or unresponsive",
+      "actions": [
+        "Seek specialist palliative care advice if diagnosis is uncertain, no response to antipsychotic, or unwanted sedation (NICE NG31 1.5.28)."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Delirium or agitation near end of life (antipsychotic trial)",
+        "patientGroup": "Adults; frail/elderly start lowest dose",
+        "genericName": "Haloperidol",
+        "dose": "0.5–2 mg",
+        "route": "PO",
+        "frequency": "Two to three times daily",
+        "duration": "Trial; review daily",
+        "adjustments": [
+          "Label initial range for moderate symptoms (psychosis); use in delirium is off-label (NICE NG31 gives no dose)"
+        ],
+        "monitoring": [
+          "Sedation, extrapyramidal effects, QT"
+        ],
+        "contraindications": [
+          "Severe toxic CNS depression or coma",
+          "Parkinson's disease",
+          "Hypersensitivity"
+        ],
+        "sourceTitle": "Haloperidol tablets prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00bb61c8-db35-4c04-9ef7-47d447d2496b",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "branch": "Delirium or agitation",
+        "step": "Antipsychotic",
+        "selection": "all"
+      },
+      {
+        "indication": "Anxiety or agitation (benzodiazepine trial)",
+        "patientGroup": "Adults; elderly or debilitated 1–2 mg/day",
+        "genericName": "Lorazepam",
+        "dose": "2–3 mg/day",
+        "route": "PO",
+        "frequency": "In 2–3 divided doses",
+        "duration": "Trial; review daily",
+        "adjustments": [
+          "Elderly/debilitated: 1–2 mg/day (label)",
+          "Can worsen delirium — use for anxiety/agitation"
+        ],
+        "monitoring": [
+          "Sedation, respiratory rate"
+        ],
+        "contraindications": [
+          "Hypersensitivity to benzodiazepines",
+          "Acute narrow-angle glaucoma"
+        ],
+        "sourceTitle": "Lorazepam tablets prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00960fbd-a5da-408b-9867-62982f20906f",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "branch": "Anxiety or agitation",
+        "step": "Benzodiazepine",
+        "selection": "all"
+      }
+    ],
+    "note": "NICE NG31 recommends benzodiazepine and antipsychotic trials without doses; the doses shown are FDA-label initial ranges (haloperidol for psychotic symptoms, lorazepam for anxiety) and are off-label for end-of-life delirium. SC routes and midazolam per local palliative formulary. Check SFDA registration.",
+    "branches": [
+      {
+        "label": "Delirium or agitation",
+        "entryCriteria": "Adult near the end of life with delirium or agitation"
+      },
+      {
+        "label": "Anxiety or agitation",
+        "entryCriteria": "Adult near the end of life with anxiety or agitation"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Delirium",
+      "threshold": "Acute fluctuating inattention and altered cognition"
+    },
+    {
+      "criterion": "Specialist advice",
+      "threshold": "Uncertain diagnosis, no response to antipsychotic, or unwanted sedation"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "Drug trials near end of life (NICE NG31)",
+    "columns": [
+      "Indication",
+      "Class (dose source)"
+    ],
+    "rows": [
+      {
+        "parameter": "Anxiety or agitation",
+        "values": [
+          "NICE 1.5.26",
+          "Benzodiazepine (lorazepam label dose)"
+        ]
+      },
+      {
+        "parameter": "Delirium or agitation",
+        "values": [
+          "NICE 1.5.27",
+          "Antipsychotic (haloperidol label dose)"
+        ]
+      }
+    ],
+    "note": "NICE gives no doses; label doses are for other indications."
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Identify reversible causes of end-of-life delirium and agitation and use cautious drug trials."
+    ],
+    "pitfalls": [
+      "Sedating before checking bladder and bowels.",
+      "Benzodiazepines alone for hyperactive delirium.",
+      "Missing steroid- or opioid-induced delirium."
+    ],
+    "keyPoints": [
+      "Agitation may be pain or a full bladder.",
+      "Treat reversible causes first.",
+      "Non-drug care always.",
+      "Benzodiazepine for anxiety; antipsychotic for delirium.",
+      "Specialist advice if no response."
+    ],
+    "references": [
+      {
+        "title": "NICE NG31: Care of dying adults in the last days of life",
+        "edition": "NICE guideline, 2015",
+        "url": "https://www.nice.org.uk/guidance/ng31",
+        "locator": "Recommendations 1.5.23–1.5.28"
+      },
+      {
+        "title": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+        "edition": "Saudi MOH, General Administration of Pharmaceutical Care",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf",
+        "locator": "p. 4"
+      },
+      {
+        "title": "Haloperidol tablets prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00bb61c8-db35-4c04-9ef7-47d447d2496b",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Lorazepam tablets prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00960fbd-a5da-408b-9867-62982f20906f",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Midazolam injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3c2fd6ee-4ede-4ee4-8c05-34c93598f381",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain delirium to family; it is a medical complication, not a personality change.",
+      "Family presence and familiar objects help."
+    ],
+    "lifestyleAndDiet": [
+      "Quiet, well-lit environment; sleep routine; reorientation."
+    ],
+    "mdtReferrals": [
+      "Specialist palliative care.",
+      "Psychiatry liaison if diagnostic doubt."
+    ],
+    "dischargeCriteria": [
+      "Symptoms controlled for the chosen place of care, or safe transfer arranged.",
+      "Patient and family know the plan, the medicines and whom to call."
+    ],
+    "followUpPlan": "Review at least daily and after each dose change; involve family in monitoring."
+  }
+}

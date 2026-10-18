@@ -1,0 +1,622 @@
+{
+  "id": "05481a2b-c95c-440a-a4d0-0c520e8129a4",
+  "title": "Acute Exacerbation of COPD",
+  "specialty": "Respiratory Medicine / Emergency Medicine",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Urgent Care",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adult acute exacerbation of COPD assessment, severity classification, controlled oxygen, bronchodilation, corticosteroids, antibiotics, ventilatory support and discharge planning from the user-pasted guide. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "User-pasted AECOPD content incorporated as a replacement revision on 16 October 2026.",
+      "All references from the previous version were retained unchanged in the reference list.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from user-pasted-replacement-2026-10-16-v1-live-approved."
+    ],
+    "unverifiedSections": [
+      "The pasted doses, thresholds and antibiotic choices require clinician verification against the retained references and local Saudi hospital protocols.",
+      "Saudi Food and Drug Authority (SFDA) registration and formulary availability were not independently rechecked for every medicine.",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "05481a2b-c95c-440a-a4d0-0c520e8129a4",
+      "6fde688e-67d0-42d6-bf20-6d989c732e49"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "An acute exacerbation of Chronic Obstructive Pulmonary Disease (COPD) is a worsening event over less than 14 days with increased dyspnoea, cough or sputum. Infection and environmental insults increase inflammation, mucus production and dynamic hyperinflation. Severe ventilation–perfusion mismatch causes hypoxaemia; respiratory fatigue causes hypercapnia and acute respiratory acidosis. High-concentration oxygen can worsen carbon dioxide retention, so controlled oxygen targeting oxygen saturation (SpO2) 88–92% is required. Computed Tomography (CT) and intensive care unit (ICU) escalation may be required when a mimic or life-threatening failure is suspected.",
+    "keyMechanisms": [
+      "Viral and bacterial respiratory infection, pollution, temperature extremes, poor inhaler adherence and comorbidity can precipitate exacerbation.",
+      "Expiratory flow limitation causes dynamic hyperinflation and gas trapping, increasing work of breathing.",
+      "Severe ventilation–perfusion mismatch causes hypoxaemia; fatigue and hypoventilation cause hypercapnia and acidosis.",
+      "Peripheral eosinophilia may identify a phenotype more responsive to systemic corticosteroids.",
+      "Frequent exacerbations accelerate loss of Forced Expiratory Volume in one second (FEV1)."
+    ],
+    "references": [
+      {
+        "title": "Global Strategy for Prevention, Diagnosis and Management of COPD: 2024 Report (GOLD)",
+        "edition": "2024 report, v1.2",
+        "url": "https://goldcopd.org/2024-gold-report/"
+      },
+      {
+        "title": "NICE NG115: Chronic obstructive pulmonary disease in over 16s: diagnosis and management",
+        "edition": "NICE guideline, 2018 (updated 2019)",
+        "url": "https://www.nice.org.uk/guidance/ng115"
+      },
+      {
+        "title": "The Saudi Thoracic Society evidence-based guidelines for the diagnosis and management of COPD",
+        "edition": "Ann Thorac Med 2025;20(1):1–35 (Al-Jahdali H et al.)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11804957/"
+      },
+      {
+        "title": "SFDA Saudi Drug Information System (registration search)",
+        "edition": "Accessed 11–12 Oct 2026",
+        "url": "https://sdi.sfda.gov.sa/"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Increased breathlessness, cough, wheeze, reduced exercise tolerance, and increased sputum volume or purulence."
+    ],
+    "physicalSigns": [
+      "Tachypnoea, tachycardia, accessory-muscle use, pursed-lip breathing, wheeze or reduced air entry, cyanosis and worsening peripheral oedema."
+    ],
+    "redFlags": [
+      "Acute confusion, drowsiness or lethargy.",
+      "Hypoxaemia not corrected by a Venturi mask or requiring inspired oxygen fraction (FiO2) above 40%.",
+      "PaCO2 above 60 mmHg or pH 7.25 or lower.",
+      "Haemodynamic instability or failure to improve after initial stabilisation."
+    ],
+    "precipitants": [
+      "Viral or bacterial infection, particulate pollution, temperature extremes, poor inhaler adherence, incorrect device technique and unmanaged comorbidity."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Pneumonia",
+      "distinguishingFeatures": "Fever, focal signs or pleuritic pain; chest radiograph may show new consolidation."
+    },
+    {
+      "condition": "Acute heart failure",
+      "distinguishingFeatures": "Orthopnoea, paroxysmal nocturnal dyspnoea, crackles, raised JVP or oedema; use natriuretic peptides and echocardiography."
+    },
+    {
+      "condition": "Pulmonary embolism",
+      "distinguishingFeatures": "Pleuritic pain, haemoptysis, hypoxaemia or absent infective features; consider Computed Tomography Pulmonary Angiography (CTPA)."
+    },
+    {
+      "condition": "Pneumothorax",
+      "distinguishingFeatures": "Sudden unilateral pain and breathlessness with unilateral loss of breath sounds; obtain chest radiograph."
+    },
+    {
+      "condition": "Acute coronary syndrome or arrhythmia",
+      "distinguishingFeatures": "Ischaemic pain, palpitations or hypoperfusion; obtain Electrocardiogram (ECG) and serial troponins."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Arterial Blood Gas (ABG)",
+        "modalityTarget": "Gas exchange and acid-base status; record FiO2",
+        "targetCondition": "Hypercapnic respiratory failure",
+        "expectedFinding": "Hypercapnia with acidaemia; pH below 7.35, pH 7.25 or lower or PaCO2 above 60 mmHg",
+        "clinicalRationale": "Repeat after starting or changing oxygen; persistent hypercapnic acidosis triggers Non-Invasive Ventilation (NIV) assessment.",
+        "normalValue": "pH 7.35–7.45; PaCO2 35–45 mmHg; PaO2 above 80 mmHg; bicarbonate 22–26 mmol/L",
+        "references": [
+          {
+            "title": "Global Strategy for Prevention, Diagnosis and Management of COPD: 2024 Report (GOLD)",
+            "edition": "2024 report, v1.2; Section 1",
+            "url": "https://goldcopd.org/2024-gold-report/"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Pulse oximetry",
+        "modalityTarget": "Continuous oxygenation monitoring",
+        "targetCondition": "Hypoxaemia",
+        "expectedFinding": "SaO2 below 90% on air",
+        "clinicalRationale": "Titrate controlled oxygen to SpO2 88–92%; interpret oximetry with clinical context.",
+        "normalValue": "94–98% on room air",
+        "references": [
+          {
+            "title": "Global Strategy for Prevention, Diagnosis and Management of COPD: 2024 Report (GOLD)",
+            "edition": "2024 report, v1.2; Section 1",
+            "url": "https://goldcopd.org/2024-gold-report/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count and eosinophils",
+        "modalityTarget": "Infection and steroid-response assessment",
+        "targetCondition": "AECOPD phenotype",
+        "expectedFinding": "Leukocytosis or eosinophils at least 0.3 × 10^9/L",
+        "clinicalRationale": "Supports infection assessment and potential corticosteroid responsiveness.",
+        "normalValue": "WBC 4–11 × 10^9/L; eosinophils below 0.3 × 10^9/L",
+        "references": [
+          {
+            "title": "Global Strategy for Prevention, Diagnosis and Management of COPD: 2024 Report (GOLD)",
+            "edition": "2024 report, v1.2; Section 1",
+            "url": "https://goldcopd.org/2024-gold-report/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Urea, electrolytes and renal function",
+        "modalityTarget": "Metabolic and medication safety",
+        "targetCondition": "Electrolyte or renal disturbance",
+        "expectedFinding": "Hypokalaemia, hyponatraemia or renal impairment",
+        "clinicalRationale": "Adjusts treatment and identifies shifts from beta-2 agonists or steroids.",
+        "normalValue": "Potassium 3.5–5.0 mmol/L; sodium 135–145 mmol/L; creatinine 60–110 µmol/L",
+        "references": [
+          {
+            "title": "Global Strategy for Prevention, Diagnosis and Management of COPD: 2024 Report (GOLD)",
+            "edition": "2024 report, v1.2; Section 1",
+            "url": "https://goldcopd.org/2024-gold-report/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "C-reactive protein",
+        "modalityTarget": "Inflammatory assessment",
+        "targetCondition": "Bacterial or inflammatory exacerbation",
+        "expectedFinding": "Elevated result",
+        "clinicalRationale": "May support reduced antibiotic use when low; follow the local protocol.",
+        "normalValue": "Below 5 mg/L",
+        "references": [
+          {
+            "title": "Global Strategy for Prevention, Diagnosis and Management of COPD: 2024 Report (GOLD)",
+            "edition": "2024 report, v1.2; Section 1",
+            "url": "https://goldcopd.org/2024-gold-report/"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Chest radiograph",
+        "modalityTarget": "All hospital presentations",
+        "targetCondition": "Pneumonia, pneumothorax, oedema or effusion",
+        "expectedFinding": "Consolidation, pneumothorax, oedema or effusion",
+        "clinicalRationale": "Identifies mimics and complications.",
+        "normalValue": "No acute focal abnormality",
+        "references": [
+          {
+            "title": "Global Strategy for Prevention, Diagnosis and Management of COPD: 2024 Report (GOLD)",
+            "edition": "2024 report, v1.2; Section 1",
+            "url": "https://goldcopd.org/2024-gold-report/"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "12-lead Electrocardiogram (ECG)",
+        "modalityTarget": "All admitted patients",
+        "targetCondition": "Arrhythmia, ischaemia or right-heart strain",
+        "expectedFinding": "Tachycardia, atrial fibrillation, ischaemic changes or right-heart strain",
+        "clinicalRationale": "Excludes cardiac precipitants and complications.",
+        "normalValue": "Sinus rhythm",
+        "references": [
+          {
+            "title": "Global Strategy for Prevention, Diagnosis and Management of COPD: 2024 Report (GOLD)",
+            "edition": "2024 report, v1.2; Section 1",
+            "url": "https://goldcopd.org/2024-gold-report/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Venous Blood Gas (VBG)",
+        "modalityTarget": "pH and bicarbonate estimation when appropriate",
+        "targetCondition": "Hypercapnic respiratory failure",
+        "expectedFinding": "Abnormal pH or bicarbonate; exact PaCO2 and PaO2 remain unreliable",
+        "clinicalRationale": "Use ABG when precise oxygenation or carbon dioxide measurement is needed.",
+        "normalValue": "pH and bicarbonate within local range",
+        "references": [
+          {
+            "title": "Global Strategy for Prevention, Diagnosis and Management of COPD: 2024 Report (GOLD)",
+            "edition": "2024 report, v1.2; Section 1",
+            "url": "https://goldcopd.org/2024-gold-report/"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "CT Pulmonary Angiography (CTPA)",
+        "modalityTarget": "Suspected pulmonary embolism",
+        "targetCondition": "Pulmonary embolism",
+        "expectedFinding": "Filling defect",
+        "clinicalRationale": "Use when clinical features make pulmonary embolism plausible.",
+        "normalValue": "No embolus",
+        "references": [
+          {
+            "title": "Global Strategy for Prevention, Diagnosis and Management of COPD: 2024 Report (GOLD)",
+            "edition": "2024 report, v1.2; Section 1",
+            "url": "https://goldcopd.org/2024-gold-report/"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "severity-admission",
+      "title": "Assess severity and hospital setting",
+      "timeframe": "Arrival",
+      "actions": [
+        "Check respiratory rate, heart rate, SpO2, mental status and accessory-muscle use; perform ABG with recorded FiO2.",
+        "Admit for severe breathlessness, cyanosis, oedema, impaired consciousness, long-term oxygen therapy, SaO2 below 90%, pH below 7.35, PaO2 below 7 kPa, new radiograph change, significant comorbidity or inadequate home support."
+      ]
+    },
+    {
+      "id": "controlled-oxygen",
+      "title": "Controlled oxygen therapy",
+      "timeframe": "Immediately; repeat ABG in 30–60 minutes",
+      "actions": [
+        "Use a Venturi mask at 24% or 28% and titrate SpO2 to 88–92%.",
+        "Consider a trial of NIV before High-Flow Nasal Oxygen (HFNO) in acute hypercapnic respiratory failure."
+      ]
+    },
+    {
+      "id": "bronchodilators",
+      "title": "Short-acting bronchodilators",
+      "timeframe": "First hour, then according to response",
+      "actions": [
+        "Use a Short-Acting Beta-2 Agonist (SABA) such as salbutamol with a Short-Acting Muscarinic Antagonist (SAMA) such as ipratropium by pressurised Metered-Dose Inhaler (pMDI) with spacer or compressed-air-driven nebuliser.",
+        "If nebulisation is required in hypercapnia or acidosis, prescribe compressed air as the driving gas with supplementary oxygen by nasal cannula."
+      ]
+    },
+    {
+      "id": "steroids",
+      "title": "Systemic corticosteroids",
+      "timeframe": "Early treatment for 5 days",
+      "actions": [
+        "Give prednisolone 30–40 mg orally once daily for 5 days; tapering is unnecessary for a short course.",
+        "If oral treatment is not possible, use an intravenous alternative according to local protocol and transition to oral treatment when tolerated."
+      ]
+    },
+    {
+      "id": "antibiotics",
+      "title": "Targeted antimicrobial therapy",
+      "timeframe": "When indicated",
+      "actions": [
+        "Use antibiotics for all three cardinal symptoms, two symptoms when one is purulence, or when NIV or invasive ventilation is required.",
+        "Choose the agent using local resistance, renal function, allergy history, severity and prior Pseudomonas aeruginosa isolation; send sputum culture when indicated."
+      ]
+    },
+    {
+      "id": "ventilatory-support",
+      "title": "Ventilatory support",
+      "timeframe": "Persistent acidosis or deterioration",
+      "actions": [
+        "Use NIV first-line for persistent hypercapnic respiratory failure with pH below 7.35 and PaCO2 above 45 mmHg despite optimal treatment.",
+        "Document a deterioration plan and ceiling of care before NIV.",
+        "Use invasive ventilation for NIV failure, severe encephalopathy, haemodynamic instability or persistent life-threatening acidosis; base decisions on functional status and baseline health, not age or isolated FEV1."
+      ]
+    },
+    {
+      "id": "adjuncts-discharge",
+      "title": "Adjuncts and discharge planning",
+      "timeframe": "During admission and before discharge",
+      "actions": [
+        "Provide VTE prophylaxis unless contraindicated, monitor fluid and electrolytes, and treat cor pulmonale or heart failure when present.",
+        "Avoid routine intravenous methylxanthines; if used, monitor drug levels.",
+        "Before discharge confirm stable gas exchange, optimised inhalers and technique, LTOT or home NIV reassessment, a written action plan, smoking cessation, vaccination, pulmonary rehabilitation and review within 2–4 weeks."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [
+      {
+        "indication": "AECOPD systemic corticosteroid",
+        "patientGroup": "Adults with acute exacerbation of COPD",
+        "genericName": "Prednisolone",
+        "dose": "30–40 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "5 days",
+        "adjustments": [
+          "No taper is needed for a short course of 7 days or less."
+        ],
+        "monitoring": [
+          "Glucose, infection and clinical response."
+        ],
+        "contraindications": [
+          "Hypersensitivity; assess infection risk."
+        ],
+        "sourceTitle": "Global Strategy for Prevention, Diagnosis and Management of COPD: 2024 Report (GOLD)",
+        "sourceUrl": "https://goldcopd.org/2024-gold-report/",
+        "sourceEdition": "2024 report, v1.2; Section 1",
+        "branch": "All exacerbations",
+        "step": "Systemic corticosteroid",
+        "selection": "all"
+      },
+      {
+        "indication": "VTE prophylaxis during hospitalisation",
+        "patientGroup": "Adults with acute exacerbation of COPD",
+        "genericName": "Enoxaparin",
+        "dose": "40 mg",
+        "route": "SC",
+        "frequency": "Once daily",
+        "duration": "During hospitalisation",
+        "adjustments": [
+          "Withhold or adjust when contraindicated or renal function is impaired."
+        ],
+        "monitoring": [
+          "Bleeding, platelet count and renal function."
+        ],
+        "contraindications": [
+          "Active bleeding",
+          "Recent or active HIT"
+        ],
+        "sourceTitle": "Global Strategy for Prevention, Diagnosis and Management of COPD: 2024 Report (GOLD)",
+        "sourceUrl": "https://goldcopd.org/2024-gold-report/",
+        "sourceEdition": "2024 report, v1.2; Section 1",
+        "branch": "All exacerbations",
+        "step": "VTE prophylaxis",
+        "selection": "all",
+        "useWhen": "Hospitalised"
+      },
+      {
+        "indication": "Empiric antibiotic when indicated",
+        "patientGroup": "Adults with acute exacerbation of COPD",
+        "genericName": "Amoxicillin-clavulanate",
+        "dose": "625 mg three times daily or 1 g twice daily",
+        "route": "PO",
+        "frequency": "Three or two times daily",
+        "duration": "5–7 days",
+        "adjustments": [
+          "Adjust for renal impairment; follow local protocol."
+        ],
+        "monitoring": [
+          "Allergy, gastrointestinal effects and liver function."
+        ],
+        "contraindications": [
+          "Serious beta-lactam allergy",
+          "Severe hepatic reaction to the combination"
+        ],
+        "sourceTitle": "Global Strategy for Prevention, Diagnosis and Management of COPD: 2024 Report (GOLD)",
+        "sourceUrl": "https://goldcopd.org/2024-gold-report/",
+        "sourceEdition": "2024 report, v1.2; Section 1",
+        "branch": "Antibiotic indicated — standard risk",
+        "step": "Antibiotic",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "Alternative antibiotic in penicillin allergy",
+        "patientGroup": "Adults with acute exacerbation of COPD",
+        "genericName": "Doxycycline",
+        "dose": "200 mg loading, then 100 mg daily",
+        "route": "PO",
+        "frequency": "Loading then once daily",
+        "duration": "5 days",
+        "adjustments": [
+          "Administer with a full glass of water."
+        ],
+        "monitoring": [
+          "Gastrointestinal effects and photosensitivity."
+        ],
+        "contraindications": [
+          "Tetracycline hypersensitivity"
+        ],
+        "sourceTitle": "Global Strategy for Prevention, Diagnosis and Management of COPD: 2024 Report (GOLD)",
+        "sourceUrl": "https://goldcopd.org/2024-gold-report/",
+        "sourceEdition": "2024 report, v1.2; Section 1",
+        "branch": "Antibiotic indicated — standard risk",
+        "step": "Antibiotic",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Penicillin allergy"
+      },
+      {
+        "indication": "Anti-Pseudomonal therapy when high risk",
+        "patientGroup": "Adults with acute exacerbation of COPD",
+        "genericName": "Ciprofloxacin",
+        "dose": "750 mg",
+        "route": "PO",
+        "frequency": "Twice daily",
+        "duration": "5–7 days",
+        "adjustments": [
+          "Use only with local specialist or microbiology guidance."
+        ],
+        "monitoring": [
+          "QT interval, tendon symptoms, interactions and renal function."
+        ],
+        "contraindications": [
+          "Fluoroquinolone hypersensitivity",
+          "High tendon-risk situations"
+        ],
+        "sourceTitle": "Global Strategy for Prevention, Diagnosis and Management of COPD: 2024 Report (GOLD)",
+        "sourceUrl": "https://goldcopd.org/2024-gold-report/",
+        "sourceEdition": "2024 report, v1.2; Section 1",
+        "branch": "Antibiotic indicated — high risk of Pseudomonas aeruginosa",
+        "step": "Antibiotic",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "Anti-Pseudomonal therapy when high risk",
+        "patientGroup": "Adults with acute exacerbation of COPD",
+        "genericName": "Piperacillin-tazobactam",
+        "dose": "4.5 g",
+        "route": "IV",
+        "frequency": "Every 6 hours",
+        "duration": "5–7 days",
+        "adjustments": [
+          "Adjust for renal impairment and local susceptibility."
+        ],
+        "monitoring": [
+          "Renal function, allergy and clinical response."
+        ],
+        "contraindications": [
+          "Serious penicillin allergy"
+        ],
+        "sourceTitle": "Global Strategy for Prevention, Diagnosis and Management of COPD: 2024 Report (GOLD)",
+        "sourceUrl": "https://goldcopd.org/2024-gold-report/",
+        "sourceEdition": "2024 report, v1.2; Section 1",
+        "branch": "Antibiotic indicated — high risk of Pseudomonas aeruginosa",
+        "step": "Antibiotic",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Intravenous anti-Pseudomonal therapy is needed"
+      }
+    ],
+    "note": "The pasted antibiotic and corticosteroid regimens require verification against the retained GOLD, NICE, Saudi Thoracic Society and SFDA/formulary sources before prescribing.",
+    "branches": [
+      {
+        "label": "All exacerbations",
+        "entryCriteria": "Adult with an acute exacerbation of COPD"
+      },
+      {
+        "label": "Antibiotic indicated — standard risk",
+        "entryCriteria": "Exacerbation meeting the antibiotic criteria, without high risk of Pseudomonas aeruginosa"
+      },
+      {
+        "label": "Antibiotic indicated — high risk of Pseudomonas aeruginosa",
+        "entryCriteria": "Exacerbation meeting the antibiotic criteria, with high risk of Pseudomonas aeruginosa"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "No respiratory failure",
+      "threshold": "RR 24 or lower, HR below 95, no accessory-muscle use, normal mental status and hypoxaemia corrected with Venturi mask at FiO2 24–35%."
+    },
+    {
+      "criterion": "Acute respiratory failure, non-life-threatening",
+      "threshold": "RR above 24, accessory-muscle use, corrected hypoxaemia at FiO2 above 35%, PaCO2 above baseline or 50–60 mmHg and pH 7.25–7.35."
+    },
+    {
+      "criterion": "Acute respiratory failure, life-threatening",
+      "threshold": "Mental-status change, hypoxaemia uncorrected by FiO2 above 40%, PaCO2 above 60 mmHg or pH 7.25 or lower."
+    }
+  ],
+  "guidelineComparison": {
+    "title": "GOLD 2024 vs NICE NG115 vs Saudi Thoracic Society 2025",
+    "columns": [
+      "GOLD 2024",
+      "NICE NG115",
+      "STS 2025 (Saudi)"
+    ],
+    "rows": [
+      {
+        "parameter": "Steroid dose",
+        "values": [
+          "40 mg prednisone-equivalent daily",
+          "Prednisolone 30 mg daily",
+          "Prednisone 30–60 mg daily or methylprednisolone 60–125 mg 2–4 times daily"
+        ]
+      },
+      {
+        "parameter": "Steroid duration",
+        "values": [
+          "5 days",
+          "5 days",
+          "5–7 days (7 days or less)"
+        ]
+      },
+      {
+        "parameter": "Antibiotic duration",
+        "values": [
+          "5 days",
+          "Refers to NICE NG114",
+          "Not stated (antibiotics suggested)"
+        ]
+      },
+      {
+        "parameter": "IV methylxanthines",
+        "values": [
+          "Not recommended",
+          "Adjunct only if inadequate response, with levels",
+          "Not addressed"
+        ]
+      },
+      {
+        "parameter": "NIV",
+        "values": [
+          "First mode of ventilation in acute respiratory failure",
+          "Treatment of choice for persistent hypercapnic failure",
+          "Suggested in ward, HDU or ICU"
+        ]
+      }
+    ],
+    "note": "All three agree: short-acting bronchodilators, a short steroid course, antibiotics for purulent or ventilated exacerbations and NIV for hypercapnic failure. Choose the steroid dose by local protocol."
+  },
+  "teaching": {
+    "scope": "Adult AECOPD assessment, controlled oxygen, bronchodilation, corticosteroids, antibiotics, NIV and discharge safety-netting.",
+    "learningObjectives": [
+      "Classify AECOPD respiratory failure severity.",
+      "Deliver controlled oxygen and bronchodilator therapy safely.",
+      "Recognise when antibiotics, NIV or invasive ventilation are indicated."
+    ],
+    "pitfalls": [
+      "Uncontrolled high-flow oxygen in a carbon-dioxide retainer.",
+      "Oxygen-driven nebulisers in hypercapnic patients.",
+      "Diagnostic anchoring on COPD when another emergency is present.",
+      "Steroid courses longer than 7 days without indication.",
+      "Premature discharge without inhaler technique and follow-up."
+    ],
+    "keyPoints": [
+      "Target SpO2 88–92% and repeat ABG after oxygen changes.",
+      "Use compressed-air-driven nebulisation in hypercapnic or acidotic patients.",
+      "Persistent hypercapnic acidosis despite treatment triggers NIV assessment.",
+      "Do not miss pulmonary embolism, heart failure or pneumothorax."
+    ],
+    "references": [
+      {
+        "title": "Global Strategy for Prevention, Diagnosis and Management of COPD: 2024 Report (GOLD)",
+        "edition": "2024 report, v1.2",
+        "url": "https://goldcopd.org/2024-gold-report/",
+        "locator": "Chapter 4: Management of exacerbations (pp. 98–111)"
+      },
+      {
+        "title": "NICE NG115: Chronic obstructive pulmonary disease in over 16s: diagnosis and management",
+        "edition": "NICE guideline, 2018 (updated 2019)",
+        "url": "https://www.nice.org.uk/guidance/ng115",
+        "locator": "Section 1.3 Managing exacerbations (recs 1.3.1–1.3.47), Table 7"
+      },
+      {
+        "title": "The Saudi Thoracic Society evidence-based guidelines for the diagnosis and management of COPD",
+        "edition": "Ann Thorac Med 2025;20(1):1–35 (Al-Jahdali H et al.)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11804957/",
+        "locator": "Executive summary Q6–Q9; section 'Management of acute exacerbations of COPD'"
+      },
+      {
+        "title": "SFDA Saudi Drug Information System (registration search)",
+        "edition": "Accessed 11–12 Oct 2026",
+        "url": "https://sdi.sfda.gov.sa/",
+        "locator": "Accessed 11–12 Oct 2026; cited section"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Provide a written exacerbation plan and confirm medication completion.",
+      "Teach inhaler technique, smoking cessation and warning signs."
+    ],
+    "lifestyleAndDiet": [
+      "Smoking cessation, vaccination, pulmonary rehabilitation and activity recovery."
+    ],
+    "mdtReferrals": [
+      "Respiratory team, physiotherapy, pulmonary rehabilitation, home NIV or LTOT assessment when indicated."
+    ],
+    "dischargeCriteria": [
+      "Stable clinical condition with corrected metabolic abnormalities and satisfactory ABG or oximetry on room air or baseline oxygen.",
+      "Optimised maintenance inhalers with validated technique and confidence in home management."
+    ],
+    "followUpPlan": "Arrange structured review within 2–4 weeks; consider home NIV assessment at 2 weeks if chronic hypercapnia persists."
+  },
+  "clinicalReviewStatus": "pending"
+}

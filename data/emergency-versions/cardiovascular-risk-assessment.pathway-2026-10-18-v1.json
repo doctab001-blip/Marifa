@@ -1,0 +1,386 @@
+{
+  "id": "3eaa3e4b-00e8-4bb1-b98a-c18526c67c8e",
+  "title": "Cardiovascular Risk Assessment",
+  "specialty": "Family Medicine / Preventive Cardiology",
+  "authority": "PHA",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Keep Well",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adults without established cardiovascular disease: who to assess, risk tools, lipids, BP and glucose checks, and when to offer a statin or discuss aspirin. Verified against the Saudi PHA Clinical Preventive Guideline 2023 (adult checklist and footnotes), NICE NG238 and the Saudi Diabetes CPG (ASCVD assessment). Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from authoring-standard-2026-10-12-v1-live."
+    ],
+    "unverifiedSections": [
+      "Risk tools not validated in Saudi populations",
+      "SFDA registration not checked",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "3eaa3e4b-00e8-4bb1-b98a-c18526c67c8e",
+      "897afc99-662b-47ba-9de0-43b98e250b10"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Atherosclerotic cardiovascular disease (ASCVD) risk is the combined effect of age, sex, smoking, blood pressure, lipids, diabetes, kidney disease and family history. Estimating 10-year risk targets preventive treatment to those most likely to benefit.",
+    "keyMechanisms": [
+      "Atherogenic lipoproteins, hypertension, smoking and hyperglycaemia damage the endothelium and drive plaque formation.",
+      "Risk factors multiply rather than add — hence multivariable risk tools.",
+      "Statins lower LDL and reduce events in proportion to baseline risk."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Usually asymptomatic; ask about smoking, family history of premature CVD, diabetes, kidney disease."
+    ],
+    "physicalSigns": [
+      "BP, BMI and waist circumference; xanthomas (familial hypercholesterolaemia)."
+    ],
+    "redFlags": [
+      "BP 180/120 or above with symptoms — urgent",
+      "Total cholesterol above 9.0 or non-HDL above 7.5 mmol/L — specialist (NICE)",
+      "Chest pain or claudication — investigate as established disease"
+    ],
+    "precipitants": [
+      "Smoking",
+      "Hypertension",
+      "Dyslipidaemia",
+      "Diabetes",
+      "Obesity, inactivity",
+      "Family history of premature CVD",
+      "CKD"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Established CVD",
+      "distinguishingFeatures": "Secondary prevention pathway — not risk scoring."
+    },
+    {
+      "condition": "Familial hypercholesterolaemia",
+      "distinguishingFeatures": "Very high LDL, family history — FH pathway."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Fasting lipid profile",
+        "modalityTarget": "Adults per PHA checklist (graded B); before statin",
+        "targetCondition": "Dyslipidaemia",
+        "expectedFinding": "High LDL/non-HDL; HDL below 0.9 mmol/L or triglycerides above 2.82 mmol/L are diabetes-screening risk factors (PHA).",
+        "clinicalRationale": "Feeds risk tool; >40% non-HDL reduction target on statin (NICE).",
+        "normalValue": "Non-HDL below 4 mmol/L (laboratory dependent)",
+        "references": [
+          {
+            "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+            "edition": "3rd edition, 2023, PDF p. 25 / printed p. 18 (adult checklist 18–59 years)",
+            "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf"
+          },
+          {
+            "title": "NICE NG238: Cardiovascular disease: risk assessment and reduction, including lipid modification",
+            "edition": "NICE guideline, 2023, Recommendations 1.5.5, 1.6.1",
+            "url": "https://www.nice.org.uk/guidance/ng238"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Blood pressure",
+        "modalityTarget": "All adults 18 or over; annually if 40 or over or at risk; every 3–5 years if 18–39 and low risk (PHA)",
+        "targetCondition": "Hypertension",
+        "expectedFinding": "Raised clinic BP; confirm outside clinic before treatment (PHA).",
+        "clinicalRationale": "Treat per hypertension pathway.",
+        "normalValue": "Below 130/80 mmHg",
+        "references": [
+          {
+            "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+            "edition": "3rd edition, 2023, PDF p. 28 / printed p. 21 (footnotes 6–7, 14, 16: BP, blood sugar, aspirin, statin)",
+            "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "10-year CVD risk score (QRISK3 per NICE; PHA cites 10-year risk for statin decisions)",
+        "modalityTarget": "Adults 40–75 (PHA statin footnote); 25–84 (QRISK3, NICE)",
+        "targetCondition": "Primary prevention threshold",
+        "expectedFinding": "PHA: statin for 40–75 with a risk factor and 10-year risk 10% or more; selectively 7.5–10%. NICE: atorvastatin 20 mg if QRISK3 10% or more.",
+        "clinicalRationale": "Shared decision; type 1 diabetes, CKD and FH are high risk without scoring (NICE).",
+        "normalValue": "10-year risk below 7.5%",
+        "references": [
+          {
+            "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+            "edition": "3rd edition, 2023, PDF p. 28 / printed p. 21 (footnotes 6–7, 14, 16: BP, blood sugar, aspirin, statin)",
+            "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf"
+          },
+          {
+            "title": "NICE NG238: Cardiovascular disease: risk assessment and reduction, including lipid modification",
+            "edition": "NICE guideline, 2023, Recommendations 1.1, 1.6.7",
+            "url": "https://www.nice.org.uk/guidance/ng238"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Glucose or HbA1c",
+        "modalityTarget": "From 35, every 3 years; earlier if overweight with risk factors (PHA)",
+        "targetCondition": "Diabetes",
+        "expectedFinding": "HbA1c 6.5% or more; fasting 7.0 mmol/L or more.",
+        "clinicalRationale": "Diabetes raises CVD risk — see Diabetes Screening topic.",
+        "normalValue": "HbA1c below 5.7%",
+        "references": [
+          {
+            "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+            "edition": "3rd edition, 2023, PDF p. 28 / printed p. 21 (footnotes 6–7, 14, 16: BP, blood sugar, aspirin, statin)",
+            "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf"
+          },
+          {
+            "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+            "edition": "1st ed. 2021, pp. 19–21 (screening and diagnostic criteria)",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "BMI and waist circumference",
+        "modalityTarget": "Every 2 years in adults (PHA)",
+        "targetCondition": "Central adiposity",
+        "expectedFinding": "BMI 25 or more; raised waist.",
+        "clinicalRationale": "Lifestyle intervention; see Obesity topic.",
+        "normalValue": "BMI 18.5–24.9; waist-to-height ratio below 0.5",
+        "references": [
+          {
+            "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+            "edition": "3rd edition, 2023, PDF p. 27 / printed p. 20 (footnotes 3, 5, 11–13: obesity counselling, BMI/waist, DXA)",
+            "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "assess",
+      "title": "Assess",
+      "timeframe": "Routine adult checks",
+      "actions": [
+        "Record smoking, BP, BMI/waist, lipids, glucose and family history (PHA checklist).",
+        "Estimate 10-year CVD risk; do not score people with established CVD, type 1 diabetes, CKD or FH — treat as high risk (NICE)."
+      ]
+    },
+    {
+      "id": "lifestyle",
+      "title": "Lifestyle",
+      "timeframe": "All",
+      "actions": [
+        "Stop smoking; diet; physical activity; weight management (PHA checklist; NICE NG238 1.6.2)."
+      ]
+    },
+    {
+      "id": "statin",
+      "title": "Statin",
+      "timeframe": "If risk threshold met",
+      "actions": [
+        "PHA (USPSTF-based): statin for adults 40–75 with 1 or more risk factor and 10-year risk 10% or more; selectively for 7.5–10%.",
+        "NICE: atorvastatin 20 mg if QRISK3 10% or more after lifestyle discussion.",
+        "Lipids and ALT at 2–3 months (NICE)."
+      ]
+    },
+    {
+      "id": "aspirin",
+      "title": "Aspirin",
+      "timeframe": "Individual decision",
+      "actions": [
+        "Aspirin 81 mg daily for primary prevention at 40–59 with 10-year risk 10% or more is an individual decision — net benefit small; best if low bleeding risk (PHA)."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Primary prevention (QRISK3 10% or more per NICE; PHA 10-year risk 10% or more)",
+        "patientGroup": "Adults",
+        "genericName": "Atorvastatin",
+        "dose": "20 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term",
+        "adjustments": [
+          "Increase if non-HDL reduction below 40% (NICE)"
+        ],
+        "monitoring": [
+          "Lipids and ALT at 2–3 months"
+        ],
+        "contraindications": [
+          "Acute liver failure or decompensated cirrhosis",
+          "Hypersensitivity"
+        ],
+        "sourceTitle": "NICE NG238: Cardiovascular disease: risk assessment and reduction, including lipid modification",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng238",
+        "sourceEdition": "NICE guideline, 2023, Recommendation 1.6.7 (atorvastatin 20 mg)",
+        "branch": "Statin for primary prevention",
+        "step": "Statin",
+        "selection": "all"
+      },
+      {
+        "indication": "Primary prevention aspirin (individual decision)",
+        "patientGroup": "Adults 40–59 with 10-year risk 10% or more and low bleeding risk",
+        "genericName": "Aspirin",
+        "dose": "81 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Per shared decision",
+        "adjustments": [
+          "Net benefit small (PHA)",
+          "Not for those at increased bleeding risk"
+        ],
+        "monitoring": [
+          "Bleeding"
+        ],
+        "contraindications": [
+          "Known allergy to NSAIDs",
+          "Syndrome of asthma, rhinitis and nasal polyps",
+          "Hypersensitivity to aspirin"
+        ],
+        "sourceTitle": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+        "sourceUrl": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf",
+        "sourceEdition": "3rd edition, 2023, PDF p. 28 / printed p. 21 (footnotes 6–7, 14, 16: BP, blood sugar, aspirin, statin)",
+        "branch": "Aspirin for primary prevention",
+        "step": "Antiplatelet",
+        "selection": "all"
+      }
+    ],
+    "note": "Statin threshold from NICE NG238 and PHA (USPSTF-based); aspirin 81 mg from PHA. Contraindications from FDA labels. Check SFDA registration.",
+    "branches": [
+      {
+        "label": "Statin for primary prevention",
+        "entryCriteria": "Adult with 10-year cardiovascular risk of 10% or more"
+      },
+      {
+        "label": "Aspirin for primary prevention",
+        "entryCriteria": "Adult aged 40–59 with 10-year risk of 10% or more and low bleeding risk; individual decision"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Statin — PHA",
+      "threshold": "Age 40–75, 1 or more risk factor, 10-year risk 10% or more (selective 7.5–10%)"
+    },
+    {
+      "criterion": "Statin — NICE",
+      "threshold": "QRISK3 10% or more"
+    },
+    {
+      "criterion": "BP screening interval (PHA)",
+      "threshold": "Annually if 40 or over or at risk; 3–5 years if 18–39 low risk"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "Statin for primary prevention: Saudi PHA vs NICE",
+    "columns": [
+      "Saudi PHA 2023 (USPSTF)",
+      "NICE NG238"
+    ],
+    "rows": [
+      {
+        "parameter": "Who",
+        "values": [
+          "Age 40–75 with 1 or more risk factor",
+          "Age 25–84 assessed with QRISK3"
+        ]
+      },
+      {
+        "parameter": "Threshold",
+        "values": [
+          "10-year risk 10% or more; selective 7.5–10%",
+          "QRISK3 10% or more"
+        ]
+      },
+      {
+        "parameter": "Dose",
+        "values": [
+          "Not specified",
+          "Atorvastatin 20 mg"
+        ]
+      }
+    ],
+    "note": "Risk tools differ (US pooled cohort vs QRISK3); neither is validated in Saudi populations."
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Estimate cardiovascular risk and target preventive treatment."
+    ],
+    "pitfalls": [
+      "Risk scoring people with established CVD.",
+      "Routine aspirin for primary prevention.",
+      "Ignoring FH clues."
+    ],
+    "keyPoints": [
+      "Assess risk in adults without CVD.",
+      "Statin if 10-year risk 10% or more.",
+      "Aspirin for primary prevention only by individual decision.",
+      "BP yearly from 40; BMI/waist 2-yearly.",
+      "Lifestyle for everyone."
+    ],
+    "references": [
+      {
+        "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+        "edition": "3rd edition, 2023",
+        "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf",
+        "locator": "PDF pp. 25–28 (adult checklist and footnotes)"
+      },
+      {
+        "title": "NICE NG238: Cardiovascular disease: risk assessment and reduction, including lipid modification",
+        "edition": "NICE guideline, 2023",
+        "url": "https://www.nice.org.uk/guidance/ng238",
+        "locator": "Recommendations 1.1–1.6"
+      },
+      {
+        "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+        "edition": "1st ed. 2021",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf",
+        "locator": "pp. 19–22; ASCVD risk section"
+      },
+      {
+        "title": "Atorvastatin calcium prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00afce9b-48c9-487a-a738-e359c005c707",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Aspirin (aspirin component of aspirin/extended-release dipyridamole) prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=111a4f6a-c3e4-43e2-8f0e-8c72f71cddb2",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain absolute risk and benefits of statins."
+    ],
+    "lifestyleAndDiet": [
+      "Stop smoking; healthy diet; 150 min/week activity; weight management."
+    ],
+    "mdtReferrals": [
+      "Lipid clinic for suspected FH or very high cholesterol."
+    ],
+    "dischargeCriteria": [
+      "Not applicable — outpatient care."
+    ],
+    "followUpPlan": "Reassess risk factors at routine checks (BP annually from 40; lipids and glucose per PHA); statin review at 2–3 months then annually."
+  }
+}

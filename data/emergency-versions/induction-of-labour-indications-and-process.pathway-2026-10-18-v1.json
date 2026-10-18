@@ -1,0 +1,338 @@
+{
+  "id": "4d2830d4-a160-49a4-92cf-4f4582f77f79",
+  "title": "Induction of Labour: Indications and Process",
+  "specialty": "Obstetrics",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Safe Birth",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Pregnant woman being considered for induction of labour at or beyond term, including after preterm prelabour rupture of membranes: timing, Bishop score, methods, monitoring and hyperstimulation, using NICE NG207. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 2026-10-18.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from authoring-standard-2026-10-18-tier4b-v1-live."
+    ],
+    "unverifiedSections": [
+      "NICE NG207 does not give dinoprostone or oxytocin doses, dosing intervals or maximum doses; they must come from the product information and hospital protocol.",
+      "Misoprostol dose interval and the number of doses were not captured.",
+      "No Saudi obstetric guideline was opened. The Saudi MOH labour induction protocol was not checked.",
+      "Source pages were read through automated page extraction rather than page-by-page in the original documents, so each figure should be spot-checked against the source during clinical review.",
+      "The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary.",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "4d2830d4-a160-49a4-92cf-4f4582f77f79",
+      "e2cb48da-6df4-43c2-8f79-b872140fe80e"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Women with uncomplicated pregnancies should be given every opportunity to go into spontaneous labour; induction can be offered from 41+0 weeks. The Bishop score guides the method: dinoprostone or low-dose oral misoprostol for a score of 6 or less; amniotomy with intravenous oxytocin for a score above 6. Mechanical methods are less likely to cause uterine hyperstimulation than pharmacological methods. Dinoprostone and misoprostol are contraindicated by their marketing authorisations for induction in women with a uterine scar.",
+    "keyMechanisms": [
+      "Women with uncomplicated pregnancies should be given every opportunity to go into spontaneous labour; induction can be offered from 41+0 weeks.",
+      "The Bishop score guides the method: dinoprostone or low-dose oral misoprostol for a score of 6 or less; amniotomy with intravenous oxytocin for a score above 6.",
+      "Mechanical methods are less likely to cause uterine hyperstimulation than pharmacological methods.",
+      "Dinoprostone and misoprostol are contraindicated by their marketing authorisations for induction in women with a uterine scar."
+    ],
+    "references": [
+      {
+        "title": "NICE NG207: Inducing labour",
+        "edition": "NICE NG207, Recommendation 1.2.1 to 1.7.7",
+        "url": "https://www.nice.org.uk/guidance/ng207/chapter/Recommendations"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Not applicable."
+    ],
+    "physicalSigns": [
+      "Bishop score from vaginal examination."
+    ],
+    "redFlags": [
+      "Abnormal fetal heart rate or excessive contractions after dinoprostone or misoprostol.",
+      "Suspected uterine rupture needs an immediate category 1 caesarean birth."
+    ],
+    "precipitants": [
+      "Post-term pregnancy; preterm prelabour rupture of membranes; other maternal or fetal indications."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Indication for planned caesarean birth instead",
+      "distinguishingFeatures": "Fetal growth restriction with fetal compromise: caesarean birth, not induction."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Vaginal examination with Bishop score",
+        "modalityTarget": "Cervical readiness",
+        "targetCondition": "Choice of induction method",
+        "expectedFinding": "Score 6 or less or above 6",
+        "clinicalRationale": "Determines pharmacological versus amniotomy route.",
+        "normalValue": "Favourable cervix",
+        "references": [
+          {
+            "title": "NICE NG207: Inducing labour",
+            "edition": "NICE NG207, Recommendation 1.3.4",
+            "url": "https://www.nice.org.uk/guidance/ng207/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Antenatal cardiotocography before induction",
+        "modalityTarget": "Fetal heart rate",
+        "targetCondition": "Fetal wellbeing",
+        "expectedFinding": "Abnormal pattern",
+        "clinicalRationale": "A normal pattern must be confirmed before induction.",
+        "normalValue": "Normal fetal heart rate pattern",
+        "references": [
+          {
+            "title": "NICE NG207: Inducing labour",
+            "edition": "NICE NG207, Recommendation 1.5.1",
+            "url": "https://www.nice.org.uk/guidance/ng207/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Dating scan gestational age",
+        "modalityTarget": "Gestational age",
+        "targetCondition": "Timing of induction",
+        "expectedFinding": "Gestational age 41+0 weeks or more",
+        "clinicalRationale": "Timing is based on the dating scan.",
+        "normalValue": "Gestational age below 41+0 weeks",
+        "references": [
+          {
+            "title": "NICE NG207: Inducing labour",
+            "edition": "NICE NG207, Recommendation 1.2.2",
+            "url": "https://www.nice.org.uk/guidance/ng207/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Check for low-lying placenta before sweeping or induction",
+        "modalityTarget": "Placental position",
+        "targetCondition": "Placenta praevia",
+        "expectedFinding": "Low-lying placenta",
+        "clinicalRationale": "NICE advises checking before sweeping or induction.",
+        "normalValue": "Placenta not low-lying",
+        "references": [
+          {
+            "title": "NICE NG207: Inducing labour",
+            "edition": "NICE NG207, Recommendation 1.7.6",
+            "url": "https://www.nice.org.uk/guidance/ng207/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Group B streptococcus result in preterm prelabour rupture of membranes",
+        "modalityTarget": "Group B streptococcus swab",
+        "targetCondition": "Immediate induction or caesarean after 34+0 weeks",
+        "expectedFinding": "Positive",
+        "clinicalRationale": "Positive result after 34+0 weeks: offer immediate induction or caesarean birth.",
+        "normalValue": "Negative",
+        "references": [
+          {
+            "title": "NICE NG207: Inducing labour",
+            "edition": "NICE NG207, Recommendation 1.2.12",
+            "url": "https://www.nice.org.uk/guidance/ng207/chapter/Recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Check for previous caesarean scar",
+        "modalityTarget": "Uterine scar",
+        "targetCondition": "Contraindication to prostaglandin induction",
+        "expectedFinding": "Uterine scar present",
+        "clinicalRationale": "Dinoprostone and misoprostol are contraindicated by marketing authorisation in women with a uterine scar.",
+        "normalValue": "No uterine scar",
+        "references": [
+          {
+            "title": "NICE NG207: Inducing labour",
+            "edition": "NICE NG207, Recommendation 1.2.17",
+            "url": "https://www.nice.org.uk/guidance/ng207/chapter/Recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "counsel",
+      "title": "Counsel and offer",
+      "timeframe": "Antenatal",
+      "actions": [
+        "Give every opportunity for spontaneous labour; discuss induction from 41+0 weeks and membrane sweeping after 39+0 weeks."
+      ]
+    },
+    {
+      "id": "assess",
+      "title": "Assess readiness",
+      "timeframe": "Before induction",
+      "actions": [
+        "Record the Bishop score; confirm normal cardiotocography; check for low-lying placenta."
+      ]
+    },
+    {
+      "id": "method",
+      "title": "Choose method",
+      "timeframe": "At induction",
+      "actions": [
+        "Bishop score 6 or less: dinoprostone (tablet, gel or controlled-release system) or oral misoprostol 25 micrograms; mechanical method for outpatient or lower hyperstimulation risk.",
+        "Bishop score above 6: amniotomy with intravenous oxytocin."
+      ]
+    },
+    {
+      "id": "monitor",
+      "title": "Monitor",
+      "timeframe": "During induction",
+      "actions": [
+        "Assess fetal wellbeing with cardiotocography once contractions begin; reassess Bishop score at intervals."
+      ]
+    },
+    {
+      "id": "hyperstim",
+      "title": "Act on hyperstimulation",
+      "timeframe": "If excessive contractions or abnormal heart rate",
+      "actions": [
+        "Restart continuous monitoring, give no further doses, remove vaginal products if possible and consider tocolysis."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Induction of labour with Bishop score 6 or less",
+        "patientGroup": "Women without a uterine scar",
+        "genericName": "Misoprostol",
+        "dose": "25 micrograms",
+        "route": "Oral",
+        "frequency": "Interval and repeat doses not captured; follow NICE NG207 and local protocol",
+        "duration": "Per induction protocol",
+        "adjustments": [
+          "No renal or hepatic adjustment is given in the source opened; check product information."
+        ],
+        "monitoring": [
+          "Cardiotocography once contractions begin; uterine activity."
+        ],
+        "contraindications": [
+          "Uterine scar (marketing authorisation).",
+          "Abnormal fetal heart rate or excessive contractions: give no further doses."
+        ],
+        "sourceTitle": "NICE NG207: Inducing labour",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng207/chapter/Recommendations",
+        "sourceEdition": "NICE NG207, Recommendation 1.3.7",
+        "branch": "Unfavourable cervix, no uterine scar",
+        "step": "Induction agent",
+        "selection": "all"
+      },
+      {
+        "indication": "Induction after intrauterine fetal death",
+        "patientGroup": "Women with confirmed fetal death",
+        "genericName": "Mifepristone",
+        "dose": "200 mg",
+        "route": "Oral",
+        "frequency": "Single dose, followed by vaginal dinoprostone or misoprostol",
+        "duration": "Per protocol",
+        "adjustments": [
+          "No renal or hepatic adjustment is given in the source opened; check product information."
+        ],
+        "monitoring": [
+          "Maternal observations and progress of labour."
+        ],
+        "contraindications": [
+          "Not stated in the source opened; check product information."
+        ],
+        "sourceTitle": "NICE NG207: Inducing labour",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng207/chapter/Recommendations",
+        "sourceEdition": "NICE NG207, Recommendation 1.2.31",
+        "branch": "Intrauterine fetal death",
+        "step": "Induction agent",
+        "selection": "all"
+      }
+    ],
+    "note": "NICE NG207 gives low-dose oral misoprostol 25 micrograms and mifepristone 200 mg for intrauterine fetal death. Dinoprostone and oxytocin doses are not given and follow product information and local protocol. The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary.",
+    "branches": [
+      {
+        "label": "Unfavourable cervix, no uterine scar",
+        "entryCriteria": "Woman with Bishop score 6 or less and no uterine scar"
+      },
+      {
+        "label": "Intrauterine fetal death",
+        "entryCriteria": "Woman with confirmed intrauterine fetal death"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Timing of induction for prolonged pregnancy",
+      "threshold": "Offer from 41+0 weeks; labour usually starts before 42+0 weeks."
+    },
+    {
+      "criterion": "Bishop score 6 or less",
+      "threshold": "Offer dinoprostone or low-dose oral misoprostol."
+    },
+    {
+      "criterion": "Bishop score above 6",
+      "threshold": "Offer amniotomy and intravenous oxytocin."
+    },
+    {
+      "criterion": "Membrane sweeping",
+      "threshold": "Offer after 39+0 weeks with verbal consent."
+    }
+  ],
+  "teaching": {
+    "scope": "Pregnant woman being considered for induction of labour at or beyond term, including after preterm prelabour rupture of membranes: timing, Bishop score, methods, monitoring and hyperstimulation, using NICE NG207.",
+    "learningObjectives": [
+      "Counsel on timing and methods.",
+      "Monitor and manage hyperstimulation."
+    ],
+    "pitfalls": [
+      "Using prostaglandins in a woman with a uterine scar.",
+      "Continuing doses despite hyperstimulation."
+    ],
+    "keyPoints": [
+      "Bishop score decides the method.",
+      "Monitoring continues with cardiotocography."
+    ],
+    "references": [
+      {
+        "title": "NICE NG207: Inducing labour",
+        "edition": "NICE NG207, Recommendation 1.2.1 to 1.7.7",
+        "url": "https://www.nice.org.uk/guidance/ng207/chapter/Recommendations",
+        "locator": "Recommendation 1.2.1 to 1.7.7"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain that induced labour can be more painful and pain relief options.",
+      "Explain when to contact the unit during outpatient induction."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable."
+    ],
+    "mdtReferrals": [
+      "Obstetrician; midwife; anaesthetist; neonatal team."
+    ],
+    "dischargeCriteria": [
+      "Not applicable; outpatient induction women return when contractions start or membranes rupture."
+    ],
+    "followUpPlan": "Reassess wellbeing and Bishop score at appropriate intervals during induction."
+  }
+}

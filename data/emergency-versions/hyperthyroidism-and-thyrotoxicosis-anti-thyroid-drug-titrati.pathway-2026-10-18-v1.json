@@ -1,0 +1,351 @@
+{
+  "id": "0ab41020-d89f-44a6-99af-0e9b92ff9841",
+  "title": "Hyperthyroidism and Thyrotoxicosis: Anti-Thyroid Drug Titration and Block-and-Replace",
+  "specialty": "Endocrinology",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adult with hyperthyroidism treated with carbimazole by titration or block-and-replace regimen: duration, monitoring, agranulocytosis, pregnancy, radioactive iodine and referral, using NICE NG145 and NHS carbimazole information. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 2026-10-18.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from authoring-standard-2026-10-18-tier4b-v1-live."
+    ],
+    "unverifiedSections": [
+      "NICE NG145 gives no doses; the starting dose, dividing of doses and monitoring interval come from the NHS carbimazole patient page, not a clinical guideline.",
+      "Block-and-replace doses (carbimazole and levothyroxine) are not given in either source.",
+      "Propylthiouracil, beta-blocker and levothyroxine doses were not found.",
+      "No Saudi endocrine guideline was opened.",
+      "Source pages were read through automated page extraction rather than page-by-page in the original documents, so each figure should be spot-checked against the source during clinical review.",
+      "The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary.",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "0ab41020-d89f-44a6-99af-0e9b92ff9841",
+      "58e3f1b2-4237-43f1-88c2-83014bc6fa54"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "NICE offers adults with Graves' disease carbimazole for 12 to 18 months using either a block-and-replace or a titration regimen. Thyroid-stimulating hormone (TSH), free thyroxine (FT4) and free triiodothyronine (FT3) are checked every 6 weeks until TSH is in range, then TSH every 3 months until antithyroid drugs stop. Full blood count and liver function are checked before starting but not monitored routinely unless agranulocytosis or liver dysfunction is suspected. Antithyroid drugs are stopped and not restarted if agranulocytosis develops. Propylthiouracil is considered in pregnancy or planned pregnancy within 6 months, after adverse reactions to carbimazole, or with a history of pancreatitis.",
+    "keyMechanisms": [
+      "NICE offers adults with Graves' disease carbimazole for 12 to 18 months using either a block-and-replace or a titration regimen.",
+      "Thyroid-stimulating hormone (TSH), free thyroxine (FT4) and free triiodothyronine (FT3) are checked every 6 weeks until TSH is in range, then TSH every 3 months until antithyroid drugs stop.",
+      "Full blood count and liver function are checked before starting but not monitored routinely unless agranulocytosis or liver dysfunction is suspected.",
+      "Antithyroid drugs are stopped and not restarted if agranulocytosis develops.",
+      "Propylthiouracil is considered in pregnancy or planned pregnancy within 6 months, after adverse reactions to carbimazole, or with a history of pancreatitis."
+    ],
+    "references": [
+      {
+        "title": "NICE NG145: Thyroid disease: assessment and management",
+        "edition": "NICE NG145, Section Hyperthyroidism recommendations",
+        "url": "https://www.nice.org.uk/guidance/ng145/chapter/recommendations"
+      },
+      {
+        "title": "NHS medicines: Carbimazole (how and when to take it; who can and cannot take it)",
+        "edition": "NHS carbimazole pages, Section How and when to take carbimazole",
+        "url": "https://www.nhs.uk/medicines/carbimazole/how-and-when-to-take-carbimazole/"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Symptoms of thyrotoxicosis (not itemised in the sources opened)."
+    ],
+    "physicalSigns": [
+      "Not covered in the sources opened."
+    ],
+    "redFlags": [
+      "Sore throat or fever on carbimazole needs urgent blood count assessment for agranulocytosis (NICE: stop and do not restart if agranulocytosis develops)."
+    ],
+    "precipitants": [
+      "Not covered in the sources opened."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Transient thyrotoxicosis without hyperthyroidism",
+      "distinguishingFeatures": "Usually needs only supportive treatment such as beta-blockers."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "TSH, free thyroxine and free triiodothyronine",
+        "modalityTarget": "Thyroid function",
+        "targetCondition": "Hyperthyroidism",
+        "expectedFinding": "Suppressed TSH with raised FT4 or FT3",
+        "clinicalRationale": "Every 6 weeks until TSH in range, then TSH every 3 months.",
+        "normalValue": "TSH within reference range",
+        "references": [
+          {
+            "title": "NICE NG145: Thyroid disease: assessment and management",
+            "edition": "NICE NG145, Section Monitoring antithyroid drugs",
+            "url": "https://www.nice.org.uk/guidance/ng145/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count before antithyroid drugs",
+        "modalityTarget": "Blood count",
+        "targetCondition": "Baseline neutrophils",
+        "expectedFinding": "Abnormal baseline count",
+        "clinicalRationale": "Baseline required before starting; repeat only if agranulocytosis suspected.",
+        "normalValue": "Normal count",
+        "references": [
+          {
+            "title": "NICE NG145: Thyroid disease: assessment and management",
+            "edition": "NICE NG145, Section Before starting antithyroid drugs",
+            "url": "https://www.nice.org.uk/guidance/ng145/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Liver function tests before antithyroid drugs",
+        "modalityTarget": "Liver enzymes",
+        "targetCondition": "Baseline liver function",
+        "expectedFinding": "Abnormal baseline",
+        "clinicalRationale": "Baseline required before starting; repeat only if liver dysfunction suspected.",
+        "normalValue": "Normal liver function",
+        "references": [
+          {
+            "title": "NICE NG145: Thyroid disease: assessment and management",
+            "edition": "NICE NG145, Section Before starting antithyroid drugs",
+            "url": "https://www.nice.org.uk/guidance/ng145/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Pregnancy and contraception status",
+        "modalityTarget": "Pregnancy",
+        "targetCondition": "Drug choice",
+        "expectedFinding": "Pregnant or planning pregnancy within 6 months",
+        "clinicalRationale": "Consider propylthiouracil; carbimazole use is subject to Medicines and Healthcare products Regulatory Agency (MHRA) contraception advice.",
+        "normalValue": "Not pregnant",
+        "references": [
+          {
+            "title": "NICE NG145: Thyroid disease: assessment and management",
+            "edition": "NICE NG145, Section Antithyroid drugs in pregnancy",
+            "url": "https://www.nice.org.uk/guidance/ng145/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "TSH, FT4 and FT3 after radioactive iodine every 6 weeks for 6 months",
+        "modalityTarget": "Thyroid function",
+        "targetCondition": "Persistent hyperthyroidism",
+        "expectedFinding": "Persisting hyperthyroidism at 6 months",
+        "clinicalRationale": "Consider further treatment at 6 months.",
+        "normalValue": "TSH within reference range",
+        "references": [
+          {
+            "title": "NICE NG145: Thyroid disease: assessment and management",
+            "edition": "NICE NG145, Section Radioactive iodine",
+            "url": "https://www.nice.org.uk/guidance/ng145/chapter/recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Review for agranulocytosis symptoms (sore throat, fever)",
+        "modalityTarget": "Infection symptoms",
+        "targetCondition": "Agranulocytosis",
+        "expectedFinding": "Sore throat or fever on carbimazole",
+        "clinicalRationale": "Stop and do not restart antithyroid drugs if agranulocytosis develops.",
+        "normalValue": "No infection symptoms",
+        "references": [
+          {
+            "title": "NICE NG145: Thyroid disease: assessment and management",
+            "edition": "NICE NG145, Section Agranulocytosis",
+            "url": "https://www.nice.org.uk/guidance/ng145/chapter/recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "baseline",
+      "title": "Baseline tests",
+      "timeframe": "Before starting",
+      "actions": [
+        "Check full blood count and liver function; assess pregnancy plans and contraception."
+      ]
+    },
+    {
+      "id": "start",
+      "title": "Start carbimazole",
+      "timeframe": "At diagnosis",
+      "actions": [
+        "Usual adult starting dose is 20 to 60 mg a day divided 2 to 3 times; choose titration or block-and-replace regimen."
+      ]
+    },
+    {
+      "id": "monitor",
+      "title": "Monitor",
+      "timeframe": "Every 6 weeks then every 3 months",
+      "actions": [
+        "TSH, FT4 and FT3 every 6 weeks until TSH is in range, then TSH every 3 months."
+      ]
+    },
+    {
+      "id": "safety",
+      "title": "Counsel on agranulocytosis",
+      "timeframe": "At start",
+      "actions": [
+        "Advise to report sore throat or fever; stop and do not restart if agranulocytosis occurs."
+      ]
+    },
+    {
+      "id": "stop",
+      "title": "Stop and follow up",
+      "timeframe": "12 to 18 months",
+      "actions": [
+        "Lower the dose and stop after about 12 to 18 months; check TSH within 8 weeks, every 3 months for a year, then yearly."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Hyperthyroidism (Graves' disease), titration regimen",
+        "patientGroup": "Adults",
+        "genericName": "Carbimazole",
+        "dose": "20 to 60 mg a day (usual starting dose)",
+        "route": "Oral",
+        "frequency": "2 or 3 times daily initially; usually a single daily dose once hormone levels are stable",
+        "duration": "12 to 18 months in Graves' disease (NICE); lowered gradually then stopped",
+        "adjustments": [
+          "Dose changed according to thyroid blood tests; the source describes dose reduction once levels are stable.",
+          "Pregnancy or planning pregnancy within 6 months: consider propylthiouracil.",
+          "Liver problems: raise with the doctor before taking (no dose adjustment stated)."
+        ],
+        "monitoring": [
+          "TSH, FT4 and FT3 every 6 weeks until TSH in range, then TSH every 3 months.",
+          "Full blood count and liver function only if agranulocytosis or liver dysfunction is suspected."
+        ],
+        "contraindications": [
+          "Agranulocytosis: stop and do not restart.",
+          "Allergy to carbimazole or thyroid medicines; previous severe pancreatitis with carbimazole; blood disorders; inability to have regular blood tests; receiving or due radioactive iodine (as listed by the NHS page)."
+        ],
+        "sourceTitle": "NHS medicines: Carbimazole (how and when to take it; who can and cannot take it)",
+        "sourceUrl": "https://www.nhs.uk/medicines/carbimazole/how-and-when-to-take-carbimazole/",
+        "sourceEdition": "NHS carbimazole pages, Section How and when to take carbimazole",
+        "branch": "Antithyroid regimen",
+        "step": "Antithyroid regimen",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "Hyperthyroidism, block-and-replace regimen",
+        "patientGroup": "Adults",
+        "genericName": "Carbimazole with levothyroxine",
+        "dose": "Doses not stated in the sources opened",
+        "route": "Oral",
+        "frequency": "Not stated in the sources opened",
+        "duration": "12 to 18 months in Graves' disease (NICE)",
+        "adjustments": [
+          "No renal or hepatic adjustment is given in the source opened; check product information."
+        ],
+        "monitoring": [
+          "TSH, FT4 and FT3 every 6 weeks until TSH in range, then every 3 months."
+        ],
+        "contraindications": [
+          "As for carbimazole."
+        ],
+        "sourceTitle": "NICE NG145: Thyroid disease: assessment and management",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng145/chapter/recommendations",
+        "sourceEdition": "NICE NG145, Section Adult Graves' disease antithyroid drug recommendations",
+        "branch": "Antithyroid regimen",
+        "step": "Antithyroid regimen",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Block-and-replace chosen instead of titration"
+      }
+    ],
+    "note": "Carbimazole figures come from the NHS patient medicine page and NICE NG145 (duration and monitoring). Propylthiouracil, block-and-replace levothyroxine and beta-blocker doses are not given in the sources opened. The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary.",
+    "branches": [
+      {
+        "label": "Antithyroid regimen",
+        "entryCriteria": "Adult with hyperthyroidism needing an antithyroid regimen"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Adult Graves' disease antithyroid course",
+      "threshold": "Carbimazole for 12 to 18 months by block-and-replace or titration."
+    },
+    {
+      "criterion": "Monitoring during treatment",
+      "threshold": "TSH, FT4, FT3 every 6 weeks until TSH is in range, then TSH every 3 months."
+    },
+    {
+      "criterion": "Monitoring after stopping (adults)",
+      "threshold": "TSH within 8 weeks, every 3 months for a year, then yearly."
+    },
+    {
+      "criterion": "Subclinical hyperthyroidism specialist advice",
+      "threshold": "Two TSH readings below 0.1 mIU/litre at least 3 months apart plus evidence of thyroid disease or thyrotoxic symptoms."
+    }
+  ],
+  "teaching": {
+    "scope": "Adult with hyperthyroidism treated with carbimazole by titration or block-and-replace regimen: duration, monitoring, agranulocytosis, pregnancy, radioactive iodine and referral, using NICE NG145 and NHS carbimazole information.",
+    "learningObjectives": [
+      "Choose titration or block-and-replace and monitor.",
+      "Recognise agranulocytosis."
+    ],
+    "pitfalls": [
+      "Routine blood count monitoring without suspicion.",
+      "Restarting after agranulocytosis."
+    ],
+    "keyPoints": [
+      "Course lasts 12 to 18 months in Graves' disease.",
+      "Monitor TSH, FT4 and FT3 every 6 weeks then TSH every 3 months."
+    ],
+    "references": [
+      {
+        "title": "NICE NG145: Thyroid disease: assessment and management",
+        "edition": "NICE NG145, Section Hyperthyroidism recommendations",
+        "url": "https://www.nice.org.uk/guidance/ng145/chapter/recommendations",
+        "locator": "Section Hyperthyroidism"
+      },
+      {
+        "title": "NHS medicines: Carbimazole (how and when to take it; who can and cannot take it)",
+        "edition": "NHS carbimazole pages, Section How and when to take carbimazole",
+        "url": "https://www.nhs.uk/medicines/carbimazole/how-and-when-to-take-carbimazole/",
+        "locator": "Section How and when to take carbimazole"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Report sore throat or fever immediately.",
+      "Attend regular blood tests."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable."
+    ],
+    "mdtReferrals": [
+      "Endocrinology; primary care; nuclear medicine for radioactive iodine."
+    ],
+    "dischargeCriteria": [
+      "Stop when the course finishes; follow TSH monitoring after stopping."
+    ],
+    "followUpPlan": "TSH within 8 weeks of stopping, then every 3 months for a year, then yearly."
+  }
+}

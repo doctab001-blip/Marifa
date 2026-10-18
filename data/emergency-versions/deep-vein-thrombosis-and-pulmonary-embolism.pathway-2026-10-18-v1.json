@@ -1,0 +1,588 @@
+{
+  "id": "a1010000-0000-4000-8000-000000000003",
+  "title": "Deep-Vein Thrombosis and Pulmonary Embolism",
+  "specialty": "Emergency Medicine, Internal Medicine and Haematology",
+  "authority": "MOH",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Non-pregnant adults with suspected or confirmed lower-limb DVT or acute PE (pregnancy notes included). Verified against the Saudi MOH PE (2022) and DVT (2024) protocols and the ESC/ERS 2019 PE guideline as summarised by its chairs. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Thrombolysis dose taken from the alteplase product information because neither MOH protocol nor the ESC summary states it.",
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from emergency-2026-10-12-v1-live."
+    ],
+    "unverifiedSections": [
+      "Local formulary availability and hospital protocol adoption",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "a1010000-0000-4000-8000-000000000003",
+      "91aa3f69-1549-46a6-bed0-7b59e06a7d26"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Venous thromboembolism (VTE) is clot formation in the deep veins, usually of the leg, which can break off and obstruct the pulmonary arteries. A large obstruction raises right ventricular afterload; the right ventricle dilates and fails, causing obstructive shock.",
+    "keyMechanisms": [
+      "Virchow's triad of stasis, endothelial injury and hypercoagulability drives clot formation; provoking factors include surgery, immobilisation, cancer, pregnancy and hormones.",
+      "Proximal (popliteal and above) DVT carries the main embolic risk; distal DVT can extend proximally.",
+      "PE obstructs pulmonary flow, causing V/Q mismatch and hypoxaemia, raised pulmonary pressure and right ventricular strain (raised troponin and natriuretic peptides, RV dilatation on echo or CT).",
+      "Haemodynamic collapse (high-risk PE) comes from right ventricular failure and falling left ventricular filling.",
+      "Recurrence risk depends on whether the event was provoked by a major transient factor, unprovoked, or due to persistent factors (cancer, antiphospholipid syndrome)."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "DVT: unilateral leg pain, swelling, warmth.",
+      "PE: breathlessness, pleuritic chest pain, haemoptysis, syncope or pre-syncope (all non-specific)."
+    ],
+    "physicalSigns": [
+      "DVT: calf or thigh swelling and tenderness, distended superficial veins.",
+      "PE: tachycardia, tachypnoea, hypoxia; signs of DVT; hypotension or shock in high-risk PE.",
+      "Signs of right heart strain: raised JVP."
+    ],
+    "redFlags": [
+      "Haemodynamic instability = high-risk PE: cardiac arrest; obstructive shock (SBP below 90 or vasopressors needed despite filling, with end-organ hypoperfusion); or persistent hypotension (SBP below 90 or a drop of 40 mmHg or more for more than 15 min)",
+      "Bedside echo showing RV dysfunction in a highly unstable patient is enough to give immediate reperfusion",
+      "Limb-threatening DVT (massive swelling, ischaemia)",
+      "Active bleeding or absolute contraindication to anticoagulation: consider an IVC filter"
+    ],
+    "precipitants": [
+      "Major surgery (general anaesthesia over 30 min), immobilisation 3 days or more, trauma or leg plaster.",
+      "Pregnancy and postpartum; hormonal contraception or HRT.",
+      "Active cancer, antiphospholipid syndrome, thrombophilia, myeloproliferative disease.",
+      "Prolonged travel over 12 h; acute infection."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Acute coronary syndrome",
+      "distinguishingFeatures": "Ischaemic ECG changes and troponin pattern; regional wall-motion abnormality."
+    },
+    {
+      "condition": "Aortic dissection",
+      "distinguishingFeatures": "Tearing pain, pulse or BP differential, widened mediastinum; CT aortogram."
+    },
+    {
+      "condition": "Cardiac tamponade",
+      "distinguishingFeatures": "Pericardial effusion on bedside echo."
+    },
+    {
+      "condition": "Pneumonia or pneumothorax",
+      "distinguishingFeatures": "Consolidation or pneumothorax on imaging; fever."
+    },
+    {
+      "condition": "Cellulitis, ruptured Baker's cyst, muscle injury (for DVT)",
+      "distinguishingFeatures": "Compression ultrasound shows no thrombus."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "D-dimer",
+        "modalityTarget": "Only in non-high clinical probability, after a validated pre-test probability score",
+        "targetCondition": "Exclude VTE",
+        "expectedFinding": "Raised (non-specific).",
+        "clinicalRationale": "Normal D-dimer with non-high probability excludes PE without CT. ESC: consider age-adjusted cut-off (age × 10 µg/L above 50 years) or the YEARS rule (no YEARS items and D-dimer below 1000 ng/mL, or 1 or more items and below 500 ng/mL).",
+        "normalValue": "Below 500 µg/L (FEU); age × 10 if over 50",
+        "references": [
+          {
+            "title": "Management of acute pulmonary embolism 2019: what is new in the updated European guidelines? (ESC/ERS 2019 summary by the guideline chairs)",
+            "edition": "Intern Emerg Med 2020;15:957–966 (Konstantinides S, Meyer G)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7467952/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Troponin and BNP/NT-proBNP",
+        "modalityTarget": "Normotensive confirmed PE",
+        "targetCondition": "Right ventricular strain",
+        "expectedFinding": "Raised.",
+        "clinicalRationale": "With RV dysfunction on imaging = intermediate-risk PE; admit and monitor (MOH, ESC).",
+        "normalValue": "Below the local 99th percentile (troponin)",
+        "references": [
+          {
+            "title": "MOH Pulmonary Embolism (PE) Protocol for Adult Patients",
+            "edition": "Saudi Ministry of Health, first version 2022",
+            "url": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/PE_Pulmonary_Embolism_Protocol.pdf"
+          },
+          {
+            "title": "Management of acute pulmonary embolism 2019: what is new in the updated European guidelines? (ESC/ERS 2019 summary by the guideline chairs)",
+            "edition": "Intern Emerg Med 2020;15:957–966 (Konstantinides S, Meyer G)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7467952/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "FBC, renal and liver function, coagulation",
+        "modalityTarget": "Before anticoagulation",
+        "targetCondition": "Bleeding risk and drug choice",
+        "expectedFinding": "Thrombocytopenia, CrCl below 30, raised INR from liver disease.",
+        "clinicalRationale": "Platelets below 50 = absolute contraindication; CrCl below 30 contraindicates fondaparinux and changes LMWH and DOAC dosing; raised INR from liver disease contraindicates apixaban (MOH).",
+        "normalValue": "Platelets 150–400 × 10⁹/L; INR about 1.0",
+        "references": [
+          {
+            "title": "MOH Pulmonary Embolism (PE) Protocol for Adult Patients",
+            "edition": "Saudi Ministry of Health, first version 2022",
+            "url": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/PE_Pulmonary_Embolism_Protocol.pdf"
+          },
+          {
+            "title": "MOH Deep Vein Thrombosis (DVT) Treatment Protocol for Adult Patients",
+            "edition": "Saudi Ministry of Health, 2024",
+            "url": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/DVT_Deep_Vein_Thrombosis_treatment_protocol_2024.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "CT pulmonary angiography (CTPA)",
+        "modalityTarget": "Suspected PE with high probability or positive D-dimer",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Filling defect in the pulmonary arteries; RV/LV ratio for RV strain.",
+        "clinicalRationale": "Confirms PE; single subsegmental PE should be reviewed with an experienced radiologist.",
+        "references": [
+          {
+            "title": "Management of acute pulmonary embolism 2019: what is new in the updated European guidelines? (ESC/ERS 2019 summary by the guideline chairs)",
+            "edition": "Intern Emerg Med 2020;15:957–966 (Konstantinides S, Meyer G)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7467952/"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Bedside transthoracic echocardiography",
+        "modalityTarget": "Immediately in haemodynamic instability",
+        "targetCondition": "Imaging",
+        "expectedFinding": "RV dilatation and dysfunction, right heart thrombus.",
+        "clinicalRationale": "In unstable patients, RV dysfunction justifies immediate reperfusion. Assess RV in all normotensive PE before early discharge.",
+        "references": [
+          {
+            "title": "Management of acute pulmonary embolism 2019: what is new in the updated European guidelines? (ESC/ERS 2019 summary by the guideline chairs)",
+            "edition": "Intern Emerg Med 2020;15:957–966 (Konstantinides S, Meyer G)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7467952/"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Compression ultrasound of the leg veins",
+        "modalityTarget": "Suspected DVT; or suspected PE when CT is contraindicated or in pregnancy",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Non-compressible vein (proximal or distal).",
+        "clinicalRationale": "Proximal DVT: anticoagulate. Isolated distal DVT without severe symptoms or extension risk: serial imaging for 2 weeks instead (MOH).",
+        "references": [
+          {
+            "title": "MOH Deep Vein Thrombosis (DVT) Treatment Protocol for Adult Patients",
+            "edition": "Saudi Ministry of Health, 2024",
+            "url": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/DVT_Deep_Vein_Thrombosis_treatment_protocol_2024.pdf"
+          },
+          {
+            "title": "Management of acute pulmonary embolism 2019: what is new in the updated European guidelines? (ESC/ERS 2019 summary by the guideline chairs)",
+            "edition": "Intern Emerg Med 2020;15:957–966 (Konstantinides S, Meyer G)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7467952/"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "suspect",
+      "title": "Assess probability and start anticoagulation early",
+      "timeframe": "At presentation",
+      "actions": [
+        "Stabilise first. Use a validated pre-test probability score with D-dimer in stable patients.",
+        "Start anticoagulation before confirmation if suspicion is high, or intermediate with results delayed over 4 h, or low with results delayed over 24 h (MOH), unless bleeding or an absolute contraindication."
+      ],
+      "branches": [
+        {
+          "condition": "Haemodynamic instability",
+          "actions": [
+            "Bedside echo now; if RV dysfunction and no alternative cause, treat as high-risk PE."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "support",
+      "title": "Respiratory and haemodynamic support",
+      "timeframe": "Immediately",
+      "actions": [
+        "Oxygen to SpO2 at least 90% (MOH); intubate for severe hypoxaemia, collapse or respiratory failure.",
+        "Hypotension: small fluid volumes (500–1000 mL 0.9% saline), then noradrenaline if perfusion does not improve; dobutamine sometimes for low output."
+      ]
+    },
+    {
+      "id": "reperfusion",
+      "title": "High-risk (massive) PE: reperfusion",
+      "timeframe": "Immediately",
+      "actions": [
+        "Systemic thrombolysis is first-line: alteplase 100 mg IV over 2 h (product information). Use UFH infusion with thrombolysis.",
+        "Contraindication to thrombolysis: surgical embolectomy or catheter-directed treatment where available; ECMO only as a bridge.",
+        "Intermediate-risk PE: no routine thrombolysis; monitor and give rescue thrombolysis if decompensating."
+      ]
+    },
+    {
+      "id": "risk",
+      "title": "Stratify stable PE",
+      "timeframe": "After confirmation",
+      "actions": [
+        "Intermediate risk: RV strain on imaging and/or raised troponin or BNP → admit, monitor, anticoagulate.",
+        "Low risk: sPESI 0 or no Hestia criteria, and no RV dysfunction or right heart thrombus → consider early discharge on a DOAC.",
+        "sPESI items (1 point each): age above 80, cancer, chronic cardiopulmonary disease, HR 110 or more, SBP below 100, SpO2 below 90%."
+      ]
+    },
+    {
+      "id": "anticoagulant",
+      "title": "Choose the anticoagulant",
+      "timeframe": "Day 1",
+      "actions": [
+        "Stable patients: a DOAC is preferred over warfarin (ESC). Apixaban 10 mg twice daily for 7 days, then 5 mg twice daily.",
+        "Parenteral options: enoxaparin 1 mg/kg every 12 h (or 1.5 mg/kg every 24 h); IV UFH 80 units/kg bolus then 18 units/kg/h to target aPTT (preferred if unstable, severe renal failure or thrombolysis planned); fondaparinux by weight (5, 7.5 or 10 mg daily).",
+        "Warfarin: overlap with a parenteral agent for at least 5 days and until INR is 2 or more for 2 days; target INR 2–3.",
+        "Dabigatran: only after at least 5 days of a parenteral agent."
+      ],
+      "branches": [
+        {
+          "condition": "Cancer",
+          "actions": [
+            "LMWH, or edoxaban or rivaroxaban (caution in GI cancer)."
+          ]
+        },
+        {
+          "condition": "CrCl below 30",
+          "actions": [
+            "Enoxaparin 1 mg/kg every 24 h; fondaparinux contraindicated; avoid DOACs in severe renal impairment; UFH or warfarin."
+          ]
+        },
+        {
+          "condition": "Pregnancy",
+          "actions": [
+            "LMWH (single-dose prefilled syringes); no DOACs or warfarin."
+          ]
+        },
+        {
+          "condition": "Antiphospholipid syndrome",
+          "actions": [
+            "Warfarin (VKA) rather than DOAC."
+          ]
+        },
+        {
+          "condition": "Isolated distal DVT, no severe symptoms or extension risk",
+          "actions": [
+            "Serial ultrasound for 2 weeks without anticoagulation; anticoagulate if it extends (MOH)."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "duration",
+      "title": "Duration",
+      "timeframe": "Plan before discharge",
+      "actions": [
+        "All patients at least 3 months.",
+        "Provoked by a major transient factor: stop at 3 months.",
+        "Unprovoked or persistent risk: consider extended treatment, reassessed at least yearly; after 6 months apixaban 2.5 mg twice daily (or rivaroxaban 10 mg daily) may be used.",
+        "Second VTE, cancer or antiphospholipid syndrome: indefinite (while bleeding risk allows)."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "High-risk PE",
+        "patientGroup": "Adults without contraindication to thrombolysis",
+        "genericName": "Alteplase",
+        "dose": "100 mg",
+        "route": "IV infusion over 2 h",
+        "frequency": "Once",
+        "duration": "Single course",
+        "adjustments": [
+          "Contraindicated: active internal bleeding, recent stroke, intracranial or intraspinal surgery or serious head trauma within 3 months, intracranial lesions, bleeding diathesis, severe uncontrolled hypertension",
+          "Do not add other drugs to the infusion"
+        ],
+        "monitoring": [
+          "Bleeding, BP"
+        ],
+        "sourceTitle": "Activase prescribing information",
+        "sourceUrl": "https://www.gene.com/download/pdf/activase_prescribing.pdf",
+        "sourceEdition": "Revised 09/2022",
+        "branch": "High-risk PE — haemodynamic instability",
+        "step": "Thrombolysis",
+        "selection": "all"
+      },
+      {
+        "indication": "VTE when unstable, severe renal failure or before thrombolysis",
+        "patientGroup": "Adults",
+        "genericName": "Unfractionated heparin",
+        "dose": "80 units/kg IV bolus, then 18 units/kg/h",
+        "route": "IV",
+        "frequency": "Continuous, adjust to aPTT",
+        "duration": "Until switched",
+        "adjustments": [
+          "Preferred with thrombolysis and in ESKD"
+        ],
+        "monitoring": [
+          "aPTT (or anti-Xa), platelets"
+        ],
+        "sourceTitle": "MOH PE Protocol",
+        "sourceUrl": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/PE_Pulmonary_Embolism_Protocol.pdf",
+        "sourceEdition": "MOH 2022",
+        "branch": "High-risk PE — haemodynamic instability",
+        "step": "Anticoagulant",
+        "selection": "all"
+      },
+      {
+        "indication": "VTE treatment, oral",
+        "patientGroup": "Stable adults, CrCl adequate, not pregnant",
+        "genericName": "Apixaban",
+        "dose": "10 mg twice daily for 7 days, then 5 mg twice daily (2.5 mg twice daily for extended treatment after 6 months)",
+        "route": "PO",
+        "frequency": "Twice daily",
+        "duration": "At least 3 months",
+        "adjustments": [
+          "Avoid in severe renal impairment, pregnancy, antiphospholipid syndrome, raised INR from liver disease"
+        ],
+        "monitoring": [
+          "Renal function, bleeding"
+        ],
+        "sourceTitle": "MOH DVT Treatment Protocol",
+        "sourceUrl": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/DVT_Deep_Vein_Thrombosis_treatment_protocol_2024.pdf",
+        "sourceEdition": "MOH 2024",
+        "branch": "Stable DVT or PE",
+        "step": "Anticoagulant",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "VTE treatment, parenteral",
+        "patientGroup": "Adults",
+        "genericName": "Enoxaparin",
+        "dose": "1 mg/kg every 12 h, or 1.5 mg/kg every 24 h; CrCl below 30: 1 mg/kg every 24 h",
+        "route": "SC",
+        "frequency": "As stated",
+        "duration": "At least 5 days if bridging to warfarin; long term in cancer or pregnancy",
+        "adjustments": [
+          "Avoid 1.5 mg/kg daily with cancer, weight over 120 kg, iliac DVT or antiphospholipid syndrome"
+        ],
+        "monitoring": [
+          "Platelets, renal function"
+        ],
+        "sourceTitle": "MOH PE Protocol",
+        "sourceUrl": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/PE_Pulmonary_Embolism_Protocol.pdf",
+        "sourceEdition": "MOH 2022",
+        "branch": "Stable DVT or PE",
+        "step": "Anticoagulant",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Parenteral treatment is needed or a DOAC is unsuitable"
+      },
+      {
+        "indication": "VTE long term (VKA)",
+        "patientGroup": "Adults (preferred in antiphospholipid syndrome)",
+        "genericName": "Warfarin",
+        "dose": "5–10 mg on days 1–2 (2.5 mg if elderly, malnourished or liver disease), then adjust",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Overlap with parenteral agent at least 5 days and INR 2 or more for 2 days; target INR 2–3",
+        "adjustments": [
+          "Teratogenic: avoid in pregnancy"
+        ],
+        "monitoring": [
+          "INR"
+        ],
+        "sourceTitle": "MOH DVT Treatment Protocol",
+        "sourceUrl": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/DVT_Deep_Vein_Thrombosis_treatment_protocol_2024.pdf",
+        "sourceEdition": "MOH 2024",
+        "branch": "Stable DVT or PE",
+        "step": "Anticoagulant",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "DOAC unsuitable or a vitamin K antagonist is chosen for long-term treatment"
+      },
+      {
+        "indication": "VTE when unstable, severe renal failure or before thrombolysis",
+        "patientGroup": "Adults",
+        "genericName": "Unfractionated heparin",
+        "dose": "80 units/kg IV bolus, then 18 units/kg/h",
+        "route": "IV",
+        "frequency": "Continuous, adjust to aPTT",
+        "duration": "Until switched",
+        "adjustments": [
+          "Preferred with thrombolysis and in ESKD"
+        ],
+        "monitoring": [
+          "aPTT (or anti-Xa), platelets"
+        ],
+        "sourceTitle": "MOH PE Protocol",
+        "sourceUrl": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/PE_Pulmonary_Embolism_Protocol.pdf",
+        "sourceEdition": "MOH 2022",
+        "branch": "Severe renal failure",
+        "step": "Anticoagulant",
+        "selection": "all"
+      },
+      {
+        "indication": "VTE treatment (preferred in HIT)",
+        "patientGroup": "Adults with CrCl at least 30",
+        "genericName": "Fondaparinux",
+        "dose": "Below 50 kg: 5 mg; 50–100 kg: 7.5 mg; above 100 kg: 10 mg",
+        "route": "SC",
+        "frequency": "Every 24 h",
+        "duration": "As for LMWH",
+        "adjustments": [
+          "Contraindicated if CrCl below 30"
+        ],
+        "monitoring": [
+          "Renal function"
+        ],
+        "sourceTitle": "MOH PE Protocol",
+        "sourceUrl": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/PE_Pulmonary_Embolism_Protocol.pdf",
+        "sourceEdition": "MOH 2022",
+        "branch": "Heparin-induced thrombocytopenia",
+        "step": "Anticoagulant",
+        "selection": "all"
+      },
+      {
+        "indication": "VTE long term (VKA)",
+        "patientGroup": "Adults (preferred in antiphospholipid syndrome)",
+        "genericName": "Warfarin",
+        "dose": "5–10 mg on days 1–2 (2.5 mg if elderly, malnourished or liver disease), then adjust",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Overlap with parenteral agent at least 5 days and INR 2 or more for 2 days; target INR 2–3",
+        "adjustments": [
+          "Teratogenic: avoid in pregnancy"
+        ],
+        "monitoring": [
+          "INR"
+        ],
+        "sourceTitle": "MOH DVT Treatment Protocol",
+        "sourceUrl": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/DVT_Deep_Vein_Thrombosis_treatment_protocol_2024.pdf",
+        "sourceEdition": "MOH 2024",
+        "branch": "Antiphospholipid syndrome",
+        "step": "Anticoagulant",
+        "selection": "all"
+      }
+    ],
+    "note": "Doses as stated in the cited source. Check SFDA registration and the hospital formulary.",
+    "branches": [
+      {
+        "label": "High-risk PE — haemodynamic instability",
+        "entryCriteria": "Pulmonary embolism with haemodynamic instability"
+      },
+      {
+        "label": "Stable DVT or PE",
+        "entryCriteria": "Haemodynamically stable VTE with adequate renal function and not pregnant"
+      },
+      {
+        "label": "Severe renal failure",
+        "entryCriteria": "Venous thromboembolism with severe renal failure"
+      },
+      {
+        "label": "Heparin-induced thrombocytopenia",
+        "entryCriteria": "Venous thromboembolism with heparin-induced thrombocytopenia and CrCl at least 30"
+      },
+      {
+        "label": "Antiphospholipid syndrome",
+        "entryCriteria": "Venous thromboembolism with antiphospholipid syndrome"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "High-risk PE",
+      "threshold": "Haemodynamic instability (arrest, obstructive shock, or persistent hypotension)"
+    },
+    {
+      "criterion": "Intermediate-risk PE",
+      "threshold": "Stable with RV dysfunction on imaging and/or raised troponin or BNP"
+    },
+    {
+      "criterion": "Low-risk PE",
+      "threshold": "Stable, sPESI 0 or no Hestia criteria, no RV dysfunction"
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Recognise, investigate and manage deep-vein thrombosis and pulmonary embolism in the emergency department."
+    ],
+    "pitfalls": [
+      "Ordering D-dimer in high-probability patients.",
+      "Thrombolysing intermediate-risk PE routinely.",
+      "Using DOACs in pregnancy, severe renal impairment or antiphospholipid syndrome.",
+      "Stopping warfarin bridging before INR is 2 or more for 2 days.",
+      "Discharging without checking the right ventricle."
+    ],
+    "keyPoints": [
+      "Unstable = high-risk PE: bedside echo, then thrombolysis (alteplase 100 mg over 2 h).",
+      "Start anticoagulation on suspicion when probability is intermediate or high.",
+      "DOAC preferred for most stable patients; LMWH in pregnancy; VKA in antiphospholipid syndrome.",
+      "Assess the RV before early discharge.",
+      "At least 3 months of anticoagulation; decide on extension at review."
+    ],
+    "references": [
+      {
+        "title": "MOH Pulmonary Embolism (PE) Protocol for Adult Patients",
+        "edition": "Saudi Ministry of Health, first version 2022",
+        "url": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/PE_Pulmonary_Embolism_Protocol.pdf",
+        "locator": "Risk stratification, sPESI/Hestia, haemodynamic support, Tables 1–7"
+      },
+      {
+        "title": "MOH Deep Vein Thrombosis (DVT) Treatment Protocol for Adult Patients",
+        "edition": "Saudi Ministry of Health, 2024",
+        "url": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/DVT_Deep_Vein_Thrombosis_treatment_protocol_2024.pdf",
+        "locator": "Initiating anticoagulation, distal vs proximal DVT, dosing, duration, pregnancy"
+      },
+      {
+        "title": "Management of acute pulmonary embolism 2019: what is new in the updated European guidelines? (ESC/ERS 2019 summary by the guideline chairs)",
+        "edition": "Intern Emerg Med 2020;15:957–966 (Konstantinides S, Meyer G)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7467952/"
+      },
+      {
+        "title": "Activase (alteplase) US prescribing information",
+        "edition": "Genentech, revised 09/2022",
+        "url": "https://www.gene.com/download/pdf/activase_prescribing.pdf",
+        "locator": "Section 2.3 Pulmonary embolism"
+      },
+      {
+        "title": "SFDA Saudi Drug Information System (registration search)",
+        "edition": "Accessed 11–12 Oct 2026",
+        "url": "https://sdi.sfda.gov.sa/"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "How to take the anticoagulant and why adherence matters; bleeding warning signs.",
+      "Return immediately with worsening breathlessness, chest pain or bleeding.",
+      "Stop oestrogen-containing contraception after PE on it; discuss alternatives."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable in the acute phase."
+    ],
+    "mdtReferrals": [
+      "PE response or multidisciplinary team for high-risk and selected intermediate-risk PE.",
+      "Haematology for thrombophilia, recurrent VTE or anticoagulation problems.",
+      "Pulmonary hypertension centre if CTEPH suspected at follow-up."
+    ],
+    "dischargeCriteria": [
+      "Haemodynamically stable, no oxygen or IV analgesia needed.",
+      "sPESI 0 or no Hestia criteria and no RV dysfunction (for early discharge).",
+      "Anticoagulant supplied and taught; adequate support at home."
+    ],
+    "followUpPlan": "Review at 3 months to decide on extended anticoagulation; check for recurrence, bleeding and cancer; if breathlessness persists, echo and BNP to look for chronic thromboembolic pulmonary hypertension."
+  }
+}

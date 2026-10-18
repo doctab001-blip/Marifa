@@ -1,0 +1,629 @@
+{
+  "id": "b25d8f03-6c42-4e79-a130-7d94f2c8b516",
+  "title": "Type 2 Diabetes Mellitus Longitudinal Care Pathway",
+  "specialty": "Family Medicine and Endocrinology",
+  "authority": "SHC",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adults with type 2 diabetes in primary care: diagnosis, individualised HbA1c targets, lifestyle, metformin and add-on therapy by comorbidity (ASCVD, heart failure, CKD), insulin initiation and titration, cardiovascular risk management and complication screening. Verified against the Saudi Diabetes Clinical Practice Guidelines (SDCPG, Saudi National Diabetes Center/Saudi Health Council, 2021); doses and contraindications from US FDA prescribing information. DKA, HHS and hypoglycaemia are covered in their own topics. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from authoring-standard-2026-10-12-v1-live."
+    ],
+    "unverifiedSections": [
+      "SDCPG statin figures (12–13) not reproduced as text",
+      "NICE NG28 not re-reviewed for this version",
+      "Ramadan-specific dose adjustments — SDCPG Ramadan section/local protocol",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "3f198bb7-8829-4e91-b35c-e46ad1e07eb5",
+      "ec5df7d3-6567-41d1-aa3f-897310f029cc"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Type 2 diabetes results from insulin resistance (liver, muscle, adipose tissue) combined with progressive beta-cell failure, producing chronic hyperglycaemia. It is strongly linked to obesity, inactivity and family history; Saudi Arabia has one of the highest prevalences worldwide.",
+    "keyMechanisms": [
+      "Insulin resistance (visceral fat, ectopic fat in liver and muscle) raises insulin demand; beta-cell dysfunction and loss mean insulin secretion cannot keep up → fasting and post-meal hyperglycaemia.",
+      "Increased hepatic glucose output (target of metformin), reduced incretin effect (GLP-1 RA, DPP-4 inhibitors) and increased renal glucose reabsorption (SGLT2 inhibitors).",
+      "Progressive disease: most people need treatment intensification over time, eventually insulin.",
+      "Chronic hyperglycaemia causes microvascular (retinopathy, nephropathy, neuropathy) and macrovascular (coronary, cerebrovascular, peripheral arterial) disease.",
+      "HbA1c below 7% reduces microvascular complications; SGLT2 inhibitors and GLP-1 RAs with proven benefit reduce cardiovascular, heart failure and kidney outcomes."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Often asymptomatic (found on screening).",
+      "Polyuria, polydipsia, weight loss, fatigue, blurred vision.",
+      "Recurrent infections: genital candidiasis, UTIs, skin infections; slow wound healing."
+    ],
+    "physicalSigns": [
+      "Obesity, acanthosis nigricans.",
+      "Reduced foot sensation (10-g monofilament, 128-Hz tuning fork), foot ulcers.",
+      "Retinopathy on fundoscopy; hypertension."
+    ],
+    "redFlags": [
+      "Glucose above 300 mg/dL or HbA1c above 10% with weight loss or osmotic symptoms — start insulin (SDCPG)",
+      "Vomiting, abdominal pain, drowsiness — DKA/HHS",
+      "Recurrent or severe hypoglycaemia",
+      "Foot ulcer, infection or ischaemia — urgent foot team",
+      "Sudden visual loss"
+    ],
+    "precipitants": [
+      "Obesity and inactivity",
+      "Family history; high-prevalence ethnicity",
+      "Previous gestational diabetes or macrosomic baby",
+      "PCOS",
+      "Drugs: glucocorticoids, atypical antipsychotics, statins, thiazides"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Type 1 diabetes / LADA",
+      "distinguishingFeatures": "Younger, lean, ketosis, positive islet antibodies, low C-peptide."
+    },
+    {
+      "condition": "Monogenic diabetes (MODY)",
+      "distinguishingFeatures": "Strong family history, young onset, non-obese."
+    },
+    {
+      "condition": "Secondary diabetes",
+      "distinguishingFeatures": "Pancreatic disease, steroids, Cushing's, acromegaly, drugs (antipsychotics, statins)."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "HbA1c / fasting plasma glucose / 75-g OGTT",
+        "modalityTarget": "Diagnosis; screening of at-risk adults",
+        "targetCondition": "Diabetes or prediabetes",
+        "expectedFinding": "Diabetes: fasting 126 mg/dL (7.0 mmol/L) or more; 2-h OGTT 200 mg/dL (11.1) or more; HbA1c 6.5% or more; random 200 mg/dL or more with symptoms. Prediabetes: fasting 100–125 mg/dL, 2-h 140–199, HbA1c 5.7–6.4%.",
+        "clinicalRationale": "Confirm an asymptomatic abnormal result with a repeat test.",
+        "normalValue": "Fasting below 100 mg/dL; HbA1c below 5.7%",
+        "references": [
+          {
+            "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+            "edition": "1st ed. 2021, Diagnosis table (p. 20); HbA1c targets; Section 7 pharmacological treatment (pp. 46–49); insulin initiation; CVD risk (Figures 11–13); complications screening",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "HbA1c monitoring",
+        "modalityTarget": "Every 3 months until at target, then every 3–6 months",
+        "targetCondition": "Glycaemic control",
+        "expectedFinding": "Above individual target (usually 7%).",
+        "clinicalRationale": "Intensify treatment without delay; target spectrum 6.5–8% by patient profile (SDCPG).",
+        "normalValue": "Individualised target — below 7% for most adults",
+        "references": [
+          {
+            "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+            "edition": "1st ed. 2021, Diagnosis table (p. 20); HbA1c targets; Section 7 pharmacological treatment (pp. 46–49); insulin initiation; CVD risk (Figures 11–13); complications screening",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Urine ACR and eGFR",
+        "modalityTarget": "At diagnosis and at least annually",
+        "targetCondition": "Diabetic kidney disease",
+        "expectedFinding": "ACR 30 mg/g (3 mg/mmol) or more; eGFR below 60.",
+        "clinicalRationale": "Start ACE inhibitor/ARB if albuminuric; SGLT2 inhibitor or GLP-1 RA for kidney protection; adjust drug doses.",
+        "normalValue": "ACR below 30 mg/g; eGFR 60 or more",
+        "references": [
+          {
+            "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+            "edition": "1st ed. 2021, Diagnosis table (p. 20); HbA1c targets; Section 7 pharmacological treatment (pp. 46–49); insulin initiation; CVD risk (Figures 11–13); complications screening",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Lipid profile",
+        "modalityTarget": "At diagnosis, after starting/changing statin, then annually",
+        "targetCondition": "Dyslipidaemia",
+        "expectedFinding": "LDL above target.",
+        "clinicalRationale": "Statin per SDCPG Figures 12–13.",
+        "normalValue": "High-risk ASCVD: LDL at or below 70 mg/dL (1.8 mmol/L), the SDCPG treatment threshold",
+        "references": [
+          {
+            "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+            "edition": "1st ed. 2021, Diagnosis table (p. 20); HbA1c targets; Section 7 pharmacological treatment (pp. 46–49); insulin initiation; CVD risk (Figures 11–13); complications screening",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Dilated eye examination (ophthalmologist)",
+        "modalityTarget": "At diagnosis of T2DM; annually or more often if retinopathy (up to 3-yearly if none — SDCPG)",
+        "targetCondition": "Diabetic retinopathy",
+        "expectedFinding": "Retinopathy, maculopathy.",
+        "clinicalRationale": "Refer for laser/anti-VEGF when indicated.",
+        "normalValue": "No retinopathy or maculopathy",
+        "references": [
+          {
+            "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+            "edition": "1st ed. 2021, Diagnosis table (p. 20); HbA1c targets; Section 7 pharmacological treatment (pp. 46–49); insulin initiation; CVD risk (Figures 11–13); complications screening",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Foot examination (10-g monofilament, 128-Hz vibration, pulses)",
+        "modalityTarget": "At least annually; every visit if high risk",
+        "targetCondition": "Neuropathy and peripheral arterial disease",
+        "expectedFinding": "Loss of protective sensation, absent pulses, deformity, ulcer.",
+        "clinicalRationale": "Risk-stratified foot care and footwear.",
+        "normalValue": "Monofilament and vibration sense intact; pulses palpable; no deformity or ulcer",
+        "references": [
+          {
+            "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+            "edition": "1st ed. 2021, Diagnosis table (p. 20); HbA1c targets; Section 7 pharmacological treatment (pp. 46–49); insulin initiation; CVD risk (Figures 11–13); complications screening",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Vitamin B12",
+        "modalityTarget": "Periodically on long-term metformin, especially with anaemia or neuropathy",
+        "targetCondition": "B12 deficiency",
+        "expectedFinding": "Low B12.",
+        "clinicalRationale": "Replace; metformin can continue.",
+        "normalValue": "Within laboratory reference range",
+        "references": [
+          {
+            "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+            "edition": "1st ed. 2021, Diagnosis table (p. 20); HbA1c targets; Section 7 pharmacological treatment (pp. 46–49); insulin initiation; CVD risk (Figures 11–13); complications screening",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "diagnose",
+      "title": "Diagnose and assess",
+      "timeframe": "At diagnosis",
+      "actions": [
+        "Confirm diagnosis (fasting glucose, OGTT, HbA1c or random glucose with symptoms).",
+        "Assess ASCVD, heart failure and CKD at least annually — these choose second-line drugs (SDCPG).",
+        "Baseline eye, foot, kidney, lipid and BP assessment; screen for depression annually."
+      ]
+    },
+    {
+      "id": "target",
+      "title": "Set targets",
+      "timeframe": "At diagnosis and yearly",
+      "actions": [
+        "HbA1c below 7% for most adults; 6.5% if achievable safely; up to 8% for frail, hypoglycaemia-prone or limited life expectancy (SDCPG).",
+        "BP below 130/80 if achievable (SDCPG Figure 11); statin per risk; smoking cessation."
+      ]
+    },
+    {
+      "id": "first",
+      "title": "First-line",
+      "timeframe": "From diagnosis",
+      "actions": [
+        "Structured education, medical nutrition therapy and physical activity; weight loss 7% or more if overweight.",
+        "Metformin first unless contraindicated (safe if eGFR above 30).",
+        "HbA1c more than 1.5% above target at diagnosis: start dual therapy.",
+        "HbA1c above 10%, glucose above 300 mg/dL or catabolic symptoms: start insulin (or GLP-1 RA) (SDCPG)."
+      ]
+    },
+    {
+      "id": "second",
+      "title": "Add-on therapy",
+      "timeframe": "If not at target after about 3 months",
+      "actions": [
+        "ASCVD: SGLT2 inhibitor or GLP-1 RA with proven CV benefit.",
+        "Heart failure (or high risk of HF): SGLT2 inhibitor.",
+        "CKD: SGLT2 inhibitor or GLP-1 RA shown to slow CKD progression.",
+        "No ASCVD/CKD: any of sulfonylurea, pioglitazone, DPP-4 inhibitor, SGLT2 inhibitor, GLP-1 RA or basal insulin, chosen by hypoglycaemia risk, weight, cost and preference.",
+        "Need a bigger glucose-lowering effect from an injectable: GLP-1 RA. Re-evaluate every 3–6 months; do not delay intensification."
+      ]
+    },
+    {
+      "id": "insulin",
+      "title": "Insulin",
+      "timeframe": "When indicated",
+      "actions": [
+        "Basal insulin 0.1–0.2 units/kg/day if HbA1c below 8%, or 0.2–0.3 units/kg/day if above 8%; titrate by 2 units every 3 days to fasting target (SDCPG).",
+        "Add prandial insulin with the largest meal: 4–5 units or 10% of basal dose; titrate by 1–2 units (or 10%) every 2–3 days to 2-h post-meal target.",
+        "Premixed insulin 2–3 times daily is an option. Review every 2 weeks on initiation; check injection technique and sites."
+      ]
+    },
+    {
+      "id": "cvd",
+      "title": "Cardiovascular and kidney protection",
+      "timeframe": "Ongoing",
+      "actions": [
+        "Statin per SDCPG Figures 12–13; ACE inhibitor or ARB for hypertension with albuminuria; aspirin for secondary prevention.",
+        "Hold metformin on the day of iodinated contrast and restart after 1–2 days once renal function is confirmed stable (SDCPG)."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "First-line (all unless contraindicated)",
+        "patientGroup": "Adults",
+        "genericName": "Metformin",
+        "dose": "500 mg twice daily or 850 mg once daily with meals",
+        "route": "PO",
+        "frequency": "Increase by 500 mg weekly or 850 mg every 2 weeks",
+        "duration": "Long term; maximum 2,550 mg/day",
+        "adjustments": [
+          "Do not start if eGFR 30–45 (label); stop if eGFR below 30",
+          "Hold on day of iodinated contrast (SDCPG)"
+        ],
+        "monitoring": [
+          "eGFR at least annually; B12 periodically"
+        ],
+        "contraindications": [
+          "eGFR below 30 mL/min/1.73 m²",
+          "Acute or chronic metabolic acidosis including DKA",
+          "Hypersensitivity"
+        ],
+        "sourceTitle": "Metformin hydrochloride prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=011de1a5-1ac0-4831-9e8d-26ec79ba2205",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "branch": "First-line",
+        "step": "First-line",
+        "selection": "all"
+      },
+      {
+        "indication": "ASCVD, heart failure or CKD (add-on)",
+        "patientGroup": "Adults",
+        "genericName": "Empagliflozin",
+        "dose": "10 mg",
+        "route": "PO",
+        "frequency": "Once daily in the morning (25 mg for extra glycaemic control)",
+        "duration": "Long term",
+        "adjustments": [
+          "Not for glycaemic control if eGFR below 30 (label)",
+          "Sick-day rules: pause in acute illness; ketoacidosis risk"
+        ],
+        "monitoring": [
+          "eGFR, volume status, genital infection"
+        ],
+        "contraindications": [
+          "Dialysis",
+          "Hypersensitivity"
+        ],
+        "sourceTitle": "Empagliflozin (Jardiance) prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1782b947-4a72-4feb-a488-1469d9af82bd",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "branch": "Add-on — ASCVD, heart failure or CKD",
+        "step": "Add-on",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "ASCVD, heart failure or CKD (add-on, alternative)",
+        "patientGroup": "Adults",
+        "genericName": "Dapagliflozin",
+        "dose": "10 mg (5 mg start for glycaemic control)",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term",
+        "adjustments": [
+          "Not recommended for glycaemic control if eGFR below 45 (label)",
+          "Withhold 3 days before surgery"
+        ],
+        "monitoring": [
+          "eGFR, volume status"
+        ],
+        "contraindications": [
+          "Serious hypersensitivity to dapagliflozin"
+        ],
+        "sourceTitle": "Dapagliflozin (Farxiga) prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01f90c94-71cb-4a1f-81ff-8004b850529b",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "branch": "Add-on — ASCVD, heart failure or CKD",
+        "step": "Add-on",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Chosen instead of empagliflozin"
+      },
+      {
+        "indication": "ASCVD, CKD, or need for greater effect/weight loss",
+        "patientGroup": "Adults",
+        "genericName": "Semaglutide (SC)",
+        "dose": "0.25 mg weekly for 4 weeks (initiation), then 0.5 mg weekly",
+        "route": "SC",
+        "frequency": "Once weekly; increase to 1 mg then 2 mg after at least 4 weeks each if needed",
+        "duration": "Long term",
+        "adjustments": [
+          "0.25 mg is not a maintenance dose",
+          "Pancreatitis history: use with caution; retinopathy monitoring"
+        ],
+        "monitoring": [
+          "GI tolerance, HbA1c, weight"
+        ],
+        "contraindications": [
+          "Personal or family history of medullary thyroid carcinoma or MEN 2",
+          "Serious hypersensitivity"
+        ],
+        "sourceTitle": "Semaglutide (Ozempic) prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=42bdd912-2393-44c4-b7e0-47672ca28991",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "branch": "Add-on — ASCVD, heart failure or CKD",
+        "step": "Add-on",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "ASCVD or CKD, or need for greater effect or weight loss"
+      },
+      {
+        "indication": "Add-on without ASCVD/CKD (weight-neutral, low hypoglycaemia)",
+        "patientGroup": "Adults",
+        "genericName": "Sitagliptin",
+        "dose": "100 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term",
+        "adjustments": [
+          "eGFR 30–45: 50 mg; eGFR below 30: 25 mg (label)"
+        ],
+        "monitoring": [
+          "Renal function, pancreatitis symptoms"
+        ],
+        "contraindications": [
+          "Serious hypersensitivity (anaphylaxis, angioedema)"
+        ],
+        "sourceTitle": "Sitagliptin (Januvia) prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=194c3718-5eb5-4cf5-85d0-2bb1ed8293b8",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "branch": "Add-on — no ASCVD or CKD",
+        "step": "Add-on",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "Add-on (low cost; hypoglycaemia risk)",
+        "patientGroup": "Adults",
+        "genericName": "Glimepiride",
+        "dose": "1–2 mg",
+        "route": "PO",
+        "frequency": "Once daily with breakfast; titrate",
+        "duration": "Long term; maximum 8 mg/day",
+        "adjustments": [
+          "Hypoglycaemia — caution in elderly, CKD, fasting (including Ramadan)"
+        ],
+        "monitoring": [
+          "Glucose, hypoglycaemia"
+        ],
+        "contraindications": [
+          "Hypersensitivity to glimepiride or sulfonamide derivatives"
+        ],
+        "sourceTitle": "Glimepiride prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0003458f-352a-46fa-9d99-230daa76ae29",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "branch": "Add-on — no ASCVD or CKD",
+        "step": "Add-on",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Low cost is a priority; accept the hypoglycaemia risk"
+      },
+      {
+        "indication": "Insulin initiation (basal)",
+        "patientGroup": "Adults",
+        "genericName": "Basal insulin (e.g. insulin glargine)",
+        "dose": "0.1–0.2 units/kg/day (HbA1c below 8%) or 0.2–0.3 units/kg/day (HbA1c above 8%)",
+        "route": "SC",
+        "frequency": "Once daily; titrate by 2 units every 3 days to fasting target",
+        "duration": "Long term",
+        "adjustments": [
+          "Add prandial 4–5 units or 10% of basal with largest meal if needed"
+        ],
+        "monitoring": [
+          "SMBG fasting; hypoglycaemia; review every 2 weeks initially"
+        ],
+        "contraindications": [
+          "During episodes of hypoglycaemia",
+          "Hypersensitivity to the insulin or excipients"
+        ],
+        "sourceTitle": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf",
+        "sourceEdition": "SDCPG 2021, Section 7",
+        "branch": "Insulin",
+        "step": "Insulin initiation",
+        "selection": "all"
+      }
+    ],
+    "note": "Drug selection and insulin initiation are from the Saudi Diabetes CPG (2021); product doses and contraindications from US FDA labels. Check SFDA registration, hospital formulary and actual availability. Ramadan fasting needs individual planning (see SDCPG Ramadan section).",
+    "branches": [
+      {
+        "label": "First-line",
+        "entryCriteria": "Adult with type 2 diabetes"
+      },
+      {
+        "label": "Add-on — ASCVD, heart failure or CKD",
+        "entryCriteria": "Adult with ASCVD, heart failure or CKD"
+      },
+      {
+        "label": "Add-on — no ASCVD or CKD",
+        "entryCriteria": "Adult without ASCVD or CKD needing an add-on"
+      },
+      {
+        "label": "Insulin",
+        "entryCriteria": "Adult needing insulin"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Diabetes",
+      "threshold": "Fasting 126 mg/dL or more, 2-h OGTT 200 or more, HbA1c 6.5% or more, or random 200 with symptoms"
+    },
+    {
+      "criterion": "Prediabetes",
+      "threshold": "Fasting 100–125 mg/dL, 2-h 140–199 mg/dL, or HbA1c 5.7–6.4%"
+    },
+    {
+      "criterion": "HbA1c target (most adults)",
+      "threshold": "Below 7% (range 6.5–8% individualised)"
+    },
+    {
+      "criterion": "Start dual therapy",
+      "threshold": "HbA1c more than 1.5% above target"
+    },
+    {
+      "criterion": "Start insulin",
+      "threshold": "HbA1c above 10%, glucose above 300 mg/dL, or catabolic symptoms"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "Saudi Diabetes CPG: second-line choice by comorbidity",
+    "columns": [
+      "Comorbidity",
+      "Preferred add-on to metformin"
+    ],
+    "rows": [
+      {
+        "parameter": "Established ASCVD",
+        "values": [
+          "Yes",
+          "SGLT2 inhibitor or GLP-1 RA with proven CV benefit"
+        ]
+      },
+      {
+        "parameter": "Heart failure or high HF risk",
+        "values": [
+          "Yes",
+          "SGLT2 inhibitor"
+        ]
+      },
+      {
+        "parameter": "CKD",
+        "values": [
+          "Yes",
+          "SGLT2 inhibitor or GLP-1 RA with kidney benefit"
+        ]
+      },
+      {
+        "parameter": "None of the above",
+        "values": [
+          "—",
+          "SU, TZD, DPP-4i, SGLT2i, GLP-1 RA or basal insulin by patient factors"
+        ]
+      }
+    ],
+    "note": "NICE NG28 (updated 2026) also prioritises SGLT2 inhibitors for CVD/HF/CKD; not re-reviewed for this version."
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Diagnose type 2 diabetes and manage glycaemia, cardiovascular and kidney risk, and complications over time."
+    ],
+    "pitfalls": [
+      "Clinical inertia — delaying intensification.",
+      "Sulfonylureas in frail or fasting patients.",
+      "Missing B12 deficiency on metformin.",
+      "No sick-day rules for SGLT2 inhibitors/metformin.",
+      "Not reassessing ASCVD/HF/CKD status yearly."
+    ],
+    "keyPoints": [
+      "HbA1c below 7% for most; individualise 6.5–8%.",
+      "Metformin first; dual therapy if HbA1c 1.5% above target.",
+      "ASCVD/HF/CKD: SGLT2 inhibitor or GLP-1 RA regardless of HbA1c.",
+      "Basal insulin 0.1–0.3 units/kg, titrate 2 units every 3 days.",
+      "Annual eyes, feet, ACR/eGFR and lipids."
+    ],
+    "references": [
+      {
+        "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+        "edition": "1st ed. 2021",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf",
+        "locator": "Diagnosis table (p. 20); HbA1c targets; Section 7 pharmacological treatment (pp. 46–49); insulin initiation; CVD risk (Figures 11–13); complications screening"
+      },
+      {
+        "title": "Metformin hydrochloride prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=011de1a5-1ac0-4831-9e8d-26ec79ba2205",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Empagliflozin (Jardiance) prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1782b947-4a72-4feb-a488-1469d9af82bd",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Dapagliflozin (Farxiga) prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01f90c94-71cb-4a1f-81ff-8004b850529b",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Semaglutide (Ozempic) prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=42bdd912-2393-44c4-b7e0-47672ca28991",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Sitagliptin (Januvia) prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=194c3718-5eb5-4cf5-85d0-2bb1ed8293b8",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Glimepiride prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0003458f-352a-46fa-9d99-230daa76ae29",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Pioglitazone prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=060e3169-46a7-419d-9acc-05586cb2406b",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Insulin aspart (NovoLog) / insulin glargine prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=13891e5a-e57a-46e8-911c-2f680352b52b",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Structured diabetes self-management education.",
+      "Hypoglycaemia recognition and treatment; sick-day rules.",
+      "Foot care and annual eye checks; Ramadan planning."
+    ],
+    "lifestyleAndDiet": [
+      "Healthy eating pattern (e.g. Mediterranean/DASH), reduce sugary drinks.",
+      "150 minutes/week moderate activity plus resistance exercise.",
+      "Weight loss of 7% or more if overweight; stop smoking."
+    ],
+    "mdtReferrals": [
+      "Dietitian; diabetes educator.",
+      "Ophthalmology at diagnosis and by retinopathy status.",
+      "Podiatry/foot team for high-risk feet.",
+      "Endocrinology for complex insulin regimens or atypical diabetes."
+    ],
+    "dischargeCriteria": [
+      "Not applicable — outpatient care."
+    ],
+    "followUpPlan": "Review every 3 months until at target, then every 3–6 months: HbA1c, weight, BP, hypoglycaemia, adherence; annually: ACR/eGFR, lipids, eye and foot examination, depression screen, CVD/HF/CKD reassessment."
+  }
+}

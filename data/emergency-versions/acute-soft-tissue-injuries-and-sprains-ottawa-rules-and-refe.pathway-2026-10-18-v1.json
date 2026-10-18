@@ -1,0 +1,388 @@
+{
+  "id": "efd2df51-8189-49a3-9c3f-b6fd5955b484",
+  "title": "Acute Soft Tissue Injuries and Sprains: Ottawa Rules and Referral Thresholds",
+  "specialty": "Emergency Medicine / Orthopaedics",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adult with an acute ankle or foot soft tissue injury: Ottawa ankle and foot rules for X-ray, PRICE self-care, analgesia with paracetamol and ibuprofen, recovery time and when to seek help. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 2026-10-18.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from authoring-standard-2026-10-18-tier3b-v1-live."
+    ],
+    "unverifiedSections": [
+      "The Ottawa rules were read from a Scottish emergency medicine page without date or page number; the knee rule is not covered.",
+      "No national sprain guideline (NICE CKS or British National Formulary) was opened because they were not accessible; self-care and dosing are from NHS website pages.",
+      "No Saudi guideline was opened.",
+      "Source pages were read through automated page extraction rather than page-by-page in the original documents, so each figure should be spot-checked against the source during clinical review.",
+      "The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary.",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "efd2df51-8189-49a3-9c3f-b6fd5955b484",
+      "1bf1a3b4-a78b-47b5-8066-f52ce13ba24b"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "A sprain is a stretch or tear of a ligament; a strain involves muscle or tendon. The Ottawa rules identify which patients with malleolar or midfoot pain need X-ray. Most sprains and strains feel better after 2 weeks; severe injuries can take months. Inability to take four steps both immediately and at assessment suggests a possible fracture.",
+    "keyMechanisms": [
+      "A sprain is a stretch or tear of a ligament; a strain involves muscle or tendon.",
+      "The Ottawa rules identify which patients with malleolar or midfoot pain need X-ray.",
+      "Most sprains and strains feel better after 2 weeks; severe injuries can take months.",
+      "Inability to take four steps both immediately and at assessment suggests a possible fracture."
+    ],
+    "references": [
+      {
+        "title": "NHS Scotland Emergency Medicine (cem.scot.nhs.uk): Ottawa Ankle Rules",
+        "edition": "Ottawa Ankle Rules (cem.scot.nhs.uk), Section Ankle x-ray criteria",
+        "url": "https://www.cem.scot.nhs.uk/adult/ottawa.pdf"
+      },
+      {
+        "title": "NHS: Sprains and strains (reviewed 23 April 2024)",
+        "edition": "NHS Sprains and strains 2024, Section Self-care",
+        "url": "https://www.nhs.uk/conditions/sprains-and-strains/"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Pain around the ankle or foot.",
+      "Swelling and bruising.",
+      "Difficulty walking.",
+      "Stiffness."
+    ],
+    "physicalSigns": [
+      "Bone tenderness over the malleoli or foot bones.",
+      "Swelling and bruising.",
+      "Inability to bear weight."
+    ],
+    "redFlags": [
+      "Heard a crack, deformed or changed angle, numb or tingling.",
+      "Blue, grey or cold skin.",
+      "Very high temperature or feeling hot, cold or shivery."
+    ],
+    "precipitants": [
+      "Not covered in the sources opened."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Ankle or foot fracture",
+      "distinguishingFeatures": "Meets Ottawa criteria; X-ray series."
+    },
+    {
+      "condition": "Infection",
+      "distinguishingFeatures": "Very high temperature, feeling hot, cold or shivery."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Palpation of the distal 6 cm of the posterior edge or tip of the lateral and medial malleolus",
+        "modalityTarget": "Malleolar bone tenderness",
+        "targetCondition": "Ankle fracture",
+        "expectedFinding": "Bone tenderness",
+        "clinicalRationale": "Any positive Ottawa finding with malleolar pain requires an ankle X-ray series.",
+        "normalValue": "No bone tenderness",
+        "references": [
+          {
+            "title": "NHS Scotland Emergency Medicine (cem.scot.nhs.uk): Ottawa Ankle Rules",
+            "edition": "Ottawa Ankle Rules (cem.scot.nhs.uk), Section Ankle x-ray criteria",
+            "url": "https://www.cem.scot.nhs.uk/adult/ottawa.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Palpation of the base of the 5th metatarsal and navicular",
+        "modalityTarget": "Midfoot bone tenderness",
+        "targetCondition": "Foot fracture",
+        "expectedFinding": "Bone tenderness",
+        "clinicalRationale": "Any positive finding with midfoot pain requires a foot X-ray series.",
+        "normalValue": "No bone tenderness",
+        "references": [
+          {
+            "title": "NHS Scotland Emergency Medicine (cem.scot.nhs.uk): Ottawa Ankle Rules",
+            "edition": "Ottawa Ankle Rules (cem.scot.nhs.uk), Section Foot x-ray criteria",
+            "url": "https://www.cem.scot.nhs.uk/adult/ottawa.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Four-step weight-bearing test, immediately and at assessment",
+        "modalityTarget": "Function",
+        "targetCondition": "Fracture",
+        "expectedFinding": "Unable to bear weight for 4 steps",
+        "clinicalRationale": "Positive in either setting requires X-ray.",
+        "normalValue": "Able to take 4 steps",
+        "references": [
+          {
+            "title": "NHS Scotland Emergency Medicine (cem.scot.nhs.uk): Ottawa Ankle Rules",
+            "edition": "Ottawa Ankle Rules (cem.scot.nhs.uk), Section Ankle x-ray criteria",
+            "url": "https://www.cem.scot.nhs.uk/adult/ottawa.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Ankle X-ray series",
+        "modalityTarget": "Bones of the ankle",
+        "targetCondition": "Ankle fracture",
+        "expectedFinding": "Fracture line",
+        "clinicalRationale": "Only if Ottawa ankle criteria are met.",
+        "normalValue": "No fracture",
+        "references": [
+          {
+            "title": "NHS Scotland Emergency Medicine (cem.scot.nhs.uk): Ottawa Ankle Rules",
+            "edition": "Ottawa Ankle Rules (cem.scot.nhs.uk), Section Ankle x-ray criteria",
+            "url": "https://www.cem.scot.nhs.uk/adult/ottawa.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Foot X-ray series",
+        "modalityTarget": "Bones of the foot",
+        "targetCondition": "Foot fracture",
+        "expectedFinding": "Fracture line",
+        "clinicalRationale": "Only if Ottawa foot criteria are met.",
+        "normalValue": "No fracture",
+        "references": [
+          {
+            "title": "NHS Scotland Emergency Medicine (cem.scot.nhs.uk): Ottawa Ankle Rules",
+            "edition": "Ottawa Ankle Rules (cem.scot.nhs.uk), Section Foot x-ray criteria",
+            "url": "https://www.cem.scot.nhs.uk/adult/ottawa.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Check for exclusions to the Ottawa rules",
+        "modalityTarget": "Applicability",
+        "targetCondition": "Rule not valid",
+        "expectedFinding": "Under 18, intoxicated, multiple injuries, pregnant, head injury, reduced sensation",
+        "clinicalRationale": "In these patients the rule cannot be used to decide on X-ray.",
+        "normalValue": "None present",
+        "references": [
+          {
+            "title": "NHS Scotland Emergency Medicine (cem.scot.nhs.uk): Ottawa Ankle Rules",
+            "edition": "Ottawa Ankle Rules (cem.scot.nhs.uk), Section Exclusions",
+            "url": "https://www.cem.scot.nhs.uk/adult/ottawa.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "ottawa",
+      "title": "Apply the Ottawa rules",
+      "timeframe": "At assessment",
+      "actions": [
+        "Check exclusions, then malleolar and midfoot tenderness and four steps of weight bearing."
+      ]
+    },
+    {
+      "id": "xray",
+      "title": "X-ray if criteria met",
+      "timeframe": "Same visit",
+      "actions": [
+        "Ankle or foot series as above."
+      ]
+    },
+    {
+      "id": "self",
+      "title": "Self-care for the first 2 to 3 days (PRICE)",
+      "timeframe": "Days 1 to 3",
+      "actions": [
+        "Protection, rest, ice for up to 20 minutes every 2 to 3 hours, compression, elevation; avoid heat, alcohol and massage in the first days.",
+        "Start gentle exercise after 2 to 3 days or sooner if improving."
+      ]
+    },
+    {
+      "id": "pain",
+      "title": "Analgesia",
+      "timeframe": "As needed",
+      "actions": [
+        "Start with paracetamol; ibuprofen gel, mousse or spray for swelling; oral ibuprofen if needed."
+      ]
+    },
+    {
+      "id": "review",
+      "title": "Review",
+      "timeframe": "2 weeks and 6 to 8 weeks",
+      "actions": [
+        "Re-assess if not improving at 2 weeks or not significantly better at 6 to 8 weeks.",
+        "Avoid strenuous exercise such as running for up to 8 weeks."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Pain from sprain or strain",
+        "patientGroup": "Adults",
+        "genericName": "Paracetamol",
+        "dose": "500 to 1,000 mg per dose (1 or 2 500 mg tablets)",
+        "route": "Oral",
+        "frequency": "At least 4 hours between doses",
+        "duration": "Short course; see a doctor if pain persists",
+        "adjustments": [
+          "Under 50 kg may need a lower dose.",
+          "Liver conditions can make it unsuitable; no specific hepatic adjustment is given.",
+          "Usually the preferred painkiller in pregnancy."
+        ],
+        "monitoring": [
+          "Do not exceed the maximum: 8 tablets of 500 mg or 4 of 1 g in 24 hours."
+        ],
+        "contraindications": [
+          "Liver conditions may make paracetamol unsuitable.",
+          "Taking too much can damage the liver."
+        ],
+        "sourceTitle": "NHS: How and when to take paracetamol for adults, reviewed 24 March 2026",
+        "sourceUrl": "https://www.nhs.uk/medicines/paracetamol-for-adults/how-and-when-to-take-paracetamol-for-adults/",
+        "sourceEdition": "NHS paracetamol for adults 2026, Section How and when to take paracetamol",
+        "branch": "Pain from a sprain or strain",
+        "step": "Oral analgesic",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "Pain and swelling from sprain or strain",
+        "patientGroup": "Adults",
+        "genericName": "Ibuprofen (oral)",
+        "dose": "200 to 400 mg per dose (200 mg: 1 or 2 tablets; 400 mg: 1 tablet)",
+        "route": "Oral",
+        "frequency": "Up to 3 times a day, at least 4 hours apart",
+        "duration": "Not more than 10 days unless a doctor advises",
+        "adjustments": [
+          "Maximum 6 tablets of 200 mg or 3 of 400 mg in 24 hours.",
+          "Take with or after food.",
+          "Avoid in pregnancy unless a doctor or pharmacist advises."
+        ],
+        "monitoring": [
+          "See a GP if pain worsens or does not go away."
+        ],
+        "contraindications": [
+          "Allergy to ibuprofen, aspirin or another NSAID; stomach ulcer or history of one; asthma; chickenpox; heart, liver or kidney conditions; blood clotting problems; previous stroke; pregnancy.",
+          "Do not combine with other NSAIDs."
+        ],
+        "sourceTitle": "NHS: How and when to take ibuprofen (adults), reviewed 27 August 2025",
+        "sourceUrl": "https://www.nhs.uk/medicines/ibuprofen-for-adults/how-and-when-to-take-ibuprofen/",
+        "sourceEdition": "NHS ibuprofen for adults 2025, Section How and when to take ibuprofen",
+        "branch": "Pain from a sprain or strain",
+        "step": "Oral analgesic",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Chosen instead of paracetamol"
+      },
+      {
+        "indication": "Swelling from sprain or strain",
+        "patientGroup": "Adults",
+        "genericName": "Ibuprofen topical gel",
+        "dose": "Amount stated on the packet",
+        "route": "Topical",
+        "frequency": "Up to 3 or 4 times a day, at least 4 hours apart (maximum 4 uses in 24 hours)",
+        "duration": "Check the packet",
+        "adjustments": [
+          "Same cautions as oral ibuprofen."
+        ],
+        "monitoring": [
+          "See a GP if pain worsens."
+        ],
+        "contraindications": [
+          "Allergy to ibuprofen, aspirin or another NSAID."
+        ],
+        "sourceTitle": "NHS: How and when to take ibuprofen (adults), reviewed 27 August 2025",
+        "sourceUrl": "https://www.nhs.uk/medicines/ibuprofen-for-adults/how-and-when-to-take-ibuprofen/",
+        "sourceEdition": "NHS ibuprofen for adults 2025, Section How and when to take ibuprofen",
+        "branch": "Swelling from a sprain or strain",
+        "step": "Topical anti-inflammatory",
+        "selection": "all"
+      }
+    ],
+    "note": "Adult over-the-counter doses are from the NHS website; paracetamol or ibuprofen are started by clinician judgement. The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary.",
+    "branches": [
+      {
+        "label": "Pain from a sprain or strain",
+        "entryCriteria": "Adult with pain from a sprain or strain"
+      },
+      {
+        "label": "Swelling from a sprain or strain",
+        "entryCriteria": "Adult with swelling from a sprain or strain"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Ankle X-ray series",
+      "threshold": "Pain in the malleolar region and any of: bone tenderness along distal 6 cm of posterior edge or tip of lateral or medial malleolus, or inability to weight bear for 4 steps immediately and at assessment."
+    },
+    {
+      "criterion": "Foot X-ray series",
+      "threshold": "Pain in the midfoot and any of: bone tenderness at base of 5th metatarsal or navicular, or inability to weight bear for 4 steps."
+    },
+    {
+      "criterion": "Rules do not apply",
+      "threshold": "Age under 18, intoxication, multiple painful injuries, pregnancy, head injury or diminished sensation from a neurological deficit."
+    }
+  ],
+  "teaching": {
+    "scope": "Adult with an acute ankle or foot soft tissue injury: Ottawa ankle and foot rules for X-ray, PRICE self-care, analgesia with paracetamol and ibuprofen, recovery time and when to seek help.",
+    "learningObjectives": [
+      "Apply exclusions then the Ottawa criteria.",
+      "Use PRICE and analgesia for the first days."
+    ],
+    "pitfalls": [
+      "Using the rule in children or intoxicated patients.",
+      "Applying heat or massage early."
+    ],
+    "keyPoints": [
+      "Positive weight-bearing test requires X-ray.",
+      "Most sprains improve in 2 weeks."
+    ],
+    "references": [
+      {
+        "title": "NHS Scotland Emergency Medicine (cem.scot.nhs.uk): Ottawa Ankle Rules",
+        "edition": "Ottawa Ankle Rules (cem.scot.nhs.uk), Section Ankle x-ray criteria",
+        "url": "https://www.cem.scot.nhs.uk/adult/ottawa.pdf",
+        "locator": "Section Ankle x-ray criteria"
+      },
+      {
+        "title": "NHS: Sprains and strains (reviewed 23 April 2024)",
+        "edition": "NHS Sprains and strains 2024, Section Self-care",
+        "url": "https://www.nhs.uk/conditions/sprains-and-strains/",
+        "locator": "Section Self-care"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Expected recovery times.",
+      "Return if worse or numb."
+    ],
+    "lifestyleAndDiet": [
+      "Avoid running for up to 8 weeks."
+    ],
+    "mdtReferrals": [
+      "Physiotherapy for slow recovery."
+    ],
+    "dischargeCriteria": [
+      "Ottawa negative or X-ray negative, pain controlled, able to mobilise."
+    ],
+    "followUpPlan": "Review if not improving at 2 weeks or not significantly better at 6 to 8 weeks."
+  }
+}

@@ -1,0 +1,514 @@
+{
+  "id": "a1010000-0000-4000-8000-000000000002",
+  "title": "Sepsis",
+  "specialty": "Emergency Medicine, Internal Medicine and Critical Care",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adults with suspected sepsis or septic shock in the emergency department and ward. Verified against Surviving Sepsis Campaign 2021 and Sepsis-3 (2016). Source-specific antibiotic choice follows the Saudi MOH infection protocols. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from emergency-2026-10-12-v1-live."
+    ],
+    "unverifiedSections": [
+      "Local formulary availability and hospital protocol adoption",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "a1010000-0000-4000-8000-000000000002",
+      "19eac01e-bbd6-4f70-b87b-3a23cc34b3e3"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Sepsis is life-threatening organ dysfunction caused by a dysregulated host response to infection. Septic shock is the subset with circulatory and cellular/metabolic failure severe enough to raise mortality substantially (above 40% in hospital).",
+    "keyMechanisms": [
+      "Dysregulated host response: the inflammatory and anti-inflammatory response to infection injures the patient's own organs, not just the infected site.",
+      "Organ dysfunction: identified as an acute rise in SOFA score of 2 or more (about 10% mortality in a general ward population with suspected infection).",
+      "Circulatory failure: vasodilation and capillary leak cause hypotension; tissue hypoperfusion raises lactate and slows capillary refill.",
+      "Septic shock: vasopressor needed to keep MAP at least 65 mmHg AND lactate above 2 mmol/L despite adequate fluid.",
+      "Time matters: early antimicrobials are among the most effective ways to reduce mortality; observational data link delays beyond 3–5 h with higher mortality even without shock."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Fever or rigors, or hypothermia; malaise.",
+      "Breathlessness, confusion or drowsiness.",
+      "Symptoms of the source: cough and sputum, dysuria and flank pain, abdominal pain, cellulitis, headache and neck stiffness, line or wound infection.",
+      "Reduced urine output."
+    ],
+    "physicalSigns": [
+      "Tachycardia, tachypnoea (RR 22 or more), hypotension (SBP 100 or less).",
+      "Altered mentation (any GCS below 15).",
+      "Mottled skin, prolonged capillary refill, cold peripheries.",
+      "Signs of the source: chest crackles, abdominal tenderness or peritonism, red hot skin, infected line site."
+    ],
+    "redFlags": [
+      "Hypotension not responding to fluid, or rising lactate: septic shock; start vasopressor and call ICU",
+      "Any qSOFA criterion (RR 22 or more, altered mentation, SBP 100 or less) is a prompt to assess for sepsis, but SSC recommends against qSOFA as a single screening tool",
+      "Needs emergency source control: necrotising soft-tissue infection, obstructed infected kidney, perforation, abscess, infected device",
+      "Hypoxaemic respiratory failure"
+    ],
+    "precipitants": [
+      "Pneumonia, urinary tract, intra-abdominal, skin and soft tissue, CNS and line-related infections.",
+      "Higher risk: older age, diabetes, immunosuppression, chronic kidney or liver disease, cancer, recent surgery or invasive devices."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Non-infectious SIRS (pancreatitis, burns, trauma, post-operative)",
+      "distinguishingFeatures": "Clear non-infectious trigger; cultures negative. SSC: reassess daily and stop antibiotics if an alternative cause is shown."
+    },
+    {
+      "condition": "Cardiogenic shock",
+      "distinguishingFeatures": "Cold, wet, raised JVP, pulmonary oedema, poor ventricular function on echo; ischaemic ECG or raised troponin."
+    },
+    {
+      "condition": "Hypovolaemic or haemorrhagic shock",
+      "distinguishingFeatures": "Bleeding or fluid loss; falling haemoglobin; responds to volume."
+    },
+    {
+      "condition": "Pulmonary embolism",
+      "distinguishingFeatures": "Sudden breathlessness, hypoxia, right heart strain; risk factors for VTE."
+    },
+    {
+      "condition": "Anaphylaxis or adrenal crisis",
+      "distinguishingFeatures": "Allergen exposure with urticaria or angioedema; or steroid withdrawal with hyponatraemia and hyperkalaemia."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Lactate",
+        "modalityTarget": "At presentation; repeat to guide resuscitation if raised",
+        "targetCondition": "Hypoperfusion",
+        "expectedFinding": "Above 2 mmol/L (with vasopressor need = septic shock).",
+        "clinicalRationale": "SSC suggests measuring lactate and guiding resuscitation to bring a raised lactate down; interpret with other causes of raised lactate in mind.",
+        "normalValue": "Below 2 mmol/L",
+        "references": [
+          {
+            "title": "Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2021",
+            "edition": "Intensive Care Med 2021;47:1181–1247 (Evans L et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8486643/"
+          },
+          {
+            "title": "The Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3)",
+            "edition": "JAMA 2016;315:801–810 (Singer M et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4968574/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Blood cultures (and cultures from the likely source)",
+        "modalityTarget": "Before antibiotics if this causes no substantial delay",
+        "targetCondition": "Pathogen",
+        "expectedFinding": "Positive cultures guide de-escalation.",
+        "clinicalRationale": "Never delay antibiotics in suspected septic shock to obtain cultures.",
+        "references": [
+          {
+            "title": "Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2021",
+            "edition": "Intensive Care Med 2021;47:1181–1247 (Evans L et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8486643/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "FBC, U&E and creatinine, bilirubin, platelets, coagulation, blood gas",
+        "modalityTarget": "At presentation",
+        "targetCondition": "Organ dysfunction (SOFA)",
+        "expectedFinding": "Creatinine rise or oliguria; bilirubin rise; platelets falling; PaO2/FiO2 falling.",
+        "clinicalRationale": "Acute SOFA rise of 2 or more = sepsis. These also guide drug dosing and level of care.",
+        "normalValue": "Creatinine 60–110 µmol/L; bilirubin below 21 µmol/L; platelets 150–400 × 10⁹/L",
+        "references": [
+          {
+            "title": "The Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3)",
+            "edition": "JAMA 2016;315:801–810 (Singer M et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4968574/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Procalcitonin",
+        "modalityTarget": "Optional",
+        "targetCondition": "Bacterial infection",
+        "expectedFinding": "Raised in bacterial infection.",
+        "clinicalRationale": "SSC suggests NOT using procalcitonin to decide whether to start antibiotics; it can support decisions to stop.",
+        "references": [
+          {
+            "title": "Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2021",
+            "edition": "Intensive Care Med 2021;47:1181–1247 (Evans L et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8486643/"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Capillary refill time; urine output",
+        "modalityTarget": "At presentation and repeatedly",
+        "targetCondition": "Perfusion",
+        "expectedFinding": "Prolonged capillary refill; urine output below 0.5 mL/kg/h.",
+        "clinicalRationale": "SSC suggests capillary refill time as an adjunct to guide resuscitation; dynamic measures (passive leg raise, stroke volume) are preferred to static ones.",
+        "normalValue": "Brisk capillary refill; urine at least 0.5 mL/kg/h",
+        "references": [
+          {
+            "title": "Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2021",
+            "edition": "Intensive Care Med 2021;47:1181–1247 (Evans L et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8486643/"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Imaging directed at the source (chest X-ray, ultrasound, CT)",
+        "modalityTarget": "As soon as the likely source is suspected",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Pneumonia, collection, obstruction, perforation.",
+        "clinicalRationale": "SSC: rapidly identify or exclude a source needing emergency source control and act as soon as practical.",
+        "references": [
+          {
+            "title": "Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2021",
+            "edition": "Intensive Care Med 2021;47:1181–1247 (Evans L et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8486643/"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "recognise",
+      "title": "Recognise and start immediately",
+      "timeframe": "Time zero",
+      "actions": [
+        "Sepsis and septic shock are emergencies: begin treatment and resuscitation immediately.",
+        "Screen acutely ill patients with a tool such as NEWS, MEWS or SIRS; do not rely on qSOFA alone.",
+        "Measure lactate; send blood cultures before antibiotics if this does not delay them."
+      ]
+    },
+    {
+      "id": "antibiotics",
+      "title": "Antimicrobials",
+      "timeframe": "Within 1 h if shock or high likelihood of sepsis",
+      "actions": [
+        "Septic shock or high likelihood of sepsis: give antimicrobials immediately, ideally within 1 h of recognition.",
+        "Possible sepsis without shock: rapid assessment for infection vs other causes; if concern persists, antimicrobials within 3 h.",
+        "Choose by likely source and local antibiogram (MOH LRTI, UTI and intra-abdominal infection protocols). Add MRSA cover only if high MRSA risk; two Gram-negative agents only if high MDR risk.",
+        "Give beta-lactams as a prolonged infusion after an initial bolus; dose by PK/PD principles."
+      ],
+      "branches": [
+        {
+          "condition": "High risk of fungal infection",
+          "actions": [
+            "Empiric antifungal therapy (SSC suggests)."
+          ]
+        },
+        {
+          "condition": "Low likelihood of infection and no shock",
+          "actions": [
+            "Defer antimicrobials and monitor closely."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fluids",
+      "title": "Fluid resuscitation",
+      "timeframe": "First 3 h",
+      "actions": [
+        "Sepsis-induced hypoperfusion or septic shock: at least 30 mL/kg IV crystalloid within the first 3 h.",
+        "Balanced crystalloid preferred to 0.9% saline; consider albumin after large crystalloid volumes; avoid starches and gelatin.",
+        "Reassess after each bolus with dynamic measures (passive leg raise, stroke volume), capillary refill and lactate."
+      ]
+    },
+    {
+      "id": "vasopressors",
+      "title": "Vasopressors to MAP 65",
+      "timeframe": "If hypotension persists during or after fluids",
+      "actions": [
+        "Noradrenaline (norepinephrine) first-line; start peripherally (short term, vein at or above the antecubital fossa) rather than waiting for a central line.",
+        "Target MAP 65 mmHg initially. Arterial line as soon as practical."
+      ],
+      "branches": [
+        {
+          "condition": "MAP still inadequate on noradrenaline 0.25–0.5 microgram/kg/min",
+          "actions": [
+            "Add vasopressin rather than escalating noradrenaline."
+          ]
+        },
+        {
+          "condition": "Still inadequate on noradrenaline + vasopressin",
+          "actions": [
+            "Add adrenaline (epinephrine)."
+          ]
+        },
+        {
+          "condition": "Cardiac dysfunction with persistent hypoperfusion despite adequate volume and MAP",
+          "actions": [
+            "Add dobutamine to noradrenaline, or use adrenaline alone."
+          ]
+        },
+        {
+          "condition": "Ongoing vasopressor need (noradrenaline or adrenaline at least 0.25 microgram/kg/min for at least 4 h)",
+          "actions": [
+            "Hydrocortisone 200 mg/day (50 mg IV every 6 h or infusion)."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "source-icu",
+      "title": "Source control and level of care",
+      "timeframe": "As soon as practical",
+      "actions": [
+        "Drain abscesses, debride infected tissue, relieve obstruction; remove infected intravascular devices after new access is established.",
+        "Patients needing ICU: admit within 6 h.",
+        "Hypoxaemic respiratory failure: high-flow nasal oxygen rather than NIV."
+      ]
+    },
+    {
+      "id": "ongoing",
+      "title": "Ongoing care",
+      "timeframe": "After the first 6 h",
+      "actions": [
+        "Reassess daily for antibiotic de-escalation; use the shortest effective course once the source is controlled.",
+        "Start insulin if glucose is 10 mmol/L or more (target 8–10 mmol/L).",
+        "Restrictive transfusion (trigger haemoglobin 70 g/L in most patients).",
+        "Pharmacological VTE prophylaxis (LMWH preferred); stress ulcer prophylaxis if risk factors for GI bleeding.",
+        "Do not give IV vitamin C; no bicarbonate for lactic acidosis unless pH 7.2 or less with AKI stage 2–3."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Sepsis-induced hypoperfusion or septic shock",
+        "patientGroup": "Adults",
+        "genericName": "Balanced crystalloid",
+        "dose": "At least 30 mL/kg",
+        "route": "IV",
+        "frequency": "Boluses, reassessing after each",
+        "duration": "Within the first 3 h",
+        "adjustments": [
+          "Smaller boluses with careful reassessment in heart or kidney failure",
+          "Albumin if large crystalloid volumes needed; no starches or gelatin"
+        ],
+        "monitoring": [
+          "Dynamic measures, capillary refill, lactate, urine output"
+        ],
+        "sourceTitle": "Surviving Sepsis Campaign 2021",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8486643/",
+        "sourceEdition": "SSC 2021",
+        "branch": "Fluid resuscitation",
+        "step": "Crystalloid",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "Sepsis-induced hypoperfusion or septic shock",
+        "patientGroup": "Adults",
+        "genericName": "0.9% sodium chloride",
+        "dose": "At least 30 mL/kg",
+        "route": "IV",
+        "frequency": "Boluses, reassessing after each",
+        "duration": "Within the first 3 h",
+        "adjustments": [
+          "Smaller boluses with careful reassessment in heart or kidney failure",
+          "Albumin if large crystalloid volumes needed; no starches or gelatin"
+        ],
+        "monitoring": [
+          "Dynamic measures, capillary refill, lactate, urine output"
+        ],
+        "sourceTitle": "Surviving Sepsis Campaign 2021",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8486643/",
+        "sourceEdition": "SSC 2021",
+        "branch": "Fluid resuscitation",
+        "step": "Crystalloid",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Balanced crystalloid is unavailable"
+      },
+      {
+        "indication": "Septic shock",
+        "patientGroup": "Adults with MAP below 65 despite fluids",
+        "genericName": "Noradrenaline (norepinephrine)",
+        "dose": "Titrate to MAP 65 mmHg (SSC gives no fixed dose)",
+        "route": "IV; peripheral short term, then central",
+        "frequency": "Continuous infusion",
+        "duration": "Until shock resolves",
+        "adjustments": [
+          "Peripheral only short term, at or above the antecubital fossa"
+        ],
+        "monitoring": [
+          "Arterial BP, perfusion, lactate"
+        ],
+        "sourceTitle": "Surviving Sepsis Campaign 2021",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8486643/",
+        "sourceEdition": "SSC 2021",
+        "branch": "Septic shock — vasopressor",
+        "step": "Vasopressor",
+        "selection": "all"
+      },
+      {
+        "indication": "Septic shock not at target on noradrenaline",
+        "patientGroup": "Adults on noradrenaline 0.25–0.5 microgram/kg/min",
+        "genericName": "Vasopressin",
+        "dose": "Add rather than escalating noradrenaline (SSC gives no fixed dose; follow local protocol)",
+        "route": "IV",
+        "frequency": "Continuous infusion",
+        "duration": "Until shock resolves",
+        "adjustments": [
+          "Third agent if still inadequate: adrenaline"
+        ],
+        "monitoring": [
+          "MAP, perfusion"
+        ],
+        "sourceTitle": "Surviving Sepsis Campaign 2021",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8486643/",
+        "sourceEdition": "SSC 2021",
+        "branch": "Not at target on noradrenaline",
+        "step": "Second vasopressor",
+        "selection": "all"
+      },
+      {
+        "indication": "Septic shock with ongoing vasopressor need",
+        "patientGroup": "Noradrenaline or adrenaline at least 0.25 microgram/kg/min for at least 4 h",
+        "genericName": "Hydrocortisone",
+        "dose": "200 mg/day: 50 mg every 6 h or continuous infusion",
+        "route": "IV",
+        "frequency": "Every 6 h or infusion",
+        "duration": "Until vasopressors are no longer needed (local protocol for taper)",
+        "adjustments": [
+          "Hyperglycaemia"
+        ],
+        "monitoring": [
+          "Glucose"
+        ],
+        "sourceTitle": "Surviving Sepsis Campaign 2021",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8486643/",
+        "sourceEdition": "SSC 2021",
+        "branch": "Ongoing vasopressor need",
+        "step": "Corticosteroid",
+        "selection": "all"
+      }
+    ],
+    "note": "Fluid, vasopressor and steroid doses are as stated in SSC 2021. Empiric antibiotic choice depends on the source: use the Saudi MOH LRTI, UTI and intra-abdominal infection protocols and the local antibiogram.",
+    "branches": [
+      {
+        "label": "Fluid resuscitation",
+        "entryCriteria": "Adult with sepsis-induced hypoperfusion or septic shock"
+      },
+      {
+        "label": "Septic shock — vasopressor",
+        "entryCriteria": "Adult with septic shock and MAP below 65 despite fluids"
+      },
+      {
+        "label": "Not at target on noradrenaline",
+        "entryCriteria": "Adult with septic shock not at target on noradrenaline"
+      },
+      {
+        "label": "Ongoing vasopressor need",
+        "entryCriteria": "Adult with septic shock and an ongoing vasopressor requirement"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Sepsis (Sepsis-3)",
+      "threshold": "Suspected or confirmed infection + acute rise in SOFA score of 2 or more"
+    },
+    {
+      "criterion": "Septic shock",
+      "threshold": "Vasopressor needed for MAP at least 65 mmHg AND lactate above 2 mmol/L despite adequate fluid resuscitation"
+    },
+    {
+      "criterion": "qSOFA (prompt only)",
+      "threshold": "RR 22 or more, altered mentation, SBP 100 or less — not a stand-alone screening tool"
+    }
+  ],
+  "teaching": {
+    "learningObjectives": [
+      "Recognise, investigate and manage sepsis in the emergency department."
+    ],
+    "pitfalls": [
+      "Waiting for cultures or imaging before giving antibiotics in shock.",
+      "Using qSOFA alone to rule sepsis out.",
+      "Delaying vasopressors until a central line is in.",
+      "Giving starch or gelatin.",
+      "Forgetting source control (pus, obstruction, infected line)."
+    ],
+    "keyPoints": [
+      "Antimicrobials within 1 h in septic shock; within 3 h if possible sepsis without shock.",
+      "30 mL/kg crystalloid in the first 3 h for hypoperfusion; balanced crystalloid preferred.",
+      "Noradrenaline first; MAP 65; add vasopressin at 0.25–0.5 microgram/kg/min.",
+      "Find and control the source.",
+      "Hydrocortisone 200 mg/day if vasopressors are still needed."
+    ],
+    "references": [
+      {
+        "title": "Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2021",
+        "edition": "Intensive Care Med 2021;47:1181–1247 (Evans L et al.)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8486643/",
+        "locator": "Recommendations 1–72"
+      },
+      {
+        "title": "The Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3)",
+        "edition": "JAMA 2016;315:801–810 (Singer M et al.)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4968574/"
+      },
+      {
+        "title": "MOH Lower Respiratory Tract Infections Management Protocol",
+        "edition": "Saudi Ministry of Health, 2020–2021",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Lower-Respiratory-Tract-Infections-Management-Protocol.pdf"
+      },
+      {
+        "title": "MOH Urinary Tract Infection Management Protocol",
+        "edition": "Saudi Ministry of Health",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Urinary-Tract-Infection-management-protocol.pdf"
+      },
+      {
+        "title": "MOH Intra-abdominal Infections Treatment Protocol",
+        "edition": "Saudi Ministry of Health",
+        "url": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/Internal-Abdominal-infection-Treatment-Protocol.pdf"
+      },
+      {
+        "title": "SFDA Saudi Drug Information System (registration search)",
+        "edition": "Accessed 11–12 Oct 2026",
+        "url": "https://sdi.sfda.gov.sa/"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Sepsis diagnosis and treatment explained; information about post-sepsis syndrome.",
+      "Complete the antibiotic course as prescribed and return if symptoms recur."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable in the acute phase."
+    ],
+    "mdtReferrals": [
+      "ICU within 6 h if needed.",
+      "Surgery or interventional radiology for source control.",
+      "Infectious diseases or antimicrobial stewardship for complex or resistant infections."
+    ],
+    "dischargeCriteria": [
+      "Infection source controlled, haemodynamically stable off vasopressors, organ function recovering.",
+      "Clear oral antibiotic plan and duration.",
+      "Follow-up arranged for post-sepsis problems (physical, cognitive, emotional)."
+    ],
+    "followUpPlan": "Review within weeks; screen for post-sepsis syndrome; SSC suggests referral to post-critical-illness follow-up where available."
+  }
+}

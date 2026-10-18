@@ -1,0 +1,458 @@
+{
+  "id": "c2c404f2-5f47-4e4d-9ce7-fb32a9c1e104",
+  "title": "Acute Appendicitis",
+  "specialty": "Emergency Medicine and General Surgery",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Urgent Care",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adults with suspected acute appendicitis in the emergency department (paediatric and pregnancy points noted). Verified against the WSES Jerusalem guidelines 2020 update and the Saudi MOH Intra-abdominal Infections Treatment Protocol (antibiotic choice and duration). Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from emergency-2026-10-12-v1-live-approved."
+    ],
+    "unverifiedSections": [
+      "Preoperative prophylaxis agent — local surgical prophylaxis protocol",
+      "Local antibiogram",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "c2c404f2-5f47-4e4d-9ce7-fb32a9c1e104",
+      "8209b351-cbcf-4e02-989d-c8b2b39de38b"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Appendicitis is inflammation of the appendix, usually after luminal obstruction (faecolith/appendicolith or lymphoid hyperplasia). Rising pressure causes venous congestion, ischaemia and bacterial invasion of the wall; untreated, it can become gangrenous and perforate, forming a phlegmon, abscess or generalised peritonitis.",
+    "keyMechanisms": [
+      "Visceral (midgut) pain from appendiceal distension is felt periumbilically; when inflammation reaches the parietal peritoneum the pain localises to the right iliac fossa.",
+      "Uncomplicated appendicitis: inflamed without gangrene, perforation or abscess — may resolve with antibiotics (or even spontaneously) in selected patients.",
+      "Complicated appendicitis: gangrene, perforation, phlegmon or periappendiceal abscess; an appendicolith predicts failure of non-operative treatment.",
+      "Appendiceal neoplasms are found in 3–17% of adults aged 40 or over with complicated appendicitis (WSES)."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Abdominal pain starting centrally and moving to the right iliac fossa.",
+      "Anorexia, nausea, vomiting.",
+      "Fever (more marked with perforation).",
+      "Atypical presentations in older adults, pregnancy (pain may be higher) and children."
+    ],
+    "physicalSigns": [
+      "Right iliac fossa tenderness with guarding and rebound (peritonism).",
+      "Low-grade pyrexia, tachycardia.",
+      "Generalised peritonitis, sepsis or a palpable mass (phlegmon/abscess) in complicated disease."
+    ],
+    "redFlags": [
+      "Generalised peritonitis",
+      "Sepsis or septic shock",
+      "Pregnancy (do not diagnose on symptoms alone; non-operative treatment not advised)",
+      "Age 40 or over with complicated disease — consider underlying neoplasm"
+    ],
+    "precipitants": [
+      "Luminal obstruction: appendicolith (faecolith), lymphoid hyperplasia.",
+      "Rarely tumour (carcinoid, mucinous neoplasm) — especially age 40 or over."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Gynaecological (ectopic pregnancy, ovarian torsion, cyst rupture, PID)",
+      "distinguishingFeatures": "Pregnancy test in all women of reproductive age; pelvic ultrasound."
+    },
+    {
+      "condition": "Mesenteric adenitis / gastroenteritis",
+      "distinguishingFeatures": "Diarrhoea, diffuse pain, no localised peritonism; common in children."
+    },
+    {
+      "condition": "Urinary tract infection or ureteric stone",
+      "distinguishingFeatures": "Urinary symptoms, haematuria, loin pain."
+    },
+    {
+      "condition": "Right-sided diverticulitis, Crohn's disease, caecal tumour",
+      "distinguishingFeatures": "Older age, change in bowel habit; CT."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "White cell count with differential (neutrophils)",
+        "modalityTarget": "All patients",
+        "targetCondition": "Inflammation",
+        "expectedFinding": "Leucocytosis with neutrophilia.",
+        "clinicalRationale": "Part of AIR/Alvarado/AAS scores. In children, WBC 16,000/µL or more with CRP 10 mg/L or more strongly predicts appendicitis (WSES).",
+        "normalValue": "WBC 4–11 × 10⁹/L",
+        "references": [
+          {
+            "title": "Diagnosis and treatment of acute appendicitis: 2020 update of the WSES Jerusalem guidelines",
+            "edition": "World J Emerg Surg 2020;15:27 (Di Saverio S et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7386163/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "C-reactive protein",
+        "modalityTarget": "All patients (always in pregnancy and children)",
+        "targetCondition": "Inflammation; complicated disease",
+        "expectedFinding": "Raised.",
+        "clinicalRationale": "Used in AIR and AAS scores; biomarkers alone are not enough to diagnose in adults.",
+        "normalValue": "Below 5 mg/L",
+        "references": [
+          {
+            "title": "Diagnosis and treatment of acute appendicitis: 2020 update of the WSES Jerusalem guidelines",
+            "edition": "World J Emerg Surg 2020;15:27 (Di Saverio S et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7386163/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Pregnancy test (β-hCG)",
+        "modalityTarget": "All women of reproductive age",
+        "targetCondition": "Pregnancy, ectopic",
+        "expectedFinding": "Positive.",
+        "clinicalRationale": "Changes imaging (ultrasound, then MRI) and management (no non-operative treatment in pregnancy).",
+        "normalValue": "Negative",
+        "references": [
+          {
+            "title": "Diagnosis and treatment of acute appendicitis: 2020 update of the WSES Jerusalem guidelines",
+            "edition": "World J Emerg Surg 2020;15:27 (Di Saverio S et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7386163/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Urinalysis",
+        "modalityTarget": "All patients",
+        "targetCondition": "Urinary mimics",
+        "expectedFinding": "Leucocytes/nitrites (UTI), blood (stone). Mild pyuria can occur with appendicitis.",
+        "clinicalRationale": "Helps exclude alternative diagnoses.",
+        "references": [
+          {
+            "title": "Diagnosis and treatment of acute appendicitis: 2020 update of the WSES Jerusalem guidelines",
+            "edition": "World J Emerg Surg 2020;15:27 (Di Saverio S et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7386163/"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Clinical risk score (AIR or AAS preferred; Alvarado)",
+        "modalityTarget": "At assessment, before imaging",
+        "targetCondition": "Risk stratification",
+        "expectedFinding": "High risk (under 40): AIR 9–12, Alvarado 9–10, AAS 16 or more.",
+        "clinicalRationale": "Low risk: appendicitis can be excluded and imaging reduced. Intermediate: observe and image. High risk under 40: CT may be avoided before laparoscopy. Alvarado should not be used to confirm appendicitis in adults.",
+        "references": [
+          {
+            "title": "Diagnosis and treatment of acute appendicitis: 2020 update of the WSES Jerusalem guidelines",
+            "edition": "World J Emerg Surg 2020;15:27 (Di Saverio S et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7386163/"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Point-of-care / graded-compression ultrasound",
+        "modalityTarget": "First-line imaging when imaging is indicated (adults, children, pregnancy)",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Non-compressible, enlarged appendix; periappendiceal fluid; appendicolith.",
+        "clinicalRationale": "Sensitivity about 76%, specificity 95% (WSES). Combined with clinical scores it reduces CT use.",
+        "references": [
+          {
+            "title": "Diagnosis and treatment of acute appendicitis: 2020 update of the WSES Jerusalem guidelines",
+            "edition": "World J Emerg Surg 2020;15:27 (Di Saverio S et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7386163/"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Contrast-enhanced low-dose CT",
+        "modalityTarget": "Intermediate risk with negative or inconclusive ultrasound (adolescents and young adults); before surgery if non-resolving RIF pain with normal tests",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Appendicitis; complicated features (abscess, perforation); alternative diagnosis.",
+        "clinicalRationale": "Low-dose CT is as accurate as standard-dose with much less radiation (WSES 1.11).",
+        "references": [
+          {
+            "title": "Diagnosis and treatment of acute appendicitis: 2020 update of the WSES Jerusalem guidelines",
+            "edition": "World J Emerg Surg 2020;15:27 (Di Saverio S et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7386163/"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "MRI",
+        "modalityTarget": "Pregnancy after inconclusive ultrasound; second-line in children",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Appendicitis without radiation.",
+        "clinicalRationale": "A negative or inconclusive MRI does not exclude appendicitis in pregnancy if suspicion is high.",
+        "references": [
+          {
+            "title": "Diagnosis and treatment of acute appendicitis: 2020 update of the WSES Jerusalem guidelines",
+            "edition": "World J Emerg Surg 2020;15:27 (Di Saverio S et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7386163/"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "assess",
+      "title": "Assess and risk-stratify",
+      "timeframe": "Arrival",
+      "actions": [
+        "Analgesia (do not withhold for diagnosis); IV fluids if dehydrated; nil by mouth if surgery likely.",
+        "Pregnancy test, FBC, CRP, urinalysis.",
+        "Calculate AIR or AAS score: low risk — consider discharge with safety-netting; intermediate — observe and image; high risk — surgical review."
+      ]
+    },
+    {
+      "id": "image",
+      "title": "Image when indicated",
+      "timeframe": "Within hours",
+      "actions": [
+        "Ultrasound (POCUS by an experienced operator) first.",
+        "Negative or inconclusive ultrasound and still intermediate risk: low-dose contrast CT (adults); MRI in pregnancy.",
+        "High risk and under 40: may go straight to diagnostic ± therapeutic laparoscopy."
+      ]
+    },
+    {
+      "id": "uncomplicated",
+      "title": "Uncomplicated appendicitis",
+      "timeframe": "Within 24 h of admission",
+      "actions": [
+        "Laparoscopic appendectomy on the next available list, within 24 h (do not delay beyond 24 h).",
+        "Single preoperative dose of broad-spectrum antibiotic 0–60 min before incision; NO postoperative antibiotics.",
+        "Antibiotic-first (non-operative) option: discuss with selected patients without an appendicolith — recurrence up to 39% at 5 years; start IV then switch to oral. Not advised in pregnancy."
+      ]
+    },
+    {
+      "id": "complicated",
+      "title": "Complicated appendicitis (gangrene, perforation, peritonitis)",
+      "timeframe": "Urgently — within 8 h in children (WSES); source control within 24 h (MOH)",
+      "actions": [
+        "Start antibiotics in the ED after cultures: ceftriaxone 2 g IV every 24 h + metronidazole 500 mg IV/PO every 8 h (other MOH Table 2 options below).",
+        "Severe infection, septic shock, older or immunocompromised: piperacillin–tazobactam 4.5 g IV every 6 h or meropenem 1 g IV every 8 h (MOH).",
+        "Laparoscopic appendectomy; suction only (no irrigation); no routine drains in adults; routine histopathology.",
+        "Postoperative antibiotics: stop after 3–5 days if source control is adequate (WSES); MOH: 24 h if operated within 12–24 h, 4 days with adequate source control. Switch to oral when eating."
+      ],
+      "branches": [
+        {
+          "condition": "Sepsis or septic shock",
+          "actions": [
+            "Follow the sepsis pathway; antibiotics within the first hour; urgent source control."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "abscess",
+      "title": "Phlegmon or periappendiceal abscess",
+      "timeframe": "Admission",
+      "actions": [
+        "Non-operative management with antibiotics ± percutaneous drainage is reasonable first-line, especially without advanced laparoscopic expertise.",
+        "Laparoscopic surgery is a safe alternative in experienced hands.",
+        "No routine interval appendectomy in under-40s; age 40 or over treated non-operatively: colonoscopy and interval contrast CT (neoplasm risk)."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Complicated appendicitis, community-acquired, mild–moderate",
+        "patientGroup": "Adults",
+        "genericName": "Ceftriaxone + metronidazole",
+        "dose": "Ceftriaxone 2 g; metronidazole 500 mg",
+        "route": "IV (metronidazole IV or PO)",
+        "frequency": "Ceftriaxone every 24 h; metronidazole every 8 h",
+        "duration": "Until source control, then per duration rules (24 h–4 days)",
+        "adjustments": [
+          "Alternatives (MOH Table 2): cefuroxime 1.5 g IV q8h or cefotaxime 2 g IV q8h + metronidazole; single agents ertapenem 1 g IV q24h or piperacillin–tazobactam 3.375 g IV q6h",
+          "Severe beta-lactam allergy: ciprofloxacin 400 mg IV q12h or levofloxacin 750 mg q24h + metronidazole"
+        ],
+        "monitoring": [
+          "Renal function",
+          "Cultures"
+        ],
+        "sourceTitle": "MOH Intra-abdominal Infections Treatment Protocol",
+        "sourceUrl": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/Internal-Abdominal-infection-Treatment-Protocol.pdf",
+        "sourceEdition": "Table 2, community-acquired mild–moderate (includes perforated and abscessed appendix)",
+        "branch": "Complicated appendicitis — mild to moderate, community-acquired",
+        "step": "Antibiotic",
+        "selection": "all"
+      },
+      {
+        "indication": "Severe infection, septic shock, older or immunocompromised",
+        "patientGroup": "Adults",
+        "genericName": "Piperacillin–tazobactam",
+        "dose": "4.5 g",
+        "route": "IV",
+        "frequency": "Every 6 h",
+        "duration": "Until source control; 4 days after adequate control",
+        "adjustments": [
+          "Alternatives: meropenem 1 g IV q8h, imipenem 500 mg IV q6h, or cefepime 2 g IV q8h + metronidazole"
+        ],
+        "monitoring": [
+          "Renal dose adjustment"
+        ],
+        "sourceTitle": "MOH Intra-abdominal Infections Treatment Protocol",
+        "sourceUrl": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/Internal-Abdominal-infection-Treatment-Protocol.pdf",
+        "sourceEdition": "Table 2, severe infection or high risk",
+        "branch": "Complicated appendicitis — severe",
+        "step": "Antibiotic",
+        "selection": "all"
+      },
+      {
+        "indication": "Oral step-down after appendicitis",
+        "patientGroup": "Adults improving and eating",
+        "genericName": "Amoxicillin–clavulanic acid",
+        "dose": "875 mg",
+        "route": "PO",
+        "frequency": "Every 12 h",
+        "duration": "Complete total course",
+        "adjustments": [
+          "Alternatives: moxifloxacin 400 mg q24h; metronidazole 500 mg q8h + cefuroxime 500 mg q12h"
+        ],
+        "monitoring": [
+          "Renal function"
+        ],
+        "sourceTitle": "MOH Intra-abdominal Infections Treatment Protocol",
+        "sourceUrl": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/Internal-Abdominal-infection-Treatment-Protocol.pdf",
+        "sourceEdition": "Step-down oral therapy",
+        "branch": "Oral step-down",
+        "step": "Oral antibiotic",
+        "selection": "all"
+      }
+    ],
+    "note": "Antibiotic doses from the Saudi MOH Intra-abdominal Infections Treatment Protocol; follow the local antibiogram. WSES does not specify the preoperative prophylaxis agent — use the hospital surgical prophylaxis protocol.",
+    "branches": [
+      {
+        "label": "Complicated appendicitis — mild to moderate, community-acquired",
+        "entryCriteria": "Adult with complicated appendicitis acquired in the community, mild to moderate"
+      },
+      {
+        "label": "Complicated appendicitis — severe",
+        "entryCriteria": "Adult with severe infection or septic shock, or an older or immunocompromised adult"
+      },
+      {
+        "label": "Oral step-down",
+        "entryCriteria": "Adult improving and eating"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "High risk, may skip CT if under 40 (WSES)",
+      "threshold": "AIR 9–12, Alvarado 9–10, AAS 16 or more"
+    },
+    {
+      "criterion": "Complicated",
+      "threshold": "Gangrene, perforation, phlegmon, abscess or peritonitis"
+    },
+    {
+      "criterion": "Antibiotic-first candidate",
+      "threshold": "Uncomplicated on imaging; no appendicolith; not pregnant; informed of recurrence risk"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "WSES 2020 vs Saudi MOH IAI protocol — antibiotic duration",
+    "columns": [
+      "WSES 2020",
+      "MOH IAI protocol"
+    ],
+    "rows": [
+      {
+        "parameter": "Uncomplicated, operated",
+        "values": [
+          "Single preoperative dose; no postoperative antibiotics",
+          "Not addressed separately"
+        ]
+      },
+      {
+        "parameter": "Complicated, adequate source control",
+        "values": [
+          "Not longer than 3–5 days (stopping after 24 h appears safe)",
+          "24 h if operated within 12–24 h; otherwise 4 days"
+        ]
+      },
+      {
+        "parameter": "Inadequate source control / bacteraemia",
+        "values": [
+          "Postoperative antibiotics suggested",
+          "5–7 days; 7 days if bacteraemic"
+        ]
+      }
+    ],
+    "note": "Both favour short courses once the source is controlled."
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Recognise, investigate and manage acute appendicitis in the emergency department."
+    ],
+    "pitfalls": [
+      "Withholding analgesia.",
+      "Postoperative antibiotics after uncomplicated appendectomy.",
+      "Antibiotic-only treatment with an appendicolith or in pregnancy.",
+      "Missing a tumour in patients 40 or over treated non-operatively.",
+      "Discharging an intermediate-risk patient without imaging or review."
+    ],
+    "keyPoints": [
+      "Use AIR or AAS score to stratify; Alvarado cannot confirm appendicitis in adults.",
+      "Ultrasound first; low-dose CT if still unsure.",
+      "Laparoscopic appendectomy within 24 h; earlier if complicated.",
+      "One preop antibiotic dose for uncomplicated; 3–5 days or less after source control for complicated.",
+      "Pregnancy test in every woman of reproductive age."
+    ],
+    "references": [
+      {
+        "title": "Diagnosis and treatment of acute appendicitis: 2020 update of the WSES Jerusalem guidelines",
+        "edition": "World J Emerg Surg 2020;15:27 (Di Saverio S et al.)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7386163/",
+        "locator": "Statements/Recommendations 1.1–7.4; Figure 1 adult algorithm"
+      },
+      {
+        "title": "MOH Intra-abdominal Infections Treatment Protocol",
+        "edition": "Saudi Ministry of Health, 1st version 2022",
+        "url": "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/Internal-Abdominal-infection-Treatment-Protocol.pdf",
+        "locator": "Table 2 (community-acquired), duration of therapy, step-down oral therapy"
+      },
+      {
+        "title": "SFDA Saudi Drug Information System (registration search)",
+        "edition": "Accessed 11–12 Oct 2026",
+        "url": "https://sdi.sfda.gov.sa/"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Recurrence risk with antibiotic-only treatment.",
+      "Wound care and return warning signs after surgery."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable in the acute phase."
+    ],
+    "mdtReferrals": [
+      "General surgery for all suspected appendicitis above low risk.",
+      "Interventional radiology for drainable abscess; obstetrics in pregnancy."
+    ],
+    "dischargeCriteria": [
+      "Low-risk score with no peritonism, tolerating oral intake, pain controlled, reliable return advice (non-operated).",
+      "After surgery: eating, mobile, pain controlled on oral analgesia, afebrile.",
+      "Non-operative treatment: clinically improving on oral antibiotics."
+    ],
+    "followUpPlan": "Return immediately if pain worsens, fever or vomiting. Non-operative patients: warn of recurrence. Age 40 or over treated non-operatively: colonoscopy and interval CT. Review histopathology."
+  },
+  "clinicalReviewStatus": "pending"
+}
