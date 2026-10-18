@@ -1,0 +1,363 @@
+{
+  "id": "f69b2347-a086-4db5-b509-1f38c6d2a950",
+  "title": "Palliative Management of End-of-Life Dyspnoea and Pain",
+  "specialty": "Palliative Medicine",
+  "authority": "MOH",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Palliative Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adults at the end of life with breathlessness and/or pain: reversible causes, non-drug measures, oxygen only for hypoxaemia, and opioid/benzodiazepine therapy. Verified against Saudi MOH Protocol-010 (opioid doses) and NICE NG31. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Investigation tiers and added tests were checked against the cited source sections on 15 Oct 2026; additions are pending clinician review.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from authoring-standard-2026-10-15-v2-investigations-live."
+    ],
+    "unverifiedSections": [
+      "Benzodiazepine and SC doses — local formulary",
+      "SFDA registration not checked",
+      "The expanded investigation panel is not clinically approved and remains non-current pending review.",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "f69b2347-a086-4db5-b509-1f38c6d2a950",
+      "0df347a1-2c83-46df-85ee-18872989802b",
+      "307a9690-168f-4421-9249-751544c31570"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "End-of-life breathlessness and pain are distressing symptoms with mixed causes — disease progression, complications (effusion, pulmonary oedema, infection, fracture) and anxiety. Opioids reduce both the perception of breathlessness and pain.",
+    "keyMechanisms": [
+      "Breathlessness arises from increased respiratory drive, mechanical load (effusion, ascites), hypoxaemia and anxiety.",
+      "Opioids reduce respiratory drive and the sensation of breathlessness; benzodiazepines relieve associated anxiety (NICE NG31).",
+      "Oxygen helps only when hypoxaemia is present (NICE NG31 1.5.16).",
+      "Pain may come from tumour, bone, nerves or reversible causes such as urinary retention (NICE NG31 1.5.11)."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Breathlessness at rest, panic, fear of suffocation.",
+      "Pain reported by the person or shown by behaviour (grimacing, guarding, restlessness)."
+    ],
+    "physicalSigns": [
+      "Tachypnoea, accessory muscle use; signs of effusion, pulmonary oedema or infection.",
+      "SpO2 if it would change care; pain behaviours using a validated tool when communication is limited."
+    ],
+    "redFlags": [
+      "Sudden severe breathlessness — consider reversible cause if consistent with goals (pulmonary oedema, effusion)",
+      "Stridor or major haemoptysis",
+      "Uncontrolled symptoms despite titration — specialist palliative care"
+    ],
+    "precipitants": [
+      "Disease progression (lung cancer, COPD, heart failure)",
+      "Effusion, pulmonary oedema, infection",
+      "Anxiety",
+      "Urinary retention, fracture"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Pulmonary oedema",
+      "distinguishingFeatures": "Crackles, orthopnoea; diuretic may relieve."
+    },
+    {
+      "condition": "Pleural effusion",
+      "distinguishingFeatures": "Dull percussion; drainage may relieve if appropriate."
+    },
+    {
+      "condition": "Anxiety/panic",
+      "distinguishingFeatures": "Episodic with fear; responds to calm presence and benzodiazepine."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Pulse oximetry",
+        "modalityTarget": "Only to decide on oxygen",
+        "targetCondition": "Hypoxaemia",
+        "expectedFinding": "Low SpO2 with symptoms.",
+        "clinicalRationale": "Offer oxygen only for known or suspected symptomatic hypoxaemia (NICE NG31 1.5.16).",
+        "normalValue": "SpO2 94% or more (88–92% if chronic hypercapnia)",
+        "references": [
+          {
+            "title": "NICE NG31: Care of dying adults in the last days of life",
+            "edition": "NICE guideline, 2015, Recommendations 1.5.10–1.5.17 (pain and breathlessness)",
+            "url": "https://www.nice.org.uk/guidance/ng31"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Pain assessment (self-report 0–10 or validated behavioural tool)",
+        "modalityTarget": "Each review",
+        "targetCondition": "Pain severity",
+        "expectedFinding": "Moderate–severe score or pain behaviours.",
+        "clinicalRationale": "Match analgesic to severity; behavioural tool if unable to self-report (NICE NG31 1.5.14).",
+        "normalValue": "0/10; no pain behaviours",
+        "references": [
+          {
+            "title": "NICE NG31: Care of dying adults in the last days of life",
+            "edition": "NICE guideline, 2015, Recommendations 1.5.10–1.5.17 (pain and breathlessness)",
+            "url": "https://www.nice.org.uk/guidance/ng31"
+          },
+          {
+            "title": "Cancer Pain Management (MOH Protocol-003)",
+            "edition": "Saudi MOH, General Administration of Pharmaceutical Care, p. 6, Table 3",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-003.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Examination for reversible causes",
+        "modalityTarget": "At presentation",
+        "targetCondition": "Effusion, oedema, retention",
+        "expectedFinding": "Signs of reversible cause.",
+        "clinicalRationale": "Treat if consistent with goals (NICE NG31 1.5.11, 1.5.15).",
+        "normalValue": "No reversible cause found",
+        "references": [
+          {
+            "title": "NICE NG31: Care of dying adults in the last days of life",
+            "edition": "NICE guideline, 2015, Recommendations 1.5.10–1.5.17 (pain and breathlessness)",
+            "url": "https://www.nice.org.uk/guidance/ng31"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Bedside chest ultrasound or chest radiograph",
+        "modalityTarget": "New dyspnoea with a plausible reversible cause and goal-concordant treatment",
+        "targetCondition": "Pleural effusion, pulmonary oedema, infection or pneumothorax",
+        "expectedFinding": "A potentially reversible chest cause of dyspnoea",
+        "clinicalRationale": "Use only when the person wants investigation and the result would lead to a proportionate intervention likely to improve comfort.",
+        "normalValue": "No pleural effusion, pulmonary oedema, focal opacity or pneumothorax",
+        "references": [
+          {
+            "title": "NICE NG31: Care of dying adults in the last days of life",
+            "edition": "NICE NG31, recommendations 1.1.5–1.1.7, 1.4.1–1.4.5 and 1.5.10–1.5.17",
+            "url": "https://www.nice.org.uk/guidance/ng31/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Targeted renal function, calcium or other symptom-directed blood tests",
+        "modalityTarget": "Only when essential to immediate comfort-focused care",
+        "targetCondition": "Medicine accumulation or a reversible biochemical cause",
+        "expectedFinding": "Renal impairment, hypercalcaemia or another biochemical cause that would change symptom treatment",
+        "clinicalRationale": "Avoid routine panels in the last days of life; test only when essential to choose safer symptom treatment or address a reversible cause consistent with the person's goals.",
+        "normalValue": "Results within local adult reference ranges",
+        "references": [
+          {
+            "title": "NICE NG31: Care of dying adults in the last days of life",
+            "edition": "NICE NG31, recommendations 1.1.5–1.1.7, 1.4.1–1.4.5 and 1.5.10–1.5.17",
+            "url": "https://www.nice.org.uk/guidance/ng31/chapter/Recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "reversible",
+      "title": "Reversible causes and non-drug care",
+      "timeframe": "First",
+      "actions": [
+        "Treat reversible causes of breathlessness (pulmonary oedema, effusion) and pain (urinary retention) when consistent with goals (NICE NG31).",
+        "Fan, positioning, calm presence; do not routinely start oxygen (NICE NG31 1.5.16)."
+      ]
+    },
+    {
+      "id": "drug",
+      "title": "Drug treatment",
+      "timeframe": "Start and review daily",
+      "actions": [
+        "Breathlessness: opioid, benzodiazepine or both (NICE NG31 1.5.17).",
+        "Opioid-naïve: morphine 5–10 mg PO every 4 h as needed, or IV 2.5–5 mg every 3–4 h (MOH Protocol-010 p. 9); start low and titrate (NICE NG31 1.5.7).",
+        "Anxiety component: benzodiazepine trial (e.g. lorazepam label dose 1–2 mg/day in divided doses if elderly or debilitated).",
+        "Pain: follow cancer-pain principles — match drug to severity, regular plus PRN, laxative (see Cancer Pain topic).",
+        "More than 2–3 PRN doses in 24 h: syringe pump (NICE NG31 1.5.6)."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Breathlessness or pain, opioid-naïve",
+        "patientGroup": "Adults",
+        "genericName": "Morphine",
+        "dose": "5–10 mg PO (usual 5–15 mg) or 2.5–5 mg IV",
+        "route": "PO / IV",
+        "frequency": "Every 4 h as needed (IV every 3–4 h)",
+        "duration": "Titrate daily",
+        "adjustments": [
+          "MOH dose is stated for pain; NICE NG31 recommends opioid for breathlessness without a dose",
+          "Specialist advice in renal failure"
+        ],
+        "monitoring": [
+          "Symptom score, sedation, respiratory rate, bowels"
+        ],
+        "contraindications": [
+          "Significant respiratory depression",
+          "Acute or severe asthma without monitoring/resuscitation",
+          "MAOI use within 14 days",
+          "Known or suspected GI obstruction including paralytic ileus",
+          "Hypersensitivity"
+        ],
+        "sourceTitle": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf",
+        "sourceEdition": "Saudi MOH, General Administration of Pharmaceutical Care, p. 9 (morphine initial doses)",
+        "branch": "Breathlessness or pain",
+        "step": "Opioid",
+        "selection": "all"
+      },
+      {
+        "indication": "Anxiety with breathlessness (benzodiazepine trial)",
+        "patientGroup": "Adults; elderly/debilitated",
+        "genericName": "Lorazepam",
+        "dose": "1–2 mg/day (elderly/debilitated) to 2–3 mg/day",
+        "route": "PO",
+        "frequency": "In divided doses",
+        "duration": "Trial; review daily",
+        "adjustments": [
+          "Label dose is for anxiety; use in breathlessness is off-label (NICE NG31)"
+        ],
+        "monitoring": [
+          "Sedation, respiratory rate"
+        ],
+        "contraindications": [
+          "Hypersensitivity to benzodiazepines",
+          "Acute narrow-angle glaucoma"
+        ],
+        "sourceTitle": "Lorazepam tablets prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00960fbd-a5da-408b-9867-62982f20906f",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "branch": "Anxiety with breathlessness",
+        "step": "Benzodiazepine",
+        "selection": "all"
+      }
+    ],
+    "note": "Morphine doses from MOH Protocol-010; lorazepam from FDA label (anxiety). NICE NG31 recommends opioids and/or benzodiazepines for breathlessness without doses. Check SFDA registration and controlled-drug rules.",
+    "branches": [
+      {
+        "label": "Breathlessness or pain",
+        "entryCriteria": "Opioid-naïve adult with breathlessness or pain"
+      },
+      {
+        "label": "Anxiety with breathlessness",
+        "entryCriteria": "Adult with anxiety and breathlessness"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Oxygen",
+      "threshold": "Only for symptomatic hypoxaemia"
+    },
+    {
+      "criterion": "Syringe pump",
+      "threshold": "More than 2–3 PRN doses in 24 h"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "End-of-life breathlessness: NICE NG31 vs MOH Protocol-010",
+    "columns": [
+      "NICE NG31",
+      "MOH Protocol-010"
+    ],
+    "rows": [
+      {
+        "parameter": "Oxygen",
+        "values": [
+          "Only if symptomatic hypoxaemia",
+          "Not specified"
+        ]
+      },
+      {
+        "parameter": "Drug",
+        "values": [
+          "Opioid and/or benzodiazepine",
+          "Morphine first-line opioid (pain doses)"
+        ]
+      }
+    ],
+    "note": "Both: start low and titrate."
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Relieve end-of-life breathlessness and pain with reversible-cause review, non-drug measures and titrated opioids."
+    ],
+    "pitfalls": [
+      "Routine oxygen without hypoxaemia.",
+      "Under-treating breathlessness for fear of respiratory depression.",
+      "Missing urinary retention as a cause of pain."
+    ],
+    "keyPoints": [
+      "Look for reversible causes.",
+      "Fan and positioning first.",
+      "Oxygen only for hypoxaemia.",
+      "Opioid ± benzodiazepine for breathlessness.",
+      "Syringe pump if more than 2–3 PRN doses/day."
+    ],
+    "references": [
+      {
+        "title": "Protocols for Palliative Care Patients — End of Life Care (MOH Protocol-010)",
+        "edition": "Saudi MOH, General Administration of Pharmaceutical Care",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-010.pdf",
+        "locator": "p. 9"
+      },
+      {
+        "title": "NICE NG31: Care of dying adults in the last days of life",
+        "edition": "NICE guideline, 2015",
+        "url": "https://www.nice.org.uk/guidance/ng31",
+        "locator": "Recommendations 1.5.6–1.5.17"
+      },
+      {
+        "title": "Cancer Pain Management (MOH Protocol-003)",
+        "edition": "Saudi MOH, General Administration of Pharmaceutical Care",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-003.pdf",
+        "locator": "p. 6"
+      },
+      {
+        "title": "Morphine sulfate tablets prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=07593aa4-f2c4-4d6e-b186-ab2a4ecaa38a",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Lorazepam tablets prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00960fbd-a5da-408b-9867-62982f20906f",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Breathing techniques, fan use, positioning.",
+      "Explain that low-dose opioids relieve breathlessness."
+    ],
+    "lifestyleAndDiet": [
+      "Pacing, positioning, cool airflow."
+    ],
+    "mdtReferrals": [
+      "Specialist palliative care.",
+      "Respiratory/cardiology if a reversible cause needs a procedure."
+    ],
+    "dischargeCriteria": [
+      "Symptoms controlled for the chosen place of care, or safe transfer arranged.",
+      "Patient and family know the plan, the medicines and whom to call."
+    ],
+    "followUpPlan": "Review at least daily and after each dose change; specialist palliative care if symptoms persist or sedation is unwanted."
+  }
+}

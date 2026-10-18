@@ -1,0 +1,549 @@
+{
+  "id": "16dedd72-b517-4389-bab0-8a3ded8cc6ba",
+  "title": "Diabetic Kidney Disease: ACR Screening and Management",
+  "specialty": "Nephrology / Endocrinology / Primary Care",
+  "authority": "SHC",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adults with type 1 or type 2 diabetes: urine ACR and eGFR screening, CKD classification, ACE inhibitor or ARB and SGLT2 inhibitor treatment, blood pressure targets, monitoring after starting treatment, and when to refer to a nephrologist. Checked against the Saudi Diabetes Clinical Practice Guidelines chronic kidney disease section (printed pp. 82–84) and NICE NG203 recommendations 1.1.8–1.1.21, 1.2.1, 1.3.4–1.3.7, 1.5.5, 1.6.1–1.6.21 and Tables 1–2. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 14 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from authoring-standard-2026-10-14-v2-investigations-live."
+    ],
+    "unverifiedSections": [
+      "SDCPG Table 13 (CKD stages) is an image and was not read; classification here follows NICE NG203 Table 1.",
+      "SDCPG expresses ACR in mg/g and mg/mmol; conversions here use 1 mg/mmol ≈ 8.8 mg/g and are approximate, so laboratory units must be checked.",
+      "NICE NG203 recommendations on anaemia, mineral bone disease and conservative care were not reviewed.",
+      "Finerenone (NG203 1.6.10) is named, not summarised, and no dose is given.",
+      "ACE inhibitor, ARB and SGLT2 inhibitor doses were reused from the repository's earlier label-checked hypertension and diabetes topics and were not re-opened on 14 Oct 2026; NICE says titrate to the highest licensed tolerated dose.",
+      "SFDA registration and hospital formulary availability were not independently verified.",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "16dedd72-b517-4389-bab0-8a3ded8cc6ba",
+      "5320f85d-4f01-4d2b-9b15-1d2eef1e8068"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "In Saudi Arabia diabetes is the leading cause of chronic kidney disease; kidney disease in diabetes can be diabetic nephropathy, ischaemic nephropathy or hypertensive nephrosclerosis (SDCPG p. 82). Albuminuria and a falling eGFR together multiply the risk of adverse outcomes, so CKD is classified by GFR and ACR category (NG203 1.2.1). ACE inhibitors and ARBs lower albuminuria and slow progression when ACR is raised, and SGLT2 inhibitors add benefit on progression and cardiovascular events (SDCPG p. 83; NG203 1.6.7, 1.6.9). Atypical features (active urinary sediment, rapidly increasing albuminuria, rapidly falling eGFR, or no retinopathy in type 1 diabetes) suggest another or additional kidney disease and call for nephrology review (SDCPG p. 83).",
+    "keyMechanisms": [
+      "In Saudi Arabia diabetes is the leading cause of chronic kidney disease; kidney disease in diabetes can be diabetic nephropathy, ischaemic nephropathy or hypertensive nephrosclerosis (SDCPG p. 82).",
+      "Albuminuria and a falling eGFR together multiply the risk of adverse outcomes, so CKD is classified by GFR and ACR category (NG203 1.2.1).",
+      "ACE inhibitors and ARBs lower albuminuria and slow progression when ACR is raised, and SGLT2 inhibitors add benefit on progression and cardiovascular events (SDCPG p. 83; NG203 1.6.7, 1.6.9).",
+      "Atypical features (active urinary sediment, rapidly increasing albuminuria, rapidly falling eGFR, or no retinopathy in type 1 diabetes) suggest another or additional kidney disease and call for nephrology review (SDCPG p. 83)."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Usually none until advanced; detection depends on annual testing (SDCPG p. 82).",
+      "Foamy urine, leg swelling or reduced urine output in advanced disease.",
+      "Symptoms of uraemia or fluid overload when eGFR is very low."
+    ],
+    "physicalSigns": [
+      "Blood pressure above the individual target (NG203 1.6.1–1.6.2).",
+      "Oedema and signs of fluid overload.",
+      "Retinopathy, which in type 1 diabetes supports a diabetic cause (SDCPG p. 83)."
+    ],
+    "redFlags": [
+      "Rapid loss of kidney function, or a sustained fall in eGFR of 25% or more with a change in category within 12 months, or 15 mL/min/1.73 m² or more per year: refer (NG203 1.5.5; SDCPG p. 83).",
+      "Active urinary sediment (red or white cells or casts), nephrotic syndrome, or an ACR rising rapidly: consider nephrology and possible biopsy (SDCPG p. 83).",
+      "Potassium 6.0 mmol/L or more on an ACE inhibitor or ARB after other hyperkalaemic drugs are stopped: stop the ACE inhibitor or ARB (NG203 1.6.18).",
+      "eGFR below 30 mL/min/1.73 m²: refer to a nephrologist for evaluation for renal replacement treatment (SDCPG p. 83)."
+    ],
+    "precipitants": [
+      "Poor glucose and blood pressure control (SDCPG p. 83).",
+      "Nephrotoxic drugs: NSAIDs, aminoglycosides, contrast media (SDCPG p. 83; NG203 1.3.10).",
+      "Previous acute kidney injury, smoking, cardiovascular disease and urinary outflow obstruction (NG203 1.3.9)."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Diabetic nephropathy",
+      "distinguishingFeatures": "Persistent albuminuria with retinopathy, gradual eGFR decline, bland urine sediment (SDCPG pp. 82–83)."
+    },
+    {
+      "condition": "Other or additional kidney disease",
+      "distinguishingFeatures": "Active sediment, nephrotic syndrome, rapidly rising ACR, rapidly falling eGFR, or no retinopathy in type 1 diabetes; consider nephrology and biopsy (SDCPG p. 83)."
+    },
+    {
+      "condition": "Hypertensive or ischaemic nephrosclerosis",
+      "distinguishingFeatures": "Hypertension or renovascular disease with little albuminuria; suspected renal artery stenosis needs referral (SDCPG p. 82; NG203 1.5.5)."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Spot urine albumin:creatinine ratio (ACR) and eGFR (CKD-EPI)",
+        "modalityTarget": "Every adult with diabetes at diagnosis of type 2, then at least annually",
+        "targetCondition": "Diabetic kidney disease",
+        "expectedFinding": "ACR 3 mg/mmol or more confirmed on repeat is clinically important proteinuria; eGFR below 60 confirmed within 2 weeks indicates CKD (NG203 1.1.8, 1.1.13).",
+        "clinicalRationale": "Use ACR, not protein:creatinine, for initial detection; confirm values of 3–70 mg/mmol on an early morning sample (NG203 1.1.12). Reagent strips only if they report ACR (NG203 1.1.11).",
+        "normalValue": "ACR below 3 mg/mmol (30 mg/g); eGFR 90 mL/min/1.73 m² or more",
+        "references": [
+          {
+            "title": "NICE NG203: Chronic kidney disease: assessment and management",
+            "edition": "NICE NG203, Recommendations 1.1.8, 1.1.11–1.1.14; SDCPG p. 82",
+            "url": "https://www.nice.org.uk/guidance/ng203"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Classification by GFR and ACR category",
+        "modalityTarget": "Adult with confirmed CKD",
+        "targetCondition": "Risk of adverse outcomes",
+        "expectedFinding": "Higher ACR and lower GFR categories multiply risk and set monitoring frequency (NG203 1.2.1, Tables 1–2).",
+        "clinicalRationale": "Minimum eGFR checks per year: for example 1 for G3a with A1–A2 and 2 for G3a with A3, 3 for G4 with A3, 4 or more for G5; tailor to cause and progression (NG203 Table 2).",
+        "normalValue": "G1–G2 with ACR below 3 mg/mmol: no CKD without other markers of damage",
+        "references": [
+          {
+            "title": "NICE NG203: Chronic kidney disease: assessment and management",
+            "edition": "NICE NG203, Recommendation 1.2.1 and Tables 1–2",
+            "url": "https://www.nice.org.uk/guidance/ng203"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Kidney Failure Risk Equation (4-variable)",
+        "modalityTarget": "Adult with CKD",
+        "targetCondition": "Risk of needing renal replacement therapy",
+        "expectedFinding": "5-year risk above 5% is a referral criterion (NG203 1.5.5).",
+        "clinicalRationale": "Give people their 5-year risk and document the discussion (NG203 1.5.1–1.5.4).",
+        "normalValue": "5-year risk of 5% or less",
+        "references": [
+          {
+            "title": "NICE NG203: Chronic kidney disease: assessment and management",
+            "edition": "NICE NG203, Recommendations 1.5.1–1.5.5",
+            "url": "https://www.nice.org.uk/guidance/ng203"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Urine reagent strip for haematuria",
+        "modalityTarget": "Reagent strip on a fresh urine sample; do not confirm with urine microscopy",
+        "targetCondition": "Haematuria pointing to a non-diabetic cause of CKD or urinary tract disease",
+        "expectedFinding": "1+ or higher on the strip; 2 of 3 positive strips confirm persistent invisible haematuria",
+        "clinicalRationale": "Evaluate a result of 1+ or higher. Persistent invisible haematuria, with or without proteinuria, prompts investigation for urinary tract malignancy in the appropriate age groups and a renal ultrasound.",
+        "normalValue": "Negative (below 1+)",
+        "references": [
+          {
+            "title": "NICE NG203: Chronic kidney disease: assessment and management",
+            "edition": "NICE NG203, Recommendations 1.1.16–1.1.19 and 1.2.5",
+            "url": "https://www.nice.org.uk/guidance/ng203"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Renal ultrasound",
+        "modalityTarget": "Ultrasound of both kidneys and the urinary tract",
+        "targetCondition": "Obstruction, structural disease or polycystic kidneys as a cause of CKD",
+        "expectedFinding": "Offer if CKD is progressing fast, haematuria is visible or persistent, obstructive symptoms are present, there is a family history of polycystic kidney disease and age is over 20, GFR is below 30 mL/min/1.73 m², or a nephrologist plans a biopsy",
+        "clinicalRationale": "Find treatable causes such as obstruction. Explain the implications of an abnormal result to people with a family history of hereditary kidney disease before scanning.",
+        "normalValue": "Two kidneys of normal size, no hydronephrosis, stones or cysts (typical adult finding)",
+        "references": [
+          {
+            "title": "NICE NG203: Chronic kidney disease: assessment and management",
+            "edition": "NICE NG203, Recommendations 1.2.5–1.2.6",
+            "url": "https://www.nice.org.uk/guidance/ng203"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Serum potassium and eGFR after starting an ACE inhibitor or ARB",
+        "modalityTarget": "Adult starting or increasing a renin–angiotensin antagonist",
+        "targetCondition": "Hyperkalaemia and unsafe creatinine rise",
+        "expectedFinding": "eGFR fall of 25% or more or creatinine rise of 30% or more: investigate other causes such as volume depletion or NSAIDs; potassium 6.0 mmol/L or more: stop (NG203 1.6.18, 1.6.21).",
+        "clinicalRationale": "Measure before starting, 1–2 weeks after, and after each dose increase; do not change the dose if the eGFR fall is under 25% or creatinine rise under 30% (NG203 1.6.14, 1.6.19–1.6.20).",
+        "normalValue": "Potassium 3.5–5.0 mmol/L; eGFR fall below 25%; creatinine rise below 30%",
+        "references": [
+          {
+            "title": "NICE NG203: Chronic kidney disease: assessment and management",
+            "edition": "NICE NG203, Recommendations 1.6.14–1.6.21; SDCPG p. 83",
+            "url": "https://www.nice.org.uk/guidance/ng203"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Clinic blood pressure",
+        "modalityTarget": "Adult with diabetes and CKD",
+        "targetCondition": "Uncontrolled hypertension speeding progression",
+        "expectedFinding": "Above the individual target (NICE 130/80 or 140/90 by ACR); SDCPG asks for optimised control (NG203 1.6.1–1.6.2).",
+        "clinicalRationale": "Referral if above target despite at least 4 antihypertensive medicines at therapeutic doses (NG203 1.5.5).",
+        "normalValue": "Below 140/90 mmHg; below 130/80 mmHg if ACR is 70 mg/mmol or more",
+        "references": [
+          {
+            "title": "NICE NG203: Chronic kidney disease: assessment and management",
+            "edition": "NICE NG203, Recommendations 1.6.1–1.6.2 and 1.5.5",
+            "url": "https://www.nice.org.uk/guidance/ng203"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Haemoglobin",
+        "modalityTarget": "Venous full blood count",
+        "targetCondition": "Anaemia of CKD or another cause of anaemia",
+        "expectedFinding": "110 g/L or less, or symptoms such as tiredness, breathlessness or palpitations",
+        "clinicalRationale": "Investigate and manage anaemia at 110 g/L or less. With eGFR above 60 look for other causes; at 30–60 judge how far to investigate; below 30 CKD is the usual cause. Do not use transferrin saturation or ferritin alone to judge iron status in CKD anaemia.",
+        "normalValue": "Typical adult range about 130–170 g/L (men) and 120–150 g/L (women); local ranges apply",
+        "references": [
+          {
+            "title": "NICE NG203: Chronic kidney disease: assessment and management",
+            "edition": "NICE NG203, Recommendations 1.7.1–1.7.4",
+            "url": "https://www.nice.org.uk/guidance/ng203"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "screen",
+      "title": "Screen",
+      "timeframe": "At diagnosis of type 2 diabetes and at least annually",
+      "actions": [
+        "Measure spot urine ACR and eGFR (CKD-EPI) in all type 2 diabetes, in type 1 diabetes of more than 5 years, and in any diabetes with hypertension (SDCPG p. 82).",
+        "Send an early morning ACR if the first result is 3–70 mg/mmol; repeat eGFR within 2 weeks if below 60 (NG203 1.1.8, 1.1.12)."
+      ]
+    },
+    {
+      "id": "classify",
+      "title": "Classify and set monitoring",
+      "timeframe": "When CKD is confirmed",
+      "actions": [
+        "Classify by GFR and ACR category and agree the monitoring frequency with the person (NG203 1.2.1, 1.3.1, 1.3.4).",
+        "Identify the rate of progression with at least 3 eGFR values over at least 90 days; accelerated progression is a fall of 25% or more with a category change within 12 months, or 15 mL/min/1.73 m² per year (NG203 1.3.5–1.3.6)."
+      ]
+    },
+    {
+      "id": "treat",
+      "title": "Treat",
+      "timeframe": "As soon as ACR is 3 mg/mmol or more",
+      "actions": [
+        "Optimise glucose and blood pressure; avoid nephrotoxic drugs such as NSAIDs, aminoglycosides and contrast media (SDCPG p. 83; NG203 1.3.10).",
+        "Offer an ACE inhibitor or ARB titrated to the highest licensed tolerated dose; do not combine them (NG203 1.6.7, 1.6.12).",
+        "Add an SGLT2 inhibitor in type 2 diabetes if eGFR allows; add a GLP-1 receptor agonist with proven cardiovascular benefit if an SGLT2 inhibitor is not tolerated or eGFR is below 30 (NG203 1.6.9; SDCPG p. 83).",
+        "Protein intake 0.8 g/kg a day in non-dialysis CKD (SDCPG p. 83)."
+      ]
+    },
+    {
+      "id": "monitor",
+      "title": "Monitor the ACE inhibitor or ARB",
+      "timeframe": "Before, 1–2 weeks after and after each dose increase",
+      "actions": [
+        "Measure potassium and eGFR at those points (NG203 1.6.14).",
+        "Do not routinely start if potassium is above 5.0 mmol/L (NG203 1.6.15).",
+        "Stop if potassium reaches 6.0 mmol/L or more with other causes removed; if eGFR falls 25% or more or creatinine rises 30% or more, look for other causes (NG203 1.6.18, 1.6.21)."
+      ]
+    },
+    {
+      "id": "metformin",
+      "title": "Metformin and eGFR",
+      "timeframe": "At each eGFR result",
+      "actions": [
+        "Contraindicated at eGFR below 30 mL/min/1.73 m²; do not start below 45 and reassess benefit and risk at that level (SDCPG p. 84).",
+        "Stop temporarily at or before iodinated contrast imaging when eGFR is 30–60 (SDCPG p. 84)."
+      ]
+    },
+    {
+      "id": "refer",
+      "title": "Refer",
+      "timeframe": "When any threshold is met",
+      "actions": [
+        "Use the NICE and SDCPG referral criteria in the criteria table (NG203 1.5.5; SDCPG pp. 83–84).",
+        "Discuss by letter, call or virtual meeting if there are concerns but referral is not needed (NG203 1.5.7)."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Diabetes with CKD and ACR 3 mg/mmol or more, titrated to the highest licensed tolerated dose (NICE NG203 1.6.7)",
+        "patientGroup": "Adults",
+        "genericName": "Ramipril",
+        "dose": "2.5 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term",
+        "adjustments": [
+          "Usual range 2.5–20 mg daily (label)",
+          "Not in pregnancy (boxed warning)"
+        ],
+        "monitoring": [
+          "Potassium and creatinine before and after starting"
+        ],
+        "contraindications": [
+          "ACE-inhibitor angioedema or hereditary/idiopathic angioedema",
+          "Hypersensitivity to ACE inhibitors",
+          "Pregnancy (fetal toxicity — boxed warning)"
+        ],
+        "sourceTitle": "Ramipril prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01da05d8-e72e-4208-bf92-a5cd929f15ab",
+        "sourceEdition": "NICE NG203 Recommendations 1.6.4, 1.6.7 and 1.6.12–1.6.21 (indication and monitoring); starting dose from the repository's earlier label-checked topic, Section 2 (Dosage and Administration)",
+        "branch": "Diabetes with CKD — renin–angiotensin blockade",
+        "step": "ACE inhibitor or ARB",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "Diabetes with CKD and ACR 3 mg/mmol or more when an ACE inhibitor is not tolerated (NICE NG203 1.6.4, 1.6.7)",
+        "patientGroup": "Adults",
+        "genericName": "Losartan",
+        "dose": "50 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term",
+        "adjustments": [
+          "Not with an ACE inhibitor (NICE 1.4.34)",
+          "Not in pregnancy (boxed warning)"
+        ],
+        "monitoring": [
+          "Potassium and creatinine"
+        ],
+        "contraindications": [
+          "Hypersensitivity",
+          "With aliskiren in diabetes",
+          "Pregnancy (boxed warning)"
+        ],
+        "sourceTitle": "Losartan potassium prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=021cd76a-b093-4704-8410-5e7d01e20a54",
+        "sourceEdition": "NICE NG203 Recommendations 1.6.4, 1.6.7 and 1.6.12–1.6.21 (indication and monitoring); starting dose from the repository's earlier label-checked topic, Section 2 (Dosage and Administration)",
+        "branch": "Diabetes with CKD — renin–angiotensin blockade",
+        "step": "ACE inhibitor or ARB",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "ACE inhibitor not tolerated"
+      },
+      {
+        "indication": "Add-on to optimised ACE inhibitor or ARB in CKD with type 2 diabetes and eGFR 20 mL/min/1.73 m² or more (NICE NG203 1.6.9; SDCPG eGFR above 30 and urine albumin above 30 mg/g)",
+        "patientGroup": "Adults",
+        "genericName": "Dapagliflozin",
+        "dose": "10 mg (5 mg start for glycaemic control)",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term",
+        "adjustments": [
+          "Not recommended for glycaemic control if eGFR below 45 (label)",
+          "Withhold 3 days before surgery"
+        ],
+        "monitoring": [
+          "eGFR, volume status"
+        ],
+        "contraindications": [
+          "Serious hypersensitivity to dapagliflozin"
+        ],
+        "sourceTitle": "Dapagliflozin (Farxiga) prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01f90c94-71cb-4a1f-81ff-8004b850529b",
+        "sourceEdition": "NICE NG203 Recommendation 1.6.9 and TA1075; SDCPG pp. 83 (indication); dose from the repository's earlier type 2 diabetes topic, FDA label Section 2 (Dosage and Administration)",
+        "branch": "Type 2 diabetes with CKD — SGLT2 inhibitor add-on",
+        "step": "SGLT2 inhibitor",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "Alternative SGLT2 inhibitor add-on in CKD (NICE NG203 1.6.9 and TA942; SDCPG p. 83)",
+        "patientGroup": "Adults",
+        "genericName": "Empagliflozin",
+        "dose": "10 mg",
+        "route": "PO",
+        "frequency": "Once daily in the morning (25 mg for extra glycaemic control)",
+        "duration": "Long term",
+        "adjustments": [
+          "Not for glycaemic control if eGFR below 30 (label)",
+          "Sick-day rules: pause in acute illness; ketoacidosis risk"
+        ],
+        "monitoring": [
+          "eGFR, volume status, genital infection"
+        ],
+        "contraindications": [
+          "Dialysis",
+          "Hypersensitivity"
+        ],
+        "sourceTitle": "Empagliflozin (Jardiance) prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1782b947-4a72-4feb-a488-1469d9af82bd",
+        "sourceEdition": "NICE NG203 Recommendation 1.6.9 and TA942; SDCPG p. 83 (indication); dose from the repository's earlier type 2 diabetes topic, FDA label Section 2 (Dosage and Administration)",
+        "branch": "Type 2 diabetes with CKD — SGLT2 inhibitor add-on",
+        "step": "SGLT2 inhibitor",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Chosen instead of dapagliflozin"
+      }
+    ],
+    "note": "NICE NG203 recommends titrating the ACE inhibitor or ARB to the highest licensed dose the person can tolerate and gives no doses; starting doses are from the repository's earlier label-checked topics. Never combine an ACE inhibitor with an ARB (NG203 1.6.12). Finerenone is a NICE technology appraisal option and is not summarised here. SFDA registration was not verified. Check hospital formulary.",
+    "branches": [
+      {
+        "label": "Diabetes with CKD — renin–angiotensin blockade",
+        "entryCriteria": "Diabetes with CKD and ACR 3 mg/mmol or more"
+      },
+      {
+        "label": "Type 2 diabetes with CKD — SGLT2 inhibitor add-on",
+        "entryCriteria": "Type 2 diabetes with CKD on an optimised ACE inhibitor or ARB"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Screening",
+      "threshold": "At least annually, urine ACR and eGFR (CKD-EPI) in all type 2 diabetes, in type 1 diabetes of more than 5 years, and in any diabetes with hypertension; at diagnosis of type 2 diabetes (SDCPG p. 82); NICE: test everyone with diabetes (NG203 1.1.14, 1.1.21)"
+    },
+    {
+      "criterion": "CKD diagnosis",
+      "threshold": "SDCPG: eGFR below 60 mL/min/1.73 m² and/or ACR 2.0 mg/mmol or more on at least two of three samples over 3 months; NICE: confirmed ACR 3 mg/mmol or more is clinically important proteinuria (SDCPG p. 83; NG203 1.1.13)"
+    },
+    {
+      "criterion": "Confirm the first result",
+      "threshold": "ACR 3–70 mg/mmol: repeat on an early morning sample; no repeat if 70 mg/mmol or more; confirm eGFR below 60 within 2 weeks (NG203 1.1.8, 1.1.12)"
+    },
+    {
+      "criterion": "Offer ACE inhibitor or ARB",
+      "threshold": "Diabetes and CKD with ACR 3 mg/mmol or more, titrated to the highest licensed tolerated dose (NG203 1.6.7); SDCPG: ACR 30–299 mg/g modestly raised, strongly recommended if ACR 300 mg/g or more or eGFR below 60 (SDCPG p. 83)"
+    },
+    {
+      "criterion": "SGLT2 inhibitor",
+      "threshold": "NICE: add-on to optimised ACE inhibitor or ARB with eGFR 20–44, or 45–90 with ACR 22.6 mg/mmol or more or type 2 diabetes; SDCPG: eGFR above 30 and albumin above 30 mg/g (NG203 1.6.9; SDCPG p. 83)"
+    },
+    {
+      "criterion": "Blood pressure target (NICE)",
+      "threshold": "ACR under 70 mg/mmol: clinic below 140/90 mmHg (systolic 120–139); ACR 70 mg/mmol or more: below 130/80 mmHg (systolic 120–129) (NG203 1.6.1–1.6.2)"
+    },
+    {
+      "criterion": "Refer to a nephrologist",
+      "threshold": "ACR 70 mg/mmol or more (unless caused by diabetes and already treated); ACR over 30 mg/mmol with haematuria; sustained eGFR fall; 4 drugs without BP control; 5-year kidney failure risk over 5% (NG203 1.5.5); SDCPG also eGFR below 30 or ACR persistently over 60 mg/mmol (p. 83–84)"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "Saudi Diabetes Clinical Practice Guidelines versus NICE NG203",
+    "columns": [
+      "SDCPG (Saudi)",
+      "NICE NG203"
+    ],
+    "rows": [
+      {
+        "parameter": "CKD diagnosis by ACR",
+        "values": [
+          "ACR 2.0 mg/mmol or more on 2 of 3 samples in 3 months, or eGFR below 60 (p. 83)",
+          "Confirmed ACR 3 mg/mmol or more (1.1.13)"
+        ]
+      },
+      {
+        "parameter": "ACE inhibitor or ARB",
+        "values": [
+          "Modestly raised ACR 30–299 mg/g; strongly if 300 mg/g or more or eGFR below 60; not for normotensive normal ACR (p. 83)",
+          "Diabetes and ACR 3 mg/mmol or more, to highest tolerated dose (1.6.7)"
+        ]
+      },
+      {
+        "parameter": "SGLT2 inhibitor",
+        "values": [
+          "eGFR above 30 and albumin above 30 mg/g (p. 83)",
+          "eGFR 20–44, or 45–90 with ACR 22.6 mg/mmol or more or type 2 diabetes (1.6.9)"
+        ]
+      },
+      {
+        "parameter": "Nephrology referral",
+        "values": [
+          "ACR persistently above 60 mg/mmol; eGFR below 30; uncertain cause; rapid decline; BP not at target (pp. 83–84)",
+          "ACR 70 mg/mmol or more; 5-year risk above 5%; sustained eGFR fall; 4 drugs without BP control (1.5.5)"
+        ]
+      }
+    ],
+    "note": "Units differ: 3 mg/mmol is about 30 mg/g, so the two ACR thresholds for CKD (2.0 and 3 mg/mmol) are close but not identical. Check the laboratory's reporting units before applying a threshold."
+  },
+  "teaching": {
+    "scope": "Adults with type 1 or type 2 diabetes: urine ACR and eGFR screening, CKD classification, ACE inhibitor or ARB and SGLT2 inhibitor treatment, blood pressure targets, monitoring after starting treatment, and when to refer to a nephrologist. Checked against the Saudi Diabetes Clinical Practice Guidelines chronic kidney disease section (printed pp. 82–84) and NICE NG203 recommendations 1.1.8–1.1.21, 1.2.1, 1.3.4–1.3.7, 1.5.5, 1.6.1–1.6.21 and Tables 1–2.",
+    "learningObjectives": [
+      "Screen for and classify diabetic kidney disease using ACR and eGFR.",
+      "Start and monitor an ACE inhibitor or ARB and an SGLT2 inhibitor, and recognise referral triggers."
+    ],
+    "pitfalls": [
+      "Relying on dipstick protein instead of ACR.",
+      "Stopping an ACE inhibitor for an eGFR fall under 25% or creatinine rise under 30%.",
+      "Combining an ACE inhibitor and an ARB.",
+      "Missing atypical features that need nephrology review."
+    ],
+    "keyPoints": [
+      "Annual ACR and eGFR in everyone with type 2 diabetes.",
+      "ACR 3 mg/mmol or more in diabetes: ACE inhibitor or ARB at the highest tolerated dose.",
+      "Check potassium and eGFR 1–2 weeks after each change.",
+      "eGFR below 30: metformin contraindicated and nephrology referral."
+    ],
+    "references": [
+      {
+        "title": "Saudi Diabetes Clinical Practice Guidelines (Saudi National Diabetes Center / Saudi Health Council)",
+        "edition": "Saudi Diabetes Clinical Practice Guidelines",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Saudi-Diabetes-Clinical-Practice-Guidelines.pdf",
+        "locator": "Chronic kidney disease section, printed pp. 82–84"
+      },
+      {
+        "title": "NICE NG203: Chronic kidney disease: assessment and management",
+        "edition": "NICE NG203",
+        "url": "https://www.nice.org.uk/guidance/ng203",
+        "locator": "Recommendations 1.1.8–1.1.21, 1.2.1, 1.3.4–1.3.7, 1.5.5, 1.6.1–1.6.21; Tables 1–2"
+      },
+      {
+        "title": "Ramipril prescribing information (US FDA label, DailyMed)",
+        "edition": "NICE NG203 Recommendations 1.6.4, 1.6.7 and 1.6.12–1.6.21 (indication and monitoring); starting dose from the repository's earlier label-checked topic, Section 2 (Dosage and Administration)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01da05d8-e72e-4208-bf92-a5cd929f15ab",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Losartan potassium prescribing information (US FDA label, DailyMed)",
+        "edition": "NICE NG203 Recommendations 1.6.4, 1.6.7 and 1.6.12–1.6.21 (indication and monitoring); starting dose from the repository's earlier label-checked topic, Section 2 (Dosage and Administration)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=021cd76a-b093-4704-8410-5e7d01e20a54",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Dapagliflozin (Farxiga) prescribing information (US FDA label, DailyMed)",
+        "edition": "NICE NG203 Recommendation 1.6.9 and TA1075; SDCPG pp. 83 (indication); dose from the repository's earlier type 2 diabetes topic, FDA label Section 2 (Dosage and Administration)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01f90c94-71cb-4a1f-81ff-8004b850529b",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Empagliflozin (Jardiance) prescribing information (US FDA label, DailyMed)",
+        "edition": "NICE NG203 Recommendation 1.6.9 and TA942; SDCPG p. 83 (indication); dose from the repository's earlier type 2 diabetes topic, FDA label Section 2 (Dosage and Administration)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1782b947-4a72-4feb-a488-1469d9af82bd",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain that diabetes is the commonest cause of kidney disease in Saudi Arabia and that early treatment slows it (SDCPG p. 82).",
+      "Explain why potassium and kidney blood tests are needed after starting the tablets (NG203 1.6.13).",
+      "Share the 5-year risk of needing kidney replacement treatment and document the discussion (NG203 1.5.1–1.5.4)."
+    ],
+    "lifestyleAndDiet": [
+      "Control glucose and blood pressure and stop smoking (SDCPG p. 83; NG203 1.3.9).",
+      "Avoid NSAIDs, aminoglycosides and unnecessary contrast (SDCPG p. 83).",
+      "Protein 0.8 g/kg a day in non-dialysis CKD (SDCPG p. 83)."
+    ],
+    "mdtReferrals": [
+      "Nephrologist for the referral criteria above (NG203 1.5.5; SDCPG pp. 83–84).",
+      "Dietitian for protein and potassium advice.",
+      "Ophthalmology for retinopathy screening, which supports the diabetic cause (SDCPG p. 83)."
+    ],
+    "dischargeCriteria": [
+      "ACR, eGFR and category documented with a monitoring schedule.",
+      "ACE inhibitor or ARB started with a blood test booked at 1–2 weeks (NG203 1.6.14).",
+      "Referral made or care plan agreed if a referral threshold is met (NG203 1.5.9)."
+    ],
+    "followUpPlan": "Monitor eGFR at the minimum frequency set by the GFR and ACR category and tailor to progression and treatment changes; check potassium and eGFR 1–2 weeks after each renin–angiotensin dose change (NG203 1.3.4, 1.6.14, Table 2)."
+  }
+}

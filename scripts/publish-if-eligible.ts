@@ -4,7 +4,7 @@
  * Usage: npx tsx scripts/publish-if-eligible.ts <guideline_id>:<version> [...]
  * Env:   NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SECRET_KEY (never printed), optional MARIFA_PUBLISHER_ID.
  *
- * For each version that scores >= 80 on lib/clinical-authoring-audit.ts this inserts a NEW
+ * For each version that scores >= 80 AND has a valid medicine pathway (lib/medication-pathway.ts) on lib/clinical-authoring-audit.ts this inserts a NEW
  * `<version>-live` row (status published, is_current true), un-flags the previous current row and
  * sets the guideline status to published. Nothing is edited in place and history is kept.
  * clinicalReviewStatus stays "pending", so the page keeps its unreviewed notice; approved_by records
@@ -42,8 +42,9 @@ for (const target of targets) {
   const source = rows[0];
   if (source.status !== "under_review") { console.log(`SKIP ${target}: status is ${source.status}, expected under_review`); continue; }
   const audit = auditTopicContent(source.content);
-  if (audit.score < CLINICAL_DIRECTORY_MINIMUM_SCORE) {
-    console.log(`DRAFT ${target}: score ${audit.score}% (< ${CLINICAL_DIRECTORY_MINIMUM_SCORE}%) — left under review. First failures: ${audit.failures.slice(0, 3).join(" | ")}`);
+  if (!audit.publishable) {
+    const reason = audit.score < CLINICAL_DIRECTORY_MINIMUM_SCORE ? `score ${audit.score}% (< ${CLINICAL_DIRECTORY_MINIMUM_SCORE}%)` : `score ${audit.score}% but the medicine plan is not a valid pathway`;
+    console.log(`DRAFT ${target}: ${reason} — left under review. First failures: ${audit.failures.slice(0, 3).join(" | ")}`);
     continue;
   }
   const liveVersion = `${version}-live`;

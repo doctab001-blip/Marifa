@@ -1,0 +1,354 @@
+{
+  "id": "35a93964-65b9-44c6-821d-1aaaa76947a1",
+  "title": "Vitamin D Deficiency: Testing Indications and Treatment",
+  "specialty": "Endocrinology / Primary Care",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Keep Well",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adult with suspected vitamin D deficiency: who to test, 25-hydroxyvitamin D (25(OH)D) thresholds, loading and maintenance colecalciferol, calcium advice, safety and monitoring, using the Royal Osteoporosis Society guideline. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 2026-10-18.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from authoring-standard-2026-10-18-tier4a-v1-live."
+    ],
+    "unverifiedSections": [
+      "Only the Royal Osteoporosis Society guideline (2018, reviewed February 2020; review date December 2021 has passed) was opened; its scope excludes severe or end-stage chronic kidney disease (stages 4 to 5).",
+      "No hypercalcaemia, hyperparathyroidism or sarcoidosis list of formal contraindications is given; they are discussed under toxicity and specialist input.",
+      "Saudi-specific thresholds or Saudi Ministry of Health vitamin D guidance were not opened, and the Saudi prevalence of deficiency was not checked.",
+      "Source pages were read through automated page extraction rather than page-by-page in the original documents, so each figure should be spot-checked against the source during clinical review.",
+      "The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary.",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "35a93964-65b9-44c6-821d-1aaaa76947a1",
+      "63fd8f31-3972-4e00-ab8c-a748ae5d8cd4"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "A plasma 25(OH)D below 25 nmol/L is deficient; 25 to 50 nmol/L may be inadequate in some people; above 50 nmol/L is sufficient for almost the whole population. Treatment is a loading regimen totalling about 300,000 IU followed by maintenance of 800 to 2,000 IU daily. Overt vitamin D toxicity manifests as chronic hypercalcaemia; the long-term upper limit is 4,000 IU daily. Calcium and vitamin D combination products should not be used as the source of vitamin D for loading regimens.",
+    "keyMechanisms": [
+      "A plasma 25(OH)D below 25 nmol/L is deficient; 25 to 50 nmol/L may be inadequate in some people; above 50 nmol/L is sufficient for almost the whole population.",
+      "Treatment is a loading regimen totalling about 300,000 IU followed by maintenance of 800 to 2,000 IU daily.",
+      "Overt vitamin D toxicity manifests as chronic hypercalcaemia; the long-term upper limit is 4,000 IU daily.",
+      "Calcium and vitamin D combination products should not be used as the source of vitamin D for loading regimens."
+    ],
+    "references": [
+      {
+        "title": "Royal Osteoporosis Society: Vitamin D and Bone Health: A Practical Clinical Guideline for Patient Management (version 2, December 2018, reviewed February 2020)",
+        "edition": "ROS Vitamin D and Bone Health 2018, p. 5 and p. 15",
+        "url": "https://theros.org.uk/media/ef2ideu2/ros-vitamin-d-and-bone-health-in-adults-february-2020.pdf"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Musculoskeletal symptoms possibly due to deficiency."
+    ],
+    "physicalSigns": [
+      "Not applicable; testing is guided by symptoms and bone disease."
+    ],
+    "redFlags": [
+      "Hypercalcaemia: stop further vitamin D supplementation.",
+      "Granulomatous disease such as sarcoidosis or tuberculosis: seek specialist advice before starting vitamin D."
+    ],
+    "precipitants": [
+      "Not covered in the sources opened."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Osteoporosis with fragility fracture on antiresorptive and co-prescribed vitamin D",
+      "distinguishingFeatures": "Routine testing is unnecessary."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Serum 25-hydroxyvitamin D",
+        "modalityTarget": "Vitamin D status",
+        "targetCondition": "Vitamin D deficiency",
+        "expectedFinding": "Below 25 nmol/L",
+        "clinicalRationale": "Test in people with musculoskeletal symptoms possibly due to deficiency or bone disease where correction would help; not for universal screening.",
+        "normalValue": "Above 50 nmol/L",
+        "references": [
+          {
+            "title": "Royal Osteoporosis Society: Vitamin D and Bone Health: A Practical Clinical Guideline for Patient Management (version 2, December 2018, reviewed February 2020)",
+            "edition": "ROS Vitamin D and Bone Health 2018, p. 5",
+            "url": "https://theros.org.uk/media/ef2ideu2/ros-vitamin-d-and-bone-health-in-adults-february-2020.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Adjusted serum calcium about one month after loading",
+        "modalityTarget": "Calcium",
+        "targetCondition": "Hypercalcaemia",
+        "expectedFinding": "Raised calcium",
+        "clinicalRationale": "Hypercalcaemia should lead to cessation of further vitamin D supplementation.",
+        "normalValue": "Adult adjusted calcium 2.2 to 2.6 mmol/L",
+        "references": [
+          {
+            "title": "Royal Osteoporosis Society: Vitamin D and Bone Health: A Practical Clinical Guideline for Patient Management (version 2, December 2018, reviewed February 2020)",
+            "edition": "ROS Vitamin D and Bone Health 2018, p. 16",
+            "url": "https://theros.org.uk/media/ef2ideu2/ros-vitamin-d-and-bone-health-in-adults-february-2020.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Dietary calcium assessment (calcium calculator)",
+        "modalityTarget": "Calcium intake",
+        "targetCondition": "Inadequate dietary calcium",
+        "expectedFinding": "Low intake",
+        "clinicalRationale": "Promote adequate dietary calcium rather than combination products.",
+        "normalValue": "Adequate dietary calcium",
+        "references": [
+          {
+            "title": "Royal Osteoporosis Society: Vitamin D and Bone Health: A Practical Clinical Guideline for Patient Management (version 2, December 2018, reviewed February 2020)",
+            "edition": "ROS Vitamin D and Bone Health 2018, p. 15",
+            "url": "https://theros.org.uk/media/ef2ideu2/ros-vitamin-d-and-bone-health-in-adults-february-2020.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "History of nephrolithiasis or granulomatous disease",
+        "modalityTarget": "Risk review",
+        "targetCondition": "Safety of vitamin D",
+        "expectedFinding": "History present",
+        "clinicalRationale": "Manage kidney stone history case by case; seek specialist advice in granulomatous disease.",
+        "normalValue": "No relevant history",
+        "references": [
+          {
+            "title": "Royal Osteoporosis Society: Vitamin D and Bone Health: A Practical Clinical Guideline for Patient Management (version 2, December 2018, reviewed February 2020)",
+            "edition": "ROS Vitamin D and Bone Health 2018, p. 17",
+            "url": "https://theros.org.uk/media/ef2ideu2/ros-vitamin-d-and-bone-health-in-adults-february-2020.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Repeat 25(OH)D before sequential potent antiresorptives",
+        "modalityTarget": "Treatment monitoring",
+        "targetCondition": "Persistent deficiency",
+        "expectedFinding": "Still below 50 nmol/L",
+        "clinicalRationale": "Routine monitoring is unnecessary; steady state takes at least three months and possibly six.",
+        "normalValue": "Above 50 nmol/L",
+        "references": [
+          {
+            "title": "Royal Osteoporosis Society: Vitamin D and Bone Health: A Practical Clinical Guideline for Patient Management (version 2, December 2018, reviewed February 2020)",
+            "edition": "ROS Vitamin D and Bone Health 2018, p. 16",
+            "url": "https://theros.org.uk/media/ef2ideu2/ros-vitamin-d-and-bone-health-in-adults-february-2020.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Check for hypercalcaemia before treatment",
+        "modalityTarget": "Calcium",
+        "targetCondition": "Contraindication to vitamin D",
+        "expectedFinding": "Raised calcium",
+        "clinicalRationale": "Hypercalcaemia leads to cessation of vitamin D.",
+        "normalValue": "Adult adjusted calcium 2.2 to 2.6 mmol/L",
+        "references": [
+          {
+            "title": "Royal Osteoporosis Society: Vitamin D and Bone Health: A Practical Clinical Guideline for Patient Management (version 2, December 2018, reviewed February 2020)",
+            "edition": "ROS Vitamin D and Bone Health 2018, p. 16",
+            "url": "https://theros.org.uk/media/ef2ideu2/ros-vitamin-d-and-bone-health-in-adults-february-2020.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "test",
+      "title": "Test selectively",
+      "timeframe": "When indicated",
+      "actions": [
+        "Test people with musculoskeletal symptoms possibly due to deficiency or bone disease; do not screen asymptomatic populations."
+      ]
+    },
+    {
+      "id": "load",
+      "title": "Loading regimen",
+      "timeframe": "6 to 10 weeks",
+      "actions": [
+        "Total about 300,000 IU: for example 50,000 IU weekly for 6 weeks, or 1,000 IU four times a day for 10 weeks (280,000 IU); vitamin D3 orally."
+      ]
+    },
+    {
+      "id": "maintain",
+      "title": "Maintenance",
+      "timeframe": "After loading",
+      "actions": [
+        "800 to 2,000 IU daily; up to 4,000 IU daily occasionally."
+      ]
+    },
+    {
+      "id": "calcium",
+      "title": "Calcium and monitoring",
+      "timeframe": "About one month after loading",
+      "actions": [
+        "Check adjusted calcium; promote dietary calcium; do not use calcium and vitamin D combinations for loading."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Loading regimen for vitamin D deficiency",
+        "patientGroup": "Adults with 25(OH)D below 25 nmol/L",
+        "genericName": "Colecalciferol (vitamin D3), weekly option",
+        "dose": "50,000 IU",
+        "route": "Oral",
+        "frequency": "Weekly",
+        "duration": "6 weeks (total 300,000 IU)",
+        "adjustments": [
+          "Loading may be weekly or daily over six to ten weeks.",
+          "Scope excludes CKD stages 4 to 5; activated vitamin D preparations (calcitriol, alfacalcidol) are not recommended."
+        ],
+        "monitoring": [
+          "Adjusted calcium about one month after loading."
+        ],
+        "contraindications": [
+          "Hypercalcaemia: cease vitamin D.",
+          "Granulomatous disease: specialist advice first."
+        ],
+        "sourceTitle": "Royal Osteoporosis Society: Vitamin D and Bone Health: A Practical Clinical Guideline for Patient Management (version 2, December 2018, reviewed February 2020)",
+        "sourceUrl": "https://theros.org.uk/media/ef2ideu2/ros-vitamin-d-and-bone-health-in-adults-february-2020.pdf",
+        "sourceEdition": "ROS Vitamin D and Bone Health 2018, p. 15",
+        "branch": "Loading regimen",
+        "step": "Loading regimen",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "Loading regimen for vitamin D deficiency",
+        "patientGroup": "Adults with 25(OH)D below 25 nmol/L",
+        "genericName": "Colecalciferol (vitamin D3), daily option",
+        "dose": "1,000 IU four times a day (4,000 IU total daily)",
+        "route": "Oral",
+        "frequency": "Four times a day",
+        "duration": "10 weeks (280,000 IU)",
+        "adjustments": [
+          "Do not use calcium and vitamin D combination products for loading."
+        ],
+        "monitoring": [
+          "Adjusted calcium about one month after loading."
+        ],
+        "contraindications": [
+          "Hypercalcaemia: cease vitamin D.",
+          "Granulomatous disease: specialist advice first."
+        ],
+        "sourceTitle": "Royal Osteoporosis Society: Vitamin D and Bone Health: A Practical Clinical Guideline for Patient Management (version 2, December 2018, reviewed February 2020)",
+        "sourceUrl": "https://theros.org.uk/media/ef2ideu2/ros-vitamin-d-and-bone-health-in-adults-february-2020.pdf",
+        "sourceEdition": "ROS Vitamin D and Bone Health 2018, p. 15",
+        "branch": "Loading regimen",
+        "step": "Loading regimen",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Chosen instead of the weekly option"
+      },
+      {
+        "indication": "Maintenance after loading",
+        "patientGroup": "Adults after loading or with inadequate levels",
+        "genericName": "Colecalciferol (vitamin D3), maintenance",
+        "dose": "800 to 2,000 IU",
+        "route": "Oral",
+        "frequency": "Daily (up to 4,000 IU occasionally)",
+        "duration": "Long term",
+        "adjustments": [
+          "Upper limit for long-term intake is 4,000 IU daily."
+        ],
+        "monitoring": [
+          "Routine monitoring of 25(OH)D unnecessary; steady state takes at least three months."
+        ],
+        "contraindications": [
+          "Hypercalcaemia: cease vitamin D."
+        ],
+        "sourceTitle": "Royal Osteoporosis Society: Vitamin D and Bone Health: A Practical Clinical Guideline for Patient Management (version 2, December 2018, reviewed February 2020)",
+        "sourceUrl": "https://theros.org.uk/media/ef2ideu2/ros-vitamin-d-and-bone-health-in-adults-february-2020.pdf",
+        "sourceEdition": "ROS Vitamin D and Bone Health 2018, p. 5 and p. 17",
+        "branch": "Maintenance",
+        "step": "Maintenance",
+        "selection": "all"
+      }
+    ],
+    "note": "Doses are from the Royal Osteoporosis Society guideline. Activated vitamin D preparations are not recommended. The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary.",
+    "branches": [
+      {
+        "label": "Loading regimen",
+        "entryCriteria": "Adult with 25(OH)D below 25 nmol/L"
+      },
+      {
+        "label": "Maintenance",
+        "entryCriteria": "Adult after loading, or with inadequate levels"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Deficient",
+      "threshold": "Plasma 25(OH)D below 25 nmol/L."
+    },
+    {
+      "criterion": "Inadequate in some",
+      "threshold": "25 to 50 nmol/L."
+    },
+    {
+      "criterion": "Sufficient",
+      "threshold": "Above 50 nmol/L."
+    }
+  ],
+  "teaching": {
+    "scope": "Adult with suspected vitamin D deficiency: who to test, 25-hydroxyvitamin D (25(OH)D) thresholds, loading and maintenance colecalciferol, calcium advice, safety and monitoring, using the Royal Osteoporosis Society guideline.",
+    "learningObjectives": [
+      "Test selectively using symptoms and bone disease.",
+      "Load to about 300,000 IU then maintain 800 to 2,000 IU daily."
+    ],
+    "pitfalls": [
+      "Screening asymptomatic people.",
+      "Using calcium-vitamin D combinations for loading."
+    ],
+    "keyPoints": [
+      "25(OH)D below 25 nmol/L is deficient.",
+      "Check calcium about one month after loading."
+    ],
+    "references": [
+      {
+        "title": "Royal Osteoporosis Society: Vitamin D and Bone Health: A Practical Clinical Guideline for Patient Management (version 2, December 2018, reviewed February 2020)",
+        "edition": "ROS Vitamin D and Bone Health 2018, p. 5 and p. 15",
+        "url": "https://theros.org.uk/media/ef2ideu2/ros-vitamin-d-and-bone-health-in-adults-february-2020.pdf",
+        "locator": "p. 5; p. 15"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Take vitamin D as prescribed; do not exceed 4,000 IU daily.",
+      "Include calcium in the diet."
+    ],
+    "lifestyleAndDiet": [
+      "Dietary calcium and safe sun exposure as advised."
+    ],
+    "mdtReferrals": [
+      "Primary care; endocrinology or metabolic bone service for complex cases."
+    ],
+    "dischargeCriteria": [
+      "Not applicable; long-term management."
+    ],
+    "followUpPlan": "Adjusted calcium about one month after loading; repeat 25(OH)D only if clinically indicated."
+  }
+}

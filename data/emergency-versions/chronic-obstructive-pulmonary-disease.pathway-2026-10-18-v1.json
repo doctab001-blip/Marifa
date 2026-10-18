@@ -1,0 +1,636 @@
+{
+  "id": "e5bf7644-f824-4eca-8828-aacf30dad973",
+  "title": "Chronic Obstructive Pulmonary Disease",
+  "specialty": "Respiratory Medicine / Primary Care",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adults with stable COPD in primary and specialist care: spirometric diagnosis, Saudi Thoracic Society (STS) classes I–III (GOLD A, B, E), inhaled therapy, exacerbation prevention, oxygen, rehabilitation and follow-up. Verified against the STS COPD guideline 2025 (with GOLD 2024 cross-reference); inhaler doses and contraindications from STS Table 5 and US FDA prescribing information. Exacerbations are covered in the Acute Exacerbation of COPD topic. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from emergency-2026-10-12-v1-live."
+    ],
+    "unverifiedSections": [
+      "NICE NG115 and GOLD 2024 cross-referenced, not re-reviewed in detail for this version",
+      "Tiotropium DPI dosing frequency from standard label practice (STS gives strength only)",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "e5bf7644-f824-4eca-8828-aacf30dad973",
+      "bc59fc41-6b23-4254-a213-77c5016919c9"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "COPD is a common, preventable and treatable disease with persistent respiratory symptoms and airflow limitation (post-bronchodilator FEV1/FVC below 0.7) caused by airway and/or alveolar abnormalities, usually from smoking or other noxious exposures.",
+    "keyMechanisms": [
+      "Chronic inhalation of tobacco smoke (including shisha/water-pipe and passive smoke) or biomass fuel → neutrophilic and macrophage inflammation, oxidative stress and protease–antiprotease imbalance (STS).",
+      "Small-airway narrowing and mucus hypersecretion (chronic bronchitis) plus alveolar wall destruction (emphysema) → airflow limitation and air trapping/hyperinflation.",
+      "V/Q mismatch → hypoxaemia; chronic hypoxic vasoconstriction → pulmonary hypertension and cor pulmonale; secondary polycythaemia (STS).",
+      "Alpha-1 antitrypsin deficiency in young patients with little smoking exposure (STS).",
+      "Exacerbations accelerate lung-function decline and raise mortality — prevention is a core goal."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Exertional breathlessness, chronic cough, sputum production in a person aged 40 or over with smoking or exposure history.",
+      "Wheeze, chest tightness; recurrent winter 'chest infections'.",
+      "Fatigue, weight loss, ankle swelling in advanced disease."
+    ],
+    "physicalSigns": [
+      "Hyperinflated chest, prolonged expiration, wheeze, reduced breath sounds.",
+      "Pursed-lip breathing, accessory muscle use.",
+      "Cyanosis, raised JVP and peripheral oedema (cor pulmonale); cachexia."
+    ],
+    "redFlags": [
+      "Resting SpO2 below 88% (assess for LTOT)",
+      "Two or more exacerbations or any hospital admission in the past year (Class III/Group E)",
+      "Persistent hypercapnia 2 weeks after an exacerbation (consider home NIV)",
+      "Peripheral oedema or haematocrit 55% or more (cor pulmonale/polycythaemia)",
+      "Haemoptysis or weight loss — exclude lung cancer"
+    ],
+    "precipitants": [
+      "Cigarette, shisha (water-pipe) and passive smoking",
+      "Biomass fuel and occupational dusts",
+      "Alpha-1 antitrypsin deficiency",
+      "Childhood respiratory infections, asthma"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Asthma",
+      "distinguishingFeatures": "Variable symptoms, marked bronchodilator reversibility, atopy, raised FeNO/eosinophils."
+    },
+    {
+      "condition": "Heart failure",
+      "distinguishingFeatures": "Raised NT-proBNP, echo abnormality; restrictive or normal spirometry."
+    },
+    {
+      "condition": "Bronchiectasis",
+      "distinguishingFeatures": "Daily purulent sputum; CT bronchial dilatation."
+    },
+    {
+      "condition": "Interstitial lung disease, tuberculosis",
+      "distinguishingFeatures": "Crackles, restrictive pattern, CT changes; TB endemic exposure."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Post-bronchodilator spirometry",
+        "modalityTarget": "At diagnosis; repeat if symptoms change",
+        "targetCondition": "Airflow limitation",
+        "expectedFinding": "FEV1/FVC below 0.7 confirms COPD in context. Severity: mild FEV1 80% or more; moderate 50–79%; severe 30–49%; very severe below 30% predicted.",
+        "clinicalRationale": "Required for diagnosis — symptoms alone are not enough (STS).",
+        "normalValue": "FEV1/FVC 0.7 or more; FEV1 80% predicted or more",
+        "references": [
+          {
+            "title": "The Saudi Thoracic Society evidence-based guidelines for the diagnosis and management of COPD",
+            "edition": "Ann Thorac Med 2025;20(1):1–35 (Al-Jahdali H et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11804957/"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "CAT score and mMRC dyspnoea scale",
+        "modalityTarget": "Every review",
+        "targetCondition": "Symptom burden",
+        "expectedFinding": "CAT 10 or more or mMRC 2 or more = more symptoms.",
+        "clinicalRationale": "With exacerbation history defines Class I–III (GOLD A, B, E).",
+        "normalValue": "CAT below 10; mMRC 0–1",
+        "references": [
+          {
+            "title": "The Saudi Thoracic Society evidence-based guidelines for the diagnosis and management of COPD",
+            "edition": "Ann Thorac Med 2025;20(1):1–35 (Al-Jahdali H et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11804957/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Blood eosinophil count",
+        "modalityTarget": "At diagnosis and when considering ICS",
+        "targetCondition": "Exacerbation risk; ICS response",
+        "expectedFinding": "300 cells/µL or more: higher exacerbation risk and ICS benefit (triple therapy).",
+        "clinicalRationale": "Low eosinophils favour dual LABA/LAMA without ICS (STS).",
+        "normalValue": "Below 150 cells/µL (ICS unlikely to help)",
+        "references": [
+          {
+            "title": "The Saudi Thoracic Society evidence-based guidelines for the diagnosis and management of COPD",
+            "edition": "Ann Thorac Med 2025;20(1):1–35 (Al-Jahdali H et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11804957/"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Pulse oximetry; arterial blood gas if SpO2 88% or less",
+        "modalityTarget": "Stable state, at least 2 months after optimised therapy",
+        "targetCondition": "Chronic hypoxaemia",
+        "expectedFinding": "PaO2 below 55 mmHg (7.3 kPa) or SaO2 below 88%; or 55–60 mmHg with cor pulmonale, oedema or haematocrit 55% or more.",
+        "clinicalRationale": "LTOT indication (STS); persistent PaCO2 rise after exacerbation → home NIV.",
+        "normalValue": "SpO2 94% or more; PaO2 above 60 mmHg",
+        "references": [
+          {
+            "title": "The Saudi Thoracic Society evidence-based guidelines for the diagnosis and management of COPD",
+            "edition": "Ann Thorac Med 2025;20(1):1–35 (Al-Jahdali H et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11804957/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Alpha-1 antitrypsin level",
+        "modalityTarget": "Young patients or low smoking exposure",
+        "targetCondition": "AAT deficiency",
+        "expectedFinding": "Low AAT level.",
+        "clinicalRationale": "Genetic testing and specialist referral (STS).",
+        "references": [
+          {
+            "title": "The Saudi Thoracic Society evidence-based guidelines for the diagnosis and management of COPD",
+            "edition": "Ann Thorac Med 2025;20(1):1–35 (Al-Jahdali H et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11804957/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "FBC",
+        "modalityTarget": "At diagnosis",
+        "targetCondition": "Anaemia or polycythaemia",
+        "expectedFinding": "Haematocrit 55% or more.",
+        "clinicalRationale": "Polycythaemia supports LTOT; anaemia worsens breathlessness.",
+        "normalValue": "Haematocrit 36–50%",
+        "references": [
+          {
+            "title": "The Saudi Thoracic Society evidence-based guidelines for the diagnosis and management of COPD",
+            "edition": "Ann Thorac Med 2025;20(1):1–35 (Al-Jahdali H et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11804957/"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Chest X-ray",
+        "modalityTarget": "At diagnosis",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Hyperinflation, bullae; excludes alternative diagnoses (cancer, fibrosis, TB).",
+        "clinicalRationale": "Not diagnostic of COPD itself.",
+        "references": [
+          {
+            "title": "The Saudi Thoracic Society evidence-based guidelines for the diagnosis and management of COPD",
+            "edition": "Ann Thorac Med 2025;20(1):1–35 (Al-Jahdali H et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11804957/"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "CT chest",
+        "modalityTarget": "Selected: atypical features, suspected bronchiectasis, lung volume reduction assessment, cancer screening",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Emphysema distribution, bronchiectasis, nodules.",
+        "clinicalRationale": "Guides specialist interventions.",
+        "references": [
+          {
+            "title": "The Saudi Thoracic Society evidence-based guidelines for the diagnosis and management of COPD",
+            "edition": "Ann Thorac Med 2025;20(1):1–35 (Al-Jahdali H et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11804957/"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "diagnose",
+      "title": "Confirm, grade and classify",
+      "timeframe": "At diagnosis",
+      "actions": [
+        "Spirometry: post-bronchodilator FEV1/FVC below 0.7 with symptoms and exposure; grade severity by FEV1 % predicted.",
+        "Classify (STS Table 4): Class I — CAT below 10 or mMRC 0–1 and 0–1 exacerbations without admission (GOLD A); Class II — CAT 10 or more or mMRC 2 or more, same exacerbation history (GOLD B); Class III — 2 or more exacerbations or any hospitalisation in the past year (GOLD E).",
+        "Record eosinophil count, oximetry, BMI and comorbidities (cardiovascular disease, osteoporosis, anxiety/depression, lung cancer)."
+      ]
+    },
+    {
+      "id": "nonpharm",
+      "title": "Non-drug treatment for all",
+      "timeframe": "From diagnosis",
+      "actions": [
+        "Smoking cessation (cigarettes, shisha, vaping) — the most effective intervention.",
+        "Pulmonary rehabilitation — strongly recommended (STS); also after any admission.",
+        "Influenza and pneumococcal vaccination; inhaler technique and written self-management plan."
+      ]
+    },
+    {
+      "id": "inhalers",
+      "title": "Inhaled maintenance by class",
+      "timeframe": "Start and review at 4–8 weeks",
+      "actions": [
+        "All: short-acting reliever (salbutamol and/or ipratropium) as needed.",
+        "Class I: a long-acting bronchodilator (LAMA preferred over LABA alone; LABA alone is not marketed in Saudi Arabia).",
+        "Class II and III: LAMA plus LABA, preferably in one inhaler (STS).",
+        "Class III with frequent exacerbations or eosinophils 300 cells/µL or more: triple therapy ICS/LABA/LAMA (STS). Low eosinophils: stay on LABA/LAMA.",
+        "Avoid ICS without bronchodilators; weigh ICS pneumonia risk."
+      ]
+    },
+    {
+      "id": "prevent",
+      "title": "Still exacerbating despite inhalers",
+      "timeframe": "Specialist input",
+      "actions": [
+        "Roflumilast for chronic bronchitis with severe disease and exacerbations (STS).",
+        "Azithromycin 250 mg daily or 500 mg three times weekly after 1 or more exacerbations and a hospitalisation in the past year (STS) — check ECG (QTc) and hearing.",
+        "Mucolytics as add-on, never alone (STS). Dupilumab for eosinophils above 300 with chronic bronchitis (specialist)."
+      ]
+    },
+    {
+      "id": "oxygen",
+      "title": "Oxygen and ventilation",
+      "timeframe": "Stable state",
+      "actions": [
+        "LTOT if PaO2 below 55 mmHg (7.3 kPa) or SaO2 below 88% at rest, or PaO2 55–60 with cor pulmonale, oedema or haematocrit 55% or more, after 2 months of optimised therapy.",
+        "Target resting PaO2 60–65 mmHg or SaO2 88–94%; usually 1–2.5 L/min by nasal cannula for at least 18 h/day; review at 3 months and 1 year.",
+        "Do not use LTOT for moderate desaturation not meeting criteria (STS).",
+        "Home NIV if still hypercapnic 2 weeks after an exacerbation (STS)."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Class I (GOLD A) maintenance",
+        "patientGroup": "Adults",
+        "genericName": "Tiotropium (dry powder inhaler)",
+        "dose": "18 µg (STS Table 5)",
+        "route": "Inhaled",
+        "frequency": "Once daily",
+        "duration": "Long term",
+        "adjustments": [
+          "Capsule for inhalation only — do not swallow"
+        ],
+        "monitoring": [
+          "Dry mouth, urinary retention, narrow-angle glaucoma symptoms"
+        ],
+        "contraindications": [
+          "Hypersensitivity to tiotropium or ipratropium (atropine derivatives)"
+        ],
+        "sourceTitle": "The Saudi Thoracic Society evidence-based guidelines for the diagnosis and management of COPD",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11804957/",
+        "sourceEdition": "Ann Thorac Med 2025, Table 5 and recommendations",
+        "branch": "Class I (GOLD A) — maintenance",
+        "step": "Long-acting bronchodilator",
+        "selection": "all"
+      },
+      {
+        "indication": "Class II–III maintenance (LAMA/LABA)",
+        "patientGroup": "Adults",
+        "genericName": "Umeclidinium/vilanterol",
+        "dose": "62.5/25 µg",
+        "route": "Inhaled (dry powder)",
+        "frequency": "One inhalation once daily",
+        "duration": "Long term",
+        "adjustments": [
+          "Not for asthma without ICS"
+        ],
+        "monitoring": [
+          "Heart rate, urinary retention"
+        ],
+        "contraindications": [
+          "Severe milk-protein hypersensitivity",
+          "LABA without ICS in asthma"
+        ],
+        "sourceTitle": "Umeclidinium/vilanterol (Anoro Ellipta) prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2dbd0671-c565-40c5-bf0f-e324db26799c",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "branch": "Class II–III — maintenance",
+        "step": "LAMA/LABA",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "Class II–III maintenance (LAMA/LABA, alternative)",
+        "patientGroup": "Adults",
+        "genericName": "Tiotropium/olodaterol (soft-mist inhaler)",
+        "dose": "2.5/2.5 µg per actuation",
+        "route": "Inhaled",
+        "frequency": "Two inhalations once daily",
+        "duration": "Long term",
+        "adjustments": [
+          "Not for asthma"
+        ],
+        "monitoring": [
+          "Heart rate, urinary retention"
+        ],
+        "contraindications": [
+          "Hypersensitivity to tiotropium or ipratropium (atropine derivatives)"
+        ],
+        "sourceTitle": "Tiotropium bromide inhalation powder prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=496b38ee-45b6-4bb2-a35e-9023c3b73719",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "branch": "Class II–III — maintenance",
+        "step": "LAMA/LABA",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Chosen instead of umeclidinium/vilanterol"
+      },
+      {
+        "indication": "Class III or eosinophils 300 or more — ICS/LABA component",
+        "patientGroup": "Adults",
+        "genericName": "Budesonide-formoterol MDI",
+        "dose": "160/4.5 µg, 2 inhalations",
+        "route": "Inhaled",
+        "frequency": "Twice daily",
+        "duration": "Long term (with a LAMA = triple therapy, or as single-inhaler triple)",
+        "adjustments": [
+          "Pneumonia risk with ICS",
+          "Rinse mouth after use"
+        ],
+        "monitoring": [
+          "Pneumonia, oral thrush"
+        ],
+        "contraindications": [
+          "Primary treatment of status asthmaticus or acute episodes needing intensive measures",
+          "Hypersensitivity"
+        ],
+        "sourceTitle": "Budesonide/formoterol inhalation aerosol prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0ce4cd21-ac96-4b39-9e1c-49f86c87fa1a",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "branch": "Class III or eosinophils 300 or more",
+        "step": "ICS/LABA component",
+        "selection": "all"
+      },
+      {
+        "indication": "Reliever",
+        "patientGroup": "Adults",
+        "genericName": "Salbutamol MDI",
+        "dose": "2 inhalations (100 µg each)",
+        "route": "Inhaled",
+        "frequency": "Every 4–6 hours as needed",
+        "duration": "As needed",
+        "adjustments": [
+          "Rising use = poor control; review maintenance therapy"
+        ],
+        "monitoring": [
+          "Use frequency"
+        ],
+        "contraindications": [
+          "Hypersensitivity to any ingredient"
+        ],
+        "sourceTitle": "Albuterol (salbutamol) sulfate HFA prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=04c8a345-0a0d-5a01-e063-6294a90a40d2",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "branch": "All classes — reliever",
+        "step": "Reliever",
+        "selection": "all"
+      },
+      {
+        "indication": "Severe COPD with chronic bronchitis and exacerbations",
+        "patientGroup": "Adults",
+        "genericName": "Roflumilast",
+        "dose": "500 µg (optionally 250 µg for the first 4 weeks to improve tolerance)",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term",
+        "adjustments": [
+          "250 µg is not a therapeutic dose",
+          "Weight loss; psychiatric events — monitor"
+        ],
+        "monitoring": [
+          "Weight, mood, GI effects"
+        ],
+        "contraindications": [
+          "Moderate to severe liver impairment (Child-Pugh B or C)"
+        ],
+        "sourceTitle": "Roflumilast prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=30dd6eae-6435-cae1-e063-6294a90a003b",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "branch": "Severe COPD with chronic bronchitis and exacerbations",
+        "step": "Phosphodiesterase-4 inhibitor",
+        "selection": "all"
+      },
+      {
+        "indication": "Exacerbation prevention (1 or more exacerbations with a hospitalisation)",
+        "patientGroup": "Adults",
+        "genericName": "Azithromycin",
+        "dose": "250 mg daily or 500 mg three times weekly",
+        "route": "PO",
+        "frequency": "As stated",
+        "duration": "Long term with review",
+        "adjustments": [
+          "QT prolongation, hearing loss, resistance — weigh risks (STS)"
+        ],
+        "monitoring": [
+          "ECG (QTc), hearing"
+        ],
+        "contraindications": [
+          "Hypersensitivity to macrolides",
+          "Previous azithromycin-associated cholestatic jaundice"
+        ],
+        "sourceTitle": "The Saudi Thoracic Society evidence-based guidelines for the diagnosis and management of COPD",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11804957/",
+        "sourceEdition": "Ann Thorac Med 2025, Table 5 and recommendations",
+        "branch": "Exacerbation prevention with a hospitalisation",
+        "step": "Macrolide",
+        "selection": "all"
+      }
+    ],
+    "note": "Available products and strengths are from STS 2025 Table 5 (medications on the Saudi market); azithromycin regimens from STS recommendations; frequencies and contraindications from US FDA labels. Check SFDA registration, hospital formulary and actual availability.",
+    "branches": [
+      {
+        "label": "Class I (GOLD A) — maintenance",
+        "entryCriteria": "Adult with COPD class I (GOLD A)"
+      },
+      {
+        "label": "Class II–III — maintenance",
+        "entryCriteria": "Adult with COPD class II–III needing LAMA/LABA maintenance"
+      },
+      {
+        "label": "Class III or eosinophils 300 or more",
+        "entryCriteria": "Adult with COPD class III, or eosinophils 300 or more"
+      },
+      {
+        "label": "All classes — reliever",
+        "entryCriteria": "Every adult with COPD"
+      },
+      {
+        "label": "Severe COPD with chronic bronchitis and exacerbations",
+        "entryCriteria": "Adult with severe COPD, chronic bronchitis and exacerbations"
+      },
+      {
+        "label": "Exacerbation prevention with a hospitalisation",
+        "entryCriteria": "Adult with 1 or more exacerbations with a hospitalisation"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "COPD diagnosis",
+      "threshold": "Post-bronchodilator FEV1/FVC below 0.7 with symptoms and exposure"
+    },
+    {
+      "criterion": "Class III / GOLD E",
+      "threshold": "2 or more exacerbations or 1 or more hospitalisations in the past year"
+    },
+    {
+      "criterion": "Triple therapy",
+      "threshold": "Class III or eosinophils 300 cells/µL or more"
+    },
+    {
+      "criterion": "LTOT",
+      "threshold": "PaO2 below 55 mmHg (or 55–60 with cor pulmonale/oedema/haematocrit 55% or more), stable 2 months"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "Saudi Thoracic Society 2025 vs GOLD 2024",
+    "columns": [
+      "STS 2025",
+      "GOLD 2024"
+    ],
+    "rows": [
+      {
+        "parameter": "Classification",
+        "values": [
+          "Classes I, II, III",
+          "Groups A, B, E"
+        ]
+      },
+      {
+        "parameter": "Low symptoms, low risk",
+        "values": [
+          "Long-acting bronchodilator",
+          "A bronchodilator"
+        ]
+      },
+      {
+        "parameter": "More symptoms",
+        "values": [
+          "LAMA/LABA (single inhaler)",
+          "LABA+LAMA"
+        ]
+      },
+      {
+        "parameter": "High exacerbation risk",
+        "values": [
+          "Triple if frequent exacerbations or eosinophils 300 or more",
+          "LABA+LAMA; consider ICS if eosinophils 300 or more"
+        ]
+      },
+      {
+        "parameter": "LTOT",
+        "values": [
+          "PaO2 below 55 mmHg, or 55–60 with cor pulmonale/polycythaemia",
+          "Same thresholds"
+        ]
+      }
+    ],
+    "note": "LABA monotherapy is not marketed in Saudi Arabia (STS)."
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Diagnose COPD with spirometry, classify it (STS I–III) and manage stable disease to reduce symptoms and exacerbations."
+    ],
+    "pitfalls": [
+      "Diagnosing COPD without spirometry.",
+      "ICS monotherapy or ICS in low-eosinophil patients.",
+      "Poor inhaler technique mistaken for treatment failure.",
+      "Oxygen for moderate desaturation not meeting criteria.",
+      "Missing alpha-1 antitrypsin deficiency in young patients."
+    ],
+    "keyPoints": [
+      "Spirometry is essential: FEV1/FVC below 0.7 post-bronchodilator.",
+      "Stop smoking, including shisha.",
+      "LAMA/LABA for most symptomatic patients.",
+      "Triple therapy for frequent exacerbators or eosinophils 300 or more.",
+      "LTOT only for PaO2 below 55 mmHg (or 55–60 with complications)."
+    ],
+    "references": [
+      {
+        "title": "The Saudi Thoracic Society evidence-based guidelines for the diagnosis and management of COPD",
+        "edition": "Ann Thorac Med 2025;20(1):1–35 (Al-Jahdali H et al.)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11804957/",
+        "locator": "Executive summary Q1–Q12; Table 1 (spirometric severity); Table 4 (classes I–III); Table 5 (medications available in Saudi Arabia); LTOT"
+      },
+      {
+        "title": "Global Strategy for Prevention, Diagnosis and Management of COPD: 2024 Report (GOLD)",
+        "edition": "2024 report, v1.2",
+        "url": "https://goldcopd.org/2024-gold-report/",
+        "locator": "Stable COPD: ABE assessment and initial pharmacological treatment"
+      },
+      {
+        "title": "NICE NG115: Chronic obstructive pulmonary disease in over 16s: diagnosis and management",
+        "edition": "NICE guideline, 2018 (updated 2019)",
+        "url": "https://www.nice.org.uk/guidance/ng115"
+      },
+      {
+        "title": "Tiotropium bromide inhalation powder prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=496b38ee-45b6-4bb2-a35e-9023c3b73719",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Umeclidinium/vilanterol (Anoro Ellipta) prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2dbd0671-c565-40c5-bf0f-e324db26799c",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Budesonide/formoterol inhalation aerosol prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0ce4cd21-ac96-4b39-9e1c-49f86c87fa1a",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Albuterol (salbutamol) sulfate HFA prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=04c8a345-0a0d-5a01-e063-6294a90a40d2",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Roflumilast prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=30dd6eae-6435-cae1-e063-6294a90a003b",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Azithromycin prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=003307c5-3f73-4a5d-a704-bfdea3c656e8",
+        "locator": "Section 4 Contraindications"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Inhaler technique at every visit.",
+      "Self-management plan for exacerbations.",
+      "Recognise worsening breathlessness, sputum colour or volume change."
+    ],
+    "lifestyleAndDiet": [
+      "Stop smoking and shisha; avoid biomass smoke and dust.",
+      "Regular physical activity.",
+      "Nutrition support if underweight."
+    ],
+    "mdtReferrals": [
+      "Pulmonary rehabilitation.",
+      "Smoking cessation service.",
+      "Respiratory specialist: diagnostic doubt, Class III, LTOT/NIV, young age, AAT deficiency, lung volume reduction."
+    ],
+    "dischargeCriteria": [
+      "Not applicable — chronic outpatient care. After an exacerbation: stable, inhaler technique checked, LTOT need assessed, follow-up within a few weeks, rehabilitation referral (STS)."
+    ],
+    "followUpPlan": "Review 4–8 weeks after starting or changing inhalers, then at least annually (more often if severe): symptoms (CAT/mMRC), exacerbations, inhaler technique, adherence, smoking status, oximetry, spirometry as needed."
+  }
+}

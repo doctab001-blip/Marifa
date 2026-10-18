@@ -1,0 +1,409 @@
+{
+  "id": "06bb691f-eef3-4b1f-a0fc-29b94afd9254",
+  "title": "Hypothyroidism",
+  "specialty": "Endocrinology / Primary Care",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adults with primary hypothyroidism and subclinical hypothyroidism in primary care: who to test, how to interpret TSH/FT4, levothyroxine dosing, monitoring and referral. Verified against NICE NG145; dosing administration and contraindications from US FDA levothyroxine prescribing information. No Saudi national hypothyroidism guideline was found for this version. Myxoedema coma is an emergency and is not covered here. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from emergency-2026-10-12-v1-live."
+    ],
+    "unverifiedSections": [
+      "No Saudi national hypothyroidism guideline identified",
+      "Pregnancy-specific dose increase per obstetric/endocrine protocol",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "06bb691f-eef3-4b1f-a0fc-29b94afd9254",
+      "41994fb8-81c5-4d55-b535-bd8d039476d4"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Primary hypothyroidism is failure of the thyroid gland to produce enough thyroxine (T4), with a compensatory rise in pituitary TSH. In iodine-sufficient populations the commonest cause is autoimmune (Hashimoto's) thyroiditis; others are thyroidectomy, radioactive iodine and drugs.",
+    "keyMechanisms": [
+      "Autoimmune destruction (thyroid peroxidase antibodies, TPOAbs) progressively reduces T4 output; TSH rises first (subclinical hypothyroidism: high TSH, normal FT4), then FT4 falls (overt).",
+      "Low thyroid hormone slows metabolism: reduced heat production, weight gain, bradycardia, constipation, slowed relaxation of reflexes, myxoedema from glycosaminoglycan deposition.",
+      "Raised LDL cholesterol, hyponatraemia, raised CK and menstrual disturbance are common biochemical/clinical effects.",
+      "Secondary (pituitary) hypothyroidism has low or inappropriately normal TSH with low FT4 — TSH alone misses it.",
+      "Levothyroxine has a long half-life (about 1 week), so dose changes take 4–6 weeks (label) and TSH may take up to 6 months to normalise after very high levels (NICE)."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Tiredness, cold intolerance, weight gain, constipation.",
+      "Dry skin, hair thinning, hoarse voice.",
+      "Low mood, slowed thinking; menstrual irregularity, subfertility.",
+      "Muscle aches, carpal tunnel symptoms."
+    ],
+    "physicalSigns": [
+      "Bradycardia; goitre (or none in atrophic thyroiditis).",
+      "Dry coarse skin, periorbital puffiness, non-pitting oedema.",
+      "Slow-relaxing ankle reflexes."
+    ],
+    "redFlags": [
+      "Drowsiness, hypothermia, hypotension, hyponatraemia — myxoedema coma (emergency)",
+      "Suspected pituitary disease (low/normal TSH with low FT4, headache, visual field loss) — refer",
+      "Angina or arrhythmia when starting or increasing levothyroxine",
+      "Pregnancy or planning pregnancy with hypothyroidism",
+      "Rapidly enlarging goitre, stridor or dysphagia"
+    ],
+    "precipitants": [
+      "Autoimmune thyroiditis (Hashimoto's)",
+      "Thyroidectomy or radioactive iodine",
+      "Drugs: amiodarone, lithium, immune checkpoint inhibitors",
+      "Iodine deficiency or excess",
+      "Postpartum thyroiditis"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Non-thyroidal illness",
+      "distinguishingFeatures": "Abnormal tests during acute illness — do not test unless thyroid cause suspected (NICE)."
+    },
+    {
+      "condition": "Recovery phase of thyroiditis",
+      "distinguishingFeatures": "Transient high TSH after painless/postpartum thyroiditis."
+    },
+    {
+      "condition": "Depression, anaemia, sleep apnoea, chronic fatigue",
+      "distinguishingFeatures": "Normal TSH."
+    },
+    {
+      "condition": "Biotin interference",
+      "distinguishingFeatures": "High-dose biotin supplements cause falsely high or low results (NICE)."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "TSH (with FT4 if TSH abnormal)",
+        "modalityTarget": "Clinical suspicion; type 1 diabetes/other autoimmune disease; new AF; consider in depression or unexplained anxiety",
+        "targetCondition": "Thyroid dysfunction",
+        "expectedFinding": "High TSH with low FT4 = overt primary hypothyroidism; high TSH with normal FT4 = subclinical.",
+        "clinicalRationale": "TSH alone is enough unless pituitary disease is suspected — then measure TSH and FT4 (NICE). Do not test solely for type 2 diabetes, or during acute illness.",
+        "normalValue": "TSH and FT4 within the laboratory reference range (typically TSH about 0.4–4.0 mU/L)",
+        "references": [
+          {
+            "title": "NICE NG145: Thyroid disease: assessment and management",
+            "edition": "NICE guideline, 2019 (updated 2023)",
+            "url": "https://www.nice.org.uk/guidance/ng145"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Thyroid peroxidase antibodies (TPOAbs)",
+        "modalityTarget": "Once, if TSH above the reference range",
+        "targetCondition": "Autoimmune thyroiditis",
+        "expectedFinding": "Raised TPOAbs.",
+        "clinicalRationale": "Supports autoimmune cause and higher progression risk; do not repeat (NICE).",
+        "normalValue": "Negative",
+        "references": [
+          {
+            "title": "NICE NG145: Thyroid disease: assessment and management",
+            "edition": "NICE guideline, 2019 (updated 2023)",
+            "url": "https://www.nice.org.uk/guidance/ng145"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Repeat TSH and FT4",
+        "modalityTarget": "Subclinical: repeat after 3 months before treating",
+        "targetCondition": "Persistent subclinical hypothyroidism",
+        "expectedFinding": "TSH 10 mU/L or more on 2 occasions 3 months apart.",
+        "clinicalRationale": "Threshold to consider treatment (NICE).",
+        "references": [
+          {
+            "title": "NICE NG145: Thyroid disease: assessment and management",
+            "edition": "NICE guideline, 2019 (updated 2023)",
+            "url": "https://www.nice.org.uk/guidance/ng145"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Lipids, sodium, FBC",
+        "modalityTarget": "At diagnosis if clinically indicated",
+        "targetCondition": "Associated abnormalities",
+        "expectedFinding": "Raised LDL, hyponatraemia, macrocytosis/anaemia.",
+        "clinicalRationale": "Often improve with treatment; consider coeliac screening in autoimmune thyroid disease (NICE).",
+        "references": [
+          {
+            "title": "NICE NG145: Thyroid disease: assessment and management",
+            "edition": "NICE guideline, 2019 (updated 2023)",
+            "url": "https://www.nice.org.uk/guidance/ng145"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "ECG",
+        "modalityTarget": "Older adults or cardiac disease before starting levothyroxine",
+        "targetCondition": "Baseline rhythm and ischaemia",
+        "expectedFinding": "Bradycardia, low voltage; ischaemia.",
+        "clinicalRationale": "Guides a lower starting dose.",
+        "references": [
+          {
+            "title": "Levothyroxine sodium prescribing information (US FDA label, DailyMed)",
+            "edition": "Accessed via openFDA 12 Oct 2026",
+            "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=008de8fd-150f-4022-8ccb-c8bfa94875c7"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Thyroid ultrasound",
+        "modalityTarget": "Only for goitre or nodules — not routine for hypothyroidism",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Nodules, heterogeneous gland.",
+        "clinicalRationale": "Evaluate structural disease.",
+        "references": [
+          {
+            "title": "NICE NG145: Thyroid disease: assessment and management",
+            "edition": "NICE guideline, 2019 (updated 2023)",
+            "url": "https://www.nice.org.uk/guidance/ng145"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "confirm",
+      "title": "Confirm the diagnosis",
+      "timeframe": "Before treating",
+      "actions": [
+        "Test TSH (FT4 if TSH abnormal); avoid testing during acute illness; ask about biotin supplements.",
+        "Measure TPOAbs once if TSH is raised.",
+        "Check for pituitary disease if FT4 is low with low or normal TSH — refer to endocrinology."
+      ]
+    },
+    {
+      "id": "treat",
+      "title": "Overt primary hypothyroidism — levothyroxine",
+      "timeframe": "At diagnosis",
+      "actions": [
+        "Levothyroxine is first line; do not routinely offer liothyronine or natural thyroid extract (NICE).",
+        "Under 65 without cardiovascular disease: about 1.6 µg/kg/day, rounded to the nearest 25 µg (NICE).",
+        "65 or over, or with cardiovascular disease: 25–50 µg/day and titrate (NICE); label: titrate every 6–8 weeks in cardiac disease or AF risk.",
+        "Otherwise titrate by 12.5–25 µg every 4–6 weeks until euthyroid (label).",
+        "Take once daily on an empty stomach 30–60 minutes before breakfast with water; separate by 4 hours from calcium, iron, PPIs/antacids and binders (label)."
+      ]
+    },
+    {
+      "id": "subclinical",
+      "title": "Subclinical hypothyroidism",
+      "timeframe": "After repeat testing",
+      "actions": [
+        "TSH 10 mU/L or more on 2 occasions 3 months apart: consider levothyroxine (NICE).",
+        "Under 65, TSH above range but below 10 on 2 occasions with symptoms: consider a 6-month trial; stop if no benefit once TSH normal.",
+        "Untreated: TSH and FT4 yearly if features of thyroid disease (e.g. TPOAbs, previous surgery), otherwise every 2–3 years."
+      ]
+    },
+    {
+      "id": "monitor",
+      "title": "Monitoring",
+      "timeframe": "Ongoing",
+      "actions": [
+        "TSH every 3 months until stable (2 similar values in range 3 months apart), then yearly (NICE).",
+        "Aim for TSH within the reference range; avoid doses that suppress TSH. Consider FT4 as well if symptoms persist.",
+        "Very high initial TSH may take up to 6 months to normalise."
+      ]
+    },
+    {
+      "id": "special",
+      "title": "Special situations",
+      "timeframe": "As they arise",
+      "actions": [
+        "Pregnancy or planning pregnancy: dose requirements usually increase — check TSH early and seek obstetric/endocrine advice (label 2.3).",
+        "Uncorrected adrenal insufficiency: treat with glucocorticoid before levothyroxine (label contraindication).",
+        "Persistent symptoms with normal TSH: review adherence, interactions, other causes; consider adjusting dose without suppressing TSH (NICE)."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Primary hypothyroidism, under 65 without cardiovascular disease",
+        "patientGroup": "Adults",
+        "genericName": "Levothyroxine",
+        "dose": "About 1.6 µg/kg/day, rounded to the nearest 25 µg (full replacement)",
+        "route": "PO",
+        "frequency": "Once daily, empty stomach 30–60 min before breakfast",
+        "duration": "Lifelong (overt)",
+        "adjustments": [
+          "Titrate by 12.5–25 µg every 4–6 weeks to TSH in range (label)",
+          "Separate by 4 h from calcium, iron, antacids, bile-acid binders (label)"
+        ],
+        "monitoring": [
+          "TSH every 3 months until stable, then yearly"
+        ],
+        "contraindications": [
+          "Uncorrected adrenal insufficiency"
+        ],
+        "sourceTitle": "NICE NG145: Thyroid disease: assessment and management",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng145",
+        "sourceEdition": "NICE NG145 recs 1.3.6–1.3.7",
+        "branch": "Under 65, no cardiovascular disease",
+        "step": "Levothyroxine",
+        "selection": "all"
+      },
+      {
+        "indication": "Primary hypothyroidism, 65 or over or cardiovascular disease",
+        "patientGroup": "Older adults; IHD; AF risk",
+        "genericName": "Levothyroxine",
+        "dose": "25–50 µg/day",
+        "route": "PO",
+        "frequency": "Once daily, empty stomach",
+        "duration": "Lifelong",
+        "adjustments": [
+          "Titrate every 6–8 weeks (label) watching for angina/arrhythmia"
+        ],
+        "monitoring": [
+          "TSH; anginal symptoms; heart rate"
+        ],
+        "contraindications": [
+          "Uncorrected adrenal insufficiency"
+        ],
+        "sourceTitle": "NICE NG145: Thyroid disease: assessment and management",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng145",
+        "sourceEdition": "NICE NG145 recs 1.3.6–1.3.7",
+        "branch": "Aged 65 or over, or cardiovascular disease",
+        "step": "Levothyroxine",
+        "selection": "all"
+      }
+    ],
+    "note": "Starting doses are from NICE NG145; titration, administration and contraindications from the US FDA levothyroxine label. Brands are not always interchangeable — keep patients on the same product where possible and recheck TSH after a switch. Check SFDA registration and formulary.",
+    "branches": [
+      {
+        "label": "Under 65, no cardiovascular disease",
+        "entryCriteria": "Adult with primary hypothyroidism under 65 and without cardiovascular disease"
+      },
+      {
+        "label": "Aged 65 or over, or cardiovascular disease",
+        "entryCriteria": "Adult with primary hypothyroidism aged 65 or over, or with cardiovascular disease"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Overt primary hypothyroidism",
+      "threshold": "TSH above reference range with FT4 below range"
+    },
+    {
+      "criterion": "Subclinical hypothyroidism",
+      "threshold": "TSH above reference range with normal FT4"
+    },
+    {
+      "criterion": "Consider treating subclinical (adults)",
+      "threshold": "TSH 10 mU/L or more on 2 occasions 3 months apart"
+    },
+    {
+      "criterion": "Treatment target",
+      "threshold": "TSH within the reference range, not suppressed"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "NICE NG145 vs US FDA levothyroxine label",
+    "columns": [
+      "NICE NG145",
+      "FDA label"
+    ],
+    "rows": [
+      {
+        "parameter": "Starting dose (healthy adult)",
+        "values": [
+          "1.6 µg/kg/day, nearest 25 µg (under 65, no CVD)",
+          "Full replacement 1.6 µg/kg/day"
+        ]
+      },
+      {
+        "parameter": "Older/cardiac",
+        "values": [
+          "25–50 µg/day, titrate",
+          "Lower starting dose; titrate every 6–8 weeks"
+        ]
+      },
+      {
+        "parameter": "Monitoring",
+        "values": [
+          "TSH every 3 months until stable, then yearly",
+          "TSH 6–8 weeks after dose change"
+        ]
+      },
+      {
+        "parameter": "Liothyronine",
+        "values": [
+          "Not routinely",
+          "Not addressed"
+        ]
+      }
+    ],
+    "note": "Both aim for TSH within the reference range."
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Diagnose primary and subclinical hypothyroidism and manage levothyroxine replacement safely."
+    ],
+    "pitfalls": [
+      "Testing during acute illness.",
+      "Relying on TSH in pituitary disease.",
+      "Over-replacement suppressing TSH (AF, osteoporosis).",
+      "Taking levothyroxine with calcium, iron or PPIs.",
+      "Starting levothyroxine before treating adrenal insufficiency."
+    ],
+    "keyPoints": [
+      "TSH first; FT4 if abnormal or pituitary disease suspected.",
+      "Levothyroxine 1.6 µg/kg/day if under 65 and no heart disease.",
+      "Start 25–50 µg in older or cardiac patients.",
+      "Take on an empty stomach, apart from calcium and iron.",
+      "TSH every 3 months until stable, then yearly."
+    ],
+    "references": [
+      {
+        "title": "NICE NG145: Thyroid disease: assessment and management",
+        "edition": "NICE guideline, 2019 (updated 2023)",
+        "url": "https://www.nice.org.uk/guidance/ng145",
+        "locator": "Recs 1.2 (testing), 1.3 (managing primary hypothyroidism), 1.4 (monitoring), 1.5 (subclinical hypothyroidism)"
+      },
+      {
+        "title": "Levothyroxine sodium prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=008de8fd-150f-4022-8ccb-c8bfa94875c7",
+        "locator": "Section 4 Contraindications"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "How and when to take levothyroxine; interactions including over-the-counter supplements.",
+      "Symptoms lag behind dose changes by weeks.",
+      "Tell the clinician early about pregnancy."
+    ],
+    "lifestyleAndDiet": [
+      "No specific diet needed; avoid high-dose biotin before blood tests."
+    ],
+    "mdtReferrals": [
+      "Endocrinology: suspected pituitary disease, pregnancy, under 16, persistent symptoms despite normal TSH, amiodarone/lithium-induced disease."
+    ],
+    "dischargeCriteria": [
+      "Not applicable — outpatient care."
+    ],
+    "followUpPlan": "TSH every 3 months after starting or changing dose until stable, then annually; earlier if symptoms change, pregnancy, or new interacting drugs."
+  }
+}

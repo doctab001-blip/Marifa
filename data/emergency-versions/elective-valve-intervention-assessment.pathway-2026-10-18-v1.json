@@ -1,0 +1,462 @@
+{
+  "id": "6348dfb9-f42c-4745-b038-ee84d31c521c",
+  "title": "Elective Valve Intervention Assessment",
+  "specialty": "Cardiology / Cardiothoracic Surgery",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Planned Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adults with significant heart valve disease being assessed for surgical or transcatheter intervention: echo referral, intervention thresholds, choice of SAVR vs TAVI, monitoring and post-procedure antithrombotics. Verified against NICE NG208 and NG45; antibiotic prophylaxis from Saudi MOH Protocol-015 (cardiac procedures). Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from authoring-standard-2026-10-12-v1-live."
+    ],
+    "unverifiedSections": [
+      "Aspirin dose after TAVI not stated in NG208",
+      "Endocarditis antibiotic prophylaxis not covered",
+      "SFDA registration not checked per drug",
+      "Local antibiogram may add gentamicin (MOH p. 1)",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "6348dfb9-f42c-4745-b038-ee84d31c521c",
+      "0eb52d18-187a-4ae2-a63c-bf65bcb63622"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Valve disease obstructs (stenosis) or leaks (regurgitation), overloading the ventricles. Severe disease causes symptoms, ventricular dysfunction and death; intervention relieves the load before irreversible damage.",
+    "keyMechanisms": [
+      "Aortic stenosis raises LV pressure load → hypertrophy, angina, syncope, heart failure.",
+      "Regurgitation causes volume overload → dilatation; end-systolic diameter thresholds signal decompensation (NICE NG208).",
+      "Symptomatic severe disease warrants intervention (NICE NG208)."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Breathlessness, angina, syncope or reduced exercise tolerance.",
+      "Palpitations (AF)."
+    ],
+    "physicalSigns": [
+      "Murmur (ejection systolic with reduced second sound in severe AS).",
+      "Signs of heart failure, AF."
+    ],
+    "redFlags": [
+      "Syncope or chest pain with an aortic stenosis murmur — urgent assessment",
+      "New heart failure",
+      "Pregnancy with significant valve disease — specialist (NICE NG208)"
+    ],
+    "precipitants": [
+      "Age-related calcification",
+      "Bicuspid valve",
+      "Rheumatic heart disease"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Hypertrophic cardiomyopathy",
+      "distinguishingFeatures": "Dynamic murmur; echo."
+    },
+    {
+      "condition": "Coronary disease",
+      "distinguishingFeatures": "Angina without severe valve lesion."
+    },
+    {
+      "condition": "Heart failure from LV dysfunction",
+      "distinguishingFeatures": "Secondary regurgitation."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count",
+        "modalityTarget": "Pre-assessment (major surgery)",
+        "targetCondition": "Anaemia, thrombocytopenia",
+        "expectedFinding": "NICE NG45: Offer to all (ASA 1–4).",
+        "clinicalRationale": "Treat iron-deficiency anaemia before surgery (NICE NG180).",
+        "normalValue": "Hb 130–170 g/L (men), 120–150 g/L (women); platelets 150–400 × 10⁹/L",
+        "references": [
+          {
+            "title": "NICE NG45: Routine preoperative tests for elective surgery",
+            "edition": "NICE guideline, 2016, Tables 1–3 (tests by surgery grade and ASA grade); Recommendations 1.3–1.9",
+            "url": "https://www.nice.org.uk/guidance/ng45"
+          },
+          {
+            "title": "NICE NG180: Perioperative care in adults",
+            "edition": "NICE guideline, 2020, Recommendations 1.3 (preoperative anaemia)",
+            "url": "https://www.nice.org.uk/guidance/ng180"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Kidney function (creatinine, eGFR, electrolytes)",
+        "modalityTarget": "Pre-assessment (major surgery)",
+        "targetCondition": "Renal impairment, AKI risk",
+        "expectedFinding": "NICE NG45: ASA 1 at risk of AKI: consider; ASA 2–4: offer.",
+        "clinicalRationale": "Adjust nephrotoxic drugs and antibiotic doses.",
+        "normalValue": "eGFR 60 or more mL/min/1.73 m²; K 3.5–5.0 mmol/L",
+        "references": [
+          {
+            "title": "NICE NG45: Routine preoperative tests for elective surgery",
+            "edition": "NICE guideline, 2016, Tables 1–3 (tests by surgery grade and ASA grade); Recommendations 1.3–1.9",
+            "url": "https://www.nice.org.uk/guidance/ng45"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Resting 12-lead ECG",
+        "modalityTarget": "Pre-assessment (major surgery)",
+        "targetCondition": "Arrhythmia, ischaemia",
+        "expectedFinding": "NICE NG45: ASA 1 over 65 without ECG in 12 months: consider; ASA 2–4: offer.",
+        "clinicalRationale": "Abnormal ECG with murmur or cardiac symptoms → anaesthetist review; echo only for murmur with symptoms or heart failure signs (NICE NG45 1.9).",
+        "normalValue": "Sinus rhythm, no ischaemic changes",
+        "references": [
+          {
+            "title": "NICE NG45: Routine preoperative tests for elective surgery",
+            "edition": "NICE guideline, 2016, Tables 1–3 (tests by surgery grade and ASA grade); Recommendations 1.3–1.9",
+            "url": "https://www.nice.org.uk/guidance/ng45"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "HbA1c (known diabetes only)",
+        "modalityTarget": "If not tested in the last 3 months",
+        "targetCondition": "Glycaemic control",
+        "expectedFinding": "Raised HbA1c.",
+        "clinicalRationale": "Do not test people without diabetes (NICE NG45).",
+        "normalValue": "Individual target (e.g. below 53 mmol/mol / 7%)",
+        "references": [
+          {
+            "title": "NICE NG45: Routine preoperative tests for elective surgery",
+            "edition": "NICE guideline, 2016, Recommendations 1.5.1–1.6.2 (HbA1c only for known diabetes, if not tested in last 3 months)",
+            "url": "https://www.nice.org.uk/guidance/ng45"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Pregnancy status",
+        "modalityTarget": "Day of surgery, all women of childbearing potential",
+        "targetCondition": "Unrecognised pregnancy",
+        "expectedFinding": "Possible pregnancy.",
+        "clinicalRationale": "Test with consent if any doubt; document (NICE NG45).",
+        "normalValue": "Not pregnant",
+        "references": [
+          {
+            "title": "NICE NG45: Routine preoperative tests for elective surgery",
+            "edition": "NICE guideline, 2016, Recommendations 1.3.1–1.3.6 (pregnancy status on the day of surgery)",
+            "url": "https://www.nice.org.uk/guidance/ng45"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Transthoracic echocardiography",
+        "modalityTarget": "Murmur with symptoms, signs or abnormal ECG — offer; murmur alone with suspicion — consider (NICE NG208)",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Severity: e.g. AS Vmax above 5 m/s or valve area below 0.6 cm²; LVEF below 55%; AR/MR end-systolic diameter above 50/45 mm.",
+        "clinicalRationale": "Asymptomatic severe disease with these features → consider intervention (NICE NG208).",
+        "normalValue": "Normal valves; LVEF 55% or more",
+        "references": [
+          {
+            "title": "NICE NG208: Heart valve disease presenting in adults: investigation and management",
+            "edition": "NICE guideline, 2021, Recommendations 1.1–1.8 (echo referral, indications, monitoring, intervention choice, antithrombotics)",
+            "url": "https://www.nice.org.uk/guidance/ng208"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Dobutamine stress echo or cardiac CT calcium score",
+        "modalityTarget": "Low-gradient AS with LVEF below 50%, or uncertain severity (NICE NG208)",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Mean gradient rising above 40 mmHg; high calcium score.",
+        "clinicalRationale": "Confirms true severe stenosis.",
+        "normalValue": "No severe stenosis",
+        "references": [
+          {
+            "title": "NICE NG208: Heart valve disease presenting in adults: investigation and management",
+            "edition": "NICE guideline, 2021, Recommendations 1.1–1.8 (echo referral, indications, monitoring, intervention choice, antithrombotics)",
+            "url": "https://www.nice.org.uk/guidance/ng208"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "indication",
+      "title": "Indication and choice",
+      "timeframe": "Heart team",
+      "actions": [
+        "Offer intervention for symptomatic severe valve disease (NICE NG208).",
+        "Asymptomatic severe AS: consider if Vmax above 5 m/s, valve area below 0.6 cm² or LVEF below 55%.",
+        "Surgery first line at low or intermediate surgical risk; TAVI for non-bicuspid severe AS at high risk or when surgery is unsuitable (NICE NG208).",
+        "Asymptomatic severe disease not yet needing intervention: review every 6–12 months with echo; mild AS/MS echo every 3–5 years."
+      ]
+    },
+    {
+      "id": "after",
+      "title": "After intervention",
+      "timeframe": "Post-procedure",
+      "actions": [
+        "No anticoagulation after surgical biological valve unless another indication; consider aspirin (or clopidogrel) after TAVI (NICE NG208 1.7)."
+      ]
+    },
+    {
+      "id": "assess",
+      "title": "Pre-operative assessment",
+      "timeframe": "Weeks before surgery",
+      "actions": [
+        "Grade surgery (minor, intermediate, major/complex) and ASA status; order only the tests NICE NG45 lists for that combination.",
+        "Do not routinely order chest X-ray, urine dipstick, sickle tests or HbA1c in people without diabetes (NICE NG45).",
+        "Discuss stopping smoking and reducing alcohol; manage iron-deficiency anaemia (NICE NG180).",
+        "Make an individual anticoagulant plan if the person takes anticoagulants (NICE NG45)."
+      ]
+    },
+    {
+      "id": "vte",
+      "title": "VTE prophylaxis",
+      "timeframe": "Admission to discharge",
+      "actions": [
+        "Cardiac surgery: consider mechanical prophylaxis; consider LMWH for at least 7 days if not otherwise anticoagulated (NICE NG89 1.15)."
+      ]
+    },
+    {
+      "id": "abx",
+      "title": "Surgical antibiotic prophylaxis (MOH Protocol-015)",
+      "timeframe": "Within 60 min before incision",
+      "actions": [
+        "Cardiac procedures: screen and decolonise MRSA; cefazolin 2 g IV (3 g if 120 kg or more) within 60 min (MOH p. 1).",
+        "Allergy: clindamycin 900 mg (60 min) or vancomycin 15 mg/kg (max 2 g) within 120 min (MOH p. 1).",
+        "Re-dose cefazolin every 4 h (or clindamycin every 6 h) if surgery lasts more than 4 h or blood loss exceeds 1,500 mL (MOH p. 1).",
+        "Stop prophylaxis within 24 h of the end of surgery, even with drains or catheters (MOH p. 4)."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Surgical prophylaxis (preferred)",
+        "patientGroup": "Adults",
+        "genericName": "Cefazolin",
+        "dose": "2 g (3 g if weight 120 kg or more)",
+        "route": "IV",
+        "frequency": "Single dose within 60 min before incision",
+        "duration": "Re-dose every 4 h if surgery over 4 h or blood loss over 1,500 mL; stop within 24 h",
+        "adjustments": [
+          "Adjust for renal impairment per label",
+          "Use alternative if cephalosporin allergy"
+        ],
+        "monitoring": [
+          "Allergy, infusion reactions"
+        ],
+        "contraindications": [
+          "Known allergy to cephalosporins"
+        ],
+        "sourceTitle": "Antibiotics Surgical Prophylaxis (MOH Protocol-015, GDOH-INP-ASPF-091)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-015.pdf",
+        "sourceEdition": "Saudi MOH, issued 22 May 2017, updated 22 May 2021, p. 1 (cardiac and thoracic)",
+        "branch": "Surgical antibiotic prophylaxis",
+        "step": "Prophylactic antibiotic",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "Surgical prophylaxis (beta-lactam allergy or preferred agent unavailable)",
+        "patientGroup": "Adults",
+        "genericName": "Clindamycin",
+        "dose": "900 mg",
+        "route": "IV",
+        "frequency": "Single dose within 60 min before incision",
+        "duration": "Re-dose every 6 h if surgery over 4 h or blood loss over 1,500 mL",
+        "adjustments": [
+          "C. difficile risk"
+        ],
+        "monitoring": [
+          "Diarrhoea"
+        ],
+        "contraindications": [
+          "Hypersensitivity to clindamycin or lincomycin"
+        ],
+        "sourceTitle": "Antibiotics Surgical Prophylaxis (MOH Protocol-015, GDOH-INP-ASPF-091)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-015.pdf",
+        "sourceEdition": "Saudi MOH, issued 22 May 2017, updated 22 May 2021, p. 1 (alternative)",
+        "branch": "Surgical antibiotic prophylaxis",
+        "step": "Prophylactic antibiotic",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Beta-lactam allergy or cefazolin unavailable"
+      },
+      {
+        "indication": "Antiplatelet after TAVI",
+        "patientGroup": "Adults after TAVI without other antithrombotic indication",
+        "genericName": "Aspirin",
+        "dose": "75 mg (low dose per local protocol)",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term per cardiology",
+        "adjustments": [
+          "Clopidogrel if aspirin not tolerated (NICE NG208)",
+          "Dose not stated in NG208 — low dose per local protocol"
+        ],
+        "monitoring": [
+          "Bleeding"
+        ],
+        "contraindications": [
+          "Known allergy to NSAIDs",
+          "Syndrome of asthma, rhinitis and nasal polyps",
+          "Hypersensitivity to aspirin"
+        ],
+        "sourceTitle": "NICE NG208: Heart valve disease presenting in adults: investigation and management",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng208",
+        "sourceEdition": "NICE guideline, 2021, Recommendations 1.1–1.8 (echo referral, indications, monitoring, intervention choice, antithrombotics)",
+        "branch": "After TAVI",
+        "step": "Antiplatelet",
+        "selection": "all"
+      }
+    ],
+    "note": "Antibiotic regimens are from Saudi MOH Protocol-015; VTE durations from NICE NG89 with enoxaparin doses from the FDA label; contraindications from FDA labels. Check SFDA registration, hospital antibiogram and formulary.",
+    "branches": [
+      {
+        "label": "Surgical antibiotic prophylaxis",
+        "entryCriteria": "Adult having elective valve intervention"
+      },
+      {
+        "label": "After TAVI",
+        "entryCriteria": "Adult after TAVI without another antithrombotic indication"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Asymptomatic severe AS — consider intervention",
+      "threshold": "Vmax above 5 m/s, AVA below 0.6 cm² or LVEF below 55%"
+    },
+    {
+      "criterion": "Severe AR — consider",
+      "threshold": "ESD above 50 mm or ESDI above 24 mm/m²"
+    },
+    {
+      "criterion": "Severe primary MR — consider",
+      "threshold": "ESD above 45 mm or ESDI above 22 mm/m²"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "SAVR vs TAVI (NICE NG208)",
+    "columns": [
+      "Surgery (SAVR)",
+      "TAVI"
+    ],
+    "rows": [
+      {
+        "parameter": "Who",
+        "values": [
+          "Low or intermediate surgical risk",
+          "Non-bicuspid severe AS, high risk or surgery unsuitable"
+        ]
+      },
+      {
+        "parameter": "After",
+        "values": [
+          "No anticoagulation for bioprosthesis unless other indication",
+          "Consider aspirin (or clopidogrel)"
+        ]
+      }
+    ],
+    "note": "Decision with the heart team and patient."
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Identify adults with valve disease needing intervention and prepare them for surgery or TAVI."
+    ],
+    "pitfalls": [
+      "Missing AS as the cause of syncope.",
+      "Routine anticoagulation after bioprosthetic SAVR.",
+      "Delaying referral of asymptomatic severe AS with LVEF below 55%."
+    ],
+    "keyPoints": [
+      "Echo for murmur with symptoms or abnormal ECG.",
+      "Symptomatic severe disease → intervene.",
+      "SAVR at low/intermediate risk; TAVI if high risk.",
+      "Asymptomatic severe disease: review 6–12-monthly.",
+      "Cefazolin 2 g; MRSA screen."
+    ],
+    "references": [
+      {
+        "title": "NICE NG208: Heart valve disease presenting in adults: investigation and management",
+        "edition": "NICE guideline, 2021",
+        "url": "https://www.nice.org.uk/guidance/ng208",
+        "locator": "Recommendations 1.1–1.8 (echo referral, indications, monitoring, intervention choice, antithrombotics)"
+      },
+      {
+        "title": "NICE NG45: Routine preoperative tests for elective surgery",
+        "edition": "NICE guideline, 2016",
+        "url": "https://www.nice.org.uk/guidance/ng45",
+        "locator": "Tables 1–3"
+      },
+      {
+        "title": "NICE NG89: Venous thromboembolism in over 16s: reducing the risk of hospital-acquired DVT or PE",
+        "edition": "NICE guideline, 2018 (updated 2019)",
+        "url": "https://www.nice.org.uk/guidance/ng89",
+        "locator": "Recommendations 1.15.1–1.15.2"
+      },
+      {
+        "title": "Antibiotics Surgical Prophylaxis (MOH Protocol-015, GDOH-INP-ASPF-091)",
+        "edition": "Saudi MOH, issued 22 May 2017, updated 22 May 2021",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-015.pdf",
+        "locator": "pp. 1, 4"
+      },
+      {
+        "title": "Cefazolin for injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00dd6da7-50a8-44c9-b2dc-7948973df392",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Clindamycin phosphate injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=05a75685-0af5-407c-ac57-e380c882b49d",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Aspirin (aspirin component of aspirin/extended-release dipyridamole) prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=111a4f6a-c3e4-43e2-8f0e-8c72f71cddb2",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Report new breathlessness, chest pain or syncope.",
+      "Dental hygiene and endocarditis awareness."
+    ],
+    "lifestyleAndDiet": [
+      "Stop smoking and reduce alcohol before surgery (NICE NG180).",
+      "Stay active; prehabilitation exercises where advised."
+    ],
+    "mdtReferrals": [
+      "Heart valve multidisciplinary team.",
+      "Cardiac rehabilitation after surgery."
+    ],
+    "dischargeCriteria": [
+      "Pain controlled with oral analgesia; eating, drinking and mobilising.",
+      "Wound satisfactory; VTE prophylaxis plan and follow-up arranged."
+    ],
+    "followUpPlan": "Post-operative review per surgical team; return immediately with fever, wound redness, calf swelling, breathlessness or chest pain."
+  }
+}

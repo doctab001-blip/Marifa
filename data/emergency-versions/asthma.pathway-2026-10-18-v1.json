@@ -1,0 +1,540 @@
+{
+  "id": "ce9316d7-2fe5-415d-a633-b0ebb79a4693",
+  "title": "Asthma",
+  "specialty": "Respiratory Medicine / Primary Care",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adolescents and adults with chronic asthma in primary and specialist care: diagnosis, control assessment with the Asthma Control Test (ACT), SINA stepwise treatment, inhaler regimens and referral for severe asthma. Verified against the Saudi Initiative for Asthma (SINA) 2024 update; inhaler doses and contraindications from US FDA prescribing information. Acute attacks are covered in the Acute Asthma topic. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from emergency-2026-10-12-v1-live-approved-draft-1792312482562."
+    ],
+    "unverifiedSections": [
+      "SINA medication appendix (exact low/medium/high ICS dose bands) not extracted — tables not available as text",
+      "NG245 not reviewed in detail",
+      "Biologic dosing — specialist protocol",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "ce9316d7-2fe5-415d-a633-b0ebb79a4693",
+      "db79710e-94dc-4de6-8ee1-1ffa2f4fde62"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Asthma is a chronic inflammatory airway disease with variable respiratory symptoms (wheeze, breathlessness, chest tightness, cough) and variable expiratory airflow limitation. Most adults have type 2 (eosinophilic/allergic) inflammation, which is steroid-responsive.",
+    "keyMechanisms": [
+      "Allergen or irritant exposure → type 2 inflammation (IL-4, IL-5, IL-13; eosinophils, IgE, mast cells) → bronchial hyper-responsiveness, mucus and oedema.",
+      "Airway smooth muscle constriction is reversible with bronchodilators; persistent inflammation causes remodelling and fixed obstruction if under-treated.",
+      "ICS treats the underlying inflammation — the cornerstone at every step (SINA); SABA alone increases exacerbation and death risk.",
+      "Type 2 biomarkers (blood eosinophils 150/µL or more, FeNO 20 ppb or more) predict ICS and biologic response (SINA)."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Episodic wheeze, breathlessness, chest tightness, cough — worse at night or early morning.",
+      "Triggers: allergens (dust mite, pets, pollen), exercise, cold air, viral infections, smoke, dust storms.",
+      "Associated rhinitis, eczema, family history of atopy."
+    ],
+    "physicalSigns": [
+      "Often normal between attacks.",
+      "Expiratory wheeze, prolonged expiration.",
+      "Nasal polyps or rhinitis; eczema."
+    ],
+    "redFlags": [
+      "Severe exacerbation in the past 12 months or prior ICU admission/intubation",
+      "Using more than 3 SABA canisters a year",
+      "ACT below 16 (uncontrolled)",
+      "Needing more than 12 inhalations/day of ICS-formoterol reliever for 2–3 days",
+      "Frequent oral steroid courses"
+    ],
+    "precipitants": [
+      "Non-adherence or poor inhaler technique",
+      "Viral infections",
+      "Allergen exposure, dust storms, smoke, vaping",
+      "Rhinosinusitis, GERD, obesity",
+      "Aspirin/NSAIDs (in aspirin-exacerbated respiratory disease); non-selective beta-blockers"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "COPD",
+      "distinguishingFeatures": "Older smoker; persistent post-bronchodilator FEV1/FVC below 0.7; less reversibility."
+    },
+    {
+      "condition": "Inducible laryngeal obstruction",
+      "distinguishingFeatures": "Inspiratory stridor; normal spirometry between episodes."
+    },
+    {
+      "condition": "Heart failure",
+      "distinguishingFeatures": "Orthopnoea, raised NT-proBNP, echo abnormality."
+    },
+    {
+      "condition": "Bronchiectasis, ABPA, eosinophilic granulomatosis",
+      "distinguishingFeatures": "Chronic sputum, CT changes, very high IgE/eosinophils."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Spirometry with bronchodilator reversibility",
+        "modalityTarget": "At diagnosis and at reviews",
+        "targetCondition": "Variable airflow limitation",
+        "expectedFinding": "FEV1/FVC reduced; FEV1 rises 12% or more and 200 mL or more after bronchodilator.",
+        "clinicalRationale": "Confirms asthma; a normal test when well does not exclude it — repeat when symptomatic or use PEF variability.",
+        "normalValue": "FEV1/FVC above lower limit of normal; post-bronchodilator FEV1 change below 12%",
+        "references": [
+          {
+            "title": "The Saudi Initiative for Asthma — 2024 update: guidelines for the diagnosis and management of asthma in adults and children (SINA)",
+            "edition": "Ann Thorac Med 2024;19(1):1–55 (Al-Moamary MS et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10911239/"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Fractional exhaled nitric oxide (FeNO)",
+        "modalityTarget": "At diagnosis and to guide treatment",
+        "targetCondition": "Type 2 airway inflammation",
+        "expectedFinding": "Above 50 ppb: eosinophilic inflammation likely (supports asthma); 25–49 possible; below 25 unlikely.",
+        "clinicalRationale": "FeNO 20 ppb or more indicates type 2 inflammation and biologic responsiveness (SINA).",
+        "normalValue": "Below 25 ppb",
+        "references": [
+          {
+            "title": "The Saudi Initiative for Asthma — 2024 update: guidelines for the diagnosis and management of asthma in adults and children (SINA)",
+            "edition": "Ann Thorac Med 2024;19(1):1–55 (Al-Moamary MS et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10911239/"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Peak expiratory flow (PEF) diary",
+        "modalityTarget": "If spirometry unavailable or normal",
+        "targetCondition": "Variability",
+        "expectedFinding": "Diurnal variability; improvement after treatment.",
+        "clinicalRationale": "Supports diagnosis; personal best guides action plan.",
+        "references": [
+          {
+            "title": "The Saudi Initiative for Asthma — 2024 update: guidelines for the diagnosis and management of asthma in adults and children (SINA)",
+            "edition": "Ann Thorac Med 2024;19(1):1–55 (Al-Moamary MS et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10911239/"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Asthma Control Test (ACT)",
+        "modalityTarget": "Every visit",
+        "targetCondition": "Control",
+        "expectedFinding": "20 or more controlled; 16–19 partly controlled; below 16 uncontrolled.",
+        "clinicalRationale": "Chooses starting step and when to step up or down (SINA).",
+        "normalValue": "ACT 20–25",
+        "references": [
+          {
+            "title": "The Saudi Initiative for Asthma — 2024 update: guidelines for the diagnosis and management of asthma in adults and children (SINA)",
+            "edition": "Ann Thorac Med 2024;19(1):1–55 (Al-Moamary MS et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10911239/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Blood eosinophil count; total IgE; specific IgE/skin prick tests",
+        "modalityTarget": "Severe or uncontrolled asthma; before biologics",
+        "targetCondition": "Phenotype",
+        "expectedFinding": "Eosinophils 150/µL or more (type 2); 300/µL or more for some biologics; raised IgE with sensitisation (allergic).",
+        "clinicalRationale": "Selects biologic (SINA Box 6.4).",
+        "normalValue": "Eosinophils below 150/µL",
+        "references": [
+          {
+            "title": "The Saudi Initiative for Asthma — 2024 update: guidelines for the diagnosis and management of asthma in adults and children (SINA)",
+            "edition": "Ann Thorac Med 2024;19(1):1–55 (Al-Moamary MS et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10911239/"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Chest X-ray",
+        "modalityTarget": "Atypical features, suspected alternative diagnosis",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Usually normal; hyperinflation; other pathology.",
+        "clinicalRationale": "Excludes alternative diagnoses.",
+        "references": [
+          {
+            "title": "The Saudi Initiative for Asthma — 2024 update: guidelines for the diagnosis and management of asthma in adults and children (SINA)",
+            "edition": "Ann Thorac Med 2024;19(1):1–55 (Al-Moamary MS et al.)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10911239/"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "start",
+      "title": "Start treatment by ACT score (adults and adolescents)",
+      "timeframe": "At diagnosis",
+      "actions": [
+        "ACT 20 or more (step 1): as-needed low-dose ICS-formoterol; alternative as-needed SABA with low-dose ICS from separate inhalers. SABA alone is no longer recommended.",
+        "Daily low-dose ICS (with or without LABA) if symptoms more than twice a week, exacerbation risk factors or fixed obstruction.",
+        "ACT 16–19 (step 2): daily low-dose ICS/LABA with a reliever.",
+        "ACT below 16 (step 3): daily medium-dose ICS/LABA with a reliever; if early exacerbation signs add prednisolone 30–60 mg for 3–5 days."
+      ]
+    },
+    {
+      "id": "adjust",
+      "title": "Stepwise adjustment",
+      "timeframe": "Review every 1–3 months",
+      "actions": [
+        "Step 2: low-dose ICS/LABA (alternative: low-dose ICS plus LTRA, especially with rhinitis).",
+        "Step 3: medium-dose ICS/LABA (alternative: add tiotropium to ICS if LABA cannot be used). Refer to an asthma specialist if hard to control.",
+        "Step 4: add a LAMA — single-inhaler triple therapy (e.g. fluticasone furoate/umeclidinium/vilanterol 200/62.5/25 µg once daily).",
+        "Step 5: specialist; biologics by phenotype — omalizumab, mepolizumab, benralizumab, dupilumab; lowest possible OCS if biologics unsuitable.",
+        "Before stepping up check adherence, inhaler technique, triggers and comorbidities (rhinosinusitis, GERD, obesity)."
+      ]
+    },
+    {
+      "id": "mart",
+      "title": "ICS-formoterol MART",
+      "timeframe": "Steps 2–3 and above",
+      "actions": [
+        "Budesonide-formoterol: 1 inhalation twice daily (step 2) or 2 inhalations twice daily (step 3), plus extra inhalations as reliever up to 12 inhalations/day (SINA).",
+        "Maximum formoterol 72 µg/day; needing this for 2–3 days means seek review.",
+        "With a non-formoterol LABA (salmeterol, vilanterol, indacaterol) use SABA as reliever. Never LABA or LAMA without ICS."
+      ]
+    },
+    {
+      "id": "stepdown",
+      "title": "Step down",
+      "timeframe": "After 3 months of control",
+      "actions": [
+        "Reduce ICS gradually every 3–6 months to the lowest dose that maintains control; do not stop LABA abruptly in a patient on ICS/LABA.",
+        "Seasonal asthma: start low-dose ICS before the season."
+      ]
+    },
+    {
+      "id": "risk",
+      "title": "Reduce risk",
+      "timeframe": "Every visit",
+      "actions": [
+        "Written action plan; check reliever use (more than 3 SABA canisters a year = high risk).",
+        "Stop smoking and vaping; annual influenza vaccination; treat rhinitis.",
+        "Long-term OCS: calcium, vitamin D and bone protection if osteoporosis risk; increase steroid at times of stress."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Steps 1–3: as-needed (step 1) or maintenance-and-reliever (MART)",
+        "patientGroup": "Adults and adolescents 12 years or over",
+        "genericName": "Budesonide-formoterol",
+        "dose": "As needed (step 1); maintenance 1 inhalation twice daily (step 2) or 2 inhalations twice daily (step 3)",
+        "route": "Inhaled",
+        "frequency": "Plus extra inhalations as reliever",
+        "duration": "Maximum 12 inhalations/day; formoterol maximum 72 µg/day",
+        "adjustments": [
+          "FDA label: 80/4.5 or 160/4.5 µg, 2 inhalations twice daily (maintenance only)",
+          "Rinse mouth after use"
+        ],
+        "monitoring": [
+          "Reliever use, ACT, oral thrush"
+        ],
+        "contraindications": [
+          "Primary treatment of status asthmaticus or acute episodes needing intensive measures",
+          "Hypersensitivity"
+        ],
+        "sourceTitle": "The Saudi Initiative for Asthma — 2024 update: guidelines for the diagnosis and management of asthma in adults and children (SINA)",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10911239/",
+        "sourceEdition": "SINA 2024, adult treatment steps",
+        "branch": "Controller and reliever — steps 1 to 3",
+        "step": "Controller",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "Steps 2–3 fixed-dose ICS/LABA (non-formoterol)",
+        "patientGroup": "Adults and adolescents",
+        "genericName": "Fluticasone propionate/salmeterol (dry powder)",
+        "dose": "1 inhalation; Saudi-market DPI strengths salmeterol/fluticasone 50/100, 50/250 or 50/500 µg (STS 2025 Table 5)",
+        "route": "Inhaled",
+        "frequency": "Twice daily (FDA label: 1 inhalation twice daily)",
+        "duration": "Long term; step down when controlled",
+        "adjustments": [
+          "Use SABA as reliever (salmeterol is slow in onset)",
+          "Choose strength by SINA step"
+        ],
+        "monitoring": [
+          "ACT, oral thrush"
+        ],
+        "contraindications": [
+          "Primary treatment of status asthmaticus or acute asthma",
+          "Severe milk-protein hypersensitivity"
+        ],
+        "sourceTitle": "The Saudi Initiative for Asthma — 2024 update: guidelines for the diagnosis and management of asthma in adults and children (SINA)",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10911239/",
+        "sourceEdition": "SINA 2024, adult treatment steps",
+        "branch": "Controller and reliever — steps 1 to 3",
+        "step": "Controller",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Fixed-dose ICS/LABA that does not contain formoterol is chosen, with a separate salbutamol reliever"
+      },
+      {
+        "indication": "Step 2 alternative (with rhinitis) or add-on",
+        "patientGroup": "Adults and adolescents 15 years or over",
+        "genericName": "Montelukast",
+        "dose": "10 mg",
+        "route": "PO",
+        "frequency": "Once daily in the evening",
+        "duration": "Long term",
+        "adjustments": [
+          "Boxed warning: serious neuropsychiatric events — discuss before prescribing"
+        ],
+        "monitoring": [
+          "Mood, sleep, behaviour"
+        ],
+        "contraindications": [
+          "Hypersensitivity (boxed warning: neuropsychiatric events)"
+        ],
+        "sourceTitle": "Montelukast prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=04b3faff-1ea1-4d2a-aa31-9d6e742e1759",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "branch": "Controller and reliever — steps 1 to 3",
+        "step": "Controller",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Step 2 alternative with rhinitis, or as an add-on"
+      },
+      {
+        "indication": "Reliever (with non-formoterol ICS/LABA, or with ICS in step 1)",
+        "patientGroup": "Adults and children 4 years or over",
+        "genericName": "Salbutamol (albuterol) MDI",
+        "dose": "2 inhalations (1 may suffice)",
+        "route": "Inhaled",
+        "frequency": "Every 4–6 hours as needed",
+        "duration": "As needed",
+        "adjustments": [
+          "Increasing use = worsening control; never SABA alone"
+        ],
+        "monitoring": [
+          "Use frequency"
+        ],
+        "contraindications": [
+          "Hypersensitivity to any ingredient"
+        ],
+        "sourceTitle": "Albuterol (salbutamol) sulfate HFA prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=04c8a345-0a0d-5a01-e063-6294a90a40d2",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "branch": "Controller and reliever — steps 1 to 3",
+        "step": "Reliever",
+        "selection": "all",
+        "useWhen": "With a non-formoterol ICS/LABA, or with an ICS in step 1"
+      },
+      {
+        "indication": "Early signs of exacerbation with ACT below 16",
+        "patientGroup": "Adults",
+        "genericName": "Prednisolone",
+        "dose": "30–60 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "3–5 days",
+        "adjustments": [
+          "Repeated courses → review step and adherence; bone protection with long-term OCS"
+        ],
+        "monitoring": [
+          "Glucose in diabetes; mood"
+        ],
+        "contraindications": [
+          "Systemic fungal infections"
+        ],
+        "sourceTitle": "The Saudi Initiative for Asthma — 2024 update: guidelines for the diagnosis and management of asthma in adults and children (SINA)",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10911239/",
+        "sourceEdition": "SINA 2024, adult treatment steps",
+        "branch": "Early signs of an exacerbation",
+        "step": "Oral corticosteroid",
+        "selection": "all"
+      }
+    ],
+    "note": "MART and prednisolone regimens are from SINA 2024; product doses and contraindications from US FDA labels. SINA notes ICS/SABA combination and tezepelumab were not yet available in Saudi Arabia (2024). Check SFDA registration, hospital formulary and actual availability.",
+    "branches": [
+      {
+        "label": "Controller and reliever — steps 1 to 3",
+        "entryCriteria": "Adult or adolescent with asthma starting or adjusting treatment by ACT score"
+      },
+      {
+        "label": "Early signs of an exacerbation",
+        "entryCriteria": "Adult with early signs of an exacerbation and ACT below 16"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Bronchodilator reversibility",
+      "threshold": "FEV1 increase 12% or more and 200 mL or more"
+    },
+    {
+      "criterion": "FeNO supporting asthma",
+      "threshold": "Above 50 ppb (likely eosinophilic); type 2 inflammation 20 ppb or more"
+    },
+    {
+      "criterion": "Controlled",
+      "threshold": "ACT 20 or more"
+    },
+    {
+      "criterion": "Partly controlled",
+      "threshold": "ACT 16–19"
+    },
+    {
+      "criterion": "Uncontrolled",
+      "threshold": "ACT below 16"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "SINA 2024 steps (adults and adolescents)",
+    "columns": [
+      "Preferred",
+      "Alternative"
+    ],
+    "rows": [
+      {
+        "parameter": "Step 1 (ACT 20 or more)",
+        "values": [
+          "As-needed ICS-formoterol",
+          "As-needed SABA plus low-dose ICS"
+        ]
+      },
+      {
+        "parameter": "Step 2 (ACT 16–19)",
+        "values": [
+          "Daily low-dose ICS/LABA (or MART)",
+          "Low-dose ICS plus LTRA"
+        ]
+      },
+      {
+        "parameter": "Step 3 (ACT below 16)",
+        "values": [
+          "Medium-dose ICS/LABA (or MART)",
+          "ICS plus tiotropium if LABA unsuitable"
+        ]
+      },
+      {
+        "parameter": "Step 4",
+        "values": [
+          "Single-inhaler triple therapy (ICS/LABA/LAMA)",
+          "Add tiotropium or LTRA; high-dose ICS/LABA"
+        ]
+      },
+      {
+        "parameter": "Step 5",
+        "values": [
+          "Biologic by phenotype (specialist)",
+          "Lowest-dose OCS; macrolide"
+        ]
+      }
+    ],
+    "note": "The BTS/NICE/SIGN 2024 guideline (NG245) also uses ICS-formoterol as-needed and MART; it was not reviewed in detail for this version."
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Diagnose asthma, assess control with the ACT and manage it stepwise using SINA 2024."
+    ],
+    "pitfalls": [
+      "LABA without ICS.",
+      "Stepping up without checking inhaler technique.",
+      "Ignoring high SABA use.",
+      "Stopping LABA abruptly in a patient on ICS/LABA.",
+      "Missing comorbid rhinosinusitis or GERD."
+    ],
+    "keyPoints": [
+      "ICS at every step; no SABA-only treatment.",
+      "ACT score chooses the starting step.",
+      "MART: one inhaler for maintenance and relief, max 12 inhalations/day.",
+      "Check adherence and technique before stepping up.",
+      "Refer severe asthma for phenotyping and biologics."
+    ],
+    "references": [
+      {
+        "title": "The Saudi Initiative for Asthma — 2024 update: guidelines for the diagnosis and management of asthma in adults and children (SINA)",
+        "edition": "Ann Thorac Med 2024;19(1):1–55 (Al-Moamary MS et al.)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10911239/",
+        "locator": "Diagnosis; asthma control (ACT); Boxes 6.1–6.3 stepwise treatment; step 5 biologics"
+      },
+      {
+        "title": "Budesonide/formoterol inhalation aerosol prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0ce4cd21-ac96-4b39-9e1c-49f86c87fa1a",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Fluticasone propionate/salmeterol prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=038db4da-1448-4603-a34d-2efd9059811b",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Albuterol (salbutamol) sulfate HFA prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=04c8a345-0a0d-5a01-e063-6294a90a40d2",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Montelukast prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=04b3faff-1ea1-4d2a-aa31-9d6e742e1759",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Tiotropium bromide inhalation powder prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=496b38ee-45b6-4bb2-a35e-9023c3b73719",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Prednisolone prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=070f1937-50a5-457f-bef5-4e597014e26d",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "NICE NG245: Asthma: diagnosis, monitoring and chronic asthma management (BTS, NICE, SIGN)",
+        "edition": "Joint guideline, 2024 — cited for awareness; not reviewed in detail for this version",
+        "url": "https://www.nice.org.uk/guidance/ng245"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Inhaler technique at every visit; spacer with MDI.",
+      "Written asthma action plan.",
+      "Trigger avoidance, including dust storms and smoke."
+    ],
+    "lifestyleAndDiet": [
+      "Stop smoking and vaping.",
+      "Regular exercise; weight loss if obese.",
+      "Annual influenza vaccination."
+    ],
+    "mdtReferrals": [
+      "Asthma specialist if uncontrolled at step 3 or above, or diagnostic doubt.",
+      "ENT for rhinosinusitis/nasal polyps."
+    ],
+    "dischargeCriteria": [
+      "Not applicable — chronic outpatient care."
+    ],
+    "followUpPlan": "Review 1–3 months after starting or changing treatment, then every 3–12 months when controlled; spirometry periodically; specialist referral if uncontrolled at step 3 or above."
+  }
+}

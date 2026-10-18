@@ -1,0 +1,474 @@
+{
+  "id": "1dd5fa99-fc60-44e6-94f4-6de6287a1244",
+  "title": "Adult Vaccination Review",
+  "specialty": "Family Medicine / Public Health",
+  "authority": "PHA",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Keep Well",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adults 18 and over: which vaccines to offer by age, pregnancy and risk, catch-up for missed doses, and true contraindications. Verified against the Saudi PHA Clinical Preventive Guideline 2023 (adult checklist and Table 2), the UK Green Book Chapter 6 and UKHSA catch-up principles. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from authoring-standard-2026-10-12-v1-live."
+    ],
+    "unverifiedSections": [
+      "Current Hajj/Umrah and seasonal requirements not reproduced",
+      "PPSV23 timing references PCV13; newer PCV products may change sequencing",
+      "Product-specific doses not reproduced",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "1dd5fa99-fc60-44e6-94f4-6de6287a1244",
+      "dcc95ae6-e7c5-4d2b-ae35-cb931f23de0d"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Immunity from childhood vaccines wanes (tetanus, pertussis) and new risks arise with age, pregnancy and chronic disease (influenza, pneumococcus, shingles). An adult vaccination review closes gaps and adds age- and risk-based vaccines.",
+    "keyMechanisms": [
+      "Boosters restore waning antibody levels (Td every 10 years).",
+      "Ageing immune systems increase risk from influenza, pneumococcus and zoster reactivation.",
+      "Maternal Tdap in pregnancy passes antibodies that protect the newborn against pertussis."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Review vaccination record, age, pregnancy, chronic disease and immunosuppression.",
+      "Ask about previous reactions."
+    ],
+    "physicalSigns": [
+      "Temperature if unwell."
+    ],
+    "redFlags": [
+      "Anaphylaxis after vaccination — treat immediately",
+      "Pregnancy or immunosuppression — no live vaccines (Green Book Ch. 6)",
+      "Fever above 38.5 °C — postpone (Green Book Ch. 6)"
+    ],
+    "precipitants": [
+      "Age 50 or over (zoster), 65 or over (pneumococcal)",
+      "Pregnancy",
+      "Chronic heart, lung, kidney, liver disease; diabetes",
+      "Immunosuppression",
+      "Healthcare work; travel"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Minor illness",
+      "distinguishingFeatures": "Not a reason to delay."
+    },
+    {
+      "condition": "Uncertain history",
+      "distinguishingFeatures": "Assume unimmunised for catch-up (UKHSA)."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Vaccination history review",
+        "modalityTarget": "Every adult health check (PHA checklist)",
+        "targetCondition": "Missing vaccines",
+        "expectedFinding": "Gaps against Table 2.",
+        "clinicalRationale": "Offer due vaccines; plan catch-up.",
+        "normalValue": "Up to date for age and risk (PHA Table 2)",
+        "references": [
+          {
+            "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+            "edition": "3rd edition, 2023, PDF p. 38, Table 2 and footnotes 1–11 (adult vaccinations, timing and indication)",
+            "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf"
+          },
+          {
+            "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+            "edition": "3rd edition, 2023, PDF p. 25 (adult checklist 18–59 years: Pap smear, mammogram, colon cancer, vaccines)",
+            "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Immunity check (measles, varicella, hepatitis B) where history is uncertain",
+        "modalityTarget": "Premarital, postnatal and selected adults (PHA footnotes 4, 5, 10)",
+        "targetCondition": "Non-immune",
+        "expectedFinding": "No evidence of immunity.",
+        "clinicalRationale": "Vaccinate per PHA schedule.",
+        "normalValue": "Evidence of immunity",
+        "references": [
+          {
+            "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+            "edition": "3rd edition, 2023, PDF p. 38, Table 2 and footnotes 1–11 (adult vaccinations, timing and indication)",
+            "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "routine",
+      "title": "Routine for all adults (PHA Table 2)",
+      "timeframe": "Every review",
+      "actions": [
+        "Influenza: 1 dose annually.",
+        "Tdap once, then Td booster every 10 years.",
+        "Tdap in each pregnancy between 27 and 36 weeks."
+      ]
+    },
+    {
+      "id": "age",
+      "title": "By age",
+      "timeframe": "Review",
+      "actions": [
+        "50 or over: herpes zoster, 2 doses 2–6 months apart.",
+        "65 or over: PCV 1 dose, then PPSV23 1 dose 1 year after PCV13."
+      ]
+    },
+    {
+      "id": "risk",
+      "title": "By risk or immunity",
+      "timeframe": "Review",
+      "actions": [
+        "MMR: unvaccinated, premarital and postnatal women without immunity (1 or 2 doses by indication).",
+        "Varicella: no immunity — 2 doses 8 weeks apart.",
+        "Hepatitis B: no immunity — 3 doses at 0, 1 and 6 months.",
+        "HPV: catch-up for females 15–26, 3 doses at 0, 1–2 and 6 months.",
+        "PCV: adults with comorbid or immunocompromised conditions.",
+        "MCV4: 1 dose by indication; booster every 5 years if risk remains."
+      ]
+    },
+    {
+      "id": "contra",
+      "title": "Contraindications",
+      "timeframe": "Before each dose",
+      "actions": [
+        "Avoid after confirmed anaphylaxis to a previous dose or component; no live vaccines in pregnancy or significant immunosuppression (Green Book Ch. 6).",
+        "Live vaccines delayed 3 months after high-dose steroids (over 40 mg prednisolone daily for more than 1 week) (Green Book Ch. 6)."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Seasonal influenza",
+        "patientGroup": "All adults",
+        "genericName": "Influenza vaccine",
+        "dose": "1 dose",
+        "route": "Per product leaflet",
+        "frequency": "Annually",
+        "duration": "Yearly",
+        "adjustments": [
+          "Dose volume and route per the SFDA-registered product leaflet — not reproduced here"
+        ],
+        "monitoring": [
+          "Observe for immediate reactions; anaphylaxis treatment available (Green Book Ch. 6)",
+          "Record in vaccination record"
+        ],
+        "contraindications": [
+          "Confirmed anaphylaxis to a previous dose or to a vaccine component (Green Book Ch. 6)",
+          "Live vaccines (MMR, varicella): avoid in significant immunodeficiency or immunosuppressive therapy, and in pregnancy (Green Book Ch. 6)",
+          "Postpone if acutely unwell with fever above 38.5 °C; minor illness is not a reason to delay (Green Book Ch. 6)"
+        ],
+        "sourceTitle": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+        "sourceUrl": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf",
+        "sourceEdition": "3rd edition, 2023, PDF p. 38, Table 2 and footnotes 1–11 (adult vaccinations, timing and indication)",
+        "branch": "All adults",
+        "step": "Vaccine",
+        "selection": "all"
+      },
+      {
+        "indication": "Tetanus, diphtheria, pertussis",
+        "patientGroup": "All adults; each pregnancy",
+        "genericName": "Tdap then Td",
+        "dose": "1 dose",
+        "route": "Per product leaflet",
+        "frequency": "Tdap once, then Td every 10 years; Tdap at 27–36 weeks in each pregnancy",
+        "duration": "Lifelong boosters",
+        "adjustments": [
+          "Dose volume and route per the SFDA-registered product leaflet — not reproduced here"
+        ],
+        "monitoring": [
+          "Observe for immediate reactions; anaphylaxis treatment available (Green Book Ch. 6)",
+          "Record in vaccination record"
+        ],
+        "contraindications": [
+          "Confirmed anaphylaxis to a previous dose or to a vaccine component (Green Book Ch. 6)",
+          "Live vaccines (MMR, varicella): avoid in significant immunodeficiency or immunosuppressive therapy, and in pregnancy (Green Book Ch. 6)",
+          "Postpone if acutely unwell with fever above 38.5 °C; minor illness is not a reason to delay (Green Book Ch. 6)"
+        ],
+        "sourceTitle": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+        "sourceUrl": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf",
+        "sourceEdition": "3rd edition, 2023, PDF p. 38, Table 2 and footnotes 1–11 (adult vaccinations, timing and indication)",
+        "branch": "All adults",
+        "step": "Vaccine",
+        "selection": "all"
+      },
+      {
+        "indication": "Herpes zoster",
+        "patientGroup": "Adults 50 or over",
+        "genericName": "Herpes zoster vaccine",
+        "dose": "1 dose per visit",
+        "route": "Per product leaflet",
+        "frequency": "2 doses 2–6 months apart",
+        "duration": "2 doses",
+        "adjustments": [
+          "Dose volume and route per the SFDA-registered product leaflet — not reproduced here"
+        ],
+        "monitoring": [
+          "Observe for immediate reactions; anaphylaxis treatment available (Green Book Ch. 6)",
+          "Record in vaccination record"
+        ],
+        "contraindications": [
+          "Confirmed anaphylaxis to a previous dose or to a vaccine component (Green Book Ch. 6)",
+          "Live vaccines (MMR, varicella): avoid in significant immunodeficiency or immunosuppressive therapy, and in pregnancy (Green Book Ch. 6)",
+          "Postpone if acutely unwell with fever above 38.5 °C; minor illness is not a reason to delay (Green Book Ch. 6)"
+        ],
+        "sourceTitle": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+        "sourceUrl": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf",
+        "sourceEdition": "3rd edition, 2023, PDF p. 38, Table 2 and footnotes 1–11 (adult vaccinations, timing and indication)",
+        "branch": "Aged 50 or over",
+        "step": "Vaccine",
+        "selection": "all"
+      },
+      {
+        "indication": "Pneumococcal",
+        "patientGroup": "65 or over; comorbid or immunocompromised adults",
+        "genericName": "PCV then PPSV23",
+        "dose": "1 dose each",
+        "route": "Per product leaflet",
+        "frequency": "PCV 1 dose; PPSV23 1 dose 1 year after PCV13 (65 or over)",
+        "duration": "As scheduled",
+        "adjustments": [
+          "Dose volume and route per the SFDA-registered product leaflet — not reproduced here"
+        ],
+        "monitoring": [
+          "Observe for immediate reactions; anaphylaxis treatment available (Green Book Ch. 6)",
+          "Record in vaccination record"
+        ],
+        "contraindications": [
+          "Confirmed anaphylaxis to a previous dose or to a vaccine component (Green Book Ch. 6)",
+          "Live vaccines (MMR, varicella): avoid in significant immunodeficiency or immunosuppressive therapy, and in pregnancy (Green Book Ch. 6)",
+          "Postpone if acutely unwell with fever above 38.5 °C; minor illness is not a reason to delay (Green Book Ch. 6)"
+        ],
+        "sourceTitle": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+        "sourceUrl": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf",
+        "sourceEdition": "3rd edition, 2023, PDF p. 38, Table 2 and footnotes 1–11 (adult vaccinations, timing and indication)",
+        "branch": "Aged 65 or over, or comorbid or immunocompromised",
+        "step": "Vaccine",
+        "selection": "all"
+      },
+      {
+        "indication": "Hepatitis B (no immunity)",
+        "patientGroup": "Adults without immunity",
+        "genericName": "Hepatitis B vaccine",
+        "dose": "1 dose per visit",
+        "route": "Per product leaflet",
+        "frequency": "0, 1 and 6 months",
+        "duration": "3 doses",
+        "adjustments": [
+          "Dose volume and route per the SFDA-registered product leaflet — not reproduced here"
+        ],
+        "monitoring": [
+          "Observe for immediate reactions; anaphylaxis treatment available (Green Book Ch. 6)",
+          "Record in vaccination record"
+        ],
+        "contraindications": [
+          "Confirmed anaphylaxis to a previous dose or to a vaccine component (Green Book Ch. 6)",
+          "Live vaccines (MMR, varicella): avoid in significant immunodeficiency or immunosuppressive therapy, and in pregnancy (Green Book Ch. 6)",
+          "Postpone if acutely unwell with fever above 38.5 °C; minor illness is not a reason to delay (Green Book Ch. 6)"
+        ],
+        "sourceTitle": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+        "sourceUrl": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf",
+        "sourceEdition": "3rd edition, 2023, PDF p. 38, Table 2 and footnotes 1–11 (adult vaccinations, timing and indication)",
+        "branch": "No immunity",
+        "step": "Vaccine",
+        "selection": "all"
+      },
+      {
+        "indication": "Varicella (no immunity)",
+        "patientGroup": "Adults without immunity",
+        "genericName": "Varicella vaccine",
+        "dose": "1 dose per visit",
+        "route": "Per product leaflet",
+        "frequency": "2 doses 8 weeks apart",
+        "duration": "2 doses",
+        "adjustments": [
+          "Dose volume and route per the SFDA-registered product leaflet — not reproduced here",
+          "Live vaccine: not in pregnancy or immunosuppression (Green Book Ch. 6)"
+        ],
+        "monitoring": [
+          "Observe for immediate reactions; anaphylaxis treatment available (Green Book Ch. 6)",
+          "Record in vaccination record"
+        ],
+        "contraindications": [
+          "Confirmed anaphylaxis to a previous dose or to a vaccine component (Green Book Ch. 6)",
+          "Live vaccines (MMR, varicella): avoid in significant immunodeficiency or immunosuppressive therapy, and in pregnancy (Green Book Ch. 6)",
+          "Postpone if acutely unwell with fever above 38.5 °C; minor illness is not a reason to delay (Green Book Ch. 6)"
+        ],
+        "sourceTitle": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+        "sourceUrl": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf",
+        "sourceEdition": "3rd edition, 2023, PDF p. 38, Table 2 and footnotes 1–11 (adult vaccinations, timing and indication)",
+        "branch": "No immunity",
+        "step": "Vaccine",
+        "selection": "all"
+      }
+    ],
+    "note": "Schedules from PHA Table 2 footnotes. Dose volumes, routes and products follow SFDA-registered product leaflets — not reproduced. Contraindications from the Green Book Chapter 6.",
+    "branches": [
+      {
+        "label": "All adults",
+        "entryCriteria": "Every adult at routine review"
+      },
+      {
+        "label": "Aged 50 or over",
+        "entryCriteria": "Adult aged 50 or over"
+      },
+      {
+        "label": "Aged 65 or over, or comorbid or immunocompromised",
+        "entryCriteria": "Adult aged 65 or over, or an adult with comorbidity or immunocompromise"
+      },
+      {
+        "label": "No immunity",
+        "entryCriteria": "Adult without immunity"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Influenza",
+      "threshold": "1 dose annually"
+    },
+    {
+      "criterion": "Td",
+      "threshold": "Every 10 years after one Tdap"
+    },
+    {
+      "criterion": "Pregnancy",
+      "threshold": "Tdap at 27–36 weeks each pregnancy"
+    },
+    {
+      "criterion": "Zoster",
+      "threshold": "50 or over, 2 doses 2–6 months apart"
+    },
+    {
+      "criterion": "Pneumococcal",
+      "threshold": "65 or over or at risk"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "Adult vaccines by trigger (PHA Table 2)",
+    "columns": [
+      "Trigger",
+      "Vaccines"
+    ],
+    "rows": [
+      {
+        "parameter": "All adults",
+        "values": [
+          "Every year / 10 years",
+          "Influenza; Tdap then Td"
+        ]
+      },
+      {
+        "parameter": "Pregnancy",
+        "values": [
+          "27–36 weeks",
+          "Tdap"
+        ]
+      },
+      {
+        "parameter": "Age",
+        "values": [
+          "50+ / 65+",
+          "Zoster / pneumococcal"
+        ]
+      },
+      {
+        "parameter": "No immunity",
+        "values": [
+          "Serology or history",
+          "MMR, varicella, hepatitis B"
+        ]
+      }
+    ],
+    "note": "Indications for MCV4 and other travel vaccines follow current MOH requirements."
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Review and update adult vaccinations by age, pregnancy and risk."
+    ],
+    "pitfalls": [
+      "Missing Tdap in pregnancy.",
+      "Giving live vaccines to immunosuppressed adults.",
+      "Restarting interrupted courses."
+    ],
+    "keyPoints": [
+      "Influenza yearly.",
+      "Td every 10 years; Tdap each pregnancy.",
+      "Zoster from 50; pneumococcal from 65.",
+      "MMR, varicella, hepatitis B if not immune.",
+      "No live vaccines in pregnancy or immunosuppression."
+    ],
+    "references": [
+      {
+        "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+        "edition": "3rd edition, 2023",
+        "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf",
+        "locator": "PDF p. 38, Table 2 and footnotes 1–11 (adult vaccinations, timing and indication)"
+      },
+      {
+        "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+        "edition": "3rd edition, 2023",
+        "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf",
+        "locator": "PDF p. 25 (adult checklist 18–59 years: Pap smear, mammogram, colon cancer, vaccines)"
+      },
+      {
+        "title": "Immunisation against infectious disease (the Green Book), Chapter 6: Contraindications and special considerations",
+        "edition": "UK Health Security Agency, August 2017",
+        "url": "https://assets.publishing.service.gov.uk/media/5a82ce28e5274a2e8ab5970f/Greenbook_chapter_6.pdf",
+        "locator": "p. 1 (introduction: who may need to avoid specific vaccines)"
+      },
+      {
+        "title": "Immunisation against infectious disease (the Green Book), Chapter 6: Contraindications and special considerations",
+        "edition": "UK Health Security Agency, August 2017",
+        "url": "https://assets.publishing.service.gov.uk/media/5a82ce28e5274a2e8ab5970f/Greenbook_chapter_6.pdf",
+        "locator": "p. 5, section Immunosuppressive therapy (live vaccines)"
+      },
+      {
+        "title": "Immunisation against infectious disease (the Green Book), Chapter 6: Contraindications and special considerations",
+        "edition": "UK Health Security Agency, August 2017",
+        "url": "https://assets.publishing.service.gov.uk/media/5a82ce28e5274a2e8ab5970f/Greenbook_chapter_6.pdf",
+        "locator": "p. 9, section Temporary deferral of immunisation"
+      },
+      {
+        "title": "Vaccination of individuals with uncertain or incomplete immunisation status (from 1 July 2025)",
+        "edition": "UK Health Security Agency, 2025",
+        "url": "https://www.gov.uk/government/publications/vaccination-of-individuals-with-uncertain-or-incomplete-immunisation/vaccination-of-individuals-with-uncertain-or-incomplete-immunisation-status-from-1-july-2025",
+        "locator": "section General principles; section From 10th birthday onwards"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Vaccines protect you and those around you."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable."
+    ],
+    "mdtReferrals": [
+      "Specialist advice for immunosuppressed adults."
+    ],
+    "dischargeCriteria": [
+      "Not applicable — outpatient care."
+    ],
+    "followUpPlan": "Annual influenza; Td every 10 years; recheck at each adult health review."
+  }
+}

@@ -1,0 +1,507 @@
+{
+  "id": "3ab2bde8-9a7b-4761-a94b-922cfae410ad",
+  "title": "Hyperemesis Gravidarum: Assessment and Management",
+  "specialty": "Obstetrics",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Safe Birth",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Pregnant woman with severe nausea and vomiting: assessment with the PUQE score, admission criteria, stepwise antiemetics, intravenous fluids, thiamine, thromboprophylaxis and corticosteroids, using RCOG Green-top Guideline 69 and a Scottish health board guideline. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 2026-10-18.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from authoring-standard-2026-10-18-tier4a-v1-live."
+    ],
+    "unverifiedSections": [
+      "The RCOG text opened gave no doses (it refers to an appendix not included); doses come from the NHS Borders guideline version 1.0.",
+      "Thiamine IV regimen detail, low-molecular-weight heparin dose by weight, potassium dose and admission and discharge criteria in the Borders guideline were not found; LMWH dose is not given here.",
+      "The PUQE-24 bands in NHS Borders list 'Mild: 6'; the RCOG Appendix II bands were not opened.",
+      "No Saudi guideline was opened. No Saudi Ministry of Health or Saudi Society of Obstetrics and Gynaecology guideline was opened.",
+      "The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary.",
+      "Source pages were read through automated page extraction rather than page-by-page in the original documents, so each figure should be spot-checked against the source during clinical review.",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "3ab2bde8-9a7b-4761-a94b-922cfae410ad",
+      "0ed84119-aabd-44f3-b352-d0b51c4cf017"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Ketonuria is not an indicator of dehydration and should not be used to assess severity. Weight loss of 5% or more of pre-pregnancy weight is a sign of significant disease. Thiamine deficiency with dextrose-containing fluids can precipitate Wernicke encephalopathy. Corticosteroids are reserved for cases where intravenous fluids and regular antiemetics have failed.",
+    "keyMechanisms": [
+      "Ketonuria is not an indicator of dehydration and should not be used to assess severity.",
+      "Weight loss of 5% or more of pre-pregnancy weight is a sign of significant disease.",
+      "Thiamine deficiency with dextrose-containing fluids can precipitate Wernicke encephalopathy.",
+      "Corticosteroids are reserved for cases where intravenous fluids and regular antiemetics have failed."
+    ],
+    "references": [
+      {
+        "title": "RCOG Green-top Guideline No. 69: The Management of Nausea and Vomiting in Pregnancy and Hyperemesis Gravidarum (BJOG 2024;131, DOI 10.1111/1471-0528.17739)",
+        "edition": "RCOG GTG 69 2024, p. 1 to p. 10",
+        "url": "https://rightdecisions.scot.nhs.uk/media/uohhpife/the-management-of-nausea-and-vomiting-in-pregnancy-1158.pdf"
+      },
+      {
+        "title": "NHS Borders: Nausea and Vomiting in Pregnancy and Hyperemesis Gravidarum (Right Decisions, version 1.0, based on RCOG GTG 69)",
+        "edition": "NHS Borders NVP and HG v1.0, Section First line",
+        "url": "https://www.rightdecisions.scot.nhs.uk/nhs-borders-clinical-guidelines/obstetrics-gynaecology/maternity/early-pregnancy/nausea-and-vomiting-in-pregnancy-and-hyperemesis-gravidarum/"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Persistent vomiting.",
+      "Inability to keep down food, fluids or oral antiemetics."
+    ],
+    "physicalSigns": [
+      "Clinical dehydration.",
+      "Weight loss of 5% or more of pre-pregnancy weight."
+    ],
+    "redFlags": [
+      "Continued vomiting with dehydration or weight loss over 5% despite oral antiemetics: consider inpatient care.",
+      "Inability to keep down oral antiemetics.",
+      "Suspected comorbidity, epilepsy or diabetes."
+    ],
+    "precipitants": [
+      "Not covered in the sources opened."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Other causes of vomiting in pregnancy",
+      "distinguishingFeatures": "Suspected comorbidity prompts inpatient assessment."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "PUQE-24 score",
+        "modalityTarget": "Symptom severity",
+        "targetCondition": "Severity of nausea and vomiting",
+        "expectedFinding": "Moderate 7 to 12; severe 13 to 15",
+        "clinicalRationale": "Classifies severity; not valid for severe NVP and hyperemesis per RCOG.",
+        "normalValue": "Mild 6 or less",
+        "references": [
+          {
+            "title": "NHS Borders: Nausea and Vomiting in Pregnancy and Hyperemesis Gravidarum (Right Decisions, version 1.0, based on RCOG GTG 69)",
+            "edition": "NHS Borders NVP and HG v1.0, Section PUQE-24 bands",
+            "url": "https://www.rightdecisions.scot.nhs.uk/nhs-borders-clinical-guidelines/obstetrics-gynaecology/maternity/early-pregnancy/nausea-and-vomiting-in-pregnancy-and-hyperemesis-gravidarum/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Weight against pre-pregnancy weight",
+        "modalityTarget": "Weight loss",
+        "targetCondition": "Hyperemesis gravidarum",
+        "expectedFinding": "Loss of 5% or more",
+        "clinicalRationale": "A sign of severe disease.",
+        "normalValue": "Weight loss under 5%",
+        "references": [
+          {
+            "title": "RCOG Green-top Guideline No. 69: The Management of Nausea and Vomiting in Pregnancy and Hyperemesis Gravidarum (BJOG 2024;131, DOI 10.1111/1471-0528.17739)",
+            "edition": "RCOG GTG 69 2024, p. 4 and Table 1",
+            "url": "https://rightdecisions.scot.nhs.uk/media/uohhpife/the-management-of-nausea-and-vomiting-in-pregnancy-1158.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Urea and electrolytes",
+        "modalityTarget": "Electrolytes",
+        "targetCondition": "Hyponatraemia, hypokalaemia",
+        "expectedFinding": "Low sodium or potassium",
+        "clinicalRationale": "Daily in women receiving intravenous fluids.",
+        "normalValue": "Sodium 135 to 145 mmol/L; potassium 3.5 to 5.3 mmol/L",
+        "references": [
+          {
+            "title": "RCOG Green-top Guideline No. 69: The Management of Nausea and Vomiting in Pregnancy and Hyperemesis Gravidarum (BJOG 2024;131, DOI 10.1111/1471-0528.17739)",
+            "edition": "RCOG GTG 69 2024, p. 8 and p. 9",
+            "url": "https://rightdecisions.scot.nhs.uk/media/uohhpife/the-management-of-nausea-and-vomiting-in-pregnancy-1158.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Blood pressure and screening for diabetes mellitus in women on corticosteroids",
+        "modalityTarget": "Steroid effects",
+        "targetCondition": "Hypertension, diabetes",
+        "expectedFinding": "Raised blood pressure or glucose",
+        "clinicalRationale": "Recommended monitoring on corticosteroids.",
+        "normalValue": "Adult blood pressure under 140/90 mmHg; fasting glucose 3.9 to 5.6 mmol/L",
+        "references": [
+          {
+            "title": "NHS Borders: Nausea and Vomiting in Pregnancy and Hyperemesis Gravidarum (Right Decisions, version 1.0, based on RCOG GTG 69)",
+            "edition": "NHS Borders NVP and HG v1.0, Section Monitoring",
+            "url": "https://www.rightdecisions.scot.nhs.uk/nhs-borders-clinical-guidelines/obstetrics-gynaecology/maternity/early-pregnancy/nausea-and-vomiting-in-pregnancy-and-hyperemesis-gravidarum/"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Fetal growth scans if symptoms persist into the late second or third trimester",
+        "modalityTarget": "Fetal growth",
+        "targetCondition": "Growth restriction",
+        "expectedFinding": "Small for gestational age",
+        "clinicalRationale": "Serial scans advised by RCOG.",
+        "normalValue": "Growth along the expected centile",
+        "references": [
+          {
+            "title": "RCOG Green-top Guideline No. 69: The Management of Nausea and Vomiting in Pregnancy and Hyperemesis Gravidarum (BJOG 2024;131, DOI 10.1111/1471-0528.17739)",
+            "edition": "RCOG GTG 69 2024, p. 9",
+            "url": "https://rightdecisions.scot.nhs.uk/media/uohhpife/the-management-of-nausea-and-vomiting-in-pregnancy-1158.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Urinary ketones (do not use to judge severity)",
+        "modalityTarget": "Ketonuria",
+        "targetCondition": "Dehydration",
+        "expectedFinding": "Ketonuria",
+        "clinicalRationale": "RCOG advises against using ketonuria to assess severity or monitor.",
+        "normalValue": "Not applicable",
+        "references": [
+          {
+            "title": "RCOG Green-top Guideline No. 69: The Management of Nausea and Vomiting in Pregnancy and Hyperemesis Gravidarum (BJOG 2024;131, DOI 10.1111/1471-0528.17739)",
+            "edition": "RCOG GTG 69 2024, p. 1, p. 3 and p. 4",
+            "url": "https://rightdecisions.scot.nhs.uk/media/uohhpife/the-management-of-nausea-and-vomiting-in-pregnancy-1158.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "assess",
+      "title": "Assess",
+      "timeframe": "At presentation",
+      "actions": [
+        "PUQE-24, weight change, hydration and exclude comorbidity.",
+        "Do not rely on ketonuria."
+      ]
+    },
+    {
+      "id": "oral",
+      "title": "First-line antiemetics",
+      "timeframe": "Initial",
+      "actions": [
+        "Doxylamine-pyridoxine, cyclizine, prochlorperazine or promethazine; do not suggest ginger (no efficacy shown and may worsen symptoms)."
+      ]
+    },
+    {
+      "id": "second",
+      "title": "Second line",
+      "timeframe": "If first line fails",
+      "actions": [
+        "Metoclopramide (maximum 30 mg in 24 hours, up to 5 days) or ondansetron (very small absolute increase in orofacial clefting risk in the first trimester)."
+      ]
+    },
+    {
+      "id": "admit",
+      "title": "Admit and rehydrate",
+      "timeframe": "Dehydration or failed oral treatment",
+      "actions": [
+        "Normal saline with potassium; avoid dextrose-containing fluids without thiamine.",
+        "Give thiamine to all women admitted with vomiting; offer low-molecular-weight heparin to women admitted with hyperemesis."
+      ]
+    },
+    {
+      "id": "steroid",
+      "title": "Third line",
+      "timeframe": "Failed fluids and antiemetics",
+      "actions": [
+        "Hydrocortisone 100 mg twice daily intravenously then prednisolone 40 to 50 mg daily, tapering by 5 to 10 mg per week to the lowest effective dose."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "First-line antiemetic for mild to moderate nausea and vomiting",
+        "patientGroup": "Pregnant women",
+        "genericName": "Doxylamine-pyridoxine",
+        "dose": "20/20 mg at night, increasing to 10/10 mg in the morning and 10/10 mg at lunchtime if required",
+        "route": "Oral",
+        "frequency": "At night with optional morning and lunchtime doses",
+        "duration": "As needed",
+        "adjustments": [
+          "The only licensed treatment for nausea and vomiting in pregnancy in the UK (10 mg doxylamine succinate and 10 mg pyridoxine hydrochloride delayed-release)."
+        ],
+        "monitoring": [
+          "PUQE-24 scoring."
+        ],
+        "contraindications": [
+          "Ask about previous adverse reactions and stop promptly if they occur."
+        ],
+        "sourceTitle": "NHS Borders: Nausea and Vomiting in Pregnancy and Hyperemesis Gravidarum (Right Decisions, version 1.0, based on RCOG GTG 69)",
+        "sourceUrl": "https://www.rightdecisions.scot.nhs.uk/nhs-borders-clinical-guidelines/obstetrics-gynaecology/maternity/early-pregnancy/nausea-and-vomiting-in-pregnancy-and-hyperemesis-gravidarum/",
+        "sourceEdition": "NHS Borders NVP and HG v1.0, Section First line",
+        "branch": "First-line antiemetic",
+        "step": "First-line antiemetic",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "First-line antiemetic",
+        "patientGroup": "Pregnant women",
+        "genericName": "Cyclizine",
+        "dose": "50 mg",
+        "route": "Oral, intramuscular or intravenous",
+        "frequency": "Every 8 hours",
+        "duration": "As needed",
+        "adjustments": [
+          "No renal or hepatic adjustment is given in the sources opened."
+        ],
+        "monitoring": [
+          "PUQE-24 scoring."
+        ],
+        "contraindications": [
+          "Ask about previous adverse reactions and stop promptly if they occur."
+        ],
+        "sourceTitle": "NHS Borders: Nausea and Vomiting in Pregnancy and Hyperemesis Gravidarum (Right Decisions, version 1.0, based on RCOG GTG 69)",
+        "sourceUrl": "https://www.rightdecisions.scot.nhs.uk/nhs-borders-clinical-guidelines/obstetrics-gynaecology/maternity/early-pregnancy/nausea-and-vomiting-in-pregnancy-and-hyperemesis-gravidarum/",
+        "sourceEdition": "NHS Borders NVP and HG v1.0, Section First line",
+        "branch": "First-line antiemetic",
+        "step": "First-line antiemetic",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Chosen instead of doxylamine-pyridoxine"
+      },
+      {
+        "indication": "First-line antiemetic",
+        "patientGroup": "Pregnant women",
+        "genericName": "Prochlorperazine",
+        "dose": "5 to 10 mg orally (or 3 mg buccal); 12.5 mg intramuscularly or intravenously; 25 mg rectally",
+        "route": "Oral, buccal, intramuscular, intravenous or rectal",
+        "frequency": "Oral 6 to 8 hourly; IM or IV 8 hourly; rectal daily",
+        "duration": "As needed",
+        "adjustments": [
+          "No renal or hepatic adjustment is given in the sources opened."
+        ],
+        "monitoring": [
+          "Watch for extrapyramidal effects."
+        ],
+        "contraindications": [
+          "Phenothiazines carry extrapyramidal risk (RCOG)."
+        ],
+        "sourceTitle": "NHS Borders: Nausea and Vomiting in Pregnancy and Hyperemesis Gravidarum (Right Decisions, version 1.0, based on RCOG GTG 69)",
+        "sourceUrl": "https://www.rightdecisions.scot.nhs.uk/nhs-borders-clinical-guidelines/obstetrics-gynaecology/maternity/early-pregnancy/nausea-and-vomiting-in-pregnancy-and-hyperemesis-gravidarum/",
+        "sourceEdition": "NHS Borders NVP and HG v1.0, Section First line",
+        "branch": "First-line antiemetic",
+        "step": "First-line antiemetic",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Chosen instead of doxylamine-pyridoxine"
+      },
+      {
+        "indication": "First-line antiemetic",
+        "patientGroup": "Pregnant women",
+        "genericName": "Promethazine",
+        "dose": "12.5 mg",
+        "route": "Oral, intramuscular or intravenous",
+        "frequency": "Every 4 to 8 hours",
+        "duration": "As needed",
+        "adjustments": [
+          "No renal or hepatic adjustment is given in the sources opened."
+        ],
+        "monitoring": [
+          "PUQE-24 scoring."
+        ],
+        "contraindications": [
+          "Ask about previous adverse reactions and stop promptly if they occur."
+        ],
+        "sourceTitle": "NHS Borders: Nausea and Vomiting in Pregnancy and Hyperemesis Gravidarum (Right Decisions, version 1.0, based on RCOG GTG 69)",
+        "sourceUrl": "https://www.rightdecisions.scot.nhs.uk/nhs-borders-clinical-guidelines/obstetrics-gynaecology/maternity/early-pregnancy/nausea-and-vomiting-in-pregnancy-and-hyperemesis-gravidarum/",
+        "sourceEdition": "NHS Borders NVP and HG v1.0, Section First line",
+        "branch": "First-line antiemetic",
+        "step": "First-line antiemetic",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Chosen instead of doxylamine-pyridoxine"
+      },
+      {
+        "indication": "Second-line antiemetic",
+        "patientGroup": "Pregnant women",
+        "genericName": "Metoclopramide",
+        "dose": "5 to 10 mg",
+        "route": "Oral, intravenous, intramuscular or subcutaneous",
+        "frequency": "Every 8 hours",
+        "duration": "Up to 5 days (EMA); longer use if symptoms respond, per RCOG authors",
+        "adjustments": [
+          "Maximum 30 mg in 24 hours or 0.5 mg/kg in 24 hours, whichever is lowest; give intravenous doses by slow bolus over at least 3 minutes."
+        ],
+        "monitoring": [
+          "Watch for extrapyramidal effects."
+        ],
+        "contraindications": [
+          "Extrapyramidal risk (RCOG)."
+        ],
+        "sourceTitle": "RCOG Green-top Guideline No. 69: The Management of Nausea and Vomiting in Pregnancy and Hyperemesis Gravidarum (BJOG 2024;131, DOI 10.1111/1471-0528.17739)",
+        "sourceUrl": "https://rightdecisions.scot.nhs.uk/media/uohhpife/the-management-of-nausea-and-vomiting-in-pregnancy-1158.pdf",
+        "sourceEdition": "RCOG GTG 69 2024, p. 7 and p. 8",
+        "branch": "Second-line antiemetic",
+        "step": "Second-line antiemetic",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "Second-line antiemetic",
+        "patientGroup": "Pregnant women",
+        "genericName": "Ondansetron",
+        "dose": "4 mg orally; 8 mg intravenously over 15 minutes; 16 mg rectally",
+        "route": "Oral, intravenous or rectal",
+        "frequency": "Oral and IV every 12 hours; rectal daily",
+        "duration": "As needed",
+        "adjustments": [
+          "Very small absolute increase in orofacial clefting risk in the first trimester; laxatives may be needed for constipation."
+        ],
+        "monitoring": [
+          "Constipation."
+        ],
+        "contraindications": [
+          "Ask about previous adverse reactions and stop promptly if they occur."
+        ],
+        "sourceTitle": "NHS Borders: Nausea and Vomiting in Pregnancy and Hyperemesis Gravidarum (Right Decisions, version 1.0, based on RCOG GTG 69)",
+        "sourceUrl": "https://www.rightdecisions.scot.nhs.uk/nhs-borders-clinical-guidelines/obstetrics-gynaecology/maternity/early-pregnancy/nausea-and-vomiting-in-pregnancy-and-hyperemesis-gravidarum/",
+        "sourceEdition": "NHS Borders NVP and HG v1.0, Section Second line",
+        "branch": "Second-line antiemetic",
+        "step": "Second-line antiemetic",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Chosen instead of metoclopramide"
+      },
+      {
+        "indication": "Prevention of Wernicke encephalopathy in vomiting or reduced intake",
+        "patientGroup": "Women admitted with vomiting or severely reduced intake",
+        "genericName": "Thiamine",
+        "dose": "100 mg orally three times daily, or parenteral thiamine about 100 mg as part of vitamin B complex (Pabrinex)",
+        "route": "Oral or intravenous",
+        "frequency": "Three times daily orally",
+        "duration": "While vomiting or reduced intake continues, especially before dextrose or parenteral nutrition",
+        "adjustments": [
+          "Avoid dextrose-containing fluids without thiamine cover."
+        ],
+        "monitoring": [
+          "Fluid balance and electrolytes daily."
+        ],
+        "contraindications": [
+          "No contraindications are listed in the source opened."
+        ],
+        "sourceTitle": "RCOG Green-top Guideline No. 69: The Management of Nausea and Vomiting in Pregnancy and Hyperemesis Gravidarum (BJOG 2024;131, DOI 10.1111/1471-0528.17739)",
+        "sourceUrl": "https://rightdecisions.scot.nhs.uk/media/uohhpife/the-management-of-nausea-and-vomiting-in-pregnancy-1158.pdf",
+        "sourceEdition": "RCOG GTG 69 2024, p. 1, p. 8 and p. 10",
+        "branch": "Admitted with vomiting or reduced intake",
+        "step": "Thiamine",
+        "selection": "all"
+      },
+      {
+        "indication": "Third-line treatment when fluids and antiemetics have failed",
+        "patientGroup": "Women with severe hyperemesis",
+        "genericName": "Hydrocortisone then prednisolone",
+        "dose": "Hydrocortisone 100 mg twice daily, then prednisolone 40 to 50 mg daily",
+        "route": "Intravenous then oral",
+        "frequency": "Twice daily then daily",
+        "duration": "Taper by 5 to 10 mg per week to the lowest effective maintenance dose; continue until gestation at which hyperemesis usually resolves",
+        "adjustments": [
+          "Give alongside effective antiemetics."
+        ],
+        "monitoring": [
+          "Blood pressure; screen for gestational diabetes."
+        ],
+        "contraindications": [
+          "Reserve for failure of intravenous fluids and regular antiemetics."
+        ],
+        "sourceTitle": "RCOG Green-top Guideline No. 69: The Management of Nausea and Vomiting in Pregnancy and Hyperemesis Gravidarum (BJOG 2024;131, DOI 10.1111/1471-0528.17739)",
+        "sourceUrl": "https://rightdecisions.scot.nhs.uk/media/uohhpife/the-management-of-nausea-and-vomiting-in-pregnancy-1158.pdf",
+        "sourceEdition": "RCOG GTG 69 2024, p. 7",
+        "branch": "Third line — severe hyperemesis",
+        "step": "Corticosteroid",
+        "selection": "all"
+      }
+    ],
+    "note": "Doses are from NHS Borders (version 1.0, based on RCOG GTG 69) because the RCOG text opened gives no doses. Low-molecular-weight heparin dose and potassium dose were not found. The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary.",
+    "branches": [
+      {
+        "label": "First-line antiemetic",
+        "entryCriteria": "Pregnant woman with mild to moderate nausea and vomiting"
+      },
+      {
+        "label": "Second-line antiemetic",
+        "entryCriteria": "First-line antiemetics have failed"
+      },
+      {
+        "label": "Admitted with vomiting or reduced intake",
+        "entryCriteria": "Woman admitted with vomiting or severely reduced intake"
+      },
+      {
+        "label": "Third line — severe hyperemesis",
+        "entryCriteria": "Fluids and antiemetics have failed in severe hyperemesis"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "PUQE-24 total (Pregnancy-Unique Quantification of Emesis, sum of three questions)",
+      "threshold": "Mild 6; moderate 7 to 12; severe 13 to 15 (NHS Borders)."
+    },
+    {
+      "criterion": "Consider inpatient care (RCOG)",
+      "threshold": "Continued vomiting with clinical dehydration or weight loss over 5% despite oral antiemetics."
+    }
+  ],
+  "teaching": {
+    "scope": "Pregnant woman with severe nausea and vomiting: assessment with the PUQE score, admission criteria, stepwise antiemetics, intravenous fluids, thiamine, thromboprophylaxis and corticosteroids, using RCOG Green-top Guideline 69 and a Scottish health board guideline.",
+    "learningObjectives": [
+      "Assess severity without relying on ketonuria.",
+      "Escalate antiemetics, fluids with thiamine and steroids stepwise."
+    ],
+    "pitfalls": [
+      "Using ketones to judge severity.",
+      "Missing thromboprophylaxis."
+    ],
+    "keyPoints": [
+      "Ginger is not suggested.",
+      "Avoid dextrose without thiamine."
+    ],
+    "references": [
+      {
+        "title": "RCOG Green-top Guideline No. 69: The Management of Nausea and Vomiting in Pregnancy and Hyperemesis Gravidarum (BJOG 2024;131, DOI 10.1111/1471-0528.17739)",
+        "edition": "RCOG GTG 69 2024, p. 1 to p. 10",
+        "url": "https://rightdecisions.scot.nhs.uk/media/uohhpife/the-management-of-nausea-and-vomiting-in-pregnancy-1158.pdf",
+        "locator": "pp. 1 to 10"
+      },
+      {
+        "title": "NHS Borders: Nausea and Vomiting in Pregnancy and Hyperemesis Gravidarum (Right Decisions, version 1.0, based on RCOG GTG 69)",
+        "edition": "NHS Borders NVP and HG v1.0, Section First line",
+        "url": "https://www.rightdecisions.scot.nhs.uk/nhs-borders-clinical-guidelines/obstetrics-gynaecology/maternity/early-pregnancy/nausea-and-vomiting-in-pregnancy-and-hyperemesis-gravidarum/",
+        "locator": "Section First line"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain the stepwise treatment and what to report.",
+      "Small frequent meals as tolerated."
+    ],
+    "lifestyleAndDiet": [
+      "Review iron supplements, which may worsen nausea."
+    ],
+    "mdtReferrals": [
+      "Midwife; obstetrician; dietitian; pharmacy."
+    ],
+    "dischargeCriteria": [
+      "Able to keep down fluids and oral antiemetics."
+    ],
+    "followUpPlan": "Review symptoms and weight; fetal growth scans if symptoms persist."
+  }
+}

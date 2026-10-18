@@ -48,9 +48,16 @@ export const PASTE_FORMAT = `# <Topic title>
 ### Disposition
 - <admit / discharge decision>
 ### Medicines
-| Drug | Indication | Patient group | Dose | Route | Frequency | Duration / maximum | Adjustments (renal, hepatic, age) | Monitoring | Contraindications / cautions | Source |
-|---|---|---|---|---|---|---|---|---|---|---|
-| <drug> | <why> | Adults | <dose> | <route> | <frequency> | <duration, max> | <adjustment>; <adjustment> | <monitoring> | <contraindication>; <caution> | [1] Table 3 |
+#### Branch: <pathway or patient group, for example "STEMI — primary PCI"> | Entry: <who enters this branch, with the criteria>
+| Step | Choice | Drug | Indication | Patient group | Dose | Route | Frequency | Duration / maximum | Adjustments (renal, hepatic, age) | Monitoring | Contraindications / cautions | Use when | Source |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| <step, e.g. Antiplatelet loading> | All | <drug given with the other "All" drugs in this step> | <why> | Adults | <dose> | <route> | <frequency> | <duration, max> | <adjustment>; <adjustment> | <monitoring> | <contraindication>; <caution> | – | [1] Table 3 |
+| <step, e.g. P2Y12 inhibitor> | Preferred | <drug A: the default for this branch> | <why> | Adults | <dose> | <route> | <frequency> | <duration, max> | <adjustment> | <monitoring> | <contraindication> | – | [1] Table 3 |
+| <same step as above> | Alternative | <drug B: used only when A is unsuitable> | <why> | Adults | <dose> | <route> | <frequency> | <duration, max> | <adjustment> | <monitoring> | <contraindication> | <condition that makes this the choice instead of A> | [1] Table 3 |
+#### Branch: <next pathway or patient group> | Entry: <who enters this branch>
+| Step | Choice | Drug | Indication | Patient group | Dose | Route | Frequency | Duration / maximum | Adjustments (renal, hepatic, age) | Monitoring | Contraindications / cautions | Use when | Source |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| <step> | All | <drug> | <why> | Adults | <dose> | <route> | <frequency> | <duration, max> | <adjustment> | <monitoring> | <contraindication> | – | [2] Section 4 |
 ### Discharge criteria
 - <criterion>
 ### Follow-up
@@ -92,7 +99,8 @@ CONTENT RULES
 5. Paraphrase; do not copy guideline paragraphs.
 6. If two guidelines disagree, add a section "### Guideline comparison" under Management as a table (Parameter | Guideline A | Guideline B) and show both numbers. Never average them.
 7. Investigations: list at least 5 tests across at least 2 groups (bedside, bloods, imaging, specialist). Every row needs a typical adult normal value (SI units first; mg/dL in brackets for glucose, creatinine, urea), the value in this condition, and what to do next. "Local laboratory range" alone is not acceptable as a normal value.
-8. Medicines: give name, dose, route, frequency, duration or maximum, renal/hepatic adjustment, monitoring and contraindications for every drug. Say whether it is registered with the Saudi Food and Drug Authority (SFDA) in the Adjustments cell, and add "Check hospital formulary" where availability varies.
+8. Medicine pathway (mandatory). Never list every drug of a condition in one table. Write medicines as a decision pathway: one "#### Branch:" heading per pathway or patient group (for example STEMI and NSTEMI are separate branches, even when they share a drug), each with its Entry criteria, and every drug under exactly one branch. Inside a branch, the Step column groups drugs by purpose. Drugs that are given together share a step and are marked "All". Alternatives share a step: mark exactly one "Preferred" and every other option "Alternative", and write in "Use when" the condition that makes it the choice instead of the preferred drug. Never mark two drugs of the same class (two P2Y12 inhibitors, two anticoagulants, two thrombolytics, two antibiotics for the same infection) as "All", and never put alternatives inside one cell ("drug A or drug B"): one row per drug. Use one Branch heading even when only one pathway applies. If the sources do not say which drug is preferred, say so on a final line starting "UNVERIFIED:" and still mark the source's first-listed option "Preferred".
+8b. Medicines: give name, dose, route, frequency, duration or maximum, renal/hepatic adjustment, monitoring and contraindications for every drug. Say whether it is registered with the Saudi Food and Drug Authority (SFDA) in the Adjustments cell, and add "Check hospital formulary" where availability varies.
 9. Management must be time-ordered (immediate, ongoing, escalation, disposition) with numeric monitoring targets and clear escalation triggers.
 10. The same number must be identical everywhere it appears.
 11. Abbreviations: the first time a medical term, syndrome, drug class or scoring system appears, write the full name followed by the abbreviation in brackets, for example "Percutaneous Coronary Intervention (PCI)". After that use only the abbreviation. Never use an abbreviation before its full name.

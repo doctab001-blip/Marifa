@@ -1,0 +1,371 @@
+{
+  "id": "583858e3-581a-4784-98c8-6e28423863d6",
+  "title": "Suspected Meningitis: Community Recognition and Pre-Hospital Antibiotics",
+  "specialty": "Infectious Diseases / Primary Care",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Community or pre-hospital recognition of suspected meningitis or meningococcal disease, immediate parenteral benzylpenicillin or ceftriaxone when transfer is delayed, and urgent hospital transfer. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 2026-10-18.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from authoring-standard-2026-10-18-tier3b-v1-live."
+    ],
+    "unverifiedSections": [
+      "NICE NG240 gives no numeric pre-hospital doses; doses are from the NHS Dumfries and Galloway primary care handbook, which links to the British National Formulary for Children for ceftriaxone and cefotaxime paediatric doses.",
+      "The ceftriaxone paediatric dose is not given in the sources opened.",
+      "No Saudi pre-hospital protocol was opened; emergency medical services protocols apply.",
+      "Contact prophylaxis doses are not covered in the sources opened.",
+      "The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary.",
+      "Source pages were read through automated page extraction rather than page-by-page in the original documents, so each figure should be spot-checked against the source during clinical review.",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "583858e3-581a-4784-98c8-6e28423863d6",
+      "9c4937d5-2f5d-4542-b27c-ec0e1a3740be"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "NICE advises parenteral antibiotics outside hospital for strongly suspected meningococcal disease, unless this delays transfer. Suspected meningitis is a medical emergency requiring urgent hospital transfer in all cases. A non-blanching rash with meningism or sepsis increases the likelihood of meningococcal disease. Antibiotics given in the community do not replace hospital assessment.",
+    "keyMechanisms": [
+      "NICE advises parenteral antibiotics outside hospital for strongly suspected meningococcal disease, unless this delays transfer.",
+      "Suspected meningitis is a medical emergency requiring urgent hospital transfer in all cases.",
+      "A non-blanching rash with meningism or sepsis increases the likelihood of meningococcal disease.",
+      "Antibiotics given in the community do not replace hospital assessment."
+    ],
+    "references": [
+      {
+        "title": "NICE NG240: Meningitis (bacterial) and meningococcal disease: recognition, diagnosis and management",
+        "edition": "NICE NG240, Section 1.2",
+        "url": "https://www.nice.org.uk/guidance/ng240/chapter/Recommendations"
+      },
+      {
+        "title": "NHS Dumfries and Galloway Antimicrobial Handbook, Primary Care: Meningitis (Right Decisions, V1.1, reviewed 31/07/2024)",
+        "edition": "NHS Dumfries and Galloway Meningitis V1.1, Section Key instructions",
+        "url": "https://www.rightdecisions.scot.nhs.uk/nhs-dumfries-galloway-antimicrobial-handbook/primary-care/meningitis/"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Fever, severe headache, neck stiffness.",
+      "Vomiting, photophobia.",
+      "Drowsiness or confusion.",
+      "Non-blanching rash."
+    ],
+    "physicalSigns": [
+      "Neck stiffness.",
+      "Non-blanching rash.",
+      "Reduced consciousness.",
+      "Signs of sepsis."
+    ],
+    "redFlags": [
+      "Non-blanching rash with meningism or sepsis.",
+      "Reduced consciousness.",
+      "Transfer to hospital delayed for more than 1 hour."
+    ],
+    "precipitants": [
+      "Recent contact with a case of meningococcal disease.",
+      "Age extremes."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Viral illness or influenza",
+      "distinguishingFeatures": "No meningism or non-blanching rash; hospital assessment still required if concern."
+    },
+    {
+      "condition": "Meningococcal septicaemia",
+      "distinguishingFeatures": "Non-blanching rash with shock."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Skin examination for non-blanching rash (glass test)",
+        "modalityTarget": "Rash",
+        "targetCondition": "Meningococcal disease",
+        "expectedFinding": "Non-blanching rash",
+        "clinicalRationale": "A non-blanching rash with meningism or sepsis supports giving antibiotics if time permits.",
+        "normalValue": "No non-blanching rash",
+        "references": [
+          {
+            "title": "NHS Dumfries and Galloway Antimicrobial Handbook, Primary Care: Meningitis (Right Decisions, V1.1, reviewed 31/07/2024)",
+            "edition": "NHS Dumfries and Galloway Meningitis V1.1, Section Key instructions",
+            "url": "https://www.rightdecisions.scot.nhs.uk/nhs-dumfries-galloway-antimicrobial-handbook/primary-care/meningitis/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Pulse, blood pressure, respiratory rate and temperature",
+        "modalityTarget": "Sepsis",
+        "targetCondition": "Sepsis from meningococcal disease",
+        "expectedFinding": "Tachycardia, hypotension, tachypnoea",
+        "clinicalRationale": "Identifies shock needing urgent transfer.",
+        "normalValue": "Adult pulse 60–100 beats per minute, systolic pressure 100–140 mmHg, respiratory rate 12–20 per minute",
+        "references": [
+          {
+            "title": "NICE NG240: Meningitis (bacterial) and meningococcal disease: recognition, diagnosis and management",
+            "edition": "NICE NG240, Section 1.2 Community recognition",
+            "url": "https://www.nice.org.uk/guidance/ng240/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Level of consciousness (AVPU or Glasgow Coma Scale)",
+        "modalityTarget": "Neurological status",
+        "targetCondition": "Bacterial meningitis",
+        "expectedFinding": "Reduced consciousness",
+        "clinicalRationale": "Document before transfer and pass to the receiving team.",
+        "normalValue": "Alert, GCS 15",
+        "references": [
+          {
+            "title": "NICE NG240: Meningitis (bacterial) and meningococcal disease: recognition, diagnosis and management",
+            "edition": "NICE NG240, Section 1.2 Community recognition",
+            "url": "https://www.nice.org.uk/guidance/ng240/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Capillary glucose",
+        "modalityTarget": "Glucose",
+        "targetCondition": "Hypoglycaemia mimic",
+        "expectedFinding": "Low glucose",
+        "clinicalRationale": "Excludes a treatable mimic of drowsiness.",
+        "normalValue": "Fasting 3.9–5.6 mmol/L",
+        "references": [
+          {
+            "title": "NHS Dumfries and Galloway Antimicrobial Handbook, Primary Care: Meningitis (Right Decisions, V1.1, reviewed 31/07/2024)",
+            "edition": "NHS Dumfries and Galloway Meningitis V1.1, Section Key instructions",
+            "url": "https://www.rightdecisions.scot.nhs.uk/nhs-dumfries-galloway-antimicrobial-handbook/primary-care/meningitis/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Check allergy history to penicillin and cephalosporin",
+        "modalityTarget": "Allergy",
+        "targetCondition": "Severe allergy",
+        "expectedFinding": "Severe reaction to both ceftriaxone and benzylpenicillin",
+        "clinicalRationale": "NICE: do not give antibiotics outside hospital if severe allergy to both.",
+        "normalValue": "No severe allergy",
+        "references": [
+          {
+            "title": "NICE NG240: Meningitis (bacterial) and meningococcal disease: recognition, diagnosis and management",
+            "edition": "NICE NG240, Section 1.2 Community recognition",
+            "url": "https://www.nice.org.uk/guidance/ng240/chapter/Recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Time to hospital",
+        "modalityTarget": "Transfer delay",
+        "targetCondition": "Need for pre-hospital antibiotics",
+        "expectedFinding": "More than 1 hour",
+        "clinicalRationale": "Primary decision criterion in the Dumfries and Galloway handbook.",
+        "normalValue": "Immediate transfer available",
+        "references": [
+          {
+            "title": "NHS Dumfries and Galloway Antimicrobial Handbook, Primary Care: Meningitis (Right Decisions, V1.1, reviewed 31/07/2024)",
+            "edition": "NHS Dumfries and Galloway Meningitis V1.1, Section Key instructions",
+            "url": "https://www.rightdecisions.scot.nhs.uk/nhs-dumfries-galloway-antimicrobial-handbook/primary-care/meningitis/"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "recognise",
+      "title": "Recognise and call for transfer",
+      "timeframe": "Immediately",
+      "actions": [
+        "Treat suspected meningitis as a medical emergency; arrange urgent hospital transfer in all cases.",
+        "Do not delay transfer to give antibiotics."
+      ]
+    },
+    {
+      "id": "antibiotics",
+      "title": "Give parenteral antibiotics if indicated",
+      "timeframe": "Before transfer if criteria met",
+      "actions": [
+        "Adults and children 10–17 years: benzylpenicillin 1.2 g IV or IM. Children 1–9 years: 600 mg. Children under 1 year: 300 mg.",
+        "Mild penicillin allergy: cefotaxime 2 g or ceftriaxone 2 g IV or IM in adults.",
+        "Do not give if severe allergy to both ceftriaxone and benzylpenicillin."
+      ]
+    },
+    {
+      "id": "handover",
+      "title": "Handover",
+      "timeframe": "On transfer",
+      "actions": [
+        "Record the time and dose of antibiotics and pass it to the receiving emergency team.",
+        "Notify public health."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Suspected meningococcal disease or bacterial meningitis before hospital transfer",
+        "patientGroup": "Adults and children 10–17 years",
+        "genericName": "Benzylpenicillin",
+        "dose": "1.2 g",
+        "route": "Intravenous or intramuscular",
+        "frequency": "Single dose",
+        "duration": "One dose before transfer",
+        "adjustments": [
+          "Child 1–9 years: 600 mg; under 1 year: 300 mg.",
+          "No renal adjustment is given for a single dose in the source."
+        ],
+        "monitoring": [
+          "Record time and dose; do not delay transfer."
+        ],
+        "contraindications": [
+          "Severe allergy to benzylpenicillin or ceftriaxone: do not give antibiotics outside hospital."
+        ],
+        "sourceTitle": "NHS Dumfries and Galloway Antimicrobial Handbook, Primary Care: Meningitis (Right Decisions, V1.1, reviewed 31/07/2024)",
+        "sourceUrl": "https://www.rightdecisions.scot.nhs.uk/nhs-dumfries-galloway-antimicrobial-handbook/primary-care/meningitis/",
+        "sourceEdition": "NHS Dumfries and Galloway Meningitis V1.1, Section Benzylpenicillin",
+        "branch": "No penicillin allergy",
+        "step": "Parenteral antibiotic",
+        "selection": "all"
+      },
+      {
+        "indication": "Mild penicillin allergy, suspected meningitis before transfer",
+        "patientGroup": "Adults",
+        "genericName": "Ceftriaxone",
+        "dose": "2 g",
+        "route": "Intravenous or intramuscular",
+        "frequency": "Single dose",
+        "duration": "One dose before transfer",
+        "adjustments": [
+          "Paediatric dose is not given in the source; use the British National Formulary for Children."
+        ],
+        "monitoring": [
+          "Record time and dose."
+        ],
+        "contraindications": [
+          "Severe allergy to ceftriaxone or benzylpenicillin."
+        ],
+        "sourceTitle": "NHS Dumfries and Galloway Antimicrobial Handbook, Primary Care: Meningitis (Right Decisions, V1.1, reviewed 31/07/2024)",
+        "sourceUrl": "https://www.rightdecisions.scot.nhs.uk/nhs-dumfries-galloway-antimicrobial-handbook/primary-care/meningitis/",
+        "sourceEdition": "NHS Dumfries and Galloway Meningitis V1.1, Section Mild penicillin allergy",
+        "branch": "Mild penicillin allergy",
+        "step": "Parenteral antibiotic",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "Mild penicillin allergy alternative",
+        "patientGroup": "Adults",
+        "genericName": "Cefotaxime",
+        "dose": "2 g",
+        "route": "Intravenous or intramuscular",
+        "frequency": "Single dose",
+        "duration": "One dose before transfer",
+        "adjustments": [
+          "Paediatric dose is not given in the source."
+        ],
+        "monitoring": [
+          "Record time and dose."
+        ],
+        "contraindications": [
+          "Severe allergy to cefotaxime, ceftriaxone or benzylpenicillin."
+        ],
+        "sourceTitle": "NHS Dumfries and Galloway Antimicrobial Handbook, Primary Care: Meningitis (Right Decisions, V1.1, reviewed 31/07/2024)",
+        "sourceUrl": "https://www.rightdecisions.scot.nhs.uk/nhs-dumfries-galloway-antimicrobial-handbook/primary-care/meningitis/",
+        "sourceEdition": "NHS Dumfries and Galloway Meningitis V1.1, Section Mild penicillin allergy",
+        "branch": "Mild penicillin allergy",
+        "step": "Parenteral antibiotic",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Chosen instead of ceftriaxone"
+      }
+    ],
+    "note": "Doses are from the NHS Dumfries and Galloway primary care handbook; NICE NG240 gives no numbers. The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary.",
+    "branches": [
+      {
+        "label": "No penicillin allergy",
+        "entryCriteria": "Adult or child aged 10–17 years with suspected meningococcal disease or bacterial meningitis before hospital transfer"
+      },
+      {
+        "label": "Mild penicillin allergy",
+        "entryCriteria": "Adult with suspected meningitis before transfer and mild penicillin allergy"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Give antibiotics outside hospital (NICE NG240)",
+      "threshold": "Strongly suspected meningococcal disease, or strongly suspected bacterial meningitis with likely significant transfer delay, unless it delays transfer."
+    },
+    {
+      "criterion": "Do not give antibiotics outside hospital",
+      "threshold": "Severe allergy to both ceftriaxone and benzylpenicillin."
+    },
+    {
+      "criterion": "Transfer time (NHS Dumfries and Galloway)",
+      "threshold": "Give antibiotics if transfer time is more than 1 hour, or if a non-blanching rash with meningism or sepsis is present and time permits."
+    }
+  ],
+  "teaching": {
+    "scope": "Community or pre-hospital recognition of suspected meningitis or meningococcal disease, immediate parenteral benzylpenicillin or ceftriaxone when transfer is delayed, and urgent hospital transfer.",
+    "learningObjectives": [
+      "Decide on pre-hospital antibiotics from transfer delay and rash.",
+      "Never delay transfer."
+    ],
+    "pitfalls": [
+      "Delaying transfer to give antibiotics.",
+      "Giving antibiotics to patients with severe allergy to both agents."
+    ],
+    "keyPoints": [
+      "Benzylpenicillin 1.2 g for adults and 10–17 years."
+    ],
+    "references": [
+      {
+        "title": "NICE NG240: Meningitis (bacterial) and meningococcal disease: recognition, diagnosis and management",
+        "edition": "NICE NG240, Section 1.2",
+        "url": "https://www.nice.org.uk/guidance/ng240/chapter/Recommendations",
+        "locator": "Section 1.2"
+      },
+      {
+        "title": "NHS Dumfries and Galloway Antimicrobial Handbook, Primary Care: Meningitis (Right Decisions, V1.1, reviewed 31/07/2024)",
+        "edition": "NHS Dumfries and Galloway Meningitis V1.1, Section Key instructions",
+        "url": "https://www.rightdecisions.scot.nhs.uk/nhs-dumfries-galloway-antimicrobial-handbook/primary-care/meningitis/",
+        "locator": "Section Key instructions"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain that urgent hospital care is needed.",
+      "Close contacts may need advice from public health."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable in the acute phase."
+    ],
+    "mdtReferrals": [
+      "Emergency medical services; hospital emergency team; public health."
+    ],
+    "dischargeCriteria": [
+      "Not discharged from the community; all suspected cases are transferred."
+    ],
+    "followUpPlan": "Hospital team and public health follow-up."
+  }
+}

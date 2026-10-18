@@ -1,0 +1,475 @@
+{
+  "id": "16e0fbcf-6179-49ac-aa76-43b25bf9b287",
+  "title": "Anti-D Prophylaxis: Routine and Sensitising-Event Administration",
+  "specialty": "Obstetrics / Haematology",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Safe Birth",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Rhesus D (RhD) negative pregnant woman: routine antenatal anti-D prophylaxis, sensitising events, fetomaternal haemorrhage testing and postnatal anti-D, using one hospital guideline and NICE NG126. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 2026-10-18.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from authoring-standard-2026-10-18-tier4a-v1-live."
+    ],
+    "unverifiedSections": [
+      "Only one UK hospital guideline (2019, review overdue) and NICE NG126 were opened; the British Society for Haematology and RCOG guidelines were not opened.",
+      "The MKUH guideline contradicts itself: Appendix 1 (p. 17) states a minimum 500 IU at 28 weeks while sections 3.2 and 4.1 state a single 1,500 IU dose; the 1,500 IU single dose is used here.",
+      "MKUH lists no formal contraindications or adverse effects; none are inferred.",
+      "NICE NG126 advises anti-D only after surgical management of ectopic pregnancy or miscarriage, whereas MKUH gives a minimum 250 IU for medical management before 12 weeks; the two are shown side by side.",
+      "National anti-D policy in Saudi Arabia and product availability were not verified. No Saudi Ministry of Health or Saudi Society of Obstetrics and Gynaecology guideline was opened.",
+      "The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary.",
+      "Source pages were read through automated page extraction rather than page-by-page in the original documents, so each figure should be spot-checked against the source during clinical review.",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "16e0fbcf-6179-49ac-aa76-43b25bf9b287",
+      "83394266-a26f-48c0-ae0f-2f72b5832713"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "A RhD negative woman can be sensitised by RhD positive fetal red cells entering her circulation at a sensitising event or at birth. Anti-D immunoglobulin is given routinely in pregnancy and after sensitising events to all RhD negative women not known to have anti-D antibodies. Fetomaternal haemorrhage above the standard dose coverage needs extra anti-D (500 IU covers up to 4 mL fetal cells, plus 125 IU per additional mL). Women with severe thrombocytopenia or haemostasis disorders receive the same dose intravenously rather than intramuscularly.",
+    "keyMechanisms": [
+      "A RhD negative woman can be sensitised by RhD positive fetal red cells entering her circulation at a sensitising event or at birth.",
+      "Anti-D immunoglobulin is given routinely in pregnancy and after sensitising events to all RhD negative women not known to have anti-D antibodies.",
+      "Fetomaternal haemorrhage above the standard dose coverage needs extra anti-D (500 IU covers up to 4 mL fetal cells, plus 125 IU per additional mL).",
+      "Women with severe thrombocytopenia or haemostasis disorders receive the same dose intravenously rather than intramuscularly."
+    ],
+    "references": [
+      {
+        "title": "Milton Keynes University Hospital: Prophylactic Anti-D Immunoglobulin Guideline (MIDW-GL-67, version 6, approved 27/11/2019, review due 10/2022)",
+        "edition": "MKUH Prophylactic Anti-D Guideline v6 2019, p. 5 and p. 8",
+        "url": "https://www.mkuh.nhs.uk/wp-content/uploads/2022/10/Prophylactic-Anti-D-Immunoglobulin-Guideline.pdf"
+      },
+      {
+        "title": "NICE NG126: Ectopic pregnancy and miscarriage: diagnosis and initial management",
+        "edition": "NICE NG126, Recommendation 1.7.1 to 1.7.3",
+        "url": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Vaginal bleeding, abdominal trauma, amniocentesis, miscarriage, ectopic pregnancy or termination are the events that prompt anti-D (no symptoms of sensitisation itself)."
+    ],
+    "physicalSigns": [
+      "Not applicable; sensitisation is detected by antibody screening."
+    ],
+    "redFlags": [
+      "Sensitising event after 20 weeks: Kleihauer test needed.",
+      "Kleihauer result over 2 mL: confirm by flow cytometry.",
+      "Recurrent bleeding after 20 weeks: 500 IU at least every 6 weeks."
+    ],
+    "precipitants": [
+      "RhD negative woman without anti-D antibodies.",
+      "Antepartum haemorrhage, abdominal trauma, invasive procedures, pregnancy loss."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Woman already immunised (anti-D antibodies present)",
+      "distinguishingFeatures": "Prophylaxis is for women not known to have anti-D antibodies; refer for specialist alloimmunisation care."
+    },
+    {
+      "condition": "RhD positive woman",
+      "distinguishingFeatures": "No anti-D needed."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Maternal ABO and RhD group with antibody screen (before the 28-week injection)",
+        "modalityTarget": "Maternal blood group",
+        "targetCondition": "RhD negative status and existing antibodies",
+        "expectedFinding": "RhD negative without anti-D antibodies",
+        "clinicalRationale": "Taken at 28 weeks before the injection; identifies who needs prophylaxis.",
+        "normalValue": "RhD positive (no anti-D needed)",
+        "references": [
+          {
+            "title": "Milton Keynes University Hospital: Prophylactic Anti-D Immunoglobulin Guideline (MIDW-GL-67, version 6, approved 27/11/2019, review due 10/2022)",
+            "edition": "MKUH Prophylactic Anti-D Guideline v6 2019, p. 5",
+            "url": "https://www.mkuh.nhs.uk/wp-content/uploads/2022/10/Prophylactic-Anti-D-Immunoglobulin-Guideline.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Kleihauer test after sensitising event beyond 20 weeks",
+        "modalityTarget": "Fetal red cells in maternal blood",
+        "targetCondition": "Fetomaternal haemorrhage",
+        "expectedFinding": "Fetal cells present; volume in mL",
+        "clinicalRationale": "Determines whether extra anti-D is needed.",
+        "normalValue": "No fetal cells detected; a result over 2 mL is confirmed by flow cytometry",
+        "references": [
+          {
+            "title": "Milton Keynes University Hospital: Prophylactic Anti-D Immunoglobulin Guideline (MIDW-GL-67, version 6, approved 27/11/2019, review due 10/2022)",
+            "edition": "MKUH Prophylactic Anti-D Guideline v6 2019, p. 8",
+            "url": "https://www.mkuh.nhs.uk/wp-content/uploads/2022/10/Prophylactic-Anti-D-Immunoglobulin-Guideline.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Flow cytometry for fetomaternal haemorrhage",
+        "modalityTarget": "Fetal cell quantification",
+        "targetCondition": "Large fetomaternal haemorrhage",
+        "expectedFinding": "Fetal cell volume above 2 mL on Kleihauer",
+        "clinicalRationale": "Confirms volume so the additional dose is calculated.",
+        "normalValue": "No fetal cells detected",
+        "references": [
+          {
+            "title": "Milton Keynes University Hospital: Prophylactic Anti-D Immunoglobulin Guideline (MIDW-GL-67, version 6, approved 27/11/2019, review due 10/2022)",
+            "edition": "MKUH Prophylactic Anti-D Guideline v6 2019, p. 8 and p. 10",
+            "url": "https://www.mkuh.nhs.uk/wp-content/uploads/2022/10/Prophylactic-Anti-D-Immunoglobulin-Guideline.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Cord blood ABO and RhD group (heel prick sample if unavailable)",
+        "modalityTarget": "Baby blood group",
+        "targetCondition": "RhD positive baby of RhD negative mother",
+        "expectedFinding": "Baby RhD positive",
+        "clinicalRationale": "Postnatal anti-D of at least 500 IU is given if the baby is RhD positive.",
+        "normalValue": "Baby RhD negative (no postnatal anti-D)",
+        "references": [
+          {
+            "title": "Milton Keynes University Hospital: Prophylactic Anti-D Immunoglobulin Guideline (MIDW-GL-67, version 6, approved 27/11/2019, review due 10/2022)",
+            "edition": "MKUH Prophylactic Anti-D Guideline v6 2019, p. 8",
+            "url": "https://www.mkuh.nhs.uk/wp-content/uploads/2022/10/Prophylactic-Anti-D-Immunoglobulin-Guideline.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Maternal sample 30 to 45 minutes after birth",
+        "modalityTarget": "Postnatal fetomaternal haemorrhage",
+        "targetCondition": "Large postnatal fetal bleed",
+        "expectedFinding": "Excess fetal cells",
+        "clinicalRationale": "Samples taken within 2 hours of birth guide extra dosing.",
+        "normalValue": "No excess fetal cells",
+        "references": [
+          {
+            "title": "Milton Keynes University Hospital: Prophylactic Anti-D Immunoglobulin Guideline (MIDW-GL-67, version 6, approved 27/11/2019, review due 10/2022)",
+            "edition": "MKUH Prophylactic Anti-D Guideline v6 2019, p. 9",
+            "url": "https://www.mkuh.nhs.uk/wp-content/uploads/2022/10/Prophylactic-Anti-D-Immunoglobulin-Guideline.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Repeat maternal sample 72 hours after anti-D for fetal bleeds over 4 mL",
+        "modalityTarget": "Residual fetal cells",
+        "targetCondition": "Inadequate dosing",
+        "expectedFinding": "Persistent fetal cells",
+        "clinicalRationale": "Fetal bleeds over 4 mL may need a repeat sample.",
+        "normalValue": "No residual fetal cells",
+        "references": [
+          {
+            "title": "Milton Keynes University Hospital: Prophylactic Anti-D Immunoglobulin Guideline (MIDW-GL-67, version 6, approved 27/11/2019, review due 10/2022)",
+            "edition": "MKUH Prophylactic Anti-D Guideline v6 2019, p. 9 and p. 10",
+            "url": "https://www.mkuh.nhs.uk/wp-content/uploads/2022/10/Prophylactic-Anti-D-Immunoglobulin-Guideline.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "routine",
+      "title": "Routine antenatal prophylaxis",
+      "timeframe": "28 to 30 weeks",
+      "actions": [
+        "Take blood group and antibody sample before the injection.",
+        "Give 1,500 IU intramuscularly in the deltoid; do not split a full 1,500 IU vial.",
+        "If missed, give at the earliest contact before labour and birth."
+      ]
+    },
+    {
+      "id": "event",
+      "title": "Sensitising event",
+      "timeframe": "Within 72 hours",
+      "actions": [
+        "Before 12 weeks: minimum 250 IU in the listed situations. 12 to 20 weeks: minimum 250 IU, or 500 IU if gestation uncertain. After 20 weeks: minimum 500 IU regardless of earlier prophylaxis.",
+        "After 20 weeks do a Kleihauer test; confirm results over 2 mL by flow cytometry."
+      ]
+    },
+    {
+      "id": "late",
+      "title": "Delayed presentation",
+      "timeframe": "Up to 10 days",
+      "actions": [
+        "Some protection may be given up to 10 days after the event in exceptional delay."
+      ]
+    },
+    {
+      "id": "postnatal",
+      "title": "Postnatal",
+      "timeframe": "After birth",
+      "actions": [
+        "Cord blood group; give at least 500 IU intramuscularly if the baby is RhD positive; give anti-D if baby status is unknown or the pregnancy is non-viable and the mother is RhD negative."
+      ]
+    },
+    {
+      "id": "record",
+      "title": "Document",
+      "timeframe": "At administration",
+      "actions": [
+        "Document consent including that anti-D is a blood derivative, record in the notes and return the traceability tag to the blood bank."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Routine antenatal anti-D prophylaxis",
+        "patientGroup": "RhD negative pregnant women without anti-D antibodies",
+        "genericName": "Anti-D immunoglobulin (routine antenatal)",
+        "dose": "1,500 IU (about 2 mL of Rhophylac 1,500 IU)",
+        "route": "Intramuscular (deltoid)",
+        "frequency": "Single dose at 28 to 30 weeks",
+        "duration": "One dose",
+        "adjustments": [
+          "Do not split a full 1,500 IU vial.",
+          "Severe thrombocytopenia (platelets under 50,000) or haemostasis disorder: give the same dose intravenously."
+        ],
+        "monitoring": [
+          "Blood group and antibody sample before the injection; record administration and traceability tag."
+        ],
+        "contraindications": [
+          "No formal contraindications are listed; religious, social or medical reasons may make it unsuitable for some women."
+        ],
+        "sourceTitle": "Milton Keynes University Hospital: Prophylactic Anti-D Immunoglobulin Guideline (MIDW-GL-67, version 6, approved 27/11/2019, review due 10/2022)",
+        "sourceUrl": "https://www.mkuh.nhs.uk/wp-content/uploads/2022/10/Prophylactic-Anti-D-Immunoglobulin-Guideline.pdf",
+        "sourceEdition": "MKUH Prophylactic Anti-D Guideline v6 2019, p. 5",
+        "branch": "Routine antenatal prophylaxis",
+        "step": "Anti-D immunoglobulin",
+        "selection": "all"
+      },
+      {
+        "indication": "Sensitising event before 12 weeks (termination, medical miscarriage management, ectopic or molar pregnancy, persistent bleeding with pain)",
+        "patientGroup": "RhD negative pregnant women",
+        "genericName": "Anti-D immunoglobulin (sensitising event under 12 weeks)",
+        "dose": "Minimum 250 IU",
+        "route": "Intramuscular (intravenous in severe thrombocytopenia or haemostasis disorders)",
+        "frequency": "Single dose within 72 hours",
+        "duration": "One dose",
+        "adjustments": [
+          "NICE NG126 does not offer anti-D to women receiving solely medical management of miscarriage or ectopic pregnancy, to threatened or complete miscarriage or to pregnancy of unknown location; it offers 250 IU after surgery."
+        ],
+        "monitoring": [
+          "Document gestation and dose."
+        ],
+        "contraindications": [
+          "No formal contraindications are listed in the source."
+        ],
+        "sourceTitle": "Milton Keynes University Hospital: Prophylactic Anti-D Immunoglobulin Guideline (MIDW-GL-67, version 6, approved 27/11/2019, review due 10/2022)",
+        "sourceUrl": "https://www.mkuh.nhs.uk/wp-content/uploads/2022/10/Prophylactic-Anti-D-Immunoglobulin-Guideline.pdf",
+        "sourceEdition": "MKUH Prophylactic Anti-D Guideline v6 2019, p. 3 and p. 8",
+        "branch": "Sensitising event before 12 weeks",
+        "step": "Anti-D immunoglobulin",
+        "selection": "all"
+      },
+      {
+        "indication": "Sensitising event at 12 to 20 weeks",
+        "patientGroup": "RhD negative pregnant women",
+        "genericName": "Anti-D immunoglobulin (sensitising event 12 to 20 weeks)",
+        "dose": "Minimum 250 IU (500 IU if gestation uncertain)",
+        "route": "Intramuscular (intravenous in severe thrombocytopenia or haemostasis disorders)",
+        "frequency": "Single dose within 72 hours",
+        "duration": "One dose",
+        "adjustments": [
+          "Some protection may be given up to 10 days after the event in exceptional delay."
+        ],
+        "monitoring": [
+          "Document gestation and dose."
+        ],
+        "contraindications": [
+          "No formal contraindications are listed in the source."
+        ],
+        "sourceTitle": "Milton Keynes University Hospital: Prophylactic Anti-D Immunoglobulin Guideline (MIDW-GL-67, version 6, approved 27/11/2019, review due 10/2022)",
+        "sourceUrl": "https://www.mkuh.nhs.uk/wp-content/uploads/2022/10/Prophylactic-Anti-D-Immunoglobulin-Guideline.pdf",
+        "sourceEdition": "MKUH Prophylactic Anti-D Guideline v6 2019, p. 8 and p. 7",
+        "branch": "Sensitising event at 12 to 20 weeks",
+        "step": "Anti-D immunoglobulin",
+        "selection": "all"
+      },
+      {
+        "indication": "Sensitising event after 20 weeks, including recurrent bleeding",
+        "patientGroup": "RhD negative pregnant women",
+        "genericName": "Anti-D immunoglobulin (sensitising event after 20 weeks)",
+        "dose": "Minimum 500 IU, plus 125 IU per mL of fetal cells beyond 4 mL",
+        "route": "Intramuscular (intravenous in severe thrombocytopenia or haemostasis disorders)",
+        "frequency": "Single dose within 72 hours; recurrent bleeding after 20 weeks: at least every 6 weeks with Kleihauer every 2 weeks",
+        "duration": "One dose per event",
+        "adjustments": [
+          "Given regardless of earlier routine prophylaxis or prior anti-D.",
+          "A Kleihauer result over 2 mL is confirmed by flow cytometry; fetal bleeds over 4 mL may need a repeat sample at 72 hours."
+        ],
+        "monitoring": [
+          "Kleihauer test after the event; flow cytometry when over 2 mL."
+        ],
+        "contraindications": [
+          "No formal contraindications are listed in the source."
+        ],
+        "sourceTitle": "Milton Keynes University Hospital: Prophylactic Anti-D Immunoglobulin Guideline (MIDW-GL-67, version 6, approved 27/11/2019, review due 10/2022)",
+        "sourceUrl": "https://www.mkuh.nhs.uk/wp-content/uploads/2022/10/Prophylactic-Anti-D-Immunoglobulin-Guideline.pdf",
+        "sourceEdition": "MKUH Prophylactic Anti-D Guideline v6 2019, p. 8 and p. 11",
+        "branch": "Sensitising event after 20 weeks",
+        "step": "Anti-D immunoglobulin",
+        "selection": "all"
+      },
+      {
+        "indication": "Postnatal prophylaxis",
+        "patientGroup": "RhD negative women with an RhD positive baby (or unknown baby status or non-viable pregnancy)",
+        "genericName": "Anti-D immunoglobulin (postnatal)",
+        "dose": "At least 500 IU",
+        "route": "Intramuscular (intravenous in severe thrombocytopenia or haemostasis disorders)",
+        "frequency": "Single dose after birth",
+        "duration": "One dose; extra dose if fetomaternal haemorrhage is large",
+        "adjustments": [
+          "Maternal sample 30 to 45 minutes after birth and within 2 hours to size the dose."
+        ],
+        "monitoring": [
+          "Cord blood ABO and RhD typing; maternal Kleihauer sample."
+        ],
+        "contraindications": [
+          "No formal contraindications are listed in the source."
+        ],
+        "sourceTitle": "Milton Keynes University Hospital: Prophylactic Anti-D Immunoglobulin Guideline (MIDW-GL-67, version 6, approved 27/11/2019, review due 10/2022)",
+        "sourceUrl": "https://www.mkuh.nhs.uk/wp-content/uploads/2022/10/Prophylactic-Anti-D-Immunoglobulin-Guideline.pdf",
+        "sourceEdition": "MKUH Prophylactic Anti-D Guideline v6 2019, p. 9",
+        "branch": "Postnatal prophylaxis",
+        "step": "Anti-D immunoglobulin",
+        "selection": "all"
+      }
+    ],
+    "note": "Doses are from one hospital guideline; NICE NG126 differs for miscarriage and ectopic pregnancy. The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary.",
+    "branches": [
+      {
+        "label": "Routine antenatal prophylaxis",
+        "entryCriteria": "RhD negative pregnant woman without anti-D antibodies"
+      },
+      {
+        "label": "Sensitising event before 12 weeks",
+        "entryCriteria": "RhD negative pregnant woman with a sensitising event before 12 weeks"
+      },
+      {
+        "label": "Sensitising event at 12 to 20 weeks",
+        "entryCriteria": "RhD negative pregnant woman with a sensitising event at 12 to 20 weeks"
+      },
+      {
+        "label": "Sensitising event after 20 weeks",
+        "entryCriteria": "RhD negative pregnant woman with a sensitising event after 20 weeks, including recurrent bleeding"
+      },
+      {
+        "label": "Postnatal prophylaxis",
+        "entryCriteria": "RhD negative woman with an RhD positive baby, or unknown baby status or non-viable pregnancy"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Routine antenatal prophylaxis",
+      "threshold": "RhD negative without anti-D antibodies: 1,500 IU intramuscularly at 28 to 30 weeks (MKUH)."
+    },
+    {
+      "criterion": "Sensitising event before 12 weeks",
+      "threshold": "Minimum 250 IU for termination, medical miscarriage management, ectopic or molar pregnancy, or persistent bleeding with pain (MKUH)."
+    },
+    {
+      "criterion": "Sensitising event at 12 to 20 weeks",
+      "threshold": "Minimum 250 IU within 72 hours; 500 IU if gestation uncertain (MKUH)."
+    },
+    {
+      "criterion": "Sensitising event after 20 weeks",
+      "threshold": "Minimum 500 IU within 72 hours plus Kleihauer test (MKUH)."
+    }
+  ],
+  "guidelineComparison": {
+    "title": "Anti-D after early pregnancy loss in the two sources",
+    "columns": [
+      "NICE NG126",
+      "MKUH hospital guideline 2019"
+    ],
+    "rows": [
+      {
+        "parameter": "Surgical management of ectopic pregnancy or miscarriage",
+        "values": [
+          "250 IU (50 micrograms) to rhesus-negative women.",
+          "Minimum 250 IU before 12 weeks; 250 IU at 12 to 20 weeks."
+        ]
+      },
+      {
+        "parameter": "Medical management only",
+        "values": [
+          "Do not offer.",
+          "Minimum 250 IU for medical miscarriage management or ectopic pregnancy before 12 weeks."
+        ]
+      },
+      {
+        "parameter": "Threatened miscarriage or pregnancy of unknown location",
+        "values": [
+          "Do not offer.",
+          "250 IU only for persistent bleeding with pain before 12 weeks."
+        ]
+      }
+    ],
+    "note": "Shown side by side and not merged; follow the local hospital policy."
+  },
+  "teaching": {
+    "scope": "Rhesus D (RhD) negative pregnant woman: routine antenatal anti-D prophylaxis, sensitising events, fetomaternal haemorrhage testing and postnatal anti-D, using one hospital guideline and NICE NG126.",
+    "learningObjectives": [
+      "Give 1,500 IU at 28 to 30 weeks to RhD negative women.",
+      "Dose by gestation after a sensitising event and test for fetomaternal haemorrhage after 20 weeks."
+    ],
+    "pitfalls": [
+      "Splitting a 1,500 IU vial.",
+      "Missing a Kleihauer test after 20 weeks."
+    ],
+    "keyPoints": [
+      "500 IU covers up to 4 mL fetal cells.",
+      "NICE and the hospital guideline differ after medical management."
+    ],
+    "references": [
+      {
+        "title": "Milton Keynes University Hospital: Prophylactic Anti-D Immunoglobulin Guideline (MIDW-GL-67, version 6, approved 27/11/2019, review due 10/2022)",
+        "edition": "MKUH Prophylactic Anti-D Guideline v6 2019, p. 5 and p. 8",
+        "url": "https://www.mkuh.nhs.uk/wp-content/uploads/2022/10/Prophylactic-Anti-D-Immunoglobulin-Guideline.pdf",
+        "locator": "p. 5; p. 8"
+      },
+      {
+        "title": "NICE NG126: Ectopic pregnancy and miscarriage: diagnosis and initial management",
+        "edition": "NICE NG126, Recommendation 1.7.1 to 1.7.3",
+        "url": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations",
+        "locator": "Recommendation 1.7.1 to 1.7.3"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain that anti-D is a blood product and why it is given.",
+      "Report bleeding or abdominal trauma promptly."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable."
+    ],
+    "mdtReferrals": [
+      "Midwife; obstetrician; transfusion laboratory."
+    ],
+    "dischargeCriteria": [
+      "Anti-D given and documented with consent and traceability tag."
+    ],
+    "followUpPlan": "Check antibody status and groups at the next antenatal contact; postnatal dose within 72 hours of birth."
+  }
+}

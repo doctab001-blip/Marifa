@@ -1,0 +1,859 @@
+{
+  "id": "a14c7e92-5b31-4d68-9f20-6c83e1b7a405",
+  "title": "Acute Coronary Syndrome Assessment and Escalation Pathway",
+  "specialty": "Emergency Medicine and Cardiology",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Urgent Care",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adult acute coronary syndrome assessment, reperfusion, invasive escalation, pharmacotherapy and discharge pathway from the user-pasted content. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "User-pasted content incorporated as an additive replacement revision on 16 October 2026.",
+      "Previous reference entries were retained unchanged.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from user-pasted-replacement-2026-10-16-v1-live."
+    ],
+    "unverifiedSections": [
+      "The pasted content contains claim-level doses, timing thresholds and comparative recommendations that require clinician verification against the retained sources and local Saudi hospital protocols.",
+      "Saudi Food and Drug Authority (SFDA) registration and formulary availability were not independently rechecked in this revision.",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "a14c7e92-5b31-4d68-9f20-6c83e1b7a405",
+      "acb3e7ce-e858-485d-960e-16ef38fc07da"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Acute Coronary Syndrome (ACS) is acute myocardial ischaemia caused by reduced coronary blood flow, usually after atherosclerotic plaque erosion or rupture with thrombosis. Partial or transient occlusion causes Non-ST-Elevation Acute Coronary Syndrome (NSTE-ACS); persistent occlusion causes ST-Elevation Myocardial Infarction (STEMI) or Acute Coronary Occlusion Myocardial Infarction (ACOMI).",
+    "keyMechanisms": [
+      "Plaque disruption exposes thrombogenic material, activating platelets and coronary thrombosis.",
+      "ACOMI includes classic STEMI and non-ST-elevation occlusion equivalents such as posterior, right-ventricular and De Winter patterns, and selected Left Bundle Branch Block (LBBB) patterns.",
+      "High-Sensitivity Cardiac Troponin (hs-cTn) rises with myocardial necrosis and supports rapid rule-in or rule-out using assay-specific thresholds and serial deltas.",
+      "Acute ischaemia can cause Ventricular Fibrillation (VF), Ventricular Tachycardia (VT), acute heart failure, cardiogenic shock and mechanical complications."
+    ],
+    "references": [
+      {
+        "title": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+        "edition": "Med J Aust 2026;224(2):e70127 (Brieger DB et al.)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/"
+      },
+      {
+        "title": "NICE NG185: Acute coronary syndromes",
+        "edition": "NICE guideline, 2020",
+        "url": "https://www.nice.org.uk/guidance/ng185"
+      },
+      {
+        "title": "Saudi Heart Association position statement on the use of biomarkers for the management of heart failure and acute coronary syndrome",
+        "edition": "J Saudi Heart Assoc 2022;34(2):114",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9518724/"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Severe retrosternal pain, pressure, tightness or burning lasting more than 20 minutes at rest, often radiating to the arm, neck, jaw, epigastrium or back.",
+      "Dyspnoea, diaphoresis, nausea, vomiting, presyncope or syncope; older adults, women and people with diabetes may present with isolated dyspnoea, fatigue, delirium or epigastric discomfort."
+    ],
+    "physicalSigns": [
+      "Assess for cold clammy peripheries, hypotension, raised jugular venous pressure, bibasal crackles, a new systolic murmur and signs of shock or acute heart failure."
+    ],
+    "redFlags": [
+      "ST-elevation or ACOMI-equivalent patterns on the initial Electrocardiogram (ECG).",
+      "Ongoing ischaemic pain, acute heart failure, cardiogenic shock or sustained arrhythmia requiring immediate invasive escalation.",
+      "Out-of-hospital cardiac arrest; do not use level of consciousness alone to determine emergency coronary angiography eligibility."
+    ],
+    "precipitants": [
+      "Tobacco use, diabetes mellitus, hypertension, dyslipidaemia, premature family history, Spontaneous Coronary Artery Dissection (SCAD), coronary spasm or coronary embolism."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Aortic dissection",
+      "distinguishingFeatures": "Abrupt maximal-onset tearing pain, back radiation, inter-arm Blood Pressure (BP) difference, pulse deficit or widened mediastinum; obtain urgent Computed Tomography (CT) aortography before antithrombotics."
+    },
+    {
+      "condition": "Pulmonary embolism",
+      "distinguishingFeatures": "Pleuritic pain, sudden dyspnoea, hypoxaemia, right-ventricular strain or deep-vein thrombosis features; arrange Computed Tomography Pulmonary Angiography (CTPA) or V/Q imaging."
+    },
+    {
+      "condition": "Pericarditis or myocarditis",
+      "distinguishingFeatures": "Positional pleuritic pain, friction rub or diffuse concave ST elevation with PR depression; use echocardiography and inflammatory markers."
+    },
+    {
+      "condition": "Type 2 myocardial infarction or non-ischaemic troponin rise",
+      "distinguishingFeatures": "Troponin elevation from supply-demand mismatch such as sepsis, tachyarrhythmia, severe anaemia or renal failure without acute plaque disruption."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "12-lead ECG",
+        "modalityTarget": "Initial electrical assessment",
+        "targetCondition": "ACS/ACOMI",
+        "expectedFinding": "ST elevation, ACOMI equivalent, ST depression or T-wave inversion",
+        "clinicalRationale": "Obtain and interpret within 10 minutes of FMC; add right-sided and posterior leads when indicated.",
+        "normalValue": "Normal sinus rhythm",
+        "references": [
+          {
+            "title": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+            "edition": "Med J Aust 2026;224(2):e70127 (Brieger DB et al.); Table 1",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "High-Sensitivity Cardiac Troponin (hs-cTn)",
+        "modalityTarget": "Cardiac biomarker",
+        "targetCondition": "Acute myocardial injury",
+        "expectedFinding": "Above the assay 99th percentile with dynamic rise/fall",
+        "clinicalRationale": "Use the same assay for serial 0/1-hour or 0/2-hour pathways and assay-specific deltas.",
+        "normalValue": "Below assay 99th percentile",
+        "references": [
+          {
+            "title": "NICE NG185: Acute coronary syndromes",
+            "edition": "NICE guideline, 2020; Table 1",
+            "url": "https://www.nice.org.uk/guidance/ng185"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count, electrolytes and renal function",
+        "modalityTarget": "Baseline laboratory assessment",
+        "targetCondition": "ACS treatment safety",
+        "expectedFinding": "Anaemia, hypokalaemia or impaired estimated glomerular filtration rate",
+        "clinicalRationale": "Guides antithrombotic choice, contrast safety and dose adjustment.",
+        "normalValue": "Normal local laboratory ranges",
+        "references": [
+          {
+            "title": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+            "edition": "Med J Aust 2026;224(2):e70127 (Brieger DB et al.); Table 1",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "GRACE and bleeding-risk scores",
+        "modalityTarget": "Risk stratification",
+        "targetCondition": "NSTE-ACS timing",
+        "expectedFinding": "GRACE 6-month mortality above 3.0% or high bleeding risk",
+        "clinicalRationale": "Supports timing of angiography and antithrombotic intensity; do not use a score instead of clinical instability.",
+        "normalValue": "Low predicted risk",
+        "references": [
+          {
+            "title": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+            "edition": "Med J Aust 2026;224(2):e70127 (Brieger DB et al.); Table 1",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "advancedImaging",
+        "testName": "Echocardiography",
+        "modalityTarget": "Shock, acute heart failure, new murmur or diagnostic uncertainty",
+        "targetCondition": "Mechanical complication or LV dysfunction",
+        "expectedFinding": "Regional wall-motion abnormality, reduced LV function or mechanical complication",
+        "clinicalRationale": "Supports emergency escalation and secondary-prevention decisions.",
+        "normalValue": "Normal LV function",
+        "references": [
+          {
+            "title": "NICE NG185: Acute coronary syndromes",
+            "edition": "NICE guideline, 2020; Table 1",
+            "url": "https://www.nice.org.uk/guidance/ng185"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Coronary angiography",
+        "modalityTarget": "STEMI/ACOMI or risk-timed NSTE-ACS",
+        "targetCondition": "Culprit coronary occlusion or severe stenosis",
+        "expectedFinding": "Culprit lesion or severe stenosis",
+        "clinicalRationale": "Identifies the target for PCI; radial access is preferred where appropriate.",
+        "normalValue": "No obstructive culprit lesion",
+        "references": [
+          {
+            "title": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+            "edition": "Med J Aust 2026;224(2):e70127 (Brieger DB et al.); Table 1",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "CT aortogram or CTPA when indicated",
+        "modalityTarget": "Alternative life-threatening diagnosis",
+        "targetCondition": "Aortic dissection or pulmonary embolism",
+        "expectedFinding": "Dissection flap, embolus or alternative thoracic pathology",
+        "clinicalRationale": "Perform before antithrombotic treatment when the differential warrants it.",
+        "normalValue": "No acute alternative pathology",
+        "references": [
+          {
+            "title": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+            "edition": "Med J Aust 2026;224(2):e70127 (Brieger DB et al.); Table 1",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "initial-resuscitation",
+      "title": "First 10 minutes and initial resuscitation",
+      "timeframe": "Immediately on arrival",
+      "actions": [
+        "Obtain and interpret a 12-lead ECG within 10 minutes; place the patient on continuous cardiac monitoring with a defibrillator available.",
+        "Give Aspirin 300 mg orally, chewed or dissolved, unless contraindicated.",
+        "Give oxygen only when SpO2 is below 90%; titrate to avoid a saturation above 96%.",
+        "Use intravenous (IV) fentanyl or morphine increments for severe refractory pain when appropriate.",
+        "Exclude suspected aortic dissection before potent anticoagulant or secondary antiplatelet therapy."
+      ]
+    },
+    {
+      "id": "stemi-reperfusion",
+      "title": "STEMI/ACOMI reperfusion pathway",
+      "timeframe": "Within 12 hours of symptom onset",
+      "actions": [
+        "Use primary PCI when FMC-to-device time is 120 minutes or less; use local door-in-door-out and transfer targets for non-PCI hospitals.",
+        "If PCI delay exceeds 120 minutes, give weight-adjusted fibrinolysis within 30 minutes of FMC with Unfractionated Heparin (UFH) or enoxaparin according to protocol.",
+        "Repeat ECG at 60–90 minutes after fibrinolysis; arrange rescue PCI for failed lysis and routine angiography after successful lysis.",
+        "Use Dual Antiplatelet Therapy (DAPT) and anticoagulation according to the selected reperfusion strategy; routine Glycoprotein IIb/IIIa inhibitors are not recommended.",
+        "For cardiogenic shock, arrange immediate angiography with or without PCI; routine Intra-Aortic Balloon Pump (IABP) or Veno-Arterial Extracorporeal Membrane Oxygenation (VA-ECMO) is not recommended without refractory mechanical collapse."
+      ]
+    },
+    {
+      "id": "nste-acs",
+      "title": "NSTE-ACS pathway",
+      "timeframe": "From diagnosis",
+      "actions": [
+        "Start parenteral anticoagulation with UFH, enoxaparin, fondaparinux or the local ACS protocol.",
+        "Use an immediate invasive strategy within 2 hours for instability, refractory angina, shock, acute heart failure or severe arrhythmia.",
+        "Use an early invasive strategy within 24 hours for high-risk features; apply the retained guideline comparison where recommendations differ.",
+        "Use aspirin plus a P2Y12 inhibitor according to invasive strategy; give Prasugrel only after coronary anatomy is defined and PCI is intended.",
+        "Use ischaemia testing to guide angiography in lower-risk patients."
+      ]
+    },
+    {
+      "id": "discharge-optimization",
+      "title": "In-hospital and discharge optimisation",
+      "timeframe": "During admission and before discharge",
+      "actions": [
+        "Individualise DAPT duration and antithrombotic combinations, including oral anticoagulation and Proton Pump Inhibitor (PPI) protection when indicated.",
+        "Start high-intensity lipid lowering, assess beta-blocker and ACE inhibitor/ARB indications, and refer to cardiac rehabilitation.",
+        "Document low-risk discharge or completed revascularisation, stable haemodynamics, medication education, emergency return advice and cardiology follow-up."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [
+      {
+        "indication": "ACS loading and secondary prevention",
+        "patientGroup": "Adults",
+        "genericName": "Aspirin",
+        "dose": "300 mg loading, then 75–100 mg daily",
+        "route": "PO",
+        "frequency": "Once loading, then once daily",
+        "duration": "Long term if indicated",
+        "adjustments": [
+          "Avoid in active bleeding or true hypersensitivity."
+        ],
+        "monitoring": [
+          "Bleeding and gastrointestinal symptoms."
+        ],
+        "contraindications": [
+          "Active gastrointestinal bleeding",
+          "Severe bleeding diathesis",
+          "True aspirin hypersensitivity"
+        ],
+        "sourceTitle": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/",
+        "sourceEdition": "Australian ACS guideline 2025; Table 1",
+        "branch": "STEMI — primary PCI",
+        "step": "Antiplatelet loading",
+        "selection": "all"
+      },
+      {
+        "indication": "First-line P2Y12 inhibitor for ACS",
+        "patientGroup": "Adults",
+        "genericName": "Ticagrelor",
+        "dose": "180 mg loading, then 90 mg twice daily",
+        "route": "PO",
+        "frequency": "Loading then twice daily",
+        "duration": "Usually 12 months; individualise",
+        "adjustments": [
+          "Review interactions and bleeding risk."
+        ],
+        "monitoring": [
+          "Bleeding, dyspnoea and bradyarrhythmia."
+        ],
+        "contraindications": [
+          "Prior intracranial haemorrhage",
+          "Active pathological bleeding",
+          "Severe hepatic impairment"
+        ],
+        "sourceTitle": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/",
+        "sourceEdition": "Ticagrelor prescribing information; Table 1",
+        "branch": "STEMI — primary PCI",
+        "step": "P2Y12 inhibitor",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "P2Y12 inhibitor when PCI is intended",
+        "patientGroup": "Adults undergoing PCI",
+        "genericName": "Prasugrel",
+        "dose": "60 mg loading, then 10 mg daily; 5 mg daily may apply in selected low-weight/older patients",
+        "route": "PO",
+        "frequency": "Loading then once daily",
+        "duration": "Per DAPT plan",
+        "adjustments": [
+          "Do not pre-treat NSTE-ACS before anatomy is defined."
+        ],
+        "monitoring": [
+          "Bleeding."
+        ],
+        "contraindications": [
+          "Prior stroke or TIA",
+          "Active bleeding"
+        ],
+        "sourceTitle": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/",
+        "sourceEdition": "Prasugrel prescribing information; Table 1",
+        "branch": "STEMI — primary PCI",
+        "step": "P2Y12 inhibitor",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "PCI is intended and the PCI team chooses it instead of ticagrelor"
+      },
+      {
+        "indication": "Alternative P2Y12 inhibitor, oral anticoagulation or fibrinolysis",
+        "patientGroup": "Adults",
+        "genericName": "Clopidogrel",
+        "dose": "300–600 mg loading, then 75 mg daily",
+        "route": "PO",
+        "frequency": "Loading then once daily",
+        "duration": "Per DAPT plan",
+        "adjustments": [
+          "Use according to interaction and CYP2C19 considerations."
+        ],
+        "monitoring": [
+          "Bleeding."
+        ],
+        "contraindications": [
+          "Active pathological bleeding",
+          "Severe hepatic impairment"
+        ],
+        "sourceTitle": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/",
+        "sourceEdition": "Clopidogrel prescribing information; Table 1",
+        "branch": "STEMI — primary PCI",
+        "step": "P2Y12 inhibitor",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Oral anticoagulation is needed, or ticagrelor and prasugrel are unsuitable"
+      },
+      {
+        "indication": "PCI or STEMI anticoagulation",
+        "patientGroup": "Adults",
+        "genericName": "UFH",
+        "dose": "70 units/kg IV bolus, maximum 5000 units, then titrate",
+        "route": "IV",
+        "frequency": "Bolus and infusion as protocol",
+        "duration": "Per ACS protocol",
+        "adjustments": [
+          "Use local activated partial thromboplastin time (APTT) target."
+        ],
+        "monitoring": [
+          "APTT, bleeding and platelet count."
+        ],
+        "contraindications": [
+          "Active major bleeding",
+          "History of HIT"
+        ],
+        "sourceTitle": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/",
+        "sourceEdition": "Local ACS/STEMI protocol; Table 1",
+        "branch": "STEMI — primary PCI",
+        "step": "Anticoagulant",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "Parenteral anticoagulation",
+        "patientGroup": "Adults",
+        "genericName": "Enoxaparin",
+        "dose": "1 mg/kg",
+        "route": "Subcutaneous (SC)",
+        "frequency": "Twice daily; adjust for renal function",
+        "duration": "Usually 2–8 days or local protocol",
+        "adjustments": [
+          "Adjust for renal impairment and PCI/fibrinolysis pathway."
+        ],
+        "monitoring": [
+          "Bleeding, platelet count and renal function."
+        ],
+        "contraindications": [
+          "Active major bleeding",
+          "Recent or active Heparin-Induced Thrombocytopenia (HIT)"
+        ],
+        "sourceTitle": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/",
+        "sourceEdition": "Enoxaparin prescribing information; Table 1",
+        "branch": "STEMI — primary PCI",
+        "step": "Anticoagulant",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "According to the local protocol"
+      },
+      {
+        "indication": "ACS loading and secondary prevention",
+        "patientGroup": "Adults",
+        "genericName": "Aspirin",
+        "dose": "300 mg loading, then 75–100 mg daily",
+        "route": "PO",
+        "frequency": "Once loading, then once daily",
+        "duration": "Long term if indicated",
+        "adjustments": [
+          "Avoid in active bleeding or true hypersensitivity."
+        ],
+        "monitoring": [
+          "Bleeding and gastrointestinal symptoms."
+        ],
+        "contraindications": [
+          "Active gastrointestinal bleeding",
+          "Severe bleeding diathesis",
+          "True aspirin hypersensitivity"
+        ],
+        "sourceTitle": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/",
+        "sourceEdition": "Australian ACS guideline 2025; Table 1",
+        "branch": "STEMI — fibrinolysis",
+        "step": "Antiplatelet loading",
+        "selection": "all"
+      },
+      {
+        "indication": "Fibrinolysis when PCI is unavailable",
+        "patientGroup": "Adults meeting fibrinolysis criteria",
+        "genericName": "Tenecteplase",
+        "dose": "Single weight-based IV bolus; use local product and protocol; consider age-adjusted dosing only where specified",
+        "route": "IV",
+        "frequency": "Single bolus",
+        "duration": "One dose",
+        "adjustments": [
+          "Administer with appropriate antithrombin and arrange rescue PCI pathway."
+        ],
+        "monitoring": [
+          "ECG at 60–90 minutes and bleeding."
+        ],
+        "contraindications": [
+          "Prior intracranial haemorrhage",
+          "Recent ischaemic stroke",
+          "Active bleeding",
+          "Suspected aortic dissection"
+        ],
+        "sourceTitle": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/",
+        "sourceEdition": "Fibrinolysis protocol; Table 1",
+        "branch": "STEMI — fibrinolysis",
+        "step": "Fibrinolytic",
+        "selection": "all"
+      },
+      {
+        "indication": "P2Y12 inhibitor when fibrinolysis is used",
+        "patientGroup": "Adults",
+        "genericName": "Clopidogrel",
+        "dose": "300–600 mg loading, then 75 mg daily",
+        "route": "PO",
+        "frequency": "Loading then once daily",
+        "duration": "Per DAPT plan",
+        "adjustments": [
+          "Use according to interaction and CYP2C19 considerations."
+        ],
+        "monitoring": [
+          "Bleeding."
+        ],
+        "contraindications": [
+          "Active pathological bleeding",
+          "Severe hepatic impairment"
+        ],
+        "sourceTitle": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/",
+        "sourceEdition": "Clopidogrel prescribing information; Table 1",
+        "branch": "STEMI — fibrinolysis",
+        "step": "P2Y12 inhibitor",
+        "selection": "all"
+      },
+      {
+        "indication": "PCI or STEMI anticoagulation",
+        "patientGroup": "Adults",
+        "genericName": "UFH",
+        "dose": "70 units/kg IV bolus, maximum 5000 units, then titrate",
+        "route": "IV",
+        "frequency": "Bolus and infusion as protocol",
+        "duration": "Per ACS protocol",
+        "adjustments": [
+          "Use local activated partial thromboplastin time (APTT) target."
+        ],
+        "monitoring": [
+          "APTT, bleeding and platelet count."
+        ],
+        "contraindications": [
+          "Active major bleeding",
+          "History of HIT"
+        ],
+        "sourceTitle": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/",
+        "sourceEdition": "Local ACS/STEMI protocol; Table 1",
+        "branch": "STEMI — fibrinolysis",
+        "step": "Anticoagulant",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "Parenteral anticoagulation",
+        "patientGroup": "Adults",
+        "genericName": "Enoxaparin",
+        "dose": "1 mg/kg",
+        "route": "Subcutaneous (SC)",
+        "frequency": "Twice daily; adjust for renal function",
+        "duration": "Usually 2–8 days or local protocol",
+        "adjustments": [
+          "Adjust for renal impairment and PCI/fibrinolysis pathway."
+        ],
+        "monitoring": [
+          "Bleeding, platelet count and renal function."
+        ],
+        "contraindications": [
+          "Active major bleeding",
+          "Recent or active Heparin-Induced Thrombocytopenia (HIT)"
+        ],
+        "sourceTitle": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/",
+        "sourceEdition": "Enoxaparin prescribing information; Table 1",
+        "branch": "STEMI — fibrinolysis",
+        "step": "Anticoagulant",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "According to the local protocol"
+      },
+      {
+        "indication": "ACS loading and secondary prevention",
+        "patientGroup": "Adults",
+        "genericName": "Aspirin",
+        "dose": "300 mg loading, then 75–100 mg daily",
+        "route": "PO",
+        "frequency": "Once loading, then once daily",
+        "duration": "Long term if indicated",
+        "adjustments": [
+          "Avoid in active bleeding or true hypersensitivity."
+        ],
+        "monitoring": [
+          "Bleeding and gastrointestinal symptoms."
+        ],
+        "contraindications": [
+          "Active gastrointestinal bleeding",
+          "Severe bleeding diathesis",
+          "True aspirin hypersensitivity"
+        ],
+        "sourceTitle": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/",
+        "sourceEdition": "Australian ACS guideline 2025; Table 1",
+        "branch": "NSTE-ACS",
+        "step": "Antiplatelet loading",
+        "selection": "all"
+      },
+      {
+        "indication": "First-line P2Y12 inhibitor for ACS",
+        "patientGroup": "Adults",
+        "genericName": "Ticagrelor",
+        "dose": "180 mg loading, then 90 mg twice daily",
+        "route": "PO",
+        "frequency": "Loading then twice daily",
+        "duration": "Usually 12 months; individualise",
+        "adjustments": [
+          "Review interactions and bleeding risk."
+        ],
+        "monitoring": [
+          "Bleeding, dyspnoea and bradyarrhythmia."
+        ],
+        "contraindications": [
+          "Prior intracranial haemorrhage",
+          "Active pathological bleeding",
+          "Severe hepatic impairment"
+        ],
+        "sourceTitle": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/",
+        "sourceEdition": "Ticagrelor prescribing information; Table 1",
+        "branch": "NSTE-ACS",
+        "step": "P2Y12 inhibitor",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "P2Y12 inhibitor when PCI is intended",
+        "patientGroup": "Adults undergoing PCI",
+        "genericName": "Prasugrel",
+        "dose": "60 mg loading, then 10 mg daily; 5 mg daily may apply in selected low-weight/older patients",
+        "route": "PO",
+        "frequency": "Loading then once daily",
+        "duration": "Per DAPT plan",
+        "adjustments": [
+          "Do not pre-treat NSTE-ACS before anatomy is defined."
+        ],
+        "monitoring": [
+          "Bleeding."
+        ],
+        "contraindications": [
+          "Prior stroke or TIA",
+          "Active bleeding"
+        ],
+        "sourceTitle": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/",
+        "sourceEdition": "Prasugrel prescribing information; Table 1",
+        "branch": "NSTE-ACS",
+        "step": "P2Y12 inhibitor",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Only after coronary anatomy is defined and PCI is intended"
+      },
+      {
+        "indication": "Alternative P2Y12 inhibitor, oral anticoagulation or fibrinolysis",
+        "patientGroup": "Adults",
+        "genericName": "Clopidogrel",
+        "dose": "300–600 mg loading, then 75 mg daily",
+        "route": "PO",
+        "frequency": "Loading then once daily",
+        "duration": "Per DAPT plan",
+        "adjustments": [
+          "Use according to interaction and CYP2C19 considerations."
+        ],
+        "monitoring": [
+          "Bleeding."
+        ],
+        "contraindications": [
+          "Active pathological bleeding",
+          "Severe hepatic impairment"
+        ],
+        "sourceTitle": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/",
+        "sourceEdition": "Clopidogrel prescribing information; Table 1",
+        "branch": "NSTE-ACS",
+        "step": "P2Y12 inhibitor",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Oral anticoagulation is needed"
+      },
+      {
+        "indication": "PCI or STEMI anticoagulation",
+        "patientGroup": "Adults",
+        "genericName": "UFH",
+        "dose": "70 units/kg IV bolus, maximum 5000 units, then titrate",
+        "route": "IV",
+        "frequency": "Bolus and infusion as protocol",
+        "duration": "Per ACS protocol",
+        "adjustments": [
+          "Use local activated partial thromboplastin time (APTT) target."
+        ],
+        "monitoring": [
+          "APTT, bleeding and platelet count."
+        ],
+        "contraindications": [
+          "Active major bleeding",
+          "History of HIT"
+        ],
+        "sourceTitle": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/",
+        "sourceEdition": "Local ACS/STEMI protocol; Table 1",
+        "branch": "NSTE-ACS",
+        "step": "Anticoagulant",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "Parenteral anticoagulation",
+        "patientGroup": "Adults",
+        "genericName": "Enoxaparin",
+        "dose": "1 mg/kg",
+        "route": "Subcutaneous (SC)",
+        "frequency": "Twice daily; adjust for renal function",
+        "duration": "Usually 2–8 days or local protocol",
+        "adjustments": [
+          "Adjust for renal impairment and PCI/fibrinolysis pathway."
+        ],
+        "monitoring": [
+          "Bleeding, platelet count and renal function."
+        ],
+        "contraindications": [
+          "Active major bleeding",
+          "Recent or active Heparin-Induced Thrombocytopenia (HIT)"
+        ],
+        "sourceTitle": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/",
+        "sourceEdition": "Enoxaparin prescribing information; Table 1",
+        "branch": "NSTE-ACS",
+        "step": "Anticoagulant",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "According to the local ACS protocol"
+      }
+    ],
+    "note": "Doses in the pasted pathway require verification against the retained international and Saudi references, SFDA registration and the local hospital ACS/STEMI protocol before prescribing.",
+    "branches": [
+      {
+        "label": "STEMI — primary PCI",
+        "entryCriteria": "ST-elevation myocardial infarction with primary PCI deliverable within the time target"
+      },
+      {
+        "label": "STEMI — fibrinolysis",
+        "entryCriteria": "ST-elevation myocardial infarction when PCI is delayed beyond the time target"
+      },
+      {
+        "label": "NSTE-ACS",
+        "entryCriteria": "Acute coronary syndrome without persistent ST elevation"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "STEMI/ACOMI reperfusion",
+      "threshold": "Reperfusion indicated within 12 hours of symptom onset; prefer Primary Percutaneous Coronary Intervention (PCI) if First Medical Contact (FMC)-to-device time is 120 minutes or less, otherwise fibrinolysis within 30 minutes of FMC."
+    },
+    {
+      "criterion": "NSTE-ACS very high risk",
+      "threshold": "Immediate invasive strategy within 2 hours for refractory pain, instability, acute heart failure or cardiogenic shock."
+    },
+    {
+      "criterion": "Oxygen",
+      "threshold": "Give supplemental oxygen only when oxygen saturation (SpO2) is below 90%; target 90–96%."
+    }
+  ],
+  "guidelineComparison": {
+    "title": "Australian ACS guideline 2025 vs NICE NG185",
+    "columns": [
+      "Australian 2025",
+      "NICE NG185"
+    ],
+    "rows": [
+      {
+        "parameter": "Occlusion MI",
+        "values": [
+          "ACOMI includes STEMI-equivalent ECG patterns",
+          "STEMI"
+        ]
+      },
+      {
+        "parameter": "Older patients and lysis",
+        "values": [
+          "Half-dose tenecteplase if 70 or over (pharmaco-invasive)",
+          "Not specified"
+        ]
+      },
+      {
+        "parameter": "NSTE-ACS timing",
+        "values": [
+          "Very high risk within 2 h; high risk within 24 h",
+          "Immediate if unstable; within 72 h if GRACE above 3.0%"
+        ]
+      },
+      {
+        "parameter": "NSTE-ACS anticoagulant",
+        "values": [
+          "UFH, enoxaparin or fondaparinux",
+          "Fondaparinux preferred unless high bleeding risk/immediate angiography"
+        ]
+      },
+      {
+        "parameter": "Oxygen",
+        "values": [
+          "Only if SpO2 below 90%; max 96%",
+          "Not detailed in NG185 recommendations reviewed"
+        ]
+      }
+    ],
+    "note": "Both: aspirin, primary PCI within 120 min or lysis, potent P2Y12 inhibitor for invasive strategy, radial access."
+  },
+  "teaching": {
+    "scope": "Adult ACS assessment, reperfusion, NSTE-ACS escalation, pharmacotherapy and discharge safety-netting.",
+    "learningObjectives": [
+      "Recognise ACS and ACOMI patterns.",
+      "Select the correct reperfusion or invasive timing pathway.",
+      "Apply antithrombotic safety checks and discharge prevention measures."
+    ],
+    "pitfalls": [
+      "Routine oxygen in normoxic patients.",
+      "Missing posterior, high-lateral or right-ventricular occlusion patterns.",
+      "Mixing troponin assays for serial deltas.",
+      "Giving Prasugrel before coronary anatomy in NSTE-ACS.",
+      "Starting antithrombotics before excluding aortic dissection."
+    ],
+    "keyPoints": [
+      "Obtain ECG within 10 minutes and search for ACOMI patterns.",
+      "Give oxygen only for hypoxaemia.",
+      "Do not delay reperfusion for routine laboratory or troponin results.",
+      "Exclude aortic dissection before antithrombotic escalation."
+    ],
+    "references": [
+      {
+        "title": "Australian Clinical Guideline for Diagnosing and Managing Acute Coronary Syndromes 2025 (National Heart Foundation of Australia / CSANZ)",
+        "edition": "Med J Aust 2026;224(2):e70127 (Brieger DB et al.)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907536/",
+        "locator": "Tables 1–4 (assessment and diagnosis; hospital care and reperfusion; recovery and secondary prevention); Figures 3–5"
+      },
+      {
+        "title": "NICE NG185: Acute coronary syndromes",
+        "edition": "NICE guideline, 2020",
+        "url": "https://www.nice.org.uk/guidance/ng185",
+        "locator": "Sections 1.1 (STEMI) and 1.2 (unstable angina/NSTEMI)"
+      },
+      {
+        "title": "Saudi Heart Association position statement on the use of biomarkers for the management of heart failure and acute coronary syndrome",
+        "edition": "J Saudi Heart Assoc 2022;34(2):114",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9518724/",
+        "locator": "Acute coronary syndrome troponin statements; Table 1 assay cut-offs"
+      },
+      {
+        "title": "National Heart Center – Saudi Health Council Acute Myocardial Infarction-Related Cardiogenic Shock Consensus Document",
+        "edition": "Saudi Med J 2026",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13227443/",
+        "locator": "Cited for awareness; not reviewed in detail"
+      },
+      {
+        "title": "SFDA Saudi Drug Information System (registration search)",
+        "edition": "Accessed 11–12 Oct 2026",
+        "url": "https://sdi.sfda.gov.sa/",
+        "locator": "Accessed 11–12 Oct 2026; Section 1"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Call emergency medical services immediately if chest pain recurs.",
+      "Adhere to DAPT and secondary-prevention medicines.",
+      "Stop smoking and address diet, diabetes, physical activity and rehabilitation."
+    ],
+    "lifestyleAndDiet": [
+      "Smoking cessation, dietary optimisation, diabetes control, physical activity and cardiac rehabilitation."
+    ],
+    "mdtReferrals": [
+      "Cardiology and catheter-lab activation, Coronary Care Unit (CCU), cardiac rehabilitation and relevant critical-care teams."
+    ],
+    "dischargeCriteria": [
+      "Low-risk pathway with non-ischaemic serial ECGs and negative serial hs-cTn, or completed inpatient management and revascularisation.",
+      "Stable haemodynamics for at least 24–48 hours, secondary prevention optimised and DAPT education completed."
+    ],
+    "followUpPlan": "Arrange cardiology or CCU follow-up within 2–4 weeks and enrol in an accredited cardiac rehabilitation programme; arrange non-invasive testing when indicated by the risk pathway."
+  },
+  "clinicalReviewStatus": "pending"
+}

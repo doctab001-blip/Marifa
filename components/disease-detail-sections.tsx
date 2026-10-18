@@ -8,6 +8,7 @@ import { InvestigationCards } from "@/components/investigation-cards";
 import type { InvestigationReference } from "@/lib/investigation-display";
 import { getMedicationPlan } from "@/lib/data/medication-plans";
 import type { DiseaseDetail } from "@/lib/validations/disease";
+import { groupMedicationPlan, isBranchedMedicationPlan, type MedicationRegimen } from "@/lib/medication-pathway";
 import { SourceCitation, type CitationSource } from "@/components/source-citation";
 import { Investigations as GranularInvestigations, TreatmentDetails } from "@/components/granular-pathway";
 import { ClinicalEvidenceAudit } from "@/components/clinical-evidence-audit";
@@ -75,6 +76,24 @@ function Section({ number, section, children }: {
   );
 }
 
+function MedicationItem({ regimen }: { regimen: MedicationRegimen }) {
+  const role = regimen.selection === "one-of" ? (regimen.preferred ? "Preferred" : "Alternative") : null;
+  return <li>
+    <h4>{regimen.indication}{role ? <> — <em>{role}</em></> : null}</h4>
+    <dl>
+      <div><dt>Medicine</dt><dd>{regimen.genericName}</dd></div>
+      {regimen.useWhen ? <div><dt>Use when</dt><dd>{regimen.useWhen}</dd></div> : null}
+      <div><dt>Patient group</dt><dd>{regimen.patientGroup}</dd></div>
+      <div><dt>Dose and route</dt><dd>{regimen.dose}; {regimen.route}</dd></div>
+      <div><dt>Frequency and duration</dt><dd>{regimen.frequency}; {regimen.duration}</dd></div>
+      <div><dt>Adjustments and precautions</dt><dd><ul>{regimen.adjustments.map((item) => <li key={item}>{item}</li>)}</ul></dd></div>
+      <div><dt>Monitoring</dt><dd><ul>{regimen.monitoring.map((item) => <li key={item}>{item}</li>)}</ul></dd></div>
+      <div><dt>Source</dt><dd><a href={regimen.sourceUrl} target="_blank" rel="noreferrer">{regimen.sourceTitle} ({regimen.sourceEdition})</a></dd></div>
+    </dl>
+    <SourceCitation sources={[{ title: regimen.sourceTitle, url: regimen.sourceUrl, edition: regimen.sourceEdition }]} />
+  </li>;
+}
+
 export function DiseaseDetailSections({ disease, investigationSource }: { disease: DiseaseDetail; investigationSource?: InvestigationReference }) {
   const medicationPlan = disease.medicationPlan ?? getMedicationPlan(disease.id);
   const topicSources: CitationSource[] = investigationSource ? [investigationSource] : [];
@@ -124,21 +143,16 @@ export function DiseaseDetailSections({ disease, investigationSource }: { diseas
         <section className="medication-plan" aria-labelledby="medication-plan-title">
           <header><div><p className="disease-kicker">Treatment details</p><h3 id="medication-plan-title">Medicines and doses</h3></div></header>
           {medicationPlan?.regimens.length ? <p className="medication-plan-status">{medicationPlan.note}</p> : null}
-          {medicationPlan?.regimens.length ? <ul className="medication-plan-list">
-            {medicationPlan.regimens.map((regimen) => <li key={`${regimen.genericName}-${regimen.indication}`}>
-              <h4>{regimen.indication}</h4>
-              <dl>
-                <div><dt>Medicine</dt><dd>{regimen.genericName}</dd></div>
-                <div><dt>Patient group</dt><dd>{regimen.patientGroup}</dd></div>
-                <div><dt>Dose and route</dt><dd>{regimen.dose}; {regimen.route}</dd></div>
-                <div><dt>Frequency and duration</dt><dd>{regimen.frequency}; {regimen.duration}</dd></div>
-                <div><dt>Adjustments and precautions</dt><dd><ul>{regimen.adjustments.map((item) => <li key={item}>{item}</li>)}</ul></dd></div>
-                <div><dt>Monitoring</dt><dd><ul>{regimen.monitoring.map((item) => <li key={item}>{item}</li>)}</ul></dd></div>
-                <div><dt>Source</dt><dd><a href={regimen.sourceUrl} target="_blank" rel="noreferrer">{regimen.sourceTitle} ({regimen.sourceEdition})</a></dd></div>
-              </dl>
-              <SourceCitation sources={[{ title: regimen.sourceTitle, url: regimen.sourceUrl, edition: regimen.sourceEdition }]} />
-            </li>)}
-          </ul> : <p className="m-0 rounded-lg border border-edge bg-panel px-4 py-3 text-sm leading-relaxed text-muted">{medicationPlan?.note ?? "No exact-dose medicine plan is linked to this topic. Consult the current Saudi/local protocol and hospital formulary for prescribing details."}</p>}
+          {medicationPlan?.regimens.length ? (isBranchedMedicationPlan(medicationPlan)
+            ? groupMedicationPlan(medicationPlan).map((branch) => <div className="medication-branch" key={branch.label}>
+                <h4 className="medication-branch-title">If: {branch.label}</h4>
+                {branch.entryCriteria ? <p className="medication-plan-status">{branch.entryCriteria}</p> : null}
+                {branch.steps.map((step) => <div key={step.step}>
+                  <p className="medication-step-title"><strong>{step.step}</strong> — {step.selection === "one-of" ? "choose ONE" : step.options.length > 1 ? "give all" : "give"}</p>
+                  <ul className="medication-plan-list">{step.options.map((regimen) => <MedicationItem key={`${regimen.genericName}-${regimen.indication}`} regimen={regimen} />)}</ul>
+                </div>)}
+              </div>)
+            : <ul className="medication-plan-list">{medicationPlan.regimens.map((regimen) => <MedicationItem key={`${regimen.genericName}-${regimen.indication}`} regimen={regimen} />)}</ul>) : <p className="m-0 rounded-lg border border-edge bg-panel px-4 py-3 text-sm leading-relaxed text-muted">{medicationPlan?.note ?? "No exact-dose medicine plan is linked to this topic. Consult the current Saudi/local protocol and hospital formulary for prescribing details."}</p>}
         </section>
         <SourceCitation sources={topicSources} />
       </Section>

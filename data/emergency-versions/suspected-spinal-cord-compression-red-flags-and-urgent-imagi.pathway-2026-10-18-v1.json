@@ -1,0 +1,349 @@
+{
+  "id": "41b230d9-4afd-454f-8ed6-bcb53b331ed3",
+  "title": "Suspected Spinal Cord Compression: Red Flags and Urgent Imaging",
+  "specialty": "Neurosurgery / Oncology / Emergency Medicine",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adult with cancer and suspected metastatic spinal cord compression (MSCC): red flags, contact with the MSCC coordinator, whole-spine magnetic resonance imaging (MRI) within 24 hours, dexamethasone, analgesia, immobilisation and definitive treatment. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 2026-10-18.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from authoring-standard-2026-10-18-tier3b-v1-live."
+    ],
+    "unverifiedSections": [
+      "NICE NG234 gives dexamethasone 16 mg only for haematological malignancy with spinal metastases; the 16 mg daily MSCC dose comes from the West Midlands palliative care page, which names no gastric protection drug or dose.",
+      "NICE NG234 gives no analgesic doses and no thromboprophylaxis advice in the extracts opened.",
+      "No Saudi guideline was opened.",
+      "The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary.",
+      "Source pages were read through automated page extraction rather than page-by-page in the original documents, so each figure should be spot-checked against the source during clinical review.",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "41b230d9-4afd-454f-8ed6-bcb53b331ed3",
+      "e55c9afe-374f-4e87-bb58-10edf4135147"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Spinal metastases or an epidural mass compress the spinal cord or cauda equina, causing progressive loss of neurological function. Severe, progressive, night or mechanical spinal pain in a person with cancer should prompt advice from the MSCC coordinator within 24 hours. Neurological symptoms with a history of cancer are an oncological emergency requiring immediate contact with the MSCC coordinator. Spinal stability determines whether the person can sit up or weight bear.",
+    "keyMechanisms": [
+      "Spinal metastases or an epidural mass compress the spinal cord or cauda equina, causing progressive loss of neurological function.",
+      "Severe, progressive, night or mechanical spinal pain in a person with cancer should prompt advice from the MSCC coordinator within 24 hours.",
+      "Neurological symptoms with a history of cancer are an oncological emergency requiring immediate contact with the MSCC coordinator.",
+      "Spinal stability determines whether the person can sit up or weight bear."
+    ],
+    "references": [
+      {
+        "title": "NICE NG234: Spinal metastases and metastatic spinal cord compression",
+        "edition": "NICE NG234, Section 1.3 to 1.11",
+        "url": "https://www.nice.org.uk/guidance/ng234/chapter/Recommendations"
+      },
+      {
+        "title": "West Midlands Palliative Care Physicians: Metastatic spinal cord compression (palliative care guidelines, copyright 2026)",
+        "edition": "West Midlands Palliative Care MSCC 2026, Section Dexamethasone",
+        "url": "https://www.westmidspallcare.co.uk/wmpcp/guide/emergencies/metastatic-spinal-cord-compression"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Back or neck pain, severe or progressive.",
+      "Night pain and pain on straining.",
+      "Limb weakness, gait disturbance.",
+      "Numbness or sensory loss.",
+      "Bladder or bowel dysfunction.",
+      "Radicular pain."
+    ],
+    "physicalSigns": [
+      "Limb weakness or gait disturbance.",
+      "Sensory level.",
+      "Localised spinal tenderness."
+    ],
+    "redFlags": [
+      "Bladder or bowel dysfunction.",
+      "New limb weakness or sensory loss with cancer.",
+      "Rapid neurological decline."
+    ],
+    "precipitants": [
+      "Known cancer, especially breast, prostate, lung, myeloma or lymphoma.",
+      "Spinal metastases."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Cauda equina syndrome from disc prolapse",
+      "distinguishingFeatures": "No cancer history; same emergency MRI pathway."
+    },
+    {
+      "condition": "Mechanical back pain",
+      "distinguishingFeatures": "No neurological signs or red flags."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "advancedImaging",
+        "testName": "Whole-spine MRI: sagittal T1 and/or STIR, sagittal T2",
+        "modalityTarget": "Spine and cord",
+        "targetCondition": "Metastatic spinal cord compression",
+        "expectedFinding": "Epidural or vertebral metastasis with cord or cauda equina compression",
+        "clinicalRationale": "NICE specifies sagittal T1 and/or short TI inversion recovery of the whole spine and T2 to assess compression.",
+        "normalValue": "No cord or cauda equina compression",
+        "references": [
+          {
+            "title": "NICE NG234: Spinal metastases and metastatic spinal cord compression",
+            "edition": "NICE NG234, Section 1.5 Imaging",
+            "url": "https://www.nice.org.uk/guidance/ng234/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Neurological examination: power, sensation, reflexes, gait, bladder and bowel function",
+        "modalityTarget": "Neurological deficit",
+        "targetCondition": "Cord compression",
+        "expectedFinding": "Weakness, sensory loss, sphincter disturbance",
+        "clinicalRationale": "Baseline for monitoring deterioration.",
+        "normalValue": "Normal power, sensation and reflexes; normal gait and sphincter function",
+        "references": [
+          {
+            "title": "NICE NG234: Spinal metastases and metastatic spinal cord compression",
+            "edition": "NICE NG234, Section 1.3 Recognition",
+            "url": "https://www.nice.org.uk/guidance/ng234/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Computed tomography (CT) of the spine",
+        "modalityTarget": "Bone and canal",
+        "targetCondition": "Spinal metastases when MRI is contraindicated",
+        "expectedFinding": "Bone destruction or canal compromise",
+        "clinicalRationale": "NICE: use CT if MRI is contraindicated.",
+        "normalValue": "No bony destruction",
+        "references": [
+          {
+            "title": "NICE NG234: Spinal metastases and metastatic spinal cord compression",
+            "edition": "NICE NG234, Section 1.5 Imaging",
+            "url": "https://www.nice.org.uk/guidance/ng234/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Blood glucose",
+        "modalityTarget": "Steroid monitoring",
+        "targetCondition": "Hyperglycaemia on dexamethasone",
+        "expectedFinding": "Raised glucose",
+        "clinicalRationale": "West Midlands: monitor glucose in all patients receiving corticosteroids.",
+        "normalValue": "Fasting 3.9–5.6 mmol/L",
+        "references": [
+          {
+            "title": "West Midlands Palliative Care Physicians: Metastatic spinal cord compression (palliative care guidelines, copyright 2026)",
+            "edition": "West Midlands Palliative Care MSCC 2026, Section Monitoring and protection",
+            "url": "https://www.westmidspallcare.co.uk/wmpcp/guide/emergencies/metastatic-spinal-cord-compression"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Plain X-ray of the spine",
+        "modalityTarget": "Bone",
+        "targetCondition": "Spinal metastases",
+        "expectedFinding": "Not recommended",
+        "clinicalRationale": "NICE: do not use plain X-ray to diagnose or rule out spinal metastases or MSCC.",
+        "normalValue": "Not applicable",
+        "references": [
+          {
+            "title": "NICE NG234: Spinal metastases and metastatic spinal cord compression",
+            "edition": "NICE NG234, Section 1.5 Imaging",
+            "url": "https://www.nice.org.uk/guidance/ng234/chapter/Recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "contact",
+      "title": "Contact the MSCC coordinator",
+      "timeframe": "Immediately for neurological signs; within 24 hours for pain only",
+      "actions": [
+        "Treat neurological symptoms with cancer as an oncological emergency.",
+        "Consider spinal immobilisation for moderate to severe movement-related pain; nurse supine."
+      ]
+    },
+    {
+      "id": "mri",
+      "title": "Whole-spine MRI",
+      "timeframe": "As soon as possible and within 24 hours",
+      "actions": [
+        "Image the whole spine; overnight MRI only when needed to start treatment immediately."
+      ]
+    },
+    {
+      "id": "steroid",
+      "title": "Corticosteroid",
+      "timeframe": "As soon as possible after assessment",
+      "actions": [
+        "West Midlands: dexamethasone 16 mg orally daily while treatment is planned; NICE gives 16 mg orally (or equivalent) for haematological malignancy.",
+        "Stop dexamethasone if given before imaging and MSCC is ruled out.",
+        "Monitor glucose; consider gastroprotection."
+      ]
+    },
+    {
+      "id": "definitive",
+      "title": "Definitive treatment",
+      "timeframe": "Within 24 hours",
+      "actions": [
+        "Radiotherapy as soon as possible and within 24 hours if not suitable for surgery; 8 Gy single fraction unless high risk.",
+        "Offer surgery as soon as possible to halt neurological decline when appropriate."
+      ]
+    },
+    {
+      "id": "mobilise",
+      "title": "Stability and mobilisation",
+      "timeframe": "Within 24 hours",
+      "actions": [
+        "Seek expert advice within 24 hours and start a stability assessment.",
+        "If stable, graded sitting then weight bearing; monitor symptoms."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Suspected or confirmed metastatic spinal cord compression with neurological signs",
+        "patientGroup": "Adults with cancer",
+        "genericName": "Dexamethasone",
+        "dose": "16 mg",
+        "route": "Oral",
+        "frequency": "Daily (loading 16 mg as soon as possible after assessment)",
+        "duration": "Continue while awaiting surgery or radiotherapy; then reduce gradually over 5–7 days and stop",
+        "adjustments": [
+          "Increase dose temporarily if neurological function deteriorates.",
+          "NICE: do not routinely give without neurological signs except as part of a radiotherapy regimen; consider for severe pain or haematological malignancy.",
+          "Equivalent parenteral dose can be used (NICE)."
+        ],
+        "monitoring": [
+          "Blood glucose in all patients on corticosteroids.",
+          "Neurological status; gastric protection should be considered."
+        ],
+        "contraindications": [
+          "Stop if MSCC and spinal metastases are ruled out.",
+          "Cautions such as diabetes and peptic ulcer are in the corticosteroid chapter; not detailed in the source opened."
+        ],
+        "sourceTitle": "West Midlands Palliative Care Physicians: Metastatic spinal cord compression (palliative care guidelines, copyright 2026)",
+        "sourceUrl": "https://www.westmidspallcare.co.uk/wmpcp/guide/emergencies/metastatic-spinal-cord-compression",
+        "sourceEdition": "West Midlands Palliative Care MSCC 2026, Section Dexamethasone",
+        "branch": "Neurological signs",
+        "step": "Corticosteroid",
+        "selection": "all"
+      },
+      {
+        "indication": "Haematological malignancy with spinal metastases",
+        "patientGroup": "Adults",
+        "genericName": "Dexamethasone",
+        "dose": "16 mg",
+        "route": "Oral (or equivalent parenteral dose)",
+        "frequency": "Once as soon as possible; further doses with the haematology team",
+        "duration": "Decided with haematology",
+        "adjustments": [
+          "Seek haematology advice first for suspected lymphoma or myeloma without neurological signs."
+        ],
+        "monitoring": [
+          "Blood glucose; neurological status."
+        ],
+        "contraindications": [
+          "Do not routinely give without neurological signs except as part of radiotherapy."
+        ],
+        "sourceTitle": "NICE NG234: Spinal metastases and metastatic spinal cord compression",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng234/chapter/Recommendations",
+        "sourceEdition": "NICE NG234, Section 1.8 Corticosteroids",
+        "branch": "Haematological malignancy",
+        "step": "Corticosteroid",
+        "selection": "all"
+      }
+    ],
+    "note": "Dexamethasone 16 mg is from NICE (haematological) and West Midlands (MSCC). Analgesic doses are not given in the sources opened. The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary.",
+    "branches": [
+      {
+        "label": "Neurological signs",
+        "entryCriteria": "Adult with cancer and suspected or confirmed metastatic spinal cord compression with neurological signs"
+      },
+      {
+        "label": "Haematological malignancy",
+        "entryCriteria": "Adult with haematological malignancy and spinal metastases"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Contact the MSCC coordinator immediately (NICE NG234)",
+      "threshold": "Cancer history with signs or symptoms of cord compression."
+    },
+    {
+      "criterion": "Seek advice within 24 hours (NICE NG234)",
+      "threshold": "Spinal metastases pain without cord signs."
+    },
+    {
+      "criterion": "MRI timing (NICE NG234)",
+      "threshold": "As soon as possible and always within 24 hours in suspected MSCC with neurological signs."
+    }
+  ],
+  "teaching": {
+    "scope": "Adult with cancer and suspected metastatic spinal cord compression (MSCC): red flags, contact with the MSCC coordinator, whole-spine magnetic resonance imaging (MRI) within 24 hours, dexamethasone, analgesia, immobilisation and definitive treatment.",
+    "learningObjectives": [
+      "Contact the MSCC coordinator immediately for cord signs.",
+      "Whole-spine MRI within 24 hours."
+    ],
+    "pitfalls": [
+      "Delaying contact for neurological signs.",
+      "Giving steroids routinely without neurological signs."
+    ],
+    "keyPoints": [
+      "Do not use plain X-ray.",
+      "Dexamethasone 16 mg while treatment is planned."
+    ],
+    "references": [
+      {
+        "title": "NICE NG234: Spinal metastases and metastatic spinal cord compression",
+        "edition": "NICE NG234, Section 1.3 to 1.11",
+        "url": "https://www.nice.org.uk/guidance/ng234/chapter/Recommendations",
+        "locator": "Section 1.3 to 1.11"
+      },
+      {
+        "title": "West Midlands Palliative Care Physicians: Metastatic spinal cord compression (palliative care guidelines, copyright 2026)",
+        "edition": "West Midlands Palliative Care MSCC 2026, Section Dexamethasone",
+        "url": "https://www.westmidspallcare.co.uk/wmpcp/guide/emergencies/metastatic-spinal-cord-compression",
+        "locator": "Section Dexamethasone"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain urgent need for imaging and treatment.",
+      "Report any new weakness or bladder change."
+    ],
+    "lifestyleAndDiet": [
+      "Mobilise only as advised after stability assessment."
+    ],
+    "mdtReferrals": [
+      "MSCC coordinator; oncology; spinal surgery; palliative care; physiotherapy."
+    ],
+    "dischargeCriteria": [
+      "Treatment plan agreed, stability assessed and mobilisation plan in place."
+    ],
+    "followUpPlan": "Oncology and rehabilitation review."
+  }
+}

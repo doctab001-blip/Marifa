@@ -1,0 +1,550 @@
+{
+  "id": "2a6b90b6-13a1-443f-a212-1c2f3975327d",
+  "title": "Chronic Kidney Disease",
+  "specialty": "Nephrology / Primary Care",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adults with chronic kidney disease (CKD) not on dialysis in primary care: detection, GFR/ACR classification, monitoring, referral, blood pressure and proteinuria treatment, SGLT2 inhibitors, cardiovascular protection and complications. Verified against NICE NG203; doses and contraindications from US FDA prescribing information. KDIGO 2024 CKD guideline and Saudi national CKD guidance were not reviewed for this version. Acute kidney injury is covered in its own topic. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from emergency-2026-10-12-v1-live."
+    ],
+    "unverifiedSections": [
+      "KDIGO 2024 CKD guideline not reviewed",
+      "No Saudi national CKD guideline reviewed",
+      "Bicarbonate, phosphate binder, iron and ESA dosing — renal protocol",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "2a6b90b6-13a1-443f-a212-1c2f3975327d",
+      "bb77d73b-4a0a-43e6-96ce-5d71eb3a427b"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "CKD is abnormal kidney structure or function present for more than 3 months — eGFR below 60 mL/min/1.73 m² and/or markers of damage such as albuminuria (ACR 3 mg/mmol or more), haematuria or structural abnormality. Risk of progression, AKI, cardiovascular events and death rises with lower GFR and higher ACR, and the two multiply (NICE).",
+    "keyMechanisms": [
+      "Common causes: diabetic kidney disease and hypertension; also glomerulonephritis, polycystic kidney disease, obstruction, recurrent pyelonephritis, nephrotoxic drugs.",
+      "Nephron loss → hyperfiltration of remaining nephrons (raised glomerular pressure) → proteinuria, glomerulosclerosis and further loss — the target of RAS blockade and SGLT2 inhibition.",
+      "Albuminuria signals glomerular damage and predicts progression and cardiovascular risk.",
+      "Falling GFR causes retention of potassium, phosphate, acid and fluid; reduced erythropoietin (anaemia) and calcitriol (secondary hyperparathyroidism, bone disease).",
+      "CKD greatly increases cardiovascular risk — most patients die of CVD before needing dialysis."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Usually asymptomatic until advanced — found on blood/urine testing.",
+      "Advanced: fatigue, itch, nausea, poor appetite, breathlessness, ankle swelling, nocturia.",
+      "Frothy urine (heavy proteinuria); visible haematuria."
+    ],
+    "physicalSigns": [
+      "Hypertension; oedema; pallor (anaemia).",
+      "Palpable kidneys (polycystic disease) or bladder (obstruction).",
+      "Uraemic signs in kidney failure: pericardial rub, asterixis."
+    ],
+    "redFlags": [
+      "Potassium 6.0 mmol/L or more; severe acidosis, uraemia or fluid overload — urgent care",
+      "Sustained eGFR fall of 25% or more with category change within 12 months, or 15 mL/min/1.73 m² or more per year",
+      "ACR 70 mg/mmol or more (unless diabetic and already treated), or ACR above 30 with haematuria",
+      "5-year kidney failure risk (KFRE) above 5%",
+      "Hypertension uncontrolled on 4 or more drugs; suspected renal artery stenosis or outflow obstruction"
+    ],
+    "precipitants": [
+      "Diabetes",
+      "Hypertension",
+      "Cardiovascular disease",
+      "Previous AKI",
+      "Nephrotoxic drugs (NSAIDs, lithium, calcineurin inhibitors)",
+      "Family history of kidney failure; polycystic kidney disease",
+      "Recurrent urinary tract infection, stones, obstruction"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Acute kidney injury",
+      "distinguishingFeatures": "Rapid creatinine rise; may be on CKD — monitor at least 3 years after AKI."
+    },
+    {
+      "condition": "Pre-renal or drug effect",
+      "distinguishingFeatures": "Dehydration, NSAIDs, starting RAS blockers."
+    },
+    {
+      "condition": "Muscle mass extremes, meat meal",
+      "distinguishingFeatures": "Creatinine-based eGFR unreliable; avoid meat 12 h before testing (NICE)."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Serum creatinine with eGFR (CKD-EPI)",
+        "modalityTarget": "Risk groups (diabetes, hypertension, CVD, structural disease, family history, after AKI, nephrotoxic drugs); confirm a new eGFR below 60 within 2 weeks",
+        "targetCondition": "GFR category",
+        "expectedFinding": "G1 90 or more; G2 60–89; G3a 45–59; G3b 30–44; G4 15–29; G5 below 15 mL/min/1.73 m².",
+        "clinicalRationale": "CKD needs abnormality for more than 3 months. Progression: sustained fall of 25% or more with category change, or 15 mL/min/1.73 m² per year.",
+        "normalValue": "eGFR 90 or more (60–89 without other markers is not CKD)",
+        "references": [
+          {
+            "title": "NICE NG203: Chronic kidney disease: assessment and management",
+            "edition": "NICE guideline, 2021 (updated 2025)",
+            "url": "https://www.nice.org.uk/guidance/ng203"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Urine albumin:creatinine ratio (ACR)",
+        "modalityTarget": "With eGFR in all at risk; confirm 3–70 mg/mmol on an early-morning sample",
+        "targetCondition": "Albuminuria category",
+        "expectedFinding": "A1 below 3; A2 3–30; A3 above 30 mg/mmol. 70 or more = heavy proteinuria (no repeat needed).",
+        "clinicalRationale": "Drives treatment and referral; use ACR, not reagent strips.",
+        "normalValue": "ACR below 3 mg/mmol",
+        "references": [
+          {
+            "title": "NICE NG203: Chronic kidney disease: assessment and management",
+            "edition": "NICE guideline, 2021 (updated 2025)",
+            "url": "https://www.nice.org.uk/guidance/ng203"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Urine dipstick for blood",
+        "modalityTarget": "At diagnosis",
+        "targetCondition": "Haematuria",
+        "expectedFinding": "Persistent invisible haematuria.",
+        "clinicalRationale": "Consider urological cancer by age; A3 plus haematuria → refer.",
+        "normalValue": "Negative",
+        "references": [
+          {
+            "title": "NICE NG203: Chronic kidney disease: assessment and management",
+            "edition": "NICE guideline, 2021 (updated 2025)",
+            "url": "https://www.nice.org.uk/guidance/ng203"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Potassium and eGFR before and 1–2 weeks after starting or increasing ACE inhibitor/ARB",
+        "modalityTarget": "RAS blockade",
+        "targetCondition": "Hyperkalaemia and GFR drop",
+        "expectedFinding": "Do not start if potassium above 5.0; stop if 6.0 or more. eGFR fall below 25% (or creatinine rise below 30%): continue and recheck.",
+        "clinicalRationale": "Fall of 25% or more: look for other causes, then stop or reduce (NICE).",
+        "normalValue": "Potassium 3.5–5.0 mmol/L",
+        "references": [
+          {
+            "title": "NICE NG203: Chronic kidney disease: assessment and management",
+            "edition": "NICE guideline, 2021 (updated 2025)",
+            "url": "https://www.nice.org.uk/guidance/ng203"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Haemoglobin; ferritin and TSAT if anaemic",
+        "modalityTarget": "eGFR below 60 or symptoms",
+        "targetCondition": "Renal anaemia",
+        "expectedFinding": "Hb 110 g/L or less → assess anaemia of CKD.",
+        "clinicalRationale": "Correct iron first; ESA via specialist.",
+        "normalValue": "Hb above 110 g/L (anaemia work-up threshold)",
+        "references": [
+          {
+            "title": "NICE NG203: Chronic kidney disease: assessment and management",
+            "edition": "NICE guideline, 2021 (updated 2025)",
+            "url": "https://www.nice.org.uk/guidance/ng203"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Calcium, phosphate, PTH, vitamin D; bicarbonate",
+        "modalityTarget": "G4–G5 (G3b if indicated)",
+        "targetCondition": "Mineral bone disease and acidosis",
+        "expectedFinding": "High phosphate, high PTH; bicarbonate below 20 mmol/L.",
+        "clinicalRationale": "Phosphate binders, bicarbonate (G4–G5 with bicarbonate below 20).",
+        "normalValue": "Bicarbonate 22–29 mmol/L; phosphate 0.8–1.5 mmol/L",
+        "references": [
+          {
+            "title": "NICE NG203: Chronic kidney disease: assessment and management",
+            "edition": "NICE guideline, 2021 (updated 2025)",
+            "url": "https://www.nice.org.uk/guidance/ng203"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Renal ultrasound",
+        "modalityTarget": "Accelerated progression, visible or persistent invisible haematuria, obstructive symptoms, family history of polycystic disease (over 20), G4–G5, or before biopsy",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Small kidneys, cysts, hydronephrosis, asymmetry.",
+        "clinicalRationale": "Identifies structural and obstructive causes.",
+        "references": [
+          {
+            "title": "NICE NG203: Chronic kidney disease: assessment and management",
+            "edition": "NICE guideline, 2021 (updated 2025)",
+            "url": "https://www.nice.org.uk/guidance/ng203"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "classify",
+      "title": "Detect and classify",
+      "timeframe": "At diagnosis",
+      "actions": [
+        "Test eGFR and ACR in people at risk; confirm with repeat tests; classify by GFR (G1–G5) and ACR (A1–A3) categories.",
+        "Estimate 5-year kidney failure risk with the 4-variable Kidney Failure Risk Equation.",
+        "Agree monitoring frequency by GFR/ACR category and rate of change (NICE Table 2)."
+      ]
+    },
+    {
+      "id": "bp",
+      "title": "Blood pressure",
+      "timeframe": "Every review",
+      "actions": [
+        "ACR below 70 mg/mmol: clinic BP below 140/90 (systolic target 120–139).",
+        "ACR 70 mg/mmol or more: below 130/80 (systolic 120–129).",
+        "Hypertension with ACR above 30 mg/mmol: ACE inhibitor or ARB titrated to highest tolerated licensed dose; otherwise treat per hypertension guideline."
+      ]
+    },
+    {
+      "id": "proteinuria",
+      "title": "Proteinuria and progression",
+      "timeframe": "From diagnosis",
+      "actions": [
+        "Diabetes with ACR 3 mg/mmol or more: ACE inhibitor or ARB at the highest tolerated dose.",
+        "No diabetes, ACR 70 or more: refer to nephrology and start ACE inhibitor or ARB; ACR 30–70: monitor and discuss with nephrology if worsening.",
+        "SGLT2 inhibitor as add-on (dapagliflozin or empagliflozin) per NICE TAs; finerenone for CKD 3–4 with type 2 diabetes and ACR 3 or more (TA877).",
+        "Never combine RAS antagonists (ACE inhibitor + ARB)."
+      ]
+    },
+    {
+      "id": "cvd",
+      "title": "Cardiovascular protection",
+      "timeframe": "From diagnosis",
+      "actions": [
+        "Atorvastatin 20 mg for primary or secondary prevention; increase if target not met and eGFR 30 or more (see Dyslipidaemia topic).",
+        "Antiplatelet for secondary prevention — higher bleeding risk."
+      ]
+    },
+    {
+      "id": "complications",
+      "title": "Complications (G3b–G5)",
+      "timeframe": "As found",
+      "actions": [
+        "Anaemia: assess when Hb 110 g/L or less; iron then ESA (specialist).",
+        "Metabolic acidosis: consider oral sodium bicarbonate if eGFR below 30 and bicarbonate below 20 mmol/L (dose per local renal protocol).",
+        "Phosphate: dietary advice, then calcium acetate (or sevelamer) per specialist.",
+        "Avoid long-term NSAIDs; review renally cleared drugs and sick-day rules (pause ACE inhibitor/ARB, SGLT2 inhibitor, metformin, diuretics during dehydrating illness)."
+      ]
+    },
+    {
+      "id": "refer",
+      "title": "Refer",
+      "timeframe": "When criteria met",
+      "actions": [
+        "KFRE 5-year risk above 5%; ACR 70 or more (unless diabetic and treated); ACR above 30 with haematuria; rapid eGFR decline; uncontrolled BP on 4 drugs; genetic causes; renal artery stenosis (NICE 1.5.5).",
+        "Outflow obstruction → urology."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "CKD with diabetes and ACR 3 or more, or hypertension with ACR above 30",
+        "patientGroup": "Adults",
+        "genericName": "Ramipril",
+        "dose": "2.5 mg (start; range up to 20 mg daily per label)",
+        "route": "PO",
+        "frequency": "Once daily; titrate to highest tolerated licensed dose",
+        "duration": "Long term",
+        "adjustments": [
+          "Do not start if potassium above 5.0",
+          "Check potassium and eGFR 1–2 weeks after each change",
+          "Never with an ARB"
+        ],
+        "monitoring": [
+          "Potassium, eGFR, BP"
+        ],
+        "contraindications": [
+          "ACE-inhibitor angioedema or hereditary/idiopathic angioedema",
+          "Hypersensitivity to ACE inhibitors",
+          "Pregnancy (fetal toxicity — boxed warning)"
+        ],
+        "sourceTitle": "Ramipril prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01da05d8-e72e-4208-bf92-a5cd929f15ab",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "branch": "Proteinuric CKD — renin–angiotensin blockade",
+        "step": "ACE inhibitor or ARB",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "Type 2 diabetic nephropathy / proteinuric CKD (ARB option)",
+        "patientGroup": "Adults",
+        "genericName": "Losartan",
+        "dose": "50 mg",
+        "route": "PO",
+        "frequency": "Once daily; increase to 100 mg by BP response",
+        "duration": "Long term",
+        "adjustments": [
+          "Same potassium/eGFR monitoring as ACE inhibitors",
+          "Never with an ACE inhibitor"
+        ],
+        "monitoring": [
+          "Potassium, eGFR, BP"
+        ],
+        "contraindications": [
+          "Hypersensitivity",
+          "With aliskiren in diabetes",
+          "Pregnancy (boxed warning)"
+        ],
+        "sourceTitle": "Losartan potassium prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=021cd76a-b093-4704-8410-5e7d01e20a54",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "branch": "Proteinuric CKD — renin–angiotensin blockade",
+        "step": "ACE inhibitor or ARB",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "ACE inhibitor not tolerated"
+      },
+      {
+        "indication": "Add-on to optimised care for CKD (NICE TA1075)",
+        "patientGroup": "Adults with eGFR 25 or more at initiation",
+        "genericName": "Dapagliflozin",
+        "dose": "10 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term (continue if eGFR later falls below 25 until dialysis per label)",
+        "adjustments": [
+          "Do not initiate if eGFR below 25 (label)",
+          "Pause during acute illness/fasting; withhold 3 days before surgery"
+        ],
+        "monitoring": [
+          "eGFR (expect small initial dip), volume status, genital infection"
+        ],
+        "contraindications": [
+          "Serious hypersensitivity to dapagliflozin"
+        ],
+        "sourceTitle": "Dapagliflozin (Farxiga) prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01f90c94-71cb-4a1f-81ff-8004b850529b",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "branch": "CKD — progression slowing",
+        "step": "SGLT2 inhibitor",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "CKD (alternative SGLT2 inhibitor, NICE TA942)",
+        "patientGroup": "Adults",
+        "genericName": "Empagliflozin",
+        "dose": "10 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term",
+        "adjustments": [
+          "Pause during acute illness"
+        ],
+        "monitoring": [
+          "eGFR, volume status"
+        ],
+        "contraindications": [
+          "Dialysis",
+          "Hypersensitivity"
+        ],
+        "sourceTitle": "Empagliflozin (Jardiance) prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1782b947-4a72-4feb-a488-1469d9af82bd",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026",
+        "branch": "CKD — progression slowing",
+        "step": "SGLT2 inhibitor",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Chosen instead of dapagliflozin"
+      },
+      {
+        "indication": "CVD prevention in CKD",
+        "patientGroup": "Adults",
+        "genericName": "Atorvastatin",
+        "dose": "20 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Long term",
+        "adjustments": [
+          "Increase if target not met and eGFR 30 or more; higher doses with renal specialist if eGFR below 30 (NICE NG238)"
+        ],
+        "monitoring": [
+          "Lipids and ALT at 2–3 months"
+        ],
+        "contraindications": [
+          "Acute liver failure or decompensated cirrhosis",
+          "Hypersensitivity"
+        ],
+        "sourceTitle": "NICE NG238 rec 1.8.1",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng238",
+        "sourceEdition": "NICE NG238",
+        "branch": "CKD — cardiovascular protection",
+        "step": "Statin",
+        "selection": "all"
+      }
+    ],
+    "note": "Indications are from NICE NG203/NG238; doses and contraindications from US FDA labels. Sodium bicarbonate, phosphate binders, iron and ESA doses per local renal protocol. Check SFDA registration, formulary and availability.",
+    "branches": [
+      {
+        "label": "Proteinuric CKD — renin–angiotensin blockade",
+        "entryCriteria": "CKD with diabetes and ACR 3 or more, or hypertension with ACR above 30"
+      },
+      {
+        "label": "CKD — progression slowing",
+        "entryCriteria": "Adult with CKD on optimised care with eGFR 25 or more at initiation"
+      },
+      {
+        "label": "CKD — cardiovascular protection",
+        "entryCriteria": "Adult with CKD needing cardiovascular risk reduction"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "CKD",
+      "threshold": "eGFR below 60 and/or ACR 3 mg/mmol or more (or other markers) for more than 3 months"
+    },
+    {
+      "criterion": "BP target, ACR below 70",
+      "threshold": "Below 140/90 mmHg"
+    },
+    {
+      "criterion": "BP target, ACR 70 or more",
+      "threshold": "Below 130/80 mmHg"
+    },
+    {
+      "criterion": "Stop RAS blocker",
+      "threshold": "Potassium 6.0 mmol/L or more"
+    },
+    {
+      "criterion": "Refer",
+      "threshold": "KFRE above 5% at 5 years; ACR 70 or more; rapid decline"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "NICE NG203: GFR and ACR categories",
+    "columns": [
+      "Category",
+      "Range"
+    ],
+    "rows": [
+      {
+        "parameter": "G3a / G3b",
+        "values": [
+          "Mild–moderate / moderate–severe",
+          "45–59 / 30–44 mL/min/1.73 m²"
+        ]
+      },
+      {
+        "parameter": "G4 / G5",
+        "values": [
+          "Severe / kidney failure",
+          "15–29 / below 15"
+        ]
+      },
+      {
+        "parameter": "A1 / A2 / A3",
+        "values": [
+          "Normal–mild / moderate / severe albuminuria",
+          "Below 3 / 3–30 / above 30 mg/mmol"
+        ]
+      }
+    ],
+    "note": "Risk rises with both lower GFR and higher ACR; KDIGO uses the same categories (ACR in mg/g: A2 30–300, A3 above 300)."
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Detect, classify and manage chronic kidney disease to slow progression and reduce cardiovascular risk."
+    ],
+    "pitfalls": [
+      "Using dipstick protein instead of ACR.",
+      "Stopping RAS blockers for a small expected eGFR dip.",
+      "Long-term NSAIDs.",
+      "Missing rapid progression by not trending eGFR.",
+      "Forgetting sick-day rules."
+    ],
+    "keyPoints": [
+      "Classify by GFR and ACR — both matter.",
+      "ACE inhibitor or ARB for diabetes with ACR 3+, or ACR above 30 with hypertension.",
+      "Add an SGLT2 inhibitor; never combine ACE inhibitor and ARB.",
+      "Check potassium and eGFR 1–2 weeks after RAS changes.",
+      "Atorvastatin 20 mg for all with CKD."
+    ],
+    "references": [
+      {
+        "title": "NICE NG203: Chronic kidney disease: assessment and management",
+        "edition": "NICE guideline, 2021 (updated 2025)",
+        "url": "https://www.nice.org.uk/guidance/ng203",
+        "locator": "Recs 1.1 (investigation), 1.2 (classification), 1.3 (monitoring), 1.5.5 (referral), 1.6 (pharmacotherapy), 1.12.8 (bicarbonate)"
+      },
+      {
+        "title": "Ramipril prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01da05d8-e72e-4208-bf92-a5cd929f15ab",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Losartan potassium prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=021cd76a-b093-4704-8410-5e7d01e20a54",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Dapagliflozin (Farxiga) prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01f90c94-71cb-4a1f-81ff-8004b850529b",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Empagliflozin (Jardiance) prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1782b947-4a72-4feb-a488-1469d9af82bd",
+        "locator": "Section 4 Contraindications"
+      },
+      {
+        "title": "Atorvastatin calcium prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00afce9b-48c9-487a-a738-e359c005c707",
+        "locator": "Section 4 Contraindications"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "What CKD and the GFR/ACR numbers mean.",
+      "Sick-day rules for ACE inhibitor/ARB, SGLT2 inhibitor, metformin, diuretics.",
+      "Avoid over-the-counter NSAIDs and herbal remedies."
+    ],
+    "lifestyleAndDiet": [
+      "Stop smoking; regular exercise; healthy weight.",
+      "Reduce salt intake.",
+      "Dietary advice tailored to stage (potassium, phosphate) from a renal dietitian."
+    ],
+    "mdtReferrals": [
+      "Nephrology per NICE 1.5.5 criteria.",
+      "Urology for outflow obstruction or haematuria work-up.",
+      "Dietitian for potassium/phosphate advice in advanced CKD."
+    ],
+    "dischargeCriteria": [
+      "Not applicable — outpatient care."
+    ],
+    "followUpPlan": "eGFR and ACR at a frequency set by GFR/ACR category (at least annually; more often in G3b–G5 or A3), plus potassium after any RAS-blocker change; BP at every review."
+  }
+}

@@ -1,0 +1,486 @@
+{
+  "id": "0fa54350-8904-4f17-a688-c1b27946690d",
+  "title": "Prostate Cancer Diagnosis and Treatment Planning",
+  "specialty": "Urology / Oncology",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Planned Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Men with suspected or confirmed prostate cancer: referral thresholds, MRI-first diagnosis, risk grouping, choosing active surveillance or radical treatment, hormone therapy and its adverse effects, and metastatic disease. Verified against the Saudi Oncology Society / Saudi Urology Association guideline (2017), NICE NG131 and NICE NG12; doses from NICE and FDA labels. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from authoring-standard-2026-10-12-v1-live."
+    ],
+    "unverifiedSections": [
+      "Saudi screening policy for asymptomatic men not in PHA 2023",
+      "LHRH agonist and newer agent doses not reproduced",
+      "SFDA registration not checked",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "0fa54350-8904-4f17-a688-c1b27946690d",
+      "f014224f-2511-4beb-b214-049312bd9cd6"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Prostate adenocarcinoma is androgen-driven. Many low-grade cancers grow slowly and never cause harm; high-grade cancers spread to nodes and bone. Grade (Gleason), PSA and stage define risk and treatment. In Saudi Arabia, fewer than half of cases (46.9%) are localised at diagnosis (SOS/SUA).",
+    "keyMechanisms": [
+      "Androgen receptor signalling drives growth — hence androgen deprivation therapy (ADT).",
+      "Castration resistance develops over time with continued androgen receptor activity.",
+      "Bone metastases are typically sclerotic; ADT itself causes bone loss."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Often asymptomatic (raised PSA).",
+      "Lower urinary tract symptoms, erectile dysfunction, visible haematuria (NICE NG12 1.6.2).",
+      "Bone pain, weight loss in advanced disease."
+    ],
+    "physicalSigns": [
+      "Digital rectal examination: hard, irregular prostate."
+    ],
+    "redFlags": [
+      "Prostate feels malignant on DRE — suspected cancer referral (NICE NG12 1.6.1)",
+      "Back pain with leg weakness — suspected spinal cord compression, emergency",
+      "Urinary retention or bilateral hydronephrosis"
+    ],
+    "precipitants": [
+      "Increasing age",
+      "Family history",
+      "Black African–Caribbean family background (NICE)"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Benign prostatic hyperplasia",
+      "distinguishingFeatures": "Smooth enlarged gland; PSA may be raised."
+    },
+    {
+      "condition": "Prostatitis or UTI",
+      "distinguishingFeatures": "Raised PSA — repeat after treatment."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Prostate-specific antigen (PSA)",
+        "modalityTarget": "Men with LUTS, ED or haematuria after counselling (NICE NG12 1.6.2)",
+        "targetCondition": "Above age-specific threshold",
+        "expectedFinding": "40–49: above 2.5; 50–59: above 3.5; 60–69: above 4.5; 70–79: above 6.5 µg/L → consider suspected cancer referral (NICE NG12 Table 2).",
+        "clinicalRationale": "Do not biopsy on PSA alone (NICE NG131 1.2.6).",
+        "normalValue": "At or below age-specific threshold (e.g. 3.5 µg/L or less at 50–59)",
+        "references": [
+          {
+            "title": "NICE NG12: Suspected cancer: recognition and referral",
+            "edition": "NICE guideline, 2015 (updated April 2026), Recommendations 1.6.1–1.6.3, Table 2",
+            "url": "https://www.nice.org.uk/guidance/ng12"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "advancedImaging",
+        "testName": "Multiparametric MRI (Likert 1–5)",
+        "modalityTarget": "First-line for suspected localised cancer (NICE 1.2.2)",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Likert 3 or more",
+        "clinicalRationale": "MRI-influenced biopsy (NICE 1.2.3); Likert 1–2: consider omitting biopsy after shared decision (1.2.4).",
+        "normalValue": "Likert 1–2",
+        "references": [
+          {
+            "title": "NICE NG131: Prostate cancer: diagnosis and management",
+            "edition": "NICE guideline, 2019 (updated 2021), Recommendations 1.2.1–1.2.17 (MRI, biopsy, risk stratification Table 1)",
+            "url": "https://www.nice.org.uk/guidance/ng131"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Prostate biopsy (systematic 10–12 cores ± MRI-targeted)",
+        "modalityTarget": "When indicated (SOS)",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Gleason grade, cores involved",
+        "clinicalRationale": "Assign Cambridge Prognostic Group (NICE Table 1).",
+        "normalValue": "No malignancy",
+        "references": [
+          {
+            "title": "Saudi Oncology Society and Saudi Urology Association combined clinical management guidelines for prostate cancer 2017 (Aljubran A et al.)",
+            "edition": "Urol Ann 2018;10(2):138–145, sections 1–7 (diagnosis, risk-based treatment, ADT, CRPC, bone health)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5907320/"
+          },
+          {
+            "title": "NICE NG131: Prostate cancer: diagnosis and management",
+            "edition": "NICE guideline, 2019 (updated 2021), Recommendations 1.2.1–1.2.17 (MRI, biopsy, risk stratification Table 1)",
+            "url": "https://www.nice.org.uk/guidance/ng131"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Isotope bone scan / CT staging",
+        "modalityTarget": "Bone scan if PSA above 20 or high risk (SOS); not routinely in CPG 1–2 (NICE 1.2.16)",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Metastases",
+        "clinicalRationale": "Metastatic pathway.",
+        "normalValue": "No metastatic disease",
+        "references": [
+          {
+            "title": "Saudi Oncology Society and Saudi Urology Association combined clinical management guidelines for prostate cancer 2017 (Aljubran A et al.)",
+            "edition": "Urol Ann 2018;10(2):138–145, sections 1–7 (diagnosis, risk-based treatment, ADT, CRPC, bone health)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5907320/"
+          },
+          {
+            "title": "NICE NG131: Prostate cancer: diagnosis and management",
+            "edition": "NICE guideline, 2019 (updated 2021), Recommendations 1.2.1–1.2.17 (MRI, biopsy, risk stratification Table 1)",
+            "url": "https://www.nice.org.uk/guidance/ng131"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "assess",
+      "title": "Assess and refer",
+      "timeframe": "Primary care",
+      "actions": [
+        "Counsel, then PSA and DRE for LUTS, ED or visible haematuria (NICE NG12 1.6.2).",
+        "Refer if DRE malignant or PSA above age threshold (NICE 1.6.1, 1.6.3)."
+      ]
+    },
+    {
+      "id": "diagnose",
+      "title": "Diagnose and stratify",
+      "timeframe": "Urology",
+      "actions": [
+        "MRI first; biopsy if Likert 3 or more (NICE 1.2.2–1.2.3).",
+        "Assign Cambridge Prognostic Group 1–5 at MDT (NICE 1.2.15)."
+      ]
+    },
+    {
+      "id": "localised",
+      "title": "Localised disease",
+      "timeframe": "Shared decision at MDT",
+      "actions": [
+        "CPG 1: offer active surveillance (NICE 1.3.8). SOS criteria: PSA below 10, Gleason 6 or less, 2 or fewer positive cores, under 50% of any core, PSA density below 0.15.",
+        "CPG 2: active surveillance, prostatectomy or radiotherapy (NICE 1.3.9).",
+        "CPG 3: radical treatment; surveillance only if the person declines (NICE 1.3.10).",
+        "CPG 4–5: no active surveillance; radical treatment if long-term control is likely (NICE 1.3.11–1.3.12).",
+        "Radiotherapy for CPG 2–5: add 6 months ADT; consider up to 3 years for CPG 4–5 (NICE 1.3.21–1.3.23)."
+      ]
+    },
+    {
+      "id": "adt",
+      "title": "Hormone therapy",
+      "timeframe": "When indicated",
+      "actions": [
+        "LHRH agonist with anti-androgen cover for the first 4 weeks to block the flare (SOS/SUA, ADT section).",
+        "Bone health: vitamin D and calcium for all on ADT; denosumab or bisphosphonate if T-score below −1.5 (SOS/SUA item 7, bone health); bisphosphonate if osteoporosis (NICE 1.4.14).",
+        "Hot flushes: medroxyprogesterone 20 mg daily for 10 weeks (NICE 1.4.3).",
+        "Supervised exercise twice weekly for 12 weeks for fatigue (NICE 1.4.19)."
+      ]
+    },
+    {
+      "id": "metastatic",
+      "title": "Metastatic disease",
+      "timeframe": "Oncology",
+      "actions": [
+        "Newly diagnosed metastatic, fit: docetaxel 75 mg/m² 3-weekly for 6 cycles, starting within 12 weeks of ADT (NICE 1.5.6); SOS/SUA: six cycles with ADT as standard.",
+        "Orchidectomy is an alternative to LHRH agonist (NICE 1.5.7).",
+        "Castration-resistant disease: MDT; options include docetaxel, abiraterone, enzalutamide, radium-223 (SOS/SUA)."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Newly diagnosed metastatic prostate cancer, no significant comorbidity",
+        "patientGroup": "Adults, oncologist-prescribed",
+        "genericName": "Docetaxel",
+        "dose": "75 mg/m²",
+        "route": "IV over 1 hour",
+        "frequency": "Every 3 weeks",
+        "duration": "6 cycles, starting within 12 weeks of ADT",
+        "adjustments": [
+          "Premedicate with dexamethasone 8 mg orally at 12, 3 and 1 hour before infusion (label, prostate regimen)",
+          "Avoid if bilirubin above ULN or transaminases above 1.5 × ULN with ALP above 2.5 × ULN (label)",
+          "Off-label in this setting (NICE note)"
+        ],
+        "monitoring": [
+          "FBC before each cycle",
+          "Bilirubin, AST/ALT, ALP before each cycle",
+          "Hypersensitivity, fluid retention, neuropathy"
+        ],
+        "contraindications": [
+          "Neutrophil count below 1,500 cells/mm3",
+          "Severe hypersensitivity to docetaxel or polysorbate 80",
+          "Avoid if bilirubin above ULN, or AST/ALT above 1.5 × ULN with ALP above 2.5 × ULN (boxed warning)"
+        ],
+        "sourceTitle": "NICE NG131: Prostate cancer: diagnosis and management",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng131",
+        "sourceEdition": "NICE guideline, 2019 (updated 2021), Recommendations 1.5.6–1.5.11 (metastatic prostate cancer)",
+        "branch": "Newly diagnosed metastatic disease",
+        "step": "Chemotherapy",
+        "selection": "all"
+      },
+      {
+        "indication": "Troublesome hot flushes on long-term ADT",
+        "patientGroup": "Men on ADT",
+        "genericName": "Medroxyprogesterone acetate",
+        "dose": "20 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "10 weeks, then evaluate effect",
+        "adjustments": [
+          "Off-label use (NICE note)",
+          "If ineffective, cyproterone 50 mg twice daily for 4 weeks may be considered (NICE 1.4.4)"
+        ],
+        "monitoring": [
+          "Response at 10 weeks; thrombosis symptoms"
+        ],
+        "contraindications": [
+          "Active or past DVT/PE",
+          "Active or past arterial thromboembolic disease (stroke, MI)",
+          "Known liver impairment or disease",
+          "Known or suspected oestrogen- or progesterone-dependent neoplasia; breast cancer",
+          "Undiagnosed abnormal genital bleeding; pregnancy (labelled for women)",
+          "Anaphylaxis or angioedema to medroxyprogesterone"
+        ],
+        "sourceTitle": "NICE NG131: Prostate cancer: diagnosis and management",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng131",
+        "sourceEdition": "NICE guideline, 2019 (updated 2021), Recommendation 1.4.3",
+        "branch": "Hot flushes on long-term ADT",
+        "step": "Hot flush treatment",
+        "selection": "all"
+      },
+      {
+        "indication": "Metastatic disease, person wishes to preserve sexual function",
+        "patientGroup": "Men accepting reduced survival and gynaecomastia",
+        "genericName": "Bicalutamide",
+        "dose": "150 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Until sexual function not maintained — then switch to ADT (NICE 1.5.10)",
+        "adjustments": [
+          "150 mg monotherapy is not FDA-approved; off-label in UK (NICE note)",
+          "Breast-bud radiotherapy within first month if over 6 months' use (NICE 1.4.16)"
+        ],
+        "monitoring": [
+          "Transaminases before starting, regularly for 4 months, then periodically (label)"
+        ],
+        "contraindications": [
+          "Hypersensitivity (angioedema, urticaria reported)",
+          "Women — no indication",
+          "Pregnancy (fetal harm)"
+        ],
+        "sourceTitle": "NICE NG131: Prostate cancer: diagnosis and management",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng131",
+        "sourceEdition": "NICE guideline, 2019 (updated 2021), Recommendation 1.5.9",
+        "branch": "Metastatic disease — preserving sexual function",
+        "step": "Anti-androgen",
+        "selection": "all"
+      },
+      {
+        "indication": "Bone loss on ADT at high fracture risk (T-score below −1.5 per SOS)",
+        "patientGroup": "Men on ADT",
+        "genericName": "Denosumab",
+        "dose": "60 mg",
+        "route": "SC",
+        "frequency": "Once every 6 months",
+        "duration": "While on ADT and at risk",
+        "adjustments": [
+          "Correct hypocalcaemia first; calcium and vitamin D supplements (label; SOS: calcium 1,200 mg and vitamin D 800 IU daily)",
+          "Check for CKD-mineral bone disorder in advanced CKD before starting (label)"
+        ],
+        "monitoring": [
+          "Calcium",
+          "Bone density periodically"
+        ],
+        "contraindications": [
+          "Hypocalcaemia (correct before starting)",
+          "Pregnancy",
+          "Systemic hypersensitivity to denosumab products"
+        ],
+        "sourceTitle": "Denosumab 60 mg (Prolia biosimilar, Conexxence) prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=39a0a789-778f-4695-b3a9-61643e6396cd",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "branch": "Bone loss on ADT",
+        "step": "Bone protection",
+        "selection": "all"
+      }
+    ],
+    "note": "Docetaxel, medroxyprogesterone and bicalutamide doses from NICE NG131 (checked against FDA labels); denosumab dose from the FDA label with the SOS bone-health threshold. LHRH agonist/antagonist and androgen receptor pathway inhibitor doses are product- and protocol-specific — not reproduced. Check SFDA registration.",
+    "branches": [
+      {
+        "label": "Newly diagnosed metastatic disease",
+        "entryCriteria": "Adult with newly diagnosed metastatic prostate cancer and no significant comorbidity"
+      },
+      {
+        "label": "Hot flushes on long-term ADT",
+        "entryCriteria": "Man on long-term androgen deprivation therapy with troublesome hot flushes"
+      },
+      {
+        "label": "Metastatic disease — preserving sexual function",
+        "entryCriteria": "Man with metastatic disease who wishes to preserve sexual function"
+      },
+      {
+        "label": "Bone loss on ADT",
+        "entryCriteria": "Man on ADT at high fracture risk"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "CPG 1",
+      "threshold": "Gleason 6, PSA below 10, T1–T2"
+    },
+    {
+      "criterion": "CPG 4",
+      "threshold": "One of: Gleason 8, PSA above 20, T3"
+    },
+    {
+      "criterion": "CPG 5",
+      "threshold": "Two or more of these, or Gleason 9–10, or T4"
+    },
+    {
+      "criterion": "Biochemical recurrence after prostatectomy",
+      "threshold": "PSA above 0.2 ng/mL twice (SOS)"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "Risk-based treatment: SOS/SUA vs NICE",
+    "columns": [
+      "SOS/SUA 2017",
+      "NICE NG131"
+    ],
+    "rows": [
+      {
+        "parameter": "Risk model",
+        "values": [
+          "D'Amico low/intermediate/high",
+          "Cambridge Prognostic Group 1–5"
+        ]
+      },
+      {
+        "parameter": "Low risk",
+        "values": [
+          "Active surveillance; radical options if life expectancy over 10 years",
+          "Active surveillance (CPG 1)"
+        ]
+      },
+      {
+        "parameter": "Radiotherapy + ADT",
+        "values": [
+          "Intermediate 6 months; high risk 18 months–3 years",
+          "6 months (CPG 2–5); up to 3 years CPG 4–5"
+        ]
+      }
+    ],
+    "note": "Both use MDT-based shared decisions."
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Diagnose, risk-stratify and plan treatment for prostate cancer."
+    ],
+    "pitfalls": [
+      "Biopsy on PSA alone without counselling.",
+      "Starting LHRH agonist without anti-androgen cover in high-volume disease.",
+      "Ignoring bone health on ADT."
+    ],
+    "keyPoints": [
+      "PSA thresholds by age (NICE NG12).",
+      "MRI before biopsy.",
+      "Assign CPG at MDT.",
+      "Active surveillance for low risk.",
+      "ADT: anti-androgen cover for the flare; protect bone.",
+      "Docetaxel for fit men with new metastatic disease."
+    ],
+    "references": [
+      {
+        "title": "Saudi Oncology Society and Saudi Urology Association combined clinical management guidelines for prostate cancer 2017 (Aljubran A et al.)",
+        "edition": "Urol Ann 2018;10(2):138–145",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5907320/",
+        "locator": "sections 1–7 (diagnosis, risk-based treatment, ADT, CRPC, bone health)"
+      },
+      {
+        "title": "NICE NG131: Prostate cancer: diagnosis and management",
+        "edition": "NICE guideline, 2019 (updated 2021)",
+        "url": "https://www.nice.org.uk/guidance/ng131",
+        "locator": "Recommendations 1.2.1–1.2.17 (MRI, biopsy, risk stratification Table 1)"
+      },
+      {
+        "title": "NICE NG131: Prostate cancer: diagnosis and management",
+        "edition": "NICE guideline, 2019 (updated 2021)",
+        "url": "https://www.nice.org.uk/guidance/ng131",
+        "locator": "Recommendations 1.3.8–1.3.27 (localised and locally advanced treatment)"
+      },
+      {
+        "title": "NICE NG131: Prostate cancer: diagnosis and management",
+        "edition": "NICE guideline, 2019 (updated 2021)",
+        "url": "https://www.nice.org.uk/guidance/ng131",
+        "locator": "Recommendations 1.4.1–1.4.19 (hormone therapy and its adverse effects)"
+      },
+      {
+        "title": "NICE NG131: Prostate cancer: diagnosis and management",
+        "edition": "NICE guideline, 2019 (updated 2021)",
+        "url": "https://www.nice.org.uk/guidance/ng131",
+        "locator": "Recommendations 1.5.6–1.5.11 (metastatic prostate cancer)"
+      },
+      {
+        "title": "NICE NG12: Suspected cancer: recognition and referral",
+        "edition": "NICE guideline, 2015 (updated April 2026)",
+        "url": "https://www.nice.org.uk/guidance/ng12",
+        "locator": "Recommendations 1.6.1–1.6.3"
+      },
+      {
+        "title": "Docetaxel injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0e0f06bd-d190-45da-be8b-062e8de01970",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Bicalutamide tablets prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=10e21544-f181-4cf8-9824-df0f49d19511",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Medroxyprogesterone acetate tablets prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0de6142f-a78e-ae58-e063-6394a90adff0",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Denosumab 60 mg (Prolia biosimilar, Conexxence) prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=39a0a789-778f-4695-b3a9-61643e6396cd",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain surveillance vs treatment trade-offs, sexual and urinary effects, and ADT side effects."
+    ],
+    "lifestyleAndDiet": [
+      "Supervised resistance and aerobic exercise on ADT (NICE 1.4.19)."
+    ],
+    "mdtReferrals": [
+      "Urology MDT; oncology; erectile dysfunction service (NICE 1.4.8)."
+    ],
+    "dischargeCriteria": [
+      "Not applicable — outpatient care."
+    ],
+    "followUpPlan": "After curative therapy: PSA at 3, 6 and 12 months, every 6 months for 3 years, then yearly (SOS). Active surveillance: PSA every 3–4 months in year 1, MRI at 12–18 months, then PSA 6-monthly (NICE Table 2)."
+  }
+}

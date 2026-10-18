@@ -307,10 +307,33 @@ function stepTitle(raw: string): { title: string; timeframe: string } {
   return { title, timeframe: title };
 }
 
-function parseMedicines(rows: string[][], refs: PasteReference[]) {
+/**
+ * "Branch: STEMI — primary PCI | Entry: chest pain with persistent ST elevation" → { label, entry }.
+ * Returns undefined when the heading is not a branch heading.
+ */
+export function parseBranchHeading(title: string): { label: string; entry: string } | undefined {
+  const match = title.match(/^(?:pathway\s+)?branch\s*[:\-–—]?\s*(.+)$/i);
+  if (!match) return undefined;
+  const [labelPart, ...entryParts] = match[1].split(/\s*\|\s*(?:entry|enter[s]?|when|criteria)\s*[:\-–—]\s*/i);
+  return { label: cleanText(labelPart), entry: cleanText(entryParts.join(" ")) };
+}
+
+/** Choice cell → pathway fields. All = given together; Preferred / Alternative = one-of a step. */
+function parseChoice(value: string): { selection?: "all" | "one-of"; preferred?: boolean } {
+  const text = value.toLowerCase();
+  if (!text.trim()) return {};
+  if (/alternativ|second-?line|instead|^or\b|option/.test(text)) return { selection: "one-of", preferred: false };
+  if (/prefer|first-?line|default|recommended/.test(text)) return { selection: "one-of", preferred: true };
+  return { selection: "all" };
+}
+
+function parseMedicines(rows: string[][], refs: PasteReference[], branch?: { label: string; entry: string }) {
   const [header, ...body] = rows;
   const heads = header.map((entry) => cleanText(entry).toLowerCase());
   const idx = {
+    step: column(heads, /^step/),
+    choice: column(heads, /^(choice|selection|role|option|give)/),
+    useWhen: column(heads, /use when|choose when|when to (use|choose)|use if/),
     name: column(heads, /^(drug|medicine|medication|generic|name)/),
     indication: column(heads, /indication/),
     group: column(heads, /patient|group|population/),
@@ -327,7 +350,15 @@ function parseMedicines(rows: string[][], refs: PasteReference[]) {
   const regimens = body.filter((row) => cell(row, idx.name)).map((row) => {
     const cited = citation(row[idx.source] ?? "", refs);
     const contraindications = splitCell(cell(row, idx.contra));
+    const choice = parseChoice(cell(row, idx.choice));
+    const step = cell(row, idx.step);
+    const useWhen = cell(row, idx.useWhen);
     return {
+      ...(branch ? { branch: branch.label } : {}),
+      ...(step ? { step } : {}),
+      ...(choice.selection ? { selection: choice.selection } : {}),
+      ...(choice.preferred !== undefined ? { preferred: choice.preferred } : {}),
+      ...(meaningful(useWhen) ? { useWhen } : {}),
       genericName: cell(row, idx.name),
       indication: cell(row, idx.indication),
       patientGroup: cell(row, idx.group),
@@ -380,7 +411,7 @@ function describeSchemaIssue(path: Array<string | number>, message: string, cont
   if (path[0] === "medicationPlan" && path[1] === "regimens" && numeric !== undefined) {
     const regimens = (content.medicationPlan as { regimens?: Array<{ genericName?: string }> } | undefined)?.regimens;
     const field = String(path[3] ?? "");
-    const fieldLabel: Record<string, string> = { sourceUrl: "the source ([n] must match a numbered reference)", sourceTitle: "the source ([n] must match a numbered reference)", sourceEdition: "the source ([n] must match a numbered reference)", adjustments: "Adjustments", monitoring: "Monitoring", patientGroup: "Patient group", indication: "Indication", dose: "Dose", route: "Route", frequency: "Frequency", duration: "Duration / max" };
+    const fieldLabel: Record<string, string> = { sourceUrl: "the source ([n] must match a numbered reference)", sourceTitle: "the source ([n] must match a numbered reference)", sourceEdition: "the source ([n] must match a numbered reference)", adjustments: "Adjustments", monitoring: "Monitoring", patientGroup: "Patient group", indication: "Indication", dose: "Dose", route: "Route", frequency: "Frequency", duration: "Duration / max", branch: "Branch", step: "Step", selection: "Choice", useWhen: "Use when" };
     return `Medicines: ${fieldLabel[field] ?? field} is missing for “${regimens?.[numeric]?.genericName ?? `row ${numeric + 1}`}”.`;
   }
   if (path[0] === "teaching" && path[1] === "references") return "References: each reference needs a title, edition/year and a web address (URL).";
@@ -546,8 +577,17 @@ export function parsePastedTopic(markdown: string, base: DiseaseDetail, options:
     };
     const lists: Record<string, string[]> = {};
     let regimenResult: ReturnType<typeof parseMedicines> | undefined;
+    const pastedBranches: Array<{ label: string; entryCriteria: string }> = [];
     for (const part of parts) {
       const rows = tables(part.blocks);
+      const branchHeading = parseBranchHeading(part.title);
+      if (branchHeading && rows.length) {
+        if (!branchHeading.label) issues.push({ level: "error", message: "A medicines branch heading has no name. Use “#### Branch: <name> | Entry: <who enters this branch>”." });
+        else if (!branchHeading.entry) issues.push({ level: "error", message: `Medicines branch “${branchHeading.label}” has no entry criteria. Write “| Entry: <who enters this branch>” after the branch name.` });
+        if (branchHeading.label && !pastedBranches.some((entry) => entry.label === branchHeading.label)) pastedBranches.push({ label: branchHeading.label, entryCriteria: branchHeading.entry || "Not stated" });
+        for (const table of rows) { const parsedTable = parseMedicines(table, refs, branchHeading); if (!regimenResult) regimenResult = parsedTable; else regimenResult.regimens.push(...parsedTable.regimens); }
+        continue;
+      }
       if (part.key === "medicines" || (!part.key && rows.some((r) => column((r[0] ?? []).map((h) => cleanText(h).toLowerCase()), /^(drug|medicine|medication)/) >= 0 && column((r[0] ?? []).map((h) => cleanText(h).toLowerCase()), /^dose/) >= 0))) {
         for (const table of rows) { if (!regimenResult) regimenResult = parseMedicines(table, refs); else regimenResult.regimens.push(...parseMedicines(table, refs).regimens); }
         continue;
@@ -576,7 +616,7 @@ export function parsePastedTopic(markdown: string, base: DiseaseDetail, options:
     if (regimenResult) {
       if (regimenResult.missingColumns.length) issues.push({ level: "error", message: "The medicines table needs a Drug column." });
       else {
-        medicationPlan = { status: "local-protocol-required", regimens: regimenResult.regimens, note: "Doses came from an external drafting tool and must be verified against the cited sources, Saudi Food and Drug Authority (SFDA) registration and the local hospital protocol before prescribing. Check hospital formulary." } as DiseaseDetail["medicationPlan"];
+        medicationPlan = { status: "local-protocol-required", regimens: regimenResult.regimens, ...(pastedBranches.length ? { branches: pastedBranches } : {}), note: "Doses came from an external drafting tool and must be verified against the cited sources, Saudi Food and Drug Authority (SFDA) registration and the local hospital protocol before prescribing. Check hospital formulary." } as DiseaseDetail["medicationPlan"];
         report("medicines", "Medicines", "parsed", `${regimenResult.regimens.length} medicine${regimenResult.regimens.length === 1 ? "" : "s"}`);
       }
     } else report("medicines", "Medicines", base.medicationPlan ? "kept" : "optional", base.medicationPlan ? "No medicines table in paste; previous table kept — check it still matches the new steps" : "No medicines table in paste");

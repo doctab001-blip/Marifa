@@ -1,0 +1,518 @@
+{
+  "id": "4ef4de75-7605-4961-8986-22a95b0b202d",
+  "title": "Generalized Anxiety Disorder",
+  "specialty": "Psychiatry",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adults with generalised anxiety disorder: identification, assessment, stepped care from education to specialist care, psychological and drug treatment, monitoring and non-response. Verified against NICE CG113 and FDA labels; no Saudi guideline found; SFDA not checked. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "NICE CG113 sections 1.1 and 1.2 (GAD) were read in full on 13 Oct 2026; the panic disorder section was out of scope. Doses and contraindications were read from US FDA labels via openFDA on the same date.",
+      "CG113 is a UK guideline; its regulatory references (MHRA, Misuse of Drugs Act) do not apply in Saudi Arabia.",
+      "This topic covers adults only.",
+      "Investigation tiers and added tests were checked against the cited source sections on 15 Oct 2026; additions are pending clinician review.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from authoring-standard-2026-10-15-v2-investigations-live."
+    ],
+    "unverifiedSections": [
+      "SFDA registration of the drugs for GAD not checked (the SFDA site refused automated access from the authoring environment)",
+      "No Saudi GAD guideline was found; none is cited",
+      "Diagnostic criteria (ICD or DSM) are not given in CG113 and are not reproduced",
+      "Pregabalin and venlafaxine doses are not given because no label was read for them",
+      "No dose for sertraline in GAD is given because neither CG113 nor the FDA label read states one",
+      "The sertraline FDA label read is version 2 from November 2019 and may be superseded",
+      "CG113 guidance dates from 2011 with amendments to 2022; newer evidence is not reviewed",
+      "The expanded investigation panel is not clinically approved and remains non-current pending review.",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "4ef4de75-7605-4961-8986-22a95b0b202d",
+      "69dd1cce-e240-4427-9673-e84f6a585a81"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Generalised anxiety disorder (GAD) is an anxiety disorder in which a person has anxiety or significant worry, often repeated worry about many different issues, and may seek reassurance about physical symptoms. NICE CG113 does not define GAD by symptom count or duration; it advises assessment of distress and functional impairment as well as symptoms. This topic covers GAD in adults, not panic disorder.",
+    "keyMechanisms": [
+      "Diagnosis should not rely solely on the number, severity and duration of symptoms; distress and functional impairment are also assessed (NICE CG113 Rec. 1.2.6).",
+      "Comorbid depressive or other anxiety disorder, substance misuse, medical conditions, past mental health disorders and past treatment response may have affected development, course and severity (NICE CG113 Rec. 1.2.7).",
+      "Substance misuse can be a complication of GAD; harmful and dependent misuse should be treated first (NICE CG113 Rec. 1.2.9).",
+      "Some physical symptoms in people who attend primary care frequently may be due to GAD (NICE CG113 Recs 1.2.4–1.2.5).",
+      "CG113 does not describe the neurobiology of GAD."
+    ],
+    "references": [
+      {
+        "title": "NICE CG113: Generalised anxiety disorder and panic disorder in adults: management",
+        "edition": "NICE guideline, published 26 January 2011, last updated 15 June 2020, Recommendations 1.2.4–1.2.7 and 1.2.9",
+        "url": "https://www.nice.org.uk/guidance/cg113"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Anxiety or significant worry, and difficulty stopping or controlling worry (NICE CG113 Recs 1.2.2 and 1.2.4).",
+      "Repeated worrying about many different issues (NICE CG113 Rec. 1.2.4).",
+      "Seeking reassurance about somatic symptoms or a chronic physical health problem, particularly in older people and people from minority ethnic groups (NICE CG113 Rec. 1.2.4).",
+      "Frequent attendance in primary care (NICE CG113 Rec. 1.2.4).",
+      "Distress and functional impairment, which may be marked (NICE CG113 Recs 1.2.6 and 1.2.17)."
+    ],
+    "physicalSigns": [
+      "CG113 lists no examination signs for GAD; assessment rests on history, distress and functional impairment (NICE CG113 Rec. 1.2.6)."
+    ],
+    "redFlags": [
+      "Risk of self-harm or suicide together with severe anxiety and marked functional impairment: consider step 4 referral (NICE CG113 Rec. 1.2.37).",
+      "Self-neglect, significant comorbidity such as substance misuse, personality disorder or complex physical health problems: consider step 4 referral (NICE CG113 Rec. 1.2.37).",
+      "Under 30 years and starting an SSRI or SNRI: increased risk of suicidal thinking and self-harm in a minority (NICE CG113 Rec. 1.2.30).",
+      "Comorbid depression or another anxiety disorder: treat the primary (more severe) disorder first (NICE CG113 Rec. 1.2.8)."
+    ],
+    "precipitants": [
+      "Past history of an anxiety disorder or a recent traumatic event (NICE CG113 Rec. 1.2.2).",
+      "A chronic physical health problem (NICE CG113 Rec. 1.2.4).",
+      "Comorbid substance misuse, depression or other anxiety disorder (NICE CG113 Rec. 1.2.7).",
+      "Over-the-counter medicines and preparations may interact with prescribed treatment (NICE CG113 Rec. 1.2.11)."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Comorbid depressive disorder",
+      "distinguishingFeatures": "Treat the more severe, primary disorder first; for depression use the depression guideline (NICE CG113 Rec. 1.2.8)."
+    },
+    {
+      "condition": "Other anxiety disorder, including obsessive-compulsive disorder and post-traumatic stress disorder",
+      "distinguishingFeatures": "Treat the primary disorder first (NICE CG113 Rec. 1.2.8)."
+    },
+    {
+      "condition": "Panic disorder",
+      "distinguishingFeatures": "Covered by a separate part of CG113 (section 1.3), which is outside this topic."
+    },
+    {
+      "condition": "Substance misuse or drug interaction effects",
+      "distinguishingFeatures": "Harmful and dependent misuse should be treated first as GAD symptoms may improve; ask about cocaine use when prescribing SSRIs (NICE CG113 Rec. 1.2.9)."
+    },
+    {
+      "condition": "Anxiety symptoms from a physical health problem",
+      "distinguishingFeatures": "Consider with the person whether symptoms may be due to GAD when they attend seeking reassurance about physical symptoms (NICE CG113 Rec. 1.2.5); CG113 lists no specific medical mimics."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "GAD-2 two-item screen",
+        "modalityTarget": "Consultation questionnaire",
+        "targetCondition": "Possible GAD",
+        "expectedFinding": "A positive screen prompts fuller assessment; CG113 gives no cut-off score.",
+        "clinicalRationale": "Consider using the GAD-2 when asking about anxiety and ability to stop or control worry in someone with risk factors or somatic presentations (NICE CG113 Rec. 1.2.2).",
+        "normalValue": "Not defined in CG113",
+        "references": [
+          {
+            "title": "NICE CG113: Generalised anxiety disorder and panic disorder in adults: management",
+            "edition": "NICE guideline, published 26 January 2011, last updated 15 June 2020, Recommendation 1.2.2",
+            "url": "https://www.nice.org.uk/guidance/cg113"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Clinical assessment of distress and functional impairment",
+        "modalityTarget": "Clinical interview",
+        "targetCondition": "GAD diagnosis and severity",
+        "expectedFinding": "Anxiety or worry with distress and functional impairment beyond a symptom count.",
+        "clinicalRationale": "Assessment looks at comorbid depression or anxiety, substance use, medical conditions, history and past treatment response (NICE CG113 Recs 1.2.6–1.2.7).",
+        "normalValue": "Not applicable; CG113 gives no scale threshold",
+        "references": [
+          {
+            "title": "NICE CG113: Generalised anxiety disorder and panic disorder in adults: management",
+            "edition": "NICE guideline, published 26 January 2011, last updated 15 June 2020, Recommendations 1.2.6–1.2.7",
+            "url": "https://www.nice.org.uk/guidance/cg113"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Specialist assessment of needs and risks (step 4)",
+        "modalityTarget": "Specialist mental health assessment",
+        "targetCondition": "Complex or treatment-refractory GAD",
+        "expectedFinding": "Duration and severity, functional impairment, comorbidities, risk to self and self-neglect, treatment history and adherence.",
+        "clinicalRationale": "Offered when step 4 is considered (NICE CG113 Rec. 1.2.38).",
+        "normalValue": "Not applicable",
+        "references": [
+          {
+            "title": "NICE CG113: Generalised anxiety disorder and panic disorder in adults: management",
+            "edition": "NICE guideline, published 26 January 2011, last updated 15 June 2020, Recommendation 1.2.38",
+            "url": "https://www.nice.org.uk/guidance/cg113"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Enquiry about substance use and drug interactions",
+        "modalityTarget": "History",
+        "targetCondition": "Substance misuse as cause or complication",
+        "expectedFinding": "Harmful or dependent misuse; cocaine use relevant to SSRI interactions.",
+        "clinicalRationale": "Treat harmful and dependent misuse first; non-harmful use is not a contraindication to GAD treatment (NICE CG113 Rec. 1.2.9).",
+        "normalValue": "No harmful or dependent use",
+        "references": [
+          {
+            "title": "NICE CG113: Generalised anxiety disorder and panic disorder in adults: management",
+            "edition": "NICE guideline, published 26 January 2011, last updated 15 June 2020, Recommendation 1.2.9",
+            "url": "https://www.nice.org.uk/guidance/cg113"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Review for comorbid depressive or other anxiety disorder",
+        "modalityTarget": "Clinical interview",
+        "targetCondition": "Comorbid disorder that should be treated first",
+        "expectedFinding": "A more severe primary disorder.",
+        "clinicalRationale": "Treat the primary disorder first (NICE CG113 Rec. 1.2.8). CG113 names no specific tests for physical causes of anxiety.",
+        "normalValue": "Not applicable",
+        "references": [
+          {
+            "title": "NICE CG113: Generalised anxiety disorder and panic disorder in adults: management",
+            "edition": "NICE guideline, published 26 January 2011, last updated 15 June 2020, Recommendation 1.2.8",
+            "url": "https://www.nice.org.uk/guidance/cg113"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Thyroid function tests (TSH with reflex FT4/FT3)",
+        "modalityTarget": "Unexplained, atypical or treatment-refractory anxiety",
+        "targetCondition": "Thyroid dysfunction presenting with unexplained anxiety",
+        "expectedFinding": "Suppressed or raised TSH with the corresponding free-hormone pattern",
+        "clinicalRationale": "Consider testing for unexplained anxiety; an abnormal result redirects management to the thyroid pathway. Avoid indiscriminate repeat testing during acute illness.",
+        "normalValue": "TSH within the local adult reference interval",
+        "references": [
+          {
+            "title": "NICE NG145: Thyroid disease",
+            "edition": "NICE NG145, recommendations 1.2.3 and 1.2.8–1.2.11",
+            "url": "https://www.nice.org.uk/guidance/ng145/chapter/recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "step1",
+      "title": "Step 1: identify, assess, educate and monitor",
+      "timeframe": "First contact",
+      "actions": [
+        "Be alert to anxiety disorders, especially with past anxiety disorder, somatic symptoms or recent trauma; consider the GAD-2 (NICE CG113 Rec. 1.2.2).",
+        "Identify and communicate the diagnosis early (NICE CG113 Rec. 1.2.3).",
+        "Do a full assessment covering distress, functional impairment, comorbidity, substance use and past treatments (NICE CG113 Recs 1.2.6–1.2.7).",
+        "Treat a more severe comorbid depressive or anxiety disorder first, and harmful or dependent substance misuse first (NICE CG113 Recs 1.2.8–1.2.9).",
+        "Give education about GAD and treatment options and actively monitor symptoms and functioning, which may improve less severe presentations (NICE CG113 Rec. 1.2.10).",
+        "Discuss over-the-counter medicines and their interaction risks (NICE CG113 Rec. 1.2.11)."
+      ]
+    },
+    {
+      "id": "step2",
+      "title": "Step 2: low-intensity psychological intervention",
+      "timeframe": "After step 1 without improvement",
+      "actions": [
+        "Offer one or more of individual non-facilitated self-help, individual guided self-help or psychoeducational groups, guided by preference (NICE CG113 Rec. 1.2.12).",
+        "Non-facilitated self-help: CBT-based materials worked through over at least 6 weeks with minimal contact (NICE CG113 Rec. 1.2.13).",
+        "Guided self-help: CBT-based, usually 5 to 7 weekly or fortnightly sessions of 20 to 30 minutes (NICE CG113 Rec. 1.2.14).",
+        "Psychoeducational groups: usually 6 weekly 2-hour sessions with about 12 participants per therapist (NICE CG113 Rec. 1.2.15)."
+      ]
+    },
+    {
+      "id": "step3",
+      "title": "Step 3: high-intensity psychological treatment or drug treatment",
+      "timeframe": "Marked impairment or inadequate response to step 2",
+      "actions": [
+        "Offer either an individual high-intensity psychological intervention or drug treatment, explaining benefits and drawbacks including side effects and withdrawal; base the choice on preference (NICE CG113 Rec. 1.2.17).",
+        "Check for risk and comorbidity at each review and consider step 4 if criteria are met (NICE CG113 Rec. 1.2.37)."
+      ],
+      "branches": [
+        {
+          "condition": "Psychological treatment chosen",
+          "actions": [
+            "Offer CBT or applied relaxation, usually 12 to 15 weekly sessions of 1 hour (NICE CG113 Recs 1.2.18–1.2.20)."
+          ]
+        },
+        {
+          "condition": "Drug treatment chosen",
+          "actions": [
+            "Offer an SSRI; consider sertraline first as most cost-effective, noting its off-label use for GAD in the UK at publication, with documented informed consent (NICE CG113 Rec. 1.2.23).",
+            "If sertraline is ineffective, offer another SSRI or an SNRI, weighing withdrawal tendency (paroxetine, venlafaxine), side effects, interactions, suicide risk and overdose toxicity (especially venlafaxine) and prior experience (NICE CG113 Rec. 1.2.24).",
+            "If SSRIs and SNRIs are not tolerated, consider pregabalin after assessing for a history of drug abuse (NICE CG113 Rec. 1.2.25).",
+            "Do not offer a benzodiazepine except as a short-term measure in crises, and do not offer an antipsychotic in primary care (NICE CG113 Recs 1.2.26–1.2.27).",
+            "Explain benefits, side effects, withdrawal, activation (increased anxiety, agitation, poor sleep), the 1 week or longer to full effect, and the need to continue after remission (NICE CG113 Rec. 1.2.28).",
+            "Consider a gastroprotective drug when the bleeding risk with an SSRI is raised, for example in older people or with NSAIDs or aspirin (NICE CG113 Rec. 1.2.29)."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "monitor",
+      "title": "Monitoring drug treatment",
+      "timeframe": "From the first prescription",
+      "actions": [
+        "Under 30: warn about suicidal thinking and self-harm risk, see within 1 week, and monitor weekly for the first month (NICE CG113 Rec. 1.2.30).",
+        "For early side effects, monitor closely if mild, reduce the dose, or stop and offer an alternative drug or high-intensity psychological intervention (NICE CG113 Rec. 1.2.31).",
+        "Review effectiveness and side effects every 2 to 4 weeks for 3 months, then every 3 months (NICE CG113 Rec. 1.2.32).",
+        "If effective, continue for at least a year because relapse is likely (NICE CG113 Rec. 1.2.33)."
+      ]
+    },
+    {
+      "id": "nonresponse",
+      "title": "Inadequate response",
+      "timeframe": "After a full course",
+      "actions": [
+        "No response to a full course of high-intensity psychological intervention: offer drug treatment (NICE CG113 Rec. 1.2.34).",
+        "No response to drug treatment: offer a high-intensity psychological intervention or an alternative drug (NICE CG113 Rec. 1.2.35).",
+        "Partial response to drug treatment: consider adding a high-intensity psychological intervention (NICE CG113 Rec. 1.2.36).",
+        "Step 4 (specialist) for severe anxiety with marked impairment and risk, comorbidity, self-neglect or inadequate response: specialist assessment of needs and risks, a shared care plan, and only expert-led combination or augmentation, because evidence is lacking and side effects and interactions are more likely (NICE CG113 Recs 1.2.37–1.2.42)."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "GAD, drug treatment first choice in CG113",
+        "patientGroup": "Adults with GAD choosing drug treatment",
+        "genericName": "Sertraline",
+        "dose": "No GAD dose is stated in CG113 or in the FDA label read (its indications do not include GAD); dose must follow the specialist or local protocol",
+        "route": "Oral",
+        "frequency": "Once daily (FDA label)",
+        "duration": "At least a year if effective (NICE CG113 Rec. 1.2.33)",
+        "adjustments": [
+          "Obtain and document informed consent because this is off-label for GAD (NICE CG113 Rec. 1.2.23)",
+          "Under 30: see within 1 week and monitor weekly for a month (NICE CG113 Rec. 1.2.30)"
+        ],
+        "monitoring": [
+          "Review every 2 to 4 weeks for 3 months, then every 3 months (NICE CG113 Rec. 1.2.32)",
+          "Bleeding risk, especially with NSAIDs or aspirin (NICE CG113 Rec. 1.2.29)"
+        ],
+        "contraindications": [
+          "MAOI within 14 days before or after, linezolid or IV methylene blue",
+          "Pimozide",
+          "Hypersensitivity to sertraline or inactive ingredients (FDA label)"
+        ],
+        "sourceTitle": "NICE CG113: Generalised anxiety disorder and panic disorder in adults: management",
+        "sourceUrl": "https://www.nice.org.uk/guidance/cg113",
+        "sourceEdition": "NICE guideline, published 26 January 2011, last updated 15 June 2020, Recommendations 1.2.23–1.2.33; FDA label: Sertraline hydrochloride tablets (set ID 00179766-980b-44b0-99d3-1fee2bb27e37) (label version 2, effective 1 November 2019)",
+        "branch": "Drug treatment (step 3)",
+        "step": "First-choice drug",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "GAD, alternative SSRI",
+        "patientGroup": "Adults with GAD",
+        "genericName": "Escitalopram",
+        "dose": "10 mg once daily initially; maximum 20 mg once daily (FDA label section 2.2)",
+        "route": "Oral",
+        "frequency": "Once daily, morning or evening",
+        "duration": "At least a year if effective (NICE CG113 Rec. 1.2.33)",
+        "adjustments": [
+          "Increase to 20 mg after at least 1 week depending on response and tolerability (FDA label section 2.2)",
+          "Elderly patients and hepatic impairment: 10 mg once daily (FDA label section 2.4)",
+          "No additional benefit was seen at 20 mg once daily in GAD (FDA label summary)"
+        ],
+        "monitoring": [
+          "Review every 2 to 4 weeks for 3 months, then every 3 months (NICE CG113 Rec. 1.2.32)"
+        ],
+        "contraindications": [
+          "MAOI within 14 days, linezolid or IV methylene blue",
+          "Pimozide",
+          "Hypersensitivity to escitalopram or citalopram (FDA label section 4)"
+        ],
+        "sourceTitle": "NICE CG113: Generalised anxiety disorder and panic disorder in adults: management",
+        "sourceUrl": "https://www.nice.org.uk/guidance/cg113",
+        "sourceEdition": "NICE guideline, published 26 January 2011, last updated 15 June 2020, Recommendations 1.2.24 and 1.2.32; FDA label: Escitalopram oral solution (set ID 0458445b-e431-4c82-86b8-90373813c10a) (label version 3, effective 5 March 2025)",
+        "branch": "Drug treatment (step 3)",
+        "step": "First-choice drug",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Chosen instead of sertraline"
+      },
+      {
+        "indication": "GAD, SNRI alternative",
+        "patientGroup": "Adults with GAD",
+        "genericName": "Duloxetine",
+        "dose": "60 mg once daily; maximum 120 mg/day; geriatric start 30 mg/day (FDA label section 2.3)",
+        "route": "Oral",
+        "frequency": "Once daily, swallowed whole",
+        "duration": "At least a year if effective (NICE CG113 Rec. 1.2.33)",
+        "adjustments": [
+          "Reduce gradually when stopping to avoid discontinuation symptoms (FDA label section 2.8)"
+        ],
+        "monitoring": [
+          "Review every 2 to 4 weeks for 3 months, then every 3 months (NICE CG113 Rec. 1.2.32)",
+          "NICE names venlafaxine, not duloxetine, as the SNRI with higher overdose risk (NICE CG113 Rec. 1.2.24)"
+        ],
+        "contraindications": [
+          "MAOI within 5 days of stopping duloxetine or 14 days before starting it, linezolid or IV methylene blue (FDA label section 4)"
+        ],
+        "sourceTitle": "NICE CG113: Generalised anxiety disorder and panic disorder in adults: management",
+        "sourceUrl": "https://www.nice.org.uk/guidance/cg113",
+        "sourceEdition": "NICE guideline, published 26 January 2011, last updated 15 June 2020, Recommendation 1.2.24; FDA label: Duloxetine delayed-release capsules (set ID 00628e5e-4c5b-2573-e063-6294a90a0e3b) (label version 4, effective 20 August 2026)",
+        "branch": "Drug treatment (step 3)",
+        "step": "First-choice drug",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Chosen instead of sertraline"
+      }
+    ],
+    "note": "CG113 names sertraline and other SSRIs, SNRIs and pregabalin but gives no doses. Doses come from US FDA labels; pregabalin has no label read here. Check SFDA registration, the Saudi formulary, and local rules on pregabalin and benzodiazepine prescribing.",
+    "branches": [
+      {
+        "label": "Drug treatment (step 3)",
+        "entryCriteria": "Adult with GAD choosing drug treatment"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Identification (NICE CG113 Rec. 1.2.2)",
+      "threshold": "Consider asking about feelings of anxiety and ability to stop or control worry using the 2-item GAD scale (GAD-2); CG113 gives no score cut-off"
+    },
+    {
+      "criterion": "Diagnostic definition",
+      "threshold": "CG113 does not state diagnostic criteria; assessment looks at symptoms, distress and functional impairment (Rec. 1.2.6)"
+    },
+    {
+      "criterion": "Step 2 entry (NICE CG113 Rec. 1.2.12)",
+      "threshold": "Symptoms not improved after education and active monitoring in step 1"
+    },
+    {
+      "criterion": "Step 3 entry (NICE CG113 Rec. 1.2.17)",
+      "threshold": "Marked functional impairment, or inadequate response to step 2 interventions"
+    },
+    {
+      "criterion": "Step 4 referral (NICE CG113 Rec. 1.2.37)",
+      "threshold": "Severe anxiety with marked functional impairment plus risk of self-harm or suicide, significant comorbidity, self-neglect or inadequate response to step 3"
+    },
+    {
+      "criterion": "Drug review schedule (NICE CG113 Rec. 1.2.32)",
+      "threshold": "Every 2 to 4 weeks during the first 3 months, then every 3 months"
+    },
+    {
+      "criterion": "Drug continuation (NICE CG113 Rec. 1.2.33)",
+      "threshold": "At least a year if effective"
+    },
+    {
+      "criterion": "Age under 30 starting SSRI or SNRI (NICE CG113 Rec. 1.2.30)",
+      "threshold": "See within 1 week and monitor suicidal thinking weekly for the first month"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "First-choice drug for GAD: NICE CG113 vs drug labels",
+    "columns": [
+      "NICE CG113 (updated 2020)",
+      "FDA labels read (2019 to 2026)"
+    ],
+    "rows": [
+      {
+        "parameter": "Preferred first drug",
+        "values": [
+          "Consider sertraline first as most cost-effective (Rec. 1.2.23)",
+          "Sertraline label lists MDD, OCD, panic disorder, PTSD, PMDD and social anxiety disorder, not GAD; escitalopram and duloxetine labels list GAD"
+        ]
+      },
+      {
+        "parameter": "Regulatory status of the preferred drug for GAD",
+        "values": [
+          "Off-label use; informed consent to be obtained and documented (Rec. 1.2.23)",
+          "Not an FDA-labelled use for sertraline"
+        ]
+      },
+      {
+        "parameter": "Dose",
+        "values": [
+          "Not stated",
+          "Escitalopram 10 mg daily, maximum 20 mg (section 2.2); duloxetine 60 mg daily, maximum 120 mg (section 2.3)"
+        ]
+      },
+      {
+        "parameter": "Duration after response",
+        "values": [
+          "At least a year (Rec. 1.2.33)",
+          "Not specified in the sections read"
+        ]
+      }
+    ],
+    "note": "The sources differ in what they prefer rather than contradict on facts; Saudi SFDA registration of each drug for GAD was not checked. Follow the local formulary and specialist advice."
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Identify GAD and apply stepped care from education to specialist care.",
+      "Choose between high-intensity psychological and drug treatment with the patient.",
+      "Prescribe and monitor SSRIs and SNRIs safely, including in people under 30."
+    ],
+    "pitfalls": [
+      "Giving a benzodiazepine other than as a short-term crisis measure (NICE CG113 Rec. 1.2.26).",
+      "Offering an antipsychotic for GAD in primary care (NICE CG113 Rec. 1.2.27).",
+      "Missing the 1-week review and weekly monitoring in under-30s starting an SSRI or SNRI (NICE CG113 Rec. 1.2.30).",
+      "Ignoring SSRI bleeding risk with NSAIDs or aspirin (NICE CG113 Rec. 1.2.29).",
+      "Treating GAD first when a more severe depressive disorder is present (NICE CG113 Rec. 1.2.8)."
+    ],
+    "keyPoints": [
+      "Offer the least intrusive, most effective intervention first.",
+      "Treat a more severe comorbid depressive or anxiety disorder, and harmful substance misuse, first.",
+      "CBT and applied relaxation: usually 12 to 15 weekly hour-long sessions.",
+      "First drug: an SSRI, with sertraline considered first; review every 2 to 4 weeks for 3 months.",
+      "Continue effective drug treatment for at least a year."
+    ],
+    "references": [
+      {
+        "title": "NICE CG113: Generalised anxiety disorder and panic disorder in adults: management",
+        "edition": "NICE guideline, published 26 January 2011, last updated 15 June 2020",
+        "url": "https://www.nice.org.uk/guidance/cg113",
+        "locator": "Recommendations 1.1.1 to 1.2.47 (GAD sections)"
+      },
+      {
+        "title": "FDA label: Escitalopram oral solution (set ID 0458445b-e431-4c82-86b8-90373813c10a)",
+        "edition": "FDA label version 3, effective 5 March 2025",
+        "url": "https://api.fda.gov/drug/label.json?search=set_id:0458445b-e431-4c82-86b8-90373813c10a",
+        "locator": "Sections 2.2, 2.4 and 4"
+      },
+      {
+        "title": "FDA label: Duloxetine delayed-release capsules (set ID 00628e5e-4c5b-2573-e063-6294a90a0e3b)",
+        "edition": "FDA label version 4, effective 20 August 2026",
+        "url": "https://api.fda.gov/drug/label.json?search=set_id:00628e5e-4c5b-2573-e063-6294a90a0e3b",
+        "locator": "Indications and sections 2.3 and 4"
+      },
+      {
+        "title": "FDA label: Sertraline hydrochloride tablets (set ID 00179766-980b-44b0-99d3-1fee2bb27e37)",
+        "edition": "FDA label version 2, effective 1 November 2019",
+        "url": "https://api.fda.gov/drug/label.json?search=set_id:00179766-980b-44b0-99d3-1fee2bb27e37",
+        "locator": "Indications and usage; contraindications"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Provide education about GAD and treatment options, and use NICE's public information (NICE CG113 Rec. 1.2.10).",
+      "Explain the benefits and drawbacks of psychological and drug treatment, including side effects and withdrawal syndromes (NICE CG113 Rec. 1.2.17).",
+      "Explain SSRI and SNRI activation (more anxiety, agitation, poor sleep), the 1 week or more to full effect, and the need to continue after remission (NICE CG113 Rec. 1.2.28).",
+      "Discuss over-the-counter medicines and interactions (NICE CG113 Rec. 1.2.11).",
+      "Address fears about addiction and medication (NICE CG113 Rec. 1.2.46)."
+    ],
+    "lifestyleAndDiet": [
+      "CG113 gives no lifestyle or dietary recommendation for GAD; it advises discussing over-the-counter preparations (NICE CG113 Rec. 1.2.11)."
+    ],
+    "mdtReferrals": [
+      "Trained practitioners for guided self-help, psychoeducational groups, CBT or applied relaxation (NICE CG113 Recs 1.2.14–1.2.21).",
+      "Step 4 specialist mental health services for the criteria in NICE CG113 Rec. 1.2.37.",
+      "Substance misuse services where harmful or dependent misuse is present (NICE CG113 Rec. 1.2.9)."
+    ],
+    "dischargeCriteria": [
+      "CG113 sets no discharge criteria; drug treatment continues for at least a year when effective (NICE CG113 Rec. 1.2.33)."
+    ],
+    "followUpPlan": "Review drug treatment every 2 to 4 weeks for the first 3 months and every 3 months thereafter (NICE CG113 Rec. 1.2.32). Under 30s see within 1 week and have weekly risk monitoring for a month (NICE CG113 Rec. 1.2.30). Practitioners use routine outcome measures with the person throughout psychological treatment (NICE CG113 Recs 1.2.16 and 1.2.21)."
+  }
+}

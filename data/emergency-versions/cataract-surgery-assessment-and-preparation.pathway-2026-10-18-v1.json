@@ -1,0 +1,397 @@
+{
+  "id": "eab57274-e256-4281-bd97-7ebe1fb49472",
+  "title": "Cataract Surgery Assessment and Preparation",
+  "specialty": "Ophthalmology",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Planned Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adults referred for cataract surgery: referral decision, information, biometry and peri-operative antibiotic prophylaxis. Verified against NICE NG77 and NG45 (minor/intermediate tests) and Saudi MOH Protocol-015 (ophthalmic prophylaxis). Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from authoring-standard-2026-10-12-v1-live."
+    ],
+    "unverifiedSections": [
+      "NICE NG77 intracameral antibiotic recommendations not reviewed this run",
+      "SFDA registration not checked per drug",
+      "Local antibiogram may add gentamicin (MOH p. 1)",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "eab57274-e256-4281-bd97-7ebe1fb49472",
+      "2eb77c02-caed-4a93-8061-2259572ba0e7"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "A cataract is opacification of the lens, scattering light and reducing visual quality. Surgery replaces the lens with an intraocular lens chosen by biometry.",
+    "keyMechanisms": [
+      "Lens protein changes with age, diabetes, steroids or trauma cause opacity and glare.",
+      "Axial length and corneal curvature determine intraocular lens power — biometry (NICE NG77).",
+      "Endophthalmitis is rare but serious — topical/intracameral antibiotic prophylaxis (MOH)."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Blurred or dim vision, glare, difficulty reading or driving.",
+      "Impact on quality of life."
+    ],
+    "physicalSigns": [
+      "Reduced visual acuity; lens opacity on slit lamp; reduced red reflex."
+    ],
+    "redFlags": [
+      "Sudden visual loss or eye pain — not cataract: urgent ophthalmology",
+      "Post-operative pain, redness or vision drop — endophthalmitis"
+    ],
+    "precipitants": [
+      "Age",
+      "Diabetes",
+      "Corticosteroids",
+      "Eye trauma"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Macular degeneration, diabetic retinopathy, glaucoma",
+      "distinguishingFeatures": "Fundus or field findings."
+    },
+    {
+      "condition": "Refractive error",
+      "distinguishingFeatures": "Improves with pinhole/spectacles."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Optical biometry (ultrasound if not possible) and keratometry",
+        "modalityTarget": "Before surgery (NICE NG77)",
+        "targetCondition": "Intraocular lens power",
+        "expectedFinding": "Axial length and corneal curvature.",
+        "clinicalRationale": "Accurate lens selection; corneal topography if abnormal cornea.",
+        "normalValue": "Measurements obtained and consistent between eyes",
+        "references": [
+          {
+            "title": "NICE NG77: Cataracts in adults: management",
+            "edition": "NICE guideline, 2017, Recommendations 1.1–1.3 (information, referral, biometry)",
+            "url": "https://www.nice.org.uk/guidance/ng77"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Visual function and quality-of-life discussion",
+        "modalityTarget": "At referral (NICE NG77)",
+        "targetCondition": "Need for surgery",
+        "expectedFinding": "Cataract affects vision and quality of life.",
+        "clinicalRationale": "Do not restrict access on visual acuity alone (NICE NG77).",
+        "normalValue": "No functional impairment",
+        "references": [
+          {
+            "title": "NICE NG77: Cataracts in adults: management",
+            "edition": "NICE guideline, 2017, Recommendations 1.1–1.3 (information, referral, biometry)",
+            "url": "https://www.nice.org.uk/guidance/ng77"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count",
+        "modalityTarget": "Pre-assessment (minor surgery)",
+        "targetCondition": "Anaemia, thrombocytopenia",
+        "expectedFinding": "NICE NG45: Not routinely.",
+        "clinicalRationale": "Treat iron-deficiency anaemia before surgery (NICE NG180).",
+        "normalValue": "Hb 130–170 g/L (men), 120–150 g/L (women); platelets 150–400 × 10⁹/L",
+        "references": [
+          {
+            "title": "NICE NG45: Routine preoperative tests for elective surgery",
+            "edition": "NICE guideline, 2016, Tables 1–3 (tests by surgery grade and ASA grade); Recommendations 1.3–1.9",
+            "url": "https://www.nice.org.uk/guidance/ng45"
+          },
+          {
+            "title": "NICE NG180: Perioperative care in adults",
+            "edition": "NICE guideline, 2020, Recommendations 1.3 (preoperative anaemia)",
+            "url": "https://www.nice.org.uk/guidance/ng180"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Kidney function (creatinine, eGFR, electrolytes)",
+        "modalityTarget": "Pre-assessment (minor surgery)",
+        "targetCondition": "Renal impairment, AKI risk",
+        "expectedFinding": "NICE NG45: ASA 3–4 at risk of AKI: consider.",
+        "clinicalRationale": "Adjust nephrotoxic drugs and antibiotic doses.",
+        "normalValue": "eGFR 60 or more mL/min/1.73 m²; K 3.5–5.0 mmol/L",
+        "references": [
+          {
+            "title": "NICE NG45: Routine preoperative tests for elective surgery",
+            "edition": "NICE guideline, 2016, Tables 1–3 (tests by surgery grade and ASA grade); Recommendations 1.3–1.9",
+            "url": "https://www.nice.org.uk/guidance/ng45"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Resting 12-lead ECG",
+        "modalityTarget": "Pre-assessment (minor surgery)",
+        "targetCondition": "Arrhythmia, ischaemia",
+        "expectedFinding": "NICE NG45: ASA 3–4: consider if no ECG in the past 12 months.",
+        "clinicalRationale": "Abnormal ECG with murmur or cardiac symptoms → anaesthetist review; echo only for murmur with symptoms or heart failure signs (NICE NG45 1.9).",
+        "normalValue": "Sinus rhythm, no ischaemic changes",
+        "references": [
+          {
+            "title": "NICE NG45: Routine preoperative tests for elective surgery",
+            "edition": "NICE guideline, 2016, Tables 1–3 (tests by surgery grade and ASA grade); Recommendations 1.3–1.9",
+            "url": "https://www.nice.org.uk/guidance/ng45"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "HbA1c (known diabetes only)",
+        "modalityTarget": "If not tested in the last 3 months",
+        "targetCondition": "Glycaemic control",
+        "expectedFinding": "Raised HbA1c.",
+        "clinicalRationale": "Do not test people without diabetes (NICE NG45).",
+        "normalValue": "Individual target (e.g. below 53 mmol/mol / 7%)",
+        "references": [
+          {
+            "title": "NICE NG45: Routine preoperative tests for elective surgery",
+            "edition": "NICE guideline, 2016, Recommendations 1.5.1–1.6.2 (HbA1c only for known diabetes, if not tested in last 3 months)",
+            "url": "https://www.nice.org.uk/guidance/ng45"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Pregnancy status",
+        "modalityTarget": "Day of surgery, all women of childbearing potential",
+        "targetCondition": "Unrecognised pregnancy",
+        "expectedFinding": "Possible pregnancy.",
+        "clinicalRationale": "Test with consent if any doubt; document (NICE NG45).",
+        "normalValue": "Not pregnant",
+        "references": [
+          {
+            "title": "NICE NG45: Routine preoperative tests for elective surgery",
+            "edition": "NICE guideline, 2016, Recommendations 1.3.1–1.3.6 (pregnancy status on the day of surgery)",
+            "url": "https://www.nice.org.uk/guidance/ng45"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "refer",
+      "title": "Referral",
+      "timeframe": "Primary care / optometry",
+      "actions": [
+        "Base referral on impact on vision and quality of life, one or both eyes, risks and benefits, and the person's wish for surgery — not on visual acuity alone (NICE NG77)."
+      ]
+    },
+    {
+      "id": "prepare",
+      "title": "Preparation",
+      "timeframe": "Pre-operative visit",
+      "actions": [
+        "Explain refractive outcomes, anaesthesia, individual complication risks (e.g. retinal detachment in high myopia), anticoagulants and eye drops (NICE NG77).",
+        "Most cataract surgery needs no routine blood tests in ASA 1–2 (NICE NG45 minor surgery table)."
+      ]
+    },
+    {
+      "id": "assess",
+      "title": "Pre-operative assessment",
+      "timeframe": "Weeks before surgery",
+      "actions": [
+        "Grade surgery (minor, intermediate, major/complex) and ASA status; order only the tests NICE NG45 lists for that combination.",
+        "Do not routinely order chest X-ray, urine dipstick, sickle tests or HbA1c in people without diabetes (NICE NG45).",
+        "Discuss stopping smoking and reducing alcohol; manage iron-deficiency anaemia (NICE NG180).",
+        "Make an individual anticoagulant plan if the person takes anticoagulants (NICE NG45)."
+      ]
+    },
+    {
+      "id": "vte",
+      "title": "VTE prophylaxis",
+      "timeframe": "Admission to discharge",
+      "actions": [
+        "Assess individual VTE risk on admission per NICE NG89 — no cataract-specific VTE recommendation was reviewed."
+      ]
+    },
+    {
+      "id": "abx",
+      "title": "Surgical antibiotic prophylaxis (MOH Protocol-015)",
+      "timeframe": "Within 60 min before incision",
+      "actions": [
+        "Ophthalmic: topical moxifloxacin 1 drop every 5–15 min for 5 doses; optional intracameral cefazolin 1–2.5 mg or subconjunctival cefazolin 100 mg (MOH p. 3).",
+        "Re-dose cefazolin every 4 h (or clindamycin every 6 h) if surgery lasts more than 4 h or blood loss exceeds 1,500 mL (MOH p. 1).",
+        "Stop prophylaxis within 24 h of the end of surgery, even with drains or catheters (MOH p. 4)."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Ophthalmic surgical prophylaxis",
+        "patientGroup": "Adults having cataract surgery",
+        "genericName": "Moxifloxacin 0.5% eye drops",
+        "dose": "1 drop",
+        "route": "Topical (eye)",
+        "frequency": "Every 5–15 min for 5 doses",
+        "duration": "Pre-operative",
+        "adjustments": [
+          "Quinolone allergy — alternative per ophthalmology"
+        ],
+        "monitoring": [
+          "Allergy"
+        ],
+        "contraindications": [
+          "Hypersensitivity to moxifloxacin, other quinolones or components"
+        ],
+        "sourceTitle": "Antibiotics Surgical Prophylaxis (MOH Protocol-015, GDOH-INP-ASPF-091)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-015.pdf",
+        "sourceEdition": "Saudi MOH, issued 22 May 2017, updated 22 May 2021, p. 3 (ophthalmic prophylaxis)",
+        "branch": "Topical surgical prophylaxis",
+        "step": "Topical antibiotic",
+        "selection": "all"
+      },
+      {
+        "indication": "Ophthalmic prophylaxis (optional addition)",
+        "patientGroup": "Adults",
+        "genericName": "Cefazolin",
+        "dose": "1–2.5 mg intracameral, or 100 mg subconjunctival",
+        "route": "Intracameral / subconjunctival",
+        "frequency": "Single dose at surgery",
+        "duration": "Single dose",
+        "adjustments": [
+          "Cephalosporin allergy"
+        ],
+        "monitoring": [
+          "Allergy, ocular inflammation"
+        ],
+        "contraindications": [
+          "Known allergy to cephalosporins"
+        ],
+        "sourceTitle": "Antibiotics Surgical Prophylaxis (MOH Protocol-015, GDOH-INP-ASPF-091)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-015.pdf",
+        "sourceEdition": "Saudi MOH, issued 22 May 2017, updated 22 May 2021, p. 3 (optional cefazolin)",
+        "branch": "Optional intracameral or subconjunctival addition",
+        "step": "Added antibiotic",
+        "selection": "all",
+        "useWhen": "Optional addition"
+      }
+    ],
+    "note": "Antibiotic regimens are from Saudi MOH Protocol-015; VTE durations from NICE NG89 with enoxaparin doses from the FDA label; contraindications from FDA labels. Check SFDA registration, hospital antibiogram and formulary.",
+    "branches": [
+      {
+        "label": "Topical surgical prophylaxis",
+        "entryCriteria": "Adult having cataract surgery"
+      },
+      {
+        "label": "Optional intracameral or subconjunctival addition",
+        "entryCriteria": "Adult having cataract surgery, with antibiotic added at the surgeon's discretion"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Referral",
+      "threshold": "Based on vision and quality of life, not acuity threshold (NICE NG77)"
+    },
+    {
+      "criterion": "Biometry",
+      "threshold": "Optical first; ultrasound if not possible"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "Ophthalmic prophylaxis (MOH Protocol-015)",
+    "columns": [
+      "Standard",
+      "Optional addition"
+    ],
+    "rows": [
+      {
+        "parameter": "Agent",
+        "values": [
+          "Moxifloxacin drops ×5",
+          "Cefazolin intracameral 1–2.5 mg or subconjunctival 100 mg"
+        ]
+      }
+    ],
+    "note": "NICE NG77 sections on prophylaxis were not reviewed in this run."
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Assess adults for cataract surgery and prepare them safely."
+    ],
+    "pitfalls": [
+      "Refusing referral on acuity alone.",
+      "Routine bloods/ECG for fit patients.",
+      "Missing other eye disease limiting outcome."
+    ],
+    "keyPoints": [
+      "Refer on quality-of-life impact.",
+      "Optical biometry and keratometry.",
+      "Minimal routine tests.",
+      "Moxifloxacin drops ×5 pre-op (MOH)."
+    ],
+    "references": [
+      {
+        "title": "NICE NG77: Cataracts in adults: management",
+        "edition": "NICE guideline, 2017",
+        "url": "https://www.nice.org.uk/guidance/ng77",
+        "locator": "Recommendations 1.1–1.3 (information, referral, biometry)"
+      },
+      {
+        "title": "NICE NG45: Routine preoperative tests for elective surgery",
+        "edition": "NICE guideline, 2016",
+        "url": "https://www.nice.org.uk/guidance/ng45",
+        "locator": "Table 1 (minor surgery)"
+      },
+      {
+        "title": "Antibiotics Surgical Prophylaxis (MOH Protocol-015, GDOH-INP-ASPF-091)",
+        "edition": "Saudi MOH, issued 22 May 2017, updated 22 May 2021",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-015.pdf",
+        "locator": "p. 3"
+      },
+      {
+        "title": "Moxifloxacin ophthalmic solution (Vigamox) prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=12053b08-7e66-c6f3-e063-6394a90a9cd9",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Cefazolin for injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00dd6da7-50a8-44c9-b2dc-7948973df392",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Post-op eye drops, warning signs (pain, redness, vision loss), driving restrictions (NICE NG77)."
+    ],
+    "lifestyleAndDiet": [
+      "Stop smoking and reduce alcohol before surgery (NICE NG180).",
+      "Stay active; prehabilitation exercises where advised."
+    ],
+    "mdtReferrals": [
+      "Ophthalmology; optometry follow-up."
+    ],
+    "dischargeCriteria": [
+      "Pain controlled with oral analgesia; eating, drinking and mobilising.",
+      "Wound satisfactory; VTE prophylaxis plan and follow-up arranged."
+    ],
+    "followUpPlan": "Post-operative review per surgical team; return immediately with fever, wound redness, calf swelling, breathlessness or chest pain."
+  }
+}

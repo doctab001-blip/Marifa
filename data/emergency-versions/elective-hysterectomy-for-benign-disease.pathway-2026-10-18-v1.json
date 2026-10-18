@@ -1,0 +1,472 @@
+{
+  "id": "78cec019-7976-489a-a4c9-fdd6f7c316c7",
+  "title": "Elective Hysterectomy for Benign Disease",
+  "specialty": "Gynaecology",
+  "authority": "MOH",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Planned Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Women considering hysterectomy for benign disease (usually heavy menstrual bleeding or fibroids): investigation, alternatives, consent, major-surgery tests, VTE and antibiotic prophylaxis. Verified against NICE NG88, NG45 (total abdominal hysterectomy = major surgery), NG89 and Saudi MOH Protocol-015. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from authoring-standard-2026-10-12-v1-live."
+    ],
+    "unverifiedSections": [
+      "Route of hysterectomy (vaginal/laparoscopic/abdominal) selection not covered",
+      "SFDA registration not checked per drug",
+      "Local antibiogram may add gentamicin (MOH p. 1)",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "78cec019-7976-489a-a4c9-fdd6f7c316c7",
+      "e2c67d81-13a9-47ec-9b59-7580d3d43d80"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Hysterectomy removes the uterus and ends menstruation and fertility. For benign disease it is offered when less invasive treatments are unsuitable or have failed, after full discussion of implications.",
+    "keyMechanisms": [
+      "Fibroids, adenomyosis and endometrial pathology cause heavy bleeding and pressure symptoms.",
+      "Chronic blood loss leads to iron-deficiency anaemia — check FBC (NICE NG88).",
+      "Fibroids increase the risk of serious operative complications such as haemorrhage and organ damage (NICE NG88)."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Heavy menstrual bleeding affecting quality of life.",
+      "Pelvic pain, pressure symptoms, intermenstrual bleeding."
+    ],
+    "physicalSigns": [
+      "Enlarged or irregular uterus on examination.",
+      "Pallor (anaemia)."
+    ],
+    "redFlags": [
+      "Postmenopausal or persistent intermenstrual bleeding — exclude malignancy",
+      "Severe anaemia",
+      "Rapidly enlarging pelvic mass"
+    ],
+    "precipitants": [
+      "Fibroids, adenomyosis",
+      "Obesity",
+      "Anaemia"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Endometrial hyperplasia/cancer",
+      "distinguishingFeatures": "Risk factors; hysteroscopy and biopsy (NICE NG88)."
+    },
+    {
+      "condition": "Adenomyosis",
+      "distinguishingFeatures": "Painful heavy periods, bulky uterus."
+    },
+    {
+      "condition": "Bleeding disorder",
+      "distinguishingFeatures": "Heavy bleeding since menarche."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Outpatient hysteroscopy ± endometrial biopsy",
+        "modalityTarget": "Suspected submucosal fibroids, polyps or endometrial pathology (NICE NG88)",
+        "targetCondition": "Cavity lesions, hyperplasia, cancer",
+        "expectedFinding": "Polyp, submucosal fibroid, atypia.",
+        "clinicalRationale": "No 'blind' biopsy (NICE NG88).",
+        "normalValue": "Normal cavity and benign histology",
+        "references": [
+          {
+            "title": "NICE NG88: Heavy menstrual bleeding: assessment and management",
+            "edition": "NICE guideline, 2018 (updated 2021), Recommendations 1.2–1.5 (investigation, LNG-IUS, endometrial ablation, hysterectomy discussion)",
+            "url": "https://www.nice.org.uk/guidance/ng88"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count",
+        "modalityTarget": "Pre-assessment (major surgery)",
+        "targetCondition": "Anaemia, thrombocytopenia",
+        "expectedFinding": "NICE NG45: Offer to all (ASA 1–4).",
+        "clinicalRationale": "Treat iron-deficiency anaemia before surgery (NICE NG180).",
+        "normalValue": "Hb 130–170 g/L (men), 120–150 g/L (women); platelets 150–400 × 10⁹/L",
+        "references": [
+          {
+            "title": "NICE NG45: Routine preoperative tests for elective surgery",
+            "edition": "NICE guideline, 2016, Tables 1–3 (tests by surgery grade and ASA grade); Recommendations 1.3–1.9",
+            "url": "https://www.nice.org.uk/guidance/ng45"
+          },
+          {
+            "title": "NICE NG180: Perioperative care in adults",
+            "edition": "NICE guideline, 2020, Recommendations 1.3 (preoperative anaemia)",
+            "url": "https://www.nice.org.uk/guidance/ng180"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Kidney function (creatinine, eGFR, electrolytes)",
+        "modalityTarget": "Pre-assessment (major surgery)",
+        "targetCondition": "Renal impairment, AKI risk",
+        "expectedFinding": "NICE NG45: ASA 1 at risk of AKI: consider; ASA 2–4: offer.",
+        "clinicalRationale": "Adjust nephrotoxic drugs and antibiotic doses.",
+        "normalValue": "eGFR 60 or more mL/min/1.73 m²; K 3.5–5.0 mmol/L",
+        "references": [
+          {
+            "title": "NICE NG45: Routine preoperative tests for elective surgery",
+            "edition": "NICE guideline, 2016, Tables 1–3 (tests by surgery grade and ASA grade); Recommendations 1.3–1.9",
+            "url": "https://www.nice.org.uk/guidance/ng45"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Resting 12-lead ECG",
+        "modalityTarget": "Pre-assessment (major surgery)",
+        "targetCondition": "Arrhythmia, ischaemia",
+        "expectedFinding": "NICE NG45: ASA 1 over 65 without ECG in 12 months: consider; ASA 2–4: offer.",
+        "clinicalRationale": "Abnormal ECG with murmur or cardiac symptoms → anaesthetist review; echo only for murmur with symptoms or heart failure signs (NICE NG45 1.9).",
+        "normalValue": "Sinus rhythm, no ischaemic changes",
+        "references": [
+          {
+            "title": "NICE NG45: Routine preoperative tests for elective surgery",
+            "edition": "NICE guideline, 2016, Tables 1–3 (tests by surgery grade and ASA grade); Recommendations 1.3–1.9",
+            "url": "https://www.nice.org.uk/guidance/ng45"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "HbA1c (known diabetes only)",
+        "modalityTarget": "If not tested in the last 3 months",
+        "targetCondition": "Glycaemic control",
+        "expectedFinding": "Raised HbA1c.",
+        "clinicalRationale": "Do not test people without diabetes (NICE NG45).",
+        "normalValue": "Individual target (e.g. below 53 mmol/mol / 7%)",
+        "references": [
+          {
+            "title": "NICE NG45: Routine preoperative tests for elective surgery",
+            "edition": "NICE guideline, 2016, Recommendations 1.5.1–1.6.2 (HbA1c only for known diabetes, if not tested in last 3 months)",
+            "url": "https://www.nice.org.uk/guidance/ng45"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Pregnancy status",
+        "modalityTarget": "Day of surgery, all women of childbearing potential",
+        "targetCondition": "Unrecognised pregnancy",
+        "expectedFinding": "Possible pregnancy.",
+        "clinicalRationale": "Test with consent if any doubt; document (NICE NG45).",
+        "normalValue": "Not pregnant",
+        "references": [
+          {
+            "title": "NICE NG45: Routine preoperative tests for elective surgery",
+            "edition": "NICE guideline, 2016, Recommendations 1.3.1–1.3.6 (pregnancy status on the day of surgery)",
+            "url": "https://www.nice.org.uk/guidance/ng45"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Pelvic ultrasound (transvaginal preferred)",
+        "modalityTarget": "Possible larger fibroids or when hysteroscopy declined (NICE NG88)",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Fibroids, adenomyosis.",
+        "clinicalRationale": "Size and location guide treatment options.",
+        "normalValue": "Normal uterus and endometrium",
+        "references": [
+          {
+            "title": "NICE NG88: Heavy menstrual bleeding: assessment and management",
+            "edition": "NICE guideline, 2018 (updated 2021), Recommendations 1.2–1.5 (investigation, LNG-IUS, endometrial ablation, hysterectomy discussion)",
+            "url": "https://www.nice.org.uk/guidance/ng88"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "alternatives",
+      "title": "Alternatives and consent",
+      "timeframe": "Before listing",
+      "actions": [
+        "Discuss LNG-IUS, medical treatment, endometrial ablation, myomectomy or uterine artery embolisation where suitable (NICE NG88).",
+        "Full discussion of hysterectomy implications, including fertility loss and higher complication risk with fibroids (NICE NG88).",
+        "Treat anaemia before surgery (NICE NG180)."
+      ]
+    },
+    {
+      "id": "assess",
+      "title": "Pre-operative assessment",
+      "timeframe": "Weeks before surgery",
+      "actions": [
+        "Grade surgery (minor, intermediate, major/complex) and ASA status; order only the tests NICE NG45 lists for that combination.",
+        "Do not routinely order chest X-ray, urine dipstick, sickle tests or HbA1c in people without diabetes (NICE NG45).",
+        "Discuss stopping smoking and reducing alcohol; manage iron-deficiency anaemia (NICE NG180).",
+        "Make an individual anticoagulant plan if the person takes anticoagulants (NICE NG45)."
+      ]
+    },
+    {
+      "id": "vte",
+      "title": "VTE prophylaxis",
+      "timeframe": "Admission to discharge",
+      "actions": [
+        "Mechanical prophylaxis from admission (stockings or intermittent pneumatic compression) until mobility returns (NICE NG89 1.14.2).",
+        "Add LMWH (or fondaparinux) for at least 7 days if VTE risk outweighs bleeding risk (NICE NG89 1.14.3) — enoxaparin 40 mg SC daily (FDA label)."
+      ]
+    },
+    {
+      "id": "abx",
+      "title": "Surgical antibiotic prophylaxis (MOH Protocol-015)",
+      "timeframe": "Within 60 min before incision",
+      "actions": [
+        "Vaginal or abdominal hysterectomy: cefazolin 2 g IV (3 g if 120 kg or more) within 60 min of incision (MOH p. 1).",
+        "Allergy: clindamycin 900 mg IV plus gentamicin 5 mg/kg single dose within 60 min (MOH p. 1).",
+        "Re-dose cefazolin every 4 h (or clindamycin every 6 h) if surgery lasts more than 4 h or blood loss exceeds 1,500 mL (MOH p. 1).",
+        "Stop prophylaxis within 24 h of the end of surgery, even with drains or catheters (MOH p. 4)."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Surgical prophylaxis (preferred)",
+        "patientGroup": "Adults",
+        "genericName": "Cefazolin",
+        "dose": "2 g (3 g if weight 120 kg or more)",
+        "route": "IV",
+        "frequency": "Single dose within 60 min before incision",
+        "duration": "Re-dose every 4 h if surgery over 4 h or blood loss over 1,500 mL; stop within 24 h",
+        "adjustments": [
+          "Adjust for renal impairment per label",
+          "Use alternative if cephalosporin allergy"
+        ],
+        "monitoring": [
+          "Allergy, infusion reactions"
+        ],
+        "contraindications": [
+          "Known allergy to cephalosporins"
+        ],
+        "sourceTitle": "Antibiotics Surgical Prophylaxis (MOH Protocol-015, GDOH-INP-ASPF-091)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-015.pdf",
+        "sourceEdition": "Saudi MOH, issued 22 May 2017, updated 22 May 2021, p. 1 (vaginal or abdominal hysterectomy)",
+        "branch": "Antibiotic prophylaxis — no beta-lactam allergy",
+        "step": "Prophylactic antibiotic",
+        "selection": "all"
+      },
+      {
+        "indication": "Surgical prophylaxis (beta-lactam allergy or preferred agent unavailable)",
+        "patientGroup": "Adults",
+        "genericName": "Clindamycin",
+        "dose": "900 mg",
+        "route": "IV",
+        "frequency": "Single dose within 60 min before incision",
+        "duration": "Re-dose every 6 h if surgery over 4 h or blood loss over 1,500 mL",
+        "adjustments": [
+          "C. difficile risk"
+        ],
+        "monitoring": [
+          "Diarrhoea"
+        ],
+        "contraindications": [
+          "Hypersensitivity to clindamycin or lincomycin"
+        ],
+        "sourceTitle": "Antibiotics Surgical Prophylaxis (MOH Protocol-015, GDOH-INP-ASPF-091)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-015.pdf",
+        "sourceEdition": "Saudi MOH, issued 22 May 2017, updated 22 May 2021, p. 1 (alternative with gentamicin)",
+        "branch": "Antibiotic prophylaxis — beta-lactam allergy",
+        "step": "Prophylactic antibiotic",
+        "selection": "all"
+      },
+      {
+        "indication": "Surgical prophylaxis in combination with clindamycin",
+        "patientGroup": "Adults",
+        "genericName": "Gentamicin",
+        "dose": "5 mg/kg",
+        "route": "IV",
+        "frequency": "Single dose within 60 min before incision",
+        "duration": "Single dose",
+        "adjustments": [
+          "Renal impairment — avoid repeat dosing; nephro/ototoxicity"
+        ],
+        "monitoring": [
+          "Renal function"
+        ],
+        "contraindications": [
+          "Hypersensitivity to gentamicin or other aminoglycosides"
+        ],
+        "sourceTitle": "Antibiotics Surgical Prophylaxis (MOH Protocol-015, GDOH-INP-ASPF-091)",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-015.pdf",
+        "sourceEdition": "Saudi MOH, issued 22 May 2017, updated 22 May 2021, p. 1 (alternative: clindamycin + gentamicin 5 mg/kg)",
+        "branch": "Antibiotic prophylaxis — beta-lactam allergy",
+        "step": "Prophylactic antibiotic",
+        "selection": "all",
+        "useWhen": "Given with clindamycin"
+      },
+      {
+        "indication": "VTE prophylaxis after abdominal or pelvic surgery (NICE: minimum 7 days)",
+        "patientGroup": "Adults with VTE risk above bleeding risk",
+        "genericName": "Enoxaparin",
+        "dose": "40 mg (first dose 2 h before surgery per label)",
+        "route": "SC",
+        "frequency": "Once daily",
+        "duration": "At least 7 days (NICE NG89)",
+        "adjustments": [
+          "CrCl below 30 mL/min: dose adjustment per label",
+          "Neuraxial anaesthesia timing (boxed warning)"
+        ],
+        "monitoring": [
+          "Platelets, bleeding, renal function"
+        ],
+        "contraindications": [
+          "Active major bleeding",
+          "Heparin-induced thrombocytopenia within 100 days or circulating HIT antibodies",
+          "Hypersensitivity to enoxaparin, heparin or pork products"
+        ],
+        "sourceTitle": "Enoxaparin sodium injection prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=014c6710-f2c4-fd1e-e063-6394a90ae525",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "branch": "VTE prophylaxis",
+        "step": "VTE prophylaxis",
+        "selection": "all"
+      }
+    ],
+    "note": "Antibiotic regimens are from Saudi MOH Protocol-015; VTE durations from NICE NG89 with enoxaparin doses from the FDA label; contraindications from FDA labels. Check SFDA registration, hospital antibiogram and formulary.",
+    "branches": [
+      {
+        "label": "Antibiotic prophylaxis — no beta-lactam allergy",
+        "entryCriteria": "Adult having elective hysterectomy without beta-lactam allergy"
+      },
+      {
+        "label": "Antibiotic prophylaxis — beta-lactam allergy",
+        "entryCriteria": "Adult having elective hysterectomy with beta-lactam allergy or cefazolin unavailable"
+      },
+      {
+        "label": "VTE prophylaxis",
+        "entryCriteria": "Adult whose VTE risk is above bleeding risk"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Surgery grade",
+      "threshold": "Total abdominal hysterectomy = major (NICE NG45)"
+    },
+    {
+      "criterion": "Endometrial sampling",
+      "threshold": "Only with diagnostic hysteroscopy (NICE NG88)"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "Antibiotic prophylaxis for hysterectomy (MOH Protocol-015)",
+    "columns": [
+      "Preferred",
+      "Alternative"
+    ],
+    "rows": [
+      {
+        "parameter": "Agents",
+        "values": [
+          "Cefazolin 2 g (3 g if 120 kg or more)",
+          "Clindamycin 900 mg + gentamicin 5 mg/kg"
+        ]
+      }
+    ],
+    "note": "Single dose within 60 min; stop within 24 h."
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Assess women for benign hysterectomy, consider alternatives and prepare safely for surgery."
+    ],
+    "pitfalls": [
+      "Blind endometrial biopsy.",
+      "Operating with untreated anaemia.",
+      "Not discussing fertility implications."
+    ],
+    "keyPoints": [
+      "Exclude malignancy first.",
+      "Offer less invasive options.",
+      "Major surgery tests: FBC, renal, ECG per ASA.",
+      "Cefazolin 2 g; allergy clindamycin + gentamicin.",
+      "VTE: mechanical + LMWH at least 7 days."
+    ],
+    "references": [
+      {
+        "title": "NICE NG88: Heavy menstrual bleeding: assessment and management",
+        "edition": "NICE guideline, 2018 (updated 2021)",
+        "url": "https://www.nice.org.uk/guidance/ng88",
+        "locator": "Recommendations 1.2–1.5 (investigation, LNG-IUS, endometrial ablation, hysterectomy discussion)"
+      },
+      {
+        "title": "NICE NG45: Routine preoperative tests for elective surgery",
+        "edition": "NICE guideline, 2016",
+        "url": "https://www.nice.org.uk/guidance/ng45",
+        "locator": "Tables 1–3 (major surgery examples: total abdominal hysterectomy)"
+      },
+      {
+        "title": "NICE NG89: Venous thromboembolism in over 16s: reducing the risk of hospital-acquired DVT or PE",
+        "edition": "NICE guideline, 2018 (updated 2019)",
+        "url": "https://www.nice.org.uk/guidance/ng89",
+        "locator": "Recommendations 1.14.1–1.14.3"
+      },
+      {
+        "title": "Antibiotics Surgical Prophylaxis (MOH Protocol-015, GDOH-INP-ASPF-091)",
+        "edition": "Saudi MOH, issued 22 May 2017, updated 22 May 2021",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-015.pdf",
+        "locator": "pp. 1, 4"
+      },
+      {
+        "title": "Cefazolin for injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00dd6da7-50a8-44c9-b2dc-7948973df392",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Clindamycin phosphate injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=05a75685-0af5-407c-ac57-e380c882b49d",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Gentamicin prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=09cf88af-59da-f147-e063-6294a90aac99",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Enoxaparin sodium injection prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=014c6710-f2c4-fd1e-e063-6394a90ae525",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Recovery time; no heavy lifting; when to resume intercourse per surgeon's advice."
+    ],
+    "lifestyleAndDiet": [
+      "Stop smoking and reduce alcohol before surgery (NICE NG180).",
+      "Stay active; prehabilitation exercises where advised."
+    ],
+    "mdtReferrals": [
+      "Gynaecology; anaesthetic pre-assessment; haematology if bleeding disorder."
+    ],
+    "dischargeCriteria": [
+      "Pain controlled with oral analgesia; eating, drinking and mobilising.",
+      "Wound satisfactory; VTE prophylaxis plan and follow-up arranged."
+    ],
+    "followUpPlan": "Post-operative review per surgical team; return immediately with fever, wound redness, calf swelling, breathlessness or chest pain."
+  }
+}

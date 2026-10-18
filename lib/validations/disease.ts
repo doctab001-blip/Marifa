@@ -74,9 +74,25 @@ export const MedicationRegimenSchema = z.object({
   monitoring: nonEmptyTextArray,
   // Optional; legacy regimens without contraindications remain valid.
   contraindications: nonEmptyTextArray.optional(),
+  // Optional pathway placement (docs/clinical-topic-authoring-standard.md, "Medicine pathways").
+  // A regimen belongs to exactly ONE branch. Inside a branch, regimens sharing a `step` are either
+  // all given (`selection: "all"`, the default) or are alternatives where only ONE is chosen
+  // (`selection: "one-of"`, with exactly one `preferred`). Legacy flat regimens remain valid.
+  branch: nonEmptyText.optional(),
+  step: nonEmptyText.optional(),
+  selection: z.enum(["all", "one-of"]).optional(),
+  preferred: z.boolean().optional(),
+  // Condition under which this option is chosen instead of the preferred one.
+  useWhen: nonEmptyText.optional(),
   sourceTitle: nonEmptyText,
   sourceUrl: z.url(),
   sourceEdition: nonEmptyText,
+}).strict();
+
+/** One clinical pathway branch of a medicine plan: who enters it and in what order its steps run. */
+export const MedicationBranchSchema = z.object({
+  label: nonEmptyText,
+  entryCriteria: nonEmptyText,
 }).strict();
 
 const TeachingReferenceSchema = z.object({
@@ -190,6 +206,8 @@ export const DiseaseDetailSchema = z
     medicationPlan: z.object({
       status: z.enum(["source-verified", "no-drug-indicated", "local-protocol-required"]),
       regimens: z.array(MedicationRegimenSchema),
+      // Optional ordered list of pathway branches (e.g. STEMI, NSTEMI). Required once any regimen sets `branch`.
+      branches: z.array(MedicationBranchSchema).min(1).optional(),
       note: nonEmptyText,
     }).strict().optional(),
     // Additive strict pathway payload. Legacy governed versions remain readable unchanged.

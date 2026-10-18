@@ -1,0 +1,455 @@
+{
+  "id": "81ec89af-5bc1-40e0-bf3b-52097c45af9f",
+  "title": "Childhood Immunisation and Catch-Up",
+  "specialty": "Paediatrics / Public Health",
+  "authority": "PHA",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Keep Well",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Children and adolescents under 18: the Saudi national immunization schedule, checking status at every contact, true contraindications, and planning catch-up for missed or unknown doses. Verified against the Saudi PHA Clinical Preventive Guideline 2023 (Table 1, national schedule), the UK Green Book Chapter 6 (contraindications) and UKHSA guidance on uncertain or incomplete immunisation status. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Investigation tiers and added tests were checked against the cited source sections on 15 Oct 2026; additions are pending clinician review.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from authoring-standard-2026-10-15-v2-investigations-live."
+    ],
+    "unverifiedSections": [
+      "Saudi MOH catch-up tables not obtained — UK principles applied",
+      "BCG timing shown at 6 months in PHA Table 1; confirm against the current MOH EPI schedule",
+      "Product-specific doses not reproduced",
+      "The expanded investigation panel is not clinically approved and remains non-current pending review.",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "81ec89af-5bc1-40e0-bf3b-52097c45af9f",
+      "9a0fc838-b66b-4888-912c-54008ec64626"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Vaccines prime adaptive immunity (antibodies and memory cells) so a later exposure is controlled before disease develops. High coverage also protects those who cannot be vaccinated. PHA recommends routine vaccination against 17 vaccine-preventable diseases.",
+    "keyMechanisms": [
+      "Inactivated and subunit vaccines need a primary series and boosters.",
+      "Live attenuated vaccines (MMR, varicella, rotavirus, OPV, BCG) give long-lasting immunity but can harm the immunosuppressed.",
+      "Maternal antibody interferes with measles vaccine early in infancy — hence timing from 9–12 months."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Check the vaccination record (Mother Health Passport / child record) at every visit.",
+      "Ask about previous reactions, immunosuppression and current illness."
+    ],
+    "physicalSigns": [
+      "Temperature if unwell; general health."
+    ],
+    "redFlags": [
+      "Anaphylaxis after vaccination — treat immediately",
+      "Fever above 38.5 °C — postpone until recovered (Green Book Ch. 6)",
+      "Child of a mother on immunosuppressive biologics in pregnancy — delay live vaccines (Green Book Ch. 6)"
+    ],
+    "precipitants": [
+      "Missed appointments",
+      "Moving between countries or schedules",
+      "Vaccine hesitancy",
+      "Chronic illness causing deferral"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Minor illness without fever",
+      "distinguishingFeatures": "Not a reason to delay (Green Book Ch. 6)."
+    },
+    {
+      "condition": "Egg allergy",
+      "distinguishingFeatures": "Not a contraindication to MMR (Green Book Ch. 6)."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Vaccination record review",
+        "modalityTarget": "Every contact",
+        "targetCondition": "Missed or undocumented doses",
+        "expectedFinding": "Gaps against the national schedule.",
+        "clinicalRationale": "Plan catch-up; unknown history = assume unimmunised (UKHSA).",
+        "normalValue": "Up to date for age (PHA Table 1)",
+        "references": [
+          {
+            "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+            "edition": "3rd edition, 2023, PDF p. 37, Table 1 (national immunization schedule, birth to 18 years)",
+            "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf"
+          },
+          {
+            "title": "Vaccination of individuals with uncertain or incomplete immunisation status (from 1 July 2025)",
+            "edition": "UK Health Security Agency, 2025, section General principles; sections by age band",
+            "url": "https://www.gov.uk/government/publications/vaccination-of-individuals-with-uncertain-or-incomplete-immunisation/vaccination-of-individuals-with-uncertain-or-incomplete-immunisation-status-from-1-july-2025"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Age, previous-dose interval and product review",
+        "modalityTarget": "At every catch-up visit",
+        "targetCondition": "Catch-up schedule requirements",
+        "expectedFinding": "A valid dose series that is incomplete, delayed or contains doses of uncertain validity",
+        "clinicalRationale": "Build an age-appropriate catch-up plan without restarting a valid series and identify doses needing specialist advice.",
+        "normalValue": "Documented doses meet the current national schedule and minimum interval rules",
+        "references": [
+          {
+            "title": "CDC General Best Practice Guidelines for Immunization: Special Situations",
+            "edition": "CDC Best Practices, Special Situations, Table 9-1 and section Persons Vaccinated Outside the United States",
+            "url": "https://www.cdc.gov/vaccines/hcp/imz-best-practices/special-situations.html"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Pre-vaccination screening questions",
+        "modalityTarget": "Before each vaccine",
+        "targetCondition": "Contraindication or precaution",
+        "expectedFinding": "Previous anaphylaxis, immunosuppression, pregnancy (adolescents), high fever.",
+        "clinicalRationale": "Avoid, defer or seek specialist advice — do not withhold without reason.",
+        "normalValue": "No contraindication",
+        "references": [
+          {
+            "title": "Immunisation against infectious disease (the Green Book), Chapter 6: Contraindications and special considerations",
+            "edition": "UK Health Security Agency, August 2017, p. 1 (introduction: who may need to avoid specific vaccines)",
+            "url": "https://assets.publishing.service.gov.uk/media/5a82ce28e5274a2e8ab5970f/Greenbook_chapter_6.pdf"
+          },
+          {
+            "title": "Immunisation against infectious disease (the Green Book), Chapter 6: Contraindications and special considerations",
+            "edition": "UK Health Security Agency, August 2017, p. 5, section Immunosuppressive therapy (live vaccines)",
+            "url": "https://assets.publishing.service.gov.uk/media/5a82ce28e5274a2e8ab5970f/Greenbook_chapter_6.pdf"
+          },
+          {
+            "title": "Immunisation against infectious disease (the Green Book), Chapter 6: Contraindications and special considerations",
+            "edition": "UK Health Security Agency, August 2017, p. 9, section Temporary deferral of immunisation",
+            "url": "https://assets.publishing.service.gov.uk/media/5a82ce28e5274a2e8ab5970f/Greenbook_chapter_6.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Targeted vaccine serology",
+        "modalityTarget": "Only for a vaccine-specific accepted indication",
+        "targetCondition": "Immunity when revaccination versus testing is a recognised option",
+        "expectedFinding": "Non-protective or indeterminate antibody result",
+        "clinicalRationale": "Do not use broad serology routinely; reserve it for defined circumstances because commercial tests do not reliably establish immunity for every vaccine.",
+        "normalValue": "Protective antibody documented for the specific antigen when an accepted correlate exists",
+        "references": [
+          {
+            "title": "CDC General Best Practice Guidelines for Immunization: Special Situations",
+            "edition": "CDC Best Practices, Special Situations, Table 9-1 and section Persons Vaccinated Outside the United States",
+            "url": "https://www.cdc.gov/vaccines/hcp/imz-best-practices/special-situations.html"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Immunocompromise and household-contact assessment",
+        "modalityTarget": "Before a live vaccine or when history suggests immunocompromise",
+        "targetCondition": "Live-vaccine safety and specialist scheduling",
+        "expectedFinding": "Primary or acquired immunodeficiency, immunosuppressive treatment, transplant status or a vulnerable household contact",
+        "clinicalRationale": "Determine whether a live vaccine is contraindicated, needs timing around treatment or requires specialist immunisation advice.",
+        "normalValue": "No condition, treatment or contact issue that changes live-vaccine use",
+        "references": [
+          {
+            "title": "CDC General Best Practice Guidelines for Immunization: Special Situations",
+            "edition": "CDC Best Practices, Special Situations, Table 9-1 and section Persons Vaccinated Outside the United States",
+            "url": "https://www.cdc.gov/vaccines/hcp/imz-best-practices/special-situations.html"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "schedule",
+      "title": "Saudi national schedule (PHA Table 1)",
+      "timeframe": "Routine",
+      "actions": [
+        "Birth: HepB.",
+        "2 and 4 months: HepB, rotavirus, DTaP, Hib, PCV, IPV.",
+        "6 months: HepB, rotavirus, DTaP, Hib, PCV, IPV, OPV, BCG.",
+        "9 months: measles, MCV4. 12 months: PCV, OPV, MCV4, MMR.",
+        "18 months: DTaP, Hib, OPV, HepA, varicella, MMR. 24 months: HepA.",
+        "4–6 years: DTaP, OPV, varicella, MMR. 11 years: Tdap; HPV (females). 12 years: HPV (females). 18 years: MCV4.",
+        "Influenza from 6 months of age (PHA Table 1)."
+      ]
+    },
+    {
+      "id": "catchup",
+      "title": "Catch-up principles (UKHSA)",
+      "timeframe": "Missed or unknown doses",
+      "actions": [
+        "No reliable history: assume unimmunised and plan a full course.",
+        "Course started but not completed: resume — do not restart or repeat doses.",
+        "Use the fewest visits and shortest timescale; usual minimum gap 4 weeks between visits.",
+        "Measles-, MMR- or varicella-containing doses given before 12 months do not count; 2 MMR doses at least 4 weeks apart.",
+        "Transfer children arriving part-way through another schedule onto the national schedule for age."
+      ]
+    },
+    {
+      "id": "contra",
+      "title": "Contraindications (Green Book Ch. 6)",
+      "timeframe": "Before each dose",
+      "actions": [
+        "Avoid a vaccine after confirmed anaphylaxis to a previous dose or component.",
+        "No live vaccines during high-dose steroids (over 2 mg/kg/day in children under 20 kg for more than 1 week) or within 3 months of stopping, and within 6 months of chemotherapy.",
+        "Postpone if febrile above 38.5 °C; minor illness is not a reason to delay."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Hepatitis B (national schedule)",
+        "patientGroup": "Infants",
+        "genericName": "Hepatitis B vaccine",
+        "dose": "1 dose per visit",
+        "route": "Per product leaflet",
+        "frequency": "Birth, 2, 4 and 6 months",
+        "duration": "4 doses in infancy",
+        "adjustments": [
+          "Dose volume and route per the SFDA-registered product leaflet — not reproduced here"
+        ],
+        "monitoring": [
+          "Observe for immediate reactions; anaphylaxis treatment available (Green Book Ch. 6)",
+          "Record in vaccination record"
+        ],
+        "contraindications": [
+          "Confirmed anaphylaxis to a previous dose or to a vaccine component (Green Book Ch. 6)",
+          "Live vaccines (MMR, varicella): avoid in significant immunodeficiency or immunosuppressive therapy, and in pregnancy (Green Book Ch. 6)",
+          "Postpone if acutely unwell with fever above 38.5 °C; minor illness is not a reason to delay (Green Book Ch. 6)"
+        ],
+        "sourceTitle": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+        "sourceUrl": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf",
+        "sourceEdition": "3rd edition, 2023, PDF p. 37, Table 1 (national immunization schedule, birth to 18 years)",
+        "branch": "Hepatitis B",
+        "step": "Vaccine",
+        "selection": "all"
+      },
+      {
+        "indication": "DTaP-containing primary series and boosters",
+        "patientGroup": "Infants and children",
+        "genericName": "DTaP (with Hib, IPV as combination per schedule)",
+        "dose": "1 dose per visit",
+        "route": "Per product leaflet",
+        "frequency": "2, 4, 6 and 18 months, and 4–6 years",
+        "duration": "5 DTaP doses; Tdap at 11 years",
+        "adjustments": [
+          "Dose volume and route per the SFDA-registered product leaflet — not reproduced here"
+        ],
+        "monitoring": [
+          "Observe for immediate reactions; anaphylaxis treatment available (Green Book Ch. 6)",
+          "Record in vaccination record"
+        ],
+        "contraindications": [
+          "Confirmed anaphylaxis to a previous dose or to a vaccine component (Green Book Ch. 6)",
+          "Live vaccines (MMR, varicella): avoid in significant immunodeficiency or immunosuppressive therapy, and in pregnancy (Green Book Ch. 6)",
+          "Postpone if acutely unwell with fever above 38.5 °C; minor illness is not a reason to delay (Green Book Ch. 6)"
+        ],
+        "sourceTitle": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+        "sourceUrl": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf",
+        "sourceEdition": "3rd edition, 2023, PDF p. 37, Table 1 (national immunization schedule, birth to 18 years)",
+        "branch": "DTaP-containing series",
+        "step": "Vaccine",
+        "selection": "all"
+      },
+      {
+        "indication": "Measles, mumps, rubella",
+        "patientGroup": "Children",
+        "genericName": "MMR (measles vaccine at 9 months)",
+        "dose": "1 dose per visit",
+        "route": "Per product leaflet",
+        "frequency": "Measles at 9 months; MMR at 12 months, 18 months and 4–6 years",
+        "duration": "Per schedule",
+        "adjustments": [
+          "Dose volume and route per the SFDA-registered product leaflet — not reproduced here",
+          "Live vaccine: not in pregnancy or immunosuppression (Green Book Ch. 6)",
+          "Doses before 12 months not counted for catch-up (UKHSA)"
+        ],
+        "monitoring": [
+          "Observe for immediate reactions; anaphylaxis treatment available (Green Book Ch. 6)",
+          "Record in vaccination record"
+        ],
+        "contraindications": [
+          "Confirmed anaphylaxis to a previous dose or to a vaccine component (Green Book Ch. 6)",
+          "Live vaccines (MMR, varicella): avoid in significant immunodeficiency or immunosuppressive therapy, and in pregnancy (Green Book Ch. 6)",
+          "Postpone if acutely unwell with fever above 38.5 °C; minor illness is not a reason to delay (Green Book Ch. 6)"
+        ],
+        "sourceTitle": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+        "sourceUrl": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf",
+        "sourceEdition": "3rd edition, 2023, PDF p. 37, Table 1 (national immunization schedule, birth to 18 years)",
+        "branch": "Measles, mumps and rubella",
+        "step": "Vaccine",
+        "selection": "all"
+      },
+      {
+        "indication": "HPV (females, per PHA Table 1)",
+        "patientGroup": "Girls",
+        "genericName": "HPV vaccine",
+        "dose": "1 dose per visit",
+        "route": "Per product leaflet",
+        "frequency": "11 and 12 years",
+        "duration": "2 doses",
+        "adjustments": [
+          "Dose volume and route per the SFDA-registered product leaflet — not reproduced here"
+        ],
+        "monitoring": [
+          "Observe for immediate reactions; anaphylaxis treatment available (Green Book Ch. 6)",
+          "Record in vaccination record"
+        ],
+        "contraindications": [
+          "Confirmed anaphylaxis to a previous dose or to a vaccine component (Green Book Ch. 6)",
+          "Live vaccines (MMR, varicella): avoid in significant immunodeficiency or immunosuppressive therapy, and in pregnancy (Green Book Ch. 6)",
+          "Postpone if acutely unwell with fever above 38.5 °C; minor illness is not a reason to delay (Green Book Ch. 6)"
+        ],
+        "sourceTitle": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+        "sourceUrl": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf",
+        "sourceEdition": "3rd edition, 2023, PDF p. 37, Table 1 (national immunization schedule, birth to 18 years)",
+        "branch": "Human papillomavirus",
+        "step": "Vaccine",
+        "selection": "all"
+      }
+    ],
+    "note": "Schedule ages from PHA Table 1. Dose volumes, routes and product choice follow the SFDA-registered product leaflet and are not reproduced. Contraindications from the Green Book Chapter 6.",
+    "branches": [
+      {
+        "label": "Hepatitis B",
+        "entryCriteria": "Infant on the national schedule"
+      },
+      {
+        "label": "DTaP-containing series",
+        "entryCriteria": "Infant or child needing the primary series and boosters"
+      },
+      {
+        "label": "Measles, mumps and rubella",
+        "entryCriteria": "Child on the national schedule"
+      },
+      {
+        "label": "Human papillomavirus",
+        "entryCriteria": "Girl on the national schedule"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Unknown history",
+      "threshold": "Assume unimmunised (UKHSA)"
+    },
+    {
+      "criterion": "Interrupted course",
+      "threshold": "Resume, do not restart (UKHSA)"
+    },
+    {
+      "criterion": "MMR",
+      "threshold": "Doses before 12 months not counted; 2 doses 4 weeks apart"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "Catch-up planning",
+    "columns": [
+      "Situation",
+      "Action (UKHSA)"
+    ],
+    "rows": [
+      {
+        "parameter": "No documented history",
+        "values": [
+          "Unknown",
+          "Assume unimmunised; full course"
+        ]
+      },
+      {
+        "parameter": "Partly completed",
+        "values": [
+          "Interrupted",
+          "Resume; do not repeat doses"
+        ]
+      },
+      {
+        "parameter": "Arrived from abroad",
+        "values": [
+          "Different schedule",
+          "Transfer to national schedule for age"
+        ]
+      }
+    ],
+    "note": "UK catch-up tables use UK vaccines; apply the principles to the Saudi schedule and check with the regional immunisation programme."
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Keep children up to date with the national schedule and close gaps safely."
+    ],
+    "pitfalls": [
+      "Restarting a course after a delay.",
+      "Deferring for a cold.",
+      "Counting MMR given before 12 months."
+    ],
+    "keyPoints": [
+      "Check status at every contact.",
+      "Follow PHA Table 1.",
+      "Resume interrupted courses — never restart.",
+      "Few true contraindications.",
+      "Minor illness is not a reason to delay."
+    ],
+    "references": [
+      {
+        "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+        "edition": "3rd edition, 2023",
+        "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf",
+        "locator": "PDF p. 37, Table 1 (national immunization schedule, birth to 18 years)"
+      },
+      {
+        "title": "Immunisation against infectious disease (the Green Book), Chapter 6: Contraindications and special considerations",
+        "edition": "UK Health Security Agency, August 2017",
+        "url": "https://assets.publishing.service.gov.uk/media/5a82ce28e5274a2e8ab5970f/Greenbook_chapter_6.pdf",
+        "locator": "p. 1 (introduction: who may need to avoid specific vaccines)"
+      },
+      {
+        "title": "Immunisation against infectious disease (the Green Book), Chapter 6: Contraindications and special considerations",
+        "edition": "UK Health Security Agency, August 2017",
+        "url": "https://assets.publishing.service.gov.uk/media/5a82ce28e5274a2e8ab5970f/Greenbook_chapter_6.pdf",
+        "locator": "p. 5, section Immunosuppressive therapy (live vaccines)"
+      },
+      {
+        "title": "Immunisation against infectious disease (the Green Book), Chapter 6: Contraindications and special considerations",
+        "edition": "UK Health Security Agency, August 2017",
+        "url": "https://assets.publishing.service.gov.uk/media/5a82ce28e5274a2e8ab5970f/Greenbook_chapter_6.pdf",
+        "locator": "p. 9, section Temporary deferral of immunisation"
+      },
+      {
+        "title": "Vaccination of individuals with uncertain or incomplete immunisation status (from 1 July 2025)",
+        "edition": "UK Health Security Agency, 2025",
+        "url": "https://www.gov.uk/government/publications/vaccination-of-individuals-with-uncertain-or-incomplete-immunisation/vaccination-of-individuals-with-uncertain-or-incomplete-immunisation-status-from-1-july-2025",
+        "locator": "section General principles; sections by age band"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Vaccines are safe; mild fever and sore arm are common.",
+      "Keep the vaccination record."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable."
+    ],
+    "mdtReferrals": [
+      "Paediatric or immunology advice for immunosuppressed children or previous anaphylaxis."
+    ],
+    "dischargeCriteria": [
+      "Not applicable — outpatient care."
+    ],
+    "followUpPlan": "Recall at each scheduled age; review catch-up plan at each visit until complete."
+  }
+}

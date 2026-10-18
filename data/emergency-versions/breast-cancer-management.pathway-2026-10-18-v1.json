@@ -1,0 +1,402 @@
+{
+  "id": "a1010000-0000-4000-8000-000000000006",
+  "title": "Breast Cancer Management",
+  "specialty": "Medical Oncology, Breast Surgery and Radiation Oncology",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "pathway-2026-10-18-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Planned Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adults with early or locally advanced breast cancer: urgent referral, triple assessment and staging, receptor testing, MDT planning of surgery, systemic therapy and radiotherapy, endocrine therapy, bone protection and follow-up. Verified against NICE NG101 (updated 2025) and NICE NG12, with Saudi screening context from the PHA 2023 guideline; endocrine doses from FDA labels. Medicine-pathway restructure on 2026-10-18: medicines regrouped into branches, steps and give-all vs choose-one options; no dose, source or clinical claim was re-checked.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from authoring-standard-2026-10-12-v1-live."
+    ],
+    "unverifiedSections": [
+      "Saudi National Cancer Center breast guideline 2019 not accessible",
+      "Chemotherapy and targeted therapy doses not reproduced",
+      "SFDA registration not checked",
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "a1010000-0000-4000-8000-000000000006",
+      "cb787815-6809-4b94-b953-6ada4c621c27"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Breast cancer is a group of epithelial cancers defined by oestrogen/progesterone receptor (ER/PR) and HER2 status. ER-positive tumours depend on oestrogen signalling; HER2-positive tumours on HER2 growth signalling; triple-negative tumours lack all three.",
+    "keyMechanisms": [
+      "Receptor status drives treatment: endocrine therapy for ER-positive, anti-HER2 therapy for HER2-positive, chemotherapy for triple-negative.",
+      "Spread to axillary nodes is the main prognostic factor in early disease.",
+      "Distant spread to bone, liver, lung and brain."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Breast lump, nipple change or discharge, skin change, axillary lump.",
+      "Screen-detected abnormality."
+    ],
+    "physicalSigns": [
+      "Breast and axillary examination; skin tethering, peau d'orange."
+    ],
+    "redFlags": [
+      "Unexplained lump 30 or over, or unilateral nipple change 50 or over — suspected cancer referral (NICE NG12 1.4.1)",
+      "Inflammatory breast changes — urgent",
+      "Bone pain, breathlessness, neurological symptoms — metastatic work-up"
+    ],
+    "precipitants": [
+      "Age",
+      "Family history; BRCA1/2",
+      "Oestrogen exposure (early menarche, late menopause, HRT)",
+      "Obesity after menopause",
+      "Alcohol"
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Fibroadenoma, cyst",
+      "distinguishingFeatures": "Triple assessment distinguishes."
+    },
+    {
+      "condition": "Breast abscess/mastitis",
+      "distinguishingFeatures": "Infection features; reassess after treatment."
+    },
+    {
+      "condition": "Fat necrosis",
+      "distinguishingFeatures": "History of trauma; imaging and biopsy."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "ER, PR and HER2 status",
+        "modalityTarget": "All invasive cancers at diagnosis (NICE 1.3.1)",
+        "targetCondition": "Tumour profile",
+        "expectedFinding": "ER/PR positive; HER2 positive; triple negative.",
+        "clinicalRationale": "Determines systemic therapy.",
+        "normalValue": "Reported quantitatively (no normal — classification test)",
+        "references": [
+          {
+            "title": "NICE NG101: Early and locally advanced breast cancer: diagnosis and management",
+            "edition": "NICE guideline, 2018 (updated April 2025), Recommendations 1.3.1–1.3.5",
+            "url": "https://www.nice.org.uk/guidance/ng101"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Mammography and breast ultrasound with core biopsy (triple assessment)",
+        "modalityTarget": "Suspected cancer",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Malignant features",
+        "clinicalRationale": "Histology confirms invasive cancer or DCIS.",
+        "normalValue": "Benign or normal",
+        "references": [
+          {
+            "title": "NICE NG12: Suspected cancer: recognition and referral",
+            "edition": "NICE guideline, 2015 (updated April 2026), Recommendations 1.4.1–1.4.3",
+            "url": "https://www.nice.org.uk/guidance/ng12"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Axillary ultrasound ± needle sampling",
+        "modalityTarget": "All with invasive cancer (NICE 1.2.1)",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Abnormal nodes",
+        "clinicalRationale": "Node positive → axillary treatment.",
+        "normalValue": "Normal axillary nodes",
+        "references": [
+          {
+            "title": "NICE NG101: Early and locally advanced breast cancer: diagnosis and management",
+            "edition": "NICE guideline, 2018 (updated April 2025), Recommendations 1.2.1–1.2.3",
+            "url": "https://www.nice.org.uk/guidance/ng101"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Breast MRI",
+        "modalityTarget": "Only if extent unclear, dense breasts, or lobular cancer for breast-conserving surgery (NICE 1.2.3)",
+        "targetCondition": "Imaging",
+        "expectedFinding": "Extent of disease",
+        "clinicalRationale": "Changes surgical plan.",
+        "normalValue": "Single lesion as on mammography",
+        "references": [
+          {
+            "title": "NICE NG101: Early and locally advanced breast cancer: diagnosis and management",
+            "edition": "NICE guideline, 2018 (updated April 2025), Recommendations 1.2.2–1.2.3",
+            "url": "https://www.nice.org.uk/guidance/ng101"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "refer",
+      "title": "Refer and diagnose",
+      "timeframe": "Primary care to breast clinic",
+      "actions": [
+        "Use NICE NG12 1.4.1–1.4.3 for urgent referral.",
+        "Triple assessment; axillary ultrasound; ER/PR/HER2 at diagnosis."
+      ]
+    },
+    {
+      "id": "mdt",
+      "title": "MDT plan",
+      "timeframe": "Before treatment",
+      "actions": [
+        "Discuss all cases with receptor status available (NICE 1.3.5).",
+        "ER-positive: surgery plus systemic therapy rather than endocrine therapy alone unless unfit (NICE 1.4.1).",
+        "Neoadjuvant chemotherapy for HER2-positive or triple-negative disease where indicated (NICE 1.8–1.9); neoadjuvant endocrine therapy an option for postmenopausal ER-positive (NICE 1.11.1)."
+      ]
+    },
+    {
+      "id": "endocrine",
+      "title": "Adjuvant endocrine therapy",
+      "timeframe": "ER-positive",
+      "actions": [
+        "Offer to all with ER-positive invasive cancer (NICE 1.11.6).",
+        "Postmenopausal, medium/high risk: aromatase inhibitor; low risk or AI intolerance: tamoxifen (NICE 1.11.8).",
+        "Premenopausal: shared decision on tamoxifen alone or with ovarian suppression, or ovarian suppression + AI (NICE 1.11.7).",
+        "Men: tamoxifen (NICE 1.11.9).",
+        "Discuss extended therapy beyond 5 years (NICE 1.11.14–1.11.15)."
+      ]
+    },
+    {
+      "id": "bone",
+      "title": "Bone protection and radiotherapy",
+      "timeframe": "After surgery",
+      "actions": [
+        "Adjuvant bisphosphonate for postmenopausal node-positive disease; consider for high-risk node-negative (NICE 1.12.1–1.12.2).",
+        "Radiotherapy technique minimising heart and lung dose; breath-hold for left-sided (NICE 1.13.1)."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Adjuvant endocrine therapy, ER-positive (premenopausal, men, or low-risk postmenopausal)",
+        "patientGroup": "Adults",
+        "genericName": "Tamoxifen",
+        "dose": "20 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "5–10 years (label)",
+        "adjustments": [
+          "VTE and endometrial cancer risk (label warnings)",
+          "Avoid in pregnancy"
+        ],
+        "monitoring": [
+          "Abnormal vaginal bleeding; VTE symptoms"
+        ],
+        "contraindications": [
+          "Hypersensitivity to tamoxifen",
+          "When used for risk reduction (high-risk women or after DCIS): concomitant warfarin or history of DVT/PE"
+        ],
+        "sourceTitle": "Tamoxifen citrate oral solution (Soltamox) prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1e6ff055-590c-41e6-9530-1fdf04cdbd02",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "branch": "Premenopausal, male or low-risk postmenopausal ER-positive",
+        "step": "Adjuvant endocrine therapy",
+        "selection": "all"
+      },
+      {
+        "indication": "Adjuvant endocrine therapy, postmenopausal ER-positive, medium/high risk",
+        "patientGroup": "Postmenopausal women",
+        "genericName": "Letrozole",
+        "dose": "2.5 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Per MDT (typically 5 years; extended per NICE 1.11.15)",
+        "adjustments": [
+          "Bone loss — assess bone health (NICE)",
+          "Not in pregnancy (label)"
+        ],
+        "monitoring": [
+          "Bone density; lipids"
+        ],
+        "contraindications": [
+          "Pregnancy",
+          "Hypersensitivity"
+        ],
+        "sourceTitle": "Letrozole tablets prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=065cc89f-3a3f-4d78-b9f6-1c32a77ceb1c",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "branch": "Postmenopausal ER-positive, medium or high risk",
+        "step": "Aromatase inhibitor",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "Adjuvant endocrine therapy, postmenopausal ER-positive, medium/high risk (alternative AI)",
+        "patientGroup": "Postmenopausal women",
+        "genericName": "Anastrozole",
+        "dose": "1 mg",
+        "route": "PO",
+        "frequency": "Once daily",
+        "duration": "Per MDT plan",
+        "adjustments": [
+          "Bone loss — assess bone health (NICE)"
+        ],
+        "monitoring": [
+          "Bone density"
+        ],
+        "contraindications": [
+          "Hypersensitivity (anaphylaxis, angioedema, urticaria reported)"
+        ],
+        "sourceTitle": "Anastrozole tablets prescribing information (US FDA label, DailyMed)",
+        "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=03586c40-eb32-45c5-beb7-6762a6b78790",
+        "sourceEdition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications), Section 2 Dosage and Administration; Section 4 Contraindications",
+        "branch": "Postmenopausal ER-positive, medium or high risk",
+        "step": "Aromatase inhibitor",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Chosen instead of letrozole"
+      }
+    ],
+    "note": "Endocrine choices from NICE NG101; doses and contraindications from FDA labels. Chemotherapy, anti-HER2 and CDK4/6 regimens and bisphosphonate doses follow the oncology protocol and are not reproduced. Check SFDA registration.",
+    "branches": [
+      {
+        "label": "Premenopausal, male or low-risk postmenopausal ER-positive",
+        "entryCriteria": "Adult with ER-positive breast cancer who is premenopausal, male, or postmenopausal at low risk"
+      },
+      {
+        "label": "Postmenopausal ER-positive, medium or high risk",
+        "entryCriteria": "Postmenopausal woman with ER-positive breast cancer at medium or high risk"
+      }
+    ]
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Postmenopausal ER+, medium/high risk",
+      "threshold": "Aromatase inhibitor (NICE 1.11.8)"
+    },
+    {
+      "criterion": "Low risk or AI intolerance",
+      "threshold": "Tamoxifen"
+    },
+    {
+      "criterion": "Adjuvant bisphosphonate",
+      "threshold": "Postmenopausal node-positive (NICE 1.12.1)"
+    },
+    {
+      "criterion": "Follow-up imaging",
+      "threshold": "Annual mammography for 5 years"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "Adjuvant endocrine therapy by group (NICE NG101)",
+    "columns": [
+      "Group",
+      "Recommended"
+    ],
+    "rows": [
+      {
+        "parameter": "Postmenopausal, medium/high risk",
+        "values": [
+          "ER+",
+          "Aromatase inhibitor"
+        ]
+      },
+      {
+        "parameter": "Premenopausal",
+        "values": [
+          "ER+",
+          "Tamoxifen ± ovarian suppression, or OFS + AI"
+        ]
+      },
+      {
+        "parameter": "Men",
+        "values": [
+          "ER+",
+          "Tamoxifen"
+        ]
+      }
+    ],
+    "note": "The Saudi national breast cancer management guideline (2019) could not be accessed — NICE used."
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Diagnose, stage and plan treatment for early and locally advanced breast cancer."
+    ],
+    "pitfalls": [
+      "Endocrine therapy alone in fit women.",
+      "Routine MRI for all.",
+      "Forgetting bone health on aromatase inhibitors."
+    ],
+    "keyPoints": [
+      "Urgent referral per NG12.",
+      "Triple assessment and axillary ultrasound.",
+      "ER/PR/HER2 for every invasive cancer.",
+      "MDT for every case.",
+      "AI for postmenopausal ER+ medium/high risk.",
+      "Annual mammography for 5 years."
+    ],
+    "references": [
+      {
+        "title": "NICE NG101: Early and locally advanced breast cancer: diagnosis and management",
+        "edition": "NICE guideline, 2018 (updated April 2025)",
+        "url": "https://www.nice.org.uk/guidance/ng101",
+        "locator": "Recommendations 1.2–1.15"
+      },
+      {
+        "title": "NICE NG12: Suspected cancer: recognition and referral",
+        "edition": "NICE guideline, 2015 (updated April 2026)",
+        "url": "https://www.nice.org.uk/guidance/ng12",
+        "locator": "Recommendations 1.4.1–1.4.3"
+      },
+      {
+        "title": "Saudi Clinical Preventive Guideline, Saudi Public Health Authority",
+        "edition": "3rd edition, 2023",
+        "url": "https://www.chi.gov.sa/en/aboutchi/cchiprograms/MedicineDocuments/Saudi%20Clinical%20Preventive.pdf",
+        "locator": "PDF p. 27, footnote 10 (mammography 40–69)"
+      },
+      {
+        "title": "Tamoxifen citrate oral solution (Soltamox) prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1e6ff055-590c-41e6-9530-1fdf04cdbd02",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Letrozole tablets prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=065cc89f-3a3f-4d78-b9f6-1c32a77ceb1c",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      },
+      {
+        "title": "Anastrozole tablets prescribing information (US FDA label, DailyMed)",
+        "edition": "Accessed via openFDA 12 Oct 2026; Section 2 (Dosage and Administration) and Section 4 (Contraindications)",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=03586c40-eb32-45c5-beb7-6762a6b78790",
+        "locator": "Section 2 Dosage and Administration; Section 4 Contraindications"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Side effects of endocrine therapy; adherence over years."
+    ],
+    "lifestyleAndDiet": [
+      "Physical activity and healthy weight after treatment (NICE 1.16)."
+    ],
+    "mdtReferrals": [
+      "Breast MDT; genetics if family history; lymphoedema service."
+    ],
+    "dischargeCriteria": [
+      "Written care plan with named MDT contact (NICE 1.15)."
+    ],
+    "followUpPlan": "Annual mammography for 5 years after treatment (not ipsilateral after mastectomy); no routine ultrasound or MRI surveillance (NICE 1.15.1–1.15.3)."
+  }
+}
