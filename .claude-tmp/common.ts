@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import { DiseaseDetailSchema, type DiseaseDetail } from "../lib/validations/disease";
-export const DATE = "2026-10-14";
+export const DATE = process.env.CLINICAL_DATE ?? "2026-10-14";
 export const VERSION = process.env.CLINICAL_VERSION ?? "authoring-standard-2026-10-14-v2-investigations";
 const REPO = new URL("../data/emergency-versions/", import.meta.url).pathname;
 export type Ref = { title: string; url: string };
@@ -65,7 +65,7 @@ export function build(s: Spec, cat: { id: string; title: string; specialty: stri
   if (!guide) throw new Error(`Teaching guide missing for ${s.key}`);
   return DiseaseDetailSchema.parse({
     id: cat.id, title: cat.title, specialty: cat.specialty, authority: s.authority, status: "under_review", version: VERSION, lastReviewed: DATE, pillar: s.pillar, clinicalReviewStatus: "pending",
-    evidenceAudit: { checkedOn: DATE, status: "incomplete", scope: s.scope, findings: ["Every dose, threshold and timing was checked against the cited source section on 14 Oct 2026.", "Normal values are typical adult reference ranges; laboratories differ."], unverifiedSections: s.unverified, medscapeStatus: "unavailable", originalVersionIds: [cat.id] },
+    evidenceAudit: { checkedOn: DATE, status: "incomplete", scope: s.scope, findings: [`Every dose, threshold and timing was checked against the cited source section on ${DATE}.`, "Normal values are typical adult reference ranges; laboratories differ."], unverifiedSections: s.unverified, medscapeStatus: "unavailable", originalVersionIds: [cat.id] },
     pathophysiology: { summary: s.mech.join(" "), keyMechanisms: s.mech, ...(guide.patho ? { references: guide.patho } : {}) },
     presentation: { symptoms: s.symptoms, physicalSigns: s.signs, redFlags: s.red, precipitants: s.precip },
     differentials: s.diffs, diagnosticCriteria: s.criteria,
