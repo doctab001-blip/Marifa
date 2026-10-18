@@ -1,0 +1,264 @@
+{
+  "id": "ed046598-0942-48b5-99d6-e46351253174",
+  "title": "Coeliac Disease: Serology Testing Pathway",
+  "specialty": "Gastroenterology / Primary Care",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-18-tier5a-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Planned Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adult or child with suspected coeliac disease: who to test, immunoglobulin A (IgA) tissue transglutaminase (tTG) and total IgA, gluten intake before testing, biopsy referral, using NICE NG20.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 2026-10-18.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Human leukocyte antigen (HLA) testing criteria in children and biopsy-free diagnosis thresholds were not captured.",
+      "No Saudi guideline was opened.",
+      "Source pages were read through automated page extraction rather than page-by-page in the original documents, so each figure should be spot-checked against the source during clinical review."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "ed046598-0942-48b5-99d6-e46351253174"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "IgA tTG with total IgA is the first-choice test; IgA endomysial antibody (EMA) is used if IgA tTG is weakly positive. Testing is accurate only on a gluten-containing diet: gluten at more than one meal daily for at least 6 weeks before testing. IgA deficiency is total IgA below 0.07 g per litre; IgG-based tests are considered only then. Biopsy is offered after an unambiguously positive IgA tTG or a weakly positive IgA tTG with positive IgA EMA.",
+    "keyMechanisms": [
+      "IgA tTG with total IgA is the first-choice test; IgA endomysial antibody (EMA) is used if IgA tTG is weakly positive.",
+      "Testing is accurate only on a gluten-containing diet: gluten at more than one meal daily for at least 6 weeks before testing.",
+      "IgA deficiency is total IgA below 0.07 g per litre; IgG-based tests are considered only then.",
+      "Biopsy is offered after an unambiguously positive IgA tTG or a weakly positive IgA tTG with positive IgA EMA."
+    ],
+    "references": [
+      {
+        "title": "NICE NG20: Coeliac disease: recognition, assessment and management",
+        "edition": "NICE NG20, Recommendation 1.1.1 to 1.3.3",
+        "url": "https://www.nice.org.uk/guidance/ng20/chapter/recommendations"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Persistent unexplained gastrointestinal symptoms.",
+      "Faltering growth.",
+      "Unexplained weight loss."
+    ],
+    "physicalSigns": [
+      "Not covered."
+    ],
+    "redFlags": [
+      "Cannot or will not reintroduce gluten: refer to a gastrointestinal specialist."
+    ],
+    "precipitants": [
+      "Type 1 diabetes, autoimmune thyroid disease, first-degree relative with coeliac disease."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "IgA deficiency",
+      "distinguishingFeatures": "Total IgA below 0.07 g per litre makes IgA tTG unreliable."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "IgA tissue transglutaminase",
+        "modalityTarget": "Coeliac antibody",
+        "targetCondition": "Coeliac disease",
+        "expectedFinding": "Positive",
+        "clinicalRationale": "First-choice test with total IgA.",
+        "normalValue": "Negative",
+        "references": [
+          {
+            "title": "NICE NG20: Coeliac disease: recognition, assessment and management",
+            "edition": "NICE NG20, Recommendation 1.2.2",
+            "url": "https://www.nice.org.uk/guidance/ng20/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Total IgA",
+        "modalityTarget": "Immunoglobulin A",
+        "targetCondition": "IgA deficiency",
+        "expectedFinding": "Below 0.07 g per litre",
+        "clinicalRationale": "Detects false-negative IgA-based tests; use a specific total IgA assay.",
+        "normalValue": "Total IgA at or above 0.07 g per litre",
+        "references": [
+          {
+            "title": "NICE NG20: Coeliac disease: recognition, assessment and management",
+            "edition": "NICE NG20, Recommendation 1.2.2 and 1.2.4",
+            "url": "https://www.nice.org.uk/guidance/ng20/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "IgA endomysial antibody",
+        "modalityTarget": "Coeliac antibody",
+        "targetCondition": "Weakly positive IgA tTG",
+        "expectedFinding": "Positive",
+        "clinicalRationale": "Used when IgA tTG is weakly positive.",
+        "normalValue": "Negative",
+        "references": [
+          {
+            "title": "NICE NG20: Coeliac disease: recognition, assessment and management",
+            "edition": "NICE NG20, Recommendation 1.2.2",
+            "url": "https://www.nice.org.uk/guidance/ng20/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Endoscopic intestinal biopsy",
+        "modalityTarget": "Duodenal histology",
+        "targetCondition": "Coeliac disease confirmation",
+        "expectedFinding": "Villous changes",
+        "clinicalRationale": "Confirms or excludes disease after positive serology.",
+        "normalValue": "Normal histology",
+        "references": [
+          {
+            "title": "NICE NG20: Coeliac disease: recognition, assessment and management",
+            "edition": "NICE NG20, Recommendation 1.3.1",
+            "url": "https://www.nice.org.uk/guidance/ng20/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Review of gluten intake before testing",
+        "modalityTarget": "Dietary history",
+        "targetCondition": "Test validity",
+        "expectedFinding": "Gluten-free diet already started",
+        "clinicalRationale": "Do not start a gluten-free diet before diagnosis is confirmed.",
+        "normalValue": "Gluten at more than one meal daily for 6 weeks",
+        "references": [
+          {
+            "title": "NICE NG20: Coeliac disease: recognition, assessment and management",
+            "edition": "NICE NG20, Recommendation 1.1.3 and 1.1.4",
+            "url": "https://www.nice.org.uk/guidance/ng20/chapter/recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Paediatric specialist review for children with positive serology",
+        "modalityTarget": "Children's assessment",
+        "targetCondition": "Paediatric coeliac disease",
+        "expectedFinding": "Positive tests",
+        "clinicalRationale": "Children go to a paediatric gastroenterologist; HLA testing or biopsy may follow.",
+        "normalValue": "Negative tests",
+        "references": [
+          {
+            "title": "NICE NG20: Coeliac disease: recognition, assessment and management",
+            "edition": "NICE NG20, Recommendation 1.3.2",
+            "url": "https://www.nice.org.uk/guidance/ng20/chapter/recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "who",
+      "title": "Choose who to test",
+      "timeframe": "Assessment",
+      "actions": [
+        "Offer testing for persistent unexplained gastrointestinal symptoms, faltering growth, unexplained weight loss, type 1 diabetes, autoimmune thyroid disease and first-degree relatives; consider testing for bone, neurological, fertility, liver or dental features."
+      ]
+    },
+    {
+      "id": "gluten",
+      "title": "Confirm gluten intake",
+      "timeframe": "Before testing",
+      "actions": [
+        "Gluten at more than one meal daily for at least 6 weeks; do not start a gluten-free diet."
+      ]
+    },
+    {
+      "id": "serology",
+      "title": "Send serology",
+      "timeframe": "Same visit",
+      "actions": [
+        "Total IgA and IgA tTG; IgA EMA if IgA tTG weakly positive."
+      ]
+    },
+    {
+      "id": "biopsy",
+      "title": "Refer for biopsy",
+      "timeframe": "If positive",
+      "actions": [
+        "Adults and young people: endoscopic biopsy; children: paediatric gastroenterologist."
+      ]
+    },
+    {
+      "id": "negative",
+      "title": "If negative but suspicion remains",
+      "timeframe": "After results",
+      "actions": [
+        "Refer to a gastrointestinal specialist."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "no-drug-indicated",
+    "regimens": [],
+    "note": "NICE NG20 does not mention drug treatment for coeliac disease; management is gluten-free diet, with calcium or vitamin D supplements if intake is insufficient."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Gluten before testing",
+      "threshold": "More than one meal daily for at least 6 weeks."
+    },
+    {
+      "criterion": "IgA deficiency",
+      "threshold": "Total IgA below 0.07 g per litre."
+    }
+  ],
+  "teaching": {
+    "scope": "Adult or child with suspected coeliac disease: who to test, immunoglobulin A (IgA) tissue transglutaminase (tTG) and total IgA, gluten intake before testing, biopsy referral, using NICE NG20.",
+    "learningObjectives": [
+      "Test correctly on gluten.",
+      "Refer for confirmatory biopsy."
+    ],
+    "pitfalls": [
+      "Starting gluten-free diet before diagnosis.",
+      "Using IgA tTG alone in IgA deficiency."
+    ],
+    "keyPoints": [
+      "IgA tTG with total IgA first.",
+      "Gluten at more than one meal for 6 weeks."
+    ],
+    "references": [
+      {
+        "title": "NICE NG20: Coeliac disease: recognition, assessment and management",
+        "edition": "NICE NG20, Recommendation 1.1.1 to 1.3.3",
+        "url": "https://www.nice.org.uk/guidance/ng20/chapter/recommendations",
+        "locator": "Recommendation 1.1.1 to 1.3.3"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain why gluten must be eaten until testing is complete."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable before diagnosis."
+    ],
+    "mdtReferrals": [
+      "Primary care; gastroenterology; dietitian."
+    ],
+    "dischargeCriteria": [
+      "Not applicable."
+    ],
+    "followUpPlan": "Specialist review of negative results when suspicion persists."
+  }
+}

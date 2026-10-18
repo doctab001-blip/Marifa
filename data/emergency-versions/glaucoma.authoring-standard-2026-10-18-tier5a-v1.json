@@ -1,0 +1,268 @@
+{
+  "id": "d6fc0be0-96eb-457a-8328-811ed6f7bd37",
+  "title": "Chronic Glaucoma: Pressure Monitoring and Drop Adherence",
+  "specialty": "Ophthalmology",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-18-tier5a-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adult with ocular hypertension or chronic open-angle glaucoma (COAG): intraocular pressure (IOP) threshold, monitoring intervals, first-line laser or generic prostaglandin analogue, switching, preservative-free drops, and adherence and technique, using NICE NG81.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 2026-10-18.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "NICE NG81 as extracted gives no drug doses, dose frequencies or numeric target IOP beyond the 24 mmHg threshold; follow product information.",
+      "No formal contraindication list was in the extract.",
+      "No Saudi ophthalmology guideline was opened.",
+      "Source pages were read through automated page extraction rather than page-by-page in the original documents, so each figure should be spot-checked against the source during clinical review.",
+      "The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "d6fc0be0-96eb-457a-8328-811ed6f7bd37"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Referral is advised if IOP is 24 mmHg or more on Goldmann-type applanation tonometry after repeat measures. For newly diagnosed ocular hypertension with IOP of 24 mmHg or more, and for newly diagnosed non-advanced COAG, 360-degree selective laser trabeculoplasty (SLT) is offered first; a generic prostaglandin analogue is offered if SLT is declined, unsuitable or as add-on. If a generic prostaglandin analogue is not tolerated, the first choice is an alternative generic prostaglandin analogue, then a beta-blocker. Escalation is offered only to people with satisfactory adherence and eye drop technique, so technique is demonstrated and observed when drops are first prescribed.",
+    "keyMechanisms": [
+      "Referral is advised if IOP is 24 mmHg or more on Goldmann-type applanation tonometry after repeat measures.",
+      "For newly diagnosed ocular hypertension with IOP of 24 mmHg or more, and for newly diagnosed non-advanced COAG, 360-degree selective laser trabeculoplasty (SLT) is offered first; a generic prostaglandin analogue is offered if SLT is declined, unsuitable or as add-on.",
+      "If a generic prostaglandin analogue is not tolerated, the first choice is an alternative generic prostaglandin analogue, then a beta-blocker.",
+      "Escalation is offered only to people with satisfactory adherence and eye drop technique, so technique is demonstrated and observed when drops are first prescribed."
+    ],
+    "references": [
+      {
+        "title": "NICE NG81: Glaucoma: diagnosis and management",
+        "edition": "NICE NG81, Recommendation 1.1.1 to 1.5.13",
+        "url": "https://www.nice.org.uk/guidance/ng81/chapter/recommendations"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Often asymptomatic in early disease."
+    ],
+    "physicalSigns": [
+      "Raised IOP, optic nerve changes and visual field loss."
+    ],
+    "redFlags": [
+      "IOP that cannot be lowered sufficiently: refer to a consultant ophthalmologist."
+    ],
+    "precipitants": [
+      "Not covered."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Pigment dispersion syndrome",
+      "distinguishingFeatures": "SLT is not offered first-line; use a generic prostaglandin analogue."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Goldmann-type applanation tonometry",
+        "modalityTarget": "Intraocular pressure",
+        "targetCondition": "Ocular hypertension and COAG",
+        "expectedFinding": "IOP 24 mmHg or more",
+        "clinicalRationale": "Threshold for referral and SLT in newly diagnosed ocular hypertension.",
+        "normalValue": "IOP below 24 mmHg",
+        "references": [
+          {
+            "title": "NICE NG81: Glaucoma: diagnosis and management",
+            "edition": "NICE NG81, Recommendation 1.1.1 and 1.1.5",
+            "url": "https://www.nice.org.uk/guidance/ng81/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Central visual field assessment by standard automated perimetry",
+        "modalityTarget": "Visual field",
+        "targetCondition": "COAG progression",
+        "expectedFinding": "Field loss or progression",
+        "clinicalRationale": "Offered before referral and at monitoring.",
+        "normalValue": "Normal visual field",
+        "references": [
+          {
+            "title": "NICE NG81: Glaucoma: diagnosis and management",
+            "edition": "NICE NG81, Recommendation 1.1.1",
+            "url": "https://www.nice.org.uk/guidance/ng81/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Optic nerve and fundus assessment with optical coherence tomography (OCT)",
+        "modalityTarget": "Optic nerve head",
+        "targetCondition": "COAG",
+        "expectedFinding": "Glaucomatous optic nerve changes",
+        "clinicalRationale": "Stereoscopic slit lamp biomicroscopy plus OCT or optic nerve head image if available.",
+        "normalValue": "Normal optic nerve",
+        "references": [
+          {
+            "title": "NICE NG81: Glaucoma: diagnosis and management",
+            "edition": "NICE NG81, Recommendation 1.1.1",
+            "url": "https://www.nice.org.uk/guidance/ng81/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Gonioscopy",
+        "modalityTarget": "Anterior chamber angle",
+        "targetCondition": "Angle closure versus open angle",
+        "expectedFinding": "Narrow or closed angle",
+        "clinicalRationale": "Alternative: van Herick test or OCT.",
+        "normalValue": "Open angle",
+        "references": [
+          {
+            "title": "NICE NG81: Glaucoma: diagnosis and management",
+            "edition": "NICE NG81, Recommendation 1.1.1",
+            "url": "https://www.nice.org.uk/guidance/ng81/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Eye drop technique and adherence check",
+        "modalityTarget": "Adherence",
+        "targetCondition": "Treatment failure",
+        "expectedFinding": "Poor adherence or technique",
+        "clinicalRationale": "Escalation only with satisfactory adherence and technique.",
+        "normalValue": "Satisfactory adherence",
+        "references": [
+          {
+            "title": "NICE NG81: Glaucoma: diagnosis and management",
+            "edition": "NICE NG81, Recommendation 1.4.21 and 1.4.22",
+            "url": "https://www.nice.org.uk/guidance/ng81/chapter/recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Check for comorbidities, allergies and drug interactions before drops",
+        "modalityTarget": "Safety",
+        "targetCondition": "Contraindication to drops",
+        "expectedFinding": "Relevant comorbidity or interaction",
+        "clinicalRationale": "NICE requires this check before pharmacological treatment.",
+        "normalValue": "None",
+        "references": [
+          {
+            "title": "NICE NG81: Glaucoma: diagnosis and management",
+            "edition": "NICE NG81, Recommendation 1.4.2",
+            "url": "https://www.nice.org.uk/guidance/ng81/chapter/recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "refer",
+      "title": "Refer for diagnosis",
+      "timeframe": "On raised IOP",
+      "actions": [
+        "Refer when IOP is 24 mmHg or more after repeat measures, after the baseline tests."
+      ]
+    },
+    {
+      "id": "first",
+      "title": "First-line treatment",
+      "timeframe": "At diagnosis",
+      "actions": [
+        "Offer 360-degree SLT for ocular hypertension with IOP 24 mmHg or more or non-advanced COAG; generic prostaglandin analogue if SLT declined, unsuitable or as add-on."
+      ]
+    },
+    {
+      "id": "technique",
+      "title": "Teach drop technique",
+      "timeframe": "At first prescription",
+      "actions": [
+        "Demonstrate correct technique and observe the person using it; ask about adherence and side effects at each assessment."
+      ]
+    },
+    {
+      "id": "switch",
+      "title": "Switch or add",
+      "timeframe": "If intolerance or poor control",
+      "actions": [
+        "Alternative generic prostaglandin analogue, then beta-blocker, then carbonic anhydrase inhibitor, sympathomimetic or miotic; consider preservative-free drops for allergy or ocular surface disease."
+      ]
+    },
+    {
+      "id": "monitor",
+      "title": "Monitor",
+      "timeframe": "Per interval tables",
+      "actions": [
+        "Use NG81 monitoring tables: 1 to 4 months if IOP not controlled; 12 to 18 months for stable low-risk COAG."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [],
+    "note": "NICE NG81 names generic prostaglandin analogues, beta-blockers, carbonic anhydrase inhibitors, sympathomimetics, miotics and latanoprost-netarsudil, and preservative-free preparations, but the extract gives no doses or frequencies. Follow product information and the ophthalmology protocol. The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Referral threshold",
+      "threshold": "IOP 24 mmHg or more after repeat measurement."
+    },
+    {
+      "criterion": "COAG monitoring, no progression, low risk, IOP controlled",
+      "threshold": "Next assessment in 12 to 18 months."
+    },
+    {
+      "criterion": "COAG, uncertain or progressing, IOP not controlled",
+      "threshold": "Next assessment in 1 to 2 months."
+    }
+  ],
+  "teaching": {
+    "scope": "Adult with ocular hypertension or chronic open-angle glaucoma (COAG): intraocular pressure (IOP) threshold, monitoring intervals, first-line laser or generic prostaglandin analogue, switching, preservative-free drops, and adherence and technique, using NICE NG81.",
+    "learningObjectives": [
+      "Apply IOP threshold, laser and drug ladder.",
+      "Support adherence."
+    ],
+    "pitfalls": [
+      "Escalating therapy without checking technique.",
+      "Treating without lifetime risk of visual impairment."
+    ],
+    "keyPoints": [
+      "IOP 24 mmHg or more triggers referral.",
+      "Escalation requires satisfactory adherence."
+    ],
+    "references": [
+      {
+        "title": "NICE NG81: Glaucoma: diagnosis and management",
+        "edition": "NICE NG81, Recommendation 1.1.1 to 1.5.13",
+        "url": "https://www.nice.org.uk/guidance/ng81/chapter/recommendations",
+        "locator": "Recommendation 1.1.1 to 1.5.13"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Teach eye drop technique and why daily adherence matters."
+    ],
+    "lifestyleAndDiet": [
+      "Not covered."
+    ],
+    "mdtReferrals": [
+      "Optometry; ophthalmology; primary care."
+    ],
+    "dischargeCriteria": [
+      "Not applicable; lifelong monitoring."
+    ],
+    "followUpPlan": "Per NG81 tables from 1 to 4 months to 12 to 18 months depending on control and progression."
+  }
+}

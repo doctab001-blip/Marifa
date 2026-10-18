@@ -1,0 +1,273 @@
+{
+  "id": "73188f40-a4dc-4a19-8682-185d82640bfc",
+  "title": "Hepatitis B: Screening and Serology Interpretation",
+  "specialty": "Hepatology / Infectious Diseases",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-18-tier5a-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adult or child who is hepatitis B surface antigen (HBsAg) positive: baseline tests, serology interpretation, hepatitis B virus (HBV) DNA and alanine aminotransferase (ALT) thresholds, fibrosis assessment, specialist referral, antiviral choice and monitoring, using NICE CG165.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 2026-10-18.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "NICE CG165 as extracted gives no antiviral doses; peginterferon, tenofovir and entecavir doses come from product information.",
+      "Vaccination recommendations and the full contraindication list were not in the extract.",
+      "Public health screening of at-risk populations is covered in NICE guidance on hepatitis B and C testing, which was not opened.",
+      "No Saudi guideline was opened; the Saudi MOH screening programme was not checked.",
+      "Source pages were read through automated page extraction rather than page-by-page in the original documents, so each figure should be spot-checked against the source during clinical review.",
+      "The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "73188f40-a4dc-4a19-8682-185d82640bfc"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Chronic hepatitis B is HBsAg persisting for 6 months or more after acute infection; HBsAg seroconversion (anti-HBs appearing) signifies clearance. Higher HBV DNA is associated with greater risk of liver disease and hepatocellular carcinoma (HCC); thresholds are above 2,000 IU/ml and above 20,000 IU/ml. Abnormal ALT is 30 IU/L or more in males and 19 IU/L or more in females. Transient elastography is the initial test for liver disease in newly referred adults: 11 kPa or more is very likely cirrhosis; 6 to 10 kPa merits consideration of biopsy.",
+    "keyMechanisms": [
+      "Chronic hepatitis B is HBsAg persisting for 6 months or more after acute infection; HBsAg seroconversion (anti-HBs appearing) signifies clearance.",
+      "Higher HBV DNA is associated with greater risk of liver disease and hepatocellular carcinoma (HCC); thresholds are above 2,000 IU/ml and above 20,000 IU/ml.",
+      "Abnormal ALT is 30 IU/L or more in males and 19 IU/L or more in females.",
+      "Transient elastography is the initial test for liver disease in newly referred adults: 11 kPa or more is very likely cirrhosis; 6 to 10 kPa merits consideration of biopsy."
+    ],
+    "references": [
+      {
+        "title": "NICE CG165: Hepatitis B (chronic): diagnosis and management",
+        "edition": "NICE CG165, Recommendation 1.2.1 to 1.5.43",
+        "url": "https://www.nice.org.uk/guidance/cg165/chapter/Recommendations"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Often asymptomatic; presentation not covered in the extract."
+    ],
+    "physicalSigns": [
+      "Decompensation: ascites, encephalopathy, gastrointestinal haemorrhage."
+    ],
+    "redFlags": [
+      "Decompensated liver disease needs immediate referral."
+    ],
+    "precipitants": [
+      "Immunosuppression can reactivate hepatitis B: monthly HBV DNA monitoring and prophylaxis if DNA becomes detectable in HBsAg-negative, anti-HBc-positive, anti-HBs-negative patients."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Co-infection with hepatitis C, hepatitis D or HIV",
+      "distinguishingFeatures": "Recommendations 1.5.8 to 1.5.43 do not apply; test for anti-HCV, anti-HDV and anti-HIV."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "HBsAg, hepatitis B e antigen and antibody (HBeAg, anti-HBe), anti-HBc IgM",
+        "modalityTarget": "Hepatitis B serology",
+        "targetCondition": "Chronic hepatitis B and phase",
+        "expectedFinding": "HBsAg positive for 6 months or more",
+        "clinicalRationale": "Defines chronic infection and phase.",
+        "normalValue": "HBsAg negative",
+        "references": [
+          {
+            "title": "NICE CG165: Hepatitis B (chronic): diagnosis and management",
+            "edition": "NICE CG165, Recommendation 1.2.1",
+            "url": "https://www.nice.org.uk/guidance/cg165/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "HBV DNA",
+        "modalityTarget": "Viral load",
+        "targetCondition": "Treatment eligibility",
+        "expectedFinding": "Above 2,000 IU/ml, above 20,000 IU/ml",
+        "clinicalRationale": "Thresholds for treatment.",
+        "normalValue": "Below 2,000 IU/ml",
+        "references": [
+          {
+            "title": "NICE CG165: Hepatitis B (chronic): diagnosis and management",
+            "edition": "NICE CG165, Recommendation 1.2.1",
+            "url": "https://www.nice.org.uk/guidance/cg165/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Alanine aminotransferase",
+        "modalityTarget": "Liver enzyme",
+        "targetCondition": "Hepatic inflammation",
+        "expectedFinding": "30 IU/L or more (males), 19 IU/L or more (females)",
+        "clinicalRationale": "Abnormal ALT plus high HBV DNA triggers treatment.",
+        "normalValue": "Below 30 IU/L (males), below 19 IU/L (females)",
+        "references": [
+          {
+            "title": "NICE CG165: Hepatitis B (chronic): diagnosis and management",
+            "edition": "NICE CG165, Recommendation 1.5",
+            "url": "https://www.nice.org.uk/guidance/cg165/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Transient elastography",
+        "modalityTarget": "Liver stiffness",
+        "targetCondition": "Fibrosis or cirrhosis",
+        "expectedFinding": "11 kPa or more very likely cirrhosis; 6 to 10 kPa consider biopsy",
+        "clinicalRationale": "Initial test for liver disease in newly referred adults.",
+        "normalValue": "Below 6 kPa",
+        "references": [
+          {
+            "title": "NICE CG165: Hepatitis B (chronic): diagnosis and management",
+            "edition": "NICE CG165, Recommendation 1.3",
+            "url": "https://www.nice.org.uk/guidance/cg165/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Liver ultrasound and alpha-fetoprotein",
+        "modalityTarget": "Hepatocellular carcinoma",
+        "targetCondition": "Surveillance",
+        "expectedFinding": "Lesion or raised alpha-fetoprotein",
+        "clinicalRationale": "Six-monthly in significant fibrosis or cirrhosis.",
+        "normalValue": "No lesion",
+        "references": [
+          {
+            "title": "NICE CG165: Hepatitis B (chronic): diagnosis and management",
+            "edition": "NICE CG165, Recommendation 1.2.1",
+            "url": "https://www.nice.org.uk/guidance/cg165/chapter/Recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Anti-HCV, anti-HDV and anti-HIV",
+        "modalityTarget": "Co-infection serology",
+        "targetCondition": "Co-infection",
+        "expectedFinding": "Positive",
+        "clinicalRationale": "Co-infection changes treatment pathway.",
+        "normalValue": "Negative",
+        "references": [
+          {
+            "title": "NICE CG165: Hepatitis B (chronic): diagnosis and management",
+            "edition": "NICE CG165, Recommendation 1.2.1",
+            "url": "https://www.nice.org.uk/guidance/cg165/chapter/Recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "baseline",
+      "title": "Baseline tests in primary care",
+      "timeframe": "On HBsAg positive result",
+      "actions": [
+        "Arrange HBeAg and anti-HBe, HBV DNA, anti-HBc IgM, anti-HCV, anti-HDV, anti-HIV, anti-HAV, liver panel, full blood count, prothrombin time, liver ultrasound and alpha-fetoprotein."
+      ]
+    },
+    {
+      "id": "refer",
+      "title": "Refer all HBsAg-positive adults",
+      "timeframe": "Promptly",
+      "actions": [
+        "Refer to a hepatologist, gastroenterologist or infectious disease specialist with test results; immediate referral if decompensated; children to a paediatric hepatologist."
+      ]
+    },
+    {
+      "id": "stage",
+      "title": "Assess fibrosis",
+      "timeframe": "At specialist assessment",
+      "actions": [
+        "Transient elastography first; biopsy for 6 to 10 kPa; treat without biopsy at 11 kPa or more."
+      ]
+    },
+    {
+      "id": "treat",
+      "title": "Treat if criteria met",
+      "timeframe": "Specialist",
+      "actions": [
+        "Peginterferon alfa-2a for 48 weeks first line in compensated disease; tenofovir or entecavir as second line or in decompensated disease."
+      ]
+    },
+    {
+      "id": "monitor",
+      "title": "Monitor",
+      "timeframe": "Per phase",
+      "actions": [
+        "Untreated immune-tolerant: ALT every 24 weeks; inactive disease: ALT and HBV DNA every 48 weeks; HCC surveillance every 6 months in significant fibrosis."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [],
+    "note": "NICE CG165 sets peginterferon alfa-2a for 48 weeks as first line in compensated disease (stop consideration at 24 weeks), tenofovir disoproxil and entecavir as second-line or decompensated options with tenofovir dose reduced in renal impairment, adefovir not offered, and tenofovir for women with HBV DNA above 10^7 IU/ml in the third trimester, but the extract gives no doses. Antivirals are specialist prescriptions per the hepatology protocol. The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Treat, age 30 or older",
+      "threshold": "HBV DNA above 2,000 IU/ml and abnormal ALT on 2 tests 3 months apart."
+    },
+    {
+      "criterion": "Treat regardless of age or fibrosis",
+      "threshold": "HBV DNA above 20,000 IU/ml with abnormal ALT."
+    },
+    {
+      "criterion": "Cirrhosis",
+      "threshold": "Treat if HBV DNA detectable, regardless of HBeAg, DNA or ALT levels."
+    },
+    {
+      "criterion": "Hepatocellular carcinoma surveillance",
+      "threshold": "Six-monthly ultrasound and alpha-fetoprotein for significant fibrosis or cirrhosis."
+    }
+  ],
+  "teaching": {
+    "scope": "Adult or child who is hepatitis B surface antigen (HBsAg) positive: baseline tests, serology interpretation, hepatitis B virus (HBV) DNA and alanine aminotransferase (ALT) thresholds, fibrosis assessment, specialist referral, antiviral choice and monitoring, using NICE CG165.",
+    "learningObjectives": [
+      "Interpret serology and viral load.",
+      "Refer and stage appropriately."
+    ],
+    "pitfalls": [
+      "Missing co-infection testing.",
+      "Ignoring reactivation risk with immunosuppression."
+    ],
+    "keyPoints": [
+      "Treat on HBV DNA plus ALT thresholds.",
+      "Stage with elastography first."
+    ],
+    "references": [
+      {
+        "title": "NICE CG165: Hepatitis B (chronic): diagnosis and management",
+        "edition": "NICE CG165, Recommendation 1.2.1 to 1.5.43",
+        "url": "https://www.nice.org.uk/guidance/cg165/chapter/Recommendations",
+        "locator": "Recommendation 1.2.1 to 1.5.43"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain transmission risk and the need for lifelong monitoring."
+    ],
+    "lifestyleAndDiet": [
+      "Not covered in the extract."
+    ],
+    "mdtReferrals": [
+      "Hepatology; infectious diseases; primary care; public health."
+    ],
+    "dischargeCriteria": [
+      "Discharge from monitoring once anti-HBs is positive on 2 consecutive tests after seroconversion."
+    ],
+    "followUpPlan": "ALT every 24 weeks (immune-tolerant) or ALT and HBV DNA every 48 weeks (inactive disease); annual elastography if not on treatment."
+  }
+}

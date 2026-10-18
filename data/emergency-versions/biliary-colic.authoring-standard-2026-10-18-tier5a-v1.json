@@ -1,0 +1,264 @@
+{
+  "id": "744a5767-29a4-4d7c-b7f3-dc77be4445d5",
+  "title": "Biliary Colic: Assessment and Discharge Criteria",
+  "specialty": "General Surgery / Emergency Medicine",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-18-tier5a-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adult with suspected biliary colic or gallstone disease: liver function tests and ultrasound, surgical referral, acute cholecystitis, bile duct stones and dietary advice, using NICE CG188. Analgesia and discharge thresholds are not covered by the source.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 2026-10-18.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "NICE CG188 as extracted contains no analgesia, antiemetic or antibiotic advice or doses, no pancreatitis content, and no explicit red-flag or discharge criteria; local emergency department protocols apply.",
+      "Only recommendation 1.1.1 was numbered in the extract, so sections are cited.",
+      "No Saudi surgical guideline was opened.",
+      "Source pages were read through automated page extraction rather than page-by-page in the original documents, so each figure should be spot-checked against the source during clinical review.",
+      "The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "744a5767-29a4-4d7c-b7f3-dc77be4445d5"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "NICE offers liver function tests and ultrasound to people with suspected gallstone disease. Laparoscopic cholecystectomy is offered to people with symptomatic gallbladder stones; asymptomatic stones in a normal gallbladder and biliary tree need no treatment. Acute cholecystitis is treated with early laparoscopic cholecystectomy within 1 week of diagnosis. Bile duct stones, symptomatic or not, need duct clearance and cholecystectomy, by surgery or by endoscopic retrograde cholangiopancreatography (ERCP).",
+    "keyMechanisms": [
+      "NICE offers liver function tests and ultrasound to people with suspected gallstone disease.",
+      "Laparoscopic cholecystectomy is offered to people with symptomatic gallbladder stones; asymptomatic stones in a normal gallbladder and biliary tree need no treatment.",
+      "Acute cholecystitis is treated with early laparoscopic cholecystectomy within 1 week of diagnosis.",
+      "Bile duct stones, symptomatic or not, need duct clearance and cholecystectomy, by surgery or by endoscopic retrograde cholangiopancreatography (ERCP)."
+    ],
+    "references": [
+      {
+        "title": "NICE CG188: Gallstone disease: diagnosis and management",
+        "edition": "NICE CG188, Section 1.1 to 1.4",
+        "url": "https://www.nice.org.uk/guidance/cg188/chapter/Recommendations"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Biliary-type abdominal pain (not itemised in the extract)."
+    ],
+    "physicalSigns": [
+      "Not covered."
+    ],
+    "redFlags": [
+      "Suspected acute cholecystitis, bile duct stones or another condition: further investigation and referral (details not captured)."
+    ],
+    "precipitants": [
+      "Trigger foods and drinks may provoke symptoms (NICE advises avoiding them until stones are removed)."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Conditions other than gallstone disease",
+      "distinguishingFeatures": "Refer for further investigation if another condition is suspected."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Liver function tests",
+        "modalityTarget": "Liver enzymes and bilirubin",
+        "targetCondition": "Biliary obstruction",
+        "expectedFinding": "Abnormal liver tests",
+        "clinicalRationale": "Offered to everyone with suspected gallstone disease.",
+        "normalValue": "Normal liver function",
+        "references": [
+          {
+            "title": "NICE CG188: Gallstone disease: diagnosis and management",
+            "edition": "NICE CG188, Section 1.1 Diagnosis",
+            "url": "https://www.nice.org.uk/guidance/cg188/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Abdominal ultrasound",
+        "modalityTarget": "Gallbladder and bile duct",
+        "targetCondition": "Gallstones and bile duct dilatation",
+        "expectedFinding": "Stones or dilated duct",
+        "clinicalRationale": "Offered to everyone with suspected gallstone disease.",
+        "normalValue": "No stones",
+        "references": [
+          {
+            "title": "NICE CG188: Gallstone disease: diagnosis and management",
+            "edition": "NICE CG188, Section 1.1 Diagnosis",
+            "url": "https://www.nice.org.uk/guidance/cg188/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Magnetic resonance cholangiopancreatography (MRCP)",
+        "modalityTarget": "Bile duct",
+        "targetCondition": "Bile duct stones",
+        "expectedFinding": "Duct stone",
+        "clinicalRationale": "Consider if ultrasound shows a dilated duct or abnormal liver tests without visible stones.",
+        "normalValue": "No duct stone",
+        "references": [
+          {
+            "title": "NICE CG188: Gallstone disease: diagnosis and management",
+            "edition": "NICE CG188, Section 1.2 Common bile duct stones",
+            "url": "https://www.nice.org.uk/guidance/cg188/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Endoscopic ultrasound",
+        "modalityTarget": "Bile duct",
+        "targetCondition": "Bile duct stones",
+        "expectedFinding": "Duct stone",
+        "clinicalRationale": "Consider if MRCP is non-diagnostic.",
+        "normalValue": "No duct stone",
+        "references": [
+          {
+            "title": "NICE CG188: Gallstone disease: diagnosis and management",
+            "edition": "NICE CG188, Section 1.2 Common bile duct stones",
+            "url": "https://www.nice.org.uk/guidance/cg188/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Symptom and trigger review",
+        "modalityTarget": "Dietary triggers",
+        "targetCondition": "Biliary pain pattern",
+        "expectedFinding": "Symptoms after trigger foods",
+        "clinicalRationale": "Advise avoiding triggers until stones are removed.",
+        "normalValue": "No trigger pattern",
+        "references": [
+          {
+            "title": "NICE CG188: Gallstone disease: diagnosis and management",
+            "edition": "NICE CG188, Section 1.4 Information",
+            "url": "https://www.nice.org.uk/guidance/cg188/chapter/Recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Assessment for another cause of abdominal symptoms",
+        "modalityTarget": "Alternative diagnosis",
+        "targetCondition": "Non-gallstone condition",
+        "expectedFinding": "Symptoms not explained by gallstones",
+        "clinicalRationale": "Refer for further investigation if another condition is suspected.",
+        "normalValue": "Gallstone explanation",
+        "references": [
+          {
+            "title": "NICE CG188: Gallstone disease: diagnosis and management",
+            "edition": "NICE CG188, Section 1.1 Diagnosis",
+            "url": "https://www.nice.org.uk/guidance/cg188/chapter/Recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "investigate",
+      "title": "Investigate",
+      "timeframe": "At assessment",
+      "actions": [
+        "Liver function tests and ultrasound."
+      ]
+    },
+    {
+      "id": "classify",
+      "title": "Classify",
+      "timeframe": "After results",
+      "actions": [
+        "Symptomatic gallbladder stones, acute cholecystitis, or bile duct stones."
+      ]
+    },
+    {
+      "id": "surgery",
+      "title": "Refer for surgery",
+      "timeframe": "Per classification",
+      "actions": [
+        "Laparoscopic cholecystectomy, day case where possible; within 1 week for acute cholecystitis."
+      ]
+    },
+    {
+      "id": "duct",
+      "title": "Clear bile duct stones",
+      "timeframe": "If present",
+      "actions": [
+        "Surgical clearance at cholecystectomy or ERCP before or at the time; temporary stent only if ERCP fails."
+      ]
+    },
+    {
+      "id": "advice",
+      "title": "Advise",
+      "timeframe": "At discharge",
+      "actions": [
+        "Avoid trigger foods and drinks until stones are removed; see the GP if symptoms persist afterwards."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [],
+    "note": "NICE CG188 as extracted gives no analgesic, antiemetic or antibiotic advice or doses. Follow the emergency department or surgical protocol. The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Acute cholecystitis surgery timing",
+      "threshold": "Laparoscopic cholecystectomy within 1 week of diagnosis."
+    },
+    {
+      "criterion": "Symptomatic gallbladder stones",
+      "threshold": "Offer laparoscopic cholecystectomy, day case unless clinical reasons require admission."
+    }
+  ],
+  "teaching": {
+    "scope": "Adult with suspected biliary colic or gallstone disease: liver function tests and ultrasound, surgical referral, acute cholecystitis, bile duct stones and dietary advice, using NICE CG188. Analgesia and discharge thresholds are not covered by the source.",
+    "learningObjectives": [
+      "Investigate with liver tests and ultrasound.",
+      "Refer for cholecystectomy appropriately."
+    ],
+    "pitfalls": [
+      "Treating asymptomatic stones.",
+      "Delaying surgery in acute cholecystitis."
+    ],
+    "keyPoints": [
+      "Cholecystitis surgery within 1 week.",
+      "Asymptomatic stones need no treatment."
+    ],
+    "references": [
+      {
+        "title": "NICE CG188: Gallstone disease: diagnosis and management",
+        "edition": "NICE CG188, Section 1.1 to 1.4",
+        "url": "https://www.nice.org.uk/guidance/cg188/chapter/Recommendations",
+        "locator": "Section 1.1"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Avoid trigger foods until stones are removed."
+    ],
+    "lifestyleAndDiet": [
+      "Not covered beyond trigger avoidance."
+    ],
+    "mdtReferrals": [
+      "Emergency medicine; general surgery; radiology; gastroenterology for ERCP."
+    ],
+    "dischargeCriteria": [
+      "Discharge thresholds are not given in the source; follow local protocol."
+    ],
+    "followUpPlan": "Surgical follow-up per pathway; see the GP if symptoms persist after recovery."
+  }
+}
