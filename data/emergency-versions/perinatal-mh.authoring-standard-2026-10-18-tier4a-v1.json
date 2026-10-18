@@ -1,0 +1,293 @@
+{
+  "id": "4c6fbe68-1225-453a-9f82-65e3ae89497a",
+  "title": "Antenatal and Postnatal Mental Health Screening",
+  "specialty": "Obstetrics / Psychiatry",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-18-tier4a-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Safe Birth",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Pregnant or postnatal woman: asking about mental health history at the booking visit, case-finding questions for depression and anxiety, validated scales, referral to specialist perinatal services and medication cautions, using NICE CG192.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 2026-10-18.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "The final 14,035 characters of the CG192 page were not read; postnatal screening timing (for example 4 to 6 weeks and 3 to 4 months) is not stated in the part read.",
+      "Scale cut-off scores for the Edinburgh Postnatal Depression Scale (EPDS) and Patient Health Questionnaire-9 (PHQ-9) were not given in the extract opened.",
+      "NICE CG192 gives no medication doses; no dosing source was opened.",
+      "No Saudi perinatal mental health guideline or Arabic validated scale cut-off was opened. No Saudi Ministry of Health or Saudi Society of Obstetrics and Gynaecology guideline was opened.",
+      "The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary.",
+      "Source pages were read through automated page extraction rather than page-by-page in the original documents, so each figure should be spot-checked against the source during clinical review."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "4c6fbe68-1225-453a-9f82-65e3ae89497a"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Perinatal mental illness can be missed unless asked about; NICE advises asking at the first contact or booking visit and in the early postnatal period. A past or current history of severe mental illness, or severe perinatal illness in a first-degree relative, changes the referral pathway. Postpartum psychosis presents suddenly and needs assessment within 4 hours of referral. Risk assessment covers self-harm, suicidal thoughts and risks to others including the baby.",
+    "keyMechanisms": [
+      "Perinatal mental illness can be missed unless asked about; NICE advises asking at the first contact or booking visit and in the early postnatal period.",
+      "A past or current history of severe mental illness, or severe perinatal illness in a first-degree relative, changes the referral pathway.",
+      "Postpartum psychosis presents suddenly and needs assessment within 4 hours of referral.",
+      "Risk assessment covers self-harm, suicidal thoughts and risks to others including the baby."
+    ],
+    "references": [
+      {
+        "title": "NICE CG192: Antenatal and postnatal mental health: clinical management and service guidance",
+        "edition": "NICE CG192, Recommendation 1.5.4 to 1.5.12",
+        "url": "https://www.nice.org.uk/guidance/cg192/resources/antenatal-and-postnatal-mental-health-clinical-management-and-service-guidance-35109869806789"
+      },
+      {
+        "title": "NICE CG192: Antenatal and postnatal mental health: clinical management and service guidance",
+        "edition": "NICE CG192, Recommendation 1.4.27 to 1.4.37",
+        "url": "https://www.nice.org.uk/guidance/cg192/resources/antenatal-and-postnatal-mental-health-clinical-management-and-service-guidance-35109869806789"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Feeling down, depressed or hopeless.",
+      "Anxiety and avoidance.",
+      "Sudden-onset symptoms suggesting postpartum psychosis in the first 2 weeks after birth."
+    ],
+    "physicalSigns": [
+      "Not applicable; identification is by questions and scales."
+    ],
+    "redFlags": [
+      "Severe mental illness present or suspected, or any history of it: refer to a specialist perinatal service.",
+      "Sudden-onset symptoms suggesting postpartum psychosis: immediate assessment within 4 hours of referral.",
+      "Risk of self-harm, suicide or harm to the baby."
+    ],
+    "precipitants": [
+      "Past or present severe mental illness.",
+      "Severe perinatal mental illness in a first-degree relative.",
+      "Past or present specialist mental health treatment."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Postpartum psychosis",
+      "distinguishingFeatures": "Sudden onset after birth; emergency referral."
+    },
+    {
+      "condition": "Depression or anxiety disorder",
+      "distinguishingFeatures": "Positive case-finding questions; scale-guided assessment and stepped care."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Depression question: \"During the past month, have you often been bothered by feeling down, depressed or hopeless?\"",
+        "modalityTarget": "Depressed mood",
+        "targetCondition": "Perinatal depression",
+        "expectedFinding": "Yes",
+        "clinicalRationale": "NICE advises considering this question at first contact or booking and in the early postnatal period.",
+        "normalValue": "No",
+        "references": [
+          {
+            "title": "NICE CG192: Antenatal and postnatal mental health: clinical management and service guidance",
+            "edition": "NICE CG192, Recommendation 1.5.4",
+            "url": "https://www.nice.org.uk/guidance/cg192/resources/antenatal-and-postnatal-mental-health-clinical-management-and-service-guidance-35109869806789"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "GAD-2 anxiety questions (each item scored 0 to 3)",
+        "modalityTarget": "Anxiety",
+        "targetCondition": "Anxiety disorder",
+        "expectedFinding": "Score of 3 or more",
+        "clinicalRationale": "A score of 3 or more prompts the GAD-7 or referral; if under 3 but anxiety is a concern, ask about avoidance.",
+        "normalValue": "Score under 3",
+        "references": [
+          {
+            "title": "NICE CG192: Antenatal and postnatal mental health: clinical management and service guidance",
+            "edition": "NICE CG192, Recommendation 1.5.4 to 1.5.7",
+            "url": "https://www.nice.org.uk/guidance/cg192/resources/antenatal-and-postnatal-mental-health-clinical-management-and-service-guidance-35109869806789"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Edinburgh Postnatal Depression Scale or Patient Health Questionnaire-9",
+        "modalityTarget": "Depression severity",
+        "targetCondition": "Perinatal depression",
+        "expectedFinding": "Raised score",
+        "clinicalRationale": "Used for full assessment after a positive response and to monitor symptoms.",
+        "normalValue": "Score below the locally validated cut-off (not stated in the extract opened)",
+        "references": [
+          {
+            "title": "NICE CG192: Antenatal and postnatal mental health: clinical management and service guidance",
+            "edition": "NICE CG192, Recommendation 1.5.5 and 1.4.9",
+            "url": "https://www.nice.org.uk/guidance/cg192/resources/antenatal-and-postnatal-mental-health-clinical-management-and-service-guidance-35109869806789"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Generalised Anxiety Disorder 7-item scale (GAD-7)",
+        "modalityTarget": "Anxiety severity",
+        "targetCondition": "Anxiety disorder",
+        "expectedFinding": "Raised score",
+        "clinicalRationale": "Used when GAD-2 is 3 or more or avoidance is present.",
+        "normalValue": "Score below the locally validated cut-off (not stated in the extract opened)",
+        "references": [
+          {
+            "title": "NICE CG192: Antenatal and postnatal mental health: clinical management and service guidance",
+            "edition": "NICE CG192, Recommendation 1.5.6 and 1.5.7",
+            "url": "https://www.nice.org.uk/guidance/cg192/resources/antenatal-and-postnatal-mental-health-clinical-management-and-service-guidance-35109869806789"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "History questions: past or present severe mental illness, specialist treatment, and severe perinatal illness in a first-degree relative",
+        "modalityTarget": "Mental health history",
+        "targetCondition": "Severe mental illness risk",
+        "expectedFinding": "Any positive answer",
+        "clinicalRationale": "Ask at first contact with services; positive history needs specialist referral.",
+        "normalValue": "No history",
+        "references": [
+          {
+            "title": "NICE CG192: Antenatal and postnatal mental health: clinical management and service guidance",
+            "edition": "NICE CG192, Recommendation 1.5.9 and 1.5.10",
+            "url": "https://www.nice.org.uk/guidance/cg192/resources/antenatal-and-postnatal-mental-health-clinical-management-and-service-guidance-35109869806789"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Risk assessment for self-harm, suicidal thoughts and risk to the baby",
+        "modalityTarget": "Safety",
+        "targetCondition": "Risk of harm",
+        "expectedFinding": "Present risk",
+        "clinicalRationale": "Includes substance misuse and social support; arrange help and inform relevant professionals.",
+        "normalValue": "No risk identified",
+        "references": [
+          {
+            "title": "NICE CG192: Antenatal and postnatal mental health: clinical management and service guidance",
+            "edition": "NICE CG192, Recommendation 1.6.3 and 1.6.5",
+            "url": "https://www.nice.org.uk/guidance/cg192/resources/antenatal-and-postnatal-mental-health-clinical-management-and-service-guidance-35109869806789"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "ask",
+      "title": "Ask at booking and early postnatally",
+      "timeframe": "First contact",
+      "actions": [
+        "Ask the depression question and the GAD-2 questions; ask about past and present severe mental illness and family history."
+      ]
+    },
+    {
+      "id": "score",
+      "title": "Use scales for positive responses",
+      "timeframe": "Same visit or next contact",
+      "actions": [
+        "Use EPDS or PHQ-9 for depression and GAD-7 for anxiety; plan monitoring with validated questionnaires."
+      ]
+    },
+    {
+      "id": "refer",
+      "title": "Refer by severity",
+      "timeframe": "By risk",
+      "actions": [
+        "Severe illness suspected or any history: specialist perinatal mental health service.",
+        "Sudden-onset symptoms suggesting postpartum psychosis: immediate assessment within 4 hours of referral."
+      ]
+    },
+    {
+      "id": "treat",
+      "title": "Stepped care",
+      "timeframe": "Within 2 weeks of referral",
+      "actions": [
+        "Facilitated self-help for mild disease; high-intensity psychological intervention such as cognitive behavioural therapy for moderate or severe depression."
+      ]
+    },
+    {
+      "id": "meds",
+      "title": "Medication cautions",
+      "timeframe": "Before prescribing",
+      "actions": [
+        "Do not offer valproate or carbamazepine for mental health problems in women planning pregnancy, pregnant or considering breastfeeding.",
+        "Do not offer lithium unless antipsychotics have not been effective; if continued, check levels every 4 weeks, then weekly from 36 weeks."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [],
+    "note": "NICE CG192 sets no doses. Do not offer valproate or carbamazepine in women planning pregnancy, pregnant or considering breastfeeding; do not offer lithium unless antipsychotics have not been effective, with lithium levels every 4 weeks and weekly from 36 weeks; use the lowest effective dose of antidepressants and consider discontinuation symptoms and neonatal adaptation syndrome, in particular with paroxetine and venlafaxine. Drug and dose choice belong to the perinatal psychiatrist. The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "GAD-2 (Generalised Anxiety Disorder two-item) score of 3 or more",
+      "threshold": "Consider the GAD-7 or refer."
+    },
+    {
+      "criterion": "Positive depression question",
+      "threshold": "Consider the EPDS or PHQ-9, or refer to the GP or mental health professional if severe illness is suspected."
+    },
+    {
+      "criterion": "Timing of treatment",
+      "threshold": "Assess for treatment within 2 weeks of referral and provide psychological interventions within 1 month of initial assessment."
+    }
+  ],
+  "teaching": {
+    "scope": "Pregnant or postnatal woman: asking about mental health history at the booking visit, case-finding questions for depression and anxiety, validated scales, referral to specialist perinatal services and medication cautions, using NICE CG192.",
+    "learningObjectives": [
+      "Ask the case-finding questions at booking and early postnatally.",
+      "Refer severe or past severe illness to a specialist perinatal service."
+    ],
+    "pitfalls": [
+      "Not asking about family history.",
+      "Prescribing valproate to a woman planning pregnancy."
+    ],
+    "keyPoints": [
+      "GAD-2 score of 3 or more prompts GAD-7 or referral.",
+      "Postpartum psychosis needs assessment within 4 hours."
+    ],
+    "references": [
+      {
+        "title": "NICE CG192: Antenatal and postnatal mental health: clinical management and service guidance",
+        "edition": "NICE CG192, Recommendation 1.5.4 to 1.5.12",
+        "url": "https://www.nice.org.uk/guidance/cg192/resources/antenatal-and-postnatal-mental-health-clinical-management-and-service-guidance-35109869806789",
+        "locator": "Recommendation 1.5.4 to 1.5.12"
+      },
+      {
+        "title": "NICE CG192: Antenatal and postnatal mental health: clinical management and service guidance",
+        "edition": "NICE CG192, Recommendation 1.4.27 to 1.4.37",
+        "url": "https://www.nice.org.uk/guidance/cg192/resources/antenatal-and-postnatal-mental-health-clinical-management-and-service-guidance-35109869806789",
+        "locator": "Recommendation 1.4.27 to 1.4.37"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain that mood and anxiety problems are common and treatable around birth.",
+      "Tell women and families how to seek help if things worsen."
+    ],
+    "lifestyleAndDiet": [
+      "Sleep, social support and activity as part of stepped care."
+    ],
+    "mdtReferrals": [
+      "Midwife; health visitor; GP; specialist perinatal mental health service; obstetrician."
+    ],
+    "dischargeCriteria": [
+      "Not applicable; screening is repeated at later contacts."
+    ],
+    "followUpPlan": "Repeat questions and scales at later contacts, particularly in the first few weeks after birth."
+  }
+}

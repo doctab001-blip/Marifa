@@ -1,0 +1,561 @@
+{
+  "id": "89a7bf75-1a09-4b8c-b1fb-03ac3404a043",
+  "title": "Cellulitis and Erysipelas: Outpatient versus Intravenous Antibiotic Criteria",
+  "specialty": "Infectious Diseases / Primary Care",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-18-tier4a-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adult or child with cellulitis or erysipelas: oral versus intravenous antibiotics, hospital referral triggers, antibiotic choice and dose by severity, MRSA cover, reassessment and prophylaxis, using NICE NG141.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 2026-10-18.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "NICE NG141 does not define severity, give Eron criteria, sepsis tools, inflammatory marker thresholds or outpatient parenteral antibiotic therapy criteria; hospital referral criteria are those the guideline states.",
+      "Children's vancomycin, teicoplanin and linezolid doses are in NG141 Table 2 but were not read in full; check the British National Formulary for Children.",
+      "MRSA agents (vancomycin, teicoplanin, linezolid) are listed from the extract; confirm with local microbiology.",
+      "No Saudi Ministry of Health or Saudi Society of Rheumatology/Infectious Diseases guideline was opened.",
+      "Source pages were read through automated page extraction rather than page-by-page in the original documents, so each figure should be spot-checked against the source during clinical review.",
+      "The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "89a7bf75-1a09-4b8c-b1fb-03ac3404a043"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "NICE advises an antibiotic for everyone with cellulitis or erysipelas, chosen by severity, site, risk of uncommon pathogens, prior swab results and MRSA status. Oral antibiotics are first choice unless the person cannot take oral medicines or needs intravenous treatment. Intravenous antibiotics should be reviewed by 48 hours with consideration of an oral switch. Infection near the eyes or nose, lymphangitis, suspected uncommon pathogens or spreading infection despite oral antibiotics prompts hospital referral or specialist advice.",
+    "keyMechanisms": [
+      "NICE advises an antibiotic for everyone with cellulitis or erysipelas, chosen by severity, site, risk of uncommon pathogens, prior swab results and MRSA status.",
+      "Oral antibiotics are first choice unless the person cannot take oral medicines or needs intravenous treatment.",
+      "Intravenous antibiotics should be reviewed by 48 hours with consideration of an oral switch.",
+      "Infection near the eyes or nose, lymphangitis, suspected uncommon pathogens or spreading infection despite oral antibiotics prompts hospital referral or specialist advice."
+    ],
+    "references": [
+      {
+        "title": "NICE NG141: Cellulitis and erysipelas: antimicrobial prescribing",
+        "edition": "NICE NG141, Section 1.1 to 1.4",
+        "url": "https://www.nice.org.uk/guidance/ng141/chapter/Recommendations"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Spreading skin redness, swelling, warmth and pain.",
+      "Fever or feeling unwell."
+    ],
+    "physicalSigns": [
+      "Erythema and swelling.",
+      "Lymphangitis.",
+      "Signs of a more serious illness."
+    ],
+    "redFlags": [
+      "Orbital cellulitis, osteomyelitis, septic arthritis, necrotising fasciitis or sepsis: refer to hospital.",
+      "Severely unwell, infection near the eyes or nose, lymphangitis, spreading infection not responding to oral antibiotics, or unable to take oral antibiotics: consider hospital referral or specialist advice."
+    ],
+    "precipitants": [
+      "Not covered in the sources opened."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Necrotising fasciitis",
+      "distinguishingFeatures": "Signs of a more serious illness; refer to hospital."
+    },
+    {
+      "condition": "Osteomyelitis or septic arthritis",
+      "distinguishingFeatures": "Deep or joint involvement; refer to hospital."
+    },
+    {
+      "condition": "Orbital cellulitis",
+      "distinguishingFeatures": "Infection near the eyes; refer to hospital."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Clinical assessment of severity and signs of a more serious illness (including sepsis)",
+        "modalityTarget": "Severity",
+        "targetCondition": "Sepsis or complicated infection",
+        "expectedFinding": "Severely unwell or signs of necrotising fasciitis, septic arthritis, osteomyelitis, orbital cellulitis or sepsis",
+        "clinicalRationale": "Decides oral versus intravenous antibiotics and hospital referral.",
+        "normalValue": "Not severely unwell; no signs of a more serious illness",
+        "references": [
+          {
+            "title": "NICE NG141: Cellulitis and erysipelas: antimicrobial prescribing",
+            "edition": "NICE NG141, Section 1.1 Treatment and referral",
+            "url": "https://www.nice.org.uk/guidance/ng141/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Site of infection (near eyes or nose)",
+        "modalityTarget": "Anatomical site",
+        "targetCondition": "Higher-risk infection",
+        "expectedFinding": "Infection near the eyes or nose",
+        "clinicalRationale": "Changes the antibiotic to co-amoxiclav or a clarithromycin plus metronidazole combination for 7 days.",
+        "normalValue": "Trunk or limb infection",
+        "references": [
+          {
+            "title": "NICE NG141: Cellulitis and erysipelas: antimicrobial prescribing",
+            "edition": "NICE NG141, Section 1.1.14",
+            "url": "https://www.nice.org.uk/guidance/ng141/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Examination for lymphangitis",
+        "modalityTarget": "Lymphatic spread",
+        "targetCondition": "Spreading infection",
+        "expectedFinding": "Present",
+        "clinicalRationale": "A trigger to consider hospital referral or specialist advice.",
+        "normalValue": "Absent",
+        "references": [
+          {
+            "title": "NICE NG141: Cellulitis and erysipelas: antimicrobial prescribing",
+            "edition": "NICE NG141, Section 1.1.14",
+            "url": "https://www.nice.org.uk/guidance/ng141/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Prior swab results and MRSA status",
+        "modalityTarget": "Microbiology",
+        "targetCondition": "MRSA or uncommon pathogens",
+        "expectedFinding": "MRSA or resistant organism isolated",
+        "clinicalRationale": "Guides antibiotic choice and the addition of MRSA cover.",
+        "normalValue": "No MRSA or resistant organism",
+        "references": [
+          {
+            "title": "NICE NG141: Cellulitis and erysipelas: antimicrobial prescribing",
+            "edition": "NICE NG141, Section 1.1.4",
+            "url": "https://www.nice.org.uk/guidance/ng141/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Review at 2 to 3 days",
+        "modalityTarget": "Response",
+        "targetCondition": "Treatment failure",
+        "expectedFinding": "No improvement within 2 to 3 days or rapid worsening",
+        "clinicalRationale": "Reassess and consider referral.",
+        "normalValue": "Improving",
+        "references": [
+          {
+            "title": "NICE NG141: Cellulitis and erysipelas: antimicrobial prescribing",
+            "edition": "NICE NG141, Section 1.1.9",
+            "url": "https://www.nice.org.uk/guidance/ng141/chapter/Recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Check ability to take oral medicines",
+        "modalityTarget": "Route",
+        "targetCondition": "Need for intravenous therapy",
+        "expectedFinding": "Unable to take oral antibiotics",
+        "clinicalRationale": "Oral antibiotics are first line when possible.",
+        "normalValue": "Able to take oral antibiotics",
+        "references": [
+          {
+            "title": "NICE NG141: Cellulitis and erysipelas: antimicrobial prescribing",
+            "edition": "NICE NG141, Section 1.1.5",
+            "url": "https://www.nice.org.uk/guidance/ng141/chapter/Recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "assess",
+      "title": "Assess severity and site",
+      "timeframe": "At presentation",
+      "actions": [
+        "Refer to hospital for signs of orbital cellulitis, osteomyelitis, septic arthritis, necrotising fasciitis or sepsis.",
+        "Consider hospital referral or specialist advice if severely unwell, infection near the eyes or nose, uncommon pathogens, lymphangitis, spreading infection despite oral antibiotics, or unable to take oral antibiotics."
+      ]
+    },
+    {
+      "id": "oral",
+      "title": "Start oral antibiotic",
+      "timeframe": "If suitable",
+      "actions": [
+        "Flucloxacillin first choice for 5 to 7 days; clarithromycin if penicillin allergy; erythromycin in pregnancy; doxycycline is an alternative.",
+        "Near eyes or nose: co-amoxiclav for 7 days, or clarithromycin plus metronidazole in penicillin allergy."
+      ]
+    },
+    {
+      "id": "iv",
+      "title": "Intravenous antibiotic if needed",
+      "timeframe": "Severe infection or unable to take oral",
+      "actions": [
+        "Flucloxacillin, co-amoxiclav, cefuroxime, clindamycin or ceftriaxone (ambulatory care only) for 7 days; add MRSA cover (vancomycin, teicoplanin or specialist linezolid) if suspected or confirmed.",
+        "Review by 48 hours and switch to oral if possible; consider home or community intravenous antibiotics locally."
+      ]
+    },
+    {
+      "id": "review",
+      "title": "Review",
+      "timeframe": "2 to 3 days",
+      "actions": [
+        "Reassess if worsening or not improving; a course of up to 14 days may be needed after clinical assessment."
+      ]
+    },
+    {
+      "id": "prophylaxis",
+      "title": "Recurrent episodes",
+      "timeframe": "Specialist decision",
+      "actions": [
+        "Do not routinely offer prophylaxis; specialists may consider a trial for adults with at least 2 separate episodes in 12 months, reviewed at least every 6 months."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "First-choice antibiotic for cellulitis or erysipelas",
+        "patientGroup": "Adults",
+        "genericName": "Flucloxacillin",
+        "dose": "500 mg to 1 g orally; 1 g to 2 g intravenously",
+        "route": "Oral or intravenous",
+        "frequency": "Four times a day",
+        "duration": "5 to 7 days (up to 14 days after clinical assessment)",
+        "adjustments": [
+          "No renal or hepatic adjustment is given in the source opened; check product information.",
+          "Children: 1 month to 1 year 62.5 to 125 mg; 2 to 9 years 125 to 250 mg; 10 to 17 years 250 to 500 mg four times a day orally; IV 12.5 to 25 mg/kg four times a day (maximum 1 g per dose)."
+        ],
+        "monitoring": [
+          "Reassess if worsening or no improvement within 2 to 3 days; review IV therapy by 48 hours."
+        ],
+        "contraindications": [
+          "Penicillin allergy: use clarithromycin or an alternative."
+        ],
+        "sourceTitle": "NICE NG141: Cellulitis and erysipelas: antimicrobial prescribing",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng141/chapter/Recommendations",
+        "sourceEdition": "NICE NG141, Section 1.2.1 and Table 1"
+      },
+      {
+        "indication": "Penicillin allergy or flucloxacillin unsuitable",
+        "patientGroup": "Adults and children 12 to 17 years",
+        "genericName": "Clarithromycin",
+        "dose": "500 mg (children 12 to 17 years 250 to 500 mg)",
+        "route": "Oral (intravenous same dose in adults)",
+        "frequency": "Twice a day",
+        "duration": "5 to 7 days",
+        "adjustments": [
+          "Not preferred in pregnancy; use erythromycin.",
+          "No renal or hepatic adjustment is given in the source opened; check product information."
+        ],
+        "monitoring": [
+          "Reassess at 2 to 3 days."
+        ],
+        "contraindications": [
+          "Pregnancy: erythromycin is the preferred macrolide."
+        ],
+        "sourceTitle": "NICE NG141: Cellulitis and erysipelas: antimicrobial prescribing",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng141/chapter/Recommendations",
+        "sourceEdition": "NICE NG141, Section 1.2.1 and Table 1"
+      },
+      {
+        "indication": "Penicillin allergy in pregnancy",
+        "patientGroup": "Pregnant adults",
+        "genericName": "Erythromycin",
+        "dose": "500 mg",
+        "route": "Oral",
+        "frequency": "Four times a day",
+        "duration": "5 to 7 days",
+        "adjustments": [
+          "Preferred macrolide in pregnancy; children 8 to 17 years 250 to 500 mg four times a day."
+        ],
+        "monitoring": [
+          "Reassess at 2 to 3 days."
+        ],
+        "contraindications": [
+          "Contraindications are not listed in the source opened; check product information."
+        ],
+        "sourceTitle": "NICE NG141: Cellulitis and erysipelas: antimicrobial prescribing",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng141/chapter/Recommendations",
+        "sourceEdition": "NICE NG141, Section 1.2.1 and Table 1"
+      },
+      {
+        "indication": "Alternative oral antibiotic",
+        "patientGroup": "Adults",
+        "genericName": "Doxycycline",
+        "dose": "200 mg on the first day then 100 mg",
+        "route": "Oral",
+        "frequency": "Once a day",
+        "duration": "5 to 7 days total",
+        "adjustments": [
+          "No renal or hepatic adjustment is given in the source opened; check product information."
+        ],
+        "monitoring": [
+          "Reassess at 2 to 3 days."
+        ],
+        "contraindications": [
+          "Contraindications are not listed in the source opened; check product information."
+        ],
+        "sourceTitle": "NICE NG141: Cellulitis and erysipelas: antimicrobial prescribing",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng141/chapter/Recommendations",
+        "sourceEdition": "NICE NG141, Section 1.2.1 and Table 1"
+      },
+      {
+        "indication": "Infection near the eyes or nose",
+        "patientGroup": "Adults",
+        "genericName": "Co-amoxiclav",
+        "dose": "500/125 mg orally; 1.2 g intravenously",
+        "route": "Oral or intravenous",
+        "frequency": "Three times a day",
+        "duration": "7 days",
+        "adjustments": [
+          "Consider specialist advice; children 12 to 17 years 250/125 mg or 500/125 mg three times a day orally; IV 3 months to 17 years 30 mg/kg three times a day (maximum 1.2 g per dose)."
+        ],
+        "monitoring": [
+          "Reassess at 2 to 3 days."
+        ],
+        "contraindications": [
+          "Penicillin allergy."
+        ],
+        "sourceTitle": "NICE NG141: Cellulitis and erysipelas: antimicrobial prescribing",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng141/chapter/Recommendations",
+        "sourceEdition": "NICE NG141, Section 1.2.1 and Table 1"
+      },
+      {
+        "indication": "Infection near the eyes or nose with penicillin allergy (added to clarithromycin)",
+        "patientGroup": "Adults",
+        "genericName": "Metronidazole",
+        "dose": "400 mg orally; 500 mg intravenously",
+        "route": "Oral or intravenous",
+        "frequency": "Three times a day",
+        "duration": "7 days",
+        "adjustments": [
+          "Children 2 months to 11 years 7.5 mg/kg three times a day (maximum 400 mg per dose); 12 to 17 years 400 mg three times a day."
+        ],
+        "monitoring": [
+          "Reassess at 2 to 3 days."
+        ],
+        "contraindications": [
+          "Contraindications are not listed in the source opened; check product information."
+        ],
+        "sourceTitle": "NICE NG141: Cellulitis and erysipelas: antimicrobial prescribing",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng141/chapter/Recommendations",
+        "sourceEdition": "NICE NG141, Section 1.2.1 and Table 1"
+      },
+      {
+        "indication": "Severe infection (intravenous)",
+        "patientGroup": "Adults",
+        "genericName": "Cefuroxime",
+        "dose": "750 mg to 1.5 g",
+        "route": "Intravenous",
+        "frequency": "Three or four times a day",
+        "duration": "7 days",
+        "adjustments": [
+          "No renal or hepatic adjustment is given in the source opened; check product information."
+        ],
+        "monitoring": [
+          "Review by 48 hours for oral switch."
+        ],
+        "contraindications": [
+          "Contraindications are not listed in the source opened; check product information."
+        ],
+        "sourceTitle": "NICE NG141: Cellulitis and erysipelas: antimicrobial prescribing",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng141/chapter/Recommendations",
+        "sourceEdition": "NICE NG141, Section 1.2.1 and Table 1"
+      },
+      {
+        "indication": "Severe infection (intravenous or oral)",
+        "patientGroup": "Adults",
+        "genericName": "Clindamycin",
+        "dose": "Oral 150 to 300 mg (up to 450 mg); intravenous 600 mg to 2.7 g daily",
+        "route": "Oral or intravenous",
+        "frequency": "Oral four times a day; IV daily total in divided doses",
+        "duration": "7 days",
+        "adjustments": [
+          "No renal or hepatic adjustment is given in the source opened; check product information."
+        ],
+        "monitoring": [
+          "Review by 48 hours for oral switch."
+        ],
+        "contraindications": [
+          "Contraindications are not listed in the source opened; check product information."
+        ],
+        "sourceTitle": "NICE NG141: Cellulitis and erysipelas: antimicrobial prescribing",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng141/chapter/Recommendations",
+        "sourceEdition": "NICE NG141, Section 1.2.1 and Table 1"
+      },
+      {
+        "indication": "Severe infection (ambulatory care only)",
+        "patientGroup": "Adults",
+        "genericName": "Ceftriaxone",
+        "dose": "2 g",
+        "route": "Intravenous",
+        "frequency": "Once a day",
+        "duration": "7 days",
+        "adjustments": [
+          "No renal or hepatic adjustment is given in the source opened; check product information."
+        ],
+        "monitoring": [
+          "Review by 48 hours for oral switch."
+        ],
+        "contraindications": [
+          "Contraindications are not listed in the source opened; check product information."
+        ],
+        "sourceTitle": "NICE NG141: Cellulitis and erysipelas: antimicrobial prescribing",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng141/chapter/Recommendations",
+        "sourceEdition": "NICE NG141, Section 1.2.1 and Table 1"
+      },
+      {
+        "indication": "Suspected or confirmed MRSA (added to base antibiotic)",
+        "patientGroup": "Adults",
+        "genericName": "Vancomycin",
+        "dose": "15 mg/kg to 20 mg/kg (maximum 2 g per dose)",
+        "route": "Intravenous",
+        "frequency": "Two or three times a day",
+        "duration": "Course as for the base antibiotic",
+        "adjustments": [
+          "Adjust by serum level."
+        ],
+        "monitoring": [
+          "Serum vancomycin levels."
+        ],
+        "contraindications": [
+          "Contraindications are not listed in the source opened; check product information."
+        ],
+        "sourceTitle": "NICE NG141: Cellulitis and erysipelas: antimicrobial prescribing",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng141/chapter/Recommendations",
+        "sourceEdition": "NICE NG141, Section 1.2.1 and Table 1"
+      },
+      {
+        "indication": "Suspected or confirmed MRSA (alternative)",
+        "patientGroup": "Adults",
+        "genericName": "Teicoplanin",
+        "dose": "6 mg/kg",
+        "route": "Intravenous",
+        "frequency": "Every 12 hours for three doses then once daily",
+        "duration": "Course as for the base antibiotic",
+        "adjustments": [
+          "No renal or hepatic adjustment is given in the source opened; check product information."
+        ],
+        "monitoring": [
+          "Clinical response and levels as per local protocol."
+        ],
+        "contraindications": [
+          "Contraindications are not listed in the source opened; check product information."
+        ],
+        "sourceTitle": "NICE NG141: Cellulitis and erysipelas: antimicrobial prescribing",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng141/chapter/Recommendations",
+        "sourceEdition": "NICE NG141, Section 1.2.1 and Table 1"
+      },
+      {
+        "indication": "MRSA when vancomycin or teicoplanin cannot be used (specialist only)",
+        "patientGroup": "Adults",
+        "genericName": "Linezolid",
+        "dose": "600 mg",
+        "route": "Oral or intravenous",
+        "frequency": "Twice a day",
+        "duration": "As advised by the specialist",
+        "adjustments": [
+          "No renal or hepatic adjustment is given in the source opened; check product information."
+        ],
+        "monitoring": [
+          "Specialist monitoring."
+        ],
+        "contraindications": [
+          "Specialist use only."
+        ],
+        "sourceTitle": "NICE NG141: Cellulitis and erysipelas: antimicrobial prescribing",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng141/chapter/Recommendations",
+        "sourceEdition": "NICE NG141, Section 1.2.1 and Table 1"
+      },
+      {
+        "indication": "Prophylaxis for recurrent cellulitis (specialist trial)",
+        "patientGroup": "Adults with at least 2 separate episodes in the previous 12 months",
+        "genericName": "Phenoxymethylpenicillin",
+        "dose": "250 mg",
+        "route": "Oral",
+        "frequency": "Twice a day",
+        "duration": "Review at least every 6 months",
+        "adjustments": [
+          "Penicillin allergy: erythromycin 250 mg twice a day."
+        ],
+        "monitoring": [
+          "Review at least every 6 months."
+        ],
+        "contraindications": [
+          "Do not routinely offer prophylaxis."
+        ],
+        "sourceTitle": "NICE NG141: Cellulitis and erysipelas: antimicrobial prescribing",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng141/chapter/Recommendations",
+        "sourceEdition": "NICE NG141, Section 1.3 and 1.4"
+      }
+    ],
+    "note": "Adult and paediatric doses are from NICE NG141 Tables 1 and 2. Paediatric tables for MRSA agents were not read in full. The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Oral antibiotic first",
+      "threshold": "Able to take oral medicines and does not need intravenous treatment (NICE 1.1.5)."
+    },
+    {
+      "criterion": "Review intravenous antibiotics",
+      "threshold": "By 48 hours, consider oral switch (NICE 1.1.6)."
+    },
+    {
+      "criterion": "Reassess",
+      "threshold": "Symptoms worsen rapidly or significantly, or do not start to improve within 2 to 3 days (NICE 1.1.9)."
+    }
+  ],
+  "teaching": {
+    "scope": "Adult or child with cellulitis or erysipelas: oral versus intravenous antibiotics, hospital referral triggers, antibiotic choice and dose by severity, MRSA cover, reassessment and prophylaxis, using NICE NG141.",
+    "learningObjectives": [
+      "Offer an antibiotic; oral first.",
+      "Refer for features of a more serious illness."
+    ],
+    "pitfalls": [
+      "Missing necrotising fasciitis.",
+      "Using prophylaxis routinely."
+    ],
+    "keyPoints": [
+      "Review IV antibiotics by 48 hours.",
+      "Reassess if not improving in 2 to 3 days."
+    ],
+    "references": [
+      {
+        "title": "NICE NG141: Cellulitis and erysipelas: antimicrobial prescribing",
+        "edition": "NICE NG141, Section 1.1 to 1.4",
+        "url": "https://www.nice.org.uk/guidance/ng141/chapter/Recommendations",
+        "locator": "Section 1.1 to 1.4"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Complete the antibiotic course and return if not improving in 2 to 3 days.",
+      "Seek help if the redness spreads quickly or you feel very unwell."
+    ],
+    "lifestyleAndDiet": [
+      "Elevate the limb and keep skin moist as advised by the clinician."
+    ],
+    "mdtReferrals": [
+      "Primary care; infectious diseases or microbiology; community intravenous antibiotic service."
+    ],
+    "dischargeCriteria": [
+      "Taking oral antibiotics and improving, with safety-net advice."
+    ],
+    "followUpPlan": "Review at 2 to 3 days; specialist review for recurrent episodes."
+  }
+}
