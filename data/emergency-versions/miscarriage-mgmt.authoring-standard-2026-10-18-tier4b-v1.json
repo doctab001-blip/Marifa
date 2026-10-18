@@ -1,0 +1,352 @@
+{
+  "id": "72dae78f-0551-41f5-88ef-34fb66c70f0a",
+  "title": "Miscarriage: Expectant, Medical and Surgical Management",
+  "specialty": "Obstetrics / Gynaecology",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-18-tier4b-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Safe Birth",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Woman with confirmed early miscarriage choosing expectant, medical or surgical management: mifepristone and misoprostol doses, anti-D immunoglobulin after surgery and follow-up testing, using NICE NG126.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 2026-10-18.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "The route of misoprostol in each recommendation, the repeat-dose rules, and the surgical technique recommendations were not fully captured from NICE NG126.",
+      "Analgesia and antiemetic advice were not captured.",
+      "No Saudi guideline was opened. Local gestational-age limits for medical management were not checked.",
+      "Source pages were read through automated page extraction rather than page-by-page in the original documents, so each figure should be spot-checked against the source during clinical review.",
+      "The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "72dae78f-0551-41f5-88ef-34fb66c70f0a"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "For bleeding under 6 weeks without pain, NICE advises expectant management and a repeat pregnancy test after 7 to 10 days. Medical management for missed miscarriage is mifepristone 200 mg orally followed 48 hours later by misoprostol 800 micrograms. For incomplete miscarriage, misoprostol 600 micrograms is offered without mifepristone; 800 micrograms is acceptable. Anti-D immunoglobulin 250 IU is given only after surgical management in Rhesus D negative women; a Kleihauer test is not needed. A negative home urine pregnancy test at 3 weeks confirms that the miscarriage is complete.",
+    "keyMechanisms": [
+      "For bleeding under 6 weeks without pain, NICE advises expectant management and a repeat pregnancy test after 7 to 10 days.",
+      "Medical management for missed miscarriage is mifepristone 200 mg orally followed 48 hours later by misoprostol 800 micrograms.",
+      "For incomplete miscarriage, misoprostol 600 micrograms is offered without mifepristone; 800 micrograms is acceptable.",
+      "Anti-D immunoglobulin 250 IU is given only after surgical management in Rhesus D negative women; a Kleihauer test is not needed.",
+      "A negative home urine pregnancy test at 3 weeks confirms that the miscarriage is complete."
+    ],
+    "references": [
+      {
+        "title": "NICE NG126: Ectopic pregnancy and miscarriage: diagnosis and initial management",
+        "edition": "NICE NG126, Recommendation 1.5.1 to 1.7.3",
+        "url": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Bleeding and cramping pain during miscarriage."
+    ],
+    "physicalSigns": [
+      "Not covered in the sources opened beyond ultrasound findings."
+    ],
+    "redFlags": [
+      "Heavy bleeding, severe pain or signs of infection need urgent review (general safety advice; thresholds not captured)."
+    ],
+    "precipitants": [
+      "Not covered in the sources opened."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Ectopic pregnancy",
+      "distinguishingFeatures": "Excluded by early pregnancy assessment before management."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Transvaginal ultrasound confirming miscarriage type",
+        "modalityTarget": "Retained products and sac",
+        "targetCondition": "Missed or incomplete miscarriage",
+        "expectedFinding": "Missed (no heartbeat) or incomplete (retained tissue)",
+        "clinicalRationale": "Determines which medical regimen applies.",
+        "normalValue": "Complete evacuation",
+        "references": [
+          {
+            "title": "NICE NG126: Ectopic pregnancy and miscarriage: diagnosis and initial management",
+            "edition": "NICE NG126, Recommendation 1.4.5 to 1.4.14",
+            "url": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Urine pregnancy test at 3 weeks",
+        "modalityTarget": "Human chorionic gonadotrophin in urine",
+        "targetCondition": "Completed miscarriage",
+        "expectedFinding": "Negative",
+        "clinicalRationale": "Confirms completion without routine repeat scan.",
+        "normalValue": "Negative",
+        "references": [
+          {
+            "title": "NICE NG126: Ectopic pregnancy and miscarriage: diagnosis and initial management",
+            "edition": "NICE NG126, Recommendation 1.5.17 and 1.5.18",
+            "url": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Repeat urine test after 7 to 10 days for bleeding under 6 weeks without pain",
+        "modalityTarget": "Residual pregnancy",
+        "targetCondition": "Early miscarriage",
+        "expectedFinding": "Negative or falling",
+        "clinicalRationale": "NICE advises expectant management with a repeat test.",
+        "normalValue": "Negative",
+        "references": [
+          {
+            "title": "NICE NG126: Ectopic pregnancy and miscarriage: diagnosis and initial management",
+            "edition": "NICE NG126, Recommendation 1.3.10",
+            "url": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Rhesus D blood group",
+        "modalityTarget": "Blood group",
+        "targetCondition": "Need for anti-D immunoglobulin",
+        "expectedFinding": "Rhesus D negative",
+        "clinicalRationale": "Anti-D 250 IU is given after surgical management only.",
+        "normalValue": "Rhesus D positive",
+        "references": [
+          {
+            "title": "NICE NG126: Ectopic pregnancy and miscarriage: diagnosis and initial management",
+            "edition": "NICE NG126, Recommendation 1.7.1 to 1.7.3",
+            "url": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Review of bleeding and pain at follow-up",
+        "modalityTarget": "Clinical course",
+        "targetCondition": "Failed management",
+        "expectedFinding": "Persistent bleeding or pain, or positive test at 3 weeks",
+        "clinicalRationale": "Triggers further management or reassessment.",
+        "normalValue": "Resolution",
+        "references": [
+          {
+            "title": "NICE NG126: Ectopic pregnancy and miscarriage: diagnosis and initial management",
+            "edition": "NICE NG126, Recommendation 1.5.17 and 1.5.18",
+            "url": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Exclusion of ectopic pregnancy by early pregnancy assessment",
+        "modalityTarget": "Pregnancy location",
+        "targetCondition": "Ectopic pregnancy",
+        "expectedFinding": "Pregnancy not in uterus",
+        "clinicalRationale": "Management of miscarriage assumes an intrauterine pregnancy.",
+        "normalValue": "Intrauterine pregnancy confirmed",
+        "references": [
+          {
+            "title": "NICE NG126: Ectopic pregnancy and miscarriage: diagnosis and initial management",
+            "edition": "NICE NG126, Recommendation 1.4.5 to 1.4.14",
+            "url": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "choose",
+      "title": "Offer the choice",
+      "timeframe": "After diagnosis",
+      "actions": [
+        "Offer expectant management first; offer medical or surgical management by preference and circumstance."
+      ]
+    },
+    {
+      "id": "expectant",
+      "title": "Expectant management",
+      "timeframe": "7 to 14 days",
+      "actions": [
+        "Advise on bleeding and return; repeat urine test at 7 to 10 days if bleeding under 6 weeks without pain."
+      ]
+    },
+    {
+      "id": "medical",
+      "title": "Medical management",
+      "timeframe": "At treatment",
+      "actions": [
+        "Missed miscarriage: mifepristone 200 mg orally then misoprostol 800 micrograms 48 hours later.",
+        "Incomplete miscarriage: misoprostol 600 micrograms; no mifepristone."
+      ]
+    },
+    {
+      "id": "surgical",
+      "title": "Surgical management and anti-D",
+      "timeframe": "Surgical day",
+      "actions": [
+        "Give anti-D 250 IU to Rhesus D negative women after surgery only; no Kleihauer test."
+      ]
+    },
+    {
+      "id": "followup",
+      "title": "Confirm completion",
+      "timeframe": "At 3 weeks",
+      "actions": [
+        "Advise a home urine pregnancy test at 3 weeks; arrange review if positive."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Missed miscarriage, medical management",
+        "patientGroup": "Women with confirmed missed miscarriage choosing medical management",
+        "genericName": "Mifepristone",
+        "dose": "200 mg",
+        "route": "Oral",
+        "frequency": "Single dose",
+        "duration": "Single dose, followed by misoprostol 48 hours later",
+        "adjustments": [
+          "No renal or hepatic adjustment is given in the source opened; check product information."
+        ],
+        "monitoring": [
+          "Bleeding, pain and completion at 3 weeks."
+        ],
+        "contraindications": [
+          "Not stated in the source opened; check product information."
+        ],
+        "sourceTitle": "NICE NG126: Ectopic pregnancy and miscarriage: diagnosis and initial management",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations",
+        "sourceEdition": "NICE NG126, Recommendation 1.5.11"
+      },
+      {
+        "indication": "Missed miscarriage, after mifepristone",
+        "patientGroup": "Women with confirmed missed miscarriage",
+        "genericName": "Misoprostol",
+        "dose": "800 micrograms",
+        "route": "Route not captured in the extract opened; confirm in NICE NG126",
+        "frequency": "Single dose 48 hours after mifepristone",
+        "duration": "Single dose",
+        "adjustments": [
+          "No renal or hepatic adjustment is given in the source opened; check product information."
+        ],
+        "monitoring": [
+          "Bleeding and pain; urine test at 3 weeks."
+        ],
+        "contraindications": [
+          "Not stated in the source opened; check product information."
+        ],
+        "sourceTitle": "NICE NG126: Ectopic pregnancy and miscarriage: diagnosis and initial management",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations",
+        "sourceEdition": "NICE NG126, Recommendation 1.5.11"
+      },
+      {
+        "indication": "Incomplete miscarriage",
+        "patientGroup": "Women with incomplete miscarriage choosing medical management",
+        "genericName": "Misoprostol",
+        "dose": "600 micrograms (800 micrograms acceptable)",
+        "route": "Route not captured in the extract opened; confirm in NICE NG126",
+        "frequency": "Single dose (repeat rules not captured)",
+        "duration": "Single course; no mifepristone",
+        "adjustments": [
+          "No renal or hepatic adjustment is given in the source opened; check product information."
+        ],
+        "monitoring": [
+          "Bleeding, pain and completion at 3 weeks."
+        ],
+        "contraindications": [
+          "Not stated in the source opened; check product information."
+        ],
+        "sourceTitle": "NICE NG126: Ectopic pregnancy and miscarriage: diagnosis and initial management",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations",
+        "sourceEdition": "NICE NG126, Recommendation 1.5.13 and 1.5.14"
+      },
+      {
+        "indication": "Prevention of Rhesus D alloimmunisation after surgical management",
+        "patientGroup": "Rhesus D negative women",
+        "genericName": "Anti-D immunoglobulin",
+        "dose": "250 IU",
+        "route": "Route not stated in NICE NG126; confirm with product information",
+        "frequency": "Single dose after surgery",
+        "duration": "Single dose; not for medical or expectant management",
+        "adjustments": [
+          "Kleihauer test is not needed."
+        ],
+        "monitoring": [
+          "Rhesus D status documented."
+        ],
+        "contraindications": [
+          "Not stated in the source opened; check product information."
+        ],
+        "sourceTitle": "NICE NG126: Ectopic pregnancy and miscarriage: diagnosis and initial management",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations",
+        "sourceEdition": "NICE NG126, Recommendation 1.7.1 to 1.7.3"
+      }
+    ],
+    "note": "Route of misoprostol is not captured in the extract opened; confirm with NICE NG126 and product information. The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Expectant management first-line",
+      "threshold": "Offer first, for 7 to 14 days, unless risk factors for haemorrhage or other conditions exist."
+    },
+    {
+      "criterion": "Home pregnancy test",
+      "threshold": "Negative test at 3 weeks confirms completion."
+    }
+  ],
+  "teaching": {
+    "scope": "Woman with confirmed early miscarriage choosing expectant, medical or surgical management: mifepristone and misoprostol doses, anti-D immunoglobulin after surgery and follow-up testing, using NICE NG126.",
+    "learningObjectives": [
+      "Offer expectant, medical and surgical options.",
+      "Give the correct drug regimen and anti-D."
+    ],
+    "pitfalls": [
+      "Giving mifepristone for incomplete miscarriage.",
+      "Giving anti-D after medical management."
+    ],
+    "keyPoints": [
+      "Missed miscarriage uses mifepristone then misoprostol.",
+      "Anti-D only after surgery."
+    ],
+    "references": [
+      {
+        "title": "NICE NG126: Ectopic pregnancy and miscarriage: diagnosis and initial management",
+        "edition": "NICE NG126, Recommendation 1.5.1 to 1.7.3",
+        "url": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations",
+        "locator": "Recommendation 1.5.1 to 1.7.3"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain what bleeding to expect and when to seek help.",
+      "Explain the 3-week home test."
+    ],
+    "lifestyleAndDiet": [
+      "Offer emotional support and information on follow-up."
+    ],
+    "mdtReferrals": [
+      "Early pregnancy unit; gynaecology; midwifery; counselling."
+    ],
+    "dischargeCriteria": [
+      "Discharge once miscarriage is confirmed complete."
+    ],
+    "followUpPlan": "Home urine pregnancy test at 3 weeks; repeat urine test at 7 to 10 days for early bleeding without pain."
+  }
+}

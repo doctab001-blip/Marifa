@@ -1,0 +1,274 @@
+{
+  "id": "50f50f28-5994-4163-8be4-810abdc65c03",
+  "title": "Type 1 Diabetes in Adults: Newly Diagnosed Pathway",
+  "specialty": "Endocrinology",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-18-tier4b-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adult with newly diagnosed type 1 diabetes: clinical diagnosis, basal-bolus insulin regimen, HbA1c and glucose targets, monitoring, ketones and sick-day rules, hypoglycaemia, education and complication screening, using NICE NG17.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 2026-10-18.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "NICE NG17 as extracted gives no insulin doses, glucose doses or glucagon doses; insulin starting doses, titration and hypoglycaemia treatment doses must come from the hospital diabetes protocol and the product information.",
+      "Sick-day rule details and the diabetic ketoacidosis (DKA) treatment protocol were not captured.",
+      "HbA1c figures are given in the source in mmol/mol; the Saudi diabetes society targets and unit conventions were not checked.",
+      "No Saudi guideline was opened.",
+      "Source pages were read through automated page extraction rather than page-by-page in the original documents, so each figure should be spot-checked against the source during clinical review.",
+      "The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "50f50f28-5994-4163-8be4-810abdc65c03"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Type 1 diabetes in adults is diagnosed on clinical grounds in people presenting with hyperglycaemia; age or body mass index (BMI) alone must not exclude or diagnose it. NICE does not routinely measure serum C-peptide to confirm type 1 diabetes in adults. Multiple daily injection basal-bolus insulin is the regimen of choice; non-basal-bolus regimens are not offered to newly diagnosed adults. Rapid-acting insulin analogues are injected before meals and twice-daily insulin detemir is the first-offered basal insulin.",
+    "keyMechanisms": [
+      "Type 1 diabetes in adults is diagnosed on clinical grounds in people presenting with hyperglycaemia; age or body mass index (BMI) alone must not exclude or diagnose it.",
+      "NICE does not routinely measure serum C-peptide to confirm type 1 diabetes in adults.",
+      "Multiple daily injection basal-bolus insulin is the regimen of choice; non-basal-bolus regimens are not offered to newly diagnosed adults.",
+      "Rapid-acting insulin analogues are injected before meals and twice-daily insulin detemir is the first-offered basal insulin."
+    ],
+    "references": [
+      {
+        "title": "NICE NG17: Type 1 diabetes in adults: diagnosis and management",
+        "edition": "NICE NG17, Recommendation 1.1.1 to 1.14.39",
+        "url": "https://www.nice.org.uk/guidance/ng17/chapter/recommendations"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Hyperglycaemia at presentation."
+    ],
+    "physicalSigns": [
+      "Not covered in the sources opened."
+    ],
+    "redFlags": [
+      "Suspected diabetic ketoacidosis (DKA): consider capillary blood ketone testing in an emergency setting."
+    ],
+    "precipitants": [
+      "Not covered in the sources opened."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Other types of diabetes",
+      "distinguishingFeatures": "NICE advises diagnosis on clinical grounds and does not use age or BMI alone."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Capillary blood glucose",
+        "modalityTarget": "Glucose",
+        "targetCondition": "Hyperglycaemia and monitoring",
+        "expectedFinding": "Raised glucose; targets 5 to 7 mmol/litre on waking",
+        "clinicalRationale": "Diagnosis on clinical grounds; monitoring at least 4 times daily.",
+        "normalValue": "4 to 7 mmol/litre before meals",
+        "references": [
+          {
+            "title": "NICE NG17: Type 1 diabetes in adults: diagnosis and management",
+            "edition": "NICE NG17, Recommendation 1.6.19 and 1.6.22",
+            "url": "https://www.nice.org.uk/guidance/ng17/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "HbA1c every 3 to 6 months",
+        "modalityTarget": "Glycated haemoglobin",
+        "targetCondition": "Glycaemic control",
+        "expectedFinding": "Above 48 mmol/mol",
+        "clinicalRationale": "Target 48 mmol/mol (6.5%) or lower.",
+        "normalValue": "48 mmol/mol or lower",
+        "references": [
+          {
+            "title": "NICE NG17: Type 1 diabetes in adults: diagnosis and management",
+            "edition": "NICE NG17, Recommendation 1.6.1 and 1.6.6",
+            "url": "https://www.nice.org.uk/guidance/ng17/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Blood or urine ketones",
+        "modalityTarget": "Ketones",
+        "targetCondition": "Ketosis or DKA",
+        "expectedFinding": "Raised ketones",
+        "clinicalRationale": "Used in sick-day rules and in emergency settings if DKA is suspected.",
+        "normalValue": "Ketones not elevated",
+        "references": [
+          {
+            "title": "NICE NG17: Type 1 diabetes in adults: diagnosis and management",
+            "edition": "NICE NG17, Recommendation 1.10.1 and 1.10.2",
+            "url": "https://www.nice.org.uk/guidance/ng17/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Early-morning urine albumin:creatinine ratio with eGFR yearly",
+        "modalityTarget": "Kidney function",
+        "targetCondition": "Diabetic kidney disease",
+        "expectedFinding": "Raised albumin:creatinine ratio or reduced eGFR",
+        "clinicalRationale": "Yearly screening in adults with type 1 diabetes.",
+        "normalValue": "Normal ratio and eGFR",
+        "references": [
+          {
+            "title": "NICE NG17: Type 1 diabetes in adults: diagnosis and management",
+            "edition": "NICE NG17, Recommendation 1.14.10",
+            "url": "https://www.nice.org.uk/guidance/ng17/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Retinal screening referral at diagnosis",
+        "modalityTarget": "Retinopathy",
+        "targetCondition": "Diabetic eye disease",
+        "expectedFinding": "Retinopathy on screening",
+        "clinicalRationale": "Refer immediately to the local eye screening service.",
+        "normalValue": "No retinopathy",
+        "references": [
+          {
+            "title": "NICE NG17: Type 1 diabetes in adults: diagnosis and management",
+            "edition": "NICE NG17, Recommendation 1.14.5",
+            "url": "https://www.nice.org.uk/guidance/ng17/chapter/recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Thyroid-stimulating hormone (TSH) at annual review",
+        "modalityTarget": "Thyroid function",
+        "targetCondition": "Thyroid disease",
+        "expectedFinding": "Abnormal TSH",
+        "clinicalRationale": "NICE advises annual TSH measurement.",
+        "normalValue": "TSH within reference range",
+        "references": [
+          {
+            "title": "NICE NG17: Type 1 diabetes in adults: diagnosis and management",
+            "edition": "NICE NG17, Recommendation 1.14.39",
+            "url": "https://www.nice.org.uk/guidance/ng17/chapter/recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "diagnose",
+      "title": "Diagnose clinically",
+      "timeframe": "At presentation",
+      "actions": [
+        "Diagnose on clinical grounds; do not use age or BMI alone; do not routinely measure C-peptide."
+      ]
+    },
+    {
+      "id": "insulin",
+      "title": "Start basal-bolus insulin",
+      "timeframe": "At diagnosis",
+      "actions": [
+        "Offer multiple daily injection basal-bolus insulin with twice-daily insulin detemir and pre-meal rapid-acting analogue; alternatives are once-daily glargine or degludec under conditions."
+      ]
+    },
+    {
+      "id": "monitor",
+      "title": "Set monitoring",
+      "timeframe": "At diagnosis",
+      "actions": [
+        "Offer real-time or intermittently scanned CGM by preference; otherwise test capillary glucose at least 4 times daily; HbA1c every 3 to 6 months."
+      ]
+    },
+    {
+      "id": "education",
+      "title": "Education and sick-day rules",
+      "timeframe": "6 to 12 months after diagnosis for structured education",
+      "actions": [
+        "Offer a structured education programme 6 to 12 months after diagnosis; give sick-day rules and consider ketone monitoring."
+      ]
+    },
+    {
+      "id": "complications",
+      "title": "Screen for complications",
+      "timeframe": "At diagnosis and annually",
+      "actions": [
+        "Refer to eye screening at diagnosis; yearly albumin:creatinine ratio, eGFR, blood pressure, lipids and TSH."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [],
+    "note": "NICE NG17 names insulin detemir, glargine and degludec as basal insulins and rapid-acting analogues before meals but, as extracted, gives no doses. Metformin may be considered off-label for adults with BMI of 25 kg/m2 or above (23 kg/m2 or above for South Asian backgrounds) wanting better control with less insulin, without dose in the source. Intramuscular glucagon and fast-acting oral glucose are named for hypoglycaemia without doses. Follow the hospital diabetes protocol. The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "HbA1c target",
+      "threshold": "48 mmol/mol (6.5%) or lower; services report the proportion at 53 mmol/mol (7%) or lower."
+    },
+    {
+      "criterion": "Fasting plasma glucose on waking",
+      "threshold": "5 to 7 mmol/litre; 4 to 7 mmol/litre before meals."
+    },
+    {
+      "criterion": "Blood glucose testing frequency",
+      "threshold": "At least 4 times a day including before each meal and before bed."
+    },
+    {
+      "criterion": "Hybrid closed loop eligibility",
+      "threshold": "HbA1c 58 mmol/mol (7.5%) or more or disabling hypoglycaemia despite best management."
+    }
+  ],
+  "teaching": {
+    "scope": "Adult with newly diagnosed type 1 diabetes: clinical diagnosis, basal-bolus insulin regimen, HbA1c and glucose targets, monitoring, ketones and sick-day rules, hypoglycaemia, education and complication screening, using NICE NG17.",
+    "learningObjectives": [
+      "Use basal-bolus insulin from diagnosis.",
+      "Set glucose and HbA1c targets and screen for complications."
+    ],
+    "pitfalls": [
+      "Using non-basal-bolus regimens in new diagnoses.",
+      "Omitting ketone and sick-day advice."
+    ],
+    "keyPoints": [
+      "Do not use age or BMI alone.",
+      "Offer structured education at 6 to 12 months."
+    ],
+    "references": [
+      {
+        "title": "NICE NG17: Type 1 diabetes in adults: diagnosis and management",
+        "edition": "NICE NG17, Recommendation 1.1.1 to 1.14.39",
+        "url": "https://www.nice.org.uk/guidance/ng17/chapter/recommendations",
+        "locator": "Recommendation 1.1.1 to 1.14.39"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Teach injection technique, glucose testing and hypoglycaemia recognition.",
+      "Give written sick-day rules."
+    ],
+    "lifestyleAndDiet": [
+      "Structured education; carbohydrate counting is part of education programmes (details not captured)."
+    ],
+    "mdtReferrals": [
+      "Diabetes specialist team; dietitian; eye screening service; primary care."
+    ],
+    "dischargeCriteria": [
+      "Not applicable; lifelong follow-up."
+    ],
+    "followUpPlan": "HbA1c every 3 to 6 months; annual complication review."
+  }
+}

@@ -1,0 +1,285 @@
+{
+  "id": "880eca85-63b1-4259-a62d-3894730c1f32",
+  "title": "Dyspepsia and Helicobacter pylori: Test-and-Treat and Urgent Endoscopy Triggers",
+  "specialty": "Gastroenterology / Primary Care",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-18-tier4b-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adult with dyspepsia in primary care: empirical proton pump inhibitor, Helicobacter pylori testing and eradication, retesting and review, using NICE CG184 and NHS omeprazole information.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 2026-10-18.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Doses of proton pump inhibitors and eradication antibiotics are in appendix tables of NICE CG184 that were not captured; the NHS omeprazole page gives no mg doses.",
+      "Alarm features requiring urgent endoscopy were not captured in the extract; apply the NICE recommendations on referral for suspected cancer.",
+      "No Saudi guideline was opened.",
+      "Source pages were read through automated page extraction rather than page-by-page in the original documents, so each figure should be spot-checked against the source during clinical review.",
+      "The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "880eca85-63b1-4259-a62d-3894730c1f32"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Empirical full-dose proton pump inhibitor (PPI) is offered for 4 weeks in dyspepsia. Stop PPI for 2 weeks before testing for Helicobacter pylori. Test using a carbon-13 urea breath test or a stool antigen test. First-line eradication is a 7-day twice-daily course of PPI with amoxicillin plus clarithromycin or metronidazole, choosing the lowest acquisition cost; second line uses the other antibiotic. NSAIDs should be avoided where possible.",
+    "keyMechanisms": [
+      "Empirical full-dose proton pump inhibitor (PPI) is offered for 4 weeks in dyspepsia.",
+      "Stop PPI for 2 weeks before testing for Helicobacter pylori.",
+      "Test using a carbon-13 urea breath test or a stool antigen test.",
+      "First-line eradication is a 7-day twice-daily course of PPI with amoxicillin plus clarithromycin or metronidazole, choosing the lowest acquisition cost; second line uses the other antibiotic.",
+      "NSAIDs should be avoided where possible."
+    ],
+    "references": [
+      {
+        "title": "NICE CG184: Gastro-oesophageal reflux disease and dyspepsia in adults: investigation and management",
+        "edition": "NICE CG184, Section Dyspepsia and Helicobacter pylori recommendations",
+        "url": "https://www.nice.org.uk/guidance/cg184/chapter/Recommendations"
+      },
+      {
+        "title": "NHS medicines: Omeprazole (how and when to take it; who can and cannot take it)",
+        "edition": "NHS omeprazole pages, Section How and when to take omeprazole",
+        "url": "https://www.nhs.uk/medicines/omeprazole/how-and-when-to-take-omeprazole/"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Dyspepsia."
+    ],
+    "physicalSigns": [
+      "Not covered in the sources opened."
+    ],
+    "redFlags": [
+      "Alarm features: not captured in the extract; apply NICE suspected cancer referral criteria."
+    ],
+    "precipitants": [
+      "NSAID use."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Peptic ulcer",
+      "distinguishingFeatures": "Retest 6 to 8 weeks after treatment for peptic ulcer."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Carbon-13 urea breath test",
+        "modalityTarget": "H. pylori urease",
+        "targetCondition": "Helicobacter pylori infection",
+        "expectedFinding": "Positive",
+        "clinicalRationale": "Test after 2 weeks off PPI.",
+        "normalValue": "Negative",
+        "references": [
+          {
+            "title": "NICE CG184: Gastro-oesophageal reflux disease and dyspepsia in adults: investigation and management",
+            "edition": "NICE CG184, Section Helicobacter pylori testing",
+            "url": "https://www.nice.org.uk/guidance/cg184/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Stool antigen test",
+        "modalityTarget": "H. pylori antigen",
+        "targetCondition": "Helicobacter pylori infection",
+        "expectedFinding": "Positive",
+        "clinicalRationale": "Alternative to breath test after 2 weeks off PPI.",
+        "normalValue": "Negative",
+        "references": [
+          {
+            "title": "NICE CG184: Gastro-oesophageal reflux disease and dyspepsia in adults: investigation and management",
+            "edition": "NICE CG184, Section Helicobacter pylori testing",
+            "url": "https://www.nice.org.uk/guidance/cg184/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Retest 6 to 8 weeks after treatment for peptic ulcer",
+        "modalityTarget": "H. pylori eradication",
+        "targetCondition": "Treatment failure",
+        "expectedFinding": "Positive",
+        "clinicalRationale": "Second-line therapy uses the other antibiotic.",
+        "normalValue": "Negative",
+        "references": [
+          {
+            "title": "NICE CG184: Gastro-oesophageal reflux disease and dyspepsia in adults: investigation and management",
+            "edition": "NICE CG184, Section Helicobacter pylori eradication",
+            "url": "https://www.nice.org.uk/guidance/cg184/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Review of NSAID and other medicines",
+        "modalityTarget": "Drug causes",
+        "targetCondition": "Medicine-induced dyspepsia",
+        "expectedFinding": "NSAID use",
+        "clinicalRationale": "Avoid NSAIDs where possible.",
+        "normalValue": "No causative drug",
+        "references": [
+          {
+            "title": "NICE CG184: Gastro-oesophageal reflux disease and dyspepsia in adults: investigation and management",
+            "edition": "NICE CG184, Section Dyspepsia management",
+            "url": "https://www.nice.org.uk/guidance/cg184/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Upper gastrointestinal endoscopy",
+        "modalityTarget": "Gastric and duodenal mucosa",
+        "targetCondition": "Alarm features or failed second-line treatment",
+        "expectedFinding": "Ulcer or malignancy",
+        "clinicalRationale": "Refer to gastroenterology if second-line fails or alarm features exist.",
+        "normalValue": "Normal mucosa",
+        "references": [
+          {
+            "title": "NICE CG184: Gastro-oesophageal reflux disease and dyspepsia in adults: investigation and management",
+            "edition": "NICE CG184, Section Referral",
+            "url": "https://www.nice.org.uk/guidance/cg184/chapter/Recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Review for alarm features before treating as simple dyspepsia",
+        "modalityTarget": "Alarm features",
+        "targetCondition": "Upper gastrointestinal malignancy",
+        "expectedFinding": "Alarm feature present",
+        "clinicalRationale": "Refer for urgent assessment under NICE referral criteria rather than empirical treatment.",
+        "normalValue": "No alarm feature",
+        "references": [
+          {
+            "title": "NICE CG184: Gastro-oesophageal reflux disease and dyspepsia in adults: investigation and management",
+            "edition": "NICE CG184, Section Referral",
+            "url": "https://www.nice.org.uk/guidance/cg184/chapter/Recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "ppi",
+      "title": "Empirical PPI",
+      "timeframe": "4 weeks",
+      "actions": [
+        "Offer full-dose PPI for 4 weeks; use H2-receptor antagonist if the response is inadequate."
+      ]
+    },
+    {
+      "id": "test",
+      "title": "Test for H. pylori",
+      "timeframe": "After 2 weeks off PPI",
+      "actions": [
+        "Carbon-13 urea breath test or stool antigen test."
+      ]
+    },
+    {
+      "id": "eradicate",
+      "title": "Eradicate",
+      "timeframe": "7 days",
+      "actions": [
+        "PPI plus amoxicillin plus clarithromycin or metronidazole twice daily; second line uses the other antibiotic."
+      ]
+    },
+    {
+      "id": "retest",
+      "title": "Retest and review",
+      "timeframe": "6 to 8 weeks",
+      "actions": [
+        "Retest after treatment for peptic ulcer; annual review for long-term dyspepsia."
+      ]
+    },
+    {
+      "id": "refer",
+      "title": "Refer",
+      "timeframe": "If second line fails or alarm features",
+      "actions": [
+        "Refer to gastroenterology."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [],
+    "note": "NICE CG184 gives the regimen as proton pump inhibitor twice daily with amoxicillin and clarithromycin or metronidazole for 7 days, with the second-line course using the other antibiotic, but doses are in appendix tables that were not captured; the NHS omeprazole page states omeprazole is usually taken once or twice daily with no mg doses. Prescribe doses from the hospital eradication protocol and product information. Omeprazole may not be suitable in kidney or liver conditions or osteoporosis; long-term use is linked to low vitamin B12 and weakened bones. The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "PPI trial",
+      "threshold": "Full dose for 4 weeks."
+    },
+    {
+      "criterion": "PPI washout before H. pylori test",
+      "threshold": "2 weeks."
+    },
+    {
+      "criterion": "Eradication course",
+      "threshold": "7 days, twice daily."
+    },
+    {
+      "criterion": "Retest after eradication in peptic ulcer",
+      "threshold": "6 to 8 weeks."
+    }
+  ],
+  "teaching": {
+    "scope": "Adult with dyspepsia in primary care: empirical proton pump inhibitor, Helicobacter pylori testing and eradication, retesting and review, using NICE CG184 and NHS omeprazole information.",
+    "learningObjectives": [
+      "Test and treat for H. pylori.",
+      "Use a 7-day twice-daily eradication regimen."
+    ],
+    "pitfalls": [
+      "Testing while on a PPI.",
+      "Missing alarm features."
+    ],
+    "keyPoints": [
+      "Stop PPI for 2 weeks before testing.",
+      "Retest after peptic ulcer treatment."
+    ],
+    "references": [
+      {
+        "title": "NICE CG184: Gastro-oesophageal reflux disease and dyspepsia in adults: investigation and management",
+        "edition": "NICE CG184, Section Dyspepsia and Helicobacter pylori recommendations",
+        "url": "https://www.nice.org.uk/guidance/cg184/chapter/Recommendations",
+        "locator": "Section Dyspepsia and Helicobacter pylori"
+      },
+      {
+        "title": "NHS medicines: Omeprazole (how and when to take it; who can and cannot take it)",
+        "edition": "NHS omeprazole pages, Section How and when to take omeprazole",
+        "url": "https://www.nhs.uk/medicines/omeprazole/how-and-when-to-take-omeprazole/",
+        "locator": "Section How and when to take omeprazole"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Avoid NSAIDs where possible.",
+      "Complete the 7-day antibiotic course."
+    ],
+    "lifestyleAndDiet": [
+      "Not covered in the sources opened."
+    ],
+    "mdtReferrals": [
+      "Primary care; gastroenterology."
+    ],
+    "dischargeCriteria": [
+      "Not applicable."
+    ],
+    "followUpPlan": "Annual review for long-term dyspepsia; retest 6 to 8 weeks after peptic ulcer treatment."
+  }
+}

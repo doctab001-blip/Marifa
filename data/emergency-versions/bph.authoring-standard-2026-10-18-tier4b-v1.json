@@ -1,0 +1,330 @@
+{
+  "id": "c0025cc2-66de-4af3-867d-06d282c1bd80",
+  "title": "Benign Prostatic Hyperplasia and LUTS: Medical Management and Surgical Referral Criteria",
+  "specialty": "Urology / Primary Care",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-18-tier4b-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Man with lower urinary tract symptoms (LUTS) from benign prostatic enlargement: alpha-blocker and 5-alpha-reductase inhibitor doses and cautions, and desmopressin for nocturnal polyuria. Only the nocturnal polyuria recommendations of NICE CG97 and NHS medicine pages could be read.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 2026-10-18.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "The NICE CG97 recommendations on assessment (symptom score, urinalysis, prostate-specific antigen), choice between alpha blocker, 5-alpha-reductase inhibitor, anticholinergic and combination therapy, and surgical referral criteria were not captured; only the nocturnal polyuria section was returned. Apply the full guideline before use.",
+      "Tamsulosin and finasteride doses come from NHS patient medicine pages, not a clinical guideline.",
+      "No Saudi urology guideline was opened.",
+      "Source pages were read through automated page extraction rather than page-by-page in the original documents, so each figure should be spot-checked against the source during clinical review.",
+      "The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "c0025cc2-66de-4af3-867d-06d282c1bd80"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Nocturnal polyuria can be caused by medical conditions (diabetes mellitus, diabetes insipidus, adrenal insufficiency, hypercalcaemia, liver failure, polyuric renal failure, chronic heart failure, obstructive sleep apnoea) and by drugs (calcium channel blockers, diuretics, selective serotonin reuptake inhibitors). Oral desmopressin is considered only after medical causes are excluded and other treatments have failed. Serum sodium is checked 3 days after the first desmopressin dose and treatment stopped if sodium falls below the normal range.",
+    "keyMechanisms": [
+      "Nocturnal polyuria can be caused by medical conditions (diabetes mellitus, diabetes insipidus, adrenal insufficiency, hypercalcaemia, liver failure, polyuric renal failure, chronic heart failure, obstructive sleep apnoea) and by drugs (calcium channel blockers, diuretics, selective serotonin reuptake inhibitors).",
+      "Oral desmopressin is considered only after medical causes are excluded and other treatments have failed.",
+      "Serum sodium is checked 3 days after the first desmopressin dose and treatment stopped if sodium falls below the normal range."
+    ],
+    "references": [
+      {
+        "title": "NICE CG97: Lower urinary tract symptoms in men: management",
+        "edition": "NICE CG97, Section Nocturnal polyuria",
+        "url": "https://www.nice.org.uk/guidance/cg97/chapter/Recommendations"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Lower urinary tract symptoms including nocturia."
+    ],
+    "physicalSigns": [
+      "Not covered in the sources opened."
+    ],
+    "redFlags": [
+      "Serum sodium below the normal range on desmopressin: stop treatment."
+    ],
+    "precipitants": [
+      "Medicines that cause nocturnal polyuria: calcium channel blockers, diuretics and selective serotonin reuptake inhibitors."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Nocturnal polyuria from a medical condition",
+      "distinguishingFeatures": "Exclude diabetes, hypercalcaemia, heart failure, renal or liver failure and sleep apnoea before desmopressin."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Serum sodium 3 days after first desmopressin dose",
+        "modalityTarget": "Sodium",
+        "targetCondition": "Hyponatraemia on desmopressin",
+        "expectedFinding": "Below the normal range",
+        "clinicalRationale": "Stop desmopressin if sodium falls.",
+        "normalValue": "Sodium within reference range",
+        "references": [
+          {
+            "title": "NICE CG97: Lower urinary tract symptoms in men: management",
+            "edition": "NICE CG97, Section Nocturnal polyuria",
+            "url": "https://www.nice.org.uk/guidance/cg97/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Blood glucose or HbA1c",
+        "modalityTarget": "Glycaemia",
+        "targetCondition": "Diabetes mellitus as cause of polyuria",
+        "expectedFinding": "Raised glucose",
+        "clinicalRationale": "Diabetes is a named cause of nocturnal polyuria.",
+        "normalValue": "Normal glucose",
+        "references": [
+          {
+            "title": "NICE CG97: Lower urinary tract symptoms in men: management",
+            "edition": "NICE CG97, Section Nocturnal polyuria",
+            "url": "https://www.nice.org.uk/guidance/cg97/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Serum calcium",
+        "modalityTarget": "Calcium",
+        "targetCondition": "Hypercalcaemia as cause of polyuria",
+        "expectedFinding": "Raised calcium",
+        "clinicalRationale": "Hypercalcaemia is a named cause.",
+        "normalValue": "Calcium within reference range",
+        "references": [
+          {
+            "title": "NICE CG97: Lower urinary tract symptoms in men: management",
+            "edition": "NICE CG97, Section Nocturnal polyuria",
+            "url": "https://www.nice.org.uk/guidance/cg97/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Renal function",
+        "modalityTarget": "Creatinine and eGFR",
+        "targetCondition": "Polyuric renal failure",
+        "expectedFinding": "Reduced eGFR",
+        "clinicalRationale": "Polyuric renal failure is a named cause.",
+        "normalValue": "Normal renal function",
+        "references": [
+          {
+            "title": "NICE CG97: Lower urinary tract symptoms in men: management",
+            "edition": "NICE CG97, Section Nocturnal polyuria",
+            "url": "https://www.nice.org.uk/guidance/cg97/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Medicine review for calcium channel blockers, diuretics and SSRIs",
+        "modalityTarget": "Drug causes",
+        "targetCondition": "Drug-induced nocturnal polyuria",
+        "expectedFinding": "Causative drug present",
+        "clinicalRationale": "Named causes in CG97.",
+        "normalValue": "No causative drug",
+        "references": [
+          {
+            "title": "NICE CG97: Lower urinary tract symptoms in men: management",
+            "edition": "NICE CG97, Section Nocturnal polyuria",
+            "url": "https://www.nice.org.uk/guidance/cg97/chapter/Recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Check serum sodium before and during desmopressin",
+        "modalityTarget": "Sodium",
+        "targetCondition": "Hyponatraemia",
+        "expectedFinding": "Sodium below normal range",
+        "clinicalRationale": "Desmopressin must be stopped if sodium falls below normal.",
+        "normalValue": "Sodium within reference range",
+        "references": [
+          {
+            "title": "NICE CG97: Lower urinary tract symptoms in men: management",
+            "edition": "NICE CG97, Section Nocturnal polyuria",
+            "url": "https://www.nice.org.uk/guidance/cg97/chapter/Recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "causes",
+      "title": "Exclude medical and drug causes of nocturnal polyuria",
+      "timeframe": "First visit",
+      "actions": [
+        "Review conditions and medicines named by NICE."
+      ]
+    },
+    {
+      "id": "alpha",
+      "title": "Alpha blocker",
+      "timeframe": "If treatment is indicated",
+      "actions": [
+        "Tamsulosin 400 micrograms once daily, after the first meal of the day (NHS patient information)."
+      ]
+    },
+    {
+      "id": "5ari",
+      "title": "5-alpha-reductase inhibitor",
+      "timeframe": "If treatment is indicated",
+      "actions": [
+        "Finasteride 5 mg once daily (NHS patient information)."
+      ]
+    },
+    {
+      "id": "desmo",
+      "title": "Desmopressin for nocturnal polyuria",
+      "timeframe": "Only if others failed",
+      "actions": [
+        "Check serum sodium 3 days after first dose; stop if low."
+      ]
+    },
+    {
+      "id": "refer",
+      "title": "Apply the full NICE guideline for assessment and surgical referral",
+      "timeframe": "Before prescribing",
+      "actions": [
+        "Surgical referral criteria were not captured; use the full guideline and the local urology pathway."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Symptoms of enlarged prostate",
+        "patientGroup": "Adult men",
+        "genericName": "Tamsulosin",
+        "dose": "400 micrograms",
+        "route": "Oral",
+        "frequency": "Once daily, at about the same time each day, after breakfast or the first meal",
+        "duration": "Not stated; ongoing",
+        "adjustments": [
+          "Severe liver or kidney problems: tell the doctor before taking (no dose adjustment given)."
+        ],
+        "monitoring": [
+          "Dizziness on standing."
+        ],
+        "contraindications": [
+          "Orthostatic hypotension (caution).",
+          "Cataract or glaucoma eye surgery planned: tell the surgeon (NHS page)."
+        ],
+        "sourceTitle": "NHS medicines: Tamsulosin (how and when to take it; who can and cannot take it)",
+        "sourceUrl": "https://www.nhs.uk/medicines/tamsulosin/how-and-when-to-take-tamsulosin/",
+        "sourceEdition": "NHS tamsulosin pages, Section How and when to take tamsulosin"
+      },
+      {
+        "indication": "Enlarged prostate",
+        "patientGroup": "Adult men",
+        "genericName": "Finasteride",
+        "dose": "5 mg",
+        "route": "Oral",
+        "frequency": "Once daily, at about the same time each day",
+        "duration": "Not stated; ongoing",
+        "adjustments": [
+          "Liver problems: raise with the doctor before taking (no dose adjustment given)."
+        ],
+        "monitoring": [
+          "Mood (history of depression or thoughts of self-harm needs discussion first)."
+        ],
+        "contraindications": [
+          "Past allergic reaction to finasteride; severe bladder problems (as listed by NHS); generally not recommended for women or children."
+        ],
+        "sourceTitle": "NHS medicines: Finasteride (how and when to take it; who can and cannot take it)",
+        "sourceUrl": "https://www.nhs.uk/medicines/finasteride/how-and-when-to-take-finasteride/",
+        "sourceEdition": "NHS finasteride pages, Section How and when to take finasteride"
+      },
+      {
+        "indication": "Nocturnal polyuria after other causes excluded and other treatments failed",
+        "patientGroup": "Adult men",
+        "genericName": "Desmopressin",
+        "dose": "Dose not specified in NICE CG97",
+        "route": "Oral",
+        "frequency": "Not specified",
+        "duration": "Stop if serum sodium falls below the normal range",
+        "adjustments": [
+          "No renal or hepatic adjustment is given in the source opened; check product information."
+        ],
+        "monitoring": [
+          "Serum sodium 3 days after the first dose."
+        ],
+        "contraindications": [
+          "Serum sodium below the normal range.",
+          "Off-label as of June 2015."
+        ],
+        "sourceTitle": "NICE CG97: Lower urinary tract symptoms in men: management",
+        "sourceUrl": "https://www.nice.org.uk/guidance/cg97/chapter/Recommendations",
+        "sourceEdition": "NICE CG97, Section Nocturnal polyuria"
+      }
+    ],
+    "note": "Doses are from NHS patient medicine pages. Selection criteria between drug classes were not captured from NICE CG97. The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Desmopressin sodium check",
+      "threshold": "Serum sodium 3 days after the first dose; stop if below normal range."
+    },
+    {
+      "criterion": "Desmopressin status",
+      "threshold": "No UK marketing authorisation for this indication as of June 2015 (off-label)."
+    }
+  ],
+  "teaching": {
+    "scope": "Man with lower urinary tract symptoms (LUTS) from benign prostatic enlargement: alpha-blocker and 5-alpha-reductase inhibitor doses and cautions, and desmopressin for nocturnal polyuria. Only the nocturnal polyuria recommendations of NICE CG97 and NHS medicine pages could be read.",
+    "learningObjectives": [
+      "Exclude causes of nocturnal polyuria.",
+      "Use desmopressin with sodium monitoring."
+    ],
+    "pitfalls": [
+      "Prescribing desmopressin without excluding causes.",
+      "Skipping the sodium check."
+    ],
+    "keyPoints": [
+      "Check sodium 3 days after the first desmopressin dose.",
+      "Tamsulosin 400 micrograms and finasteride 5 mg once daily."
+    ],
+    "references": [
+      {
+        "title": "NICE CG97: Lower urinary tract symptoms in men: management",
+        "edition": "NICE CG97, Section Nocturnal polyuria",
+        "url": "https://www.nice.org.uk/guidance/cg97/chapter/Recommendations",
+        "locator": "Section Nocturnal polyuria"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Report dizziness on standing.",
+      "Tell the eye surgeon about tamsulosin before cataract surgery."
+    ],
+    "lifestyleAndDiet": [
+      "Not covered in the sources opened."
+    ],
+    "mdtReferrals": [
+      "Primary care; urology."
+    ],
+    "dischargeCriteria": [
+      "Not applicable."
+    ],
+    "followUpPlan": "Serum sodium 3 days after starting desmopressin; further follow-up per local pathway."
+  }
+}

@@ -1,0 +1,283 @@
+{
+  "id": "f35d7f78-a9c4-472c-80b9-e9d767d4de47",
+  "title": "Miscarriage: Diagnosis and Early Pregnancy Unit Assessment",
+  "specialty": "Obstetrics / Gynaecology",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-18-tier4b-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Woman with early pregnancy bleeding or pain assessed in an early pregnancy assessment service: ultrasound diagnostic thresholds, rescan timing, serum human chorionic gonadotrophin (hCG) use, and progesterone for threatened miscarriage, using NICE NG126.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 2026-10-18.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "Early pregnancy unit referral criteria, Rhesus testing thresholds and pain-relief advice were only partly captured from NICE NG126 and should be checked against the full guideline.",
+      "Progesterone product, brand and registered indication in Saudi Arabia were not checked.",
+      "No Saudi early pregnancy guideline was opened. The Saudi MOH and Saudi Society of Obstetrics and Gynaecology guidance were not checked.",
+      "Source pages were read through automated page extraction rather than page-by-page in the original documents, so each figure should be spot-checked against the source during clinical review.",
+      "The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "f35d7f78-a9c4-472c-80b9-e9d767d4de47"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "NICE sets ultrasound thresholds for a definite diagnosis: crown-rump length (CRL) of 7 mm or more with no heartbeat, or a mean gestational sac diameter (MGSD) of 25 mm or more with no embryo. When findings are below these thresholds, a repeat scan is needed before a diagnosis of miscarriage: after 7 days if transvaginal, or 14 days if transabdominal. A serum hCG rise of more than 63% over 48 hours is expected in a viable intrauterine pregnancy, and a fall of more than 50% is consistent with failing pregnancy. Vaginal progesterone is offered for bleeding in early pregnancy to women with a previous miscarriage.",
+    "keyMechanisms": [
+      "NICE sets ultrasound thresholds for a definite diagnosis: crown-rump length (CRL) of 7 mm or more with no heartbeat, or a mean gestational sac diameter (MGSD) of 25 mm or more with no embryo.",
+      "When findings are below these thresholds, a repeat scan is needed before a diagnosis of miscarriage: after 7 days if transvaginal, or 14 days if transabdominal.",
+      "A serum hCG rise of more than 63% over 48 hours is expected in a viable intrauterine pregnancy, and a fall of more than 50% is consistent with failing pregnancy.",
+      "Vaginal progesterone is offered for bleeding in early pregnancy to women with a previous miscarriage."
+    ],
+    "references": [
+      {
+        "title": "NICE NG126: Ectopic pregnancy and miscarriage: diagnosis and initial management",
+        "edition": "NICE NG126, Recommendation 1.4.5 to 1.4.32",
+        "url": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Vaginal bleeding in early pregnancy.",
+      "Lower abdominal pain."
+    ],
+    "physicalSigns": [
+      "Findings on transvaginal ultrasound determine the diagnosis; examination alone does not."
+    ],
+    "redFlags": [
+      "Pain with bleeding raises concern for ectopic pregnancy and needs assessment under the ectopic pathway."
+    ],
+    "precipitants": [
+      "Previous miscarriage (relevant to progesterone eligibility)."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Ectopic pregnancy",
+      "distinguishingFeatures": "Pregnancy of unknown location or adnexal mass on ultrasound; assess under NICE NG126 ectopic recommendations."
+    },
+    {
+      "condition": "Viable intrauterine pregnancy with threatened miscarriage",
+      "distinguishingFeatures": "Fetal heartbeat seen; bleeding without a diagnosis of miscarriage."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Transvaginal ultrasound",
+        "modalityTarget": "Embryo, fetal heartbeat and sac size",
+        "targetCondition": "Miscarriage",
+        "expectedFinding": "CRL 7 mm or more without heartbeat, or MGSD 25 mm or more without embryo",
+        "clinicalRationale": "Defines the diagnosis; second opinion or rescan advised when uncertain.",
+        "normalValue": "Intrauterine pregnancy with fetal heartbeat",
+        "references": [
+          {
+            "title": "NICE NG126: Ectopic pregnancy and miscarriage: diagnosis and initial management",
+            "edition": "NICE NG126, Recommendation 1.4.5 to 1.4.14",
+            "url": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Repeat ultrasound after 7 days (transvaginal) or 14 days (transabdominal)",
+        "modalityTarget": "Interval growth and heartbeat",
+        "targetCondition": "Uncertain viability",
+        "expectedFinding": "No growth or no heartbeat at rescan",
+        "clinicalRationale": "Required before diagnosing when below thresholds.",
+        "normalValue": "Interval development with heartbeat",
+        "references": [
+          {
+            "title": "NICE NG126: Ectopic pregnancy and miscarriage: diagnosis and initial management",
+            "edition": "NICE NG126, Recommendation 1.4.5 to 1.4.14",
+            "url": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Serial serum hCG at 48 hours",
+        "modalityTarget": "hCG trend",
+        "targetCondition": "Pregnancy of unknown location and failing pregnancy",
+        "expectedFinding": "Fall of more than 50% or abnormal rise",
+        "clinicalRationale": "Supports diagnosis when ultrasound does not give a location.",
+        "normalValue": "Rise of more than 63% in 48 hours",
+        "references": [
+          {
+            "title": "NICE NG126: Ectopic pregnancy and miscarriage: diagnosis and initial management",
+            "edition": "NICE NG126, Recommendation 1.4.24 to 1.4.32",
+            "url": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Urine pregnancy test at 3 weeks after expectant or medical management",
+        "modalityTarget": "Residual pregnancy",
+        "targetCondition": "Completed miscarriage",
+        "expectedFinding": "Negative test",
+        "clinicalRationale": "A negative home test at 3 weeks confirms completion.",
+        "normalValue": "Negative",
+        "references": [
+          {
+            "title": "NICE NG126: Ectopic pregnancy and miscarriage: diagnosis and initial management",
+            "edition": "NICE NG126, Recommendation 1.5.8",
+            "url": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Rhesus D status",
+        "modalityTarget": "Blood group",
+        "targetCondition": "Need for anti-D immunoglobulin",
+        "expectedFinding": "Rhesus D negative",
+        "clinicalRationale": "Anti-D is given after surgical management only (see management topic).",
+        "normalValue": "Rhesus D positive",
+        "references": [
+          {
+            "title": "NICE NG126: Ectopic pregnancy and miscarriage: diagnosis and initial management",
+            "edition": "NICE NG126, Recommendation 1.7.1 to 1.7.3",
+            "url": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "assess",
+      "title": "Assess and refer",
+      "timeframe": "On presentation",
+      "actions": [
+        "Take history of bleeding and pain; assess under the ectopic pathway if pain is present.",
+        "Arrange transvaginal ultrasound in an early pregnancy assessment service."
+      ]
+    },
+    {
+      "id": "ultrasound",
+      "title": "Apply ultrasound thresholds",
+      "timeframe": "At scan",
+      "actions": [
+        "Diagnose miscarriage if CRL is 7 mm or more with no heartbeat or MGSD is 25 mm or more with no embryo.",
+        "If below thresholds, rescan after 7 days (transvaginal) or 14 days (transabdominal)."
+      ]
+    },
+    {
+      "id": "hcg",
+      "title": "Use serum hCG when location is uncertain",
+      "timeframe": "At 48 hours",
+      "actions": [
+        "Repeat hCG at 48 hours; rise above 63% suggests a viable pregnancy; fall above 50% suggests failure."
+      ]
+    },
+    {
+      "id": "progesterone",
+      "title": "Threatened miscarriage",
+      "timeframe": "If bleeding and previous miscarriage",
+      "actions": [
+        "Offer vaginal progesterone 400 mg twice daily until 16 weeks."
+      ]
+    },
+    {
+      "id": "support",
+      "title": "Support and next steps",
+      "timeframe": "After diagnosis",
+      "actions": [
+        "Offer information and emotional support; plan expectant, medical or surgical management (see the management topic)."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Bleeding in early pregnancy with previous miscarriage and a confirmed intrauterine pregnancy",
+        "patientGroup": "Pregnant women under 16 weeks",
+        "genericName": "Progesterone",
+        "dose": "400 mg",
+        "route": "Vaginal",
+        "frequency": "Twice daily",
+        "duration": "Until 16 completed weeks of pregnancy",
+        "adjustments": [
+          "No renal or hepatic adjustment is given in the source opened; check product information."
+        ],
+        "monitoring": [
+          "Continuing bleeding and pregnancy viability on review."
+        ],
+        "contraindications": [
+          "Stop if miscarriage is diagnosed.",
+          "Not offered when there is no previous miscarriage (NICE offers it only with bleeding and a previous miscarriage)."
+        ],
+        "sourceTitle": "NICE NG126: Ectopic pregnancy and miscarriage: diagnosis and initial management",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations",
+        "sourceEdition": "NICE NG126, Recommendation 1.5.1 to 1.5.3"
+      }
+    ],
+    "note": "Only progesterone for threatened miscarriage is dosed here. Management drugs are covered in the management topic. The Saudi Food and Drug Authority (SFDA) drug registration site could not be opened from this environment, so registration of each medicine was not verified; check hospital formulary."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Definite miscarriage on transvaginal ultrasound",
+      "threshold": "CRL 7 mm or more with no heartbeat, or MGSD 25 mm or more with no embryo."
+    },
+    {
+      "criterion": "Rescan interval when uncertain",
+      "threshold": "7 days if transvaginal; 14 days if transabdominal."
+    },
+    {
+      "criterion": "Serum hCG trend",
+      "threshold": "Rise of more than 63% in 48 hours suggests viable pregnancy; fall of more than 50% suggests failing pregnancy."
+    }
+  ],
+  "teaching": {
+    "scope": "Woman with early pregnancy bleeding or pain assessed in an early pregnancy assessment service: ultrasound diagnostic thresholds, rescan timing, serum human chorionic gonadotrophin (hCG) use, and progesterone for threatened miscarriage, using NICE NG126.",
+    "learningObjectives": [
+      "Apply the CRL and MGSD thresholds.",
+      "Know the rescan intervals and hCG trends."
+    ],
+    "pitfalls": [
+      "Diagnosing miscarriage below the thresholds on a single scan.",
+      "Offering progesterone to all women with bleeding."
+    ],
+    "keyPoints": [
+      "Rescan at 7 days (transvaginal) or 14 days (transabdominal) when uncertain.",
+      "Progesterone only for bleeding plus previous miscarriage."
+    ],
+    "references": [
+      {
+        "title": "NICE NG126: Ectopic pregnancy and miscarriage: diagnosis and initial management",
+        "edition": "NICE NG126, Recommendation 1.4.5 to 1.4.32",
+        "url": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations",
+        "locator": "Recommendation 1.4.5 to 1.4.32"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain that bleeding is common and does not always mean miscarriage.",
+      "Explain the reason for a repeat scan."
+    ],
+    "lifestyleAndDiet": [
+      "Not applicable beyond routine early pregnancy advice."
+    ],
+    "mdtReferrals": [
+      "Early pregnancy assessment service; obstetrics and gynaecology; midwifery."
+    ],
+    "dischargeCriteria": [
+      "Discharge once the pregnancy is confirmed viable or miscarriage is complete and follow-up is arranged."
+    ],
+    "followUpPlan": "Rescan at 7 or 14 days when uncertain; home urine pregnancy test at 3 weeks after management."
+  }
+}
