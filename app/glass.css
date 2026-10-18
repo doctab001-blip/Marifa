@@ -876,3 +876,64 @@ a.card:hover, .disease-card:hover, .care-pillar-card:hover { border-color: rgb(v
   .explorer-stats { grid-column: 1; grid-row: 2; display: flex; flex-wrap: wrap; justify-items: start; gap: 4px 12px; }
   .explorer-row .update-chevron { grid-column: 2; grid-row: 1; }
 }
+
+/* ═══ Premium dashboard tiles ═════════════════════════════════════════════════════════════════
+   Four number tiles: a soft tone wash, hairline highlight, layered shadow, a crisp icon medallion
+   and a figure that leads. The whole tile is the link. Tone is a single "r g b" triple (--tone). */
+.metric-grid .metric-card {
+  --tone: 15 165 198;
+  position: relative; isolation: isolate; overflow: hidden; display: flex; flex-direction: column; gap: 0; padding: 14px 16px 13px;
+  border: 1px solid rgb(var(--tone) / .24); border-radius: 14px;
+  background:
+    radial-gradient(120% 90% at 100% 0%, rgb(var(--tone) / .16), transparent 58%),
+    linear-gradient(160deg, rgb(var(--tone) / .07), transparent 46%),
+    rgb(var(--glass) / .92);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / .55), 0 1px 2px rgb(var(--shade) / .06), 0 14px 28px -16px rgb(var(--tone) / .45);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+html[data-theme="dark"] .metric-grid .metric-card { box-shadow: inset 0 1px 0 rgb(255 255 255 / .08), 0 1px 2px rgb(0 0 0 / .4), 0 18px 32px -18px rgb(var(--tone) / .55); }
+.metric-grid .metric-card.metric-teal { --tone: 15 165 198; }
+.metric-grid .metric-card.metric-blue { --tone: 59 130 240; }
+.metric-grid .metric-card.metric-yellow { --tone: 224 142 11; }
+.metric-grid .metric-card.metric-magenta { --tone: 229 69 107; }
+/* a fine tone line along the top edge */
+.metric-grid .metric-card::before {
+  content: ""; display: block; position: absolute; z-index: -1; top: 0; left: 16px; right: 16px; height: 2px; border-radius: 0 0 4px 4px;
+  background: linear-gradient(90deg, rgb(var(--tone) / 0), rgb(var(--tone) / .9), rgb(var(--tone) / 0));
+}
+.metric-grid .metric-card:hover { transform: translateY(-3px); border-color: rgb(var(--tone) / .5); box-shadow: inset 0 1px 0 rgb(255 255 255 / .6), 0 2px 4px rgb(var(--shade) / .08), 0 22px 36px -16px rgb(var(--tone) / .6); }
+html[data-theme="dark"] .metric-grid .metric-card:hover { box-shadow: inset 0 1px 0 rgb(255 255 255 / .12), 0 2px 4px rgb(0 0 0 / .5), 0 24px 40px -16px rgb(var(--tone) / .7); }
+.metric-grid .metric-card:focus-within { outline: 2px solid rgb(var(--tone) / .7); outline-offset: 2px; }
+
+.metric-grid .metric-top { align-items: flex-start; gap: 12px; color: var(--text-2); font-size: .68rem; font-weight: 750; letter-spacing: .06em; text-transform: uppercase; line-height: 1.35; }
+.metric-grid .metric-top { min-height: 32px; }
+.metric-grid .metric-top > span:first-child { max-width: 19ch; }
+.metric-grid .metric-icon {
+  flex: none; width: 32px; height: 32px; border-radius: 10px; color: #fff; border: 1px solid rgb(255 255 255 / .35);
+  background: linear-gradient(150deg, rgb(255 255 255 / .38), rgb(255 255 255 / 0) 46%), linear-gradient(160deg, rgb(var(--tone)), rgb(var(--tone) / .72));
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / .55), inset 0 -6px 10px rgb(0 0 0 / .14), 0 6px 12px -5px rgb(var(--tone) / .65);
+}
+.metric-grid .metric-icon > .i3d { stroke: url(#i3d-white); filter: drop-shadow(0 1px 1px rgb(0 0 0 / .25)); }
+
+.metric-grid .metric-value {
+  margin-top: 8px; font-size: 2.1rem; line-height: 1; font-weight: 780; letter-spacing: -.045em; font-variant-numeric: tabular-nums;
+  color: var(--strong);
+  background: linear-gradient(180deg, var(--strong) 35%, color-mix(in srgb, var(--strong) 62%, rgb(var(--tone))));
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.metric-grid .metric-note { margin-top: 5px; color: var(--text-3); font-size: .76rem; line-height: 1.35; }
+.metric-grid .metric-link {
+  position: static; align-self: flex-start; display: inline-flex; align-items: center; gap: 2px; margin-top: 8px; padding: 2px 8px 2px 10px;
+  border: 1px solid rgb(var(--tone) / .28); border-radius: 999px; background: rgb(var(--tone) / .08);
+  color: color-mix(in srgb, var(--strong) 70%, rgb(var(--tone))); font-size: .72rem; font-weight: 700; text-decoration: none;
+  transition: background .18s ease, gap .18s ease;
+}
+/* stretch the link over the whole tile so any click opens it */
+.metric-grid .metric-link::after { content: ""; position: absolute; inset: 0; border-radius: 14px; }
+.metric-grid .metric-card:hover .metric-link { background: rgb(var(--tone) / .16); gap: 5px; }
+
+.metric-grid .page-loading-card { min-height: 126px; }
+@media (prefers-reduced-motion: reduce) {
+  .metric-grid .metric-card, .metric-grid .metric-link { transition: none; }
+  .metric-grid .metric-card:hover { transform: none; }
+}

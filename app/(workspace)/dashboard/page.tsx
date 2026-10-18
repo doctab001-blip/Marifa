@@ -223,7 +223,7 @@ function MetricCard({ tone, label, value, note, href, icon }: { tone: "teal" | "
   return (
     <article className={`card metric-card metric-${tone}`}>
       <div className="metric-top"><span>{label}</span><span className={`metric-icon metric-icon-${tone}`}>{icon}</span></div>
-      <div className="metric-value">{value}</div>
+      <div className="metric-value">{value.toLocaleString("en-GB")}</div>
       <div className="metric-note">{note}</div>
       <Link className="metric-link" href={href}>Open<ChevronRight size={14} aria-hidden="true" /></Link>
     </article>
