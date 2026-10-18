@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import {
   ArrowLeft,
+  Activity,
   Bell,
   ChevronRight,
   ClipboardList,
@@ -34,6 +35,7 @@ export const navigation: NavItem[] = [
   { href: "/dashboard/disease-management", label: "Disease Management", icon: Stethoscope },
   { href: "/dashboard/medical-calculators", label: "Medical Calculators", icon: CalculatorIcon },
   { href: "/dashboard/formulary", label: "Medicines and Formulary", icon: Pill },
+  { href: "/dashboard/recent-developments", label: "Recent Developments", icon: Activity },
   { href: "/dashboard/protocols", label: "Local Protocols & SOPs", icon: FileCheck2 },
   { href: "/dashboard/governance", label: "Clinical Governance", icon: ShieldCheck },
   { href: "/dashboard/directory", label: "Staff Directory", icon: UsersRound },
@@ -41,11 +43,11 @@ export const navigation: NavItem[] = [
 ];
 
 const sections = [
-  { label: "Workspace", items: navigation.slice(0, 4) },
-  { label: "Hospital", items: navigation.slice(4) },
+  { label: "Workspace", items: navigation.slice(0, 5) },
+  { label: "Hospital", items: navigation.slice(5) },
 ];
 
-const mobileItems = [navigation[0], navigation[1], navigation[2], navigation[7]];
+const mobileItems = [navigation[0], navigation[1], navigation[2], navigation[8]];
 
 const diseaseLinks: NavItem[] = [
   { href: "/dashboard/diseases", label: "Disease directory", icon: Stethoscope },

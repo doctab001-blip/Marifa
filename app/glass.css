@@ -956,3 +956,24 @@ html[data-theme="dark"] .metric-grid .metric-card:hover { box-shadow: inset 0 1p
 .topic-tile:hover .topic-tile-date, .topic-tile:focus-within .topic-tile-date { opacity: 0; }
 @media (hover: none) { .topic-tile:hover .topic-tile-date { opacity: 1; } }
 @media (max-width: 640px) { .managed-field select, .managed-field-search { min-width: 0; max-width: none; flex: 1 1 100%; } .managed-count { margin-left: 0; } }
+
+/* ═══ Recent Developments ═══════════════════════════════════════════════════════════════════ */
+.dev-page { display: grid; gap: 16px; align-content: start; }
+.dev-disclaimer { padding: 10px 14px; border: 1px solid rgb(251 191 36 / .45); border-radius: 12px; background: rgb(251 191 36 / .1); color: var(--strong); font-size: .84rem; line-height: 1.45; }
+.dev-review { padding: 18px 20px; display: grid; gap: 10px; }
+.dev-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.dev-item { display: grid; gap: 6px; padding: 14px 16px; border: 1px solid rgb(var(--ov) / .1); border-radius: 14px; background: rgb(var(--glass) / .6); }
+.dev-item-meta { display: flex; flex-wrap: wrap; gap: 6px; }
+.dev-cat-new_drug_approval { --pc: #34d399; } .dev-cat-safety_alert { --pc: #fb7185; } .dev-cat-guideline_update { --pc: #22d3ee; }
+.dev-cat-key_trial { --pc: #a78bfa; } .dev-cat-regulatory_decision { --pc: #fbbf24; } .dev-cat-public_health { --pc: #60a5fa; }
+.dev-item-title { margin: 0; font-size: 1rem; line-height: 1.35; font-weight: 700; }
+.dev-item-title a { color: var(--strong); text-decoration: none; }
+.dev-item-title a:hover, .dev-item-title a:focus-visible { text-decoration: underline; }
+.dev-item-excerpt { margin: 0; color: var(--text-2, var(--text-3)); font-size: .88rem; line-height: 1.5; }
+.dev-item-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 12px; color: var(--text-3); font-size: .78rem; }
+.dev-source-link { display: inline-flex; align-items: center; gap: 4px; font-weight: 700; color: var(--strong); text-decoration: none; }
+.dev-source-link:hover { text-decoration: underline; }
+.dev-item-admin { display: flex; gap: 8px; padding-top: 4px; }
+.dev-btn { padding: .4rem .8rem; font-size: .8rem; }
+.dev-check { display: inline-flex; align-items: center; gap: 6px; height: 34px; font-size: .84rem; color: var(--strong); }
+@media (max-width: 640px) { .dev-item { padding: 12px; } .dev-item-foot { flex-direction: column; align-items: flex-start; } }
