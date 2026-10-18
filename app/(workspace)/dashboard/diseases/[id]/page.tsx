@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
+import { after } from "next/server";
 import { ArrowLeft, CalendarCheck, CheckCircle2, FileText, Hourglass, ShieldAlert, Stethoscope } from "@/components/icons-3d";
 import { EmergencyTopic } from "@/components/emergency-topic";
 import { TopicPager, type TopicLink } from "@/components/topic-library";
 import { TopicApproveButton } from "@/components/topic-approve-button";
 import { getApprovedDiseaseGuideline, getApprovedDiseaseGuidelineVersion, getApprovedDiseaseGuidelines } from "@/lib/data/disease-guidelines";
 import { canonicalTopicId } from "@/lib/data/merged-topics";
+import { recordTopicView } from "@/lib/data/topic-views";
 import { getFamilyCanonicalTopic, getFamilyTopics, getTopicFamily } from "@/lib/data/topic-families";
 import { approveLiveTopic } from "./actions";
 import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
@@ -66,6 +68,8 @@ export default async function DiseaseDetailPage({ params, searchParams }: { para
   if (result.state === "unavailable") return <ErrorState />;
 
   const disease = result.disease;
+  // Count a view of the live topic only (not an opened historical version). Runs after the response is sent.
+  if (!version) after(() => recordTopicView(disease.id));
   const [directory, pillarDirectory] = await Promise.all([
     getApprovedDiseaseGuidelines({ includeFamilyMembers: true }),
     getApprovedDiseaseGuidelines({ carePillar: disease.pillar, includeFamilyMembers: true }),

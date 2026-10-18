@@ -3,28 +3,21 @@ import { Suspense } from "react";
 import {
   Activity,
   ArrowRight,
-  BellRing,
   CalendarClock,
-  Calculator,
   ChevronRight,
   ClipboardCheck,
-  Droplets,
   FileClock,
-  FileSearch,
-  HeartPulse,
-  Info,
+  Hourglass,
   Library,
-  Megaphone,
-  Pill,
   Stethoscope,
   TriangleAlert,
 } from "@/components/icons-3d";
 import { DemoBanner } from "@/components/demo-banner";
-import { AlertBanner } from "@/components/dashboard/alert-banner";
 import { KnowledgeSearch } from "@/components/dashboard/knowledge-search";
-import { clinicalCalculators } from "@/lib/clinical-calculators";
-import { hospitalAlerts, type HospitalAlert } from "@/lib/dashboard/hospital-feed";
+import { TopicExplorer } from "@/components/dashboard/topic-explorer";
+import { emptyFilters, isSortKey, type ExplorerFilters, type ExplorerTopic, type SortKey } from "@/lib/dashboard/topic-explorer";
 import { getApprovedDiseaseGuidelines } from "@/lib/data/disease-guidelines";
+import { getTopicViewStats } from "@/lib/data/topic-views";
 import { isTemporaryOpenAdminMode } from "@/lib/access-mode";
 import { getCurrentViewer } from "@/lib/supabase/session";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
@@ -32,11 +25,32 @@ import { getDiseaseDraftTopicCount } from "@/lib/data/disease-drafts";
 
 const dateFormat = new Intl.DateTimeFormat("en-SA", { dateStyle: "medium", timeZone: "Asia/Riyadh" });
 
-export default async function DashboardPage({ searchParams }: { searchParams: Promise<{ error?: string | string[] }> }) {
-  const { error } = await searchParams;
+type DashboardSearchParams = { error?: string | string[]; sort?: string | string[]; q?: string | string[]; speciality?: string | string[]; pillar?: string | string[]; authority?: string | string[]; review?: string | string[] };
+
+const first = (value: string | string[] | undefined) => (Array.isArray(value) ? value[0] : value) ?? "";
+
+function readExplorerState(params: DashboardSearchParams): { sort: SortKey; filters: ExplorerFilters } {
+  const sort = first(params.sort);
+  const review = first(params.review);
+  return {
+    sort: isSortKey(sort) ? sort : "recent",
+    filters: {
+      ...emptyFilters,
+      query: first(params.q).slice(0, 120),
+      speciality: first(params.speciality),
+      pillar: first(params.pillar),
+      authority: first(params.authority),
+      review: review === "approved" || review === "pending" ? review : "all",
+    },
+  };
+}
+
+export default async function DashboardPage({ searchParams }: { searchParams: Promise<DashboardSearchParams> }) {
+  const params = await searchParams;
+  const error = first(params.error);
   const viewer = await getCurrentViewer();
   const firstName = viewer?.name.split(/\s+/).slice(0, 2).join(" ") ?? "Clinician";
-  const urgentAlert = hospitalAlerts.find(({ severity }) => severity === "urgent");
+  const explorerState = readExplorerState(params);
 
   return (
     <main className="page dashboard-page">
@@ -49,36 +63,51 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
         <div className="dashboard-date"><CalendarClock size={15} aria-hidden="true" />{dateFormat.format(new Date())}</div>
       </header>
 
-      {(urgentAlert || error === "unauthorized") && (
+      {error === "unauthorized" && (
         <div className="dashboard-notices">
-          {urgentAlert && <AlertBanner alert={urgentAlert} />}
-          {error === "unauthorized" && <aside className="dashboard-access-notice" role="alert">You don’t have permission to open Administration. Ask your hospital administrator if you need access.</aside>}
+          <aside className="dashboard-access-notice" role="alert">You don’t have permission to open Administration. Ask your hospital administrator if you need access.</aside>
         </div>
       )}
 
       <DemoBanner />
 
       <Suspense fallback={<DashboardLoadingState />}>
-        <DashboardContent viewerId={viewer?.id} />
+        <DashboardContent viewerId={viewer?.id} initialSort={explorerState.sort} initialFilters={explorerState.filters} />
       </Suspense>
     </main>
   );
 }
 
-async function DashboardContent({ viewerId }: { viewerId?: string }) {
-  const assignmentsPromise = loadAssignments(viewerId);
-  const [guidelines, assignments, draftTopicCount] = await Promise.all([
+async function DashboardContent({ viewerId, initialSort, initialFilters }: { viewerId?: string; initialSort: SortKey; initialFilters: ExplorerFilters }) {
+  const [guidelines, assignments, draftTopicCount, viewStats] = await Promise.all([
     getApprovedDiseaseGuidelines(),
-    assignmentsPromise,
+    loadAssignments(viewerId),
     getDiseaseDraftTopicCount(),
+    getTopicViewStats(),
   ]);
-  const activeGuidelines = guidelines.diseases.length;
-  const recentGuidelines = [...guidelines.diseases].sort((x, y) => String(y.lastReviewed).localeCompare(String(x.lastReviewed))).slice(0, 6);
-  const formularyUpdates = hospitalAlerts.filter(({ id }) => id.startsWith("formulary")).length;
+
+  const topics: ExplorerTopic[] = guidelines.diseases.map((disease) => {
+    const views = viewStats.byTopic[disease.id];
+    return {
+      id: disease.id,
+      title: disease.title,
+      speciality: disease.speciality ?? disease.specialty,
+      pillar: disease.pillar,
+      authority: disease.authority,
+      version: disease.version,
+      lastReviewed: String(disease.lastReviewed),
+      clinicallyApproved: disease.clinicalReviewStatus !== "pending",
+      keywords: (disease.keywords ?? []).slice(0, 12),
+      totalViews: views?.total ?? 0,
+      views7d: views?.last7Days ?? 0,
+    };
+  });
+  const awaitingApproval = topics.filter((topic) => !topic.clinicallyApproved).length;
+  const specialityCount = new Set(topics.map((topic) => topic.speciality)).size;
+  const viewsThisWeek = topics.reduce((sum, topic) => sum + topic.views7d, 0);
 
   return (
     <>
-
       <section className="knowledge-hub" aria-labelledby="hub-title">
         <div className="ai-search">
           <div className="ai-search-intro">
@@ -90,45 +119,31 @@ async function DashboardContent({ viewerId }: { viewerId?: string }) {
         </div>
 
         <div className="metric-grid" aria-label="Library metrics">
-          <MetricCard tone="teal" label="Active guidelines" value={activeGuidelines} note="Live in the clinical directory" href="/dashboard/diseases" icon={<Library size={18} aria-hidden="true" />} />
-          <MetricCard tone="yellow" label={`Draft topics (${draftTopicCount})`} value={draftTopicCount} note="Awaiting authoring or clinical review" href="/dashboard/diseases/drafts" icon={<FileClock size={18} aria-hidden="true" />} />
-          <MetricCard tone="blue" label="Medical calculators" value={clinicalCalculators.length} note="Evidence-linked point-of-care tools" href="/dashboard/medical-calculators" icon={<Calculator size={18} aria-hidden="true" />} />
-          <MetricCard tone="magenta" label="Formulary updates" value={formularyUpdates} note="Recent changes (sample data)" href="/dashboard/medicines-formulary" icon={<Pill size={18} aria-hidden="true" />} />
-        </div>
-
-        <div className="hub-columns">
-          <section className="card section-card" aria-labelledby="recent-guidelines-title">
-            <div className="section-head"><h2 id="recent-guidelines-title">Recently updated guidelines</h2><Link className="section-link" href="/dashboard/diseases">View directory</Link></div>
-            <RecentGuidelines diseases={recentGuidelines} />
-          </section>
-          <section className="card section-card" aria-labelledby="core-pathways-title">
-            <div className="section-head"><h2 id="core-pathways-title">Core clinical pathways</h2><Link className="section-link" href="/dashboard/diseases">All pathways</Link></div>
-            <div className="pathway-grid">
-              {corePathways.map(({ title, description, query, icon: Icon, tone }) => (
-                <Link key={title} className="pathway-card" href={`/dashboard/diseases?q=${encodeURIComponent(query)}`}>
-                  <span className={`metric-icon metric-icon-${tone}`}><Icon size={18} aria-hidden="true" /></span>
-                  <h3>{title}</h3>
-                  <p>{description}</p>
-                  <span className="pathway-cta">Open pathway<ArrowRight size={13} aria-hidden="true" /></span>
-                </Link>
-              ))}
-            </div>
-          </section>
+          <MetricCard tone="teal" label="Live topics" value={topics.length} note={`Across ${specialityCount} ${specialityCount === 1 ? "speciality" : "specialities"}`} href="/dashboard/diseases" icon={<Library size={18} aria-hidden="true" />} />
+          <MetricCard tone="magenta" label="Awaiting clinical approval" value={awaitingApproval} note="Live, with clinician sign-off pending" href="/dashboard/diseases/published" icon={<Hourglass size={18} aria-hidden="true" />} />
+          <MetricCard tone="yellow" label="Draft topics" value={draftTopicCount} note="Below the live threshold or in authoring" href="/dashboard/diseases/drafts" icon={<FileClock size={18} aria-hidden="true" />} />
+          {viewStats.available ? (
+            <MetricCard tone="blue" label="Topic views, last 7 days" value={viewsThisWeek} note="Counted when a live topic is opened" href="/dashboard/diseases" icon={<Activity size={18} aria-hidden="true" />} />
+          ) : (
+            <MetricCard tone="blue" label="Specialities covered" value={specialityCount} note="View counts are not recording yet" href="/dashboard/diseases" icon={<Stethoscope size={18} aria-hidden="true" />} />
+          )}
         </div>
       </section>
 
-      <div className="dashboard-columns">
-        <div className="dashboard-stack">
-          <section className="card section-card">
-            <div className="section-head">
-              <h2>Important hospital updates</h2>
-              <Link className="section-link" href="/dashboard/notifications">All notifications</Link>
+      <div className="dashboard-main-grid">
+        {guidelines.state === "unavailable" ? (
+          <section className="card section-card topic-explorer" aria-labelledby="explorer-title">
+            <div className="section-head"><h2 id="explorer-title">Browse topics</h2></div>
+            <div className="empty-state">
+              <span className="empty-state-icon"><TriangleAlert size={22} aria-hidden="true" /></span>
+              <strong>The topic library could not be loaded</strong>
+              <p>The clinical data service did not respond. Refresh the page to try again.</p>
             </div>
-            <ul className="update-list">
-              {hospitalAlerts.map((alert) => <UpdateRow alert={alert} key={alert.id} />)}
-            </ul>
           </section>
-        </div>
+        ) : (
+          <TopicExplorer topics={topics} viewsAvailable={viewStats.available} initialSort={initialSort} initialFilters={initialFilters} />
+        )}
+
         <div className="dashboard-stack">
           <section className="card section-card">
             <div className="section-head"><h2>My requirements</h2><Link className="section-link" href="/dashboard/competencies">View all</Link></div>
@@ -204,36 +219,6 @@ function DashboardLoadingState() {
   );
 }
 
-const severityIcon = { urgent: BellRing, advisory: Megaphone, info: Info } as const;
-const severityLabel = { urgent: "Urgent", advisory: "Advisory", info: "Information" } as const;
-
-function UpdateRow({ alert }: { alert: HospitalAlert }) {
-  const Icon = severityIcon[alert.severity];
-  return (
-    <li>
-      <Link className="update-row" href={alert.href}>
-        <span className={`update-icon update-icon-${alert.severity}`}><Icon size={17} aria-hidden="true" /></span>
-        <span className="update-main">
-          <span className="update-meta">
-            <span className={`badge badge-${alert.severity}`}>{severityLabel[alert.severity]}</span>
-            <span>{dateFormat.format(new Date(alert.issuedAt))}</span>
-            {alert.sample && <span className="update-sample">Sample</span>}
-          </span>
-          <strong>{alert.title}</strong>
-          <span className="update-detail">{alert.detail}</span>
-        </span>
-        <ChevronRight size={15} className="update-chevron" aria-hidden="true" />
-      </Link>
-    </li>
-  );
-}
-
-const corePathways = [
-  { title: "Sepsis Six", description: "Recognition, first-hour bundle and escalation.", query: "Sepsis", icon: Activity, tone: "magenta" },
-  { title: "Acute Chest Pain", description: "Rapid assessment, ACS risk stratification and next steps.", query: "Acute coronary syndrome", icon: HeartPulse, tone: "teal" },
-  { title: "AKI Management", description: "Staging, fluid review, medicines and referral triggers.", query: "Acute kidney injury", icon: Droplets, tone: "blue" },
-] as const;
-
 function MetricCard({ tone, label, value, note, href, icon }: { tone: "teal" | "yellow" | "blue" | "magenta"; label: string; value: number; note: string; href: string; icon: React.ReactNode }) {
   return (
     <article className={`card metric-card metric-${tone}`}>
@@ -242,40 +227,5 @@ function MetricCard({ tone, label, value, note, href, icon }: { tone: "teal" | "
       <div className="metric-note">{note}</div>
       <Link className="metric-link" href={href}>Open<ChevronRight size={14} aria-hidden="true" /></Link>
     </article>
-  );
-}
-
-function RecentGuidelines({ diseases }: { diseases: Awaited<ReturnType<typeof getApprovedDiseaseGuidelines>>["diseases"] }) {
-  if (!diseases.length) {
-    return (
-      <div className="empty-state">
-        <span className="empty-state-icon"><FileSearch size={22} aria-hidden="true" /></span>
-        <strong>No clinical guidelines published yet</strong>
-        <p>Approved topics will be listed here as soon as they go live.</p>
-      </div>
-    );
-  }
-  return (
-    <ul className="guideline-feed">
-      {diseases.map((disease) => {
-        const reviewed = new Date(disease.lastReviewed);
-        return (
-          <li key={disease.id}>
-            <Link href={`/dashboard/diseases/${disease.id}`} className="guideline-feed-row">
-              <div className="topic-icon"><Stethoscope size={17} aria-hidden="true" /></div>
-              <div className="guideline-feed-main">
-                <strong>{disease.title}</strong>
-                <span className="guideline-feed-meta">
-                  <span>{disease.authority}</span>
-                  <span className="pill pill-slate pill-sm">v{disease.version}</span>
-                  <span>Revised {Number.isNaN(reviewed.getTime()) ? disease.lastReviewed : dateFormat.format(reviewed)}</span>
-                </span>
-              </div>
-              <ChevronRight size={15} className="update-chevron" aria-hidden="true" />
-            </Link>
-          </li>
-        );
-      })}
-    </ul>
   );
 }
