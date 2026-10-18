@@ -560,17 +560,17 @@ a.card:hover, .disease-card:hover, .care-pillar-card:hover { border-color: rgb(v
 .topic-nav-search input:focus, .global-search input:focus { box-shadow: 0 0 0 3px rgb(34 211 238 / .16); border-color: rgb(34 211 238 / .6); }
 .topic-nav-search input, .global-search input { box-shadow: none; }
 
-/* The side panel has its own selection language: orange, not the pill colour. */
+/* Keep the side panel aligned with the product's magenta selection language. */
 .sidebar .nav-link[aria-current="page"],
 .sidebar-collapsed .nav-link[aria-current="page"],
 .sidebar .topic-nav-group a[aria-current="page"],
 .sidebar .topic-nav-drafts a[aria-current="page"] {
-  background: #ffedd5;
-  border-color: #fdba74;
-  color: #9a3412;
-  box-shadow: inset 3px 0 0 #ea580c;
+  background: #fce7f3;
+  border-color: #f9a8d4;
+  color: #831843;
+  box-shadow: inset 3px 0 0 #db2777;
 }
-.sidebar .nav-link[aria-current="page"] > svg { color: #9a3412; }
+.sidebar .nav-link[aria-current="page"] > svg { color: #831843; }
 
 /* Header: still frosted and floating, but quiet. */
 .topbar { background: rgb(var(--glass) / .7); box-shadow: 0 8px 24px -16px rgb(var(--shade) / .4); }

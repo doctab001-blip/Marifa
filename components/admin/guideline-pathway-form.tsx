@@ -142,7 +142,7 @@ function OptionalSection({ title, present, onAdd, onRemove, children }: { title:
 }
 
 function SavePathwayButton() {
-  return <button className="ui-button ui-button-primary" type="submit"><Save size={15} />Save draft</button>;
+  return <button className="ui-button ui-button-primary" type="submit"><Save size={15} />Create new version</button>;
 }
 
 function toMarkdownTopic(disease: DiseaseDetail): DraftTopic {
@@ -238,6 +238,6 @@ export function GuidelinePathwayForm({ disease, guidelineId, versionId, saveActi
       <OptionalSection title="Teaching guide" present={Boolean(payload.teaching)} onAdd={() => update(["teaching"], { learningObjectives: [""], guidedApproach: [{ title: "", prompt: "", guidance: "" }], checkpoints: [{ question: "", answer: "" }], pitfalls: [""], keyPoints: [""] })} onRemove={() => { const next = structuredClone(payload) as unknown as JsonObject; delete next.teaching; setPayload(next as unknown as DiseaseDetail); }}><ValueEditor value={payload.teaching} path={["teaching"]} update={update} /></OptionalSection>
     </section></>}
 
-    <div className="card pathway-save-bar"><span>The pathway remains a governed draft until an authorised reviewer approves it.</span><SavePathwayButton /></div>
+    <div className="card pathway-save-bar"><span>Saving preserves this version and creates a new one. Versions scoring 80% or more publish automatically; clinical review remains pending.</span><SavePathwayButton /></div>
   </form>;
 }

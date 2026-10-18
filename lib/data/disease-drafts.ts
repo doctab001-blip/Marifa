@@ -109,12 +109,36 @@ export async function getDiseaseDraftTopicCount() {
   return result.state === "ready" ? result.topicCount : 0;
 }
 
+export type DiseaseManagementCounts = {
+  approved: number;
+  drafts: number;
+  published: number;
+};
+
+/**
+ * The three Disease Management tabs are distinct governance queues. Keep their
+ * badges sourced from the same loaders as the lists so a tab never displays a
+ * total from another state or a raw historical-version count.
+ */
+export async function getDiseaseManagementCounts(): Promise<DiseaseManagementCounts> {
+  const [drafts, approved, published] = await Promise.all([
+    getDiseaseDrafts(),
+    getDiseaseManagementVersions("approved"),
+    getDiseaseManagementVersions("published"),
+  ]);
+  return {
+    drafts: drafts.state === "ready" ? drafts.topicCount : 0,
+    approved: approved.state === "ready" ? approved.topicCount : 0,
+    published: published.state === "ready" ? published.topicCount : 0,
+  };
+}
+
 /** Current versions grouped by their explicit governance state for Disease Management. */
-export async function getDiseaseManagementVersions(status: "approved" | "published"): Promise<{
+export const getDiseaseManagementVersions = cache(async (status: "approved" | "published"): Promise<{
   versions: DiseaseManagementVersion[];
   topicCount: number;
   state: "ready" | "unavailable";
-}> {
+}> => {
   const viewer = await getCurrentViewer();
   const isAdmin = Boolean(viewer?.isAdmin);
   const isPlatformAdmin = viewer?.role === "Platform Admin";
@@ -165,7 +189,7 @@ export async function getDiseaseManagementVersions(status: "approved" | "publish
   } catch {
     return { versions: [], topicCount: 0, state: "unavailable" };
   }
-}
+});
 
 export async function getDiseaseDraftVersion(versionId: string) {
   const viewer = await getCurrentViewer();

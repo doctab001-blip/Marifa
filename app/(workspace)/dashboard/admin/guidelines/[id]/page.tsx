@@ -20,7 +20,7 @@ export default async function EditDraftGuidelinePage({
   searchParams,
 }: {
   params: Promise<{ id: string }>;
-  searchParams: Promise<{ saved?: string; error?: string; version?: string }>;
+  searchParams: Promise<{ saved?: string; error?: string; version?: string; published?: string; under_review?: string; score?: string }>;
 }) {
   const [{ id }, query] = await Promise.all([params, searchParams]);
   const result = await getDraftGuideline(id, query.version);
@@ -38,7 +38,8 @@ export default async function EditDraftGuidelinePage({
         </article>
       ) : (
         <>
-          {query.saved === "1" && <p className="admin-save-message" role="status">Draft saved. Its status remains draft.</p>}
+          {query.saved === "1" && query.published === "1" && <p className="admin-save-message" role="status">New version saved and published. Clinical review remains pending.</p>}
+          {query.saved === "1" && query.under_review === "1" && <p className="admin-save-message" role="status">New revision saved for review (authoring score {query.score ?? "below 80"}%). It will publish automatically once it meets the 80% threshold.</p>}
           {query.error && messages[query.error] && <p className="admin-save-error" role="alert">{messages[query.error]}</p>}
           <article className="scenario-card" aria-labelledby="scenario-title">
             <header className="sc-hero">

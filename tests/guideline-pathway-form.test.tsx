@@ -42,7 +42,7 @@ describe("GuidelinePathwayForm", () => {
     expect(compiled.pathophysiology.summary).toBe("Updated clinical summary.");
     expect(compiled.presentation.symptoms).toEqual(["Original symptom", "New symptom"]);
     expect(DiseaseDetailSchema.safeParse(compiled).success).toBe(true);
-    expect(screen.getByRole("button", { name: "Save draft" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Create new version" })).toBeInTheDocument();
   });
 
   it("blocks submission and explains schema errors before the server action", async () => {

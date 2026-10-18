@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { FileCheck2, FileSearch } from "@/components/icons-3d";
 import { DiseaseManagementNavigation } from "@/components/diseases/DiseaseManagementNavigation";
-import { getDiseaseDraftTopicCount, getDiseaseManagementVersions } from "@/lib/data/disease-drafts";
+import { getDiseaseManagementCounts, getDiseaseManagementVersions } from "@/lib/data/disease-drafts";
 import { createDraftFromApproved } from "@/app/(workspace)/dashboard/admin/guidelines/actions";
 
 export default async function DiseaseApprovedPage() {
-  const [result, draftTopicCount] = await Promise.all([getDiseaseManagementVersions("approved"), getDiseaseDraftTopicCount()]);
+  const [result, counts] = await Promise.all([getDiseaseManagementVersions("approved"), getDiseaseManagementCounts()]);
 
   return (
     <main className="page disease-directory-page">
@@ -21,7 +21,7 @@ export default async function DiseaseApprovedPage() {
         </div>
       </header>
 
-      <DiseaseManagementNavigation active="approved" draftTopicCount={draftTopicCount} />
+      <DiseaseManagementNavigation active="approved" counts={counts} />
 
       {result.state === "unavailable" ? (
         <section className="directory-empty card" role="alert"><FileSearch size={28} aria-hidden="true" /><h2>Approved topics unavailable</h2><p>Try again later.</p></section>
@@ -30,7 +30,7 @@ export default async function DiseaseApprovedPage() {
       ) : (
         <section className="disease-draft-list" aria-labelledby="approved-topic-list-title">
           <div className="directory-section-heading"><div><p className="disease-kicker">Governance history</p><h2 id="approved-topic-list-title">Approved versions</h2></div><p role="status">{result.versions.length} approved versions across {result.topicCount} topics</p></div>
-          <div className="disease-draft-grid">{result.versions.map((version) => <article className="card disease-draft-card" key={version.versionId}><div className="disease-draft-card-heading"><span className="admin-queue-status status-approved">Approved</span><span className="disease-draft-version">Version {version.version}</span></div><Link className="disease-draft-title-link" href={`/dashboard/diseases/${version.id}?version=${encodeURIComponent(version.versionId)}`}><h3>{version.title}</h3></Link>{version.canEdit && <form className="disease-draft-actions disease-draft-actions-top" action={createDraftFromApproved}><input type="hidden" name="id" value={version.id}/><input type="hidden" name="versionId" value={version.versionId}/><button className="ui-button ui-button-secondary">Edit / Create New Version</button></form>}<p className="disease-draft-meta">{version.specialty}</p><p className="disease-draft-source">Source: {version.sourceTitle}</p></article>)}</div>
+          <div className="disease-draft-grid">{result.versions.map((version) => <article className="card disease-draft-card" key={version.versionId}><div className="disease-draft-card-heading"><span className="admin-queue-status status-approved">Approved</span><span className="disease-draft-version">Version {version.version}</span></div><h3><Link className="disease-draft-card-link" href={`/dashboard/diseases/${version.id}?version=${encodeURIComponent(version.versionId)}`}>{version.title}</Link></h3><p className="disease-draft-meta">{version.specialty}</p><p className="disease-draft-source">Source: {version.sourceTitle}</p><div className="disease-draft-actions disease-draft-actions-top"><Link className="ui-button ui-button-primary" href={`/dashboard/diseases/${version.id}?version=${encodeURIComponent(version.versionId)}`}>View approved topic</Link>{version.canEdit && <form action={createDraftFromApproved}><input type="hidden" name="id" value={version.id}/><input type="hidden" name="versionId" value={version.versionId}/><button className="ui-button ui-button-secondary">Create editable draft</button></form>}</div></article>)}</div>
         </section>
       )}
     </main>

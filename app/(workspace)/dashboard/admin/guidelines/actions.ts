@@ -8,6 +8,7 @@ import { requireOrganizationAdmin } from "@/lib/admin/data";
 import { isTemporaryOpenAdminMode } from "@/lib/access-mode";
 import { DiseaseDetailSchema } from "@/lib/validations/disease";
 import { approvalErrorCode } from "@/lib/approval-errors";
+import { auditTopicContent, CLINICAL_DIRECTORY_MINIMUM_SCORE } from "@/lib/clinical-authoring-audit";
 
 const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
@@ -41,31 +42,73 @@ export async function saveDraftGuideline(formData: FormData) {
 
   const { data: version, error: versionError } = await supabase
     .from("guideline_versions")
-    .select("id,status,is_current")
+    .select("id,status,is_current,version,source_title,issuing_organization,source_url,jurisdiction,last_verified_date,review_date")
     .eq("id", versionId)
     .eq("guideline_id", id)
     .maybeSingle();
   if (versionError || !version) redirect(`${editPath}&error=version_not_editable`);
   if (version.status !== parsed.data.status || !["draft", "under_review", "published"].includes(version.status)) redirect(`${editPath}&error=version_not_editable`);
 
-  const { error: contentError } = await supabase
-    .from("guideline_versions")
-    .update({
-      content: parsed.data,
-      change_summary: version.status === "published" ? "Published content updated in the Marifa editor; the approved version history remains preserved." : "Draft content updated in the Marifa editor; clinical and local governance review remains pending.",
-    })
-    .eq("id", version.id)
-    .eq("guideline_id", id)
-    .eq("status", parsed.data.status);
-  if (contentError) redirect(`${editPath}&error=save_failed`);
+  // Every editor save is additive. The row being edited stays intact as
+  // history; the submitted content becomes a fresh, reviewable version.
+  const suffix = new Date().toISOString().replace(/[-:.TZ]/g, "");
+  const revision = `${version.version.replace(/-live$/, "")}-revision-${suffix}`;
+  const reviewContent = { ...parsed.data, version: revision, status: "under_review" as const, clinicalReviewStatus: "pending" as const };
+  const audit = auditTopicContent(reviewContent);
+  const shared = {
+    guideline_id: id,
+    source_title: version.source_title,
+    issuing_organization: version.issuing_organization,
+    source_url: version.source_url,
+    jurisdiction: version.jurisdiction,
+    last_verified_date: version.last_verified_date,
+    review_date: version.review_date,
+    created_by: context.userId,
+  };
+  const { data: reviewVersion, error: reviewError } = await supabase.from("guideline_versions").insert({
+    ...shared,
+    version: revision,
+    version_number: revision,
+    status: "under_review",
+    is_current: false,
+    approved_by: null,
+    approved_at: null,
+    published_at: null,
+    content: reviewContent,
+    change_summary: `New editor revision created from ${version.version}; prior version preserved. Authoring-standard score ${audit.score}%. Clinical review pending.`,
+  }).select("id").single();
+  if (reviewError || !reviewVersion) redirect(`${editPath}&error=save_failed`);
 
-  if (!guideline.is_shared_reference || version.is_current) {
-    let metadataQuery = supabase.from("clinical_guidelines").update({ title: parsed.data.title, specialty: parsed.data.specialty }).eq("id", id);
+  let published = false;
+  let destinationVersionId = reviewVersion.id;
+  if (audit.score >= CLINICAL_DIRECTORY_MINIMUM_SCORE) {
+    const liveVersion = `${revision}-live`;
+    const now = new Date().toISOString();
+    const liveContent = { ...reviewContent, version: liveVersion, status: "published" as const };
+    const { data: liveVersionRow, error: liveError } = await supabase.from("guideline_versions").insert({
+      ...shared,
+      version: liveVersion,
+      version_number: liveVersion,
+      status: "published",
+      is_current: false,
+      approved_by: context.userId,
+      approved_at: now,
+      published_at: now,
+      content: liveContent,
+      change_summary: `Published automatically from ${revision}: authoring-standard score ${audit.score}% (threshold ${CLINICAL_DIRECTORY_MINIMUM_SCORE}%). Clinical review remains pending.`,
+    }).select("id").single();
+    if (liveError || !liveVersionRow) redirect(`${editPath}&error=save_failed`);
+    const { error: previousCurrentError } = await supabase.from("guideline_versions").update({ is_current: false }).eq("guideline_id", id).eq("is_current", true);
+    const { error: currentError } = await supabase.from("guideline_versions").update({ is_current: true }).eq("guideline_id", id).eq("version", liveVersion);
+    if (previousCurrentError || currentError) redirect(`${editPath}&error=save_failed`);
+    let metadataQuery = supabase.from("clinical_guidelines").update({ title: parsed.data.title, specialty: parsed.data.specialty, status: "published" }).eq("id", id);
     metadataQuery = guideline.is_shared_reference
       ? metadataQuery.is("organization_id", null).eq("is_shared_reference", true)
       : metadataQuery.eq("organization_id", context.organizationId);
     const { error: metadataError } = await metadataQuery;
     if (metadataError) redirect(`${editPath}&error=metadata_save_failed`);
+    published = true;
+    destinationVersionId = liveVersionRow.id;
   }
 
   revalidatePath(editPath);
@@ -75,7 +118,8 @@ export async function saveDraftGuideline(formData: FormData) {
   revalidatePath("/dashboard/diseases/drafts");
   revalidatePath("/dashboard/diseases/approved");
   revalidatePath(`/dashboard/diseases/${encodeURIComponent(id)}`);
-  redirect(`${editPath}&saved=1`);
+  const destination = `/dashboard/admin/guidelines/${encodeURIComponent(id)}?version=${encodeURIComponent(destinationVersionId)}`;
+  redirect(`${destination}&saved=1&${published ? "published=1" : `under_review=1&score=${audit.score}`}`);
 }
 
 export async function approveGuidelineVersion(formData: FormData) {
