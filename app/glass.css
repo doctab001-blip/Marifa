@@ -1045,3 +1045,14 @@ html[data-theme="dark"] .metric-grid .metric-card:hover { box-shadow: inset 0 1p
 @keyframes dev-spotlight-fill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 @keyframes dev-spotlight-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .dev-spotlight-card { animation: none; } }
+
+/* Draft topics side list: the topic name only, in a bolder weight (no version sub-line). */
+.sidebar .topic-nav-drafts a {
+  display: block;
+  padding: 7px 10px;
+  color: var(--strong, var(--ink));
+  font-size: .82rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+.sidebar .topic-nav-drafts a[aria-current="page"] { font-weight: 700; }

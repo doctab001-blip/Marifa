@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { MedicalCalculators } from "@/components/medical-calculators";
 
 export const metadata: Metadata = { title: "Medical Calculators | Marifa" };
@@ -14,7 +15,7 @@ export default function MedicalCalculatorsPage() {
         </div>
         <span className="calculator-reviewed-note">Evidence checked 12 Oct 2026</span>
       </div>
-      <MedicalCalculators />
+      <Suspense fallback={null}><MedicalCalculators /></Suspense>
     </main>
   );
 }

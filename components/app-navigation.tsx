@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import {
   ArrowLeft,
   Activity,
@@ -28,7 +28,13 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { searchTopics } from "@/lib/topic-search";
 import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
 
-type NavItem = { href: string; label: string; icon: LucideIcon };
+type NavItem = {
+  href: string;
+  label: string;
+  icon: LucideIcon;
+  /** For links that differ only by query string (e.g. ?tab=archive). */
+  isActive?: (pathname: string, params: URLSearchParams) => boolean;
+};
 
 export const navigation: NavItem[] = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -51,15 +57,51 @@ const mobileItems = [navigation[0], navigation[1], navigation[2], navigation[8]]
 
 const diseaseLinks: NavItem[] = [
   { href: "/dashboard/diseases", label: "Disease directory", icon: Stethoscope },
+  { href: "/dashboard/diseases/approved", label: "Approved", icon: ShieldCheck },
   { href: "/dashboard/diseases/drafts", label: "Drafts", icon: FileClock },
+  { href: "/dashboard/diseases/published", label: "Published", icon: FileCheck2 },
+];
+
+const protocolLinks: NavItem[] = [
+  { href: "/dashboard/protocols/drafts", label: "Drafts", icon: FileClock },
+  { href: "/dashboard/protocols/published", label: "Published", icon: FileCheck2 },
+];
+
+const developmentLinks: NavItem[] = [
+  { href: "/dashboard/recent-developments", label: "Latest", icon: Activity, isActive: (path, params) => path === "/dashboard/recent-developments" && params.get("tab") !== "archive" },
+  { href: "/dashboard/recent-developments?tab=archive", label: "Archive", icon: FileClock, isActive: (path, params) => path === "/dashboard/recent-developments" && params.get("tab") === "archive" },
 ];
 
 const adminLinks: NavItem[] = [
   { href: "/dashboard/admin", label: "Overview", icon: ClipboardList },
   { href: "/dashboard/admin/staff", label: "Staff Directory", icon: UsersRound },
   { href: "/dashboard/admin/governance", label: "Governance Queue", icon: ShieldCheck },
+  { href: "/dashboard/admin/investigation-review", label: "Investigation review", icon: FileCheck2 },
   { href: "/dashboard/admin/settings", label: "Settings", icon: Settings2 },
 ];
+
+/** Admin pages are not a top-level module, but they still get their own panel instead of the home list. */
+const ADMIN_MODULE: NavItem = { href: "/dashboard/admin", label: "Administration", icon: Settings2 };
+
+function isAdminPath(pathname: string) {
+  return /^\/dashboard\/admin(\/|$)/.test(pathname) && !pathname.startsWith("/dashboard/admin/guidelines/");
+}
+
+/**
+ * The links one module shows in its own panel. A module only ever lists its own pages:
+ * other modules are reached with Home / All modules, never repeated here.
+ */
+export function modulePanelLinks(module: NavItem, temporaryAdminMode = false): NavItem[] {
+  switch (module.href) {
+    case "/dashboard/disease-management": return diseaseLinks;
+    case "/dashboard/protocols": return protocolLinks;
+    case "/dashboard/recent-developments": return developmentLinks;
+    case "/dashboard/medical-calculators": return []; // the calculator list below is the menu
+    case "/dashboard/admin":
+      return adminLinks.filter((link) => !temporaryAdminMode || ["/dashboard/admin", "/dashboard/admin/governance", "/dashboard/admin/investigation-review"].includes(link.href));
+    default: return [{ ...module, label: "Overview" }];
+  }
+}
 
 const carePillars = ["Urgent Care", "Chronic Care", "Keep Well", "Planned Care", "Safe Birth", "Palliative Care"];
 
@@ -102,7 +144,7 @@ export function WorkspaceSidebar({ organizationName, organizationNote, temporary
   const isHome = !activeModule || activeModule.href === "/dashboard";
   // Lets the reader glance at every module without leaving the current page; cleared on navigation.
   const [peekPath, setPeekPath] = useState<string | null>(null);
-  const moduleItem = isHome ? undefined : activeModule;
+  const moduleItem = isAdminPath(pathname) ? ADMIN_MODULE : isHome ? undefined : activeModule;
   const showHome = !moduleItem || peekPath === pathname;
 
   return (
@@ -159,18 +201,17 @@ function HomePanel({ activeLabel, returnTo, onReturn }: { activeLabel?: string; 
 
 function ModulePanel({ module, pathname, temporaryAdminMode, draftTopicCount, onShowAll }: { module: NavItem; pathname: string; temporaryAdminMode: boolean; draftTopicCount: number; onShowAll: () => void }) {
   const Icon = module.icon;
-  const section = sections.find(({ items }) => items.includes(module));
+  const searchParams = useSearchParams();
+  const params = useMemo(() => new URLSearchParams(searchParams?.toString() ?? ""), [searchParams]);
+  const section = module.href === ADMIN_MODULE.href ? { label: "Admin" } : sections.find(({ items }) => items.includes(module));
   const isDiseases = module.href === "/dashboard/disease-management";
-  const isAdmin = module.href === "/dashboard/admin";
-  const links = isDiseases
-    ? diseaseLinks
-    : isAdmin
-      ? adminLinks.filter((link) => !temporaryAdminMode || link.href === "/dashboard/admin" || link.href === "/dashboard/admin/governance")
-      : [{ ...module, label: "Overview" }];
-  const activeLink = links
-    .filter(({ href }) => pathname === href || (href !== module.href && pathname.startsWith(`${href}/`)))
-    .sort((a, b) => b.href.length - a.href.length)[0];
-  const related = !isDiseases && !isAdmin ? (section?.items ?? []).filter((item) => item !== module && item.href !== "/dashboard") : [];
+  const isCalculators = module.href === "/dashboard/medical-calculators";
+  const links = modulePanelLinks(module, temporaryAdminMode);
+  const pathOf = (href: string) => href.split("?")[0];
+  const activeLink = links.find(({ isActive }) => isActive?.(pathname, params))
+    ?? links
+      .filter(({ href, isActive }) => !isActive && (pathname === pathOf(href) || (pathOf(href) !== module.href && pathname.startsWith(`${pathOf(href)}/`))))
+      .sort((a, b) => b.href.length - a.href.length)[0];
 
   return (
     <nav aria-label={`${module.label} menu`} className="module-panel">
@@ -186,28 +227,71 @@ function ModulePanel({ module, pathname, temporaryAdminMode, draftTopicCount, on
         <span className="panel-title-icon" aria-hidden="true"><Icon size={18} strokeWidth={1.9} /></span>
         <div><small>{section?.label ?? "Workspace"}</small><strong>{module.label}</strong></div>
       </div>
-      <div className="sidebar-nav-section">
-        {links.map(({ href, label, icon: LinkIcon }) => {
-          const displayLabel = href === "/dashboard/diseases/drafts" ? `${label} (${draftTopicCount})` : label;
-          return <Link key={href} href={href} className="nav-link" title={displayLabel} aria-label={displayLabel} aria-current={activeLink?.href === href ? "page" : undefined}>
-            <LinkIcon size={18} strokeWidth={1.8} aria-hidden="true" /><span>{displayLabel}</span>
-          </Link>
-        })}
-      </div>
+      {links.length > 0 && (
+        <div className="sidebar-nav-section">
+          {links.map(({ href, label, icon: LinkIcon }) => {
+            const displayLabel = href === "/dashboard/diseases/drafts" ? `${label} (${draftTopicCount})` : label;
+            return <Link key={href} href={href} className="nav-link" title={displayLabel} aria-label={displayLabel} aria-current={activeLink?.href === href ? "page" : undefined}>
+              <LinkIcon size={18} strokeWidth={1.8} aria-hidden="true" /><span>{displayLabel}</span>
+            </Link>
+          })}
+        </div>
+      )}
       {isDiseases && (pathname.startsWith("/dashboard/diseases/drafts") || pathname.startsWith("/dashboard/admin/guidelines/")
         ? <DraftTopicNavigator />
         : <TopicNavigator currentId={currentTopicId(pathname)} />)}
-      {related.length > 0 && (
-        <section className="sidebar-nav-section panel-related" aria-label={`Also in ${section?.label}`}>
-          <div className="nav-label">Also in {section?.label}</div>
-          {related.map(({ href, label, icon: RelatedIcon }) => (
-            <Link key={href} href={href} className="nav-link" title={label} aria-label={label}>
-              <RelatedIcon size={18} strokeWidth={1.8} aria-hidden="true" /><span>{label}</span>
-            </Link>
-          ))}
-        </section>
-      )}
+      {isCalculators && <CalculatorNavigator />}
     </nav>
+  );
+}
+
+type CalculatorNavItem = { id: string; label: string; title: string; specialty: string };
+
+/** Side-panel menu for Medical Calculators: every calculator, grouped by speciality, selected through ?calc=. */
+function CalculatorNavigator() {
+  const searchParams = useSearchParams();
+  const [items, setItems] = useState<CalculatorNavItem[] | null>(null);
+  const [query, setQuery] = useState("");
+
+  useEffect(() => {
+    let active = true;
+    // Loaded on demand so the calculator definitions are not part of every page's bundle.
+    import("@/lib/clinical-calculators").then(({ clinicalCalculators }) => {
+      if (active) setItems(clinicalCalculators.map((item) => ({ id: item.id, label: item.shortTitle, title: item.title, specialty: item.specialty })));
+    }, () => { if (active) setItems([]); });
+    return () => { active = false; };
+  }, []);
+
+  const needle = query.trim().toLocaleLowerCase();
+  const activeId = searchParams?.get("calc") ?? items?.[0]?.id;
+  const groups = useMemo(() => {
+    const filtered = (items ?? []).filter((item) => !needle || `${item.label} ${item.title} ${item.specialty}`.toLocaleLowerCase().includes(needle));
+    const bySpeciality = new Map<string, CalculatorNavItem[]>();
+    for (const item of filtered) bySpeciality.set(item.specialty, [...(bySpeciality.get(item.specialty) ?? []), item]);
+    return [...bySpeciality.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([specialty, list]) => ({ specialty, list }));
+  }, [items, needle]);
+
+  return (
+    <section className="topic-nav" aria-label="Medical calculators">
+      <div className="nav-label topic-nav-label"><span>Calculators</span>{items && <span className="topic-nav-count">{items.length}</span>}</div>
+      <label className="topic-nav-search"><Search size={14} aria-hidden="true" /><span className="sr-only">Filter calculators</span><input type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Filter calculators…" />{query && <button type="button" onClick={() => setQuery("")} aria-label="Clear calculator filter"><X size={13} /></button>}</label>
+      {items === null && <div className="topic-nav-skeleton" aria-label="Loading calculators" role="status">{Array.from({ length: 6 }, (_, index) => <span key={index} />)}</div>}
+      {items && groups.length === 0 && <p className="topic-nav-empty">{needle ? "No calculators match this filter." : "No calculators available."}</p>}
+      {groups.map(({ specialty, list }) => (
+        <details key={`${specialty}-${needle ? "filtered" : "all"}`} className="topic-nav-group" open>
+          <summary><span>{specialty}</span><span className="topic-nav-count">{list.length}</span></summary>
+          <ul>
+            {list.map((item) => (
+              <li key={item.id}>
+                <Link href={`/dashboard/medical-calculators?calc=${encodeURIComponent(item.id)}`} scroll={false} prefetch={false} aria-current={item.id === activeId ? "page" : undefined} title={item.title}>
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </details>
+      ))}
+    </section>
   );
 }
 
@@ -344,7 +428,7 @@ function DraftTopicNavigator() {
       {state.status === "error" && <p className="topic-nav-empty">Draft topics could not be loaded.</p>}
       {state.status === "ready" && <ul className="topic-nav-drafts">{filtered.map((topic) => {
         const href = `/dashboard/admin/guidelines/${encodeURIComponent(topic.id)}?version=${encodeURIComponent(topic.versionId)}`;
-        return <li key={topic.versionId}><Link href={href} prefetch={false} onMouseEnter={() => router.prefetch(href)} onFocus={() => router.prefetch(href)} aria-current={topic.versionId === activeVersionId ? "page" : undefined} title={withoutInlineSourceLocators(topic.title)}>{withoutInlineSourceLocators(topic.title)}<small>{topic.version}</small></Link></li>;
+        return <li key={topic.versionId}><Link href={href} prefetch={false} onMouseEnter={() => router.prefetch(href)} onFocus={() => router.prefetch(href)} aria-current={topic.versionId === activeVersionId ? "page" : undefined} title={withoutInlineSourceLocators(topic.title)}>{withoutInlineSourceLocators(topic.title)}</Link></li>;
       })}</ul>}
     </section>
   );
