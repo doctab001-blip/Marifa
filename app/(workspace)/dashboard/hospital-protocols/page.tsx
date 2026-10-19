@@ -1,13 +1,7 @@
-import { FileCheck2 } from "@/components/icons-3d";
-import { ModulePlaceholder } from "@/components/module-placeholder";
+import { redirect } from "next/navigation";
+import { PROTOCOLS_HOME } from "@/lib/local-protocols";
 
+// Older link for the Local Protocols module.
 export default function HospitalProtocolsPage() {
-  return (
-    <ModulePlaceholder
-      title="Hospital Protocols"
-      purpose="A governed home for hospital-owned protocols, operational pathways and approved local guidance."
-      plannedWork="This module will organize locally approved protocols with named owners, version history, review dates and clear approval status."
-      icon={FileCheck2}
-    />
-  );
+  redirect(PROTOCOLS_HOME);
 }

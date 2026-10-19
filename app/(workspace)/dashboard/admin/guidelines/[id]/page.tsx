@@ -9,6 +9,8 @@ import { GuidelinePathwayForm } from "@/components/admin/guideline-pathway-form"
 import { ClinicalEvidenceAudit } from "@/components/clinical-evidence-audit";
 import { EmergencyTopic } from "@/components/emergency-topic";
 import { isDevEditMode } from "@/lib/dev-edit-mode";
+import { publishProtocol, revertProtocolToDraft } from "@/app/(workspace)/dashboard/protocols/actions";
+import { isLocalProtocolSourceType, PROTOCOLS_DRAFTS, PROTOCOLS_PUBLISHED } from "@/lib/local-protocols";
 
 const messages: Record<string, string> = {
   invalid_json: "The content is not valid JSON. Correct the formatting and try again.",
@@ -23,7 +25,7 @@ export default async function EditDraftGuidelinePage({
   searchParams,
 }: {
   params: Promise<{ id: string }>;
-  searchParams: Promise<{ saved?: string; error?: string; version?: string; published?: string; under_review?: string; score?: string }>;
+  searchParams: Promise<{ saved?: string; error?: string; version?: string; published?: string; under_review?: string; score?: string; draft?: string }>;
 }) {
   const [{ id }, query] = await Promise.all([params, searchParams]);
   const result = await getDraftGuideline(id, query.version);
@@ -31,6 +33,8 @@ export default async function EditDraftGuidelinePage({
   const devEdit = isDevEditMode();
 
   const isApproved = result.state === "ready" && result.versionStatus === "approved";
+  // Local Protocols reuse this editor but only have Draft and Published (no Approve).
+  const isProtocol = isLocalProtocolSourceType(result.sourceType);
   const actionBar = (position: "top" | "bottom") => result.state !== "ready" ? null : (
     <section className="topic-approval-bar" aria-label={`${position === "top" ? "Top" : "Bottom"} topic actions`}>
       <p>{isApproved ? <><span className="pill pill-emerald"><CheckCircle2 size={16} aria-hidden="true" /><strong>Approved</strong></span><span className="pill pill-slate pill-sm"><FileText size={14} aria-hidden="true" />Version {result.disease.version}</span></> : result.isPublished ? <><span className="pill pill-sky"><FileText size={16} aria-hidden="true" /><strong>Published</strong></span><span className="pill pill-slate pill-sm"><FileText size={14} aria-hidden="true" />Version {result.disease.version}</span></> : <><span className="pill pill-amber"><Hourglass size={16} aria-hidden="true" /><strong>Status: Draft</strong></span><span className="pill pill-slate pill-sm"><FileText size={14} aria-hidden="true" />Version {result.disease.version}</span></>}</p>
@@ -40,15 +44,17 @@ export default async function EditDraftGuidelinePage({
           : <form action={createDraftFromApproved}><input type="hidden" name="id" value={id} /><input type="hidden" name="versionId" value={result.versionId} /><button className="ui-button ui-button-primary" type="submit">Edit (make draft copy)</button></form>)
           : <a className="ui-button ui-button-secondary" href="#pathway-editor">{result.isPublished ? "Edit published version" : "Edit draft"}</a>}
         {devEdit || !isApproved ? <Link className="ui-button ui-button-secondary" href={`/dashboard/admin/guidelines/${encodeURIComponent(id)}/paste?version=${encodeURIComponent(result.versionId)}`}>Paste full content</Link> : null}
-        {result.canApprove ? <form action={approveGuidelineVersion}><input type="hidden" name="id" value={id} /><input type="hidden" name="versionId" value={result.versionId} /><input type="hidden" name="destination" value="approved" /><TopicApproveButton title={result.disease.title} /></form> : null}
-        {result.isPublished ? <form action={approveLiveTopic}><input type="hidden" name="id" value={id} /><input type="hidden" name="destination" value="approved" /><TopicApproveButton title={result.disease.title} /></form> : null}
+        {result.canApprove && !isProtocol ? <form action={approveGuidelineVersion}><input type="hidden" name="id" value={id} /><input type="hidden" name="versionId" value={result.versionId} /><input type="hidden" name="destination" value="approved" /><TopicApproveButton title={result.disease.title} /></form> : null}
+        {isProtocol && result.canApprove ? <form action={publishProtocol}><input type="hidden" name="id" value={id} /><input type="hidden" name="versionId" value={result.versionId} /><button className="ui-button ui-button-primary" type="submit">Publish protocol</button></form> : null}
+        {isProtocol && result.isPublished ? <form action={revertProtocolToDraft}><input type="hidden" name="id" value={id} /><input type="hidden" name="versionId" value={result.versionId} /><button className="ui-button ui-button-secondary" type="submit">Return to Draft</button></form> : null}
+        {result.isPublished && !isProtocol ? <form action={approveLiveTopic}><input type="hidden" name="id" value={id} /><input type="hidden" name="destination" value="approved" /><TopicApproveButton title={result.disease.title} /></form> : null}
       </div>
     </section>
   );
 
   return (
     <section className="admin-content topic-page">
-      <Link href={query.version ? "/dashboard/diseases" : "/dashboard/diseases/drafts"} className="disease-back-link"><ArrowLeft size={15} />Back to Disease Management</Link>
+      <Link href={isProtocol ? (result.state === "ready" && result.isPublished ? PROTOCOLS_PUBLISHED : PROTOCOLS_DRAFTS) : query.version ? "/dashboard/diseases" : "/dashboard/diseases/drafts"} className="disease-back-link"><ArrowLeft size={15} />{isProtocol ? "Back to Local Protocols" : "Back to Disease Management"}</Link>
       {result.state === "invalid" ? (
         <article className="card admin-edit-card">
           <p className="eyebrow">Draft needs repair</p>
@@ -59,15 +65,16 @@ export default async function EditDraftGuidelinePage({
       ) : (
         <>
           {query.saved === "1" && query.published === "1" && <p className="admin-save-message" role="status">New version saved and published. Clinical review remains pending.</p>}
+          {query.saved === "1" && query.draft === "1" && <p className="admin-save-message" role="status">Draft saved. Publish it when the content is ready.</p>}
           {query.saved === "1" && query.under_review === "1" && <p className="admin-save-message" role="status">New revision saved for review (authoring score {query.score ?? "below 80"}%). It will publish automatically once it meets the 80% threshold.</p>}
           {query.error && messages[query.error] && <p className="admin-save-error" role="alert">{messages[query.error]}</p>}
           <article className="scenario-card" aria-labelledby="scenario-title">
             <header className="sc-hero">
-              <div className="sc-eyebrow-row"><span className="sc-icon-tile" aria-hidden="true"><Stethoscope size={24} /></span><span className="pill pill-aqua">Clinical scenario</span><span className="pill pill-sky">{result.disease.pillar}</span></div>
+              <div className="sc-eyebrow-row"><span className="sc-icon-tile" aria-hidden="true"><Stethoscope size={24} /></span><span className="pill pill-aqua">{isProtocol ? "Local protocol" : "Clinical scenario"}</span><span className="pill pill-sky">{result.disease.pillar}</span></div>
               <h1 id="scenario-title" className="scenario-title">{result.disease.title}</h1>
             </header>
             {actionBar("top")}
-            {!result.isLive && !result.isPublished && <div className="clinical-review-draft-notice" role="alert"><strong>UNREVIEWED DRAFT — NOT FOR CLINICAL USE.</strong> This version is visible in Drafts only until it meets the authoring standard and completes clinical governance review.</div>}
+            {!result.isLive && !result.isPublished && <div className="clinical-review-draft-notice" role="alert"><strong>UNREVIEWED DRAFT — NOT FOR CLINICAL USE.</strong> {isProtocol ? "This protocol is visible to administrators in Drafts until you publish it. Outline drafts contain no clinical content yet." : "This version is visible in Drafts only until it meets the authoring standard and completes clinical governance review."}</div>}
             <EmergencyTopic disease={result.disease} investigationSource={result.sourceUrl ? { title: result.sourceTitle, url: result.sourceUrl } : undefined} />
             {actionBar("bottom")}
           </article>

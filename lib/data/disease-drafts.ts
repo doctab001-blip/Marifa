@@ -6,6 +6,11 @@ import { isSupabaseConfigured } from "@/lib/supabase/config";
 import { createSupabaseDataClient } from "@/lib/supabase/data-client";
 import { DiseaseDetailSchema } from "@/lib/validations/disease";
 import { selectNewestDraftPerTopic } from "@/lib/data/draft-topic-selection";
+import { LOCAL_PROTOCOL_SOURCE_TYPE } from "@/lib/local-protocols";
+
+/** Disease Management and Local Protocols share storage; `source_type` keeps their queues apart. */
+export type TopicScope = "disease" | "protocol";
+const scopeOperator = (scope: TopicScope) => (scope === "protocol" ? "eq" : "neq");
 
 export type DiseaseDraft = {
   id: string;
@@ -30,7 +35,7 @@ export type DiseaseManagementVersion = Omit<DiseaseDraft, "guidelineStatus" | "v
   statusChangedAt: string;
 };
 
-async function loadDiseaseDrafts(): Promise<{
+async function loadDraftQueue(scope: TopicScope): Promise<{
   drafts: DiseaseDraft[];
   topicCount: number;
   state: "ready" | "unavailable";
@@ -53,6 +58,7 @@ async function loadDiseaseDrafts(): Promise<{
         .from("clinical_guidelines")
         .select("id,title,specialty,status,is_shared_reference,organization_id,created_at,guideline_versions!inner(id,version,status,is_current,created_at,source_title,audit:content->evidenceAudit)")
         .or(`organization_id.eq.${viewer.organizationId},and(organization_id.is.null,is_shared_reference.eq.true)`)
+        .filter("source_type", scopeOperator(scope), LOCAL_PROTOCOL_SOURCE_TYPE)
         // A topic is shown in exactly one queue. Historical draft versions of
         // a topic already moved to Published or Approved remain in storage,
         // but are not repeated in the Drafts queue.
@@ -104,7 +110,9 @@ async function loadDiseaseDrafts(): Promise<{
   }
 }
 
-export const getDiseaseDrafts = cache(loadDiseaseDrafts);
+const getDraftQueue = cache(loadDraftQueue);
+export const getDiseaseDrafts = () => getDraftQueue("disease");
+export const getProtocolDrafts = () => getDraftQueue("protocol");
 
 export async function getDiseaseDraftTopicCount() {
   const result = await getDiseaseDrafts();
@@ -136,7 +144,10 @@ export async function getDiseaseManagementCounts(): Promise<DiseaseManagementCou
 }
 
 /** Current versions grouped by their explicit governance state for Disease Management. */
-export const getDiseaseManagementVersions = cache(async (status: "approved" | "published"): Promise<{
+export const getDiseaseManagementVersions = (status: "approved" | "published") => getManagedVersions(status, "disease");
+export const getProtocolVersions = () => getManagedVersions("published", "protocol");
+
+const getManagedVersions = cache(async (status: "approved" | "published", scope: TopicScope): Promise<{
   versions: DiseaseManagementVersion[];
   topicCount: number;
   state: "ready" | "unavailable";
@@ -154,6 +165,7 @@ export const getDiseaseManagementVersions = cache(async (status: "approved" | "p
       .from("clinical_guidelines")
       .select("id,title,specialty,status,is_shared_reference,guideline_versions!inner(id,version,status,is_current,created_at,published_at,approved_at,source_title)")
       .or(`organization_id.eq.${viewer.organizationId},and(organization_id.is.null,is_shared_reference.eq.true)`)
+      .filter("source_type", scopeOperator(scope), LOCAL_PROTOCOL_SOURCE_TYPE)
       // A topic belongs to exactly one governance tab. Once its parent record
       // is approved, older published versions remain history but are excluded
       // from the Published queue.
@@ -223,4 +235,15 @@ export async function getDiseaseDraftVersion(versionId: string) {
   } catch {
     return { state: "unavailable" as const };
   }
+}
+
+export type ProtocolCounts = { drafts: number; published: number };
+
+/** Local Protocols have two governance states only: Draft and Published (no Approved queue). */
+export async function getProtocolCounts(): Promise<ProtocolCounts> {
+  const [drafts, published] = await Promise.all([getProtocolDrafts(), getProtocolVersions()]);
+  return {
+    drafts: drafts.state === "ready" ? drafts.topicCount : 0,
+    published: published.state === "ready" ? published.topicCount : 0,
+  };
 }

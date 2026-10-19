@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { isSupabaseConfigured } from "@/lib/supabase/config";
 import { createSupabaseDataClient } from "@/lib/supabase/data-client";
 import { getTemporaryAdminIdentity, isTemporaryOpenAdminMode } from "@/lib/access-mode";
+import { LOCAL_PROTOCOL_SOURCE_TYPE } from "@/lib/local-protocols";
 import { DiseaseDetailSchema } from "@/lib/validations/disease";
 
 export type OrganizationAdminContext = {
@@ -169,6 +170,8 @@ export async function getGovernanceQueue(): Promise<{ context: OrganizationAdmin
     .from("clinical_guidelines")
     .select("id, title, specialty, status, created_at, guideline_versions!inner(id,version,status,is_current)")
     .eq("organization_id", context.organizationId)
+    // Local Protocols have their own Drafts/Published tabs, not the disease governance queue.
+    .neq("source_type", LOCAL_PROTOCOL_SOURCE_TYPE)
     .in("status", ["draft", "under_review"])
     .eq("guideline_versions.is_current", true)
     .in("guideline_versions.status", ["draft", "under_review"])
@@ -204,7 +207,7 @@ export async function getDraftGuideline(id: string, requestedVersionId?: string)
   const canManageShared = context.roleCode === "platform_admin";
   let query = supabase
     .from("clinical_guidelines")
-    .select("id,title,specialty,status,guideline_versions!inner(id,version,status,content,source_title,source_url,publication_date,review_date,is_current)")
+    .select("id,title,specialty,status,source_type,guideline_versions!inner(id,version,status,content,source_title,source_url,publication_date,review_date,is_current)")
     .eq("id", id);
   if (requestedVersionId) {
     query = query.eq("guideline_versions.id", requestedVersionId).in("guideline_versions.status", ["draft", "under_review", "published", "approved"]);
@@ -220,11 +223,12 @@ export async function getDraftGuideline(id: string, requestedVersionId?: string)
   const version = Array.isArray(data.guideline_versions) ? data.guideline_versions[0] : data.guideline_versions;
   if (!version) return { state: "not-found" as const };
   const parsed = DiseaseDetailSchema.safeParse(version.content);
-  if (!parsed.success) return { state: "invalid" as const, title: data.title, issues: parsed.error.issues.map((issue) => issue.message) };
+  if (!parsed.success) return { state: "invalid" as const, title: data.title, sourceType: data.source_type as string, issues: parsed.error.issues.map((issue) => issue.message) };
 
   return {
     state: "ready" as const,
     title: data.title,
+    sourceType: data.source_type as string,
     specialty: data.specialty ?? "Unassigned",
     disease: parsed.data,
     sourceTitle: version.source_title,

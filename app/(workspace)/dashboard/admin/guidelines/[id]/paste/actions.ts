@@ -9,6 +9,7 @@ import { DiseaseDetailSchema } from "@/lib/validations/disease";
 import { auditTopicContent, CLINICAL_DIRECTORY_MINIMUM_SCORE } from "@/lib/clinical-authoring-audit";
 import { parsePastedTopic } from "@/lib/topic-paste";
 import { isDevEditMode } from "@/lib/dev-edit-mode";
+import { LOCAL_PROTOCOL_SOURCE_TYPE, PROTOCOLS_DRAFTS, PROTOCOLS_HOME, PROTOCOLS_PUBLISHED } from "@/lib/local-protocols";
 
 const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const MAX_PASTE_CHARACTERS = 400_000;
@@ -51,12 +52,14 @@ export async function savePastedTopic(formData: FormData) {
 
   const context = await requireOrganizationAdmin();
   const supabase = await createSupabaseDataClient();
-  let guidelineQuery = supabase.from("clinical_guidelines").select("id,organization_id,is_shared_reference").eq("id", id);
+  let guidelineQuery = supabase.from("clinical_guidelines").select("id,organization_id,is_shared_reference,source_type").eq("id", id);
   guidelineQuery = context.roleCode === "platform_admin"
     ? guidelineQuery.or(`organization_id.eq.${context.organizationId},and(organization_id.is.null,is_shared_reference.eq.true)`)
     : guidelineQuery.eq("organization_id", context.organizationId);
   const { data: guideline, error: guidelineError } = await guidelineQuery.maybeSingle();
   if (guidelineError || !guideline) redirect("/dashboard/admin/governance?error=not_editable");
+  // Local Protocols stay Drafts until published explicitly ("Publish" mode here, or the Publish action).
+  const isProtocol = guideline.source_type === LOCAL_PROTOCOL_SOURCE_TYPE;
 
   const { data: version, error: versionError } = await supabase
     .from("guideline_versions")
@@ -76,7 +79,8 @@ export async function savePastedTopic(formData: FormData) {
 
   const suffix = new Date().toISOString().replace(/[-:.TZ]/g, "");
   const revision = `${baseVersionName(version.version)}-pasted-${suffix}`;
-  const reviewContent = { ...parsed.content, version: revision, status: "under_review" as const, clinicalReviewStatus: "pending" as const };
+  const reviewStatus = isProtocol ? ("draft" as const) : ("under_review" as const);
+  const reviewContent = { ...parsed.content, version: revision, status: reviewStatus, clinicalReviewStatus: "pending" as const };
   const audit = auditTopicContent(reviewContent);
   const shared = {
     guideline_id: id,
@@ -92,7 +96,7 @@ export async function savePastedTopic(formData: FormData) {
     ...shared,
     version: revision,
     version_number: revision,
-    status: "under_review",
+    status: reviewStatus,
     is_current: false,
     approved_by: null,
     approved_at: null,
@@ -141,6 +145,7 @@ export async function savePastedTopic(formData: FormData) {
   revalidatePath("/dashboard/diseases/drafts");
   revalidatePath("/dashboard/diseases/published");
   revalidatePath(`/dashboard/diseases/${encodeURIComponent(id)}`);
+  if (isProtocol) { revalidatePath(PROTOCOLS_HOME); revalidatePath(PROTOCOLS_DRAFTS); revalidatePath(PROTOCOLS_PUBLISHED); revalidatePath(`${PROTOCOLS_HOME}/${encodeURIComponent(id)}`); }
   const destination = `${pastePath}?version=${encodeURIComponent(destinationVersionId)}`;
   redirect(`${destination}&saved=1&${published ? "published=1" : `score=${audit.score}${mode === "draft" ? "&draft=1" : ""}`}`);
 }

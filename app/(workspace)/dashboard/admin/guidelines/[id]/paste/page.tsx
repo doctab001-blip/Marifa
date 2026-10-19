@@ -5,6 +5,7 @@ import { getDraftGuideline } from "@/lib/admin/data";
 import { PasteTopicEditor } from "@/components/admin/paste-topic-editor";
 import { savePastedTopic } from "./actions";
 import { isDevEditMode } from "@/lib/dev-edit-mode";
+import { isLocalProtocolSourceType, PROTOCOLS_DRAFTS, PROTOCOLS_HOME, PROTOCOLS_PUBLISHED } from "@/lib/local-protocols";
 
 const errorMessages: Record<string, string> = {
   empty: "Nothing was pasted. Paste the full topic text and try again.",
@@ -30,10 +31,11 @@ export default async function PasteTopicPage({
   const result = await getDraftGuideline(id, query.version);
   if (result.state === "not-found") notFound();
   const devEdit = isDevEditMode();
+  const isProtocol = isLocalProtocolSourceType(result.sourceType);
 
   return (
     <section className="admin-content topic-page paste-editor-page">
-      <Link href="/dashboard/diseases/drafts" className="disease-back-link"><ArrowLeft size={15} />Back to Disease Management</Link>
+      <Link href={isProtocol ? (result.state === "ready" && result.versionStatus === "published" ? PROTOCOLS_PUBLISHED : PROTOCOLS_DRAFTS) : "/dashboard/diseases/drafts"} className="disease-back-link"><ArrowLeft size={15} />{isProtocol ? "Back to Local Protocols" : "Back to Disease Management"}</Link>
       {result.state === "invalid" ? (
         <article className="card admin-edit-card">
           <p className="eyebrow">Topic needs repair</p>
@@ -50,7 +52,7 @@ export default async function PasteTopicPage({
         <>
           {query.saved === "1" && query.published === "1" && (
             <p className="admin-save-message" role="status">
-              Published. The topic is live with clinical review still pending. <Link href={`/dashboard/diseases/${encodeURIComponent(id)}`}>View the topic</Link>
+              Published. The topic is live with clinical review still pending. <Link href={isProtocol ? `${PROTOCOLS_HOME}/${encodeURIComponent(id)}` : `/dashboard/diseases/${encodeURIComponent(id)}`}>View the topic</Link>
             </p>
           )}
           {query.saved === "1" && query.published !== "1" && (
