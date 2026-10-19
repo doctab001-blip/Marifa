@@ -27,6 +27,7 @@ import {
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { searchTopics } from "@/lib/topic-search";
 import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
+import { summarizeSpecialty } from "@/lib/medical-specialities";
 
 type NavItem = {
   href: string;
@@ -400,8 +401,9 @@ function TopicNavigator({ currentId }: { currentId: string | null }) {
   );
 }
 
-type DraftNavTopic = { id: string; title: string; versionId: string; version: string };
+type DraftNavTopic = { id: string; title: string; specialty?: string; versionId: string; version: string };
 
+/** Draft topics grouped by speciality; each topic is a bulleted line showing only its name. */
 function DraftTopicNavigator() {
   const router = useRouter();
   const pathname = usePathname() ?? "";
@@ -419,9 +421,19 @@ function DraftTopicNavigator() {
     return () => { active = false; };
   }, []);
 
-  const topics = state.status === "ready" ? state.topics : [];
+  const topics = useMemo(() => (state.status === "ready" ? state.topics : []), [state]);
   const needle = query.trim().toLocaleLowerCase();
-  const filtered = needle ? topics.filter((topic) => topic.title.toLocaleLowerCase().includes(needle)) : topics;
+  const groups = useMemo(() => {
+    const filtered = needle ? topics.filter((topic) => `${topic.title} ${topic.specialty ?? ""}`.toLocaleLowerCase().includes(needle)) : topics;
+    const bySpeciality = new Map<string, DraftNavTopic[]>();
+    for (const topic of filtered) {
+      const key = summarizeSpecialty(topic.specialty ?? "").primary;
+      bySpeciality.set(key, [...(bySpeciality.get(key) ?? []), topic]);
+    }
+    return [...bySpeciality.entries()]
+      .sort(([a], [b]) => (a === "Unassigned" ? 1 : b === "Unassigned" ? -1 : a.localeCompare(b)))
+      .map(([speciality, list]) => ({ speciality, list: [...list].sort((a, b) => a.title.localeCompare(b.title)) }));
+  }, [needle, topics]);
 
   return (
     <section className="topic-nav" aria-label="Draft clinical topics">
@@ -429,10 +441,24 @@ function DraftTopicNavigator() {
       <label className="topic-nav-search"><Search size={14} aria-hidden="true" /><span className="sr-only">Filter draft topics</span><input type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Filter drafts…" />{query && <button type="button" onClick={() => setQuery("")} aria-label="Clear draft filter"><X size={13} /></button>}</label>
       {state.status === "loading" && <div className="topic-nav-skeleton" aria-label="Loading draft topics" role="status">{Array.from({ length: 7 }, (_, index) => <span key={index} />)}</div>}
       {state.status === "error" && <p className="topic-nav-empty">Draft topics could not be loaded.</p>}
-      {state.status === "ready" && <ul className="topic-nav-drafts">{filtered.map((topic) => {
-        const href = `/dashboard/admin/guidelines/${encodeURIComponent(topic.id)}?version=${encodeURIComponent(topic.versionId)}`;
-        return <li key={topic.versionId}><Link href={href} prefetch={false} onMouseEnter={() => router.prefetch(href)} onFocus={() => router.prefetch(href)} aria-current={topic.versionId === activeVersionId ? "page" : undefined} title={withoutInlineSourceLocators(topic.title)}>{withoutInlineSourceLocators(topic.title)}</Link></li>;
-      })}</ul>}
+      {state.status === "ready" && groups.length === 0 && <p className="topic-nav-empty">{needle ? "No drafts match this filter." : "No draft topics."}</p>}
+      {groups.map(({ speciality, list }) => (
+        <details key={`${speciality}-${needle ? "filtered" : "all"}`} className="topic-nav-group" open={Boolean(needle) || topics.length <= 40 || list.some((topic) => topic.versionId === activeVersionId)}>
+          <summary><span>{speciality}</span><span className="topic-nav-count">{list.length}</span></summary>
+          <ul>
+            {list.map((topic) => {
+              const href = `/dashboard/admin/guidelines/${encodeURIComponent(topic.id)}?version=${encodeURIComponent(topic.versionId)}`;
+              return (
+                <li key={topic.versionId}>
+                  <Link href={href} prefetch={false} onMouseEnter={() => router.prefetch(href)} onFocus={() => router.prefetch(href)} aria-current={topic.versionId === activeVersionId ? "page" : undefined} title={withoutInlineSourceLocators(topic.title)}>
+                    {withoutInlineSourceLocators(topic.title)}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </details>
+      ))}
     </section>
   );
 }

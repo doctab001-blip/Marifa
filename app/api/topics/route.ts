@@ -9,7 +9,7 @@ export async function GET(request: Request) {
   if (params.get("view") === "drafts") {
     const result = await getDiseaseDrafts();
     if (result.state === "unavailable") return NextResponse.json({ error: "Draft topics unavailable." }, { status: 503 });
-    return NextResponse.json({ topics: result.drafts.map(({ id, title, versionId, version }) => ({ id, title, versionId, version })) }, { headers: { "Cache-Control": "private, max-age=60" } });
+    return NextResponse.json({ topics: result.drafts.map(({ id, title, specialty, versionId, version }) => ({ id, title, specialty, versionId, version })) }, { headers: { "Cache-Control": "private, max-age=60" } });
   }
   const speciality = params.get("speciality")?.trim();
   const carePillar = params.get("care_pillar")?.trim();
