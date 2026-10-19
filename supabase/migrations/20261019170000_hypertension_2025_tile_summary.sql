@@ -1,0 +1,7 @@
+-- Recent Developments: fuller summary for the 2025 AHA/ACC high blood pressure guideline tile.
+-- Written in our own words from the guideline (Circulation, DOI 10.1161/CIR.0000000000001356). Updates the existing archive row only.
+update public.recent_developments
+set
+  summary = 'Classifies BP as normal (<120/80), elevated (120-129/<80), stage 1 (130-139 or 80-89) and stage 2 (140+ or 90+), with a target below 130/80 for all adults. Drug treatment starts with lifestyle change at 140/90 or higher, or at 130/80 or higher with cardiovascular disease, diabetes, CKD or a 10-year PREVENT risk of 7.5% or more; others get 3 to 6 months of lifestyle change first. Stage 2 starts with two first-line drugs, ideally as one pill (thiazide, long-acting dihydropyridine CCB, ACE inhibitor or ARB; never an ACE inhibitor with an ARB). Spironolactone is added for resistant hypertension. Cuffless and smartwatch devices are not recommended. In pregnancy the target is below 140/90, with labetalol or extended-release nifedipine preferred and ACE inhibitors, ARBs and MRAs avoided.',
+  why_it_matters = 'Replaces the 2017 US guideline: risk is now estimated with PREVENT (includes kidney function), single-pill combinations are the default for stage 2, and out-of-office readings guide diagnosis and titration. A US guideline: check it against local Saudi guidance before changing practice.'
+where source_url = 'https://doi.org/10.1161/CIR.0000000000001356';
