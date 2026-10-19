@@ -37,20 +37,22 @@ function ErrorState({ invalid = false }: { invalid?: boolean }) {
   );
 }
 
-function TopicApprovalBar({ disease, message }: { disease: DiseaseDetail; message?: string }) {
+function TopicApprovalBar({ disease, message, position = "bottom", editHref }: { disease: DiseaseDetail; message?: string; position?: "top" | "bottom"; editHref?: string }) {
   const reviewIncomplete = disease.clinicalReviewStatus === "pending" || disease.status === "under_review";
+  if (position === "top" && !reviewIncomplete) return null;
   return (
-    <section className="topic-approval-bar" aria-label={`${disease.title} approval`}>
+    <section className="topic-approval-bar" aria-label={`${disease.title} approval${position === "top" ? " (top)" : ""}`}>
       {reviewIncomplete ? (
         <>
           <p><span className="pill pill-amber"><Hourglass size={16} aria-hidden="true" /><strong>Status: Under review</strong></span><span className="pill pill-slate pill-sm"><FileText size={14} aria-hidden="true" />Version {disease.version}</span></p>
           <form action={approveLiveTopic}>
             <input type="hidden" name="id" value={disease.id} />
+            <input type="hidden" name="destination" value="approved" />
             <TopicApproveButton title={disease.title} />
           </form>
         </>
       ) : (
-        <p className="topic-approval-done"><span className="pill pill-emerald"><CheckCircle2 size={16} aria-hidden="true" /><strong>Approved</strong></span><span className="pill pill-slate pill-sm"><CalendarCheck size={14} aria-hidden="true" />Reviewed {formatDate(disease.lastReviewed)}</span><span className="pill pill-slate pill-sm"><FileText size={14} aria-hidden="true" />Version {disease.version}</span></p>
+        <p className="topic-approval-done"><span className="pill pill-emerald"><CheckCircle2 size={16} aria-hidden="true" /><strong>Approved</strong></span><span className="pill pill-slate pill-sm"><CalendarCheck size={14} aria-hidden="true" />Reviewed {formatDate(disease.lastReviewed)}</span><span className="pill pill-slate pill-sm"><FileText size={14} aria-hidden="true" />Version {disease.version}</span>{editHref ? <Link className="ui-button ui-button-primary topic-edit-tab" href={editHref}>Edit</Link> : null}</p>
       )}
       {message ? <p className="topic-approval-message" role="status">{message}</p> : null}
     </section>
@@ -100,8 +102,9 @@ export default async function DiseaseDetailPage({ params, searchParams }: { para
         {displayedTopics.map((topic, index) => (
           <section className="topic-family-member" key={topic.disease.id} aria-labelledby={`family-topic-${topic.disease.id}`}>
             {family ? <header className="topic-family-member-header"><p>Topic section {index + 1}</p><h2 id={`family-topic-${topic.disease.id}`}>{withoutInlineSourceLocators(topic.disease.title)}</h2></header> : null}
+            <TopicApprovalBar disease={topic.disease} position="top" />
             <EmergencyTopic disease={topic.disease} investigationSource={topic.investigationSource} />
-            <TopicApprovalBar disease={topic.disease} message={index === 0 ? approvalMessage : undefined} />
+            <TopicApprovalBar disease={topic.disease} message={index === 0 ? approvalMessage : undefined} editHref={`/dashboard/admin/guidelines/${encodeURIComponent(topic.disease.id)}${version && index === 0 ? `?version=${encodeURIComponent(version)}` : ""}`} />
           </section>
         ))}
       </article>

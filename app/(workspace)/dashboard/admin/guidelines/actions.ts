@@ -155,12 +155,12 @@ export async function approveGuidelineVersion(formData: FormData) {
       if (receipt?.is_current && ["approved", "published"].includes(receipt.status) && receipt.approved_by && receipt.approved_at) {
         updateTag(CLINICAL_DIRECTORY_TAG);
         revalidatePath("/dashboard/diseases/drafts");
-        redirect(destination === "drafts" ? "/dashboard/diseases/drafts?approved=1" : "/dashboard/admin/governance?approved=1");
+        redirect(destination === "approved" ? "/dashboard/diseases/approved?approved=1" : destination === "drafts" ? "/dashboard/diseases/drafts?approved=1" : "/dashboard/admin/governance?approved=1");
       }
     }
     console.error("Clinical version approval failed", { code: error.code, guidelineId: id, versionId });
     const code = approvalErrorCode(error.code);
-    redirect(`${destination === "drafts" ? "/dashboard/diseases/drafts" : "/dashboard/admin/governance"}?error=${code}`);
+    redirect(`${destination === "approved" ? "/dashboard/diseases/drafts" : destination === "drafts" ? "/dashboard/diseases/drafts" : "/dashboard/admin/governance"}?error=${code}`);
   }
 
   revalidatePath("/dashboard/admin/governance");
@@ -169,7 +169,7 @@ export async function approveGuidelineVersion(formData: FormData) {
   updateTag(CLINICAL_DIRECTORY_TAG);
   revalidatePath("/dashboard/diseases");
   revalidatePath(`/dashboard/diseases/${encodeURIComponent(id)}`);
-  redirect(destination === "drafts" ? "/dashboard/diseases/drafts?approved=1" : "/dashboard/admin/governance?approved=1");
+  redirect(destination === "approved" ? "/dashboard/diseases/approved?approved=1" : destination === "drafts" ? "/dashboard/diseases/drafts?approved=1" : "/dashboard/admin/governance?approved=1");
 }
 
 /** Moves a draft through the administrator-only staging workflow. */

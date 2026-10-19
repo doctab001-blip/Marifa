@@ -25,6 +25,7 @@ function riyadhToday() {
 export async function approveLiveTopic(formData: FormData) {
   const id = String(formData.get("id") ?? "");
   const topicPath = `/dashboard/diseases/${encodeURIComponent(id)}`;
+  const toApprovedList = formData.get("destination") === "approved";
   if (!uuid.test(id)) redirect("/dashboard/diseases?error=invalid_id");
 
   const context = await requireOrganizationAdmin();
@@ -43,7 +44,7 @@ export async function approveLiveTopic(formData: FormData) {
   const parsed = DiseaseDetailSchema.safeParse(source.content);
   if (!parsed.success || parsed.data.id !== id) redirect(`${topicPath}?approval=failed`);
   const content = parsed.data;
-  if (content.status === "approved" && !content.clinicalReviewStatus) redirect(`${topicPath}?approval=already`);
+  if (content.status === "approved" && !content.clinicalReviewStatus) redirect(toApprovedList ? "/dashboard/diseases/approved" : `${topicPath}?approval=already`);
   if (!["published", "approved"].includes(source.status) || !["published", "approved"].includes(content.status)) {
     redirect(`${topicPath}?approval=failed`);
   }
@@ -93,6 +94,8 @@ export async function approveLiveTopic(formData: FormData) {
 
   updateTag(CLINICAL_DIRECTORY_TAG);
   revalidatePath("/dashboard/diseases");
+  revalidatePath("/dashboard/diseases/published");
+  revalidatePath("/dashboard/diseases/approved");
   revalidatePath(topicPath);
-  redirect(`${topicPath}?approval=done`);
+  redirect(toApprovedList ? "/dashboard/diseases/approved?approved=1" : `${topicPath}?approval=done`);
 }

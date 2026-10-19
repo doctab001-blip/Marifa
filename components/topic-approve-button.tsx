@@ -11,7 +11,7 @@ export function TopicApproveButton({ title }: { title: string }) {
       type="submit"
       disabled={pending}
       onClick={(event) => {
-        if (!window.confirm(`Approve "${title}"? This records your clinical sign-off and changes its status from Under review to Approved.`)) event.preventDefault();
+        if (!window.confirm(`Approve "${title}"? This records your clinical sign-off and moves it to the Approved list.`)) event.preventDefault();
       }}
     >
       <CheckCircle2 size={18} aria-hidden="true" />
