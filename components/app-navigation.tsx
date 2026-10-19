@@ -267,7 +267,7 @@ function CalculatorNavigator() {
   }, []);
 
   const needle = query.trim().toLocaleLowerCase();
-  const activeId = searchParams?.get("calc") ?? items?.[0]?.id;
+  const activeId = searchParams?.get("calc") ?? undefined;
   const groups = useMemo(() => {
     const filtered = (items ?? []).filter((item) => !needle || `${item.label} ${item.title} ${item.specialty}`.toLocaleLowerCase().includes(needle));
     const bySpeciality = new Map<string, CalculatorNavItem[]>();

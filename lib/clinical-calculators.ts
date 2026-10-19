@@ -1,8 +1,9 @@
-/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars --
+/* eslint-disable @typescript-eslint/no-explicit-any --
  * This file contains the legacy calculator adapter alongside the canonical schema.
  * The adapter intentionally accepts historical, heterogeneous answer/question shapes;
  * runtime guards below normalise those values before calculations use them.
  */
+import { extraCalculators } from "./clinical-calculators-extra";
 /** Five-layer, MDCalc-inspired clinical calculator schema. */
 export type RiskTone = "low" | "moderate" | "high";
 export type CalculatorInputType = "numeric" | "binary" | "multi-select";
@@ -12,7 +13,9 @@ export interface CalculatorInput { id:string; label:string; type:CalculatorInput
 export interface CalculatorTier { min?:number; max?:number; riskLabel:string; managementAdvice:string; colorCode:string; tone?:RiskTone; label?:string; summary?:string; management?:string[] }
 export interface ClinicalReference { citation:string; url:string }
 export interface LegacyEvidence { formula:string[]; validation:string; limitations:string[]; sources:Array<{label:string;detail:string;url:string}> }
-export interface LegacyResult { id:string; label:string; tone:RiskTone; match:{minScore?:number;maxScore?:number}; summary:string; management:string[] }
+export interface LegacyResult { id:string; label:string; tone:RiskTone; match:{minScore?:number;maxScore?:number}; summary:string; management:string[]; /** Printable score range for the interpretation table, for example "1–4". */ range?:string }
+export interface SecondaryResult { label:string; value:string; note?:string }
+export interface CalculatorFact { label:string; value:string }
 export interface LegacySingleQuestion { id:string; label:string; type:"single-select"; options:CalculatorOption[]; help?:string; required?:boolean }
 export interface LegacyMultiQuestion { id:string; label:string; type:"multi-select"; options:CalculatorOption[]; noneLabel?:string; help?:string; required?:boolean }
 export interface LegacyNumberQuestion { id:string; label:string; type:"number"; units:CalculatorUnit[]; min?:number; max?:number; step?:number; scoring?:any[]; help?:string; required?:boolean }
@@ -20,6 +23,14 @@ export interface ClinicalCalculatorSchema {
  id:string; name:string; shortName:string; specialty:string; description:string; inputs:CalculatorInput[];
  calculate:(inputs:Record<string,any>)=>number|string; tiers:CalculatorTier[]; pearls:string[]; whyUseIt:string; references:ClinicalReference[];
  /** Compatibility aliases for the existing calculator renderer. */ shortTitle:string; title:string; objective:string; indication:string; scoreLabel:string; questions:Array<LegacySingleQuestion|LegacyMultiQuestion|LegacyNumberQuestion>; results:LegacyResult[]; evidence:LegacyEvidence;
+ /** Optional MDCalc-style extensions. */
+ unit?:string; decimals?:number; formula?:string[]; pitfalls?:string[]; limitations?:string[]; facts?:CalculatorFact[]; popularity?:number; isNew?:boolean; keywords?:string[]; lastReviewed?:string;
+ /** Overrides tier matching when the band depends on other inputs (for example sex or a single red flag). Receives canonical-unit answers. */
+ interpret?:(score:number,inputs:Record<string,any>)=>LegacyResult|undefined;
+ /** Extra outputs shown under the headline result. Receives canonical-unit answers. */
+ secondary?:(inputs:Record<string,any>)=>SecondaryResult[];
+ /** Overrides the default "every required question answered" check. */
+ isComplete?:(inputs:Record<string,any>)=>boolean;
 }
 export type NumericAnswer={value:number;unit?:string}; export type CalculatorAnswer=string|string[]|NumericAnswer; export type CalculatorAnswers=Record<string,CalculatorAnswer|undefined>;
 export type NumericQuestion=LegacyNumberQuestion;
@@ -71,7 +82,10 @@ if (meld) {
     const creatinine = Y(inputs, "dialysis") ? 4 : Math.min(4, Math.max(1, num(inputs, "creatinine") ?? 1));
     const sodium = Math.min(137, Math.max(125, num(inputs, "sodium") ?? 137));
     const meldBase = 3.78 * Math.log(bilirubin) + 11.2 * Math.log(inr) + 9.57 * Math.log(creatinine) + 6.43;
-    return Math.round(meldBase + 1.32 * (137 - sodium) - 0.033 * meldBase * (137 - sodium));
+    // UNOS MELD-Na: the sodium term applies only when MELD(i) is above 11; the score is capped at 40.
+    const meldI = Math.round(meldBase * 10) / 10;
+    const meldNa = meldI > 11 ? meldI + 1.32 * (137 - sodium) - 0.033 * meldI * (137 - sodium) : meldI;
+    return Math.min(40, Math.max(6, Math.round(meldNa)));
   };
   meld.pearls = ["Use in patients aged 12 years or older.", "Creatinine >4.0 mg/dL is assigned a value of 4.0; sodium is bounded to 125–137 mmol/L.", "Reassess periodically because the score changes with laboratory values."];
   meld.whyUseIt = "Quantify end-stage liver disease for transplant planning with sodium; interpret with hepatology/transplant guidance and local policy.";
@@ -136,7 +150,14 @@ if (egfr) {
     { id: "creatinine", label: "Serum creatinine", type: "numeric", units: [{ value: "mg-dl", label: "mg/dL", system: "US" }, { value: "umol-l", label: "µmol/L", system: "SI", canonicalMultiplier: 0.0113122 }] },
     { id: "cystatin-c", label: "Cystatin C", type: "numeric", units: [{ value: "mg-l", label: "mg/L", system: "SI" }] },
   ];
-  egfr.questions = egfr.inputs.map((question) => ({ ...question, type: question.type === "binary" ? "single-select" : "number" as any })) as any;
+  egfr.questions = egfr.inputs.map((question) => ({ ...question, type: question.type === "binary" ? "single-select" : "number" as any, required: !["equation", "creatinine", "cystatin-c"].includes(question.id) })) as any;
+  // Only the labs that the chosen equation uses are required (the default equation is 2021 CKD-EPI creatinine).
+  egfr.isComplete = (inputs) => {
+    const equation = inputs.equation ?? "2021-creatinine";
+    const needsCreatinine = equation !== "2012-cystatin", needsCystatin = equation.includes("cystatin");
+    return typeof inputs.sex === "string" && (num(inputs, "age") ?? 0) > 0 && (!needsCreatinine || (num(inputs, "creatinine") ?? 0) > 0) && (!needsCystatin || (num(inputs, "cystatin-c") ?? 0) > 0);
+  };
+  egfr.unit = "mL/min/1.73 m²"; egfr.decimals = 0;
   egfr.calculate = (inputs) => {
     const ageValue = num(inputs, "age") ?? 0;
     const creatinine = num(inputs, "creatinine") ?? 0;
@@ -148,7 +169,7 @@ if (egfr) {
     const a = female ? -0.241 : -0.302;
     const crRatio = creatinine / k;
     const cysRatio = cystatin / 0.8;
-    if (equation === "2021-creatinine-cystatin") return creatinine > 0 && cystatin > 0 ? 135 * Math.pow(Math.min(crRatio, 1), a) * Math.pow(Math.max(crRatio, 1), -0.544) * Math.pow(Math.min(cysRatio, 1), -0.323) * Math.pow(Math.max(cysRatio, 1), -0.778) * Math.pow(0.9961, ageValue) * (female ? 0.963 : 1) : 0;
+    if (equation === "2021-creatinine-cystatin") return creatinine > 0 && cystatin > 0 ? 135 * Math.pow(Math.min(crRatio, 1), female ? -0.219 : -0.144) * Math.pow(Math.max(crRatio, 1), -0.544) * Math.pow(Math.min(cysRatio, 1), -0.323) * Math.pow(Math.max(cysRatio, 1), -0.778) * Math.pow(0.9961, ageValue) * (female ? 0.963 : 1) : 0;
     if (equation === "2009-creatinine") return 141 * Math.pow(Math.min(crRatio, 1), female ? -0.329 : -0.411) * Math.pow(Math.max(crRatio, 1), -1.209) * Math.pow(0.993, ageValue) * (female ? 1.018 : 1);
     if (equation === "2012-cystatin") return cystatin > 0 ? 133 * Math.pow(Math.min(cysRatio, 1), -0.499) * Math.pow(Math.max(cysRatio, 1), -1.328) * Math.pow(0.996, ageValue) * (female ? 0.932 : 1) : 0;
     if (equation === "2012-creatinine-cystatin") return creatinine > 0 && cystatin > 0 ? 135 * Math.pow(Math.min(crRatio, 1), female ? -0.248 : -0.207) * Math.pow(Math.max(crRatio, 1), -0.601) * Math.pow(Math.min(cysRatio, 1), -0.375) * Math.pow(Math.max(cysRatio, 1), -0.711) * Math.pow(0.995, ageValue) * (female ? 0.969 : 1) : 0;
@@ -203,5 +224,25 @@ if (heartPathway) {
   heartPathway.tiers = [T(0, 3, "Low-risk HEART Pathway", "If the 3-hour follow-up troponin is negative and the clinical assessment is reassuring, consider discharge with close follow-up and return precautions.", "bg-emerald-50 text-emerald-800"), T(4, 6, "Intermediate risk", "Observe or admit for serial ECGs, biomarkers and comprehensive cardiac evaluation with shared decision-making.", "bg-yellow-50 text-yellow-800"), T(7, 10, "High risk", "Admit or observe with serial ECGs, cardiac biomarkers and/or cardiology consultation.", "bg-red-50 text-red-800")];
   heartPathway.results = heartPathway.tiers.map((tier, index) => ({ id: `heart-pathway-${index}`, label: tier.riskLabel, tone: tier.tone, match: { minScore: tier.min, maxScore: tier.max }, summary: tier.managementAdvice, management: [tier.managementAdvice] })) as any;
 }
+calculators.push(...extraCalculators);
+/** "Most used" order for the calculator home page (MDCalc-style ranking); anything unlisted follows alphabetically. */
+const popularityOrder=['cha2ds2-vasc','wells-pe','ckd-epi-egfr','meld-na','glasgow-coma-scale','news2','curb-65','heart-score','cockcroft-gault','has-bled','wells-dvt','qtc','child-pugh','glasgow-blatchford','corrected-calcium','anion-gap','perc','bmi-bsa','padua','qsofa-score','qsofa'];
+const limitationsById:Record<string,string[]>={
+ 'wells-pe':['Use only after clinical assessment suggests PE; not validated in pregnancy.','Subjective item (alternative diagnosis less likely) varies between clinicians.'],
+ 'cha2ds2-vasc':['Not for valvular AF (moderate to severe mitral stenosis, mechanical valve).','Assess bleeding risk separately (HAS-BLED) and address modifiable factors.'],
+ 'heart-score':['Needs a high-sensitivity or contemporary troponin interpreted with local assay cut-offs.','Not for ST elevation, haemodynamic instability or other conditions that need admission.'],
+ 'ckd-epi-egfr':['Estimate only: unreliable in extremes of muscle mass, pregnancy, acute kidney injury and rapidly changing creatinine.','Drug dosing may require Cockcroft-Gault creatinine clearance if the label says so.'],
+ 'cockcroft-gault':['Uses actual body weight in this calculator; consider ideal or adjusted weight in obesity and oedema.','Not valid in unstable renal function or acute kidney injury.'],
+ 'curb-65':['Does not account for comorbidity, hypoxaemia or social factors; combine with clinical judgement.'],
+ 'glasgow-coma-scale':['Record components, not only the total. Not testable components (intubation, eye swelling) must be documented.','Use a paediatric GCS for infants.'],
+ 'meld-na':['For adults and adolescents 12 and over with end-stage liver disease; does not capture all transplant priorities (for example hepatocellular carcinoma).','MELD 3.0 is now used for US allocation; this calculator shows MELD-Na.'],
+ 'has-bled':['Bleeding risk score is not a reason to withhold indicated anticoagulation; use it to find modifiable factors.'],
+ 'qsofa':['SOFA-2 is newly derived and needs external validation.']
+};
+calculators.forEach((c)=>{c.popularity=popularityOrder.indexOf(c.id)>=0?popularityOrder.indexOf(c.id)+1:100;if(!c.limitations&&limitationsById[c.id])c.evidence.limitations=limitationsById[c.id]});
 export const clinicalCalculators=calculators;
-export function toCanonicalValue(value:number,unit:CalculatorUnit){return value*(unit.canonicalMultiplier??1)+(unit.canonicalOffset??0)} export function fromCanonicalValue(value:number,unit:CalculatorUnit){return(value-(unit.canonicalOffset??0))/(unit.canonicalMultiplier??1)} export function questionScore(q:any,a:any){if(a===undefined)return 0;if(q.type==='multi-select')return Array.isArray(a)?a.reduce((s:number,v:string)=>s+(q.options?.find((o:any)=>o.value===v)?.points??0),0):0;if(q.type==='number'){const value=typeof a==='object'?a.value:a;const unit=q.units?.find((u:any)=>u.value===a?.unit)??q.units?.[0];const canonical=unit?toCanonicalValue(value,unit):value;return q.scoring?.find((r:any)=>(r.min===undefined||canonical>=r.min)&&(r.max===undefined||canonical<r.max))?.points??0}return q.options?.find((o:any)=>o.value===a)?.points??0} export function calculateScore(s:ClinicalCalculatorSchema,a:CalculatorAnswers){return s.calculate(a)} export function isQuestionComplete(q?:any,a?:any){if(!q)return false;if(q.required===false)return true;if(q.type==='multi-select')return Array.isArray(a);if(q.type==='number')return Boolean(a&&typeof a==='object'&&!Array.isArray(a)&&Number.isFinite(a.value));return typeof a==='string'} export function getCalculatorResult(s:ClinicalCalculatorSchema,score:number|string,_a?:CalculatorAnswers):LegacyResult|undefined{if(typeof score!=='number')return undefined;return s.results.find(t=>(t.match.minScore===undefined||score>=t.match.minScore)&&(t.match.maxScore===undefined||score<=t.match.maxScore))}
+export function toCanonicalValue(value:number,unit:CalculatorUnit){return value*(unit.canonicalMultiplier??1)+(unit.canonicalOffset??0)} export function fromCanonicalValue(value:number,unit:CalculatorUnit){return(value-(unit.canonicalOffset??0))/(unit.canonicalMultiplier??1)} export function questionScore(q:any,a:any){if(a===undefined)return 0;if(q.type==='multi-select')return Array.isArray(a)?a.reduce((s:number,v:string)=>s+(q.options?.find((o:any)=>o.value===v)?.points??0),0):0;if(q.type==='number'){const value=typeof a==='object'?a.value:a;const unit=q.units?.find((u:any)=>u.value===a?.unit)??q.units?.[0];const canonical=unit?toCanonicalValue(value,unit):value;return q.scoring?.find((r:any)=>(r.min===undefined||canonical>=r.min)&&(r.max===undefined||canonical<r.max))?.points??0}return q.options?.find((o:any)=>o.value===a)?.points??0} /** Converts every numeric answer to its canonical unit (the first unit of the question) so formulas never see mixed units. */
+export function normalizeAnswers(s:ClinicalCalculatorSchema,a:CalculatorAnswers):Record<string,any>{const out:Record<string,any>={...a};for(const q of s.questions){if(q.type!=='number')continue;const v=a[q.id];if(!v||typeof v!=='object'||Array.isArray(v)||!Number.isFinite(v.value))continue;const unit=q.units?.find((u)=>u.value===v.unit)??q.units?.[0];out[q.id]={value:unit?toCanonicalValue(v.value,unit):v.value,unit:q.units?.[0]?.value}}return out}
+export function calculateScore(s:ClinicalCalculatorSchema,a:CalculatorAnswers){return s.calculate(normalizeAnswers(s,a))}
+export function getSecondaryResults(s:ClinicalCalculatorSchema,a:CalculatorAnswers):SecondaryResult[]{return s.secondary?s.secondary(normalizeAnswers(s,a)):[]}
+export function isCalculatorComplete(s:ClinicalCalculatorSchema,a:CalculatorAnswers):boolean{const n=normalizeAnswers(s,a);return s.isComplete?s.isComplete(n):s.questions.every((q)=>isQuestionComplete(q,a[q.id]))} export function isQuestionComplete(q?:any,a?:any){if(!q)return false;if(q.required===false)return true;if(q.type==='multi-select')return Array.isArray(a);if(q.type==='number')return Boolean(a&&typeof a==='object'&&!Array.isArray(a)&&Number.isFinite(a.value));return typeof a==='string'} export function getCalculatorResult(s:ClinicalCalculatorSchema,score:number|string,_a?:CalculatorAnswers):LegacyResult|undefined{if(typeof score!=='number')return undefined;if(s.interpret)return s.interpret(score,normalizeAnswers(s,_a??{}));return s.results.find(t=>(t.match.minScore===undefined||score>=t.match.minScore)&&(t.match.maxScore===undefined||score<=t.match.maxScore))}
