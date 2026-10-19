@@ -15,6 +15,8 @@ type Props = {
   versionLabel: string;
   today: string;
   saveAction: (formData: FormData) => void | Promise<void>;
+  /** Development edit mode: Publish is not gated on the 80% score. */
+  devEdit?: boolean;
 };
 
 const statusMark: Record<PasteSectionReport["status"], { symbol: string; label: string }> = {
@@ -69,7 +71,7 @@ function SubmitButton({ mode, disabled, children, primary }: { mode: "publish" |
   );
 }
 
-export function PasteTopicEditor({ base, guidelineId, versionId, versionLabel, today, saveAction }: Props) {
+export function PasteTopicEditor({ base, guidelineId, versionId, versionLabel, today, saveAction, devEdit = false }: Props) {
   const [text, setText] = useState("");
   const [useTitle, setUseTitle] = useState(false);
   const deferred = useDeferredValue(text);
@@ -87,7 +89,9 @@ export function PasteTopicEditor({ base, guidelineId, versionId, versionLabel, t
     : result.content
       ? meets
         ? { tone: "good", head: `Score ${score}% — ready to publish`, body: `At or above ${CLINICAL_DIRECTORY_MINIMUM_SCORE}%, so “Publish” will make it live. Clinical review stays pending.` }
-        : { tone: "warn", head: `Score ${score}% — below ${CLINICAL_DIRECTORY_MINIMUM_SCORE}%`, body: "You can save it as a draft. To publish, fix the points below (the “Copy fix prompt” button writes the request for Gemini)." }
+        : devEdit
+          ? { tone: "warn", head: `Score ${score}% — below ${CLINICAL_DIRECTORY_MINIMUM_SCORE}%`, body: "Development edit mode: you can still publish or save as a draft. The score is shown for information only." }
+          : { tone: "warn", head: `Score ${score}% — below ${CLINICAL_DIRECTORY_MINIMUM_SCORE}%`, body: "You can save it as a draft. To publish, fix the points below (the “Copy fix prompt” button writes the request for Gemini)." }
       : { tone: "bad", head: "Cannot save yet", body: "The text is missing something every topic must have. Fix the points below." };
 
   return (
@@ -127,7 +131,7 @@ export function PasteTopicEditor({ base, guidelineId, versionId, versionLabel, t
             </label>
           )}
           <div className="paste-editor-actions">
-            <SubmitButton mode="publish" primary disabled={!canSave || !meets}>Publish ({typeof score === "number" ? `${score}%` : "needs 80%"})</SubmitButton>
+            <SubmitButton mode="publish" primary disabled={!canSave || (!meets && !devEdit)}>Publish ({typeof score === "number" ? `${score}%` : "needs 80%"})</SubmitButton>
             <SubmitButton mode="draft" disabled={!canSave}>Save as draft</SubmitButton>
             <button type="button" className="ui-button ui-button-secondary" disabled={!text} onClick={() => setText("")}>Clear</button>
           </div>
