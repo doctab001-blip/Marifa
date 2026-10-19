@@ -43,6 +43,10 @@ export type DevelopmentRecord = {
 
 export type DevelopmentRow = DevelopmentRecord & {
   id: string;
+  /** AI-written summary of the free PubMed abstract (journal items only). */
+  summary: string | null;
+  summary_source: "pubmed_abstract" | null;
+  free_full_text_url: string | null;
   created_at: string;
   reviewed_at: string | null;
 };

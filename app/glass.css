@@ -977,3 +977,21 @@ html[data-theme="dark"] .metric-grid .metric-card:hover { box-shadow: inset 0 1p
 .dev-btn { padding: .4rem .8rem; font-size: .8rem; }
 .dev-check { display: inline-flex; align-items: center; gap: 6px; height: 34px; font-size: .84rem; color: var(--strong); }
 @media (max-width: 640px) { .dev-item { padding: 12px; } .dev-item-foot { flex-direction: column; align-items: flex-start; } }
+
+/* Recent Developments: grid / list layout, category colour coding and summaries */
+.dev-item { border-left: 4px solid var(--pc, rgb(var(--ov) / .25)); background: linear-gradient(90deg, color-mix(in srgb, var(--pc, transparent) 9%, transparent), transparent 40%), rgb(var(--glass) / .6); }
+.dev-grid { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); align-items: stretch; }
+.dev-item.dev-tile { border-left-width: 1px; border-top: 4px solid var(--pc, rgb(var(--ov) / .25)); align-content: start; grid-template-rows: auto auto 1fr auto; gap: 8px; padding: 14px 16px 12px; background: linear-gradient(180deg, color-mix(in srgb, var(--pc, transparent) 13%, transparent), transparent 55%), rgb(var(--glass) / .6); }
+.dev-item.dev-tile .dev-item-foot { flex-direction: column; align-items: flex-start; align-self: end; }
+.dev-item-summary { display: grid; gap: 4px; }
+.dev-summary-note { color: var(--text-3); font-size: .72rem; line-height: 1.35; }
+.dev-links { display: inline-flex; flex-wrap: wrap; gap: 4px 14px; }
+.dev-free-link { color: #059669; }
+.dev-view-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; }
+.dev-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: .78rem; color: var(--text-3); }
+.dev-legend-item { display: inline-flex; align-items: center; gap: 6px; }
+.dev-legend-item i { width: 10px; height: 10px; border-radius: 3px; background: var(--pc); display: inline-block; }
+.dev-view-toggle { display: inline-flex; border: 1px solid rgb(var(--ov) / .14); border-radius: 12px; overflow: hidden; background: rgb(var(--glass) / .5); }
+.dev-view-toggle a { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; font-size: .84rem; font-weight: 600; color: var(--text-3); text-decoration: none; }
+.dev-view-toggle a.is-active { background: rgb(var(--ov) / .12); color: var(--strong); }
+.dev-view-toggle a:focus-visible { outline: 2px solid var(--strong); outline-offset: -2px; }
