@@ -9,6 +9,7 @@ import { isTemporaryOpenAdminMode } from "@/lib/access-mode";
 import { DiseaseDetailSchema } from "@/lib/validations/disease";
 import { approvalErrorCode } from "@/lib/approval-errors";
 import { auditTopicContent, CLINICAL_DIRECTORY_MINIMUM_SCORE } from "@/lib/clinical-authoring-audit";
+import { isDevEditMode } from "@/lib/dev-edit-mode";
 
 const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
@@ -27,7 +28,9 @@ export async function saveDraftGuideline(formData: FormData) {
   }
 
   const parsed = DiseaseDetailSchema.safeParse(input);
-  if (!parsed.success || parsed.data.id !== id || !["draft", "under_review", "published"].includes(parsed.data.status)) {
+  const devEdit = isDevEditMode();
+  const editableStatuses = devEdit ? ["draft", "under_review", "published", "approved"] : ["draft", "under_review", "published"];
+  if (!parsed.success || parsed.data.id !== id || (!devEdit && !editableStatuses.includes(parsed.data.status))) {
     redirect(`${editPath}&error=invalid_content`);
   }
 
@@ -47,7 +50,7 @@ export async function saveDraftGuideline(formData: FormData) {
     .eq("guideline_id", id)
     .maybeSingle();
   if (versionError || !version) redirect(`${editPath}&error=version_not_editable`);
-  if (version.status !== parsed.data.status || !["draft", "under_review", "published"].includes(version.status)) redirect(`${editPath}&error=version_not_editable`);
+  if ((!devEdit && version.status !== parsed.data.status) || !editableStatuses.includes(version.status)) redirect(`${editPath}&error=version_not_editable`);
 
   // Every editor save is additive. The row being edited stays intact as
   // history; the submitted content becomes a fresh, reviewable version.
@@ -81,7 +84,7 @@ export async function saveDraftGuideline(formData: FormData) {
 
   let published = false;
   let destinationVersionId = reviewVersion.id;
-  if (audit.publishable) {
+  if (audit.publishable || devEdit) {
     const liveVersion = `${revision}-live`;
     const now = new Date().toISOString();
     const liveContent = { ...reviewContent, version: liveVersion, status: "published" as const };
@@ -95,7 +98,7 @@ export async function saveDraftGuideline(formData: FormData) {
       approved_at: now,
       published_at: now,
       content: liveContent,
-      change_summary: `Published automatically from ${revision}: authoring-standard score ${audit.score}% (threshold ${CLINICAL_DIRECTORY_MINIMUM_SCORE}%). Clinical review remains pending.`,
+      change_summary: `Published from ${revision}: authoring-standard score ${audit.score}% (threshold ${CLINICAL_DIRECTORY_MINIMUM_SCORE}%${audit.publishable ? "" : "; not met, published anyway in development edit mode"}). Clinical review remains pending.`,
     }).select("id").single();
     if (liveError || !liveVersionRow) redirect(`${editPath}&error=save_failed`);
     const { error: previousCurrentError } = await supabase.from("guideline_versions").update({ is_current: false }).eq("guideline_id", id).eq("is_current", true);

@@ -4,6 +4,7 @@ import { ArrowLeft } from "@/components/icons-3d";
 import { getDraftGuideline } from "@/lib/admin/data";
 import { PasteTopicEditor } from "@/components/admin/paste-topic-editor";
 import { savePastedTopic } from "./actions";
+import { isDevEditMode } from "@/lib/dev-edit-mode";
 
 const errorMessages: Record<string, string> = {
   empty: "Nothing was pasted. Paste the full topic text and try again.",
@@ -28,6 +29,7 @@ export default async function PasteTopicPage({
   const [{ id }, query] = await Promise.all([params, searchParams]);
   const result = await getDraftGuideline(id, query.version);
   if (result.state === "not-found") notFound();
+  const devEdit = isDevEditMode();
 
   return (
     <section className="admin-content topic-page paste-editor-page">
@@ -38,7 +40,7 @@ export default async function PasteTopicPage({
           <h2>{result.title}</h2>
           <p>The stored version does not match the required format, so it cannot be used as the base for a paste. Ask an administrator to repair it.</p>
         </article>
-      ) : result.versionStatus === "approved" ? (
+      ) : result.versionStatus === "approved" && !devEdit ? (
         <article className="card admin-edit-card">
           <p className="eyebrow">Approved version</p>
           <h2>{result.disease.title}</h2>
@@ -64,6 +66,7 @@ export default async function PasteTopicPage({
             versionLabel={result.disease.version}
             today={riyadhToday()}
             saveAction={savePastedTopic}
+            devEdit={devEdit}
           />
         </>
       )}

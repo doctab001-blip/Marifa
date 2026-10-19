@@ -6,6 +6,7 @@ import { approveGuidelineVersion, saveDraftGuideline } from "../actions";
 import { GuidelinePathwayForm } from "@/components/admin/guideline-pathway-form";
 import { ClinicalEvidenceAudit } from "@/components/clinical-evidence-audit";
 import { EmergencyTopic } from "@/components/emergency-topic";
+import { isDevEditMode } from "@/lib/dev-edit-mode";
 
 const messages: Record<string, string> = {
   invalid_json: "The content is not valid JSON. Correct the formatting and try again.",
@@ -25,6 +26,7 @@ export default async function EditDraftGuidelinePage({
   const [{ id }, query] = await Promise.all([params, searchParams]);
   const result = await getDraftGuideline(id, query.version);
   if (result.state === "not-found") notFound();
+  const devEdit = isDevEditMode();
 
   return (
     <section className="admin-content topic-page">
@@ -50,12 +52,12 @@ export default async function EditDraftGuidelinePage({
             <EmergencyTopic disease={result.disease} investigationSource={result.sourceUrl ? { title: result.sourceTitle, url: result.sourceUrl } : undefined} />
             <section className="topic-approval-bar" aria-label="Draft actions">
               <p>{result.isLive ? <><span className="pill pill-emerald"><CheckCircle2 size={16} aria-hidden="true" /><strong>Approved</strong></span><span className="pill pill-slate pill-sm"><FileText size={14} aria-hidden="true" />Version {result.disease.version}</span></> : result.isPublished ? <><span className="pill pill-sky"><FileText size={16} aria-hidden="true" /><strong>Published</strong></span><span className="pill pill-slate pill-sm"><FileText size={14} aria-hidden="true" />Version {result.disease.version}</span></> : <><span className="pill pill-amber"><Hourglass size={16} aria-hidden="true" /><strong>Status: Draft</strong></span><span className="pill pill-slate pill-sm"><FileText size={14} aria-hidden="true" />Version {result.disease.version}</span></>}</p>
-              {!result.isLive && <div className="admin-header-actions"><Link className="ui-button ui-button-primary" href={`/dashboard/admin/guidelines/${encodeURIComponent(id)}/paste?version=${encodeURIComponent(result.versionId)}`}>Paste full content</Link><a className="ui-button ui-button-secondary" href="#pathway-editor">{result.isPublished ? "Edit published version" : "Edit draft"}</a>{result.canApprove && <form action={approveGuidelineVersion}><input type="hidden" name="id" value={id} /><input type="hidden" name="versionId" value={result.versionId} /><input type="hidden" name="destination" value="drafts" /><button className="ui-button ui-button-primary" type="submit">Approve version</button></form>}</div>}
+              {(!result.isLive || devEdit) && <div className="admin-header-actions"><Link className="ui-button ui-button-primary" href={`/dashboard/admin/guidelines/${encodeURIComponent(id)}/paste?version=${encodeURIComponent(result.versionId)}`}>Paste full content</Link><a className="ui-button ui-button-secondary" href="#pathway-editor">{result.isPublished || result.isLive ? "Edit current version" : "Edit draft"}</a>{result.canApprove && <form action={approveGuidelineVersion}><input type="hidden" name="id" value={id} /><input type="hidden" name="versionId" value={result.versionId} /><input type="hidden" name="destination" value="drafts" /><button className="ui-button ui-button-primary" type="submit">Approve version</button></form>}</div>}
             </section>
           </article>
           <article className="card admin-source-summary"><BookOpenCheck size={18} aria-hidden="true" /><div><strong>{result.sourceTitle ?? "Source not recorded"}</strong><span>{result.sourceUrl ? <a href={result.sourceUrl} target="_blank" rel="noreferrer">Open source reference</a> : "No source URL recorded"}</span><small>Preparation and source-check dates do not record clinical approval.</small></div></article>
           <ClinicalEvidenceAudit audit={result.disease.evidenceAudit} />
-          {result.isLive ? <div className="clinical-governance-notice" role="note"><strong>Approved versions are preserved.</strong> Published and draft versions remain editable in their respective Disease Management categories.</div> : <details className="card draft-editor-disclosure" id="pathway-editor"><summary>{result.isPublished ? "Edit published fields" : "Edit draft fields"}</summary><GuidelinePathwayForm disease={result.disease} guidelineId={id} versionId={result.versionId} saveAction={saveDraftGuideline} /></details>}
+          {result.isLive && !devEdit ? <div className="clinical-governance-notice" role="note"><strong>Approved versions are preserved.</strong> Published and draft versions remain editable in their respective Disease Management categories.</div> : <details className="card draft-editor-disclosure" id="pathway-editor"><summary>{result.isPublished || result.isLive ? "Edit current fields" : "Edit draft fields"}</summary><GuidelinePathwayForm disease={result.disease} guidelineId={id} versionId={result.versionId} saveAction={saveDraftGuideline} /></details>}
         </>
       )}
     </section>

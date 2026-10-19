@@ -8,6 +8,7 @@ import { requireOrganizationAdmin } from "@/lib/admin/data";
 import { DiseaseDetailSchema } from "@/lib/validations/disease";
 import { auditTopicContent, CLINICAL_DIRECTORY_MINIMUM_SCORE } from "@/lib/clinical-authoring-audit";
 import { parsePastedTopic } from "@/lib/topic-paste";
+import { isDevEditMode } from "@/lib/dev-edit-mode";
 
 const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const MAX_PASTE_CHARACTERS = 400_000;
@@ -63,7 +64,9 @@ export async function savePastedTopic(formData: FormData) {
     .eq("id", versionId)
     .eq("guideline_id", id)
     .maybeSingle();
-  if (versionError || !version || !["draft", "under_review", "published"].includes(version.status)) redirect(`${here}&error=version_not_editable`);
+  const devEdit = isDevEditMode();
+  const editableStatuses = devEdit ? ["draft", "under_review", "published", "approved"] : ["draft", "under_review", "published"];
+  if (versionError || !version || !editableStatuses.includes(version.status)) redirect(`${here}&error=version_not_editable`);
 
   const base = DiseaseDetailSchema.safeParse(version.content);
   if (!base.success) redirect(`${here}&error=version_not_editable`);
@@ -101,7 +104,7 @@ export async function savePastedTopic(formData: FormData) {
 
   let published = false;
   let destinationVersionId = reviewVersion.id;
-  if (mode === "publish" && audit.publishable) {
+  if (mode === "publish" && (audit.publishable || devEdit)) {
     const liveVersion = `${revision}-live`;
     const now = new Date().toISOString();
     const liveContent = { ...reviewContent, version: liveVersion, status: "published" as const };
@@ -115,7 +118,7 @@ export async function savePastedTopic(formData: FormData) {
       approved_at: now,
       published_at: now,
       content: liveContent,
-      change_summary: `Published automatically from ${revision}: authoring-standard score ${audit.score}% (threshold ${CLINICAL_DIRECTORY_MINIMUM_SCORE}%). Clinical review remains pending.`,
+      change_summary: `Published from ${revision}: authoring-standard score ${audit.score}% (threshold ${CLINICAL_DIRECTORY_MINIMUM_SCORE}%${audit.publishable ? "" : "; not met, published anyway in development edit mode"}). Clinical review remains pending.`,
     }).select("id").single();
     if (liveError || !liveRow) redirect(`${here}&error=save_failed`);
     const { error: previousError } = await supabase.from("guideline_versions").update({ is_current: false }).eq("guideline_id", id).eq("is_current", true);
