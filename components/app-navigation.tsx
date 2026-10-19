@@ -152,7 +152,7 @@ export function WorkspaceSidebar({ organizationName, organizationNote, temporary
   return (
     <aside id="workspace-sidebar" className="sidebar" aria-label="Main navigation">
       <Link href="/dashboard" className="brand" title="Marifa home">
-        <Image src="/marifa-logo.png" alt="" aria-hidden="true" width={40} height={40} className="brand-logo" priority />
+        <Image src="/marifa-logo.png" alt="" aria-hidden="true" width={46} height={46} className="brand-logo" priority />
         <div className="brand-copy"><div className="brand-name">Marifa</div><div className="brand-sub">Clinical knowledge & governance</div></div>
       </Link>
       <div className="sidebar-panel" key={showHome || !moduleItem ? "home" : moduleItem.href} data-direction={showHome ? "back" : "forward"}>
