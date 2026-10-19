@@ -12,3 +12,7 @@ For every medicine, give (from a source actually opened; mark gaps in UNVERIFIED
 7. Source with exact locator; where guidelines differ, show them in the Guideline comparison.
 Derived arithmetic (for example mL/hour from volume and time) is labelled "derived".
 Audit rules: "p. N" / "section X" / "Rec. N" locators; one-of steps need 2+ options (single options use Choice "All"); no "or" lists inside one drug cell.
+
+## No deferral and no placeholders (standing rule)
+
+Marifa is the local guideline for Saudi Arabia. Every cell must hold a usable value. Never write "per local guideline", "local policy", "check hospital formulary", "not stated", "none stated" or similar. For every drug give the standard dose, rate, duration and the renal, hepatic and age adjustment, taken from an opened NHS, US (FDA label or ADA/ASHP) or other manufacturer label or guideline, with its locator. Label arithmetic "derived". If no opened source gives a value, find another source; only then list the residual gap under UNVERIFIED while still giving the best standard value, labelled with where it comes from.

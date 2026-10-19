@@ -1,6 +1,6 @@
 # Hypophosphataemia
 
-SCOPE: Adult (over 18 years) Emergency Department (ED) recognition and level-based replacement of acute hypophosphataemia, based on the Worcestershire Acute Hospitals NHS Trust guideline (version 6, January 2026) and the UK Medicines Information (UKMi) Medicines Q&A (2017). Refeeding syndrome, chronic hypophosphataemia and significant renal impairment are managed on local refeeding or specialist pathways and are outside this protocol. No Saudi national guideline was found.
+SCOPE: Adult (over 18 years) Emergency Department (ED) recognition and level-based replacement of acute hypophosphataemia, based on the Worcestershire Acute Hospitals NHS Trust guideline (version 6, January 2026) and the UK Medicines Information (UKMi) Medicines Q&A (2017). Refeeding syndrome, chronic hypophosphataemia and significant renal impairment are outside this protocol. No Saudi national guideline was found.
 
 ## Pathophysiology
 Hypophosphataemia is a serum phosphate below 0.8 mmol/L. [1]
@@ -48,7 +48,7 @@ Hypophosphataemia is a serum phosphate below 0.8 mmol/L. [1]
 ### Imaging and specialist
 | Test | Normal (adult) | In this condition | What it means / next step | Source |
 |---|---|---|---|---|
-| Dietitian or refeeding team review | Not needed | Refeeding risk | Follow the local refeeding guideline | [1] p. 3 |
+| Dietitian or refeeding team review | Not needed | Refeeding risk | Refeeding syndrome is outside this protocol: involve the dietitian and a senior doctor | [1] p. 3 |
 
 ## Management
 ### Immediate (0–15 minutes)
@@ -74,12 +74,12 @@ Level-based replacement. Mild 0.6–0.79 mmol/L asymptomatic: no treatment. Use 
 #### Branch: Moderate and oral not possible | Entry: Phosphate 0.32–0.59 mmol/L and oral not absorbed or tolerated
 | Step | Choice | Drug | Indication | Patient group | Dose | Route | Frequency | Duration / maximum | Adjustments (renal, hepatic, age) | Monitoring | Contraindications / cautions | Use when | Source |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1. IV phosphate (moderate) | Preferred | Phosphates Polyfusor (500 mL contains 50 mmol phosphate, 9.5 mmol potassium, 81 mmol sodium) | Replace phosphate when oral is not possible | Adults, normal renal function, phosphate 0.3–0.6 mmol/L. By weight: 40–60 kg 10 mmol in 100 mL; 61–80 kg 15 mmol in 150 mL; 81–120 kg 20 mmol in 200 mL | Dose drawn from the Polyfusor as the volume stated (about 0.1 mmol/mL), diluent not specified in the opened text | IV infusion over 12–24 hours (6–12 hours if needed); Worcestershire gives 25 mmol in 250 mL over 12 hours for 0.32–0.79 mmol/L | Once, then recheck | Single course, then reassess | Under 60 kg half the Worcestershire table dose; renal impairment: reduced dose, caution | Phosphate, calcium, potassium, magnesium daily | Arrhythmia, hypocalcaemia, hypotension; heart failure, oedema, hyperkalaemia risk | Oral unsuitable | [1] p. 4–5; [2] Table 3 |
+| 1. IV phosphate (moderate) | Preferred | Phosphates Polyfusor (500 mL contains 50 mmol phosphate, 9.5 mmol potassium, 81 mmol sodium) | Replace phosphate when oral is not possible | Adults, normal renal function, phosphate 0.3–0.6 mmol/L. By weight: 40–60 kg 10 mmol in 100 mL; 61–80 kg 15 mmol in 150 mL; 81–120 kg 20 mmol in 200 mL | Infuse the stated volume of undiluted Phosphates Polyfusor (50 mmol in 500 mL = 0.1 mmol/mL, derived) by pump | IV infusion over 12–24 hours (6–12 hours if needed); Worcestershire gives 25 mmol in 250 mL over 12 hours for 0.32–0.79 mmol/L | Once, then recheck | Single course, then reassess | Under 60 kg half the Worcestershire table dose; renal impairment: reduced dose, caution | Phosphate, calcium, potassium, magnesium daily | Arrhythmia, hypocalcaemia, hypotension; heart failure, oedema, hyperkalaemia risk | Oral unsuitable | [1] p. 4–5; [2] Table 3 |
 | 1. IV phosphate (moderate) | Alternative | Sodium glycerophosphate 21.6% (20 mmol in 20 mL) in glucose 5% | Replace phosphate when oral is not possible and Polyfusor is unavailable | Adults, phosphate 0.32–0.79 mmol/L | 20 mmol (20 mL) in 250 mL glucose 5% | IV infusion over 12 hours | Once, then recheck | Single course | Under 60 kg half dose; sodium load 40 mmol per 20 mL | Phosphate, calcium, potassium, magnesium | Sodium restriction; renal impairment | Polyfusor unavailable | [1] p. 4–5 |
 #### Branch: Severe, phosphate below 0.32 mmol/L | Entry: Phosphate below 0.32 mmol/L (UKMi: below 0.3 mmol/L) or symptomatic
 | Step | Choice | Drug | Indication | Patient group | Dose | Route | Frequency | Duration / maximum | Adjustments (renal, hepatic, age) | Monitoring | Contraindications / cautions | Use when | Source |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1. IV phosphate (severe) | Preferred | Phosphates Polyfusor | Replace phosphate in severe hypophosphataemia | Adults, phosphate below 0.32 mmol/L. By weight (UKMi): 40–60 kg 25 mmol in 250 mL; 61–80 kg 35 mmol in 350 mL; 81–120 kg 50 mmol in 500 mL. Worcestershire: 50 mmol in 500 mL | Volume as stated (about 0.1 mmol/mL), diluent not specified in the opened text | IV infusion over 24 hours (Worcestershire) or 12–24 hours (UKMi); maximum 0.2–0.5 mmol/kg/day up to 50 mmol | Once daily, reassess every 12 hours | Maximum 50 mmol per 24 hours | Under 60 kg half the Worcestershire table dose; renal impairment: reduced dose and daily phosphate | Phosphate, calcium, potassium, magnesium every 12 hours | Arrhythmia, hypocalcaemia, hypotension; do not mix with other injections | Severe or symptomatic, or oral not absorbed | [1] p. 4–5; [2] Table 3 |
+| 1. IV phosphate (severe) | Preferred | Phosphates Polyfusor | Replace phosphate in severe hypophosphataemia | Adults, phosphate below 0.32 mmol/L. By weight (UKMi): 40–60 kg 25 mmol in 250 mL; 61–80 kg 35 mmol in 350 mL; 81–120 kg 50 mmol in 500 mL. Worcestershire: 50 mmol in 500 mL | Infuse the stated volume of undiluted Phosphates Polyfusor (0.1 mmol/mL, derived) by pump | IV infusion over 24 hours (Worcestershire) or 12–24 hours (UKMi); maximum 0.2–0.5 mmol/kg/day up to 50 mmol | Once daily, reassess every 12 hours | Maximum 50 mmol per 24 hours | Under 60 kg half the Worcestershire table dose; renal impairment: reduced dose and daily phosphate | Phosphate, calcium, potassium, magnesium every 12 hours | Arrhythmia, hypocalcaemia, hypotension; do not mix with other injections | Severe or symptomatic, or oral not absorbed | [1] p. 4–5; [2] Table 3 |
 | 1. IV phosphate (severe) | Alternative | Sodium glycerophosphate 21.6% (40 mmol in 40 mL) in glucose 5% | Replace phosphate when Polyfusor is unavailable | Adults, phosphate below 0.32 mmol/L | 40 mmol (40 mL) in 500 mL glucose 5% | IV infusion over 24 hours | Once daily | 40 mmol per 24 hours | Under 60 kg half dose; sodium load 80 mmol per 40 mL (derived from 40 mmol per 20 mL) | As above | Sodium load; renal impairment | Polyfusor unavailable | [1] p. 4–5 |
 | 2. Oral phosphate after stabilisation | All | Phosphate-Sandoz effervescent tablets | Continue replacement when oral is tolerated | Adults, phosphate below 0.32 mmol/L | 2 tablets (32.2 mmol) per dose, equivalent to 64.4 mmol IV per day | Oral or enteral | Three times daily | Until phosphate is 0.8–1.5 mmol/L | As above | Phosphate and electrolytes | Not with calcium, magnesium or aluminium | Enteral route available | [1] p. 4 |
 ### Guideline comparison
@@ -94,7 +94,7 @@ Level-based replacement. Mild 0.6–0.79 mmol/L asymptomatic: no treatment. Use 
 ### Discharge criteria
 - Phosphate 0.8 mmol/L or above on repeat testing, eating, no arrhythmia and the cause treated. [1]
 ### Follow-up
-- Repeat phosphate, calcium, potassium and magnesium within days if on oral replacement; refeeding follow-up per local guideline. [1]
+- Repeat phosphate, calcium, potassium and magnesium within days if on oral replacement; refeeding syndrome is outside this protocol. [1]
 ### Patient education
 - Take effervescent tablets dissolved in water and apart from calcium or magnesium supplements.
 ### Lifestyle and diet
@@ -118,5 +118,5 @@ Level-based replacement. Mild 0.6–0.79 mmol/L asymptomatic: no treatment. Use 
 UNVERIFIED: Normal ranges other than phosphate are typical adult values, not from the cited sources.
 UNVERIFIED: Symptoms, signs, precipitants, differentials and pathophysiology are standard clinical content and were not extracted line by line.
 UNVERIFIED: The UKMi Q&A is from 2017 and has no page numbers; Worcestershire does not state the diluent for Polyfusor or its potassium content. Worcestershire's 0.32–0.79 mmol/L band for 25 mmol in 250 mL overlaps the mild range and is ambiguous.
-UNVERIFIED: Drug volumes are from the opened tables; check local Polyfusor dilution policy. Weight-based mmol are for normal renal function only.
+UNVERIFIED: Drug volumes are from the opened tables; Polyfusor volumes are as printed in the opened tables. Weight-based mmol are for normal renal function only.
 UNVERIFIED: No Saudi national or Saudi Ministry of Health hypophosphataemia guideline was found; Saudi Food and Drug Authority (SFDA) availability of Polyfusor, sodium glycerophosphate and Phosphate-Sandoz was not checked.

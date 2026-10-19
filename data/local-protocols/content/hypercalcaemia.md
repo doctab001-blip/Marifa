@@ -75,7 +75,7 @@ Hypercalcaemia is a raised albumin-adjusted calcium. The commonest causes are pr
 #### Branch: Steroid-responsive hypercalcaemia | Entry: Lymphoma, granulomatous disease or vitamin D toxicity
 | Step | Choice | Drug | Indication | Patient group | Dose | Route | Frequency | Duration / maximum | Adjustments (renal, hepatic, age) | Monitoring | Contraindications / cautions | Use when | Source |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1. Glucocorticoid | All | Prednisolone | Reduce vitamin D-driven calcium absorption | Adults with lymphoma or granulomatous disease | 40 mg | Oral | Once daily | Response within 2–4 days; stop date not stated | Not stated | Calcium at 2–4 days | Infection, hyperglycaemia | Lymphoma or granulomatous disease | [1] section Management (running header G10–G11) |
+| 1. Glucocorticoid | All | Prednisolone | Reduce vitamin D-driven calcium absorption | Adults with lymphoma or granulomatous disease | 40 mg | Oral | Once daily | Response within 2–4 days; use the shortest course, and withdraw gradually if given for more than 3 weeks | Low albumin: lower doses are needed; liver disease prolongs the half-life and may increase adverse effects; elderly: osteoporosis, diabetes, hypertension and infection have more serious consequences | Calcium at 2–4 days | Infection, hyperglycaemia | Lymphoma or granulomatous disease | [1] section Management (running header G10–G11); [4] section Dosage and Administration / special populations |
 ### Guideline comparison
 | Parameter | Society for Endocrinology 2016 [1] | North Glasgow tumour-induced hypercalcaemia protocol [2] |
 |---|---|---|
@@ -109,6 +109,7 @@ Hypercalcaemia is a raised albumin-adjusted calcium. The commonest causes are pr
 1. Emergency management of acute hypercalcaemia in adult patients | Society for Endocrinology (Walsh, Gittoes, Selby), Endocrine Connections 2016, DOI 10.1530/EC-16-0055 | https://www.endocrinology.org/media/4277/emergency-guidance_acute-hypercalcaemia-in-adults.pdf | Sections: Causes; Management (running headers G9–G11)
 2. Management of Tumour Induced Hypercalcaemia | North Glasgow Division pharmacy protocol (Forte), dated 12.10.05 | https://www.cem.scot.nhs.uk/adult/hypercalcaemiaTI.pdf | Sections: Drugs and doses; Fluids; Renal prerequisites and monitoring
 3. Zometa 4 mg/5 mL concentrate for solution for infusion, Summary of Product Characteristics | Novartis (UK electronic medicines compendium) | https://www.medicines.org.uk/emc/product/12753/smpc/print | Sections 4.2, 4.4, 4.8, 5.1, 6.6
+4. Prednisolone 1 mg tablets (Summary of Product Characteristics) | Wockhardt UK Ltd, text revised 13 May 2021 | https://www.medicines.org.uk/emc/product/2428/smpc | sections 4.2, 4.4, 5.2
 
 UNVERIFIED: Normal ranges are typical adult values, not from the cited guidelines.
 UNVERIFIED: Symptoms, signs, precipitants, differentials and pathophysiology are standard clinical content and were not extracted line by line.
@@ -117,3 +118,4 @@ UNVERIFIED: Doses for calcitonin, denosumab and calcimimetics and the ibandronic
 UNVERIFIED: The 2016 guidance says pamidronate at 20 mg/hour while the protocol uses 1 mg/minute; the difference was not reconciled.
 UNVERIFIED: No Saudi national or Saudi Ministry of Health hypercalcaemia guideline was found; Saudi Food and Drug Authority (SFDA) availability of zoledronic acid and pamidronate was not checked.
 UNVERIFIED: The SmPC is a UK Novartis product; retreatment interval for 4 mg is not stated (median relapse 30–40 days), the pamidronate and ibandronic acid preparation and infusion times come only from the 2016 guidance and the North Glasgow protocol, and Saudi Food and Drug Authority products were not checked.
+UNVERIFIED: Renal, hepatic and age adjustments for the drugs added in this revision are from manufacturer labels (UK Summary of Product Characteristics, US prescribing information and a New Zealand data sheet), not from Saudi Food and Drug Authority labels.

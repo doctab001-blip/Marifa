@@ -40,7 +40,7 @@ Adrenal crisis is acute cortisol deficiency that cannot meet the body's stress n
 | Capillary and venous glucose | 4.0–7.8 mmol/L | Low | Treat hypoglycaemia with IV glucose | [1] p. 4–5 |
 | Urea and electrolytes | Sodium 135–145 mmol/L; potassium 3.5–5.0 mmol/L | Low sodium, high potassium | Guides saline; do not delay steroid | [1] p. 6 |
 | Paired cortisol and ACTH | Morning cortisol 140–690 nmol/L; ACTH 2–11 pmol/L | Low cortisol with high ACTH in primary disease | Take before hydrocortisone in patients not known to have adrenal insufficiency, only if it does not delay treatment; ACTH is time-sensitive | [1] p. 4 |
-| Blood gas, full blood count, liver tests, thyroid function | Local laboratory ranges apply | Variable | Look for sepsis and other causes | [1] p. 6 |
+| Blood gas, full blood count, liver tests, thyroid function | Ranges vary by laboratory | Variable | Look for sepsis and other causes | [1] p. 6 |
 ### Imaging and specialist
 | Test | Normal (adult) | In this condition | What it means / next step | Source |
 |---|---|---|---|---|
@@ -71,7 +71,7 @@ Adrenal crisis is acute cortisol deficiency that cannot meet the body's stress n
 | 3. Hydrocortisone maintenance | Preferred | Hydrocortisone (continuous infusion) | Maintain cortisol cover | Adults after the stat dose | 200 mg over 24 hours | IV continuous infusion | Continuous | Until clinical recovery and endocrinology advice | BMI 40 or above: consider higher dose | Blood pressure, glucose, electrolytes | – | Infusion available | [1] p. 5; [2] section Management |
 | 3. Hydrocortisone maintenance | Alternative | Hydrocortisone injection | Maintain cortisol cover without a pump | Adults after the stat dose | 50 mg every 6 hours (100 mg every 6 hours if BMI 40 or above, Worcestershire) | IV or IM | Four times daily | Until clinical recovery and endocrinology advice | As above | As above | – | No infusion pump available | [1] p. 5; [2] section Management |
 | 4. Glucose | All | Glucose IV | Treat hypoglycaemia | Adults with low capillary glucose | Dose per the Hypoglycaemia protocol (IV glucose 10% or 20% over 15 minutes) | IV | Per recheck | Until glucose above 4.0 mmol/L | As in that protocol | Capillary glucose 10 minutes after | Fluid load | Hypoglycaemic | [1] p. 5 and p. 4 |
-| 5. Fludrocortisone | All | Fludrocortisone | Continue mineralocorticoid cover | Adults already prescribed it | Usual dose, not changed | Oral | Usual | Continue | None stated | Sodium, potassium, blood pressure | – | Already prescribed | [1] p. 5 |
+| 5. Fludrocortisone | All | Fludrocortisone | Continue mineralocorticoid cover | Adults already prescribed it | 0.05–0.3 mg daily (usual dose continued) | Oral | Usual | Continue | No renal or hepatic dose adjustment is given; use the lowest effective dose; caution in renal insufficiency, liver failure, hypertension and heart failure; elderly: no specific dose recommendation | Sodium, potassium, blood pressure | – | Already prescribed | [1] p. 5; [3] section Dosage and Administration / special populations |
 ### Guideline comparison
 | Parameter | Worcestershire WAHT-END-017 v2.1 [1] | Society for Endocrinology information page [2] |
 |---|---|---|
@@ -104,8 +104,10 @@ Adrenal crisis is acute cortisol deficiency that cannot meet the body's stress n
 ## References
 1. Guideline for the Management of Adrenal Insufficiency in Adults (WAHT-END-017, version 2.1) | Worcestershire Acute Hospitals NHS Trust, approved 22 October and 12 November 2025, review 22 October 2028 | https://apps.worcsacute.nhs.uk/KeyDocumentPortal/Home/DownloadFile/3198 | pp. 4–6, 15–22, 25
 2. Adrenal Crisis Information | Society for Endocrinology, date not stated | https://endocrinology.org/adrenal-crisis | Section: Management of adrenal crisis
+3. Fludrocortisone Acetate 0.05 mg Tablets (Summary of Product Characteristics) | Roma Pharmaceuticals Limited, text revised 26 February 2026 | https://www.medicines.org.uk/emc/product/100012/smpc/print | sections 4.2, 4.4
 
 UNVERIFIED: Normal ranges are typical adult values, not from the cited sources.
 UNVERIFIED: Symptoms, signs, differentials and pathophysiology are standard clinical content and were not extracted line by line.
 UNVERIFIED: The hydrocortisone infusion preparation (diluent, volume and rate for 200 mg over 24 hours) and the IV glucose volume are not stated in the opened sources; the glucose row refers to the hypoglycaemia protocol. The Society for Endocrinology page is undated and has no numbered sections; the 2016 Society for Endocrinology emergency guidance could not be opened (PubMed Central captcha, not bypassed).
 UNVERIFIED: No Saudi national or Saudi Ministry of Health adrenal crisis guideline was found; Saudi Food and Drug Authority (SFDA) availability of hydrocortisone injection and fludrocortisone was not checked.
+UNVERIFIED: Renal, hepatic and age adjustments for the drugs added in this revision are from manufacturer labels (UK Summary of Product Characteristics, US prescribing information and a New Zealand data sheet), not from Saudi Food and Drug Authority labels.
