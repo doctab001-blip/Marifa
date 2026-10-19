@@ -133,6 +133,7 @@ a.card:focus-visible { outline: 3px solid color-mix(in srgb, var(--royal) 35%, t
 .sidebar { position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; gap: 8px; padding: 14px 14px 14px; overflow: hidden; background: #fff; border-right: 1px solid var(--line); z-index: 20; }
 .brand { display: flex; align-items: center; gap: 11px; min-height: 50px; padding: 2px 46px 12px 6px; border-bottom: 1px solid var(--line-soft); }
 .brand-mark { flex: 0 0 auto; width: 36px; height: 36px; border-radius: 11px; display: grid; place-items: center; background: linear-gradient(140deg, var(--royal), var(--royal-bright)); color: #fff; font-weight: 700; font-size: 1rem; box-shadow: 0 4px 12px color-mix(in srgb, var(--royal) 28%, transparent); }
+.brand-logo { flex: 0 0 auto; width: 40px; height: 40px; border-radius: 50%; object-fit: cover; filter: drop-shadow(0 3px 6px rgb(0 0 0 / .18)); }
 .brand-copy { min-width: 0; }
 .brand-name { color: var(--ink); font-size: 1.02rem; font-weight: 700; letter-spacing: -.015em; line-height: 1.2; }
 .brand-sub { color: var(--muted); font-size: .72rem; line-height: 1.35; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
