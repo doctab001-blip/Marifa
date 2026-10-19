@@ -3,7 +3,7 @@
  * New calculators (MDCalc-style): each defines inputs, a pure calculate(), interpretation bands, pearls,
  * pitfalls, the formula, facts and figures, and references.
  */
-import type { CalculatorInput, ClinicalCalculatorSchema, LegacyResult, RiskTone, SecondaryResult } from "./clinical-calculators";
+import type { CalculatorInput, CalculatorNextSteps, ClinicalCalculatorSchema, LegacyResult, RiskTone, SecondaryResult } from "./clinical-calculators";
 
 type Band = [min: number | undefined, range: string, label: string, tone: RiskTone, summary: string, steps: string[]];
 type UnitSpec = [value: string, label: string, multiplier?: number, offset?: number];
@@ -15,7 +15,8 @@ interface Spec {
   secondary?: (inputs: Record<string, any>) => SecondaryResult[];
   isComplete?: (inputs: Record<string, any>) => boolean;
   unit?: string; decimals?: number; pearls: string[]; pitfalls: string[]; formula: string[]; facts?: Array<{ label: string; value: string }>;
-  references: Array<[string, string]>; popularity: number; keywords?: string[];
+  references: Array<[string, string]>; popularity: number; keywords?: string[]; isNew?: boolean;
+  nextSteps?: CalculatorNextSteps; evidenceAppraisal?: string[]; creator?: { name: string; bio: string[] }; related?: string[];
 }
 
 const COLOR: Record<RiskTone, string> = { low: "bg-emerald-50 text-emerald-800", moderate: "bg-yellow-50 text-yellow-800", high: "bg-red-50 text-red-800" };
@@ -47,7 +48,8 @@ function build(s: Spec): ClinicalCalculatorSchema {
     questions: questions as any, results,
     evidence: { formula: s.formula, validation: s.whyUseIt, limitations: s.pitfalls, sources: s.references.map(([label, url]) => ({ label, detail: "", url })) },
     interpret: s.interpret, secondary: s.secondary, isComplete: s.isComplete, unit: s.unit, decimals, formula: s.formula, pitfalls: s.pitfalls, limitations: s.pitfalls,
-    facts: s.facts, popularity: s.popularity, isNew: true, keywords: s.keywords ?? [], lastReviewed: "19 Oct 2026",
+    facts: s.facts, popularity: s.popularity, isNew: s.isNew ?? true, keywords: s.keywords ?? [], lastReviewed: "19 Oct 2026",
+    nextSteps: s.nextSteps, evidenceAppraisal: s.evidenceAppraisal, creator: s.creator, related: s.related,
   };
 }
 
@@ -61,7 +63,7 @@ const wellsDvt = build({
   id: "wells-dvt", name: "Wells' Criteria for Deep Vein Thrombosis", shortName: "Wells' DVT", specialty: "Emergency medicine",
   description: "Estimate the pre-test probability of lower-limb deep vein thrombosis.",
   whyUseIt: "Use in outpatients and ED patients with suspected first lower-limb DVT to choose between D-dimer and ultrasound.",
-  popularity: 2, keywords: ["dvt", "vte", "thrombosis", "leg swelling"],
+  popularity: 11, keywords: ["dvt", "vte", "thrombosis", "leg swelling"], related: ["wells-pe", "perc"],
   inputs: [
     yn("cancer", "Active cancer (treatment ongoing, within 6 months, or palliative)"),
     yn("paralysis", "Paralysis, paresis or recent plaster immobilisation of the lower extremity"),
@@ -92,7 +94,7 @@ const perc = build({
   id: "perc", name: "PERC Rule for Pulmonary Embolism", shortName: "PERC", specialty: "Emergency medicine",
   description: "Rule out pulmonary embolism without further testing when clinical suspicion is already low.",
   whyUseIt: "Use only when your clinical gestalt says the pre-test probability of PE is low (below about 15%). If all eight criteria are absent, PE is sufficiently unlikely that D-dimer and imaging are not needed.",
-  popularity: 6, keywords: ["pe", "pulmonary embolism", "rule out"],
+  popularity: 6, keywords: ["pe", "pulmonary embolism", "rule out"], related: ["wells-pe", "wells-dvt"],
   inputs: [
     yn("age", "Age ≥50 years"), yn("hr", "Heart rate ≥100 beats/min"), yn("spo2", "Oxygen saturation <95% on room air"),
     yn("leg", "Unilateral leg swelling"), yn("haemoptysis", "Haemoptysis"), yn("surgery", "Surgery or trauma within 4 weeks requiring general anaesthesia"),
@@ -413,5 +415,89 @@ const qsofa = build({
   facts: [{ label: "Range", value: "0 to 3" }],
   references: [["Seymour CW et al. Assessment of clinical criteria for sepsis (Sepsis-3). JAMA 2016;315:762-74", "https://pubmed.ncbi.nlm.nih.gov/?term=Assessment%20of%20Clinical%20Criteria%20for%20Sepsis%20Third%20International%20Consensus%20Definitions"], ["Evans L et al. Surviving Sepsis Campaign 2021. Intensive Care Med 2021;47:1181-247", "https://pubmed.ncbi.nlm.nih.gov/?term=Surviving%20Sepsis%20Campaign%202021"]],
 });
+
+
+/* Wells' criteria for PE: the full example calculator (replaces the earlier two-tier-only version) ---------------------- */
+const wellsPeScore = (i: Record<string, any>) => (isYes(i, "dvt-signs") ? 3 : 0) + (isYes(i, "pe-leading") ? 3 : 0) + (isYes(i, "hr") ? 1.5 : 0) + (isYes(i, "immobilisation") ? 1.5 : 0) + (isYes(i, "previous-vte") ? 1.5 : 0) + (isYes(i, "haemoptysis") ? 1 : 0) + (isYes(i, "malignancy") ? 1 : 0);
+const wellsPe = build({
+  id: "wells-pe", name: "Wells' Criteria for Pulmonary Embolism", shortName: "Wells' PE", specialty: "Emergency medicine",
+  description: "Estimate the pre-test probability of pulmonary embolism and choose the next test.",
+  when: "Use in adults when pulmonary embolism is already on your differential after history and examination. The score tells you whether to send a D-dimer or go straight to imaging. It is not a screening tool for patients in whom PE is not suspected; if suspicion is low, consider the PERC rule first.",
+  whyUseIt: "Replaces unstructured gut feeling with a validated, repeatable estimate. Paired with D-dimer it safely avoids imaging in many patients, which saves radiation, contrast and time, and it is built into the NICE and ESC diagnostic pathways.",
+  popularity: 2, isNew: false, keywords: ["pe", "pulmonary embolism", "vte", "d-dimer", "ctpa"], related: ["perc", "wells-dvt"],
+  inputs: [
+    yn("dvt-signs", "Clinical signs and symptoms of DVT", 3, "Leg swelling and pain on palpation of the deep veins."),
+    yn("pe-leading", "PE is the leading diagnosis, or at least as likely as any alternative", 3, "Your own judgement after history, examination and basic tests."),
+    yn("hr", "Heart rate above 100 beats/min", 1.5),
+    yn("immobilisation", "Immobilised for 3 days or more, or surgery in the previous 4 weeks", 1.5),
+    yn("previous-vte", "Previous objectively confirmed PE or DVT", 1.5),
+    yn("haemoptysis", "Haemoptysis", 1),
+    yn("malignancy", "Malignancy on treatment within the last 6 months, or palliative", 1),
+  ],
+  calculate: wellsPeScore, decimals: 1,
+  secondary: (i) => { const sc = wellsPeScore(i); return [sc > 4 ? { label: "Two-tier model", value: "PE likely (>4)", note: "About 37% had PE in validation cohorts. Go to imaging." } : { label: "Two-tier model", value: "PE unlikely (0 to 4)", note: "About 12% had PE in validation cohorts. D-dimer first." }]; },
+  bands: [
+    [undefined, "<2", "Low probability", "low", "Three-tier model: low pre-test probability (about 1% to 2% have PE).", ["Apply PERC. If all eight criteria are absent, stop; no D-dimer is needed.", "If PERC cannot be applied or is positive, send a D-dimer: negative excludes PE, positive needs CT pulmonary angiography (CTPA)."]],
+    [2, "2–6", "Moderate probability", "moderate", "Three-tier model: moderate pre-test probability (about 16% have PE).", ["A D-dimer is acceptable if your laboratory uses a high-sensitivity assay: negative excludes PE, positive needs CTPA.", "Many centres go straight to CTPA at this level; follow your pathway."]],
+    [6.5, ">6", "High probability", "high", "Three-tier model: high pre-test probability (about 38% have PE).", ["Go to CTPA (or V/Q scan if contrast is contraindicated). A negative D-dimer does not exclude PE here, so do not use it.", "Start therapeutic anticoagulation while waiting for imaging if there is no contraindication."]],
+  ],
+  nextSteps: {
+    advice: [
+      "Use the score only once PE is a genuine possibility, and write down the score and the reason for the judgement item.",
+      "Follow the pathway that matches the score instead of sending a D-dimer on everyone.",
+      "Findings the score does not capture still count: unexplained hypoxia, syncope, a raised troponin or right ventricular strain on ECG or echo should override a low score.",
+    ],
+    management: [
+      { title: "Three-tier model", items: [
+        "Low (<2): apply PERC; if PERC is positive or not suitable, send a D-dimer. Negative D-dimer excludes PE.",
+        "Moderate (2 to 6): D-dimer if a high-sensitivity assay is available, otherwise CTPA. Positive D-dimer needs CTPA.",
+        "High (>6): CTPA, or V/Q scan if contrast is contraindicated. Do not rely on D-dimer.",
+      ] },
+      { title: "Two-tier model (NICE and ESC pathways)", items: [
+        "PE unlikely (0 to 4): D-dimer. Negative excludes PE; positive needs CTPA. In patients over 50, an age-adjusted cut-off (age × 10 µg/L) improves specificity.",
+        "PE likely (>4): CTPA straight away. D-dimer adds nothing. Give interim therapeutic anticoagulation if imaging will be delayed and bleeding risk allows.",
+      ] },
+    ],
+    critical: [
+      "If the patient is haemodynamically unstable, do not wait for a score: arrange bedside echo and immediate imaging, and follow the high-risk PE pathway including reperfusion therapy.",
+      "Do not give anticoagulation for suspected PE and then forget to confirm or exclude it: document the plan and the time of imaging.",
+      "In pregnancy, severe renal impairment or contrast allergy, use the pregnancy-adapted algorithm or V/Q imaging rather than the standard pathway.",
+      "A negative D-dimer is only valid in the low, moderate (high-sensitivity assay) or PE-unlikely groups.",
+    ],
+  },
+  pearls: [
+    "The judgement item (PE the leading diagnosis) is worth 3 points, as much as clinical DVT signs, so it carries the most weight and the most variation between clinicians.",
+    "The two-tier version (cut-off at 4) is the one most guidelines use. The three-tier version gives a finer probability.",
+    "PE unlikely plus a negative D-dimer is a safe way to exclude PE without imaging (3-month thromboembolic event rate about 0.5% in the Christopher study).",
+    "Score items are added up; there are no negative points.",
+  ],
+  pitfalls: [
+    "Not validated in pregnancy, in children, in patients already anticoagulated, or when the patient is haemodynamically unstable.",
+    "The judgement item is subjective, so two clinicians can reach different categories for the same patient.",
+    "D-dimer is raised by age, pregnancy, cancer, infection and recent surgery, so a positive result is common and not specific.",
+    "A low score lowers the probability of PE but does not remove it; a low score alone is not a negative test.",
+  ],
+  formula: ["Clinical signs and symptoms of DVT: +3", "PE is the leading diagnosis or equally likely: +3", "Heart rate above 100: +1.5", "Immobilisation of 3 days or more, or surgery within 4 weeks: +1.5", "Previous PE or DVT: +1.5", "Haemoptysis: +1", "Malignancy (treatment within 6 months, or palliative): +1", "Three-tier: <2 low, 2 to 6 moderate, >6 high. Two-tier: 0 to 4 PE unlikely, >4 PE likely."],
+  facts: [
+    { label: "Range", value: "0 to 12.5" },
+    { label: "PE prevalence, three-tier: low / moderate / high", value: "about 1.3% / 16.2% / 37.5%" },
+    { label: "PE prevalence, two-tier: unlikely / likely", value: "about 12.1% / 37.1%" },
+    { label: "Safe exclusion: PE unlikely + negative D-dimer", value: "3-month thromboembolic event rate about 0.5% (Christopher study)" },
+  ],
+  evidenceAppraisal: [
+    "The score was derived in Canadian emergency and inpatient populations (Wells 1998 and 2000) and has since been validated in many cohorts, including emergency departments in several countries. Prevalence in each band varies between settings, so the percentages above are approximate.",
+    "Management studies are the strongest evidence: the Christopher study followed patients managed with the two-tier score and D-dimer and found a very low rate of venous thromboembolism at three months in those left without imaging.",
+    "Weaknesses: one third of the score depends on clinician judgement, agreement between clinicians is only moderate, and performance is weaker in older and hospitalised patients, where D-dimer specificity is also lower. The three-tier groups were studied less than the two-tier split.",
+  ],
+  creator: { name: "Philip S. Wells, MD, MSc", bio: ["Professor of Medicine at the University of Ottawa, working at the Ottawa Hospital Research Institute.", "Led the research that produced the Wells criteria for suspected DVT and for suspected PE, among the most widely used clinical prediction rules in thrombosis."] },
+  references: [
+    ["Wells PS et al. Derivation of a simple clinical model to categorize patients' probability of pulmonary embolism. Thromb Haemost 2000;83:416-20", "https://pubmed.ncbi.nlm.nih.gov/?term=Derivation%20of%20a%20simple%20clinical%20model%20to%20categorize%20patients%20probability%20of%20pulmonary%20embolism"],
+    ["van Belle A et al. Effectiveness of managing suspected pulmonary embolism using an algorithm combining clinical probability, D-dimer testing, and CT (Christopher study). JAMA 2006;295:172-9", "https://pubmed.ncbi.nlm.nih.gov/?term=Effectiveness%20of%20managing%20suspected%20pulmonary%20embolism%20using%20an%20algorithm%20combining%20clinical%20probability%20D-dimer%20testing%20and%20computed%20tomography"],
+    ["Konstantinides SV et al. 2019 ESC guidelines for acute pulmonary embolism. Eur Heart J 2020;41:543-603", "https://pubmed.ncbi.nlm.nih.gov/?term=2019%20ESC%20Guidelines%20for%20the%20diagnosis%20and%20management%20of%20acute%20pulmonary%20embolism"],
+    ["NICE NG158. Venous thromboembolic diseases: diagnosis, management and thrombophilia testing", LINK.nice158],
+  ],
+});
+
+export const replacementCalculators: ClinicalCalculatorSchema[] = [wellsPe];
 
 export const extraCalculators: ClinicalCalculatorSchema[] = [news2, wellsDvt, qtc, correctedCalcium, childPugh, perc, anionGap, blatchford, bmiBsa, padua, qsofa];

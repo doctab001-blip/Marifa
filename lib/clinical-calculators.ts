@@ -3,7 +3,8 @@
  * The adapter intentionally accepts historical, heterogeneous answer/question shapes;
  * runtime guards below normalise those values before calculations use them.
  */
-import { extraCalculators } from "./clinical-calculators-extra";
+import { extraCalculators, replacementCalculators } from "./clinical-calculators-extra";
+import { calculatorContent } from "./clinical-calculators-content";
 /** Five-layer, MDCalc-inspired clinical calculator schema. */
 export type RiskTone = "low" | "moderate" | "high";
 export type CalculatorInputType = "numeric" | "binary" | "multi-select";
@@ -16,6 +17,8 @@ export interface LegacyEvidence { formula:string[]; validation:string; limitatio
 export interface LegacyResult { id:string; label:string; tone:RiskTone; match:{minScore?:number;maxScore?:number}; summary:string; management:string[]; /** Printable score range for the interpretation table, for example "1–4". */ range?:string }
 export interface SecondaryResult { label:string; value:string; note?:string }
 export interface CalculatorFact { label:string; value:string }
+/** MDCalc-style Next steps: general advice, management per model, and critical actions. */
+export interface CalculatorNextSteps { advice:string[]; management:Array<{title:string;items:string[]}>; critical:string[] }
 export interface LegacySingleQuestion { id:string; label:string; type:"single-select"; options:CalculatorOption[]; help?:string; required?:boolean }
 export interface LegacyMultiQuestion { id:string; label:string; type:"multi-select"; options:CalculatorOption[]; noneLabel?:string; help?:string; required?:boolean }
 export interface LegacyNumberQuestion { id:string; label:string; type:"number"; units:CalculatorUnit[]; min?:number; max?:number; step?:number; scoring?:any[]; help?:string; required?:boolean }
@@ -24,6 +27,7 @@ export interface ClinicalCalculatorSchema {
  calculate:(inputs:Record<string,any>)=>number|string; tiers:CalculatorTier[]; pearls:string[]; whyUseIt:string; references:ClinicalReference[];
  /** Compatibility aliases for the existing calculator renderer. */ shortTitle:string; title:string; objective:string; indication:string; scoreLabel:string; questions:Array<LegacySingleQuestion|LegacyMultiQuestion|LegacyNumberQuestion>; results:LegacyResult[]; evidence:LegacyEvidence;
  /** Optional MDCalc-style extensions. */
+ nextSteps?:CalculatorNextSteps; evidenceAppraisal?:string[]; creator?:{name:string;bio:string[]}; related?:string[];
  unit?:string; decimals?:number; formula?:string[]; pitfalls?:string[]; limitations?:string[]; facts?:CalculatorFact[]; popularity?:number; isNew?:boolean; keywords?:string[]; lastReviewed?:string;
  /** Overrides tier matching when the band depends on other inputs (for example sex or a single red flag). Receives canonical-unit answers. */
  interpret?:(score:number,inputs:Record<string,any>)=>LegacyResult|undefined;
@@ -224,6 +228,8 @@ if (heartPathway) {
   heartPathway.tiers = [T(0, 3, "Low-risk HEART Pathway", "If the 3-hour follow-up troponin is negative and the clinical assessment is reassuring, consider discharge with close follow-up and return precautions.", "bg-emerald-50 text-emerald-800"), T(4, 6, "Intermediate risk", "Observe or admit for serial ECGs, biomarkers and comprehensive cardiac evaluation with shared decision-making.", "bg-yellow-50 text-yellow-800"), T(7, 10, "High risk", "Admit or observe with serial ECGs, cardiac biomarkers and/or cardiology consultation.", "bg-red-50 text-red-800")];
   heartPathway.results = heartPathway.tiers.map((tier, index) => ({ id: `heart-pathway-${index}`, label: tier.riskLabel, tone: tier.tone, match: { minScore: tier.min, maxScore: tier.max }, summary: tier.managementAdvice, management: [tier.managementAdvice] })) as any;
 }
+// Calculators rewritten in the richer format replace the legacy entry in place; the rest are appended.
+for (const replacement of replacementCalculators) { const at = calculators.findIndex((c) => c.id === replacement.id); if (at >= 0) calculators[at] = replacement; else calculators.push(replacement); }
 calculators.push(...extraCalculators);
 /** "Most used" order for the calculator home page (MDCalc-style ranking); anything unlisted follows alphabetically. */
 const popularityOrder=['cha2ds2-vasc','wells-pe','ckd-epi-egfr','meld-na','glasgow-coma-scale','news2','curb-65','heart-score','cockcroft-gault','has-bled','wells-dvt','qtc','child-pugh','glasgow-blatchford','corrected-calcium','anion-gap','perc','bmi-bsa','padua','qsofa-score','qsofa'];
@@ -240,6 +246,8 @@ const limitationsById:Record<string,string[]>={
  'qsofa':['SOFA-2 is newly derived and needs external validation.']
 };
 calculators.forEach((c)=>{c.popularity=popularityOrder.indexOf(c.id)>=0?popularityOrder.indexOf(c.id)+1:100;if(!c.limitations&&limitationsById[c.id])c.evidence.limitations=limitationsById[c.id]});
+// Page content shared by every calculator: When to use, Why use, Next steps, Evidence appraisal, creator, related.
+for (const c of calculators) { const x = calculatorContent[c.id]; if (!x) continue; c.indication = x.when; c.whyUseIt = x.why; c.evidence.validation = x.why; c.nextSteps ??= x.nextSteps; c.evidenceAppraisal ??= x.evidenceAppraisal; c.creator ??= x.creator; c.related ??= x.related; }
 export const clinicalCalculators=calculators;
 export function toCanonicalValue(value:number,unit:CalculatorUnit){return value*(unit.canonicalMultiplier??1)+(unit.canonicalOffset??0)} export function fromCanonicalValue(value:number,unit:CalculatorUnit){return(value-(unit.canonicalOffset??0))/(unit.canonicalMultiplier??1)} export function questionScore(q:any,a:any){if(a===undefined)return 0;if(q.type==='multi-select')return Array.isArray(a)?a.reduce((s:number,v:string)=>s+(q.options?.find((o:any)=>o.value===v)?.points??0),0):0;if(q.type==='number'){const value=typeof a==='object'?a.value:a;const unit=q.units?.find((u:any)=>u.value===a?.unit)??q.units?.[0];const canonical=unit?toCanonicalValue(value,unit):value;return q.scoring?.find((r:any)=>(r.min===undefined||canonical>=r.min)&&(r.max===undefined||canonical<r.max))?.points??0}return q.options?.find((o:any)=>o.value===a)?.points??0} /** Converts every numeric answer to its canonical unit (the first unit of the question) so formulas never see mixed units. */
 export function normalizeAnswers(s:ClinicalCalculatorSchema,a:CalculatorAnswers):Record<string,any>{const out:Record<string,any>={...a};for(const q of s.questions){if(q.type!=='number')continue;const v=a[q.id];if(!v||typeof v!=='object'||Array.isArray(v)||!Number.isFinite(v.value))continue;const unit=q.units?.find((u)=>u.value===v.unit)??q.units?.[0];out[q.id]={value:unit?toCanonicalValue(v.value,unit):v.value,unit:q.units?.[0]?.value}}return out}

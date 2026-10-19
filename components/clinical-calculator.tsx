@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Check, CircleAlert, Printer, RotateCcw } from "@/components/icons-3d";
+import Link from "next/link";
+import { Check, Printer, RotateCcw } from "@/components/icons-3d";
 import {
   calculateScore,
+  clinicalCalculators,
   fromCanonicalValue,
   getCalculatorResult,
   getSecondaryResults,
@@ -17,11 +19,13 @@ import {
   type NumericAnswer,
 } from "@/lib/clinical-calculators";
 
-type Tab = "calculator" | "evidence";
+type GuideTab = "when" | "pearls" | "why";
+type LowerTab = "next" | "evidence" | "creator";
 
 export function ClinicalCalculator({ schema }: { schema: ClinicalCalculatorSchema }) {
   const [calculatorState, setCalculatorState] = useState<{ schemaId: string; answers: CalculatorAnswers }>({ schemaId: schema.id, answers: {} });
-  const [tab, setTab] = useState<Tab>("calculator");
+  const [guide, setGuide] = useState<GuideTab>("when");
+  const [lower, setLower] = useState<LowerTab>("next");
   const [copied, setCopied] = useState(false);
   const answers = calculatorState.schemaId === schema.id ? calculatorState.answers : {};
 
@@ -33,6 +37,9 @@ export function ClinicalCalculator({ schema }: { schema: ClinicalCalculatorSchem
   const secondary = isComplete ? getSecondaryResults(schema, answers) : [];
   // Point-based scores update live like MDCalc; measured values (labs, vitals) show a dash until every input is in.
   const showScore = !schema.unit || isComplete;
+  const pitfalls = schema.pitfalls ?? schema.evidence.limitations;
+  const showWhy = Boolean(schema.whyUseIt) && schema.whyUseIt !== schema.indication;
+  const lowerTabs: Array<[LowerTab, string]> = [["next", "Next steps"], ["evidence", "Evidence"], ...(schema.creator ? [["creator", "About the creator"] as [LowerTab, string]] : [])];
 
   function updateAnswer(questionId: string, value: CalculatorAnswers[string]) {
     setCalculatorState((current) => ({ schemaId: schema.id, answers: { ...(current.schemaId === schema.id ? current.answers : {}), [questionId]: value } }));
@@ -50,88 +57,143 @@ export function ClinicalCalculator({ schema }: { schema: ClinicalCalculatorSchem
   return (
     <section className="clinical-calculator" aria-labelledby={`${schema.id}-title`}>
       <header className="calculator-heading card">
-        <div>
-          <p className="eyebrow">{schema.specialty}{schema.isNew && <span className="calculator-new-badge">New</span>}</p>
-          <h2 id={`${schema.id}-title`}>{schema.title}</h2>
-          <p>{schema.objective}</p>
+        <p className="eyebrow">{schema.specialty}{schema.isNew && <span className="calculator-new-badge">New</span>}</p>
+        <h2 id={`${schema.id}-title`}>{schema.title}</h2>
+        <p>{schema.objective}</p>
+        <div className="calculator-tabs" role="tablist" aria-label="About this calculator">
+          <TabButton id={`${schema.id}-guide-when`} selected={guide === "when"} panel={`${schema.id}-guide`} onClick={() => setGuide("when")}>When to use</TabButton>
+          <TabButton id={`${schema.id}-guide-pearls`} selected={guide === "pearls"} panel={`${schema.id}-guide`} onClick={() => setGuide("pearls")}>Pearls and pitfalls</TabButton>
+          {showWhy && <TabButton id={`${schema.id}-guide-why`} selected={guide === "why"} panel={`${schema.id}-guide`} onClick={() => setGuide("why")}>Why use</TabButton>}
         </div>
-        <div className="calculator-tabs" role="tablist" aria-label={`${schema.shortTitle} sections`}>
-          <button type="button" role="tab" id={`${schema.id}-tab-calculator`} aria-selected={tab === "calculator"} aria-controls={`${schema.id}-panel`} onClick={() => setTab("calculator")}>Calculator</button>
-          <button type="button" role="tab" id={`${schema.id}-tab-evidence`} aria-selected={tab === "evidence"} aria-controls={`${schema.id}-panel`} onClick={() => setTab("evidence")}>Evidence</button>
+        <div id={`${schema.id}-guide`} role="tabpanel" aria-labelledby={`${schema.id}-guide-${guide}`} className="calculator-guide-panel">
+          {guide === "when" && <p>{schema.indication}</p>}
+          {guide === "pearls" && (
+            <div className="calculator-pearls">
+              {schema.pearls.length > 0 && <section><h3>Pearls</h3><ul>{schema.pearls.map((item) => <li key={item}>{item}</li>)}</ul></section>}
+              {pitfalls.length > 0 && <section><h3>Pitfalls</h3><ul>{pitfalls.map((item) => <li key={item}>{item}</li>)}</ul></section>}
+            </div>
+          )}
+          {guide === "why" && showWhy && <p>{schema.whyUseIt}</p>}
         </div>
       </header>
 
-      <div id={`${schema.id}-panel`} role="tabpanel" aria-labelledby={`${schema.id}-tab-${tab}`} className="calculator-panel">
-        {tab === "calculator" ? (
-          <>
-            <div className="calculator-guidance">
-              <GuidanceBlock title="When to use" icon>{schema.indication}</GuidanceBlock>
-              {schema.pearls.length > 0 && <GuidanceBlock title="Pearls">{<ul>{schema.pearls.map((item) => <li key={item}>{item}</li>)}</ul>}</GuidanceBlock>}
-              {(schema.pitfalls ?? schema.evidence.limitations).length > 0 && <GuidanceBlock title="Pitfalls">{<ul>{(schema.pitfalls ?? schema.evidence.limitations).map((item) => <li key={item}>{item}</li>)}</ul>}</GuidanceBlock>}
-            </div>
+      <div className="calculator-layout">
+        <div className="calculator-questions">
+          {schema.questions.map((question, index) => (
+            <QuestionField key={question.id} index={index + 1} question={question} answer={answers[question.id]} onChange={(value) => updateAnswer(question.id, value)} />
+          ))}
+        </div>
 
-            <div className="calculator-layout">
-              <div className="calculator-questions">
-                {schema.questions.map((question, index) => (
-                  <QuestionField key={question.id} index={index + 1} question={question} answer={answers[question.id]} onChange={(value) => updateAnswer(question.id, value)} />
-                ))}
+        <aside className="calculator-result card" aria-live="polite" aria-atomic="true">
+          <div className="calculator-result-top">
+            <span>Result</span>
+            <span className="calculator-result-actions">
+              <button type="button" onClick={reset} disabled={Object.keys(answers).length === 0}><RotateCcw size={14} aria-hidden="true" /> Reset</button>
+            </span>
+          </div>
+          <div className="calculator-score">{showScore ? formatScore(score) : "—"}<small>{schema.unit ?? "points"}</small></div>
+          <div className="calculator-completion" aria-label={`${completedCount} of ${requiredQuestions.length} questions complete`}>
+            <span style={{ width: `${requiredQuestions.length ? (completedCount / requiredQuestions.length) * 100 : 0}%` }} />
+          </div>
+          <p className="calculator-progress-copy">{completedCount} of {requiredQuestions.length} sections complete</p>
+
+          {result ? (
+            <div className={`calculator-stratification calculator-tone-${result.tone}`}>
+              <span className="calculator-risk-label">{result.label}</span>
+              <p>{result.summary}</p>
+              {secondary.length > 0 && (
+                <dl className="calculator-secondary">
+                  {secondary.map((row) => <div key={row.label}><dt>{row.label}</dt><dd>{row.value}{row.note && <small>{row.note}</small>}</dd></div>)}
+                </dl>
+              )}
+              <div className="calculator-next-steps">
+                <strong>Suggested action</strong>
+                <ul>{result.management.map((step) => <li key={step}>{step}</li>)}</ul>
               </div>
-
-              <aside className="calculator-result card" aria-live="polite" aria-atomic="true">
-                <div className="calculator-result-top">
-                  <span>Result</span>
-                  <span className="calculator-result-actions">
-                    <button type="button" onClick={reset} disabled={Object.keys(answers).length === 0}><RotateCcw size={14} aria-hidden="true" /> Reset</button>
-                  </span>
-                </div>
-                <div className="calculator-score">{showScore ? formatScore(score) : "—"}<small>{schema.unit ?? "points"}</small></div>
-                <div className="calculator-completion" aria-label={`${completedCount} of ${requiredQuestions.length} questions complete`}>
-                  <span style={{ width: `${requiredQuestions.length ? (completedCount / requiredQuestions.length) * 100 : 0}%` }} />
-                </div>
-                <p className="calculator-progress-copy">{completedCount} of {requiredQuestions.length} sections complete</p>
-
-                {result ? (
-                  <div className={`calculator-stratification calculator-tone-${result.tone}`}>
-                    <span className="calculator-risk-label">{result.label}</span>
-                    <p>{result.summary}</p>
-                    {secondary.length > 0 && (
-                      <dl className="calculator-secondary">
-                        {secondary.map((row) => <div key={row.label}><dt>{row.label}</dt><dd>{row.value}{row.note && <small>{row.note}</small>}</dd></div>)}
-                      </dl>
-                    )}
-                    <div className="calculator-next-steps">
-                      <strong>Next steps</strong>
-                      <ul>{result.management.map((step) => <li key={step}>{step}</li>)}</ul>
-                    </div>
-                    <div className="calculator-share">
-                      <button type="button" onClick={copyResult}>{copied ? <><Check size={14} aria-hidden="true" /> Copied</> : "Copy result"}</button>
-                      <button type="button" onClick={() => window.print()}><Printer size={14} aria-hidden="true" /> Print</button>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="calculator-incomplete">
-                    <strong>Complete all sections</strong>
-                    <p>Risk classification and next steps appear only after every required input is confirmed.</p>
-                  </div>
-                )}
-                <p className="calculator-safety-note">Decision support only. It does not replace clinical judgement; confirm against the full clinical context.</p>
-              </aside>
+              <div className="calculator-share">
+                <button type="button" onClick={copyResult}>{copied ? <><Check size={14} aria-hidden="true" /> Copied</> : "Copy result"}</button>
+                <button type="button" onClick={() => window.print()}><Printer size={14} aria-hidden="true" /> Print</button>
+              </div>
             </div>
-          </>
-        ) : (
-          <EvidencePanel schema={schema} active={result} />
-        )}
+          ) : (
+            <div className="calculator-incomplete">
+              <strong>Complete all sections</strong>
+              <p>Risk classification and next steps appear only after every required input is confirmed.</p>
+            </div>
+          )}
+          <p className="calculator-safety-note">Decision support only. It does not replace clinical judgement; confirm against the full clinical context.</p>
+        </aside>
       </div>
+
+      <section className="calculator-lower card" aria-label="Next steps, evidence and creator">
+        <div className="calculator-tabs calculator-tabs-lower" role="tablist" aria-label="Details">
+          {lowerTabs.map(([key, label]) => <TabButton key={key} id={`${schema.id}-lower-${key}`} selected={lower === key} panel={`${schema.id}-lower`} onClick={() => setLower(key)}>{label}</TabButton>)}
+        </div>
+        <div id={`${schema.id}-lower`} role="tabpanel" aria-labelledby={`${schema.id}-lower-${lower}`} className="calculator-lower-panel">
+          {lower === "next" && <NextStepsPanel schema={schema} active={result} />}
+          {lower === "evidence" && <EvidencePanel schema={schema} active={result} />}
+          {lower === "creator" && schema.creator && <CreatorPanel schema={schema} />}
+        </div>
+      </section>
+
+      <RelatedCalculators ids={schema.related ?? []} />
     </section>
   );
 }
 
-function GuidanceBlock({ title, icon, children }: { title: string; icon?: boolean; children: React.ReactNode }) {
+function TabButton({ id, selected, panel, onClick, children }: { id: string; selected: boolean; panel: string; onClick: () => void; children: React.ReactNode }) {
+  return <button type="button" role="tab" id={id} aria-selected={selected} aria-controls={panel} onClick={onClick}>{children}</button>;
+}
+
+function NextStepsPanel({ schema, active }: { schema: ClinicalCalculatorSchema; active?: LegacyResult }) {
+  const steps = schema.nextSteps;
+  if (!steps) {
+    return active
+      ? <ul className="calculator-plain-list">{active.management.map((step) => <li key={step}>{step}</li>)}</ul>
+      : <p className="calculator-muted">Complete the calculator to see suggested next steps.</p>;
+  }
   return (
-    <details className="calculator-guidance-block" open={title === "When to use"}>
-      <summary>{icon && <CircleAlert size={16} aria-hidden="true" />}<strong>{title}</strong></summary>
-      <div>{children}</div>
-    </details>
+    <div className="calculator-steps">
+      {steps.advice.length > 0 && <section><h3>Advice</h3><ul>{steps.advice.map((item) => <li key={item}>{item}</li>)}</ul></section>}
+      {steps.management.length > 0 && (
+        <section>
+          <h3>Management</h3>
+          {steps.management.map((group) => <div key={group.title} className="calculator-steps-group"><h4>{group.title}</h4><ul>{group.items.map((item) => <li key={item}>{item}</li>)}</ul></div>)}
+        </section>
+      )}
+      {steps.critical.length > 0 && <section className="calculator-critical"><h3>Critical actions</h3><ul>{steps.critical.map((item) => <li key={item}>{item}</li>)}</ul></section>}
+    </div>
+  );
+}
+
+function CreatorPanel({ schema }: { schema: ClinicalCalculatorSchema }) {
+  const creator = schema.creator!;
+  return (
+    <div className="calculator-creator">
+      <h3>{creator.name}</h3>
+      {creator.bio.map((line) => <p key={line}>{line}</p>)}
+    </div>
+  );
+}
+
+function RelatedCalculators({ ids }: { ids: string[] }) {
+  const items = ids.map((id) => clinicalCalculators.find((item) => item.id === id)).filter((item): item is ClinicalCalculatorSchema => Boolean(item));
+  if (items.length === 0) return null;
+  return (
+    <section className="calculator-related" aria-label="Related calculators">
+      <h3>Related calculators</h3>
+      <ul>
+        {items.map((item) => (
+          <li key={item.id} className="card">
+            <Link href={`/dashboard/medical-calculators?calc=${encodeURIComponent(item.id)}`} scroll={false}>
+              <span className="calculator-card-meta">{item.specialty}</span>
+              <strong>{item.title}</strong>
+              <span className="calculator-card-copy">{item.description}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }
 
@@ -145,9 +207,10 @@ function EvidencePanel({ schema, active }: { schema: ClinicalCalculatorSchema; a
     return shown.map((option, index) => ({ key: `${question.id}-${option.value}`, label: question.label, option, first: index === 0, span: shown.length }));
   });
   const formula = schema.formula ?? [];
+  const pitfalls = schema.pitfalls ?? schema.evidence.limitations;
   return (
     <div className="calculator-evidence-stack">
-      <section className="card calculator-evidence-card">
+      <section>
         <h3>Formula</h3>
         {formula.length > 0 && <ul>{formula.map((line) => <li key={line}>{line}</li>)}</ul>}
         {scoringRows.length > 0 && (
@@ -163,10 +226,10 @@ function EvidencePanel({ schema, active }: { schema: ClinicalCalculatorSchema; a
             </table>
           </div>
         )}
-        {formula.length === 0 && scoringRows.length === 0 && <p>This calculator uses measured values; see the pearls and references for the method.</p>}
+        {formula.length === 0 && scoringRows.length === 0 && <p className="calculator-muted">This calculator uses measured values; see the pearls and references for the method.</p>}
       </section>
 
-      <section className="card calculator-evidence-card">
+      <section>
         <h3>Interpretation</h3>
         <div className="calculator-table-wrap">
           <table className="calculator-table">
@@ -186,21 +249,28 @@ function EvidencePanel({ schema, active }: { schema: ClinicalCalculatorSchema; a
       </section>
 
       {(schema.facts?.length ?? 0) > 0 && (
-        <section className="card calculator-evidence-card">
+        <section>
           <h3>Facts and figures</h3>
           <dl className="calculator-facts">{schema.facts!.map((fact) => <div key={fact.label}><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}</dl>
         </section>
       )}
 
-      {(schema.pitfalls ?? schema.evidence.limitations).length > 0 && (
-        <section className="card calculator-evidence-card">
-          <h3>Limitations</h3>
-          <ul>{(schema.pitfalls ?? schema.evidence.limitations).map((item) => <li key={item}>{item}</li>)}</ul>
+      {(schema.evidenceAppraisal?.length ?? 0) > 0 && (
+        <section>
+          <h3>Evidence appraisal</h3>
+          {schema.evidenceAppraisal!.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
         </section>
       )}
 
-      <section className="card calculator-evidence-card calculator-sources">
-        <h3>References</h3>
+      {pitfalls.length > 0 && (
+        <section>
+          <h3>Limitations</h3>
+          <ul>{pitfalls.map((item) => <li key={item}>{item}</li>)}</ul>
+        </section>
+      )}
+
+      <section className="calculator-sources">
+        <h3>Literature</h3>
         <ol>{schema.evidence.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.label}</a></li>)}</ol>
         {schema.lastReviewed && <p className="calculator-reviewed">Reviewed {schema.lastReviewed}</p>}
       </section>

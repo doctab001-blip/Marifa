@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 import { ClinicalCalculator } from "@/components/clinical-calculator";
 import { MedicalCalculators } from "@/components/medical-calculators";
-import { calculateScore, clinicalCalculators, questionScore, type NumericQuestion } from "@/lib/clinical-calculators";
+import { calculateScore, clinicalCalculators, getCalculatorResult, getSecondaryResults, questionScore, type NumericQuestion } from "@/lib/clinical-calculators";
 
 let mockCalc: string | null = null;
 vi.mock("next/navigation", () => ({ useSearchParams: () => ({ get: (key: string) => (key === "calc" ? mockCalc : null) }) }));
@@ -12,19 +12,21 @@ const wells = clinicalCalculators.find(({ id }) => id === "wells-pe")!;
 const cha2ds2Vasc = clinicalCalculators.find(({ id }) => id === "cha2ds2-vasc")!;
 
 describe("clinical calculator scoring", () => {
-  it("calculates the Wells score with the exact fractional weights", () => {
-    expect(calculateScore(wells, {
-      "dvt-signs": "yes",
-      "alternative-less-likely": "no",
-      "heart-rate": { value: 101, unit: "bpm" },
-      history: ["immobilisation-surgery", "previous-vte", "haemoptysis", "malignancy"],
-    })).toBe(9.5);
+  it("calculates the Wells PE score with the exact fractional weights", () => {
+    expect(calculateScore(wells, { "dvt-signs": "yes", "pe-leading": "no", hr: "yes", immobilisation: "yes", "previous-vte": "yes", haemoptysis: "yes", malignancy: "yes" })).toBe(9.5);
+    expect(calculateScore(wells, { "dvt-signs": "yes", "pe-leading": "yes", hr: "yes", immobilisation: "yes", "previous-vte": "yes", haemoptysis: "yes", malignancy: "yes" })).toBe(12.5);
   });
 
-  it("keeps the Wells two-level boundary at 4 points", () => {
-    const answers = { "dvt-signs": "yes", "alternative-less-likely": "no", "heart-rate": { value: 100, unit: "bpm" }, history: ["haemoptysis"] };
-    expect(calculateScore(wells, answers)).toBe(4);
-    expect(wells.results.find(({ id }) => id === "pe-unlikely")?.match.maxScore).toBe(4);
+  it("keeps the Wells three-tier boundaries (<2, 2 to 6, >6) and the two-tier split at 4", () => {
+    const label = (answers: Record<string, string>) => getCalculatorResult(wells, calculateScore(wells, answers), answers)?.label;
+    expect(label({ hr: "yes" })).toBe("Low probability");
+    expect(label({ hr: "yes", haemoptysis: "yes" })).toBe("Moderate probability");
+    expect(label({ "dvt-signs": "yes", "pe-leading": "yes" })).toBe("Moderate probability");
+    expect(label({ "dvt-signs": "yes", "pe-leading": "yes", haemoptysis: "yes" })).toBe("High probability");
+    const twoTier = (answers: Record<string, string>) => getSecondaryResults(wells, answers)[0].value;
+    expect(twoTier({ "dvt-signs": "yes", haemoptysis: "yes" })).toContain("unlikely");
+    expect(twoTier({ "dvt-signs": "yes", hr: "yes" })).toContain("likely");
+    expect(twoTier({ "dvt-signs": "yes", hr: "yes" })).not.toContain("unlikely");
   });
 
   it("scores mutually exclusive CHA2DS2-VASc age bands", () => {
@@ -52,7 +54,7 @@ describe("ClinicalCalculator", () => {
   it("withholds risk advice until all inputs are explicitly completed", () => {
     render(<ClinicalCalculator schema={wells} />);
     expect(screen.getByText("Complete all sections")).toBeInTheDocument();
-    expect(screen.queryByText("PE unlikely")).not.toBeInTheDocument();
+    expect(screen.queryByText("Low probability")).not.toBeInTheDocument();
   });
 
   it("shows the searchable home, filters by speciality and opens a calculator", async () => {
@@ -80,7 +82,8 @@ describe("ClinicalCalculator", () => {
     expect(screen.getByText("1", { selector: ".calculator-score" })).toBeInTheDocument();
     await user.click(screen.getByRole("tab", { name: "Evidence" }));
     expect(screen.getByRole("heading", { name: "Interpretation" })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "References" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Literature" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Evidence appraisal" })).toBeInTheDocument();
   });
 
   it("shows a dash for measured-value calculators until every input is in, then the result with unit", async () => {
@@ -108,5 +111,32 @@ describe("ClinicalCalculator", () => {
     await user.clear(calcium); await user.type(calcium, "2");
     await user.clear(albumin); await user.type(albumin, "20");
     expect(screen.getByText("9.6", { selector: ".calculator-score" })).toBeInTheDocument();
+  });
+
+  it("gives every calculator the MDCalc page sections: guide tabs, next steps, evidence and related calculators", async () => {
+    const user = userEvent.setup();
+    for (const schema of clinicalCalculators) {
+      const { unmount } = render(<ClinicalCalculator schema={schema} />);
+      expect(screen.getByRole("tab", { name: "When to use" }), schema.id).toBeInTheDocument();
+      expect(screen.getByRole("tab", { name: "Pearls and pitfalls" }), schema.id).toBeInTheDocument();
+      expect(screen.getByRole("heading", { name: "Management" }), schema.id).toBeInTheDocument();
+      expect(screen.getByRole("heading", { name: "Critical actions" }), schema.id).toBeInTheDocument();
+      expect(screen.getByRole("region", { name: "Related calculators" }), schema.id).toBeInTheDocument();
+      await user.click(screen.getByRole("tab", { name: "Evidence" }));
+      expect(screen.getByRole("heading", { name: "Evidence appraisal" }), schema.id).toBeInTheDocument();
+      unmount();
+    }
+  });
+
+  it("only links to related calculators that exist", () => {
+    const ids = new Set(clinicalCalculators.map((item) => item.id));
+    for (const item of clinicalCalculators) for (const id of item.related ?? []) expect(ids.has(id), `${item.id} -> ${id}`).toBe(true);
+  });
+
+  it("shows the creator tab only where a creator is recorded", async () => {
+    const user = userEvent.setup();
+    render(<ClinicalCalculator schema={wells} />);
+    await user.click(screen.getByRole("tab", { name: "About the creator" }));
+    expect(screen.getByText(/Philip S. Wells/)).toBeInTheDocument();
   });
 });

@@ -50,6 +50,7 @@ describe("new calculators", () => {
   it("adds ten new calculators plus the restored qSOFA", () => {
     const added = clinicalCalculators.filter((item) => item.isNew).map((item) => item.id).sort();
     expect(added).toEqual(["anion-gap", "bmi-bsa", "child-pugh", "corrected-calcium", "glasgow-blatchford", "news2", "padua", "perc", "qsofa-score", "qtc", "wells-dvt"]);
+    expect(clinicalCalculators.find((item) => item.id === "wells-pe")?.isNew).toBe(false);
     expect(new Set(clinicalCalculators.map((item) => item.id)).size).toBe(clinicalCalculators.length);
   });
   it("every calculator has pearls, references, and a result tier for the lowest score", () => {
