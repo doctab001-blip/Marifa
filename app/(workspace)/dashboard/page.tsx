@@ -5,7 +5,6 @@ import {
   ArrowRight,
   CalendarClock,
   ChevronRight,
-  ClipboardCheck,
   FileClock,
   Hourglass,
   Library,
@@ -14,13 +13,13 @@ import {
 } from "@/components/icons-3d";
 import { DemoBanner } from "@/components/demo-banner";
 import { KnowledgeSearch } from "@/components/dashboard/knowledge-search";
+import { DevelopmentsSpotlight } from "@/components/dashboard/developments-spotlight";
 import { TopicExplorer } from "@/components/dashboard/topic-explorer";
 import { emptyFilters, isSortKey, type ExplorerFilters, type ExplorerTopic, type SortKey } from "@/lib/dashboard/topic-explorer";
 import { getApprovedDiseaseGuidelines } from "@/lib/data/disease-guidelines";
+import { getSpotlightDevelopments } from "@/lib/data/recent-developments";
 import { getTopicViewStats } from "@/lib/data/topic-views";
-import { isTemporaryOpenAdminMode } from "@/lib/access-mode";
 import { getCurrentViewer } from "@/lib/supabase/session";
-import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { getDiseaseDraftTopicCount } from "@/lib/data/disease-drafts";
 
 const dateFormat = new Intl.DateTimeFormat("en-SA", { dateStyle: "medium", timeZone: "Asia/Riyadh" });
@@ -72,16 +71,16 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
       <DemoBanner />
 
       <Suspense fallback={<DashboardLoadingState />}>
-        <DashboardContent viewerId={viewer?.id} initialSort={explorerState.sort} initialFilters={explorerState.filters} />
+        <DashboardContent initialSort={explorerState.sort} initialFilters={explorerState.filters} />
       </Suspense>
     </main>
   );
 }
 
-async function DashboardContent({ viewerId, initialSort, initialFilters }: { viewerId?: string; initialSort: SortKey; initialFilters: ExplorerFilters }) {
-  const [guidelines, assignments, draftTopicCount, viewStats] = await Promise.all([
+async function DashboardContent({ initialSort, initialFilters }: { initialSort: SortKey; initialFilters: ExplorerFilters }) {
+  const [guidelines, spotlight, draftTopicCount, viewStats] = await Promise.all([
     getApprovedDiseaseGuidelines(),
-    loadAssignments(viewerId),
+    getSpotlightDevelopments(),
     getDiseaseDraftTopicCount(),
     getTopicViewStats(),
   ]);
@@ -145,24 +144,9 @@ async function DashboardContent({ viewerId, initialSort, initialFilters }: { vie
         )}
 
         <div className="dashboard-stack">
-          <section className="card section-card">
-            <div className="section-head"><h2>My requirements</h2><Link className="section-link" href="/dashboard/competencies">View all</Link></div>
-            {assignments.length ? assignments.map((item) => {
-              const template = Array.isArray(item.competency_templates) ? item.competency_templates[0] : item.competency_templates;
-              return (
-                <Link className="topic-row" href="/dashboard/competencies" key={item.id}>
-                  <div className={item.state === "overdue" ? "topic-icon topic-icon-alert" : "topic-icon"}>{item.state === "overdue" ? <TriangleAlert size={17} /> : <CalendarClock size={17} />}</div>
-                  <div className="topic-main"><strong>{template?.title ?? "Competency assignment"}</strong><p>{item.state.replaceAll("_", " ")}{item.due_at ? ` · due ${dateFormat.format(new Date(item.due_at))}` : ""}</p></div>
-                </Link>
-              );
-            }) : (
-              <div className="empty-state">
-                <span className="empty-state-icon"><ClipboardCheck size={22} aria-hidden="true" /></span>
-                <strong>No competency assignments yet</strong>
-                <p>Assignments from your department will appear here with their due dates.</p>
-                <Link className="button-secondary" href="/dashboard/competencies">Open competencies</Link>
-              </div>
-            )}
+          <section className="card section-card" aria-labelledby="developments-title">
+            <div className="section-head"><h2 id="developments-title">Recent Developments</h2><Link className="section-link" href="/dashboard/recent-developments?tab=archive">View all</Link></div>
+            <DevelopmentsSpotlight items={spotlight} />
           </section>
           <Link href="/dashboard/diseases" className="card section-card flagship-card">
             <span className="flagship-icon"><Stethoscope size={22} aria-hidden="true" /></span>
@@ -177,28 +161,6 @@ async function DashboardContent({ viewerId, initialSort, initialFilters }: { vie
       </div>
     </>
   );
-}
-
-type Assignment = { id: string; state: string; due_at: string | null; competency_templates: { title: string } | { title: string }[] | null };
-
-async function loadAssignments(viewerId?: string): Promise<Assignment[]> {
-  if (!viewerId || isTemporaryOpenAdminMode()) return [];
-  const supabase = await createSupabaseServerClient();
-  const { data: memberships } = await supabase
-    .from("organization_memberships")
-    .select("id")
-    .eq("user_id", viewerId)
-    .eq("account_status", "active")
-    .limit(1);
-  const membership = memberships?.[0];
-  if (!membership) return [];
-  const { data } = await supabase
-    .from("competency_assignments")
-    .select("id, state, due_at, competency_templates(title)")
-    .eq("membership_id", membership.id)
-    .order("due_at", { ascending: true })
-    .limit(4);
-  return (data ?? []) as Assignment[];
 }
 
 function DashboardLoadingState() {

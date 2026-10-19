@@ -115,3 +115,51 @@ export async function getPendingDevelopments(): Promise<DevelopmentRow[]> {
     return [];
   }
 }
+
+export type SpotlightItem = Pick<DevelopmentRow, "id" | "category" | "title" | "summary" | "why_it_matters" | "source_url" | "published_at" | "specialities" | "source_label" | "saudi_relevant">;
+const SPOTLIGHT_SIZE = 30;
+
+/**
+ * Dashboard spotlight: landmark items (any type) plus guidelines and key trials from the curated archive,
+ * published in the last ten years, spread evenly across the years in a fresh random order for each page load.
+ * Returns an empty list when the archive is unavailable or not migrated yet; the panel then links to the page.
+ */
+export async function getSpotlightDevelopments(): Promise<SpotlightItem[]> {
+  if (!isSupabaseConfigured()) return [];
+  try {
+    const supabase = await createSupabaseDataClient();
+    const since = new Date();
+    since.setUTCFullYear(since.getUTCFullYear() - 10);
+    const { data, error } = await supabase
+      .from("recent_developments")
+      .select("id, category, title, summary, why_it_matters, source_url, published_at, specialities, source_label, saudi_relevant, year")
+      .eq("status", "published")
+      .eq("origin", "archive")
+      .gte("published_at", since.toISOString().slice(0, 10))
+      .or("significance.eq.1,category.in.(guideline_update,key_trial)")
+      .limit(600);
+    if (error) {
+      console.warn("[recent-developments] spotlight unavailable", error.message);
+      return [];
+    }
+    const byYear = new Map<number, SpotlightItem[]>();
+    for (const row of (data ?? []) as unknown as (SpotlightItem & { year: number })[]) {
+      const bucket = byYear.get(row.year) ?? [];
+      bucket.push(row);
+      byYear.set(row.year, bucket);
+    }
+    const shuffle = <T,>(list: T[]) => { for (let i = list.length - 1; i > 0; i -= 1) { const j = Math.floor(Math.random() * (i + 1)); [list[i], list[j]] = [list[j], list[i]]; } return list; };
+    const buckets = shuffle([...byYear.values()].map((bucket) => shuffle(bucket)));
+    const picked: SpotlightItem[] = [];
+    while (picked.length < SPOTLIGHT_SIZE && buckets.some((bucket) => bucket.length)) {
+      for (const bucket of buckets) {
+        const next = bucket.pop();
+        if (next && picked.length < SPOTLIGHT_SIZE) picked.push(next);
+      }
+    }
+    return picked.map(({ id, category, title, summary, why_it_matters, source_url, published_at, specialities, source_label, saudi_relevant }) => ({ id, category, title, summary, why_it_matters, source_url, published_at, specialities, source_label, saudi_relevant }));
+  } catch (error) {
+    console.warn("[recent-developments] spotlight unavailable", error);
+    return [];
+  }
+}

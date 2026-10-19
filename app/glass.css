@@ -1029,3 +1029,19 @@ html[data-theme="dark"] .metric-grid .metric-card:hover { box-shadow: inset 0 1p
 @media (max-width: 1100px) { .dev-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 800px) { .dev-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 480px) { .dev-grid { grid-template-columns: 1fr; } }
+
+/* Dashboard: rotating Recent Developments spotlight */
+.dev-spotlight { display: grid; gap: 10px; }
+.dev-spotlight-card { display: grid; gap: 8px; align-content: start; min-height: 300px; padding: 14px 16px; border: 1px solid rgb(var(--ov) / .1); border-top: 4px solid var(--pc, rgb(var(--ov) / .25)); border-radius: 14px; background: linear-gradient(180deg, color-mix(in srgb, var(--pc, transparent) 13%, transparent), transparent 55%), rgb(var(--glass) / .6); animation: dev-spotlight-in .35s ease; }
+.dev-spotlight-title { margin: 0; font-size: 1rem; line-height: 1.35; font-weight: 700; color: var(--strong); }
+.dev-spotlight-summary { margin: 0; color: var(--text-2, var(--text-3)); font-size: .86rem; line-height: 1.5; }
+.dev-spotlight-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; color: var(--text-3); font-size: .76rem; }
+.dev-spotlight-bar { height: 3px; border-radius: 3px; background: rgb(var(--ov) / .1); overflow: hidden; }
+.dev-spotlight-progress { display: block; height: 100%; width: 100%; background: var(--strong); transform-origin: left; animation-name: dev-spotlight-fill; animation-timing-function: linear; animation-fill-mode: forwards; }
+.dev-spotlight-controls { display: flex; align-items: center; gap: 8px; }
+.dev-spotlight-btn { display: inline-flex; align-items: center; justify-content: center; min-width: 32px; height: 30px; padding: 0 10px; border: 1px solid rgb(var(--ov) / .14); border-radius: 10px; background: rgb(var(--glass) / .5); color: var(--strong); font-size: .78rem; font-weight: 600; cursor: pointer; }
+.dev-spotlight-btn:focus-visible { outline: 2px solid var(--strong); outline-offset: 2px; }
+.dev-spotlight-count { margin-left: auto; color: var(--text-3); font-size: .72rem; }
+@keyframes dev-spotlight-fill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes dev-spotlight-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .dev-spotlight-card { animation: none; } }
