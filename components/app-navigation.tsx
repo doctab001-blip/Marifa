@@ -24,7 +24,7 @@ import {
   X,
   type LucideIcon,
 } from "@/components/icons-3d";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { searchTopics } from "@/lib/topic-search";
 import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
 
@@ -161,13 +161,16 @@ export function WorkspaceSidebar({ organizationName, organizationNote, temporary
             onReturn={() => setPeekPath(null)}
           />
         ) : (
-          <ModulePanel
-            module={moduleItem}
-            pathname={pathname}
-            temporaryAdminMode={temporaryAdminMode}
-            draftTopicCount={draftTopicCount}
-            onShowAll={() => setPeekPath(pathname)}
-          />
+          // useSearchParams() inside the panel needs a Suspense boundary, or statically prerendered pages fail the build.
+          <Suspense fallback={<nav aria-label="Loading menu" className="module-panel" />}>
+            <ModulePanel
+              module={moduleItem}
+              pathname={pathname}
+              temporaryAdminMode={temporaryAdminMode}
+              draftTopicCount={draftTopicCount}
+              onShowAll={() => setPeekPath(pathname)}
+            />
+          </Suspense>
         )}
       </div>
       <div className="org-card"><strong>{organizationName}</strong><span>{organizationNote}</span></div>
