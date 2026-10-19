@@ -43,7 +43,8 @@ html[data-theme="dark"] {
 /* ── Canvas ─────────────────────────────────────────────────────────────── */
 html { background: var(--background); }
 body { min-height: 100vh; background: var(--page-bg); background-attachment: fixed; }
-::selection { background: rgb(52 214 232 / .35); color: #fff; }
+/* Keep text selections calm and readable: light teal with true-black copy. */
+::selection { background: #ccfbf1; color: #000; }
 :focus-visible { outline: 2px solid rgb(52 214 232 / .85); outline-offset: 2px; }
 * { scrollbar-color: rgb(148 163 210 / .3) transparent; }
 html[data-theme="dark"] select option { background: #0d1427; color: #f4f7ff; }
