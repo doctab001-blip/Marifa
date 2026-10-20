@@ -51,12 +51,18 @@ export default async function ClinicalGovernancePage() {
     );
   }
 
+  let loadError = "";
   const data = await Promise.all([
     loadSettings(ctx), loadStandards(ctx), loadStatuses(ctx), loadEvidence(ctx), loadPolicies(ctx), loadAckSummary(ctx),
     loadIncidents(ctx), loadCapa(ctx), loadAudits(ctx), loadQips(ctx),
-  ]).catch(() => null);
+  ]).catch((error: unknown) => {
+    // Shown to governance staff only (this branch is after the role check) so a failed load can be diagnosed.
+    console.error("[governance] load failed:", error);
+    loadError = error instanceof Error ? error.message : "Unknown error";
+    return null;
+  });
   if (!data) {
-    return <main className="page gh-page">{header}<p className="gh-notice gh-notice-bad" role="alert">Governance data could not be loaded. Check that the accreditation migration has been applied to this database.</p></main>;
+    return <main className="page gh-page">{header}<p className="gh-notice gh-notice-bad" role="alert">Governance data could not be loaded. Check that the accreditation migration has been applied to this database.{loadError ? <><br /><small>Detail: {loadError}</small></> : null}</p></main>;
   }
   const [settings, standards, statuses, evidence, policies, ack, incidents, capa, audits, qips] = data;
   const readiness = computeReadiness(standards, statuses, evidence, settings, today);
