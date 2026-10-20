@@ -1,3 +1,5 @@
+import type { CSSProperties } from "react";
+
 export const medicalSpecialities = [
   { name: "Internal Medicine", terms: ["internal medicine", "general medicine"] },
   { name: "Cardiology", terms: ["cardiology", "cardiac"] },
@@ -118,4 +120,21 @@ export function specialityCounts<T>(items: readonly T[], specialityOf: (item: T)
   return groupBySpeciality(items, specialityOf)
     .map(({ speciality, items: list }) => ({ value: speciality, count: list.length }))
     .sort((a, b) => Number(a.value === UNASSIGNED_SPECIALITY) - Number(b.value === UNASSIGNED_SPECIALITY) || b.count - a.count || a.value.localeCompare(b.value));
+}
+
+/**
+ * A fixed colour per speciality so the same speciality looks the same on every page. Catalogue names get
+ * evenly spread hues (golden-angle steps keep neighbours apart); other labels get a stable hash hue;
+ * "Unassigned" is grey. Used through the `data-spec` attribute and the --spec-hue / --spec-sat CSS variables.
+ */
+export function specialityHue(name: string): number {
+  const index = medicalSpecialities.findIndex((item) => item.name === name);
+  if (index >= 0) return Math.round((index * 137.508 + 14) % 360);
+  let hash = 0;
+  for (const char of name) hash = (hash * 31 + char.charCodeAt(0)) >>> 0;
+  return hash % 360;
+}
+
+export function specialityStyle(name: string): CSSProperties {
+  return { "--spec-hue": specialityHue(name), "--spec-sat": name === UNASSIGNED_SPECIALITY ? "0%" : "62%" } as CSSProperties;
 }

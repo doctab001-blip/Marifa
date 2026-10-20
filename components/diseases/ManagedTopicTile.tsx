@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { summarizeSpecialty } from "@/lib/medical-specialities";
+import { specialityStyle, summarizeSpecialty } from "@/lib/medical-specialities";
 
 export type TopicTileTone = "published" | "approved" | "draft";
 
@@ -29,7 +29,7 @@ type ManagedTopicTileProps = {
 export function ManagedTopicTile({ tone, statusLabel, title, specialty, version, source, dateLabel, href, linkLabel, actions }: ManagedTopicTileProps) {
   const { primary, extra } = summarizeSpecialty(specialty);
   return (
-    <article className={`topic-tile is-${tone}`} title={`${title}\n${specialty}\nSource: ${source}`}>
+    <article className={`topic-tile is-${tone}`} data-spec style={specialityStyle(primary)} title={`${title}\n${specialty}\nSource: ${source}`}>
       <div className="topic-tile-meta">
         <span className="topic-tile-status">{statusLabel}</span>
         {dateLabel ? <span className="topic-tile-date">{dateLabel}</span> : null}

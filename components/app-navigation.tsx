@@ -28,7 +28,7 @@ import {
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { searchTopics } from "@/lib/topic-search";
 import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
-import { UNASSIGNED_SPECIALITY, canonicalSpeciality, groupBySpeciality, specialityCounts } from "@/lib/medical-specialities";
+import { UNASSIGNED_SPECIALITY, canonicalSpeciality, groupBySpeciality, specialityCounts, specialityStyle } from "@/lib/medical-specialities";
 
 type NavItem = {
   href: string;
@@ -402,7 +402,7 @@ export function TopicNavigator({ currentId }: { currentId: string | null }) {
         {state.status === "error" && <p className="topic-nav-empty">Topics could not be loaded. Use the disease directory instead.</p>}
         {state.status === "ready" && groups.length === 0 && <p className="topic-nav-empty">{filtering ? "No topics match this filter." : "No published topics yet."}</p>}
         {groups.map(({ key, items }) => (
-          <details key={`${groupBy}-${key}-${filtering ? "filtered" : "all"}`} className="topic-nav-group" open={filtering || key === currentGroup || (groupBy === "pillar" && !currentGroup)}>
+          <details key={`${groupBy}-${key}-${filtering ? "filtered" : "all"}`} className="topic-nav-group" {...(groupBy === "speciality" ? { "data-spec": "", style: specialityStyle(key) } : {})} open={filtering || key === currentGroup || (groupBy === "pillar" && !currentGroup)}>
             <summary><span>{key}</span><span className="topic-nav-count">{items.length}</span></summary>
             <ul>
               {items.map((topic) => {
@@ -482,7 +482,7 @@ export function DraftTopicNavigator() {
       {state.status === "error" && <p className="topic-nav-empty">Draft topics could not be loaded.</p>}
       {state.status === "ready" && groups.length === 0 && <p className="topic-nav-empty">{filtering ? "No drafts match this filter." : "No draft topics."}</p>}
       {groups.map(({ speciality: name, list }) => (
-        <details key={`${name}-${filtering ? "filtered" : "all"}`} className="topic-nav-group" open={filtering || topics.length <= 40 || list.some((topic) => topic.versionId === activeVersionId)}>
+        <details key={`${name}-${filtering ? "filtered" : "all"}`} className="topic-nav-group" data-spec style={specialityStyle(name)} open={filtering || topics.length <= 40 || list.some((topic) => topic.versionId === activeVersionId)}>
           <summary><span>{name}</span><span className="topic-nav-count">{list.length}</span></summary>
           <ul>
             {list.map((topic) => {

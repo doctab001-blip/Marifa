@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { groupBySpeciality } from "@/lib/medical-specialities";
+import { groupBySpeciality, specialityStyle } from "@/lib/medical-specialities";
 import { Activity, CheckCircle2, ChevronRight, Clock3, Hourglass, Library, Search, X } from "@/components/icons-3d";
 import {
   SORT_KEYS,
@@ -149,7 +149,7 @@ export function TopicExplorer({ topics, viewsAvailable, initialSort, initialFilt
       {results.length && grouped ? (
         <div className="explorer-groups">
           {sections.map(({ speciality, items }) => (
-            <details key={`${speciality}-${activeCount > 0 ? "filtered" : "all"}`} className="explorer-group" open={activeCount > 0 || sections.length === 1}>
+            <details key={`${speciality}-${activeCount > 0 ? "filtered" : "all"}`} className="explorer-group" data-spec style={specialityStyle(speciality)} open={activeCount > 0 || sections.length === 1}>
               <summary><span>{speciality}</span><span className="explorer-group-count">{items.length}</span></summary>
               <ol className="explorer-list">
                 {items.map((topic, index) => (
@@ -193,7 +193,7 @@ function TopicRow({ topic, index, sort, viewsAvailable }: { topic: ExplorerTopic
                   <strong>{topic.title}</strong>
                   <span className="explorer-meta">
                     <span className="pill pill-slate pill-sm">{topic.pillar}</span>
-                    <span>{topic.speciality}</span>
+                    <span className="spec-chip" data-spec style={specialityStyle(topic.speciality)}>{topic.speciality}</span>
                     <span>{topic.authority}</span>
                   </span>
                 </span>

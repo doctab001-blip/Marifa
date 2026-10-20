@@ -1102,3 +1102,18 @@ html[data-theme="dark"] .metric-grid .metric-card:hover { box-shadow: inset 0 1p
 .topic-nav-groupby button { height: 26px; border: 0; border-radius: 7px; background: transparent; color: var(--text-2); font: inherit; font-size: .74rem; font-weight: 600; cursor: pointer; }
 .topic-nav-groupby button[aria-pressed="true"] { background: rgb(var(--ov) / .12); color: var(--strong); }
 .topic-nav-groupby button:focus-visible { outline: 2px solid var(--strong); outline-offset: 1px; }
+
+/* Speciality colour coding. Elements carry data-spec and --spec-hue (see specialityStyle in lib/medical-specialities). */
+[data-spec] { --spec: hsl(var(--spec-hue, 215) var(--spec-sat, 62%) 38%); --spec-soft: hsl(var(--spec-hue, 215) var(--spec-sat, 62%) 50% / .13); }
+html[data-theme="dark"] [data-spec] { --spec: hsl(var(--spec-hue, 215) var(--spec-sat, 62%) 72%); --spec-soft: hsl(var(--spec-hue, 215) var(--spec-sat, 62%) 62% / .18); }
+.speciality-section-title { border-bottom-color: var(--spec); }
+.speciality-section-title::before, .explorer-group > summary > span:first-child::before, .sidebar .topic-nav-group[data-spec] > summary > span:first-child::before { content: ""; display: inline-block; width: 9px; height: 9px; margin-right: 8px; border-radius: 50%; background: var(--spec); vertical-align: baseline; flex: none; }
+.speciality-section-title span, .explorer-group-count { background: var(--spec-soft); color: var(--spec); }
+.speciality-section-title { color: var(--spec); }
+.topic-tile[data-spec] { box-shadow: inset 3px 0 0 var(--spec); }
+.topic-tile[data-spec] .topic-tile-spec, .spec-chip, .disease-speciality-badge[data-spec] { background: var(--spec-soft); color: var(--spec); font-weight: 650; }
+.spec-chip { padding: 1px 7px; border-radius: 999px; }
+.explorer-group[data-spec] { border-color: var(--spec-soft); box-shadow: inset 3px 0 0 var(--spec); }
+.sidebar .topic-nav-group[data-spec] a::before { background: color-mix(in srgb, var(--spec) 60%, transparent); }
+.sidebar .topic-nav-group[data-spec] a:hover::before { background: var(--spec); }
+.sidebar .topic-nav-group[data-spec] > summary { color: var(--spec); }

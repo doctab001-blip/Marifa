@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "@/components/icons-3d";
+import { specialityStyle } from "@/lib/medical-specialities";
 import type { DiseaseGuidelineSummary } from "@/lib/data/disease-guidelines";
 
 function readableSourceType(sourceType: string) {
@@ -35,7 +36,7 @@ export function DiseaseCard({ disease }: { disease: DiseaseGuidelineSummary }) {
       <div className="disease-card-copy">
         <h3>{disease.title}</h3>
         <div className="disease-speciality-badges" aria-label="Medical specialities">
-          <span className="disease-speciality-badge">{primarySpeciality}</span>
+          <span className="disease-speciality-badge" data-spec style={specialityStyle(primarySpeciality)}>{primarySpeciality}</span>
           {subSpecialities.map((speciality) => <span className="disease-sub-speciality-badge" key={speciality}>{speciality}</span>)}
         </div>
       </div>

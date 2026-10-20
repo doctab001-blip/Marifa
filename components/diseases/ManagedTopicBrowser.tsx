@@ -12,6 +12,7 @@ import {
   type ManagedItem,
   type ManagedSort,
 } from "@/lib/dashboard/managed-topics";
+import { specialityStyle } from "@/lib/medical-specialities";
 
 export type ManagedBrowserItem = ManagedItem & {
   /** The tile, already rendered on the server so its edit/approve/delete forms keep working. */
@@ -66,7 +67,7 @@ export function ManagedTopicBrowser({ items, noun, dateNoun }: { items: ManagedB
       {shown.length && grouped ? (
         <div className="speciality-sections">
           {sections.map(({ speciality: name, items: list }) => (
-            <section className="speciality-section" key={name} aria-labelledby={`speciality-${slug(name)}`}>
+            <section className="speciality-section" data-spec style={specialityStyle(name)} key={name} aria-labelledby={`speciality-${slug(name)}`}>
               <h3 className="speciality-section-title" id={`speciality-${slug(name)}`}>{name}<span>{list.length}</span></h3>
               <div className="topic-tile-grid">{list.map((item) => <div className="managed-cell" key={item.key}>{item.tile}</div>)}</div>
             </section>
