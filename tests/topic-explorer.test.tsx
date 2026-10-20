@@ -59,7 +59,7 @@ describe("TopicExplorer", () => {
   const rowTitles = () => within(screen.getByRole("list")).getAllByRole("link").map((link) => link.querySelector("strong")?.textContent);
 
   it("lists real topics most recent first and re-sorts on click", async () => {
-    render(<TopicExplorer topics={topics} viewsAvailable initialSort="recent" initialFilters={emptyFilters} />);
+    render(<TopicExplorer topics={topics} viewsAvailable initialSort="recent" initialFilters={emptyFilters} initialGrouped={false} />);
     expect(rowTitles()).toEqual(["Sepsis", "Acute asthma", "Heart failure"]);
     await userEvent.click(screen.getByRole("radio", { name: "Most viewed" }));
     expect(rowTitles()).toEqual(["Sepsis", "Heart failure", "Acute asthma"]);
@@ -67,7 +67,7 @@ describe("TopicExplorer", () => {
   });
 
   it("filters, reports the count and clears", async () => {
-    render(<TopicExplorer topics={topics} viewsAvailable initialSort="recent" initialFilters={emptyFilters} />);
+    render(<TopicExplorer topics={topics} viewsAvailable initialSort="recent" initialFilters={emptyFilters} initialGrouped={false} />);
     await userEvent.selectOptions(screen.getByLabelText("Care pillar"), "Chronic Care");
     expect(rowTitles()).toEqual(["Heart failure"]);
     expect(screen.getByRole("status")).toHaveTextContent("1 of 3 live topics");
@@ -90,9 +90,17 @@ describe("TopicExplorer", () => {
 
   it("pages long lists", async () => {
     const many = Array.from({ length: 30 }, (_, index) => topic({ id: `m${index}`, title: `Topic ${String(index).padStart(2, "0")}` }));
-    render(<TopicExplorer topics={many} viewsAvailable initialSort="title" initialFilters={emptyFilters} />);
+    render(<TopicExplorer topics={many} viewsAvailable initialSort="title" initialFilters={emptyFilters} initialGrouped={false} />);
     expect(rowTitles()).toHaveLength(12);
     await userEvent.click(screen.getByRole("button", { name: /show all 30/i }));
     expect(rowTitles()).toHaveLength(30);
+  });
+
+  it("divides the live topics into one collapsible section per speciality, sorted inside each", async () => {
+    render(<TopicExplorer topics={topics} viewsAvailable initialSort="recent" initialFilters={emptyFilters} />);
+    const groups = screen.getAllByRole("group").filter((node) => node.tagName === "DETAILS");
+    expect(groups.map((group) => group.querySelector("summary")?.textContent)).toEqual(["Cardiology1", "Infectious Diseases1", "Respiratory1"]);
+    await userEvent.click(screen.getByRole("switch", { name: "Group by speciality" }));
+    expect(rowTitles()).toEqual(["Sepsis", "Acute asthma", "Heart failure"]);
   });
 });

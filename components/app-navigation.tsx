@@ -28,7 +28,7 @@ import {
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { searchTopics } from "@/lib/topic-search";
 import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
-import { summarizeSpecialty } from "@/lib/medical-specialities";
+import { UNASSIGNED_SPECIALITY, canonicalSpeciality, groupBySpeciality, specialityCounts } from "@/lib/medical-specialities";
 
 type NavItem = {
   href: string;
@@ -319,10 +319,12 @@ function loadTopics() {
   return topicRequest;
 }
 
-function TopicNavigator({ currentId }: { currentId: string | null }) {
+export function TopicNavigator({ currentId }: { currentId: string | null }) {
   const router = useRouter();
   const [state, setState] = useState<TopicState>({ status: "loading" });
   const [query, setQuery] = useState("");
+  const [speciality, setSpeciality] = useState("");
+  const [groupBy, setGroupBy] = useState<"speciality" | "pillar">("speciality");
   const listRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -336,14 +338,25 @@ function TopicNavigator({ currentId }: { currentId: string | null }) {
 
   const topics = useMemo(() => (state.status === "ready" ? state.topics : []), [state]);
   const needle = query.trim();
+  const specialityOptions = useMemo(() => specialityCounts(topics, (topic) => topic.speciality || UNASSIGNED_SPECIALITY), [topics]);
   const groups = useMemo(() => {
     // Same engine as the directory search: abbreviations (DKA), symptoms and drugs find topics here too.
-    const filtered = needle ? searchTopics(topics, needle) : topics;
-    const known = carePillars.map((pillar) => ({ pillar, items: filtered.filter((topic) => topic.pillar === pillar) }));
+    const searched = needle ? searchTopics(topics, needle) : topics;
+    const filtered = speciality ? searched.filter((topic) => (topic.speciality || UNASSIGNED_SPECIALITY) === speciality) : searched;
+    if (groupBy === "speciality") {
+      // Relevance order is kept while searching; otherwise topics read A to Z inside each speciality.
+      return groupBySpeciality(filtered, (topic) => topic.speciality ?? "").map(({ speciality: name, items }) => ({
+        key: name,
+        items: needle ? items : [...items].sort((a, b) => a.title.localeCompare(b.title, "en", { sensitivity: "base" })),
+      }));
+    }
+    const known = carePillars.map((pillar) => ({ key: pillar, items: filtered.filter((topic) => topic.pillar === pillar) }));
     const other = filtered.filter((topic) => !carePillars.includes(topic.pillar));
-    return [...known, { pillar: "Other", items: other }].filter(({ items }) => items.length > 0);
-  }, [needle, topics]);
-  const currentPillar = topics.find(({ id }) => id === currentId)?.pillar;
+    return [...known, { key: "Other", items: other }].filter(({ items }) => items.length > 0);
+  }, [groupBy, needle, speciality, topics]);
+  const currentTopic = topics.find(({ id }) => id === currentId);
+  const currentGroup = currentTopic ? (groupBy === "speciality" ? currentTopic.speciality || UNASSIGNED_SPECIALITY : currentTopic.pillar) : undefined;
+  const filtering = Boolean(needle || speciality);
 
   // Keep the open topic in view inside the panel without moving the page.
   useEffect(() => {
@@ -365,6 +378,21 @@ function TopicNavigator({ currentId }: { currentId: string | null }) {
         <input type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Filter topics…" />
         {query && <button type="button" onClick={() => setQuery("")} aria-label="Clear topic filter"><X size={13} /></button>}
       </label>
+      {state.status === "ready" && (
+        <div className="topic-nav-controls">
+          <label className="topic-nav-select">
+            <span className="sr-only">Filter topics by speciality</span>
+            <select value={speciality} onChange={(event) => setSpeciality(event.target.value)}>
+              <option value="">All specialities</option>
+              {specialityOptions.map((option) => <option key={option.value} value={option.value}>{option.value} ({option.count})</option>)}
+            </select>
+          </label>
+          <div className="topic-nav-groupby" role="group" aria-label="Group topics by">
+            <button type="button" aria-pressed={groupBy === "speciality"} onClick={() => setGroupBy("speciality")}>Speciality</button>
+            <button type="button" aria-pressed={groupBy === "pillar"} onClick={() => setGroupBy("pillar")}>Care pillar</button>
+          </div>
+        </div>
+      )}
       <div ref={listRef}>
         {state.status === "loading" && (
           <div className="topic-nav-skeleton" aria-label="Loading topics" role="status">
@@ -372,10 +400,10 @@ function TopicNavigator({ currentId }: { currentId: string | null }) {
           </div>
         )}
         {state.status === "error" && <p className="topic-nav-empty">Topics could not be loaded. Use the disease directory instead.</p>}
-        {state.status === "ready" && groups.length === 0 && <p className="topic-nav-empty">{needle ? "No topics match this filter." : "No published topics yet."}</p>}
-        {groups.map(({ pillar, items }) => (
-          <details key={`${pillar}-${needle ? "filtered" : "all"}`} className="topic-nav-group" open={Boolean(needle) || !currentPillar || pillar === currentPillar}>
-            <summary><span>{pillar}</span><span className="topic-nav-count">{items.length}</span></summary>
+        {state.status === "ready" && groups.length === 0 && <p className="topic-nav-empty">{filtering ? "No topics match this filter." : "No published topics yet."}</p>}
+        {groups.map(({ key, items }) => (
+          <details key={`${groupBy}-${key}-${filtering ? "filtered" : "all"}`} className="topic-nav-group" open={filtering || key === currentGroup || (groupBy === "pillar" && !currentGroup)}>
+            <summary><span>{key}</span><span className="topic-nav-count">{items.length}</span></summary>
             <ul>
               {items.map((topic) => {
                 const href = `/dashboard/diseases/${encodeURIComponent(topic.id)}`;
@@ -405,7 +433,7 @@ function TopicNavigator({ currentId }: { currentId: string | null }) {
 type DraftNavTopic = { id: string; title: string; specialty?: string; versionId: string; version: string };
 
 /** Draft topics grouped by speciality; each topic is a bulleted line showing only its name. */
-function DraftTopicNavigator() {
+export function DraftTopicNavigator() {
   const router = useRouter();
   const pathname = usePathname() ?? "";
   const activeVersionId = pathname.startsWith("/dashboard/diseases/drafts/")
@@ -413,6 +441,7 @@ function DraftTopicNavigator() {
     : null;
   const [state, setState] = useState<{ status: "loading" } | { status: "ready"; topics: DraftNavTopic[] } | { status: "error" }>({ status: "loading" });
   const [query, setQuery] = useState("");
+  const [speciality, setSpeciality] = useState("");
 
   useEffect(() => {
     let active = true;
@@ -424,28 +453,37 @@ function DraftTopicNavigator() {
 
   const topics = useMemo(() => (state.status === "ready" ? state.topics : []), [state]);
   const needle = query.trim().toLocaleLowerCase();
+  const specialityOf = (topic: DraftNavTopic) => canonicalSpeciality(topic.specialty);
+  const specialityOptions = useMemo(() => specialityCounts(topics, specialityOf), [topics]);
   const groups = useMemo(() => {
-    const filtered = needle ? topics.filter((topic) => `${topic.title} ${topic.specialty ?? ""}`.toLocaleLowerCase().includes(needle)) : topics;
-    const bySpeciality = new Map<string, DraftNavTopic[]>();
-    for (const topic of filtered) {
-      const key = summarizeSpecialty(topic.specialty ?? "").primary;
-      bySpeciality.set(key, [...(bySpeciality.get(key) ?? []), topic]);
-    }
-    return [...bySpeciality.entries()]
-      .sort(([a], [b]) => (a === "Unassigned" ? 1 : b === "Unassigned" ? -1 : a.localeCompare(b)))
-      .map(([speciality, list]) => ({ speciality, list: [...list].sort((a, b) => a.title.localeCompare(b.title)) }));
-  }, [needle, topics]);
+    const searched = needle ? topics.filter((topic) => `${topic.title} ${topic.specialty ?? ""}`.toLocaleLowerCase().includes(needle)) : topics;
+    const filtered = speciality ? searched.filter((topic) => specialityOf(topic) === speciality) : searched;
+    return groupBySpeciality(filtered, specialityOf)
+      .map(({ speciality: name, items }) => ({ speciality: name, list: [...items].sort((a, b) => a.title.localeCompare(b.title)) }));
+  }, [needle, speciality, topics]);
+  const filtering = Boolean(needle || speciality);
 
   return (
     <section className="topic-nav" aria-label="Draft clinical topics">
       <div className="nav-label topic-nav-label"><span>Draft topics</span>{state.status === "ready" && <span className="topic-nav-count">{topics.length}</span>}</div>
       <label className="topic-nav-search"><Search size={14} aria-hidden="true" /><span className="sr-only">Filter draft topics</span><input type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Filter drafts…" />{query && <button type="button" onClick={() => setQuery("")} aria-label="Clear draft filter"><X size={13} /></button>}</label>
+      {state.status === "ready" && (
+        <div className="topic-nav-controls">
+          <label className="topic-nav-select">
+            <span className="sr-only">Filter drafts by speciality</span>
+            <select value={speciality} onChange={(event) => setSpeciality(event.target.value)}>
+              <option value="">All specialities</option>
+              {specialityOptions.map((option) => <option key={option.value} value={option.value}>{option.value} ({option.count})</option>)}
+            </select>
+          </label>
+        </div>
+      )}
       {state.status === "loading" && <div className="topic-nav-skeleton" aria-label="Loading draft topics" role="status">{Array.from({ length: 7 }, (_, index) => <span key={index} />)}</div>}
       {state.status === "error" && <p className="topic-nav-empty">Draft topics could not be loaded.</p>}
-      {state.status === "ready" && groups.length === 0 && <p className="topic-nav-empty">{needle ? "No drafts match this filter." : "No draft topics."}</p>}
-      {groups.map(({ speciality, list }) => (
-        <details key={`${speciality}-${needle ? "filtered" : "all"}`} className="topic-nav-group" open={Boolean(needle) || topics.length <= 40 || list.some((topic) => topic.versionId === activeVersionId)}>
-          <summary><span>{speciality}</span><span className="topic-nav-count">{list.length}</span></summary>
+      {state.status === "ready" && groups.length === 0 && <p className="topic-nav-empty">{filtering ? "No drafts match this filter." : "No draft topics."}</p>}
+      {groups.map(({ speciality: name, list }) => (
+        <details key={`${name}-${filtering ? "filtered" : "all"}`} className="topic-nav-group" open={filtering || topics.length <= 40 || list.some((topic) => topic.versionId === activeVersionId)}>
+          <summary><span>{name}</span><span className="topic-nav-count">{list.length}</span></summary>
           <ul>
             {list.map((topic) => {
               const href = `/dashboard/admin/guidelines/${encodeURIComponent(topic.id)}?version=${encodeURIComponent(topic.versionId)}`;

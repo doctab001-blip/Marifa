@@ -2,12 +2,12 @@ export const medicalSpecialities = [
   { name: "Internal Medicine", terms: ["internal medicine", "general medicine"] },
   { name: "Cardiology", terms: ["cardiology", "cardiac"] },
   { name: "Pulmonology", terms: ["pulmonology", "respiratory", "pulmonary"] },
-  { name: "Gastroenterology", terms: ["gastroenterology", "gastrointestinal"] },
+  { name: "Gastroenterology", terms: ["gastroenterology", "gastrointestinal", "hepatology"] },
   { name: "Nephrology", terms: ["nephrology", "renal"] },
   { name: "Endocrinology", terms: ["endocrinology", "diabetes"] },
   { name: "Infectious Diseases", terms: ["infectious diseases", "infection"] },
   { name: "Neurology", terms: ["neurology", "neurological"] },
-  { name: "General Surgery", terms: ["general surgery"] },
+  { name: "General Surgery", terms: ["general surgery", "bariatric", "colorectal surgery", "endocrine surgery", "breast surgery"] },
   { name: "Acute Care Surgery", terms: ["acute care surgery", "trauma surgery"] },
   { name: "Obstetrics and Gynecology", terms: ["obstetrics", "gynaecology", "gynecology", "maternal-fetal"] },
   { name: "Paediatrics", terms: ["paediatric", "pediatric", "paediatrics", "pediatrics"] },
@@ -20,7 +20,23 @@ export const medicalSpecialities = [
   { name: "Psychiatry", terms: ["psychiatry", "psychiatric"] },
   { name: "Urology", terms: ["urology", "urological"] },
   { name: "Anaesthesiology", terms: ["anaesthesiology", "anesthesiology", "anaesthesia", "anesthesia"] },
+  // Added so that every topic lands in a named speciality instead of a one-off free-text label.
+  { name: "Primary Care", terms: ["primary care", "family medicine", "general practice"] },
+  { name: "Haematology", terms: ["haematology", "hematology"] },
+  { name: "Oncology", terms: ["oncology"] },
+  { name: "Rheumatology", terms: ["rheumatology"] },
+  { name: "Geriatric Medicine", terms: ["geriatric medicine", "geriatrics", "geriatric"] },
+  { name: "Palliative Medicine", terms: ["palliative medicine", "palliative"] },
+  { name: "Critical Care Medicine", terms: ["critical care", "intensive care"] },
+  { name: "Toxicology", terms: ["toxicology"] },
+  { name: "Vascular Surgery", terms: ["vascular surgery", "vascular"] },
+  { name: "Neurosurgery", terms: ["neurosurgery"] },
+  { name: "Allergy and Immunology", terms: ["allergy and immunology", "allergy", "immunology"] },
+  { name: "Public Health", terms: ["public health"] },
 ] as const;
+
+/** Shown for a topic whose speciality is empty. Always listed last. */
+export const UNASSIGNED_SPECIALITY = "Unassigned";
 
 const escapeRegExp = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
@@ -45,6 +61,24 @@ export function inferMedicalSpecialityTags(value: string) {
     .map(({ name }) => name);
 }
 
+const splitSegments = (text: string) => text.split(/\s*(?:\/|,|;|\band\b)\s*/i).map((segment) => segment.trim()).filter(Boolean);
+
+/**
+ * The single speciality a topic is filed under, used by every list, filter and side-panel group so they
+ * always agree. The first speciality named in the topic's free-text `specialty` wins (authors put the lead
+ * speciality first, e.g. "Nephrology / Emergency Medicine" is a Nephrology topic). `fallback` is only used
+ * when the text names no catalogue speciality, for example a speciality picked from the shared catalogue.
+ * Display only: the stored value is never changed.
+ */
+export function canonicalSpeciality(value: string | null | undefined, fallback?: string | null): string {
+  const text = (value ?? "").trim();
+  const alternative = (fallback ?? "").trim();
+  const tag = (text && inferMedicalSpecialityTags(text)[0]) || (alternative && inferMedicalSpecialityTags(alternative)[0]);
+  if (tag) return tag;
+  const label = splitSegments(text || alternative)[0];
+  return label ?? UNASSIGNED_SPECIALITY;
+}
+
 /**
  * Display-only summary of a topic's free-text `specialty` (e.g. "Endocrinology / Podiatry / Vascular Surgery").
  * Returns the primary speciality for a compact chip and how many further ones were left out. The stored
@@ -52,10 +86,36 @@ export function inferMedicalSpecialityTags(value: string) {
  */
 export function summarizeSpecialty(value: string): { primary: string; extra: number } {
   const text = (value ?? "").trim();
-  if (!text) return { primary: "Unassigned", extra: 0 };
+  if (!text) return { primary: UNASSIGNED_SPECIALITY, extra: 0 };
   const tags = inferMedicalSpecialityTags(text);
-  const segments = text.split(/\s*(?:\/|,|;|\band\b)\s*/i).map((segment) => segment.trim()).filter(Boolean);
-  const primary = tags[0] ?? segments[0] ?? text;
+  const segments = splitSegments(text);
+  const primary = canonicalSpeciality(text);
   const extra = Math.max(0, Math.max(tags.length, segments.length) - 1);
   return { primary, extra };
+}
+
+export type SpecialityGroup<T> = { speciality: string; items: T[] };
+
+/**
+ * Splits items into one group per speciality, A to Z with "Unassigned" last. Items keep the order they were
+ * given in, so the caller's sort (newest, A-Z, most viewed...) still applies inside every group.
+ */
+export function groupBySpeciality<T>(items: readonly T[], specialityOf: (item: T) => string): SpecialityGroup<T>[] {
+  const groups = new Map<string, T[]>();
+  for (const item of items) {
+    const key = specialityOf(item) || UNASSIGNED_SPECIALITY;
+    const list = groups.get(key);
+    if (list) list.push(item);
+    else groups.set(key, [item]);
+  }
+  return [...groups]
+    .map(([speciality, list]) => ({ speciality, items: list }))
+    .sort((a, b) => Number(a.speciality === UNASSIGNED_SPECIALITY) - Number(b.speciality === UNASSIGNED_SPECIALITY) || a.speciality.localeCompare(b.speciality, "en", { sensitivity: "base" }));
+}
+
+/** Distinct specialities with how many items fall in each, largest first. Feeds every Speciality filter. */
+export function specialityCounts<T>(items: readonly T[], specialityOf: (item: T) => string): { value: string; count: number }[] {
+  return groupBySpeciality(items, specialityOf)
+    .map(({ speciality, items: list }) => ({ value: speciality, count: list.length }))
+    .sort((a, b) => Number(a.value === UNASSIGNED_SPECIALITY) - Number(b.value === UNASSIGNED_SPECIALITY) || b.count - a.count || a.value.localeCompare(b.value));
 }

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { groupBySpeciality } from "@/lib/medical-specialities";
 import { Activity, CheckCircle2, ChevronRight, Clock3, Hourglass, Library, Search, X } from "@/components/icons-3d";
 import {
   SORT_KEYS,
@@ -25,10 +26,12 @@ export type TopicExplorerProps = {
   viewsAvailable: boolean;
   initialSort: SortKey;
   initialFilters: ExplorerFilters;
+  /** Group the list into one section per speciality (default). Switched off with ?group=none. */
+  initialGrouped?: boolean;
 };
 
 /** Writes the current view into the address bar so a filtered list can be bookmarked or shared. */
-function syncUrl(sort: SortKey, filters: ExplorerFilters) {
+function syncUrl(sort: SortKey, filters: ExplorerFilters, grouped: boolean) {
   const params = new URLSearchParams(window.location.search);
   const set = (key: string, value: string, fallback: string) => (value && value !== fallback ? params.set(key, value) : params.delete(key));
   set("sort", sort, "recent");
@@ -37,14 +40,16 @@ function syncUrl(sort: SortKey, filters: ExplorerFilters) {
   set("pillar", filters.pillar, "");
   set("authority", filters.authority, "");
   set("review", filters.review, "all");
+  set("group", grouped ? "" : "none", "");
   const query = params.toString();
   window.history.replaceState(null, "", `${window.location.pathname}${query ? `?${query}` : ""}`);
 }
 
-export function TopicExplorer({ topics, viewsAvailable, initialSort, initialFilters }: TopicExplorerProps) {
+export function TopicExplorer({ topics, viewsAvailable, initialSort, initialFilters, initialGrouped = true }: TopicExplorerProps) {
   const [sort, setSort] = useState<SortKey>(!viewsAvailable && (initialSort === "viewed" || initialSort === "trending") ? "recent" : initialSort);
   const [filters, setFilters] = useState<ExplorerFilters>(initialFilters);
   const [visible, setVisible] = useState(PAGE_SIZE);
+  const [grouped, setGrouped] = useState(initialGrouped);
 
   const specialities = useMemo(() => facet(topics, "speciality"), [topics]);
   const pillars = useMemo(() => facet(topics, "pillar"), [topics]);
@@ -57,19 +62,25 @@ export function TopicExplorer({ topics, viewsAvailable, initialSort, initialFilt
     const merged = { ...filters, ...next };
     setFilters(merged);
     setVisible(PAGE_SIZE);
-    syncUrl(sort, merged);
+    syncUrl(sort, merged, grouped);
   };
   const changeSort = (next: SortKey) => {
     setSort(next);
-    syncUrl(next, filters);
+    syncUrl(next, filters, grouped);
   };
   const clear = () => {
     setFilters(emptyFilters);
     setVisible(PAGE_SIZE);
-    syncUrl(sort, emptyFilters);
+    syncUrl(sort, emptyFilters, grouped);
   };
 
-  const shown = results.slice(0, visible);
+  const changeGrouped = (next: boolean) => {
+    setGrouped(next);
+    syncUrl(sort, filters, next);
+  };
+
+  const shown = grouped ? results : results.slice(0, visible);
+  const sections = useMemo(() => (grouped ? groupBySpeciality(results, (topic) => topic.speciality) : []), [grouped, results]);
 
   return (
     <section className="card section-card topic-explorer" aria-labelledby="explorer-title">
@@ -99,6 +110,9 @@ export function TopicExplorer({ topics, viewsAvailable, initialSort, initialFilt
             );
           })}
         </div>
+        <button type="button" role="switch" aria-checked={grouped} className={grouped ? "scope-chip scope-chip-active" : "scope-chip"} onClick={() => changeGrouped(!grouped)}>
+          Group by speciality
+        </button>
         <label className="explorer-search">
           <Search size={15} aria-hidden="true" />
           <input
@@ -132,10 +146,47 @@ export function TopicExplorer({ topics, viewsAvailable, initialSort, initialFilt
         {viewsAvailable && !anyViews && (sort === "viewed" || sort === "trending") ? " · no views recorded yet, counts start as topics are opened" : ""}
       </p>
 
-      {shown.length ? (
+      {results.length && grouped ? (
+        <div className="explorer-groups">
+          {sections.map(({ speciality, items }) => (
+            <details key={`${speciality}-${activeCount > 0 ? "filtered" : "all"}`} className="explorer-group" open={activeCount > 0 || sections.length === 1}>
+              <summary><span>{speciality}</span><span className="explorer-group-count">{items.length}</span></summary>
+              <ol className="explorer-list">
+                {items.map((topic, index) => (
+                  <TopicRow key={topic.id} topic={topic} index={index} sort={sort} viewsAvailable={viewsAvailable} />
+                ))}
+              </ol>
+            </details>
+          ))}
+        </div>
+      ) : shown.length ? (
         <ol className="explorer-list">
           {shown.map((topic, index) => (
-            <li key={topic.id}>
+            <TopicRow key={topic.id} topic={topic} index={index} sort={sort} viewsAvailable={viewsAvailable} />
+          ))}
+        </ol>
+      ) : (
+        <div className="empty-state">
+          <span className="empty-state-icon"><Search size={22} aria-hidden="true" /></span>
+          <strong>No topics match these filters</strong>
+          <p>Try a different speciality or clear the filters to see every live topic.</p>
+          <button type="button" className="button-secondary" onClick={clear}>Clear filters</button>
+        </div>
+      )}
+
+      {!grouped && results.length > shown.length && (
+        <div className="explorer-more">
+          <button type="button" className="button-secondary" onClick={() => setVisible((count) => count + PAGE_SIZE)}>Show {Math.min(PAGE_SIZE, results.length - shown.length)} more</button>
+          <button type="button" className="explorer-link-button" onClick={() => setVisible(results.length)}>Show all {numberFormat.format(results.length)}</button>
+        </div>
+      )}
+    </section>
+  );
+}
+
+function TopicRow({ topic, index, sort, viewsAvailable }: { topic: ExplorerTopic; index: number; sort: SortKey; viewsAvailable: boolean }) {
+  return (
+    <li>
               <Link href={`/dashboard/diseases/${topic.id}`} className="explorer-row">
                 <span className="explorer-rank" aria-hidden="true">{index + 1}</span>
                 <span className="explorer-main">
@@ -162,24 +213,6 @@ export function TopicExplorer({ topics, viewsAvailable, initialSort, initialFilt
                 <ChevronRight size={15} className="update-chevron" aria-hidden="true" />
               </Link>
             </li>
-          ))}
-        </ol>
-      ) : (
-        <div className="empty-state">
-          <span className="empty-state-icon"><Search size={22} aria-hidden="true" /></span>
-          <strong>No topics match these filters</strong>
-          <p>Try a different speciality or clear the filters to see every live topic.</p>
-          <button type="button" className="button-secondary" onClick={clear}>Clear filters</button>
-        </div>
-      )}
-
-      {results.length > shown.length && (
-        <div className="explorer-more">
-          <button type="button" className="button-secondary" onClick={() => setVisible((count) => count + PAGE_SIZE)}>Show {Math.min(PAGE_SIZE, results.length - shown.length)} more</button>
-          <button type="button" className="explorer-link-button" onClick={() => setVisible(results.length)}>Show all {numberFormat.format(results.length)}</button>
-        </div>
-      )}
-    </section>
   );
 }
 

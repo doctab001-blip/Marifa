@@ -8,7 +8,7 @@ import { collapseTopicFamilies } from "@/lib/data/topic-families";
 import { DiseaseDetailSchema, type DiseaseDetail } from "@/lib/validations/disease";
 import { isSupabaseConfigured } from "@/lib/supabase/config";
 import { createSupabaseDataClient } from "@/lib/supabase/data-client";
-import { hasMedicalSpeciality, inferMedicalSpecialityTags } from "@/lib/medical-specialities";
+import { canonicalSpeciality, hasMedicalSpeciality, inferMedicalSpecialityTags } from "@/lib/medical-specialities";
 import { isClinicalDirectoryEligible } from "@/lib/data/clinical-directory-eligibility";
 
 export type DiseaseGuidelineSummary = Pick<DiseaseDetail, "id" | "title" | "specialty" | "authority" | "status" | "version" | "lastReviewed" | "pillar" | "clinicalReviewStatus"> & { summary: string; sourceType?: string; speciality?: string; subSpecialities?: string[]; keywords?: string[] };
@@ -71,7 +71,8 @@ export function searchKeywords(disease: DiseaseDetail): string[] {
 function toSummary(disease: DiseaseDetail, row: GuidelineRow): Omit<DiseaseGuidelineSummary, "sourceType"> {
   const inferred = inferMedicalSpecialityTags(disease.specialty);
   const catalogSpeciality = Array.isArray(row.speciality) ? row.speciality[0]?.name : row.speciality?.name;
-  const speciality = catalogSpeciality ?? disease.speciality ?? inferred[0] ?? disease.specialty;
+  // One canonical speciality per topic, the same one every list, filter and side-panel group uses.
+  const speciality = canonicalSpeciality(disease.specialty, catalogSpeciality ?? disease.speciality);
   return { id: disease.id, title: disease.title, specialty: disease.specialty, speciality, subSpecialities: disease.sub_specialities ?? row.sub_specialities ?? inferred.filter((tag) => tag !== speciality), authority: disease.authority, clinicalReviewStatus: disease.clinicalReviewStatus, status: disease.status, version: disease.version, lastReviewed: disease.lastReviewed, pillar: disease.pillar, summary: disease.pathophysiology.summary, keywords: searchKeywords(disease) };
 }
 

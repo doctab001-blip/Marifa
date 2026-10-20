@@ -1,5 +1,5 @@
 // Pure sort/filter for the Draft, Approved and Published management tabs.
-import { summarizeSpecialty } from "@/lib/medical-specialities";
+import { canonicalSpeciality, groupBySpeciality, specialityCounts, type SpecialityGroup } from "@/lib/medical-specialities";
 
 export const MANAGED_SORTS = ["newest", "oldest", "title", "title-desc"] as const;
 export type ManagedSort = (typeof MANAGED_SORTS)[number];
@@ -20,7 +20,7 @@ const time = (value: string) => {
 const byTitle = (a: ManagedItem, b: ManagedItem) => a.title.localeCompare(b.title, "en", { sensitivity: "base" });
 
 export function primarySpeciality(specialty: string) {
-  return summarizeSpecialty(specialty).primary;
+  return canonicalSpeciality(specialty);
 }
 
 export function sortManaged<T extends ManagedItem>(items: readonly T[], sort: ManagedSort): T[] {
@@ -44,10 +44,10 @@ export function filterManaged<T extends ManagedItem>(items: readonly T[], query:
 }
 
 export function specialityOptions(items: readonly ManagedItem[]) {
-  const counts = new Map<string, number>();
-  for (const item of items) {
-    const name = primarySpeciality(item.specialty);
-    counts.set(name, (counts.get(name) ?? 0) + 1);
-  }
-  return [...counts].map(([value, count]) => ({ value, count })).sort((a, b) => b.count - a.count || a.value.localeCompare(b.value));
+  return specialityCounts(items, (item) => primarySpeciality(item.specialty));
+}
+
+/** One section per speciality (A to Z); the sort chosen by the user still orders the tiles inside each section. */
+export function groupManaged<T extends ManagedItem>(items: readonly T[]): SpecialityGroup<T>[] {
+  return groupBySpeciality(items, (item) => primarySpeciality(item.specialty));
 }

@@ -24,15 +24,16 @@ import { getDiseaseDraftTopicCount } from "@/lib/data/disease-drafts";
 
 const dateFormat = new Intl.DateTimeFormat("en-SA", { dateStyle: "medium", timeZone: "Asia/Riyadh" });
 
-type DashboardSearchParams = { error?: string | string[]; sort?: string | string[]; q?: string | string[]; speciality?: string | string[]; pillar?: string | string[]; authority?: string | string[]; review?: string | string[] };
+type DashboardSearchParams = { error?: string | string[]; sort?: string | string[]; q?: string | string[]; speciality?: string | string[]; pillar?: string | string[]; authority?: string | string[]; review?: string | string[]; group?: string | string[] };
 
 const first = (value: string | string[] | undefined) => (Array.isArray(value) ? value[0] : value) ?? "";
 
-function readExplorerState(params: DashboardSearchParams): { sort: SortKey; filters: ExplorerFilters } {
+function readExplorerState(params: DashboardSearchParams): { sort: SortKey; filters: ExplorerFilters; grouped: boolean } {
   const sort = first(params.sort);
   const review = first(params.review);
   return {
     sort: isSortKey(sort) ? sort : "recent",
+    grouped: first(params.group) !== "none",
     filters: {
       ...emptyFilters,
       query: first(params.q).slice(0, 120),
@@ -71,13 +72,13 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
       <DemoBanner />
 
       <Suspense fallback={<DashboardLoadingState />}>
-        <DashboardContent initialSort={explorerState.sort} initialFilters={explorerState.filters} />
+        <DashboardContent initialSort={explorerState.sort} initialFilters={explorerState.filters} initialGrouped={explorerState.grouped} />
       </Suspense>
     </main>
   );
 }
 
-async function DashboardContent({ initialSort, initialFilters }: { initialSort: SortKey; initialFilters: ExplorerFilters }) {
+async function DashboardContent({ initialSort, initialFilters, initialGrouped }: { initialSort: SortKey; initialFilters: ExplorerFilters; initialGrouped: boolean }) {
   const [guidelines, spotlight, draftTopicCount, viewStats] = await Promise.all([
     getApprovedDiseaseGuidelines(),
     getSpotlightDevelopments(),
@@ -140,7 +141,7 @@ async function DashboardContent({ initialSort, initialFilters }: { initialSort: 
             </div>
           </section>
         ) : (
-          <TopicExplorer topics={topics} viewsAvailable={viewStats.available} initialSort={initialSort} initialFilters={initialFilters} />
+          <TopicExplorer topics={topics} viewsAvailable={viewStats.available} initialSort={initialSort} initialFilters={initialFilters} initialGrouped={initialGrouped} />
         )}
 
         <div className="dashboard-stack">
