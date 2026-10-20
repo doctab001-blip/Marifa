@@ -1,0 +1,72 @@
+/* Protocol -> patient orders: apply panel, review rows and patient workspace. Uses the shared Marifa tokens. */
+.co-apply-trigger { display: inline-flex; align-items: center; gap: .5rem; }
+.co-dialog { width: min(1100px, 96vw); max-height: 92vh; padding: 0; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); color: var(--font-color-body); box-shadow: 0 30px 80px -24px rgba(14, 26, 31, .45); overflow: hidden; }
+.co-dialog[open] { display: flex; flex-direction: column; }
+.co-dialog::backdrop { background: rgba(8, 20, 28, .55); backdrop-filter: blur(2px); }
+.co-dialog-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; padding: 1.1rem 1.4rem; border-bottom: 1px solid var(--line); background: var(--royal-faint); }
+.co-dialog-head h2 { margin: 0; font-size: 1.25rem; }
+.co-dialog-body { padding: 1.1rem 1.4rem; overflow: auto; flex: 1; display: grid; gap: 1rem; align-content: start; }
+.co-dialog-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; padding: .9rem 1.4rem; border-top: 1px solid var(--line); background: var(--surface-2); }
+.co-foot-actions { display: flex; flex-wrap: wrap; gap: .6rem; }
+.co-notice { border: 1px solid #fedf89; background: #fffaeb; color: #7a2e0e; border-radius: 12px; padding: .7rem .9rem; font-size: .92rem; }
+.co-notice-info { border-color: var(--royal-line); background: var(--royal-faint); color: var(--font-color-body); }
+.co-notice-danger { border-color: #fecdca; background: #fef3f2; color: #7a271a; }
+.co-notice-ok { border-color: #abefc6; background: #ecfdf3; color: #054f31; }
+.co-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: .6rem; }
+.co-meta > div { border: 1px solid var(--line); border-radius: 12px; padding: .55rem .8rem; background: #fff; }
+.co-meta dt { font-size: .74rem; text-transform: uppercase; letter-spacing: .06em; opacity: .65; }
+.co-meta dd { margin: .1rem 0 0; font-weight: 700; overflow-wrap: anywhere; }
+.co-tabs { display: flex; flex-wrap: wrap; gap: .4rem; border-bottom: 1px solid var(--line); }
+.co-tab { border: 1px solid transparent; border-bottom: 0; border-radius: 10px 10px 0 0; padding: .5rem .85rem; background: transparent; font-weight: 700; cursor: pointer; display: inline-flex; gap: .45rem; align-items: center; }
+.co-tab[aria-selected="true"] { background: var(--royal-soft); border-color: var(--royal-line); color: var(--royal-ink); }
+.co-count { font-size: .74rem; padding: .05rem .45rem; border-radius: 999px; background: var(--surface-3); }
+.co-rows { display: grid; gap: .65rem; }
+.co-row { border: 1px solid var(--line); border-left-width: 4px; border-radius: 12px; padding: .75rem .9rem; background: #fff; display: grid; gap: .5rem; }
+.co-row[data-requirement="required"] { border-left-color: #34d399; }
+.co-row[data-requirement="optional"] { border-left-color: #94a3b8; }
+.co-row[data-requirement="conditional"] { border-left-color: #fbbf24; }
+.co-row[data-selected="false"] { opacity: .72; }
+.co-row-head { display: flex; align-items: flex-start; gap: .65rem; }
+.co-row-head input[type="checkbox"] { margin-top: .3rem; width: 1.05rem; height: 1.05rem; }
+.co-row-title { flex: 1; min-width: 0; }
+.co-row-title strong { overflow-wrap: anywhere; }
+.co-row-title small { display: block; opacity: .75; }
+.co-row-actions { display: flex; gap: .4rem; }
+.co-badges { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .25rem; }
+.co-params { display: flex; flex-wrap: wrap; gap: .4rem; }
+.co-param { border: 1px solid var(--line); border-radius: 8px; padding: .15rem .5rem; font-size: .85rem; background: var(--surface-2); }
+.co-param b { font-weight: 700; margin-right: .3rem; }
+.co-text { margin: 0; font-size: .92rem; white-space: pre-line; }
+.co-flag { border-radius: 10px; padding: .5rem .7rem; font-size: .88rem; display: grid; gap: .3rem; }
+.co-flag-warn { background: #fffaeb; border: 1px solid #fedf89; }
+.co-flag-dup { background: #fef3f2; border: 1px solid #fecdca; }
+.co-flag ul { margin: 0; padding-left: 1.1rem; }
+.co-flag label { display: flex; gap: .45rem; align-items: center; font-weight: 700; }
+.co-edit { display: grid; gap: .55rem; padding-top: .35rem; border-top: 1px dashed var(--line); }
+.co-edit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: .55rem; }
+.co-field { display: grid; gap: .2rem; font-size: .82rem; font-weight: 700; }
+.co-field input, .co-field select, .co-field textarea { font: inherit; font-weight: 400; padding: .4rem .55rem; border: 1px solid var(--line-strong); border-radius: 8px; background: #fff; color: inherit; min-height: 36px; }
+.co-empty { border: 1px dashed var(--line-strong); border-radius: 12px; padding: 1rem; text-align: center; background: var(--surface-2); }
+.co-add { border: 1px dashed var(--royal-line-strong); border-radius: 12px; padding: .7rem .9rem; background: var(--royal-faint); }
+.co-add summary { cursor: pointer; font-weight: 700; }
+.co-removed { font-size: .88rem; display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
+/* Patient workspace */
+.co-page { display: grid; gap: 1.1rem; }
+.co-banner { border: 1px solid #fecdca; background: #fef3f2; color: #7a271a; border-radius: 12px; padding: .65rem .9rem; font-weight: 600; }
+.co-grid-4 { display: grid; gap: .9rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); align-items: start; }
+.co-col { border: 1px solid var(--line); border-radius: 14px; background: var(--surface-2); padding: .8rem; display: grid; gap: .65rem; }
+.co-col > h3 { margin: 0; font-size: 1rem; display: flex; justify-content: space-between; align-items: center; }
+.co-order { border: 1px solid var(--line); border-radius: 12px; background: #fff; padding: .7rem .8rem; display: grid; gap: .45rem; }
+.co-order[data-status="draft"] { border-left: 4px solid #fbbf24; }
+.co-order[data-status="reviewed"] { border-left: 4px solid #34d399; }
+.co-order-actions { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; }
+.co-order details { border-top: 1px dashed var(--line); padding-top: .4rem; }
+.co-order details summary { cursor: pointer; font-weight: 700; font-size: .88rem; }
+.co-inline-form { display: inline-flex; gap: .4rem; align-items: center; flex-wrap: wrap; }
+.co-table { width: 100%; border-collapse: collapse; }
+.co-table th, .co-table td { text-align: left; padding: .55rem .6rem; border-bottom: 1px solid var(--line); }
+.co-form-grid { display: grid; gap: .6rem; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); align-items: end; }
+@media (max-width: 640px) { .co-dialog { width: 100vw; max-height: 100vh; border-radius: 0; } .co-dialog-head, .co-dialog-body, .co-dialog-foot { padding-inline: .9rem; } }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .co-row, :root:not([data-theme="light"]) .co-order, :root:not([data-theme="light"]) .co-meta > div { background: var(--surface); } }
+[data-theme="dark"] .co-row, [data-theme="dark"] .co-order, [data-theme="dark"] .co-meta > div, [data-theme="dark"] .co-field input, [data-theme="dark"] .co-field select, [data-theme="dark"] .co-field textarea { background: var(--surface); }
+.co-apply-bar { margin: .6rem 0 1rem; }

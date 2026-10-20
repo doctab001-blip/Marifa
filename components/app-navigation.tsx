@@ -44,6 +44,7 @@ export const navigation: NavItem[] = [
   { href: "/dashboard/medical-calculators", label: "Medical Calculators", icon: CalculatorIcon },
   { href: "/dashboard/formulary", label: "Medicines and Formulary", icon: Pill },
   { href: "/dashboard/recent-developments", label: "Recent Developments", icon: Activity },
+  { href: "/dashboard/patients", label: "Patient Orders", icon: ClipboardList },
   { href: "/dashboard/protocols", label: "Local Protocols & SOPs", icon: FileCheck2 },
   { href: "/dashboard/governance", label: "Clinical Governance", icon: ShieldCheck },
   { href: "/dashboard/directory", label: "Staff Directory", icon: UsersRound },
@@ -51,11 +52,11 @@ export const navigation: NavItem[] = [
 ];
 
 const sections = [
-  { label: "Workspace", items: navigation.slice(0, 5) },
-  { label: "Hospital", items: navigation.slice(5) },
+  { label: "Workspace", items: navigation.slice(0, 6) },
+  { label: "Hospital", items: navigation.slice(6) },
 ];
 
-const mobileItems = [navigation[0], navigation[1], navigation[2], navigation[8]];
+const mobileItems = [navigation[0], navigation[1], navigation[2], navigation[9]];
 
 const diseaseLinks: NavItem[] = [
   { href: "/dashboard/diseases", label: "Disease directory", icon: Stethoscope },

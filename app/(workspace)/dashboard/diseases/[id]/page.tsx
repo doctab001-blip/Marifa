@@ -5,6 +5,7 @@ import { ArrowLeft, CalendarCheck, CheckCircle2, FileText, Hourglass, ShieldAler
 import { EmergencyTopic } from "@/components/emergency-topic";
 import { TopicPager, type TopicLink } from "@/components/topic-library";
 import { TopicApproveButton } from "@/components/topic-approve-button";
+import { ApplyProtocolPanel } from "@/components/clinical-orders/apply-protocol-panel";
 import { getApprovedDiseaseGuideline, getApprovedDiseaseGuidelineVersion, getApprovedDiseaseGuidelines } from "@/lib/data/disease-guidelines";
 import { canonicalTopicId } from "@/lib/data/merged-topics";
 import { recordTopicView } from "@/lib/data/topic-views";
@@ -103,6 +104,7 @@ export default async function DiseaseDetailPage({ params, searchParams }: { para
           <section className="topic-family-member" key={topic.disease.id} aria-labelledby={`family-topic-${topic.disease.id}`}>
             {family ? <header className="topic-family-member-header"><p>Topic section {index + 1}</p><h2 id={`family-topic-${topic.disease.id}`}>{withoutInlineSourceLocators(topic.disease.title)}</h2></header> : null}
             <TopicApprovalBar disease={topic.disease} position="top" />
+            {!version ? <p className="co-apply-bar"><ApplyProtocolPanel protocolId={topic.disease.id} protocolTitle={withoutInlineSourceLocators(topic.disease.title)} sourceModule="disease_management" /></p> : null}
             <EmergencyTopic disease={topic.disease} investigationSource={topic.investigationSource} />
             <TopicApprovalBar disease={topic.disease} message={index === 0 ? approvalMessage : undefined} editHref={`/dashboard/admin/guidelines/${encodeURIComponent(topic.disease.id)}${version && index === 0 ? `?version=${encodeURIComponent(version)}` : ""}`} />
           </section>

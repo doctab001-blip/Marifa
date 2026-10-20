@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, FilePenLine, ShieldAlert } from "@/components/icons-3d";
 import { EmergencyTopic } from "@/components/emergency-topic";
+import { ApplyProtocolPanel } from "@/components/clinical-orders/apply-protocol-panel";
 import { getPublishedProtocol } from "@/lib/data/local-protocols";
 import { PROTOCOLS_PUBLISHED } from "@/lib/local-protocols";
 
@@ -41,6 +42,7 @@ export default async function LocalProtocolPage({ params }: { params: Promise<{ 
         {result.canEdit && (
           <p><Link className="ui-button ui-button-secondary" href={`/dashboard/admin/guidelines/${encodeURIComponent(id)}?version=${encodeURIComponent(result.versionId)}`}><FilePenLine size={15} aria-hidden="true" /> Edit protocol</Link></p>
         )}
+        <p className="co-apply-bar"><ApplyProtocolPanel protocolId={protocol.id} protocolTitle={protocol.title} sourceModule="clinical_guidelines" /></p>
         <hr className="scenario-divider" />
         <EmergencyTopic disease={protocol} investigationSource={result.source} />
       </article>

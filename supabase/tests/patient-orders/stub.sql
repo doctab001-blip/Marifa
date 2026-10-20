@@ -1,0 +1,12 @@
+create role anon nologin; create role authenticated nologin; create role service_role nologin bypassrls;
+create schema auth;
+create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub', true), '')::uuid $$;
+create table public.organizations (id uuid primary key default gen_random_uuid(), name text);
+create table public.profiles (id uuid primary key, display_name text);
+create table public.organization_memberships (id uuid primary key default gen_random_uuid(), organization_id uuid not null references public.organizations(id), user_id uuid not null references public.profiles(id), professional_level text, account_status text not null default 'active');
+create table public.roles (id uuid primary key default gen_random_uuid(), code text unique not null);
+create table public.membership_roles (membership_id uuid references public.organization_memberships(id), role_id uuid references public.roles(id));
+create table public.clinical_guidelines (id uuid primary key, title text, organization_id uuid, status text);
+create table public.guideline_versions (id uuid primary key default gen_random_uuid(), guideline_id uuid references public.clinical_guidelines(id), status text, is_current boolean);
+create table public.audit_events (id uuid primary key default gen_random_uuid(), organization_id uuid, actor_user_id uuid references public.profiles(id), action text not null, entity_type text not null, entity_id uuid, metadata jsonb not null default '{}', occurred_at timestamptz not null default now());
+grant usage on schema public, auth to anon, authenticated, service_role;
