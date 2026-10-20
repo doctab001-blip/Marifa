@@ -123,13 +123,50 @@ export function specialityCounts<T>(items: readonly T[], specialityOf: (item: T)
 }
 
 /**
- * A fixed colour per speciality so the same speciality looks the same on every page. Catalogue names get
- * evenly spread hues (golden-angle steps keep neighbours apart); other labels get a stable hash hue;
- * "Unassigned" is grey. Used through the `data-spec` attribute and the --spec-hue / --spec-sat CSS variables.
+ * One fixed hue (0-360) per speciality so it looks the same on every page: Emergency Medicine is yellow,
+ * Cardiology red, Pulmonology sky blue, Neurology violet, Obstetrics and Gynecology pink, and so on.
+ * Labels outside the catalogue get a stable hash hue; "Unassigned" is grey. Used through the `data-spec`
+ * attribute and the --spec-hue / --spec-sat CSS variables.
  */
+export const SPECIALITY_HUES: Record<string, number> = {
+  "Emergency Medicine": 52,
+  "Cardiology": 0,
+  "Pulmonology": 205,
+  "Neurology": 270,
+  "Gastroenterology": 30,
+  "Nephrology": 225,
+  "Endocrinology": 140,
+  "Infectious Diseases": 85,
+  "Obstetrics and Gynecology": 330,
+  "Paediatrics": 300,
+  "Neonatology": 312,
+  "Haematology": 350,
+  "Internal Medicine": 245,
+  "General Surgery": 170,
+  "Acute Care Surgery": 14,
+  "Orthopedics and Trauma": 115,
+  "Otolaryngology (ENT)": 190,
+  "Ophthalmology": 128,
+  "Dermatology": 345,
+  "Psychiatry": 285,
+  "Urology": 215,
+  "Anaesthesiology": 160,
+  "Primary Care": 175,
+  "Oncology": 262,
+  "Rheumatology": 40,
+  "Geriatric Medicine": 20,
+  "Palliative Medicine": 255,
+  "Critical Care Medicine": 8,
+  "Toxicology": 70,
+  "Vascular Surgery": 355,
+  "Neurosurgery": 280,
+  "Allergy and Immunology": 100,
+  "Public Health": 155,
+};
+
 export function specialityHue(name: string): number {
-  const index = medicalSpecialities.findIndex((item) => item.name === name);
-  if (index >= 0) return Math.round((index * 137.508 + 14) % 360);
+  const fixed = SPECIALITY_HUES[name];
+  if (fixed !== undefined) return fixed;
   let hash = 0;
   for (const char of name) hash = (hash * 31 + char.charCodeAt(0)) >>> 0;
   return hash % 360;

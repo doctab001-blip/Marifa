@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { UNASSIGNED_SPECIALITY, canonicalSpeciality, groupBySpeciality, medicalSpecialities, specialityCounts } from "@/lib/medical-specialities";
+import { SPECIALITY_HUES, UNASSIGNED_SPECIALITY, canonicalSpeciality, groupBySpeciality, medicalSpecialities, specialityCounts, specialityHue } from "@/lib/medical-specialities";
 
 describe("canonicalSpeciality", () => {
   it("files a topic under the first speciality named, not under its setting", () => {
@@ -63,4 +63,17 @@ describe("groupBySpeciality", () => {
       { value: "Urology", count: 2 }, { value: "Anaesthesiology", count: 1 }, { value: "Cardiology", count: 1 }, { value: UNASSIGNED_SPECIALITY, count: 1 },
     ]);
   });
+});
+
+describe("speciality colours", () => {
+  it("gives every catalogue speciality its own fixed hue", () => {
+    for (const { name } of medicalSpecialities) expect(SPECIALITY_HUES[name], name).toBeTypeOf("number");
+    expect(new Set(medicalSpecialities.map(({ name }) => SPECIALITY_HUES[name])).size).toBe(medicalSpecialities.length);
+  });
+  it("makes emergency topics yellow and cardiology red", () => {
+    expect(specialityHue("Emergency Medicine")).toBeGreaterThanOrEqual(45);
+    expect(specialityHue("Emergency Medicine")).toBeLessThanOrEqual(60);
+    expect(specialityHue("Cardiology")).toBe(0);
+  });
+  it("is stable for labels outside the catalogue", () => expect(specialityHue("Podiatry")).toBe(specialityHue("Podiatry")));
 });
