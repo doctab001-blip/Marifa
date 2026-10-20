@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * Marifa Governance Hub (v3.4 Clinical Standard), dark layout.
+ * Marifa Governance Hub (Sample data), dark layout.
  * Needs only React, Tailwind and lucide-react. Tabs, Modal and Progress are local
  * components (Radix/shadcn-shaped) so they can be swapped for @/components/ui/* later.
  * All data is placeholder data.
@@ -321,7 +321,7 @@ export default function MarifaGovernanceHub() {
     { id: "incidents", label: "Incident & Risk Management", badge: `${open.length} Open`, icon: <AlertTriangle className="h-4 w-4" /> },
     { id: "audits", label: "Clinical Audits & QIPs", badge: `${audits.length} Active`, icon: <Activity className="h-4 w-4" /> },
     { id: "protocols", label: "Guidelines & Lifecycle", badge: `${PROTOCOLS.length - PROTOCOLS.filter((p) => p.status === "Approved").length + 9} Due`, icon: <FileText className="h-4 w-4" /> },
-    { id: "regulatory", label: "Regulatory & CQC Readiness", badge: "", icon: <ShieldCheck className="h-4 w-4" /> },
+    { id: "regulatory", label: "UK CQC sample (not CBAHI)", badge: "", icon: <ShieldCheck className="h-4 w-4" /> },
   ];
 
   return (
@@ -334,8 +334,8 @@ export default function MarifaGovernanceHub() {
             <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl border border-indigo-400/30 bg-indigo-500/15"><ShieldCheck className="h-6 w-6 text-[color:var(--mgh-indigo)]" /></div>
             <div>
               <div className="flex flex-wrap items-center gap-3">
-                <h1 className="text-2xl font-bold tracking-tight text-[color:var(--mgh-strong)]">Marifa Governance Hub</h1>
-                <span className="rounded-full border border-indigo-400/30 bg-indigo-500/15 px-2.5 py-0.5 text-xs font-medium text-[color:var(--mgh-indigo)]">v3.4 Clinical Standard</span>
+                <h1 className="text-2xl font-bold tracking-tight text-[color:var(--mgh-strong)]">Governance demonstration</h1>
+                <span className="rounded-full border border-indigo-400/30 bg-indigo-500/15 px-2.5 py-0.5 text-xs font-medium text-[color:var(--mgh-indigo)]">Sample data</span>
               </div>
               <p className="mt-1 max-w-xl text-sm text-[color:var(--mgh-muted)]">Accountable clinical review, quality oversight, and regulatory compliance tracking across departments.</p>
             </div>

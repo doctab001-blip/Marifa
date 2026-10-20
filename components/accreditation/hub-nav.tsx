@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 
 const BASE = "/dashboard/accreditation-and-audits";
 const ITEMS = [
+  { href: "/dashboard/governance", label: "← Clinical Governance", exact: true },
   { href: BASE, label: "Readiness", exact: true },
   { href: `${BASE}/standards`, label: "Standards & evidence" },
   { href: `${BASE}/policies`, label: "Policies & read-and-sign" },

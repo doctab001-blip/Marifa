@@ -42,12 +42,13 @@ export default async function ReportPage() {
         <div className="gh-btnrow"><OutcomeBadge outcome={readiness.outcome} /></div>
         <p>{readiness.outcomeNote}</p>
         <div className="gh-grid">
-          <Stat label="Evidence-adjusted score" value={readiness.overallPct === null ? "—" : `${readiness.overallPct}%`} note={readiness.recordedPct === null ? undefined : `${readiness.recordedPct}% as recorded`} />
+          <Stat label="Internal readiness estimate" value={readiness.overallPct === null ? "—" : `${readiness.overallPct}%`} note={readiness.recordedPct === null ? undefined : `${readiness.recordedPct}% as recorded`} />
           <Stat label="Assessed" value={`${readiness.assessed} / ${readiness.applicable}`} note={readiness.coveragePct === null ? undefined : `${readiness.coveragePct}% coverage`} />
           <Stat label="ESRs not satisfactory" value={`${readiness.esrNotSatisfactory} / ${readiness.esrTotal}`} tone={readiness.esrNotSatisfactory > 0 ? "warn" : "ok"} />
+          <Stat label="Evidence completeness" value={readiness.evidenceCompletenessPct === null ? "—" : `${readiness.evidenceCompletenessPct}%`} note="Separate from the score" />
           <Stat label="Evidence missing or expired" value={readiness.satisfactoryWithoutCurrentEvidence} tone={readiness.satisfactoryWithoutCurrentEvidence > 0 ? "warn" : "ok"} note="Counted as partial" />
         </div>
-        <p className="gh-meta">Preparation indication only, not an accreditation decision. Scoring follows the thresholds in <Link href={`${BASE}/settings`}>Settings</Link>: {settings.scoringSourceNote}</p>
+        <p className="gh-meta">Internal readiness estimate only, not an accreditation decision. Method: {readiness.methodVersion}. Scoring follows the thresholds in <Link href={`${BASE}/settings`}>Settings</Link>: {settings.scoringSourceNote}</p>
       </section>
 
       {standards.length === 0 ? <p className="gh-notice">No standards imported yet.</p> : chapters.map((chapter) => {

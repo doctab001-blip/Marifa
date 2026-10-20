@@ -5,20 +5,29 @@
 //   npm i --no-save @electric-sql/pglite
 //   node supabase/tests/governance/run.mjs
 import { PGlite } from "@electric-sql/pglite";
+import { pgcrypto } from "@electric-sql/pglite/contrib/pgcrypto";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const migration = process.argv[2] ?? path.resolve(here, "../../migrations/20261020190000_cbahi_accreditation_hub.sql");
-const db = new PGlite();
-await db.exec(fs.readFileSync(path.join(here, "stub.sql"), "utf8"));
-await db.exec(`
+// CHAIN=1 builds the database from every earlier migration (the real schema) instead of the small stub.
+const chainMode = process.env.CHAIN === "1";
+const db = new PGlite(chainMode ? { extensions: { pgcrypto } } : {});
+if (chainMode) {
+  const dir = path.dirname(migration);
+  await db.exec(fs.readFileSync(path.join(here, "platform.sql"), "utf8"));
+  for (const f of fs.readdirSync(dir).filter((x) => x.endsWith(".sql") && x < path.basename(migration)).sort()) await db.exec(fs.readFileSync(path.join(dir, f), "utf8"));
+} else {
+  await db.exec(fs.readFileSync(path.join(here, "stub.sql"), "utf8"));
+  await db.exec(`
   alter default privileges in schema public grant all on tables to anon, authenticated, service_role;
   alter default privileges in schema storage grant all on tables to anon, authenticated, service_role;
   alter table storage.objects enable row level security;
   grant all on storage.objects, storage.buckets to authenticated, service_role;
 `);
+}
 await db.exec(fs.readFileSync(migration, "utf8"));
 
 const q = async (sql, params) => (await db.query(sql, params)).rows;
@@ -40,9 +49,10 @@ const U = {
 };
 const A = "aaaaaaaa-0000-4000-8000-000000000001", B = "bbbbbbbb-0000-4000-8000-000000000002";
 await db.exec(`
- insert into organizations(id,name) values ('${A}','A'),('${B}','B');
+ ${chainMode ? `insert into auth.users(id) values ${Object.values(U).map((u) => `('${u}')`).join(",")};` : ""}
+ insert into organizations(id,name${chainMode ? ",slug" : ""}) values ('${A}','A'${chainMode ? ",'org-a'" : ""}),('${B}','B'${chainMode ? ",'org-b'" : ""});
  insert into profiles(id,display_name) values ${Object.values(U).map((u, i) => `('${u}','user${i}')`).join(",")};
- insert into roles(code) values ('governance_lead'),('auditor'),('consultant'),('quality_manager_x');
+ insert into roles(code,name) values ('governance_lead','Governance lead'),('auditor','Auditor'),('consultant','Consultant'),('quality_manager_x','x');
  insert into organization_memberships(id,organization_id,user_id) values
    ('10000000-0000-4000-8000-000000000001','${A}','${U.lead}'),('10000000-0000-4000-8000-000000000002','${A}','${U.qm}'),
    ('10000000-0000-4000-8000-000000000003','${A}','${U.aud}'),('10000000-0000-4000-8000-000000000004','${A}','${U.staff}'),
@@ -67,7 +77,7 @@ await expectErr("partial without a gap description refused", () => rate(S1, "par
 await rate(S1, "partial", "Hand hygiene audit missing");
 ok("partial with notes accepted", (await q("select count(*)::int c from gov_assessments"))[0].c === 1);
 const ev = async (std, extra = "") => (await q(`insert into gov_evidence(organization_id,standard_id,title,storage_path,file_name,uploaded_by ${extra ? "," + extra.split("|")[0] : ""}) values ('${A}','${std}','Minutes','${A}/evidence/x.pdf','x.pdf','${U.lead}' ${extra ? "," + extra.split("|")[1] : ""}) returning id`))[0].id;
-const expired = await ev(S1, "valid_from,valid_until|'2020-01-01','2020-12-31'");
+await ev(S1, "valid_from,valid_until|'2020-01-01','2020-12-31'");
 await expectErr("expired evidence does not support satisfactory", () => rate(S1, "satisfactory"), "evidence_required");
 const current = await ev(S1);
 await rate(S1, "satisfactory");

@@ -122,6 +122,9 @@ describe("computeReadiness", () => {
     expect(r.satisfactoryWithoutCurrentEvidence).toBe(2);
     expect(r.recordedPct).toBe(100);
     expect(r.overallPct).toBe(90);
+    expect(r.evidenceCompletenessPct).not.toBeNull();
+    expect(r.evidenceCompletenessPct).toBeLessThan(100); // kept separate from the score itself
+    expect(r.methodVersion).toContain("readiness-v1");
   });
 
   it("an ESR with expired evidence is not satisfactory", () => {

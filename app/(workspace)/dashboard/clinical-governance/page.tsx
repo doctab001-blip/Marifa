@@ -1,5 +1,6 @@
-import ClinicalGovernanceHub from "@/components/governance/clinical-governance-hub";
+import { redirect } from "next/navigation";
 
-export default function ClinicalGovernancePage() {
-  return <ClinicalGovernanceHub />;
+/** Legacy address: the single Clinical Governance page lives at /dashboard/governance. */
+export default function ClinicalGovernanceRedirect(): never {
+  redirect("/dashboard/governance");
 }

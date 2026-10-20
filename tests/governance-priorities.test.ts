@@ -4,7 +4,7 @@ import type { AuditOverview, PolicyOverview, Readiness, SafetyOverview } from "@
 
 const readiness = (over: Partial<Readiness> = {}): Readiness => ({
   totalStandards: 10, notApplicable: 0, applicable: 10, assessed: 10, unassessed: 0, coveragePct: 100, satisfactory: 10, partial: 0, insufficient: 0,
-  satisfactoryWithoutCurrentEvidence: 0, expiringEvidence: 0, reviewOverdue: 0, overallPct: 100, recordedPct: 100, worstCasePct: 100,
+  satisfactoryWithoutCurrentEvidence: 0, expiringEvidence: 0, reviewOverdue: 0, methodVersion: "test", evidenceCompletenessPct: 100, overallPct: 100, recordedPct: 100, worstCasePct: 100,
   esrTotal: 2, esrSatisfactory: 2, esrNotSatisfactory: 0, esrNotSatisfactoryPct: 0, outcome: "accreditation", outcomeNote: "", chapters: [], ...over,
 });
 const policies = (over: Partial<PolicyOverview> = {}): PolicyOverview => ({ items: [], approved: 0, inReview: 0, drafts: 0, reviewOverdue: 0, reviewDueSoon: 0, assigned: 0, acknowledged: 0, ackPct: null, overdueAssignments: 0, ...over });

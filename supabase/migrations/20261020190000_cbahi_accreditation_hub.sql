@@ -433,8 +433,8 @@ begin
     if btrim(new.closure_note) = '' then
       raise exception 'closure_note_required: record why the incident can be closed' using errcode = 'P0001';
     end if;
-    if exists (select 1 from gov_capa c where c.incident_id = new.id and c.status in ('open', 'in_progress')) then
-      raise exception 'capa_open: close or complete every corrective action first' using errcode = 'P0001';
+    if exists (select 1 from gov_capa c where c.incident_id = new.id and c.status in ('open', 'in_progress', 'done')) then
+      raise exception 'capa_open: complete and verify every corrective action before closing the incident' using errcode = 'P0001';
     end if;
     if new.is_sentinel then
       if btrim(new.root_cause) = '' then
@@ -506,6 +506,8 @@ create or replace function public.gov_audit()
 returns trigger language plpgsql security definer set search_path = public as $$
 declare
   rec jsonb; oldrec jsonb; actor uuid; changes jsonb := '{}'::jsonb; k text;
+  -- Incident narratives and attachments may name patients, so the trail records which fields changed, never their content.
+  redact boolean := tg_table_name in ('gov_incidents', 'gov_incident_files');
 begin
   if tg_op = 'DELETE' then rec := to_jsonb(old); else rec := to_jsonb(new); end if;
   actor := coalesce(
@@ -519,7 +521,7 @@ begin
     oldrec := to_jsonb(old);
     for k in select jsonb_object_keys(rec) loop
       if rec->k is distinct from oldrec->k and k <> 'updated_at' then
-        changes := changes || jsonb_build_object(k, jsonb_build_object('from', oldrec->k, 'to', rec->k));
+        changes := changes || case when redact then jsonb_build_object(k, 'changed') else jsonb_build_object(k, jsonb_build_object('from', oldrec->k, 'to', rec->k)) end;
       end if;
     end loop;
     if changes = '{}'::jsonb then return new; end if;
@@ -529,6 +531,7 @@ begin
     (rec->>'organization_id')::uuid, actor, 'governance.' || tg_table_name || '.' || lower(tg_op), tg_table_name,
     nullif(rec->>'id', '')::uuid,
     case when tg_op = 'UPDATE' then jsonb_build_object('changes', changes)
+         when tg_op = 'INSERT' and redact then jsonb_build_object('summary', '')
          when tg_op = 'INSERT' then jsonb_build_object('summary', coalesce(rec->>'title', rec->>'code', rec->>'action', rec->>'file_name', rec->>'rating', ''))
          else '{}'::jsonb end
   );
@@ -717,7 +720,7 @@ create policy gov_evidence_insert on public.gov_evidence for insert with check (
 create policy gov_evidence_withdraw on public.gov_evidence for update using (public.gov_can_write(organization_id)) with check (public.gov_can_write(organization_id));
 
 -- Any active member can read approved policies (that is how read-and-sign works); governance staff see all statuses.
-create policy gov_policies_read on public.gov_policies for select using (public.gov_can_read(organization_id) or (status = 'approved' and public.is_org_member(organization_id)));
+create policy gov_policies_read on public.gov_policies for select using (public.gov_can_read(organization_id) or (status = 'approved' and private.is_org_member(organization_id)));
 create policy gov_policies_insert on public.gov_policies for insert with check (public.gov_can_write(organization_id) and created_by = auth.uid());
 create policy gov_policies_update on public.gov_policies for update using (public.gov_can_write(organization_id)) with check (public.gov_can_write(organization_id));
 create policy gov_policy_standards_read on public.gov_policy_standards for select using (public.gov_can_read(organization_id));
@@ -729,7 +732,7 @@ create policy gov_ack_read on public.gov_acknowledgements for select using (user
 
 -- Incidents: anyone in the organisation can report; the reporter sees their own; governance staff see and manage all.
 create policy gov_incidents_read on public.gov_incidents for select using (public.gov_can_read(organization_id) or reported_by = auth.uid());
-create policy gov_incidents_insert on public.gov_incidents for insert with check (public.is_org_member(organization_id) and reported_by = auth.uid());
+create policy gov_incidents_insert on public.gov_incidents for insert with check (private.is_org_member(organization_id) and reported_by = auth.uid());
 create policy gov_incidents_update on public.gov_incidents for update using (public.gov_can_write(organization_id)) with check (public.gov_can_write(organization_id));
 create policy gov_incident_files_read on public.gov_incident_files for select using (public.gov_can_read(organization_id));
 create policy gov_incident_files_insert on public.gov_incident_files for insert with check (
@@ -771,4 +774,4 @@ create policy gov_files_read on storage.objects for select using (
 create policy gov_files_insert on storage.objects for insert with check (
   bucket_id = 'governance-files' and (
     public.gov_can_write(((storage.foldername(name))[1])::uuid)
-    or ((storage.foldername(name))[2] = 'incidents' and public.is_org_member(((storage.foldername(name))[1])::uuid))));
+    or ((storage.foldername(name))[2] = 'incidents' and private.is_org_member(((storage.foldername(name))[1])::uuid))));

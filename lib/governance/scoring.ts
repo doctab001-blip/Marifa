@@ -60,6 +60,12 @@ export function isBackedByEvidence(health: EvidenceHealth): boolean {
   return health === "valid" || health === "expiring";
 }
 
+/**
+ * Identifies the calculation rules (rating points, how unassessed standards are treated, the evidence adjustment). Shown with
+ * every score so a figure can be traced to the method that produced it; bump it whenever the rules change.
+ */
+export const SCORING_METHOD_VERSION = "readiness-v1 (CBAHI process guide 2016 thresholds, configurable)";
+
 export type Outcome = "accreditation" | "conditional" | "denial_risk";
 export const OUTCOME_LABEL: Record<Outcome, string> = {
   accreditation: "On track for accreditation",
@@ -93,6 +99,13 @@ export type Readiness = {
   satisfactoryWithoutCurrentEvidence: number;
   expiringEvidence: number;
   reviewOverdue: number;
+  /** Which rules produced these figures. */
+  methodVersion: string;
+  /**
+   * Internal evidence-completeness measure, kept apart from the accreditation-style score: the share of satisfactory ratings
+   * backed by current, unexpired evidence. Null when nothing is rated satisfactory.
+   */
+  evidenceCompletenessPct: number | null;
   /** Headline: evidence-adjusted, over assessed standards. */
   overallPct: number | null;
   /** The same maths using the ratings exactly as recorded. */
@@ -219,6 +232,8 @@ export function computeReadiness(
     satisfactoryWithoutCurrentEvidence: noCurrentEvidence,
     expiringEvidence: expiring,
     reviewOverdue,
+    methodVersion: SCORING_METHOD_VERSION,
+    evidenceCompletenessPct: satisfactory === 0 ? null : round1(((satisfactory - noCurrentEvidence) / satisfactory) * 100),
     overallPct,
     recordedPct: pct(sumRecorded, assessed),
     worstCasePct: pct(sumAdjusted, applicable),

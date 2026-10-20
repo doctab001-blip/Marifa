@@ -105,7 +105,7 @@ export default async function ReadinessPage({ searchParams }: { searchParams: Pr
       ) : (
         <section className="gh-card" aria-labelledby="indication-heading">
           <div className="gh-hero">
-            <Gauge pct={readiness.overallPct} label="Overall score" tone={gaugeTone} />
+            <Gauge pct={readiness.overallPct} label="Readiness estimate" tone={gaugeTone} />
             <div style={{ display: "grid", gap: ".6rem" }}>
               <div className="gh-btnrow"><h2 id="indication-heading" style={{ margin: 0 }}>Indicated outcome</h2><OutcomeBadge outcome={readiness.outcome} /></div>
               <p style={{ margin: 0 }}>{readiness.outcomeNote}</p>
@@ -117,7 +117,7 @@ export default async function ReadinessPage({ searchParams }: { searchParams: Pr
               <Meter pct={readiness.coveragePct} tone="info" label="Assessment coverage" />
               <p className="gh-meta" style={{ margin: 0 }}>
                 An indication for preparation only, not a CBAHI decision. Scoring follows: {data.settings.scoringSourceNote}
-                {data.settings.editionLabel ? ` Edition in use: ${data.settings.editionLabel}.` : ""} Satisfactory ratings whose evidence has expired are counted as partial.
+                {data.settings.editionLabel ? ` Edition in use: ${data.settings.editionLabel}.` : ""} Satisfactory ratings whose evidence has expired are counted as partial in this estimate; evidence completeness is shown separately below. Method: {readiness.methodVersion}.
               </p>
             </div>
           </div>

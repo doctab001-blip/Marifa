@@ -14,6 +14,8 @@ create table public.roles (id uuid primary key default gen_random_uuid(), code t
 create table public.membership_roles (membership_id uuid references public.organization_memberships(id), role_id uuid references public.roles(id));
 create table public.clinical_guidelines (id uuid primary key, title text, organization_id uuid, status text);
 create table public.audit_events (id uuid primary key default gen_random_uuid(), organization_id uuid, actor_user_id uuid references public.profiles(id), action text not null, entity_type text not null, entity_id uuid, metadata jsonb not null default '{}', occurred_at timestamptz not null default now());
-create function public.is_org_member(target_org uuid) returns boolean language sql stable security definer as $$
+create schema private;
+create function private.is_org_member(target_org uuid) returns boolean language sql stable security definer as $$
   select exists (select 1 from organization_memberships m where m.organization_id = target_org and m.user_id = auth.uid() and m.account_status = 'active') $$;
 grant usage on schema public, auth, storage to anon, authenticated, service_role;
+grant usage on schema private to authenticated, service_role;

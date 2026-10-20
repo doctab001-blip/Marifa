@@ -113,6 +113,7 @@ function canonicalPath(pathname: string) {
     return pathname.replace("/dashboard/diseases", "/dashboard/disease-management");
   }
   if (pathname.startsWith("/dashboard/admin/guidelines/")) return "/dashboard/disease-management";
+  if (pathname === "/dashboard/accreditation-and-audits" || pathname.startsWith("/dashboard/accreditation-and-audits/")) return "/dashboard/governance";
   return {
     "/clinical-library": "/dashboard/clinical-guidelines",
     "/competencies": "/dashboard/competencies",
