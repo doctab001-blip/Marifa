@@ -3,6 +3,8 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  // Evidence and policy uploads (up to 20 MB) travel through server actions.
+  experimental: { serverActions: { bodySizeLimit: "25mb" } },
   async redirects() {
     // The legacy three-topic demo directory has been superseded by the governed catalogue.
     return [
