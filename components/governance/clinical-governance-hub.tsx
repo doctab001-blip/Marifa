@@ -7,12 +7,16 @@
  * All data is placeholder data.
  */
 
-import { useMemo, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 import {
   AlertTriangle, Activity, Building2, CalendarCheck, CalendarPlus, CheckCircle2, ClipboardCheck,
   Download, Eye, FileText, Filter, Layers, Pencil, Plus, Search, ShieldCheck, TrendingUp, UserCheck, X, Zap,
-  BookOpenCheck, ShieldAlert,
+  BookOpenCheck, ShieldAlert, Paperclip,
 } from "lucide-react";
+import {
+  AttachmentList, ImagePreview, IncidentReportModal, INCIDENT_DEPARTMENTS,
+  type Attachment,
+} from "./incident-report-modal";
 
 /* ---------- types & placeholder data ---------- */
 
@@ -21,25 +25,27 @@ type Status = "Under Investigation" | "CAPA Assigned" | "Under Review" | "Resolv
 type Incident = {
   id: string; stamp: string; category: string; severity: Severity; description: string;
   dept: string; lead: string; status: Status; likelihood: number; impact: number;
+  // Present on incidents logged through the report form:
+  title?: string; sbar?: { s: string; b: string; a: string; r: string }; mrn?: string; reportedBy?: string; attachments?: Attachment[];
 };
+type Audit = { n: string; o: string; due: string; p: number; target: number; cur: number | null };
 
 const SEVERITIES: Severity[] = ["Critical", "High", "Medium", "Low"];
 const STATUSES: Status[] = ["Under Investigation", "CAPA Assigned", "Under Review", "Resolved"];
-const DEPTS = ["Pediatrics", "Emergency Dept", "Inpatient Medicine", "Outpatient Clinic", "ICU", "Pharmacy", "Obstetrics"];
+const DEPTS = INCIDENT_DEPARTMENTS;
 const LIKELIHOOD = ["Rare", "Unlikely", "Possible", "Likely", "Almost Certain"];
 const IMPACT = ["Negligible", "Minor", "Moderate", "Major", "Catastrophic"];
-const SYNC = "Today, 15:55";
 
 const SEED: Incident[] = [
   { id: "INC-2026-089", stamp: "2026-10-19 14:20", category: "Medication Safety", severity: "Critical", description: "Tenfold dosage error near-miss in pediatric IV administration; caught at second check.", dept: "Pediatrics", lead: "Dr. Marcus Vance", status: "Under Investigation", likelihood: 5, impact: 5 },
-  { id: "INC-2026-088", stamp: "2026-10-18 09:15", category: "Equipment Failure", severity: "High", description: "Defibrillator battery warning failed during morning check.", dept: "Emergency Dept", lead: "Nurse Sarah Connor", status: "CAPA Assigned", likelihood: 5, impact: 4 },
-  { id: "INC-2026-087", stamp: "2026-10-17 22:05", category: "Delayed Treatment", severity: "High", description: "Door-to-antibiotic time 94 min in suspected sepsis.", dept: "Emergency Dept", lead: "Dr. Layla Haddad", status: "CAPA Assigned", likelihood: 3, impact: 4 },
+  { id: "INC-2026-088", stamp: "2026-10-18 09:15", category: "Equipment Failure", severity: "High", description: "Defibrillator battery warning failed during morning check.", dept: "Emergency", lead: "Nurse Sarah Connor", status: "CAPA Assigned", likelihood: 5, impact: 4 },
+  { id: "INC-2026-087", stamp: "2026-10-17 22:05", category: "Delayed Treatment", severity: "High", description: "Door-to-antibiotic time 94 min in suspected sepsis.", dept: "Emergency", lead: "Dr. Layla Haddad", status: "CAPA Assigned", likelihood: 3, impact: 4 },
   { id: "INC-2026-085", stamp: "2026-10-16 18:45", category: "Patient Fall", severity: "Medium", description: "Unassisted fall in Ward 4B; minor superficial abrasion.", dept: "Inpatient Medicine", lead: "Dr. Elena Rostova", status: "Under Review", likelihood: 5, impact: 3 },
   { id: "INC-2026-084", stamp: "2026-10-16 11:30", category: "Medication Safety", severity: "Medium", description: "Controlled drug count discrepancy, one ampoule morphine 10 mg.", dept: "Pharmacy", lead: "Pharm. Omar Al-Harbi", status: "Under Investigation", likelihood: 4, impact: 3 },
-  { id: "INC-2026-083", stamp: "2026-10-15 03:10", category: "Resuscitation Equipment", severity: "Medium", description: "Resus trolley tamper seal broken and unchecked for 3 days.", dept: "ICU", lead: "Sr. Joyce Thomas", status: "Under Review", likelihood: 3, impact: 3 },
+  { id: "INC-2026-083", stamp: "2026-10-15 03:10", category: "Equipment Failure", severity: "Medium", description: "Resus trolley tamper seal broken and unchecked for 3 days.", dept: "ICU", lead: "Sr. Joyce Thomas", status: "Under Review", likelihood: 3, impact: 3 },
   { id: "INC-2026-081", stamp: "2026-10-14 19:00", category: "Communication", severity: "Low", description: "Handover omitted DNACPR status for transferred patient.", dept: "Inpatient Medicine", lead: "Dr. Faisal Nasser", status: "Under Investigation", likelihood: 2, impact: 2 },
   { id: "INC-2026-080", stamp: "2026-10-13 08:40", category: "Infection Control", severity: "Low", description: "Hand-hygiene lapse observed on ward round.", dept: "Obstetrics", lead: "IPC Team", status: "Under Review", likelihood: 1, impact: 1 },
-  { id: "INC-2026-082", stamp: "2026-10-12 10:05", category: "Documentation", severity: "Low", description: "Unsigned consent form detected prior to minor operation.", dept: "Outpatient Clinic", lead: "Admin James Cole", status: "Resolved", likelihood: 2, impact: 1 },
+  { id: "INC-2026-082", stamp: "2026-10-12 10:05", category: "Documentation", severity: "Low", description: "Unsigned consent form detected prior to minor operation.", dept: "Outpatient", lead: "Admin James Cole", status: "Resolved", likelihood: 2, impact: 1 },
   { id: "INC-2026-079", stamp: "2026-10-10 16:25", category: "Patient ID", severity: "Low", description: "Missing identification band at handover.", dept: "Inpatient Medicine", lead: "Sr. Mona Qahtani", status: "Resolved", likelihood: 1, impact: 1 },
 ];
 
@@ -53,12 +59,12 @@ const CAPA_DONE = [
 ];
 
 const QIPS = {
-  Plan: [{ t: "Door-to-ECG under 10 minutes", o: "Emergency Dept" }, { t: "Falls-prevention bundle, elderly wards", o: "Geriatrics" }],
-  Do: [{ t: "Sepsis screening tool at triage", o: "Emergency Dept" }, { t: "VTE risk reassessment at 24 h", o: "Surgery" }],
+  Plan: [{ t: "Door-to-ECG under 10 minutes", o: "Emergency" }, { t: "Falls-prevention bundle, elderly wards", o: "Geriatrics" }],
+  Do: [{ t: "Sepsis screening tool at triage", o: "Emergency" }, { t: "VTE risk reassessment at 24 h", o: "Surgery" }],
   Study: [{ t: "Early mobilisation after laparotomy", o: "Surgery" }],
   Act: [{ t: "Discharge summary within 24 h", o: "Inpatient Medicine" }, { t: "Blood cultures before antibiotics", o: "Inpatient Medicine" }],
 } as const;
-const AUDITS = [
+const AUDITS: Audit[] = [
   { n: "Controlled Drug Audit Q3", o: "Pharmacy", due: "31 Oct 2026", p: 78, target: 95, cur: 91 },
   { n: "Prescribing Safety: VTE and antibiotics", o: "Inpatient Medicine", due: "15 Nov 2026", p: 42, target: 90, cur: 84 },
   { n: "Infection Control: hand hygiene", o: "IPC Team", due: "05 Nov 2026", p: 66, target: 95, cur: 97 },
@@ -197,6 +203,64 @@ const Field = ({ label, children }: { label: string; children: ReactNode }) => (
   <label className="block text-xs font-medium text-[color:var(--mgh-muted)]">{label}<div className="mt-1">{children}</div></label>
 );
 
+function EmptyState({ icon, title, hint, action }: { icon: ReactNode; title: string; hint?: string; action?: ReactNode }) {
+  return (
+    <div className="flex flex-col items-center gap-2 text-center">
+      <span className="grid h-12 w-12 place-items-center rounded-full bg-[color:var(--mgh-sub2)] text-[color:var(--mgh-emerald)]" aria-hidden="true">{icon}</span>
+      <p className="text-sm font-semibold text-[color:var(--mgh-strong)]">{title}</p>
+      {hint && <p className="text-xs text-[color:var(--mgh-muted)]">{hint}</p>}
+      {action}
+    </div>
+  );
+}
+
+/** Slide-over with the structured SBAR narrative, reporting details and attachments. */
+function IncidentDrawer({ incident: x, onClose }: { incident: Incident; onClose: () => void }) {
+  const [preview, setPreview] = useState<Attachment | null>(null);
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape" && !preview) onClose(); };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [onClose, preview]);
+  const sbar = x.sbar ?? { s: x.description, b: "", a: "", r: "" };
+  const blocks: [string, string, string][] = [["S", "Situation", sbar.s], ["B", "Background", sbar.b], ["A", "Assessment", sbar.a], ["R", "Recommendation / immediate action", sbar.r]];
+  const meta: [string, string][] = [["Category", x.category], ["Department", x.dept], ["Occurred", x.stamp], ["Status", x.status], ["Assigned lead", x.lead], ["Reported by", x.reportedBy || "Not recorded"], ["Patient ID / MRN", x.mrn || "Not recorded"], ["Risk score", `${x.likelihood} × ${x.impact} = ${x.likelihood * x.impact}`]];
+  return (
+    <div className="fixed inset-0 z-50 flex justify-end bg-black/60" onClick={onClose}>
+      <aside role="dialog" aria-modal="true" aria-labelledby="incident-drawer-title" onClick={(e) => e.stopPropagation()}
+        className="flex h-full w-full max-w-lg flex-col border-l border-[color:var(--mgh-line)] bg-[color:var(--mgh-surface)] shadow-2xl">
+        <header className="flex items-start justify-between gap-3 border-b border-[color:var(--mgh-line)] px-5 py-4">
+          <div className="min-w-0">
+            <p className="font-mono text-xs text-[color:var(--mgh-faint)]">{x.id}</p>
+            <h2 id="incident-drawer-title" className="text-lg font-semibold text-[color:var(--mgh-strong)]">{x.title ?? x.category}</h2>
+            <span className={`mt-1 inline-block rounded-full border px-2.5 py-0.5 text-xs font-medium ${SEV_PILL[x.severity]}`}>{x.severity}</span>
+          </div>
+          <button autoFocus onClick={onClose} aria-label="Close incident details" className="rounded p-1.5 text-[color:var(--mgh-muted)] hover:bg-[color:var(--mgh-hover)] focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"><X className="h-4 w-4" /></button>
+        </header>
+        <div className="min-h-0 flex-1 space-y-6 overflow-y-auto px-5 py-5">
+          <dl className="grid grid-cols-2 gap-x-4 gap-y-3 text-sm">
+            {meta.map(([k, v]) => <div key={k}><dt className="text-xs text-[color:var(--mgh-faint)]">{k}</dt><dd className="text-[color:var(--mgh-text)]">{v}</dd></div>)}
+          </dl>
+          <section aria-label="SBAR narrative" className="space-y-3">
+            {blocks.filter(([, , t]) => t).map(([l, name, t]) => (
+              <div key={l} className="rounded-xl border border-[color:var(--mgh-line)] bg-[color:var(--mgh-sub)] p-3">
+                <h3 className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[color:var(--mgh-muted)]"><span className="grid h-5 w-5 place-items-center rounded bg-[color:var(--mgh-sub2)] text-[color:var(--mgh-indigo)]">{l}</span>{name}</h3>
+                <p className="mt-2 whitespace-pre-wrap text-sm text-[color:var(--mgh-text)]">{t}</p>
+              </div>
+            ))}
+            {!x.sbar && <p className="text-xs text-[color:var(--mgh-muted)]">Only the situation summary was recorded for this incident.</p>}
+          </section>
+          <section aria-label="Attachments">
+            <h3 className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[color:var(--mgh-muted)]"><Paperclip className="h-3.5 w-3.5" />Attachments ({x.attachments?.length ?? 0})</h3>
+            {x.attachments?.length ? <AttachmentList items={x.attachments} onPreview={setPreview} /> : <p className="text-sm text-[color:var(--mgh-muted)]">No files were attached to this report.</p>}
+          </section>
+        </div>
+      </aside>
+      {preview && <ImagePreview attachment={preview} onClose={() => setPreview(null)} />}
+    </div>
+  );
+}
+
 /* ---------- main ---------- */
 
 export default function MarifaGovernanceHub() {
@@ -208,10 +272,18 @@ export default function MarifaGovernanceHub() {
   const [cell, setCell] = useState<{ l: number; i: number } | null>(null);
   const [modal, setModal] = useState<null | "incident" | "audit">(null);
   const [view, setView] = useState<Incident | null>(null);
+  const [audits, setAudits] = useState<Audit[]>(AUDITS);
+  const [sync, setSync] = useState("");
   const [ack, setAck] = useState(false);
   const [signed, setSigned] = useState<Record<string, boolean>>({});
   const [checks, setChecks] = useState(CHECK_SEED);
   const [toast, setToast] = useState("");
+  useEffect(() => {
+    const tick = () => setSync(new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }));
+    tick();
+    const t = setInterval(tick, 60000);
+    return () => clearInterval(t);
+  }, []);
   const flash = (m: string) => { setToast(m); setTimeout(() => setToast(""), 2800); };
 
   // Search, department and severity apply to KPIs, matrix and log.
@@ -219,11 +291,17 @@ export default function MarifaGovernanceHub() {
     const t = q.trim().toLowerCase();
     return incidents.filter((x) =>
       (dept === "All Departments" || x.dept === dept) && (sev === "All Severities" || x.severity === sev) &&
-      (!t || [x.id, x.category, x.description, x.dept, x.lead].some((s) => s.toLowerCase().includes(t))));
+      (!t || [x.id, x.title ?? "", x.category, x.description, x.dept, x.lead].some((s) => s.toLowerCase().includes(t))));
   }, [incidents, q, dept, sev]);
   const log = cell ? base.filter((x) => x.likelihood === cell.l && x.impact === cell.i) : base;
   const open = base.filter((x) => x.status !== "Resolved");
   const n = (s: Severity) => open.filter((x) => x.severity === s).length;
+
+  const hasFilters = !!(q.trim() || cell || dept !== "All Departments" || sev !== "All Severities");
+  const clearFilters = () => { setQ(""); setCell(null); setDept("All Departments"); setSev("All Severities"); };
+  const emptyTitle = hasFilters
+    ? `No ${sev !== "All Severities" ? `${sev.toLowerCase()} ` : ""}incidents ${dept !== "All Departments" ? `in ${dept}` : "match these filters"}`
+    : "No incidents logged";
 
   const advance = (id: string) =>
     setIncidents((p) => p.map((x) => (x.id === id ? { ...x, status: STATUSES[(STATUSES.indexOf(x.status) + 1) % STATUSES.length] } : x)));
@@ -241,7 +319,7 @@ export default function MarifaGovernanceHub() {
 
   const TABS = [
     { id: "incidents", label: "Incident & Risk Management", badge: `${open.length} Open`, icon: <AlertTriangle className="h-4 w-4" /> },
-    { id: "audits", label: "Clinical Audits & QIPs", badge: `${AUDITS.length} Active`, icon: <Activity className="h-4 w-4" /> },
+    { id: "audits", label: "Clinical Audits & QIPs", badge: `${audits.length} Active`, icon: <Activity className="h-4 w-4" /> },
     { id: "protocols", label: "Guidelines & Lifecycle", badge: `${PROTOCOLS.length - PROTOCOLS.filter((p) => p.status === "Approved").length + 9} Due`, icon: <FileText className="h-4 w-4" /> },
     { id: "regulatory", label: "Regulatory & CQC Readiness", badge: "", icon: <ShieldCheck className="h-4 w-4" /> },
   ];
@@ -287,7 +365,7 @@ export default function MarifaGovernanceHub() {
             </select>
           </div>
           <p className="ml-auto flex items-center gap-2 text-sm text-[color:var(--mgh-muted)]">
-            <span className="h-2 w-2 rounded-full bg-emerald-400" />Live Governance Sync: <b className="text-[color:var(--mgh-strong)]">{SYNC}</b>
+            <span className="h-2 w-2 rounded-full bg-emerald-400" />Last refreshed: <b className="text-[color:var(--mgh-strong)]">{sync ? `Today, ${sync}` : "Just now"}</b>
           </p>
         </div>
       </header>
@@ -401,10 +479,10 @@ export default function MarifaGovernanceHub() {
                     <tbody className="divide-y divide-[color:var(--mgh-line2)]">
                       {log.map((x) => (
                         <tr key={x.id} className="hover:bg-[color:var(--mgh-hover)]">
-                          <td className="px-5 py-3 font-mono text-xs text-[color:var(--mgh-text)]">{x.id}<div className="text-[color:var(--mgh-faint)]">{x.stamp}</div></td>
+                          <td className="px-5 py-3 font-mono text-xs text-[color:var(--mgh-text)]">{x.id}{!!x.attachments?.length && <Paperclip className="ml-1 inline h-3 w-3" aria-label={`${x.attachments.length} attachments`} />}<div className="text-[color:var(--mgh-faint)]">{x.stamp}</div></td>
                           <td className="px-5 py-3">{x.category}</td>
                           <td className="px-5 py-3"><span className={`rounded-full border px-2.5 py-0.5 text-xs font-medium ${SEV_PILL[x.severity]}`}>{x.severity}</span></td>
-                          <td className="max-w-[260px] px-5 py-3"><p className="truncate" title={x.description}>{x.description}</p></td>
+                          <td className="max-w-[260px] px-5 py-3">{x.title && <p className="truncate font-medium text-[color:var(--mgh-strong)]" title={x.title}>{x.title}</p>}<p className={`truncate ${x.title ? "text-xs text-[color:var(--mgh-faint)]" : ""}`} title={x.description}>{x.description}</p></td>
                           <td className="px-5 py-3">{x.dept}<div className="text-xs text-[color:var(--mgh-faint)]">{x.lead}</div></td>
                           <td className="px-5 py-3"><span className="flex items-center gap-2"><i className={`h-1.5 w-1.5 rounded-full ${STATUS_DOT[x.status]}`} />{x.status}</span></td>
                           <td className="px-5 py-3">
@@ -415,7 +493,12 @@ export default function MarifaGovernanceHub() {
                           </td>
                         </tr>
                       ))}
-                      {log.length === 0 && <tr><td colSpan={7} className="px-5 py-8 text-center text-[color:var(--mgh-faint)]">No incidents match the current filters.</td></tr>}
+                      {log.length === 0 && (
+                        <tr><td colSpan={7} className="px-5 py-10">
+                          <EmptyState icon={<ShieldCheck className="h-6 w-6" />} title={emptyTitle} hint={hasFilters ? "Clear the filters to see every incident." : "Use Log Incident to record the first report."}
+                            action={hasFilters ? <button className={btn} onClick={clearFilters}>Clear filters</button> : undefined} />
+                        </td></tr>
+                      )}
                     </tbody>
                   </table>
                 </div>
@@ -460,11 +543,11 @@ export default function MarifaGovernanceHub() {
               </Panel>
               <Panel title="Upcoming & Active Audits" icon={<ClipboardCheck className="h-4 w-4 text-[color:var(--mgh-indigo)]" />}>
                 <ul className="divide-y divide-[color:var(--mgh-line)]">
-                  {AUDITS.map((a) => (
+                  {audits.map((a) => (
                     <li key={a.n} className="py-3 first:pt-0 last:pb-0">
                       <div className="flex flex-wrap items-center justify-between gap-2">
                         <div><p className="text-sm font-semibold text-[color:var(--mgh-strong)]">{a.n}</p><p className="text-xs text-[color:var(--mgh-faint)]">Owner: {a.o} · Target date {a.due}</p></div>
-                        <span className={`rounded border px-2 py-1 text-xs ${a.cur >= a.target ? "border-emerald-500/40 bg-emerald-500/10 text-[color:var(--mgh-emerald)]" : "border-amber-500/40 bg-amber-500/10 text-[color:var(--mgh-amber)]"}`}>Compliance {a.cur}% / target {a.target}%</span>
+                        <span className={`rounded border px-2 py-1 text-xs ${a.cur !== null && a.cur >= a.target ? "border-emerald-500/40 bg-emerald-500/10 text-[color:var(--mgh-emerald)]" : "border-amber-500/40 bg-amber-500/10 text-[color:var(--mgh-amber)]"}`}>{a.cur === null ? `Not yet audited · target ${a.target}%` : `Compliance ${a.cur}% / target ${a.target}%`}</span>
                       </div>
                       <div className="mt-2 flex items-center gap-3"><Bar v={a.p} tone="bg-indigo-400" label={`${a.n} progress`} /><span className="w-10 text-xs text-[color:var(--mgh-muted)]">{a.p}%</span></div>
                     </li>
@@ -558,14 +641,12 @@ export default function MarifaGovernanceHub() {
             </div>
           </div>
 
-          <Panel title="Governance Schedule" icon={<CalendarCheck className="h-4 w-4 text-[color:var(--mgh-indigo)]" />}
-            right={<button className="text-xs font-medium text-[color:var(--mgh-indigo)] hover:underline" onClick={() => flash("Calendar opened (mock-up)")}>View Calendar</button>}>
+          <Panel title="Governance Schedule" icon={<CalendarCheck className="h-4 w-4 text-[color:var(--mgh-indigo)]" />}>
             <ul className="space-y-3">
               {SCHEDULE.map((m) => (
                 <li key={m.t} className="rounded-xl border border-[color:var(--mgh-line)] bg-[color:var(--mgh-sub)] p-3">
                   <p className="text-sm font-semibold text-[color:var(--mgh-strong)]">{m.t}</p>
                   <div className="mt-1 flex justify-between text-xs text-[color:var(--mgh-faint)]"><span>{m.w}</span><span>{m.r}</span></div>
-                  <button className="mt-2 text-xs font-medium text-[color:var(--mgh-indigo)] hover:underline" onClick={() => flash(`Agenda opened: ${m.t}`)}>Open agenda</button>
                 </li>
               ))}
             </ul>
@@ -585,50 +666,42 @@ export default function MarifaGovernanceHub() {
       </div>
 
       {/* Modals */}
-      <Modal open={modal === "incident"} title="Log Incident" onClose={() => setModal(null)}>
+      {modal === "incident" && (
+        <IncidentReportModal
+          onClose={() => setModal(null)}
+          leadSuggestions={Array.from(new Set(incidents.map((x) => x.lead).filter((l) => l && l !== "Unassigned")))}
+          onSubmit={(r) => {
+            // r.attachments[].file holds the raw File objects. Upload them to Supabase Storage / S3 here
+            // and persist the report, then replace the local object URLs with the stored URLs.
+            const num = Math.max(89, ...incidents.map((x) => Number(x.id.split("-").pop()) || 0)) + 1;
+            const [likelihood, impact] = { Low: [2, 2], Medium: [3, 3], High: [4, 4], Critical: [5, 5] }[r.severity];
+            const next: Incident = {
+              id: `INC-2026-${String(num).padStart(3, "0")}`, stamp: r.occurredAt.replace("T", " "), title: r.title, category: r.category,
+              severity: r.severity, description: r.situation, dept: r.dept, lead: r.lead || "Unassigned", status: "Under Investigation",
+              likelihood, impact, sbar: { s: r.situation, b: r.background, a: r.assessment, r: r.recommendation },
+              mrn: r.mrn, reportedBy: r.reportedBy, attachments: r.attachments,
+            };
+            setIncidents((p) => [next, ...p]); setModal(null); flash(`${next.id} logged`);
+          }}
+        />
+      )}
+
+      <Modal open={modal === "audit"} title="Schedule Audit" onClose={() => setModal(null)}>
         <form className="space-y-3" onSubmit={(e) => {
           e.preventDefault();
           const f = new FormData(e.currentTarget);
-          const next: Incident = {
-            id: `INC-2026-${String(90 + incidents.length - SEED.length).padStart(3, "0")}`, stamp: "2026-10-20 15:55",
-            category: String(f.get("category")), severity: f.get("severity") as Severity, description: String(f.get("description")),
-            dept: String(f.get("dept")), lead: "Unassigned", status: "Under Investigation",
-            likelihood: Number(f.get("l")), impact: Number(f.get("i")),
-          };
-          setIncidents((p) => [next, ...p]); setModal(null); flash(`${next.id} logged`);
+          const due = new Date(`${f.get("due")}T00:00:00Z`).toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric", timeZone: "UTC" });
+          setAudits((p) => [...p, { n: String(f.get("name")).trim(), o: String(f.get("owner")).trim(), due, p: 0, target: 90, cur: null }]);
+          setModal(null); flash("Audit scheduled");
         }}>
-          <Field label="Description"><textarea name="description" required rows={3} className={input} /></Field>
-          <div className="grid grid-cols-2 gap-3">
-            <Field label="Category"><input name="category" required defaultValue="Medication Safety" className={input} /></Field>
-            <Field label="Department"><select name="dept" className={input}>{DEPTS.map((d) => <option key={d}>{d}</option>)}</select></Field>
-            <Field label="Severity"><select name="severity" className={input}>{SEVERITIES.map((s) => <option key={s}>{s}</option>)}</select></Field>
-            <div />
-            <Field label="Likelihood (1-5)"><input name="l" type="number" min={1} max={5} defaultValue={3} className={input} /></Field>
-            <Field label="Impact (1-5)"><input name="i" type="number" min={1} max={5} defaultValue={3} className={input} /></Field>
-          </div>
-          <div className="flex justify-end gap-2 pt-2"><button type="button" className={btn} onClick={() => setModal(null)}>Cancel</button><button type="submit" className={btnRed}>Log Incident</button></div>
-        </form>
-      </Modal>
-
-      <Modal open={modal === "audit"} title="Schedule Audit" onClose={() => setModal(null)}>
-        <form className="space-y-3" onSubmit={(e) => { e.preventDefault(); setModal(null); flash("Audit scheduled (mock-up)"); }}>
-          <Field label="Audit"><select className={input}>{AUDITS.map((a) => <option key={a.n}>{a.n}</option>)}<option>Other…</option></select></Field>
-          <Field label="Owner"><input required className={input} placeholder="e.g. Chief Pharmacist" /></Field>
-          <Field label="Target date"><input type="date" required className={input} /></Field>
+          <Field label="Audit"><input name="name" required list="audit-names" className={input} placeholder="e.g. Controlled Drug Audit Q4" /><datalist id="audit-names">{audits.map((a) => <option key={a.n} value={a.n} />)}</datalist></Field>
+          <Field label="Owner"><input name="owner" required className={input} placeholder="e.g. Chief Pharmacist" /></Field>
+          <Field label="Target date"><input name="due" type="date" required className={input} /></Field>
           <div className="flex justify-end gap-2 pt-2"><button type="button" className={btn} onClick={() => setModal(null)}>Cancel</button><button type="submit" className={btnRed}>Schedule</button></div>
         </form>
       </Modal>
 
-      <Modal open={!!view} title={view?.id ?? ""} onClose={() => setView(null)}>
-        {view && (
-          <dl className="space-y-2 text-sm">
-            {([["Category", view.category], ["Severity", view.severity], ["Department", view.dept], ["Lead", view.lead], ["Status", view.status], ["Logged", view.stamp], ["Risk score", `${view.likelihood} × ${view.impact} = ${view.likelihood * view.impact}`]] as const).map(([k, v]) => (
-              <div key={k} className="flex justify-between gap-4 border-b border-[color:var(--mgh-line2)] pb-1"><dt className="text-[color:var(--mgh-faint)]">{k}</dt><dd className="text-right text-[color:var(--mgh-text)]">{v}</dd></div>
-            ))}
-            <p className="pt-2 text-[color:var(--mgh-text2)]">{view.description}</p>
-          </dl>
-        )}
-      </Modal>
+      {view && <IncidentDrawer incident={view} onClose={() => setView(null)} />}
 
       {toast && <div role="status" className="fixed bottom-4 right-4 z-50 rounded-lg border border-[color:var(--mgh-line)] bg-[color:var(--mgh-surface2)] px-4 py-2 text-sm text-[color:var(--mgh-strong)] shadow-xl">{toast}</div>}
     </div>

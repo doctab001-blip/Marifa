@@ -7,6 +7,7 @@ type ModulePlaceholderProps = {
   icon: LucideIcon;
 };
 
+/** Neutral empty state for workspace modules that have not been enabled for the organisation yet. */
 export function ModulePlaceholder({ title, purpose, plannedWork, icon: Icon }: ModulePlaceholderProps) {
   return (
     <main className="page">
@@ -23,12 +24,10 @@ export function ModulePlaceholder({ title, purpose, plannedWork, icon: Icon }: M
           <Icon size={24} strokeWidth={1.8} />
         </div>
         <div>
-          <span className="module-placeholder-label"><Clock3 size={14} /> Development placeholder</span>
-          <h2 id="module-placeholder-heading">Coming soon</h2>
+          <span className="module-placeholder-label"><Clock3 size={14} /> Not yet enabled</span>
+          <h2 id="module-placeholder-heading">Nothing here yet</h2>
           <p>{plannedWork}</p>
-          <p className="module-placeholder-note">
-            This page is a structural preview. It contains no live clinical guidance or administrative workflow.
-          </p>
+          <p className="module-placeholder-note">Content appears here once this module is enabled for your organisation.</p>
         </div>
       </section>
     </main>

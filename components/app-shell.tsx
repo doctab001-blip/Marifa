@@ -19,7 +19,7 @@ export async function AppShell({ children }: { children: React.ReactNode }) {
     <CollapsibleShell primaryColor={user.primaryColor}>
       <Sidebar
         organizationName={user.organizationName}
-        organizationNote={temporaryAdminMode ? "Temporary no-login admin mode" : "Isolated demo tenant · Riyadh"}
+        organizationNote={"Riyadh, Saudi Arabia"}
         temporaryAdminMode={temporaryAdminMode}
         draftTopicCount={draftTopicCount}
       />
