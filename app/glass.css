@@ -1111,14 +1111,14 @@ html[data-theme="dark"] [data-spec] { --spec: hsl(var(--spec-hue, 215) var(--spe
 .speciality-section-title span, .explorer-group-count { background: var(--spec-soft); color: var(--spec); }
 .speciality-section-title { color: var(--spec); }
 .topic-tile[data-spec] {
-  background: hsl(var(--spec-hue, 215) var(--spec-sat, 62%) 94%);
-  border-color: hsl(var(--spec-hue, 215) var(--spec-sat, 62%) 50% / .28);
+  background: hsl(var(--spec-hue, 215) var(--spec-sat, 62%) 97.5%);
+  border-color: hsl(var(--spec-hue, 215) var(--spec-sat, 62%) 50% / .2);
   box-shadow: 0 1px 2px rgb(var(--shade) / .05);
 }
-html[data-theme="dark"] .topic-tile[data-spec] { background: hsl(var(--spec-hue, 215) var(--spec-sat, 62%) 60% / .14); border-color: hsl(var(--spec-hue, 215) var(--spec-sat, 62%) 65% / .3); }
+html[data-theme="dark"] .topic-tile[data-spec] { background: hsl(var(--spec-hue, 215) var(--spec-sat, 62%) 60% / .07); border-color: hsl(var(--spec-hue, 215) var(--spec-sat, 62%) 65% / .22); }
 .topic-tile[data-spec]::before { background: var(--spec); opacity: .7; }
 .topic-tile[data-spec]:hover, .topic-tile[data-spec]:focus-within { border-color: var(--spec); box-shadow: 0 8px 20px -12px var(--spec); }
-.topic-tile[data-spec] .topic-tile-spec { background: hsl(var(--spec-hue, 215) var(--spec-sat, 62%) 50% / .16); }
+.topic-tile[data-spec] .topic-tile-spec { background: hsl(var(--spec-hue, 215) var(--spec-sat, 62%) 50% / .11); }
 .topic-tile[data-spec] .topic-tile-spec, .spec-chip, .disease-speciality-badge[data-spec] { background: var(--spec-soft); color: var(--spec); font-weight: 650; }
 .spec-chip { padding: 1px 7px; border-radius: 999px; }
 .explorer-group[data-spec] { border-color: var(--spec-soft); box-shadow: inset 3px 0 0 var(--spec); }
