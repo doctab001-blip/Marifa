@@ -526,3 +526,14 @@ html[data-theme="dark"] .topic-page { --tp-body: var(--font-color-body); --tp-mu
 :where(html[data-theme="dark"]) .pathway-card { background: var(--surface); }
 :where(html[data-theme="dark"]) .pathway-card p { color: var(--text-2); }
 :where(html[data-theme="dark"]) .ai-search { background: radial-gradient(circle at 100% 0%, rgba(129, 212, 250, .18), transparent 42%), linear-gradient(135deg, var(--accent-blue) 0%, hsl(202 90% 62% / 0.1) 55%, var(--accent-teal) 100%); }
+
+/* Contrast audit (Oct 2026): panels that were hard-coded white or pastel kept light-mode backgrounds in dark mode,
+   so the light dark-theme copy sat on a pale surface. They now take dark surfaces and tinted fills instead. */
+html[data-theme="dark"] .ksa-governance-drawer,
+html[data-theme="dark"] .topic-teaching-appendix,
+html[data-theme="dark"] .calculator-guidance-block { background: var(--surface); border-color: var(--line); }
+html[data-theme="dark"] .calculator-row-low th { background: hsl(148 71% 62% / .14); }
+html[data-theme="dark"] .calculator-row-moderate th { background: hsl(48 90% 62% / .14); }
+html[data-theme="dark"] .calculator-row-high th { background: hsl(7 90% 62% / .14); }
+html[data-theme="dark"] .co-flag-warn { background: hsl(42 90% 55% / .14); border-color: hsl(42 90% 60% / .4); }
+html[data-theme="dark"] .co-flag-dup { background: hsl(6 80% 60% / .14); border-color: hsl(6 80% 65% / .4); }
