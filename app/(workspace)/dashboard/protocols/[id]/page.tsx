@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, FilePenLine, ShieldAlert } from "@/components/icons-3d";
 import { EmergencyTopic } from "@/components/emergency-topic";
 import { ApplyProtocolPanel } from "@/components/clinical-orders/apply-protocol-panel";
+import { ProtocolGovernancePanel } from "@/components/governance/protocol-governance-panel";
 import { getPublishedProtocol } from "@/lib/data/local-protocols";
 import { PROTOCOLS_PUBLISHED } from "@/lib/local-protocols";
 
@@ -36,6 +37,7 @@ export default async function LocalProtocolPage({ params }: { params: Promise<{ 
           <span className="status status-draft">Version {protocol.version}</span>
           <span className="scenario-chip">{protocol.specialty}</span>
         </div>
+        <ProtocolGovernancePanel guidelineId={id} versionId={result.versionId} version={protocol.version} publishedAt={result.publishedAt} />
         {protocol.clinicalReviewStatus === "pending" && (
           <div className="clinical-review-draft-notice" role="note"><strong>Clinical review pending.</strong> This protocol is published for staff but has not yet been signed off by a clinician.</div>
         )}

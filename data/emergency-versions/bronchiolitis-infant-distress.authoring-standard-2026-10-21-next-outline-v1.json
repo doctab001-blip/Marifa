@@ -1,0 +1,225 @@
+{
+  "id": "851a37de-f4b1-4e2e-8c25-cff8fdcca554",
+  "title": "Bronchiolitis and Infant Respiratory Distress: Assessment and Admission Criteria",
+  "specialty": "Paediatrics / Emergency Medicine",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-21-next-outline-v1",
+  "lastReviewed": "2026-10-21",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-21",
+    "status": "incomplete",
+    "scope": "Clinical diagnosis, severity assessment, supportive care and disposition for babies and children with bronchiolitis.",
+    "findings": [
+      "The named primary guideline was opened and the cited sections were used.",
+      "Normal values are descriptive; use local laboratory and age/pregnancy ranges."
+    ],
+    "unverifiedSections": [
+      "No topic-specific Saudi national guideline was identified in the opened Saudi MOH protocol index.",
+      "SFDA registration and hospital formulary availability were not verified; no drug dose is supplied."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "851a37de-f4b1-4e2e-8c25-cff8fdcca554"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Viral inflammation and mucus obstruct small airways. Air trapping and atelectasis impair gas exchange. Young infants can fatigue, feed poorly and develop apnoea.",
+    "keyMechanisms": [
+      "Viral inflammation and mucus obstruct small airways.",
+      "Air trapping and atelectasis impair gas exchange.",
+      "Young infants can fatigue, feed poorly and develop apnoea."
+    ],
+    "references": [
+      {
+        "title": "NICE NG9: Bronchiolitis in children—diagnosis and management",
+        "edition": "2015, updated 2021; Recommendations 1.1–1.5",
+        "url": "https://www.nice.org.uk/guidance/ng9/chapter/Recommendations"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Coryzal prodrome followed by cough, tachypnoea, feeding difficulty and wheeze or crackles."
+    ],
+    "physicalSigns": [
+      "Increased respiratory effort, recession, nasal flaring, crackles or wheeze and reduced intake."
+    ],
+    "redFlags": [
+      "Apnoea, cyanosis, severe distress, exhaustion, reduced consciousness, dehydration or persistent low oxygen saturation."
+    ],
+    "precipitants": [
+      "Respiratory viral infection; severity risk is higher in very young or premature infants and those with chronic lung, cardiac, neuromuscular or immune disease."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Viral-induced wheeze or early asthma",
+      "distinguishingFeatures": "Recurrent episodic wheeze without crackles, especially in an older infant/child."
+    },
+    {
+      "condition": "Pneumonia",
+      "distinguishingFeatures": "High fever or persistently focal crackles."
+    },
+    {
+      "condition": "Foreign body",
+      "distinguishingFeatures": "Sudden onset or focal unilateral findings."
+    },
+    {
+      "condition": "Heart failure",
+      "distinguishingFeatures": "Hepatomegaly, murmur, poor growth or pulmonary oedema pattern."
+    }
+  ],
+  "diagnosticCriteria": [
+    {
+      "criterion": "Clinical diagnosis",
+      "threshold": "Coryzal prodrome for 1–3 days followed by persistent cough plus tachypnoea or recession and wheeze or crackles (NG9 1.1)."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Pulse oximetry",
+        "modalityTarget": "Named condition and immediate complications",
+        "targetCondition": "Named condition",
+        "normalValue": "At or above the age/risk-specific target",
+        "expectedFinding": "Persistent saturation below the admission or oxygen threshold",
+        "clinicalRationale": "Measure in every suspected case; interpret with clinical severity and risk factors.",
+        "references": [
+          {
+            "title": "NICE NG9: Bronchiolitis in children—diagnosis and management",
+            "edition": "2015, updated 2021; Recommendations 1.1–1.5",
+            "url": "https://www.nice.org.uk/guidance/ng9/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Hydration and feeding assessment",
+        "modalityTarget": "Named condition and immediate complications",
+        "targetCondition": "Named condition",
+        "normalValue": "Usual intake and wet nappies",
+        "expectedFinding": "Inadequate intake or dehydration",
+        "clinicalRationale": "Determines enteral/IV fluid support and admission.",
+        "references": [
+          {
+            "title": "NICE NG9: Bronchiolitis in children—diagnosis and management",
+            "edition": "2015, updated 2021; Recommendations 1.1–1.5",
+            "url": "https://www.nice.org.uk/guidance/ng9/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Chest radiograph",
+        "modalityTarget": "Named condition and immediate complications",
+        "targetCondition": "Named condition",
+        "normalValue": "No acute focal abnormality",
+        "expectedFinding": "Nonspecific hyperinflation/atelectasis or an alternative focal diagnosis",
+        "clinicalRationale": "Do not perform routinely because changes can mimic pneumonia.",
+        "references": [
+          {
+            "title": "NICE NG9: Bronchiolitis in children—diagnosis and management",
+            "edition": "2015, updated 2021; Recommendations 1.1–1.5",
+            "url": "https://www.nice.org.uk/guidance/ng9/chapter/Recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Blood gas",
+        "modalityTarget": "Named condition and immediate complications",
+        "targetCondition": "Named condition",
+        "normalValue": "Age-appropriate gas exchange",
+        "expectedFinding": "Rising carbon dioxide or acidosis",
+        "clinicalRationale": "Use when severe deterioration or impending respiratory failure is suspected; not routine.",
+        "references": [
+          {
+            "title": "NICE NG9: Bronchiolitis in children—diagnosis and management",
+            "edition": "2015, updated 2021; Recommendations 1.1–1.5",
+            "url": "https://www.nice.org.uk/guidance/ng9/chapter/Recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "assess",
+      "title": "Assess breathing and feeding",
+      "timeframe": "Immediately",
+      "actions": [
+        "Record oxygen saturation, work of breathing, apnoea history, hydration and risk factors.",
+        "Escalate apnoea, exhaustion, cyanosis or severe distress to paediatric critical care."
+      ]
+    },
+    {
+      "id": "support",
+      "title": "Provide supportive care",
+      "timeframe": "During observation/admission",
+      "actions": [
+        "Use minimal handling and nasal suction only when secretions impair breathing or feeding.",
+        "Provide enteral or intravenous isotonic fluid when oral intake is inadequate according to the paediatric fluid pathway."
+      ]
+    },
+    {
+      "id": "disposition",
+      "title": "Choose admission or discharge",
+      "timeframe": "After repeated assessment",
+      "actions": [
+        "Admit when oxygenation, apnoea, hydration, work of breathing, risk factors or caregiver/social circumstances make home care unsafe.",
+        "Do not use antibiotics, bronchodilators, adrenaline or corticosteroids routinely for bronchiolitis."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "no-drug-indicated",
+    "regimens": [],
+    "note": "Routine medicines are not indicated in uncomplicated bronchiolitis; oxygen and fluids are supportive treatments governed by the paediatric protocol."
+  },
+  "teaching": {
+    "scope": "Clinical diagnosis, severity assessment, supportive care and disposition for babies and children with bronchiolitis.",
+    "learningObjectives": [
+      "Recognise the condition and its red flags.",
+      "Choose initial tests without delaying urgent escalation.",
+      "Use a named multidisciplinary disposition plan."
+    ],
+    "keyPoints": [
+      "Apnoea, cyanosis, severe distress, exhaustion, reduced consciousness, dehydration or persistent low oxygen saturation.",
+      "Admit when oxygenation, apnoea, hydration, work of breathing, risk factors or caregiver/social circumstances make home care unsafe."
+    ],
+    "pitfalls": [
+      "Delaying escalation while waiting for non-essential tests.",
+      "Using an unverified medicine regimen instead of the current local protocol."
+    ],
+    "references": [
+      {
+        "title": "NICE NG9: Bronchiolitis in children—diagnosis and management",
+        "edition": "2015, updated 2021; Recommendations 1.1–1.5",
+        "url": "https://www.nice.org.uk/guidance/ng9/chapter/Recommendations",
+        "locator": "2015, updated 2021; Recommendations 1.1–1.5"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain the working diagnosis, immediate plan and specific return or deterioration signs."
+    ],
+    "lifestyleAndDiet": [
+      "Address prevention and self-management only after the acute safety plan is complete."
+    ],
+    "mdtReferrals": [
+      "Paediatrics",
+      "Emergency Medicine"
+    ],
+    "dischargeCriteria": [
+      "Clinically stable, maintaining age/risk-appropriate oxygen saturation in air, taking adequate fluids and caregivers understand red flags."
+    ],
+    "followUpPlan": "Give return advice for apnoea, cyanosis, worsening effort, exhaustion or poor intake; arrange review for high-risk infants as locally required."
+  }
+}

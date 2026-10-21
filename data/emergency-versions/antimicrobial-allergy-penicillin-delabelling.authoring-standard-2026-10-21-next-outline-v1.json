@@ -1,0 +1,222 @@
+{
+  "id": "7b0e53af-a056-446b-96ed-6a4333eb1d40",
+  "title": "Antimicrobial Allergy Assessment and Penicillin De-Labelling Referral",
+  "specialty": "Allergy and Immunology / Infectious Diseases / Primary Care",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-21-next-outline-v1",
+  "lastReviewed": "2026-10-21",
+  "pillar": "Keep Well",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-21",
+    "status": "incomplete",
+    "scope": "Structured assessment of a reported antimicrobial allergy and referral for specialist confirmation or de-labelling.",
+    "findings": [
+      "The named primary guideline was opened and the cited sections were used.",
+      "Normal values are descriptive; use local laboratory and age/pregnancy ranges."
+    ],
+    "unverifiedSections": [
+      "No topic-specific Saudi national guideline was identified in the opened Saudi MOH protocol index.",
+      "SFDA registration and hospital formulary availability were not verified; no drug dose is supplied."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "7b0e53af-a056-446b-96ed-6a4333eb1d40"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Immediate immune-mediated reactions usually begin rapidly and may involve skin, airway or circulation. Delayed immune reactions range from benign exanthem to severe cutaneous or organ injury. Many recorded penicillin allergies reflect intolerance, coincidental illness or an unverified childhood event.",
+    "keyMechanisms": [
+      "Immediate immune-mediated reactions usually begin rapidly and may involve skin, airway or circulation.",
+      "Delayed immune reactions range from benign exanthem to severe cutaneous or organ injury.",
+      "Many recorded penicillin allergies reflect intolerance, coincidental illness or an unverified childhood event."
+    ],
+    "references": [
+      {
+        "title": "NICE CG183: Drug allergy—diagnosis and management",
+        "edition": "2014; Recommendations 1.1–1.4",
+        "url": "https://www.nice.org.uk/guidance/cg183/chapter/Recommendations"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Record the culprit drug, indication, timing after each dose, number of doses, symptoms, treatment and outcome."
+    ],
+    "physicalSigns": [
+      "Document rash morphology, mucosal involvement, angioedema, bronchospasm, hypotension and organ injury."
+    ],
+    "redFlags": [
+      "Anaphylaxis, severe cutaneous adverse reaction, mucosal blistering, organ injury or haemolysis requires permanent high-visibility documentation and specialist advice."
+    ],
+    "precipitants": [
+      "Re-exposure to the culprit or a cross-reacting antimicrobial."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Predictable adverse effect",
+      "distinguishingFeatures": "Dose-related nausea, diarrhoea or headache without immune features."
+    },
+    {
+      "condition": "Infection-related rash",
+      "distinguishingFeatures": "Rash temporally linked to the illness and not reproducible with the medicine."
+    },
+    {
+      "condition": "Anaphylaxis",
+      "distinguishingFeatures": "Airway, breathing or circulation compromise with compatible acute onset."
+    }
+  ],
+  "diagnosticCriteria": [
+    {
+      "criterion": "Specialist referral",
+      "threshold": "Refer after suspected anaphylaxis or severe non-immediate cutaneous reaction; consider referral when beta-lactams and at least one other antibiotic class cannot be used (CG183 section 1.4)."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Structured drug-allergy history",
+        "modalityTarget": "Named condition and immediate complications",
+        "targetCondition": "Named condition",
+        "normalValue": "No reproducible immune-type reaction",
+        "expectedFinding": "A timed, reproducible phenotype compatible with immediate or delayed allergy",
+        "clinicalRationale": "Risk-stratifies the record and referral; history alone does not prove de-labelling.",
+        "references": [
+          {
+            "title": "NICE CG183: Drug allergy—diagnosis and management",
+            "edition": "2014; Recommendations 1.1–1.4",
+            "url": "https://www.nice.org.uk/guidance/cg183/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Acute mast-cell tryptase after suspected anaphylaxis",
+        "modalityTarget": "Named condition and immediate complications",
+        "targetCondition": "Named condition",
+        "normalValue": "Within laboratory reference range",
+        "expectedFinding": "Time-related elevation may support mast-cell activation",
+        "clinicalRationale": "Take according to the anaphylaxis pathway; a normal result does not exclude anaphylaxis.",
+        "references": [
+          {
+            "title": "NICE CG183: Drug allergy—diagnosis and management",
+            "edition": "2014; Recommendations 1.1–1.4",
+            "url": "https://www.nice.org.uk/guidance/cg183/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Specialist skin/intradermal testing",
+        "modalityTarget": "Named condition and immediate complications",
+        "targetCondition": "Named condition",
+        "normalValue": "Negative specialist test",
+        "expectedFinding": "Positive validated test to the suspected agent",
+        "clinicalRationale": "Only a trained allergy service should select and interpret testing.",
+        "references": [
+          {
+            "title": "NICE CG183: Drug allergy—diagnosis and management",
+            "edition": "2014; Recommendations 1.1–1.4",
+            "url": "https://www.nice.org.uk/guidance/cg183/chapter/Recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Supervised drug provocation",
+        "modalityTarget": "Named condition and immediate complications",
+        "targetCondition": "Named condition",
+        "normalValue": "No objective reaction during the protocol",
+        "expectedFinding": "Reproducible objective reaction",
+        "clinicalRationale": "Specialist gold-standard confirmation in selected low-risk patients; not for severe delayed phenotypes.",
+        "references": [
+          {
+            "title": "NICE CG183: Drug allergy—diagnosis and management",
+            "edition": "2014; Recommendations 1.1–1.4",
+            "url": "https://www.nice.org.uk/guidance/cg183/chapter/Recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "record",
+      "title": "Correct the allergy record",
+      "timeframe": "At first review",
+      "actions": [
+        "Separate drug allergy from non-allergic adverse effects.",
+        "Record drug, reaction, severity, date, timing, route and drugs/classes to avoid."
+      ]
+    },
+    {
+      "id": "refer",
+      "title": "Choose referral urgency",
+      "timeframe": "After phenotype assessment",
+      "actions": [
+        "Refer severe immediate or severe delayed reactions to specialist allergy services.",
+        "Do not perform an unsupervised oral challenge in primary care."
+      ]
+    },
+    {
+      "id": "update",
+      "title": "Close the loop after testing",
+      "timeframe": "When specialist outcome returns",
+      "actions": [
+        "Update every active medication record and give the patient written information.",
+        "State the exact drugs now permitted and any drugs still contraindicated."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "no-drug-indicated",
+    "regimens": [],
+    "note": "This is an assessment and referral pathway; any test dose or provocation is a specialist procedure, not a prescribing recommendation."
+  },
+  "teaching": {
+    "scope": "Structured assessment of a reported antimicrobial allergy and referral for specialist confirmation or de-labelling.",
+    "learningObjectives": [
+      "Recognise the condition and its red flags.",
+      "Choose initial tests without delaying urgent escalation.",
+      "Use a named multidisciplinary disposition plan."
+    ],
+    "keyPoints": [
+      "Anaphylaxis, severe cutaneous adverse reaction, mucosal blistering, organ injury or haemolysis requires permanent high-visibility documentation and specialist advice.",
+      "Update every active medication record and give the patient written information."
+    ],
+    "pitfalls": [
+      "Delaying escalation while waiting for non-essential tests.",
+      "Using an unverified medicine regimen instead of the current local protocol."
+    ],
+    "references": [
+      {
+        "title": "NICE CG183: Drug allergy—diagnosis and management",
+        "edition": "2014; Recommendations 1.1–1.4",
+        "url": "https://www.nice.org.uk/guidance/cg183/chapter/Recommendations",
+        "locator": "2014; Recommendations 1.1–1.4"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain the working diagnosis, immediate plan and specific return or deterioration signs."
+    ],
+    "lifestyleAndDiet": [
+      "Address prevention and self-management only after the acute safety plan is complete."
+    ],
+    "mdtReferrals": [
+      "Allergy and Immunology",
+      "Infectious Diseases",
+      "Primary Care"
+    ],
+    "dischargeCriteria": [
+      "Reaction phenotype and avoidance advice documented; urgent reactions treated; referral and patient information completed."
+    ],
+    "followUpPlan": "Reconcile the allergy field after the specialist report and at every transition of care."
+  }
+}

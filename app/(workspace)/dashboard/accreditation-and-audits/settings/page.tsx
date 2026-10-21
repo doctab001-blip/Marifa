@@ -1,5 +1,7 @@
 import { saveSettingsAction } from "@/app/(workspace)/dashboard/accreditation-and-audits/actions";
-import { Notice, pageParam } from "@/components/accreditation/ui";
+import { Settings } from "lucide-react";
+import { SettingsV21 } from "@/components/accreditation/settings-v21";
+import { Notice, PageHeader, pageParam } from "@/components/accreditation/ui";
 import { getGovernanceActor } from "@/lib/governance/auth";
 import { currentDate, formatDate } from "@/lib/governance/clock";
 import { canReadGovernance, canWriteGovernance } from "@/lib/governance/policy";
@@ -20,9 +22,9 @@ export default async function SettingsPage({ searchParams }: { searchParams: Pro
 
   return (
     <>
-      <header className="gh-head"><div><div className="gh-eyebrow">Accreditation hub</div><h1>Scoring and accreditation settings</h1>
-        <p>The defaults follow the CBAHI Hospital Accreditation Process Guide (3rd edition, 2016). Check them against the edition your survey uses and change them here if they differ.</p></div></header>
+      <PageHeader icon={<Settings size={20} />} title="Settings" subtitle="Scoring thresholds, accreditation dates, risk methodology, regulatory reporting rules and editions. Scoring defaults follow the CBAHI Hospital Accreditation Process Guide (3rd edition, 2016); check them against the edition your survey uses." />
       <Notice done={pageParam(sp.done)} error={pageParam(sp.error)} />
+      <h2 className="gh-section-title" style={{ margin: ".2rem 0 0" }}>Scoring and accreditation dates</h2>
       <form action={saveSettingsAction} className="gh-card gh-form">
         <input type="hidden" name="returnTo" value={`${BASE}/settings`} />
         <fieldset disabled={!canWrite} style={{ border: 0, padding: 0, margin: 0, display: "contents" }}>
@@ -49,6 +51,7 @@ export default async function SettingsPage({ searchParams }: { searchParams: Pro
           </tbody></table>
         </section>
       ) : null}
+      <SettingsV21 ctx={ctx} settings={settings} canWrite={canWrite} />
     </>
   );
 }

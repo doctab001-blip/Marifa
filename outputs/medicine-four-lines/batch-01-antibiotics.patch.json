@@ -1,0 +1,657 @@
+{
+ "version": "four-line-batch01-2026-10-21",
+ "lastReviewed": "2026-10-21",
+ "noteAppend": "Paediatric, penicillin-allergy, CKD and CLD lines added 21 Oct 2026 (batch 01) from standard product-label (US PI / UK SmPC) and BNF dosing; individual labels were not re-opened for this batch. Pharmacist verification required; clinical review pending.",
+ "prefixes": [
+  "Paediatric:",
+  "Penicillin allergy:",
+  "CKD:",
+  "CLD:"
+ ],
+ "paediatricRowPattern": "\\bchild|paediatric|pediatric|infant|neonat",
+ "paediatricRowText": "This row gives the paediatric dose.",
+ "drugs": [
+  {
+   "pattern": "co-amoxiclav|amoxicillin[\\s\\-–]*(and|with)?[\\s\\-–]*clavul",
+   "class": "penicillin",
+   "ckd": "Oral: CrCl below 30 mL/min — do not use 875/125 mg tablets; 10–30 mL/min usual (weight-based in children) dose every 12 h, adults 500/125 mg; below 10 mL/min every 24 h. IV 1.2 g (adults): CrCl 10–30 mL/min 1.2 g then 600 mg every 12 h; below 10 mL/min 1.2 g then 600 mg every 24 h (product label).",
+   "cld": "Cholestatic jaundice risk: monitor LFTs; contraindicated after previous co-amoxiclav-associated jaundice or hepatic dysfunction (product label)."
+  },
+  {
+   "pattern": "(?<!then )amoxicillin(?![\\s\\-–]*(and|with)?[\\s\\-–]*clavul)|ampicillin then amoxicillin",
+   "class": "penicillin",
+   "ckd": "CrCl 10–30 mL/min: give the usual (weight-based in children) dose every 12 h; below 10 mL/min: every 24 h; adult maximum 500 mg per dose at these levels. IV high-dose (meningitis): reduce the frequency with pharmacist advice (product label).",
+   "cld": "No dose change."
+  },
+  {
+   "pattern": "^ampicillin(?! then)|^ampicillin$",
+   "class": "penicillin",
+   "ckd": "CrCl 10–50 mL/min: give every 6–12 h; below 10 mL/min: every 12–24 h (product label).",
+   "cld": "No dose change."
+  },
+  {
+   "pattern": "benzylpenicillin",
+   "class": "penicillin",
+   "ckd": "Single pre-hospital or loading dose: no change. Repeated high doses with CrCl below 10 mL/min: reduce the dose (neurotoxicity risk) (BNF).",
+   "cld": "No dose change."
+  },
+  {
+   "pattern": "penicillin g benzathine|benzathine",
+   "class": "penicillin",
+   "ckd": "No dose change for single IM doses.",
+   "cld": "No dose change."
+  },
+  {
+   "pattern": "flucloxacillin|cloxacillin",
+   "class": "penicillin",
+   "ckd": "CrCl below 10 mL/min: maximum 1 g every 8 h (BNF).",
+   "cld": "Cholestatic hepatitis risk (can occur up to 2 months after stopping): avoid after previous flucloxacillin-associated jaundice; use with caution in hepatic impairment (BNF)."
+  },
+  {
+   "pattern": "piperacillin",
+   "class": "penicillin",
+   "ckd": "CrCl 20–40 mL/min: 2.25 g every 6 h (3.375 g every 6 h for nosocomial pneumonia); below 20 mL/min: 2.25 g every 8 h (2.25 g every 6 h for nosocomial pneumonia); haemodialysis: 2.25 g every 12 h plus 0.75 g after each session (product label).",
+   "cld": "No dose change."
+  },
+  {
+   "pattern": "cefalexin|cephalexin",
+   "class": "cephalosporin",
+   "ckd": "CrCl 30–59 mL/min: maximum 1 g/day; 15–29 mL/min: 250 mg every 8–12 h; 5–14 mL/min: 250 mg every 24 h (product label).",
+   "cld": "No dose change."
+  },
+  {
+   "pattern": "cefazolin",
+   "class": "cephalosporin",
+   "ckd": "Single prophylactic dose: no change. Repeated dosing: CrCl 11–34 mL/min half dose every 12 h; 10 mL/min or below half dose every 18–24 h (product label).",
+   "cld": "No dose change."
+  },
+  {
+   "pattern": "cefuroxime axetil",
+   "class": "cephalosporin",
+   "ckd": "Oral: CrCl 10–29 mL/min standard dose every 24 h; below 10 mL/min every 48 h (product label).",
+   "cld": "No dose change."
+  },
+  {
+   "pattern": "^cefuroxime(?! axetil)",
+   "class": "cephalosporin",
+   "ckd": "IV: CrCl 10–20 mL/min 750 mg every 12 h; below 10 mL/min 750 mg every 24 h (product label).",
+   "cld": "No dose change."
+  },
+  {
+   "pattern": "cefotaxime",
+   "class": "cephalosporin",
+   "ckd": "CrCl below 20 mL/min: halve the dose (product label).",
+   "cld": "No dose change."
+  },
+  {
+   "pattern": "ceftriaxone",
+   "class": "cephalosporin",
+   "ckd": "No dose change if liver function is normal; CrCl below 10 mL/min: maximum 2 g/day — for meningitis doses take pharmacist advice and monitor levels (product information).",
+   "cld": "No dose change if renal function is normal; combined severe renal and hepatic impairment: monitor plasma levels (product information)."
+  },
+  {
+   "pattern": "ertapenem",
+   "class": "carbapenem",
+   "ckd": "CrCl 30 mL/min or below (including haemodialysis): 500 mg once daily (product label).",
+   "cld": "No dose change."
+  },
+  {
+   "pattern": "meropenem",
+   "class": "carbapenem",
+   "ckd": "CrCl 26–50 mL/min: standard dose every 12 h; 10–25 mL/min: half dose every 12 h; below 10 mL/min: half dose every 24 h (product label).",
+   "cld": "No dose change."
+  },
+  {
+   "pattern": "imipenem",
+   "class": "carbapenem",
+   "ckd": "For 500 mg every 6 h: CrCl 60–89 mL/min 400 mg every 6 h; 30–59 mL/min 300 mg every 6 h; 15–29 mL/min 200 mg every 6 h; below 15 mL/min only if haemodialysis is started within 48 h. Seizure risk rises with renal impairment (product label).",
+   "cld": "No dose change."
+  },
+  {
+   "pattern": "aztreonam",
+   "class": "monobactam",
+   "ckd": "Full loading dose, then maintenance halved at CrCl 10–30 mL/min and quartered below 10 mL/min (product label).",
+   "cld": "No dose change; monitor LFTs."
+  },
+  {
+   "pattern": "vancomycin",
+   "class": "other",
+   "ckd": "Loading dose unchanged; maintenance by AUC or trough monitoring with interval extended for renal function; haemodialysis — dose after sessions by level (product label; pharmacy TDM).",
+   "cld": "No dose change."
+  },
+  {
+   "pattern": "teicoplanin",
+   "class": "other",
+   "ckd": "Loading unchanged; from day 4: CrCl 30–80 mL/min half the dose (or full dose every 48 h); below 30 mL/min one third (or every 72 h) (product SmPC).",
+   "cld": "No dose change."
+  },
+  {
+   "pattern": "gentamicin",
+   "class": "other",
+   "ckd": "Single prophylactic dose: no change. Repeated dosing: extend the interval by creatinine clearance with level monitoring; avoid if CrCl below 20 mL/min unless specialist-supervised (product label; pharmacy TDM).",
+   "cld": "No dose change."
+  },
+  {
+   "pattern": "clindamycin",
+   "class": "other",
+   "ckd": "No dose change (product label).",
+   "cld": "No dose change; monitor LFTs in severe hepatic disease during prolonged courses (product label)."
+  },
+  {
+   "pattern": "metronidazole",
+   "class": "other",
+   "ckd": "No dose change; haemodialysis — give the dose after the session (product label).",
+   "cld": "Severe hepatic impairment (Child-Pugh C): reduce the dose by 50% (product label)."
+  },
+  {
+   "pattern": "doxycycline",
+   "class": "other",
+   "ckd": "No dose change.",
+   "cld": "No standard dose change; use with caution and avoid other hepatotoxic drugs where possible (product label)."
+  },
+  {
+   "pattern": "lymecycline",
+   "class": "other",
+   "ckd": "Avoid in renal impairment — use doxycycline instead (BNF: tetracyclines other than doxycycline and minocycline can worsen renal failure).",
+   "cld": "Use with caution (BNF)."
+  },
+  {
+   "pattern": "clarithromycin",
+   "class": "other",
+   "ckd": "CrCl below 30 mL/min: reduce the dose by 50% (product label).",
+   "cld": "No dose change if renal function is normal; avoid with combined severe hepatic and renal impairment (product label)."
+  },
+  {
+   "pattern": "azithromycin",
+   "class": "other",
+   "ckd": "No dose change; caution if CrCl below 10 mL/min (product label).",
+   "cld": "Hepatotoxicity reported: check LFTs and stop if hepatitis develops (product label)."
+  },
+  {
+   "pattern": "erythromycin",
+   "class": "other",
+   "ckd": "Severe renal impairment: maximum 1.5 g/day (ototoxicity risk) (BNF).",
+   "cld": "Hepatotoxicity risk: use with caution; avoid in severe hepatic impairment (BNF)."
+  },
+  {
+   "pattern": "ciprofloxacin",
+   "class": "other",
+   "ckd": "Oral: CrCl 30–50 mL/min 250–500 mg every 12 h; below 30 mL/min 250–500 mg every 18 h. IV: CrCl 5–29 mL/min 200–400 mg every 18–24 h (product label).",
+   "cld": "No dose change."
+  },
+  {
+   "pattern": "levofloxacin",
+   "class": "other",
+   "ckd": "For 500 mg every 12 h: CrCl 20–50 mL/min 500 mg then 250 mg every 12 h; 10–19 mL/min 500 mg then 125 mg every 12 h; below 10 mL/min 500 mg then 125 mg every 24 h (product SmPC).",
+   "cld": "No dose change."
+  },
+  {
+   "pattern": "trimethoprim[\\s\\-–]*sulfamethoxazole|co-trimoxazole",
+   "class": "other",
+   "ckd": "CrCl 15–30 mL/min: 50% of the dose; below 15 mL/min: avoid (product label).",
+   "cld": "Avoid in severe hepatic impairment (product label)."
+  },
+  {
+   "pattern": "^chloramphenicol(?! 0)",
+   "class": "other",
+   "ckd": "eGFR below 15 mL/min: avoid unless no alternative (ULHT renal guide 2018); monitor levels.",
+   "cld": "Reduce the dose and monitor plasma levels; avoid in severe hepatic impairment (marrow toxicity) (BNF)."
+  },
+  {
+   "pattern": "chloramphenicol 0|^ofloxacin|moxifloxacin 0",
+   "class": "other",
+   "ckd": "Topical/ophthalmic use: no systemic dose adjustment.",
+   "cld": "Topical/ophthalmic use: no systemic dose adjustment."
+  },
+  {
+   "pattern": "linezolid",
+   "class": "other",
+   "ckd": "No dose change (product label).",
+   "cld": "No dose change in mild to moderate impairment; severe impairment not studied — monitor platelets (product label)."
+  },
+  {
+   "pattern": "oseltamivir",
+   "class": "nonabx",
+   "ckd": "Treatment: CrCl 30–60 mL/min 30 mg twice daily; 10–30 mL/min 30 mg once daily; haemodialysis 30 mg after each session (product label).",
+   "cld": "No dose change in mild to moderate impairment (product label)."
+  },
+  {
+   "pattern": "aciclovir",
+   "class": "nonabx",
+   "ckd": "IV: CrCl 25–50 mL/min standard dose every 12 h; 10–25 mL/min every 24 h; below 10 mL/min 50% dose every 24 h; keep well hydrated (product label).",
+   "cld": "No dose change."
+  },
+  {
+   "pattern": "acetazolamide",
+   "class": "nonabx",
+   "ckd": "Contraindicated in severe renal impairment; reduce the dose or extend the interval in moderate impairment (product label).",
+   "cld": "Contraindicated in cirrhosis or marked hepatic disease (risk of hepatic encephalopathy) (product label)."
+  },
+  {
+   "pattern": "adapalene|azelaic|cyclopentolate|pilocarpine|prednisolone acetate|brimonidine|phenazone",
+   "class": "nonabx",
+   "ckd": "Topical/ophthalmic use: no systemic dose adjustment.",
+   "cld": "Topical/ophthalmic use: no systemic dose adjustment."
+  },
+  {
+   "pattern": "allopurinol",
+   "class": "nonabx",
+   "ckd": "eGFR 30–60 mL/min: start 50 mg daily; 15–30 mL/min: 50 mg every other day; titrate to urate (product label).",
+   "cld": "Reduce the dose; check LFTs early in treatment (product label)."
+  },
+  {
+   "pattern": "amitriptyline",
+   "class": "nonabx",
+   "ckd": "No dose change.",
+   "cld": "Use with caution; avoid in severe hepatic impairment (BNF)."
+  },
+  {
+   "pattern": "aspirin",
+   "class": "nonabx",
+   "ckd": "Avoid in severe renal impairment (CrCl below 10 mL/min) (product label).",
+   "cld": "Avoid in severe hepatic impairment (bleeding risk) (BNF)."
+  },
+  {
+   "pattern": "atosiban",
+   "class": "nonabx",
+   "ckd": "No data in renal impairment; use with caution (product SmPC).",
+   "cld": "No data in hepatic impairment; use with caution (product SmPC)."
+  },
+  {
+   "pattern": "betamethasone|dexamethasone|hydrocortisone|methylprednisolone|^prednisolone$|^prednisolone(?! acetate)",
+   "class": "nonabx",
+   "ckd": "No dose change.",
+   "cld": "No standard dose change; monitor for fluid retention and glucose."
+  },
+  {
+   "pattern": "budesonide",
+   "class": "nonabx",
+   "ckd": "No dose change.",
+   "cld": "Severe hepatic impairment increases budesonide exposure: use the lowest effective dose (product label)."
+  },
+  {
+   "pattern": "diclofenac",
+   "class": "nonabx",
+   "ckd": "Avoid if eGFR below 30 mL/min; use the lowest dose with monitoring in milder impairment (product SmPC).",
+   "cld": "Avoid in severe hepatic impairment (product SmPC)."
+  },
+  {
+   "pattern": "enoxaparin",
+   "class": "nonabx",
+   "ckd": "CrCl below 30 mL/min: prophylaxis 20 mg once daily (UK SmPC) / 30 mg once daily (US label); treatment 1 mg/kg once daily (product label).",
+   "cld": "Use with caution: bleeding risk with coagulopathy (product label)."
+  },
+  {
+   "pattern": "epinephrine|adrenaline",
+   "class": "nonabx",
+   "ckd": "No dose change in an emergency.",
+   "cld": "No dose change in an emergency."
+  },
+  {
+   "pattern": "frovatriptan",
+   "class": "nonabx",
+   "ckd": "No dose change.",
+   "cld": "Contraindicated in severe hepatic impairment (product SmPC)."
+  },
+  {
+   "pattern": "zolmitriptan",
+   "class": "nonabx",
+   "ckd": "No dose change.",
+   "cld": "Moderate or severe hepatic impairment: maximum 5 mg in 24 h (product label)."
+  },
+  {
+   "pattern": "naratriptan",
+   "class": "nonabx",
+   "ckd": "Contraindicated if CrCl below 15 mL/min; maximum 2.5 mg in 24 h with milder impairment (product label).",
+   "cld": "Contraindicated in severe hepatic impairment; maximum 2.5 mg in 24 h in mild to moderate impairment (product label)."
+  },
+  {
+   "pattern": "sumatriptan",
+   "class": "nonabx",
+   "ckd": "Use with caution (product label).",
+   "cld": "Oral maximum single dose 50 mg in mild to moderate hepatic impairment; contraindicated in severe impairment (product label)."
+  },
+  {
+   "pattern": "ibuprofen",
+   "class": "nonabx",
+   "ckd": "Avoid in severe renal impairment; use the lowest dose with monitoring in milder impairment (product label).",
+   "cld": "Avoid in severe hepatic impairment (product label)."
+  },
+  {
+   "pattern": "naproxen",
+   "class": "nonabx",
+   "ckd": "Avoid if CrCl below 30 mL/min (product label).",
+   "cld": "Use the lowest effective dose; avoid in severe hepatic impairment (product label)."
+  },
+  {
+   "pattern": "indomethacin",
+   "class": "nonabx",
+   "ckd": "Avoid in renal impairment (and in pregnancy from 20 weeks, as noted) (product label).",
+   "cld": "Use with caution; avoid in severe hepatic impairment (product label)."
+  },
+  {
+   "pattern": "ketorolac",
+   "class": "nonabx",
+   "ckd": "Contraindicated in advanced renal impairment or volume depletion; use the lower dose range in milder impairment (product label).",
+   "cld": "Use with caution; stop if LFTs rise (product label)."
+  },
+  {
+   "pattern": "isotretinoin",
+   "class": "nonabx",
+   "ckd": "Severe renal impairment: start at 10 mg daily and titrate (product SmPC).",
+   "cld": "Contraindicated in hepatic impairment (product SmPC)."
+  },
+  {
+   "pattern": "lactulose",
+   "class": "nonabx",
+   "ckd": "No dose change.",
+   "cld": "No dose change."
+  },
+  {
+   "pattern": "^lidocaine",
+   "class": "nonabx",
+   "ckd": "No dose change for local infiltration.",
+   "cld": "Use the lowest volume; amide anaesthetics accumulate in severe liver disease (product label)."
+  },
+  {
+   "pattern": "magnesium sulfate",
+   "class": "nonabx",
+   "ckd": "Oliguria or raised creatinine: reduce or stop the maintenance infusion and monitor serum magnesium and reflexes (product label).",
+   "cld": "No dose change."
+  },
+  {
+   "pattern": "metoclopramide",
+   "class": "nonabx",
+   "ckd": "CrCl 60 mL/min or below: halve the dose; end-stage kidney disease: quarter of the dose (product label).",
+   "cld": "Child-Pugh B or C: halve the dose (product label)."
+  },
+  {
+   "pattern": "morphine",
+   "class": "nonabx",
+   "ckd": "Start lower and extend the interval; avoid repeated dosing in severe impairment (metabolite accumulation) (product label).",
+   "cld": "Reduce the dose; avoid in hepatic encephalopathy (product label)."
+  },
+  {
+   "pattern": "nifedipine",
+   "class": "nonabx",
+   "ckd": "No dose change.",
+   "cld": "Start at a lower dose and monitor blood pressure in hepatic impairment (product label)."
+  },
+  {
+   "pattern": "nimodipine",
+   "class": "nonabx",
+   "ckd": "No dose change; renal data limited (product label).",
+   "cld": "Cirrhosis: 30 mg every 4 h with close blood pressure and heart rate monitoring (product label)."
+  },
+  {
+   "pattern": "ondansetron",
+   "class": "nonabx",
+   "ckd": "No dose change.",
+   "cld": "Severe hepatic impairment: maximum 8 mg/day (product label)."
+  },
+  {
+   "pattern": "oxygen",
+   "class": "nonabx",
+   "ckd": "Not applicable.",
+   "cld": "Not applicable."
+  },
+  {
+   "pattern": "oxytocin",
+   "class": "nonabx",
+   "ckd": "No dose change; watch for water intoxication with prolonged infusion (product label).",
+   "cld": "No dose change."
+  },
+  {
+   "pattern": "paracetamol|acetaminophen",
+   "class": "nonabx",
+   "ckd": "IV: CrCl 30 mL/min or below — give at least 6 h apart (product label).",
+   "cld": "Hepatic impairment, chronic alcohol use or weight below 50 kg: maximum 3 g/day (lower for weight-based dosing); avoid in severe active liver disease (product label)."
+  },
+  {
+   "pattern": "potassium citrate",
+   "class": "nonabx",
+   "ckd": "Contraindicated in significant renal impairment (product label).",
+   "cld": "No dose change."
+  },
+  {
+   "pattern": "propranolol",
+   "class": "nonabx",
+   "ckd": "No dose change; start low (product label).",
+   "cld": "Reduce the dose in hepatic impairment (reduced first-pass metabolism) (product label)."
+  },
+  {
+   "pattern": "prothrombin complex",
+   "class": "nonabx",
+   "ckd": "Not applicable — dose by INR and weight.",
+   "cld": "Not applicable — dose by INR and weight; note the existing contraindication in this row."
+  },
+  {
+   "pattern": "proton pump|pantoprazole|omeprazole",
+   "class": "nonabx",
+   "ckd": "No dose change.",
+   "cld": "Severe hepatic impairment: oral maximum 20 mg/day; use the infusion with caution (product label)."
+  },
+  {
+   "pattern": "roflumilast",
+   "class": "nonabx",
+   "ckd": "No dose change.",
+   "cld": "Contraindicated in moderate or severe hepatic impairment (Child-Pugh B or C) (product label)."
+  },
+  {
+   "pattern": "salbutamol",
+   "class": "nonabx",
+   "ckd": "No dose change.",
+   "cld": "No dose change."
+  },
+  {
+   "pattern": "tamsulosin",
+   "class": "nonabx",
+   "ckd": "No dose change if CrCl is 10 mL/min or above; not studied below 10 mL/min (product label).",
+   "cld": "Not studied in severe hepatic impairment (product label)."
+  },
+  {
+   "pattern": "terlipressin",
+   "class": "nonabx",
+   "ckd": "Not recommended if serum creatinine is 5 mg/dL (442 µmol/L) or above (product label).",
+   "cld": "Not applicable — used for variceal bleeding in liver disease."
+  },
+  {
+   "pattern": "tiotropium|umeclidinium",
+   "class": "nonabx",
+   "ckd": "CrCl 60 mL/min or below: monitor for anticholinergic effects (product label).",
+   "cld": "No dose change in mild to moderate impairment (product label)."
+  },
+  {
+   "pattern": "topiramate",
+   "class": "nonabx",
+   "ckd": "CrCl below 70 mL/min: halve the dose (product label).",
+   "cld": "Use with caution (product label)."
+  },
+  {
+   "pattern": "tranexamic",
+   "class": "nonabx",
+   "ckd": "IV: serum creatinine 120–249 µmol/L 10 mg/kg twice daily; 250–500 µmol/L 10 mg/kg daily; above 500 µmol/L 5 mg/kg daily (product SmPC).",
+   "cld": "No dose change."
+  },
+  {
+   "pattern": "heparin",
+   "class": "nonabx",
+   "ckd": "No dose change; dose by aPTT (product label).",
+   "cld": "Bleeding risk with coagulopathy; dose by aPTT (product label)."
+  },
+  {
+   "pattern": "valproate",
+   "class": "nonabx",
+   "ckd": "No dose change; free fraction rises — monitor clinically (product label).",
+   "cld": "Contraindicated in hepatic disease (as noted in this row) (product label)."
+  },
+  {
+   "pattern": "verapamil",
+   "class": "nonabx",
+   "ckd": "No dose change.",
+   "cld": "Severe hepatic impairment: give 20–30% of the usual dose (product label)."
+  }
+ ],
+ "topics": {
+  "Acne Vulgaris": {
+   "paediatric": "Young people 12 years and over: adult doses apply (NICE NG198 covers this age group); under 12 years: specialist dermatology.",
+   "allergyAlternative": "Not applicable — no beta-lactam in this topic."
+  },
+  "Acute Appendicitis": {
+   "paediatric": "Adult-only topic — use the paediatric pathway.",
+   "allergyAlternative": "Severe beta-lactam allergy: ciprofloxacin 400 mg IV every 12 h plus metronidazole 500 mg IV every 8 h (IDSA intra-abdominal infection guidance)."
+  },
+  "Acute Cholecystitis: Admission and Surgical Pathway": {
+   "paediatric": "Adult-only topic — use the paediatric pathway.",
+   "allergyAlternative": "Ciprofloxacin plus metronidazole (the ciprofloxacin row in this topic)."
+  },
+  "Acute Exacerbation of COPD": {
+   "paediatric": "Adult-only topic — use the paediatric pathway.",
+   "allergyAlternative": "Doxycycline (the doxycycline row in this topic)."
+  },
+  "Acute Mesenteric Ischaemia: Recognition and Emergency Surgical Pathway": {
+   "paediatric": "Adult-only topic — use the paediatric pathway.",
+   "allergyAlternative": "Ciprofloxacin 400 mg IV every 12 h plus metronidazole 500 mg IV every 8 h (IDSA intra-abdominal infection guidance)."
+  },
+  "Acute Otitis Media: Antibiotic Prescribing Criteria": {
+   "paediatric": "Children: see the paediatric rows of this topic (NICE NG91).",
+   "allergyAlternative": "Clarithromycin; erythromycin in pregnancy (NICE NG91 — rows in this topic)."
+  },
+  "Acute Pyelonephritis in Pregnancy: Assessment, Admission and Follow-Up": {
+   "paediatric": "Not applicable — maternity topic; neonatal care follows the neonatal pathway.",
+   "allergyAlternative": "History of anaphylaxis or other immediate reaction to penicillin: avoid cephalosporins and get urgent microbiology advice — NICE NG111 gives no non-beta-lactam option in pregnancy."
+  },
+  "Acute Red Eye: Conjunctivitis versus Angle-Closure Glaucoma and Uveitis": {
+   "paediatric": "Adult-only topic — use the paediatric pathway.",
+   "allergyAlternative": "Not applicable — no beta-lactam in this topic."
+  },
+  "Acute Upper Gastrointestinal Bleeding": {
+   "paediatric": "Adult-only topic — use the paediatric pathway.",
+   "allergyAlternative": "Severe beta-lactam allergy: ciprofloxacin (MOH, as noted in the ceftriaxone row)."
+  },
+  "Adult Upper-Airway Emergency: Stridor, Epiglottitis and Airway Escalation": {
+   "paediatric": "Adult-only topic — use the paediatric pathway.",
+   "allergyAlternative": "Severe beta-lactam allergy: seek microbiology advice before the first dose (existing row)."
+  },
+  "Cataract Surgery Assessment and Preparation": {
+   "paediatric": "Adult-only topic — use the paediatric pathway.",
+   "allergyAlternative": "Intracameral moxifloxacin instead of cefazolin (ophthalmology prophylaxis practice)."
+  },
+  "Cellulitis and Erysipelas: Outpatient versus Intravenous Antibiotic Criteria": {
+   "paediatric": "Adult-only topic — use the paediatric pathway.",
+   "allergyAlternative": "Oral: doxycycline or clindamycin; IV: clindamycin, or vancomycin for severe or MRSA-risk infection (MOH SSTI — rows in this topic)."
+  },
+  "Chronic Obstructive Pulmonary Disease": {
+   "paediatric": "Adult-only topic — use the paediatric pathway.",
+   "allergyAlternative": "Not applicable — no beta-lactam in this topic."
+  },
+  "Community-Acquired Pneumonia": {
+   "paediatric": "Adult-only topic — use the paediatric pathway.",
+   "allergyAlternative": "Levofloxacin 750 mg daily or moxifloxacin 400 mg daily after excluding TB (MOH LRTI)."
+  },
+  "Deep Neck Space Infections and Quinsy: Airway Risk and Referral": {
+   "paediatric": "Adult-only topic — use the paediatric pathway.",
+   "allergyAlternative": "Clindamycin 450 mg IV then oral (the clindamycin row in this topic)."
+  },
+  "Diabetic Foot Infection: Urgent Assessment, Imaging and Limb-Salvage Referral": {
+   "paediatric": "Adult-only topic — use the paediatric pathway.",
+   "allergyAlternative": "Mild: clarithromycin, erythromycin (pregnancy) or doxycycline; moderate or severe: co-trimoxazole with or without gentamicin and/or metronidazole (NICE NG19)."
+  },
+  "Diabetic Foot: Risk Stratification and Ulcer Referral": {
+   "paediatric": "Adult-only topic — use the paediatric pathway.",
+   "allergyAlternative": "Mild: clarithromycin, erythromycin (pregnancy) or doxycycline; moderate or severe: co-trimoxazole with or without gentamicin and/or metronidazole (NICE NG19)."
+  },
+  "Elective Cholecystectomy Pre-operative Assessment Pathway": {
+   "paediatric": "Adult-only topic — use the paediatric pathway.",
+   "allergyAlternative": "Clindamycin 900 mg IV plus ciprofloxacin 400 mg IV (rows in this topic)."
+  },
+  "Elective Coronary Revascularisation Review": {
+   "paediatric": "Adult-only topic — use the paediatric pathway.",
+   "allergyAlternative": "Clindamycin 900 mg IV (the clindamycin row in this topic)."
+  },
+  "Elective Hernia Repair Assessment": {
+   "paediatric": "Adult-only topic — use the paediatric pathway.",
+   "allergyAlternative": "Clindamycin 900 mg IV, or vancomycin 15 mg/kg (rows in this topic)."
+  },
+  "Elective Hip and Knee Arthroplasty Preparation": {
+   "paediatric": "Adult-only topic — use the paediatric pathway.",
+   "allergyAlternative": "Clindamycin 900 mg IV, or vancomycin 15 mg/kg (rows in this topic)."
+  },
+  "Elective Hysterectomy for Benign Disease": {
+   "paediatric": "Adult-only topic — use the paediatric pathway.",
+   "allergyAlternative": "Clindamycin 900 mg IV plus gentamicin 5 mg/kg (rows in this topic)."
+  },
+  "Elective Valve Intervention Assessment": {
+   "paediatric": "Adult-only topic — use the paediatric pathway.",
+   "allergyAlternative": "Clindamycin 900 mg IV (the clindamycin row in this topic)."
+  },
+  "Fournier Gangrene: Recognition, Resuscitation and Emergency Debridement": {
+   "paediatric": "Adult-only topic — use the paediatric pathway.",
+   "allergyAlternative": "Clindamycin or metronidazole with an aminoglycoside or a fluoroquinolone, plus vancomycin (IDSA SSTI 2014)."
+  },
+  "Group B Streptococcus: Risk-Based Intrapartum Prophylaxis": {
+   "paediatric": "Not applicable — maternity topic; neonatal care follows the neonatal pathway.",
+   "allergyAlternative": "Non-severe allergy: cefuroxime; history of anaphylaxis: vancomycin (rows in this topic)."
+  },
+  "Headache: Red Flags and Primary Headache Diagnosis": {
+   "paediatric": "Adult-only topic — use the paediatric pathway.",
+   "allergyAlternative": "Bacterial meningitis with severe beta-lactam allergy: aztreonam with trimethoprim-sulfamethoxazole and vancomycin (MOH — row in this topic)."
+  },
+  "Infective Endocarditis: Recognition, Blood Cultures and Urgent Referral": {
+   "paediatric": "Adult-only topic — use the paediatric pathway.",
+   "allergyAlternative": "Vancomycin (the vancomycin row in this topic; ESC 2023)."
+  },
+  "Kidney Stones: Urology Referral and Prevention": {
+   "paediatric": "Adult-only topic — use the paediatric pathway.",
+   "allergyAlternative": "Meropenem has under 1% cross-reactivity; after penicillin anaphylaxis get microbiology advice."
+  },
+  "Maternal Sepsis in Pregnancy or Postpartum": {
+   "paediatric": "Not applicable — maternity topic; neonatal care follows the neonatal pathway.",
+   "allergyAlternative": "Clindamycin plus gentamicin, with vancomycin if MRSA is suspected (rows in this topic)."
+  },
+  "Metabolic and Bariatric Surgery Evaluation": {
+   "paediatric": "Adult-only topic — use the paediatric pathway.",
+   "allergyAlternative": "Clindamycin 900 mg IV plus ciprofloxacin 400 mg IV (MOH)."
+  },
+  "Perineal Tear: Assessment and Repair": {
+   "paediatric": "Not applicable — maternity topic; neonatal care follows the neonatal pathway.",
+   "allergyAlternative": "Clindamycin (the clindamycin row in this topic)."
+  },
+  "Perineal Tear: Postpartum Care and Follow-Up": {
+   "paediatric": "Not applicable — maternity topic; neonatal care follows the neonatal pathway.",
+   "allergyAlternative": "Clindamycin with metronidazole as in the repair topic; avoid co-amoxiclav."
+  },
+  "Prelabour Rupture of Membranes": {
+   "paediatric": "Not applicable — maternity topic; neonatal care follows the neonatal pathway.",
+   "allergyAlternative": "Erythromycin, or clindamycin plus gentamicin (rows in this topic)."
+  },
+  "Preterm Labour and Threatened Preterm Birth": {
+   "paediatric": "Not applicable — maternity topic; neonatal care follows the neonatal pathway.",
+   "allergyAlternative": "Group B Streptococcus prophylaxis: cefuroxime for non-severe allergy; vancomycin 1 g IV after anaphylaxis (as in the GBS topic)."
+  },
+  "Severe Community-Acquired Pneumonia: Severity Assessment and Critical-Care Escalation": {
+   "paediatric": "Adult-only topic — use the paediatric pathway.",
+   "allergyAlternative": "Levofloxacin (the levofloxacin row in this topic)."
+  },
+  "Sexually Transmitted Infection Screening: Who to Test and Which Tests": {
+   "paediatric": "Adolescents: adult doses apply (CDC STI 2021); younger children: use the paediatric pathway and safeguarding.",
+   "allergyAlternative": "Syphilis, not pregnant: doxycycline 100 mg twice daily for 14 days; pregnancy: penicillin desensitisation. Gonorrhoea with cephalosporin allergy: gentamicin 240 mg IM plus azithromycin 2 g orally (CDC STI 2021)."
+  },
+  "Suspected Meningitis and Encephalitis: ED Investigation and Treatment Pathway": {
+   "paediatric": "Adult-only topic — use the paediatric pathway.",
+   "allergyAlternative": "Chloramphenicol; meropenem for non-anaphylactic severe allergy (rows in this topic)."
+  },
+  "Suspected Meningitis: Community Recognition and Pre-Hospital Antibiotics": {
+   "paediatric": "Child doses for benzylpenicillin are in that row; cephalosporin doses for children: use the paediatric pathway.",
+   "allergyAlternative": "History of anaphylaxis to penicillin: do not give benzylpenicillin; give ceftriaxone or cefotaxime unless there is also cephalosporin anaphylaxis, otherwise transfer without antibiotic (NICE NG240)."
+  },
+  "Vaginal Birth After Caesarean: Antenatal Counselling": {
+   "paediatric": "Not applicable — maternity topic; neonatal care follows the neonatal pathway.",
+   "allergyAlternative": "Clindamycin 900 mg IV before incision (caesarean prophylaxis)."
+  },
+  "Vaginal Birth After Caesarean: Intrapartum Care": {
+   "paediatric": "Not applicable — maternity topic; neonatal care follows the neonatal pathway.",
+   "allergyAlternative": "Clindamycin 900 mg IV before incision (caesarean prophylaxis)."
+  }
+ }
+}

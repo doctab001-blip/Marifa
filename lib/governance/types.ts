@@ -42,6 +42,11 @@ export type GovSettings = {
   validityYears: number;
   accreditationAwardedOn: string | null;
   scoringSourceNote: string;
+  /** Risk score (likelihood x impact) at which each band starts. Defaults match the bands used since the hub launched. */
+  riskModerateMin: number;
+  riskHighMin: number;
+  riskExtremeMin: number;
+  riskMethodologyNote: string;
 };
 
 export const DEFAULT_SETTINGS: GovSettings = {
@@ -55,6 +60,10 @@ export const DEFAULT_SETTINGS: GovSettings = {
   accreditationAwardedOn: null,
   scoringSourceNote:
     "CBAHI Hospital Accreditation Process Guide, October 2016 (3rd edition standards). Confirm against the edition your hospital is surveyed under.",
+  riskModerateMin: 5,
+  riskHighMin: 10,
+  riskExtremeMin: 15,
+  riskMethodologyNote: "",
 };
 
 export type StandardRow = {

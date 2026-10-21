@@ -3,7 +3,8 @@ import { notFound } from "next/navigation";
 import {
   assignPolicyAction, attachPolicyDocumentAction, setPolicyStatusAction,
 } from "@/app/(workspace)/dashboard/accreditation-and-audits/actions";
-import { Badge, Empty, Meter, Notice, nameOf, pageParam } from "@/components/accreditation/ui";
+import { FileText } from "lucide-react";
+import { Badge, Empty, Meter, Notice, PageHeader, Stepper, nameOf, pageParam } from "@/components/accreditation/ui";
 import { getGovernanceActor } from "@/lib/governance/auth";
 import { currentDate, formatDate, formatStamp } from "@/lib/governance/clock";
 import { GOVERNANCE_READ_ROLES, ROLE_LABEL, canReadGovernance, canWriteGovernance } from "@/lib/governance/policy";
@@ -49,17 +50,16 @@ export default async function PolicyPage({ params, searchParams }: { params: Pro
 
   return (
     <>
-      <header className="gh-head">
-        <div>
-          <div className="gh-eyebrow"><Link href={`${BASE}/policies`}>Policies</Link> / {policy.documentNumber || "No document number"}</div>
-          <h1>{policy.title} <span className="gh-meta">v{policy.version}</span></h1>
-          <p>{policy.department || "No department"} · Owner: {nameOf(peopleById, policy.ownerUserId)}</p>
-        </div>
-        <div className="gh-btnrow">
+      <PageHeader icon={<FileText size={20} />} eyebrow={<><Link href={`${BASE}/policies`}>Policies</Link> / {policy.documentNumber || "No document number"}</>}
+        title={<>{policy.title} <span className="gh-meta">v{policy.version}</span></>} subtitle={`${policy.department || "No department"} · Owner: ${nameOf(peopleById, policy.ownerUserId)}`}
+        actions={<>
           <Badge tone={policy.status === "approved" ? "ok" : policy.status === "retired" ? "muted" : "info"}>{STATUS_LABEL[policy.status]}</Badge>
           {policy.status === "approved" && policy.nextReviewDue ? <Badge tone={policy.nextReviewDue < todayIso ? "bad" : "ok"}>Review {formatDate(policy.nextReviewDue)}</Badge> : null}
-        </div>
-      </header>
+        </>} />
+      <Stepper label="Policy approval workflow" current={policy.status} steps={[
+        { key: "draft", label: "Draft", hint: "Being written" }, { key: "under_committee_review", label: "Committee review", hint: "Awaiting decision" },
+        { key: "approved", label: "Approved", hint: "In force; frozen" }, { key: "retired", label: "Retired", hint: "No longer in force" },
+      ]} />
       <Notice done={done} error={error} />
 
       <div className="gh-grid-2">

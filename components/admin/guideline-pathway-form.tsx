@@ -18,11 +18,11 @@ const LONG_TEXT_KEYS = new Set([
 ]);
 
 const SELECT_OPTIONS: Record<string, string[]> = {
-  authority: ["MOH", "SHC", "PHA", "NICE", "Textbook", "Other"],
+  authority: ["MOH", "SHC", "PHA", "NICE", "ICMR", "MoHFW", "Textbook", "Other"],
   pillar: ["Urgent Care", "Chronic Care", "Keep Well", "Planned Care", "Safe Birth", "Palliative Care"],
   tier: ["laboratory", "firstLineImaging", "advancedImaging", "specializedAdjunctive"],
   status: ["source-verified", "no-drug-indicated", "local-protocol-required"],
-  issuer: ["MOH", "SHC", "ADA", "ACC/AHA", "ESC", "NICE", "PHA", "Textbook", "Other"],
+  issuer: ["MOH", "SHC", "ADA", "ACC/AHA", "ESC", "NICE", "PHA", "ICMR", "MoHFW", "Textbook", "Other"],
   kind: ["exact", "not-indicated"],
 };
 

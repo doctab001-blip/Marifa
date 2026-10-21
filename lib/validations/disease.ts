@@ -5,7 +5,7 @@ const nonEmptyText = z.string().trim().min(1);
 const nonEmptyTextArray = z.array(nonEmptyText).min(1);
 const isoDate = z.iso.date();
 
-export const DiseaseAuthoritySchema = z.enum(["MOH", "SHC", "PHA", "NICE", "Textbook", "Other"]);
+export const DiseaseAuthoritySchema = z.enum(["MOH", "SHC", "PHA", "NICE", "ICMR", "MoHFW", "Textbook", "Other"]);
 
 export const DiseaseStatusSchema = z.enum([
   "draft",

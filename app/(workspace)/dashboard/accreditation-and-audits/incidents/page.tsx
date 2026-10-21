@@ -1,14 +1,16 @@
 import Link from "next/link";
+import { AlertTriangle } from "lucide-react";
+import { IncidentV21 } from "@/components/accreditation/incident-v21";
 import {
   addCapaAction, reportIncidentAction, setCapaStatusAction, updateIncidentAction,
 } from "@/app/(workspace)/dashboard/accreditation-and-audits/actions";
-import { Badge, Details, Empty, Notice, RiskBadge, Stat, nameOf, pageParam, type Tone } from "@/components/accreditation/ui";
+import { Badge, Details, Empty, Notice, PageHeader, RiskBadge, Stat, Stepper, nameOf, pageParam, type Tone } from "@/components/accreditation/ui";
 import { getGovernanceActor } from "@/lib/governance/auth";
 import { currentDate, formatDate, formatStamp } from "@/lib/governance/clock";
 import { canReadGovernance, canWriteGovernance } from "@/lib/governance/policy";
-import { loadCapa, loadDepartments, loadIncidentFiles, loadIncidents, loadPeople, openContext, signedUrl } from "@/lib/governance/repository";
-import { IMPACT_LABEL, LIKELIHOOD_LABEL, isCapaOverdue, isoDate, riskBand, summariseSafety } from "@/lib/governance/scoring";
-import type { CapaRow, IncidentRow, IncidentStatus } from "@/lib/governance/types";
+import { loadCapa, loadDepartments, loadIncidentFiles, loadIncidents, loadPeople, loadSettings, openContext, signedUrl } from "@/lib/governance/repository";
+import { IMPACT_LABEL, LIKELIHOOD_LABEL, RISK_BAND_LABEL, isCapaOverdue, isoDate, riskBandWith, riskThresholdsOf, summariseSafety, type RiskThresholds } from "@/lib/governance/scoring";
+import { DEFAULT_SETTINGS, type CapaRow, type IncidentRow, type IncidentStatus } from "@/lib/governance/types";
 
 const BASE = "/dashboard/accreditation-and-audits";
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -27,6 +29,7 @@ export default async function IncidentsPage({ searchParams }: { searchParams: Pr
 
   const actor = await getGovernanceActor();
   if (!actor) return <p className="gh-notice gh-notice-bad" role="alert">Sign in to report or review incidents.</p>;
+  const myUserId = actor.userId;
   const reader = canReadGovernance(actor);
   const canWrite = canWriteGovernance(actor);
   const today = currentDate();
@@ -37,7 +40,9 @@ export default async function IncidentsPage({ searchParams }: { searchParams: Pr
   if (!loaded) return <p className="gh-notice gh-notice-bad" role="alert">Incidents could not be loaded. Has the accreditation hub migration been applied?</p>;
   const [incidents, capa, people, departments] = loaded;
   const peopleById = new Map(people.map((p) => [p.userId, p.displayName]));
-  const safety = summariseSafety(incidents, capa, today);
+  // Risk bands follow the hospital's configured methodology (Settings); the defaults equal the bands used before.
+  const thresholds: RiskThresholds = riskThresholdsOf(reader ? await loadSettings(ctx).catch(() => DEFAULT_SETTINGS) : DEFAULT_SETTINGS);
+  const safety = summariseSafety(incidents, capa, today, thresholds);
 
   const openIncidents = incidents.filter((x) => x.status !== "closed");
   const cellCount = (likelihood: number, impact: number) => openIncidents.filter((x) => x.likelihood === likelihood && x.impact === impact).length;
@@ -67,21 +72,21 @@ export default async function IncidentsPage({ searchParams }: { searchParams: Pr
 
   return (
     <>
-      <header className="gh-head">
-        <div><div className="gh-eyebrow">Accreditation hub</div><h1>Incidents &amp; corrective actions</h1>
-          <p>{reader ? "Surveyors look for proof that the hospital learns from what goes wrong: every serious incident needs a root cause and an owned, dated, verified fix." : "Report anything that went wrong or nearly did. You can see the incidents you have reported."}</p></div>
-      </header>
+      <PageHeader icon={<AlertTriangle size={20} />} title="Incidents & corrective actions"
+        subtitle={reader ? "Surveyors look for proof that the hospital learns from what goes wrong: every serious incident needs a root cause and an owned, dated, verified fix." : "Report anything that went wrong or nearly did. You can see the incidents you have reported."}
+        actions={<Link className="ui-button ui-button-primary" href={`${BASE}/incidents?report=1#report`}>Report an incident</Link>} />
       <Notice done={done} error={error} />
 
       {reader ? (
         <div className="gh-grid">
-          <Stat label="Open incidents" value={safety.openIncidents} href={filterLink({ status: "open" })} />
-          <Stat label="Open sentinel events" value={safety.openSentinel} tone={safety.openSentinel > 0 ? "bad" : "ok"} note={safety.sentinelMissingRca > 0 ? `${safety.sentinelMissingRca} without root cause` : "None awaiting root cause"} />
-          <Stat label="High / extreme risk open" value={safety.highRiskOpen} tone={safety.highRiskOpen > 0 ? "warn" : "ok"} note="Risk score 10 or more" />
-          <Stat label="Overdue actions" value={safety.capaOverdue} href={filterLink({ show: "capa_overdue" })} tone={safety.capaOverdue > 0 ? "bad" : "ok"} note={safety.capaAwaitingVerification > 0 ? `${safety.capaAwaitingVerification} awaiting verification` : "Nothing awaiting verification"} />
+          <Stat accent="coral" label="Open incidents" value={safety.openIncidents} href={filterLink({ status: "open" })} />
+          <Stat accent="coral" label="Open sentinel events" value={safety.openSentinel} tone={safety.openSentinel > 0 ? "bad" : "ok"} note={safety.sentinelMissingRca > 0 ? `${safety.sentinelMissingRca} without root cause` : "None awaiting root cause"} />
+          <Stat accent="gold" label="High / extreme risk open" value={safety.highRiskOpen} tone={safety.highRiskOpen > 0 ? "warn" : "ok"} note={`Risk score ${thresholds.highMin} or more`} />
+          <Stat accent="coral" label="Overdue actions" value={safety.capaOverdue} href={filterLink({ show: "capa_overdue" })} tone={safety.capaOverdue > 0 ? "bad" : "ok"} note={safety.capaAwaitingVerification > 0 ? `${safety.capaAwaitingVerification} awaiting verification` : "Nothing awaiting verification"} />
         </div>
       ) : null}
 
+      <div id="report" />
       <Details title="Report an incident or near miss" open={sp.report === "1" || incidents.length === 0}>
         <form action={reportIncidentAction} className="gh-form" encType="multipart/form-data">
           <input type="hidden" name="returnTo" value={`${BASE}/incidents`} />
@@ -111,26 +116,35 @@ export default async function IncidentsPage({ searchParams }: { searchParams: Pr
       {reader ? (
         <div className="gh-grid-2">
           <section className="gh-card" aria-labelledby="matrix-heading">
-            <h2 id="matrix-heading">Risk matrix</h2>
-            <p className="gh-sub">Open incidents by likelihood and impact. Select a cell to filter the list below.</p>
+            <h2 id="matrix-heading" className="gh-section-title">Risk matrix</h2>
+            <p className="gh-sub">Open incidents by likelihood and impact (score = likelihood × impact). Select a cell to filter the list below.</p>
             <div className="gh-matrix-wrap">
-              <div className="gh-axis-y">Likelihood</div>
+              <div className="gh-axis-y">Likelihood →</div>
               <div>
-                <div className="gh-matrix">
+                <div className="gh-matrix" role="group" aria-label="Risk matrix of open incidents">
                   {[5, 4, 3, 2, 1].map((likelihood) => (
-                    <MatrixRow key={likelihood} likelihood={likelihood} selected={{ l, i }} count={cellCount} href={(li, im) => filterLink({ l: String(li), i: String(im) })} />
+                    <MatrixRow key={likelihood} likelihood={likelihood} selected={{ l, i }} count={cellCount} thresholds={thresholds} href={(li, im) => filterLink({ l: String(li), i: String(im) })} />
                   ))}
                   <span />
-                  {IMPACT_LABEL.map((label) => <span className="gh-mlabel" key={label}>{label}</span>)}
+                  {IMPACT_LABEL.map((label, idx) => <span className="gh-mlabel" key={label}>{idx + 1} · {label}</span>)}
                 </div>
-                <div className="gh-axis-y" style={{ writingMode: "horizontal-tb", transform: "none", marginTop: ".3rem" }}>Impact</div>
+                <div className="gh-axis-y" style={{ writingMode: "horizontal-tb", transform: "none", marginTop: ".3rem" }}>Impact →</div>
               </div>
             </div>
-            {l || i ? <p><Link className="ui-button" href={filterLink({ l: "", i: "" })}>Clear matrix filter</Link></p> : null}
+            <div className="gh-legend" aria-label="Risk bands">
+              <span><i className="gh-m-low" /> {RISK_BAND_LABEL.low} (1–{thresholds.moderateMin - 1})</span>
+              <span><i className="gh-m-moderate" /> {RISK_BAND_LABEL.moderate} ({thresholds.moderateMin}–{thresholds.highMin - 1})</span>
+              <span><i className="gh-m-high" /> {RISK_BAND_LABEL.high} ({thresholds.highMin}–{thresholds.extremeMin - 1})</span>
+              <span><i className="gh-m-extreme" /> {RISK_BAND_LABEL.extreme} ({thresholds.extremeMin}–25)</span>
+              <span className="gh-meta">Bands follow your hospital&apos;s risk methodology (Settings).</span>
+            </div>
+            {l || i ? (
+              <p style={{ margin: ".7rem 0 0" }}><span className="gh-filter-chip" role="status">Showing likelihood {l ? `${l} · ${LIKELIHOOD_LABEL[l - 1]}` : "any"}, impact {i ? `${i} · ${IMPACT_LABEL[i - 1]}` : "any"} <Link href={filterLink({ l: "", i: "" })}>Reset ×</Link></span></p>
+            ) : null}
           </section>
 
           <section className="gh-card" aria-labelledby="actions-heading">
-            <h2 id="actions-heading">Corrective actions</h2>
+            <h2 id="actions-heading" className="gh-section-title">Corrective actions</h2>
             <p className="gh-sub">Everything not yet verified, soonest deadline first.</p>
             {dueSoon.length === 0 ? <Empty title="No open actions">Actions appear here when you add them to an incident.</Empty> : (
               <ul className="gh-actions">
@@ -154,7 +168,7 @@ export default async function IncidentsPage({ searchParams }: { searchParams: Pr
 
       <section aria-labelledby="list-heading" className="gh-card">
         <div className="gh-head">
-          <h2 id="list-heading" style={{ margin: 0 }}>{reader ? "Incidents" : "Your reports"}</h2>
+          <h2 id="list-heading" className="gh-section-title" style={{ margin: 0 }}>{reader ? "Incidents" : "Your reports"}{l || i ? <span className="gh-meta" style={{ fontWeight: 500 }}> · filtered by the matrix</span> : null}</h2>
           <div className="gh-btnrow gh-noprint">
             {(["open", "closed", "all"] as const).map((s) => <Link key={s} className={`ui-button${status === s ? " ui-button-primary" : ""}`} href={filterLink({ status: s === "open" ? "" : s })}>{s === "open" ? "Open" : s === "closed" ? "Closed" : "All"}</Link>)}
           </div>
@@ -179,8 +193,12 @@ export default async function IncidentsPage({ searchParams }: { searchParams: Pr
           <div className="gh-head">
             <div><div className="gh-eyebrow">{selected.reference}</div><h2 id="incident-heading" style={{ margin: 0 }}>{selected.title}</h2>
               <p className="gh-meta" style={{ margin: ".2rem 0 0" }}>{selected.category} · {selected.department || "No department"}{selected.location ? ` · ${selected.location}` : ""} · {formatStamp(selected.occurredAt)} · reported by {reader ? nameOf(peopleById, selected.reportedBy) : "you"}</p></div>
-            <div className="gh-btnrow">{selected.isSentinel ? <Badge tone="bad">Sentinel event</Badge> : null}<RiskBadge score={selected.riskScore} /><Badge tone="muted">{STATUS_LABEL[selected.status]}</Badge></div>
+            <div className="gh-btnrow">{selected.isSentinel ? <Badge tone="bad">Sentinel event</Badge> : null}<RiskBadge score={selected.riskScore} thresholds={thresholds} /><Badge tone="muted">{STATUS_LABEL[selected.status]}</Badge></div>
           </div>
+          <Stepper label="Incident lifecycle" current={selected.status} steps={[
+            { key: "reported", label: "Reported" }, { key: "under_investigation", label: "Investigation" }, { key: "capa_assigned", label: "Actions assigned" },
+            { key: "under_review", label: "Under review" }, { key: "closed", label: "Closed" },
+          ]} />
           {selected.description ? <p>{selected.description}</p> : null}
           {Object.values(selected.sbar).some(Boolean) ? (
             <table className="gh-table"><tbody>
@@ -234,6 +252,8 @@ export default async function IncidentsPage({ searchParams }: { searchParams: Pr
             </>
           ) : null}
 
+          {reader ? <IncidentV21 ctx={ctx} incident={selected} capa={selectedCapa} people={people} canWrite={canWrite} myUserId={myUserId} now={new Date()} /> : null}
+
           {canWrite ? (
             <Details title="Manage this incident" open={selected.status !== "closed" && selected.isSentinel}>
               <form action={updateIncidentAction} className="gh-form">
@@ -255,18 +275,20 @@ export default async function IncidentsPage({ searchParams }: { searchParams: Pr
   );
 }
 
-function MatrixRow({ likelihood, selected, count, href }: { likelihood: number; selected: { l: number; i: number }; count: (l: number, i: number) => number; href: (l: number, i: number) => string }) {
+function MatrixRow({ likelihood, selected, count, href, thresholds }: { likelihood: number; selected: { l: number; i: number }; count: (l: number, i: number) => number; href: (l: number, i: number) => string; thresholds: RiskThresholds }) {
   return (
     <>
-      <span className="gh-mlabel">{LIKELIHOOD_LABEL[likelihood - 1]}</span>
+      <span className="gh-mlabel">{likelihood} · {LIKELIHOOD_LABEL[likelihood - 1]}</span>
       {[1, 2, 3, 4, 5].map((impact) => {
         const n = count(likelihood, impact);
+        const score = likelihood * impact;
+        const band = riskBandWith(score, thresholds);
         const isSel = selected.l === likelihood && selected.i === impact;
-        const cls = `gh-mcell gh-m-${riskBand(likelihood * impact)}`;
-        const label = `Likelihood ${LIKELIHOOD_LABEL[likelihood - 1]}, impact ${IMPACT_LABEL[impact - 1]}: ${n} open incident${n === 1 ? "" : "s"}`;
+        const cls = `gh-mcell gh-m-${band}${n === 0 ? " is-empty" : ""}`;
+        const label = `${LIKELIHOOD_LABEL[likelihood - 1]} likelihood × ${IMPACT_LABEL[impact - 1]} impact = score ${score} (${RISK_BAND_LABEL[band]}): ${n} open incident${n === 1 ? "" : "s"}${n > 0 ? ". Select to filter." : ""}`;
         return n > 0
-          ? <Link key={impact} className={cls} href={href(likelihood, impact)} aria-label={label} aria-current={isSel ? "true" : undefined}>{n}</Link>
-          : <span key={impact} className={cls} aria-label={label}>{""}</span>;
+          ? <Link key={impact} className={cls} href={href(likelihood, impact)} aria-label={label} title={label} aria-current={isSel ? "true" : undefined}><span className="gh-mscore" aria-hidden="true">{score}</span>{n}</Link>
+          : <span key={impact} className={cls} aria-label={label} title={label}><span className="gh-mscore" aria-hidden="true">{score}</span><span className="sr-only">0</span></span>;
       })}
     </>
   );

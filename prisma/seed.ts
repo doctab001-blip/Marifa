@@ -134,6 +134,8 @@ function issuingOrganization(record: DiseaseDetail, source: SourceMetadata) {
     SHC: "Saudi Health Council",
     PHA: "Saudi Public Health Authority",
     NICE: "National Institute for Health and Care Excellence; adapted for Saudi review",
+    ICMR: "Indian Council of Medical Research",
+    MoHFW: "Ministry of Health and Family Welfare, Government of India",
     Other: source.sourceTitle,
     Textbook: "Textbook reference; clinical review status is recorded separately",
   }[record.authority];

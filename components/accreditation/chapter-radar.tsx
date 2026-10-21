@@ -10,11 +10,11 @@ export function ChapterRadar({ data }: { data: RadarPoint[] }) {
     <div style={{ width: "100%", height: 300 }} aria-hidden="true">
       <ResponsiveContainer>
         <RadarChart data={data} outerRadius="72%">
-          <PolarGrid />
-          <PolarAngleAxis dataKey="chapter" tick={{ fontSize: 11 }} />
-          <PolarRadiusAxis angle={90} domain={[0, 100]} tick={{ fontSize: 10 }} />
-          <Radar dataKey="score" stroke="#0e7490" fill="#0e7490" fillOpacity={0.3} />
-          <Tooltip formatter={(value) => [`${value}%`, "Readiness"]} />
+          <PolarGrid stroke="var(--mx-line)" />
+          <PolarAngleAxis dataKey="chapter" tick={{ fontSize: 11, fill: "var(--mx-muted)" }} />
+          <PolarRadiusAxis angle={90} domain={[0, 100]} tick={{ fontSize: 10, fill: "var(--mx-muted)" }} />
+          <Radar dataKey="score" name="Readiness" stroke="var(--mx-chart-1)" fill="var(--mx-chart-1)" fillOpacity={0.22} strokeWidth={2} />
+          <Tooltip contentStyle={{ background: "var(--mx-card)", border: "1px solid var(--mx-line)", borderRadius: 10, fontSize: 12 }} formatter={(value) => [`${value}%`, "Readiness"]} />
         </RadarChart>
       </ResponsiveContainer>
     </div>

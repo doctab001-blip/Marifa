@@ -317,9 +317,22 @@ export const RISK_BAND_LABEL: Record<RiskBand, string> = { low: "Low", moderate:
 export const LIKELIHOOD_LABEL = ["Rare", "Unlikely", "Possible", "Likely", "Almost certain"];
 export const IMPACT_LABEL = ["Negligible", "Minor", "Moderate", "Major", "Catastrophic"];
 
+export type RiskThresholds = { moderateMin: number; highMin: number; extremeMin: number };
+/** The bands the hub has always used. Hospitals can change them in Settings to match their own risk methodology. */
+export const DEFAULT_RISK_THRESHOLDS: RiskThresholds = { moderateMin: 5, highMin: 10, extremeMin: 15 };
+
 /** Generic 5x5 matrix banding (likelihood x impact). It is the organisation's own matrix, not a CBAHI-defined one. */
 export function riskBand(score: number): RiskBand {
-  return score >= 15 ? "extreme" : score >= 10 ? "high" : score >= 5 ? "moderate" : "low";
+  return riskBandWith(score, DEFAULT_RISK_THRESHOLDS);
+}
+
+/** Banding with the hospital's own thresholds (Settings). Kept separate so riskBand stays safe to pass to Array.map. */
+export function riskBandWith(score: number, t: RiskThresholds): RiskBand {
+  return score >= t.extremeMin ? "extreme" : score >= t.highMin ? "high" : score >= t.moderateMin ? "moderate" : "low";
+}
+
+export function riskThresholdsOf(settings: Pick<GovSettings, "riskModerateMin" | "riskHighMin" | "riskExtremeMin">): RiskThresholds {
+  return { moderateMin: settings.riskModerateMin, highMin: settings.riskHighMin, extremeMin: settings.riskExtremeMin };
 }
 
 export function isCapaOverdue(capa: Pick<CapaRow, "status" | "dueDate">, today: Date): boolean {
@@ -336,12 +349,12 @@ export type SafetyOverview = {
   sentinelMissingRca: number;
 };
 
-export function summariseSafety(incidents: IncidentRow[], capa: CapaRow[], today: Date): SafetyOverview {
+export function summariseSafety(incidents: IncidentRow[], capa: CapaRow[], today: Date, thresholds: RiskThresholds = DEFAULT_RISK_THRESHOLDS): SafetyOverview {
   const open = incidents.filter((incident) => incident.status !== "closed");
   return {
     openIncidents: open.length,
     openSentinel: open.filter((incident) => incident.isSentinel).length,
-    highRiskOpen: open.filter((incident) => riskBand(incident.riskScore) === "high" || riskBand(incident.riskScore) === "extreme").length,
+    highRiskOpen: open.filter((incident) => riskBandWith(incident.riskScore, thresholds) === "high" || riskBandWith(incident.riskScore, thresholds) === "extreme").length,
     capaOpen: capa.filter((item) => item.status === "open" || item.status === "in_progress").length,
     capaOverdue: capa.filter((item) => isCapaOverdue(item, today)).length,
     capaAwaitingVerification: capa.filter((item) => item.status === "done").length,

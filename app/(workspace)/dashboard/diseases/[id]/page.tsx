@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
+import { cookies } from "next/headers";
 import { after } from "next/server";
 import { ArrowLeft, CalendarCheck, CheckCircle2, FileText, Hourglass, ShieldAlert, Stethoscope } from "@/components/icons-3d";
 import { EmergencyTopic } from "@/components/emergency-topic";
@@ -13,6 +14,9 @@ import { getFamilyCanonicalTopic, getFamilyTopics, getTopicFamily } from "@/lib/
 import { approveLiveTopic } from "./actions";
 import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
 import type { DiseaseDetail } from "@/lib/validations/disease";
+import { RegionalTopicView } from "@/components/clinical/RegionalTopicView";
+import { getGlobalDiseaseTopic } from "@/lib/data/global-topics";
+import { REGION_COOKIE, resolveRegion } from "@/lib/region";
 
 function formatDate(date: string) {
   return new Intl.DateTimeFormat("en-GB", { day: "2-digit", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${date}T00:00:00Z`));
@@ -60,9 +64,17 @@ function TopicApprovalBar({ disease, message, position = "bottom", editHref }: {
   );
 }
 
-export default async function DiseaseDetailPage({ params, searchParams }: { params: Promise<{ id: string }>; searchParams: Promise<{ approval?: string; version?: string }> }) {
+export default async function DiseaseDetailPage({ params, searchParams }: { params: Promise<{ id: string }>; searchParams: Promise<{ approval?: string; version?: string; region?: string }> }) {
   const { id } = await params;
-  const { approval, version } = await searchParams;
+  const { approval, version, region } = await searchParams;
+  // Multi-region topics (universal features + per-country profiles) render with the active region.
+  // Existing single-country topics continue down the unchanged path below.
+  const globalTopic = getGlobalDiseaseTopic(id);
+  if (globalTopic.state === "invalid") return <ErrorState invalid />;
+  if (globalTopic.state === "ready") {
+    const activeRegion = resolveRegion(region, (await cookies()).get(REGION_COOKIE)?.value);
+    return <RegionalTopicView topic={globalTopic.topic} region={activeRegion} />;
+  }
   const canonical = canonicalTopicId(id);
   if (canonical) redirect(`/dashboard/diseases/${canonical}`);
   const result = version ? await getApprovedDiseaseGuidelineVersion(id, version) : await getApprovedDiseaseGuideline(id);

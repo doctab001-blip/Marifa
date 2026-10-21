@@ -1,7 +1,16 @@
 import { ChevronDown, ShieldCheck } from "lucide-react";
-import type { GovernanceMetadata } from "@/types/clinical";
 
-export function GovernanceDrawer({ metadata }: { metadata: GovernanceMetadata }) {
+type DrawerMetadata = {
+  primaryConsensusSource: string;
+  fallbackBasis?: string;
+  adaptationReasoning?: string;
+};
+
+/**
+ * Collapsible governance footer. Works for legacy KSA records and for the active
+ * region's `governanceMetadata` on multi-region topics.
+ */
+export function GovernanceDrawer({ metadata, regionName = "Saudi" }: { metadata: DrawerMetadata; regionName?: string }) {
   return (
     <details
       className="ksa-governance-drawer group overflow-hidden rounded-xl border border-slate-200/60 bg-white shadow-[0_2px_8px_rgba(0,0,0,0.04)]"
@@ -22,12 +31,18 @@ export function GovernanceDrawer({ metadata }: { metadata: GovernanceMetadata })
         </div>
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Fallback basis</p>
-          <p className="mt-1.5 text-sm font-medium text-slate-900">{metadata.fallbackBasis}</p>
+          {metadata.fallbackBasis ? (
+            <p className="mt-1.5 text-sm font-medium text-slate-900">{metadata.fallbackBasis}</p>
+          ) : (
+            <p className="mt-1.5 text-sm text-slate-500">None recorded for this region.</p>
+          )}
         </div>
-        <div className="sm:col-span-2">
-          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Saudi adaptation reasoning</p>
-          <p className="mt-1.5 max-w-3xl text-sm leading-6 text-slate-700">{metadata.adaptationReasoning}</p>
-        </div>
+        {metadata.adaptationReasoning ? (
+          <div className="sm:col-span-2">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">{regionName} adaptation reasoning</p>
+            <p className="mt-1.5 max-w-3xl text-sm leading-6 text-slate-700">{metadata.adaptationReasoning}</p>
+          </div>
+        ) : null}
       </div>
     </details>
   );

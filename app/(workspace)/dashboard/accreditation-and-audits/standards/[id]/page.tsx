@@ -3,8 +3,11 @@ import { notFound } from "next/navigation";
 import {
   recordAssessmentAction, updateStandardAction, uploadEvidenceAction, withdrawEvidenceAction,
 } from "@/app/(workspace)/dashboard/accreditation-and-audits/actions";
-import { Badge, Details, Empty, EvidenceBadge, Notice, RatingBadge, nameOf, pageParam } from "@/components/accreditation/ui";
+import { ShieldCheck } from "lucide-react";
+import { StandardV21 } from "@/components/accreditation/standard-v21";
+import { Badge, Details, Empty, EvidenceBadge, Notice, PageHeader, RatingBadge, nameOf, pageParam } from "@/components/accreditation/ui";
 import { getGovernanceActor } from "@/lib/governance/auth";
+import { effectiveEvidence } from "@/lib/governance/repository-v21";
 import { currentDate, formatBytes, formatDate, formatStamp } from "@/lib/governance/clock";
 import { canReadGovernance, canWriteGovernance } from "@/lib/governance/policy";
 import {
@@ -38,7 +41,8 @@ export default async function StandardPage({ params, searchParams }: { params: P
   const peopleById = new Map(people.map((p) => [p.userId, p.displayName]));
   const status = statuses.find((row) => row.standardId === id);
   const rating: Rating | null = status?.rating ?? null;
-  const health = evidenceHealth(evidence, today);
+  // Health counts files linked here and ignores replaced versions, matching the database guard.
+  const health = evidenceHealth((await effectiveEvidence(ctx, await loadEvidence(ctx))).filter((item) => item.standardId === id), today);
   const linkedPolicies = policies.filter((policy) => links.some((link) => link.standardId === id && link.policyId === policy.id));
   const active = evidence.filter((item) => !item.withdrawnAt);
   const withdrawn = evidence.filter((item) => item.withdrawnAt);
@@ -48,14 +52,9 @@ export default async function StandardPage({ params, searchParams }: { params: P
 
   return (
     <>
-      <header className="gh-head">
-        <div>
-          <div className="gh-eyebrow"><Link href={`${BASE}/standards`}>Standards &amp; evidence</Link> / {standard.chapterCode || standard.chapterName || "Standard"}</div>
-          <h1>{standard.code} {standard.isEsr ? <Badge tone="bad">Essential safety requirement</Badge> : null}</h1>
-          <p>{standard.description}</p>
-        </div>
-        <div className="gh-btnrow"><RatingBadge rating={rating} /><EvidenceBadge health={health} count={active.length} /></div>
-      </header>
+      <PageHeader icon={<ShieldCheck size={20} />} eyebrow={<><Link href={`${BASE}/standards`}>Standards &amp; evidence</Link> / {standard.chapterCode || standard.chapterName || "Standard"}</>}
+        title={<>{standard.code} {standard.isEsr ? <Badge tone="bad">Essential safety requirement</Badge> : null}</>} subtitle={standard.description}
+        actions={<><RatingBadge rating={rating} /><EvidenceBadge health={health} count={active.length} /></>} />
       <Notice done={done} error={error} />
       {rating === "satisfactory" && !isBackedByEvidence(health) ? (
         <p className="gh-notice gh-notice-bad" role="alert">This standard is rated satisfactory but has no current evidence. It is counted as partial in your readiness score until you attach current evidence.</p>
@@ -178,6 +177,7 @@ export default async function StandardPage({ params, searchParams }: { params: P
           <p className="gh-meta">Edition: {standard.edition}</p>
         </section>
       </div>
+      <StandardV21 ctx={ctx} standardId={id} standardCode={standard.code} canWrite={canWrite} people={people} today={today} here={here} />
     </>
   );
 }

@@ -3,7 +3,7 @@ export interface InvestigationItem { tier: string; testName: string; expectedFin
 export interface DraftTopic { title: string; specialty: string; authority: string; pillar: string; lastReviewed: string; pathophysiology: { summary: string; keyMechanisms: string[] }; expectedFinding: string; clinicalRationale: string; symptoms: string[]; physicalSigns: string[]; redFlags: string[]; differentials: DifferentialItem[]; investigations: InvestigationItem[]; management: { firstLine: string[]; secondLine: string[]; nonPharmacological: string[]; urgentReferralCriteria: string[] }; }
 
 const core = ["1. Pathophysiology", "2. Clinical Findings", "3. Differential Diagnoses", "4. Workup & Rule Out", "5. Management & Interventions"];
-const authorities = new Set(["MOH", "SHC", "PHA", "NICE", "Textbook", "Other"]);
+const authorities = new Set(["MOH", "SHC", "PHA", "NICE", "ICMR", "MoHFW", "Textbook", "Other"]);
 const pillars = new Set(["Urgent Care", "Chronic Care", "Keep Well", "Planned Care", "Safe Birth", "Palliative Care"]);
 const content = (value: string) => value.trim() || "Not authored.";
 const bullets = (items: string[]) => items.length ? items.map((item) => `- ${content(item)}`).join("\n") : "- Not authored.";
