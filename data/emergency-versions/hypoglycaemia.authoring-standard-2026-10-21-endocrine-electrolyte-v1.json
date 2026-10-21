@@ -1,0 +1,663 @@
+{
+  "id": "05f4d24c-6464-4f14-8965-f95ac195a230",
+  "title": "Hypoglycaemia in Adults",
+  "specialty": "Endocrinology / Emergency Medicine",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-21-endocrine-electrolyte-v1",
+  "lastReviewed": "2026-10-21",
+  "pillar": "Urgent Care",
+  "clinicalScenario": "Outline only. Planned scope: Conscious and unconscious patient pathways, treatment, recheck, causes (insulin, sulfonylurea, non-diabetic), safe discharge criteria. Candidate sources to verify: JBDS-IP hospital management of hypoglycaemia; ADA Standards of Care.",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-21",
+    "status": "incomplete",
+    "scope": "Adult (over 18 years) Emergency Department (ED) and inpatient treatment of hypoglycaemia in people with diabetes, based on the Joint British Diabetes Societies (JBDS) 2023 guideline and the Saudi Ministry of Health (MOH) inpatient hypoglycaemia protocol. Neonatal, paediatric and non-diabetic hypoglycaemia work-up are outside this protocol.",
+    "findings": [
+      "Full protocol rebuilt from the source dossier opened on 2026-10-21; exact source locations are recorded in each investigation and medicine row.",
+      "The original outline remains preserved; this additive version is non-current and pending clinical review."
+    ],
+    "unverifiedSections": [
+      "Normal reference ranges are typical adult values, not taken from the cited guidelines.",
+      "Symptoms, signs, precipitants, differentials and pathophysiology are standard clinical content and were not extracted line by line from the sources.",
+      "JBDS page numbers were inferred from an automated reading of the PDF; the Saudi MOH protocol has no page numbers, so section headings are cited. Check both before clinical sign-off.",
+      "The Saudi MOH protocol has no stated publication date, and its relationship to the Saudi Diabetes Clinical Practice Guidelines (pp. 69–70) was not reconciled.",
+      "Saudi Food and Drug Authority (SFDA) registration and availability of glucagon and glucose products were not checked.",
+      "JBDS does not define mild, moderate or severe by mmol/L; the Saudi 2.5 mmol/L split applies only to the 50% dextrose branch.",
+      "JBDS Appendix 5 (IV glucose infusion details), glucagon reconstitution steps and thiamine for alcohol-related hypoglycaemia were not in the opened text; follow the product leaflet for glucagon preparation.",
+      "Renal, hepatic and age adjustments for the drugs added in this revision are from manufacturer labels (UK Summary of Product Characteristics, US prescribing information and a New Zealand data sheet), not from Saudi Food and Drug Authority labels."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "05f4d24c-6464-4f14-8965-f95ac195a230"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Hypoglycaemia in diabetes is usually caused by treatment that lowers glucose faster than intake or hepatic glucose output can match.",
+    "keyMechanisms": [
+      "Insulin and sulfonylureas are the usual causes; their effect can last 24–36 hours, longer with renal impairment.",
+      "Missed or delayed meals, extra exercise, alcohol, renal or liver failure and dosing errors are common triggers.",
+      "Low glucose reduces glucose supply to the brain, causing confusion, reduced consciousness and seizures; adrenaline release causes sweating and tremor."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Sweating, tremor, palpitations, hunger, anxiety.",
+      "Confusion, odd behaviour, drowsiness, visual disturbance, headache."
+    ],
+    "physicalSigns": [
+      "Pallor, sweating, tachycardia.",
+      "Reduced consciousness, seizure, focal neurological signs that resolve with glucose."
+    ],
+    "redFlags": [
+      "Unable to swallow safely or unconscious.",
+      "Capillary blood glucose still below 4.0 mmol/L after 3 treatment cycles or 30–45 minutes.",
+      "Sulfonylurea or long-acting insulin overdose, or renal impairment (prolonged effect).",
+      "Seizure or persistent confusion after glucose is corrected."
+    ],
+    "precipitants": [
+      "Insulin or sulfonylurea dose too high, missed meal, extra exercise, alcohol, acute kidney injury, liver failure, sepsis."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Stroke",
+      "distinguishingFeatures": "Focal deficit that does not resolve when glucose is normal"
+    },
+    {
+      "condition": "Seizure or post-ictal state",
+      "distinguishingFeatures": "Normal capillary glucose"
+    },
+    {
+      "condition": "Alcohol intoxication",
+      "distinguishingFeatures": "Normal capillary glucose, smell of alcohol"
+    },
+    {
+      "condition": "Sepsis",
+      "distinguishingFeatures": "Fever, raised inflammatory markers; hypoglycaemia may coexist"
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Capillary blood glucose",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Hypoglycaemia in Adults",
+        "expectedFinding": "Below 4.0 mmol/L",
+        "clinicalRationale": "Treat immediately; recheck 10–15 minutes after oral treatment, up to 3 treatments",
+        "normalValue": "4.0–7.8 mmol/L (72–140 mg/dL)",
+        "references": [
+          {
+            "title": "Joint British Diabetes Societies for Inpatient Care (JBDS 01), Management of Hypoglycaemia in Hospital",
+            "edition": "JBDS-IP, revised January 2023; p. 10 and p. 11",
+            "url": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_01_Hypo_Guideline_with_QR_code_January_2023.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Laboratory venous glucose",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Hypoglycaemia in Adults",
+        "expectedFinding": "Confirms the low value",
+        "clinicalRationale": "Send the sample but do not delay treatment",
+        "normalValue": "4.0–7.8 mmol/L",
+        "references": [
+          {
+            "title": "Inpatient Hypoglycemia Management Protocol",
+            "edition": "Saudi Ministry of Health, year not stated; section Pathway, step 1",
+            "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-007.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Urea, creatinine and electrolytes",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Hypoglycaemia in Adults",
+        "expectedFinding": "Raised in renal impairment",
+        "clinicalRationale": "Renal failure prolongs insulin and sulfonylurea effect; plan longer monitoring",
+        "normalValue": "Creatinine 60–110 µmol/L",
+        "references": [
+          {
+            "title": "Joint British Diabetes Societies for Inpatient Care (JBDS 01), Management of Hypoglycaemia in Hospital",
+            "edition": "JBDS-IP, revised January 2023; p. 12",
+            "url": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_01_Hypo_Guideline_with_QR_code_January_2023.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Liver function tests",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Hypoglycaemia in Adults",
+        "expectedFinding": "Abnormal in liver failure",
+        "clinicalRationale": "Glycogen stores may be low so IV glucose is preferred",
+        "normalValue": "ALT 7–56 U/L (typical adult range; range varies by laboratory)",
+        "references": [
+          {
+            "title": "Joint British Diabetes Societies for Inpatient Care (JBDS 01), Management of Hypoglycaemia in Hospital",
+            "edition": "JBDS-IP, revised January 2023; p. 15",
+            "url": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_01_Hypo_Guideline_with_QR_code_January_2023.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Inpatient diabetes team review",
+        "modalityTarget": "Imaging and specialist",
+        "targetCondition": "Hypoglycaemia in Adults",
+        "expectedFinding": "Severe, recurrent or unexplained hypoglycaemia",
+        "clinicalRationale": "Document the event, review treatment and give education",
+        "normalValue": "Not needed",
+        "references": [
+          {
+            "title": "Joint British Diabetes Societies for Inpatient Care (JBDS 01), Management of Hypoglycaemia in Hospital",
+            "edition": "JBDS-IP, revised January 2023; p. 12",
+            "url": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_01_Hypo_Guideline_with_QR_code_January_2023.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "immediate",
+      "title": "Immediate",
+      "timeframe": "0–15 minutes",
+      "actions": [
+        "Confirm capillary glucose below 4.0 mmol/L and check airway, breathing, circulation and consciousness.",
+        "Stop any insulin infusion immediately; restart it once the episode is treated and review the dose.",
+        "Conscious and able to swallow: give oral rapid-acting carbohydrate.",
+        "Unable to swallow safely: give glucose gel, IV glucose or glucagon according to access and glycogen stores.",
+        "Recheck capillary glucose 10–15 minutes after oral treatment (5 minutes after IV dextrose in the Saudi MOH protocol)."
+      ]
+    },
+    {
+      "id": "ongoing",
+      "title": "Ongoing",
+      "timeframe": "15–60 minutes",
+      "actions": [
+        "Repeat treatment if glucose is still below 4.0 mmol/L, up to 3 times; call for medical help if still low after 30–45 minutes or 3 cycles.",
+        "Once glucose is above 4.0 mmol/L and the patient has recovered, give long-acting carbohydrate.",
+        "Do not omit a due insulin injection; review which dose was active."
+      ]
+    },
+    {
+      "id": "escalation",
+      "title": "Escalation",
+      "timeframe": "Escalation",
+      "actions": [
+        "Still below 4.0 mmol/L after 3 cycles: medical review and IV glucose.",
+        "Sulfonylurea or long-acting insulin effect: monitor glucose for at least 24–48 hours."
+      ]
+    },
+    {
+      "id": "disposition",
+      "title": "Disposition",
+      "timeframe": "Disposition",
+      "actions": [
+        "Admit for prolonged monitoring if sulfonylurea or long-acting insulin was the cause, in renal impairment, or after severe hypoglycaemia needing IV treatment."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [
+      {
+        "indication": "Raise glucose above 4.0 mmol/L",
+        "patientGroup": "Adults who can swallow",
+        "genericName": "Oral rapid-acting glucose",
+        "dose": "15–20 g (for example 5–7 dextrose tablets, 60 mL glucose juice shot or 150–200 mL pure fruit juice)",
+        "route": "Oral",
+        "frequency": "Repeat if glucose still below 4.0 mmol/L after 10–15 minutes",
+        "duration": "Up to 3 treatments",
+        "adjustments": [
+          "Avoid fruit juice on a low-potassium diet"
+        ],
+        "monitoring": [
+          "Capillary glucose 10–15 minutes after each dose"
+        ],
+        "contraindications": [
+          "Sugar in water is not effective in patients taking acarbose"
+        ],
+        "branch": "Conscious and able to swallow",
+        "step": "1. Rapid carbohydrate",
+        "selection": "all",
+        "sourceTitle": "Joint British Diabetes Societies for Inpatient Care (JBDS 01), Management of Hypoglycaemia in Hospital",
+        "sourceUrl": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_01_Hypo_Guideline_with_QR_code_January_2023.pdf",
+        "sourceEdition": "JBDS-IP, revised January 2023; p. 11, Algorithm A step 3–4"
+      },
+      {
+        "indication": "Prevent recurrence",
+        "patientGroup": "Adults who have recovered with glucose above 4.0 mmol/L",
+        "genericName": "Long-acting carbohydrate (for example 2 biscuits, 1 slice of bread, 200–300 mL milk)",
+        "dose": "20 g",
+        "route": "Oral",
+        "frequency": "Once",
+        "duration": "Single dose",
+        "adjustments": [
+          "–"
+        ],
+        "monitoring": [
+          "Glucose"
+        ],
+        "contraindications": [
+          "–"
+        ],
+        "branch": "Conscious and able to swallow",
+        "step": "2. Follow-on carbohydrate",
+        "selection": "all",
+        "useWhen": "After glucose is above 4.0 mmol/L",
+        "sourceTitle": "Joint British Diabetes Societies for Inpatient Care (JBDS 01), Management of Hypoglycaemia in Hospital",
+        "sourceUrl": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_01_Hypo_Guideline_with_QR_code_January_2023.pdf",
+        "sourceEdition": "JBDS-IP, revised January 2023; p. 12, Algorithm A step 7"
+      },
+      {
+        "indication": "Rapid correction of severe hypoglycaemia",
+        "patientGroup": "Adults with IV access",
+        "genericName": "Glucose 20%",
+        "dose": "100 mL (supplied as a 100 mL vial with an infusion set in the hypo box)",
+        "route": "IV infusion through a large vein, using a pump or giving set",
+        "frequency": "Over 15 minutes (400 mL/hour)",
+        "duration": "Single dose; repeat if still below 4.0 mmol/L",
+        "adjustments": [
+          "Use the smallest possible volume in renal or cardiac failure"
+        ],
+        "monitoring": [
+          "Capillary glucose 10 minutes after the infusion ends (allow at least 10 minutes before retesting)"
+        ],
+        "contraindications": [
+          "Extravasation",
+          "fluid load"
+        ],
+        "branch": "Unable to swallow safely, IV access available",
+        "step": "1. IV glucose",
+        "selection": "one-of",
+        "preferred": true,
+        "useWhen": "IV access available (JBDS prefers IV glucose when access exists and in depleted glycogen stores)",
+        "sourceTitle": "Joint British Diabetes Societies for Inpatient Care (JBDS 01), Management of Hypoglycaemia in Hospital",
+        "sourceUrl": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_01_Hypo_Guideline_with_QR_code_January_2023.pdf",
+        "sourceEdition": "JBDS-IP, revised January 2023; p. 15, Algorithm C step 5–6"
+      },
+      {
+        "indication": "Rapid correction when 20% is not available",
+        "patientGroup": "Adults with IV access",
+        "genericName": "Glucose 10%",
+        "dose": "200 mL",
+        "route": "IV infusion through a large vein, using a pump or giving set",
+        "frequency": "Over 15 minutes (800 mL/hour)",
+        "duration": "Single dose; repeat if still below 4.0 mmol/L",
+        "adjustments": [
+          "Use the smallest possible volume in renal or cardiac failure"
+        ],
+        "monitoring": [
+          "Capillary glucose 10–15 minutes after"
+        ],
+        "contraindications": [
+          "Fluid load"
+        ],
+        "branch": "Unable to swallow safely, IV access available",
+        "step": "1. IV glucose",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "20% glucose unavailable",
+        "sourceTitle": "Joint British Diabetes Societies for Inpatient Care (JBDS 01), Management of Hypoglycaemia in Hospital",
+        "sourceUrl": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_01_Hypo_Guideline_with_QR_code_January_2023.pdf",
+        "sourceEdition": "JBDS-IP, revised January 2023; p. 11, Algorithm A step 5b"
+      },
+      {
+        "indication": "Rapid correction as used in Saudi MOH hospitals",
+        "patientGroup": "Adults with IV access",
+        "genericName": "Dextrose 50%",
+        "dose": "Mild (2.5–4.0 mmol/L): 25 mL; severe (below 2.5 mmol/L): 50 mL",
+        "route": "IV over 1–3 minutes",
+        "frequency": "Repeat until glucose is above 4.0 mmol/L",
+        "duration": "Recheck every 5 minutes",
+        "adjustments": [
+          "No renal or hepatic dose adjustment is given",
+          "impaired renal function raises the risk of adverse reactions, so check electrolytes",
+          "age 65 and over: start low and monitor closely"
+        ],
+        "monitoring": [
+          "Capillary glucose 5 minutes after"
+        ],
+        "contraindications": [
+          "Hyperosmolar",
+          "extravasation and phlebitis, which is why JBDS prefers 10% or 20% glucose",
+          "extravasation damages tissue"
+        ],
+        "branch": "Unable to swallow safely, IV access available",
+        "step": "1. IV glucose",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "When the Saudi MOH dextrose 50% branch is chosen",
+        "sourceTitle": "Inpatient Hypoglycemia Management Protocol",
+        "sourceUrl": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-007.pdf",
+        "sourceEdition": "Saudi Ministry of Health, year not stated; section Pathway, IV dextrose branch; section Dosage and Administration / special populations"
+      },
+      {
+        "indication": "Prevent recurrence",
+        "patientGroup": "Adults who have recovered",
+        "genericName": "Long-acting carbohydrate",
+        "dose": "20 g (40 g after glucagon)",
+        "route": "Oral",
+        "frequency": "Once",
+        "duration": "Single dose",
+        "adjustments": [
+          "–"
+        ],
+        "monitoring": [
+          "Glucose"
+        ],
+        "contraindications": [
+          "Only when the patient can swallow safely"
+        ],
+        "branch": "Unable to swallow safely, IV access available",
+        "step": "3. Follow-on carbohydrate",
+        "selection": "all",
+        "useWhen": "After glucose is above 4.0 mmol/L",
+        "sourceTitle": "Joint British Diabetes Societies for Inpatient Care (JBDS 01), Management of Hypoglycaemia in Hospital",
+        "sourceUrl": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_01_Hypo_Guideline_with_QR_code_January_2023.pdf",
+        "sourceEdition": "JBDS-IP, revised January 2023; p. 12, Algorithm A step 7"
+      },
+      {
+        "indication": "Keep glucose above 4.0 mmol/L while nil by mouth",
+        "patientGroup": "Adults who have recovered but remain nil by mouth",
+        "genericName": "Glucose 10% infusion",
+        "dose": "100 mL/hour",
+        "route": "IV infusion",
+        "frequency": "Continuous",
+        "duration": "Until no longer nil by mouth or reviewed by the medical team",
+        "adjustments": [
+          "Smallest volume in renal or cardiac failure"
+        ],
+        "monitoring": [
+          "Capillary glucose at least hourly",
+          "for 24–36 hours after sulfonylurea or long-acting insulin"
+        ],
+        "contraindications": [
+          "Fluid overload"
+        ],
+        "branch": "Unable to swallow safely, IV access available",
+        "step": "2. Maintenance glucose",
+        "selection": "all",
+        "useWhen": "After glucose is above 4.0 mmol/L and the patient has recovered",
+        "sourceTitle": "Joint British Diabetes Societies for Inpatient Care (JBDS 01), Management of Hypoglycaemia in Hospital",
+        "sourceUrl": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_01_Hypo_Guideline_with_QR_code_January_2023.pdf",
+        "sourceEdition": "JBDS-IP, revised January 2023; p. 17, Algorithm D step 5"
+      },
+      {
+        "indication": "Raise glucose above 4.0 mmol/L",
+        "patientGroup": "Adults fed by enteral tube",
+        "genericName": "Rapid-acting carbohydrate (liquid glucose)",
+        "dose": "15–20 g, given through the feeding tube (not a parenteral nutrition line), then a 40–50 mL water flush",
+        "route": "Enteral tube",
+        "frequency": "Repeat after 10–15 minutes if glucose is still below 4.0 mmol/L",
+        "duration": "Up to 3 treatments",
+        "adjustments": [
+          "Gel not for fine-bore nasogastric tubes"
+        ],
+        "monitoring": [
+          "Capillary glucose 10–15 minutes after each dose"
+        ],
+        "contraindications": [
+          "Wrong route (do not use the parenteral nutrition line)"
+        ],
+        "branch": "Fed by enteral tube",
+        "step": "1. Rapid carbohydrate via tube",
+        "selection": "all",
+        "useWhen": "Patient has a feeding tube",
+        "sourceTitle": "Joint British Diabetes Societies for Inpatient Care (JBDS 01), Management of Hypoglycaemia in Hospital",
+        "sourceUrl": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_01_Hypo_Guideline_with_QR_code_January_2023.pdf",
+        "sourceEdition": "JBDS-IP, revised January 2023; p. 19, Algorithm E step 3–4"
+      },
+      {
+        "indication": "Prevent recurrence",
+        "patientGroup": "Adults who have recovered",
+        "genericName": "Enteral feed",
+        "dose": "Restart the feed; if bolus fed, give extra feed providing about 20 g carbohydrate; otherwise consider glucose 10% at 100 mL/hour",
+        "route": "Enteral tube (or IV for glucose 10%)",
+        "frequency": "Once",
+        "duration": "Until feed is established",
+        "adjustments": [
+          "Smallest IV volume in renal or cardiac failure"
+        ],
+        "monitoring": [
+          "Capillary glucose"
+        ],
+        "contraindications": [
+          "–"
+        ],
+        "branch": "Fed by enteral tube",
+        "step": "2. Restart feed",
+        "selection": "all",
+        "useWhen": "After glucose is above 4.0 mmol/L",
+        "sourceTitle": "Joint British Diabetes Societies for Inpatient Care (JBDS 01), Management of Hypoglycaemia in Hospital",
+        "sourceUrl": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_01_Hypo_Guideline_with_QR_code_January_2023.pdf",
+        "sourceEdition": "JBDS-IP, revised January 2023; p. 19, Algorithm E step 6"
+      },
+      {
+        "indication": "Mobilise liver glucose",
+        "patientGroup": "Adults with insulin-induced hypoglycaemia without IV access",
+        "genericName": "Glucagon",
+        "dose": "1 mg",
+        "route": "IM (the Saudi MOH protocol also allows subcutaneous)",
+        "frequency": "Once; repeat doses are unlicensed and rarely effective",
+        "duration": "Single dose",
+        "adjustments": [
+          "Less effective in chronic malnutrition, starvation, alcohol misuse or chronic liver disease"
+        ],
+        "monitoring": [
+          "Capillary glucose",
+          "may take up to 15 minutes to work"
+        ],
+        "contraindications": [
+          "Licensed only for insulin-induced hypoglycaemia"
+        ],
+        "branch": "No IV access",
+        "step": "1. Glucagon",
+        "selection": "all",
+        "useWhen": "Keep trying to gain IV access",
+        "sourceTitle": "Joint British Diabetes Societies for Inpatient Care (JBDS 01), Management of Hypoglycaemia in Hospital",
+        "sourceUrl": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_01_Hypo_Guideline_with_QR_code_January_2023.pdf",
+        "sourceEdition": "JBDS-IP, revised January 2023; p. 11, Algorithm A step 5a and page 15; section Pathway, glucagon branch"
+      },
+      {
+        "indication": "Raise glucose when swallowing is unsafe but mucosal absorption is possible",
+        "patientGroup": "Adults unable to swallow safely",
+        "genericName": "Glucose gel 40%",
+        "dose": "2 tubes, squeezed between the teeth and gums",
+        "route": "Buccal",
+        "frequency": "Once",
+        "duration": "Single course",
+        "adjustments": [
+          "Not suitable for fine-bore nasogastric tubes"
+        ],
+        "monitoring": [
+          "Capillary glucose after 10–15 minutes"
+        ],
+        "contraindications": [
+          "Aspiration risk if consciousness is reduced"
+        ],
+        "branch": "No IV access",
+        "step": "2. Gel (alternative while waiting)",
+        "selection": "all",
+        "useWhen": "Only when the patient is alert enough",
+        "sourceTitle": "Joint British Diabetes Societies for Inpatient Care (JBDS 01), Management of Hypoglycaemia in Hospital",
+        "sourceUrl": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_01_Hypo_Guideline_with_QR_code_January_2023.pdf",
+        "sourceEdition": "JBDS-IP, revised January 2023; p. 13, Algorithm B step 4"
+      },
+      {
+        "indication": "Prevent recurrence",
+        "patientGroup": "Adults who have recovered",
+        "genericName": "Long-acting carbohydrate",
+        "dose": "40 g after glucagon",
+        "route": "Oral",
+        "frequency": "Once",
+        "duration": "Single dose",
+        "adjustments": [
+          "–"
+        ],
+        "monitoring": [
+          "Glucose"
+        ],
+        "contraindications": [
+          "–"
+        ],
+        "branch": "No IV access",
+        "step": "3. Follow-on carbohydrate",
+        "selection": "all",
+        "useWhen": "After glucose is above 4.0 mmol/L",
+        "sourceTitle": "Joint British Diabetes Societies for Inpatient Care (JBDS 01), Management of Hypoglycaemia in Hospital",
+        "sourceUrl": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_01_Hypo_Guideline_with_QR_code_January_2023.pdf",
+        "sourceEdition": "JBDS-IP, revised January 2023; p. 12, Algorithm A step 7"
+      }
+    ],
+    "branches": [
+      {
+        "label": "Conscious and able to swallow",
+        "entryCriteria": "Capillary glucose below 4.0 mmol/L, alert, swallowing safely"
+      },
+      {
+        "label": "Unable to swallow safely, IV access available",
+        "entryCriteria": "Reduced consciousness or unsafe swallow with a working IV line"
+      },
+      {
+        "label": "Fed by enteral tube",
+        "entryCriteria": "Capillary glucose below 4.0 mmol/L in a patient receiving enteral tube feeding"
+      },
+      {
+        "label": "No IV access",
+        "entryCriteria": "Unable to swallow and no IV access available"
+      }
+    ],
+    "note": "Doses came from an external drafting tool and must be verified against the cited sources, Saudi Food and Drug Authority (SFDA) registration and the local hospital protocol before prescribing. Check hospital formulary."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Treat as hypoglycaemia",
+      "threshold": "Capillary blood glucose below 4.0 mmol/L (72 mg/dL)"
+    },
+    {
+      "criterion": "Looming hypoglycaemia",
+      "threshold": "Below 6.0 mmol/L in a person on insulin or a secretagogue, with a falling trend"
+    },
+    {
+      "criterion": "Non-severe",
+      "threshold": "Self-treated by the patient"
+    },
+    {
+      "criterion": "Severe",
+      "threshold": "Needs help from another person"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "Guideline comparison",
+    "columns": [
+      "JBDS 2023",
+      "Saudi MOH inpatient protocol"
+    ],
+    "rows": [
+      {
+        "parameter": "Treatment threshold",
+        "values": [
+          "Below 4.0 mmol/L",
+          "Below 4.0 mmol/L"
+        ]
+      },
+      {
+        "parameter": "Oral glucose",
+        "values": [
+          "15–20 g, recheck at 10–15 minutes, up to 3 treatments",
+          "15 g, recheck at 15 minutes, up to 3 treatments"
+        ]
+      },
+      {
+        "parameter": "IV glucose",
+        "values": [
+          "100 mL 20% glucose or 200 mL 10% glucose over 15 minutes",
+          "25 mL 50% dextrose (2.5–4.0 mmol/L) or 50 mL 50% dextrose (below 2.5 mmol/L) over 1–3 minutes"
+        ]
+      },
+      {
+        "parameter": "Glucagon",
+        "values": [
+          "1 mg IM, once",
+          "1 mg subcutaneous or IM, recheck at 15 minutes"
+        ]
+      },
+      {
+        "parameter": "Follow-on carbohydrate",
+        "values": [
+          "20 g long-acting (40 g after glucagon)",
+          "30 g complex carbohydrate meal once able to eat"
+        ]
+      },
+      {
+        "parameter": "Recheck after IV treatment",
+        "values": [
+          "10–15 minutes",
+          "5 minutes"
+        ]
+      }
+    ]
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Recognise hypoglycaemia and choose oral, IV or glucagon treatment safely.",
+      "Know the recheck timing and follow-on carbohydrate.",
+      "Know why sulfonylurea and long-acting insulin need prolonged monitoring."
+    ],
+    "pitfalls": [
+      "Giving glucagon repeatedly.",
+      "Omitting the follow-on carbohydrate.",
+      "Stopping an insulin infusion but forgetting to restart it.",
+      "Treating hyperglycaemic rebound with stat insulin."
+    ],
+    "keyPoints": [
+      "Treat any glucose below 4.0 mmol/L.",
+      "Use IV glucose when access exists and glycogen stores may be depleted.",
+      "Continue glucose monitoring for 24–48 hours after long-acting causes."
+    ],
+    "references": [
+      {
+        "title": "Joint British Diabetes Societies for Inpatient Care (JBDS 01), Management of Hypoglycaemia in Hospital",
+        "edition": "JBDS-IP, revised January 2023",
+        "url": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_01_Hypo_Guideline_with_QR_code_January_2023.pdf",
+        "locator": "pp. 10–12, 13, 15, 17–19, 31–34, 39; Algorithms A–E"
+      },
+      {
+        "title": "Inpatient Hypoglycemia Management Protocol",
+        "edition": "Saudi Ministry of Health, year not stated",
+        "url": "https://www.moh.gov.sa/Ministry/MediaCenter/Publications/Documents/Protocol-007.pdf",
+        "locator": "Pathway: Management of Hypoglycemia in Subjects with Diabetes Mellitus (Adults)"
+      },
+      {
+        "title": "Dextrose injection (prescribing information)",
+        "edition": "Hospira, Inc., revised January 2026",
+        "url": "https://labeling.pfizer.com/ShowLabeling.aspx?id=4422",
+        "locator": "Dosage and Administration; Precautions"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Recognising early symptoms and carrying fast-acting glucose; what to do when meals are missed."
+    ],
+    "lifestyleAndDiet": [
+      "Regular meals with complex carbohydrate and care with alcohol and exercise."
+    ],
+    "mdtReferrals": [
+      "Inpatient diabetes team for severe or recurrent hypoglycaemia."
+    ],
+    "dischargeCriteria": [
+      "Glucose above 4.0 mmol/L on repeat checks and the patient is eating and alert.",
+      "Cause identified and the diabetes treatment reviewed; longer observation after sulfonylurea or long-acting insulin."
+    ],
+    "followUpPlan": "Diabetes team review after any severe hypoglycaemia."
+  }
+}

@@ -1,0 +1,660 @@
+{
+  "id": "452fc3c4-16d8-40a0-bda2-9fcf494d38bf",
+  "title": "Thyroid Storm",
+  "specialty": "Endocrinology / Emergency Medicine",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-21-endocrine-electrolyte-v1",
+  "lastReviewed": "2026-10-21",
+  "pillar": "Urgent Care",
+  "clinicalScenario": "Outline only. Planned scope: Diagnostic scoring, beta-blockade, anti-thyroid drug sequence, steroids, supportive care, precipitants, critical care referral. Candidate sources to verify: American Thyroid Association hyperthyroidism guideline; Burch-Wartofsky point scale.",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-21",
+    "status": "incomplete",
+    "scope": "Adult (over 18 years) Emergency Department (ED) recognition and drug treatment of thyroid storm (thyrotoxic crisis), based on the Norfolk and Norwich NHS trust guideline for suspected thyroid emergencies (version 3.2, 2022) and the MSD Manual treatment table. Definitive treatment and long-term care are outside this protocol. The American Thyroid Association guideline could not be opened. No Saudi national guideline was found.",
+    "findings": [
+      "Full protocol rebuilt from the source dossier opened on 2026-10-21; exact source locations are recorded in each investigation and medicine row.",
+      "The original outline remains preserved; this additive version is non-current and pending clinical review."
+    ],
+    "unverifiedSections": [
+      "Normal ranges are typical adult values, not from the cited sources.",
+      "Symptoms, signs, precipitants, differentials and pathophysiology are standard clinical content and were not extracted line by line.",
+      "The Norfolk and Norwich guideline is past its review date (30 August 2025) and the organisation is described only as \"the Trust\" in the text; the MSD Manual is a reference text, not a guideline. The two differ substantially (for example propylthiouracil 200 mg three times daily versus a 600 mg load), and the American Thyroid Association 2016 guideline was not opened. Both regimens are shown as separate branches; involve a senior endocrinologist early.",
+      "Carbimazole dose for storm, duration of iodine, hydrocortisone and prednisolone duration, and the fluid and glucose regimen were not stated in the opened text.",
+      "No Saudi national or Saudi Ministry of Health thyroid storm guideline was found; Saudi Food and Drug Authority (SFDA) availability of propylthiouracil and Lugol's iodine was not checked. Propylthiouracil carries a liver injury warning.",
+      "Renal, hepatic and age adjustments for the drugs added in this revision are from manufacturer labels (UK Summary of Product Characteristics, US prescribing information and a New Zealand data sheet), not from Saudi Food and Drug Authority labels."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "452fc3c4-16d8-40a0-bda2-9fcf494d38bf"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Thyroid storm is a life-threatening exaggeration of thyrotoxicosis, usually in Graves disease, triggered by infection, surgery, trauma, iodine load or stopping antithyroid drugs.",
+    "keyMechanisms": [
+      "Excess thyroid hormone causes fever, tachycardia, atrial fibrillation, heart failure, agitation, delirium, vomiting and liver dysfunction.",
+      "Heart rate control is the first priority because tachycardia, atrial fibrillation and heart failure cause most deaths.",
+      "Iodine is given after the thionamide because earlier iodine can feed hormone synthesis and worsen thyrotoxicosis.",
+      "Treatment has five parts: control heart rate (beta-blocker), block hormone synthesis (thionamide), block hormone release (iodine, given after the thionamide), reduce conversion and treat adrenal stress (steroid), and support (fluids, cooling, treat the precipitant)."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Palpitations, sweating, heat intolerance, tremor, agitation, vomiting, diarrhoea, weight loss."
+    ],
+    "physicalSigns": [
+      "Fever above 38°C, tachycardia above 110 beats per minute (with or without atrial fibrillation), heart failure, agitation or delirium, goitre or eye signs."
+    ],
+    "redFlags": [
+      "Temperature above 38°C with tachycardia above 110.",
+      "Heart failure, atrial fibrillation or delirium.",
+      "Burch–Wartofsky score above 45, or 25–45 (impending storm, treat as storm).",
+      "Jaundice or liver dysfunction."
+    ],
+    "precipitants": [
+      "Infection, surgery, trauma, iodine or contrast load, stopping antithyroid medicines, labour, amiodarone."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Sepsis",
+      "distinguishingFeatures": "Source of infection; normal thyroid function tests"
+    },
+    {
+      "condition": "Neuroleptic malignant syndrome",
+      "distinguishingFeatures": "Antipsychotic exposure and rigidity"
+    },
+    {
+      "condition": "Serotonin syndrome",
+      "distinguishingFeatures": "Clonus with serotonergic drug exposure"
+    },
+    {
+      "condition": "Phaeochromocytoma crisis",
+      "distinguishingFeatures": "Paroxysmal hypertension; normal thyroid tests"
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "TSH, free T4 and T3",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Thyroid Storm",
+        "expectedFinding": "Low TSH with high T4 and T3",
+        "clinicalRationale": "Confirm; do not wait for results to treat",
+        "normalValue": "TSH 0.4–4.0 mU/L; free T4 10–22 pmol/L",
+        "references": [
+          {
+            "title": "Trust Guideline for the Management of Suspected Thyroid Emergencies (Trust Docs ID 8550, version 3.2)",
+            "edition": "Norfolk and Norwich University Hospitals NHS Foundation Trust (Medical Division), approved 30 August 2022, review due 30 August 2025; p. 7",
+            "url": "https://www.nnuh.nhs.uk/publication/download/suspected-thyroid-emergencies-management-of-ca5060-v3-2"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Capillary glucose",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Thyroid Storm",
+        "expectedFinding": "Variable",
+        "clinicalRationale": "Check every 4 hours",
+        "normalValue": "4.0–7.8 mmol/L",
+        "references": [
+          {
+            "title": "Trust Guideline for the Management of Suspected Thyroid Emergencies (Trust Docs ID 8550, version 3.2)",
+            "edition": "Norfolk and Norwich University Hospitals NHS Foundation Trust (Medical Division), approved 30 August 2022, review due 30 August 2025; p. 7",
+            "url": "https://www.nnuh.nhs.uk/publication/download/suspected-thyroid-emergencies-management-of-ca5060-v3-2"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Urea and electrolytes, full blood count, liver tests, calcium",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Thyroid Storm",
+        "expectedFinding": "Dehydration, liver dysfunction",
+        "clinicalRationale": "Look for organ dysfunction and sepsis",
+        "normalValue": "Calcium 2.2–2.6 mmol/L",
+        "references": [
+          {
+            "title": "Trust Guideline for the Management of Suspected Thyroid Emergencies (Trust Docs ID 8550, version 3.2)",
+            "edition": "Norfolk and Norwich University Hospitals NHS Foundation Trust (Medical Division), approved 30 August 2022, review due 30 August 2025; p. 7",
+            "url": "https://www.nnuh.nhs.uk/publication/download/suspected-thyroid-emergencies-management-of-ca5060-v3-2"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Septic screen",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Thyroid Storm",
+        "expectedFinding": "Positive in infection",
+        "clinicalRationale": "Treat the precipitant",
+        "normalValue": "Negative",
+        "references": [
+          {
+            "title": "Trust Guideline for the Management of Suspected Thyroid Emergencies (Trust Docs ID 8550, version 3.2)",
+            "edition": "Norfolk and Norwich University Hospitals NHS Foundation Trust (Medical Division), approved 30 August 2022, review due 30 August 2025; p. 7",
+            "url": "https://www.nnuh.nhs.uk/publication/download/suspected-thyroid-emergencies-management-of-ca5060-v3-2"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "12-lead electrocardiogram (ECG)",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Thyroid Storm",
+        "expectedFinding": "Sinus tachycardia, atrial fibrillation",
+        "clinicalRationale": "Guides beta-blocker and rate control",
+        "normalValue": "Normal sinus rhythm",
+        "references": [
+          {
+            "title": "Trust Guideline for the Management of Suspected Thyroid Emergencies (Trust Docs ID 8550, version 3.2)",
+            "edition": "Norfolk and Norwich University Hospitals NHS Foundation Trust (Medical Division), approved 30 August 2022, review due 30 August 2025; p. 7",
+            "url": "https://www.nnuh.nhs.uk/publication/download/suspected-thyroid-emergencies-management-of-ca5060-v3-2"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Endocrinology and high dependency review",
+        "modalityTarget": "Imaging and specialist",
+        "targetCondition": "Thyroid Storm",
+        "expectedFinding": "Every thyroid storm",
+        "clinicalRationale": "Call endocrinology and the high dependency unit",
+        "normalValue": "Not needed",
+        "references": [
+          {
+            "title": "Trust Guideline for the Management of Suspected Thyroid Emergencies (Trust Docs ID 8550, version 3.2)",
+            "edition": "Norfolk and Norwich University Hospitals NHS Foundation Trust (Medical Division), approved 30 August 2022, review due 30 August 2025; p. 7",
+            "url": "https://www.nnuh.nhs.uk/publication/download/suspected-thyroid-emergencies-management-of-ca5060-v3-2"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "immediate",
+      "title": "Immediate",
+      "timeframe": "0–15 minutes",
+      "actions": [
+        "Recognise by the cardinal features and the Burch–Wartofsky score and start treatment without waiting for blood tests.",
+        "Give a beta-blocker (propranolol) unless contraindicated.",
+        "Give a thionamide (propylthiouracil) and start iodine only 60 minutes after the first thionamide dose."
+      ]
+    },
+    {
+      "id": "ongoing",
+      "title": "Ongoing",
+      "timeframe": "15–60 minutes",
+      "actions": [
+        "Give steroid (hydrocortisone), then iodine at 60 minutes, then cholestyramine.",
+        "Support: IV fluids and glucose, cooling, treat the precipitant and consider central venous monitoring to guide fluids.",
+        "Check blood glucose every 4 hours."
+      ]
+    },
+    {
+      "id": "escalation",
+      "title": "Escalation",
+      "timeframe": "Escalation",
+      "actions": [
+        "Call endocrinology and the high dependency unit; sedation with chlorpromazine 50–100 mg IM if needed.",
+        "Avoid beta-blockers in asthma: use a calcium channel blocker if beta-blockade is contraindicated."
+      ]
+    },
+    {
+      "id": "disposition",
+      "title": "Disposition",
+      "timeframe": "Disposition",
+      "actions": [
+        "Admit to high dependency or intensive care."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [
+      {
+        "indication": "Control heart rate and adrenergic symptoms",
+        "patientGroup": "Adults able to take oral medicines",
+        "genericName": "Propranolol tablets",
+        "dose": "80 mg (Norfolk and Norwich); MSD Manual 60–80 mg",
+        "route": "Oral",
+        "frequency": "Three times daily (Norfolk and Norwich); every 4–6 hours (MSD Manual)",
+        "duration": "Not faster than 1 mg per minute; a second dose may follow after 2 minutes, then no further dose within 4 hours; stop when the desired heart rate is reached",
+        "adjustments": [
+          "Hepatic insufficiency: consider a lower IV dose"
+        ],
+        "monitoring": [
+          "Heart rate, blood pressure, ECG"
+        ],
+        "contraindications": [
+          "Asthma (use a calcium channel blocker)",
+          "not contraindicated in acute severe thyrotoxic heart failure"
+        ],
+        "branch": "Beta-blockade",
+        "step": "1. Rate control",
+        "selection": "one-of",
+        "preferred": true,
+        "useWhen": "Oral route available",
+        "sourceTitle": "Trust Guideline for the Management of Suspected Thyroid Emergencies (Trust Docs ID 8550, version 3.2)",
+        "sourceUrl": "https://www.nnuh.nhs.uk/publication/download/suspected-thyroid-emergencies-management-of-ca5060-v3-2",
+        "sourceEdition": "Norfolk and Norwich University Hospitals NHS Foundation Trust (Medical Division), approved 30 August 2022, review due 30 August 2025; p. 7; table Propranolol; section Dosage and Administration / special populations"
+      },
+      {
+        "indication": "Control heart rate when unstable or unable to take oral",
+        "patientGroup": "Adults very unstable or unable to take oral",
+        "genericName": "Propranolol injection",
+        "dose": "2 mg over 10 minutes (Norfolk and Norwich); MSD Manual 0.5–1 mg over 10–15 minutes, not faster than 1 mg per minute, repeat 1 mg after 2 minutes if needed",
+        "route": "IV",
+        "frequency": "Every 4 hours (MSD Manual)",
+        "duration": "Not faster than 1 mg per minute; a second dose may follow after 2 minutes, then no further dose within 4 hours; stop when the desired heart rate is reached",
+        "adjustments": [
+          "Hepatic insufficiency: consider a lower IV dose"
+        ],
+        "monitoring": [
+          "Continuous ECG, blood pressure"
+        ],
+        "contraindications": [
+          "Heart failure monitoring",
+          "asthma"
+        ],
+        "branch": "Beta-blockade",
+        "step": "1. Rate control",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Very unstable or unable to take oral",
+        "sourceTitle": "Trust Guideline for the Management of Suspected Thyroid Emergencies (Trust Docs ID 8550, version 3.2)",
+        "sourceUrl": "https://www.nnuh.nhs.uk/publication/download/suspected-thyroid-emergencies-management-of-ca5060-v3-2",
+        "sourceEdition": "Norfolk and Norwich University Hospitals NHS Foundation Trust (Medical Division), approved 30 August 2022, review due 30 August 2025; p. 7; table Propranolol; section Dosage and Administration / special populations"
+      },
+      {
+        "indication": "Block hormone synthesis and conversion of T4 to T3",
+        "patientGroup": "Adults with thyroid storm",
+        "genericName": "Propylthiouracil",
+        "dose": "200 mg (Norfolk and Norwich); MSD Manual 600 mg loading dose then 200–400 mg",
+        "route": "Oral, nasogastric or rectal",
+        "frequency": "Three times daily (Norfolk and Norwich); every 6–8 hours after load (MSD Manual)",
+        "duration": "Until controlled; endocrinology advice",
+        "adjustments": [
+          "Liver function monitoring"
+        ],
+        "monitoring": [
+          "Liver tests, white cell count"
+        ],
+        "contraindications": [
+          "Hepatotoxicity",
+          "no carbimazole dose is given for storm"
+        ],
+        "branch": "Thionamide and iodine",
+        "step": "1. Block synthesis",
+        "selection": "all",
+        "useWhen": "Preferred over carbimazole in emergencies",
+        "sourceTitle": "Trust Guideline for the Management of Suspected Thyroid Emergencies (Trust Docs ID 8550, version 3.2)",
+        "sourceUrl": "https://www.nnuh.nhs.uk/publication/download/suspected-thyroid-emergencies-management-of-ca5060-v3-2",
+        "sourceEdition": "Norfolk and Norwich University Hospitals NHS Foundation Trust (Medical Division), approved 30 August 2022, review due 30 August 2025; p. 7; table Propylthiouracil"
+      },
+      {
+        "indication": "Block thyroid hormone release",
+        "patientGroup": "Adults 60 minutes after the first propylthiouracil dose",
+        "genericName": "Lugol's iodine",
+        "dose": "5 drops (Norfolk and Norwich); MSD Manual 4–8 drops of 2% Lugol's",
+        "route": "Oral, in milk or orange juice",
+        "frequency": "Four times daily (Norfolk and Norwich); every 6–8 hours (MSD Manual)",
+        "duration": "Short course",
+        "adjustments": [
+          "Renal impairment: use with caution",
+          "older adults: high doses or long use may induce hyperthyroidism"
+        ],
+        "monitoring": [
+          "Thyroid function"
+        ],
+        "contraindications": [
+          "Give only after the thionamide",
+          "earlier iodine may worsen thyrotoxicosis"
+        ],
+        "branch": "Thionamide and iodine",
+        "step": "2. Block release",
+        "selection": "one-of",
+        "preferred": true,
+        "useWhen": "60 minutes after the first thionamide dose",
+        "sourceTitle": "Trust Guideline for the Management of Suspected Thyroid Emergencies (Trust Docs ID 8550, version 3.2)",
+        "sourceUrl": "https://www.nnuh.nhs.uk/publication/download/suspected-thyroid-emergencies-management-of-ca5060-v3-2",
+        "sourceEdition": "Norfolk and Norwich University Hospitals NHS Foundation Trust (Medical Division), approved 30 August 2022, review due 30 August 2025; p. 7; table Iodine; section Dosage and Administration / special populations"
+      },
+      {
+        "indication": "Block thyroid hormone release",
+        "patientGroup": "Adults 60 minutes after the first propylthiouracil dose",
+        "genericName": "Saturated potassium iodide solution",
+        "dose": "5 drops (0.25 mL)",
+        "route": "Oral",
+        "frequency": "Every 6 hours",
+        "duration": "Short course",
+        "adjustments": [
+          "Renal impairment: use with caution",
+          "older adults: high doses or long use may induce hyperthyroidism"
+        ],
+        "monitoring": [
+          "Thyroid function"
+        ],
+        "contraindications": [
+          "Same timing rule"
+        ],
+        "branch": "Thionamide and iodine",
+        "step": "2. Block release",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Lugol's unavailable",
+        "sourceTitle": "Treatment of Thyroid Storm (table)",
+        "sourceUrl": "https://www.msdmanuals.com/professional/multimedia/table/treatment-of-thyroid-storm",
+        "sourceEdition": "MSD Manual Professional Edition, review date not stated; table Iodine; section Dosage and Administration / special populations"
+      },
+      {
+        "indication": "Reduce T4 to T3 conversion and cover adrenal stress",
+        "patientGroup": "Adults with thyroid storm",
+        "genericName": "Hydrocortisone then prednisolone",
+        "dose": "Hydrocortisone 200 mg IV then prednisolone 20 mg (Norfolk and Norwich)",
+        "route": "IV then oral",
+        "frequency": "Prednisolone three times daily",
+        "duration": "Continue until the condition stabilises, usually no longer than 48–72 hours at high dose",
+        "adjustments": [
+          "Liver disease: effect may be increased, consider a lower dose",
+          "renal insufficiency: use with caution",
+          "elderly: no dose change, close supervision"
+        ],
+        "monitoring": [
+          "Glucose every 4 hours"
+        ],
+        "contraindications": [
+          "Hyperglycaemia"
+        ],
+        "branch": "Steroid, binder and sedation",
+        "step": "1. Steroid",
+        "selection": "one-of",
+        "preferred": true,
+        "useWhen": "Preferred in Norfolk and Norwich",
+        "sourceTitle": "Trust Guideline for the Management of Suspected Thyroid Emergencies (Trust Docs ID 8550, version 3.2)",
+        "sourceUrl": "https://www.nnuh.nhs.uk/publication/download/suspected-thyroid-emergencies-management-of-ca5060-v3-2",
+        "sourceEdition": "Norfolk and Norwich University Hospitals NHS Foundation Trust (Medical Division), approved 30 August 2022, review due 30 August 2025; p. 7; section Dosage and Administration / special populations; section Dosage and Administration / special populations"
+      },
+      {
+        "indication": "Same",
+        "patientGroup": "Adults with thyroid storm",
+        "genericName": "Hydrocortisone",
+        "dose": "100 mg",
+        "route": "IV",
+        "frequency": "Every 8 hours",
+        "duration": "Continue until the condition stabilises, usually no longer than 48–72 hours at high dose",
+        "adjustments": [
+          "Liver disease: effect may be increased, consider a lower dose",
+          "renal insufficiency: use with caution",
+          "elderly: no dose change, close supervision"
+        ],
+        "monitoring": [
+          "Glucose"
+        ],
+        "contraindications": [
+          "Hyperglycaemia"
+        ],
+        "branch": "Steroid, binder and sedation",
+        "step": "1. Steroid",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "MSD Manual regimen",
+        "sourceTitle": "Treatment of Thyroid Storm (table)",
+        "sourceUrl": "https://www.msdmanuals.com/professional/multimedia/table/treatment-of-thyroid-storm",
+        "sourceEdition": "MSD Manual Professional Edition, review date not stated; table Hydrocortisone; section Dosage and Administration / special populations"
+      },
+      {
+        "indication": "Same",
+        "patientGroup": "Adults with thyroid storm",
+        "genericName": "Dexamethasone",
+        "dose": "2 mg",
+        "route": "IV",
+        "frequency": "Every 6 hours",
+        "duration": "Taper to the lowest suitable dose once controlled; stop if there is no response within a couple of days",
+        "adjustments": [
+          "No dose adjustment for elderly patients or for renal or hepatic impairment",
+          "elderly patients need close clinical supervision"
+        ],
+        "monitoring": [
+          "Glucose"
+        ],
+        "contraindications": [
+          "Hyperglycaemia"
+        ],
+        "branch": "Steroid, binder and sedation",
+        "step": "1. Steroid",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "MSD Manual regimen",
+        "sourceTitle": "Treatment of Thyroid Storm (table)",
+        "sourceUrl": "https://www.msdmanuals.com/professional/multimedia/table/treatment-of-thyroid-storm",
+        "sourceEdition": "MSD Manual Professional Edition, review date not stated; table Dexamethasone; section Dosage and Administration / special populations"
+      },
+      {
+        "indication": "Reduce reabsorption of thyroid hormone",
+        "patientGroup": "Adults with thyroid storm",
+        "genericName": "Cholestyramine",
+        "dose": "3 g",
+        "route": "Oral",
+        "frequency": "Three times daily",
+        "duration": "While thyroid storm treatment continues; reduce the dose or stop if constipation develops",
+        "adjustments": [
+          "No renal dose adjustment is given",
+          "renal insufficiency or volume depletion: risk of hyperchloraemic acidosis, monitor",
+          "over 60 years: more gastrointestinal side effects"
+        ],
+        "monitoring": [
+          "Bowel habit",
+          "electrolytes and acid-base status",
+          "with prolonged use vitamin K and folate"
+        ],
+        "contraindications": [
+          "Separate from other oral drugs"
+        ],
+        "branch": "Steroid, binder and sedation",
+        "step": "2. Bind thyroid hormone",
+        "selection": "all",
+        "useWhen": "Adjunct",
+        "sourceTitle": "Trust Guideline for the Management of Suspected Thyroid Emergencies (Trust Docs ID 8550, version 3.2)",
+        "sourceUrl": "https://www.nnuh.nhs.uk/publication/download/suspected-thyroid-emergencies-management-of-ca5060-v3-2",
+        "sourceEdition": "Norfolk and Norwich University Hospitals NHS Foundation Trust (Medical Division), approved 30 August 2022, review due 30 August 2025; p. 7; section Dosage and Administration / special populations"
+      },
+      {
+        "indication": "Sedate severe agitation",
+        "patientGroup": "Adults with severe agitation",
+        "genericName": "Chlorpromazine",
+        "dose": "50–100 mg",
+        "route": "IM",
+        "frequency": "If needed",
+        "duration": "Single doses at least 6 hours apart (data sheet interval 6–8 hours)",
+        "adjustments": [
+          "Renal disease: reduce the dose",
+          "hepatic impairment: reduce the dose, and hepatic failure is a contraindication",
+          "elderly: start at a third to a half of the adult dose"
+        ],
+        "monitoring": [
+          "Sedation, blood pressure"
+        ],
+        "contraindications": [
+          "Hypotension"
+        ],
+        "branch": "Steroid, binder and sedation",
+        "step": "3. Sedation",
+        "selection": "all",
+        "useWhen": "Agitation",
+        "sourceTitle": "Trust Guideline for the Management of Suspected Thyroid Emergencies (Trust Docs ID 8550, version 3.2)",
+        "sourceUrl": "https://www.nnuh.nhs.uk/publication/download/suspected-thyroid-emergencies-management-of-ca5060-v3-2",
+        "sourceEdition": "Norfolk and Norwich University Hospitals NHS Foundation Trust (Medical Division), approved 30 August 2022, review due 30 August 2025; p. 7; section Dosage and Administration / special populations"
+      }
+    ],
+    "branches": [
+      {
+        "label": "Beta-blockade",
+        "entryCriteria": "Thyroid storm with tachycardia and no contraindication to beta-blockers"
+      },
+      {
+        "label": "Thionamide and iodine",
+        "entryCriteria": "Thyroid storm, after the beta-blocker has been started"
+      },
+      {
+        "label": "Steroid, binder and sedation",
+        "entryCriteria": "Thyroid storm"
+      }
+    ],
+    "note": "Doses came from an external drafting tool and must be verified against the cited sources, Saudi Food and Drug Authority (SFDA) registration and the local hospital protocol before prescribing. Check hospital formulary."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Cardinal features",
+      "threshold": "Fever above 38°C, tachycardia above 110, heart failure, agitation"
+    },
+    {
+      "criterion": "Burch–Wartofsky score above 45",
+      "threshold": "Thyroid storm confirmed"
+    },
+    {
+      "criterion": "Score 25–45",
+      "threshold": "Impending storm; treat as storm"
+    },
+    {
+      "criterion": "Score below 25",
+      "threshold": "Storm excluded"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "Guideline comparison",
+    "columns": [
+      "Norfolk and Norwich trust guideline v3.2",
+      "MSD Manual table"
+    ],
+    "rows": [
+      {
+        "parameter": "Propranolol oral",
+        "values": [
+          "80 mg three times daily",
+          "60–80 mg every 4–6 hours"
+        ]
+      },
+      {
+        "parameter": "Propranolol IV",
+        "values": [
+          "2 mg over 10 minutes if very unstable",
+          "0.5–1 mg over 10–15 minutes, every 4 hours"
+        ]
+      },
+      {
+        "parameter": "Propylthiouracil",
+        "values": [
+          "200 mg three times daily",
+          "600 mg load then 200–400 mg every 6–8 hours"
+        ]
+      },
+      {
+        "parameter": "Iodine",
+        "values": [
+          "Lugol's 5 drops four times daily, 60 minutes after the first propylthiouracil dose",
+          "Saturated potassium iodide 5 drops every 6 hours; Lugol's 4–8 drops every 6–8 hours; sodium iodide 1 g IV over 24 hours"
+        ]
+      },
+      {
+        "parameter": "Steroid",
+        "values": [
+          "Hydrocortisone 200 mg IV then prednisolone 20 mg three times daily",
+          "Hydrocortisone 100 mg IV every 8 hours or dexamethasone 2 mg IV every 6 hours"
+        ]
+      },
+      {
+        "parameter": "Cholestyramine",
+        "values": [
+          "3 g three times daily",
+          "Not listed"
+        ]
+      }
+    ]
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Recognise thyroid storm with the score and give drugs in the right order."
+    ],
+    "pitfalls": [
+      "Giving iodine before the thionamide.",
+      "Delaying treatment for blood results.",
+      "Missing the precipitant."
+    ],
+    "keyPoints": [
+      "Give iodine only 60 minutes after the first thionamide dose.",
+      "Propranolol is not contraindicated in thyrotoxic heart failure; avoid in asthma."
+    ],
+    "references": [
+      {
+        "title": "Trust Guideline for the Management of Suspected Thyroid Emergencies (Trust Docs ID 8550, version 3.2)",
+        "edition": "Norfolk and Norwich University Hospitals NHS Foundation Trust (Medical Division), approved 30 August 2022, review due 30 August 2025",
+        "url": "https://www.nnuh.nhs.uk/publication/download/suspected-thyroid-emergencies-management-of-ca5060-v3-2",
+        "locator": "Sections 3.2, 3.3, 3.4; pp. 5–7, 12"
+      },
+      {
+        "title": "Treatment of Thyroid Storm (table)",
+        "edition": "MSD Manual Professional Edition, review date not stated",
+        "url": "https://www.msdmanuals.com/professional/multimedia/table/treatment-of-thyroid-storm",
+        "locator": "Table: Treatment of thyroid storm"
+      },
+      {
+        "title": "Propranolol Hydrochloride Injection, USP, 1 mg per mL (prescribing information)",
+        "edition": "Fresenius Kabi USA, November 2022",
+        "url": "https://medlibrary.org/lib/rx/meds/propranolol/page/4/",
+        "locator": "Dosage and Administration"
+      },
+      {
+        "title": "Potassium Iodide (monograph for professionals)",
+        "edition": "Drugs.com, written by ASHP, reviewed 1 June 2026",
+        "url": "https://www.drugs.com/ppa/potassium-iodide.html",
+        "locator": "Uses, thyroid storm; Cautions"
+      },
+      {
+        "title": "Solu-Cortef 100 mg powder for solution for injection or infusion (Summary of Product Characteristics)",
+        "edition": "Pfizer Limited, May 2026",
+        "url": "https://www.medicines.org.uk/emc/product/14379/smpc/print",
+        "locator": "sections 4.2, 4.4"
+      },
+      {
+        "title": "Dexamethasone 3.3 mg/ml solution for injection or infusion (Summary of Product Characteristics)",
+        "edition": "Wockhardt UK Ltd, text revised 26 April 2022",
+        "url": "https://www.medicines.org.uk/emc/product/2633/smpc/print",
+        "locator": "sections 4.2, 4.4"
+      },
+      {
+        "title": "Cholestyramine light and regular powder (product monograph)",
+        "edition": "Sorres Pharma Inc., 15 April 2010",
+        "url": "https://pdf.hres.ca/dpd_pm/00010271.PDF",
+        "locator": "Dosage and Administration; Warnings"
+      },
+      {
+        "title": "Largactil (chlorpromazine) 25 mg/mL solution for injection (New Zealand data sheet)",
+        "edition": "Clinect NZ Pty Limited, text revised 17 October 2023",
+        "url": "https://medsafe.govt.nz/profs/Datasheet/l/largactiltabinjsusp.pdf",
+        "locator": "Dosage and Administration; Precautions"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Take antithyroid medicines as prescribed and report fever, sore throat or jaundice."
+    ],
+    "lifestyleAndDiet": [
+      "Avoid iodine-rich supplements and report new symptoms early."
+    ],
+    "mdtReferrals": [
+      "Endocrinology and high dependency or critical care."
+    ],
+    "dischargeCriteria": [
+      "Not for ED discharge; transfer to high dependency or ward under endocrinology once stable."
+    ],
+    "followUpPlan": "Endocrinology follow-up and definitive therapy (iodine-131 or surgery) after the crisis is controlled."
+  }
+}

@@ -1,0 +1,447 @@
+{
+  "id": "d6381e63-f82c-47c6-bfbb-fa3647ee382e",
+  "title": "Infective Endocarditis: Recognition, Blood Cultures and Urgent Referral",
+  "specialty": "Cardiology / Infectious Diseases",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-21-full-v2",
+  "lastReviewed": "2026-10-21",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-21",
+    "status": "incomplete",
+    "scope": "Recognition, microbiological sampling, imaging and endocarditis-team escalation for suspected infective endocarditis.",
+    "findings": [
+      "Rebuilt against the approved-topic structure: a tiered investigation panel, time-ordered management and an explicit medicine decision pathway.",
+      "Every investigation row includes a reference or normal state, condition finding and next action.",
+      "Previous outline and published rows remain preserved; this additive version is pending clinical review."
+    ],
+    "unverifiedSections": [
+      "No topic-specific Saudi national guideline was found in the opened Saudi Ministry of Health protocol index unless a Saudi source is explicitly cited in the medicine row.",
+      "Current live Saudi Food and Drug Authority product registration was not individually confirmed; clinicians must check the hospital formulary.",
+      "Local antibiogram, resistance pattern, shared-care agreement and imaging availability require site-level confirmation where relevant."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "d6381e63-f82c-47c6-bfbb-fa3647ee382e"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Bloodstream organisms adhere to susceptible endocardial or prosthetic surfaces. Vegetation can destroy valves and cause heart failure or abscess. Emboli and immune phenomena can injure brain, spleen, kidney and other organs.",
+    "keyMechanisms": [
+      "Bloodstream organisms adhere to susceptible endocardial or prosthetic surfaces.",
+      "Vegetation can destroy valves and cause heart failure or abscess.",
+      "Emboli and immune phenomena can injure brain, spleen, kidney and other organs."
+    ],
+    "references": [
+      {
+        "title": "2023 ESC Guidelines for the management of endocarditis",
+        "edition": "2023, corrigendum 2025; Sections 5–9",
+        "url": "https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/endocarditis/"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Fever, rigors, fatigue, breathlessness, weight loss, focal pain or neurological symptoms."
+    ],
+    "physicalSigns": [
+      "New or changing murmur, heart failure, embolic signs, vascular/immunological lesions or persistent bacteraemia."
+    ],
+    "redFlags": [
+      "Pulmonary oedema, shock, conduction block, focal neurology, persistent sepsis, prosthetic-valve/device infection or large embolic burden."
+    ],
+    "precipitants": [
+      "Prosthetic valve, previous endocarditis, cardiac device, structural heart disease, haemodialysis, injection drug use or recent bacteraemia."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Uncomplicated bacteraemia",
+      "distinguishingFeatures": "No endocardial imaging finding or persistent clinical pattern; organism and host risk still matter."
+    },
+    {
+      "condition": "Non-bacterial thrombotic endocarditis",
+      "distinguishingFeatures": "Sterile vegetation in malignancy/autoimmune disease with negative microbiology."
+    },
+    {
+      "condition": "Vasculitis",
+      "distinguishingFeatures": "Systemic inflammatory features without a microbiological or endocardial source."
+    }
+  ],
+  "diagnosticCriteria": [
+    {
+      "criterion": "Diagnostic classification",
+      "threshold": "Apply the current ESC-modified diagnostic criteria using microbiology, imaging and clinical features; do not use one negative study to exclude high-probability disease."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Three sets of peripheral blood cultures",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "normalValue": "No growth",
+        "expectedFinding": "Typical or persistent bloodstream pathogen",
+        "clinicalRationale": "Obtain before antibiotics when stable enough; document separate venepunctures and timing.",
+        "references": [
+          {
+            "title": "2023 ESC Endocarditis Guideline",
+            "edition": "2023 ESC Endocarditis Guideline, Sections 5–9 and Tables 7–10",
+            "url": "https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/endocarditis/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count and inflammatory markers",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "normalValue": "White-cell count 4.0–11.0 ×10⁹/L; inflammatory markers below local upper limits",
+        "expectedFinding": "Anaemia, leucocytosis and raised inflammatory markers",
+        "clinicalRationale": "Supports systemic inflammation and provides a treatment baseline.",
+        "references": [
+          {
+            "title": "2023 ESC Endocarditis Guideline",
+            "edition": "2023 ESC Endocarditis Guideline, Sections 5–9 and Tables 7–10",
+            "url": "https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/endocarditis/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Renal profile and urinalysis",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "normalValue": "Creatinine within local range; no blood or protein in urine",
+        "expectedFinding": "Acute kidney injury, haematuria or proteinuria",
+        "clinicalRationale": "Detects immune or embolic renal injury and guides antimicrobial dosing.",
+        "references": [
+          {
+            "title": "2023 ESC Endocarditis Guideline",
+            "edition": "2023 ESC Endocarditis Guideline, Sections 5–9 and Tables 7–10",
+            "url": "https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/endocarditis/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Liver profile",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "normalValue": "Enzymes and bilirubin within local adult ranges",
+        "expectedFinding": "Cholestatic or hepatocellular abnormality",
+        "clinicalRationale": "Provides severity and antimicrobial-safety baseline.",
+        "references": [
+          {
+            "title": "2023 ESC Endocarditis Guideline",
+            "edition": "2023 ESC Endocarditis Guideline, Sections 5–9 and Tables 7–10",
+            "url": "https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/endocarditis/"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Electrocardiogram",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "normalValue": "Sinus rhythm without new conduction delay",
+        "expectedFinding": "New atrioventricular block or other conduction change",
+        "clinicalRationale": "A new conduction abnormality can indicate peri-annular extension and needs urgent escalation.",
+        "references": [
+          {
+            "title": "2023 ESC Endocarditis Guideline",
+            "edition": "2023 ESC Endocarditis Guideline, Sections 5–9 and Tables 7–10",
+            "url": "https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/endocarditis/"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Transthoracic echocardiography",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "normalValue": "No vegetation, abscess or new valvular dysfunction",
+        "expectedFinding": "Vegetation, new regurgitation, abscess or prosthetic complication",
+        "clinicalRationale": "First-line cardiac imaging; a negative study does not exclude high-probability disease.",
+        "references": [
+          {
+            "title": "2023 ESC Endocarditis Guideline",
+            "edition": "2023 ESC Endocarditis Guideline, Sections 5–9 and Tables 7–10",
+            "url": "https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/endocarditis/"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Transoesophageal echocardiography",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "normalValue": "No endocardial infection feature",
+        "expectedFinding": "Vegetation, abscess, prosthetic or device infection",
+        "clinicalRationale": "Use when suspicion remains high, prosthetic/device infection is possible or transthoracic imaging is inadequate.",
+        "references": [
+          {
+            "title": "2023 ESC Endocarditis Guideline",
+            "edition": "2023 ESC Endocarditis Guideline, Sections 5–9 and Tables 7–10",
+            "url": "https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/endocarditis/"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Cardiac computed tomography angiography",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "normalValue": "No paravalvular lesion",
+        "expectedFinding": "Abscess, pseudoaneurysm, fistula or prosthetic complication",
+        "clinicalRationale": "Use when echocardiography is inconclusive or peri-annular anatomy needs definition.",
+        "references": [
+          {
+            "title": "2023 ESC Endocarditis Guideline",
+            "edition": "2023 ESC Endocarditis Guideline, Sections 5–9 and Tables 7–10",
+            "url": "https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/endocarditis/"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "advancedImaging",
+        "testName": "Fluorodeoxyglucose positron-emission tomography/computed tomography",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "normalValue": "No pathological periprosthetic or extracardiac uptake",
+        "expectedFinding": "Abnormal uptake supporting prosthetic infection or metastatic focus",
+        "clinicalRationale": "Use within the endocarditis-team imaging pathway, especially for prosthetic material.",
+        "references": [
+          {
+            "title": "2023 ESC Endocarditis Guideline",
+            "edition": "2023 ESC Endocarditis Guideline, Sections 5–9 and Tables 7–10",
+            "url": "https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/endocarditis/"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Brain and body imaging for complications",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "normalValue": "No embolus, infarct, haemorrhage or abscess",
+        "expectedFinding": "Embolic infarct, haemorrhage, mycotic aneurysm or metastatic infection",
+        "clinicalRationale": "Image urgently for focal symptoms and before decisions affected by neurological complications.",
+        "references": [
+          {
+            "title": "2023 ESC Endocarditis Guideline",
+            "edition": "2023 ESC Endocarditis Guideline, Sections 5–9 and Tables 7–10",
+            "url": "https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/endocarditis/"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "cultures",
+      "title": "Stabilise and obtain cultures",
+      "timeframe": "Immediately",
+      "actions": [
+        "Treat shock or heart failure and obtain three blood-culture sets before antibiotics when this is safe.",
+        "If unstable, take cultures promptly and start the local empirical endocarditis regimen without avoidable delay."
+      ]
+    },
+    {
+      "id": "image",
+      "title": "Image valves and complications",
+      "timeframe": "Urgently",
+      "actions": [
+        "Arrange transthoracic echocardiography followed by transoesophageal imaging when indicated.",
+        "Use brain/body imaging for focal or embolic complications through the specialist pathway."
+      ]
+    },
+    {
+      "id": "team",
+      "title": "Activate the endocarditis team",
+      "timeframe": "Same day",
+      "actions": [
+        "Discuss with cardiology, infectious diseases/microbiology and cardiac surgery.",
+        "Escalate heart failure, uncontrolled infection, abscess/conduction block and embolic-risk features for early surgical assessment."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "branches": [
+      {
+        "label": "Oral streptococcus or Streptococcus gallolyticus native-valve endocarditis",
+        "entryCriteria": "Susceptible isolate and endocarditis-team confirmation of native-valve infection"
+      },
+      {
+        "label": "Methicillin-resistant Staphylococcus aureus native-valve endocarditis",
+        "entryCriteria": "Confirmed methicillin-resistant Staphylococcus aureus native-valve infection"
+      },
+      {
+        "label": "Enterococcus native-valve endocarditis",
+        "entryCriteria": "Confirmed Enterococcus species susceptible to the selected beta-lactam; endocarditis-team selection"
+      }
+    ],
+    "note": "Obtain three blood-culture sets before antibiotics when the patient is stable enough. Empirical therapy depends on native/prosthetic valve, acquisition setting, prior antibiotics and local resistance and must follow the endocarditis team. The regimens shown are selected organism-directed pathways from ESC Tables 7–10. Current live SFDA registration was not individually confirmed; check the hospital formulary.",
+    "regimens": [
+      {
+        "indication": "Organism-directed treatment",
+        "patientGroup": "Adult with susceptible oral-streptococcal or Streptococcus gallolyticus native-valve endocarditis",
+        "genericName": "Ceftriaxone",
+        "dose": "2 g",
+        "route": "Intravenous",
+        "frequency": "Once daily",
+        "duration": "4 weeks for native-valve endocarditis; 6 weeks for prosthetic-valve endocarditis",
+        "adjustments": [
+          "Confirm organism and susceptibility with microbiology.",
+          "Review hepatic and renal function when both are severely impaired.",
+          "Ceftriaxone is listed in the Saudi Essential Medicines List; current live SFDA registration was not individually confirmed."
+        ],
+        "monitoring": [
+          "Blood cultures until clearance, temperature and inflammatory response.",
+          "Full blood count, renal/liver profile and echocardiographic complications."
+        ],
+        "contraindications": [
+          "Severe immediate cephalosporin hypersensitivity.",
+          "Do not use this branch for resistant isolates or an unconfirmed organism."
+        ],
+        "branch": "Oral streptococcus or Streptococcus gallolyticus native-valve endocarditis",
+        "step": "Definitive antimicrobial",
+        "selection": "all",
+        "sourceTitle": "2023 ESC Guidelines for the management of endocarditis",
+        "sourceUrl": "https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/endocarditis/",
+        "sourceEdition": "2023 ESC Endocarditis Guideline, Section 7.2, Table 7, pp. 67–68"
+      },
+      {
+        "indication": "Organism-directed treatment",
+        "patientGroup": "Adult with methicillin-resistant Staphylococcus aureus native-valve endocarditis",
+        "genericName": "Vancomycin",
+        "dose": "30–60 mg/kg/day",
+        "route": "Intravenous",
+        "frequency": "Divide into 2–3 doses and individualise by therapeutic drug monitoring",
+        "duration": "4–6 weeks",
+        "adjustments": [
+          "Use pharmacy-led therapeutic drug monitoring and renal adjustment.",
+          "Account for obesity, unstable renal function and renal replacement therapy.",
+          "Vancomycin is listed in the Saudi Essential Medicines List; current live SFDA registration was not individually confirmed."
+        ],
+        "monitoring": [
+          "Blood cultures until clearance and serum vancomycin exposure using the local protocol.",
+          "Renal function and urine output at least daily during instability."
+        ],
+        "contraindications": [
+          "Serious vancomycin hypersensitivity.",
+          "Use enhanced caution with acute kidney injury or concurrent nephrotoxins."
+        ],
+        "branch": "Methicillin-resistant Staphylococcus aureus native-valve endocarditis",
+        "step": "Definitive antimicrobial",
+        "selection": "all",
+        "sourceTitle": "2023 ESC Guidelines for the management of endocarditis",
+        "sourceUrl": "https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/endocarditis/",
+        "sourceEdition": "2023 ESC Endocarditis Guideline, Section 7.4, Table 8, pp. 68–70"
+      },
+      {
+        "indication": "Cell-wall active component of definitive dual beta-lactam treatment",
+        "patientGroup": "Adult with Enterococcus native-valve endocarditis",
+        "genericName": "Ampicillin",
+        "dose": "12 g/day",
+        "route": "Intravenous",
+        "frequency": "Divide into 4–6 doses",
+        "duration": "6 weeks with ceftriaxone",
+        "adjustments": [
+          "Adjust for renal impairment with pharmacy/microbiology advice.",
+          "Confirm species and susceptibility.",
+          "Check hospital formulary; current live SFDA registration was not individually confirmed."
+        ],
+        "monitoring": [
+          "Blood cultures until clearance, renal/liver profile and full blood count.",
+          "Hypersensitivity and sodium load."
+        ],
+        "contraindications": [
+          "Immediate or severe penicillin hypersensitivity.",
+          "Do not use without the paired ceftriaxone in this branch."
+        ],
+        "branch": "Enterococcus native-valve endocarditis",
+        "step": "Dual beta-lactam regimen",
+        "selection": "all",
+        "sourceTitle": "2023 ESC Guidelines for the management of endocarditis",
+        "sourceUrl": "https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/endocarditis/",
+        "sourceEdition": "2023 ESC Endocarditis Guideline, Section 7.8, Table 10, pp. 70–71"
+      },
+      {
+        "indication": "Second component of definitive dual beta-lactam treatment",
+        "patientGroup": "Adult with Enterococcus native-valve endocarditis",
+        "genericName": "Ceftriaxone",
+        "dose": "4 g/day",
+        "route": "Intravenous",
+        "frequency": "Divide into 2 doses",
+        "duration": "6 weeks with ampicillin",
+        "adjustments": [
+          "Review hepatic and renal function when both are severely impaired.",
+          "Confirm species and susceptibility.",
+          "Ceftriaxone is listed in the Saudi Essential Medicines List; current live SFDA registration was not individually confirmed."
+        ],
+        "monitoring": [
+          "Blood cultures until clearance, liver profile and full blood count.",
+          "Biliary adverse effects and hypersensitivity."
+        ],
+        "contraindications": [
+          "Severe immediate cephalosporin hypersensitivity.",
+          "Do not use as monotherapy in this Enterococcus branch."
+        ],
+        "branch": "Enterococcus native-valve endocarditis",
+        "step": "Dual beta-lactam regimen",
+        "selection": "all",
+        "sourceTitle": "2023 ESC Guidelines for the management of endocarditis",
+        "sourceUrl": "https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/endocarditis/",
+        "sourceEdition": "2023 ESC Endocarditis Guideline, Section 7.8, Table 10, pp. 70–71"
+      }
+    ]
+  },
+  "teaching": {
+    "scope": "Recognition, microbiological sampling, imaging and endocarditis-team escalation for suspected infective endocarditis.",
+    "learningObjectives": [
+      "Recognise the condition and its red flags.",
+      "Choose initial tests without delaying urgent escalation.",
+      "Use a named multidisciplinary disposition plan."
+    ],
+    "keyPoints": [
+      "Pulmonary oedema, shock, conduction block, focal neurology, persistent sepsis, prosthetic-valve/device infection or large embolic burden.",
+      "Discuss with cardiology, infectious diseases/microbiology and cardiac surgery."
+    ],
+    "pitfalls": [
+      "Stopping after a short outline instead of documenting the full investigation pathway.",
+      "Using a medicine row without checking the branch, allergy, organ function, culture result and local formulary.",
+      "Mistaking publication status for clinical approval; this version remains pending until a clinician approves it."
+    ],
+    "references": [
+      {
+        "title": "2023 ESC Endocarditis Guideline",
+        "edition": "2023 ESC Endocarditis Guideline, Sections 5–9 and Tables 7–10",
+        "url": "https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/endocarditis/",
+        "locator": "2023 ESC Endocarditis Guideline, Sections 5–9 and Tables 7–10"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain the working diagnosis, immediate plan and specific return or deterioration signs."
+    ],
+    "lifestyleAndDiet": [
+      "Address prevention and self-management only after the acute safety plan is complete."
+    ],
+    "mdtReferrals": [
+      "Cardiology",
+      "Infectious Diseases"
+    ],
+    "dischargeCriteria": [
+      "Not suitable for routine discharge before endocarditis-team assessment; outpatient treatment requires a formal specialist plan and stability criteria."
+    ],
+    "followUpPlan": "The endocarditis team defines antimicrobial duration, repeat cultures/imaging, surgery, oral health and relapse surveillance."
+  }
+}

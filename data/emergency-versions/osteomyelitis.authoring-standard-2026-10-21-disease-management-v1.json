@@ -1,0 +1,233 @@
+{
+  "id": "3c198093-d617-4745-a846-0b7ba21d073e",
+  "title": "Osteomyelitis: Diagnosis, Culture Pathway and Specialist Referral",
+  "specialty": "Infectious Diseases / Orthopaedics",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-21-disease-management-v1",
+  "lastReviewed": "2026-10-21",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-21",
+    "status": "incomplete",
+    "scope": "Osteomyelitis: Diagnosis, Culture Pathway and Specialist Referral",
+    "findings": [
+      "Built as an additive Disease Management version using the approved-topic structure.",
+      "Investigations are ordered from bedside/laboratory assessment to imaging and specialist tests.",
+      "The original outline remains current; this version is non-current and pending clinical review."
+    ],
+    "unverifiedSections": [
+      "The IDSA source is specific to native vertebral osteomyelitis; other anatomical pathways need site-specific guidance.",
+      "Saudi antimicrobial doses, durations and SFDA status require local verification."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "3c198093-d617-4745-a846-0b7ba21d073e"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Bone infection arises by bloodstream spread, contiguous infection or direct inoculation. Necrotic bone and abscess impair antimicrobial penetration and may require drainage/debridement. Microbiological diagnosis permits targeted therapy and reduces unnecessary broad-spectrum exposure.",
+    "keyMechanisms": [
+      "Bone infection arises by bloodstream spread, contiguous infection or direct inoculation.",
+      "Necrotic bone and abscess impair antimicrobial penetration and may require drainage/debridement.",
+      "Microbiological diagnosis permits targeted therapy and reduces unnecessary broad-spectrum exposure."
+    ],
+    "references": [
+      {
+        "title": "IDSA Native Vertebral Osteomyelitis Guideline",
+        "edition": "2015; recommendations 6–26 and 30–37",
+        "url": "https://www.idsociety.org/practice-guideline/vertebral-osteomyelitis/"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Focal bone pain, fever, impaired function or non-healing wound."
+    ],
+    "physicalSigns": [
+      "Local tenderness, swelling, sinus, wound depth or neurological deficit when the spine is involved."
+    ],
+    "redFlags": [
+      "Sepsis, neurological deficit, spinal instability, epidural collection, prosthetic infection or critical limb ischaemia."
+    ],
+    "precipitants": [
+      "Recent bacteraemia, surgery/implant, diabetic ulcer, pressure injury, trauma, dialysis or injection drug use."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Malignancy",
+      "distinguishingFeatures": "Destructive lesion without microbiological evidence; biopsy may be required."
+    },
+    {
+      "condition": "Charcot arthropathy",
+      "distinguishingFeatures": "Neuropathy with joint destruction and less systemic inflammation."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Blood cultures before antibiotics",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "expectedFinding": "Pathogen growth",
+        "clinicalRationale": "Obtain at least two sets when haematogenous disease or sepsis is suspected.",
+        "normalValue": "No growth",
+        "references": [
+          {
+            "title": "IDSA Native Vertebral Osteomyelitis Guideline",
+            "edition": "2015; recommendations 6–26 and 30–37",
+            "url": "https://www.idsociety.org/practice-guideline/vertebral-osteomyelitis/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count, C-reactive protein and ESR",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "expectedFinding": "Inflammatory response; normal results do not fully exclude chronic disease",
+        "clinicalRationale": "Provide baseline and trend response.",
+        "normalValue": "Within local ranges",
+        "references": [
+          {
+            "title": "IDSA Native Vertebral Osteomyelitis Guideline",
+            "edition": "2015; recommendations 6–26 and 30–37",
+            "url": "https://www.idsociety.org/practice-guideline/vertebral-osteomyelitis/"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Plain radiograph",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "expectedFinding": "Late cortical destruction, periosteal reaction or implant change",
+        "clinicalRationale": "Baseline and alternative diagnosis; early disease may be normal.",
+        "normalValue": "No bone destruction",
+        "references": [
+          {
+            "title": "IDSA Native Vertebral Osteomyelitis Guideline",
+            "edition": "2015; recommendations 6–26 and 30–37",
+            "url": "https://www.idsociety.org/practice-guideline/vertebral-osteomyelitis/"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Magnetic resonance imaging",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "expectedFinding": "Marrow signal abnormality, abscess or epidural extension",
+        "clinicalRationale": "Preferred cross-sectional test for suspected vertebral/deep osteomyelitis.",
+        "normalValue": "No marrow oedema or collection",
+        "references": [
+          {
+            "title": "IDSA Native Vertebral Osteomyelitis Guideline",
+            "edition": "2015; recommendations 6–26 and 30–37",
+            "url": "https://www.idsociety.org/practice-guideline/vertebral-osteomyelitis/"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Image-guided or operative bone biopsy",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "expectedFinding": "Histological osteomyelitis and/or pathogen",
+        "clinicalRationale": "Obtain before antibiotics when stable; urgent treatment overrides delay in sepsis or neurological compromise.",
+        "normalValue": "Sterile histology/culture",
+        "references": [
+          {
+            "title": "IDSA Native Vertebral Osteomyelitis Guideline",
+            "edition": "2015; recommendations 6–26 and 30–37",
+            "url": "https://www.idsociety.org/practice-guideline/vertebral-osteomyelitis/"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "step-1",
+      "title": "Assess urgency",
+      "timeframe": "At presentation",
+      "actions": [
+        "Check sepsis, neurovascular status, spinal neurology, wound/implant and source.",
+        "Call surgery urgently for neurological compromise, instability, abscess, necrosis or limb threat."
+      ]
+    },
+    {
+      "id": "step-2",
+      "title": "Secure microbiology",
+      "timeframe": "Before antibiotics when safe",
+      "actions": [
+        "Take blood cultures and obtain bone/deep tissue rather than superficial swabs.",
+        "Do not delay antibiotics in sepsis, shock or progressive neurological deficit."
+      ]
+    },
+    {
+      "id": "step-3",
+      "title": "Target treatment",
+      "timeframe": "After sampling",
+      "actions": [
+        "Select intravenous/oral therapy with infectious diseases and microbiology according to organism, site, implant, renal function and Saudi antibiogram.",
+        "Plan drainage, debridement or implant management when required."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [],
+    "note": "Antimicrobial choice and duration are site-, pathogen-, implant- and susceptibility-dependent. Do not copy a single empirical regimen across vertebral, diabetic-foot, haematogenous and postoperative osteomyelitis; use the Saudi hospital osteomyelitis/OPAT protocol after cultures."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Microbiological diagnosis",
+      "threshold": "Blood culture or image-guided/operative bone specimen identifies the pathogen where feasible."
+    }
+  ],
+  "teaching": {
+    "scope": "Osteomyelitis: Diagnosis, Culture Pathway and Specialist Referral",
+    "learningObjectives": [
+      "Recognise the emergency and relevant red flags.",
+      "Select the correct investigation and escalation pathway.",
+      "Use medicines only within the stated branch and local formulary."
+    ],
+    "pitfalls": [
+      "Delaying specialist escalation while waiting for a non-essential test.",
+      "Using an unverified medicine dose or applying an adult pathway to a child.",
+      "Mistaking publication status for clinical approval."
+    ],
+    "keyPoints": [
+      "Sepsis, neurological deficit, spinal instability, epidural collection, prosthetic infection or critical limb ischaemia."
+    ],
+    "references": [
+      {
+        "title": "IDSA Native Vertebral Osteomyelitis Guideline",
+        "edition": "2015; recommendations 6–26 and 30–37",
+        "url": "https://www.idsociety.org/practice-guideline/vertebral-osteomyelitis/",
+        "locator": "2015; recommendations 6–26 and 30–37"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain prolonged therapy, adherence, line/wound care and red flags."
+    ],
+    "lifestyleAndDiet": [
+      "Smoking cessation, nutrition and diabetes/pressure care optimisation."
+    ],
+    "mdtReferrals": [
+      "Orthopaedics/spinal surgery by site, infectious diseases, microbiology, vascular/podiatry and OPAT."
+    ],
+    "dischargeCriteria": [
+      "Stable, source-control decision complete and monitored antimicrobial/follow-up plan documented."
+    ],
+    "followUpPlan": "Clinical, inflammatory-marker and site-specific imaging follow-up; avoid routine repeat MRI when improving unless indicated."
+  }
+}

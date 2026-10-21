@@ -1,0 +1,233 @@
+{
+  "id": "f9ba9c36-b56e-424f-bb6e-61b292a348f5",
+  "title": "Ovarian Torsion: Emergency Recognition, Ultrasound and Surgical Referral",
+  "specialty": "Gynaecology / Emergency Medicine",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-21-disease-management-v1",
+  "lastReviewed": "2026-10-21",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-21",
+    "status": "incomplete",
+    "scope": "Ovarian Torsion: Emergency Recognition, Ultrasound and Surgical Referral",
+    "findings": [
+      "Built as an additive Disease Management version using the approved-topic structure.",
+      "Investigations are ordered from bedside/laboratory assessment to imaging and specialist tests.",
+      "The original outline remains current; this version is non-current and pending clinical review."
+    ],
+    "unverifiedSections": [
+      "The opened ACOG guidance is adolescent-focused; adult local gynaecology policy must also be applied.",
+      "Saudi operative and analgesic formulary details were not opened."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "f9ba9c36-b56e-424f-bb6e-61b292a348f5"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Twisting of the adnexal vascular pedicle impairs venous and lymphatic drainage. Progressive oedema can compromise arterial inflow and threaten ovarian viability. Intermittent torsion can produce episodic pain and normal flow between episodes.",
+    "keyMechanisms": [
+      "Twisting of the adnexal vascular pedicle impairs venous and lymphatic drainage.",
+      "Progressive oedema can compromise arterial inflow and threaten ovarian viability.",
+      "Intermittent torsion can produce episodic pain and normal flow between episodes."
+    ],
+    "references": [
+      {
+        "title": "ACOG Committee Opinion: Adnexal Torsion in Adolescents",
+        "edition": "Committee Opinion 783; diagnostic and operative recommendations",
+        "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2019/08/adnexal-torsion-in-adolescents"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Sudden unilateral lower abdominal/pelvic pain, often with nausea and vomiting."
+    ],
+    "physicalSigns": [
+      "Lower abdominal tenderness; peritonism may indicate advanced ischaemia or another surgical emergency."
+    ],
+    "redFlags": [
+      "Pregnancy, haemodynamic instability, peritonism, persistent severe pain or high clinical suspicion despite non-diagnostic imaging."
+    ],
+    "precipitants": [
+      "Ovarian mass/cyst, enlarged ovary, pregnancy or fertility treatment; torsion can occur without a mass."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Ectopic pregnancy",
+      "distinguishingFeatures": "Positive pregnancy test with pregnancy-location pathway findings."
+    },
+    {
+      "condition": "Appendicitis",
+      "distinguishingFeatures": "Typical migration/systemic inflammatory pattern; overlap is common."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Pregnancy test",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "expectedFinding": "Positive",
+        "clinicalRationale": "Immediately activates pregnancy-location and ectopic-risk assessment without excluding torsion.",
+        "normalValue": "Negative",
+        "references": [
+          {
+            "title": "ACOG Committee Opinion: Adnexal Torsion in Adolescents",
+            "edition": "Committee Opinion 783; diagnostic and operative recommendations",
+            "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2019/08/adnexal-torsion-in-adolescents"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count and metabolic profile",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "expectedFinding": "Non-specific inflammatory or dehydration changes",
+        "clinicalRationale": "Assess operative baseline and alternatives; normal bloods do not exclude torsion.",
+        "normalValue": "Within local ranges",
+        "references": [
+          {
+            "title": "ACOG Committee Opinion: Adnexal Torsion in Adolescents",
+            "edition": "Committee Opinion 783; diagnostic and operative recommendations",
+            "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2019/08/adnexal-torsion-in-adolescents"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Pelvic ultrasound with Doppler",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "expectedFinding": "Enlarged ovary, stromal oedema, peripheral follicles, mass or twisted pedicle",
+        "clinicalRationale": "Supports diagnosis, but preserved Doppler flow does not exclude torsion.",
+        "normalValue": "Normal ovarian size/morphology and no mass",
+        "references": [
+          {
+            "title": "ACOG Committee Opinion: Adnexal Torsion in Adolescents",
+            "edition": "Committee Opinion 783; diagnostic and operative recommendations",
+            "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2019/08/adnexal-torsion-in-adolescents"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Urgent gynaecology examination",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "expectedFinding": "High clinical suspicion or peritonism",
+        "clinicalRationale": "Proceed to time-critical operative decision; do not await repeated imaging.",
+        "normalValue": "No focal adnexal concern",
+        "references": [
+          {
+            "title": "ACOG Committee Opinion: Adnexal Torsion in Adolescents",
+            "edition": "Committee Opinion 783; diagnostic and operative recommendations",
+            "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2019/08/adnexal-torsion-in-adolescents"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "advancedImaging",
+        "testName": "CT/MRI performed for another differential",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "expectedFinding": "Incidental enlarged/twisted adnexa",
+        "clinicalRationale": "Escalate immediately; cross-sectional imaging must not delay surgery.",
+        "normalValue": "No adnexal abnormality",
+        "references": [
+          {
+            "title": "ACOG Committee Opinion: Adnexal Torsion in Adolescents",
+            "edition": "Committee Opinion 783; diagnostic and operative recommendations",
+            "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2019/08/adnexal-torsion-in-adolescents"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "step-1",
+      "title": "Recognise and refer",
+      "timeframe": "Immediately",
+      "actions": [
+        "Give analgesia, keep nil by mouth, obtain IV access and contact gynaecology urgently.",
+        "Treat pregnancy and haemodynamic instability through the appropriate emergency pathway."
+      ]
+    },
+    {
+      "id": "step-2",
+      "title": "Image without delaying surgery",
+      "timeframe": "Urgently",
+      "actions": [
+        "Arrange pelvic ultrasound with Doppler while maintaining clinical suspicion.",
+        "Do not use normal Doppler flow as a rule-out test."
+      ]
+    },
+    {
+      "id": "step-3",
+      "title": "Operate when suspected",
+      "timeframe": "Time-critical",
+      "actions": [
+        "Perform diagnostic laparoscopy with detorsion and ovarian preservation where feasible.",
+        "Further cyst/mass management follows age, operative findings and specialist judgement."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "no-drug-indicated",
+    "regimens": [],
+    "note": "No medicine detorses the adnexa. Give local age/pregnancy-appropriate analgesia and antiemetic therapy while arranging urgent surgery; exact agents and doses follow the emergency and anaesthetic formulary."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Definitive diagnosis",
+      "threshold": "Surgical visualisation; no clinical or Doppler criterion safely excludes torsion."
+    }
+  ],
+  "teaching": {
+    "scope": "Ovarian Torsion: Emergency Recognition, Ultrasound and Surgical Referral",
+    "learningObjectives": [
+      "Recognise the emergency and relevant red flags.",
+      "Select the correct investigation and escalation pathway.",
+      "Use medicines only within the stated branch and local formulary."
+    ],
+    "pitfalls": [
+      "Delaying specialist escalation while waiting for a non-essential test.",
+      "Using an unverified medicine dose or applying an adult pathway to a child.",
+      "Mistaking publication status for clinical approval."
+    ],
+    "keyPoints": [
+      "Pregnancy, haemodynamic instability, peritonism, persistent severe pain or high clinical suspicion despite non-diagnostic imaging."
+    ],
+    "references": [
+      {
+        "title": "ACOG Committee Opinion: Adnexal Torsion in Adolescents",
+        "edition": "Committee Opinion 783; diagnostic and operative recommendations",
+        "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2019/08/adnexal-torsion-in-adolescents",
+        "locator": "Committee Opinion 783; diagnostic and operative recommendations"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain that imaging cannot fully exclude torsion and surgery may be needed to save the ovary."
+    ],
+    "lifestyleAndDiet": [
+      "No specific lifestyle intervention during the emergency episode."
+    ],
+    "mdtReferrals": [
+      "Urgent gynaecology; paediatric/adolescent gynaecology when applicable."
+    ],
+    "dischargeCriteria": [
+      "Only after specialist exclusion or postoperative stability with safety-net advice."
+    ],
+    "followUpPlan": "Gynaecology follow-up for pathology, ovarian function and recurrence risk."
+  }
+}

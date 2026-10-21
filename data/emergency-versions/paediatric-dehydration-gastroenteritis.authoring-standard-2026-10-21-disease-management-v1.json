@@ -1,0 +1,266 @@
+{
+  "id": "8c39e408-727d-444a-9b02-ec7b13980e4b",
+  "title": "Paediatric Dehydration and Acute Gastroenteritis: Assessment and Rehydration Pathway",
+  "specialty": "Paediatrics / Emergency Medicine",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-21-disease-management-v1",
+  "lastReviewed": "2026-10-21",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-21",
+    "status": "incomplete",
+    "scope": "Paediatric Dehydration and Acute Gastroenteritis: Assessment and Rehydration Pathway",
+    "findings": [
+      "Built as an additive Disease Management version using the approved-topic structure.",
+      "Investigations are ordered from bedside/laboratory assessment to imaging and specialist tests.",
+      "The original outline remains current; this version is non-current and pending clinical review."
+    ],
+    "unverifiedSections": [
+      "Saudi paediatric IV-fluid and ORS product policy was not opened.",
+      "This topic is scoped to under-5s because CG84 is the opened source."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "8c39e408-727d-444a-9b02-ec7b13980e4b"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Vomiting and diarrhoea cause water and electrolyte loss. Reduced circulating volume progresses from clinical dehydration to shock. Low-osmolarity oral rehydration replaces water and electrolytes through intestinal cotransport.",
+    "keyMechanisms": [
+      "Vomiting and diarrhoea cause water and electrolyte loss.",
+      "Reduced circulating volume progresses from clinical dehydration to shock.",
+      "Low-osmolarity oral rehydration replaces water and electrolytes through intestinal cotransport."
+    ],
+    "references": [
+      {
+        "title": "NICE CG84 Gastroenteritis in under 5s",
+        "edition": "CG84 recommendations 1.2–1.5",
+        "url": "https://www.nice.org.uk/guidance/cg84/chapter/Recommendations"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Diarrhoea, vomiting, reduced intake, thirst or reduced urine output."
+    ],
+    "physicalSigns": [
+      "General appearance, responsiveness, eyes, mucosa, heart rate, breathing, pulses, capillary refill and skin turgor determine severity."
+    ],
+    "redFlags": [
+      "Shock, altered responsiveness, weak pulses, prolonged capillary refill, tachypnoea, bilious vomiting, blood/mucus in stool or severe localised abdominal pain."
+    ],
+    "precipitants": [
+      "Viral gastroenteritis, bacterial infection, inadequate replacement or high-risk comorbidity."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Surgical abdomen",
+      "distinguishingFeatures": "Bilious vomiting, peritonism or focal severe pain."
+    },
+    {
+      "condition": "Sepsis",
+      "distinguishingFeatures": "Systemic toxicity or shock disproportionate to gastrointestinal loss."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Clinical hydration assessment",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "expectedFinding": "Clinical dehydration or shock features",
+        "clinicalRationale": "Select oral versus intravenous pathway and reassess frequently.",
+        "normalValue": "Normal responsiveness, pulses, mucosa and urine output",
+        "references": [
+          {
+            "title": "NICE CG84 Gastroenteritis in under 5s",
+            "edition": "CG84 recommendations 1.2–1.5",
+            "url": "https://www.nice.org.uk/guidance/cg84/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Blood glucose in altered or high-risk child",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "expectedFinding": "Hypoglycaemia or marked hyperglycaemia",
+        "clinicalRationale": "Treat immediately and investigate an alternative/complicating diagnosis.",
+        "normalValue": "Age-appropriate local range",
+        "references": [
+          {
+            "title": "NICE CG84 Gastroenteritis in under 5s",
+            "edition": "CG84 recommendations 1.2–1.5",
+            "url": "https://www.nice.org.uk/guidance/cg84/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Electrolytes, urea and creatinine when IV fluids are required",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "expectedFinding": "Sodium disturbance, renal impairment or acidosis",
+        "clinicalRationale": "Guide IV fluid composition and monitoring; not routine in uncomplicated oral rehydration.",
+        "normalValue": "Within age-adjusted range",
+        "references": [
+          {
+            "title": "NICE CG84 Gastroenteritis in under 5s",
+            "edition": "CG84 recommendations 1.2–1.5",
+            "url": "https://www.nice.org.uk/guidance/cg84/chapter/Recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Stool microbiology when indicated",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "expectedFinding": "Pathogen detected",
+        "clinicalRationale": "Use for blood/mucus, immunocompromise, prolonged illness, travel or outbreak/public-health indication.",
+        "normalValue": "No enteric pathogen",
+        "references": [
+          {
+            "title": "NICE CG84 Gastroenteritis in under 5s",
+            "edition": "CG84 recommendations 1.2–1.5",
+            "url": "https://www.nice.org.uk/guidance/cg84/chapter/Recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Fluid balance and weight",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "expectedFinding": "Ongoing loss or failure to rehydrate",
+        "clinicalRationale": "Document intake, losses, urine and serial weight when admitted.",
+        "normalValue": "Stable weight and urine output",
+        "references": [
+          {
+            "title": "NICE CG84 Gastroenteritis in under 5s",
+            "edition": "CG84 recommendations 1.2–1.5",
+            "url": "https://www.nice.org.uk/guidance/cg84/chapter/Recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "step-1",
+      "title": "Assess and exclude shock",
+      "timeframe": "Immediately",
+      "actions": [
+        "Use the NICE dehydration/shock table and assess for red flags or alternative diagnosis.",
+        "In shock, obtain senior help and start the intravenous pathway immediately."
+      ]
+    },
+    {
+      "id": "step-2",
+      "title": "Rehydrate",
+      "timeframe": "First 4 hours",
+      "actions": [
+        "For clinical dehydration without shock, give low-osmolarity ORS 50 mL/kg over 4 hours plus maintenance, frequently in small amounts.",
+        "Continue breastfeeding and replace ongoing large watery stools with ORS according to the source pathway."
+      ]
+    },
+    {
+      "id": "step-3",
+      "title": "Reassess and discharge safely",
+      "timeframe": "After rehydration",
+      "actions": [
+        "Reassess hydration and oral tolerance; escalate persistent vomiting or deterioration.",
+        "Give return precautions and feeding/hygiene advice."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [
+      {
+        "indication": "Replace fluid deficit",
+        "patientGroup": "Child under 5 with clinical dehydration without shock",
+        "genericName": "Low-osmolarity oral rehydration solution",
+        "dose": "50 mL/kg over 4 hours in addition to maintenance; give frequently in small amounts",
+        "route": "Oral or nasogastric",
+        "frequency": "Continuous small frequent amounts over 4 hours",
+        "duration": "Reassess after 4 hours; continue replacement for ongoing losses as directed",
+        "adjustments": [
+          "Use the shock/IV pathway when shock is present.",
+          "Seek specialist advice for electrolyte disorder, renal/cardiac disease or severe malnutrition.",
+          "Check Saudi hospital product and protocol."
+        ],
+        "monitoring": [
+          "Clinical hydration, vomiting, stool losses, urine output and weight when indicated."
+        ],
+        "contraindications": [
+          "Shock, ileus or inability to protect the airway for oral administration."
+        ],
+        "branch": "Clinical dehydration without shock",
+        "step": "Rehydration",
+        "selection": "all",
+        "sourceTitle": "NICE CG84 Gastroenteritis in under 5s",
+        "sourceUrl": "https://www.nice.org.uk/guidance/cg84/chapter/Recommendations",
+        "sourceEdition": "CG84 recommendation 1.3.1.1"
+      }
+    ],
+    "branches": [
+      {
+        "label": "Clinical dehydration without shock",
+        "entryCriteria": "Under-5 child with clinical dehydration and no shock."
+      }
+    ],
+    "note": "Oral rehydration is preferred when there is no shock; IV boluses and maintenance must follow the local paediatric fluid policy."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Clinical dehydration",
+      "threshold": "Use the NICE CG84 symptom/sign table; shock features override routine oral rehydration."
+    }
+  ],
+  "teaching": {
+    "scope": "Paediatric Dehydration and Acute Gastroenteritis: Assessment and Rehydration Pathway",
+    "learningObjectives": [
+      "Recognise the emergency and relevant red flags.",
+      "Select the correct investigation and escalation pathway.",
+      "Use medicines only within the stated branch and local formulary."
+    ],
+    "pitfalls": [
+      "Delaying specialist escalation while waiting for a non-essential test.",
+      "Using an unverified medicine dose or applying an adult pathway to a child.",
+      "Mistaking publication status for clinical approval."
+    ],
+    "keyPoints": [
+      "Shock, altered responsiveness, weak pulses, prolonged capillary refill, tachypnoea, bilious vomiting, blood/mucus in stool or severe localised abdominal pain."
+    ],
+    "references": [
+      {
+        "title": "NICE CG84 Gastroenteritis in under 5s",
+        "edition": "CG84 recommendations 1.2–1.5",
+        "url": "https://www.nice.org.uk/guidance/cg84/chapter/Recommendations",
+        "locator": "CG84 recommendations 1.2–1.5"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Teach ORS preparation/use, continued feeding and red-flag return precautions."
+    ],
+    "lifestyleAndDiet": [
+      "Continue breastfeeding and usual milk feeds after rehydration; avoid fruit juice and carbonated drinks until diarrhoea stops."
+    ],
+    "mdtReferrals": [
+      "Paediatrics for shock, high-risk comorbidity, diagnostic uncertainty or failed oral rehydration."
+    ],
+    "dischargeCriteria": [
+      "No shock, hydration improved, oral intake tolerated and caregivers can continue fluids with safety-net advice."
+    ],
+    "followUpPlan": "Primary-care/paediatric review if symptoms persist or red flags develop."
+  }
+}

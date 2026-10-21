@@ -1,0 +1,486 @@
+{
+  "id": "ab77e661-9487-4d04-83cb-07646983efc1",
+  "title": "Hypercalcaemia (Acute, Including Malignancy-Associated)",
+  "specialty": "Endocrinology / Emergency Medicine",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-21-endocrine-electrolyte-v1",
+  "lastReviewed": "2026-10-21",
+  "pillar": "Urgent Care",
+  "clinicalScenario": "Outline only. Planned scope: Severity, rehydration, bisphosphonate and other options, ECG, causes, referral pathway. Candidate sources to verify: Society for Endocrinology emergency guidance on acute hypercalcaemia.",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-21",
+    "status": "incomplete",
+    "scope": "Adult (over 18 years) Emergency Department (ED) and acute medical treatment of acute hypercalcaemia, including malignancy-associated hypercalcaemia, based on the Society for Endocrinology 2016 emergency guidance and a North Glasgow tumour-induced hypercalcaemia pharmacy protocol. Chronic primary hyperparathyroidism and paediatric care are outside this protocol. No Saudi national guideline was found.",
+    "findings": [
+      "Full protocol rebuilt from the source dossier opened on 2026-10-21; exact source locations are recorded in each investigation and medicine row.",
+      "The original outline remains preserved; this additive version is non-current and pending clinical review."
+    ],
+    "unverifiedSections": [
+      "Normal ranges are typical adult values, not from the cited guidelines.",
+      "Symptoms, signs, precipitants, differentials and pathophysiology are standard clinical content and were not extracted line by line.",
+      "The 2016 page numbers G9–G11 are running headers from an automated reading, not exact page breaks. The North Glasgow protocol is dated 12.10.05 (format unclear) and is a pharmacy document for refractory tumour-induced hypercalcaemia; replace with a current guideline before clinical sign-off.",
+      "Doses for calcitonin, denosumab and calcimimetics and the ibandronic acid dose in the trust protocol were not stated in the opened text; the 2016 guidance gives 2–4 mg.",
+      "The 2016 guidance says pamidronate at 20 mg/hour while the protocol uses 1 mg/minute; the difference was not reconciled.",
+      "No Saudi national or Saudi Ministry of Health hypercalcaemia guideline was found; Saudi Food and Drug Authority (SFDA) availability of zoledronic acid and pamidronate was not checked.",
+      "The SmPC is a UK Novartis product; retreatment interval for 4 mg is not stated (median relapse 30–40 days), the pamidronate and ibandronic acid preparation and infusion times come only from the 2016 guidance and the North Glasgow protocol, and Saudi Food and Drug Authority products were not checked.",
+      "Renal, hepatic and age adjustments for the drugs added in this revision are from manufacturer labels (UK Summary of Product Characteristics, US prescribing information and a New Zealand data sheet), not from Saudi Food and Drug Authority labels."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "ab77e661-9487-4d04-83cb-07646983efc1"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Hypercalcaemia is a raised albumin-adjusted calcium. The commonest causes are primary hyperparathyroidism and malignancy.",
+    "keyMechanisms": [
+      "Malignancy raises calcium through bone breakdown, parathyroid hormone-related peptide and, in lymphoma, active vitamin D.",
+      "High calcium causes polyuria and dehydration, which reduces calcium excretion and worsens the rise.",
+      "Very high calcium causes dysrhythmia and coma."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Thirst, polyuria, nausea, vomiting, constipation, abdominal pain, fatigue, confusion."
+    ],
+    "physicalSigns": [
+      "Dehydration, reduced consciousness, shortened QT on the electrocardiogram (ECG)."
+    ],
+    "redFlags": [
+      "Corrected calcium above 3.5 mmol/L (risk of dysrhythmia and coma).",
+      "Symptomatic hypercalcaemia of 3.0–3.5 mmol/L.",
+      "Renal failure or fluid overload risk.",
+      "Known cancer, especially lung, breast, myeloma or lymphoma."
+    ],
+    "precipitants": [
+      "Malignancy, primary hyperparathyroidism, vitamin D excess, granulomatous disease (for example sarcoidosis), thiazides, lithium, immobilisation."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Primary hyperparathyroidism",
+      "distinguishingFeatures": "High or inappropriately normal parathyroid hormone"
+    },
+    {
+      "condition": "Malignancy-associated hypercalcaemia",
+      "distinguishingFeatures": "Suppressed parathyroid hormone with known or suspected cancer"
+    },
+    {
+      "condition": "Vitamin D toxicity or granulomatous disease",
+      "distinguishingFeatures": "High vitamin D metabolites; steroid-responsive"
+    },
+    {
+      "condition": "Pseudohypercalcaemia",
+      "distinguishingFeatures": "Normal ionised calcium; high albumin or sampling error"
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Albumin-adjusted calcium",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Hypercalcaemia (Acute, Including Malignancy-Associated)",
+        "expectedFinding": "Above 2.6 mmol/L",
+        "clinicalRationale": "Grade severity and start IV saline if symptomatic or above 3.0 mmol/L",
+        "normalValue": "2.2–2.6 mmol/L",
+        "references": [
+          {
+            "title": "Emergency management of acute hypercalcaemia in adult patients",
+            "edition": "Society for Endocrinology (Walsh, Gittoes, Selby), Endocrine Connections 2016, DOI 10.1530/EC-16-0055; section Causes (running header G9)",
+            "url": "https://www.endocrinology.org/media/4277/emergency-guidance_acute-hypercalcaemia-in-adults.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Urea, creatinine and eGFR",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Hypercalcaemia (Acute, Including Malignancy-Associated)",
+        "expectedFinding": "Often raised",
+        "clinicalRationale": "Needed before bisphosphonate: zoledronic acid needs creatinine below 400 µmol/L and eGFR above 30 mL/min; pamidronate eGFR above 40 mL/min",
+        "normalValue": "Creatinine 60–110 µmol/L",
+        "references": [
+          {
+            "title": "Management of Tumour Induced Hypercalcaemia",
+            "edition": "North Glasgow Division pharmacy protocol (Forte), dated 12.10.05; section Renal prerequisites",
+            "url": "https://www.cem.scot.nhs.uk/adult/hypercalcaemiaTI.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Parathyroid hormone, vitamin D, phosphate",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Hypercalcaemia (Acute, Including Malignancy-Associated)",
+        "expectedFinding": "Suppressed in malignancy; raised in hyperparathyroidism",
+        "clinicalRationale": "Directs cause and second-line treatment",
+        "normalValue": "PTH 1.6–6.9 pmol/L",
+        "references": [
+          {
+            "title": "Emergency management of acute hypercalcaemia in adult patients",
+            "edition": "Society for Endocrinology (Walsh, Gittoes, Selby), Endocrine Connections 2016, DOI 10.1530/EC-16-0055; section Causes (running header G9)",
+            "url": "https://www.endocrinology.org/media/4277/emergency-guidance_acute-hypercalcaemia-in-adults.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "12-lead ECG",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Hypercalcaemia (Acute, Including Malignancy-Associated)",
+        "expectedFinding": "Short QT, dysrhythmia",
+        "clinicalRationale": "Cardiac monitoring for severe cases",
+        "normalValue": "Normal QT",
+        "references": [
+          {
+            "title": "Emergency management of acute hypercalcaemia in adult patients",
+            "edition": "Society for Endocrinology (Walsh, Gittoes, Selby), Endocrine Connections 2016, DOI 10.1530/EC-16-0055; section Causes (running header G9)",
+            "url": "https://www.endocrinology.org/media/4277/emergency-guidance_acute-hypercalcaemia-in-adults.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Daily urea and electrolytes and calcium",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Hypercalcaemia (Acute, Including Malignancy-Associated)",
+        "expectedFinding": "Abnormal during treatment",
+        "clinicalRationale": "Recheck daily during treatment",
+        "normalValue": "Creatinine 60–110 µmol/L; calcium 2.2–2.6 mmol/L",
+        "references": [
+          {
+            "title": "Management of Tumour Induced Hypercalcaemia",
+            "edition": "North Glasgow Division pharmacy protocol (Forte), dated 12.10.05; section Renal prerequisites",
+            "url": "https://www.cem.scot.nhs.uk/adult/hypercalcaemiaTI.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Endocrine or oncology review",
+        "modalityTarget": "Imaging and specialist",
+        "targetCondition": "Hypercalcaemia (Acute, Including Malignancy-Associated)",
+        "expectedFinding": "Severe, refractory or malignancy",
+        "clinicalRationale": "Consider calcimimetics, denosumab, calcitonin or surgery under specialist supervision",
+        "normalValue": "Not needed",
+        "references": [
+          {
+            "title": "Emergency management of acute hypercalcaemia in adult patients",
+            "edition": "Society for Endocrinology (Walsh, Gittoes, Selby), Endocrine Connections 2016, DOI 10.1530/EC-16-0055; section Management (running header G10–G11)",
+            "url": "https://www.endocrinology.org/media/4277/emergency-guidance_acute-hypercalcaemia-in-adults.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "immediate",
+      "title": "Immediate",
+      "timeframe": "0–15 minutes",
+      "actions": [
+        "Confirm albumin-adjusted calcium and assess volume status.",
+        "Start IV 0.9% saline for rehydration."
+      ]
+    },
+    {
+      "id": "ongoing",
+      "title": "Ongoing",
+      "timeframe": "15–60 minutes",
+      "actions": [
+        "Continue saline 4–6 L over 24 hours; monitor for fluid overload in elderly or renal impairment.",
+        "Loop diuretics only if fluid overload develops; they do not lower calcium.",
+        "If calcium stays high after saline, give a bisphosphonate."
+      ]
+    },
+    {
+      "id": "escalation",
+      "title": "Escalation",
+      "timeframe": "Escalation",
+      "actions": [
+        "Severe renal failure: consider dialysis.",
+        "Poor response: second-line therapy under specialist supervision."
+      ]
+    },
+    {
+      "id": "disposition",
+      "title": "Disposition",
+      "timeframe": "Disposition",
+      "actions": [
+        "Admit for IV treatment; calcium nadir after bisphosphonate is at 2–4 days."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [
+      {
+        "indication": "Correct dehydration and promote calcium excretion",
+        "patientGroup": "Adults with hypercalcaemia",
+        "genericName": "Sodium chloride 0.9%",
+        "dose": "4–6 L",
+        "route": "IV",
+        "frequency": "Over 24 hours",
+        "duration": "24 hours",
+        "adjustments": [
+          "Monitor for fluid overload in renal impairment and elderly"
+        ],
+        "monitoring": [
+          "Fluid balance, sodium, calcium"
+        ],
+        "contraindications": [
+          "Heart failure and renal failure"
+        ],
+        "branch": "Rehydration for all adults",
+        "step": "1. Rehydrate",
+        "selection": "all",
+        "useWhen": "All patients who need treatment",
+        "sourceTitle": "Emergency management of acute hypercalcaemia in adult patients",
+        "sourceUrl": "https://www.endocrinology.org/media/4277/emergency-guidance_acute-hypercalcaemia-in-adults.pdf",
+        "sourceEdition": "Society for Endocrinology (Walsh, Gittoes, Selby), Endocrine Connections 2016, DOI 10.1530/EC-16-0055; section Management (running header G10)"
+      },
+      {
+        "indication": "Lower calcium",
+        "patientGroup": "Adults after rehydration",
+        "genericName": "Zoledronic acid",
+        "dose": "4 mg as a single dose for albumin-corrected calcium of 3.0 mmol/L or above (the pharmacy protocol gives 2 mg if calcium is up to 3.0 mmol/L). Preparation: draw 5 mL of the 4 mg/5 mL concentrate and dilute it further in 100 mL of sodium chloride 0.9% or glucose 5%",
+        "route": "IV infusion over not less than 15 minutes, in a line separate from any calcium-containing solution (do not mix with Ringer's lactate); assess hydration first and keep the patient well hydrated before and after, but avoid over-hydration in cardiac failure",
+        "frequency": "Once",
+        "duration": "Single dose",
+        "adjustments": [
+          "Creatinine below 400 µmol/L and eGFR above 30 mL/min",
+          "give more slowly and consider dose reduction in renal impairment"
+        ],
+        "monitoring": [
+          "Calcium nadir at 2–4 days",
+          "daily urea and electrolytes and calcium"
+        ],
+        "contraindications": [
+          "Hypocalcaemia with vitamin D deficiency or suppressed parathyroid hormone (monitor calcium, phosphate and magnesium)",
+          "osteonecrosis of the jaw (dental check before treatment in people with risk factors such as cancer, chemotherapy, corticosteroids or dental disease",
+          "avoid invasive dental procedures near the dose)"
+        ],
+        "branch": "Bisphosphonate after saline",
+        "step": "1. Bisphosphonate",
+        "selection": "one-of",
+        "preferred": true,
+        "useWhen": "First choice",
+        "sourceTitle": "Emergency management of acute hypercalcaemia in adult patients",
+        "sourceUrl": "https://www.endocrinology.org/media/4277/emergency-guidance_acute-hypercalcaemia-in-adults.pdf",
+        "sourceEdition": "Society for Endocrinology (Walsh, Gittoes, Selby), Endocrine Connections 2016, DOI 10.1530/EC-16-0055; section Management (running header G10); section Drugs and doses; section 4.2, 4.4 and 6.6"
+      },
+      {
+        "indication": "Lower calcium",
+        "patientGroup": "Adults after rehydration",
+        "genericName": "Pamidronate",
+        "dose": "30–90 mg by severity (15–30 mg up to 3.0 mmol/L; 30–60 mg at 3.0–3.5; 60–90 mg at 3.5–4.0; 90 mg above 4.0)",
+        "route": "IV in 500 mL sodium chloride 0.9% at 1 mg/min (20 mg/hour in the 2016 guidance)",
+        "frequency": "Once",
+        "duration": "Single dose",
+        "adjustments": [
+          "eGFR above 40 mL/min"
+        ],
+        "monitoring": [
+          "Daily urea and electrolytes and calcium"
+        ],
+        "contraindications": [
+          "Renal impairment"
+        ],
+        "branch": "Bisphosphonate after saline",
+        "step": "1. Bisphosphonate",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Zoledronic acid unsuitable or still hypercalcaemic",
+        "sourceTitle": "Emergency management of acute hypercalcaemia in adult patients",
+        "sourceUrl": "https://www.endocrinology.org/media/4277/emergency-guidance_acute-hypercalcaemia-in-adults.pdf",
+        "sourceEdition": "Society for Endocrinology (Walsh, Gittoes, Selby), Endocrine Connections 2016, DOI 10.1530/EC-16-0055; section Management (running header G10); section Drugs and doses"
+      },
+      {
+        "indication": "Lower calcium",
+        "patientGroup": "Adults after rehydration",
+        "genericName": "Ibandronic acid",
+        "dose": "2–4 mg (2016 guidance)",
+        "route": "IV in 500 mL sodium chloride 0.9% or glucose 5% over 2 hours (trust protocol)",
+        "frequency": "Once",
+        "duration": "Single dose",
+        "adjustments": [
+          "Renal dose reduction advised"
+        ],
+        "monitoring": [
+          "Daily urea and electrolytes and calcium"
+        ],
+        "contraindications": [
+          "Renal impairment"
+        ],
+        "branch": "Bisphosphonate after saline",
+        "step": "1. Bisphosphonate",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Alternative bisphosphonate",
+        "sourceTitle": "Emergency management of acute hypercalcaemia in adult patients",
+        "sourceUrl": "https://www.endocrinology.org/media/4277/emergency-guidance_acute-hypercalcaemia-in-adults.pdf",
+        "sourceEdition": "Society for Endocrinology (Walsh, Gittoes, Selby), Endocrine Connections 2016, DOI 10.1530/EC-16-0055; section Management (running header G10); section Drugs and doses"
+      },
+      {
+        "indication": "Reduce vitamin D-driven calcium absorption",
+        "patientGroup": "Adults with lymphoma or granulomatous disease",
+        "genericName": "Prednisolone",
+        "dose": "40 mg",
+        "route": "Oral",
+        "frequency": "Once daily",
+        "duration": "Response within 2–4 days; use the shortest course, and withdraw gradually if given for more than 3 weeks",
+        "adjustments": [
+          "Low albumin: lower doses are needed",
+          "liver disease prolongs the half-life and may increase adverse effects",
+          "elderly: osteoporosis, diabetes, hypertension and infection have more serious consequences"
+        ],
+        "monitoring": [
+          "Calcium at 2–4 days"
+        ],
+        "contraindications": [
+          "Infection, hyperglycaemia"
+        ],
+        "branch": "Steroid-responsive hypercalcaemia",
+        "step": "1. Glucocorticoid",
+        "selection": "all",
+        "useWhen": "Lymphoma or granulomatous disease",
+        "sourceTitle": "Emergency management of acute hypercalcaemia in adult patients",
+        "sourceUrl": "https://www.endocrinology.org/media/4277/emergency-guidance_acute-hypercalcaemia-in-adults.pdf",
+        "sourceEdition": "Society for Endocrinology (Walsh, Gittoes, Selby), Endocrine Connections 2016, DOI 10.1530/EC-16-0055; section Management (running header G10–G11); section Dosage and Administration / special populations"
+      }
+    ],
+    "branches": [
+      {
+        "label": "Rehydration for all adults",
+        "entryCriteria": "Albumin-adjusted calcium above 3.0 mmol/L, or symptomatic hypercalcaemia"
+      },
+      {
+        "label": "Bisphosphonate after saline",
+        "entryCriteria": "Calcium still high after rehydration"
+      },
+      {
+        "label": "Steroid-responsive hypercalcaemia",
+        "entryCriteria": "Lymphoma, granulomatous disease or vitamin D toxicity"
+      }
+    ],
+    "note": "Doses came from an external drafting tool and must be verified against the cited sources, Saudi Food and Drug Authority (SFDA) registration and the local hospital protocol before prescribing. Check hospital formulary."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Mild",
+      "threshold": "Corrected calcium below 3.0 mmol/L; often asymptomatic"
+    },
+    {
+      "criterion": "Moderate",
+      "threshold": "3.0–3.5 mmol/L; prompt treatment if symptomatic"
+    },
+    {
+      "criterion": "Severe",
+      "threshold": "Above 3.5 mmol/L; urgent correction"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "Guideline comparison",
+    "columns": [
+      "Society for Endocrinology 2016",
+      "North Glasgow tumour-induced hypercalcaemia protocol"
+    ],
+    "rows": [
+      {
+        "parameter": "Fluids",
+        "values": [
+          "0.9% saline 4–6 L over 24 hours",
+          "Hydrate for 12–24 hours; no volume stated"
+        ]
+      },
+      {
+        "parameter": "Zoledronic acid",
+        "values": [
+          "4 mg over 15 minutes",
+          "4 mg in 100 mL sodium chloride 0.9% over 15 minutes; 2 mg if calcium up to 3.0 mmol/L"
+        ]
+      },
+      {
+        "parameter": "Pamidronate",
+        "values": [
+          "30–90 mg at 20 mg/hour",
+          "15–90 mg at 1 mg/minute by calcium level"
+        ]
+      },
+      {
+        "parameter": "Renal criteria",
+        "values": [
+          "Slower infusion and consider dose reduction",
+          "Zoledronic acid: creatinine below 400 µmol/L, eGFR above 30 mL/min; pamidronate: eGFR above 40 mL/min"
+        ]
+      },
+      {
+        "parameter": "Recheck",
+        "values": [
+          "Calcium nadir at 2–4 days",
+          "Urea and electrolytes and corrected calcium daily"
+        ]
+      }
+    ]
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Grade hypercalcaemia and start saline early.",
+      "Choose a bisphosphonate with renal checks."
+    ],
+    "pitfalls": [
+      "Using loop diuretics to lower calcium.",
+      "Missing fluid overload in renal failure or old age.",
+      "Forgetting that the calcium nadir is at 2–4 days."
+    ],
+    "keyPoints": [
+      "Rehydrate first with 4–6 L saline over 24 hours.",
+      "Check renal function before a bisphosphonate."
+    ],
+    "references": [
+      {
+        "title": "Emergency management of acute hypercalcaemia in adult patients",
+        "edition": "Society for Endocrinology (Walsh, Gittoes, Selby), Endocrine Connections 2016, DOI 10.1530/EC-16-0055",
+        "url": "https://www.endocrinology.org/media/4277/emergency-guidance_acute-hypercalcaemia-in-adults.pdf",
+        "locator": "Sections: Causes; Management (running headers G9–G11)"
+      },
+      {
+        "title": "Management of Tumour Induced Hypercalcaemia",
+        "edition": "North Glasgow Division pharmacy protocol (Forte), dated 12.10.05",
+        "url": "https://www.cem.scot.nhs.uk/adult/hypercalcaemiaTI.pdf",
+        "locator": "Sections: Drugs and doses; Fluids; Renal prerequisites and monitoring"
+      },
+      {
+        "title": "Zometa 4 mg/5 mL concentrate for solution for infusion, Summary of Product Characteristics",
+        "edition": "Novartis (UK electronic medicines compendium)",
+        "url": "https://www.medicines.org.uk/emc/product/12753/smpc/print",
+        "locator": "Sections 4.2, 4.4, 4.8, 5.1, 6.6"
+      },
+      {
+        "title": "Prednisolone 1 mg tablets (Summary of Product Characteristics)",
+        "edition": "Wockhardt UK Ltd, text revised 13 May 2021",
+        "url": "https://www.medicines.org.uk/emc/product/2428/smpc",
+        "locator": "sections 4.2, 4.4, 5.2"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Drink plenty of fluids; report thirst, confusion or vomiting early."
+    ],
+    "lifestyleAndDiet": [
+      "Avoid calcium and vitamin D supplements unless advised; keep mobile."
+    ],
+    "mdtReferrals": [
+      "Endocrinology or oncology for persistent or malignant hypercalcaemia; renal team for dialysis."
+    ],
+    "dischargeCriteria": [
+      "Corrected calcium falling to a safe level, drinking well, cause identified and a follow-up plan in place."
+    ],
+    "followUpPlan": "Calcium recheck after the nadir (2–4 days) and specialist follow-up for the cause."
+  }
+}

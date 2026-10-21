@@ -1,0 +1,1017 @@
+{
+  "id": "b05df687-ffa0-4631-9a87-0469951fce04",
+  "title": "Hyperkalaemia",
+  "specialty": "Nephrology / Emergency Medicine",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-21-endocrine-electrolyte-v1",
+  "lastReviewed": "2026-10-21",
+  "pillar": "Urgent Care",
+  "clinicalScenario": "Outline only. Planned scope: ECG-guided severity, membrane stabilisation, shifting agents (salbutamol, insulin with dextrose), removal, cause, monitoring, dialysis referral. Candidate sources to verify: UK Kidney Association treatment of acute hyperkalaemia in adults; Resuscitation Council UK; AHA ACLS special circumstances.",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-21",
+    "status": "incomplete",
+    "scope": "Adult (over 18 years) Emergency Department (ED) recognition and treatment of acute hyperkalaemia, including hyperkalaemic cardiac arrest, based on the UK Kidney Association (UKKA) 2023 guideline and the 2025 European Resuscitation Council (ERC) special circumstances guideline. No Saudi national hyperkalaemia guideline was found; this protocol adopts the UKKA and ERC recommendations as the Saudi reference.",
+    "findings": [
+      "Full protocol rebuilt from the source dossier opened on 2026-10-21; exact source locations are recorded in each investigation and medicine row.",
+      "The original outline remains preserved; this additive version is non-current and pending clinical review."
+    ],
+    "unverifiedSections": [
+      "Normal reference ranges are typical adult values, not taken from the cited guidelines; ranges differ between laboratories.",
+      "Symptoms, examination signs, differentials, precipitants and the pathophysiology bullets are standard clinical content and were not extracted line by line from the opened sources.",
+      "No Saudi national or Saudi Ministry of Health hyperkalaemia guideline was found; the Saudi Food and Drug Authority (SFDA) status and availability of sodium zirconium cyclosilicate and patiromer were not checked.",
+      "The UKKA repeat-dose criteria for calcium, the patiromer frequency and cautions, and step 5 of the five-step approach were not found in the opened text; the choice of patiromer over sodium zirconium cyclosilicate is not stated as a condition.",
+      "Page and recommendation locators were taken from an automated reading of the guideline; check them against the PDF before clinical sign-off.",
+      "The pathway marks calcium gluconate as preferred outside resuscitation (UKKA Rec. 16.2b); the ERC 2025 text prefers calcium chloride for severe hyperkalaemia with ECG changes.",
+      "UKKA 2023 hospital sections (pp. 58 onwards) were not available in the opened text, so preparation, dilution, repeat calcium dosing and renal-failure insulin dose reduction come from the Gloucestershire flowchart (past its March 2026 review date) and the 2020 Renal Association algorithm (past its stated review date). UKKA 2023 says calcium gluconate over 10 minutes while the 2020 algorithm and Gloucestershire say over 5 minutes; both are shown.",
+      "No insulin dose reduction for renal failure was found in the opened text; the Gloucestershire sheet's wording on glucose 20 mmol/L or higher was ambiguous and is not used. This protocol therefore applies the stated insulin dose at every eGFR and relies on the mandatory hourly glucose checks for 6 hours.",
+      "The calcium chloride and gluconate repeat limit, the bicarbonate dose and the patiromer duration were not stated in the opened text.",
+      "Renal, hepatic and age adjustments for the drugs added in this revision are from manufacturer labels (UK Summary of Product Characteristics, US prescribing information and a New Zealand data sheet), not from Saudi Food and Drug Authority labels."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "b05df687-ffa0-4631-9a87-0469951fce04"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Hyperkalaemia is a serum potassium of 5.5 mmol/L or above. It is dangerous because high extracellular potassium disturbs the electrical activity of the heart.",
+    "keyMechanisms": [
+      "Potassium excretion falls in Acute Kidney Injury (AKI), chronic kidney disease and with drugs that block the renin–angiotensin–aldosterone system.",
+      "Potassium moves out of cells in acidosis, insulin deficiency, tissue breakdown (rhabdomyolysis, tumour lysis, crush injury) and with some drugs.",
+      "A high extracellular potassium raises the resting membrane potential and slows conduction, which produces peaked T waves, flattened P waves, a wide QRS complex and arrhythmias.",
+      "Treatment has three aims: protect the heart, shift potassium into cells, and remove potassium from the body."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Often none; found on routine or acute blood tests.",
+      "Muscle weakness, palpitations or light-headedness."
+    ],
+    "physicalSigns": [
+      "Slow or irregular pulse.",
+      "Reduced muscle power in severe cases."
+    ],
+    "redFlags": [
+      "Potassium 6.5 mmol/L or above (severe).",
+      "Electrocardiogram (ECG) features of hyperkalaemia.",
+      "Potassium 6.0–6.4 mmol/L in a patient who is unwell or whose potassium is rising rapidly.",
+      "Arrhythmia, collapse or cardiac arrest.",
+      "Oliguria or AKI with rising potassium."
+    ],
+    "precipitants": [
+      "AKI or chronic kidney disease.",
+      "Medicines: renin–angiotensin system blockers, potassium-sparing diuretics, trimethoprim, potassium supplements and non-steroidal anti-inflammatory drugs.",
+      "Tissue breakdown: rhabdomyolysis, tumour lysis and burns.",
+      "Diabetic ketoacidosis and other acidosis."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Pseudohyperkalaemia",
+      "distinguishingFeatures": "Haemolysed or delayed sample with a normal ECG; repeat the test"
+    },
+    {
+      "condition": "Hyperkalaemia from AKI",
+      "distinguishingFeatures": "Raised creatinine with low urine output"
+    },
+    {
+      "condition": "Hyperkalaemia from tissue breakdown",
+      "distinguishingFeatures": "Very high creatine kinase, or known chemotherapy for tumour lysis"
+    },
+    {
+      "condition": "Hyperkalaemia in diabetic ketoacidosis",
+      "distinguishingFeatures": "Ketones above 3.0 mmol/L with acidosis"
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Serum or blood-gas potassium",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Hyperkalaemia",
+        "expectedFinding": "5.5 mmol/L or above",
+        "clinicalRationale": "Grade as mild, moderate or severe; repeat at least 1, 2, 4, 6 and 24 hours after treatment for moderate or severe disease",
+        "normalValue": "3.5–5.0 mmol/L",
+        "references": [
+          {
+            "title": "UK Kidney Association Clinical Practice Guideline: Management of Hyperkalaemia in Adults",
+            "edition": "UK Kidney Association, October 2023 (final version dated 19 December 2023); p. 9 and Rec. 17.1.2 p. 14",
+            "url": "https://www.ukkidney.org/sites/renal.org/files/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20191223.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "12-lead Electrocardiogram (ECG)",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Hyperkalaemia",
+        "expectedFinding": "Peaked T waves, flattened P waves, wide QRS or arrhythmia",
+        "clinicalRationale": "Do urgently if potassium is 6.0 mmol/L or above; ECG changes mean give intravenous calcium",
+        "normalValue": "Normal sinus rhythm; normal T waves and QRS",
+        "references": [
+          {
+            "title": "UK Kidney Association Clinical Practice Guideline: Management of Hyperkalaemia in Adults",
+            "edition": "UK Kidney Association, October 2023 (final version dated 19 December 2023); Rec. 14.1 p. 11–12; Figures 1–3 p. 17",
+            "url": "https://www.ukkidney.org/sites/renal.org/files/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20191223.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Continuous cardiac monitoring",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Hyperkalaemia",
+        "expectedFinding": "Arrhythmia",
+        "clinicalRationale": "At least 3-lead monitoring if potassium is 6.5 mmol/L or above, ECG changes are present, or potassium is 6.0–6.4 mmol/L and the patient is unwell or rising rapidly",
+        "normalValue": "Normal rhythm",
+        "references": [
+          {
+            "title": "UK Kidney Association Clinical Practice Guideline: Management of Hyperkalaemia in Adults",
+            "edition": "UK Kidney Association, October 2023 (final version dated 19 December 2023); Rec. 14.2 p. 11–12",
+            "url": "https://www.ukkidney.org/sites/renal.org/files/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20191223.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Capillary and venous glucose",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Hyperkalaemia",
+        "expectedFinding": "Low glucose raises the risk of hypoglycaemia after insulin",
+        "clinicalRationale": "Give extra 10% glucose if pre-treatment glucose is below 7.0 mmol/L; then monitor glucose at 0, 30, 60, 90, 120, 180, 240, 300 and 360 minutes",
+        "normalValue": "4.0–7.8 mmol/L (72–140 mg/dL)",
+        "references": [
+          {
+            "title": "UK Kidney Association Clinical Practice Guideline: Management of Hyperkalaemia in Adults",
+            "edition": "UK Kidney Association, October 2023 (final version dated 19 December 2023); Rec. 16.3.3 p. 13 and Rec. 17.2 p. 14",
+            "url": "https://www.ukkidney.org/sites/renal.org/files/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20191223.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Venous bicarbonate and pH",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Hyperkalaemia",
+        "expectedFinding": "Often low in acidosis",
+        "clinicalRationale": "Look for acidosis as the cause; intravenous bicarbonate is not suggested for routine acute treatment",
+        "normalValue": "Bicarbonate 22–29 mmol/L; pH 7.31–7.41",
+        "references": [
+          {
+            "title": "UK Kidney Association Clinical Practice Guideline: Management of Hyperkalaemia in Adults",
+            "edition": "UK Kidney Association, October 2023 (final version dated 19 December 2023); Rec. 16.5 p. 14",
+            "url": "https://www.ukkidney.org/sites/renal.org/files/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20191223.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Creatinine and urea",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Hyperkalaemia",
+        "expectedFinding": "Raised in AKI",
+        "clinicalRationale": "Find the cause; severe hyperkalaemia with AKI may need dialysis",
+        "normalValue": "Creatinine 60–110 µmol/L (0.7–1.2 mg/dL); urea 2.5–7.8 mmol/L",
+        "references": [
+          {
+            "title": "UK Kidney Association Clinical Practice Guideline: Management of Hyperkalaemia in Adults",
+            "edition": "UK Kidney Association, October 2023 (final version dated 19 December 2023); Rec. 18.1 p. 14",
+            "url": "https://www.ukkidney.org/sites/renal.org/files/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20191223.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Urgent nephrology or critical care review for dialysis",
+        "modalityTarget": "Imaging and specialist",
+        "targetCondition": "Hyperkalaemia",
+        "expectedFinding": "Severe hyperkalaemia, or resistant to medical treatment",
+        "clinicalRationale": "Urgent dialysis is recommended for severe hyperkalaemia; decisions about renal replacement are made urgently by a nephrologist or critical care specialist",
+        "normalValue": "Not needed",
+        "references": [
+          {
+            "title": "UK Kidney Association Clinical Practice Guideline: Management of Hyperkalaemia in Adults",
+            "edition": "UK Kidney Association, October 2023 (final version dated 19 December 2023); Rec. 18.1 p. 14 and Rec. 19.6 p. 15",
+            "url": "https://www.ukkidney.org/sites/renal.org/files/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20191223.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "immediate",
+      "title": "Immediate",
+      "timeframe": "0–15 minutes",
+      "actions": [
+        "Get a 12-lead ECG for every hospital patient with potassium 6.0 mmol/L or above and start cardiac monitoring when indicated.",
+        "Use the five-step approach and never walk away without completing every step.",
+        "Step 1, protect the heart: for ECG changes give intravenous calcium (see Medicines); give it even if dialysis is immediately available.",
+        "Step 2, shift potassium into cells: insulin with glucose, with nebulised salbutamol as an adjunct (never alone).",
+        "Step 3, remove potassium: give sodium zirconium cyclosilicate for severe hyperkalaemia; calcium resonium is no longer routinely recommended.",
+        "Check blood glucose before and after insulin; give 10% glucose at 50 mL/hour for 5 hours if the pre-treatment glucose is below 7.0 mmol/L.",
+        "Do not use intravenous sodium bicarbonate for routine acute treatment."
+      ]
+    },
+    {
+      "id": "ongoing",
+      "title": "Ongoing",
+      "timeframe": "15–60 minutes",
+      "actions": [
+        "Monitor glucose at 0, 30, 60, 90, 120, 180, 240, 300 and 360 minutes after insulin.",
+        "Repeat potassium at least 1, 2, 4, 6 and 24 hours after moderate or severe hyperkalaemia is treated, and watch for rebound.",
+        "Find and treat the cause (AKI, medicines, tissue breakdown, acidosis) and stop medicines that raise potassium."
+      ]
+    },
+    {
+      "id": "escalation",
+      "title": "Escalation",
+      "timeframe": "Escalation",
+      "actions": [
+        "Potassium 6.5 mmol/L or above, or toxic ECG changes: urgent dialysis is recommended; give calcium without waiting.",
+        "Dialysis not immediately available: continue standard medical therapy.",
+        "Cardiac arrest: follow the Advanced Life Support (ALS) pathway and give calcium chloride and sodium bicarbonate (see the cardiac arrest branch)."
+      ]
+    },
+    {
+      "id": "disposition",
+      "title": "Disposition",
+      "timeframe": "Disposition",
+      "actions": [
+        "Admit moderate or severe hyperkalaemia for monitoring and repeat potassium; severe hyperkalaemia needs immediate admission.",
+        "Mild hyperkalaemia in a well patient: repeat the test within 3 days, and within 1 day for moderate."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [
+      {
+        "indication": "Remove potassium from the gut",
+        "patientGroup": "Adults who can take oral medicines, potassium 6.0–6.4 mmol/L",
+        "genericName": "Sodium zirconium cyclosilicate (Lokelma) 10 g sachet",
+        "dose": "10 g: empty the whole sachet into a glass containing about 45 mL of water and stir well; the powder does not dissolve; drink while cloudy, re-stir if it settles, and make sure all is taken. UKKA 2023: 10 g three times daily for up to 72 hours",
+        "route": "Oral",
+        "frequency": "Three times daily (UKKA); acute 10 g (Gloucestershire)",
+        "duration": "Up to 72 hours",
+        "adjustments": [
+          "Give at least 2 hours before or after oral medicines whose absorption depends on gastric pH (for example azole antifungals)",
+          "oedema from the sodium load in heart failure",
+          "maintenance 5–10 g once daily only after cardiology or nephrology advice"
+        ],
+        "monitoring": [
+          "Potassium at 1, 2, 4, 6 and 24 hours after treatment",
+          "aim below 6.0 mmol/L within 2 hours"
+        ],
+        "contraindications": [
+          "Oedema or heart failure"
+        ],
+        "branch": "Moderate hyperkalaemia, potassium 6.0–6.4 mmol/L, normal ECG",
+        "step": "1. Remove potassium",
+        "selection": "all",
+        "useWhen": "Potassium 6.0–6.4 mmol/L and able to swallow",
+        "sourceTitle": "Acute management of hyperkalemia (flowchart and prescription sheet)",
+        "sourceUrl": "https://www.gloshospitals.nhs.uk/documents/2045/Inpatient_Hyperkalemia_Management_March_2023_W4sAT5O.pdf",
+        "sourceEdition": "Gloucestershire Hospitals NHS Foundation Trust Drug and Therapeutics Committee, approved March 2023, review March 2026 (organisation name not printed in the text); flowchart; Rec. 16.6.1b p. 14"
+      },
+      {
+        "indication": "Move potassium into cells (UKKA: a weaker suggestion at 6.0–6.4 mmol/L)",
+        "patientGroup": "Adults with moderate hyperkalaemia needing faster correction",
+        "genericName": "Soluble insulin (Actrapid)",
+        "dose": "10 units in 25 g glucose (see step 2b)",
+        "route": "IV infusion",
+        "frequency": "Once",
+        "duration": "Single dose",
+        "adjustments": [
+          "Renal impairment, hepatic impairment and older age can reduce insulin requirements: check glucose more often and adjust the dose individually"
+        ],
+        "monitoring": [
+          "Capillary glucose at 0, 15 and 30 minutes then hourly for 6 hours (Gloucestershire)",
+          "or at 0, 30, 60, 90, 120, 180, 240, 300 and 360 minutes (UKKA)"
+        ],
+        "contraindications": [
+          "Delayed hypoglycaemia is common",
+          "do not give dextrose in diabetic ketoacidosis (DKA)"
+        ],
+        "branch": "Moderate hyperkalaemia, potassium 6.0–6.4 mmol/L, normal ECG",
+        "step": "2a. Shift into cells: insulin",
+        "selection": "all",
+        "useWhen": "Moderate hyperkalaemia in a patient who needs faster correction",
+        "sourceTitle": "UK Kidney Association Clinical Practice Guideline: Management of Hyperkalaemia in Adults",
+        "sourceUrl": "https://www.ukkidney.org/sites/renal.org/files/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20191223.pdf",
+        "sourceEdition": "UK Kidney Association, October 2023 (final version dated 19 December 2023); Rec. 16.3.2 p. 13;; section Dosage and Administration / special populations"
+      },
+      {
+        "indication": "Prevent hypoglycaemia from insulin",
+        "patientGroup": "Adults receiving insulin",
+        "genericName": "Dextrose 50%, 50 mL (25 g glucose) mixed with the 10 units of insulin",
+        "dose": "50 mL of 50% dextrose containing the 10 units of Actrapid",
+        "route": "IV infusion over 15 minutes (Gloucestershire); 15–30 minutes (2020 Renal Association)",
+        "frequency": "Once",
+        "duration": "Single dose",
+        "adjustments": [
+          "No renal or hepatic dose adjustment is given",
+          "impaired renal function raises the risk of adverse reactions, so check electrolytes",
+          "age 65 and over: start low and monitor closely"
+        ],
+        "monitoring": [
+          "Capillary glucose as in step 2a"
+        ],
+        "contraindications": [
+          "Hyperosmolar",
+          "extravasation",
+          "large vein"
+        ],
+        "branch": "Moderate hyperkalaemia, potassium 6.0–6.4 mmol/L, normal ECG",
+        "step": "2b. Shift into cells: glucose (one of)",
+        "selection": "one-of",
+        "preferred": true,
+        "useWhen": "Standard glucose preparation",
+        "sourceTitle": "Acute management of hyperkalemia (flowchart and prescription sheet)",
+        "sourceUrl": "https://www.gloshospitals.nhs.uk/documents/2045/Inpatient_Hyperkalemia_Management_March_2023_W4sAT5O.pdf",
+        "sourceEdition": "Gloucestershire Hospitals NHS Foundation Trust Drug and Therapeutics Committee, approved March 2023, review March 2026 (organisation name not printed in the text); section Shift K+ into cells; section Dosage and Administration / special populations"
+      },
+      {
+        "indication": "Same, when 50% is not available",
+        "patientGroup": "Adults receiving insulin",
+        "genericName": "Dextrose 20%, 125 mL (25 g glucose) mixed with the 10 units of insulin",
+        "dose": "125 mL of 20% dextrose with the insulin",
+        "route": "IV infusion over 15–30 minutes",
+        "frequency": "Once",
+        "duration": "Single dose",
+        "adjustments": [
+          "No renal or hepatic dose adjustment is given",
+          "impaired renal function raises the risk of adverse reactions, so check electrolytes",
+          "age 65 and over: start low and monitor closely"
+        ],
+        "monitoring": [
+          "As above"
+        ],
+        "contraindications": [
+          "Fluid load"
+        ],
+        "branch": "Moderate hyperkalaemia, potassium 6.0–6.4 mmol/L, normal ECG",
+        "step": "2b. Shift into cells: glucose (one of)",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "50% not available",
+        "sourceTitle": "Acute management of hyperkalemia (flowchart and prescription sheet)",
+        "sourceUrl": "https://www.gloshospitals.nhs.uk/documents/2045/Inpatient_Hyperkalemia_Management_March_2023_W4sAT5O.pdf",
+        "sourceEdition": "Gloucestershire Hospitals NHS Foundation Trust Drug and Therapeutics Committee, approved March 2023, review March 2026 (organisation name not printed in the text); section Shift K+ into cells; section Dosage and Administration / special populations"
+      },
+      {
+        "indication": "Same, for peripheral line safety",
+        "patientGroup": "Adults receiving insulin",
+        "genericName": "Dextrose 10%, 250 mL (25 g glucose) mixed with the 10 units of insulin",
+        "dose": "250 mL of 10% dextrose with the insulin",
+        "route": "IV infusion over 15–30 minutes",
+        "frequency": "Once",
+        "duration": "Single dose",
+        "adjustments": [
+          "No renal or hepatic dose adjustment is given",
+          "impaired renal function raises the risk of adverse reactions, so check electrolytes",
+          "age 65 and over: start low and monitor closely"
+        ],
+        "monitoring": [
+          "As above"
+        ],
+        "contraindications": [
+          "Fluid load in heart failure"
+        ],
+        "branch": "Moderate hyperkalaemia, potassium 6.0–6.4 mmol/L, normal ECG",
+        "step": "2b. Shift into cells: glucose (one of)",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Peripheral line, lower osmolality needed",
+        "sourceTitle": "Acute management of hyperkalemia (flowchart and prescription sheet)",
+        "sourceUrl": "https://www.gloshospitals.nhs.uk/documents/2045/Inpatient_Hyperkalemia_Management_March_2023_W4sAT5O.pdf",
+        "sourceEdition": "Gloucestershire Hospitals NHS Foundation Trust Drug and Therapeutics Committee, approved March 2023, review March 2026 (organisation name not printed in the text); section Shift K+ into cells; section Dosage and Administration / special populations"
+      },
+      {
+        "indication": "Stabilise the heart membrane",
+        "patientGroup": "Adults with ECG changes outside resuscitation",
+        "genericName": "Calcium gluconate 10%, 30 mL (6.8 mmol calcium), given neat",
+        "dose": "30 mL undiluted. Repeat after 5 minutes if ECG changes persist, and every 5 minutes if needed. Give over 30 minutes if the patient takes digoxin. Repeat the ECG 5–10 minutes after the dose; the effect lasts 30–60 minutes",
+        "route": "IV via a large peripheral vein over 5 minutes (Gloucestershire; UKKA 2023 says over 10 minutes); if no large vein, over 10 minutes with close watch for extravasation",
+        "frequency": "Repeat every 5 minutes if ECG changes persist",
+        "duration": "Until ECG changes resolve; the effect lasts 30–60 minutes, so give further doses if ECG changes return while potassium is still raised",
+        "adjustments": [
+          "Do not give sodium bicarbonate through the same access or mix with other drugs",
+          "patients on digoxin: slower over 30 minutes"
+        ],
+        "monitoring": [
+          "Continuous cardiac monitoring",
+          "ECG 5–10 minutes after each dose"
+        ],
+        "contraindications": [
+          "Extravasation",
+          "digoxin"
+        ],
+        "branch": "Severe hyperkalaemia, potassium 6.5 mmol/L or above, or any ECG changes",
+        "step": "1. Protect the heart",
+        "selection": "one-of",
+        "preferred": true,
+        "useWhen": "ECG changes outside resuscitation",
+        "sourceTitle": "UK Kidney Association Clinical Practice Guideline: Management of Hyperkalaemia in Adults",
+        "sourceUrl": "https://www.ukkidney.org/sites/renal.org/files/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20191223.pdf",
+        "sourceEdition": "UK Kidney Association, October 2023 (final version dated 19 December 2023); Rec. 16.2a–b p. 13;; section Dosage and Administration / special populations"
+      },
+      {
+        "indication": "Stabilise the heart membrane in resuscitation or peri-arrest",
+        "patientGroup": "Adults in resuscitation or peri-arrest",
+        "genericName": "Calcium chloride 10%, 10 mL (6.8 mmol calcium)",
+        "dose": "10 mL. Consider a further dose after 5 minutes if ECG changes persist",
+        "route": "IV via a large vein over 5 minutes",
+        "frequency": "Repeat after 5 minutes if needed",
+        "duration": "Until ECG changes resolve; the effect lasts 30–60 minutes, so give further doses if ECG changes return while potassium is still raised",
+        "adjustments": [
+          "No renal dose adjustment is given (aluminium may accumulate in impaired renal function)",
+          "age 65 and over: start at the low end of the dose range",
+          "digitalised patients: give very cautiously"
+        ],
+        "monitoring": [
+          "Continuous cardiac monitoring",
+          "repeat ECG"
+        ],
+        "contraindications": [
+          "Tissue damage if it extravasates",
+          "use a large vein"
+        ],
+        "branch": "Severe hyperkalaemia, potassium 6.5 mmol/L or above, or any ECG changes",
+        "step": "1. Protect the heart",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Resuscitation or peri-arrest",
+        "sourceTitle": "UK Kidney Association Clinical Practice Guideline: Management of Hyperkalaemia in Adults",
+        "sourceUrl": "https://www.ukkidney.org/sites/renal.org/files/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20191223.pdf",
+        "sourceEdition": "UK Kidney Association, October 2023 (final version dated 19 December 2023); Rec. 16.2a–b p. 13; section Protect the heart; section Dosage and Administration / special populations"
+      },
+      {
+        "indication": "Move potassium into cells",
+        "patientGroup": "Adults with severe hyperkalaemia",
+        "genericName": "Soluble insulin (Actrapid)",
+        "dose": "10 units mixed into the glucose in step 2b",
+        "route": "IV infusion",
+        "frequency": "Once",
+        "duration": "Single dose",
+        "adjustments": [
+          "Renal impairment, hepatic impairment and older age can reduce insulin requirements: check glucose more often and adjust the dose individually"
+        ],
+        "monitoring": [
+          "Capillary glucose at 0, 15 and 30 minutes then hourly for 6 hours (Gloucestershire)",
+          "or 0, 30, 60, 90, 120, 180, 240, 300, 360 minutes (UKKA)"
+        ],
+        "contraindications": [
+          "Delayed hypoglycaemia is common",
+          "do not give dextrose in DKA"
+        ],
+        "branch": "Severe hyperkalaemia, potassium 6.5 mmol/L or above, or any ECG changes",
+        "step": "2a. Shift into cells: insulin",
+        "selection": "all",
+        "useWhen": "Severe hyperkalaemia",
+        "sourceTitle": "UK Kidney Association Clinical Practice Guideline: Management of Hyperkalaemia in Adults",
+        "sourceUrl": "https://www.ukkidney.org/sites/renal.org/files/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20191223.pdf",
+        "sourceEdition": "UK Kidney Association, October 2023 (final version dated 19 December 2023); Rec. 16.3.1 p. 13 and Rec. 17.2 p. 14;; section Dosage and Administration / special populations"
+      },
+      {
+        "indication": "Prevent hypoglycaemia from insulin",
+        "patientGroup": "Adults receiving insulin",
+        "genericName": "Dextrose 50%, 50 mL (25 g glucose) mixed with the 10 units of insulin",
+        "dose": "50 mL of 50% dextrose with 10 units of Actrapid",
+        "route": "IV infusion over 15 minutes",
+        "frequency": "Once",
+        "duration": "Single dose; if pre-treatment glucose was below 7.0 mmol/L add dextrose 10% at 50 mL/hour for 5 hours after it",
+        "adjustments": [
+          "No renal or hepatic dose adjustment is given",
+          "impaired renal function raises the risk of adverse reactions, so check electrolytes",
+          "age 65 and over: start low and monitor closely"
+        ],
+        "monitoring": [
+          "As above"
+        ],
+        "contraindications": [
+          "Hyperosmolar",
+          "extravasation"
+        ],
+        "branch": "Severe hyperkalaemia, potassium 6.5 mmol/L or above, or any ECG changes",
+        "step": "2b. Shift into cells: glucose (one of)",
+        "selection": "one-of",
+        "preferred": true,
+        "useWhen": "Standard preparation",
+        "sourceTitle": "UK Kidney Association Clinical Practice Guideline: Management of Hyperkalaemia in Adults",
+        "sourceUrl": "https://www.ukkidney.org/sites/renal.org/files/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20191223.pdf",
+        "sourceEdition": "UK Kidney Association, October 2023 (final version dated 19 December 2023); Rec. 16.3.1 and 16.3.3 p. 13;; section Dosage and Administration / special populations"
+      },
+      {
+        "indication": "Same, when 50% is not available",
+        "patientGroup": "Adults receiving insulin",
+        "genericName": "Dextrose 20%, 125 mL (25 g glucose) mixed with the 10 units of insulin",
+        "dose": "125 mL of 20% dextrose with the insulin",
+        "route": "IV infusion over 15–30 minutes",
+        "frequency": "Once",
+        "duration": "Single dose; same follow-on if glucose below 7.0 mmol/L",
+        "adjustments": [
+          "No renal or hepatic dose adjustment is given",
+          "impaired renal function raises the risk of adverse reactions, so check electrolytes",
+          "age 65 and over: start low and monitor closely"
+        ],
+        "monitoring": [
+          "As above"
+        ],
+        "contraindications": [
+          "Fluid load"
+        ],
+        "branch": "Severe hyperkalaemia, potassium 6.5 mmol/L or above, or any ECG changes",
+        "step": "2b. Shift into cells: glucose (one of)",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "50% not available",
+        "sourceTitle": "Emergency Management of Hyperkalaemia in Adults (hospital algorithm, Appendix 6)",
+        "sourceUrl": "https://www.ukkidney.org/sites/default/files/APPENDIX%206%20-%20HYPERKALAEMIA%20ALGORITHM%20-%20HOSPITAL%20-%20REVISED%20-%20JULY%202022%20-%20V2.pdf",
+        "sourceEdition": "The Renal Association UK, published 1.7.2020, review 1.7.2025 (file labelled revised July 2022 v2); section Shift K+ into cells; section Dosage and Administration / special populations"
+      },
+      {
+        "indication": "Same, for peripheral line safety",
+        "patientGroup": "Adults receiving insulin",
+        "genericName": "Dextrose 10%, 250 mL (25 g glucose) mixed with the 10 units of insulin",
+        "dose": "250 mL of 10% dextrose with the insulin",
+        "route": "IV infusion over 15–30 minutes",
+        "frequency": "Once",
+        "duration": "Single dose; same follow-on if glucose below 7.0 mmol/L",
+        "adjustments": [
+          "No renal or hepatic dose adjustment is given",
+          "impaired renal function raises the risk of adverse reactions, so check electrolytes",
+          "age 65 and over: start low and monitor closely"
+        ],
+        "monitoring": [
+          "As above"
+        ],
+        "contraindications": [
+          "Fluid load"
+        ],
+        "branch": "Severe hyperkalaemia, potassium 6.5 mmol/L or above, or any ECG changes",
+        "step": "2b. Shift into cells: glucose (one of)",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Peripheral line",
+        "sourceTitle": "Emergency Management of Hyperkalaemia in Adults (hospital algorithm, Appendix 6)",
+        "sourceUrl": "https://www.ukkidney.org/sites/default/files/APPENDIX%206%20-%20HYPERKALAEMIA%20ALGORITHM%20-%20HOSPITAL%20-%20REVISED%20-%20JULY%202022%20-%20V2.pdf",
+        "sourceEdition": "The Renal Association UK, published 1.7.2020, review 1.7.2025 (file labelled revised July 2022 v2); section Shift K+ into cells; section Dosage and Administration / special populations"
+      },
+      {
+        "indication": "Prevent delayed hypoglycaemia",
+        "patientGroup": "Adults whose pre-treatment glucose was below 7.0 mmol/L",
+        "genericName": "Dextrose 10% infusion",
+        "dose": "50 mL/hour for 5 hours (25 g)",
+        "route": "IV infusion after the insulin-glucose infusion",
+        "frequency": "Continuous for 5 hours",
+        "duration": "5 hours",
+        "adjustments": [
+          "No renal or hepatic dose adjustment is given",
+          "impaired renal function raises the risk of adverse reactions, so check electrolytes",
+          "age 65 and over: start low and monitor closely"
+        ],
+        "monitoring": [
+          "Hourly capillary glucose for 6 hours"
+        ],
+        "contraindications": [
+          "Not for use in DKA"
+        ],
+        "branch": "Severe hyperkalaemia, potassium 6.5 mmol/L or above, or any ECG changes",
+        "step": "2c. Delayed hypoglycaemia prevention",
+        "selection": "all",
+        "useWhen": "Pre-treatment glucose below 7.0 mmol/L",
+        "sourceTitle": "UK Kidney Association Clinical Practice Guideline: Management of Hyperkalaemia in Adults",
+        "sourceUrl": "https://www.ukkidney.org/sites/renal.org/files/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20191223.pdf",
+        "sourceEdition": "UK Kidney Association, October 2023 (final version dated 19 December 2023); Rec. 16.3.3 p. 13;; section Dosage and Administration / special populations"
+      },
+      {
+        "indication": "Adjunct to move potassium into cells",
+        "patientGroup": "Adults with severe hyperkalaemia",
+        "genericName": "Salbutamol nebuliser solution",
+        "dose": "10–20 mg; 10 mg if ischaemic heart disease or severe tachycardia. Lowers potassium by about 0.5–1 mmol/L for up to 2 hours",
+        "route": "Nebulised",
+        "frequency": "Once",
+        "duration": "Single dose",
+        "adjustments": [
+          "May be ineffective with beta-blockers or digoxin"
+        ],
+        "monitoring": [
+          "Heart rate and rhythm"
+        ],
+        "contraindications": [
+          "Never use alone for severe hyperkalaemia",
+          "use only as first-line while awaiting IV access"
+        ],
+        "branch": "Severe hyperkalaemia, potassium 6.5 mmol/L or above, or any ECG changes",
+        "step": "3. Shift into cells: salbutamol",
+        "selection": "all",
+        "useWhen": "Adjunct to insulin-glucose",
+        "sourceTitle": "UK Kidney Association Clinical Practice Guideline: Management of Hyperkalaemia in Adults",
+        "sourceUrl": "https://www.ukkidney.org/sites/renal.org/files/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20191223.pdf",
+        "sourceEdition": "UK Kidney Association, October 2023 (final version dated 19 December 2023); Rec. 16.4.1–16.4.3 pp. 13–14;"
+      },
+      {
+        "indication": "Remove potassium from the gut",
+        "patientGroup": "Adults who can take oral medicines",
+        "genericName": "Sodium zirconium cyclosilicate (Lokelma) 10 g sachet",
+        "dose": "10 g: empty the whole sachet into about 45 mL of water, stir well; the powder does not dissolve; drink while cloudy",
+        "route": "Oral",
+        "frequency": "Three times daily",
+        "duration": "Up to 72 hours",
+        "adjustments": [
+          "Separate from pH-dependent oral medicines by 2 hours"
+        ],
+        "monitoring": [
+          "Potassium at 1, 2, 4, 6 and 24 hours"
+        ],
+        "contraindications": [
+          "Oedema or heart failure"
+        ],
+        "branch": "Severe hyperkalaemia, potassium 6.5 mmol/L or above, or any ECG changes",
+        "step": "4. Remove potassium",
+        "selection": "one-of",
+        "preferred": true,
+        "useWhen": "Severe hyperkalaemia",
+        "sourceTitle": "UK Kidney Association Clinical Practice Guideline: Management of Hyperkalaemia in Adults",
+        "sourceUrl": "https://www.ukkidney.org/sites/renal.org/files/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20191223.pdf",
+        "sourceEdition": "UK Kidney Association, October 2023 (final version dated 19 December 2023); Rec. 16.6.1a p. 14;"
+      },
+      {
+        "indication": "Remove potassium from the gut",
+        "patientGroup": "Adults when sodium zirconium cyclosilicate is unavailable",
+        "genericName": "Patiromer",
+        "dose": "8.4 g once daily (2020 Renal Association); UKKA 2023 lists it as an option",
+        "route": "Oral",
+        "frequency": "Once daily",
+        "duration": "Until potassium is controlled; adjust in 8.4 g steps at intervals of 1 week or longer, to a maximum of 25.2 g daily",
+        "adjustments": [
+          "No renal dose adjustment or special elderly dose is listed (limited data below eGFR 15 mL/min/1.73 m² and on dialysis)",
+          "separate from other oral medicines by at least 3 hours"
+        ],
+        "monitoring": [
+          "Potassium",
+          "magnesium"
+        ],
+        "contraindications": [
+          "Mix with water (80 mL for a dose above 4 g) and take within 1 hour",
+          "do not take dry or heat",
+          "check magnesium for at least 1 month"
+        ],
+        "branch": "Severe hyperkalaemia, potassium 6.5 mmol/L or above, or any ECG changes",
+        "step": "4. Remove potassium",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Alternative binder",
+        "sourceTitle": "Emergency Management of Hyperkalaemia in Adults (hospital algorithm, Appendix 6)",
+        "sourceUrl": "https://www.ukkidney.org/sites/default/files/APPENDIX%206%20-%20HYPERKALAEMIA%20ALGORITHM%20-%20HOSPITAL%20-%20REVISED%20-%20JULY%202022%20-%20V2.pdf",
+        "sourceEdition": "The Renal Association UK, published 1.7.2020, review 1.7.2025 (file labelled revised July 2022 v2); section Remove K+; Rec. 16.6.2 p. 14; section Dosage and Administration / special populations"
+      },
+      {
+        "indication": "Treat severe metabolic acidosis only",
+        "patientGroup": "Adults with severe metabolic acidosis",
+        "genericName": "Sodium bicarbonate",
+        "dose": "Metabolic acidosis: 2–5 mmol/kg over 4–8 hours (8.4% is 1 mmol/mL, so 2–5 mL/kg, derived). Cardiac arrest: 50 mmol (50 mL of 8.4%) IV, repeated every 5–10 minutes guided by blood gas. Use only on intensivist or nephrologist advice",
+        "route": "IV (selected) or oral",
+        "frequency": "Repeat in fractional doses guided by the blood gas",
+        "duration": "Do not fully correct total carbon dioxide in the first 24 hours; about 20 mmol/L by the end of day one is usually a normal pH",
+        "adjustments": [
+          "Severe renal insufficiency: use with great care (sodium retention), caution in oliguria or anuria",
+          "age 65 and over: start at the low end of the dose range"
+        ],
+        "monitoring": [
+          "Blood gas"
+        ],
+        "contraindications": [
+          "Not routine",
+          "effect is short-lived"
+        ],
+        "branch": "Severe hyperkalaemia, potassium 6.5 mmol/L or above, or any ECG changes",
+        "step": "5. Bicarbonate (selected)",
+        "selection": "all",
+        "useWhen": "Only with senior advice",
+        "sourceTitle": "UK Kidney Association Clinical Practice Guideline: Management of Hyperkalaemia in Adults",
+        "sourceUrl": "https://www.ukkidney.org/sites/renal.org/files/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20191223.pdf",
+        "sourceEdition": "UK Kidney Association, October 2023 (final version dated 19 December 2023); Rec. 16.5 p. 14;; section Dosage and Administration / special populations"
+      },
+      {
+        "indication": "Stabilise the heart membrane",
+        "patientGroup": "Adults in cardiac arrest",
+        "genericName": "Calcium chloride 10%",
+        "dose": "10 mL",
+        "route": "IV",
+        "frequency": "Once; give through a separate line from bicarbonate or flush between",
+        "duration": "Until ECG changes resolve; the effect lasts 30–60 minutes, so give further doses if ECG changes return while potassium is still raised",
+        "adjustments": [
+          "No renal dose adjustment is given (aluminium may accumulate in impaired renal function)",
+          "age 65 and over: start at the low end of the dose range",
+          "digitalised patients: give very cautiously"
+        ],
+        "monitoring": [
+          "Rhythm during ALS"
+        ],
+        "contraindications": [
+          "Do not mix with bicarbonate in the same line"
+        ],
+        "branch": "Hyperkalaemic cardiac arrest",
+        "step": "1. Calcium and bicarbonate",
+        "selection": "all",
+        "sourceTitle": "UK Kidney Association Clinical Practice Guideline: Management of Hyperkalaemia in Adults",
+        "sourceUrl": "https://www.ukkidney.org/sites/renal.org/files/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20191223.pdf",
+        "sourceEdition": "UK Kidney Association, October 2023 (final version dated 19 December 2023); Rec. 25.1 p. 16;; section Dosage and Administration / special populations"
+      },
+      {
+        "indication": "Treat acidosis and move potassium into cells",
+        "patientGroup": "Adults in cardiac arrest",
+        "genericName": "Sodium bicarbonate",
+        "dose": "Metabolic acidosis: 2–5 mmol/kg over 4–8 hours (8.4% is 1 mmol/mL, so 2–5 mL/kg, derived). Cardiac arrest: 50 mmol (50 mL of 8.4%) IV, repeated every 5–10 minutes guided by blood gas. Use only on intensivist or nephrologist advice",
+        "route": "IV",
+        "frequency": "Repeat in fractional doses guided by the blood gas",
+        "duration": "Do not fully correct total carbon dioxide in the first 24 hours; about 20 mmol/L by the end of day one is usually a normal pH",
+        "adjustments": [
+          "Severe renal insufficiency: use with great care (sodium retention), caution in oliguria or anuria",
+          "age 65 and over: start at the low end of the dose range"
+        ],
+        "monitoring": [
+          "Rhythm during ALS",
+          "blood gas"
+        ],
+        "contraindications": [
+          "Do not mix with calcium in the same line"
+        ],
+        "branch": "Hyperkalaemic cardiac arrest",
+        "step": "1. Calcium and bicarbonate",
+        "selection": "all",
+        "sourceTitle": "UK Kidney Association Clinical Practice Guideline: Management of Hyperkalaemia in Adults",
+        "sourceUrl": "https://www.ukkidney.org/sites/renal.org/files/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20191223.pdf",
+        "sourceEdition": "UK Kidney Association, October 2023 (final version dated 19 December 2023); Rec. 25.3 p. 16;; section Dosage and Administration / special populations"
+      },
+      {
+        "indication": "Move potassium into cells",
+        "patientGroup": "Adults in cardiac arrest",
+        "genericName": "Soluble insulin",
+        "dose": "10 units",
+        "route": "IV",
+        "frequency": "Once",
+        "duration": "Single dose",
+        "adjustments": [
+          "Renal impairment, hepatic impairment and older age can reduce insulin requirements: check glucose more often and adjust the dose individually"
+        ],
+        "monitoring": [
+          "Glucose"
+        ],
+        "contraindications": [
+          "Hypoglycaemia"
+        ],
+        "branch": "Hyperkalaemic cardiac arrest",
+        "step": "2. Shift into cells",
+        "selection": "all",
+        "sourceTitle": "UK Kidney Association Clinical Practice Guideline: Management of Hyperkalaemia in Adults",
+        "sourceUrl": "https://www.ukkidney.org/sites/renal.org/files/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20191223.pdf",
+        "sourceEdition": "UK Kidney Association, October 2023 (final version dated 19 December 2023); Rec. 25.2.1 p. 16; section Dosage and Administration / special populations"
+      },
+      {
+        "indication": "Prevent hypoglycaemia",
+        "patientGroup": "Adults in cardiac arrest",
+        "genericName": "Glucose",
+        "dose": "25 g",
+        "route": "IV with the insulin",
+        "frequency": "Once",
+        "duration": "Single dose; add 10% glucose infusion if blood glucose was below 7.0 mmol/L at arrest",
+        "adjustments": [
+          "No renal or hepatic dose adjustment is given",
+          "impaired renal function raises the risk of adverse reactions, so check electrolytes",
+          "age 65 and over: start low and monitor closely"
+        ],
+        "monitoring": [
+          "Glucose"
+        ],
+        "contraindications": [
+          "Fluid load"
+        ],
+        "branch": "Hyperkalaemic cardiac arrest",
+        "step": "2. Shift into cells",
+        "selection": "all",
+        "sourceTitle": "UK Kidney Association Clinical Practice Guideline: Management of Hyperkalaemia in Adults",
+        "sourceUrl": "https://www.ukkidney.org/sites/renal.org/files/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20191223.pdf",
+        "sourceEdition": "UK Kidney Association, October 2023 (final version dated 19 December 2023); Rec. 25.2.1–25.2.2 p. 16; section Dosage and Administration / special populations"
+      }
+    ],
+    "branches": [
+      {
+        "label": "Moderate hyperkalaemia, potassium 6.0–6.4 mmol/L, normal ECG",
+        "entryCriteria": "Potassium 6.0–6.4 mmol/L with a normal 12-lead ECG"
+      },
+      {
+        "label": "Severe hyperkalaemia, potassium 6.5 mmol/L or above, or any ECG changes",
+        "entryCriteria": "Potassium 6.5 mmol/L or above, or ECG changes (peaked T waves, flat P waves, broad QRS, bradycardia, sine wave) at any potassium of 5.5 mmol/L or above"
+      },
+      {
+        "label": "Hyperkalaemic cardiac arrest",
+        "entryCriteria": "Cardiac arrest with known or suspected hyperkalaemia"
+      }
+    ],
+    "note": "Doses came from an external drafting tool and must be verified against the cited sources, Saudi Food and Drug Authority (SFDA) registration and the local hospital protocol before prescribing. Check hospital formulary."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Hyperkalaemia",
+      "threshold": "Serum potassium 5.5 mmol/L or above"
+    },
+    {
+      "criterion": "Mild",
+      "threshold": "5.5–5.9 mmol/L"
+    },
+    {
+      "criterion": "Moderate",
+      "threshold": "6.0–6.4 mmol/L"
+    },
+    {
+      "criterion": "Severe",
+      "threshold": "6.5 mmol/L or above"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "Guideline comparison",
+    "columns": [
+      "UKKA 2023",
+      "ERC 2025",
+      "Gloucestershire inpatient flowchart 2023",
+      "Renal Association algorithm 2020"
+    ],
+    "rows": [
+      {
+        "parameter": "Calcium gluconate 10%",
+        "values": [
+          "30 mL over 10 minutes",
+          "30 mL over 10 minutes if chloride unavailable",
+          "30 mL neat over 5 minutes; repeat every 5 minutes if ECG changes persist; 30 minutes with digoxin",
+          "30 mL over 5 minutes; further dose after 5 minutes if ECG changes persist"
+        ]
+      },
+      {
+        "parameter": "Calcium chloride 10%",
+        "values": [
+          "10 mL over 5 minutes",
+          "10 mL",
+          "Not listed",
+          "10 mL over 5 minutes"
+        ]
+      },
+      {
+        "parameter": "Insulin and glucose",
+        "values": [
+          "10 units soluble insulin in 25 g glucose",
+          "10 units with 25 g glucose",
+          "10 units Actrapid in 50 mL 50% dextrose over 15 minutes",
+          "10 units in 25 g glucose over 15–30 minutes"
+        ]
+      },
+      {
+        "parameter": "Glucose equivalents",
+        "values": [
+          "Not stated in the opened text",
+          "Not stated",
+          "125 mL of 20% or 250 mL of 10%",
+          "50 mL of 50%, 125 mL of 20% or 250 mL of 10%"
+        ]
+      },
+      {
+        "parameter": "Glucose monitoring",
+        "values": [
+          "0, 30, 60, 90, 120, 180, 240, 300, 360 minutes",
+          "Not stated",
+          "0, 15, 30 minutes then hourly for 6 hours",
+          "0, 30, 60, 90, 120, 180, 240, 300, 360, 480, 720 minutes"
+        ]
+      },
+      {
+        "parameter": "Salbutamol",
+        "values": [
+          "10–20 mg nebulised",
+          "10–20 mg nebulised",
+          "10–20 mg; 10 mg in ischaemic heart disease",
+          "10–20 mg nebulised"
+        ]
+      },
+      {
+        "parameter": "Binder",
+        "values": [
+          "Sodium zirconium cyclosilicate 10 g three times daily up to 72 hours; patiromer 8.4 g an option",
+          "Sodium zirconium cyclosilicate 10 g",
+          "Sodium zirconium cyclosilicate 10 g, three times daily for 72 hours",
+          "Sodium zirconium cyclosilicate 10 g three times daily; patiromer 8.4 g once daily; calcium resonium 15 g"
+        ]
+      },
+      {
+        "parameter": "Bicarbonate",
+        "values": [
+          "Not routine; suggested in arrest",
+          "50 mmol in arrest",
+          "Only for severe acidosis on specialist advice",
+          "No dose given"
+        ]
+      }
+    ]
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Grade hyperkalaemia and recognise ECG changes.",
+      "Give calcium, an insulin and glucose infusion and a potassium binder in the right order.",
+      "Know when to call for dialysis and what to give in cardiac arrest."
+    ],
+    "pitfalls": [
+      "Using salbutamol alone to treat severe hyperkalaemia.",
+      "Forgetting glucose monitoring and hypoglycaemia after insulin.",
+      "Using intravenous bicarbonate as routine acute treatment.",
+      "Using calcium resonium as a routine acute treatment."
+    ],
+    "keyPoints": [
+      "Protect the heart first with calcium when the ECG is abnormal.",
+      "Insulin and glucose need glucose monitoring for 6 hours.",
+      "Never leave until every step of the five-step approach is done."
+    ],
+    "references": [
+      {
+        "title": "UK Kidney Association Clinical Practice Guideline: Management of Hyperkalaemia in Adults",
+        "edition": "UK Kidney Association, October 2023 (final version dated 19 December 2023)",
+        "url": "https://www.ukkidney.org/sites/renal.org/files/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20191223.pdf",
+        "locator": "Recommendations 14.1–14.2, 16.1–16.6, 17.1–17.2, 18.1–18.4, 19.6, 23–25; Figures 1–4; pp. 5, 9–17"
+      },
+      {
+        "title": "Special circumstances in resuscitation: hyper- and hypokalaemia and other electrolyte disorders",
+        "edition": "European Resuscitation Council Guidelines 2025 (Resuscitation 2025;215 Suppl 1:110753), hosted by the Resuscitation Council UK",
+        "url": "https://www.resus.org.uk/library/2025-resuscitation-guidelines/special-circumstances-guidelines",
+        "locator": "Hyperkalaemia section: shift, antagonise and remove potassium"
+      },
+      {
+        "title": "Acute management of hyperkalemia (flowchart and prescription sheet)",
+        "edition": "Gloucestershire Hospitals NHS Foundation Trust Drug and Therapeutics Committee, approved March 2023, review March 2026 (organisation name not printed in the text)",
+        "url": "https://www.gloshospitals.nhs.uk/documents/2045/Inpatient_Hyperkalemia_Management_March_2023_W4sAT5O.pdf",
+        "locator": "Flowchart; prescription sheet page 2"
+      },
+      {
+        "title": "Emergency Management of Hyperkalaemia in Adults (hospital algorithm, Appendix 6)",
+        "edition": "The Renal Association UK, published 1.7.2020, review 1.7.2025 (file labelled revised July 2022 v2)",
+        "url": "https://www.ukkidney.org/sites/default/files/APPENDIX%206%20-%20HYPERKALAEMIA%20ALGORITHM%20-%20HOSPITAL%20-%20REVISED%20-%20JULY%202022%20-%20V2.pdf",
+        "locator": "Sections: Protect the heart; Shift K+ into cells; Remove K+ from the body; Monitoring"
+      },
+      {
+        "title": "Actrapid 100 international units/ml solution for injection in a vial (Summary of Product Characteristics)",
+        "edition": "Novo Nordisk Limited, updated 11 November 2022",
+        "url": "https://www.medicines.org.uk/emc/product/3849/smpc/print",
+        "locator": "section 4.2"
+      },
+      {
+        "title": "Dextrose injection (prescribing information)",
+        "edition": "Hospira, Inc., revised January 2026",
+        "url": "https://labeling.pfizer.com/ShowLabeling.aspx?id=4422",
+        "locator": "Dosage and Administration; Precautions"
+      },
+      {
+        "title": "Calcium Gluconate Injection (prescribing information)",
+        "edition": "Glenmark Pharmaceuticals Inc., USA, undated",
+        "url": "https://medlibrary.org/lib/rx/meds/calcium-gluconate/",
+        "locator": "Dosage and Administration; Warnings"
+      },
+      {
+        "title": "10% Calcium Chloride Injection, USP (prescribing information)",
+        "edition": "American Regent, July 2017",
+        "url": "https://americanregent.com/media/1525/calcium-chloride-10percent-prescribing-information.pdf",
+        "locator": "Dosage and Administration; Precautions"
+      },
+      {
+        "title": "Veltassa (patiromer) 8.4 g powder for oral suspension (Summary of Product Characteristics)",
+        "edition": "Vifor Fresenius Medical Care Renal Pharma UK Ltd, text revised 11 November 2024",
+        "url": "https://www.medicines.org.uk/emc/product/779/smpc/print",
+        "locator": "sections 4.2, 4.4, 4.5"
+      },
+      {
+        "title": "Sodium Bicarbonate 8.4% solution for injection (prescribing information)",
+        "edition": "Pfizer, revision 0.3, 12 April 2023",
+        "url": "https://labeling.pfizer.com/ShowLabeling.aspx?id=12827",
+        "locator": "Dosage and Administration; Warnings"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Which medicines and foods can raise potassium, and why the repeat blood test matters."
+    ],
+    "lifestyleAndDiet": [
+      "Dietary potassium advice from a dietitian for people with kidney disease."
+    ],
+    "mdtReferrals": [
+      "Nephrology or critical care urgently for severe hyperkalaemia or dialysis decisions."
+    ],
+    "dischargeCriteria": [
+      "Potassium back in the normal range on repeat testing, a normal ECG and the cause found and addressed.",
+      "Medicines that raise potassium reviewed before discharge."
+    ],
+    "followUpPlan": "Repeat potassium within 3 days for mild, within 1 day for moderate; severe hyperkalaemia needs immediate admission. Kidney or medicine review for recurrent hyperkalaemia, including whether a long-term potassium binder is needed."
+  }
+}

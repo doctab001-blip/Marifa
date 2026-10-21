@@ -1,0 +1,235 @@
+{
+  "id": "21dbec19-2537-4a83-b902-84bfadeae4d4",
+  "title": "Massive Haemoptysis: Stabilisation, Airway Protection and Specialist Referral",
+  "specialty": "Respiratory Medicine / Emergency Medicine",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-21-disease-management-v1",
+  "lastReviewed": "2026-10-21",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-21",
+    "status": "incomplete",
+    "scope": "Massive Haemoptysis: Stabilisation, Airway Protection and Specialist Referral",
+    "findings": [
+      "Built as an additive Disease Management version using the approved-topic structure.",
+      "Investigations are ordered from bedside/laboratory assessment to imaging and specialist tests.",
+      "The original outline remains current; this version is non-current and pending clinical review."
+    ],
+    "unverifiedSections": [
+      "No Saudi national massive-haemoptysis pathway was opened.",
+      "Tranexamic-acid dose and benefit were not sufficiently source-verified and are not included."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "21dbec19-2537-4a83-b902-84bfadeae4d4"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Bleeding usually arises from hypertrophied systemic bronchial arteries. Airway obstruction and asphyxia can kill before exsanguination. Bronchial artery embolisation can control the culprit arterial supply.",
+    "keyMechanisms": [
+      "Bleeding usually arises from hypertrophied systemic bronchial arteries.",
+      "Airway obstruction and asphyxia can kill before exsanguination.",
+      "Bronchial artery embolisation can control the culprit arterial supply."
+    ],
+    "references": [
+      {
+        "title": "CIRSE Standards of Practice on Bronchial Artery Embolisation",
+        "edition": "2022; patient preparation, imaging and emergency BAE sections",
+        "url": "https://link.springer.com/article/10.1007/s00270-022-03127-w"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Coughing blood, breathlessness, chest discomfort or choking."
+    ],
+    "physicalSigns": [
+      "Active airway bleeding, hypoxaemia, tachypnoea, shock or reduced consciousness."
+    ],
+    "redFlags": [
+      "Ongoing bleeding with airway compromise, gas-exchange failure or haemodynamic instability.",
+      "Bleeding into the only functioning lung or inability to clear secretions."
+    ],
+    "precipitants": [
+      "Bronchiectasis, tuberculosis, malignancy, fungal disease, vascular lesion or anticoagulation."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Haematemesis",
+      "distinguishingFeatures": "Nausea, gastrointestinal blood and no cough."
+    },
+    {
+      "condition": "Upper-airway bleeding",
+      "distinguishingFeatures": "Nasal or oropharyngeal source on examination."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Airway and physiological assessment",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "expectedFinding": "Active bleeding, hypoxaemia or instability",
+        "clinicalRationale": "Activate anaesthesia, respiratory, critical-care and interventional-radiology teams immediately.",
+        "normalValue": "Patent airway; oxygenation and blood pressure within age-appropriate range",
+        "references": [
+          {
+            "title": "CIRSE Standards of Practice on Bronchial Artery Embolisation",
+            "edition": "2022; patient preparation, imaging and emergency BAE sections",
+            "url": "https://link.springer.com/article/10.1007/s00270-022-03127-w"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "expectedFinding": "Anaemia and/or thrombocytopenia",
+        "clinicalRationale": "Guides transfusion and haemostatic correction.",
+        "normalValue": "Haemoglobin and platelets within local range",
+        "references": [
+          {
+            "title": "CIRSE Standards of Practice on Bronchial Artery Embolisation",
+            "edition": "2022; patient preparation, imaging and emergency BAE sections",
+            "url": "https://link.springer.com/article/10.1007/s00270-022-03127-w"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Coagulation profile and fibrinogen",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "expectedFinding": "Anticoagulant effect, coagulopathy or low fibrinogen",
+        "clinicalRationale": "Reverse/correct through the local major-haemorrhage pathway.",
+        "normalValue": "Within local laboratory range",
+        "references": [
+          {
+            "title": "CIRSE Standards of Practice on Bronchial Artery Embolisation",
+            "edition": "2022; patient preparation, imaging and emergency BAE sections",
+            "url": "https://link.springer.com/article/10.1007/s00270-022-03127-w"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Computed tomography angiography of the chest",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "expectedFinding": "Hypertrophied bronchial/non-bronchial systemic artery or causal lesion",
+        "clinicalRationale": "Map vessels before embolisation when the patient is stable enough.",
+        "normalValue": "No bleeding vessel or culprit lesion",
+        "references": [
+          {
+            "title": "CIRSE Standards of Practice on Bronchial Artery Embolisation",
+            "edition": "2022; patient preparation, imaging and emergency BAE sections",
+            "url": "https://link.springer.com/article/10.1007/s00270-022-03127-w"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Bronchoscopy",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "expectedFinding": "Bleeding side, clot or obstructing lesion",
+        "clinicalRationale": "Use for airway clearance/localisation when clinically required; do not delay definitive haemostasis.",
+        "normalValue": "No endobronchial blood or lesion",
+        "references": [
+          {
+            "title": "CIRSE Standards of Practice on Bronchial Artery Embolisation",
+            "edition": "2022; patient preparation, imaging and emergency BAE sections",
+            "url": "https://link.springer.com/article/10.1007/s00270-022-03127-w"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "step-1",
+      "title": "Stabilise airway and circulation",
+      "timeframe": "Immediately",
+      "actions": [
+        "Position bleeding side down when known; give oxygen and suction; summon expert airway help.",
+        "Use a large-bore endotracheal tube if intubation is required and activate major-haemorrhage support for shock."
+      ]
+    },
+    {
+      "id": "step-2",
+      "title": "Localise and control bleeding",
+      "timeframe": "As soon as stabilised",
+      "actions": [
+        "Obtain computed tomography angiography when feasible and refer immediately for bronchial artery embolisation.",
+        "Use bronchoscopy for airway clearance or localisation within the specialist plan."
+      ]
+    },
+    {
+      "id": "step-3",
+      "title": "Escalate and disposition",
+      "timeframe": "Ongoing",
+      "actions": [
+        "Admit to critical care after life-threatening bleeding.",
+        "Arrange thoracic surgery when embolisation fails or a surgically correctable lesion requires treatment."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "no-drug-indicated",
+    "regimens": [],
+    "note": "No routine medicine stops life-threatening haemoptysis. Airway control and urgent embolisation are definitive; haemostatic products, anticoagulant reversal and antimicrobials must follow the cause-specific local protocol."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Life-threatening haemoptysis",
+      "threshold": "Severity is defined by physiological threat and airway compromise, not volume alone."
+    }
+  ],
+  "teaching": {
+    "scope": "Massive Haemoptysis: Stabilisation, Airway Protection and Specialist Referral",
+    "learningObjectives": [
+      "Recognise the emergency and relevant red flags.",
+      "Select the correct investigation and escalation pathway.",
+      "Use medicines only within the stated branch and local formulary."
+    ],
+    "pitfalls": [
+      "Delaying specialist escalation while waiting for a non-essential test.",
+      "Using an unverified medicine dose or applying an adult pathway to a child.",
+      "Mistaking publication status for clinical approval."
+    ],
+    "keyPoints": [
+      "Ongoing bleeding with airway compromise, gas-exchange failure or haemodynamic instability.",
+      "Bleeding into the only functioning lung or inability to clear secretions."
+    ],
+    "references": [
+      {
+        "title": "CIRSE Standards of Practice on Bronchial Artery Embolisation",
+        "edition": "2022; patient preparation, imaging and emergency BAE sections",
+        "url": "https://link.springer.com/article/10.1007/s00270-022-03127-w",
+        "locator": "2022; patient preparation, imaging and emergency BAE sections"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain recurrence risk and the need to treat the underlying cause."
+    ],
+    "lifestyleAndDiet": [
+      "Smoking cessation and cause-specific respiratory care after stabilisation."
+    ],
+    "mdtReferrals": [
+      "Anaesthesia, respiratory, interventional radiology, critical care and thoracic surgery as indicated."
+    ],
+    "dischargeCriteria": [
+      "Not suitable for emergency-department discharge after life-threatening haemoptysis."
+    ],
+    "followUpPlan": "Respiratory and interventional-radiology follow-up after definitive haemostasis."
+  }
+}

@@ -1,0 +1,807 @@
+{
+  "id": "fa7955e6-5267-4970-b26f-b25698fc269b",
+  "title": "Hyperosmolar Hyperglycaemic State (HHS)",
+  "specialty": "Endocrinology / Emergency Medicine",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-21-endocrine-electrolyte-v1",
+  "lastReviewed": "2026-10-21",
+  "pillar": "Urgent Care",
+  "clinicalScenario": "Outline only. Planned scope: Recognition, cautious fluid replacement, insulin timing, osmolality and sodium monitoring, thrombosis risk, precipitant search. Candidate sources to verify: JBDS-IP management of HHS in adults; ADA/EASD hyperglycaemic crises consensus.",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-21",
+    "status": "incomplete",
+    "scope": "Adult (over 18 years) Emergency Department (ED) recognition and first 24 hours of management of Hyperosmolar Hyperglycaemic State (HHS), based on the Joint British Diabetes Societies (JBDS) 2022 guideline, with the Saudi Ministry of Health (MOH) diabetes emergencies protocol and a review of the 2024 international consensus shown side by side where they differ.",
+    "findings": [
+      "Full protocol rebuilt from the source dossier opened on 2026-10-21; exact source locations are recorded in each investigation and medicine row.",
+      "The original outline remains preserved; this additive version is non-current and pending clinical review."
+    ],
+    "unverifiedSections": [
+      "Normal reference ranges are typical adult values, not taken from the cited guidelines; ranges differ between laboratories.",
+      "Symptoms, examination signs, differentials, precipitants and the pathophysiology bullets are standard clinical content and were not extracted line by line from the opened sources.",
+      "JBDS page numbers were inferred from extracted footers and may be off by one; the executive summary says \"most people\" should receive LMWH while the body text says everyone unless contraindicated.",
+      "The JBDS text gives an example fluid rate for people under 50 kg or with heart or renal disease that could not be confirmed, so no number is given here; the dose for 0.45% sodium chloride is not stated in the opened text.",
+      "The 2024 consensus was read through a 2025 review article, not the primary report; the Saudi MOH protocol is undated and its insulin timing rules differ from JBDS.",
+      "Registration with the Saudi Food and Drug Authority (SFDA) was not checked for any drug.",
+      "At 40 mmol/L potassium chloride in fluid at 500 mL/hour the potassium rate is 20 mmol/hour (derived); JBDS gives no maximum potassium rate or central-line requirement.",
+      "The weight table above 140 kg were not given in the opened JBDS text. JBDS Appendix 1 says 'made up to 50 mL'. JBDS page numbers follow the contents page and may not match printed pages.",
+      "The potassium below 3.5 mmol/L row borrows the level rule from a Worcestershire guideline past its review date; JBDS gives only senior review.",
+      "The enoxaparin dose is from the manufacturer's international package insert (Sanofi India, CCDS version 14), not the Saudi SFDA label; the 20 mg renal dose applies below 30 mL/min creatinine clearance.",
+      "Renal, hepatic and age adjustments for the drugs added in this revision are from manufacturer labels (UK Summary of Product Characteristics, US prescribing information and a New Zealand data sheet), not from Saudi Food and Drug Authority labels."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "fa7955e6-5267-4970-b26f-b25698fc269b"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "HHS is severe hyperglycaemia with marked dehydration and high plasma osmolality but little or no ketosis or acidosis.",
+    "keyMechanisms": [
+      "Relative insulin deficiency is enough to cause high glucose but suppresses fat breakdown, so ketone production stays low.",
+      "Very high glucose causes a prolonged osmotic diuresis and a large fluid deficit.",
+      "Rising osmolality draws water out of brain cells, which lowers conscious level.",
+      "Falling glucose or sodium too fast during treatment can shift water into the brain and risks cerebral oedema or central pontine myelinolysis.",
+      "Hyperosmolar blood and dehydration raise the risk of thrombosis."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Days of increasing thirst, passing large volumes of urine and weakness.",
+      "Confusion, drowsiness or reduced responsiveness."
+    ],
+    "physicalSigns": [
+      "Marked dehydration with tachycardia and low blood pressure.",
+      "Reduced conscious level in severe cases.",
+      "Foot pressure damage or ulceration in people who are drowsy or immobile."
+    ],
+    "redFlags": [
+      "Osmolality above 350 mOsm/kg.",
+      "Sodium above 160 mmol/L.",
+      "Venous or arterial pH below 7.1.",
+      "Potassium below 3.5 or above 6.0 mmol/L on admission.",
+      "Glasgow Coma Scale (GCS) score below 12 or an abnormal Alert, Voice, Pain, Unresponsive (AVPU) score.",
+      "Systolic Blood Pressure (SBP) below 90 mmHg, oxygen saturation below 92% on air or urine output below 0.5 mL/kg/hour.",
+      "Creatinine above 200 µmol/L and/or Acute Kidney Injury (AKI); hypothermia; myocardial infarction or stroke."
+    ],
+    "precipitants": [
+      "Infection, particularly pneumonia or urinary tract infection.",
+      "Acute vascular events such as myocardial infarction or stroke.",
+      "Medicines that raise glucose or cause fluid loss, such as steroids and diuretics.",
+      "Missed or insufficient diabetes treatment, or undiagnosed type 2 diabetes."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Diabetic Ketoacidosis (DKA)",
+      "distinguishingFeatures": "Ketones above 3.0 mmol/L with pH below 7.3 or bicarbonate below 15.0 mmol/L"
+    },
+    {
+      "condition": "Mixed DKA and HHS",
+      "distinguishingFeatures": "Marked hyperosmolality together with pH below 7.3 and ketones above 3.0 mmol/L"
+    },
+    {
+      "condition": "Sepsis with stress hyperglycaemia",
+      "distinguishingFeatures": "Glucose is high but osmolality and dehydration are not in the HHS range"
+    },
+    {
+      "condition": "Stroke or hypoglycaemia as a cause of confusion",
+      "distinguishingFeatures": "Focal deficit or low capillary glucose"
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Capillary and plasma glucose",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Hyperosmolar Hyperglycaemic State (HHS)",
+        "expectedFinding": "30 mmol/L or above",
+        "clinicalRationale": "Check hourly; the fall should not exceed 5.0 mmol/L per hour",
+        "normalValue": "4.0–7.8 mmol/L (72–140 mg/dL)",
+        "references": [
+          {
+            "title": "The Management of the Hyperosmolar Hyperglycaemic State (HHS) in Adults with Diabetes",
+            "edition": "Joint British Diabetes Societies Inpatient Care Group, 2022; p. 10, p. 13 and p. 17",
+            "url": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_06_The_Management_of_Hyperosmolar_Hyperglycaemic_State_HHS_%20in_Adults_FINAL_0.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Serum osmolality (2 × sodium + glucose + urea)",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Hyperosmolar Hyperglycaemic State (HHS)",
+        "expectedFinding": "320 mOsm/kg or above",
+        "clinicalRationale": "Aim for a fall of 3.0–8.0 mOsm/kg per hour; check hourly for 6 hours; above 350 mOsm/kg needs High Dependency Unit (HDU) care",
+        "normalValue": "275–295 mOsm/kg",
+        "references": [
+          {
+            "title": "The Management of the Hyperosmolar Hyperglycaemic State (HHS) in Adults with Diabetes",
+            "edition": "Joint British Diabetes Societies Inpatient Care Group, 2022; p. 10, p. 14 and Appendix 2",
+            "url": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_06_The_Management_of_Hyperosmolar_Hyperglycaemic_State_HHS_%20in_Adults_FINAL_0.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Blood ketones",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Hyperosmolar Hyperglycaemic State (HHS)",
+        "expectedFinding": "3.0 mmol/L or below",
+        "clinicalRationale": "Above 1.0 mmol/L (up to 3.0 mmol/L) means start insulin at once; above 3.0 mmol/L with acidosis means treat as DKA or mixed DKA and HHS",
+        "normalValue": "Below 0.6 mmol/L",
+        "references": [
+          {
+            "title": "The Management of the Hyperosmolar Hyperglycaemic State (HHS) in Adults with Diabetes",
+            "edition": "Joint British Diabetes Societies Inpatient Care Group, 2022; p. 10 and Appendix 3",
+            "url": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_06_The_Management_of_Hyperosmolar_Hyperglycaemic_State_HHS_%20in_Adults_FINAL_0.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Venous pH and bicarbonate",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Hyperosmolar Hyperglycaemic State (HHS)",
+        "expectedFinding": "pH above 7.3; bicarbonate above 15.0 mmol/L",
+        "clinicalRationale": "Lower values suggest DKA or mixed disease",
+        "normalValue": "pH 7.31–7.41; bicarbonate 22–29 mmol/L",
+        "references": [
+          {
+            "title": "The Management of the Hyperosmolar Hyperglycaemic State (HHS) in Adults with Diabetes",
+            "edition": "Joint British Diabetes Societies Inpatient Care Group, 2022; p. 13 and Appendix 1",
+            "url": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_06_The_Management_of_Hyperosmolar_Hyperglycaemic_State_HHS_%20in_Adults_FINAL_0.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Serum sodium",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Hyperosmolar Hyperglycaemic State (HHS)",
+        "expectedFinding": "Often raised; an initial rise is expected",
+        "clinicalRationale": "Sodium should not rise or fall faster than 10 mmol/L in 24 hours; above 160 mmol/L needs HDU care",
+        "normalValue": "135–145 mmol/L",
+        "references": [
+          {
+            "title": "The Management of the Hyperosmolar Hyperglycaemic State (HHS) in Adults with Diabetes",
+            "edition": "Joint British Diabetes Societies Inpatient Care Group, 2022; p. 10 and p. 14",
+            "url": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_06_The_Management_of_Hyperosmolar_Hyperglycaemic_State_HHS_%20in_Adults_FINAL_0.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Serum potassium",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Hyperosmolar Hyperglycaemic State (HHS)",
+        "expectedFinding": "Variable",
+        "clinicalRationale": "Above 5.5 mmol/L give none; 3.5–5.5 mmol/L add 40 mmol/L to fluids; below 3.5 mmol/L senior review",
+        "normalValue": "3.5–5.0 mmol/L",
+        "references": [
+          {
+            "title": "The Management of the Hyperosmolar Hyperglycaemic State (HHS) in Adults with Diabetes",
+            "edition": "Joint British Diabetes Societies Inpatient Care Group, 2022; Table 2 p. 28",
+            "url": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_06_The_Management_of_Hyperosmolar_Hyperglycaemic_State_HHS_%20in_Adults_FINAL_0.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Urea and creatinine",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Hyperosmolar Hyperglycaemic State (HHS)",
+        "expectedFinding": "Raised with dehydration",
+        "clinicalRationale": "Creatinine above 200 µmol/L or AKI needs HDU review and more cautious fluids",
+        "normalValue": "Urea 2.5–7.8 mmol/L; creatinine 60–110 µmol/L (0.7–1.2 mg/dL)",
+        "references": [
+          {
+            "title": "The Management of the Hyperosmolar Hyperglycaemic State (HHS) in Adults with Diabetes",
+            "edition": "Joint British Diabetes Societies Inpatient Care Group, 2022; p. 14 and p. 17",
+            "url": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_06_The_Management_of_Hyperosmolar_Hyperglycaemic_State_HHS_%20in_Adults_FINAL_0.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "12-lead Electrocardiogram (ECG) and cardiac enzymes for macrovascular events",
+        "modalityTarget": "Imaging and specialist",
+        "targetCondition": "Hyperosmolar Hyperglycaemic State (HHS)",
+        "expectedFinding": "Myocardial infarction or stroke as a precipitant",
+        "clinicalRationale": "A macrovascular event is an indication for HDU care",
+        "normalValue": "Normal sinus rhythm",
+        "references": [
+          {
+            "title": "The Management of the Hyperosmolar Hyperglycaemic State (HHS) in Adults with Diabetes",
+            "edition": "Joint British Diabetes Societies Inpatient Care Group, 2022; p. 14",
+            "url": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_06_The_Management_of_Hyperosmolar_Hyperglycaemic_State_HHS_%20in_Adults_FINAL_0.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Foot examination",
+        "modalityTarget": "Imaging and specialist",
+        "targetCondition": "Hyperosmolar Hyperglycaemic State (HHS)",
+        "expectedFinding": "Assume high foot risk, especially if drowsy",
+        "clinicalRationale": "Off-load heels and check feet daily",
+        "normalValue": "Intact skin with no pressure damage",
+        "references": [
+          {
+            "title": "The Management of the Hyperosmolar Hyperglycaemic State (HHS) in Adults with Diabetes",
+            "edition": "Joint British Diabetes Societies Inpatient Care Group, 2022; p. 15 and p. 17",
+            "url": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_06_The_Management_of_Hyperosmolar_Hyperglycaemic_State_HHS_%20in_Adults_FINAL_0.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "immediate",
+      "title": "Immediate",
+      "timeframe": "0–60 minutes",
+      "actions": [
+        "Confirm HHS with glucose, osmolality, ketones, pH and bicarbonate before starting; if pH is below 7.3 and ketones are above 3.0 mmol/L, treat as DKA or mixed DKA and HHS.",
+        "Give 0.9% sodium chloride 1 L over the first hour; go faster if SBP is below 90 mmHg.",
+        "Do not start insulin early unless ketones are above 1.0 mmol/L (see Medicines).",
+        "Measure hourly: glucose, sodium, potassium, urea and osmolality for the first 6 hours, and ketones until resolved.",
+        "Check GCS or neurological status every 1–2 hours; keep a fluid balance chart with a minimum urine output of 0.5 mL/kg/hour.",
+        "Protect the feet: assume high risk, off-load heels and check daily."
+      ]
+    },
+    {
+      "id": "ongoing",
+      "title": "Ongoing",
+      "timeframe": "1–24 hours",
+      "actions": [
+        "From 60 minutes to 6 hours give a further 0.5–1 L/hour of 0.9% sodium chloride, aiming for a positive balance of 2–3 L by 6 hours and 3–6 L by 12 hours.",
+        "Keep sodium change within 10 mmol/L per 24 hours, the fall in osmolality at 3.0–8.0 mOsm/kg per hour and the fall in glucose no more than 5.0 mmol/L per hour; reduce fluid and/or insulin if osmolality falls faster than 8.0 mOsm/kg per hour.",
+        "Use 0.45% sodium chloride only if osmolality is not falling despite adequate 0.9% sodium chloride.",
+        "Use more cautious fluid replacement in people under 50 kg and in heart or renal disease.",
+        "Give prophylactic Low Molecular Weight Heparin (LMWH), enoxaparin 40 mg subcutaneously once daily (20 mg if creatinine clearance is below 30 mL/min), for the whole admission unless contraindicated; therapeutic anticoagulation only for suspected thrombosis or acute coronary syndrome.",
+        "After the first 6 hours, if the response is satisfactory, move glucose, sodium, potassium and urea to 2-hourly checks.",
+        "HHS is resolved when osmolality is below 300 mOsm/kg, hypovolaemia is corrected (urine output at least 0.5 mL/kg/hour), cognition is back to pre-morbid state and glucose is below 15 mmol/L."
+      ]
+    },
+    {
+      "id": "escalation",
+      "title": "Escalation",
+      "timeframe": "Escalation",
+      "actions": [
+        "Any red-flag marker above (for example osmolality above 350 mOsm/kg, sodium above 160 mmol/L, pH below 7.1, GCS below 12, SBP below 90 mmHg) means HDU or Level 2 care.",
+        "Mixed DKA and HHS: treat using the DKA pathway at 0.1 units/kg/hour.",
+        "Osmolality falling too fast or sodium changing faster than 10 mmol/L per 24 hours: reduce fluid and/or insulin and seek senior advice."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [
+      {
+        "indication": "Restore circulating volume",
+        "patientGroup": "Adults",
+        "genericName": "0.9% sodium chloride, 1000 mL ready-made bag",
+        "dose": "1 L at 1000 mL/hour over 1 hour; faster if SBP is below 90 mmHg",
+        "route": "IV infusion through a large-bore cannula; insert a urinary catheter to measure output; if IV access fails, call critical care at once",
+        "frequency": "Once",
+        "duration": "First hour",
+        "adjustments": [
+          "Under 50 kg, heart or renal disease: give more cautiously",
+          "SFDA registration not checked"
+        ],
+        "monitoring": [
+          "Blood pressure, urine output at least 0.5 mL/kg/hour"
+        ],
+        "contraindications": [
+          "Fluid overload"
+        ],
+        "branch": "HHS fluids and thromboprophylaxis, all adults",
+        "step": "1. First hour fluid",
+        "selection": "all",
+        "sourceTitle": "The Management of the Hyperosmolar Hyperglycaemic State (HHS) in Adults with Diabetes",
+        "sourceUrl": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_06_The_Management_of_Hyperosmolar_Hyperglycaemic_State_HHS_%20in_Adults_FINAL_0.pdf",
+        "sourceEdition": "Joint British Diabetes Societies Inpatient Care Group, 2022; p. 16 and Appendix 1 p. 39–40"
+      },
+      {
+        "indication": "Continue replacement",
+        "patientGroup": "Adults",
+        "genericName": "0.9% sodium chloride, 1000 mL ready-made bags",
+        "dose": "Printed sequence after the first litre: 1 L at 500 mL/hour (2 hours), 1 L at 500 mL/hour (2 hours), 1 L at 250 mL/hour (4 hours), 1 L at 250 mL/hour (4 hours), 1 L at 166 mL/hour (6 hours); aim for a positive balance of 2–3 L by 6 hours and 3–6 L by 12 hours; from 12 to 24 hours replace remaining losses over 12 hours",
+        "route": "IV infusion by pump",
+        "frequency": "Continuous",
+        "duration": "Reassess cardiovascular status at 12 hours",
+        "adjustments": [
+          "More cautious in heart or renal disease"
+        ],
+        "monitoring": [
+          "Hourly sodium, osmolality, glucose",
+          "fall in osmolality 3.0–8.0 mOsm/kg/hour",
+          "sodium rise no more than 10 mmol/L in 24 hours"
+        ],
+        "contraindications": [
+          "Fluid overload",
+          "rapid sodium or osmolality change"
+        ],
+        "branch": "HHS fluids and thromboprophylaxis, all adults",
+        "step": "2. Fluid from 1 to 12 hours",
+        "selection": "one-of",
+        "preferred": true,
+        "sourceTitle": "The Management of the Hyperosmolar Hyperglycaemic State (HHS) in Adults with Diabetes",
+        "sourceUrl": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_06_The_Management_of_Hyperosmolar_Hyperglycaemic_State_HHS_%20in_Adults_FINAL_0.pdf",
+        "sourceEdition": "Joint British Diabetes Societies Inpatient Care Group, 2022; p. 16–18 and Appendix 1 p. 39–40"
+      },
+      {
+        "indication": "Lower sodium and osmolality when they are not falling",
+        "patientGroup": "Adults",
+        "genericName": "0.45% sodium chloride",
+        "dose": "Same rate as the 0.9% sodium chloride it replaces; senior review first",
+        "route": "IV infusion by pump",
+        "frequency": "Continuous",
+        "duration": "Until osmolality falls at target; rising sodium alone is not a reason",
+        "adjustments": [
+          "Senior review needed"
+        ],
+        "monitoring": [
+          "Hourly sodium and osmolality (calculated osmolality = 2 × sodium + glucose + urea)"
+        ],
+        "contraindications": [
+          "Sodium or osmolality falling too fast"
+        ],
+        "branch": "HHS fluids and thromboprophylaxis, all adults",
+        "step": "2. Fluid from 1 to 12 hours",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Osmolality not falling despite adequate positive fluid balance and glucose not falling adequately",
+        "sourceTitle": "The Management of the Hyperosmolar Hyperglycaemic State (HHS) in Adults with Diabetes",
+        "sourceUrl": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_06_The_Management_of_Hyperosmolar_Hyperglycaemic_State_HHS_%20in_Adults_FINAL_0.pdf",
+        "sourceEdition": "Joint British Diabetes Societies Inpatient Care Group, 2022; p. 28–30"
+      },
+      {
+        "indication": "Reduce thrombosis risk",
+        "patientGroup": "All adults with HHS",
+        "genericName": "Enoxaparin 40 mg in 0.4 mL prefilled syringe",
+        "dose": "40 mg",
+        "route": "Subcutaneous",
+        "frequency": "Once daily",
+        "duration": "At least 6 days and until fully mobile; maximum 14 days",
+        "adjustments": [
+          "Creatinine clearance below 30 mL/min: 20 mg once daily"
+        ],
+        "monitoring": [
+          "Platelets, renal function"
+        ],
+        "contraindications": [
+          "Bleeding",
+          "therapeutic dosing only for suspected thrombosis or acute coronary syndrome"
+        ],
+        "branch": "HHS fluids and thromboprophylaxis, all adults",
+        "step": "3. Thromboprophylaxis",
+        "selection": "all",
+        "useWhen": "Unless contraindicated",
+        "sourceTitle": "The Management of the Hyperosmolar Hyperglycaemic State (HHS) in Adults with Diabetes",
+        "sourceUrl": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_06_The_Management_of_Hyperosmolar_Hyperglycaemic_State_HHS_%20in_Adults_FINAL_0.pdf",
+        "sourceEdition": "Joint British Diabetes Societies Inpatient Care Group, 2022; p. 31; section Prophylaxis of venous thromboembolism in medical patients"
+      },
+      {
+        "indication": "Continue background insulin",
+        "patientGroup": "Adults already on basal insulin",
+        "genericName": "Usual subcutaneous basal insulin",
+        "dose": "Usual dose",
+        "route": "Subcutaneous",
+        "frequency": "At the usual time",
+        "duration": "Throughout",
+        "adjustments": [
+          "Renal impairment, hepatic impairment and older age can reduce insulin requirements: monitor glucose closely and adjust individually"
+        ],
+        "monitoring": [
+          "Glucose"
+        ],
+        "contraindications": [
+          "–"
+        ],
+        "branch": "HHS fluids and thromboprophylaxis, all adults",
+        "step": "4. Basal insulin",
+        "selection": "all",
+        "useWhen": "Only if the person normally takes it",
+        "sourceTitle": "The Management of the Hyperosmolar Hyperglycaemic State (HHS) in Adults with Diabetes",
+        "sourceUrl": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_06_The_Management_of_Hyperosmolar_Hyperglycaemic_State_HHS_%20in_Adults_FINAL_0.pdf",
+        "sourceEdition": "Joint British Diabetes Societies Inpatient Care Group, 2022; Appendix 1 p. 38–40; section Dosage and Administration / special populations"
+      },
+      {
+        "indication": "Replace potassium losses",
+        "patientGroup": "Adults, potassium 3.5–5.5 mmol/L",
+        "genericName": "Potassium chloride 40 mmol per litre of 0.9% sodium chloride (ready-made bag)",
+        "dose": "40 mmol/L in each litre of fluid",
+        "route": "IV infusion by pump; at 500 mL/hour this is 20 mmol/hour (derived), twice the 10 mmol/hour ward rate in the Hypokalaemia protocol; JBDS states no separate maximum, so keep continuous cardiac monitoring",
+        "frequency": "With each litre",
+        "duration": "Guided by hourly potassium",
+        "adjustments": [
+          "Renal failure: closer monitoring"
+        ],
+        "monitoring": [
+          "Hourly potassium for 6 hours"
+        ],
+        "contraindications": [
+          "Hyperkalaemia"
+        ],
+        "branch": "Potassium 3.5–5.5 mmol/L",
+        "step": "1. Potassium",
+        "selection": "all",
+        "sourceTitle": "The Management of the Hyperosmolar Hyperglycaemic State (HHS) in Adults with Diabetes",
+        "sourceUrl": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_06_The_Management_of_Hyperosmolar_Hyperglycaemic_State_HHS_%20in_Adults_FINAL_0.pdf",
+        "sourceEdition": "Joint British Diabetes Societies Inpatient Care Group, 2022; Table 2 p. 28"
+      },
+      {
+        "indication": "None: do not add",
+        "patientGroup": "Adults, potassium above 5.5 mmol/L",
+        "genericName": "Potassium chloride",
+        "dose": "0 mmol; plain 0.9% sodium chloride",
+        "route": "IV infusion",
+        "frequency": "–",
+        "duration": "Recheck hourly; add 40 mmol/L when potassium is 5.5 mmol/L or below",
+        "adjustments": [
+          "Renal failure: closer monitoring"
+        ],
+        "monitoring": [
+          "Hourly potassium"
+        ],
+        "contraindications": [
+          "Hyperkalaemia with ECG changes: see the hyperkalaemia protocol"
+        ],
+        "branch": "Potassium above 5.5 mmol/L",
+        "step": "1. Withhold potassium",
+        "selection": "all",
+        "useWhen": "Potassium above 5.5 mmol/L",
+        "sourceTitle": "The Management of the Hyperosmolar Hyperglycaemic State (HHS) in Adults with Diabetes",
+        "sourceUrl": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_06_The_Management_of_Hyperosmolar_Hyperglycaemic_State_HHS_%20in_Adults_FINAL_0.pdf",
+        "sourceEdition": "Joint British Diabetes Societies Inpatient Care Group, 2022; Table 2 p. 28"
+      },
+      {
+        "indication": "Replace the deficit before and during insulin",
+        "patientGroup": "Adults, potassium below 3.5 mmol/L",
+        "genericName": "Potassium chloride",
+        "dose": "JBDS gives no dose or rate: senior review is needed because additional potassium is required (central line in a high dependency unit). The level-based rule in the Hypokalaemia protocol applies: 40 mmol in 1 L at 10 mmol/hour, maximum 20 mmol/hour with continuous ECG",
+        "route": "IV infusion by pump; above 40 mmol/L only via a central line",
+        "frequency": "Recheck before the next bag",
+        "duration": "Maximum 2–3 mmol/kg in 24 hours (Worcestershire guideline)",
+        "adjustments": [
+          "Renal impairment: cautious"
+        ],
+        "monitoring": [
+          "Continuous ECG",
+          "hourly potassium"
+        ],
+        "contraindications": [
+          "Insulin before potassium is replaced risks arrhythmia"
+        ],
+        "branch": "Potassium below 3.5 mmol/L",
+        "step": "1. Senior review and extra potassium",
+        "selection": "all",
+        "useWhen": "Potassium below 3.5 mmol/L",
+        "sourceTitle": "The Management of the Hyperosmolar Hyperglycaemic State (HHS) in Adults with Diabetes",
+        "sourceUrl": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_06_The_Management_of_Hyperosmolar_Hyperglycaemic_State_HHS_%20in_Adults_FINAL_0.pdf",
+        "sourceEdition": "Joint British Diabetes Societies Inpatient Care Group, 2022; Table 2 p. 28; pp. 5–6"
+      },
+      {
+        "indication": "Stop ketone production and lower glucose",
+        "patientGroup": "Adults with ketonaemia",
+        "genericName": "Human soluble insulin 1 unit/mL infusion (50 units in 50 mL 0.9% sodium chloride)",
+        "dose": "Start immediately at 0.05 units/kg/hour. Rate by weight at 0.05 units/kg/hour: 50–59 kg = 2.5 units/hour; 60–69 = 3; 70–79 = 3.5; 80–89 = 4; 90–99 = 4.5; 100–109 = 5; 110–119 = 5.5; 120–129 = 6; 130–139 = 6.5; under 50 kg or over 140 kg needs senior or Diabetes Specialist Team (DST) advice. Reduce the rate by 50% if glucose falls by more than 5.0 mmol/L per hour; in the 12–24 hour phase adjust by 1 unit/hour each hour",
+        "route": "IV infusion by syringe pump. Preparation: draw 50 units of human soluble insulin (Actrapid) with an insulin syringe (never an IV syringe) and make up to 50 mL with 0.9% sodium chloride = 1 unit/mL; run glucose and insulin in the same line through a three-way non-return valve",
+        "frequency": "Continuous",
+        "duration": "Until ketones, glucose and osmolality targets are met (resolution: osmolality below 300 mOsm/kg, urine output 0.5 mL/kg/hour or more, back to usual cognition, glucose below 15 mmol/L)",
+        "adjustments": [
+          "See weight table"
+        ],
+        "monitoring": [
+          "Hourly glucose, ketones, potassium"
+        ],
+        "contraindications": [
+          "Hypokalaemia",
+          "glucose falling faster than 5.0 mmol/L per hour"
+        ],
+        "branch": "HHS with ketonaemia",
+        "step": "1. Insulin",
+        "selection": "all",
+        "sourceTitle": "The Management of the Hyperosmolar Hyperglycaemic State (HHS) in Adults with Diabetes",
+        "sourceUrl": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_06_The_Management_of_Hyperosmolar_Hyperglycaemic_State_HHS_%20in_Adults_FINAL_0.pdf",
+        "sourceEdition": "Joint British Diabetes Societies Inpatient Care Group, 2022; p. 29–30 and Appendices 1 and 3 p. 38–44"
+      },
+      {
+        "indication": "Prevent hypoglycaemia while insulin continues",
+        "patientGroup": "Adults whose glucose has fallen below 14 mmol/L",
+        "genericName": "Glucose 5% (or 10%) infusion",
+        "dose": "125 mL/hour, continued alongside 0.9% sodium chloride. Aim for glucose 10–15 mmol/L in the first 24 hours",
+        "route": "IV infusion",
+        "frequency": "Continuous",
+        "duration": "Until insulin is stopped",
+        "adjustments": [
+          "Fluid overload cautions"
+        ],
+        "monitoring": [
+          "Hourly glucose"
+        ],
+        "contraindications": [
+          "Fluid overload"
+        ],
+        "branch": "HHS with ketonaemia",
+        "step": "2. Glucose when falling",
+        "selection": "all",
+        "useWhen": "Glucose below 14 mmol/L",
+        "sourceTitle": "The Management of the Hyperosmolar Hyperglycaemic State (HHS) in Adults with Diabetes",
+        "sourceUrl": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_06_The_Management_of_Hyperosmolar_Hyperglycaemic_State_HHS_%20in_Adults_FINAL_0.pdf",
+        "sourceEdition": "Joint British Diabetes Societies Inpatient Care Group, 2022; p. 16–18"
+      },
+      {
+        "indication": "Lower glucose once it has stopped falling on fluids alone",
+        "patientGroup": "Adults without ketonaemia",
+        "genericName": "Human soluble insulin 1 unit/mL infusion (50 units in 50 mL 0.9% sodium chloride)",
+        "dose": "Do not start immediately: wait until glucose has plateaued on fluids alone, then 0.05 units/kg/hour. Rate by weight at 0.05 units/kg/hour: 50–59 kg = 2.5 units/hour; 60–69 = 3; 70–79 = 3.5; 80–89 = 4; 90–99 = 4.5; 100–109 = 5; 110–119 = 5.5; 120–129 = 6; 130–139 = 6.5; under 50 kg or over 140 kg needs senior or Diabetes Specialist Team (DST) advice. Reduce the rate by 50% if glucose falls by more than 5.0 mmol/L per hour",
+        "route": "IV infusion by syringe pump. Preparation: draw 50 units of human soluble insulin (Actrapid) with an insulin syringe (never an IV syringe) and make up to 50 mL with 0.9% sodium chloride = 1 unit/mL",
+        "frequency": "Continuous",
+        "duration": "Until targets are met",
+        "adjustments": [
+          "See weight table"
+        ],
+        "monitoring": [
+          "Hourly glucose and potassium"
+        ],
+        "contraindications": [
+          "Hypokalaemia",
+          "glucose falling too fast"
+        ],
+        "branch": "HHS without significant ketonaemia",
+        "step": "1. Insulin",
+        "selection": "all",
+        "useWhen": "Glucose plateaued on fluids alone",
+        "sourceTitle": "The Management of the Hyperosmolar Hyperglycaemic State (HHS) in Adults with Diabetes",
+        "sourceUrl": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_06_The_Management_of_Hyperosmolar_Hyperglycaemic_State_HHS_%20in_Adults_FINAL_0.pdf",
+        "sourceEdition": "Joint British Diabetes Societies Inpatient Care Group, 2022; p. 29–30 and Appendix 3 p. 43–44"
+      },
+      {
+        "indication": "Prevent hypoglycaemia while insulin continues",
+        "patientGroup": "Adults whose glucose has fallen below 14 mmol/L",
+        "genericName": "Glucose 5% (or 10%) infusion",
+        "dose": "125 mL/hour alongside 0.9% sodium chloride",
+        "route": "IV infusion",
+        "frequency": "Continuous",
+        "duration": "Until insulin is stopped",
+        "adjustments": [
+          "Fluid overload cautions"
+        ],
+        "monitoring": [
+          "Hourly glucose"
+        ],
+        "contraindications": [
+          "Fluid overload"
+        ],
+        "branch": "HHS without significant ketonaemia",
+        "step": "2. Glucose when falling",
+        "selection": "all",
+        "useWhen": "Glucose below 14 mmol/L",
+        "sourceTitle": "The Management of the Hyperosmolar Hyperglycaemic State (HHS) in Adults with Diabetes",
+        "sourceUrl": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_06_The_Management_of_Hyperosmolar_Hyperglycaemic_State_HHS_%20in_Adults_FINAL_0.pdf",
+        "sourceEdition": "Joint British Diabetes Societies Inpatient Care Group, 2022; p. 16–18"
+      }
+    ],
+    "branches": [
+      {
+        "label": "HHS fluids and thromboprophylaxis, all adults",
+        "entryCriteria": "Adult with HHS (glucose 30 mmol/L or above, osmolality 320 mOsm/kg or above, ketones 3.0 mmol/L or below, pH above 7.3, bicarbonate above 15.0 mmol/L)"
+      },
+      {
+        "label": "Potassium 3.5–5.5 mmol/L",
+        "entryCriteria": "HHS with potassium 3.5–5.5 mmol/L"
+      },
+      {
+        "label": "Potassium above 5.5 mmol/L",
+        "entryCriteria": "HHS with potassium above 5.5 mmol/L"
+      },
+      {
+        "label": "Potassium below 3.5 mmol/L",
+        "entryCriteria": "HHS with potassium below 3.5 mmol/L"
+      },
+      {
+        "label": "HHS with ketonaemia",
+        "entryCriteria": "HHS with blood ketones above 1.0 mmol/L up to 3.0 mmol/L (or urine ketones 2+) and not acidotic (pH above 7.3, bicarbonate above 15.0 mmol/L)"
+      },
+      {
+        "label": "HHS without significant ketonaemia",
+        "entryCriteria": "HHS with ketones 1.0 mmol/L or below (and 3.0 mmol/L or below) and not acidotic"
+      }
+    ],
+    "note": "Doses came from an external drafting tool and must be verified against the cited sources, Saudi Food and Drug Authority (SFDA) registration and the local hospital protocol before prescribing. Check hospital formulary."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Hypovolaemia",
+      "threshold": "Marked hypovolaemia"
+    },
+    {
+      "criterion": "Blood glucose",
+      "threshold": "30 mmol/L or above (the Saudi protocol says above 30 mmol/L, about 540 mg/dL)"
+    },
+    {
+      "criterion": "Osmolality",
+      "threshold": "320 mOsm/kg or above"
+    },
+    {
+      "criterion": "Ketones",
+      "threshold": "3.0 mmol/L or below (no significant ketonaemia)"
+    },
+    {
+      "criterion": "Acid–base",
+      "threshold": "Venous pH above 7.3 and bicarbonate above 15.0 mmol/L"
+    },
+    {
+      "criterion": "Effective osmolality (tonicity)",
+      "threshold": "2 × sodium + glucose, in mmol/L; calculated osmolality adds urea"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "Guideline comparison",
+    "columns": [
+      "JBDS 2022",
+      "Saudi MOH diabetes emergencies protocol",
+      "2024 consensus, as summarised in a 2025 review"
+    ],
+    "rows": [
+      {
+        "parameter": "Glucose criterion",
+        "values": [
+          "30 mmol/L or above",
+          "Above 30 mmol/L (about 540 mg/dL)",
+          "600 mg/dL or above"
+        ]
+      },
+      {
+        "parameter": "Osmolality criterion",
+        "values": [
+          "320 mOsm/kg or above",
+          "Above 320 mOsm/kg",
+          "Effective osmolality above 300 mOsm/kg, or total osmolality above 320 mOsm/kg"
+        ]
+      },
+      {
+        "parameter": "Ketones and acid–base",
+        "values": [
+          "Ketones 3.0 mmol/L or below; pH above 7.3; bicarbonate above 15.0 mmol/L",
+          "No significant ketonaemia; pH above 7.3; bicarbonate above 15 mmol/L",
+          "Beta-hydroxybutyrate below 3.0 mmol/L; pH 7.3 or above; bicarbonate 15 mmol/L or above"
+        ]
+      },
+      {
+        "parameter": "Initial fluids",
+        "values": [
+          "1 L over 1 hour, then 0.5–1 L/hour; positive balance 2–3 L by 6 hours",
+          "1 L over 1 hour, then 3 L over the next 11 hours (4 L in the first 12 hours)",
+          "500–1,000 mL/hour for the first 2–4 hours; replace about 50% of the deficit in 8–12 hours"
+        ]
+      },
+      {
+        "parameter": "Insulin dose",
+        "values": [
+          "0.05 units/kg/hour",
+          "0.05 units/kg/hour if glucose is 13 mmol/L or above; 0.025 units/kg/hour below 13 mmol/L",
+          "0.05 units/kg/hour"
+        ]
+      },
+      {
+        "parameter": "Insulin timing",
+        "values": [
+          "With ketones above 1.0 mmol/L start at once; otherwise once glucose plateaus on fluids",
+          "After at least 1 L of IV fluid, and only with significant ketonaemia or ketonuria 2+",
+          "Not stated in the opened text"
+        ]
+      },
+      {
+        "parameter": "Glucose fall limit",
+        "values": [
+          "No more than 5.0 mmol/L per hour",
+          "Target glucose 10–15 mmol/L",
+          "No more than 90–120 mg/dL per hour"
+        ]
+      },
+      {
+        "parameter": "Osmolality fall",
+        "values": [
+          "3.0–8.0 mOsm/kg per hour",
+          "About 5 mOsm/kg per hour",
+          "3–8 mOsm/kg per hour"
+        ]
+      },
+      {
+        "parameter": "Sodium change",
+        "values": [
+          "No faster than 10 mmol/L in 24 hours",
+          "Fall not above 10 mmol/L in 24 hours",
+          "No more than 10 mmol/L in 24 hours"
+        ]
+      },
+      {
+        "parameter": "Resolution",
+        "values": [
+          "Osmolality below 300 mOsm/kg, urine output at least 0.5 mL/kg/hour, normal cognition, glucose below 15 mmol/L",
+          "Not stated as a single set",
+          "Osmolality below 300 mOsm/kg, glucose below 250 mg/dL, urine output above 0.5 mL/kg/hour, improved cognition"
+        ]
+      }
+    ]
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Recognise HHS and separate it from DKA and mixed disease.",
+      "Replace fluid slowly and monitor sodium, osmolality and glucose hourly.",
+      "Know when insulin is started and when to escalate."
+    ],
+    "pitfalls": [
+      "Giving a DKA dose of insulin (0.1 units/kg/hour) to a person with HHS.",
+      "Lowering glucose or sodium too fast, which risks cerebral oedema.",
+      "Treating a rising sodium early in treatment as a reason to switch to hypotonic fluid.",
+      "Missing a mixed DKA and HHS picture."
+    ],
+    "keyPoints": [
+      "HHS is treated mainly with fluid; insulin is started early only if ketones are above 1.0 mmol/L.",
+      "Keep sodium change within 10 mmol/L per 24 hours and glucose fall within 5.0 mmol/L per hour.",
+      "Give LMWH and protect the feet."
+    ],
+    "references": [
+      {
+        "title": "The Management of the Hyperosmolar Hyperglycaemic State (HHS) in Adults with Diabetes",
+        "edition": "Joint British Diabetes Societies Inpatient Care Group, 2022",
+        "url": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_06_The_Management_of_Hyperosmolar_Hyperglycaemic_State_HHS_%20in_Adults_FINAL_0.pdf",
+        "locator": "Pages 10–19, 27–33; Appendices 1–4; Table 2"
+      },
+      {
+        "title": "Guidelines and Protocols of Diabetes Emergencies (adult HHS, pp. 27–31)",
+        "edition": "Saudi Ministry of Health, undated (references to 2016)",
+        "url": "https://www.moh.gov.sa/Documents/Diabetes-Emergencies.pdf",
+        "locator": "HHS diagnostic criteria, fluids, insulin, targets"
+      },
+      {
+        "title": "Hyperglycemic crises in adults: a look at the 2024 consensus report",
+        "edition": "Cleveland Clinic Journal of Medicine, March 2025 (review of the 2024 consensus by the ADA, EASD, JBDS, AACE and DTS)",
+        "url": "https://www.ccjm.org/content/92/3/152.full.pdf",
+        "locator": "Tables 1, 3 and 4; pp. 153–156"
+      },
+      {
+        "title": "Guideline for the Management of Hypokalaemia in Adults (WAHT-PHA-020 v3)",
+        "edition": "Worcestershire Acute Hospitals NHS Trust, approved February–March 2023, review March 2026",
+        "url": "https://apps.worcsacute.nhs.uk/KeyDocumentPortal/Home/DownloadFile/1563",
+        "locator": "pp. 5–6"
+      },
+      {
+        "title": "Enoxaparin Sodium Injection I.P. (Clexane) package insert",
+        "edition": "Sanofi, revised May 2025 (CCDS version 14)",
+        "url": "https://www.sanofi.com/assets/countries/india/docs/science-and-innovation/for-healthcare-professionals/product-information/pharmaceuticals/Clexane-PI_CCDS-V14_14-May-25.pdf",
+        "locator": "Dosage and Method of Administration; Renal impairment"
+      },
+      {
+        "title": "Lantus 100 units/ml solution for injection in a cartridge (Summary of Product Characteristics)",
+        "edition": "Sanofi, text revised 5 May 2026",
+        "url": "https://www.medicines.org.uk/emc/product/2376/smpc/print",
+        "locator": "section 4.2"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Diabetes education before discharge, including what to do when unwell."
+    ],
+    "lifestyleAndDiet": [
+      "Dietary and glucose-monitoring advice from the diabetes team."
+    ],
+    "mdtReferrals": [
+      "DST on admission; HDU or critical care for red-flag markers; podiatry or tissue viability if foot damage is found."
+    ],
+    "dischargeCriteria": [
+      "HHS resolved (osmolality below 300 mOsm/kg, glucose below 15 mmol/L, normal cognition, adequate urine output) and eating and drinking.",
+      "Diabetes education done and a written care plan copied to the General Practitioner (GP)."
+    ],
+    "followUpPlan": "Diabetes Specialist Team (DST) review within one working day and before discharge. Follow-up by the diabetes team or primary care after discharge; most people go home on subcutaneous insulin."
+  }
+}

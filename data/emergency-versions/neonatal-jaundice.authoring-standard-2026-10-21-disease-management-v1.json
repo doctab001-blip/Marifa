@@ -1,0 +1,233 @@
+{
+  "id": "69e19cba-6b98-46a8-84cb-757f4e8bb618",
+  "title": "Neonatal Jaundice: Recognition, Testing and Urgent Referral",
+  "specialty": "Neonatology / Paediatrics",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-21-disease-management-v1",
+  "lastReviewed": "2026-10-21",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-21",
+    "status": "incomplete",
+    "scope": "Neonatal Jaundice: Recognition, Testing and Urgent Referral",
+    "findings": [
+      "Built as an additive Disease Management version using the approved-topic structure.",
+      "Investigations are ordered from bedside/laboratory assessment to imaging and specialist tests.",
+      "The original outline remains current; this version is non-current and pending clinical review."
+    ],
+    "unverifiedSections": [
+      "Numeric phototherapy and exchange thresholds must be taken from the live gestation/age chart and are not transcribed into static prose.",
+      "Saudi neonatal network thresholds were not opened."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "69e19cba-6b98-46a8-84cb-757f4e8bb618"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Unconjugated bilirubin rises when production exceeds hepatic conjugation and elimination. Very high unconjugated bilirubin can enter the brain and cause bilirubin encephalopathy. Conjugated hyperbilirubinaemia suggests hepatobiliary disease and needs urgent evaluation.",
+    "keyMechanisms": [
+      "Unconjugated bilirubin rises when production exceeds hepatic conjugation and elimination.",
+      "Very high unconjugated bilirubin can enter the brain and cause bilirubin encephalopathy.",
+      "Conjugated hyperbilirubinaemia suggests hepatobiliary disease and needs urgent evaluation."
+    ],
+    "references": [
+      {
+        "title": "NICE CG98 Jaundice in newborn babies under 28 days",
+        "edition": "CG98 updated 2023; recommendations 1.2–1.10 and treatment threshold graphs/tables",
+        "url": "https://www.nice.org.uk/guidance/cg98/chapter/recommendations"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Yellow skin or sclera, poor feeding, sleepiness or abnormal cry."
+    ],
+    "physicalSigns": [
+      "Jaundice assessed in bright natural light; pallor, bruising, hepatosplenomegaly or neurological abnormality."
+    ],
+    "redFlags": [
+      "Jaundice in the first 24 hours, rapidly rising bilirubin, bilirubin encephalopathy signs, pale stools/dark urine or prolonged jaundice."
+    ],
+    "precipitants": [
+      "Prematurity, haemolysis, blood-group incompatibility, bruising, infection, poor feeding or liver disease."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Physiological jaundice",
+      "distinguishingFeatures": "Appears after 24 hours and follows an expected course below treatment thresholds."
+    },
+    {
+      "condition": "Cholestasis",
+      "distinguishingFeatures": "Raised conjugated bilirubin, pale stools or dark urine."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Visual assessment and age in hours",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "expectedFinding": "Visible jaundice or neurological concern",
+        "clinicalRationale": "Do not rely on visual inspection alone to estimate bilirubin level.",
+        "normalValue": "No visible jaundice",
+        "references": [
+          {
+            "title": "NICE CG98 Jaundice in newborn babies under 28 days",
+            "edition": "CG98 updated 2023; recommendations 1.2–1.10 and treatment threshold graphs/tables",
+            "url": "https://www.nice.org.uk/guidance/cg98/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Serum bilirubin",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "expectedFinding": "At or above phototherapy or exchange-transfusion threshold",
+        "clinicalRationale": "Use serum measurement for treatment decisions and urgent neonatal review.",
+        "normalValue": "Below the age/gestation-specific treatment threshold",
+        "references": [
+          {
+            "title": "NICE CG98 Jaundice in newborn babies under 28 days",
+            "edition": "CG98 updated 2023; recommendations 1.2–1.10 and treatment threshold graphs/tables",
+            "url": "https://www.nice.org.uk/guidance/cg98/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Transcutaneous bilirubin where eligible",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "expectedFinding": "Raised reading requiring serum confirmation",
+        "clinicalRationale": "Use only in the gestational/age groups allowed by NICE CG98.",
+        "normalValue": "Below confirmatory threshold",
+        "references": [
+          {
+            "title": "NICE CG98 Jaundice in newborn babies under 28 days",
+            "edition": "CG98 updated 2023; recommendations 1.2–1.10 and treatment threshold graphs/tables",
+            "url": "https://www.nice.org.uk/guidance/cg98/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Blood group, direct antiglobulin test and full blood count",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "expectedFinding": "Evidence of haemolysis or anaemia",
+        "clinicalRationale": "Identify immune haemolysis and need for closer monitoring/escalation.",
+        "normalValue": "No haemolysis or anaemia",
+        "references": [
+          {
+            "title": "NICE CG98 Jaundice in newborn babies under 28 days",
+            "edition": "CG98 updated 2023; recommendations 1.2–1.10 and treatment threshold graphs/tables",
+            "url": "https://www.nice.org.uk/guidance/cg98/chapter/recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Conjugated bilirubin in prolonged jaundice",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "expectedFinding": "Raised conjugated fraction",
+        "clinicalRationale": "Urgent paediatric/hepatology evaluation for cholestasis.",
+        "normalValue": "Within local neonatal range",
+        "references": [
+          {
+            "title": "NICE CG98 Jaundice in newborn babies under 28 days",
+            "edition": "CG98 updated 2023; recommendations 1.2–1.10 and treatment threshold graphs/tables",
+            "url": "https://www.nice.org.uk/guidance/cg98/chapter/recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "step-1",
+      "title": "Measure urgently",
+      "timeframe": "At recognition",
+      "actions": [
+        "Measure serum bilirubin urgently for jaundice in the first 24 hours and arrange immediate neonatal review.",
+        "Plot every result on the correct gestation- and age-specific threshold chart."
+      ]
+    },
+    {
+      "id": "step-2",
+      "title": "Treat by threshold",
+      "timeframe": "Ongoing",
+      "actions": [
+        "Start phototherapy only at the source-defined threshold and monitor bilirubin at the recommended interval.",
+        "Use intensified phototherapy and prepare exchange transfusion when the escalation threshold is reached."
+      ]
+    },
+    {
+      "id": "step-3",
+      "title": "Investigate cause and follow",
+      "timeframe": "Before discharge",
+      "actions": [
+        "Assess feeding, haemolysis, infection and prolonged/conjugated jaundice.",
+        "Give parents written safety-net advice and a documented recheck plan."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "no-drug-indicated",
+    "regimens": [],
+    "note": "Phototherapy and exchange transfusion are the treatment pathway; routine drug therapy is not indicated. Intravenous immunoglobulin is restricted to source-defined haemolytic disease with continued bilirubin rise and neonatal specialist authorisation."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Treatment decision",
+      "threshold": "Plot serum bilirubin against postnatal age in hours and gestational age using the current NICE threshold graph/table."
+    }
+  ],
+  "teaching": {
+    "scope": "Neonatal Jaundice: Recognition, Testing and Urgent Referral",
+    "learningObjectives": [
+      "Recognise the emergency and relevant red flags.",
+      "Select the correct investigation and escalation pathway.",
+      "Use medicines only within the stated branch and local formulary."
+    ],
+    "pitfalls": [
+      "Delaying specialist escalation while waiting for a non-essential test.",
+      "Using an unverified medicine dose or applying an adult pathway to a child.",
+      "Mistaking publication status for clinical approval."
+    ],
+    "keyPoints": [
+      "Jaundice in the first 24 hours, rapidly rising bilirubin, bilirubin encephalopathy signs, pale stools/dark urine or prolonged jaundice."
+    ],
+    "references": [
+      {
+        "title": "NICE CG98 Jaundice in newborn babies under 28 days",
+        "edition": "CG98 updated 2023; recommendations 1.2–1.10 and treatment threshold graphs/tables",
+        "url": "https://www.nice.org.uk/guidance/cg98/chapter/recommendations",
+        "locator": "CG98 updated 2023; recommendations 1.2–1.10 and treatment threshold graphs/tables"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Teach parents how to recognise worsening jaundice, poor feeding, lethargy and abnormal cry."
+    ],
+    "lifestyleAndDiet": [
+      "Support effective breastfeeding and feeding assessment; do not use sunlight as treatment."
+    ],
+    "mdtReferrals": [
+      "Neonatal/paediatric team urgently for first-day jaundice, treatment threshold, neurological signs or cholestasis."
+    ],
+    "dischargeCriteria": [
+      "Bilirubin below treatment threshold with feeding, follow-up and recheck plan documented."
+    ],
+    "followUpPlan": "Age- and risk-based bilirubin recheck plus prolonged-jaundice review when indicated."
+  }
+}

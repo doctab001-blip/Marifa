@@ -1,0 +1,233 @@
+{
+  "id": "2d856761-28ba-4715-a39c-0bead4ce13b9",
+  "title": "Middle East Respiratory Syndrome Coronavirus: Recognition, Isolation and Escalation",
+  "specialty": "Infectious Diseases / Respiratory Medicine / Emergency Medicine",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-21-disease-management-v1",
+  "lastReviewed": "2026-10-21",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-21",
+    "status": "incomplete",
+    "scope": "Middle East Respiratory Syndrome Coronavirus: Recognition, Isolation and Escalation",
+    "findings": [
+      "Built as an additive Disease Management version using the approved-topic structure.",
+      "Investigations are ordered from bedside/laboratory assessment to imaging and specialist tests.",
+      "The original outline remains current; this version is non-current and pending clinical review."
+    ],
+    "unverifiedSections": [
+      "The current Saudi MERS case definition and isolation duration require live verification at each presentation.",
+      "No disease-specific antiviral dose was verified."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "2d856761-28ba-4715-a39c-0bead4ce13b9"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Middle East respiratory syndrome coronavirus infects the respiratory tract and can cause viral pneumonia. Severe disease can progress to acute hypoxaemic respiratory failure and multiorgan dysfunction. Healthcare transmission requires immediate infection-prevention controls.",
+    "keyMechanisms": [
+      "Middle East respiratory syndrome coronavirus infects the respiratory tract and can cause viral pneumonia.",
+      "Severe disease can progress to acute hypoxaemic respiratory failure and multiorgan dysfunction.",
+      "Healthcare transmission requires immediate infection-prevention controls."
+    ],
+    "references": [
+      {
+        "title": "Saudi MOH Pocket Manual in Critical Care",
+        "edition": "MOH manual, MERS section p.125",
+        "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Critical%20Care.pdf"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Fever, cough, breathlessness and gastrointestinal symptoms may occur."
+    ],
+    "physicalSigns": [
+      "Hypoxaemia, tachypnoea, focal or diffuse chest signs and systemic illness."
+    ],
+    "redFlags": [
+      "Escalating oxygen requirement, shock, altered consciousness or organ dysfunction."
+    ],
+    "precipitants": [
+      "Recent healthcare exposure, close contact with a confirmed case, or epidemiological exposure defined by current Saudi public-health criteria."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Other viral pneumonia",
+      "distinguishingFeatures": "Alternative virology without MERS epidemiology."
+    },
+    {
+      "condition": "Bacterial pneumonia",
+      "distinguishingFeatures": "Focal bacterial source or culture evidence; coinfection remains possible."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Immediate epidemiological and exposure assessment",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "expectedFinding": "Current Saudi case-definition exposure or contact",
+        "clinicalRationale": "Isolate and notify infection prevention/public health without waiting for laboratory confirmation.",
+        "normalValue": "No qualifying exposure",
+        "references": [
+          {
+            "title": "Saudi MOH Pocket Manual in Critical Care",
+            "edition": "MOH manual, MERS section p.125",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Critical%20Care.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "MERS-CoV molecular assay",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "expectedFinding": "Detected on an approved respiratory specimen",
+        "clinicalRationale": "Confirms infection; repeat/alternative lower-respiratory sampling may be required by public health.",
+        "normalValue": "Not detected",
+        "references": [
+          {
+            "title": "Saudi MOH Pocket Manual in Critical Care",
+            "edition": "MOH manual, MERS section p.125",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Critical%20Care.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count, renal and liver profile",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "expectedFinding": "Cytopenia or organ dysfunction",
+        "clinicalRationale": "Stage severity and guide supportive treatment.",
+        "normalValue": "Within local ranges",
+        "references": [
+          {
+            "title": "Saudi MOH Pocket Manual in Critical Care",
+            "edition": "MOH manual, MERS section p.125",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Critical%20Care.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Blood cultures and respiratory microbiology in severe disease",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "expectedFinding": "Bacterial or other viral coinfection",
+        "clinicalRationale": "Collect without delaying treatment of sepsis when present.",
+        "normalValue": "No pathogen growth",
+        "references": [
+          {
+            "title": "Saudi MOH Pocket Manual in Critical Care",
+            "edition": "MOH manual, MERS section p.125",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Critical%20Care.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Chest radiograph",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "expectedFinding": "Focal or bilateral pulmonary infiltrates",
+        "clinicalRationale": "Supports pneumonia assessment and escalation; computed tomography only when it will change care.",
+        "normalValue": "No infiltrate",
+        "references": [
+          {
+            "title": "Saudi MOH Pocket Manual in Critical Care",
+            "edition": "MOH manual, MERS section p.125",
+            "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Critical%20Care.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "step-1",
+      "title": "Isolate and notify",
+      "timeframe": "Immediately",
+      "actions": [
+        "Place the patient in the locally designated isolation pathway; use current airborne/contact precautions for aerosol-generating procedures.",
+        "Notify infection prevention and the Saudi public-health pathway immediately."
+      ]
+    },
+    {
+      "id": "step-2",
+      "title": "Support organ function",
+      "timeframe": "First hour and ongoing",
+      "actions": [
+        "Titrate oxygen and ventilatory support to physiology; manage sepsis and shock using the local critical-care protocol.",
+        "Investigate and treat bacterial coinfection when clinically suspected."
+      ]
+    },
+    {
+      "id": "step-3",
+      "title": "Escalate and trace",
+      "timeframe": "Ongoing",
+      "actions": [
+        "Refer early to critical care for increasing oxygen needs or organ dysfunction.",
+        "Support public-health contact identification and testing instructions."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "no-drug-indicated",
+    "regimens": [],
+    "note": "No routine MERS-specific antiviral regimen is included. Provide supportive care and use the current Saudi MOH/Weqaya and hospital antimicrobial protocol for proven or suspected coinfection."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Suspected MERS",
+      "threshold": "Apply the current Saudi MOH/Weqaya case definition; criteria change and must be checked at presentation."
+    }
+  ],
+  "teaching": {
+    "scope": "Middle East Respiratory Syndrome Coronavirus: Recognition, Isolation and Escalation",
+    "learningObjectives": [
+      "Recognise the emergency and relevant red flags.",
+      "Select the correct investigation and escalation pathway.",
+      "Use medicines only within the stated branch and local formulary."
+    ],
+    "pitfalls": [
+      "Delaying specialist escalation while waiting for a non-essential test.",
+      "Using an unverified medicine dose or applying an adult pathway to a child.",
+      "Mistaking publication status for clinical approval."
+    ],
+    "keyPoints": [
+      "Escalating oxygen requirement, shock, altered consciousness or organ dysfunction."
+    ],
+    "references": [
+      {
+        "title": "Saudi MOH Pocket Manual in Critical Care",
+        "edition": "MOH manual, MERS section p.125",
+        "url": "https://www.moh.gov.sa/Documents/MOH%20Pocket%20Manual%20in%20Critical%20Care.pdf",
+        "locator": "MOH manual, MERS section p.125"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain isolation, testing and public-health follow-up."
+    ],
+    "lifestyleAndDiet": [
+      "Hand and respiratory hygiene; avoid exposing vulnerable contacts until cleared."
+    ],
+    "mdtReferrals": [
+      "Infection prevention, infectious diseases, respiratory medicine, critical care and public health."
+    ],
+    "dischargeCriteria": [
+      "Only with clinical stability and public-health approval under the current Saudi pathway."
+    ],
+    "followUpPlan": "Public-health and clinical follow-up according to the current Saudi case-management instructions."
+  }
+}

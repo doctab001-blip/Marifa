@@ -1,0 +1,473 @@
+{
+  "id": "4f2b34a6-8a0a-485e-a26b-d2358d71e5e1",
+  "title": "Adrenal Crisis",
+  "specialty": "Endocrinology / Emergency Medicine",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-21-endocrine-electrolyte-v1",
+  "lastReviewed": "2026-10-21",
+  "pillar": "Urgent Care",
+  "clinicalScenario": "Outline only. Planned scope: Recognition in known and unknown adrenal insufficiency, immediate steroid and fluid treatment, precipitants, steroid sick-day rules. Candidate sources to verify: Society for Endocrinology adrenal crisis guidance; Endocrine Society primary adrenal insufficiency guideline.",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-21",
+    "status": "incomplete",
+    "scope": "Adult (over 18 years) Emergency Department (ED) recognition and emergency treatment of adrenal crisis in people with known or suspected adrenal insufficiency, based on the Worcestershire Acute Hospitals NHS Trust guideline (WAHT-END-017 version 2.1, 2025) and the Society for Endocrinology adrenal crisis information page. Paediatric doses are outside this protocol. No Saudi national guideline was found.",
+    "findings": [
+      "Full protocol rebuilt from the source dossier opened on 2026-10-21; exact source locations are recorded in each investigation and medicine row.",
+      "The original outline remains preserved; this additive version is non-current and pending clinical review."
+    ],
+    "unverifiedSections": [
+      "Normal ranges are typical adult values, not from the cited sources.",
+      "Symptoms, signs, differentials and pathophysiology are standard clinical content and were not extracted line by line.",
+      "The hydrocortisone infusion preparation (diluent, volume and rate for 200 mg over 24 hours) and the IV glucose volume are not stated in the opened sources; the glucose row refers to the hypoglycaemia protocol. The Society for Endocrinology page is undated and has no numbered sections; the 2016 Society for Endocrinology emergency guidance could not be opened (PubMed Central captcha, not bypassed).",
+      "No Saudi national or Saudi Ministry of Health adrenal crisis guideline was found; Saudi Food and Drug Authority (SFDA) availability of hydrocortisone injection and fludrocortisone was not checked.",
+      "Renal, hepatic and age adjustments for the drugs added in this revision are from manufacturer labels (UK Summary of Product Characteristics, US prescribing information and a New Zealand data sheet), not from Saudi Food and Drug Authority labels."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "4f2b34a6-8a0a-485e-a26b-d2358d71e5e1"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Adrenal crisis is acute cortisol deficiency that cannot meet the body's stress needs, causing shock, low sodium, high potassium and low glucose.",
+    "keyMechanisms": [
+      "It occurs in primary adrenal insufficiency, secondary adrenal insufficiency and after long-term steroids when doses are missed or not increased in illness.",
+      "Precipitants in the Worcestershire guideline: other infections 25%, gastrointestinal illness 23%, peri-surgery 10% and physiological stress or pain 9%.",
+      "Treatment is immediate hydrocortisone and rapid saline; it must never wait for tests."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Abdominal pain, vomiting, diarrhoea, weakness, dizziness, confusion, fever."
+    ],
+    "physicalSigns": [
+      "Hypotension or shock, dehydration, hypoglycaemia, reduced consciousness; pigmentation in primary disease."
+    ],
+    "redFlags": [
+      "Hypotension or shock in a patient on long-term steroids or with known adrenal insufficiency.",
+      "Vomiting or diarrhoea in a patient with adrenal insufficiency.",
+      "Low sodium, high potassium or low glucose.",
+      "Steroid emergency card or hydrocortisone injection kit carried."
+    ],
+    "precipitants": [
+      "Infection, gastrointestinal illness, surgery, trauma, pain, missed steroid doses."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Sepsis",
+      "distinguishingFeatures": "Source of infection and raised markers, though adrenal crisis may coexist"
+    },
+    {
+      "condition": "Diabetic ketoacidosis",
+      "distinguishingFeatures": "High glucose and ketones"
+    },
+    {
+      "condition": "Gastroenteritis with dehydration",
+      "distinguishingFeatures": "Responds to fluids alone without steroid dependence"
+    },
+    {
+      "condition": "Hypovolaemic shock",
+      "distinguishingFeatures": "No steroid history; no electrolyte pattern"
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Capillary and venous glucose",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Adrenal Crisis",
+        "expectedFinding": "Low",
+        "clinicalRationale": "Treat hypoglycaemia with IV glucose",
+        "normalValue": "4.0–7.8 mmol/L",
+        "references": [
+          {
+            "title": "Guideline for the Management of Adrenal Insufficiency in Adults (WAHT-END-017, version 2.1)",
+            "edition": "Worcestershire Acute Hospitals NHS Trust, approved 22 October and 12 November 2025, review 22 October 2028; p. 4–5",
+            "url": "https://apps.worcsacute.nhs.uk/KeyDocumentPortal/Home/DownloadFile/3198"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Urea and electrolytes",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Adrenal Crisis",
+        "expectedFinding": "Low sodium, high potassium",
+        "clinicalRationale": "Guides saline; do not delay steroid",
+        "normalValue": "Sodium 135–145 mmol/L; potassium 3.5–5.0 mmol/L",
+        "references": [
+          {
+            "title": "Guideline for the Management of Adrenal Insufficiency in Adults (WAHT-END-017, version 2.1)",
+            "edition": "Worcestershire Acute Hospitals NHS Trust, approved 22 October and 12 November 2025, review 22 October 2028; p. 6",
+            "url": "https://apps.worcsacute.nhs.uk/KeyDocumentPortal/Home/DownloadFile/3198"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Paired cortisol and ACTH",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Adrenal Crisis",
+        "expectedFinding": "Low cortisol with high ACTH in primary disease",
+        "clinicalRationale": "Take before hydrocortisone in patients not known to have adrenal insufficiency, only if it does not delay treatment; ACTH is time-sensitive",
+        "normalValue": "Morning cortisol 140–690 nmol/L; ACTH 2–11 pmol/L",
+        "references": [
+          {
+            "title": "Guideline for the Management of Adrenal Insufficiency in Adults (WAHT-END-017, version 2.1)",
+            "edition": "Worcestershire Acute Hospitals NHS Trust, approved 22 October and 12 November 2025, review 22 October 2028; p. 4",
+            "url": "https://apps.worcsacute.nhs.uk/KeyDocumentPortal/Home/DownloadFile/3198"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Blood gas, full blood count, liver tests, thyroid function",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Adrenal Crisis",
+        "expectedFinding": "Variable",
+        "clinicalRationale": "Look for sepsis and other causes",
+        "normalValue": "Ranges vary by laboratory",
+        "references": [
+          {
+            "title": "Guideline for the Management of Adrenal Insufficiency in Adults (WAHT-END-017, version 2.1)",
+            "edition": "Worcestershire Acute Hospitals NHS Trust, approved 22 October and 12 November 2025, review 22 October 2028; p. 6",
+            "url": "https://apps.worcsacute.nhs.uk/KeyDocumentPortal/Home/DownloadFile/3198"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Endocrinology review",
+        "modalityTarget": "Imaging and specialist",
+        "targetCondition": "Adrenal Crisis",
+        "expectedFinding": "Every adrenal crisis",
+        "clinicalRationale": "Specialist advice and outpatient follow-up",
+        "normalValue": "Not needed",
+        "references": [
+          {
+            "title": "Guideline for the Management of Adrenal Insufficiency in Adults (WAHT-END-017, version 2.1)",
+            "edition": "Worcestershire Acute Hospitals NHS Trust, approved 22 October and 12 November 2025, review 22 October 2028; p. 5",
+            "url": "https://apps.worcsacute.nhs.uk/KeyDocumentPortal/Home/DownloadFile/3198"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "immediate",
+      "title": "Immediate",
+      "timeframe": "0–15 minutes",
+      "actions": [
+        "Give hydrocortisone 100 mg IV or IM immediately; never wait for results.",
+        "Give 500 mL of 0.9% sodium chloride over 15 minutes through a large cannula.",
+        "Check capillary glucose and treat hypoglycaemia with IV glucose.",
+        "If the patient is not known to have adrenal insufficiency, take paired cortisol and ACTH before hydrocortisone only if this does not delay treatment."
+      ]
+    },
+    {
+      "id": "ongoing",
+      "title": "Ongoing",
+      "timeframe": "15–60 minutes",
+      "actions": [
+        "If stable and sodium is not low, rehydrate carefully with about 3–4 L over 24 hours.",
+        "Continue hydrocortisone as 200 mg over 24 hours (infusion) or 50 mg IV or IM every 6 hours.",
+        "Continue fludrocortisone at the same dose if already prescribed.",
+        "Monitor blood pressure, pulse, respiratory rate, oxygen saturation and glucose; find and treat the precipitant."
+      ]
+    },
+    {
+      "id": "escalation",
+      "title": "Escalation",
+      "timeframe": "Escalation",
+      "actions": [
+        "Shock not responding to the first 500 mL: senior and critical care review.",
+        "Persistent low sodium in primary disease: specialist advice on added sodium chloride."
+      ]
+    },
+    {
+      "id": "disposition",
+      "title": "Disposition",
+      "timeframe": "Disposition",
+      "actions": [
+        "Admit all adrenal crises; refer to endocrinology."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [
+      {
+        "indication": "Replace cortisol immediately",
+        "patientGroup": "Adults with suspected adrenal crisis",
+        "genericName": "Hydrocortisone sodium succinate injection",
+        "dose": "100 mg stat",
+        "route": "IV or IM (use IM if no IV access)",
+        "frequency": "Once at diagnosis",
+        "duration": "Single dose, then step 3",
+        "adjustments": [
+          "BMI 40 or above: consider 100 mg IV four times daily as maintenance"
+        ],
+        "monitoring": [
+          "Blood pressure, pulse, glucose"
+        ],
+        "contraindications": [
+          "None that delays treatment"
+        ],
+        "branch": "Suspected adrenal crisis, first hour",
+        "step": "1. Hydrocortisone bolus",
+        "selection": "all",
+        "useWhen": "At once, before results",
+        "sourceTitle": "Guideline for the Management of Adrenal Insufficiency in Adults (WAHT-END-017, version 2.1)",
+        "sourceUrl": "https://apps.worcsacute.nhs.uk/KeyDocumentPortal/Home/DownloadFile/3198",
+        "sourceEdition": "Worcestershire Acute Hospitals NHS Trust, approved 22 October and 12 November 2025, review 22 October 2028; p. 5; section Management"
+      },
+      {
+        "indication": "Restore volume and correct electrolyte deficit",
+        "patientGroup": "Adults with suspected adrenal crisis",
+        "genericName": "Sodium chloride 0.9%, 500 mL ready-made bag",
+        "dose": "500 mL over 15 minutes, then if stable and sodium not low about 3–4 L over 24 hours",
+        "route": "IV infusion through a large cannula",
+        "frequency": "Once, then continuous",
+        "duration": "3–4 L over 24 hours",
+        "adjustments": [
+          "Cautious in heart or renal failure"
+        ],
+        "monitoring": [
+          "Blood pressure, urine output, sodium, glucose"
+        ],
+        "contraindications": [
+          "Fluid overload"
+        ],
+        "branch": "Suspected adrenal crisis, first hour",
+        "step": "2. Saline resuscitation",
+        "selection": "all",
+        "useWhen": "Hypotension or dehydration",
+        "sourceTitle": "Guideline for the Management of Adrenal Insufficiency in Adults (WAHT-END-017, version 2.1)",
+        "sourceUrl": "https://apps.worcsacute.nhs.uk/KeyDocumentPortal/Home/DownloadFile/3198",
+        "sourceEdition": "Worcestershire Acute Hospitals NHS Trust, approved 22 October and 12 November 2025, review 22 October 2028; p. 5"
+      },
+      {
+        "indication": "Maintain cortisol cover",
+        "patientGroup": "Adults after the stat dose",
+        "genericName": "Hydrocortisone (continuous infusion)",
+        "dose": "200 mg over 24 hours",
+        "route": "IV continuous infusion",
+        "frequency": "Continuous",
+        "duration": "Until clinical recovery and endocrinology advice",
+        "adjustments": [
+          "BMI 40 or above: consider higher dose"
+        ],
+        "monitoring": [
+          "Blood pressure, glucose, electrolytes"
+        ],
+        "contraindications": [
+          "–"
+        ],
+        "branch": "Suspected adrenal crisis, first hour",
+        "step": "3. Hydrocortisone maintenance",
+        "selection": "one-of",
+        "preferred": true,
+        "useWhen": "Infusion available",
+        "sourceTitle": "Guideline for the Management of Adrenal Insufficiency in Adults (WAHT-END-017, version 2.1)",
+        "sourceUrl": "https://apps.worcsacute.nhs.uk/KeyDocumentPortal/Home/DownloadFile/3198",
+        "sourceEdition": "Worcestershire Acute Hospitals NHS Trust, approved 22 October and 12 November 2025, review 22 October 2028; p. 5; section Management"
+      },
+      {
+        "indication": "Maintain cortisol cover without a pump",
+        "patientGroup": "Adults after the stat dose",
+        "genericName": "Hydrocortisone injection",
+        "dose": "50 mg every 6 hours (100 mg every 6 hours if BMI 40 or above, Worcestershire)",
+        "route": "IV or IM",
+        "frequency": "Four times daily",
+        "duration": "Until clinical recovery and endocrinology advice",
+        "adjustments": [
+          "As above"
+        ],
+        "monitoring": [
+          "As above"
+        ],
+        "contraindications": [
+          "–"
+        ],
+        "branch": "Suspected adrenal crisis, first hour",
+        "step": "3. Hydrocortisone maintenance",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "No infusion pump available",
+        "sourceTitle": "Guideline for the Management of Adrenal Insufficiency in Adults (WAHT-END-017, version 2.1)",
+        "sourceUrl": "https://apps.worcsacute.nhs.uk/KeyDocumentPortal/Home/DownloadFile/3198",
+        "sourceEdition": "Worcestershire Acute Hospitals NHS Trust, approved 22 October and 12 November 2025, review 22 October 2028; p. 5; section Management"
+      },
+      {
+        "indication": "Treat hypoglycaemia",
+        "patientGroup": "Adults with low capillary glucose",
+        "genericName": "Glucose IV",
+        "dose": "Dose per the Hypoglycaemia protocol (IV glucose 10% or 20% over 15 minutes)",
+        "route": "IV",
+        "frequency": "Per recheck",
+        "duration": "Until glucose above 4.0 mmol/L",
+        "adjustments": [
+          "As in that protocol"
+        ],
+        "monitoring": [
+          "Capillary glucose 10 minutes after"
+        ],
+        "contraindications": [
+          "Fluid load"
+        ],
+        "branch": "Suspected adrenal crisis, first hour",
+        "step": "4. Glucose",
+        "selection": "all",
+        "useWhen": "Hypoglycaemic",
+        "sourceTitle": "Guideline for the Management of Adrenal Insufficiency in Adults (WAHT-END-017, version 2.1)",
+        "sourceUrl": "https://apps.worcsacute.nhs.uk/KeyDocumentPortal/Home/DownloadFile/3198",
+        "sourceEdition": "Worcestershire Acute Hospitals NHS Trust, approved 22 October and 12 November 2025, review 22 October 2028; p. 5 and p. 4"
+      },
+      {
+        "indication": "Continue mineralocorticoid cover",
+        "patientGroup": "Adults already prescribed it",
+        "genericName": "Fludrocortisone",
+        "dose": "0.05–0.3 mg daily (usual dose continued)",
+        "route": "Oral",
+        "frequency": "Usual",
+        "duration": "Continue",
+        "adjustments": [
+          "No renal or hepatic dose adjustment is given",
+          "use the lowest effective dose",
+          "caution in renal insufficiency, liver failure, hypertension and heart failure",
+          "elderly: no specific dose recommendation"
+        ],
+        "monitoring": [
+          "Sodium, potassium, blood pressure"
+        ],
+        "contraindications": [
+          "–"
+        ],
+        "branch": "Suspected adrenal crisis, first hour",
+        "step": "5. Fludrocortisone",
+        "selection": "all",
+        "useWhen": "Already prescribed",
+        "sourceTitle": "Guideline for the Management of Adrenal Insufficiency in Adults (WAHT-END-017, version 2.1)",
+        "sourceUrl": "https://apps.worcsacute.nhs.uk/KeyDocumentPortal/Home/DownloadFile/3198",
+        "sourceEdition": "Worcestershire Acute Hospitals NHS Trust, approved 22 October and 12 November 2025, review 22 October 2028; p. 5; section Dosage and Administration / special populations"
+      }
+    ],
+    "branches": [
+      {
+        "label": "Suspected adrenal crisis, first hour",
+        "entryCriteria": "Suspected adrenal crisis (hypotension, vomiting, low sodium, high potassium or low glucose in known or possible adrenal insufficiency)"
+      }
+    ],
+    "note": "Doses came from an external drafting tool and must be verified against the cited sources, Saudi Food and Drug Authority (SFDA) registration and the local hospital protocol before prescribing. Check hospital formulary."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Clinical diagnosis",
+      "threshold": "Suspected adrenal crisis is treated at once without waiting for tests"
+    },
+    {
+      "criterion": "Typical biochemistry",
+      "threshold": "Low sodium, high potassium, low glucose"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "Guideline comparison",
+    "columns": [
+      "Worcestershire WAHT-END-017 v2.1",
+      "Society for Endocrinology information page"
+    ],
+    "rows": [
+      {
+        "parameter": "Hydrocortisone stat",
+        "values": [
+          "100 mg IV or IM",
+          "100 mg IV or IM"
+        ]
+      },
+      {
+        "parameter": "Maintenance",
+        "values": [
+          "200 mg over 24 hours (infusion) or 50 mg IV or IM four times daily; consider 100 mg four times daily if BMI 40 or above",
+          "200 mg over 24 hours preferably as continuous infusion, or 50 mg IV or IM every 6 hours"
+        ]
+      },
+      {
+        "parameter": "Saline",
+        "values": [
+          "500 mL 0.9% over 15 minutes, then 3–4 L over 24 hours if stable",
+          "Rapid rehydration with 0.9% saline; no volume or rate given"
+        ]
+      },
+      {
+        "parameter": "Glucose",
+        "values": [
+          "IV glucose if hypoglycaemic",
+          "Not addressed"
+        ]
+      },
+      {
+        "parameter": "Duration",
+        "values": [
+          "Until recovery and endocrinology advice",
+          "Until clinical recovery and endocrinology advice"
+        ]
+      }
+    ]
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Recognise adrenal crisis and give hydrocortisone before tests.",
+      "Resuscitate with 500 mL saline over 15 minutes and choose a maintenance regimen."
+    ],
+    "pitfalls": [
+      "Delaying hydrocortisone to obtain a cortisol.",
+      "Using too little saline or forgetting glucose.",
+      "Discharging without a kit, sick day rules or follow-up."
+    ],
+    "keyPoints": [
+      "Treat on suspicion; do not wait for tests.",
+      "Hydrocortisone 100 mg then 200 mg over 24 hours."
+    ],
+    "references": [
+      {
+        "title": "Guideline for the Management of Adrenal Insufficiency in Adults (WAHT-END-017, version 2.1)",
+        "edition": "Worcestershire Acute Hospitals NHS Trust, approved 22 October and 12 November 2025, review 22 October 2028",
+        "url": "https://apps.worcsacute.nhs.uk/KeyDocumentPortal/Home/DownloadFile/3198",
+        "locator": "pp. 4–6, 15–22, 25"
+      },
+      {
+        "title": "Adrenal Crisis Information",
+        "edition": "Society for Endocrinology, date not stated",
+        "url": "https://endocrinology.org/adrenal-crisis",
+        "locator": "Section: Management of adrenal crisis"
+      },
+      {
+        "title": "Fludrocortisone Acetate 0.05 mg Tablets (Summary of Product Characteristics)",
+        "edition": "Roma Pharmaceuticals Limited, text revised 26 February 2026",
+        "url": "https://www.medicines.org.uk/emc/product/100012/smpc/print",
+        "locator": "sections 4.2, 4.4"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Steroid sick day rules, when to inject hydrocortisone, and always carry the steroid emergency card."
+    ],
+    "lifestyleAndDiet": [
+      "Never stop steroids suddenly; double or increase doses in illness as taught."
+    ],
+    "mdtReferrals": [
+      "Endocrinology; GP for the injection kit."
+    ],
+    "dischargeCriteria": [
+      "Clinically recovered, back on oral steroid, a steroid emergency card, injection kit with training, sick day rules and endocrinology follow-up."
+    ],
+    "followUpPlan": "Endocrinology outpatient follow-up; the injection kit is added to repeat prescriptions."
+  }
+}

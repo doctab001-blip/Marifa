@@ -1,0 +1,466 @@
+{
+  "id": "8cf09695-9ae8-47d2-b8f2-24b16cbd2227",
+  "title": "Hyponatraemia",
+  "specialty": "Nephrology / Emergency Medicine",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-21-endocrine-electrolyte-v1",
+  "lastReviewed": "2026-10-21",
+  "pillar": "Urgent Care",
+  "clinicalScenario": "Outline only. Planned scope: Symptom-based severity, hypertonic saline for severe symptoms, volume status, correction-rate limits, osmotic demyelination risk, causes. Candidate sources to verify: European clinical practice guideline on hyponatraemia (ESE/ESICM/ERA); US expert panel recommendations.",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-21",
+    "status": "incomplete",
+    "scope": "Adult (over 18 years) Emergency Department (ED) emergency treatment of severe or moderately severe symptomatic hyponatraemia, based on the Society for Endocrinology 2022 emergency guidance and a Royal Devon acute medicine pathway. Chronic asymptomatic hyponatraemia and the full cause work-up are outside this protocol. No Saudi national guideline was found.",
+    "findings": [
+      "Full protocol rebuilt from the source dossier opened on 2026-10-21; exact source locations are recorded in each investigation and medicine row.",
+      "The original outline remains preserved; this additive version is non-current and pending clinical review."
+    ],
+    "unverifiedSections": [
+      "Normal ranges are typical adult values, not from the cited guidelines.",
+      "Symptoms, signs, precipitants, differentials and pathophysiology are standard clinical content and were not extracted line by line.",
+      "The Society for Endocrinology document has no page numbers and no printed date; section, figure and recommendation numbers are cited.",
+      "The 2022 guidance gives no desmopressin dose; the Royal Devon 5% dextrose rate for over-correction has no stopping rule in the opened text.",
+      "Royal Devon specifies 2.7% saline while the Society for Endocrinology specifies 3%; the difference was not reconciled and product availability (Saudi Food and Drug Authority registration) was not checked.",
+      "No Saudi national or Saudi Ministry of Health hyponatraemia guideline was found.",
+      "The Society for Endocrinology guidance does not state the treatment of moderately severe symptoms in detail; the exact boundary for hypertonic saline in that group needs senior confirmation.",
+      "The Royal Hospital for Women procedure is written for women in a hospital in Sydney, is past its review date and its Appendix 1 (bag size, preparation, line type, desmopressin and 5% glucose rates) was not in the opened text; its two stated sodium limits (4–8 versus 8 mmol/24 hours after the first day) also differ. Use it only for the infusion monitoring and the three-infusion limit, and not for bag size or rates.",
+      "The 3% saline bag size, central versus peripheral line and the desmopressin dose for over-correction are not stated in any opened source; so they are left out of this protocol; take the 3% saline bag volume from the product label.",
+      "Renal, hepatic and age adjustments for the drugs added in this revision are from manufacturer labels (UK Summary of Product Characteristics, US prescribing information and a New Zealand data sheet), not from Saudi Food and Drug Authority labels."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "8cf09695-9ae8-47d2-b8f2-24b16cbd2227"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Hyponatraemia is a low serum sodium that reflects an excess of water relative to sodium.",
+    "keyMechanisms": [
+      "Causes include diuretics, the syndrome of inappropriate antidiuretic hormone secretion (SIADH), adrenal insufficiency, hypothyroidism, heart failure, cirrhosis, vomiting or diarrhoea, and excess water intake.",
+      "A fall in sodium moves water into brain cells; brain swelling causes headache, vomiting, seizures and coma.",
+      "Over-correction can cause osmotic demyelination, so the rate of correction is limited."
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Nausea without vomiting, headache, confusion (moderately severe).",
+      "Persistent vomiting, seizures, reduced consciousness (severe)."
+    ],
+    "physicalSigns": [
+      "Volume status: dry, normal or fluid overloaded; reduced Glasgow Coma Scale; seizure."
+    ],
+    "redFlags": [
+      "Cardiorespiratory arrest, seizures or Glasgow Coma Scale of 8 or less.",
+      "Persistent vomiting.",
+      "Severe symptoms with sodium above 130 mmol/L suggest another neurological cause."
+    ],
+    "precipitants": [
+      "Thiazide diuretics, antidepressants, carbamazepine, adrenal crisis, water loading, marathon running, ecstasy."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Pseudohyponatraemia",
+      "distinguishingFeatures": "Normal measured osmolality (very high lipids or protein)"
+    },
+    {
+      "condition": "Hyperglycaemic hyponatraemia",
+      "distinguishingFeatures": "Very high glucose; sodium rises as glucose falls"
+    },
+    {
+      "condition": "Adrenal insufficiency",
+      "distinguishingFeatures": "Hypotension, hyperkalaemia, low cortisol"
+    },
+    {
+      "condition": "Stroke or intracranial cause",
+      "distinguishingFeatures": "Focal signs with sodium above 130 mmol/L"
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Serum or blood-gas sodium",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Hyponatraemia",
+        "expectedFinding": "Below 135 mmol/L",
+        "clinicalRationale": "Grade biochemistry and symptoms; keep the same analyser throughout treatment",
+        "normalValue": "135–145 mmol/L",
+        "references": [
+          {
+            "title": "Emergency management of severe and moderately severely symptomatic hyponatraemia in adult patients",
+            "edition": "Society for Endocrinology (Ball, Barth, Levy), 2022 (date not printed; builds on 2016 guidance); section Recognition; Gen. Rec. 5",
+            "url": "https://www.endocrinology.org/media/xhrhxhxm/emergency-management-of-severe-and-moderately-severely-symptomatic-hyponatraemia-in-adult-patients-2022.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Serum osmolality",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Hyponatraemia",
+        "expectedFinding": "Low in true hyponatraemia",
+        "clinicalRationale": "Excludes pseudohyponatraemia",
+        "normalValue": "275–295 mOsm/kg",
+        "references": [
+          {
+            "title": "Emergency management of severe and moderately severely symptomatic hyponatraemia in adult patients",
+            "edition": "Society for Endocrinology (Ball, Barth, Levy), 2022 (date not printed; builds on 2016 guidance); section Biochemical assessment",
+            "url": "https://www.endocrinology.org/media/xhrhxhxm/emergency-management-of-severe-and-moderately-severely-symptomatic-hyponatraemia-in-adult-patients-2022.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Urine sodium and osmolality",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Hyponatraemia",
+        "expectedFinding": "Used for cause",
+        "clinicalRationale": "Separates SIADH from renal or extrarenal loss; do not delay emergency treatment",
+        "normalValue": "Varies",
+        "references": [
+          {
+            "title": "Emergency management of severe and moderately severely symptomatic hyponatraemia in adult patients",
+            "edition": "Society for Endocrinology (Ball, Barth, Levy), 2022 (date not printed; builds on 2016 guidance); section Recognition",
+            "url": "https://www.endocrinology.org/media/xhrhxhxm/emergency-management-of-severe-and-moderately-severely-symptomatic-hyponatraemia-in-adult-patients-2022.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Capillary glucose",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Hyponatraemia",
+        "expectedFinding": "High in hyperglycaemia",
+        "clinicalRationale": "Correct for glucose",
+        "normalValue": "4.0–7.8 mmol/L",
+        "references": [
+          {
+            "title": "Emergency management of severe and moderately severely symptomatic hyponatraemia in adult patients",
+            "edition": "Society for Endocrinology (Ball, Barth, Levy), 2022 (date not printed; builds on 2016 guidance); section Recognition",
+            "url": "https://www.endocrinology.org/media/xhrhxhxm/emergency-management-of-severe-and-moderately-severely-symptomatic-hyponatraemia-in-adult-patients-2022.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Cortisol and thyroid function",
+        "modalityTarget": "Bedside and bloods",
+        "targetCondition": "Hyponatraemia",
+        "expectedFinding": "Low in adrenal insufficiency or hypothyroidism",
+        "clinicalRationale": "Treat the cause; over-correction can follow recovery from adrenal crisis",
+        "normalValue": "TSH 0.4–4.0 mU/L; morning cortisol typically above 400 nmol/L excludes adrenal insufficiency",
+        "references": [
+          {
+            "title": "Emergency management of severe and moderately severely symptomatic hyponatraemia in adult patients",
+            "edition": "Society for Endocrinology (Ball, Barth, Levy), 2022 (date not printed; builds on 2016 guidance); section Over-correction",
+            "url": "https://www.endocrinology.org/media/xhrhxhxm/emergency-management-of-severe-and-moderately-severely-symptomatic-hyponatraemia-in-adult-patients-2022.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Senior review",
+        "modalityTarget": "Imaging and specialist",
+        "targetCondition": "Hyponatraemia",
+        "expectedFinding": "Severe or moderately severe symptoms",
+        "clinicalRationale": "Treatment is supervised by a senior clinician in a setting able to monitor and escalate",
+        "normalValue": "Not needed",
+        "references": [
+          {
+            "title": "Emergency management of severe and moderately severely symptomatic hyponatraemia in adult patients",
+            "edition": "Society for Endocrinology (Ball, Barth, Levy), 2022 (date not printed; builds on 2016 guidance); Gen. Rec. 4 and 6",
+            "url": "https://www.endocrinology.org/media/xhrhxhxm/emergency-management-of-severe-and-moderately-severely-symptomatic-hyponatraemia-in-adult-patients-2022.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "immediate",
+      "title": "Immediate",
+      "timeframe": "0–15 minutes",
+      "actions": [
+        "Assess symptoms and airway, breathing, circulation and consciousness.",
+        "Severe symptoms: give an intravenous bolus of hypertonic saline without waiting for the cause.",
+        "Moderately severe symptoms: senior review; hypertonic saline is for severe symptoms and moderately severe cases per the 2022 guidance.",
+        "Aim for an initial rise of 5 mmol/L in the first hour.",
+        "Do not use vaptans or the Adrogue–Madias formula."
+      ]
+    },
+    {
+      "id": "ongoing",
+      "title": "Ongoing",
+      "timeframe": "15–60 minutes",
+      "actions": [
+        "If no improvement after the first rise, give one more bolus aiming for a further 1 mmol/L rise.",
+        "Check sodium at 6 hours, 12 hours and then daily until stable.",
+        "Monitor urine output; a rise can signal rapid correction."
+      ]
+    },
+    {
+      "id": "escalation",
+      "title": "Escalation",
+      "timeframe": "Escalation",
+      "actions": [
+        "Over-correction (more than 10 mmol/L in 24 hours, or 8 mmol/L per 24 hours after that): stop hypertonic fluid and consult an experienced clinician.",
+        "Options for over-correction include hypotonic fluid to limit the rise or re-lower sodium, with or without parenteral desmopressin; the 2022 guidance gives no dose.",
+        "Royal Devon uses 5% dextrose at 125 mL/hour if the rise exceeds 10 mmol/24 hours."
+      ]
+    },
+    {
+      "id": "disposition",
+      "title": "Disposition",
+      "timeframe": "Disposition",
+      "actions": [
+        "Admit to a monitored setting with senior supervision."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "regimens": [
+      {
+        "indication": "Reverse brain swelling",
+        "patientGroup": "Adults with severe symptoms",
+        "genericName": "Hypertonic saline 3%",
+        "dose": "150 mL of 3% sodium chloride (hypertonic saline; ready-made bag, volume drawn as the 150 mL bolus)",
+        "route": "IV infusion by infusion pump over 20 minutes, with cardiac monitoring, heart rate, blood pressure, respiratory rate, oxygen saturation, neurological observations and strict fluid balance during the infusion (Royal Hospital for Women procedure)",
+        "frequency": "Once; if no improvement after a 5 mmol/L rise give one more bolus aiming for a further 1 mmol/L rise; repeat up to 3 infusions in total in a monitored setting",
+        "duration": "Stop at symptom improvement, a 10 mmol/L rise or sodium of 130 mmol/L, whichever is first",
+        "adjustments": [
+          "Severe renal impairment: give with particular caution (sodium retention)",
+          "liver disease or cirrhosis: caution (sodium retention)",
+          "age 65 and over: start at the low end of the dose range"
+        ],
+        "monitoring": [
+          "Sodium every 2–4 hours during the infusion (Royal Hospital for Women) and at 6 hours, 12 hours and daily (Society for Endocrinology)",
+          "urine output",
+          "stop at symptom improvement or the target rise"
+        ],
+        "contraindications": [
+          "Over-correction and osmotic demyelination",
+          "avoid continuous 24-hour infusion",
+          "give in a monitored setting, not on a general ward"
+        ],
+        "branch": "Severe symptoms",
+        "step": "1. Hypertonic bolus",
+        "selection": "all",
+        "useWhen": "Severe symptoms",
+        "sourceTitle": "Emergency management of severe and moderately severely symptomatic hyponatraemia in adult patients",
+        "sourceUrl": "https://www.endocrinology.org/media/xhrhxhxm/emergency-management-of-severe-and-moderately-severely-symptomatic-hyponatraemia-in-adult-patients-2022.pdf",
+        "sourceEdition": "Society for Endocrinology (Ball, Barth, Levy), 2022 (date not printed; builds on 2016 guidance); Figures 1 and 2; Rec. 1a–1e; p. 3; section Dosage and Administration / special populations"
+      },
+      {
+        "indication": "Prevent osmotic demyelination",
+        "patientGroup": "Adults",
+        "genericName": "Sodium target",
+        "dose": "No more than 10 mmol/L in the first 24 hours; then no more than 8 mmol/L per 24 hours until 130 mmol/L",
+        "route": "–",
+        "frequency": "–",
+        "duration": "Until sodium is 130 mmol/L",
+        "adjustments": [
+          "–"
+        ],
+        "monitoring": [
+          "Sodium"
+        ],
+        "contraindications": [
+          "Stop hypertonic fluid if limits are exceeded"
+        ],
+        "branch": "Severe symptoms",
+        "step": "2. Limit the rise",
+        "selection": "all",
+        "useWhen": "Always",
+        "sourceTitle": "Emergency management of severe and moderately severely symptomatic hyponatraemia in adult patients",
+        "sourceUrl": "https://www.endocrinology.org/media/xhrhxhxm/emergency-management-of-severe-and-moderately-severely-symptomatic-hyponatraemia-in-adult-patients-2022.pdf",
+        "sourceEdition": "Society for Endocrinology (Ball, Barth, Levy), 2022 (date not printed; builds on 2016 guidance); Rec. 1b; Figure 1"
+      },
+      {
+        "indication": "Limit over-treatment and osmotic demyelination",
+        "patientGroup": "Adults whose sodium rose above 10 mmol/24 hours",
+        "genericName": "Dextrose 5%",
+        "dose": "125 mL/hour",
+        "route": "IV infusion",
+        "frequency": "Continuous; stop when sodium reaches 130 mmol/L, has risen by 10 mmol/L, or symptoms resolve (same stop point as the 3% saline step, derived)",
+        "duration": "Until the stop point is reached; reassess at each 2–4 hourly sodium",
+        "adjustments": [
+          "Renal failure: close monitoring during glucose infusion",
+          "liver disease: higher risk of acute hyponatraemia with hypotonic fluids",
+          "elderly: response varies with age"
+        ],
+        "monitoring": [
+          "Sodium, urine output"
+        ],
+        "contraindications": [
+          "Specialist advice",
+          "this is a single Royal Devon pathway instruction"
+        ],
+        "branch": "Over-correction",
+        "step": "1. Hypotonic fluid",
+        "selection": "all",
+        "useWhen": "Over-correction",
+        "sourceTitle": "Emergency management of severe hyponatraemia pathway",
+        "sourceUrl": "https://www.royaldevon.nhs.uk/media/sxidezst/emergency-mmnagement-ofsevere-hyponatraemia-pathway_final301123_redacted.pdf",
+        "sourceEdition": "Royal Devon University Healthcare NHS Foundation Trust, Acute Medicine (Eastern), governance approval 28.11.23; p. 2; section Dosage and Administration / special populations"
+      }
+    ],
+    "branches": [
+      {
+        "label": "Severe symptoms",
+        "entryCriteria": "Vomiting, seizures, Glasgow Coma Scale 8 or less, or arrest with sodium below 130 mmol/L"
+      },
+      {
+        "label": "Over-correction",
+        "entryCriteria": "Sodium rise above 10 mmol/L in 24 hours, or above 8 mmol/L per 24 hours after the first day"
+      }
+    ],
+    "note": "Doses came from an external drafting tool and must be verified against the cited sources, Saudi Food and Drug Authority (SFDA) registration and the local hospital protocol before prescribing. Check hospital formulary."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Mild",
+      "threshold": "Sodium 130–135 mmol/L"
+    },
+    {
+      "criterion": "Moderate",
+      "threshold": "Sodium 125–129 mmol/L"
+    },
+    {
+      "criterion": "Profound",
+      "threshold": "Sodium below 125 mmol/L"
+    },
+    {
+      "criterion": "Severe symptoms",
+      "threshold": "Vomiting, seizures, coma, arrest"
+    },
+    {
+      "criterion": "Moderately severe symptoms",
+      "threshold": "Nausea, confusion, headache"
+    }
+  ],
+  "guidelineComparison": {
+    "title": "Guideline comparison",
+    "columns": [
+      "Society for Endocrinology 2022",
+      "Royal Devon acute medicine pathway",
+      "Royal Hospital for Women procedure 2021"
+    ],
+    "rows": [
+      {
+        "parameter": "Severe symptoms",
+        "values": [
+          "Vomiting, seizures, Glasgow Coma Scale 8 or less, arrest",
+          "Vomiting, seizures, Glasgow Coma Scale 8 or less, arrest with sodium below 130 mmol/L",
+          "Severe symptomatic hyponatraemia"
+        ]
+      },
+      {
+        "parameter": "Hypertonic saline",
+        "values": [
+          "150 mL of 3% over 20 minutes",
+          "150 mL of 2.7% over 20 minutes",
+          "150 mL of 3% over 20 minutes by pump; up to 3 infusions in intensive care unit (ICU)"
+        ]
+      },
+      {
+        "parameter": "Target rise",
+        "values": [
+          "5 mmol/L in the first hour",
+          "5 mmol/L in the first hour",
+          "4–6 mmol/L acutely"
+        ]
+      },
+      {
+        "parameter": "Maximum rise",
+        "values": [
+          "10 mmol/L in 24 hours, then 8 mmol/L per 24 hours",
+          "Intervene if above 10 mmol/24 hours",
+          "8–10 mmol/L in 24 hours, then 4–8 mmol/24 hours"
+        ]
+      },
+      {
+        "parameter": "Monitoring",
+        "values": [
+          "Sodium at 6 and 12 hours, then daily",
+          "Serum sodium at least every 6 hours for 24 hours",
+          "Sodium every 2–4 hours during infusion; electrolytes twice daily"
+        ]
+      },
+      {
+        "parameter": "Over-correction",
+        "values": [
+          "Hypotonic fluid or re-lowering with or without desmopressin; no dose",
+          "5% dextrose at 125 mL/hour",
+          "Not stated; fluid restriction 500–800 mL/24 hours"
+        ]
+      }
+    ]
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Grade hyponatraemia by symptoms and biochemistry.",
+      "Give a hypertonic bolus safely and recognise over-correction."
+    ],
+    "pitfalls": [
+      "Using continuous hypertonic infusion instead of boluses.",
+      "Using vaptans or the Adrogue–Madias formula.",
+      "Missing over-correction after recovery from adrenal crisis."
+    ],
+    "keyPoints": [
+      "Treat severe symptoms with a 150 mL bolus of 3% saline over 20 minutes.",
+      "Never exceed 10 mmol/L rise in 24 hours."
+    ],
+    "references": [
+      {
+        "title": "Emergency management of severe and moderately severely symptomatic hyponatraemia in adult patients",
+        "edition": "Society for Endocrinology (Ball, Barth, Levy), 2022 (date not printed; builds on 2016 guidance)",
+        "url": "https://www.endocrinology.org/media/xhrhxhxm/emergency-management-of-severe-and-moderately-severely-symptomatic-hyponatraemia-in-adult-patients-2022.pdf",
+        "locator": "Recognition; Treatment Rec. 1–3; Over-correction Rec. 1–3; Figures 1–2; General Rec. 4–6"
+      },
+      {
+        "title": "Emergency management of severe hyponatraemia pathway",
+        "edition": "Royal Devon University Healthcare NHS Foundation Trust, Acute Medicine (Eastern), governance approval 28.11.23",
+        "url": "https://www.royaldevon.nhs.uk/media/sxidezst/emergency-mmnagement-ofsevere-hyponatraemia-pathway_final301123_redacted.pdf",
+        "locator": "p. 2–3"
+      },
+      {
+        "title": "Hyponatremia (Adult): Management including Hypertonic Saline, Administration and Precautions (Local Operating Procedure)",
+        "edition": "Royal Hospital for Women (South Eastern Sydney Local Health District), approved November 2021, review due November 2023",
+        "url": "https://www.seslhd.health.nsw.gov.au/sites/default/files/documents/Hyponatremiaadultmanageadminnov2021.pdf",
+        "locator": "p. 3 and p. 5"
+      },
+      {
+        "title": "3% Sodium Chloride Injection, USP (prescribing information)",
+        "edition": "Becton Dickinson and Company, undated",
+        "url": "https://medlibrary.org/lib/rx/meds/3-sodium-chloride/",
+        "locator": "Precautions"
+      },
+      {
+        "title": "5% Glucose intravenous infusion solution (Summary of Product Characteristics)",
+        "edition": "Aguettant Ltd, text revised 3 April 2026",
+        "url": "https://www.medicines.org.uk/emc/product/13132/smpc/print",
+        "locator": "sections 4.2, 4.4"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Avoid excess water intake; report new confusion, vomiting or seizure."
+    ],
+    "lifestyleAndDiet": [
+      "Fluid and diet advice according to the cause."
+    ],
+    "mdtReferrals": [
+      "Endocrinology or nephrology for persistent or unexplained cases; critical care for coma or arrest."
+    ],
+    "dischargeCriteria": [
+      "Sodium at or above 130 mmol/L and rising safely, symptoms resolved and cause treated."
+    ],
+    "followUpPlan": "Repeat sodium within days; cause-specific review (medicines, endocrine, renal)."
+  }
+}
