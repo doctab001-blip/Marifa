@@ -10,7 +10,7 @@
     "pillar": "Urgent Care",
     "clinicalReviewStatus": "pending",
     "pathophysiology": {
-      "summary": "Systemic infection by Salmonella enterica serovar Typhi or Paratyphi A, acquired by faecal-oral transmission through contaminated water or food. Organisms cross the small-bowel mucosa, multiply in Peyer's patches and the reticuloendothelial system, and seed the bloodstream, liver, spleen, bone marrow and gallbladder. Fluoroquinolone resistance in India is high (ICMR 2019 reports up to 69% for S. Typhi and 23% for S. Paratyphi A), so empirical ciprofloxacin is no longer reliable.",
+      "summary": "Enteric fever is a systemic infection caused by Salmonella enterica serovar Typhi or serovar Paratyphi A. Humans are the only reservoir, and infection follows faecal-oral transmission through water or food contaminated by an acutely ill person or a chronic carrier. After ingestion, organisms that survive gastric acid reach the distal small bowel, cross the mucosa through M cells overlying Peyer's patches and are taken up by macrophages. Inside these cells they survive and multiply, travelling through mesenteric lymph nodes to the liver, spleen and bone marrow. A primary bacteraemia seeds the reticuloendothelial system; a secondary, sustained bacteraemia follows after an incubation period of about one to three weeks and coincides with the onset of symptoms. Cytokine release drives the gradually rising fever, malaise, headache, abdominal discomfort and the relative bradycardia seen in some patients. Hepatosplenomegaly reflects reticuloendothelial involvement, and mild transaminase rises, leucopenia and thrombocytopenia are common. In the second and third weeks, hyperplasia and necrosis of Peyer's patches can ulcerate through the bowel wall, causing intestinal bleeding or perforation, which are the main surgical emergencies. Other complications include encephalopathy, myocarditis, hepatitis, acute kidney injury and shock. Organisms can persist in the gallbladder, particularly when gallstones are present, producing chronic carriers who shed bacteria in stool and sustain community transmission. Antimicrobial resistance shapes management in India: ICMR 2019 reports quinolone resistance as high as 69% for S. Typhi and 23% for S. Paratyphi A, and ceftriaxone-resistant and extensively drug-resistant strains have been reported in South Asia. For these reasons blood cultures are taken before antibiotics, empirical fluoroquinolones are avoided, and treatment is de-escalated according to susceptibility results within a capped total course.",
       "keyMechanisms": [
         "Invasion through M cells overlying Peyer's patches, with intracellular survival inside macrophages that carry bacteria to mesenteric nodes, liver, spleen and bone marrow.",
         "Sustained bacteraemia and cytokine release cause the step-ladder fever, malaise, relative bradycardia and hepatosplenomegaly.",
@@ -45,6 +45,12 @@
         "Jaundice or rising bilirubin (typhoid hepatitis), or acute kidney injury",
         "No clinical response after 5 days of appropriate therapy: look for a complication or a resistant isolate",
         "Culture reports ceftriaxone-resistant or extensively drug-resistant (XDR) Salmonella: WHO AWaRe Watch/Reserve escalation needs infectious diseases approval"
+      ],
+      "precipitants": [
+        "Drinking untreated water or eating food prepared by an infected person or carrier",
+        "Travel to or residence in endemic areas, especially during the monsoon",
+        "Household contact with a recent case",
+        "Gallstones (chronic carriage in a contact)"
       ]
     },
     "differentials": [
@@ -85,7 +91,15 @@
           "modalityTarget": "Blood culture and antimicrobial susceptibility testing for Salmonella Typhi / Paratyphi A",
           "targetCondition": "Enteric fever",
           "expectedFinding": "Growth of S. Typhi or S. Paratyphi A, with a susceptibility profile covering ceftriaxone, azithromycin, ciprofloxacin, co-trimoxazole, chloramphenicol and, where relevant, meropenem",
-          "clinicalRationale": "The reference test, most sensitive in the first week. ICMR 2019 requires two sets before empirical therapy. The susceptibility result drives step-down and de-escalation, which is the core AMR safeguard."
+          "clinicalRationale": "The reference test, most sensitive in the first week. ICMR 2019 requires two sets before empirical therapy. The susceptibility result drives step-down and de-escalation, which is the core AMR safeguard.",
+          "normalValue": "No growth after full incubation (typically 5 days)",
+          "references": [
+            {
+              "title": "ICMR Treatment Guidelines for Antimicrobial Use in Common Syndromes",
+              "edition": "ICMR 2019, p. 7 (two blood cultures before antibiotics); IAP 2022 section Diagnosis",
+              "url": "https://www.icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/Treatment_Guidelines_2019_Final.pdf"
+            }
+          ]
         },
         {
           "tier": "laboratory",
@@ -93,7 +107,15 @@
           "modalityTarget": "Bone marrow aspirate culture for Salmonella Typhi / Paratyphi A",
           "targetCondition": "Enteric fever with negative blood cultures or prior antibiotics",
           "expectedFinding": "Growth of S. Typhi or S. Paratyphi A",
-          "clinicalRationale": "Higher yield than blood culture and less affected by prior antibiotics. Reserve it for prolonged pyrexia of unknown origin where the result changes management."
+          "clinicalRationale": "Higher yield than blood culture and less affected by prior antibiotics. Reserve it for prolonged pyrexia of unknown origin where the result changes management.",
+          "normalValue": "No growth after full incubation",
+          "references": [
+            {
+              "title": "IAP Standard Treatment Guidelines: Enteric Fever",
+              "edition": "IAP 2022, section Diagnosis (culture and sensitivity)",
+              "url": "https://iapindia.org/pdf/Ch-008-Enteric-Fever.pdf"
+            }
+          ]
         },
         {
           "tier": "laboratory",
@@ -101,7 +123,15 @@
           "modalityTarget": "Haematology and biochemistry supportive of enteric fever",
           "targetCondition": "Enteric fever (supportive only)",
           "expectedFinding": "Normal or low white cell count with relative eosinopenia. Mild thrombocytopenia. Moderately raised transaminases.",
-          "clinicalRationale": "Supportive pattern only, not diagnostic. Also the baseline for monitoring complications such as hepatitis and marrow suppression."
+          "clinicalRationale": "Supportive pattern only, not diagnostic. Also the baseline for monitoring complications such as hepatitis and marrow suppression.",
+          "normalValue": "Adult: white cells 4.0–11.0 × 10⁹/L; platelets 150–400 × 10⁹/L; ALT below about 40 IU/L (local laboratory ranges apply)",
+          "references": [
+            {
+              "title": "ICMR Treatment Guidelines for Antimicrobial Use in Common Syndromes",
+              "edition": "ICMR 2019, section Enteric fever, p. 7",
+              "url": "https://www.icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/Treatment_Guidelines_2019_Final.pdf"
+            }
+          ]
         }
       ],
       "ruleOut": [
@@ -111,7 +141,15 @@
           "modalityTarget": "Peripheral smear or Pf/Pv RDT for Plasmodium",
           "targetCondition": "Malaria",
           "expectedFinding": "Negative smear/RDT supports a non-malarial cause; positive result redirects to the malaria pathway",
-          "clinicalRationale": "Mandatory for every febrile patient in endemic India before antibacterial therapy is committed."
+          "clinicalRationale": "Mandatory for every febrile patient in endemic India before antibacterial therapy is committed.",
+          "normalValue": "No malaria parasites seen; RDT negative",
+          "references": [
+            {
+              "title": "National Drug Policy on Malaria",
+              "edition": "NDP 2013, section Diagnosis",
+              "url": "https://ncvbdc.mohfw.gov.in/WriteReadData/l892s/National-Drug-Policy-2013.pdf"
+            }
+          ]
         },
         {
           "tier": "laboratory",
@@ -119,7 +157,15 @@
           "modalityTarget": "Dengue serology",
           "targetCondition": "Dengue fever",
           "expectedFinding": "Negative supports an alternative diagnosis",
-          "clinicalRationale": "Dengue is co-endemic and needs a different fluid-led pathway with no antibiotic."
+          "clinicalRationale": "Dengue is co-endemic and needs a different fluid-led pathway with no antibiotic.",
+          "normalValue": "NS1 and IgM negative",
+          "references": [
+            {
+              "title": "ICMR Treatment Guidelines for Antimicrobial Use in Common Syndromes",
+              "edition": "ICMR 2019, section Acute febrile illness, p. 7",
+              "url": "https://www.icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/Treatment_Guidelines_2019_Final.pdf"
+            }
+          ]
         },
         {
           "tier": "laboratory",
@@ -127,7 +173,15 @@
           "modalityTarget": "Orientia tsutsugamushi serology",
           "targetCondition": "Scrub typhus",
           "expectedFinding": "Negative IgM in the right clinical window helps exclude scrub typhus",
-          "clinicalRationale": "Scrub typhus needs doxycycline (Access), not ceftriaxone. Missing it delays effective therapy and adds Watch-group exposure."
+          "clinicalRationale": "Scrub typhus needs doxycycline (Access), not ceftriaxone. Missing it delays effective therapy and adds Watch-group exposure.",
+          "normalValue": "Optical density below the laboratory-validated regional cut-off",
+          "references": [
+            {
+              "title": "ICMR Treatment Guidelines for Antimicrobial Use in Common Syndromes",
+              "edition": "ICMR 2019, section Scrub typhus, pp. 25–27",
+              "url": "https://www.icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/Treatment_Guidelines_2019_Final.pdf"
+            }
+          ]
         },
         {
           "tier": "firstLineImaging",
@@ -135,7 +189,15 @@
           "modalityTarget": "Imaging for perforation, abscess or alternative focus",
           "targetCondition": "Typhoid intestinal perforation, liver abscess or abdominal tuberculosis",
           "expectedFinding": "Free subdiaphragmatic gas indicates perforation. Ultrasound may show liver abscess, ascites or lymph nodes pointing to another diagnosis.",
-          "clinicalRationale": "Use urgently when abdominal red flags are present. Perforation is a surgical emergency."
+          "clinicalRationale": "Use urgently when abdominal red flags are present. Perforation is a surgical emergency.",
+          "normalValue": "No free subdiaphragmatic gas; no focal liver lesion, ascites or abdominal lymph nodes",
+          "references": [
+            {
+              "title": "IAP Standard Treatment Guidelines: Enteric Fever",
+              "edition": "IAP 2022, section Complications",
+              "url": "https://iapindia.org/pdf/Ch-008-Enteric-Fever.pdf"
+            }
+          ]
         },
         {
           "tier": "laboratory",
@@ -143,7 +205,15 @@
           "modalityTarget": "Salmonella agglutinin serology",
           "targetCondition": "Enteric fever (overcalled by single Widal)",
           "expectedFinding": "A single raised titre is non-specific in endemic India. A negative result does not exclude enteric fever.",
-          "clinicalRationale": "Listed so clinicians do not use it: a single Widal neither rules in nor rules out enteric fever, and it drives unnecessary antibiotic use. Do not start or stop antibiotics on Widal alone."
+          "clinicalRationale": "Listed so clinicians do not use it: a single Widal neither rules in nor rules out enteric fever, and it drives unnecessary antibiotic use. Do not start or stop antibiotics on Widal alone.",
+          "normalValue": "Titres below the laboratory's endemic-area cut-off; a single result is not diagnostic",
+          "references": [
+            {
+              "title": "IAP Standard Treatment Guidelines: Enteric Fever",
+              "edition": "IAP 2022, section Diagnosis",
+              "url": "https://iapindia.org/pdf/Ch-008-Enteric-Fever.pdf"
+            }
+          ]
         }
       ]
     },
@@ -170,7 +240,7 @@
           {
             "condition": "Shock, encephalopathy or major GI bleeding",
             "actions": [
-              "Resuscitate and escalate to HDU/ICU.",
+              "Resuscitate and escalate to high-dependency unit (HDU) or intensive care unit (ICU).",
               "Start IV ceftriaxone after cultures. For gastrointestinal bleeding, cross-match blood and get a surgical/GI review."
             ]
           }
@@ -331,7 +401,7 @@
           "selection": "one-of",
           "sourceTitle": "ICMR Treatment Guidelines for Antimicrobial Use in Common Syndromes",
           "sourceUrl": "https://www.icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/Treatment_Guidelines_2019_Final.pdf",
-          "sourceEdition": "ICMR 2019",
+          "sourceEdition": "ICMR 2019, Table 2.2 (p. 11) and Table 2.7 (p. 27)",
           "preferred": true
         },
         {
@@ -394,7 +464,7 @@
           "selection": "one-of",
           "sourceTitle": "ICMR Treatment Guidelines for Antimicrobial Use in Common Syndromes",
           "sourceUrl": "https://www.icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/Treatment_Guidelines_2019_Final.pdf",
-          "sourceEdition": "ICMR 2019",
+          "sourceEdition": "ICMR 2019, Table 2.2 (p. 11) and Table 2.7 (p. 27)",
           "preferred": true
         },
         {
@@ -507,6 +577,65 @@
         }
       ],
       "note": "Every regimen carries four standard lines in adjustments: Paediatric, Penicillin allergy, CKD and CLD. Not clinically reviewed. Items marked 'not opened this session' come from product labels and must be confirmed before clinical use."
+    },
+    "diagnosticCriteria": [
+      {
+        "criterion": "Confirmed enteric fever",
+        "threshold": "S. Typhi or S. Paratyphi A isolated from blood or bone marrow culture (IAP 2022, section Diagnosis)."
+      },
+      {
+        "criterion": "Clinical failure",
+        "threshold": "No defervescence, toxic child and rising fever after 7 days of optimal treatment (IAP 2022)."
+      }
+    ],
+    "teaching": {
+      "scope": "Children and adults with suspected enteric fever in India.",
+      "learningObjectives": [
+        "Take blood cultures before the first antibiotic dose.",
+        "Choose empirical therapy by severity without using fluoroquinolones.",
+        "De-escalate to the narrowest agent using culture results and respect the hard stop date."
+      ],
+      "keyPoints": [
+        "Blood culture, not Widal, is the diagnostic test.",
+        "Fluoroquinolone resistance in S. Typhi is high in India (ICMR 2019).",
+        "Defervescence on ceftriaxone is slow; persistent early fever is not a reason to escalate."
+      ],
+      "pitfalls": [
+        "Starting or stopping antibiotics on a single Widal result.",
+        "Escalating to a carbapenem without culture evidence.",
+        "Missing intestinal perforation in the second to third week."
+      ],
+      "references": [
+        {
+          "title": "ICMR Treatment Guidelines for Antimicrobial Use in Common Syndromes",
+          "edition": "ICMR 2019",
+          "url": "https://www.icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/Treatment_Guidelines_2019_Final.pdf",
+          "locator": "Section Enteric fever, pp. 7–11"
+        },
+        {
+          "title": "IAP Standard Treatment Guidelines: Enteric Fever",
+          "edition": "IAP 2022",
+          "url": "https://iapindia.org/pdf/Ch-008-Enteric-Fever.pdf",
+          "locator": "Tables 1–2 and section Duration"
+        }
+      ]
+    },
+    "evidenceAudit": {
+      "checkedOn": "2026-10-21",
+      "status": "incomplete",
+      "scope": "Enteric Fever (Typhoid and Paratyphoid): Diagnosis, Culture-Directed Treatment and Complications (India): Indian regional module record built from ICMR/MoHFW/NTEP/IAP sources opened on 2026-10-21.",
+      "findings": [
+        "Doses, durations and thresholds were checked against the opened source sections cited on each line.",
+        "Not clinically reviewed; for demonstration and governance review only."
+      ],
+      "unverifiedSections": [
+        "Adult cefixime, aztreonam and meropenem doses are from product labels not re-opened in this task.",
+        "ICMR 2019 gives a 10–14-day total course; the 7-day azithromycin course is IAP 2022 (paediatric)."
+      ],
+      "medscapeStatus": "unavailable",
+      "originalVersionIds": [
+        "3f6c2a91-7d4e-4b8a-9c15-e2a7b04d6f13"
+      ]
     }
   },
   {
@@ -520,7 +649,7 @@
     "pillar": "Urgent Care",
     "clinicalReviewStatus": "pending",
     "pathophysiology": {
-      "summary": "Protozoal infection transmitted by female Anopheles mosquitoes. In India, Plasmodium falciparum and P. vivax cause almost all cases. Sporozoites mature in the liver, then merozoites invade red cells and cause cyclical haemolysis and fever. P. falciparum causes severe disease through cytoadherence and microvascular sequestration. P. vivax forms dormant liver hypnozoites that cause relapse. ICMR 2019 reports P. falciparum chloroquine resistance of at least 25% nationally, so artemisinin-based combination therapy (ACT) is first-line for falciparum.",
+      "summary": "Malaria is a protozoal infection transmitted by the bite of infected female Anopheles mosquitoes. In India almost all infections are caused by Plasmodium falciparum and Plasmodium vivax, with mixed infections also reported. Sporozoites injected by the mosquito travel to the liver, where they mature into schizonts over about one to two weeks before releasing merozoites into the bloodstream. Merozoites invade red cells and multiply; synchronous rupture of infected cells releases parasite products and triggers cytokine release, producing paroxysmal fever with chills, rigors, headache and myalgia, and causing haemolytic anaemia and splenomegaly. P. falciparum causes most severe disease. Infected red cells express adhesion proteins such as PfEMP1 and bind to the endothelium of the brain, kidney, lung, gut and placenta, where sequestration obstructs microvascular flow. This contributes to cerebral malaria with impaired consciousness and seizures, acute kidney injury, pulmonary oedema and acute respiratory distress syndrome, lactic acidosis and shock. Hypoglycaemia results from parasite glucose consumption, impaired hepatic gluconeogenesis and quinine-induced insulin release, and it is especially common in pregnancy and in children. P. vivax forms dormant liver hypnozoites that reactivate weeks to months later and cause relapse, so radical cure needs a 14-day primaquine course; primaquine causes oxidative haemolysis in people with G6PD deficiency. Drug resistance has shaped Indian policy: P. falciparum chloroquine resistance is at least 25% nationally (ICMR 2019), so artemisinin-based combination therapy is first-line, with artemether-lumefantrine in the north-eastern states. Presumptive treatment and artemisinin monotherapy select further resistance, which is why every case is confirmed by microscopy or rapid diagnostic test before treatment.",
       "keyMechanisms": [
         "Synchronous rupture of infected red cells releases pyrogens, causing paroxysmal fever with rigors and haemolytic anaemia.",
         "P. falciparum-infected cells express PfEMP1 and adhere to endothelium in brain, kidney, lung and placenta. This causes microvascular obstruction, cerebral malaria, acute kidney injury, ARDS and lactic acidosis.",
@@ -556,6 +685,12 @@
         "Hyperparasitaemia on smear",
         "Malaria in pregnancy: refer to hospital without delay (National Drug Policy on Malaria 2013)",
         "Haematuria, dark urine or cyanosis on primaquine: stop primaquine immediately (G6PD-related haemolysis)"
+      ],
+      "precipitants": [
+        "Residence in or travel to an endemic district, especially during and after the monsoon",
+        "Sleeping without a long-lasting insecticidal net",
+        "Pregnancy (higher risk of severe falciparum malaria)",
+        "Incomplete previous treatment (relapse or recrudescence)"
       ]
     },
     "differentials": [
@@ -592,7 +727,15 @@
           "modalityTarget": "Giemsa-stained microscopy for Plasmodium species and parasite density",
           "targetCondition": "Malaria (species and parasitaemia)",
           "expectedFinding": "Asexual Plasmodium forms. Species identified (P. falciparum, P. vivax or mixed) and parasite density quantified.",
-          "clinicalRationale": "National Drug Policy 2013 requires confirmation by microscopy or RDT in every suspected case. Microscopy is used where results are available within 24 hours. Parasite density guides severity assessment and response monitoring."
+          "clinicalRationale": "National Drug Policy 2013 requires confirmation by microscopy or RDT in every suspected case. Microscopy is used where results are available within 24 hours. Parasite density guides severity assessment and response monitoring.",
+          "normalValue": "No asexual parasites seen on thick and thin films",
+          "references": [
+            {
+              "title": "National Drug Policy on Malaria",
+              "edition": "NDP 2013, section Diagnosis",
+              "url": "https://ncvbdc.mohfw.gov.in/WriteReadData/l892s/National-Drug-Policy-2013.pdf"
+            }
+          ]
         },
         {
           "tier": "laboratory",
@@ -600,7 +743,15 @@
           "modalityTarget": "Antigen detection (HRP2 / pLDH) for P. falciparum and P. vivax",
           "targetCondition": "Malaria",
           "expectedFinding": "Positive Pf and/or Pv line",
-          "clinicalRationale": "Used where microscopy is not available within 24 hours (NDP 2013) and by frontline workers (ASHAs) in high-burden areas. Enables test-before-treat and avoids presumptive treatment."
+          "clinicalRationale": "Used where microscopy is not available within 24 hours (NDP 2013) and by frontline workers (ASHAs) in high-burden areas. Enables test-before-treat and avoids presumptive treatment.",
+          "normalValue": "Control line only (Pf and Pv lines negative)",
+          "references": [
+            {
+              "title": "National Drug Policy on Malaria",
+              "edition": "NDP 2013, section Diagnosis",
+              "url": "https://ncvbdc.mohfw.gov.in/WriteReadData/l892s/National-Drug-Policy-2013.pdf"
+            }
+          ]
         },
         {
           "tier": "laboratory",
@@ -608,7 +759,15 @@
           "modalityTarget": "Biochemistry and haematology for WHO severe malaria criteria",
           "targetCondition": "Severe malaria",
           "expectedFinding": "Hypoglycaemia, severe anaemia, raised creatinine, raised bilirubin or acidosis/raised lactate meet severe criteria",
-          "clinicalRationale": "Any severe criterion moves the patient to the parenteral artesunate branch. Repeat glucose frequently, especially in pregnancy and with quinine."
+          "clinicalRationale": "Any severe criterion moves the patient to the parenteral artesunate branch. Repeat glucose frequently, especially in pregnancy and with quinine.",
+          "normalValue": "Adult: glucose 3.9–7.8 mmol/L (random); haemoglobin 120–170 g/L; creatinine 60–110 µmol/L; bilirubin below 21 µmol/L; lactate below 2 mmol/L (local laboratory ranges apply)",
+          "references": [
+            {
+              "title": "ICMR Treatment Guidelines for Antimicrobial Use in Common Syndromes",
+              "edition": "ICMR 2019, section Severe malaria, p. 16",
+              "url": "https://www.icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/Treatment_Guidelines_2019_Final.pdf"
+            }
+          ]
         }
       ],
       "ruleOut": [
@@ -618,7 +777,15 @@
           "modalityTarget": "G6PD enzyme activity before primaquine",
           "targetCondition": "G6PD deficiency (primaquine haemolysis risk)",
           "expectedFinding": "Normal activity permits the 14-day primaquine course; deficiency requires withholding or specialist-modified primaquine",
-          "clinicalRationale": "Primaquine is contraindicated in G6PD deficiency, pregnancy and infancy (NDP 2013). Test where available before the 14-day radical-cure course."
+          "clinicalRationale": "Primaquine is contraindicated in G6PD deficiency, pregnancy and infancy (NDP 2013). Test where available before the 14-day radical-cure course.",
+          "normalValue": "Normal G6PD activity (qualitative test: normal; quantitative: above 30% of normal activity)",
+          "references": [
+            {
+              "title": "National Drug Policy on Malaria",
+              "edition": "NDP 2013, section Treatment of P. vivax, p. 4",
+              "url": "https://ncvbdc.mohfw.gov.in/WriteReadData/l892s/National-Drug-Policy-2013.pdf"
+            }
+          ]
         },
         {
           "tier": "laboratory",
@@ -626,7 +793,15 @@
           "modalityTarget": "Blood culture for concurrent bacteraemia",
           "targetCondition": "Bacterial co-infection or sepsis",
           "expectedFinding": "No growth supports stopping any empirical antibiotic",
-          "clinicalRationale": "Algid malaria and bacteraemia overlap. Culture first so any empirical WHO AWaRe Watch antibiotic can be stopped at 48 hours if negative."
+          "clinicalRationale": "Algid malaria and bacteraemia overlap. Culture first so any empirical WHO AWaRe Watch antibiotic can be stopped at 48 hours if negative.",
+          "normalValue": "No growth after full incubation",
+          "references": [
+            {
+              "title": "ICMR Treatment Guidelines for Antimicrobial Use in Common Syndromes",
+              "edition": "ICMR 2019, section Principles, p. 3 (culture-guided de-escalation)",
+              "url": "https://www.icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/Treatment_Guidelines_2019_Final.pdf"
+            }
+          ]
         },
         {
           "tier": "laboratory",
@@ -634,7 +809,15 @@
           "modalityTarget": "Serology for co-endemic febrile illnesses",
           "targetCondition": "Dengue, scrub typhus or co-infection",
           "expectedFinding": "Negative supports malaria as the sole cause",
-          "clinicalRationale": "Co-infections occur in India. Persistent fever after a parasitological response should prompt these tests."
+          "clinicalRationale": "Co-infections occur in India. Persistent fever after a parasitological response should prompt these tests.",
+          "normalValue": "NS1 and IgM negative; scrub typhus IgM below the laboratory cut-off",
+          "references": [
+            {
+              "title": "ICMR Treatment Guidelines for Antimicrobial Use in Common Syndromes",
+              "edition": "ICMR 2019, section Acute febrile illness, p. 7",
+              "url": "https://www.icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/Treatment_Guidelines_2019_Final.pdf"
+            }
+          ]
         },
         {
           "tier": "specializedAdjunctive",
@@ -642,7 +825,15 @@
           "modalityTarget": "CSF analysis for meningitis or encephalitis",
           "targetCondition": "Bacterial meningitis or viral encephalitis",
           "expectedFinding": "CSF is normal or near-normal in cerebral malaria. Pleocytosis or a positive Gram stain points to another diagnosis.",
-          "clinicalRationale": "Cerebral malaria is a diagnosis of exclusion when malaria tests are positive but meningitis has not been excluded."
+          "clinicalRationale": "Cerebral malaria is a diagnosis of exclusion when malaria tests are positive but meningitis has not been excluded.",
+          "normalValue": "Adult CSF: white cells 0–5 /µL; protein 0.15–0.45 g/L; CSF:blood glucose ratio above 0.6",
+          "references": [
+            {
+              "title": "ICMR Treatment Guidelines for Antimicrobial Use in Common Syndromes",
+              "edition": "ICMR 2019, section Severe malaria, p. 16",
+              "url": "https://www.icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/Treatment_Guidelines_2019_Final.pdf"
+            }
+          ]
         }
       ]
     },
@@ -655,7 +846,7 @@
           "Confirm every suspected case by microscopy or RDT before treatment. Presumptive chloroquine is no longer recommended (NDP 2013), and ICMR 2019 advises treatment after confirmation only.",
           "Check bedside glucose, vital signs, conscious level (GCS) and urine output.",
           "Identify species (Pf, Pv or mixed), pregnancy status and the state of residence: north-eastern states use ACT-AL, other states ACT-SP.",
-          "Screen against WHO severe malaria criteria: impaired consciousness, prostration, convulsions, acidosis, hypoglycaemia, severe anaemia, AKI, jaundice, pulmonary oedema, significant bleeding, shock or hyperparasitaemia."
+          "Screen against WHO severe malaria criteria: impaired consciousness, prostration, convulsions, acidosis, hypoglycaemia, severe anaemia, acute kidney injury (AKI), jaundice, pulmonary oedema, significant bleeding, shock or hyperparasitaemia."
         ],
         "branches": [
           {
@@ -737,7 +928,7 @@
           "If artesunate is unavailable: artemether 3.2 mg/kg IM on admission, then 1.6 mg/kg daily; or quinine 20 mg/kg salt loading dose (omit if quinine already given), then 10 mg/kg every 8 hours, infusion rate not exceeding 5 mg/kg/hour (NDP 2013).",
           "Check glucose at least every 4 hours (hourly if unconscious) and treat hypoglycaemia with IV dextrose.",
           "Use conservative IV fluids to avoid pulmonary oedema. Do not give corticosteroids, mannitol, heparin or adrenaline (NDP 2013).",
-          "Escalate to ICU for coma, shock, respiratory failure or AKI needing dialysis."
+          "Escalate to the intensive care unit (ICU) for coma, shock, respiratory failure or AKI needing dialysis."
         ],
         "branches": [
           {
@@ -838,7 +1029,7 @@
           "selection": "all",
           "sourceTitle": "National Drug Policy on Malaria",
           "sourceUrl": "https://ncvbdc.mohfw.gov.in/WriteReadData/l892s/National-Drug-Policy-2013.pdf",
-          "sourceEdition": "NVBDCP/MoHFW 2013"
+          "sourceEdition": "NVBDCP/MoHFW 2013, section Treatment (age-band tables) and Annexure 1"
         },
         {
           "indication": "Uncomplicated P. vivax — radical cure",
@@ -870,7 +1061,7 @@
           "selection": "all",
           "sourceTitle": "National Drug Policy on Malaria",
           "sourceUrl": "https://ncvbdc.mohfw.gov.in/WriteReadData/l892s/National-Drug-Policy-2013.pdf",
-          "sourceEdition": "NVBDCP/MoHFW 2013"
+          "sourceEdition": "NVBDCP/MoHFW 2013, section Treatment (age-band tables) and Annexure 1"
         },
         {
           "indication": "Uncomplicated P. falciparum (ACT-SP)",
@@ -900,7 +1091,7 @@
           "selection": "all",
           "sourceTitle": "National Drug Policy on Malaria",
           "sourceUrl": "https://ncvbdc.mohfw.gov.in/WriteReadData/l892s/National-Drug-Policy-2013.pdf",
-          "sourceEdition": "NVBDCP/MoHFW 2013"
+          "sourceEdition": "NVBDCP/MoHFW 2013, section Treatment (age-band tables) and Annexure 1"
         },
         {
           "indication": "Uncomplicated P. falciparum (ACT-AL)",
@@ -929,7 +1120,7 @@
           "selection": "all",
           "sourceTitle": "National Drug Policy on Malaria",
           "sourceUrl": "https://ncvbdc.mohfw.gov.in/WriteReadData/l892s/National-Drug-Policy-2013.pdf",
-          "sourceEdition": "NVBDCP/MoHFW 2013"
+          "sourceEdition": "NVBDCP/MoHFW 2013, section Treatment (age-band tables) and Annexure 1"
         },
         {
           "indication": "Uncomplicated P. falciparum — gametocytocidal",
@@ -957,7 +1148,7 @@
           "selection": "all",
           "sourceTitle": "National Drug Policy on Malaria",
           "sourceUrl": "https://ncvbdc.mohfw.gov.in/WriteReadData/l892s/National-Drug-Policy-2013.pdf",
-          "sourceEdition": "NVBDCP/MoHFW 2013"
+          "sourceEdition": "NVBDCP/MoHFW 2013, section Treatment (age-band tables) and Annexure 1"
         },
         {
           "indication": "Uncomplicated P. falciparum in first trimester",
@@ -986,7 +1177,7 @@
           "selection": "all",
           "sourceTitle": "National Drug Policy on Malaria",
           "sourceUrl": "https://ncvbdc.mohfw.gov.in/WriteReadData/l892s/National-Drug-Policy-2013.pdf",
-          "sourceEdition": "NVBDCP/MoHFW 2013"
+          "sourceEdition": "NVBDCP/MoHFW 2013, section Treatment (age-band tables) and Annexure 1"
         },
         {
           "indication": "Severe malaria",
@@ -1034,7 +1225,7 @@
           ],
           "monitoring": [
             "Glucose every 4 h (hourly if unconscious)",
-            "ECG/QT",
+            "Electrocardiogram (ECG) and QT interval",
             "Infusion rate not above 5 mg/kg/h"
           ],
           "contraindications": [
@@ -1046,7 +1237,7 @@
           "selection": "one-of",
           "sourceTitle": "MSF Essential Drugs: Quinine injectable",
           "sourceUrl": "https://medicalguidelines.msf.org/en/viewport/EssDr/english/quinine-injectable-16683104.html",
-          "sourceEdition": "MSF Essential Drugs (online, accessed 2026-10-21)",
+          "sourceEdition": "MSF Essential Drugs (online), section Dosage and duration",
           "preferred": false,
           "useWhen": "Parenteral artesunate is not available"
         },
@@ -1078,7 +1269,7 @@
           "selection": "one-of",
           "sourceTitle": "National Drug Policy on Malaria",
           "sourceUrl": "https://ncvbdc.mohfw.gov.in/WriteReadData/l892s/National-Drug-Policy-2013.pdf",
-          "sourceEdition": "NVBDCP/MoHFW 2013",
+          "sourceEdition": "NVBDCP/MoHFW 2013, section Treatment (age-band tables) and Annexure 1",
           "preferred": true
         },
         {
@@ -1107,7 +1298,7 @@
           "selection": "one-of",
           "sourceTitle": "National Drug Policy on Malaria",
           "sourceUrl": "https://ncvbdc.mohfw.gov.in/WriteReadData/l892s/National-Drug-Policy-2013.pdf",
-          "sourceEdition": "NVBDCP/MoHFW 2013",
+          "sourceEdition": "NVBDCP/MoHFW 2013, section Treatment (age-band tables) and Annexure 1",
           "preferred": false,
           "useWhen": "Pregnancy or child under 8 years"
         },
@@ -1139,7 +1330,7 @@
           "selection": "all",
           "sourceTitle": "Ceftriaxone product information (CEFAXONE)",
           "sourceUrl": "https://www.ndf.gov.sg/about-drugs/product-information/SIN10888P/",
-          "sourceEdition": "HSA Singapore product information"
+          "sourceEdition": "HSA Singapore product information, section Dosage and administration"
         }
       ],
       "branches": [
@@ -1165,6 +1356,72 @@
         }
       ],
       "note": "Every regimen carries four standard lines in adjustments: Paediatric, Penicillin allergy, CKD and CLD. Not clinically reviewed. Items marked 'not opened this session' come from product labels and must be confirmed before clinical use."
+    },
+    "diagnosticCriteria": [
+      {
+        "criterion": "Confirmed malaria",
+        "threshold": "Plasmodium seen on microscopy or a positive RDT; treat after confirmation only (NDP 2013; ICMR 2019, p. 12)."
+      },
+      {
+        "criterion": "Severe malaria",
+        "threshold": "Any WHO severe criterion: impaired consciousness, prostration, convulsions, acidosis, hypoglycaemia, severe anaemia, renal impairment, jaundice, pulmonary oedema, significant bleeding, shock or hyperparasitaemia."
+      }
+    ],
+    "teaching": {
+      "scope": "Children and adults with malaria in India.",
+      "learningObjectives": [
+        "Confirm malaria before treating.",
+        "Choose the species- and region-specific regimen.",
+        "Recognise severe malaria and start parenteral artesunate within the hour."
+      ],
+      "keyPoints": [
+        "Presumptive chloroquine is no longer recommended (NDP 2013).",
+        "North-eastern states use ACT-AL; other states ACT-SP.",
+        "Primaquine is contraindicated in pregnancy, infancy and G6PD deficiency."
+      ],
+      "pitfalls": [
+        "Artemisinin monotherapy.",
+        "Giving primaquine without checking G6PD where testing is available.",
+        "Missing hypoglycaemia on quinine or in pregnancy."
+      ],
+      "references": [
+        {
+          "title": "National Drug Policy on Malaria",
+          "edition": "NVBDCP/MoHFW 2013",
+          "url": "https://ncvbdc.mohfw.gov.in/WriteReadData/l892s/National-Drug-Policy-2013.pdf",
+          "locator": "Sections Diagnosis, Treatment and Annexure 1"
+        },
+        {
+          "title": "ICMR Treatment Guidelines for Antimicrobial Use in Common Syndromes",
+          "edition": "ICMR 2019",
+          "url": "https://www.icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/Treatment_Guidelines_2019_Final.pdf",
+          "locator": "Section Malaria, pp. 12–16"
+        },
+        {
+          "title": "Artesunate for Injection, US prescribing information",
+          "edition": "FDA label 2020",
+          "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2020/213036s000lbl.pdf",
+          "locator": "Sections 2, 5 and 8"
+        }
+      ]
+    },
+    "evidenceAudit": {
+      "checkedOn": "2026-10-21",
+      "status": "incomplete",
+      "scope": "Malaria (P. falciparum and P. vivax): Test-Confirmed Treatment and Severe Malaria (India): Indian regional module record built from ICMR/MoHFW/NTEP/IAP sources opened on 2026-10-21.",
+      "findings": [
+        "Doses, durations and thresholds were checked against the opened source sections cited on each line.",
+        "Not clinically reviewed; for demonstration and governance review only."
+      ],
+      "unverifiedSections": [
+        "The National Drug Policy is dated 2013; confirm against the current NCVBDC circular.",
+        "WHO severe-malaria criteria are used because NDP 2013 does not define severe malaria.",
+        "Renal and hepatic lines for chloroquine, SP, artemether-lumefantrine, primaquine and clindamycin are from product labels not re-opened in this task."
+      ],
+      "medscapeStatus": "unavailable",
+      "originalVersionIds": [
+        "8b1e5d07-2c9f-4a63-b7e4-51d0c8a9f2e6"
+      ]
     }
   },
   {
@@ -1178,7 +1435,7 @@
     "pillar": "Chronic Care",
     "clinicalReviewStatus": "pending",
     "pathophysiology": {
-      "summary": "Chronic granulomatous infection by Mycobacterium tuberculosis, transmitted by airborne droplet nuclei from people with infectious pulmonary disease. Most infections are contained as latent TB. Progression to active disease follows immune compromise, with HIV, diabetes, undernutrition, smoking and alcohol use the main drivers in India. The National TB Elimination Programme (NTEP) treats drug-sensitive TB with daily weight-band fixed-dose combinations (2HRZE/4HRE). Every patient is tested upfront for rifampicin resistance.",
+      "summary": "Tuberculosis is a chronic granulomatous infection caused by Mycobacterium tuberculosis and transmitted by airborne droplet nuclei expelled when a person with infectious pulmonary disease coughs, speaks or sings. Inhaled bacilli reach the alveoli, where alveolar macrophages ingest them; the organisms resist intracellular killing and multiply. Cell-mediated immunity, led by T helper cells and interferon-gamma, organises macrophages into granulomas with central caseous necrosis that usually contain the infection, producing latent infection without symptoms. Progression to active disease follows when containment fails, either soon after infection or years later as reactivation. In India the main drivers of progression are HIV infection, diabetes, undernutrition, smoking and harmful alcohol use. In reactivation disease, caseous material in the upper lobes liquefies and discharges into the airways, creating cavities that hold very large numbers of bacilli; this makes the patient highly infectious and increases the chance that drug-resistant mutants are present before treatment begins. Erosion of cavity walls into vessels causes haemoptysis, occasionally massive. Lymphatic and haematogenous spread produces lymph-node, pleural, miliary, meningeal, skeletal, abdominal and other extrapulmonary disease. Systemic cytokine release explains fever, night sweats, anorexia and weight loss. Effective treatment requires several drugs together for months, because bacillary populations differ in metabolic activity and single drugs select resistant mutants: rifampicin resistance is linked to rpoB mutations, isoniazid resistance to katG and inhA mutations, and fluoroquinolone resistance to gyrA and gyrB mutations. India's National TB Elimination Programme therefore tests every patient upfront for rifampicin resistance and treats drug-sensitive disease with daily weight-band fixed-dose combinations for six months, adjusted for kidney and liver disease.",
       "keyMechanisms": [
         "Inhaled bacilli are taken up by alveolar macrophages and survive inside them. Cell-mediated immunity forms caseating granulomas that contain but do not always eradicate infection.",
         "Reactivation with caseous necrosis and liquefaction creates cavities with a very high bacillary load, which drives infectiousness and the selection of resistant mutants.",
@@ -1213,6 +1470,13 @@
         "Jaundice, vomiting or abdominal pain on treatment (drug-induced hepatitis): stop hepatotoxic drugs and review the same day",
         "Rifampicin resistance detected on NAAT: refer to the nodal DR-TB centre; do not start a first-line regimen",
         "Empirical fluoroquinolone already given for 'pneumonia' before TB testing: SEVERE AMR WARNING, risk of masked TB and fluoroquinolone resistance"
+      ],
+      "precipitants": [
+        "Close contact with a person with infectious pulmonary TB",
+        "HIV infection",
+        "Diabetes",
+        "Undernutrition",
+        "Smoking and harmful alcohol use"
       ]
     },
     "differentials": [
@@ -1222,7 +1486,7 @@
       },
       {
         "condition": "Lung cancer",
-        "distinguishingFeatures": "Older smoker, mass lesion or hilar lymphadenopathy, NAAT negative. Diagnosis by CT and tissue biopsy."
+        "distinguishingFeatures": "Older smoker, mass lesion or hilar lymphadenopathy, NAAT negative. Diagnosis by computed tomography (CT) and tissue biopsy."
       },
       {
         "condition": "Non-tuberculous mycobacterial disease",
@@ -1249,7 +1513,15 @@
           "modalityTarget": "Molecular detection of M. tuberculosis complex and rifampicin resistance",
           "targetCondition": "Pulmonary TB and rifampicin-resistant TB",
           "expectedFinding": "MTB detected. Rifampicin resistance reported as not detected or detected.",
-          "clinicalRationale": "Upfront NAAT for all presumptive TB under NTEP gives diagnosis and rifampicin resistance together. This is the culture-first equivalent for TB: the result decides first-line versus DR-TB pathway before any drug is started."
+          "clinicalRationale": "Upfront NAAT for all presumptive TB under NTEP gives diagnosis and rifampicin resistance together. This is the culture-first equivalent for TB: the result decides first-line versus DR-TB pathway before any drug is started.",
+          "normalValue": "MTB not detected",
+          "references": [
+            {
+              "title": "ICMR/NTEP Standard Treatment Workflow: Tuberculosis",
+              "edition": "NTEP STW 2022, section Diagnosis (referenced to Standards for TB Care in India)",
+              "url": "https://icmr.gov.in/icmrobject/uploads/STWs/1725964686_2_ntep_18032022.pdf"
+            }
+          ]
         },
         {
           "tier": "laboratory",
@@ -1257,7 +1529,15 @@
           "modalityTarget": "Universal drug susceptibility testing for isoniazid and fluoroquinolone resistance",
           "targetCondition": "Isoniazid-resistant, fluoroquinolone-resistant or MDR/RR-TB",
           "expectedFinding": "katG/inhA mutations (isoniazid resistance) or gyrA/gyrB mutations (fluoroquinolone resistance)",
-          "clinicalRationale": "Universal DST under NTEP. Isoniazid resistance changes the regimen. Fluoroquinolone resistance determines the DR-TB regimen."
+          "clinicalRationale": "Universal DST under NTEP. Isoniazid resistance changes the regimen. Fluoroquinolone resistance determines the DR-TB regimen.",
+          "normalValue": "No resistance-conferring mutations detected (isoniazid and fluoroquinolone susceptible)",
+          "references": [
+            {
+              "title": "ICMR/NTEP Standard Treatment Workflow: Tuberculosis",
+              "edition": "NTEP STW 2022, section Drug-resistant TB referral",
+              "url": "https://icmr.gov.in/icmrobject/uploads/STWs/1725964686_2_ntep_18032022.pdf"
+            }
+          ]
         },
         {
           "tier": "firstLineImaging",
@@ -1265,7 +1545,15 @@
           "modalityTarget": "Plain radiography of the chest",
           "targetCondition": "Pulmonary TB",
           "expectedFinding": "Upper-zone infiltrates, cavitation, miliary nodules, hilar lymphadenopathy or pleural effusion",
-          "clinicalRationale": "Supports diagnosis and triage, especially when sputum is scanty. Never a substitute for microbiological confirmation."
+          "clinicalRationale": "Supports diagnosis and triage, especially when sputum is scanty. Never a substitute for microbiological confirmation.",
+          "normalValue": "Clear lung fields; no cavitation, infiltrate, nodules, lymphadenopathy or effusion",
+          "references": [
+            {
+              "title": "ICMR/NTEP Standard Treatment Workflow: Tuberculosis",
+              "edition": "NTEP STW 2022, section Pulmonary TB assessment",
+              "url": "https://icmr.gov.in/icmrobject/uploads/STWs/1725964686_2_ntep_18032022.pdf"
+            }
+          ]
         }
       ],
       "ruleOut": [
@@ -1275,7 +1563,15 @@
           "modalityTarget": "Comorbidity screening in every TB patient",
           "targetCondition": "HIV co-infection and diabetes",
           "expectedFinding": "Results guide antiretroviral therapy, cotrimoxazole prophylaxis and glycaemic management",
-          "clinicalRationale": "NTEP screens every TB patient for HIV and diabetes because both change treatment, monitoring and outcomes."
+          "clinicalRationale": "NTEP screens every TB patient for HIV and diabetes because both change treatment, monitoring and outcomes.",
+          "normalValue": "HIV non-reactive; HbA1c below 39 mmol/mol (5.7%)",
+          "references": [
+            {
+              "title": "ICMR/NTEP Standard Treatment Workflow: Tuberculosis",
+              "edition": "NTEP STW 2022, section Comorbidity screening",
+              "url": "https://icmr.gov.in/icmrobject/uploads/STWs/1725964686_2_ntep_18032022.pdf"
+            }
+          ]
         },
         {
           "tier": "laboratory",
@@ -1283,7 +1579,15 @@
           "modalityTarget": "ALT, AST and bilirubin before ATT",
           "targetCondition": "Pre-existing liver disease and risk of drug-induced liver injury",
           "expectedFinding": "Normal baseline; abnormal values need closer monitoring",
-          "clinicalRationale": "Isoniazid, rifampicin and pyrazinamide are hepatotoxic. A baseline is needed to interpret later rises."
+          "clinicalRationale": "Isoniazid, rifampicin and pyrazinamide are hepatotoxic. A baseline is needed to interpret later rises.",
+          "normalValue": "Adult: ALT below about 40 IU/L; bilirubin below 21 µmol/L (local laboratory ranges apply)",
+          "references": [
+            {
+              "title": "ICMR STW: Management of Antitubercular Therapy Related Hepatitis",
+              "edition": "ICMR ATT hepatitis STW 2022, section Definition (baseline and thresholds)",
+              "url": "https://icmr.gov.in/icmrobject/uploads/STWs/1725964686_3_antitubercular_therapy_hepatitis_18032022.pdf"
+            }
+          ]
         },
         {
           "tier": "advancedImaging",
@@ -1291,7 +1595,15 @@
           "modalityTarget": "Cross-sectional imaging of the thorax",
           "targetCondition": "Lung cancer, bronchiectasis, aspergilloma or NTM disease",
           "expectedFinding": "Mass, dilated airways or fungal ball point to an alternative diagnosis",
-          "clinicalRationale": "Use when NAAT is negative but suspicion remains, or the X-ray is atypical."
+          "clinicalRationale": "Use when NAAT is negative but suspicion remains, or the X-ray is atypical.",
+          "normalValue": "No mass, cavity, bronchiectasis or fungal ball",
+          "references": [
+            {
+              "title": "ICMR/NTEP Standard Treatment Workflow: Tuberculosis",
+              "edition": "NTEP STW 2022, section Differential diagnosis",
+              "url": "https://icmr.gov.in/icmrobject/uploads/STWs/1725964686_2_ntep_18032022.pdf"
+            }
+          ]
         },
         {
           "tier": "laboratory",
@@ -1299,7 +1611,15 @@
           "modalityTarget": "Mycobacterial culture",
           "targetCondition": "Non-tuberculous mycobacteria",
           "expectedFinding": "Growth of NTM rather than M. tuberculosis complex",
-          "clinicalRationale": "Separates NTM from TB when smear and NAAT disagree."
+          "clinicalRationale": "Separates NTM from TB when smear and NAAT disagree.",
+          "normalValue": "No mycobacterial growth after 6 weeks (liquid culture)",
+          "references": [
+            {
+              "title": "ICMR/NTEP Standard Treatment Workflow: Tuberculosis",
+              "edition": "NTEP STW 2022, section Diagnosis",
+              "url": "https://icmr.gov.in/icmrobject/uploads/STWs/1725964686_2_ntep_18032022.pdf"
+            }
+          ]
         }
       ]
     },
@@ -1483,7 +1803,7 @@
           "selection": "all",
           "sourceTitle": "ICMR/NTEP Standard Treatment Workflow: Tuberculosis",
           "sourceUrl": "https://icmr.gov.in/icmrobject/uploads/STWs/1725964686_2_ntep_18032022.pdf",
-          "sourceEdition": "DHR/ICMR STW, March 2022"
+          "sourceEdition": "DHR/ICMR STW, March 2022, section Drug-sensitive TB weight-band table"
         },
         {
           "indication": "Drug-sensitive TB — continuation phase",
@@ -1512,7 +1832,7 @@
           "selection": "all",
           "sourceTitle": "ICMR/NTEP Standard Treatment Workflow: Tuberculosis",
           "sourceUrl": "https://icmr.gov.in/icmrobject/uploads/STWs/1725964686_2_ntep_18032022.pdf",
-          "sourceEdition": "DHR/ICMR STW, March 2022"
+          "sourceEdition": "DHR/ICMR STW, March 2022, section Drug-sensitive TB weight-band table"
         },
         {
           "indication": "Drug-sensitive TB — intensive phase",
@@ -1541,7 +1861,7 @@
           "selection": "all",
           "sourceTitle": "ICMR/NTEP Standard Treatment Workflow: Tuberculosis",
           "sourceUrl": "https://icmr.gov.in/icmrobject/uploads/STWs/1725964686_2_ntep_18032022.pdf",
-          "sourceEdition": "DHR/ICMR STW, March 2022"
+          "sourceEdition": "DHR/ICMR STW, March 2022, section Drug-sensitive TB weight-band table"
         },
         {
           "indication": "Drug-sensitive TB — continuation phase",
@@ -1569,7 +1889,7 @@
           "selection": "all",
           "sourceTitle": "ICMR/NTEP Standard Treatment Workflow: Tuberculosis",
           "sourceUrl": "https://icmr.gov.in/icmrobject/uploads/STWs/1725964686_2_ntep_18032022.pdf",
-          "sourceEdition": "DHR/ICMR STW, March 2022"
+          "sourceEdition": "DHR/ICMR STW, March 2022, section Drug-sensitive TB weight-band table"
         },
         {
           "indication": "TB in Child-Pugh A cirrhosis",
@@ -1592,22 +1912,21 @@
           "contraindications": [
             "Child-Pugh B or C (use next rows)"
           ],
-          "branch": "TB with chronic liver disease",
+          "branch": "TB with chronic liver disease — Child-Pugh A",
           "step": "Liver-sparing regimen",
-          "selection": "one-of",
+          "selection": "all",
           "sourceTitle": "ICMR STW: Management of Antitubercular Therapy Related Hepatitis",
           "sourceUrl": "https://icmr.gov.in/icmrobject/uploads/STWs/1725964686_3_antitubercular_therapy_hepatitis_18032022.pdf",
-          "sourceEdition": "DHR/ICMR STW, March 2022",
-          "preferred": true
+          "sourceEdition": "DHR/ICMR STW, March 2022, section Pre-existing chronic liver disease (Child-Pugh table)"
         },
         {
           "indication": "TB in Child-Pugh B cirrhosis",
           "patientGroup": "Adults with advanced chronic liver disease",
-          "genericName": "One hepatotoxic drug (isoniazid or rifampicin) + ethambutol + aminoglycoside",
-          "dose": "Weight-based (H 5 mg/kg or R 10 mg/kg; E 15 mg/kg; aminoglycoside per specialist)",
+          "genericName": "Isoniazid + ethambutol + aminoglycoside",
+          "dose": "Isoniazid 5 mg/kg; ethambutol 15 mg/kg; aminoglycoside per specialist",
           "route": "PO + IM/IV",
           "frequency": "Once daily",
-          "duration": "2 months, then isoniazid or rifampicin + ethambutol for 10 months",
+          "duration": "2 months, then the same single hepatotoxic drug + ethambutol for 10 months",
           "adjustments": [
             "Paediatric: Specialist paediatric regimen.",
             "Penicillin allergy: No beta-lactam in this regimen; a penicillin allergy does not change the choice.",
@@ -1621,14 +1940,43 @@
           "contraindications": [
             "Child-Pugh C"
           ],
-          "branch": "TB with chronic liver disease",
+          "branch": "TB with chronic liver disease — Child-Pugh B",
           "step": "Liver-sparing regimen",
           "selection": "one-of",
           "sourceTitle": "ICMR STW: Management of Antitubercular Therapy Related Hepatitis",
           "sourceUrl": "https://icmr.gov.in/icmrobject/uploads/STWs/1725964686_3_antitubercular_therapy_hepatitis_18032022.pdf",
-          "sourceEdition": "DHR/ICMR STW, March 2022",
+          "sourceEdition": "DHR/ICMR STW, March 2022, section Pre-existing chronic liver disease (Child-Pugh table)",
+          "preferred": true
+        },
+        {
+          "indication": "TB in Child-Pugh B cirrhosis",
+          "patientGroup": "Adults with advanced chronic liver disease",
+          "genericName": "Rifampicin + ethambutol + aminoglycoside",
+          "dose": "Rifampicin 10 mg/kg; ethambutol 15 mg/kg; aminoglycoside per specialist",
+          "route": "PO + IM/IV",
+          "frequency": "Once daily",
+          "duration": "2 months, then the same single hepatotoxic drug + ethambutol for 10 months",
+          "adjustments": [
+            "Paediatric: Specialist paediatric regimen.",
+            "Penicillin allergy: No beta-lactam in this regimen; a penicillin allergy does not change the choice.",
+            "CKD: Aminoglycosides need renal dosing and levels — avoid in CKD where possible.",
+            "CLD: Child-Pugh B: this regimen (ICMR STW 2022)."
+          ],
+          "monitoring": [
+            "LFT every 2 weeks",
+            "Renal function and hearing (aminoglycoside)"
+          ],
+          "contraindications": [
+            "Child-Pugh C"
+          ],
+          "branch": "TB with chronic liver disease — Child-Pugh B",
+          "step": "Liver-sparing regimen",
+          "selection": "one-of",
+          "sourceTitle": "ICMR STW: Management of Antitubercular Therapy Related Hepatitis",
+          "sourceUrl": "https://icmr.gov.in/icmrobject/uploads/STWs/1725964686_3_antitubercular_therapy_hepatitis_18032022.pdf",
+          "sourceEdition": "DHR/ICMR STW, March 2022, section Pre-existing chronic liver disease (Child-Pugh table)",
           "preferred": false,
-          "useWhen": "Child-Pugh B (score 7–10)"
+          "useWhen": "Specialist chooses rifampicin as the single hepatotoxic drug (for example, isoniazid intolerance)"
         },
         {
           "indication": "TB in Child-Pugh C cirrhosis",
@@ -1654,14 +2002,12 @@
           "contraindications": [
             "Manage only at a specialist centre"
           ],
-          "branch": "TB with chronic liver disease",
+          "branch": "TB with chronic liver disease — Child-Pugh C",
           "step": "Liver-sparing regimen",
-          "selection": "one-of",
+          "selection": "all",
           "sourceTitle": "ICMR STW: Management of Antitubercular Therapy Related Hepatitis",
           "sourceUrl": "https://icmr.gov.in/icmrobject/uploads/STWs/1725964686_3_antitubercular_therapy_hepatitis_18032022.pdf",
-          "sourceEdition": "DHR/ICMR STW, March 2022",
-          "preferred": false,
-          "useWhen": "Child-Pugh C (score 11–15)"
+          "sourceEdition": "DHR/ICMR STW, March 2022, section Pre-existing chronic liver disease (Child-Pugh table)"
         }
       ],
       "branches": [
@@ -1674,11 +2020,84 @@
           "entryCriteria": "Child under 39 kg with rifampicin-susceptible TB"
         },
         {
-          "label": "TB with chronic liver disease",
-          "entryCriteria": "Cirrhosis or chronic liver disease graded by Child-Pugh before starting ATT"
+          "label": "TB with chronic liver disease — Child-Pugh A",
+          "entryCriteria": "Cirrhosis, Child-Pugh score 5–6 (stable liver disease)"
+        },
+        {
+          "label": "TB with chronic liver disease — Child-Pugh B",
+          "entryCriteria": "Cirrhosis, Child-Pugh score 7–10 (advanced liver disease)"
+        },
+        {
+          "label": "TB with chronic liver disease — Child-Pugh C",
+          "entryCriteria": "Cirrhosis, Child-Pugh score 11–15 (very advanced liver disease); manage at a higher centre"
         }
       ],
       "note": "Every regimen carries four standard lines in adjustments: Paediatric, Penicillin allergy, CKD and CLD. Not clinically reviewed. Items marked 'not opened this session' come from product labels and must be confirmed before clinical use."
+    },
+    "diagnosticCriteria": [
+      {
+        "criterion": "Presumptive pulmonary TB",
+        "threshold": "Cough for 2 weeks or more, fever, night sweats, weight loss or haemoptysis."
+      },
+      {
+        "criterion": "Drug-sensitive TB",
+        "threshold": "NAAT detects M. tuberculosis with rifampicin resistance not detected (NTEP)."
+      }
+    ],
+    "teaching": {
+      "scope": "Adults and children with drug-sensitive pulmonary TB in India.",
+      "learningObjectives": [
+        "Test presumptive TB with NAAT before any antibiotic course.",
+        "Prescribe the weight-band FDC regimen correctly.",
+        "Adjust treatment for kidney and liver disease."
+      ],
+      "keyPoints": [
+        "2HRZE/4HRE daily by weight band (NTEP STW 2022).",
+        "Every case must be notified on Ni-kshay.",
+        "Empirical fluoroquinolones mask TB and select resistance."
+      ],
+      "pitfalls": [
+        "Treating a chronic cough with levofloxacin before testing for TB.",
+        "Not moving the patient up a weight band as weight increases.",
+        "Continuing hepatotoxic drugs after the drug-induced hepatitis thresholds are met."
+      ],
+      "references": [
+        {
+          "title": "ICMR/NTEP Standard Treatment Workflow: Tuberculosis",
+          "edition": "DHR/ICMR STW, March 2022",
+          "url": "https://icmr.gov.in/icmrobject/uploads/STWs/1725964686_2_ntep_18032022.pdf",
+          "locator": "Section Drug-sensitive TB, weight-band table"
+        },
+        {
+          "title": "NTEP: TB regimens in renal impairment",
+          "edition": "NTEP online",
+          "url": "https://ntep.in/node/1572",
+          "locator": "Section Renal impairment dosing table"
+        },
+        {
+          "title": "ICMR STW: Management of Antitubercular Therapy Related Hepatitis",
+          "edition": "DHR/ICMR STW, March 2022",
+          "url": "https://icmr.gov.in/icmrobject/uploads/STWs/1725964686_3_antitubercular_therapy_hepatitis_18032022.pdf",
+          "locator": "Section Pre-existing chronic liver disease"
+        }
+      ]
+    },
+    "evidenceAudit": {
+      "checkedOn": "2026-10-21",
+      "status": "incomplete",
+      "scope": "Pulmonary Tuberculosis (Drug-Sensitive): NAAT-Led Diagnosis and NTEP Treatment (India): Indian regional module record built from ICMR/MoHFW/NTEP/IAP sources opened on 2026-10-21.",
+      "findings": [
+        "Doses, durations and thresholds were checked against the opened source sections cited on each line.",
+        "Not clinically reviewed; for demonstration and governance review only."
+      ],
+      "unverifiedSections": [
+        "The NAAT, notification and isoniazid-resistant regimen statements follow NTEP practice; the diagnostic guideline itself was not opened in this task.",
+        "ICMR STW lists 'isoniazid or rifampicin' for Child-Pugh B; isoniazid (first listed) is marked preferred."
+      ],
+      "medscapeStatus": "unavailable",
+      "originalVersionIds": [
+        "c4a9f3e2-6b18-4d75-8e2a-9f7b13c05d48"
+      ]
     }
   },
   {
@@ -1692,7 +2111,7 @@
     "pillar": "Urgent Care",
     "clinicalReviewStatus": "pending",
     "pathophysiology": {
-      "summary": "Acute febrile illness caused by Orientia tsutsugamushi, an obligate intracellular bacterium transmitted by the bite of larval trombiculid mites (chiggers) in scrub vegetation, fields and peridomestic areas. It is a leading cause of acute undifferentiated febrile illness in India, peaking in the monsoon and post-monsoon months. Infection of endothelial cells causes disseminated vasculitis. Untreated, it can progress to multi-organ dysfunction, but it responds rapidly to doxycycline, a WHO AWaRe Access antibiotic.",
+      "summary": "Scrub typhus is an acute febrile illness caused by Orientia tsutsugamushi, an obligate intracellular bacterium. It is transmitted by the bite of larval trombiculid mites, known as chiggers, which live in scrub vegetation, grassland, agricultural fields and peridomestic areas. Infection is common across many Indian states and peaks during the monsoon and post-monsoon months, when it is a leading cause of acute undifferentiated febrile illness. At the bite site the organism multiplies locally, producing a papule that necroses to form a painless black eschar with a red rim. Eschars are often hidden in moist skin folds such as the groin, axilla, genitalia, inframammary area or under the waistband, so a full skin examination is essential. Orientia then spreads through lymphatics and blood and infects endothelial cells and macrophages throughout the body. The resulting disseminated vasculitis and perivasculitis increase vascular permeability and drive the clinical picture: fever, severe headache, myalgia, lymphadenopathy, rash and hepatosplenomegaly. In more severe disease, vascular leak and inflammation cause interstitial pneumonitis and acute respiratory distress syndrome, myocarditis, meningoencephalitis, hepatitis, acute kidney injury, shock and multi-organ dysfunction, which explain most deaths. Laboratory features include thrombocytopenia, raised transaminases and hypoalbuminaemia. Because the organism lives inside cells and lacks a conventional peptidoglycan cell wall, beta-lactam antibiotics such as penicillins, cephalosporins and carbapenems are ineffective; empirical use of these agents adds antimicrobial resistance pressure while the infection progresses. Doxycycline, a WHO AWaRe Access antibiotic, produces rapid defervescence, and azithromycin is the alternative in pregnancy. Rifampicin is active, but monotherapy is discouraged in India because it can select rifampicin-resistant tuberculosis.",
       "keyMechanisms": [
         "Inoculation at the chigger bite site causes local necrosis that evolves into a painless black eschar, often in hidden moist areas such as the groin, axilla or under the waistband or breast.",
         "Orientia infects endothelial cells and macrophages, causing systemic vasculitis and perivasculitis with increased vascular permeability.",
@@ -1722,11 +2141,17 @@
         "Hypoxaemia, tachypnoea or bilateral infiltrates (ARDS / interstitial pneumonitis)",
         "Hypotension or shock",
         "Altered sensorium, seizures or neck stiffness (meningoencephalitis)",
-        "Oliguria or rising creatinine (AKI)",
+        "Oliguria or rising creatinine (acute kidney injury (AKI))",
         "Jaundice or marked transaminitis",
         "Myocarditis: arrhythmia, chest pain or heart failure",
-        "Any organ dysfunction: treat as severe scrub typhus with IV therapy and admit to HDU/ICU",
+        "Any organ dysfunction: treat as severe scrub typhus with IV therapy and admit to high-dependency unit (HDU) or intensive care unit (ICU)",
         "Patient already on a cephalosporin or carbapenem without improvement: SEVERE AMR WARNING, these agents do not treat Orientia; add doxycycline and stop the beta-lactam if no other indication"
+      ],
+      "precipitants": [
+        "Outdoor, agricultural or scrubland exposure",
+        "Monsoon and post-monsoon season",
+        "Sitting or lying on grass",
+        "Living near vegetation-rich peridomestic areas"
       ]
     },
     "differentials": [
@@ -1763,7 +2188,15 @@
           "modalityTarget": "Serology for Orientia tsutsugamushi IgM",
           "targetCondition": "Scrub typhus",
           "expectedFinding": "IgM optical density above the laboratory-validated regional cut-off, usually positive from the end of the first week of illness",
-          "clinicalRationale": "Main confirmatory test in Indian practice. May be negative early, so do not withhold doxycycline in a compatible case while results are pending."
+          "clinicalRationale": "Main confirmatory test in Indian practice. May be negative early, so do not withhold doxycycline in a compatible case while results are pending.",
+          "normalValue": "Optical density below the laboratory-validated regional cut-off",
+          "references": [
+            {
+              "title": "ICMR Treatment Guidelines for Antimicrobial Use in Common Syndromes",
+              "edition": "ICMR 2019, section Scrub typhus, pp. 25–27",
+              "url": "https://www.icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/Treatment_Guidelines_2019_Final.pdf"
+            }
+          ]
         },
         {
           "tier": "specializedAdjunctive",
@@ -1771,7 +2204,15 @@
           "modalityTarget": "Molecular detection of O. tsutsugamushi DNA (for example 47-kDa or 56-kDa gene targets)",
           "targetCondition": "Early scrub typhus",
           "expectedFinding": "Orientia DNA detected",
-          "clinicalRationale": "Most useful in the first week before IgM appears. An eschar sample gives the highest yield."
+          "clinicalRationale": "Most useful in the first week before IgM appears. An eschar sample gives the highest yield.",
+          "normalValue": "Orientia DNA not detected",
+          "references": [
+            {
+              "title": "ICMR Treatment Guidelines for Antimicrobial Use in Common Syndromes",
+              "edition": "ICMR 2019, section Scrub typhus, pp. 25–27",
+              "url": "https://www.icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/Treatment_Guidelines_2019_Final.pdf"
+            }
+          ]
         },
         {
           "tier": "laboratory",
@@ -1779,7 +2220,15 @@
           "modalityTarget": "Biochemistry and haematology for severity",
           "targetCondition": "Scrub typhus with organ involvement",
           "expectedFinding": "Thrombocytopenia, raised transaminases, hypoalbuminaemia, raised creatinine in severe disease",
-          "clinicalRationale": "Supportive pattern. Organ dysfunction defines the severe IV-therapy branch."
+          "clinicalRationale": "Supportive pattern. Organ dysfunction defines the severe IV-therapy branch.",
+          "normalValue": "Adult: platelets 150–400 × 10⁹/L; ALT below about 40 IU/L; creatinine 60–110 µmol/L; albumin 35–50 g/L (local laboratory ranges apply)",
+          "references": [
+            {
+              "title": "ICMR Treatment Guidelines for Antimicrobial Use in Common Syndromes",
+              "edition": "ICMR 2019, section Scrub typhus, pp. 25–26",
+              "url": "https://www.icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/Treatment_Guidelines_2019_Final.pdf"
+            }
+          ]
         }
       ],
       "ruleOut": [
@@ -1789,7 +2238,15 @@
           "modalityTarget": "Plasmodium detection",
           "targetCondition": "Malaria",
           "expectedFinding": "Negative",
-          "clinicalRationale": "Required in every acute febrile illness in endemic India. Co-infection is possible."
+          "clinicalRationale": "Required in every acute febrile illness in endemic India. Co-infection is possible.",
+          "normalValue": "No malaria parasites seen; RDT negative",
+          "references": [
+            {
+              "title": "National Drug Policy on Malaria",
+              "edition": "NDP 2013, section Diagnosis",
+              "url": "https://ncvbdc.mohfw.gov.in/WriteReadData/l892s/National-Drug-Policy-2013.pdf"
+            }
+          ]
         },
         {
           "tier": "laboratory",
@@ -1797,7 +2254,15 @@
           "modalityTarget": "Serology for co-endemic acute febrile illnesses",
           "targetCondition": "Dengue or leptospirosis",
           "expectedFinding": "Negative supports scrub typhus as the sole diagnosis",
-          "clinicalRationale": "These share the season and presentation. Dengue needs a no-antibiotic fluid pathway."
+          "clinicalRationale": "These share the season and presentation. Dengue needs a no-antibiotic fluid pathway.",
+          "normalValue": "NS1 and IgM negative",
+          "references": [
+            {
+              "title": "ICMR Treatment Guidelines for Antimicrobial Use in Common Syndromes",
+              "edition": "ICMR 2019, section Acute febrile illness, p. 7",
+              "url": "https://www.icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/Treatment_Guidelines_2019_Final.pdf"
+            }
+          ]
         },
         {
           "tier": "laboratory",
@@ -1805,7 +2270,15 @@
           "modalityTarget": "Blood culture for bacterial sepsis",
           "targetCondition": "Bacterial sepsis or enteric fever",
           "expectedFinding": "No growth supports stopping any empirical beta-lactam at 48 hours",
-          "clinicalRationale": "Culture-first: lets any empirical Watch-group antibiotic be de-escalated or stopped."
+          "clinicalRationale": "Culture-first: lets any empirical Watch-group antibiotic be de-escalated or stopped.",
+          "normalValue": "No growth after full incubation",
+          "references": [
+            {
+              "title": "ICMR Treatment Guidelines for Antimicrobial Use in Common Syndromes",
+              "edition": "ICMR 2019, section Principles, p. 3",
+              "url": "https://www.icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/Treatment_Guidelines_2019_Final.pdf"
+            }
+          ]
         },
         {
           "tier": "firstLineImaging",
@@ -1813,7 +2286,15 @@
           "modalityTarget": "Plain radiography of the chest",
           "targetCondition": "Pneumonia, ARDS or effusion",
           "expectedFinding": "Bilateral interstitial infiltrates in scrub pneumonitis. Lobar consolidation suggests bacterial pneumonia.",
-          "clinicalRationale": "Defines respiratory severity and separates scrub pneumonitis from bacterial CAP."
+          "clinicalRationale": "Defines respiratory severity and separates scrub pneumonitis from bacterial CAP.",
+          "normalValue": "Clear lung fields; no infiltrate or effusion",
+          "references": [
+            {
+              "title": "ICMR Treatment Guidelines for Antimicrobial Use in Common Syndromes",
+              "edition": "ICMR 2019, section Scrub typhus, p. 25",
+              "url": "https://www.icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/Treatment_Guidelines_2019_Final.pdf"
+            }
+          ]
         },
         {
           "tier": "laboratory",
@@ -1821,7 +2302,15 @@
           "modalityTarget": "Proteus OX-K agglutination",
           "targetCondition": "Scrub typhus (low-sensitivity screening test)",
           "expectedFinding": "A negative result does not exclude scrub typhus",
-          "clinicalRationale": "Listed so it is not relied on: sensitivity is poor. Do not withhold doxycycline because of a negative Weil-Felix test."
+          "clinicalRationale": "Listed so it is not relied on: sensitivity is poor. Do not withhold doxycycline because of a negative Weil-Felix test.",
+          "normalValue": "OX-K titre below the laboratory cut-off; a negative result does not exclude scrub typhus",
+          "references": [
+            {
+              "title": "ICMR Treatment Guidelines for Antimicrobial Use in Common Syndromes",
+              "edition": "ICMR 2019, section Scrub typhus, p. 26",
+              "url": "https://www.icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/Treatment_Guidelines_2019_Final.pdf"
+            }
+          ]
         }
       ]
     },
@@ -1996,7 +2485,7 @@
           "selection": "one-of",
           "sourceTitle": "ICMR Treatment Guidelines for Antimicrobial Use in Common Syndromes",
           "sourceUrl": "https://www.icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/Treatment_Guidelines_2019_Final.pdf",
-          "sourceEdition": "ICMR 2019",
+          "sourceEdition": "ICMR 2019, Table 2.2 (p. 11) and Table 2.7 (p. 27)",
           "preferred": true
         },
         {
@@ -2025,7 +2514,7 @@
           "selection": "one-of",
           "sourceTitle": "ICMR Treatment Guidelines for Antimicrobial Use in Common Syndromes",
           "sourceUrl": "https://www.icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/Treatment_Guidelines_2019_Final.pdf",
-          "sourceEdition": "ICMR 2019",
+          "sourceEdition": "ICMR 2019, Table 2.2 (p. 11) and Table 2.7 (p. 27)",
           "preferred": false,
           "useWhen": "Pregnancy, or doxycycline contraindicated or not tolerated"
         },
@@ -2058,7 +2547,7 @@
           "selection": "one-of",
           "sourceTitle": "Intravenous Doxycycline, Azithromycin, or Both for Severe Scrub Typhus (INTREST)",
           "sourceUrl": "https://ora.ox.ac.uk/objects/uuid:470e9e9f-8fa5-4cb9-a54b-8f07b4bf236f",
-          "sourceEdition": "Varghese et al., NEJM 2023",
+          "sourceEdition": "Varghese et al., NEJM 2023, Results section (abstract); doses per ICMR 2019 Table 2.7",
           "preferred": true
         },
         {
@@ -2089,7 +2578,7 @@
           "selection": "one-of",
           "sourceTitle": "ICMR Treatment Guidelines for Antimicrobial Use in Common Syndromes",
           "sourceUrl": "https://www.icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/Treatment_Guidelines_2019_Final.pdf",
-          "sourceEdition": "ICMR 2019",
+          "sourceEdition": "ICMR 2019, Table 2.2 (p. 11) and Table 2.7 (p. 27)",
           "preferred": false,
           "useWhen": "Pregnancy"
         }
@@ -2105,6 +2594,65 @@
         }
       ],
       "note": "Every regimen carries four standard lines in adjustments: Paediatric, Penicillin allergy, CKD and CLD. Not clinically reviewed. Items marked 'not opened this session' come from product labels and must be confirmed before clinical use."
+    },
+    "diagnosticCriteria": [
+      {
+        "criterion": "Probable scrub typhus",
+        "threshold": "Compatible acute febrile illness, especially with eschar, in an endemic setting; start doxycycline without waiting for serology (ICMR 2019, p. 27)."
+      },
+      {
+        "criterion": "Severe scrub typhus",
+        "threshold": "Any organ dysfunction: respiratory, cardiovascular, central nervous system, renal or hepatic (INTREST trial entry)."
+      }
+    ],
+    "teaching": {
+      "scope": "Adults and children with scrub typhus in India.",
+      "learningObjectives": [
+        "Search the whole skin for an eschar.",
+        "Start doxycycline on clinical suspicion.",
+        "Use combination IV therapy in severe disease."
+      ],
+      "keyPoints": [
+        "Doxycycline (WHO AWaRe Access) is first-line; 7 days (ICMR 2019, Table 2.7).",
+        "Beta-lactams do not treat Orientia.",
+        "Combination IV doxycycline and azithromycin improved outcomes in severe disease (INTREST)."
+      ],
+      "pitfalls": [
+        "Treating scrub typhus with ceftriaxone or meropenem alone.",
+        "Relying on a negative Weil-Felix test.",
+        "Using rifampicin monotherapy in TB-endemic areas."
+      ],
+      "references": [
+        {
+          "title": "ICMR Treatment Guidelines for Antimicrobial Use in Common Syndromes",
+          "edition": "ICMR 2019",
+          "url": "https://www.icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/Treatment_Guidelines_2019_Final.pdf",
+          "locator": "Section Scrub typhus, pp. 25–27, Table 2.7"
+        },
+        {
+          "title": "Intravenous Doxycycline, Azithromycin, or Both for Severe Scrub Typhus (INTREST)",
+          "edition": "Varghese et al., NEJM 2023",
+          "url": "https://ora.ox.ac.uk/objects/uuid:470e9e9f-8fa5-4cb9-a54b-8f07b4bf236f",
+          "locator": "Results section (abstract)"
+        }
+      ]
+    },
+    "evidenceAudit": {
+      "checkedOn": "2026-10-21",
+      "status": "incomplete",
+      "scope": "Scrub Typhus: Recognition, Doxycycline-First Treatment and Severe Disease (India): Indian regional module record built from ICMR/MoHFW/NTEP/IAP sources opened on 2026-10-21.",
+      "findings": [
+        "Doses, durations and thresholds were checked against the opened source sections cited on each line.",
+        "Not clinically reviewed; for demonstration and governance review only."
+      ],
+      "unverifiedSections": [
+        "INTREST trial doses were not available in the opened abstract; ICMR 2019 doses are used.",
+        "Paediatric azithromycin 10 mg/kg is from ICMR rickettsial guidance 2015, not opened in this task."
+      ],
+      "medscapeStatus": "unavailable",
+      "originalVersionIds": [
+        "5e2d8b4f-a173-4c96-9d08-3b6e7f1a2c95"
+      ]
     }
   }
 ]

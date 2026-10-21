@@ -12,6 +12,7 @@ const allBatchPaths = [
   "data/seeds/batch_04_textbook_sourced_drafts.json",
   "data/seeds/batch_05_topic_list_drafts.json",
   "data/seeds/batch_06_topic_list_drafts.json",
+  "data/seeds/batch_08_india_regional.json",
 ] as const;
 const selectedBatch = process.argv.find((argument) => argument.startsWith("--batch="))?.slice("--batch=".length);
 const batchPaths = selectedBatch
@@ -29,12 +30,16 @@ type SourceMetadata = {
   sourceTitle: string;
   sourceUrl: string;
   publicationDate: string;
-  sourceType: "official-saudi-guideline" | "curated-saudi-draft" | "curated-saudi-guideline" | "curated-textbook-topic" | "nice-adapted-guideline";
+  sourceType: "official-saudi-guideline" | "official-indian-guideline" | "curated-saudi-draft" | "curated-saudi-guideline" | "curated-textbook-topic" | "nice-adapted-guideline";
   approval?: { approvedBy: string; approvedAt: string; publishedAt?: string };
   systemSeededNationalBaseline?: boolean;
 };
 
 const sourceMetadata: Record<string, SourceMetadata> = {
+  "3f6c2a91-7d4e-4b8a-9c15-e2a7b04d6f13": { sourceTitle: "ICMR Treatment Guidelines for Antimicrobial Use in Common Syndromes (2019); IAP Standard Treatment Guidelines: Enteric Fever (2022)", sourceUrl: "https://www.icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/Treatment_Guidelines_2019_Final.pdf", publicationDate: "2019-01-01", sourceType: "official-indian-guideline" },
+  "8b1e5d07-2c9f-4a63-b7e4-51d0c8a9f2e6": { sourceTitle: "National Drug Policy on Malaria (NVBDCP/MoHFW, 2013)", sourceUrl: "https://ncvbdc.mohfw.gov.in/WriteReadData/l892s/National-Drug-Policy-2013.pdf", publicationDate: "2013-01-01", sourceType: "official-indian-guideline" },
+  "c4a9f3e2-6b18-4d75-8e2a-9f7b13c05d48": { sourceTitle: "ICMR/NTEP Standard Treatment Workflow: Tuberculosis (2022)", sourceUrl: "https://icmr.gov.in/icmrobject/uploads/STWs/1725964686_2_ntep_18032022.pdf", publicationDate: "2022-03-18", sourceType: "official-indian-guideline" },
+  "5e2d8b4f-a173-4c96-9d08-3b6e7f1a2c95": { sourceTitle: "ICMR Treatment Guidelines for Antimicrobial Use in Common Syndromes (2019), scrub typhus section", sourceUrl: "https://www.icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/Treatment_Guidelines_2019_Final.pdf", publicationDate: "2019-01-01", sourceType: "official-indian-guideline" },
   "a1010000-0000-4000-8000-000000000001": { sourceTitle: "Saudi National Asthma Guideline", sourceUrl: "https://www.moh.gov.sa/en/Ministry/About/Health%20Policies/001.pdf", publicationDate: "2018-01-01", sourceType: "official-saudi-guideline" },
   "a1010000-0000-4000-8000-000000000002": { sourceTitle: "MOH-context sepsis pathway synthesis for local governance review", sourceUrl: "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Pages/Protocols.aspx", publicationDate: "2026-01-01", sourceType: "curated-saudi-draft" },
   "a1010000-0000-4000-8000-000000000003": { sourceTitle: "MOH DVT and Pulmonary Embolism Treatment Protocols", sourceUrl: "https://www.moh.gov.sa/en/Ministry/MediaCenter/Publications/Documents/PE_Pulmonary_Embolism_Protocol.pdf", publicationDate: "2024-09-04", sourceType: "official-saudi-guideline" },
@@ -208,7 +213,7 @@ async function seed(records: SeedRecord[]) {
     source_title: source.sourceTitle,
     issuing_organization: issuingOrganization(disease, source),
     source_url: source.sourceUrl,
-    jurisdiction: "Saudi Arabia",
+    jurisdiction: disease.authority === "ICMR" || disease.authority === "MoHFW" ? "India" : "Saudi Arabia",
     publication_date: source.publicationDate,
     last_verified_date: disease.lastReviewed,
     review_date: disease.lastReviewed,
