@@ -102,6 +102,7 @@ export const FileSearch = make(Lucide.FileSearch, "sky", "FileSearch");
 export const FileText = make(Lucide.FileText, "sky", "FileText");
 export const FileWarning = make(Lucide.FileWarning, "rose", "FileWarning");
 export const GitBranch = make(Lucide.GitBranch, "violet", "GitBranch");
+export const GraduationCap = make(Lucide.GraduationCap, "violet", "GraduationCap");
 export const HeartHandshake = make(Lucide.HeartHandshake, "rose", "HeartHandshake");
 export const HeartPulse = make(Lucide.HeartPulse, "rose", "HeartPulse");
 export const History = make(Lucide.History, "amber", "History");

@@ -12,6 +12,7 @@ import {
   Calculator as CalculatorIcon,
   FileCheck2,
   FileClock,
+  GraduationCap,
   HeartPulse,
   House,
   LayoutDashboard,
@@ -31,34 +32,47 @@ import { searchTopics } from "@/lib/topic-search";
 import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
 import { UNASSIGNED_SPECIALITY, canonicalSpeciality, groupBySpeciality, specialityCounts, specialityStyle } from "@/lib/medical-specialities";
 
+type NavSection = "Workspace" | "Compliance & Audit" | "Hospital";
+
 type NavItem = {
   href: string;
   label: string;
   icon: LucideIcon;
+  /** Sidebar group the module is listed under. */
+  section?: NavSection;
+  /** Kept out of the sidebar and mobile menu, but the route still works and is still recognised by getActiveItem. */
+  hidden?: boolean;
   /** For links that differ only by query string (e.g. ?tab=archive). */
   isActive?: (pathname: string, params: URLSearchParams) => boolean;
 };
 
 export const navigation: NavItem[] = [
-  { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
-  { href: "/dashboard/disease-management", label: "Disease Management", icon: Stethoscope },
-  { href: "/dashboard/medical-calculators", label: "Medical Calculators", icon: CalculatorIcon },
-  { href: "/dashboard/diagnosis-engine", label: "Diagnosis Engine", icon: HeartPulse },
-  { href: "/dashboard/formulary", label: "Medicines and Formulary", icon: Pill },
-  { href: "/dashboard/recent-developments", label: "Recent Developments", icon: Activity },
-  { href: "/dashboard/patients", label: "Patient Orders", icon: ClipboardList },
-  { href: "/dashboard/protocols", label: "Local Protocols & SOPs", icon: FileCheck2 },
-  { href: "/dashboard/governance", label: "Clinical Governance", icon: ShieldCheck },
-  { href: "/dashboard/directory", label: "Staff Directory", icon: UsersRound },
-  { href: "/dashboard/notifications", label: "Notifications", icon: Bell },
+  { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard, section: "Workspace" },
+  { href: "/dashboard/disease-management", label: "Disease Management", icon: Stethoscope, section: "Workspace" },
+  { href: "/dashboard/medical-calculators", label: "Medical Calculators", icon: CalculatorIcon, section: "Workspace" },
+  { href: "/dashboard/diagnosis-engine", label: "Diagnosis Engine", icon: HeartPulse, section: "Workspace" },
+  // Hidden for the MVP. Set hidden to false to bring the tab back.
+  { href: "/dashboard/formulary", label: "Medicines and Formulary", icon: Pill, section: "Workspace", hidden: true },
+  { href: "/dashboard/recent-developments", label: "Recent Developments", icon: Activity, section: "Workspace" },
+  // Hidden for the MVP. Set hidden to false to bring the tab back.
+  { href: "/dashboard/patients", label: "Patient Orders", icon: ClipboardList, section: "Workspace", hidden: true },
+  { href: "/dashboard/learning", label: "Learning Portal", icon: GraduationCap, section: "Compliance & Audit" },
+  { href: "/dashboard/protocols", label: "Local Protocols & SOPs", icon: FileCheck2, section: "Hospital" },
+  { href: "/dashboard/governance", label: "Clinical Governance", icon: ShieldCheck, section: "Hospital" },
+  { href: "/dashboard/directory", label: "Staff Directory", icon: UsersRound, section: "Hospital" },
+  { href: "/dashboard/notifications", label: "Notifications", icon: Bell, section: "Hospital" },
 ];
 
-const sections = [
-  { label: "Workspace", items: navigation.slice(0, 7) },
-  { label: "Hospital", items: navigation.slice(7) },
-];
+const sectionOrder: NavSection[] = ["Workspace", "Compliance & Audit", "Hospital"];
 
-const mobileItems = [navigation[0], navigation[1], navigation[2], navigation[10]];
+const visibleNavigation = navigation.filter((item) => !item.hidden);
+
+const sections = sectionOrder
+  .map((label) => ({ label, items: visibleNavigation.filter((item) => item.section === label) }))
+  .filter(({ items }) => items.length > 0);
+
+const navItem = (href: string) => navigation.find((item) => item.href === href)!;
+const mobileItems = ["/dashboard", "/dashboard/disease-management", "/dashboard/medical-calculators", "/dashboard/notifications"].map(navItem);
 
 const diseaseLinks: NavItem[] = [
   { href: "/dashboard/diseases", label: "Disease directory", icon: Stethoscope },
@@ -212,7 +226,7 @@ function ModulePanel({ module, pathname, temporaryAdminMode, draftTopicCount, on
   const Icon = module.icon;
   const searchParams = useSearchParams();
   const params = useMemo(() => new URLSearchParams(searchParams?.toString() ?? ""), [searchParams]);
-  const section = module.href === ADMIN_MODULE.href ? { label: "Admin" } : sections.find(({ items }) => items.includes(module));
+  const section = module.href === ADMIN_MODULE.href ? { label: "Admin" } : { label: module.section };
   const isDiseases = module.href === "/dashboard/disease-management";
   const isCalculators = module.href === "/dashboard/medical-calculators";
   const links = modulePanelLinks(module, temporaryAdminMode);
@@ -531,7 +545,7 @@ export function MobileNavigation() {
       </button>
       {menuOpen && (
         <section className="mobile-module-menu" id="mobile-module-menu" aria-label="All dashboard modules">
-          {navigation.map(({ href, label, icon: Icon }) => (
+          {visibleNavigation.map(({ href, label, icon: Icon }) => (
             <Link key={label} href={href} aria-current={label === activeItem?.label ? "page" : undefined} onClick={() => setOpenPath(null)}>
               <Icon size={17} aria-hidden="true" />
               <span>{label}</span>
