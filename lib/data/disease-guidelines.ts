@@ -23,8 +23,10 @@ export type DiseaseDetailResult =
   | { state: "unavailable" };
 
 // This module powers end-user views and search. Staged and draft versions must
-// never cross this boundary: only a clinician-approved current version is public.
-const approvedStatuses = ["approved"] as const;
+// never cross this boundary. An audit-eligible published version is live while
+// clinical sign-off remains visibly pending; approval creates a later additive
+// `approved` version without rewriting its history.
+const liveStatuses = ["published", "approved"] as const;
 
 function currentContent(row: GuidelineRow) {
   return Array.isArray(row.guideline_versions) ? row.guideline_versions[0]?.content : row.guideline_versions?.content;
@@ -36,8 +38,8 @@ function currentSource(row: GuidelineRow) {
   return { title: version.source_title, url: version.source_url };
 }
 
-function isApproved(disease: DiseaseDetail) {
-  return disease.status === "approved";
+function isLive(disease: DiseaseDetail) {
+  return liveStatuses.some((status) => status === disease.status);
 }
 
 const MAX_SEARCH_KEYWORDS = 40;
@@ -88,9 +90,9 @@ async function loadDirectory(): Promise<DirectoryPayload> {
     .from("clinical_guidelines")
     .select("id,title,specialty,speciality_id,speciality:specialties!clinical_guidelines_speciality_id_fkey(name),sub_specialities,status,source_type,guideline_versions!inner(content)")
     .is("organization_id", null)
-    .in("status", [...approvedStatuses])
+    .in("status", [...liveStatuses])
     .eq("guideline_versions.is_current", true)
-    .in("guideline_versions.status", [...approvedStatuses])
+    .in("guideline_versions.status", [...liveStatuses])
     .order("title", { ascending: true });
   if (error) throw error;
 
@@ -100,7 +102,7 @@ async function loadDirectory(): Promise<DirectoryPayload> {
   for (const row of (data ?? []) as unknown as GuidelineRow[]) {
     if (Object.hasOwn(mergedTopics, row.id)) continue;
     const parsed = DiseaseDetailSchema.safeParse(currentContent(row));
-    if (!parsed.success || !isApproved(parsed.data) || parsed.data.id !== row.id || row.status !== parsed.data.status || row.title !== parsed.data.title || row.specialty !== parsed.data.specialty) {
+    if (!parsed.success || !isLive(parsed.data) || parsed.data.id !== row.id || row.status !== parsed.data.status || row.title !== parsed.data.title || row.specialty !== parsed.data.specialty) {
       rejectedCount += 1;
       continue;
     }
@@ -154,16 +156,16 @@ async function loadTopic(id: string): Promise<TopicPayload> {
     .select("id,guideline_versions!inner(content,source_title,source_url)")
     .eq("id", id)
     .is("organization_id", null)
-    .in("status", [...approvedStatuses])
+    .in("status", [...liveStatuses])
     .eq("guideline_versions.is_current", true)
-    .in("guideline_versions.status", [...approvedStatuses])
+    .in("guideline_versions.status", [...liveStatuses])
     .maybeSingle();
   if (error) throw error;
   if (!data) return { state: "not-found" };
 
   const row = data as unknown as GuidelineRow;
   const parsed = DiseaseDetailSchema.safeParse(currentContent(row));
-  if (!parsed.success || !isApproved(parsed.data) || parsed.data.id !== row.id) return { state: "invalid" };
+  if (!parsed.success || !isLive(parsed.data) || parsed.data.id !== row.id) return { state: "invalid" };
   if (!isClinicalDirectoryEligible(parsed.data)) return { state: "not-found" };
   return { state: "ready", disease: parsed.data, investigationSource: currentSource(row) };
 }
@@ -190,7 +192,7 @@ export const getApprovedDiseaseGuidelineVersion = cache(async (id: string, versi
       .select("id,guideline_versions!inner(content,source_title,source_url,id,status)")
       .eq("id", id)
       .is("organization_id", null)
-      .in("status", [...approvedStatuses])
+      .eq("status", "approved")
       .eq("guideline_versions.id", versionId)
       .eq("guideline_versions.status", "approved")
       .maybeSingle();
@@ -199,7 +201,7 @@ export const getApprovedDiseaseGuidelineVersion = cache(async (id: string, versi
 
     const row = data as unknown as GuidelineRow;
     const parsed = DiseaseDetailSchema.safeParse(currentContent(row));
-    if (!parsed.success || !isApproved(parsed.data) || parsed.data.id !== row.id) return { state: "invalid" };
+    if (!parsed.success || parsed.data.status !== "approved" || parsed.data.id !== row.id) return { state: "invalid" };
     return { state: "ready", disease: parsed.data, investigationSource: currentSource(row) };
   } catch (error) {
     console.error("[disease-guidelines] approved version load failed", error);

@@ -1,0 +1,405 @@
+{
+  "id": "b9a3fd90-45b2-42a3-8d17-0100db27cc2d",
+  "title": "Diabetic Foot Infection: Urgent Assessment, Imaging and Limb-Salvage Referral",
+  "specialty": "Endocrinology / Infectious Diseases / Vascular Surgery",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-21-full-v2",
+  "lastReviewed": "2026-10-21",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-21",
+    "status": "incomplete",
+    "scope": "Diagnosis and severity classification of diabetes-related foot infection, osteomyelitis work-up and limb-salvage escalation.",
+    "findings": [
+      "Rebuilt against the approved-topic structure: a tiered investigation panel, time-ordered management and an explicit medicine decision pathway.",
+      "Every investigation row includes a reference or normal state, condition finding and next action.",
+      "Previous outline and published rows remain preserved; this additive version is pending clinical review."
+    ],
+    "unverifiedSections": [
+      "No topic-specific Saudi national guideline was found in the opened Saudi Ministry of Health protocol index unless a Saudi source is explicitly cited in the medicine row.",
+      "Current live Saudi Food and Drug Authority product registration was not individually confirmed; clinicians must check the hospital formulary.",
+      "Local antibiogram, resistance pattern, shared-care agreement and imaging availability require site-level confirmation where relevant."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "b9a3fd90-45b2-42a3-8d17-0100db27cc2d"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Neuropathy permits unnoticed skin breakdown and repetitive trauma. Peripheral arterial disease impairs healing and antibiotic delivery. Soft-tissue infection may spread to deep compartments and bone.",
+    "keyMechanisms": [
+      "Neuropathy permits unnoticed skin breakdown and repetitive trauma.",
+      "Peripheral arterial disease impairs healing and antibiotic delivery.",
+      "Soft-tissue infection may spread to deep compartments and bone."
+    ],
+    "references": [
+      {
+        "title": "IWGDF/IDSA Guidelines on the Diagnosis and Treatment of Diabetes-related Foot Infections",
+        "edition": "2023; Recommendations 1–22",
+        "url": "https://www.idsociety.org/practice-guideline/diabetic-foot-infections/"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "New pain may be absent; ask about discharge, odour, swelling, fever and functional change."
+    ],
+    "physicalSigns": [
+      "Purulence or local inflammation, ulcer depth, necrosis, fluctuance, crepitus and impaired perfusion."
+    ],
+    "redFlags": [
+      "Sepsis, extensive gangrene, necrotising infection, deep abscess, compartment syndrome or severe limb ischaemia."
+    ],
+    "precipitants": [
+      "Ulcer, pressure, trauma, poor footwear, previous amputation, neuropathy and peripheral arterial disease."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Uninfected diabetic foot ulcer",
+      "distinguishingFeatures": "No purulence or clinical inflammatory signs; colonisation alone is not infection."
+    },
+    {
+      "condition": "Charcot neuro-osteoarthropathy",
+      "distinguishingFeatures": "Warm swollen foot with bony change but infection must be excluded when an ulcer or systemic signs coexist."
+    },
+    {
+      "condition": "Critical limb ischaemia",
+      "distinguishingFeatures": "Rest pain, tissue loss and perfusion deficit; infection and ischaemia often coexist."
+    }
+  ],
+  "diagnosticCriteria": [
+    {
+      "criterion": "Severity",
+      "threshold": "Use the IWGDF/IDSA classification; hospitalise severe infection and consider admission for moderate infection with important morbidity (Recommendations 1–2)."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Clinical wound and infection-severity examination",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "normalValue": "No erythema, warmth, tenderness, swelling or purulence",
+        "expectedFinding": "At least two local inflammatory features; systemic features indicate severe infection",
+        "clinicalRationale": "Classify severity with the IWGDF/IDSA system and document wound depth, necrosis and systemic physiology.",
+        "references": [
+          {
+            "title": "IWGDF/IDSA 2023",
+            "edition": "IWGDF/IDSA 2023, Recommendations 1–22",
+            "url": "https://www.idsociety.org/practice-guideline/diabetic-foot-infections/"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Perfusion assessment",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "normalValue": "Palpable pulses with reassuring Doppler waveforms and toe pressure",
+        "expectedFinding": "Absent pulses or abnormal perfusion tests",
+        "clinicalRationale": "Urgent vascular review when infection coexists with ischaemia.",
+        "references": [
+          {
+            "title": "IWGDF/IDSA 2023",
+            "edition": "IWGDF/IDSA 2023, Recommendations 1–22",
+            "url": "https://www.idsociety.org/practice-guideline/diabetic-foot-infections/"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Probe-to-bone test",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "normalValue": "Bone not contacted",
+        "expectedFinding": "Hard or gritty bone contacted through the ulcer",
+        "clinicalRationale": "Combine with radiography and inflammatory markers when osteomyelitis is suspected.",
+        "references": [
+          {
+            "title": "IWGDF/IDSA 2023",
+            "edition": "IWGDF/IDSA 2023, Recommendations 1–22",
+            "url": "https://www.idsociety.org/practice-guideline/diabetic-foot-infections/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count and inflammatory markers",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "normalValue": "White-cell count 4.0–11.0 ×10⁹/L; inflammatory markers below local upper limits",
+        "expectedFinding": "Leucocytosis and/or raised C-reactive protein, erythrocyte sedimentation rate or procalcitonin",
+        "clinicalRationale": "Use biomarkers when the clinical examination is equivocal; they do not replace examination.",
+        "references": [
+          {
+            "title": "IWGDF/IDSA 2023",
+            "edition": "IWGDF/IDSA 2023, Recommendations 1–22",
+            "url": "https://www.idsociety.org/practice-guideline/diabetic-foot-infections/"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Deep tissue culture after cleansing and debridement",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "normalValue": "No pathogenic growth",
+        "expectedFinding": "Pathogen with susceptibility profile",
+        "clinicalRationale": "Prefer an aseptically collected tissue specimen over a superficial swab.",
+        "references": [
+          {
+            "title": "IWGDF/IDSA 2023",
+            "edition": "IWGDF/IDSA 2023, Recommendations 1–22",
+            "url": "https://www.idsociety.org/practice-guideline/diabetic-foot-infections/"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Plain foot radiographs",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "normalValue": "No gas, foreign body, cortical destruction or Charcot change",
+        "expectedFinding": "Gas, foreign body, bone destruction or another bony abnormality",
+        "clinicalRationale": "Initial imaging for suspected osteomyelitis and complications.",
+        "references": [
+          {
+            "title": "IWGDF/IDSA 2023",
+            "edition": "IWGDF/IDSA 2023, Recommendations 1–22",
+            "url": "https://www.idsociety.org/practice-guideline/diabetic-foot-infections/"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Magnetic resonance imaging",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "normalValue": "No marrow or deep soft-tissue infection",
+        "expectedFinding": "Marrow oedema compatible with osteomyelitis or a deep collection",
+        "clinicalRationale": "Use when osteomyelitis remains uncertain after examination, radiographs and laboratory tests.",
+        "references": [
+          {
+            "title": "IWGDF/IDSA 2023",
+            "edition": "IWGDF/IDSA 2023, Recommendations 1–22",
+            "url": "https://www.idsociety.org/practice-guideline/diabetic-foot-infections/"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "advancedImaging",
+        "testName": "Positron-emission tomography, labelled-leucocyte scan or single-photon emission computed tomography",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "normalValue": "No focal uptake compatible with infection",
+        "expectedFinding": "Focal uptake supporting osteomyelitis",
+        "clinicalRationale": "Alternative when magnetic resonance imaging is contraindicated or unavailable.",
+        "references": [
+          {
+            "title": "IWGDF/IDSA 2023",
+            "edition": "IWGDF/IDSA 2023, Recommendations 1–22",
+            "url": "https://www.idsociety.org/practice-guideline/diabetic-foot-infections/"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Bone culture",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "normalValue": "No pathogenic growth",
+        "expectedFinding": "Bone pathogen with susceptibility profile",
+        "clinicalRationale": "Obtain bone rather than soft tissue for suspected osteomyelitis when feasible.",
+        "references": [
+          {
+            "title": "IWGDF/IDSA 2023",
+            "edition": "IWGDF/IDSA 2023, Recommendations 1–22",
+            "url": "https://www.idsociety.org/practice-guideline/diabetic-foot-infections/"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "classify",
+      "title": "Classify infection and perfusion",
+      "timeframe": "Immediately",
+      "actions": [
+        "Assess sepsis, infection extent/depth, gangrene, abscess, neuropathy and perfusion.",
+        "Mark spreading erythema and off-load pressure."
+      ]
+    },
+    {
+      "id": "source",
+      "title": "Obtain source control and cultures",
+      "timeframe": "Urgently",
+      "actions": [
+        "Collect deep tissue after cleansing/debridement when feasible; do not delay emergency treatment in severe infection.",
+        "Request urgent surgery for severe infection or complicated moderate infection; consider early surgery within 24–48 hours for moderate/severe infection (Recommendations 18–19)."
+      ]
+    },
+    {
+      "id": "team",
+      "title": "Activate limb-salvage team",
+      "timeframe": "Same encounter",
+      "actions": [
+        "Coordinate diabetes, infectious diseases/microbiology, podiatry, surgery and vascular services.",
+        "Do not give antibiotics to a clinically uninfected ulcer solely to promote healing (Recommendation 11)."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Mild diabetic foot infection, first-choice oral antibiotic (NICE NG19 1.6.8, Table 1)",
+        "patientGroup": "Adults 18 and over, mild infection (skin and subcutaneous tissue only)",
+        "genericName": "Flucloxacillin",
+        "dose": "500 mg to 1 g",
+        "route": "PO",
+        "frequency": "Four times a day",
+        "duration": "7 days; a further 7 days may be needed on clinical assessment",
+        "adjustments": [
+          "See the BNF for dosing in hepatic or renal impairment, pregnancy and breastfeeding (NG19 tables)",
+          "Upper dose of 1 g four times a day was off label in August 2015",
+          "Penicillin allergy or flucloxacillin unsuitable: doxycycline, clarithromycin or (in pregnancy) erythromycin (NG19 Table 1)"
+        ],
+        "monitoring": [
+          "Culture results",
+          "Clinical response, reviewed regularly (NG19 1.6.12)"
+        ],
+        "contraindications": [
+          "Penicillin allergy (NG19 Table 1 gives alternatives)",
+          "Check the product label for other contraindications; not opened on 14 Oct 2026"
+        ],
+        "sourceTitle": "NICE NG19: Diabetic foot problems: prevention and management",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng19",
+        "sourceEdition": "NICE NG19, Recommendations 1.6.8 and 1.6.10–1.6.12, Table 1",
+        "branch": "Mild infection",
+        "step": "Oral antibiotic",
+        "selection": "one-of",
+        "preferred": true
+      },
+      {
+        "indication": "Mild diabetic foot infection in penicillin allergy or when flucloxacillin is unsuitable (NICE NG19 Table 1)",
+        "patientGroup": "Adults 18 and over, mild infection",
+        "genericName": "Doxycycline",
+        "dose": "200 mg on day 1, then 100 mg once a day (can be increased to 200 mg daily)",
+        "route": "PO",
+        "frequency": "Once a day after day 1",
+        "duration": "7 days; a further 7 days may be needed on clinical assessment",
+        "adjustments": [
+          "See the BNF for dosing in hepatic or renal impairment, pregnancy and breastfeeding (NG19 tables)",
+          "Guide the choice by microbiological results when available (NG19 Table 1)",
+          "Pregnancy: NG19 gives erythromycin 500 mg four times a day instead"
+        ],
+        "monitoring": [
+          "Culture results",
+          "Clinical response, reviewed regularly (NG19 1.6.12)"
+        ],
+        "contraindications": [
+          "Pregnancy (NG19 Table 1 lists erythromycin for pregnancy)",
+          "Check the product label for other contraindications; not opened on 14 Oct 2026"
+        ],
+        "sourceTitle": "NICE NG19: Diabetic foot problems: prevention and management",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng19",
+        "sourceEdition": "NICE NG19, Recommendations 1.6.8 and 1.6.12, Table 1",
+        "branch": "Mild infection",
+        "step": "Oral antibiotic",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Penicillin allergy, or flucloxacillin is unsuitable"
+      },
+      {
+        "indication": "Moderate or severe diabetic foot infection, first-choice antibiotic, with or without gentamicin (NICE NG19 Table 2)",
+        "patientGroup": "Adults 18 and over, moderate or severe infection",
+        "genericName": "Co-amoxiclav",
+        "dose": "500/125 mg orally or 1.2 g IV",
+        "route": "PO or IV",
+        "frequency": "Three times a day",
+        "duration": "Minimum 7 days, up to 6 weeks for osteomyelitis using oral antibiotics for prolonged treatment; in severe infection IV for at least 48 hours until stabilised",
+        "adjustments": [
+          "See the BNF for dosing in hepatic or renal impairment, pregnancy and breastfeeding (NG19 tables)",
+          "Review IV antibiotics by 48 hours and consider switching to oral (NG19 1.6.11)",
+          "Penicillin allergy: co-trimoxazole 960 mg twice a day (off label in August 2015), with or without gentamicin and metronidazole (NG19 Table 2)",
+          "Add Pseudomonas or MRSA cover on microbiology and specialist advice (NG19 Table 2)"
+        ],
+        "monitoring": [
+          "Cultures before or at the start of antibiotics (NG19 1.6.6)",
+          "Review IV antibiotics at 48 hours (NG19 1.6.11)",
+          "Gentamicin concentrations if gentamicin is added (NG19 Table 2)"
+        ],
+        "contraindications": [
+          "Penicillin allergy (NG19 Table 2 gives alternatives)",
+          "Check the product label for other contraindications; not opened on 14 Oct 2026"
+        ],
+        "sourceTitle": "NICE NG19: Diabetic foot problems: prevention and management",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng19",
+        "sourceEdition": "NICE NG19, Recommendations 1.6.6–1.6.12, Table 2",
+        "branch": "Moderate or severe infection",
+        "step": "Antibiotic",
+        "selection": "all"
+      }
+    ],
+    "note": "Antibiotic doses and course lengths are NICE NG19 Table 1 (mild) and Table 2 (moderate or severe) for adults 18 and over; seek specialist advice for under 18 (NG19 1.6.9). Doses must be adjusted for renal or hepatic impairment, pregnancy and breastfeeding per the BNF. Pseudomonas and MRSA cover are given in the guideline and are not reproduced here. SFDA registration was not verified. Check hospital formulary and local antibiogram. Do not treat a clinically uninfected ulcer with antibiotics. Soft-tissue infection is usually treated for 1–2 weeks; the IWGDF/IDSA guideline permits up to 3–4 weeks when infection is extensive, resolves slowly or severe peripheral artery disease is present. Current live SFDA registration was not individually confirmed; check the hospital formulary.",
+    "branches": [
+      {
+        "label": "Mild infection",
+        "entryCriteria": "Adult with mild diabetic foot infection (skin and subcutaneous tissue only)"
+      },
+      {
+        "label": "Moderate or severe infection",
+        "entryCriteria": "Adult with moderate or severe diabetic foot infection"
+      }
+    ]
+  },
+  "teaching": {
+    "scope": "Diagnosis and severity classification of diabetes-related foot infection, osteomyelitis work-up and limb-salvage escalation.",
+    "learningObjectives": [
+      "Recognise the condition and its red flags.",
+      "Choose initial tests without delaying urgent escalation.",
+      "Use a named multidisciplinary disposition plan."
+    ],
+    "keyPoints": [
+      "Sepsis, extensive gangrene, necrotising infection, deep abscess, compartment syndrome or severe limb ischaemia.",
+      "Coordinate diabetes, infectious diseases/microbiology, podiatry, surgery and vascular services."
+    ],
+    "pitfalls": [
+      "Stopping after a short outline instead of documenting the full investigation pathway.",
+      "Using a medicine row without checking the branch, allergy, organ function, culture result and local formulary.",
+      "Mistaking publication status for clinical approval; this version remains pending until a clinician approves it."
+    ],
+    "references": [
+      {
+        "title": "IWGDF/IDSA 2023",
+        "edition": "IWGDF/IDSA 2023, Recommendations 1–22",
+        "url": "https://www.idsociety.org/practice-guideline/diabetic-foot-infections/",
+        "locator": "IWGDF/IDSA 2023, Recommendations 1–22"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain the working diagnosis, immediate plan and specific return or deterioration signs."
+    ],
+    "lifestyleAndDiet": [
+      "Address prevention and self-management only after the acute safety plan is complete."
+    ],
+    "mdtReferrals": [
+      "Endocrinology",
+      "Infectious Diseases",
+      "Vascular Surgery"
+    ],
+    "dischargeCriteria": [
+      "Only mild/stable infection with adequate perfusion, an executable antimicrobial/off-loading plan, rapid review and no surgical indication."
+    ],
+    "followUpPlan": "Review response promptly; reassess unresolved infection by 4 weeks and follow osteomyelitis for at least 6 months after therapy (Recommendations 12 and 17)."
+  }
+}
