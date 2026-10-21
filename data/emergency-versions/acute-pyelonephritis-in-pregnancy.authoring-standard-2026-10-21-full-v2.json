@@ -1,0 +1,361 @@
+{
+  "id": "933abb7e-bc41-4db1-827d-d348fc9912ef",
+  "title": "Acute Pyelonephritis in Pregnancy: Assessment, Admission and Follow-Up",
+  "specialty": "Obstetrics / Infectious Diseases",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-21-full-v2",
+  "lastReviewed": "2026-10-21",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-21",
+    "status": "incomplete",
+    "scope": "Pregnant patients with suspected acute pyelonephritis; recognition, cultures, hospital assessment and obstetric follow-up.",
+    "findings": [
+      "Rebuilt against the approved-topic structure: a tiered investigation panel, time-ordered management and an explicit medicine decision pathway.",
+      "Every investigation row includes a reference or normal state, condition finding and next action.",
+      "Previous outline and published rows remain preserved; this additive version is pending clinical review."
+    ],
+    "unverifiedSections": [
+      "No topic-specific Saudi national guideline was found in the opened Saudi Ministry of Health protocol index unless a Saudi source is explicitly cited in the medicine row.",
+      "Current live Saudi Food and Drug Authority product registration was not individually confirmed; clinicians must check the hospital formulary.",
+      "Local antibiogram, resistance pattern, shared-care agreement and imaging availability require site-level confirmation where relevant."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "933abb7e-bc41-4db1-827d-d348fc9912ef"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Ascending urinary infection can involve the renal pelvis and parenchyma. Pregnancy-related urinary stasis increases the risk of upper-tract infection. Systemic infection can cause sepsis, acute kidney injury and uterine activity.",
+    "keyMechanisms": [
+      "Ascending urinary infection can involve the renal pelvis and parenchyma.",
+      "Pregnancy-related urinary stasis increases the risk of upper-tract infection.",
+      "Systemic infection can cause sepsis, acute kidney injury and uterine activity."
+    ],
+    "references": [
+      {
+        "title": "NICE NG111: Pyelonephritis (acute): antimicrobial prescribing",
+        "edition": "2018, updated 2024; Recommendations 1.1.1–1.3.3",
+        "url": "https://www.nice.org.uk/guidance/ng111/chapter/recommendations"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Fever or rigors with flank or back pain.",
+      "Dysuria, frequency, urgency, nausea or vomiting may coexist."
+    ],
+    "physicalSigns": [
+      "Costovertebral-angle tenderness.",
+      "Fever, tachycardia, hypotension, dehydration or uterine activity."
+    ],
+    "redFlags": [
+      "Sepsis physiology, hypotension, altered mental state, oliguria, persistent vomiting or concern about preterm labour."
+    ],
+    "precipitants": [
+      "Recent urinary infection, urinary obstruction, renal stone, diabetes or urinary instrumentation."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Lower urinary tract infection",
+      "distinguishingFeatures": "Urinary symptoms without fever or flank tenderness."
+    },
+    {
+      "condition": "Renal colic",
+      "distinguishingFeatures": "Colicky pain and haematuria; fever raises concern for infected obstruction."
+    },
+    {
+      "condition": "Appendicitis",
+      "distinguishingFeatures": "Focal abdominal signs without a urinary source; pregnancy can alter pain location."
+    }
+  ],
+  "diagnosticCriteria": [
+    {
+      "criterion": "Clinical suspicion",
+      "threshold": "Fever with flank pain or costovertebral-angle tenderness plus urinalysis/culture evidence supports acute pyelonephritis."
+    },
+    {
+      "criterion": "Hospital referral",
+      "threshold": "Refer if signs suggest sepsis or serious illness, dehydration or inability to take oral fluids/medicines; pregnancy lowers the threshold for specialist assessment (NG111 1.1.4–1.1.5)."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Maternal observations and sepsis screen",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "normalValue": "Temperature 36.0–37.5 °C; systolic blood pressure at least 90 mmHg; alert mental state",
+        "expectedFinding": "Fever, tachycardia, hypotension, altered mentation or oliguria",
+        "clinicalRationale": "Treat physiological instability as sepsis; obtain senior obstetric and medical review without waiting for imaging.",
+        "references": [
+          {
+            "title": "NICE NG111",
+            "edition": "NICE NG111, Recommendations 1.1.1–1.3.3",
+            "url": "https://www.nice.org.uk/guidance/ng111/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Urinalysis",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "normalValue": "No nitrite, leucocyte esterase or blood",
+        "expectedFinding": "Pyuria and/or nitrite; haematuria may occur",
+        "clinicalRationale": "Supports a urinary source but does not identify susceptibility.",
+        "references": [
+          {
+            "title": "NICE NG111",
+            "edition": "NICE NG111, Recommendations 1.1.1–1.3.3",
+            "url": "https://www.nice.org.uk/guidance/ng111/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Midstream urine culture and susceptibility",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "normalValue": "No significant pathogen growth",
+        "expectedFinding": "A urinary pathogen with a susceptibility profile",
+        "clinicalRationale": "Collect before antibiotics when this does not delay treatment; narrow treatment to the result.",
+        "references": [
+          {
+            "title": "NICE NG111",
+            "edition": "NICE NG111, Recommendations 1.1.1–1.3.3",
+            "url": "https://www.nice.org.uk/guidance/ng111/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "normalValue": "White-cell count 4.0–11.0 ×10⁹/L; haemoglobin and platelets within pregnancy-adjusted range",
+        "expectedFinding": "Leucocytosis, anaemia or thrombocytopenia",
+        "clinicalRationale": "Assesses inflammatory response and complications; use local pregnancy ranges.",
+        "references": [
+          {
+            "title": "NICE NG111",
+            "edition": "NICE NG111, Recommendations 1.1.1–1.3.3",
+            "url": "https://www.nice.org.uk/guidance/ng111/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Renal profile",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "normalValue": "Creatinine within the pregnancy-adjusted laboratory range; potassium 3.5–5.0 mmol/L",
+        "expectedFinding": "Acute kidney injury or electrolyte disturbance",
+        "clinicalRationale": "Guides fluid treatment and antimicrobial dose adjustment.",
+        "references": [
+          {
+            "title": "NICE NG111",
+            "edition": "NICE NG111, Recommendations 1.1.1–1.3.3",
+            "url": "https://www.nice.org.uk/guidance/ng111/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Lactate and blood cultures when systemically unwell",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "normalValue": "Lactate below 2 mmol/L; blood cultures no growth",
+        "expectedFinding": "Raised lactate and/or bloodstream pathogen",
+        "clinicalRationale": "Identifies sepsis severity and bacteraemia; do not delay antibiotics in an unstable patient.",
+        "references": [
+          {
+            "title": "NICE NG111",
+            "edition": "NICE NG111, Recommendations 1.1.1–1.3.3",
+            "url": "https://www.nice.org.uk/guidance/ng111/chapter/recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Obstetric and fetal assessment",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "normalValue": "No uterine activity; fetal assessment appropriate for gestation",
+        "expectedFinding": "Contractions, fetal concern or threatened preterm labour",
+        "clinicalRationale": "Determines obstetric monitoring and location of care.",
+        "references": [
+          {
+            "title": "NICE NG111",
+            "edition": "NICE NG111, Recommendations 1.1.1–1.3.3",
+            "url": "https://www.nice.org.uk/guidance/ng111/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Renal ultrasound",
+        "modalityTarget": "Diagnosis, severity and complications",
+        "targetCondition": "Named condition",
+        "normalValue": "No hydronephrosis, calculus or collection",
+        "expectedFinding": "Obstruction, stone or renal/perinephric collection",
+        "clinicalRationale": "Use for suspected obstruction, recurrent disease or failure to improve.",
+        "references": [
+          {
+            "title": "NICE NG111",
+            "edition": "NICE NG111, Recommendations 1.1.1–1.3.3",
+            "url": "https://www.nice.org.uk/guidance/ng111/chapter/recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "assess",
+      "title": "Assess mother and fetus",
+      "timeframe": "Immediately",
+      "actions": [
+        "Use an ABCDE assessment, record sepsis physiology and obtain obstetric review.",
+        "Send urine culture before treatment when feasible; do not delay emergency treatment in sepsis."
+      ]
+    },
+    {
+      "id": "admit",
+      "title": "Admit or obtain urgent specialist assessment",
+      "timeframe": "Same encounter",
+      "actions": [
+        "Pregnancy with suspected upper urinary infection requires obstetric/medical assessment and a low threshold for admission.",
+        "Escalate suspected infected obstruction to urology."
+      ]
+    },
+    {
+      "id": "review",
+      "title": "Review response and results",
+      "timeframe": "Within 24–48 hours",
+      "actions": [
+        "Review culture and narrow treatment through the local antimicrobial pathway.",
+        "Reassess persistent fever, pain or physiological abnormality for obstruction, abscess or an alternative diagnosis."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "branches": [
+      {
+        "label": "Pregnant, stable and able to take oral medicine",
+        "entryCriteria": "Pregnant patient with acute pyelonephritis who is clinically stable, can take oral treatment and has a specialist-approved outpatient plan"
+      },
+      {
+        "label": "Pregnant, vomiting or severely unwell",
+        "entryCriteria": "Pregnant patient who is vomiting, unable to take oral medicine or severely unwell; admit and use the hospital intravenous pathway"
+      }
+    ],
+    "note": "Review intravenous treatment by 48 hours and step down to oral treatment when possible. Check culture, allergy, renal function and the hospital antibiogram. Current live SFDA registration was not individually confirmed; check the hospital formulary.",
+    "regimens": [
+      {
+        "indication": "Treatment of acute pyelonephritis",
+        "patientGroup": "Pregnant patient, clinically stable and able to take oral medicine",
+        "genericName": "Cefalexin",
+        "dose": "500 mg; for severe infection the source permits 1–1.5 g per dose",
+        "route": "Oral",
+        "frequency": "Twice or three times daily; severe infection three or four times daily",
+        "duration": "7–10 days",
+        "adjustments": [
+          "Use culture results to narrow treatment.",
+          "Adjust for renal impairment using the product label and local pharmacy guidance.",
+          "Check hospital formulary; current live SFDA registration was not individually confirmed."
+        ],
+        "monitoring": [
+          "Temperature, blood pressure, symptoms and oral intake within 24–48 hours.",
+          "Urine-culture result and renal function."
+        ],
+        "contraindications": [
+          "Immediate or severe cephalosporin hypersensitivity.",
+          "Use caution with a serious immediate penicillin allergy and seek microbiology advice."
+        ],
+        "branch": "Pregnant, stable and able to take oral medicine",
+        "step": "Initial antimicrobial",
+        "selection": "all",
+        "sourceTitle": "NICE NG111: Pyelonephritis (acute): antimicrobial prescribing",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng111/chapter/recommendations",
+        "sourceEdition": "NICE NG111, Recommendation 1.3.3, Table 2"
+      },
+      {
+        "indication": "Intravenous treatment of acute pyelonephritis",
+        "patientGroup": "Pregnant patient who is vomiting, unable to take oral medicine or severely unwell",
+        "genericName": "Cefuroxime",
+        "dose": "750 mg to 1.5 g",
+        "route": "Intravenous",
+        "frequency": "Three or four times daily",
+        "duration": "Review at 48 hours; step down to oral treatment when possible to complete the specialist-defined course",
+        "adjustments": [
+          "Dose at the higher end for severe infection.",
+          "Reduce in renal impairment using the product label and pharmacy guidance.",
+          "Check hospital formulary; cefuroxime is listed in the Saudi Essential Medicines List, but current live SFDA registration was not individually confirmed."
+        ],
+        "monitoring": [
+          "Maternal observations, renal function and response at least daily.",
+          "Culture and susceptibility; fetal/obstetric status."
+        ],
+        "contraindications": [
+          "Immediate or severe cephalosporin hypersensitivity.",
+          "Use caution with a serious immediate penicillin allergy and seek microbiology advice."
+        ],
+        "branch": "Pregnant, vomiting or severely unwell",
+        "step": "Initial antimicrobial",
+        "selection": "all",
+        "sourceTitle": "NICE NG111: Pyelonephritis (acute): antimicrobial prescribing",
+        "sourceUrl": "https://www.nice.org.uk/guidance/ng111/chapter/recommendations",
+        "sourceEdition": "NICE NG111, Recommendation 1.3.3, Table 2"
+      }
+    ]
+  },
+  "teaching": {
+    "scope": "Pregnant patients with suspected acute pyelonephritis; recognition, cultures, hospital assessment and obstetric follow-up.",
+    "learningObjectives": [
+      "Recognise the condition and its red flags.",
+      "Choose initial tests without delaying urgent escalation.",
+      "Use a named multidisciplinary disposition plan."
+    ],
+    "keyPoints": [
+      "Sepsis physiology, hypotension, altered mental state, oliguria, persistent vomiting or concern about preterm labour.",
+      "Review culture and narrow treatment through the local antimicrobial pathway."
+    ],
+    "pitfalls": [
+      "Stopping after a short outline instead of documenting the full investigation pathway.",
+      "Using a medicine row without checking the branch, allergy, organ function, culture result and local formulary.",
+      "Mistaking publication status for clinical approval; this version remains pending until a clinician approves it."
+    ],
+    "references": [
+      {
+        "title": "NICE NG111",
+        "edition": "NICE NG111, Recommendations 1.1.1–1.3.3",
+        "url": "https://www.nice.org.uk/guidance/ng111/chapter/recommendations",
+        "locator": "NICE NG111, Recommendations 1.1.1–1.3.3"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain the working diagnosis, immediate plan and specific return or deterioration signs."
+    ],
+    "lifestyleAndDiet": [
+      "Address prevention and self-management only after the acute safety plan is complete."
+    ],
+    "mdtReferrals": [
+      "Obstetrics",
+      "Infectious Diseases"
+    ],
+    "dischargeCriteria": [
+      "Afebrile and haemodynamically stable, tolerating oral intake, fetal/obstetric concerns addressed, culture follow-up and return plan documented."
+    ],
+    "followUpPlan": "Confirm culture response and arrange obstetric follow-up; repeat urine testing only as directed by the obstetric or microbiology plan."
+  }
+}
