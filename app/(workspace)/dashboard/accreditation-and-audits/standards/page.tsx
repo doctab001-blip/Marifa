@@ -1,10 +1,13 @@
 import Link from "next/link";
+import { FolderOpen, ShieldCheck, Upload } from "lucide-react";
 import { importStandardsAction } from "@/app/(workspace)/dashboard/accreditation-and-audits/actions";
-import { Badge, Details, Empty, EvidenceBadge, Notice, RatingBadge, nameOf, pageParam } from "@/components/accreditation/ui";
+import { createInternalStandardAction } from "@/app/(workspace)/dashboard/accreditation-and-audits/actions-v21";
+import { Badge, Details, Empty, EvidenceBadge, Notice, PageHeader, RatingBadge, Stat, nameOf, pageParam } from "@/components/accreditation/ui";
 import { getGovernanceActor } from "@/lib/governance/auth";
 import { currentDate, formatDate } from "@/lib/governance/clock";
 import { canReadGovernance, canWriteGovernance } from "@/lib/governance/policy";
 import { loadEvidence, loadPeople, loadSettings, loadStandards, loadStatuses, openContext } from "@/lib/governance/repository";
+import { effectiveEvidence, loadEditions, loadElementStatuses, loadElements, loadStandardHierarchy, v21 } from "@/lib/governance/repository-v21";
 import { evidenceHealth, isBackedByEvidence, isoDate } from "@/lib/governance/scoring";
 import type { EvidenceRow } from "@/lib/governance/types";
 
@@ -22,11 +25,12 @@ export default async function StandardsPage({ searchParams }: { searchParams: Pr
   const q = pageParam(sp.q).trim().toLowerCase();
   const chapter = pageParam(sp.chapter);
   const show = pageParam(sp.show);
+  const editionFilter = pageParam(sp.edition);
   const page = Math.max(1, Number.parseInt(pageParam(sp.page), 10) || 1);
 
   const actor = await getGovernanceActor();
   if (!canReadGovernance(actor)) {
-    return <><header className="gh-head"><div><div className="gh-eyebrow">Accreditation hub</div><h1>Standards &amp; evidence</h1></div></header>
+    return <><PageHeader icon={<ShieldCheck size={20} />} title="Standards & evidence" />
       <p className="gh-notice gh-notice-bad" role="alert">Standards and evidence are visible to governance staff and auditors. Ask an administrator to assign you the governance lead, quality manager, clinical director or auditor role.</p></>;
   }
   const canWrite = canWriteGovernance(actor);
@@ -36,14 +40,29 @@ export default async function StandardsPage({ searchParams }: { searchParams: Pr
 
   const loaded = await Promise.all([loadStandards(ctx), loadStatuses(ctx), loadEvidence(ctx), loadPeople(ctx).catch(() => []), loadSettings(ctx)]).catch(() => null);
   if (!loaded) {
-    return <><header className="gh-head"><div><div className="gh-eyebrow">Accreditation hub</div><h1>Standards &amp; evidence</h1></div></header>
+    return <><PageHeader icon={<ShieldCheck size={20} />} title="Standards & evidence" />
       <p className="gh-notice gh-notice-bad" role="alert">The register could not be loaded. Has the accreditation hub migration (20261020190000) been applied?</p></>;
   }
-  const [standards, statuses, evidence, people, settings] = loaded;
+  const [allStandards, statuses, evidence, people, settings] = loaded;
+  // V2.1: hierarchy, measurable elements and linked evidence. Null until the V2.1 migration is applied; the page still works.
+  const [hierarchy, editions, elements, elementStatuses] = await Promise.all([
+    v21(loadStandardHierarchy(ctx)), v21(loadEditions(ctx)), v21(loadElements(ctx)), v21(loadElementStatuses(ctx)),
+  ]);
+  const editionLabels = [...new Set(allStandards.map((s) => s.edition))].sort();
+  const standards = editionFilter ? allStandards.filter((s) => s.edition === editionFilter) : allStandards;
+  const elementsByStandard = new Map<string, number>();
+  const elementsAssessed = new Map<string, number>();
+  const elementRating = new Map((elementStatuses ?? []).map((x) => [x.elementId, x.rating]));
+  for (const el of elements ?? []) {
+    elementsByStandard.set(el.standardId, (elementsByStandard.get(el.standardId) ?? 0) + 1);
+    if (elementRating.get(el.id)) elementsAssessed.set(el.standardId, (elementsAssessed.get(el.standardId) ?? 0) + 1);
+  }
+  const internalCount = allStandards.filter((s) => hierarchy?.get(s.id)?.isOfficial === false).length;
 
   const statusById = new Map(statuses.map((row) => [row.standardId, row]));
   const evidenceById = new Map<string, EvidenceRow[]>();
-  for (const item of evidence) evidenceById.set(item.standardId, [...(evidenceById.get(item.standardId) ?? []), item]);
+  // A file linked to another standard counts there too; a replaced version does not (same rule as the database).
+  for (const item of await effectiveEvidence(ctx, evidence)) evidenceById.set(item.standardId, [...(evidenceById.get(item.standardId) ?? []), item]);
   const peopleById = new Map(people.map((person) => [person.userId, person.displayName]));
 
   const rows = standards.map((standard) => {
@@ -78,6 +97,7 @@ export default async function StandardsPage({ searchParams }: { searchParams: Pr
   const link = (over: Record<string, string | number>) => {
     const params = new URLSearchParams();
     if (q) params.set("q", q);
+    if (editionFilter) params.set("edition", editionFilter);
     if (chapter) params.set("chapter", chapter);
     if (show) params.set("show", show);
     for (const [key, value] of Object.entries(over)) { if (value === "" || value === 0) params.delete(key); else params.set(key, String(value)); }
@@ -87,40 +107,70 @@ export default async function StandardsPage({ searchParams }: { searchParams: Pr
 
   return (
     <>
-      <header className="gh-head">
-        <div><div className="gh-eyebrow">Accreditation hub</div><h1>Standards &amp; evidence</h1>
-          <p>{standards.length === 0 ? "Load the standards you are surveyed against, then attach evidence and record assessments." : `${standards.length} standards${settings.editionLabel ? ` · ${settings.editionLabel}` : ""}. Open a standard to attach evidence and assess it.`}</p></div>
-      </header>
+      <PageHeader icon={<ShieldCheck size={20} />} title="Standards & evidence"
+        subtitle={allStandards.length === 0 ? "Load the standards you are surveyed against, then attach evidence and record assessments." : `${allStandards.length} standards${elements ? ` · ${elements.length} measurable elements` : ""}${settings.editionLabel ? ` · ${settings.editionLabel}` : ""}. Open a standard to attach evidence and assess it.`}
+        actions={<>
+          <Link className="ui-button" href={`${BASE}/standards/evidence`}><FolderOpen size={15} aria-hidden="true" /> Evidence vault</Link>
+          {canWrite ? <Link className="ui-button ui-button-primary" href={`${BASE}/standards/import`}><Upload size={15} aria-hidden="true" /> Import wizard</Link> : null}
+        </>} />
       <Notice done={done} error={error} />
 
+      {allStandards.length > 0 ? (
+        <div className="gh-grid">
+          <Stat accent="blue" label="Standards" value={allStandards.length} note={editionLabels.length > 1 ? `${editionLabels.length} editions` : editionLabels[0] ?? ""} />
+          <Stat accent="blue" label="Measurable elements" value={elements ? elements.length : "—"} note={elements ? `${[...elementsAssessed.values()].reduce((a, b) => a + b, 0)} assessed` : "Needs the V2.1 update"} />
+          <Stat accent="teal" label="Assessed standards" value={statuses.filter((x) => x.rating).length} unit={`of ${allStandards.length}`} progress={allStandards.length ? (statuses.filter((x) => x.rating).length / allStandards.length) * 100 : null} />
+          <Stat accent="indigo" label="Internal (non-official)" value={internalCount} note="Written by the hospital, never shown as CBAHI text" />
+        </div>
+      ) : null}
+
       {canWrite ? (
-        <Details title="Import standards from CSV" open={standards.length === 0}>
-          <p className="gh-meta" style={{ margin: 0 }}>
-            Use the standards from the CBAHI manual your hospital is licensed to use. Columns: <code>code</code> and <code>description</code> are required;
-            optional <code>chapter_code</code>, <code>chapter_name</code>, <code>esr</code> (yes/no) and <code>department</code>. Existing codes in the same edition are left unchanged.{" "}
-            <a href={`${BASE}/standards/template`}><strong>Download the empty template</strong></a>.
-          </p>
-          <form action={importStandardsAction} className="gh-form" encType="multipart/form-data">
-            <input type="hidden" name="returnTo" value={`${BASE}/standards`} />
-            <label className="gh-field">Edition<input name="edition" required maxLength={160} placeholder="e.g. the edition named on your CBAHI licence" defaultValue={settings.editionLabel} /></label>
-            <label className="gh-field">CSV file<input type="file" name="file" accept=".csv,text/csv" required /></label>
-            <div><button className="ui-button ui-button-primary" type="submit">Import</button></div>
-          </form>
-        </Details>
+        <div className="gh-grid-2">
+          <Details title="Quick import (standards only, original importer)" open={false}>
+            <p className="gh-meta" style={{ margin: 0 }}>
+              For measurable elements, column mapping and a preview, use the <Link href={`${BASE}/standards/import`}><strong>import wizard</strong></Link>. Columns here: <code>code</code> and <code>description</code> are required;
+              optional <code>chapter_code</code>, <code>chapter_name</code>, <code>esr</code> (yes/no) and <code>department</code>. Existing codes in the same edition are left unchanged.{" "}
+              <a href={`${BASE}/standards/template`}><strong>Download the empty template</strong></a>.
+            </p>
+            <form action={importStandardsAction} className="gh-form" encType="multipart/form-data">
+              <input type="hidden" name="returnTo" value={`${BASE}/standards`} />
+              <label className="gh-field">Edition<input name="edition" required maxLength={160} placeholder="e.g. the edition named on your CBAHI licence" defaultValue={settings.editionLabel} /></label>
+              <label className="gh-field">CSV file<input type="file" name="file" accept=".csv,text/csv" required /></label>
+              <div><button className="ui-button ui-button-primary" type="submit">Import</button></div>
+            </form>
+          </Details>
+          <Details title="Add an internal requirement (non-official)">
+            <p className="gh-meta" style={{ margin: 0 }}>For the hospital&apos;s own requirements, drafted locally. They are stored and shown as <strong>internal, non-official</strong> and never presented as CBAHI wording.</p>
+            <form action={createInternalStandardAction} className="gh-form">
+              <input type="hidden" name="returnTo" value={`${BASE}/standards`} />
+              <label className="gh-field">Edition / framework<input name="edition" required maxLength={160} list="gh-std-editions" defaultValue={settings.editionLabel} /><datalist id="gh-std-editions">{editionLabels.map((e) => <option key={e} value={e} />)}</datalist></label>
+              <label className="gh-field">Code<input name="code" required maxLength={60} placeholder="e.g. INT-IPC-01" /></label>
+              <label className="gh-field">Chapter code<input name="chapterCode" maxLength={40} /></label>
+              <label className="gh-field">Chapter name<input name="chapterName" maxLength={200} /></label>
+              <label className="gh-field">Department<input name="department" maxLength={160} /></label>
+              <label className="gh-field gh-wide">Requirement<textarea name="description" required maxLength={4000} /></label>
+              <div><button className="ui-button" type="submit">Add internal requirement</button></div>
+            </form>
+          </Details>
+        </div>
       ) : null}
 
       {standards.length === 0 ? (
-        <Empty title="No standards loaded yet">{canWrite ? "Import your register above to begin." : "A governance lead needs to import the standards register."}</Empty>
+        <Empty title="No standards loaded yet">{canWrite ? <>Start with the <Link href={`${BASE}/standards/import`}><strong>import wizard</strong></Link>.</> : "A governance lead needs to import the standards register."}</Empty>
       ) : (
         <>
           <form className="gh-filters gh-noprint" method="get">
             <label className="gh-field" style={{ flex: "2 1 220px" }}>Search<input name="q" defaultValue={q} placeholder="Code, wording or department" /></label>
+            {editionLabels.length > 1 ? (
+              <label className="gh-field" style={{ flex: "1 1 180px" }}>Edition
+                <select name="edition" defaultValue={editionFilter}><option value="">All editions</option>{editionLabels.map((e) => <option key={e} value={e}>{e}{editions?.find((x) => x.label === e && !x.isOfficial) ? " (internal)" : ""}</option>)}</select></label>
+            ) : null}
             <label className="gh-field" style={{ flex: "1 1 160px" }}>Chapter
               <select name="chapter" defaultValue={chapter}><option value="">All chapters</option>{chapters.map((c) => <option key={c} value={c}>{c}</option>)}</select></label>
             <label className="gh-field" style={{ flex: "1 1 200px" }}>Show
               <select name="show" defaultValue={show}><option value="">All applicable</option>{Object.entries(SHOW_LABEL).map(([k, v]) => <option key={k} value={k}>{v}</option>)}</select></label>
             <button className="ui-button" type="submit">Filter</button>
-            {(q || chapter || show) ? <Link className="ui-button" href={`${BASE}/standards`}>Clear</Link> : null}
+            {(q || chapter || show || editionFilter) ? <Link className="ui-button" href={`${BASE}/standards`}>Clear</Link> : null}
           </form>
           <div className="gh-btnrow">
             <Badge tone="info">{filtered.length} shown</Badge>
@@ -132,13 +182,15 @@ export default async function StandardsPage({ searchParams }: { searchParams: Pr
             <section className="gh-card" style={{ padding: 0 }}>
               <div className="gh-table-wrap">
                 <table className="gh-table">
-                  <thead><tr><th scope="col">Standard</th><th scope="col">Requirement</th><th scope="col">Rating</th><th scope="col">Evidence</th><th scope="col">Owner</th><th scope="col">Next review</th></tr></thead>
+                  <thead><tr><th scope="col">Standard</th><th scope="col">Requirement</th><th scope="col">Elements</th><th scope="col">Rating</th><th scope="col">Evidence</th><th scope="col">Owner</th><th scope="col">Next review</th></tr></thead>
                   <tbody>
                     {visible.map(({ standard, status, rating, health, count, reviewOverdue }) => (
                       <tr key={standard.id}>
                         <td><Link className="gh-code" href={`${BASE}/standards/${standard.id}`}>{standard.code}</Link>
-                          <div className="gh-meta">{standard.chapterCode || standard.chapterName}</div>{standard.isEsr ? <Badge tone="bad">ESR</Badge> : null}</td>
+                          <div className="gh-meta">{standard.chapterCode || standard.chapterName}</div>{standard.isEsr ? <Badge tone="bad">ESR</Badge> : null}
+                          {hierarchy?.get(standard.id)?.isOfficial === false ? <span className="gh-badge gh-badge-internal">Internal</span> : null}</td>
                         <td className="gh-desc"><span className="gh-clamp">{standard.description}</span></td>
+                        <td className="gh-num">{elementsByStandard.get(standard.id) ? <><strong>{elementsAssessed.get(standard.id) ?? 0}</strong><span className="gh-meta"> / {elementsByStandard.get(standard.id)} assessed</span></> : <span className="gh-meta">—</span>}</td>
                         <td><RatingBadge rating={rating} />{rating === "satisfactory" && !isBackedByEvidence(health) ? <div style={{ marginTop: ".25rem" }}><Badge tone="bad">Counted as partial</Badge></div> : null}</td>
                         <td><EvidenceBadge health={health} count={count} /></td>
                         <td>{standard.ownerUserId ? nameOf(peopleById, standard.ownerUserId) : standard.department || <span className="gh-meta">Unassigned</span>}</td>

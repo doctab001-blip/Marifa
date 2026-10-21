@@ -28,7 +28,7 @@ const numOrNull = (v: unknown) => (v === null || v === undefined ? null : Number
 const bool = (v: unknown) => v === true;
 
 const PAGE = 1000;
-async function pageAll(fetchPage: (from: number, to: number) => PromiseLike<{ data: Row[] | null; error: { message: string } | null }>): Promise<Row[]> {
+export async function pageAll(fetchPage: (from: number, to: number) => PromiseLike<{ data: Row[] | null; error: { message: string } | null }>): Promise<Row[]> {
   const rows: Row[] = [];
   for (let from = 0; ; from += PAGE) {
     const { data, error } = await fetchPage(from, from + PAGE - 1);
@@ -101,6 +101,11 @@ export async function loadSettings({ client, actor }: Ctx): Promise<GovSettings>
     accreditedMinOverall: num(row.accredited_min_overall), conditionalMinOverall: num(row.conditional_min_overall),
     esrUnsatisfactoryMaxPct: num(row.esr_unsatisfactory_max_pct), validityYears: num(row.validity_years) || 3,
     accreditationAwardedOn: strOrNull(row.accreditation_awarded_on), scoringSourceNote: str(row.scoring_source_note) || DEFAULT_SETTINGS.scoringSourceNote,
+    // Columns added by the V2.1 migration; the defaults keep the page working on a database that does not have them yet.
+    riskModerateMin: numOrNull(row.risk_moderate_min) ?? DEFAULT_SETTINGS.riskModerateMin,
+    riskHighMin: numOrNull(row.risk_high_min) ?? DEFAULT_SETTINGS.riskHighMin,
+    riskExtremeMin: numOrNull(row.risk_extreme_min) ?? DEFAULT_SETTINGS.riskExtremeMin,
+    riskMethodologyNote: str(row.risk_methodology_note),
   };
 }
 

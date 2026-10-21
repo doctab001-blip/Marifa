@@ -1,12 +1,15 @@
 import Link from "next/link";
+import { ClipboardCheck } from "lucide-react";
+import { AuditV21, AuditTemplates } from "@/components/accreditation/audit-v21";
 import {
   addCapaAction, cancelAuditAction, completeAuditAction, createQipAction, scheduleAuditAction, updateQipAction,
 } from "@/app/(workspace)/dashboard/accreditation-and-audits/actions";
-import { Badge, Details, Empty, Meter, Notice, Stat, nameOf, pageParam } from "@/components/accreditation/ui";
+import { Badge, Details, Empty, Meter, Notice, PageHeader, Stat, SubNav, nameOf, pageParam } from "@/components/accreditation/ui";
 import { getGovernanceActor } from "@/lib/governance/auth";
 import { currentDate, formatDate, formatMonth } from "@/lib/governance/clock";
 import { canReadGovernance, canWriteGovernance } from "@/lib/governance/policy";
 import { loadAudits, loadCapa, loadDepartments, loadPeople, loadQips, openContext } from "@/lib/governance/repository";
+import { loadQipCycles, v21 } from "@/lib/governance/repository-v21";
 import { daysBetween, isoDate, summariseAuditsAndQips } from "@/lib/governance/scoring";
 import type { AuditRow, QipPhase, QipRow } from "@/lib/governance/types";
 
@@ -33,9 +36,11 @@ function progress(qip: QipRow): number | null {
 export default async function AuditsPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
   const sp = await searchParams;
   const done = pageParam(sp.done), error = pageParam(sp.error);
+  const tab = pageParam(sp.tab) === "templates" ? "templates" : "calendar";
+  const auditParam = pageParam(sp.audit);
   const actor = await getGovernanceActor();
   if (!canReadGovernance(actor)) {
-    return <><header className="gh-head"><div><div className="gh-eyebrow">Accreditation hub</div><h1>Audits &amp; improvement</h1></div></header>
+    return <><PageHeader icon={<ClipboardCheck size={20} />} title="Audits & improvement" />
       <p className="gh-notice gh-notice-bad" role="alert">Audits and improvement projects are visible to governance staff and auditors.</p></>;
   }
   const canWrite = canWriteGovernance(actor);
@@ -46,6 +51,8 @@ export default async function AuditsPage({ searchParams }: { searchParams: Promi
   const loaded = await Promise.all([loadAudits(ctx), loadQips(ctx), loadPeople(ctx).catch(() => []), loadDepartments(ctx).catch(() => []), loadCapa(ctx)]).catch(() => null);
   if (!loaded) return <p className="gh-notice gh-notice-bad" role="alert">Audits could not be loaded. Has the accreditation hub migration been applied?</p>;
   const [audits, qips, people, departments, capa] = loaded;
+  // Projects run with V2.1 PDSA cycles move phase from their project page, so the board does not offer phase buttons for them.
+  const cycleQips = new Set(((await v21(loadQipCycles(ctx))) ?? []).map((c) => c.qipId));
   const peopleById = new Map(people.map((p) => [p.userId, p.displayName]));
   const overview = summariseAuditsAndQips(audits, qips, today);
 
@@ -57,20 +64,24 @@ export default async function AuditsPage({ searchParams }: { searchParams: Promi
 
   return (
     <>
-      <header className="gh-head">
-        <div><div className="gh-eyebrow">Accreditation hub</div><h1>Audits &amp; improvement</h1>
-          <p>Prove continuous improvement: audits on a schedule, results against a target, and improvement projects moving through Plan–Do–Study–Act.</p></div>
-      </header>
+      <PageHeader icon={<ClipboardCheck size={20} />} title="Audits & improvement"
+        subtitle="Prove continuous improvement: audits on a schedule, results against a target, and improvement projects moving through Plan–Do–Study–Act." />
+      <SubNav label="Audits and improvement" current={tab} items={[
+        { key: "calendar", label: "Calendar, results & projects", href: `${BASE}/audits` },
+        { key: "templates", label: "Audit templates", href: `${BASE}/audits?tab=templates` },
+      ]} />
       <Notice done={done} error={error} />
+      {tab === "templates" ? <AuditTemplates ctx={ctx} canWrite={canWrite} people={people} departments={departments} qips={qips} /> : <>
+      <AuditV21 ctx={ctx} auditId={auditParam} audits={audits} canWrite={canWrite} actorUserId={actor.userId} people={people} />
       <div className="gh-grid">
-        <Stat label="Due in 30 days" value={overview.scheduledNext30} href="#calendar" />
-        <Stat label="Past their date" value={overview.overdue} tone={overview.overdue > 0 ? "warn" : "ok"} note={overview.overdue > 0 ? "Complete or reschedule" : "None late"} />
-        <Stat label="Completed" value={overview.completed} note={overview.belowTarget > 0 ? `${overview.belowTarget} below target` : "None below target"} tone={overview.belowTarget > 0 ? "warn" : "ok"} />
-        <Stat label="Active improvement projects" value={overview.activeQips} href="#qip" />
+        <Stat accent="emerald" label="Due in 30 days" value={overview.scheduledNext30} href="#calendar" />
+        <Stat accent="gold" label="Past their date" value={overview.overdue} tone={overview.overdue > 0 ? "warn" : "ok"} note={overview.overdue > 0 ? "Complete or reschedule" : "None late"} />
+        <Stat accent="emerald" label="Completed" value={overview.completed} note={overview.belowTarget > 0 ? `${overview.belowTarget} below target` : "None below target"} tone={overview.belowTarget > 0 ? "warn" : "ok"} />
+        <Stat accent="emerald" label="Active improvement projects" value={overview.activeQips} href="#qip" />
       </div>
 
       <section className="gh-card" id="calendar" aria-labelledby="calendar-heading">
-        <div className="gh-head"><div><h2 id="calendar-heading" style={{ margin: 0 }}>Audit calendar</h2><p className="gh-sub" style={{ margin: 0 }}>Upcoming and late audits, soonest first. Recurring audits reschedule themselves when you record a result.</p></div></div>
+        <div className="gh-head"><div><h2 id="calendar-heading" className="gh-section-title" style={{ margin: 0 }}>Audit calendar</h2><p className="gh-sub" style={{ margin: 0 }}>Upcoming and late audits, soonest first. Recurring audits reschedule themselves when you record a result.</p></div></div>
         {canWrite ? (
           <div style={{ margin: ".7rem 0" }}>
             <Details title="Schedule an audit" open={audits.length === 0}>
@@ -103,7 +114,7 @@ export default async function AuditsPage({ searchParams }: { searchParams: Promi
 
       {finished.length > 0 ? (
         <section className="gh-card" aria-labelledby="results-heading">
-          <h2 id="results-heading">Recent results</h2>
+          <h2 id="results-heading" className="gh-section-title">Recent results</h2>
           <div className="gh-table-wrap"><table className="gh-table">
             <thead><tr><th scope="col">Audit</th><th scope="col">Completed</th><th scope="col">Result</th><th scope="col">Sample</th><th scope="col">Actions</th></tr></thead>
             <tbody>{finished.map((a) => {
@@ -125,7 +136,8 @@ export default async function AuditsPage({ searchParams }: { searchParams: Promi
                         <label className="gh-field">Deadline<input type="date" name="dueDate" required min={todayIso} /></label>
                         <div><button className="ui-button ui-button-primary" type="submit">Add</button></div>
                       </form></details>
-                  ) : <span className="gh-meta">{below ? "—" : "Not needed"}</span>}</td>
+                  ) : <span className="gh-meta">{below ? "—" : "Not needed"}</span>}
+                    {below && canWrite ? <div style={{ marginTop: ".3rem" }}><Link className="ui-button" href={`${BASE}/audits?audit=${a.id}#audit`}>Start improvement project…</Link></div> : null}</td>
                 </tr>
               );
             })}</tbody>
@@ -134,7 +146,7 @@ export default async function AuditsPage({ searchParams }: { searchParams: Promi
       ) : null}
 
       <section className="gh-card" id="qip" aria-labelledby="qip-heading">
-        <div className="gh-head"><div><h2 id="qip-heading" style={{ margin: 0 }}>Quality improvement projects</h2><p className="gh-sub" style={{ margin: 0 }}>Plan–Do–Study–Act. Each project records its aim, a measure, and where it started and is heading.</p></div></div>
+        <div className="gh-head"><div><h2 id="qip-heading" className="gh-section-title" style={{ margin: 0 }}>Quality improvement projects</h2><p className="gh-sub" style={{ margin: 0 }}>Plan–Do–Study–Act. Each project records its aim, a measure, and where it started and is heading.</p></div></div>
         {canWrite ? (
           <div style={{ margin: ".7rem 0" }}>
             <Details title="Start an improvement project" open={qips.length === 0}>
@@ -166,7 +178,7 @@ export default async function AuditsPage({ searchParams }: { searchParams: Promi
                     const pct = progress(qip);
                     return (
                       <div className="gh-item" key={qip.id}>
-                        <h4>{qip.title}</h4>
+                        <h4><Link href={`${BASE}/audits/qip/${qip.id}`}>{qip.title}</Link></h4>
                         {qip.aim ? <span className="gh-meta gh-clamp">{qip.aim}</span> : null}
                         <span className="gh-meta">{qip.department || "No department"} · lead {nameOf(peopleById, qip.leadUserId)}{qip.dueOn ? ` · due ${formatDate(qip.dueOn)}${qip.dueOn < todayIso ? " (late)" : ""}` : ""}</span>
                         {qip.measure ? <span className="gh-meta">{qip.measure}: {qip.baselineValue ?? "?"} → <strong>{qip.currentValue ?? "?"}</strong> → {qip.targetValue ?? "?"} {qip.unit}</span> : null}
@@ -179,10 +191,11 @@ export default async function AuditsPage({ searchParams }: { searchParams: Promi
                               <button className="ui-button" type="submit">Log</button>
                             </form>
                             <div className="gh-btnrow">
-                              {NEXT[qip.phase].map((step) => (
+                              {cycleQips.has(qip.id) ? <Link className="ui-button ui-button-primary" href={`${BASE}/audits/qip/${qip.id}`}>Manage PDSA cycles →</Link> : NEXT[qip.phase].map((step) => (
                                 <form action={updateQipAction} key={step.to}><input type="hidden" name="qipId" value={qip.id} /><input type="hidden" name="phase" value={step.to} /><input type="hidden" name="returnTo" value={`${BASE}/audits`} /><button className="ui-button" type="submit">{step.label}</button></form>
                               ))}
-                              {phase === "act" ? <form action={updateQipAction}><input type="hidden" name="qipId" value={qip.id} /><input type="hidden" name="status" value="completed" /><input type="hidden" name="returnTo" value={`${BASE}/audits`} /><button className="ui-button ui-button-primary" type="submit">Complete</button></form> : null}
+                              {!cycleQips.has(qip.id) ? <Link className="ui-button" href={`${BASE}/audits/qip/${qip.id}`}>Open project</Link> : null}
+                              {phase === "act" && !cycleQips.has(qip.id) ? <form action={updateQipAction}><input type="hidden" name="qipId" value={qip.id} /><input type="hidden" name="status" value="completed" /><input type="hidden" name="returnTo" value={`${BASE}/audits`} /><button className="ui-button ui-button-primary" type="submit">Complete</button></form> : null}
                               <form action={updateQipAction}><input type="hidden" name="qipId" value={qip.id} /><input type="hidden" name="status" value="stopped" /><input type="hidden" name="returnTo" value={`${BASE}/audits`} /><button className="ui-button ui-button-danger" type="submit">Stop</button></form>
                             </div>
                           </>
@@ -202,6 +215,7 @@ export default async function AuditsPage({ searchParams }: { searchParams: Promi
         ) : null}
       </section>
       <p className="gh-meta"><Link href={`${BASE}/incidents`}>Incidents &amp; corrective actions</Link> track fixes that come out of audits too.</p>
+      </>}
     </>
   );
 }
@@ -213,7 +227,7 @@ function AuditItem({ audit, todayIso, owner, canWrite }: { audit: AuditRow; toda
     <div className="gh-timeline">
       <div className="gh-row">
         <span className="gh-row-date">{formatDate(audit.scheduledFor).slice(0, 6)}</span>
-        <span><strong>{audit.title}</strong><div className="gh-meta">{audit.category}{audit.department ? ` · ${audit.department}` : ""} · {owner}{audit.targetPct !== null ? ` · target ${audit.targetPct}%` : ""}{audit.recurrenceMonths ? ` · every ${audit.recurrenceMonths} mo` : ""}</div></span>
+        <span><strong><Link href={`${BASE}/audits?audit=${audit.id}#audit`}>{audit.title}</Link></strong><div className="gh-meta">{audit.category}{audit.department ? ` · ${audit.department}` : ""} · {owner}{audit.targetPct !== null ? ` · target ${audit.targetPct}%` : ""}{audit.recurrenceMonths ? ` · every ${audit.recurrenceMonths} mo` : ""}</div></span>
         <Badge tone={late ? "bad" : days <= 14 ? "warn" : "info"}>{late ? `${-days} day${days === -1 ? "" : "s"} late` : days === 0 ? "Today" : `In ${days} days`}</Badge>
       </div>
       <details className="gh-noprint" style={{ marginTop: "-.2rem" }}>

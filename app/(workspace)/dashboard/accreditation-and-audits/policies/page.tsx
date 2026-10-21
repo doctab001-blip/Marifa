@@ -1,7 +1,9 @@
 import Link from "next/link";
+import { FileText } from "lucide-react";
+import { AcknowledgementChart } from "@/components/accreditation/charts";
 import { createPolicyAction } from "@/app/(workspace)/dashboard/accreditation-and-audits/actions";
 import { MyPolicies } from "@/components/accreditation/my-policies";
-import { Badge, Details, Empty, Meter, Notice, nameOf, pageParam } from "@/components/accreditation/ui";
+import { Badge, Details, Empty, Meter, Notice, PageHeader, SubNav, nameOf, pageParam } from "@/components/accreditation/ui";
 import { getGovernanceActor } from "@/lib/governance/auth";
 import { currentDate, formatDate } from "@/lib/governance/clock";
 import { canReadGovernance, canWriteGovernance } from "@/lib/governance/policy";
@@ -41,7 +43,7 @@ export default async function PoliciesPage({ searchParams }: { searchParams: Pro
   );
 
   if (!reader) {
-    return <><header className="gh-head"><div><div className="gh-eyebrow">Accreditation hub</div><h1>Policies &amp; read-and-sign</h1></div></header><Notice done={done} error={error} />{mine}</>;
+    return <><PageHeader icon={<FileText size={20} />} title="Policies & read-and-sign" /><Notice done={done} error={error} />{mine}</>;
   }
 
   const loaded = await Promise.all([loadPolicies(ctx), loadAckSummary(ctx), loadPeople(ctx).catch(() => [])]).catch(() => null);
@@ -52,15 +54,17 @@ export default async function PoliciesPage({ searchParams }: { searchParams: Pro
 
   return (
     <>
-      <header className="gh-head">
-        <div><div className="gh-eyebrow">Accreditation hub</div><h1>Policies &amp; read-and-sign</h1>
-          <p>Move each policy from draft to committee to approved, then assign it to staff and track who has signed.</p></div>
-        <div className="gh-btnrow">
+      <PageHeader icon={<FileText size={20} />} title="Policies & documents"
+        subtitle="Move each policy from draft to committee to approved, then assign it to staff and track who has signed."
+        actions={<>
           <Badge tone="info">{overview.approved} approved</Badge>
           {overview.reviewOverdue > 0 ? <Badge tone="bad">{overview.reviewOverdue} overdue for review</Badge> : null}
           {overview.ackPct !== null ? <Badge tone={overview.overdueAssignments > 0 ? "warn" : "ok"}>{overview.ackPct}% signed</Badge> : null}
-        </div>
-      </header>
+        </>} />
+      <SubNav label="Policies and documents" current="policies" items={[
+        { key: "policies", label: "Hospital policies", href: `${BASE}/policies`, count: policies.length },
+        { key: "guidelines", label: "Clinical guidelines & protocols", href: `${BASE}/policies/guidelines` },
+      ]} />
       <Notice done={done} error={error} />
       {mine}
 
@@ -84,6 +88,13 @@ export default async function PoliciesPage({ searchParams }: { searchParams: Pro
         </Details>
       ) : null}
 
+      {overview.items.some((i) => i.policy.status === "approved" && i.assigned > 0) ? (
+        <section className="gh-card" aria-labelledby="ack-chart-heading">
+          <h2 id="ack-chart-heading" className="gh-section-title">Read-and-sign by policy</h2>
+          <p className="gh-sub">Approved policies with staff assigned. The same numbers are on each policy card below.</p>
+          <AcknowledgementChart data={overview.items.filter((i) => i.policy.status === "approved" && i.assigned > 0).slice(0, 15).map((i) => ({ label: i.policy.title.length > 30 ? `${i.policy.title.slice(0, 28)}…` : i.policy.title, signed: i.acknowledged, outstanding: i.assigned - i.acknowledged }))} />
+        </section>
+      ) : null}
       {policies.length === 0 ? <Empty title="No policies yet">Add your first policy above. Only approved policies can be assigned for read-and-sign.</Empty> : (
         <div className="gh-board">
           {COLUMNS.map((column) => {

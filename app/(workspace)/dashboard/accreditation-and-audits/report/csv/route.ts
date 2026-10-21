@@ -1,4 +1,5 @@
 import { getGovernanceActor } from "@/lib/governance/auth";
+import { effectiveEvidence } from "@/lib/governance/repository-v21";
 import { currentDate } from "@/lib/governance/clock";
 import { toCsv } from "@/lib/governance/csv";
 import { canReadGovernance } from "@/lib/governance/policy";
@@ -12,7 +13,8 @@ export async function GET() {
   const actor = await getGovernanceActor();
   if (!actor || !canReadGovernance(actor)) return new Response("Not permitted", { status: 403 });
   const ctx = await openContext(actor);
-  const [standards, statuses, evidence] = await Promise.all([loadStandards(ctx), loadStatuses(ctx), loadEvidence(ctx)]);
+  const [standards, statuses, ownEvidence] = await Promise.all([loadStandards(ctx), loadStatuses(ctx), loadEvidence(ctx)]);
+  const evidence = await effectiveEvidence(ctx, ownEvidence);
   const rows = buildReportRows(standards, statuses, evidence, currentDate());
   const body = toCsv([
     ["chapter_code", "chapter_name", "code", "esr", "description", "rating", "evidence_state", "evidence_items", "last_assessed", "next_review_due", "notes"],

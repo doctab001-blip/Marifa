@@ -1,7 +1,9 @@
 import Link from "next/link";
-import { Badge, EvidenceBadge, OutcomeBadge, RatingBadge, Stat } from "@/components/accreditation/ui";
+import { FileCheck2 } from "lucide-react";
+import { Badge, EvidenceBadge, OutcomeBadge, PageHeader, RatingBadge, Stat } from "@/components/accreditation/ui";
 import { PrintButton } from "@/components/accreditation/print-button";
 import { getGovernanceActor } from "@/lib/governance/auth";
+import { effectiveEvidence } from "@/lib/governance/repository-v21";
 import { currentDate, formatDate, formatStamp } from "@/lib/governance/clock";
 import { canReadGovernance } from "@/lib/governance/policy";
 import { buildReportRows } from "@/lib/governance/report";
@@ -19,34 +21,27 @@ export default async function ReportPage() {
   const ctx = await openContext(actor);
   const loaded = await Promise.all([loadStandards(ctx), loadStatuses(ctx), loadEvidence(ctx), loadSettings(ctx)]).catch(() => null);
   if (!loaded) return <p className="gh-notice gh-notice-bad" role="alert">The report could not be loaded. Has the accreditation hub migration been applied?</p>;
-  const [standards, statuses, evidence, settings] = loaded;
+  const [standards, statuses, ownEvidence, settings] = loaded;
+  const evidence = await effectiveEvidence(ctx, ownEvidence);
   const readiness = computeReadiness(standards, statuses, evidence, settings, today);
   const rows = buildReportRows(standards, statuses, evidence, today);
   const chapters = [...new Set(rows.map((r) => r.standard.chapterCode || r.standard.chapterName || "—"))];
 
   return (
     <>
-      <header className="gh-head">
-        <div>
-          <div className="gh-eyebrow">Accreditation hub</div>
-          <h1>Survey readiness report</h1>
-          <p>Generated {formatStamp(today.toISOString())}{settings.editionLabel ? ` · ${settings.editionLabel}` : ""}</p>
-        </div>
-        <div className="gh-btnrow gh-noprint">
-          <a className="ui-button" href={`${BASE}/report/csv`}>Download CSV</a>
-          <PrintButton />
-        </div>
-      </header>
+      <PageHeader icon={<FileCheck2 size={20} />} eyebrow="Governance hub · Survey reports" title="Survey readiness report"
+        subtitle={`Generated ${formatStamp(today.toISOString())}${settings.editionLabel ? ` · ${settings.editionLabel}` : ""}`}
+        actions={<><a className="ui-button" href={`${BASE}/report/csv`}>Download CSV</a><PrintButton /></>} />
 
       <section className="gh-card">
         <div className="gh-btnrow"><OutcomeBadge outcome={readiness.outcome} /></div>
         <p>{readiness.outcomeNote}</p>
         <div className="gh-grid">
-          <Stat label="Internal readiness estimate" value={readiness.overallPct === null ? "—" : `${readiness.overallPct}%`} note={readiness.recordedPct === null ? undefined : `${readiness.recordedPct}% as recorded`} />
-          <Stat label="Assessed" value={`${readiness.assessed} / ${readiness.applicable}`} note={readiness.coveragePct === null ? undefined : `${readiness.coveragePct}% coverage`} />
-          <Stat label="ESRs not satisfactory" value={`${readiness.esrNotSatisfactory} / ${readiness.esrTotal}`} tone={readiness.esrNotSatisfactory > 0 ? "warn" : "ok"} />
-          <Stat label="Evidence completeness" value={readiness.evidenceCompletenessPct === null ? "—" : `${readiness.evidenceCompletenessPct}%`} note="Separate from the score" />
-          <Stat label="Evidence missing or expired" value={readiness.satisfactoryWithoutCurrentEvidence} tone={readiness.satisfactoryWithoutCurrentEvidence > 0 ? "warn" : "ok"} note="Counted as partial" />
+          <Stat accent="blue" label="Internal readiness estimate" value={readiness.overallPct === null ? "—" : `${readiness.overallPct}%`} note={readiness.recordedPct === null ? undefined : `${readiness.recordedPct}% as recorded`} />
+          <Stat accent="teal" label="Assessed" value={`${readiness.assessed} / ${readiness.applicable}`} note={readiness.coveragePct === null ? undefined : `${readiness.coveragePct}% coverage`} />
+          <Stat accent="teal" label="ESRs not satisfactory" value={`${readiness.esrNotSatisfactory} / ${readiness.esrTotal}`} tone={readiness.esrNotSatisfactory > 0 ? "warn" : "ok"} />
+          <Stat accent="turquoise" label="Evidence completeness" value={readiness.evidenceCompletenessPct === null ? "—" : `${readiness.evidenceCompletenessPct}%`} note="Separate from the score" />
+          <Stat accent="coral" label="Evidence missing or expired" value={readiness.satisfactoryWithoutCurrentEvidence} tone={readiness.satisfactoryWithoutCurrentEvidence > 0 ? "warn" : "ok"} note="Counted as partial" />
         </div>
         <p className="gh-meta">Internal readiness estimate only, not an accreditation decision. Method: {readiness.methodVersion}. Scoring follows the thresholds in <Link href={`${BASE}/settings`}>Settings</Link>: {settings.scoringSourceNote}</p>
       </section>

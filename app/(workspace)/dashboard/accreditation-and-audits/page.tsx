@@ -1,8 +1,10 @@
 import Link from "next/link";
+import { AlertTriangle, ClipboardCheck, FileText, Gauge as GaugeIcon, ShieldCheck, Wrench } from "lucide-react";
 import { ChapterRadar } from "@/components/accreditation/chapter-radar";
 import { MyPolicies } from "@/components/accreditation/my-policies";
-import { Badge, Empty, Gauge, Meter, Notice, OutcomeBadge, Stat, pageParam, type Tone } from "@/components/accreditation/ui";
+import { Badge, Empty, Gauge, Meter, Notice, OutcomeBadge, PageHeader, Stat, pageParam, type Tone } from "@/components/accreditation/ui";
 import { getGovernanceActor } from "@/lib/governance/auth";
+import { effectiveEvidence } from "@/lib/governance/repository-v21";
 import { currentDate, formatDate, formatStamp } from "@/lib/governance/clock";
 import { canReadGovernance } from "@/lib/governance/policy";
 import { buildPriorities } from "@/lib/governance/priorities";
@@ -24,7 +26,7 @@ export default async function ReadinessPage({ searchParams }: { searchParams: Pr
   if (!actor) {
     return (
       <>
-        <header className="gh-head"><div><div className="gh-eyebrow">Accreditation hub</div><h1>CBAHI accreditation readiness</h1></div></header>
+        <PageHeader icon={<GaugeIcon size={20} />} title="CBAHI accreditation readiness" />
         <p className="gh-notice gh-notice-bad" role="alert">Sign in with an account that belongs to an organisation to use the accreditation hub.</p>
       </>
     );
@@ -42,8 +44,8 @@ export default async function ReadinessPage({ searchParams }: { searchParams: Pr
     for (const task of tasks.filter((t) => !t.acknowledgedAt && t.policy.storagePath)) urls[task.policy.id] = await signedUrl(ctx, task.policy.storagePath as string);
     return (
       <>
-        <header className="gh-head"><div><div className="gh-eyebrow">Accreditation hub</div><h1>Your safety and policy tasks</h1><p>Read the policies assigned to you and report anything that went wrong or nearly did.</p></div>
-          <Link className="ui-button ui-button-primary" href={`${BASE}/incidents`}>Report an incident</Link></header>
+        <PageHeader icon={<ShieldCheck size={20} />} title="Your safety and policy tasks" subtitle="Read the policies assigned to you and report anything that went wrong or nearly did."
+          actions={<Link className="ui-button ui-button-primary" href={`${BASE}/incidents`}>Report an incident</Link>} />
         <Notice done={done} error={error} />
         {loadError ? <p className="gh-notice gh-notice-bad" role="alert">{loadError}</p> : null}
         <MyPolicies tasks={tasks} todayIso={isoDate(today)} signedUrls={urls} returnTo={BASE} />
@@ -57,10 +59,12 @@ export default async function ReadinessPage({ searchParams }: { searchParams: Pr
   ]).then(([settings, standards, statuses, evidence, policies, ack, incidents, capa, audits, qips, activity]) => (
     { settings, standards, statuses, evidence, policies, ack, incidents, capa, audits, qips, activity }
   )).catch(() => null);
+  // V2.1: count linked files and drop superseded versions, exactly as the database guard does.
+  if (data) data.evidence = await effectiveEvidence(ctx, data.evidence);
   if (!data) {
     return (
       <>
-        <header className="gh-head"><div><div className="gh-eyebrow">Accreditation hub</div><h1>CBAHI accreditation readiness</h1></div></header>
+        <PageHeader icon={<GaugeIcon size={20} />} title="CBAHI accreditation readiness" />
         <p className="gh-notice gh-notice-bad" role="alert">The accreditation data could not be loaded. Has the accreditation hub migration (20261020190000) been applied to this database?</p>
       </>
     );
@@ -79,17 +83,9 @@ export default async function ReadinessPage({ searchParams }: { searchParams: Pr
 
   return (
     <>
-      <header className="gh-head">
-        <div>
-          <div className="gh-eyebrow">Accreditation hub</div>
-          <h1>CBAHI accreditation readiness</h1>
-          <p>Every figure here is calculated from the records in this hub. Nothing is estimated or pre-filled.</p>
-        </div>
-        <div className="gh-btnrow gh-noprint">
-          <Link className="ui-button" href={`${BASE}/report`}>Survey report</Link>
-          <Link className="ui-button ui-button-primary" href={`${BASE}/incidents`}>Report an incident</Link>
-        </div>
-      </header>
+      <PageHeader icon={<GaugeIcon size={20} />} eyebrow="Governance hub · Overview" title="CBAHI accreditation readiness"
+        subtitle="Every figure here is calculated from the records in this hub. Nothing is estimated or pre-filled."
+        actions={<><Link className="ui-button" href={`${BASE}/report`}>Survey report</Link><Link className="ui-button ui-button-primary" href={`${BASE}/incidents`}>Report an incident</Link></>} />
       <Notice done={done} error={error} />
 
       {!hasStandards ? (
@@ -126,24 +122,24 @@ export default async function ReadinessPage({ searchParams }: { searchParams: Pr
 
       {hasStandards ? (
         <div className="gh-grid">
-          <Stat label="Essential safety requirements" value={`${readiness.esrSatisfactory}`} unit={`of ${readiness.esrTotal} satisfactory`} href={`${BASE}/standards?show=esr_gap`}
+          <Stat accent="teal" icon={<ShieldCheck size={15} />} label="Essential safety requirements" value={`${readiness.esrSatisfactory}`} unit={`of ${readiness.esrTotal} satisfactory`} href={`${BASE}/standards?show=esr_gap`}
             note={readiness.esrTotal === 0 ? "No ESRs flagged in your register" : readiness.esrNotSatisfactory === 0 ? "All satisfactory" : `${readiness.esrNotSatisfactory} need action`}
             tone={readiness.esrTotal === 0 ? "muted" : readiness.esrNotSatisfactory === 0 ? "ok" : "bad"} />
-          <Stat label="Evidence" value={readiness.satisfactory - readiness.satisfactoryWithoutCurrentEvidence} unit={`of ${readiness.satisfactory} satisfactory backed`} href={`${BASE}/standards?show=no_evidence`}
+          <Stat accent="turquoise" label="Evidence" progress={readiness.evidenceCompletenessPct} value={readiness.satisfactory - readiness.satisfactoryWithoutCurrentEvidence} unit={`of ${readiness.satisfactory} satisfactory backed`} href={`${BASE}/standards?show=no_evidence`}
             note={readiness.satisfactoryWithoutCurrentEvidence > 0 ? `${readiness.satisfactoryWithoutCurrentEvidence} without current evidence` : readiness.expiringEvidence > 0 ? `${readiness.expiringEvidence} expiring soon` : "All current"}
             tone={readiness.satisfactoryWithoutCurrentEvidence > 0 ? "bad" : readiness.expiringEvidence > 0 ? "warn" : "ok"} />
-          <Stat label="Read-and-sign" value={policyOverview.ackPct === null ? "—" : `${policyOverview.ackPct}`} unit={policyOverview.ackPct === null ? "" : "%"} href={`${BASE}/policies`}
+          <Stat accent="gold" icon={<FileText size={15} />} label="Read-and-sign" progress={policyOverview.ackPct} value={policyOverview.ackPct === null ? "—" : `${policyOverview.ackPct}`} unit={policyOverview.ackPct === null ? "" : "%"} href={`${BASE}/policies`}
             note={policyOverview.assigned === 0 ? "No policies assigned yet" : `${policyOverview.acknowledged} of ${policyOverview.assigned} signed${policyOverview.overdueAssignments ? ` · ${policyOverview.overdueAssignments} overdue` : ""}`}
             tone={policyOverview.assigned === 0 ? "muted" : policyOverview.overdueAssignments > 0 ? "warn" : "ok"} />
-          <Stat label="Open sentinel events" value={safety.openSentinel} href={`${BASE}/incidents?status=open`} note={safety.openIncidents === 0 ? "No open incidents" : `${safety.openIncidents} open incident${safety.openIncidents === 1 ? "" : "s"}`} tone={safety.openSentinel > 0 ? "bad" : "ok"} />
-          <Stat label="Corrective actions" value={safety.capaOpen} unit="open" href={`${BASE}/incidents?show=capa_overdue`} note={safety.capaOverdue > 0 ? `${safety.capaOverdue} overdue` : "None overdue"} tone={safety.capaOverdue > 0 ? "bad" : "ok"} />
-          <Stat label="Audits" value={auditOverview.scheduledNext30} unit="due in 30 days" href={`${BASE}/audits`} note={auditOverview.overdue > 0 ? `${auditOverview.overdue} past due` : `${auditOverview.activeQips} active improvement project${auditOverview.activeQips === 1 ? "" : "s"}`} tone={auditOverview.overdue > 0 ? "warn" : "muted"} />
+          <Stat accent="coral" icon={<AlertTriangle size={15} />} label="Open sentinel events" value={safety.openSentinel} href={`${BASE}/incidents?status=open`} note={safety.openIncidents === 0 ? "No open incidents" : `${safety.openIncidents} open incident${safety.openIncidents === 1 ? "" : "s"}`} tone={safety.openSentinel > 0 ? "bad" : "ok"} />
+          <Stat accent="coral" icon={<Wrench size={15} />} label="Corrective actions" value={safety.capaOpen} unit="open" href={`${BASE}/incidents?show=capa_overdue`} note={safety.capaOverdue > 0 ? `${safety.capaOverdue} overdue` : "None overdue"} tone={safety.capaOverdue > 0 ? "bad" : "ok"} />
+          <Stat accent="emerald" icon={<ClipboardCheck size={15} />} label="Audits" value={auditOverview.scheduledNext30} unit="due in 30 days" href={`${BASE}/audits`} note={auditOverview.overdue > 0 ? `${auditOverview.overdue} past due` : `${auditOverview.activeQips} active improvement project${auditOverview.activeQips === 1 ? "" : "s"}`} tone={auditOverview.overdue > 0 ? "warn" : "muted"} />
         </div>
       ) : null}
 
       <div className="gh-grid-2">
         <section className="gh-card" aria-labelledby="priorities-heading">
-          <h2 id="priorities-heading">Fix this first</h2>
+          <h2 id="priorities-heading" className="gh-section-title">Fix this first</h2>
           <p className="gh-sub">Ordered by how likely each item is to cost accreditation.</p>
           {priorities.length === 0 ? (
             <Empty title="Nothing urgent">No gaps were found in the records you have entered. Keep assessments, evidence and reviews current.</Empty>
@@ -163,7 +159,7 @@ export default async function ReadinessPage({ searchParams }: { searchParams: Pr
         </section>
 
         <section className="gh-card" aria-labelledby="chapters-heading">
-          <h2 id="chapters-heading">Readiness by chapter</h2>
+          <h2 id="chapters-heading" className="gh-section-title">Readiness by chapter</h2>
           <p className="gh-sub">Mean score of assessed standards in each chapter.</p>
           {readiness.chapters.length === 0 ? <Empty title="No chapters yet">Chapters appear once standards are imported.</Empty> : (
             <>
@@ -184,7 +180,7 @@ export default async function ReadinessPage({ searchParams }: { searchParams: Pr
 
       <div className="gh-grid-2">
         <section className="gh-card" aria-labelledby="calendar-heading">
-          <h2 id="calendar-heading">Accreditation calendar</h2>
+          <h2 id="calendar-heading" className="gh-section-title">Accreditation calendar</h2>
           {milestones ? (
             <table className="gh-table">
               <tbody>
@@ -199,7 +195,7 @@ export default async function ReadinessPage({ searchParams }: { searchParams: Pr
         </section>
 
         <section className="gh-card" aria-labelledby="activity-heading">
-          <h2 id="activity-heading">Recent activity</h2>
+          <h2 id="activity-heading" className="gh-section-title">Recent activity</h2>
           <p className="gh-sub">From the audit trail: every change is recorded with who made it.</p>
           {data.activity.length === 0 ? <Empty title="No activity yet">Changes to standards, evidence, policies and incidents appear here.</Empty> : (
             <ul className="gh-actions">
@@ -221,6 +217,12 @@ const ENTITY_LABEL: Record<string, string> = {
   gov_standards: "Standard", gov_assessments: "Assessment", gov_evidence: "Evidence", gov_policies: "Policy", gov_policy_assignments: "Policy assignment",
   gov_acknowledgements: "Acknowledgement", gov_incidents: "Incident", gov_incident_files: "Incident file", gov_audits: "Audit", gov_capa: "Corrective action",
   gov_qips: "Improvement project", gov_settings: "Settings",
+  gov_editions: "Edition", gov_chapters: "Chapter", gov_elements: "Measurable element", gov_element_assessments: "Element assessment",
+  gov_evidence_links: "Evidence link", gov_evidence_requirements: "Expected evidence", gov_requirement_submissions: "Evidence review",
+  gov_indicators: "Quality indicator", gov_indicator_results: "Indicator result", gov_committees: "Committee", gov_committee_members: "Committee member",
+  gov_meetings: "Meeting", gov_meeting_attendance: "Attendance", gov_meeting_decisions: "Committee decision", gov_meeting_files: "Meeting file",
+  gov_regulatory_rules: "Reporting rule", gov_incident_notifications: "Regulatory notification", gov_audit_templates: "Audit template",
+  gov_audit_observations: "Audit observation", gov_qip_cycles: "PDSA cycle", gov_guideline_reviews: "Guideline governance", gov_links: "Link",
 };
 function describeEvent(action: string): string {
   const [, table, op] = action.split(".");
