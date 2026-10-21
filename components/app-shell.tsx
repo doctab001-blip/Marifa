@@ -1,11 +1,14 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { cookies } from "next/headers";
 import { Bell, LogOut, Search, Settings2 } from "@/components/icons-3d";
 import { getCurrentViewer } from "@/lib/supabase/session";
 import { CollapsibleShell } from "@/components/collapsible-shell";
 import { MobileNavigation } from "@/components/app-navigation";
 import { Sidebar } from "@/components/Sidebar";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { CountryToggle } from "@/components/navigation/CountryToggle";
+import { REGION_COOKIE, resolveRegion } from "@/lib/region";
 import { HeaderContext } from "@/components/header-context";
 import { isTemporaryOpenAdminMode } from "@/lib/access-mode";
 import { getDiseaseDraftTopicCount } from "@/lib/data/disease-drafts";
@@ -15,6 +18,7 @@ export async function AppShell({ children }: { children: React.ReactNode }) {
   if (!user) redirect("/login");
   const temporaryAdminMode = isTemporaryOpenAdminMode();
   const draftTopicCount = await getDiseaseDraftTopicCount();
+  const initialRegion = resolveRegion(undefined, (await cookies()).get(REGION_COOKIE)?.value);
   return (
     <CollapsibleShell primaryColor={user.primaryColor}>
       <Sidebar
@@ -33,6 +37,7 @@ export async function AppShell({ children }: { children: React.ReactNode }) {
             <button type="submit" className="global-search-submit">Search</button>
           </form>
           <div className="top-actions">
+            <CountryToggle initialRegion={initialRegion} />
             <div className="top-actions-group">
               <ThemeToggle />
               <Link className="top-action-link" href="/dashboard/notifications" aria-label="Open notifications" title="Notifications"><Bell size={18} /></Link>

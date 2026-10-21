@@ -1,0 +1,48 @@
+{
+  "id": "a1b2c3d4-enteric-fever",
+  "title": "Enteric Fever (Typhoid)",
+  "icd10Code": "A01.0",
+  "universalFeatures": {
+    "pathophysiology": "Systemic infection caused by Salmonella enterica serotype Typhi.",
+    "clinicalPresentation": {
+      "symptoms": ["Prolonged fever", "Headache", "Abdominal pain", "Constipation or diarrhea"],
+      "signs": ["Rose spots", "Relative bradycardia", "Hepatosplenomegaly"],
+      "redFlags": ["GI Bleeding", "Intestinal perforation", "Encephalopathy"]
+    },
+    "differentials": [{"condition": "Malaria", "distinguishingFeatures": "Check peripheral smear; alternate day fever spikes."}]
+  },
+  "regionalProfiles": [
+    {
+      "countryCode": "IN",
+      "countryName": "India",
+      "firstLineTherapies": [
+        {
+          "drugName": "Azithromycin",
+          "dose": "1g PO on day 1, then 500mg PO daily",
+          "localTradeNames": ["Azee", "Zithrox"],
+          "durationCap": "Limit to 7 days maximum.",
+          "stewardshipWarning": "WHO AWaRe 'Watch' Group. High fluoroquinolone resistance in subcontinent; avoid Ciprofloxacin empirically."
+        }
+      ],
+      "governanceMetadata": {
+        "primaryConsensusSource": "ICMR / MoHFW National Treatment Guidelines",
+        "fallbackBasis": "WHO AMR Stewardship Guidelines"
+      }
+    },
+    {
+      "countryCode": "SA",
+      "countryName": "Saudi Arabia",
+      "firstLineTherapies": [
+        {
+          "drugName": "Ceftriaxone",
+          "dose": "2g IV once daily",
+          "localTradeNames": ["Rocephin"],
+          "durationCap": "Step down to oral therapy once sensitivity known."
+        }
+      ],
+      "governanceMetadata": {
+        "primaryConsensusSource": "MOH KSA Standard Practice"
+      }
+    }
+  ]
+}
