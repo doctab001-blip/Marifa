@@ -89,10 +89,19 @@ type Row = Record<string, unknown> & { guideline_id: string; version: string; co
 const currentRows = await rest<Row[]>("GET", "guideline_versions?select=*&is_current=eq.true");
 const failures: string[] = [];
 let staged = 0, valid = 0;
+const targets: Array<{ title: string; source: Row }> = [];
 for (const title of titles) {
   const matches = currentRows.filter((row) => row.content?.title === title);
-  if (matches.length !== 1) { failures.push(`${title}: ${matches.length} current versions found`); continue; }
-  const source = matches[0];
+  if (!matches.length) { failures.push(`${title}: no current version found`); continue; }
+  const byGuideline = new Map<string, Row[]>();
+  for (const row of matches) byGuideline.set(row.guideline_id, [...(byGuideline.get(row.guideline_id) ?? []), row]);
+  if (byGuideline.size > 1) console.log(`NOTE ${title}: ${byGuideline.size} separate guidelines share this title (${[...byGuideline.keys()].join(", ")}) — each is staged separately.`);
+  for (const [guidelineId, rows] of byGuideline) {
+    if (rows.length > 1) { failures.push(`${title} [${guidelineId}]: ${rows.length} rows marked current (${rows.map((row) => row.version).join(", ")}) — fix is_current before staging`); continue; }
+    targets.push({ title, source: rows[0] });
+  }
+}
+for (const { title, source } of targets) {
   let content: Content;
   try { content = applyPatch(source.content, patch); } catch (error) { failures.push(`${title}: ${(error as Error).message}`); continue; }
   valid++;
@@ -111,4 +120,4 @@ for (const title of titles) {
   console.log(`STAGED ${title}: ${patch.version} (under_review, non-current, pending; from ${source.version})`);
 }
 if (failures.length) console.log(`NOT STAGED (${failures.length}):\n  ${failures.join("\n  ")}`);
-console.log(apply ? `Done: ${staged} staged.` : `DRY RUN: ${valid}/${titles.length} topics valid against current versions; rerun with --apply to insert.`);
+console.log(apply ? `Done: ${staged} staged.` : `DRY RUN: ${valid} guideline versions valid (${titles.length} titles in batch); rerun with --apply to insert.`);
