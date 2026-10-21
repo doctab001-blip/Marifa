@@ -537,3 +537,6 @@ html[data-theme="dark"] .calculator-row-moderate th { background: hsl(48 90% 62%
 html[data-theme="dark"] .calculator-row-high th { background: hsl(7 90% 62% / .14); }
 html[data-theme="dark"] .co-flag-warn { background: hsl(42 90% 55% / .14); border-color: hsl(42 90% 60% / .4); }
 html[data-theme="dark"] .co-flag-dup { background: hsl(6 80% 60% / .14); border-color: hsl(6 80% 65% / .4); }
+/* White labels on magenta badges: use the deeper magenta in dark mode so they stay readable. */
+html[data-theme="dark"] .calculator-page .calculator-new-badge,
+html[data-theme="dark"] .calculator-page .calculator-question legend > span:first-child { background: linear-gradient(135deg, #c0267e, #8e1c5e); }
