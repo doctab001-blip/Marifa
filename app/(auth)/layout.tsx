@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function AuthLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -16,7 +17,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
           </svg>
         </div>
         <Link className="auth-brand" href="/login" aria-label="Marifa home">
-          <span className="auth-brand-mark">M</span>
+          <Image src="/marifa-logo.png" alt="" aria-hidden="true" width={48} height={48} className="auth-brand-logo" priority />
           <span><strong>Marifa</strong><small>Clinical knowledge &amp; governance</small></span>
         </Link>
         <div className="auth-brand-message">
@@ -27,7 +28,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
         <div className="auth-brand-footer"><span className="auth-footer-line" />Built for Saudi healthcare organizations</div>
       </aside>
       <section className="auth-panel">
-        <div className="auth-mobile-brand"><span className="auth-brand-mark">M</span><strong>Marifa</strong></div>
+        <div className="auth-mobile-brand"><Image src="/marifa-logo.png" alt="" aria-hidden="true" width={40} height={40} className="auth-mobile-logo" /><strong>Marifa</strong></div>
         {children}
         <footer className="auth-panel-footer"><span>Secure access for healthcare teams</span><span>English · العربية</span></footer>
       </section>
