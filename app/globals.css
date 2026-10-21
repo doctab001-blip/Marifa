@@ -100,8 +100,25 @@ h1 { color: var(--font-color-heading); font-size: var(--font-size-heading); line
 h2, h3, h4, h5, h6, [role="heading"] { color: var(--font-color-subheading); font-size: var(--font-size-subheading); line-height: 1.4; letter-spacing: -.01em; }
 /* Body copy must remain true black across legacy and utility-styled components.
    Interactive and semantic UI keeps colour on its own element (links, buttons,
-   icons, badges and alerts), rather than weakening the readable copy. */
-body :is(p, li, dd, dt, label, th, td, figcaption, blockquote) { color: var(--font-color-body) !important; }
+   icons, badges and alerts), rather than weakening the readable copy.
+   Dark surfaces are the exception: copy on them is always light. Anything inside a dark
+   surface (listed once in --dark-surface below, or marked .on-dark / text-white) keeps
+   the light colour its component sets, instead of being forced to black. */
+body :is(p, li, dd, dt, label, th, td, figcaption, blockquote):not(:is(.on-dark, .calculator-heading.card, .calculator-result.card, .auth-brand-panel, .hero-search, .login-brand, .app-shell .sidebar) *, .text-white, [class*="text-white/"]) { color: var(--font-color-body) !important; }
+
+/* Dark surfaces: point every text token at a light value, so headings, body copy and muted
+   text that read the tokens stay readable in both themes. Add new dark panels here, or give
+   them the .on-dark class. Light cards nested inside (e.g. risk panels) set their own colour. */
+:is(.on-dark, .calculator-heading.card, .calculator-result.card, .auth-brand-panel, .hero-search, .login-brand, .app-shell .sidebar) {
+  --font-color-body: rgb(255 255 255 / .9);
+  --font-color-subheading: #ffffff;
+  --font-color-heading: #ffffff;
+  --ink: #ffffff;
+  --text-2: rgb(255 255 255 / .86);
+  --text-3: rgb(255 255 255 / .76);
+  --muted: rgb(255 255 255 / .76);
+  color: var(--font-color-body);
+}
 button, input, select, textarea { font: inherit; }
 a { color: inherit; text-decoration: none; }
 ::selection { background: var(--royal-line); }
@@ -1940,7 +1957,7 @@ html[data-theme="dark"] .calculator-page {
 .calculator-result .calculator-result-top { color: rgb(255 255 255 / .74); }
 .calculator-result .calculator-result-top button { color: #ffc2e3; }
 .calculator-result .calculator-result-top button:hover:not(:disabled) { background: rgb(255 255 255 / .12); }
-.calculator-result .calculator-result-top button:disabled { color: rgb(255 255 255 / .35); }
+.calculator-result .calculator-result-top button:disabled { color: rgb(255 255 255 / .55); }
 .calculator-result .calculator-score { color: #fff; font-size: 3.6rem; }
 .calculator-result .calculator-score small { color: rgb(255 255 255 / .72); }
 .calculator-result .calculator-completion { background: rgb(255 255 255 / .18); }
@@ -1998,7 +2015,7 @@ html[data-theme="dark"] .calculator-page {
 .calculator-result.card .calculator-stratification.calculator-tone-low { border-color: #a6e7c5; color: #075d39; background: #edfcf4; }
 .calculator-result.card .calculator-stratification.calculator-tone-moderate { border-color: #f0df80; color: #6d5700; background: #fffbe0; }
 .calculator-result.card .calculator-stratification.calculator-tone-high { border-color: #f3b8b2; color: #8e241b; background: #fff1ef; }
-.calculator-result.card .calculator-stratification h3, .calculator-result.card .calculator-stratification strong, .calculator-result.card .calculator-stratification p, .calculator-result.card .calculator-stratification li { color: inherit; }
+.calculator-result.card .calculator-stratification h3, .calculator-result.card .calculator-stratification strong, .calculator-result.card .calculator-stratification p, .calculator-result.card .calculator-stratification li, .calculator-result.card .calculator-stratification dt, .calculator-result.card .calculator-stratification dd { color: inherit; }
 .calculator-result.card .calculator-risk-label { color: inherit; background: rgb(255 255 255 / .85); border: 1px solid currentColor; }
 .calculator-result.card .calculator-share button { border: 1px solid currentColor; color: inherit; background: rgb(255 255 255 / .7); }
 html[data-theme="dark"] .calculator-page .calculator-critical { border-color: rgb(243 120 110 / .5); background: rgb(180 35 24 / .18); }

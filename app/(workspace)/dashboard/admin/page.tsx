@@ -27,7 +27,7 @@ export default async function AdminOverviewPage() {
         })}
       </section>
 
-      <section className="card" aria-labelledby="generate-guideline-title" style={{ padding: 24, background: "#FFFFFF" }}>
+      <section className="card" aria-labelledby="generate-guideline-title" style={{ padding: 24 }}>
         <div className="section-head" style={{ marginBottom: 20 }}>
           <div><span className="eyebrow">Clinical content</span><h2 id="generate-guideline-title">Generate a clinical pathway</h2></div>
         </div>
