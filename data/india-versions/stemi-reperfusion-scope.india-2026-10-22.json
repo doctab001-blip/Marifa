@@ -1,0 +1,181 @@
+{
+  "id": "3b8706bd-e146-5a99-a3b8-74b997108793",
+  "title": "STEMI reperfusion and transfer pathways",
+  "pillar": "Urgent Care",
+  "status": "under_review",
+  "version": "india-stemi-scope-2026-10-22-v1",
+  "authority": "MoHFW",
+  "specialty": "Internal Medicine / Primary Care",
+  "lastReviewed": "2026-10-22",
+  "presentation": {
+    "redFlags": [
+      "Content not yet authored; Indian source verification and clinician review pending."
+    ],
+    "symptoms": [
+      "Content not yet authored; Indian source verification and clinician review pending."
+    ],
+    "physicalSigns": [
+      "Content not yet authored; Indian source verification and clinician review pending."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Content not yet authored; Indian source verification and clinician review pending.",
+      "distinguishingFeatures": "Content not yet authored; Indian source verification and clinician review pending."
+    }
+  ],
+  "evidenceAudit": {
+    "checkedOn": "2026-10-22",
+    "status": "incomplete",
+    "scope": "Targeted India draft title and reperfusion/transfer scope revision only; remaining six-tier clinical content and medication order set still require authoring.",
+    "findings": [
+      "National baseline verified directly: NCDC–ICMR Version 2.0, November 2025, title page.",
+      "India regional topic. Indian national antimicrobial guidance takes precedence over older ICMR text. WHO AWaRe (Access, Watch, Reserve) warnings identify stewardship category, not an automatic indication. Check hospital formulary, product strength and local antibiogram. No Saudi registration claim is made for this India adaptation."
+    ],
+    "unverifiedSections": [
+      "The pre-existing outline is not a complete clinical topic. Pathophysiology, presentation, differentials, investigations, complete branched antithrombotic/fibrinolytic dosing, non-clinical management and local hub-transfer arrangements require authoring and clinician review.",
+      "The MoHFW document is older and is used for Indian context; current international timing recommendations are labelled separately.",
+      "A full contraindication checklist and local product-specific order set must be verified before clinical use."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "0c8ff8f5-1cce-47e4-812e-ebeac044da8e"
+    ]
+  },
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Content not yet authored; Indian source verification and clinician review pending.",
+        "modalityTarget": "Content not yet authored; Indian source verification and clinician review pending.",
+        "expectedFinding": "Content not yet authored; Indian source verification and clinician review pending.",
+        "targetCondition": "Content not yet authored; Indian source verification and clinician review pending.",
+        "clinicalRationale": "Content not yet authored; Indian source verification and clinician review pending."
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Content not yet authored; Indian source verification and clinician review pending.",
+        "modalityTarget": "Content not yet authored; Indian source verification and clinician review pending.",
+        "expectedFinding": "Content not yet authored; Indian source verification and clinician review pending.",
+        "targetCondition": "Content not yet authored; Indian source verification and clinician review pending.",
+        "clinicalRationale": "Content not yet authored; Indian source verification and clinician review pending."
+      }
+    ]
+  },
+  "medicationPlan": {
+    "note": "No medicine recommendations authored. Verify Indian guideline, formulary, doses and branched pathways before use.",
+    "status": "local-protocol-required",
+    "regimens": []
+  },
+  "pathophysiology": {
+    "summary": "Content not yet authored; Indian source verification and clinician review pending.",
+    "keyMechanisms": [
+      "Content not yet authored; Indian source verification and clinician review pending."
+    ]
+  },
+  "clinicalScenario": "Scope revision for the India draft: ST-elevation myocardial infarction (STEMI) reperfusion selection and transfer. Fibrinolysis is not the default for every acute coronary syndrome. This targeted revision does not yet supply a complete medication order set.",
+  "clinicalManagement": [
+    {
+      "id": "confirm-stemi",
+      "title": "Confirm the reperfusion diagnosis and call the receiving centre",
+      "timeframe": "At first medical contact",
+      "actions": [
+        "Obtain and interpret a 12-lead electrocardiogram (ECG) within 10 minutes. A clear STEMI reperfusion decision must not wait for troponin results (MoHFW cardiovascular STG section 2.0; ACC/AHA 2025 section 3.1).",
+        "Record symptom onset, first medical contact (FMC), haemodynamics, contraindications and the realistic FMC-to-device time; activate the regional receiving centre."
+      ]
+    },
+    {
+      "id": "select-reperfusion",
+      "title": "Select one reperfusion pathway",
+      "timeframe": "Immediately after confirmation",
+      "actions": [
+        "Primary percutaneous coronary intervention (PCI) is preferred when timely. A pharmaco-invasive pathway is conditional on symptom timing, expected PCI delay, bleeding safety and an agreed receiving centre; it is never a universal clot-busting-first instruction."
+      ],
+      "branches": [
+        {
+          "condition": "Timely primary PCI available",
+          "actions": [
+            "For symptoms <12 hours, use primary PCI with a goal FMC-to-device ≤90 minutes at a PCI-capable centre or ≤120 minutes when hospital transfer is needed (ACC/AHA 2025 section 5.2.1)."
+          ]
+        },
+        {
+          "condition": "No timely primary PCI; fibrinolysis eligible",
+          "actions": [
+            "For symptoms <12 hours and expected FMC-to-device delay >120 minutes, fibrinolysis may be selected only after checking the full contraindication list and agreeing transfer to a PCI-capable hospital. Use an approved weight/age-adjusted drug protocol; this scope revision does not supply an unverified thrombolytic dose (ACC/AHA 2025 section 5.3)."
+          ]
+        },
+        {
+          "condition": "Fibrinolysis contraindicated or diagnosis unsuitable",
+          "actions": [
+            "Urgently transfer for PCI when fibrinolysis is contraindicated. Do not give fibrinolysis for non-ST-elevation syndromes; suspected aortic dissection, active bleeding and relevant intracranial history require an explicit safety assessment (ACC/AHA 2025 section 5.3; ESC 2023 Table S11)."
+          ]
+        },
+        {
+          "condition": "Shock, ongoing ischaemia or dangerous arrhythmia",
+          "actions": [
+            "Seek emergency revascularisation and critical-care transfer. Late presentation does not remove the need for urgent assessment when instability or continuing ischaemia is present (ACC/AHA 2025 section 5.2.1)."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "transfer-after-lysis",
+      "title": "Transfer after fibrinolysis and assess reperfusion",
+      "timeframe": "Immediately after fibrinolysis; monitored transfer",
+      "actions": [
+        "Transfer to a PCI-capable hospital after fibrinolysis; treatment at the spoke is not the end of care. Failed reperfusion, persistent pain or haemodynamic/electrical instability requires rescue PCI rather than waiting for routine angiography (MoHFW STG section 3.4; ACC/AHA 2025 section 5.3).",
+        "After successful fibrinolysis, plan early angiography/PCI within 2–24 hours under the receiving team (ACC/AHA 2025 section 5.3).",
+        "Handover the original/repeat ECGs, all treatment and times, bleeding assessment, renal function and accepting clinician. Use a monitored ambulance with resuscitation capability."
+      ]
+    }
+  ],
+  "clinicalReviewStatus": "pending",
+  "nonClinicalManagement": {
+    "followUpPlan": "Content not yet authored; Indian source verification and clinician review pending.",
+    "mdtReferrals": [
+      "Content not yet authored; Indian source verification and clinician review pending."
+    ],
+    "lifestyleAndDiet": [
+      "Content not yet authored; Indian source verification and clinician review pending."
+    ],
+    "patientEducation": [
+      "Content not yet authored; Indian source verification and clinician review pending."
+    ],
+    "dischargeCriteria": [
+      "Content not yet authored; Indian source verification and clinician review pending."
+    ]
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Select reperfusion by expected PCI delay, symptom timing and contraindications."
+    ],
+    "keyPoints": [
+      "Timely PCI is preferred; fibrinolysis is conditional."
+    ],
+    "pitfalls": [
+      "Treating all acute coronary syndromes with thrombolysis."
+    ],
+    "references": [
+      {
+        "title": "MoHFW cardiovascular standard treatment guidelines",
+        "edition": "Accessed 22 October 2026",
+        "url": "https://clinicalestablishments.mohfw.gov.in/sites/default/files/standard-treatment-guidelines/3811.pdf",
+        "locator": "STEMI sections 2.0, 3.3 and 3.4, PDF pp. 31–35"
+      },
+      {
+        "title": "ACC/AHA acute coronary syndromes guideline",
+        "edition": "Accessed 22 October 2026",
+        "url": "https://www.jacc.org/doi/10.1016/j.jacc.2024.11.009",
+        "locator": "2025 sections 3.1, 5.2.1 and 5.3"
+      },
+      {
+        "title": "ESC acute coronary syndromes supplementary data",
+        "edition": "Accessed 22 October 2026",
+        "url": "https://www.uniklinik-ulm.de/fileadmin/default/09_Sonstige/Klinische-Chemie/Downloads/ehad191_supplementary_data_ESC_Guideline_ACS_2023.pdf",
+        "locator": "2023 section 6.3.2 and Table S11"
+      }
+    ]
+  }
+}

@@ -1,0 +1,659 @@
+{
+  "id": "d6381e63-f82c-47c6-bfbb-fa3647ee382e",
+  "title": "Infective Endocarditis: Recognition, Blood Cultures and Urgent Referral",
+  "specialty": "Cardiology / Infectious Diseases",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-22-full-v3",
+  "lastReviewed": "2026-10-22",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-22",
+    "status": "incomplete",
+    "scope": "Adults with suspected infective endocarditis (IE) in the emergency department (ED) or ward: recognition, modified Duke criteria, blood cultures, echocardiography, endocarditis team, surgical urgency, selected organism-directed treatment and prevention before dental procedures. Uses the 2023 European Society of Cardiology (ESC) guideline (key points and Table 6) and the 2015 American Heart Association (AHA) scientific statement.",
+    "findings": [
+      "Rebuilt from the thin 21 Oct 2026 version: Duke criteria with definite/possible definitions, blood culture standard, imaging sequence, surgery timing, six management steps and a prevention branch with paediatric doses added.",
+      "Removed the previous methicillin-resistant Staphylococcus aureus (MRSA) and Enterococcus rows: their cited ESC page numbers (pp. 67–71) do not match the published guideline (pp. 3948–4042) and the ESC regimen tables could not be opened to re-verify them.",
+      "Remaining doses trace to AHA 2015 Table 7 and ESC 2023 Table 6, opened on 22 Oct 2026."
+    ],
+    "unverifiedSections": [
+      "ESC 2023 Recommendation Tables 7–10 (organism-directed and empirical regimens) and Table 10 (2023 diagnostic criteria) could not be opened; the Duke criteria shown are from AHA 2015. Staphylococcal and enterococcal regimens and empirical therapy are left to the endocarditis team and infectious diseases (AHA 2015 Class I recommendation).",
+      "AHA 2015 lists penicillin G first in Table 7 without stated preference; it is marked preferred.",
+      "No Saudi national endocarditis guideline was found.",
+      "Named examples under vascular and immunological phenomena (Janeway lesions, Osler nodes, Roth spots) follow standard modified Duke wording but were not visible in the opened excerpt.",
+      "Pathophysiology statement on bacterial adhesion is clinical description.",
+      "CKD and CLD lines come from the platform batch-01 table and were not re-opened in this task.",
+      "Typical adult reference ranges are not from the cited sources; local laboratory ranges apply.",
+      "SFDA registration was not verified."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "d6381e63-f82c-47c6-bfbb-fa3647ee382e"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Bacteria in the blood adhere to damaged or prosthetic valves and form vegetations. Vegetations destroy valves, causing heart failure, and fragment, causing emboli; vegetations over 10 mm carry high embolic risk (AHA 2015, p. 1441). Immune complexes cause vascular and immunological phenomena counted in the Duke criteria (AHA 2015, Table 3). Prosthetic-valve endocarditis carries about twice the in-hospital mortality of native-valve disease (ESC 2023, Section Prosthetic valve endocarditis).",
+    "keyMechanisms": [
+      "Prosthetic valves, previous endocarditis and cyanotic congenital heart disease carry the highest risk (ESC 2023 via ACC, point 1).",
+      "Vegetations cause valve destruction and heart failure (AHA 2015, Table 5).",
+      "Embolism; vegetation over 10 mm is high risk (AHA 2015, p. 1441).",
+      "Vascular and immunological phenomena (AHA 2015, Table 3).",
+      "Prosthetic-valve disease has about twice the mortality (ESC 2023, Section Prosthetic valve endocarditis)."
+    ],
+    "references": [
+      {
+        "title": "Baddour LM et al. Infective Endocarditis in Adults: Diagnosis, Antimicrobial Therapy, and Management of Complications. AHA Scientific Statement. Circulation 2015;132:1435–1486",
+        "edition": "AHA 2015, Tables 3 and 5, p. 1441",
+        "url": "https://scts.org/_userfiles/pages/files/cardiac/infective_endocarditis_in_adults_diagnosis_2015.pdf"
+      },
+      {
+        "title": "Delgado V et al. 2023 ESC Guidelines for the management of endocarditis. Eur Heart J 2023;44:3948–4042 (Leiden repository full text)",
+        "edition": "ESC 2023, Section Prosthetic valve endocarditis",
+        "url": "https://scholarlypublications.universiteitleiden.nl/access/item%3A3722060/view"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Fever above 38 °C (AHA 2015, Table 3 minor criteria).",
+      "Breathlessness from valve failure (AHA 2015, Table 5).",
+      "Focal neurological symptoms from emboli (ESC 2023 via ACC, point 6).",
+      "Back or joint pain from musculoskeletal involvement (ESC 2023 via ACC, point 6)."
+    ],
+    "physicalSigns": [
+      "New regurgitant murmur (AHA 2015, Table 3).",
+      "Vascular phenomena: major arterial emboli, septic pulmonary infarcts, mycotic aneurysm, Janeway lesions (AHA 2015, Table 3).",
+      "Immunological phenomena: glomerulonephritis, Osler nodes, Roth spots (AHA 2015, Table 3).",
+      "Signs of heart failure (AHA 2015, Table 5)."
+    ],
+    "redFlags": [
+      "Refractory pulmonary oedema or cardiogenic shock — emergency surgery within 24 hours (ESC 2023 via ACC, point 5).",
+      "New atrioventricular block suggesting abscess (ESC 2023 via ACC, point 6).",
+      "Stroke or transient ischaemic attack (ESC 2023 via ACC, point 7).",
+      "Blood cultures still positive after 7 days of appropriate treatment (ESC 2023, Figure 3)."
+    ],
+    "precipitants": [
+      "Previous endocarditis (ESC 2023 via ACC, point 1).",
+      "Prosthetic valve or ventricular assist device (ESC 2023 via ACC, point 1).",
+      "Untreated cyanotic congenital heart disease (ESC 2023 via ACC, point 1).",
+      "Injection drug use (AHA 2015, Table 3)."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Bacteraemia without endocarditis",
+      "distinguishingFeatures": "Positive cultures with no valve lesion on transthoracic and transoesophageal imaging (ESC 2023 via ACC, point 3)."
+    },
+    {
+      "condition": "Rheumatic fever or autoimmune valvulitis",
+      "distinguishingFeatures": "Negative blood cultures and serology; different clinical criteria."
+    },
+    {
+      "condition": "Atrial myxoma",
+      "distinguishingFeatures": "Mass attached to the atrial septum without positive cultures."
+    }
+  ],
+  "diagnosticCriteria": [
+    {
+      "criterion": "Major — blood culture",
+      "threshold": "Typical organisms from 2 separate cultures, persistently positive cultures, or a single culture for Coxiella burnetii or phase 1 IgG titre 1:800 or more (AHA 2015, Table 3)."
+    },
+    {
+      "criterion": "Major — imaging",
+      "threshold": "Oscillating intracardiac mass on a valve or supporting structures (AHA 2015, Table 3); valve or prosthetic involvement on imaging (ESC 2023)."
+    },
+    {
+      "criterion": "Minor",
+      "threshold": "Predisposing heart condition or injection drug use; fever above 38 °C; vascular phenomena; immunological phenomena; microbiological evidence short of a major criterion (AHA 2015, Table 3)."
+    },
+    {
+      "criterion": "Definite / possible",
+      "threshold": "Definite: 2 major, or 1 major plus 3 minor, or 5 minor. Possible: 1 major plus 1 minor, or 3 minor (AHA 2015, Table 2)."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "laboratory",
+        "testName": "Blood cultures — at least 3 sets",
+        "modalityTarget": "Causative organism",
+        "targetCondition": "Infective endocarditis",
+        "expectedFinding": "Typical organism in 2 or more separate sets, or persistent bacteraemia",
+        "clinicalRationale": "From different venepuncture sites, first and last at least 1 hour apart, before antibiotics (Class I).",
+        "normalValue": "No growth",
+        "references": [
+          {
+            "title": "Baddour LM et al. Infective Endocarditis in Adults: Diagnosis, Antimicrobial Therapy, and Management of Complications. AHA Scientific Statement. Circulation 2015;132:1435–1486",
+            "edition": "AHA 2015, Recommendation 1, p. 1439",
+            "url": "https://scts.org/_userfiles/pages/files/cardiac/infective_endocarditis_in_adults_diagnosis_2015.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "transthoracic echocardiography (TTE)",
+        "modalityTarget": "Vegetation and valve function",
+        "targetCondition": "Infective endocarditis",
+        "expectedFinding": "Vegetation, abscess, perforation or new regurgitation",
+        "clinicalRationale": "First-line imaging; repeat in 5–7 days if suspicion stays high.",
+        "normalValue": "No vegetation, abscess or new regurgitation",
+        "references": [
+          {
+            "title": "American College of Cardiology: 2023 ESC Guidelines for Management of Endocarditis — Key Points (29 August 2023)",
+            "edition": "ESC 2023 Key Points, Section 3",
+            "url": "https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2023/08/29/20/49/2023-esc-guidelines-for-endocarditis-esc-2023"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "transoesophageal echocardiography (TOE)",
+        "modalityTarget": "Vegetation and complications",
+        "targetCondition": "Infective endocarditis",
+        "expectedFinding": "Vegetation, abscess or prosthetic dehiscence",
+        "clinicalRationale": "When TTE is negative with ongoing suspicion, with any prosthetic valve, and before switching to oral antibiotics.",
+        "normalValue": "No vegetation or abscess",
+        "references": [
+          {
+            "title": "American College of Cardiology: 2023 ESC Guidelines for Management of Endocarditis — Key Points (29 August 2023)",
+            "edition": "ESC 2023 Key Points, Section 3",
+            "url": "https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2023/08/29/20/49/2023-esc-guidelines-for-endocarditis-esc-2023"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "electrocardiogram (ECG)",
+        "modalityTarget": "Conduction",
+        "targetCondition": "Perivalvular extension",
+        "expectedFinding": "New atrioventricular block",
+        "clinicalRationale": "Suggests abscess; immediate surgical discussion.",
+        "normalValue": "Normal PR interval and conduction",
+        "references": [
+          {
+            "title": "American College of Cardiology: 2023 ESC Guidelines for Management of Endocarditis — Key Points (29 August 2023)",
+            "edition": "ESC 2023 Key Points, Section 6",
+            "url": "https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2023/08/29/20/49/2023-esc-guidelines-for-endocarditis-esc-2023"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count, C-reactive protein (CRP), creatinine, urinalysis",
+        "modalityTarget": "Systemic effects",
+        "targetCondition": "Infection, emboli, glomerulonephritis",
+        "expectedFinding": "Anaemia, raised CRP, rising creatinine, haematuria",
+        "clinicalRationale": "Acute renal failure is a recognised complication.",
+        "normalValue": "Normal counts; creatinine within local range; no haematuria",
+        "references": [
+          {
+            "title": "American College of Cardiology: 2023 ESC Guidelines for Management of Endocarditis — Key Points (29 August 2023)",
+            "edition": "ESC 2023 Key Points, Section 6",
+            "url": "https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2023/08/29/20/49/2023-esc-guidelines-for-endocarditis-esc-2023"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "advancedImaging",
+        "testName": "Cardiac computed tomography (CT) angiography",
+        "modalityTarget": "Perivalvular lesions",
+        "targetCondition": "Possible native or prosthetic endocarditis",
+        "expectedFinding": "Abscess, pseudoaneurysm or fistula",
+        "clinicalRationale": "When echocardiography is inconclusive.",
+        "normalValue": "No abscess or pseudoaneurysm",
+        "references": [
+          {
+            "title": "American College of Cardiology: 2023 ESC Guidelines for Management of Endocarditis — Key Points (29 August 2023)",
+            "edition": "ESC 2023 Key Points, Section 3",
+            "url": "https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2023/08/29/20/49/2023-esc-guidelines-for-endocarditis-esc-2023"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "18F-fluorodeoxyglucose positron emission tomography (PET/CT)",
+        "modalityTarget": "Prosthetic infection",
+        "targetCondition": "Possible prosthetic-valve endocarditis",
+        "expectedFinding": "Abnormal perivalvular uptake",
+        "clinicalRationale": "Recommended for possible prosthetic-valve disease.",
+        "normalValue": "No abnormal uptake",
+        "references": [
+          {
+            "title": "American College of Cardiology: 2023 ESC Guidelines for Management of Endocarditis — Key Points (29 August 2023)",
+            "edition": "ESC 2023 Key Points, Section 3",
+            "url": "https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2023/08/29/20/49/2023-esc-guidelines-for-endocarditis-esc-2023"
+          }
+        ]
+      },
+      {
+        "tier": "advancedImaging",
+        "testName": "Brain and whole-body imaging",
+        "modalityTarget": "Embolic complications",
+        "targetCondition": "Septic emboli, mycotic aneurysm",
+        "expectedFinding": "Infarcts, abscesses, aneurysm",
+        "clinicalRationale": "For symptomatic patients.",
+        "normalValue": "No emboli",
+        "references": [
+          {
+            "title": "American College of Cardiology: 2023 ESC Guidelines for Management of Endocarditis — Key Points (29 August 2023)",
+            "edition": "ESC 2023 Key Points, Section 3",
+            "url": "https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2023/08/29/20/49/2023-esc-guidelines-for-endocarditis-esc-2023"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "cultures",
+      "title": "Cultures before antibiotics",
+      "timeframe": "Immediately",
+      "actions": [
+        "Take at least 3 blood-culture sets from different sites, first and last at least 1 hour apart (AHA 2015, Recommendation 1).",
+        "If unstable, take cultures quickly and do not delay treatment."
+      ]
+    },
+    {
+      "id": "image",
+      "title": "Echocardiography",
+      "timeframe": "Same day",
+      "actions": [
+        "TTE first; TOE if TTE negative with ongoing suspicion or any prosthetic valve (ESC 2023 via ACC, point 3).",
+        "Repeat in 5–7 days if suspicion remains (ESC 2023 via ACC, point 3)."
+      ]
+    },
+    {
+      "id": "team",
+      "title": "Endocarditis team",
+      "timeframe": "Same day",
+      "actions": [
+        "Involve cardiology, imaging, cardiac surgery, infectious diseases and microbiology (ESC 2023 via ACC, point 2).",
+        "Infectious diseases consultation defines the empirical regimen (AHA 2015, Class I, p. 1445).",
+        "Complicated cases go to a Heart Valve Centre with on-site surgery (ESC 2023 via ACC, point 2)."
+      ]
+    },
+    {
+      "id": "surgery",
+      "title": "Decide surgical urgency",
+      "timeframe": "Within 24 hours or 3–5 days",
+      "actions": [
+        "Emergency (within 24 hours): refractory pulmonary oedema or cardiogenic shock (ESC 2023 via ACC, point 5).",
+        "Urgent (3–5 days): heart failure, uncontrolled local infection, or vegetation 10 mm or more after an embolic event (ESC 2023 via ACC, point 5).",
+        "Significant haemorrhagic stroke: consider delaying surgery at least 4 weeks (ESC 2023 via ACC, point 7)."
+      ]
+    },
+    {
+      "id": "treat",
+      "title": "Organism-directed treatment",
+      "timeframe": "Once the organism is known",
+      "actions": [
+        "Native valve 2–6 weeks; prosthetic valve at least 6 weeks; first 2 weeks inpatient intravenous (ESC 2023 via ACC, point 4).",
+        "No aminoglycosides for staphylococcal native-valve disease; rifampicin only with foreign material; daptomycin, if used, 10 mg/kg once daily (ESC 2023 via ACC, point 4).",
+        "Highly penicillin-susceptible streptococci: see Medicines (AHA 2015, Table 7)."
+      ]
+    },
+    {
+      "id": "after",
+      "title": "Outpatient phase and follow-up",
+      "timeframe": "After stabilisation",
+      "actions": [
+        "Outpatient parenteral therapy only if stable after at least 10 days of intravenous treatment (7 days after surgery) (ESC 2023, Recommendation Table 11).",
+        "Oral step-down only after TOE shows no local progression (ESC 2023 via ACC, outpatient note).",
+        "Repeat blood cultures after finishing antibiotics; dental review and long-term surveillance (ESC 2023 via ACC, point 8)."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "source-verified",
+    "regimens": [
+      {
+        "indication": "Native-valve endocarditis due to highly penicillin-susceptible viridans group streptococci or Streptococcus gallolyticus",
+        "patientGroup": "Adult with confirmed organism and susceptibility",
+        "genericName": "Benzylpenicillin (aqueous crystalline penicillin G)",
+        "dose": "12–18 million units per 24 hours",
+        "route": "Intravenous",
+        "frequency": "Continuous infusion or divided doses over 24 hours",
+        "duration": "4 weeks",
+        "adjustments": [
+          "Endocarditis team confirms organism and minimum inhibitory concentration.",
+          "SFDA: the Saudi Food and Drug Authority register could not be opened from this environment, so Saudi registration was not verified; check the register and the hospital formulary before prescribing.",
+          "Paediatric: Adult-only row; paediatric endocarditis treatment follows the paediatric infectious diseases service.",
+          "Penicillin allergy: Contraindicated in penicillin allergy. Alternative: Vancomycin (the vancomycin row in this branch; AHA 2015 Table 7).",
+          "CKD: Single pre-hospital or loading dose: no change. Repeated high doses with creatinine clearance below 10 mL/min: reduce the dose (neurotoxicity risk) (BNF). [batch-01 renal/hepatic table; label not re-opened in this task]",
+          "CLD: No dose change. [batch-01 renal/hepatic table; label not re-opened in this task]"
+        ],
+        "monitoring": [
+          "Repeat blood cultures until clear; repeat after completing antibiotics (ESC 2023 via ACC, point 8).",
+          "Renal function and electrolytes."
+        ],
+        "contraindications": [
+          "Penicillin allergy."
+        ],
+        "branch": "Viridans group streptococci, highly penicillin-susceptible, native valve",
+        "step": "Definitive antibiotic",
+        "selection": "one-of",
+        "preferred": true,
+        "sourceTitle": "Baddour LM et al. Infective Endocarditis in Adults: Diagnosis, Antimicrobial Therapy, and Management of Complications. AHA Scientific Statement. Circulation 2015;132:1435–1486",
+        "sourceUrl": "https://scts.org/_userfiles/pages/files/cardiac/infective_endocarditis_in_adults_diagnosis_2015.pdf",
+        "sourceEdition": "AHA 2015, Table 7, p. 1447"
+      },
+      {
+        "indication": "Native-valve endocarditis due to highly penicillin-susceptible viridans group streptococci",
+        "patientGroup": "Adult with confirmed organism and susceptibility",
+        "genericName": "Ceftriaxone",
+        "dose": "2 g per 24 hours",
+        "route": "Intravenous or intramuscular",
+        "frequency": "Once daily",
+        "duration": "4 weeks",
+        "adjustments": [
+          "Once-daily option suits outpatient parenteral therapy after at least 10 days of inpatient intravenous treatment (ESC 2023 Recommendation Table 11, via repository summary).",
+          "SFDA: the Saudi Food and Drug Authority register could not be opened from this environment, so Saudi registration was not verified; check the register and the hospital formulary before prescribing.",
+          "Paediatric: Adult-only row; paediatric endocarditis treatment follows the paediatric infectious diseases service.",
+          "Penicillin allergy: Sources differ: the BNF advises avoiding it only after anaphylaxis or another immediate reaction to a penicillin (or with any cephalosporin allergy) and otherwise allows use with monitoring; some product information (for example ceftriaxone) lists any penicillin hypersensitivity as a contraindication. Alternative: Vancomycin (the vancomycin row in this branch; AHA 2015 Table 7).",
+          "CKD: No dose change if liver function is normal; creatinine clearance below 10 mL/min: maximum 2 g/day — for meningitis doses take pharmacist advice and monitor levels (product information). [batch-01 renal/hepatic table; label not re-opened in this task]",
+          "CLD: No dose change if renal function is normal; combined severe renal and hepatic impairment: monitor plasma levels (product information). [batch-01 renal/hepatic table; label not re-opened in this task]"
+        ],
+        "monitoring": [
+          "Blood cultures until clear.",
+          "Liver tests and full blood count."
+        ],
+        "contraindications": [
+          "Cephalosporin allergy, or anaphylaxis to a penicillin."
+        ],
+        "branch": "Viridans group streptococci, highly penicillin-susceptible, native valve",
+        "step": "Definitive antibiotic",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Once-daily dosing needed (for example outpatient parenteral therapy) or penicillin not tolerated without anaphylaxis",
+        "sourceTitle": "Baddour LM et al. Infective Endocarditis in Adults: Diagnosis, Antimicrobial Therapy, and Management of Complications. AHA Scientific Statement. Circulation 2015;132:1435–1486",
+        "sourceUrl": "https://scts.org/_userfiles/pages/files/cardiac/infective_endocarditis_in_adults_diagnosis_2015.pdf",
+        "sourceEdition": "AHA 2015, Table 7, p. 1447"
+      },
+      {
+        "indication": "Native-valve streptococcal endocarditis when beta-lactams cannot be used",
+        "patientGroup": "Adult who cannot tolerate penicillin or ceftriaxone",
+        "genericName": "Vancomycin",
+        "dose": "30 mg/kg per 24 hours in 2 equal doses",
+        "route": "Intravenous",
+        "frequency": "Every 12 hours",
+        "duration": "4 weeks",
+        "adjustments": [
+          "Adjust to a trough of 10–15 micrograms/mL (AHA 2015, Table 7).",
+          "SFDA: the Saudi Food and Drug Authority register could not be opened from this environment, so Saudi registration was not verified; check the register and the hospital formulary before prescribing.",
+          "Paediatric: Adult-only row; paediatric endocarditis treatment follows the paediatric infectious diseases service.",
+          "Penicillin allergy: Not a beta-lactam — suitable in penicillin allergy.",
+          "CKD: Loading dose unchanged; maintenance by area-under-the-curve or trough level monitoring with interval extended for renal function; haemodialysis — dose after sessions by level (product label; pharmacy therapeutic drug monitoring). [batch-01 renal/hepatic table; label not re-opened in this task]",
+          "CLD: No dose change. [batch-01 renal/hepatic table; label not re-opened in this task]"
+        ],
+        "monitoring": [
+          "Vancomycin levels and creatinine.",
+          "Blood cultures until clear."
+        ],
+        "contraindications": [
+          "Vancomycin hypersensitivity."
+        ],
+        "branch": "Viridans group streptococci, highly penicillin-susceptible, native valve",
+        "step": "Definitive antibiotic",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Penicillin and ceftriaxone cannot be tolerated",
+        "sourceTitle": "Baddour LM et al. Infective Endocarditis in Adults: Diagnosis, Antimicrobial Therapy, and Management of Complications. AHA Scientific Statement. Circulation 2015;132:1435–1486",
+        "sourceUrl": "https://scts.org/_userfiles/pages/files/cardiac/infective_endocarditis_in_adults_diagnosis_2015.pdf",
+        "sourceEdition": "AHA 2015, Table 7, p. 1447"
+      },
+      {
+        "indication": "Prevention of endocarditis before a high-risk dental procedure",
+        "patientGroup": "High-risk patient: previous endocarditis, prosthetic valve (surgical or transcatheter), untreated cyanotic congenital heart disease or ventricular assist device",
+        "genericName": "Amoxicillin",
+        "dose": "2 g (adult)",
+        "route": "Oral",
+        "frequency": "Single dose 30–60 minutes before the procedure",
+        "duration": "Single dose",
+        "adjustments": [
+          "SFDA: the Saudi Food and Drug Authority register could not be opened from this environment, so Saudi registration was not verified; check the register and the hospital formulary before prescribing.",
+          "Paediatric: Child: 50 mg/kg orally (ESC 2023, Table 6).",
+          "Penicillin allergy: Contraindicated in penicillin allergy. Alternative: Cefalexin, azithromycin, clarithromycin or doxycycline rows in this step (ESC 2023, Table 6).",
+          "CKD: creatinine clearance 10–30 mL/min: give the usual (weight-based in children) dose every 12 h; below 10 mL/min: every 24 h; adult maximum 500 mg per dose at these levels. IV high-dose (meningitis): reduce the frequency with pharmacist advice (product label). [batch-01 renal/hepatic table; label not re-opened in this task]",
+          "CLD: Single dose: no change."
+        ],
+        "monitoring": [
+          "Allergic reaction after the dose."
+        ],
+        "contraindications": [
+          "Penicillin allergy."
+        ],
+        "branch": "Prevention: high-risk patient before a high-risk dental procedure",
+        "step": "Single-dose prophylaxis",
+        "selection": "one-of",
+        "preferred": true,
+        "sourceTitle": "Delgado V et al. 2023 ESC Guidelines for the management of endocarditis. Eur Heart J 2023;44:3948–4042 (Leiden repository full text)",
+        "sourceUrl": "https://scholarlypublications.universiteitleiden.nl/access/item%3A3722060/view",
+        "sourceEdition": "ESC 2023, Table 6, p. 3961"
+      },
+      {
+        "indication": "Prevention of endocarditis before a high-risk dental procedure",
+        "patientGroup": "High-risk patient: previous endocarditis, prosthetic valve (surgical or transcatheter), untreated cyanotic congenital heart disease or ventricular assist device",
+        "genericName": "Cefalexin",
+        "dose": "2 g (adult)",
+        "route": "Oral",
+        "frequency": "Single dose 30–60 minutes before the procedure",
+        "duration": "Single dose",
+        "adjustments": [
+          "SFDA: the Saudi Food and Drug Authority register could not be opened from this environment, so Saudi registration was not verified; check the register and the hospital formulary before prescribing.",
+          "Paediatric: Child: 50 mg/kg orally (ESC 2023, Table 6).",
+          "Penicillin allergy: Sources differ: the BNF advises avoiding it only after anaphylaxis or another immediate reaction to a penicillin (or with any cephalosporin allergy) and otherwise allows use with monitoring; some product information (for example ceftriaxone) lists any penicillin hypersensitivity as a contraindication. Alternative: Cefalexin, azithromycin, clarithromycin or doxycycline rows in this step (ESC 2023, Table 6).",
+          "CKD: Single dose: no change.",
+          "CLD: Single dose: no change."
+        ],
+        "monitoring": [
+          "Allergic reaction after the dose."
+        ],
+        "contraindications": [
+          "Anaphylaxis, angioedema or urticaria with penicillin or ampicillin (ESC 2023, Table 6)."
+        ],
+        "branch": "Prevention: high-risk patient before a high-risk dental procedure",
+        "step": "Single-dose prophylaxis",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Penicillin allergy without anaphylaxis, angioedema or urticaria",
+        "sourceTitle": "Delgado V et al. 2023 ESC Guidelines for the management of endocarditis. Eur Heart J 2023;44:3948–4042 (Leiden repository full text)",
+        "sourceUrl": "https://scholarlypublications.universiteitleiden.nl/access/item%3A3722060/view",
+        "sourceEdition": "ESC 2023, Table 6, p. 3961"
+      },
+      {
+        "indication": "Prevention of endocarditis before a high-risk dental procedure",
+        "patientGroup": "High-risk patient: previous endocarditis, prosthetic valve (surgical or transcatheter), untreated cyanotic congenital heart disease or ventricular assist device",
+        "genericName": "Azithromycin",
+        "dose": "500 mg (adult)",
+        "route": "Oral",
+        "frequency": "Single dose 30–60 minutes before the procedure",
+        "duration": "Single dose",
+        "adjustments": [
+          "SFDA: the Saudi Food and Drug Authority register could not be opened from this environment, so Saudi registration was not verified; check the register and the hospital formulary before prescribing.",
+          "Paediatric: Child: 15 mg/kg orally (ESC 2023, Table 6).",
+          "Penicillin allergy: Not a beta-lactam — suitable in penicillin allergy.",
+          "CKD: Single dose: no change.",
+          "CLD: Single dose: no change."
+        ],
+        "monitoring": [
+          "Allergic reaction after the dose."
+        ],
+        "contraindications": [
+          "Hypersensitivity to the drug."
+        ],
+        "branch": "Prevention: high-risk patient before a high-risk dental procedure",
+        "step": "Single-dose prophylaxis",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Penicillin allergy, including anaphylaxis",
+        "sourceTitle": "Delgado V et al. 2023 ESC Guidelines for the management of endocarditis. Eur Heart J 2023;44:3948–4042 (Leiden repository full text)",
+        "sourceUrl": "https://scholarlypublications.universiteitleiden.nl/access/item%3A3722060/view",
+        "sourceEdition": "ESC 2023, Table 6, p. 3961"
+      },
+      {
+        "indication": "Prevention of endocarditis before a high-risk dental procedure",
+        "patientGroup": "High-risk patient: previous endocarditis, prosthetic valve (surgical or transcatheter), untreated cyanotic congenital heart disease or ventricular assist device",
+        "genericName": "Clarithromycin",
+        "dose": "500 mg (adult)",
+        "route": "Oral",
+        "frequency": "Single dose 30–60 minutes before the procedure",
+        "duration": "Single dose",
+        "adjustments": [
+          "SFDA: the Saudi Food and Drug Authority register could not be opened from this environment, so Saudi registration was not verified; check the register and the hospital formulary before prescribing.",
+          "Paediatric: Child: 15 mg/kg orally (ESC 2023, Table 6).",
+          "Penicillin allergy: Not a beta-lactam — suitable in penicillin allergy.",
+          "CKD: Single dose: no change.",
+          "CLD: Single dose: no change."
+        ],
+        "monitoring": [
+          "Allergic reaction after the dose."
+        ],
+        "contraindications": [
+          "Hypersensitivity to the drug."
+        ],
+        "branch": "Prevention: high-risk patient before a high-risk dental procedure",
+        "step": "Single-dose prophylaxis",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Penicillin allergy, including anaphylaxis, when azithromycin is unavailable",
+        "sourceTitle": "Delgado V et al. 2023 ESC Guidelines for the management of endocarditis. Eur Heart J 2023;44:3948–4042 (Leiden repository full text)",
+        "sourceUrl": "https://scholarlypublications.universiteitleiden.nl/access/item%3A3722060/view",
+        "sourceEdition": "ESC 2023, Table 6, p. 3961"
+      },
+      {
+        "indication": "Prevention of endocarditis before a high-risk dental procedure",
+        "patientGroup": "High-risk patient: previous endocarditis, prosthetic valve (surgical or transcatheter), untreated cyanotic congenital heart disease or ventricular assist device",
+        "genericName": "Doxycycline",
+        "dose": "100 mg (adult)",
+        "route": "Oral",
+        "frequency": "Single dose 30–60 minutes before the procedure",
+        "duration": "Single dose",
+        "adjustments": [
+          "SFDA: the Saudi Food and Drug Authority register could not be opened from this environment, so Saudi registration was not verified; check the register and the hospital formulary before prescribing.",
+          "Paediatric: Child under 45 kg: 2.2 mg/kg; over 45 kg: 100 mg orally (ESC 2023, Table 6).",
+          "Penicillin allergy: Not a beta-lactam — suitable in penicillin allergy.",
+          "CKD: Single dose: no change.",
+          "CLD: Single dose: no change."
+        ],
+        "monitoring": [
+          "Allergic reaction after the dose."
+        ],
+        "contraindications": [
+          "Hypersensitivity to the drug."
+        ],
+        "branch": "Prevention: high-risk patient before a high-risk dental procedure",
+        "step": "Single-dose prophylaxis",
+        "selection": "one-of",
+        "preferred": false,
+        "useWhen": "Penicillin allergy and macrolides unsuitable",
+        "sourceTitle": "Delgado V et al. 2023 ESC Guidelines for the management of endocarditis. Eur Heart J 2023;44:3948–4042 (Leiden repository full text)",
+        "sourceUrl": "https://scholarlypublications.universiteitleiden.nl/access/item%3A3722060/view",
+        "sourceEdition": "ESC 2023, Table 6, p. 3961"
+      }
+    ],
+    "branches": [
+      {
+        "label": "Viridans group streptococci, highly penicillin-susceptible, native valve",
+        "entryCriteria": "Native-valve endocarditis with highly penicillin-susceptible viridans group streptococci or Streptococcus gallolyticus confirmed by microbiology"
+      },
+      {
+        "label": "Prevention: high-risk patient before a high-risk dental procedure",
+        "entryCriteria": "Previous endocarditis, surgical or transcatheter prosthetic valve, untreated cyanotic congenital heart disease or ventricular assist device, before a high-risk dental procedure"
+      }
+    ],
+    "note": "Empirical treatment and staphylococcal, enterococcal or culture-negative regimens are set by the endocarditis team and infectious diseases. Give one drug per step. ESC 2023 does not recommend clindamycin for prophylaxis. Paediatric, penicillin-allergy, chronic kidney disease (CKD) and chronic liver disease (CLD) lines on every row. SFDA registration not verified."
+  },
+  "guidelineComparison": {
+    "title": "Native-valve treatment duration",
+    "columns": [
+      "ESC 2023 (via ACC key points)",
+      "AHA 2015"
+    ],
+    "rows": [
+      {
+        "parameter": "Native valve, streptococci highly penicillin-susceptible",
+        "values": [
+          "2–6 weeks for native valve overall",
+          "4 weeks (Table 7)"
+        ]
+      },
+      {
+        "parameter": "Uncomplicated MSSA native valve",
+        "values": [
+          "2–6 weeks for native valve overall",
+          "6 weeks"
+        ]
+      },
+      {
+        "parameter": "Prosthetic valve",
+        "values": [
+          "At least 6 weeks",
+          "Not opened for this comparison"
+        ]
+      }
+    ],
+    "note": "Shown as each source states it; not merged."
+  },
+  "teaching": {
+    "learningObjectives": [
+      "Apply the modified Duke criteria.",
+      "Take blood cultures correctly before antibiotics.",
+      "Recognise emergency surgical indications."
+    ],
+    "keyPoints": [
+      "Three culture sets before the first dose.",
+      "TTE first, TOE when needed.",
+      "Refractory pulmonary oedema or shock: surgery within 24 hours."
+    ],
+    "pitfalls": [
+      "Starting antibiotics for fever before cultures.",
+      "Accepting a negative TTE in a prosthetic valve.",
+      "Missing new heart block."
+    ],
+    "references": [
+      {
+        "title": "Baddour LM et al. Infective Endocarditis in Adults: Diagnosis, Antimicrobial Therapy, and Management of Complications. AHA Scientific Statement. Circulation 2015;132:1435–1486",
+        "edition": "2015",
+        "url": "https://scts.org/_userfiles/pages/files/cardiac/infective_endocarditis_in_adults_diagnosis_2015.pdf",
+        "locator": "Tables 2, 3, 5 and 7; Recommendation 1, p. 1439; p. 1445"
+      },
+      {
+        "title": "American College of Cardiology: 2023 ESC Guidelines for Management of Endocarditis — Key Points (29 August 2023)",
+        "edition": "29 August 2023",
+        "url": "https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2023/08/29/20/49/2023-esc-guidelines-for-endocarditis-esc-2023",
+        "locator": "Points 1–9"
+      },
+      {
+        "title": "Delgado V et al. 2023 ESC Guidelines for the management of endocarditis. Eur Heart J 2023;44:3948–4042 (Leiden repository full text)",
+        "edition": "2023",
+        "url": "https://scholarlypublications.universiteitleiden.nl/access/item%3A3722060/view",
+        "locator": "Section 2; Table 6, p. 3961; Recommendation Table 11; Figure 3"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain the long antibiotic course and why blood tests and scans are repeated.",
+      "Report fever, breathlessness or new neurological symptoms after discharge.",
+      "Keep good oral hygiene and attend dental reviews (ESC 2023 via ACC, point 8)."
+    ],
+    "lifestyleAndDiet": [
+      "Offer addiction treatment to people who inject drugs (ESC 2023 via ACC, point 8)."
+    ],
+    "mdtReferrals": [
+      "Cardiology",
+      "Cardiac surgery",
+      "Infectious diseases and microbiology",
+      "Dental services",
+      "Addiction services when relevant"
+    ],
+    "dischargeCriteria": [
+      "Not discharged before endocarditis-team review.",
+      "Outpatient therapy only after at least 10 days of intravenous treatment and clinical stability (ESC 2023, Recommendation Table 11)."
+    ],
+    "followUpPlan": "Repeat blood cultures after finishing antibiotics; long-term clinical and echocardiographic surveillance; relapse with the same organism needs a search for a persistent focus (ESC 2023 via ACC, point 8)."
+  }
+}

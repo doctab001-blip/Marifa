@@ -1,0 +1,696 @@
+{
+  "id": "373124f5-9dbb-5862-8587-3df0ff70a27a",
+  "title": "Acute bacterial meningitis (India)",
+  "pillar": "Urgent Care",
+  "status": "under_review",
+  "version": "india-authoring-2026-10-22-batch1-v1",
+  "authority": "ICMR",
+  "specialty": "Infectious Diseases / Internal Medicine",
+  "lastReviewed": "2026-10-22",
+  "presentation": {
+    "symptoms": [
+      "Fever, severe headache, neck discomfort, vomiting or photophobia (WHO 2025, section 1.5).",
+      "Confusion or unusual behaviour; older or immunocompromised adults may have an incomplete presentation."
+    ],
+    "physicalSigns": [
+      "Neck stiffness, altered consciousness, focal neurological findings or seizures.",
+      "Look for a non-blanching rash and systemic shock; absence of a rash does not exclude meningococcal disease."
+    ],
+    "redFlags": [
+      "Airway compromise, shock, new seizures, focal deficits or deteriorating consciousness require immediate senior/critical-care assessment.",
+      "Glasgow Coma Scale (GCS) <10, focal signs, cranial nerve deficits, papilloedema, new adult seizures or severe immunocompromise: assess for cranial imaging before lumbar puncture (WHO 2025, section A.4)."
+    ],
+    "precipitants": [
+      "Community respiratory pathogens; recent exposure to a meningococcal case.",
+      "Pregnancy, older age and immunocompromise change Listeria risk and empirical treatment. Recent neurosurgery or a shunt requires a separate healthcare-associated pathway (NCDC–ICMR sections 2.3–2.4)."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Viral meningitis",
+      "distinguishingFeatures": "CSF often has lymphocytic predominance and preserved glucose, but an early result cannot safely exclude bacterial infection (WHO section A.2)."
+    },
+    {
+      "condition": "Encephalitis",
+      "distinguishingFeatures": "Prominent behavioural change, focal deficits or seizures; follow the India encephalitis pathway when the syndromes overlap (NCDC–ICMR section 2.2)."
+    },
+    {
+      "condition": "Tuberculous meningitis",
+      "distinguishingFeatures": "A longer constitutional illness and lymphocyte-predominant CSF suggest a different diagnostic and treatment pathway (NCDC–ICMR section 2.3)."
+    },
+    {
+      "condition": "Cryptococcal meningitis",
+      "distinguishingFeatures": "Consider with severe immunocompromise; cryptococcal testing and opening pressure guide a distinct pathway. Routine bacterial-meningitis steroids are inappropriate (WHO section B.3)."
+    },
+    {
+      "condition": "Intracranial haemorrhage or mass lesion",
+      "distinguishingFeatures": "Abrupt headache or a focal syndrome requires urgent imaging; do not perform an unsafe lumbar puncture (WHO section A.4)."
+    }
+  ],
+  "evidenceAudit": {
+    "checkedOn": "2026-10-22",
+    "status": "incomplete",
+    "scope": "Adults in India; six-tier source-based revision. Clinical review pending.",
+    "findings": [
+      "National Centre for Disease Control (NCDC) and Indian Council of Medical Research (ICMR): joint Version 2.0, November 2025 verified directly on the title page. World Health Organization (WHO) guidance is supplementary.",
+      "India regional topic. Indian national antimicrobial guidance takes precedence over older ICMR text. WHO AWaRe (Access, Watch, Reserve) warnings identify stewardship category, not an automatic indication. Check hospital formulary, product strength and local antibiogram. No Saudi registration claim is made for this India adaptation."
+    ],
+    "unverifiedSections": [
+      "Hospital antibiogram, stocked Indian product licences, local infusion preparation and operational referral arrangements require local clinical/pharmacy confirmation.",
+      "Local pneumococcal susceptibility, choice between the national and WHO higher-risk branches and duration policy need infection-specialist sign-off.",
+      "Numerical dexamethasone organ-impairment adjustments are not supplied by the opened meningitis sources; individual product confirmation remains required.",
+      "Proposed 48-hour empirical authorisation cap is a governance safeguard, not a universal treatment-course maximum. SFDA registration is outside India scope."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "9cf6ff07-125e-4bcd-9db2-99eb0d507767"
+    ]
+  },
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Bedside neurological and circulation assessment",
+        "modalityTarget": "Bedside neurological and circulation assessment",
+        "targetCondition": "Bedside neurological and circulation assessment",
+        "normalValue": "Alert baseline; GCS 15; no focal deficit.",
+        "expectedFinding": "Altered consciousness, focal findings, seizures or shock.",
+        "clinicalRationale": "Stabilise and reassess; document the pre-treatment examination and lumbar-puncture safety decision.",
+        "references": [
+          {
+            "title": "WHO guidelines on meningitis diagnosis, treatment and care",
+            "edition": "2025, Sections A.1, A.4 and B.1",
+            "url": "https://docs.bvsalud.org/biblioref/2025/04/1592382/9789240108042-eng.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Blood cultures",
+        "modalityTarget": "Blood cultures",
+        "targetCondition": "Blood cultures",
+        "normalValue": "No pathogen growth.",
+        "expectedFinding": "Causative bacteria and susceptibility may be identified even if puncture is deferred.",
+        "clinicalRationale": "Collect promptly before antibiotics where feasible; a delayed sample must not delay treatment.",
+        "references": [
+          {
+            "title": "WHO guidelines on meningitis diagnosis, treatment and care",
+            "edition": "2025, Section A.3.1",
+            "url": "https://docs.bvsalud.org/biblioref/2025/04/1592382/9789240108042-eng.pdf"
+          },
+          {
+            "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+            "edition": "Version 2.0, November 2025, Section 2.3, printed p. 20",
+            "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count and platelet count",
+        "modalityTarget": "Full blood count and platelet count",
+        "targetCondition": "Full blood count and platelet count",
+        "normalValue": "Adult example: white cells 4.0–10.0 ×10⁹/L; platelets 150–410 ×10⁹/L; local ranges apply.",
+        "expectedFinding": "Inflammatory changes or thrombocytopenia.",
+        "clinicalRationale": "Assess systemic illness and bleeding risk; a normal count cannot exclude meningitis.",
+        "references": [
+          {
+            "title": "University Hospitals Dorset laboratory reference ranges",
+            "edition": "Accessed 22 October 2026, Section Adult Reference Ranges",
+            "url": "https://www.uhd.nhs.uk/services/pathology/haematology/test-repertoire-and-reference-ranges"
+          },
+          {
+            "title": "WHO guidelines on meningitis diagnosis, treatment and care",
+            "edition": "2025, Section A.3",
+            "url": "https://docs.bvsalud.org/biblioref/2025/04/1592382/9789240108042-eng.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Renal function, electrolytes, liver tests and coagulation",
+        "modalityTarget": "Renal function, electrolytes, liver tests and coagulation",
+        "targetCondition": "Renal function, electrolytes, liver tests and coagulation",
+        "normalValue": "Compare with baseline and the assay-specific range; adult international normalised ratio (INR) example 0.9–1.2.",
+        "expectedFinding": "Renal injury, electrolyte abnormalities or coagulopathy.",
+        "clinicalRationale": "Check drug doses and procedural safety; correct instability before puncture. No universal safe platelet threshold is inferred here.",
+        "references": [
+          {
+            "title": "University Hospitals Dorset laboratory reference ranges",
+            "edition": "Accessed 22 October 2026, Section Adult Reference Ranges",
+            "url": "https://www.uhd.nhs.uk/services/pathology/haematology/test-repertoire-and-reference-ranges"
+          },
+          {
+            "title": "WHO guidelines on meningitis diagnosis, treatment and care",
+            "edition": "2025, Sections A.1 and A.3",
+            "url": "https://docs.bvsalud.org/biblioref/2025/04/1592382/9789240108042-eng.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Paired blood glucose",
+        "modalityTarget": "Paired blood glucose",
+        "targetCondition": "Paired blood glucose",
+        "normalValue": "Use a contemporaneous measured value; normal CSF:blood glucose ratio is 0.5–0.8.",
+        "expectedFinding": "Low CSF glucose relative to blood.",
+        "clinicalRationale": "Take blood glucose with the puncture and calculate the ratio; isolated CSF glucose is less informative.",
+        "references": [
+          {
+            "title": "WHO guidelines on meningitis diagnosis, treatment and care",
+            "edition": "2025, Section A.2.1, printed pp. 18–21",
+            "url": "https://docs.bvsalud.org/biblioref/2025/04/1592382/9789240108042-eng.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "CSF cell count and differential",
+        "modalityTarget": "CSF cell count and differential",
+        "targetCondition": "CSF cell count and differential",
+        "normalValue": "Adults: 0–5 leukocytes/µL (0–5 ×10⁶/L).",
+        "expectedFinding": "Pleocytosis, typically neutrophilic in pyogenic infection.",
+        "clinicalRationale": "Combine with glucose, protein and microbiology; prior treatment can change the pattern.",
+        "references": [
+          {
+            "title": "WHO guidelines on meningitis diagnosis, treatment and care",
+            "edition": "2025, Section A.2.1, printed pp. 18–21",
+            "url": "https://docs.bvsalud.org/biblioref/2025/04/1592382/9789240108042-eng.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "CSF protein",
+        "modalityTarget": "CSF protein",
+        "targetCondition": "CSF protein",
+        "normalValue": "Adult upper reference about 0.45 g/L (45 mg/dL); local range applies.",
+        "expectedFinding": "Protein >0.45 g/L supports barrier disruption but is not specific.",
+        "clinicalRationale": "Interpret with the complete CSF panel, not as a stand-alone diagnosis.",
+        "references": [
+          {
+            "title": "WHO guidelines on meningitis diagnosis, treatment and care",
+            "edition": "2025, Section A.2.1, printed pp. 18–21",
+            "url": "https://docs.bvsalud.org/biblioref/2025/04/1592382/9789240108042-eng.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "CSF glucose and CSF:blood glucose ratio",
+        "modalityTarget": "CSF glucose and CSF:blood glucose ratio",
+        "targetCondition": "CSF glucose and CSF:blood glucose ratio",
+        "normalValue": "Ratio 0.5–0.8.",
+        "expectedFinding": "Ratio ≤0.4 is abnormally low.",
+        "clinicalRationale": "Supports bacterial or other chronic infective meningitis; does not identify the organism.",
+        "references": [
+          {
+            "title": "WHO guidelines on meningitis diagnosis, treatment and care",
+            "edition": "2025, Section A.2.1, printed pp. 18–21",
+            "url": "https://docs.bvsalud.org/biblioref/2025/04/1592382/9789240108042-eng.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "CSF Gram stain, culture and susceptibility",
+        "modalityTarget": "CSF Gram stain, culture and susceptibility",
+        "targetCondition": "CSF Gram stain, culture and susceptibility",
+        "normalValue": "No organisms; no pathogen growth.",
+        "expectedFinding": "Organism morphology or a cultured pathogen.",
+        "clinicalRationale": "Narrow treatment when susceptibility is available; a negative post-antibiotic culture does not exclude bacterial disease.",
+        "references": [
+          {
+            "title": "WHO guidelines on meningitis diagnosis, treatment and care",
+            "edition": "2025, Section A.2.1 and A.2.2",
+            "url": "https://docs.bvsalud.org/biblioref/2025/04/1592382/9789240108042-eng.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "CSF molecular testing",
+        "modalityTarget": "CSF molecular testing",
+        "targetCondition": "CSF molecular testing",
+        "normalValue": "No target pathogen detected.",
+        "expectedFinding": "Bacterial or viral nucleic acid detected.",
+        "clinicalRationale": "Use validated tests with the clinical/CSF picture; stop unnecessary antibiotics if a viral cause is confirmed and bacterial disease excluded.",
+        "references": [
+          {
+            "title": "WHO guidelines on meningitis diagnosis, treatment and care",
+            "edition": "2025, Section A.2.3 and Box 3.3",
+            "url": "https://docs.bvsalud.org/biblioref/2025/04/1592382/9789240108042-eng.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "advancedImaging",
+        "testName": "Computed tomography (CT) head when risk features are present",
+        "modalityTarget": "CT head when risk features are present",
+        "targetCondition": "CT head when risk features are present",
+        "normalValue": "No mass effect or other puncture-risk lesion.",
+        "expectedFinding": "Mass lesion, hydrocephalus or cerebral swelling.",
+        "clinicalRationale": "Imaging is selective: obtain blood cultures and give antibiotics first when puncture is deferred. A normal scan does not override unresolved clinical contraindications.",
+        "references": [
+          {
+            "title": "WHO guidelines on meningitis diagnosis, treatment and care",
+            "edition": "2025, Section A.4",
+            "url": "https://docs.bvsalud.org/biblioref/2025/04/1592382/9789240108042-eng.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Targeted alternative-infection tests",
+        "modalityTarget": "Targeted alternative-infection tests",
+        "targetCondition": "Targeted alternative-infection tests",
+        "normalValue": "No malaria parasite, cryptococcal antigen or other target detected in an appropriately selected test.",
+        "expectedFinding": "A result supporting malaria, cryptococcosis, tuberculosis or encephalitis.",
+        "clinicalRationale": "Select from exposure and immune state; send human immunodeficiency virus (HIV) testing with counselling/consent under local practice. Use the specific India pathway if positive.",
+        "references": [
+          {
+            "title": "WHO guidelines on meningitis diagnosis, treatment and care",
+            "edition": "2025, Sections A.3 and B.3",
+            "url": "https://docs.bvsalud.org/biblioref/2025/04/1592382/9789240108042-eng.pdf"
+          },
+          {
+            "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+            "edition": "Version 2.0, November 2025, Sections 2.2–2.3",
+            "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "note": "India regional topic. Indian national antimicrobial guidance takes precedence over older ICMR text. WHO AWaRe (Access, Watch, Reserve) warnings identify stewardship category, not an automatic indication. Check hospital formulary, product strength and local antibiogram. No Saudi registration claim is made for this India adaptation. Choose one backbone: ceftriaxone-based OR the specialist meropenem-based branch. Conditional add-on branches apply only when their criteria are met. Empirical prescriptions have a proposed 48-hour review/renewal cap; confirmed courses use the explicit pathogen-specific calendar stop dates below. This proposal is not a national automatic discontinuation rule.",
+    "branches": [
+      {
+        "label": "Standard community meningitis",
+        "entryCriteria": "Community-acquired bacterial meningitis; use ceftriaxone unless the specialist broad-spectrum branch is selected."
+      },
+      {
+        "label": "Resistant pneumococcal cover",
+        "entryCriteria": "Add to the ceftriaxone branch if penicillin/cephalosporin-resistant pneumococci are a concern."
+      },
+      {
+        "label": "Listeria risk or confirmed listeriosis",
+        "entryCriteria": "Add ampicillin to the ceftriaxone branch for relevant risk, including pregnancy or immunocompromise; use targeted ampicillin when Listeria is confirmed."
+      },
+      {
+        "label": "Indian specialist broad-spectrum pathway",
+        "entryCriteria": "NCDC alternative for immunocompromised adults or age >50 years, selected by the infection specialist; replaces ceftriaxone-based treatment."
+      },
+      {
+        "label": "Adjunctive steroid eligible",
+        "entryCriteria": "Non-epidemic strongly suspected bacterial meningitis at the first antibiotic dose; not cryptococcosis, cerebral malaria or a routine meningococcal-epidemic steroid plan."
+      }
+    ],
+    "regimens": [
+      {
+        "branch": "Standard community meningitis",
+        "step": "Antibacterial backbone",
+        "selection": "all",
+        "indication": "Standard community meningitis",
+        "patientGroup": "Adults only",
+        "genericName": "Ceftriaxone",
+        "dose": "2 g; maximum 4 g/day before patient-specific adjustment",
+        "route": "Intravenous infusion over at least 30 minutes",
+        "frequency": "Every 12 hours",
+        "duration": "National uncomplicated empirical plan 10–14 days, maximum routine plan 14 days. At organism identification use the selected pathogen-specific stop: meningococcus 5–7 days; H. influenzae 7–10; pneumococcus 10–14 (WHO Table 3.2). Renew or replace the plan for a complication, not automatic extension.",
+        "adjustments": [
+          "Creatinine clearance <10 mL/min: product label ceiling 2 g/day; urgent infection/pharmacy advice is needed for the meningitis regimen rather than silently reducing CNS exposure (SmPC section 4.2).",
+          "Severe combined hepatic/renal dysfunction needs close monitoring. India NLEM 2022 section 6.2.1.11 lists injection."
+        ],
+        "monitoring": [
+          "WATCH: review Gram stain, culture and susceptibility; narrow when possible.",
+          "Monitor renal/hepatic function, rash and diarrhoea; do not mix with calcium-containing infusion solutions."
+        ],
+        "contraindications": [
+          "Cephalosporin hypersensitivity or a serious prior beta-lactam reaction requires specialist selection."
+        ],
+        "sourceTitle": "NCDC–ICMR November 2025 with explicitly named supplementary source",
+        "sourceUrl": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf",
+        "sourceEdition": "Version 2.0 November 2025, section 2.3 p. 20; WHO 2025 Table 3.2; ceftriaxone SmPC section 4.2: https://www.medicines.org.uk/emc/product/15101/smpc"
+      },
+      {
+        "branch": "Resistant pneumococcal cover",
+        "step": "Additional pneumococcal resistance cover",
+        "selection": "all",
+        "indication": "Resistant pneumococcal cover",
+        "patientGroup": "Adults only",
+        "genericName": "Vancomycin",
+        "dose": "25 mg/kg loading dose then 15 mg/kg per dose; ≤2 g per dose; usual total ceiling 4 g/day with monitoring, ≤3 g/day if monitoring is unavailable (WHO toolkit slide 30)",
+        "route": "Intravenous infusion, at least 1 hour and ≤10 mg/min, whichever takes longer",
+        "frequency": "Maintenance every 8–12 hours initially if renal function is normal; then level-guided",
+        "duration": "Review need at 48 hours; stop when resistance is excluded. If retained, use the confirmed pathogen total duration and calendar stop date; no automatic continuation past that date.",
+        "adjustments": [
+          "Use total body weight for the load; subsequent dosing follows renal function and serum concentrations (SmPC section 4.2).",
+          "Concentrations on day 2 in stable renal function; more frequent testing in unstable disease. Injection listed in NLEM 2022 section 6.2.2.13."
+        ],
+        "monitoring": [
+          "WATCH: additional resistance cover, not routine duplication.",
+          "Monitor serum exposure, renal function, infusion tolerance and hearing symptoms."
+        ],
+        "contraindications": [
+          "Glycopeptide hypersensitivity; avoid rapid infusion and unnecessary nephrotoxic combinations."
+        ],
+        "sourceTitle": "NCDC–ICMR November 2025 with explicitly named supplementary source",
+        "sourceUrl": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf",
+        "sourceEdition": "Version 2.0 November 2025, section 2.3 p. 20; WHO toolkit slide 30; vancomycin SmPC section 4.2: https://www.medicines.org.uk/emc/product/8760/smpc",
+        "useWhen": "Only when pneumococcal resistance requires cover alongside ceftriaxone."
+      },
+      {
+        "branch": "Listeria risk or confirmed listeriosis",
+        "step": "Listeria-active penicillin",
+        "selection": "all",
+        "indication": "Listeria risk or confirmed listeriosis",
+        "patientGroup": "Adults only",
+        "genericName": "Ampicillin",
+        "dose": "2 g; maximum in this meningitis pathway 12 g/day before renal adjustment",
+        "route": "Intravenous",
+        "frequency": "Every 4 hours",
+        "duration": "If Listeria is excluded, stop this component at microbiology review. Confirmed Listeria: 21 days with a documented stop date; complications require a separately authorised specialist plan.",
+        "adjustments": [
+          "Renal impairment requires dose/interval review; creatinine clearance <10 mL/min: reduce dose or extend interval with pharmacy advice (SmPC section 4.2).",
+          "No numerical hepatic adjustment is specified in the opened product information. Injection listed in NLEM 2022 section 6.2.1.3."
+        ],
+        "monitoring": [
+          "ACCESS: indication remains risk- or pathogen-driven.",
+          "Monitor allergy, renal function, electrolytes/sodium exposure and response."
+        ],
+        "contraindications": [
+          "Serious penicillin/beta-lactam hypersensitivity.",
+          "Do not add to the meropenem branch routinely; a specialist must justify any overlap."
+        ],
+        "sourceTitle": "NCDC–ICMR November 2025 with explicitly named supplementary source",
+        "sourceUrl": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf",
+        "sourceEdition": "Version 2.0 November 2025, section 2.3 p. 20; WHO toolkit slide 30; ampicillin SmPC sections 4.2–4.4: https://www.medicines.org.uk/emc/product/12892/smpc"
+      },
+      {
+        "branch": "Indian specialist broad-spectrum pathway",
+        "step": "Central nervous system (CNS) antibacterial backbone",
+        "selection": "all",
+        "indication": "Indian specialist broad-spectrum pathway",
+        "patientGroup": "Adults only",
+        "genericName": "Meropenem",
+        "dose": "2 g; maximum standard total 6 g/day before renal adjustment",
+        "route": "Intravenous",
+        "frequency": "Every 8 hours",
+        "duration": "National empirical plan 10–14 days; review at 48 hours and replace with a pathogen-specific stop date. Gram-negative/staphylococcal meningitis requires ≥21 days and specialist renewal; no unsupported total-course ceiling is imposed.",
+        "adjustments": [
+          "Meningitis renal table: creatinine clearance 26–50 mL/min: 2 g every 12 hours; 10–25: 1 g every 12 hours; <10: 1 g every 24 hours (UCSF section Short Infusion Dosing).",
+          "Dialysis needs the separate dialysis table and pharmacy advice. NLEM 2022 section 6.2.1.14 lists injection.",
+          "Hepatic impairment: no dose reduction, but monitor liver function (meropenem SmPC sections 4.2 and 4.4)."
+        ],
+        "monitoring": [
+          "WATCH carbapenem: document the reason for choosing the national alternative and reassess spectrum.",
+          "Monitor renal function, seizures, blood count and hepatic tests."
+        ],
+        "contraindications": [
+          "Serious carbapenem/beta-lactam hypersensitivity.",
+          "Replaces ceftriaxone rather than accompanying it.",
+          "Avoid concomitant valproate: meropenem can markedly lower exposure and undermine seizure control (SmPC sections 4.4–4.5)."
+        ],
+        "sourceTitle": "NCDC–ICMR November 2025 with explicitly named supplementary source",
+        "sourceUrl": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf",
+        "sourceEdition": "Version 2.0 November 2025, section 2.3 p. 20; UCSF section Short Infusion Dosing: https://idmp.ucsf.edu/content/meropenem; meropenem SmPC sections 4.2–4.5: https://www.medicines.org.uk/emc/product/10970/smpc"
+      },
+      {
+        "branch": "Indian specialist broad-spectrum pathway",
+        "step": "Glycopeptide partner",
+        "selection": "all",
+        "indication": "Indian specialist broad-spectrum pathway",
+        "patientGroup": "Adults only",
+        "genericName": "Vancomycin",
+        "dose": "25 mg/kg loading dose then 15 mg/kg per dose; ≤2 g per dose; usual ceiling 4 g/day with monitoring, ≤3 g/day if monitoring is unavailable",
+        "route": "Intravenous infusion, at least 1 hour and ≤10 mg/min, whichever takes longer",
+        "frequency": "Every 8–12 hours initially with normal renal function; then level-guided",
+        "duration": "Review at 48 hours; narrow or stop when the pathogen permits. If retained, use the organism-specific calendar stop date, not the empirical branch label.",
+        "adjustments": [
+          "Dose by total body weight and renal function; individualise subsequent doses to serum levels (SmPC section 4.2).",
+          "NLEM 2022 section 6.2.2.13 lists injection; verify drug-level access."
+        ],
+        "monitoring": [
+          "WATCH: do not also select the separate resistant-pneumococcal vancomycin row.",
+          "Monitor renal function and serum concentrations; avoid rapid infusion."
+        ],
+        "contraindications": [
+          "Glycopeptide hypersensitivity; additional nephrotoxic treatment increases risk."
+        ],
+        "sourceTitle": "NCDC–ICMR November 2025 with explicitly named supplementary source",
+        "sourceUrl": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf",
+        "sourceEdition": "Version 2.0 November 2025, section 2.3 p. 20; WHO toolkit slide 30; vancomycin SmPC section 4.2: https://www.medicines.org.uk/emc/product/8760/smpc"
+      },
+      {
+        "branch": "Adjunctive steroid eligible",
+        "step": "Inflammation adjunct",
+        "selection": "all",
+        "indication": "Adjunctive steroid eligible",
+        "patientGroup": "Adults only",
+        "genericName": "Dexamethasone",
+        "dose": "10 mg; maximum in this pathway 40 mg/day",
+        "route": "Intravenous",
+        "frequency": "Every 6 hours",
+        "duration": "Maximum 4 days; stop earlier when CSF or pathogen results do not support continuation. Give with first antibiotics; do not delay antibiotics to obtain steroid.",
+        "adjustments": [
+          "No numerical renal/hepatic adjustment is supplied in the opened meningitis guidance; review patient-specific product cautions with pharmacy.",
+          "Continue for pneumococcal or H. influenzae meningitis where indicated; reassess for other pathogens."
+        ],
+        "monitoring": [
+          "Blood glucose, gastrointestinal bleeding, secondary infection and neurological response."
+        ],
+        "contraindications": [
+          "Do not give this adjunctive regimen for cryptococcal meningitis or cerebral malaria.",
+          "Do not routinely use during a meningococcal epidemic."
+        ],
+        "sourceTitle": "NCDC–ICMR November 2025 with explicitly named supplementary source",
+        "sourceUrl": "https://cdn.who.int/media/docs/default-source/crs-crr/epiwin_bacterial-meningitis-toolkit.pdf?sfvrsn=308f3198_1",
+        "sourceEdition": "WHO toolkit slides 31–32; WHO 2025 section B.3"
+      }
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Inflammation of the meninges can rapidly cause neurological injury and systemic illness; early pathogen-directed treatment and complication surveillance are essential (WHO 2025, sections 1.5 and B.1).",
+    "keyMechanisms": [
+      "Inflammatory cells and protein enter the cerebrospinal fluid (CSF) as the blood–brain barrier is disrupted (WHO 2025, section A.2).",
+      "Bacterial consumption and impaired transport contribute to low CSF glucose relative to blood (WHO 2025, section A.2).",
+      "Cerebral oedema, vascular complications and seizures can threaten consciousness and airway protection (WHO 2025, sections B.4 and B.6).",
+      "Antibiotics can reduce culture yield, so collect specimens promptly when safe without delaying treatment (WHO 2025, sections A.2 and B.2)."
+    ],
+    "references": [
+      {
+        "title": "WHO guidelines on meningitis diagnosis, treatment and care",
+        "edition": "2025, Sections A.2, B.1, B.2, B.4 and B.6",
+        "url": "https://docs.bvsalud.org/biblioref/2025/04/1592382/9789240108042-eng.pdf"
+      }
+    ]
+  },
+  "clinicalScenario": "Fictitious teaching case: an adult presents with fever, headache and new confusion. Obtain blood cultures and decide whether lumbar puncture is safe while preparing immediate treatment. Imaging must not become a barrier to antibiotics.",
+  "clinicalManagement": [
+    {
+      "id": "stabilise",
+      "title": "Stabilise, protect staff and prepare specimens",
+      "timeframe": "Immediate; treatment within 1 hour of admission",
+      "actions": [
+        "Assess airway, breathing, circulation and neurological status; call critical care for airway compromise, shock or ongoing seizures (WHO sections B.1, B.4 and B.6).",
+        "Take cultures and bloods while preparing antibiotics; initiate treatment as soon as possible and within 1 hour of admission. Do not wait for imaging or puncture results (NCDC–ICMR section 2.3; WHO toolkit, slide 33).",
+        "Use droplet precautions when meningococcal infection is suspected and involve infection control for the duration and contact assessment; do not improvise a prophylaxis regimen."
+      ]
+    },
+    {
+      "id": "puncture-safety",
+      "title": "Choose the diagnostic route",
+      "timeframe": "During initial stabilisation",
+      "actions": [
+        "Perform lumbar puncture promptly when safe. Defer for cardiorespiratory instability, relevant bleeding risk or local puncture-site infection (WHO section A.1).",
+        "Where imaging is available, GCS <10, focal neurological signs, cranial nerve deficits, papilloedema, new adult seizures or severe immunocompromise warrant imaging first. If imaging is unavailable, defer puncture while these risk features persist (WHO section A.4).",
+        "When puncture is delayed, blood cultures and treatment precede imaging. Send the CSF panel listed in Investigations once safe; retain a sample for additional tests (WHO sections A.2–A.4)."
+      ]
+    },
+    {
+      "id": "empirical-treatment",
+      "title": "Select one empirical antibacterial pathway",
+      "timeframe": "Immediately after cultures when obtainable without delay",
+      "actions": [
+        "Use ceftriaxone as the standard community-acquired backbone. Add vancomycin only when resistant pneumococci are a concern; check the local antibiogram (NCDC–ICMR section 2.3).",
+        "For Listeria risk, add ampicillin to the ceftriaxone pathway. Do not treat pregnancy as ordinary undifferentiated fever (NCDC–ICMR section 2.3; WHO section B.2.1).",
+        "The Indian table also gives a meropenem-plus-vancomycin alternative for immunocompromised adults or age >50 years. This replaces the ceftriaxone branch; it is not stacked on top. Discuss selection with infection specialists and document why broadening is required (NCDC–ICMR section 2.3).",
+        "Give eligible adjunctive dexamethasone with the first antibiotic dose. Stop when bacterial infection is unlikely or the identified pathogen does not justify continuation; maximum 4 days. Do not use this steroid pathway for cryptococcal meningitis or cerebral malaria (WHO section B.3; WHO toolkit slides 31–32)."
+      ]
+    },
+    {
+      "id": "reassess",
+      "title": "Monitor complications and review microbiology",
+      "timeframe": "Ongoing; microbiology review by 48 hours",
+      "actions": [
+        "Reassess consciousness, pupils, seizures, haemodynamics, oxygenation, fluid balance and renal function during the acute illness. Escalate any deterioration immediately; do not impose fluid restriction routinely (WHO sections B.4–B.6).",
+        "At the 48-hour review, document organism, susceptibility, narrowed treatment, effective treatment days and calendar stop date. If no organism is identified, explicitly select the national or WHO duration policy in the comparison table rather than blending them.",
+        "Persistent fever, new focal signs or lack of recovery require a diagnostic review for resistance, a collection, hydrocephalus or an alternative infection; do not simply extend the same regimen (WHO sections B.2 and B.4)."
+      ]
+    },
+    {
+      "id": "duration-and-recovery",
+      "title": "Apply a pathogen-specific stop and assess recovery",
+      "timeframe": "Before each planned course completion and discharge",
+      "actions": [
+        "Indian default uncomplicated bacterial meningitis: 10–14 days, with a maximum routine plan of 14 days; confirmed meningococcus 5–7 days, Haemophilus influenzae 7–10 days and pneumococcus 10–14 days may use the WHO pathogen-specific plan after specialist review (NCDC–ICMR section 2.3; WHO Table 3.2).",
+        "Listeria: 21 days. Gram-negative bacilli or staphylococci require at least 21 days under the Indian guidance: no universal upper cap is established. Use specialist-prescribed stop dates and renewed authorisation; never truncate an indicated course to satisfy a software cap (NCDC–ICMR section 2.3).",
+        "Assess neurological and hearing sequelae before discharge. Arrange formal audiology before discharge or within 4 weeks, plus at least one clinical review within 4 weeks (WHO sections C.2 and C.4)."
+      ]
+    }
+  ],
+  "clinicalReviewStatus": "pending",
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain the need for urgent admission, possible neurological/hearing effects and the planned antibiotic stop date.",
+      "Give return advice for recurrent fever, severe headache, seizures, confusion or new hearing difficulty.",
+      "Explain contact assessment when meningococcal infection is suspected; prophylaxis is arranged through infection control."
+    ],
+    "lifestyleAndDiet": [
+      "Provide nutrition, hydration and swallowing support matched to recovery.",
+      "Plan a supported return to usual activities; assess cognition, fatigue, mobility and psychological needs."
+    ],
+    "mdtReferrals": [
+      "Critical care for airway compromise, shock, seizures or worsening consciousness.",
+      "Infectious diseases/microbiology for duration, resistant organisms, Listeria, allergy and alternative infections.",
+      "Neurology/neurosurgery for focal deterioration, hydrocephalus or suspected collection.",
+      "Audiology and rehabilitation; infection control/public health for meningococcal exposure assessment."
+    ],
+    "dischargeCriteria": [
+      "Stable vital signs and a safe neurological baseline or a documented rehabilitation plan.",
+      "Treatment completed or an accepted supervised completion plan with a calendar stop date.",
+      "Pending results have a named owner.",
+      "Hearing and neurological assessments arranged; patient/caregiver understand return precautions."
+    ],
+    "followUpPlan": "Clinical review at least once within 4 weeks; formal audiology before discharge or within 4 weeks. Refer detected hearing loss urgently and assess other sequelae at follow-up (WHO sections C.2–C.4)."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Suspected bacterial meningitis",
+      "threshold": "Compatible acute syndrome warrants emergency treatment; do not require the complete symptom combination or a positive culture (WHO sections 1.5 and B.1)."
+    },
+    {
+      "criterion": "Supportive CSF pattern",
+      "threshold": "Neutrophilic pleocytosis, raised protein and CSF:blood glucose ratio ≤0.4 support bacterial disease; interpret results together (WHO section A.2)."
+    },
+    {
+      "criterion": "Confirmed pathogen",
+      "threshold": "Relevant organism detected by CSF/blood culture or a validated molecular test, interpreted with the syndrome and prior treatment (WHO sections A.2–A.3)."
+    }
+  ],
+  "guidelineComparison": {
+    "title": "Keep duration and risk-group differences explicit",
+    "columns": [
+      "NCDC–ICMR V2.0 November 2025",
+      "WHO meningitis 2025"
+    ],
+    "rows": [
+      {
+        "parameter": "No pathogen identified",
+        "values": [
+          "Section 2.3 p. 20: 10–14 days.",
+          "Section B.2.3: consider stopping after 7 days only if clinically recovered, with fever, abnormal vital signs and altered mentation resolved for at least 48 hours."
+        ]
+      },
+      {
+        "parameter": "Higher-risk empirical selection",
+        "values": [
+          "Section 2.3 p. 20: meropenem plus vancomycin alternative for immunocompromise or age >50; add ampicillin when Listeria is suspected.",
+          "Section B.2.1: ceftriaxone/cefotaxime, with ampicillin/amoxicillin added for Listeria risk; vancomycin depends on resistance."
+        ]
+      },
+      {
+        "parameter": "Known organism",
+        "values": [
+          "Section 2.3: Listeria 21 days; Gram-negative bacilli/staphylococci at least 21 days.",
+          "Table 3.2: meningococcus 5–7; H. influenzae 7–10; pneumococcus 10–14; Listeria 21 days."
+        ]
+      }
+    ],
+    "note": "An infection specialist selects and documents the applicable policy. The software must not average conflicting durations or apply a routine 14-day ceiling to infections needing longer treatment."
+  },
+  "teaching": {
+    "scope": "Adults with community-acquired bacterial meningitis in India; separate pathways cover neonates, neurosurgical devices and chronic meningitis.",
+    "learningObjectives": [
+      "Avoid treatment delay during the puncture/imaging decision.",
+      "Select resistance and Listeria coverage by patient group.",
+      "Use organism-specific stop dates and arrange hearing follow-up."
+    ],
+    "keyPoints": [
+      "A normal early test does not exclude meningitis.",
+      "Imaging is selective; antibiotics are urgent.",
+      "Do not merge the national and WHO durations."
+    ],
+    "pitfalls": [
+      "Waiting for CT or lumbar puncture before antibiotics.",
+      "Giving every branch simultaneously.",
+      "Applying an uncomplicated duration cap to Gram-negative or staphylococcal meningitis."
+    ],
+    "references": [
+      {
+        "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+        "edition": "Version 2.0, November 2025",
+        "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf",
+        "locator": "Sections 2.2–2.4, printed pp. 19–21"
+      },
+      {
+        "title": "WHO guidelines on meningitis diagnosis, treatment and care",
+        "edition": "2025",
+        "url": "https://docs.bvsalud.org/biblioref/2025/04/1592382/9789240108042-eng.pdf",
+        "locator": "Sections 1.5, A.1–A.4, B.1–B.6, Table 3.2 and C.2–C.4"
+      },
+      {
+        "title": "WHO frontline meningitis toolkit",
+        "edition": "Accessed 22 October 2026",
+        "url": "https://cdn.who.int/media/docs/default-source/crs-crr/epiwin_bacterial-meningitis-toolkit.pdf?sfvrsn=308f3198_1",
+        "locator": "Slides 29–34"
+      },
+      {
+        "title": "India National List of Essential Medicines",
+        "edition": "Accessed 22 October 2026",
+        "url": "https://cdsco.gov.in/opencms/resources/UploadCDSCOWeb/2018/UploadConsumer/nlem2022.pdf",
+        "locator": "Sections 6.2, 10.4 and 25"
+      },
+      {
+        "title": "University Hospitals Dorset laboratory reference ranges",
+        "edition": "Accessed 22 October 2026",
+        "url": "https://www.uhd.nhs.uk/services/pathology/haematology/test-repertoire-and-reference-ranges",
+        "locator": "Section Adult Reference Ranges"
+      },
+      {
+        "title": "Ceftriaxone product information",
+        "edition": "Accessed 22 October 2026",
+        "url": "https://www.medicines.org.uk/emc/product/15101/smpc",
+        "locator": "Sections 4.2–4.4"
+      },
+      {
+        "title": "Vancomycin product information",
+        "edition": "Accessed 22 October 2026",
+        "url": "https://www.medicines.org.uk/emc/product/8760/smpc",
+        "locator": "Sections 4.2–4.4"
+      },
+      {
+        "title": "Ampicillin product information",
+        "edition": "Accessed 22 October 2026",
+        "url": "https://www.medicines.org.uk/emc/product/12892/smpc",
+        "locator": "Sections 4.2–4.4"
+      },
+      {
+        "title": "UCSF meropenem dosing",
+        "edition": "Accessed 22 October 2026",
+        "url": "https://idmp.ucsf.edu/content/meropenem",
+        "locator": "Section Short Infusion Dosing"
+      },
+      {
+        "title": "Meropenem product information",
+        "edition": "Accessed 22 October 2026",
+        "url": "https://www.medicines.org.uk/emc/product/10970/smpc",
+        "locator": "Sections 4.2–4.5"
+      }
+    ]
+  }
+}
