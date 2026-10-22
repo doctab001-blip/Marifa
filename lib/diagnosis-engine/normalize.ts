@@ -5,6 +5,7 @@
  * common synonyms ("elevated", "high" → "raised") and abbreviations compare equal. Matching is on
  * content-token sets, so word order does not matter ("D-dimer raised" = "raised D-dimer").
  */
+import { interpretValues } from "./interpret";
 
 const PHRASES: Array<[RegExp, string]> = [
   [/\bx ray\b/g, "xray"],
@@ -56,6 +57,10 @@ export type ParsedFinding = {
   original: string;
   normalized: string;
   tokens: Set<string>;
+  /** Clinical terms read from typed values ("HR 124" → tachycardia). */
+  derived: string[];
+  /** Token sets to match: the text itself plus each derived term, kept apart so words never mix across them. */
+  variants: Set<string>[];
   negated: boolean;
   /** Tokens without the negation word, used to find the feature being denied. */
   coreTokens: Set<string>;
@@ -63,11 +68,14 @@ export type ParsedFinding = {
 
 export function parseFinding(original: string): ParsedFinding | null {
   const normalized = normalizeTerm(original);
-  const tokens = normalized.split(" ").filter(Boolean);
-  if (tokens.length === 0) return null;
-  const negated = NEGATION_PREFIX.has(tokens[0]) || (tokens.length > 1 && NEGATION_SUFFIX.has(tokens[tokens.length - 1]));
+  const words = normalized.split(" ").filter(Boolean);
+  if (words.length === 0) return null;
+  const negated = NEGATION_PREFIX.has(words[0]) || (words.length > 1 && NEGATION_SUFFIX.has(words[words.length - 1]));
   const core = contentTokens(normalized).filter((token) => !NEGATION_PREFIX.has(token) && !NEGATION_SUFFIX.has(token));
-  return { original: original.trim(), normalized, tokens: new Set(contentTokens(normalized)), negated, coreTokens: new Set(core) };
+  const tokens = new Set(contentTokens(normalized));
+  const derived = negated ? [] : interpretValues(original);
+  const variants = [tokens, ...derived.map((term) => new Set(contentTokens(normalizeTerm(term))))];
+  return { original: original.trim(), normalized, tokens, derived, variants, negated, coreTokens: new Set(core) };
 }
 
 export type AliasTokens = string[];
