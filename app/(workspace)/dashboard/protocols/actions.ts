@@ -9,8 +9,8 @@ import { DiseaseDetailSchema } from "@/lib/validations/disease";
 import { auditTopicContent } from "@/lib/clinical-authoring-audit";
 import { isDevEditMode } from "@/lib/dev-edit-mode";
 import { LOCAL_PROTOCOL_SOURCE_TYPE, PROTOCOLS_DRAFTS, PROTOCOLS_HOME, PROTOCOLS_PUBLISHED } from "@/lib/local-protocols";
+import { isUuid } from "@/lib/ids";
 
-const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
 function refresh(id: string) {
   updateTag(CLINICAL_DIRECTORY_TAG);
@@ -22,7 +22,7 @@ function refresh(id: string) {
 
 /** Loads a version only when it belongs to a Local Protocol owned by the administrator's organization. */
 async function loadProtocolVersion(id: string, versionId: string, fallback: string) {
-  if (!uuid.test(id) || !uuid.test(versionId)) redirect(`${fallback}?error=invalid_id`);
+  if (!isUuid(id) || !isUuid(versionId)) redirect(`${fallback}?error=invalid_id`);
   const context = await requireOrganizationAdmin();
   const supabase = await createSupabaseDataClient();
   const { data: guideline } = await supabase.from("clinical_guidelines").select("id")

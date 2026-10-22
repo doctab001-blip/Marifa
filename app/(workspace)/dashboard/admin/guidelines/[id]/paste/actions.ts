@@ -10,8 +10,8 @@ import { auditTopicContent, CLINICAL_DIRECTORY_MINIMUM_SCORE } from "@/lib/clini
 import { parsePastedTopic } from "@/lib/topic-paste";
 import { isDevEditMode } from "@/lib/dev-edit-mode";
 import { LOCAL_PROTOCOL_SOURCE_TYPE, PROTOCOLS_DRAFTS, PROTOCOLS_HOME, PROTOCOLS_PUBLISHED } from "@/lib/local-protocols";
+import { isUuid } from "@/lib/ids";
 
-const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const MAX_PASTE_CHARACTERS = 400_000;
 
 function riyadhToday() {
@@ -46,7 +46,7 @@ export async function savePastedTopic(formData: FormData) {
   const useTitle = formData.get("useTitle") === "on";
   const pastePath = `/dashboard/admin/guidelines/${encodeURIComponent(id)}/paste`;
   const here = `${pastePath}?version=${encodeURIComponent(versionId)}`;
-  if (!uuid.test(id) || !uuid.test(versionId)) redirect("/dashboard/admin/governance?error=invalid_id");
+  if (!isUuid(id) || !isUuid(versionId)) redirect("/dashboard/admin/governance?error=invalid_id");
   if (!markdown.trim()) redirect(`${here}&error=empty`);
   if (markdown.length > MAX_PASTE_CHARACTERS) redirect(`${here}&error=too_large`);
 

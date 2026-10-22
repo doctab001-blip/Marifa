@@ -11,15 +11,15 @@ import { approvalErrorCode } from "@/lib/approval-errors";
 import { auditTopicContent, CLINICAL_DIRECTORY_MINIMUM_SCORE } from "@/lib/clinical-authoring-audit";
 import { isDevEditMode } from "@/lib/dev-edit-mode";
 import { LOCAL_PROTOCOL_SOURCE_TYPE, PROTOCOLS_DRAFTS, PROTOCOLS_HOME, PROTOCOLS_PUBLISHED } from "@/lib/local-protocols";
+import { isUuid } from "@/lib/ids";
 
-const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
 export async function saveDraftGuideline(formData: FormData) {
   const id = String(formData.get("id") ?? "");
   const versionId = String(formData.get("versionId") ?? "");
   const rawContent = String(formData.get("content") ?? "");
   const editPath = `/dashboard/admin/guidelines/${encodeURIComponent(id)}?version=${encodeURIComponent(versionId)}`;
-  if (!uuid.test(id) || !uuid.test(versionId)) redirect("/dashboard/admin/governance?error=invalid_id");
+  if (!isUuid(id) || !isUuid(versionId)) redirect("/dashboard/admin/governance?error=invalid_id");
 
   let input: unknown;
   try {
@@ -134,7 +134,7 @@ export async function approveGuidelineVersion(formData: FormData) {
   const id = String(formData.get("id") ?? "");
   const versionId = String(formData.get("versionId") ?? "");
   const destination = String(formData.get("destination") ?? "governance");
-  if (!uuid.test(id) || !uuid.test(versionId)) redirect("/dashboard/admin/governance?error=invalid_id");
+  if (!isUuid(id) || !isUuid(versionId)) redirect("/dashboard/admin/governance?error=invalid_id");
 
   const context = await requireOrganizationAdmin();
   if (!["org_admin", "hospital_admin", "platform_admin"].includes(context.roleCode)) {
@@ -183,7 +183,7 @@ export async function transitionGuidelineVersion(formData: FormData) {
   const versionId = String(formData.get("versionId") ?? "");
   const target = String(formData.get("target") ?? "");
   const destination = target === "approved" ? "/dashboard/diseases/approved" : target === "published" ? "/dashboard/diseases/published" : "/dashboard/diseases/drafts";
-  if (!uuid.test(id) || !uuid.test(versionId) || !["draft", "published", "approved"].includes(target)) redirect(destination);
+  if (!isUuid(id) || !isUuid(versionId) || !["draft", "published", "approved"].includes(target)) redirect(destination);
   const context = await requireOrganizationAdmin();
   const supabase = await createSupabaseDataClient();
   const { data: version } = await supabase.from("guideline_versions").select("id,status,is_current,content").eq("id", versionId).eq("guideline_id", id).maybeSingle();
@@ -209,7 +209,7 @@ export async function transitionGuidelineVersion(formData: FormData) {
 /** Starts a new editable draft while leaving the live approved version intact. */
 export async function createDraftFromApproved(formData: FormData) {
   const id = String(formData.get("id") ?? ""); const versionId = String(formData.get("versionId") ?? "");
-  if (!uuid.test(id) || !uuid.test(versionId)) redirect("/dashboard/diseases/approved");
+  if (!isUuid(id) || !isUuid(versionId)) redirect("/dashboard/diseases/approved");
   const context = await requireOrganizationAdmin(); const supabase = await createSupabaseDataClient();
   const { data: source } = await supabase.from("guideline_versions").select("*").eq("id", versionId).eq("guideline_id", id).eq("status", "approved").maybeSingle();
   const parsed = DiseaseDetailSchema.safeParse(source?.content);
@@ -222,7 +222,7 @@ export async function createDraftFromApproved(formData: FormData) {
 
 export async function deleteDraftVersion(formData: FormData) {
   const id = String(formData.get("id") ?? ""); const versionId = String(formData.get("versionId") ?? "");
-  if (!uuid.test(id) || !uuid.test(versionId)) redirect("/dashboard/diseases/drafts");
+  if (!isUuid(id) || !isUuid(versionId)) redirect("/dashboard/diseases/drafts");
   await requireOrganizationAdmin(); const supabase = await createSupabaseDataClient();
   await supabase.from("guideline_versions").delete().eq("id", versionId).eq("guideline_id", id).in("status", ["draft", "under_review"]);
   revalidatePath("/dashboard/diseases/drafts"); redirect("/dashboard/diseases/drafts");
