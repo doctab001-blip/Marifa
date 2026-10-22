@@ -1,0 +1,2453 @@
+[
+  {
+    "id": "7fdfeaaa-54df-572c-b969-106caf4c2fa2",
+    "title": "Dengue (India adaptation)",
+    "specialty": "Infectious Diseases / Internal Medicine",
+    "authority": "MoHFW",
+    "status": "under_review",
+    "version": "india-adapt-a-2026-10-22-v1",
+    "lastReviewed": "2026-10-22",
+    "pillar": "Urgent Care",
+    "clinicalReviewStatus": "pending",
+    "evidenceAudit": {
+      "checkedOn": "2026-10-22",
+      "status": "incomplete",
+      "scope": "Dengue in India: classification, fluid management by group, transfusion and supportive care.",
+      "findings": [
+        "Fluid steps, thresholds and drug advice checked against the NCVBDC 2023 guideline pages cited.",
+        "Not clinically reviewed."
+      ],
+      "unverifiedSections": [
+        "NCVBDC lists 0.9% saline and Ringer's lactate without ranking; 0.9% saline (first listed) is marked preferred.",
+        "The NCVBDC 2023 guideline was read through an AIIMS-hosted copy; page numbers may differ by one.",
+        "Formal admission and discharge criteria (sections 12–13) were not available in the copy read."
+      ],
+      "medscapeStatus": "unavailable",
+      "originalVersionIds": [
+        "7fdfeaaa-54df-572c-b969-106caf4c2fa2"
+      ]
+    },
+    "pathophysiology": {
+      "summary": "Dengue is the most widespread mosquito-borne viral infection in India, transmitted mainly by Aedes aegypti, with large seasonal outbreaks during and after the monsoon. Four dengue virus serotypes circulate; infection with one gives lasting immunity to that serotype only, and a second infection with a different serotype carries a higher risk of severe disease because cross-reacting antibodies can enhance viral entry into immune cells. The illness passes through three phases. The febrile phase lasts two to seven days, with high fever, headache, retro-orbital pain, myalgia, rash and a positive tourniquet test. Around the time the fever settles, a minority of patients enter the critical phase, usually lasting 24 to 48 hours, in which immune-mediated injury to the vascular endothelium causes plasma leakage. Fluid moves out of the circulation into the pleural and peritoneal spaces, the haematocrit rises, the pulse pressure narrows and, if leakage is not matched by careful fluid replacement, shock develops. Thrombocytopenia, platelet dysfunction and coagulopathy contribute to bleeding, and prolonged shock leads to organ injury including hepatitis, myocarditis and encephalopathy. In the recovery phase leaked fluid is reabsorbed, so continued intravenous fluid at this stage causes overload and pulmonary oedema. India's national guideline classifies patients as dengue without warning signs, dengue with warning signs and severe dengue, and bases treatment on this grouping, serial haematocrit and clinical response. There is no antiviral treatment; outcomes depend on recognising warning signs early, giving isotonic crystalloid in measured, tapering steps, avoiding aspirin and other anti-inflammatory drugs, and not giving prophylactic platelet transfusions (NCVBDC 2023).",
+      "keyMechanisms": [
+        "Secondary infection with a different serotype increases the risk of severe disease through antibody-dependent enhancement.",
+        "Endothelial dysfunction in the critical phase causes plasma leakage, a rising haematocrit and shock (NCVBDC 2023, p. 15).",
+        "Thrombocytopenia and coagulopathy contribute to bleeding.",
+        "Fluid reabsorption in the recovery phase causes overload if intravenous fluids continue (NCVBDC 2023, p. 28)."
+      ]
+    },
+    "presentation": {
+      "symptoms": [
+        "Acute fever lasting 2–7 days",
+        "Headache and retro-orbital pain",
+        "Myalgia and arthralgia",
+        "Rash",
+        "Vomiting and abdominal pain (warning signs)",
+        "Bleeding from gums or nose, black stools or heavy menses"
+      ],
+      "physicalSigns": [
+        "Positive tourniquet test (10 or more petechiae per 2.5 cm²) (NCVBDC 2023, p. 19)",
+        "Postural hypotension (systolic fall of 20 mmHg or more)",
+        "Liver enlarged more than 2 cm",
+        "Pleural effusion or ascites",
+        "Narrow pulse pressure below 20 mmHg (shock) (NCVBDC 2023, p. 16)",
+        "Capillary refill 2 seconds or longer"
+      ],
+      "redFlags": [
+        "Warning signs: persistent vomiting, abdominal pain or tenderness, lethargy or restlessness, mucosal bleeding, syncope, fluid accumulation, liver enlarged more than 2 cm, rising haematocrit with rapidly falling platelets (NCVBDC 2023, p. 15)",
+        "Pulse pressure 20 mmHg or less, cold extremities or hypotension: shock",
+        "Severe bleeding",
+        "Aspartate or alanine aminotransferase 1000 U/L or more, or Glasgow coma score below 9: severe dengue (NCVBDC 2023, p. 20)",
+        "Breathlessness during fluid therapy (overload)"
+      ],
+      "precipitants": [
+        "Monsoon and post-monsoon season",
+        "Urban water storage that breeds Aedes",
+        "Previous dengue infection (risk of severe secondary infection)",
+        "Infancy, pregnancy, older age, diabetes, hypertension and kidney disease (higher-risk groups)"
+      ]
+    },
+    "differentials": [
+      {
+        "condition": "Malaria",
+        "distinguishingFeatures": "Positive smear or rapid test; paroxysmal fever; no haemoconcentration."
+      },
+      {
+        "condition": "Chikungunya",
+        "distinguishingFeatures": "Prominent, often persistent polyarthritis; less thrombocytopenia."
+      },
+      {
+        "condition": "Scrub typhus",
+        "distinguishingFeatures": "Eschar, lymphadenopathy and response to doxycycline."
+      },
+      {
+        "condition": "Leptospirosis",
+        "distinguishingFeatures": "Floodwater exposure, conjunctival suffusion, jaundice with kidney injury."
+      },
+      {
+        "condition": "Enteric fever",
+        "distinguishingFeatures": "Gradual fever, relative bradycardia, positive blood culture."
+      }
+    ],
+    "diagnosticCriteria": [
+      {
+        "criterion": "Confirmed dengue",
+        "threshold": "Compatible illness with NS1 antigen positive (days 1–5) or IgM ELISA positive (from about day 5) (NCVBDC 2023, pp. 30–32)."
+      },
+      {
+        "criterion": "Plasma leakage",
+        "threshold": "Haematocrit rise of 20% or more from baseline, or clinical fluid accumulation (NCVBDC 2023, pp. 36, 40)."
+      }
+    ],
+    "investigations": {
+      "ruleIn": [
+        {
+          "tier": "laboratory",
+          "testName": "NS1 antigen ELISA",
+          "modalityTarget": "Dengue NS1 antigen",
+          "targetCondition": "Early dengue (days 1–5)",
+          "normalValue": "Negative",
+          "expectedFinding": "Positive",
+          "clinicalRationale": "Confirms early dengue; useful in the first 5 days (NCVBDC 2023, pp. 30–32).",
+          "references": [
+            {
+              "title": "National Guidelines for Clinical Management of Dengue Fever (NCVBDC, MoHFW)",
+              "edition": "NCVBDC 2023, pp. 30–32",
+              "url": "https://aiims.edu/images/pdf/notice/msoffice-27-7-24.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "IgM capture ELISA (MAC-ELISA)",
+          "modalityTarget": "Dengue IgM antibody",
+          "targetCondition": "Dengue from about day 5",
+          "normalValue": "Negative",
+          "expectedFinding": "Positive",
+          "clinicalRationale": "Usually detectable from day 5 (NCVBDC 2023, pp. 30–32).",
+          "references": [
+            {
+              "title": "National Guidelines for Clinical Management of Dengue Fever (NCVBDC, MoHFW)",
+              "edition": "NCVBDC 2023, pp. 30–32",
+              "url": "https://aiims.edu/images/pdf/notice/msoffice-27-7-24.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Haematocrit (serial)",
+          "modalityTarget": "Packed cell volume",
+          "targetCondition": "Plasma leakage or bleeding",
+          "normalValue": "Adult male 40–50%; adult female 36–46% (local laboratory ranges apply)",
+          "expectedFinding": "Rise of 20% or more from baseline (leakage) or fall below baseline (bleeding)",
+          "clinicalRationale": "Drives fluid steps and transfusion decisions (NCVBDC 2023, pp. 36, 39).",
+          "references": [
+            {
+              "title": "National Guidelines for Clinical Management of Dengue Fever (NCVBDC, MoHFW)",
+              "edition": "NCVBDC 2023, pp. 34–40",
+              "url": "https://aiims.edu/images/pdf/notice/msoffice-27-7-24.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Platelet count (serial)",
+          "modalityTarget": "Complete blood count",
+          "targetCondition": "Thrombocytopenia",
+          "normalValue": "150–400 × 10⁹/L",
+          "expectedFinding": "Rapidly falling count with rising haematocrit",
+          "clinicalRationale": "A warning sign when paired with rising haematocrit (NCVBDC 2023, p. 15).",
+          "references": [
+            {
+              "title": "National Guidelines for Clinical Management of Dengue Fever (NCVBDC, MoHFW)",
+              "edition": "NCVBDC 2023, p. 15",
+              "url": "https://aiims.edu/images/pdf/notice/msoffice-27-7-24.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "Tourniquet test",
+          "modalityTarget": "Bedside capillary fragility test",
+          "targetCondition": "Dengue",
+          "normalValue": "Fewer than 10 petechiae per 2.5 cm²",
+          "expectedFinding": "10 or more petechiae per 2.5 cm²; more than 20 suggests severe dengue",
+          "clinicalRationale": "Supports the clinical diagnosis (NCVBDC 2023, p. 19).",
+          "references": [
+            {
+              "title": "National Guidelines for Clinical Management of Dengue Fever (NCVBDC, MoHFW)",
+              "edition": "NCVBDC 2023, p. 19",
+              "url": "https://aiims.edu/images/pdf/notice/msoffice-27-7-24.pdf"
+            }
+          ]
+        }
+      ],
+      "ruleOut": [
+        {
+          "tier": "laboratory",
+          "testName": "Liver function tests (AST, ALT, bilirubin)",
+          "modalityTarget": "Biochemistry",
+          "targetCondition": "Dengue hepatitis",
+          "normalValue": "AST and ALT below about 40 U/L",
+          "expectedFinding": "AST or ALT 1000 U/L or more (severe dengue)",
+          "clinicalRationale": "Defines severe organ involvement (NCVBDC 2023, p. 20).",
+          "references": [
+            {
+              "title": "National Guidelines for Clinical Management of Dengue Fever (NCVBDC, MoHFW)",
+              "edition": "NCVBDC 2023, p. 20",
+              "url": "https://aiims.edu/images/pdf/notice/msoffice-27-7-24.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Blood gas with lactate, electrolytes, renal function, coagulation profile, blood group",
+          "modalityTarget": "Severe-dengue panel",
+          "targetCondition": "Shock, organ injury, bleeding",
+          "normalValue": "Lactate below 2 mmol/L; creatinine 60–110 µmol/L; INR 0.8–1.2",
+          "expectedFinding": "Raised lactate, kidney injury, coagulopathy",
+          "clinicalRationale": "Recommended for patients with co-morbidities, shock or complications (NCVBDC 2023, p. 35).",
+          "references": [
+            {
+              "title": "National Guidelines for Clinical Management of Dengue Fever (NCVBDC, MoHFW)",
+              "edition": "NCVBDC 2023, p. 35",
+              "url": "https://aiims.edu/images/pdf/notice/msoffice-27-7-24.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Malaria smear or rapid test",
+          "modalityTarget": "Plasmodium detection",
+          "targetCondition": "Malaria",
+          "normalValue": "Negative",
+          "expectedFinding": "Positive",
+          "clinicalRationale": "Co-endemic febrile illness; co-infection occurs.",
+          "references": [
+            {
+              "title": "National Guidelines for Clinical Management of Dengue Fever (NCVBDC, MoHFW)",
+              "edition": "NCVBDC 2023, p. 35",
+              "url": "https://aiims.edu/images/pdf/notice/msoffice-27-7-24.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "firstLineImaging",
+          "testName": "Chest X-ray and abdominal ultrasound",
+          "modalityTarget": "Imaging",
+          "targetCondition": "Pleural effusion, ascites, gallbladder wall oedema",
+          "normalValue": "No effusion or free fluid",
+          "expectedFinding": "Pleural effusion or ascites (plasma leakage)",
+          "clinicalRationale": "Part of the adult severe-dengue work-up (NCVBDC 2023, p. 35).",
+          "references": [
+            {
+              "title": "National Guidelines for Clinical Management of Dengue Fever (NCVBDC, MoHFW)",
+              "edition": "NCVBDC 2023, p. 35",
+              "url": "https://aiims.edu/images/pdf/notice/msoffice-27-7-24.pdf"
+            }
+          ]
+        }
+      ]
+    },
+    "clinicalManagement": [
+      {
+        "id": "classify",
+        "title": "Classify and decide where to treat",
+        "timeframe": "At first assessment",
+        "actions": [
+          "Classify as dengue without warning signs, with warning signs, or severe dengue (NCVBDC 2023, p. 15).",
+          "Take a baseline haematocrit before fluids where possible, but do not delay fluids for it (NCVBDC 2023, p. 35).",
+          "Admit children with warning signs and all patients with severe dengue (NCVBDC 2023, pp. 25–26)."
+        ],
+        "branches": [
+          {
+            "condition": "No warning signs, tolerating oral fluids",
+            "actions": [
+              "Manage at home with oral fluids and paracetamol; review daily and return at once with any warning sign."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "warning-signs-fluids",
+        "title": "Dengue with warning signs: measured crystalloid",
+        "timeframe": "Start within the first hour",
+        "actions": [
+          "Give 7–10 mL/kg isotonic crystalloid (0.9% saline or Ringer's lactate) over 1 hour, using ideal body weight in obesity, and reassess hourly (NCVBDC 2023, pp. 36–37).",
+          "If improving, taper: 5–7 mL/kg/h for 2–4 h, then 3–5 mL/kg/h for 2–4 h, then 2–4 mL/kg/h for 2–4 h; stop by 24–48 h (NCVBDC 2023, pp. 36–37).",
+          "Target urine output about 0.5 mL/kg/h (NCVBDC 2023, p. 35)."
+        ],
+        "branches": [
+          {
+            "condition": "No improvement and haematocrit above 45%",
+            "actions": [
+              "Second bolus 10 mL/kg over 1 hour; if still not improving, manage as severe dengue (NCVBDC 2023, p. 36)."
+            ]
+          },
+          {
+            "condition": "Haematocrit falls below 45% without improvement",
+            "actions": [
+              "Suspect bleeding: whole blood 10 mL/kg or packed red cells 5 mL/kg (NCVBDC 2023, p. 36)."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "shock",
+        "title": "Severe dengue with shock",
+        "timeframe": "Immediately",
+        "actions": [
+          "Compensated shock: crystalloid 10–20 mL/kg over 1 hour, then 7–10, 5–7, 3–5 and 2–3 mL/kg/h in steps over 24–48 h (NCVBDC 2023, pp. 39–40).",
+          "Hypotensive shock: 20 mL/kg crystalloid or colloid over 15 minutes, then 10 mL/kg/h for 1 hour and taper (NCVBDC 2023, pp. 40–41).",
+          "Manage refractory shock in the intensive care unit (ICU) with inotropes after excluding bleeding, cardiogenic and septic causes (NCVBDC 2023, p. 41)."
+        ],
+        "branches": [
+          {
+            "condition": "Shock persists, haematocrit above 45%",
+            "actions": [
+              "Repeat boluses 10–20 mL/kg over 15–30 minutes (maximum 500 mL per bolus), up to three in total (NCVBDC 2023, pp. 40–41)."
+            ]
+          },
+          {
+            "condition": "Haematocrit below baseline",
+            "actions": [
+              "Transfuse whole blood 10 mL/kg or packed red cells 5 mL/kg (NCVBDC 2023, p. 40)."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "supportive-and-avoid",
+        "title": "Supportive care and what to avoid",
+        "timeframe": "Throughout",
+        "actions": [
+          "Paracetamol for fever; avoid aspirin and other NSAIDs, intramuscular injections, diuretics in the leakage phase, corticosteroids for shock and hypotonic fluids (NCVBDC 2023, pp. 25–28, 34).",
+          "Do not give prophylactic platelet transfusions; transfuse platelets for bleeding, or consider below 10,000/mm³ without bleeding (NCVBDC 2023, pp. 41–42)."
+        ]
+      }
+    ],
+    "medicationPlan": {
+      "status": "source-verified",
+      "branches": [
+        {
+          "label": "Fever relief",
+          "entryCriteria": "Any confirmed or suspected dengue with fever"
+        },
+        {
+          "label": "Dengue with warning signs",
+          "entryCriteria": "Any warning sign without shock"
+        },
+        {
+          "label": "Severe dengue with shock",
+          "entryCriteria": "Pulse pressure 20 mmHg or less, cold extremities, delayed capillary refill or hypotension"
+        }
+      ],
+      "regimens": [
+        {
+          "indication": "Fever in dengue",
+          "patientGroup": "Adults",
+          "genericName": "Paracetamol",
+          "dose": "10 mg/kg per dose (adult maximum 4 g/day)",
+          "route": "Oral",
+          "frequency": "No more often than every 6 hours",
+          "duration": "While febrile",
+          "adjustments": [
+            "Paediatric: 10–15 mg/kg per dose, 4–6 times daily (NCVBDC 2023, p. 25).",
+            "Penicillin allergy: Not an antibiotic — penicillin allergy does not affect this medicine.",
+            "CKD: No dose change.",
+            "CLD: Lower the daily maximum in liver disease or dengue hepatitis; avoid in severe hepatic injury."
+          ],
+          "monitoring": [
+            "Temperature",
+            "Liver enzymes in severe dengue"
+          ],
+          "contraindications": [
+            "Severe hepatic impairment"
+          ],
+          "branch": "Fever relief",
+          "step": "Antipyretic",
+          "selection": "all",
+          "sourceTitle": "National Guidelines for Clinical Management of Dengue Fever (NCVBDC, MoHFW)",
+          "sourceUrl": "https://aiims.edu/images/pdf/notice/msoffice-27-7-24.pdf",
+          "sourceEdition": "NCVBDC 2023, p. 34"
+        },
+        {
+          "indication": "Dengue with warning signs",
+          "patientGroup": "Adults and children",
+          "genericName": "Sodium chloride 0.9%",
+          "dose": "7–10 mL/kg over 1 hour, then 5–7, 3–5 and 2–4 mL/kg/h",
+          "route": "IV",
+          "frequency": "Stepwise taper",
+          "duration": "Stop by 24–48 hours",
+          "adjustments": [
+            "Paediatric: Same mL/kg schedule; children with warning signs are admitted (NCVBDC 2023, p. 25).",
+            "Penicillin allergy: Not an antibiotic — penicillin allergy does not affect this medicine.",
+            "CKD: Reassess more often for overload; consider earlier specialist input.",
+            "CLD: Use ideal body weight in obesity; monitor for overload with ascites."
+          ],
+          "monitoring": [
+            "Hourly vital signs and urine output",
+            "Haematocrit before and after each step"
+          ],
+          "contraindications": [
+            "Hypotonic fluids",
+            "Continuing beyond the critical phase"
+          ],
+          "branch": "Dengue with warning signs",
+          "step": "Intravenous fluid",
+          "selection": "one-of",
+          "sourceTitle": "National Guidelines for Clinical Management of Dengue Fever (NCVBDC, MoHFW)",
+          "sourceUrl": "https://aiims.edu/images/pdf/notice/msoffice-27-7-24.pdf",
+          "sourceEdition": "NCVBDC 2023, pp. 36–37",
+          "preferred": true
+        },
+        {
+          "indication": "Dengue with warning signs",
+          "patientGroup": "Adults and children",
+          "genericName": "Ringer's lactate",
+          "dose": "7–10 mL/kg over 1 hour, then 5–7, 3–5 and 2–4 mL/kg/h",
+          "route": "IV",
+          "frequency": "Stepwise taper",
+          "duration": "Stop by 24–48 hours",
+          "adjustments": [
+            "Paediatric: Same mL/kg schedule (NCVBDC 2023, p. 25).",
+            "Penicillin allergy: Not an antibiotic — penicillin allergy does not affect this medicine.",
+            "CKD: Reassess more often for overload.",
+            "CLD: Use ideal body weight in obesity; monitor for overload."
+          ],
+          "monitoring": [
+            "Hourly vital signs and urine output",
+            "Haematocrit before and after each step"
+          ],
+          "contraindications": [
+            "Hypotonic fluids"
+          ],
+          "branch": "Dengue with warning signs",
+          "step": "Intravenous fluid",
+          "selection": "one-of",
+          "sourceTitle": "National Guidelines for Clinical Management of Dengue Fever (NCVBDC, MoHFW)",
+          "sourceUrl": "https://aiims.edu/images/pdf/notice/msoffice-27-7-24.pdf",
+          "sourceEdition": "NCVBDC 2023, pp. 36–37",
+          "preferred": false,
+          "useWhen": "Clinician preference or local availability; NCVBDC lists both without ranking"
+        },
+        {
+          "indication": "Severe dengue with shock",
+          "patientGroup": "Adults and children",
+          "genericName": "Sodium chloride 0.9%",
+          "dose": "Compensated: 10–20 mL/kg over 1 hour; hypotensive: 20 mL/kg over 15 minutes, then taper",
+          "route": "IV",
+          "frequency": "Bolus then stepwise taper",
+          "duration": "24–48 hours",
+          "adjustments": [
+            "Paediatric: Same mL/kg schedule; admit children to paediatric intensive care (NCVBDC 2023, p. 26).",
+            "Penicillin allergy: Not an antibiotic — penicillin allergy does not affect this medicine.",
+            "CKD: Reassess after each bolus; dialysis-dependent patients need specialist fluid planning.",
+            "CLD: Monitor closely for overload with ascites."
+          ],
+          "monitoring": [
+            "Pulse pressure, blood pressure, capillary refill, urine output",
+            "Haematocrit after each bolus"
+          ],
+          "contraindications": [
+            "Hypotonic fluids"
+          ],
+          "branch": "Severe dengue with shock",
+          "step": "Resuscitation fluid",
+          "selection": "one-of",
+          "sourceTitle": "National Guidelines for Clinical Management of Dengue Fever (NCVBDC, MoHFW)",
+          "sourceUrl": "https://aiims.edu/images/pdf/notice/msoffice-27-7-24.pdf",
+          "sourceEdition": "NCVBDC 2023, pp. 39–41",
+          "preferred": true
+        },
+        {
+          "indication": "Severe dengue with shock",
+          "patientGroup": "Adults and children",
+          "genericName": "Ringer's lactate",
+          "dose": "Compensated: 10–20 mL/kg over 1 hour; hypotensive: 20 mL/kg over 15 minutes, then taper",
+          "route": "IV",
+          "frequency": "Bolus then stepwise taper",
+          "duration": "24–48 hours",
+          "adjustments": [
+            "Paediatric: Same mL/kg schedule (NCVBDC 2023, p. 26).",
+            "Penicillin allergy: Not an antibiotic — penicillin allergy does not affect this medicine.",
+            "CKD: Reassess after each bolus.",
+            "CLD: Monitor closely for overload."
+          ],
+          "monitoring": [
+            "Pulse pressure, blood pressure, urine output",
+            "Haematocrit after each bolus"
+          ],
+          "contraindications": [
+            "Hypotonic fluids"
+          ],
+          "branch": "Severe dengue with shock",
+          "step": "Resuscitation fluid",
+          "selection": "one-of",
+          "sourceTitle": "National Guidelines for Clinical Management of Dengue Fever (NCVBDC, MoHFW)",
+          "sourceUrl": "https://aiims.edu/images/pdf/notice/msoffice-27-7-24.pdf",
+          "sourceEdition": "NCVBDC 2023, pp. 39–41",
+          "preferred": false,
+          "useWhen": "Clinician preference or local availability; NCVBDC lists both without ranking"
+        }
+      ],
+      "note": "Fluids and paracetamol from the NCVBDC National Guidelines for Clinical Management of Dengue Fever 2023. India-only topic; the Saudi dengue topic is unchanged. Not clinically reviewed."
+    },
+    "teaching": {
+      "scope": "Dengue in adults and children in India.",
+      "learningObjectives": [
+        "Recognise warning signs early.",
+        "Give measured, tapering crystalloid guided by haematocrit.",
+        "Avoid harmful drugs and unnecessary platelet transfusion."
+      ],
+      "keyPoints": [
+        "The critical phase begins as the fever settles.",
+        "Rising haematocrit with falling platelets is a warning sign.",
+        "Prophylactic platelet transfusion is not recommended."
+      ],
+      "pitfalls": [
+        "Continuing fluids into the recovery phase.",
+        "Giving NSAIDs or intramuscular injections.",
+        "Missing bleeding when the haematocrit falls without improvement."
+      ],
+      "references": [
+        {
+          "title": "National Guidelines for Clinical Management of Dengue Fever (NCVBDC, MoHFW)",
+          "edition": "NCVBDC 2023",
+          "url": "https://aiims.edu/images/pdf/notice/msoffice-27-7-24.pdf",
+          "locator": "Box 2 (p. 15); pp. 19–20, 25–28, 30–42"
+        }
+      ]
+    },
+    "nonClinicalManagement": {
+      "patientEducation": [
+        "Drink plenty of oral fluids and use paracetamol only.",
+        "Return at once with vomiting, abdominal pain, bleeding, drowsiness or reduced urine.",
+        "Use mosquito repellent and nets while febrile to prevent spread."
+      ],
+      "lifestyleAndDiet": [
+        "Remove stagnant water around the home weekly.",
+        "Wear long sleeves during the day (Aedes bites in daytime)."
+      ],
+      "mdtReferrals": [
+        "Intensive care for shock or severe bleeding",
+        "Transfusion service",
+        "District vector-borne disease programme for notification and vector control"
+      ],
+      "dischargeCriteria": [
+        "Afebrile for at least 24–48 hours without antipyretics.",
+        "Normal blood pressure, good oral intake and urine output.",
+        "Stable haematocrit (NCVBDC 2023, p. 26)."
+      ],
+      "followUpPlan": "Review within 24–48 hours of discharge for patients treated with warning signs; earlier with any new symptom."
+    }
+  },
+  {
+    "id": "040b936e-1e91-573f-ac34-5d9374b07dc6",
+    "title": "Hypertension (India Hypertension Control Initiative protocol)",
+    "specialty": "Internal Medicine / Primary Care",
+    "authority": "MoHFW",
+    "status": "under_review",
+    "version": "india-adapt-a-2026-10-22-v1",
+    "lastReviewed": "2026-10-22",
+    "pillar": "Chronic Care",
+    "clinicalReviewStatus": "pending",
+    "evidenceAudit": {
+      "checkedOn": "2026-10-22",
+      "status": "incomplete",
+      "scope": "Adult hypertension in India using the IHCI drug- and dose-specific protocol.",
+      "findings": [
+        "Protocol steps, thresholds and special groups checked against the IHCI Maharashtra protocol.",
+        "Not clinically reviewed."
+      ],
+      "unverifiedSections": [
+        "The state protocol does not state a general blood-pressure target other than below 140/90 in diabetes.",
+        "Renal and hepatic lines are from product labels not re-opened in this task."
+      ],
+      "medscapeStatus": "unavailable",
+      "originalVersionIds": [
+        "040b936e-1e91-573f-ac34-5d9374b07dc6"
+      ]
+    },
+    "pathophysiology": {
+      "summary": "Hypertension is the leading modifiable risk factor for stroke, heart attack, heart failure and chronic kidney disease in India, yet most affected adults are undiagnosed, untreated or uncontrolled. Sustained elevation of blood pressure reflects increased peripheral vascular resistance, often with excess salt intake, overweight, physical inactivity, harmful alcohol use, tobacco and ageing, and with activation of the renin–angiotensin–aldosterone and sympathetic systems. Over years, raised pressure damages arterial walls, accelerates atherosclerosis, thickens the left ventricle and injures the small vessels of the brain, kidney and retina. Because the condition is usually symptomless until complications occur, control depends on screening every adult and on simple, reliable treatment that primary health workers can deliver at scale. The India Hypertension Control Initiative, run with the national programme for non-communicable diseases, uses a drug- and dose-specific standard protocol: amlodipine is started first, telmisartan is added and increased, amlodipine is increased, and chlorthalidone is added last, with blood pressure re-measured every 30 days and adherence checked before each step. A single protocol with a short list of medicines simplifies supply, training and follow-up, and supports free medicines at government health centres. The protocol defines who needs immediate referral, such as very high readings or raised creatinine, and adapts treatment for diabetes, previous heart attack or stroke, chronic kidney disease and women who are or may become pregnant, in whom telmisartan, other renin–angiotensin blockers, chlorthalidone and statins are avoided. Lifestyle measures, especially salt reduction, are part of every step (India Hypertension Control Initiative protocol).",
+      "keyMechanisms": [
+        "Raised peripheral resistance with salt excess and renin–angiotensin and sympathetic activation sustains high pressure.",
+        "Chronic pressure load damages arteries and accelerates atherosclerosis.",
+        "Target-organ injury affects the brain, heart, kidney and retina.",
+        "Calcium-channel blockade, angiotensin-receptor blockade and thiazide-like diuresis lower pressure by complementary mechanisms (IHCI protocol)."
+      ]
+    },
+    "presentation": {
+      "symptoms": [
+        "Usually none",
+        "Headache, dizziness or blurred vision when very high",
+        "Chest pain, breathlessness or neurological symptoms (complications)"
+      ],
+      "physicalSigns": [
+        "Systolic 140 mmHg or higher and/or diastolic 90 mmHg or higher on repeated readings (IHCI protocol)",
+        "Overweight or raised waist circumference",
+        "Signs of target-organ damage: heart failure, focal neurology, retinopathy"
+      ],
+      "redFlags": [
+        "Systolic 180 mmHg or higher and/or diastolic 110 mmHg or higher: start treatment and refer immediately (IHCI protocol)",
+        "Serum creatinine above 1.5 mg/dL: refer (IHCI protocol)",
+        "Chest pain, breathlessness, focal weakness or confusion",
+        "Hypertension in pregnancy not controlled on a calcium-channel blocker: refer"
+      ],
+      "precipitants": [
+        "High salt intake (pickles, papads, chips)",
+        "Overweight and physical inactivity",
+        "Tobacco and alcohol use",
+        "Diabetes and chronic kidney disease",
+        "Family history and older age"
+      ]
+    },
+    "differentials": [
+      {
+        "condition": "White-coat hypertension",
+        "distinguishingFeatures": "Raised clinic readings only; repeat measurements are normal."
+      },
+      {
+        "condition": "Secondary hypertension",
+        "distinguishingFeatures": "Young onset, resistant blood pressure, hypokalaemia or abnormal renal function — specialist assessment."
+      },
+      {
+        "condition": "Hypertensive disorder of pregnancy",
+        "distinguishingFeatures": "Raised pressure in pregnancy — follow the pregnancy pathway; avoid telmisartan and chlorthalidone."
+      }
+    ],
+    "diagnosticCriteria": [
+      {
+        "criterion": "Hypertension",
+        "threshold": "Systolic 140 mmHg or higher and/or diastolic 90 mmHg or higher (IHCI protocol)."
+      },
+      {
+        "criterion": "Lifestyle-first band",
+        "threshold": "Systolic 140–159 and/or diastolic 90–99 mmHg: lifestyle management for one month before medicines (IHCI protocol)."
+      }
+    ],
+    "investigations": {
+      "ruleIn": [
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "Blood pressure measurement (repeated)",
+          "modalityTarget": "Validated automated or manual sphygmomanometer",
+          "targetCondition": "Hypertension",
+          "normalValue": "Below 140/90 mmHg",
+          "expectedFinding": "140/90 mmHg or higher on repeated readings",
+          "clinicalRationale": "Screen all adults over 18 and re-measure every 30 days during titration (IHCI protocol).",
+          "references": [
+            {
+              "title": "India Hypertension Control Initiative: Hypertension treatment protocol (Maharashtra)",
+              "edition": "IHCI state protocol, version 1.00-9-18, section Diagnosis",
+              "url": "https://resolvetosavelives.org/wp-content/uploads/2023/05/maharashtra-a1-hypertension-protocol-1.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Serum creatinine",
+          "modalityTarget": "Renal function",
+          "targetCondition": "Kidney disease",
+          "normalValue": "Adult 0.6–1.2 mg/dL (local laboratory ranges apply)",
+          "expectedFinding": "Above 1.5 mg/dL",
+          "clinicalRationale": "Above 1.5 mg/dL requires referral (IHCI protocol).",
+          "references": [
+            {
+              "title": "India Hypertension Control Initiative: Hypertension treatment protocol (Maharashtra)",
+              "edition": "IHCI state protocol, version 1.00-9-18, section Investigations at initiation",
+              "url": "https://resolvetosavelives.org/wp-content/uploads/2023/05/maharashtra-a1-hypertension-protocol-1.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Blood glucose",
+          "modalityTarget": "Fasting or random glucose",
+          "targetCondition": "Diabetes",
+          "normalValue": "Fasting below 100 mg/dL",
+          "expectedFinding": "Fasting 126 mg/dL or higher",
+          "clinicalRationale": "Diabetes changes the protocol and target (IHCI protocol).",
+          "references": [
+            {
+              "title": "India Hypertension Control Initiative: Hypertension treatment protocol (Maharashtra)",
+              "edition": "IHCI state protocol, version 1.00-9-18, section Investigations at initiation",
+              "url": "https://resolvetosavelives.org/wp-content/uploads/2023/05/maharashtra-a1-hypertension-protocol-1.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Complete blood count",
+          "modalityTarget": "Haematology",
+          "targetCondition": "Baseline",
+          "normalValue": "Haemoglobin 12–17 g/dL",
+          "expectedFinding": "Anaemia or other abnormality",
+          "clinicalRationale": "Baseline investigation at initiation (IHCI protocol).",
+          "references": [
+            {
+              "title": "India Hypertension Control Initiative: Hypertension treatment protocol (Maharashtra)",
+              "edition": "IHCI state protocol, version 1.00-9-18, section Investigations at initiation",
+              "url": "https://resolvetosavelives.org/wp-content/uploads/2023/05/maharashtra-a1-hypertension-protocol-1.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Serum electrolytes (optional)",
+          "modalityTarget": "Sodium and potassium",
+          "targetCondition": "Electrolyte disturbance",
+          "normalValue": "Sodium 135–145 mmol/L; potassium 3.5–5.0 mmol/L",
+          "expectedFinding": "Hypokalaemia or hyperkalaemia",
+          "clinicalRationale": "Optional at initiation; important before and after telmisartan or chlorthalidone (IHCI protocol).",
+          "references": [
+            {
+              "title": "India Hypertension Control Initiative: Hypertension treatment protocol (Maharashtra)",
+              "edition": "IHCI state protocol, version 1.00-9-18, section Investigations at initiation",
+              "url": "https://resolvetosavelives.org/wp-content/uploads/2023/05/maharashtra-a1-hypertension-protocol-1.pdf"
+            }
+          ]
+        }
+      ],
+      "ruleOut": [
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "Pregnancy status in women of reproductive age",
+          "modalityTarget": "History and pregnancy test",
+          "targetCondition": "Pregnancy",
+          "normalValue": "Not pregnant, or on highly effective contraception",
+          "expectedFinding": "Pregnant or planning pregnancy",
+          "clinicalRationale": "Telmisartan, chlorthalidone, ACE inhibitors and statins are avoided (IHCI protocol).",
+          "references": [
+            {
+              "title": "India Hypertension Control Initiative: Hypertension treatment protocol (Maharashtra)",
+              "edition": "IHCI state protocol, version 1.00-9-18, section Special groups",
+              "url": "https://resolvetosavelives.org/wp-content/uploads/2023/05/maharashtra-a1-hypertension-protocol-1.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "History of heart attack or stroke",
+          "modalityTarget": "Clinical history",
+          "targetCondition": "Established cardiovascular disease",
+          "normalValue": "No previous event",
+          "expectedFinding": "Previous heart attack or stroke",
+          "clinicalRationale": "Adds a beta-blocker (heart attack in 3 years) and aspirin 75 mg with a statin (IHCI protocol).",
+          "references": [
+            {
+              "title": "India Hypertension Control Initiative: Hypertension treatment protocol (Maharashtra)",
+              "edition": "IHCI state protocol, version 1.00-9-18, section Special groups",
+              "url": "https://resolvetosavelives.org/wp-content/uploads/2023/05/maharashtra-a1-hypertension-protocol-1.pdf"
+            }
+          ]
+        }
+      ]
+    },
+    "clinicalManagement": [
+      {
+        "id": "confirm-and-assess",
+        "title": "Confirm and assess",
+        "timeframe": "First visits",
+        "actions": [
+          "Measure blood pressure in all adults over 18 (IHCI protocol).",
+          "Check creatinine, glucose and blood count at initiation; electrolytes where available.",
+          "Give lifestyle advice: salt under 1 teaspoon a day, five servings of fruit and vegetables, 2.5 hours of exercise a week, no tobacco or alcohol."
+        ],
+        "branches": [
+          {
+            "condition": "Systolic 180 or higher and/or diastolic 110 or higher",
+            "actions": [
+              "Start treatment and refer immediately to a specialist."
+            ]
+          },
+          {
+            "condition": "Systolic 140–159 and/or diastolic 90–99",
+            "actions": [
+              "Lifestyle management for one month, then start step 1 if still raised."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "protocol-steps",
+        "title": "Stepwise drug protocol",
+        "timeframe": "Re-measure every 30 days; check adherence before each step",
+        "actions": [
+          "Step 1: amlodipine 5 mg once daily.",
+          "Step 2: add telmisartan 40 mg once daily.",
+          "Step 3: increase telmisartan to 80 mg.",
+          "Step 4: increase amlodipine to 10 mg.",
+          "Step 5: add chlorthalidone 6.25 mg.",
+          "Step 6: increase chlorthalidone to 12.5 mg.",
+          "If still uncontrolled with confirmed adherence after step 6: refer to a specialist."
+        ],
+        "branches": [
+          {
+            "condition": "Telmisartan unavailable",
+            "actions": [
+              "Use enalapril 5 mg, intensified to 10 mg (IHCI protocol)."
+            ]
+          },
+          {
+            "condition": "Pregnant or may become pregnant",
+            "actions": [
+              "Use a calcium-channel blocker only; no telmisartan, chlorthalidone, ACE inhibitor or statin; refer if uncontrolled at the intensified dose."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "special-groups",
+        "title": "Special groups",
+        "timeframe": "At diagnosis and review",
+        "actions": [
+          "Diabetes: treat per the diabetes protocol with a target below 140/90 mmHg.",
+          "Heart attack in the last 3 years: add a beta-blocker to amlodipine from the start.",
+          "Any previous heart attack or stroke: low-dose aspirin 75 mg and a statin.",
+          "Chronic kidney disease: an ACE inhibitor or angiotensin-receptor blocker is preferred after specialist opinion with close monitoring."
+        ]
+      }
+    ],
+    "medicationPlan": {
+      "status": "source-verified",
+      "branches": [
+        {
+          "label": "Adults (not pregnant)",
+          "entryCriteria": "Confirmed hypertension, not pregnant and not planning pregnancy"
+        },
+        {
+          "label": "Women who are or may become pregnant",
+          "entryCriteria": "Pregnant, or of reproductive age without highly effective contraception"
+        }
+      ],
+      "regimens": [
+        {
+          "indication": "Hypertension",
+          "patientGroup": "Adults",
+          "genericName": "Amlodipine",
+          "dose": "5 mg (step 1), increased to 10 mg (step 4)",
+          "route": "Oral",
+          "frequency": "Once daily",
+          "duration": "Long term",
+          "adjustments": [
+            "Paediatric: Adult topic — use the paediatric pathway for children.",
+            "Penicillin allergy: Not an antibiotic — penicillin allergy does not affect this medicine.",
+            "CKD: No dose change.",
+            "CLD: Start at 5 mg and increase cautiously in hepatic impairment (product label)."
+          ],
+          "monitoring": [
+            "Blood pressure every 30 days",
+            "Ankle oedema"
+          ],
+          "contraindications": [
+            "Cardiogenic shock",
+            "Severe aortic stenosis"
+          ],
+          "branch": "Adults (not pregnant)",
+          "step": "Step 1 and 4: calcium-channel blocker",
+          "selection": "all",
+          "sourceTitle": "India Hypertension Control Initiative: Hypertension treatment protocol (Maharashtra)",
+          "sourceUrl": "https://resolvetosavelives.org/wp-content/uploads/2023/05/maharashtra-a1-hypertension-protocol-1.pdf",
+          "sourceEdition": "IHCI state protocol, version 1.00-9-18, section Treatment protocol steps 1 and 4"
+        },
+        {
+          "indication": "Hypertension not controlled on amlodipine",
+          "patientGroup": "Adults",
+          "genericName": "Telmisartan",
+          "dose": "40 mg (step 2), increased to 80 mg (step 3)",
+          "route": "Oral",
+          "frequency": "Once daily",
+          "duration": "Long term",
+          "adjustments": [
+            "Paediatric: Adult topic — use the paediatric pathway for children.",
+            "Penicillin allergy: Not an antibiotic — penicillin allergy does not affect this medicine.",
+            "CKD: Creatinine above 1.5 mg/dL: refer before starting; check potassium and creatinine after starting.",
+            "CLD: Mild to moderate impairment: maximum 40 mg daily; avoid in severe impairment or biliary obstruction (product label)."
+          ],
+          "monitoring": [
+            "Blood pressure every 30 days",
+            "Potassium and creatinine"
+          ],
+          "contraindications": [
+            "Pregnancy or women of reproductive age without highly effective contraception",
+            "Bilateral renal artery stenosis"
+          ],
+          "branch": "Adults (not pregnant)",
+          "step": "Steps 2–3: angiotensin-receptor blocker",
+          "selection": "one-of",
+          "sourceTitle": "India Hypertension Control Initiative: Hypertension treatment protocol (Maharashtra)",
+          "sourceUrl": "https://resolvetosavelives.org/wp-content/uploads/2023/05/maharashtra-a1-hypertension-protocol-1.pdf",
+          "sourceEdition": "IHCI state protocol, version 1.00-9-18, section Treatment protocol steps 2–3",
+          "preferred": true
+        },
+        {
+          "indication": "Hypertension not controlled on amlodipine",
+          "patientGroup": "Adults",
+          "genericName": "Enalapril",
+          "dose": "5 mg, intensified to 10 mg",
+          "route": "Oral",
+          "frequency": "Once daily",
+          "duration": "Long term",
+          "adjustments": [
+            "Paediatric: Adult topic — use the paediatric pathway for children.",
+            "Penicillin allergy: Not an antibiotic — penicillin allergy does not affect this medicine.",
+            "CKD: Reduce the starting dose in kidney impairment and monitor potassium and creatinine (product label).",
+            "CLD: No standard dose change."
+          ],
+          "monitoring": [
+            "Blood pressure",
+            "Potassium, creatinine, cough"
+          ],
+          "contraindications": [
+            "Pregnancy",
+            "History of angioedema"
+          ],
+          "branch": "Adults (not pregnant)",
+          "step": "Steps 2–3: angiotensin-receptor blocker",
+          "selection": "one-of",
+          "sourceTitle": "India Hypertension Control Initiative: Hypertension treatment protocol (Maharashtra)",
+          "sourceUrl": "https://resolvetosavelives.org/wp-content/uploads/2023/05/maharashtra-a1-hypertension-protocol-1.pdf",
+          "sourceEdition": "IHCI state protocol, version 1.00-9-18, section Treatment protocol (telmisartan unavailable)",
+          "preferred": false,
+          "useWhen": "Telmisartan is unavailable"
+        },
+        {
+          "indication": "Hypertension not controlled on steps 1–4",
+          "patientGroup": "Adults",
+          "genericName": "Chlorthalidone",
+          "dose": "6.25 mg (step 5), increased to 12.5 mg (step 6)",
+          "route": "Oral",
+          "frequency": "Once daily",
+          "duration": "Long term",
+          "adjustments": [
+            "Paediatric: Adult topic — use the paediatric pathway for children.",
+            "Penicillin allergy: Not an antibiotic — penicillin allergy does not affect this medicine.",
+            "CKD: Less effective with severe kidney impairment; monitor sodium and potassium.",
+            "CLD: Use with caution; electrolyte shifts can precipitate hepatic encephalopathy (product label)."
+          ],
+          "monitoring": [
+            "Blood pressure",
+            "Sodium, potassium, glucose, uric acid"
+          ],
+          "contraindications": [
+            "Pregnancy",
+            "Anuria"
+          ],
+          "branch": "Adults (not pregnant)",
+          "step": "Steps 5–6: thiazide-like diuretic",
+          "selection": "all",
+          "sourceTitle": "India Hypertension Control Initiative: Hypertension treatment protocol (Maharashtra)",
+          "sourceUrl": "https://resolvetosavelives.org/wp-content/uploads/2023/05/maharashtra-a1-hypertension-protocol-1.pdf",
+          "sourceEdition": "IHCI state protocol, version 1.00-9-18, section Treatment protocol steps 5–6"
+        },
+        {
+          "indication": "Hypertension in women who are or may become pregnant",
+          "patientGroup": "Women of reproductive age",
+          "genericName": "Amlodipine",
+          "dose": "5 mg, increased to 10 mg",
+          "route": "Oral",
+          "frequency": "Once daily",
+          "duration": "Refer if uncontrolled at the intensified dose",
+          "adjustments": [
+            "Paediatric: Not applicable — maternity topic; neonatal care follows the neonatal pathway.",
+            "Penicillin allergy: Not an antibiotic — penicillin allergy does not affect this medicine.",
+            "CKD: No dose change.",
+            "CLD: Start low in hepatic impairment."
+          ],
+          "monitoring": [
+            "Blood pressure every 30 days"
+          ],
+          "contraindications": [
+            "Avoid telmisartan, chlorthalidone, ACE inhibitors and statins"
+          ],
+          "branch": "Women who are or may become pregnant",
+          "step": "Calcium-channel blocker",
+          "selection": "all",
+          "sourceTitle": "India Hypertension Control Initiative: Hypertension treatment protocol (Maharashtra)",
+          "sourceUrl": "https://resolvetosavelives.org/wp-content/uploads/2023/05/maharashtra-a1-hypertension-protocol-1.pdf",
+          "sourceEdition": "IHCI state protocol, version 1.00-9-18, section Special groups (pregnancy)"
+        }
+      ],
+      "note": "Drug- and dose-specific steps from the India Hypertension Control Initiative protocol (Maharashtra). India-only topic; the Saudi and NICE hypertension topics are unchanged. Not clinically reviewed."
+    },
+    "teaching": {
+      "scope": "Adult hypertension in Indian primary care.",
+      "learningObjectives": [
+        "Apply the six-step IHCI protocol.",
+        "Recognise who needs immediate referral.",
+        "Adapt treatment for pregnancy, diabetes and cardiovascular disease."
+      ],
+      "keyPoints": [
+        "Amlodipine first, then telmisartan, then chlorthalidone.",
+        "Re-measure every 30 days and check adherence before each step.",
+        "No telmisartan or chlorthalidone in women who are or may become pregnant."
+      ],
+      "pitfalls": [
+        "Escalating without checking adherence.",
+        "Starting telmisartan in a woman planning pregnancy.",
+        "Missing a creatinine above 1.5 mg/dL."
+      ],
+      "references": [
+        {
+          "title": "India Hypertension Control Initiative: Hypertension treatment protocol (Maharashtra)",
+          "edition": "IHCI state protocol, version 1.00-9-18",
+          "url": "https://resolvetosavelives.org/wp-content/uploads/2023/05/maharashtra-a1-hypertension-protocol-1.pdf",
+          "locator": "Sections Diagnosis, Treatment protocol, Special groups, Referral, Lifestyle"
+        }
+      ]
+    },
+    "nonClinicalManagement": {
+      "patientEducation": [
+        "Take medicines daily even when you feel well.",
+        "Medicines are free at government health centres.",
+        "Come back every month until your blood pressure is controlled."
+      ],
+      "lifestyleAndDiet": [
+        "Salt under 1 teaspoon a day; avoid pickles, papads, chips and chutneys.",
+        "Five servings of fruit and vegetables daily; limit fried foods and added sugar.",
+        "2.5 hours of exercise a week; stop tobacco and alcohol; lose weight if overweight."
+      ],
+      "mdtReferrals": [
+        "Physician or cardiologist for blood pressure of 180/110 or higher, uncontrolled after step 6, or creatinine above 1.5 mg/dL",
+        "Obstetrician for hypertension in pregnancy",
+        "Health and wellness centre team for follow-up"
+      ],
+      "dischargeCriteria": [
+        "Not applicable to most outpatients; after an urgent referral, blood pressure below 180/110 with a documented step plan."
+      ],
+      "followUpPlan": "Monthly blood pressure checks during titration, then at least every three months once controlled."
+    }
+  },
+  {
+    "id": "b0c830b6-4baa-5e22-bd90-80f816753eb6",
+    "title": "Type 2 diabetes (India adaptation, Asian BMI cut-offs)",
+    "specialty": "Internal Medicine / Primary Care",
+    "authority": "ICMR",
+    "status": "under_review",
+    "version": "india-adapt-a-2026-10-22-v1",
+    "lastReviewed": "2026-10-22",
+    "pillar": "Chronic Care",
+    "clinicalReviewStatus": "pending",
+    "evidenceAudit": {
+      "checkedOn": "2026-10-22",
+      "status": "incomplete",
+      "scope": "Adult type 2 diabetes in India using ICMR 2018.",
+      "findings": [
+        "Diagnostic criteria, screening, drug doses and renal metformin rules checked against ICMR 2018 pages cited.",
+        "Not clinically reviewed."
+      ],
+      "unverifiedSections": [
+        "ICMR 2018 does not rank sulphonylureas, DPP-4 and SGLT2 inhibitors; the first listed (sulphonylurea) is marked preferred.",
+        "Renal and hepatic lines for gliclazide, sitagliptin, dapagliflozin and insulin are from product labels not re-opened in this task."
+      ],
+      "medscapeStatus": "unavailable",
+      "originalVersionIds": [
+        "b0c830b6-4baa-5e22-bd90-80f816753eb6"
+      ]
+    },
+    "pathophysiology": {
+      "summary": "Type 2 diabetes affects a very large number of adults in India and often begins at a younger age and lower body weight than in many other populations. Asian Indians tend to have more abdominal and visceral fat, more insulin resistance and a smaller reserve of insulin-secreting beta cells for a given body mass index, which is why ICMR uses lower thresholds — a body mass index of 23 kg/m² or more, or a waist above 90 cm in men and 80 cm in women — as risk factors for screening. The disease develops when insulin resistance in muscle, liver and fat is no longer matched by insulin secretion; beta-cell function declines progressively, so most people need more medicines over time. Chronic hyperglycaemia damages small blood vessels in the retina, kidney and nerves and accelerates atherosclerosis in large arteries, causing heart attack, stroke and peripheral arterial disease, while foot ulcers and infections follow neuropathy and poor circulation. Diagnosis rests on fasting plasma glucose, a two-hour oral glucose tolerance test or HbA1c, confirmed by a second test. ICMR recommends screening everyone over 30 years and earlier with risk factors, setting an HbA1c target below 7% for most people with individualisation, and starting metformin as the first drug unless contraindicated, with sulphonylureas, DPP-4 inhibitors or SGLT2 inhibitors as preferred second-line choices and insulin when hyperglycaemia is severe or oral treatment fails. Structured annual screening for eye, kidney, foot and cardiovascular complications and education on diet, physical activity and hypoglycaemia are central to care (ICMR Guidelines for Management of Type 2 Diabetes 2018).",
+      "keyMechanisms": [
+        "Insulin resistance in muscle, liver and fat with progressive beta-cell decline.",
+        "Asian Indians develop diabetes at lower body mass index with more visceral fat (ICMR 2018, p. 7).",
+        "Chronic hyperglycaemia causes retinopathy, nephropathy and neuropathy.",
+        "Accelerated atherosclerosis causes heart attack, stroke and peripheral arterial disease."
+      ]
+    },
+    "presentation": {
+      "symptoms": [
+        "Often none",
+        "Thirst, frequent urination, weight loss",
+        "Fatigue",
+        "Recurrent infections or slow-healing wounds",
+        "Numbness or burning in the feet"
+      ],
+      "physicalSigns": [
+        "Body mass index 23 kg/m² or more, or waist above 90 cm (men) or 80 cm (women) (ICMR 2018, p. 7)",
+        "Acanthosis nigricans",
+        "Reduced foot sensation or foot ulcer",
+        "Retinopathy on fundoscopy"
+      ],
+      "redFlags": [
+        "Symptomatic hyperglycaemia with weight loss, fasting glucose above 270 mg/dL, HbA1c above 9%, severe infection or ketosis: start insulin (ICMR 2018, p. 39)",
+        "Unconscious hypoglycaemia: 25–50 mL of 25% dextrose IV and refer (ICMR 2018, p. 48)",
+        "Foot ulcer with infection or ischaemia",
+        "Chest pain or stroke symptoms"
+      ],
+      "precipitants": [
+        "Overweight and central obesity",
+        "Physical inactivity and high-calorie diet",
+        "Family history of diabetes",
+        "History of gestational diabetes",
+        "Age over 30 years"
+      ]
+    },
+    "differentials": [
+      {
+        "condition": "Type 1 diabetes",
+        "distinguishingFeatures": "Young onset, ketosis, rapid weight loss; needs insulin."
+      },
+      {
+        "condition": "Fibrocalculous pancreatic diabetes",
+        "distinguishingFeatures": "Lean young adults with chronic pancreatitis and pancreatic calcification."
+      },
+      {
+        "condition": "Secondary diabetes",
+        "distinguishingFeatures": "Steroid use, Cushing syndrome or pancreatic disease."
+      }
+    ],
+    "diagnosticCriteria": [
+      {
+        "criterion": "Diabetes",
+        "threshold": "Fasting plasma glucose 126 mg/dL or more, 2-hour glucose 200 mg/dL or more after 75 g, or HbA1c 6.5% or more, confirmed by a second test (ICMR 2018, pp. 9–10, Table 3.1)."
+      },
+      {
+        "criterion": "Prediabetes",
+        "threshold": "Fasting 110–125 mg/dL (WHO) or 2-hour 140–199 mg/dL (ICMR 2018, p. 10)."
+      }
+    ],
+    "investigations": {
+      "ruleIn": [
+        {
+          "tier": "laboratory",
+          "testName": "Fasting plasma glucose",
+          "modalityTarget": "Venous plasma glucose after 8-hour fast",
+          "targetCondition": "Diabetes",
+          "normalValue": "Below 100 mg/dL",
+          "expectedFinding": "126 mg/dL or more",
+          "clinicalRationale": "Diagnostic when confirmed (ICMR 2018, Table 3.1).",
+          "references": [
+            {
+              "title": "ICMR Guidelines for Management of Type 2 Diabetes",
+              "edition": "ICMR 2018, pp. 9–10, Table 3.1",
+              "url": "https://main.icmr.nic.in/sites/default/files/guidelines/ICMR_GuidelinesType2diabetes2018_0.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "75 g oral glucose tolerance test (2-hour)",
+          "modalityTarget": "Plasma glucose 2 hours after 75 g glucose",
+          "targetCondition": "Diabetes",
+          "normalValue": "Below 140 mg/dL",
+          "expectedFinding": "200 mg/dL or more",
+          "clinicalRationale": "Diagnostic when confirmed (ICMR 2018, Table 3.1).",
+          "references": [
+            {
+              "title": "ICMR Guidelines for Management of Type 2 Diabetes",
+              "edition": "ICMR 2018, pp. 9–10, Table 3.1",
+              "url": "https://main.icmr.nic.in/sites/default/files/guidelines/ICMR_GuidelinesType2diabetes2018_0.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "HbA1c",
+          "modalityTarget": "Glycated haemoglobin",
+          "targetCondition": "Diabetes and control",
+          "normalValue": "Below 5.7%",
+          "expectedFinding": "6.5% or more (diagnosis); target below 7%",
+          "clinicalRationale": "Diagnosis and the main control target (ICMR 2018, pp. 9, 12).",
+          "references": [
+            {
+              "title": "ICMR Guidelines for Management of Type 2 Diabetes",
+              "edition": "ICMR 2018, pp. 9, 12",
+              "url": "https://main.icmr.nic.in/sites/default/files/guidelines/ICMR_GuidelinesType2diabetes2018_0.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Urine albumin–creatinine ratio and creatinine/eGFR",
+          "modalityTarget": "Kidney screening",
+          "targetCondition": "Diabetic kidney disease",
+          "normalValue": "ACR below 30 mg/g; eGFR above 90 mL/min/1.73 m²",
+          "expectedFinding": "Raised ACR or reduced eGFR",
+          "clinicalRationale": "At diagnosis and at least annually; eGFR guides metformin dose (ICMR 2018, pp. 29, 70).",
+          "references": [
+            {
+              "title": "ICMR Guidelines for Management of Type 2 Diabetes",
+              "edition": "ICMR 2018, pp. 29, 70",
+              "url": "https://main.icmr.nic.in/sites/default/files/guidelines/ICMR_GuidelinesType2diabetes2018_0.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "Retinal examination",
+          "modalityTarget": "Dilated fundoscopy or retinal photography",
+          "targetCondition": "Diabetic retinopathy",
+          "normalValue": "No retinopathy",
+          "expectedFinding": "Retinopathy",
+          "clinicalRationale": "At diagnosis and annually (ICMR 2018, p. 55).",
+          "references": [
+            {
+              "title": "ICMR Guidelines for Management of Type 2 Diabetes",
+              "edition": "ICMR 2018, p. 55",
+              "url": "https://main.icmr.nic.in/sites/default/files/guidelines/ICMR_GuidelinesType2diabetes2018_0.pdf"
+            }
+          ]
+        }
+      ],
+      "ruleOut": [
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "Foot examination",
+          "modalityTarget": "Monofilament, pulses and skin inspection",
+          "targetCondition": "Neuropathy and foot risk",
+          "normalValue": "Normal sensation and pulses",
+          "expectedFinding": "Loss of sensation, absent pulses, deformity or ulcer",
+          "clinicalRationale": "Annual for low risk; every visit after ulcer or amputation (ICMR 2018, p. 60).",
+          "references": [
+            {
+              "title": "ICMR Guidelines for Management of Type 2 Diabetes",
+              "edition": "ICMR 2018, p. 60",
+              "url": "https://main.icmr.nic.in/sites/default/files/guidelines/ICMR_GuidelinesType2diabetes2018_0.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Lipid profile and electrocardiogram",
+          "modalityTarget": "Cardiovascular screening",
+          "targetCondition": "Cardiovascular risk",
+          "normalValue": "LDL below 100 mg/dL; normal electrocardiogram",
+          "expectedFinding": "Dyslipidaemia or ischaemic changes",
+          "clinicalRationale": "Part of the annual check-up (ICMR 2018, p. 15).",
+          "references": [
+            {
+              "title": "ICMR Guidelines for Management of Type 2 Diabetes",
+              "edition": "ICMR 2018, p. 15",
+              "url": "https://main.icmr.nic.in/sites/default/files/guidelines/ICMR_GuidelinesType2diabetes2018_0.pdf"
+            }
+          ]
+        }
+      ]
+    },
+    "clinicalManagement": [
+      {
+        "id": "screen-and-diagnose",
+        "title": "Screen and diagnose",
+        "timeframe": "At first contact",
+        "actions": [
+          "Screen everyone over 30 years, and earlier with body mass index 23 kg/m² or more, raised waist or other risk factors (ICMR 2018, p. 7).",
+          "Confirm the diagnosis with a second test (ICMR 2018, p. 9)."
+        ]
+      },
+      {
+        "id": "start-treatment",
+        "title": "Start treatment",
+        "timeframe": "At diagnosis",
+        "actions": [
+          "Lifestyle advice for all; metformin is the first drug unless contraindicated (ICMR 2018, p. 69).",
+          "Set an individual HbA1c target, below 7% for most (ICMR 2018, pp. 12, 69)."
+        ],
+        "branches": [
+          {
+            "condition": "Fasting glucose above 270 mg/dL, HbA1c above 9%, weight loss, severe infection or ketosis",
+            "actions": [
+              "Start insulin at 0.2 units/kg/day and adjust every 3 days (ICMR 2018, pp. 39, 46)."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intensify",
+        "title": "Intensify when the target is not met",
+        "timeframe": "Review every 3 months",
+        "actions": [
+          "Add a sulphonylurea, DPP-4 inhibitor or SGLT2 inhibitor (preferred second-line choices) (ICMR 2018, pp. 37, 69).",
+          "Consider triple oral therapy in selected cases, then basal insulin with oral agents continued (ICMR 2018, pp. 37–38)."
+        ]
+      },
+      {
+        "id": "complications",
+        "title": "Annual complication screening",
+        "timeframe": "At least yearly",
+        "actions": [
+          "Annual foot, retinal, kidney (ACR and creatinine), lipid, electrocardiogram and blood count check (ICMR 2018, p. 15).",
+          "Treat hypoglycaemia promptly; check renal and thyroid function if it recurs (ICMR 2018, p. 48)."
+        ]
+      }
+    ],
+    "medicationPlan": {
+      "status": "source-verified",
+      "branches": [
+        {
+          "label": "First-line",
+          "entryCriteria": "Newly diagnosed type 2 diabetes without indication for insulin"
+        },
+        {
+          "label": "Second-line add-on",
+          "entryCriteria": "HbA1c above individual target on metformin"
+        },
+        {
+          "label": "Insulin",
+          "entryCriteria": "Severe hyperglycaemia at diagnosis or failure of oral therapy"
+        }
+      ],
+      "regimens": [
+        {
+          "indication": "Type 2 diabetes",
+          "patientGroup": "Adults",
+          "genericName": "Metformin",
+          "dose": "Start 500 mg after meals; increase by 500 mg every 2 weeks",
+          "route": "Oral",
+          "frequency": "With meals",
+          "duration": "Long term; maximum 2,500 mg/day",
+          "adjustments": [
+            "Paediatric: Adult topic — use the paediatric pathway for children.",
+            "Penicillin allergy: Not an antibiotic — penicillin allergy does not affect this medicine.",
+            "CKD: eGFR 45–60: full dose with closer monitoring; below 45: halve the dose and do not start; below 30: stop (ICMR 2018, p. 29).",
+            "CLD: Avoid in significant hepatic impairment (lactic acidosis risk; product label)."
+          ],
+          "monitoring": [
+            "HbA1c every 3 months until stable",
+            "eGFR at least annually",
+            "Vitamin B12 on long-term use"
+          ],
+          "contraindications": [
+            "eGFR below 30",
+            "Acute illness with dehydration or hypoxia"
+          ],
+          "branch": "First-line",
+          "step": "Biguanide",
+          "selection": "all",
+          "sourceTitle": "ICMR Guidelines for Management of Type 2 Diabetes",
+          "sourceUrl": "https://main.icmr.nic.in/sites/default/files/guidelines/ICMR_GuidelinesType2diabetes2018_0.pdf",
+          "sourceEdition": "ICMR 2018, pp. 28–29"
+        },
+        {
+          "indication": "HbA1c above target on metformin",
+          "patientGroup": "Adults",
+          "genericName": "Gliclazide (sulphonylurea)",
+          "dose": "80–320 mg/day",
+          "route": "Oral",
+          "frequency": "Once or twice daily with meals",
+          "duration": "Long term",
+          "adjustments": [
+            "Paediatric: Adult topic — use the paediatric pathway for children.",
+            "Penicillin allergy: Not an antibiotic — penicillin allergy does not affect this medicine.",
+            "CKD: Use the lowest dose and monitor for hypoglycaemia (product label).",
+            "CLD: Avoid in severe hepatic impairment (hypoglycaemia risk; product label)."
+          ],
+          "monitoring": [
+            "Hypoglycaemia",
+            "Weight"
+          ],
+          "contraindications": [
+            "Type 1 diabetes",
+            "Severe hepatic or renal impairment"
+          ],
+          "branch": "Second-line add-on",
+          "step": "Add-on",
+          "selection": "one-of",
+          "sourceTitle": "ICMR Guidelines for Management of Type 2 Diabetes",
+          "sourceUrl": "https://main.icmr.nic.in/sites/default/files/guidelines/ICMR_GuidelinesType2diabetes2018_0.pdf",
+          "sourceEdition": "ICMR 2018, pp. 25, 37",
+          "preferred": true
+        },
+        {
+          "indication": "HbA1c above target on metformin",
+          "patientGroup": "Adults",
+          "genericName": "Sitagliptin (DPP-4 inhibitor)",
+          "dose": "25–100 mg/day",
+          "route": "Oral",
+          "frequency": "Once daily",
+          "duration": "Long term",
+          "adjustments": [
+            "Paediatric: Adult topic — use the paediatric pathway for children.",
+            "Penicillin allergy: Not an antibiotic — penicillin allergy does not affect this medicine.",
+            "CKD: Reduce the dose with reduced eGFR (50 mg below 45; 25 mg below 30) (product label).",
+            "CLD: No dose change in mild to moderate impairment (product label)."
+          ],
+          "monitoring": [
+            "HbA1c",
+            "Pancreatitis symptoms"
+          ],
+          "contraindications": [
+            "History of pancreatitis with the drug"
+          ],
+          "branch": "Second-line add-on",
+          "step": "Add-on",
+          "selection": "one-of",
+          "sourceTitle": "ICMR Guidelines for Management of Type 2 Diabetes",
+          "sourceUrl": "https://main.icmr.nic.in/sites/default/files/guidelines/ICMR_GuidelinesType2diabetes2018_0.pdf",
+          "sourceEdition": "ICMR 2018, pp. 26, 37",
+          "preferred": false,
+          "useWhen": "Hypoglycaemia risk is a concern (older adults, irregular meals)"
+        },
+        {
+          "indication": "HbA1c above target on metformin",
+          "patientGroup": "Adults",
+          "genericName": "Dapagliflozin (SGLT2 inhibitor)",
+          "dose": "5–10 mg/day",
+          "route": "Oral",
+          "frequency": "Once daily",
+          "duration": "Long term",
+          "adjustments": [
+            "Paediatric: Adult topic — use the paediatric pathway for children.",
+            "Penicillin allergy: Not an antibiotic — penicillin allergy does not affect this medicine.",
+            "CKD: Glucose-lowering effect falls as eGFR declines; follow product label thresholds.",
+            "CLD: Start at 5 mg in severe hepatic impairment (product label)."
+          ],
+          "monitoring": [
+            "Genital infection",
+            "Volume status",
+            "Ketoacidosis symptoms"
+          ],
+          "contraindications": [
+            "Type 1 diabetes",
+            "Recurrent genital infections"
+          ],
+          "branch": "Second-line add-on",
+          "step": "Add-on",
+          "selection": "one-of",
+          "sourceTitle": "ICMR Guidelines for Management of Type 2 Diabetes",
+          "sourceUrl": "https://main.icmr.nic.in/sites/default/files/guidelines/ICMR_GuidelinesType2diabetes2018_0.pdf",
+          "sourceEdition": "ICMR 2018, pp. 27, 37",
+          "preferred": false,
+          "useWhen": "Cardiovascular or kidney disease, or weight loss is a priority"
+        },
+        {
+          "indication": "Severe hyperglycaemia or oral-therapy failure",
+          "patientGroup": "Adults",
+          "genericName": "NPH insulin (basal)",
+          "dose": "0.2 units/kg/day",
+          "route": "Subcutaneous",
+          "frequency": "Once daily (bedtime)",
+          "duration": "Long term; adjust every 3 days",
+          "adjustments": [
+            "Paediatric: Adult topic — use the paediatric pathway for children.",
+            "Penicillin allergy: Not an antibiotic — penicillin allergy does not affect this medicine.",
+            "CKD: Lower doses and slower titration in kidney impairment (hypoglycaemia risk).",
+            "CLD: Lower doses in hepatic impairment (reduced gluconeogenesis)."
+          ],
+          "monitoring": [
+            "Fasting glucose",
+            "Hypoglycaemia"
+          ],
+          "contraindications": [
+            "Hypoglycaemia"
+          ],
+          "branch": "Insulin",
+          "step": "Basal insulin",
+          "selection": "all",
+          "sourceTitle": "ICMR Guidelines for Management of Type 2 Diabetes",
+          "sourceUrl": "https://main.icmr.nic.in/sites/default/files/guidelines/ICMR_GuidelinesType2diabetes2018_0.pdf",
+          "sourceEdition": "ICMR 2018, pp. 39, 46"
+        }
+      ],
+      "note": "Drug choices and doses from the ICMR Guidelines for Management of Type 2 Diabetes 2018. India-only topic; the Saudi type 2 diabetes topics are unchanged. Not clinically reviewed."
+    },
+    "teaching": {
+      "scope": "Adult type 2 diabetes in India.",
+      "learningObjectives": [
+        "Screen using Asian Indian risk thresholds.",
+        "Start and titrate metformin and choose second-line agents.",
+        "Organise annual complication screening."
+      ],
+      "keyPoints": [
+        "Screen everyone over 30; body mass index 23 kg/m² or more is a risk factor.",
+        "Metformin first; stop if eGFR below 30.",
+        "Start insulin at 0.2 units/kg/day when hyperglycaemia is severe."
+      ],
+      "pitfalls": [
+        "Using Western body mass index thresholds.",
+        "Continuing full-dose metformin with eGFR below 45.",
+        "Missing annual eye, foot and kidney checks."
+      ],
+      "references": [
+        {
+          "title": "ICMR Guidelines for Management of Type 2 Diabetes",
+          "edition": "ICMR 2018",
+          "url": "https://main.icmr.nic.in/sites/default/files/guidelines/ICMR_GuidelinesType2diabetes2018_0.pdf",
+          "locator": "Pages 7–70 (Tables 3.1 and 7.1, Figure 7.3)"
+        }
+      ]
+    },
+    "nonClinicalManagement": {
+      "patientEducation": [
+        "Recognise and treat low sugar with glucose or sugar.",
+        "Check your feet daily.",
+        "Attend annual eye, kidney and foot checks."
+      ],
+      "lifestyleAndDiet": [
+        "Reduce refined carbohydrates and sugar; include vegetables and pulses.",
+        "At least 150 minutes of physical activity a week.",
+        "Stop tobacco; limit alcohol; aim for a body mass index below 23 kg/m²."
+      ],
+      "mdtReferrals": [
+        "Ophthalmology for retinopathy",
+        "Nephrology for falling eGFR or heavy albuminuria",
+        "Podiatry or surgery for high-risk feet",
+        "Dietitian"
+      ],
+      "dischargeCriteria": [
+        "Not applicable to most outpatients; after admission, stable glucose with a written treatment plan and hypoglycaemia education."
+      ],
+      "followUpPlan": "Review every 3 months until the HbA1c target is reached, then every 3–6 months; annual complication screening."
+    }
+  },
+  {
+    "id": "12b16757-f531-53ad-b9f0-1fb608287d07",
+    "title": "Postpartum haemorrhage (India adaptation)",
+    "specialty": "Obstetrics",
+    "authority": "MoHFW",
+    "status": "under_review",
+    "version": "india-adapt-a-2026-10-22-v1",
+    "lastReviewed": "2026-10-22",
+    "pillar": "Safe Birth",
+    "clinicalReviewStatus": "pending",
+    "evidenceAudit": {
+      "checkedOn": "2026-10-22",
+      "status": "incomplete",
+      "scope": "Postpartum haemorrhage prevention and treatment in India.",
+      "findings": [
+        "Indian context checked against MoHFW Dakshata 2015 and ANC 2010; regimens carried from WHO 2025 as cited in Marifa's existing PPH topic.",
+        "Not clinically reviewed."
+      ],
+      "unverifiedSections": [
+        "WHO 2025 section locators were not re-opened in this task (the WHO page required user permission); they follow Marifa's existing PPH topic.",
+        "No Indian source was opened for methylergometrine or carboprost doses.",
+        "The MoHFW misoprostol community-distribution guideline (2013) could not be opened."
+      ],
+      "medscapeStatus": "unavailable",
+      "originalVersionIds": [
+        "12b16757-f531-53ad-b9f0-1fb608287d07"
+      ]
+    },
+    "pathophysiology": {
+      "summary": "Postpartum haemorrhage remains a leading direct cause of maternal death in India, and most deaths occur within hours of birth, often in women who had no recognised risk factors. Normally, after the placenta separates, the interlacing muscle fibres of the uterus contract and compress the spiral arteries that supplied the placental bed, controlling bleeding within minutes; this is why uterine atony, failure of the uterus to contract, causes most haemorrhages. Other causes are retained placenta or fragments, genital tract trauma and coagulation disorders, remembered as tone, tissue, trauma and thrombin. Anaemia, which is common in Indian women, reduces the reserve to tolerate blood loss, so women decompensate earlier and at smaller volumes. Prevention rests on giving a uterotonic to every woman immediately after birth as part of active management of the third stage of labour, together with controlled cord traction and uterine massage, a set of skills that India's Dakshata programme trains labour-room staff to perform. Where oxytocin cannot be kept cold, heat-stable carbetocin or oral misoprostol are alternatives, and India's community misoprostol programme extends prevention to home births. Treatment is time-critical: recognise excessive bleeding early, call for help, massage the uterus, give oxytocin, give tranexamic acid as early as possible and within three hours of birth, restore circulating volume, examine for the cause and escalate to second-line uterotonics, mechanical or surgical measures and transfusion. Delays in recognising haemorrhage, in reaching a facility able to transfuse and in escalating care drive deaths, so referral planning and blood availability are part of the pathway (WHO 2025; MoHFW Dakshata 2015).",
+      "keyMechanisms": [
+        "Myometrial contraction compresses placental-bed vessels; atony causes most haemorrhage.",
+        "Causes: tone (atony), tissue (retained products), trauma and thrombin (coagulopathy).",
+        "Anaemia lowers the reserve, so decompensation occurs at smaller losses.",
+        "Uterotonics restore contraction; tranexamic acid reduces fibrinolysis."
+      ]
+    },
+    "presentation": {
+      "symptoms": [
+        "Heavy vaginal bleeding after birth",
+        "Dizziness, faintness, breathlessness",
+        "Restlessness or confusion"
+      ],
+      "physicalSigns": [
+        "Soft, poorly contracted uterus (atony)",
+        "Tachycardia and falling blood pressure",
+        "Pallor, cold clammy skin",
+        "Visible genital tract tears",
+        "Incomplete placenta or membranes"
+      ],
+      "redFlags": [
+        "Blood loss 500 mL or more after vaginal birth with abnormal vital signs, or ongoing bleeding",
+        "Shock: pulse above 100, systolic below 90 mmHg, altered sensorium",
+        "Bleeding despite oxytocin and uterine massage",
+        "Retained placenta",
+        "Severe anaemia before birth (haemoglobin below 7 g/dL) (MoHFW ANC 2010, p. 25)"
+      ],
+      "precipitants": [
+        "Anaemia in pregnancy",
+        "Prolonged or augmented labour",
+        "Multiple pregnancy, large baby or polyhydramnios",
+        "Previous postpartum haemorrhage",
+        "Births without a skilled attendant or uterotonic"
+      ]
+    },
+    "differentials": [
+      {
+        "condition": "Genital tract trauma",
+        "distinguishingFeatures": "Bleeding with a well-contracted uterus; tears on examination."
+      },
+      {
+        "condition": "Retained placental tissue",
+        "distinguishingFeatures": "Incomplete placenta or membranes; uterus fails to contract."
+      },
+      {
+        "condition": "Coagulopathy",
+        "distinguishingFeatures": "Oozing from puncture sites; history of pre-eclampsia, abruption or sepsis."
+      }
+    ],
+    "diagnosticCriteria": [
+      {
+        "criterion": "Postpartum haemorrhage",
+        "threshold": "Blood loss of 500 mL or more within 24 hours of birth, or lower losses with signs of haemodynamic compromise (WHO 2025, section Diagnosis)."
+      },
+      {
+        "criterion": "Severe anaemia (risk)",
+        "threshold": "Haemoglobin below 7 g/dL in pregnancy (MoHFW ANC 2010, p. 25)."
+      }
+    ],
+    "investigations": {
+      "ruleIn": [
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "Measured blood loss (calibrated drape or weighing)",
+          "modalityTarget": "Objective measurement",
+          "targetCondition": "Postpartum haemorrhage",
+          "normalValue": "Below 500 mL",
+          "expectedFinding": "500 mL or more, or rising with abnormal vital signs",
+          "clinicalRationale": "Objective measurement detects haemorrhage earlier than visual estimate (WHO 2025, section Diagnosis).",
+          "references": [
+            {
+              "title": "Consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage (WHO)",
+              "edition": "WHO 2025, section Diagnosis",
+              "url": "https://www.who.int/publications/i/item/9789240115637"
+            }
+          ]
+        },
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "Vital signs and shock index",
+          "modalityTarget": "Pulse, blood pressure, sensorium",
+          "targetCondition": "Haemodynamic compromise",
+          "normalValue": "Pulse below 100/min; systolic 100 mmHg or above",
+          "expectedFinding": "Pulse above 100, systolic below 90 mmHg",
+          "clinicalRationale": "Triggers resuscitation and escalation.",
+          "references": [
+            {
+              "title": "Consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage (WHO)",
+              "edition": "WHO 2025, section First-response treatment",
+              "url": "https://www.who.int/publications/i/item/9789240115637"
+            }
+          ]
+        },
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "Uterine tone and placenta check",
+          "modalityTarget": "Abdominal palpation and placental inspection",
+          "targetCondition": "Atony or retained tissue",
+          "normalValue": "Firm, contracted uterus; complete placenta",
+          "expectedFinding": "Soft uterus or incomplete placenta",
+          "clinicalRationale": "Identifies the cause (tone or tissue).",
+          "references": [
+            {
+              "title": "Dakshata: Operational Guidelines for improved MNH care during institutional deliveries (MoHFW)",
+              "edition": "MoHFW Maternal Health Division, April 2015, p. 5 (pause-point table)",
+              "url": "https://nhm.gov.in/WriteReadData/l892s/81164783601523441220.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Haemoglobin",
+          "modalityTarget": "Complete blood count",
+          "targetCondition": "Blood loss and baseline anaemia",
+          "normalValue": "11 g/dL or more in pregnancy",
+          "expectedFinding": "Below 11 g/dL (anaemia); below 7 g/dL (severe)",
+          "clinicalRationale": "Anaemia thresholds from MoHFW (ANC 2010, p. 25).",
+          "references": [
+            {
+              "title": "Guidelines for Antenatal Care and Skilled Attendance at Birth by ANMs/LHVs/SNs (MoHFW)",
+              "edition": "MoHFW Maternal Health Division, April 2010, p. 25, Box 6",
+              "url": "https://nhmodisha.gov.in/writereaddata/Upload/Guidelines/Guidelines%20for%20ANC%20and%20SAB%20by%20ANMs,LHVs,SNs.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Blood group and cross-match",
+          "modalityTarget": "Blood bank",
+          "targetCondition": "Transfusion need",
+          "normalValue": "Units available",
+          "expectedFinding": "Group identified",
+          "clinicalRationale": "Prepare blood early in any significant haemorrhage.",
+          "references": [
+            {
+              "title": "Consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage (WHO)",
+              "edition": "WHO 2025, section Resuscitation",
+              "url": "https://www.who.int/publications/i/item/9789240115637"
+            }
+          ]
+        }
+      ],
+      "ruleOut": [
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "Speculum and genital tract examination",
+          "modalityTarget": "Inspection of cervix, vagina and perineum",
+          "targetCondition": "Genital trauma",
+          "normalValue": "No tears",
+          "expectedFinding": "Bleeding tears",
+          "clinicalRationale": "Trauma needs repair, not more uterotonic.",
+          "references": [
+            {
+              "title": "Consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage (WHO)",
+              "edition": "WHO 2025, section Diagnosis of cause",
+              "url": "https://www.who.int/publications/i/item/9789240115637"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Bedside clotting test and coagulation profile",
+          "modalityTarget": "20-minute clotting test, PT, platelets, fibrinogen",
+          "targetCondition": "Coagulopathy",
+          "normalValue": "Clot within 7–10 minutes; normal PT and platelets",
+          "expectedFinding": "No clot or prolonged clotting tests",
+          "clinicalRationale": "Coagulopathy needs blood products.",
+          "references": [
+            {
+              "title": "Consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage (WHO)",
+              "edition": "WHO 2025, section Coagulopathy",
+              "url": "https://www.who.int/publications/i/item/9789240115637"
+            }
+          ]
+        }
+      ]
+    },
+    "clinicalManagement": [
+      {
+        "id": "prevent",
+        "title": "Prevent at every birth",
+        "timeframe": "Within one minute of birth",
+        "actions": [
+          "Give a uterotonic to every woman: oxytocin 10 IU IM or slow IV (WHO 2025).",
+          "Controlled cord traction and uterine massage as practised under Dakshata (MoHFW 2015, p. 5)."
+        ],
+        "branches": [
+          {
+            "condition": "Cold chain unreliable",
+            "actions": [
+              "Carbetocin 100 µg IM or IV (WHO 2025)."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "first-response",
+        "title": "First response to haemorrhage",
+        "timeframe": "Immediately when bleeding is recognised",
+        "actions": [
+          "Call for help; uterine massage; oxytocin 10 IU IV over 1–2 minutes then 10–20 IU in crystalloid over 4 hours (WHO 2025).",
+          "Tranexamic acid 1 g IV over 10 minutes as early as possible and within 3 hours of birth; repeat 1 g if bleeding continues after 30 minutes (WHO 2025, Recommendation 27 remarks).",
+          "Insert two large-bore IV lines, give crystalloid, empty the bladder, examine for cause and prepare blood."
+        ]
+      },
+      {
+        "id": "escalate",
+        "title": "Escalate if bleeding continues",
+        "timeframe": "Within 15–30 minutes of no response",
+        "actions": [
+          "Misoprostol 800 µg sublingual where IV oxytocin is unavailable or ineffective (WHO 2025).",
+          "Second-line uterotonics (methylergometrine, carboprost), bimanual compression, balloon tamponade and surgery per the facility protocol; refer early to a centre that can transfuse and operate."
+        ],
+        "branches": [
+          {
+            "condition": "Retained placenta",
+            "actions": [
+              "Manual removal under anaesthesia at a first referral unit."
+            ]
+          },
+          {
+            "condition": "Genital tract trauma",
+            "actions": [
+              "Repair under good light and analgesia."
+            ]
+          }
+        ]
+      }
+    ],
+    "medicationPlan": {
+      "status": "source-verified",
+      "branches": [
+        {
+          "label": "Prevention at birth",
+          "entryCriteria": "Every birth, immediately after delivery of the baby"
+        },
+        {
+          "label": "Treatment — first response",
+          "entryCriteria": "Blood loss 500 mL or more, or bleeding with haemodynamic compromise"
+        },
+        {
+          "label": "Treatment — bleeding continues",
+          "entryCriteria": "Bleeding continues despite oxytocin, or IV oxytocin unavailable"
+        }
+      ],
+      "regimens": [
+        {
+          "indication": "Prevention of postpartum haemorrhage",
+          "patientGroup": "All births",
+          "genericName": "Oxytocin",
+          "dose": "10 IU",
+          "route": "IM or slow IV",
+          "frequency": "Once",
+          "duration": "Single dose",
+          "adjustments": [
+            "Paediatric: Not applicable — maternity topic; neonatal care follows the neonatal pathway.",
+            "Penicillin allergy: Not an antibiotic — penicillin allergy does not affect this medicine.",
+            "CKD: No dose change.",
+            "CLD: No dose change."
+          ],
+          "monitoring": [
+            "Uterine tone",
+            "Blood pressure"
+          ],
+          "contraindications": [
+            "Avoid rapid IV bolus (hypotension)"
+          ],
+          "branch": "Prevention at birth",
+          "step": "Uterotonic",
+          "selection": "one-of",
+          "sourceTitle": "Consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage (WHO)",
+          "sourceUrl": "https://www.who.int/publications/i/item/9789240115637",
+          "sourceEdition": "WHO 2025, section Prevention — uterotonics",
+          "preferred": true
+        },
+        {
+          "indication": "Prevention where cold chain is unreliable",
+          "patientGroup": "All births",
+          "genericName": "Carbetocin (heat-stable)",
+          "dose": "100 µg",
+          "route": "IM or IV",
+          "frequency": "Once",
+          "duration": "Single dose",
+          "adjustments": [
+            "Paediatric: Not applicable — maternity topic; neonatal care follows the neonatal pathway.",
+            "Penicillin allergy: Not an antibiotic — penicillin allergy does not affect this medicine.",
+            "CKD: No dose change.",
+            "CLD: No dose change."
+          ],
+          "monitoring": [
+            "Uterine tone"
+          ],
+          "contraindications": [
+            "Not for treatment of haemorrhage"
+          ],
+          "branch": "Prevention at birth",
+          "step": "Uterotonic",
+          "selection": "one-of",
+          "sourceTitle": "Consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage (WHO)",
+          "sourceUrl": "https://www.who.int/publications/i/item/9789240115637",
+          "sourceEdition": "WHO 2025, section Prevention — uterotonics",
+          "preferred": false,
+          "useWhen": "Oxytocin cold chain cannot be assured"
+        },
+        {
+          "indication": "Postpartum haemorrhage",
+          "patientGroup": "Women with haemorrhage",
+          "genericName": "Oxytocin",
+          "dose": "10 IU IV over 1–2 minutes, then 10–20 IU in crystalloid over 4 hours",
+          "route": "IV",
+          "frequency": "Bolus then infusion",
+          "duration": "4-hour infusion",
+          "adjustments": [
+            "Paediatric: Not applicable — maternity topic; neonatal care follows the neonatal pathway.",
+            "Penicillin allergy: Not an antibiotic — penicillin allergy does not affect this medicine.",
+            "CKD: Watch fluid balance (water retention) in kidney impairment.",
+            "CLD: No dose change."
+          ],
+          "monitoring": [
+            "Uterine tone, blood loss, blood pressure",
+            "Fluid balance"
+          ],
+          "contraindications": [
+            "Hypersensitivity"
+          ],
+          "branch": "Treatment — first response",
+          "step": "Uterotonic",
+          "selection": "all",
+          "sourceTitle": "Consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage (WHO)",
+          "sourceUrl": "https://www.who.int/publications/i/item/9789240115637",
+          "sourceEdition": "WHO 2025, section Treatment — uterotonics"
+        },
+        {
+          "indication": "Postpartum haemorrhage within 3 hours of birth",
+          "patientGroup": "Women with haemorrhage",
+          "genericName": "Tranexamic acid",
+          "dose": "1 g (100 mg/mL)",
+          "route": "IV over 10 minutes (1 mL/min)",
+          "frequency": "Repeat 1 g if bleeding continues after 30 minutes",
+          "duration": "1–2 doses",
+          "adjustments": [
+            "Paediatric: Not applicable — maternity topic; neonatal care follows the neonatal pathway.",
+            "Penicillin allergy: Not an antibiotic — penicillin allergy does not affect this medicine.",
+            "CKD: Single 1 g doses: no change; avoid repeated dosing in severe kidney impairment without specialist advice (product label).",
+            "CLD: No dose change."
+          ],
+          "monitoring": [
+            "Bleeding",
+            "Thrombosis"
+          ],
+          "contraindications": [
+            "Not for prevention",
+            "Active thromboembolic disease"
+          ],
+          "branch": "Treatment — first response",
+          "step": "Antifibrinolytic",
+          "selection": "all",
+          "sourceTitle": "Consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage (WHO)",
+          "sourceUrl": "https://www.who.int/publications/i/item/9789240115637",
+          "sourceEdition": "WHO 2025, Recommendation 27 remarks"
+        },
+        {
+          "indication": "Bleeding continues or IV oxytocin unavailable",
+          "patientGroup": "Women with haemorrhage",
+          "genericName": "Misoprostol",
+          "dose": "800 µg",
+          "route": "Sublingual",
+          "frequency": "Once",
+          "duration": "Single dose",
+          "adjustments": [
+            "Paediatric: Not applicable — maternity topic; neonatal care follows the neonatal pathway.",
+            "Penicillin allergy: Not an antibiotic — penicillin allergy does not affect this medicine.",
+            "CKD: No dose change.",
+            "CLD: No dose change."
+          ],
+          "monitoring": [
+            "Shivering, fever",
+            "Blood loss"
+          ],
+          "contraindications": [
+            "Prostaglandin allergy"
+          ],
+          "branch": "Treatment — bleeding continues",
+          "step": "Second-line uterotonic",
+          "selection": "all",
+          "sourceTitle": "Consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage (WHO)",
+          "sourceUrl": "https://www.who.int/publications/i/item/9789240115637",
+          "sourceEdition": "WHO 2025, section Treatment — uterotonics"
+        }
+      ],
+      "note": "Uterotonic and tranexamic acid regimens from WHO 2025 consolidated PPH guidance (as used in Marifa's PPH topic); Indian context from MoHFW Dakshata 2015 and the MoHFW antenatal guideline 2010. Methylergometrine and carboprost doses are not given because no Indian source was opened for them. India-only topic; the Saudi PPH topic is unchanged. Not clinically reviewed."
+    },
+    "teaching": {
+      "scope": "Postpartum haemorrhage in India.",
+      "learningObjectives": [
+        "Give a uterotonic at every birth.",
+        "Deliver the first-response bundle including early tranexamic acid.",
+        "Escalate and refer without delay."
+      ],
+      "keyPoints": [
+        "Atony causes most haemorrhage.",
+        "Tranexamic acid works best early, within 3 hours of birth.",
+        "Anaemic women decompensate earlier."
+      ],
+      "pitfalls": [
+        "Visual underestimation of blood loss.",
+        "Late tranexamic acid.",
+        "Delayed referral to a centre with blood."
+      ],
+      "references": [
+        {
+          "title": "Consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage (WHO)",
+          "edition": "WHO 2025",
+          "url": "https://www.who.int/publications/i/item/9789240115637",
+          "locator": "Sections Prevention, Diagnosis and Treatment; Recommendation 27"
+        },
+        {
+          "title": "Dakshata: Operational Guidelines for improved MNH care during institutional deliveries (MoHFW)",
+          "edition": "MoHFW Maternal Health Division, April 2015",
+          "url": "https://nhm.gov.in/WriteReadData/l892s/81164783601523441220.pdf",
+          "locator": "Page 5 (pause-point table)"
+        },
+        {
+          "title": "Guidelines for Antenatal Care and Skilled Attendance at Birth by ANMs/LHVs/SNs (MoHFW)",
+          "edition": "MoHFW Maternal Health Division, April 2010",
+          "url": "https://nhmodisha.gov.in/writereaddata/Upload/Guidelines/Guidelines%20for%20ANC%20and%20SAB%20by%20ANMs,LHVs,SNs.pdf",
+          "locator": "Pages 24–25, Box 6"
+        }
+      ]
+    },
+    "nonClinicalManagement": {
+      "patientEducation": [
+        "Give birth in a facility with a skilled attendant.",
+        "Seek help at once for heavy bleeding after birth.",
+        "Take iron and folic acid in pregnancy to reduce risk."
+      ],
+      "lifestyleAndDiet": [
+        "Iron-rich diet and therapeutic iron after haemorrhage.",
+        "Rest and gradual return to activity."
+      ],
+      "mdtReferrals": [
+        "Obstetrician and anaesthetist at a first referral unit",
+        "Blood bank",
+        "Intensive care for massive haemorrhage"
+      ],
+      "dischargeCriteria": [
+        "No active bleeding for at least 24 hours.",
+        "Stable vital signs and haemoglobin with an iron plan.",
+        "Counselled on danger signs."
+      ],
+      "followUpPlan": "Review within one week with haemoglobin; continue therapeutic iron for three months."
+    }
+  },
+  {
+    "id": "1f8ba412-b2f0-561c-b720-dd69c91d6dcd",
+    "title": "Pre-eclampsia and eclampsia (India adaptation, Pritchard regimen)",
+    "specialty": "Obstetrics",
+    "authority": "MoHFW",
+    "status": "under_review",
+    "version": "india-adapt-a-2026-10-22-v1",
+    "lastReviewed": "2026-10-22",
+    "pillar": "Safe Birth",
+    "clinicalReviewStatus": "pending",
+    "evidenceAudit": {
+      "checkedOn": "2026-10-22",
+      "status": "incomplete",
+      "scope": "Pre-eclampsia and eclampsia in India: detection, Pritchard regimen, blood pressure and delivery.",
+      "findings": [
+        "Magnesium regimen checked against the Dakshata checklist; thresholds against MoHFW ANC 2010.",
+        "Not clinically reviewed."
+      ],
+      "unverifiedSections": [
+        "No Indian source was opened for IV labetalol or hydralazine doses; the Update in Anaesthesia regimen used in Marifa's eclampsia topic is carried over.",
+        "Calcium gluconate dose is not stated in the checklist; only the 10 mL 10% ampoule to keep ready.",
+        "Laboratory reference ranges are typical; laboratories differ."
+      ],
+      "medscapeStatus": "unavailable",
+      "originalVersionIds": [
+        "1f8ba412-b2f0-561c-b720-dd69c91d6dcd"
+      ]
+    },
+    "pathophysiology": {
+      "summary": "Pre-eclampsia and eclampsia are major causes of maternal and perinatal death in India. Pre-eclampsia is a pregnancy-specific disorder that originates in the placenta. In normal pregnancy, trophoblast cells remodel the maternal spiral arteries into wide, low-resistance vessels; in pre-eclampsia this remodelling is incomplete, the placenta becomes poorly perfused and releases anti-angiogenic factors into the maternal circulation. These factors injure the maternal endothelium throughout the body, producing hypertension, protein leak through the kidney, and in severe disease damage to the brain, liver, kidneys, blood clotting and lungs. Cerebral endothelial dysfunction and loss of autoregulation can cause severe headache, visual disturbance and convulsions, which define eclampsia. Liver involvement causes epigastric pain and the HELLP syndrome, and placental insufficiency restricts fetal growth and can cause abruption and stillbirth. MoHFW defines hypertension in pregnancy as systolic 140 mmHg or more and/or diastolic 90 mmHg or more on two readings at least four hours apart, and pre-eclampsia as hypertension with proteinuria. Magnesium sulphate is the anticonvulsant of choice to prevent and treat eclamptic seizures; India uses the Pritchard regimen, a combined intravenous and intramuscular loading dose followed by intramuscular maintenance doses, because it can be given safely at primary and first referral units with simple bedside monitoring of reflexes, breathing and urine output. Where the full regimen cannot be given, the loading dose is given and the woman is referred. Severe hypertension is lowered to protect the mother, and delivery is the definitive treatment. Low-dose aspirin and calcium supplementation reduce risk in women at high risk (MoHFW antenatal guideline 2010; Dakshata MgSO4 checklist; WHO 2013).",
+      "keyMechanisms": [
+        "Incomplete spiral-artery remodelling causes placental hypoperfusion.",
+        "Anti-angiogenic factors cause widespread maternal endothelial injury.",
+        "Cerebral endothelial dysfunction causes headache, visual symptoms and eclamptic convulsions.",
+        "Magnesium sulphate prevents and treats eclamptic seizures (WHO 2013)."
+      ]
+    },
+    "presentation": {
+      "symptoms": [
+        "Often none early",
+        "Severe headache",
+        "Blurred vision",
+        "Epigastric or right upper abdominal pain",
+        "Reduced urine output",
+        "Convulsions (eclampsia)"
+      ],
+      "physicalSigns": [
+        "Systolic 140 mmHg or more and/or diastolic 90 mmHg or more on two readings 4 hours apart (MoHFW ANC 2010, p. 18)",
+        "Proteinuria (albumin 2+ or more)",
+        "Diastolic above 110 mmHg (danger sign)",
+        "Brisk reflexes",
+        "Oedema of face and hands"
+      ],
+      "redFlags": [
+        "Diastolic above 110 mmHg with strongly positive albumin: refer immediately to a first referral unit (MoHFW ANC 2010, p. 18)",
+        "Convulsions",
+        "Severe headache, blurred vision or epigastric pain",
+        "Absent knee jerk, respiratory rate below 16/min or urine below 100 mL in 4 hours on magnesium (stop the next dose) (Dakshata checklist)",
+        "Reduced fetal movements or vaginal bleeding (abruption)"
+      ],
+      "precipitants": [
+        "First pregnancy",
+        "Previous pre-eclampsia",
+        "Multiple pregnancy",
+        "Chronic hypertension, diabetes or kidney disease",
+        "Obesity and maternal age over 35"
+      ]
+    },
+    "differentials": [
+      {
+        "condition": "Epilepsy",
+        "distinguishingFeatures": "Known seizure disorder; no hypertension or proteinuria."
+      },
+      {
+        "condition": "Chronic hypertension",
+        "distinguishingFeatures": "Raised pressure before 20 weeks without proteinuria."
+      },
+      {
+        "condition": "Cerebral venous thrombosis or stroke",
+        "distinguishingFeatures": "Focal neurology, persistent headache; imaging needed."
+      }
+    ],
+    "diagnosticCriteria": [
+      {
+        "criterion": "Hypertension in pregnancy",
+        "threshold": "Systolic 140 mmHg or more and/or diastolic 90 mmHg or more on two readings at least 4 hours apart (MoHFW ANC 2010, p. 18)."
+      },
+      {
+        "criterion": "Pre-eclampsia",
+        "threshold": "Hypertension with proteinuria (albumin 2+); eclampsia when convulsions occur (Dakshata checklist; MoHFW ANC 2010, p. 18)."
+      }
+    ],
+    "investigations": {
+      "ruleIn": [
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "Blood pressure (two readings 4 hours apart)",
+          "modalityTarget": "Sphygmomanometer",
+          "targetCondition": "Hypertension in pregnancy",
+          "normalValue": "Below 140/90 mmHg",
+          "expectedFinding": "140/90 mmHg or higher; diastolic above 110 is a danger sign",
+          "clinicalRationale": "Defines hypertension and urgency (MoHFW ANC 2010, p. 18).",
+          "references": [
+            {
+              "title": "Guidelines for Antenatal Care and Skilled Attendance at Birth by ANMs/LHVs/SNs (MoHFW)",
+              "edition": "MoHFW Maternal Health Division, April 2010, p. 18",
+              "url": "https://nhmodisha.gov.in/writereaddata/Upload/Guidelines/Guidelines%20for%20ANC%20and%20SAB%20by%20ANMs,LHVs,SNs.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Urine albumin (dipstick)",
+          "modalityTarget": "Urine protein",
+          "targetCondition": "Pre-eclampsia",
+          "normalValue": "Negative or trace",
+          "expectedFinding": "2+ or more",
+          "clinicalRationale": "Albumin 2+ with hypertension classifies pre-eclampsia (MoHFW ANC 2010, p. 18).",
+          "references": [
+            {
+              "title": "Guidelines for Antenatal Care and Skilled Attendance at Birth by ANMs/LHVs/SNs (MoHFW)",
+              "edition": "MoHFW Maternal Health Division, April 2010, p. 18",
+              "url": "https://nhmodisha.gov.in/writereaddata/Upload/Guidelines/Guidelines%20for%20ANC%20and%20SAB%20by%20ANMs,LHVs,SNs.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "Patellar reflex, respiratory rate and urine output (before each magnesium dose)",
+          "modalityTarget": "Bedside magnesium monitoring",
+          "targetCondition": "Magnesium toxicity",
+          "normalValue": "Reflex present; respiratory rate 16/min or more; urine 100 mL or more in 4 hours",
+          "expectedFinding": "Absent reflex, respiratory rate below 16 or urine below 100 mL in 4 hours",
+          "clinicalRationale": "Withhold the next dose if any is present (Dakshata checklist).",
+          "references": [
+            {
+              "title": "Checklist for Administering Inj. MgSO4 for Initial Management of Eclampsia (Dakshata, MoHFW)",
+              "edition": "MoHFW Dakshata training checklist, section Pre-dose checks",
+              "url": "https://www.nhm.gov.in/images/pdf/in-focus/Dakshata/Day-1/Checklist_for_Administrating_Inj.MgSO4.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Platelet count, liver enzymes and creatinine",
+          "modalityTarget": "Blood tests",
+          "targetCondition": "HELLP syndrome and organ involvement",
+          "normalValue": "Platelets 150–400 × 10⁹/L; ALT below about 40 IU/L; creatinine 45–90 µmol/L in pregnancy",
+          "expectedFinding": "Low platelets, raised ALT or creatinine",
+          "clinicalRationale": "Indicates severe disease needing delivery planning.",
+          "references": [
+            {
+              "title": "WHO Recommendations for Prevention and Treatment of Pre-eclampsia and Eclampsia: Implications and Actions",
+              "edition": "WHO/MCHIP 2013, section Severe pre-eclampsia",
+              "url": "https://medbox.org/dl/5f4f756a45d1a94b581659f6"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Haemoglobin",
+          "modalityTarget": "Complete blood count",
+          "targetCondition": "Anaemia",
+          "normalValue": "11 g/dL or more",
+          "expectedFinding": "Below 11 g/dL",
+          "clinicalRationale": "Anaemia increases risk from haemorrhage (MoHFW ANC 2010, p. 25).",
+          "references": [
+            {
+              "title": "Guidelines for Antenatal Care and Skilled Attendance at Birth by ANMs/LHVs/SNs (MoHFW)",
+              "edition": "MoHFW Maternal Health Division, April 2010, p. 25",
+              "url": "https://nhmodisha.gov.in/writereaddata/Upload/Guidelines/Guidelines%20for%20ANC%20and%20SAB%20by%20ANMs,LHVs,SNs.pdf"
+            }
+          ]
+        }
+      ],
+      "ruleOut": [
+        {
+          "tier": "firstLineImaging",
+          "testName": "Obstetric ultrasound with fetal assessment",
+          "modalityTarget": "Ultrasound and fetal heart monitoring",
+          "targetCondition": "Fetal growth restriction or abruption",
+          "normalValue": "Normal growth and liquor",
+          "expectedFinding": "Growth restriction, reduced liquor or abruption",
+          "clinicalRationale": "Guides timing of delivery.",
+          "references": [
+            {
+              "title": "WHO Recommendations for Prevention and Treatment of Pre-eclampsia and Eclampsia: Implications and Actions",
+              "edition": "WHO/MCHIP 2013, section Delivery",
+              "url": "https://medbox.org/dl/5f4f756a45d1a94b581659f6"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Blood glucose",
+          "modalityTarget": "Capillary glucose",
+          "targetCondition": "Hypoglycaemia as a cause of seizures",
+          "normalValue": "3.9–7.8 mmol/L",
+          "expectedFinding": "Below 3.9 mmol/L",
+          "clinicalRationale": "Excludes hypoglycaemic seizures.",
+          "references": [
+            {
+              "title": "WHO Recommendations for Prevention and Treatment of Pre-eclampsia and Eclampsia: Implications and Actions",
+              "edition": "WHO/MCHIP 2013, section Eclampsia",
+              "url": "https://medbox.org/dl/5f4f756a45d1a94b581659f6"
+            }
+          ]
+        }
+      ]
+    },
+    "clinicalManagement": [
+      {
+        "id": "detect-and-refer",
+        "title": "Detect and refer",
+        "timeframe": "At every antenatal visit",
+        "actions": [
+          "Measure blood pressure and test urine for albumin at every visit (MoHFW ANC 2010, p. 18).",
+          "Low-dose aspirin 75 mg for high-risk women and calcium where dietary intake is low (WHO 2013)."
+        ],
+        "branches": [
+          {
+            "condition": "Albumin 2+ with hypertension",
+            "actions": [
+              "Classify as pre-eclampsia and refer to the medical officer immediately (MoHFW ANC 2010, p. 18)."
+            ]
+          },
+          {
+            "condition": "Diastolic above 110 with 3+ proteinuria and symptoms at a sub-centre",
+            "actions": [
+              "Give magnesium sulphate 5 g deep IM in each buttock and refer urgently (MoHFW ANC 2010, p. 37)."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "magnesium",
+        "title": "Magnesium sulphate — Pritchard regimen",
+        "timeframe": "At diagnosis of severe pre-eclampsia or eclampsia",
+        "actions": [
+          "Loading: 4 g of 20% solution IV slowly over 5 minutes, plus 5 g of 50% solution deep IM in each buttock with 1 mL 2% lignocaine (Dakshata checklist).",
+          "Maintenance: 5 g deep IM every 4 hours in alternate buttocks, until 24 hours after delivery or the last convulsion, whichever is later (Dakshata checklist).",
+          "Before each dose, check the knee jerk, respiratory rate and urine output; keep 10% calcium gluconate 10 mL ready as antidote (Dakshata checklist)."
+        ],
+        "branches": [
+          {
+            "condition": "Recurrent convulsion",
+            "actions": [
+              "Give 2 g of 20% solution IV slowly over 5 minutes (Dakshata checklist)."
+            ]
+          },
+          {
+            "condition": "Full regimen not possible",
+            "actions": [
+              "Give the loading dose and transfer immediately (WHO 2013)."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "blood-pressure",
+        "title": "Control severe hypertension",
+        "timeframe": "Within the first hour",
+        "actions": [
+          "Lower blood pressure of 160/110 mmHg or above with IV labetalol or hydralazine (Update in Anaesthesia, p. 52).",
+          "Monitor blood pressure every 15–30 minutes until below 160/110 mmHg."
+        ]
+      },
+      {
+        "id": "deliver",
+        "title": "Plan delivery",
+        "timeframe": "After stabilisation",
+        "actions": [
+          "Delivery is the definitive treatment; expedite for severe pre-eclampsia at term or remote from term (WHO 2013).",
+          "Continue antihypertensives postpartum if treated in pregnancy or for severe postpartum hypertension (WHO 2013)."
+        ]
+      }
+    ],
+    "medicationPlan": {
+      "status": "source-verified",
+      "branches": [
+        {
+          "label": "Severe pre-eclampsia or eclampsia — seizure prophylaxis and treatment",
+          "entryCriteria": "Severe pre-eclampsia or any eclamptic convulsion"
+        },
+        {
+          "label": "Severe hypertension",
+          "entryCriteria": "Blood pressure 160/110 mmHg or higher in pregnancy or postpartum"
+        },
+        {
+          "label": "Prevention in high-risk women",
+          "entryCriteria": "High risk of pre-eclampsia at antenatal booking"
+        }
+      ],
+      "regimens": [
+        {
+          "indication": "Severe pre-eclampsia or eclampsia",
+          "patientGroup": "Pregnant or postpartum women",
+          "genericName": "Magnesium sulphate (Pritchard regimen)",
+          "dose": "Loading 4 g IV (20%) over 5 minutes plus 5 g IM (50%) in each buttock; maintenance 5 g IM every 4 hours; recurrent fit 2 g IV",
+          "route": "IV and deep IM (with 1 mL 2% lignocaine for IM doses)",
+          "frequency": "Every 4 hours (maintenance)",
+          "duration": "Until 24 hours after delivery or the last convulsion",
+          "adjustments": [
+            "Paediatric: Not applicable — maternity topic; neonatal care follows the neonatal pathway.",
+            "Penicillin allergy: Not an antibiotic — penicillin allergy does not affect this medicine.",
+            "CKD: Withhold the next dose if urine output is below 100 mL in 4 hours; magnesium accumulates in kidney impairment (Dakshata checklist).",
+            "CLD: No dose change."
+          ],
+          "monitoring": [
+            "Knee jerk, respiratory rate (16/min or more) and urine output before every dose",
+            "Calcium gluconate 10% 10 mL at the bedside"
+          ],
+          "contraindications": [
+            "Absent knee jerk",
+            "Respiratory rate below 16/min",
+            "Urine below 100 mL in 4 hours"
+          ],
+          "branch": "Severe pre-eclampsia or eclampsia — seizure prophylaxis and treatment",
+          "step": "Anticonvulsant",
+          "selection": "all",
+          "sourceTitle": "Checklist for Administering Inj. MgSO4 for Initial Management of Eclampsia (Dakshata, MoHFW)",
+          "sourceUrl": "https://www.nhm.gov.in/images/pdf/in-focus/Dakshata/Day-1/Checklist_for_Administrating_Inj.MgSO4.pdf",
+          "sourceEdition": "MoHFW Dakshata training checklist, section Loading and Maintenance dose"
+        },
+        {
+          "indication": "Severe hypertension in pregnancy",
+          "patientGroup": "Pregnant or postpartum women",
+          "genericName": "Labetalol",
+          "dose": "25 mg bolus over at least 1 minute, repeated every 15 minutes to 200 mg; infusion 20 mg/h doubling every 30 minutes to 160 mg/h",
+          "route": "IV",
+          "frequency": "Bolus repeats then infusion",
+          "duration": "Until blood pressure controlled",
+          "adjustments": [
+            "Paediatric: Not applicable — maternity topic; neonatal care follows the neonatal pathway.",
+            "Penicillin allergy: Not an antibiotic — penicillin allergy does not affect this medicine.",
+            "CKD: No dose change; titrate to blood pressure.",
+            "CLD: Use with caution in hepatic impairment (product label)."
+          ],
+          "monitoring": [
+            "Blood pressure every 15–30 minutes",
+            "Maternal heart rate"
+          ],
+          "contraindications": [
+            "Asthma",
+            "Heart block"
+          ],
+          "branch": "Severe hypertension",
+          "step": "Antihypertensive",
+          "selection": "one-of",
+          "sourceTitle": "Management of severe pre-eclampsia and eclampsia (Update in Anaesthesia)",
+          "sourceUrl": "https://e-safe-anaesthesia.org/e_library/13/Management_of_severe_pre-eclampsia_and_eclampsia_Update_2009.pdf",
+          "sourceEdition": "Update in Anaesthesia, p. 52",
+          "preferred": true
+        },
+        {
+          "indication": "Severe hypertension when labetalol is unsuitable",
+          "patientGroup": "Pregnant or postpartum women",
+          "genericName": "Hydralazine",
+          "dose": "5 mg bolus over 15 minutes, repeat 5 mg after 20 minutes if diastolic above 100; infusion 5 mg/h, usual 2–3 mg/h, maximum 18 mg/h",
+          "route": "IV",
+          "frequency": "Bolus then infusion",
+          "duration": "Until blood pressure controlled",
+          "adjustments": [
+            "Paediatric: Not applicable — maternity topic; neonatal care follows the neonatal pathway.",
+            "Penicillin allergy: Not an antibiotic — penicillin allergy does not affect this medicine.",
+            "CKD: No dose change; titrate to blood pressure.",
+            "CLD: No standard dose change."
+          ],
+          "monitoring": [
+            "Blood pressure every 15–30 minutes",
+            "Maternal heart rate (reduce above 130/min)"
+          ],
+          "contraindications": [
+            "Tachycardia above 130/min"
+          ],
+          "branch": "Severe hypertension",
+          "step": "Antihypertensive",
+          "selection": "one-of",
+          "sourceTitle": "Management of severe pre-eclampsia and eclampsia (Update in Anaesthesia)",
+          "sourceUrl": "https://e-safe-anaesthesia.org/e_library/13/Management_of_severe_pre-eclampsia_and_eclampsia_Update_2009.pdf",
+          "sourceEdition": "Update in Anaesthesia, p. 52",
+          "preferred": false,
+          "useWhen": "Labetalol unsuitable (for example asthma)"
+        },
+        {
+          "indication": "Prevention of pre-eclampsia",
+          "patientGroup": "High-risk pregnant women",
+          "genericName": "Aspirin (low dose)",
+          "dose": "75 mg",
+          "route": "Oral",
+          "frequency": "Once daily",
+          "duration": "During pregnancy as prescribed",
+          "adjustments": [
+            "Paediatric: Not applicable — maternity topic; neonatal care follows the neonatal pathway.",
+            "Penicillin allergy: Not an antibiotic — penicillin allergy does not affect this medicine.",
+            "CKD: No dose change at 75 mg.",
+            "CLD: Avoid in severe hepatic impairment."
+          ],
+          "monitoring": [
+            "Bleeding"
+          ],
+          "contraindications": [
+            "Active peptic ulcer",
+            "Aspirin allergy"
+          ],
+          "branch": "Prevention in high-risk women",
+          "step": "Antiplatelet",
+          "selection": "all",
+          "sourceTitle": "WHO Recommendations for Prevention and Treatment of Pre-eclampsia and Eclampsia: Implications and Actions",
+          "sourceUrl": "https://medbox.org/dl/5f4f756a45d1a94b581659f6",
+          "sourceEdition": "WHO/MCHIP 2013, section Prevention"
+        }
+      ],
+      "note": "Pritchard regimen from the MoHFW Dakshata MgSO4 checklist; thresholds from MoHFW antenatal guideline 2010; prevention from WHO 2013; IV antihypertensive doses from Update in Anaesthesia (as in Marifa's eclampsia topic). India-only topic; the Saudi and NICE topics are unchanged. Not clinically reviewed."
+    },
+    "teaching": {
+      "scope": "Pre-eclampsia and eclampsia in India.",
+      "learningObjectives": [
+        "Diagnose pre-eclampsia using MoHFW thresholds.",
+        "Give the Pritchard regimen safely with bedside monitoring.",
+        "Control severe hypertension and plan delivery."
+      ],
+      "keyPoints": [
+        "Two readings 4 hours apart define hypertension in pregnancy.",
+        "Pritchard: 4 g IV plus 5 g IM each buttock, then 5 g IM 4-hourly.",
+        "Check knee jerk, breathing and urine before every dose."
+      ],
+      "pitfalls": [
+        "Delaying magnesium while awaiting transfer.",
+        "Giving the next dose with absent reflexes.",
+        "Forgetting postpartum eclampsia risk."
+      ],
+      "references": [
+        {
+          "title": "Checklist for Administering Inj. MgSO4 for Initial Management of Eclampsia (Dakshata, MoHFW)",
+          "edition": "MoHFW Dakshata training checklist",
+          "url": "https://www.nhm.gov.in/images/pdf/in-focus/Dakshata/Day-1/Checklist_for_Administrating_Inj.MgSO4.pdf",
+          "locator": "Sections Loading dose, Maintenance dose, Pre-dose checks"
+        },
+        {
+          "title": "Guidelines for Antenatal Care and Skilled Attendance at Birth by ANMs/LHVs/SNs (MoHFW)",
+          "edition": "MoHFW Maternal Health Division, April 2010",
+          "url": "https://nhmodisha.gov.in/writereaddata/Upload/Guidelines/Guidelines%20for%20ANC%20and%20SAB%20by%20ANMs,LHVs,SNs.pdf",
+          "locator": "Pages 18, 25, 29, 37"
+        },
+        {
+          "title": "WHO Recommendations for Prevention and Treatment of Pre-eclampsia and Eclampsia: Implications and Actions",
+          "edition": "WHO/MCHIP 2013",
+          "url": "https://medbox.org/dl/5f4f756a45d1a94b581659f6",
+          "locator": "Sections Prevention, Magnesium sulphate, Delivery"
+        }
+      ]
+    },
+    "nonClinicalManagement": {
+      "patientEducation": [
+        "Attend every antenatal visit for blood pressure and urine checks.",
+        "Come at once with headache, blurred vision, upper abdominal pain or fits.",
+        "Take aspirin and calcium if prescribed."
+      ],
+      "lifestyleAndDiet": [
+        "Adequate dietary calcium.",
+        "Rest as advised; do not stop antihypertensives without advice."
+      ],
+      "mdtReferrals": [
+        "Obstetrician at a first referral unit",
+        "Anaesthesia and intensive care for eclampsia or HELLP",
+        "Neonatology for preterm birth"
+      ],
+      "dischargeCriteria": [
+        "At least 24 hours after delivery or last convulsion without seizures.",
+        "Blood pressure controlled on an oral plan.",
+        "Normal or improving laboratory results."
+      ],
+      "followUpPlan": "Blood pressure review within one week of discharge and at 6 weeks postpartum; counsel on risk in future pregnancies."
+    }
+  }
+]
