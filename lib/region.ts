@@ -15,10 +15,10 @@ export type RegionOption = {
   accent: string;
 };
 
+/** Selectable platforms. UK profiles remain in the data but are not offered. */
 export const REGIONS: readonly RegionOption[] = [
   { code: "SA", flag: "🇸🇦", name: "Saudi Arabia", authority: "SFDA/MOH", accent: "Emerald" },
   { code: "IN", flag: "🇮🇳", name: "India", authority: "ICMR/MoHFW", accent: "Indigo" },
-  { code: "UK", flag: "🇬🇧", name: "UK", authority: "NICE", accent: "NHS blue" },
 ] as const;
 
 export function parseRegion(value: unknown): CountryCode | null {

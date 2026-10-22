@@ -13,8 +13,9 @@ function loadTopic() {
 
 describe("region resolution", () => {
   it("prefers the URL parameter, then the cookie, then Saudi Arabia", () => {
-    expect(resolveRegion("IN", "UK")).toBe("IN");
-    expect(resolveRegion(undefined, "uk")).toBe("UK");
+    expect(resolveRegion("IN", "SA")).toBe("IN");
+    expect(resolveRegion(undefined, "in")).toBe("IN");
+    expect(resolveRegion("UK", undefined)).toBe("SA");
     expect(resolveRegion("XX", "nope")).toBe("SA");
     expect(parseRegion(["in"])).toBe("IN");
   });
@@ -58,13 +59,5 @@ describe("RegionalTopicView", () => {
     expect(notes).toHaveLength(1);
     expect(notes[0]).toHaveTextContent("Step down to oral therapy once sensitivity known.");
     expect(screen.getByText("None recorded for this region.")).toBeInTheDocument();
-  });
-
-  it("UK: keeps universal content and shows an empty regional state", () => {
-    render(<RegionalTopicView topic={loadTopic()} region="UK" />);
-    expect(screen.getByText("Systemic infection caused by Salmonella enterica serotype Typhi.")).toBeInTheDocument();
-    expect(screen.getByText("No UK profile for this topic yet")).toBeInTheDocument();
-    expect(screen.queryByTestId("consensus-badge")).not.toBeInTheDocument();
-    expect(screen.queryByText("Azithromycin")).not.toBeInTheDocument();
   });
 });

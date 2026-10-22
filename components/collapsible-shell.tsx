@@ -32,10 +32,10 @@ function subscribe(onChange: () => void) {
   };
 }
 
-export function CollapsibleShell({ children, primaryColor }: { children: React.ReactNode; primaryColor: string }) {
+export function CollapsibleShell({ children, primaryColor, region }: { children: React.ReactNode; primaryColor: string; region?: string }) {
   const collapsed = useSyncExternalStore(subscribe, readCollapsed, () => false);
   return (
-    <div className={`app-shell${collapsed ? " sidebar-collapsed" : ""}`} style={{ "--royal": primaryColor } as React.CSSProperties}>
+    <div className={`app-shell${collapsed ? " sidebar-collapsed" : ""}`} data-region={region} style={{ "--royal": primaryColor } as React.CSSProperties}>
       <button type="button" className="sidebar-toggle" aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"} title={collapsed ? "Expand sidebar" : "Collapse sidebar"} aria-expanded={!collapsed} aria-controls="workspace-sidebar" onClick={() => writeCollapsed(!collapsed)}>
         {collapsed ? <PanelLeftOpen size={17} aria-hidden="true" /> : <PanelLeftClose size={17} aria-hidden="true" />}
       </button>

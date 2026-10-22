@@ -13,6 +13,7 @@ const allBatchPaths = [
   "data/seeds/batch_05_topic_list_drafts.json",
   "data/seeds/batch_06_topic_list_drafts.json",
   "data/seeds/batch_08_india_regional.json",
+  "data/seeds/batch_09_india_toxicology.json",
 ] as const;
 const selectedBatch = process.argv.find((argument) => argument.startsWith("--batch="))?.slice("--batch=".length);
 const batchPaths = selectedBatch
@@ -30,12 +31,18 @@ type SourceMetadata = {
   sourceTitle: string;
   sourceUrl: string;
   publicationDate: string;
-  sourceType: "official-saudi-guideline" | "official-indian-guideline" | "curated-saudi-draft" | "curated-saudi-guideline" | "curated-textbook-topic" | "nice-adapted-guideline";
+  sourceType: "official-saudi-guideline" | "official-indian-guideline" | "curated-indian-draft" | "curated-saudi-draft" | "curated-saudi-guideline" | "curated-textbook-topic" | "nice-adapted-guideline";
   approval?: { approvedBy: string; approvedAt: string; publishedAt?: string };
   systemSeededNationalBaseline?: boolean;
 };
 
 const sourceMetadata: Record<string, SourceMetadata> = {
+  "3a176976-1923-4ce0-9514-ebec094db189": { sourceTitle: "Standard Treatment Guidelines: Management of Snake Bite (MoHFW, 2017)", sourceUrl: "https://ncdc.mohfw.gov.in/uploads/pdf/Standard-Treatment-Guidelines-for-Management-of-Snake-Bite.pdf", publicationDate: "2017-08-01", sourceType: "official-indian-guideline" },
+  "4c8b1959-b2a1-4d6b-9dbd-a36d97dae335": { sourceTitle: "NCDC expert group on National Guidelines on Rabies Prophylaxis (2019); CDSCO rabies vaccine SmPC", sourceUrl: "https://rabiesfreeindia.mohfw.gov.in/resources/uploads/PageContentPdf/170687215557.pdf", publicationDate: "2019-01-08", sourceType: "official-indian-guideline" },
+  "5b9bff76-d967-4510-b8f9-96a3a69789de": { sourceTitle: "Scorpion envenoming: Indian randomised trials (Systematic Reviews 2017, Table 2)", sourceUrl: "https://systematicreviewsjournal.biomedcentral.com/articles/10.1186/s13643-017-0469-8/tables/2", publicationDate: "2017-04-01", sourceType: "curated-indian-draft" },
+  "a0f31154-5cd6-4a93-9754-997975f77089": { sourceTitle: "Organophosphorus Poisoning review (JNMA 2008); ISCCM poisoning position statement (2024)", sourceUrl: "https://www.ijccm.org/doi/pdf/10.5005/jp-journals-10071-24697", publicationDate: "2024-08-01", sourceType: "curated-indian-draft" },
+  "e53b2070-82ba-4941-baa5-9faa430bbc7f": { sourceTitle: "Aluminium phosphide evidence-based review (IJCCM 2016); ISCCM poisoning position statement (2024)", sourceUrl: "https://www.ijccm.org/doi/IJCCM/pdf/10.4103/0972-5229.195712", publicationDate: "2016-12-01", sourceType: "curated-indian-draft" },
+  "c93d0d1a-daf3-4395-81ea-90b5e1bdc718": { sourceTitle: "Canadian Antidote Guide (ethanol); Austin fomepizole guideline (2026); toxic alcohol resource (2025)", sourceUrl: "https://www.ciusss-capitalenationale.gouv.qc.ca/en/antidotes/ethanol", publicationDate: "2026-02-10", sourceType: "curated-indian-draft" },
   "3f6c2a91-7d4e-4b8a-9c15-e2a7b04d6f13": { sourceTitle: "ICMR Treatment Guidelines for Antimicrobial Use in Common Syndromes (2019); IAP Standard Treatment Guidelines: Enteric Fever (2022)", sourceUrl: "https://www.icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/Treatment_Guidelines_2019_Final.pdf", publicationDate: "2019-01-01", sourceType: "official-indian-guideline" },
   "8b1e5d07-2c9f-4a63-b7e4-51d0c8a9f2e6": { sourceTitle: "National Drug Policy on Malaria (NVBDCP/MoHFW, 2013)", sourceUrl: "https://ncvbdc.mohfw.gov.in/WriteReadData/l892s/National-Drug-Policy-2013.pdf", publicationDate: "2013-01-01", sourceType: "official-indian-guideline" },
   "c4a9f3e2-6b18-4d75-8e2a-9f7b13c05d48": { sourceTitle: "ICMR/NTEP Standard Treatment Workflow: Tuberculosis (2022)", sourceUrl: "https://icmr.gov.in/icmrobject/uploads/STWs/1725964686_2_ntep_18032022.pdf", publicationDate: "2022-03-18", sourceType: "official-indian-guideline" },

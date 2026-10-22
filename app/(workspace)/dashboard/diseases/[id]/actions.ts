@@ -7,8 +7,8 @@ import { createSupabaseDataClient } from "@/lib/supabase/data-client";
 import { requireOrganizationAdmin } from "@/lib/admin/data";
 import { isTemporaryOpenAdminMode } from "@/lib/access-mode";
 import { DiseaseDetailSchema } from "@/lib/validations/disease";
+import { isUuid } from "@/lib/ids";
 
-const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const copied = ["guideline_id", "source_title", "issuing_organization", "source_url", "jurisdiction", "last_verified_date", "review_date", "published_at"] as const;
 
 type VersionRow = Record<string, unknown> & { id: string; version: string; status: string; content: unknown };
@@ -26,7 +26,7 @@ export async function approveLiveTopic(formData: FormData) {
   const id = String(formData.get("id") ?? "");
   const topicPath = `/dashboard/diseases/${encodeURIComponent(id)}`;
   const toApprovedList = formData.get("destination") === "approved";
-  if (!uuid.test(id)) redirect("/dashboard/diseases?error=invalid_id");
+  if (!isUuid(id)) redirect("/dashboard/diseases?error=invalid_id");
 
   const context = await requireOrganizationAdmin();
   if (!["org_admin", "hospital_admin", "platform_admin"].includes(context.roleCode)) redirect(`${topicPath}?approval=not_authorized`);
