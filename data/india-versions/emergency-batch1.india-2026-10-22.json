@@ -1,0 +1,1986 @@
+[
+  {
+    "id": "ed976070-42c4-5258-904b-aa1f05e7ac77",
+    "title": "Adult sepsis and septic shock (India)",
+    "pillar": "Urgent Care",
+    "status": "under_review",
+    "version": "india-authoring-2026-10-22-batch1-v1",
+    "authority": "ICMR",
+    "specialty": "Infectious Diseases / Internal Medicine",
+    "lastReviewed": "2026-10-22",
+    "presentation": {
+      "symptoms": [
+        "Fever or feeling abnormally cold; rigors and profound malaise.",
+        "Breathlessness, confusion or reduced urine; ask about respiratory, urinary, abdominal, skin and device symptoms."
+      ],
+      "physicalSigns": [
+        "Hypotension, tachypnoea, altered mentation, mottling or delayed capillary refill; fever may be absent.",
+        "Examine the chest, abdomen, skin, joints and indwelling devices for a source."
+      ],
+      "redFlags": [
+        "Persistent hypotension, increasing oxygen requirement, reduced consciousness or progressive organ dysfunction: request critical care immediately.",
+        "Septic shock criteria: vasopressors needed to maintain mean arterial pressure (MAP) at least 65 mmHg plus lactate above 2 mmol/L despite adequate volume resuscitation (Sepsis-3, Box 3)."
+      ],
+      "precipitants": [
+        "Pneumonia; urinary or intra-abdominal infection; infected skin, tissue or vascular devices.",
+        "Recent hospitalisation, prior resistant isolates and recent broad-spectrum treatment change empirical choices (NCDC–ICMR, section 3.4; SSC 2026, section Multidrug resistance)."
+      ]
+    },
+    "differentials": [
+      {
+        "condition": "Cardiogenic shock",
+        "distinguishingFeatures": "Cardiac dysfunction or congestion on bedside ultrasound; fluids may worsen pulmonary oedema. Assess alongside infection."
+      },
+      {
+        "condition": "Haemorrhagic or hypovolaemic shock",
+        "distinguishingFeatures": "Bleeding or fluid loss with a compatible examination; investigate and treat the cause rather than assuming infection."
+      },
+      {
+        "condition": "Pulmonary embolism",
+        "distinguishingFeatures": "Acute unexplained hypoxaemia or right-heart strain; use the pulmonary embolism pathway if suspected."
+      },
+      {
+        "condition": "Dengue or malaria with organ dysfunction",
+        "distinguishingFeatures": "Exposure and targeted testing redirect management; a positive result does not exclude bacterial co-infection."
+      },
+      {
+        "condition": "Non-infectious inflammatory illness",
+        "distinguishingFeatures": "Drug reaction, pancreatitis or another non-infectious diagnosis may explain the presentation; revisit the infection diagnosis at every review."
+      }
+    ],
+    "evidenceAudit": {
+      "checkedOn": "2026-10-22",
+      "status": "incomplete",
+      "scope": "Adults in India; six-tier source-based revision. Clinical review pending.",
+      "findings": [
+        "National Centre for Disease Control (NCDC) and Indian Council of Medical Research (ICMR): joint Version 2.0, November 2025 verified directly on the title page. World Health Organization (WHO) guidance is supplementary.",
+        "India regional topic. Indian national antimicrobial guidance takes precedence over older ICMR text. WHO AWaRe (Access, Watch, Reserve) warnings identify stewardship category, not an automatic indication. Check hospital formulary, product strength and local antibiogram. No Saudi registration claim is made for this India adaptation."
+      ],
+      "unverifiedSections": [
+        "Hospital antibiogram, stocked Indian product licences, local infusion preparation and operational referral arrangements require local clinical/pharmacy confirmation.",
+        "The proposed 48-hour antibiotic authorisation cap is an explicitly labelled Marifa governance proposal requiring clinician/pharmacy sign-off, not an endorsed national total-course limit.",
+        "Risk-triggered glycopeptide selection differs from the default NCDC undifferentiated-shock combination and is shown in guidelineComparison.",
+        "SFDA registration is outside this India scope. NLEM listing is not proof of a specific stocked brand licence."
+      ],
+      "medscapeStatus": "unavailable",
+      "originalVersionIds": [
+        "fcf70611-5576-44bd-9416-2fac7b11df16"
+      ]
+    },
+    "investigations": {
+      "ruleIn": [
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "Bedside perfusion and mental-state assessment",
+          "modalityTarget": "Bedside perfusion and mental-state assessment",
+          "targetCondition": "Bedside perfusion and mental-state assessment",
+          "normalValue": "Alert at baseline; SOFA neurologic reference is Glasgow Coma Scale (GCS) 15; assess circulation against the patient baseline.",
+          "expectedFinding": "New confusion, hypotension or impaired peripheral perfusion.",
+          "clinicalRationale": "Record trends during resuscitation; do not use a screening score alone to exclude sepsis.",
+          "references": [
+            {
+              "title": "Sepsis-3 consensus definitions",
+              "edition": "Accessed 22 October 2026, Table 1 and Box 3",
+              "url": "https://jamanetwork.com/journals/jama/fullarticle/2492881"
+            },
+            {
+              "title": "Surviving Sepsis Campaign adult guidelines",
+              "edition": "2026, Sections Screening and Capillary refill",
+              "url": "https://sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines-for-management-of-sepsis-and-septic-shock-2026"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Lactate with blood gas",
+          "modalityTarget": "Lactate with blood gas",
+          "targetCondition": "Lactate with blood gas",
+          "normalValue": "Fasting venous reference 0.5–2.2 mmol/L; assay range is not a sepsis decision threshold.",
+          "expectedFinding": "Lactate >2 mmol/L triggers repeat measurement in the Indian bundle; ≥4 mmol/L is an Indian fluid-bundle trigger.",
+          "clinicalRationale": "Repeat if initially >2 mmol/L and interpret alongside perfusion; worsening acidosis or lactate requires senior reassessment.",
+          "references": [
+            {
+              "title": "Gloucestershire Hospitals laboratory lactate reference",
+              "edition": "Accessed 22 October 2026, Section Reference ranges",
+              "url": "https://www.gloshospitals.nhs.uk/our-services/services-we-offer/pathology/tests-and-investigations/lactate-blood/"
+            },
+            {
+              "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+              "edition": "Version 2.0, November 2025, Section 3.4, printed pp. 30–31",
+              "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Blood cultures before antibiotics",
+          "modalityTarget": "Blood cultures before antibiotics",
+          "targetCondition": "Blood cultures before antibiotics",
+          "normalValue": "No pathogen growth.",
+          "expectedFinding": "Growth and susceptibility identify a target; a negative culture does not exclude sepsis.",
+          "clinicalRationale": "Take at least 2 sets before the first new antibiotic when this will not delay urgent treatment.",
+          "references": [
+            {
+              "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+              "edition": "Version 2.0, November 2025, Section 3.4, printed p. 31",
+              "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Full blood count and platelets",
+          "modalityTarget": "Full blood count and platelets",
+          "targetCondition": "Full blood count and platelets",
+          "normalValue": "Example adult reference: white cells 4.0–10.0 ×10⁹/L; platelets 150–410 ×10⁹/L; local ranges apply.",
+          "expectedFinding": "Leukocytosis or leukopenia; falling platelets may indicate evolving organ dysfunction.",
+          "clinicalRationale": "Trend with the clinical course and calculate relevant SOFA components; normal white cells do not rule out infection.",
+          "references": [
+            {
+              "title": "University Hospitals Dorset laboratory reference ranges",
+              "edition": "Accessed 22 October 2026, Section Adult Reference Ranges",
+              "url": "https://www.uhd.nhs.uk/services/pathology/haematology/test-repertoire-and-reference-ranges"
+            },
+            {
+              "title": "Sepsis-3 consensus definitions",
+              "edition": "Accessed 22 October 2026, Table 1 and Box 3",
+              "url": "https://jamanetwork.com/journals/jama/fullarticle/2492881"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Creatinine, electrolytes and urine output",
+          "modalityTarget": "Creatinine, electrolytes and urine output",
+          "targetCondition": "Creatinine, electrolytes and urine output",
+          "normalValue": "Compare creatinine and urine output with baseline; SOFA renal score 0 uses creatinine <110 µmol/L (<1.2 mg/dL), not a universal normal range.",
+          "expectedFinding": "Creatinine rises or urine output falls relative to baseline.",
+          "clinicalRationale": "Assess renal injury and electrolyte disturbance; review every renally cleared antibiotic and fluid balance.",
+          "references": [
+            {
+              "title": "Sepsis-3 consensus definitions",
+              "edition": "Accessed 22 October 2026, Table 1 and Box 3",
+              "url": "https://jamanetwork.com/journals/jama/fullarticle/2492881"
+            },
+            {
+              "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+              "edition": "Version 2.0, November 2025, Section 3.4, printed pp. 29–31",
+              "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Bilirubin and liver panel",
+          "modalityTarget": "Bilirubin and liver panel",
+          "targetCondition": "Bilirubin and liver panel",
+          "normalValue": "SOFA liver score 0: bilirubin <20 µmol/L (<1.2 mg/dL); other liver tests use the reporting laboratory range.",
+          "expectedFinding": "Bilirubin elevation or other hepatic injury.",
+          "clinicalRationale": "Assess organ dysfunction and hepatic drug cautions; examine for biliary obstruction.",
+          "references": [
+            {
+              "title": "Sepsis-3 consensus definitions",
+              "edition": "Accessed 22 October 2026, Table 1 and Box 3",
+              "url": "https://jamanetwork.com/journals/jama/fullarticle/2492881"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Coagulation profile",
+          "modalityTarget": "Coagulation profile",
+          "targetCondition": "Coagulation profile",
+          "normalValue": "Example adult reference: international normalised ratio 0.9–1.2; prothrombin time 11.6–14.6 seconds; local ranges apply.",
+          "expectedFinding": "Prolongation with thrombocytopenia can indicate consumptive coagulopathy.",
+          "clinicalRationale": "Review bleeding, invasive-procedure safety and the need for haematology input.",
+          "references": [
+            {
+              "title": "University Hospitals Dorset laboratory reference ranges",
+              "edition": "Accessed 22 October 2026, Section Adult Reference Ranges",
+              "url": "https://www.uhd.nhs.uk/services/pathology/haematology/test-repertoire-and-reference-ranges"
+            },
+            {
+              "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+              "edition": "Version 2.0, November 2025, Section 3.4 and Annexure B.3.4",
+              "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Source-directed specimens",
+          "modalityTarget": "Source-directed specimens",
+          "targetCondition": "Source-directed specimens",
+          "normalValue": "No pathogen in an appropriately collected urine, respiratory or drainage specimen.",
+          "expectedFinding": "Organism and susceptibility consistent with the clinical source.",
+          "clinicalRationale": "Collect the relevant specimen and narrow therapy when results become available; avoid treating colonisation alone.",
+          "references": [
+            {
+              "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+              "edition": "Version 2.0, November 2025, Section 3.4, printed pp. 29–30",
+              "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+            }
+          ]
+        }
+      ],
+      "ruleOut": [
+        {
+          "tier": "firstLineImaging",
+          "testName": "Chest X-ray and focused ultrasound",
+          "modalityTarget": "Chest X-ray and focused ultrasound",
+          "targetCondition": "Chest X-ray and focused ultrasound",
+          "normalValue": "No focal consolidation, collection, obstruction or major cardiac dysfunction.",
+          "expectedFinding": "Pneumonia, obstructed infected system, collection or an alternative shock pattern.",
+          "clinicalRationale": "Select imaging from examination findings; request drainage or surgical assessment when source control is needed.",
+          "references": [
+            {
+              "title": "Surviving Sepsis Campaign adult guidelines",
+              "edition": "2026, Section Source control",
+              "url": "https://sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines-for-management-of-sepsis-and-septic-shock-2026"
+            }
+          ]
+        },
+        {
+          "tier": "advancedImaging",
+          "testName": "Targeted computed tomography (CT)",
+          "modalityTarget": "Targeted computed tomography (CT)",
+          "targetCondition": "Targeted computed tomography (CT)",
+          "normalValue": "No perforation, deep collection or other actionable lesion.",
+          "expectedFinding": "A deep infective focus or alternative emergency.",
+          "clinicalRationale": "Use when it changes source control; stabilisation and antibiotics take priority over transport to imaging.",
+          "references": [
+            {
+              "title": "Surviving Sepsis Campaign adult guidelines",
+              "edition": "2026, Section Source control",
+              "url": "https://sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines-for-management-of-sepsis-and-septic-shock-2026"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Malaria and dengue testing when exposure supports it",
+          "modalityTarget": "Malaria and dengue testing when exposure supports it",
+          "targetCondition": "Malaria and dengue testing when exposure supports it",
+          "normalValue": "No parasites detected; dengue assay negative in the correct diagnostic window.",
+          "expectedFinding": "Parasitaemia or a dengue-positive assay.",
+          "clinicalRationale": "Move to the relevant India pathway; do not use a single early negative dengue test to exclude infection.",
+          "references": [
+            {
+              "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+              "edition": "Version 2.0, November 2025, Section 3.1, printed p. 26",
+              "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+            }
+          ]
+        }
+      ]
+    },
+    "medicationPlan": {
+      "status": "local-protocol-required",
+      "note": "India regional topic. Indian national antimicrobial guidance takes precedence over older ICMR text. WHO AWaRe (Access, Watch, Reserve) warnings identify stewardship category, not an automatic indication. Check hospital formulary, product strength and local antibiogram. No Saudi registration claim is made for this India adaptation. Branches are patient selections, not a list to administer together. Additional risk-triggered branches apply only when their entry condition is met. Empirical prescribing block: mandatory review and active renewal at 48 hours. No source-independent total-course maximum exists; renewal requires an organism/site-specific duration and calendar stop date. Proposed Marifa control, not a national treatment-duration rule.",
+      "branches": [
+        {
+          "label": "Community sepsis without shock",
+          "entryCriteria": "Community-onset suspected bacterial sepsis without shock and without a localised syndrome requiring a different regimen."
+        },
+        {
+          "label": "Undifferentiated septic shock",
+          "entryCriteria": "Community-onset shock without a source, or hospital-onset sepsis with high resistant Gram-negative risk; validate against local antibiogram."
+        },
+        {
+          "label": "Add-on resistant Gram-positive cover",
+          "entryCriteria": "Enter only with a resistant Gram-positive risk requiring coverage, such as a suspected vascular-device infection or previous relevant isolate; accompany the selected backbone."
+        },
+        {
+          "label": "Suspected rickettsial infection",
+          "entryCriteria": "Compatible endemic exposure and clinical suspicion; an add-on to the selected sepsis backbone, not an automatic component for all fever."
+        },
+        {
+          "label": "Hypoperfusion",
+          "entryCriteria": "Sepsis-induced hypoperfusion or septic shock requiring fluid resuscitation."
+        },
+        {
+          "label": "Persistent hypotension",
+          "entryCriteria": "Hypotension despite an initial fluid challenge, or unstable shock while fluids are being given."
+        }
+      ],
+      "regimens": [
+        {
+          "branch": "Community sepsis without shock",
+          "step": "Antibacterial backbone",
+          "selection": "all",
+          "indication": "Community sepsis without shock",
+          "patientGroup": "Adults only",
+          "genericName": "Piperacillin–tazobactam",
+          "dose": "4.5 g total (4 g/0.5 g); standard ceiling in this pathway 18 g total/day before renal reduction",
+          "route": "Intravenous infusion over 30 minutes",
+          "frequency": "Every 6 hours",
+          "duration": "Empirical prescribing block: mandatory review and active renewal at 48 hours. No source-independent total-course maximum exists; renewal requires an organism/site-specific duration and calendar stop date. Proposed Marifa control, not a national treatment-duration rule.",
+          "adjustments": [
+            "Creatinine clearance 20–40 mL/min: maximum 4.5 g every 8 hours; <20: maximum 4.5 g every 12 hours. Hepatic impairment: no dose change (SmPC section 4.2).",
+            "India NLEM 2022 section 6.2.1.13 lists 4 g/0.5 g injection. Check hospital formulary."
+          ],
+          "monitoring": [
+            "WATCH antibiotic: obtain cultures and justify broad-spectrum selection; narrow after susceptibility review.",
+            "Monitor renal function, electrolytes, blood count, allergy and diarrhoea; combined vancomycin increases renal-toxicity concern."
+          ],
+          "contraindications": [
+            "Serious penicillin/beta-lactam hypersensitivity.",
+            "Do not rely on it for confirmed ceftriaxone-resistant extended-spectrum beta-lactamase (ESBL) E. coli or Klebsiella bacteraemia (SmPC section 4.1)."
+          ],
+          "sourceTitle": "NCDC–ICMR November 2025 with explicitly named supplementary source",
+          "sourceUrl": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf",
+          "sourceEdition": "Version 2.0 November 2025, section 3.4 p. 29; piperacillin–tazobactam SmPC sections 4.1–4.4: https://www.medicines.org.uk/emc/product/102161/smpc"
+        },
+        {
+          "branch": "Undifferentiated septic shock",
+          "step": "Antibacterial backbone",
+          "selection": "all",
+          "indication": "Undifferentiated septic shock",
+          "patientGroup": "Adults only",
+          "genericName": "Meropenem",
+          "dose": "1 g; standard ceiling in this sepsis pathway 3 g/day before renal reduction",
+          "route": "Intravenous",
+          "frequency": "Every 8 hours",
+          "duration": "Empirical prescribing block: mandatory review and active renewal at 48 hours. No source-independent total-course maximum exists; renewal requires an organism/site-specific duration and calendar stop date. Proposed Marifa control, not a national treatment-duration rule.",
+          "adjustments": [
+            "Renal function >50 mL/min: stated regimen. Creatinine clearance 26–50: 1 g every 12 hours; 10–25: 500 mg every 12 hours; <10: 500 mg every 24 hours (UCSF, section Short Infusion Dosing).",
+            "Dialysis and rapidly changing renal function need pharmacy-directed dosing; use the separate dialysis table, not this non-dialysis schedule.",
+            "India NLEM 2022 section 6.2.1.14 lists injectable meropenem; confirm local stock and product instructions.",
+            "Hepatic impairment: no dose reduction, but monitor liver function (meropenem SmPC sections 4.2 and 4.4)."
+          ],
+          "monitoring": [
+            "WATCH carbapenem: record resistance risk; review cultures and narrow at 48 hours.",
+            "Monitor renal function, blood count, liver tests and seizures."
+          ],
+          "contraindications": [
+            "Serious carbapenem/beta-lactam hypersensitivity.",
+            "This is not the meningitis dose. Do not add a second broad-spectrum beta-lactam backbone.",
+            "Avoid concomitant valproate: meropenem can markedly lower exposure and undermine seizure control (SmPC sections 4.4–4.5)."
+          ],
+          "sourceTitle": "NCDC–ICMR November 2025 with explicitly named supplementary source",
+          "sourceUrl": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf",
+          "sourceEdition": "Version 2.0 November 2025, section 3.4 p. 29; UCSF section Short Infusion Dosing: https://idmp.ucsf.edu/content/meropenem; meropenem SmPC sections 4.2–4.5: https://www.medicines.org.uk/emc/product/10970/smpc"
+        },
+        {
+          "branch": "Add-on resistant Gram-positive cover",
+          "step": "Glycopeptide",
+          "selection": "all",
+          "indication": "Add-on resistant Gram-positive cover",
+          "patientGroup": "Adults only",
+          "genericName": "Vancomycin",
+          "dose": "25 mg/kg loading dose, then 15 mg/kg per maintenance dose; ≤2 g per dose; individualise to drug levels",
+          "route": "Intravenous infusion; at least 1 hour and no faster than 10 mg/min, whichever is longer",
+          "frequency": "Maintenance every 8–12 hours with normal renal function; level-guided thereafter",
+          "duration": "Empirical prescribing block: mandatory review and active renewal at 48 hours. No source-independent total-course maximum exists; renewal requires an organism/site-specific duration and calendar stop date. Proposed Marifa control, not a national treatment-duration rule.",
+          "adjustments": [
+            "Initial dose uses total body weight; renal impairment: use levels to determine subsequent doses rather than an unchanged fixed schedule (SmPC section 4.2).",
+            "Monitor on the second treatment day in stable normal renal function; unstable patients may need daily levels (SmPC section 4.2).",
+            "India NLEM 2022 section 6.2.2.13 lists injection."
+          ],
+          "monitoring": [
+            "WATCH: stop this component if resistant Gram-positive infection is not supported.",
+            "Monitor creatinine, infusion reaction, hearing symptoms and serum exposure; pharmacy sets the target for the syndrome."
+          ],
+          "contraindications": [
+            "Glycopeptide hypersensitivity.",
+            "Rapid infusion and concurrent nephrotoxic medicines increase harm."
+          ],
+          "sourceTitle": "NCDC–ICMR November 2025 with explicitly named supplementary source",
+          "sourceUrl": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf",
+          "sourceEdition": "Version 2.0 November 2025, section 3.4 pp. 29–30; SSC 2026 section Multidrug resistance; vancomycin SmPC sections 4.2–4.4: https://www.medicines.org.uk/emc/product/8760/smpc",
+          "useWhen": "Documented resistant Gram-positive risk; not routine for every low-risk patient."
+        },
+        {
+          "branch": "Suspected rickettsial infection",
+          "step": "Exposure-directed antibiotic",
+          "selection": "all",
+          "indication": "Suspected rickettsial infection",
+          "patientGroup": "Adults only",
+          "genericName": "Doxycycline",
+          "dose": "100 mg per dose; maximum in this pathway 200 mg/day",
+          "route": "Intravenous when oral administration is unreliable; change to oral when suitable",
+          "frequency": "Every 12 hours",
+          "duration": "Review empirical need at 48 hours. If uncomplicated rickettsial infection is established, 7 days total (ICMR 2022, table Rickettsial infections); complicated organ disease uses its dedicated specialist pathway and a new source-based stop date.",
+          "adjustments": [
+            "No routine renal reduction; use caution in hepatic impairment (SmPC section 4.4).",
+            "Oral doses: swallow upright with water and separate from antacids/iron (SmPC).",
+            "India NLEM 2022 section 6.2.2.7 lists capsule and injection; verify stocked intravenous formulation."
+          ],
+          "monitoring": [
+            "ACCESS antibiotic; do not interpret the category as permission for routine empirical treatment.",
+            "Review exposure, tests, temperature, hepatic tolerance and oral-route safety."
+          ],
+          "contraindications": [
+            "Tetracycline hypersensitivity; pregnancy requires an obstetric/infection specialist regimen."
+          ],
+          "sourceTitle": "NCDC–ICMR November 2025 with explicitly named supplementary source",
+          "sourceUrl": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf",
+          "sourceEdition": "Version 2.0 November 2025, section 3.4 p. 29; ICMR 2022 table Rickettsial infections: https://amrtg.icmr.org.in/chapter2-management-table1.html; doxycycline SmPC section 4.4: https://www.medicines.org.uk/emc/product/13082/smpc"
+        },
+        {
+          "branch": "Hypoperfusion",
+          "step": "Initial fluid",
+          "selection": "all",
+          "indication": "Hypoperfusion",
+          "patientGroup": "Adults only",
+          "genericName": "Balanced crystalloid",
+          "dose": "At least 30 mL/kg suggested initial total, individualised and reassessed",
+          "route": "Intravenous",
+          "frequency": "Boluses with reassessment after each",
+          "duration": "First 3 hours; no automatic further volume once this initial plan is completed",
+          "adjustments": [
+            "Use dynamic response, congestion and comorbidity to individualise volume.",
+            "In traumatic brain injury use 0.9% sodium chloride instead under the critical-care pathway (SSC 2026, section Fluid type)."
+          ],
+          "monitoring": [
+            "Perfusion, lung congestion, lactate trend, mental state and urine output."
+          ],
+          "contraindications": [
+            "Stop additional boluses when fluid intolerance develops; avoid unmonitored volume loading."
+          ],
+          "sourceTitle": "NCDC–ICMR November 2025 with explicitly named supplementary source",
+          "sourceUrl": "https://sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines-for-management-of-sepsis-and-septic-shock-2026",
+          "sourceEdition": "SSC 2026, sections Fluid resuscitation, Fluid type and Resuscitation"
+        },
+        {
+          "branch": "Persistent hypotension",
+          "step": "Vasopressor",
+          "selection": "all",
+          "indication": "Persistent hypotension",
+          "patientGroup": "Adults only",
+          "genericName": "Noradrenaline",
+          "dose": "Start within 0.05–0.15 microgram/kg/min expressed as noradrenaline base; titrate to the agreed MAP target",
+          "route": "Continuous intravenous infusion by pump",
+          "frequency": "Continuous; titrate to response",
+          "duration": "Until perfusion is stable without support; taper rather than abruptly stop. Refer escalating needs to critical care.",
+          "adjustments": [
+            "Product label maintenance range 0.05–1.5 microgram/kg/min; this is not a target or permission to escalate without senior review (SmPC section 4.2).",
+            "Confirm base-versus-salt strength and local pump concentration. NLEM injection strength cannot be assumed to match the ready-made UK solution.",
+            "Renal/hepatic dosing data are limited; titrate clinically."
+          ],
+          "monitoring": [
+            "Continuous haemodynamics and infusion-site checks; detect extravasation, arrhythmia and peripheral ischaemia."
+          ],
+          "contraindications": [
+            "Do not use as a substitute for correcting hypovolaemia.",
+            "Product-specific peripheral use requires local governance; do not infuse concentrated stock undiluted."
+          ],
+          "sourceTitle": "NCDC–ICMR November 2025 with explicitly named supplementary source",
+          "sourceUrl": "https://www.medicines.org.uk/emc/product/102170/smpc",
+          "sourceEdition": "SmPC sections 4.2–4.4; SSC 2026 sections Vasopressors, Vasopressor administration and Mean arterial pressure"
+        }
+      ]
+    },
+    "pathophysiology": {
+      "summary": "Sepsis is infection-associated organ dysfunction; septic shock adds persistent circulatory and metabolic failure (Sepsis-3, Box 3). Supportive care uses the Surviving Sepsis Campaign (SSC) 2026 update.",
+      "keyMechanisms": [
+        "An uncontrolled host response to infection injures organs beyond the initial site (Sepsis-3, Box 3).",
+        "Vasodilation and altered microcirculation impair tissue perfusion; resuscitation must balance perfusion against fluid overload (SSC 2026, section Resuscitation).",
+        "A rise in Sequential Organ Failure Assessment (SOFA) score of at least 2 supports infection-related organ dysfunction; it is not a prerequisite for treatment (Sepsis-3, Box 3).",
+        "Raised lactate needs clinical interpretation: it supports risk assessment but does not independently prove infection (SSC 2026, section Serial lactate)."
+      ],
+      "references": [
+        {
+          "title": "Sepsis-3 consensus definitions",
+          "edition": "Accessed 22 October 2026, Table 1 and Box 3",
+          "url": "https://jamanetwork.com/journals/jama/fullarticle/2492881"
+        },
+        {
+          "title": "Surviving Sepsis Campaign adult guidelines",
+          "edition": "2026, Sections Resuscitation and Serial lactate",
+          "url": "https://sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines-for-management-of-sepsis-and-septic-shock-2026"
+        }
+      ]
+    },
+    "clinicalScenario": "Fictitious teaching case: an adult with fever and new confusion arrives hypotensive after recent antibiotic exposure. Assess infection likelihood, perfusion and an anatomical source while obtaining cultures; do not wait for a score or microbiology result to treat shock.",
+    "clinicalManagement": [
+      {
+        "id": "recognise",
+        "title": "Recognise, stabilise and classify infection likelihood",
+        "timeframe": "Immediately",
+        "actions": [
+          "Assess airway, breathing and circulation; provide monitored care and call the senior clinician. Record the recognition time.",
+          "Request intensive care unit (ICU) support for shock, impaired airway protection or worsening respiratory/organ failure. Do not wait for the SOFA calculation (SSC 2026, sections Fluid resuscitation and ICU admission)."
+        ],
+        "branches": [
+          {
+            "condition": "Shock or probable/definite sepsis",
+            "actions": [
+              "Give appropriate antimicrobials immediately, ideally within 1 hour; obtain cultures without delaying therapy (SSC 2026, section Antibiotic initiation)."
+            ]
+          },
+          {
+            "condition": "Possible sepsis without shock",
+            "actions": [
+              "Investigate rapidly; if infection concern persists, administer antimicrobials within 3 hours of first suspicion (SSC 2026, section Antibiotic initiation)."
+            ]
+          },
+          {
+            "condition": "Low likelihood of infection without shock",
+            "actions": [
+              "Withhold antibiotics while continuing reassessment and investigating alternatives (SSC 2026, section Antibiotic initiation)."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "restore-perfusion",
+        "title": "Restore perfusion with reassessment",
+        "timeframe": "Initial resuscitation; first 3 hours",
+        "actions": [
+          "For sepsis-induced hypoperfusion or shock, SSC 2026 suggests at least 30 mL/kg intravenous crystalloid in the first 3 hours, individualised to clinical context. Prefer balanced crystalloid; reassess after each bolus and stop further boluses if congestion or lack of responsiveness develops (SSC 2026, sections Fluid resuscitation and Fluid type).",
+          "Use a passive-leg-raise or measured response to a fluid challenge where available, alongside capillary refill, lactate, mental state and urine output (SSC 2026, section Resuscitation).",
+          "Start noradrenaline for persistent hypotension; unstable shock may need vasopressors alongside fluids. Initial MAP target 65 mmHg; for adults ≥65 years, SSC 2026 suggests 60–65 mmHg, individualised by the critical-care clinician (SSC 2026, sections Fluid resuscitation and Mean arterial pressure).",
+          "Do not delay a necessary vasopressor solely to obtain central access. Use a local peripheral-vasopressor protocol with site surveillance until central access is established; the product-specific preparation and peripheral concentration require pharmacy confirmation (SSC 2026, section Vasopressor administration)."
+        ]
+      },
+      {
+        "id": "choose-antimicrobial",
+        "title": "Choose one empirical branch and obtain source control",
+        "timeframe": "With initial antibiotics; source control ideally within 6 hours",
+        "actions": [
+          "Use the medication branch matching community sepsis without shock, undifferentiated septic shock, or hospital-acquired infection. Do not stack these antibiotic backbones. A localised infection uses its site-specific pathway (NCDC–ICMR, section 3.4).",
+          "Select additional resistant Gram-positive cover from documented risk and the local antibiogram; avoid routine broadening in a low-risk patient (SSC 2026, section Multidrug resistance).",
+          "Suspected obstruction, abscess, perforation, necrotising tissue or infected device requires an urgent procedural plan; aim for source control within 6 hours when indicated (SSC 2026, section Source control)."
+        ]
+      },
+      {
+        "id": "review-and-stop",
+        "title": "Review cultures, narrow treatment and set the stop date",
+        "timeframe": "Daily; mandatory empirical review at 48 hours",
+        "actions": [
+          "Check organism, susceptibility, source control, response and drug toxicity. Stop unnecessary components; negative cultures with improvement support de-escalation (NCDC–ICMR, section 3.4, p. 29; SSC 2026, section Antimicrobial therapy).",
+          "Proposed Marifa prescribing safeguard: the empirical antibiotic authorisation expires at the 48-hour review and must be actively renewed with a diagnosis, total-course duration and calendar stop date. This is a review/renewal cap, not an instruction to discontinue essential therapy in unstable sepsis and not an Indian national total-course maximum.",
+          "For a confirmed focus, apply its organism- and site-specific duration; count all effective treatment already given. Do not invent a blanket sepsis course length (NCDC–ICMR, section 3.4)."
+        ]
+      },
+      {
+        "id": "escalate-and-dispose",
+        "title": "Escalate refractory illness and plan recovery",
+        "timeframe": "Throughout admission and before discharge",
+        "actions": [
+          "Escalate worsening lactate, mentation, oxygenation or vasopressor requirement immediately; reassess shock type, source control, drug exposure and resistant pathogens (SSC 2026, sections Resuscitation and Vasopressors).",
+          "For patients needing ICU admission, SSC 2026 suggests transfer within 6 hours. Use monitored transfer with an accepting team and a documented infusion plan.",
+          "Before discharge reconcile medicines, explain the infection and residual problems, and give a written treatment stop date and follow-up ownership (SSC 2026, sections Transitions of care and Hospital discharge)."
+        ]
+      }
+    ],
+    "clinicalReviewStatus": "pending",
+    "nonClinicalManagement": {
+      "patientEducation": [
+        "Explain the infection, organ effects and the reason for urgent treatment.",
+        "Give written return advice for recurrent fever, breathlessness, confusion or reduced urine.",
+        "Provide the antibiotic indication and calendar stop date; do not retain leftovers."
+      ],
+      "lifestyleAndDiet": [
+        "Resume oral/enteral nutrition when safe; assess swallowing, weakness and rehabilitation needs.",
+        "Review vaccination, chronic disease care and modifiable infection risks after stabilisation."
+      ],
+      "mdtReferrals": [
+        "Critical care for shock, respiratory failure or deteriorating consciousness.",
+        "Surgery, urology or interventional radiology for a source needing drainage or removal.",
+        "Microbiology/infectious diseases and pharmacy for resistant organisms, severe allergy, renal replacement therapy or unclear duration."
+      ],
+      "dischargeCriteria": [
+        "Haemodynamic and respiratory stability without escalating support.",
+        "Source controlled or a documented accepted follow-up plan exists.",
+        "Culture review completed or a named clinician owns pending results.",
+        "Medication reconciliation, stop dates, mobility/support and follow-up are documented."
+      ],
+      "followUpPlan": "Arrange an individual follow-up and rehabilitation plan before discharge; hand over residual organ dysfunction, pending cultures and responsibility for antibiotic completion (SSC 2026, sections Hospital discharge and Transitions of care)."
+    },
+    "diagnosticCriteria": [
+      {
+        "criterion": "Sepsis",
+        "threshold": "Suspected or confirmed infection with an acute SOFA increase ≥2 (Sepsis-3, Box 3)."
+      },
+      {
+        "criterion": "Septic shock",
+        "threshold": "Sepsis plus vasopressor requirement to maintain MAP ≥65 mmHg and lactate >2 mmol/L despite adequate volume resuscitation (Sepsis-3, Box 3)."
+      }
+    ],
+    "guidelineComparison": {
+      "title": "Indian national baseline and current international supportive-care guidance",
+      "columns": [
+        "NCDC–ICMR V2.0 November 2025",
+        "SSC 2026 / Marifa interpretation"
+      ],
+      "rows": [
+        {
+          "parameter": "Initial fluids",
+          "values": [
+            "Section 3.4 pp. 30–31: 30 mL/kg rapidly for hypotension or lactate ≥4 mmol/L.",
+            "Fluid resuscitation: at least 30 mL/kg in the first 3 hours for hypoperfusion/shock, individualised with repeated reassessment."
+          ]
+        },
+        {
+          "parameter": "Resistant Gram-positive cover",
+          "values": [
+            "Section 3.4 p. 29: undifferentiated community shock table includes a glycopeptide with the carbapenem.",
+            "Multidrug resistance: cover a resistant pathogen when risk is high; avoid routine coverage when risk is low. Risk-based branch selection needs local stewardship sign-off."
+          ]
+        },
+        {
+          "parameter": "Antibiotic duration",
+          "values": [
+            "Section 3.4: source, organism and clinical course determine duration; de-escalation review at 48 hours.",
+            "No universal total-course maximum. Proposed Marifa 48-hour empirical authorisation expiry is a review safeguard, not a national treatment stop."
+          ]
+        },
+        {
+          "parameter": "Pressure target in older adults",
+          "values": [
+            "Section 3.4: MAP ≥65 mmHg.",
+            "Mean arterial pressure: general initial target 65 mmHg; adults ≥65 years may start at 60–65 mmHg with clinical individualisation."
+          ]
+        }
+      ],
+      "note": "Differences are not blended into a new numerical range; local clinicians must approve the operational pathway."
+    },
+    "teaching": {
+      "scope": "Adult India sepsis recognition, initial resuscitation and source-directed stewardship.",
+      "learningObjectives": [
+        "Separate possible infection from probable sepsis and shock.",
+        "Select one antibiotic backbone and only indicated add-ons.",
+        "Reassess fluids and document source control and an antibiotic stop date."
+      ],
+      "keyPoints": [
+        "Do not wait for a score in unstable sepsis.",
+        "Local resistance and source drive therapy.",
+        "A 48-hour review is not a universal completed course."
+      ],
+      "pitfalls": [
+        "Treating every fever with a carbapenem.",
+        "Repeating fluids despite congestion.",
+        "Continuing all empirical medicines after cultures clarify the diagnosis."
+      ],
+      "references": [
+        {
+          "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+          "edition": "Version 2.0, November 2025",
+          "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf",
+          "locator": "Section 3.4, printed pp. 29–31; section 3.1 p. 26"
+        },
+        {
+          "title": "Surviving Sepsis Campaign adult guidelines",
+          "edition": "2026",
+          "url": "https://sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines-for-management-of-sepsis-and-septic-shock-2026",
+          "locator": "Sections Antibiotic initiation, Fluid resuscitation, Source control, Antimicrobial therapy, Vasopressors and Hospital discharge"
+        },
+        {
+          "title": "Sepsis-3 consensus definitions",
+          "edition": "Accessed 22 October 2026",
+          "url": "https://jamanetwork.com/journals/jama/fullarticle/2492881",
+          "locator": "Table 1 and Box 3"
+        },
+        {
+          "title": "India National List of Essential Medicines",
+          "edition": "Accessed 22 October 2026",
+          "url": "https://cdsco.gov.in/opencms/resources/UploadCDSCOWeb/2018/UploadConsumer/nlem2022.pdf",
+          "locator": "Sections 6.2, 10.4 and 25"
+        },
+        {
+          "title": "University Hospitals Dorset laboratory reference ranges",
+          "edition": "Accessed 22 October 2026",
+          "url": "https://www.uhd.nhs.uk/services/pathology/haematology/test-repertoire-and-reference-ranges",
+          "locator": "Section Adult Reference Ranges"
+        },
+        {
+          "title": "Gloucestershire Hospitals laboratory lactate reference",
+          "edition": "Accessed 22 October 2026",
+          "url": "https://www.gloshospitals.nhs.uk/our-services/services-we-offer/pathology/tests-and-investigations/lactate-blood/",
+          "locator": "Section Reference ranges"
+        },
+        {
+          "title": "Piperacillin–tazobactam product information",
+          "edition": "Accessed 22 October 2026",
+          "url": "https://www.medicines.org.uk/emc/product/102161/smpc",
+          "locator": "Sections 4.1–4.4"
+        },
+        {
+          "title": "UCSF adult meropenem dosing",
+          "edition": "Accessed 22 October 2026",
+          "url": "https://idmp.ucsf.edu/content/meropenem",
+          "locator": "Section Short Infusion Dosing"
+        },
+        {
+          "title": "Vancomycin product information",
+          "edition": "Accessed 22 October 2026",
+          "url": "https://www.medicines.org.uk/emc/product/8760/smpc",
+          "locator": "Sections 4.2–4.4"
+        },
+        {
+          "title": "Noradrenaline product information",
+          "edition": "Accessed 22 October 2026",
+          "url": "https://www.medicines.org.uk/emc/product/102170/smpc",
+          "locator": "Sections 4.2–4.4"
+        },
+        {
+          "title": "Doxycycline product information",
+          "edition": "Accessed 22 October 2026",
+          "url": "https://www.medicines.org.uk/emc/product/13082/smpc",
+          "locator": "Sections 4.2–4.6"
+        },
+        {
+          "title": "ICMR antimicrobial guidance, 2022",
+          "edition": "Accessed 22 October 2026",
+          "url": "https://amrtg.icmr.org.in/chapter2-management-table1.html",
+          "locator": "Table Rickettsial infections"
+        },
+        {
+          "title": "Meropenem product information",
+          "edition": "Accessed 22 October 2026",
+          "url": "https://www.medicines.org.uk/emc/product/10970/smpc",
+          "locator": "Sections 4.2–4.5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "373124f5-9dbb-5862-8587-3df0ff70a27a",
+    "title": "Acute bacterial meningitis (India)",
+    "pillar": "Urgent Care",
+    "status": "under_review",
+    "version": "india-authoring-2026-10-22-batch1-v1",
+    "authority": "ICMR",
+    "specialty": "Infectious Diseases / Internal Medicine",
+    "lastReviewed": "2026-10-22",
+    "presentation": {
+      "symptoms": [
+        "Fever, severe headache, neck discomfort, vomiting or photophobia (WHO 2025, section 1.5).",
+        "Confusion or unusual behaviour; older or immunocompromised adults may have an incomplete presentation."
+      ],
+      "physicalSigns": [
+        "Neck stiffness, altered consciousness, focal neurological findings or seizures.",
+        "Look for a non-blanching rash and systemic shock; absence of a rash does not exclude meningococcal disease."
+      ],
+      "redFlags": [
+        "Airway compromise, shock, new seizures, focal deficits or deteriorating consciousness require immediate senior/critical-care assessment.",
+        "Glasgow Coma Scale (GCS) <10, focal signs, cranial nerve deficits, papilloedema, new adult seizures or severe immunocompromise: assess for cranial imaging before lumbar puncture (WHO 2025, section A.4)."
+      ],
+      "precipitants": [
+        "Community respiratory pathogens; recent exposure to a meningococcal case.",
+        "Pregnancy, older age and immunocompromise change Listeria risk and empirical treatment. Recent neurosurgery or a shunt requires a separate healthcare-associated pathway (NCDC–ICMR sections 2.3–2.4)."
+      ]
+    },
+    "differentials": [
+      {
+        "condition": "Viral meningitis",
+        "distinguishingFeatures": "CSF often has lymphocytic predominance and preserved glucose, but an early result cannot safely exclude bacterial infection (WHO section A.2)."
+      },
+      {
+        "condition": "Encephalitis",
+        "distinguishingFeatures": "Prominent behavioural change, focal deficits or seizures; follow the India encephalitis pathway when the syndromes overlap (NCDC–ICMR section 2.2)."
+      },
+      {
+        "condition": "Tuberculous meningitis",
+        "distinguishingFeatures": "A longer constitutional illness and lymphocyte-predominant CSF suggest a different diagnostic and treatment pathway (NCDC–ICMR section 2.3)."
+      },
+      {
+        "condition": "Cryptococcal meningitis",
+        "distinguishingFeatures": "Consider with severe immunocompromise; cryptococcal testing and opening pressure guide a distinct pathway. Routine bacterial-meningitis steroids are inappropriate (WHO section B.3)."
+      },
+      {
+        "condition": "Intracranial haemorrhage or mass lesion",
+        "distinguishingFeatures": "Abrupt headache or a focal syndrome requires urgent imaging; do not perform an unsafe lumbar puncture (WHO section A.4)."
+      }
+    ],
+    "evidenceAudit": {
+      "checkedOn": "2026-10-22",
+      "status": "incomplete",
+      "scope": "Adults in India; six-tier source-based revision. Clinical review pending.",
+      "findings": [
+        "National Centre for Disease Control (NCDC) and Indian Council of Medical Research (ICMR): joint Version 2.0, November 2025 verified directly on the title page. World Health Organization (WHO) guidance is supplementary.",
+        "India regional topic. Indian national antimicrobial guidance takes precedence over older ICMR text. WHO AWaRe (Access, Watch, Reserve) warnings identify stewardship category, not an automatic indication. Check hospital formulary, product strength and local antibiogram. No Saudi registration claim is made for this India adaptation."
+      ],
+      "unverifiedSections": [
+        "Hospital antibiogram, stocked Indian product licences, local infusion preparation and operational referral arrangements require local clinical/pharmacy confirmation.",
+        "Local pneumococcal susceptibility, choice between the national and WHO higher-risk branches and duration policy need infection-specialist sign-off.",
+        "Numerical dexamethasone organ-impairment adjustments are not supplied by the opened meningitis sources; individual product confirmation remains required.",
+        "Proposed 48-hour empirical authorisation cap is a governance safeguard, not a universal treatment-course maximum. SFDA registration is outside India scope."
+      ],
+      "medscapeStatus": "unavailable",
+      "originalVersionIds": [
+        "9cf6ff07-125e-4bcd-9db2-99eb0d507767"
+      ]
+    },
+    "investigations": {
+      "ruleIn": [
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "Bedside neurological and circulation assessment",
+          "modalityTarget": "Bedside neurological and circulation assessment",
+          "targetCondition": "Bedside neurological and circulation assessment",
+          "normalValue": "Alert baseline; GCS 15; no focal deficit.",
+          "expectedFinding": "Altered consciousness, focal findings, seizures or shock.",
+          "clinicalRationale": "Stabilise and reassess; document the pre-treatment examination and lumbar-puncture safety decision.",
+          "references": [
+            {
+              "title": "WHO guidelines on meningitis diagnosis, treatment and care",
+              "edition": "2025, Sections A.1, A.4 and B.1",
+              "url": "https://docs.bvsalud.org/biblioref/2025/04/1592382/9789240108042-eng.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Blood cultures",
+          "modalityTarget": "Blood cultures",
+          "targetCondition": "Blood cultures",
+          "normalValue": "No pathogen growth.",
+          "expectedFinding": "Causative bacteria and susceptibility may be identified even if puncture is deferred.",
+          "clinicalRationale": "Collect promptly before antibiotics where feasible; a delayed sample must not delay treatment.",
+          "references": [
+            {
+              "title": "WHO guidelines on meningitis diagnosis, treatment and care",
+              "edition": "2025, Section A.3.1",
+              "url": "https://docs.bvsalud.org/biblioref/2025/04/1592382/9789240108042-eng.pdf"
+            },
+            {
+              "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+              "edition": "Version 2.0, November 2025, Section 2.3, printed p. 20",
+              "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Full blood count and platelet count",
+          "modalityTarget": "Full blood count and platelet count",
+          "targetCondition": "Full blood count and platelet count",
+          "normalValue": "Adult example: white cells 4.0–10.0 ×10⁹/L; platelets 150–410 ×10⁹/L; local ranges apply.",
+          "expectedFinding": "Inflammatory changes or thrombocytopenia.",
+          "clinicalRationale": "Assess systemic illness and bleeding risk; a normal count cannot exclude meningitis.",
+          "references": [
+            {
+              "title": "University Hospitals Dorset laboratory reference ranges",
+              "edition": "Accessed 22 October 2026, Section Adult Reference Ranges",
+              "url": "https://www.uhd.nhs.uk/services/pathology/haematology/test-repertoire-and-reference-ranges"
+            },
+            {
+              "title": "WHO guidelines on meningitis diagnosis, treatment and care",
+              "edition": "2025, Section A.3",
+              "url": "https://docs.bvsalud.org/biblioref/2025/04/1592382/9789240108042-eng.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Renal function, electrolytes, liver tests and coagulation",
+          "modalityTarget": "Renal function, electrolytes, liver tests and coagulation",
+          "targetCondition": "Renal function, electrolytes, liver tests and coagulation",
+          "normalValue": "Compare with baseline and the assay-specific range; adult international normalised ratio (INR) example 0.9–1.2.",
+          "expectedFinding": "Renal injury, electrolyte abnormalities or coagulopathy.",
+          "clinicalRationale": "Check drug doses and procedural safety; correct instability before puncture. No universal safe platelet threshold is inferred here.",
+          "references": [
+            {
+              "title": "University Hospitals Dorset laboratory reference ranges",
+              "edition": "Accessed 22 October 2026, Section Adult Reference Ranges",
+              "url": "https://www.uhd.nhs.uk/services/pathology/haematology/test-repertoire-and-reference-ranges"
+            },
+            {
+              "title": "WHO guidelines on meningitis diagnosis, treatment and care",
+              "edition": "2025, Sections A.1 and A.3",
+              "url": "https://docs.bvsalud.org/biblioref/2025/04/1592382/9789240108042-eng.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Paired blood glucose",
+          "modalityTarget": "Paired blood glucose",
+          "targetCondition": "Paired blood glucose",
+          "normalValue": "Use a contemporaneous measured value; normal CSF:blood glucose ratio is 0.5–0.8.",
+          "expectedFinding": "Low CSF glucose relative to blood.",
+          "clinicalRationale": "Take blood glucose with the puncture and calculate the ratio; isolated CSF glucose is less informative.",
+          "references": [
+            {
+              "title": "WHO guidelines on meningitis diagnosis, treatment and care",
+              "edition": "2025, Section A.2.1, printed pp. 18–21",
+              "url": "https://docs.bvsalud.org/biblioref/2025/04/1592382/9789240108042-eng.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "CSF cell count and differential",
+          "modalityTarget": "CSF cell count and differential",
+          "targetCondition": "CSF cell count and differential",
+          "normalValue": "Adults: 0–5 leukocytes/µL (0–5 ×10⁶/L).",
+          "expectedFinding": "Pleocytosis, typically neutrophilic in pyogenic infection.",
+          "clinicalRationale": "Combine with glucose, protein and microbiology; prior treatment can change the pattern.",
+          "references": [
+            {
+              "title": "WHO guidelines on meningitis diagnosis, treatment and care",
+              "edition": "2025, Section A.2.1, printed pp. 18–21",
+              "url": "https://docs.bvsalud.org/biblioref/2025/04/1592382/9789240108042-eng.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "CSF protein",
+          "modalityTarget": "CSF protein",
+          "targetCondition": "CSF protein",
+          "normalValue": "Adult upper reference about 0.45 g/L (45 mg/dL); local range applies.",
+          "expectedFinding": "Protein >0.45 g/L supports barrier disruption but is not specific.",
+          "clinicalRationale": "Interpret with the complete CSF panel, not as a stand-alone diagnosis.",
+          "references": [
+            {
+              "title": "WHO guidelines on meningitis diagnosis, treatment and care",
+              "edition": "2025, Section A.2.1, printed pp. 18–21",
+              "url": "https://docs.bvsalud.org/biblioref/2025/04/1592382/9789240108042-eng.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "CSF glucose and CSF:blood glucose ratio",
+          "modalityTarget": "CSF glucose and CSF:blood glucose ratio",
+          "targetCondition": "CSF glucose and CSF:blood glucose ratio",
+          "normalValue": "Ratio 0.5–0.8.",
+          "expectedFinding": "Ratio ≤0.4 is abnormally low.",
+          "clinicalRationale": "Supports bacterial or other chronic infective meningitis; does not identify the organism.",
+          "references": [
+            {
+              "title": "WHO guidelines on meningitis diagnosis, treatment and care",
+              "edition": "2025, Section A.2.1, printed pp. 18–21",
+              "url": "https://docs.bvsalud.org/biblioref/2025/04/1592382/9789240108042-eng.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "CSF Gram stain, culture and susceptibility",
+          "modalityTarget": "CSF Gram stain, culture and susceptibility",
+          "targetCondition": "CSF Gram stain, culture and susceptibility",
+          "normalValue": "No organisms; no pathogen growth.",
+          "expectedFinding": "Organism morphology or a cultured pathogen.",
+          "clinicalRationale": "Narrow treatment when susceptibility is available; a negative post-antibiotic culture does not exclude bacterial disease.",
+          "references": [
+            {
+              "title": "WHO guidelines on meningitis diagnosis, treatment and care",
+              "edition": "2025, Section A.2.1 and A.2.2",
+              "url": "https://docs.bvsalud.org/biblioref/2025/04/1592382/9789240108042-eng.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "CSF molecular testing",
+          "modalityTarget": "CSF molecular testing",
+          "targetCondition": "CSF molecular testing",
+          "normalValue": "No target pathogen detected.",
+          "expectedFinding": "Bacterial or viral nucleic acid detected.",
+          "clinicalRationale": "Use validated tests with the clinical/CSF picture; stop unnecessary antibiotics if a viral cause is confirmed and bacterial disease excluded.",
+          "references": [
+            {
+              "title": "WHO guidelines on meningitis diagnosis, treatment and care",
+              "edition": "2025, Section A.2.3 and Box 3.3",
+              "url": "https://docs.bvsalud.org/biblioref/2025/04/1592382/9789240108042-eng.pdf"
+            }
+          ]
+        }
+      ],
+      "ruleOut": [
+        {
+          "tier": "advancedImaging",
+          "testName": "Computed tomography (CT) head when risk features are present",
+          "modalityTarget": "CT head when risk features are present",
+          "targetCondition": "CT head when risk features are present",
+          "normalValue": "No mass effect or other puncture-risk lesion.",
+          "expectedFinding": "Mass lesion, hydrocephalus or cerebral swelling.",
+          "clinicalRationale": "Imaging is selective: obtain blood cultures and give antibiotics first when puncture is deferred. A normal scan does not override unresolved clinical contraindications.",
+          "references": [
+            {
+              "title": "WHO guidelines on meningitis diagnosis, treatment and care",
+              "edition": "2025, Section A.4",
+              "url": "https://docs.bvsalud.org/biblioref/2025/04/1592382/9789240108042-eng.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Targeted alternative-infection tests",
+          "modalityTarget": "Targeted alternative-infection tests",
+          "targetCondition": "Targeted alternative-infection tests",
+          "normalValue": "No malaria parasite, cryptococcal antigen or other target detected in an appropriately selected test.",
+          "expectedFinding": "A result supporting malaria, cryptococcosis, tuberculosis or encephalitis.",
+          "clinicalRationale": "Select from exposure and immune state; send human immunodeficiency virus (HIV) testing with counselling/consent under local practice. Use the specific India pathway if positive.",
+          "references": [
+            {
+              "title": "WHO guidelines on meningitis diagnosis, treatment and care",
+              "edition": "2025, Sections A.3 and B.3",
+              "url": "https://docs.bvsalud.org/biblioref/2025/04/1592382/9789240108042-eng.pdf"
+            },
+            {
+              "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+              "edition": "Version 2.0, November 2025, Sections 2.2–2.3",
+              "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+            }
+          ]
+        }
+      ]
+    },
+    "medicationPlan": {
+      "status": "local-protocol-required",
+      "note": "India regional topic. Indian national antimicrobial guidance takes precedence over older ICMR text. WHO AWaRe (Access, Watch, Reserve) warnings identify stewardship category, not an automatic indication. Check hospital formulary, product strength and local antibiogram. No Saudi registration claim is made for this India adaptation. Choose one backbone: ceftriaxone-based OR the specialist meropenem-based branch. Conditional add-on branches apply only when their criteria are met. Empirical prescriptions have a proposed 48-hour review/renewal cap; confirmed courses use the explicit pathogen-specific calendar stop dates below. This proposal is not a national automatic discontinuation rule.",
+      "branches": [
+        {
+          "label": "Standard community meningitis",
+          "entryCriteria": "Community-acquired bacterial meningitis; use ceftriaxone unless the specialist broad-spectrum branch is selected."
+        },
+        {
+          "label": "Resistant pneumococcal cover",
+          "entryCriteria": "Add to the ceftriaxone branch if penicillin/cephalosporin-resistant pneumococci are a concern."
+        },
+        {
+          "label": "Listeria risk or confirmed listeriosis",
+          "entryCriteria": "Add ampicillin to the ceftriaxone branch for relevant risk, including pregnancy or immunocompromise; use targeted ampicillin when Listeria is confirmed."
+        },
+        {
+          "label": "Indian specialist broad-spectrum pathway",
+          "entryCriteria": "NCDC alternative for immunocompromised adults or age >50 years, selected by the infection specialist; replaces ceftriaxone-based treatment."
+        },
+        {
+          "label": "Adjunctive steroid eligible",
+          "entryCriteria": "Non-epidemic strongly suspected bacterial meningitis at the first antibiotic dose; not cryptococcosis, cerebral malaria or a routine meningococcal-epidemic steroid plan."
+        }
+      ],
+      "regimens": [
+        {
+          "branch": "Standard community meningitis",
+          "step": "Antibacterial backbone",
+          "selection": "all",
+          "indication": "Standard community meningitis",
+          "patientGroup": "Adults only",
+          "genericName": "Ceftriaxone",
+          "dose": "2 g; maximum 4 g/day before patient-specific adjustment",
+          "route": "Intravenous infusion over at least 30 minutes",
+          "frequency": "Every 12 hours",
+          "duration": "National uncomplicated empirical plan 10–14 days, maximum routine plan 14 days. At organism identification use the selected pathogen-specific stop: meningococcus 5–7 days; H. influenzae 7–10; pneumococcus 10–14 (WHO Table 3.2). Renew or replace the plan for a complication, not automatic extension.",
+          "adjustments": [
+            "Creatinine clearance <10 mL/min: product label ceiling 2 g/day; urgent infection/pharmacy advice is needed for the meningitis regimen rather than silently reducing CNS exposure (SmPC section 4.2).",
+            "Severe combined hepatic/renal dysfunction needs close monitoring. India NLEM 2022 section 6.2.1.11 lists injection."
+          ],
+          "monitoring": [
+            "WATCH: review Gram stain, culture and susceptibility; narrow when possible.",
+            "Monitor renal/hepatic function, rash and diarrhoea; do not mix with calcium-containing infusion solutions."
+          ],
+          "contraindications": [
+            "Cephalosporin hypersensitivity or a serious prior beta-lactam reaction requires specialist selection."
+          ],
+          "sourceTitle": "NCDC–ICMR November 2025 with explicitly named supplementary source",
+          "sourceUrl": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf",
+          "sourceEdition": "Version 2.0 November 2025, section 2.3 p. 20; WHO 2025 Table 3.2; ceftriaxone SmPC section 4.2: https://www.medicines.org.uk/emc/product/15101/smpc"
+        },
+        {
+          "branch": "Resistant pneumococcal cover",
+          "step": "Additional pneumococcal resistance cover",
+          "selection": "all",
+          "indication": "Resistant pneumococcal cover",
+          "patientGroup": "Adults only",
+          "genericName": "Vancomycin",
+          "dose": "25 mg/kg loading dose then 15 mg/kg per dose; ≤2 g per dose; usual total ceiling 4 g/day with monitoring, ≤3 g/day if monitoring is unavailable (WHO toolkit slide 30)",
+          "route": "Intravenous infusion, at least 1 hour and ≤10 mg/min, whichever takes longer",
+          "frequency": "Maintenance every 8–12 hours initially if renal function is normal; then level-guided",
+          "duration": "Review need at 48 hours; stop when resistance is excluded. If retained, use the confirmed pathogen total duration and calendar stop date; no automatic continuation past that date.",
+          "adjustments": [
+            "Use total body weight for the load; subsequent dosing follows renal function and serum concentrations (SmPC section 4.2).",
+            "Concentrations on day 2 in stable renal function; more frequent testing in unstable disease. Injection listed in NLEM 2022 section 6.2.2.13."
+          ],
+          "monitoring": [
+            "WATCH: additional resistance cover, not routine duplication.",
+            "Monitor serum exposure, renal function, infusion tolerance and hearing symptoms."
+          ],
+          "contraindications": [
+            "Glycopeptide hypersensitivity; avoid rapid infusion and unnecessary nephrotoxic combinations."
+          ],
+          "sourceTitle": "NCDC–ICMR November 2025 with explicitly named supplementary source",
+          "sourceUrl": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf",
+          "sourceEdition": "Version 2.0 November 2025, section 2.3 p. 20; WHO toolkit slide 30; vancomycin SmPC section 4.2: https://www.medicines.org.uk/emc/product/8760/smpc",
+          "useWhen": "Only when pneumococcal resistance requires cover alongside ceftriaxone."
+        },
+        {
+          "branch": "Listeria risk or confirmed listeriosis",
+          "step": "Listeria-active penicillin",
+          "selection": "all",
+          "indication": "Listeria risk or confirmed listeriosis",
+          "patientGroup": "Adults only",
+          "genericName": "Ampicillin",
+          "dose": "2 g; maximum in this meningitis pathway 12 g/day before renal adjustment",
+          "route": "Intravenous",
+          "frequency": "Every 4 hours",
+          "duration": "If Listeria is excluded, stop this component at microbiology review. Confirmed Listeria: 21 days with a documented stop date; complications require a separately authorised specialist plan.",
+          "adjustments": [
+            "Renal impairment requires dose/interval review; creatinine clearance <10 mL/min: reduce dose or extend interval with pharmacy advice (SmPC section 4.2).",
+            "No numerical hepatic adjustment is specified in the opened product information. Injection listed in NLEM 2022 section 6.2.1.3."
+          ],
+          "monitoring": [
+            "ACCESS: indication remains risk- or pathogen-driven.",
+            "Monitor allergy, renal function, electrolytes/sodium exposure and response."
+          ],
+          "contraindications": [
+            "Serious penicillin/beta-lactam hypersensitivity.",
+            "Do not add to the meropenem branch routinely; a specialist must justify any overlap."
+          ],
+          "sourceTitle": "NCDC–ICMR November 2025 with explicitly named supplementary source",
+          "sourceUrl": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf",
+          "sourceEdition": "Version 2.0 November 2025, section 2.3 p. 20; WHO toolkit slide 30; ampicillin SmPC sections 4.2–4.4: https://www.medicines.org.uk/emc/product/12892/smpc"
+        },
+        {
+          "branch": "Indian specialist broad-spectrum pathway",
+          "step": "Central nervous system (CNS) antibacterial backbone",
+          "selection": "all",
+          "indication": "Indian specialist broad-spectrum pathway",
+          "patientGroup": "Adults only",
+          "genericName": "Meropenem",
+          "dose": "2 g; maximum standard total 6 g/day before renal adjustment",
+          "route": "Intravenous",
+          "frequency": "Every 8 hours",
+          "duration": "National empirical plan 10–14 days; review at 48 hours and replace with a pathogen-specific stop date. Gram-negative/staphylococcal meningitis requires ≥21 days and specialist renewal; no unsupported total-course ceiling is imposed.",
+          "adjustments": [
+            "Meningitis renal table: creatinine clearance 26–50 mL/min: 2 g every 12 hours; 10–25: 1 g every 12 hours; <10: 1 g every 24 hours (UCSF section Short Infusion Dosing).",
+            "Dialysis needs the separate dialysis table and pharmacy advice. NLEM 2022 section 6.2.1.14 lists injection.",
+            "Hepatic impairment: no dose reduction, but monitor liver function (meropenem SmPC sections 4.2 and 4.4)."
+          ],
+          "monitoring": [
+            "WATCH carbapenem: document the reason for choosing the national alternative and reassess spectrum.",
+            "Monitor renal function, seizures, blood count and hepatic tests."
+          ],
+          "contraindications": [
+            "Serious carbapenem/beta-lactam hypersensitivity.",
+            "Replaces ceftriaxone rather than accompanying it.",
+            "Avoid concomitant valproate: meropenem can markedly lower exposure and undermine seizure control (SmPC sections 4.4–4.5)."
+          ],
+          "sourceTitle": "NCDC–ICMR November 2025 with explicitly named supplementary source",
+          "sourceUrl": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf",
+          "sourceEdition": "Version 2.0 November 2025, section 2.3 p. 20; UCSF section Short Infusion Dosing: https://idmp.ucsf.edu/content/meropenem; meropenem SmPC sections 4.2–4.5: https://www.medicines.org.uk/emc/product/10970/smpc"
+        },
+        {
+          "branch": "Indian specialist broad-spectrum pathway",
+          "step": "Glycopeptide partner",
+          "selection": "all",
+          "indication": "Indian specialist broad-spectrum pathway",
+          "patientGroup": "Adults only",
+          "genericName": "Vancomycin",
+          "dose": "25 mg/kg loading dose then 15 mg/kg per dose; ≤2 g per dose; usual ceiling 4 g/day with monitoring, ≤3 g/day if monitoring is unavailable",
+          "route": "Intravenous infusion, at least 1 hour and ≤10 mg/min, whichever takes longer",
+          "frequency": "Every 8–12 hours initially with normal renal function; then level-guided",
+          "duration": "Review at 48 hours; narrow or stop when the pathogen permits. If retained, use the organism-specific calendar stop date, not the empirical branch label.",
+          "adjustments": [
+            "Dose by total body weight and renal function; individualise subsequent doses to serum levels (SmPC section 4.2).",
+            "NLEM 2022 section 6.2.2.13 lists injection; verify drug-level access."
+          ],
+          "monitoring": [
+            "WATCH: do not also select the separate resistant-pneumococcal vancomycin row.",
+            "Monitor renal function and serum concentrations; avoid rapid infusion."
+          ],
+          "contraindications": [
+            "Glycopeptide hypersensitivity; additional nephrotoxic treatment increases risk."
+          ],
+          "sourceTitle": "NCDC–ICMR November 2025 with explicitly named supplementary source",
+          "sourceUrl": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf",
+          "sourceEdition": "Version 2.0 November 2025, section 2.3 p. 20; WHO toolkit slide 30; vancomycin SmPC section 4.2: https://www.medicines.org.uk/emc/product/8760/smpc"
+        },
+        {
+          "branch": "Adjunctive steroid eligible",
+          "step": "Inflammation adjunct",
+          "selection": "all",
+          "indication": "Adjunctive steroid eligible",
+          "patientGroup": "Adults only",
+          "genericName": "Dexamethasone",
+          "dose": "10 mg; maximum in this pathway 40 mg/day",
+          "route": "Intravenous",
+          "frequency": "Every 6 hours",
+          "duration": "Maximum 4 days; stop earlier when CSF or pathogen results do not support continuation. Give with first antibiotics; do not delay antibiotics to obtain steroid.",
+          "adjustments": [
+            "No numerical renal/hepatic adjustment is supplied in the opened meningitis guidance; review patient-specific product cautions with pharmacy.",
+            "Continue for pneumococcal or H. influenzae meningitis where indicated; reassess for other pathogens."
+          ],
+          "monitoring": [
+            "Blood glucose, gastrointestinal bleeding, secondary infection and neurological response."
+          ],
+          "contraindications": [
+            "Do not give this adjunctive regimen for cryptococcal meningitis or cerebral malaria.",
+            "Do not routinely use during a meningococcal epidemic."
+          ],
+          "sourceTitle": "NCDC–ICMR November 2025 with explicitly named supplementary source",
+          "sourceUrl": "https://cdn.who.int/media/docs/default-source/crs-crr/epiwin_bacterial-meningitis-toolkit.pdf?sfvrsn=308f3198_1",
+          "sourceEdition": "WHO toolkit slides 31–32; WHO 2025 section B.3"
+        }
+      ]
+    },
+    "pathophysiology": {
+      "summary": "Inflammation of the meninges can rapidly cause neurological injury and systemic illness; early pathogen-directed treatment and complication surveillance are essential (WHO 2025, sections 1.5 and B.1).",
+      "keyMechanisms": [
+        "Inflammatory cells and protein enter the cerebrospinal fluid (CSF) as the blood–brain barrier is disrupted (WHO 2025, section A.2).",
+        "Bacterial consumption and impaired transport contribute to low CSF glucose relative to blood (WHO 2025, section A.2).",
+        "Cerebral oedema, vascular complications and seizures can threaten consciousness and airway protection (WHO 2025, sections B.4 and B.6).",
+        "Antibiotics can reduce culture yield, so collect specimens promptly when safe without delaying treatment (WHO 2025, sections A.2 and B.2)."
+      ],
+      "references": [
+        {
+          "title": "WHO guidelines on meningitis diagnosis, treatment and care",
+          "edition": "2025, Sections A.2, B.1, B.2, B.4 and B.6",
+          "url": "https://docs.bvsalud.org/biblioref/2025/04/1592382/9789240108042-eng.pdf"
+        }
+      ]
+    },
+    "clinicalScenario": "Fictitious teaching case: an adult presents with fever, headache and new confusion. Obtain blood cultures and decide whether lumbar puncture is safe while preparing immediate treatment. Imaging must not become a barrier to antibiotics.",
+    "clinicalManagement": [
+      {
+        "id": "stabilise",
+        "title": "Stabilise, protect staff and prepare specimens",
+        "timeframe": "Immediate; treatment within 1 hour of admission",
+        "actions": [
+          "Assess airway, breathing, circulation and neurological status; call critical care for airway compromise, shock or ongoing seizures (WHO sections B.1, B.4 and B.6).",
+          "Take cultures and bloods while preparing antibiotics; initiate treatment as soon as possible and within 1 hour of admission. Do not wait for imaging or puncture results (NCDC–ICMR section 2.3; WHO toolkit, slide 33).",
+          "Use droplet precautions when meningococcal infection is suspected and involve infection control for the duration and contact assessment; do not improvise a prophylaxis regimen."
+        ]
+      },
+      {
+        "id": "puncture-safety",
+        "title": "Choose the diagnostic route",
+        "timeframe": "During initial stabilisation",
+        "actions": [
+          "Perform lumbar puncture promptly when safe. Defer for cardiorespiratory instability, relevant bleeding risk or local puncture-site infection (WHO section A.1).",
+          "Where imaging is available, GCS <10, focal neurological signs, cranial nerve deficits, papilloedema, new adult seizures or severe immunocompromise warrant imaging first. If imaging is unavailable, defer puncture while these risk features persist (WHO section A.4).",
+          "When puncture is delayed, blood cultures and treatment precede imaging. Send the CSF panel listed in Investigations once safe; retain a sample for additional tests (WHO sections A.2–A.4)."
+        ]
+      },
+      {
+        "id": "empirical-treatment",
+        "title": "Select one empirical antibacterial pathway",
+        "timeframe": "Immediately after cultures when obtainable without delay",
+        "actions": [
+          "Use ceftriaxone as the standard community-acquired backbone. Add vancomycin only when resistant pneumococci are a concern; check the local antibiogram (NCDC–ICMR section 2.3).",
+          "For Listeria risk, add ampicillin to the ceftriaxone pathway. Do not treat pregnancy as ordinary undifferentiated fever (NCDC–ICMR section 2.3; WHO section B.2.1).",
+          "The Indian table also gives a meropenem-plus-vancomycin alternative for immunocompromised adults or age >50 years. This replaces the ceftriaxone branch; it is not stacked on top. Discuss selection with infection specialists and document why broadening is required (NCDC–ICMR section 2.3).",
+          "Give eligible adjunctive dexamethasone with the first antibiotic dose. Stop when bacterial infection is unlikely or the identified pathogen does not justify continuation; maximum 4 days. Do not use this steroid pathway for cryptococcal meningitis or cerebral malaria (WHO section B.3; WHO toolkit slides 31–32)."
+        ]
+      },
+      {
+        "id": "reassess",
+        "title": "Monitor complications and review microbiology",
+        "timeframe": "Ongoing; microbiology review by 48 hours",
+        "actions": [
+          "Reassess consciousness, pupils, seizures, haemodynamics, oxygenation, fluid balance and renal function during the acute illness. Escalate any deterioration immediately; do not impose fluid restriction routinely (WHO sections B.4–B.6).",
+          "At the 48-hour review, document organism, susceptibility, narrowed treatment, effective treatment days and calendar stop date. If no organism is identified, explicitly select the national or WHO duration policy in the comparison table rather than blending them.",
+          "Persistent fever, new focal signs or lack of recovery require a diagnostic review for resistance, a collection, hydrocephalus or an alternative infection; do not simply extend the same regimen (WHO sections B.2 and B.4)."
+        ]
+      },
+      {
+        "id": "duration-and-recovery",
+        "title": "Apply a pathogen-specific stop and assess recovery",
+        "timeframe": "Before each planned course completion and discharge",
+        "actions": [
+          "Indian default uncomplicated bacterial meningitis: 10–14 days, with a maximum routine plan of 14 days; confirmed meningococcus 5–7 days, Haemophilus influenzae 7–10 days and pneumococcus 10–14 days may use the WHO pathogen-specific plan after specialist review (NCDC–ICMR section 2.3; WHO Table 3.2).",
+          "Listeria: 21 days. Gram-negative bacilli or staphylococci require at least 21 days under the Indian guidance: no universal upper cap is established. Use specialist-prescribed stop dates and renewed authorisation; never truncate an indicated course to satisfy a software cap (NCDC–ICMR section 2.3).",
+          "Assess neurological and hearing sequelae before discharge. Arrange formal audiology before discharge or within 4 weeks, plus at least one clinical review within 4 weeks (WHO sections C.2 and C.4)."
+        ]
+      }
+    ],
+    "clinicalReviewStatus": "pending",
+    "nonClinicalManagement": {
+      "patientEducation": [
+        "Explain the need for urgent admission, possible neurological/hearing effects and the planned antibiotic stop date.",
+        "Give return advice for recurrent fever, severe headache, seizures, confusion or new hearing difficulty.",
+        "Explain contact assessment when meningococcal infection is suspected; prophylaxis is arranged through infection control."
+      ],
+      "lifestyleAndDiet": [
+        "Provide nutrition, hydration and swallowing support matched to recovery.",
+        "Plan a supported return to usual activities; assess cognition, fatigue, mobility and psychological needs."
+      ],
+      "mdtReferrals": [
+        "Critical care for airway compromise, shock, seizures or worsening consciousness.",
+        "Infectious diseases/microbiology for duration, resistant organisms, Listeria, allergy and alternative infections.",
+        "Neurology/neurosurgery for focal deterioration, hydrocephalus or suspected collection.",
+        "Audiology and rehabilitation; infection control/public health for meningococcal exposure assessment."
+      ],
+      "dischargeCriteria": [
+        "Stable vital signs and a safe neurological baseline or a documented rehabilitation plan.",
+        "Treatment completed or an accepted supervised completion plan with a calendar stop date.",
+        "Pending results have a named owner.",
+        "Hearing and neurological assessments arranged; patient/caregiver understand return precautions."
+      ],
+      "followUpPlan": "Clinical review at least once within 4 weeks; formal audiology before discharge or within 4 weeks. Refer detected hearing loss urgently and assess other sequelae at follow-up (WHO sections C.2–C.4)."
+    },
+    "diagnosticCriteria": [
+      {
+        "criterion": "Suspected bacterial meningitis",
+        "threshold": "Compatible acute syndrome warrants emergency treatment; do not require the complete symptom combination or a positive culture (WHO sections 1.5 and B.1)."
+      },
+      {
+        "criterion": "Supportive CSF pattern",
+        "threshold": "Neutrophilic pleocytosis, raised protein and CSF:blood glucose ratio ≤0.4 support bacterial disease; interpret results together (WHO section A.2)."
+      },
+      {
+        "criterion": "Confirmed pathogen",
+        "threshold": "Relevant organism detected by CSF/blood culture or a validated molecular test, interpreted with the syndrome and prior treatment (WHO sections A.2–A.3)."
+      }
+    ],
+    "guidelineComparison": {
+      "title": "Keep duration and risk-group differences explicit",
+      "columns": [
+        "NCDC–ICMR V2.0 November 2025",
+        "WHO meningitis 2025"
+      ],
+      "rows": [
+        {
+          "parameter": "No pathogen identified",
+          "values": [
+            "Section 2.3 p. 20: 10–14 days.",
+            "Section B.2.3: consider stopping after 7 days only if clinically recovered, with fever, abnormal vital signs and altered mentation resolved for at least 48 hours."
+          ]
+        },
+        {
+          "parameter": "Higher-risk empirical selection",
+          "values": [
+            "Section 2.3 p. 20: meropenem plus vancomycin alternative for immunocompromise or age >50; add ampicillin when Listeria is suspected.",
+            "Section B.2.1: ceftriaxone/cefotaxime, with ampicillin/amoxicillin added for Listeria risk; vancomycin depends on resistance."
+          ]
+        },
+        {
+          "parameter": "Known organism",
+          "values": [
+            "Section 2.3: Listeria 21 days; Gram-negative bacilli/staphylococci at least 21 days.",
+            "Table 3.2: meningococcus 5–7; H. influenzae 7–10; pneumococcus 10–14; Listeria 21 days."
+          ]
+        }
+      ],
+      "note": "An infection specialist selects and documents the applicable policy. The software must not average conflicting durations or apply a routine 14-day ceiling to infections needing longer treatment."
+    },
+    "teaching": {
+      "scope": "Adults with community-acquired bacterial meningitis in India; separate pathways cover neonates, neurosurgical devices and chronic meningitis.",
+      "learningObjectives": [
+        "Avoid treatment delay during the puncture/imaging decision.",
+        "Select resistance and Listeria coverage by patient group.",
+        "Use organism-specific stop dates and arrange hearing follow-up."
+      ],
+      "keyPoints": [
+        "A normal early test does not exclude meningitis.",
+        "Imaging is selective; antibiotics are urgent.",
+        "Do not merge the national and WHO durations."
+      ],
+      "pitfalls": [
+        "Waiting for CT or lumbar puncture before antibiotics.",
+        "Giving every branch simultaneously.",
+        "Applying an uncomplicated duration cap to Gram-negative or staphylococcal meningitis."
+      ],
+      "references": [
+        {
+          "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+          "edition": "Version 2.0, November 2025",
+          "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf",
+          "locator": "Sections 2.2–2.4, printed pp. 19–21"
+        },
+        {
+          "title": "WHO guidelines on meningitis diagnosis, treatment and care",
+          "edition": "2025",
+          "url": "https://docs.bvsalud.org/biblioref/2025/04/1592382/9789240108042-eng.pdf",
+          "locator": "Sections 1.5, A.1–A.4, B.1–B.6, Table 3.2 and C.2–C.4"
+        },
+        {
+          "title": "WHO frontline meningitis toolkit",
+          "edition": "Accessed 22 October 2026",
+          "url": "https://cdn.who.int/media/docs/default-source/crs-crr/epiwin_bacterial-meningitis-toolkit.pdf?sfvrsn=308f3198_1",
+          "locator": "Slides 29–34"
+        },
+        {
+          "title": "India National List of Essential Medicines",
+          "edition": "Accessed 22 October 2026",
+          "url": "https://cdsco.gov.in/opencms/resources/UploadCDSCOWeb/2018/UploadConsumer/nlem2022.pdf",
+          "locator": "Sections 6.2, 10.4 and 25"
+        },
+        {
+          "title": "University Hospitals Dorset laboratory reference ranges",
+          "edition": "Accessed 22 October 2026",
+          "url": "https://www.uhd.nhs.uk/services/pathology/haematology/test-repertoire-and-reference-ranges",
+          "locator": "Section Adult Reference Ranges"
+        },
+        {
+          "title": "Ceftriaxone product information",
+          "edition": "Accessed 22 October 2026",
+          "url": "https://www.medicines.org.uk/emc/product/15101/smpc",
+          "locator": "Sections 4.2–4.4"
+        },
+        {
+          "title": "Vancomycin product information",
+          "edition": "Accessed 22 October 2026",
+          "url": "https://www.medicines.org.uk/emc/product/8760/smpc",
+          "locator": "Sections 4.2–4.4"
+        },
+        {
+          "title": "Ampicillin product information",
+          "edition": "Accessed 22 October 2026",
+          "url": "https://www.medicines.org.uk/emc/product/12892/smpc",
+          "locator": "Sections 4.2–4.4"
+        },
+        {
+          "title": "UCSF meropenem dosing",
+          "edition": "Accessed 22 October 2026",
+          "url": "https://idmp.ucsf.edu/content/meropenem",
+          "locator": "Section Short Infusion Dosing"
+        },
+        {
+          "title": "Meropenem product information",
+          "edition": "Accessed 22 October 2026",
+          "url": "https://www.medicines.org.uk/emc/product/10970/smpc",
+          "locator": "Sections 4.2–4.5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "379c6048-63ab-5683-9480-d6d4c2dbc397",
+    "title": "Acute undifferentiated fever (India)",
+    "pillar": "Urgent Care",
+    "status": "under_review",
+    "version": "india-authoring-2026-10-22-batch1-v1",
+    "authority": "ICMR",
+    "specialty": "Infectious Diseases / Internal Medicine",
+    "lastReviewed": "2026-10-22",
+    "presentation": {
+      "symptoms": [
+        "Fever with headache, chills, muscle or joint pain and malaise (NCDC–ICMR section 3.1).",
+        "Ask specifically about respiratory, urinary, gastrointestinal and neurological symptoms rather than accepting “no focus” without examination."
+      ],
+      "physicalSigns": [
+        "Document hydration, circulation, respiratory status and mental state; look for rash, bleeding, jaundice, lymphadenopathy or an eschar.",
+        "Examine chest, abdomen, skin and the relevant exposure sites; localising signs redirect the pathway (NCDC–ICMR sections 3.1 and 3.4; ICMR acute fever assessment)."
+      ],
+      "redFlags": [
+        "Shock, confusion, seizures, respiratory distress, bleeding, jaundice with organ dysfunction or reduced urine: emergency hospital assessment.",
+        "Pregnancy, immunocompromise or inability to maintain oral intake warrants earlier investigation and a lower referral threshold; do not defer tests on the basis of fever day alone (NCDC–ICMR section 3.1)."
+      ],
+      "precipitants": [
+        "Mosquito exposure, travel, local outbreaks, monsoon/floodwater exposure or rural outdoor exposure.",
+        "Animal/occupational contact, contaminated food or water, sick contacts, medicines and recent hospital/antibiotic exposure."
+      ]
+    },
+    "differentials": [
+      {
+        "condition": "Dengue",
+        "distinguishingFeatures": "Compatible exposure, rash or bleeding and a supportive platelet/haematocrit trend; choose antigen or serology by illness timing."
+      },
+      {
+        "condition": "Malaria",
+        "distinguishingFeatures": "Exposure plus parasites on microscopy or a positive rapid diagnostic test; severe disease needs the malaria emergency pathway."
+      },
+      {
+        "condition": "Scrub typhus or another rickettsiosis",
+        "distinguishingFeatures": "An eschar or compatible rural exposure supports targeted testing and selected doxycycline treatment; absence of an eschar does not establish an alternative diagnosis."
+      },
+      {
+        "condition": "Leptospirosis",
+        "distinguishingFeatures": "Floodwater or animal-urine exposure with compatible renal/hepatic or pulmonary illness; send targeted serology and escalate organ dysfunction."
+      },
+      {
+        "condition": "Enteric fever",
+        "distinguishingFeatures": "Persistent compatible illness and a cultured organism support the diagnosis; use the existing India enteric-fever pathway."
+      },
+      {
+        "condition": "Occult bacterial focus",
+        "distinguishingFeatures": "Urine, chest, abdominal or device findings redirect to a source-specific pathway."
+      },
+      {
+        "condition": "Non-infectious fever",
+        "distinguishingFeatures": "Medication reaction or inflammatory disease becomes more likely when repeated clinical assessment and targeted tests do not support infection."
+      }
+    ],
+    "evidenceAudit": {
+      "checkedOn": "2026-10-22",
+      "status": "incomplete",
+      "scope": "Adults in India; six-tier source-based revision. Clinical review pending.",
+      "findings": [
+        "National Centre for Disease Control (NCDC) and Indian Council of Medical Research (ICMR): joint Version 2.0, November 2025 verified directly on the title page. World Health Organization (WHO) guidance is supplementary.",
+        "India regional topic. Indian national antimicrobial guidance takes precedence over older ICMR text. WHO AWaRe (Access, Watch, Reserve) warnings identify stewardship category, not an automatic indication. Check hospital formulary, product strength and local antibiogram. No Saudi registration claim is made for this India adaptation."
+      ],
+      "unverifiedSections": [
+        "Hospital antibiogram, stocked Indian product licences, local infusion preparation and operational referral arrangements require local clinical/pharmacy confirmation.",
+        "Local assay cut-offs, laboratory turnaround and access to follow-up need confirmation.",
+        "The proposed 48-hour empirical authorisation cap needs local governance approval; the 7-day doxycycline course applies only to uncomplicated rickettsial disease.",
+        "SFDA registration is outside this India scope; NLEM listing does not establish local stock or a specific brand licence."
+      ],
+      "medscapeStatus": "unavailable",
+      "originalVersionIds": [
+        "cc579f21-d84c-4583-a153-ebc9b07887e9"
+      ]
+    },
+    "investigations": {
+      "ruleIn": [
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "Bedside severity, hydration and glucose assessment",
+          "modalityTarget": "Bedside severity, hydration and glucose assessment",
+          "targetCondition": "Bedside severity, hydration and glucose assessment",
+          "normalValue": "Alert baseline, maintained perfusion and oral intake; glucose interpreted against the actual assay and clinical context.",
+          "expectedFinding": "Instability, altered mentation, dehydration or glucose disturbance.",
+          "clinicalRationale": "Treat reversible instability immediately and leave the outpatient pathway if shock or organ dysfunction is suspected.",
+          "references": [
+            {
+              "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+              "edition": "Version 2.0, November 2025, Sections 3.1 and 3.4",
+              "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Full blood count, differential, platelets and haematocrit",
+          "modalityTarget": "Full blood count, differential, platelets and haematocrit",
+          "targetCondition": "Full blood count, differential, platelets and haematocrit",
+          "normalValue": "Example adult reference: white cells 4.0–10.0 ×10⁹/L; platelets 150–410 ×10⁹/L; haematocrit men 0.40–0.50, women 0.36–0.46.",
+          "expectedFinding": "Leukopenia, leukocytosis, thrombocytopenia or a rising haematocrit; trends are more useful than assigning a pathogen from one count.",
+          "clinicalRationale": "In stable patients add on illness day 3–4 or sooner if severity/risk requires; use serial findings to reassess dengue and organ dysfunction.",
+          "references": [
+            {
+              "title": "University Hospitals Dorset laboratory reference ranges",
+              "edition": "Accessed 22 October 2026, Section Adult Reference Ranges",
+              "url": "https://www.uhd.nhs.uk/services/pathology/haematology/test-repertoire-and-reference-ranges"
+            },
+            {
+              "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+              "edition": "Version 2.0, November 2025, Section 3.1, printed p. 26",
+              "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Liver tests",
+          "modalityTarget": "Liver tests",
+          "targetCondition": "Liver tests",
+          "normalValue": "No new biochemical hepatic injury relative to the local assay range and patient baseline.",
+          "expectedFinding": "Transaminitis or bilirubin elevation.",
+          "clinicalRationale": "Assess disease severity and drug safety; investigate a hepatic or biliary syndrome separately.",
+          "references": [
+            {
+              "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+              "edition": "Version 2.0, November 2025, Section 3.1, printed p. 26",
+              "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Renal function and electrolytes",
+          "modalityTarget": "Renal function and electrolytes",
+          "targetCondition": "Renal function and electrolytes",
+          "normalValue": "Stable creatinine/electrolytes at the patient baseline, with maintained urine output.",
+          "expectedFinding": "Creatinine rise, electrolyte disturbance or reduced urine.",
+          "clinicalRationale": "Refer organ dysfunction urgently; adjust fluid and medicine plans rather than treating fever alone.",
+          "references": [
+            {
+              "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+              "edition": "Version 2.0, November 2025, Sections 3.1 and 3.4",
+              "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Urinalysis and urine culture when a urinary focus is plausible",
+          "modalityTarget": "Urinalysis and urine culture when a urinary focus is plausible",
+          "targetCondition": "Urinalysis and urine culture when a urinary focus is plausible",
+          "normalValue": "No pyuria or clinically significant pathogen in a properly obtained sample.",
+          "expectedFinding": "Pyuria or an organism matching the syndrome.",
+          "clinicalRationale": "Use the urinary-infection pathway when findings and symptoms agree; avoid treating contamination or an incidental result.",
+          "references": [
+            {
+              "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+              "edition": "Version 2.0, November 2025, Sections 3.1 and 5",
+              "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Malaria peripheral smear and rapid diagnostic test",
+          "modalityTarget": "Malaria peripheral smear and rapid diagnostic test",
+          "targetCondition": "Malaria peripheral smear and rapid diagnostic test",
+          "normalValue": "No parasites detected and rapid diagnostic test negative.",
+          "expectedFinding": "Parasites or a positive rapid assay.",
+          "clinicalRationale": "Test by exposure and severity; a negative rapid test with ongoing suspicion requires microscopy/reassessment under the malaria pathway.",
+          "references": [
+            {
+              "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+              "edition": "Version 2.0, November 2025, Section 3.1, printed p. 26",
+              "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Dengue antigen and timed serology",
+          "modalityTarget": "Dengue antigen and timed serology",
+          "targetCondition": "Dengue antigen and timed serology",
+          "normalValue": "Assay negative in the appropriate diagnostic window.",
+          "expectedFinding": "Antigen or immunoglobulin M (IgM) positivity supports dengue in context.",
+          "clinicalRationale": "National fever roadmap uses antigen-based testing in the early work-up and IgM after >5 days; do not treat an early negative result as exclusion.",
+          "references": [
+            {
+              "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+              "edition": "Version 2.0, November 2025, Section 3.1, printed p. 26",
+              "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Blood cultures",
+          "modalityTarget": "Blood cultures",
+          "targetCondition": "Blood cultures",
+          "normalValue": "No pathogen growth.",
+          "expectedFinding": "Growth with susceptibility supports a treatable bacterial cause.",
+          "clinicalRationale": "In the stable staged roadmap add 2 sets after >5 days; obtain earlier before urgent antibiotics when sepsis is suspected.",
+          "references": [
+            {
+              "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+              "edition": "Version 2.0, November 2025, Sections 3.1 and 3.4, printed pp. 26 and 31",
+              "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Selected scrub typhus, leptospira or chikungunya serology",
+          "modalityTarget": "Selected scrub typhus, leptospira or chikungunya serology",
+          "targetCondition": "Selected scrub typhus, leptospira or chikungunya serology",
+          "normalValue": "Negative using the laboratory-validated cut-off; timing affects sensitivity.",
+          "expectedFinding": "A compatible positive assay.",
+          "clinicalRationale": "After >5 days, choose tests from exposure and clinical findings; interpret with illness timing and do not order an indiscriminate panel.",
+          "references": [
+            {
+              "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+              "edition": "Version 2.0, November 2025, Section 3.1, printed p. 26",
+              "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+            }
+          ]
+        }
+      ],
+      "ruleOut": [
+        {
+          "tier": "firstLineImaging",
+          "testName": "Chest X-ray",
+          "modalityTarget": "Chest X-ray",
+          "targetCondition": "Chest X-ray",
+          "normalValue": "No focal pulmonary abnormality.",
+          "expectedFinding": "Consolidation or another finding explaining fever.",
+          "clinicalRationale": "Use for respiratory findings or persistent fever; NCDC–ICMR includes chest X-ray in the >5-day work-up.",
+          "references": [
+            {
+              "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+              "edition": "Version 2.0, November 2025, Section 3.1, printed p. 26",
+              "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "firstLineImaging",
+          "testName": "Abdominal ultrasound",
+          "modalityTarget": "Abdominal ultrasound",
+          "targetCondition": "Abdominal ultrasound",
+          "normalValue": "No focal collection, obstruction or other actionable abnormality.",
+          "expectedFinding": "A collection, organ enlargement or obstructive finding.",
+          "clinicalRationale": "National roadmap adds ultrasound after >7 days in stable unresolved fever; perform earlier if an abdominal or obstructive emergency is suspected.",
+          "references": [
+            {
+              "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+              "edition": "Version 2.0, November 2025, Sections 3.1 and 3.4",
+              "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "Lumbar puncture or targeted advanced imaging for new focal features",
+          "modalityTarget": "Lumbar puncture or targeted advanced imaging for new focal features",
+          "targetCondition": "Lumbar puncture or targeted advanced imaging for new focal features",
+          "normalValue": "No relevant inflammatory or structural finding.",
+          "expectedFinding": "Meningitis, encephalitis or a deep source.",
+          "clinicalRationale": "This is not routine testing for every fever; new neurological or localising features require the relevant emergency pathway.",
+          "references": [
+            {
+              "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+              "edition": "Version 2.0, November 2025, Sections 2.2–2.3 and 3.4",
+              "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+            }
+          ]
+        }
+      ]
+    },
+    "medicationPlan": {
+      "status": "local-protocol-required",
+      "note": "India regional topic. Indian national antimicrobial guidance takes precedence over older ICMR text. WHO AWaRe (Access, Watch, Reserve) warnings identify stewardship category, not an automatic indication. Check hospital formulary, product strength and local antibiogram. No Saudi registration claim is made for this India adaptation. No systemic antibiotic for uncomplicated presumed viral fever. The doxycycline branch is conditional, not routine treatment. Prescriptions carry a calendar stop date; the proposed 48-hour empirical authorisation review is not a substitute for clinical reassessment.",
+      "branches": [
+        {
+          "label": "Symptom relief",
+          "entryCriteria": "Stable adult with troublesome fever/pain and safe oral intake; first exclude relevant hepatic, renal, nutritional and overdose risks."
+        },
+        {
+          "label": "Selected uncomplicated rickettsial suspicion",
+          "entryCriteria": "Non-pregnant adult, clinically stable, credible rickettsial exposure/syndrome after malaria/dengue assessment; no shock, encephalitis or other complication."
+        }
+      ],
+      "regimens": [
+        {
+          "branch": "Symptom relief",
+          "step": "Antipyretic",
+          "selection": "all",
+          "indication": "Symptom relief",
+          "patientGroup": "Adults only",
+          "genericName": "Paracetamol",
+          "dose": "1 g per dose; maximum 4 g/day and maximum 4 doses in 24 hours",
+          "route": "Oral",
+          "frequency": "At least 4 hours between doses, only when needed",
+          "duration": "Use briefly; reassess at the planned review. Do not continue beyond 3 days without clinician reassessment (SmPC section 4.2).",
+          "adjustments": [
+            "Lower body weight, malnutrition, alcohol-associated liver disease or severe renal/hepatic impairment needs a reduced individual plan; do not automatically apply the full adult ceiling.",
+            "India NLEM 2022 lists oral paracetamol; check for paracetamol in combination products."
+          ],
+          "monitoring": [
+            "Temperature, symptom response, intake and total daily dose."
+          ],
+          "contraindications": [
+            "Paracetamol hypersensitivity; do not combine with another paracetamol-containing medicine.",
+            "Suspected overdose requires urgent toxicology assessment even if initially well."
+          ],
+          "sourceTitle": "NCDC–ICMR November 2025 with explicitly named supplementary source",
+          "sourceUrl": "https://www.medicines.org.uk/emc/product/5164/smpc",
+          "sourceEdition": "SmPC sections 4.2–4.4"
+        },
+        {
+          "branch": "Selected uncomplicated rickettsial suspicion",
+          "step": "Targeted antibiotic",
+          "selection": "all",
+          "indication": "Selected uncomplicated rickettsial suspicion",
+          "patientGroup": "Adults only",
+          "genericName": "Doxycycline",
+          "dose": "100 mg per dose; maximum 200 mg/day in this uncomplicated pathway",
+          "route": "Oral",
+          "frequency": "Every 12 hours",
+          "duration": "7 days total for uncomplicated supported rickettsial infection, including empirical days. Proposed empirical authorisation review at 48 hours: stop if the diagnosis is not supported. No automatic extension; complicated disease needs a new specialist pathway.",
+          "adjustments": [
+            "No routine renal reduction; use caution in hepatic impairment (SmPC section 4.4).",
+            "Take with water while upright; separate from iron/antacids. NLEM 2022 section 6.2.2.7 lists the 100 mg capsule."
+          ],
+          "monitoring": [
+            "ACCESS: document the indication and stop date; no routine antibiotic for viral fever.",
+            "Review diagnosis and response at 48 hours; monitor gastrointestinal intolerance, rash and hepatic symptoms."
+          ],
+          "contraindications": [
+            "Tetracycline hypersensitivity; pregnancy/breastfeeding needs a specialist-selected regimen.",
+            "Do not apply this outpatient branch to shock or encephalitis."
+          ],
+          "sourceTitle": "NCDC–ICMR November 2025 with explicitly named supplementary source",
+          "sourceUrl": "https://amrtg.icmr.org.in/table1-doxycycline.html",
+          "sourceEdition": "ICMR 2022 section Adult Dose; table Rickettsial infections: https://amrtg.icmr.org.in/chapter2-management-table1.html; Principles of empiric therapy: https://amrtg.icmr.org.in/chapter2-management-principles-empiric-therapy.html; doxycycline SmPC sections 4.2–4.6: https://www.medicines.org.uk/emc/product/13082/smpc"
+        }
+      ]
+    },
+    "pathophysiology": {
+      "summary": "Acute undifferentiated fever is a presenting syndrome, not a pathogen diagnosis. Early viral, bacterial, parasitic and non-infective illness can overlap; test selection depends on illness day, exposure and severity (NCDC–ICMR section 3.1).",
+      "keyMechanisms": [
+        "A systemic response can produce fever, headache and myalgia before a localising sign appears (NCDC–ICMR section 3.1).",
+        "Malaria, dengue and rickettsial disease require different tests and treatment; an early negative assay may reflect timing rather than absence of infection (NCDC–ICMR section 3.1).",
+        "Organ dysfunction or shock changes the problem from stable fever assessment to emergency resuscitation (NCDC–ICMR section 3.4).",
+        "Many uncomplicated febrile illnesses resolve without antibiotics; unnecessary exposure adds adverse effects and resistance selection (ICMR 2022, section Principles of empiric therapy)."
+      ],
+      "references": [
+        {
+          "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+          "edition": "Version 2.0, November 2025, Sections 3.1 and 3.4, printed pp. 26–31",
+          "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+        },
+        {
+          "title": "ICMR acute fever guidance, 2022",
+          "edition": "Accessed 22 October 2026, Section Principles of empiric therapy",
+          "url": "https://amrtg.icmr.org.in/chapter2-management-principles-empiric-therapy.html"
+        }
+      ]
+    },
+    "clinicalScenario": "Fictitious teaching case: a non-pregnant adult has persistent fever without an obvious focus after rural travel. First decide whether there is shock or organ dysfunction; only a stable patient enters the timed outpatient diagnostic pathway.",
+    "clinicalManagement": [
+      {
+        "id": "triage",
+        "title": "Triage severity before using the fever-day algorithm",
+        "timeframe": "At first assessment",
+        "actions": [
+          "Check circulation, mental state, breathing and oral intake. Shock or organ dysfunction requires immediate hospital management, not observation until the next diagnostic day (NCDC–ICMR sections 3.1 and 3.4).",
+          "Record onset date, travel/residence, outbreak exposure, prior medicines, pregnancy possibility and immune state. Re-examine for a focal source."
+        ]
+      },
+      {
+        "id": "stable-early-fever",
+        "title": "Use supportive care for uncomplicated early illness",
+        "timeframe": "Illness days 1–2, only if stable and without a high-risk condition",
+        "actions": [
+          "National guidance permits deferring routine investigations and antimicrobials in uncomplicated early fever. Give oral fluids as tolerated and symptom relief when required; provide explicit return precautions (NCDC–ICMR section 3.1).",
+          "Do not prescribe an antibiotic simply because fever is present. Avoid non-steroidal anti-inflammatory drugs when dengue/bleeding or renal injury is possible; choose the symptom-relief branch and reassess (ICMR acute fever principles; paracetamol product information)."
+        ]
+      },
+      {
+        "id": "stage-investigation",
+        "title": "Select tests by timing and exposure",
+        "timeframe": "Days 3–4; >5 days; >7 days",
+        "actions": [
+          "Days 3–4: blood count/differential, liver and renal tests, urine examination, glucose and targeted malaria/dengue testing (NCDC–ICMR section 3.1).",
+          "After >5 days: add 2 blood-culture sets, selected IgM tests for dengue/chikungunya/scrub typhus/leptospirosis and chest X-ray (NCDC–ICMR section 3.1).",
+          "After >7 days: reassess the entire differential and add abdominal ultrasound or directed tests. This is a trigger for reassessment, not permission to cycle antibiotics (NCDC–ICMR section 3.1).",
+          "Investigate earlier with immunocompromise, pregnancy, worsening symptoms or a new localising sign. The India roadmap takes precedence over the older ICMR page where chest-imaging timing differs."
+        ]
+      },
+      {
+        "id": "targeted-treatment",
+        "title": "Treat a supported diagnosis; reserve empirical therapy",
+        "timeframe": "After assessment; urgent treatment if instability develops",
+        "actions": [
+          "Positive malaria/dengue tests or a localised syndrome redirect to the corresponding India pathway; do not continue the undifferentiated-fever regimen automatically.",
+          "Selected non-pregnant stable adults with credible rickettsial suspicion may receive doxycycline after specimens and malaria/dengue assessment. Review the need at 48 hours; an uncomplicated confirmed/strongly supported rickettsiosis uses a 7-day course, with the stop date written at initiation (ICMR 2022, Principles of empiric therapy and Rickettsial infections table).",
+          "Pregnancy, severe allergy or complicated rickettsial disease needs the appropriate specialist pathway. The short uncomplicated regimen does not cover encephalitis, shock or another established diagnosis."
+        ]
+      },
+      {
+        "id": "safety-net",
+        "title": "Arrange reassessment and escalate deterioration",
+        "timeframe": "Reassess within 48 hours; immediately for a red flag",
+        "actions": [
+          "Review symptoms, examination, results and medicines within 48 hours; arrange earlier review if risk warrants. Contact the patient for actionable cultures rather than waiting for a planned visit (ICMR 2022, Principles of empiric therapy).",
+          "Admit or urgently refer if perfusion, breathing, mentation, bleeding, renal function or oral intake deteriorates. Persistent unresolved fever requires diagnostic review, not repeated empirical antibiotic courses."
+        ]
+      }
+    ],
+    "clinicalReviewStatus": "pending",
+    "nonClinicalManagement": {
+      "patientEducation": [
+        "Explain why a pathogen diagnosis may not be clear initially and why routine antibiotics can cause harm.",
+        "Return immediately with fainting, confusion, breathing difficulty, bleeding, reduced urine or inability to drink.",
+        "Explain which tests are pending, how results will be communicated and the medicine stop dates."
+      ],
+      "lifestyleAndDiet": [
+        "Maintain oral fluids and food as tolerated; return if intake becomes inadequate.",
+        "Use mosquito protection and exposure-specific food/water precautions; avoid self-starting antibiotics or steroid combinations."
+      ],
+      "mdtReferrals": [
+        "Emergency/critical care for instability or organ dysfunction.",
+        "Infectious diseases/microbiology for unresolved fever, positive cultures, complicated rickettsial illness or resistant organisms.",
+        "Obstetrics for pregnancy with systemic illness; public health/infection control for suspected clusters or notifiable disease under the relevant programme."
+      ],
+      "dischargeCriteria": [
+        "Stable circulation, breathing and mental state; no organ dysfunction requiring admission.",
+        "Tolerating oral intake and medicines when prescribed.",
+        "A reliable review/result-contact plan is documented.",
+        "Patient understands the red flags and can reach urgent care if worse."
+      ],
+      "followUpPlan": "Reassess within 48 hours, including examination, results, antibiotic indication and stop date; earlier for any deterioration. Re-evaluate persistent fever with the timed national work-up rather than extending empirical antibiotics (ICMR 2022, Principles of empiric therapy; NCDC–ICMR section 3.1)."
+    },
+    "diagnosticCriteria": [
+      {
+        "criterion": "Working syndrome",
+        "threshold": "Acute fever without a clear focus after history and examination; severity and exposure determine investigation rather than a fixed antibiotic prescription (NCDC–ICMR section 3.1)."
+      },
+      {
+        "criterion": "Emergency exit",
+        "threshold": "Shock or infection-associated organ dysfunction requires the sepsis or identified disease emergency pathway, regardless of the day of fever (NCDC–ICMR section 3.4)."
+      },
+      {
+        "criterion": "Selected empirical doxycycline",
+        "threshold": "A clinician may consider it after negative malaria/dengue rapid tests with persistent compatible illness; reserve this branch for a credible rickettsial suspicion and reassess at 48 hours (ICMR 2022, Principles of empiric therapy)."
+      }
+    ],
+    "guidelineComparison": {
+      "title": "Fever investigation timing: current national baseline versus older ICMR page",
+      "columns": [
+        "NCDC–ICMR V2.0 November 2025",
+        "ICMR acute-fever web guidance, 2022"
+      ],
+      "rows": [
+        {
+          "parameter": "Chest X-ray in stable unresolved fever",
+          "values": [
+            "Section 3.1 p. 26: include after >5 days.",
+            "Principles of empiric therapy: included after >7 days."
+          ]
+        },
+        {
+          "parameter": "Antimicrobial decision",
+          "values": [
+            "Section 3.1: defer antimicrobials on days 1–2 in uncomplicated illness; investigate by timing and risk.",
+            "Principles of empiric therapy: most non-localising acute fever needs no antibiotic; selected empirical doxycycline can be considered after negative malaria/dengue rapid tests; review at 48 hours."
+          ]
+        }
+      ],
+      "note": "Use the November 2025 national investigation sequence; older ICMR pages supply explicitly labelled dose/duration and empirical-selection detail. Severity always overrides deferral."
+    },
+    "teaching": {
+      "scope": "Stable adult fever without a focus in India; high-risk and unstable presentations exit to an urgent disease-specific pathway.",
+      "learningObjectives": [
+        "Triage severity before using illness-day testing.",
+        "Select exposure- and timing-appropriate tests.",
+        "Avoid routine antibiotics and document any selected course and review."
+      ],
+      "keyPoints": [
+        "Undifferentiated fever is a syndrome.",
+        "An early negative test may not exclude disease.",
+        "Severe illness overrides the stable day-based pathway."
+      ],
+      "pitfalls": [
+        "Giving doxycycline to every fever.",
+        "Waiting for day 5 in a shocked or immunocompromised patient.",
+        "Cycling broad-spectrum antibiotics instead of repeating the assessment."
+      ],
+      "references": [
+        {
+          "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+          "edition": "Version 2.0, November 2025",
+          "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf",
+          "locator": "Section 3.1 printed pp. 26–27; section 3.4 pp. 29–31"
+        },
+        {
+          "title": "ICMR acute fever guidance, 2022",
+          "edition": "Accessed 22 October 2026",
+          "url": "https://amrtg.icmr.org.in/chapter2-management-principles-empiric-therapy.html",
+          "locator": "Section Principles of empiric therapy"
+        },
+        {
+          "title": "ICMR antimicrobial choice table, 2022",
+          "edition": "Accessed 22 October 2026",
+          "url": "https://amrtg.icmr.org.in/chapter2-management-table1.html",
+          "locator": "Table Rickettsial infections"
+        },
+        {
+          "title": "ICMR doxycycline dosing",
+          "edition": "Accessed 22 October 2026",
+          "url": "https://amrtg.icmr.org.in/table1-doxycycline.html",
+          "locator": "Section Adult Dose"
+        },
+        {
+          "title": "India National List of Essential Medicines",
+          "edition": "Accessed 22 October 2026",
+          "url": "https://cdsco.gov.in/opencms/resources/UploadCDSCOWeb/2018/UploadConsumer/nlem2022.pdf",
+          "locator": "Sections 6.2, 10.4 and 25"
+        },
+        {
+          "title": "University Hospitals Dorset laboratory reference ranges",
+          "edition": "Accessed 22 October 2026",
+          "url": "https://www.uhd.nhs.uk/services/pathology/haematology/test-repertoire-and-reference-ranges",
+          "locator": "Section Adult Reference Ranges"
+        },
+        {
+          "title": "Doxycycline product information",
+          "edition": "Accessed 22 October 2026",
+          "url": "https://www.medicines.org.uk/emc/product/13082/smpc",
+          "locator": "Sections 4.2–4.6"
+        },
+        {
+          "title": "Paracetamol product information",
+          "edition": "Accessed 22 October 2026",
+          "url": "https://www.medicines.org.uk/emc/product/5164/smpc",
+          "locator": "Sections 4.2–4.4"
+        }
+      ]
+    }
+  }
+]
