@@ -10,6 +10,10 @@ export type Slide = {
 
 export type LearningImage = {
   src: string;
+  width: number;
+  height: number;
+  /** CSS object-position used when the image is cropped to a banner. */
+  position?: string;
   alt: string;
   caption: string;
   sourceUrl: string;

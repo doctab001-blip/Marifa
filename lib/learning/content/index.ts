@@ -30,6 +30,6 @@ export function getModuleContent(id: string): ModuleContent | undefined {
   if (!content) return undefined;
   return {
     ...content,
-    slides: content.slides.map((slide, index) => ({ ...slide, image: slide.image ?? getLearningImage(id, slide.title, index) })),
+    slides: content.slides.map((slide) => ({ ...slide, image: slide.image ?? getLearningImage(id, slide.title) })),
   };
 }

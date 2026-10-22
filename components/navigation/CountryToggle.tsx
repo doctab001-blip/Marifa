@@ -4,7 +4,7 @@ import { Suspense, useEffect, useId, useRef, useState, useTransition } from "rea
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Check, ChevronDown, Globe } from "lucide-react";
 import type { CountryCode } from "@/types/clinical";
-import { REGIONS, REGION_COOKIE, REGION_PARAM, getRegionOption, parseRegion } from "@/lib/region";
+import { REGIONS, REGION_CHANGE_EVENT, REGION_COOKIE, REGION_PARAM, getRegionOption, parseRegion } from "@/lib/region";
 
 function readCookie(): CountryCode | null {
   try {
@@ -84,6 +84,7 @@ function CountryToggleInner({ initialRegion }: ToggleProps) {
     setOpen(false);
     if (code === active) return;
     writeCookie(code);
+    try { window.dispatchEvent(new Event(REGION_CHANGE_EVENT)); } catch { /* no window */ }
     setPending(code);
     const params = new URLSearchParams(searchParams.toString());
     params.set(REGION_PARAM, code);

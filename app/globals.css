@@ -42,6 +42,9 @@
   --font-color-body: #000000;
   --font-color-subheading: #000000;
   --font-color-heading: #000000;
+  --font-color-on-dark: #ffffff;
+  --font-color-on-dark-body: rgb(255 255 255 / .94);
+  --font-color-on-dark-muted: rgb(255 255 255 / .84);
   --royal: #0e7490;
   --cerulean: #0284c7;
   --gold: #c8a24d;
@@ -110,14 +113,27 @@ body :is(p, li, dd, dt, label, th, td, figcaption, blockquote):not(:is(.on-dark,
    text that read the tokens stay readable in both themes. Add new dark panels here, or give
    them the .on-dark class. Light cards nested inside (e.g. risk panels) set their own colour. */
 :is(.on-dark, .calculator-heading.card, .calculator-result.card, .auth-brand-panel, .hero-search, .login-brand, .app-shell .sidebar) {
-  --font-color-body: rgb(255 255 255 / .9);
-  --font-color-subheading: #ffffff;
-  --font-color-heading: #ffffff;
-  --ink: #ffffff;
-  --text-2: rgb(255 255 255 / .86);
-  --text-3: rgb(255 255 255 / .76);
-  --muted: rgb(255 255 255 / .76);
+  --font-color-body: var(--font-color-on-dark-body);
+  --font-color-subheading: var(--font-color-on-dark);
+  --font-color-heading: var(--font-color-on-dark);
+  --ink: var(--font-color-on-dark);
+  --text-2: var(--font-color-on-dark-body);
+  --text-3: var(--font-color-on-dark-muted);
+  --muted: var(--font-color-on-dark-muted);
   color: var(--font-color-body);
+}
+
+/* Legacy components still contain hard-coded grey copy. Enforce the semantic
+   foreground at the dark-surface boundary so those declarations cannot create
+   unreadable low-contrast text. Nested light result panels opt back into their
+   own foreground colours below. */
+:is(.on-dark, .calculator-heading.card, .calculator-result.card, .auth-brand-panel, .hero-search, .login-brand, .app-shell .sidebar)
+  :is(p, li, dd, dt, label, figcaption, blockquote):not(.calculator-stratification *) {
+  color: var(--font-color-on-dark-body) !important;
+}
+:is(.on-dark, .calculator-heading.card, .calculator-result.card, .auth-brand-panel, .hero-search, .login-brand, .app-shell .sidebar)
+  :is(h1, h2, h3, h4, h5, h6, [role="heading"]):not(.calculator-stratification *) {
+  color: var(--font-color-on-dark) !important;
 }
 button, input, select, textarea { font: inherit; }
 a { color: inherit; text-decoration: none; }
@@ -1928,6 +1944,7 @@ html[data-theme="dark"] .calculator-page {
 .calculator-heading.card .calculator-tabs button:hover { color: #fff; }
 .calculator-heading.card .calculator-tabs button[aria-selected="true"] { border-bottom-color: #ff7ac0; color: #fff; }
 .calculator-heading.card .calculator-guide-panel { color: rgb(255 255 255 / .92); }
+.calculator-heading.card .calculator-guide-panel p, .calculator-heading.card .calculator-guide-panel li { color: inherit; }
 .calculator-heading.card .calculator-pearls h3 { color: #ffc2e3; }
 .calculator-heading.card .calculator-pearls li::marker { color: #ff7ac0; }
 .calculator-new-badge { background: var(--cx-mag); }
@@ -1944,7 +1961,6 @@ html[data-theme="dark"] .calculator-page {
 .calculator-option-grid button:hover { border-color: var(--cx-bright); background: var(--cx-tint); }
 .calculator-option-grid button.is-selected { border-color: var(--cx-teal); background: linear-gradient(90deg, rgb(25 181 184 / .2), rgb(25 181 184 / .06)); box-shadow: 0 0 0 1px rgb(14 138 154 / .15); }
 .calculator-option-grid button.is-selected .calculator-choice-marker { border-color: var(--cx-teal); background: var(--cx-teal); }
-.calculator-heading.card .calculator-guide-panel p, .calculator-heading.card .calculator-guide-panel li { color: inherit; }
 .calculator-option-grid em { min-width: 28px; padding: 2px 8px; border-radius: 999px; color: var(--cx-text-2); background: var(--cx-tint); text-align: center; }
 .calculator-option-grid button.is-selected em { color: #fff; background: var(--cx-mag); }
 .calculator-number-row input { border: 1.5px solid var(--cx-line); color: var(--cx-text); background: var(--cx-card); }

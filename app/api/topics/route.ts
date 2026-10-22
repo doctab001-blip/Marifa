@@ -1,4 +1,6 @@
 import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
+import { REGION_COOKIE, resolveRegion } from "@/lib/region";
 import { getApprovedDiseaseGuidelines } from "@/lib/data/disease-guidelines";
 import { getDiseaseDrafts } from "@/lib/data/disease-drafts";
 import { medicalSpecialities } from "@/lib/medical-specialities";
@@ -19,7 +21,8 @@ export async function GET(request: Request) {
   if (carePillar && !ModelOfCarePillarSchema.safeParse(carePillar).success) {
     return NextResponse.json({ error: "Unsupported care_pillar filter." }, { status: 400 });
   }
-  const result = await getApprovedDiseaseGuidelines({ speciality, carePillar });
+  const region = resolveRegion(params.get("region"), (await cookies()).get(REGION_COOKIE)?.value);
+  const result = await getApprovedDiseaseGuidelines({ speciality, carePillar, region });
   if (result.state === "unavailable") return NextResponse.json({ error: "Clinical directory unavailable." }, { status: 503 });
   if (params.get("view") === "nav") {
     // Compact payload for the workspace side panel.

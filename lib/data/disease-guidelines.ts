@@ -1,6 +1,7 @@
 import "server-only";
 import { cache } from "react";
 import { unstable_cache } from "next/cache";
+import { cookies } from "next/headers";
 import { isTemporaryOpenAdminMode } from "@/lib/access-mode";
 import { CLINICAL_DIRECTORY_TAG } from "@/lib/data/cache-tags";
 import { mergedTopics } from "@/lib/data/merged-topics";
@@ -10,6 +11,9 @@ import { isSupabaseConfigured } from "@/lib/supabase/config";
 import { createSupabaseDataClient } from "@/lib/supabase/data-client";
 import { canonicalSpeciality, hasMedicalSpeciality, inferMedicalSpecialityTags } from "@/lib/medical-specialities";
 import { isClinicalDirectoryEligible } from "@/lib/data/clinical-directory-eligibility";
+import { DEFAULT_REGION, REGION_COOKIE, resolveRegion } from "@/lib/region";
+import { isTopicVisibleInRegion } from "@/lib/region-topics";
+import type { CountryCode } from "@/types/clinical";
 
 export type DiseaseGuidelineSummary = Pick<DiseaseDetail, "id" | "title" | "specialty" | "authority" | "status" | "version" | "lastReviewed" | "pillar" | "clinicalReviewStatus"> & { summary: string; sourceType?: string; speciality?: string; subSpecialities?: string[]; keywords?: string[] };
 type GuidelineVersionJoin = { content: unknown; source_title?: string | null; source_url?: string | null };
@@ -134,10 +138,25 @@ const getDirectoryForRequest = cache(async (): Promise<DirectoryPayload | null> 
   }
 });
 
-export async function getApprovedDiseaseGuidelines(filters: { speciality?: string; carePillar?: string; includeFamilyMembers?: boolean } = {}): Promise<DiseaseDirectoryResult> {
+/** The practice region of the current request (cookie), defaulting to Saudi Arabia outside a request. */
+async function requestRegion(): Promise<CountryCode> {
+  try {
+    return resolveRegion(undefined, (await cookies()).get(REGION_COOKIE)?.value);
+  } catch {
+    return DEFAULT_REGION;
+  }
+}
+
+/**
+ * Live topics for one practice region. India topics are listed only in the India region, and India adaptations
+ * replace their Saudi counterparts there; the Saudi catalogue is unchanged (lib/region-topics.ts).
+ */
+export async function getApprovedDiseaseGuidelines(filters: { speciality?: string; carePillar?: string; includeFamilyMembers?: boolean; region?: CountryCode } = {}): Promise<DiseaseDirectoryResult> {
   const payload = await getDirectoryForRequest();
   if (!payload) return { diseases: [], state: "unavailable", rejectedCount: 0, withheldCount: 0 };
+  const region = filters.region ?? await requestRegion();
   const filteredDiseases = payload.diseases.filter((summary) => {
+    if (!isTopicVisibleInRegion(summary, region)) return false;
     if (filters.speciality && ![summary.speciality ?? summary.specialty, ...(summary.subSpecialities ?? [])].some((tag) => hasMedicalSpeciality(tag, filters.speciality!))) return false;
     if (filters.carePillar && summary.pillar !== filters.carePillar) return false;
     return true;

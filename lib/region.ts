@@ -4,6 +4,8 @@ import type { CountryCode, GlobalDiseaseTopic, RegionalProfile } from "@/types/c
 export const REGION_COOKIE = "marifa.region";
 /** URL query parameter that selects a region (`?region=IN`); it wins over the cookie. */
 export const REGION_PARAM = "region";
+/** Browser event fired after the practice region changes, so client lists can reload for the new region. */
+export const REGION_CHANGE_EVENT = "marifa:region-change";
 export const DEFAULT_REGION: CountryCode = "SA";
 
 export type RegionOption = {

@@ -13,7 +13,6 @@ import {
   CircleX,
   ClipboardCheck,
   Clock3,
-  ImageIcon,
   Info,
   Lightbulb,
   Lock,
@@ -33,6 +32,7 @@ import {
   QUESTIONS_PER_TEST,
 } from "@/lib/learning/catalog";
 import type { LearningImage, ModuleContent } from "@/lib/learning/content/types";
+import { getModuleCover } from "@/lib/learning/images";
 import { moduleView, updateRecord, useLearningRecords } from "@/lib/learning/progress";
 
 type Stage = "study" | "assessment" | "result" | "certificate";
@@ -75,6 +75,7 @@ export function ModuleRunner({ moduleId, content, learnerName }: { moduleId: str
   const locked = !passed && attemptsRemaining === 0;
   const furthest = Math.min(record?.furthestSlide ?? 0, lastSlide);
   const view = moduleView(learningModule, record);
+  const cover = getModuleCover(moduleId);
 
   const [stage, setStage] = useState<Stage>("study");
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -153,33 +154,51 @@ export function ModuleRunner({ moduleId, content, learnerName }: { moduleId: str
     <div ref={topRef} className="min-h-full scroll-mt-4 rounded-3xl bg-[#F6F8FC] px-4 py-5 sm:px-6 lg:px-8 lg:py-7">
       <div className="mx-auto max-w-5xl">
         {/* ── Header ── */}
-        <Link href="/dashboard/learning" className="inline-flex items-center gap-1.5 text-[13px] font-medium text-slate-500! no-underline! hover:text-slate-900! print:hidden">
-          <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-          Learning Portal
-        </Link>
+        <header className="on-dark relative isolate overflow-hidden rounded-[26px] bg-[#071B23] shadow-[0_24px_48px_-28px_rgba(7,27,35,0.6)] print:hidden">
+          {cover && (
+            <Image
+              src={cover.src}
+              alt=""
+              fill
+              priority
+              sizes="(min-width: 1024px) 1024px, 100vw"
+              className="-z-20 object-cover"
+              style={{ objectPosition: cover.position }}
+            />
+          )}
+          <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-r from-[#071B23] via-[#071B23]/70 to-[#071B23]/10" />
+          <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-t from-[#071B23]/80 to-transparent" />
 
-        <header className="mt-3 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between print:hidden">
-          <div className="flex min-w-0 items-start gap-3">
-            <span className={`grid h-11 w-11 shrink-0 place-items-center rounded-xl ring-1 ${tone.tile}`}>
-              <Icon className="h-5 w-5" aria-hidden="true" />
-            </span>
-            <div className="min-w-0">
-              <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-400">{learningModule.category}</span>
-              <h1 className="text-xl! font-semibold! leading-tight! tracking-tight text-slate-900! sm:text-2xl!">{learningModule.title}</h1>
-              <div className="mt-2 flex flex-wrap gap-1.5 text-[11px] font-medium text-slate-600">
-                <Chip icon={Clock3}>{learningModule.duration}</Chip>
-                <Chip icon={BookOpen}>{slides.length} slides</Chip>
-                <Chip icon={ClipboardCheck}>{QUESTIONS_PER_TEST} questions · pass {PASS_PERCENT}%</Chip>
-                <Chip icon={RotateCcw} tone={attemptsRemaining <= 1 && !passed ? "text-rose-700 bg-rose-50 border-rose-100" : undefined}>
-                  {attemptsRemaining} of {MAX_ATTEMPTS} attempts left
-                </Chip>
+          <div className="p-5 sm:p-7">
+            <Link href="/dashboard/learning" className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-2.5 py-1 text-[12px] font-medium text-white/85! no-underline! ring-1 ring-white/15 backdrop-blur transition hover:bg-white/20 hover:text-white!">
+              <ArrowLeft className="h-3.5 w-3.5" aria-hidden="true" />
+              Learning Portal
+            </Link>
+
+            <div className="mt-6 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+              <div className="flex min-w-0 items-start gap-3.5">
+                <span className={`grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-white shadow-lg ${tone.text}`}>
+                  <Icon className="h-6 w-6" aria-hidden="true" />
+                </span>
+                <div className="min-w-0">
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-teal-200">{learningModule.category}</span>
+                  <h1 className="mt-0.5 text-2xl! font-semibold! leading-tight! tracking-tight sm:text-3xl!">{learningModule.title}</h1>
+                  <div className="mt-3 flex flex-wrap gap-1.5 text-[11px] font-medium">
+                    <Chip icon={Clock3}>{learningModule.duration}</Chip>
+                    <Chip icon={BookOpen}>{slides.length} slides</Chip>
+                    <Chip icon={ClipboardCheck}>{QUESTIONS_PER_TEST} questions · pass {PASS_PERCENT}%</Chip>
+                    <Chip icon={RotateCcw} tone={attemptsRemaining <= 1 && !passed ? "bg-rose-500/25 text-rose-100 ring-rose-300/40" : undefined}>
+                      {attemptsRemaining} of {MAX_ATTEMPTS} attempts left
+                    </Chip>
+                  </div>
+                </div>
               </div>
+              <Stepper current={stepIndex} />
             </div>
           </div>
-          <Stepper current={stepIndex} />
         </header>
 
-        <div className="mt-3 flex items-center gap-1.5 text-[11px] text-slate-500 print:hidden">
+        <div className="mt-3 flex items-center gap-1.5 px-1 text-[11px] text-slate-500 print:hidden">
           <Info className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
           Demonstration training content, pending clinical review. Progress is saved in this browser only.
         </div>
@@ -276,31 +295,32 @@ export function ModuleRunner({ moduleId, content, learnerName }: { moduleId: str
 
 function Chip({ icon: Icon, tone, children }: { icon: typeof Clock3; tone?: string; children: React.ReactNode }) {
   return (
-    <span className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 ${tone ?? "border-slate-200 bg-white"}`}>
+    <span className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 ring-1 backdrop-blur ${tone ?? "bg-white/10 text-white/90 ring-white/15"}`}>
       <Icon className="h-3 w-3" aria-hidden="true" />
       {children}
     </span>
   );
 }
 
+/** Sits on the dark module banner. */
 function Stepper({ current }: { current: number }) {
   const steps = ["Study", "Assessment", "Certificate"];
   return (
-    <ol className="flex shrink-0 items-center gap-1.5 text-[11px] font-semibold" aria-label="Module progress">
+    <ol className="m-0! flex shrink-0 list-none! items-center gap-1.5 rounded-2xl bg-white/10 p-1.5 pl-2.5! text-[11px] font-semibold ring-1 ring-white/15 backdrop-blur" aria-label="Module progress">
       {steps.map((step, index) => {
         const done = index < current;
         const active = index === current;
         return (
-          <li key={step} className="flex items-center gap-1.5" aria-current={active ? "step" : undefined}>
+          <li key={step} className="m-0! flex items-center gap-1.5" aria-current={active ? "step" : undefined}>
             <span
-              className={`grid h-5 w-5 place-items-center rounded-full text-[10px] ${
-                done ? "bg-emerald-500 text-white" : active ? "bg-slate-900 text-white" : "bg-slate-200 text-slate-500"
+              className={`grid h-6 w-6 place-items-center rounded-full text-[10px] ${
+                done ? "bg-emerald-400 text-emerald-950" : active ? "bg-white text-slate-900" : "bg-white/15 text-white/70"
               }`}
             >
-              {done ? <Check className="h-3 w-3" aria-hidden="true" /> : index + 1}
+              {done ? <Check className="h-3.5 w-3.5" aria-hidden="true" /> : index + 1}
             </span>
-            <span className={active ? "text-slate-900" : "text-slate-400"}>{step}</span>
-            {index < steps.length - 1 && <span className="mx-0.5 h-px w-4 bg-slate-300" aria-hidden="true" />}
+            <span className={`pr-1 ${active ? "text-white" : "hidden text-white/60 sm:inline"}`}>{step}</span>
+            {index < steps.length - 1 && <span className="mx-0.5 h-px w-4 bg-white/25" aria-hidden="true" />}
           </li>
         );
       })}
@@ -353,51 +373,55 @@ function SlideViewer({
   const isLast = currentSlide === slides.length - 1;
 
   return (
-    <section aria-roledescription="slide deck" aria-label={`${moduleTitle} slides`} className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+    <section aria-roledescription="slide deck" aria-label={`${moduleTitle} slides`} className="overflow-hidden rounded-3xl bg-white shadow-[0_1px_2px_rgba(15,23,42,0.04),0_16px_40px_-24px_rgba(15,23,42,0.3)] ring-1 ring-slate-200/80">
       {/* Progress strip */}
-      <div className="flex items-center justify-between gap-3 border-b border-slate-100 px-4 py-2.5 sm:px-6">
+      <div className="flex items-center justify-between gap-3 border-b border-slate-100 px-5 py-3 sm:px-7">
         <span className="text-xs font-semibold text-slate-700" aria-live="polite">
-          Slide {currentSlide + 1} of {slides.length}
+          Slide <span className="tabular-nums">{currentSlide + 1}</span> <span className="font-normal text-slate-400">of {slides.length}</span>
         </span>
-        <div className="h-1.5 w-32 overflow-hidden rounded-full bg-slate-100 sm:w-48" aria-hidden="true">
-          <div className="h-full rounded-full bg-sky-500 transition-[width] duration-300" style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }} />
+        <div className="h-1.5 w-32 overflow-hidden rounded-full bg-slate-100 sm:w-56" aria-hidden="true">
+          <div className="h-full rounded-full bg-gradient-to-r from-teal-400 to-teal-600 transition-[width] duration-500" style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }} />
         </div>
       </div>
 
       {/* Slide body */}
-      <div key={currentSlide} className="grid gap-5 p-4 sm:p-6 md:min-h-[380px] md:grid-cols-5 md:gap-7 lg:p-8">
-        <div className="md:col-span-3">
-          <span className={`text-[10px] font-semibold uppercase tracking-[0.14em] ${toneText}`}>
+      <div
+        key={currentSlide}
+        className={`grid gap-6 p-5 sm:p-7 md:min-h-[400px] lg:p-9 ${slide.image ? "md:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] md:gap-8" : ""}`}
+      >
+        <div className="min-w-0">
+          <span className={`inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] ${toneText}`}>
+            <span className={`h-px w-6 bg-current opacity-60`} aria-hidden="true" />
             {currentSlide === 0 ? "Introduction" : isLast ? "Summary" : `Part ${currentSlide + 1}`}
           </span>
-          <h2 className="mt-1 text-lg! font-semibold! leading-snug! text-slate-900! sm:text-xl!">{slide.title}</h2>
-          <ul className="mt-4 space-y-2.5">
-            {slide.bullets.map((bullet) => (
-              <li key={bullet} className="flex gap-2.5 text-sm! leading-relaxed!">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400" aria-hidden="true" />
-                <span>{bullet}</span>
+          <h2 className="mt-2 text-xl! font-semibold! leading-snug! tracking-tight text-slate-900! sm:text-2xl!">{slide.title}</h2>
+
+          <ol className={`m-0! mt-5! grid list-none! gap-2.5 p-0! ${slide.image ? "" : "md:grid-cols-2 md:gap-3"}`}>
+            {slide.bullets.map((bullet, index) => (
+              <li key={bullet} className={`m-0! flex gap-3 rounded-xl border px-3.5 py-3 text-sm! leading-relaxed! ${toneSoft}`}>
+                <span className={`grid h-6 w-6 shrink-0 place-items-center rounded-lg bg-white text-[11px] font-bold shadow-sm ring-1 ring-black/5 ${toneText}`} aria-hidden="true">
+                  {index + 1}
+                </span>
+                <span className="pt-0.5">{bullet}</span>
               </li>
             ))}
-          </ul>
+          </ol>
+
           {slide.keyPoint && (
-            <div className="mt-5 flex gap-2.5 rounded-xl border border-amber-200 bg-amber-50 px-3.5 py-2.5 text-[13px] text-amber-900">
-              <Lightbulb className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" aria-hidden="true" />
-              <span className="font-medium">{slide.keyPoint}</span>
+            <div className="mt-5 flex gap-3 rounded-xl bg-gradient-to-r from-amber-50 to-amber-50/40 px-4 py-3 text-[13.5px] text-amber-950 ring-1 ring-amber-200/80">
+              <span className="grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-amber-100 text-amber-600">
+                <Lightbulb className="h-4 w-4" aria-hidden="true" />
+              </span>
+              <span className="pt-1 font-medium leading-snug">{slide.keyPoint}</span>
             </div>
           )}
         </div>
 
-        {slide.image ? <SlideImage key={slide.image.src} image={slide.image} /> : <figure className={`flex min-h-[180px] flex-col items-center justify-center rounded-xl border border-dashed p-5 text-center md:col-span-2 ${toneSoft}`}>
-          <span className="grid h-12 w-12 place-items-center rounded-full bg-white/80 shadow-sm">
-            <ImageIcon className={`h-5 w-5 ${toneText}`} aria-hidden="true" />
-          </span>
-          <span className="mt-3 text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-400">Clinical illustration</span>
-          <figcaption className="mt-1 max-w-[16rem] text-xs! leading-snug! text-slate-600!">{slide.visual}</figcaption>
-        </figure>}
+        {slide.image && <SlideImage key={slide.image.src} image={slide.image} />}
       </div>
 
       {/* Controls */}
-      <div className="flex flex-col gap-3 border-t border-slate-100 bg-slate-50/60 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+      <div className="flex flex-col gap-3 border-t border-slate-100 bg-slate-50/70 px-5 py-3.5 sm:flex-row sm:items-center sm:justify-between sm:px-7">
         <div className="order-2 flex flex-wrap justify-center gap-1 sm:order-none" aria-label="Jump to slide">
           {slides.map((s, index) => {
             const reachable = index <= furthest + 1;
@@ -410,7 +434,7 @@ function SlideViewer({
                 aria-label={`Slide ${index + 1}: ${s.title}`}
                 aria-current={index === currentSlide ? "step" : undefined}
                 className={`h-2 rounded-full transition-all ${
-                  index === currentSlide ? "w-5 bg-slate-900" : index <= furthest ? "w-2 bg-sky-400 hover:bg-sky-500" : "w-2 bg-slate-200"
+                  index === currentSlide ? "w-6 bg-[#0B2530]" : index <= furthest ? "w-2 bg-teal-400 hover:bg-teal-500" : "w-2 bg-slate-200"
                 } disabled:cursor-not-allowed`}
               />
             );
@@ -422,7 +446,7 @@ function SlideViewer({
             type="button"
             onClick={() => onGo(currentSlide - 1)}
             disabled={currentSlide === 0}
-            className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-2 text-[13px] font-semibold text-slate-700 shadow-sm transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40"
+            className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3.5 py-2 text-[13px] font-semibold text-slate-700 shadow-sm transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40"
           >
             <ArrowLeft className="h-4 w-4" aria-hidden="true" />
             Previous
@@ -431,7 +455,7 @@ function SlideViewer({
             <button
               type="button"
               onClick={() => onGo(currentSlide + 1)}
-              className="inline-flex items-center gap-1.5 rounded-lg bg-slate-900 px-3.5 py-2 text-[13px] font-semibold text-white shadow-sm transition hover:bg-slate-800"
+              className="inline-flex items-center gap-1.5 rounded-xl bg-[#0B2530] px-4 py-2 text-[13px] font-semibold text-white shadow-sm transition hover:bg-teal-800"
             >
               Next
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -445,7 +469,7 @@ function SlideViewer({
             <button
               type="button"
               onClick={onStartAssessment}
-              className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3.5 py-2 text-[13px] font-semibold text-white shadow-sm transition hover:bg-emerald-700"
+              className="inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 px-4 py-2 text-[13px] font-semibold text-white shadow-md shadow-emerald-600/20 transition hover:from-emerald-600 hover:to-emerald-700"
             >
               <ClipboardCheck className="h-4 w-4" aria-hidden="true" />
               Start Final Assessment ({QUESTIONS_PER_TEST} Questions)
@@ -614,21 +638,49 @@ function Assessment({
 
 function SlideImage({ image }: { image: LearningImage }) {
   const [failed, setFailed] = useState(false);
+  // Diagrams and illustrations are shown whole; photographs fill a fixed frame.
+  const isGraphic = image.width < 700 || image.width / image.height > 1.7;
   return (
-    <figure className="m-0! min-w-0 self-start overflow-hidden rounded-xl border border-slate-200 bg-slate-50 md:col-span-2">
-      <a href={image.sourceUrl} target="_blank" rel="noopener noreferrer" className="block bg-white p-3" aria-label={`Open full image and source: ${image.alt}`}>
+    <figure className="m-0! min-w-0 self-start overflow-hidden rounded-2xl bg-white shadow-[0_12px_32px_-18px_rgba(15,23,42,0.4)] ring-1 ring-slate-200">
+      <div className={`relative ${isGraphic ? "bg-slate-50 p-4" : "aspect-[4/3] bg-slate-100"}`}>
         {failed ? (
-          <span role="status" className="flex min-h-48 items-center justify-center p-5 text-center text-sm text-slate-700">Image unavailable. Open the original source.</span>
+          <span role="status" className="flex min-h-48 items-center justify-center p-5 text-center text-sm text-slate-700">
+            Image unavailable.
+          </span>
+        ) : isGraphic ? (
+          <Image
+            src={image.src}
+            alt={image.alt}
+            width={image.width}
+            height={image.height}
+            sizes="(min-width: 768px) 420px, 100vw"
+            onError={() => setFailed(true)}
+            className="mx-auto h-auto max-h-[340px] w-auto max-w-full object-contain"
+          />
         ) : (
-          <Image src={image.src} alt={image.alt} width={800} height={600} unoptimized onError={() => setFailed(true)} className="h-auto max-h-[420px] w-full object-contain" />
+          <Image
+            src={image.src}
+            alt={image.alt}
+            fill
+            sizes="(min-width: 768px) 440px, 100vw"
+            onError={() => setFailed(true)}
+            className="object-cover"
+            style={{ objectPosition: image.position }}
+          />
         )}
-      </a>
-      <figcaption className="space-y-2 border-t border-slate-200 p-3 text-xs! leading-relaxed! text-slate-700!">
-        <p className="m-0!">{image.caption}</p>
-        <p className="m-0! text-[10px]! text-slate-600!">
-          {image.credit} · <a href={image.licenseUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">{image.license}</a>
-          {" · "}<a href={image.sourceUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">Source / full image</a>
-        </p>
+      </div>
+      <figcaption className="border-t border-slate-100 px-4 py-3 text-[12.5px]! leading-relaxed!">
+        <span className="block text-slate-800">{image.caption}</span>
+        <span className="mt-1.5 block text-[10.5px] text-slate-500">
+          {image.credit} ·{" "}
+          <a href={image.licenseUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-slate-800">
+            {image.license}
+          </a>
+          {" · "}
+          <a href={image.sourceUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-slate-800">
+            Source
+          </a>
+        </span>
       </figcaption>
     </figure>
   );
