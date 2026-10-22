@@ -21,7 +21,7 @@ export async function AppShell({ children }: { children: React.ReactNode }) {
   const draftTopicCount = await getDiseaseDraftTopicCount();
   const initialRegion = resolveRegion(undefined, (await cookies()).get(REGION_COOKIE)?.value);
   return (
-    <CollapsibleShell primaryColor={user.primaryColor}>
+    <CollapsibleShell primaryColor={user.primaryColor} region={initialRegion}>
       <Sidebar
         organizationName={user.organizationName}
         organizationNote={"Riyadh, Saudi Arabia"}

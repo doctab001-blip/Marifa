@@ -10,7 +10,7 @@ const findings = z.array(finding).max(30).default([]);
 const requestSchema = z.object({
   age: z.number().int().min(0).max(120).optional(),
   gender: z.enum(["male", "female", "all"]).optional(),
-  region: z.enum(["SA", "IN", "UK"]).optional(),
+  region: z.enum(["SA", "IN"]).optional(),
   symptoms: findings,
   examFindings: findings,
   labInvestigations: findings,
