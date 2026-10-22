@@ -1,0 +1,2403 @@
+[
+ {
+  "id": "04a4e2cb-497f-540e-ba09-e993ddb5bb9a",
+  "title": "Cholera (India)",
+  "specialty": "Infectious Diseases / Internal Medicine",
+  "authority": "MoHFW",
+  "status": "under_review",
+  "version": "india-authoring-2026-10-22-b11-v1",
+  "lastReviewed": "2026-10-22",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+   "checkedOn": "2026-10-22",
+   "status": "incomplete",
+   "scope": "Suspected cholera in adults and children in India: dehydration assessment, rehydration plans A–C, antibiotics, zinc and confirmation.",
+   "findings": [
+    "Case definition, dehydration signs, plans A–C volumes and antibiotic choices checked against the GTFCC flowchart (2024).",
+    "Antibiotic indications and doses by age and pregnancy, and zinc dose, checked against the GTFCC antibiotic technical note (2018, pp. 2–6).",
+    "Confirmation methods checked against US CDC (2024).",
+    "Not clinically reviewed."
+   ],
+   "unverifiedSections": [
+    "No Indian national cholera treatment guideline was opened; GTFCC (WHO-hosted global task force) guidance is used. Notify cases through the Integrated Disease Surveillance Programme per state rules.",
+    "Doxycycline for children under 12 differs between GTFCC documents (200 mg single dose versus 2–4 mg/kg); both are shown.",
+    "The flowchart text did not show arrows; the plan-to-dehydration mapping follows the standard GTFCC structure.",
+    "CKD and CLD adjustment lines are general cautions, not statements from the cited sources; confirm with product information.",
+    "Normal values are typical adult ranges unless labelled otherwise; local laboratory ranges apply."
+   ],
+   "medscapeStatus": "unavailable",
+   "originalVersionIds": [
+    "04a4e2cb-497f-540e-ba09-e993ddb5bb9a"
+   ]
+  },
+  "pathophysiology": {
+   "summary": "Cholera is caused by toxigenic Vibrio cholerae O1 or O139 acquired from faecally contaminated water or food. In India it occurs in outbreaks, often in the monsoon and where water and sanitation fail. Cholera toxin activates intestinal adenylate cyclase, causing massive secretion of isotonic fluid and electrolytes into the bowel lumen without mucosal damage. The result is painless, profuse watery ('rice-water') diarrhoea, often with vomiting, that can produce severe dehydration, hypovolaemic shock, metabolic acidosis, hypokalaemia, hypoglycaemia (especially in children) and acute kidney injury within hours. Death is prevented by rapid rehydration: oral rehydration solution (ORS) for no or some dehydration and intravenous Ringer's lactate for severe dehydration, with frequent reassessment. A single dose of antibiotic shortens diarrhoea and shedding in severe or high-risk cases. Zinc is given to young children. Stool culture or polymerase chain reaction (PCR) confirms the diagnosis, but treatment never waits for results.",
+   "keyMechanisms": [
+    "Cholera toxin raises intestinal cyclic AMP, causing secretion of chloride and water.",
+    "Isotonic fluid loss causes hypovolaemia, shock and acute kidney injury.",
+    "Bicarbonate and potassium loss cause metabolic acidosis and hypokalaemia.",
+    "Glucose-coupled sodium absorption stays intact, so ORS works."
+   ]
+  },
+  "presentation": {
+   "symptoms": [
+    "Sudden profuse painless watery diarrhoea",
+    "Vomiting",
+    "Thirst",
+    "Leg cramps",
+    "Reduced urine"
+   ],
+   "physicalSigns": [
+    "Sunken eyes",
+    "Skin pinch returning slowly or very slowly",
+    "Rapid weak or absent pulse",
+    "Lethargy or unconsciousness in severe dehydration"
+   ],
+   "redFlags": [
+    "Lethargy or unconsciousness",
+    "Absent or weak pulse",
+    "Respiratory distress (acidosis)",
+    "Unable to drink",
+    "Hypoglycaemia in children",
+    "Pregnancy, severe acute malnutrition or HIV"
+   ],
+   "precipitants": [
+    "Unsafe drinking water",
+    "Outbreak in the community",
+    "Flooding and poor sanitation",
+    "Contaminated street food or seafood"
+   ]
+  },
+  "differentials": [
+   {
+    "condition": "Other acute watery diarrhoea (rotavirus, enterotoxigenic E. coli)",
+    "distinguishingFeatures": "Usually less voluminous; stool culture negative for V. cholerae."
+   },
+   {
+    "condition": "Dysentery (Shigella)",
+    "distinguishingFeatures": "Blood and mucus in stool with fever and tenesmus."
+   },
+   {
+    "condition": "Food poisoning with toxins",
+    "distinguishingFeatures": "Vomiting predominant, short incubation, self-limiting."
+   },
+   {
+    "condition": "Severe malaria with diarrhoea",
+    "distinguishingFeatures": "Positive smear or antigen test."
+   }
+  ],
+  "diagnosticCriteria": [
+   {
+    "criterion": "Suspected cholera (no outbreak)",
+    "threshold": "Person 2 years or older with acute watery diarrhoea and severe dehydration, or dying from it (GTFCC flowchart 2024)."
+   },
+   {
+    "criterion": "Suspected cholera (declared outbreak)",
+    "threshold": "Anyone with or dying from acute watery diarrhoea (GTFCC flowchart 2024)."
+   },
+   {
+    "criterion": "Confirmed cholera",
+    "threshold": "V. cholerae O1 or O139 by culture with seroagglutination, or PCR (CDC 2024, section Stool Culture)."
+   }
+  ],
+  "investigations": {
+   "ruleIn": [
+    {
+     "tier": "specializedAdjunctive",
+     "testName": "Dehydration assessment (mental state, pulse, eyes, thirst, skin pinch)",
+     "modalityTarget": "Bedside examination",
+     "targetCondition": "Degree of dehydration",
+     "normalValue": "Alert, normal pulse, eyes not sunken, normal skin pinch",
+     "expectedFinding": "Some dehydration: 2 or more of restless, sunken eyes, rapid pulse, thirsty, slow skin pinch; severe: any danger sign or 2 of poor drinking, very slow skin pinch, sunken eyes",
+     "clinicalRationale": "Selects Plan A, B or C; repeat every 15–30 minutes in Plan C and hourly in Plan B.",
+     "references": [
+      {
+       "title": "Cholera patient treatment flowchart (GTFCC)",
+       "edition": "GTFCC v1.0, 9 September 2024, section Assess dehydration",
+       "url": "https://www.gtfcc.org/wp-content/uploads/2024/10/gtfcc-cholera-patient-treatment-flowchart-en.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Stool culture for V. cholerae",
+     "modalityTarget": "Stool culture with seroagglutination",
+     "targetCondition": "Cholera",
+     "normalValue": "No V. cholerae isolated",
+     "expectedFinding": "V. cholerae O1 or O139 isolated",
+     "clinicalRationale": "Confirms the case; rehydration never waits for the result.",
+     "references": [
+      {
+       "title": "Cholera Case Definitions and Diagnosis (US CDC)",
+       "edition": "CDC, reviewed 13 August 2024, section Stool Culture",
+       "url": "https://cdc.gov/cholera/hcp/case-definition/index.html"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Cholera rapid diagnostic test",
+     "modalityTarget": "Stool antigen test",
+     "targetCondition": "Outbreak early warning",
+     "normalValue": "Negative",
+     "expectedFinding": "Positive for O1 or O139",
+     "clinicalRationale": "Useful as outbreak alert; sensitivity and specificity are not optimal, so confirm positives by culture or PCR.",
+     "references": [
+      {
+       "title": "Cholera Case Definitions and Diagnosis (US CDC)",
+       "edition": "CDC, reviewed 13 August 2024, section Rapid Diagnostic Tests",
+       "url": "https://cdc.gov/cholera/hcp/case-definition/index.html"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "V. cholerae PCR (including toxin gene)",
+     "modalityTarget": "Stool nucleic acid",
+     "targetCondition": "Cholera confirmation",
+     "normalValue": "Not detected",
+     "expectedFinding": "Toxigenic O1 or O139 detected",
+     "clinicalRationale": "Accepted confirmation; shows toxigenicity where no outbreak is confirmed.",
+     "references": [
+      {
+       "title": "Cholera Case Definitions and Diagnosis (US CDC)",
+       "edition": "CDC, reviewed 13 August 2024, section PCR",
+       "url": "https://cdc.gov/cholera/hcp/case-definition/index.html"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Capillary blood glucose",
+     "modalityTarget": "Bedside glucose",
+     "targetCondition": "Hypoglycaemia",
+     "normalValue": "3.9–7.8 mmol/L (70–140 mg/dL)",
+     "expectedFinding": "Below 3 mmol/L (54 mg/dL)",
+     "clinicalRationale": "Hypoglycaemia occurs in severe cases, especially children; treat rapidly with intravenous dextrose.",
+     "references": [
+      {
+       "title": "Cholera patient treatment flowchart (GTFCC)",
+       "edition": "GTFCC v1.0, 9 September 2024, section Plan C",
+       "url": "https://www.gtfcc.org/wp-content/uploads/2024/10/gtfcc-cholera-patient-treatment-flowchart-en.pdf"
+      }
+     ]
+    }
+   ],
+   "ruleOut": [
+    {
+     "tier": "laboratory",
+     "testName": "Stool for blood and microscopy",
+     "modalityTarget": "Visual inspection and microscopy",
+     "targetCondition": "Dysentery",
+     "normalValue": "No blood or pus cells",
+     "expectedFinding": "Blood and pus cells",
+     "clinicalRationale": "Bloody diarrhoea is not managed on the cholera pathway.",
+     "references": [
+      {
+       "title": "Cholera patient treatment flowchart (GTFCC)",
+       "edition": "GTFCC v1.0, 9 September 2024, section Case definition",
+       "url": "https://www.gtfcc.org/wp-content/uploads/2024/10/gtfcc-cholera-patient-treatment-flowchart-en.pdf"
+      }
+     ]
+    }
+   ]
+  },
+  "clinicalManagement": [
+   {
+    "id": "assess",
+    "title": "Assess dehydration and triage",
+    "timeframe": "On arrival",
+    "actions": [
+     "Apply the case definition and classify dehydration as none, some or severe.",
+     "Weigh the patient; notify the case to the surveillance unit."
+    ],
+    "branches": [
+     {
+      "condition": "Severe dehydration or shock",
+      "actions": [
+       "Plan C: intravenous Ringer's lactate 100 mL/kg."
+      ]
+     },
+     {
+      "condition": "Some dehydration",
+      "actions": [
+       "Plan B: ORS 75 mL/kg over 4 hours."
+      ]
+     },
+     {
+      "condition": "No dehydration",
+      "actions": [
+       "Plan A: ORS at home after each loose stool."
+      ]
+     }
+    ]
+   },
+   {
+    "id": "plan-c",
+    "title": "Plan C — severe dehydration",
+    "timeframe": "First 3–6 hours",
+    "actions": [
+     "Age 1 year or older: 30 mL/kg in 30 minutes, then 70 mL/kg over 2.5 hours; under 1 year: 30 mL/kg in 1 hour, then 70 mL/kg over 5 hours.",
+     "Reassess every 15–30 minutes; start ORS as soon as the patient can drink.",
+     "Move to Plan B when alert, able to drink and pulse improved."
+    ]
+   },
+   {
+    "id": "antibiotic-and-zinc",
+    "title": "Antibiotic and zinc",
+    "timeframe": "Once rehydration has started and vomiting settled",
+    "actions": [
+     "Single-dose antibiotic for severe dehydration, high purging, failure of the first 4 hours of rehydration, pregnancy, severe acute malnutrition or HIV.",
+     "Zinc 20 mg daily for 10 days for children 6 months to 5 years."
+    ]
+   },
+   {
+    "id": "discharge",
+    "title": "Discharge",
+    "timeframe": "When criteria met",
+    "actions": [
+     "No dehydration signs, drinking ORS without vomiting, no watery stools for 4 hours, walking unaided and passing urine."
+    ]
+   }
+  ],
+  "medicationPlan": {
+   "status": "source-verified",
+   "regimens": [
+    {
+     "indication": "Severe dehydration (Plan C)",
+     "patientGroup": "All ages",
+     "genericName": "Ringer's lactate",
+     "dose": "100 mL/kg total: 30 mL/kg then 70 mL/kg",
+     "route": "Intravenous",
+     "frequency": "Age 1 year or older: 30 mL/kg over 30 min then 70 mL/kg over 2.5 h; under 1 year: over 1 h then 5 h",
+     "duration": "Until Plan B criteria met; then ORS",
+     "adjustments": [
+      "Paediatric: Infants under 1 year use the slower schedule (1 h then 5 h).",
+      "Penicillin allergy: Not a beta-lactam; penicillin allergy does not change this medicine.",
+      "CKD: Reassess fluid balance frequently; existing dialysis patients need specialist fluid targets.",
+      "CLD: Monitor for fluid overload."
+     ],
+     "monitoring": [
+      "Pulse and mental state every 15–30 minutes",
+      "Urine output",
+      "Glucose"
+     ],
+     "contraindications": [
+      "Fluid overload (reassess rate)"
+     ],
+     "branch": "Severe dehydration — all ages",
+     "step": "Rehydration",
+     "selection": "all",
+     "sourceTitle": "Cholera patient treatment flowchart (GTFCC)",
+     "sourceUrl": "https://www.gtfcc.org/wp-content/uploads/2024/10/gtfcc-cholera-patient-treatment-flowchart-en.pdf",
+     "sourceEdition": "GTFCC v1.0, 9 September 2024, section Plan C"
+    },
+    {
+     "indication": "Some dehydration (Plan B)",
+     "patientGroup": "All ages",
+     "genericName": "Oral rehydration solution",
+     "dose": "75 mL/kg (for example 2,200–4,000 mL at 30 kg or more)",
+     "route": "Oral",
+     "frequency": "Over 4 hours",
+     "duration": "Then reassess",
+     "adjustments": [
+      "Paediatric: Under 4 months 200–400 mL; 4–11 months 400–600 mL; 12–23 months 600–800 mL; 2–4 years 800–1,200 mL; 5–14 years 1,200–2,200 mL over 4 hours.",
+      "Penicillin allergy: Not a beta-lactam; penicillin allergy does not change this medicine.",
+      "CKD: Monitor fluid balance.",
+      "CLD: No routine change."
+     ],
+     "monitoring": [
+      "Hourly dehydration reassessment",
+      "Stool and vomit losses"
+     ],
+     "contraindications": [
+      "Unable to drink: use Plan C"
+     ],
+     "branch": "Some dehydration — all ages",
+     "step": "Rehydration",
+     "selection": "all",
+     "sourceTitle": "Cholera patient treatment flowchart (GTFCC)",
+     "sourceUrl": "https://www.gtfcc.org/wp-content/uploads/2024/10/gtfcc-cholera-patient-treatment-flowchart-en.pdf",
+     "sourceEdition": "GTFCC v1.0, 9 September 2024, section Plan B"
+    },
+    {
+     "indication": "Cholera needing antibiotic",
+     "patientGroup": "Adults and children 12 years or older, including pregnancy",
+     "genericName": "Doxycycline",
+     "dose": "300 mg",
+     "route": "Oral",
+     "frequency": "Single dose",
+     "duration": "Once",
+     "adjustments": [
+      "Paediatric: Under 12: see children branch.",
+      "Penicillin allergy: Not a beta-lactam; penicillin allergy does not change this medicine.",
+      "CKD: No change for a single dose.",
+      "CLD: No change for a single dose."
+     ],
+     "monitoring": [
+      "Stool output",
+      "Vomiting within 30 minutes (repeat dose)"
+     ],
+     "contraindications": [
+      "Local strain resistant"
+     ],
+     "branch": "Antibiotic — adults and children 12 years or older (including pregnancy)",
+     "step": "Antibiotic",
+     "selection": "one-of",
+     "sourceTitle": "Technical Note: Use of antibiotics for the treatment and control of cholera (GTFCC Case Management Working Group)",
+     "sourceUrl": "https://www.gtfcc.org/wp-content/uploads/2019/10/gtfcc-technical-note-on-use-of-antibiotics-for-the-treatment-of-cholera.pdf",
+     "sourceEdition": "GTFCC, May 2018, p. 4, Table 1",
+     "preferred": true
+    },
+    {
+     "indication": "Cholera needing antibiotic",
+     "patientGroup": "Adults and children 12 years or older",
+     "genericName": "Azithromycin",
+     "dose": "1 g",
+     "route": "Oral",
+     "frequency": "Single dose",
+     "duration": "Once",
+     "adjustments": [
+      "Paediatric: Under 12: 20 mg/kg (maximum 1 g).",
+      "Penicillin allergy: Not a beta-lactam; penicillin allergy does not change this medicine.",
+      "CKD: No change for a single dose.",
+      "CLD: No change for a single dose."
+     ],
+     "monitoring": [
+      "Stool output"
+     ],
+     "contraindications": [
+      "Macrolide allergy"
+     ],
+     "branch": "Antibiotic — adults and children 12 years or older (including pregnancy)",
+     "step": "Antibiotic",
+     "selection": "one-of",
+     "sourceTitle": "Technical Note: Use of antibiotics for the treatment and control of cholera (GTFCC Case Management Working Group)",
+     "sourceUrl": "https://www.gtfcc.org/wp-content/uploads/2019/10/gtfcc-technical-note-on-use-of-antibiotics-for-the-treatment-of-cholera.pdf",
+     "sourceEdition": "GTFCC, May 2018, p. 4, Table 1",
+     "preferred": false,
+     "useWhen": "Local doxycycline resistance"
+    },
+    {
+     "indication": "Cholera needing antibiotic",
+     "patientGroup": "Children under 12",
+     "genericName": "Doxycycline",
+     "dose": "2–4 mg/kg (flowchart: 200 mg)",
+     "route": "Oral",
+     "frequency": "Single dose",
+     "duration": "Once",
+     "adjustments": [
+      "Paediatric: This branch is the paediatric dose.",
+      "Penicillin allergy: Not a beta-lactam; penicillin allergy does not change this medicine.",
+      "CKD: No change for a single dose.",
+      "CLD: No change for a single dose."
+     ],
+     "monitoring": [
+      "Stool output"
+     ],
+     "contraindications": [
+      "Local strain resistant"
+     ],
+     "branch": "Antibiotic — children under 12",
+     "step": "Antibiotic",
+     "selection": "one-of",
+     "sourceTitle": "Technical Note: Use of antibiotics for the treatment and control of cholera (GTFCC Case Management Working Group)",
+     "sourceUrl": "https://www.gtfcc.org/wp-content/uploads/2019/10/gtfcc-technical-note-on-use-of-antibiotics-for-the-treatment-of-cholera.pdf",
+     "sourceEdition": "GTFCC, May 2018, p. 4, Table 1",
+     "preferred": true
+    },
+    {
+     "indication": "Cholera needing antibiotic",
+     "patientGroup": "Children under 12",
+     "genericName": "Azithromycin",
+     "dose": "20 mg/kg (maximum 1 g)",
+     "route": "Oral",
+     "frequency": "Single dose",
+     "duration": "Once",
+     "adjustments": [
+      "Paediatric: This branch is the paediatric dose.",
+      "Penicillin allergy: Not a beta-lactam; penicillin allergy does not change this medicine.",
+      "CKD: No change for a single dose.",
+      "CLD: No change for a single dose."
+     ],
+     "monitoring": [
+      "Stool output"
+     ],
+     "contraindications": [
+      "Macrolide allergy"
+     ],
+     "branch": "Antibiotic — children under 12",
+     "step": "Antibiotic",
+     "selection": "one-of",
+     "sourceTitle": "Technical Note: Use of antibiotics for the treatment and control of cholera (GTFCC Case Management Working Group)",
+     "sourceUrl": "https://www.gtfcc.org/wp-content/uploads/2019/10/gtfcc-technical-note-on-use-of-antibiotics-for-the-treatment-of-cholera.pdf",
+     "sourceEdition": "GTFCC, May 2018, p. 4, Table 1",
+     "preferred": false,
+     "useWhen": "Local doxycycline resistance"
+    },
+    {
+     "indication": "Acute watery diarrhoea in young children",
+     "patientGroup": "Children 6 months to 5 years",
+     "genericName": "Zinc sulfate",
+     "dose": "20 mg",
+     "route": "Oral",
+     "frequency": "Once daily",
+     "duration": "10 days",
+     "adjustments": [
+      "Paediatric: This branch is the paediatric dose.",
+      "Penicillin allergy: Not a beta-lactam; penicillin allergy does not change this medicine.",
+      "CKD: No change.",
+      "CLD: No change."
+     ],
+     "monitoring": [
+      "Adherence",
+      "Vomiting"
+     ],
+     "contraindications": [
+      "None stated"
+     ],
+     "branch": "Zinc — children 6 months to 5 years",
+     "step": "Supplement",
+     "selection": "all",
+     "sourceTitle": "Technical Note: Use of antibiotics for the treatment and control of cholera (GTFCC Case Management Working Group)",
+     "sourceUrl": "https://www.gtfcc.org/wp-content/uploads/2019/10/gtfcc-technical-note-on-use-of-antibiotics-for-the-treatment-of-cholera.pdf",
+     "sourceEdition": "GTFCC, May 2018, p. 4"
+    }
+   ],
+   "note": "Rehydration is the treatment; antibiotics are adjuncts for severe or high-risk cases. Doxycycline is first line where the local strain is sensitive, including in pregnancy per GTFCC. Not clinically reviewed.",
+   "branches": [
+    {
+     "label": "Severe dehydration — all ages",
+     "entryCriteria": "Severe dehydration or shock"
+    },
+    {
+     "label": "Some dehydration — all ages",
+     "entryCriteria": "Some dehydration"
+    },
+    {
+     "label": "Antibiotic — adults and children 12 years or older (including pregnancy)",
+     "entryCriteria": "Antibiotic indication present, age 12 or older"
+    },
+    {
+     "label": "Antibiotic — children under 12",
+     "entryCriteria": "Antibiotic indication present, under 12"
+    },
+    {
+     "label": "Zinc — children 6 months to 5 years",
+     "entryCriteria": "Child with acute watery diarrhoea"
+    }
+   ]
+  },
+  "guidelineComparison": {
+   "title": "Doxycycline for children under 12: GTFCC documents differ",
+   "columns": [
+    "GTFCC technical note 2018 (p. 4, Table 1)",
+    "GTFCC flowchart 2024"
+   ],
+   "rows": [
+    {
+     "parameter": "Dose",
+     "values": [
+      "2–4 mg/kg single dose",
+      "200 mg single dose"
+     ]
+    }
+   ]
+  },
+  "teaching": {
+   "scope": "Suspected cholera in adults and children in India: dehydration assessment, rehydration plans A–C, antibiotics, zinc and confirmation.",
+   "learningObjectives": [
+    "Classify dehydration and choose plan A, B or C.",
+    "Give Ringer's lactate at the right rate.",
+    "Use single-dose antibiotics for the right patients."
+   ],
+   "keyPoints": [
+    "100 mL/kg Ringer's lactate in 3 hours (6 hours under 1 year).",
+    "Reassess every 15–30 minutes in Plan C.",
+    "Zinc for children 6 months to 5 years."
+   ],
+   "pitfalls": [
+    "Under-rehydrating adults with large ongoing losses.",
+    "Missing hypoglycaemia in children.",
+    "Waiting for culture before treatment."
+   ],
+   "references": [
+    {
+     "title": "Cholera patient treatment flowchart (GTFCC)",
+     "edition": "GTFCC v1.0, 9 September 2024",
+     "url": "https://www.gtfcc.org/wp-content/uploads/2024/10/gtfcc-cholera-patient-treatment-flowchart-en.pdf",
+     "locator": "sections Case definition, Assess dehydration, Plans A–C, Antibiotics"
+    },
+    {
+     "title": "Technical Note: Use of antibiotics for the treatment and control of cholera (GTFCC Case Management Working Group)",
+     "edition": "GTFCC, May 2018",
+     "url": "https://www.gtfcc.org/wp-content/uploads/2019/10/gtfcc-technical-note-on-use-of-antibiotics-for-the-treatment-of-cholera.pdf",
+     "locator": "pp. 2–6, Table 1"
+    },
+    {
+     "title": "Cholera Case Definitions and Diagnosis (US CDC)",
+     "edition": "CDC, reviewed 13 August 2024",
+     "url": "https://cdc.gov/cholera/hcp/case-definition/index.html",
+     "locator": "sections Stool Culture, Rapid Diagnostic Tests, PCR"
+    }
+   ]
+  },
+  "nonClinicalManagement": {
+   "patientEducation": [
+    "Give ORS after every loose stool and return if unable to drink.",
+    "Drink boiled or treated water; wash hands with soap."
+   ],
+   "lifestyleAndDiet": [
+    "Use latrines; keep food covered and cooked.",
+    "Store drinking water in clean covered containers."
+   ],
+   "mdtReferrals": [
+    "District surveillance unit (IDSP)",
+    "Water and sanitation officials",
+    "Paediatrics for severe acute malnutrition"
+   ],
+   "dischargeCriteria": [
+    "No dehydration signs, drinking ORS without vomiting, no watery stool for 4 hours, walking unaided, passing urine."
+   ],
+   "followUpPlan": "Review within 48 hours if diarrhoea continues; household contacts advised on water safety."
+  }
+ },
+ {
+  "id": "123fd2b8-119a-53a6-85e2-edb81293a40d",
+  "title": "Acute viral hepatitis A and E (incl. hepatitis E in pregnancy) (India)",
+  "specialty": "Infectious Diseases / Internal Medicine",
+  "authority": "MoHFW",
+  "status": "under_review",
+  "version": "india-authoring-2026-10-22-b11-v1",
+  "lastReviewed": "2026-10-22",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+   "checkedOn": "2026-10-22",
+   "status": "incomplete",
+   "scope": "Acute hepatitis A and E in India: diagnosis, supportive care, recognition and referral of acute liver failure, and hepatitis E in pregnancy.",
+   "findings": [
+    "Clinical features, serology, laboratory thresholds, management, acute liver failure criteria, warning signs, referral and pregnancy advice checked against MoHFW 2018 national guidelines (pp. 15–18, 44–48).",
+    "Not clinically reviewed."
+   ],
+   "unverifiedSections": [
+    "Lactulose dose for encephalopathy is not given in the opened text and is not included.",
+    "HEV RNA testing is not mentioned in the opened text.",
+    "Hepatitis A vaccine schedule is not in the opened text.",
+    "Paediatric vitamin K dose is not given in the source.",
+    "CKD and CLD adjustment lines are general cautions, not statements from the cited sources; confirm with product information.",
+    "Normal values are typical adult ranges unless labelled otherwise; local laboratory ranges apply."
+   ],
+   "medscapeStatus": "unavailable",
+   "originalVersionIds": [
+    "123fd2b8-119a-53a6-85e2-edb81293a40d"
+   ]
+  },
+  "pathophysiology": {
+   "summary": "Hepatitis A (HAV) and hepatitis E (HEV) are enterically transmitted hepatotropic viruses spread through contaminated water and food, and cause most acute viral hepatitis in India; HEV causes 10–40% of acute hepatitis and 15–45% of acute liver failure in India and drives waterborne outbreaks. After incubation (HAV about 15–45 days; HEV about 2–10 weeks), immune-mediated hepatocyte injury causes a prodrome of fever, anorexia, nausea and fatigue, followed by dark urine, pale stools and jaundice with alanine aminotransferase (ALT) often more than 10 times normal. Most patients recover with supportive care; there is no antiviral role. A minority develop acute liver failure: encephalopathy within 4 weeks of jaundice with coagulopathy, cerebral oedema and high mortality. Pregnant women with HEV are at particular risk, with case fatality of 10–25%, so symptomatic pregnant women are managed in hospital with intensive care, blood bank and obstetric services.",
+   "keyMechanisms": [
+    "Faecal–oral infection with replication in hepatocytes.",
+    "Immune-mediated hepatocyte injury raises transaminases and bilirubin.",
+    "Massive necrosis causes acute liver failure with encephalopathy and coagulopathy.",
+    "Pregnancy increases the risk of fulminant HEV hepatitis."
+   ]
+  },
+  "presentation": {
+   "symptoms": [
+    "Low-grade fever, anorexia, nausea and vomiting",
+    "Fatigue, myalgia and right upper abdominal discomfort",
+    "Dark urine and pale stools",
+    "Yellow eyes and skin; itching in cholestatic HEV"
+   ],
+   "physicalSigns": [
+    "Jaundice",
+    "Tender enlarged liver",
+    "Confusion, asterixis or bleeding in acute liver failure"
+   ],
+   "redFlags": [
+    "Altered mental state (encephalopathy)",
+    "International normalised ratio (INR) above 1.5",
+    "Severe or persistent vomiting or inability to drink",
+    "Spontaneous bleeding",
+    "Repeated hypoglycaemia",
+    "Pregnancy with symptomatic hepatitis"
+   ],
+   "precipitants": [
+    "Contaminated drinking water or outbreak",
+    "Poor sanitation and overcrowding",
+    "Pregnancy (severe HEV)",
+    "Advanced age or underlying liver disease (HAV severity)"
+   ]
+  },
+  "differentials": [
+   {
+    "condition": "Acute hepatitis B",
+    "distinguishingFeatures": "HBsAg and IgM anti-HBc positive."
+   },
+   {
+    "condition": "Leptospirosis",
+    "distinguishingFeatures": "Mild transaminase rise with high creatine kinase and kidney injury."
+   },
+   {
+    "condition": "Drug-induced liver injury",
+    "distinguishingFeatures": "Exposure to antituberculous drugs, paracetamol or herbal remedies."
+   },
+   {
+    "condition": "Pre-eclampsia, HELLP or acute fatty liver of pregnancy",
+    "distinguishingFeatures": "Hypertension, proteinuria, low platelets in late pregnancy."
+   }
+  ],
+  "diagnosticCriteria": [
+   {
+    "criterion": "Acute hepatitis A",
+    "threshold": "IgM anti-HAV positive (MoHFW 2018, pp. 17–18)."
+   },
+   {
+    "criterion": "Acute hepatitis E",
+    "threshold": "Specific IgM anti-HEV positive (p. 45)."
+   },
+   {
+    "criterion": "Jaundiced acute hepatitis",
+    "threshold": "Bilirubin above 2.5 mg/dL and ALT more than 10 times the upper limit of normal (pp. 17, 45)."
+   },
+   {
+    "criterion": "Acute liver failure",
+    "threshold": "Jaundice followed by hepatic encephalopathy within 4 weeks in a previously normal liver (p. 46)."
+   }
+  ],
+  "investigations": {
+   "ruleIn": [
+    {
+     "tier": "laboratory",
+     "testName": "IgM anti-HAV",
+     "modalityTarget": "Serum antibody",
+     "targetCondition": "Acute hepatitis A",
+     "normalValue": "Negative",
+     "expectedFinding": "Positive",
+     "clinicalRationale": "Indicates acute infection; IgG alone means past infection or vaccination.",
+     "references": [
+      {
+       "title": "Diagnosis and Management of Viral Hepatitis: National Guidelines (MoHFW)",
+       "edition": "MoHFW 2018, pp. 17–18",
+       "url": "https://clinicalestablishments.mohfw.gov.in/sites/default/files/standard-treatment-guidelines/3591.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "IgM anti-HEV",
+     "modalityTarget": "Serum antibody",
+     "targetCondition": "Acute hepatitis E",
+     "normalValue": "Negative",
+     "expectedFinding": "Positive",
+     "clinicalRationale": "Definitive diagnosis of acute HEV.",
+     "references": [
+      {
+       "title": "Diagnosis and Management of Viral Hepatitis: National Guidelines (MoHFW)",
+       "edition": "MoHFW 2018, p. 45",
+       "url": "https://clinicalestablishments.mohfw.gov.in/sites/default/files/standard-treatment-guidelines/3591.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Serum bilirubin and ALT",
+     "modalityTarget": "Liver function tests",
+     "targetCondition": "Acute hepatitis",
+     "normalValue": "Bilirubin under 1.2 mg/dL (21 µmol/L); ALT under 40 U/L",
+     "expectedFinding": "Bilirubin above 2.5 mg/dL; ALT more than 10 times upper limit",
+     "clinicalRationale": "Confirms hepatitic pattern; transaminases rise before bilirubin.",
+     "references": [
+      {
+       "title": "Diagnosis and Management of Viral Hepatitis: National Guidelines (MoHFW)",
+       "edition": "MoHFW 2018, pp. 17, 45",
+       "url": "https://clinicalestablishments.mohfw.gov.in/sites/default/files/standard-treatment-guidelines/3591.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Prothrombin time / INR",
+     "modalityTarget": "Coagulation",
+     "targetCondition": "Acute liver failure",
+     "normalValue": "INR 0.8–1.2",
+     "expectedFinding": "INR above 1.5",
+     "clinicalRationale": "INR above 1.5 with any altered sensorium requires tertiary referral.",
+     "references": [
+      {
+       "title": "Diagnosis and Management of Viral Hepatitis: National Guidelines (MoHFW)",
+       "edition": "MoHFW 2018, p. 48",
+       "url": "https://clinicalestablishments.mohfw.gov.in/sites/default/files/standard-treatment-guidelines/3591.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Blood glucose",
+     "modalityTarget": "Capillary or serum glucose",
+     "targetCondition": "Hypoglycaemia in liver failure",
+     "normalValue": "3.9–7.8 mmol/L (70–140 mg/dL)",
+     "expectedFinding": "Repeated hypoglycaemia",
+     "clinicalRationale": "A warning sign of acute liver failure.",
+     "references": [
+      {
+       "title": "Diagnosis and Management of Viral Hepatitis: National Guidelines (MoHFW)",
+       "edition": "MoHFW 2018, p. 47",
+       "url": "https://clinicalestablishments.mohfw.gov.in/sites/default/files/standard-treatment-guidelines/3591.pdf"
+      }
+     ]
+    }
+   ],
+   "ruleOut": [
+    {
+     "tier": "laboratory",
+     "testName": "HBsAg and IgM anti-HBc",
+     "modalityTarget": "Serum markers",
+     "targetCondition": "Acute hepatitis B",
+     "normalValue": "Negative",
+     "expectedFinding": "Positive",
+     "clinicalRationale": "Antivirals may have a role only in severe acute hepatitis B.",
+     "references": [
+      {
+       "title": "Diagnosis and Management of Viral Hepatitis: National Guidelines (MoHFW)",
+       "edition": "MoHFW 2018, pp. 47–48",
+       "url": "https://clinicalestablishments.mohfw.gov.in/sites/default/files/standard-treatment-guidelines/3591.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "specializedAdjunctive",
+     "testName": "Blood pressure and urine protein in pregnancy",
+     "modalityTarget": "Bedside",
+     "targetCondition": "Pre-eclampsia",
+     "normalValue": "Blood pressure below 140/90 mmHg; no proteinuria",
+     "expectedFinding": "Hypertension with proteinuria",
+     "clinicalRationale": "Exclude pre-eclampsia in pregnant women with hepatitis.",
+     "references": [
+      {
+       "title": "Diagnosis and Management of Viral Hepatitis: National Guidelines (MoHFW)",
+       "edition": "MoHFW 2018, p. 46",
+       "url": "https://clinicalestablishments.mohfw.gov.in/sites/default/files/standard-treatment-guidelines/3591.pdf"
+      }
+     ]
+    }
+   ]
+  },
+  "clinicalManagement": [
+   {
+    "id": "confirm-and-assess",
+    "title": "Confirm and assess severity",
+    "timeframe": "First visit",
+    "actions": [
+     "Send IgM anti-HAV, IgM anti-HEV, liver function and INR.",
+     "Look for warning signs: vomiting, confusion, bleeding, hypoglycaemia, high fever, dehydration or oliguria."
+    ]
+   },
+   {
+    "id": "supportive",
+    "title": "Supportive care",
+    "timeframe": "Until recovery",
+    "actions": [
+     "Most adults and children recover at home with rest, fluids and oral intake; no antiviral role.",
+     "Avoid hepatotoxic drugs, sedatives, aspirin and NSAIDs."
+    ],
+    "branches": [
+     {
+      "condition": "Pregnant and symptomatic",
+      "actions": [
+       "Admit to a hospital with intensive care, blood bank and obstetrics; monitor blood pressure and watch for liver failure."
+      ]
+     }
+    ]
+   },
+   {
+    "id": "acute-liver-failure",
+    "title": "Acute liver failure",
+    "timeframe": "Immediately on encephalopathy",
+    "actions": [
+     "Admit to intensive care or high dependency; nil by mouth with careful fluids and electrolytes; lactulose for encephalopathy.",
+     "Vitamin K for coagulopathy; treat infection, bleeding, seizures, shock and hypoxia.",
+     "Refer to a tertiary centre with physician-to-physician discussion for any altered sensorium and INR above 1.5."
+    ]
+   },
+   {
+    "id": "pregnancy-obstetric",
+    "title": "Obstetric management with hepatitis",
+    "timeframe": "Pregnancy",
+    "actions": [
+     "Do not induce labour to treat or prevent liver failure; do not induce in acute liver failure.",
+     "Vitamin K if membranes rupture early or preterm labour starts; oxytocin after delivery to prevent haemorrhage."
+    ]
+   }
+  ],
+  "medicationPlan": {
+   "status": "source-verified",
+   "regimens": [
+    {
+     "indication": "Coagulopathy in acute liver failure",
+     "patientGroup": "Adults",
+     "genericName": "Phytomenadione (vitamin K)",
+     "dose": "10 mg",
+     "route": "Intravenous",
+     "frequency": "Once daily",
+     "duration": "3 days",
+     "adjustments": [
+      "Paediatric: Paediatric dose not given in the source; use paediatric formulary.",
+      "Penicillin allergy: Not a beta-lactam; penicillin allergy does not change this medicine.",
+      "CKD: No change.",
+      "CLD: This is the indication; response may be limited in severe failure."
+     ],
+     "monitoring": [
+      "INR daily",
+      "Bleeding"
+     ],
+     "contraindications": [
+      "Previous anaphylaxis to intravenous vitamin K"
+     ],
+     "branch": "Acute liver failure — adults",
+     "step": "Coagulopathy",
+     "selection": "all",
+     "sourceTitle": "Diagnosis and Management of Viral Hepatitis: National Guidelines (MoHFW)",
+     "sourceUrl": "https://clinicalestablishments.mohfw.gov.in/sites/default/files/standard-treatment-guidelines/3591.pdf",
+     "sourceEdition": "MoHFW 2018, pp. 47–48"
+    },
+    {
+     "indication": "Hepatitis in pregnancy with preterm labour or prelabour rupture",
+     "patientGroup": "Pregnant women",
+     "genericName": "Phytomenadione (vitamin K)",
+     "dose": "10 mg",
+     "route": "Intravenous",
+     "frequency": "Repeat once after 24 hours",
+     "duration": "2 doses",
+     "adjustments": [
+      "Paediatric: Not applicable.",
+      "Penicillin allergy: Not a beta-lactam; penicillin allergy does not change this medicine.",
+      "CKD: No change.",
+      "CLD: Indication in liver dysfunction."
+     ],
+     "monitoring": [
+      "INR",
+      "Obstetric observations"
+     ],
+     "contraindications": [
+      "Previous anaphylaxis to intravenous vitamin K"
+     ],
+     "branch": "Pregnancy — preterm labour or ruptured membranes",
+     "step": "Coagulopathy prevention",
+     "selection": "all",
+     "sourceTitle": "Diagnosis and Management of Viral Hepatitis: National Guidelines (MoHFW)",
+     "sourceUrl": "https://clinicalestablishments.mohfw.gov.in/sites/default/files/standard-treatment-guidelines/3591.pdf",
+     "sourceEdition": "MoHFW 2018, p. 46"
+    }
+   ],
+   "note": "No antiviral treats acute hepatitis A or E. Vitamin K doses are from MoHFW 2018; lactulose and other liver-failure drugs follow the tertiary unit protocol. Not clinically reviewed.",
+   "branches": [
+    {
+     "label": "Acute liver failure — adults",
+     "entryCriteria": "Adult with encephalopathy and coagulopathy after acute hepatitis"
+    },
+    {
+     "label": "Pregnancy — preterm labour or ruptured membranes",
+     "entryCriteria": "Pregnant woman with acute hepatitis and preterm labour or prelabour rupture"
+    }
+   ]
+  },
+  "teaching": {
+   "scope": "Acute hepatitis A and E in India: diagnosis, supportive care, recognition and referral of acute liver failure, and hepatitis E in pregnancy.",
+   "learningObjectives": [
+    "Confirm HAV or HEV with IgM serology.",
+    "Recognise acute liver failure early and refer.",
+    "Manage hepatitis E in pregnancy safely."
+   ],
+   "keyPoints": [
+    "Refer when altered sensorium and INR above 1.5.",
+    "HEV mortality in pregnancy 10–25%.",
+    "Avoid sedatives, NSAIDs and hepatotoxic drugs."
+   ],
+   "pitfalls": [
+    "Inducing labour to treat liver failure.",
+    "Sedating a confused patient.",
+    "Missing hypoglycaemia."
+   ],
+   "references": [
+    {
+     "title": "Diagnosis and Management of Viral Hepatitis: National Guidelines (MoHFW)",
+     "edition": "MoHFW 2018",
+     "url": "https://clinicalestablishments.mohfw.gov.in/sites/default/files/standard-treatment-guidelines/3591.pdf",
+     "locator": "pp. 15–18, 44–48"
+    }
+   ]
+  },
+  "nonClinicalManagement": {
+   "patientEducation": [
+    "Drink boiled or treated water; wash hands after toilet and before eating.",
+    "Return at once for confusion, bleeding, persistent vomiting or reduced urine.",
+    "Avoid alcohol and unprescribed medicines until recovered."
+   ],
+   "lifestyleAndDiet": [
+    "Use sanitary latrines.",
+    "Hepatitis A vaccination where appropriate."
+   ],
+   "mdtReferrals": [
+    "Hepatology or tertiary liver unit",
+    "Obstetrics for pregnant women",
+    "District surveillance for outbreaks"
+   ],
+   "dischargeCriteria": [
+    "Tolerating oral intake, no encephalopathy, INR improving."
+   ],
+   "followUpPlan": "Recheck liver function in 1–2 weeks and until normal; urgent review for warning signs."
+  }
+ },
+ {
+  "id": "fc4e54d2-5a28-5a78-8c03-ad20131b7613",
+  "title": "Amoebic liver abscess (India)",
+  "specialty": "Infectious Diseases / Internal Medicine",
+  "authority": "ICMR",
+  "status": "under_review",
+  "version": "india-authoring-2026-10-22-b11-v1",
+  "lastReviewed": "2026-10-22",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+   "checkedOn": "2026-10-22",
+   "status": "incomplete",
+   "scope": "Amoebic liver abscess in adults in India: diagnosis, nitroimidazole and luminal treatment, drainage criteria and complications.",
+   "findings": [
+    "Regimens and drainage criteria checked against the AIIMS Delhi antibiotic policy as summarised by Speciality Medical Dialogues (2019).",
+    "Clinical features, investigations, alternative regimens, response time and complications checked against StatPearls (updated August 2025).",
+    "Not clinically reviewed."
+   ],
+   "unverifiedSections": [
+    "The AIIMS policy was read through a news summary, not the primary document.",
+    "Oral metronidazole dose differs: AIIMS 800 mg three times daily; StatPearls 500–750 mg three times daily. Both shown.",
+    "Paediatric doses are not given in the opened sources and are not included.",
+    "CKD and CLD adjustment lines are general cautions, not statements from the cited sources; confirm with product information.",
+    "Normal values are typical adult ranges unless labelled otherwise; local laboratory ranges apply."
+   ],
+   "medscapeStatus": "unavailable",
+   "originalVersionIds": [
+    "fc4e54d2-5a28-5a78-8c03-ad20131b7613"
+   ]
+  },
+  "pathophysiology": {
+   "summary": "Amoebic liver abscess follows intestinal infection with Entamoeba histolytica acquired from faecally contaminated food or water, which is common in India. Trophozoites invade the colonic mucosa and travel through the portal vein to the liver, where they lyse hepatocytes and form an abscess, usually single and in the right lobe, filled with odourless 'anchovy-paste' fluid. Patients, often young men and especially those who drink alcohol or are malnourished, present with fever and dull right upper abdominal pain, sometimes with cough from diaphragmatic irritation; only a minority have diarrhoea at the time. Ultrasound shows a round hypoechoic lesion, and serology supports the diagnosis. A nitroimidazole cures most patients within 72–96 hours of improvement, followed by a luminal agent to clear gut cysts and prevent relapse. Drainage is reserved for large or left-lobe abscesses, failure to respond, uncertain diagnosis or rupture, which can involve the pleura, lung, pericardium or peritoneum.",
+   "keyMechanisms": [
+    "Invasive trophozoites reach the liver via the portal vein.",
+    "Hepatocyte lysis forms an abscess, mostly in the right lobe.",
+    "Diaphragmatic irritation and rupture cause cough, pleural, pericardial or peritoneal disease.",
+    "Luminal cysts persist after tissue treatment, so a luminal agent is needed."
+   ]
+  },
+  "presentation": {
+   "symptoms": [
+    "Fever",
+    "Dull right upper quadrant or epigastric pain",
+    "Cough",
+    "Weight loss in subacute cases",
+    "Diarrhoea in a minority"
+   ],
+   "physicalSigns": [
+    "Tender hepatomegaly",
+    "Intercostal tenderness over the liver",
+    "Reduced breath sounds at the right base",
+    "Pericardial rub or peritonitis after rupture"
+   ],
+   "redFlags": [
+    "Left-lobe abscess (pericardial rupture risk)",
+    "Abscess over 5 cm or subcapsular",
+    "Signs of rupture: peritonitis, pleural effusion, pericarditis or tamponade",
+    "No improvement after 5–7 days of treatment",
+    "Shock"
+   ],
+   "precipitants": [
+    "Contaminated food or water",
+    "Alcohol misuse",
+    "Malnutrition",
+    "Immunosuppression"
+   ]
+  },
+  "differentials": [
+   {
+    "condition": "Pyogenic liver abscess",
+    "distinguishingFeatures": "Older patients, biliary disease, multiple lesions, positive blood or pus culture."
+   },
+   {
+    "condition": "Hydatid cyst",
+    "distinguishingFeatures": "Daughter cysts on imaging; less febrile."
+   },
+   {
+    "condition": "Hepatocellular carcinoma or metastasis",
+    "distinguishingFeatures": "Solid lesion; raised alpha-fetoprotein."
+   },
+   {
+    "condition": "Acute cholecystitis",
+    "distinguishingFeatures": "Gallbladder wall changes and Murphy sign."
+   }
+  ],
+  "diagnosticCriteria": [
+   {
+    "criterion": "Clinical diagnosis",
+    "threshold": "Fever and right upper quadrant pain with a hypoechoic liver lesion on ultrasound and positive amoebic serology in an at-risk person (StatPearls, sections History and Physical, Evaluation)."
+   },
+   {
+    "criterion": "Drainage indication",
+    "threshold": "Left lobe, high rupture risk or subcapsular, ruptured, over 5 cm, no response, or unclear diagnosis (AIIMS policy summary)."
+   }
+  ],
+  "investigations": {
+   "ruleIn": [
+    {
+     "tier": "firstLineImaging",
+     "testName": "Abdominal ultrasound",
+     "modalityTarget": "Ultrasound of liver",
+     "targetCondition": "Liver abscess",
+     "normalValue": "Homogeneous liver without focal lesion",
+     "expectedFinding": "Round or oval homogeneous hypoechoic lesion, usually right lobe, 2–6 cm",
+     "clinicalRationale": "First-line imaging; size and site guide drainage.",
+     "references": [
+      {
+       "title": "Amebic Liver Abscess (StatPearls, NCBI Bookshelf)",
+       "edition": "StatPearls, updated 2 August 2025, section Evaluation",
+       "url": "https://www.ncbi.nlm.nih.gov/books/NBK430832/"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Amoebic serology (indirect haemagglutination)",
+     "modalityTarget": "Serum antibody",
+     "targetCondition": "Invasive amoebiasis",
+     "normalValue": "Negative",
+     "expectedFinding": "Positive",
+     "clinicalRationale": "Over 95% sensitive overall but 70–80% in acute disease; can be negative in week 1.",
+     "references": [
+      {
+       "title": "Amebic Liver Abscess (StatPearls, NCBI Bookshelf)",
+       "edition": "StatPearls, updated 2 August 2025, section Evaluation",
+       "url": "https://www.ncbi.nlm.nih.gov/books/NBK430832/"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Full blood count",
+     "modalityTarget": "Blood count",
+     "targetCondition": "Inflammatory response",
+     "normalValue": "White cells 4–11 × 10⁹/L",
+     "expectedFinding": "Leucocytosis",
+     "clinicalRationale": "Supports abscess; non-specific.",
+     "references": [
+      {
+       "title": "Amebic Liver Abscess (StatPearls, NCBI Bookshelf)",
+       "edition": "StatPearls, updated 2 August 2025, section Evaluation",
+       "url": "https://www.ncbi.nlm.nih.gov/books/NBK430832/"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Liver function tests",
+     "modalityTarget": "Serum transaminases and alkaline phosphatase",
+     "targetCondition": "Hepatic involvement",
+     "normalValue": "Alkaline phosphatase 40–130 U/L; ALT under 40 U/L",
+     "expectedFinding": "Raised alkaline phosphatase and transaminases",
+     "clinicalRationale": "Supports liver involvement.",
+     "references": [
+      {
+       "title": "Amebic Liver Abscess (StatPearls, NCBI Bookshelf)",
+       "edition": "StatPearls, updated 2 August 2025, section Evaluation",
+       "url": "https://www.ncbi.nlm.nih.gov/books/NBK430832/"
+      }
+     ]
+    },
+    {
+     "tier": "advancedImaging",
+     "testName": "Contrast computed tomography (CT) of abdomen",
+     "modalityTarget": "CT",
+     "targetCondition": "Complicated or uncertain abscess",
+     "normalValue": "No focal lesion",
+     "expectedFinding": "Low-density lesion with peripheral enhancing rim; septations possible",
+     "clinicalRationale": "Use when ultrasound is inconclusive or rupture is suspected.",
+     "references": [
+      {
+       "title": "Amebic Liver Abscess (StatPearls, NCBI Bookshelf)",
+       "edition": "StatPearls, updated 2 August 2025, section Evaluation",
+       "url": "https://www.ncbi.nlm.nih.gov/books/NBK430832/"
+      }
+     ]
+    }
+   ],
+   "ruleOut": [
+    {
+     "tier": "laboratory",
+     "testName": "Blood culture and aspirate culture when pyogenic abscess possible",
+     "modalityTarget": "Culture",
+     "targetCondition": "Pyogenic or co-infected abscess",
+     "normalValue": "No growth",
+     "expectedFinding": "Bacterial growth",
+     "clinicalRationale": "Bacterial co-infection is an indication for drainage and broader antibiotics.",
+     "references": [
+      {
+       "title": "AIIMS Antibiotics Policy: liver abscess (news summary of AIIMS Delhi policy, Speciality Medical Dialogues)",
+       "edition": "AIIMS Delhi policy summarised 20 December 2019, section Pyogenic liver abscess",
+       "url": "https://speciality.medicaldialogues.in/amp/aiims-releases-guidance-on-antibiotics-in-liver-abscess"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Stool microscopy",
+     "modalityTarget": "Stool",
+     "targetCondition": "Intestinal amoebiasis",
+     "normalValue": "No cysts or trophozoites",
+     "expectedFinding": "E. histolytica cysts or trophozoites",
+     "clinicalRationale": "Low sensitivity (10–40%); a negative result does not exclude abscess.",
+     "references": [
+      {
+       "title": "Amebic Liver Abscess (StatPearls, NCBI Bookshelf)",
+       "edition": "StatPearls, updated 2 August 2025, section Evaluation",
+       "url": "https://www.ncbi.nlm.nih.gov/books/NBK430832/"
+      }
+     ]
+    }
+   ]
+  },
+  "clinicalManagement": [
+   {
+    "id": "diagnose",
+    "title": "Diagnose and assess rupture risk",
+    "timeframe": "First visit",
+    "actions": [
+     "Ultrasound the liver and send amoebic serology and blood tests.",
+     "Look for left-lobe, large (over 5 cm) or subcapsular lesions and signs of rupture."
+    ]
+   },
+   {
+    "id": "treat",
+    "title": "Nitroimidazole then luminal agent",
+    "timeframe": "Days 1–10, then 10 days",
+    "actions": [
+     "Metronidazole intravenously if unwell or vomiting, otherwise orally, for 7–10 days; tinidazole is an alternative.",
+     "Then diloxanide furoate for 10 days after response; do not give the luminal agent at the same time as metronidazole.",
+     "Expect improvement within 72–96 hours."
+    ]
+   },
+   {
+    "id": "drain",
+    "title": "Drainage",
+    "timeframe": "If criteria met or no response by day 5–7",
+    "actions": [
+     "Percutaneous catheter drainage (better than needle aspiration) for large, left-lobe, subcapsular, ruptured or non-responding abscesses or uncertain diagnosis.",
+     "Surgery for rupture with peritonitis, multiloculated large abscesses or failed percutaneous drainage; ERCP drainage if it communicates with bile ducts."
+    ]
+   },
+   {
+    "id": "uncertain-cause",
+    "title": "Uncertain cause",
+    "timeframe": "Until results",
+    "actions": [
+     "Cover both pyogenic and amoebic causes; metronidazole may stop after 7–10 days if an anaerobe-active agent continues."
+    ]
+   }
+  ],
+  "medicationPlan": {
+   "status": "source-verified",
+   "regimens": [
+    {
+     "indication": "Amoebic liver abscess, unable to take oral or unwell",
+     "patientGroup": "Adults",
+     "genericName": "Metronidazole",
+     "dose": "750 mg",
+     "route": "Intravenous",
+     "frequency": "Three times daily",
+     "duration": "7–10 days in total (switch to oral when able)",
+     "adjustments": [
+      "Paediatric: Paediatric dose not in the opened sources; use paediatric formulary.",
+      "Penicillin allergy: Not a beta-lactam; penicillin allergy does not change this medicine.",
+      "CKD: No routine change; Confirm dose against product information and current renal function.",
+      "CLD: Reduce dose in severe hepatic impairment; confirm with product information."
+     ],
+     "monitoring": [
+      "Fever and pain at 72–96 hours",
+      "Neuropathy with prolonged use"
+     ],
+     "contraindications": [
+      "First trimester pregnancy: specialist advice",
+      "Alcohol during treatment"
+     ],
+     "branch": "Amoebic liver abscess — adults",
+     "step": "Tissue amoebicide",
+     "selection": "one-of",
+     "sourceTitle": "AIIMS Antibiotics Policy: liver abscess (news summary of AIIMS Delhi policy, Speciality Medical Dialogues)",
+     "sourceUrl": "https://speciality.medicaldialogues.in/amp/aiims-releases-guidance-on-antibiotics-in-liver-abscess",
+     "sourceEdition": "AIIMS Delhi policy summarised 20 December 2019, section Amoebic liver abscess",
+     "preferred": true
+    },
+    {
+     "indication": "Amoebic liver abscess, oral",
+     "patientGroup": "Adults",
+     "genericName": "Metronidazole",
+     "dose": "800 mg (AIIMS); 500–750 mg (StatPearls)",
+     "route": "Oral",
+     "frequency": "Three times daily",
+     "duration": "7–10 days",
+     "adjustments": [
+      "Paediatric: Paediatric dose not in the opened sources.",
+      "Penicillin allergy: Not a beta-lactam; penicillin allergy does not change this medicine.",
+      "CKD: No routine change; Confirm dose against product information and current renal function.",
+      "CLD: Reduce dose in severe hepatic impairment."
+     ],
+     "monitoring": [
+      "Clinical response",
+      "Nausea, metallic taste"
+     ],
+     "contraindications": [
+      "Alcohol during treatment"
+     ],
+     "branch": "Amoebic liver abscess — adults",
+     "step": "Tissue amoebicide",
+     "selection": "one-of",
+     "sourceTitle": "AIIMS Antibiotics Policy: liver abscess (news summary of AIIMS Delhi policy, Speciality Medical Dialogues)",
+     "sourceUrl": "https://speciality.medicaldialogues.in/amp/aiims-releases-guidance-on-antibiotics-in-liver-abscess",
+     "sourceEdition": "AIIMS Delhi policy summarised 20 December 2019, section Amoebic liver abscess",
+     "preferred": false,
+     "useWhen": "Able to take oral medicines and stable"
+    },
+    {
+     "indication": "Amoebic liver abscess, oral alternative",
+     "patientGroup": "Adults",
+     "genericName": "Tinidazole",
+     "dose": "2 g",
+     "route": "Oral",
+     "frequency": "Once daily",
+     "duration": "3–5 days",
+     "adjustments": [
+      "Paediatric: Paediatric dose not in the opened sources.",
+      "Penicillin allergy: Not a beta-lactam; penicillin allergy does not change this medicine.",
+      "CKD: No routine change.",
+      "CLD: Use with caution in liver impairment."
+     ],
+     "monitoring": [
+      "Clinical response"
+     ],
+     "contraindications": [
+      "Alcohol during treatment",
+      "First trimester pregnancy"
+     ],
+     "branch": "Amoebic liver abscess — adults",
+     "step": "Tissue amoebicide",
+     "selection": "one-of",
+     "sourceTitle": "AIIMS Antibiotics Policy: liver abscess (news summary of AIIMS Delhi policy, Speciality Medical Dialogues)",
+     "sourceUrl": "https://speciality.medicaldialogues.in/amp/aiims-releases-guidance-on-antibiotics-in-liver-abscess",
+     "sourceEdition": "AIIMS Delhi policy summarised 20 December 2019, section Amoebic liver abscess",
+     "preferred": false,
+     "useWhen": "Metronidazole not tolerated or shorter course needed"
+    },
+    {
+     "indication": "Luminal clearance after tissue treatment",
+     "patientGroup": "Adults",
+     "genericName": "Diloxanide furoate",
+     "dose": "500 mg",
+     "route": "Oral",
+     "frequency": "Three times daily",
+     "duration": "10 days, after response to initial therapy",
+     "adjustments": [
+      "Paediatric: Paediatric dose not in the opened sources.",
+      "Penicillin allergy: Not a beta-lactam; penicillin allergy does not change this medicine.",
+      "CKD: No routine change.",
+      "CLD: No routine change."
+     ],
+     "monitoring": [
+      "Flatulence",
+      "Adherence"
+     ],
+     "contraindications": [
+      "Pregnancy: specialist advice"
+     ],
+     "branch": "Amoebic liver abscess — adults",
+     "step": "Luminal amoebicide",
+     "selection": "all",
+     "sourceTitle": "AIIMS Antibiotics Policy: liver abscess (news summary of AIIMS Delhi policy, Speciality Medical Dialogues)",
+     "sourceUrl": "https://speciality.medicaldialogues.in/amp/aiims-releases-guidance-on-antibiotics-in-liver-abscess",
+     "sourceEdition": "AIIMS Delhi policy summarised 20 December 2019, section Amoebic liver abscess"
+    }
+   ],
+   "note": "A nitroimidazole treats the abscess; a luminal agent must follow to prevent relapse. Doses are from the AIIMS Delhi policy (news summary) with StatPearls for comparison. Not clinically reviewed.",
+   "branches": [
+    {
+     "label": "Amoebic liver abscess — adults",
+     "entryCriteria": "Adult with amoebic liver abscess"
+    }
+   ]
+  },
+  "guidelineComparison": {
+   "title": "Oral metronidazole for amoebic liver abscess: sources differ",
+   "columns": [
+    "AIIMS Delhi policy (2019 summary)",
+    "StatPearls (2025)"
+   ],
+   "rows": [
+    {
+     "parameter": "Oral metronidazole",
+     "values": [
+      "800 mg three times daily for 7–10 days",
+      "500–750 mg three times daily for 7–10 days"
+     ]
+    },
+    {
+     "parameter": "Tinidazole",
+     "values": [
+      "2 g daily for 3–5 days",
+      "2 g daily for 3 days"
+     ]
+    },
+    {
+     "parameter": "Luminal agent",
+     "values": [
+      "Diloxanide furoate 500 mg three times daily for 10 days",
+      "Paromomycin 500 mg three times daily for 7 days or iodoquinol"
+     ]
+    }
+   ]
+  },
+  "teaching": {
+   "scope": "Amoebic liver abscess in adults in India: diagnosis, nitroimidazole and luminal treatment, drainage criteria and complications.",
+   "learningObjectives": [
+    "Diagnose amoebic abscess with ultrasound and serology.",
+    "Complete tissue then luminal treatment.",
+    "Recognise drainage indications and rupture."
+   ],
+   "keyPoints": [
+    "Improvement expected in 72–96 hours.",
+    "Drain if over 5 cm, left lobe or not improving by day 5–7.",
+    "Always follow with a luminal agent."
+   ],
+   "pitfalls": [
+    "Omitting the luminal agent.",
+    "Missing a left-lobe abscess near the pericardium.",
+    "Relying on a negative serology in week 1."
+   ],
+   "references": [
+    {
+     "title": "AIIMS Antibiotics Policy: liver abscess (news summary of AIIMS Delhi policy, Speciality Medical Dialogues)",
+     "edition": "AIIMS Delhi policy summarised 20 December 2019",
+     "url": "https://speciality.medicaldialogues.in/amp/aiims-releases-guidance-on-antibiotics-in-liver-abscess",
+     "locator": "sections Amoebic liver abscess, Drainage criteria"
+    },
+    {
+     "title": "Amebic Liver Abscess (StatPearls, NCBI Bookshelf)",
+     "edition": "StatPearls, updated 2 August 2025",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK430832/",
+     "locator": "sections History and Physical, Evaluation, Treatment/Management, Complications"
+    }
+   ]
+  },
+  "nonClinicalManagement": {
+   "patientEducation": [
+    "Avoid alcohol during metronidazole or tinidazole.",
+    "Complete the luminal course.",
+    "Drink safe water and wash hands."
+   ],
+   "lifestyleAndDiet": [
+    "Reduce alcohol intake.",
+    "Use safe water and sanitation."
+   ],
+   "mdtReferrals": [
+    "Interventional radiology",
+    "General surgery",
+    "Gastroenterology"
+   ],
+   "dischargeCriteria": [
+    "Afebrile and pain improving, tolerating oral therapy, luminal course planned."
+   ],
+   "followUpPlan": "Clinical review at 1–2 weeks; imaging only if symptoms persist (lesions resolve slowly)."
+  }
+ },
+ {
+  "id": "c4deceea-e15e-57a9-a895-a0460cec37d4",
+  "title": "Neurocysticercosis (India)",
+  "specialty": "Infectious Diseases / Internal Medicine",
+  "authority": "ICMR",
+  "status": "under_review",
+  "version": "india-authoring-2026-10-22-b11-v1",
+  "lastReviewed": "2026-10-22",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+   "checkedOn": "2026-10-22",
+   "status": "incomplete",
+   "scope": "Neurocysticercosis in adults and children in India: classification by imaging, antiparasitic and steroid treatment, seizures and hydrocephalus.",
+   "findings": [
+    "Diagnosis, screening, antiparasitic and steroid choices, antiepileptic duration, hydrocephalus management and paediatric applicability checked against IDSA/ASTMH 2017 (Recommendations 2–37, 47; Table 2).",
+    "Not clinically reviewed."
+   ],
+   "unverifiedSections": [
+    "No Indian national neurocysticercosis guideline was opened; the IDSA/ASTMH guideline is used.",
+    "Praziquantel dose differs within the guideline (Recommendation 14: 50 mg/kg/day; Table 2: 15 mg/kg/day); both shown.",
+    "Optimal corticosteroid dose is not defined by the guideline; doses shown are those used in trials.",
+    "Antiepileptic drug choice and doses follow local formulary (Recommendations 19 and 23).",
+    "CKD and CLD adjustment lines are general cautions, not statements from the cited sources; confirm with product information.",
+    "Normal values are typical adult ranges unless labelled otherwise; local laboratory ranges apply."
+   ],
+   "medscapeStatus": "unavailable",
+   "originalVersionIds": [
+    "c4deceea-e15e-57a9-a895-a0460cec37d4"
+   ]
+  },
+  "pathophysiology": {
+   "summary": "Neurocysticercosis is infection of the central nervous system by the larval stage of the pork tapeworm Taenia solium, acquired by swallowing eggs shed by a human tapeworm carrier through faecally contaminated food, water or hands. It is a leading cause of acquired epilepsy in India, where a single small enhancing lesion is a common presentation. Larvae form cysts in the brain parenchyma, ventricles or subarachnoid space. Viable cysts provoke little reaction; as they degenerate, inflammation and oedema around them cause seizures and headache; calcified lesions can remain seizure foci. Intraventricular and subarachnoid cysts block cerebrospinal fluid flow and cause hydrocephalus and raised intracranial pressure. Management depends on the number, viability and location of cysts on imaging: antiparasitic drugs with corticosteroids for viable cysts and single enhancing lesions, symptomatic treatment alone for calcified disease, and control of intracranial pressure (and neuroendoscopic or shunt surgery) before any antiparasitic therapy when hydrocephalus or diffuse oedema is present.",
+   "keyMechanisms": [
+    "Ingested T. solium eggs release larvae that encyst in brain tissue.",
+    "Degenerating cysts trigger perilesional inflammation, causing seizures.",
+    "Antiparasitic drugs increase inflammation as cysts die, so steroids are started first.",
+    "Ventricular or subarachnoid cysts obstruct cerebrospinal fluid, causing hydrocephalus."
+   ]
+  },
+  "presentation": {
+   "symptoms": [
+    "New-onset seizures",
+    "Headache",
+    "Vomiting or visual blurring with raised intracranial pressure",
+    "Confusion"
+   ],
+   "physicalSigns": [
+    "Focal neurological deficit",
+    "Papilloedema",
+    "Reduced consciousness in hydrocephalus or cysticercal encephalitis"
+   ],
+   "redFlags": [
+    "Papilloedema or signs of raised intracranial pressure",
+    "Hydrocephalus on imaging",
+    "Diffuse cerebral oedema (cysticercal encephalitis)",
+    "Status epilepticus"
+   ],
+   "precipitants": [
+    "Household member with a pork tapeworm",
+    "Poor hand hygiene and open defecation",
+    "Eating raw vegetables washed in contaminated water",
+    "Free-ranging pigs in the community"
+   ]
+  },
+  "differentials": [
+   {
+    "condition": "Tuberculoma",
+    "distinguishingFeatures": "Larger, irregular ring lesion over 2 cm, midline shift, systemic tuberculosis."
+   },
+   {
+    "condition": "Brain abscess",
+    "distinguishingFeatures": "Fever, rapidly growing ring lesion with restricted diffusion."
+   },
+   {
+    "condition": "Primary or metastatic tumour",
+    "distinguishingFeatures": "Progressive lesion with mass effect."
+   },
+   {
+    "condition": "Idiopathic epilepsy",
+    "distinguishingFeatures": "Normal neuroimaging."
+   }
+  ],
+  "diagnosticCriteria": [
+   {
+    "criterion": "Classification by imaging",
+    "threshold": "Use both MRI and non-contrast CT to classify as viable parenchymal cysts, single enhancing lesion, calcified lesions, or ventricular/subarachnoid disease (IDSA/ASTMH Recommendation 4)."
+   },
+   {
+    "criterion": "Serological support",
+    "threshold": "Serum enzyme-linked immunotransfer blot (EITB) confirms; avoid crude-antigen ELISA (Recommendation 3)."
+   }
+  ],
+  "investigations": {
+   "ruleIn": [
+    {
+     "tier": "advancedImaging",
+     "testName": "Magnetic resonance imaging (MRI) of brain",
+     "modalityTarget": "MRI",
+     "targetCondition": "Cyst number, viability and location",
+     "normalValue": "Normal brain parenchyma",
+     "expectedFinding": "Cysts with or without scolex, enhancing lesion, or ventricular cysts",
+     "clinicalRationale": "Classifies disease form and guides therapy; 3D sequences find ventricular and subarachnoid cysts.",
+     "references": [
+      {
+       "title": "Diagnosis and Treatment of Neurocysticercosis: 2017 Clinical Practice Guidelines (IDSA and ASTMH)",
+       "edition": "Clin Infect Dis 2018; 66(8): e49–e75, Recommendations 4, 32",
+       "url": "https://academic.oup.com/cid/article/66/8/e49/4885412"
+      }
+     ]
+    },
+    {
+     "tier": "firstLineImaging",
+     "testName": "Non-contrast computed tomography (CT) of brain",
+     "modalityTarget": "CT",
+     "targetCondition": "Calcified lesions",
+     "normalValue": "No calcification",
+     "expectedFinding": "Punctate calcifications",
+     "clinicalRationale": "Detects calcified disease missed by MRI.",
+     "references": [
+      {
+       "title": "Diagnosis and Treatment of Neurocysticercosis: 2017 Clinical Practice Guidelines (IDSA and ASTMH)",
+       "edition": "Clin Infect Dis 2018; 66(8): e49–e75, Recommendation 4",
+       "url": "https://academic.oup.com/cid/article/66/8/e49/4885412"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Serum enzyme-linked immunotransfer blot (EITB)",
+     "modalityTarget": "Serum antibody",
+     "targetCondition": "Cysticercosis",
+     "normalValue": "Negative",
+     "expectedFinding": "Positive bands",
+     "clinicalRationale": "Confirms diagnosis; may be negative with a single lesion.",
+     "references": [
+      {
+       "title": "Diagnosis and Treatment of Neurocysticercosis: 2017 Clinical Practice Guidelines (IDSA and ASTMH)",
+       "edition": "Clin Infect Dis 2018; 66(8): e49–e75, Recommendation 3",
+       "url": "https://academic.oup.com/cid/article/66/8/e49/4885412"
+      }
+     ]
+    },
+    {
+     "tier": "specializedAdjunctive",
+     "testName": "Funduscopy",
+     "modalityTarget": "Ophthalmoscopy",
+     "targetCondition": "Raised intracranial pressure and ocular cysts",
+     "normalValue": "Normal discs, no retinal cyst",
+     "expectedFinding": "Papilloedema or retinal cyst",
+     "clinicalRationale": "Mandatory before antiparasitic therapy.",
+     "references": [
+      {
+       "title": "Diagnosis and Treatment of Neurocysticercosis: 2017 Clinical Practice Guidelines (IDSA and ASTMH)",
+       "edition": "Clin Infect Dis 2018; 66(8): e49–e75, Recommendation 7",
+       "url": "https://academic.oup.com/cid/article/66/8/e49/4885412"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Latent tuberculosis and Strongyloides screening before prolonged steroids",
+     "modalityTarget": "Interferon-gamma release assay or tuberculin test; Strongyloides serology",
+     "targetCondition": "Infection risk with steroids",
+     "normalValue": "Negative",
+     "expectedFinding": "Positive",
+     "clinicalRationale": "Treat or give empirical ivermectin before prolonged corticosteroids.",
+     "references": [
+      {
+       "title": "Diagnosis and Treatment of Neurocysticercosis: 2017 Clinical Practice Guidelines (IDSA and ASTMH)",
+       "edition": "Clin Infect Dis 2018; 66(8): e49–e75, Recommendations 5, 6",
+       "url": "https://academic.oup.com/cid/article/66/8/e49/4885412"
+      }
+     ]
+    }
+   ],
+   "ruleOut": [
+    {
+     "tier": "laboratory",
+     "testName": "Crude-antigen cysticercosis ELISA",
+     "modalityTarget": "Serum antibody",
+     "targetCondition": "Cysticercosis",
+     "normalValue": "Negative",
+     "expectedFinding": "Positive",
+     "clinicalRationale": "Not recommended because of poor sensitivity and specificity; do not use to rule out.",
+     "references": [
+      {
+       "title": "Diagnosis and Treatment of Neurocysticercosis: 2017 Clinical Practice Guidelines (IDSA and ASTMH)",
+       "edition": "Clin Infect Dis 2018; 66(8): e49–e75, Recommendation 3",
+       "url": "https://academic.oup.com/cid/article/66/8/e49/4885412"
+      }
+     ]
+    }
+   ]
+  },
+  "clinicalManagement": [
+   {
+    "id": "stabilise",
+    "title": "Stabilise and image",
+    "timeframe": "First contact",
+    "actions": [
+     "Treat seizures and raised intracranial pressure first.",
+     "Obtain MRI and non-contrast CT; examine fundi."
+    ],
+    "branches": [
+     {
+      "condition": "Hydrocephalus or diffuse oedema",
+      "actions": [
+       "Manage intracranial pressure without antiparasitics; neurosurgery for ventricular cysts (neuroendoscopy) or shunt."
+      ]
+     }
+    ]
+   },
+   {
+    "id": "antiparasitic",
+    "title": "Antiparasitic treatment by disease form",
+    "timeframe": "After imaging and fundoscopy",
+    "actions": [
+     "Single enhancing lesion: albendazole for 1–2 weeks with corticosteroids started before it.",
+     "1–2 viable cysts: albendazole 10–14 days; more than 2: albendazole plus praziquantel; steroids first.",
+     "Calcified lesions only: no antiparasitic; symptomatic treatment."
+    ]
+   },
+   {
+    "id": "seizures",
+    "title": "Antiepileptic treatment",
+    "timeframe": "Long term",
+    "actions": [
+     "Treat all patients with seizures; choose drug by availability, cost and interactions.",
+     "Single enhancing lesion: consider stopping after 6 seizure-free months with lesion resolution; viable cysts: consider tapering after 24 seizure-free months."
+    ]
+   },
+   {
+    "id": "follow-up",
+    "title": "Follow-up imaging",
+    "timeframe": "Every 6 months until resolution",
+    "actions": [
+     "Repeat MRI to confirm cyst resolution."
+    ]
+   }
+  ],
+  "medicationPlan": {
+   "status": "source-verified",
+   "regimens": [
+    {
+     "indication": "Single enhancing lesion",
+     "patientGroup": "Adults and children (weight-based)",
+     "genericName": "Albendazole",
+     "dose": "15 mg/kg/day in 2 doses (maximum 800 mg/day per Table 2)",
+     "route": "Oral, with meals",
+     "frequency": "Twice daily",
+     "duration": "1–2 weeks",
+     "adjustments": [
+      "Paediatric: Same weight-based dose (Recommendation 47).",
+      "Penicillin allergy: Not a beta-lactam; penicillin allergy does not change this medicine.",
+      "CKD: No routine change.",
+      "CLD: Monitor liver enzymes in liver disease."
+     ],
+     "monitoring": [
+      "Liver enzymes",
+      "Blood count with longer courses",
+      "Seizures"
+     ],
+     "contraindications": [
+      "Untreated hydrocephalus or diffuse oedema",
+      "Ocular cysticercosis untreated",
+      "Pregnancy: specialist advice"
+     ],
+     "branch": "Single enhancing lesion",
+     "step": "Antiparasitic",
+     "selection": "all",
+     "sourceTitle": "Diagnosis and Treatment of Neurocysticercosis: 2017 Clinical Practice Guidelines (IDSA and ASTMH)",
+     "sourceUrl": "https://academic.oup.com/cid/article/66/8/e49/4885412",
+     "sourceEdition": "Clin Infect Dis 2018; 66(8): e49–e75, Recommendation 25, Table 2"
+    },
+    {
+     "indication": "Single enhancing lesion — anti-inflammatory",
+     "patientGroup": "Adults and children",
+     "genericName": "Dexamethasone",
+     "dose": "0.1 mg/kg/day (dose used in studies; optimum not defined)",
+     "route": "Oral",
+     "frequency": "Daily, starting before albendazole",
+     "duration": "During antiparasitic course",
+     "adjustments": [
+      "Paediatric: Prednisolone 1–2 mg/kg/day has also been used.",
+      "Penicillin allergy: Not a beta-lactam; penicillin allergy does not change this medicine.",
+      "CKD: No change.",
+      "CLD: No change."
+     ],
+     "monitoring": [
+      "Glucose",
+      "Blood pressure"
+     ],
+     "contraindications": [
+      "Untreated latent tuberculosis or Strongyloides"
+     ],
+     "branch": "Single enhancing lesion",
+     "step": "Corticosteroid",
+     "selection": "all",
+     "sourceTitle": "Diagnosis and Treatment of Neurocysticercosis: 2017 Clinical Practice Guidelines (IDSA and ASTMH)",
+     "sourceUrl": "https://academic.oup.com/cid/article/66/8/e49/4885412",
+     "sourceEdition": "Clin Infect Dis 2018; 66(8): e49–e75, Recommendation 26, Table 2 footnote"
+    },
+    {
+     "indication": "1–2 viable parenchymal cysts",
+     "patientGroup": "Adults and children",
+     "genericName": "Albendazole",
+     "dose": "15 mg/kg/day in 2 doses (maximum 1,200 mg/day)",
+     "route": "Oral, with meals",
+     "frequency": "Twice daily",
+     "duration": "10–14 days",
+     "adjustments": [
+      "Paediatric: Same weight-based dose.",
+      "Penicillin allergy: Not a beta-lactam; penicillin allergy does not change this medicine.",
+      "CKD: No routine change.",
+      "CLD: Monitor liver enzymes."
+     ],
+     "monitoring": [
+      "Liver enzymes",
+      "Blood count",
+      "Seizures"
+     ],
+     "contraindications": [
+      "Untreated hydrocephalus or diffuse oedema"
+     ],
+     "branch": "Viable parenchymal cysts — 1 or 2",
+     "step": "Antiparasitic",
+     "selection": "all",
+     "sourceTitle": "Diagnosis and Treatment of Neurocysticercosis: 2017 Clinical Practice Guidelines (IDSA and ASTMH)",
+     "sourceUrl": "https://academic.oup.com/cid/article/66/8/e49/4885412",
+     "sourceEdition": "Clin Infect Dis 2018; 66(8): e49–e75, Recommendation 13, Table 2"
+    },
+    {
+     "indication": "Viable cysts — anti-inflammatory",
+     "patientGroup": "Adults",
+     "genericName": "Dexamethasone",
+     "dose": "8 mg/day for 28 days then taper (trial regimen; optimum not defined)",
+     "route": "Oral",
+     "frequency": "Daily, starting before antiparasitics",
+     "duration": "28 days then taper",
+     "adjustments": [
+      "Paediatric: Prednisolone 1–1.5 mg/kg/day has also been used.",
+      "Penicillin allergy: Not a beta-lactam; penicillin allergy does not change this medicine.",
+      "CKD: No change.",
+      "CLD: No change."
+     ],
+     "monitoring": [
+      "Glucose",
+      "Blood pressure",
+      "Infection"
+     ],
+     "contraindications": [
+      "Untreated latent tuberculosis or Strongyloides"
+     ],
+     "branch": "Viable parenchymal cysts — 1 or 2",
+     "step": "Corticosteroid",
+     "selection": "all",
+     "sourceTitle": "Diagnosis and Treatment of Neurocysticercosis: 2017 Clinical Practice Guidelines (IDSA and ASTMH)",
+     "sourceUrl": "https://academic.oup.com/cid/article/66/8/e49/4885412",
+     "sourceEdition": "Clin Infect Dis 2018; 66(8): e49–e75, Recommendation 16, Table 2 footnote"
+    },
+    {
+     "indication": "More than 2 viable parenchymal cysts",
+     "patientGroup": "Adults and children",
+     "genericName": "Albendazole",
+     "dose": "15 mg/kg/day in 2 doses (maximum 1,200 mg/day)",
+     "route": "Oral, with meals",
+     "frequency": "Twice daily",
+     "duration": "10–14 days",
+     "adjustments": [
+      "Paediatric: Same weight-based dose.",
+      "Penicillin allergy: Not a beta-lactam; penicillin allergy does not change this medicine.",
+      "CKD: No routine change.",
+      "CLD: Monitor liver enzymes."
+     ],
+     "monitoring": [
+      "Liver enzymes",
+      "Blood count"
+     ],
+     "contraindications": [
+      "Untreated hydrocephalus or diffuse oedema"
+     ],
+     "branch": "Viable parenchymal cysts — more than 2",
+     "step": "Antiparasitic",
+     "selection": "all",
+     "sourceTitle": "Diagnosis and Treatment of Neurocysticercosis: 2017 Clinical Practice Guidelines (IDSA and ASTMH)",
+     "sourceUrl": "https://academic.oup.com/cid/article/66/8/e49/4885412",
+     "sourceEdition": "Clin Infect Dis 2018; 66(8): e49–e75, Recommendation 14"
+    },
+    {
+     "indication": "More than 2 viable parenchymal cysts (combination)",
+     "patientGroup": "Adults and children",
+     "genericName": "Praziquantel",
+     "dose": "50 mg/kg/day (Recommendation 14); Table 2 lists 15 mg/kg/day in 3 doses",
+     "route": "Oral",
+     "frequency": "Divided doses",
+     "duration": "10–14 days, with albendazole",
+     "adjustments": [
+      "Paediatric: Same weight-based dose.",
+      "Penicillin allergy: Not a beta-lactam; penicillin allergy does not change this medicine.",
+      "CKD: No routine change.",
+      "CLD: Reduce dose or avoid in moderate-to-severe liver impairment."
+     ],
+     "monitoring": [
+      "Seizures",
+      "Dizziness"
+     ],
+     "contraindications": [
+      "Ocular cysticercosis",
+      "Untreated hydrocephalus"
+     ],
+     "branch": "Viable parenchymal cysts — more than 2",
+     "step": "Antiparasitic partner",
+     "selection": "all",
+     "sourceTitle": "Diagnosis and Treatment of Neurocysticercosis: 2017 Clinical Practice Guidelines (IDSA and ASTMH)",
+     "sourceUrl": "https://academic.oup.com/cid/article/66/8/e49/4885412",
+     "sourceEdition": "Clin Infect Dis 2018; 66(8): e49–e75, Recommendation 14, Table 2"
+    },
+    {
+     "indication": "More than 2 viable cysts — anti-inflammatory",
+     "patientGroup": "Adults",
+     "genericName": "Dexamethasone",
+     "dose": "8 mg/day for 28 days then taper (trial regimen)",
+     "route": "Oral",
+     "frequency": "Daily, starting before antiparasitics",
+     "duration": "28 days then taper",
+     "adjustments": [
+      "Paediatric: Prednisolone 1–1.5 mg/kg/day has also been used.",
+      "Penicillin allergy: Not a beta-lactam; penicillin allergy does not change this medicine.",
+      "CKD: No change.",
+      "CLD: No change."
+     ],
+     "monitoring": [
+      "Glucose",
+      "Blood pressure"
+     ],
+     "contraindications": [
+      "Untreated latent tuberculosis or Strongyloides"
+     ],
+     "branch": "Viable parenchymal cysts — more than 2",
+     "step": "Corticosteroid",
+     "selection": "all",
+     "sourceTitle": "Diagnosis and Treatment of Neurocysticercosis: 2017 Clinical Practice Guidelines (IDSA and ASTMH)",
+     "sourceUrl": "https://academic.oup.com/cid/article/66/8/e49/4885412",
+     "sourceEdition": "Clin Infect Dis 2018; 66(8): e49–e75, Recommendation 16, Table 2 footnote"
+    }
+   ],
+   "note": "Antiparasitic drugs are never given with untreated hydrocephalus or diffuse oedema, and steroids start first. Calcified disease needs no antiparasitic. Doses from IDSA/ASTMH 2017; within-guideline dose differences are shown. Not clinically reviewed.",
+   "branches": [
+    {
+     "label": "Single enhancing lesion",
+     "entryCriteria": "One enhancing parenchymal lesion, no raised intracranial pressure"
+    },
+    {
+     "label": "Viable parenchymal cysts — 1 or 2",
+     "entryCriteria": "1–2 viable cysts, no hydrocephalus"
+    },
+    {
+     "label": "Viable parenchymal cysts — more than 2",
+     "entryCriteria": "More than 2 viable cysts, no hydrocephalus"
+    }
+   ]
+  },
+  "guidelineComparison": {
+   "title": "Praziquantel dose within IDSA/ASTMH 2017",
+   "columns": [
+    "Recommendation 14",
+    "Table 2"
+   ],
+   "rows": [
+    {
+     "parameter": "Praziquantel with albendazole",
+     "values": [
+      "50 mg/kg/day for 10–14 days",
+      "15 mg/kg/day in 3 doses for 10 days"
+     ]
+    }
+   ]
+  },
+  "teaching": {
+   "scope": "Neurocysticercosis in adults and children in India: classification by imaging, antiparasitic and steroid treatment, seizures and hydrocephalus.",
+   "learningObjectives": [
+    "Classify neurocysticercosis by imaging.",
+    "Choose antiparasitic and steroid therapy by form.",
+    "Manage seizures and hydrocephalus safely."
+   ],
+   "keyPoints": [
+    "Fundoscopy before antiparasitics.",
+    "Steroids before antiparasitics.",
+    "No antiparasitic for calcified lesions or untreated hydrocephalus."
+   ],
+   "pitfalls": [
+    "Antiparasitics with raised intracranial pressure.",
+    "Prolonged steroids without tuberculosis or Strongyloides screening.",
+    "Stopping antiepileptics too early."
+   ],
+   "references": [
+    {
+     "title": "Diagnosis and Treatment of Neurocysticercosis: 2017 Clinical Practice Guidelines (IDSA and ASTMH)",
+     "edition": "Clin Infect Dis 2018; 66(8): e49–e75",
+     "url": "https://academic.oup.com/cid/article/66/8/e49/4885412",
+     "locator": "Recommendations 2–37, 47; Table 2"
+    }
+   ]
+  },
+  "nonClinicalManagement": {
+   "patientEducation": [
+    "Take antiepileptic drugs regularly; do not drive until seizure-free per local rules.",
+    "Household members should be checked for tapeworm."
+   ],
+   "lifestyleAndDiet": [
+    "Wash hands after toilet and before food.",
+    "Wash vegetables in clean water; cook pork thoroughly."
+   ],
+   "mdtReferrals": [
+    "Neurology",
+    "Neurosurgery for hydrocephalus",
+    "Ophthalmology for ocular cysts",
+    "Public health for household screening"
+   ],
+   "dischargeCriteria": [
+    "Seizures controlled, no raised intracranial pressure, treatment and imaging plan set."
+   ],
+   "followUpPlan": "MRI every 6 months until cysts resolve; review antiepileptic need at 6 or 24 seizure-free months by form."
+  }
+ },
+ {
+  "id": "5545c7a8-cf8f-55d2-a19f-a891c0267a61",
+  "title": "Soil-transmitted helminths and mass deworming (India)",
+  "specialty": "Infectious Diseases / Internal Medicine",
+  "authority": "MoHFW",
+  "status": "under_review",
+  "version": "india-authoring-2026-10-22-b11-v1",
+  "lastReviewed": "2026-10-22",
+  "pillar": "Keep Well",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+   "checkedOn": "2026-10-22",
+   "status": "incomplete",
+   "scope": "Soil-transmitted helminth infection in India: National Deworming Day albendazole, individual treatment, complications and prevention.",
+   "findings": [
+    "Target ages, albendazole doses, exclusions, adverse events and hygiene messages checked against the National Deworming Day operational guidelines (2015).",
+    "Species, transmission, morbidity, WHO medicines and target groups checked against the WHO fact sheet (2023).",
+    "Investigations, complications, individual treatment and pregnancy alternative checked against StatPearls Ascariasis (2026).",
+    "Not clinically reviewed."
+   ],
+   "unverifiedSections": [
+    "The opened NDD text did not show page numbers; section names are used.",
+    "Strongyloides needs different tests and ivermectin; it is outside this topic.",
+    "Paediatric mebendazole dose is not stated separately in the opened sources.",
+    "CKD and CLD adjustment lines are general cautions, not statements from the cited sources; confirm with product information.",
+    "Normal values are typical adult ranges unless labelled otherwise; local laboratory ranges apply."
+   ],
+   "medscapeStatus": "unavailable",
+   "originalVersionIds": [
+    "5545c7a8-cf8f-55d2-a19f-a891c0267a61"
+   ]
+  },
+  "pathophysiology": {
+   "summary": "Soil-transmitted helminths — roundworm (Ascaris lumbricoides), whipworm (Trichuris trichiura) and hookworms (Necator americanus and Ancylostoma duodenale) — infect children and adults where sanitation is poor. Eggs in faeces contaminate soil; people swallow eggs on unwashed food or hands, and hookworm larvae penetrate bare feet. Worms feed on blood and tissue and impair absorption, causing iron-deficiency anaemia (especially from hookworm in adolescent girls and women), malnutrition, stunting, impaired cognition and school absence. Heavy roundworm loads can obstruct the bowel or migrate into the bile ducts, and larval migration through the lungs causes Löffler syndrome with cough, wheeze and eosinophilia. India's National Deworming Day gives albendazole twice a year to all children and adolescents aged 1–19 years in schools and anganwadis, with a mop-up day; individual infections are treated with single-dose albendazole, and sanitation, footwear and handwashing prevent reinfection.",
+   "keyMechanisms": [
+    "Faecal contamination of soil spreads eggs; hookworm larvae penetrate skin.",
+    "Intestinal blood loss and nutrient malabsorption cause anaemia and malnutrition.",
+    "Heavy Ascaris burden causes bowel obstruction or biliary migration.",
+    "Larval lung migration causes eosinophilic pneumonitis (Löffler syndrome)."
+   ]
+  },
+  "presentation": {
+   "symptoms": [
+    "Often none in light infection",
+    "Abdominal pain, bloating, nausea, poor appetite",
+    "Fatigue and pallor (anaemia)",
+    "Cough and wheeze in larval phase",
+    "Passing worms"
+   ],
+   "physicalSigns": [
+    "Pallor",
+    "Poor growth or wasting",
+    "Abdominal distension or mass in obstruction",
+    "Jaundice or right upper quadrant tenderness with biliary ascariasis"
+   ],
+   "redFlags": [
+    "Bowel obstruction: vomiting, distension, absolute constipation",
+    "Biliary colic, cholangitis or pancreatitis",
+    "Severe anaemia",
+    "Persistent severe symptoms beyond 24 hours after a deworming tablet"
+   ],
+   "precipitants": [
+    "Open defecation and lack of latrines",
+    "Walking barefoot",
+    "Unwashed hands, fruit or vegetables",
+    "Unsafe drinking water"
+   ]
+  },
+  "differentials": [
+   {
+    "condition": "Strongyloidiasis",
+    "distinguishingFeatures": "Larva currens and hyperinfection in immunosuppressed; not cleared by albendazole."
+   },
+   {
+    "condition": "Giardiasis",
+    "distinguishingFeatures": "Greasy diarrhoea; cysts or antigen in stool."
+   },
+   {
+    "condition": "Other causes of iron-deficiency anaemia",
+    "distinguishingFeatures": "Dietary deficiency or menstrual loss without eggs in stool."
+   },
+   {
+    "condition": "Asthma (versus Löffler syndrome)",
+    "distinguishingFeatures": "Recurrent wheeze without transient eosinophilic infiltrates."
+   }
+  ],
+  "diagnosticCriteria": [
+   {
+    "criterion": "National Deworming Day eligibility",
+    "threshold": "All children and adolescents 1–19 years, unless sick or on other medication that day (NDD guidelines)."
+   },
+   {
+    "criterion": "Individual diagnosis",
+    "threshold": "Eggs on stool microscopy (Kato-Katz in endemic areas) (StatPearls Ascariasis, section Evaluation)."
+   }
+  ],
+  "investigations": {
+   "ruleIn": [
+    {
+     "tier": "laboratory",
+     "testName": "Stool microscopy (Kato-Katz)",
+     "modalityTarget": "Stool egg examination",
+     "targetCondition": "Soil-transmitted helminth infection",
+     "normalValue": "No eggs seen",
+     "expectedFinding": "Ascaris, Trichuris or hookworm eggs",
+     "clinicalRationale": "Cornerstone of diagnosis; may be negative in the first 3–4 weeks before egg excretion.",
+     "references": [
+      {
+       "title": "Ascariasis (StatPearls, NCBI Bookshelf)",
+       "edition": "StatPearls, updated 12 April 2026, section Evaluation",
+       "url": "https://www.ncbi.nlm.nih.gov/books/NBK430796/"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Full blood count with eosinophils",
+     "modalityTarget": "Blood count",
+     "targetCondition": "Larval migration and anaemia",
+     "normalValue": "Haemoglobin 115–155 g/L (child over 5); eosinophils 0.04–0.4 × 10⁹/L",
+     "expectedFinding": "Eosinophilia; low haemoglobin with hookworm",
+     "clinicalRationale": "Eosinophilia supports larval phase; anaemia shows morbidity.",
+     "references": [
+      {
+       "title": "Ascariasis (StatPearls, NCBI Bookshelf)",
+       "edition": "StatPearls, updated 12 April 2026, section Evaluation",
+       "url": "https://www.ncbi.nlm.nih.gov/books/NBK430796/"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Haemoglobin and iron status",
+     "modalityTarget": "Blood tests",
+     "targetCondition": "Iron-deficiency anaemia from hookworm",
+     "normalValue": "Haemoglobin above 120 g/L in non-pregnant women",
+     "expectedFinding": "Iron-deficiency anaemia",
+     "clinicalRationale": "Hookworm causes chronic blood loss, especially in adolescent girls and women.",
+     "references": [
+      {
+       "title": "Soil-transmitted helminth infections: fact sheet (WHO)",
+       "edition": "WHO, 18 January 2023, section Morbidity",
+       "url": "https://www.who.int/news-room/fact-sheets/detail/soil-transmitted-helminth-infections"
+      }
+     ]
+    },
+    {
+     "tier": "firstLineImaging",
+     "testName": "Abdominal ultrasound",
+     "modalityTarget": "Ultrasound",
+     "targetCondition": "Biliary ascariasis",
+     "normalValue": "No worms in bile ducts or gallbladder",
+     "expectedFinding": "Linear echogenic worms in bile ducts",
+     "clinicalRationale": "Confirms biliary migration; ERCP may remove worms.",
+     "references": [
+      {
+       "title": "Ascariasis (StatPearls, NCBI Bookshelf)",
+       "edition": "StatPearls, updated 12 April 2026, section Evaluation",
+       "url": "https://www.ncbi.nlm.nih.gov/books/NBK430796/"
+      }
+     ]
+    },
+    {
+     "tier": "firstLineImaging",
+     "testName": "Abdominal X-ray",
+     "modalityTarget": "Plain radiograph",
+     "targetCondition": "Ascaris bowel obstruction",
+     "normalValue": "Normal bowel gas pattern",
+     "expectedFinding": "Dilated loops with whirlpool or railway-track pattern",
+     "clinicalRationale": "Supports obstruction needing surgical review.",
+     "references": [
+      {
+       "title": "Ascariasis (StatPearls, NCBI Bookshelf)",
+       "edition": "StatPearls, updated 12 April 2026, section Evaluation",
+       "url": "https://www.ncbi.nlm.nih.gov/books/NBK430796/"
+      }
+     ]
+    }
+   ],
+   "ruleOut": [
+    {
+     "tier": "laboratory",
+     "testName": "Strongyloides-specific testing",
+     "modalityTarget": "Serology or agar plate culture",
+     "targetCondition": "Strongyloidiasis",
+     "normalValue": "Negative",
+     "expectedFinding": "Positive",
+     "clinicalRationale": "Needs different tests and ivermectin, not albendazole.",
+     "references": [
+      {
+       "title": "Soil-transmitted helminth infections: fact sheet (WHO)",
+       "edition": "WHO, 18 January 2023, section Overview",
+       "url": "https://www.who.int/news-room/fact-sheets/detail/soil-transmitted-helminth-infections"
+      }
+     ]
+    }
+   ]
+  },
+  "clinicalManagement": [
+   {
+    "id": "national-deworming-day",
+    "title": "National Deworming Day",
+    "timeframe": "Twice yearly, with mop-up day",
+    "actions": [
+     "Give albendazole to every child and adolescent aged 1–19 at school or anganwadi; 1–2 years: half tablet crushed with water; 2–19 years: full tablet chewed.",
+     "Defer children who are sick or on other medication that day.",
+     "Keep children on site for 2 hours; manage mild nausea, vomiting or abdominal pain with rest and water; refer if severe or beyond 24 hours."
+    ]
+   },
+   {
+    "id": "individual-treatment",
+    "title": "Individual treatment",
+    "timeframe": "At diagnosis",
+    "actions": [
+     "Albendazole 400 mg single dose; mebendazole is an alternative.",
+     "Defer treatment in the early pulmonary phase; repeat after 1–3 months in endemic settings; check household contacts."
+    ],
+    "branches": [
+     {
+      "condition": "Pregnancy",
+      "actions": [
+       "WHO includes pregnant women in the second and third trimesters; pyrantel is an option in the first trimester."
+      ]
+     }
+    ]
+   },
+   {
+    "id": "complications",
+    "title": "Complications",
+    "timeframe": "As they arise",
+    "actions": [
+     "Bowel obstruction or biliary ascariasis: surgical or endoscopic review.",
+     "Treat iron-deficiency anaemia alongside deworming."
+    ]
+   }
+  ],
+  "medicationPlan": {
+   "status": "source-verified",
+   "regimens": [
+    {
+     "indication": "Mass deworming",
+     "patientGroup": "Children 1–2 years",
+     "genericName": "Albendazole",
+     "dose": "200 mg (half a 400 mg tablet), crushed between two spoons with water",
+     "route": "Oral",
+     "frequency": "Once, twice a year",
+     "duration": "Single dose each round",
+     "adjustments": [
+      "Paediatric: This branch is the paediatric dose.",
+      "Penicillin allergy: Not a beta-lactam; penicillin allergy does not change this medicine.",
+      "CKD: No change for a single dose.",
+      "CLD: No change for a single dose."
+     ],
+     "monitoring": [
+      "Observe 2 hours for adverse events"
+     ],
+     "contraindications": [
+      "Sick on the day",
+      "Under 1 year"
+     ],
+     "branch": "National Deworming Day — 1 to 2 years",
+     "step": "Antihelminthic",
+     "selection": "all",
+     "sourceTitle": "National Deworming Day Operational Guidelines (MoHFW, National Health Mission)",
+     "sourceUrl": "https://nhm.gov.in/images/pdf/NDD/Guidelines/NDD_Operational_Guidelines.pdf",
+     "sourceEdition": "MoHFW NDD guidelines, 2015, section on dosage and administration"
+    },
+    {
+     "indication": "Mass deworming",
+     "patientGroup": "Children and adolescents 2–19 years",
+     "genericName": "Albendazole",
+     "dose": "400 mg, chewed",
+     "route": "Oral",
+     "frequency": "Once, twice a year",
+     "duration": "Single dose each round",
+     "adjustments": [
+      "Paediatric: This branch is the paediatric dose.",
+      "Penicillin allergy: Not a beta-lactam; penicillin allergy does not change this medicine.",
+      "CKD: No change for a single dose.",
+      "CLD: No change for a single dose."
+     ],
+     "monitoring": [
+      "Observe 2 hours for adverse events"
+     ],
+     "contraindications": [
+      "Sick or on other medication on the day"
+     ],
+     "branch": "National Deworming Day — 2 to 19 years",
+     "step": "Antihelminthic",
+     "selection": "all",
+     "sourceTitle": "National Deworming Day Operational Guidelines (MoHFW, National Health Mission)",
+     "sourceUrl": "https://nhm.gov.in/images/pdf/NDD/Guidelines/NDD_Operational_Guidelines.pdf",
+     "sourceEdition": "MoHFW NDD guidelines, 2015, section on dosage and administration"
+    },
+    {
+     "indication": "Confirmed soil-transmitted helminth infection",
+     "patientGroup": "Adults and children over 2",
+     "genericName": "Albendazole",
+     "dose": "400 mg",
+     "route": "Oral",
+     "frequency": "Single dose",
+     "duration": "Once; repeat after 1–3 months in endemic settings",
+     "adjustments": [
+      "Paediatric: Children 1–2 years: 200 mg (NDD).",
+      "Penicillin allergy: Not a beta-lactam; penicillin allergy does not change this medicine.",
+      "CKD: No change for a single dose.",
+      "CLD: No change for a single dose."
+     ],
+     "monitoring": [
+      "Stool re-examination at about 3 months"
+     ],
+     "contraindications": [
+      "First trimester of pregnancy"
+     ],
+     "branch": "Individual treatment — adults and children over 2",
+     "step": "Antihelminthic",
+     "selection": "one-of",
+     "sourceTitle": "Ascariasis (StatPearls, NCBI Bookshelf)",
+     "sourceUrl": "https://www.ncbi.nlm.nih.gov/books/NBK430796/",
+     "sourceEdition": "StatPearls, updated 12 April 2026, section Treatment / Management",
+     "preferred": true
+    },
+    {
+     "indication": "Confirmed soil-transmitted helminth infection",
+     "patientGroup": "Adults",
+     "genericName": "Mebendazole",
+     "dose": "500 mg once, or 100 mg twice daily",
+     "route": "Oral",
+     "frequency": "Single dose, or twice daily",
+     "duration": "Once, or 3 days",
+     "adjustments": [
+      "Paediatric: Paediatric dose not stated separately in the source.",
+      "Penicillin allergy: Not a beta-lactam; penicillin allergy does not change this medicine.",
+      "CKD: No change.",
+      "CLD: Use with caution in liver disease."
+     ],
+     "monitoring": [
+      "Stool re-examination"
+     ],
+     "contraindications": [
+      "First trimester of pregnancy"
+     ],
+     "branch": "Individual treatment — adults and children over 2",
+     "step": "Antihelminthic",
+     "selection": "one-of",
+     "sourceTitle": "Ascariasis (StatPearls, NCBI Bookshelf)",
+     "sourceUrl": "https://www.ncbi.nlm.nih.gov/books/NBK430796/",
+     "sourceEdition": "StatPearls, updated 12 April 2026, section Treatment / Management",
+     "preferred": false,
+     "useWhen": "Albendazole unavailable"
+    },
+    {
+     "indication": "Symptomatic infection in first trimester",
+     "patientGroup": "Pregnant women",
+     "genericName": "Pyrantel pamoate",
+     "dose": "11 mg/kg (maximum 1 g)",
+     "route": "Oral",
+     "frequency": "Single dose",
+     "duration": "Once",
+     "adjustments": [
+      "Paediatric: Not applicable.",
+      "Penicillin allergy: Not a beta-lactam; penicillin allergy does not change this medicine.",
+      "CKD: No change.",
+      "CLD: Use with caution in liver disease."
+     ],
+     "monitoring": [
+      "Obstetric review"
+     ],
+     "contraindications": [
+      "Hypersensitivity"
+     ],
+     "branch": "Individual treatment — first trimester of pregnancy",
+     "step": "Antihelminthic",
+     "selection": "all",
+     "sourceTitle": "Ascariasis (StatPearls, NCBI Bookshelf)",
+     "sourceUrl": "https://www.ncbi.nlm.nih.gov/books/NBK430796/",
+     "sourceEdition": "StatPearls, updated 12 April 2026, section Treatment / Management"
+    }
+   ],
+   "note": "National Deworming Day albendazole doses are from MoHFW; individual treatment from StatPearls. Albendazole does not treat Strongyloides. Not clinically reviewed.",
+   "branches": [
+    {
+     "label": "National Deworming Day — 1 to 2 years",
+     "entryCriteria": "Child aged 1–2 years on deworming day"
+    },
+    {
+     "label": "National Deworming Day — 2 to 19 years",
+     "entryCriteria": "Child or adolescent aged 2–19 years on deworming day"
+    },
+    {
+     "label": "Individual treatment — adults and children over 2",
+     "entryCriteria": "Confirmed infection, not in first trimester of pregnancy"
+    },
+    {
+     "label": "Individual treatment — first trimester of pregnancy",
+     "entryCriteria": "Pregnant woman in first trimester with symptomatic infection"
+    }
+   ]
+  },
+  "teaching": {
+   "scope": "Soil-transmitted helminth infection in India: National Deworming Day albendazole, individual treatment, complications and prevention.",
+   "learningObjectives": [
+    "Deliver National Deworming Day albendazole by age.",
+    "Treat individual infection and complications.",
+    "Teach sanitation and hygiene to prevent reinfection."
+   ],
+   "keyPoints": [
+    "1–2 years: 200 mg crushed; 2–19 years: 400 mg chewed.",
+    "Twice yearly with a mop-up day.",
+    "Observe for 2 hours after the tablet."
+   ],
+   "pitfalls": [
+    "Giving the tablet to a sick child on deworming day.",
+    "Expecting albendazole to clear Strongyloides.",
+    "Ignoring the anaemia."
+   ],
+   "references": [
+    {
+     "title": "National Deworming Day Operational Guidelines (MoHFW, National Health Mission)",
+     "edition": "MoHFW NDD guidelines, 2015",
+     "url": "https://nhm.gov.in/images/pdf/NDD/Guidelines/NDD_Operational_Guidelines.pdf",
+     "locator": "sections on target groups, dosage, adverse events and WASH"
+    },
+    {
+     "title": "Soil-transmitted helminth infections: fact sheet (WHO)",
+     "edition": "WHO, 18 January 2023",
+     "url": "https://www.who.int/news-room/fact-sheets/detail/soil-transmitted-helminth-infections",
+     "locator": "sections Key facts, Morbidity, Control strategy"
+    },
+    {
+     "title": "Ascariasis (StatPearls, NCBI Bookshelf)",
+     "edition": "StatPearls, updated 12 April 2026",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK430796/",
+     "locator": "sections Evaluation, History and Physical, Treatment / Management"
+    }
+   ]
+  },
+  "nonClinicalManagement": {
+   "patientEducation": [
+    "Wash hands with soap before eating and after the toilet.",
+    "Wear footwear outdoors.",
+    "Mild stomach upset after the tablet settles; seek care if severe or lasting over 24 hours."
+   ],
+   "lifestyleAndDiet": [
+    "Use sanitary latrines; avoid open defecation.",
+    "Wash fruit and vegetables in clean water; cook food well.",
+    "Drink safe water."
+   ],
+   "mdtReferrals": [
+    "School health and anganwadi teams",
+    "ASHA and ANM",
+    "Surgery for obstruction"
+   ],
+   "dischargeCriteria": [
+    "Not applicable for mass deworming; after complications: tolerating diet, obstruction resolved."
+   ],
+   "followUpPlan": "Next National Deworming Day round in 6 months; stool re-check at about 3 months after individual treatment."
+  }
+ }
+]
