@@ -1,0 +1,551 @@
+{
+  "id": "379c6048-63ab-5683-9480-d6d4c2dbc397",
+  "title": "Acute undifferentiated fever (India)",
+  "pillar": "Urgent Care",
+  "status": "under_review",
+  "version": "india-authoring-2026-10-22-batch1-v1",
+  "authority": "ICMR",
+  "specialty": "Infectious Diseases / Internal Medicine",
+  "lastReviewed": "2026-10-22",
+  "presentation": {
+    "symptoms": [
+      "Fever with headache, chills, muscle or joint pain and malaise (NCDC–ICMR section 3.1).",
+      "Ask specifically about respiratory, urinary, gastrointestinal and neurological symptoms rather than accepting “no focus” without examination."
+    ],
+    "physicalSigns": [
+      "Document hydration, circulation, respiratory status and mental state; look for rash, bleeding, jaundice, lymphadenopathy or an eschar.",
+      "Examine chest, abdomen, skin and the relevant exposure sites; localising signs redirect the pathway (NCDC–ICMR sections 3.1 and 3.4; ICMR acute fever assessment)."
+    ],
+    "redFlags": [
+      "Shock, confusion, seizures, respiratory distress, bleeding, jaundice with organ dysfunction or reduced urine: emergency hospital assessment.",
+      "Pregnancy, immunocompromise or inability to maintain oral intake warrants earlier investigation and a lower referral threshold; do not defer tests on the basis of fever day alone (NCDC–ICMR section 3.1)."
+    ],
+    "precipitants": [
+      "Mosquito exposure, travel, local outbreaks, monsoon/floodwater exposure or rural outdoor exposure.",
+      "Animal/occupational contact, contaminated food or water, sick contacts, medicines and recent hospital/antibiotic exposure."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Dengue",
+      "distinguishingFeatures": "Compatible exposure, rash or bleeding and a supportive platelet/haematocrit trend; choose antigen or serology by illness timing."
+    },
+    {
+      "condition": "Malaria",
+      "distinguishingFeatures": "Exposure plus parasites on microscopy or a positive rapid diagnostic test; severe disease needs the malaria emergency pathway."
+    },
+    {
+      "condition": "Scrub typhus or another rickettsiosis",
+      "distinguishingFeatures": "An eschar or compatible rural exposure supports targeted testing and selected doxycycline treatment; absence of an eschar does not establish an alternative diagnosis."
+    },
+    {
+      "condition": "Leptospirosis",
+      "distinguishingFeatures": "Floodwater or animal-urine exposure with compatible renal/hepatic or pulmonary illness; send targeted serology and escalate organ dysfunction."
+    },
+    {
+      "condition": "Enteric fever",
+      "distinguishingFeatures": "Persistent compatible illness and a cultured organism support the diagnosis; use the existing India enteric-fever pathway."
+    },
+    {
+      "condition": "Occult bacterial focus",
+      "distinguishingFeatures": "Urine, chest, abdominal or device findings redirect to a source-specific pathway."
+    },
+    {
+      "condition": "Non-infectious fever",
+      "distinguishingFeatures": "Medication reaction or inflammatory disease becomes more likely when repeated clinical assessment and targeted tests do not support infection."
+    }
+  ],
+  "evidenceAudit": {
+    "checkedOn": "2026-10-22",
+    "status": "incomplete",
+    "scope": "Adults in India; six-tier source-based revision. Clinical review pending.",
+    "findings": [
+      "National Centre for Disease Control (NCDC) and Indian Council of Medical Research (ICMR): joint Version 2.0, November 2025 verified directly on the title page. World Health Organization (WHO) guidance is supplementary.",
+      "India regional topic. Indian national antimicrobial guidance takes precedence over older ICMR text. WHO AWaRe (Access, Watch, Reserve) warnings identify stewardship category, not an automatic indication. Check hospital formulary, product strength and local antibiogram. No Saudi registration claim is made for this India adaptation."
+    ],
+    "unverifiedSections": [
+      "Hospital antibiogram, stocked Indian product licences, local infusion preparation and operational referral arrangements require local clinical/pharmacy confirmation.",
+      "Local assay cut-offs, laboratory turnaround and access to follow-up need confirmation.",
+      "The proposed 48-hour empirical authorisation cap needs local governance approval; the 7-day doxycycline course applies only to uncomplicated rickettsial disease.",
+      "SFDA registration is outside this India scope; NLEM listing does not establish local stock or a specific brand licence."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "cc579f21-d84c-4583-a153-ebc9b07887e9"
+    ]
+  },
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Bedside severity, hydration and glucose assessment",
+        "modalityTarget": "Bedside severity, hydration and glucose assessment",
+        "targetCondition": "Bedside severity, hydration and glucose assessment",
+        "normalValue": "Alert baseline, maintained perfusion and oral intake; glucose interpreted against the actual assay and clinical context.",
+        "expectedFinding": "Instability, altered mentation, dehydration or glucose disturbance.",
+        "clinicalRationale": "Treat reversible instability immediately and leave the outpatient pathway if shock or organ dysfunction is suspected.",
+        "references": [
+          {
+            "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+            "edition": "Version 2.0, November 2025, Sections 3.1 and 3.4",
+            "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count, differential, platelets and haematocrit",
+        "modalityTarget": "Full blood count, differential, platelets and haematocrit",
+        "targetCondition": "Full blood count, differential, platelets and haematocrit",
+        "normalValue": "Example adult reference: white cells 4.0–10.0 ×10⁹/L; platelets 150–410 ×10⁹/L; haematocrit men 0.40–0.50, women 0.36–0.46.",
+        "expectedFinding": "Leukopenia, leukocytosis, thrombocytopenia or a rising haematocrit; trends are more useful than assigning a pathogen from one count.",
+        "clinicalRationale": "In stable patients add on illness day 3–4 or sooner if severity/risk requires; use serial findings to reassess dengue and organ dysfunction.",
+        "references": [
+          {
+            "title": "University Hospitals Dorset laboratory reference ranges",
+            "edition": "Accessed 22 October 2026, Section Adult Reference Ranges",
+            "url": "https://www.uhd.nhs.uk/services/pathology/haematology/test-repertoire-and-reference-ranges"
+          },
+          {
+            "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+            "edition": "Version 2.0, November 2025, Section 3.1, printed p. 26",
+            "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Liver tests",
+        "modalityTarget": "Liver tests",
+        "targetCondition": "Liver tests",
+        "normalValue": "No new biochemical hepatic injury relative to the local assay range and patient baseline.",
+        "expectedFinding": "Transaminitis or bilirubin elevation.",
+        "clinicalRationale": "Assess disease severity and drug safety; investigate a hepatic or biliary syndrome separately.",
+        "references": [
+          {
+            "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+            "edition": "Version 2.0, November 2025, Section 3.1, printed p. 26",
+            "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Renal function and electrolytes",
+        "modalityTarget": "Renal function and electrolytes",
+        "targetCondition": "Renal function and electrolytes",
+        "normalValue": "Stable creatinine/electrolytes at the patient baseline, with maintained urine output.",
+        "expectedFinding": "Creatinine rise, electrolyte disturbance or reduced urine.",
+        "clinicalRationale": "Refer organ dysfunction urgently; adjust fluid and medicine plans rather than treating fever alone.",
+        "references": [
+          {
+            "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+            "edition": "Version 2.0, November 2025, Sections 3.1 and 3.4",
+            "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Urinalysis and urine culture when a urinary focus is plausible",
+        "modalityTarget": "Urinalysis and urine culture when a urinary focus is plausible",
+        "targetCondition": "Urinalysis and urine culture when a urinary focus is plausible",
+        "normalValue": "No pyuria or clinically significant pathogen in a properly obtained sample.",
+        "expectedFinding": "Pyuria or an organism matching the syndrome.",
+        "clinicalRationale": "Use the urinary-infection pathway when findings and symptoms agree; avoid treating contamination or an incidental result.",
+        "references": [
+          {
+            "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+            "edition": "Version 2.0, November 2025, Sections 3.1 and 5",
+            "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Malaria peripheral smear and rapid diagnostic test",
+        "modalityTarget": "Malaria peripheral smear and rapid diagnostic test",
+        "targetCondition": "Malaria peripheral smear and rapid diagnostic test",
+        "normalValue": "No parasites detected and rapid diagnostic test negative.",
+        "expectedFinding": "Parasites or a positive rapid assay.",
+        "clinicalRationale": "Test by exposure and severity; a negative rapid test with ongoing suspicion requires microscopy/reassessment under the malaria pathway.",
+        "references": [
+          {
+            "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+            "edition": "Version 2.0, November 2025, Section 3.1, printed p. 26",
+            "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Dengue antigen and timed serology",
+        "modalityTarget": "Dengue antigen and timed serology",
+        "targetCondition": "Dengue antigen and timed serology",
+        "normalValue": "Assay negative in the appropriate diagnostic window.",
+        "expectedFinding": "Antigen or immunoglobulin M (IgM) positivity supports dengue in context.",
+        "clinicalRationale": "National fever roadmap uses antigen-based testing in the early work-up and IgM after >5 days; do not treat an early negative result as exclusion.",
+        "references": [
+          {
+            "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+            "edition": "Version 2.0, November 2025, Section 3.1, printed p. 26",
+            "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Blood cultures",
+        "modalityTarget": "Blood cultures",
+        "targetCondition": "Blood cultures",
+        "normalValue": "No pathogen growth.",
+        "expectedFinding": "Growth with susceptibility supports a treatable bacterial cause.",
+        "clinicalRationale": "In the stable staged roadmap add 2 sets after >5 days; obtain earlier before urgent antibiotics when sepsis is suspected.",
+        "references": [
+          {
+            "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+            "edition": "Version 2.0, November 2025, Sections 3.1 and 3.4, printed pp. 26 and 31",
+            "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Selected scrub typhus, leptospira or chikungunya serology",
+        "modalityTarget": "Selected scrub typhus, leptospira or chikungunya serology",
+        "targetCondition": "Selected scrub typhus, leptospira or chikungunya serology",
+        "normalValue": "Negative using the laboratory-validated cut-off; timing affects sensitivity.",
+        "expectedFinding": "A compatible positive assay.",
+        "clinicalRationale": "After >5 days, choose tests from exposure and clinical findings; interpret with illness timing and do not order an indiscriminate panel.",
+        "references": [
+          {
+            "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+            "edition": "Version 2.0, November 2025, Section 3.1, printed p. 26",
+            "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "firstLineImaging",
+        "testName": "Chest X-ray",
+        "modalityTarget": "Chest X-ray",
+        "targetCondition": "Chest X-ray",
+        "normalValue": "No focal pulmonary abnormality.",
+        "expectedFinding": "Consolidation or another finding explaining fever.",
+        "clinicalRationale": "Use for respiratory findings or persistent fever; NCDC–ICMR includes chest X-ray in the >5-day work-up.",
+        "references": [
+          {
+            "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+            "edition": "Version 2.0, November 2025, Section 3.1, printed p. 26",
+            "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Abdominal ultrasound",
+        "modalityTarget": "Abdominal ultrasound",
+        "targetCondition": "Abdominal ultrasound",
+        "normalValue": "No focal collection, obstruction or other actionable abnormality.",
+        "expectedFinding": "A collection, organ enlargement or obstructive finding.",
+        "clinicalRationale": "National roadmap adds ultrasound after >7 days in stable unresolved fever; perform earlier if an abdominal or obstructive emergency is suspected.",
+        "references": [
+          {
+            "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+            "edition": "Version 2.0, November 2025, Sections 3.1 and 3.4",
+            "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+          }
+        ]
+      },
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Lumbar puncture or targeted advanced imaging for new focal features",
+        "modalityTarget": "Lumbar puncture or targeted advanced imaging for new focal features",
+        "targetCondition": "Lumbar puncture or targeted advanced imaging for new focal features",
+        "normalValue": "No relevant inflammatory or structural finding.",
+        "expectedFinding": "Meningitis, encephalitis or a deep source.",
+        "clinicalRationale": "This is not routine testing for every fever; new neurological or localising features require the relevant emergency pathway.",
+        "references": [
+          {
+            "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+            "edition": "Version 2.0, November 2025, Sections 2.2–2.3 and 3.4",
+            "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "medicationPlan": {
+    "status": "local-protocol-required",
+    "note": "India regional topic. Indian national antimicrobial guidance takes precedence over older ICMR text. WHO AWaRe (Access, Watch, Reserve) warnings identify stewardship category, not an automatic indication. Check hospital formulary, product strength and local antibiogram. No Saudi registration claim is made for this India adaptation. No systemic antibiotic for uncomplicated presumed viral fever. The doxycycline branch is conditional, not routine treatment. Prescriptions carry a calendar stop date; the proposed 48-hour empirical authorisation review is not a substitute for clinical reassessment.",
+    "branches": [
+      {
+        "label": "Symptom relief",
+        "entryCriteria": "Stable adult with troublesome fever/pain and safe oral intake; first exclude relevant hepatic, renal, nutritional and overdose risks."
+      },
+      {
+        "label": "Selected uncomplicated rickettsial suspicion",
+        "entryCriteria": "Non-pregnant adult, clinically stable, credible rickettsial exposure/syndrome after malaria/dengue assessment; no shock, encephalitis or other complication."
+      }
+    ],
+    "regimens": [
+      {
+        "branch": "Symptom relief",
+        "step": "Antipyretic",
+        "selection": "all",
+        "indication": "Symptom relief",
+        "patientGroup": "Adults only",
+        "genericName": "Paracetamol",
+        "dose": "1 g per dose; maximum 4 g/day and maximum 4 doses in 24 hours",
+        "route": "Oral",
+        "frequency": "At least 4 hours between doses, only when needed",
+        "duration": "Use briefly; reassess at the planned review. Do not continue beyond 3 days without clinician reassessment (SmPC section 4.2).",
+        "adjustments": [
+          "Lower body weight, malnutrition, alcohol-associated liver disease or severe renal/hepatic impairment needs a reduced individual plan; do not automatically apply the full adult ceiling.",
+          "India NLEM 2022 lists oral paracetamol; check for paracetamol in combination products."
+        ],
+        "monitoring": [
+          "Temperature, symptom response, intake and total daily dose."
+        ],
+        "contraindications": [
+          "Paracetamol hypersensitivity; do not combine with another paracetamol-containing medicine.",
+          "Suspected overdose requires urgent toxicology assessment even if initially well."
+        ],
+        "sourceTitle": "NCDC–ICMR November 2025 with explicitly named supplementary source",
+        "sourceUrl": "https://www.medicines.org.uk/emc/product/5164/smpc",
+        "sourceEdition": "SmPC sections 4.2–4.4"
+      },
+      {
+        "branch": "Selected uncomplicated rickettsial suspicion",
+        "step": "Targeted antibiotic",
+        "selection": "all",
+        "indication": "Selected uncomplicated rickettsial suspicion",
+        "patientGroup": "Adults only",
+        "genericName": "Doxycycline",
+        "dose": "100 mg per dose; maximum 200 mg/day in this uncomplicated pathway",
+        "route": "Oral",
+        "frequency": "Every 12 hours",
+        "duration": "7 days total for uncomplicated supported rickettsial infection, including empirical days. Proposed empirical authorisation review at 48 hours: stop if the diagnosis is not supported. No automatic extension; complicated disease needs a new specialist pathway.",
+        "adjustments": [
+          "No routine renal reduction; use caution in hepatic impairment (SmPC section 4.4).",
+          "Take with water while upright; separate from iron/antacids. NLEM 2022 section 6.2.2.7 lists the 100 mg capsule."
+        ],
+        "monitoring": [
+          "ACCESS: document the indication and stop date; no routine antibiotic for viral fever.",
+          "Review diagnosis and response at 48 hours; monitor gastrointestinal intolerance, rash and hepatic symptoms."
+        ],
+        "contraindications": [
+          "Tetracycline hypersensitivity; pregnancy/breastfeeding needs a specialist-selected regimen.",
+          "Do not apply this outpatient branch to shock or encephalitis."
+        ],
+        "sourceTitle": "NCDC–ICMR November 2025 with explicitly named supplementary source",
+        "sourceUrl": "https://amrtg.icmr.org.in/table1-doxycycline.html",
+        "sourceEdition": "ICMR 2022 section Adult Dose; table Rickettsial infections: https://amrtg.icmr.org.in/chapter2-management-table1.html; Principles of empiric therapy: https://amrtg.icmr.org.in/chapter2-management-principles-empiric-therapy.html; doxycycline SmPC sections 4.2–4.6: https://www.medicines.org.uk/emc/product/13082/smpc"
+      }
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Acute undifferentiated fever is a presenting syndrome, not a pathogen diagnosis. Early viral, bacterial, parasitic and non-infective illness can overlap; test selection depends on illness day, exposure and severity (NCDC–ICMR section 3.1).",
+    "keyMechanisms": [
+      "A systemic response can produce fever, headache and myalgia before a localising sign appears (NCDC–ICMR section 3.1).",
+      "Malaria, dengue and rickettsial disease require different tests and treatment; an early negative assay may reflect timing rather than absence of infection (NCDC–ICMR section 3.1).",
+      "Organ dysfunction or shock changes the problem from stable fever assessment to emergency resuscitation (NCDC–ICMR section 3.4).",
+      "Many uncomplicated febrile illnesses resolve without antibiotics; unnecessary exposure adds adverse effects and resistance selection (ICMR 2022, section Principles of empiric therapy)."
+    ],
+    "references": [
+      {
+        "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+        "edition": "Version 2.0, November 2025, Sections 3.1 and 3.4, printed pp. 26–31",
+        "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+      },
+      {
+        "title": "ICMR acute fever guidance, 2022",
+        "edition": "Accessed 22 October 2026, Section Principles of empiric therapy",
+        "url": "https://amrtg.icmr.org.in/chapter2-management-principles-empiric-therapy.html"
+      }
+    ]
+  },
+  "clinicalScenario": "Fictitious teaching case: a non-pregnant adult has persistent fever without an obvious focus after rural travel. First decide whether there is shock or organ dysfunction; only a stable patient enters the timed outpatient diagnostic pathway.",
+  "clinicalManagement": [
+    {
+      "id": "triage",
+      "title": "Triage severity before using the fever-day algorithm",
+      "timeframe": "At first assessment",
+      "actions": [
+        "Check circulation, mental state, breathing and oral intake. Shock or organ dysfunction requires immediate hospital management, not observation until the next diagnostic day (NCDC–ICMR sections 3.1 and 3.4).",
+        "Record onset date, travel/residence, outbreak exposure, prior medicines, pregnancy possibility and immune state. Re-examine for a focal source."
+      ]
+    },
+    {
+      "id": "stable-early-fever",
+      "title": "Use supportive care for uncomplicated early illness",
+      "timeframe": "Illness days 1–2, only if stable and without a high-risk condition",
+      "actions": [
+        "National guidance permits deferring routine investigations and antimicrobials in uncomplicated early fever. Give oral fluids as tolerated and symptom relief when required; provide explicit return precautions (NCDC–ICMR section 3.1).",
+        "Do not prescribe an antibiotic simply because fever is present. Avoid non-steroidal anti-inflammatory drugs when dengue/bleeding or renal injury is possible; choose the symptom-relief branch and reassess (ICMR acute fever principles; paracetamol product information)."
+      ]
+    },
+    {
+      "id": "stage-investigation",
+      "title": "Select tests by timing and exposure",
+      "timeframe": "Days 3–4; >5 days; >7 days",
+      "actions": [
+        "Days 3–4: blood count/differential, liver and renal tests, urine examination, glucose and targeted malaria/dengue testing (NCDC–ICMR section 3.1).",
+        "After >5 days: add 2 blood-culture sets, selected IgM tests for dengue/chikungunya/scrub typhus/leptospirosis and chest X-ray (NCDC–ICMR section 3.1).",
+        "After >7 days: reassess the entire differential and add abdominal ultrasound or directed tests. This is a trigger for reassessment, not permission to cycle antibiotics (NCDC–ICMR section 3.1).",
+        "Investigate earlier with immunocompromise, pregnancy, worsening symptoms or a new localising sign. The India roadmap takes precedence over the older ICMR page where chest-imaging timing differs."
+      ]
+    },
+    {
+      "id": "targeted-treatment",
+      "title": "Treat a supported diagnosis; reserve empirical therapy",
+      "timeframe": "After assessment; urgent treatment if instability develops",
+      "actions": [
+        "Positive malaria/dengue tests or a localised syndrome redirect to the corresponding India pathway; do not continue the undifferentiated-fever regimen automatically.",
+        "Selected non-pregnant stable adults with credible rickettsial suspicion may receive doxycycline after specimens and malaria/dengue assessment. Review the need at 48 hours; an uncomplicated confirmed/strongly supported rickettsiosis uses a 7-day course, with the stop date written at initiation (ICMR 2022, Principles of empiric therapy and Rickettsial infections table).",
+        "Pregnancy, severe allergy or complicated rickettsial disease needs the appropriate specialist pathway. The short uncomplicated regimen does not cover encephalitis, shock or another established diagnosis."
+      ]
+    },
+    {
+      "id": "safety-net",
+      "title": "Arrange reassessment and escalate deterioration",
+      "timeframe": "Reassess within 48 hours; immediately for a red flag",
+      "actions": [
+        "Review symptoms, examination, results and medicines within 48 hours; arrange earlier review if risk warrants. Contact the patient for actionable cultures rather than waiting for a planned visit (ICMR 2022, Principles of empiric therapy).",
+        "Admit or urgently refer if perfusion, breathing, mentation, bleeding, renal function or oral intake deteriorates. Persistent unresolved fever requires diagnostic review, not repeated empirical antibiotic courses."
+      ]
+    }
+  ],
+  "clinicalReviewStatus": "pending",
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain why a pathogen diagnosis may not be clear initially and why routine antibiotics can cause harm.",
+      "Return immediately with fainting, confusion, breathing difficulty, bleeding, reduced urine or inability to drink.",
+      "Explain which tests are pending, how results will be communicated and the medicine stop dates."
+    ],
+    "lifestyleAndDiet": [
+      "Maintain oral fluids and food as tolerated; return if intake becomes inadequate.",
+      "Use mosquito protection and exposure-specific food/water precautions; avoid self-starting antibiotics or steroid combinations."
+    ],
+    "mdtReferrals": [
+      "Emergency/critical care for instability or organ dysfunction.",
+      "Infectious diseases/microbiology for unresolved fever, positive cultures, complicated rickettsial illness or resistant organisms.",
+      "Obstetrics for pregnancy with systemic illness; public health/infection control for suspected clusters or notifiable disease under the relevant programme."
+    ],
+    "dischargeCriteria": [
+      "Stable circulation, breathing and mental state; no organ dysfunction requiring admission.",
+      "Tolerating oral intake and medicines when prescribed.",
+      "A reliable review/result-contact plan is documented.",
+      "Patient understands the red flags and can reach urgent care if worse."
+    ],
+    "followUpPlan": "Reassess within 48 hours, including examination, results, antibiotic indication and stop date; earlier for any deterioration. Re-evaluate persistent fever with the timed national work-up rather than extending empirical antibiotics (ICMR 2022, Principles of empiric therapy; NCDC–ICMR section 3.1)."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Working syndrome",
+      "threshold": "Acute fever without a clear focus after history and examination; severity and exposure determine investigation rather than a fixed antibiotic prescription (NCDC–ICMR section 3.1)."
+    },
+    {
+      "criterion": "Emergency exit",
+      "threshold": "Shock or infection-associated organ dysfunction requires the sepsis or identified disease emergency pathway, regardless of the day of fever (NCDC–ICMR section 3.4)."
+    },
+    {
+      "criterion": "Selected empirical doxycycline",
+      "threshold": "A clinician may consider it after negative malaria/dengue rapid tests with persistent compatible illness; reserve this branch for a credible rickettsial suspicion and reassess at 48 hours (ICMR 2022, Principles of empiric therapy)."
+    }
+  ],
+  "guidelineComparison": {
+    "title": "Fever investigation timing: current national baseline versus older ICMR page",
+    "columns": [
+      "NCDC–ICMR V2.0 November 2025",
+      "ICMR acute-fever web guidance, 2022"
+    ],
+    "rows": [
+      {
+        "parameter": "Chest X-ray in stable unresolved fever",
+        "values": [
+          "Section 3.1 p. 26: include after >5 days.",
+          "Principles of empiric therapy: included after >7 days."
+        ]
+      },
+      {
+        "parameter": "Antimicrobial decision",
+        "values": [
+          "Section 3.1: defer antimicrobials on days 1–2 in uncomplicated illness; investigate by timing and risk.",
+          "Principles of empiric therapy: most non-localising acute fever needs no antibiotic; selected empirical doxycycline can be considered after negative malaria/dengue rapid tests; review at 48 hours."
+        ]
+      }
+    ],
+    "note": "Use the November 2025 national investigation sequence; older ICMR pages supply explicitly labelled dose/duration and empirical-selection detail. Severity always overrides deferral."
+  },
+  "teaching": {
+    "scope": "Stable adult fever without a focus in India; high-risk and unstable presentations exit to an urgent disease-specific pathway.",
+    "learningObjectives": [
+      "Triage severity before using illness-day testing.",
+      "Select exposure- and timing-appropriate tests.",
+      "Avoid routine antibiotics and document any selected course and review."
+    ],
+    "keyPoints": [
+      "Undifferentiated fever is a syndrome.",
+      "An early negative test may not exclude disease.",
+      "Severe illness overrides the stable day-based pathway."
+    ],
+    "pitfalls": [
+      "Giving doxycycline to every fever.",
+      "Waiting for day 5 in a shocked or immunocompromised patient.",
+      "Cycling broad-spectrum antibiotics instead of repeating the assessment."
+    ],
+    "references": [
+      {
+        "title": "NCDC–ICMR National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes",
+        "edition": "Version 2.0, November 2025",
+        "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf",
+        "locator": "Section 3.1 printed pp. 26–27; section 3.4 pp. 29–31"
+      },
+      {
+        "title": "ICMR acute fever guidance, 2022",
+        "edition": "Accessed 22 October 2026",
+        "url": "https://amrtg.icmr.org.in/chapter2-management-principles-empiric-therapy.html",
+        "locator": "Section Principles of empiric therapy"
+      },
+      {
+        "title": "ICMR antimicrobial choice table, 2022",
+        "edition": "Accessed 22 October 2026",
+        "url": "https://amrtg.icmr.org.in/chapter2-management-table1.html",
+        "locator": "Table Rickettsial infections"
+      },
+      {
+        "title": "ICMR doxycycline dosing",
+        "edition": "Accessed 22 October 2026",
+        "url": "https://amrtg.icmr.org.in/table1-doxycycline.html",
+        "locator": "Section Adult Dose"
+      },
+      {
+        "title": "India National List of Essential Medicines",
+        "edition": "Accessed 22 October 2026",
+        "url": "https://cdsco.gov.in/opencms/resources/UploadCDSCOWeb/2018/UploadConsumer/nlem2022.pdf",
+        "locator": "Sections 6.2, 10.4 and 25"
+      },
+      {
+        "title": "University Hospitals Dorset laboratory reference ranges",
+        "edition": "Accessed 22 October 2026",
+        "url": "https://www.uhd.nhs.uk/services/pathology/haematology/test-repertoire-and-reference-ranges",
+        "locator": "Section Adult Reference Ranges"
+      },
+      {
+        "title": "Doxycycline product information",
+        "edition": "Accessed 22 October 2026",
+        "url": "https://www.medicines.org.uk/emc/product/13082/smpc",
+        "locator": "Sections 4.2–4.6"
+      },
+      {
+        "title": "Paracetamol product information",
+        "edition": "Accessed 22 October 2026",
+        "url": "https://www.medicines.org.uk/emc/product/5164/smpc",
+        "locator": "Sections 4.2–4.4"
+      }
+    ]
+  }
+}

@@ -16,7 +16,9 @@ import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
 import type { DiseaseDetail } from "@/lib/validations/disease";
 import { RegionalTopicView } from "@/components/clinical/RegionalTopicView";
 import { getGlobalDiseaseTopic } from "@/lib/data/global-topics";
-import { REGION_COOKIE, resolveRegion } from "@/lib/region";
+import { REGION_COOKIE, getRegionOption, resolveRegion } from "@/lib/region";
+import { indiaReplacementFor, isTopicVisibleInRegion, topicCountry } from "@/lib/region-topics";
+import type { CountryCode } from "@/types/clinical";
 
 function formatDate(date: string) {
   return new Intl.DateTimeFormat("en-GB", { day: "2-digit", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${date}T00:00:00Z`));
@@ -64,6 +66,19 @@ function TopicApprovalBar({ disease, message, position = "bottom", editHref }: {
   );
 }
 
+function RegionUnavailable({ id, country }: { id: string; country: CountryCode }) {
+  const option = getRegionOption(country);
+  return (
+    <main className="page disease-detail-page topic-page">
+      <section className="scenario-card" role="status" aria-labelledby="region-unavailable-title">
+        <h1 id="region-unavailable-title">Available in Marifa {option.name}</h1>
+        <p>This topic follows {option.authority} guidance and is shown only when the {option.name} practice region is selected.</p>
+        <p><Link className="ui-button ui-button-primary" href={`/dashboard/diseases/${id}?region=${country}`}>Switch to {option.name}</Link></p>
+      </section>
+    </main>
+  );
+}
+
 export default async function DiseaseDetailPage({ params, searchParams }: { params: Promise<{ id: string }>; searchParams: Promise<{ approval?: string; version?: string; region?: string }> }) {
   const { id } = await params;
   const { approval, version, region } = await searchParams;
@@ -83,6 +98,14 @@ export default async function DiseaseDetailPage({ params, searchParams }: { para
   if (result.state === "unavailable") return <ErrorState />;
 
   const disease = result.disease;
+  // Region rule: India topics open only in the India region, and an India adaptation replaces its Saudi topic there.
+  // Opening a historical version (review links) is not region-gated.
+  if (!version) {
+    const activeRegion = resolveRegion(region, (await cookies()).get(REGION_COOKIE)?.value);
+    const indiaVersion = activeRegion === "IN" ? indiaReplacementFor(disease.id) : undefined;
+    if (indiaVersion) redirect(`/dashboard/diseases/${indiaVersion}`);
+    if (!isTopicVisibleInRegion(disease, activeRegion)) return <RegionUnavailable id={disease.id} country={topicCountry(disease)} />;
+  }
   // Count a view of the live topic only (not an opened historical version). Runs after the response is sent.
   if (!version) after(() => recordTopicView(disease.id));
   const [directory, pillarDirectory] = await Promise.all([

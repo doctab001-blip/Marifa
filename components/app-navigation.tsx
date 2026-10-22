@@ -29,6 +29,7 @@ import {
 } from "@/components/icons-3d";
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { searchTopics } from "@/lib/topic-search";
+import { REGION_CHANGE_EVENT, REGION_COOKIE, REGION_PARAM } from "@/lib/region";
 import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
 import { UNASSIGNED_SPECIALITY, canonicalSpeciality, groupBySpeciality, specialityCounts, specialityStyle } from "@/lib/medical-specialities";
 
@@ -321,10 +322,26 @@ function CalculatorNavigator() {
 type NavTopic = { id: string; title: string; pillar: string; speciality?: string; keywords?: string[] };
 type TopicState = { status: "loading" } | { status: "ready"; topics: NavTopic[] } | { status: "error" };
 
-// One request per browser session; the list is shared by every topic page.
+// One request per browser session and practice region; the list is shared by every topic page.
 let topicRequest: Promise<NavTopic[]> | null = null;
+let topicRequestRegion = "";
+function currentRegionCode() {
+  try {
+    const fromUrl = new URLSearchParams(window.location.search).get(REGION_PARAM);
+    const fromCookie = document.cookie.split("; ").find((entry) => entry.startsWith(`${REGION_COOKIE}=`))?.split("=")[1];
+    // The toggle writes the cookie before it updates the URL, so the cookie is the freshest choice.
+    return (fromCookie ?? fromUrl ?? "SA").toUpperCase();
+  } catch {
+    return "SA";
+  }
+}
 function loadTopics() {
-  topicRequest ??= fetch("/api/topics?view=nav", { credentials: "same-origin" })
+  const region = currentRegionCode();
+  if (region !== topicRequestRegion) {
+    topicRequest = null;
+    topicRequestRegion = region;
+  }
+  topicRequest ??= fetch(`/api/topics?view=nav&region=${encodeURIComponent(region)}`, { credentials: "same-origin" })
     .then((response) => {
       if (!response.ok) throw new Error(`Topic list unavailable (${response.status})`);
       return response.json() as Promise<{ topics: NavTopic[] }>;
@@ -347,11 +364,15 @@ export function TopicNavigator({ currentId }: { currentId: string | null }) {
 
   useEffect(() => {
     let active = true;
-    loadTopics().then(
+    const load = () => loadTopics().then(
       (topics) => { if (active) setState({ status: "ready", topics }); },
       () => { if (active) setState({ status: "error" }); },
     );
-    return () => { active = false; };
+    load();
+    // The country toggle announces a region change; reload the list for the new region.
+    const onRegionChange = () => { setState({ status: "loading" }); load(); };
+    window.addEventListener(REGION_CHANGE_EVENT, onRegionChange);
+    return () => { active = false; window.removeEventListener(REGION_CHANGE_EVENT, onRegionChange); };
   }, []);
 
   const topics = useMemo(() => (state.status === "ready" ? state.topics : []), [state]);
