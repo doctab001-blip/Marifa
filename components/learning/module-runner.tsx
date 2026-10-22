@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowLeft,
@@ -31,7 +32,7 @@ import {
   PASS_SCORE,
   QUESTIONS_PER_TEST,
 } from "@/lib/learning/catalog";
-import type { ModuleContent } from "@/lib/learning/content/types";
+import type { LearningImage, ModuleContent } from "@/lib/learning/content/types";
 import { moduleView, updateRecord, useLearningRecords } from "@/lib/learning/progress";
 
 type Stage = "study" | "assessment" | "result" | "certificate";
@@ -386,13 +387,13 @@ function SlideViewer({
           )}
         </div>
 
-        <figure className={`flex min-h-[180px] flex-col items-center justify-center rounded-xl border border-dashed p-5 text-center md:col-span-2 ${toneSoft}`}>
+        {slide.image ? <SlideImage key={slide.image.src} image={slide.image} /> : <figure className={`flex min-h-[180px] flex-col items-center justify-center rounded-xl border border-dashed p-5 text-center md:col-span-2 ${toneSoft}`}>
           <span className="grid h-12 w-12 place-items-center rounded-full bg-white/80 shadow-sm">
             <ImageIcon className={`h-5 w-5 ${toneText}`} aria-hidden="true" />
           </span>
           <span className="mt-3 text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-400">Clinical illustration</span>
           <figcaption className="mt-1 max-w-[16rem] text-xs! leading-snug! text-slate-600!">{slide.visual}</figcaption>
-        </figure>
+        </figure>}
       </div>
 
       {/* Controls */}
@@ -610,6 +611,28 @@ function Assessment({
 }
 
 /* ───────────────────────── Outcomes ───────────────────────── */
+
+function SlideImage({ image }: { image: LearningImage }) {
+  const [failed, setFailed] = useState(false);
+  return (
+    <figure className="m-0! min-w-0 self-start overflow-hidden rounded-xl border border-slate-200 bg-slate-50 md:col-span-2">
+      <a href={image.sourceUrl} target="_blank" rel="noopener noreferrer" className="block bg-white p-3" aria-label={`Open full image and source: ${image.alt}`}>
+        {failed ? (
+          <span role="status" className="flex min-h-48 items-center justify-center p-5 text-center text-sm text-slate-700">Image unavailable. Open the original source.</span>
+        ) : (
+          <Image src={image.src} alt={image.alt} width={800} height={600} unoptimized onError={() => setFailed(true)} className="h-auto max-h-[420px] w-full object-contain" />
+        )}
+      </a>
+      <figcaption className="space-y-2 border-t border-slate-200 p-3 text-xs! leading-relaxed! text-slate-700!">
+        <p className="m-0!">{image.caption}</p>
+        <p className="m-0! text-[10px]! text-slate-600!">
+          {image.credit} · <a href={image.licenseUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">{image.license}</a>
+          {" · "}<a href={image.sourceUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">Source / full image</a>
+        </p>
+      </figcaption>
+    </figure>
+  );
+}
 
 function Result({
   status,
