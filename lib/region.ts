@@ -11,12 +11,14 @@ export type RegionOption = {
   flag: string;
   name: string;
   authority: string;
+  /** Region theme colour name (see app/region-theme.css). */
+  accent: string;
 };
 
 export const REGIONS: readonly RegionOption[] = [
-  { code: "SA", flag: "🇸🇦", name: "Saudi Arabia", authority: "SFDA/MOH" },
-  { code: "IN", flag: "🇮🇳", name: "India", authority: "ICMR/MoHFW" },
-  { code: "UK", flag: "🇬🇧", name: "UK", authority: "NICE" },
+  { code: "SA", flag: "🇸🇦", name: "Saudi Arabia", authority: "SFDA/MOH", accent: "Emerald" },
+  { code: "IN", flag: "🇮🇳", name: "India", authority: "ICMR/MoHFW", accent: "Indigo" },
+  { code: "UK", flag: "🇬🇧", name: "UK", authority: "NICE", accent: "NHS blue" },
 ] as const;
 
 export function parseRegion(value: unknown): CountryCode | null {

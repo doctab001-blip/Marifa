@@ -29,7 +29,7 @@ function TriggerContent({ code, busy }: { code: CountryCode; busy?: boolean }) {
   const option = getRegionOption(code);
   return (
     <>
-      <Globe className={`size-4 shrink-0 text-emerald-700 ${busy ? "animate-pulse" : ""}`} aria-hidden="true" />
+      <Globe className={`size-4 shrink-0 text-[var(--region-accent)] ${busy ? "animate-pulse" : ""}`} aria-hidden="true" />
       <span aria-hidden="true" className="text-base leading-none">{option.flag}</span>
       <span className="hidden whitespace-nowrap sm:inline">{option.name}</span>
       <span className="font-mono text-xs font-semibold sm:hidden">{option.code}</span>
@@ -39,7 +39,7 @@ function TriggerContent({ code, busy }: { code: CountryCode; busy?: boolean }) {
 }
 
 const triggerClass =
-  "inline-flex h-9 items-center gap-2 rounded-full border border-[rgb(var(--ov)/0.1)] bg-[rgb(var(--ov)/0.04)] px-3 text-sm font-medium text-[var(--strong)] transition-colors hover:bg-[rgb(var(--ov)/0.08)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/40";
+  "inline-flex h-9 items-center gap-2 rounded-full border border-[var(--region-border)] bg-[var(--region-soft)] px-3 text-sm font-semibold text-[var(--region-accent)] transition-[filter] hover:brightness-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--region-solid)]/40";
 
 function CountryToggleInner({ initialRegion }: ToggleProps) {
   const router = useRouter();
@@ -53,6 +53,11 @@ function CountryToggleInner({ initialRegion }: ToggleProps) {
 
   const fromQuery = parseRegion(searchParams.get(REGION_PARAM));
   const active: CountryCode = (isPending ? pending : null) ?? fromQuery ?? initialRegion;
+
+  // Expose the active region on <html> so other modules (e.g. Diagnosis Engine) pick up its theme.
+  useEffect(() => {
+    document.documentElement.dataset.region = active;
+  }, [active]);
 
   // A shared link such as ?region=IN becomes the remembered choice for the rest of the app.
   useEffect(() => {
@@ -89,7 +94,7 @@ function CountryToggleInner({ initialRegion }: ToggleProps) {
   }
 
   return (
-    <div ref={rootRef} className="relative">
+    <div ref={rootRef} className="relative" data-region={active}>
       <button
         type="button"
         className={triggerClass}
@@ -110,18 +115,18 @@ function CountryToggleInner({ initialRegion }: ToggleProps) {
             {REGIONS.map((region) => {
               const selected = region.code === active;
               return (
-                <li key={region.code} role="option" aria-selected={selected}>
+                <li key={region.code} role="option" aria-selected={selected} data-region={region.code}>
                   <button
                     type="button"
                     onClick={() => select(region.code)}
-                    className={`flex w-full items-center gap-3 rounded-lg px-2.5 py-2 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/40 ${selected ? "bg-emerald-50" : "hover:bg-slate-50"}`}
+                    className={`flex w-full items-center gap-3 rounded-lg px-2.5 py-2 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-2 focus-visible:ring-[var(--region-solid)] ${selected ? "bg-[var(--region-soft)]" : "hover:bg-slate-50"}`}
                   >
                     <span aria-hidden="true" className="text-xl leading-none">{region.flag}</span>
                     <span className="min-w-0 flex-1">
-                      <span className={`block text-sm font-semibold ${selected ? "text-emerald-800" : "text-slate-900"}`}>{region.name}</span>
-                      <span className="block font-mono text-xs text-slate-500">{region.authority}</span>
+                      <span className={`block text-sm font-semibold ${selected ? "text-[var(--region-accent)]" : "text-slate-900"}`}>{region.name}</span>
+                      <span className="flex items-center gap-1.5 text-xs text-slate-500"><span aria-hidden="true" className="size-2 rounded-full bg-[var(--region-solid)]" /><span className="font-mono">{region.authority}</span><span aria-hidden="true">·</span>{region.accent}</span>
                     </span>
-                    {selected ? <Check className="size-4 text-emerald-700" aria-hidden="true" /> : null}
+                    {selected ? <Check className="size-4 text-[var(--region-accent)]" aria-hidden="true" /> : null}
                   </button>
                 </li>
               );
@@ -141,7 +146,7 @@ export function CountryToggle({ initialRegion }: ToggleProps) {
   return (
     <Suspense
       fallback={
-        <button type="button" className={triggerClass} disabled aria-label="Practice region">
+        <button type="button" className={triggerClass} disabled aria-label="Practice region" data-region={initialRegion}>
           <TriggerContent code={initialRegion} />
         </button>
       }

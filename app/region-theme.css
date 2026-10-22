@@ -1,0 +1,26 @@
+/* ── Region themes ────────────────────────────────────────────────────────────
+   Each practice region has its own accent so clinicians can see at a glance
+   which country's formulary and guidance they are reading.
+     SA  Saudi Arabia  — emerald (flag green)
+     IN  India         — indigo  (Ashoka Chakra navy)
+     UK  United Kingdom — NHS blue
+   Amber/gold and rose are deliberately NOT used as region colours: they are
+   reserved for AMR duration guardrails and stewardship / red-flag alerts.
+   Any element with data-region="SA|IN|UK" (including <html>) exposes:
+     --region-accent  text and icons      --region-soft    tinted fill
+     --region-border  tinted hairline     --region-solid   stripes and dots
+   ───────────────────────────────────────────────────────────────────────── */
+
+[data-region="SA"] { --region-accent: #047857; --region-soft: #ecfdf5; --region-border: #a7f3d0; --region-solid: #059669; }
+[data-region="IN"] { --region-accent: #3730a3; --region-soft: #eef2ff; --region-border: #c7d2fe; --region-solid: #4338ca; }
+[data-region="UK"] { --region-accent: #005eb8; --region-soft: #eaf2fb; --region-border: #b5d2f0; --region-solid: #005eb8; }
+
+:root[data-theme="dark"][data-region="SA"], :root[data-theme="dark"] [data-region="SA"] { --region-accent: #6ee7b7; --region-soft: rgb(16 185 129 / .13); --region-border: rgb(52 211 153 / .38); --region-solid: #10b981; }
+:root[data-theme="dark"][data-region="IN"], :root[data-theme="dark"] [data-region="IN"] { --region-accent: #a5b4fc; --region-soft: rgb(99 102 241 / .16); --region-border: rgb(129 140 248 / .42); --region-solid: #6366f1; }
+:root[data-theme="dark"][data-region="UK"], :root[data-theme="dark"] [data-region="UK"] { --region-accent: #93c5fd; --region-soft: rgb(59 130 246 / .15); --region-border: rgb(96 165 250 / .42); --region-solid: #3b82f6; }
+
+/* Diagnosis Engine region read-out follows the active region. */
+html[data-region] .dx-region strong { color: var(--region-accent); }
+
+/* Region topic header keeps a dark surface in dark mode, tinted with the region. */
+html[data-theme="dark"] .region-topic-hero { background: linear-gradient(180deg, var(--region-soft), transparent 70%), var(--surface); border-color: var(--line); }
