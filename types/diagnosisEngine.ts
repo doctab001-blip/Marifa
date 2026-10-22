@@ -56,6 +56,37 @@ export interface DifferentialMatch {
    * approved). "unverified": the live catalogue could not be checked for this query.
    */
   pathwayStatus: PathwayStatus;
+  /** How age, sex or region changed this condition's score (empty when no adjustment applied). */
+  contextNotes: string[];
+  /** Marifa medical calculators that help rule this condition in or out. */
+  calculators: CalculatorLink[];
+}
+
+export interface CalculatorLink {
+  id: string;
+  title: string;
+  href: string;
+}
+
+/** A term the finding inputs can suggest while typing. */
+export interface VocabularyTerm {
+  term: string;
+  kind: "symptom" | "exam" | "lab" | "imaging";
+}
+
+/** A finding not yet entered that would most change the ranking, and which differentials it would support. */
+export interface DiscriminatingFinding {
+  finding: string;
+  kind: "symptom" | "exam" | "lab" | "imaging";
+  supports: string[];
+  /** The test or examination that answers it, when one is listed. */
+  howToCheck?: string;
+}
+
+/** A typed value the engine read as a clinical term ("HR 124" → tachycardia). */
+export interface InterpretedFinding {
+  original: string;
+  interpretedAs: string[];
 }
 
 export interface DiagnosticEngineResponse {
@@ -64,6 +95,9 @@ export interface DiagnosticEngineResponse {
   /** Strictly 3 to 4 items, ranked by matchScore. */
   topDifferentials: DifferentialMatch[];
   clinicalSafetyNotice: string;
+  /** Findings that would best separate the listed differentials. */
+  discriminatingFindings: DiscriminatingFinding[];
+  inputInterpretation: InterpretedFinding[];
 }
 
 export interface DiagnosticEngineError {

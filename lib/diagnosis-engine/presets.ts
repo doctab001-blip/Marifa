@@ -1,6 +1,9 @@
 import type { DiagnosticInputState } from "@/types/diagnosisEngine";
 
-export type ClinicalPreset = { id: string; label: string; summary: string; input: Omit<DiagnosticInputState, "region"> };
+/** Vital signs as the workbench fields hold them (strings, empty when not recorded). */
+export type PresetVitals = Partial<Record<"hr" | "sbp" | "dbp" | "rr" | "spo2" | "temp" | "gcs" | "glucose", string>>;
+
+export type ClinicalPreset = { id: string; label: string; summary: string; input: Omit<DiagnosticInputState, "region">; vitals?: PresetVitals };
 
 /** Fictional teaching scenarios for testing the engine. Not patient data. */
 export const clinicalPresets: ClinicalPreset[] = [
@@ -68,5 +71,19 @@ export const clinicalPresets: ClinicalPreset[] = [
       labInvestigations: ["Raised NT-proBNP"],
       imagingFindings: ["Pulmonary oedema on chest X-ray"],
     },
+  },
+  {
+    id: "drowsy-hyperglycaemia",
+    label: "Drowsy with high glucose",
+    summary: "23-year-old with type 1 diabetes, 2 days of vomiting (values typed as numbers)",
+    input: {
+      age: 23,
+      gender: "female",
+      symptoms: ["Polyuria", "Vomiting", "Abdominal pain", "Missed insulin"],
+      examFindings: ["Deep sighing respiration", "Dry mucous membranes"],
+      labInvestigations: ["pH 7.12", "Bicarbonate 9", "Ketones 5.8", "K 5.9"],
+      imagingFindings: [],
+    },
+    vitals: { hr: "124", sbp: "98", dbp: "60", rr: "30", spo2: "98", temp: "37.2", gcs: "14", glucose: "28" },
   },
 ];

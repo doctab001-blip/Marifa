@@ -3,79 +3,17 @@
  *
  * Demonstration data, pending clinical review. Each profile lists weighted findings across the four input
  * vectors and links to the Marifa disease-management topic that governs care. Topic ids come from the
- * catalogue (data/emergency-versions) and are re-checked against the live directory at query time.
- *
- * Weights: 3 = highly specific / key feature, 2 = supportive, 1 = non-specific.
- * `classic: true` marks the features reported as "Key missing features" when not entered.
+ * catalogue (data/emergency-versions, data/seeds) and are re-checked against the live directory at query time.
  */
-import type { UrgencyLevel } from "@/types/diagnosisEngine";
+import { c, f, fever, g, hypotension, hypoxia, leukocytosis, neckStiffness, raisedCrp, raisedLactate, raisedTroponin, syncope, tachycardia, tachypnoea, vomiting, type DiagnosticProfile } from "./knowledge-helpers";
+import { extendedProfiles } from "./knowledge-base-extended";
 
-export type FeatureKind = "symptom" | "exam" | "lab" | "imaging";
-export type PresentationCluster = "chest-pain" | "dyspnoea" | "abdominal-pain" | "fever" | "headache" | "neuro" | "gi-bleed";
+export type { ContraFeature, DiagnosticProfile, FeatureKind, PathwayRef, PresentationCluster, ProfileFeature, ProfilePriors } from "./knowledge-helpers";
 
-export interface ProfileFeature {
-  label: string;
-  kind: FeatureKind;
-  weight: 1 | 2 | 3;
-  aliases: string[];
-  classic?: boolean;
-  /** Shared, non-specific finding (fever, tachycardia, vomiting…): supports a condition but cannot qualify it alone. */
-  generic?: boolean;
-}
-
-export interface ContraFeature {
-  label: string;
-  weight: 1 | 2 | 3;
-  aliases: string[];
-}
-
-export interface PathwayRef {
-  /** Candidate catalogue topic ids, preferred first. */
-  topicIds: string[];
-  /** Title fragments used to find the live topic when none of the ids is published. */
-  titleHints: string[];
-  /** Title shown on the card. */
-  title: string;
-  /** True for GlobalDiseaseTopic records held in the repository (always resolvable). */
-  global?: boolean;
-}
-
-export interface DiagnosticProfile {
-  key: string;
-  title: string;
-  icd10Code: string;
-  specialty: string;
-  urgencyLevel: UrgencyLevel;
-  clusters: PresentationCluster[];
-  sex?: "female" | "male";
-  features: ProfileFeature[];
-  against?: ContraFeature[];
-  redFlags: string[];
-  nextSteps: { testName: string; clinicalRationale: string }[];
-  pathway: PathwayRef;
-}
-
-const f = (kind: FeatureKind, label: string, weight: 1 | 2 | 3, aliases: string[], classic = false): ProfileFeature => ({ kind, label, weight, aliases: [label, ...aliases], classic });
-const c = (label: string, weight: 1 | 2 | 3, aliases: string[] = []): ContraFeature => ({ label, weight, aliases: [label, ...aliases] });
-
-// Shared, non-specific findings (flagged generic).
-const g = (feature: ProfileFeature): ProfileFeature => ({ ...feature, generic: true });
-const tachycardia = (weight: 1 | 2 | 3, classic = false) => g(f("exam", "Tachycardia", weight, ["heart rate over 100", "pulse over 100", "sinus tachycardia"], classic));
-const hypotension = (weight: 1 | 2 | 3, classic = false) => g(f("exam", "Hypotension", weight, ["low blood pressure", "systolic bp under 90", "shock", "haemodynamic instability"], classic));
-const hypoxia = (weight: 1 | 2 | 3, classic = false) => g(f("exam", "Hypoxia", weight, ["hypoxaemia", "low spo2", "low oxygen saturation", "desaturation"], classic));
-const tachypnoea = (weight: 1 | 2 | 3, classic = false) => g(f("exam", "Tachypnoea", weight, ["raised respiratory rate", "respiratory rate over 22"], classic));
-const fever = (weight: 1 | 2 | 3, classic = false) => g(f("symptom", "Fever", weight, ["pyrexia", "febrile", "rigors", "raised temperature", "low grade fever"], classic));
-const leukocytosis = (weight: 1 | 2 | 3, classic = false) => g(f("lab", "Leukocytosis", weight, ["raised wbc", "neutrophilia"], classic));
-const raisedCrp = (weight: 1 | 2 | 3) => g(f("lab", "Raised CRP", weight, ["raised c reactive protein"]));
-const vomiting = (weight: 1 | 2 | 3, classic = false) => g(f("symptom", "Nausea or vomiting", weight, ["nausea", "vomiting"], classic));
-const raisedLactate = (weight: 1 | 2 | 3, classic = false) => f("lab", "Raised lactate", weight, ["hyperlactataemia", "lactate over 2"], classic);
-const syncope = (weight: 1 | 2 | 3) => g(f("symptom", "Syncope or collapse", weight, ["syncope", "collapse", "fainting", "loss of consciousness"]));
-const raisedTroponin = (weight: 1 | 2 | 3, classic = false) => f("lab", "Raised troponin", weight, ["troponin rise", "positive troponin"], classic);
-const neckStiffness = (weight: 1 | 2 | 3, classic = false) => f("exam", "Neck stiffness", weight, ["stiff neck", "nuchal rigidity", "meningism"], classic);
-
-export const diagnosticProfiles: DiagnosticProfile[] = [
+const coreProfiles: DiagnosticProfile[] = [
   {
     key: "pulmonary-embolism",
+    priors: { typicalAge: [16, 120] },
     title: "Acute Pulmonary Embolism",
     icd10Code: "I26.9",
     specialty: "Emergency Medicine / Respiratory",
@@ -120,6 +58,7 @@ export const diagnosticProfiles: DiagnosticProfile[] = [
   },
   {
     key: "acute-coronary-syndrome",
+    priors: { typicalAge: [35, 120] },
     title: "Acute Coronary Syndrome",
     icd10Code: "I24.9",
     specialty: "Cardiology / Emergency Medicine",
@@ -157,6 +96,7 @@ export const diagnosticProfiles: DiagnosticProfile[] = [
   },
   {
     key: "aortic-dissection",
+    priors: { typicalAge: [40, 120] },
     title: "Acute Aortic Dissection",
     icd10Code: "I71.0",
     specialty: "Cardiothoracic / Vascular Surgery",
@@ -288,6 +228,7 @@ export const diagnosticProfiles: DiagnosticProfile[] = [
   },
   {
     key: "acute-heart-failure",
+    priors: { typicalAge: [40, 120] },
     title: "Acute Heart Failure / Pulmonary Oedema",
     icd10Code: "I50.9",
     specialty: "Cardiology",
@@ -359,6 +300,7 @@ export const diagnosticProfiles: DiagnosticProfile[] = [
   },
   {
     key: "acute-appendicitis",
+    priors: { typicalAge: [4, 50] },
     title: "Acute Appendicitis",
     icd10Code: "K35.8",
     specialty: "General Surgery",
@@ -454,6 +396,7 @@ export const diagnosticProfiles: DiagnosticProfile[] = [
   },
   {
     key: "ectopic-pregnancy",
+    priors: { ageRange: [11, 55] },
     title: "Ectopic Pregnancy",
     icd10Code: "O00.9",
     specialty: "Gynaecology / Emergency Medicine",
@@ -489,6 +432,7 @@ export const diagnosticProfiles: DiagnosticProfile[] = [
   },
   {
     key: "ovarian-torsion",
+    priors: { ageRange: [1, 70], typicalAge: [10, 50] },
     title: "Ovarian Torsion",
     icd10Code: "N83.5",
     specialty: "Gynaecology",
@@ -524,7 +468,7 @@ export const diagnosticProfiles: DiagnosticProfile[] = [
       f("symptom", "Absolute constipation", 3, ["obstipation"], true),
       f("symptom", "Abdominal distension", 3, ["distended abdomen", "bloating"], true),
       f("symptom", "Previous abdominal surgery or hernia", 1, ["previous abdominal surgery", "adhesions", "hernia"]),
-      f("exam", "Tinkling bowel sounds", 2, ["raised pitched bowel sounds"]),
+      f("exam", "Tinkling bowel sounds", 2, ["high pitched bowel sounds"]),
       f("exam", "Irreducible hernia", 2, ["incarcerated hernia"]),
       f("lab", "Acute kidney injury or hypokalaemia", 1, ["raised urea", "hypokalaemia", "aki"]),
       raisedLactate(1),
@@ -540,6 +484,7 @@ export const diagnosticProfiles: DiagnosticProfile[] = [
   },
   {
     key: "mesenteric-ischaemia",
+    priors: { typicalAge: [50, 120] },
     title: "Acute Mesenteric Ischaemia",
     icd10Code: "K55.0",
     specialty: "Vascular / General Surgery",
@@ -605,7 +550,7 @@ export const diagnosticProfiles: DiagnosticProfile[] = [
       fever(2, true),
       neckStiffness(3, true),
       f("symptom", "Photophobia", 2, []),
-      f("symptom", "Confusion or reduced GCS", 2, ["confusion", "drowsy", "low gcs", "altered mental status"]),
+      g(f("symptom", "Confusion or reduced GCS", 2, ["confusion", "drowsy", "low gcs", "altered mental status"])),
       vomiting(1),
       f("exam", "Kernig or Brudzinski sign", 3, ["kernig sign", "brudzinski sign"]),
       f("exam", "Non-blanching petechial or purpuric rash", 3, ["non blanching rash", "petechial rash", "purpuric rash", "purpura"]),
@@ -641,7 +586,7 @@ export const diagnosticProfiles: DiagnosticProfile[] = [
       vomiting(1),
       syncope(2),
       f("symptom", "Onset during exertion", 1, ["onset during exercise"]),
-      f("exam", "Reduced GCS", 2, ["low gcs", "drowsy"]),
+      g(f("exam", "Reduced GCS", 2, ["low gcs", "drowsy"])),
       f("exam", "Third nerve palsy", 2, ["oculomotor palsy", "dilated pupil"]),
       f("lab", "Xanthochromia", 3, ["raised csf bilirubin"]),
       f("imaging", "Subarachnoid blood on CT", 3, ["subarachnoid haemorrhage on ct", "blood in basal cisterns", "hyperdensity in basal cisterns"], true),
@@ -657,6 +602,7 @@ export const diagnosticProfiles: DiagnosticProfile[] = [
   },
   {
     key: "migraine",
+    priors: { typicalAge: [8, 55] },
     title: "Migraine",
     icd10Code: "G43.9",
     specialty: "Neurology",
@@ -682,6 +628,7 @@ export const diagnosticProfiles: DiagnosticProfile[] = [
   },
   {
     key: "acute-ischaemic-stroke",
+    priors: { typicalAge: [40, 120] },
     title: "Acute Ischaemic Stroke",
     icd10Code: "I63.9",
     specialty: "Neurology / Emergency Medicine",
@@ -713,6 +660,8 @@ export const diagnosticProfiles: DiagnosticProfile[] = [
   },
   {
     key: "diabetic-ketoacidosis",
+    gate: ["Polyuria and polydipsia", "Type 1 diabetes or missed insulin", "Kussmaul breathing", "Hyperglycaemia", "Ketonaemia", "Metabolic acidosis"],
+    priors: { typicalAge: [1, 60] },
     title: "Diabetic Ketoacidosis",
     icd10Code: "E10.1",
     specialty: "Endocrinology / Emergency Medicine",
@@ -744,13 +693,15 @@ export const diagnosticProfiles: DiagnosticProfile[] = [
   },
   {
     key: "dengue",
+    gate: ["High fever", "NS1 antigen or dengue IgM positive"],
+    priors: { regionWeight: { SA: 1.1, IN: 1.2, UK: 0.85 }, regionNote: "endemic in parts of Saudi Arabia (Jeddah, Makkah, Jazan) and India" },
     title: "Dengue Fever",
     icd10Code: "A97.9",
     specialty: "Infectious Diseases",
     urgencyLevel: "HIGH",
     clusters: ["fever", "headache"],
     features: [
-      g(f("symptom", "High fever", 2, ["fever", "raised grade fever"], true)),
+      g(f("symptom", "High fever", 2, ["fever", "high grade fever"], true)),
       f("symptom", "Severe myalgia or arthralgia", 2, ["myalgia", "arthralgia", "bone pain", "body aches"], true),
       f("symptom", "Retro-orbital pain", 3, ["pain behind eyes"], true),
       f("symptom", "Headache", 1, []),
@@ -804,6 +755,7 @@ export const diagnosticProfiles: DiagnosticProfile[] = [
   },
   {
     key: "anaphylaxis",
+    gate: ["Onset minutes after allergen exposure", "Urticaria or flushing", "Lip, tongue or facial swelling", "Raised mast cell tryptase"],
     title: "Anaphylaxis",
     icd10Code: "T78.2",
     specialty: "Emergency Medicine / Allergy",
@@ -830,6 +782,7 @@ export const diagnosticProfiles: DiagnosticProfile[] = [
   },
   {
     key: "aecopd",
+    priors: { ageRange: [30, 120], typicalAge: [45, 120] },
     title: "Acute Exacerbation of COPD",
     icd10Code: "J44.1",
     specialty: "Respiratory Medicine",
@@ -883,6 +836,8 @@ export const diagnosticProfiles: DiagnosticProfile[] = [
   },
 ];
 
+export const diagnosticProfiles: DiagnosticProfile[] = [...coreProfiles, ...extendedProfiles];
+
 /**
  * Additions for GlobalDiseaseTopic records (repository JSON). The topic's own universal symptoms, signs and
  * red flags are merged in at runtime; these add the labs, imaging, next steps and urgency it does not hold.
@@ -890,12 +845,15 @@ export const diagnosticProfiles: DiagnosticProfile[] = [
 export const globalTopicOverlays: Record<string, Omit<DiagnosticProfile, "title" | "icd10Code" | "pathway"> & { pathwayTitle?: string }> = {
   "a1b2c3d4-enteric-fever": {
     key: "enteric-fever",
+    gate: ["Prolonged fever", "Fever", "Salmonella Typhi / Paratyphi on blood culture"],
+    priors: { regionWeight: { IN: 1.25, SA: 1.0, UK: 0.85 }, regionNote: "endemic in South Asia" },
     specialty: "Infectious Diseases",
     urgencyLevel: "HIGH",
     clusters: ["fever", "abdominal-pain", "headache"],
     features: [
       f("symptom", "Prolonged fever", 3, ["persistent fever", "stepladder fever", "fever over 7 days"], true),
       f("symptom", "Travel to or residence in an endemic area", 2, ["travel to south asia", "endemic area", "contaminated water"]),
+      fever(1),
       f("exam", "Relative bradycardia", 2, [], true),
       f("lab", "Salmonella Typhi / Paratyphi on blood culture", 3, ["salmonella typhi", "blood culture salmonella", "positive typhoid culture", "salmonella paratyphi"]),
       f("lab", "Leukopenia", 2, []),

@@ -2,6 +2,7 @@ import { z } from "zod";
 import type { DiagnosticEngineError, DiagnosticInputState } from "@/types/diagnosisEngine";
 import { DiagnosisEngineError, runDiagnosisEngine } from "@/lib/diagnosis-engine/engine";
 import { createLivePathwayResolver, loadGlobalTopics } from "@/lib/diagnosis-engine/pathways";
+import { buildVocabulary } from "@/lib/diagnosis-engine/vocabulary";
 
 const finding = z.string().trim().min(1).max(160);
 const findings = z.array(finding).max(30).default([]);
@@ -51,4 +52,9 @@ export async function POST(request: Request) {
     console.error("[diagnosis-engine] request failed");
     return Response.json({ error: "The diagnosis engine is temporarily unavailable." }, { status: 500, headers: noStore });
   }
+}
+
+/** GET /api/diagnosis-engine — the finding vocabulary used for type-ahead suggestions (reference data, no patient data). */
+export async function GET() {
+  return Response.json({ terms: buildVocabulary(loadGlobalTopics()) }, { headers: { "Cache-Control": "public, max-age=3600" } });
 }

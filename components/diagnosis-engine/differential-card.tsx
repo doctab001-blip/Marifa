@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useId, useState } from "react";
-import { ArrowRight, CheckCircle2, ChevronDown, CircleDashed, FlaskConical, ShieldAlert, Siren, XCircle } from "lucide-react";
+import { ArrowRight, Calculator, CheckCircle2, ChevronDown, CircleDashed, Columns2, FlaskConical, Info, ShieldAlert, Siren, XCircle } from "lucide-react";
 import type { DifferentialMatch, PathwayStatus, UrgencyLevel } from "@/types/diagnosisEngine";
 
 // A pathway is only called "approved" after a clinician presses Approve on the topic page.
@@ -12,28 +12,47 @@ const PATHWAY_STATUS: Record<PathwayStatus, string> = {
   unverified: "Catalogue link · not verified live",
 };
 
-const URGENCY: Record<UrgencyLevel, { label: string; className: string }> = {
+export const URGENCY: Record<UrgencyLevel, { label: string; className: string }> = {
   CRITICAL_MUST_NOT_MISS: { label: "Must-not-miss", className: "dx-urgency dx-urgency--critical" },
   HIGH: { label: "High priority", className: "dx-urgency dx-urgency--high" },
   ROUTINE: { label: "Routine", className: "dx-urgency dx-urgency--routine" },
 };
 
-function scoreBand(score: number) {
+export function scoreBand(score: number) {
   if (score >= 70) return "Strong match";
   if (score >= 40) return "Moderate match";
   if (score > 0) return "Weak match";
   return "Consider — not yet supported";
 }
 
-export function DifferentialCard({ match, rank, defaultOpen = false }: { match: DifferentialMatch; rank: number; defaultOpen?: boolean }) {
+export const matchedList = (match: DifferentialMatch) => [
+  ...match.matchedFeatures.symptomsMatched,
+  ...match.matchedFeatures.examMatched,
+  ...match.matchedFeatures.labsMatched,
+  ...match.matchedFeatures.imagingMatched,
+];
+
+type CardProps = {
+  match: DifferentialMatch;
+  rank: number;
+  defaultOpen?: boolean;
+  /** Compare selection; omit to hide the compare control. */
+  compareSelected?: boolean;
+  compareDisabled?: boolean;
+  onToggleCompare?: () => void;
+};
+
+export function DifferentialCard({ match, rank, defaultOpen = false, compareSelected = false, compareDisabled = false, onToggleCompare }: CardProps) {
   const [open, setOpen] = useState(defaultOpen);
   const panelId = useId();
   const critical = match.urgencyLevel === "CRITICAL_MUST_NOT_MISS";
   const urgency = URGENCY[match.urgencyLevel];
-  const matched = [...match.matchedFeatures.symptomsMatched, ...match.matchedFeatures.examMatched, ...match.matchedFeatures.labsMatched, ...match.matchedFeatures.imagingMatched];
+  const matched = matchedList(match);
+  const contextNotes = match.contextNotes ?? [];
+  const calculators = match.calculators ?? [];
 
   return (
-    <article className={`dx-card${critical ? " dx-card--critical" : ""}`} data-urgency={match.urgencyLevel} aria-labelledby={`${panelId}-title`}>
+    <article className={`dx-card${critical ? " dx-card--critical" : ""}${compareSelected ? " dx-card--compare" : ""}`} data-urgency={match.urgencyLevel} aria-labelledby={`${panelId}-title`}>
       {critical ? (
         <p className="dx-critical-banner" role="note"><Siren size={15} strokeWidth={2} aria-hidden="true" />Life-threatening — exclude actively before an alternative diagnosis is accepted</p>
       ) : null}
@@ -47,6 +66,11 @@ export function DifferentialCard({ match, rank, defaultOpen = false }: { match: 
             <span className="dx-specialty">{match.specialty}</span>
           </p>
         </div>
+        {onToggleCompare ? (
+          <button type="button" className="dx-compare-toggle dx-no-print" aria-pressed={compareSelected} disabled={compareDisabled && !compareSelected} onClick={onToggleCompare} title={compareDisabled && !compareSelected ? "Two conditions are already selected" : "Compare side by side"}>
+            <Columns2 size={14} strokeWidth={2} aria-hidden="true" />{compareSelected ? "Comparing" : "Compare"}
+          </button>
+        ) : null}
       </header>
 
       <div className="dx-score">
@@ -64,14 +88,19 @@ export function DifferentialCard({ match, rank, defaultOpen = false }: { match: 
         ) : (
           <p className="dx-muted">No entered finding matches yet — listed so it is actively considered.</p>
         )}
+        {contextNotes.length ? (
+          <ul className="dx-context-notes" aria-label="Age and region adjustments">
+            {contextNotes.map((note) => <li key={note}><Info size={13} strokeWidth={2.2} aria-hidden="true" />{note}</li>)}
+          </ul>
+        ) : null}
       </div>
 
-      <button type="button" className="dx-disclosure" aria-expanded={open} aria-controls={panelId} onClick={() => setOpen((value) => !value)}>
+      <button type="button" className="dx-disclosure dx-no-print" aria-expanded={open} aria-controls={panelId} onClick={() => setOpen((value) => !value)}>
         Clinical justification
         <ChevronDown size={16} strokeWidth={2} aria-hidden="true" className={open ? "dx-rotate" : undefined} />
       </button>
 
-      <div id={panelId} className="dx-justification" hidden={!open}>
+      <div id={panelId} className={`dx-justification${open ? "" : " dx-collapsed"}`}>
         <section>
           <h4>Matched evidence</h4>
           {matched.length ? (
@@ -108,6 +137,15 @@ export function DifferentialCard({ match, rank, defaultOpen = false }: { match: 
           </section>
         ) : null}
       </div>
+
+      {calculators.length ? (
+        <div className="dx-calculators">
+          <span className="dx-calculators-label"><Calculator size={14} strokeWidth={2} aria-hidden="true" />Calculators</span>
+          {calculators.map((calculator) => (
+            <Link key={calculator.id} href={calculator.href} prefetch={false} className="dx-calculator-link">{calculator.title}</Link>
+          ))}
+        </div>
+      ) : null}
 
       <footer className="dx-card-foot">
         <span className="dx-pathway-name">
