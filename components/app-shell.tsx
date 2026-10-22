@@ -8,6 +8,7 @@ import { MobileNavigation } from "@/components/app-navigation";
 import { Sidebar } from "@/components/Sidebar";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { CountryToggle } from "@/components/navigation/CountryToggle";
+import "@/app/region-theme.css";
 import { REGION_COOKIE, resolveRegion } from "@/lib/region";
 import { HeaderContext } from "@/components/header-context";
 import { isTemporaryOpenAdminMode } from "@/lib/access-mode";

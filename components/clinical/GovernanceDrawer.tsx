@@ -16,9 +16,9 @@ export function GovernanceDrawer({ metadata, regionName = "Saudi" }: { metadata:
       className="ksa-governance-drawer group overflow-hidden rounded-xl border border-slate-200/60 bg-white shadow-[0_2px_8px_rgba(0,0,0,0.04)]"
       style={{ borderColor: "rgba(226, 232, 240, 0.78)", boxShadow: "0 2px 8px rgba(0,0,0,0.04)" }}
     >
-      <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-4 px-4 py-3 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/30 [&::-webkit-details-marker]:hidden">
+      <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-4 px-4 py-3 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--region-solid,#059669)]/30 [&::-webkit-details-marker]:hidden">
         <span className="flex items-center gap-2">
-          <ShieldCheck className="size-4 text-emerald-700" aria-hidden="true" />
+          <ShieldCheck className="size-4 text-[var(--region-accent,#047857)]" aria-hidden="true" />
           View Clinical Governance &amp; Guideline Sources
         </span>
         <ChevronDown className="size-4 shrink-0 transition-transform duration-200 group-open:rotate-180" aria-hidden="true" />
