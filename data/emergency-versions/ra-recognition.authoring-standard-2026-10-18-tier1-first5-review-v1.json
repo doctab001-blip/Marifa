@@ -1,0 +1,251 @@
+{
+  "id": "29011b0e-7dd1-4138-b1c8-313708575289",
+  "title": "Suspected Rheumatoid Arthritis: Primary Care Recognition and Early Referral",
+  "specialty": "Rheumatology / Primary Care",
+  "authority": "NICE",
+  "status": "under_review",
+  "version": "authoring-standard-2026-10-18-tier1-first5-review-v1",
+  "lastReviewed": "2026-10-18",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+    "checkedOn": "2026-10-18",
+    "status": "incomplete",
+    "scope": "Adult primary-care recognition, initial investigation and urgent rheumatology referral for suspected persistent synovitis. Reviewed against the Saudi-first Marifa contract on 18 October 2026; useful existing content is retained and unresolved local requirements are explicit.",
+    "findings": [
+      "Every dose, threshold and timing was checked against the cited source section on 2026-10-18.",
+      "Normal values are typical adult reference ranges; laboratories differ."
+    ],
+    "unverifiedSections": [
+      "No Saudi national rheumatoid arthritis guideline was identified in the sources opened on 14 October 2026. NICE guidance is an international comparator pending Saudi/local adaptation.",
+      "SFDA product registration was not verified; any medicine selection requires the current Saudi Drug Information register and hospital formulary.",
+      "No opened Saudi rheumatology referral standard with local access criteria or waiting-time pathway was available in this review. Existing international recognition and referral guidance remains a gap-filler.",
+      "Confirm the Saudi rheumatology urgent-referral route and local laboratory access before clinician approval."
+    ],
+    "medscapeStatus": "unavailable",
+    "originalVersionIds": [
+      "29011b0e-7dd1-4138-b1c8-313708575289"
+    ]
+  },
+  "pathophysiology": {
+    "summary": "Autoimmune synovial inflammation causes pain, swelling and stiffness. Persistent inflammation can erode cartilage and bone. Small joints of the hands and feet are commonly involved. Systemic inflammation can affect organs outside the joints.",
+    "keyMechanisms": [
+      "Autoimmune synovial inflammation causes pain, swelling and stiffness.",
+      "Persistent inflammation can erode cartilage and bone.",
+      "Small joints of the hands and feet are commonly involved.",
+      "Systemic inflammation can affect organs outside the joints."
+    ],
+    "references": [
+      {
+        "title": "NICE NG100: Rheumatoid arthritis in adults: management",
+        "edition": "NICE NG100, Recommendations 1.1.1–1.1.5",
+        "url": "https://www.nice.org.uk/guidance/ng100/chapter/recommendations"
+      }
+    ]
+  },
+  "presentation": {
+    "symptoms": [
+      "Persistent joint pain, swelling and morning stiffness; ask about duration, function and symmetry."
+    ],
+    "physicalSigns": [
+      "Clinical synovitis: soft swelling, warmth, tenderness and restricted movement; examine hands, feet and other symptomatic joints."
+    ],
+    "redFlags": [
+      "Septic-joint features, systemic illness, rapidly progressive neurological deficit or vasculitic/organ-threatening features need same-day escalation."
+    ],
+    "precipitants": [
+      "Smoking, family history and established autoimmune disease increase suspicion; symptoms may begin without a clear trigger."
+    ]
+  },
+  "differentials": [
+    {
+      "condition": "Osteoarthritis",
+      "distinguishingFeatures": "Bony enlargement and activity-related pain without persistent soft synovitis."
+    },
+    {
+      "condition": "Crystal arthritis or septic arthritis",
+      "distinguishingFeatures": "Abrupt hot monoarthritis; aspirate urgently when infection is possible."
+    }
+  ],
+  "investigations": {
+    "ruleIn": [
+      {
+        "tier": "specializedAdjunctive",
+        "testName": "Joint examination",
+        "modalityTarget": "Synovitis distribution",
+        "targetCondition": "Inflammatory arthritis",
+        "expectedFinding": "Persistent soft-tissue swelling, warmth and restricted movement",
+        "clinicalRationale": "Refer on clinical suspicion; normal blood tests do not remove the need.",
+        "normalValue": "No synovitis",
+        "references": [
+          {
+            "title": "NICE NG100: Rheumatoid arthritis in adults: management",
+            "edition": "NICE NG100 Recommendations 1.1.1–1.1.3",
+            "url": "https://www.nice.org.uk/guidance/ng100/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Rheumatoid factor",
+        "modalityTarget": "Serum autoantibody",
+        "targetCondition": "Rheumatoid arthritis",
+        "expectedFinding": "Positive result supports classification but is not diagnostic alone",
+        "clinicalRationale": "Order when synovitis is found; do not delay referral.",
+        "normalValue": "Negative",
+        "references": [
+          {
+            "title": "NICE NG100: Rheumatoid arthritis in adults: management",
+            "edition": "NICE NG100 Recommendations 1.1.2–1.1.4",
+            "url": "https://www.nice.org.uk/guidance/ng100/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Anti-CCP antibodies",
+        "modalityTarget": "Serum autoantibody",
+        "targetCondition": "Rheumatoid arthritis and erosive-risk assessment",
+        "expectedFinding": "Positive result increases diagnostic probability and future radiographic-risk concern",
+        "clinicalRationale": "Measure if rheumatoid factor is negative; consider after diagnosis for risk information.",
+        "normalValue": "Negative",
+        "references": [
+          {
+            "title": "NICE NG100: Rheumatoid arthritis in adults: management",
+            "edition": "NICE NG100 Recommendations 1.1.4 and 1.2.2",
+            "url": "https://www.nice.org.uk/guidance/ng100/chapter/recommendations"
+          }
+        ]
+      }
+    ],
+    "ruleOut": [
+      {
+        "tier": "laboratory",
+        "testName": "Full blood count",
+        "modalityTarget": "Anaemia, leukocytes and platelets",
+        "targetCondition": "Alternative systemic illness and treatment baseline",
+        "expectedFinding": "Anaemia or cytopenia may indicate systemic disease or alter treatment planning",
+        "clinicalRationale": "Obtain without delaying referral.",
+        "normalValue": "Haemoglobin, leukocytes and platelets within the local adult ranges",
+        "references": [
+          {
+            "title": "NICE NG100: Rheumatoid arthritis in adults: management",
+            "edition": "NICE NG100 Recommendations 1.1.1–1.1.4",
+            "url": "https://www.nice.org.uk/guidance/ng100/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "laboratory",
+        "testName": "Inflammatory markers",
+        "modalityTarget": "CRP or ESR",
+        "targetCondition": "Inflammatory activity",
+        "expectedFinding": "Raised values support inflammation; normal values do not exclude rheumatoid arthritis",
+        "clinicalRationale": "Record a baseline and interpret with examination.",
+        "normalValue": "CRP and ESR within the local laboratory ranges",
+        "references": [
+          {
+            "title": "NICE NG100: Rheumatoid arthritis in adults: management",
+            "edition": "NICE NG100 Recommendations 1.1.1 and 1.2.1",
+            "url": "https://www.nice.org.uk/guidance/ng100/chapter/recommendations"
+          }
+        ]
+      },
+      {
+        "tier": "firstLineImaging",
+        "testName": "Hand and foot radiographs",
+        "modalityTarget": "Hands and feet",
+        "targetCondition": "Erosive inflammatory arthritis",
+        "expectedFinding": "Erosions or joint-space loss support established damage",
+        "clinicalRationale": "Arrange for persistent synovitis while referral proceeds.",
+        "normalValue": "No erosions or inflammatory joint-space loss",
+        "references": [
+          {
+            "title": "NICE NG100: Rheumatoid arthritis in adults: management",
+            "edition": "NICE NG100 Recommendation 1.1.5",
+            "url": "https://www.nice.org.uk/guidance/ng100/chapter/recommendations"
+          }
+        ]
+      }
+    ]
+  },
+  "clinicalManagement": [
+    {
+      "id": "exclude-emergency",
+      "title": "Exclude an acute joint emergency",
+      "timeframe": "At first contact",
+      "actions": [
+        "If a hot joint or systemic illness suggests infection, use the same-day septic-joint pathway.",
+        "Document the number and distribution of swollen joints and functional impact."
+      ]
+    },
+    {
+      "id": "refer",
+      "title": "Refer suspected persistent synovitis",
+      "timeframe": "Urgently",
+      "actions": [
+        "Refer urgently when small hand/foot joints or more than one joint are affected, or when presentation was delayed by 3 months or more.",
+        "Request blood tests and hand/foot radiographs without delaying referral."
+      ]
+    },
+    {
+      "id": "safety-net",
+      "title": "Safety-net pending review",
+      "timeframe": "Until rheumatology assessment",
+      "actions": [
+        "Advise urgent reassessment for fever, a rapidly hot swollen joint, neurological deficit or major functional deterioration.",
+        "Record tobacco exposure, pregnancy possibility, comorbidity and current medicines for treatment planning."
+      ]
+    }
+  ],
+  "medicationPlan": {
+    "status": "no-drug-indicated",
+    "regimens": [],
+    "note": "Recognition and referral do not require initiation of a disease-modifying medicine in primary care; specialist treatment is covered in the linked DMARD topic."
+  },
+  "diagnosticCriteria": [
+    {
+      "criterion": "Urgent specialist referral",
+      "threshold": "Persistent synovitis affecting small hand/foot joints, more than one joint, or delay of 3 months or longer from symptom onset to seeking advice."
+    }
+  ],
+  "teaching": {
+    "scope": "Adult primary-care recognition, initial investigation and urgent rheumatology referral for suspected persistent synovitis. Reviewed against the Saudi-first Marifa contract on 18 October 2026; useful existing content is retained and unresolved local requirements are explicit.",
+    "learningObjectives": [
+      "Recognise persistent synovitis clinically.",
+      "Refer without waiting for serology."
+    ],
+    "pitfalls": [
+      "Waiting for tests before referral.",
+      "Treating a possible septic joint as chronic inflammatory arthritis."
+    ],
+    "keyPoints": [
+      "Normal inflammatory markers or negative rheumatoid factor do not exclude rheumatoid arthritis.",
+      "Small-joint or multi-joint synovitis warrants urgent referral."
+    ],
+    "references": [
+      {
+        "title": "NICE NG100: Rheumatoid arthritis in adults: management",
+        "edition": "NICE NG100, Recommendations 1.1.1–1.1.5",
+        "url": "https://www.nice.org.uk/guidance/ng100/chapter/recommendations",
+        "locator": "Recommendations 1.1.1–1.1.5"
+      }
+    ]
+  },
+  "nonClinicalManagement": {
+    "patientEducation": [
+      "Explain that early specialist treatment protects function and that normal tests do not rule out disease.",
+      "Seek prompt review for persistent swollen joints, worsening functional loss, fever or systemic illness; do not delay referral while waiting for symptom improvement."
+    ],
+    "lifestyleAndDiet": [
+      "Support smoking cessation and activity within pain limits."
+    ],
+    "mdtReferrals": [
+      "Rheumatology; physiotherapy or occupational therapy after assessment."
+    ],
+    "dischargeCriteria": [
+      "Not discharged from follow-up until the referral outcome and safety-net are documented."
+    ],
+    "followUpPlan": "Track referral completion and reassess sooner if swelling, systemic illness or function worsens."
+  }
+}
