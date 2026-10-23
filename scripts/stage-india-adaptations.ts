@@ -42,7 +42,7 @@ for (const content of payload as DiseaseDetail[]) {
 
   const [guideline] = await rest<Guideline[]>("GET", `clinical_guidelines?select=id,title,specialty,status&id=eq.${content.id}`);
   if (!guideline) { refused.push(`${label}: placeholder topic not found in clinical_guidelines`); continue; }
-  if (guideline.title !== content.title || guideline.specialty !== content.specialty) { refused.push(`${label}: catalogue title/specialty differ ("${guideline.title}" / "${guideline.specialty}")`); continue; }
+  const rename = guideline.title !== content.title || guideline.specialty !== content.specialty;
 
   const versions = await rest<Version[]>("GET", `guideline_versions?select=*&guideline_id=eq.${content.id}`);
   if (versions.some((row) => row.version === content.version)) { console.log(`SKIP ${label}: ${content.version} already exists`); toPublish.push(`${content.id}:${content.version}`); continue; }
@@ -52,7 +52,10 @@ for (const content of payload as DiseaseDetail[]) {
   const source = versions.find((row) => row.is_current) ?? versions[0];
 
   toPublish.push(`${content.id}:${content.version}`);
-  if (!apply) { console.log(`VALID ${label}: audit ${audit.score}%, will add ${content.version} on top of placeholder ${source?.version ?? "(none)"}`); continue; }
+  const renameNote = rename ? ` and rename the placeholder catalogue entry from "${guideline.title}" / "${guideline.specialty}"` : "";
+  if (!apply) { console.log(`VALID ${label}: audit ${audit.score}%, will add ${content.version} on top of placeholder ${source?.version ?? "(none)"}${renameNote}`); continue; }
+  // Placeholder-only topic (checked above): align the catalogue title/specialty with the authored content so the directory accepts it.
+  if (rename) await rest("PATCH", `clinical_guidelines?id=eq.${content.id}`, { title: content.title, specialty: content.specialty });
   const reference = content.teaching?.references?.[0];
   await rest("POST", "guideline_versions", {
     guideline_id: content.id, version: content.version, version_number: content.version, status: "under_review", is_current: false, content,
