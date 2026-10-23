@@ -29,7 +29,7 @@ import {
 } from "@/components/icons-3d";
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { searchTopics } from "@/lib/topic-search";
-import { REGION_CHANGE_EVENT, REGION_COOKIE, REGION_PARAM } from "@/lib/region";
+import { PLATFORM_NAME, PLATFORM_REGION, REGION_CHANGE_EVENT, REGION_COOKIE, REGION_PARAM } from "@/lib/region";
 import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
 import { UNASSIGNED_SPECIALITY, canonicalSpeciality, groupBySpeciality, specialityCounts, specialityStyle } from "@/lib/medical-specialities";
 
@@ -170,9 +170,9 @@ export function WorkspaceSidebar({ organizationName, organizationNote, temporary
 
   return (
     <aside id="workspace-sidebar" className="sidebar" aria-label="Main navigation">
-      <Link href="/dashboard" className="brand" title="Marifa home">
+      <Link href="/dashboard" className="brand" title={`${PLATFORM_NAME} home`}>
         <Image src="/marifa-logo.png" alt="" aria-hidden="true" width={46} height={46} className="brand-logo" priority />
-        <div className="brand-copy"><div className="brand-name">Marifa</div><div className="brand-sub">Clinical knowledge & governance</div></div>
+        <div className="brand-copy"><div className="brand-name">{PLATFORM_NAME}</div><div className="brand-sub">Clinical knowledge & governance</div></div>
       </Link>
       <div className="sidebar-panel" key={showHome || !moduleItem ? "home" : moduleItem.href} data-direction={showHome ? "back" : "forward"}>
         {showHome || !moduleItem ? (
@@ -326,6 +326,7 @@ type TopicState = { status: "loading" } | { status: "ready"; topics: NavTopic[] 
 let topicRequest: Promise<NavTopic[]> | null = null;
 let topicRequestRegion = "";
 function currentRegionCode() {
+  if (PLATFORM_REGION) return PLATFORM_REGION;
   try {
     const fromUrl = new URLSearchParams(window.location.search).get(REGION_PARAM);
     const fromCookie = document.cookie.split("; ").find((entry) => entry.startsWith(`${REGION_COOKIE}=`))?.split("=")[1];

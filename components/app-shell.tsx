@@ -9,7 +9,7 @@ import { Sidebar } from "@/components/Sidebar";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { CountryToggle } from "@/components/navigation/CountryToggle";
 import "@/app/region-theme.css";
-import { REGION_COOKIE, resolveRegion } from "@/lib/region";
+import { PLATFORM_REGION, REGION_COOKIE, getRegionOption, resolveRegion } from "@/lib/region";
 import { HeaderContext } from "@/components/header-context";
 import { isTemporaryOpenAdminMode } from "@/lib/access-mode";
 import { getDiseaseDraftTopicCount } from "@/lib/data/disease-drafts";
@@ -24,7 +24,7 @@ export async function AppShell({ children }: { children: React.ReactNode }) {
     <CollapsibleShell primaryColor={user.primaryColor} region={initialRegion}>
       <Sidebar
         organizationName={user.organizationName}
-        organizationNote={"Riyadh, Saudi Arabia"}
+        organizationNote={initialRegion === "IN" ? "India" : "Riyadh, Saudi Arabia"}
         temporaryAdminMode={temporaryAdminMode}
         draftTopicCount={draftTopicCount}
       />
@@ -38,7 +38,14 @@ export async function AppShell({ children }: { children: React.ReactNode }) {
             <button type="submit" className="global-search-submit">Search</button>
           </form>
           <div className="top-actions">
-            <CountryToggle initialRegion={initialRegion} />
+            {PLATFORM_REGION ? (
+              <span className="inline-flex h-9 items-center gap-2 rounded-full border border-[var(--region-border)] bg-[var(--region-soft)] px-3 text-sm font-semibold text-[var(--region-accent)]" data-region={PLATFORM_REGION} title={`${getRegionOption(PLATFORM_REGION).authority} guidance only`}>
+                <span aria-hidden="true" className="text-base leading-none">{getRegionOption(PLATFORM_REGION).flag}</span>
+                <span className="hidden whitespace-nowrap sm:inline">{getRegionOption(PLATFORM_REGION).name}</span>
+              </span>
+            ) : (
+              <CountryToggle initialRegion={initialRegion} />
+            )}
             <div className="top-actions-group">
               <ThemeToggle />
               <Link className="top-action-link" href="/dashboard/notifications" aria-label="Open notifications" title="Notifications"><Bell size={18} /></Link>
