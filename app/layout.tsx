@@ -6,13 +6,16 @@ import "./glass.css";
 import "./clinical-orders.css";
 import "./theme-v21.css";
 import { Icon3DDefs } from "@/components/icons-3d";
+import { PLATFORM_NAME, PLATFORM_REGION } from "@/lib/region";
 
 // Inter: one variable font file serves every weight, chosen for clinical legibility.
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 
 export const metadata: Metadata = {
-  title: "Marifa — Clinical Knowledge & Governance",
-  description: "Saudi-ready clinical knowledge, competency and governance platform."
+  title: `${PLATFORM_NAME} — Clinical Knowledge & Governance`,
+  description: PLATFORM_REGION === "IN"
+    ? "Clinical knowledge, competency and governance platform for India (ICMR/MoHFW)."
+    : "Saudi-ready clinical knowledge, competency and governance platform."
 };
 
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#f3f6fb", colorScheme: "light" };
@@ -21,5 +24,5 @@ export const viewport: Viewport = { width: "device-width", initialScale: 1, them
 const themeScript = `try{if(localStorage.getItem("marifa.theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}`;
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en" className={inter.variable} suppressHydrationWarning><head><script dangerouslySetInnerHTML={{ __html: themeScript }} /></head><body><Icon3DDefs />{children}</body></html>;
+  return <html lang="en" className={inter.variable} data-region={PLATFORM_REGION ?? undefined} suppressHydrationWarning><head><script dangerouslySetInnerHTML={{ __html: themeScript }} /></head><body><Icon3DDefs />{children}</body></html>;
 }

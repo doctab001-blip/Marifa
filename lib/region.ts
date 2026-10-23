@@ -30,9 +30,18 @@ export function parseRegion(value: unknown): CountryCode | null {
   return REGIONS.some((region) => region.code === code) ? (code as CountryCode) : null;
 }
 
-/** Query parameter first, then the remembered cookie, then Saudi Arabia. */
+/**
+ * Marifa Saudi and Marifa India are two deployments of this one codebase, each with its own Supabase project.
+ * NEXT_PUBLIC_MARIFA_REGION (SA or IN) fixes the platform for a deployment: there is no region toggle and the
+ * URL parameter and cookie are ignored, so one platform can never show the other's guidelines.
+ * Left unset (local development only), the toggle stays so both catalogues can be checked side by side.
+ */
+export const PLATFORM_REGION: CountryCode | null = parseRegion(process.env.NEXT_PUBLIC_MARIFA_REGION);
+export const PLATFORM_NAME = PLATFORM_REGION === "IN" ? "Marifa India" : PLATFORM_REGION === "SA" ? "Marifa Saudi" : "Marifa";
+
+/** The deployment's fixed platform; otherwise (local dev) the query parameter, then the cookie, then Saudi Arabia. */
 export function resolveRegion(query?: unknown, cookie?: unknown): CountryCode {
-  return parseRegion(query) ?? parseRegion(cookie) ?? DEFAULT_REGION;
+  return PLATFORM_REGION ?? parseRegion(query) ?? parseRegion(cookie) ?? DEFAULT_REGION;
 }
 
 export function getRegionOption(code: CountryCode): RegionOption {

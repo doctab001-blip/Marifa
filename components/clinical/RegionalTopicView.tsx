@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import { GovernanceDrawer } from "@/components/clinical/GovernanceDrawer";
 import type { CountryCode, GlobalDiseaseTopic, RegionalTherapy } from "@/types/clinical";
-import { REGIONS, REGION_PARAM, getRegionOption, getRegionalProfile } from "@/lib/region";
+import { PLATFORM_REGION, REGIONS, REGION_PARAM, getRegionOption, getRegionalProfile } from "@/lib/region";
 
 const card = "rounded-xl border border-slate-200/70 bg-white p-5 shadow-[0_2px_8px_rgba(0,0,0,0.04)] sm:p-6";
 const eyebrow = "text-xs font-semibold uppercase tracking-[0.12em]";
@@ -109,7 +109,8 @@ export function RegionalTopicView({ topic, region }: { topic: GlobalDiseaseTopic
   const option = getRegionOption(region);
   const profile = getRegionalProfile(topic, region);
   const { universalFeatures: universal } = topic;
-  const availableRegions = REGIONS.filter((entry) => topic.regionalProfiles.some((p) => p.countryCode === entry.code));
+  // A fixed platform never links across to the other country's guidance.
+  const availableRegions = PLATFORM_REGION ? [] : REGIONS.filter((entry) => topic.regionalProfiles.some((p) => p.countryCode === entry.code));
   const regionHref = (code: CountryCode) => `?${REGION_PARAM}=${code}`;
 
   return (
