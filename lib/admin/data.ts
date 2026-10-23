@@ -7,6 +7,8 @@ import { createSupabaseDataClient } from "@/lib/supabase/data-client";
 import { getTemporaryAdminIdentity, isTemporaryOpenAdminMode } from "@/lib/access-mode";
 import { LOCAL_PROTOCOL_SOURCE_TYPE } from "@/lib/local-protocols";
 import { DiseaseDetailSchema } from "@/lib/validations/disease";
+import { isTopicVisibleInRegion } from "@/lib/region-topics";
+import { currentRequestRegion } from "@/lib/region-server";
 
 export type OrganizationAdminContext = {
   userId: string;
@@ -178,6 +180,7 @@ export async function getGovernanceQueue(): Promise<{ context: OrganizationAdmin
     .order("created_at", { ascending: true });
 
   if (error) return { context, items: [] };
+  const region = await currentRequestRegion();
   const sharedResult = context.roleCode === "platform_admin" ? await supabase
     .from("clinical_guidelines")
     .select("id,title,specialty,status,created_at")
@@ -185,7 +188,7 @@ export async function getGovernanceQueue(): Promise<{ context: OrganizationAdmin
     .order("created_at", { ascending: true }) : { data: [], error: null };
   return {
     context,
-    items: [...(data ?? []).map((item) => {
+    items: [...(data ?? []).filter((item) => isTopicVisibleInRegion(item, region)).map((item) => {
       const versions = item.guideline_versions as unknown as Array<{ id: string; version: string; status: string; is_current: boolean }>;
       const currentVersion = versions.find((version) => version.is_current && ["draft", "under_review"].includes(version.status));
       return {
@@ -197,7 +200,7 @@ export async function getGovernanceQueue(): Promise<{ context: OrganizationAdmin
         versionId: currentVersion?.id,
         versionNumber: currentVersion?.version,
       };
-    }), ...(sharedResult.data ?? []).map((item) => ({ id: item.id, title: item.title, specialty: item.specialty ?? "Unassigned", status: item.status, updatedAt: item.created_at, canEdit: true }))],
+    }), ...(sharedResult.data ?? []).filter((item) => isTopicVisibleInRegion(item, region)).map((item) => ({ id: item.id, title: item.title, specialty: item.specialty ?? "Unassigned", status: item.status, updatedAt: item.created_at, canEdit: true }))],
   };
 }
 

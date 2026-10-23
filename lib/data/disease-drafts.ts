@@ -7,6 +7,8 @@ import { createSupabaseDataClient } from "@/lib/supabase/data-client";
 import { DiseaseDetailSchema } from "@/lib/validations/disease";
 import { selectNewestDraftPerTopic } from "@/lib/data/draft-topic-selection";
 import { LOCAL_PROTOCOL_SOURCE_TYPE } from "@/lib/local-protocols";
+import { isTopicVisibleInRegion } from "@/lib/region-topics";
+import { currentRequestRegion } from "@/lib/region-server";
 
 /** Disease Management and Local Protocols share storage; `source_type` keeps their queues apart. */
 export type TopicScope = "disease" | "protocol";
@@ -49,6 +51,8 @@ async function loadDraftQueue(scope: TopicScope): Promise<{
   }
 
   try {
+    // Marifa Saudi and Marifa India never list each other's topics in any governance queue.
+    const region = await currentRequestRegion();
     const supabase = await createSupabaseDataClient();
     const drafts: DiseaseDraft[] = [];
     const pageSize = 500;
@@ -56,7 +60,7 @@ async function loadDraftQueue(scope: TopicScope): Promise<{
     for (let start = 0; ; start += pageSize) {
       const { data, error } = await supabase
         .from("clinical_guidelines")
-        .select("id,title,specialty,status,is_shared_reference,organization_id,created_at,guideline_versions!inner(id,version,status,is_current,created_at,source_title,audit:content->evidenceAudit)")
+        .select("id,title,specialty,status,is_shared_reference,organization_id,created_at,guideline_versions!inner(id,version,status,is_current,created_at,source_title,audit:content->evidenceAudit,authority:content->>authority)")
         .or(`organization_id.eq.${viewer.organizationId},and(organization_id.is.null,is_shared_reference.eq.true)`)
         .filter("source_type", scopeOperator(scope), LOCAL_PROTOCOL_SOURCE_TYPE)
         // A topic is shown in exactly one queue. Historical draft versions of
@@ -78,8 +82,10 @@ async function loadDraftQueue(scope: TopicScope): Promise<{
           created_at: string;
           source_title: string;
           audit?: { scope?: string };
+          authority?: string | null;
         }>;
         for (const version of related.filter((entry) => ["draft", "under_review"].includes(entry.status))) {
+          if (!isTopicVisibleInRegion({ id: item.id, title: item.title, authority: version.authority ?? undefined }, region)) continue;
           const canManage = isAdmin && (!item.is_shared_reference || isPlatformAdmin);
           drafts.push({
             id: item.id,
@@ -160,10 +166,11 @@ const getManagedVersions = cache(async (status: "approved" | "published", scope:
   }
 
   try {
+    const region = await currentRequestRegion();
     const supabase = await createSupabaseDataClient();
     const query = supabase
       .from("clinical_guidelines")
-      .select("id,title,specialty,status,is_shared_reference,guideline_versions!inner(id,version,status,is_current,created_at,published_at,approved_at,source_title)")
+      .select("id,title,specialty,status,is_shared_reference,guideline_versions!inner(id,version,status,is_current,created_at,published_at,approved_at,source_title,authority:content->>authority)")
       .or(`organization_id.eq.${viewer.organizationId},and(organization_id.is.null,is_shared_reference.eq.true)`)
       .filter("source_type", scopeOperator(scope), LOCAL_PROTOCOL_SOURCE_TYPE)
       // A topic belongs to exactly one governance tab. Once its parent record
@@ -179,9 +186,10 @@ const getManagedVersions = cache(async (status: "approved" | "published", scope:
     const versions: DiseaseManagementVersion[] = [];
     for (const item of data ?? []) {
       const version = (Array.isArray(item.guideline_versions) ? item.guideline_versions[0] : item.guideline_versions) as unknown as {
-        id: string; version: string; status: "approved" | "published"; created_at: string; published_at: string | null; approved_at: string | null; source_title: string;
+        id: string; version: string; status: "approved" | "published"; created_at: string; published_at: string | null; approved_at: string | null; source_title: string; authority?: string | null;
       } | null;
       if (!version) continue;
+      if (!isTopicVisibleInRegion({ id: item.id, title: item.title, authority: version.authority ?? undefined }, region)) continue;
       const canManage = isAdmin && (!item.is_shared_reference || isPlatformAdmin);
       versions.push({
         id: item.id,

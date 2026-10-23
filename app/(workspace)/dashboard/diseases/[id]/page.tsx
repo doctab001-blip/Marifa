@@ -16,7 +16,7 @@ import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
 import type { DiseaseDetail } from "@/lib/validations/disease";
 import { RegionalTopicView } from "@/components/clinical/RegionalTopicView";
 import { getGlobalDiseaseTopic } from "@/lib/data/global-topics";
-import { REGION_COOKIE, getRegionOption, resolveRegion } from "@/lib/region";
+import { PLATFORM_REGION, REGION_COOKIE, getRegionOption, resolveRegion } from "@/lib/region";
 import { indiaReplacementFor, isTopicVisibleInRegion, topicCountry } from "@/lib/region-topics";
 import type { CountryCode } from "@/types/clinical";
 
@@ -99,10 +99,10 @@ export default async function DiseaseDetailPage({ params, searchParams }: { para
 
   const disease = result.disease;
   // Region rule: India topics open only in the India region, and an India adaptation replaces its Saudi topic there.
-  // Opening a historical version (review links) is not region-gated.
-  if (!version) {
+  // On a fixed platform (Marifa Saudi / Marifa India) every version is region-gated; locally, historical versions are not.
+  if (!version || PLATFORM_REGION) {
     const activeRegion = resolveRegion(region, (await cookies()).get(REGION_COOKIE)?.value);
-    const indiaVersion = activeRegion === "IN" ? indiaReplacementFor(disease.id) : undefined;
+    const indiaVersion = activeRegion === "IN" && !version ? indiaReplacementFor(disease.id) : undefined;
     if (indiaVersion) redirect(`/dashboard/diseases/${indiaVersion}`);
     if (!isTopicVisibleInRegion(disease, activeRegion)) return <RegionUnavailable id={disease.id} country={topicCountry(disease)} />;
   }

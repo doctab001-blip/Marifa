@@ -6,7 +6,7 @@ Decision (23 Oct 2026): Saudi and India run as two separate websites from this o
 |---|---|---|
 | Vercel project | `marifa-clinical` (existing) | `marifa-india` (new, same GitHub repo) |
 | `NEXT_PUBLIC_MARIFA_REGION` | `SA` | `IN` |
-| Supabase project | existing (`peuusnbucyazatkngvxw`) | new `marifa-india` (Mumbai, ap-south-1) |
+| Supabase project | existing (`peuusnbucyazatkngvxw`) | `pruihggsmnklxxprnnwe` (marifa-india) |
 | Local env file | `.env.local` | `.env.india.local` |
 | Theme | Emerald | Indigo |
 
@@ -28,7 +28,7 @@ This uses Supabase's documented CLI backup/restore route. It needs the Supabase 
 
 ```bash
 OLD_DB_URL='postgresql://postgres.peuusnbucyazatkngvxw:<SAUDI_DB_PASSWORD>@<pooler-host>:5432/postgres'
-NEW_DB_URL='postgresql://postgres.<INDIA_REF>:<INDIA_DB_PASSWORD>@<pooler-host>:5432/postgres'
+NEW_DB_URL='postgresql://postgres.pruihggsmnklxxprnnwe:<INDIA_DB_PASSWORD>@<pooler-host>:5432/postgres'
 mkdir -p ~/marifa-split && cd ~/marifa-split
 supabase db dump --db-url "$OLD_DB_URL" -f roles.sql --role-only
 supabase db dump --db-url "$OLD_DB_URL" -f schema.sql
