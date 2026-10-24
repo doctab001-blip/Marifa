@@ -383,3 +383,17 @@ html[data-theme="dark"] .dx-secondary-button { background: #2b4fae; border-color
 .dx-read-limits { margin: 10px 0 0; padding-left: 18px; font-size: .74rem; color: var(--dx-muted); }
 .dx-read-notice { margin: 10px 0 0; font-size: .7rem; line-height: 1.45; color: var(--dx-muted); }
 @media print { .dx-attach, .dx-attach-open { display: none !important; } }
+
+/* On-device chest X-ray read */
+.dx-ghost-button--strong { min-height: 36px; padding: 0 12px; border-color: var(--dx-royal); color: var(--dx-royal); font-size: .82rem; }
+.dx-ghost-button--strong:disabled { opacity: .5; cursor: not-allowed; }
+.dx-scores { margin-top: 10px; font-size: .78rem; color: var(--dx-text); }
+.dx-scores summary { cursor: pointer; font-weight: 600; color: var(--dx-royal); }
+.dx-scores ul { display: grid; gap: 4px; margin: 8px 0 0; padding: 0; list-style: none; }
+.dx-scores li { display: grid; grid-template-columns: minmax(0, 1fr) 90px 34px; align-items: center; gap: 8px; }
+.dx-scores li.is-positive span:first-child { font-weight: 700; color: var(--dx-ink); }
+.dx-score-bar { position: relative; height: 6px; border-radius: 999px; background: var(--dx-line); overflow: hidden; }
+.dx-score-bar::after { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: var(--dx-muted); }
+.dx-score-bar > span { display: block; height: 100%; background: var(--dx-cerulean); }
+.dx-scores li.is-positive .dx-score-bar > span { background: var(--dx-gold); }
+.dx-score-num { text-align: right; font-variant-numeric: tabular-nums; color: var(--dx-muted); }

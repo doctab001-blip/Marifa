@@ -153,4 +153,8 @@ export interface ImageAnalysisResponse {
   identifiersVisible: boolean;
   model: string;
   notice: string;
+  /** "on-device": read in the browser by the open chest X-ray model; "cloud": read by the Claude vision API. */
+  source?: "on-device" | "cloud";
+  /** Calibrated per-finding scores (0.5 = the model's operating threshold), for on-device reads. */
+  scores?: Array<{ finding: string; score: number }>;
 }

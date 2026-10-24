@@ -1,9 +1,10 @@
 "use client";
 
 import { useId, useRef, useState, type DragEvent } from "react";
-import { AlertTriangle, CheckSquare, FileText, ImagePlus, Loader2, ScanEye, ShieldCheck, Square, Trash2, X } from "lucide-react";
+import { AlertTriangle, CheckSquare, FileText, ImagePlus, Loader2, ScanEye, ShieldCheck, Square, Trash2, X, Cpu } from "lucide-react";
 import type { DeclaredStudyType, ImageAnalysisRequest, ImageAnalysisResponse, ImageStudyKind, SuggestedFinding } from "@/types/diagnosisEngine";
 import { DicomError, isDicom, readDicom } from "@/lib/diagnosis-engine/dicom";
+import { readChestXrayLocally } from "@/lib/diagnosis-engine/chest-xray-local";
 
 const MAX_IMAGES = 4;
 const MAX_EDGE = 1568;
@@ -42,6 +43,21 @@ function blobToBase64(blob: Blob): Promise<string> {
   });
 }
 
+/** True when the drawn frame is (almost) uniformly black — a failed decode rather than a real study. */
+function isBlank(context: CanvasRenderingContext2D, width: number, height: number) {
+  const step = Math.max(1, Math.floor(Math.min(width, height) / 40));
+  const { data } = context.getImageData(0, 0, width, height);
+  let max = 0;
+  for (let y = 0; y < height; y += step) {
+    for (let x = 0; x < width; x += step) {
+      const index = (y * width + x) * 4;
+      max = Math.max(max, data[index], data[index + 1], data[index + 2]);
+      if (max > 12) return false;
+    }
+  }
+  return true;
+}
+
 /** Draws any source onto a canvas no larger than MAX_EDGE and re-encodes it as JPEG — this also drops EXIF/file metadata. */
 async function canvasJpeg(width: number, height: number, draw: (context: CanvasRenderingContext2D, scale: number) => void) {
   const scale = Math.min(1, MAX_EDGE / Math.max(width, height));
@@ -53,9 +69,20 @@ async function canvasJpeg(width: number, height: number, draw: (context: CanvasR
   context.fillStyle = "#000";
   context.fillRect(0, 0, canvas.width, canvas.height);
   draw(context, scale);
+  if (isBlank(context, canvas.width, canvas.height)) throw new Error("The image came out blank after loading. Try exporting it again as JPEG or PNG.");
   const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, "image/jpeg", 0.86));
   if (!blob) throw new Error("The image could not be prepared.");
   return { data: await blobToBase64(blob), preview: URL.createObjectURL(blob) };
+}
+
+function loadImage(file: File): Promise<HTMLImageElement> {
+  return new Promise((resolve, reject) => {
+    const url = URL.createObjectURL(file);
+    const image = new Image();
+    image.onload = () => { URL.revokeObjectURL(url); resolve(image); };
+    image.onerror = () => { URL.revokeObjectURL(url); reject(new Error(`${file.name} could not be opened. Use JPEG, PNG or WebP (on iPhone, share the photo as "Most Compatible").`)); };
+    image.src = url;
+  });
 }
 
 async function prepareFile(file: File): Promise<{ image?: Prepared; pdf?: Pdf; dicomType?: DeclaredStudyType }> {
@@ -77,10 +104,10 @@ async function prepareFile(file: File): Promise<{ image?: Prepared; pdf?: Pdf; d
     const note = [dicom.modality, dicom.bodyPart, dicom.frames > 1 ? `middle of ${dicom.frames} frames` : ""].filter(Boolean).join(" · ");
     return { image: { id, name: file.name, mediaType: "image/jpeg", data, preview, note: `DICOM${note ? ` · ${note}` : ""} · header removed` }, dicomType: typeFromDicom(dicom.modality, dicom.bodyPart) };
   }
-  if (!file.type.startsWith("image/")) throw new Error(`${file.name} is not an image, DICOM or PDF file.`);
-  const bitmap = await createImageBitmap(file).catch(() => { throw new Error(`${file.name} could not be opened. Use JPEG, PNG or WebP.`); });
-  const { data, preview } = await canvasJpeg(bitmap.width, bitmap.height, (context, scale) => context.drawImage(bitmap, 0, 0, bitmap.width * scale, bitmap.height * scale));
-  bitmap.close();
+  if (!file.type.startsWith("image/") && !/\.(jpe?g|png|webp|heic|heif)$/i.test(file.name)) throw new Error(`${file.name} is not an image, DICOM or PDF file.`);
+  // An <img> element decodes reliably in every browser (Safari can return a blank ImageBitmap for some JPEGs).
+  const image = await loadImage(file);
+  const { data, preview } = await canvasJpeg(image.naturalWidth, image.naturalHeight, (context, scale) => context.drawImage(image, 0, 0, image.naturalWidth * scale, image.naturalHeight * scale));
   return { image: { id, name: file.name, mediaType: "image/jpeg", data, preview } };
 }
 
@@ -101,7 +128,8 @@ export function StudyAttachments({ kind, clinicalContext, age, onAccept }: Props
   const [pdf, setPdf] = useState<Pdf | null>(null);
   const [declaredType, setDeclaredType] = useState<DeclaredStudyType>(kind === "imaging" ? "chest-xray" : "lab-report");
   const [confirmed, setConfirmed] = useState(false);
-  const [busy, setBusy] = useState<"preparing" | "reading" | null>(null);
+  const [busy, setBusy] = useState<"preparing" | "reading" | "local" | null>(null);
+  const [progress, setProgress] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [read, setRead] = useState<ImageAnalysisResponse | null>(null);
   const [selected, setSelected] = useState<Set<string>>(new Set());
@@ -165,6 +193,29 @@ export function StudyAttachments({ kind, clinicalContext, age, onAccept }: Props
     setConfirmed(false);
     setError(null);
     resetRead();
+  };
+
+  // Free on-device read: frontal chest X-ray only; nothing leaves the browser, so no identifier confirmation is needed.
+  const localAvailable = kind === "imaging" && declaredType === "chest-xray" && images.length > 0;
+  const runLocal = async () => {
+    if (!localAvailable || busy) return;
+    setBusy("local");
+    setError(null);
+    setProgress(null);
+    resetRead();
+    try {
+      const image = new Image();
+      image.src = images[0].preview;
+      await image.decode();
+      const result = await readChestXrayLocally(image, (fraction) => setProgress(fraction < 1 ? fraction : null));
+      setRead(result);
+      setSelected(new Set(result.findings.filter((item) => item.suggested).map((item) => item.text)));
+    } catch (problem) {
+      setError(problem instanceof Error ? problem.message : "The on-device read failed.");
+    } finally {
+      setBusy(null);
+      setProgress(null);
+    }
   };
 
   const runRead = async () => {
@@ -283,16 +334,23 @@ export function StudyAttachments({ kind, clinicalContext, age, onAccept }: Props
               {TYPES[kind].map(([value, text]) => <option key={value} value={value}>{text}</option>)}
             </select>
           </label>
+          {localAvailable ? (
+            <button type="button" className="dx-secondary-button" onClick={runLocal} disabled={Boolean(busy)} aria-busy={busy === "local"} title="Runs in your browser. The image is not sent anywhere and there is no cost.">
+              {busy === "local" ? <Loader2 size={15} className="dx-spin" aria-hidden="true" /> : <Cpu size={15} aria-hidden="true" />}
+              {busy === "local" ? (progress !== null ? `Downloading model… ${Math.round(progress * 100)}%` : "Reading on device…") : "Read on device · free"}
+            </button>
+          ) : null}
           <label className="dx-attach-confirm">
             <input type="checkbox" checked={confirmed} onChange={(event) => setConfirmed(event.target.checked)} />
-            <span>No names, ID numbers, dates of birth or faces are visible in these files.</span>
+            <span>No names, ID numbers, dates of birth or faces are visible in these files{localAvailable ? " (needed for the Claude read, which sends the image to Anthropic)" : ""}.</span>
           </label>
-          <button type="button" className="dx-secondary-button" onClick={runRead} disabled={!confirmed || Boolean(busy)} aria-busy={busy === "reading"}>
+          <button type="button" className={localAvailable ? "dx-ghost-button dx-ghost-button--strong" : "dx-secondary-button"} onClick={runRead} disabled={!confirmed || Boolean(busy)} aria-busy={busy === "reading"}>
             {busy === "reading" ? <Loader2 size={15} className="dx-spin" aria-hidden="true" /> : <ScanEye size={15} aria-hidden="true" />}
-            {busy === "reading" ? "Reading…" : read ? "Read again" : `Read ${label}`}
+            {busy === "reading" ? "Reading…" : localAvailable ? "Read with Claude" : read ? "Read again" : `Read ${label}`}
           </button>
         </div>
       ) : null}
+      {localAvailable && busy === "local" && progress !== null ? <p className="dx-read-note" role="status">First use downloads the chest X-ray model (about 28 MB); it is then kept in this browser.</p> : null}
 
       {error ? <p className="dx-error" role="alert"><AlertTriangle size={15} aria-hidden="true" />{error}</p> : null}
 
@@ -335,6 +393,20 @@ export function StudyAttachments({ kind, clinicalContext, age, onAccept }: Props
             </>
           ) : <p className="dx-muted">No findings were reported.</p>}
 
+          {read.scores?.length ? (
+            <details className="dx-scores">
+              <summary>All model scores (0.5 = threshold)</summary>
+              <ul>
+                {read.scores.map((item) => (
+                  <li key={item.finding} className={item.score > 0.6 ? "is-positive" : undefined}>
+                    <span>{item.finding}</span>
+                    <span className="dx-score-bar" aria-hidden="true"><span style={{ width: `${Math.round(item.score * 100)}%` }} /></span>
+                    <span className="dx-score-num">{item.score.toFixed(2)}</span>
+                  </li>
+                ))}
+              </ul>
+            </details>
+          ) : null}
           {read.limitations.length ? <ul className="dx-read-limits" aria-label="Limitations">{read.limitations.map((item) => <li key={item}>{item}</li>)}</ul> : null}
           <p className="dx-read-notice">{read.notice}</p>
         </section>

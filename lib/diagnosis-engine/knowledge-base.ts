@@ -693,7 +693,7 @@ const coreProfiles: DiagnosticProfile[] = [
   },
   {
     key: "dengue",
-    gate: ["High fever", "NS1 antigen or dengue IgM positive"],
+    gate: ["Retro-orbital pain", "Thrombocytopenia", "Leukopenia", "Positive tourniquet test", "Mucosal bleeding or petechiae", "NS1 antigen or dengue IgM positive"],
     priors: { regionWeight: { SA: 1.1, IN: 1.2, UK: 0.85 }, regionNote: "endemic in parts of Saudi Arabia (Jeddah, Makkah, Jazan) and India" },
     title: "Dengue Fever",
     icd10Code: "A97.9",

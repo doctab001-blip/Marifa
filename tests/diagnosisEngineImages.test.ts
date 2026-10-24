@@ -16,6 +16,8 @@ import { ImageAnalysisError, analyseStudy, toSuggestedFindings } from "@/lib/dia
 import { runDiagnosisEngine } from "@/lib/diagnosis-engine/engine";
 import { POST } from "@/app/api/diagnosis-engine/analyse-image/route";
 import { StudyAttachments } from "@/components/diagnosis-engine/study-attachments";
+import { LABEL_TO_FINDING, calibrate, checkImage, localReadResponse, scoresFromOutput } from "@/lib/diagnosis-engine/chest-xray-local";
+import modelConfig from "@/public/models/chester-xrv-all/config.json";
 
 const PIXEL = "A".repeat(400);
 const request = (overrides: Partial<ImageAnalysisRequest> = {}): ImageAnalysisRequest => ({
@@ -129,5 +131,35 @@ describe("Study attachment panel", () => {
     fireEvent.click(screen.getByRole("button", { name: /Attach scan for AI read/ }));
     expect(screen.getByText(/de-identified or teaching images only/i)).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: /Read scan/ })).toBeNull();
+  });
+});
+
+describe("On-device chest X-ray read", () => {
+  it("calibrates scores around each finding's operating point like Chester", () => {
+    expect(calibrate(0.05, 0.05)).toBe(0.5);
+    expect(calibrate(0.01, 0.05)).toBeLessThan(0.5);
+    expect(calibrate(0.9, 0.05)).toBeGreaterThan(0.9);
+  });
+
+  it("maps model outputs to engine findings and pre-ticks only confident ones", () => {
+    const raw = modelConfig.OP_POINT.map(() => 0.001);
+    raw[10] = 0.6; // Cardiomegaly
+    raw[16] = 0.3; // Lung opacity: above threshold, but this label needs ≥ 0.95 to be pre-ticked
+    const scores = scoresFromOutput(raw, modelConfig);
+    expect(scores).toHaveLength(Object.keys(LABEL_TO_FINDING).length);
+    const read = localReadResponse(scores, { ok: true, warnings: [] });
+    expect(read.source).toBe("on-device");
+    expect(read.findings.find((item) => item.text === "Cardiomegaly")?.suggested).toBe(true);
+    expect(read.findings.find((item) => item.text === "Airspace opacity")?.suggested).toBe(false);
+    expect(read.notice).toMatch(/not for medical use/);
+    const engine = runDiagnosisEngine({ symptoms: ["Orthopnoea", "Ankle swelling"], examFindings: [], labInvestigations: [], imagingFindings: ["Cardiomegaly", "Pulmonary oedema"] });
+    expect(engine.topDifferentials[0].diseaseTitle).toBe("Acute Heart Failure / Pulmonary Oedema");
+  });
+
+  it("refuses images that are not radiographs", () => {
+    const pixels = (fill: (index: number, channel: number) => number) => new Uint8ClampedArray(100 * 100 * 4).map((_, i) => (i % 4 === 3 ? 255 : fill(Math.floor(i / 4), i % 4)));
+    expect(checkImage(pixels((index) => (index % 100) * 2), 100, 100).ok).toBe(true);
+    expect(checkImage(pixels((index, channel) => (channel === 0 ? 200 : channel === 1 ? 40 : index % 100)), 100, 100).ok).toBe(false);
+    expect(checkImage(pixels(() => 0), 100, 100).ok).toBe(false);
   });
 });

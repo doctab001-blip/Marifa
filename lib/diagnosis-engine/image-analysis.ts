@@ -178,6 +178,29 @@ export class ImageAnalysisError extends Error {
 
 type Fetcher = typeof fetch;
 
+/** Turns an Anthropic API error into a message an administrator can act on (no request content is included). */
+export async function providerError(response: Response, model: string): Promise<ImageAnalysisError> {
+  let type = "";
+  let message = "";
+  try {
+    const body = (await response.json()) as { error?: { type?: string; message?: string } };
+    type = body.error?.type ?? "";
+    message = body.error?.message ?? "";
+  } catch {
+    /* non-JSON error body */
+  }
+  if (/credit balance|billing|purchase credits/i.test(message)) {
+    return new ImageAnalysisError(402, "Image reading is paused: the Anthropic API account has no credit. Add credit under Billing at console.anthropic.com, or use the on-device chest X-ray read.");
+  }
+  if (response.status === 401 || type === "authentication_error") return new ImageAnalysisError(503, "The ANTHROPIC_API_KEY on this deployment is not valid. Replace it in the Vercel project settings.");
+  if (response.status === 403 || type === "permission_error") return new ImageAnalysisError(503, "This API key is not allowed to use image reading. Check the key's permissions in the Anthropic console.");
+  if (response.status === 404 || type === "not_found_error") return new ImageAnalysisError(503, `The vision model "${model}" is not available to this API key. Set DIAGNOSIS_VISION_MODEL to a model the account can use.`);
+  if (response.status === 413 || type === "request_too_large") return new ImageAnalysisError(413, "The attachments are too large for the image reading service. Remove an image.");
+  if (response.status === 429 || response.status === 529 || type === "rate_limit_error" || type === "overloaded_error") return new ImageAnalysisError(429, "The image reading service is busy. Try again in a minute.");
+  if (response.status === 400) return new ImageAnalysisError(400, `The image reading service could not use these files${message ? `: ${message.slice(0, 160)}` : "."}`);
+  return new ImageAnalysisError(502, `The image reading service returned an error (${response.status}).`);
+}
+
 export async function analyseStudy(request: ImageAnalysisRequest, options: { vocabulary: string[]; fetcher?: Fetcher; apiKey?: string; model?: string }): Promise<ImageAnalysisResponse> {
   const apiKey = options.apiKey ?? process.env.ANTHROPIC_API_KEY;
   if (!apiKey) throw new ImageAnalysisError(503, "Image reading is not configured on this deployment (ANTHROPIC_API_KEY is not set).");
@@ -208,10 +231,7 @@ export async function analyseStudy(request: ImageAnalysisRequest, options: { voc
   } catch {
     throw new ImageAnalysisError(504, "The image reading service did not respond in time. Try again, or attach fewer or smaller images.");
   }
-  if (!response.ok) {
-    const status = response.status === 429 ? 429 : 502;
-    throw new ImageAnalysisError(status, status === 429 ? "The image reading service is busy. Try again in a minute." : "The image reading service returned an error.");
-  }
+  if (!response.ok) throw await providerError(response, model);
   const body = (await response.json()) as { content?: Array<{ type: string; name?: string; input?: unknown }> };
   const call = body.content?.find((block) => block.type === "tool_use" && block.name === REPORT_TOOL.name);
   const parsed = modelOutputSchema.safeParse(call?.input);
@@ -228,5 +248,6 @@ export async function analyseStudy(request: ImageAnalysisRequest, options: { voc
     identifiersVisible: output.identifiersVisible,
     model,
     notice: IMAGE_READ_NOTICE,
+    source: "cloud",
   };
 }
