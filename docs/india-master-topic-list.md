@@ -1,6 +1,6 @@
 # Marifa India master topic list
 
-Built 24 Oct 2026. 384 topics: 63 authored, 19 placeholders, 302 planned. Priority: P1 161, P2 165, P3 58.
+Built 24 Oct 2026. 384 topics: 95 authored, 8 placeholders, 281 planned. Statuses updated 24 Oct 2026 after India batches 1–3 (batch 3: atrial fibrillation, stable angina, hypertensive emergency, respiratory failure, appendicitis, gallstones, diabetic foot, renal stones, alcohol use disorder, headache). Priority: P1 161, P2 165, P3 58.
 
 P1 = high burden or high stakes in Indian practice; P2 = common; P3 = specialist or uncommon. The source column is the planned primary Indian source; every topic still cites exact sections from sources opened during authoring.
 
@@ -9,7 +9,7 @@ P1 = high burden or high stakes in Indian practice; P2 = common; P3 = specialist
 | Topic | Pillar | Priority | Planned primary source | Status |
 |---|---|---|---|---|
 | Acute poisoning: general approach and decontamination | Urgent Care | P1 | ICMR STW Vol I; NPIC AIIMS | planned |
-| Acute respiratory failure and oxygen therapy | Urgent Care | P1 | ICMR STW Pulmonology (respiratory failure) | planned |
+| Acute respiratory failure and oxygen therapy | Urgent Care | P1 | ICMR STW Pulmonology (respiratory failure) | authored |
 | Adult sepsis and septic shock | Urgent Care | P1 | NCDC-ICMR NTG 2025 | authored |
 | Altered sensorium / coma: approach | Urgent Care | P1 | ICMR STW Vol I | planned |
 | Aluminium phosphide poisoning | Urgent Care | P1 | MoHFW STG | authored |
@@ -55,17 +55,17 @@ P1 = high burden or high stakes in Indian practice; P2 = common; P3 = specialist
 |---|---|---|---|---|
 | Acute chest pain: approach | Urgent Care | P1 | ICMR STW Cardiology | planned |
 | Acute heart failure and pulmonary oedema | Urgent Care | P1 | ICMR STW Heart failure | planned |
-| Atrial fibrillation | Chronic Care | P1 | ICMR STW AF | planned |
-| Chronic heart failure | Chronic Care | P1 | ICMR STW Heart failure | placeholder |
+| Atrial fibrillation | Chronic Care | P1 | ICMR STW AF | authored |
+| Chronic heart failure | Chronic Care | P1 | ICMR STW Heart failure | authored |
 | Deep vein thrombosis | Urgent Care | P1 | ESC; NICE | planned |
 | Dyslipidaemia and cardiovascular risk | Chronic Care | P1 | Lipid Association of India; ESC | planned |
 | Hypertension in adults | Chronic Care | P1 | ICMR STW Hypertension; IHCI | authored |
-| Hypertensive emergency and urgency | Urgent Care | P1 | ICMR STW Hypertension | planned |
-| NSTEMI and unstable angina | Urgent Care | P1 | ICMR STW NSTEMI | planned |
+| Hypertensive emergency and urgency | Urgent Care | P1 | ICMR STW Hypertension | authored |
+| NSTEMI and unstable angina | Urgent Care | P1 | ICMR STW NSTEMI | authored |
 | Pulmonary embolism | Urgent Care | P1 | ESC 2019 | planned |
 | Rheumatic fever and rheumatic heart disease | Chronic Care | P1 | ICMR; WHF | placeholder |
-| STEMI: reperfusion and transfer | Urgent Care | P1 | ICMR STW STEMI; MoHFW STG | placeholder |
-| Stable angina and chronic coronary syndrome | Chronic Care | P1 | ICMR STW Stable angina | planned |
+| STEMI: reperfusion and transfer | Urgent Care | P1 | ICMR STW STEMI; MoHFW STG | authored |
+| Stable angina and chronic coronary syndrome | Chronic Care | P1 | ICMR STW Stable angina | authored |
 | Acute aortic dissection | Urgent Care | P2 | ESC/ACC | planned |
 | Acute pericarditis and pericardial effusion/tamponade | Urgent Care | P2 | ESC | planned |
 | Anticoagulation management (warfarin, DOACs) | Chronic Care | P2 | ICMR STW AF | planned |
@@ -87,10 +87,10 @@ P1 = high burden or high stakes in Indian practice; P2 = common; P3 = specialist
 |---|---|---|---|---|
 | Acute exacerbation of COPD | Urgent Care | P1 | ICMR STW COPD | planned |
 | Acute respiratory infections and influenza (adult) | Urgent Care | P1 | ICMR STW ARI; NCDC influenza | planned |
-| Acute severe asthma (adult) | Urgent Care | P1 | ICMR STW Asthma; GINA | placeholder |
-| Asthma: long-term care | Chronic Care | P1 | ICMR STW Asthma | placeholder |
-| COPD: stable care (incl. biomass exposure) | Chronic Care | P1 | ICMR STW COPD | placeholder |
-| Community-acquired pneumonia (adult) | Urgent Care | P1 | NCDC-ICMR NTG 2025; ICMR STW ARI | planned |
+| Acute severe asthma (adult) | Urgent Care | P1 | ICMR STW Asthma; GINA | authored |
+| Asthma: long-term care | Chronic Care | P1 | ICMR STW Asthma | authored |
+| COPD: stable care (incl. biomass exposure) | Chronic Care | P1 | ICMR STW COPD | authored |
+| Community-acquired pneumonia (adult) | Urgent Care | P1 | NCDC-ICMR NTG 2025; ICMR STW ARI | authored |
 | Drug-resistant tuberculosis | Chronic Care | P1 | NTEP PMDT 2021 | authored |
 | Haemoptysis (incl. massive) | Urgent Care | P1 | review; ICMR | planned |
 | Influenza A (H1N1) seasonal influenza: categorisation and oseltamivir | Urgent Care | P1 | NCDC/MoHFW seasonal influenza guidelines | planned |
@@ -138,7 +138,7 @@ P1 = high burden or high stakes in Indian practice; P2 = common; P3 = specialist
 | TB preventive treatment and contact screening | Keep Well | P1 | NTEP TPT 2021 | authored |
 | Tetanus | Urgent Care | P1 | MoHFW | authored |
 | Tuberculous meningitis (adult) | Urgent Care | P1 | ICMR STW EPTB TBM | planned |
-| Urinary tract infection and pyelonephritis (adult) | Urgent Care | P1 | ICMR STW UTI; NCDC-ICMR NTG | planned |
+| Urinary tract infection and pyelonephritis (adult) | Urgent Care | P1 | ICMR STW UTI; NCDC-ICMR NTG | authored |
 | Amoebic liver abscess | Urgent Care | P2 | ICMR | authored |
 | Cholera | Urgent Care | P2 | MoHFW | authored |
 | Diphtheria | Urgent Care | P2 | MoHFW | authored |
@@ -178,7 +178,7 @@ P1 = high burden or high stakes in Indian practice; P2 = common; P3 = specialist
 | Hepatic encephalopathy | Urgent Care | P1 | INASL | planned |
 | Jaundice: approach | Urgent Care | P1 | ICMR STW Jaundice | planned |
 | Metabolic dysfunction-associated steatotic liver disease | Chronic Care | P1 | NPCDCS NAFLD operational guidelines; INASL | planned |
-| Upper GI bleeding (variceal and non-variceal) | Urgent Care | P1 | ICMR STW GI bleed A | planned |
+| Upper GI bleeding (variceal and non-variceal) | Urgent Care | P1 | ICMR STW GI bleed A | authored |
 | Acute liver failure | Urgent Care | P2 | ICMR STW Liver failure; INASL | planned |
 | Acute-on-chronic liver failure | Urgent Care | P2 | APASL; ICMR STW Liver failure | planned |
 | Alcohol-associated hepatitis | Urgent Care | P2 | INASL; MoHFW | authored |
@@ -199,11 +199,11 @@ P1 = high burden or high stakes in Indian practice; P2 = common; P3 = specialist
 | Topic | Pillar | Priority | Planned primary source | Status |
 |---|---|---|---|---|
 | Acute abdomen: approach | Urgent Care | P1 | ICMR STW General Surgery | planned |
-| Acute appendicitis | Urgent Care | P1 | ICMR STW Appendicitis | planned |
+| Acute appendicitis | Urgent Care | P1 | ICMR STW Appendicitis | authored |
 | Breast lump: triple assessment | Planned Care | P1 | ICMR STW Breast cancer | placeholder |
 | Common bile duct stones and cholangitis | Urgent Care | P1 | ICMR STW CBD stone; Tokyo | planned |
-| Diabetic foot | Chronic Care | P1 | ICMR STW Diabetic foot | planned |
-| Gallstone disease and acute cholecystitis | Urgent Care | P1 | ICMR STW Gallstone | planned |
+| Diabetic foot | Chronic Care | P1 | ICMR STW Diabetic foot | authored |
+| Gallstone disease and acute cholecystitis | Urgent Care | P1 | ICMR STW Gallstone | authored |
 | Intestinal obstruction | Urgent Care | P1 | WSES | planned |
 | Surgical site infection prevention and surgical prophylaxis | Planned Care | P1 | NCDC-ICMR NTG | planned |
 | Abscesses and wound care | Urgent Care | P2 | review | planned |
@@ -219,11 +219,11 @@ P1 = high burden or high stakes in Indian practice; P2 = common; P3 = specialist
 
 | Topic | Pillar | Priority | Planned primary source | Status |
 |---|---|---|---|---|
-| Acute kidney injury | Urgent Care | P1 | ICMR STW AKI | placeholder |
+| Acute kidney injury | Urgent Care | P1 | ICMR STW AKI | authored |
 | Chronic kidney disease | Chronic Care | P1 | ICMR STW CKD | authored |
 | Diabetic kidney disease | Chronic Care | P1 | ICMR STW CKD; KDIGO | planned |
 | Hyperkalaemia | Urgent Care | P1 | review; KDIGO | planned |
-| Hyponatraemia | Urgent Care | P1 | ICMR STW Hyponatremia | planned |
+| Hyponatraemia | Urgent Care | P1 | ICMR STW Hyponatremia | authored |
 | Childhood nephrotic syndrome | Chronic Care | P2 | ISPN | planned |
 | Glomerular diseases (nephrotic and nephritic) | Chronic Care | P2 | ICMR STW Glomerular diseases | planned |
 | Haemodialysis: emergencies and access care | Chronic Care | P2 | ICMR STW Haemodialysis | planned |
@@ -237,7 +237,7 @@ P1 = high burden or high stakes in Indian practice; P2 = common; P3 = specialist
 | Topic | Pillar | Priority | Planned primary source | Status |
 |---|---|---|---|---|
 | Acute urinary retention | Urgent Care | P1 | ICMR STW AUR | planned |
-| Renal and ureteric stones | Urgent Care | P1 | ICMR STW Renal stones | planned |
+| Renal and ureteric stones | Urgent Care | P1 | ICMR STW Renal stones | authored |
 | Benign prostatic hyperplasia | Chronic Care | P2 | USI | planned |
 | Gross haematuria | Urgent Care | P2 | ICMR STW Haematuria | planned |
 | Scrotal swelling and acute scrotum | Urgent Care | P2 | ICMR STW Scrotal swelling | planned |
@@ -249,11 +249,11 @@ P1 = high burden or high stakes in Indian practice; P2 = common; P3 = specialist
 | Topic | Pillar | Priority | Planned primary source | Status |
 |---|---|---|---|---|
 | Acute flaccid paralysis and Guillain-Barré syndrome | Urgent Care | P1 | ICMR STW Acute paralysis | planned |
-| Acute stroke | Urgent Care | P1 | ICMR STW Stroke | placeholder |
-| Epilepsy | Chronic Care | P1 | ICMR STW Epilepsy | placeholder |
-| Headache and migraine | Chronic Care | P1 | ICMR STW Headache | planned |
+| Acute stroke | Urgent Care | P1 | ICMR STW Stroke | authored |
+| Epilepsy | Chronic Care | P1 | ICMR STW Epilepsy | authored |
+| Headache and migraine | Chronic Care | P1 | ICMR STW Headache | authored |
 | Neuro-infections: approach (meningitis, encephalitis) | Urgent Care | P1 | ICMR STW Neuro-infections | planned |
-| Status epilepticus | Urgent Care | P1 | ICMR STW Epilepsy; AES | planned |
+| Status epilepticus | Urgent Care | P1 | ICMR STW Epilepsy; AES | authored |
 | Acute vertigo | Urgent Care | P2 | review | planned |
 | Dementia | Chronic Care | P2 | ICMR STW Dementia | planned |
 | Intracerebral haemorrhage | Urgent Care | P2 | AHA/ASA 2022 | planned |
@@ -270,9 +270,9 @@ P1 = high burden or high stakes in Indian practice; P2 = common; P3 = specialist
 | Topic | Pillar | Priority | Planned primary source | Status |
 |---|---|---|---|---|
 | Diabetes complications screening (eye, kidney, foot) | Chronic Care | P1 | NPCDCS; ICMR STW | planned |
-| Diabetic ketoacidosis and HHS | Urgent Care | P1 | ICMR STW DKA | placeholder |
+| Diabetic ketoacidosis and HHS | Urgent Care | P1 | ICMR STW DKA | authored |
 | Hypoglycaemia | Urgent Care | P1 | ICMR STW T2DM; ADA | planned |
-| Hypothyroidism | Chronic Care | P1 | ICMR STW Hypothyroidism | planned |
+| Hypothyroidism | Chronic Care | P1 | ICMR STW Hypothyroidism | authored |
 | Insulin initiation and titration | Chronic Care | P1 | RSSDI | planned |
 | Type 2 diabetes | Chronic Care | P1 | ICMR STW T2DM; RSSDI | authored |
 | Adrenal insufficiency and adrenal crisis | Urgent Care | P2 | Endocrine Society | planned |
@@ -375,11 +375,11 @@ P1 = high burden or high stakes in Indian practice; P2 = common; P3 = specialist
 
 | Topic | Pillar | Priority | Planned primary source | Status |
 |---|---|---|---|---|
-| Alcohol use disorder | Chronic Care | P1 | ICMR STW AUD | planned |
+| Alcohol use disorder | Chronic Care | P1 | ICMR STW AUD | authored |
 | Alcohol withdrawal and delirium tremens | Urgent Care | P1 | ICMR STW AUD | authored |
 | Delirium | Urgent Care | P1 | NICE; review | planned |
-| Depression | Chronic Care | P1 | ICMR STW Depression; NMHP | placeholder |
-| Suicide risk assessment and self-harm | Urgent Care | P1 | NSPS 2022; ICMR STW | planned |
+| Depression | Chronic Care | P1 | ICMR STW Depression; NMHP | authored |
+| Suicide risk assessment and self-harm | Urgent Care | P1 | NSPS 2022; ICMR STW | authored |
 | Tobacco cessation | Keep Well | P1 | NTCP | authored |
 | Anxiety disorders and OCD | Chronic Care | P2 | ICMR STW Anxiety | planned |
 | Bipolar disorder and acute mania | Chronic Care | P2 | IPS CPG | planned |
@@ -394,10 +394,10 @@ P1 = high burden or high stakes in Indian practice; P2 = common; P3 = specialist
 | Topic | Pillar | Priority | Planned primary source | Status |
 |---|---|---|---|---|
 | Anaemia in pregnancy | Safe Birth | P1 | Anaemia Mukt Bharat | authored |
-| Antenatal care (normal pregnancy) | Safe Birth | P1 | ICMR STW Antenatal; MoHFW ANC | planned |
+| Antenatal care (normal pregnancy) | Safe Birth | P1 | ICMR STW Antenatal; MoHFW ANC | authored |
 | Antepartum haemorrhage (placenta praevia, abruption) | Safe Birth | P1 | MoHFW; RCOG | planned |
 | Ectopic pregnancy | Urgent Care | P1 | MoHFW; RCOG | placeholder |
-| Gestational diabetes | Safe Birth | P1 | MoHFW GDM 2018 | placeholder |
+| Gestational diabetes | Safe Birth | P1 | MoHFW GDM 2018 | authored |
 | Hypertensive disorders of pregnancy and eclampsia | Safe Birth | P1 | MoHFW | authored |
 | Labour management and partograph | Safe Birth | P1 | MoHFW LaQshya; WHO labour care guide | planned |
 | Maternal sepsis | Safe Birth | P1 | MoHFW; WHO | placeholder |
@@ -443,7 +443,7 @@ P1 = high burden or high stakes in Indian practice; P2 = common; P3 = specialist
 | Febrile seizures | Urgent Care | P1 | IAP | planned |
 | Fever in children: approach | Urgent Care | P1 | ICMR STW Fever in children; IMNCI | planned |
 | Paediatric resuscitation (PALS) | Urgent Care | P1 | IAP PALS; AHA | planned |
-| Paediatric sepsis and septic shock | Urgent Care | P1 | ICMR STW Paediatric sepsis | planned |
+| Paediatric sepsis and septic shock | Urgent Care | P1 | ICMR STW Paediatric sepsis | authored |
 | Severe acute malnutrition | Urgent Care | P1 | MoHFW FBNC/SAM | authored |
 | Status epilepticus in children | Urgent Care | P1 | IAP | planned |
 | Acute rheumatic fever in children | Urgent Care | P2 | ICMR; IAP | planned |
@@ -468,7 +468,7 @@ P1 = high burden or high stakes in Indian practice; P2 = common; P3 = specialist
 |---|---|---|---|---|
 | Essential newborn care and thermal care | Safe Birth | P1 | ICMR STW Thermal care; NSSK | planned |
 | Low birth weight and kangaroo mother care | Safe Birth | P1 | MoHFW KMC | authored |
-| Neonatal hypoglycaemia | Urgent Care | P1 | ICMR STW | planned |
+| Neonatal hypoglycaemia | Urgent Care | P1 | ICMR STW | authored |
 | Neonatal jaundice | Safe Birth | P1 | ICMR STW Neonatal jaundice | authored |
 | Neonatal resuscitation | Safe Birth | P1 | NSSK; IAP NRP | authored |
 | Neonatal sepsis / PSBI | Urgent Care | P1 | ICMR STW Neonatal sepsis; MoHFW PSBI | authored |
