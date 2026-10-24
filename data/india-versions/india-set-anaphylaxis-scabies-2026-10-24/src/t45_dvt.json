@@ -1,0 +1,485 @@
+[
+ {
+  "id": "35938ad0-33e1-5afc-9123-14421367d32e",
+  "title": "Deep vein thrombosis (India)",
+  "specialty": "Internal Medicine / Vascular Surgery / Haematology / Emergency Medicine",
+  "authority": "MoHFW",
+  "status": "under_review",
+  "version": "india-set-as-2026-10-24-v1",
+  "lastReviewed": "2026-10-24",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+   "checkedOn": "2026-10-24",
+   "status": "incomplete",
+   "scope": "Suspected and confirmed lower-limb deep vein thrombosis (DVT) in adults in India: Wells score, compression ultrasound, D-dimer, anticoagulant choice including renal impairment, cancer and pregnancy, and duration, using NICE NG158, the ESC 2019 pulmonary embolism guideline (for anticoagulant regimens) and US labels, because no Indian national VTE guideline was found.",
+   "findings": [
+    "Two-level DVT Wells score (2 or more likely), proximal leg vein ultrasound within 4 hours, D-dimer, interim anticoagulation, apixaban or rivaroxaban first line, alternatives, renal-impairment choices, cancer, duration and thrombophilia advice checked against NICE NG158.",
+    "DOAC, dabigatran, edoxaban and warfarin regimens checked against the ESC 2019 summary; apixaban, dabigatran and enoxaparin doses against US labels.",
+    "Not clinically reviewed."
+   ],
+   "unverifiedSections": [
+    "No Indian national VTE guideline was found; NICE NG158 and ESC 2019 are used.",
+    "Rivaroxaban and edoxaban doses are from the ACC summary of ESC 2019, not their labels.",
+    "Paediatric VTE dosing is given only for apixaban (label); other paediatric doses are outside the cited sources.",
+    "Drug cautions, contraindications and renal or hepatic adjustment lines without a source tag are general pharmacology statements and need formulary confirmation."
+   ],
+   "medscapeStatus": "unavailable",
+   "originalVersionIds": [
+    "35938ad0-33e1-5afc-9123-14421367d32e"
+   ]
+  },
+  "pathophysiology": {
+   "summary": "Deep vein thrombosis is clot in the deep veins, usually of the leg, arising from Virchow's triad: venous stasis, endothelial injury and hypercoagulability. In India, common triggers include surgery, long immobilisation, trauma, pregnancy and the postpartum period, cancer, tuberculosis and dehydration. Proximal DVT can embolise to the lungs. Diagnosis combines the two-level Wells score with D-dimer and compression ultrasound (NICE NG158). Treatment is anticoagulation for at least 3 months, preferably with a direct oral anticoagulant (DOAC) such as apixaban or rivaroxaban; low-molecular-weight heparin (LMWH) is used in pregnancy, severe renal failure and some cancers.",
+   "keyMechanisms": [
+    "Stasis, endothelial injury and hypercoagulability (Virchow's triad) start thrombus in valve pockets.",
+    "Clot propagates proximally and obstructs venous return, causing swelling and pain.",
+    "Proximal clot can detach and cause pulmonary embolism.",
+    "Valve damage leads to post-thrombotic syndrome."
+   ]
+  },
+  "presentation": {
+   "symptoms": [
+    "Unilateral calf or thigh pain and swelling",
+    "Heaviness of the leg",
+    "Breathlessness or chest pain if PE"
+   ],
+   "physicalSigns": [
+    "Calf swelling 3 cm or more than the other side",
+    "Pitting oedema of the symptomatic leg",
+    "Tenderness along deep veins",
+    "Dilated superficial veins"
+   ],
+   "redFlags": [
+    "Breathlessness, chest pain, haemoptysis: suspect pulmonary embolism",
+    "Phlegmasia (massive swelling, cyanosis, threatened limb)",
+    "Active bleeding or very high bleeding risk",
+    "Pregnancy (LMWH, not DOAC)"
+   ],
+   "precipitants": [
+    "Surgery, trauma, immobilisation, long travel",
+    "Cancer, chemotherapy",
+    "Pregnancy, postpartum, oestrogen pills",
+    "Previous VTE, thrombophilia, antiphospholipid syndrome"
+   ]
+  },
+  "differentials": [
+   {
+    "condition": "Cellulitis",
+    "distinguishingFeatures": "Erythema, warmth, fever, skin entry point."
+   },
+   {
+    "condition": "Ruptured Baker's cyst",
+    "distinguishingFeatures": "Popliteal swelling, knee arthritis; ultrasound shows cyst."
+   },
+   {
+    "condition": "Muscle injury or haematoma",
+    "distinguishingFeatures": "Trauma history, bruising."
+   },
+   {
+    "condition": "Bilateral oedema from heart, liver or kidney disease",
+    "distinguishingFeatures": "Both legs, systemic signs."
+   }
+  ],
+  "diagnosticCriteria": [
+   {
+    "criterion": "DVT likely (NICE NG158)",
+    "threshold": "Two-level DVT Wells score 2 or more."
+   },
+   {
+    "criterion": "DVT unlikely (NICE NG158)",
+    "threshold": "Wells score 1 or less: D-dimer first."
+   },
+   {
+    "criterion": "Duration (NICE NG158)",
+    "threshold": "At least 3 months; provoked: consider stopping at 3 months; unprovoked: consider continuing."
+   }
+  ],
+  "investigations": {
+   "ruleIn": [
+    {
+     "tier": "specializedAdjunctive",
+     "testName": "Two-level DVT Wells score",
+     "modalityTarget": "Clinical score",
+     "targetCondition": "Pre-test probability",
+     "normalValue": "1 or less (unlikely)",
+     "expectedFinding": "2 or more (likely)",
+     "clinicalRationale": "Likely: ultrasound within 4 hours (NICE NG158).",
+     "references": [
+      {
+       "title": "Venous thromboembolic diseases: diagnosis, management and thrombophilia testing (NICE NG158)",
+       "edition": "NICE NG158, 2020 (updated 2023), section 1.1 (diagnosis)",
+       "url": "https://www.nice.org.uk/guidance/NG158/chapter/Recommendations"
+      }
+     ]
+    },
+    {
+     "tier": "firstLineImaging",
+     "testName": "Proximal leg vein compression ultrasound",
+     "modalityTarget": "Duplex ultrasound",
+     "targetCondition": "Proximal DVT",
+     "normalValue": "Fully compressible veins",
+     "expectedFinding": "Non-compressible vein with thrombus",
+     "clinicalRationale": "Confirms DVT; result within 4 hours if possible (NICE NG158).",
+     "references": [
+      {
+       "title": "Venous thromboembolic diseases: diagnosis, management and thrombophilia testing (NICE NG158)",
+       "edition": "NICE NG158, 2020 (updated 2023), section 1.1 (diagnosis)",
+       "url": "https://www.nice.org.uk/guidance/NG158/chapter/Recommendations"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "D-dimer (quantitative)",
+     "modalityTarget": "Laboratory or point-of-care assay",
+     "targetCondition": "Exclusion of DVT",
+     "normalValue": "Below the assay cut-off (age-adjusted above 50 years)",
+     "expectedFinding": "Raised",
+     "clinicalRationale": "Negative D-dimer with low probability excludes DVT; positive needs ultrasound (NICE NG158).",
+     "references": [
+      {
+       "title": "Venous thromboembolic diseases: diagnosis, management and thrombophilia testing (NICE NG158)",
+       "edition": "NICE NG158, 2020 (updated 2023), section 1.1 (diagnosis)",
+       "url": "https://www.nice.org.uk/guidance/NG158/chapter/Recommendations"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Baseline blood count, renal and liver function, PT, APTT",
+     "modalityTarget": "Blood",
+     "targetCondition": "Safety of anticoagulation",
+     "normalValue": "Platelets 150–400 x10^9/L; creatinine 0.6–1.2 mg/dL; normal PT and APTT",
+     "expectedFinding": "Thrombocytopenia, reduced CrCl, abnormal liver tests",
+     "clinicalRationale": "Do not delay treatment; review within 24 hours (NICE NG158 1.3.4).",
+     "references": [
+      {
+       "title": "Venous thromboembolic diseases: diagnosis, management and thrombophilia testing (NICE NG158)",
+       "edition": "NICE NG158, 2020 (updated 2023), section 1.3 (treatment)",
+       "url": "https://www.nice.org.uk/guidance/NG158/chapter/Recommendations"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Creatinine clearance",
+     "modalityTarget": "Calculated",
+     "targetCondition": "Choice and dose of anticoagulant",
+     "normalValue": "Above 50 mL/min",
+     "expectedFinding": "15–50 mL/min, or below 15 mL/min",
+     "clinicalRationale": "Below 15 mL/min: LMWH or UFH, or with VKA (NICE NG158).",
+     "references": [
+      {
+       "title": "Venous thromboembolic diseases: diagnosis, management and thrombophilia testing (NICE NG158)",
+       "edition": "NICE NG158, 2020 (updated 2023), section 1.3 (treatment)",
+       "url": "https://www.nice.org.uk/guidance/NG158/chapter/Recommendations"
+      }
+     ]
+    }
+   ],
+   "ruleOut": [
+    {
+     "tier": "laboratory",
+     "testName": "Pregnancy test (women of child-bearing age)",
+     "modalityTarget": "Urine hCG",
+     "targetCondition": "Pregnancy",
+     "normalValue": "Negative",
+     "expectedFinding": "Positive",
+     "clinicalRationale": "DOACs contraindicated in pregnancy; use LMWH (ESC 2019).",
+     "references": [
+      {
+       "title": "2019 ESC Guidelines for the diagnosis and management of acute pulmonary embolism: key points (ACC summary)",
+       "edition": "ACC summary of Konstantinides et al., Eur Respir J 2019;54:1901647, section Pregnancy",
+       "url": "https://www.acc.org/Latest-in-Cardiology/Articles/2020/07/10/08/44/2019-ESC-Guidelines-for-the-Diagnosis-and-Management-of-Acute-PE"
+      }
+     ]
+    }
+   ]
+  },
+  "clinicalManagement": [
+   {
+    "id": "assess",
+    "title": "Assess probability",
+    "timeframe": "On presentation",
+    "actions": [
+     "Two-level Wells score (NICE NG158).",
+     "Likely: ultrasound within 4 hours; if not possible, D-dimer, interim anticoagulation and ultrasound within 24 hours (NICE NG158).",
+     "Unlikely: D-dimer; ultrasound only if positive (NICE NG158)."
+    ]
+   },
+   {
+    "id": "treat",
+    "title": "Anticoagulate",
+    "timeframe": "At diagnosis",
+    "actions": [
+     "Apixaban or rivaroxaban first line (NICE NG158).",
+     "Alternatives: LMWH for at least 5 days then dabigatran or edoxaban; or LMWH with warfarin until INR 2.0 or more on two readings (NICE NG158).",
+     "CrCl below 15 mL/min: LMWH or UFH, or with VKA (NICE NG158).",
+     "Pregnancy: LMWH (ESC 2019)."
+    ]
+   },
+   {
+    "id": "duration",
+    "title": "Duration",
+    "timeframe": "At 3 months",
+    "actions": [
+     "At least 3 months for all (NICE NG158).",
+     "Provoked with factor resolved: consider stopping at 3 months (NICE NG158).",
+     "Unprovoked: consider continuing; weigh HAS-BLED (NICE NG158).",
+     "Active cancer: 3–6 months (NICE NG158)."
+    ]
+   },
+   {
+    "id": "follow",
+    "title": "Review",
+    "timeframe": "Yearly on long-term treatment",
+    "actions": [
+     "Review at least yearly if anticoagulation continues (NICE NG158).",
+     "Do not offer cancer screening unless symptoms or signs (NICE NG158)."
+    ]
+   }
+  ],
+  "medicationPlan": {
+   "status": "source-verified",
+   "branches": [
+    {
+     "label": "DOAC pathway",
+     "entryCriteria": "Confirmed proximal DVT, CrCl 15 mL/min or more, not pregnant, no antiphospholipid syndrome."
+    },
+    {
+     "label": "LMWH pathway",
+     "entryCriteria": "Pregnancy, CrCl below 15 mL/min, triple-positive antiphospholipid syndrome, or DOAC unsuitable."
+    }
+   ],
+   "regimens": [
+    {
+     "indication": "Treatment of DVT",
+     "patientGroup": "Adults",
+     "genericName": "Apixaban",
+     "dose": "10 mg twice daily for 7 days, then 5 mg twice daily",
+     "route": "Oral",
+     "frequency": "Twice daily",
+     "duration": "At least 3 months; after 6 months 2.5 mg twice daily may reduce recurrence",
+     "adjustments": [
+      "Paediatric: Children from birth: weight-based (for example 35 kg or more 10 mg twice daily for 7 days then 5 mg twice daily) after at least 5 days of initial anticoagulation (label section 2.2).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment in adults including dialysis (label); children: not if eGFR below 30.",
+      "CLD: Child-Pugh B: no recommendation; C: not recommended."
+     ],
+     "monitoring": [
+      "Bleeding",
+      "Renal function yearly"
+     ],
+     "contraindications": [
+      "Active bleeding",
+      "Pregnancy",
+      "Antiphospholipid syndrome (ESC 2019)"
+     ],
+     "branch": "DOAC pathway",
+     "step": "Oral anticoagulant",
+     "selection": "one-of",
+     "sourceTitle": "Apixaban (Eliquis) tablets, US prescribing information (FDA)",
+     "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/202155Orig1s039%2Cs040lbl.pdf",
+     "sourceEdition": "FDA label, 2025, sections 2.1, 2.2, 8.6, 8.7",
+     "preferred": true
+    },
+    {
+     "indication": "Treatment of DVT",
+     "patientGroup": "Adults",
+     "genericName": "Rivaroxaban",
+     "dose": "15 mg twice daily for 3 weeks, then 20 mg once daily",
+     "route": "Oral (with food)",
+     "frequency": "Twice daily, then once daily",
+     "duration": "At least 3 months",
+     "adjustments": [
+      "Paediatric: Not covered by the cited sources.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Avoid if CrCl below 15 mL/min (NICE: options for 15–50 mL/min).",
+      "CLD: Avoid in moderate or severe liver disease."
+     ],
+     "monitoring": [
+      "Bleeding",
+      "Renal function"
+     ],
+     "contraindications": [
+      "Active bleeding",
+      "Pregnancy"
+     ],
+     "branch": "DOAC pathway",
+     "step": "Oral anticoagulant",
+     "selection": "one-of",
+     "sourceTitle": "2019 ESC Guidelines for the diagnosis and management of acute pulmonary embolism: key points (ACC summary)",
+     "sourceUrl": "https://www.acc.org/Latest-in-Cardiology/Articles/2020/07/10/08/44/2019-ESC-Guidelines-for-the-Diagnosis-and-Management-of-Acute-PE",
+     "sourceEdition": "ACC summary of Konstantinides et al., Eur Respir J 2019;54:1901647, section Treatment",
+     "preferred": false,
+     "useWhen": "Once-daily dosing preferred after 3 weeks (NICE NG158 first-line option)."
+    },
+    {
+     "indication": "Treatment of DVT after parenteral lead-in",
+     "patientGroup": "Adults",
+     "genericName": "Dabigatran",
+     "dose": "150 mg twice daily after 5–10 days of parenteral anticoagulation",
+     "route": "Oral",
+     "frequency": "Twice daily",
+     "duration": "At least 3 months",
+     "adjustments": [
+      "Paediatric: Not covered for this indication in the cited extract.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: CrCl 30 mL/min or below or dialysis: no recommendation (label).",
+      "CLD: Avoid in severe liver disease."
+     ],
+     "monitoring": [
+      "Bleeding",
+      "Renal function"
+     ],
+     "contraindications": [
+      "Mechanical valve",
+      "Active bleeding",
+      "Pregnancy"
+     ],
+     "branch": "DOAC pathway",
+     "step": "Oral anticoagulant",
+     "selection": "one-of",
+     "sourceTitle": "Dabigatran etexilate (Pradaxa) capsules, US prescribing information (FDA)",
+     "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/022512s049lbl.pdf",
+     "sourceEdition": "FDA label, 2025, section 2.2",
+     "preferred": false,
+     "useWhen": "Apixaban and rivaroxaban unsuitable; after LMWH for 5 days (NICE NG158)."
+    },
+    {
+     "indication": "Treatment of DVT",
+     "patientGroup": "Adults",
+     "genericName": "Enoxaparin",
+     "dose": "1 mg/kg every 12 hours, or 1.5 mg/kg once daily (inpatient)",
+     "route": "SC",
+     "frequency": "Every 12 hours or once daily",
+     "duration": "At least 5 days and until INR 2–3 if switching to warfarin; whole course in pregnancy or cancer",
+     "adjustments": [
+      "Paediatric: Paediatric safety not established (label).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: CrCl below 30 mL/min: 1 mg/kg once daily (label); below 15 mL/min prefer UFH.",
+      "CLD: No adjustment stated."
+     ],
+     "monitoring": [
+      "Platelets",
+      "Anti-Xa in extremes of weight"
+     ],
+     "contraindications": [
+      "Active major bleeding",
+      "Heparin-induced thrombocytopenia history (extreme caution)"
+     ],
+     "branch": "LMWH pathway",
+     "step": "Parenteral anticoagulant",
+     "selection": "all",
+     "sourceTitle": "Enoxaparin sodium injection (Lovenox), US prescribing information (DailyMed)",
+     "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=afec67a9-ae16-4f48-bc0b-5331835e8aa2",
+     "sourceEdition": "DailyMed label, sections 2.1, 2.2"
+    },
+    {
+     "indication": "Long-term treatment after LMWH (not in pregnancy)",
+     "patientGroup": "Adults",
+     "genericName": "Warfarin",
+     "dose": "5 mg daily (10 mg in healthy adults under 60) adjusted to INR 2–3",
+     "route": "Oral",
+     "frequency": "Once daily",
+     "duration": "At least 3 months",
+     "adjustments": [
+      "Paediatric: Not covered by the cited sources.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No dose change; monitor INR more often.",
+      "CLD: Liver disease raises effect; monitor INR.",
+      "Overlap with LMWH for at least 5 days and until INR 2.0 or more on two consecutive readings (NICE NG158)."
+     ],
+     "monitoring": [
+      "INR"
+     ],
+     "contraindications": [
+      "Pregnancy",
+      "Active bleeding"
+     ],
+     "branch": "LMWH pathway",
+     "step": "Oral vitamin K antagonist",
+     "selection": "all",
+     "sourceTitle": "2019 ESC Guidelines for the diagnosis and management of acute pulmonary embolism: key points (ACC summary)",
+     "sourceUrl": "https://www.acc.org/Latest-in-Cardiology/Articles/2020/07/10/08/44/2019-ESC-Guidelines-for-the-Diagnosis-and-Management-of-Acute-PE",
+     "sourceEdition": "ACC summary of Konstantinides et al., Eur Respir J 2019;54:1901647, section Treatment"
+    }
+   ],
+   "note": "Drug choice follows NICE NG158; regimens from US labels and the ESC 2019 summary. No Indian national VTE guideline was found. India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
+  },
+  "teaching": {
+   "scope": "DVT in Indian practice.",
+   "learningObjectives": [
+    "Use the Wells score with D-dimer and ultrasound.",
+    "Choose an anticoagulant by renal function and pregnancy.",
+    "Decide duration."
+   ],
+   "keyPoints": [
+    "Wells 2 or more: ultrasound within 4 hours.",
+    "Apixaban 10 mg twice daily for 7 days, then 5 mg twice daily.",
+    "Pregnancy: LMWH only.",
+    "At least 3 months of anticoagulation."
+   ],
+   "pitfalls": [
+    "D-dimer in high-probability patients.",
+    "DOAC in pregnancy or antiphospholipid syndrome.",
+    "Wrong enoxaparin dose in kidney disease.",
+    "Stopping warfarin overlap too early."
+   ],
+   "references": [
+    {
+     "title": "Venous thromboembolic diseases: diagnosis, management and thrombophilia testing (NICE NG158)",
+     "edition": "NICE NG158, 2020 (updated 2023)",
+     "url": "https://www.nice.org.uk/guidance/NG158/chapter/Recommendations",
+     "locator": "sections 1.1, 1.3, 1.4, 1.7, 1.8"
+    },
+    {
+     "title": "2019 ESC Guidelines for the diagnosis and management of acute pulmonary embolism: key points (ACC summary)",
+     "edition": "ACC summary of Konstantinides et al., Eur Respir J 2019;54:1901647",
+     "url": "https://www.acc.org/Latest-in-Cardiology/Articles/2020/07/10/08/44/2019-ESC-Guidelines-for-the-Diagnosis-and-Management-of-Acute-PE",
+     "locator": "sections Treatment, Duration, Pregnancy"
+    },
+    {
+     "title": "Apixaban (Eliquis) tablets, US prescribing information (FDA)",
+     "edition": "FDA label, 2025",
+     "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/202155Orig1s039%2Cs040lbl.pdf",
+     "locator": "sections 2.1, 2.2, 8.6, 8.7"
+    },
+    {
+     "title": "Dabigatran etexilate (Pradaxa) capsules, US prescribing information (FDA)",
+     "edition": "FDA label, 2025",
+     "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/022512s049lbl.pdf",
+     "locator": "section 2.2"
+    },
+    {
+     "title": "Enoxaparin sodium injection (Lovenox), US prescribing information (DailyMed)",
+     "edition": "DailyMed label",
+     "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=afec67a9-ae16-4f48-bc0b-5331835e8aa2",
+     "locator": "sections 2.1, 2.2, 8.4"
+    }
+   ]
+  },
+  "nonClinicalManagement": {
+   "patientEducation": [
+    "Take the anticoagulant at the same time daily; never double a missed dose.",
+    "Seek help for breathlessness, chest pain or bleeding.",
+    "Tell every doctor and dentist you are on an anticoagulant."
+   ],
+   "lifestyleAndDiet": [
+    "Walk early; avoid long immobility.",
+    "Warfarin: keep diet steady."
+   ],
+   "mdtReferrals": [
+    "Haematology for antiphospholipid syndrome or recurrent VTE",
+    "Vascular surgery for threatened limb",
+    "Obstetrics in pregnancy"
+   ],
+   "dischargeCriteria": [
+    "Anticoagulation started and understood",
+    "Written information and contact details given (NICE NG158)"
+   ],
+   "followUpPlan": "Review at 3 months to decide duration; yearly if continuing (NICE NG158)."
+  }
+ }
+]

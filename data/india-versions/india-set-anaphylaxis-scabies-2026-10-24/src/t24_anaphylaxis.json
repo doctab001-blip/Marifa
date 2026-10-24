@@ -1,0 +1,448 @@
+[
+ {
+  "id": "4a83f011-c284-59dc-b65a-51fd04630347",
+  "title": "Anaphylaxis (India)",
+  "specialty": "Emergency Medicine / Allergy / Paediatrics",
+  "authority": "MoHFW",
+  "status": "under_review",
+  "version": "india-set-as-2026-10-24-v1",
+  "lastReviewed": "2026-10-24",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+   "checkedOn": "2026-10-24",
+   "status": "incomplete",
+   "scope": "Recognition and emergency treatment of anaphylaxis in adults and children in Indian hospitals and clinics: intramuscular adrenaline, airway, fluids, refractory anaphylaxis, observation, discharge and allergy referral, using the World Allergy Organization (WAO) Anaphylaxis Guidance 2020 and the Resuscitation Council UK (RCUK) 2021 guideline because no Indian national anaphylaxis guideline was found.",
+   "findings": [
+    "Definition, two clinical criteria and IM adrenaline doses (0.01 mg/kg, maximum 0.5 mg; 0.15 mg for 1–5 years; 0.3 mg for 6–12 years; 0.5 mg for teenagers and adults) checked against WAO 2020.",
+    "Anterolateral thigh site, repeat after 5 minutes, refractory pathway after two IM doses, fluid bolus 500–1000 mL in adults and 10 mL/kg in children, positioning, antihistamines as third-line and no routine corticosteroids checked against RCUK 2021 and its algorithm.",
+    "Not clinically reviewed."
+   ],
+   "unverifiedSections": [
+    "No Indian national anaphylaxis guideline was found; this topic uses WAO 2020 and RCUK 2021.",
+    "IV adrenaline infusion rates for refractory anaphylaxis are not given in the opened sources; use only with specialist (anaesthesia or intensive care unit (ICU)) support.",
+    "Glucagon dose for patients on beta-blockers, salbutamol and antihistamine doses are not given in the opened sources and are not dosed here.",
+    "Mast cell tryptase timing, its reference value (about 11.4 ng/mL, assay dependent) and observation duration were not in the opened extracts; follow local protocol.",
+    "Drug cautions, contraindications and renal or hepatic adjustment lines without a source tag are general pharmacology statements and need formulary confirmation."
+   ],
+   "medscapeStatus": "unavailable",
+   "originalVersionIds": [
+    "4a83f011-c284-59dc-b65a-51fd04630347"
+   ]
+  },
+  "pathophysiology": {
+   "summary": "Anaphylaxis is a serious systemic hypersensitivity reaction that is usually rapid in onset and may cause death (WAO 2020). Mast-cell and basophil mediators cause vasodilatation, capillary leak, bronchospasm and upper-airway oedema. Common triggers in India are drugs (antibiotics, NSAIDs, contrast), insect stings and foods. Intramuscular adrenaline into the anterolateral thigh is the first and most important treatment; there is no absolute contraindication to it (WAO 2020). Antihistamines and corticosteroids do not treat airway, breathing or circulation problems and must never delay adrenaline (RCUK 2021).",
+   "keyMechanisms": [
+    "IgE-mediated or direct mast-cell activation releases histamine, tryptase and leukotrienes.",
+    "Vasodilatation and capillary leak cause distributive shock.",
+    "Bronchial smooth-muscle contraction and laryngeal oedema obstruct the airway.",
+    "Adrenaline reverses these through alpha and beta receptors."
+   ]
+  },
+  "presentation": {
+   "symptoms": [
+    "Sudden itch, flushing, urticaria or angioedema",
+    "Throat tightness, hoarse voice, stridor",
+    "Wheeze, breathlessness",
+    "Dizziness, collapse",
+    "Abdominal cramps, vomiting"
+   ],
+   "physicalSigns": [
+    "Urticaria and angioedema (absent in some cases)",
+    "Stridor or wheeze",
+    "SpO2 below 94% (RCUK algorithm)",
+    "Hypotension, tachycardia",
+    "Reduced consciousness"
+   ],
+   "redFlags": [
+    "Airway swelling, stridor or hoarse voice",
+    "Breathing difficulty or SpO2 below 94%",
+    "Hypotension or shock",
+    "No improvement after two IM adrenaline doses: refractory anaphylaxis (RCUK 2021)"
+   ],
+   "precipitants": [
+    "Antibiotics (beta-lactams), NSAIDs, contrast media, anaesthetic drugs",
+    "Insect stings",
+    "Foods such as peanut, tree nuts, shellfish",
+    "Cofactors: exercise, alcohol, infection"
+   ]
+  },
+  "differentials": [
+   {
+    "condition": "Vasovagal syncope",
+    "distinguishingFeatures": "Bradycardia, pallor, rapid recovery lying flat; no rash or wheeze."
+   },
+   {
+    "condition": "Acute asthma",
+    "distinguishingFeatures": "Wheeze without skin signs or hypotension."
+   },
+   {
+    "condition": "Isolated urticaria or angioedema",
+    "distinguishingFeatures": "Skin only; no airway, breathing or circulation problem."
+   },
+   {
+    "condition": "Panic attack",
+    "distinguishingFeatures": "Hyperventilation; normal BP and SpO2."
+   }
+  ],
+  "diagnosticCriteria": [
+   {
+    "criterion": "WAO criterion 1",
+    "threshold": "Acute onset (minutes to hours) of skin and/or mucosal involvement plus involvement of at least one other organ system (respiratory, circulation or gastrointestinal)."
+   },
+   {
+    "criterion": "WAO criterion 2",
+    "threshold": "Acute hypotension, bronchospasm or laryngeal involvement after exposure to a known or highly probable allergen, even without skin signs."
+   },
+   {
+    "criterion": "Refractory anaphylaxis (RCUK 2021)",
+    "threshold": "Respiratory or cardiovascular problems persisting after two doses of IM adrenaline."
+   }
+  ],
+  "investigations": {
+   "ruleIn": [
+    {
+     "tier": "specializedAdjunctive",
+     "testName": "Pulse oximetry",
+     "modalityTarget": "SpO2",
+     "targetCondition": "Respiratory involvement",
+     "normalValue": "94–100% on air",
+     "expectedFinding": "Below 94% (RCUK algorithm)",
+     "clinicalRationale": "Breathing problem: give high-flow oxygen and IM adrenaline.",
+     "references": [
+      {
+       "title": "Anaphylaxis algorithm (Resuscitation Council UK)",
+       "edition": "Resuscitation Council UK, 2021, section Anaphylaxis algorithm (ABCDE)",
+       "url": "https://resus.org.uk/media/333/download"
+      }
+     ]
+    },
+    {
+     "tier": "specializedAdjunctive",
+     "testName": "Blood pressure",
+     "modalityTarget": "Non-invasive BP",
+     "targetCondition": "Circulatory involvement",
+     "normalValue": "Systolic 90–140 mmHg (adults)",
+     "expectedFinding": "Hypotension",
+     "clinicalRationale": "Hypotension after exposure meets WAO criterion 2; give fluids.",
+     "references": [
+      {
+       "title": "World Allergy Organization Anaphylaxis Guidance 2020",
+       "edition": "World Allergy Organ J 2020;13:100472, section Diagnostic criteria",
+       "url": "https://www.worldallergyorganizationjournal.org/article/S1939-4551(20)30375-6/fulltext"
+      }
+     ]
+    },
+    {
+     "tier": "specializedAdjunctive",
+     "testName": "Heart rate and cardiac monitoring",
+     "modalityTarget": "Continuous electrocardiogram (ECG) monitor",
+     "targetCondition": "Shock, arrhythmia, adrenaline effects",
+     "normalValue": "Sinus rhythm 60–100/min",
+     "expectedFinding": "Tachycardia; arrhythmia",
+     "clinicalRationale": "Apply monitoring as soon as possible (RCUK algorithm).",
+     "references": [
+      {
+       "title": "Anaphylaxis algorithm (Resuscitation Council UK)",
+       "edition": "Resuscitation Council UK, 2021, section Anaphylaxis algorithm (ABCDE)",
+       "url": "https://resus.org.uk/media/333/download"
+      }
+     ]
+    },
+    {
+     "tier": "specializedAdjunctive",
+     "testName": "Airway assessment",
+     "modalityTarget": "Clinical: voice, stridor, swelling",
+     "targetCondition": "Upper-airway oedema",
+     "normalValue": "Normal voice, no stridor",
+     "expectedFinding": "Hoarse voice, stridor, tongue or lip swelling",
+     "clinicalRationale": "Airway problem: IM adrenaline and early senior airway help (RCUK algorithm).",
+     "references": [
+      {
+       "title": "Anaphylaxis algorithm (Resuscitation Council UK)",
+       "edition": "Resuscitation Council UK, 2021, section Anaphylaxis algorithm (ABCDE)",
+       "url": "https://resus.org.uk/media/333/download"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Mast cell tryptase",
+     "modalityTarget": "Serum tryptase",
+     "targetCondition": "Confirmation of anaphylaxis",
+     "normalValue": "Below about 11.4 ng/mL (assay dependent)",
+     "expectedFinding": "Raised above baseline",
+     "clinicalRationale": "Supports the diagnosis for allergy-clinic review; never delays treatment.",
+     "references": [
+      {
+       "title": "Emergency treatment of anaphylaxis: guidelines for healthcare providers (Resuscitation Council UK)",
+       "edition": "Resuscitation Council UK, May 2021, section Key recommendations",
+       "url": "https://www.cem.scot.nhs.uk/adult/anphyl.pdf"
+      }
+     ]
+    }
+   ],
+   "ruleOut": [
+    {
+     "tier": "laboratory",
+     "testName": "Capillary glucose",
+     "modalityTarget": "Bedside glucose",
+     "targetCondition": "Hypoglycaemia mimicking collapse",
+     "normalValue": "4.0–7.8 mmol/L (72–140 mg/dL)",
+     "expectedFinding": "Below 4.0 mmol/L",
+     "clinicalRationale": "Excludes a common mimic in collapsed patients.",
+     "references": [
+      {
+       "title": "Anaphylaxis algorithm (Resuscitation Council UK)",
+       "edition": "Resuscitation Council UK, 2021, section Anaphylaxis algorithm (ABCDE)",
+       "url": "https://resus.org.uk/media/333/download"
+      }
+     ]
+    }
+   ]
+  },
+  "clinicalManagement": [
+   {
+    "id": "recognise",
+    "title": "Recognise and call for help",
+    "timeframe": "First minute",
+    "actions": [
+     "Use WAO criteria; if in doubt, give IM adrenaline (RCUK 2021).",
+     "Remove the trigger (stop infusion, remove sting).",
+     "Lie flat; sit up if breathing is easier; left side if pregnant; avoid sudden standing (RCUK 2021)."
+    ]
+   },
+   {
+    "id": "adrenaline",
+    "title": "IM adrenaline",
+    "timeframe": "Immediately",
+    "actions": [
+     "Adrenaline 1 mg/mL into the anterolateral mid-thigh (dose by age, see medicines).",
+     "Repeat after 5 minutes if no improvement (RCUK 2021).",
+     "High-flow oxygen; monitoring: SpO2, ECG, BP."
+    ]
+   },
+   {
+    "id": "fluids",
+    "title": "Circulation",
+    "timeframe": "With the first adrenaline dose",
+    "actions": [
+     "Hypotension or shock: IV crystalloid bolus 500–1000 mL in adults, 10 mL/kg in children (RCUK algorithm).",
+     "Give fluids early in refractory anaphylaxis (RCUK 2021)."
+    ]
+   },
+   {
+    "id": "refractory",
+    "title": "Refractory anaphylaxis",
+    "timeframe": "After two IM doses",
+    "actions": [
+     "Seek expert help early; IV adrenaline infusion only in a specialist setting by skilled clinicians (RCUK 2021).",
+     "Continue IM adrenaline every 5 minutes until an infusion is running.",
+     "Patients on beta-blockers may need glucagon: discuss with a specialist."
+    ],
+    "branches": [
+     {
+      "condition": "Cardiac arrest",
+      "actions": [
+       "Start cardiopulmonary resuscitation (CPR) and follow advanced life support."
+      ]
+     }
+    ]
+   },
+   {
+    "id": "after",
+    "title": "After stabilisation",
+    "timeframe": "Hours",
+    "actions": [
+     "Non-sedating oral antihistamine for persistent skin symptoms; corticosteroids are not routine (RCUK 2021).",
+     "Observe before discharge per local protocol.",
+     "Refer every patient to an allergy clinic (RCUK 2021)."
+    ]
+   }
+  ],
+  "medicationPlan": {
+   "status": "source-verified",
+   "branches": [
+    {
+     "label": "Initial treatment (all ages)",
+     "entryCriteria": "Suspected anaphylaxis with an airway, breathing or circulation problem."
+    },
+    {
+     "label": "Hypotension or shock",
+     "entryCriteria": "Anaphylaxis with hypotension, shock or refractory anaphylaxis."
+    }
+   ],
+   "regimens": [
+    {
+     "indication": "Anaphylaxis",
+     "patientGroup": "Adults and children",
+     "genericName": "Adrenaline (epinephrine) 1 mg/mL",
+     "dose": "0.01 mg/kg, maximum 0.5 mg; adults and children over 12 years 0.5 mg (0.5 mL)",
+     "route": "IM, anterolateral mid-thigh",
+     "frequency": "Repeat every 5 minutes if no improvement",
+     "duration": "Until improvement; refractory after 2 doses",
+     "adjustments": [
+      "Paediatric: Children 6–12 years 0.3 mg (0.3 mL); 6 months–6 years 0.15 mg (0.15 mL); under 6 months 0.1–0.15 mg (RCUK algorithm); WAO: 1–5 years 0.15 mg, infants under 10 kg 0.01 mL/kg.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment; give full dose.",
+      "CLD: No adjustment; give full dose.",
+      "Repeat interval and age-band doses: RCUK 2021 algorithm."
+     ],
+     "monitoring": [
+      "SpO2, ECG, BP every few minutes"
+     ],
+     "contraindications": [
+      "No absolute contraindication in anaphylaxis (WAO 2020)",
+      "Never give undiluted 1 mg/mL IV"
+     ],
+     "branch": "Initial treatment (all ages)",
+     "step": "First-line",
+     "selection": "all",
+     "sourceTitle": "World Allergy Organization Anaphylaxis Guidance 2020",
+     "sourceUrl": "https://www.worldallergyorganizationjournal.org/article/S1939-4551(20)30375-6/fulltext",
+     "sourceEdition": "World Allergy Organ J 2020;13:100472, section Epinephrine dosing"
+    },
+    {
+     "indication": "Breathing or circulation problem",
+     "patientGroup": "Adults and children",
+     "genericName": "Oxygen",
+     "dose": "High-flow oxygen",
+     "route": "Face mask with reservoir",
+     "frequency": "Continuous",
+     "duration": "Until stable",
+     "adjustments": [
+      "Paediatric: Same in children.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "SpO2"
+     ],
+     "contraindications": [
+      "None in anaphylaxis"
+     ],
+     "branch": "Initial treatment (all ages)",
+     "step": "Oxygen",
+     "selection": "all",
+     "sourceTitle": "Anaphylaxis algorithm (Resuscitation Council UK)",
+     "sourceUrl": "https://resus.org.uk/media/333/download",
+     "sourceEdition": "Resuscitation Council UK, 2021, section Anaphylaxis algorithm (ABCDE)"
+    },
+    {
+     "indication": "Hypotension or shock",
+     "patientGroup": "Adults and children",
+     "genericName": "Crystalloid (0.9% sodium chloride)",
+     "dose": "Adults 500–1000 mL bolus",
+     "route": "IV",
+     "frequency": "Bolus, repeat as needed",
+     "duration": "Until BP restored",
+     "adjustments": [
+      "Paediatric: Children 10 mL/kg bolus (RCUK algorithm).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Reassess after each bolus in kidney failure.",
+      "CLD: Reassess after each bolus in liver disease with ascites."
+     ],
+     "monitoring": [
+      "BP, heart rate, lung crackles"
+     ],
+     "contraindications": [
+      "Watch for fluid overload in heart failure"
+     ],
+     "branch": "Hypotension or shock",
+     "step": "Fluid resuscitation",
+     "selection": "all",
+     "sourceTitle": "Anaphylaxis algorithm (Resuscitation Council UK)",
+     "sourceUrl": "https://resus.org.uk/media/333/download",
+     "sourceEdition": "Resuscitation Council UK, 2021, section Anaphylaxis algorithm (ABCDE)"
+    }
+   ],
+   "note": "Doses are from WAO 2020 and the RCUK 2021 algorithm; no Indian national anaphylaxis guideline was found. Antihistamines and steroids are not first-line and are not dosed here. India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
+  },
+  "teaching": {
+   "scope": "Anaphylaxis in Indian emergency and ward practice.",
+   "learningObjectives": [
+    "Recognise anaphylaxis with WAO criteria.",
+    "Give IM adrenaline in the right dose and site.",
+    "Know when it is refractory."
+   ],
+   "keyPoints": [
+    "If in doubt, give IM adrenaline.",
+    "0.5 mg adult, 0.3 mg 6–12 years, 0.15 mg under 6 years.",
+    "Repeat every 5 minutes.",
+    "Two doses and still unwell: refractory, call expert help."
+   ],
+   "pitfalls": [
+    "Giving antihistamine or steroid first.",
+    "Standing the patient up.",
+    "Subcutaneous or deltoid injection.",
+    "Discharge without allergy referral."
+   ],
+   "references": [
+    {
+     "title": "World Allergy Organization Anaphylaxis Guidance 2020",
+     "edition": "World Allergy Organ J 2020;13:100472",
+     "url": "https://www.worldallergyorganizationjournal.org/article/S1939-4551(20)30375-6/fulltext",
+     "locator": "sections Definition, Diagnostic criteria, Epinephrine dosing"
+    },
+    {
+     "title": "Emergency treatment of anaphylaxis: guidelines for healthcare providers (Resuscitation Council UK)",
+     "edition": "Resuscitation Council UK, May 2021",
+     "url": "https://www.cem.scot.nhs.uk/adult/anphyl.pdf",
+     "locator": "section Key recommendations"
+    },
+    {
+     "title": "Anaphylaxis algorithm (Resuscitation Council UK)",
+     "edition": "Resuscitation Council UK, 2021",
+     "url": "https://resus.org.uk/media/333/download",
+     "locator": "section Anaphylaxis algorithm (ABCDE)"
+    }
+   ]
+  },
+  "nonClinicalManagement": {
+   "patientEducation": [
+    "Know and avoid the trigger.",
+    "Carry the emergency plan; use an adrenaline auto-injector if prescribed.",
+    "Call for help after using it."
+   ],
+   "lifestyleAndDiet": [
+    "Read food labels for the allergen.",
+    "Tell every doctor about drug allergy."
+   ],
+   "mdtReferrals": [
+    "Allergy clinic for every patient (RCUK 2021)",
+    "Anaesthesia or ICU for refractory anaphylaxis"
+   ],
+   "dischargeCriteria": [
+    "Symptoms resolved and observed per local protocol",
+    "Trigger identified or allergy referral made",
+    "Action plan and, unless drug-induced, adrenaline auto-injector with training (RCUK 2021)"
+   ],
+   "followUpPlan": "Allergy clinic review to confirm the trigger."
+  },
+  "guidelineComparison": {
+   "title": "IM adrenaline doses: WAO 2020 vs RCUK 2021",
+   "columns": [
+    "WAO 2020",
+    "RCUK 2021 algorithm"
+   ],
+   "rows": [
+    {
+     "parameter": "Adults and teenagers",
+     "values": [
+      "0.5 mg",
+      "0.5 mg (adult and child over 12 years)"
+     ]
+    },
+    {
+     "parameter": "Children",
+     "values": [
+      "6–12 years 0.3 mg; 1–5 years 0.15 mg; infants under 10 kg 0.01 mL/kg",
+      "6–12 years 0.3 mg; 6 months–6 years 0.15 mg; under 6 months 0.1–0.15 mg"
+     ]
+    }
+   ],
+   "note": "Shown as each source states; not merged."
+  }
+ }
+]

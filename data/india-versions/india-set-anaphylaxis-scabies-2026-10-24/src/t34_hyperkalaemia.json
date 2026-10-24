@@ -1,0 +1,578 @@
+[
+ {
+  "id": "83a28900-d1b1-595c-95fc-baf892b0addc",
+  "title": "Hyperkalaemia in adults (India)",
+  "specialty": "Nephrology / Emergency Medicine / Internal Medicine",
+  "authority": "ICMR",
+  "status": "under_review",
+  "version": "india-set-as-2026-10-24-v1",
+  "lastReviewed": "2026-10-24",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+   "checkedOn": "2026-10-24",
+   "status": "incomplete",
+   "scope": "Acute and chronic hyperkalaemia in adults in India: severity, electrocardiogram (ECG) assessment, cardiac protection with calcium, shifting potassium into cells, removing potassium, dialysis, monitoring and safe use of renin-angiotensin-aldosterone system (RAAS) inhibitors, built on the ICMR Acute Kidney Injury STW (July 2026) and the UK Kidney Association (UKKA) guideline (updated July 2026).",
+   "findings": [
+    "Calcium gluconate 10 mL of 10% over 2–5 minutes under ECG monitoring repeatable up to 3 times, salbutamol 10 mg nebulised, insulin 10 units in 50 mL of 50% or 100 mL of 25% dextrose, withholding ACE inhibitors and ARBs, binders if dialysis is unavailable and urgent dialysis if life-threatening checked against the ICMR AKI STW (July 2026).",
+    "Severity bands, ECG and monitoring rules, the UKKA calcium dose (6.8 mmol: 30 mL of 10% calcium gluconate or 10 mL of 10% calcium chloride), insulin with 25 g glucose, post-treatment 10% glucose if pre-treatment glucose below 7.0 mmol/L, salbutamol 10–20 mg, sodium zirconium cyclosilicate (SZC) 10 g three times daily for up to 72 hours, patiromer 8.4 g, potassium and glucose monitoring schedules and RAAS inhibitor rules checked against UKKA (July 2026).",
+    "Calcium polystyrene sulfonate doses from the Calcium Resonium SmPC.",
+    "Not clinically reviewed."
+   ],
+   "unverifiedSections": [
+    "ICMR and UKKA give different calcium gluconate volumes (10 mL vs 30 mL of 10%) and dextrose regimens; both are shown, not merged.",
+    "UKKA no longer recommends calcium polystyrene sulfonate routinely for acute hyperkalaemia; it is listed because SZC and patiromer may be unavailable in Indian hospitals.",
+    "The sodium bicarbonate dose was not in the opened UKKA extract.",
+    "Paediatric hyperkalaemia is outside the scope of the cited adult guidelines, except the calcium polystyrene sulfonate paediatric dose from its SmPC.",
+    "Drug cautions, contraindications and renal or hepatic adjustment lines without a source tag are general pharmacology statements and need formulary confirmation."
+   ],
+   "medscapeStatus": "unavailable",
+   "originalVersionIds": [
+    "83a28900-d1b1-595c-95fc-baf892b0addc"
+   ]
+  },
+  "pathophysiology": {
+   "summary": "Hyperkalaemia is serum potassium of 5.5 mmol/L or more; 6.5 mmol/L or more is severe (UKKA). It lowers the resting membrane potential of cardiac cells, slowing conduction and risking bradycardia, ventricular fibrillation or asystole. Common causes in India are acute kidney injury (AKI) and chronic kidney disease, RAAS inhibitors, potassium-sparing diuretics, diabetic ketoacidosis and tissue breakdown. Treatment follows a fixed order: protect the heart with IV calcium if the ECG shows changes, shift potassium into cells with insulin-glucose and salbutamol, remove potassium with binders or dialysis, and monitor potassium and glucose closely (UKKA; ICMR STW).",
+   "keyMechanisms": [
+    "Raised extracellular potassium partly depolarises myocytes, inactivating sodium channels and slowing conduction.",
+    "Calcium restores the threshold potential without lowering potassium.",
+    "Insulin and beta-2 agonists drive potassium into cells via Na+/K+-ATPase.",
+    "Binders and dialysis are the only treatments that remove potassium from the body."
+   ]
+  },
+  "presentation": {
+   "symptoms": [
+    "Often none",
+    "Muscle weakness, paraesthesia",
+    "Palpitations",
+    "Collapse in severe hyperkalaemia"
+   ],
+   "physicalSigns": [
+    "Bradycardia or irregular pulse",
+    "Flaccid weakness",
+    "Signs of AKI or volume depletion"
+   ],
+   "redFlags": [
+    "Potassium 6.5 mmol/L or more (UKKA)",
+    "ECG changes: peaked T waves, flat P waves, wide QRS, sine wave, bradycardia",
+    "Haemodialysis patient with potassium 6.5 mmol/L or more: urgent dialysis (UKKA 18.1)",
+    "Life-threatening hyperkalaemia: urgent dialysis (ICMR STW)"
+   ],
+   "precipitants": [
+    "AKI and CKD",
+    "ACE inhibitors, ARBs, mineralocorticoid antagonists, potassium supplements",
+    "Diabetic ketoacidosis, rhabdomyolysis, tumour lysis",
+    "Haemolysed sample (pseudohyperkalaemia)"
+   ]
+  },
+  "differentials": [
+   {
+    "condition": "Pseudohyperkalaemia",
+    "distinguishingFeatures": "Haemolysed sample or very high WBC or platelets; repeat without tourniquet."
+   },
+   {
+    "condition": "Hyperkalaemic periodic paralysis",
+    "distinguishingFeatures": "Episodic weakness, family history."
+   },
+   {
+    "condition": "Digoxin toxicity",
+    "distinguishingFeatures": "Arrhythmias with raised potassium; check digoxin level."
+   }
+  ],
+  "diagnosticCriteria": [
+   {
+    "criterion": "Mild (UKKA)",
+    "threshold": "Potassium 5.5–5.9 mmol/L."
+   },
+   {
+    "criterion": "Moderate (UKKA)",
+    "threshold": "Potassium 6.0–6.4 mmol/L."
+   },
+   {
+    "criterion": "Severe (UKKA)",
+    "threshold": "Potassium 6.5 mmol/L or more."
+   },
+   {
+    "criterion": "Continuous monitoring (UKKA 14.2)",
+    "threshold": "Potassium 6.5 mmol/L or more, ECG changes, or 6.0–6.4 mmol/L if unwell or rising fast."
+   }
+  ],
+  "investigations": {
+   "ruleIn": [
+    {
+     "tier": "laboratory",
+     "testName": "Serum potassium",
+     "modalityTarget": "Venous or arterial sample",
+     "targetCondition": "Hyperkalaemia",
+     "normalValue": "3.5–5.0 mmol/L",
+     "expectedFinding": "5.5 mmol/L or more; 6.5 or more severe",
+     "clinicalRationale": "Sets severity and treatment (UKKA).",
+     "references": [
+      {
+       "title": "Clinical Practice Guideline: Management of Hyperkalaemia in Adults (UK Kidney Association)",
+       "edition": "UKKA, updated July 2026, sections 1.2, 16.1",
+       "url": "https://www.ukkidney.org/sites/default/files/documents/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20UPDATED%20JULY%202026_0.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "specializedAdjunctive",
+     "testName": "12-lead electrocardiogram (ECG)",
+     "modalityTarget": "ECG",
+     "targetCondition": "Cardiac toxicity",
+     "normalValue": "Normal P waves, QRS under 120 ms, normal T waves",
+     "expectedFinding": "Peaked T, flat P, wide QRS, sine wave, bradycardia",
+     "clinicalRationale": "Urgent ECG for potassium 6.0 mmol/L or more; ECG changes need IV calcium (UKKA 14.1, 16.2).",
+     "references": [
+      {
+       "title": "Clinical Practice Guideline: Management of Hyperkalaemia in Adults (UK Kidney Association)",
+       "edition": "UKKA, updated July 2026, sections 14.1, 16.2",
+       "url": "https://www.ukkidney.org/sites/default/files/documents/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20UPDATED%20JULY%202026_0.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Capillary glucose",
+     "modalityTarget": "Bedside glucose",
+     "targetCondition": "Risk of insulin-induced hypoglycaemia",
+     "normalValue": "4.0–7.8 mmol/L",
+     "expectedFinding": "Below 7.0 mmol/L before treatment",
+     "clinicalRationale": "Start 10% glucose after insulin if below 7.0 mmol/L; check at set times up to 6 hours (UKKA 16.3.3, 17.2).",
+     "references": [
+      {
+       "title": "Clinical Practice Guideline: Management of Hyperkalaemia in Adults (UK Kidney Association)",
+       "edition": "UKKA, updated July 2026, sections 16.3.3, 17.2",
+       "url": "https://www.ukkidney.org/sites/default/files/documents/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20UPDATED%20JULY%202026_0.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Creatinine and urea",
+     "modalityTarget": "Serum",
+     "targetCondition": "AKI or CKD",
+     "normalValue": "Creatinine 0.6–1.2 mg/dL",
+     "expectedFinding": "Raised",
+     "clinicalRationale": "Cause; dialysis decision (ICMR STW).",
+     "references": [
+      {
+       "title": "Standard Treatment Workflow: Acute Kidney Injury (ICMR / Department of Health Research)",
+       "edition": "ICMR STW, July 2026, section Indications for dialysis",
+       "url": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1784807239_acutekidneyinjury-updated.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Venous blood gas (pH, bicarbonate)",
+     "modalityTarget": "Blood gas",
+     "targetCondition": "Acidosis",
+     "normalValue": "pH 7.35–7.45; bicarbonate 22–28 mmol/L",
+     "expectedFinding": "Metabolic acidosis",
+     "clinicalRationale": "Acidosis worsens hyperkalaemia; check acid-base status (ICMR STW).",
+     "references": [
+      {
+       "title": "Standard Treatment Workflow: Acute Kidney Injury (ICMR / Department of Health Research)",
+       "edition": "ICMR STW, July 2026, section Desirable actions/investigations",
+       "url": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1784807239_acutekidneyinjury-updated.pdf"
+      }
+     ]
+    }
+   ],
+   "ruleOut": [
+    {
+     "tier": "laboratory",
+     "testName": "Repeat non-haemolysed sample",
+     "modalityTarget": "Venous sample without prolonged tourniquet",
+     "targetCondition": "Pseudohyperkalaemia",
+     "normalValue": "Potassium 3.5–5.0 mmol/L",
+     "expectedFinding": "Persistently raised",
+     "clinicalRationale": "Do not delay treatment if ECG changes are present.",
+     "references": [
+      {
+       "title": "Clinical Practice Guideline: Management of Hyperkalaemia in Adults (UK Kidney Association)",
+       "edition": "UKKA, updated July 2026, section 1.2",
+       "url": "https://www.ukkidney.org/sites/default/files/documents/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20UPDATED%20JULY%202026_0.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Creatine kinase, digoxin level as indicated",
+     "modalityTarget": "Serum",
+     "targetCondition": "Rhabdomyolysis or digoxin toxicity",
+     "normalValue": "CK below 200 U/L; digoxin 0.5–2 ng/mL",
+     "expectedFinding": "Raised",
+     "clinicalRationale": "Identifies the cause.",
+     "references": [
+      {
+       "title": "Clinical Practice Guideline: Management of Hyperkalaemia in Adults (UK Kidney Association)",
+       "edition": "UKKA, updated July 2026, section 16.1",
+       "url": "https://www.ukkidney.org/sites/default/files/documents/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20UPDATED%20JULY%202026_0.pdf"
+      }
+     ]
+    }
+   ]
+  },
+  "clinicalManagement": [
+   {
+    "id": "assess",
+    "title": "Assess",
+    "timeframe": "First 15 minutes",
+    "actions": [
+     "Repeat potassium if haemolysis likely, but treat at once if ECG changes (UKKA).",
+     "12-lead ECG for potassium 6.0 or more; cardiac monitor for 6.5 or more or ECG changes (UKKA 14.1–14.2).",
+     "Stop potassium supplements, ACE inhibitors, ARBs and mineralocorticoid antagonists (ICMR STW; UKKA 2.6)."
+    ]
+   },
+   {
+    "id": "heart",
+    "title": "Protect the heart",
+    "timeframe": "Immediately if ECG changes",
+    "actions": [
+     "IV calcium under ECG monitoring (see medicines); repeat if ECG changes persist (ICMR STW).",
+     "Calcium chloride in cardiac arrest or peri-arrest; gluconate otherwise (UKKA 16.2b)."
+    ]
+   },
+   {
+    "id": "shift",
+    "title": "Shift potassium into cells",
+    "timeframe": "Within 30 minutes",
+    "actions": [
+     "Insulin with glucose for severe hyperkalaemia; suggested for moderate (UKKA 16.3).",
+     "Add nebulised salbutamol in severe hyperkalaemia; never as sole treatment (UKKA 16.4)."
+    ]
+   },
+   {
+    "id": "remove",
+    "title": "Remove potassium",
+    "timeframe": "Within hours",
+    "actions": [
+     "Potassium binder: SZC for severe and consider for moderate (UKKA 16.6); binders if dialysis unavailable (ICMR STW).",
+     "Urgent dialysis if life-threatening or resistant (ICMR STW; UKKA 19.6)."
+    ]
+   },
+   {
+    "id": "monitor",
+    "title": "Monitor",
+    "timeframe": "1, 2, 4, 6 and 24 hours",
+    "actions": [
+     "Potassium at 1, 2, 4, 6 and 24 hours for moderate or severe (UKKA 17.1.2).",
+     "Glucose at 0, 30, 60, 90, 120, 180, 240, 300 and 360 minutes after insulin (UKKA 17.2).",
+     "Restart RAAS inhibitors one at a time when potassium below 5.5 mmol/L (UKKA)."
+    ]
+   }
+  ],
+  "medicationPlan": {
+   "status": "source-verified",
+   "branches": [
+    {
+     "label": "Moderate or severe hyperkalaemia",
+     "entryCriteria": "Potassium 6.0 mmol/L or more, or any potassium with ECG changes."
+    }
+   ],
+   "regimens": [
+    {
+     "indication": "Hyperkalaemia with ECG changes",
+     "patientGroup": "Adults",
+     "genericName": "Calcium gluconate 10%",
+     "dose": "10 mL over 2–5 minutes, repeat up to 3 times (ICMR); UKKA: 30 mL over 10 minutes",
+     "route": "IV, slow, under ECG monitoring",
+     "frequency": "Repeat if ECG changes persist",
+     "duration": "Until ECG normalises",
+     "adjustments": [
+      "Paediatric: Paediatric dose not in the cited adult guidelines.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment.",
+      "CLD: No adjustment.",
+      "UKKA guideline 16.2a: 6.8 mmol calcium = 30 mL 10% calcium gluconate."
+     ],
+     "monitoring": [
+      "Continuous ECG"
+     ],
+     "contraindications": [
+      "Digoxin toxicity: give slowly with caution",
+      "Do not mix with bicarbonate"
+     ],
+     "branch": "Moderate or severe hyperkalaemia",
+     "step": "Protect the heart (ECG changes)",
+     "selection": "one-of",
+     "sourceTitle": "Standard Treatment Workflow: Acute Kidney Injury (ICMR / Department of Health Research)",
+     "sourceUrl": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1784807239_acutekidneyinjury-updated.pdf",
+     "sourceEdition": "ICMR STW, July 2026, section Treatment of hyperkalemia",
+     "preferred": true
+    },
+    {
+     "indication": "Hyperkalaemia in cardiac arrest or peri-arrest",
+     "patientGroup": "Adults",
+     "genericName": "Calcium chloride 10%",
+     "dose": "10 mL over 5 minutes",
+     "route": "IV (large or central vein)",
+     "frequency": "Repeat if needed",
+     "duration": "Until ECG normalises",
+     "adjustments": [
+      "Paediatric: Paediatric dose not in the cited adult guidelines.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Continuous ECG"
+     ],
+     "contraindications": [
+      "Extravasation causes tissue necrosis"
+     ],
+     "branch": "Moderate or severe hyperkalaemia",
+     "step": "Protect the heart (ECG changes)",
+     "selection": "one-of",
+     "sourceTitle": "Clinical Practice Guideline: Management of Hyperkalaemia in Adults (UK Kidney Association)",
+     "sourceUrl": "https://www.ukkidney.org/sites/default/files/documents/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20UPDATED%20JULY%202026_0.pdf",
+     "sourceEdition": "UKKA, updated July 2026, section 16.2",
+     "preferred": false,
+     "useWhen": "Cardiac arrest or peri-arrest (UKKA 16.2b)."
+    },
+    {
+     "indication": "Moderate or severe hyperkalaemia",
+     "patientGroup": "Adults",
+     "genericName": "Insulin (soluble) with glucose",
+     "dose": "10 units soluble insulin with 25 g glucose (ICMR: in 50 mL of 50% or 100 mL of 25% dextrose)",
+     "route": "IV over 15–30 minutes",
+     "frequency": "Repeat by potassium response",
+     "duration": "Single dose; repeat if needed",
+     "adjustments": [
+      "Paediatric: Paediatric dose not in the cited adult guidelines.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Higher hypoglycaemia risk in kidney failure: monitor glucose closely.",
+      "CLD: Higher hypoglycaemia risk in liver disease.",
+      "If pre-treatment glucose below 7.0 mmol/L, follow with 10% glucose 50 mL/hour for 5 hours (UKKA 16.3.3)."
+     ],
+     "monitoring": [
+      "Glucose at 0–360 minutes (UKKA 17.2)",
+      "Potassium at 1, 2, 4, 6, 24 hours"
+     ],
+     "contraindications": [
+      "Hypoglycaemia"
+     ],
+     "branch": "Moderate or severe hyperkalaemia",
+     "step": "Shift potassium into cells",
+     "selection": "all",
+     "sourceTitle": "Standard Treatment Workflow: Acute Kidney Injury (ICMR / Department of Health Research)",
+     "sourceUrl": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1784807239_acutekidneyinjury-updated.pdf",
+     "sourceEdition": "ICMR STW, July 2026, section Treatment of hyperkalemia"
+    },
+    {
+     "indication": "Severe hyperkalaemia",
+     "patientGroup": "Adults",
+     "genericName": "Salbutamol (nebulised)",
+     "dose": "10–20 mg (ICMR: 10 mg, 4 respules of 2.5 mg)",
+     "route": "Nebulised",
+     "frequency": "Once, may repeat",
+     "duration": "Single dose",
+     "adjustments": [
+      "Paediatric: Paediatric dose not in the cited adult guidelines.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Heart rate, tremor"
+     ],
+     "contraindications": [
+      "Never as sole treatment for severe hyperkalaemia (UKKA 16.4.3)",
+      "Caution in ischaemic heart disease and tachyarrhythmia"
+     ],
+     "branch": "Moderate or severe hyperkalaemia",
+     "step": "Adjunct shift",
+     "selection": "all",
+     "sourceTitle": "Clinical Practice Guideline: Management of Hyperkalaemia in Adults (UK Kidney Association)",
+     "sourceUrl": "https://www.ukkidney.org/sites/default/files/documents/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20UPDATED%20JULY%202026_0.pdf",
+     "sourceEdition": "UKKA, updated July 2026, section 16.4"
+    },
+    {
+     "indication": "Moderate or severe hyperkalaemia",
+     "patientGroup": "Adults",
+     "genericName": "Sodium zirconium cyclosilicate",
+     "dose": "10 g three times daily",
+     "route": "Oral",
+     "frequency": "Three times daily",
+     "duration": "Up to 72 hours",
+     "adjustments": [
+      "Paediatric: Paediatric dose not in the cited adult guidelines.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Usable in CKD.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Potassium, oedema (sodium load)"
+     ],
+     "contraindications": [
+      "Severe constipation or bowel obstruction"
+     ],
+     "branch": "Moderate or severe hyperkalaemia",
+     "step": "Remove potassium",
+     "selection": "one-of",
+     "sourceTitle": "Clinical Practice Guideline: Management of Hyperkalaemia in Adults (UK Kidney Association)",
+     "sourceUrl": "https://www.ukkidney.org/sites/default/files/documents/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20UPDATED%20JULY%202026_0.pdf",
+     "sourceEdition": "UKKA, updated July 2026, section 16.6.1",
+     "preferred": true
+    },
+    {
+     "indication": "Potassium 6.0 mmol/L or more",
+     "patientGroup": "Adults",
+     "genericName": "Patiromer",
+     "dose": "8.4 g once daily",
+     "route": "Oral",
+     "frequency": "Once daily",
+     "duration": "Until potassium controlled",
+     "adjustments": [
+      "Paediatric: Paediatric dose not in the cited adult guidelines.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Usable in CKD.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Potassium, magnesium"
+     ],
+     "contraindications": [
+      "Separate from other oral drugs by 3 hours"
+     ],
+     "branch": "Moderate or severe hyperkalaemia",
+     "step": "Remove potassium",
+     "selection": "one-of",
+     "sourceTitle": "Clinical Practice Guideline: Management of Hyperkalaemia in Adults (UK Kidney Association)",
+     "sourceUrl": "https://www.ukkidney.org/sites/default/files/documents/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20UPDATED%20JULY%202026_0.pdf",
+     "sourceEdition": "UKKA, updated July 2026, section 16.6.2",
+     "preferred": false,
+     "useWhen": "SZC unavailable or not tolerated."
+    },
+    {
+     "indication": "Hyperkalaemia, dialysis unavailable",
+     "patientGroup": "Adults",
+     "genericName": "Calcium polystyrene sulfonate",
+     "dose": "15 g three or four times daily orally; or 30 g retention enema daily",
+     "route": "Oral or rectal",
+     "frequency": "Three or four times daily",
+     "duration": "Until potassium below 5 mmol/L",
+     "adjustments": [
+      "Paediatric: Children 1 g/kg/day in divided doses, then 0.5 g/kg/day (SmPC); no oral use in neonates.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Monitor calcium in chronic renal failure.",
+      "CLD: No adjustment stated."
+     ],
+     "monitoring": [
+      "Potassium, calcium",
+      "Constipation"
+     ],
+     "contraindications": [
+      "Potassium below 5 mmol/L",
+      "Obstructive bowel disease",
+      "Hypercalcaemia states"
+     ],
+     "branch": "Moderate or severe hyperkalaemia",
+     "step": "Remove potassium",
+     "selection": "one-of",
+     "sourceTitle": "Calcium Resonium (calcium polystyrene sulfonate), Summary of Product Characteristics (UK eMC)",
+     "sourceUrl": "https://www.medicines.org.uk/emc/product/1439/smpc",
+     "sourceEdition": "UK SmPC, section 4.2",
+     "preferred": false,
+     "useWhen": "SZC and patiromer unavailable and dialysis not immediately possible (ICMR STW)."
+    }
+   ],
+   "note": "ICMR AKI STW (2026) doses are shown with UKKA (2026) doses where they differ. Remove potassium with binders or dialysis; calcium, insulin and salbutamol only buy time. India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
+  },
+  "teaching": {
+   "scope": "Adult hyperkalaemia in Indian hospitals.",
+   "learningObjectives": [
+    "Grade hyperkalaemia and read the ECG.",
+    "Give treatments in the right order.",
+    "Prevent hypoglycaemia after insulin."
+   ],
+   "keyPoints": [
+    "ECG changes: IV calcium first.",
+    "Insulin 10 units with 25 g glucose; watch glucose for 6 hours.",
+    "Salbutamol is an adjunct only.",
+    "Remove potassium: binder or dialysis."
+   ],
+   "pitfalls": [
+    "Treating a haemolysed sample.",
+    "No glucose monitoring after insulin.",
+    "Restarting RAAS inhibitors too soon.",
+    "Relying on calcium to lower potassium."
+   ],
+   "references": [
+    {
+     "title": "Standard Treatment Workflow: Acute Kidney Injury (ICMR / Department of Health Research)",
+     "edition": "ICMR STW, July 2026",
+     "url": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1784807239_acutekidneyinjury-updated.pdf",
+     "locator": "sections Treatment of hyperkalemia, Indications for dialysis, Desirable actions/investigations"
+    },
+    {
+     "title": "Clinical Practice Guideline: Management of Hyperkalaemia in Adults (UK Kidney Association)",
+     "edition": "UKKA, updated July 2026",
+     "url": "https://www.ukkidney.org/sites/default/files/documents/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20UPDATED%20JULY%202026_0.pdf",
+     "locator": "sections 1.2, 2.1–2.7, 14.1–14.2, 16.1–16.6, 17.1–17.2, 18.1–18.4, 19.6"
+    },
+    {
+     "title": "Calcium Resonium (calcium polystyrene sulfonate), Summary of Product Characteristics (UK eMC)",
+     "edition": "UK SmPC",
+     "url": "https://www.medicines.org.uk/emc/product/1439/smpc",
+     "locator": "sections 4.2, 4.3"
+    }
+   ]
+  },
+  "nonClinicalManagement": {
+   "patientEducation": [
+    "Avoid high-potassium foods while potassium is high (ICMR STW).",
+    "Do not take potassium supplements or salt substitutes.",
+    "Tell the doctor before restarting BP or heart medicines."
+   ],
+   "lifestyleAndDiet": [
+    "Low-potassium diet guided by a dietitian in CKD.",
+    "Avoid NSAIDs."
+   ],
+   "mdtReferrals": [
+    "Nephrologist for dialysis or recurrent hyperkalaemia",
+    "Dietitian",
+    "Critical care if airway, breathing, circulation or consciousness affected (UKKA 19.4)"
+   ],
+   "dischargeCriteria": [
+    "Potassium below 5.5 mmol/L and stable",
+    "Cause addressed",
+    "Medicines reviewed"
+   ],
+   "followUpPlan": "Repeat potassium within 1–3 days; for mild hyperkalaemia in the community repeat within 3 days (UKKA Table 5)."
+  },
+  "guidelineComparison": {
+   "title": "Acute hyperkalaemia doses: ICMR AKI STW vs UKKA",
+   "columns": [
+    "ICMR AKI STW (2026)",
+    "UKKA guideline (2026)"
+   ],
+   "rows": [
+    {
+     "parameter": "Calcium gluconate 10%",
+     "values": [
+      "10 mL over 2–5 minutes, repeat up to 3 times",
+      "30 mL over 10 minutes (6.8 mmol); or calcium chloride 10 mL in arrest"
+     ]
+    },
+    {
+     "parameter": "Insulin-glucose",
+     "values": [
+      "10 units in 50 mL 50% or 100 mL 25% dextrose",
+      "10 units with 25 g glucose; then 10% glucose 50 mL/hour for 5 hours if glucose below 7.0 mmol/L"
+     ]
+    },
+    {
+     "parameter": "Salbutamol",
+     "values": [
+      "10 mg nebulised",
+      "10–20 mg nebulised, adjunct only"
+     ]
+    }
+   ],
+   "note": "Shown as each source states; not merged."
+  }
+ }
+]
