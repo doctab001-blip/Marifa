@@ -1,6 +1,6 @@
 # Marifa India master topic list
 
-Built 24 Oct 2026. 384 topics: 95 authored, 8 placeholders, 281 planned. Statuses updated 24 Oct 2026 after India batches 1–3 (batch 3: atrial fibrillation, stable angina, hypertensive emergency, respiratory failure, appendicitis, gallstones, diabetic foot, renal stones, alcohol use disorder, headache). Priority: P1 161, P2 165, P3 58.
+Built 24 Oct 2026. 384 topics: 112 authored, 1 placeholder, 271 planned. Statuses updated 24 Oct 2026 after India batches 1–5 (batch 5 filled the 7 empty draft placeholders). Priority: P1 161, P2 165, P3 58.
 
 P1 = high burden or high stakes in Indian practice; P2 = common; P3 = specialist or uncommon. The source column is the planned primary Indian source; every topic still cites exact sections from sources opened during authoring.
 
@@ -63,7 +63,7 @@ P1 = high burden or high stakes in Indian practice; P2 = common; P3 = specialist
 | Hypertensive emergency and urgency | Urgent Care | P1 | ICMR STW Hypertension | authored |
 | NSTEMI and unstable angina | Urgent Care | P1 | ICMR STW NSTEMI | authored |
 | Pulmonary embolism | Urgent Care | P1 | ESC 2019 | planned |
-| Rheumatic fever and rheumatic heart disease | Chronic Care | P1 | ICMR; WHF | placeholder |
+| Rheumatic fever and rheumatic heart disease | Chronic Care | P1 | ICMR; WHF | authored |
 | STEMI: reperfusion and transfer | Urgent Care | P1 | ICMR STW STEMI; MoHFW STG | authored |
 | Stable angina and chronic coronary syndrome | Chronic Care | P1 | ICMR STW Stable angina | authored |
 | Acute aortic dissection | Urgent Care | P2 | ESC/ACC | planned |
@@ -118,11 +118,11 @@ P1 = high burden or high stakes in Indian practice; P2 = common; P3 = specialist
 | Acute infectious diarrhoea and dysentery (adult) | Urgent Care | P1 | NCDC-ICMR NTG 2025 | planned |
 | Acute undifferentiated fever | Urgent Care | P1 | NCDC-ICMR NTG 2025 | authored |
 | Acute viral hepatitis (A and E) | Urgent Care | P1 | NVHCP | authored |
-| Anti-TB drug-induced hepatitis | Urgent Care | P1 | ICMR STW ATT hepatitis | planned |
+| Anti-TB drug-induced hepatitis | Urgent Care | P1 | ICMR STW ATT hepatitis | authored |
 | Antimicrobial stewardship: principles for Indian hospitals | Planned Care | P1 | ICMR AMSP; NCDC-ICMR NTG | planned |
 | Chikungunya | Urgent Care | P1 | NCVBDC | authored |
-| Chronic hepatitis B | Chronic Care | P1 | NVHCP 2018 | placeholder |
-| Chronic hepatitis C | Chronic Care | P1 | NVHCP 2018 | placeholder |
+| Chronic hepatitis B | Chronic Care | P1 | NVHCP 2018 | authored |
+| Chronic hepatitis C | Chronic Care | P1 | NVHCP 2018 | authored |
 | Dengue | Urgent Care | P1 | NCVBDC dengue guidelines | authored |
 | Enteric fever | Urgent Care | P1 | ICMR NTG | authored |
 | Extrapulmonary TB | Chronic Care | P1 | ICMR STW Vol II | authored |
@@ -134,10 +134,10 @@ P1 = high burden or high stakes in Indian practice; P2 = common; P3 = specialist
 | Scrub typhus | Urgent Care | P1 | ICMR | authored |
 | Severe malaria | Urgent Care | P1 | NCVBDC severe malaria | planned |
 | Sexually transmitted infections: syndromic management | Keep Well | P1 | NACO STI/RTI technical guidelines | planned |
-| Skin and soft-tissue infections (cellulitis, abscess) | Urgent Care | P1 | ICMR STW bacterial skin infections | planned |
+| Skin and soft-tissue infections (cellulitis, abscess) | Urgent Care | P1 | ICMR STW bacterial skin infections | authored |
 | TB preventive treatment and contact screening | Keep Well | P1 | NTEP TPT 2021 | authored |
 | Tetanus | Urgent Care | P1 | MoHFW | authored |
-| Tuberculous meningitis (adult) | Urgent Care | P1 | ICMR STW EPTB TBM | planned |
+| Tuberculous meningitis (adult) | Urgent Care | P1 | ICMR STW EPTB TBM | authored |
 | Urinary tract infection and pyelonephritis (adult) | Urgent Care | P1 | ICMR STW UTI; NCDC-ICMR NTG | authored |
 | Amoebic liver abscess | Urgent Care | P2 | ICMR | authored |
 | Cholera | Urgent Care | P2 | MoHFW | authored |
@@ -176,7 +176,7 @@ P1 = high burden or high stakes in Indian practice; P2 = common; P3 = specialist
 | Ascites and spontaneous bacterial peritonitis | Urgent Care | P1 | INASL | planned |
 | Cirrhosis: long-term care | Chronic Care | P1 | INASL; Baveno VII | planned |
 | Hepatic encephalopathy | Urgent Care | P1 | INASL | planned |
-| Jaundice: approach | Urgent Care | P1 | ICMR STW Jaundice | planned |
+| Jaundice: approach | Urgent Care | P1 | ICMR STW Jaundice | authored |
 | Metabolic dysfunction-associated steatotic liver disease | Chronic Care | P1 | NPCDCS NAFLD operational guidelines; INASL | planned |
 | Upper GI bleeding (variceal and non-variceal) | Urgent Care | P1 | ICMR STW GI bleed A | authored |
 | Acute liver failure | Urgent Care | P2 | ICMR STW Liver failure; INASL | planned |
@@ -200,7 +200,7 @@ P1 = high burden or high stakes in Indian practice; P2 = common; P3 = specialist
 |---|---|---|---|---|
 | Acute abdomen: approach | Urgent Care | P1 | ICMR STW General Surgery | planned |
 | Acute appendicitis | Urgent Care | P1 | ICMR STW Appendicitis | authored |
-| Breast lump: triple assessment | Planned Care | P1 | ICMR STW Breast cancer | placeholder |
+| Breast lump: triple assessment | Planned Care | P1 | ICMR STW Breast cancer | authored |
 | Common bile duct stones and cholangitis | Urgent Care | P1 | ICMR STW CBD stone; Tokyo | planned |
 | Diabetic foot | Chronic Care | P1 | ICMR STW Diabetic foot | authored |
 | Gallstone disease and acute cholecystitis | Urgent Care | P1 | ICMR STW Gallstone | authored |
@@ -236,7 +236,7 @@ P1 = high burden or high stakes in Indian practice; P2 = common; P3 = specialist
 
 | Topic | Pillar | Priority | Planned primary source | Status |
 |---|---|---|---|---|
-| Acute urinary retention | Urgent Care | P1 | ICMR STW AUR | planned |
+| Acute urinary retention | Urgent Care | P1 | ICMR STW AUR | authored |
 | Renal and ureteric stones | Urgent Care | P1 | ICMR STW Renal stones | authored |
 | Benign prostatic hyperplasia | Chronic Care | P2 | USI | planned |
 | Gross haematuria | Urgent Care | P2 | ICMR STW Haematuria | planned |
@@ -248,7 +248,7 @@ P1 = high burden or high stakes in Indian practice; P2 = common; P3 = specialist
 
 | Topic | Pillar | Priority | Planned primary source | Status |
 |---|---|---|---|---|
-| Acute flaccid paralysis and Guillain-Barré syndrome | Urgent Care | P1 | ICMR STW Acute paralysis | planned |
+| Acute flaccid paralysis and Guillain-Barré syndrome | Urgent Care | P1 | ICMR STW Acute paralysis | authored |
 | Acute stroke | Urgent Care | P1 | ICMR STW Stroke | authored |
 | Epilepsy | Chronic Care | P1 | ICMR STW Epilepsy | authored |
 | Headache and migraine | Chronic Care | P1 | ICMR STW Headache | authored |
@@ -271,7 +271,7 @@ P1 = high burden or high stakes in Indian practice; P2 = common; P3 = specialist
 |---|---|---|---|---|
 | Diabetes complications screening (eye, kidney, foot) | Chronic Care | P1 | NPCDCS; ICMR STW | planned |
 | Diabetic ketoacidosis and HHS | Urgent Care | P1 | ICMR STW DKA | authored |
-| Hypoglycaemia | Urgent Care | P1 | ICMR STW T2DM; ADA | planned |
+| Hypoglycaemia | Urgent Care | P1 | ICMR STW T2DM; ADA | authored |
 | Hypothyroidism | Chronic Care | P1 | ICMR STW Hypothyroidism | authored |
 | Insulin initiation and titration | Chronic Care | P1 | RSSDI | planned |
 | Type 2 diabetes | Chronic Care | P1 | ICMR STW T2DM; RSSDI | authored |
@@ -332,7 +332,7 @@ P1 = high burden or high stakes in Indian practice; P2 = common; P3 = specialist
 |---|---|---|---|---|
 | Dermatophytosis (tinea) | Chronic Care | P1 | ICMR STW Dermatophytosis | planned |
 | Scabies | Urgent Care | P1 | ICMR STW Scabies | planned |
-| Severe cutaneous adverse drug reactions (SJS/TEN, DRESS) | Urgent Care | P1 | ICMR STW Cutaneous ADR | planned |
+| Severe cutaneous adverse drug reactions (SJS/TEN, DRESS) | Urgent Care | P1 | ICMR STW Cutaneous ADR | authored |
 | Bacterial skin infections (impetigo, folliculitis) | Urgent Care | P2 | ICMR STW | planned |
 | Eczema and dermatitis | Chronic Care | P2 | ICMR STW Eczema | planned |
 | Psoriasis | Chronic Care | P2 | ICMR STW Psoriasis | planned |
@@ -348,7 +348,7 @@ P1 = high burden or high stakes in Indian practice; P2 = common; P3 = specialist
 
 | Topic | Pillar | Priority | Planned primary source | Status |
 |---|---|---|---|---|
-| Pharyngitis and sore throat | Urgent Care | P1 | ICMR STW | planned |
+| Pharyngitis and sore throat | Urgent Care | P1 | ICMR STW | authored |
 | Acute otitis media | Urgent Care | P2 | review | planned |
 | Acute rhinosinusitis | Urgent Care | P2 | ICMR STW | planned |
 | Epistaxis | Urgent Care | P2 | ICMR STW Epistaxis | planned |
@@ -396,12 +396,12 @@ P1 = high burden or high stakes in Indian practice; P2 = common; P3 = specialist
 | Anaemia in pregnancy | Safe Birth | P1 | Anaemia Mukt Bharat | authored |
 | Antenatal care (normal pregnancy) | Safe Birth | P1 | ICMR STW Antenatal; MoHFW ANC | authored |
 | Antepartum haemorrhage (placenta praevia, abruption) | Safe Birth | P1 | MoHFW; RCOG | planned |
-| Ectopic pregnancy | Urgent Care | P1 | MoHFW; RCOG | placeholder |
+| Ectopic pregnancy | Urgent Care | P1 | MoHFW; RCOG | authored |
 | Gestational diabetes | Safe Birth | P1 | MoHFW GDM 2018 | authored |
 | Hypertensive disorders of pregnancy and eclampsia | Safe Birth | P1 | MoHFW | authored |
 | Labour management and partograph | Safe Birth | P1 | MoHFW LaQshya; WHO labour care guide | planned |
-| Maternal sepsis | Safe Birth | P1 | MoHFW; WHO | placeholder |
-| Miscarriage and post-abortion care | Safe Birth | P1 | MoHFW CAC guidelines | placeholder |
+| Maternal sepsis | Safe Birth | P1 | MoHFW; WHO | authored |
+| Miscarriage and post-abortion care | Safe Birth | P1 | MoHFW CAC guidelines | authored |
 | Postnatal care | Safe Birth | P1 | MoHFW PNC | planned |
 | Postpartum haemorrhage | Safe Birth | P1 | ICMR STW PPH; MoHFW | authored |
 | Preterm labour and preterm prelabour rupture of membranes | Safe Birth | P1 | MoHFW antenatal corticosteroids; WHO | planned |
@@ -419,7 +419,7 @@ P1 = high burden or high stakes in Indian practice; P2 = common; P3 = specialist
 |---|---|---|---|---|
 | Cervical cancer screening (VIA) | Keep Well | P1 | NPCDCS operational guidelines | authored |
 | Contraception | Keep Well | P1 | MoHFW Family Planning | planned |
-| Heavy menstrual bleeding and AUB | Chronic Care | P1 | ICMR STW HMB | planned |
+| Heavy menstrual bleeding and AUB | Chronic Care | P1 | ICMR STW HMB | authored |
 | Pelvic inflammatory disease and RTI | Urgent Care | P1 | NACO STI/RTI | planned |
 | Vaginal discharge: syndromic approach | Urgent Care | P1 | NACO STI/RTI | planned |
 | Acute pelvic pain (torsion, ruptured cyst) | Urgent Care | P2 | review | planned |
