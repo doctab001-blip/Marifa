@@ -5,7 +5,7 @@
   "specialty": "Neurology / Emergency Medicine",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-b2-2026-10-24-v1",
+  "version": "india-b2-2026-10-24-v2",
   "lastReviewed": "2026-10-24",
   "pillar": "Urgent Care",
   "clinicalReviewStatus": "pending",
@@ -20,9 +20,7 @@
     "Not clinically reviewed."
    ],
    "unverifiedSections": [
-    "The blood pressure that must be reached before alteplase (AHA/ASA Table 5) was not available in the text opened; no pre-thrombolysis threshold is stated.",
-    "No source opened gives aspirin or clopidogrel doses for stroke; antiplatelet timing only is stated.",
-    "Tenecteplase dosing for stroke was not found in the sources opened and is not included.",
+    "The ICMR workflow gives no doses for thrombolysis, blood pressure drugs, antiplatelets or statins; these come from AHA/ASA 2019 (Table 5, sections 3.6 and 3.9) and the 2018 AHA/ACC cholesterol guideline (Table 3).",
     "Normal laboratory ranges are typical adult values.",
     "Drug cautions and contraindications without a source tag are general pharmacology statements and need formulary confirmation."
    ],
@@ -321,6 +319,14 @@
     {
      "label": "Ischaemic stroke within 4.5 hours",
      "entryCriteria": "CT excludes haemorrhage; onset or last known normal within 4.5 hours; no contraindication."
+    },
+    {
+     "label": "Blood pressure for reperfusion",
+     "entryCriteria": "BP above 185/110 mmHg before, or above 180/105 mmHg after, thrombolysis or thrombectomy."
+    },
+    {
+     "label": "Antiplatelet and statin",
+     "entryCriteria": "Ischaemic stroke confirmed on imaging; haemorrhage excluded."
     }
    ],
    "regimens": [
@@ -348,13 +354,189 @@
      ],
      "branch": "Ischaemic stroke within 4.5 hours",
      "step": "IV thrombolysis",
-     "selection": "all",
+     "selection": "one-of",
      "sourceTitle": "2019 Update to the 2018 Guidelines for the Early Management of Acute Ischemic Stroke (AHA/ASA)",
      "sourceUrl": "https://www.ahajournals.org/doi/10.1161/STR.0000000000000211",
-     "sourceEdition": "Stroke 2019;50:e344-e418, Table 9"
+     "sourceEdition": "Stroke 2019;50:e344-e418, Table 9",
+     "preferred": true
+    },
+    {
+     "indication": "Acute ischaemic stroke with large-vessel occlusion",
+     "patientGroup": "Adults eligible for both thrombolysis and thrombectomy",
+     "genericName": "Tenecteplase",
+     "dose": "0.25 mg/kg (maximum 25 mg)",
+     "route": "IV",
+     "frequency": "Single bolus",
+     "duration": "Single dose",
+     "adjustments": [
+      "Paediatric: Adult guideline; not for children in the cited sources.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Not specified in the cited sources.",
+      "CLD: Not specified in the cited sources."
+     ],
+     "monitoring": [
+      "As for alteplase: BP and neurological checks; keep BP at or below 180/105 mmHg"
+     ],
+     "contraindications": [
+      "Haemorrhage on CT",
+      "0.4 mg/kg is not proven superior or non-inferior to alteplase (AHA/ASA 3.6)"
+     ],
+     "branch": "Ischaemic stroke within 4.5 hours",
+     "step": "IV thrombolysis",
+     "selection": "one-of",
+     "sourceTitle": "2019 Update to the 2018 Guidelines for the Early Management of Acute Ischemic Stroke (AHA/ASA)",
+     "sourceUrl": "https://www.ahajournals.org/doi/10.1161/STR.0000000000000211",
+     "sourceEdition": "Stroke 2019;50:e344-e418, section 3.6, recommendation 1",
+     "preferred": false,
+     "useWhen": "Patient also eligible for mechanical thrombectomy (AHA/ASA 2019, class IIb)."
+    },
+    {
+     "indication": "BP above 185/110 mmHg before reperfusion, or above 180/105 mmHg after",
+     "patientGroup": "Adults otherwise eligible for reperfusion",
+     "genericName": "Labetalol",
+     "dose": "10–20 mg over 1–2 minutes, may repeat once; after alteplase 10 mg then infusion 2–8 mg/min",
+     "route": "IV",
+     "frequency": "Bolus; infusion if needed after alteplase",
+     "duration": "Until BP at or below 185/110 (before) or 180/105 mmHg (for 24 hours after)",
+     "adjustments": [
+      "Paediatric: Adult guideline; not for children in the cited sources.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Not specified in the cited sources.",
+      "CLD: Not specified in the cited sources."
+     ],
+     "monitoring": [
+      "BP every 15 minutes for 2 hours, every 30 minutes for 6 hours, then hourly for 16 hours (AHA/ASA Table 5)"
+     ],
+     "contraindications": [
+      "Do not give alteplase if BP is not maintained at or below 185/110 mmHg (AHA/ASA Table 5)",
+      "Asthma, bradycardia, heart block"
+     ],
+     "branch": "Blood pressure for reperfusion",
+     "step": "BP lowering before thrombolysis",
+     "selection": "one-of",
+     "sourceTitle": "2019 Update to the 2018 Guidelines for the Early Management of Acute Ischemic Stroke (AHA/ASA)",
+     "sourceUrl": "https://www.ahajournals.org/doi/10.1161/STR.0000000000000211",
+     "sourceEdition": "Stroke 2019;50:e344-e418, Table 5",
+     "preferred": true
+    },
+    {
+     "indication": "BP above 185/110 mmHg before reperfusion, or above 180/105 mmHg after",
+     "patientGroup": "Adults otherwise eligible for reperfusion",
+     "genericName": "Nicardipine",
+     "dose": "5 mg/h, titrate by 2.5 mg/h every 5–15 minutes; maximum 15 mg/h",
+     "route": "IV infusion",
+     "frequency": "Continuous",
+     "duration": "Until target BP reached, then adjust to maintain limits",
+     "adjustments": [
+      "Paediatric: Adult guideline; not for children in the cited sources.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Not specified in the cited sources.",
+      "CLD: Not specified in the cited sources."
+     ],
+     "monitoring": [
+      "BP every 15 minutes for 2 hours, then as Table 5"
+     ],
+     "contraindications": [
+      "Severe aortic stenosis"
+     ],
+     "branch": "Blood pressure for reperfusion",
+     "step": "BP lowering before thrombolysis",
+     "selection": "one-of",
+     "sourceTitle": "2019 Update to the 2018 Guidelines for the Early Management of Acute Ischemic Stroke (AHA/ASA)",
+     "sourceUrl": "https://www.ahajournals.org/doi/10.1161/STR.0000000000000211",
+     "sourceEdition": "Stroke 2019;50:e344-e418, Table 5",
+     "preferred": false,
+     "useWhen": "Labetalol contraindicated (asthma, bradycardia) or ineffective."
+    },
+    {
+     "indication": "Acute ischaemic stroke",
+     "patientGroup": "Adults with ischaemic stroke",
+     "genericName": "Aspirin",
+     "dose": "160–300 mg",
+     "route": "Oral (rectal or nasogastric if unable to swallow)",
+     "frequency": "Once daily",
+     "duration": "Start within 24–48 hours; after alteplase delay 24 hours (after repeat imaging)",
+     "adjustments": [
+      "Paediatric: Adult guideline; not for children in the cited sources.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Not specified in the cited sources.",
+      "CLD: Not specified in the cited sources."
+     ],
+     "monitoring": [
+      "Bleeding"
+     ],
+     "contraindications": [
+      "Haemorrhagic stroke",
+      "Aspirin allergy"
+     ],
+     "branch": "Antiplatelet and statin",
+     "step": "Early antiplatelet",
+     "selection": "one-of",
+     "sourceTitle": "2019 Update to the 2018 Guidelines for the Early Management of Acute Ischemic Stroke (AHA/ASA)",
+     "sourceUrl": "https://www.ahajournals.org/doi/10.1161/STR.0000000000000211",
+     "sourceEdition": "Stroke 2019;50:e344-e418, section 3.9, recommendation 1",
+     "preferred": true
+    },
+    {
+     "indication": "Minor non-cardioembolic stroke (NIHSS 3 or less) without alteplase",
+     "patientGroup": "Adults",
+     "genericName": "Clopidogrel with aspirin (dual antiplatelet therapy)",
+     "dose": "Clopidogrel 300 mg loading then 75 mg daily, plus aspirin 75 mg daily (CHANCE regimen)",
+     "route": "Oral",
+     "frequency": "Once daily",
+     "duration": "21 days, then single antiplatelet",
+     "adjustments": [
+      "Paediatric: Adult guideline; not for children in the cited sources.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Not specified in the cited sources.",
+      "CLD: Not specified in the cited sources."
+     ],
+     "monitoring": [
+      "Bleeding"
+     ],
+     "contraindications": [
+      "Haemorrhagic stroke",
+      "Received IV alteplase"
+     ],
+     "branch": "Antiplatelet and statin",
+     "step": "Early antiplatelet",
+     "selection": "one-of",
+     "sourceTitle": "2019 Update to the 2018 Guidelines for the Early Management of Acute Ischemic Stroke (AHA/ASA)",
+     "sourceUrl": "https://www.ahajournals.org/doi/10.1161/STR.0000000000000211",
+     "sourceEdition": "Stroke 2019;50:e344-e418, section 3.9, recommendation 2",
+     "preferred": false,
+     "useWhen": "Minor stroke (NIHSS 3 or less), non-cardioembolic, no alteplase, start within 24 hours."
+    },
+    {
+     "indication": "Secondary prevention after ischaemic stroke",
+     "patientGroup": "Adults with atherosclerotic ischaemic stroke",
+     "genericName": "Atorvastatin",
+     "dose": "40–80 mg (high intensity)",
+     "route": "Oral",
+     "frequency": "Once daily",
+     "duration": "Long term",
+     "adjustments": [
+      "Paediatric: Adult guideline; not for children in the cited sources.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment needed.",
+      "CLD: Avoid in active liver disease."
+     ],
+     "monitoring": [
+      "Fasting lipids and safety tests 4–12 weeks after starting (AHA/ASA 6.8.1)"
+     ],
+     "contraindications": [
+      "Active liver disease",
+      "Pregnancy"
+     ],
+     "branch": "Antiplatelet and statin",
+     "step": "Statin",
+     "selection": "all",
+     "sourceTitle": "2018 AHA/ACC Guideline on the Management of Blood Cholesterol",
+     "sourceUrl": "https://www.ahajournals.org/doi/10.1161/CIR.0000000000000625",
+     "sourceEdition": "Circulation 2019;139:e1082-e1143, Table 3"
     }
    ],
-   "note": "Alteplase dose and monitoring are from AHA/ASA 2019 Table 9; the ICMR workflow recommends IV tPA within 4.5 hours without a dose. Antiplatelet timing is from the ACC summary; doses were not in the sources opened. India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
+   "note": "The ICMR workflow names thrombolysis, antiplatelets and lipid-lowering drugs without doses, so doses are from AHA/ASA 2019 (alteplase Table 9, tenecteplase section 3.6, BP drugs Table 5, aspirin and dual antiplatelet therapy section 3.9) and the 2018 AHA/ACC cholesterol guideline (statin intensity Table 3). India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
   },
   "teaching": {
    "scope": "Acute stroke in India.",
@@ -386,7 +568,7 @@
      "title": "2019 Update to the 2018 Guidelines for the Early Management of Acute Ischemic Stroke (AHA/ASA)",
      "edition": "Stroke 2019;50:e344-e418",
      "url": "https://www.ahajournals.org/doi/10.1161/STR.0000000000000211",
-     "locator": "Table 9"
+     "locator": "Tables 5 and 9; sections 3.6 and 3.9"
     },
     {
      "title": "Guidelines for the Early Management of Acute Ischemic Stroke: Key Points (ACC summary of AHA/ASA 2019)",
@@ -449,7 +631,7 @@
   "specialty": "Pulmonology / Emergency Medicine",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-b2-2026-10-24-v1",
+  "version": "india-b2-2026-10-24-v2",
   "lastReviewed": "2026-10-24",
   "pillar": "Urgent Care",
   "clinicalReviewStatus": "pending",
@@ -462,8 +644,7 @@
     "Not clinically reviewed."
    ],
    "unverifiedSections": [
-    "The ICMR workflow gives no magnesium sulphate, aminophylline or ventilation guidance; none is added.",
-    "Paediatric exacerbation doses are not in the ICMR adult workflow.",
+    "The ICMR workflow gives no magnesium sulphate or paediatric doses; these are from GINA 2024. GINA does not recommend aminophylline (no added benefit over SABA), so it is not included.",
     "Normal values are typical adult values.",
     "Drug cautions and contraindications without a source tag are general pharmacology statements and need formulary confirmation."
    ],
@@ -718,7 +899,7 @@
      "frequency": "Continuous",
      "duration": "Until stable on room air",
      "adjustments": [
-      "Paediatric: Adult workflow; children follow a paediatric asthma protocol (not covered by the ICMR STW).",
+      "Paediatric: Children 5 years and younger: oxygen to keep SpO2 94–98% (GINA 2024 Box 12-4).",
       "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
       "CKD: Not specified in the cited sources.",
       "CLD: Not specified in the cited sources."
@@ -745,7 +926,7 @@
      "frequency": "Three doses at 20-minute intervals, then 4–6-hourly or as needed",
      "duration": "Until improved",
      "adjustments": [
-      "Paediatric: Adult workflow; children follow a paediatric asthma protocol (not covered by the ICMR STW).",
+      "Paediatric: Children 5 years and younger: salbutamol 2–6 puffs by spacer or 2.5 mg nebulised every 20 minutes for the first hour; ipratropium 250 mcg nebulised every 20 minutes for 1 hour only (GINA 2024 Box 12-4).",
       "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
       "CKD: Not specified in the cited sources.",
       "CLD: Not specified in the cited sources."
@@ -772,7 +953,7 @@
      "frequency": "Once on admission",
      "duration": "Then oral prednisolone",
      "adjustments": [
-      "Paediatric: Adult workflow; children follow a paediatric asthma protocol (not covered by the ICMR STW).",
+      "Paediatric: Children: prednisolone 1–2 mg/kg/day for 3–5 days, maximum 20 mg (under 2 years), 30 mg (2–5 years), 40 mg (6–11 years) (GINA 2024 Box 12-4, section 9).",
       "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
       "CKD: Not specified in the cited sources.",
       "CLD: Not specified in the cited sources."
@@ -799,7 +980,7 @@
      "frequency": "Once daily",
      "duration": "5 days",
      "adjustments": [
-      "Paediatric: Adult workflow; children follow a paediatric asthma protocol (not covered by the ICMR STW).",
+      "Paediatric: Children: prednisolone 1–2 mg/kg/day for 3–5 days, maximum 20 mg (under 2 years), 30 mg (2–5 years), 40 mg (6–11 years) (GINA 2024 Box 12-4, section 9).",
       "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
       "CKD: Not specified in the cited sources.",
       "CLD: Not specified in the cited sources."
@@ -818,6 +999,34 @@
      "sourceEdition": "ICMR STW, October 2019, section Disease exacerbation"
     },
     {
+     "indication": "Severe exacerbation not responding to initial treatment",
+     "patientGroup": "Admitted adults",
+     "genericName": "Magnesium sulphate",
+     "dose": "2 g",
+     "route": "IV infusion over 20 minutes",
+     "frequency": "Single dose",
+     "duration": "Once",
+     "adjustments": [
+      "Paediatric: Children 2 years and older with a severe exacerbation: nebulised isotonic magnesium sulphate 150 mg, 3 doses in the first hour (GINA 2024 Box 12-4).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Use with caution in severe kidney impairment (magnesium is renally excreted).",
+      "CLD: Not specified in the cited sources."
+     ],
+     "monitoring": [
+      "BP, reflexes, respiratory rate"
+     ],
+     "contraindications": [
+      "Not for routine use (GINA)",
+      "Hypotension"
+     ],
+     "branch": "Severe acute asthma",
+     "step": "Add-on for poor response",
+     "selection": "all",
+     "sourceTitle": "Global Strategy for Asthma Management and Prevention (GINA) 2024 Strategy Report",
+     "sourceUrl": "https://ginasthma.org/wp-content/uploads/2024/05/GINA-2024-Strategy-Report-24_05_22_WMS.pdf",
+     "sourceEdition": "GINA 2024, section 9, printed p. 175"
+    },
+    {
      "indication": "Exacerbation",
      "patientGroup": "Adults managed as outpatients",
      "genericName": "Prednisolone",
@@ -826,7 +1035,7 @@
      "frequency": "Once daily",
      "duration": "5 days",
      "adjustments": [
-      "Paediatric: Adult workflow; children follow a paediatric asthma protocol (not covered by the ICMR STW).",
+      "Paediatric: Children: prednisolone 1–2 mg/kg/day for 3–5 days, maximum 20 mg (under 2 years), 30 mg (2–5 years), 40 mg (6–11 years) (GINA 2024 Box 12-4, section 9).",
       "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
       "CKD: Not specified in the cited sources.",
       "CLD: Not specified in the cited sources."
@@ -845,7 +1054,7 @@
      "sourceEdition": "ICMR STW, October 2019, section Disease exacerbation"
     }
    ],
-   "note": "All doses are from the ICMR Asthma STW (October 2019). India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
+   "note": "Adult doses are from the ICMR Asthma STW (October 2019); magnesium sulphate and children's doses are from GINA 2024. India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
   },
   "teaching": {
    "scope": "Asthma exacerbations in adults in India.",
@@ -871,6 +1080,12 @@
      "edition": "ICMR STW, October 2019",
      "url": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1725952329_pulmonology_asthma.pdf",
      "locator": "sections When to suspect exacerbation, Severe acute asthma, Life-threatening exacerbation, Non-severe acute asthma, Try and rule out"
+    },
+    {
+     "title": "Global Strategy for Asthma Management and Prevention (GINA) 2024 Strategy Report",
+     "edition": "GINA 2024",
+     "url": "https://ginasthma.org/wp-content/uploads/2024/05/GINA-2024-Strategy-Report-24_05_22_WMS.pdf",
+     "locator": "section 9 (printed pp. 168–175) and Box 12-4 (printed p. 201)"
     }
    ]
   },
@@ -894,6 +1109,30 @@
     "Room-air SpO2 above 94% (ICMR STW)"
    ],
    "followUpPlan": "Outpatient review at 1 week (ICMR STW); step up controller therapy as in the asthma long-term care topic."
+  },
+  "guidelineComparison": {
+   "title": "Oral corticosteroid for exacerbations: ICMR vs GINA 2024",
+   "columns": [
+    "ICMR Asthma STW (2019)",
+    "GINA 2024"
+   ],
+   "rows": [
+    {
+     "parameter": "Adult prednisolone",
+     "values": [
+      "0.5 mg/kg daily for 5 days",
+      "1 mg/kg/day up to 50 mg/day; 40–50 mg/day for 5–7 days"
+     ]
+    },
+    {
+     "parameter": "IV magnesium",
+     "values": [
+      "Not mentioned",
+      "Single 2 g over 20 minutes for severe exacerbations not responding to initial treatment"
+     ]
+    }
+   ],
+   "note": "Shown as each source states; not merged."
   }
  },
  {
@@ -902,7 +1141,7 @@
   "specialty": "Pulmonology / Primary Care",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-b2-2026-10-24-v1",
+  "version": "india-b2-2026-10-24-v2",
   "lastReviewed": "2026-10-24",
   "pillar": "Chronic Care",
   "clinicalReviewStatus": "pending",
@@ -915,8 +1154,7 @@
     "Not clinically reviewed."
    ],
    "unverifiedSections": [
-    "The ICMR workflow mentions low-dose oral methylxanthine and low-dose oral corticosteroids for poor control without doses; none are given.",
-    "Children are outside the ICMR adult workflow.",
+    "The ICMR workflow names low-dose oral methylxanthine and low-dose oral corticosteroids without doses; doses are from the theophylline label and GINA 2024. Montelukast and children's inhaled corticosteroid doses are from the montelukast label and GINA 2024.",
     "Normal values are typical adult values.",
     "Drug cautions and contraindications without a source tag are general pharmacology statements and need formulary confirmation."
    ],
@@ -1217,7 +1455,7 @@
      "frequency": "Twice daily",
      "duration": "Long term; review at 3–4 weeks",
      "adjustments": [
-      "Paediatric: Adult workflow; paediatric asthma doses are not given in the ICMR STW.",
+      "Paediatric: Children 6–11 years: low-dose budesonide 100–200 µg total daily (GINA 2024 Box 4-2).",
       "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
       "CKD: Not specified in the cited sources.",
       "CLD: Not specified in the cited sources."
@@ -1313,13 +1551,99 @@
      ],
      "branch": "Poor control on step 3",
      "step": "Add-on",
-     "selection": "all",
+     "selection": "one-of",
      "sourceTitle": "Standard Treatment Workflow: Asthma (ICMR / Department of Health Research)",
      "sourceUrl": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1725952329_pulmonology_asthma.pdf",
-     "sourceEdition": "ICMR STW, October 2019, Figure 1 (initiation and modulation of pharmacotherapy)"
+     "sourceEdition": "ICMR STW, October 2019, Figure 1 (initiation and modulation of pharmacotherapy)",
+     "preferred": true
+    },
+    {
+     "indication": "Inadequate control",
+     "patientGroup": "Adults on formoterol/budesonide",
+     "genericName": "Montelukast",
+     "dose": "10 mg",
+     "route": "Oral",
+     "frequency": "Once daily (evening)",
+     "duration": "Long term",
+     "adjustments": [
+      "Paediatric: 6–14 years 5 mg chewable; 2–5 years 4 mg; 12–23 months 4 mg granules (label section 2.1).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment needed.",
+      "CLD: Not specified in the cited sources."
+     ],
+     "monitoring": [
+      "Mood, sleep and behaviour changes"
+     ],
+     "contraindications": [
+      "Boxed warning: serious neuropsychiatric events — stop if mood or behaviour changes"
+     ],
+     "branch": "Poor control on step 3",
+     "step": "Add-on",
+     "selection": "one-of",
+     "sourceTitle": "Montelukast (Singulair), US prescribing information (DailyMed)",
+     "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=482dcc92-b47f-4ea6-854a-f5ac2aea7842",
+     "sourceEdition": "DailyMed label, section 2.1",
+     "preferred": false,
+     "useWhen": "Tiotropium unavailable or not tolerated."
+    },
+    {
+     "indication": "Persistent poor control",
+     "patientGroup": "Adults over 16 without risk factors for reduced clearance",
+     "genericName": "Theophylline (extended release)",
+     "dose": "Start 300 mg/day; after 3 days 400 mg/day; after 3 more days up to 600 mg/day if needed",
+     "route": "Oral",
+     "frequency": "Once daily",
+     "duration": "Long term; levels above 600 mg/day",
+     "adjustments": [
+      "Paediatric: Children 12–15 years under 45 kg: 12–14 mg/kg/day (max 300 mg) rising to 20 mg/kg/day (max 600 mg) (label Table V).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Not specified in the cited sources.",
+      "CLD: Hepatic impairment, heart failure or age over 60: do not exceed 400 mg/day (label Table V)."
+     ],
+     "monitoring": [
+      "Serum level 10–15 mcg/mL peak",
+      "Nausea, palpitations"
+     ],
+     "contraindications": [
+      "Many drug interactions (e.g. ciprofloxacin, erythromycin)",
+      "Seizure disorder, arrhythmia"
+     ],
+     "branch": "Poor control on step 3",
+     "step": "Last-resort add-on: methylxanthine",
+     "selection": "all",
+     "sourceTitle": "Theophylline (anhydrous) extended-release tablets, US prescribing information (DailyMed)",
+     "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=04f1d1da-ce61-45b3-acf4-903cc81d16da",
+     "sourceEdition": "DailyMed label, Table V"
+    },
+    {
+     "indication": "Severe asthma with poor control despite above",
+     "patientGroup": "Adults with severe asthma (specialist)",
+     "genericName": "Prednisolone",
+     "dose": "7.5 mg or less (low dose)",
+     "route": "Oral",
+     "frequency": "Once daily, morning",
+     "duration": "Shortest possible; specialist review",
+     "adjustments": [
+      "Paediatric: Adult workflow; paediatric asthma doses are not given in the ICMR STW.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Not specified in the cited sources.",
+      "CLD: Not specified in the cited sources."
+     ],
+     "monitoring": [
+      "Blood glucose, BP, bone health"
+     ],
+     "contraindications": [
+      "Cumulative steroid adverse effects"
+     ],
+     "branch": "Poor control on step 3",
+     "step": "Last-resort add-on: oral corticosteroid",
+     "selection": "all",
+     "sourceTitle": "Global Strategy for Asthma Management and Prevention (GINA) 2024 Strategy Report",
+     "sourceUrl": "https://ginasthma.org/wp-content/uploads/2024/05/GINA-2024-Strategy-Report-24_05_22_WMS.pdf",
+     "sourceEdition": "GINA 2024, section 4, printed p. 92"
     }
    ],
-   "note": "Inhaler doses are from the ICMR Asthma STW (October 2019). Low-dose methylxanthine and oral corticosteroid steps are named by ICMR without doses. India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
+   "note": "Inhaler doses are from the ICMR Asthma STW (October 2019). ICMR names low-dose methylxanthine and oral corticosteroid steps without doses; theophylline doses are from the label and low-dose prednisolone from GINA 2024; montelukast is a GINA alternative add-on. India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
   },
   "teaching": {
    "scope": "Long-term asthma care in adults in India.",
@@ -1344,6 +1668,12 @@
      "edition": "ICMR STW, October 2019",
      "url": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1725952329_pulmonology_asthma.pdf",
      "locator": "sections Symptoms, Try and rule out, Guiding principles, Approach to diagnosis, Figure 1, Tables 1 and 2"
+    },
+    {
+     "title": "Global Strategy for Asthma Management and Prevention (GINA) 2024 Strategy Report",
+     "edition": "GINA 2024",
+     "url": "https://ginasthma.org/wp-content/uploads/2024/05/GINA-2024-Strategy-Report-24_05_22_WMS.pdf",
+     "locator": "Box 4-2 (printed p. 71); section 4, printed p. 92"
     }
    ]
   },
@@ -1372,7 +1702,7 @@
   "specialty": "Cardiology / Emergency Medicine",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-b2-2026-10-24-v1",
+  "version": "india-b2-2026-10-24-v2",
   "lastReviewed": "2026-10-24",
   "pillar": "Urgent Care",
   "clinicalReviewStatus": "pending",
@@ -1386,8 +1716,7 @@
     "Not clinically reviewed."
    ],
    "unverifiedSections": [
-    "The ICMR tenecteplase table gives doses for 60 kg and above only; no dose is stated for patients under 60 kg.",
-    "The ICMR alteplase line is reproduced as written; it should be checked against the product insert before use.",
+    "The ICMR alteplase line is ambiguous on maximum doses; the caps shown follow the Activase label (section 2.2). Tenecteplase doses under 60 kg and at 90 kg or more follow the TNKase label (section 2.1).",
     "Drug choice among clopidogrel, prasugrel and ticagrelor is not ranked by ICMR; clopidogrel is shown as preferred because the ICMR general measures use it.",
     "Normal laboratory ranges are typical adult values.",
     "Drug cautions and contraindications without a source tag are general pharmacology statements and need formulary confirmation."
@@ -1878,15 +2207,16 @@
      "indication": "Reperfusion without timely PCI",
      "patientGroup": "Adults by weight",
      "genericName": "Tenecteplase",
-     "dose": "35 mg (60–70 kg), 40 mg (70–80 kg), 45 mg (above 80 kg)",
-     "route": "IV bolus",
+     "dose": "30 mg (under 60 kg), 35 mg (60–69 kg), 40 mg (70–79 kg), 45 mg (80–89 kg), 50 mg (90 kg or more)",
+     "route": "IV bolus over 5 seconds",
      "frequency": "Single dose",
      "duration": "Single dose",
      "adjustments": [
       "Paediatric: Not applicable: adult acute coronary syndrome (ACS) workflow.",
       "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
       "CKD: Not specified in the cited sources.",
-      "CLD: Not specified in the cited sources."
+      "CLD: Not specified in the cited sources.",
+      "ICMR table covers 60 kg and above (45 mg above 80 kg); the under-60 kg and 90 kg-or-more doses are from the TNKase label section 2.1, Table 1."
      ],
      "monitoring": [
       "ECG at 60–90 minutes",
@@ -1937,7 +2267,7 @@
      "indication": "Reperfusion without timely PCI",
      "patientGroup": "Adults",
      "genericName": "Alteplase",
-     "dose": "15 mg bolus, then 0.75 mg/kg over 30 minutes, then 0.5 mg/kg over 60 minutes (ICMR caps as written: 50 kg weight, up to 35 mg)",
+     "dose": "15 mg bolus, then 0.75 mg/kg (maximum 50 mg) over 30 minutes, then 0.5 mg/kg (maximum 35 mg) over 60 minutes",
      "route": "IV",
      "frequency": "Bolus then infusion",
      "duration": "Single course",
@@ -1945,7 +2275,8 @@
       "Paediatric: Not applicable: adult acute coronary syndrome (ACS) workflow.",
       "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
       "CKD: Not specified in the cited sources.",
-      "CLD: Not specified in the cited sources."
+      "CLD: Not specified in the cited sources.",
+      "Over 67 kg: 15 mg bolus, 50 mg over 30 minutes, 35 mg over 60 minutes (Activase label section 2.2, Table 1); the ICMR line is ambiguous on the caps."
      ],
      "monitoring": [
       "ECG at 60–90 minutes",
@@ -2271,7 +2602,7 @@
   "specialty": "Cardiology / Emergency Medicine / Primary Care",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-b2-2026-10-24-v1",
+  "version": "india-b2-2026-10-24-v2",
   "lastReviewed": "2026-10-24",
   "pillar": "Urgent Care",
   "clinicalReviewStatus": "pending",
@@ -2805,6 +3136,37 @@
      "useWhen": "Severe renal impairment, imminent angiography, or enoxaparin unavailable."
     },
     {
+     "indication": "Prevent thrombus propagation",
+     "patientGroup": "Adults managed conservatively or with delayed angiography",
+     "genericName": "Fondaparinux",
+     "dose": "2.5 mg",
+     "route": "SC",
+     "frequency": "Once daily",
+     "duration": "Duration of hospital stay or until PCI",
+     "adjustments": [
+      "Paediatric: Not established in children.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Avoid if creatinine clearance below 30 mL/min (label).",
+      "CLD: Not specified in the cited sources."
+     ],
+     "monitoring": [
+      "Bleeding",
+      "Platelets"
+     ],
+     "contraindications": [
+      "If PCI is done, add UFH or bivalirudin to prevent catheter thrombosis (AHA/ACC 2014)",
+      "Active bleeding"
+     ],
+     "branch": "Anticoagulation",
+     "step": "Anticoagulant",
+     "selection": "one-of",
+     "sourceTitle": "2014 AHA/ACC Guideline for the Management of Patients With Non-ST-Elevation Acute Coronary Syndromes",
+     "sourceUrl": "https://www.ahajournals.org/doi/10.1161/CIR.0000000000000134",
+     "sourceEdition": "Circulation 2014;130:e344-e426, section 4.3.2",
+     "preferred": false,
+     "useWhen": "Enoxaparin unavailable or higher bleeding risk, with a conservative strategy."
+    },
+    {
      "indication": "Reduce ischaemia",
      "patientGroup": "Adults without heart failure or hypotension",
      "genericName": "Metoprolol",
@@ -2916,7 +3278,7 @@
      "useWhen": "Ramipril unavailable."
     }
    ],
-   "note": "Doses are from the ICMR UA/NSTEMI STW (January 2026); enoxaparin renal dose and duration are from the US label. India-only topic; no Saudi topic is affected. Not clinically reviewed."
+   "note": "Doses are from the ICMR UA/NSTEMI STW (January 2026); fondaparinux (not in the ICMR workflow) is from the 2014 AHA/ACC NSTE-ACS guideline section 4.3.2; enoxaparin renal dose and duration are from the US label. India-only topic; no Saudi topic is affected. Not clinically reviewed."
   },
   "teaching": {
    "scope": "UA/NSTEMI in India.",
@@ -2978,7 +3340,7 @@
   "specialty": "Psychiatry / Primary Care",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-b2-2026-10-24-v1",
+  "version": "india-b2-2026-10-24-v2",
   "lastReviewed": "2026-10-24",
   "pillar": "Chronic Care",
   "clinicalReviewStatus": "pending",
@@ -3265,6 +3627,10 @@
     {
      "label": "Older adults",
      "entryCriteria": "Patients aged 60 and above."
+    },
+    {
+     "label": "Partial response — augmentation",
+     "entryCriteria": "Partial response to an adequate antidepressant trial (secondary or tertiary care)."
     }
    ],
    "regimens": [
@@ -3530,6 +3896,63 @@
      "sourceEdition": "ICMR STW, October 2019, section Special population",
      "preferred": false,
      "useWhen": "Escitalopram unsuitable."
+    },
+    {
+     "indication": "Partial response to antidepressant",
+     "patientGroup": "Adults (secondary care)",
+     "genericName": "Lithium",
+     "dose": "300–600 mg/day",
+     "route": "Oral",
+     "frequency": "Daily",
+     "duration": "Specialist-guided",
+     "adjustments": [
+      "Paediatric: Children and adolescents: refer to secondary care; adolescents use fluoxetine (ICMR STW).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Reduce dose or avoid in kidney impairment; check creatinine before starting.",
+      "CLD: Not specified in the cited sources."
+     ],
+     "monitoring": [
+      "Serum lithium level, thyroid and kidney function"
+     ],
+     "contraindications": [
+      "Narrow therapeutic index; toxicity with dehydration, NSAIDs, ACE inhibitors and diuretics"
+     ],
+     "branch": "Partial response — augmentation",
+     "step": "Augmentation",
+     "selection": "one-of",
+     "sourceTitle": "Standard Treatment Workflow: Depression (ICMR / Department of Health Research)",
+     "sourceUrl": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1725952332_psychiatry_depression.pdf",
+     "sourceEdition": "ICMR STW, October 2019, section Broad management plans at secondary care",
+     "preferred": true
+    },
+    {
+     "indication": "Partial response to antidepressant",
+     "patientGroup": "Adults (secondary care)",
+     "genericName": "Levothyroxine",
+     "dose": "25–50 µg/day",
+     "route": "Oral",
+     "frequency": "Once daily, empty stomach",
+     "duration": "Specialist-guided",
+     "adjustments": [
+      "Paediatric: Children and adolescents: refer to secondary care; adolescents use fluoxetine (ICMR STW).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment needed.",
+      "CLD: Not specified in the cited sources."
+     ],
+     "monitoring": [
+      "Thyroid function, heart rate"
+     ],
+     "contraindications": [
+      "Ischaemic heart disease, arrhythmia"
+     ],
+     "branch": "Partial response — augmentation",
+     "step": "Augmentation",
+     "selection": "one-of",
+     "sourceTitle": "Standard Treatment Workflow: Depression (ICMR / Department of Health Research)",
+     "sourceUrl": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1725952332_psychiatry_depression.pdf",
+     "sourceEdition": "ICMR STW, October 2019, section Broad management plans at secondary care",
+     "preferred": false,
+     "useWhen": "Lithium unsuitable (kidney disease, poor monitoring access)."
     }
    ],
    "note": "All doses are from the ICMR Depression STW (October 2019). Lithium (300–600 mg/day) or thyroxine (25–50 µg/day) augmentation, bupropion or sertraline add-on, and low-dose risperidone or olanzapine for psychotic symptoms are secondary or tertiary-care steps (ICMR STW). India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
@@ -3591,7 +4014,7 @@
   "specialty": "Pulmonology / Infectious Diseases / Primary Care",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-b2-2026-10-24-v1",
+  "version": "india-b2-2026-10-24-v2",
   "lastReviewed": "2026-10-24",
   "pillar": "Urgent Care",
   "clinicalReviewStatus": "pending",
@@ -3873,6 +4296,14 @@
     {
      "label": "ICU — Pseudomonas risk",
      "entryCriteria": "ICU patients with structural lung disease, healthcare exposure or antibiotics in last 90 days, or immunocompromise."
+    },
+    {
+     "label": "Suspected MRSA",
+     "entryCriteria": "Necrotising pneumonia or pneumonia after influenza (NTG 2025)."
+    },
+    {
+     "label": "Influenza-positive CAP",
+     "entryCriteria": "CAP with a positive influenza test; treat inpatients regardless of illness duration (ATS/IDSA 2019)."
     }
    ],
    "regimens": [
@@ -3961,6 +4392,35 @@
      "sourceEdition": "Version 2.0, November 2025, section 12.5, printed p. 83",
      "preferred": false,
      "useWhen": "Penicillin allergy and azithromycin unsuitable."
+    },
+    {
+     "indication": "CAP without comorbidity",
+     "patientGroup": "Adults",
+     "genericName": "Clarithromycin",
+     "dose": "500 mg",
+     "route": "Oral",
+     "frequency": "Twice daily",
+     "duration": "5–7 days",
+     "adjustments": [
+      "Paediatric: Adult guideline; for children 2 months–5 years see the childhood pneumonia topic.",
+      "Penicillin allergy: Not a beta-lactam; suitable in penicillin allergy.",
+      "CKD: Dose reduction needed in severe kidney impairment; check the formulary.",
+      "CLD: Not specified in the cited sources."
+     ],
+     "monitoring": [
+      "Clinical response"
+     ],
+     "contraindications": [
+      "QT prolongation; many drug interactions"
+     ],
+     "branch": "Outpatient — no comorbidity",
+     "step": "Oral antibiotic",
+     "selection": "one-of",
+     "sourceTitle": "Diagnosis and Treatment of Adults with Community-acquired Pneumonia (ATS/IDSA)",
+     "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6812437/",
+     "sourceEdition": "Am J Respir Crit Care Med 2019;200:e45-e67, Table 3 footnote",
+     "preferred": false,
+     "useWhen": "Penicillin allergy and azithromycin unavailable (NTG 2025 alternative)."
     },
     {
      "indication": "CAP with comorbidity",
@@ -4212,10 +4672,41 @@
      ],
      "branch": "ICU — Pseudomonas risk",
      "step": "Anti-pseudomonal beta-lactam",
-     "selection": "all",
+     "selection": "one-of",
      "sourceTitle": "National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes (NCDC-ICMR)",
      "sourceUrl": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf",
-     "sourceEdition": "Version 2.0, November 2025, section 12.5, printed p. 83"
+     "sourceEdition": "Version 2.0, November 2025, section 12.5, printed p. 83",
+     "preferred": true
+    },
+    {
+     "indication": "Severe CAP with Pseudomonas risk",
+     "patientGroup": "Adults in ICU",
+     "genericName": "Cefepime",
+     "dose": "2 g",
+     "route": "IV",
+     "frequency": "Every 8 hours",
+     "duration": "7 days",
+     "adjustments": [
+      "Paediatric: Adult guideline; for children 2 months–5 years see the childhood pneumonia topic.",
+      "Penicillin allergy: Cephalosporin: NTG 2025 permits cephalosporins in non-anaphylactic penicillin allergy (section 7.2 table); with anaphylaxis use a non-beta-lactam regimen.",
+      "CKD: Dose reduction needed in kidney impairment; check the formulary.",
+      "CLD: Not specified in the cited sources."
+     ],
+     "monitoring": [
+      "Cultures, renal function",
+      "Neurotoxicity in kidney impairment"
+     ],
+     "contraindications": [
+      "Severe beta-lactam allergy"
+     ],
+     "branch": "ICU — Pseudomonas risk",
+     "step": "Anti-pseudomonal beta-lactam",
+     "selection": "one-of",
+     "sourceTitle": "Diagnosis and Treatment of Adults with Community-acquired Pneumonia (ATS/IDSA)",
+     "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6812437/",
+     "sourceEdition": "Am J Respir Crit Care Med 2019;200:e45-e67, Table 4 footnote",
+     "preferred": false,
+     "useWhen": "Non-anaphylactic penicillin allergy or piperacillin-tazobactam unavailable."
     },
     {
      "indication": "Atypical pathogens",
@@ -4243,9 +4734,94 @@
      "sourceTitle": "National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes (NCDC-ICMR)",
      "sourceUrl": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf",
      "sourceEdition": "Version 2.0, November 2025, section 12.5, printed p. 83"
+    },
+    {
+     "indication": "Necrotising or post-influenza pneumonia",
+     "patientGroup": "Adults in hospital",
+     "genericName": "Vancomycin",
+     "dose": "15 mg/kg",
+     "route": "IV",
+     "frequency": "Every 12 hours, adjusted to levels",
+     "duration": "7 days, review with cultures",
+     "adjustments": [
+      "Paediatric: Adult guideline; for children 2 months–5 years see the childhood pneumonia topic.",
+      "Penicillin allergy: Not a beta-lactam; suitable in penicillin allergy.",
+      "CKD: Adjust by levels and creatinine clearance.",
+      "CLD: Not specified in the cited sources."
+     ],
+     "monitoring": [
+      "Trough or AUC levels",
+      "Creatinine"
+     ],
+     "contraindications": [
+      "Nephrotoxicity with other nephrotoxins"
+     ],
+     "branch": "Suspected MRSA",
+     "step": "MRSA cover (added to the ward or ICU regimen)",
+     "selection": "one-of",
+     "sourceTitle": "Diagnosis and Treatment of Adults with Community-acquired Pneumonia (ATS/IDSA)",
+     "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6812437/",
+     "sourceEdition": "Am J Respir Crit Care Med 2019;200:e45-e67, Table 4 footnote",
+     "preferred": true
+    },
+    {
+     "indication": "Necrotising or post-influenza pneumonia",
+     "patientGroup": "Adults in hospital",
+     "genericName": "Linezolid",
+     "dose": "600 mg",
+     "route": "IV or oral",
+     "frequency": "Every 12 hours",
+     "duration": "7 days, review with cultures",
+     "adjustments": [
+      "Paediatric: Adult guideline; for children 2 months–5 years see the childhood pneumonia topic.",
+      "Penicillin allergy: Not a beta-lactam; suitable in penicillin allergy.",
+      "CKD: No adjustment needed.",
+      "CLD: Not specified in the cited sources."
+     ],
+     "monitoring": [
+      "Blood count if over 2 weeks"
+     ],
+     "contraindications": [
+      "Serotonergic drugs; give only after tuberculosis is excluded (NTG 2025)"
+     ],
+     "branch": "Suspected MRSA",
+     "step": "MRSA cover (added to the ward or ICU regimen)",
+     "selection": "one-of",
+     "sourceTitle": "Diagnosis and Treatment of Adults with Community-acquired Pneumonia (ATS/IDSA)",
+     "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6812437/",
+     "sourceEdition": "Am J Respir Crit Care Med 2019;200:e45-e67, Table 4 footnote",
+     "preferred": false,
+     "useWhen": "Kidney impairment, vancomycin unavailable, or level monitoring not possible."
+    },
+    {
+     "indication": "Influenza with pneumonia",
+     "patientGroup": "Adults, inpatient or outpatient",
+     "genericName": "Oseltamivir",
+     "dose": "75 mg",
+     "route": "Oral",
+     "frequency": "Twice daily",
+     "duration": "5 days",
+     "adjustments": [
+      "Paediatric: 1–12 years by weight: 30 mg (15 kg or less), 45 mg (15.1–23 kg), 60 mg (23.1–40 kg), 75 mg (over 40 kg) twice daily; 2 weeks to under 1 year 3 mg/kg twice daily (label section 2.2).",
+      "Penicillin allergy: Not a beta-lactam; suitable in penicillin allergy.",
+      "CKD: Creatinine clearance 30–60 mL/min: 30 mg twice daily; 10–30 mL/min: 30 mg once daily (label section 2.4).",
+      "CLD: Not specified in the cited sources."
+     ],
+     "monitoring": [
+      "Clinical response"
+     ],
+     "contraindications": [
+      "Not recommended in end-stage kidney disease not on dialysis (label)"
+     ],
+     "branch": "Influenza-positive CAP",
+     "step": "Antiviral (with antibiotics)",
+     "selection": "all",
+     "sourceTitle": "Oseltamivir (Tamiflu), US prescribing information (DailyMed)",
+     "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ee3c9555-60f2-4f82-a760-11983c86e97b",
+     "sourceEdition": "DailyMed label, section 2.2"
     }
    ],
-   "note": "Regimens follow NCDC-ICMR NTG 2025 section 12.5; the ICMR ARI STW (2019) regimens are shown in the comparison. Avoid empiric fluoroquinolones (ICMR STW). MRSA agents (vancomycin, teicoplanin, linezolid after TB is excluded) only for necrotising or post-influenza pneumonia (NTG 2025). India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
+   "note": "Regimens follow NCDC-ICMR NTG 2025 section 12.5; the ICMR ARI STW (2019) regimens are shown in the comparison. Avoid empiric fluoroquinolones (ICMR STW). MRSA agents only for necrotising or post-influenza pneumonia (NTG 2025); MRSA, cefepime, clarithromycin and oseltamivir doses are from ATS/IDSA 2019 and the oseltamivir label. India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
   },
   "teaching": {
    "scope": "Adult CAP in India.",
@@ -4278,6 +4854,12 @@
      "edition": "Version 2.0, November 2025",
      "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf",
      "locator": "section 12.5, printed pp. 83–84"
+    },
+    {
+     "title": "Diagnosis and Treatment of Adults with Community-acquired Pneumonia (ATS/IDSA)",
+     "edition": "Am J Respir Crit Care Med 2019;200:e45-e67",
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6812437/",
+     "locator": "Tables 3 and 4; Question 13"
     }
    ]
   },
@@ -4340,7 +4922,7 @@
   "specialty": "Endocrinology / Internal Medicine / Primary Care",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-b2-2026-10-24-v1",
+  "version": "india-b2-2026-10-24-v2",
   "lastReviewed": "2026-10-24",
   "pillar": "Chronic Care",
   "clinicalReviewStatus": "pending",
@@ -4353,7 +4935,7 @@
     "Not clinically reviewed."
    ],
    "unverifiedSections": [
-    "Pregnancy-specific TSH targets and dose increments are not given in the cited workflow; follow the obstetric thyroid topic.",
+    "The ICMR workflow gives no doses for hydrocortisone, myxoedema coma or pregnancy; these are from the Endocrine Society 2016 adrenal insufficiency guideline and the ATA 2014 hypothyroidism guideline.",
     "Normal TSH and FT4 ranges vary by assay; local laboratory ranges apply.",
     "Monitoring intervals (6–8 weeks after dose changes; 2 and 4 weeks in newborns), anti-TPO testing and dietary advice are general practice, not quoted from the workflow.",
     "Drug cautions and contraindications without a source tag are general pharmacology statements and need formulary confirmation."
@@ -4610,6 +5192,14 @@
     {
      "label": "Congenital hypothyroidism",
      "entryCriteria": "Newborn with confirmed congenital hypothyroidism."
+    },
+    {
+     "label": "Myxoedema coma",
+     "entryCriteria": "Hypothermia, altered sensorium or hypoventilation with hypothyroidism (refer to intensive care)."
+    },
+    {
+     "label": "Pregnancy",
+     "entryCriteria": "Women with known hypothyroidism who become pregnant."
     }
    ],
    "regimens": [
@@ -4672,18 +5262,20 @@
      "indication": "Coexisting adrenal insufficiency",
      "patientGroup": "Adults with central hypothyroidism and low cortisol",
      "genericName": "Hydrocortisone",
-     "dose": "Replacement dose per endocrinologist",
+     "dose": "15–25 mg/day in 2–3 divided doses, largest dose on waking",
      "route": "Oral",
-     "frequency": "Daily in divided doses",
+     "frequency": "Two or three times daily",
      "duration": "Lifelong if deficient",
      "adjustments": [
-      "Paediatric: Not specified in the cited sources.",
+      "Paediatric: Children: about 8 mg/m²/day (Endocrine Society 2016).",
       "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
       "CKD: Not specified in the cited sources.",
-      "CLD: Not specified in the cited sources."
+      "CLD: Not specified in the cited sources.",
+      "ICMR: treat cortisol deficiency before levothyroxine; dose from the Endocrine Society adrenal insufficiency guideline (written for primary adrenal insufficiency)."
      ],
      "monitoring": [
-      "Symptoms of adrenal insufficiency"
+      "Symptoms of adrenal insufficiency",
+      "Sick-day rules: double the dose with fever"
      ],
      "contraindications": [
       "Avoid abrupt withdrawal"
@@ -4691,9 +5283,9 @@
      "branch": "Central hypothyroidism",
      "step": "Glucocorticoid first",
      "selection": "all",
-     "sourceTitle": "Standard Treatment Workflow: Hypothyroidism (ICMR / Department of Health Research)",
-     "sourceUrl": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1726567243_hypothyroidism.pdf",
-     "sourceEdition": "ICMR STW, July 2022, section Treatment"
+     "sourceTitle": "Diagnosis and Treatment of Primary Adrenal Insufficiency (Endocrine Society)",
+     "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4880116/",
+     "sourceEdition": "J Clin Endocrinol Metab 2016;101:364-389, recommendation 3.2"
     },
     {
      "indication": "Central hypothyroidism",
@@ -4723,6 +5315,87 @@
      "sourceEdition": "ICMR STW, July 2022, section Treatment"
     },
     {
+     "indication": "Possible adrenal insufficiency in myxoedema coma",
+     "patientGroup": "Adults",
+     "genericName": "Hydrocortisone",
+     "dose": "100 mg, then 200 mg per 24 hours (infusion or 6-hourly)",
+     "route": "IV",
+     "frequency": "Bolus then continuous or 6-hourly",
+     "duration": "Until adrenal insufficiency excluded",
+     "adjustments": [
+      "Paediatric: Children: 50 mg/m² then 50–100 mg/m² per 24 hours (Endocrine Society 2016).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Not specified in the cited sources.",
+      "CLD: Not specified in the cited sources."
+     ],
+     "monitoring": [
+      "Glucose, sodium, BP"
+     ],
+     "contraindications": [
+      "Give before levothyroxine (ATA 2014 recommendation 21b)"
+     ],
+     "branch": "Myxoedema coma",
+     "step": "Glucocorticoid first",
+     "selection": "all",
+     "sourceTitle": "Diagnosis and Treatment of Primary Adrenal Insufficiency (Endocrine Society)",
+     "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4880116/",
+     "sourceEdition": "J Clin Endocrinol Metab 2016;101:364-389, recommendation 4.1"
+    },
+    {
+     "indication": "Myxoedema coma",
+     "patientGroup": "Adults (intensive care)",
+     "genericName": "Levothyroxine",
+     "dose": "Loading 200–400 µg, then 1.6 µg/kg/day reduced to 75% while IV",
+     "route": "IV",
+     "frequency": "Loading dose, then once daily",
+     "duration": "Until oral or enteral route possible",
+     "adjustments": [
+      "Paediatric: Not covered by the cited guideline.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Not specified in the cited sources.",
+      "CLD: Not specified in the cited sources."
+     ],
+     "monitoring": [
+      "Heart rhythm, temperature, consciousness, free T4"
+     ],
+     "contraindications": [
+      "Lower dose for small or older patients, coronary disease or arrhythmia (ATA 2014)"
+     ],
+     "branch": "Myxoedema coma",
+     "step": "Thyroid hormone (IV)",
+     "selection": "all",
+     "sourceTitle": "Guidelines for the Treatment of Hypothyroidism (American Thyroid Association)",
+     "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4267409/",
+     "sourceEdition": "Thyroid 2014;24:1670-1751, recommendation 21a"
+    },
+    {
+     "indication": "Pre-existing hypothyroidism in pregnancy",
+     "patientGroup": "Pregnant women already on levothyroxine",
+     "genericName": "Levothyroxine",
+     "dose": "Two extra doses per week of the current daily dose (one extra dose twice weekly, several days apart)",
+     "route": "Oral",
+     "frequency": "Daily plus 2 extra doses weekly",
+     "duration": "From confirmation of pregnancy; titrate to trimester-specific TSH",
+     "adjustments": [
+      "Paediatric: Not applicable.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment needed.",
+      "CLD: No adjustment needed."
+     ],
+     "monitoring": [
+      "TSH every 4 weeks in the first half of pregnancy and again in the second half (ATA 2014)"
+     ],
+     "contraindications": [
+      "Separate from iron and calcium"
+     ],
+     "branch": "Pregnancy",
+     "step": "Dose increase at confirmation",
+     "selection": "all",
+     "sourceTitle": "Guidelines for the Treatment of Hypothyroidism (American Thyroid Association)",
+     "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4267409/",
+     "sourceEdition": "Thyroid 2014;24:1670-1751, recommendation 6b"
+    },
+    {
      "indication": "Congenital hypothyroidism",
      "patientGroup": "Newborns",
      "genericName": "Levothyroxine",
@@ -4750,7 +5423,7 @@
      "sourceEdition": "ICMR STW, July 2022, section Newborn screening"
     }
    ],
-   "note": "All doses are from the ICMR Hypothyroidism STW (July 2022). Hydrocortisone replacement dose is not given in the workflow and is set by the endocrinologist. India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
+   "note": "All doses are from the ICMR Hypothyroidism STW (July 2022). Hydrocortisone, myxoedema coma and pregnancy doses are from the Endocrine Society (2016) and ATA (2014) guidelines because the ICMR workflow gives none. India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
   },
   "teaching": {
    "scope": "Hypothyroidism across the lifespan in India.",
@@ -4777,6 +5450,18 @@
      "edition": "ICMR STW, July 2022",
      "url": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1726567243_hypothyroidism.pdf",
      "locator": "sections Diagnosis, Newborn screening, Treatment, Follow-up"
+    },
+    {
+     "title": "Guidelines for the Treatment of Hypothyroidism (American Thyroid Association)",
+     "edition": "Thyroid 2014;24:1670-1751",
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4267409/",
+     "locator": "recommendations 6b, 21a, 21b"
+    },
+    {
+     "title": "Diagnosis and Treatment of Primary Adrenal Insufficiency (Endocrine Society)",
+     "edition": "J Clin Endocrinol Metab 2016;101:364-389",
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4880116/",
+     "locator": "recommendations 3.2, 4.1"
     }
    ]
   },
@@ -4806,7 +5491,7 @@
   "specialty": "Internal Medicine / Nephrology / Emergency Medicine",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-b2-2026-10-24-v1",
+  "version": "india-b2-2026-10-24-v2",
   "lastReviewed": "2026-10-24",
   "pillar": "Urgent Care",
   "clinicalReviewStatus": "pending",
@@ -4821,6 +5506,7 @@
    ],
    "unverifiedSections": [
     "Paediatric hyponatraemia is outside the adult workflow.",
+    "No accessible guideline gave a desmopressin dose for overcorrection; it is listed as specialist-directed. Urea for SIADH (European 2014 guideline) could not be checked against source text and is not dosed here.",
     "The ICMR workflow and the tolvaptan label differ on the overcorrection threshold (8–10 vs 12 mmol/L per 24 hours); both are shown.",
     "Drug cautions and contraindications without a source tag are general pharmacology statements and need formulary confirmation."
    ],
@@ -5075,6 +5761,10 @@
     {
      "label": "SIADH",
      "entryCriteria": "Euvolaemic hyponatraemia with SIADH criteria."
+    },
+    {
+     "label": "Overcorrection",
+     "entryCriteria": "Sodium has risen more than the 24-hour limit."
     }
    ],
    "regimens": [
@@ -5101,10 +5791,40 @@
      ],
      "branch": "Severe symptoms — acute",
      "step": "Hypertonic saline",
-     "selection": "all",
+     "selection": "one-of",
      "sourceTitle": "Standard Treatment Workflow: Approach to Hyponatremia (ICMR / Department of Health Research)",
      "sourceUrl": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1726567243_approach_to_hyponatremia.pdf",
-     "sourceEdition": "ICMR STW, July 2022, section Treatment"
+     "sourceEdition": "ICMR STW, July 2022, section Treatment",
+     "preferred": true
+    },
+    {
+     "indication": "Severe or moderately severe symptoms",
+     "patientGroup": "Adults",
+     "genericName": "Sodium chloride 3% (bolus)",
+     "dose": "150 mL over 20 minutes",
+     "route": "IV",
+     "frequency": "Repeat up to twice until sodium rises 5 mmol/L",
+     "duration": "Bolus therapy, then reassess",
+     "adjustments": [
+      "Paediatric: Not specified in the cited sources.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Monitor fluid overload.",
+      "CLD: Monitor fluid overload."
+     ],
+     "monitoring": [
+      "Sodium after each bolus"
+     ],
+     "contraindications": [
+      "Rise of no more than 10 mmol/L in the first 24 hours and 8 mmol/L per 24 hours thereafter (SfE)"
+     ],
+     "branch": "Severe symptoms — acute",
+     "step": "Hypertonic saline",
+     "selection": "one-of",
+     "sourceTitle": "Emergency management of severe and moderately severely symptomatic hyponatraemia in adult patients (Society for Endocrinology)",
+     "sourceUrl": "https://www.endocrinology.org/media/xhrhxhxm/emergency-management-of-severe-and-moderately-severely-symptomatic-hyponatraemia-in-adult-patients-2022.pdf",
+     "sourceEdition": "Society for Endocrinology Endocrine Emergency Guidance, 2022, Figure 1, recommendation 1",
+     "preferred": false,
+     "useWhen": "Local protocol uses intermittent bolus therapy (UK Society for Endocrinology)."
     },
     {
      "indication": "Severe symptomatic chronic hyponatraemia",
@@ -5219,6 +5939,64 @@
      "sourceEdition": "DailyMed label, section 2 Dosage and Administration",
      "preferred": false,
      "useWhen": "Fluid restriction fails or is not tolerated, after specialist review."
+    },
+    {
+     "indication": "Sodium rising faster than the limit",
+     "patientGroup": "Adults",
+     "genericName": "Dextrose 5% (hypotonic fluid)",
+     "dose": "Volume set by specialist to re-lower sodium",
+     "route": "IV",
+     "frequency": "Infusion",
+     "duration": "Until sodium back within the limit",
+     "adjustments": [
+      "Paediatric: Not specified in the cited sources.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Monitor fluid balance.",
+      "CLD: Not specified in the cited sources."
+     ],
+     "monitoring": [
+      "Sodium every 1–2 hours"
+     ],
+     "contraindications": [
+      "Stop all hypertonic fluid first (SfE recommendation 2)"
+     ],
+     "branch": "Overcorrection",
+     "step": "Stop the rise",
+     "selection": "one-of",
+     "sourceTitle": "Emergency management of severe and moderately severely symptomatic hyponatraemia in adult patients (Society for Endocrinology)",
+     "sourceUrl": "https://www.endocrinology.org/media/xhrhxhxm/emergency-management-of-severe-and-moderately-severely-symptomatic-hyponatraemia-in-adult-patients-2022.pdf",
+     "sourceEdition": "Society for Endocrinology Endocrine Emergency Guidance, 2022, recommendation 2",
+     "preferred": true
+    },
+    {
+     "indication": "Sodium rising faster than the limit",
+     "patientGroup": "Adults",
+     "genericName": "Desmopressin",
+     "dose": "Specialist-directed dose (the guideline gives none)",
+     "route": "IV",
+     "frequency": "As directed",
+     "duration": "Until sodium stable",
+     "adjustments": [
+      "Paediatric: Not specified in the cited sources.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Not specified in the cited sources.",
+      "CLD: Not specified in the cited sources."
+     ],
+     "monitoring": [
+      "Sodium every 1–2 hours",
+      "Urine output"
+     ],
+     "contraindications": [
+      "Specialist supervision only"
+     ],
+     "branch": "Overcorrection",
+     "step": "Stop the rise",
+     "selection": "one-of",
+     "sourceTitle": "Emergency management of severe and moderately severely symptomatic hyponatraemia in adult patients (Society for Endocrinology)",
+     "sourceUrl": "https://www.endocrinology.org/media/xhrhxhxm/emergency-management-of-severe-and-moderately-severely-symptomatic-hyponatraemia-in-adult-patients-2022.pdf",
+     "sourceEdition": "Society for Endocrinology Endocrine Emergency Guidance, 2022, recommendation 2",
+     "preferred": false,
+     "useWhen": "Brisk water diuresis continues despite hypotonic fluid (with or without dextrose, SfE)."
     }
    ],
    "note": "Hypertonic and isotonic saline, fluid restriction and correction limits are from the ICMR Approach to Hyponatremia STW (July 2022); tolvaptan detail is from the US label (DailyMed). India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
@@ -5254,6 +6032,12 @@
      "edition": "DailyMed label",
      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5526617c-c7b9-4556-886d-729bbabbc566",
      "locator": "sections 2 Dosage and Administration, Boxed Warning"
+    },
+    {
+     "title": "Emergency management of severe and moderately severely symptomatic hyponatraemia in adult patients (Society for Endocrinology)",
+     "edition": "Society for Endocrinology Endocrine Emergency Guidance, 2022",
+     "url": "https://www.endocrinology.org/media/xhrhxhxm/emergency-management-of-severe-and-moderately-severely-symptomatic-hyponatraemia-in-adult-patients-2022.pdf",
+     "locator": "Figure 1; recommendations 1–3"
     }
    ]
   },
@@ -5277,17 +6061,24 @@
    "followUpPlan": "Recheck sodium within a week of discharge and after any change to causative drugs."
   },
   "guidelineComparison": {
-   "title": "Overcorrection limits: ICMR STW vs tolvaptan label",
+   "title": "Hyponatraemia: ICMR STW vs international sources",
    "columns": [
     "ICMR STW (2022)",
-    "Tolvaptan label (DailyMed)"
+    "Tolvaptan label (DailyMed) and UK Society for Endocrinology"
    ],
    "rows": [
     {
      "parameter": "Maximum rise",
      "values": [
       "8–10 mmol/L in 24 hours",
-      "Above 12 mmol/L in 24 hours risks ODS"
+      "Label: above 12 mmol/L in 24 hours risks ODS. Society for Endocrinology: no more than 10 mmol/L in the first 24 hours, 8 mmol/L per 24 hours after"
+     ]
+    },
+    {
+     "parameter": "Hypertonic saline regimen",
+     "values": [
+      "3% at 1–2 mL/kg/hour (acute) or 0.5–1 mL/kg/hour (chronic)",
+      "150 mL 3% over 20 minutes, repeated up to twice until a 5 mmol/L rise (Society for Endocrinology)"
      ]
     },
     {
@@ -5307,7 +6098,7 @@
   "specialty": "Neonatology / Paediatrics",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-b2-2026-10-24-v1",
+  "version": "india-b2-2026-10-24-v2",
   "lastReviewed": "2026-10-24",
   "pillar": "Safe Birth",
   "clinicalReviewStatus": "pending",
@@ -5320,7 +6111,7 @@
     "Not clinically reviewed."
    ],
    "unverifiedSections": [
-    "Glucagon is mentioned in some neonatal protocols but its dose was not confirmed in the workflow text; it is not included.",
+    "The glucagon dose in the ICMR workflow text could not be confirmed; glucagon doses are from the Liggins Institute (Auckland) neonatal hypoglycaemia guideline.",
     "Normal glucose values are typical neonatal values; meter accuracy below 40 mg/dL is poor, so confirm with a laboratory sample.",
     "Drug cautions and contraindications without a source tag are general pharmacology statements and need formulary confirmation."
    ],
@@ -5553,6 +6344,10 @@
     {
      "label": "Refractory hypoglycaemia",
      "entryCriteria": "Hypoglycaemia despite GIR 12 mg/kg/min."
+    },
+    {
+     "label": "IV access delayed",
+     "entryCriteria": "Hypoglycaemia needing IV dextrose when IV access cannot be established promptly."
     }
    ],
    "regimens": [
@@ -5698,9 +6493,66 @@
      "sourceEdition": "ICMR STW, July 2020, section Management",
      "preferred": false,
      "useWhen": "Diazoxide ineffective or unsuitable, under specialist care."
+    },
+    {
+     "indication": "Refractory hypoglycaemia",
+     "patientGroup": "Newborns",
+     "genericName": "Glucagon (infusion)",
+     "dose": "5–20 µg/kg/hour",
+     "route": "IV infusion",
+     "frequency": "Continuous",
+     "duration": "As directed by specialist",
+     "adjustments": [
+      "Paediatric: This is a neonatal dose (ICMR STW).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Not specified in the cited sources.",
+      "CLD: Not specified in the cited sources."
+     ],
+     "monitoring": [
+      "Glucose",
+      "Sodium, platelets"
+     ],
+     "contraindications": [
+      "Not effective with depleted glycogen (small or preterm babies)"
+     ],
+     "branch": "Refractory hypoglycaemia",
+     "step": "Refractory treatment",
+     "selection": "one-of",
+     "sourceTitle": "Oranga Hukihuki: neonatal hypoglycaemia clinical practice guidelines (Liggins Institute, University of Auckland)",
+     "sourceUrl": "https://www.auckland.ac.nz/en/liggins/our-research/reports-and-guidelines-1/neonatal-hypoglycaemia-guidelines/treatment/question-26.html",
+     "sourceEdition": "Liggins Institute guideline, Treatment, section Treatment, Question 26",
+     "preferred": false,
+     "useWhen": "Refractory hypoglycaemia while the cause is investigated, under specialist care."
+    },
+    {
+     "indication": "Hypoglycaemia needing IV glucose",
+     "patientGroup": "Newborns",
+     "genericName": "Glucagon",
+     "dose": "200 µg/kg (0.2 mg/kg)",
+     "route": "IM",
+     "frequency": "Once; may repeat after about 1 hour if IV access still difficult",
+     "duration": "Until IV access established",
+     "adjustments": [
+      "Paediatric: This is a neonatal dose (ICMR STW).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Not specified in the cited sources.",
+      "CLD: Not specified in the cited sources."
+     ],
+     "monitoring": [
+      "Glucose 30–60 minutes after"
+     ],
+     "contraindications": [
+      "Response may be smaller with a second dose"
+     ],
+     "branch": "IV access delayed",
+     "step": "Bridge until IV access",
+     "selection": "all",
+     "sourceTitle": "Oranga Hukihuki: neonatal hypoglycaemia clinical practice guidelines (Liggins Institute, University of Auckland)",
+     "sourceUrl": "https://www.auckland.ac.nz/en/liggins/our-research/reports-and-guidelines-1/neonatal-hypoglycaemia-guidelines/treatment/question-26.html",
+     "sourceEdition": "Liggins Institute guideline, Treatment, section Treatment, Question 26"
     }
    ],
-   "note": "All doses are from the ICMR Neonatal Hypoglycemia STW (July 2020). Glucagon is not included because its dose was not confirmed in the workflow. India-only topic. Not clinically reviewed."
+   "note": "All doses are from the ICMR Neonatal Hypoglycemia STW (July 2020). Glucagon doses are from the Liggins Institute neonatal hypoglycaemia guideline (Question 26) because the ICMR dose could not be confirmed. India-only topic. Not clinically reviewed."
   },
   "teaching": {
    "scope": "Neonatal hypoglycaemia in India.",
@@ -5727,6 +6579,12 @@
      "edition": "ICMR STW, July 2020",
      "url": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1726568620_neonatal_hypoglycemia.pdf",
      "locator": "sections Screening, Management"
+    },
+    {
+     "title": "Oranga Hukihuki: neonatal hypoglycaemia clinical practice guidelines (Liggins Institute, University of Auckland)",
+     "edition": "Liggins Institute guideline, Treatment",
+     "url": "https://www.auckland.ac.nz/en/liggins/our-research/reports-and-guidelines-1/neonatal-hypoglycaemia-guidelines/treatment/question-26.html",
+     "locator": "section Treatment, Question 26"
     }
    ]
   },
