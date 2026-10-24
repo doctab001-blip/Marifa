@@ -1,0 +1,497 @@
+[
+ {
+  "id": "2e2fa84f-b8fe-5dc1-b86a-2d3e68ab0098",
+  "title": "Acute infectious diarrhoea and dysentery in adults (India)",
+  "specialty": "Internal Medicine / Infectious Diseases / Emergency Medicine / Primary Care",
+  "authority": "ICMR",
+  "status": "under_review",
+  "version": "india-set-as-2026-10-24-v1",
+  "lastReviewed": "2026-10-24",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+   "checkedOn": "2026-10-24",
+   "status": "incomplete",
+   "scope": "Acute watery diarrhoea and dysentery in adults and adolescents in India: dehydration assessment, oral and IV rehydration, when to give antibiotics, amoebic dysentery and avoidance of fluoroquinolones, using NCDC-ICMR NTG 2025 section 4.2 and WHO rehydration plans. Childhood diarrhoea and cholera have separate topics.",
+   "findings": [
+    "Antibiotics only with danger signs (azithromycin 500 mg once daily for 3 days first line; cefixime 400 mg twice daily or ceftriaxone 2 g IV daily for 5 days), stool microscopy in dysentery with metronidazole 400 mg three times daily for Entamoeba histolytica, and avoidance of fluoroquinolones because of high resistance in India checked against NCDC-ICMR NTG 2025 section 4.2.",
+    "Dehydration signs, Plan A ORS 300 mL per loose stool (over 20 kg), Plan B 75 mL/kg over 4 hours, Plan C Ringer lactate 100 mL/kg (30 mL/kg in 30 minutes then 70 mL/kg over 2.5 hours from 12 months of age), reassessment and fluid-overload signs checked against the WHO plans (MSF Appendix 14).",
+    "Not clinically reviewed."
+   ],
+   "unverifiedSections": [
+    "The WHO plans in the opened source are written for children; Plan B volumes above 30 kg and Plan C timing for adults are extrapolated from the 12 months and older column.",
+    "NTG 2025 does not define 'danger signs' in the opened extract; usual signs (high fever, blood in stool, severe dehydration, sepsis, immunosuppression) are listed as practice.",
+    "Metronidazole duration for amoebic dysentery is not in the opened extract.",
+    "Drug cautions, contraindications and renal or hepatic adjustment lines without a source tag are general pharmacology statements and need formulary confirmation."
+   ],
+   "medscapeStatus": "unavailable",
+   "originalVersionIds": [
+    "2e2fa84f-b8fe-5dc1-b86a-2d3e68ab0098"
+   ]
+  },
+  "pathophysiology": {
+   "summary": "Acute infectious diarrhoea in adults is usually viral or from toxin-producing bacteria and settles in a few days with fluids alone. The main danger is dehydration and electrolyte loss; dysentery (blood and mucus) suggests invasive bacteria such as Shigella or Campylobacter, or Entamoeba histolytica. Most adults do not need antibiotics; NTG 2025 reserves them for patients with danger signs and advises against fluoroquinolones because resistance is high in India. Oral rehydration solution (ORS) treats mild and moderate dehydration; severe dehydration needs rapid IV Ringer lactate.",
+   "keyMechanisms": [
+    "Enterotoxins (for example from E. coli, Vibrio) drive chloride and water secretion: watery diarrhoea.",
+    "Invasive organisms damage the colonic mucosa: dysentery with blood and mucus.",
+    "Fluid loss causes hypovolaemia, acidosis and hypokalaemia.",
+    "Glucose-coupled sodium absorption remains intact, so ORS works."
+   ]
+  },
+  "presentation": {
+   "symptoms": [
+    "Loose watery stools, vomiting, abdominal cramps",
+    "Blood and mucus in stool (dysentery)",
+    "Fever",
+    "Thirst, reduced urine"
+   ],
+   "physicalSigns": [
+    "Sunken eyes, slow skin pinch (WHO)",
+    "Tachycardia, hypotension in severe dehydration",
+    "Lethargy in severe dehydration (WHO)"
+   ],
+   "redFlags": [
+    "Severe dehydration: lethargic, unable to drink, skin pinch over 2 seconds, no urine for hours (WHO)",
+    "Blood in stool with high fever or sepsis",
+    "Immunosuppression, elderly, pregnancy",
+    "Rice-water stools with rapid dehydration: suspect cholera (see Cholera topic)"
+   ],
+   "precipitants": [
+    "Unsafe water and food",
+    "Travel, outbreaks",
+    "Recent antibiotics (C. difficile)"
+   ]
+  },
+  "differentials": [
+   {
+    "condition": "Cholera",
+    "distinguishingFeatures": "Profuse rice-water stools, rapid severe dehydration; see Cholera topic."
+   },
+   {
+    "condition": "Enteric fever",
+    "distinguishingFeatures": "Persistent fever more than diarrhoea; blood culture."
+   },
+   {
+    "condition": "Inflammatory bowel disease",
+    "distinguishingFeatures": "Chronic bloody diarrhoea, weight loss."
+   },
+   {
+    "condition": "Acute appendicitis or surgical abdomen",
+    "distinguishingFeatures": "Localised pain and guarding."
+   }
+  ],
+  "diagnosticCriteria": [
+   {
+    "criterion": "No dehydration (WHO Plan A)",
+    "threshold": "Normal mental state, eyes and skin pinch; drinks normally."
+   },
+   {
+    "criterion": "Some dehydration (WHO Plan B)",
+    "threshold": "Restless, sunken eyes, skin pinch goes back slowly, thirsty, reduced urine (2 or more signs)."
+   },
+   {
+    "criterion": "Severe dehydration (WHO Plan C)",
+    "threshold": "Lethargic or unconscious, unable to drink, skin pinch over 2 seconds, no urine for hours (2 or more signs)."
+   },
+   {
+    "criterion": "Dysentery",
+    "threshold": "Visible blood in stool."
+   }
+  ],
+  "investigations": {
+   "ruleIn": [
+    {
+     "tier": "specializedAdjunctive",
+     "testName": "Dehydration assessment",
+     "modalityTarget": "Bedside signs",
+     "targetCondition": "Dehydration grade",
+     "normalValue": "Alert, normal skin pinch, drinking normally",
+     "expectedFinding": "Two or more signs of some or severe dehydration",
+     "clinicalRationale": "Chooses WHO Plan A, B or C.",
+     "references": [
+      {
+       "title": "WHO rehydration plans in patients with diarrhoea (MSF Medical Guidelines, Appendix 14, adapted from WHO Pocket book of hospital care for children 2013)",
+       "edition": "MSF 2026, Table 14.1, Table 14.1 (Plans A, B, C)",
+       "url": "https://medicalguidelines.msf.org/en/viewport/mme/english/appendix-14-plan-rehydration-who-32408338.html"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Stool microscopy (dysentery)",
+     "modalityTarget": "Fresh stool",
+     "targetCondition": "Entamoeba histolytica; pus cells",
+     "normalValue": "No trophozoites; few pus cells",
+     "expectedFinding": "Haematophagous trophozoites or many pus cells",
+     "clinicalRationale": "E. histolytica: add metronidazole (NTG 2025).",
+     "references": [
+      {
+       "title": "National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes (NCDC-ICMR)",
+       "edition": "Version 2.0, November 2025, section 4.2, printed p. 34",
+       "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Serum sodium, potassium, creatinine",
+     "modalityTarget": "Blood",
+     "targetCondition": "Electrolyte loss; kidney injury",
+     "normalValue": "Sodium 135–145 mmol/L; potassium 3.5–5.0 mmol/L; creatinine 0.6–1.2 mg/dL",
+     "expectedFinding": "Hypokalaemia; raised creatinine",
+     "clinicalRationale": "Severe dehydration: check electrolytes where available (WHO).",
+     "references": [
+      {
+       "title": "WHO rehydration plans in patients with diarrhoea (MSF Medical Guidelines, Appendix 14, adapted from WHO Pocket book of hospital care for children 2013)",
+       "edition": "MSF 2026, Table 14.1, Table 14.1 (Plans A, B, C)",
+       "url": "https://medicalguidelines.msf.org/en/viewport/mme/english/appendix-14-plan-rehydration-who-32408338.html"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Capillary glucose",
+     "modalityTarget": "Bedside glucose",
+     "targetCondition": "Hypoglycaemia",
+     "normalValue": "70–140 mg/dL",
+     "expectedFinding": "Low",
+     "clinicalRationale": "Check in severe dehydration (WHO).",
+     "references": [
+      {
+       "title": "WHO rehydration plans in patients with diarrhoea (MSF Medical Guidelines, Appendix 14, adapted from WHO Pocket book of hospital care for children 2013)",
+       "edition": "MSF 2026, Table 14.1, Table 14.1 (Plans A, B, C)",
+       "url": "https://medicalguidelines.msf.org/en/viewport/mme/english/appendix-14-plan-rehydration-who-32408338.html"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Stool culture (severe, bloody or outbreak)",
+     "modalityTarget": "Stool culture",
+     "targetCondition": "Shigella, Salmonella, Campylobacter, Vibrio",
+     "normalValue": "No pathogen",
+     "expectedFinding": "Pathogen with susceptibility",
+     "clinicalRationale": "Guides antibiotics; resistance common in India (NTG 2025).",
+     "references": [
+      {
+       "title": "National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes (NCDC-ICMR)",
+       "edition": "Version 2.0, November 2025, section 4.2, printed p. 34",
+       "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+      }
+     ]
+    }
+   ],
+   "ruleOut": [
+    {
+     "tier": "laboratory",
+     "testName": "Blood culture (fever)",
+     "modalityTarget": "Blood culture",
+     "targetCondition": "Enteric fever or bacteraemia",
+     "normalValue": "No growth",
+     "expectedFinding": "Growth",
+     "clinicalRationale": "Persistent fever suggests enteric fever (see topic).",
+     "references": [
+      {
+       "title": "National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes (NCDC-ICMR)",
+       "edition": "Version 2.0, November 2025, section 3.2, printed p. 29",
+       "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf"
+      }
+     ]
+    }
+   ]
+  },
+  "clinicalManagement": [
+   {
+    "id": "hydrate",
+    "title": "Rehydrate",
+    "timeframe": "Immediately",
+    "actions": [
+     "Plan A: ORS after each loose stool, about 300 mL (over 20 kg) (WHO).",
+     "Plan B: ORS 75 mL/kg over 4 hours, then reassess (WHO).",
+     "Plan C: Ringer lactate 100 mL/kg: 30 mL/kg in 30 minutes then 70 mL/kg over 2.5 hours; repeat the first part if pulse still weak (WHO)."
+    ]
+   },
+   {
+    "id": "monitor",
+    "title": "Monitor",
+    "timeframe": "Every 15–30 minutes in Plan C",
+    "actions": [
+     "Record signs and vitals every 15–30 minutes until stable for 1 hour (WHO).",
+     "Watch for fluid overload: rising respiratory and heart rate, crackles, oedema (WHO).",
+     "Start ORS 5 mL/kg/hour once able to drink (WHO)."
+    ]
+   },
+   {
+    "id": "abx",
+    "title": "Antibiotics only if indicated",
+    "timeframe": "After assessment",
+    "actions": [
+     "Antibiotics only for danger signs (NTG 2025).",
+     "Avoid fluoroquinolones: high resistance in India (NTG 2025).",
+     "Dysentery: stool microscopy; treat E. histolytica with metronidazole (NTG 2025)."
+    ]
+   },
+   {
+    "id": "diet",
+    "title": "Feeding",
+    "timeframe": "Throughout",
+    "actions": [
+     "Continue normal diet; avoid starving."
+    ]
+   }
+  ],
+  "medicationPlan": {
+   "status": "source-verified",
+   "branches": [
+    {
+     "label": "Rehydration",
+     "entryCriteria": "All patients with diarrhoea."
+    },
+    {
+     "label": "Diarrhoea with danger signs",
+     "entryCriteria": "Severe illness, high fever, bloody diarrhoea with systemic features, or admission."
+    },
+    {
+     "label": "Amoebic dysentery",
+     "entryCriteria": "E. histolytica on stool microscopy."
+    }
+   ],
+   "regimens": [
+    {
+     "indication": "No or some dehydration",
+     "patientGroup": "Adults and children over 20 kg",
+     "genericName": "Oral rehydration solution (low-osmolarity)",
+     "dose": "Plan A: about 300 mL after each loose stool; Plan B: 75 mL/kg over 4 hours",
+     "route": "Oral",
+     "frequency": "After each stool (Plan A); continuous small sips (Plan B)",
+     "duration": "Until diarrhoea stops; reassess Plan B at 4 hours",
+     "adjustments": [
+      "Paediatric: Children by weight: under 5 kg 50 mL, 5–10 kg 100 mL, 10–20 kg 200 mL per stool (WHO).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Caution in kidney failure (sodium and potassium load).",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Signs of dehydration",
+      "Urine output"
+     ],
+     "contraindications": [
+      "Severe dehydration or unable to drink: use IV"
+     ],
+     "branch": "Rehydration",
+     "step": "Oral rehydration",
+     "selection": "all",
+     "sourceTitle": "WHO rehydration plans in patients with diarrhoea (MSF Medical Guidelines, Appendix 14, adapted from WHO Pocket book of hospital care for children 2013)",
+     "sourceUrl": "https://medicalguidelines.msf.org/en/viewport/mme/english/appendix-14-plan-rehydration-who-32408338.html",
+     "sourceEdition": "MSF 2026, Table 14.1, Table 14.1 (Plans A, B, C)"
+    },
+    {
+     "indication": "Severe dehydration",
+     "patientGroup": "Adults and children 12 months and over",
+     "genericName": "Ringer lactate",
+     "dose": "100 mL/kg: 30 mL/kg in 30 minutes, then 70 mL/kg over 2.5 hours",
+     "route": "IV",
+     "frequency": "As scheduled",
+     "duration": "About 3 hours, then reassess",
+     "adjustments": [
+      "Paediatric: Infants under 12 months: 30 mL/kg over 1 hour, then 70 mL/kg over 5 hours (WHO).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Watch for overload in kidney disease.",
+      "CLD: Use with caution in severe liver disease (lactate).",
+      "Use 0.9% sodium chloride if Ringer lactate unavailable (WHO)."
+     ],
+     "monitoring": [
+      "Vitals every 15–30 minutes",
+      "Fluid-overload signs"
+     ],
+     "contraindications": [
+      "Fluid overload: stop and reassess"
+     ],
+     "branch": "Rehydration",
+     "step": "IV rehydration",
+     "selection": "all",
+     "sourceTitle": "WHO rehydration plans in patients with diarrhoea (MSF Medical Guidelines, Appendix 14, adapted from WHO Pocket book of hospital care for children 2013)",
+     "sourceUrl": "https://medicalguidelines.msf.org/en/viewport/mme/english/appendix-14-plan-rehydration-who-32408338.html",
+     "sourceEdition": "MSF 2026, Table 14.1, Table 14.1 (Plans A, B, C)"
+    },
+    {
+     "indication": "Acute diarrhoea with danger signs",
+     "patientGroup": "Adults",
+     "genericName": "Azithromycin",
+     "dose": "500 mg once daily",
+     "route": "Oral",
+     "frequency": "Once daily",
+     "duration": "3 days",
+     "adjustments": [
+      "Paediatric: Paediatric dose not in the cited section.",
+      "Penicillin allergy: Not a beta-lactam; safe in penicillin allergy.",
+      "CKD: No adjustment.",
+      "CLD: Caution in severe liver disease."
+     ],
+     "monitoring": [
+      "Response at 48–72 hours",
+      "QT with interacting drugs"
+     ],
+     "contraindications": [
+      "Macrolide allergy"
+     ],
+     "branch": "Diarrhoea with danger signs",
+     "step": "Antibiotic",
+     "selection": "one-of",
+     "sourceTitle": "National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes (NCDC-ICMR)",
+     "sourceUrl": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf",
+     "sourceEdition": "Version 2.0, November 2025, section 4.2, printed p. 34",
+     "preferred": true
+    },
+    {
+     "indication": "Acute diarrhoea with danger signs",
+     "patientGroup": "Adults",
+     "genericName": "Cefixime",
+     "dose": "400 mg twice daily",
+     "route": "Oral",
+     "frequency": "Twice daily",
+     "duration": "5 days",
+     "adjustments": [
+      "Paediatric: Paediatric dose not in the cited section.",
+      "Penicillin allergy: Avoid after an immediate (anaphylactic) penicillin reaction.",
+      "CKD: Reduce dose if CrCl below 20 mL/min.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Response"
+     ],
+     "contraindications": [
+      "Cephalosporin allergy"
+     ],
+     "branch": "Diarrhoea with danger signs",
+     "step": "Antibiotic",
+     "selection": "one-of",
+     "sourceTitle": "National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes (NCDC-ICMR)",
+     "sourceUrl": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf",
+     "sourceEdition": "Version 2.0, November 2025, section 4.2, printed p. 34",
+     "preferred": false,
+     "useWhen": "Azithromycin unsuitable."
+    },
+    {
+     "indication": "Acute diarrhoea with danger signs, admitted",
+     "patientGroup": "Adults",
+     "genericName": "Ceftriaxone",
+     "dose": "2 g once daily",
+     "route": "IV",
+     "frequency": "Once daily",
+     "duration": "5 days",
+     "adjustments": [
+      "Paediatric: Children: 50–75 mg/kg/day, maximum 2 g/day (ceftriaxone label).",
+      "Penicillin allergy: Avoid after an immediate (anaphylactic) penicillin reaction.",
+      "CKD: No adjustment alone.",
+      "CLD: Maximum 2 g/day with combined hepatic and renal disease."
+     ],
+     "monitoring": [
+      "Response"
+     ],
+     "contraindications": [
+      "Cephalosporin allergy"
+     ],
+     "branch": "Diarrhoea with danger signs",
+     "step": "Antibiotic",
+     "selection": "one-of",
+     "sourceTitle": "National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes (NCDC-ICMR)",
+     "sourceUrl": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf",
+     "sourceEdition": "Version 2.0, November 2025, section 4.2, printed p. 34",
+     "preferred": false,
+     "useWhen": "Admitted and unable to take oral medicines."
+    },
+    {
+     "indication": "E. histolytica dysentery",
+     "patientGroup": "Adults",
+     "genericName": "Metronidazole",
+     "dose": "400 mg three times daily",
+     "route": "Oral",
+     "frequency": "Three times daily",
+     "duration": "Duration not in the opened extract (commonly 5–10 days)",
+     "adjustments": [
+      "Paediatric: Paediatric dose not in the cited section.",
+      "Penicillin allergy: Not a beta-lactam; safe in penicillin allergy.",
+      "CKD: No adjustment.",
+      "CLD: Reduce dose in severe hepatic impairment."
+     ],
+     "monitoring": [
+      "Nausea, metallic taste"
+     ],
+     "contraindications": [
+      "Alcohol (disulfiram-like reaction)",
+      "First trimester of pregnancy (caution)"
+     ],
+     "branch": "Amoebic dysentery",
+     "step": "Amoebicide",
+     "selection": "all",
+     "sourceTitle": "National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes (NCDC-ICMR)",
+     "sourceUrl": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf",
+     "sourceEdition": "Version 2.0, November 2025, section 4.2, printed p. 34"
+    }
+   ],
+   "note": "Antibiotics only for danger signs, as in NCDC-ICMR NTG 2025 section 4.2; avoid fluoroquinolones. Rehydration volumes from WHO plans (MSF Appendix 14). India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
+  },
+  "teaching": {
+   "scope": "Adult acute diarrhoea in India.",
+   "learningObjectives": [
+    "Grade dehydration and choose Plan A, B or C.",
+    "Decide when antibiotics are needed.",
+    "Recognise amoebic dysentery."
+   ],
+   "keyPoints": [
+    "Fluids first: ORS or Ringer lactate.",
+    "Plan C: 100 mL/kg Ringer lactate in about 3 hours.",
+    "Antibiotics only for danger signs; azithromycin 500 mg daily for 3 days (NTG).",
+    "No fluoroquinolones (NTG)."
+   ],
+   "pitfalls": [
+    "Routine antibiotics for watery diarrhoea.",
+    "Ciprofloxacin or ofloxacin-ornidazole combinations.",
+    "Under-resuscitating severe dehydration.",
+    "Antimotility drugs in dysentery."
+   ],
+   "references": [
+    {
+     "title": "National Treatment Guidelines for Antimicrobial Use in Infectious Disease Syndromes (NCDC-ICMR)",
+     "edition": "Version 2.0, November 2025",
+     "url": "https://ncdc.mohfw.gov.in/uploads/pdf/amr17.pdf",
+     "locator": "section 4.2, printed p. 34; section 3.2, printed p. 29"
+    },
+    {
+     "title": "WHO rehydration plans in patients with diarrhoea (MSF Medical Guidelines, Appendix 14, adapted from WHO Pocket book of hospital care for children 2013)",
+     "edition": "MSF 2026, Table 14.1",
+     "url": "https://medicalguidelines.msf.org/en/viewport/mme/english/appendix-14-plan-rehydration-who-32408338.html",
+     "locator": "Table 14.1; Plans A, B and C"
+    },
+    {
+     "title": "Ceftriaxone for injection, US prescribing information (Pfizer)",
+     "edition": "Prescribing information",
+     "url": "https://labeling.pfizer.com/ShowLabeling.aspx?id=4387",
+     "locator": "sections 2.3, 4"
+    }
+   ]
+  },
+  "nonClinicalManagement": {
+   "patientEducation": [
+    "Drink ORS after every loose stool.",
+    "Return for blood in stool, inability to drink, drowsiness or little urine.",
+    "Wash hands with soap after toilet and before food."
+   ],
+   "lifestyleAndDiet": [
+    "Safe drinking water (boiled or treated).",
+    "Continue eating light, normal food."
+   ],
+   "mdtReferrals": [
+    "District surveillance (IDSP) for outbreaks",
+    "Admission for severe dehydration"
+   ],
+   "dischargeCriteria": [
+    "No dehydration signs",
+    "Drinking and passing urine",
+    "ORS supply given"
+   ],
+   "followUpPlan": "Return if not better in 2–3 days or any danger sign."
+  }
+ }
+]
