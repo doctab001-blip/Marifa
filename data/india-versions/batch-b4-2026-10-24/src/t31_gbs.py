@@ -1,0 +1,68 @@
+from h import *
+PA = "sections Presentation, UMN or LMN signs, Causes and management by pattern, Admission criteria, Discharge criteria"
+EA = "sections 4.1.1, 4.3.1–4.3.14, 4.4, 4.5; Table 1"
+TITLE = "Acute flaccid paralysis and Guillain-Barré syndrome in adults (India)"
+T = topic(
+ id=new_id(TITLE), title=TITLE, specialty="Neurology / Internal Medicine / Emergency Medicine", authority="ICMR", pillar="Urgent Care",
+ scope="Adults with acute paralysis (onset over hours to days) in India: separating spinal cord from nerve, muscle and junction causes, recognising respiratory danger, and treating Guillain-Barré syndrome (GBS). Built on the ICMR Approach to Acute Paralysis workflow (October 2019) with the European Academy of Neurology/Peripheral Nerve Society (EAN/PNS) 2023 GBS guideline for diagnosis, respiratory thresholds and immunotherapy, and the enoxaparin label for clot prevention.",
+ findings=[
+  "Upper motor neuron (UMN) versus lower motor neuron (LMN) triage, causes by pattern, intubation triggers, referral destinations, admission and discharge criteria checked against the ICMR Acute Paralysis STW (October 2019).",
+  "GBS diagnostic features, modified Erasmus GBS Respiratory Insufficiency Score (mEGRIS), forced vital capacity (FVC) thresholds, intravenous immunoglobulin (IVIg) and plasma exchange regimens and timing, and recommendations against steroids and a second IVIg course taken from EAN/PNS 2023.",
+  "Enoxaparin prophylaxis dose from the US label.",
+  "Not clinically reviewed."],
+ unverified=[
+  "Potassium replacement for hypokalaemic periodic paralysis was not dosed in an opened source; follow the local protocol and check serum potassium first (ICMR STW).",
+  "Gabapentin and carbamazepine for GBS pain are recommended by EAN/PNS (4.5.2) but no dose source was opened.",
+  "Steroid treatment for transverse myelitis is decided after magnetic resonance imaging (MRI) at the referral centre; not dosed here.",
+  "Venous thromboembolism prophylaxis in GBS is not addressed in the opened part of EAN/PNS; the enoxaparin row uses the label dose for immobile medical patients."],
+ summary="Acute paralysis is weakness of two or four limbs developing over hours to days. The ICMR workflow first separates upper motor neuron signs (spinal cord disease: trauma, tuberculosis, tumour, transverse myelitis, epidural abscess, cord infarct) from lower motor neuron signs (GBS, hypokalaemic periodic paralysis, myasthenia gravis, snakebite, myopathy). GBS is an immune-mediated polyradiculoneuropathy, often after diarrhoea or a respiratory infection, causing ascending symmetric weakness with absent reflexes that peaks within 4 weeks. The main early danger is respiratory and bulbar failure, so serial bedside breathing tests decide intubation (ICMR STW; EAN/PNS).",
+ mechanisms=[
+  "In GBS, antibodies raised against an infection cross-react with nerve myelin or axons (molecular mimicry).",
+  "Demyelination or axonal damage blocks conduction, causing flaccid weakness and lost reflexes.",
+  "Phrenic, intercostal and bulbar nerve involvement causes respiratory failure and aspiration.",
+  "Autonomic nerve involvement causes swings in blood pressure and heart rate."],
+ presentation={
+  "symptoms": ["Weakness of legs or all four limbs over hours to days (ICMR STW)", "Tingling and limb or back pain (EAN/PNS supportive features)", "Difficulty swallowing, choking on water, breathlessness (ICMR STW admission criteria)", "Recent diarrhoea, respiratory infection or fever within 6 weeks (EAN/PNS)"],
+  "physicalSigns": ["LMN pattern: reduced or absent reflexes, wasting, sensory impairment (ICMR STW)", "UMN pattern: brisk reflexes, extensor plantars, increased tone, sensory level, bladder or bowel incontinence (ICMR STW)", "Fatigable weakness or eye-movement weakness: myasthenia or snakebite (ICMR STW)", "Bilateral facial weakness (EAN/PNS supportive feature)"],
+  "redFlags": ["Unable to complete sentences, low or falling single breath count, short breath-holding time, poor chest expansion: intubate (ICMR STW)", "Respiratory rate above 20/min or SaO2 below 95% (ICMR STW admission)", "FVC below 20 mL/kg: consider elective ventilation; below 10 mL/kg: intubation almost inevitable (EAN/PNS)", "Persistent heart rate above 100/min; bowel or bladder involvement; fever (ICMR STW)", "Inability to cough, inability to lift arms above horizontal, neck flexion weakness (EAN/PNS respiratory risk)"],
+  "precipitants": ["Diarrhoeal or respiratory infection within 6 weeks (EAN/PNS)", "Low potassium (periodic paralysis) (ICMR STW)", "Snakebite (neurotoxic) (ICMR STW)", "Toxins or drugs (acute neuropathy) (ICMR STW)"]},
+ differentials=[
+  ("Acute myelopathy (transverse myelitis, compression, tuberculosis)", "Sensory level, brisk reflexes, extensor plantars, early bladder involvement; needs urgent MRI (ICMR STW)."),
+  ("Hypokalaemic periodic paralysis", "Recurrent episodes, no sensory loss, low serum potassium (ICMR STW)."),
+  ("Myasthenia gravis", "Fatigable weakness with ptosis or eye-movement weakness; normal sensation (ICMR STW)."),
+  ("Neurotoxic snakebite", "Bite history, ptosis and bulbar weakness (ICMR STW)."),
+  ("Myopathy or myositis", "Proximal weakness, no sensory loss, raised creatine kinase (ICMR STW).")],
+ criteria=[
+  ("GBS — required (EAN/PNS Table 1)", "Progressive weakness of arms and legs; absent or reduced reflexes in weak limbs; progression for no more than 4 weeks."),
+  ("GBS less likely (EAN/PNS)", "Persistent asymmetric weakness, fever at onset, sensory level, extensor plantars, cerebrospinal fluid (CSF) above 50 cells/µL."),
+  ("Respiratory risk (EAN/PNS)", "mEGRIS 0–17 low (under 20%), 18–24 moderate, 25–32 high (over 70%). FVC under 60% predicted, aspiration risk or autonomic instability: intensive care unit (ICU) assessment. Single breath count under 20: consider ICU."),
+  ("Admission (ICMR STW)", "Progressive weakness, unable to walk, unable to swallow, respiratory distress, heart rate above 100/min, fever, or bowel or bladder involvement."),
+  ("Discharge (ICMR STW)", "Cause established; weakness no longer progressing; breathing unaided; carers trained in tracheostomy, tube feeding, catheter care, turning and home physiotherapy as needed.")],
+ ruleIn=[
+  inv("specializedAdjunctive", "Nerve conduction studies and electromyography", "Electrodiagnosis", "Polyneuropathy; myopathy; junction disorder", "Normal conduction velocities and amplitudes", "Demyelinating or axonal polyneuropathy", "Do early; a normal first-week study does not exclude GBS, repeat if needed (EAN/PNS 4.2.8); ICMR STW refers for these tests.", "ean", "section 4.2.8", extra=("pa", PA)),
+  inv("laboratory", "Cerebrospinal fluid (CSF) cells and protein", "Lumbar puncture", "GBS versus infection or inflammation", "White cells 0–5/µL; protein 15–45 mg/dL", "Raised protein with white cells usually under 5/µL", "Normal protein does not exclude GBS; above 50 cells/µL makes GBS less likely (EAN/PNS).", "ean", "section 4.1.1, Table 1", extra=("pa", PA)),
+  inv("laboratory", "Single breath count and bedside respiratory tests", "Count aloud in one breath; breath-hold; chest expansion", "Respiratory muscle weakness", "Count well above 20", "Low or falling count; under 20", "Low count or poor chest expansion triggers intubation or ICU (ICMR STW; EAN/PNS).", "pa", PA)],
+ ruleOut=[
+  inv("laboratory", "Serum potassium and electrolytes", "Blood test", "Hypokalaemic paralysis", "Potassium 3.5–5.0 mmol/L", "Potassium low", "Check in every LMN-pattern paralysis (ICMR STW).", "pa", PA),
+  inv("laboratory", "Creatine kinase", "Blood test", "Myopathy or myositis", "Under 200 U/L (assay dependent)", "Raised", "Check with electrolytes when no sensory loss (ICMR STW).", "pa", PA),
+  inv("advancedImaging", "Magnetic resonance imaging (MRI) of the spine", "MRI", "Cord compression or myelitis", "Normal cord", "Compression, abscess, tumour or cord signal change", "Any UMN signs: refer to a centre with MRI (ICMR STW).", "pa", PA)],
+ management=[
+  step("triage", "Triage at first contact", "First 15 minutes", ["Pulse, blood pressure and respiration (ICMR STW).", "Separate UMN from LMN signs; check serum potassium in LMN pattern (ICMR STW).", "Intubate if unable to complete sentences, single breath count low, breath-holding time low or chest expansion poor (ICMR STW).", "UMN signs: catheterise for retention and refer to a centre with MRI (ICMR STW)."]),
+  step("refer", "Referral", "Same day", ["Suspected GBS with absent reflexes: refer to a district hospital or medical college with plasma exchange or IVIg and a ventilator (ICMR STW).", "Myasthenia or snakebite: same intubation criteria; refer for nerve conduction studies, plasma exchange or IVIg and ventilation (ICMR STW)."]),
+  step("monitor", "Respiratory and autonomic monitoring", "Every few hours while worsening", ["Score mEGRIS on admission; serial FVC if available (EAN/PNS).", "ICU assessment for FVC under 60% predicted, aspiration risk or autonomic instability; immediate ICU transfer if FVC falls over 30% in 24 hours (EAN/PNS)."]),
+  step("immuno", "Immunotherapy for GBS", "As soon as possible", ["Unable to walk unaided: IVIg within 2 weeks of onset, or plasma exchange within 4 weeks (EAN/PNS 4.3.5, 4.3.8).", "Do not give plasma exchange followed straight by IVIg, a routine second IVIg course, or corticosteroids (EAN/PNS 4.3.8, 4.3.10, 4.3.13)."]),
+  step("support", "Supportive care and rehabilitation", "From admission", ["Clot prevention while immobile; turning; catheter and feeding care (ICMR STW discharge teaching).", "Physiotherapy, occupational and speech therapy from the acute phase; continue beyond 6 months if needed (EAN/PNS 4.4.2).", "Pain: gabapentinoid or tricyclic, with caution in autonomic failure (EAN/PNS 4.5)."])],
+ branches=[
+  ("GBS — unable to walk unaided", "GBS with inability to walk unaided, within 2 weeks (IVIg) or 4 weeks (plasma exchange) of onset (EAN/PNS)."),
+  ("Immobile in hospital", "Bedbound adult without contraindication to anticoagulation (enoxaparin label 2.1).")],
+ regimens=[
+  rx("GBS — unable to walk unaided", "Immunotherapy", "Guillain-Barré syndrome", "Adults", "Intravenous immunoglobulin (IVIg)", "0.4 g/kg/day (total 2 g/kg)", "IV infusion", "Once daily", "5 days; start within 2 weeks of onset", "Same weight-based dose used in children; seek paediatric neurology advice.", NOT_ABX, "Check creatinine and hydrate; kidney injury risk with some products.", NS, ["Blood pressure, creatinine", "Thrombosis"], ["Selective IgA deficiency with anti-IgA antibodies; recent thrombosis", "Do not repeat routinely (EAN/PNS 4.3.8)"], "ean", "section 4.3.8", sel="one-of", pref=True),
+  rx("GBS — unable to walk unaided", "Immunotherapy", "Guillain-Barré syndrome", "Adults", "Plasma exchange", "4–5 exchanges, total 12–15 L", "Extracorporeal via central line", "Over 1–2 weeks", "Start within 4 weeks of onset; best in the first week", "Specialist centre only in children.", NOT_ABX, "No change.", "Coagulopathy risk; check clotting.", ["Blood pressure, calcium, clotting"], ["Haemodynamic instability, sepsis", "Do not follow immediately with IVIg (EAN/PNS 4.3.10)"], "ean", "sections 4.3.4–4.3.5", sel="one-of", pref=False, use="IVIg unavailable or unaffordable, or presenting 2–4 weeks after onset."),
+  rx("Immobile in hospital", "Clot prevention", "Venous thromboembolism prophylaxis", "Adults", "Enoxaparin", "40 mg", "Subcutaneous", "Once daily", "Usually 6–11 days, while immobile", ADULT, NOT_ABX, "Creatinine clearance below 30 mL/min: 30 mg once daily (label 2.2).", NS, ["Platelets, bleeding"], ["Active major bleeding (label 4)", "Within 12 hours of lumbar puncture"], "enox", "sections 2.1–2.2")],
+ medNote="ICMR STW gives triage and referral but no drug doses; IVIg and plasma exchange regimens follow EAN/PNS 2023, and clot prevention the enoxaparin label. Corticosteroids are not recommended for GBS (EAN/PNS). Other causes (myelitis, hypokalaemia, myasthenia, snakebite) follow their own pathways. Not clinically reviewed.",
+ teaching={"scope": "Adult acute flaccid paralysis and GBS.", "learningObjectives": ["Separate UMN from LMN acute paralysis.", "Recognise respiratory danger early.", "Choose and time immunotherapy in GBS."],
+  "keyPoints": ["Check potassium in every LMN paralysis.", "Single breath count and chest expansion decide intubation.", "IVIg 2 g/kg over 5 days within 2 weeks, or plasma exchange within 4 weeks.", "No steroids for GBS."],
+  "pitfalls": ["Waiting for respiratory distress before referring.", "Missing a cord lesion with a sensory level.", "Giving steroids for GBS.", "Plasma exchange immediately followed by IVIg."],
+  "references": [tref("pa", PA), tref("ean", EA), tref("enox", "sections 2.1, 2.2, 4")]},
+ nonClinical={"patientEducation": ["Most people with GBS improve over weeks to months; recovery can continue beyond a year.", "Report any new breathlessness, choking or palpitations at once."], "lifestyleAndDiet": ["Safe swallowing or tube feeding as assessed", "Graded physiotherapy at home (ICMR STW)"], "mdtReferrals": ["Neurology", "ICU", "Physiotherapy, occupational and speech therapy", "Psychological support for patient and carers (EAN/PNS)"], "dischargeCriteria": ["Cause established (ICMR STW)", "Weakness no longer progressing (ICMR STW)", "Breathing unaided (ICMR STW)", "Carers trained in catheter care, turning and home physiotherapy (ICMR STW)"], "followUpPlan": "Follow up at the community health centre for medicines and rehabilitation (ICMR STW); continue rehabilitation beyond 6 months if limitations persist (EAN/PNS)."})
+save("t31_gbs.json", [T])
