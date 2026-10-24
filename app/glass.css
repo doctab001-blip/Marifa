@@ -380,9 +380,15 @@ a.card:hover, .disease-card:hover, .care-pillar-card:hover { border-color: rgb(3
 .pathway-step-heading > span { color: #7ee7f2; }
 .pathway-step-heading h3 { color: var(--strong); margin: 0; }
 .pathway-step-heading .pathway-timeframe { margin: 4px 0 0; }
-.pathway-branches { border-top-color: rgb(var(--ov) / .08); background: rgb(var(--ov) / .025); }
+.pathway-branches { --branch-accent: #a78bfa; --branch-line: rgb(167 139 250 / .22); border-top-color: rgb(var(--ov) / .08); background: rgb(var(--ov) / .025); }
 .pathway-branches-label { color: #c4b5fd; }
-.pathway-branch-grid > div { border-radius: 16px !important; border-color: rgb(167 139 250 / .3) !important; background: linear-gradient(180deg, rgb(167 139 250 / .1), rgb(167 139 250 / .03)) !important; }
+.pathway-branch-table { border-radius: 14px; background: rgb(var(--ov) / .035); }
+.pathway-branch-head { color: #c4b5fd; }
+.pathway-branch-if { background: rgb(167 139 250 / .07); }
+.pathway-branch-if strong { color: var(--strong); }
+.pathway-branch-key { color: #1e1240; }
+.pathway-branch-tag { color: #c4b5fd; box-shadow: inset 0 0 0 1px rgb(167 139 250 / .45); }
+.pathway-branch-tag.is-else { color: #fff; background: #64748b; box-shadow: none; }
 .timer-pill { vertical-align: baseline; white-space: nowrap; margin-inline: .1em; }
 .timer-pill > svg { width: 14px; height: 14px; }
 
@@ -448,7 +454,13 @@ html:not([data-theme="dark"]) {
   .em-deranged, .em-dose-table .em-contra { color: #be123c; }
   .em-pros > strong { color: #047857; } .em-cons > strong { color: #be123c; }
   .em-source-link, .pathway-step-heading > span { color: #0e7490; }
-  .pathway-branches-label { color: #6d28d9; }
+  .pathway-branches { --branch-accent: #7c3aed; --branch-line: rgb(124 58 237 / .2); }
+  .pathway-branches-label, .pathway-branch-head { color: #6d28d9; }
+  .pathway-branch-table { background: rgb(255 255 255 / .78); }
+  .pathway-branch-if { background: rgb(124 58 237 / .045); }
+  .pathway-branch-key { color: #fff; }
+  .pathway-branch-tag { color: #6d28d9; box-shadow: inset 0 0 0 1px rgb(124 58 237 / .4); }
+  .pathway-branch-tag.is-else { color: #fff; }
   .topic-approval-done svg { color: #059669; }
   .em-lead, .em-list, .em-table td, .em-criteria dd { color: var(--text-2); }
   .em-nav { background: rgb(255 255 255 / .62); }
