@@ -1,0 +1,76 @@
+from h import *
+RS = "sections Symptoms and signs, Immediate referral, Investigations, Medical expulsive therapy, Algorithm, Prevention"
+NG = "Recommendations 1.1.1–1.1.3, 1.2.1–1.2.4, 1.3.1, 1.5.4, 1.8.1–1.8.5; Tables 1–2"
+BA = "sections Analgesia, Decompression, Medical expulsive therapy, Follow-up imaging"
+TITLE = "Renal and ureteric stones (India)"
+T = topic(
+ id=new_id(TITLE), title=TITLE, specialty="Urology / Emergency Medicine / Primary Care", authority="ICMR", pillar="Urgent Care",
+ scope="Adults and children with suspected renal or ureteric stones in India: renal colic, imaging, pain relief, medical expulsive therapy (MET), urgent decompression and prevention. Built on the ICMR Renal and Ureteric Stones workflow (November 2025), with National Institute for Health and Care Excellence (NICE) NG118 and British Association of Urological Surgeons (BAUS) 2018 standards, and US labels for analgesic doses.",
+ findings=[
+  "Pain patterns by stone site, immediate referral criteria, investigations and imaging trade-offs, MET drugs and doses, size cut-offs, duration and contraindications, extended metabolic evaluation and prevention advice checked against the ICMR Renal and Ureteric Stones STW (November 2025).",
+  "Imaging choice, analgesic ladder, alpha-blocker use, surgical timing, stone-size treatment tables and prevention taken from NICE NG118.",
+  "Decompression within 12 hours for sepsis with an obstructing stone and 4-week imaging review from BAUS 2018.",
+  "ICMR and NICE differ on fluid targets and MET scope; shown side by side.",
+  "Not clinically reviewed."],
+ unverified=[
+  "The ICMR STW lists potassium citrate without a dose; NICE suggests it for recurrent calcium oxalate stones (off-label); dose not verified here.",
+  "Opioid doses for renal colic were not opened; use the local protocol when NSAIDs and IV paracetamol are contraindicated or insufficient (NICE 1.2.3).",
+  "Empiric antibiotic choice for an infected obstructed kidney follows the urinary tract infection and pyelonephritis topic (NTG 2025); not repeated here."],
+ summary="Urinary stones form when urine is supersaturated with calcium oxalate, calcium phosphate, uric acid or cystine. A stone moving into the ureter causes obstruction, ureteric spasm and capsular stretch, producing colicky loin pain that radiates according to the level of the stone (ICMR STW). Most small distal stones pass; larger stones and those with infection, obstruction of a solitary kidney, anuria or renal failure need urgent urological care. An obstructed, infected kidney is a urological emergency that needs drainage as well as antibiotics (BAUS).",
+ mechanisms=[
+  "Supersaturation, low urine volume and low citrate drive crystal formation.",
+  "Ureteric obstruction raises pressure in the collecting system, causing colic and hydronephrosis.",
+  "Pain radiates from flank to groin, thigh, scrotum or vulva as the stone descends (ICMR STW).",
+  "Infection behind an obstruction causes pyonephrosis and urosepsis."],
+ presentation={
+  "symptoms": ["Renal stone: flank pain (ICMR STW)", "Upper ureteric: colic from back to front; mid ureteric: to groin; lower ureteric: to upper thigh and scrotum or vulva (ICMR STW)", "Haematuria; nausea and vomiting with colic (ICMR STW)", "Difficulty passing urine with lower ureteric stones (ICMR STW)"],
+  "physicalSigns": ["Restless patient, loin or renal angle tenderness", "Fever with chills and rigors suggests infection behind obstruction (ICMR STW)"],
+  "redFlags": ["Anuria (bilateral stones or stone in a solitary kidney) (ICMR STW)", "Fever with chills and rigors (ICMR STW)", "Suspected renal failure (ICMR STW)", "Persistent haematuria (ICMR STW)", "Sepsis with an obstructing stone: decompress within 12 hours (BAUS)"],
+  "precipitants": ["Low fluid intake, hot climate", "High salt, high oxalate (spinach, nuts, beetroot, chips) and purine-rich diet (ICMR STW)", "Family history, previous stones, prior gut surgery (ICMR STW)", "Hyperparathyroidism"]},
+ differentials=[
+  ("Acute appendicitis", "Right iliac fossa tenderness and guarding; pain shifts from umbilicus."),
+  ("Pyelonephritis without obstruction", "Fever and loin pain; no hydronephrosis on imaging."),
+  ("Abdominal aortic aneurysm", "Older patient, pulsatile mass, hypotension; non-contrast computed tomography (NCCT) also detects other causes of flank pain (ICMR STW)."),
+  ("Ectopic pregnancy", "Pregnancy test positive; use ultrasound in pregnancy (NICE 1.1.1).")],
+ criteria=[
+  ("Immediate referral (ICMR STW)", "Anuria, fever with chills and rigors, suspected renal failure or persistent haematuria; give empiric antibiotics and hydration for fever or anuria."),
+  ("MET (ICMR STW)", "Ureteric stones under 10 mm; not with infection, obstruction or deranged renal function; up to 4 weeks."),
+  ("Surgery timing (NICE 1.5.4)", "Ureteric stone with renal colic: treat within 48 hours of diagnosis if pain is ongoing and not tolerated, or the stone is unlikely to pass."),
+  ("Treatment by size, adults (NICE Tables 1–2)", "Renal under 10 mm: shock wave lithotripsy (SWL), consider ureteroscopy (URS); 10–20 mm: URS or SWL; over 20 mm: percutaneous nephrolithotomy (PCNL). Ureteric 10–20 mm: URS."),
+  ("Extended metabolic evaluation (ICMR STW)", "Recurrent stones, children, bilateral stones, family history, prior gut surgery, solitary kidney, cystine stones: 3–4 weeks after clearance.")],
+ ruleIn=[
+  inv("advancedImaging", "NCCT of kidneys, ureters and bladder (KUB)", "Low-dose NCCT", "Stone size and site; other causes", "No calculus or hydronephrosis", "Calculus with hydronephrosis", "Preferred in acute colic (ICMR STW); urgent within 24 hours in adults (NICE 1.1.1).", "rs", RS, extra=("ng118", "Recommendation 1.1.1")),
+  inv("firstLineImaging", "Ultrasound KUB", "Ultrasound", "Hydronephrosis; radiolucent stones", "No hydronephrosis", "Hydronephrosis; echogenic stone with shadow", "No radiation; first line in pregnancy and children (NICE 1.1.1–1.1.2); may miss ureteric stones (ICMR STW).", "rs", RS, extra=("ng118", "Recommendations 1.1.1–1.1.2")),
+  inv("firstLineImaging", "X-ray KUB", "Plain radiograph", "Radio-opaque stones", "No opacity along urinary tract", "Radio-opaque calculus", "About 90% of renal stones are radio-opaque; order with ultrasound (ICMR STW).", "rs", RS)],
+ ruleOut=[
+  inv("laboratory", "Urinalysis", "Dipstick and microscopy", "Haematuria; infection", "No blood, leucocytes or nitrites", "Haematuria; pyuria or nitrites suggest infection", "Infection changes MET and urgency (ICMR STW).", "rs", RS),
+  inv("laboratory", "Serum creatinine and electrolytes (calcium, phosphorus, uric acid)", "Blood tests", "Renal function; metabolic cause", "Creatinine 0.6–1.2 mg/dL; calcium 8.5–10.5 mg/dL; uric acid 3.5–7.2 mg/dL", "Raised creatinine; hypercalcaemia; hyperuricaemia", "Initial evaluation for all stone formers (ICMR STW).", "rs", RS),
+  inv("specializedAdjunctive", "Intact parathyroid hormone and stone analysis", "Blood test; stone chemistry", "Hyperparathyroidism; stone type", "Parathyroid hormone (PTH) 15–65 pg/mL", "Raised PTH with hypercalcaemia; stone composition", "Preferred tests to guide prevention (ICMR STW).", "rs", RS)],
+ management=[
+  step("assess", "Assess and image", "First hours", ["History: site and type of pain, past stones, medicines, family history (ICMR STW).", "Urgent low-dose NCCT within 24 hours in adults; ultrasound first in pregnancy and children (NICE 1.1.1–1.1.2).", "X-ray KUB plus ultrasound where NCCT is unavailable (ICMR STW)."]),
+  step("pain", "Pain relief", "Immediately", ["Non-steroidal anti-inflammatory drug (NSAID) by any route first line, all ages (NICE 1.2.1).", "IV paracetamol if NSAIDs are contraindicated or insufficient (NICE 1.2.2); opioids if both are unsuitable (NICE 1.2.3).", "Do not give antispasmodics (NICE 1.2.4).", "Use the lowest NSAID dose for the shortest time because of coronary risk (BAUS)."]),
+  step("urgent", "Infection or obstruction", "Within 12 hours", ["Fever with rigors or anuria: empiric antibiotics and hydration, refer immediately (ICMR STW).", "Sepsis with an obstructing stone: decompress by nephrostomy or ureteric stent within 12 hours with broad-spectrum antibiotic cover (BAUS)."]),
+  step("conservative", "Watchful waiting and MET", "Up to 4 weeks", ["Distal ureteric stones under 10 mm: consider an alpha-blocker (NICE 1.3.1; ICMR STW).", "Review with imaging at no later than 4 weeks; offer definitive treatment if the stone has not passed (BAUS)."]),
+  step("intervention", "Definitive treatment", "Within 48 hours if indicated", ["Ongoing intolerable pain or stone unlikely to pass: SWL or URS within 48 hours (NICE 1.5.4).", "Kidney or ureteric stone over 1 cm, or failed MET: refer to a higher or tertiary centre (ICMR STW)."]),
+  step("prevent", "Prevention", "After clearance", ["Fluids for urine output over 2 litres/day (ICMR STW); NICE: drink 2.5–3 litres of water daily, add fresh lemon juice, avoid carbonated drinks (NICE 1.8.1).", "Limit salt (6 g/day, NICE); do not restrict calcium; reduce oxalate- and purine-rich foods and beer (ICMR STW).", "Extended metabolic evaluation for recurrent and high-risk stone formers (ICMR STW)."])],
+ branches=[
+  ("Renal colic analgesia", "All patients with renal colic (NICE 1.2.1–1.2.3)."),
+  ("Medical expulsive therapy", "Distal ureteric stone under 10 mm without infection, obstruction or deranged renal function (ICMR STW; NICE 1.3.1).")],
+ regimens=[
+  rx("Renal colic analgesia", "First-line analgesic", "Renal colic", "Adults", "Ketorolac", "30 mg IV or 60 mg IM single dose (15 mg IV or 30 mg IM if 65 or older, kidney impairment or under 50 kg)", "IV or IM", "Then 30 mg (15 mg) every 6 hours if needed", "Max 120 mg/day (60 mg/day reduced-dose group); no more than 5 days", "Not indicated in children (label); NICE recommends an NSAID for all ages — use a paediatric NSAID formulation.", NOT_ABX, "Contraindicated in advanced kidney impairment or volume depletion (label); check creatinine first.", NS, ["Pain score", "Creatinine, urine output"], ["Peptic ulcer or gastrointestinal bleeding, pregnancy at 30 weeks or later, current aspirin or NSAID, cerebrovascular bleeding (label)"], "ketor", "section Dosage and Administration; section Contraindications", sel="one-of", pref=True),
+  rx("Renal colic analgesia", "First-line analgesic", "Renal colic", "Adults and children", "Paracetamol (IV)", "1000 mg (50 kg or more); 15 mg/kg (under 50 kg)", "IV", "Every 6 hours", "Max 4000 mg/day (50 kg or more) or 75 mg/kg/day", "Children 2–12 years: 15 mg/kg every 6 hours, max 75 mg/kg/day (label 2.3).", NOT_ABX, "Creatinine clearance 30 mL/min or less: longer interval and lower daily dose may be needed (label 8.7).", "Contraindicated in severe hepatic impairment (label 4).", ["Pain score"], ["Severe hepatic impairment or active liver disease (label 4)"], "para", "sections 2.2–2.3, 4, 8.7", sel="one-of", pref=False, use="NSAID contraindicated (for example kidney impairment, pregnancy at 30 weeks or more, peptic ulcer) or pain not relieved (NICE 1.2.2)."),
+  rx("Medical expulsive therapy", "Alpha-blocker", "Distal ureteric stone under 10 mm", "Adults", "Tamsulosin", "0.4 mg", "Oral", "Once daily", "Up to 4 weeks", ADULT, NOT_ABX, NS, NS, ["Stone passage; imaging by 4 weeks (BAUS)", "Postural dizziness"], ["Infection, obstruction or deranged renal function (ICMR STW)", "Off-label for stones (NICE 1.3.1)"], "rs", RS, sel="one-of", pref=True),
+  rx("Medical expulsive therapy", "Alpha-blocker", "Distal ureteric stone under 10 mm", "Adults", "Alfuzosin", "10 mg", "Oral", "Once daily", "Up to 4 weeks", ADULT, NOT_ABX, NS, NS, ["Stone passage", "Postural dizziness"], ["Infection, obstruction or deranged renal function (ICMR STW)"], "rs", RS, sel="one-of", pref=False, use="Tamsulosin unavailable."),
+  rx("Medical expulsive therapy", "Alpha-blocker", "Distal ureteric stone under 10 mm", "Adults", "Silodosin", "8 mg", "Oral", "Once daily", "Up to 4 weeks", ADULT, NOT_ABX, NS, NS, ["Stone passage", "Retrograde ejaculation"], ["Infection, obstruction or deranged renal function (ICMR STW)"], "rs", RS, sel="one-of", pref=False, use="Tamsulosin and alfuzosin unavailable.")],
+ medNote="Analgesic ladder from NICE NG118 (NSAID, then IV paracetamol, then opioid); doses from US labels. MET drugs and doses from the ICMR STW. BAUS advises against routine MET and counselling on its off-label use; NICE suggests considering it for distal stones under 10 mm. Antibiotics for an infected obstructed kidney follow the urinary tract infection topic, with urgent decompression. Not clinically reviewed.",
+ comparison={"title": "Renal stones: ICMR STW vs NICE NG118 vs BAUS", "columns": ["ICMR STW (2025)", "NICE NG118 (2019)", "BAUS (2018)"], "rows": [
+   {"parameter": "Medical expulsive therapy", "values": ["Alpha-blocker for ureteric stones under 10 mm, up to 4 weeks", "Consider alpha-blocker for distal ureteric stones under 10 mm (off-label)", "Do not start routinely; counsel on off-label use"]},
+   {"parameter": "Fluid advice", "values": ["Urine output over 2 litres/day", "Adults drink 2.5–3 litres of water daily", "Not stated"]},
+   {"parameter": "Imaging in acute colic", "values": ["NCCT preferred if available; X-ray KUB plus ultrasound", "Low-dose NCCT within 24 hours; ultrasound in pregnancy and children", "Not extracted"]}],
+   "note": "Shown as each source states; not merged."},
+ teaching={"scope": "Renal colic and urinary stones.", "learningObjectives": ["Image suspected renal colic appropriately.", "Treat pain with the NSAID-first ladder.", "Recognise the infected obstructed kidney."],
+  "keyPoints": ["NSAID first, IV paracetamol second, no antispasmodics.", "Fever with obstruction: drain within 12 hours plus antibiotics.", "Distal stone under 10 mm: alpha-blocker up to 4 weeks.", "Do not restrict dietary calcium."],
+  "pitfalls": ["Antibiotics alone for an obstructed infected kidney.", "MET with infection or impaired renal function.", "Missing a leaking aortic aneurysm in an older patient.", "No follow-up imaging for a stone being watched."],
+  "references": [tref("rs", RS), tref("ng118", NG), tref("baus", BA), tref("ketor", "section Dosage and Administration; section Contraindications"), tref("para", "sections 2.2, 2.3, 4, 8.7")]},
+ nonClinical={"patientEducation": ["Strain urine and keep any stone passed for analysis (ICMR STW prefers stone analysis).", "Return at once for fever with chills, no urine output or uncontrolled pain.", "Stones commonly recur; follow prevention advice (ICMR STW)."], "lifestyleAndDiet": ["High fluid intake; citrate-rich drinks such as lemon or orange juice (ICMR STW).", "Less salt, more fibre, normal calcium; fewer oxalate-rich and purine-rich foods; avoid beer (ICMR STW)."], "mdtReferrals": ["Urologist for stones over 10 mm, failed MET or obstruction", "Nephrology for recurrent stones or metabolic causes"], "dischargeCriteria": ["Pain controlled on oral analgesia", "No fever, normal renal function", "Imaging plan in place"], "followUpPlan": "Imaging review by 4 weeks if the stone is being watched (BAUS); extended metabolic evaluation 3–4 weeks after clearance for recurrent or high-risk stone formers (ICMR STW)."})
+save("t28_renal_stones.json", [T])
