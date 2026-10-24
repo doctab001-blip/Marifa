@@ -5,7 +5,7 @@
   "specialty": "Neurology / Emergency Medicine / Primary Care",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-b1-2026-10-24-v2",
+  "version": "india-b1-2026-10-24-v3",
   "lastReviewed": "2026-10-24",
   "pillar": "Urgent Care",
   "clinicalReviewStatus": "pending",
@@ -20,7 +20,7 @@
     "Not clinically reviewed."
    ],
    "unverifiedSections": [
-    "The ICMR workflow text for the phenobarbitone infusion rate is incomplete; the rate shown is from the US phenobarbital injection label. The ICMR ketamine line for refractory status epilepticus is incomplete and no accessible guideline dose was confirmed; midazolam, propofol and thiopental are listed instead.",
+    "The ICMR workflow text for the phenobarbitone infusion rate is incomplete; the rate shown is from the US phenobarbital injection label. The ICMR ketamine line for refractory status epilepticus is incomplete, and the Neurocritical Care Society 2012 guideline lists ketamine without a dose; the ketamine dose is from a peer-reviewed review table (CNS Drugs 2019, Table 2), written for children.",
     "The ICMR workflow (2019) predates newer status epilepticus trials; second-line choice between phenytoin, valproate and levetiracetam follows ICMR order only.",
     "Renal and hepatic advice is given only where a cited label states it; other antiseizure drugs need formulary checks.",
     "Normal laboratory ranges are typical adult ranges; local laboratory ranges apply.",
@@ -650,6 +650,37 @@
      "useWhen": "Midazolam fails or is unsuitable and propofol is the unit's chosen agent."
     },
     {
+     "indication": "Refractory or super-refractory status epilepticus",
+     "patientGroup": "Patients in ICU (airway may need securing)",
+     "genericName": "Ketamine",
+     "dose": "Loading 1–3 mg/kg every 3–5 minutes until seizures stop, then 10–100 µg/kg/min",
+     "route": "IV",
+     "frequency": "Bolus, then continuous infusion",
+     "duration": "Taper after seizure control, EEG-guided",
+     "adjustments": [
+      "Paediatric: This is the paediatric dose (CNS Drugs 2019 review, Table 2); adults are dosed per kg the same way under specialist care.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Not specified in the cited sources.",
+      "CLD: Not specified in the cited sources."
+     ],
+     "monitoring": [
+      "Continuous EEG",
+      "Blood pressure, heart rate"
+     ],
+     "contraindications": [
+      "Raised intracranial pressure concerns",
+      "Hypertension, tachyarrhythmia"
+     ],
+     "branch": "Refractory status epilepticus (ICU)",
+     "step": "Anaesthetic infusion",
+     "selection": "one-of",
+     "sourceTitle": "Pharmacotherapy for Pediatric Convulsive Status Epilepticus (review)",
+     "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6982635/",
+     "sourceEdition": "CNS Drugs 2019, Table 2",
+     "preferred": false,
+     "useWhen": "Seizures continue despite midazolam, propofol or thiopental; ICMR lists ketamine for refractory status epilepticus."
+    },
+    {
      "indication": "Generalised epilepsy",
      "patientGroup": "Adults; not women of childbearing age (ICMR STW)",
      "genericName": "Sodium valproate",
@@ -919,7 +950,7 @@
   "specialty": "Pulmonology / Primary Care",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-b1-2026-10-24-v2",
+  "version": "india-b1-2026-10-24-v3",
   "lastReviewed": "2026-10-24",
   "pillar": "Chronic Care",
   "clinicalReviewStatus": "pending",
@@ -1767,7 +1798,7 @@
   "specialty": "Nephrology / Internal Medicine / Emergency Medicine",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-b1-2026-10-24-v2",
+  "version": "india-b1-2026-10-24-v3",
   "lastReviewed": "2026-10-24",
   "pillar": "Urgent Care",
   "clinicalReviewStatus": "pending",
@@ -1781,7 +1812,7 @@
     "Not clinically reviewed."
    ],
    "unverifiedSections": [
-    "The ICMR AKI workflow gives no dose for potassium binders or loop diuretics; the binder dose is from the sodium zirconium cyclosilicate (Lokelma) label and the furosemide range from the ICMR Heart Failure STW. Calcium or sodium polystyrene sulfonate are alternatives where SZC is unavailable; their doses were not checked.",
+    "The ICMR AKI workflow gives no dose for potassium binders or loop diuretics; the binder dose is from the sodium zirconium cyclosilicate (Lokelma) label and the furosemide range from the ICMR Heart Failure STW. Calcium polystyrene sulfonate (UK SmPC) and sodium polystyrene sulfonate (US label) doses are given as alternatives.",
     "No paediatric doses are given in the AKI workflow; neonatal AKI is referred to a paediatrician.",
     "KDIGO stage thresholds beyond the definition are not reproduced because the workflow cites KDIGO without listing the stages.",
     "Normal laboratory ranges are typical adult ranges; local laboratory ranges apply.",
@@ -2228,10 +2259,76 @@
      ],
      "branch": "Hyperkalaemia",
      "step": "Remove potassium (binder)",
-     "selection": "all",
+     "selection": "one-of",
      "sourceTitle": "Sodium zirconium cyclosilicate (Lokelma), US prescribing information (DailyMed)",
      "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=90bf8e28-748d-4e4b-a19f-9cf483370eff",
-     "sourceEdition": "DailyMed label, section 2.1"
+     "sourceEdition": "DailyMed label, section 2.1",
+     "preferred": true
+    },
+    {
+     "indication": "Lower total body potassium",
+     "patientGroup": "Adults with hyperkalaemia",
+     "genericName": "Calcium polystyrene sulfonate",
+     "dose": "15 g orally three or four times daily; or 30 g rectally in 150 mL water or 10% dextrose as a daily retention enema",
+     "route": "Oral or rectal",
+     "frequency": "Three or four times daily (oral); daily (rectal)",
+     "duration": "Until potassium controlled",
+     "adjustments": [
+      "Paediatric: Children: 1 g/kg/day orally in divided doses in acute hyperkalaemia; neonates rectal only, 0.5–1 g/kg (SmPC section 4.2).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Not specified in the cited sources.",
+      "CLD: Not specified in the cited sources."
+     ],
+     "monitoring": [
+      "Potassium, calcium",
+      "Constipation"
+     ],
+     "contraindications": [
+      "Potassium below 5 mmol/L",
+      "Hypercalcaemia",
+      "Obstructive bowel disease",
+      "Oral use in neonates (SmPC section 4.3)"
+     ],
+     "branch": "Hyperkalaemia",
+     "step": "Remove potassium (binder)",
+     "selection": "one-of",
+     "sourceTitle": "Calcium Resonium (calcium polystyrene sulfonate), Summary of Product Characteristics (UK eMC)",
+     "sourceUrl": "https://www.medicines.org.uk/emc/product/1439/smpc",
+     "sourceEdition": "UK SmPC, section 4.2",
+     "preferred": false,
+     "useWhen": "Sodium zirconium cyclosilicate unavailable or unaffordable."
+    },
+    {
+     "indication": "Lower total body potassium",
+     "patientGroup": "Adults with hyperkalaemia",
+     "genericName": "Sodium polystyrene sulfonate",
+     "dose": "15 g orally one to four times daily (15–60 g/day); or 30–50 g enema every 6 hours",
+     "route": "Oral or rectal",
+     "frequency": "One to four times daily (oral); every 6 hours (rectal)",
+     "duration": "Until potassium controlled",
+     "adjustments": [
+      "Paediatric: Smaller children and infants: lower doses, calculated at 1 mEq potassium per gram of resin (label).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Sodium load: caution in heart failure and fluid overload.",
+      "CLD: Not specified in the cited sources."
+     ],
+     "monitoring": [
+      "Potassium, sodium, magnesium",
+      "Constipation"
+     ],
+     "contraindications": [
+      "Hypokalaemia",
+      "Obstructive bowel disease",
+      "Oral use in neonates (label)"
+     ],
+     "branch": "Hyperkalaemia",
+     "step": "Remove potassium (binder)",
+     "selection": "one-of",
+     "sourceTitle": "Sodium polystyrene sulfonate powder for suspension, US prescribing information (DailyMed)",
+     "sourceUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=fd9b192f-51f3-4737-be14-1970327f39aa",
+     "sourceEdition": "DailyMed label, section Dosage and Administration",
+     "preferred": false,
+     "useWhen": "Sodium zirconium cyclosilicate and calcium polystyrene sulfonate unavailable; avoid in fluid overload."
     },
     {
      "indication": "Pulmonary oedema or fluid overload",
@@ -2327,7 +2424,7 @@
   "specialty": "Cardiology / Internal Medicine / Primary Care",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-b1-2026-10-24-v2",
+  "version": "india-b1-2026-10-24-v3",
   "lastReviewed": "2026-10-24",
   "pillar": "Chronic Care",
   "clinicalReviewStatus": "pending",
@@ -3196,7 +3293,7 @@
   "specialty": "Gastroenterology / Emergency Medicine",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-b1-2026-10-24-v2",
+  "version": "india-b1-2026-10-24-v3",
   "lastReviewed": "2026-10-24",
   "pillar": "Urgent Care",
   "clinicalReviewStatus": "pending",
@@ -3806,7 +3903,7 @@
   "specialty": "Infectious Diseases / Nephrology / Primary Care",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-b1-2026-10-24-v2",
+  "version": "india-b1-2026-10-24-v3",
   "lastReviewed": "2026-10-24",
   "pillar": "Urgent Care",
   "clinicalReviewStatus": "pending",
@@ -4821,7 +4918,7 @@
   "specialty": "Paediatrics / Emergency Medicine / Critical Care",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-b1-2026-10-24-v2",
+  "version": "india-b1-2026-10-24-v3",
   "lastReviewed": "2026-10-24",
   "pillar": "Urgent Care",
   "clinicalReviewStatus": "pending",
@@ -5488,7 +5585,7 @@
   "specialty": "Obstetrics / Primary Care",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-b1-2026-10-24-v2",
+  "version": "india-b1-2026-10-24-v3",
   "lastReviewed": "2026-10-24",
   "pillar": "Safe Birth",
   "clinicalReviewStatus": "pending",

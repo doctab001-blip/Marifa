@@ -5,7 +5,7 @@
   "specialty": "Neurology / Emergency Medicine",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-b2-2026-10-24-v2",
+  "version": "india-b2-2026-10-24-v3",
   "lastReviewed": "2026-10-24",
   "pillar": "Urgent Care",
   "clinicalReviewStatus": "pending",
@@ -631,7 +631,7 @@
   "specialty": "Pulmonology / Emergency Medicine",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-b2-2026-10-24-v2",
+  "version": "india-b2-2026-10-24-v3",
   "lastReviewed": "2026-10-24",
   "pillar": "Urgent Care",
   "clinicalReviewStatus": "pending",
@@ -1141,7 +1141,7 @@
   "specialty": "Pulmonology / Primary Care",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-b2-2026-10-24-v2",
+  "version": "india-b2-2026-10-24-v3",
   "lastReviewed": "2026-10-24",
   "pillar": "Chronic Care",
   "clinicalReviewStatus": "pending",
@@ -1702,7 +1702,7 @@
   "specialty": "Cardiology / Emergency Medicine",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-b2-2026-10-24-v2",
+  "version": "india-b2-2026-10-24-v3",
   "lastReviewed": "2026-10-24",
   "pillar": "Urgent Care",
   "clinicalReviewStatus": "pending",
@@ -2602,7 +2602,7 @@
   "specialty": "Cardiology / Emergency Medicine / Primary Care",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-b2-2026-10-24-v2",
+  "version": "india-b2-2026-10-24-v3",
   "lastReviewed": "2026-10-24",
   "pillar": "Urgent Care",
   "clinicalReviewStatus": "pending",
@@ -3340,7 +3340,7 @@
   "specialty": "Psychiatry / Primary Care",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-b2-2026-10-24-v2",
+  "version": "india-b2-2026-10-24-v3",
   "lastReviewed": "2026-10-24",
   "pillar": "Chronic Care",
   "clinicalReviewStatus": "pending",
@@ -4014,7 +4014,7 @@
   "specialty": "Pulmonology / Infectious Diseases / Primary Care",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-b2-2026-10-24-v2",
+  "version": "india-b2-2026-10-24-v3",
   "lastReviewed": "2026-10-24",
   "pillar": "Urgent Care",
   "clinicalReviewStatus": "pending",
@@ -4922,7 +4922,7 @@
   "specialty": "Endocrinology / Internal Medicine / Primary Care",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-b2-2026-10-24-v2",
+  "version": "india-b2-2026-10-24-v3",
   "lastReviewed": "2026-10-24",
   "pillar": "Chronic Care",
   "clinicalReviewStatus": "pending",
@@ -5491,7 +5491,7 @@
   "specialty": "Internal Medicine / Nephrology / Emergency Medicine",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-b2-2026-10-24-v2",
+  "version": "india-b2-2026-10-24-v3",
   "lastReviewed": "2026-10-24",
   "pillar": "Urgent Care",
   "clinicalReviewStatus": "pending",
@@ -5506,7 +5506,7 @@
    ],
    "unverifiedSections": [
     "Paediatric hyponatraemia is outside the adult workflow.",
-    "No accessible guideline gave a desmopressin dose for overcorrection; it is listed as specialist-directed. Urea for SIADH (European 2014 guideline) could not be checked against source text and is not dosed here.",
+    "Desmopressin (2 µg IV, at least 8 hours apart), dextrose 5% (10 mL/kg over 1 hour) and urea (0.25–0.50 g/kg/day) doses are from the European 2014 guideline as cited by the Korean Society of Nephrology 2022 guideline; the European full text could not be opened.",
     "The ICMR workflow and the tolvaptan label differ on the overcorrection threshold (8–10 vs 12 mmol/L per 24 hours); both are shown.",
     "Drug cautions and contraindications without a source tag are general pharmacology statements and need formulary confirmation."
    ],
@@ -5941,18 +5941,48 @@
      "useWhen": "Fluid restriction fails or is not tolerated, after specialist review."
     },
     {
+     "indication": "SIADH",
+     "patientGroup": "Adults",
+     "genericName": "Urea (oral)",
+     "dose": "0.25–0.50 g/kg/day",
+     "route": "Oral",
+     "frequency": "Daily",
+     "duration": "While SIADH persists",
+     "adjustments": [
+      "Paediatric: Not specified in the cited sources.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Not specified in the cited sources.",
+      "CLD: Not specified in the cited sources."
+     ],
+     "monitoring": [
+      "Sodium, urea"
+     ],
+     "contraindications": [
+      "Not licensed for hyponatraemia in many countries; unpleasant taste"
+     ],
+     "branch": "SIADH",
+     "step": "SIADH treatment",
+     "selection": "one-of",
+     "sourceTitle": "Korean Society of Nephrology 2022 Recommendations on Controversial Issues in Diagnosis and Management of Hyponatremia",
+     "sourceUrl": "https://enbpr.org/DOIx.php?id=10.5049%2FEBP.2022.20.1.21",
+     "sourceEdition": "Electrolyte Blood Press 2022;20(1):21-38, section 3-2",
+     "preferred": false,
+     "useWhen": "Fluid restriction fails and tolvaptan unavailable or unsuitable (European 2014 guideline, cited by KSN 2022)."
+    },
+    {
      "indication": "Sodium rising faster than the limit",
      "patientGroup": "Adults",
-     "genericName": "Dextrose 5% (hypotonic fluid)",
-     "dose": "Volume set by specialist to re-lower sodium",
+     "genericName": "Dextrose 5% (electrolyte-free water)",
+     "dose": "10 mL/kg over 1 hour",
      "route": "IV",
-     "frequency": "Infusion",
+     "frequency": "Infusion, repeat with sodium checks",
      "duration": "Until sodium back within the limit",
      "adjustments": [
       "Paediatric: Not specified in the cited sources.",
       "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
       "CKD: Monitor fluid balance.",
-      "CLD: Not specified in the cited sources."
+      "CLD: Not specified in the cited sources.",
+      "Volume from the European 2014 guideline as cited by the Korean Society of Nephrology 2022 guideline."
      ],
      "monitoring": [
       "Sodium every 1–2 hours"
@@ -5963,38 +5993,39 @@
      "branch": "Overcorrection",
      "step": "Stop the rise",
      "selection": "one-of",
-     "sourceTitle": "Emergency management of severe and moderately severely symptomatic hyponatraemia in adult patients (Society for Endocrinology)",
-     "sourceUrl": "https://www.endocrinology.org/media/xhrhxhxm/emergency-management-of-severe-and-moderately-severely-symptomatic-hyponatraemia-in-adult-patients-2022.pdf",
-     "sourceEdition": "Society for Endocrinology Endocrine Emergency Guidance, 2022, recommendation 2",
+     "sourceTitle": "Korean Society of Nephrology 2022 Recommendations on Controversial Issues in Diagnosis and Management of Hyponatremia",
+     "sourceUrl": "https://enbpr.org/DOIx.php?id=10.5049%2FEBP.2022.20.1.21",
+     "sourceEdition": "Electrolyte Blood Press 2022;20(1):21-38, section 4 and Recommendation 7",
      "preferred": true
     },
     {
      "indication": "Sodium rising faster than the limit",
      "patientGroup": "Adults",
      "genericName": "Desmopressin",
-     "dose": "Specialist-directed dose (the guideline gives none)",
+     "dose": "2 µg",
      "route": "IV",
-     "frequency": "As directed",
+     "frequency": "Not more often than every 8 hours",
      "duration": "Until sodium stable",
      "adjustments": [
       "Paediatric: Not specified in the cited sources.",
       "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
       "CKD: Not specified in the cited sources.",
-      "CLD: Not specified in the cited sources."
+      "CLD: Not specified in the cited sources.",
+      "Dose from the European 2014 guideline as cited by the Korean Society of Nephrology 2022 guideline."
      ],
      "monitoring": [
       "Sodium every 1–2 hours",
       "Urine output"
      ],
      "contraindications": [
-      "Specialist supervision only"
+      "Specialist supervision only; individualise to overcorrection risk (KSN Recommendation 7)"
      ],
      "branch": "Overcorrection",
      "step": "Stop the rise",
      "selection": "one-of",
-     "sourceTitle": "Emergency management of severe and moderately severely symptomatic hyponatraemia in adult patients (Society for Endocrinology)",
-     "sourceUrl": "https://www.endocrinology.org/media/xhrhxhxm/emergency-management-of-severe-and-moderately-severely-symptomatic-hyponatraemia-in-adult-patients-2022.pdf",
-     "sourceEdition": "Society for Endocrinology Endocrine Emergency Guidance, 2022, recommendation 2",
+     "sourceTitle": "Korean Society of Nephrology 2022 Recommendations on Controversial Issues in Diagnosis and Management of Hyponatremia",
+     "sourceUrl": "https://enbpr.org/DOIx.php?id=10.5049%2FEBP.2022.20.1.21",
+     "sourceEdition": "Electrolyte Blood Press 2022;20(1):21-38, Recommendation 7",
      "preferred": false,
      "useWhen": "Brisk water diuresis continues despite hypotonic fluid (with or without dextrose, SfE)."
     }
@@ -6038,6 +6069,12 @@
      "edition": "Society for Endocrinology Endocrine Emergency Guidance, 2022",
      "url": "https://www.endocrinology.org/media/xhrhxhxm/emergency-management-of-severe-and-moderately-severely-symptomatic-hyponatraemia-in-adult-patients-2022.pdf",
      "locator": "Figure 1; recommendations 1–3"
+    },
+    {
+     "title": "Korean Society of Nephrology 2022 Recommendations on Controversial Issues in Diagnosis and Management of Hyponatremia",
+     "edition": "Electrolyte Blood Press 2022;20(1):21-38",
+     "url": "https://enbpr.org/DOIx.php?id=10.5049%2FEBP.2022.20.1.21",
+     "locator": "sections 3-2 and 4; Recommendation 7"
     }
    ]
   },
@@ -6098,7 +6135,7 @@
   "specialty": "Neonatology / Paediatrics",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-b2-2026-10-24-v2",
+  "version": "india-b2-2026-10-24-v3",
   "lastReviewed": "2026-10-24",
   "pillar": "Safe Birth",
   "clinicalReviewStatus": "pending",

@@ -1,7 +1,7 @@
 """Helpers for India batch 1 topic payloads (DiseaseDetailSchema shape)."""
 import json, os, uuid
 TODAY = "2026-10-24"
-VERSION = os.environ.get("MARIFA_VERSION", "india-b2-2026-10-24-v2")
+VERSION = os.environ.get("MARIFA_VERSION", "india-b2-2026-10-24-v3")
 S = {
  "dka":   ("Standard Treatment Workflow: Diabetic Ketoacidosis (ICMR / Department of Health Research)", "https://www.icmr.gov.in/icmrobject/uploads/STWs/1726567244_diabetic_ketoacidosis.pdf", "ICMR STW, July 2022"),
  "ada24": ("Hyperglycemic crises in adults: a look at the 2024 consensus report (ADA/EASD/JBDS/AACE/DTS), Cleveland Clinic Journal of Medicine", "https://www.ccjm.org/content/92/3/152.full.pdf", "Cleve Clin J Med 2025;92(3), summarising Umpierrez et al., Diabetes Care 2024"),
@@ -62,6 +62,10 @@ S.update({
  "esge15": ("Diagnosis and management of nonvariceal upper gastrointestinal hemorrhage: ESGE Guideline", "https://doi.org/10.1055/s-0034-1393172", "Endoscopy 2015;47:a1-a46"),
  "pals25": ("PALS 2025 Reference Card: Pediatric Septic Shock (American Red Cross)", "https://guidelines.redcross.org/wp-content/uploads/2025/12/PALS-Pediatric-Septic-Shock.pdf", "American Red Cross PALS, 2025"),
  "alt":    ("Alteplase (Activase), US prescribing information (DailyMed)", "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=c669f77c-fa48-478b-a14b-80b20a0139c2", "DailyMed label"),
+ "ksn22":  ("Korean Society of Nephrology 2022 Recommendations on Controversial Issues in Diagnosis and Management of Hyponatremia", "https://enbpr.org/DOIx.php?id=10.5049%2FEBP.2022.20.1.21", "Electrolyte Blood Press 2022;20(1):21-38"),
+ "cnsd19": ("Pharmacotherapy for Pediatric Convulsive Status Epilepticus (review)", "https://pmc.ncbi.nlm.nih.gov/articles/PMC6982635/", "CNS Drugs 2019"),
+ "sps":    ("Sodium polystyrene sulfonate powder for suspension, US prescribing information (DailyMed)", "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=fd9b192f-51f3-4737-be14-1970327f39aa", "DailyMed label"),
+ "cpsr":   ("Calcium Resonium (calcium polystyrene sulfonate), Summary of Product Characteristics (UK eMC)", "https://www.medicines.org.uk/emc/product/1439/smpc", "UK SmPC"),
  "whoanc": ("WHO recommendations on antenatal care for a positive pregnancy experience: daily iron and folic acid supplementation", "https://www.who.int/tools/elena/interventions/daily-iron-pregnancy", "WHO eLENA, 2016 recommendation"),
 })
 NOT_ABX = "Not an antibiotic; penicillin allergy does not change this medicine."
