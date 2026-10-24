@@ -92,10 +92,47 @@ describe("Disease management UI", () => {
     render(<PathwaySequence steps={[{ id: "initial-assessment", title: "Initial assessment", timeframe: "Within 10 minutes", actions: ["Assess airway and breathing"], branches: [{ condition: "If unstable", actions: ["Escalate immediately", "Activate emergency response"] }] }]} />);
     expect(screen.getByRole("heading", { name: "Management sequence" })).toBeInTheDocument();
     expect(screen.getByText("Within 10 minutes")).toBeInTheDocument();
-    expect(screen.getByText("If unstable")).toBeInTheDocument();
+    expect(screen.getByText("Unstable")).toBeInTheDocument();
+    expect(screen.getByText("Conditional action")).toBeInTheDocument();
+    expect(document.querySelectorAll(".pathway-branch-actions > li")).toHaveLength(2);
     expect(screen.getByText("Activate emergency response")).toBeInTheDocument();
     expect(document.querySelector(".pathway-sequence-list")?.tagName).toBe("DIV");
     expect(document.querySelectorAll(".pathway-sequence-list > li")).toHaveLength(0);
     expect(document.querySelectorAll(".pathway-actions > li")).toHaveLength(1);
+  });
+
+  it("renders several branches as an if/then decision table without a false link arrow", () => {
+    render(<PathwaySequence steps={[{ id: "treat", title: "Treat by manifestation", timeframe: "Days 1–14", actions: ["Check for carditis"], branches: [
+      { condition: "Arthritis", actions: ["NSAIDs (ICMR STW)."] },
+      { condition: "Otherwise", actions: ["Observe"] },
+      { condition: "If moderate or severe carditis", actions: ["Prednisolone (NICE CG185 Rec. 1.5.3)."] },
+    ] }]} />);
+    expect(screen.getByRole("group", { name: "Decision branches for Treat by manifestation" })).toBeInTheDocument();
+    expect(screen.getByLabelText("3 branches")).toHaveTextContent("3");
+    expect(document.querySelectorAll(".pathway-branch")).toHaveLength(3);
+    expect(screen.getByText("Moderate or severe carditis")).toBeInTheDocument();
+    expect(screen.getByText("NSAIDs.")).toBeInTheDocument();
+    expect(screen.getByText("Prednisolone.")).toBeInTheDocument();
+    expect(document.querySelectorAll(".pathway-branch-actions")).toHaveLength(0);
+    expect(document.querySelectorAll(".pathway-branch-head")).toHaveLength(1);
+    expect([...document.querySelectorAll(".pathway-branch-key")].map((key) => key.textContent)).toEqual(["A", "B", "C"]);
+  });
+
+  it("never asserts how branches combine, because the data does not record it", () => {
+    render(<PathwaySequence steps={[{ id: "treat", title: "Treat", timeframe: "Day 1", actions: ["Assess"], branches: [{ condition: "A", actions: ["X"] }, { condition: "B", actions: ["Y"] }] }]} />);
+    expect(screen.queryByText(/apply every branch/i)).toBeNull();
+    expect(screen.queryByText(/choose one/i)).toBeNull();
+  });
+
+  it("shows an Otherwise branch last as the fall-through, whatever its stored position", () => {
+    render(<PathwaySequence steps={[{ id: "treat", title: "Treat", timeframe: "Day 1", actions: ["Assess"], branches: [
+      { condition: "Otherwise", actions: ["Observe"] },
+      { condition: "If shocked", actions: ["Resuscitate"] },
+    ] }]} />);
+    const rows = [...document.querySelectorAll(".pathway-branch")];
+    expect(rows[0]).toHaveTextContent("Shocked");
+    expect(rows[1]).toHaveClass("is-else");
+    expect(rows[1].querySelector(".pathway-branch-tag.is-else")?.textContent).toBe("Otherwise");
+    expect(rows[1]).toHaveTextContent("None of the above applies");
   });
 });
