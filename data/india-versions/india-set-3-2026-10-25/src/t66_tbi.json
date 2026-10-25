@@ -15,11 +15,15 @@
    "scope": "Head injury and traumatic brain injury in adults and children in India from prehospital care to discharge: Glasgow Coma Scale (GCS) grading, airway, breathing and circulation, computed tomography (CT) indications, admission and surgical criteria, raised intracranial pressure (ICP) treatment, seizure prophylaxis and discharge, built on the ICMR Neurosurgery STW for Head Injury (July 2024).",
    "findings": [
     "GCS bands (13–15 mild, 9–12 moderate, 3–8 severe), CT indications, red flags, prehospital ABC and transfer, admission criteria, extradural haematoma above 30 cc and subdural haematoma above 10 mm with midline shift above 5 mm for surgery, PaCO2 30–35 mmHg, head-end elevation, mannitol 20% 200 mL (adults) only if systolic BP above 90 mmHg, mannitol 0.25–1 g/kg, 3% saline 3 mL/kg 8-hourly, phenytoin 20 mg/kg then 5 mg/kg/day, levetiracetam 500 mg twice daily for 1–3 months, steroids not useful, repeat CT at 24 hours checked against the ICMR Neurosurgery STW (July 2024).",
+    "Tranexamic acid 1 g over 10 minutes then 1 g over 8 hours within 3 hours for GCS 12 or less or intracranial bleed on CT checked against the CFPC CRASH-3 summary; BTF 4th edition BP, ICP, CPP, hyperventilation, steroid and seizure-prophylaxis statements from a Medical Dialogues summary.",
     "Not clinically reviewed."
    ],
    "unverifiedSections": [
     "The STW gives no SpO2 or blood-pressure target beyond systolic above 90 mmHg before mannitol.",
-    "Tranexamic acid and analgesic doses are not given in the STW and are not included.",
+    "The ICMR STW gives no tranexamic acid or analgesic doses; tranexamic acid is from the CRASH-3 summary (CFPC) and analgesia from the morphine label and a UK paediatric guideline.",
+    "BTF 4th edition targets were read in a secondary summary.",
+    "Anticoagulant reversal agents are named for referral only; no opened source gives a reversal regimen.",
+    "Intubation at GCS 8 or less is standard practice, not stated in the cited sources.",
     "Children's mannitol dose is described as weight-based without a number; the 0.25–1 g/kg range is used.",
     "The STW gives two PaCO2 ranges (30–35 and 30–32 mmHg); 30–35 mmHg is shown.",
     "Drug cautions, contraindications and renal or hepatic adjustment lines without a source tag are general pharmacology statements and need formulary confirmation."
@@ -30,7 +34,7 @@
    ]
   },
   "pathophysiology": {
-   "summary": "Traumatic brain injury (TBI) is a leading cause of death and disability among young people in India, mostly from road traffic crashes and falls. The primary injury happens at impact; much of the harm that follows is secondary injury from hypoxia, hypotension, raised intracranial pressure and seizures, which good early care prevents. The ICMR workflow asks for ABC stabilisation in the golden hour, a search for other injuries, GCS grading, early non-contrast CT with cervical spine imaging, admission for those at risk, osmotherapy for clinical signs of raised ICP once systolic BP is above 90 mmHg, and urgent neurosurgical referral for operable haematomas.",
+   "summary": "Traumatic brain injury (TBI) is a leading cause of death and disability among young people in India, mostly from road traffic crashes and falls. The primary injury happens at impact; much of the harm that follows is secondary injury from hypoxia, hypotension, raised intracranial pressure and seizures, which good early care prevents. The ICMR workflow asks for ABC stabilisation in the golden hour, a search for other injuries, GCS grading, early non-contrast CT with cervical spine imaging, admission for those at risk, osmotherapy for clinical signs of raised ICP once systolic BP is above 90 mmHg, and urgent neurosurgical referral for operable haematomas. Tranexamic acid given within 3 hours reduces head-injury death in patients with mild to moderate injury (CRASH-3), so timing of arrival matters as much as the scan.",
    "keyMechanisms": [
     "Primary injury: contusion, diffuse axonal injury and haematomas at impact.",
     "Secondary injury: hypoxia, hypotension, hypercarbia and seizures worsen brain damage.",
@@ -42,7 +46,9 @@
    "symptoms": [
     "Headache, vomiting",
     "Loss of consciousness, amnesia",
-    "Seizure after injury"
+    "Seizure after injury",
+    "Vomiting (persistent vomiting is a CT indication) (ICMR STW)",
+    "Amnesia for the event (ICMR STW)"
    ],
    "physicalSigns": [
     "Reduced GCS",
@@ -66,19 +72,27 @@
   "differentials": [
    {
     "condition": "Alcohol or drug intoxication",
-    "distinguishingFeatures": "May coexist; never assume it explains low GCS."
+    "distinguishingFeatures": "Often coexists with head injury; never let it explain a low GCS — CT the head and recheck GCS as levels fall."
    },
    {
     "condition": "Hypoglycaemia",
-    "distinguishingFeatures": "Low glucose; corrects with dextrose."
+    "distinguishingFeatures": "Low capillary glucose that corrects with dextrose; check glucose in every patient with reduced consciousness."
    },
    {
-    "condition": "Stroke causing a fall",
-    "distinguishingFeatures": "History; vascular territory deficit."
+    "condition": "Stroke or intracranial haemorrhage causing the fall",
+    "distinguishingFeatures": "Focal deficit out of proportion to trauma or sudden onset before the fall; CT and CT angiography settle it."
    },
    {
     "condition": "Post-ictal state",
-    "distinguishingFeatures": "Seizure before the fall."
+    "distinguishingFeatures": "Witnessed seizure before the fall, tongue bite, gradual recovery of GCS; CT still needed if injury occurred."
+   },
+   {
+    "condition": "Cervical spine injury",
+    "distinguishingFeatures": "Neck pain, tenderness or neurological deficit; immobilise and image the cervical spine with the head CT (ICMR STW)."
+   },
+   {
+    "condition": "Non-accidental injury (children, elderly)",
+    "distinguishingFeatures": "History inconsistent with injuries, delayed presentation, multiple bruises of different ages; skeletal survey and safeguarding."
    }
   ],
   "diagnosticCriteria": [
@@ -93,6 +107,14 @@
    {
     "criterion": "Surgery (ICMR STW)",
     "threshold": "Extradural haematoma above 30 cc; subdural haematoma above 10 mm thick with midline shift above 5 mm and deterioration."
+   },
+   {
+    "criterion": "Tranexamic acid eligibility (CRASH-3)",
+    "threshold": "GCS 12 or less, or intracranial bleeding on CT, without major extracranial bleeding, within 3 hours of injury."
+   },
+   {
+    "criterion": "Severe TBI targets (BTF 4th edition)",
+    "threshold": "Systolic BP 100 mmHg or more (age 50–69) or 110 mmHg or more (15–49 or over 70); treat ICP above 22 mmHg; CPP 60–70 mmHg."
    }
   ],
   "investigations": {
@@ -208,6 +230,15 @@
     ]
    },
    {
+    "id": "anticoag",
+    "title": "Anticoagulants, antiplatelets and wounds",
+    "timeframe": "On arrival",
+    "actions": [
+     "Ask about warfarin, direct oral anticoagulants and antiplatelets; CT all anticoagulated patients and arrange urgent reversal with haematology if bleeding.",
+     "Clean and close scalp wounds; tetanus toxoid 0.5 mL IM if not already given (DGHS STG)."
+    ]
+   },
+   {
     "id": "assess",
     "title": "Assess and image",
     "timeframe": "First hour",
@@ -224,6 +255,25 @@
      "Elevate the head end; sedation and analgesia; PaCO2 30–35 mmHg if ventilated (ICMR STW).",
      "Mannitol only if systolic BP above 90 mmHg and red flags; or 3% saline (ICMR STW).",
      "Steroids are not useful (ICMR STW)."
+    ]
+   },
+   {
+    "id": "txa",
+    "title": "Tranexamic acid and analgesia",
+    "timeframe": "Within 3 hours of injury",
+    "actions": [
+     "Tranexamic acid 1 g IV over 10 minutes then 1 g over 8 hours if GCS 12 or less or bleeding on CT, within 3 hours (CRASH-3).",
+     "Pain relief with paracetamol and titrated IV morphine; avoid oversedation that masks a falling GCS."
+    ]
+   },
+   {
+    "id": "severe",
+    "title": "Severe TBI in the intensive care unit (ICU)",
+    "timeframe": "First 7 days",
+    "actions": [
+     "Keep systolic BP 100–110 mmHg or more by age; treat ICP above 22 mmHg; CPP 60–70 mmHg (BTF).",
+     "Avoid prolonged hyperventilation to PaCO2 25 mmHg or less; no steroids (BTF).",
+     "Phenytoin for early seizures (first 7 days); start feeding by day 5–7 (BTF)."
     ]
    },
    {
@@ -249,15 +299,56 @@
    "status": "source-verified",
    "branches": [
     {
+     "label": "Tranexamic acid",
+     "entryCriteria": "GCS 12 or less or intracranial bleeding on CT, within 3 hours of injury, no major extracranial bleeding."
+    },
+    {
      "label": "Raised intracranial pressure",
      "entryCriteria": "Red flags of raised ICP with systolic BP above 90 mmHg."
     },
     {
      "label": "Post-traumatic seizures",
      "entryCriteria": "Seizure after head injury or high seizure risk."
+    },
+    {
+     "label": "Analgesia",
+     "entryCriteria": "Pain after head injury."
+    },
+    {
+     "label": "Wound care",
+     "entryCriteria": "Scalp or other wound, tetanus immunisation not up to date."
     }
    ],
    "regimens": [
+    {
+     "indication": "TBI with GCS 12 or less or bleed on CT, within 3 hours",
+     "patientGroup": "Adults",
+     "genericName": "Tranexamic acid",
+     "dose": "1 g over 10 minutes, then 1 g over 8 hours",
+     "route": "IV",
+     "frequency": "Loading then infusion",
+     "duration": "8 hours",
+     "adjustments": [
+      "Paediatric: Adult topic; paediatric use is outside the scope of the cited sources.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Renal adjustment not stated in the cited source; check the formulary in severe renal impairment.",
+      "CLD: No adjustment.",
+      "Benefit in CRASH-3 was seen at GCS 9–15 (and excluding GCS 3); no difference at GCS 4–8 (CFPC summary)."
+     ],
+     "monitoring": [
+      "Seizures, thrombotic events"
+     ],
+     "contraindications": [
+      "Given after 3 hours (no benefit)",
+      "Active thromboembolic disease"
+     ],
+     "branch": "Tranexamic acid",
+     "step": "Antifibrinolytic",
+     "selection": "all",
+     "sourceTitle": "Tranexamic acid: golden in the golden hours of trauma? (Tools for Practice #319, College of Family Physicians of Canada; summary of CRASH-2 and CRASH-3)",
+     "sourceUrl": "https://cfpclearn.ca/wp-content/uploads/2022/06/TFP-318_TXATrauma-FINAL_updated-Dec-11-2023.pdf",
+     "sourceEdition": "CFPC Tools for Practice, July 2022, section Dose, Timing and Patient criteria"
+    },
     {
      "indication": "Clinical signs of raised ICP",
      "patientGroup": "Adults and children",
@@ -320,7 +411,7 @@
      "indication": "Post-traumatic seizure",
      "patientGroup": "Adults and children",
      "genericName": "Phenytoin",
-     "dose": "20 mg/kg over 30 minutes, then 5 mg/kg/day in 2–3 doses",
+     "dose": "20 mg/kg over 30 minutes (no faster than 50 mg/min), then 5 mg/kg/day in 2–3 doses",
      "route": "IV then oral",
      "frequency": "Loading then 2–3 times daily",
      "duration": "Review at follow-up",
@@ -373,22 +464,110 @@
      "sourceEdition": "ICMR STW, July 2024, section Medical Management",
      "preferred": false,
      "useWhen": "Phenytoin unsuitable (arrhythmia, interactions)."
+    },
+    {
+     "indication": "Pain after head injury",
+     "patientGroup": "Adults and children",
+     "genericName": "Paracetamol",
+     "dose": "Children 15 mg/kg (oral loading 20 mg/kg); adults per formulary (usually 1 g)",
+     "route": "Oral or IV",
+     "frequency": "Every 4–6 hours",
+     "duration": "As needed",
+     "adjustments": [
+      "Paediatric: Children: IV up to 10 kg 10 mg/kg (maximum 30 mg/kg/24 h); 10–50 kg 15 mg/kg (maximum 60 mg/kg/24 h); oral maximum 90 mg/kg/day, not above 4 g/day (Gloucestershire guideline).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment usually.",
+      "CLD: Maximum 2 g/day in liver disease."
+     ],
+     "monitoring": [
+      "Total daily dose"
+     ],
+     "contraindications": [
+      "Severe liver failure"
+     ],
+     "branch": "Analgesia",
+     "step": "Analgesic",
+     "selection": "one-of",
+     "sourceTitle": "Analgesia for Children (Gloucestershire Hospitals NHS FT Emergency Department)",
+     "sourceUrl": "https://www.gloshospitals.nhs.uk/media/documents/Analgesia_for_Children_updated_May_2020.pdf",
+     "sourceEdition": "Emergency department guideline, January 2020, section Paracetamol",
+     "preferred": true
+    },
+    {
+     "indication": "Severe pain after head injury",
+     "patientGroup": "Adults and children",
+     "genericName": "Morphine",
+     "dose": "Small titrated IV increments (for example 0.05 mg/kg) within the label range of 0.1–0.2 mg/kg every 4 hours",
+     "route": "IV",
+     "frequency": "Titrate every 5–10 minutes to effect; then every 4 hours as needed",
+     "duration": "Acute phase",
+     "adjustments": [
+      "Paediatric: Children: under 6 months 0.025–0.05 mg/kg; 6–12 months 0.1 mg/kg; 1–12 years 0.1–0.2 mg/kg, titrated with 0.05 mg/kg boluses (Gloucestershire guideline).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Renal adjustment not stated in the cited label; use lower doses and longer intervals in kidney failure.",
+      "CLD: Hepatic adjustment not stated in the cited label; use lower doses in liver failure."
+     ],
+     "monitoring": [
+      "GCS and pupils before each dose, respiratory rate"
+     ],
+     "contraindications": [
+      "Respiratory depression; do not let sedation mask a falling GCS"
+     ],
+     "branch": "Analgesia",
+     "step": "Analgesic",
+     "selection": "one-of",
+     "sourceTitle": "Morphine sulfate injection, US prescribing information: dosage and administration (Pfizer)",
+     "sourceUrl": "https://www.pfizermedical.com/morphine/dosage-admin",
+     "sourceEdition": "Current label, section Dosage and administration",
+     "preferred": false,
+     "useWhen": "Pain not controlled by paracetamol (e.g. associated injuries)."
+    },
+    {
+     "indication": "Wound with tetanus immunisation not up to date",
+     "patientGroup": "Adults and children",
+     "genericName": "Tetanus toxoid",
+     "dose": "0.5 mL",
+     "route": "IM",
+     "frequency": "Once",
+     "duration": "Single dose",
+     "adjustments": [
+      "Paediatric: Same dose in children (as Td or per schedule).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment.",
+      "CLD: No adjustment.",
+      "Dose from the DGHS wound (burns) guideline; applied here to head-injury wounds."
+     ],
+     "monitoring": [
+      "Immunisation record"
+     ],
+     "contraindications": [
+      "Previous severe reaction"
+     ],
+     "branch": "Wound care",
+     "step": "Immunisation",
+     "selection": "all",
+     "sourceTitle": "Standard Treatment Guidelines for Management of Burns (Trauma and Burn Division, DGHS, MoHFW)",
+     "sourceUrl": "https://www.dghs.mohfw.gov.in/uploads/assets/S1Ipab4025VceQpFs7Qa6THwh07NLmggStsg1cDD.pdf",
+     "sourceEdition": "DGHS STG, 2025, Chapter 3, section Primary care, page 20"
     }
    ],
-   "note": "All doses from the ICMR Neurosurgery STW for Head Injury (July 2024). India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
+   "note": "Head-injury medicines from the ICMR Neurosurgery STW (July 2024); tranexamic acid from the CRASH-3 summary (CFPC 2022); analgesia from the morphine label and a UK paediatric guideline. India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
   },
   "teaching": {
    "scope": "Head injury in Indian emergency departments.",
    "learningObjectives": [
     "Grade head injury by GCS.",
     "Know CT and admission criteria.",
-    "Prevent secondary brain injury."
+    "Prevent secondary brain injury.",
+    "Give tranexamic acid to the right patients within 3 hours."
    ],
    "keyPoints": [
     "Stabilise ABC before transfer.",
     "Early CT with cervical spine imaging.",
     "Mannitol only if systolic BP above 90 mmHg.",
-    "Steroids do not help."
+    "Steroids do not help.",
+    "Tranexamic acid 1 g + 1 g within 3 hours for GCS 12 or less or bleed on CT.",
+    "Severe TBI: systolic BP 100–110 mmHg or more by age, ICP below 22 mmHg."
    ],
    "pitfalls": [
     "Blaming alcohol for low GCS.",
@@ -402,6 +581,158 @@
      "edition": "ICMR STW, July 2024",
      "url": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1726645068_4_neurosurgery_all.pdf",
      "locator": "sections Prehospital care, Scoring, Investigations, Medical management, Surgical management, Discharge"
+    },
+    {
+     "title": "Tranexamic acid: golden in the golden hours of trauma? (Tools for Practice #319, College of Family Physicians of Canada; summary of CRASH-2 and CRASH-3)",
+     "edition": "CFPC Tools for Practice, July 2022",
+     "url": "https://cfpclearn.ca/wp-content/uploads/2022/06/TFP-318_TXATrauma-FINAL_updated-Dec-11-2023.pdf",
+     "locator": "sections Dose, Timing, Patient criteria, Evidence"
+    },
+    {
+     "title": "Guidelines for the management of severe traumatic brain injury, 4th edition (Brain Trauma Foundation; Medical Dialogues summary)",
+     "edition": "BTF 4th edition 2016, summary May 2017",
+     "url": "https://speciality.medicaldialogues.in/amp/guidelines-for-the-management-of-severe-traumatic-brain-injury-4th-edition",
+     "locator": "sections Blood pressure, ICP, CPP, Steroids, Seizure prophylaxis"
+    }
+   ],
+   "vignette": {
+    "text": "A 27-year-old motorcyclist without a helmet is brought to a district hospital in Bihar 90 minutes after colliding with a tractor. He was unconscious for about 2 minutes, has vomited twice and smells of alcohol. GCS is 12 (E3 V4 M5), pupils are equal and reactive, BP 132/84 mmHg, pulse 96/min and SpO2 97% on air. There is a boggy scalp swelling over the left temple. The nearest CT scanner is 70 km away.",
+    "fictitious": true
+   },
+   "guidedApproach": [
+    {
+     "title": "Primary and secondary brain injury",
+     "prompt": "Why does early care change outcome when the impact has already happened?",
+     "guidance": "The damage at impact — contusion, axonal shearing and haematoma — cannot be undone, but much of the disability after head injury comes from secondary injury in the hours that follow. Hypoxia, hypotension, hypercarbia, hypoglycaemia, seizures and an expanding haematoma all reduce oxygen delivery to brain tissue that is already vulnerable. A single episode of hypotension or hypoxia during transfer is associated with worse outcome. This is why the workflow insists on stabilising airway, breathing and circulation before transfer, and why a falling GCS, a widening pupil or the Cushing response (bradycardia with hypertension) are emergencies: they signal rising intracranial pressure and impending herniation. Tranexamic acid works on the same principle — it limits haematoma growth when given within 3 hours.",
+     "section": "pathophysiology"
+    },
+    {
+     "title": "Reading the GCS and the red flags",
+     "prompt": "How do you recognise the patient who is getting worse?",
+     "guidance": "Record the GCS by its components (eye, verbal, motor), because a change in motor score is the most reliable sign of deterioration. Mild injury is GCS 13–15, moderate 9–12 and severe 3–8. A drop of even one or two points, a new focal deficit, unequal pupils, persistent vomiting, worsening headache or restlessness all mean the brain is under threat. Alcohol is common in Indian road-traffic injuries and is a trap: an intoxicated patient with a low GCS must be scanned and reassessed, never assumed to be 'just drunk'. Always look for associated injuries to the chest, abdomen, pelvis and long bones, because blood loss elsewhere causes the hypotension that harms the brain.",
+     "section": "signs-symptoms"
+    },
+    {
+     "title": "Who needs a CT and when",
+     "prompt": "Which patients need imaging, and what does the scan decide?",
+     "guidance": "Non-contrast CT of the head with cervical spine imaging is the key test and should be done as soon as possible in anyone who is not completely asymptomatic. The workflow lists definite indications: GCS below 15, any loss of consciousness, suspected skull fracture, post-traumatic seizure, a focal deficit, persistent vomiting or amnesia. The CT answers three questions: is there a lesion that needs surgery (an extradural haematoma above 30 cc, or a subdural above 10 mm with midline shift above 5 mm and deterioration); does the patient need admission; and is there bleeding that makes tranexamic acid worthwhile. Where the scanner is far away, stabilise first, give tranexamic acid if within 3 hours and GCS is 12 or less, and transfer with monitoring.",
+     "section": "investigations"
+    },
+    {
+     "title": "Protecting the brain until definitive care",
+     "prompt": "What are the priorities for a moderate or severe head injury?",
+     "guidance": "Secure the airway (by standard practice, intubate if GCS is 8 or less or the airway is at risk), keep oxygen saturation and blood pressure normal — in severe injury, systolic BP of at least 100–110 mmHg depending on age — and elevate the head of the bed. Give tranexamic acid 1 g over 10 minutes then 1 g over 8 hours within 3 hours for GCS 12 or less or a bleed on CT. Signs of rising ICP with an adequate BP are treated with mannitol or 3% saline as a bridge to surgery; prolonged hyperventilation and steroids do not help. Phenytoin or levetiracetam is used for post-traumatic seizures. Treat pain with paracetamol and carefully titrated morphine, checking GCS and pupils before each opioid dose so that sedation does not hide deterioration.",
+     "section": "management"
+    }
+   ],
+   "boardQuestions": [
+    {
+     "id": "q1",
+     "vignette": "A 27-year-old man arrives 90 minutes after a motorcycle crash. He was unconscious for 2 minutes and has GCS 12 with equal pupils. BP is 132/84 mmHg and SpO2 97%. The nearest CT scanner is 70 km away, and there is no other bleeding.",
+     "fictitious": true,
+     "question": "Which is the most appropriate step before transfer?",
+     "options": [
+      {
+       "id": "A",
+       "text": "Give tranexamic acid 1 g IV over 10 minutes, then 1 g over 8 hours",
+       "explanation": "Correct. GCS 12 within 3 hours of injury meets CRASH-3 criteria; the infusion can run during transfer."
+      },
+      {
+       "id": "B",
+       "text": "Give dexamethasone to reduce brain swelling",
+       "explanation": "Steroids do not improve outcome or lower ICP in head injury (ICMR STW; BTF)."
+      },
+      {
+       "id": "C",
+       "text": "Give mannitol 20% 200 mL",
+       "explanation": "Mannitol is for clinical signs of raised ICP with systolic BP above 90 mmHg; he has none."
+      },
+      {
+       "id": "D",
+       "text": "Wait until the CT result before any treatment",
+       "explanation": "Tranexamic acid only helps within 3 hours; waiting for a distant CT would lose the window."
+      },
+      {
+       "id": "E",
+       "text": "Hyperventilate to a PaCO2 of 25 mmHg",
+       "explanation": "Prolonged hyperventilation to 25 mmHg or less is not recommended (BTF)."
+      }
+     ],
+     "answer": "A",
+     "educationalObjective": "Recognise the indication and time window for tranexamic acid in TBI.",
+     "keyPoint": "GCS 12 or less or bleed on CT, within 3 hours: tranexamic acid 1 g + 1 g."
+    },
+    {
+     "id": "q2",
+     "vignette": "A 45-year-old woman fell from a ladder. GCS was 14 on arrival and is now 10 an hour later, with a dilating right pupil. BP 168/90 mmHg, pulse 54/min. CT shows a right extradural haematoma of 45 cc with midline shift.",
+     "fictitious": true,
+     "question": "What is the best next step?",
+     "options": [
+      {
+       "id": "A",
+       "text": "Admit for hourly neurological observations",
+       "explanation": "Observation alone is unsafe: she has a surgical lesion and signs of herniation."
+      },
+      {
+       "id": "B",
+       "text": "Urgent neurosurgical evacuation, with mannitol as a bridge",
+       "explanation": "Correct. An extradural haematoma above 30 cc needs surgery (ICMR STW); mannitol is appropriate with systolic BP above 90 mmHg and red flags."
+      },
+      {
+       "id": "C",
+       "text": "Start phenytoin and repeat CT in 24 hours",
+       "explanation": "Seizure prophylaxis does not treat an expanding haematoma; delay risks death."
+      },
+      {
+       "id": "D",
+       "text": "Treat the bradycardia with atropine",
+       "explanation": "Bradycardia with hypertension is the Cushing response to raised ICP; the treatment is decompression."
+      },
+      {
+       "id": "E",
+       "text": "Lumbar puncture to measure pressure",
+       "explanation": "Lumbar puncture is dangerous with a mass lesion and raised ICP (risk of herniation)."
+      }
+     ],
+     "answer": "B",
+     "educationalObjective": "Identify a surgical lesion and the signs of herniation.",
+     "keyPoint": "Extradural haematoma above 30 cc, or deterioration with shift: neurosurgery now."
+    },
+    {
+     "id": "q3",
+     "vignette": "A 35-year-old man was assaulted and is drowsy, smells strongly of alcohol, and has GCS 13. He has a 4 cm scalp laceration over the occiput but no vomiting, and his pupils are equal. His friends say he is 'just drunk', that he often drinks this much, and want to take him home tonight.",
+     "fictitious": true,
+     "question": "What is the most appropriate management?",
+     "options": [
+      {
+       "id": "A",
+       "text": "Allow discharge with friends because the GCS is above 12",
+       "explanation": "GCS below 15 after head injury is a CT indication (ICMR STW); alcohol does not explain it safely."
+      },
+      {
+       "id": "B",
+       "text": "Observe until sober, then decide on imaging",
+       "explanation": "Waiting delays the diagnosis of an intracranial bleed; intoxication is an admission criterion in itself."
+      },
+      {
+       "id": "C",
+       "text": "CT head with cervical spine imaging and admission for observation",
+       "explanation": "Correct. GCS below 15 mandates CT, and intoxication is an admission criterion (ICMR STW)."
+      },
+      {
+       "id": "D",
+       "text": "Give naloxone and reassess",
+       "explanation": "Naloxone has no role unless opioid toxicity is suspected; it does not exclude brain injury."
+      },
+      {
+       "id": "E",
+       "text": "Skull X-ray only",
+       "explanation": "Skull X-ray does not show intracranial bleeding; CT is the test."
+      }
+     ],
+     "answer": "C",
+     "educationalObjective": "Do not attribute a low GCS to alcohol after head injury.",
+     "keyPoint": "Head injury + intoxication: CT and admit; never assume 'just drunk'."
     }
    ]
   },
@@ -423,6 +754,187 @@
     "Responsible adult at home"
    ],
    "followUpPlan": "Review for persistent headache, memory or mood symptoms; antiseizure medicine review by neurosurgeon or neurologist (ICMR STW)."
-  }
+  },
+  "algorithms": [
+   {
+    "id": "tbi-first-hour",
+    "title": "Head injury: the first hour",
+    "placement": "confirm",
+    "nodes": [
+     {
+      "id": "start",
+      "kind": "start",
+      "text": "Adult with head injury",
+      "detail": "ABC, cervical spine immobilisation, GCS, pupils, glucose.",
+      "next": [
+       {
+        "to": "abc"
+       }
+      ]
+     },
+     {
+      "id": "abc",
+      "kind": "decision",
+      "text": "Airway, breathing or circulation unstable?",
+      "next": [
+       {
+        "to": "resus",
+        "label": "Yes"
+       },
+       {
+        "to": "ct",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "resus",
+      "kind": "action",
+      "text": "Resuscitate; secure the airway; keep SpO2 and BP up; look for other bleeding",
+      "next": [
+       {
+        "to": "scan2"
+       }
+      ]
+     },
+     {
+      "id": "scan2",
+      "kind": "action",
+      "text": "Once stable: CT head and cervical spine; tranexamic acid if GCS 12 or less or bleed, within 3 hours",
+      "next": [
+       {
+        "to": "lesion2"
+       }
+      ]
+     },
+     {
+      "id": "lesion2",
+      "kind": "decision",
+      "text": "Surgical lesion?",
+      "next": [
+       {
+        "to": "surg2",
+        "label": "Yes"
+       },
+       {
+        "to": "icu",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "surg2",
+      "kind": "outcome",
+      "text": "Urgent neurosurgery"
+     },
+     {
+      "id": "icu",
+      "kind": "outcome",
+      "text": "ICU: BP, ICP and CPP targets (BTF); repeat CT if worse"
+     },
+     {
+      "id": "ct",
+      "kind": "decision",
+      "text": "Any CT indication? (GCS below 15, loss of consciousness, skull fracture, seizure, focal deficit, persistent vomiting, amnesia, or on anticoagulants)",
+      "next": [
+       {
+        "to": "scan",
+        "label": "Yes"
+       },
+       {
+        "to": "adm0",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "adm0",
+      "kind": "decision",
+      "text": "Admission criteria? (intoxication, moderate or severe headache, associated injury)",
+      "next": [
+       {
+        "to": "obs",
+        "label": "Yes"
+       },
+       {
+        "to": "home",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "obs",
+      "kind": "outcome",
+      "text": "Admit for observation; CT if GCS falls or new signs appear"
+     },
+     {
+      "id": "home",
+      "kind": "outcome",
+      "text": "Discharge with written head-injury advice and a responsible adult"
+     },
+     {
+      "id": "scan",
+      "kind": "action",
+      "text": "Non-contrast CT head with cervical spine imaging; tranexamic acid if GCS 12 or less or bleed, within 3 hours",
+      "next": [
+       {
+        "to": "lesion"
+       }
+      ]
+     },
+     {
+      "id": "lesion",
+      "kind": "decision",
+      "text": "Surgical lesion? (extradural above 30 cc; subdural above 10 mm with shift above 5 mm)",
+      "next": [
+       {
+        "to": "surg",
+        "label": "Yes"
+       },
+       {
+        "to": "adm",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "surg",
+      "kind": "outcome",
+      "text": "Urgent neurosurgery"
+     },
+     {
+      "id": "adm",
+      "kind": "decision",
+      "text": "Admission criteria met? (abnormal CT, falling GCS, intoxication, fracture, other injury)",
+      "next": [
+       {
+        "to": "ward",
+        "label": "Yes"
+       },
+       {
+        "to": "dc",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "ward",
+      "kind": "outcome",
+      "text": "Admit: frequent GCS and pupil checks; repeat CT at 24 hours or if worse"
+     },
+     {
+      "id": "dc",
+      "kind": "outcome",
+      "text": "Discharge with return advice"
+     }
+    ],
+    "source": {
+     "title": "Standard Treatment Workflows, Neurosurgery: Head Injury (ICMR / Department of Health Research)",
+     "edition": "ICMR STW, July 2024",
+     "url": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1726645068_4_neurosurgery_all.pdf",
+     "locator": "sections Prehospital care, Investigations, Admit, Surgical management (tranexamic acid from CRASH-3)"
+    }
+   }
+  ]
  }
 ]

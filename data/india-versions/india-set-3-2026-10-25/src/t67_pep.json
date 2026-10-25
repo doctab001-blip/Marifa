@@ -17,13 +17,13 @@
     "Start as soon as possible, ideally within 24 hours and no later than 72 hours; 28-day course; three drugs preferred (WHO 2024 summary).",
     "Dolutegravir plus tenofovir plus lamivudine or emtricitabine as a preferred regimen; baseline HIV, hepatitis B, creatinine, ALT, AST and pregnancy tests; HIV testing at 4–6 and 12 weeks (CDC 2025, Appendix A).",
     "TLD (dolutegravir/lamivudine/tenofovir DF 50/300/300 mg) one tablet daily for 28 days for PEP, 30 kg or more; not with creatinine clearance below 50 mL/min; dolutegravir 50 mg twice daily with rifampicin; separate from cations (WHO PQ label HA737).",
+    "Paediatric dolutegravir weight bands and PEP dosing checked against the WHO-prequalified dispersible label (HA793); lamivudine, tenofovir and zidovudine paediatric doses against NYSDOH Table A1 (December 2025); HBIG 0.06 mL/kg, vaccine 1 mL (0.5 mL under 19) at 0, 1, 6 months, and HCV RNA at 4–6 weeks against the Kasturba Hospital guideline.",
     "Not clinically reviewed."
    ],
    "unverifiedSections": [
     "NACO 2021 Tables 2.10.6–2.10.11 (exposure and source codes, regimens, follow-up) could not be read; NACO-specific regimens and codes are not shown.",
-    "PEP for children under 30 kg is not covered; refer to an ART centre.",
-    "Hepatitis B vaccination and immunoglobulin doses after exposure are not included because the source tables could not be read.",
-    "First aid steps are standard practice, not quoted from an opened source.",
+    "Children under 30 kg: no single source opened gives a complete paediatric PEP regimen; the regimen here combines the WHO-prequalified dolutegravir dispersible label (PEP dosing) with NYSDOH paediatric doses of lamivudine, zidovudine and tenofovir.",
+    "Hepatitis B PEP (HBIG 0.06 mL/kg and vaccine schedule) and first aid are from the Kasturba Hospital, Manipal occupational PEP guideline, not the national NACO tables.",
     "Drug cautions, contraindications and renal or hepatic adjustment lines without a source tag are general pharmacology statements and need formulary confirmation."
    ],
    "medscapeStatus": "unavailable",
@@ -32,7 +32,7 @@
    ]
   },
   "pathophysiology": {
-   "summary": "PEP is a 28-day course of antiretroviral therapy (ART) started soon after a possible exposure to HIV to stop infection becoming established. Health workers in India are at risk from needlestick and sharps injuries, and PEP is also needed after sexual exposure and sexual assault. It works best within hours and is not started after 72 hours. Care includes immediate first aid, assessing the exposure and the source, baseline testing, a three-drug regimen (dolutegravir with tenofovir and lamivudine as a single TLD tablet in India), adherence support, follow-up HIV testing, and hepatitis B and C assessment. People with ongoing risk can move straight on to pre-exposure prophylaxis.",
+   "summary": "PEP is a 28-day course of antiretroviral therapy (ART) started soon after a possible exposure to HIV to stop infection becoming established. Health workers in India are at risk from needlestick and sharps injuries, and PEP is also needed after sexual exposure and sexual assault. It works best within hours and is not started after 72 hours. Care includes immediate first aid, assessing the exposure and the source, baseline testing, a three-drug regimen (dolutegravir with tenofovir and lamivudine as a single TLD tablet in India), adherence support, follow-up HIV testing, and hepatitis B and C assessment. People with ongoing risk can move straight on to pre-exposure prophylaxis. The same visit also deals with hepatitis B, for which vaccination and hepatitis B immunoglobulin (HBIG) are highly effective, and hepatitis C, for which there is no prophylaxis but early detection allows cure.",
    "keyMechanisms": [
     "HIV first infects local cells and reaches lymph nodes over 24–72 hours.",
     "Early ART can block viral replication before infection is established.",
@@ -43,11 +43,15 @@
   "presentation": {
    "symptoms": [
     "Recent needlestick, sharps or mucosal splash with blood or body fluid",
-    "Recent condomless sex or sexual assault"
+    "Recent condomless sex or sexual assault",
+    "Anxiety about infection after exposure",
+    "Symptoms of acute HIV during follow-up: fever, sore throat, rash, lymph nodes"
    ],
    "physicalSigns": [
     "Wound or puncture site",
-    "Injuries after assault"
+    "Injuries after assault",
+    "Mucosal splash (eye, mouth) or non-intact skin contact",
+    "Depth of injury and visible blood on the device"
    ],
    "redFlags": [
     "Presentation after 72 hours: PEP not indicated; test and counsel (WHO 2024)",
@@ -63,16 +67,28 @@
   },
   "differentials": [
    {
-    "condition": "Low-risk exposure (intact skin)",
-    "distinguishingFeatures": "Exposure to intact skin needs no PEP."
+    "condition": "Exposure to intact skin only",
+    "distinguishingFeatures": "No breach of skin or mucosa; no PEP is needed for HIV or hepatitis B (Kasturba guideline risk table)."
    },
    {
     "condition": "Established HIV infection",
-    "distinguishingFeatures": "Positive baseline test: treat as HIV, not PEP."
+    "distinguishingFeatures": "Reactive baseline HIV test before PEP; manage as HIV infection and refer to the ART centre, not PEP."
    },
    {
-    "condition": "Hepatitis B or C exposure",
-    "distinguishingFeatures": "Separate assessment and prophylaxis."
+    "condition": "Hepatitis B exposure in a non-immune person",
+    "distinguishingFeatures": "Source HBsAg positive or unknown with worker anti-HBs below 10 mIU/mL; needs HBIG and vaccination."
+   },
+   {
+    "condition": "Hepatitis C exposure",
+    "distinguishingFeatures": "Source anti-HCV positive; no prophylaxis exists, so test HCV RNA at 4–6 weeks."
+   },
+   {
+    "condition": "Acute HIV seroconversion during or after PEP",
+    "distinguishingFeatures": "Fever, rash or sore throat 2–6 weeks after exposure; antigen-antibody test plus HIV RNA confirms it."
+   },
+   {
+    "condition": "Drug side effects of PEP",
+    "distinguishingFeatures": "Nausea, headache or rash starting after the first doses with a negative HIV test; adjust supportive treatment rather than stop."
    }
   ],
   "diagnosticCriteria": [
@@ -87,6 +103,10 @@
    {
     "criterion": "TLD use (label)",
     "threshold": "Adults and adolescents 30 kg or more; creatinine clearance 50 mL/min or more."
+   },
+   {
+    "criterion": "Hepatitis B PEP (Kasturba guideline)",
+    "threshold": "Source HBsAg positive (or high-risk unknown) and worker unvaccinated or anti-HBs below 10 mIU/mL: HBIG plus vaccine."
    }
   ],
   "investigations": {
@@ -158,11 +178,11 @@
     {
      "tier": "laboratory",
      "testName": "Follow-up HIV test",
-     "modalityTarget": "Blood (antigen-antibody)",
+     "modalityTarget": "Antigen-antibody test plus HIV RNA (nucleic acid test) where available",
      "targetCondition": "Seroconversion",
      "normalValue": "Non-reactive",
      "expectedFinding": "Reactive",
-     "clinicalRationale": "At 4–6 weeks and 12 weeks (CDC 2025).",
+     "clinicalRationale": "At 4–6 weeks and 12 weeks (CDC 2025, non-occupational); Kasturba occupational guideline: HIV ELISA at 6 and 12 weeks.",
      "references": [
       {
        "title": "Updated guidelines for antiretroviral postexposure prophylaxis after sexual, injection drug use, or other nonoccupational exposure to HIV (CDC), Supplementary Appendix A",
@@ -180,12 +200,12 @@
      "targetCondition": "Need for PEP",
      "normalValue": "Intact skin exposure: no PEP",
      "expectedFinding": "Percutaneous, mucosal or condomless sexual exposure within 72 hours",
-     "clinicalRationale": "Decide on PEP without waiting for source results (WHO 2024).",
+     "clinicalRationale": "Decide on PEP from the type of exposure and the source status, known or unknown (Kasturba risk table).",
      "references": [
       {
-       "title": "Updated WHO guidelines for HIV post-exposure prophylaxis (HIV i-Base summary of WHO July 2024 guideline)",
-       "edition": "HIV i-Base, July 2024, section Timing",
-       "url": "https://i-base.info/htb/48202"
+       "title": "Post-exposure prophylaxis guidelines for occupational exposure (Hospital Infection Control, Kasturba Hospital, Manipal)",
+       "edition": "Kasturba Hospital infection control guideline, 2018, page 2",
+       "url": "https://careernext.manipal.edu/content/dam/manipal/mu/kmc-manipal/Documents/Medical%20Education/medical-elective/10.%20Post%20exposure%20prophylaxis%20guidelines%20for%20Ocupational%20exposure%20-Kasturba%20Hospital-%202018.pdf"
       }
      ]
     },
@@ -196,12 +216,12 @@
      "targetCondition": "Source status",
      "normalValue": "Non-reactive",
      "expectedFinding": "Reactive",
-     "clinicalRationale": "Do not delay PEP while waiting for results.",
+     "clinicalRationale": "Source status changes the decision; an unknown source is assessed with the infection control officer (Kasturba guideline).",
      "references": [
       {
-       "title": "Updated WHO guidelines for HIV post-exposure prophylaxis (HIV i-Base summary of WHO July 2024 guideline)",
-       "edition": "HIV i-Base, July 2024, section Timing",
-       "url": "https://i-base.info/htb/48202"
+       "title": "Post-exposure prophylaxis guidelines for occupational exposure (Hospital Infection Control, Kasturba Hospital, Manipal)",
+       "edition": "Kasturba Hospital infection control guideline, 2018, page 2",
+       "url": "https://careernext.manipal.edu/content/dam/manipal/mu/kmc-manipal/Documents/Medical%20Education/medical-elective/10.%20Post%20exposure%20prophylaxis%20guidelines%20for%20Ocupational%20exposure%20-Kasturba%20Hospital-%202018.pdf"
       }
      ]
     }
@@ -223,7 +243,7 @@
     "timeframe": "Within hours",
     "actions": [
      "Type of exposure and fluid; source status if known.",
-     "Exposure within 72 hours and risk present: start PEP without waiting for results (WHO 2024)."
+     "Exposure within 72 hours and risk present: start PEP as early as possible; PEP works best when started early (WHO 2024)."
     ]
    },
    {
@@ -231,9 +251,18 @@
     "title": "Start PEP",
     "timeframe": "Ideally within 24 hours",
     "actions": [
-     "TLD one tablet daily for 28 days (label; WHO 2024).",
+     "TLD one tablet daily for 28 days (label).",
      "Baseline tests (CDC 2025).",
-     "Sexual exposure: emergency contraception and STI assessment."
+     "Sexual exposure: emergency contraception (levonorgestrel 1.5 mg) and STI treatment (see STI topics); tetanus cover for wounds after assault."
+    ]
+   },
+   {
+    "id": "hep",
+    "title": "Hepatitis B and C",
+    "timeframe": "Same visit",
+    "actions": [
+     "Check worker's vaccination and anti-HBs; give HBIG 0.06 mL/kg and start vaccine if source HBsAg positive and worker non-immune (Kasturba guideline).",
+     "Hepatitis C source: no PEP; HCV RNA at 4–6 weeks and refer if positive (Kasturba guideline)."
     ]
    },
    {
@@ -251,8 +280,20 @@
    "status": "source-verified",
    "branches": [
     {
-     "label": "Three-drug PEP",
-     "entryCriteria": "Exposure within 72 hours with risk of HIV transmission, adult or adolescent 30 kg or more."
+     "label": "Three-drug PEP (adults and adolescents 30 kg or more)",
+     "entryCriteria": "Exposure within 72 hours with risk of HIV transmission, weight 30 kg or more."
+    },
+    {
+     "label": "Three-drug PEP (children under 30 kg)",
+     "entryCriteria": "Child under 30 kg with exposure within 72 hours (for example sexual abuse or needlestick)."
+    },
+    {
+     "label": "Hepatitis B post-exposure prophylaxis",
+     "entryCriteria": "Source HBsAg positive or high-risk unknown; exposed person unvaccinated or anti-HBs below 10 mIU/mL."
+    },
+    {
+     "label": "Sexual exposure: emergency contraception",
+     "entryCriteria": "Woman or girl of reproductive age after condomless sex or sexual assault, within 120 hours."
     }
    ],
    "regimens": [
@@ -277,30 +318,227 @@
      ],
      "contraindications": [
       "Dofetilide, fampridine (label)",
-      "With rifampicin give extra dolutegravir 50 mg (label)"
+      "With rifampicin or enzyme inducers (carbamazepine, phenytoin, phenobarbital, oxcarbazepine) give an extra dolutegravir 50 mg (label)",
+      "Metformin: monitor glucose; dolutegravir raises metformin levels (label)"
      ],
-     "branch": "Three-drug PEP",
+     "branch": "Three-drug PEP (adults and adolescents 30 kg or more)",
      "step": "Antiretroviral (fixed-dose combination)",
      "selection": "all",
      "sourceTitle": "Dolutegravir/lamivudine/tenofovir disoproxil fumarate 50/300/300 mg tablets: WHO Public Assessment Report, summary of product characteristics (HA737)",
      "sourceUrl": "https://extranet.who.int/prequal/sites/default/files/whopar_files/ha737part4v2.pdf",
      "sourceEdition": "WHO Prequalification, HA737 part 4, section 4.2 Posology"
+    },
+    {
+     "indication": "Within 120 hours of condomless sex or sexual assault",
+     "patientGroup": "Women and adolescent girls",
+     "genericName": "Levonorgestrel",
+     "dose": "1.5 mg",
+     "route": "Oral",
+     "frequency": "Single dose",
+     "duration": "Once, as early as possible",
+     "adjustments": [
+      "Paediatric: No age restriction (WHO).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Pregnancy test if period delayed"
+     ],
+     "contraindications": [
+      "None absolute (WHO)"
+     ],
+     "branch": "Sexual exposure: emergency contraception",
+     "step": "Emergency contraceptive pill",
+     "selection": "all",
+     "sourceTitle": "Emergency contraception: fact sheet (WHO)",
+     "sourceUrl": "https://www.who.int/news-room/fact-sheets/detail/emergency-contraception",
+     "sourceEdition": "WHO, 9 November 2021, section Methods"
+    },
+    {
+     "indication": "HIV PEP in a child",
+     "patientGroup": "Children from 4 weeks and 3 kg",
+     "genericName": "Dolutegravir (10 mg dispersible tablets)",
+     "dose": "By weight (dispersible): 3–<6 kg 5 mg; 6–<10 kg 15 mg; 10–<15 kg 20 mg; 15–<20 kg 25 mg; 20 kg or more: 50 mg film-coated tablet (preferred) or 30 mg dispersible only if unable to swallow tablets",
+     "route": "Oral, dispersed in water",
+     "frequency": "Once daily",
+     "duration": "28 days",
+     "adjustments": [
+      "Paediatric: This is the paediatric dose; specialist (ART centre) supervision recommended.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment (label).",
+      "CLD: No adjustment in Child-Pugh A or B; caution in C (label)."
+     ],
+     "monitoring": [
+      "Adherence, rash, sleep"
+     ],
+     "contraindications": [
+      "With rifampicin give the dose twice daily (label)",
+      "30 mg dispersible and 50 mg film-coated are not interchangeable mg for mg (label)"
+     ],
+     "branch": "Three-drug PEP (children under 30 kg)",
+     "step": "Integrase inhibitor",
+     "selection": "all",
+     "sourceTitle": "Dolutegravir 10 mg dispersible tablets: WHO Public Assessment Report, summary of product characteristics (HA793)",
+     "sourceUrl": "https://extranet.who.int/prequal/sites/default/files/whopar_files/HA793part4v3.pdf",
+     "sourceEdition": "WHO Prequalification, HA793 part 4, section 4.2 Posology (PEP)"
+    },
+    {
+     "indication": "HIV PEP in a child",
+     "patientGroup": "Children",
+     "genericName": "Lamivudine",
+     "dose": "4 mg/kg twice daily (maximum 150 mg per dose); 14–<20 kg 75 mg twice daily; 20–<25 kg 75 mg morning and 150 mg evening; 25 kg or more 150 mg twice daily",
+     "route": "Oral",
+     "frequency": "Twice daily",
+     "duration": "28 days",
+     "adjustments": [
+      "Paediatric: This is the paediatric dose; specialist (ART centre) supervision recommended.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Reduce dose in renal impairment.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Adherence"
+     ],
+     "contraindications": [
+      "Hypersensitivity"
+     ],
+     "branch": "Three-drug PEP (children under 30 kg)",
+     "step": "Nucleoside backbone",
+     "selection": "all",
+     "sourceTitle": "PEP to prevent HIV infection, Table A1: paediatric dosing of nPEP medicines (New York State Department of Health AIDS Institute)",
+     "sourceUrl": "https://www.hivguidelines.org/wp-content/uploads/2025/11/NYSDOH-AI-PEP-to-Prevent-HIV-Infection-Table-A1_12-5-2025_HG.pdf",
+     "sourceEdition": "NYSDOH AI, December 2025, Table A1"
+    },
+    {
+     "indication": "HIV PEP in a child",
+     "patientGroup": "Children 2 years or older and 10 kg or more",
+     "genericName": "Tenofovir disoproxil fumarate (paediatric)",
+     "dose": "8 mg/kg once daily (maximum 300 mg); tablets 17–<22 kg 150 mg, 22–<28 kg 200 mg, 28–<35 kg 250 mg",
+     "route": "Oral",
+     "frequency": "Once daily",
+     "duration": "28 days",
+     "adjustments": [
+      "Paediatric: This is the paediatric dose; specialist (ART centre) supervision recommended.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Avoid or adjust in renal impairment.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Creatinine"
+     ],
+     "contraindications": [
+      "Renal impairment"
+     ],
+     "branch": "Three-drug PEP (children under 30 kg)",
+     "step": "Second nucleoside",
+     "selection": "one-of",
+     "sourceTitle": "PEP to prevent HIV infection, Table A1: paediatric dosing of nPEP medicines (New York State Department of Health AIDS Institute)",
+     "sourceUrl": "https://www.hivguidelines.org/wp-content/uploads/2025/11/NYSDOH-AI-PEP-to-Prevent-HIV-Infection-Table-A1_12-5-2025_HG.pdf",
+     "sourceEdition": "NYSDOH AI, December 2025, Table A1",
+     "preferred": true
+    },
+    {
+     "indication": "HIV PEP in a child",
+     "patientGroup": "Infants and children under 10 kg or under 2 years",
+     "genericName": "Zidovudine (oral syrup)",
+     "dose": "Every 12 hours: 12 mg/kg (4 weeks or older, 4–<9 kg); 9 mg/kg (9–<30 kg)",
+     "route": "Oral",
+     "frequency": "Every 12 hours",
+     "duration": "28 days",
+     "adjustments": [
+      "Paediatric: This is the paediatric dose; specialist (ART centre) supervision recommended.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Reduce dose in severe renal impairment.",
+      "CLD: Caution in liver disease."
+     ],
+     "monitoring": [
+      "Haemoglobin, neutrophils"
+     ],
+     "contraindications": [
+      "Severe anaemia or neutropenia"
+     ],
+     "branch": "Three-drug PEP (children under 30 kg)",
+     "step": "Second nucleoside",
+     "selection": "one-of",
+     "sourceTitle": "PEP to prevent HIV infection, Table A1: paediatric dosing of nPEP medicines (New York State Department of Health AIDS Institute)",
+     "sourceUrl": "https://www.hivguidelines.org/wp-content/uploads/2025/11/NYSDOH-AI-PEP-to-Prevent-HIV-Infection-Table-A1_12-5-2025_HG.pdf",
+     "sourceEdition": "NYSDOH AI, December 2025, Table A1",
+     "preferred": false,
+     "useWhen": "Child under 2 years or under 10 kg, where tenofovir is not suitable."
+    },
+    {
+     "indication": "Hepatitis B exposure in a non-immune person",
+     "patientGroup": "Adults and children",
+     "genericName": "Hepatitis B immunoglobulin (HBIG)",
+     "dose": "0.06 mL/kg",
+     "route": "IM",
+     "frequency": "Once, as soon as possible",
+     "duration": "Single dose",
+     "adjustments": [
+      "Paediatric: Same per-kg dose in children.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Anti-HBs after the vaccine course"
+     ],
+     "contraindications": [
+      "Severe allergy to immunoglobulin"
+     ],
+     "branch": "Hepatitis B post-exposure prophylaxis",
+     "step": "Immunoglobulin",
+     "selection": "all",
+     "sourceTitle": "Post-exposure prophylaxis guidelines for occupational exposure (Hospital Infection Control, Kasturba Hospital, Manipal)",
+     "sourceUrl": "https://careernext.manipal.edu/content/dam/manipal/mu/kmc-manipal/Documents/Medical%20Education/medical-elective/10.%20Post%20exposure%20prophylaxis%20guidelines%20for%20Ocupational%20exposure%20-Kasturba%20Hospital-%202018.pdf",
+     "sourceEdition": "Kasturba Hospital infection control guideline, 2018, page 3"
+    },
+    {
+     "indication": "Hepatitis B exposure in an unvaccinated or non-responding person",
+     "patientGroup": "Adults and children",
+     "genericName": "Hepatitis B vaccine",
+     "dose": "Adults 1 mL; under 19 years 0.5 mL",
+     "route": "IM, deltoid (anterolateral thigh under 1 year)",
+     "frequency": "0, 1 and 6 months",
+     "duration": "Course; anti-HBs 1–2 months after the third dose",
+     "adjustments": [
+      "Paediatric: Children under 19 years: 0.5 mL (Kasturba guideline).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Dialysis patients need a larger dose.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Anti-HBs above 10 mIU/mL = responder"
+     ],
+     "contraindications": [
+      "Severe allergy to a previous dose"
+     ],
+     "branch": "Hepatitis B post-exposure prophylaxis",
+     "step": "Vaccine",
+     "selection": "all",
+     "sourceTitle": "Post-exposure prophylaxis guidelines for occupational exposure (Hospital Infection Control, Kasturba Hospital, Manipal)",
+     "sourceUrl": "https://careernext.manipal.edu/content/dam/manipal/mu/kmc-manipal/Documents/Medical%20Education/medical-elective/10.%20Post%20exposure%20prophylaxis%20guidelines%20for%20Ocupational%20exposure%20-Kasturba%20Hospital-%202018.pdf",
+     "sourceEdition": "Kasturba Hospital infection control guideline, 2018, page 3"
     }
    ],
-   "note": "Regimen and duration from the WHO-prequalified TLD label (PEP posology) and WHO 2024; testing from CDC 2025. NACO 2021 tables could not be opened. India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
+   "note": "Adult regimen from the WHO-prequalified TLD label and WHO 2024; paediatric doses from the dolutegravir dispersible label and NYSDOH Table A1; hepatitis B PEP from the Kasturba Hospital guideline. NACO 2021 tables could not be opened. India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
   },
   "teaching": {
    "scope": "HIV PEP in Indian hospitals and clinics.",
    "learningObjectives": [
     "Give first aid and assess risk.",
     "Start PEP within 72 hours.",
-    "Arrange tests and follow-up."
+    "Arrange tests and follow-up.",
+    "Give hepatitis B prophylaxis and arrange hepatitis C follow-up."
    ],
    "keyPoints": [
     "Start as early as possible; not after 72 hours.",
     "TLD one tablet daily for 28 days.",
     "Test HIV at baseline, 4–6 and 12 weeks.",
-    "Check creatinine clearance."
+    "Check creatinine clearance.",
+    "Children under 30 kg: dolutegravir dispersible by weight with lamivudine and a second nucleoside.",
+    "Hepatitis B: HBIG 0.06 mL/kg plus vaccine if source positive and person non-immune."
    ],
    "pitfalls": [
     "Waiting for source results.",
@@ -313,7 +551,7 @@
      "title": "Updated WHO guidelines for HIV post-exposure prophylaxis (HIV i-Base summary of WHO July 2024 guideline)",
      "edition": "HIV i-Base, July 2024",
      "url": "https://i-base.info/htb/48202",
-     "locator": "sections Timing, Regimen, Duration"
+     "locator": "sections Timing, Duration"
     },
     {
      "title": "Updated guidelines for antiretroviral postexposure prophylaxis after sexual, injection drug use, or other nonoccupational exposure to HIV (CDC), Supplementary Appendix A",
@@ -326,6 +564,164 @@
      "edition": "WHO Prequalification, HA737 part 4",
      "url": "https://extranet.who.int/prequal/sites/default/files/whopar_files/ha737part4v2.pdf",
      "locator": "sections 4.2–4.6"
+    },
+    {
+     "title": "Dolutegravir 10 mg dispersible tablets: WHO Public Assessment Report, summary of product characteristics (HA793)",
+     "edition": "WHO Prequalification, HA793 part 4",
+     "url": "https://extranet.who.int/prequal/sites/default/files/whopar_files/HA793part4v3.pdf",
+     "locator": "section 4.2"
+    },
+    {
+     "title": "PEP to prevent HIV infection, Table A1: paediatric dosing of nPEP medicines (New York State Department of Health AIDS Institute)",
+     "edition": "NYSDOH AI, December 2025",
+     "url": "https://www.hivguidelines.org/wp-content/uploads/2025/11/NYSDOH-AI-PEP-to-Prevent-HIV-Infection-Table-A1_12-5-2025_HG.pdf",
+     "locator": "Table A1"
+    },
+    {
+     "title": "Post-exposure prophylaxis guidelines for occupational exposure (Hospital Infection Control, Kasturba Hospital, Manipal)",
+     "edition": "Kasturba Hospital infection control guideline, 2018",
+     "url": "https://careernext.manipal.edu/content/dam/manipal/mu/kmc-manipal/Documents/Medical%20Education/medical-elective/10.%20Post%20exposure%20prophylaxis%20guidelines%20for%20Ocupational%20exposure%20-Kasturba%20Hospital-%202018.pdf",
+     "locator": "pages 1–4"
+    }
+   ],
+   "vignette": {
+    "text": "A 24-year-old staff nurse at a medical college hospital in Pune sustains a deep needlestick injury while recapping a hollow-bore needle after drawing blood from a patient on the medical ward. The patient's HIV status is unknown, and he was admitted with weight loss and oral candidiasis. The nurse completed two doses of hepatitis B vaccine as a student but never had her anti-HBs checked. She reports 40 minutes after the injury.",
+    "fictitious": true
+   },
+   "guidedApproach": [
+    {
+     "title": "Why timing decides everything",
+     "prompt": "Why must PEP start within hours rather than days?",
+     "guidance": "After a percutaneous or mucosal exposure, HIV first infects dendritic cells and T cells at the site, then reaches regional lymph nodes and the bloodstream over roughly 24–72 hours. Antiretroviral drugs can stop this local replication before the infection becomes established, but once the virus has disseminated and integrated into host DNA, a short course cannot clear it. This is why WHO advises starting ideally within 24 hours and never after 72 hours, and why the first dose should be given before source results are available. A three-drug regimen is preferred because it suppresses replication more completely, and dolutegravir is chosen as the third drug because it is potent, well tolerated and has a high barrier to resistance.",
+     "section": "pathophysiology"
+    },
+    {
+     "title": "Assessing the exposure and the source",
+     "prompt": "Which exposures need PEP?",
+     "guidance": "Risk depends on the fluid, the route and the source. Blood and visibly blood-stained fluids carry the highest risk; deep injuries with a hollow-bore needle that was in a vein or artery carry more risk than a solid suture needle. Exposure of intact skin needs no PEP. Mucosal splashes and non-intact skin need PEP if the source is HIV positive or unknown. For sexual exposure, including sexual assault, condomless receptive anal or vaginal sex carries the highest risk. The source should be tested with consent, but PEP is started at once and stopped only if the source is shown to be HIV negative without a recent risk. Every exposure is also a hepatitis B and hepatitis C exposure.",
+     "section": "signs-symptoms"
+    },
+    {
+     "title": "The baseline and follow-up tests",
+     "prompt": "What do you test, and when?",
+     "guidance": "At the first visit, test the exposed person for HIV to make sure they were not already infected, because a reactive result changes management to HIV treatment. Check hepatitis B status (HBsAg and anti-HBs), hepatitis C antibody, creatinine and transaminases for drug safety, and a pregnancy test where relevant. Follow-up HIV testing is at 4–6 weeks and again at 12 weeks; hepatitis C RNA at 4–6 weeks is used when the source is hepatitis C positive, because there is no prophylaxis and early infection can be cured. Advise condoms until follow-up tests are negative.",
+     "section": "investigations"
+    },
+    {
+     "title": "Choosing and completing the regimen",
+     "prompt": "How do you give PEP to adults and to children?",
+     "guidance": "For adults and adolescents of 30 kg or more, the single-tablet combination of dolutegravir, lamivudine and tenofovir (TLD) once daily for 28 days is simple and well tolerated; separate it from antacids, calcium and iron, and check that creatinine clearance is at least 50 mL/min. Children under 30 kg need weight-based dolutegravir dispersible tablets with lamivudine and a second nucleoside (tenofovir from 2 years and 10 kg, or zidovudine for younger or smaller children), ideally under ART-centre supervision. Address hepatitis B at the same visit: a non-immune person exposed to an HBsAg-positive source needs HBIG 0.06 mL/kg and the vaccine course. Adherence support, side-effect review and follow-up testing are what make PEP effective.",
+     "section": "management"
+    }
+   ],
+   "boardQuestions": [
+    {
+     "id": "q1",
+     "vignette": "A 24-year-old nurse has a deep needlestick from a hollow-bore needle used on a patient of unknown HIV status who has oral candidiasis and weight loss. She presents 40 minutes later. Her baseline HIV test is non-reactive and creatinine is normal.",
+     "fictitious": true,
+     "question": "What is the most appropriate action now?",
+     "options": [
+      {
+       "id": "A",
+       "text": "Wait for the source patient's HIV result before deciding",
+       "explanation": "Delay reduces effectiveness: PEP works best when started as early as possible, ideally within 24 hours (WHO 2024)."
+      },
+      {
+       "id": "B",
+       "text": "Start TLD one tablet daily for 28 days",
+       "explanation": "Correct. Deep percutaneous exposure to a possibly HIV-positive source within 72 hours needs three-drug PEP, ideally started within hours."
+      },
+      {
+       "id": "C",
+       "text": "Give a 7-day course of TLD",
+       "explanation": "PEP is a 28-day course (WHO 2024; CDC 2025)."
+      },
+      {
+       "id": "D",
+       "text": "Give tenofovir and lamivudine only",
+       "explanation": "Three drugs are preferred over two (WHO 2024)."
+      },
+      {
+       "id": "E",
+       "text": "No PEP because the risk from a needlestick is low",
+       "explanation": "Deep injury with a hollow-bore needle is a high-risk exposure."
+      }
+     ],
+     "answer": "B",
+     "educationalObjective": "Start three-drug PEP immediately after a significant exposure.",
+     "keyPoint": "Start within hours, never after 72 hours; 28 days; do not wait for the source."
+    },
+    {
+     "id": "q2",
+     "vignette": "The same nurse received only 2 of the 3 hepatitis B vaccine doses as a student and has never had her anti-HBs checked. The source patient's tests return HBsAg positive and HIV non-reactive. Her own anti-HBs result today is below 10 mIU/mL and her HBsAg is negative.",
+     "fictitious": true,
+     "question": "What should be given for hepatitis B?",
+     "options": [
+      {
+       "id": "A",
+       "text": "Nothing, because she is partly vaccinated",
+       "explanation": "Anti-HBs below 10 mIU/mL means she is not protected."
+      },
+      {
+       "id": "B",
+       "text": "Hepatitis B vaccine only",
+       "explanation": "A non-immune person exposed to an HBsAg-positive source needs immunoglobulin as well as vaccine."
+      },
+      {
+       "id": "C",
+       "text": "Tenofovir for 28 days as hepatitis B prophylaxis",
+       "explanation": "Tenofovir in TLD is for HIV PEP; hepatitis B prophylaxis is HBIG plus vaccine."
+      },
+      {
+       "id": "D",
+       "text": "HBIG 0.06 mL/kg IM plus completion of the vaccine course",
+       "explanation": "Correct. Source HBsAg positive and anti-HBs below 10 mIU/mL: HBIG and vaccination (Kasturba guideline)."
+      },
+      {
+       "id": "E",
+       "text": "Repeat anti-HBs in 6 months",
+       "explanation": "Waiting leaves her unprotected during the period of risk."
+      }
+     ],
+     "answer": "D",
+     "educationalObjective": "Manage hepatitis B exposure according to source status and the person's immunity.",
+     "keyPoint": "Non-immune + HBsAg-positive source: HBIG 0.06 mL/kg plus vaccine."
+    },
+    {
+     "id": "q3",
+     "vignette": "A 9-year-old girl weighing 24 kg is brought by her mother 30 hours after a sexual assault by an unknown adult. Her baseline HIV test is non-reactive and creatinine is normal. She can swallow small tablets. Child-protection services and the police have been informed, and she has been examined by a gynaecologist.",
+     "fictitious": true,
+     "question": "Which regimen is most appropriate?",
+     "options": [
+      {
+       "id": "A",
+       "text": "TLD one tablet daily",
+       "explanation": "TLD is only for people weighing 30 kg or more (label)."
+      },
+      {
+       "id": "B",
+       "text": "Dolutegravir 50 mg film-coated daily with lamivudine 75 mg morning and 150 mg evening and tenofovir 200 mg daily, for 28 days",
+       "explanation": "Correct. From 20 kg the film-coated 50 mg tablet is preferred when the child can swallow tablets; lamivudine 75/150 mg at 20–<25 kg and tenofovir 200 mg at 22–<28 kg (label; NYSDOH Table A1)."
+      },
+      {
+       "id": "C",
+       "text": "No PEP because more than 24 hours have passed",
+       "explanation": "PEP can be started up to 72 hours."
+      },
+      {
+       "id": "D",
+       "text": "Zidovudine alone for 28 days",
+       "explanation": "Single-drug PEP is inadequate; three drugs are preferred."
+      },
+      {
+       "id": "E",
+       "text": "Dolutegravir 50 mg film-coated daily alone",
+       "explanation": "A single drug is not PEP; a full regimen is needed."
+      }
+     ],
+     "answer": "B",
+     "educationalObjective": "Choose a weight-appropriate three-drug PEP regimen for a child.",
+     "keyPoint": "Children under 30 kg: dolutegravir by weight + lamivudine + a second nucleoside, for 28 days."
     }
    ]
   },
@@ -347,6 +743,167 @@
     "Follow-up dates given"
    ],
    "followUpPlan": "Review at day 3 and at 28 days; HIV tests at 4–6 and 12 weeks (CDC 2025)."
-  }
+  },
+  "algorithms": [
+   {
+    "id": "pep-decision",
+    "title": "Exposure to blood or body fluid: what to give",
+    "placement": "manage",
+    "nodes": [
+     {
+      "id": "start",
+      "kind": "start",
+      "text": "Exposure reported",
+      "detail": "First aid: wash with soap and water; flush eyes or mouth; do not squeeze.",
+      "next": [
+       {
+        "to": "aid"
+       }
+      ]
+     },
+     {
+      "id": "aid",
+      "kind": "decision",
+      "text": "Within 72 hours of exposure?",
+      "next": [
+       {
+        "to": "risk",
+        "label": "Yes"
+       },
+       {
+        "to": "late",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "late",
+      "kind": "outcome",
+      "text": "No HIV PEP; baseline and follow-up testing, counselling, hepatitis B check"
+     },
+     {
+      "id": "risk",
+      "kind": "decision",
+      "text": "Breach of skin or mucosa, or condomless sexual exposure?",
+      "next": [
+       {
+        "to": "start-pep",
+        "label": "Yes"
+       },
+       {
+        "to": "none",
+        "label": "No (intact skin)"
+       }
+      ]
+     },
+     {
+      "id": "none",
+      "kind": "outcome",
+      "text": "No PEP needed; reassure and educate"
+     },
+     {
+      "id": "start-pep",
+      "kind": "action",
+      "text": "Baseline HIV test, then start PEP without waiting for source results",
+      "next": [
+       {
+        "to": "weight"
+       }
+      ]
+     },
+     {
+      "id": "weight",
+      "kind": "decision",
+      "text": "Weight 30 kg or more?",
+      "next": [
+       {
+        "to": "tld",
+        "label": "Yes"
+       },
+       {
+        "to": "paed",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "tld",
+      "kind": "action",
+      "text": "TLD one tablet daily for 28 days",
+      "next": [
+       {
+        "to": "hbv"
+       }
+      ]
+     },
+     {
+      "id": "hbv",
+      "kind": "decision",
+      "text": "Hepatitis B: source HBsAg positive or high-risk unknown, and person non-immune?",
+      "next": [
+       {
+        "to": "hbig",
+        "label": "Yes"
+       },
+       {
+        "to": "follow",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "hbig",
+      "kind": "outcome",
+      "text": "HBIG 0.06 mL/kg plus vaccine 0, 1, 6 months; HIV tests at 4–6 and 12 weeks; HCV RNA at 4–6 weeks if source HCV positive"
+     },
+     {
+      "id": "follow",
+      "kind": "outcome",
+      "text": "HIV tests at 4–6 and 12 weeks; HCV RNA at 4–6 weeks if source HCV positive"
+     },
+     {
+      "id": "paed",
+      "kind": "action",
+      "text": "Dolutegravir by weight + lamivudine + tenofovir or zidovudine; ART centre",
+      "next": [
+       {
+        "to": "hbv2"
+       }
+      ]
+     },
+     {
+      "id": "hbv2",
+      "kind": "decision",
+      "text": "Hepatitis B: source positive or high-risk unknown, and child non-immune?",
+      "next": [
+       {
+        "to": "hbig2",
+        "label": "Yes"
+       },
+       {
+        "to": "follow2",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "hbig2",
+      "kind": "outcome",
+      "text": "HBIG 0.06 mL/kg plus vaccine (0.5 mL under 19 years); HIV and HCV follow-up as for adults"
+     },
+     {
+      "id": "follow2",
+      "kind": "outcome",
+      "text": "HIV tests at 4–6 and 12 weeks; HCV RNA at 4–6 weeks if source HCV positive; child protection follow-up"
+     }
+    ],
+    "source": {
+     "title": "Updated WHO guidelines for HIV post-exposure prophylaxis (HIV i-Base summary of WHO July 2024 guideline)",
+     "edition": "HIV i-Base, July 2024",
+     "url": "https://i-base.info/htb/48202",
+     "locator": "sections Timing and Duration (regimens from the TLD and dolutegravir labels; hepatitis B steps from the Kasturba Hospital guideline)"
+    }
+   }
+  ]
  }
 ]

@@ -20,7 +20,8 @@
    ],
    "unverifiedSections": [
     "The opened NACO guideline text ended after urethral discharge; genital ulcer and bubo regimens come from the 2023 kit specifications.",
-    "Kit 4 doxycycline and Kit 5 acyclovir frequencies were not legible; durations are inferred from tablet counts (30 tablets twice daily = 15 days; 21 tablets three times daily = 7 days).",
+    "Kit 4 doxycycline frequency was not legible (duration inferred from 30 tablets twice daily = 15 days); Kit 4 is labelled only 'GUD' — its use for penicillin allergy is inferred from its contents. Kit 5 reads three times daily for 7 days and Kit 7 twice daily for 21 days.",
+    "The NACO sections on genital ulcer, bubo, scrotal swelling and pregnancy could not be reached in the opened text; 'aspirate, do not incise' and herpetic ulcer criteria are not verified.",
     "Kit 1 contains cefixime 400 mg, while the newer guideline table gives cefixime 800 mg; the guideline dose is shown.",
     "Drug cautions, contraindications and renal or hepatic adjustment lines without a source tag are general pharmacology statements and need formulary confirmation."
    ],
@@ -30,7 +31,7 @@
    ]
   },
   "pathophysiology": {
-   "summary": "STIs are common in India and many are treated at Suraksha clinics (designated STI/RTI clinics) and primary care using syndromic management: the clinician identifies the syndrome from symptoms and signs and treats all common causes on the same day, using colour-coded NACO kits. Urethral discharge is treated for both gonorrhoea and chlamydia. Genital ulcers are treated for syphilis and chancroid (or herpes when vesicles or recurrence suggest it). Inguinal bubo is treated for lymphogranuloma venereum and chancroid. Every visit includes condom promotion, HIV and syphilis testing, partner notification and a follow-up visit.",
+   "summary": "STIs are common in India and many are treated at Suraksha clinics (designated STI/RTI clinics) and primary care using syndromic management: the clinician identifies the syndrome from symptoms and signs and treats all common causes on the same day, using colour-coded NACO kits. Urethral discharge is treated for both gonorrhoea and chlamydia. Genital ulcers are treated for syphilis and chancroid (or herpes when vesicles or recurrence suggest it). Inguinal bubo is treated for lymphogranuloma venereum and chancroid. Every visit includes condom promotion, HIV and syphilis testing, partner notification and a follow-up visit. Persistent discharge after correct treatment usually means reinfection from an untreated partner, Trichomonas or Mycoplasma genitalium, and is handled with the guideline's treatment-failure regimens and referral for testing.",
    "keyMechanisms": [
     "Gonococcal and chlamydial urethritis cause discharge and dysuria; untreated infection causes epididymitis and infertility.",
     "Syphilis causes a painless ulcer; chancroid a painful ulcer with buboes; herpes causes recurrent painful vesicles.",
@@ -66,23 +67,27 @@
   "differentials": [
    {
     "condition": "Urinary tract infection",
-    "distinguishingFeatures": "Frequency, pyuria, no urethral discharge."
+    "distinguishingFeatures": "Frequency, urgency and pyuria without urethral discharge; urine microscopy and culture settle it."
    },
    {
     "condition": "Testicular torsion",
-    "distinguishingFeatures": "Sudden severe pain, high-riding testis; surgical emergency."
+    "distinguishingFeatures": "Sudden severe scrotal pain, high-riding testis and absent cremasteric reflex; a surgical emergency — Doppler only if it does not delay surgery."
    },
    {
     "condition": "Fixed drug eruption",
-    "distinguishingFeatures": "Recurrent lesion at same site after a drug."
+    "distinguishingFeatures": "Recurrent well-defined lesion at the same genital site after the same drug (often NSAIDs or co-trimoxazole); drug history settles it."
    },
    {
     "condition": "Behçet disease",
-    "distinguishingFeatures": "Oral and genital ulcers, eye involvement."
+    "distinguishingFeatures": "Recurrent oral and genital ulcers with eye or skin involvement; clinical criteria and pathergy test, negative STI tests."
    },
    {
     "condition": "Tuberculous lymphadenitis",
-    "distinguishingFeatures": "Chronic nodes, systemic features."
+    "distinguishingFeatures": "Chronic painless matted inguinal nodes with weight loss; fine-needle aspiration cytology and GeneXpert settle it."
+   },
+   {
+    "condition": "Genital herpes versus syphilis",
+    "distinguishingFeatures": "Painful grouped vesicles that recur (herpes) versus a single painless indurated ulcer (syphilis); syphilis serology and HSV PCR distinguish them."
    }
   ],
   "diagnosticCriteria": [
@@ -116,7 +121,7 @@
      "references": [
       {
        "title": "National Technical Guidelines on STI and RTI (NACO, MoHFW)",
-       "edition": "NACO, published May 2025, section 3.2",
+       "edition": "NACO, published May 2025, section 3.2.1",
        "url": "https://naco.mohfw.gov.in/wp-content/uploads/2025/05/National-Technical-Guidelines-on-STI-and-RTI_Final.pdf"
       }
      ]
@@ -194,12 +199,12 @@
      "targetCondition": "Torsion vs epididymitis",
      "normalValue": "Normal flow",
      "expectedFinding": "Absent flow (torsion)",
-     "clinicalRationale": "Painful scrotal swelling of sudden onset.",
+     "clinicalRationale": "Mainly to rule out torsion; a negative scan does not exclude epididymitis, and suspected torsion goes straight to urology (CDC).",
      "references": [
       {
-       "title": "National Technical Guidelines on STI and RTI (NACO, MoHFW)",
-       "edition": "NACO, published May 2025, Table 3.2",
-       "url": "https://naco.mohfw.gov.in/wp-content/uploads/2025/05/National-Technical-Guidelines-on-STI-and-RTI_Final.pdf"
+       "title": "Epididymitis: Sexually Transmitted Infections Treatment Guidelines (CDC)",
+       "edition": "CDC STI Treatment Guidelines, 2021, section Diagnostic considerations",
+       "url": "https://www.cdc.gov/std/treatment-guidelines/epididymitis.htm"
       }
      ]
     }
@@ -243,6 +248,24 @@
      "Confirm cure; record HIV and syphilis results (NACO).",
      "Persistent discharge: treatment-failure regimens or refer (NACO Table 3.3)."
     ]
+   },
+   {
+    "id": "failure",
+    "title": "Persistent discharge (treatment failure)",
+    "timeframe": "At 7 days",
+    "actions": [
+     "Reinfection or poor adherence: retreat for gonorrhoea and chlamydia and treat partners (NACO).",
+     "Otherwise: treat Trichomonas (metronidazole 2 g) and Mycoplasma genitalium (doxycycline then moxifloxacin); refer for NAAT and susceptibility testing (NACO Table 3.3)."
+    ]
+   },
+   {
+    "id": "syph",
+    "title": "Syphilis serology and partners",
+    "timeframe": "When results return",
+    "actions": [
+     "Reactive serology without an ulcer: stage it; early latent 2.4 million units once, late or unknown duration 2.4 million units weekly for 3 weeks (CDC).",
+     "Pregnant partner: azithromycin or amoxicillin for chlamydia instead of doxycycline; penicillin desensitisation for syphilis with penicillin allergy (CDC)."
+    ]
    }
   ],
   "medicationPlan": {
@@ -257,6 +280,10 @@
      "entryCriteria": "Urethral discharge syndrome."
     },
     {
+     "label": "Treatment failure",
+     "entryCriteria": "Persistent urethral discharge at 7 days despite adherence and partner treatment."
+    },
+    {
      "label": "Genital ulcer, non-herpetic",
      "entryCriteria": "Ulcer without vesicles or recurrence."
     },
@@ -267,6 +294,14 @@
     {
      "label": "Inguinal bubo",
      "entryCriteria": "Painful inguinal swelling without ulcer."
+    },
+    {
+     "label": "Epididymitis",
+     "entryCriteria": "Painful scrotal swelling with urethritis or urinary infection, torsion excluded."
+    },
+    {
+     "label": "Positive syphilis serology",
+     "entryCriteria": "Reactive non-treponemal and treponemal tests without an ulcer (latent syphilis)."
     }
    ],
    "regimens": [
@@ -280,7 +315,7 @@
      "duration": "Once",
      "adjustments": [
       "Paediatric: Adolescents treated as adults; any STI in a child needs child-protection assessment.",
-      "Penicillin allergy: Cephalosporin: avoid after penicillin anaphylaxis; seek specialist advice.",
+      "Penicillin allergy: Cephalosporin: cross-reactivity with penicillin is very low; after a severe immediate reaction to penicillin, seek specialist advice.",
       "CKD: No adjustment.",
       "CLD: No adjustment."
      ],
@@ -308,7 +343,7 @@
      "duration": "Once",
      "adjustments": [
       "Paediatric: Adolescents treated as adults; any STI in a child needs child-protection assessment.",
-      "Penicillin allergy: Cephalosporin: avoid after penicillin anaphylaxis; seek specialist advice.",
+      "Penicillin allergy: Cephalosporin: cross-reactivity with penicillin is very low; after a severe immediate reaction to penicillin, seek specialist advice.",
       "CKD: No adjustment.",
       "CLD: No adjustment.",
       "NACO Kit 1 (grey) contains cefixime 400 mg with azithromycin 1 g."
@@ -484,7 +519,7 @@
      "adjustments": [
       "Paediatric: Adolescents treated as adults; any STI in a child needs child-protection assessment.",
       "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
-      "CKD: Reduce dose if creatinine clearance below 25 mL/min.",
+      "CKD: Dose adjustment in severe renal impairment (check the formulary).",
       "CLD: No adjustment."
      ],
      "monitoring": [
@@ -554,6 +589,257 @@
      "sourceTitle": "Technical specifications of STI colour-coded drug kits (NACO technical committee)",
      "sourceUrl": "https://naco.mohfw.gov.in/wp-content/uploads/2025/05/Tech-spec-of-STI-Color-Coded-Drug-KitsDual-Test-Kits-Condoms.2023.final_.pdf",
      "sourceEdition": "NACO, approved May 2023, section Agenda 1 (kit specifications)"
+    },
+    {
+     "indication": "Persistent urethral discharge",
+     "patientGroup": "Adults and adolescents",
+     "genericName": "Metronidazole",
+     "dose": "2 g",
+     "route": "Oral",
+     "frequency": "Single dose",
+     "duration": "Once",
+     "adjustments": [
+      "Paediatric: Adolescents treated as adults; any STI in a child needs child-protection assessment.",
+      "Penicillin allergy: Not a beta-lactam; safe in penicillin allergy.",
+      "CKD: No adjustment.",
+      "CLD: Reduce dose in severe liver failure.",
+      "Alternatives: secnidazole 2 g or tinidazole 2 g single dose, or metronidazole 400 mg twice daily for 7 days (NACO Table 3.3)."
+     ],
+     "monitoring": [
+      "Response at review"
+     ],
+     "contraindications": [
+      "Hypersensitivity to nitroimidazoles"
+     ],
+     "branch": "Treatment failure",
+     "step": "Trichomonas cover",
+     "selection": "all",
+     "sourceTitle": "National Technical Guidelines on STI and RTI (NACO, MoHFW)",
+     "sourceUrl": "https://naco.mohfw.gov.in/wp-content/uploads/2025/05/National-Technical-Guidelines-on-STI-and-RTI_Final.pdf",
+     "sourceEdition": "NACO, published May 2025, section 3.2.1, Table 3.3"
+    },
+    {
+     "indication": "Persistent urethral discharge after doxycycline",
+     "patientGroup": "Adults",
+     "genericName": "Moxifloxacin",
+     "dose": "400 mg",
+     "route": "Oral",
+     "frequency": "Once daily",
+     "duration": "7 days, after a 7-day course of doxycycline 100 mg twice daily",
+     "adjustments": [
+      "Paediatric: Adult topic; paediatric use is outside the scope of the cited sources.",
+      "Penicillin allergy: Not a beta-lactam; safe in penicillin allergy.",
+      "CKD: No adjustment.",
+      "CLD: Avoid in severe liver impairment."
+     ],
+     "monitoring": [
+      "QT interval, tendon pain"
+     ],
+     "contraindications": [
+      "Prolonged QT, fluoroquinolone allergy"
+     ],
+     "branch": "Treatment failure",
+     "step": "Mycoplasma genitalium cover",
+     "selection": "all",
+     "sourceTitle": "National Technical Guidelines on STI and RTI (NACO, MoHFW)",
+     "sourceUrl": "https://naco.mohfw.gov.in/wp-content/uploads/2025/05/National-Technical-Guidelines-on-STI-and-RTI_Final.pdf",
+     "sourceEdition": "NACO, published May 2025, section 3.2.1, Table 3.3"
+    },
+    {
+     "indication": "Urethral discharge",
+     "patientGroup": "Adults, adolescents and pregnant partners",
+     "genericName": "Erythromycin",
+     "dose": "500 mg",
+     "route": "Oral",
+     "frequency": "Four times daily",
+     "duration": "7 days",
+     "adjustments": [
+      "Paediatric: Adolescents treated as adults; any STI in a child needs child-protection assessment.",
+      "Penicillin allergy: Not a beta-lactam; safe in penicillin allergy.",
+      "CKD: No adjustment.",
+      "CLD: Caution in liver disease."
+     ],
+     "monitoring": [
+      "Gastrointestinal upset, QT"
+     ],
+     "contraindications": [
+      "Macrolide allergy"
+     ],
+     "branch": "Urethral discharge: chlamydia",
+     "step": "Chlamydia cover",
+     "selection": "one-of",
+     "sourceTitle": "National Technical Guidelines on STI and RTI (NACO, MoHFW)",
+     "sourceUrl": "https://naco.mohfw.gov.in/wp-content/uploads/2025/05/National-Technical-Guidelines-on-STI-and-RTI_Final.pdf",
+     "sourceEdition": "NACO, published May 2025, section 3.2.1, Table 3.3",
+     "preferred": false,
+     "useWhen": "Doxycycline contraindicated (for example a pregnant partner) and azithromycin unavailable."
+    },
+    {
+     "indication": "Urethral discharge",
+     "patientGroup": "Adults",
+     "genericName": "Ofloxacin",
+     "dose": "200–400 mg",
+     "route": "Oral",
+     "frequency": "Twice daily",
+     "duration": "7 days",
+     "adjustments": [
+      "Paediatric: Adult topic; paediatric use is outside the scope of the cited sources.",
+      "Penicillin allergy: Not a beta-lactam; safe in penicillin allergy.",
+      "CKD: Reduce dose in renal impairment.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Tendon pain, QT"
+     ],
+     "contraindications": [
+      "Pregnancy, fluoroquinolone allergy"
+     ],
+     "branch": "Urethral discharge: chlamydia",
+     "step": "Chlamydia cover",
+     "selection": "one-of",
+     "sourceTitle": "National Technical Guidelines on STI and RTI (NACO, MoHFW)",
+     "sourceUrl": "https://naco.mohfw.gov.in/wp-content/uploads/2025/05/National-Technical-Guidelines-on-STI-and-RTI_Final.pdf",
+     "sourceEdition": "NACO, published May 2025, section 3.2.1, Table 3.3",
+     "preferred": false,
+     "useWhen": "Doxycycline and macrolides unsuitable."
+    },
+    {
+     "indication": "Persistent discharge where moxifloxacin is unsuitable",
+     "patientGroup": "Adults",
+     "genericName": "Azithromycin (extended course)",
+     "dose": "500 mg on day 1, then 250 mg on days 2–5",
+     "route": "Oral",
+     "frequency": "Once daily",
+     "duration": "5 days",
+     "adjustments": [
+      "Paediatric: Adult topic; paediatric use is outside the scope of the cited sources.",
+      "Penicillin allergy: Not a beta-lactam; safe in penicillin allergy.",
+      "CKD: No adjustment.",
+      "CLD: Caution in severe liver disease."
+     ],
+     "monitoring": [
+      "QT risk"
+     ],
+     "contraindications": [
+      "Macrolide allergy"
+     ],
+     "branch": "Treatment failure",
+     "step": "Mycoplasma genitalium alternative",
+     "selection": "all",
+     "sourceTitle": "National Technical Guidelines on STI and RTI (NACO, MoHFW)",
+     "sourceUrl": "https://naco.mohfw.gov.in/wp-content/uploads/2025/05/National-Technical-Guidelines-on-STI-and-RTI_Final.pdf",
+     "sourceEdition": "NACO, published May 2025, section 3.2.1, Table 3.3"
+    },
+    {
+     "indication": "Epididymitis, likely gonorrhoea or chlamydia",
+     "patientGroup": "Adults and adolescents",
+     "genericName": "Ceftriaxone",
+     "dose": "500 mg (1 g if 150 kg or more)",
+     "route": "IM",
+     "frequency": "Single dose",
+     "duration": "Once",
+     "adjustments": [
+      "Paediatric: Adolescents treated as adults; any STI in a child needs child-protection assessment.",
+      "Penicillin allergy: Cephalosporin: cross-reactivity with penicillin is very low; after a severe immediate reaction to penicillin, seek specialist advice.",
+      "CKD: No adjustment.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Review at 72 hours"
+     ],
+     "contraindications": [
+      "Cephalosporin anaphylaxis"
+     ],
+     "branch": "Epididymitis",
+     "step": "Gonorrhoea cover",
+     "selection": "all",
+     "sourceTitle": "Epididymitis: Sexually Transmitted Infections Treatment Guidelines (CDC)",
+     "sourceUrl": "https://www.cdc.gov/std/treatment-guidelines/epididymitis.htm",
+     "sourceEdition": "CDC STI Treatment Guidelines, 2021, section Recommended regimens"
+    },
+    {
+     "indication": "Epididymitis, likely chlamydia",
+     "patientGroup": "Adults and adolescents",
+     "genericName": "Doxycycline",
+     "dose": "100 mg",
+     "route": "Oral",
+     "frequency": "Twice daily",
+     "duration": "10 days",
+     "adjustments": [
+      "Paediatric: Adolescents treated as adults; any STI in a child needs child-protection assessment.",
+      "Penicillin allergy: Not a beta-lactam; safe in penicillin allergy.",
+      "CKD: No adjustment.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Symptoms at 72 hours"
+     ],
+     "contraindications": [
+      "Children under 8 years"
+     ],
+     "branch": "Epididymitis",
+     "step": "Chlamydia or enteric cover",
+     "selection": "one-of",
+     "sourceTitle": "Epididymitis: Sexually Transmitted Infections Treatment Guidelines (CDC)",
+     "sourceUrl": "https://www.cdc.gov/std/treatment-guidelines/epididymitis.htm",
+     "sourceEdition": "CDC STI Treatment Guidelines, 2021, section Recommended regimens",
+     "preferred": true
+    },
+    {
+     "indication": "Epididymitis after insertive anal sex, or enteric organisms only",
+     "patientGroup": "Adults",
+     "genericName": "Levofloxacin",
+     "dose": "500 mg",
+     "route": "Oral",
+     "frequency": "Once daily",
+     "duration": "10 days",
+     "adjustments": [
+      "Paediatric: Adult topic; paediatric use is outside the scope of the cited sources.",
+      "Penicillin allergy: Not a beta-lactam; safe in penicillin allergy.",
+      "CKD: Reduce dose if creatinine clearance below 50 mL/min.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Tendon pain, QT"
+     ],
+     "contraindications": [
+      "Fluoroquinolone allergy"
+     ],
+     "branch": "Epididymitis",
+     "step": "Chlamydia or enteric cover",
+     "selection": "one-of",
+     "sourceTitle": "Epididymitis: Sexually Transmitted Infections Treatment Guidelines (CDC)",
+     "sourceUrl": "https://www.cdc.gov/std/treatment-guidelines/epididymitis.htm",
+     "sourceEdition": "CDC STI Treatment Guidelines, 2021, section Recommended regimens",
+     "preferred": false,
+     "useWhen": "Insertive anal sex, or recent urinary instrumentation with gonorrhoea excluded (levofloxacin alone)."
+    },
+    {
+     "indication": "Late latent syphilis or syphilis of unknown duration",
+     "patientGroup": "Adults",
+     "genericName": "Benzathine benzylpenicillin (3 doses)",
+     "dose": "2.4 million units",
+     "route": "Deep IM",
+     "frequency": "Weekly",
+     "duration": "3 doses (7.2 million units total); early latent: single dose",
+     "adjustments": [
+      "Paediatric: Adult topic; paediatric use is outside the scope of the cited sources.",
+      "Penicillin allergy: Pregnancy with penicillin allergy: desensitise and give penicillin; no alternative (CDC). Non-pregnant: doxycycline 100 mg twice daily for 28 days.",
+      "CKD: No adjustment.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Non-treponemal titre at 6, 12 and 24 months"
+     ],
+     "contraindications": [
+      "Penicillin allergy (see adjustment)"
+     ],
+     "branch": "Positive syphilis serology",
+     "step": "Penicillin",
+     "selection": "all",
+     "sourceTitle": "Latent syphilis: Sexually Transmitted Infections Treatment Guidelines (CDC)",
+     "sourceUrl": "https://www.cdc.gov/std/treatment-guidelines/latent-syphilis.htm",
+     "sourceEdition": "CDC STI Treatment Guidelines, 2021, section Treatment"
     }
    ],
    "note": "Urethral discharge doses from the NACO STI/RTI guidelines Table 3.3; ulcer and bubo regimens from the 2023 NACO kit specifications. India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
@@ -563,19 +849,22 @@
    "learningObjectives": [
     "Identify the syndrome.",
     "Give same-day kit treatment.",
-    "Treat partners and test for HIV and syphilis."
+    "Treat partners and test for HIV and syphilis.",
+    "Manage persistent urethral discharge after first-line treatment."
    ],
    "keyPoints": [
     "Urethral discharge: ceftriaxone 500 mg IM plus doxycycline 7 days.",
     "Non-herpetic ulcer: benzathine penicillin 2.4 MU plus azithromycin 1 g.",
     "Herpes: acyclovir 400 mg three times daily for 7 days.",
-    "Bubo: doxycycline 21 days plus azithromycin."
+    "Bubo: doxycycline 21 days plus azithromycin.",
+    "Persistent discharge at 7 days: think reinfection, then Trichomonas and Mycoplasma genitalium."
    ],
    "pitfalls": [
     "Not treating partners.",
     "Incising buboes.",
     "Missing HIV testing.",
-    "Missing testicular torsion."
+    "Missing testicular torsion.",
+    "Repeating the same antibiotics for persistent discharge without asking about partners."
    ],
    "references": [
     {
@@ -589,6 +878,158 @@
      "edition": "NACO, approved May 2023",
      "url": "https://naco.mohfw.gov.in/wp-content/uploads/2025/05/Tech-spec-of-STI-Color-Coded-Drug-KitsDual-Test-Kits-Condoms.2023.final_.pdf",
      "locator": "Agenda 1, kits 1–7"
+    },
+    {
+     "title": "Epididymitis: Sexually Transmitted Infections Treatment Guidelines (CDC)",
+     "edition": "CDC STI Treatment Guidelines, 2021",
+     "url": "https://www.cdc.gov/std/treatment-guidelines/epididymitis.htm",
+     "locator": "sections Diagnostic considerations, Recommended regimens"
+    },
+    {
+     "title": "Latent syphilis: Sexually Transmitted Infections Treatment Guidelines (CDC)",
+     "edition": "CDC STI Treatment Guidelines, 2021",
+     "url": "https://www.cdc.gov/std/treatment-guidelines/latent-syphilis.htm",
+     "locator": "sections Treatment, Penicillin allergy, Pregnancy"
+    }
+   ],
+   "vignette": {
+    "text": "A 26-year-old truck driver from Namakkal attends a Suraksha clinic with 3 days of burning urination and a creamy urethral discharge. He had unprotected sex with a commercial sex worker 6 days ago and is married. He has no ulcers or groin swelling. He asks for 'one injection' and does not want his wife to know.",
+    "fictitious": true
+   },
+   "guidedApproach": [
+    {
+     "title": "Why syndromic treatment works in India",
+     "prompt": "Why treat several organisms at once?",
+     "guidance": "Most STIs present as a small number of syndromes — urethral discharge, genital ulcer, inguinal bubo, scrotal swelling — and each syndrome has a short list of common causes. Laboratory diagnosis is often unavailable or delayed in Indian primary care, and patients may not return for results. Syndromic management treats all the likely organisms on the first visit with a colour-coded kit, which cures most patients and prevents onward spread. Urethral discharge is treated for both gonorrhoea and chlamydia because they often coexist and are hard to tell apart clinically. Genital ulcers are treated for syphilis and chancroid unless vesicles or recurrence point to herpes. Ulcers raise HIV transmission risk several-fold, which is why every visit includes an HIV test.",
+     "section": "pathophysiology"
+    },
+    {
+     "title": "Examining the patient properly",
+     "prompt": "What must the examination include?",
+     "guidance": "Ask about the timing of symptoms, recent partners, condom use and previous episodes. Examine the whole genital area with good light: retract the foreskin, milk the urethra if no discharge is visible, inspect for ulcers (single or multiple, painful or painless, indurated or soft), feel the inguinal nodes, and examine the scrotum. A painful scrotal swelling of sudden onset in a young man is torsion until proved otherwise. Look in the mouth and on the skin for secondary syphilis. Partners from the previous 60 days need assessment, and the patient's wishes about disclosure must be handled with counselling rather than by skipping partner treatment.",
+     "section": "signs-symptoms"
+    },
+    {
+     "title": "Tests that change management",
+     "prompt": "Which tests matter at a Suraksha clinic?",
+     "guidance": "A Gram stain of a urethral smear showing intracellular Gram-negative diplococci confirms gonorrhoea on the spot. Syphilis serology (a non-treponemal test such as RPR or VDRL with a treponemal test) and an HIV test are offered to every STI client. Nucleic acid amplification tests for gonorrhoea, chlamydia, Trichomonas and Mycoplasma genitalium, with gonococcal susceptibility testing, are needed when symptoms persist after treatment, because resistance — especially in gonorrhoea — is a growing problem in India. Scrotal Doppler ultrasound helps separate epididymitis from torsion but must never delay surgery when torsion is likely.",
+     "section": "investigations"
+    },
+    {
+     "title": "Treat, prevent and follow up",
+     "prompt": "What does complete management look like?",
+     "guidance": "Give the full regimen on the day of the visit, preferably as directly observed single doses: ceftriaxone 500 mg IM with doxycycline 100 mg twice daily for 7 days for urethral discharge; benzathine penicillin 2.4 million units with azithromycin 1 g for non-herpetic ulcers (doxycycline with azithromycin if allergic to penicillin); acyclovir for herpes; and 21 days of doxycycline with azithromycin for a bubo. Promote condoms, advise abstinence until treatment is complete and partners are treated, and arrange review at 7 days. If discharge persists, ask about adherence and partners before escalating to the Trichomonas and Mycoplasma regimens and referral for testing.",
+     "section": "management"
+    }
+   ],
+   "boardQuestions": [
+    {
+     "id": "q1",
+     "vignette": "A 26-year-old truck driver has 3 days of dysuria and a creamy urethral discharge after unprotected sex with a commercial sex worker 6 days ago. He has no ulcers or groin swelling. A Gram stain of the urethral smear shows intracellular Gram-negative diplococci. He has no drug allergies.",
+     "fictitious": true,
+     "question": "What is the most appropriate treatment?",
+     "options": [
+      {
+       "id": "A",
+       "text": "Ceftriaxone 500 mg IM single dose only",
+       "explanation": "Gonorrhoea and chlamydia coexist often; dual treatment is given for all urethral discharge (NACO)."
+      },
+      {
+       "id": "B",
+       "text": "Ceftriaxone 500 mg IM plus doxycycline 100 mg twice daily for 7 days",
+       "explanation": "Correct. NACO recommends same-day dual therapy for urethral discharge (Table 3.3)."
+      },
+      {
+       "id": "C",
+       "text": "Ciprofloxacin 500 mg single dose",
+       "explanation": "Not a recommended regimen; gonococcal fluoroquinolone resistance is widespread."
+      },
+      {
+       "id": "D",
+       "text": "Metronidazole 2 g single dose",
+       "explanation": "This is a treatment-failure regimen for Trichomonas, not first line."
+      },
+      {
+       "id": "E",
+       "text": "Benzathine penicillin 2.4 MU IM",
+       "explanation": "This treats syphilis presenting as a genital ulcer; it does not cover gonorrhoea or chlamydia urethritis."
+      }
+     ],
+     "answer": "B",
+     "educationalObjective": "Treat urethral discharge for both gonorrhoea and chlamydia on the same day.",
+     "keyPoint": "Urethral discharge: ceftriaxone 500 mg IM + doxycycline 7 days."
+    },
+    {
+     "id": "q2",
+     "vignette": "A 30-year-old man has a single painless, indurated ulcer on the penile shaft for 10 days and a firm, non-tender enlarged inguinal node. There are no vesicles and no previous episodes. He reports anaphylaxis to penicillin in the past. RPR and HIV tests have been sent and results are pending.",
+     "fictitious": true,
+     "question": "Which treatment is most appropriate today?",
+     "options": [
+      {
+       "id": "A",
+       "text": "Benzathine penicillin 2.4 MU IM plus azithromycin 1 g",
+       "explanation": "This is Kit 3, but penicillin is contraindicated after anaphylaxis, so it cannot be given."
+      },
+      {
+       "id": "B",
+       "text": "Acyclovir 400 mg three times daily for 7 days",
+       "explanation": "A single painless indurated ulcer suggests syphilis, not herpes."
+      },
+      {
+       "id": "C",
+       "text": "Doxycycline 100 mg twice daily plus azithromycin 1 g (Kit 4)",
+       "explanation": "Correct. Kit 4 is the non-herpetic ulcer regimen for penicillin allergy (NACO kits)."
+      },
+      {
+       "id": "D",
+       "text": "Wait for RPR before treating",
+       "explanation": "Syndromic management treats on the same day to prevent loss to follow-up and spread."
+      },
+      {
+       "id": "E",
+       "text": "Topical antibiotic ointment",
+       "explanation": "Topical treatment does not treat syphilis or chancroid."
+      }
+     ],
+     "answer": "C",
+     "educationalObjective": "Choose the genital ulcer regimen when penicillin is contraindicated.",
+     "keyPoint": "Non-herpetic ulcer with penicillin allergy: Kit 4 (doxycycline + azithromycin)."
+    },
+    {
+     "id": "q3",
+     "vignette": "A 22-year-old man treated with ceftriaxone and doxycycline for urethral discharge 7 days ago still has a scanty clear discharge and mild dysuria. He took all doses, his only partner was treated at the same visit, and they have abstained since. He has no ulcers or scrotal pain.",
+     "fictitious": true,
+     "question": "What is the next step?",
+     "options": [
+      {
+       "id": "A",
+       "text": "Repeat ceftriaxone and doxycycline",
+       "explanation": "Retreatment is for poor adherence or reinfection, which have been excluded."
+      },
+      {
+       "id": "B",
+       "text": "Metronidazole 2 g single dose, then doxycycline followed by moxifloxacin, and refer for NAAT and susceptibility testing",
+       "explanation": "Correct. NACO Table 3.3 gives Trichomonas and Mycoplasma genitalium treatment-failure regimens with referral for testing."
+      },
+      {
+       "id": "C",
+       "text": "Reassure; discharge will settle without treatment",
+       "explanation": "Persistent discharge after correct treatment needs evaluation and treatment for the remaining likely organisms."
+      },
+      {
+       "id": "D",
+       "text": "Start long-term doxycycline for 3 months",
+       "explanation": "Prolonged doxycycline is not a recommended regimen and would not cover Trichomonas."
+      },
+      {
+       "id": "E",
+       "text": "Urethral swab culture only, no treatment",
+       "explanation": "Testing is advised, but empirical failure regimens are also recommended."
+      }
+     ],
+     "answer": "B",
+     "educationalObjective": "Manage persistent urethral discharge after correct first-line treatment.",
+     "keyPoint": "Treatment failure: cover Trichomonas and Mycoplasma genitalium, and refer for testing."
     }
    ]
   },
@@ -609,6 +1050,174 @@
     "Outpatient care"
    ],
    "followUpPlan": "Review at 7 days; repeat syphilis serology after treatment (NACO)."
-  }
+  },
+  "algorithms": [
+   {
+    "id": "sti-male-syndromes",
+    "title": "Male genital complaint: syndromic pathway",
+    "placement": "manage",
+    "nodes": [
+     {
+      "id": "start",
+      "kind": "start",
+      "text": "Man with a genital complaint",
+      "detail": "History, examination, condom promotion, offer HIV and syphilis tests.",
+      "next": [
+       {
+        "to": "hx"
+       }
+      ]
+     },
+     {
+      "id": "hx",
+      "kind": "decision",
+      "text": "Main syndrome?",
+      "next": [
+       {
+        "to": "ud",
+        "label": "Urethral discharge"
+       },
+       {
+        "to": "gud",
+        "label": "Genital ulcer"
+       },
+       {
+        "to": "both",
+        "label": "Ulcer with groin swelling"
+       },
+       {
+        "to": "bubo",
+        "label": "Groin swelling, no ulcer"
+       },
+       {
+        "to": "scrot",
+        "label": "Painful scrotal swelling"
+       }
+      ]
+     },
+     {
+      "id": "both",
+      "kind": "outcome",
+      "text": "Ulcer kit (Kit 3, or Kit 4 if penicillin-allergic, or Kit 5 if herpetic) plus Kit 7 for the bubo"
+     },
+     {
+      "id": "ud",
+      "kind": "action",
+      "text": "Ceftriaxone 500 mg IM + doxycycline 100 mg twice daily for 7 days",
+      "next": [
+       {
+        "to": "ud7"
+       }
+      ]
+     },
+     {
+      "id": "ud7",
+      "kind": "decision",
+      "text": "Still discharging at 7 days?",
+      "next": [
+       {
+        "to": "fail",
+        "label": "Yes"
+       },
+       {
+        "to": "cured",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "fail",
+      "kind": "outcome",
+      "text": "Check partner treatment and adherence; then metronidazole 2 g and doxycycline then moxifloxacin; refer for NAAT"
+     },
+     {
+      "id": "cured",
+      "kind": "outcome",
+      "text": "Cured: record HIV and syphilis results; partner notification"
+     },
+     {
+      "id": "gud",
+      "kind": "decision",
+      "text": "Vesicles or recurrent ulcers?",
+      "next": [
+       {
+        "to": "hsv",
+        "label": "Yes"
+       },
+       {
+        "to": "nonh",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "hsv",
+      "kind": "outcome",
+      "text": "Kit 5: acyclovir 400 mg three times daily for 7 days"
+     },
+     {
+      "id": "nonh",
+      "kind": "decision",
+      "text": "Penicillin allergy?",
+      "next": [
+       {
+        "to": "kit4",
+        "label": "Yes"
+       },
+       {
+        "to": "kit3",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "kit4",
+      "kind": "outcome",
+      "text": "Kit 4: doxycycline + azithromycin 1 g"
+     },
+     {
+      "id": "kit3",
+      "kind": "outcome",
+      "text": "Kit 3: benzathine penicillin 2.4 MU IM + azithromycin 1 g"
+     },
+     {
+      "id": "bubo",
+      "kind": "outcome",
+      "text": "Kit 7: doxycycline 100 mg twice daily for 21 days + azithromycin 1 g; aspirate, do not incise"
+     },
+     {
+      "id": "scrot",
+      "kind": "decision",
+      "text": "Sudden severe pain, high-riding testis (possible torsion)?",
+      "next": [
+       {
+        "to": "surgery",
+        "label": "Yes"
+       },
+       {
+        "to": "epid",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "surgery",
+      "kind": "outcome",
+      "text": "Urgent urology referral for torsion"
+     },
+     {
+      "id": "epid",
+      "kind": "outcome",
+      "text": "Epididymitis: ceftriaxone 500 mg IM + doxycycline 100 mg twice daily for 10 days (levofloxacin instead of doxycycline after insertive anal sex); review at 72 hours"
+     }
+    ],
+    "source": {
+     "title": "National Technical Guidelines on STI and RTI (NACO, MoHFW)",
+     "edition": "NACO, published May 2025",
+     "url": "https://naco.mohfw.gov.in/wp-content/uploads/2025/05/National-Technical-Guidelines-on-STI-and-RTI_Final.pdf",
+     "locator": "section 3.2, Tables 3.2–3.3 (kits from the 2023 NACO kit specification)"
+    }
+   }
+  ]
  }
 ]
