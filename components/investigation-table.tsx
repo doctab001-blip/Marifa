@@ -1,3 +1,4 @@
+import { findingWithNormal } from "@/lib/investigation-display";
 export type InvestigationGroup = "bedside" | "laboratory" | "firstLineImaging" | "advancedImaging" | "specializedAdjunctive";
 
 export type InvestigationTableRow = {
@@ -6,7 +7,7 @@ export type InvestigationTableRow = {
   measures?: string;
   /** The condition or question the test addresses. */
   target: string;
-  /** Typical adult reference value. */
+  /** Typical adult reference value; shown in brackets after the finding when it is a numeric range. */
   normal: string;
   /** What is expected in this condition. */
   finding: string;
@@ -30,10 +31,9 @@ export const investigationGroupOrder: { key: InvestigationGroup; label: string }
 ];
 
 const columns = [
-  { key: "investigation", label: "Test", width: "md:w-[24%]" },
-  { key: "normal", label: "Normal (adult)", width: "md:w-[20%]" },
-  { key: "finding", label: "In this condition", width: "md:w-[28%]" },
-  { key: "meaning", label: "What it means / next step", width: "md:w-[28%]" },
+  { key: "investigation", label: "Test", width: "md:w-[28%]" },
+  { key: "finding", label: "In this condition", width: "md:w-[34%]" },
+  { key: "meaning", label: "What it means / next step", width: "md:w-[38%]" },
 ] as const;
 
 function Cell({ label, width, children }: { label: string; width: string; children: React.ReactNode }) {
@@ -75,13 +75,10 @@ export function InvestigationTable({ data }: InvestigationTableProps) {
                     <span className="mt-2 block text-xs text-body">For: <span>{row.target}</span></span>
                     {row.measures ? <span className="mt-1 block text-xs text-body">Method &amp; clinical context: {row.measures}</span> : null}
                   </Cell>
-                  <Cell label="Normal (adult)" width={columns[1].width}>
-                    <span className="whitespace-pre-line break-words">{row.normal}</span>
+                  <Cell label="In this condition" width={columns[1].width}>
+                    <span className="whitespace-pre-line break-words">{findingWithNormal(row.finding, row.normal)}</span>
                   </Cell>
-                  <Cell label="In this condition" width={columns[2].width}>
-                    <span className="whitespace-pre-line break-words">{row.finding}</span>
-                  </Cell>
-                  <Cell label="What it means / next step" width={columns[3].width}>
+                  <Cell label="What it means / next step" width={columns[2].width}>
                     <span className="whitespace-pre-line break-words">{row.meaning}</span>
                   </Cell>
                 </tr>

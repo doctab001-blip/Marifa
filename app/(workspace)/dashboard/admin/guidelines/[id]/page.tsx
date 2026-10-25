@@ -11,6 +11,7 @@ import { EmergencyTopic } from "@/components/emergency-topic";
 import { isDevEditMode } from "@/lib/dev-edit-mode";
 import { publishProtocol, revertProtocolToDraft } from "@/app/(workspace)/dashboard/protocols/actions";
 import { isLocalProtocolSourceType, PROTOCOLS_DRAFTS, PROTOCOLS_PUBLISHED } from "@/lib/local-protocols";
+import { displayTopicTitle } from "@/lib/topic-title";
 
 const messages: Record<string, string> = {
   invalid_json: "The content is not valid JSON. Correct the formatting and try again.",
@@ -44,10 +45,10 @@ export default async function EditDraftGuidelinePage({
           : <form action={createDraftFromApproved}><input type="hidden" name="id" value={id} /><input type="hidden" name="versionId" value={result.versionId} /><button className="ui-button ui-button-primary" type="submit">Edit (make draft copy)</button></form>)
           : <a className="ui-button ui-button-secondary" href="#pathway-editor">{result.isPublished ? "Edit published version" : "Edit draft"}</a>}
         {devEdit || !isApproved ? <Link className="ui-button ui-button-secondary" href={`/dashboard/admin/guidelines/${encodeURIComponent(id)}/paste?version=${encodeURIComponent(result.versionId)}`}>Paste full content</Link> : null}
-        {result.canApprove && !isProtocol ? <form action={approveGuidelineVersion}><input type="hidden" name="id" value={id} /><input type="hidden" name="versionId" value={result.versionId} /><input type="hidden" name="destination" value="approved" /><TopicApproveButton title={result.disease.title} /></form> : null}
+        {result.canApprove && !isProtocol ? <form action={approveGuidelineVersion}><input type="hidden" name="id" value={id} /><input type="hidden" name="versionId" value={result.versionId} /><input type="hidden" name="destination" value="approved" /><TopicApproveButton title={displayTopicTitle(result.disease.title)} /></form> : null}
         {isProtocol && result.canApprove ? <form action={publishProtocol}><input type="hidden" name="id" value={id} /><input type="hidden" name="versionId" value={result.versionId} /><button className="ui-button ui-button-primary" type="submit">Publish protocol</button></form> : null}
         {isProtocol && result.isPublished ? <form action={revertProtocolToDraft}><input type="hidden" name="id" value={id} /><input type="hidden" name="versionId" value={result.versionId} /><button className="ui-button ui-button-secondary" type="submit">Return to Draft</button></form> : null}
-        {result.isPublished && !isProtocol ? <form action={approveLiveTopic}><input type="hidden" name="id" value={id} /><input type="hidden" name="destination" value="approved" /><TopicApproveButton title={result.disease.title} /></form> : null}
+        {result.isPublished && !isProtocol ? <form action={approveLiveTopic}><input type="hidden" name="id" value={id} /><input type="hidden" name="destination" value="approved" /><TopicApproveButton title={displayTopicTitle(result.disease.title)} /></form> : null}
       </div>
     </section>
   );
@@ -71,7 +72,7 @@ export default async function EditDraftGuidelinePage({
           <article className="scenario-card" aria-labelledby="scenario-title">
             <header className="sc-hero">
               <div className="sc-eyebrow-row"><span className="sc-icon-tile" aria-hidden="true"><Stethoscope size={24} /></span><span className="pill pill-aqua">{isProtocol ? "Local protocol" : "Clinical scenario"}</span><span className="pill pill-sky">{result.disease.pillar}</span></div>
-              <h1 id="scenario-title" className="scenario-title">{result.disease.title}</h1>
+              <h1 id="scenario-title" className="scenario-title">{displayTopicTitle(result.disease.title)}</h1>
             </header>
             {actionBar("top")}
             {!result.isLive && !result.isPublished && <div className="clinical-review-draft-notice" role="alert"><strong>UNREVIEWED DRAFT — NOT FOR CLINICAL USE.</strong> {isProtocol ? "This protocol is visible to administrators in Drafts until you publish it. Outline drafts contain no clinical content yet." : "This version is visible in Drafts only until it meets the authoring standard and completes clinical governance review."}</div>}

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { specialityStyle, summarizeSpecialty } from "@/lib/medical-specialities";
+import { displayTopicTitle } from "@/lib/topic-title";
 
 export type TopicTileTone = "published" | "approved" | "draft";
 
@@ -26,8 +27,9 @@ type ManagedTopicTileProps = {
  * Four short lines (status · title · speciality · source). The whole tile is one link; actions are
  * small icon controls so a topic never shows a row of large buttons.
  */
-export function ManagedTopicTile({ tone, statusLabel, title, specialty, version, source, dateLabel, href, linkLabel, actions }: ManagedTopicTileProps) {
+export function ManagedTopicTile({ tone, statusLabel, title: rawTitle, specialty, version, source, dateLabel, href, linkLabel, actions }: ManagedTopicTileProps) {
   const { primary, extra } = summarizeSpecialty(specialty);
+  const title = displayTopicTitle(rawTitle);
   return (
     <article className={`topic-tile is-${tone}`} data-spec style={specialityStyle(primary)} title={`${title}\n${specialty}\nSource: ${source}`}>
       <div className="topic-tile-meta">

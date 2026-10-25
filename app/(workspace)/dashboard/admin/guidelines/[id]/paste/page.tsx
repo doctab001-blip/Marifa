@@ -6,6 +6,7 @@ import { PasteTopicEditor } from "@/components/admin/paste-topic-editor";
 import { savePastedTopic } from "./actions";
 import { isDevEditMode } from "@/lib/dev-edit-mode";
 import { isLocalProtocolSourceType, PROTOCOLS_DRAFTS, PROTOCOLS_HOME, PROTOCOLS_PUBLISHED } from "@/lib/local-protocols";
+import { displayTopicTitle } from "@/lib/topic-title";
 
 const errorMessages: Record<string, string> = {
   empty: "Nothing was pasted. Paste the full topic text and try again.",
@@ -39,13 +40,13 @@ export default async function PasteTopicPage({
       {result.state === "invalid" ? (
         <article className="card admin-edit-card">
           <p className="eyebrow">Topic needs repair</p>
-          <h2>{result.title}</h2>
+          <h2>{displayTopicTitle(result.title)}</h2>
           <p>The stored version does not match the required format, so it cannot be used as the base for a paste. Ask an administrator to repair it.</p>
         </article>
       ) : result.versionStatus === "approved" && !devEdit ? (
         <article className="card admin-edit-card">
           <p className="eyebrow">Approved version</p>
-          <h2>{result.disease.title}</h2>
+          <h2>{displayTopicTitle(result.disease.title)}</h2>
           <p>Approved versions are read-only. Create a draft copy from the Approved tab, then paste into the draft.</p>
         </article>
       ) : (

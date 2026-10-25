@@ -16,6 +16,7 @@ import {
 import { GovernanceDrawer } from "@/components/clinical/GovernanceDrawer";
 import type { CountryCode, GlobalDiseaseTopic, RegionalTherapy } from "@/types/clinical";
 import { PLATFORM_REGION, REGIONS, REGION_PARAM, getRegionOption, getRegionalProfile } from "@/lib/region";
+import { displayTopicTitle } from "@/lib/topic-title";
 
 const card = "rounded-xl border border-slate-200/70 bg-white p-5 shadow-[0_2px_8px_rgba(0,0,0,0.04)] sm:p-6";
 const eyebrow = "text-xs font-semibold uppercase tracking-[0.12em]";
@@ -140,7 +141,7 @@ export function RegionalTopicView({ topic, region }: { topic: GlobalDiseaseTopic
             </span>
             <div>
               <p className="text-sm font-medium text-[var(--region-accent)]">Disease Management · {option.name}</p>
-              <h1 className="mt-1 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">{topic.title}</h1>
+              <h1 className="mt-1 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">{displayTopicTitle(topic.title)}</h1>
             </div>
           </div>
         </div>

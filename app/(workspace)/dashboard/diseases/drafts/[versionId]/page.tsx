@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ShieldAlert } from "@/components/icons-3d";
 import { EmergencyTopic } from "@/components/emergency-topic";
 import { getDiseaseDraftVersion } from "@/lib/data/disease-drafts";
+import { displayTopicTitle } from "@/lib/topic-title";
 
 export default async function DiseaseDraftPreviewPage({ params }: { params: Promise<{ versionId: string }> }) {
   const { versionId } = await params;
@@ -16,7 +17,7 @@ export default async function DiseaseDraftPreviewPage({ params }: { params: Prom
       <Link href="/dashboard/diseases/drafts" className="disease-back-link"><ArrowLeft size={15} />Back to draft topics</Link>
       <article className="scenario-card" aria-labelledby="scenario-title">
         <p className="scenario-eyebrow">Clinical scenario · read-only draft</p>
-        <h1 id="scenario-title" className="scenario-title">{result.disease.title}</h1>
+        <h1 id="scenario-title" className="scenario-title">{displayTopicTitle(result.disease.title)}</h1>
         <div className="scenario-chips"><span className="status status-draft">Version {result.disease.version}</span><span className="scenario-chip">{result.disease.pillar}</span><span className="scenario-chip">{result.disease.specialty}</span></div>
         <div className="clinical-review-draft-notice" role="alert"><strong>UNREVIEWED DRAFT — NOT FOR CLINICAL USE.</strong> Only an authorized administrator can edit or approve this version.</div>
         <hr className="scenario-divider" />

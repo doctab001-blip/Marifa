@@ -32,6 +32,7 @@ import { searchTopics } from "@/lib/topic-search";
 import { PLATFORM_NAME, PLATFORM_REGION, REGION_CHANGE_EVENT, REGION_COOKIE, REGION_PARAM } from "@/lib/region";
 import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
 import { UNASSIGNED_SPECIALITY, canonicalSpeciality, groupBySpeciality, specialityCounts, specialityStyle } from "@/lib/medical-specialities";
+import { displayTopicTitle } from "@/lib/topic-title";
 
 type NavSection = "Workspace" | "Compliance & Audit" | "Hospital";
 
@@ -455,9 +456,9 @@ export function TopicNavigator({ currentId }: { currentId: string | null }) {
                       onMouseEnter={() => router.prefetch(href)}
                       onFocus={() => router.prefetch(href)}
                       aria-current={topic.id === currentId ? "page" : undefined}
-                      title={withoutInlineSourceLocators(topic.title)}
+                      title={displayTopicTitle(withoutInlineSourceLocators(topic.title))}
                     >
-                      {withoutInlineSourceLocators(topic.title)}
+                      {displayTopicTitle(withoutInlineSourceLocators(topic.title))}
                     </Link>
                   </li>
                 );
@@ -529,8 +530,8 @@ export function DraftTopicNavigator() {
               const href = `/dashboard/admin/guidelines/${encodeURIComponent(topic.id)}?version=${encodeURIComponent(topic.versionId)}`;
               return (
                 <li key={topic.versionId}>
-                  <Link href={href} prefetch={false} onMouseEnter={() => router.prefetch(href)} onFocus={() => router.prefetch(href)} aria-current={topic.versionId === activeVersionId ? "page" : undefined} title={withoutInlineSourceLocators(topic.title)}>
-                    {withoutInlineSourceLocators(topic.title)}
+                  <Link href={href} prefetch={false} onMouseEnter={() => router.prefetch(href)} onFocus={() => router.prefetch(href)} aria-current={topic.versionId === activeVersionId ? "page" : undefined} title={displayTopicTitle(withoutInlineSourceLocators(topic.title))}>
+                    {displayTopicTitle(withoutInlineSourceLocators(topic.title))}
                   </Link>
                 </li>
               );

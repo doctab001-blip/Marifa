@@ -22,3 +22,21 @@ export function investigationMethod(test: Investigation) {
   const combined = `${test.testName} — ${test.targetCondition}`;
   return test.modalityTarget === combined || test.modalityTarget === test.testName ? null : test.modalityTarget;
 }
+
+/**
+ * The normal value worth showing beside an abnormal finding: a numeric reference range ("Sodium 135–145 mmol/L").
+ * Descriptive normals ("Negative", "No acute abnormality", "Sinus rhythm") add nothing to the finding and are dropped.
+ */
+export function importantNormalValue(normal: string | undefined | null, finding = ""): string | null {
+  const text = normal?.trim();
+  if (!text || /^(?:—|-|n\/?a|not stated|not applicable|none)$/i.test(text)) return null;
+  if (!/\d/.test(text)) return null;
+  if (finding.toLowerCase().includes(text.toLowerCase())) return null;
+  return text;
+}
+
+/** "Hyponatraemia (normal: Sodium 135–145 mmol/L)": the finding with its reference range in brackets, when it matters. */
+export function findingWithNormal(finding: string, normal: string | undefined | null): string {
+  const shown = importantNormalValue(normal, finding);
+  return shown ? `${finding} (normal: ${shown})` : finding;
+}
