@@ -157,6 +157,13 @@ S.update({
  "brady":  ("Standard Treatment Workflow: Bradyarrhythmia in symptomatic patients (ICMR / Department of Health Research)", "https://www.icmr.gov.in/icmrobject/uploads/STWs/1771492063_bradyarrthymia13_2_2.pdf", "ICMR STW, January 2025"),
  "rcukbr": ("Adult bradycardia algorithm (Resuscitation Council UK)", "https://www.resus.org.uk/sites/default/files/2021-04/Bradycardia%20Algorithm%202021.pdf", "RCUK Guidelines 2021"),
  "dem":    ("Standard Treatment Workflow: Dementia (ICMR / Department of Health Research)", "https://www.icmr.gov.in/icmrobject/uploads/STWs/1725952345_neurology_dementia.pdf", "ICMR STW, October 2019"),
+ "nvhbv":  ("Technical Guidelines for Diagnosis and Management of Hepatitis B (National Viral Hepatitis Control Programme, MoHFW)", "https://nvhcp.mohfw.gov.in/common_libs/TechnicalGuidelines-for-Diagnosis-management-of-Hepatitis-B.pdf", "NVHCP, 2019"),
+ "nvhcv":  ("National Guidelines for Diagnosis and Management of Viral Hepatitis (National Viral Hepatitis Control Programme, MoHFW)", "https://nvhcp.mohfw.gov.in/common_libs/diagnosis-management-viral-hepatitis.pdf", "NVHCP, 2018"),
+ "alf":    ("Standard Treatment Workflow: Acute Liver Failure or Acute on Chronic Liver Failure (ICMR / Department of Health Research)", "https://icmr.gov.in/icmrobject/uploads/STWs/1726567562_liver_failure.pdf", "ICMR STW, July 2020"),
+ "bav7s":  ("Baveno update: new place for beta-blockers (A. Berzigotti, summary of Baveno VII)", "https://universimed.com/at/article/hepatologie/baveno-update-new-place-beta-blockers-287674", "Universimed, summary of Baveno VII (J Hepatol 2022;76:959-74)"),
+ "aldnut": ("Management of patients with moderate alcoholic liver disease, Table 1: nutritional recommendations", "https://pmc.ncbi.nlm.nih.gov/articles/PMC6448611/table/tbl1", "Clin Liver Dis 2013;2(2):76-79"),
+ "hbvvax": ("Hepatitis B vaccine administration (CDC)", "https://www.cdc.gov/hepatitis-b/hcp/vaccine-administration/index.html", "CDC, updated 18 September 2025"),
+ "hbvadult":("Hepatitis B vaccination for adults: who needs it and when? (Immunize.org)", "https://www.immunize.org/about/pub-archives/hepatitis-b-vaccination-for-adults-who-needs-it-and-when/", "Immunize.org, 2016"),
 })
 ADULT = "Adult topic; paediatric use is outside the scope of the cited sources."
 NOT_ABX = "Not an antibiotic; penicillin allergy does not change this medicine."

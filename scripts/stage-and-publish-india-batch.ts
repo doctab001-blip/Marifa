@@ -7,7 +7,8 @@
  *   batch versions ("india-..."); those versions are kept, never edited. Any other authored version still refuses.
  *
  * Refuses to run unless NEXT_PUBLIC_MARIFA_REGION=IN, so India content can never land in the Saudi database.
- * For each topic: schema + authoring audit must be publishable; an existing guideline must be an empty
+ * For each topic: schema + authoring audit must be publishable AND the depth standard (lib/clinical-depth-standard.ts)
+ * must pass, with no override; an existing guideline must be an empty
  * "Content not yet authored" placeholder (authored work is never overwritten); a new topic gets a new
  * catalogue row. Writes an under_review version, then a "-live" published version made current (the same
  * steps as scripts/publish-if-eligible.ts, under the platform owner's standing authorisation of 12 Oct 2026).
@@ -16,6 +17,7 @@
 import fs from "node:fs";
 import { DiseaseDetailSchema, type DiseaseDetail } from "../lib/validations/disease";
 import { auditTopicContent } from "../lib/clinical-authoring-audit";
+import { auditTopicDepth } from "../lib/clinical-depth-standard";
 
 const [payloadPath, ...flags] = process.argv.slice(2);
 if (!payloadPath) throw new Error("Usage: tsx scripts/stage-and-publish-india-batch.ts <payload.json> [--apply]");
@@ -41,6 +43,8 @@ for (const content of items) {
   const label = `${content.title} [${content.id}]`;
   const audit = auditTopicContent(content);
   if (!audit.publishable || content.status !== "under_review" || content.clinicalReviewStatus !== "pending") { console.log(`REFUSED ${label}: audit ${audit.score}% pathway ${audit.pathwayCompliant}; ${audit.failures.slice(0, 2).join(" | ")}`); continue; }
+  const depth = auditTopicDepth(content);
+  if (!depth.passed) { console.log(`REFUSED ${label}: depth standard ${depth.standard} not met (${depth.failures.length} gaps, ${depth.metrics.words} words); ${depth.failures.slice(0, 3).join(" | ")}`); continue; }
   const [guideline] = await rest<Array<{ id: string; title: string; specialty: string | null; status: string }>>("GET", `clinical_guidelines?select=id,title,specialty,status&id=eq.${content.id}`);
   const versions = guideline ? await rest<Array<{ id: string; version: string; status: string; content: Record<string, unknown> }>>("GET", `guideline_versions?select=id,version,status,content&guideline_id=eq.${content.id}`) : [];
   if (versions.some((row) => row.version === content.version)) { console.log(`SKIP ${label}: ${content.version} already exists`); continue; }
