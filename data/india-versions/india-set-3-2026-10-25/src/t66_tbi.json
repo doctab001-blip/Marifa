@@ -1,0 +1,428 @@
+[
+ {
+  "id": "5d054ee4-fee0-5e45-b7f6-81bfbbe646a2",
+  "title": "Traumatic brain injury (India)",
+  "specialty": "Neurosurgery / Emergency Medicine / Critical Care",
+  "authority": "ICMR",
+  "status": "under_review",
+  "version": "india-set-3-2026-10-25-v1",
+  "lastReviewed": "2026-10-25",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+   "checkedOn": "2026-10-25",
+   "status": "incomplete",
+   "scope": "Head injury and traumatic brain injury in adults and children in India from prehospital care to discharge: Glasgow Coma Scale (GCS) grading, airway, breathing and circulation, computed tomography (CT) indications, admission and surgical criteria, raised intracranial pressure (ICP) treatment, seizure prophylaxis and discharge, built on the ICMR Neurosurgery STW for Head Injury (July 2024).",
+   "findings": [
+    "GCS bands (13–15 mild, 9–12 moderate, 3–8 severe), CT indications, red flags, prehospital ABC and transfer, admission criteria, extradural haematoma above 30 cc and subdural haematoma above 10 mm with midline shift above 5 mm for surgery, PaCO2 30–35 mmHg, head-end elevation, mannitol 20% 200 mL (adults) only if systolic BP above 90 mmHg, mannitol 0.25–1 g/kg, 3% saline 3 mL/kg 8-hourly, phenytoin 20 mg/kg then 5 mg/kg/day, levetiracetam 500 mg twice daily for 1–3 months, steroids not useful, repeat CT at 24 hours checked against the ICMR Neurosurgery STW (July 2024).",
+    "Not clinically reviewed."
+   ],
+   "unverifiedSections": [
+    "The STW gives no SpO2 or blood-pressure target beyond systolic above 90 mmHg before mannitol.",
+    "Tranexamic acid and analgesic doses are not given in the STW and are not included.",
+    "Children's mannitol dose is described as weight-based without a number; the 0.25–1 g/kg range is used.",
+    "The STW gives two PaCO2 ranges (30–35 and 30–32 mmHg); 30–35 mmHg is shown.",
+    "Drug cautions, contraindications and renal or hepatic adjustment lines without a source tag are general pharmacology statements and need formulary confirmation."
+   ],
+   "medscapeStatus": "unavailable",
+   "originalVersionIds": [
+    "5d054ee4-fee0-5e45-b7f6-81bfbbe646a2"
+   ]
+  },
+  "pathophysiology": {
+   "summary": "Traumatic brain injury (TBI) is a leading cause of death and disability among young people in India, mostly from road traffic crashes and falls. The primary injury happens at impact; much of the harm that follows is secondary injury from hypoxia, hypotension, raised intracranial pressure and seizures, which good early care prevents. The ICMR workflow asks for ABC stabilisation in the golden hour, a search for other injuries, GCS grading, early non-contrast CT with cervical spine imaging, admission for those at risk, osmotherapy for clinical signs of raised ICP once systolic BP is above 90 mmHg, and urgent neurosurgical referral for operable haematomas.",
+   "keyMechanisms": [
+    "Primary injury: contusion, diffuse axonal injury and haematomas at impact.",
+    "Secondary injury: hypoxia, hypotension, hypercarbia and seizures worsen brain damage.",
+    "Expanding haematoma or oedema raises ICP and reduces cerebral perfusion, leading to herniation.",
+    "Osmotic agents draw water out of the brain to lower ICP."
+   ]
+  },
+  "presentation": {
+   "symptoms": [
+    "Headache, vomiting",
+    "Loss of consciousness, amnesia",
+    "Seizure after injury"
+   ],
+   "physicalSigns": [
+    "Reduced GCS",
+    "Unequal pupils (ICMR STW)",
+    "Focal neurological deficit",
+    "Scalp wound, skull fracture, cerebrospinal fluid leak"
+   ],
+   "redFlags": [
+    "Unconscious; irregular respiration; asymmetric pupils (ICMR STW)",
+    "Falling GCS, new focal deficit (ICMR STW)",
+    "Bradycardia with hypertension (Cushing response) (ICMR STW)",
+    "Persistent vomiting or restlessness (ICMR STW)"
+   ],
+   "precipitants": [
+    "Road traffic crashes, often without helmet",
+    "Falls from height",
+    "Assault",
+    "Alcohol intoxication"
+   ]
+  },
+  "differentials": [
+   {
+    "condition": "Alcohol or drug intoxication",
+    "distinguishingFeatures": "May coexist; never assume it explains low GCS."
+   },
+   {
+    "condition": "Hypoglycaemia",
+    "distinguishingFeatures": "Low glucose; corrects with dextrose."
+   },
+   {
+    "condition": "Stroke causing a fall",
+    "distinguishingFeatures": "History; vascular territory deficit."
+   },
+   {
+    "condition": "Post-ictal state",
+    "distinguishingFeatures": "Seizure before the fall."
+   }
+  ],
+  "diagnosticCriteria": [
+   {
+    "criterion": "GCS severity (ICMR STW)",
+    "threshold": "Mild 13–15; moderate 9–12; severe 3–8."
+   },
+   {
+    "criterion": "CT indications (ICMR STW)",
+    "threshold": "GCS below 15, transient loss of consciousness, suspected skull fracture, post-traumatic seizure, focal deficit, persistent vomiting, amnesia."
+   },
+   {
+    "criterion": "Surgery (ICMR STW)",
+    "threshold": "Extradural haematoma above 30 cc; subdural haematoma above 10 mm thick with midline shift above 5 mm and deterioration."
+   }
+  ],
+  "investigations": {
+   "ruleIn": [
+    {
+     "tier": "specializedAdjunctive",
+     "testName": "Glasgow Coma Scale and pupils",
+     "modalityTarget": "Bedside",
+     "targetCondition": "Severity and deterioration",
+     "normalValue": "GCS 15; equal reactive pupils",
+     "expectedFinding": "Fall in GCS; unequal or unreactive pupils",
+     "clinicalRationale": "Repeat frequently (ICMR STW).",
+     "references": [
+      {
+       "title": "Standard Treatment Workflows, Neurosurgery: Head Injury (ICMR / Department of Health Research)",
+       "edition": "ICMR STW, July 2024, section Scoring and Interpretation of Severity",
+       "url": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1726645068_4_neurosurgery_all.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "advancedImaging",
+     "testName": "Non-contrast CT head with cervical spine imaging",
+     "modalityTarget": "CT",
+     "targetCondition": "Haematoma, contusion, fracture, oedema",
+     "normalValue": "No acute lesion",
+     "expectedFinding": "Extradural or subdural haematoma, midline shift, contusion",
+     "clinicalRationale": "As soon as possible in all but completely asymptomatic patients (ICMR STW).",
+     "references": [
+      {
+       "title": "Standard Treatment Workflows, Neurosurgery: Head Injury (ICMR / Department of Health Research)",
+       "edition": "ICMR STW, July 2024, section Investigations",
+       "url": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1726645068_4_neurosurgery_all.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "advancedImaging",
+     "testName": "Repeat CT head",
+     "modalityTarget": "CT",
+     "targetCondition": "Progression",
+     "normalValue": "Stable",
+     "expectedFinding": "Enlarging haematoma or oedema",
+     "clinicalRationale": "At 24 hours if first CT abnormal, earlier if deterioration (ICMR STW).",
+     "references": [
+      {
+       "title": "Standard Treatment Workflows, Neurosurgery: Head Injury (ICMR / Department of Health Research)",
+       "edition": "ICMR STW, July 2024, section Neurological Assessment",
+       "url": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1726645068_4_neurosurgery_all.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Arterial blood gas",
+     "modalityTarget": "Arterial blood",
+     "targetCondition": "Oxygenation and PaCO2",
+     "normalValue": "PaO2 above 80 mmHg; PaCO2 35–45 mmHg",
+     "expectedFinding": "Hypoxia; PaCO2 outside 30–35 mmHg target",
+     "clinicalRationale": "PaO2 at least 100 mmHg; PaCO2 30–35 mmHg in ventilated patients (ICMR STW).",
+     "references": [
+      {
+       "title": "Standard Treatment Workflows, Neurosurgery: Head Injury (ICMR / Department of Health Research)",
+       "edition": "ICMR STW, July 2024, section Medical Management",
+       "url": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1726645068_4_neurosurgery_all.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Blood glucose, electrolytes, blood count, coagulation, group and cross-match",
+     "modalityTarget": "Blood",
+     "targetCondition": "Secondary insults and bleeding",
+     "normalValue": "Within reference range",
+     "expectedFinding": "Hypoglycaemia, hyponatraemia, coagulopathy",
+     "clinicalRationale": "Baseline before surgery.",
+     "references": [
+      {
+       "title": "Standard Treatment Workflows, Neurosurgery: Head Injury (ICMR / Department of Health Research)",
+       "edition": "ICMR STW, July 2024, section Investigations",
+       "url": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1726645068_4_neurosurgery_all.pdf"
+      }
+     ]
+    }
+   ],
+   "ruleOut": [
+    {
+     "tier": "firstLineImaging",
+     "testName": "Chest and pelvis X-ray; abdominal ultrasound",
+     "modalityTarget": "Radiograph; FAST ultrasound",
+     "targetCondition": "Associated injuries",
+     "normalValue": "No injury",
+     "expectedFinding": "Haemothorax, pelvic fracture, free fluid",
+     "clinicalRationale": "Look for injuries to pelvis, long bones, chest and abdomen (ICMR STW).",
+     "references": [
+      {
+       "title": "Standard Treatment Workflows, Neurosurgery: Head Injury (ICMR / Department of Health Research)",
+       "edition": "ICMR STW, July 2024, section Prehospital Care of Head Injury",
+       "url": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1726645068_4_neurosurgery_all.pdf"
+      }
+     ]
+    }
+   ]
+  },
+  "clinicalManagement": [
+   {
+    "id": "pre",
+    "title": "Prehospital and arrival",
+    "timeframe": "Golden hour",
+    "actions": [
+     "ABC per trauma guidelines; control external bleeding; immobilise the cervical spine (ICMR STW).",
+     "Transfer once ABC stable to a centre with CT and a neurosurgeon (ICMR STW)."
+    ]
+   },
+   {
+    "id": "assess",
+    "title": "Assess and image",
+    "timeframe": "First hour",
+    "actions": [
+     "GCS, pupils, focal signs; search for other injuries (ICMR STW).",
+     "Non-contrast CT head with cervical spine imaging (ICMR STW)."
+    ]
+   },
+   {
+    "id": "icp",
+    "title": "Raised ICP",
+    "timeframe": "Immediately",
+    "actions": [
+     "Elevate the head end; sedation and analgesia; PaCO2 30–35 mmHg if ventilated (ICMR STW).",
+     "Mannitol only if systolic BP above 90 mmHg and red flags; or 3% saline (ICMR STW).",
+     "Steroids are not useful (ICMR STW)."
+    ]
+   },
+   {
+    "id": "surg",
+    "title": "Surgery",
+    "timeframe": "Urgent",
+    "actions": [
+     "Extradural above 30 cc or subdural above 10 mm with shift above 5 mm and deterioration: neurosurgery (ICMR STW).",
+     "Decompressive craniectomy by a neurosurgeon only (ICMR STW)."
+    ]
+   },
+   {
+    "id": "dispo",
+    "title": "Admit or discharge",
+    "timeframe": "Before leaving",
+    "actions": [
+     "Admit: amnesia, loss of consciousness, falling consciousness, moderate–severe headache, intoxication, skull fracture, other injury or abnormal CT (ICMR STW).",
+     "Others: discharge with head-injury advice and return precautions (ICMR STW)."
+    ]
+   }
+  ],
+  "medicationPlan": {
+   "status": "source-verified",
+   "branches": [
+    {
+     "label": "Raised intracranial pressure",
+     "entryCriteria": "Red flags of raised ICP with systolic BP above 90 mmHg."
+    },
+    {
+     "label": "Post-traumatic seizures",
+     "entryCriteria": "Seizure after head injury or high seizure risk."
+    }
+   ],
+   "regimens": [
+    {
+     "indication": "Clinical signs of raised ICP",
+     "patientGroup": "Adults and children",
+     "genericName": "Mannitol 20%",
+     "dose": "Adults 200 mL over 30 minutes; general dose 0.25–1 g/kg bolus",
+     "route": "IV",
+     "frequency": "Bolus; repeat per neurosurgical advice",
+     "duration": "Short term",
+     "adjustments": [
+      "Paediatric: Weight-based in children (0.25–1 g/kg) (ICMR STW).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Avoid or use with care in kidney failure (fluid shifts, acute kidney injury); monitor osmolality.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "BP, urine output, sodium, osmolality"
+     ],
+     "contraindications": [
+      "Systolic BP 90 mmHg or below (ICMR STW)",
+      "Anuria"
+     ],
+     "branch": "Raised intracranial pressure",
+     "step": "Osmotic therapy",
+     "selection": "one-of",
+     "sourceTitle": "Standard Treatment Workflows, Neurosurgery: Head Injury (ICMR / Department of Health Research)",
+     "sourceUrl": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1726645068_4_neurosurgery_all.pdf",
+     "sourceEdition": "ICMR STW, July 2024, section Medical Management",
+     "preferred": true
+    },
+    {
+     "indication": "Clinical signs of raised ICP",
+     "patientGroup": "Adults and children",
+     "genericName": "Sodium chloride 3% (hypertonic saline)",
+     "dose": "3 mL/kg",
+     "route": "IV",
+     "frequency": "Every 8 hours",
+     "duration": "Short term",
+     "adjustments": [
+      "Paediatric: Same per-kg dose in children (ICMR STW).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Monitor sodium closely in kidney failure.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Serum sodium every 6–8 hours"
+     ],
+     "contraindications": [
+      "Severe hypernatraemia"
+     ],
+     "branch": "Raised intracranial pressure",
+     "step": "Osmotic therapy",
+     "selection": "one-of",
+     "sourceTitle": "Standard Treatment Workflows, Neurosurgery: Head Injury (ICMR / Department of Health Research)",
+     "sourceUrl": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1726645068_4_neurosurgery_all.pdf",
+     "sourceEdition": "ICMR STW, July 2024, section Medical Management",
+     "preferred": false,
+     "useWhen": "Hypotension or hypovolaemia where mannitol is unsuitable."
+    },
+    {
+     "indication": "Post-traumatic seizure",
+     "patientGroup": "Adults and children",
+     "genericName": "Phenytoin",
+     "dose": "20 mg/kg over 30 minutes, then 5 mg/kg/day in 2–3 doses",
+     "route": "IV then oral",
+     "frequency": "Loading then 2–3 times daily",
+     "duration": "Review at follow-up",
+     "adjustments": [
+      "Paediatric: Same per-kg dosing in children (ICMR STW).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment; free level rises in uraemia.",
+      "CLD: Reduce dose in liver failure."
+     ],
+     "monitoring": [
+      "Electrocardiogram (ECG) and BP during loading",
+      "Levels if toxicity"
+     ],
+     "contraindications": [
+      "Heart block, bradycardia"
+     ],
+     "branch": "Post-traumatic seizures",
+     "step": "Antiseizure medicine",
+     "selection": "one-of",
+     "sourceTitle": "Standard Treatment Workflows, Neurosurgery: Head Injury (ICMR / Department of Health Research)",
+     "sourceUrl": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1726645068_4_neurosurgery_all.pdf",
+     "sourceEdition": "ICMR STW, July 2024, section Medical Management",
+     "preferred": true
+    },
+    {
+     "indication": "Post-traumatic seizure",
+     "patientGroup": "Adults",
+     "genericName": "Levetiracetam",
+     "dose": "500 mg",
+     "route": "Oral or IV",
+     "frequency": "Twice daily",
+     "duration": "1–3 months",
+     "adjustments": [
+      "Paediatric: Adult topic; paediatric use is outside the scope of the cited sources.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Reduce dose in renal impairment.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Mood and behaviour"
+     ],
+     "contraindications": [
+      "Hypersensitivity"
+     ],
+     "branch": "Post-traumatic seizures",
+     "step": "Antiseizure medicine",
+     "selection": "one-of",
+     "sourceTitle": "Standard Treatment Workflows, Neurosurgery: Head Injury (ICMR / Department of Health Research)",
+     "sourceUrl": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1726645068_4_neurosurgery_all.pdf",
+     "sourceEdition": "ICMR STW, July 2024, section Medical Management",
+     "preferred": false,
+     "useWhen": "Phenytoin unsuitable (arrhythmia, interactions)."
+    }
+   ],
+   "note": "All doses from the ICMR Neurosurgery STW for Head Injury (July 2024). India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
+  },
+  "teaching": {
+   "scope": "Head injury in Indian emergency departments.",
+   "learningObjectives": [
+    "Grade head injury by GCS.",
+    "Know CT and admission criteria.",
+    "Prevent secondary brain injury."
+   ],
+   "keyPoints": [
+    "Stabilise ABC before transfer.",
+    "Early CT with cervical spine imaging.",
+    "Mannitol only if systolic BP above 90 mmHg.",
+    "Steroids do not help."
+   ],
+   "pitfalls": [
+    "Blaming alcohol for low GCS.",
+    "Missing other injuries.",
+    "Hypotension and hypoxia during transfer.",
+    "Discharging without return advice."
+   ],
+   "references": [
+    {
+     "title": "Standard Treatment Workflows, Neurosurgery: Head Injury (ICMR / Department of Health Research)",
+     "edition": "ICMR STW, July 2024",
+     "url": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1726645068_4_neurosurgery_all.pdf",
+     "locator": "sections Prehospital care, Scoring, Investigations, Medical management, Surgical management, Discharge"
+    }
+   ]
+  },
+  "nonClinicalManagement": {
+   "patientEducation": [
+    "Return at once for drowsiness, vomiting, severe headache, seizure, weakness or confusion.",
+    "Helmet and seat-belt use."
+   ],
+   "lifestyleAndDiet": [
+    "Avoid alcohol during recovery."
+   ],
+   "mdtReferrals": [
+    "Neurosurgery",
+    "Physiotherapy and rehabilitation",
+    "Neuropsychology for cognitive problems"
+   ],
+   "dischargeCriteria": [
+    "GCS 15, no red flags, CT normal or stable (ICMR STW)",
+    "Responsible adult at home"
+   ],
+   "followUpPlan": "Review for persistent headache, memory or mood symptoms; antiseizure medicine review by neurosurgeon or neurologist (ICMR STW)."
+  }
+ }
+]

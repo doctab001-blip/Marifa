@@ -1,6 +1,6 @@
 # Marifa topic authoring rules for Codex
 
-You are writing or editing clinical topics for Marifa, an emergency-medicine reference used by doctors in Saudi Arabia. A doctor may act on what you write at 3 a.m. Accuracy beats completeness. Brevity beats coverage. If you are not sure, say so in the topic instead of guessing.
+You are writing or editing clinical topics for Marifa, an emergency-medicine reference used by doctors in Saudi Arabia. A doctor may act on what you write at 3 a.m. Accuracy beats completeness, and every topic must explain the condition fully to a practising doctor (section 3A). No filler, no padding: depth means more clinical reasoning, not more words. If you are not sure, say so in the topic instead of guessing.
 
 These rules are strict. Do not relax them for speed, and do not report a rule as followed unless you actually followed it.
 
@@ -94,6 +94,37 @@ Data format: each regimen carries optional `branch`, `step`, `selection` (`all` 
 
 ---
 
+## 3A. Depth and teaching standard (platform owner instruction, 25 Oct 2026)
+
+Every new or revised topic must explain the condition fully to a practising doctor and teach it by the ABIM / MKSAP method: start from a patient, reason through the decisions, then test the learner with board-style questions. `lib/clinical-depth-standard.ts` enforces this; `scripts/stage-and-publish-india-batch.ts` refuses any topic that fails it, with no override. The minimums below are floors, not targets.
+
+**Core sections (deeper than before)**
+- Pathophysiology summary of at least 120 words that links mechanism to signs, tests and treatment; 4–6 mechanism bullets.
+- At least 4 symptoms, 4 signs, 4 red flags and 3 precipitants or risk factors.
+- At least 5 differentials, including every must-not-miss diagnosis; each states the distinguishing feature AND the test that settles it.
+- At least 3 diagnostic criteria, thresholds or severity grades; at least 6 investigations.
+- At least 5 management steps, each with at least 2 concrete actions (what, how often, target).
+
+**Medicines: never leave out an important drug, never leave a dose blank**
+- List every medicine a doctor would need for the condition across its pathways (first line, alternatives, special groups, complications, prevention), not just the ones in the national source.
+- If the national source gives no dose, take the dose from an international guideline or the drug label and say so in the row. A dose of "per local protocol", "specialist dosing" or a recorded gap such as "dose not given and not included" fails the depth check. Only a plan whose status is `local-protocol-required` may defer doses.
+- Every medicine carries the four population lines: `Paediatric:`, `Penicillin allergy:`, `CKD:`, `CLD:`.
+
+**Algorithms (flowcharts)**
+- At least one clinical algorithm per topic (diagnostic, severity or management), drawn from a cited source section: a start node, at least 2 decision points with labelled branches, and outcome nodes. At least 6 nodes.
+- Nodes form a tree (one parent per node); repeat an action rather than joining branches. Place each algorithm in the section it serves (`recognise`, `confirm`, `manage`, `ongoing`).
+
+**Teaching layer (ABIM method)**
+- An opening fictitious case vignette (at least 40 words) and at least 3 learning objectives.
+- At least 4 explanation blocks (`teaching.guidedApproach`, each at least 80 words, placed with `section`): why it happens, how to recognise it, how to confirm it, how to manage it. They explain the reasoning in prose a doctor can learn from; they add no dose, threshold or timing that the clinical sections and their sources do not already state.
+- At least 3 board-style single-best-answer questions: a fictitious case, one question, 4–5 options lettered A–E, an explanation for every option (why right or why wrong), an educational objective and a key point. Vary the correct letter.
+- At least 4 key points and 4 pitfalls.
+
+**Batching**
+- Write at most 5 topics per run and finish each to this standard before starting the next. Thin content is not fixed later; it is not handed over.
+
+---
+
 ## 4. Writing style
 
 - Short sentences. One fact per bullet. Write for a tired registrar scanning on a phone.
@@ -101,7 +132,7 @@ Data format: each regimen carries optional `branch`, `step`, `selection` (`all` 
 - No filler: no "It is important to note", "plays a crucial role", "a wide range of", "comprehensive", "in conclusion".
 - No vague advice ("consider appropriate treatment", "monitor closely", "as clinically indicated") unless followed by what, how often, and the target.
 - No repetition between sections. Say it once in the right place.
-- Target length: a full topic should fit in roughly 2–4 phone screens per heading, not more. If a section is long, cut it — do not split it into new headings.
+- Length follows the depth standard (section 3A): the core table and bullet sections stay scannable, and the full reasoning goes in the explanation blocks, algorithms and board questions — not in longer bullets.
 
 ---
 
@@ -109,7 +140,7 @@ Data format: each regimen carries optional `branch`, `step`, `selection` (`all` 
 
 Use the existing topic JSON shape in the repo. Keep these fields and do not invent new ones:
 
-`id, title, specialty, authority, status, version, lastReviewed, pillar, clinicalReviewStatus, evidenceAudit{checkedOn, status, scope, findings, unverifiedSections, medscapeStatus, originalVersionIds}, pathophysiology{summary, keyMechanisms}, presentation{symptoms, physicalSigns, redFlags, precipitants}, differentials[{condition, distinguishingFeatures}], diagnosticCriteria[{criterion, threshold}], investigations{ruleIn, ruleOut}, clinicalManagement, medicationPlan{status, regimens (each with optional branch, step, selection, preferred, useWhen), branches[{label, entryCriteria}], note}, guidelineComparison, teaching{learningObjectives, keyPoints, pitfalls, references}, nonClinicalManagement{patientEducation, lifestyleAndDiet, mdtReferrals, dischargeCriteria, followUpPlan}`
+`id, title, specialty, authority, status, version, lastReviewed, pillar, clinicalReviewStatus, evidenceAudit{checkedOn, status, scope, findings, unverifiedSections, medscapeStatus, originalVersionIds}, pathophysiology{summary, keyMechanisms}, presentation{symptoms, physicalSigns, redFlags, precipitants}, differentials[{condition, distinguishingFeatures}], diagnosticCriteria[{criterion, threshold}], investigations{ruleIn, ruleOut}, clinicalManagement, medicationPlan{status, regimens (each with optional branch, step, selection, preferred, useWhen), branches[{label, entryCriteria}], note}, guidelineComparison, algorithms[{id, title, placement, nodes[{id, kind, text, detail, next[{to, label}]}], source{title, edition, url, locator}}], teaching{learningObjectives, vignette{text, fictitious}, guidedApproach[{title, prompt, guidance, section}], keyPoints, pitfalls, boardQuestions[{id, vignette, fictitious, question, options[{id, text, explanation}], answer, educationalObjective, keyPoint}], references}, nonClinicalManagement{patientEducation, lifestyleAndDiet, mdtReferrals, dischargeCriteria, followUpPlan}`
 
 - `evidenceAudit.status` stays `"incomplete"` unless every section was checked against an opened source.
 - List every item you could not verify in `evidenceAudit.unverifiedSections`.
@@ -123,9 +154,11 @@ Before writing, open one existing under-review topic in the same pillar and matc
 
 1. **Read** the current topic and its latest version. In edit mode, note what is correct so you keep it.
 2. **Find and open** sources (section 2). Record the exact sections you use.
-3. **Draft** the four headings + references.
+3. **Draft** the four headings + references, then the depth layer (section 3A): opening case, algorithms, explanation blocks and board questions.
 4. **Self-check** against section 7. Fix every failure before going on.
-5. **Validate:** run type check, lint and tests. All must pass.
+5. **Validate:** run `npx tsx scripts/audit-topic-depth.ts <payload.json>` — the authoring audit must be publishable AND the depth standard must pass, with no gaps. Then run type check, lint and tests. All must pass.
+5a. **Independent check:** a separate reviewer (another agent or person) that did not write the topic re-opens the cited sources and checks every dose, threshold and timing, and that no important medicine is missing. Fix every finding and record the check in the report. Do not hand over or publish before this check.
+5b. **Batch size:** author and check at most 5 topics per run. Finish, deepen and verify those before starting more.
 6. **Save** as a new version via Supabase REST (`status: "under_review"`, `is_current: false`), then run `npx tsx scripts/publish-if-eligible.ts <guideline_id>:<version>`. It audits the version and makes it live only if it scores 80% or more; the live directory shows any current published version at or above 80% automatically (no allow-list to edit). Only add an entry to `lib/data/clinical-review-overrides.ts` if the task says to.
 7. **Commit** on a feature branch, never on `main`. If you cannot push, print the exact commands for the user to run, e.g.:
    ```
@@ -144,6 +177,9 @@ Before writing, open one existing under-review topic in the same pillar and matc
 - [ ] A Saudi source is cited, or I stated none exists for this topic.
 - [ ] Disagreements are shown side by side, not merged.
 - [ ] Every Investigations row has normal value, value in condition, and meaning.
+- [ ] The depth standard passes (`scripts/audit-topic-depth.ts`): opening case, at least one algorithm with real decision points, explanation blocks, at least 3 board questions with every option explained.
+- [ ] No important medicine for the condition is missing, and no medicine is left without a dose (international guideline or label used where the national source is silent).
+- [ ] An independent check of doses and thresholds was done and its findings fixed.
 - [ ] Every drug has dose, route, frequency, max, and SFDA status.
 - [ ] Medicines are branched by pathway; each branch has entry criteria; every alternative step has exactly one preferred option and a "use when"; no two same-class drugs are given together.
 - [ ] The same number is identical everywhere it appears.
@@ -166,6 +202,8 @@ For each topic:
 - **Source conflicts** — what differs and how it is shown
 - **SFDA check** — each drug: registered / not registered / not found
 - **Unverified items** — what and why
+- **Depth standard** — pass/fail, word count, number of algorithms and board questions
+- **Independent check** — who checked, what was found, what was fixed
 - **Changes** (edit mode) — what changed, why, source
 - **Needs clinician review** — anything a doctor must decide
 - **Commands to run** — if anything is not pushed

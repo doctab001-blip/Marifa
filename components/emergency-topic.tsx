@@ -8,6 +8,8 @@ import { ClinicalEvidenceAudit } from "@/components/clinical-evidence-audit";
 import { getMedicationPlan } from "@/lib/data/medication-plans";
 import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
 import { groupMedicationPlan, isBranchedMedicationPlan, type MedicationRegimen } from "@/lib/medication-pathway";
+import { ClinicalAlgorithms } from "@/components/clinical-algorithm";
+import { BoardQuestions, TeachingVignette } from "@/components/board-questions";
 
 type Investigation = DiseaseDetail["investigations"]["ruleIn"][number];
 
@@ -48,6 +50,25 @@ function Heading({ id, number, title }: { id: string; number: number; title: str
   return <h2 className="em-heading" id={`${id}-title`}><span className="em-heading-number" aria-hidden="true"><Icon size={24} /></span><span className="em-heading-text"><small aria-hidden="true">Section {number}</small>{title}</span></h2>;
 }
 
+type ExplainedSection = NonNullable<NonNullable<NonNullable<DiseaseDetail["teaching"]>["guidedApproach"]>[number]["section"]>;
+
+/** Full-depth explanation blocks written for a doctor, placed at the end of the section they explain. */
+function Explained({ disease, section }: { disease: DiseaseDetail; section: ExplainedSection }) {
+  const blocks = (disease.teaching?.guidedApproach ?? []).filter((block) => block.section === section);
+  if (!blocks.length) return null;
+  return (
+    <div className="em-explained">
+      {blocks.map((block) => (
+        <details key={block.title} className="em-explained-block" open>
+          <summary><span className="disease-kicker">Explained</span>{block.title}</summary>
+          <p className="em-explained-prompt">{block.prompt}</p>
+          {block.guidance.split("\n").filter(Boolean).map((line, index) => <p key={`${block.title}-${index}`}>{withoutInlineSourceLocators(line)}</p>)}
+        </details>
+      ))}
+    </div>
+  );
+}
+
 const isImaging = (item: Investigation) => item.tier === "firstLineImaging" || item.tier === "advancedImaging";
 
 export function EmergencyTopic({ disease, investigationSource }: { disease: DiseaseDetail; investigationSource?: CitationSource }) {
@@ -62,15 +83,19 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
   const care = disease.nonClinicalManagement;
   const pitfalls = disease.teaching?.pitfalls ?? [];
   const pearls = disease.teaching?.keyPoints ?? [];
+  const hasQuestions = Boolean(disease.teaching?.boardQuestions?.length);
+  const navSections = hasQuestions ? [...emergencySections, { id: "self-assessment", label: "Self-assessment" }] : emergencySections;
 
   return (
     <div className="em-topic">
-      <SectionNav sections={emergencySections} />
+      <SectionNav sections={navSections} />
+      <TeachingVignette teaching={disease.teaching} />
 
       <section id="pathophysiology" className="em-section" aria-labelledby="pathophysiology-title">
         <Heading id="pathophysiology" number={1} title="Pathophysiology" />
         <p className="em-lead">{withoutInlineSourceLocators(disease.pathophysiology.summary)}</p>
         <List items={disease.pathophysiology.keyMechanisms} />
+        <Explained disease={disease} section="pathophysiology" />
       </section>
 
       <section id="signs-symptoms" className="em-section" aria-labelledby="signs-symptoms-title">
@@ -91,6 +116,8 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
             <tbody>{disease.differentials.map((item) => <tr key={item.condition}><th scope="row">{item.condition}</th><td>{withoutInlineSourceLocators(item.distinguishingFeatures)}</td></tr>)}</tbody>
           </table>
         </div>
+        <ClinicalAlgorithms algorithms={disease.algorithms} placement="recognise" />
+        <Explained disease={disease} section="signs-symptoms" />
       </section>
 
       <section id="investigations" className="em-section" aria-labelledby="investigations-title">
@@ -148,11 +175,14 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
         ) : null}
 
         {disease.granularPathway ? <details className="em-more"><summary>Monitoring schedule and decision points</summary><MonitoringSchedule phases={disease.granularPathway.Investigations} showSources={false} /></details> : null}
+        <ClinicalAlgorithms algorithms={disease.algorithms} placement="confirm" />
+        <Explained disease={disease} section="investigations" />
       </section>
 
       <section id="management" className="em-section" aria-labelledby="management-title">
         <Heading id="management" number={4} title="Management" />
         <PathwaySequence steps={disease.clinicalManagement} sources={topicSources} compact />
+        <ClinicalAlgorithms algorithms={disease.algorithms} placement="manage" />
 
         {medicationPlan?.regimens.length ? (
           <>
@@ -194,6 +224,9 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
           </div>
         ) : null}
 
+        <ClinicalAlgorithms algorithms={disease.algorithms} placement="ongoing" />
+        <Explained disease={disease} section="management" />
+
         <h3>Disposition and follow-up</h3>
         <div className="em-two-col">
           <div><h4>Discharge when</h4><List items={care.dischargeCriteria} /></div>
@@ -201,6 +234,8 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
         </div>
         <p className="em-followup"><strong>Follow-up:</strong> {withoutInlineSourceLocators(care.followUpPlan)}</p>
       </section>
+
+      {hasQuestions ? <div id="self-assessment" className="em-section"><BoardQuestions teaching={disease.teaching} /></div> : null}
 
       {disease.evidenceAudit ? <details className="em-more"><summary>Evidence and review status</summary><ClinicalEvidenceAudit audit={disease.evidenceAudit} /></details> : null}
       <References disease={disease} versionSource={investigationSource} />
@@ -226,6 +261,7 @@ export function collectReferences(disease: DiseaseDetail, versionSource?: Citati
   disease.pathophysiology.references?.forEach((ref) => add(ref.title, ref.url, ref.edition));
   [...disease.investigations.ruleIn, ...disease.investigations.ruleOut].forEach((item) => item.references?.forEach((ref) => add(ref.title, ref.url, ref.edition)));
   (disease.medicationPlan ?? getMedicationPlan(disease.id))?.regimens.forEach((regimen) => add(regimen.sourceTitle, regimen.sourceUrl, regimen.sourceEdition));
+  disease.algorithms?.forEach((algorithm) => add(algorithm.source.title, algorithm.source.url, [algorithm.source.edition, algorithm.source.locator].join(" · ")));
   const pathway = disease.granularPathway;
   if (pathway) {
     const sources = [pathway.evidence, ...pathway.Investigations.map((item) => item.evidence), ...pathway.Treatment_Plan.flatMap((plan) => [plan.evidence, ...plan.branches.map((branch) => branch.evidence)])].flatMap((evidence) => evidence.sources);

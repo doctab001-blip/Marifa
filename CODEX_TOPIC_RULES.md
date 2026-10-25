@@ -1,5 +1,7 @@
 # Marifa topic authoring rules for Codex
 
+> Superseded for depth by `docs/clinical-topic-authoring-standard.md` section 3A (25 Oct 2026). Where the two differ, follow the docs file: topics must pass `scripts/audit-topic-depth.ts`, carry algorithms and board-style questions, and leave no medicine without a dose.
+
 You are writing or editing clinical topics for Marifa, an emergency-medicine reference used by doctors in Saudi Arabia. A doctor may act on what you write at 3 a.m. Accuracy beats completeness. Brevity beats coverage. If you are not sure, say so in the topic instead of guessing.
 
 These rules are strict. Do not relax them for speed, and do not report a rule as followed unless you actually followed it.
