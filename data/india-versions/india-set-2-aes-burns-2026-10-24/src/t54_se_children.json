@@ -1,0 +1,678 @@
+[
+ {
+  "id": "5860b4b1-43d3-5a97-804a-24707117ad9f",
+  "title": "Status epilepticus in children (India)",
+  "specialty": "Paediatrics / Paediatric Neurology / Emergency Medicine / Critical Care",
+  "authority": "ICMR",
+  "status": "under_review",
+  "version": "india-set-2-2026-10-24-v1",
+  "lastReviewed": "2026-10-24",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+   "checkedOn": "2026-10-24",
+   "status": "incomplete",
+   "scope": "Convulsive status epilepticus (SE) in infants and children (beyond the newborn period) in India: definitions, prehospital rescue medicines, time-based hospital algorithm, intensive care unit (ICU) treatment of refractory SE, supportive care and investigations, built on the IAP Standard Treatment Guidelines (2022) with the ICMR AES in Children STW. Neonatal seizures and adult SE have separate topics.",
+   "findings": [
+    "ILAE timings (t1 5 minutes, t2 30 minutes for convulsive SE), causes, prehospital buccal or intranasal midazolam 0.1–0.2 mg/kg, lorazepam and rectal diazepam doses, first-line IV doses with maximums, second-line phenytoin, fosphenytoin, valproate, phenobarbitone and levetiracetam doses and rates, refractory midazolam, phenobarbitone, propofol and thiopentone regimens, investigations and monitoring checked against IAP STG 2022.",
+    "Matching first- and second-line doses (lorazepam 0.1 mg/kg, midazolam 0.2 mg/kg, phenytoin 20 mg/kg at 1 mg/kg/min) checked against the ICMR AES in Children STW (2019).",
+    "Not clinically reviewed."
+   ],
+   "unverifiedSections": [
+    "IAP does not rank second-line drugs; phenytoin is listed first by ICMR and is marked preferred.",
+    "Calcium and pyridoxine are not addressed in the IAP chapter.",
+    "Maintenance doses after loading are not given.",
+    "Drug cautions, contraindications and renal or hepatic adjustment lines without a source tag are general pharmacology statements and need formulary confirmation."
+   ],
+   "medscapeStatus": "unavailable",
+   "originalVersionIds": [
+    "5860b4b1-43d3-5a97-804a-24707117ad9f"
+   ]
+  },
+  "pathophysiology": {
+   "summary": "Status epilepticus is the commonest neurological emergency in children. A convulsive seizure lasting 5 minutes or longer is treated as SE, because seizures beyond 30 minutes are likely to cause lasting neuronal injury (ILAE, quoted by IAP). In Indian children, common causes are febrile seizures, neuroinfection (meningitis, encephalitis, neurocysticercosis), poor adherence in known epilepsy, metabolic derangements and trauma. Treatment is time-based: rescue benzodiazepine at home or at first contact, IV benzodiazepine at 5–20 minutes, a second-line drug at 20–40 minutes, and ICU-based anaesthetic infusions for refractory SE, while correcting hypoglycaemia and finding the cause.",
+   "keyMechanisms": [
+    "Failure of seizure-termination mechanisms and excess excitation sustain seizures.",
+    "GABA-A receptors are internalised over time, so benzodiazepines work less well the longer SE lasts.",
+    "Prolonged seizures cause hypoxia, acidosis, hyperthermia and excitotoxic neuronal injury.",
+    "Underlying causes (infection, metabolic, structural) drive recurrence."
+   ]
+  },
+  "presentation": {
+   "symptoms": [
+    "Continuous convulsion 5 minutes or more",
+    "Repeated seizures without regaining consciousness"
+   ],
+   "physicalSigns": [
+    "Tonic-clonic movements, eye deviation",
+    "Reduced consciousness between seizures",
+    "Fever, neck stiffness (neuroinfection)",
+    "Signs of trauma or raised intracranial pressure"
+   ],
+   "redFlags": [
+    "Seizure continuing after two benzodiazepine doses: second-line drug now",
+    "Seizure beyond 60 minutes or needing anaesthetic drugs: PICU (IAP 2022)",
+    "Hypoglycaemia",
+    "Signs of raised intracranial pressure"
+   ],
+   "precipitants": [
+    "Fever and febrile seizures (IAP 2022)",
+    "Neuroinfection (IAP 2022)",
+    "Missed antiseizure medicines in known epilepsy (IAP 2022)",
+    "Electrolyte or glucose derangement, trauma, toxins (IAP 2022)"
+   ]
+  },
+  "differentials": [
+   {
+    "condition": "Psychogenic non-epileptic events",
+    "distinguishingFeatures": "Eyes closed, resisting opening, preserved awareness."
+   },
+   {
+    "condition": "Rigors",
+    "distinguishingFeatures": "Shivering with fever, no loss of awareness."
+   },
+   {
+    "condition": "Dystonia from drugs",
+    "distinguishingFeatures": "Sustained postures with metoclopramide or antipsychotics."
+   },
+   {
+    "condition": "Syncope with brief jerks",
+    "distinguishingFeatures": "Short duration, rapid recovery."
+   }
+  ],
+  "diagnosticCriteria": [
+   {
+    "criterion": "Convulsive SE (ILAE, IAP 2022)",
+    "threshold": "Seizure lasting 5 minutes or more (t1); long-term consequences likely after 30 minutes (t2)."
+   },
+   {
+    "criterion": "Focal SE with impaired consciousness (IAP 2022)",
+    "threshold": "t1 10 minutes; t2 over 60 minutes."
+   },
+   {
+    "criterion": "Refractory SE (IAP 2022)",
+    "threshold": "Seizures persisting after benzodiazepine and a second-line drug."
+   },
+   {
+    "criterion": "Super-refractory SE (IAP 2022)",
+    "threshold": "Persisting 24 hours or more after anaesthetic treatment starts."
+   }
+  ],
+  "investigations": {
+   "ruleIn": [
+    {
+     "tier": "laboratory",
+     "testName": "Capillary glucose",
+     "modalityTarget": "Bedside glucose",
+     "targetCondition": "Hypoglycaemia",
+     "normalValue": "70–140 mg/dL",
+     "expectedFinding": "Low",
+     "clinicalRationale": "Check at once; give glucose if low (IAP 2022).",
+     "references": [
+      {
+       "title": "Evaluation and Management of Status Epilepticus in Children (IAP Standard Treatment Guidelines)",
+       "edition": "IAP STG 2022, section Prehospital management",
+       "url": "https://iapindia.org/pdf/Ch-040-evaluation-and-management-of-status-epilepticus-in-children.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Electrolytes, calcium, magnesium, blood gas",
+     "modalityTarget": "Blood",
+     "targetCondition": "Metabolic cause",
+     "normalValue": "Sodium 135–145 mmol/L; calcium 8.5–10.5 mg/dL",
+     "expectedFinding": "Hyponatraemia, hypocalcaemia, acidosis",
+     "clinicalRationale": "Treat any abnormality (IAP 2022).",
+     "references": [
+      {
+       "title": "Evaluation and Management of Status Epilepticus in Children (IAP Standard Treatment Guidelines)",
+       "edition": "IAP STG 2022, section Supportive care",
+       "url": "https://iapindia.org/pdf/Ch-040-evaluation-and-management-of-status-epilepticus-in-children.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Blood count and blood culture (if febrile)",
+     "modalityTarget": "Blood",
+     "targetCondition": "Infection",
+     "normalValue": "No growth",
+     "expectedFinding": "Leucocytosis; positive culture",
+     "clinicalRationale": "Fever: blood culture (IAP 2022).",
+     "references": [
+      {
+       "title": "Evaluation and Management of Status Epilepticus in Children (IAP Standard Treatment Guidelines)",
+       "edition": "IAP STG 2022, section Supportive care",
+       "url": "https://iapindia.org/pdf/Ch-040-evaluation-and-management-of-status-epilepticus-in-children.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "CSF examination",
+     "modalityTarget": "Lumbar puncture once stable",
+     "targetCondition": "Neuroinfection",
+     "normalValue": "Normal cells, protein and glucose",
+     "expectedFinding": "Pleocytosis, raised protein, low glucose",
+     "clinicalRationale": "For suspected neuroinfection (IAP 2022).",
+     "references": [
+      {
+       "title": "Evaluation and Management of Status Epilepticus in Children (IAP Standard Treatment Guidelines)",
+       "edition": "IAP STG 2022, section Investigations",
+       "url": "https://iapindia.org/pdf/Ch-040-evaluation-and-management-of-status-epilepticus-in-children.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "advancedImaging",
+     "testName": "Computed tomography (CT) or magnetic resonance imaging (MRI) brain",
+     "modalityTarget": "Neuroimaging",
+     "targetCondition": "Structural cause",
+     "normalValue": "Normal",
+     "expectedFinding": "Lesion, oedema, bleed, neurocysticercosis",
+     "clinicalRationale": "CT if unstable; MRI preferred (IAP 2022).",
+     "references": [
+      {
+       "title": "Evaluation and Management of Status Epilepticus in Children (IAP Standard Treatment Guidelines)",
+       "edition": "IAP STG 2022, section Investigations",
+       "url": "https://iapindia.org/pdf/Ch-040-evaluation-and-management-of-status-epilepticus-in-children.pdf"
+      }
+     ]
+    }
+   ],
+   "ruleOut": [
+    {
+     "tier": "specializedAdjunctive",
+     "testName": "Electroencephalogram (EEG)",
+     "modalityTarget": "Bedside EEG",
+     "targetCondition": "Non-convulsive SE",
+     "normalValue": "No ongoing seizure activity",
+     "expectedFinding": "Electrographic seizures",
+     "clinicalRationale": "Refractory SE in PICU (IAP 2022).",
+     "references": [
+      {
+       "title": "Evaluation and Management of Status Epilepticus in Children (IAP Standard Treatment Guidelines)",
+       "edition": "IAP STG 2022, section Refractory SE",
+       "url": "https://iapindia.org/pdf/Ch-040-evaluation-and-management-of-status-epilepticus-in-children.pdf"
+      }
+     ]
+    }
+   ]
+  },
+  "clinicalManagement": [
+   {
+    "id": "home",
+    "title": "Prehospital",
+    "timeframe": "0–5 minutes",
+    "actions": [
+     "Recovery position; rescue benzodiazepine (see medicines) (IAP 2022).",
+     "Check glucose; ambulance with oxygen (IAP 2022)."
+    ]
+   },
+   {
+    "id": "first",
+    "title": "First line",
+    "timeframe": "5–20 minutes",
+    "actions": [
+     "Airway, oxygen, IV access, glucose (IAP 2022).",
+     "IV benzodiazepine; repeat once if seizures continue (IAP 2022)."
+    ]
+   },
+   {
+    "id": "second",
+    "title": "Second line",
+    "timeframe": "20–40 minutes",
+    "actions": [
+     "Load one second-line drug (see medicines) (IAP 2022; ICMR AES STW).",
+     "Avoid valproate if liver disease or inborn error suspected; avoid phenobarbitone without ventilation backup (IAP 2022).",
+     "Known epilepsy on that drug: give half the loading dose (IAP 2022)."
+    ]
+   },
+   {
+    "id": "refractory",
+    "title": "Refractory SE",
+    "timeframe": "From 40–60 minutes",
+    "actions": [
+     "PICU: midazolam infusion, or high-dose phenobarbitone, propofol or thiopentone with EEG (IAP 2022).",
+     "Treat raised ICP with mannitol or 3% saline; monitor rhabdomyolysis, arrhythmia and sepsis (IAP 2022)."
+    ]
+   },
+   {
+    "id": "cause",
+    "title": "Find the cause",
+    "timeframe": "Throughout",
+    "actions": [
+     "Glucose, electrolytes, infection, imaging, CSF (IAP 2022).",
+     "Teach caregivers first aid and rescue medicine (IAP 2022)."
+    ]
+   }
+  ],
+  "medicationPlan": {
+   "status": "source-verified",
+   "branches": [
+    {
+     "label": "Prehospital rescue",
+     "entryCriteria": "Seizure 5 minutes or more at home or before IV access."
+    },
+    {
+     "label": "Hospital first line",
+     "entryCriteria": "Ongoing seizure with IV access."
+    },
+    {
+     "label": "Second line",
+     "entryCriteria": "Seizure continuing after two benzodiazepine doses."
+    },
+    {
+     "label": "Refractory SE",
+     "entryCriteria": "Seizure continuing after a second-line drug (PICU)."
+    }
+   ],
+   "regimens": [
+    {
+     "indication": "Seizure 5 minutes or more",
+     "patientGroup": "Children",
+     "genericName": "Midazolam (buccal, intranasal)",
+     "dose": "0.1–0.2 mg/kg (2 puffs per 5 kg nasal spray)",
+     "route": "Buccal or intranasal",
+     "frequency": "Once; may repeat once",
+     "duration": "Single dose",
+     "adjustments": [
+      "Paediatric: This is the paediatric dose (IAP STG 2022).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Breathing, colour"
+     ],
+     "contraindications": [
+      "Respiratory depression"
+     ],
+     "branch": "Prehospital rescue",
+     "step": "Rescue benzodiazepine",
+     "selection": "one-of",
+     "sourceTitle": "Evaluation and Management of Status Epilepticus in Children (IAP Standard Treatment Guidelines)",
+     "sourceUrl": "https://iapindia.org/pdf/Ch-040-evaluation-and-management-of-status-epilepticus-in-children.pdf",
+     "sourceEdition": "IAP STG 2022, section Prehospital management",
+     "preferred": true
+    },
+    {
+     "indication": "Seizure 5 minutes or more",
+     "patientGroup": "Children",
+     "genericName": "Diazepam (rectal)",
+     "dose": "0.5 mg/kg",
+     "route": "Rectal",
+     "frequency": "Once",
+     "duration": "Single dose",
+     "adjustments": [
+      "Paediatric: This is the paediatric dose (IAP STG 2022).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Breathing"
+     ],
+     "contraindications": [
+      "Respiratory depression"
+     ],
+     "branch": "Prehospital rescue",
+     "step": "Rescue benzodiazepine",
+     "selection": "one-of",
+     "sourceTitle": "Evaluation and Management of Status Epilepticus in Children (IAP Standard Treatment Guidelines)",
+     "sourceUrl": "https://iapindia.org/pdf/Ch-040-evaluation-and-management-of-status-epilepticus-in-children.pdf",
+     "sourceEdition": "IAP STG 2022, section Prehospital management",
+     "preferred": false,
+     "useWhen": "Midazolam unavailable."
+    },
+    {
+     "indication": "Ongoing seizure",
+     "patientGroup": "Children",
+     "genericName": "Lorazepam",
+     "dose": "0.1 mg/kg (maximum 4 mg)",
+     "route": "IV",
+     "frequency": "Once; repeat once after 5–10 minutes",
+     "duration": "Up to 2 doses",
+     "adjustments": [
+      "Paediatric: This is the paediatric dose (IAP STG 2022).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Respiratory rate, SpO2"
+     ],
+     "contraindications": [
+      "Respiratory depression"
+     ],
+     "branch": "Hospital first line",
+     "step": "IV benzodiazepine",
+     "selection": "one-of",
+     "sourceTitle": "Evaluation and Management of Status Epilepticus in Children (IAP Standard Treatment Guidelines)",
+     "sourceUrl": "https://iapindia.org/pdf/Ch-040-evaluation-and-management-of-status-epilepticus-in-children.pdf",
+     "sourceEdition": "IAP STG 2022, section First-line (benzodiazepines)",
+     "preferred": true
+    },
+    {
+     "indication": "Ongoing seizure",
+     "patientGroup": "Children",
+     "genericName": "Midazolam",
+     "dose": "0.15–0.2 mg/kg (maximum 5 mg)",
+     "route": "IV (or IM if no access)",
+     "frequency": "Once; repeat once",
+     "duration": "Up to 2 doses",
+     "adjustments": [
+      "Paediatric: This is the paediatric dose (IAP STG 2022).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Respiratory rate, SpO2"
+     ],
+     "contraindications": [
+      "Respiratory depression"
+     ],
+     "branch": "Hospital first line",
+     "step": "IV benzodiazepine",
+     "selection": "one-of",
+     "sourceTitle": "Evaluation and Management of Status Epilepticus in Children (IAP Standard Treatment Guidelines)",
+     "sourceUrl": "https://iapindia.org/pdf/Ch-040-evaluation-and-management-of-status-epilepticus-in-children.pdf",
+     "sourceEdition": "IAP STG 2022, section First-line (benzodiazepines)",
+     "preferred": false,
+     "useWhen": "Lorazepam unavailable or no IV access (IM)."
+    },
+    {
+     "indication": "Ongoing seizure",
+     "patientGroup": "Children",
+     "genericName": "Diazepam",
+     "dose": "0.2–0.3 mg/kg (maximum 10 mg)",
+     "route": "IV",
+     "frequency": "Once; repeat once",
+     "duration": "Up to 2 doses",
+     "adjustments": [
+      "Paediatric: This is the paediatric dose (IAP STG 2022).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Respiratory rate"
+     ],
+     "contraindications": [
+      "Respiratory depression"
+     ],
+     "branch": "Hospital first line",
+     "step": "IV benzodiazepine",
+     "selection": "one-of",
+     "sourceTitle": "Evaluation and Management of Status Epilepticus in Children (IAP Standard Treatment Guidelines)",
+     "sourceUrl": "https://iapindia.org/pdf/Ch-040-evaluation-and-management-of-status-epilepticus-in-children.pdf",
+     "sourceEdition": "IAP STG 2022, section First-line (benzodiazepines)",
+     "preferred": false,
+     "useWhen": "Lorazepam and midazolam unavailable."
+    },
+    {
+     "indication": "Benzodiazepine-resistant SE",
+     "patientGroup": "Children",
+     "genericName": "Phenytoin",
+     "dose": "20 mg/kg in normal saline at 1 mg/kg/min; may repeat 10 mg/kg",
+     "route": "IV",
+     "frequency": "Loading",
+     "duration": "Maintenance after 8–12 hours",
+     "adjustments": [
+      "Paediatric: This is the paediatric dose (IAP STG 2022).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment for loading.",
+      "CLD: Caution in liver failure.",
+      "Fosphenytoin 20 mg PE/kg at 3 mg/kg/min is an alternative (IAP 2022)."
+     ],
+     "monitoring": [
+      "Heart rate, electrocardiogram (ECG) and BP during infusion"
+     ],
+     "contraindications": [
+      "Bradycardia, heart block",
+      "Do not mix with dextrose"
+     ],
+     "branch": "Second line",
+     "step": "Second-line antiseizure medicine",
+     "selection": "one-of",
+     "sourceTitle": "Evaluation and Management of Status Epilepticus in Children (IAP Standard Treatment Guidelines)",
+     "sourceUrl": "https://iapindia.org/pdf/Ch-040-evaluation-and-management-of-status-epilepticus-in-children.pdf",
+     "sourceEdition": "IAP STG 2022, section Second-line",
+     "preferred": true
+    },
+    {
+     "indication": "Benzodiazepine-resistant SE",
+     "patientGroup": "Children",
+     "genericName": "Levetiracetam",
+     "dose": "20–60 mg/kg at 5 mg/kg/min",
+     "route": "IV",
+     "frequency": "Loading",
+     "duration": "Maintenance after 8–12 hours",
+     "adjustments": [
+      "Paediatric: This is the paediatric dose (IAP STG 2022).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Reduce maintenance in renal impairment.",
+      "CLD: No adjustment; preferred in liver dysfunction."
+     ],
+     "monitoring": [
+      "Seizure control, behaviour"
+     ],
+     "contraindications": [
+      "Hypersensitivity"
+     ],
+     "branch": "Second line",
+     "step": "Second-line antiseizure medicine",
+     "selection": "one-of",
+     "sourceTitle": "Evaluation and Management of Status Epilepticus in Children (IAP Standard Treatment Guidelines)",
+     "sourceUrl": "https://iapindia.org/pdf/Ch-040-evaluation-and-management-of-status-epilepticus-in-children.pdf",
+     "sourceEdition": "IAP STG 2022, section Second-line",
+     "preferred": false,
+     "useWhen": "Liver dysfunction or suspected metabolic disease, or cardiac concerns with phenytoin."
+    },
+    {
+     "indication": "Benzodiazepine-resistant SE",
+     "patientGroup": "Children",
+     "genericName": "Sodium valproate",
+     "dose": "20–40 mg/kg",
+     "route": "IV",
+     "frequency": "Loading",
+     "duration": "Maintenance after 8–12 hours",
+     "adjustments": [
+      "Paediatric: This is the paediatric dose (IAP STG 2022).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment.",
+      "CLD: Avoid in liver disease."
+     ],
+     "monitoring": [
+      "Liver tests, ammonia"
+     ],
+     "contraindications": [
+      "Liver disease",
+      "Suspected inborn error of metabolism",
+      "Under 2 years with unknown cause (caution)"
+     ],
+     "branch": "Second line",
+     "step": "Second-line antiseizure medicine",
+     "selection": "one-of",
+     "sourceTitle": "Evaluation and Management of Status Epilepticus in Children (IAP Standard Treatment Guidelines)",
+     "sourceUrl": "https://iapindia.org/pdf/Ch-040-evaluation-and-management-of-status-epilepticus-in-children.pdf",
+     "sourceEdition": "IAP STG 2022, section Second-line",
+     "preferred": false,
+     "useWhen": "Phenytoin unsuitable and liver normal."
+    },
+    {
+     "indication": "Benzodiazepine-resistant SE",
+     "patientGroup": "Children",
+     "genericName": "Phenobarbitone",
+     "dose": "20 mg/kg in normal saline at 2 mg/kg/min",
+     "route": "IV",
+     "frequency": "Loading",
+     "duration": "Maintenance after 8–12 hours",
+     "adjustments": [
+      "Paediatric: This is the paediatric dose (IAP STG 2022).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Caution in renal impairment.",
+      "CLD: Caution in liver failure."
+     ],
+     "monitoring": [
+      "Respiratory depression, BP"
+     ],
+     "contraindications": [
+      "No ventilation backup (IAP 2022)"
+     ],
+     "branch": "Second line",
+     "step": "Second-line antiseizure medicine",
+     "selection": "one-of",
+     "sourceTitle": "Evaluation and Management of Status Epilepticus in Children (IAP Standard Treatment Guidelines)",
+     "sourceUrl": "https://iapindia.org/pdf/Ch-040-evaluation-and-management-of-status-epilepticus-in-children.pdf",
+     "sourceEdition": "IAP STG 2022, section Second-line",
+     "preferred": false,
+     "useWhen": "Ventilation available and other options unsuitable."
+    },
+    {
+     "indication": "Refractory SE",
+     "patientGroup": "Children in PICU",
+     "genericName": "Midazolam (infusion)",
+     "dose": "0.2 mg/kg bolus, then 1 mcg/kg/min, increase by 1 mcg/kg/min every 5–10 minutes to maximum 30 mcg/kg/min",
+     "route": "IV infusion",
+     "frequency": "Continuous",
+     "duration": "Taper after 24 hours seizure-free by 1 mcg/kg/min every 3 hours",
+     "adjustments": [
+      "Paediatric: This is the paediatric dose (IAP STG 2022).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Accumulates in renal failure.",
+      "CLD: Accumulates in liver failure."
+     ],
+     "monitoring": [
+      "EEG, BP, ventilation"
+     ],
+     "contraindications": [
+      "Hypotension"
+     ],
+     "branch": "Refractory SE",
+     "step": "Anaesthetic infusion",
+     "selection": "one-of",
+     "sourceTitle": "Evaluation and Management of Status Epilepticus in Children (IAP Standard Treatment Guidelines)",
+     "sourceUrl": "https://iapindia.org/pdf/Ch-040-evaluation-and-management-of-status-epilepticus-in-children.pdf",
+     "sourceEdition": "IAP STG 2022, section Refractory SE",
+     "preferred": true
+    },
+    {
+     "indication": "Refractory SE",
+     "patientGroup": "Children in PICU",
+     "genericName": "Thiopentone",
+     "dose": "5 mg/kg bolus, then 3–5 mg/kg/hour to burst suppression",
+     "route": "IV infusion",
+     "frequency": "Continuous",
+     "duration": "Taper after 24 hours seizure-free",
+     "adjustments": [
+      "Paediatric: This is the paediatric dose (IAP STG 2022).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment stated.",
+      "CLD: Prolonged effect in liver failure."
+     ],
+     "monitoring": [
+      "EEG, BP, need for inotropes"
+     ],
+     "contraindications": [
+      "Hypotension",
+      "Ventilated patients only"
+     ],
+     "branch": "Refractory SE",
+     "step": "Anaesthetic infusion",
+     "selection": "one-of",
+     "sourceTitle": "Evaluation and Management of Status Epilepticus in Children (IAP Standard Treatment Guidelines)",
+     "sourceUrl": "https://iapindia.org/pdf/Ch-040-evaluation-and-management-of-status-epilepticus-in-children.pdf",
+     "sourceEdition": "IAP STG 2022, section Refractory SE",
+     "preferred": false,
+     "useWhen": "Midazolam infusion fails."
+    },
+    {
+     "indication": "Refractory SE",
+     "patientGroup": "Children in PICU",
+     "genericName": "Propofol",
+     "dose": "1–2 mg/kg load, then 1–2 mg/kg/hour (maximum 5 mg/kg/hour)",
+     "route": "IV infusion",
+     "frequency": "Continuous",
+     "duration": "Short-term",
+     "adjustments": [
+      "Paediatric: This is the paediatric dose (IAP STG 2022).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Lactate, triglycerides, CK (propofol infusion syndrome)"
+     ],
+     "contraindications": [
+      "Prolonged high-dose use"
+     ],
+     "branch": "Refractory SE",
+     "step": "Anaesthetic infusion",
+     "selection": "one-of",
+     "sourceTitle": "Evaluation and Management of Status Epilepticus in Children (IAP Standard Treatment Guidelines)",
+     "sourceUrl": "https://iapindia.org/pdf/Ch-040-evaluation-and-management-of-status-epilepticus-in-children.pdf",
+     "sourceEdition": "IAP STG 2022, section Refractory SE",
+     "preferred": false,
+     "useWhen": "Midazolam fails; short-term use with monitoring."
+    }
+   ],
+   "note": "Doses are from IAP STG 2022 (status epilepticus), consistent with the ICMR AES in Children STW. India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
+  },
+  "teaching": {
+   "scope": "Childhood status epilepticus in India.",
+   "learningObjectives": [
+    "Treat at 5 minutes.",
+    "Use correct benzodiazepine and second-line doses.",
+    "Escalate refractory SE to PICU."
+   ],
+   "keyPoints": [
+    "Buccal or intranasal midazolam 0.1–0.2 mg/kg at home.",
+    "IV lorazepam 0.1 mg/kg (maximum 4 mg); repeat once.",
+    "Then phenytoin 20 mg/kg or levetiracetam 20–60 mg/kg.",
+    "Check glucose early."
+   ],
+   "pitfalls": [
+    "More than two benzodiazepine doses.",
+    "Valproate in suspected metabolic or liver disease.",
+    "Phenytoin in dextrose.",
+    "Missing non-convulsive SE after movements stop."
+   ],
+   "references": [
+    {
+     "title": "Evaluation and Management of Status Epilepticus in Children (IAP Standard Treatment Guidelines)",
+     "edition": "IAP STG 2022",
+     "url": "https://iapindia.org/pdf/Ch-040-evaluation-and-management-of-status-epilepticus-in-children.pdf",
+     "locator": "sections Definition, Etiology, Prehospital management, First-line, Second-line, Refractory SE, Supportive care, Investigations"
+    },
+    {
+     "title": "Standard Treatment Workflow: Acute Encephalitis Syndrome in Children (ICMR / Department of Health Research)",
+     "edition": "ICMR STW, October 2019",
+     "url": "https://icmr.gov.in/icmrobject/uploads/STWs/1725959608_paediatrics_acute_encephalitis_syndrome.pdf",
+     "locator": "section Seizure control"
+    }
+   ]
+  },
+  "nonClinicalManagement": {
+   "patientEducation": [
+    "Learn seizure first aid: recovery position, time the seizure, give rescue medicine at 5 minutes (IAP 2022).",
+    "Keep antiseizure medicines regular."
+   ],
+   "lifestyleAndDiet": [
+    "Regular sleep; supervise swimming and heights."
+   ],
+   "mdtReferrals": [
+    "Paediatric neurologist",
+    "PICU for refractory SE"
+   ],
+   "dischargeCriteria": [
+    "Seizure-free and back to baseline",
+    "Cause identified and treated",
+    "Rescue medicine plan given"
+   ],
+   "followUpPlan": "Neurology review in 2–4 weeks; neurodevelopmental follow-up."
+  }
+ }
+]

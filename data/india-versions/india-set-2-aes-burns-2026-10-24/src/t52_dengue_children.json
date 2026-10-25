@@ -1,0 +1,519 @@
+[
+ {
+  "id": "6cb2f968-d674-5a25-9def-5c950c646f2d",
+  "title": "Dengue in children (India)",
+  "specialty": "Paediatrics / Infectious Diseases / Paediatric Critical Care",
+  "authority": "ICMR",
+  "status": "under_review",
+  "version": "india-set-2-2026-10-24-v1",
+  "lastReviewed": "2026-10-24",
+  "pillar": "Urgent Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+   "checkedOn": "2026-10-24",
+   "status": "incomplete",
+   "scope": "Dengue in children in India: case categories, warning signs, outpatient care, weight-based fluid resuscitation for warning signs and shock, haematocrit-guided decisions, blood product thresholds and discharge, built on the ICMR Dengue Fever STW (October 2019) with paracetamol dosing from the ICMR Fever in Children STW. The adult Dengue (India adaptation) topic covers adults.",
+   "findings": [
+    "Case categories, warning signs, investigations, outpatient care (paracetamol, avoid NSAIDs, daily PCV and platelets), crystalloid bolus 20 mL/kg over 15 minutes in shock, 10 mL/kg/hour for warning signs, the stepwise taper (10, 7, 5, 3 mL/kg/hour) stopping at 48 hours, platelet transfusion below 10,000/cumm or with bleeding, red cell and FFP indications and discharge criteria checked against the ICMR Dengue STW (October 2019).",
+    "Paracetamol 15 mg/kg from the ICMR Fever in Children STW.",
+    "Not clinically reviewed."
+   ],
+   "unverifiedSections": [
+    "The ICMR Dengue STW is not child-specific; the mL/kg regimens are used for children as written.",
+    "Paracetamol interval and daily maximum are not given in the ICMR workflows (usual practice 4–6-hourly, no more than 60 mg/kg/day).",
+    "The ICMR flowchart lists some rate ranges without clear sequence; the main sequence is shown.",
+    "Drug cautions, contraindications and renal or hepatic adjustment lines without a source tag are general pharmacology statements and need formulary confirmation."
+   ],
+   "medscapeStatus": "unavailable",
+   "originalVersionIds": [
+    "6cb2f968-d674-5a25-9def-5c950c646f2d"
+   ]
+  },
+  "pathophysiology": {
+   "summary": "Dengue is a mosquito-borne flavivirus infection with yearly epidemics across India. Most children have a febrile phase of 2–7 days with fever, myalgia, rash and headache. Around defervescence, a critical phase of increased capillary permeability can cause plasma leakage, rising haematocrit, pleural effusion, ascites and shock, sometimes with bleeding and organ involvement. Warning signs (abdominal pain, persistent vomiting, fluid accumulation, mucosal bleeding, liver enlargement over 2 cm) identify children who need hospital care (ICMR STW). Careful, haematocrit-guided fluid therapy prevents both shock and fluid overload; platelet transfusion is rarely needed.",
+   "keyMechanisms": [
+    "Viral infection and immune activation increase vascular permeability.",
+    "Plasma leakage causes haemoconcentration, effusions and hypovolaemic shock.",
+    "Thrombocytopenia and coagulopathy cause bleeding.",
+    "Reabsorption of leaked fluid in recovery risks fluid overload."
+   ]
+  },
+  "presentation": {
+   "symptoms": [
+    "High fever 2–7 days",
+    "Headache, retro-orbital pain, myalgia, arthralgia, rash (ICMR STW)",
+    "Nausea, vomiting (ICMR STW)",
+    "Abdominal pain (warning sign)"
+   ],
+   "physicalSigns": [
+    "Positive tourniquet test",
+    "Liver enlargement over 2 cm (warning sign) (ICMR STW)",
+    "Pleural effusion, ascites (ICMR STW)",
+    "Weak rapid pulse, pulse pressure under 20 mmHg, cold clammy skin (shock) (ICMR STW)"
+   ],
+   "redFlags": [
+    "Any warning sign: admit (ICMR STW)",
+    "Shock: weak rapid pulse, narrow pulse pressure, hypotension (ICMR STW)",
+    "Severe bleeding (ICMR STW)",
+    "Respiratory distress from fluid accumulation, impaired consciousness (ICMR STW)"
+   ],
+   "precipitants": [
+    "Monsoon and post-monsoon season",
+    "Aedes breeding in stored water",
+    "Secondary infection with a different serotype"
+   ]
+  },
+  "differentials": [
+   {
+    "condition": "Malaria",
+    "distinguishingFeatures": "Smear or RDT positive."
+   },
+   {
+    "condition": "Chikungunya",
+    "distinguishingFeatures": "Prominent arthritis, less thrombocytopenia."
+   },
+   {
+    "condition": "Scrub typhus",
+    "distinguishingFeatures": "Eschar, lymphadenopathy; IgM positive."
+   },
+   {
+    "condition": "Enteric fever",
+    "distinguishingFeatures": "Gradual fever, relative bradycardia; blood culture."
+   }
+  ],
+  "diagnosticCriteria": [
+   {
+    "criterion": "Dengue without warning signs (ICMR STW)",
+    "threshold": "Fever plus two of: nausea or vomiting, rash, myalgia, headache, retro-orbital pain, arthralgia, haemorrhagic manifestations, in an endemic area."
+   },
+   {
+    "criterion": "Dengue with warning signs (ICMR STW)",
+    "threshold": "Abdominal pain, persistent vomiting, fluid accumulation, mucosal bleeding, liver over 2 cm, or features of shock."
+   },
+   {
+    "criterion": "Severe dengue (ICMR STW)",
+    "threshold": "Fluid accumulation with respiratory distress, severe bleeding or impaired consciousness."
+   }
+  ],
+  "investigations": {
+   "ruleIn": [
+    {
+     "tier": "laboratory",
+     "testName": "NS1 antigen and dengue IgM",
+     "modalityTarget": "ELISA",
+     "targetCondition": "Dengue",
+     "normalValue": "Negative",
+     "expectedFinding": "NS1 positive (days 1–5) or IgM positive (after day 5)",
+     "clinicalRationale": "Confirms dengue (ICMR STW).",
+     "references": [
+      {
+       "title": "Standard Treatment Workflow: Dengue Fever (ICMR / Department of Health Research)",
+       "edition": "ICMR STW, October 2019, section Investigations",
+       "url": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1725952338_paediatrics_dengue_fever.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Haematocrit (PCV)",
+     "modalityTarget": "Blood",
+     "targetCondition": "Plasma leakage",
+     "normalValue": "Age-appropriate baseline (about 33–42% in children)",
+     "expectedFinding": "Rising PCV",
+     "clinicalRationale": "Rising PCV guides more fluid; falling PCV with instability suggests bleeding (ICMR STW).",
+     "references": [
+      {
+       "title": "Standard Treatment Workflow: Dengue Fever (ICMR / Department of Health Research)",
+       "edition": "ICMR STW, October 2019, section Fluid management",
+       "url": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1725952338_paediatrics_dengue_fever.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Platelet count",
+     "modalityTarget": "Blood count",
+     "targetCondition": "Thrombocytopenia",
+     "normalValue": "150,000–450,000/cumm",
+     "expectedFinding": "Falling; below 10,000/cumm",
+     "clinicalRationale": "Prophylactic platelets only below 10,000/cumm (ICMR STW).",
+     "references": [
+      {
+       "title": "Standard Treatment Workflow: Dengue Fever (ICMR / Department of Health Research)",
+       "edition": "ICMR STW, October 2019, section Indications for platelet transfusion and packed red cells",
+       "url": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1725952338_paediatrics_dengue_fever.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "firstLineImaging",
+     "testName": "Chest X-ray and abdominal ultrasound",
+     "modalityTarget": "Imaging",
+     "targetCondition": "Fluid accumulation",
+     "normalValue": "No effusion or ascites",
+     "expectedFinding": "Pleural effusion, ascites, gallbladder wall oedema",
+     "clinicalRationale": "Evidence of plasma leakage (ICMR STW).",
+     "references": [
+      {
+       "title": "Standard Treatment Workflow: Dengue Fever (ICMR / Department of Health Research)",
+       "edition": "ICMR STW, October 2019, section Investigations",
+       "url": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1725952338_paediatrics_dengue_fever.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Liver and kidney function, albumin",
+     "modalityTarget": "Blood",
+     "targetCondition": "Organ involvement",
+     "normalValue": "ALT below 40 U/L; creatinine normal for age",
+     "expectedFinding": "Raised ALT; low albumin",
+     "clinicalRationale": "Severe dengue organ involvement (ICMR STW).",
+     "references": [
+      {
+       "title": "Standard Treatment Workflow: Dengue Fever (ICMR / Department of Health Research)",
+       "edition": "ICMR STW, October 2019, section Investigations",
+       "url": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1725952338_paediatrics_dengue_fever.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "specializedAdjunctive",
+     "testName": "Hourly heart rate, BP, respiratory rate, urine output",
+     "modalityTarget": "Bedside monitoring",
+     "targetCondition": "Shock and fluid response",
+     "normalValue": "Normal for age; urine over 1 mL/kg/hour",
+     "expectedFinding": "Tachycardia, narrow pulse pressure, low urine output",
+     "clinicalRationale": "Reassess hourly during resuscitation (ICMR STW).",
+     "references": [
+      {
+       "title": "Standard Treatment Workflow: Dengue Fever (ICMR / Department of Health Research)",
+       "edition": "ICMR STW, October 2019, section Fluid management",
+       "url": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1725952338_paediatrics_dengue_fever.pdf"
+      }
+     ]
+    }
+   ],
+   "ruleOut": [
+    {
+     "tier": "laboratory",
+     "testName": "Malaria smear or RDT",
+     "modalityTarget": "Blood",
+     "targetCondition": "Malaria",
+     "normalValue": "Negative",
+     "expectedFinding": "Positive",
+     "clinicalRationale": "Co-infection or alternative diagnosis.",
+     "references": [
+      {
+       "title": "Standard Treatment Workflow: Fever in Children (ICMR / Department of Health Research)",
+       "edition": "ICMR STW, October 2019, section Fever without focus",
+       "url": "https://icmr.gov.in/icmrobject/uploads/STWs/1725952338_paediatrics_fever_in_children.pdf"
+      }
+     ]
+    }
+   ]
+  },
+  "clinicalManagement": [
+   {
+    "id": "opd",
+    "title": "No warning signs",
+    "timeframe": "Daily review",
+    "actions": [
+     "Paracetamol for fever; avoid NSAIDs (ICMR STW).",
+     "Oral fluids; daily clinical review with PCV and platelets (ICMR STW).",
+     "Admit if any warning sign appears."
+    ]
+   },
+   {
+    "id": "warning",
+    "title": "Warning signs",
+    "timeframe": "Hospital",
+    "actions": [
+     "Ringer's lactate or normal saline 10 mL/kg/hour (ICMR STW).",
+     "Reassess at 1–2 hours with PCV; if improving taper 10, 7, 5 and 3 mL/kg/hour; stop by 48 hours (ICMR STW)."
+    ]
+   },
+   {
+    "id": "shock",
+    "title": "Shock",
+    "timeframe": "Immediately",
+    "actions": [
+     "Crystalloid or colloid 20 mL/kg over 15 minutes (ICMR STW).",
+     "Reassess HR, RR, BP, PCV hourly; if PCV rising give further fluid or colloid 10–20 mL/kg; if PCV falling with instability suspect bleeding and transfuse (ICMR STW).",
+     "Look for and treat anaemia, acidosis and myocardial dysfunction (ICMR STW)."
+    ]
+   },
+   {
+    "id": "blood",
+    "title": "Blood products",
+    "timeframe": "As indicated",
+    "actions": [
+     "Platelets below 10,000/cumm or prolonged shock or massive bleeding (ICMR STW).",
+     "Packed cells for overt blood loss of 10% or more of blood volume or refractory shock (ICMR STW).",
+     "FFP or cryoprecipitate for coagulopathy with bleeding (ICMR STW)."
+    ]
+   },
+   {
+    "id": "discharge",
+    "title": "Discharge",
+    "timeframe": "When criteria met",
+    "actions": [
+     "No fever for 48 hours, rising platelets, stable PCV without IV fluids, observed 24 hours after stopping fluids (ICMR STW)."
+    ]
+   }
+  ],
+  "medicationPlan": {
+   "status": "source-verified",
+   "branches": [
+    {
+     "label": "Fever relief",
+     "entryCriteria": "Any child with dengue fever."
+    },
+    {
+     "label": "Warning signs",
+     "entryCriteria": "Dengue with warning signs, not in shock."
+    },
+    {
+     "label": "Dengue shock",
+     "entryCriteria": "Compensated or hypotensive shock."
+    },
+    {
+     "label": "Blood products",
+     "entryCriteria": "Severe thrombocytopenia, bleeding or coagulopathy."
+    }
+   ],
+   "regimens": [
+    {
+     "indication": "Fever",
+     "patientGroup": "Children",
+     "genericName": "Paracetamol",
+     "dose": "15 mg/kg per dose",
+     "route": "Oral",
+     "frequency": "Every 4–6 hours as needed",
+     "duration": "During fever",
+     "adjustments": [
+      "Paediatric: This is the paediatric dose (ICMR Fever in Children STW).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment.",
+      "CLD: Avoid high doses if liver involvement."
+     ],
+     "monitoring": [
+      "Temperature",
+      "Liver tests in severe dengue"
+     ],
+     "contraindications": [
+      "Do not use NSAIDs or aspirin in dengue (ICMR STW)"
+     ],
+     "branch": "Fever relief",
+     "step": "Antipyretic",
+     "selection": "all",
+     "sourceTitle": "Standard Treatment Workflow: Fever in Children (ICMR / Department of Health Research)",
+     "sourceUrl": "https://icmr.gov.in/icmrobject/uploads/STWs/1725952338_paediatrics_fever_in_children.pdf",
+     "sourceEdition": "ICMR STW, October 2019, section Antipyretic dosing"
+    },
+    {
+     "indication": "Dengue with warning signs",
+     "patientGroup": "Children",
+     "genericName": "Ringer lactate",
+     "dose": "10 mL/kg/hour, then taper to 7, 5 and 3 mL/kg/hour as PCV and vitals improve",
+     "route": "IV",
+     "frequency": "Continuous",
+     "duration": "Stop by 48 hours",
+     "adjustments": [
+      "Paediatric: This is the paediatric regimen (ICMR STW, mL/kg).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Reassess often in kidney injury.",
+      "CLD: Use with caution in severe liver involvement."
+     ],
+     "monitoring": [
+      "PCV, vitals hourly",
+      "Urine output"
+     ],
+     "contraindications": [
+      "Fluid overload: respiratory distress"
+     ],
+     "branch": "Warning signs",
+     "step": "IV fluid",
+     "selection": "all",
+     "sourceTitle": "Standard Treatment Workflow: Dengue Fever (ICMR / Department of Health Research)",
+     "sourceUrl": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1725952338_paediatrics_dengue_fever.pdf",
+     "sourceEdition": "ICMR STW, October 2019, section Fluid management"
+    },
+    {
+     "indication": "Dengue shock",
+     "patientGroup": "Children",
+     "genericName": "Crystalloid (Ringer lactate)",
+     "dose": "20 mL/kg over 15 minutes, repeat by PCV and vitals",
+     "route": "IV",
+     "frequency": "Bolus",
+     "duration": "Until shock reverses, then taper",
+     "adjustments": [
+      "Paediatric: This is the paediatric regimen (ICMR STW, mL/kg).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Reassess after each bolus.",
+      "CLD: Reassess after each bolus."
+     ],
+     "monitoring": [
+      "HR, BP, PCV hourly",
+      "Signs of overload"
+     ],
+     "contraindications": [
+      "Fluid overload"
+     ],
+     "branch": "Dengue shock",
+     "step": "Fluid bolus",
+     "selection": "one-of",
+     "sourceTitle": "Standard Treatment Workflow: Dengue Fever (ICMR / Department of Health Research)",
+     "sourceUrl": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1725952338_paediatrics_dengue_fever.pdf",
+     "sourceEdition": "ICMR STW, October 2019, section Fluid management",
+     "preferred": true
+    },
+    {
+     "indication": "Dengue shock with rising PCV despite crystalloid",
+     "patientGroup": "Children",
+     "genericName": "Colloid",
+     "dose": "10–20 mL/kg",
+     "route": "IV",
+     "frequency": "Bolus",
+     "duration": "As needed",
+     "adjustments": [
+      "Paediatric: This is the paediatric regimen (ICMR STW, mL/kg).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Caution in kidney injury.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "PCV, vitals"
+     ],
+     "contraindications": [
+      "Fluid overload"
+     ],
+     "branch": "Dengue shock",
+     "step": "Fluid bolus",
+     "selection": "one-of",
+     "sourceTitle": "Standard Treatment Workflow: Dengue Fever (ICMR / Department of Health Research)",
+     "sourceUrl": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1725952338_paediatrics_dengue_fever.pdf",
+     "sourceEdition": "ICMR STW, October 2019, section Fluid management",
+     "preferred": false,
+     "useWhen": "Shock persists with rising PCV after crystalloid (ICMR STW)."
+    },
+    {
+     "indication": "Platelets below 10,000/cumm, prolonged shock or massive bleeding",
+     "patientGroup": "Children",
+     "genericName": "Platelet concentrate",
+     "dose": "Dose per blood bank (1 unit per 10 kg typical)",
+     "route": "IV",
+     "frequency": "As indicated",
+     "duration": "Single transfusion, reassess",
+     "adjustments": [
+      "Paediatric: Weight-based; 1 unit per 10 kg (NIB guidance).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment.",
+      "CLD: No adjustment.",
+      "1 unit per 10 kg from NIB Good Blood Transfusion Practices."
+     ],
+     "monitoring": [
+      "Platelet count, bleeding"
+     ],
+     "contraindications": [
+      "Do not transfuse for count alone above 10,000/cumm without bleeding (ICMR STW)"
+     ],
+     "branch": "Blood products",
+     "step": "Platelets",
+     "selection": "all",
+     "sourceTitle": "Standard Treatment Workflow: Dengue Fever (ICMR / Department of Health Research)",
+     "sourceUrl": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1725952338_paediatrics_dengue_fever.pdf",
+     "sourceEdition": "ICMR STW, October 2019, section Indications for platelet transfusion and packed red cells"
+    },
+    {
+     "indication": "Overt blood loss of 10% or more of blood volume or refractory shock",
+     "patientGroup": "Children",
+     "genericName": "Packed red cells",
+     "dose": "10 mL/kg",
+     "route": "IV",
+     "frequency": "As indicated",
+     "duration": "Reassess PCV",
+     "adjustments": [
+      "Paediatric: Paediatric volume is usual practice.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Watch for fluid overload.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "PCV, vitals"
+     ],
+     "contraindications": [
+      "Fluid overload"
+     ],
+     "branch": "Blood products",
+     "step": "Red cells",
+     "selection": "all",
+     "sourceTitle": "Standard Treatment Workflow: Dengue Fever (ICMR / Department of Health Research)",
+     "sourceUrl": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1725952338_paediatrics_dengue_fever.pdf",
+     "sourceEdition": "ICMR STW, October 2019, section Indications for platelet transfusion and packed red cells"
+    }
+   ],
+   "note": "Fluid regimens and transfusion thresholds from the ICMR Dengue STW (2019); paracetamol from the ICMR Fever in Children STW. Avoid NSAIDs, aspirin and IM injections. India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
+  },
+  "teaching": {
+   "scope": "Dengue in Indian children.",
+   "learningObjectives": [
+    "Recognise warning signs.",
+    "Give haematocrit-guided fluids.",
+    "Use blood products sparingly."
+   ],
+   "keyPoints": [
+    "Warning signs: abdominal pain, vomiting, fluid accumulation, mucosal bleeding, liver over 2 cm.",
+    "Shock: 20 mL/kg over 15 minutes, then reassess with PCV.",
+    "Taper 10, 7, 5, 3 mL/kg/hour; stop by 48 hours.",
+    "Platelets only below 10,000/cumm or bleeding."
+   ],
+   "pitfalls": [
+    "NSAIDs for fever.",
+    "Prophylactic platelets for moderate thrombocytopenia.",
+    "Continuing IV fluids into recovery (overload).",
+    "Missing concealed bleeding when PCV falls."
+   ],
+   "references": [
+    {
+     "title": "Standard Treatment Workflow: Dengue Fever (ICMR / Department of Health Research)",
+     "edition": "ICMR STW, October 2019",
+     "url": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1725952338_paediatrics_dengue_fever.pdf",
+     "locator": "sections Symptoms, Warning signs, Investigations, Fluid management, Indications for platelet transfusion and packed red cells, Discharge criteria"
+    },
+    {
+     "title": "Standard Treatment Workflow: Fever in Children (ICMR / Department of Health Research)",
+     "edition": "ICMR STW, October 2019",
+     "url": "https://icmr.gov.in/icmrobject/uploads/STWs/1725952338_paediatrics_fever_in_children.pdf",
+     "locator": "section Antipyretic dosing"
+    },
+    {
+     "title": "Good Blood Transfusion Practices Guidance (National Institute of Biologicals / Haemovigilance Programme of India)",
+     "edition": "NIB, MoHFW",
+     "url": "https://www.nib.gov.in/media/Good Blood Transfusion Practices Guidance.pdf",
+     "locator": "section 4 (platelets)"
+    }
+   ]
+  },
+  "nonClinicalManagement": {
+   "patientEducation": [
+    "Return at once for abdominal pain, vomiting, bleeding, drowsiness or cold hands.",
+    "Plenty of oral fluids.",
+    "No painkillers other than paracetamol."
+   ],
+   "lifestyleAndDiet": [
+    "Remove stored water; use nets and repellents."
+   ],
+   "mdtReferrals": [
+    "Higher centre or PICU for severe dengue",
+    "District surveillance (IDSP) notification"
+   ],
+   "dischargeCriteria": [
+    "No fever for 48 hours (ICMR STW)",
+    "Rising platelets, stable PCV without IV fluids (ICMR STW)",
+    "Good appetite and urine output, no respiratory distress (ICMR STW)"
+   ],
+   "followUpPlan": "Daily review in the febrile and critical phases; review after discharge if symptoms recur."
+  }
+ }
+]

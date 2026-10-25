@@ -1,0 +1,467 @@
+[
+ {
+  "id": "f1f50dad-e461-5af5-9ba6-e5a0cf78145c",
+  "title": "Diabetic kidney disease (India)",
+  "specialty": "Nephrology / Endocrinology / Internal Medicine / Primary Care",
+  "authority": "ICMR",
+  "status": "under_review",
+  "version": "india-set-2-2026-10-24-v1",
+  "lastReviewed": "2026-10-24",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+   "checkedOn": "2026-10-24",
+   "status": "incomplete",
+   "scope": "Chronic kidney disease (CKD) caused by type 2 diabetes in adults in India: screening, staging by eGFR and albuminuria, renoprotection with ACE inhibitors or ARBs and SGLT2 inhibitors, metformin dosing by eGFR, glycaemic targets, diet and referral, using KDIGO 2022 with ICMR Type 2 Diabetes and Cardiology workflows for Indian practice and doses.",
+   "findings": [
+    "ACE inhibitor or ARB at the highest tolerated dose with albuminuria (1.2.1), SGLT2 inhibitor for eGFR 20 or more (1.3.1), non-steroidal MRA for eGFR 25 or more with albuminuria 30 mg/g or more (1.4.1), metformin for eGFR 30 or more with dose halved at 30–44 and stopped below 30 (Figure 27), HbA1c targets below 6.5% to below 8.0% (2.2.1), protein 0.8 g/kg/day (3.1.1), sodium below 2 g/day (3.1.2), creatinine and potassium check 2–4 weeks after RAS changes and SGLT2 sick-day rules checked against KDIGO 2022.",
+    "Annual urine ACR and creatinine from the ICMR Type 2 Diabetes STW; ramipril and enalapril doses from the ICMR Cardiology STW; dapagliflozin 10 mg and eGFR thresholds from its US label.",
+    "Not clinically reviewed."
+   ],
+   "unverifiedSections": [
+    "Finerenone dose was not in the opened KDIGO extract and is not dosed here.",
+    "A specific BP target was not in the opened KDIGO extract; the ICMR Hypertension STW target below 130/80 mmHg for diabetes or CKD is used.",
+    "The metformin maximum dose is not stated in the opened extract.",
+    "Drug cautions, contraindications and renal or hepatic adjustment lines without a source tag are general pharmacology statements and need formulary confirmation."
+   ],
+   "medscapeStatus": "unavailable",
+   "originalVersionIds": [
+    "f1f50dad-e461-5af5-9ba6-e5a0cf78145c"
+   ]
+  },
+  "pathophysiology": {
+   "summary": "Diabetic kidney disease develops in many people with long-standing type 2 diabetes and is a leading cause of kidney failure in India. Hyperglycaemia, glomerular hyperfiltration and hypertension damage the glomeruli, first causing albuminuria and later a falling eGFR. Because it is silent, everyone with diabetes needs yearly urine albumin-creatinine ratio (ACR) and creatinine (ICMR STW). Four treatments slow progression and reduce cardiovascular events: an ACE inhibitor or ARB at the highest tolerated dose when albuminuria is present, an SGLT2 inhibitor when eGFR is 20 or more, metformin adjusted to eGFR, and control of BP, lipids, smoking and salt (KDIGO 2022).",
+   "keyMechanisms": [
+    "Hyperglycaemia and advanced glycation damage the glomerular basement membrane and podocytes.",
+    "Glomerular hyperfiltration raises intraglomerular pressure, causing albuminuria.",
+    "RAS blockade and SGLT2 inhibition lower intraglomerular pressure.",
+    "Progressive sclerosis lowers eGFR and leads to kidney failure."
+   ]
+  },
+  "presentation": {
+   "symptoms": [
+    "Usually none until advanced",
+    "Leg swelling, foamy urine",
+    "Fatigue, nausea, itch in advanced CKD"
+   ],
+   "physicalSigns": [
+    "Hypertension",
+    "Oedema",
+    "Diabetic retinopathy (often coexists)"
+   ],
+   "redFlags": [
+    "Rapid eGFR fall or sudden rise in proteinuria: look for another cause",
+    "Potassium above 5.5 mmol/L on RAS blockade",
+    "eGFR below 30: nephrology referral",
+    "Haematuria or active urinary sediment: non-diabetic disease"
+   ],
+   "precipitants": [
+    "Long diabetes duration, poor glucose control",
+    "Hypertension",
+    "Smoking",
+    "NSAIDs, dehydration"
+   ]
+  },
+  "differentials": [
+   {
+    "condition": "Hypertensive nephrosclerosis",
+    "distinguishingFeatures": "Minimal albuminuria, long hypertension."
+   },
+   {
+    "condition": "Glomerulonephritis",
+    "distinguishingFeatures": "Haematuria, red cell casts, rapid change."
+   },
+   {
+    "condition": "Obstructive uropathy",
+    "distinguishingFeatures": "Hydronephrosis on ultrasound."
+   },
+   {
+    "condition": "CKD of unknown aetiology (CKDu)",
+    "distinguishingFeatures": "Agricultural areas, no diabetes; see CKD topic."
+   }
+  ],
+  "diagnosticCriteria": [
+   {
+    "criterion": "Albuminuria",
+    "threshold": "Urine ACR 30 mg/g (3 mg/mmol) or more on repeat testing."
+   },
+   {
+    "criterion": "CKD",
+    "threshold": "eGFR below 60 mL/min/1.73 m² or albuminuria for over 3 months."
+   },
+   {
+    "criterion": "Metformin by eGFR (KDIGO Figure 27)",
+    "threshold": "60 or more: usual dose; 45–59: continue, reduce in some; 30–44: halve; below 30: stop."
+   }
+  ],
+  "investigations": {
+   "ruleIn": [
+    {
+     "tier": "laboratory",
+     "testName": "Urine albumin-creatinine ratio (ACR)",
+     "modalityTarget": "Spot urine",
+     "targetCondition": "Albuminuria",
+     "normalValue": "Below 30 mg/g",
+     "expectedFinding": "30 mg/g or more",
+     "clinicalRationale": "Annual in diabetes (ICMR STW); albuminuria triggers RAS blockade (KDIGO 1.2.1).",
+     "references": [
+      {
+       "title": "Standard Treatment Workflow: Diabetes Mellitus Type 2 (ICMR / Department of Health Research)",
+       "edition": "ICMR STW, July 2022, section Annual monitoring",
+       "url": "https://icmr.gov.in/icmrobject/uploads/STWs/1726567245_diabetes_mellitus_type_2.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Serum creatinine and eGFR",
+     "modalityTarget": "Blood",
+     "targetCondition": "Kidney function",
+     "normalValue": "eGFR 90 mL/min/1.73 m² or more",
+     "expectedFinding": "eGFR below 60",
+     "clinicalRationale": "Sets drug choice and doses (KDIGO).",
+     "references": [
+      {
+       "title": "KDIGO 2022 Clinical Practice Guideline for Diabetes Management in Chronic Kidney Disease",
+       "edition": "Kidney Int 2022;102(5S):S1-S127, recommendation 4.1.1; Figure 27",
+       "url": "https://kdigo.org/wp-content/uploads/2023/12/KDIGO-2022-Diabetes-Guideline.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Serum potassium",
+     "modalityTarget": "Blood",
+     "targetCondition": "Hyperkalaemia on RAS blockade",
+     "normalValue": "3.5–5.0 mmol/L",
+     "expectedFinding": "Above 5.5 mmol/L",
+     "clinicalRationale": "Check 2–4 weeks after starting or increasing ACEi/ARB (KDIGO 1.2.2).",
+     "references": [
+      {
+       "title": "KDIGO 2022 Clinical Practice Guideline for Diabetes Management in Chronic Kidney Disease",
+       "edition": "Kidney Int 2022;102(5S):S1-S127, recommendations 1.2.1–1.4.1",
+       "url": "https://kdigo.org/wp-content/uploads/2023/12/KDIGO-2022-Diabetes-Guideline.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "HbA1c",
+     "modalityTarget": "Blood",
+     "targetCondition": "Glycaemic control",
+     "normalValue": "Individual target below 6.5% to below 8.0%",
+     "expectedFinding": "Above target",
+     "clinicalRationale": "Twice yearly, up to 4 times if not at target (KDIGO 2.1.1).",
+     "references": [
+      {
+       "title": "KDIGO 2022 Clinical Practice Guideline for Diabetes Management in Chronic Kidney Disease",
+       "edition": "Kidney Int 2022;102(5S):S1-S127, recommendation 2.2.1",
+       "url": "https://kdigo.org/wp-content/uploads/2023/12/KDIGO-2022-Diabetes-Guideline.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "firstLineImaging",
+     "testName": "Renal ultrasound",
+     "modalityTarget": "Ultrasound",
+     "targetCondition": "Other causes",
+     "normalValue": "Normal-sized kidneys",
+     "expectedFinding": "Small scarred kidneys, obstruction",
+     "clinicalRationale": "Exclude obstruction or other disease.",
+     "references": [
+      {
+       "title": "KDIGO 2022 Clinical Practice Guideline for Diabetes Management in Chronic Kidney Disease",
+       "edition": "Kidney Int 2022;102(5S):S1-S127, recommendations 1.2.1–1.4.1",
+       "url": "https://kdigo.org/wp-content/uploads/2023/12/KDIGO-2022-Diabetes-Guideline.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "specializedAdjunctive",
+     "testName": "Dilated fundoscopy",
+     "modalityTarget": "Eye examination",
+     "targetCondition": "Diabetic retinopathy",
+     "normalValue": "No retinopathy",
+     "expectedFinding": "Retinopathy",
+     "clinicalRationale": "Supports diabetic cause (see Diabetic retinopathy topic).",
+     "references": [
+      {
+       "title": "Standard Treatment Workflow: Diabetes Mellitus Type 2 (ICMR / Department of Health Research)",
+       "edition": "ICMR STW, July 2022, section Annual monitoring",
+       "url": "https://icmr.gov.in/icmrobject/uploads/STWs/1726567245_diabetes_mellitus_type_2.pdf"
+      }
+     ]
+    }
+   ],
+   "ruleOut": [
+    {
+     "tier": "laboratory",
+     "testName": "Urine microscopy",
+     "modalityTarget": "Urine",
+     "targetCondition": "Active sediment",
+     "normalValue": "No red cell casts",
+     "expectedFinding": "Haematuria with casts",
+     "clinicalRationale": "Suggests non-diabetic kidney disease: refer.",
+     "references": [
+      {
+       "title": "KDIGO 2022 Clinical Practice Guideline for Diabetes Management in Chronic Kidney Disease",
+       "edition": "Kidney Int 2022;102(5S):S1-S127, recommendations 1.2.1–1.4.1",
+       "url": "https://kdigo.org/wp-content/uploads/2023/12/KDIGO-2022-Diabetes-Guideline.pdf"
+      }
+     ]
+    }
+   ]
+  },
+  "clinicalManagement": [
+   {
+    "id": "screen",
+    "title": "Screen",
+    "timeframe": "Yearly",
+    "actions": [
+     "Urine ACR and creatinine yearly in diabetes (ICMR STW)."
+    ]
+   },
+   {
+    "id": "ras",
+    "title": "Renoprotection",
+    "timeframe": "At diagnosis of albuminuria",
+    "actions": [
+     "ACE inhibitor or ARB titrated to the highest tolerated dose (KDIGO 1.2.1).",
+     "Check creatinine and potassium in 2–4 weeks; continue unless creatinine rises over 30% (KDIGO 1.2.2–1.2.3).",
+     "SGLT2 inhibitor if eGFR 20 or more; continue below 20 if already started (KDIGO 1.3.1, 1.3.6)."
+    ]
+   },
+   {
+    "id": "glucose",
+    "title": "Glucose control",
+    "timeframe": "Every 3–6 months",
+    "actions": [
+     "Metformin if eGFR 30 or more, dosed by eGFR (KDIGO 4.1.1).",
+     "Add a long-acting GLP-1 receptor agonist if targets not met (KDIGO 4.2.1).",
+     "HbA1c target below 6.5% to below 8.0% by individual risk (KDIGO 2.2.1)."
+    ]
+   },
+   {
+    "id": "risk",
+    "title": "Risk factors and diet",
+    "timeframe": "Every visit",
+    "actions": [
+     "BP below 130/80 mmHg (ICMR Hypertension STW).",
+     "Statin; stop tobacco (KDIGO 1.5.1).",
+     "Protein 0.8 g/kg/day; sodium below 2 g/day; 150 minutes activity a week (KDIGO 3.1–3.2)."
+    ]
+   },
+   {
+    "id": "sick",
+    "title": "Sick-day rules and referral",
+    "timeframe": "When unwell",
+    "actions": [
+     "Withhold SGLT2 inhibitor in acute illness, reduced intake or 3 days before surgery (dapagliflozin label; KDIGO).",
+     "Refer to nephrology for eGFR below 30, rapid decline or atypical features."
+    ]
+   }
+  ],
+  "medicationPlan": {
+   "status": "source-verified",
+   "branches": [
+    {
+     "label": "Renoprotection",
+     "entryCriteria": "Diabetes with CKD and albuminuria or eGFR 20 or more."
+    },
+    {
+     "label": "Glucose lowering",
+     "entryCriteria": "Type 2 diabetes with CKD."
+    }
+   ],
+   "regimens": [
+    {
+     "indication": "Albuminuria in diabetes",
+     "patientGroup": "Adults",
+     "genericName": "Ramipril",
+     "dose": "2.5 mg once daily, titrate to 10 mg (highest tolerated)",
+     "route": "Oral",
+     "frequency": "Once daily",
+     "duration": "Long term",
+     "adjustments": [
+      "Paediatric: Adult topic; paediatric use is outside the scope of the cited sources.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Check creatinine and potassium 2–4 weeks after each change; continue unless creatinine rises over 30% (KDIGO).",
+      "CLD: No adjustment.",
+      "Indication and titration: KDIGO 2022 recommendation 1.2.1."
+     ],
+     "monitoring": [
+      "Creatinine, potassium, BP"
+     ],
+     "contraindications": [
+      "Pregnancy",
+      "Angioedema",
+      "Bilateral renal artery stenosis"
+     ],
+     "branch": "Renoprotection",
+     "step": "Renin–angiotensin blocker",
+     "selection": "one-of",
+     "sourceTitle": "Standard Treatment Workflows of India, Cardiology (ICMR / Department of Health Research)",
+     "sourceUrl": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1768823344_cardiology-1.pdf",
+     "sourceEdition": "ICMR STW Cardiology, January 2026, section Stable angina, Drugs and dosage",
+     "preferred": true
+    },
+    {
+     "indication": "Albuminuria in diabetes",
+     "patientGroup": "Adults",
+     "genericName": "Enalapril",
+     "dose": "2.5 mg twice daily, titrate to 10 mg twice daily",
+     "route": "Oral",
+     "frequency": "Twice daily",
+     "duration": "Long term",
+     "adjustments": [
+      "Paediatric: Adult topic; paediatric use is outside the scope of the cited sources.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: As for ramipril.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Creatinine, potassium, BP"
+     ],
+     "contraindications": [
+      "Pregnancy",
+      "Angioedema"
+     ],
+     "branch": "Renoprotection",
+     "step": "Renin–angiotensin blocker",
+     "selection": "one-of",
+     "sourceTitle": "Standard Treatment Workflows of India, Cardiology (ICMR / Department of Health Research)",
+     "sourceUrl": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1768823344_cardiology-1.pdf",
+     "sourceEdition": "ICMR STW Cardiology, January 2026, section Stable angina, Drugs and dosage",
+     "preferred": false,
+     "useWhen": "Ramipril unavailable; use an ARB (for example telmisartan) if ACE-inhibitor cough."
+    },
+    {
+     "indication": "Type 2 diabetes with CKD",
+     "patientGroup": "Adults with eGFR 25 or more to start",
+     "genericName": "Dapagliflozin",
+     "dose": "10 mg once daily",
+     "route": "Oral",
+     "frequency": "Once daily",
+     "duration": "Long term; continue if eGFR later falls below 20 (KDIGO 1.3.6)",
+     "adjustments": [
+      "Paediatric: Not established for this indication in children.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Do not start if eGFR below 25 (label); KDIGO: start if 20 or more.",
+      "CLD: No adjustment.",
+      "KDIGO 2022 recommendation 1.3.1."
+     ],
+     "monitoring": [
+      "Genital infections, volume status",
+      "eGFR (initial small dip expected)"
+     ],
+     "contraindications": [
+      "Withhold in acute illness or 3 days before surgery (ketoacidosis risk)",
+      "Type 1 diabetes"
+     ],
+     "branch": "Renoprotection",
+     "step": "SGLT2 inhibitor",
+     "selection": "all",
+     "sourceTitle": "Dapagliflozin tablets, US prescribing information",
+     "sourceUrl": "https://www.drugs.com/pro/dapagliflozin.html",
+     "sourceEdition": "Prescribing information, sections 2.3, 2.4, 5.1"
+    },
+    {
+     "indication": "Type 2 diabetes with CKD",
+     "patientGroup": "Adults with eGFR 30 or more",
+     "genericName": "Metformin",
+     "dose": "eGFR 60 or more: usual dose; 45–59: continue, reduce in some; 30–44: halve the dose; below 30: stop",
+     "route": "Oral",
+     "frequency": "With meals",
+     "duration": "Long term",
+     "adjustments": [
+      "Paediatric: Adult topic; paediatric use is outside the scope of the cited sources.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Dose by eGFR (KDIGO Figure 27); monitor eGFR more often below 60.",
+      "CLD: Avoid in liver failure (lactic acidosis)."
+     ],
+     "monitoring": [
+      "eGFR at least every 3–6 months below 60",
+      "Vitamin B12 after 4 years"
+     ],
+     "contraindications": [
+      "eGFR below 30",
+      "Acute illness with dehydration or hypoxia"
+     ],
+     "branch": "Glucose lowering",
+     "step": "Biguanide",
+     "selection": "all",
+     "sourceTitle": "KDIGO 2022 Clinical Practice Guideline for Diabetes Management in Chronic Kidney Disease",
+     "sourceUrl": "https://kdigo.org/wp-content/uploads/2023/12/KDIGO-2022-Diabetes-Guideline.pdf",
+     "sourceEdition": "Kidney Int 2022;102(5S):S1-S127, recommendation 4.1.1; Figure 27"
+    }
+   ],
+   "note": "Treatment framework from KDIGO 2022; ACE inhibitor doses from the ICMR Cardiology STW; dapagliflozin from its US label. Finerenone and GLP-1 receptor agonists are options but not dosed here. India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
+  },
+  "teaching": {
+   "scope": "Diabetic kidney disease in India.",
+   "learningObjectives": [
+    "Screen with urine ACR and eGFR yearly.",
+    "Start renoprotection.",
+    "Adjust metformin and SGLT2 inhibitors to eGFR."
+   ],
+   "keyPoints": [
+    "ACR 30 mg/g or more: ACEi or ARB to highest tolerated dose.",
+    "SGLT2 inhibitor if eGFR 20 or more.",
+    "Metformin halved at eGFR 30–44, stopped below 30.",
+    "Check potassium and creatinine 2–4 weeks after RAS changes."
+   ],
+   "pitfalls": [
+    "Stopping ACEi for a small creatinine rise.",
+    "Combining ACEi with ARB.",
+    "Forgetting sick-day rules.",
+    "NSAIDs."
+   ],
+   "references": [
+    {
+     "title": "KDIGO 2022 Clinical Practice Guideline for Diabetes Management in Chronic Kidney Disease",
+     "edition": "Kidney Int 2022;102(5S):S1-S127",
+     "url": "https://kdigo.org/wp-content/uploads/2023/12/KDIGO-2022-Diabetes-Guideline.pdf",
+     "locator": "recommendations 1.2.1–1.5.1, 2.1.1, 2.2.1, 3.1.1–3.2.1, 4.1.1–4.2.1; Figure 27"
+    },
+    {
+     "title": "Standard Treatment Workflow: Diabetes Mellitus Type 2 (ICMR / Department of Health Research)",
+     "edition": "ICMR STW, July 2022",
+     "url": "https://icmr.gov.in/icmrobject/uploads/STWs/1726567245_diabetes_mellitus_type_2.pdf",
+     "locator": "section Annual monitoring"
+    },
+    {
+     "title": "Standard Treatment Workflows of India, Cardiology (ICMR / Department of Health Research)",
+     "edition": "ICMR STW Cardiology, January 2026",
+     "url": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1768823344_cardiology-1.pdf",
+     "locator": "section Stable angina, Drugs and dosage"
+    },
+    {
+     "title": "Dapagliflozin tablets, US prescribing information",
+     "edition": "Prescribing information",
+     "url": "https://www.drugs.com/pro/dapagliflozin.html",
+     "locator": "sections 2.3, 2.4, 5.1, 8.6"
+    }
+   ]
+  },
+  "nonClinicalManagement": {
+   "patientEducation": [
+    "Have urine and blood kidney tests every year.",
+    "Stop the SGLT2 tablet on sick days.",
+    "Avoid painkillers like ibuprofen."
+   ],
+   "lifestyleAndDiet": [
+    "Salt below 5 g/day (sodium below 2 g) (KDIGO).",
+    "Protein about 0.8 g/kg/day; avoid very high-protein diets (KDIGO).",
+    "Stop tobacco."
+   ],
+   "mdtReferrals": [
+    "Nephrologist for eGFR below 30 or rapid decline",
+    "Diabetologist, dietitian"
+   ],
+   "dischargeCriteria": [
+    "Not applicable (outpatient)"
+   ],
+   "followUpPlan": "Creatinine and potassium 2–4 weeks after drug changes; ACR and eGFR every 3–12 months by stage."
+  }
+ }
+]

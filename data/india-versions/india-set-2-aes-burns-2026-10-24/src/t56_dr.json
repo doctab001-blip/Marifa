@@ -1,0 +1,335 @@
+[
+ {
+  "id": "3e37e6d9-41a8-5d75-b4b5-cf5a875e0bc3",
+  "title": "Diabetic retinopathy (India)",
+  "specialty": "Ophthalmology / Endocrinology / Primary Care",
+  "authority": "ICMR",
+  "status": "under_review",
+  "version": "india-set-2-2026-10-24-v1",
+  "lastReviewed": "2026-10-24",
+  "pillar": "Chronic Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+   "checkedOn": "2026-10-24",
+   "status": "incomplete",
+   "scope": "Diabetic retinopathy (DR) and diabetic macular oedema (DME) in India: screening, grading, referral, follow-up, fitness for intervention and treatment at tertiary level, built on the ICMR Diabetic Retinopathy STW (July 2020).",
+   "findings": [
+    "Screening at diagnosis of diabetes and at least yearly, DR grades (no DR, mild, moderate and severe NPDR, PDR), DME grades, referral of moderate NPDR or worse and moderate DME or worse (any DR if seen by a non-ophthalmologist), urgent referral triggers, surgical indications, fitness thresholds (BP 150/90 mmHg or lower; fasting glucose below 140, post-prandial below 180 mg/dL) and pre-operative povidone-iodine preparation checked against the ICMR DR STW (July 2020).",
+    "Annual dilated fundoscopy from the ICMR Type 2 Diabetes STW.",
+    "Not clinically reviewed."
+   ],
+   "unverifiedSections": [
+    "Anti-VEGF drug doses, laser parameters and intravitreal steroid use are not in the ICMR workflow; treatment is specialist and not dosed here.",
+    "Screening intervals for type 1 diabetes and pregnancy are not in the opened workflow.",
+    "HbA1c and lipid targets are not in the DR workflow; see the Type 2 diabetes topic.",
+    "Drug cautions, contraindications and renal or hepatic adjustment lines without a source tag are general pharmacology statements and need formulary confirmation."
+   ],
+   "medscapeStatus": "unavailable",
+   "originalVersionIds": [
+    "3e37e6d9-41a8-5d75-b4b5-cf5a875e0bc3"
+   ]
+  },
+  "pathophysiology": {
+   "summary": "Diabetic retinopathy is a leading cause of preventable blindness in India, where diabetes is very common and often diagnosed late. Chronic hyperglycaemia damages retinal capillaries, causing microaneurysms, haemorrhages and leakage (non-proliferative DR), then capillary closure and ischaemia that drive new vessel growth (proliferative DR), with risk of vitreous haemorrhage and retinal detachment. Diabetic macular oedema can reduce vision at any stage. Vision is often normal until late, so every person with diabetes needs retinal screening at diagnosis and at least yearly (ICMR STW). Laser, intravitreal injections and vitreoretinal surgery at tertiary level prevent most severe vision loss if given in time.",
+   "keyMechanisms": [
+    "Hyperglycaemia damages pericytes and capillary endothelium.",
+    "Leaky capillaries and microaneurysms cause haemorrhages, exudates and macular oedema.",
+    "Capillary closure causes retinal ischaemia and VEGF release.",
+    "VEGF drives new fragile vessels that bleed and scar (proliferative DR)."
+   ]
+  },
+  "presentation": {
+   "symptoms": [
+    "Often none until advanced",
+    "Blurred or fluctuating vision",
+    "Floaters or sudden vision loss (vitreous haemorrhage)"
+   ],
+   "physicalSigns": [
+    "Microaneurysms, dot-blot haemorrhages",
+    "Hard exudates, cotton-wool spots",
+    "Venous beading, IRMA",
+    "New vessels at disc or elsewhere"
+   ],
+   "redFlags": [
+    "Vision loss (ICMR STW)",
+    "Hard exudates or haemorrhages near the macula (ICMR STW)",
+    "Non-dilating pupil, blurred disc margins, no fundal view, absent foveal reflex (ICMR STW)",
+    "Rubeosis iridis (ICMR STW)"
+   ],
+   "precipitants": [
+    "Long diabetes duration",
+    "Poor glucose and BP control",
+    "Pregnancy",
+    "Diabetic kidney disease"
+   ]
+  },
+  "differentials": [
+   {
+    "condition": "Hypertensive retinopathy",
+    "distinguishingFeatures": "Arteriolar narrowing, flame haemorrhages, disc swelling; high BP."
+   },
+   {
+    "condition": "Retinal vein occlusion",
+    "distinguishingFeatures": "Unilateral, sectoral haemorrhages."
+   },
+   {
+    "condition": "Cataract",
+    "distinguishingFeatures": "Blurred vision with lens opacity; normal fundus."
+   },
+   {
+    "condition": "Age-related macular degeneration",
+    "distinguishingFeatures": "Drusen; older age; no diabetic changes elsewhere."
+   }
+  ],
+  "diagnosticCriteria": [
+   {
+    "criterion": "Mild NPDR (ICMR Table 1)",
+    "threshold": "Microaneurysms only."
+   },
+   {
+    "criterion": "Moderate NPDR",
+    "threshold": "More than microaneurysms but less than severe NPDR."
+   },
+   {
+    "criterion": "Severe NPDR (ICMR Table 1)",
+    "threshold": "Intraretinal haemorrhages 20 or more in each quadrant, definite venous beading in 2 quadrants, or IRMA in 1 quadrant, without proliferative signs."
+   },
+   {
+    "criterion": "Proliferative DR",
+    "threshold": "Neovascularisation or vitreous or preretinal haemorrhage."
+   },
+   {
+    "criterion": "DME grades (ICMR Table 2)",
+    "threshold": "Mild: outside central subfield; moderate: within central subfield, not centre; severe: involving the centre."
+   }
+  ],
+  "investigations": {
+   "ruleIn": [
+    {
+     "tier": "specializedAdjunctive",
+     "testName": "Visual acuity",
+     "modalityTarget": "Snellen chart",
+     "targetCondition": "Visual impairment",
+     "normalValue": "6/6",
+     "expectedFinding": "Reduced acuity",
+     "clinicalRationale": "Vision loss needs urgent referral (ICMR STW).",
+     "references": [
+      {
+       "title": "Standard Treatment Workflow: Diabetic Retinopathy (ICMR / Department of Health Research)",
+       "edition": "ICMR STW, July 2020, section Preliminary screening",
+       "url": "https://icmr.gov.in/icmrobject/uploads/STWs/1726569102_diabetic_retinopathy.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "specializedAdjunctive",
+     "testName": "Dilated fundus examination or fundus photography",
+     "modalityTarget": "Ophthalmoscopy or fundus camera",
+     "targetCondition": "DR grade",
+     "normalValue": "No retinopathy",
+     "expectedFinding": "Microaneurysms, haemorrhages, exudates, new vessels",
+     "clinicalRationale": "Grade by ICMR Table 1 and refer moderate NPDR or worse.",
+     "references": [
+      {
+       "title": "Standard Treatment Workflow: Diabetic Retinopathy (ICMR / Department of Health Research)",
+       "edition": "ICMR STW, July 2020, Table 1",
+       "url": "https://icmr.gov.in/icmrobject/uploads/STWs/1726569102_diabetic_retinopathy.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "advancedImaging",
+     "testName": "Optical coherence tomography (OCT)",
+     "modalityTarget": "OCT macula",
+     "targetCondition": "Macular oedema",
+     "normalValue": "Normal central thickness",
+     "expectedFinding": "Retinal thickening involving the centre",
+     "clinicalRationale": "Grades DME (ICMR Table 2).",
+     "references": [
+      {
+       "title": "Standard Treatment Workflow: Diabetic Retinopathy (ICMR / Department of Health Research)",
+       "edition": "ICMR STW, July 2020, Table 2",
+       "url": "https://icmr.gov.in/icmrobject/uploads/STWs/1726569102_diabetic_retinopathy.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "HbA1c and blood glucose",
+     "modalityTarget": "Blood",
+     "targetCondition": "Glycaemic control",
+     "normalValue": "Fasting glucose below 140 mg/dL (fitness threshold)",
+     "expectedFinding": "Above fitness thresholds",
+     "clinicalRationale": "Fasting below 140, post-prandial below 180 or random below 200 mg/dL before surgery (ICMR STW).",
+     "references": [
+      {
+       "title": "Standard Treatment Workflow: Diabetic Retinopathy (ICMR / Department of Health Research)",
+       "edition": "ICMR STW, July 2020, section Fitness for surgery",
+       "url": "https://icmr.gov.in/icmrobject/uploads/STWs/1726569102_diabetic_retinopathy.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "specializedAdjunctive",
+     "testName": "Blood pressure",
+     "modalityTarget": "Sphygmomanometer",
+     "targetCondition": "Hypertension",
+     "normalValue": "150/90 mmHg or lower (fitness)",
+     "expectedFinding": "Above 150/90 mmHg",
+     "clinicalRationale": "Fitness for surgery threshold (ICMR STW).",
+     "references": [
+      {
+       "title": "Standard Treatment Workflow: Diabetic Retinopathy (ICMR / Department of Health Research)",
+       "edition": "ICMR STW, July 2020, section Fitness for surgery",
+       "url": "https://icmr.gov.in/icmrobject/uploads/STWs/1726569102_diabetic_retinopathy.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Urine albumin-creatinine ratio and creatinine",
+     "modalityTarget": "Urine and blood",
+     "targetCondition": "Diabetic kidney disease",
+     "normalValue": "UACR below 30 mg/g",
+     "expectedFinding": "UACR 30 mg/g or more",
+     "clinicalRationale": "Annual monitoring in diabetes (ICMR T2DM STW).",
+     "references": [
+      {
+       "title": "Standard Treatment Workflow: Diabetes Mellitus Type 2 (ICMR / Department of Health Research)",
+       "edition": "ICMR STW, July 2022, section Annual monitoring",
+       "url": "https://icmr.gov.in/icmrobject/uploads/STWs/1726567245_diabetes_mellitus_type_2.pdf"
+      }
+     ]
+    }
+   ],
+   "ruleOut": [
+    {
+     "tier": "advancedImaging",
+     "testName": "Fundus fluorescein angiography (specialist)",
+     "modalityTarget": "FFA",
+     "targetCondition": "Ischaemia, neovascularisation",
+     "normalValue": "Normal perfusion",
+     "expectedFinding": "Non-perfusion, leakage",
+     "clinicalRationale": "Specialist assessment at tertiary level.",
+     "references": [
+      {
+       "title": "Standard Treatment Workflow: Diabetic Retinopathy (ICMR / Department of Health Research)",
+       "edition": "ICMR STW, July 2020, section Management",
+       "url": "https://icmr.gov.in/icmrobject/uploads/STWs/1726569102_diabetic_retinopathy.pdf"
+      }
+     ]
+    }
+   ]
+  },
+  "clinicalManagement": [
+   {
+    "id": "screen",
+    "title": "Screen",
+    "timeframe": "At diabetes diagnosis, then at least yearly",
+    "actions": [
+     "Retinal screening when diabetes is detected (ICMR STW).",
+     "Repeat yearly, or more often by grade (ICMR STW)."
+    ]
+   },
+   {
+    "id": "refer",
+    "title": "Refer",
+    "timeframe": "By grade",
+    "actions": [
+     "Moderate NPDR or worse, or moderate DME or worse: retina specialist (ICMR STW).",
+     "Non-ophthalmologists refer any DR (ICMR STW).",
+     "Urgent: vision loss, macular exudates or haemorrhages, rubeosis, no fundal view (ICMR STW)."
+    ]
+   },
+   {
+    "id": "treat",
+    "title": "Treat at tertiary level",
+    "timeframe": "As indicated",
+    "actions": [
+     "Intravitreal injections, laser photocoagulation or vitreoretinal surgery at tertiary level (ICMR STW).",
+     "Surgery for sudden vision loss, clinically significant macular oedema, rubeosis or PDR (ICMR STW)."
+    ]
+   },
+   {
+    "id": "fit",
+    "title": "Prepare for intervention",
+    "timeframe": "Before procedure",
+    "actions": [
+     "BP 150/90 mmHg or lower; fasting glucose below 140, post-prandial below 180 mg/dL (ICMR STW).",
+     "Topical broad-spectrum antibiotic four times daily for 1–3 days; 10% povidone-iodine to the lids and 5% in the conjunctival sac (ICMR STW)."
+    ]
+   },
+   {
+    "id": "control",
+    "title": "Systemic control",
+    "timeframe": "Every visit",
+    "actions": [
+     "Optimise glucose, BP and lipids with the diabetes team (see Type 2 diabetes and Hypertension topics)."
+    ]
+   }
+  ],
+  "medicationPlan": {
+   "status": "no-drug-indicated",
+   "branches": [
+    {
+     "label": "Specialist treatment",
+     "entryCriteria": "Moderate NPDR or worse, or DME, managed by a retina specialist (no medicine dosed here)."
+    }
+   ],
+   "regimens": [],
+   "note": "No medicine is dosed in this topic: the ICMR workflow places intravitreal and laser treatment at tertiary level without doses. Systemic drugs for glucose and BP are in their own topics. India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
+  },
+  "teaching": {
+   "scope": "Diabetic retinopathy in India.",
+   "learningObjectives": [
+    "Screen everyone with diabetes.",
+    "Grade DR and DME.",
+    "Refer at the right time."
+   ],
+   "keyPoints": [
+    "Screen at diagnosis and yearly.",
+    "Refer moderate NPDR or worse, and moderate DME or worse.",
+    "Vision loss or rubeosis: urgent referral.",
+    "Control BP and glucose before surgery."
+   ],
+   "pitfalls": [
+    "Waiting for symptoms.",
+    "Undilated fundoscopy missing peripheral lesions.",
+    "Losing patients to follow-up after laser.",
+    "Ignoring kidney disease."
+   ],
+   "references": [
+    {
+     "title": "Standard Treatment Workflow: Diabetic Retinopathy (ICMR / Department of Health Research)",
+     "edition": "ICMR STW, July 2020",
+     "url": "https://icmr.gov.in/icmrobject/uploads/STWs/1726569102_diabetic_retinopathy.pdf",
+     "locator": "sections Preliminary screening, Definitive diagnosis, Management, Indication for surgery, Fitness for surgery, Surgical preparation, Indications for urgent referral; Tables 1 and 2"
+    },
+    {
+     "title": "Standard Treatment Workflow: Diabetes Mellitus Type 2 (ICMR / Department of Health Research)",
+     "edition": "ICMR STW, July 2022",
+     "url": "https://icmr.gov.in/icmrobject/uploads/STWs/1726567245_diabetes_mellitus_type_2.pdf",
+     "locator": "section Annual monitoring"
+    }
+   ]
+  },
+  "nonClinicalManagement": {
+   "patientEducation": [
+    "Have an eye check every year even with good vision.",
+    "Report sudden blurring, floaters or loss of vision at once."
+   ],
+   "lifestyleAndDiet": [
+    "Control sugar, BP and cholesterol.",
+    "Stop smoking."
+   ],
+   "mdtReferrals": [
+    "Retina specialist per ICMR grades",
+    "Diabetologist and physician"
+   ],
+   "dischargeCriteria": [
+    "Not applicable (outpatient)"
+   ],
+   "followUpPlan": "Yearly retinal review if no DR or no DME; more often by grade (ICMR STW)."
+  }
+ }
+]
