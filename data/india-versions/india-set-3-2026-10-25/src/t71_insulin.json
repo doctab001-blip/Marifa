@@ -17,11 +17,12 @@
     "Insulin for HbA1c above 10% added to oral agents, targets (HbA1c 7% or below; pre-meal 80–130 mg/dL; post-meal below 180 mg/dL), and monitoring checked against the ICMR Type 2 Diabetes STW (July 2022).",
     "Total daily dose 0.25–1.0 U/kg, 40–50% basal and 50% bolus in 3 doses, hypoglycaemia with 3 teaspoons glucose, glucagon 1 mg SC/IM, 25% dextrose 1–2 mL/kg, sick-day extra regular insulin 10–15% of total daily dose every 6 hours and admission criteria checked against the ICMR Type 1 Diabetes STW (July 2022).",
     "Basal start 0.1–0.2 U/kg/day, insulin when HbA1c above 10% or glucose 300 mg/dL or more, prandial start 4 units or 10% of basal at the largest meal, premixed twice daily option, overbasalisation signs and glucagon for everyone on insulin checked against the ADA Standards of Care 2025 section 9.",
+    "Self-titration of basal insulin by 2 units every 3 days, overbasalisation above 0.5 U/kg, prandial start of 4 units or 10% of basal with basal reduction by 4 units or 10% when HbA1c is below 8%, and prandial reduction of 10–20% for hypoglycaemia checked against the ADA Overcoming Therapeutic Inertia titration guide (2024 Standards).",
     "Not clinically reviewed."
    ],
    "unverifiedSections": [
     "The ICMR Type 2 STW gives no insulin doses or titration; these come from ADA 2025.",
-    "A fixed titration rule (for example 2 units every 3 days) is not stated in the opened ADA text; titration to fasting glucose target is described generally.",
+    "The 2-units-every-3-days titration rule and the overbasalisation threshold (above 0.5 U/kg) are from the ADA Overcoming Therapeutic Inertia guide based on the 2024 Standards.",
     "Insulin storage and injection-technique advice is general practice.",
     "Drug cautions, contraindications and renal or hepatic adjustment lines without a source tag are general pharmacology statements and need formulary confirmation."
    ],
@@ -31,7 +32,7 @@
    ]
   },
   "pathophysiology": {
-   "summary": "Many Indians with type 2 diabetes need insulin, often late because of fear and cost. The ICMR workflow adds basal insulin when HbA1c is above 10% despite oral drugs; ADA 2025 also advises insulin at any stage for symptomatic hyperglycaemia, catabolic features or glucose 300 mg/dL or more. Basal insulin (NPH or glargine) is started at bedtime at 0.1–0.2 U/kg and titrated to fasting glucose; prandial insulin or twice-daily premixed insulin is added when fasting glucose is controlled but HbA1c remains high. Type 1 diabetes needs basal-bolus insulin from diagnosis. Every person on insulin needs self-monitoring, hypoglycaemia education, glucagon where available and sick-day rules.",
+   "summary": "Many Indians with type 2 diabetes need insulin, often late because of fear and cost. The ICMR workflow adds basal insulin when HbA1c is above 10% despite oral drugs; ADA 2025 also advises insulin at any stage for symptomatic hyperglycaemia, catabolic features or glucose 300 mg/dL or more. Basal insulin (NPH or glargine) is started at bedtime at 0.1–0.2 U/kg and titrated to fasting glucose; prandial insulin or twice-daily premixed insulin is added when fasting glucose is controlled but HbA1c remains high. Type 1 diabetes needs basal-bolus insulin from diagnosis. Every person on insulin needs self-monitoring, hypoglycaemia education, glucagon where available and sick-day rules. A practical rule makes self-titration safe: adjust basal insulin by 2 units every 3 days towards the fasting target, and stop escalating once the dose passes about 0.5 units/kg without control.",
    "keyMechanisms": [
     "Type 2 diabetes progresses with declining beta-cell function, so many eventually need insulin.",
     "Basal insulin suppresses hepatic glucose output overnight and between meals.",
@@ -42,11 +43,15 @@
   "presentation": {
    "symptoms": [
     "Polyuria, thirst, weight loss despite treatment",
-    "Hypoglycaemia symptoms: sweating, tremor, confusion"
+    "Hypoglycaemia symptoms: sweating, tremor, confusion",
+    "Blurred vision, recurrent infections (genital candidiasis, skin)",
+    "Nocturnal sweating or morning headache (nocturnal hypoglycaemia)"
    ],
    "physicalSigns": [
     "Weight loss",
-    "Lipohypertrophy at injection sites"
+    "Lipohypertrophy at injection sites",
+    "Low BMI or rapid weight loss despite treatment (insulin deficiency)",
+    "Acanthosis nigricans (insulin resistance)"
    ],
    "redFlags": [
     "Glucose 300 mg/dL or more or HbA1c above 10% with symptoms: start insulin (ADA 2025)",
@@ -62,16 +67,28 @@
   },
   "differentials": [
    {
-    "condition": "Latent autoimmune diabetes in adults",
-    "distinguishingFeatures": "Lean adult, rapid failure of oral drugs; needs insulin."
+    "condition": "Latent autoimmune diabetes in adults (LADA)",
+    "distinguishingFeatures": "Lean adult whose oral drugs fail within months; GAD antibodies positive and C-peptide low — needs insulin early."
    },
    {
     "condition": "Pancreatic (fibrocalculous) diabetes",
-    "distinguishingFeatures": "Common in parts of India; pancreatic calcification."
+    "distinguishingFeatures": "Common in parts of India: young, lean, recurrent abdominal pain and steatorrhoea; pancreatic calcification on X-ray or ultrasound; needs insulin and enzymes."
    },
    {
     "condition": "Steroid-induced hyperglycaemia",
-    "distinguishingFeatures": "Afternoon and evening rise."
+    "distinguishingFeatures": "Afternoon and evening glucose rise on prednisolone or dexamethasone with near-normal fasting values; morning NPH or prandial insulin fits the pattern."
+   },
+   {
+    "condition": "Type 1 diabetes presenting in adulthood",
+    "distinguishingFeatures": "Weight loss, ketones and low C-peptide; needs basal-bolus insulin from diagnosis, never oral drugs alone."
+   },
+   {
+    "condition": "Overbasalisation rather than true insulin resistance",
+    "distinguishingFeatures": "Basal dose above 0.5 U/kg, bedtime-to-morning glucose fall of 50 mg/dL or more, or hypoglycaemia; add prandial insulin instead of more basal."
+   },
+   {
+    "condition": "Somogyi or dawn phenomenon",
+    "distinguishingFeatures": "High fasting glucose explained by a 2–3 am check: low at night (too much evening insulin) or normal at night with a dawn rise."
    }
   ],
   "diagnosticCriteria": [
@@ -117,7 +134,7 @@
      "targetCondition": "Titration",
      "normalValue": "Fasting 80–130 mg/dL",
      "expectedFinding": "Above target or below 70 mg/dL",
-     "clinicalRationale": "Before meals and bedtime; occasional 2 am check (ICMR T1DM).",
+     "clinicalRationale": "Before meals and bedtime; occasional check between midnight and 2 am (ICMR T1DM).",
      "references": [
       {
        "title": "Standard Treatment Workflow: Type 1 Diabetes Mellitus (ICMR / Department of Health Research)",
@@ -144,12 +161,12 @@
     },
     {
      "tier": "laboratory",
-     "testName": "Serum creatinine and eGFR",
-     "modalityTarget": "Blood",
-     "targetCondition": "Renal function (insulin and drug clearance)",
-     "normalValue": "eGFR 90 or more",
-     "expectedFinding": "Reduced eGFR: lower insulin needs",
-     "clinicalRationale": "Annual (ICMR T2DM).",
+     "testName": "Urine albumin-creatinine ratio and serum creatinine",
+     "modalityTarget": "Urine and blood",
+     "targetCondition": "Kidney disease (insulin needs fall)",
+     "normalValue": "ACR below 30 mg/g; normal creatinine",
+     "expectedFinding": "Raised ACR or creatinine: lower insulin needs",
+     "clinicalRationale": "ACR yearly (ICMR T2DM); creatinine at baseline and as needed.",
      "references": [
       {
        "title": "Standard Treatment Workflow: Diabetes Mellitus Type 2 (ICMR / Department of Health Research)",
@@ -178,16 +195,16 @@
    "ruleOut": [
     {
      "tier": "laboratory",
-     "testName": "C-peptide and GAD antibodies (if type unclear)",
+     "testName": "TSH and tissue transglutaminase (tTG) antibody in type 1 diabetes",
      "modalityTarget": "Blood",
-     "targetCondition": "Type 1 vs type 2",
-     "normalValue": "C-peptide preserved; antibodies negative",
-     "expectedFinding": "Low C-peptide; antibodies positive",
-     "clinicalRationale": "Atypical cases.",
+     "targetCondition": "Associated autoimmune thyroid and coeliac disease",
+     "normalValue": "TSH 0.4–4.0 mIU/L; tTG negative",
+     "expectedFinding": "Raised TSH; positive tTG",
+     "clinicalRationale": "Unexplained hypoglycaemia or poor control may reflect these (ICMR T1DM labs).",
      "references": [
       {
        "title": "Standard Treatment Workflow: Type 1 Diabetes Mellitus (ICMR / Department of Health Research)",
-       "edition": "ICMR STW, July 2022, section Diagnosis",
+       "edition": "ICMR STW, July 2022, section Monitoring",
        "url": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1726567249_diabetes_mellitus_type_1.pdf"
       }
      ]
@@ -210,8 +227,9 @@
     "title": "Titrate",
     "timeframe": "Every few days",
     "actions": [
-     "Adjust basal dose to fasting glucose 80–130 mg/dL (ICMR T2DM; ADA 2025).",
-     "Reduce for any hypoglycaemia; watch for overbasalisation (ADA 2025)."
+     "Patient adjusts basal dose by 2 units every 3 days until fasting glucose reaches target (80–130 mg/dL) (ADA guide; ICMR T2DM).",
+     "Any hypoglycaemia: find the cause and lower the dose (ADA guide).",
+     "Basal above 0.5 U/kg without control, or bedtime-to-morning fall 50 mg/dL or more: stop escalating basal (ADA 2025; ADA guide)."
     ]
    },
    {
@@ -221,6 +239,15 @@
     "actions": [
      "Add prandial insulin 4 units or 10% of basal before the largest meal (ADA 2025).",
      "Or switch to premixed insulin twice daily (ADA 2025)."
+    ]
+   },
+   {
+    "id": "prandial-adjust",
+    "title": "Adjust prandial insulin",
+    "timeframe": "Every few days",
+    "actions": [
+     "Titrate prandial dose by post-meal readings (no step size stated in the opened sources); if HbA1c below 8% when adding prandial, reduce basal by 4 units or 10% (ADA guide).",
+     "Hypoglycaemia on prandial insulin: reduce that dose by 10–20% (ADA guide)."
     ]
    },
    {
@@ -260,6 +287,10 @@
     {
      "label": "Severe hypoglycaemia",
      "entryCriteria": "Unable to take oral glucose, seizure or coma."
+    },
+    {
+     "label": "Mild to moderate hypoglycaemia",
+     "entryCriteria": "Glucose below 70 mg/dL, able to swallow."
     }
    ],
    "regimens": [
@@ -327,7 +358,7 @@
      "genericName": "Regular (soluble) insulin",
      "dose": "4 units or 10% of basal dose before the largest meal",
      "route": "SC",
-     "frequency": "30 minutes before the meal",
+     "frequency": "Before the meal",
      "duration": "Long term; titrate",
      "adjustments": [
       "Paediatric: Adult topic; paediatric use is outside the scope of the cited sources.",
@@ -350,21 +381,22 @@
      "preferred": true
     },
     {
-     "indication": "HbA1c above goal on basal",
+     "indication": "HbA1c above goal on basal, or first insulin when two injections suit the patient",
      "patientGroup": "Adults",
      "genericName": "Premixed insulin (human NPH/regular 30/70)",
-     "dose": "Convert to two daily doses",
+     "dose": "Insulin-naive: 10 units or 0.1–0.2 U/kg/day before the largest (usually evening) meal; when above 20–30 units/day split about two-thirds before breakfast and one-third before dinner",
      "route": "SC",
-     "frequency": "Twice daily before breakfast and dinner",
-     "duration": "Long term",
+     "frequency": "Once daily, then twice daily",
+     "duration": "Long term; titrate once or twice weekly",
      "adjustments": [
       "Paediatric: Adult topic; paediatric use is outside the scope of the cited sources.",
       "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
       "CKD: Lower doses in reduced eGFR.",
-      "CLD: Lower doses in liver failure."
+      "CLD: Lower doses in liver failure.",
+      "Lower starting doses may suit lean Asian patients (Kalra 2018)."
      ],
      "monitoring": [
-      "Pre-meal SMBG"
+      "Fasting and pre-dinner SMBG"
      ],
      "contraindications": [
       "Irregular meals"
@@ -372,11 +404,11 @@
      "branch": "Prandial insulin",
      "step": "Prandial insulin",
      "selection": "one-of",
-     "sourceTitle": "9. Pharmacologic Approaches to Glycemic Treatment: Standards of Care in Diabetes (American Diabetes Association)",
-     "sourceUrl": "https://diabetesjournals.org/care/article/48/Supplement_1/S181/157569/9-Pharmacologic-Approaches-to-Glycemic-Treatment",
-     "sourceEdition": "Diabetes Care 2025;48(Suppl 1):S181, section Insulin therapy, Figure 9.4",
+     "sourceTitle": "Expert opinion: patient selection for premixed insulin formulations in diabetes care (Kalra S, Czupryniak L, et al.)",
+     "sourceUrl": "https://link.springer.com/article/10.1007/s13300-018-0521-2",
+     "sourceEdition": "Diabetes Ther 2018;9(6):2185-2199, section Initiation of premixed insulin",
      "preferred": false,
-     "useWhen": "Multiple daily injections not feasible (ADA 2025)."
+     "useWhen": "Multiple daily injections not feasible; two injections fit the patient's routine (ADA 2025; Kalra 2018)."
     },
     {
      "indication": "Type 1 diabetes",
@@ -411,12 +443,12 @@
      "indication": "Severe hypoglycaemia",
      "patientGroup": "Children and adults",
      "genericName": "Glucagon",
-     "dose": "1 mg",
+     "dose": "1 mg (adults and children 20 kg or more); 0.5 mg under 20 kg",
      "route": "SC or IM",
-     "frequency": "Once",
+     "frequency": "Once; repeat once after 15 minutes if no response",
      "duration": "Single dose, then hospital",
      "adjustments": [
-      "Paediatric: Same 1 mg dose given by caregiver in the ICMR T1DM workflow.",
+      "Paediatric: Children under 20 kg: 0.5 mg (label); the ICMR T1DM workflow gives 1 mg for caregivers.",
       "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
       "CKD: No adjustment.",
       "CLD: Less effective in liver failure (low glycogen).",
@@ -430,6 +462,60 @@
      ],
      "branch": "Severe hypoglycaemia",
      "step": "Glucagon",
+     "selection": "all",
+     "sourceTitle": "Glucagon for injection, US prescribing information (Amphastar; Drugs.com copy)",
+     "sourceUrl": "https://www.drugs.com/pro/glucagon.html",
+     "sourceEdition": "Current label, section Dosage and administration"
+    },
+    {
+     "indication": "Glucose below 70 mg/dL, conscious",
+     "patientGroup": "Children and adults",
+     "genericName": "Glucose powder (or table sugar)",
+     "dose": "3 teaspoons",
+     "route": "Oral, in water",
+     "frequency": "Once; recheck glucose and repeat if still low",
+     "duration": "Until glucose above 70 mg/dL, then a snack",
+     "adjustments": [
+      "Paediatric: Same 3 teaspoons in the ICMR T1DM workflow.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Glucose after 15 minutes"
+     ],
+     "contraindications": [
+      "Unable to swallow safely (use glucagon or IV dextrose)"
+     ],
+     "branch": "Mild to moderate hypoglycaemia",
+     "step": "Oral glucose",
+     "selection": "all",
+     "sourceTitle": "Standard Treatment Workflow: Type 1 Diabetes Mellitus (ICMR / Department of Health Research)",
+     "sourceUrl": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1726567249_diabetes_mellitus_type_1.pdf",
+     "sourceEdition": "ICMR STW, July 2022, section Hypoglycaemia"
+    },
+    {
+     "indication": "Severe hypoglycaemia in hospital",
+     "patientGroup": "Children and adults",
+     "genericName": "Dextrose 25%",
+     "dose": "1–2 mL/kg",
+     "route": "IV",
+     "frequency": "Once, then infusion if needed",
+     "duration": "Until glucose stable",
+     "adjustments": [
+      "Paediatric: Same per-kg dose in the ICMR T1DM workflow.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Glucose every 15–30 minutes"
+     ],
+     "contraindications": [
+      "Extravasation risk: large vein"
+     ],
+     "branch": "Severe hypoglycaemia",
+     "step": "IV glucose",
      "selection": "all",
      "sourceTitle": "Standard Treatment Workflow: Type 1 Diabetes Mellitus (ICMR / Department of Health Research)",
      "sourceUrl": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1726567249_diabetes_mellitus_type_1.pdf",
@@ -449,7 +535,9 @@
     "Basal 0.1–0.2 U/kg at bedtime; keep metformin.",
     "Add 4 units prandial at the largest meal.",
     "Hypoglycaemia: 3 teaspoons glucose; severe: glucagon 1 mg.",
-    "Type 1: 0.25–1.0 U/kg/day, half basal."
+    "Type 1: 0.25–1.0 U/kg/day, half basal.",
+    "Self-titrate basal by 2 units every 3 days to the fasting target.",
+    "Basal above 0.5 U/kg without control: add prandial insulin, do not keep increasing basal."
    ],
    "pitfalls": [
     "Delaying insulin for years.",
@@ -475,6 +563,170 @@
      "edition": "Diabetes Care 2025;48(Suppl 1):S181",
      "url": "https://diabetesjournals.org/care/article/48/Supplement_1/S181/157569/9-Pharmacologic-Approaches-to-Glycemic-Treatment",
      "locator": "section Insulin therapy, Figure 9.4"
+    },
+    {
+     "title": "Insulin intensification in type 2 diabetes: titrate basal insulin (American Diabetes Association, Overcoming Therapeutic Inertia)",
+     "edition": "ADA, based on Standards of Care 2024",
+     "url": "https://professional.diabetes.org/sites/dpro/files/2024-05/oti-insulin-intensification-type-2-diabetes-titrate-basal-insulin_hcp.pdf",
+     "locator": "sections Titrate basal insulin, Overbasalization, Add prandial insulin"
+    },
+    {
+     "title": "Insulin initiation in type 2 diabetes (American Diabetes Association, Overcoming Therapeutic Inertia)",
+     "edition": "ADA, based on Standards of Care 2024",
+     "url": "https://professional.diabetes.org/sites/dpro/files/2024-05/oti-insulin-initiation-type-2-diabetes_hcp.pdf",
+     "locator": "sections Starting dose, Hypoglycemia"
+    },
+    {
+     "title": "Expert opinion: patient selection for premixed insulin formulations in diabetes care (Kalra S, Czupryniak L, et al.)",
+     "edition": "Diabetes Ther 2018;9(6):2185-2199",
+     "url": "https://link.springer.com/article/10.1007/s13300-018-0521-2",
+     "locator": "section Initiation of premixed insulin"
+    },
+    {
+     "title": "Glucagon for injection, US prescribing information (Amphastar; Drugs.com copy)",
+     "edition": "Current label",
+     "url": "https://www.drugs.com/pro/glucagon.html",
+     "locator": "section Dosage and administration"
+    }
+   ],
+   "vignette": {
+    "text": "Mrs S, a 54-year-old school teacher from Chennai with type 2 diabetes for 11 years, takes metformin 1 g twice daily and glimepiride 4 mg daily. She has lost 4 kg in 3 months, has nocturia, and her HbA1c is 10.8% with fasting glucose 238 mg/dL. Weight is 68 kg, eGFR 72 mL/min/1.73 m². She is afraid that insulin means 'the last stage' and that injections will hurt.",
+    "fictitious": true
+   },
+   "guidedApproach": [
+    {
+     "title": "Why most people with type 2 diabetes eventually need insulin",
+     "prompt": "Is needing insulin a failure?",
+     "guidance": "Type 2 diabetes is a progressive loss of beta-cell function on a background of insulin resistance. Oral drugs and lifestyle changes work while enough beta-cell function remains, but over a decade many people — and in India, often earlier and at a lower body weight — no longer make enough insulin. Weight loss, rising glucose despite good adherence and catabolic features are signs of insulin deficiency, not of poor effort. Basal insulin replaces the background insulin that suppresses glucose production from the liver overnight and between meals, which is why it lowers fasting glucose so effectively. Prandial insulin covers the glucose rise after meals. Explaining this removes the stigma that insulin is a punishment or the 'last stage'.",
+     "section": "pathophysiology"
+    },
+    {
+     "title": "Recognising when insulin is needed — and when it is too much",
+     "prompt": "Which features tell you to start, and which tell you to stop escalating?",
+     "guidance": "Start insulin when HbA1c is above 10%, glucose is 300 mg/dL or more, or the patient has symptoms such as weight loss, polyuria and thirst (ADA 2025; ICMR uses HbA1c above 10%). Look for type 1 diabetes or LADA in lean adults whose oral drugs fail early, and for fibrocalculous pancreatic diabetes in young lean patients with abdominal pain. Once on insulin, watch for overbasalisation: a basal dose above about 0.5 units/kg, a fall of 50 mg/dL or more from bedtime to morning, hypoglycaemia, or widely swinging readings. These mean the patient needs prandial cover, not more basal insulin. Night sweats, nightmares and morning headaches suggest nocturnal hypoglycaemia; a check between midnight and 2 am confirms it.",
+     "section": "signs-symptoms"
+    },
+    {
+     "title": "Monitoring that makes titration safe",
+     "prompt": "What does the patient need to measure?",
+     "guidance": "Self-monitoring of blood glucose is what makes insulin safe. During basal titration the key reading is the fasting glucose each morning; when prandial insulin is added, readings 2 hours after meals guide those doses. People with type 1 diabetes test before each meal and at bedtime, with an occasional check between midnight and 2 am. HbA1c every 3 months shows whether the overall plan is working. Check ketones when glucose is above 250 mg/dL during illness. Annual creatinine and eGFR matter because insulin needs fall as kidney function declines, and the injection sites should be examined at every visit for lipohypertrophy, which causes erratic absorption.",
+     "section": "investigations"
+    },
+    {
+     "title": "A stepwise insulin plan",
+     "prompt": "How do you start, titrate and intensify?",
+     "guidance": "Keep metformin and other non-insulin drugs unless contraindicated, and reduce or stop the sulfonylurea when prandial insulin is added. Start basal insulin at 0.1–0.2 units/kg at bedtime — NPH is cheaper, glargine causes less nocturnal hypoglycaemia. Teach the patient to raise the dose by 2 units every 3 days until fasting glucose reaches 80–130 mg/dL, and to lower it after any hypoglycaemia. When fasting glucose is at target but HbA1c is still high, or the basal dose exceeds about 0.5 units/kg, add 4 units (or 10% of the basal dose) of prandial insulin before the largest meal, or switch to premixed insulin twice daily. Every patient on insulin needs a hypoglycaemia plan: 3 teaspoons of glucose for mild episodes, glucagon 1 mg for severe ones, and sick-day rules.",
+     "section": "management"
+    }
+   ],
+   "boardQuestions": [
+    {
+     "id": "q1",
+     "vignette": "A 54-year-old school teacher with type 2 diabetes for 11 years takes metformin 1 g twice daily and glimepiride 4 mg daily with good adherence. HbA1c is 10.8%, fasting glucose 238 mg/dL, and she has lost 4 kg in 3 months with nocturia. Weight is 68 kg and eGFR 72 mL/min/1.73 m².",
+     "fictitious": true,
+     "question": "What is the best next step?",
+     "options": [
+      {
+       "id": "A",
+       "text": "Add a third oral drug and review in 6 months",
+       "explanation": "Weight loss with HbA1c above 10% indicates insulin deficiency; insulin is recommended (ADA 2025; ICMR)."
+      },
+      {
+       "id": "B",
+       "text": "Start basal insulin about 7–14 units at bedtime and continue metformin",
+       "explanation": "Correct. 0.1–0.2 U/kg for 68 kg is about 7–14 units; keep metformin (ADA 2025)."
+      },
+      {
+       "id": "C",
+       "text": "Stop all oral drugs and start basal-bolus insulin 1 U/kg/day",
+       "explanation": "Too much, too fast: basal insulin is started first and metformin continued."
+      },
+      {
+       "id": "D",
+       "text": "Start premixed insulin 30 units twice daily",
+       "explanation": "An unnecessarily high starting dose with high hypoglycaemia risk."
+      },
+      {
+       "id": "E",
+       "text": "Increase glimepiride to 8 mg",
+       "explanation": "Higher sulfonylurea doses add little and raise hypoglycaemia risk when beta-cell function is failing."
+      }
+     ],
+     "answer": "B",
+     "educationalObjective": "Recognise the indication for insulin and choose a safe starting dose.",
+     "keyPoint": "Start basal 0.1–0.2 U/kg at bedtime; keep metformin."
+    },
+    {
+     "id": "q2",
+     "vignette": "A 60-year-old man on glargine has titrated to 52 units daily (weight 80 kg). Fasting glucose is 110–125 mg/dL, but HbA1c is 8.9% and he has had two episodes of hypoglycaemia at 3 am. Bedtime glucose is around 220 mg/dL.",
+     "fictitious": true,
+     "question": "What is the most appropriate change?",
+     "options": [
+      {
+       "id": "A",
+       "text": "Increase glargine by 4 units",
+       "explanation": "He is overbasalised; more basal insulin increases nocturnal hypoglycaemia."
+      },
+      {
+       "id": "B",
+       "text": "Switch glargine to NPH at the same dose",
+       "explanation": "NPH increases nocturnal hypoglycaemia risk and does not address post-meal glucose."
+      },
+      {
+       "id": "C",
+       "text": "Add glimepiride",
+       "explanation": "A sulfonylurea adds hypoglycaemia risk and does not target the problem."
+      },
+      {
+       "id": "D",
+       "text": "Reduce glargine and add prandial insulin before the largest meal",
+       "explanation": "Correct. Basal above 0.5 U/kg (52 units for 80 kg = 0.65 U/kg), a large bedtime-to-morning fall and nocturnal hypoglycaemia signal overbasalisation; add prandial cover (ADA guide)."
+      },
+      {
+       "id": "E",
+       "text": "No change because fasting glucose is at target",
+       "explanation": "HbA1c above goal with nocturnal hypoglycaemia needs a change."
+      }
+     ],
+     "answer": "D",
+     "educationalObjective": "Recognise overbasalisation and intensify with prandial insulin.",
+     "keyPoint": "Basal above 0.5 U/kg with hypoglycaemia or large overnight fall: add prandial insulin, not more basal."
+    },
+    {
+     "id": "q3",
+     "vignette": "A 19-year-old college student with type 1 diabetes on basal-bolus insulin (total 48 units a day) phones the clinic. He has fever and has vomited twice since morning. His glucose is 310 mg/dL and urine ketones are moderate. He can still drink fluids and asks whether he should skip insulin because he cannot eat.",
+     "fictitious": true,
+     "question": "What is the correct advice?",
+     "options": [
+      {
+       "id": "A",
+       "text": "Stop all insulin until he can eat",
+       "explanation": "Stopping insulin precipitates diabetic ketoacidosis (DKA); insulin is never stopped on sick days (ICMR T1DM)."
+      },
+      {
+       "id": "B",
+       "text": "Continue usual insulin and add regular insulin 10–15% of the total daily dose every 6 hours, with fluids and glucose checks; come in if vomiting persists or ketones rise",
+       "explanation": "Correct. These are the ICMR T1DM sick-day rules with admission criteria."
+      },
+      {
+       "id": "C",
+       "text": "Take only basal insulin and no extra",
+       "explanation": "Basal alone is not enough; he needs extra insulin to clear the ketones."
+      },
+      {
+       "id": "D",
+       "text": "Halve all insulin doses",
+       "explanation": "Illness raises insulin needs; halving doses risks DKA."
+      },
+      {
+       "id": "E",
+       "text": "Take oral glucose only",
+       "explanation": "His glucose is already high; he needs insulin, fluids and close monitoring, not extra glucose."
+      }
+     ],
+     "answer": "B",
+     "educationalObjective": "Apply sick-day rules in type 1 diabetes.",
+     "keyPoint": "Never stop insulin when ill; give extra 10–15% of TDD every 6 hours and admit if not settling."
     }
    ]
   },
@@ -496,7 +748,117 @@
     "Able to inject and test glucose",
     "Hypoglycaemia plan understood"
    ],
-   "followUpPlan": "Phone or clinic review within 1–2 weeks of starting; HbA1c every 3 months until stable (ICMR)."
-  }
+   "followUpPlan": "Phone or clinic review within 1–2 weeks of starting; HbA1c every 3 months until stable (ICMR T1DM; ICMR T2DM when uncontrolled)."
+  },
+  "algorithms": [
+   {
+    "id": "insulin-start-titrate",
+    "title": "Starting and intensifying insulin in type 2 diabetes",
+    "placement": "manage",
+    "nodes": [
+     {
+      "id": "start",
+      "kind": "start",
+      "text": "Type 2 diabetes above target on oral drugs",
+      "next": [
+       {
+        "to": "need"
+       }
+      ]
+     },
+     {
+      "id": "need",
+      "kind": "decision",
+      "text": "HbA1c above 10%, glucose 300 mg/dL or more, or symptoms or weight loss?",
+      "next": [
+       {
+        "to": "basal",
+        "label": "Yes"
+       },
+       {
+        "to": "oral",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "oral",
+      "kind": "outcome",
+      "text": "Intensify non-insulin therapy (consider GLP-1 receptor agonist); recheck in 3 months"
+     },
+     {
+      "id": "basal",
+      "kind": "action",
+      "text": "Basal insulin 10 units or 0.1–0.2 U/kg at bedtime; keep metformin; reduce the sulfonylurea if hypoglycaemia; teach SMBG",
+      "next": [
+       {
+        "to": "titrate"
+       }
+      ]
+     },
+     {
+      "id": "titrate",
+      "kind": "action",
+      "text": "Adjust by 2 units every 3 days to fasting 80–130 mg/dL",
+      "next": [
+       {
+        "to": "hypo"
+       }
+      ]
+     },
+     {
+      "id": "hypo",
+      "kind": "decision",
+      "text": "Hypoglycaemia?",
+      "next": [
+       {
+        "to": "reduce",
+        "label": "Yes"
+       },
+       {
+        "to": "fasting",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "reduce",
+      "kind": "outcome",
+      "text": "Find the cause; if none, lower the dose by 10–20% (ADA initiation guide) and continue titration; reduce any sulfonylurea"
+     },
+     {
+      "id": "fasting",
+      "kind": "decision",
+      "text": "Fasting at target but HbA1c still above goal, or basal above 0.5 U/kg?",
+      "next": [
+       {
+        "to": "prandial",
+        "label": "Yes"
+       },
+       {
+        "to": "continue",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "prandial",
+      "kind": "outcome",
+      "text": "Add prandial insulin 4 units or 10% of basal at the largest meal (reduce or stop the sulfonylurea), or switch to premixed twice daily"
+     },
+     {
+      "id": "continue",
+      "kind": "outcome",
+      "text": "Continue titration; HbA1c every 3 months until stable"
+     }
+    ],
+    "source": {
+     "title": "Insulin intensification in type 2 diabetes: titrate basal insulin (American Diabetes Association, Overcoming Therapeutic Inertia)",
+     "edition": "ADA, based on Standards of Care 2024",
+     "url": "https://professional.diabetes.org/sites/dpro/files/2024-05/oti-insulin-intensification-type-2-diabetes-titrate-basal-insulin_hcp.pdf",
+     "locator": "sections Titrate basal insulin, Add prandial insulin (start dose from ADA 2025 section 9; indication from ICMR T2DM)"
+    }
+   }
+  ]
  }
 ]

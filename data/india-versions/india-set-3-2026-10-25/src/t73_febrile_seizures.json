@@ -15,12 +15,13 @@
    "scope": "Febrile seizures in children aged 6–60 months in India: definitions, excluding meningitis, investigations, treatment of a seizure lasting more than 5 minutes, admission, intermittent and continuous prophylaxis, antipyretics and parent counselling, built on the IAP Tamil Nadu State Chapter COPP module on febrile seizures (2017).",
    "findings": [
     "Definitions (simple, complex, febrile status above 30 minutes), recurrence risk factors, lumbar puncture indications (under 6 months; 6–12 months if Hib or pneumococcal vaccination incomplete; meningitis signs; prior antibiotics), limited role of EEG and imaging, acute benzodiazepine doses (diazepam 0.3–0.5 mg/kg IV, lorazepam 0.1 mg/kg, midazolam 0.2 mg/kg, rectal diazepam 0.5 mg/kg), admission criteria, no benefit of antipyretics on recurrence, intermittent clobazam 0.3 mg/kg 12-hourly or diazepam 0.33 mg/kg 8-hourly for 24 hours from fever onset, continuous valproate 20–30 mg/kg/day or phenobarbitone 3–5 mg/kg/day for 2 years or to age 6, checked against the IAP COPP module (2017).",
+    "Paracetamol 15 mg/kg (oral loading 20 mg/kg), maximum 90 mg/kg/day oral and 60 mg/kg/day IV (10–50 kg), checked against the Gloucestershire children's analgesia guideline (2020).",
     "Not clinically reviewed."
    ],
    "unverifiedSections": [
     "The source is a state-chapter IAP teaching module, not a national IAP guideline.",
-    "Paracetamol dose for comfort is not given in the module; the 15 mg/kg dose is from the Fever in Children (India) topic sources.",
-    "Buccal or intranasal midazolam is named without a dose.",
+    "Paracetamol for comfort is dosed from the Gloucestershire children's analgesia guideline because the IAP module gives no dose.",
+    "Buccal or intranasal midazolam dose and maximum benzodiazepine doses are taken from the IAP Standard Treatment Guidelines on status epilepticus (2022), because the COPP module names these routes without a dose.",
     "Drug cautions, contraindications and renal or hepatic adjustment lines without a source tag are general pharmacology statements and need formulary confirmation."
    ],
    "medscapeStatus": "unavailable",
@@ -29,7 +30,7 @@
    ]
   },
   "pathophysiology": {
-   "summary": "Febrile seizures are the commonest seizures in childhood, affecting children aged 6 months to 5 years with fever but no brain infection or metabolic cause. Most are simple — generalised, under 15 minutes and not repeated within 24 hours — and carry an excellent prognosis with only about 1% later epilepsy risk. The key clinical task is to exclude meningitis, especially in infants and under-immunised children. Seizures over 5 minutes are treated with a benzodiazepine. Antipyretics do not prevent recurrence. Intermittent clobazam during fevers is reserved for frequent or complex seizures, and continuous drugs are rarely needed. Calm, clear counselling of parents is central.",
+   "summary": "Febrile seizures are the commonest seizures in childhood, affecting children aged 6 months to 5 years with fever but no brain infection or metabolic cause. Most are simple — generalised, under 15 minutes and not repeated within 24 hours — and carry an excellent prognosis with only about 1% later epilepsy risk. The key clinical task is to exclude meningitis, especially in infants and under-immunised children. Seizures over 5 minutes are treated with a benzodiazepine. Antipyretics do not prevent recurrence. Intermittent clobazam during fevers is reserved for frequent or complex seizures, and continuous drugs are rarely needed. Calm, clear counselling of parents is central. Recurrence occurs in about 30%, and is most likely when the first seizure happens before 1 year of age, with a short fever-to-seizure interval, at a low temperature, or with a family history.",
    "keyMechanisms": [
     "The immature brain has a lower seizure threshold with rapid temperature rise.",
     "Genetic predisposition: family history is a major risk factor.",
@@ -40,12 +41,16 @@
   "presentation": {
    "symptoms": [
     "Fever with a generalised tonic-clonic seizure",
-    "Drowsiness afterwards"
+    "Drowsiness afterwards",
+    "Fever for less than 24 hours before the seizure (a major recurrence risk factor) (IAP)",
+    "Brief post-ictal sleepiness with return to normal within an hour"
    ],
    "physicalSigns": [
     "Fever source (ear, throat, chest)",
     "Neck stiffness or bulging fontanelle (meningitis)",
-    "Focal deficit after seizure"
+    "Focal deficit after seizure",
+    "Temperature at presentation (a lower temperature at seizure onset predicts recurrence) (IAP)",
+    "Petechial or purpuric rash (meningococcal disease)"
    ],
    "redFlags": [
     "Age under 6 months (LP standard) (IAP)",
@@ -62,23 +67,27 @@
   "differentials": [
    {
     "condition": "Meningitis or encephalitis",
-    "distinguishingFeatures": "Neck stiffness, altered sensorium; CSF abnormal."
+    "distinguishingFeatures": "Neck stiffness, bulging fontanelle, persistent drowsiness or prolonged post-ictal state; lumbar puncture and CSF analysis settle it (IAP)."
    },
    {
     "condition": "Rigors",
-    "distinguishingFeatures": "Shivering without loss of consciousness."
+    "distinguishingFeatures": "Shivering and chattering with preserved consciousness and no post-ictal phase; observation of the episode settles it."
    },
    {
     "condition": "Febrile syncope",
-    "distinguishingFeatures": "Pallor and limpness without jerks."
+    "distinguishingFeatures": "Pallor and limpness with brief jerks after standing or a vasovagal trigger, rapid recovery; history and normal examination settle it."
    },
    {
     "condition": "Epilepsy triggered by fever",
-    "distinguishingFeatures": "Afebrile seizures as well."
+    "distinguishingFeatures": "Previous afebrile seizures, focal features or developmental delay; EEG and neurology review settle it (IAP)."
    },
    {
-    "condition": "Electrolyte disturbance",
-    "distinguishingFeatures": "Diarrhoea, abnormal sodium or calcium."
+    "condition": "Electrolyte disturbance or hypoglycaemia",
+    "distinguishingFeatures": "Diarrhoea, vomiting or poor intake with abnormal sodium, calcium or glucose; blood tests settle it (IAP)."
+   },
+   {
+    "condition": "Dravet syndrome or other genetic epilepsy",
+    "distinguishingFeatures": "Prolonged, focal or very frequent febrile seizures starting before 1 year; neurology review and genetic testing settle it."
    }
   ],
   "diagnosticCriteria": [
@@ -207,7 +216,8 @@
     "title": "During the seizure",
     "timeframe": "Immediately",
     "actions": [
-     "Protect airway; lateral position; prevent injury; IV access (IAP)."
+     "Protect the airway; turn the child on the side with head extended; prevent injury (IAP).",
+     "Time the seizure; secure IV access and check glucose if it continues (IAP)."
     ]
    },
    {
@@ -215,8 +225,8 @@
     "title": "Seizure over 5 minutes",
     "timeframe": "At 5 minutes",
     "actions": [
-     "IV diazepam, lorazepam or midazolam; rectal diazepam or buccal or intranasal midazolam without IV access (IAP).",
-     "Over 30 minutes: status epilepticus pathway (IAP)."
+     "IV midazolam 0.2 mg/kg (maximum 5 mg), diazepam 0.3–0.5 mg/kg (maximum 10 mg) or lorazepam 0.1 mg/kg (maximum 4 mg); without IV access, rectal diazepam 0.5 mg/kg or buccal or intranasal midazolam 0.1–0.2 mg/kg (IAP; IAP STG 2022).",
+     "Still seizing 5–10 minutes after the first dose: repeat once, then second-line drugs on the status epilepticus pathway (IAP STG 2022; see Status epilepticus in children)."
     ]
    },
    {
@@ -224,8 +234,17 @@
     "title": "Admit or discharge",
     "timeframe": "After seizure",
     "actions": [
-     "Admit complex seizures, CNS infection signs, need for LP, or no reliable family support (IAP).",
-     "First simple seizure over 18 months, stable, parents educated: home (IAP)."
+     "Admit complex seizures and any child with signs of CNS infection or needing a lumbar puncture (IAP).",
+     "First simple seizure over 18 months, stable, parents educated: home; IAP lists lack of reliable family support as a possible reason to admit (IAP)."
+    ]
+   },
+   {
+    "id": "fever",
+    "title": "Treat the fever source",
+    "timeframe": "Same visit",
+    "actions": [
+     "Find and treat the cause of fever (otitis, pneumonia, urinary infection, viral illness).",
+     "Paracetamol for comfort at 15 mg/kg; it does not prevent recurrence (IAP; Gloucestershire guideline)."
     ]
    },
    {
@@ -234,7 +253,7 @@
     "timeframe": "Selected children",
     "actions": [
      "Antipyretics do not prevent recurrence; use for comfort (IAP).",
-     "Intermittent clobazam for frequent or complex seizures or poor access to care (IAP).",
+     "Intermittent clobazam (or oral or rectal diazepam) for frequent seizures, a previous complex seizure, poor access to care or seizures with risk factors (IAP).",
      "Continuous prophylaxis rarely (IAP)."
     ]
    },
@@ -243,7 +262,8 @@
     "title": "Counsel parents",
     "timeframe": "Before discharge",
     "actions": [
-     "Benign nature, about 30% recurrence, low epilepsy risk; first aid; when to seek care (IAP)."
+     "Explain the benign nature, the about 30% recurrence risk and the low epilepsy risk (IAP).",
+     "Teach first aid and when to give rescue medicine or seek care; explain that fever medicine is for comfort only (IAP)."
     ]
    }
   ],
@@ -256,11 +276,15 @@
     },
     {
      "label": "Intermittent prophylaxis",
-     "entryCriteria": "Frequent (3 in 6 months or 4 in a year) or complex seizures, poor access to care."
+     "entryCriteria": "Frequent seizures (3 or more in 6 months or 4 or more in a year), previous complex seizure, poor access to care, or febrile seizures with risk factors (IAP)."
     },
     {
      "label": "Continuous prophylaxis",
      "entryCriteria": "Failure of intermittent therapy, recurrent complex seizures or other listed indications."
+    },
+    {
+     "label": "Comfort during fever",
+     "entryCriteria": "Febrile child who is uncomfortable."
     }
    ],
    "regimens": [
@@ -268,12 +292,12 @@
      "indication": "Febrile seizure over 5 minutes",
      "patientGroup": "Children 6–60 months",
      "genericName": "Midazolam",
-     "dose": "0.2 mg/kg",
-     "route": "IV, IM, buccal or intranasal",
-     "frequency": "Once; may repeat per status protocol",
+     "dose": "0.2 mg/kg (maximum 5 mg)",
+     "route": "IV (IM if no access)",
+     "frequency": "Once; repeat once after 5–10 minutes if still seizing",
      "duration": "Single dose",
      "adjustments": [
-      "Paediatric: This is the paediatric dose (IAP).",
+      "Paediatric: This is the paediatric dose (IAP COPP); maximum 5 mg per dose (IAP STG 2022).",
       "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
       "CKD: No adjustment for single dose.",
       "CLD: No adjustment for single dose."
@@ -293,15 +317,44 @@
      "preferred": true
     },
     {
+     "indication": "Febrile seizure over 5 minutes without IV access",
+     "patientGroup": "Children",
+     "genericName": "Midazolam (buccal, intranasal)",
+     "dose": "0.1–0.2 mg/kg (nasal spray 2 puffs per 5 kg)",
+     "route": "Buccal or intranasal",
+     "frequency": "Once; may repeat once",
+     "duration": "Single dose",
+     "adjustments": [
+      "Paediatric: This is the paediatric dose (IAP STG 2022).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment for a single dose.",
+      "CLD: No adjustment for a single dose."
+     ],
+     "monitoring": [
+      "Breathing, oxygen saturation"
+     ],
+     "contraindications": [
+      "Respiratory depression"
+     ],
+     "branch": "Seizure over 5 minutes",
+     "step": "Benzodiazepine",
+     "selection": "one-of",
+     "sourceTitle": "Evaluation and Management of Status Epilepticus in Children (IAP Standard Treatment Guidelines)",
+     "sourceUrl": "https://iapindia.org/pdf/Ch-040-evaluation-and-management-of-status-epilepticus-in-children.pdf",
+     "sourceEdition": "IAP STG 2022, section Prehospital management",
+     "preferred": false,
+     "useWhen": "No IV access, including at home."
+    },
+    {
      "indication": "Febrile seizure over 5 minutes",
      "patientGroup": "Children 6–60 months",
      "genericName": "Diazepam",
-     "dose": "0.3–0.5 mg/kg IV; rectal 0.5 mg/kg",
+     "dose": "IV 0.3–0.5 mg/kg (maximum 10 mg); rectal 0.5 mg/kg",
      "route": "IV or rectal",
-     "frequency": "Once; may repeat per status protocol",
+     "frequency": "Once; repeat once after 5–10 minutes if still seizing",
      "duration": "Single dose",
      "adjustments": [
-      "Paediatric: This is the paediatric dose (IAP).",
+      "Paediatric: This is the paediatric dose (IAP COPP); IV maximum 10 mg per dose (IAP STG 2022).",
       "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
       "CKD: No adjustment for single dose.",
       "CLD: No adjustment for single dose."
@@ -325,12 +378,12 @@
      "indication": "Febrile seizure over 5 minutes",
      "patientGroup": "Children 6–60 months",
      "genericName": "Lorazepam",
-     "dose": "0.1 mg/kg",
+     "dose": "0.1 mg/kg (maximum 4 mg)",
      "route": "IV",
-     "frequency": "Once",
+     "frequency": "Once; repeat once after 5–10 minutes if still seizing",
      "duration": "Single dose",
      "adjustments": [
-      "Paediatric: This is the paediatric dose (IAP).",
+      "Paediatric: This is the paediatric dose (IAP COPP); maximum 4 mg per dose (IAP STG 2022).",
       "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
       "CKD: No adjustment.",
       "CLD: No adjustment."
@@ -396,7 +449,7 @@
       "Sedation, ataxia"
      ],
      "contraindications": [
-      "Respiratory disease"
+      "Respiratory depression (general pharmacology)"
      ],
      "branch": "Intermittent prophylaxis",
      "step": "Benzodiazepine",
@@ -408,13 +461,42 @@
      "useWhen": "Clobazam unavailable."
     },
     {
+     "indication": "Indications for intermittent prophylaxis",
+     "patientGroup": "Children",
+     "genericName": "Diazepam (rectal)",
+     "dose": "0.4 mg/kg/dose",
+     "route": "Rectal",
+     "frequency": "At fever onset; repeat once if fever persists beyond 8 hours",
+     "duration": "Up to 24 hours from fever onset",
+     "adjustments": [
+      "Paediatric: This is the paediatric dose (IAP).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment.",
+      "CLD: Caution in liver disease."
+     ],
+     "monitoring": [
+      "Sedation, breathing"
+     ],
+     "contraindications": [
+      "Respiratory depression (general pharmacology)"
+     ],
+     "branch": "Intermittent prophylaxis",
+     "step": "Benzodiazepine",
+     "selection": "one-of",
+     "sourceTitle": "Febrile seizures: do I need to investigate? Role of anticonvulsants (IAP Tamil Nadu State Chapter, Common Office Practice Pediatric Problems module)",
+     "sourceUrl": "https://iapindia.org/pdf/Febrile-seizures-Do-I-need-to-investigate-Role-of-anticonvulsants.pdf",
+     "sourceEdition": "IAP COPP module, 2017, section Prophylactic AEDs",
+     "preferred": false,
+     "useWhen": "Oral medicine not possible."
+    },
+    {
      "indication": "Indications for continuous prophylaxis",
      "patientGroup": "Children 6–60 months",
      "genericName": "Sodium valproate",
      "dose": "20–30 mg/kg/day in 2–3 doses",
      "route": "Oral",
      "frequency": "2–3 times daily",
-     "duration": "At least 2 years or until age 6",
+     "duration": "At least 2 years or until age 6, whichever is earlier (IAP)",
      "adjustments": [
       "Paediatric: This is the paediatric dose (IAP).",
       "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
@@ -425,7 +507,7 @@
       "Liver function, platelets"
      ],
      "contraindications": [
-      "Children under 2 years with metabolic disease (hepatotoxicity risk)"
+      "Suspected metabolic or mitochondrial disease, especially under 2 years (hepatotoxicity; general pharmacology)"
      ],
      "branch": "Continuous prophylaxis",
      "step": "Antiseizure medicine",
@@ -442,7 +524,7 @@
      "dose": "3–5 mg/kg/day in 1–2 doses",
      "route": "Oral",
      "frequency": "Once or twice daily",
-     "duration": "At least 2 years or until age 6",
+     "duration": "At least 2 years or until age 6, whichever is earlier (IAP)",
      "adjustments": [
       "Paediatric: This is the paediatric dose (IAP).",
       "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
@@ -463,22 +545,52 @@
      "sourceEdition": "IAP COPP module, 2017, section Prophylactic AEDs",
      "preferred": false,
      "useWhen": "Valproate unsuitable."
+    },
+    {
+     "indication": "Discomfort from fever",
+     "patientGroup": "Children",
+     "genericName": "Paracetamol",
+     "dose": "Oral 15 mg/kg (oral loading dose 20 mg/kg); IV 10 mg/kg up to 10 kg, 15 mg/kg from 10–50 kg",
+     "route": "Oral or IV",
+     "frequency": "Every 4–6 hours",
+     "duration": "As needed",
+     "adjustments": [
+      "Paediatric: Maximum oral 90 mg/kg/day; IV up to 10 kg maximum 30 mg/kg/day, 10–50 kg maximum 60 mg/kg/day; not above 4 g/day; under 3 months oral maximum 60 mg/kg/day (Gloucestershire guideline).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment usually.",
+      "CLD: Reduce in liver disease.",
+      "Antipyretics do not reduce seizure recurrence (IAP)."
+     ],
+     "monitoring": [
+      "Total daily dose"
+     ],
+     "contraindications": [
+      "Severe liver disease"
+     ],
+     "branch": "Comfort during fever",
+     "step": "Antipyretic analgesic",
+     "selection": "all",
+     "sourceTitle": "Analgesia for Children (Gloucestershire Hospitals NHS FT Emergency Department)",
+     "sourceUrl": "https://www.gloshospitals.nhs.uk/media/documents/Analgesia_for_Children_updated_May_2020.pdf",
+     "sourceEdition": "Emergency department guideline, January 2020, section Paracetamol"
     }
    ],
-   "note": "All doses from the IAP Tamil Nadu COPP module on febrile seizures (2017). India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
+   "note": "Doses from the IAP Tamil Nadu COPP module on febrile seizures (2017); buccal or intranasal midazolam and maximum doses from the IAP status epilepticus guideline (2022); paracetamol from the Gloucestershire guideline. India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
   },
   "teaching": {
    "scope": "Febrile seizures in Indian paediatric practice.",
    "learningObjectives": [
     "Classify simple and complex febrile seizures.",
     "Know when to do a lumbar puncture.",
-    "Use prophylaxis selectively."
+    "Use prophylaxis selectively.",
+    "Advise families on recurrence risk, first aid and the limited role of antipyretics."
    ],
    "keyPoints": [
     "Age 6–60 months, fever, no CNS infection.",
     "Treat seizures over 5 minutes with a benzodiazepine.",
     "Antipyretics do not prevent recurrence.",
-    "Clobazam 0.3 mg/kg 12-hourly for 24 hours for selected children."
+    "Clobazam 0.3 mg/kg 12-hourly for 24 hours for selected children.",
+    "About 30% recur; simple febrile seizures carry about a 1% epilepsy risk (IAP)."
    ],
    "pitfalls": [
     "Missing meningitis in infants.",
@@ -492,6 +604,158 @@
      "edition": "IAP COPP module, 2017",
      "url": "https://iapindia.org/pdf/Febrile-seizures-Do-I-need-to-investigate-Role-of-anticonvulsants.pdf",
      "locator": "sections Definitions, Investigations, Therapeutic interventions, Admission, Prophylactic AEDs, Antipyretics, Family education"
+    },
+    {
+     "title": "Analgesia for Children (Gloucestershire Hospitals NHS FT Emergency Department)",
+     "edition": "Emergency department guideline, January 2020",
+     "url": "https://www.gloshospitals.nhs.uk/media/documents/Analgesia_for_Children_updated_May_2020.pdf",
+     "locator": "section Paracetamol"
+    },
+    {
+     "title": "Evaluation and Management of Status Epilepticus in Children (IAP Standard Treatment Guidelines)",
+     "edition": "IAP STG 2022",
+     "url": "https://iapindia.org/pdf/Ch-040-evaluation-and-management-of-status-epilepticus-in-children.pdf",
+     "locator": "section Prehospital management, First-line (benzodiazepines)"
+    }
+   ],
+   "vignette": {
+    "text": "Ananya, a 20-month-old girl from Lucknow, is brought to the emergency department after a 3-minute generalised jerking episode at home with a temperature of 39.4°C. She had a runny nose and cough for a day. On arrival she is drowsy but rousable, and 40 minutes later she is playing. She has completed all scheduled vaccines. Her father had febrile seizures as a child. Her mother asks whether this is epilepsy and whether to give fever medicine every few hours to stop another one.",
+    "fictitious": true
+   },
+   "guidedApproach": [
+    {
+     "title": "Why young children have febrile seizures",
+     "prompt": "What makes a 6–60 month old prone to seizures with fever?",
+     "guidance": "The developing brain has a lower seizure threshold, and a rapid rise in temperature during a viral illness can trigger a generalised seizure in a child who is genetically predisposed — a family history in a first-degree relative is one of the strongest risk factors. Febrile seizures are a marker of this age-limited susceptibility; they do not damage the brain and do not cause epilepsy. That is why antiseizure drugs, although they reduce recurrence, do not change the long-term outlook. The real clinical danger lies not in the seizure but in what may be causing the fever: bacterial meningitis can present with a seizure, especially in infants whose signs are subtle and in children who are not fully immunised.",
+     "section": "pathophysiology"
+    },
+    {
+     "title": "Simple versus complex, and the meningitis question",
+     "prompt": "Which features change your management?",
+     "guidance": "A simple febrile seizure is generalised, lasts under 15 minutes and does not recur within 24 hours; about 70–75% are simple. A complex seizure is focal, lasts 15–30 minutes or recurs within 24 hours; beyond 30 minutes it is febrile status epilepticus. The examination after the seizure focuses on the fever source and on signs of central nervous system infection: neck stiffness, a bulging fontanelle, a petechial rash, persistent drowsiness or a post-ictal deficit. Recurrence risk rises with age under 1 year at the first seizure, fever of less than 24 hours, a lower temperature at onset and a first-degree family history; with none of these the risk is under 15%, and with three or more it exceeds 60%.",
+     "section": "signs-symptoms"
+    },
+    {
+     "title": "Less is more",
+     "prompt": "Which tests are needed after a febrile seizure?",
+     "guidance": "For most children, the only investigation needed is to find the source of fever. Lumbar puncture is standard under 6 months, should be considered at 6–12 months when Hib or pneumococcal vaccination is incomplete or unknown, and is indicated at any age with meningeal signs or when antibiotics have already been given and could mask meningitis. Blood tests (count, culture, glucose, electrolytes, calcium) and urinalysis are for when the fever source is unclear or the diagnosis uncertain. EEG has little value after a simple or first complex seizure, and neuroimaging is not routine; MRI is reserved for recurrent complex seizures with a prolonged post-ictal deficit, and CT only for suspected bleeding or a structural lesion.",
+     "section": "investigations"
+    },
+    {
+     "title": "Rescue, reassurance and selective prophylaxis",
+     "prompt": "When do children need drugs?",
+     "guidance": "A seizure lasting more than 5 minutes is treated with a benzodiazepine: midazolam 0.2 mg/kg, IV diazepam 0.3–0.5 mg/kg or lorazepam 0.1 mg/kg, or rectal diazepam 0.5 mg/kg when there is no IV access. Most children need no regular medicine. Antipyretics such as paracetamol make the child comfortable but do not prevent recurrence, so parents should not wake a child to give them. Intermittent oral clobazam 0.3 mg/kg every 12 hours for 24 hours from the start of a fever is reserved for frequent or complex seizures or families far from care. Continuous valproate or phenobarbitone is rarely needed. The most important intervention is calm, clear counselling: what to do during a seizure, when to call for help, and that the outlook is excellent.",
+     "section": "management"
+    }
+   ],
+   "boardQuestions": [
+    {
+     "id": "q1",
+     "vignette": "A 20-month-old girl had a 3-minute generalised seizure with a temperature of 39.4°C and coryza. She is fully immunised, and 40 minutes later she is alert and playing with a normal examination apart from a red throat. Her father had febrile seizures. The family lives 2 km from the hospital.",
+     "fictitious": true,
+     "question": "What is the most appropriate management?",
+     "options": [
+      {
+       "id": "A",
+       "text": "Lumbar puncture before discharge",
+       "explanation": "Lumbar puncture is not needed in a fully immunised child over 12 months who has returned to normal with no meningeal signs (IAP)."
+      },
+      {
+       "id": "B",
+       "text": "EEG and MRI brain as an outpatient",
+       "explanation": "Routine EEG and imaging have no value after a simple febrile seizure (IAP)."
+      },
+      {
+       "id": "C",
+       "text": "Start daily sodium valproate",
+       "explanation": "Continuous prophylaxis is not indicated for a simple febrile seizure (IAP)."
+      },
+      {
+       "id": "D",
+       "text": "Treat the fever source, counsel the parents and discharge with first-aid advice",
+       "explanation": "Correct. A first simple febrile seizure over 18 months in a stable child with a reliable family does not need admission (IAP)."
+      },
+      {
+       "id": "E",
+       "text": "Paracetamol every 4 hours around the clock to prevent recurrence",
+       "explanation": "Antipyretics do not reduce recurrence (IAP); they are for comfort only."
+      }
+     ],
+     "answer": "D",
+     "educationalObjective": "Manage a first simple febrile seizure without unnecessary tests or drugs.",
+     "keyPoint": "Simple febrile seizure, normal child, reliable family: treat the cause, counsel, discharge."
+    },
+    {
+     "id": "q2",
+     "vignette": "A 9-month-old boy has a 6-minute generalised seizure with fever of 38.8°C. He has received only his birth vaccines. After the seizure he remains irritable and drowsy for 2 hours, and the anterior fontanelle feels full. Glucose is 92 mg/dL.",
+     "fictitious": true,
+     "question": "What is the most important next step?",
+     "options": [
+      {
+       "id": "A",
+       "text": "Reassure and discharge after the fever settles",
+       "explanation": "Persistent drowsiness, a full fontanelle and incomplete immunisation make meningitis likely."
+      },
+      {
+       "id": "B",
+       "text": "Admit, perform a lumbar puncture and treat for possible meningitis",
+       "explanation": "Correct. Under 12 months with incomplete Hib and pneumococcal vaccination and signs of meningitis, lumbar puncture is indicated (IAP)."
+      },
+      {
+       "id": "C",
+       "text": "Start intermittent clobazam",
+       "explanation": "Prophylaxis does not address the possibility of bacterial meningitis."
+      },
+      {
+       "id": "D",
+       "text": "Order an EEG",
+       "explanation": "EEG does not diagnose meningitis and is not urgent here."
+      },
+      {
+       "id": "E",
+       "text": "Give rectal diazepam to take home",
+       "explanation": "The priority is diagnosis of a possible central nervous system infection."
+      }
+     ],
+     "answer": "B",
+     "educationalObjective": "Recognise when a febrile seizure may be meningitis.",
+     "keyPoint": "Under 12 months, incompletely immunised or meningeal signs: lumbar puncture."
+    },
+    {
+     "id": "q3",
+     "vignette": "A 3-year-old boy has had three febrile seizures in the past 5 months, each generalised and lasting 2–4 minutes. Development and neurological examination are normal, there is no family history of epilepsy and there have been no afebrile seizures. The family lives 3 hours from the nearest hospital, recognise fever easily, and are very anxious about the next episode.",
+     "fictitious": true,
+     "question": "Which approach is most appropriate?",
+     "options": [
+      {
+       "id": "A",
+       "text": "Continuous phenobarbitone 3–5 mg/kg/day until age 6",
+       "explanation": "Continuous drugs carry behavioural and cognitive side effects and are kept for failed intermittent therapy or recurrent complex seizures (IAP)."
+      },
+      {
+       "id": "B",
+       "text": "No treatment and reassurance only",
+       "explanation": "Frequent seizures (3 or more in 6 months) with poor access to care are indications for intermittent prophylaxis (IAP)."
+      },
+      {
+       "id": "C",
+       "text": "Oral clobazam 0.3 mg/kg every 12 hours for 24 hours from the start of each fever, with rescue medicine at home",
+       "explanation": "Correct. Intermittent clobazam is used for frequent febrile seizures and poor access to care (IAP)."
+      },
+      {
+       "id": "D",
+       "text": "Paracetamol at the first sign of fever",
+       "explanation": "Paracetamol eases discomfort, but antipyretics do not prevent recurrence (IAP)."
+      },
+      {
+       "id": "E",
+       "text": "Carbamazepine daily",
+       "explanation": "Carbamazepine and phenytoin are not effective for febrile seizures (IAP)."
+      }
+     ],
+     "answer": "C",
+     "educationalObjective": "Choose prophylaxis for frequent febrile seizures.",
+     "keyPoint": "Intermittent clobazam during fevers; continuous drugs only when intermittent therapy fails."
     }
    ]
   },
@@ -511,6 +775,147 @@
     "Back to baseline, fever source treated, parents counselled (IAP)"
    ],
    "followUpPlan": "Review with the family paediatrician; neurology follow-up if complex features (IAP)."
-  }
+  },
+  "algorithms": [
+   {
+    "id": "febrile-seizure-pathway",
+    "title": "Child with a fever and a seizure",
+    "placement": "manage",
+    "nodes": [
+     {
+      "id": "start",
+      "kind": "start",
+      "text": "Child 6–60 months with fever and a seizure",
+      "detail": "Protect the airway, side position, time the seizure.",
+      "next": [
+       {
+        "to": "ongoing"
+       }
+      ]
+     },
+     {
+      "id": "ongoing",
+      "kind": "decision",
+      "text": "Seizure lasting more than 5 minutes?",
+      "next": [
+       {
+        "to": "benzo",
+        "label": "Yes"
+       },
+       {
+        "to": "stopped",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "benzo",
+      "kind": "action",
+      "text": "Midazolam 0.2 mg/kg IV (maximum 5 mg) or buccal/intranasal 0.1–0.2 mg/kg, or diazepam IV 0.3–0.5 mg/kg (maximum 10 mg) or rectal 0.5 mg/kg, or lorazepam 0.1 mg/kg (maximum 4 mg)",
+      "next": [
+       {
+        "to": "resp"
+       }
+      ]
+     },
+     {
+      "id": "resp",
+      "kind": "decision",
+      "text": "Seizure stopped within 5–10 minutes of the first dose?",
+      "next": [
+       {
+        "to": "postb",
+        "label": "Yes"
+       },
+       {
+        "to": "status",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "postb",
+      "kind": "outcome",
+      "text": "Admit (prolonged seizure); look for meningitis and need for lumbar puncture; treat fever source"
+     },
+     {
+      "id": "status",
+      "kind": "outcome",
+      "text": "Repeat the benzodiazepine once; then second-line drugs on the status epilepticus pathway (Status epilepticus in children topic)"
+     },
+     {
+      "id": "stopped",
+      "kind": "decision",
+      "text": "Signs of meningitis, under 6 months, or 6–12 months with incomplete Hib or pneumococcal vaccines?",
+      "next": [
+       {
+        "to": "lp",
+        "label": "Yes"
+       },
+       {
+        "to": "type",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "lp",
+      "kind": "outcome",
+      "text": "Admit; lumbar puncture and treat as possible meningitis"
+     },
+     {
+      "id": "type",
+      "kind": "decision",
+      "text": "Simple febrile seizure? (generalised, under 15 minutes, no recurrence in 24 hours)",
+      "next": [
+       {
+        "to": "simple",
+        "label": "Yes"
+       },
+       {
+        "to": "complex",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "simple",
+      "kind": "decision",
+      "text": "Over 18 months, stable, reliable family?",
+      "next": [
+       {
+        "to": "home",
+        "label": "Yes"
+       },
+       {
+        "to": "obs",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "home",
+      "kind": "outcome",
+      "text": "Treat fever source; counsel; home with first-aid advice"
+     },
+     {
+      "id": "obs",
+      "kind": "outcome",
+      "text": "Under 18 months or family support uncertain: observe; admit if CNS infection is suspected; treat fever source; counsel"
+     },
+     {
+      "id": "complex",
+      "kind": "outcome",
+      "text": "Admit; investigate as indicated; consider intermittent clobazam; neurology if recurrent"
+     }
+    ],
+    "source": {
+     "title": "Febrile seizures: do I need to investigate? Role of anticonvulsants (IAP Tamil Nadu State Chapter, Common Office Practice Pediatric Problems module)",
+     "edition": "IAP COPP module, 2017",
+     "url": "https://iapindia.org/pdf/Febrile-seizures-Do-I-need-to-investigate-Role-of-anticonvulsants.pdf",
+     "locator": "sections Therapeutic interventions, Laboratory investigations, Hospital admission, Prophylactic AEDs"
+    }
+   }
+  ]
  }
 ]

@@ -17,12 +17,13 @@
     "Causative organisms (bacterial vaginosis, Trichomonas, Candida; gonorrhoea and chlamydia for cervicitis; anaerobes for PID) from NACO Table 3.2; gonorrhoea and chlamydia doses from NACO Table 3.3.",
     "Kit 2 (green: secnidazole 2 g with fluconazole 150 mg), Kit 1 (grey: cefixime 400 mg with azithromycin 1 g for cervicitis) and Kit 6 (yellow: cefixime 400 mg once with metronidazole 400 mg and doxycycline 100 mg twice daily, 28 tablets each) from the NACO kit specifications (2023).",
     "PID diagnostic criteria, 14-day duration, ceftriaxone 500 mg IM outpatient, ceftriaxone 1 g IV daily with doxycycline and metronidazole 500 mg inpatient, admission criteria, 72-hour review, partner treatment and IUD guidance from the CDC 2021 STI guideline.",
+    "BV regimens and pregnancy advice, trichomoniasis metronidazole 500 mg twice daily for 7 days in women, topical azoles for 7 days only in pregnancy and fluconazole induction then weekly for 6 months for recurrent candidiasis checked against CDC 2021 STI guidelines.",
     "Not clinically reviewed."
    ],
    "unverifiedSections": [
     "The Kit 6 label duration was not legible; 14 days is from the tablet count and the CDC guideline.",
     "NACO vaginal discharge and PID flowcharts were not in the opened text.",
-    "Treatment in pregnancy (doxycycline contraindicated) is general practice; the NACO pregnancy alternatives could not be read.",
+    "NACO pregnancy alternatives could not be read; pregnancy regimens for BV, Trichomonas and candidiasis are from the CDC 2021 STI guideline.",
     "Drug cautions, contraindications and renal or hepatic adjustment lines without a source tag are general pharmacology statements and need formulary confirmation."
    ],
    "medscapeStatus": "unavailable",
@@ -31,18 +32,21 @@
    ]
   },
   "pathophysiology": {
-   "summary": "Vaginal discharge is one of the commonest reasons women in India attend primary care and Suraksha clinics. Most is vaginitis — bacterial vaginosis, trichomoniasis or candidiasis — treated with Kit 2. Cervicitis from gonorrhoea or chlamydia is less common but causes PID, infertility and ectopic pregnancy, so women with risk factors or mucopurulent cervical discharge also get Kit 1 cover. Lower abdominal pain with cervical motion, uterine or adnexal tenderness is treated presumptively as PID (Kit 6) once ectopic pregnancy and surgical causes are excluded. Partner treatment, HIV and syphilis testing, and follow-up at 72 hours for PID are part of care.",
+   "summary": "Vaginal discharge is one of the commonest reasons women in India attend primary care and Suraksha clinics. Most is vaginitis — bacterial vaginosis, trichomoniasis or candidiasis — treated with Kit 2. Cervicitis from gonorrhoea or chlamydia is less common but causes PID, infertility and ectopic pregnancy, so women with risk factors or mucopurulent cervical discharge also get Kit 1 cover. Lower abdominal pain with cervical motion, uterine or adnexal tenderness is treated presumptively as PID (Kit 6) once ectopic pregnancy and surgical causes are excluded. Partner treatment, HIV and syphilis testing, and follow-up at 72 hours for PID are part of care. In pregnancy, the same infections raise the risk of preterm birth, so symptomatic pregnant women are treated with regimens safe in pregnancy rather than the standard kits.",
    "keyMechanisms": [
     "Loss of vaginal lactobacilli leads to bacterial vaginosis; Trichomonas is sexually transmitted; Candida overgrows with antibiotics, diabetes or pregnancy.",
     "Gonorrhoea and chlamydia infect the cervix and ascend to the endometrium and tubes (PID).",
-    "Tubal scarring after PID causes infertility, ectopic pregnancy and chronic pain."
+    "Tubal scarring after PID causes infertility, ectopic pregnancy and chronic pain.",
+    "Recurrent candidiasis (3 or more episodes a year) needs induction and suppressive treatment; most women have no predisposing condition, though diabetes should be sought (CDC)."
    ]
   },
   "presentation": {
    "symptoms": [
     "Abnormal vaginal discharge, itch, odour",
     "Lower abdominal pain, dyspareunia",
-    "Fever, irregular bleeding"
+    "Fever, irregular bleeding",
+    "Vulval itching and burning (candidiasis)",
+    "Dysuria and dyspareunia"
    ],
    "physicalSigns": [
     "Thin grey fishy discharge (BV); frothy yellow-green (Trichomonas); curdy white (Candida)",
@@ -65,23 +69,27 @@
   "differentials": [
    {
     "condition": "Ectopic pregnancy",
-    "distinguishingFeatures": "Positive pregnancy test; adnexal mass."
+    "distinguishingFeatures": "Missed period, lower abdominal pain and vaginal bleeding; a positive urine pregnancy test and transvaginal ultrasound settle it."
    },
    {
     "condition": "Acute appendicitis",
-    "distinguishingFeatures": "Right iliac fossa pain, anorexia."
+    "distinguishingFeatures": "Periumbilical pain moving to the right iliac fossa with anorexia and no cervical motion tenderness; ultrasound or computed tomography (CT) settles it."
    },
    {
     "condition": "Ovarian torsion or ruptured cyst",
-    "distinguishingFeatures": "Sudden pain; ultrasound."
+    "distinguishingFeatures": "Sudden one-sided pain, often with vomiting; pelvic ultrasound with Doppler settles it."
    },
    {
     "condition": "Urinary tract infection",
-    "distinguishingFeatures": "Dysuria, pyuria."
+    "distinguishingFeatures": "Frequency, dysuria and pyuria without abnormal discharge or cervical tenderness; urine microscopy and culture settle it."
    },
    {
     "condition": "Physiological discharge",
-    "distinguishingFeatures": "Clear or white, no symptoms."
+    "distinguishingFeatures": "Clear or white, non-offensive, no itch or pain, normal pH; reassure after a normal examination."
+   },
+   {
+    "condition": "Cervical cancer or foreign body",
+    "distinguishingFeatures": "Blood-stained or offensive discharge, postcoital bleeding, or a retained tampon or pessary; speculum examination and VIA or Pap test settle it."
    }
   ],
   "diagnosticCriteria": [
@@ -184,12 +192,12 @@
    "ruleOut": [
     {
      "tier": "laboratory",
-     "testName": "C-reactive protein and white cell count",
+     "testName": "ESR and C-reactive protein",
      "modalityTarget": "Blood",
      "targetCondition": "Inflammation",
-     "normalValue": "CRP under 5 mg/L",
-     "expectedFinding": "Raised",
-     "clinicalRationale": "Supports PID (CDC).",
+     "normalValue": "ESR and CRP within the laboratory reference range",
+     "expectedFinding": "Raised ESR or CRP",
+     "clinicalRationale": "Supports PID (CDC); a normal value does not exclude it.",
      "references": [
       {
        "title": "Pelvic inflammatory disease: Sexually Transmitted Infections Treatment Guidelines (CDC)",
@@ -237,6 +245,16 @@
      "Review PID at 72 hours; switch to IV if not better (CDC).",
      "Retest at 3 months after gonorrhoea or chlamydia (CDC)."
     ]
+   },
+   {
+    "id": "preg",
+    "title": "Pregnancy and recurrence",
+    "timeframe": "Same visit",
+    "actions": [
+     "Pregnant with symptomatic BV or Trichomonas: metronidazole 500 mg twice daily for 7 days; avoid secnidazole and tinidazole (CDC).",
+     "Pregnant with candidiasis: topical azole for 7 days only, no fluconazole (CDC).",
+     "Recurrent candidiasis (3 or more a year): induction then weekly fluconazole for 6 months; check glucose (CDC)."
+    ]
    }
   ],
   "medicationPlan": {
@@ -245,6 +263,18 @@
     {
      "label": "Vaginitis",
      "entryCriteria": "Vaginal discharge, cervix normal."
+    },
+    {
+     "label": "Trichomoniasis (non-pregnant)",
+     "entryCriteria": "Trichomonas confirmed on wet mount or test in a non-pregnant woman."
+    },
+    {
+     "label": "Vaginitis in pregnancy",
+     "entryCriteria": "Pregnant woman with symptomatic BV, Trichomonas or candidiasis."
+    },
+    {
+     "label": "Recurrent candidiasis",
+     "entryCriteria": "3 or more symptomatic episodes of candidiasis in under 1 year."
     },
     {
      "label": "Cervicitis: gonorrhoea",
@@ -280,10 +310,10 @@
       "Kit 2 (green) also contains fluconazole 150 mg."
      ],
      "monitoring": [
-      "Avoid alcohol for 72 hours"
+      "Response at review"
      ],
      "contraindications": [
-      "First trimester of pregnancy"
+      "Pregnancy (CDC)"
      ],
      "branch": "Vaginitis",
      "step": "Nitroimidazole",
@@ -329,7 +359,7 @@
      "duration": "Once",
      "adjustments": [
       "Paediatric: Adolescent girls treated as adults; STI in a child needs child-protection assessment.",
-      "Penicillin allergy: Cephalosporin: avoid after penicillin anaphylaxis; seek specialist advice.",
+      "Penicillin allergy: Cephalosporin: cross-reactivity with penicillin is very low; after a severe immediate reaction to penicillin, seek specialist advice.",
       "CKD: No adjustment.",
       "CLD: No adjustment.",
       "NACO Kit 1 (grey) contains cefixime 400 mg with azithromycin 1 g."
@@ -390,7 +420,7 @@
       "CLD: Caution in severe liver disease."
      ],
      "monitoring": [
-      "QT risk"
+      "Pregnancy: test of cure about 4 weeks after treatment and retest at 3 months (CDC)"
      ],
      "contraindications": [
       "Macrolide allergy"
@@ -398,11 +428,40 @@
      "branch": "Cervicitis: chlamydia",
      "step": "Chlamydia cover",
      "selection": "one-of",
-     "sourceTitle": "National Technical Guidelines on STI and RTI (NACO, MoHFW)",
-     "sourceUrl": "https://naco.mohfw.gov.in/wp-content/uploads/2025/05/National-Technical-Guidelines-on-STI-and-RTI_Final.pdf",
-     "sourceEdition": "NACO, published May 2025, section 3.2.1, Table 3.3",
+     "sourceTitle": "Chlamydial infections: Sexually Transmitted Infections Treatment Guidelines (CDC)",
+     "sourceUrl": "https://www.cdc.gov/std/treatment-guidelines/chlamydia.htm",
+     "sourceEdition": "CDC STI Treatment Guidelines, 2021, section Pregnancy",
      "preferred": false,
-     "useWhen": "Pregnancy or adherence concern."
+     "useWhen": "Pregnancy (recommended regimen, CDC) or adherence concern."
+    },
+    {
+     "indication": "Cervicitis in pregnancy, azithromycin unsuitable",
+     "patientGroup": "Pregnant women",
+     "genericName": "Amoxicillin",
+     "dose": "500 mg",
+     "route": "Oral",
+     "frequency": "Three times daily",
+     "duration": "7 days",
+     "adjustments": [
+      "Paediatric: Adolescent girls treated as adults; STI in a child needs child-protection assessment.",
+      "Penicillin allergy: Contraindicated in penicillin allergy; use azithromycin.",
+      "CKD: Reduce dose in severe renal impairment.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Test of cure about 4 weeks after treatment (CDC)"
+     ],
+     "contraindications": [
+      "Penicillin allergy"
+     ],
+     "branch": "Cervicitis: chlamydia",
+     "step": "Chlamydia cover",
+     "selection": "one-of",
+     "sourceTitle": "Chlamydial infections: Sexually Transmitted Infections Treatment Guidelines (CDC)",
+     "sourceUrl": "https://www.cdc.gov/std/treatment-guidelines/chlamydia.htm",
+     "sourceEdition": "CDC STI Treatment Guidelines, 2021, section Pregnancy",
+     "preferred": false,
+     "useWhen": "Pregnancy and azithromycin not tolerated or unavailable."
     },
     {
      "indication": "Mild–moderate PID",
@@ -414,10 +473,11 @@
      "duration": "Once",
      "adjustments": [
       "Paediatric: Adolescent girls treated as adults; STI in a child needs child-protection assessment.",
-      "Penicillin allergy: Cephalosporin: avoid after penicillin anaphylaxis; seek specialist advice.",
+      "Penicillin allergy: Cephalosporin: cross-reactivity with penicillin is very low; after a severe immediate reaction to penicillin, seek specialist advice.",
       "CKD: No adjustment.",
       "CLD: No adjustment.",
-      "NACO Kit 6 (yellow) uses cefixime 400 mg once instead."
+      "Preferred over Kit 6 oral cefixime 400 mg, which is half the NACO gonorrhoea dose (800 mg) and not a CDC PID option.",
+      "Use 1 g if weight above 150 kg (CDC)."
      ],
      "monitoring": [
       "Review at 72 hours"
@@ -475,10 +535,10 @@
       "CLD: Reduce dose in severe liver failure."
      ],
      "monitoring": [
-      "Avoid alcohol"
+      "Adherence, nausea"
      ],
      "contraindications": [
-      "First trimester"
+      "Hypersensitivity to nitroimidazoles"
      ],
      "branch": "PID outpatient",
      "step": "Nitroimidazole",
@@ -497,10 +557,11 @@
      "duration": "Until 24–48 hours after improvement, then oral to complete 14 days",
      "adjustments": [
       "Paediatric: Adolescent girls treated as adults; STI in a child needs child-protection assessment.",
-      "Penicillin allergy: Cephalosporin: avoid after penicillin anaphylaxis; seek specialist advice. Alternative: clindamycin 900 mg IV 8-hourly with gentamicin (CDC).",
+      "Penicillin allergy: Cephalosporin: cross-reactivity with penicillin is very low; after a severe immediate reaction to penicillin, seek specialist advice. Alternative: clindamycin 900 mg IV 8-hourly with gentamicin 2 mg/kg loading then 1.5 mg/kg 8-hourly (CDC).",
       "CKD: No adjustment.",
       "CLD: No adjustment.",
-      "Given with doxycycline 100 mg twice daily and metronidazole 500 mg twice daily (CDC)."
+      "Given with doxycycline 100 mg twice daily and metronidazole 500 mg twice daily (CDC).",
+      "Pregnancy: admit, IV treatment, no doxycycline; take infectious disease or obstetric specialist advice (CDC)."
      ],
      "monitoring": [
       "Fever, pain, white cells"
@@ -514,6 +575,116 @@
      "sourceTitle": "Pelvic inflammatory disease: Sexually Transmitted Infections Treatment Guidelines (CDC)",
      "sourceUrl": "https://www.cdc.gov/std/treatment-guidelines/pid.htm",
      "sourceEdition": "CDC STI Treatment Guidelines, 2021, section Parenteral treatment"
+    },
+    {
+     "indication": "Symptomatic BV or trichomoniasis in pregnancy",
+     "patientGroup": "Pregnant women",
+     "genericName": "Metronidazole",
+     "dose": "500 mg",
+     "route": "Oral",
+     "frequency": "Twice daily",
+     "duration": "7 days",
+     "adjustments": [
+      "Paediatric: Adolescent girls treated as adults; STI in a child needs child-protection assessment.",
+      "Penicillin allergy: Not a beta-lactam; safe in penicillin allergy.",
+      "CKD: No adjustment.",
+      "CLD: Reduce dose in severe liver failure.",
+      "Same regimen for trichomoniasis in women, including pregnancy (CDC trichomoniasis section)."
+     ],
+     "monitoring": [
+      "Symptom resolution; retest for Trichomonas at 3 months"
+     ],
+     "contraindications": [
+      "Hypersensitivity to nitroimidazoles"
+     ],
+     "branch": "Vaginitis in pregnancy",
+     "step": "Nitroimidazole",
+     "selection": "all",
+     "sourceTitle": "Bacterial vaginosis: Sexually Transmitted Infections Treatment Guidelines (CDC)",
+     "sourceUrl": "https://www.cdc.gov/std/treatment-guidelines/bv.htm",
+     "sourceEdition": "CDC STI Treatment Guidelines, 2021, section Pregnancy"
+    },
+    {
+     "indication": "Candidiasis in pregnancy",
+     "patientGroup": "Pregnant women",
+     "genericName": "Clotrimazole 1% vaginal cream",
+     "dose": "5 g",
+     "route": "Intravaginal",
+     "frequency": "Once daily",
+     "duration": "7 days",
+     "adjustments": [
+      "Paediatric: Adolescent girls treated as adults; STI in a child needs child-protection assessment.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Symptom resolution"
+     ],
+     "contraindications": [
+      "Avoid oral fluconazole in pregnancy (CDC)"
+     ],
+     "branch": "Vaginitis in pregnancy",
+     "step": "Topical azole",
+     "selection": "all",
+     "sourceTitle": "Vulvovaginal candidiasis: Sexually Transmitted Infections Treatment Guidelines (CDC)",
+     "sourceUrl": "https://www.cdc.gov/std/treatment-guidelines/candidiasis.htm",
+     "sourceEdition": "CDC STI Treatment Guidelines, 2021, section Pregnancy"
+    },
+    {
+     "indication": "Recurrent vulvovaginal candidiasis",
+     "patientGroup": "Non-pregnant women",
+     "genericName": "Fluconazole (suppressive)",
+     "dose": "150 mg on days 1, 4 and 7, then 150 mg weekly",
+     "route": "Oral",
+     "frequency": "Induction then weekly",
+     "duration": "6 months maintenance",
+     "adjustments": [
+      "Paediatric: Adolescent girls treated as adults; STI in a child needs child-protection assessment.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Repeated dosing: reduce the dose when creatinine clearance is 50 mL/min or below (check the formulary).",
+      "CLD: Monitor liver function on long courses."
+     ],
+     "monitoring": [
+      "Liver tests on long courses, interactions"
+     ],
+     "contraindications": [
+      "Pregnancy"
+     ],
+     "branch": "Recurrent candidiasis",
+     "step": "Antifungal",
+     "selection": "all",
+     "sourceTitle": "Vulvovaginal candidiasis: Sexually Transmitted Infections Treatment Guidelines (CDC)",
+     "sourceUrl": "https://www.cdc.gov/std/treatment-guidelines/candidiasis.htm",
+     "sourceEdition": "CDC STI Treatment Guidelines, 2021, section Recurrent VVC"
+    },
+    {
+     "indication": "Confirmed trichomoniasis",
+     "patientGroup": "Non-pregnant women",
+     "genericName": "Metronidazole",
+     "dose": "500 mg",
+     "route": "Oral",
+     "frequency": "Twice daily",
+     "duration": "7 days",
+     "adjustments": [
+      "Paediatric: Adolescent girls treated as adults; STI in a child needs child-protection assessment.",
+      "Penicillin allergy: Not a beta-lactam; safe in penicillin allergy.",
+      "CKD: No adjustment.",
+      "CLD: Reduce dose in severe liver failure.",
+      "Treat all current partners; men: metronidazole 2 g single dose (CDC)."
+     ],
+     "monitoring": [
+      "Retest about 3 months after treatment (CDC)"
+     ],
+     "contraindications": [
+      "Hypersensitivity to nitroimidazoles"
+     ],
+     "branch": "Trichomoniasis (non-pregnant)",
+     "step": "Nitroimidazole",
+     "selection": "all",
+     "sourceTitle": "Trichomoniasis: Sexually Transmitted Infections Treatment Guidelines (CDC)",
+     "sourceUrl": "https://www.cdc.gov/std/treatment-guidelines/trichomoniasis.htm",
+     "sourceEdition": "CDC STI Treatment Guidelines, 2021, section Treatment"
     }
    ],
    "note": "Kit contents from the 2023 NACO kit specifications; gonorrhoea and chlamydia doses from NACO Table 3.3; PID durations and inpatient regimen from CDC 2021. India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
@@ -523,19 +694,23 @@
    "learningObjectives": [
     "Distinguish vaginitis from cervicitis.",
     "Diagnose and treat PID presumptively.",
-    "Exclude ectopic pregnancy."
+    "Exclude ectopic pregnancy.",
+    "Treat vaginitis safely in pregnancy and manage recurrent candidiasis."
    ],
    "keyPoints": [
     "Kit 2: secnidazole 2 g plus fluconazole 150 mg.",
     "PID: low threshold; 14 days of doxycycline plus metronidazole with a cephalosporin.",
     "Review at 72 hours.",
-    "Treat partners."
+    "Treat partners.",
+    "Pregnancy: metronidazole 500 mg twice daily for 7 days; topical azole only for candidiasis.",
+    "Recurrent candidiasis: fluconazole weekly for 6 months after induction."
    ],
    "pitfalls": [
     "Missing ectopic pregnancy.",
     "Short PID courses.",
     "Removing an IUD unnecessarily.",
-    "Not treating partners."
+    "Not treating partners.",
+    "Giving fluconazole or secnidazole (Kit 2) in pregnancy."
    ],
    "references": [
     {
@@ -555,6 +730,170 @@
      "edition": "CDC STI Treatment Guidelines, 2021",
      "url": "https://www.cdc.gov/std/treatment-guidelines/pid.htm",
      "locator": "sections Diagnosis, Treatment, Follow-up, Partners"
+    },
+    {
+     "title": "Chlamydial infections: Sexually Transmitted Infections Treatment Guidelines (CDC)",
+     "edition": "CDC STI Treatment Guidelines, 2021",
+     "url": "https://www.cdc.gov/std/treatment-guidelines/chlamydia.htm",
+     "locator": "sections Treatment, Pregnancy"
+    },
+    {
+     "title": "Bacterial vaginosis: Sexually Transmitted Infections Treatment Guidelines (CDC)",
+     "edition": "CDC STI Treatment Guidelines, 2021",
+     "url": "https://www.cdc.gov/std/treatment-guidelines/bv.htm",
+     "locator": "sections Treatment, Pregnancy"
+    },
+    {
+     "title": "Vulvovaginal candidiasis: Sexually Transmitted Infections Treatment Guidelines (CDC)",
+     "edition": "CDC STI Treatment Guidelines, 2021",
+     "url": "https://www.cdc.gov/std/treatment-guidelines/candidiasis.htm",
+     "locator": "sections Treatment, Pregnancy, Recurrent VVC"
+    },
+    {
+     "title": "Trichomoniasis: Sexually Transmitted Infections Treatment Guidelines (CDC)",
+     "edition": "CDC STI Treatment Guidelines, 2021",
+     "url": "https://www.cdc.gov/std/treatment-guidelines/trichomoniasis.htm",
+     "locator": "sections Treatment, Pregnancy"
+    }
+   ],
+   "vignette": {
+    "text": "A 28-year-old woman from a village near Nashik, married with two children and a copper IUCD inserted 2 weeks ago, presents with 4 days of lower abdominal pain, foul-smelling discharge and dyspareunia. Temperature is 38.0°C, pulse 96/min. She has cervical motion tenderness and right adnexal tenderness but no mass. The urine pregnancy test is negative. She is eating and drinking normally.",
+    "fictitious": true
+   },
+   "guidedApproach": [
+    {
+     "title": "From the vagina to the tubes",
+     "prompt": "Why does it matter whether the cervix is involved?",
+     "guidance": "Vaginal discharge has two very different sources. Vaginitis — bacterial vaginosis, Trichomonas and Candida — is an infection or imbalance of the vagina itself; it causes symptoms but rarely serious harm, except that bacterial vaginosis and Trichomonas raise the risk of preterm birth in pregnancy. Cervicitis from gonorrhoea or chlamydia is less common but more dangerous, because these organisms ascend through the cervix to the endometrium and tubes. Pelvic inflammatory disease scars the tubes and causes infertility, ectopic pregnancy and chronic pelvic pain, which is why clinicians keep a low threshold for diagnosing and treating it. The first 3 weeks after IUD insertion carry the highest PID risk.",
+     "section": "pathophysiology"
+    },
+    {
+     "title": "Examining the woman with discharge or pain",
+     "prompt": "Which findings change the diagnosis?",
+     "guidance": "The character of the discharge helps: thin grey and fishy suggests bacterial vaginosis, frothy yellow-green suggests Trichomonas, and thick white with itch suggests Candida. A speculum examination shows whether the cervix is inflamed or producing mucopurulent discharge, which points to cervicitis. Bimanual examination is essential when there is pain: cervical motion, uterine or adnexal tenderness is enough to treat presumptively for PID once other causes are excluded. Always test for pregnancy first — ectopic pregnancy is the must-not-miss diagnosis — and look for appendicitis, ovarian torsion and urinary infection. Fever above 38.5°C, vomiting, a mass or pregnancy mean admission.",
+     "section": "signs-symptoms"
+    },
+    {
+     "title": "Bedside tests and when to scan",
+     "prompt": "What helps at the bedside?",
+     "guidance": "Vaginal pH above 4.5, a positive whiff test and clue cells on a wet mount support bacterial vaginosis; motile trichomonads confirm Trichomonas; and budding yeast or hyphae confirm Candida. A urine pregnancy test is mandatory in every woman with lower abdominal pain. Where available, nucleic acid amplification tests for gonorrhoea and chlamydia, and HIV and syphilis tests, should be done for every woman with PID. Transvaginal ultrasound is used for severe disease, a palpable mass or failure to improve, to look for a tubo-ovarian abscess. A raised C-reactive protein or white cell count supports the diagnosis but a normal value does not exclude it.",
+     "section": "investigations"
+    },
+    {
+     "title": "Treat the syndrome, the pregnancy and the partner",
+     "prompt": "How do you choose the regimen?",
+     "guidance": "Non-pregnant women with vaginitis receive Kit 2 (secnidazole 2 g with fluconazole 150 mg). Mucopurulent cervicitis or high STI risk adds cover for gonorrhoea and chlamydia. Mild to moderate PID is treated as an outpatient for 14 days with a single cephalosporin dose plus doxycycline and metronidazole, with review at 72 hours; women who meet admission criteria get ceftriaxone 1 g IV daily with the same oral partners until improved. An IUD does not need to be removed unless she fails to improve in 48–72 hours. Pregnant women need different drugs: metronidazole 500 mg twice daily for 7 days for bacterial vaginosis or Trichomonas, and a 7-day topical azole for Candida — never fluconazole or secnidazole. Treat sexual partners for PID and Trichomonas; routine partner treatment is not needed for bacterial vaginosis.",
+     "section": "management"
+    }
+   ],
+   "boardQuestions": [
+    {
+     "id": "q1",
+     "vignette": "A 28-year-old woman with a copper IUCD inserted 2 weeks ago has 4 days of lower abdominal pain, offensive discharge, temperature 38.0°C and cervical motion and right adnexal tenderness. Pregnancy test is negative; no mass; she is eating normally.",
+     "fictitious": true,
+     "question": "What is the best management?",
+     "options": [
+      {
+       "id": "A",
+       "text": "Remove the IUCD and give no antibiotics until swab results return",
+       "explanation": "Treatment should start at once; the IUD does not need removal unless there is no improvement in 48–72 hours (CDC)."
+      },
+      {
+       "id": "B",
+       "text": "Outpatient treatment: single cephalosporin dose plus doxycycline and metronidazole for 14 days, review at 72 hours",
+       "explanation": "Correct. She has mild to moderate PID without admission criteria (CDC; NACO Kit 6)."
+      },
+      {
+       "id": "C",
+       "text": "Admit for IV ceftriaxone, doxycycline and metronidazole",
+       "explanation": "She meets no admission criteria (temperature below 38.5°C, no abscess, not pregnant, tolerating oral)."
+      },
+      {
+       "id": "D",
+       "text": "Kit 2: secnidazole and fluconazole",
+       "explanation": "Kit 2 treats vaginitis; it does not cover the gonorrhoea, chlamydia and anaerobes that cause PID."
+      },
+      {
+       "id": "E",
+       "text": "Azithromycin 1 g single dose",
+       "explanation": "Single-dose treatment is inadequate for PID, which needs 14 days."
+      }
+     ],
+     "answer": "B",
+     "educationalObjective": "Treat mild to moderate PID as an outpatient and keep the IUD.",
+     "keyPoint": "PID: 14 days of doxycycline + metronidazole with a cephalosporin; review at 72 hours."
+    },
+    {
+     "id": "q2",
+     "vignette": "A 24-year-old woman at 20 weeks of her first pregnancy attends the antenatal clinic with a week of thin grey, fishy-smelling vaginal discharge that is worse after intercourse. She has no abdominal pain, bleeding or fever. Vaginal pH is 5.0, the whiff test is positive and clue cells are seen on the wet mount.",
+     "fictitious": true,
+     "question": "Which treatment is most appropriate?",
+     "options": [
+      {
+       "id": "A",
+       "text": "Kit 2: secnidazole 2 g with fluconazole 150 mg",
+       "explanation": "Secnidazole and fluconazole are avoided in pregnancy (CDC)."
+      },
+      {
+       "id": "B",
+       "text": "Tinidazole 2 g daily for 2 days",
+       "explanation": "This is a non-pregnant alternative, but tinidazole should be avoided in pregnancy (CDC)."
+      },
+      {
+       "id": "C",
+       "text": "Metronidazole 500 mg twice daily for 7 days",
+       "explanation": "Correct. Symptomatic BV in pregnancy is treated, and oral metronidazole is a recommended option (CDC)."
+      },
+      {
+       "id": "D",
+       "text": "No treatment until after delivery",
+       "explanation": "Symptomatic pregnant women should be treated now, because BV is linked to preterm birth (CDC)."
+      },
+      {
+       "id": "E",
+       "text": "Treat her husband with metronidazole as well",
+       "explanation": "Routine partner treatment is not recommended for BV (CDC)."
+      }
+     ],
+     "answer": "C",
+     "educationalObjective": "Choose a pregnancy-safe regimen for bacterial vaginosis.",
+     "keyPoint": "BV or Trichomonas in pregnancy: metronidazole 500 mg twice daily for 7 days."
+    },
+    {
+     "id": "q3",
+     "vignette": "A 32-year-old woman with type 2 diabetes has had 4 episodes of thick white itchy discharge with vulval soreness in the past 10 months, each settling briefly with single-dose fluconazole bought from a pharmacy. She is not pregnant and uses condoms. Wet mount shows budding yeast. Her HbA1c is 9.4% on metformin alone.",
+     "fictitious": true,
+     "question": "What is the best long-term plan?",
+     "options": [
+      {
+       "id": "A",
+       "text": "Single-dose fluconazole with each episode",
+       "explanation": "Repeated single doses treat each episode but do not prevent the next recurrence."
+      },
+      {
+       "id": "B",
+       "text": "Fluconazole 150 mg on days 1, 4 and 7, then weekly for 6 months, and improve glucose control",
+       "explanation": "Correct. Recurrent candidiasis needs induction then weekly suppression (CDC); poor diabetic control is a driver."
+      },
+      {
+       "id": "C",
+       "text": "Metronidazole 500 mg twice daily for 7 days",
+       "explanation": "Metronidazole treats bacterial vaginosis and Trichomonas; it has no activity against Candida."
+      },
+      {
+       "id": "D",
+       "text": "Treat her partner with fluconazole",
+       "explanation": "Partner treatment is not part of recurrent candidiasis management in the cited guideline."
+      },
+      {
+       "id": "E",
+       "text": "Kit 6 for PID",
+       "explanation": "She has no pelvic pain or cervical motion tenderness, so there are no features of PID."
+      }
+     ],
+     "answer": "B",
+     "educationalObjective": "Recognise and manage recurrent vulvovaginal candidiasis.",
+     "keyPoint": "3 or more episodes a year: induction then weekly fluconazole for 6 months; look for diabetes."
     }
    ]
   },
@@ -575,6 +914,137 @@
     "Afebrile, pain improving, tolerating oral medicines (inpatient PID)"
    ],
    "followUpPlan": "PID review at 72 hours; retest at 3 months after gonorrhoea or chlamydia (CDC)."
-  }
+  },
+  "algorithms": [
+   {
+    "id": "vd-lap-pathway",
+    "title": "Vaginal discharge or lower abdominal pain: syndromic pathway",
+    "placement": "manage",
+    "nodes": [
+     {
+      "id": "start",
+      "kind": "start",
+      "text": "Woman with vaginal discharge or lower abdominal pain",
+      "detail": "History, speculum and bimanual examination, pregnancy test.",
+      "next": [
+       {
+        "to": "preg"
+       }
+      ]
+     },
+     {
+      "id": "preg",
+      "kind": "decision",
+      "text": "Lower abdominal pain with a positive pregnancy test or missed period?",
+      "next": [
+       {
+        "to": "ectopic",
+        "label": "Yes"
+       },
+       {
+        "to": "lap",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "ectopic",
+      "kind": "outcome",
+      "text": "Exclude ectopic pregnancy urgently (ultrasound, gynaecology); if intrauterine pregnancy with PID, admit for IV treatment with specialist advice (CDC)"
+     },
+     {
+      "id": "lap",
+      "kind": "decision",
+      "text": "Cervical motion, uterine or adnexal tenderness?",
+      "next": [
+       {
+        "to": "pid",
+        "label": "Yes (PID)"
+       },
+       {
+        "to": "vd",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "pid",
+      "kind": "decision",
+      "text": "Admission criteria? (surgical emergency not excluded, abscess, pregnancy, severe illness, vomiting, temperature above 38.5°C, cannot take or failed oral treatment)",
+      "next": [
+       {
+        "to": "ip",
+        "label": "Yes"
+       },
+       {
+        "to": "op",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "ip",
+      "kind": "outcome",
+      "text": "Admit: ceftriaxone 1 g IV daily + doxycycline + metronidazole; total 14 days"
+     },
+     {
+      "id": "op",
+      "kind": "outcome",
+      "text": "Outpatient: cephalosporin once + doxycycline + metronidazole for 14 days (Kit 6); review at 72 hours"
+     },
+     {
+      "id": "vd",
+      "kind": "decision",
+      "text": "Pregnant?",
+      "next": [
+       {
+        "to": "pregvd",
+        "label": "Yes"
+       },
+       {
+        "to": "cxq",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "pregvd",
+      "kind": "outcome",
+      "text": "Pregnancy: cervicitis cover with ceftriaxone + azithromycin (no doxycycline); BV or Trichomonas: metronidazole 500 mg twice daily for 7 days; candidiasis: topical azole for 7 days"
+     },
+     {
+      "id": "cxq",
+      "kind": "decision",
+      "text": "Mucopurulent cervicitis or STI risk?",
+      "next": [
+       {
+        "to": "cx",
+        "label": "Yes"
+       },
+       {
+        "to": "kit2",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "cx",
+      "kind": "outcome",
+      "text": "Treat cervicitis (ceftriaxone + doxycycline) and vaginitis (Kit 2); treat partner"
+     },
+     {
+      "id": "kit2",
+      "kind": "outcome",
+      "text": "Kit 2: secnidazole 2 g + fluconazole 150 mg"
+     }
+    ],
+    "source": {
+     "title": "Pelvic inflammatory disease: Sexually Transmitted Infections Treatment Guidelines (CDC)",
+     "edition": "CDC STI Treatment Guidelines, 2021",
+     "url": "https://www.cdc.gov/std/treatment-guidelines/pid.htm",
+     "locator": "sections Diagnostic considerations, Treatment (kits from the 2023 NACO kit specification; pregnancy regimens from CDC 2021)"
+    }
+   }
+  ]
  }
 ]

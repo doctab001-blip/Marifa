@@ -16,13 +16,13 @@
    "findings": [
     "Speculum diagnosis of P-PROM, oral erythromycin 250 mg four times daily for up to 10 days, no co-amoxiclav, cervical length 15 mm and fetal fibronectin 50 ng/mL thresholds from 30 weeks, nifedipine tocolysis 26–33+6 weeks, oxytocin receptor antagonist if nifedipine contraindicated, no betamimetics, corticosteroids 24–33+6 weeks with one repeat course, magnesium sulfate 4 g IV over 15 minutes then 1 g/hour up to 24 hours at 24–29+6 weeks (consider to 33+6) with 4-hourly monitoring checked against NICE NG25.",
     "Dexamethasone 6 mg IM every 12 hours for 4 doses or betamethasone 12 mg IM every 24 hours for 2 doses at 24–34 weeks when birth is likely within 7 days, with gestation reasonably assessed and facilities for newborn care, checked against WHO 2022 recommendations 1.0–1.10.",
+    "Nifedipine 20 mg orally then 10–20 mg three to four times daily adjusted to uterine activity (GPnotebook, NICE); intrapartum GBS prophylaxis with benzylpenicillin 3 g IV then 1.8 g IV every 4 hours, cefuroxime 1.5 g for non-severe allergy and vancomycin 20 mg/kg for severe allergy (Louth Hospitals, HSE 2023).",
     "Not clinically reviewed."
    ],
    "unverifiedSections": [
     "The MoHFW Operational Guidelines on antenatal corticosteroids (2014) were not opened.",
-    "Nifedipine dose is not given in NICE NG25 and is not included; use the unit protocol.",
-    "NICE NG25 gives no oral penicillin dose for P-PROM; use the local protocol.",
-    "Group B streptococcus intrapartum prophylaxis is not covered in the opened sources.",
+    "NICE NG25 names an oral penicillin as the alternative to erythromycin without a regimen; no row is shown, and the choice is left to the obstetrician.",
+    "Nifedipine dosing is from a GPnotebook summary of NICE guidance, and GBS prophylaxis from an Irish hospital guideline citing the HSE 2023 national guideline.",
     "Drug cautions, contraindications and renal or hepatic adjustment lines without a source tag are general pharmacology statements and need formulary confirmation."
    ],
    "medscapeStatus": "unavailable",
@@ -31,7 +31,7 @@
    ]
   },
   "pathophysiology": {
-   "summary": "India has the largest number of preterm births in the world, and prematurity is the leading cause of newborn death. Care aims to confirm preterm labour or membrane rupture, buy time for corticosteroids and in-utero transfer to a facility with newborn care, protect the baby's brain with magnesium sulfate before early preterm birth, and prevent infection after membranes rupture. Tocolysis is short-term only. WHO links corticosteroid use to conditions that make it safe: reliable gestational age, birth expected within 7 days, no maternal infection, and adequate care for the preterm baby.",
+   "summary": "India has the largest number of preterm births in the world, and prematurity is the leading cause of newborn death. Care aims to confirm preterm labour or membrane rupture, buy time for corticosteroids and in-utero transfer to a facility with newborn care, protect the baby's brain with magnesium sulfate before early preterm birth, and prevent infection after membranes rupture. Tocolysis is short-term only. WHO links corticosteroid use to conditions that make it safe: reliable gestational age, birth expected within 7 days, no maternal infection, and adequate care for the preterm baby. Group B streptococcus (GBS) colonisation adds to the risk of early-onset neonatal sepsis, so women in preterm labour receive intrapartum antibiotic prophylaxis. Every hour gained before birth helps, because it allows steroids and transfer.",
    "keyMechanisms": [
     "Infection, inflammation, overdistension and bleeding trigger preterm labour.",
     "Corticosteroids speed fetal lung maturation and reduce respiratory distress, brain bleed and death.",
@@ -43,12 +43,16 @@
    "symptoms": [
     "Regular painful contractions before 37 weeks",
     "Watery vaginal leakage",
-    "Low backache, pelvic pressure"
+    "Low backache, pelvic pressure",
+    "Vaginal bleeding or show",
+    "Fever or offensive vaginal discharge (infection)"
    ],
    "physicalSigns": [
     "Cervical change on examination",
     "Pooling of amniotic fluid on speculum (NICE)",
-    "Fever, uterine tenderness, foul liquor (chorioamnionitis)"
+    "Fever, uterine tenderness, foul liquor (chorioamnionitis)",
+    "Palpable regular uterine contractions",
+    "Maternal tachycardia above 100/min or fetal tachycardia (chorioamnionitis)"
    ],
    "redFlags": [
     "Chorioamnionitis: fever, tachycardia, uterine tenderness (corticosteroids contraindicated in clinical infection, WHO)",
@@ -66,19 +70,27 @@
   "differentials": [
    {
     "condition": "Braxton Hicks contractions",
-    "distinguishingFeatures": "Irregular, no cervical change."
+    "distinguishingFeatures": "Irregular, painless tightenings with no cervical change; from 30 weeks, cervical length above 15 mm or fibronectin 50 ng/mL or less makes preterm labour unlikely (NICE)."
    },
    {
-    "condition": "Urinary incontinence or discharge",
-    "distinguishingFeatures": "No pooling on speculum."
+    "condition": "Urinary incontinence or physiological discharge",
+    "distinguishingFeatures": "Leak with coughing or a thin discharge but no pooling of liquor on speculum; speculum examination settles it (NICE)."
    },
    {
     "condition": "Placental abruption",
-    "distinguishingFeatures": "Pain, bleeding, tender uterus."
+    "distinguishingFeatures": "Constant pain, a tender hard uterus and bleeding, sometimes concealed; clinical findings and fetal monitoring settle it (see Antepartum haemorrhage topic)."
    },
    {
-    "condition": "Urinary tract infection",
-    "distinguishingFeatures": "Dysuria, pyuria."
+    "condition": "Urinary tract infection or pyelonephritis",
+    "distinguishingFeatures": "Dysuria, loin pain and fever; urine microscopy and culture settle it, and infection may itself trigger preterm labour."
+   },
+   {
+    "condition": "Chorioamnionitis",
+    "distinguishingFeatures": "Fever, maternal and fetal tachycardia, uterine tenderness and offensive liquor after membrane rupture; clinical diagnosis with raised white cells and CRP."
+   },
+   {
+    "condition": "Appendicitis or other surgical cause in pregnancy",
+    "distinguishingFeatures": "Localised right-sided pain and tenderness with anorexia; ultrasound settles it."
    }
   ],
   "diagnosticCriteria": [
@@ -163,16 +175,16 @@
     },
     {
      "tier": "laboratory",
-     "testName": "Maternal temperature, pulse, white cells, CRP and urine culture",
+     "testName": "Maternal temperature and pulse, white cells, CRP and cardiotocography (CTG); urine culture",
      "modalityTarget": "Bedside and blood",
      "targetCondition": "Chorioamnionitis, urinary infection",
      "normalValue": "Afebrile; normal counts",
      "expectedFinding": "Fever, tachycardia, raised counts",
-     "clinicalRationale": "Monitor after P-PROM.",
+     "clinicalRationale": "Diagnose intrauterine infection with clinical assessment plus CRP, white cells and CTG together; never use one test alone (NICE 1.5.1–1.5.3).",
      "references": [
       {
        "title": "Preterm labour and birth (NICE NG25)",
-       "edition": "NICE NG25, updated 2022, recommendations 1.4.1–1.4.3",
+       "edition": "NICE NG25, updated 2022, recommendations 1.5.1–1.5.3",
        "url": "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations"
       }
      ]
@@ -188,7 +200,7 @@
      "references": [
       {
        "title": "Preterm labour and birth (NICE NG25)",
-       "edition": "NICE NG25, updated 2022, section 1.8",
+       "edition": "NICE NG25, updated 2022, section 1.12",
        "url": "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations"
       }
      ]
@@ -220,7 +232,8 @@
     "timeframe": "On arrival",
     "actions": [
      "Gestation, contractions, cervix, membranes, infection, fetal wellbeing (NICE).",
-     "Transfer in utero to a facility with newborn care when possible."
+     "Transfer in utero to a facility with newborn care when possible.",
+     "Dysuria or bacteriuria: send urine culture and treat urinary infection with a pregnancy-safe antibiotic guided by culture (see the urinary tract infection topic)."
     ]
    },
    {
@@ -229,7 +242,8 @@
     "timeframe": "From diagnosis",
     "actions": [
      "Erythromycin 250 mg four times daily for up to 10 days or until labour (NICE 1.4.1).",
-     "Do not give co-amoxiclav (NICE 1.4.3)."
+     "Do not give co-amoxiclav (NICE 1.4.3).",
+     "Suspected intrauterine infection (fever with raised white cells, fetal tachycardia or offensive liquor): IV ampicillin plus gentamicin, no tocolysis, expedite birth and inform the neonatal team (NICE 1.5; MSD Manual)."
     ]
    },
    {
@@ -237,8 +251,10 @@
     "title": "Corticosteroids and tocolysis",
     "timeframe": "Within hours",
     "actions": [
-     "Corticosteroids at 24–34 weeks when criteria met (WHO 2022; NICE 1.9).",
-     "Nifedipine tocolysis at 26–33+6 weeks with intact membranes; no betamimetics (NICE 1.8)."
+     "Corticosteroids at 24–34 weeks when criteria are met (WHO 2022; NICE 1.9).",
+     "Nifedipine 20 mg then 10–20 mg three to four times daily at 26–33+6 weeks with intact membranes; oxytocin receptor antagonist if nifedipine contraindicated; no betamimetics (NICE 1.8; GPnotebook).",
+     "At 22+0 to 23+6 weeks, discuss corticosteroids with the woman, family and multidisciplinary team (NICE 1.9.1).",
+     "Consider one repeat course before 34+0 weeks if the first was over 7 days ago and birth is very likely within 48 hours; never more than 2 courses (NICE 1.9.4–1.9.5)."
     ]
    },
    {
@@ -255,7 +271,8 @@
     "title": "Birth",
     "timeframe": "At delivery",
     "actions": [
-     "Newborn resuscitation team present; thermal care and early breastfeeding (see newborn topics)."
+     "Newborn resuscitation team present; delayed cord clamping where appropriate; thermal care and early breastfeeding (see newborn topics).",
+     "Intrapartum GBS prophylaxis with benzylpenicillin when indicated by risk factors (Louth Hospitals; HSE 2023)."
     ]
    }
   ],
@@ -267,12 +284,24 @@
      "entryCriteria": "Confirmed P-PROM."
     },
     {
+     "label": "Tocolysis",
+     "entryCriteria": "Suspected or diagnosed preterm labour at 26+0 to 33+6 weeks (consider from 24+0), intact membranes, no contraindication."
+    },
+    {
      "label": "Antenatal corticosteroids",
      "entryCriteria": "24–34 weeks, birth likely within 7 days."
     },
     {
      "label": "Fetal neuroprotection",
      "entryCriteria": "24–33+6 weeks, birth expected within 24 hours."
+    },
+    {
+     "label": "Intrapartum GBS prophylaxis",
+     "entryCriteria": "Established preterm labour or birth expected."
+    },
+    {
+     "label": "Suspected intrauterine infection",
+     "entryCriteria": "Maternal fever with raised white cells, fetal tachycardia or purulent discharge."
     }
    ],
    "regimens": [
@@ -288,7 +317,8 @@
       "Paediatric: Not applicable (maternal).",
       "Penicillin allergy: Not a beta-lactam; suitable in penicillin allergy.",
       "CKD: No adjustment.",
-      "CLD: Caution in liver disease."
+      "CLD: Caution in liver disease.",
+      "If erythromycin is not tolerated or contraindicated, NICE advises an oral penicillin for up to 10 days (no regimen given)."
      ],
      "monitoring": [
       "Signs of chorioamnionitis"
@@ -298,40 +328,9 @@
      ],
      "branch": "P-PROM antibiotics",
      "step": "P-PROM antibiotic",
-     "selection": "one-of",
      "sourceTitle": "Preterm labour and birth (NICE NG25)",
      "sourceUrl": "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations",
-     "sourceEdition": "NICE NG25, updated 2022, recommendation 1.4.1",
-     "preferred": true
-    },
-    {
-     "indication": "P-PROM, erythromycin not tolerated",
-     "patientGroup": "Pregnant women",
-     "genericName": "Phenoxymethylpenicillin (oral penicillin)",
-     "dose": "Dose per local protocol",
-     "route": "Oral",
-     "frequency": "As per protocol",
-     "duration": "Up to 10 days",
-     "adjustments": [
-      "Paediatric: Not applicable (maternal).",
-      "Penicillin allergy: Contraindicated in penicillin allergy.",
-      "CKD: No adjustment.",
-      "CLD: No adjustment."
-     ],
-     "monitoring": [
-      "Infection signs"
-     ],
-     "contraindications": [
-      "Penicillin allergy"
-     ],
-     "branch": "P-PROM antibiotics",
-     "step": "P-PROM antibiotic",
-     "selection": "one-of",
-     "sourceTitle": "Preterm labour and birth (NICE NG25)",
-     "sourceUrl": "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations",
-     "sourceEdition": "NICE NG25, updated 2022, recommendation 1.4.2",
-     "preferred": false,
-     "useWhen": "Erythromycin not tolerated or contraindicated (NICE 1.4.2)."
+     "sourceEdition": "NICE NG25, updated 2022, recommendation 1.4.1"
     },
     {
      "indication": "Preterm birth likely",
@@ -358,7 +357,7 @@
      "selection": "one-of",
      "sourceTitle": "WHO recommendations on antenatal corticosteroids for improving preterm birth outcomes",
      "sourceUrl": "https://docs.bvsalud.org/biblioref/2022/10/1398125/9789240057296-eng.pdf",
-     "sourceEdition": "WHO, 2022, recommendations 1.0, 1.9",
+     "sourceEdition": "WHO, 2022, recommendation 1.0 and remarks under recommendation 1.9",
      "preferred": true
     },
     {
@@ -386,7 +385,7 @@
      "selection": "one-of",
      "sourceTitle": "WHO recommendations on antenatal corticosteroids for improving preterm birth outcomes",
      "sourceUrl": "https://docs.bvsalud.org/biblioref/2022/10/1398125/9789240057296-eng.pdf",
-     "sourceEdition": "WHO, 2022, recommendation 1.9",
+     "sourceEdition": "WHO, 2022, recommendation 1.0 and remarks under recommendation 1.9",
      "preferred": false,
      "useWhen": "Dexamethasone unavailable (WHO: either agent)."
     },
@@ -417,6 +416,88 @@
      "sourceTitle": "Preterm labour and birth (NICE NG25)",
      "sourceUrl": "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations",
      "sourceEdition": "NICE NG25, updated 2022, recommendations 1.10.4–1.10.6"
+    },
+    {
+     "indication": "Preterm labour, intact membranes",
+     "patientGroup": "Pregnant women 24+0 to 33+6 weeks",
+     "genericName": "Nifedipine",
+     "dose": "20 mg loading, then 10–20 mg three to four times daily adjusted to uterine activity",
+     "route": "Oral",
+     "frequency": "Three to four times daily",
+     "duration": "Not stated in the source; commonly up to 48 hours to complete corticosteroids (general practice)",
+     "adjustments": [
+      "Paediatric: Not applicable (maternal).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment.",
+      "CLD: No sourced adjustment; hepatically metabolised, so use with caution (general pharmacology).",
+      "Offer at 26+0 to 33+6 weeks, consider at 24+0 to 25+6 weeks (NICE 1.8.2–1.8.3); off-label use."
+     ],
+     "monitoring": [
+      "Maternal BP and pulse, fetal heart rate"
+     ],
+     "contraindications": [
+      "Maternal hypotension, cardiac disease, bleeding or infection where stopping labour is unsafe"
+     ],
+     "branch": "Tocolysis",
+     "step": "Calcium channel blocker",
+     "selection": "all",
+     "sourceTitle": "Tocolytics (GPnotebook, summarising NICE NG25 preterm labour and birth)",
+     "sourceUrl": "https://gpnotebook.com/en-GB/pages/gynaecology/tocolytics",
+     "sourceEdition": "GPnotebook, edited August 2019, section Nifedipine"
+    },
+    {
+     "indication": "Intrapartum GBS prophylaxis when indicated by risk factors (Louth Hospitals: risk-factor approach, HSE 2023)",
+     "patientGroup": "Pregnant women in labour",
+     "genericName": "Benzylpenicillin",
+     "dose": "3 g, then 1.8 g",
+     "route": "IV",
+     "frequency": "3 g stat, then 1.8 g every 4 hours",
+     "duration": "Until delivery",
+     "adjustments": [
+      "Paediatric: Not applicable (maternal).",
+      "Penicillin allergy: Non-severe allergy: cefuroxime 1.5 g IV stat then 1.5 g IV four times daily; severe allergy: clindamycin 900 mg IV three times daily if GBS is clindamycin-susceptible, otherwise vancomycin 20 mg/kg IV three times daily (maximum 2 g per dose) (Louth Hospitals).",
+      "CKD: No sourced adjustment; reduce in severe renal impairment (general pharmacology).",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Ideally first dose at least 4 hours before birth"
+     ],
+     "contraindications": [
+      "Penicillin allergy"
+     ],
+     "branch": "Intrapartum GBS prophylaxis",
+     "step": "Penicillin",
+     "selection": "all",
+     "sourceTitle": "Antimicrobial guidelines: GBS intrapartum prophylaxis (Louth Hospitals, citing the HSE national GBS guideline 2023)",
+     "sourceUrl": "https://eguides.megsupporttools.com/media/pdfs/pprom.pdf",
+     "sourceEdition": "Louth Hospitals, updated October 2026, section GBS intrapartum prophylaxis"
+    },
+    {
+     "indication": "Suspected or confirmed intraamniotic infection (chorioamnionitis)",
+     "patientGroup": "Pregnant women",
+     "genericName": "Ampicillin plus gentamicin",
+     "dose": "Ampicillin 2 g every 6 hours plus gentamicin 2 mg/kg load then 1.5 mg/kg every 8 hours, or 5 mg/kg every 24 hours",
+     "route": "IV",
+     "frequency": "As stated",
+     "duration": "Until birth; after caesarean give one further dose and add clindamycin 900 mg or metronidazole 500 mg IV after cord clamping",
+     "adjustments": [
+      "Paediatric: Not applicable (maternal); inform the neonatal team.",
+      "Penicillin allergy: Mild allergy: cefazolin 2 g IV every 8 hours plus gentamicin; severe allergy: clindamycin 900 mg IV every 8 hours or vancomycin 1 g IV every 12 hours plus gentamicin (MSD Manual).",
+      "CKD: Gentamicin: extend interval and monitor levels in renal impairment (general pharmacology).",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Temperature, pulse, CTG, gentamicin levels, renal function"
+     ],
+     "contraindications": [
+      "Do not give corticosteroids or tocolysis with clinical chorioamnionitis (WHO); expedite birth"
+     ],
+     "branch": "Suspected intrauterine infection",
+     "step": "Broad-spectrum antibiotics",
+     "selection": "all",
+     "sourceTitle": "Intraamniotic infection (MSD Manual Professional Edition, J. S. Moldenhauer)",
+     "sourceUrl": "https://www.msdmanuals.com/professional/gynecology-and-obstetrics/abnormalities-of-pregnancy/intraamniotic-infection",
+     "sourceEdition": "Full review January 2024, updated July 2024, section Treatment"
     }
    ],
    "note": "P-PROM antibiotics, tocolysis criteria and magnesium sulfate from NICE NG25; corticosteroid doses from WHO 2022. India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
@@ -426,13 +507,16 @@
    "learningObjectives": [
     "Diagnose preterm labour and P-PROM.",
     "Give corticosteroids under WHO conditions.",
-    "Give magnesium sulfate for neuroprotection."
+    "Give magnesium sulfate for neuroprotection.",
+    "Give tocolysis and intrapartum GBS prophylaxis correctly."
    ],
    "keyPoints": [
     "Erythromycin 250 mg four times daily up to 10 days after P-PROM.",
     "Dexamethasone 6 mg IM 12-hourly × 4 at 24–34 weeks.",
     "Magnesium 4 g IV then 1 g/hour.",
-    "No betamimetics; no co-amoxiclav."
+    "No betamimetics; no co-amoxiclav.",
+    "Nifedipine 20 mg then 10–20 mg three to four times daily for short-term tocolysis.",
+    "Benzylpenicillin 3 g IV then 1.8 g every 4 hours in preterm labour."
    ],
    "pitfalls": [
     "Corticosteroids with clinical infection.",
@@ -452,6 +536,158 @@
      "edition": "WHO, 2022",
      "url": "https://docs.bvsalud.org/biblioref/2022/10/1398125/9789240057296-eng.pdf",
      "locator": "recommendations 1.0–1.10"
+    },
+    {
+     "title": "Tocolytics (GPnotebook, summarising NICE NG25 preterm labour and birth)",
+     "edition": "GPnotebook, edited August 2019",
+     "url": "https://gpnotebook.com/en-GB/pages/gynaecology/tocolytics",
+     "locator": "section Nifedipine"
+    },
+    {
+     "title": "Antimicrobial guidelines: GBS intrapartum prophylaxis (Louth Hospitals, citing the HSE national GBS guideline 2023)",
+     "edition": "Louth Hospitals, updated October 2026",
+     "url": "https://eguides.megsupporttools.com/media/pdfs/pprom.pdf",
+     "locator": "section GBS intrapartum prophylaxis"
+    }
+   ],
+   "vignette": {
+    "text": "Sunita, a 23-year-old primigravida at 30 weeks and 2 days by first-trimester scan, attends a district hospital in Odisha with 4 hours of regular painful tightenings every 7 minutes and lower backache. She has had burning urination for 3 days. Temperature is 37.4°C, BP 112/70 mmHg and pulse 92/min. Speculum shows no pooling of liquor and the cervix appears to be opening. The hospital has no neonatal intensive care unit; the nearest is 90 km away.",
+    "fictitious": true
+   },
+   "guidedApproach": [
+    {
+     "title": "Why preterm birth happens and why time matters",
+     "prompt": "What can we change once preterm labour starts?",
+     "guidance": "Preterm labour is the final common pathway of several processes: infection and inflammation (including urinary and ascending genital infection), overdistension from multiple pregnancy, placental bleeding, cervical insufficiency and maternal stress. Once labour is established it is difficult to stop, and tocolytics only delay birth for a few days. That delay is valuable because it allows two things that change the baby's outcome: a course of corticosteroids, which matures the fetal lungs and reduces respiratory distress, intraventricular haemorrhage and death, and transfer of the mother to a hospital with newborn care. Magnesium sulfate given shortly before a very preterm birth protects the fetal brain and reduces cerebral palsy. After the membranes rupture, ascending infection becomes the main threat to both mother and baby.",
+     "section": "pathophysiology"
+    },
+    {
+     "title": "Recognising true preterm labour and its complications",
+     "prompt": "How do you tell real preterm labour from false alarms?",
+     "guidance": "Regular painful contractions with progressive cervical change define preterm labour. Before 30 weeks, NICE advises treating suspected preterm labour as real because the cost of missing it is high. From 30 weeks, a transvaginal cervical length of 15 mm or less, or a fetal fibronectin above 50 ng/mL, confirms it, and values above these thresholds make it unlikely. A speculum examination looking for pooled liquor diagnoses P-PROM; digital examination should be avoided after membrane rupture. Look actively for causes and complications: urinary infection, bleeding from abruption, and chorioamnionitis — maternal fever, maternal and fetal tachycardia, uterine tenderness and offensive liquor — which is a contraindication to tocolysis and to delaying birth.",
+     "section": "signs-symptoms"
+    },
+    {
+     "title": "Tests that guide decisions",
+     "prompt": "Which investigations change management?",
+     "guidance": "Gestational age must be reliably known before giving corticosteroids, so check the dating scan. Cervical length and fetal fibronectin help from 30 weeks but should not be combined. Urine microscopy and culture look for a treatable trigger. After P-PROM, monitor maternal temperature, pulse, white cell count and CRP for chorioamnionitis, and use fetal heart rate monitoring throughout. An obstetric ultrasound confirms presentation, liquor volume and estimated weight, which help plan the place and mode of birth, and confirms whether in-utero transfer is still safe.",
+     "section": "investigations"
+    },
+    {
+     "title": "Buying time and protecting the baby",
+     "prompt": "What should be given, and in what order?",
+     "guidance": "For P-PROM, start erythromycin 250 mg four times daily for up to 10 days and avoid co-amoxiclav because of an association with necrotising enterocolitis. Give corticosteroids — dexamethasone 6 mg IM every 12 hours for four doses or betamethasone 12 mg IM every 24 hours for two doses — at 24–34 weeks when birth is likely within 7 days and there is no clinical infection. With intact membranes at 26–33+6 weeks, nifedipine 20 mg followed by 10–20 mg three to four times daily delays birth long enough to complete steroids and transfer; betamimetics should not be used. When birth is expected within 24 hours at 24–29+6 weeks (consider up to 33+6), give magnesium sulfate 4 g IV over 15 minutes then 1 g/hour, monitoring reflexes, respiratory rate and urine output. In established preterm labour, give benzylpenicillin for group B streptococcus and call the neonatal team.",
+     "section": "management"
+    }
+   ],
+   "boardQuestions": [
+    {
+     "id": "q1",
+     "vignette": "A 23-year-old woman at 30+2 weeks has regular painful contractions every 7 minutes, intact membranes and a cervical length of 12 mm. She has no fever, bleeding or signs of infection. Her BP is 112/70 mmHg. The nearest neonatal intensive care unit is 90 km away.",
+     "fictitious": true,
+     "question": "What is the most appropriate management now?",
+     "options": [
+      {
+       "id": "A",
+       "text": "Terbutaline infusion to stop labour",
+       "explanation": "Betamimetics should not be used for tocolysis (NICE 1.8.5)."
+      },
+      {
+       "id": "B",
+       "text": "Corticosteroids, nifedipine and in-utero transfer",
+       "explanation": "Correct. Cervical length 15 mm or less confirms preterm labour; steroids at 24–34 weeks and nifedipine at 26–33+6 weeks buy time for transfer (NICE; WHO)."
+      },
+      {
+       "id": "C",
+       "text": "Erythromycin for 10 days",
+       "explanation": "Erythromycin is for P-PROM; her membranes are intact."
+      },
+      {
+       "id": "D",
+       "text": "Immediate caesarean section",
+       "explanation": "Preterm labour itself is not an indication for caesarean birth."
+      },
+      {
+       "id": "E",
+       "text": "Send home with advice as the cervix is closed",
+       "explanation": "A cervical length of 12 mm confirms preterm labour."
+      }
+     ],
+     "answer": "B",
+     "educationalObjective": "Manage confirmed preterm labour with intact membranes.",
+     "keyPoint": "Steroids + nifedipine + transfer; no betamimetics."
+    },
+    {
+     "id": "q2",
+     "vignette": "A 28-year-old woman at 31 weeks reports a gush of clear fluid 6 hours ago. Speculum shows pooling of liquor. She is afebrile with pulse 84/min, the uterus is non-tender, and the fetal heart rate is 140/min. She is not contracting.",
+     "fictitious": true,
+     "question": "Which antibiotic should be started?",
+     "options": [
+      {
+       "id": "A",
+       "text": "Co-amoxiclav 625 mg three times daily",
+       "explanation": "Co-amoxiclav should not be offered in P-PROM (NICE 1.4.3)."
+      },
+      {
+       "id": "B",
+       "text": "No antibiotic until labour starts",
+       "explanation": "Prophylactic antibiotics are offered after P-PROM (NICE 1.4.1)."
+      },
+      {
+       "id": "C",
+       "text": "Ceftriaxone 1 g IV daily",
+       "explanation": "This is not the recommended P-PROM prophylaxis and adds unnecessary broad-spectrum exposure."
+      },
+      {
+       "id": "D",
+       "text": "Erythromycin 250 mg four times daily for up to 10 days or until established labour",
+       "explanation": "Correct. Erythromycin for up to 10 days or until established labour is the NICE recommendation (1.4.1)."
+      },
+      {
+       "id": "E",
+       "text": "Benzylpenicillin 3 g IV now",
+       "explanation": "Intrapartum GBS prophylaxis is for labour; P-PROM prophylaxis is erythromycin."
+      }
+     ],
+     "answer": "D",
+     "educationalObjective": "Prescribe antibiotic prophylaxis after P-PROM.",
+     "keyPoint": "P-PROM: erythromycin 250 mg four times daily up to 10 days; never co-amoxiclav."
+    },
+    {
+     "id": "q3",
+     "vignette": "A 26-year-old woman at 27 weeks is in established preterm labour with the cervix 6 cm dilated. Birth is expected within a few hours. She received the first dose of dexamethasone 2 hours ago. Her reflexes are normal and urine output is adequate.",
+     "fictitious": true,
+     "question": "Which additional treatment protects the baby's brain?",
+     "options": [
+      {
+       "id": "A",
+       "text": "Nifedipine 20 mg orally",
+       "explanation": "Tocolysis is not appropriate in advanced labour, and it does not protect the brain."
+      },
+      {
+       "id": "B",
+       "text": "Second course of corticosteroids",
+       "explanation": "She is already receiving her first course; a repeat course does not protect the brain."
+      },
+      {
+       "id": "C",
+       "text": "Magnesium sulfate 4 g IV over 15 minutes then 1 g/hour",
+       "explanation": "Correct. Offer magnesium sulfate at 24–29+6 weeks when birth is expected within 24 hours (NICE 1.10.2, 1.10.4)."
+      },
+      {
+       "id": "D",
+       "text": "Indomethacin",
+       "explanation": "Not recommended in the cited sources and does not provide neuroprotection."
+      },
+      {
+       "id": "E",
+       "text": "Phenobarbitone",
+       "explanation": "Phenobarbitone has no role in fetal neuroprotection in the cited sources."
+      }
+     ],
+     "answer": "C",
+     "educationalObjective": "Give magnesium sulfate for fetal neuroprotection.",
+     "keyPoint": "Birth within 24 hours at 24–29+6 weeks: magnesium sulfate 4 g then 1 g/hour."
     }
    ]
   },
@@ -471,6 +707,157 @@
     "Contractions settled, no infection, follow-up arranged (threatened preterm labour)"
    ],
    "followUpPlan": "Close antenatal review; plan for next pregnancy with early booking."
-  }
+  },
+  "algorithms": [
+   {
+    "id": "preterm-pathway",
+    "title": "Threatened preterm labour or P-PROM",
+    "placement": "manage",
+    "nodes": [
+     {
+      "id": "start",
+      "kind": "start",
+      "text": "Pregnant woman before 37 weeks with contractions or leaking fluid",
+      "detail": "Confirm gestation; check for infection, bleeding and fetal wellbeing.",
+      "next": [
+       {
+        "to": "pprom"
+       }
+      ]
+     },
+     {
+      "id": "pprom",
+      "kind": "decision",
+      "text": "Pooling of liquor on speculum (P-PROM)?",
+      "next": [
+       {
+        "to": "ab",
+        "label": "Yes"
+       },
+       {
+        "to": "tl",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "ab",
+      "kind": "action",
+      "text": "Erythromycin 250 mg four times daily up to 10 days; no co-amoxiclav; watch for chorioamnionitis",
+      "next": [
+       {
+        "to": "infx"
+       }
+      ]
+     },
+     {
+      "id": "infx",
+      "kind": "decision",
+      "text": "Signs of intrauterine infection (fever with raised white cells or CRP, fetal tachycardia, offensive liquor)?",
+      "next": [
+       {
+        "to": "chorio",
+        "label": "Yes"
+       },
+       {
+        "to": "abster",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "chorio",
+      "kind": "outcome",
+      "text": "IV ampicillin plus gentamicin; no corticosteroids or tocolysis; expedite birth; neonatal team"
+     },
+     {
+      "id": "abster",
+      "kind": "decision",
+      "text": "24–34 weeks and birth likely within 7 days?",
+      "next": [
+       {
+        "to": "abmg",
+        "label": "Yes"
+       },
+       {
+        "to": "abwait",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "abmg",
+      "kind": "outcome",
+      "text": "Corticosteroids; magnesium sulfate if 24–33+6 weeks and birth within 24 hours; GBS prophylaxis in labour; in-utero transfer"
+     },
+     {
+      "id": "abwait",
+      "kind": "outcome",
+      "text": "Monitor for infection and labour; plan birth with obstetric team"
+     },
+     {
+      "id": "tl",
+      "kind": "decision",
+      "text": "Preterm labour confirmed? (under 30 weeks: treat as yes; from 30 weeks: cervical length 15 mm or less or fibronectin above 50 ng/mL)",
+      "next": [
+       {
+        "to": "pl",
+        "label": "Yes"
+       },
+       {
+        "to": "notl",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "notl",
+      "kind": "outcome",
+      "text": "Preterm labour unlikely; look for other causes; safety-net advice"
+     },
+     {
+      "id": "pl",
+      "kind": "action",
+      "text": "Corticosteroids at 24–34 weeks; nifedipine at 26–33+6 weeks with intact membranes",
+      "next": [
+       {
+        "to": "imminent"
+       }
+      ]
+     },
+     {
+      "id": "imminent",
+      "kind": "decision",
+      "text": "Birth expected within 24 hours?",
+      "next": [
+       {
+        "to": "mg",
+        "label": "Yes"
+       },
+       {
+        "to": "trans",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "mg",
+      "kind": "outcome",
+      "text": "Magnesium sulfate (24–33+6 weeks), benzylpenicillin for GBS, neonatal team"
+     },
+     {
+      "id": "trans",
+      "kind": "outcome",
+      "text": "In-utero transfer to a unit with newborn care; continue monitoring"
+     }
+    ],
+    "source": {
+     "title": "Preterm labour and birth (NICE NG25)",
+     "edition": "NICE NG25, updated 2022",
+     "url": "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations",
+     "locator": "recommendations 1.3, 1.4, 1.7–1.10 (corticosteroid doses from WHO 2022)"
+    }
+   }
+  ]
  }
 ]

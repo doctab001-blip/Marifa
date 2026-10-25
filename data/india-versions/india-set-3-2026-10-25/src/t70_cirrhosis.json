@@ -19,14 +19,15 @@
     "Clinically significant portal hypertension (CSPH) defined as HVPG 10 mmHg or more and very likely with liver stiffness 25 kPa or more; beta-blockers to prevent decompensation in CSPH; screening endoscopy avoidable with liver stiffness below 20 kPa and platelets above 150 × 10⁹/L, checked against the Berzigotti summary of Baveno VII.",
     "Spironolactone 100–400 mg and furosemide 40–160 mg, salt restriction, albumin after large-volume paracentesis and norfloxacin 400 mg or ciprofloxacin 500 mg daily SBP prophylaxis checked against BSG/BASL 2020 (recommendations 4.1–4.2, 2.8).",
     "Lactulose titrated to 2–3 soft stools a day and rifaximin added after a second episode of hepatic encephalopathy checked against AASLD/EASL 2014 (recommendations 25–28); lactulose 20–30 mL 6-hourly and rifaximin 400 mg three times daily from the ICMR ALF/ACLF STW.",
-    "Energy 35–40 kcal/kg/day, protein 1.2–1.5 g/kg/day and a late-evening snack from the 2013 Clinical Liver Disease nutrition table; hepatitis B vaccination indicated in chronic liver disease (adult 1.0 mL doses at 0, 1–2 and 4–6 months) from Immunize.org and CDC.",
+    "Energy 35–40 kcal/kg/day (ideal body weight), protein 1.2–1.5 g/kg/day and a late-night snack from AASLD/EASL 2014 recommendations 30–32; hepatitis B vaccination indicated in chronic liver disease (adult 1.0 mL doses at 0, 1–2 and 4–6 months) from Immunize.org and CDC.",
     "Not clinically reviewed."
    ],
    "unverifiedSections": [
     "INASL guidance and the full Baveno VII text were not opened; Baveno VII statements are from a published summary.",
     "AASLD 2023 guidance was read as a slide summary.",
     "Tenofovir, entecavir and sofosbuvir/velpatasvir doses for cirrhosis are taken from the NVHCP guidelines as recorded in the Chronic hepatitis B and C (India) topics; the NVHCP site blocks automated access, so they were not re-opened in this check.",
-    "The nutrition source is a 2013 review table for alcohol-related liver disease, applied here to cirrhosis of any cause.",
+    "Hepatitis A, pneumococcal and influenza vaccination are advised as general practice; their schedules follow national immunisation guidance, which was not opened here.",
+    "Propranolol maximum dose and heart-rate target were not confirmed from an opened source.",
     "Child-Pugh point thresholds are not stated because no opened source lists them; NICE NG50 uses Child-Pugh above 9 as a risk marker.",
     "Drug cautions, contraindications and renal or hepatic adjustment lines without a source tag are general pharmacology statements and need formulary confirmation."
    ],
@@ -224,19 +225,19 @@
      "references": [
       {
        "title": "Guidelines on the management of ascites in cirrhosis (BSG/BASL)",
-       "edition": "Gut 2020 (Aithal et al.), recommendations 1.2, 2.3",
+       "edition": "Gut 2020 (Aithal et al.), recommendations 1.1, 2.3",
        "url": "https://www.basl.org.uk/uploads/Portal%20Hypertension%20SIG/gutjnl-2020-321790.full_.pdf"
       }
      ]
     },
     {
      "tier": "laboratory",
-     "testName": "Cause screen: HBsAg, HBV DNA, anti-HCV, HCV RNA",
+     "testName": "Cause screen: HBsAg, IgG anti-HBc, anti-HCV (then HBV DNA or HCV RNA)",
      "modalityTarget": "Blood",
      "targetCondition": "Treatable viral cause",
      "normalValue": "Negative",
-     "expectedFinding": "Positive",
-     "clinicalRationale": "Treat the cause (ICMR ALF/ACLF STW serology list).",
+     "expectedFinding": "Positive: confirm viraemia and treat",
+     "clinicalRationale": "Serology list from the ICMR ALF/ACLF STW; viral load to decide treatment (NVHCP).",
      "references": [
       {
        "title": "Standard Treatment Workflow: Acute Liver Failure or Acute on Chronic Liver Failure (ICMR / Department of Health Research)",
@@ -248,18 +249,18 @@
    ],
    "ruleOut": [
     {
-     "tier": "firstLineImaging",
-     "testName": "Doppler ultrasound of portal and hepatic veins",
-     "modalityTarget": "Doppler",
-     "targetCondition": "Portal vein thrombosis, Budd-Chiari",
-     "normalValue": "Patent hepatopetal flow",
-     "expectedFinding": "Thrombosis or hepatic vein block",
-     "clinicalRationale": "When portal hypertension seems out of proportion to liver disease.",
+     "tier": "laboratory",
+     "testName": "Serum-ascites albumin gradient (SAAG)",
+     "modalityTarget": "Serum and ascitic albumin",
+     "targetCondition": "Non-portal causes of ascites (tuberculosis, malignancy)",
+     "normalValue": "Not applicable (calculated)",
+     "expectedFinding": "SAAG below 11 g/L: look for a non-portal cause",
+     "clinicalRationale": "SAAG 11 g/L or more confirms portal hypertensive ascites (BSG/BASL).",
      "references": [
       {
-       "title": "Cirrhosis in over 16s: assessment and management (NICE NG50)",
-       "edition": "NICE NG50, 2016, updated 2023, recommendation 1.1.4",
-       "url": "https://www.nice.org.uk/guidance/NG50/chapter/Recommendations"
+       "title": "Guidelines on the management of ascites in cirrhosis (BSG/BASL)",
+       "edition": "Gut 2020 (Aithal et al.), recommendation 1.2",
+       "url": "https://www.basl.org.uk/uploads/Portal%20Hypertension%20SIG/gutjnl-2020-321790.full_.pdf"
       }
      ]
     }
@@ -271,7 +272,7 @@
     "title": "Treat the cause",
     "timeframe": "From diagnosis",
     "actions": [
-     "Complete alcohol abstinence with de-addiction support (see Alcohol use disorder topic).",
+     "Complete alcohol abstinence with de-addiction support and relapse-prevention medicines (see Alcohol use disorder topic).",
      "Antiviral treatment for hepatitis B or C (NVHCP); weight loss and metabolic control for MASLD.",
      "Refer every patient with cirrhosis to a hepatologist (NICE 1.1.9)."
     ]
@@ -300,7 +301,7 @@
     "title": "Surveillance",
     "timeframe": "Every 6 months",
     "actions": [
-     "Ultrasound with or without AFP for HCC (NICE 1.2.4).",
+     "Ultrasound with or without AFP for HCC; not for people receiving end-of-life care (NICE 1.2.4–1.2.5).",
      "Endoscopy only if not on a beta-blocker: every 2–3 years, yearly if decompensated (NICE; AASLD)."
     ]
    },
@@ -309,9 +310,10 @@
     "title": "Complications",
     "timeframe": "At each visit",
     "actions": [
-     "Ascites: salt restriction, spironolactone with or without furosemide; SBP prophylaxis in high-risk patients (BSG/BASL; NICE 1.3.7).",
+     "Ascites: salt restriction, spironolactone with or without furosemide; albumin 8 g per litre after paracentesis over 5 L; SBP prophylaxis in high-risk patients (BSG/BASL; NICE 1.3.7).",
      "Hepatic encephalopathy: lactulose; add rifaximin after a recurrence (AASLD/EASL).",
-     "Avoid NSAIDs, sedatives and nephrotoxins."
+     "Avoid NSAIDs, sedatives, ACE inhibitors, angiotensin receptor blockers and aminoglycosides in ascites.",
+     "Portal vein thrombosis on ultrasound: refer to hepatology for anticoagulation assessment."
     ]
    },
    {
@@ -319,8 +321,8 @@
     "title": "Nutrition and vaccination",
     "timeframe": "Ongoing",
     "actions": [
-     "Energy 35–40 kcal/kg/day, protein 1.2–1.5 g/kg/day and a late-evening snack; do not restrict protein in encephalopathy.",
-     "Vaccinate against hepatitis B if non-immune (adult 3-dose schedule)."
+     "Energy 35–40 kcal/kg/day (ideal body weight), protein 1.2–1.5 g/kg/day and a late-night snack; do not restrict protein in encephalopathy (AASLD/EASL 30–32).",
+     "Vaccinate against hepatitis B if non-immune (adult 3-dose schedule); offer hepatitis A, pneumococcal and influenza vaccines as per national guidance."
     ]
    },
    {
@@ -343,6 +345,10 @@
     {
      "label": "Ascites",
      "entryCriteria": "Cirrhotic ascites without SBP or acute kidney injury."
+    },
+    {
+     "label": "Large-volume paracentesis",
+     "entryCriteria": "Paracentesis of more than 5 L."
     },
     {
      "label": "SBP prophylaxis",
@@ -378,7 +384,7 @@
       "Paediatric: Adult topic; paediatric use is outside the scope of the cited sources.",
       "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
       "CKD: No adjustment; watch BP.",
-      "CLD: Avoid in severe hepatic impairment such as refractory ascites (NICE 1.3.1).",
+      "CLD: NICE 1.3.1: avoid in severe hepatic impairment such as refractory ascites; BSG/BASL 10.1–10.2: refractory ascites alone is not a contraindication to beta-blockers, but reduce or stop with hypotension or kidney dysfunction.",
       "Target 12.5 mg/day from AASLD 2023 guidance."
      ],
      "monitoring": [
@@ -479,6 +485,33 @@
      "sourceEdition": "Gut 2020 (Aithal et al.), recommendations 4.1–4.2"
     },
     {
+     "indication": "Paracentesis of more than 5 L",
+     "patientGroup": "Adults",
+     "genericName": "Albumin 20% (or 25%)",
+     "dose": "8 g per litre of ascites removed",
+     "route": "IV",
+     "frequency": "During or after paracentesis",
+     "duration": "Each paracentesis",
+     "adjustments": [
+      "Paediatric: Adult topic; paediatric use is outside the scope of the cited sources.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment; watch for overload.",
+      "CLD: This is the indication."
+     ],
+     "monitoring": [
+      "BP, creatinine, sodium"
+     ],
+     "contraindications": [
+      "Fluid overload, heart failure"
+     ],
+     "branch": "Large-volume paracentesis",
+     "step": "Volume expander",
+     "selection": "all",
+     "sourceTitle": "Guidelines on the management of ascites in cirrhosis (BSG/BASL)",
+     "sourceUrl": "https://www.basl.org.uk/uploads/Portal%20Hypertension%20SIG/gutjnl-2020-321790.full_.pdf",
+     "sourceEdition": "Gut 2020 (Aithal et al.), recommendation 6.1"
+    },
+    {
      "indication": "High-risk ascites or prior SBP",
      "patientGroup": "Adults",
      "genericName": "Norfloxacin",
@@ -489,9 +522,9 @@
      "adjustments": [
       "Paediatric: Adult topic; paediatric use is outside the scope of the cited sources.",
       "Penicillin allergy: Not a beta-lactam; safe in penicillin allergy.",
-      "CKD: Reduce dose in severe renal impairment.",
+      "CKD: No adjustment at this dose.",
       "CLD: No adjustment.",
-      "Primary prophylaxis is considered only for high-risk patients (NICE 1.3.7)."
+      "Primary prophylaxis is considered only for high-risk patients (NICE 1.3.7; BSG/BASL 2.9, weak recommendation)."
      ],
      "monitoring": [
       "Tendon pain, QT"
@@ -504,7 +537,7 @@
      "selection": "one-of",
      "sourceTitle": "Guidelines on the management of ascites in cirrhosis (BSG/BASL)",
      "sourceUrl": "https://www.basl.org.uk/uploads/Portal%20Hypertension%20SIG/gutjnl-2020-321790.full_.pdf",
-     "sourceEdition": "Gut 2020 (Aithal et al.), recommendation 2.8",
+     "sourceEdition": "Gut 2020 (Aithal et al.), recommendations 2.8–2.9",
      "preferred": true
     },
     {
@@ -532,15 +565,44 @@
      "selection": "one-of",
      "sourceTitle": "Guidelines on the management of ascites in cirrhosis (BSG/BASL)",
      "sourceUrl": "https://www.basl.org.uk/uploads/Portal%20Hypertension%20SIG/gutjnl-2020-321790.full_.pdf",
-     "sourceEdition": "Gut 2020 (Aithal et al.), recommendation 2.8",
+     "sourceEdition": "Gut 2020 (Aithal et al.), recommendations 2.8–2.9",
      "preferred": false,
      "useWhen": "Norfloxacin unavailable."
+    },
+    {
+     "indication": "High-risk ascites or prior SBP",
+     "patientGroup": "Adults",
+     "genericName": "Co-trimoxazole (sulfamethoxazole-trimethoprim)",
+     "dose": "800/160 mg",
+     "route": "Oral",
+     "frequency": "Once daily",
+     "duration": "Long term while ascites persists; review",
+     "adjustments": [
+      "Paediatric: Adult topic; paediatric use is outside the scope of the cited sources.",
+      "Penicillin allergy: Not a beta-lactam; safe in penicillin allergy.",
+      "CKD: Avoid or reduce in severe renal impairment; monitor potassium.",
+      "CLD: Caution in severe liver disease (rare hepatotoxicity)."
+     ],
+     "monitoring": [
+      "Potassium, blood count, rash"
+     ],
+     "contraindications": [
+      "Sulfonamide allergy"
+     ],
+     "branch": "SBP prophylaxis",
+     "step": "Prophylactic antibiotic",
+     "selection": "one-of",
+     "sourceTitle": "Guidelines on the management of ascites in cirrhosis (BSG/BASL)",
+     "sourceUrl": "https://www.basl.org.uk/uploads/Portal%20Hypertension%20SIG/gutjnl-2020-321790.full_.pdf",
+     "sourceEdition": "Gut 2020 (Aithal et al.), recommendation 2.8",
+     "preferred": false,
+     "useWhen": "Fluoroquinolone allergy or unavailable."
     },
     {
      "indication": "Secondary prevention of hepatic encephalopathy",
      "patientGroup": "Adults",
      "genericName": "Lactulose",
-     "dose": "Titrate to 2–3 soft stools a day (ICMR: 20–30 mL every 6 hours, titrated to 3–4 stools/day in ACLF)",
+     "dose": "About 25 mL per dose, titrated to 2–3 soft stools a day",
      "route": "Oral",
      "frequency": "Two or three times daily",
      "duration": "Long term",
@@ -549,7 +611,7 @@
       "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
       "CKD: Avoid dehydration (worsens kidney function).",
       "CLD: This is the indication; avoid over-purgation.",
-      "ICMR ALF/ACLF STW gives 20–30 mL every 6 hours."
+      "ICMR 20–30 mL every 6 hours (3–4 stools a day) is acute inpatient ACLF dosing, not outpatient maintenance."
      ],
      "monitoring": [
       "Stool frequency, sodium, hydration"
@@ -577,7 +639,7 @@
       "Penicillin allergy: Not a beta-lactam; safe in penicillin allergy.",
       "CKD: No adjustment.",
       "CLD: No adjustment.",
-      "Same dose in the ICMR ALF/ACLF STW (section ACLF)."
+      "Indication (add to lactulose after a second episode) from AASLD/EASL 2014 recommendation 26, which gives no dose."
      ],
      "monitoring": [
       "Diarrhoea, Clostridioides difficile"
@@ -588,9 +650,9 @@
      "branch": "Hepatic encephalopathy prevention",
      "step": "Non-absorbable antibiotic",
      "selection": "all",
-     "sourceTitle": "Hepatic Encephalopathy in Chronic Liver Disease: 2014 Practice Guideline by AASLD and EASL",
-     "sourceUrl": "https://www.aasld.org/sites/default/files/2022-07/Hepatic%20Encephalopathy%20in%20Chronic%20Liver%20Disease%202014.pdf",
-     "sourceEdition": "Hepatology 2014;60:715-735, recommendation 26"
+     "sourceTitle": "Standard Treatment Workflow: Acute Liver Failure or Acute on Chronic Liver Failure (ICMR / Department of Health Research)",
+     "sourceUrl": "https://icmr.gov.in/icmrobject/uploads/STWs/1726567562_liver_failure.pdf",
+     "sourceEdition": "ICMR STW, July 2020, section Acute on chronic liver failure"
     },
     {
      "indication": "Hepatitis B with cirrhosis",
@@ -660,15 +722,14 @@
      "adjustments": [
       "Paediatric: Adult topic; paediatric use is outside the scope of the cited sources.",
       "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
-      "CKD: Use with caution when eGFR below 30 mL/min/1.73 m².",
+      "CKD: No adjustment usually; confirm with the formulary in severe renal impairment.",
       "CLD: Decompensated cirrhosis: specialist treatment with ribavirin (NVHCP Table 11)."
      ],
      "monitoring": [
       "SVR12 (HCV RNA 12 weeks after treatment)"
      ],
      "contraindications": [
-      "Amiodarone (bradycardia)",
-      "Pregnancy"
+      "Amiodarone (bradycardia)"
      ],
      "branch": "Hepatitis C cirrhosis",
      "step": "Direct-acting antiviral",
@@ -681,16 +742,16 @@
      "indication": "Non-immune adult with chronic liver disease",
      "patientGroup": "Adults",
      "genericName": "Hepatitis B vaccine (adult formulation)",
-     "dose": "1.0 mL",
-     "route": "IM, deltoid",
+     "dose": "1.0 mL (adults 20 years and over)",
+     "route": "IM",
      "frequency": "3 doses at 0, 1–2 and 4–6 months",
      "duration": "Course",
      "adjustments": [
       "Paediatric: Paediatric formulation and schedule differ; outside this adult topic.",
       "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
-      "CKD: Haemodialysis: high-dose formulation (CDC).",
+      "CKD: Haemodialysis: larger-dose formulation (Immunize.org).",
       "CLD: Chronic liver disease is an indication (Immunize.org).",
-      "Route and site from CDC vaccine administration guidance."
+      "Haemodialysis patients need a larger dose (Immunize.org; CDC)."
      ],
      "monitoring": [
       "Anti-HBs after the course if available"
@@ -717,15 +778,15 @@
     "Prevent and manage ascites, SBP and hepatic encephalopathy, and know when to refer for transplant."
    ],
    "keyPoints": [
-    "Carvedilol 6.25 mg/day, target 12.5 mg/day, once CSPH is likely; no screening endoscopy is needed if a beta-blocker is started.",
-    "Ultrasound with or without AFP every 6 months for every patient with cirrhosis.",
+    "In compensated cirrhosis: carvedilol 6.25 mg/day, target 12.5 mg/day, once CSPH is likely; no screening endoscopy is needed while on it (NICE 1.2.6).",
+    "Ultrasound with or without AFP every 6 months for every patient with cirrhosis, except those receiving end-of-life care (NICE 1.2.4–1.2.5).",
     "Stiffness below 20 kPa with platelets above 150 × 10⁹/L: screening endoscopy can be skipped.",
     "MELD 12 or more means high risk: refer to a specialist centre.",
     "Treat the cause: abstinence and antivirals can halt progression.",
     "Do not restrict protein; give a late-evening snack."
    ],
    "pitfalls": [
-    "Continuing a beta-blocker with systolic BP below 90 mmHg or in refractory ascites.",
+    "Continuing carvedilol in refractory ascites (NICE 1.3.1), or any beta-blocker with systolic BP below 90 mmHg or acute kidney injury (AASLD; BSG/BASL 10.2).",
     "No HCC surveillance, or surveillance only when symptoms appear.",
     "Calling every Indian patient with varices 'cirrhosis' and missing non-cirrhotic portal hypertension.",
     "Prescribing NSAIDs or benzodiazepines.",
@@ -781,10 +842,10 @@
      "locator": "pp. 37–39"
     },
     {
-     "title": "Management of patients with moderate alcoholic liver disease, Table 1: nutritional recommendations",
-     "edition": "Clin Liver Dis 2013;2(2):76-79",
-     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6448611/table/tbl1",
-     "locator": "Table 1"
+     "title": "Hepatic Encephalopathy in Chronic Liver Disease: 2014 Practice Guideline by AASLD and EASL",
+     "edition": "Hepatology 2014;60:715-735",
+     "url": "https://www.aasld.org/sites/default/files/2022-07/Hepatic%20Encephalopathy%20in%20Chronic%20Liver%20Disease%202014.pdf",
+     "locator": "recommendations 30–32"
     },
     {
      "title": "Hepatitis B vaccination for adults: who needs it and when? (Immunize.org)",
@@ -813,7 +874,7 @@
     {
      "title": "Staging without invasive tests",
      "prompt": "How do you decide who needs endoscopy and who needs a beta-blocker?",
-     "guidance": "Elastography and the platelet count do most of the staging. A liver stiffness of 25 kPa or more makes CSPH very likely, so the patient gains from a beta-blocker whether or not varices are present; once a beta-blocker is started, a screening endoscopy does not change management. When stiffness is below 20 kPa and platelets are above 150 × 10⁹/L, the chance of varices needing treatment is low and endoscopy can be skipped, with yearly repeat testing. Patients between these groups, or those who cannot take a beta-blocker, need endoscopy to find medium or large varices, which then need either a beta-blocker or band ligation. Separately, every patient with cirrhosis needs an ultrasound, with or without AFP, every 6 months for HCC, and a MELD score every 6 months; a MELD of 12 or more marks high risk and should prompt specialist referral.",
+     "guidance": "Elastography and the platelet count do most of the staging. A liver stiffness of 25 kPa or more makes CSPH very likely (Baveno VII summary), so the patient gains from a beta-blocker whether or not varices are present; NICE does not offer screening endoscopy to people planning to take carvedilol or propranolol (1.2.6). When stiffness is below 20 kPa and platelets are above 150 × 10⁹/L, the chance of varices needing treatment is low and endoscopy can be skipped, with repeat elastography and platelets at follow-up. These rules apply to compensated cirrhosis; decompensated patients need endoscopy, and a patient whose beta-blocker is stopped needs yearly endoscopy (AASLD). Patients between these groups, or those who cannot take a beta-blocker, need endoscopy to find medium or large varices, which then need either a beta-blocker or band ligation. Separately, every patient with cirrhosis needs an ultrasound, with or without AFP, every 6 months for HCC, and a MELD score every 6 months; a MELD of 12 or more marks high risk and should prompt specialist referral.",
      "section": "investigations"
     },
     {
@@ -869,7 +930,7 @@
       {
        "id": "A",
        "text": "Continue at the same dose",
-       "explanation": "Continuing exposes her to further hypotension and kidney injury; carvedilol should be avoided in refractory ascites (NICE 1.3.1)."
+       "explanation": "Continuing exposes her to further hypotension and kidney injury: NICE advises avoiding carvedilol in refractory ascites (1.3.1), and BSG/BASL advises reducing or stopping a beta-blocker when hypotension or kidney dysfunction develops (10.2)."
       },
       {
        "id": "B",
@@ -879,7 +940,7 @@
       {
        "id": "C",
        "text": "Reduce or stop it, and refer for transplant assessment",
-       "explanation": "Correct. Systolic BP below 90 mmHg and refractory ascites with rising creatinine are reasons to reduce or stop the beta-blocker (AASLD; NICE 1.3.1), and refractory ascites is a transplant indication."
+       "explanation": "Correct. Systolic BP below 90 mmHg with rising creatinine is the reason to reduce or stop the beta-blocker (AASLD; BSG/BASL 10.2); NICE also advises avoiding carvedilol in refractory ascites (1.3.1). Refractory ascites is a reason for transplant referral."
       },
       {
        "id": "D",
@@ -973,7 +1034,7 @@
   "nonClinicalManagement": {
    "patientEducation": [
     "Complete alcohol abstinence.",
-    "Avoid painkillers such as ibuprofen and diclofenac; paracetamol in normal doses is safer.",
+    "Avoid painkillers such as ibuprofen and diclofenac; paracetamol is the preferred painkiller — ask your doctor for your safe daily amount.",
     "Seek care at once for black stools, vomiting blood, confusion, fever or abdominal swelling.",
     "Take carvedilol daily even when well."
    ],
@@ -992,17 +1053,41 @@
    ],
    "followUpPlan": "Review every 6 months with ultrasound, MELD and medicine check; sooner after any decompensation (NICE)."
   },
+  "guidelineComparison": {
+   "title": "Beta-blockers in refractory ascites",
+   "columns": [
+    "NICE NG50 (2016, updated 2023)",
+    "BSG/BASL ascites guideline (2020)"
+   ],
+   "rows": [
+    {
+     "parameter": "Refractory ascites",
+     "values": [
+      "Avoid carvedilol (recommendation 1.3.1)",
+      "Not a contraindication to non-selective beta-blockers (recommendation 10.1)"
+     ]
+    },
+    {
+     "parameter": "When to reduce or stop",
+     "values": [
+      "Adjust to heart rate and BP (1.3.2)",
+      "Hypotension or kidney dysfunction (10.2)"
+     ]
+    }
+   ],
+   "note": "Shown as each source states; not merged. AASLD 2023: reduce if systolic BP below 90 mmHg."
+  },
   "algorithms": [
    {
     "id": "cirrhosis-staging",
-    "title": "Staging and surveillance after a diagnosis of cirrhosis",
+    "title": "Staging and surveillance in compensated cirrhosis",
     "placement": "confirm",
     "nodes": [
      {
       "id": "start",
       "kind": "start",
-      "text": "Cirrhosis diagnosed or suspected",
-      "detail": "Treat the cause and refer to hepatology.",
+      "text": "Compensated cirrhosis diagnosed",
+      "detail": "Treat the cause and refer to hepatology. Decompensated patients need endoscopy (Baveno summary).",
       "next": [
        {
         "to": "hcc"
@@ -1037,8 +1122,8 @@
      {
       "id": "nsbb",
       "kind": "outcome",
-      "text": "Start carvedilol (or propranolol); no screening endoscopy needed",
-      "detail": "Reduce if systolic BP below 90 mmHg."
+      "text": "Start carvedilol (or propranolol); no screening endoscopy needed while on it (NICE 1.2.6)",
+      "detail": "Reduce if systolic BP below 90 mmHg. If the beta-blocker is stopped, start yearly endoscopy (AASLD)."
      },
      {
       "id": "bav6",
@@ -1058,7 +1143,7 @@
      {
       "id": "skip",
       "kind": "outcome",
-      "text": "No screening endoscopy; repeat elastography and platelets yearly"
+      "text": "No screening endoscopy now; repeat elastography and platelets at follow-up"
      },
      {
       "id": "ogd",
@@ -1073,7 +1158,7 @@
      {
       "id": "varices",
       "kind": "decision",
-      "text": "Medium or large varices?",
+      "text": "Any varices seen?",
       "next": [
        {
         "to": "treat",
@@ -1088,19 +1173,19 @@
      {
       "id": "treat",
       "kind": "outcome",
-      "text": "Carvedilol or propranolol; band ligation if beta-blocker not tolerated"
+      "text": "Varices mean CSPH: start carvedilol or propranolol; band ligation if beta-blocker not tolerated and varices are medium or large, have red signs, or Child-Pugh C"
      },
      {
       "id": "repeat",
       "kind": "outcome",
-      "text": "Repeat endoscopy every 3 years (2 if disease active, yearly if decompensated)"
+      "text": "No varices: repeat endoscopy every 3 years if not on a beta-blocker (NICE 1.2.7; AASLD: 2 years if disease active)"
      }
     ],
     "source": {
-     "title": "Baveno update: new place for beta-blockers (A. Berzigotti, summary of Baveno VII)",
-     "edition": "Universimed, summary of Baveno VII (J Hepatol 2022;76:959-74)",
-     "url": "https://universimed.com/at/article/hepatologie/baveno-update-new-place-beta-blockers-287674",
-     "locator": "sections CSPH and Baveno VI criteria; NICE NG50 recommendations 1.2.4–1.2.7"
+     "title": "Cirrhosis in over 16s: assessment and management (NICE NG50)",
+     "edition": "NICE NG50, 2016, updated 2023",
+     "url": "https://www.nice.org.uk/guidance/NG50/chapter/Recommendations",
+     "locator": "recommendations 1.2.4–1.2.7 (stiffness and platelet thresholds from the Baveno VII summary; intervals from AASLD 2023)"
     }
    },
    {
