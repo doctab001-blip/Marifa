@@ -1,0 +1,477 @@
+[
+ {
+  "id": "aefdcdbd-ed21-57be-b5de-94a615da1fd1",
+  "title": "Blood transfusion: indications, administration and reactions (India)",
+  "specialty": "Transfusion Medicine / Haematology / Internal Medicine / Surgery",
+  "authority": "MoHFW",
+  "status": "under_review",
+  "version": "india-set-2-2026-10-24-v1",
+  "lastReviewed": "2026-10-24",
+  "pillar": "Planned Care",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+   "checkedOn": "2026-10-24",
+   "status": "incomplete",
+   "scope": "Safe use of blood components in India: red cell, platelet, plasma and cryoprecipitate triggers and doses, administration, monitoring, and recognition, management and reporting of transfusion reactions under the Haemovigilance Programme of India (HvPI), built on the NIB Good Blood Transfusion Practices Guidance.",
+   "findings": [
+    "Red cell thresholds (Hb 7 g/dL stable adults; 8 g/dL orthopaedic, cardiac surgery or cardiovascular disease; 7 g/dL non-bleeding obstetric), single-unit transfusion, FFP 10–15 mL/kg and INR above 1.5 rule, platelet dose (1 unit per 10 kg) and prophylactic and therapeutic triggers, cryoprecipitate indications, transport, sampling, cannula and filter, infusion rates and maximum times, monitoring schedule, reaction timeline and definitions, management steps and HvPI reporting checked against the NIB Good Blood Transfusion Practices Guidance.",
+    "Adrenaline dose for anaphylactic reactions from the WAO 2020 / RCUK 2021 sources used in the Anaphylaxis topic.",
+    "Not clinically reviewed."
+   ],
+   "unverifiedSections": [
+    "The opened NIB text was truncated after the adrenaline dose; antipyretic and antihistamine doses are not given there.",
+    "Paediatric red cell volume is not in the opened text.",
+    "The adrenaline route in the NIB text was cut off; IM dosing is taken from the Anaphylaxis topic sources.",
+    "Drug cautions, contraindications and renal or hepatic adjustment lines without a source tag are general pharmacology statements and need formulary confirmation."
+   ],
+   "medscapeStatus": "unavailable",
+   "originalVersionIds": [
+    "aefdcdbd-ed21-57be-b5de-94a615da1fd1"
+   ]
+  },
+  "pathophysiology": {
+   "summary": "Blood components save lives but carry risks: wrong-blood errors, infection, reactions and fluid overload. Indian guidance favours restrictive red cell transfusion (Hb 7 g/dL in stable adults), single-unit transfusion with reassessment, and plasma and platelets only for defined indications (NIB). Most reactions happen early, so the first 15 minutes are given slowly with close observation. Any suspected reaction means stopping the transfusion, keeping the line open with saline, assessing airway, breathing and circulation, sending samples and the bag to the blood centre, and reporting to HvPI.",
+   "keyMechanisms": [
+    "ABO-incompatible red cells cause intravascular haemolysis, shock and DIC.",
+    "Donor leucocyte or cytokine reactions cause febrile non-haemolytic reactions.",
+    "Plasma proteins trigger allergic and anaphylactic reactions.",
+    "Volume overload (TACO) and donor antibodies (TRALI) cause respiratory distress."
+   ]
+  },
+  "presentation": {
+   "symptoms": [
+    "Fever, chills",
+    "Itch, urticaria",
+    "Breathlessness, chest or loin pain",
+    "Anxiety, feeling of doom"
+   ],
+   "physicalSigns": [
+    "Temperature 38°C or more with a rise of 1°C (FNHTR) (NIB)",
+    "Hypotension: systolic fall 30 mmHg or more to 80 mmHg or less (NIB)",
+    "Hypoxaemia, crackles",
+    "Haemoglobinuria, oozing from sites"
+   ],
+   "redFlags": [
+    "Hypotension, hypoxaemia, haemoglobinuria: stop and treat as life-threatening (NIB)",
+    "Breathlessness within 6 hours (TRALI) or 12 hours (TACO) (NIB)",
+    "Anaphylaxis: adrenaline",
+    "Wrong patient or unit identified"
+   ],
+   "precipitants": [
+    "Identification errors at sampling or bedside",
+    "Rapid transfusion in heart failure, elderly, small patients (TACO)",
+    "IgA deficiency (anaphylaxis)",
+    "Bacterial contamination of platelets"
+   ]
+  },
+  "differentials": [
+   {
+    "condition": "Sepsis unrelated to transfusion",
+    "distinguishingFeatures": "Ongoing infection, fever before transfusion."
+   },
+   {
+    "condition": "Acute heart failure",
+    "distinguishingFeatures": "Pre-existing cardiac disease; responds to diuretic."
+   },
+   {
+    "condition": "Drug reaction",
+    "distinguishingFeatures": "New drug given at the same time."
+   },
+   {
+    "condition": "Underlying disease causing haemolysis",
+    "distinguishingFeatures": "Positive history, not linked to unit."
+   }
+  ],
+  "diagnosticCriteria": [
+   {
+    "criterion": "FNHTR (NIB)",
+    "threshold": "Fever 38°C or more and a rise of 1°C or more from baseline, no other cause."
+   },
+   {
+    "criterion": "Transfusion-associated hypotension (NIB)",
+    "threshold": "Systolic fall of 30 mmHg or more with systolic 80 mmHg or less."
+   },
+   {
+    "criterion": "TRALI (NIB)",
+    "threshold": "Hypoxaemia (P/F 300 or less, or SpO2 below 90% on air) within 6 hours."
+   },
+   {
+    "criterion": "TACO (NIB)",
+    "threshold": "At least 3 listed criteria within 12 hours."
+   }
+  ],
+  "investigations": {
+   "ruleIn": [
+    {
+     "tier": "laboratory",
+     "testName": "Haemoglobin before red cell transfusion",
+     "modalityTarget": "Blood count",
+     "targetCondition": "Need for red cells",
+     "normalValue": "12–16 g/dL",
+     "expectedFinding": "Below 7 g/dL (stable) or below 8 g/dL (cardiac, orthopaedic)",
+     "clinicalRationale": "Restrictive thresholds (NIB).",
+     "references": [
+      {
+       "title": "Good Blood Transfusion Practices Guidance (National Institute of Biologicals / Haemovigilance Programme of India)",
+       "edition": "NIB, MoHFW, section 4",
+       "url": "https://www.nib.gov.in/media/Good Blood Transfusion Practices Guidance.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Platelet count",
+     "modalityTarget": "Blood count",
+     "targetCondition": "Need for platelets",
+     "normalValue": "150,000–450,000/µL",
+     "expectedFinding": "Below 10,000 (prophylaxis); below 50,000 with bleeding",
+     "clinicalRationale": "Prophylactic and therapeutic triggers (NIB).",
+     "references": [
+      {
+       "title": "Good Blood Transfusion Practices Guidance (National Institute of Biologicals / Haemovigilance Programme of India)",
+       "edition": "NIB, MoHFW, section 4",
+       "url": "https://www.nib.gov.in/media/Good Blood Transfusion Practices Guidance.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "INR",
+     "modalityTarget": "Coagulation",
+     "targetCondition": "Need for FFP",
+     "normalValue": "About 1.0",
+     "expectedFinding": "Above 1.5 with bleeding or high-risk procedure",
+     "clinicalRationale": "FFP not indicated for INR below 1.5 (NIB).",
+     "references": [
+      {
+       "title": "Good Blood Transfusion Practices Guidance (National Institute of Biologicals / Haemovigilance Programme of India)",
+       "edition": "NIB, MoHFW, section 4",
+       "url": "https://www.nib.gov.in/media/Good Blood Transfusion Practices Guidance.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "specializedAdjunctive",
+     "testName": "Vital signs before, at 15 minutes and during transfusion",
+     "modalityTarget": "Bedside",
+     "targetCondition": "Early reaction",
+     "normalValue": "Stable temperature, pulse, BP, RR, SpO2",
+     "expectedFinding": "Fever, tachycardia, hypotension, hypoxaemia",
+     "clinicalRationale": "Monitor at 15 minutes, then every 30–60 minutes (NIB).",
+     "references": [
+      {
+       "title": "Good Blood Transfusion Practices Guidance (National Institute of Biologicals / Haemovigilance Programme of India)",
+       "edition": "NIB, MoHFW, section 6",
+       "url": "https://www.nib.gov.in/media/Good Blood Transfusion Practices Guidance.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Reaction work-up",
+     "modalityTarget": "Repeat ABO group, direct Coombs test, blood count; plasma and urine Hb; renal and liver tests; coagulation",
+     "targetCondition": "Haemolytic reaction",
+     "normalValue": "DCT negative; no haemoglobinuria",
+     "expectedFinding": "DCT positive; haemoglobinuria",
+     "clinicalRationale": "Send clotted and EDTA samples and bag to blood centre (NIB).",
+     "references": [
+      {
+       "title": "Good Blood Transfusion Practices Guidance (National Institute of Biologicals / Haemovigilance Programme of India)",
+       "edition": "NIB, MoHFW, section 8",
+       "url": "https://www.nib.gov.in/media/Good Blood Transfusion Practices Guidance.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "firstLineImaging",
+     "testName": "Chest X-ray and BNP (respiratory reaction)",
+     "modalityTarget": "Radiograph; serum BNP",
+     "targetCondition": "TACO vs TRALI",
+     "normalValue": "Clear lungs",
+     "expectedFinding": "Bilateral infiltrates; raised BNP in TACO",
+     "clinicalRationale": "Respiratory reactions (NIB).",
+     "references": [
+      {
+       "title": "Good Blood Transfusion Practices Guidance (National Institute of Biologicals / Haemovigilance Programme of India)",
+       "edition": "NIB, MoHFW, section 8",
+       "url": "https://www.nib.gov.in/media/Good Blood Transfusion Practices Guidance.pdf"
+      }
+     ]
+    }
+   ],
+   "ruleOut": [
+    {
+     "tier": "laboratory",
+     "testName": "Blood cultures (patient and bag)",
+     "modalityTarget": "Culture",
+     "targetCondition": "Bacterial contamination",
+     "normalValue": "No growth",
+     "expectedFinding": "Growth",
+     "clinicalRationale": "Febrile reactions (NIB).",
+     "references": [
+      {
+       "title": "Good Blood Transfusion Practices Guidance (National Institute of Biologicals / Haemovigilance Programme of India)",
+       "edition": "NIB, MoHFW, section 8",
+       "url": "https://www.nib.gov.in/media/Good Blood Transfusion Practices Guidance.pdf"
+      }
+     ]
+    }
+   ]
+  },
+  "clinicalManagement": [
+   {
+    "id": "indicate",
+    "title": "Decide",
+    "timeframe": "Before ordering",
+    "actions": [
+     "Use restrictive thresholds and single units in non-bleeding adults; reassess before more (NIB).",
+     "Do not give FFP for volume or nutrition (NIB)."
+    ]
+   },
+   {
+    "id": "give",
+    "title": "Administer",
+    "timeframe": "Throughout",
+    "actions": [
+     "Two trained staff (one a doctor) at the bedside check; 170–200 micron filter (NIB).",
+     "First 15 minutes at about 1 mL/min; red cells 100–150 mL/hour; complete red cells within 4 hours, platelets and plasma within 30 minutes of start per unit (NIB).",
+     "No calcium-containing fluids or 5% dextrose in the line (NIB)."
+    ]
+   },
+   {
+    "id": "react",
+    "title": "Suspected reaction",
+    "timeframe": "Immediately",
+    "actions": [
+     "Stop the transfusion; keep IV access with saline via another line (NIB).",
+     "Airway, high-flow oxygen; saline to maintain BP (NIB).",
+     "Anaphylaxis: adrenaline (see medicines); steroids and bronchodilators as adjuncts (NIB).",
+     "Fever or allergy only: antipyretic and antihistamine; do not restart from the same bag (NIB)."
+    ]
+   },
+   {
+    "id": "report",
+    "title": "Investigate and report",
+    "timeframe": "Within hours",
+    "actions": [
+     "Record vitals, time, unit number and volume (NIB).",
+     "Send samples and bag to the blood centre; complete the reaction form; report to HvPI (NIB)."
+    ]
+   }
+  ],
+  "medicationPlan": {
+   "status": "source-verified",
+   "branches": [
+    {
+     "label": "Red cells",
+     "entryCriteria": "Symptomatic anaemia or Hb below the threshold."
+    },
+    {
+     "label": "Platelets",
+     "entryCriteria": "Thrombocytopenia meeting a trigger."
+    },
+    {
+     "label": "Plasma and cryoprecipitate",
+     "entryCriteria": "Coagulopathy with bleeding, or fibrinogen deficiency."
+    },
+    {
+     "label": "Anaphylactic reaction",
+     "entryCriteria": "Transfusion reaction with airway, breathing or circulation problem."
+    }
+   ],
+   "regimens": [
+    {
+     "indication": "Hb below threshold",
+     "patientGroup": "Adults",
+     "genericName": "Packed red cells",
+     "dose": "1 unit, then reassess",
+     "route": "IV",
+     "frequency": "100–150 mL/hour after a slow first 15 minutes",
+     "duration": "Each unit within 4 hours",
+     "adjustments": [
+      "Paediatric: Paediatric volume not in the opened text.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Slower rate and diuretic consideration in kidney failure (TACO risk).",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Vitals at 15 minutes and every 30–60 minutes",
+      "Post-transfusion Hb"
+     ],
+     "contraindications": [
+      "Volume overload risk: slow rate"
+     ],
+     "branch": "Red cells",
+     "step": "Red cell transfusion",
+     "selection": "all",
+     "sourceTitle": "Good Blood Transfusion Practices Guidance (National Institute of Biologicals / Haemovigilance Programme of India)",
+     "sourceUrl": "https://www.nib.gov.in/media/Good Blood Transfusion Practices Guidance.pdf",
+     "sourceEdition": "NIB, MoHFW, section 4"
+    },
+    {
+     "indication": "Thrombocytopenia meeting trigger",
+     "patientGroup": "Adults and children",
+     "genericName": "Platelet concentrate",
+     "dose": "1 unit per 10 kg (4–6 units for 60–70 kg adult)",
+     "route": "IV",
+     "frequency": "150–300 mL/hour",
+     "duration": "Within 30 minutes per unit",
+     "adjustments": [
+      "Paediatric: Same per-kg dose in children (NIB).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Post-transfusion count",
+      "Fever (bacterial contamination)"
+     ],
+     "contraindications": [
+      "Never refrigerate platelets"
+     ],
+     "branch": "Platelets",
+     "step": "Platelet transfusion",
+     "selection": "all",
+     "sourceTitle": "Good Blood Transfusion Practices Guidance (National Institute of Biologicals / Haemovigilance Programme of India)",
+     "sourceUrl": "https://www.nib.gov.in/media/Good Blood Transfusion Practices Guidance.pdf",
+     "sourceEdition": "NIB, MoHFW, section 4"
+    },
+    {
+     "indication": "Coagulopathy with bleeding or INR above 1.5 before risky procedure",
+     "patientGroup": "Adults and children",
+     "genericName": "Fresh frozen plasma",
+     "dose": "10–15 mL/kg",
+     "route": "IV",
+     "frequency": "150–300 mL/hour",
+     "duration": "Within 30 minutes of thawing start per unit",
+     "adjustments": [
+      "Paediatric: Same per-kg dose in children (NIB).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Watch for overload in kidney failure.",
+      "CLD: This is the indication in liver disease with bleeding."
+     ],
+     "monitoring": [
+      "INR, bleeding"
+     ],
+     "contraindications": [
+      "Not for volume replacement (NIB)"
+     ],
+     "branch": "Plasma and cryoprecipitate",
+     "step": "Plasma",
+     "selection": "all",
+     "sourceTitle": "Good Blood Transfusion Practices Guidance (National Institute of Biologicals / Haemovigilance Programme of India)",
+     "sourceUrl": "https://www.nib.gov.in/media/Good Blood Transfusion Practices Guidance.pdf",
+     "sourceEdition": "NIB, MoHFW, section 4"
+    },
+    {
+     "indication": "Fibrinogen deficiency, von Willebrand disease",
+     "patientGroup": "Adults and children",
+     "genericName": "Cryoprecipitate",
+     "dose": "Dose by fibrinogen level (typical adult 10 units)",
+     "route": "IV",
+     "frequency": "150–300 mL/hour",
+     "duration": "Transfuse immediately after thaw (or within 6 hours at 2–6°C)",
+     "adjustments": [
+      "Paediatric: Weight-based in children.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment.",
+      "CLD: No adjustment.",
+      "10 units cryoprecipitate empirically in relentless obstetric bleeding (RCOG GTG 63)."
+     ],
+     "monitoring": [
+      "Fibrinogen"
+     ],
+     "contraindications": [
+      "Store below -30°C before thaw"
+     ],
+     "branch": "Plasma and cryoprecipitate",
+     "step": "Cryoprecipitate",
+     "selection": "all",
+     "sourceTitle": "Good Blood Transfusion Practices Guidance (National Institute of Biologicals / Haemovigilance Programme of India)",
+     "sourceUrl": "https://www.nib.gov.in/media/Good Blood Transfusion Practices Guidance.pdf",
+     "sourceEdition": "NIB, MoHFW, section 4"
+    },
+    {
+     "indication": "Anaphylaxis during transfusion",
+     "patientGroup": "Adults and children",
+     "genericName": "Adrenaline (epinephrine) 1 mg/mL",
+     "dose": "0.01 mg/kg (maximum 0.5 mg)",
+     "route": "IM, anterolateral thigh",
+     "frequency": "Repeat after 5 minutes if needed",
+     "duration": "Until improved",
+     "adjustments": [
+      "Paediatric: Children: 0.01 mg/kg (NIB; WAO 2020).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment.",
+      "CLD: No adjustment.",
+      "IM route and repeat interval from the Anaphylaxis (India) topic sources (WAO 2020, RCUK 2021)."
+     ],
+     "monitoring": [
+      "BP, SpO2, electrocardiogram (ECG)"
+     ],
+     "contraindications": [
+      "None in anaphylaxis"
+     ],
+     "branch": "Anaphylactic reaction",
+     "step": "Adrenaline",
+     "selection": "all",
+     "sourceTitle": "Good Blood Transfusion Practices Guidance (National Institute of Biologicals / Haemovigilance Programme of India)",
+     "sourceUrl": "https://www.nib.gov.in/media/Good Blood Transfusion Practices Guidance.pdf",
+     "sourceEdition": "NIB, MoHFW, section 8"
+    }
+   ],
+   "note": "Component triggers, doses and administration rules from the NIB Good Blood Transfusion Practices Guidance; reactions reported to HvPI. India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
+  },
+  "teaching": {
+   "scope": "Blood transfusion in Indian hospitals.",
+   "learningObjectives": [
+    "Apply restrictive triggers.",
+    "Administer components safely.",
+    "Recognise and report reactions."
+   ],
+   "keyPoints": [
+    "Hb 7 g/dL threshold in stable adults; one unit then reassess.",
+    "FFP 10–15 mL/kg only with bleeding or INR above 1.5 before risky procedures.",
+    "Platelets 1 unit per 10 kg; prophylaxis below 10,000.",
+    "Reaction: stop, keep line open with saline, report to HvPI."
+   ],
+   "pitfalls": [
+    "Two units by habit.",
+    "FFP for volume.",
+    "Restarting the same bag after a reaction.",
+    "Refrigerating platelets."
+   ],
+   "references": [
+    {
+     "title": "Good Blood Transfusion Practices Guidance (National Institute of Biologicals / Haemovigilance Programme of India)",
+     "edition": "NIB, MoHFW",
+     "url": "https://www.nib.gov.in/media/Good Blood Transfusion Practices Guidance.pdf",
+     "locator": "sections 3–6, 8 (components, sampling, storage, administration, reactions, reporting)"
+    },
+    {
+     "title": "Antepartum Haemorrhage, Green-top Guideline No. 63 (RCOG)",
+     "edition": "RCOG, 2011",
+     "url": "https://www.rcog.org.uk/media/pwdi1tef/gtg_63.pdf",
+     "locator": "Appendix 2"
+    }
+   ]
+  },
+  "nonClinicalManagement": {
+   "patientEducation": [
+    "Tell staff at once about fever, itch, breathlessness or pain during transfusion."
+   ],
+   "lifestyleAndDiet": [
+    "Treat underlying iron deficiency to reduce need for transfusion."
+   ],
+   "mdtReferrals": [
+    "Blood centre medical officer for every reaction",
+    "Haematology for recurrent reactions"
+   ],
+   "dischargeCriteria": [
+    "Stable after transfusion",
+    "Reaction investigated and reported if one occurred"
+   ],
+   "followUpPlan": "Recheck Hb or counts as indicated; document any reaction in the record."
+  }
+ }
+]
