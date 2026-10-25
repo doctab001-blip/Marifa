@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useMemo, useState, type KeyboardEvent } from "react";
+import { useId, useMemo, useState, type KeyboardEvent, type ReactNode } from "react";
 import { Plus, X, type LucideIcon } from "lucide-react";
 import type { VocabularyTerm } from "@/types/diagnosisEngine";
 
@@ -14,6 +14,8 @@ type FindingInputProps = {
   /** Recognised terms for type-ahead; terms of `preferredKind` rank first. */
   vocabulary?: VocabularyTerm[];
   preferredKind: VocabularyTerm["kind"];
+  /** Extra controls shown inside the box (e.g. study attachments). */
+  footer?: ReactNode;
 };
 
 const MAX_SUGGESTIONS = 7;
@@ -35,7 +37,7 @@ function suggest(vocabulary: VocabularyTerm[], draft: string, preferredKind: Voc
 }
 
 /** Chip generator with type-ahead: type a finding, pick a suggestion or press Enter to add your own text. */
-export function FindingInput({ label, hint, icon: Icon, examples, values, onChange, vocabulary = [], preferredKind }: FindingInputProps) {
+export function FindingInput({ label, hint, icon: Icon, examples, values, onChange, vocabulary = [], preferredKind, footer }: FindingInputProps) {
   const [draft, setDraft] = useState("");
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(-1);
@@ -138,6 +140,7 @@ export function FindingInput({ label, hint, icon: Icon, examples, values, onChan
           ))}
         </div>
       ) : null}
+      {footer}
     </fieldset>
   );
 }

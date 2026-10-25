@@ -12,6 +12,7 @@ import { DiscriminatorsPanel } from "./discriminators-panel";
 import { ComparePanel } from "./compare-panel";
 import { EMPTY_VITALS, VitalsPanel, vitalsCount, vitalsToFindings, type Vitals } from "./vitals-panel";
 import { summaryText } from "./summary";
+import { StudyAttachments } from "./study-attachments";
 
 type Findings = Pick<DiagnosticInputState, FindingDomain>;
 
@@ -71,6 +72,13 @@ export function DiagnosisWorkbench({ region }: { region: CountryCode }) {
 
   const touch = () => setActivePreset(null);
   const update = (domain: FindingDomain, values: string[]) => { setFindings((current) => ({ ...current, [domain]: values })); touch(); };
+  const addFindings = (domain: FindingDomain, values: string[]) => {
+    setFindings((current) => {
+      const existing = new Set(current[domain].map((value) => value.toLowerCase()));
+      return { ...current, [domain]: [...current[domain], ...values.filter((value) => !existing.has(value.toLowerCase()))] };
+    });
+    touch();
+  };
 
   const loadPreset = (id: string) => {
     const preset = clinicalPresets.find((item) => item.id === id);
@@ -192,7 +200,25 @@ export function DiagnosisWorkbench({ region }: { region: CountryCode }) {
         <VitalsPanel vitals={vitals} onChange={(next) => { setVitals(next); touch(); }} />
 
         {VECTORS.map((vector) => (
-          <FindingInput key={vector.domain} label={vector.label} hint={vector.hint} icon={vector.icon} examples={vector.examples} values={findings[vector.domain]} onChange={(values) => update(vector.domain, values)} vocabulary={vocabulary} preferredKind={vector.kind} />
+          <FindingInput
+            key={vector.domain}
+            label={vector.label}
+            hint={vector.hint}
+            icon={vector.icon}
+            examples={vector.examples}
+            values={findings[vector.domain]}
+            onChange={(values) => update(vector.domain, values)}
+            vocabulary={vocabulary}
+            preferredKind={vector.kind}
+            footer={vector.domain === "imagingFindings" || vector.domain === "labInvestigations" ? (
+              <StudyAttachments
+                kind={vector.domain === "imagingFindings" ? "imaging" : "investigation"}
+                clinicalContext={[...payload.symptoms, ...payload.examFindings, ...payload.labInvestigations, ...payload.imagingFindings]}
+                age={payload.age}
+                onAccept={(accepted) => addFindings(vector.domain, accepted)}
+              />
+            ) : null}
+          />
         ))}
 
         <div className="dx-actions">

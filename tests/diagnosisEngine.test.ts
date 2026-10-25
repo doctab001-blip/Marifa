@@ -292,4 +292,21 @@ describe("Diagnosis Engine — refinements", () => {
     expect(text).toContain(`https://marifa.example${first.marifaPathwayUrl}`);
     expect(text).toContain(body.clinicalSafetyNotice);
   });
+
+  it("never lets fever alone unlock exposure-gated conditions such as MERS-CoV", () => {
+    const base = { examFindings: [], labInvestigations: [], imagingFindings: [] };
+    for (const region of ["SA", "IN"] as const) {
+      const titles = runDiagnosisEngine({ ...base, symptoms: ["fever", "cough"], region }).topDifferentials.map((item) => item.diseaseTitle);
+      expect(titles).not.toContain("MERS-CoV Infection");
+      expect(titles[0]).toBe("Community-Acquired Pneumonia");
+    }
+    expect(runDiagnosisEngine({ ...base, symptoms: ["fever", "cough", "camel contact"], region: "SA" }).topDifferentials[0].diseaseTitle).toBe("MERS-CoV Infection");
+  });
+
+  it("reads neutrophil percentages and counts correctly", () => {
+    expect(interpretValues("Neuts 91%")).toEqual(["neutrophilia"]);
+    expect(interpretValues("ANC 0.4")).toEqual(["neutropenia"]);
+    expect(interpretValues("tlc 24k Neuts 91%")).toEqual(expect.arrayContaining(["leukocytosis", "neutrophilia"]));
+  });
 });
+

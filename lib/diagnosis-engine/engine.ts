@@ -166,6 +166,8 @@ type Scored = {
   missingClassic: CompiledFeature[];
   contextNotes: string[];
   hasKeyFeature: boolean;
+  /** Evidence from specific (non-generic, weight ≥ 2) features only. */
+  specificEvidence: number;
   /** A specific (non-generic) feature carries the match, not only fever, tachycardia or raised CRP. */
   supported: boolean;
   /** An explicit contrary result (weight 3, e.g. negative pregnancy test for ectopic) rules it off the list. */
@@ -252,9 +254,11 @@ function scoreProfile(profile: CompiledProfile, entries: Entry[], context: { fac
     missingClassic,
     contextNotes: evidence > 0 ? context.notes : [],
     hasKeyFeature,
+    specificEvidence,
     supported: hasKeyFeature || specificEvidence >= 2,
     refuted: refutingWeight >= 3,
-    gated: Boolean(profile.gate?.length) && !profile.features.some((feature) => profile.gate?.includes(feature.label) && featureStrength.has(feature)),
+    // A gate opens only on a specific finding: shared ones (fever, cough, tachycardia) never unlock a gated condition.
+    gated: Boolean(profile.gate?.length) && !profile.features.some((feature) => profile.gate?.includes(feature.label) && !feature.generic && featureStrength.has(feature)),
   };
 }
 
@@ -366,9 +370,13 @@ export function runDiagnosisEngine(input: DiagnosticInputState, options: RunOpti
   // Pad to the minimum with conditions from the same presentation: supported ones first, life-threatening next.
   if (selected.length < MIN_DIFFERENTIALS) {
     const clusters = new Set(selected.flatMap((item) => item.profile.clusters));
+    const leading = new Set(selected[0]?.profile.clusters ?? []);
+    const overlap = (item: Scored) => item.profile.clusters.filter((cluster) => leading.has(cluster)).length;
     const pool = scored
       .filter((item) => !selected.includes(item) && item.profile.clusters.some((cluster) => clusters.has(cluster)) && !item.refuted && !item.gated)
-      .sort((a, b) => Number(b.evidence > 0) - Number(a.evidence > 0) || URGENCY_ORDER[a.profile.urgencyLevel] - URGENCY_ORDER[b.profile.urgencyLevel] || byRank(a, b));
+      // Most plausible first: same kind of presentation as the leading condition, then specific findings, then how many
+      // entered findings it explains, then score.
+      .sort((a, b) => overlap(b) - overlap(a) || b.specificEvidence - a.specificEvidence || b.matchedEntries.length - a.matchedEntries.length || byRank(a, b));
     selected.push(...pool.slice(0, MIN_DIFFERENTIALS - selected.length));
   }
   selected.sort(byRank);
