@@ -331,7 +331,7 @@ export const extendedProfiles: DiagnosticProfile[] = [
   /* ── Infection ───────────────────────────────────────────────────────────────────────────── */
   {
     key: "mers-cov",
-    gate: ["Fever", "Camel exposure", "Contact with a MERS case or healthcare exposure", "MERS-CoV PCR positive"],
+    gate: ["Camel exposure", "Contact with a MERS case or healthcare exposure", "MERS-CoV PCR positive"],
     title: "MERS-CoV Infection",
     icd10Code: "U04.9",
     specialty: "Infectious Diseases / Infection Control",
@@ -359,7 +359,7 @@ export const extendedProfiles: DiagnosticProfile[] = [
   },
   {
     key: "malaria",
-    gate: ["Cyclical fever with rigors", "Travel to or residence in a malaria-endemic area", "Parasites on smear or positive RDT", "Fever"],
+    gate: ["Cyclical fever with rigors", "Travel to or residence in a malaria-endemic area", "Parasites on smear or positive RDT", "Splenomegaly", "Thrombocytopenia"],
     title: "Malaria",
     icd10Code: "B54",
     specialty: "Infectious Diseases",
@@ -393,6 +393,7 @@ export const extendedProfiles: DiagnosticProfile[] = [
     clusters: ["fever", "dyspnoea"],
     priors: { ...endemicIndia, regionWeight: { IN: 1.3, SA: 1.05, UK: 0.9 } },
     features: [
+      g(f("symptom", "Cough", 1, ["productive cough", "dry cough"])),
       f("symptom", "Cough for more than 2 weeks", 3, ["chronic cough", "persistent cough", "cough over 2 weeks", "cough for 3 weeks"], true),
       f("symptom", "Night sweats", 3, [], true),
       f("symptom", "Weight loss", 2, [], true),
@@ -412,7 +413,7 @@ export const extendedProfiles: DiagnosticProfile[] = [
   },
   {
     key: "scrub-typhus",
-    gate: ["Fever", "Eschar", "Scrub typhus IgM positive"],
+    gate: ["Eschar", "Scrub typhus IgM positive"],
     title: "Scrub Typhus",
     icd10Code: "A75.3",
     specialty: "Infectious Diseases",

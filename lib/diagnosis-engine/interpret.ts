@@ -53,7 +53,15 @@ const RULES: Rule[] = [
     },
   },
   { pattern: label("wbc|wcc|white cells?|white cell count|tlc"), interpret: ([v]) => { const n = v > 500 ? v / 1000 : v; return n > 11 ? ["leukocytosis"] : n < 4 ? ["leukopenia"] : []; } },
-  { pattern: label("neut(?:rophil)?s?|anc"), interpret: ([v]) => (v < 0.5 || (v > 50 && v < 500) ? ["neutropenia"] : []) },
+  // Neutrophils as a percentage ("Neuts 91%") or an absolute count (×10⁹/L, or per mm³ when > 100).
+  { pattern: new RegExp(String.raw`\b(?:neut(?:rophil)?s?|polys|pmn)${SEP}${NUM}\s*%`, "i"), interpret: ([v]) => (v > 75 ? ["neutrophilia"] : v < 40 ? ["low neutrophil percentage"] : []) },
+  {
+    pattern: new RegExp(String.raw`\b(?:neut(?:rophil)?s?|anc)${SEP}${NUM}(?!\s*%|\d)`, "i"),
+    interpret: ([v]) => {
+      const count = v > 100 ? v / 1000 : v;
+      return count < 1.5 ? ["neutropenia"] : count > 7.5 ? ["neutrophilia"] : [];
+    },
+  },
   { pattern: label("plt|platelets?"), interpret: ([v]) => { const n = v > 2000 ? v / 1000 : v; return n < 150 ? ["thrombocytopenia", "low platelets"] : []; } },
   { pattern: label("crp"), interpret: ([v]) => (v > 10 ? ["raised crp"] : []) },
   { pattern: label("ph"), interpret: ([v]) => (v < 7.35 && v > 6 ? ["low ph", "acidaemia"] : []) },
