@@ -1,0 +1,352 @@
+[
+ {
+  "id": "13a4329f-4800-5c40-889f-254cbbab2a37",
+  "title": "HIV post-exposure prophylaxis (India)",
+  "specialty": "Infectious Diseases / Occupational Health / Emergency Medicine",
+  "authority": "Other",
+  "status": "under_review",
+  "version": "india-set-3-2026-10-25-v1",
+  "lastReviewed": "2026-10-25",
+  "pillar": "Keep Well",
+  "clinicalReviewStatus": "pending",
+  "evidenceAudit": {
+   "checkedOn": "2026-10-25",
+   "status": "incomplete",
+   "scope": "Post-exposure prophylaxis (PEP) for human immunodeficiency virus (HIV) after occupational (needlestick, splash) and non-occupational (sexual, including sexual assault) exposure in India: first aid, risk assessment, timing, the three-drug regimen, baseline and follow-up tests, hepatitis B and C, and transition to pre-exposure prophylaxis. The NACO National Guidelines for HIV Care and Treatment (2021) section 2.10 could not be opened, so WHO (2024), CDC (2025) and the WHO-prequalified TLD label are used.",
+   "findings": [
+    "Start as soon as possible, ideally within 24 hours and no later than 72 hours; 28-day course; three drugs preferred (WHO 2024 summary).",
+    "Dolutegravir plus tenofovir plus lamivudine or emtricitabine as a preferred regimen; baseline HIV, hepatitis B, creatinine, ALT, AST and pregnancy tests; HIV testing at 4–6 and 12 weeks (CDC 2025, Appendix A).",
+    "TLD (dolutegravir/lamivudine/tenofovir DF 50/300/300 mg) one tablet daily for 28 days for PEP, 30 kg or more; not with creatinine clearance below 50 mL/min; dolutegravir 50 mg twice daily with rifampicin; separate from cations (WHO PQ label HA737).",
+    "Not clinically reviewed."
+   ],
+   "unverifiedSections": [
+    "NACO 2021 Tables 2.10.6–2.10.11 (exposure and source codes, regimens, follow-up) could not be read; NACO-specific regimens and codes are not shown.",
+    "PEP for children under 30 kg is not covered; refer to an ART centre.",
+    "Hepatitis B vaccination and immunoglobulin doses after exposure are not included because the source tables could not be read.",
+    "First aid steps are standard practice, not quoted from an opened source.",
+    "Drug cautions, contraindications and renal or hepatic adjustment lines without a source tag are general pharmacology statements and need formulary confirmation."
+   ],
+   "medscapeStatus": "unavailable",
+   "originalVersionIds": [
+    "13a4329f-4800-5c40-889f-254cbbab2a37"
+   ]
+  },
+  "pathophysiology": {
+   "summary": "PEP is a 28-day course of antiretroviral therapy (ART) started soon after a possible exposure to HIV to stop infection becoming established. Health workers in India are at risk from needlestick and sharps injuries, and PEP is also needed after sexual exposure and sexual assault. It works best within hours and is not started after 72 hours. Care includes immediate first aid, assessing the exposure and the source, baseline testing, a three-drug regimen (dolutegravir with tenofovir and lamivudine as a single TLD tablet in India), adherence support, follow-up HIV testing, and hepatitis B and C assessment. People with ongoing risk can move straight on to pre-exposure prophylaxis.",
+   "keyMechanisms": [
+    "HIV first infects local cells and reaches lymph nodes over 24–72 hours.",
+    "Early ART can block viral replication before infection is established.",
+    "Integrase inhibitors (dolutegravir) block viral DNA integration; tenofovir and lamivudine block reverse transcriptase.",
+    "Risk depends on fluid, route, depth of injury and source viral load."
+   ]
+  },
+  "presentation": {
+   "symptoms": [
+    "Recent needlestick, sharps or mucosal splash with blood or body fluid",
+    "Recent condomless sex or sexual assault"
+   ],
+   "physicalSigns": [
+    "Wound or puncture site",
+    "Injuries after assault"
+   ],
+   "redFlags": [
+    "Presentation after 72 hours: PEP not indicated; test and counsel (WHO 2024)",
+    "Symptoms of acute HIV (fever, rash, sore throat) during follow-up",
+    "Creatinine clearance below 50 mL/min: TLD unsuitable (label)",
+    "Sexual assault: also emergency contraception and STI care"
+   ],
+   "precipitants": [
+    "Recapping needles",
+    "Unsafe sharps disposal",
+    "Condomless sex, sexual assault"
+   ]
+  },
+  "differentials": [
+   {
+    "condition": "Low-risk exposure (intact skin)",
+    "distinguishingFeatures": "Exposure to intact skin needs no PEP."
+   },
+   {
+    "condition": "Established HIV infection",
+    "distinguishingFeatures": "Positive baseline test: treat as HIV, not PEP."
+   },
+   {
+    "condition": "Hepatitis B or C exposure",
+    "distinguishingFeatures": "Separate assessment and prophylaxis."
+   }
+  ],
+  "diagnosticCriteria": [
+   {
+    "criterion": "Timing (WHO 2024)",
+    "threshold": "Start ideally within 24 hours and no later than 72 hours."
+   },
+   {
+    "criterion": "Duration (WHO 2024; CDC 2025)",
+    "threshold": "28 days."
+   },
+   {
+    "criterion": "TLD use (label)",
+    "threshold": "Adults and adolescents 30 kg or more; creatinine clearance 50 mL/min or more."
+   }
+  ],
+  "investigations": {
+   "ruleIn": [
+    {
+     "tier": "laboratory",
+     "testName": "Baseline HIV test (rapid or antigen-antibody)",
+     "modalityTarget": "Blood",
+     "targetCondition": "Pre-existing HIV",
+     "normalValue": "Non-reactive",
+     "expectedFinding": "Reactive: manage as HIV infection, not PEP",
+     "clinicalRationale": "At the first visit (CDC 2025).",
+     "references": [
+      {
+       "title": "Updated guidelines for antiretroviral postexposure prophylaxis after sexual, injection drug use, or other nonoccupational exposure to HIV (CDC), Supplementary Appendix A",
+       "edition": "CDC nPEP guideline update, 2025, Appendix A, Laboratory testing recommendation 2",
+       "url": "https://stacks.cdc.gov/view/cdc/177225/cdc_177225_DS2.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Hepatitis B surface antigen and anti-HBs; hepatitis C antibody",
+     "modalityTarget": "Blood",
+     "targetCondition": "Hepatitis B and C",
+     "normalValue": "HBsAg negative; anti-HBs protective",
+     "expectedFinding": "HBsAg positive; HCV antibody positive",
+     "clinicalRationale": "Baseline (CDC 2025).",
+     "references": [
+      {
+       "title": "Updated guidelines for antiretroviral postexposure prophylaxis after sexual, injection drug use, or other nonoccupational exposure to HIV (CDC), Supplementary Appendix A",
+       "edition": "CDC nPEP guideline update, 2025, Appendix A, Laboratory testing recommendations 6–7",
+       "url": "https://stacks.cdc.gov/view/cdc/177225/cdc_177225_DS2.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Serum creatinine and creatinine clearance; ALT and AST",
+     "modalityTarget": "Blood",
+     "targetCondition": "Renal and liver safety",
+     "normalValue": "CrCl 50 mL/min or more; normal transaminases",
+     "expectedFinding": "CrCl below 50 mL/min: TLD not recommended",
+     "clinicalRationale": "Baseline (CDC 2025; label).",
+     "references": [
+      {
+       "title": "Dolutegravir/lamivudine/tenofovir disoproxil fumarate 50/300/300 mg tablets: WHO Public Assessment Report, summary of product characteristics (HA737)",
+       "edition": "WHO Prequalification, HA737 part 4, section 4.2 Renal impairment",
+       "url": "https://extranet.who.int/prequal/sites/default/files/whopar_files/ha737part4v2.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Pregnancy test",
+     "modalityTarget": "Urine",
+     "targetCondition": "Pregnancy",
+     "normalValue": "Negative",
+     "expectedFinding": "Positive: PEP still indicated; counsel",
+     "clinicalRationale": "Baseline (CDC 2025).",
+     "references": [
+      {
+       "title": "Updated guidelines for antiretroviral postexposure prophylaxis after sexual, injection drug use, or other nonoccupational exposure to HIV (CDC), Supplementary Appendix A",
+       "edition": "CDC nPEP guideline update, 2025, Appendix A, Laboratory testing recommendation 6",
+       "url": "https://stacks.cdc.gov/view/cdc/177225/cdc_177225_DS2.pdf"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Follow-up HIV test",
+     "modalityTarget": "Blood (antigen-antibody)",
+     "targetCondition": "Seroconversion",
+     "normalValue": "Non-reactive",
+     "expectedFinding": "Reactive",
+     "clinicalRationale": "At 4–6 weeks and 12 weeks (CDC 2025).",
+     "references": [
+      {
+       "title": "Updated guidelines for antiretroviral postexposure prophylaxis after sexual, injection drug use, or other nonoccupational exposure to HIV (CDC), Supplementary Appendix A",
+       "edition": "CDC nPEP guideline update, 2025, Appendix A, Laboratory testing recommendations 4–5",
+       "url": "https://stacks.cdc.gov/view/cdc/177225/cdc_177225_DS2.pdf"
+      }
+     ]
+    }
+   ],
+   "ruleOut": [
+    {
+     "tier": "specializedAdjunctive",
+     "testName": "Exposure risk assessment",
+     "modalityTarget": "History and wound examination",
+     "targetCondition": "Need for PEP",
+     "normalValue": "Intact skin exposure: no PEP",
+     "expectedFinding": "Percutaneous, mucosal or condomless sexual exposure within 72 hours",
+     "clinicalRationale": "Decide on PEP without waiting for source results (WHO 2024).",
+     "references": [
+      {
+       "title": "Updated WHO guidelines for HIV post-exposure prophylaxis (HIV i-Base summary of WHO July 2024 guideline)",
+       "edition": "HIV i-Base, July 2024, section Timing",
+       "url": "https://i-base.info/htb/48202"
+      }
+     ]
+    },
+    {
+     "tier": "laboratory",
+     "testName": "Source testing (HIV, HBsAg, HCV) with consent",
+     "modalityTarget": "Blood of source",
+     "targetCondition": "Source status",
+     "normalValue": "Non-reactive",
+     "expectedFinding": "Reactive",
+     "clinicalRationale": "Do not delay PEP while waiting for results.",
+     "references": [
+      {
+       "title": "Updated WHO guidelines for HIV post-exposure prophylaxis (HIV i-Base summary of WHO July 2024 guideline)",
+       "edition": "HIV i-Base, July 2024, section Timing",
+       "url": "https://i-base.info/htb/48202"
+      }
+     ]
+    }
+   ]
+  },
+  "clinicalManagement": [
+   {
+    "id": "first",
+    "title": "First aid",
+    "timeframe": "Immediately",
+    "actions": [
+     "Wash wound with soap and water; do not squeeze or scrub; flush splashes to eyes or mouth with water.",
+     "Report the exposure."
+    ]
+   },
+   {
+    "id": "assess",
+    "title": "Assess",
+    "timeframe": "Within hours",
+    "actions": [
+     "Type of exposure and fluid; source status if known.",
+     "Exposure within 72 hours and risk present: start PEP without waiting for results (WHO 2024)."
+    ]
+   },
+   {
+    "id": "start",
+    "title": "Start PEP",
+    "timeframe": "Ideally within 24 hours",
+    "actions": [
+     "TLD one tablet daily for 28 days (label; WHO 2024).",
+     "Baseline tests (CDC 2025).",
+     "Sexual exposure: emergency contraception and STI assessment."
+    ]
+   },
+   {
+    "id": "follow",
+    "title": "Follow-up",
+    "timeframe": "28 days to 12 weeks",
+    "actions": [
+     "Adherence and side-effect review.",
+     "HIV test at 4–6 and 12 weeks (CDC 2025).",
+     "Ongoing risk: move straight to pre-exposure prophylaxis (CDC 2025)."
+    ]
+   }
+  ],
+  "medicationPlan": {
+   "status": "source-verified",
+   "branches": [
+    {
+     "label": "Three-drug PEP",
+     "entryCriteria": "Exposure within 72 hours with risk of HIV transmission, adult or adolescent 30 kg or more."
+    }
+   ],
+   "regimens": [
+    {
+     "indication": "HIV PEP",
+     "patientGroup": "Adults and adolescents 30 kg or more",
+     "genericName": "Dolutegravir, lamivudine and tenofovir disoproxil fumarate (TLD) 50/300/300 mg",
+     "dose": "1 tablet",
+     "route": "Oral",
+     "frequency": "Once daily",
+     "duration": "28 days",
+     "adjustments": [
+      "Paediatric: Not for children under 30 kg (label); refer to an ART centre for paediatric PEP.",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Not recommended if creatinine clearance below 50 mL/min; use separate formulations (label).",
+      "CLD: No adjustment in Child-Pugh A or B; caution in Child-Pugh C (label).",
+      "Separate from antacids, calcium, iron and multivitamins: 2 hours after or 6 hours before (label section 4.5)."
+     ],
+     "monitoring": [
+      "Adherence, nausea, headache",
+      "Creatinine if renal risk"
+     ],
+     "contraindications": [
+      "Dofetilide, fampridine (label)",
+      "With rifampicin give extra dolutegravir 50 mg (label)"
+     ],
+     "branch": "Three-drug PEP",
+     "step": "Antiretroviral (fixed-dose combination)",
+     "selection": "all",
+     "sourceTitle": "Dolutegravir/lamivudine/tenofovir disoproxil fumarate 50/300/300 mg tablets: WHO Public Assessment Report, summary of product characteristics (HA737)",
+     "sourceUrl": "https://extranet.who.int/prequal/sites/default/files/whopar_files/ha737part4v2.pdf",
+     "sourceEdition": "WHO Prequalification, HA737 part 4, section 4.2 Posology"
+    }
+   ],
+   "note": "Regimen and duration from the WHO-prequalified TLD label (PEP posology) and WHO 2024; testing from CDC 2025. NACO 2021 tables could not be opened. India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
+  },
+  "teaching": {
+   "scope": "HIV PEP in Indian hospitals and clinics.",
+   "learningObjectives": [
+    "Give first aid and assess risk.",
+    "Start PEP within 72 hours.",
+    "Arrange tests and follow-up."
+   ],
+   "keyPoints": [
+    "Start as early as possible; not after 72 hours.",
+    "TLD one tablet daily for 28 days.",
+    "Test HIV at baseline, 4–6 and 12 weeks.",
+    "Check creatinine clearance."
+   ],
+   "pitfalls": [
+    "Waiting for source results.",
+    "Missing doses.",
+    "Forgetting hepatitis B.",
+    "Not offering emergency contraception after sexual exposure."
+   ],
+   "references": [
+    {
+     "title": "Updated WHO guidelines for HIV post-exposure prophylaxis (HIV i-Base summary of WHO July 2024 guideline)",
+     "edition": "HIV i-Base, July 2024",
+     "url": "https://i-base.info/htb/48202",
+     "locator": "sections Timing, Regimen, Duration"
+    },
+    {
+     "title": "Updated guidelines for antiretroviral postexposure prophylaxis after sexual, injection drug use, or other nonoccupational exposure to HIV (CDC), Supplementary Appendix A",
+     "edition": "CDC nPEP guideline update, 2025",
+     "url": "https://stacks.cdc.gov/view/cdc/177225/cdc_177225_DS2.pdf",
+     "locator": "Appendix A"
+    },
+    {
+     "title": "Dolutegravir/lamivudine/tenofovir disoproxil fumarate 50/300/300 mg tablets: WHO Public Assessment Report, summary of product characteristics (HA737)",
+     "edition": "WHO Prequalification, HA737 part 4",
+     "url": "https://extranet.who.int/prequal/sites/default/files/whopar_files/ha737part4v2.pdf",
+     "locator": "sections 4.2–4.6"
+    }
+   ]
+  },
+  "nonClinicalManagement": {
+   "patientEducation": [
+    "Take the tablet at the same time daily for 28 days.",
+    "Use condoms until follow-up tests are negative."
+   ],
+   "lifestyleAndDiet": [
+    "No restrictions; avoid taking with iron or calcium."
+   ],
+   "mdtReferrals": [
+    "Integrated Counselling and Testing Centre and ART centre",
+    "Occupational health / infection control",
+    "Gynaecology and forensic services after sexual assault"
+   ],
+   "dischargeCriteria": [
+    "PEP started, 28-day supply or plan",
+    "Follow-up dates given"
+   ],
+   "followUpPlan": "Review at day 3 and at 28 days; HIV tests at 4–6 and 12 weeks (CDC 2025)."
+  }
+ }
+]
