@@ -1,4 +1,5 @@
 "use client";
+import { MedicineSideEffects } from "@/components/medicine-side-effects";
 import { cleanAdjustments } from "@/lib/medicine-adjustments";
 
 import { useState } from "react";
@@ -82,7 +83,7 @@ function MedicationItem({ regimen }: { regimen: MedicationRegimen }) {
   return <li>
     <h4>{regimen.indication}{role ? <> — <em>{role}</em></> : null}</h4>
     <dl>
-      <div><dt>Medicine</dt><dd>{regimen.genericName}</dd></div>
+      <div><dt>Medicine</dt><dd>{regimen.genericName}<MedicineSideEffects name={regimen.genericName} /></dd></div>
       {regimen.useWhen ? <div><dt>Use when</dt><dd>{regimen.useWhen}</dd></div> : null}
       <div><dt>Patient group</dt><dd>{regimen.patientGroup}</dd></div>
       <div><dt>Dose and route</dt><dd>{regimen.dose}; {regimen.route}</dd></div>

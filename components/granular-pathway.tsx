@@ -1,4 +1,5 @@
 import type { ClinicalPathwayPayload, ExactDoseSchema, Medicines_Doses } from "@/lib/validations/clinical-pathway";
+import { MedicineSideEffects } from "@/components/medicine-side-effects";
 import { cleanAdjustments } from "@/lib/medicine-adjustments";
 import type { z } from "zod";
 import { SourceCitation } from "@/components/source-citation";
@@ -12,6 +13,7 @@ function Medicines({ medicines, showSources }: { medicines: Medicines_Doses[]; s
   return <ul className="list-disc">
     {medicines.map((medicine) => <li key={medicine.id}>
       <h4>{withoutInlineSourceLocators(medicine.medicine)}</h4>
+      <MedicineSideEffects name={medicine.medicine} />
       <ul className="list-disc">
         <li><strong>Indication:</strong> {withoutInlineSourceLocators(medicine.indication)}</li>
         <li><strong>Patient group:</strong> {withoutInlineSourceLocators(medicine.patient_group)}</li>
