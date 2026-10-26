@@ -1137,3 +1137,9 @@ html[data-theme="dark"] .topic-tile[data-spec] { background: hsl(var(--spec-hue,
 .sidebar .topic-nav-group[data-spec] a::before { background: color-mix(in srgb, var(--spec) 60%, transparent); }
 .sidebar .topic-nav-group[data-spec] a:hover::before { background: var(--spec); }
 .sidebar .topic-nav-group[data-spec] > summary { color: var(--spec); }
+
+/* ── Medication badges in management sequences: [💊 Drug | Dose | Route | Frequency | Duration] ── */
+.med-badge { --pc: #34d399; display: inline-flex; flex-wrap: wrap; align-items: center; gap: .1rem .5rem; margin: .12rem .18rem; vertical-align: middle; }
+.med-badge-drug { font-weight: 750; letter-spacing: .005em; }
+.med-badge-field { font-weight: 600; opacity: .94; }
+.med-badge-field::before { content: "|"; margin-right: .5rem; opacity: .45; }
