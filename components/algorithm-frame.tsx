@@ -11,12 +11,23 @@ type Mode = "width" | "all" | "actual";
 export function AlgorithmFrame({ title, chart }: { title: string; chart: ReactNode }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [open, setOpen] = useState(false);
+  const scroller = useRef<HTMLDivElement>(null);
+
+  // A wide chart is centred on its first step: start the sideways scroll in the middle so the opening steps are visible.
+  useLayoutEffect(() => {
+    const el = scroller.current;
+    if (!el) return;
+    const centre = () => { el.scrollLeft = Math.max(0, (el.scrollWidth - el.clientWidth) / 2); };
+    centre();
+    const raf = requestAnimationFrame(centre);
+    return () => { cancelAnimationFrame(raf); };
+  }, []);
   return (
     <>
       <div className="clinical-algorithm-tools">
         <button type="button" className="clinical-algorithm-open" onClick={() => { setOpen(true); }} aria-haspopup="dialog">Open full flowchart</button>
       </div>
-      <div className="clinical-algorithm-scroll" role="region" aria-label={`${title}: flowchart. Scroll sideways, or open the full flowchart.`} tabIndex={0}>
+      <div className="clinical-algorithm-scroll" ref={scroller} role="region" aria-label={`${title}: flowchart. Scroll sideways, or open the full flowchart.`} tabIndex={0}>
         {chart}
       </div>
       {open ? <FullView title={title} chart={chart} dialogRef={dialogRef} onClose={() => { setOpen(false); }} /> : null}
