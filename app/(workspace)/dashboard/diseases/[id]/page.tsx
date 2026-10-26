@@ -127,12 +127,11 @@ export default async function DiseaseDetailPage({ params, searchParams }: { para
   return (
     <main className="page disease-detail-page topic-page">
       <ActiveTopicSignal id={disease.id} title={pageTitle} status="approved" />
-      <TopicQueuePager queue="live" currentId={disease.id} position="top" />
+      <TopicQueuePager queue="live" currentId={disease.id} position="top" back={{ href: "/dashboard/diseases", label: "Disease Management" }} />
       <article className="scenario-card" aria-labelledby="scenario-title">
         <header className="sc-hero">
           <div className="sc-eyebrow-row">
             <span className="sc-icon-tile" aria-hidden="true"><Stethoscope size={24} /></span>
-            <span className="pill pill-aqua">Clinical scenario</span>
             <span className="pill pill-sky">{disease.pillar}</span>
           </div>
           <h1 id="scenario-title" className="scenario-title">{pageTitle}</h1>

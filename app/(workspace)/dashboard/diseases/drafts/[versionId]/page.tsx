@@ -1,6 +1,5 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ShieldAlert } from "@/components/icons-3d";
+import { ShieldAlert } from "@/components/icons-3d";
 import { EmergencyTopic } from "@/components/emergency-topic";
 import { getDiseaseDraftVersion } from "@/lib/data/disease-drafts";
 import { displayTopicTitle } from "@/lib/topic-title";
@@ -17,8 +16,7 @@ export default async function DiseaseDraftPreviewPage({ params }: { params: Prom
   return (
     <main className="page disease-detail-page topic-page">
       <ActiveTopicSignal id={result.disease.id} title={displayTopicTitle(result.disease.title)} status="draft" versionId={versionId} />
-      <Link href="/dashboard/diseases/drafts" className="disease-back-link"><ArrowLeft size={15} />Back to draft topics</Link>
-      <TopicQueuePager queue="drafts" currentId={result.disease.id} position="top" />
+      <TopicQueuePager queue="drafts" currentId={result.disease.id} position="top" back={{ href: "/dashboard/diseases/drafts", label: "Back to draft topics" }} />
       <article className="scenario-card" aria-labelledby="scenario-title">
         <p className="scenario-eyebrow">Clinical scenario · read-only draft</p>
         <h1 id="scenario-title" className="scenario-title">{displayTopicTitle(result.disease.title)}</h1>

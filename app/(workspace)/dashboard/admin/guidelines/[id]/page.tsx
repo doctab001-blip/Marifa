@@ -62,8 +62,13 @@ export default async function EditDraftGuidelinePage({
   return (
     <section className="admin-content topic-page">
       <ActiveTopicSignal id={id} title={openTitle} status={status} scope={isProtocol ? "protocol" : "disease"} versionId={result.state === "ready" ? result.versionId : query.version} />
-      <Link href={isProtocol ? (result.state === "ready" && result.isPublished ? PROTOCOLS_PUBLISHED : PROTOCOLS_DRAFTS) : query.version ? "/dashboard/diseases" : "/dashboard/diseases/drafts"} className="disease-back-link"><ArrowLeft size={15} />{isProtocol ? "Back to Local Protocols" : "Back to Disease Management"}</Link>
-      {!isProtocol && result.state === "ready" ? <TopicQueuePager queue={queue} currentId={id} position="top" /> : null}
+      {(() => {
+        const backHref = isProtocol ? (result.state === "ready" && result.isPublished ? PROTOCOLS_PUBLISHED : PROTOCOLS_DRAFTS) : query.version ? "/dashboard/diseases" : "/dashboard/diseases/drafts";
+        const backLabel = isProtocol ? "Back to Local Protocols" : "Back to Disease Management";
+        return !isProtocol && result.state === "ready"
+          ? <TopicQueuePager queue={queue} currentId={id} position="top" back={{ href: backHref, label: backLabel }} />
+          : <div className="topic-toolbar"><Link href={backHref} className="topic-toolbar-back"><ArrowLeft size={15} aria-hidden="true" />{backLabel}</Link></div>;
+      })()}
       {result.state === "invalid" ? (
         <article className="card admin-edit-card">
           <p className="eyebrow">Draft needs repair</p>
@@ -79,7 +84,7 @@ export default async function EditDraftGuidelinePage({
           {query.error && messages[query.error] && <p className="admin-save-error" role="alert">{messages[query.error]}</p>}
           <article className="scenario-card" aria-labelledby="scenario-title">
             <header className="sc-hero">
-              <div className="sc-eyebrow-row"><span className="sc-icon-tile" aria-hidden="true"><Stethoscope size={24} /></span><span className="pill pill-aqua">{isProtocol ? "Local protocol" : "Clinical scenario"}</span><span className="pill pill-sky">{result.disease.pillar}</span></div>
+              <div className="sc-eyebrow-row"><span className="sc-icon-tile" aria-hidden="true"><Stethoscope size={24} /></span>{isProtocol ? <span className="pill pill-aqua">Local protocol</span> : null}<span className="pill pill-sky">{result.disease.pillar}</span></div>
               <h1 id="scenario-title" className="scenario-title">{displayTopicTitle(result.disease.title)}</h1>
             </header>
             {actionBar("top")}
