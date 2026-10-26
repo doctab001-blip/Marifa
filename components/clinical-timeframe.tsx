@@ -27,10 +27,12 @@ export function ClinicalTimeframe({ text }: { text: string }) {
     <>
       {segments.map((segment, index) => {
         if (segment.kind === "badge") return <MedicationBadge key={index} badge={segment.badge} />;
-        const cleaned = withoutInlineSourceLocators(segment.text);
-        if (!cleaned) return null;
-        const lead = /^\s/.test(segment.text) && index > 0 ? " " : "";
-        const tail = /\s$/.test(segment.text) && index < segments.length - 1 ? " " : "";
+        // Keep the punctuation that joins the prose to its neighbouring badges ("; " between two badges, ":" before one).
+        const [, edgeLead = "", core = "", edgeTail = ""] = segment.text.match(/^(\s*[;,]?\s*)([\s\S]*?)(\s*:?\s*)$/) ?? [];
+        const cleaned = withoutInlineSourceLocators(core);
+        const lead = /[;,]/.test(edgeLead) ? `${edgeLead.trim()} ` : /^\s/.test(edgeLead) && index > 0 ? " " : "";
+        const tail = /:/.test(edgeTail) ? ":" + (index < segments.length - 1 ? " " : "") : /\s$/.test(edgeTail) && index < segments.length - 1 ? " " : "";
+        if (!cleaned) return lead.trim() ? <span key={index}>{lead}</span> : null;
         return <span key={index}>{lead}{timerPills(cleaned, String(index))}{tail}</span>;
       })}
     </>

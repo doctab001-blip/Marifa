@@ -5,7 +5,7 @@ import fs from "node:fs";
 import { loadEnvFile } from "node:process";
 import { createClient } from "@supabase/supabase-js";
 
-loadEnvFile(".env.local");
+loadEnvFile(process.env.ENVF ?? ".env.local");
 const [guidelineId, file] = process.argv.slice(2).filter((a) => !a.startsWith("--"));
 const apply = process.argv.includes("--apply");
 const local = JSON.parse(fs.readFileSync(file, "utf8"));
