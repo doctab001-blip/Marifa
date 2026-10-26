@@ -6,6 +6,7 @@ import { useState } from "react";
 import { ChevronDown } from "@/components/icons-3d";
 import { ClinicalWarning } from "@/components/clinical-warning";
 import { PathwaySequence } from "@/components/pathway-sequence";
+import { uncoveredRegimens } from "@/lib/step-medication";
 import { InvestigationCards } from "@/components/investigation-cards";
 import type { InvestigationReference } from "@/lib/investigation-display";
 import { getMedicationPlan } from "@/lib/data/medication-plans";
@@ -98,6 +99,8 @@ function MedicationItem({ regimen }: { regimen: MedicationRegimen }) {
 
 export function DiseaseDetailSections({ disease, investigationSource }: { disease: DiseaseDetail; investigationSource?: InvestigationReference }) {
   const medicationPlan = disease.medicationPlan ?? getMedicationPlan(disease.id);
+  const remainingRegimens = medicationPlan ? uncoveredRegimens(disease.clinicalManagement, medicationPlan.regimens) : [];
+  const remainingPlan = medicationPlan ? { ...medicationPlan, regimens: remainingRegimens } : medicationPlan;
   const topicSources: CitationSource[] = investigationSource ? [investigationSource] : [];
 
   return (
@@ -140,13 +143,14 @@ export function DiseaseDetailSections({ disease, investigationSource }: { diseas
       </Section>
 
       <Section number={5} section="manage">
-        <PathwaySequence steps={disease.clinicalManagement} sources={topicSources} />
+        <PathwaySequence steps={disease.clinicalManagement} sources={topicSources} regimens={medicationPlan?.regimens ?? []} />
         {disease.granularPathway ? <TreatmentDetails plans={disease.granularPathway.Treatment_Plan} /> : null}
         <section className="medication-plan" aria-labelledby="medication-plan-title">
           <header><div><p className="disease-kicker">Treatment details</p><h3 id="medication-plan-title">Medicines and doses</h3></div></header>
           {medicationPlan?.regimens.length ? <p className="medication-plan-status">{medicationPlan.note}</p> : null}
-          {medicationPlan?.regimens.length ? (isBranchedMedicationPlan(medicationPlan)
-            ? groupMedicationPlan(medicationPlan).map((branch) => <div className="medication-branch" key={branch.label}>
+          {medicationPlan?.regimens.length && !remainingRegimens.length ? <p className="medication-plan-status">Every medicine in this pathway is listed with its dose, route, frequency, duration, adjustments, cautions and monitoring in the table under the step that uses it.</p> : null}
+          {remainingRegimens.length ? (isBranchedMedicationPlan(remainingPlan!)
+            ? groupMedicationPlan(remainingPlan!).map((branch) => <div className="medication-branch" key={branch.label}>
                 <h4 className="medication-branch-title">If: {branch.label}</h4>
                 {branch.entryCriteria ? <p className="medication-plan-status">{branch.entryCriteria}</p> : null}
                 {branch.steps.map((step) => <div key={step.step}>
@@ -154,7 +158,7 @@ export function DiseaseDetailSections({ disease, investigationSource }: { diseas
                   <ul className="medication-plan-list">{step.options.map((regimen) => <MedicationItem key={`${regimen.genericName}-${regimen.indication}`} regimen={regimen} />)}</ul>
                 </div>)}
               </div>)
-            : <ul className="medication-plan-list">{medicationPlan.regimens.map((regimen) => <MedicationItem key={`${regimen.genericName}-${regimen.indication}`} regimen={regimen} />)}</ul>) : <p className="m-0 rounded-lg border border-edge bg-panel px-4 py-3 text-sm leading-relaxed text-muted">{medicationPlan?.note ?? "No exact-dose medicine plan is linked to this topic. Consult the current Saudi/local protocol and hospital formulary for prescribing details."}</p>}
+            : <ul className="medication-plan-list">{remainingRegimens.map((regimen) => <MedicationItem key={`${regimen.genericName}-${regimen.indication}`} regimen={regimen} />)}</ul>) : <p className="m-0 rounded-lg border border-edge bg-panel px-4 py-3 text-sm leading-relaxed text-muted">{medicationPlan?.note ?? "No exact-dose medicine plan is linked to this topic. Consult the current Saudi/local protocol and hospital formulary for prescribing details."}</p>}
         </section>
         <SourceCitation sources={topicSources} />
       </Section>

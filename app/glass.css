@@ -1141,6 +1141,8 @@ html[data-theme="dark"] .topic-tile[data-spec] { background: hsl(var(--spec-hue,
 /* ── Medication pills, per-step medicine tables and the ABCDE step (light theme, follows --royal) ── */
 .med-pill { display: inline-flex; align-items: center; gap: .3rem; margin: 0 .15rem; padding: .08rem .6rem; border-radius: 8px; border: 1px solid var(--royal-line-strong); background: var(--royal-soft); color: var(--royal-deep); font-weight: 800; line-height: 1.5; white-space: nowrap; vertical-align: baseline; }
 .med-pill svg { flex: none; }
+.med-pill-dose { font-weight: 600; padding-left: .45rem; margin-left: .1rem; border-left: 1px solid var(--royal-line-strong); }
+.step-med-table .dose-line + .dose-line { margin-top: .35rem; }
 .step-med-table { margin: 1rem 0 .4rem; border: 1px solid var(--royal-line); border-radius: 12px; overflow: hidden; }
 .step-med-table-scroll { overflow-x: auto; }
 .step-med-table table { width: 100%; border-collapse: collapse; font-size: .92rem; }
@@ -1152,3 +1154,8 @@ html[data-theme="dark"] .topic-tile[data-spec] { background: hsl(var(--spec-hue,
 .abcde-letter { flex: none; width: 1.4rem; font-weight: 900; color: var(--ink); }
 .abcde-label { font-weight: 800; color: var(--ink); }
 .abcde-note { list-style: none; margin: .45rem 0 0 -1.1rem; padding: .15rem 0 .15rem 1rem; border-left: 3px solid var(--royal-line-strong); }
+.step-med-table tbody th .medicine-side-effects { display: block; margin-top: .2rem; font-weight: 500; }
+.med-details { margin-top: .5rem; font-weight: 500; font-size: .85rem; }
+.med-details summary { cursor: pointer; color: var(--royal-deep); font-weight: 700; }
+.med-details h5 { margin: .55rem 0 .2rem; font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; color: var(--ink); }
+.med-details ul { margin: 0; padding-left: 1.1rem; }

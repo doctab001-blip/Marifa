@@ -5,6 +5,7 @@ import { SourceCitation, type CitationSource } from "@/components/source-citatio
 import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
 import { StepMedicationTable } from "@/components/medication-table";
 import { parseAbcdeAction } from "@/lib/management-sequence-format";
+import type { RegimenLike } from "@/lib/step-medication";
 
 type Branch = NonNullable<DiseaseDetail["clinicalManagement"][number]["branches"]>[number];
 
@@ -86,7 +87,7 @@ function DecisionBranches({ stepTitle, branches }: { stepTitle: string; branches
   );
 }
 
-export function PathwaySequence({ steps, sources = [], compact = false }: { steps: DiseaseDetail["clinicalManagement"]; sources?: CitationSource[]; compact?: boolean }) {
+export function PathwaySequence({ steps, sources = [], compact = false, regimens = [] }: { steps: DiseaseDetail["clinicalManagement"]; sources?: CitationSource[]; compact?: boolean; regimens?: RegimenLike[] }) {
   return (
     <section className="pathway-sequence" aria-labelledby="pathway-sequence-title">
       <header className="pathway-sequence-header">
@@ -125,7 +126,7 @@ export function PathwaySequence({ steps, sources = [], compact = false }: { step
                   return <li className={isAbcdeStep ? "abcde-note" : undefined} key={`${actionIndex}-${action}`}><ClinicalTimeframe text={action} /></li>;
                 })}
               </ul>
-              <StepMedicationTable step={step} />
+              <StepMedicationTable step={step} regimens={regimens} />
               {step.branches?.length ? <DecisionBranches stepTitle={withoutInlineSourceLocators(step.title)} branches={step.branches} /> : null}
             </article>
           </div>

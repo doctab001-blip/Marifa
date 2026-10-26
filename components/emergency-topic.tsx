@@ -4,6 +4,7 @@ import { MedicineSideEffects } from "@/components/medicine-side-effects";
 import { cleanAdjustments } from "@/lib/medicine-adjustments";
 import type { DiseaseDetail } from "@/lib/validations/disease";
 import { PathwaySequence } from "@/components/pathway-sequence";
+import { uncoveredRegimens } from "@/lib/step-medication";
 import type { CitationSource } from "@/components/source-citation";
 import { Investigations as MonitoringSchedule, TreatmentDetails } from "@/components/granular-pathway";
 import { ClinicalEvidenceAudit } from "@/components/clinical-evidence-audit";
@@ -84,7 +85,9 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
   const showNormal = labs.some((item) => importantNormalValue(item.normalValue, item.expectedFinding));
   const testChoices = allTests.filter((item) => item.pros?.length || item.cons?.length);
   const medicationPlan = disease.medicationPlan ?? getMedicationPlan(disease.id);
-  const hasContraindications = Boolean(medicationPlan?.regimens.some((regimen) => regimen.contraindications?.length));
+  const remainingRegimens = medicationPlan ? uncoveredRegimens(disease.clinicalManagement, medicationPlan.regimens) : [];
+  const remainingPlan = medicationPlan ? { ...medicationPlan, regimens: remainingRegimens } : medicationPlan;
+  const hasContraindications = Boolean(remainingRegimens.some((regimen) => regimen.contraindications?.length));
   const care = disease.nonClinicalManagement;
   const pitfalls = disease.teaching?.pitfalls ?? [];
   const pearls = disease.teaching?.keyPoints ?? [];
@@ -178,14 +181,15 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
 
       <section id="management" className="em-section" aria-labelledby="management-title">
         <Heading id="management" number={4} title="Management" />
-        <PathwaySequence steps={disease.clinicalManagement} sources={topicSources} compact />
+        <PathwaySequence steps={disease.clinicalManagement} sources={topicSources} compact regimens={medicationPlan?.regimens ?? []} />
         <ClinicalAlgorithms algorithms={disease.algorithms} placement="manage" />
 
-        {medicationPlan?.regimens.length ? (
+        {medicationPlan?.regimens.length && !remainingRegimens.length ? <p className="em-footnote">Every medicine in this pathway is listed with its dose, route, frequency, duration, adjustments, cautions and monitoring in the table under the step that uses it. {withoutInlineSourceLocators(medicationPlan.note)}</p> : null}
+        {medicationPlan?.regimens.length && remainingRegimens.length ? (
           <>
-            <h3>Medicines and doses</h3>
+            <h3>{remainingRegimens.length === medicationPlan.regimens.length ? "Medicines and doses" : "Other medicines and doses"}</h3>
             <p className="em-footnote">{withoutInlineSourceLocators(medicationPlan.note)}</p>
-            {isBranchedMedicationPlan(medicationPlan) ? groupMedicationPlan(medicationPlan).map((branch) => (
+            {isBranchedMedicationPlan(remainingPlan) ? groupMedicationPlan(remainingPlan).map((branch) => (
               <div className="em-med-branch" key={branch.label}>
                 <h4 className="em-med-branch-title"><span className="pill pill-sky pill-sm">If</span> {withoutInlineSourceLocators(branch.label)}</h4>
                 {branch.entryCriteria ? <p className="em-footnote em-med-entry">{withoutInlineSourceLocators(branch.entryCriteria)}</p> : null}
@@ -205,7 +209,7 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
             <div className="em-table-wrap">
               <table className="em-table em-dose-table">
                 <thead><tr><th scope="col">Medicine and indication</th><th scope="col">Dose, route, frequency</th>{hasContraindications ? <th scope="col">Contraindications</th> : null}<th scope="col">Cautions and monitoring</th></tr></thead>
-                <tbody>{medicationPlan.regimens.map((regimen) => <RegimenRow key={`${regimen.genericName}-${regimen.indication}`} regimen={regimen} hasContraindications={hasContraindications} />)}</tbody>
+                <tbody>{remainingRegimens.map((regimen) => <RegimenRow key={`${regimen.genericName}-${regimen.indication}`} regimen={regimen} hasContraindications={hasContraindications} />)}</tbody>
               </table>
             </div>
             )}

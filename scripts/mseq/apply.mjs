@@ -88,10 +88,12 @@ for (const patch of patches) {
   rec.evidenceAudit ??= { checkedOn: TODAY, status: "incomplete", scope: "", findings: [], unverifiedSections: [] };
   rec.evidenceAudit.findings = [...(rec.evidenceAudit.findings ?? [])];
   rec.evidenceAudit.unverifiedSections = [...(rec.evidenceAudit.unverifiedSections ?? [])];
-  rec.evidenceAudit.findings.push(`Management sequence reformatted on ${TODAY}: first step is an ABCDE survey where the topic is acute; every drug mention is a medication badge (drug, dose, route, frequency, duration) copied from this topic's medicine table; side-effect, contraindication and dose-adjustment wording was removed from the sequence (it stays in the medicine table). No other clinical content was changed.`);
-  if (used.size) rec.evidenceAudit.findings.push(MACRO_NOTE);
-  for (const s of patch.supplemented ?? []) rec.evidenceAudit.findings.push(`[SUPPLEMENTED - EXTERNAL] ${s}`);
-  rec.evidenceAudit.unverifiedSections.push("Management sequence reformat (26 Oct 2026): badge doses were matched to the medicine table by wording, not re-opened against the cited source pages; ABCDE content is standard resuscitation guidance. A clinician must confirm before approval.");
+  const pushOnce = (arr, line) => { if (!arr.includes(line)) arr.push(line); };
+  const reformatLine = `Management sequence reformatted on ${TODAY}: first step is an ABCDE survey where the topic is acute; every drug mention is a medication badge (drug, dose, route, frequency, duration) copied from this topic's medicine table; side-effect, contraindication and dose-adjustment wording was removed from the sequence (it stays in the medicine table). No other clinical content was changed.`;
+  pushOnce(rec.evidenceAudit.findings, reformatLine);
+  if (used.size) pushOnce(rec.evidenceAudit.findings, MACRO_NOTE);
+  for (const s of patch.supplemented ?? []) pushOnce(rec.evidenceAudit.findings, `[SUPPLEMENTED - EXTERNAL] ${s}`);
+  { const u = "Management sequence reformat (26 Oct 2026): badge doses were matched to the medicine table by wording, not re-opened against the cited source pages; ABCDE content is standard resuscitation guidance. A clinician must confirm before approval."; if (!rec.evidenceAudit.unverifiedSections.includes(u)) rec.evidenceAudit.unverifiedSections.push(u); }
 
   if (!dry) {
     const fresh = JSON.parse(fs.readFileSync(entry.file, "utf8"));
