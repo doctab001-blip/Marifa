@@ -2083,17 +2083,24 @@ html[data-theme="dark"] .calculator-page .calculator-critical li { color: #ffd9d
 .clinical-algorithm-title { display: grid; gap: 2px; margin-bottom: 14px; color: var(--tp-ink, #0b1220); font: 750 1.05rem/1.35 var(--tp-heading-font); }
 .clinical-algorithm-title .disease-kicker { font-size: .72rem; }
 .clinical-algorithm { min-width: 0; max-width: 100%; }
-.clinical-algorithm-scroll { overflow: visible; }
-.algorithm-root { display: block; max-width: 100%; }
-.algorithm-step { display: flex; flex-direction: column; align-items: stretch; gap: 0; min-width: 0; }
-.algorithm-arrow { align-self: center; position: relative; width: 2px; height: 18px; margin: 2px 0; background: #94a3b8; }
-.algorithm-arrow::after { content: ""; position: absolute; left: -4px; bottom: -1px; border: 5px solid transparent; border-top: 7px solid #94a3b8; border-bottom: 0; }
-.algorithm-children { list-style: none; display: grid; gap: 14px; margin: 10px 0 0 6px; padding: 0 0 0 12px; border-left: 2px solid #94a3b8; min-width: 0; }
-.algorithm-branch { position: relative; min-width: 0; }
-.algorithm-branch::before { content: ""; position: absolute; left: -12px; top: 13px; width: 10px; height: 2px; background: #94a3b8; }
-.algorithm-edge-label { align-self: flex-start; margin: 0 0 6px; padding: 2px 10px; border: 1px solid #cbd5e1; border-radius: 999px; background: #fff; color: #334155; font-size: .8rem; font-weight: 700; }
-.algorithm-edge-label::before { content: "If "; font-weight: 500; color: #64748b; }
-.algorithm-node { width: 100%; max-width: none; box-sizing: border-box; padding: 10px 12px; border: 1.5px solid #cbd5e1; border-radius: 10px; background: #fff; color: var(--tp-ink, #0b1220); text-align: left; box-shadow: 0 2px 6px rgb(15 23 42 / .05); overflow-wrap: anywhere; }
+.clinical-algorithm-scroll { overflow-x: auto; overflow-y: hidden; padding: 4px 4px 12px; max-width: 100%; scrollbar-width: auto; scrollbar-color: #64748b #e2e8f0; }
+.clinical-algorithm-scroll::-webkit-scrollbar { height: 12px; }
+.clinical-algorithm-scroll::-webkit-scrollbar-track { background: #e2e8f0; border-radius: 6px; }
+.clinical-algorithm-scroll::-webkit-scrollbar-thumb { background: #64748b; border-radius: 6px; }
+.clinical-algorithm-scroll:focus-visible { outline: 2px solid var(--tp-primary, var(--royal)); outline-offset: 2px; border-radius: 8px; }
+.clinical-algorithm-hint { margin: 2px 0 8px; color: #64748b; font-size: .76rem; }
+.algorithm-root, .algorithm-children { list-style: none; margin: 0; padding: 0; }
+.algorithm-root { display: flex; justify-content: center; width: max-content; min-width: 100%; }
+.algorithm-branch { position: relative; display: flex; flex-direction: column; align-items: center; }
+.algorithm-children { position: relative; display: flex; justify-content: center; gap: 0; padding-top: 18px; }
+.algorithm-children::before { content: ""; position: absolute; top: 0; left: 50%; width: 2px; height: 18px; background: #94a3b8; transform: translateX(-1px); }
+.algorithm-children > .algorithm-branch { padding: 18px 8px 0; flex: 1 1 0; min-width: 200px; }
+.algorithm-children > .algorithm-branch::before { content: ""; position: absolute; top: 0; left: 50%; width: 2px; height: 18px; background: #94a3b8; transform: translateX(-1px); }
+.algorithm-children.is-split > .algorithm-branch::after { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: #94a3b8; }
+.algorithm-children.is-split > .algorithm-branch:first-child::after { left: 50%; }
+.algorithm-children.is-split > .algorithm-branch:last-child::after { right: 50%; }
+.algorithm-edge-label { margin-bottom: 6px; padding: 2px 12px; border: 1px solid #cbd5e1; border-radius: 999px; background: #fff; color: #334155; font-size: .8rem; font-weight: 700; text-align: center; max-width: 220px; }
+.algorithm-node { box-sizing: border-box; width: 100%; max-width: 250px; min-width: 190px; padding: 10px 12px; border: 1.5px solid #cbd5e1; border-radius: 10px; background: #fff; color: var(--tp-ink, #0b1220); text-align: left; box-shadow: 0 2px 6px rgb(15 23 42 / .05); }
 .algorithm-node-kind { display: block; margin-bottom: 3px; font-size: .68rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #64748b; }
 .algorithm-node-text { margin: 0; font-size: .9rem; font-weight: 650; line-height: 1.45; }
 .algorithm-node-detail { margin: 5px 0 0; font-size: .82rem; line-height: 1.5; color: #475569; }
