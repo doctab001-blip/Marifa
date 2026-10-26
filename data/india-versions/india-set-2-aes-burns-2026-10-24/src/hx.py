@@ -131,6 +131,22 @@ S.update({
  "dghsb":  ("Standard Treatment Guidelines for Management of Burns (Trauma and Burn Division, DGHS, MoHFW)", "https://www.dghs.mohfw.gov.in/uploads/assets/S1Ipab4025VceQpFs7Qa6THwh07NLmggStsg1cDD.pdf", "DGHS STG, 2025"),
  "nzburn": ("Initial Assessment and Management of Burn Injuries (National Burn Service, New Zealand)", "https://nationalburnservice.co.nz/assets/Documents/NBC-Initial-assessment-and-management-of-burn-injuries-Guideline-v2.pdf", "Revision 6.0, reviewed September 2023"),
  "glosan": ("Analgesia for Children (Gloucestershire Hospitals NHS FT Emergency Department)", "https://www.gloshospitals.nhs.uk/media/documents/Analgesia_for_Children_updated_May_2020.pdf", "Emergency department guideline, January 2020"),
+ "rick":   ("DHR-ICMR Guidelines for Diagnosis and Management of Rickettsial Diseases in India", "https://icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/DHR-ICMR%20Guidelines%20on%20Ricketesial%20Diseases.pdf", "DHR-ICMR, February 2015"),
+ "phend":  ("Phenytoin dosage (Drugs.com, from the US prescribing information)", "https://www.drugs.com/dosage/phenytoin.html", "Drugs.com dosage monograph"),
+ "levd":   ("Levetiracetam dosage (Drugs.com, from the US prescribing information)", "https://www.drugs.com/dosage/levetiracetam.html", "Drugs.com dosage monograph"),
+ "phbd":   ("Phenobarbital dosage (Drugs.com, from the US prescribing information)", "https://www.drugs.com/dosage/phenobarbital.html", "Drugs.com dosage monograph"),
+ "vpad":   ("Valproic acid dosage (Drugs.com, from the US prescribing information)", "https://www.drugs.com/dosage/valproic-acid.html", "Drugs.com dosage monograph"),
+ "bcmjse": ("Guideline for the management of convulsive status epilepticus in infants and children (Lee J, Huh L, Korn P, et al.)", "https://bcmj.org/articles/guideline-management-convulsive-status-epilepticus-infants-and-children", "BCMJ 2011;53(6):279-285"),
+ "lhscpyr":("Pyridoxine: NICU medication manual (London Health Sciences Centre)", "https://lhsc.on.ca/nicu/pyridoxine", "LHSC NICU medication manual"),
+ "ranid":  ("Ranibizumab dosage (Drugs.com, from the US prescribing information)", "https://www.drugs.com/dosage/ranibizumab.html", "Drugs.com dosage monograph"),
+ "finerd": ("Finerenone dosage (Drugs.com, from the US prescribing information)", "https://www.drugs.com/dosage/finerenone.html", "Drugs.com dosage monograph"),
+ "metd":   ("Metformin dosage (Drugs.com, from the US prescribing information)", "https://www.drugs.com/dosage/metformin.html", "Drugs.com dosage monograph"),
+ "lirad":  ("Liraglutide dosage (Drugs.com, from the US prescribing information)", "https://www.drugs.com/dosage/liraglutide.html", "Drugs.com dosage monograph"),
+ "ng25":   ("Preterm labour and birth (NICE NG25)", "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations", "NICE NG25, updated 2022"),
+ "ukkaca": ("Treatment of hyperkalaemic cardiac arrest, Appendix 7 (UK Kidney Association)", "https://www.ukkidney.org/sites/default/files/APPENDIX%207%20-%20HYPERKALAEMIA%20CARDIAC%20ARREST%20ALGORITHM%20-%202020.pdf", "UKKA, July 2020"),
+ "rcuksc": ("Special circumstances guidelines (Resuscitation Council UK)", "https://www.resus.org.uk/professional-library/2025-resuscitation-guidelines/special-circumstances-guidelines", "RCUK, 27 October 2025"),
+ "acyd":   ("Acyclovir dosage (Drugs.com, from the US prescribing information)", "https://www.drugs.com/dosage/acyclovir.html", "Drugs.com dosage monograph"),
+ "lothtr": ("Adverse reactions to blood components (Lothian Transfusion Committee, NHS Lothian)", "https://policyonline.nhslothian.scot/wp-content/uploads/2023/10/Adverse-reactions-to-blood-components.pdf", "NHS Lothian, version 1.0, 2023"),
 })
 ADULT = "Adult topic; paediatric use is outside the scope of the cited sources."
 NOT_ABX = "Not an antibiotic; penicillin allergy does not change this medicine."

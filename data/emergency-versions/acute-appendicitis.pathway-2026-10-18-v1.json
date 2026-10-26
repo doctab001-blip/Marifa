@@ -14,12 +14,16 @@
     "findings": [
       "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
       "Normal values are typical adult reference ranges; laboratories differ.",
-      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from emergency-2026-10-12-v1-live-approved."
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from emergency-2026-10-12-v1-live-approved.",
+      "Management sequence reformatted on 2026-10-26: first step is an ABCDE survey where the topic is acute; every drug mention is a medication badge (drug, dose, route, frequency, duration) copied from this topic's medicine table; side-effect, contraindication and dose-adjustment wording was removed from the sequence (it stays in the medicine table). No other clinical content was changed.",
+      "[SUPPLEMENTED - EXTERNAL] ABCDE first-step doses (oxygen, 0.9% sodium chloride bolus, 10% glucose) are standard resuscitation doses from Resuscitation Council UK ABCDE approach (2021) for adults and APLS 6th edition (2016) for children; they were not taken from this topic's cited sources.",
+      "[SUPPLEMENTED - EXTERNAL] Paracetamol 1 g IV, rehydration sodium chloride 0.9% 1000 mL and meropenem 1 g IV every 8 hours: standard adult doses (meropenem figure from the MOH text already in this topic); not in the medicine table."
     ],
     "unverifiedSections": [
       "Preoperative prophylaxis agent — local surgical prophylaxis protocol",
       "Local antibiogram",
-      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use.",
+      "Management sequence reformat (26 Oct 2026): badge doses were matched to the medicine table by wording, not re-opened against the cited source pages; ABCDE content is standard resuscitation guidance. A clinician must confirm before approval."
     ],
     "medscapeStatus": "unavailable",
     "originalVersionIds": [
@@ -208,11 +212,24 @@
   },
   "clinicalManagement": [
     {
+      "id": "abcde-concurrent-survey",
+      "title": "ABCDE survey with concurrent correction",
+      "timeframe": "Immediately, on arrival",
+      "actions": [
+        "Work through Airway, Breathing, Circulation, Disability and Exposure in order, and correct each abnormality concurrently as it is found: do not wait for the full survey, investigations or a diagnosis before treating a life-threatening problem, and call for senior help early.",
+        "Airway: look, listen and feel for obstruction; open it with head tilt–chin lift or jaw thrust, suction secretions, insert an oropharyngeal airway if the patient is unconscious without a gag reflex, and call for expert airway help if it cannot be kept patent.",
+        "Breathing: count respiratory rate, measure SpO2, check work of breathing and listen to both lungs; if SpO2 is below 94% give [💊 Oxygen | 15 L/min via reservoir mask | Inhaled | Continuous | Until SpO2 94–98%, then titrate to target] and treat life-threatening chest problems as they are found.",
+        "Circulation: check pulse, blood pressure, capillary refill and skin perfusion; attach a cardiac monitor, secure IV access, take blood samples and control external bleeding; for hypotension or poor perfusion give [💊 Sodium chloride 0.9% | 500 mL | IV bolus over 15 minutes | Reassess after each bolus; repeat if still hypoperfused | Until perfusion restored].",
+        "Disability: assess responsiveness (alert, voice, pain, unresponsive), Glasgow Coma Scale and pupils, and measure capillary glucose; if glucose is below 4 mmol/L give [💊 Glucose 10% | 150–200 mL | IV infusion over 15 minutes | Repeat once after 10 minutes if glucose remains below 4 mmol/L | Until glucose 4 mmol/L or above]; look for focal weakness and seizure activity.",
+        "Exposure: expose the patient to examine fully while keeping them warm and their dignity protected; check temperature, skin (rash, bruising, wounds), abdomen and legs, then cover again."
+      ]
+    },
+    {
       "id": "assess",
       "title": "Assess and risk-stratify",
       "timeframe": "Arrival",
       "actions": [
-        "Analgesia (do not withhold for diagnosis); IV fluids if dehydrated; nil by mouth if surgery likely.",
+        "Give [💊 Paracetamol | 1 g | IV | Every 6 hours | Until pain controlled, maximum 4 g in 24 hours] for analgesia (do not withhold for diagnosis) and, if dehydrated, [💊 Sodium chloride 0.9% | 1000 mL | IV infusion over 4 hours | Repeat after reassessment | Until euvolaemic]; keep the patient nil by mouth if surgery is likely.",
         "Pregnancy test, FBC, CRP, urinalysis.",
         "Calculate AIR or AAS score: low risk — consider discharge with safety-netting; intermediate — observe and image; high risk — surgical review."
       ]
@@ -233,8 +250,8 @@
       "timeframe": "Within 24 h of admission",
       "actions": [
         "Laparoscopic appendectomy on the next available list, within 24 h (do not delay beyond 24 h).",
-        "Single preoperative dose of broad-spectrum antibiotic 0–60 min before incision; NO postoperative antibiotics.",
-        "Antibiotic-first (non-operative) option: discuss with selected patients without an appendicolith — recurrence up to 39% at 5 years; start IV then switch to oral. Not advised in pregnancy."
+        "Give a single preoperative dose 0–60 minutes before incision: [💊 Ceftriaxone | 2 g | IV | Once, 0–60 minutes before incision | Single dose] with [💊 Metronidazole | 500 mg | IV | Once, 0–60 minutes before incision | Single dose]; no postoperative antibiotics.",
+        "Antibiotic-first (non-operative) option: discuss with selected patients without an appendicolith (recurrence up to 39% at 5 years). Start [💊 Ceftriaxone | 2 g | IV | Every 24 hours | Until switched to oral] with [💊 Metronidazole | 500 mg | IV or PO | Every 8 hours | Until switched to oral], then switch to [💊 Amoxicillin–clavulanic acid | 875 mg | PO | Every 12 hours | Complete the total antibiotic course]. Not advised in pregnancy."
       ]
     },
     {
@@ -242,8 +259,8 @@
       "title": "Complicated appendicitis (gangrene, perforation, peritonitis)",
       "timeframe": "Urgently — within 8 h in children (WSES); source control within 24 h (MOH)",
       "actions": [
-        "Start antibiotics in the ED after cultures: ceftriaxone 2 g IV every 24 h + metronidazole 500 mg IV/PO every 8 h (other MOH Table 2 options below).",
-        "Severe infection, septic shock, older or immunocompromised: piperacillin–tazobactam 4.5 g IV every 6 h or meropenem 1 g IV every 8 h (MOH).",
+        "Start antibiotics in the ED after cultures: [💊 Ceftriaxone | 2 g | IV | Every 24 hours | Until source control, then per the duration rules below] with [💊 Metronidazole | 500 mg | IV or PO | Every 8 hours | Until source control, then per the duration rules below].",
+        "Severe infection, septic shock, older or immunocompromised patients (MOH): [💊 Piperacillin–tazobactam | 4.5 g | IV | Every 6 hours | Until source control; 4 days after adequate control] or [💊 Meropenem | 1 g | IV | Every 8 hours | Until source control; 4 days after adequate control].",
         "Laparoscopic appendectomy; suction only (no irrigation); no routine drains in adults; routine histopathology.",
         "Postoperative antibiotics: stop after 3–5 days if source control is adequate (WSES); MOH: 24 h if operated within 12–24 h, 4 days with adequate source control. Switch to oral when eating."
       ],

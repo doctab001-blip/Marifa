@@ -5,8 +5,8 @@
   "specialty": "Paediatrics / Primary Care / Emergency Medicine",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-set-2-2026-10-24-v1",
-  "lastReviewed": "2026-10-24",
+  "version": "india-set-2-2026-10-24-v2",
+  "lastReviewed": "2026-10-25",
   "pillar": "Urgent Care",
   "clinicalReviewStatus": "pending",
   "evidenceAudit": {
@@ -19,8 +19,7 @@
     "Not clinically reviewed."
    ],
    "unverifiedSections": [
-    "The ICMR workflow gives no paracetamol interval or maximum; 4–6-hourly with no more than 4 doses a day is usual practice.",
-    "Ibuprofen is not mentioned in the workflow and is not dosed here; avoid in dengue.",
+    "The ICMR workflow gives no paracetamol interval or maximum and does not mention ibuprofen; both are taken from the Gloucestershire children's analgesia guideline (2020).",
     "The workflow does not split approach by age (under 3 months, 3–36 months); young infants who look toxic are treated as urgent.",
     "Drug cautions, contraindications and renal or hepatic adjustment lines without a source tag are general pharmacology statements and need formulary confirmation."
    ],
@@ -30,7 +29,7 @@
    ]
   },
   "pathophysiology": {
-   "summary": "Fever is the commonest reason children are brought to doctors in India. Most fevers are viral and self-limiting, but serious bacterial infections, malaria, dengue, enteric fever, scrub typhus, urinary infection and tuberculosis must not be missed. The ICMR approach is to assess how sick the child looks, look for a focus, treat danger signs at once, and use investigations only when they will change management: none for a well child with fever under 72 hours; blood count, smear and platelets after 72 hours; and a wider work-up for fever over 7 days (ICMR STW). Paracetamol treats discomfort; it does not treat the cause.",
+   "summary": "Fever is the commonest reason children are brought to doctors in India. Most fevers are viral and self-limiting, but serious bacterial infections, malaria, dengue, enteric fever, scrub typhus, urinary infection and tuberculosis must not be missed. The ICMR approach is to assess how sick the child looks, look for a focus, treat danger signs at once, and use investigations only when they will change management: none for a well child with fever under 72 hours; blood count, smear and platelets after 72 hours; and a wider work-up for fever over 7 days (ICMR STW). Paracetamol treats discomfort; it does not treat the cause. Infants under 3 months and children with severe malnutrition may not mount a fever or localise infection, so their threshold for investigation and admission is lower.",
    "keyMechanisms": [
     "Pyrogenic cytokines (IL-1, IL-6, TNF) reset the hypothalamic set point.",
     "Infection is the usual trigger; inflammatory and malignant causes are less common.",
@@ -42,7 +41,8 @@
    "symptoms": [
     "Raised temperature",
     "Irritability, poor feeding",
-    "Localising symptoms: cough, dysuria, diarrhoea, headache, joint pain"
+    "Localising symptoms: cough, dysuria, diarrhoea, headache, joint pain",
+    "Rash, joint pain or bleeding (dengue, chikungunya, meningococcaemia)"
    ],
    "physicalSigns": [
     "Temperature: rectal 38.0°C or more, axillary above 37.5°C (ICMR STW)",
@@ -66,23 +66,31 @@
   "differentials": [
    {
     "condition": "Malaria",
-    "distinguishingFeatures": "Smear or RDT positive."
+    "distinguishingFeatures": "Fever with chills, pallor and splenomegaly in an endemic area; a positive smear or rapid diagnostic test settles it."
    },
    {
     "condition": "Dengue",
-    "distinguishingFeatures": "NS1 or IgM positive, low platelets."
+    "distinguishingFeatures": "High fever, myalgia, rash, falling platelets and rising haematocrit; NS1 in the first 5 days or IgM later settles it."
    },
    {
     "condition": "Enteric fever",
-    "distinguishingFeatures": "Fever over 7 days; blood culture; Widal after 7 days (ICMR STW)."
+    "distinguishingFeatures": "Stepwise fever over 7 days with abdominal symptoms; blood culture settles it, Widal only after 7 days (ICMR STW)."
    },
    {
     "condition": "Urinary tract infection",
-    "distinguishingFeatures": "Urine microscopy and culture."
+    "distinguishingFeatures": "Fever without focus in infants or with dysuria; clean-catch urine microscopy and culture settles it."
    },
    {
     "condition": "Kawasaki disease",
-    "distinguishingFeatures": "Strawberry tongue, peeling, lymphadenopathy, conjunctival injection (ICMR STW)."
+    "distinguishingFeatures": "Prolonged fever with strawberry tongue, conjunctival injection, rash, peeling and lymphadenopathy (ICMR STW); echocardiography assesses the coronaries (see the Kawasaki disease topic for IVIG and aspirin)."
+   },
+   {
+    "condition": "Scrub typhus",
+    "distinguishingFeatures": "Eschar, lymphadenopathy, hepatosplenomegaly and thrombocytopenia in the monsoon; scrub typhus IgM ELISA settles it."
+   },
+   {
+    "condition": "Tuberculosis",
+    "distinguishingFeatures": "Fever over 2 weeks with weight loss, cough or contact history; chest X-ray, Mantoux and Xpert settle it (ICMR STW)."
    }
   ],
   "diagnosticCriteria": [
@@ -248,13 +256,23 @@
     ]
    },
    {
+    "id": "comfort",
+    "title": "Comfort and fluids",
+    "timeframe": "From first contact",
+    "actions": [
+     "Paracetamol 15 mg/kg by any route and/or hydrotherapy for discomfort, not to reach a number (ICMR STW).",
+     "Avoid NSAIDs when dengue is possible; ibuprofen only for discomfort after paracetamol in a child over 3 months (Gloucestershire guideline)."
+    ]
+   },
+   {
     "id": "urgent",
     "title": "Danger signs",
     "timeframe": "Immediately",
     "actions": [
      "Lower temperature with paracetamol and tepid sponging (ICMR STW).",
      "Manage life-threatening problems (airway, shock, seizures) (ICMR STW).",
-     "First antibiotic dose for suspected meningitis, severe pneumonia or severe malnutrition; antimalarial if malaria suspected (ICMR STW)."
+     "First antibiotic dose for suspected meningitis, severe pneumonia or severe malnutrition; antimalarial if malaria suspected (ICMR STW).",
+     "Shock: normal saline 20 mL/kg IV and reassess (ICMR AES STW)."
     ]
    },
    {
@@ -273,7 +291,8 @@
     "title": "Admit or refer",
     "timeframe": "As needed",
     "actions": [
-     "Admit for ongoing care needs; refer to tertiary care for intensive care unit (ICU) needs, complex multi-system disease or complications (ICMR STW)."
+     "Admit for ongoing care needs; refer to tertiary care for intensive care unit (ICU) needs, complex multi-system disease or complications (ICMR STW).",
+     "Discharge a well child with clear return advice: inability to feed, lethargy, breathing difficulty, rash, bleeding or fever beyond 3 days (usual practice)."
     ]
    }
   ],
@@ -287,6 +306,10 @@
     {
      "label": "First dose for life-threatening infection",
      "entryCriteria": "Danger signs with suspected meningitis, severe pneumonia, sepsis or severe malaria, before or during referral."
+    },
+    {
+     "label": "Shock",
+     "entryCriteria": "Toxic child with poor perfusion or hypotension."
     }
    ],
    "regimens": [
@@ -294,12 +317,12 @@
      "indication": "Fever with discomfort",
      "patientGroup": "Children",
      "genericName": "Paracetamol",
-     "dose": "15 mg/kg per dose",
-     "route": "Oral, rectal or IV",
+     "dose": "15 mg/kg per dose (oral loading dose 20 mg/kg, Gloucestershire guideline)",
+     "route": "Oral",
      "frequency": "Every 4–6 hours as needed",
      "duration": "During fever",
      "adjustments": [
-      "Paediatric: This is the paediatric dose (ICMR STW).",
+      "Paediatric: Over 3 months: 15 mg/kg every 4–6 hours, maximum 4 doses and 90 mg/kg/day, not above 4 g/day; under 3 months maximum 60 mg/kg/day (Gloucestershire guideline).",
       "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
       "CKD: No adjustment.",
       "CLD: Avoid in liver failure."
@@ -312,22 +335,80 @@
      ],
      "branch": "Symptom relief",
      "step": "Antipyretic",
-     "selection": "all",
+     "selection": "one-of",
      "sourceTitle": "Standard Treatment Workflow: Fever in Children (ICMR / Department of Health Research)",
      "sourceUrl": "https://icmr.gov.in/icmrobject/uploads/STWs/1725952338_paediatrics_fever_in_children.pdf",
-     "sourceEdition": "ICMR STW, October 2019, section Antipyretic dosing"
+     "sourceEdition": "ICMR STW, October 2019, section Antipyretic dosing",
+     "preferred": true
+    },
+    {
+     "indication": "Fever with discomfort when oral route not possible",
+     "patientGroup": "Children",
+     "genericName": "Paracetamol (IV)",
+     "dose": "Up to 10 kg: 10 mg/kg; 10–50 kg: 15 mg/kg; over 50 kg: 1 g",
+     "route": "IV",
+     "frequency": "Every 4–6 hours",
+     "duration": "During fever",
+     "adjustments": [
+      "Paediatric: Up to 10 kg maximum 30 mg/kg/day; 10–50 kg maximum 60 mg/kg/day; over 50 kg maximum 4 g/day (Gloucestershire guideline).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment.",
+      "CLD: Avoid in liver failure."
+     ],
+     "monitoring": [
+      "Temperature, liver tests if prolonged"
+     ],
+     "contraindications": [
+      "Severe liver disease"
+     ],
+     "branch": "Symptom relief",
+     "step": "IV antipyretic",
+     "selection": "all",
+     "sourceTitle": "Analgesia for Children (Gloucestershire Hospitals NHS FT Emergency Department)",
+     "sourceUrl": "https://www.gloshospitals.nhs.uk/media/documents/Analgesia_for_Children_updated_May_2020.pdf",
+     "sourceEdition": "Emergency department guideline, January 2020, section Paracetamol (IV)"
+    },
+    {
+     "indication": "Fever with discomfort when paracetamol is insufficient",
+     "patientGroup": "Children over 12 months (main table; quick reference doses from 1–3 months)",
+     "genericName": "Ibuprofen",
+     "dose": "5–10 mg/kg (1–4 years 100 mg)",
+     "route": "Oral",
+     "frequency": "Three times daily or 6-hourly",
+     "duration": "During fever",
+     "adjustments": [
+      "Paediatric: Maximum 30 mg/kg/day, not above 2400 mg; the guideline's main table does not recommend it under 12 months, while its quick reference doses 5 mg/kg from 1–3 months (Gloucestershire guideline).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Avoid in kidney injury or dehydration (caution in renal impairment, guideline).",
+      "CLD: Avoid in severe liver disease."
+     ],
+     "monitoring": [
+      "Hydration, urine output"
+     ],
+     "contraindications": [
+      "Suspected dengue (bleeding and kidney risk; ICMR guidance on avoiding NSAIDs)",
+      "Caution with asthma, renal impairment and low platelets (guideline)"
+     ],
+     "branch": "Symptom relief",
+     "step": "Antipyretic",
+     "selection": "one-of",
+     "sourceTitle": "Analgesia for Children (Gloucestershire Hospitals NHS FT Emergency Department)",
+     "sourceUrl": "https://www.gloshospitals.nhs.uk/media/documents/Analgesia_for_Children_updated_May_2020.pdf",
+     "sourceEdition": "Emergency department guideline, January 2020, section Ibuprofen",
+     "preferred": false,
+     "useWhen": "Paracetamol not enough for comfort, and dengue is not suspected."
     },
     {
      "indication": "Suspected meningitis, severe pneumonia or sepsis",
      "patientGroup": "Children",
      "genericName": "Ceftriaxone",
-     "dose": "100 mg/kg/day in 2 divided doses (first dose 50 mg/kg)",
+     "dose": "50 mg/kg (maximum 2 g) as the first dose; meningitis 100 mg/kg/day in 2 divided doses (ICMR AES STW)",
      "route": "IV",
      "frequency": "Every 12 hours",
      "duration": "First dose, then per diagnosis",
      "adjustments": [
       "Paediatric: This is the paediatric dose (ICMR AES STW).",
-      "Penicillin allergy: Avoid after an immediate (anaphylactic) penicillin reaction.",
+      "Penicillin allergy: Avoid after an immediate (anaphylactic) penicillin reaction; seek specialist advice on an alternative.",
       "CKD: No adjustment alone.",
       "CLD: No adjustment alone."
      ],
@@ -342,16 +423,16 @@
      "selection": "all",
      "sourceTitle": "Standard Treatment Workflow: Acute Encephalitis Syndrome in Children (ICMR / Department of Health Research)",
      "sourceUrl": "https://icmr.gov.in/icmrobject/uploads/STWs/1725959608_paediatrics_acute_encephalitis_syndrome.pdf",
-     "sourceEdition": "ICMR STW, October 2019, section Step III (empiric treatment)"
+     "sourceEdition": "ICMR STW, October 2019, section Step III (empiric treatment); the first-dose and maximum are usual practice (the Fever STW gives no dose)"
     },
     {
      "indication": "Suspected severe malaria",
      "patientGroup": "Children",
      "genericName": "Artesunate",
-     "dose": "3 mg/kg (under 20 kg) or 2.4 mg/kg (20 kg or more)",
+     "dose": "3 mg/kg (20 kg or under) or 2.4 mg/kg (over 20 kg)",
      "route": "IV or IM",
      "frequency": "At 0, 12 and 24 hours, then daily",
-     "duration": "Until oral treatment possible",
+     "duration": "Then once daily parenteral or oral for 3–7 days (ICMR AES STW)",
      "adjustments": [
       "Paediatric: This is the paediatric dose (ICMR AES STW).",
       "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
@@ -370,6 +451,33 @@
      "sourceTitle": "Standard Treatment Workflow: Acute Encephalitis Syndrome in Children (ICMR / Department of Health Research)",
      "sourceUrl": "https://icmr.gov.in/icmrobject/uploads/STWs/1725959608_paediatrics_acute_encephalitis_syndrome.pdf",
      "sourceEdition": "ICMR STW, October 2019, section Step III (empiric treatment)"
+    },
+    {
+     "indication": "Shock or circulatory failure",
+     "patientGroup": "Children",
+     "genericName": "Normal saline 0.9%",
+     "dose": "20 mL/kg",
+     "route": "IV",
+     "frequency": "Bolus over 15–20 minutes; reassess after each",
+     "duration": "Repeat by response",
+     "adjustments": [
+      "Paediatric: This is the paediatric dose (ICMR AES STW).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Reassess for overload after each bolus.",
+      "CLD: Reassess for overload after each bolus."
+     ],
+     "monitoring": [
+      "Heart rate, capillary refill, BP, liver size, crackles"
+     ],
+     "contraindications": [
+      "Signs of fluid overload or severe malnutrition (use smaller volumes)"
+     ],
+     "branch": "Shock",
+     "step": "Fluid bolus",
+     "selection": "all",
+     "sourceTitle": "Standard Treatment Workflow: Acute Encephalitis Syndrome in Children (ICMR / Department of Health Research)",
+     "sourceUrl": "https://icmr.gov.in/icmrobject/uploads/STWs/1725959608_paediatrics_acute_encephalitis_syndrome.pdf",
+     "sourceEdition": "ICMR STW, October 2019, section Step I"
     }
    ],
    "note": "Antipyretic dose from the ICMR Fever in Children STW; first-dose antimicrobials from the ICMR AES in Children STW. Specific infections: see their own topics. India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
@@ -405,6 +513,152 @@
      "edition": "ICMR STW, October 2019",
      "url": "https://icmr.gov.in/icmrobject/uploads/STWs/1725959608_paediatrics_acute_encephalitis_syndrome.pdf",
      "locator": "section Step III (empiric treatment)"
+    },
+    {
+     "title": "Analgesia for Children (Gloucestershire Hospitals NHS FT Emergency Department)",
+     "edition": "Emergency department guideline, January 2020",
+     "url": "https://www.gloshospitals.nhs.uk/media/documents/Analgesia_for_Children_updated_May_2020.pdf",
+     "locator": "sections Paracetamol, Ibuprofen"
+    }
+   ],
+   "vignette": {
+    "text": "Kabir, an 18-month-old boy from Patna, has had fever for 4 days. He is drinking but less playful, has no cough, diarrhoea or rash, and was fully vaccinated last month. Temperature is 39.2 °C axillary, pulse 150/min, respiratory rate 32/min and capillary refill under 2 seconds. Examination shows no focus. His mother has given him paracetamol syrup every 2 hours to keep the temperature down.",
+    "fictitious": true
+   },
+   "guidedApproach": [
+    {
+     "title": "Fever is a response, not the disease",
+     "prompt": "Why treat the child rather than the thermometer?",
+     "guidance": "Infection triggers macrophages to release interleukin-1, interleukin-6 and tumour necrosis factor, which raise prostaglandin E2 in the hypothalamus and reset the temperature set point upwards. Fever itself is rarely harmful and may help host defence; the height of the fever correlates poorly with the seriousness of the cause. What matters is the cause and the child's physiology: tachycardia, poor perfusion and lethargy signal sepsis. Young infants and malnourished children localise infection poorly, so serious bacterial infection can present with fever alone. Prolonged fever points away from common viral infection towards enteric fever, tuberculosis, abscess, Kawasaki disease, autoimmune disease or malignancy.",
+     "section": "pathophysiology"
+    },
+    {
+     "title": "Look at the child first",
+     "prompt": "Which features separate a sick child from a well one?",
+     "guidance": "Start with appearance, behaviour, colour, hydration and vital signs. Toxic appearance, lethargy or inconsolable irritability, inability to feed, dehydration, severe malnutrition, and a rash with shock or organ dysfunction are danger signs that need immediate treatment. Then search for a focus: ear, throat, chest, abdomen, urine, joints, skin and meninges. Ask about duration, contacts and season, recent travel, vaccination in the past 24 hours, and similar illness in the household. Fever beyond 5 days with conjunctival injection, red lips, rash and swollen hands suggests Kawasaki disease; an eschar suggests scrub typhus.",
+     "section": "signs-symptoms"
+    },
+    {
+     "title": "Test by duration, not by habit",
+     "prompt": "When should a child with fever have tests?",
+     "guidance": "A well child with fever under 72 hours and no focus needs no investigations. After 72 hours, a blood count with differential and platelets and a peripheral smear for malaria are essential, with a rapid malaria test, dengue NS1 and IgM, blood culture and urine culture as indicated. Fever over 7 days needs a wider search: Widal only after the first week, Mantoux and Xpert for tuberculosis, HIV, autoimmune tests and imaging guided by findings. A clean-catch urine sample is desirable in children with fever without focus, especially infants. CRP or procalcitonin are optional and do not replace clinical assessment.",
+     "section": "investigations"
+    },
+    {
+     "title": "Treat danger, the cause and the discomfort",
+     "prompt": "How do you manage a febrile child step by step?",
+     "guidance": "Manage airway, breathing, circulation and seizures first. For suspected meningitis, severe pneumonia or sepsis give a first dose of ceftriaxone 50 mg/kg (100 mg/kg/day), and artesunate if severe malaria is possible, before referral. For the well child, give paracetamol 15 mg/kg every 4–6 hours, no more than 4 doses a day, to relieve discomfort rather than to normalise temperature; ibuprofen 5–10 mg/kg is an option after 3 months when dengue is not suspected. Do not give antibiotics for viral fever or start empiric anti-tuberculosis treatment except for suspected TB meningitis. Teach parents the warning signs and when to return.",
+     "section": "management"
+    }
+   ],
+   "boardQuestions": [
+    {
+     "id": "q1",
+     "vignette": "An 18-month-old boy has fever for 4 days, no focus on examination and is drinking well. Temperature is 39.2 °C, pulse 150/min and capillary refill under 2 seconds. He is alert between fever spikes. His mother has been giving paracetamol every 2 hours and asks for an injection to bring the fever down.",
+     "fictitious": true,
+     "question": "What is the most appropriate next step?",
+     "options": [
+      {
+       "id": "A",
+       "text": "IM ceftriaxone and discharge",
+       "explanation": "Antibiotics are not given for fever without focus in a well child without danger signs."
+      },
+      {
+       "id": "B",
+       "text": "Blood count, smear and platelets (urine culture desirable); correct the paracetamol to every 4–6 hours, maximum 4 doses a day",
+       "explanation": "Correct. Fever over 72 hours without focus needs blood count, smear and platelets, with urine culture desirable; paracetamol every 2 hours risks overdose (ICMR STW; guideline)."
+      },
+      {
+       "id": "C",
+       "text": "No tests; reassure",
+       "explanation": "No tests is advice only for fever under 72 hours (ICMR STW)."
+      },
+      {
+       "id": "D",
+       "text": "Widal test",
+       "explanation": "Widal is not useful in the first week (ICMR STW)."
+      },
+      {
+       "id": "E",
+       "text": "Start empiric anti-tuberculosis treatment",
+       "explanation": "Empiric anti-TB treatment is only for suspected TB meningitis (ICMR STW)."
+      }
+     ],
+     "answer": "B",
+     "educationalObjective": "Investigate fever without focus by duration.",
+     "keyPoint": "Over 72 hours: blood count, smear, platelets; dose paracetamol safely."
+    },
+    {
+     "id": "q2",
+     "vignette": "A 3-year-old girl has had fever for 6 days. She has red cracked lips, bilateral non-purulent conjunctival injection, a polymorphous rash, swollen red hands and a 2 cm cervical lymph node. Malaria and dengue tests are negative. Platelets are 520,000/µL and CRP is raised.",
+     "fictitious": true,
+     "question": "What is the most likely diagnosis?",
+     "options": [
+      {
+       "id": "A",
+       "text": "Measles",
+       "explanation": "Measles has cough, coryza and Koplik spots, and the rash spreads from the face."
+      },
+      {
+       "id": "B",
+       "text": "Scarlet fever",
+       "explanation": "Scarlet fever follows a streptococcal throat infection with a sandpaper rash, not this pattern."
+      },
+      {
+       "id": "C",
+       "text": "Dengue",
+       "explanation": "Dengue tests are negative and dengue lowers, rather than raises, the platelets."
+      },
+      {
+       "id": "D",
+       "text": "Kawasaki disease",
+       "explanation": "Correct. Fever over 5 days with conjunctival injection, lip changes, rash, extremity changes and lymphadenopathy suggests Kawasaki disease (ICMR STW)."
+      },
+      {
+       "id": "E",
+       "text": "Viral fever",
+       "explanation": "Viral fever does not explain this cluster of mucocutaneous signs."
+      }
+     ],
+     "answer": "D",
+     "educationalObjective": "Recognise Kawasaki disease in prolonged fever.",
+     "keyPoint": "Prolonged fever with mucocutaneous signs: think Kawasaki disease."
+    },
+    {
+     "id": "q3",
+     "vignette": "A 10-month-old infant weighing 8 kg is brought with fever for 1 day. He is lethargic, will not breastfeed, has a capillary refill of 4 seconds and a non-blanching rash on the legs. Pulse is 180/min. The nearest tertiary hospital is 2 hours away.",
+     "fictitious": true,
+     "question": "What should be done first?",
+     "options": [
+      {
+       "id": "A",
+       "text": "Paracetamol and review tomorrow",
+       "explanation": "This child has danger signs and needs urgent treatment."
+      },
+      {
+       "id": "B",
+       "text": "Blood count and wait for results",
+       "explanation": "Investigations must not delay treatment in a toxic child."
+      },
+      {
+       "id": "C",
+       "text": "Fluid bolus and IV ceftriaxone 400 mg (50 mg/kg) before referral",
+       "explanation": "Correct. Shock with a non-blanching rash suggests meningococcaemia; treat shock and give a first dose of ceftriaxone, then refer (ICMR STW)."
+      },
+      {
+       "id": "D",
+       "text": "Ibuprofen for the fever",
+       "explanation": "Antipyretics lower temperature but do not treat shock or sepsis."
+      },
+      {
+       "id": "E",
+       "text": "Oral amoxicillin",
+       "explanation": "Oral antibiotics are inadequate for suspected meningococcal sepsis."
+      }
+     ],
+     "answer": "C",
+     "educationalObjective": "Act on danger signs in febrile infants.",
+     "keyPoint": "Toxic child with rash and shock: treat shock, give ceftriaxone, refer."
     }
    ]
   },
@@ -426,6 +680,125 @@
     "Planned IV antibiotics completed (ICMR STW)"
    ],
    "followUpPlan": "Review at 48–72 hours if fever persists; sooner for any danger sign."
-  }
+  },
+  "algorithms": [
+   {
+    "id": "fever-children-pathway",
+    "title": "Child with fever: assess, test, treat",
+    "placement": "manage",
+    "nodes": [
+     {
+      "id": "start",
+      "kind": "start",
+      "text": "Child with fever (rectal 38.0 °C or more, axillary above 37.5 °C)",
+      "next": [
+       {
+        "to": "toxic"
+       }
+      ]
+     },
+     {
+      "id": "toxic",
+      "kind": "decision",
+      "text": "Danger signs: toxic, lethargic, unable to feed, dehydrated, severe malnutrition, rash with shock?",
+      "next": [
+       {
+        "to": "urg",
+        "label": "Yes"
+       },
+       {
+        "to": "young",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "urg",
+      "kind": "outcome",
+      "text": "Treat airway, shock (saline 20 mL/kg) and seizures; first dose ceftriaxone 50 mg/kg (artesunate if malaria likely); admit"
+     },
+     {
+      "id": "young",
+      "kind": "decision",
+      "text": "Neonate or young infant under 3 months?",
+      "next": [
+       {
+        "to": "infant",
+        "label": "Yes"
+       },
+       {
+        "to": "focus",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "infant",
+      "kind": "outcome",
+      "text": "Low threshold: full sepsis work-up (blood count, blood and urine culture, consider LP), admit and give first-dose antibiotics if unwell"
+     },
+     {
+      "id": "focus",
+      "kind": "decision",
+      "text": "Focus found on history and examination?",
+      "next": [
+       {
+        "to": "treatf",
+        "label": "Yes"
+       },
+       {
+        "to": "dur",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "treatf",
+      "kind": "outcome",
+      "text": "Treat the focus (see its topic); paracetamol for comfort"
+     },
+     {
+      "id": "dur",
+      "kind": "decision",
+      "text": "Duration of fever?",
+      "next": [
+       {
+        "to": "none",
+        "label": "Under 72 hours"
+       },
+       {
+        "to": "cbc",
+        "label": "72 hours to 7 days"
+       },
+       {
+        "to": "wide",
+        "label": "Over 7 days"
+       }
+      ]
+     },
+     {
+      "id": "none",
+      "kind": "outcome",
+      "text": "Well child: no tests; paracetamol; review if fever persists or new signs appear"
+     },
+     {
+      "id": "cbc",
+      "kind": "outcome",
+      "text": "Blood count, smear, platelets; add RDT, NS1/IgM, urine and blood culture as indicated"
+     },
+     {
+      "id": "wide",
+      "kind": "outcome",
+      "text": "Add Widal (after 7 days), Mantoux, Xpert, HIV, autoimmune tests and imaging; refer if fever over 14 days undiagnosed"
+     }
+    ],
+    "source": {
+     "title": "Standard Treatment Workflow: Fever in Children (ICMR / Department of Health Research)",
+     "edition": "ICMR STW, October 2019",
+     "url": "https://icmr.gov.in/icmrobject/uploads/STWs/1725952338_paediatrics_fever_in_children.pdf",
+     "locator": "sections Initial assessment, Danger signs, Fever without focus, Investigations by duration"
+    }
+   }
+  ]
  }
 ]

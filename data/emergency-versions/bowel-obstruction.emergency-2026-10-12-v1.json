@@ -14,11 +14,15 @@
     "scope": "Adults with suspected small bowel obstruction in the emergency department, focusing on adhesive small bowel obstruction (ASBO). Verified against the WSES Bologna guidelines (2017 update). Large bowel obstruction (volvulus, colorectal cancer) is not covered by this source and needs its own pathway.",
     "findings": [
       "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
-      "Normal values are typical adult reference ranges; laboratories differ."
+      "Normal values are typical adult reference ranges; laboratories differ.",
+      "Management sequence reformatted on 2026-10-26: first step is an ABCDE survey where the topic is acute; every drug mention is a medication badge (drug, dose, route, frequency, duration) copied from this topic's medicine table; side-effect, contraindication and dose-adjustment wording was removed from the sequence (it stays in the medicine table). No other clinical content was changed.",
+      "[SUPPLEMENTED - EXTERNAL] ABCDE first-step doses (oxygen, 0.9% sodium chloride bolus, 10% glucose) are standard resuscitation doses from Resuscitation Council UK ABCDE approach (2021) for adults and APLS 6th edition (2016) for children; they were not taken from this topic's cited sources.",
+      "[SUPPLEMENTED - EXTERNAL] Sodium chloride 0.9%, potassium chloride 40 mmol in 1 L over 4 hours, paracetamol, morphine, ondansetron and diatrizoate 100 mL: standard adult doses (NHS/BNF-type); this topic has no medicine table."
     ],
     "unverifiedSections": [
       "Large bowel obstruction pathway (not covered)",
-      "Drug and contrast doses — local protocol"
+      "Drug and contrast doses — local protocol",
+      "Management sequence reformat (26 Oct 2026): badge doses were matched to the medicine table by wording, not re-opened against the cited source pages; ABCDE content is standard resuscitation guidance. A clinician must confirm before approval."
     ],
     "medscapeStatus": "unavailable",
     "originalVersionIds": [
@@ -210,12 +214,25 @@
   },
   "clinicalManagement": [
     {
+      "id": "abcde-concurrent-survey",
+      "title": "ABCDE survey with concurrent correction",
+      "timeframe": "Immediately, on arrival",
+      "actions": [
+        "Work through Airway, Breathing, Circulation, Disability and Exposure in order, and correct each abnormality concurrently as it is found: do not wait for the full survey, investigations or a diagnosis before treating a life-threatening problem, and call for senior help early.",
+        "Airway: look, listen and feel for obstruction; open it with head tilt–chin lift or jaw thrust, suction secretions, insert an oropharyngeal airway if the patient is unconscious without a gag reflex, and call for expert airway help if it cannot be kept patent.",
+        "Breathing: count respiratory rate, measure SpO2, check work of breathing and listen to both lungs; if SpO2 is below 94% give [💊 Oxygen | 15 L/min via reservoir mask | Inhaled | Continuous | Until SpO2 94–98%, then titrate to target] and treat life-threatening chest problems as they are found.",
+        "Circulation: check pulse, blood pressure, capillary refill and skin perfusion; attach a cardiac monitor, secure IV access, take blood samples and control external bleeding; for hypotension or poor perfusion give [💊 Sodium chloride 0.9% | 500 mL | IV bolus over 15 minutes | Reassess after each bolus; repeat if still hypoperfused | Until perfusion restored].",
+        "Disability: assess responsiveness (alert, voice, pain, unresponsive), Glasgow Coma Scale and pupils, and measure capillary glucose; if glucose is below 4 mmol/L give [💊 Glucose 10% | 150–200 mL | IV infusion over 15 minutes | Repeat once after 10 minutes if glucose remains below 4 mmol/L | Until glucose 4 mmol/L or above]; look for focal weakness and seizure activity.",
+        "Exposure: expose the patient to examine fully while keeping them warm and their dignity protected; check temperature, skin (rash, bruising, wounds), abdomen and legs, then cover again."
+      ]
+    },
+    {
       "id": "resus",
       "title": "Resuscitate and assess",
       "timeframe": "Arrival",
       "actions": [
-        "IV fluid resuscitation; correct electrolytes (especially potassium); monitor urine output.",
-        "Analgesia and antiemetic; nil by mouth.",
+        "Give [💊 Sodium chloride 0.9% | 1000 mL | IV infusion over 1 hour | Repeat after reassessment | Until perfusion and urine output are restored]; if potassium is 3.0–3.4 mmol/L give [💊 Potassium chloride | 40 mmol in 1 L 0.9% sodium chloride | IV infusion over 4 hours | Once, then recheck potassium | Until potassium is 3.5 mmol/L or above] (lower values: follow the hypokalaemia topic); monitor urine output.",
+        "Give [💊 Paracetamol | 1 g | IV | Every 6 hours | Until pain controlled, maximum 4 g in 24 hours] and [💊 Morphine | 2.5–5 mg | IV | Every 4 hours as needed | Until pain controlled] for analgesia, and [💊 Ondansetron | 4 mg | IV | Every 8 hours | Until vomiting settles] for nausea; keep the patient nil by mouth.",
         "Nasogastric tube decompression (prevents aspiration).",
         "Bloods: FBC, CRP, lactate, electrolytes, urea, creatinine. Check hernias."
       ]
@@ -226,7 +243,7 @@
       "timeframe": "Early",
       "actions": [
         "CT identifies cause and signs needing urgent surgery.",
-        "If ASBO is certain (other causes excluded on recent imaging) and no signs needing immediate surgery, a water-soluble contrast study alone is sufficient."
+        "If adhesive small-bowel obstruction (ASBO) is certain (other causes excluded on recent imaging) and no signs need immediate surgery, a water-soluble contrast study alone is sufficient: [💊 Diatrizoate meglumine (water-soluble contrast) | 100 mL | Oral or via nasogastric tube | Once | Single dose]."
       ]
     },
     {
@@ -252,7 +269,7 @@
       "timeframe": "Up to 72 h",
       "actions": [
         "Nil by mouth, NG (or long intestinal tube) decompression, fluids, electrolyte correction, nutritional support, aspiration prevention.",
-        "Water-soluble contrast with abdominal X-ray at 24 h: contrast in colon = resolving; no contrast = likely failure → surgery.",
+        "Give [💊 Diatrizoate meglumine (water-soluble contrast) | 100 mL | Oral or via nasogastric tube | Once | Single dose] and take an abdominal X-ray at 24 hours: contrast in the colon means resolving; no contrast means likely failure, so operate.",
         "A 72-h non-operative trial is considered safe; operate if no resolution or any deterioration."
       ]
     },

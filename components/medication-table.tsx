@@ -1,23 +1,29 @@
 import { collectMedicationBadges, type ManagementStepLike } from "@/lib/management-sequence-format";
-import { Pill } from "@/components/icons-3d";
 
-/** One table of every drug named in the management sequence, built from the stored badges. Display only. */
-export function MedicationTable({ steps }: { steps: ManagementStepLike[] }) {
-  const badges = collectMedicationBadges(steps);
+/** Dose text with its leading amount in bold ("0.5 mg" in "0.5 mg (MOH range 0.3–0.5 mg)"). */
+function Dose({ text }: { text: string }) {
+  const cut = text.search(/\s\(|;|,|\sor\s|\sthen\s/);
+  if (cut <= 0) return <strong className="dose-main">{text}</strong>;
+  return <><strong className="dose-main">{text.slice(0, cut)}</strong>{text.slice(cut)}</>;
+}
+
+/** Table of the drugs named in one management step, built from that step's stored badges. Display only. */
+export function StepMedicationTable({ step }: { step: ManagementStepLike }) {
+  const badges = collectMedicationBadges([step]);
   if (!badges.length) return null;
   return (
-    <section className="med-table-wrap" aria-labelledby="med-table-title">
-      <h3 id="med-table-title" className="med-table-title"><Pill size={16} aria-hidden="true" /> Medicines used in this sequence</h3>
-      <div className="med-table-scroll">
-        <table className="med-table">
+    <div className="step-med-table">
+      <div className="step-med-table-scroll">
+        <table>
+          <caption className="sr-only">Medicines in this step</caption>
           <thead>
-            <tr><th scope="col">Drug</th><th scope="col">Dose</th><th scope="col">Route</th><th scope="col">Frequency</th><th scope="col">Duration</th></tr>
+            <tr><th scope="col">Medication</th><th scope="col">Dose</th><th scope="col">Route</th><th scope="col">Frequency</th><th scope="col">Duration</th></tr>
           </thead>
           <tbody>
             {badges.map((badge, index) => (
               <tr key={index}>
-                <th scope="row" className="med-table-drug">{badge.drug}</th>
-                <td>{badge.dose}</td>
+                <th scope="row">{badge.drug}</th>
+                <td><Dose text={badge.dose} /></td>
                 <td>{badge.route}</td>
                 <td>{badge.frequency}</td>
                 <td>{badge.duration}</td>
@@ -26,6 +32,6 @@ export function MedicationTable({ steps }: { steps: ManagementStepLike[] }) {
           </tbody>
         </table>
       </div>
-    </section>
+    </div>
   );
 }

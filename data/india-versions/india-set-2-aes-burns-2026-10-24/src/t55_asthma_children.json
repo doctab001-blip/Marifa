@@ -1,512 +1,848 @@
 [
- {
-  "id": "39ee1801-a5e1-57ab-8e50-9f3797c0d303",
-  "title": "Acute asthma in children (India)",
-  "specialty": "Paediatrics / Paediatric Pulmonology / Emergency Medicine",
-  "authority": "ICMR",
-  "status": "under_review",
-  "version": "india-set-2-2026-10-24-v1",
-  "lastReviewed": "2026-10-24",
-  "pillar": "Urgent Care",
-  "clinicalReviewStatus": "pending",
-  "evidenceAudit": {
-   "checkedOn": "2026-10-24",
-   "status": "incomplete",
-   "scope": "Acute asthma attacks in children aged 1 year and over in India: severity, oxygen, salbutamol by spacer or nebuliser, ipratropium, oral prednisolone, IV magnesium and second-line IV treatment, admission and discharge, using BTS/SIGN 158 (2019) and a SIGN 158-referenced hospital protocol because no Indian paediatric acute asthma guideline with doses could be opened. The adult Acute severe asthma (India) topic covers adults.",
-   "findings": [
-    "Oxygen to SpO2 94–98%, salbutamol pMDI and spacer 1 puff every 30–60 seconds up to 10 puffs, nebulised salbutamol 2.5–5 mg every 20–30 minutes for SpO2 below 92%, ipratropium 250 micrograms, prednisolone by age (10 mg under 2, 20 mg 2–5 years, 30–40 mg over 5 years) for up to 3 days, IV hydrocortisone 4 mg/kg, nebulised magnesium 150 mg, no routine antibiotics checked against SIGN 158 (Right Decision Service).",
-    "IV magnesium 40 mg/kg (maximum 2 g), IV salbutamol 15 micrograms/kg, aminophylline 5 mg/kg then infusion, severity bands and discharge criteria checked against the NHS Borders SIGN 158-referenced protocol (2020).",
-    "Not clinically reviewed."
-   ],
-   "unverifiedSections": [
-    "No Indian paediatric acute asthma guideline with doses was opened; IAP-endorsed Indian articles name the same drugs without doses.",
-    "IV magnesium infusion duration is not stated in the opened protocol (usually over 20 minutes).",
-    "Heart and respiratory rate thresholds by age are not in the opened sources.",
-    "Drug cautions, contraindications and renal or hepatic adjustment lines without a source tag are general pharmacology statements and need formulary confirmation."
-   ],
-   "medscapeStatus": "unavailable",
-   "originalVersionIds": [
-    "39ee1801-a5e1-57ab-8e50-9f3797c0d303"
-   ]
-  },
-  "pathophysiology": {
-   "summary": "Acute asthma is a common cause of paediatric emergency visits in India, often triggered by viral infections, smoke from biomass fuels, dust and seasonal changes. Airway inflammation, bronchospasm and mucus narrow the airways, causing wheeze, breathlessness and hypoxaemia; a silent chest and exhaustion signal a life-threatening attack. Early inhaled salbutamol, ideally by metered-dose inhaler and spacer, and early oral steroid reduce admissions. Severe attacks need oxygen, nebulised salbutamol with ipratropium, and IV magnesium or other second-line drugs if there is no response (SIGN 158).",
-   "keyMechanisms": [
-    "Allergen, viral or irritant triggers cause airway inflammation and smooth-muscle contraction.",
-    "Narrowed airways cause air trapping and ventilation-perfusion mismatch.",
-    "Fatigue and rising PaCO2 signal impending respiratory failure.",
-    "Beta-2 agonists relax airway smooth muscle; steroids reduce inflammation."
-   ]
-  },
-  "presentation": {
-   "symptoms": [
-    "Cough, wheeze, breathlessness",
-    "Difficulty speaking or feeding",
-    "Chest tightness"
-   ],
-   "physicalSigns": [
-    "Wheeze, prolonged expiration",
-    "Accessory muscle use, retractions",
-    "SpO2 below 94% (moderate) or below 92% (severe)",
-    "Silent chest or markedly reduced air entry (severe)"
-   ],
-   "redFlags": [
-    "SpO2 below 92% in air (BGH/SIGN 158)",
-    "Silent chest, cyanosis, poor respiratory effort, exhaustion (BGH/SIGN 158)",
-    "Confusion, drowsiness, coma (BGH/SIGN 158)",
-    "Rising PaCO2 above 6 kPa (BGH/SIGN 158)"
-   ],
-   "precipitants": [
-    "Viral respiratory infections",
-    "Smoke from biomass fuel or tobacco",
-    "Allergens, dust, cold air",
-    "Poor adherence to preventer inhaler"
-   ]
-  },
-  "differentials": [
-   {
-    "condition": "Bronchiolitis",
-    "distinguishingFeatures": "Infant under 1 year, crackles, poor response to bronchodilator."
-   },
-   {
-    "condition": "Pneumonia",
-    "distinguishingFeatures": "Fever, focal crackles, consolidation."
-   },
-   {
-    "condition": "Foreign body aspiration",
-    "distinguishingFeatures": "Sudden onset, unilateral wheeze."
-   },
-   {
-    "condition": "Croup",
-    "distinguishingFeatures": "Barking cough, inspiratory stridor."
-   }
-  ],
-  "diagnosticCriteria": [
-   {
-    "criterion": "Mild (BGH/SIGN 158)",
-    "threshold": "SpO2 above 94%; PEF above 80% predicted; not distressed."
-   },
-   {
-    "criterion": "Moderate (BGH/SIGN 158)",
-    "threshold": "SpO2 91–95%; PEF 50–80%; distressed with obvious accessory muscle use."
-   },
-   {
-    "criterion": "Severe (BGH/SIGN 158)",
-    "threshold": "SpO2 below 92%; PEF below 50%; marked distress, silent chest, pulsus paradoxus."
-   }
-  ],
-  "investigations": {
-   "ruleIn": [
-    {
-     "tier": "specializedAdjunctive",
-     "testName": "Pulse oximetry",
-     "modalityTarget": "SpO2 in air",
-     "targetCondition": "Severity",
-     "normalValue": "94–100%",
-     "expectedFinding": "Below 92%: severe",
-     "clinicalRationale": "Oxygen to 94–98% (SIGN 158).",
-     "references": [
-      {
-       "title": "Paediatric asthma management, Borders General Hospital (referenced to SIGN 158)",
-       "edition": "NHS Borders, January 2020, pp. 2–5 (IV doses, nebulised doses, severity, discharge)",
-       "url": "https://rightdecisions.scot.nhs.uk/media/lp3nxk5x/bgh-paediatric-asthma-management-2020-sign-158-referenced-v2.pdf"
-      }
-     ]
+  {
+    "id": "39ee1801-a5e1-57ab-8e50-9f3797c0d303",
+    "title": "Acute asthma in children (India)",
+    "specialty": "Paediatrics / Paediatric Pulmonology / Emergency Medicine",
+    "authority": "ICMR",
+    "status": "under_review",
+    "version": "india-set-2-2026-10-24-v2",
+    "lastReviewed": "2026-10-25",
+    "pillar": "Urgent Care",
+    "clinicalReviewStatus": "pending",
+    "evidenceAudit": {
+      "checkedOn": "2026-10-24",
+      "status": "incomplete",
+      "scope": "Acute asthma attacks in children aged 1 year and over in India: severity, oxygen, salbutamol by spacer or nebuliser, ipratropium, oral prednisolone, IV magnesium and second-line IV treatment, admission and discharge, using BTS/SIGN 158 (2019) and a SIGN 158-referenced hospital protocol because no Indian paediatric acute asthma guideline with doses could be opened. The adult Acute severe asthma (India) topic covers adults.",
+      "findings": [
+        "Oxygen to SpO2 94–98%, salbutamol pMDI and spacer 1 puff every 30–60 seconds up to 10 puffs, nebulised salbutamol 2.5–5 mg every 20–30 minutes for SpO2 below 92%, ipratropium 250 micrograms, prednisolone by age (10 mg under 2, 20 mg 2–5 years, 30–40 mg over 5 years) for up to 3 days, IV hydrocortisone 4 mg/kg, nebulised magnesium 150 mg, no routine antibiotics checked against SIGN 158 (Right Decision Service).",
+        "IV magnesium 40 mg/kg (maximum 2 g), IV salbutamol 15 micrograms/kg, aminophylline 5 mg/kg then infusion, severity bands and discharge criteria checked against the NHS Borders SIGN 158-referenced protocol (2020).",
+        "Not clinically reviewed.",
+        "Management sequence reformatted on 2026-10-26: first step is an ABCDE survey where the topic is acute; every drug mention is a medication badge (drug, dose, route, frequency, duration) copied from this topic's medicine table; side-effect, contraindication and dose-adjustment wording was removed from the sequence (it stays in the medicine table). No other clinical content was changed.",
+        "[SUPPLEMENTED - EXTERNAL] ABCDE first-step doses (oxygen, 0.9% sodium chloride bolus, 10% glucose) are standard resuscitation doses from Resuscitation Council UK ABCDE approach (2021) for adults and APLS 6th edition (2016) for children; they were not taken from this topic's cited sources.",
+        "[SUPPLEMENTED - EXTERNAL] Nebulised magnesium sulfate 150 mg: figure from the SIGN 158 text already in this topic; not in the medicine table."
+      ],
+      "unverifiedSections": [
+        "No Indian paediatric acute asthma guideline with doses was opened; IAP-endorsed Indian articles name the same drugs without doses.",
+        "IV magnesium infusion duration is not stated in the opened protocol (usually over 20 minutes).",
+        "Heart and respiratory rate thresholds by age are not in the opened sources.",
+        "Drug cautions, contraindications and renal or hepatic adjustment lines without a source tag are general pharmacology statements and need formulary confirmation.",
+        "Management sequence reformat (26 Oct 2026): badge doses were matched to the medicine table by wording, not re-opened against the cited source pages; ABCDE content is standard resuscitation guidance. A clinician must confirm before approval."
+      ],
+      "medscapeStatus": "unavailable",
+      "originalVersionIds": [
+        "39ee1801-a5e1-57ab-8e50-9f3797c0d303"
+      ]
     },
-    {
-     "tier": "specializedAdjunctive",
-     "testName": "Peak expiratory flow (age 5 and over)",
-     "modalityTarget": "PEF meter",
-     "targetCondition": "Severity",
-     "normalValue": "Above 80% predicted or best",
-     "expectedFinding": "50–80% moderate; below 50% severe",
-     "clinicalRationale": "Severity and discharge threshold above 75% (BGH/SIGN 158).",
-     "references": [
-      {
-       "title": "Paediatric asthma management, Borders General Hospital (referenced to SIGN 158)",
-       "edition": "NHS Borders, January 2020, pp. 2–5 (IV doses, nebulised doses, severity, discharge)",
-       "url": "https://rightdecisions.scot.nhs.uk/media/lp3nxk5x/bgh-paediatric-asthma-management-2020-sign-158-referenced-v2.pdf"
-      }
-     ]
+    "pathophysiology": {
+      "summary": "Acute asthma is a common cause of paediatric emergency visits in India, often triggered by viral infections, smoke from biomass fuels, dust and seasonal changes. Airway inflammation, bronchospasm and mucus narrow the airways, causing wheeze, breathlessness and hypoxaemia; a silent chest and exhaustion signal a life-threatening attack. Early inhaled salbutamol, ideally by metered-dose inhaler and spacer, and early oral steroid reduce admissions. Severe attacks need oxygen, nebulised salbutamol with ipratropium, and IV magnesium or other second-line drugs if there is no response (SIGN 158). Children with frequent attacks often have under-treated persistent asthma, poor inhaler technique or no preventer, so every acute visit is a chance to check technique, start or step up an inhaled steroid, and reduce smoke exposure at home.",
+      "keyMechanisms": [
+        "Allergen, viral or irritant triggers cause airway inflammation and smooth-muscle contraction.",
+        "Narrowed airways cause air trapping and ventilation-perfusion mismatch.",
+        "Fatigue and rising PaCO2 signal impending respiratory failure.",
+        "Beta-2 agonists relax airway smooth muscle; steroids reduce inflammation."
+      ]
     },
-    {
-     "tier": "specializedAdjunctive",
-     "testName": "Clinical assessment: work of breathing, air entry, speech",
-     "modalityTarget": "Bedside",
-     "targetCondition": "Severity",
-     "normalValue": "Talks normally, no retractions",
-     "expectedFinding": "Marked retraction, silent chest, unable to talk",
-     "clinicalRationale": "Silent chest is life-threatening (BGH/SIGN 158).",
-     "references": [
-      {
-       "title": "Paediatric asthma management, Borders General Hospital (referenced to SIGN 158)",
-       "edition": "NHS Borders, January 2020, pp. 2–5 (IV doses, nebulised doses, severity, discharge)",
-       "url": "https://rightdecisions.scot.nhs.uk/media/lp3nxk5x/bgh-paediatric-asthma-management-2020-sign-158-referenced-v2.pdf"
-      }
-     ]
+    "presentation": {
+      "symptoms": [
+        "Cough, wheeze, breathlessness",
+        "Difficulty speaking or feeding",
+        "Chest tightness",
+        "Night-time or exercise-induced cough and wheeze before the attack (poor control)"
+      ],
+      "physicalSigns": [
+        "Wheeze, prolonged expiration",
+        "Accessory muscle use, retractions",
+        "SpO2 below 92% in air (severe, SIGN 158); give oxygen if below 94%",
+        "Silent chest or markedly reduced air entry (severe)"
+      ],
+      "redFlags": [
+        "SpO2 below 92% in air (SIGN 158)",
+        "Silent chest, cyanosis, poor respiratory effort, exhaustion (SIGN 158)",
+        "Confusion, drowsiness, coma (SIGN 158)",
+        "Rising PaCO2 above 6 kPa (SIGN 158)"
+      ],
+      "precipitants": [
+        "Viral respiratory infections",
+        "Smoke from biomass fuel or tobacco",
+        "Allergens, dust, cold air",
+        "Poor adherence to preventer inhaler"
+      ]
     },
-    {
-     "tier": "laboratory",
-     "testName": "Blood gas (severe or not improving)",
-     "modalityTarget": "Capillary or arterial gas",
-     "targetCondition": "Respiratory failure",
-     "normalValue": "PaCO2 4.5–6.0 kPa",
-     "expectedFinding": "PaCO2 above 6 kPa",
-     "clinicalRationale": "Rising PaCO2 is a danger sign (BGH/SIGN 158).",
-     "references": [
+    "differentials": [
       {
-       "title": "Paediatric asthma management, Borders General Hospital (referenced to SIGN 158)",
-       "edition": "NHS Borders, January 2020, pp. 2–5 (IV doses, nebulised doses, severity, discharge)",
-       "url": "https://rightdecisions.scot.nhs.uk/media/lp3nxk5x/bgh-paediatric-asthma-management-2020-sign-158-referenced-v2.pdf"
+        "condition": "Bronchiolitis",
+        "distinguishingFeatures": "Infant under 1 year with coryza, crackles and wheeze and poor bronchodilator response; clinical diagnosis by age and course."
+      },
+      {
+        "condition": "Pneumonia",
+        "distinguishingFeatures": "Fever, focal crackles or bronchial breathing and tachypnoea out of proportion to wheeze; chest X-ray consolidation settles it."
+      },
+      {
+        "condition": "Foreign body aspiration",
+        "distinguishingFeatures": "Sudden choking onset, unilateral wheeze or reduced air entry; chest X-ray air trapping and bronchoscopy settle it."
+      },
+      {
+        "condition": "Croup",
+        "distinguishingFeatures": "Barking cough and inspiratory stridor rather than expiratory wheeze; clinical diagnosis responds to steroid."
+      },
+      {
+        "condition": "Anaphylaxis",
+        "distinguishingFeatures": "Wheeze with urticaria, angioedema or hypotension after a trigger; clinical diagnosis — give IM adrenaline."
+      },
+      {
+        "condition": "Pneumothorax",
+        "distinguishingFeatures": "Sudden worsening with unilateral reduced breath sounds and hyper-resonance during an attack; chest X-ray settles it."
       }
-     ]
+    ],
+    "diagnosticCriteria": [
+      {
+        "criterion": "Mild (BGH/SIGN 158)",
+        "threshold": "SpO2 above 94%; PEF above 80% predicted; not distressed."
+      },
+      {
+        "criterion": "Moderate (BGH/SIGN 158)",
+        "threshold": "SpO2 91–95%; PEF 50–80%; distressed with obvious accessory muscle use."
+      },
+      {
+        "criterion": "Severe (BGH/SIGN 158)",
+        "threshold": "SpO2 below 92%; PEF below 50%; marked distress, silent chest, pulsus paradoxus."
+      }
+    ],
+    "investigations": {
+      "ruleIn": [
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "Pulse oximetry",
+          "modalityTarget": "SpO2 in air",
+          "targetCondition": "Severity",
+          "normalValue": "94–100%",
+          "expectedFinding": "Below 92%: severe",
+          "clinicalRationale": "Oxygen to 94–98% (SIGN 158).",
+          "references": [
+            {
+              "title": "Paediatric asthma management, Borders General Hospital (referenced to SIGN 158)",
+              "edition": "NHS Borders, January 2020, pp. 2–5 (IV doses, nebulised doses, severity, discharge)",
+              "url": "https://rightdecisions.scot.nhs.uk/media/lp3nxk5x/bgh-paediatric-asthma-management-2020-sign-158-referenced-v2.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "Peak expiratory flow (age 5 and over)",
+          "modalityTarget": "PEF meter",
+          "targetCondition": "Severity",
+          "normalValue": "Above 80% predicted or best",
+          "expectedFinding": "50–80% moderate; below 50% severe",
+          "clinicalRationale": "Severity and discharge threshold above 75% (BGH/SIGN 158).",
+          "references": [
+            {
+              "title": "Paediatric asthma management, Borders General Hospital (referenced to SIGN 158)",
+              "edition": "NHS Borders, January 2020, pp. 2–5 (IV doses, nebulised doses, severity, discharge)",
+              "url": "https://rightdecisions.scot.nhs.uk/media/lp3nxk5x/bgh-paediatric-asthma-management-2020-sign-158-referenced-v2.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "specializedAdjunctive",
+          "testName": "Clinical assessment: work of breathing, air entry, speech",
+          "modalityTarget": "Bedside",
+          "targetCondition": "Severity",
+          "normalValue": "Talks normally, no retractions",
+          "expectedFinding": "Marked retraction, silent chest, unable to talk",
+          "clinicalRationale": "Silent chest is life-threatening (BGH/SIGN 158).",
+          "references": [
+            {
+              "title": "Paediatric asthma management, Borders General Hospital (referenced to SIGN 158)",
+              "edition": "NHS Borders, January 2020, pp. 2–5 (IV doses, nebulised doses, severity, discharge)",
+              "url": "https://rightdecisions.scot.nhs.uk/media/lp3nxk5x/bgh-paediatric-asthma-management-2020-sign-158-referenced-v2.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "laboratory",
+          "testName": "Blood gas (severe or not improving)",
+          "modalityTarget": "Capillary or arterial gas",
+          "targetCondition": "Respiratory failure",
+          "normalValue": "PaCO2 4.5–6.0 kPa",
+          "expectedFinding": "PaCO2 above 6 kPa",
+          "clinicalRationale": "Rising PaCO2 is a danger sign (BGH/SIGN 158).",
+          "references": [
+            {
+              "title": "Paediatric asthma management, Borders General Hospital (referenced to SIGN 158)",
+              "edition": "NHS Borders, January 2020, pp. 2–5 (IV doses, nebulised doses, severity, discharge)",
+              "url": "https://rightdecisions.scot.nhs.uk/media/lp3nxk5x/bgh-paediatric-asthma-management-2020-sign-158-referenced-v2.pdf"
+            }
+          ]
+        },
+        {
+          "tier": "firstLineImaging",
+          "testName": "Chest X-ray (selected)",
+          "modalityTarget": "Chest radiograph",
+          "targetCondition": "Pneumothorax, consolidation",
+          "normalValue": "Hyperinflation only",
+          "expectedFinding": "Pneumothorax, collapse, consolidation",
+          "clinicalRationale": "Only if severe, not responding or focal signs.",
+          "references": [
+            {
+              "title": "Initial treatment of acute asthma in children (BTS/SIGN 158, Right Decision Service, Healthcare Improvement Scotland)",
+              "edition": "BTS/SIGN 158, 2019, section Initial treatment",
+              "url": "https://rightdecisions.scot.nhs.uk/asthma-pathway-bts-nice-sign-sign-244/managing-acute-asthma/management-of-acute-asthma-in-children/initial-treatment-of-acute-asthma-in-children"
+            }
+          ]
+        }
+      ],
+      "ruleOut": [
+        {
+          "tier": "laboratory",
+          "testName": "Serum potassium (on repeated salbutamol)",
+          "modalityTarget": "Blood",
+          "targetCondition": "Hypokalaemia",
+          "normalValue": "3.5–5.0 mmol/L",
+          "expectedFinding": "Low",
+          "clinicalRationale": "Repeated beta-2 agonist lowers potassium.",
+          "references": [
+            {
+              "title": "Paediatric asthma management, Borders General Hospital (referenced to SIGN 158)",
+              "edition": "NHS Borders, January 2020, pp. 2–5 (IV doses, nebulised doses, severity, discharge)",
+              "url": "https://rightdecisions.scot.nhs.uk/media/lp3nxk5x/bgh-paediatric-asthma-management-2020-sign-158-referenced-v2.pdf"
+            }
+          ]
+        }
+      ]
     },
-    {
-     "tier": "firstLineImaging",
-     "testName": "Chest X-ray (selected)",
-     "modalityTarget": "Chest radiograph",
-     "targetCondition": "Pneumothorax, consolidation",
-     "normalValue": "Hyperinflation only",
-     "expectedFinding": "Pneumothorax, collapse, consolidation",
-     "clinicalRationale": "Only if severe, not responding or focal signs.",
-     "references": [
+    "clinicalManagement": [
       {
-       "title": "Initial treatment of acute asthma in children (BTS/SIGN 158, Right Decision Service, Healthcare Improvement Scotland)",
-       "edition": "BTS/SIGN 158, 2019, section Initial treatment",
-       "url": "https://rightdecisions.scot.nhs.uk/asthma-pathway-bts-nice-sign-sign-244/managing-acute-asthma/management-of-acute-asthma-in-children/initial-treatment-of-acute-asthma-in-children"
-      }
-     ]
-    }
-   ],
-   "ruleOut": [
-    {
-     "tier": "laboratory",
-     "testName": "Serum potassium (on repeated salbutamol)",
-     "modalityTarget": "Blood",
-     "targetCondition": "Hypokalaemia",
-     "normalValue": "3.5–5.0 mmol/L",
-     "expectedFinding": "Low",
-     "clinicalRationale": "Repeated beta-2 agonist lowers potassium.",
-     "references": [
+        "id": "abcde-concurrent-survey",
+        "title": "ABCDE survey with concurrent correction",
+        "timeframe": "Immediately, on arrival",
+        "actions": [
+          "Work through Airway, Breathing, Circulation, Disability and Exposure in order, and correct each abnormality concurrently as it is found: do not wait for the full survey, investigations or a diagnosis before treating a life-threatening problem, and call for senior help early.",
+          "Airway: look, listen and feel for obstruction; open it with a neutral head position (head tilt in older children) or jaw thrust, suction secretions, use an oropharyngeal airway if unconscious and call for expert paediatric airway help if it cannot be kept patent.",
+          "Breathing: count respiratory rate, measure SpO2, check recession, grunting, nasal flaring and air entry; if SpO2 is below 94% give [💊 Oxygen | 10–15 L/min via reservoir mask | Inhaled | Continuous | Until SpO2 94–98%, then titrate to target] and treat life-threatening chest problems as they are found.",
+          "Circulation: check heart rate, capillary refill and blood pressure, attach a monitor and secure IV access if the attack is severe; if shocked give [💊 Sodium chloride 0.9% | 10 mL/kg | IV or IO bolus over 10 minutes | Reassess after each bolus; repeat if still shocked | Until perfusion restored].",
+          "Disability: assess responsiveness (alert, voice, pain, unresponsive), pupils and posture, and measure capillary glucose; if glucose is below 3 mmol/L give [💊 Glucose 10% | 2 mL/kg | IV or IO bolus | Repeat after 10 minutes if glucose remains below 3 mmol/L | Until glucose 3 mmol/L or above]; look for seizure activity.",
+          "Exposure: expose the child to examine fully while preventing heat loss; check temperature, skin (rash, bruising, wounds) and abdomen, then cover again."
+        ]
+      },
       {
-       "title": "Paediatric asthma management, Borders General Hospital (referenced to SIGN 158)",
-       "edition": "NHS Borders, January 2020, pp. 2–5 (IV doses, nebulised doses, severity, discharge)",
-       "url": "https://rightdecisions.scot.nhs.uk/media/lp3nxk5x/bgh-paediatric-asthma-management-2020-sign-158-referenced-v2.pdf"
+        "id": "start",
+        "title": "Start treatment",
+        "timeframe": "First 20 minutes",
+        "actions": [
+          "Give [💊 Oxygen | 10–15 L/min via reservoir mask | Inhaled | Continuous | Until SpO2 94–98%, then titrate to target] if SpO2 is below 94% (SIGN 158).",
+          "Give [💊 Salbutamol | 1 puff (100 micrograms) every 30–60 seconds, up to 10 puffs | Inhaled via pMDI and spacer (face mask under 3 years) | Repeat every 20–30 minutes as needed | Until improved, then 3–4-hourly]; if SpO2 is below 92% use [💊 Salbutamol | under 5 years 2.5 mg; 5 years and over 5 mg | Nebulised, oxygen-driven | Every 20–30 minutes | Until improved] (SIGN 158).",
+          "Give early [💊 Prednisolone | under 2 years 10 mg; 2–5 years 20 mg; over 5 years 30–40 mg | Oral | Once daily | Up to 3 days] (SIGN 158)."
+        ]
+      },
+      {
+        "id": "severe",
+        "title": "Severe or not responding",
+        "timeframe": "20–60 minutes",
+        "actions": [
+          "Repeat [💊 Salbutamol | under 5 years 2.5 mg; 5 years and over 5 mg | Nebulised, oxygen-driven | Every 20–30 minutes | Until improved] and add [💊 Ipratropium bromide | 250 micrograms (125 micrograms under 1 year; 500 micrograms 12 years and over) | Nebulised with salbutamol | Every 20–30 minutes in the first hours, then 4–6-hourly | Until improved] (SIGN 158).",
+          "Consider [💊 Magnesium sulfate nebulised | 150 mg | Nebulised with each salbutamol dose | With each dose in the first hour | First hour only] if SpO2 is below 92% (SIGN 158).",
+          "If still not responding give [💊 Magnesium sulfate | 40 mg/kg (maximum 2 g) | IV infusion | Once | Single dose] (BGH/SIGN 158)."
+        ]
+      },
+      {
+        "id": "second",
+        "title": "Second-line IV",
+        "timeframe": "After 1–2 hours",
+        "actions": [
+          "Under senior and paediatric intensive care unit input give [💊 Salbutamol | over 2 years 15 micrograms/kg over 10 minutes (1 month–2 years 5 micrograms/kg over 5 minutes); then infusion 60–300 micrograms/kg/hour | IV | Bolus, then infusion | Until improved] or [💊 Aminophylline | 5 mg/kg (maximum 500 mg) over at least 20 minutes, then 1 mg/kg/hour (1 month–12 years) or 500–700 micrograms/kg/hour (over 12 years) | IV | Loading, then infusion | Until improved] (BGH/SIGN 158).",
+          "Rising PaCO2, exhaustion or falling consciousness: call anaesthesia and PICU for airway support (BGH/SIGN 158)."
+        ]
+      },
+      {
+        "id": "discharge",
+        "title": "Discharge",
+        "timeframe": "When stable",
+        "actions": [
+          "Stable on 3–4-hourly bronchodilator, PEF above 75%, SpO2 above 94% in air (BGH/SIGN 158).",
+          "Personalised action plan; review within 48 hours (BGH/SIGN 158)."
+        ]
+      },
+      {
+        "id": "prevent",
+        "title": "Prevent the next attack",
+        "timeframe": "Before discharge",
+        "actions": [
+          "Check inhaler and spacer technique; start or step up an inhaled corticosteroid preventer if attacks are frequent (SIGN 158, discharge and follow-up; see the Asthma: long-term care topic for preventer doses).",
+          "Advise avoiding tobacco and biomass smoke; give a written action plan and review within 48 hours (BGH/SIGN 158)."
+        ]
       }
-     ]
-    }
-   ]
-  },
-  "clinicalManagement": [
-   {
-    "id": "start",
-    "title": "Start treatment",
-    "timeframe": "First 20 minutes",
-    "actions": [
-     "Oxygen to SpO2 94–98% if below 94% (SIGN 158).",
-     "Salbutamol by pMDI and spacer, 1 puff every 30–60 seconds up to 10 puffs; nebulise if SpO2 below 92% (SIGN 158).",
-     "Give oral prednisolone early (SIGN 158)."
+    ],
+    "medicationPlan": {
+      "status": "source-verified",
+      "branches": [
+        {
+          "label": "Initial treatment",
+          "entryCriteria": "Child 1 year and over with an acute asthma attack."
+        },
+        {
+          "label": "Severe asthma: add-on",
+          "entryCriteria": "SpO2 below 92% or poor response to initial bronchodilator."
+        },
+        {
+          "label": "Second-line IV",
+          "entryCriteria": "Severe asthma not responding to inhaled treatment."
+        }
+      ],
+      "regimens": [
+        {
+          "indication": "Mild to moderate attack",
+          "patientGroup": "Children 1 year and over (under 2 with poor response: consider another diagnosis, SIGN 158)",
+          "genericName": "Salbutamol (pMDI with spacer)",
+          "dose": "1 puff (100 mcg) every 30–60 seconds up to 10 puffs",
+          "route": "Inhaled via spacer (face mask under 3 years)",
+          "frequency": "Repeat every 20–30 minutes as needed",
+          "duration": "Until improved, then 3–4-hourly",
+          "adjustments": [
+            "Paediatric: This is the paediatric dose. Under 2 years with poor response: consider another diagnosis (SIGN 158).",
+            "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+            "CKD: No adjustment.",
+            "CLD: No adjustment."
+          ],
+          "monitoring": [
+            "SpO2, heart rate, work of breathing"
+          ],
+          "contraindications": [
+            "Tachycardia, tremor"
+          ],
+          "branch": "Initial treatment",
+          "step": "Bronchodilator",
+          "selection": "one-of",
+          "sourceTitle": "Initial treatment of acute asthma in children (BTS/SIGN 158, Right Decision Service, Healthcare Improvement Scotland)",
+          "sourceUrl": "https://rightdecisions.scot.nhs.uk/asthma-pathway-bts-nice-sign-sign-244/managing-acute-asthma/management-of-acute-asthma-in-children/initial-treatment-of-acute-asthma-in-children",
+          "sourceEdition": "BTS/SIGN 158, 2019, section Initial treatment",
+          "preferred": true
+        },
+        {
+          "indication": "Severe attack (SpO2 below 92%)",
+          "patientGroup": "Children",
+          "genericName": "Salbutamol (nebulised)",
+          "dose": "Under 5 years 2.5 mg; 5 years and over 5 mg",
+          "route": "Nebulised, oxygen-driven",
+          "frequency": "Every 20–30 minutes",
+          "duration": "Until improved",
+          "adjustments": [
+            "Paediatric: This is the paediatric dose.",
+            "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+            "CKD: No adjustment.",
+            "CLD: No adjustment."
+          ],
+          "monitoring": [
+            "SpO2, heart rate, potassium"
+          ],
+          "contraindications": [
+            "Tachycardia"
+          ],
+          "branch": "Initial treatment",
+          "step": "Bronchodilator",
+          "selection": "one-of",
+          "sourceTitle": "Paediatric asthma management, Borders General Hospital (referenced to SIGN 158)",
+          "sourceUrl": "https://rightdecisions.scot.nhs.uk/media/lp3nxk5x/bgh-paediatric-asthma-management-2020-sign-158-referenced-v2.pdf",
+          "sourceEdition": "NHS Borders, January 2020, pp. 2–5 (IV doses, nebulised doses, severity, discharge)",
+          "preferred": false,
+          "useWhen": "SpO2 below 92% or unable to use spacer (SIGN 158)."
+        },
+        {
+          "indication": "Any acute attack",
+          "patientGroup": "Children",
+          "genericName": "Prednisolone",
+          "dose": "Under 2 years 10 mg; 2–5 years 20 mg; over 5 years 30–40 mg (2 mg/kg up to 60 mg if on maintenance steroid tablets)",
+          "route": "Oral",
+          "frequency": "Once daily",
+          "duration": "Up to 3 days",
+          "adjustments": [
+            "Paediatric: This is the paediatric dose.",
+            "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+            "CKD: No adjustment.",
+            "CLD: No adjustment.",
+            "IV hydrocortisone if oral not retained: 4 mg/kg 4-hourly (2–12 years), 100 mg 6-hourly (over 12 years) (SIGN 158; BGH)."
+          ],
+          "monitoring": [
+            "Vomiting: repeat dose"
+          ],
+          "contraindications": [
+            "Varicella exposure (caution)"
+          ],
+          "branch": "Initial treatment",
+          "step": "Oral corticosteroid",
+          "selection": "all",
+          "sourceTitle": "Initial treatment of acute asthma in children (BTS/SIGN 158, Right Decision Service, Healthcare Improvement Scotland)",
+          "sourceUrl": "https://rightdecisions.scot.nhs.uk/asthma-pathway-bts-nice-sign-sign-244/managing-acute-asthma/management-of-acute-asthma-in-children/initial-treatment-of-acute-asthma-in-children",
+          "sourceEdition": "BTS/SIGN 158, 2019, section Initial treatment"
+        },
+        {
+          "indication": "Severe attack or poor response",
+          "patientGroup": "Children",
+          "genericName": "Ipratropium bromide",
+          "dose": "250 micrograms (125 micrograms under 1 year; 500 micrograms 12 years and over)",
+          "route": "Nebulised with salbutamol",
+          "frequency": "Every 20–30 minutes for first hours, then 4–6-hourly",
+          "duration": "Every 20–30 minutes in the first hours, then 4–6-hourly (BGH)",
+          "adjustments": [
+            "Paediatric: This is the paediatric dose.",
+            "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+            "CKD: No adjustment.",
+            "CLD: No adjustment."
+          ],
+          "monitoring": [
+            "Response"
+          ],
+          "contraindications": [
+            "Glaucoma (avoid mask leak into eyes)"
+          ],
+          "branch": "Severe asthma: add-on",
+          "step": "Anticholinergic",
+          "selection": "all",
+          "sourceTitle": "Initial treatment of acute asthma in children (BTS/SIGN 158, Right Decision Service, Healthcare Improvement Scotland)",
+          "sourceUrl": "https://rightdecisions.scot.nhs.uk/asthma-pathway-bts-nice-sign-sign-244/managing-acute-asthma/management-of-acute-asthma-in-children/initial-treatment-of-acute-asthma-in-children",
+          "sourceEdition": "BTS/SIGN 158, 2019, section Initial treatment"
+        },
+        {
+          "indication": "Severe attack not responding",
+          "patientGroup": "Children",
+          "genericName": "Magnesium sulfate (IV)",
+          "dose": "40 mg/kg (maximum 2 g)",
+          "route": "IV infusion",
+          "frequency": "Once",
+          "duration": "Single dose",
+          "adjustments": [
+            "Paediatric: This is the paediatric dose.",
+            "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+            "CKD: Caution in renal impairment.",
+            "CLD: No adjustment.",
+            "Nebulised option: 150 mg with each salbutamol and ipratropium dose in the first hour if SpO2 below 92% (SIGN 158)."
+          ],
+          "monitoring": [
+            "BP, reflexes"
+          ],
+          "contraindications": [
+            "Hypotension"
+          ],
+          "branch": "Severe asthma: add-on",
+          "step": "Magnesium",
+          "selection": "all",
+          "sourceTitle": "Paediatric asthma management, Borders General Hospital (referenced to SIGN 158)",
+          "sourceUrl": "https://rightdecisions.scot.nhs.uk/media/lp3nxk5x/bgh-paediatric-asthma-management-2020-sign-158-referenced-v2.pdf",
+          "sourceEdition": "NHS Borders, January 2020, pp. 2–5 (IV doses, nebulised doses, severity, discharge)"
+        },
+        {
+          "indication": "Severe asthma unresponsive to inhaled therapy",
+          "patientGroup": "Children",
+          "genericName": "Salbutamol (IV)",
+          "dose": "Over 2 years 15 micrograms/kg over 10 minutes (1 month–2 years 5 micrograms/kg over 5 minutes); infusion 60–300 micrograms/kg/hour",
+          "route": "IV",
+          "frequency": "Bolus, then infusion",
+          "duration": "Until improved",
+          "adjustments": [
+            "Paediatric: This is the paediatric dose. Infusions above 120 micrograms/kg/hour in PICU (BGH).",
+            "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+            "CKD: No adjustment.",
+            "CLD: No adjustment."
+          ],
+          "monitoring": [
+            "Heart rate, potassium, lactate"
+          ],
+          "contraindications": [
+            "Tachyarrhythmia"
+          ],
+          "branch": "Second-line IV",
+          "step": "IV bronchodilator",
+          "selection": "one-of",
+          "sourceTitle": "Paediatric asthma management, Borders General Hospital (referenced to SIGN 158)",
+          "sourceUrl": "https://rightdecisions.scot.nhs.uk/media/lp3nxk5x/bgh-paediatric-asthma-management-2020-sign-158-referenced-v2.pdf",
+          "sourceEdition": "NHS Borders, January 2020, pp. 2–5 (IV doses, nebulised doses, severity, discharge)",
+          "preferred": true
+        },
+        {
+          "indication": "Severe asthma unresponsive to inhaled therapy",
+          "patientGroup": "Children",
+          "genericName": "Aminophylline",
+          "dose": "5 mg/kg (maximum 500 mg) over at least 20 minutes, then 1 mg/kg/hour (1 month–12 years) or 500–700 micrograms/kg/hour (over 12 years)",
+          "route": "IV",
+          "frequency": "Loading, then infusion",
+          "duration": "Until improved",
+          "adjustments": [
+            "Paediatric: This is the paediatric dose. Omit loading if on theophylline (BGH).",
+            "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+            "CKD: No adjustment.",
+            "CLD: Reduce infusion in liver disease (level-guided)."
+          ],
+          "monitoring": [
+            "Theophylline level, heart rhythm"
+          ],
+          "contraindications": [
+            "Already on theophylline (omit loading)",
+            "Arrhythmia"
+          ],
+          "branch": "Second-line IV",
+          "step": "IV bronchodilator",
+          "selection": "one-of",
+          "sourceTitle": "Paediatric asthma management, Borders General Hospital (referenced to SIGN 158)",
+          "sourceUrl": "https://rightdecisions.scot.nhs.uk/media/lp3nxk5x/bgh-paediatric-asthma-management-2020-sign-158-referenced-v2.pdf",
+          "sourceEdition": "NHS Borders, January 2020, pp. 2–5 (IV doses, nebulised doses, severity, discharge)",
+          "preferred": false,
+          "useWhen": "IV salbutamol unavailable or not effective."
+        }
+      ],
+      "note": "Doses are from BTS/SIGN 158 (2019) and the SIGN 158-referenced NHS Borders protocol (2020). Antibiotics are not routinely given. India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
+    },
+    "teaching": {
+      "scope": "Acute asthma in Indian children.",
+      "learningObjectives": [
+        "Grade severity with SpO2 and PEF.",
+        "Give salbutamol by spacer correctly.",
+        "Escalate severe asthma."
+      ],
+      "keyPoints": [
+        "Spacer: 1 puff every 30–60 seconds, up to 10 puffs.",
+        "Prednisolone early: 10, 20 or 30–40 mg by age.",
+        "SpO2 below 92%: nebulise with ipratropium.",
+        "IV magnesium 40 mg/kg (maximum 2 g) if not responding."
+      ],
+      "pitfalls": [
+        "Nebuliser when spacer would work.",
+        "Delaying steroids.",
+        "Routine antibiotics.",
+        "Discharge without an action plan."
+      ],
+      "references": [
+        {
+          "title": "Initial treatment of acute asthma in children (BTS/SIGN 158, Right Decision Service, Healthcare Improvement Scotland)",
+          "edition": "BTS/SIGN 158, 2019",
+          "url": "https://rightdecisions.scot.nhs.uk/asthma-pathway-bts-nice-sign-sign-244/managing-acute-asthma/management-of-acute-asthma-in-children/initial-treatment-of-acute-asthma-in-children",
+          "locator": "section Initial treatment of acute asthma in children"
+        },
+        {
+          "title": "Paediatric asthma management, Borders General Hospital (referenced to SIGN 158)",
+          "edition": "NHS Borders, January 2020",
+          "url": "https://rightdecisions.scot.nhs.uk/media/lp3nxk5x/bgh-paediatric-asthma-management-2020-sign-158-referenced-v2.pdf",
+          "locator": "pp. 2–5"
+        }
+      ],
+      "vignette": {
+        "text": "Meera, a 7-year-old girl from Lucknow weighing 22 kg, is brought in November with 2 days of cough and increasing wheeze after a cold. She lives in a household that cooks with wood. She can speak only a few words at a time, uses her neck muscles to breathe and has an SpO2 of 90% in air. Respiratory rate is 40/min, pulse 140/min, and peak flow is 40% of predicted. She uses a salbutamol inhaler without a spacer.",
+        "fictitious": true
+      },
+      "guidedApproach": [
+        {
+          "title": "Inflammation, spasm and air trapping",
+          "prompt": "Why does an acute attack become dangerous?",
+          "guidance": "Viral infection, smoke or allergen exposure triggers airway inflammation with mucosal oedema, mucus plugging and smooth-muscle contraction. Narrowed airways close early in expiration, trapping air and flattening the diaphragm, which increases the work of breathing. Uneven ventilation causes hypoxaemia. Early in an attack the child hyperventilates and PaCO2 falls; a normal or rising PaCO2 means fatigue and impending respiratory failure. A silent chest means so little air moves that wheeze cannot be heard. Beta-2 agonists relax smooth muscle within minutes, anticholinergics add bronchodilation in severe attacks, and steroids reduce inflammation over hours.",
+          "section": "pathophysiology"
+        },
+        {
+          "title": "Grade the attack in seconds",
+          "prompt": "Which signs define a severe or life-threatening attack?",
+          "guidance": "Assess speech, work of breathing, air entry, SpO2, heart and respiratory rate, and peak flow in children aged 5 and over. A moderate attack has SpO2 of 92% or more (BGH bands moderate as 91–95%, which overlap), PEF 50–80% and the child can talk. A severe attack has SpO2 below 92%, PEF below 50%, inability to complete sentences or feed, and marked accessory muscle use. Life-threatening features are a silent chest, cyanosis, poor respiratory effort, exhaustion, confusion or drowsiness, and hypotension. Consider other diagnoses in infants under 2 years with poor response, and look for pneumothorax if a child suddenly worsens.",
+          "section": "signs-symptoms"
+        },
+        {
+          "title": "Few tests, used wisely",
+          "prompt": "When are tests useful in acute asthma?",
+          "guidance": "Pulse oximetry guides oxygen and severity, and peak flow in children aged 5 and over measures response and the discharge threshold of 75% or more. Most children need no blood tests or X-ray. Take a blood gas when the attack is severe or not improving: a PaCO2 above 6 kPa is a danger sign. A chest X-ray is reserved for severe or non-responding asthma, focal signs or suspected pneumothorax, collapse or consolidation. Check potassium when salbutamol is given repeatedly or intravenously, because beta-2 agonists drive potassium into cells.",
+          "section": "investigations"
+        },
+        {
+          "title": "Bronchodilate early, add steroid, escalate on time",
+          "prompt": "How do you treat acute asthma step by step?",
+          "guidance": "Give oxygen to keep SpO2 94–98%. For mild to moderate attacks give salbutamol by metered-dose inhaler and spacer, 1 puff every 30–60 seconds up to 10 puffs, repeated every 20–30 minutes; a spacer works as well as a nebuliser. Nebulise salbutamol (2.5 mg under 5 years, 5 mg from 5 years) with ipratropium 250 micrograms when SpO2 is below 92%. Give prednisolone early: 10 mg under 2 years, 20 mg at 2–5 years, 30–40 mg over 5 years, for up to 3 days. If there is no response, give IV magnesium 40 mg/kg (maximum 2 g), then IV salbutamol or aminophylline with PICU input.",
+          "section": "management"
+        }
+      ],
+      "boardQuestions": [
+        {
+          "id": "q1",
+          "vignette": "A 7-year-old girl has an asthma attack after a cold. She can say only a few words, SpO2 is 90% in air, respiratory rate 40/min and peak flow 40% of predicted. She has not yet had any treatment in the emergency department.",
+          "fictitious": true,
+          "question": "What is the best initial treatment?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Oral salbutamol syrup",
+              "explanation": "Oral salbutamol acts slowly and is not used for acute attacks."
+            },
+            {
+              "id": "B",
+              "text": "Oxygen, nebulised salbutamol 5 mg with ipratropium 250 micrograms, and oral prednisolone 30–40 mg",
+              "explanation": "Correct. SpO2 below 92% and PEF below 50% mean a severe attack needing oxygen, nebulised bronchodilators and early steroid (SIGN 158)."
+            },
+            {
+              "id": "C",
+              "text": "IV aminophylline first",
+              "explanation": "Aminophylline is second-line after inhaled therapy and magnesium fail."
+            },
+            {
+              "id": "D",
+              "text": "Amoxicillin for the cold",
+              "explanation": "Antibiotics are not routinely given in acute asthma."
+            },
+            {
+              "id": "E",
+              "text": "Chest X-ray before treatment",
+              "explanation": "Treatment must not wait; X-ray is only for selected children."
+            }
+          ],
+          "answer": "B",
+          "educationalObjective": "Treat a severe attack promptly.",
+          "keyPoint": "SpO2 below 92%: oxygen, nebulised salbutamol plus ipratropium, prednisolone."
+        },
+        {
+          "id": "q2",
+          "vignette": "A 5-year-old boy with a severe asthma attack has received three nebulised salbutamol and ipratropium doses and oral prednisolone over an hour. He is still working hard to breathe with SpO2 91% on oxygen and poor air entry. He weighs 18 kg and is alert.",
+          "fictitious": true,
+          "question": "What is the next step?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Another dose of prednisolone",
+              "explanation": "He has already received steroid, and a second dose adds no immediate effect."
+            },
+            {
+              "id": "B",
+              "text": "Discharge with an inhaler",
+              "explanation": "He is still severely unwell and needs escalation."
+            },
+            {
+              "id": "C",
+              "text": "Sedation to reduce distress",
+              "explanation": "Sedatives can depress breathing and are dangerous in acute asthma."
+            },
+            {
+              "id": "D",
+              "text": "IV magnesium sulfate 40 mg/kg (720 mg) over 20 minutes",
+              "explanation": "Correct. IV magnesium is the next step when severe asthma does not respond to inhaled therapy (BGH/SIGN 158)."
+            },
+            {
+              "id": "E",
+              "text": "Routine antibiotics",
+              "explanation": "There is no sign of bacterial infection and antibiotics will not relieve bronchospasm."
+            }
+          ],
+          "answer": "D",
+          "educationalObjective": "Escalate when inhaled therapy fails.",
+          "keyPoint": "No response after an hour: IV magnesium 40 mg/kg."
+        },
+        {
+          "id": "q3",
+          "vignette": "A 9-year-old girl has had three emergency visits for asthma this year. Today's attack has settled with salbutamol by spacer and prednisolone. Her peak flow is now 85% of predicted and SpO2 97% in air. She uses only a salbutamol inhaler without a spacer, and her family cooks with wood indoors.",
+          "fictitious": true,
+          "question": "What is the most important addition to her discharge plan?",
+          "options": [
+            {
+              "id": "A",
+              "text": "A nebuliser for home use",
+              "explanation": "A spacer works as well as a nebuliser and is cheaper and quicker."
+            },
+            {
+              "id": "B",
+              "text": "Long-term oral prednisolone",
+              "explanation": "Long-term oral steroids are not appropriate for this level of asthma."
+            },
+            {
+              "id": "C",
+              "text": "Inhaled corticosteroid preventer with a spacer, smoke reduction and a written action plan",
+              "explanation": "Correct. Frequent attacks indicate a need for preventer therapy, good technique and trigger reduction (SIGN 158, discharge and follow-up)."
+            },
+            {
+              "id": "D",
+              "text": "Antibiotics for 5 days",
+              "explanation": "Antibiotics treat bacterial infection and do not prevent asthma attacks."
+            },
+            {
+              "id": "E",
+              "text": "Avoid all exercise",
+              "explanation": "Exercise should be encouraged once asthma is controlled."
+            }
+          ],
+          "answer": "C",
+          "educationalObjective": "Prevent future attacks at discharge.",
+          "keyPoint": "Every attack is a chance to start a preventer and fix technique."
+        }
+      ]
+    },
+    "nonClinicalManagement": {
+      "patientEducation": [
+        "Spacer technique and written action plan.",
+        "Use preventer inhaler daily as prescribed.",
+        "Return if reliever needed more than 4-hourly."
+      ],
+      "lifestyleAndDiet": [
+        "Avoid smoke from tobacco and biomass fuels.",
+        "Influenza vaccination."
+      ],
+      "mdtReferrals": [
+        "PICU for life-threatening asthma",
+        "Paediatric pulmonologist for frequent attacks"
+      ],
+      "dischargeCriteria": [
+        "Stable on 3–4-hourly bronchodilator (BGH)",
+        "PEF above 75% predicted or best; SpO2 above 94% in air (BGH)"
+      ],
+      "followUpPlan": "Review within 48 hours of discharge (BGH/SIGN 158)."
+    },
+    "algorithms": [
+      {
+        "id": "asthma-children-pathway",
+        "title": "Acute asthma in children: grade and escalate",
+        "placement": "manage",
+        "nodes": [
+          {
+            "id": "start",
+            "kind": "start",
+            "text": "Child with acute wheeze and breathlessness",
+            "next": [
+              {
+                "to": "lt"
+              }
+            ]
+          },
+          {
+            "id": "lt",
+            "kind": "decision",
+            "text": "Life-threatening: silent chest, cyanosis, poor effort, exhaustion, confusion or hypotension?",
+            "next": [
+              {
+                "to": "ltout",
+                "label": "Yes"
+              },
+              {
+                "to": "grade",
+                "label": "No"
+              }
+            ]
+          },
+          {
+            "id": "ltout",
+            "kind": "outcome",
+            "text": "Senior and PICU now: oxygen, back-to-back nebulised salbutamol with ipratropium, prednisolone or IV hydrocortisone, early IV magnesium 40 mg/kg, consider IV salbutamol"
+          },
+          {
+            "id": "grade",
+            "kind": "decision",
+            "text": "Severe: SpO2 below 92%, PEF below 50%, cannot complete sentences, marked accessory muscle use?",
+            "next": [
+              {
+                "to": "sev",
+                "label": "Yes"
+              },
+              {
+                "to": "mod",
+                "label": "No"
+              }
+            ]
+          },
+          {
+            "id": "sev",
+            "kind": "action",
+            "text": "Oxygen to 94–98%; nebulised salbutamol with ipratropium every 20–30 minutes; prednisolone; consider nebulised magnesium",
+            "next": [
+              {
+                "to": "resp"
+              }
+            ]
+          },
+          {
+            "id": "resp",
+            "kind": "decision",
+            "text": "Responding within the first hour?",
+            "next": [
+              {
+                "to": "ward",
+                "label": "Yes"
+              },
+              {
+                "to": "ivmg",
+                "label": "No"
+              }
+            ]
+          },
+          {
+            "id": "ward",
+            "kind": "outcome",
+            "text": "Admit; space salbutamol as tolerated; continue prednisolone"
+          },
+          {
+            "id": "ivmg",
+            "kind": "action",
+            "text": "IV magnesium 40 mg/kg (maximum 2 g)",
+            "next": [
+              {
+                "to": "resp2"
+              }
+            ]
+          },
+          {
+            "id": "resp2",
+            "kind": "decision",
+            "text": "Still not responding or rising PaCO2?",
+            "next": [
+              {
+                "to": "picu",
+                "label": "Yes"
+              },
+              {
+                "to": "ward2",
+                "label": "No"
+              }
+            ]
+          },
+          {
+            "id": "picu",
+            "kind": "outcome",
+            "text": "Senior and PICU: IV salbutamol or aminophylline; prepare for airway support"
+          },
+          {
+            "id": "ward2",
+            "kind": "outcome",
+            "text": "Admit; close monitoring and potassium checks"
+          },
+          {
+            "id": "mod",
+            "kind": "action",
+            "text": "Oxygen if SpO2 below 94%; salbutamol by spacer, 1 puff every 30–60 seconds up to 10 puffs; prednisolone",
+            "next": [
+              {
+                "to": "better"
+              }
+            ]
+          },
+          {
+            "id": "better",
+            "kind": "decision",
+            "text": "Improved and stable on 3–4-hourly salbutamol?",
+            "next": [
+              {
+                "to": "home",
+                "label": "Yes"
+              },
+              {
+                "to": "sev2",
+                "label": "No"
+              }
+            ]
+          },
+          {
+            "id": "home",
+            "kind": "outcome",
+            "text": "Discharge with action plan, preventer review and follow-up in 48 hours"
+          },
+          {
+            "id": "sev2",
+            "kind": "outcome",
+            "text": "Treat as severe: nebulised salbutamol with ipratropium; admit"
+          }
+        ],
+        "source": {
+          "title": "Initial treatment of acute asthma in children (BTS/SIGN 158, Right Decision Service, Healthcare Improvement Scotland)",
+          "edition": "BTS/SIGN 158, 2019",
+          "url": "https://rightdecisions.scot.nhs.uk/asthma-pathway-bts-nice-sign-sign-244/managing-acute-asthma/management-of-acute-asthma-in-children/initial-treatment-of-acute-asthma-in-children",
+          "locator": "section Initial treatment of acute asthma in children"
+        }
+      }
     ]
-   },
-   {
-    "id": "severe",
-    "title": "Severe or not responding",
-    "timeframe": "20–60 minutes",
-    "actions": [
-     "Repeat salbutamol every 20–30 minutes; add ipratropium 250 micrograms (SIGN 158).",
-     "Consider nebulised magnesium 150 mg with each dose in the first hour if SpO2 below 92% (SIGN 158).",
-     "IV magnesium if still not responding (BGH/SIGN 158)."
-    ]
-   },
-   {
-    "id": "second",
-    "title": "Second-line IV",
-    "timeframe": "After 1–2 hours",
-    "actions": [
-     "IV salbutamol or aminophylline under senior and PICU input (BGH/SIGN 158)."
-    ]
-   },
-   {
-    "id": "discharge",
-    "title": "Discharge",
-    "timeframe": "When stable",
-    "actions": [
-     "Stable on 3–4-hourly bronchodilator, PEF above 75%, SpO2 above 94% in air (BGH/SIGN 158).",
-     "Personalised action plan; review within 48 hours (BGH/SIGN 158)."
-    ]
-   }
-  ],
-  "medicationPlan": {
-   "status": "source-verified",
-   "branches": [
-    {
-     "label": "Initial treatment",
-     "entryCriteria": "Child 1 year and over with an acute asthma attack."
-    },
-    {
-     "label": "Severe asthma: add-on",
-     "entryCriteria": "SpO2 below 92% or poor response to initial bronchodilator."
-    },
-    {
-     "label": "Second-line IV",
-     "entryCriteria": "Severe asthma not responding to inhaled treatment."
-    }
-   ],
-   "regimens": [
-    {
-     "indication": "Mild to moderate attack",
-     "patientGroup": "Children 2 years and over",
-     "genericName": "Salbutamol (pMDI with spacer)",
-     "dose": "1 puff (100 mcg) every 30–60 seconds up to 10 puffs",
-     "route": "Inhaled via spacer (face mask under 3 years)",
-     "frequency": "Repeat every 20–30 minutes as needed",
-     "duration": "Until improved, then 3–4-hourly",
-     "adjustments": [
-      "Paediatric: This is the paediatric dose. Under 2 years with poor response: consider another diagnosis (SIGN 158).",
-      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
-      "CKD: No adjustment.",
-      "CLD: No adjustment."
-     ],
-     "monitoring": [
-      "SpO2, heart rate, work of breathing"
-     ],
-     "contraindications": [
-      "Tachycardia, tremor"
-     ],
-     "branch": "Initial treatment",
-     "step": "Bronchodilator",
-     "selection": "one-of",
-     "sourceTitle": "Initial treatment of acute asthma in children (BTS/SIGN 158, Right Decision Service, Healthcare Improvement Scotland)",
-     "sourceUrl": "https://rightdecisions.scot.nhs.uk/asthma-pathway-bts-nice-sign-sign-244/managing-acute-asthma/management-of-acute-asthma-in-children/initial-treatment-of-acute-asthma-in-children",
-     "sourceEdition": "BTS/SIGN 158, 2019, section Initial treatment",
-     "preferred": true
-    },
-    {
-     "indication": "Severe attack (SpO2 below 92%)",
-     "patientGroup": "Children",
-     "genericName": "Salbutamol (nebulised)",
-     "dose": "Under 5 years 2.5 mg; 5 years and over 5 mg",
-     "route": "Nebulised, oxygen-driven",
-     "frequency": "Every 20–30 minutes",
-     "duration": "Until improved",
-     "adjustments": [
-      "Paediatric: This is the paediatric dose.",
-      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
-      "CKD: No adjustment.",
-      "CLD: No adjustment."
-     ],
-     "monitoring": [
-      "SpO2, heart rate, potassium"
-     ],
-     "contraindications": [
-      "Tachycardia"
-     ],
-     "branch": "Initial treatment",
-     "step": "Bronchodilator",
-     "selection": "one-of",
-     "sourceTitle": "Paediatric asthma management, Borders General Hospital (referenced to SIGN 158)",
-     "sourceUrl": "https://rightdecisions.scot.nhs.uk/media/lp3nxk5x/bgh-paediatric-asthma-management-2020-sign-158-referenced-v2.pdf",
-     "sourceEdition": "NHS Borders, January 2020, pp. 2–5 (IV doses, nebulised doses, severity, discharge)",
-     "preferred": false,
-     "useWhen": "SpO2 below 92% or unable to use spacer (SIGN 158)."
-    },
-    {
-     "indication": "Any acute attack",
-     "patientGroup": "Children",
-     "genericName": "Prednisolone",
-     "dose": "Under 2 years 10 mg; 2–5 years 20 mg; over 5 years 30–40 mg (2 mg/kg up to 60 mg if on maintenance steroid tablets)",
-     "route": "Oral",
-     "frequency": "Once daily",
-     "duration": "Up to 3 days",
-     "adjustments": [
-      "Paediatric: This is the paediatric dose.",
-      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
-      "CKD: No adjustment.",
-      "CLD: No adjustment.",
-      "IV hydrocortisone 4 mg/kg 4-hourly (2–12 years) if oral not retained (SIGN 158; BGH)."
-     ],
-     "monitoring": [
-      "Vomiting: repeat dose"
-     ],
-     "contraindications": [
-      "Varicella exposure (caution)"
-     ],
-     "branch": "Initial treatment",
-     "step": "Oral corticosteroid",
-     "selection": "all",
-     "sourceTitle": "Initial treatment of acute asthma in children (BTS/SIGN 158, Right Decision Service, Healthcare Improvement Scotland)",
-     "sourceUrl": "https://rightdecisions.scot.nhs.uk/asthma-pathway-bts-nice-sign-sign-244/managing-acute-asthma/management-of-acute-asthma-in-children/initial-treatment-of-acute-asthma-in-children",
-     "sourceEdition": "BTS/SIGN 158, 2019, section Initial treatment"
-    },
-    {
-     "indication": "Severe attack or poor response",
-     "patientGroup": "Children",
-     "genericName": "Ipratropium bromide",
-     "dose": "250 micrograms (125 micrograms under 1 year; 500 micrograms 12 years and over)",
-     "route": "Nebulised with salbutamol",
-     "frequency": "Every 20–30 minutes for first hours, then 4–6-hourly",
-     "duration": "First 24 hours",
-     "adjustments": [
-      "Paediatric: This is the paediatric dose.",
-      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
-      "CKD: No adjustment.",
-      "CLD: No adjustment."
-     ],
-     "monitoring": [
-      "Response"
-     ],
-     "contraindications": [
-      "Glaucoma (avoid mask leak into eyes)"
-     ],
-     "branch": "Severe asthma: add-on",
-     "step": "Anticholinergic",
-     "selection": "all",
-     "sourceTitle": "Initial treatment of acute asthma in children (BTS/SIGN 158, Right Decision Service, Healthcare Improvement Scotland)",
-     "sourceUrl": "https://rightdecisions.scot.nhs.uk/asthma-pathway-bts-nice-sign-sign-244/managing-acute-asthma/management-of-acute-asthma-in-children/initial-treatment-of-acute-asthma-in-children",
-     "sourceEdition": "BTS/SIGN 158, 2019, section Initial treatment"
-    },
-    {
-     "indication": "Severe attack not responding",
-     "patientGroup": "Children",
-     "genericName": "Magnesium sulfate (IV)",
-     "dose": "40 mg/kg (maximum 2 g)",
-     "route": "IV infusion",
-     "frequency": "Once",
-     "duration": "Single dose",
-     "adjustments": [
-      "Paediatric: This is the paediatric dose.",
-      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
-      "CKD: Caution in renal impairment.",
-      "CLD: No adjustment.",
-      "Nebulised option: 150 mg with each salbutamol and ipratropium dose in the first hour if SpO2 below 92% (SIGN 158)."
-     ],
-     "monitoring": [
-      "BP, reflexes"
-     ],
-     "contraindications": [
-      "Hypotension"
-     ],
-     "branch": "Severe asthma: add-on",
-     "step": "Magnesium",
-     "selection": "all",
-     "sourceTitle": "Paediatric asthma management, Borders General Hospital (referenced to SIGN 158)",
-     "sourceUrl": "https://rightdecisions.scot.nhs.uk/media/lp3nxk5x/bgh-paediatric-asthma-management-2020-sign-158-referenced-v2.pdf",
-     "sourceEdition": "NHS Borders, January 2020, pp. 2–5 (IV doses, nebulised doses, severity, discharge)"
-    },
-    {
-     "indication": "Severe asthma unresponsive to inhaled therapy",
-     "patientGroup": "Children",
-     "genericName": "Salbutamol (IV)",
-     "dose": "Over 2 years 15 micrograms/kg over 10 minutes (5 micrograms/kg if 1 month–2 years); infusion 60–300 micrograms/kg/hour",
-     "route": "IV",
-     "frequency": "Bolus, then infusion",
-     "duration": "Until improved",
-     "adjustments": [
-      "Paediatric: This is the paediatric dose. Infusions above 120 micrograms/kg/hour in PICU (BGH).",
-      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
-      "CKD: No adjustment.",
-      "CLD: No adjustment."
-     ],
-     "monitoring": [
-      "Heart rate, potassium, lactate"
-     ],
-     "contraindications": [
-      "Tachyarrhythmia"
-     ],
-     "branch": "Second-line IV",
-     "step": "IV bronchodilator",
-     "selection": "one-of",
-     "sourceTitle": "Paediatric asthma management, Borders General Hospital (referenced to SIGN 158)",
-     "sourceUrl": "https://rightdecisions.scot.nhs.uk/media/lp3nxk5x/bgh-paediatric-asthma-management-2020-sign-158-referenced-v2.pdf",
-     "sourceEdition": "NHS Borders, January 2020, pp. 2–5 (IV doses, nebulised doses, severity, discharge)",
-     "preferred": true
-    },
-    {
-     "indication": "Severe asthma unresponsive to inhaled therapy",
-     "patientGroup": "Children",
-     "genericName": "Aminophylline",
-     "dose": "5 mg/kg (maximum 500 mg) over at least 20 minutes, then 1 mg/kg/hour (1 month–12 years)",
-     "route": "IV",
-     "frequency": "Loading, then infusion",
-     "duration": "Until improved",
-     "adjustments": [
-      "Paediatric: This is the paediatric dose. Omit loading if on theophylline (BGH).",
-      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
-      "CKD: No adjustment.",
-      "CLD: Reduce infusion in liver disease (level-guided)."
-     ],
-     "monitoring": [
-      "Theophylline level, heart rhythm"
-     ],
-     "contraindications": [
-      "Already on theophylline (omit loading)",
-      "Arrhythmia"
-     ],
-     "branch": "Second-line IV",
-     "step": "IV bronchodilator",
-     "selection": "one-of",
-     "sourceTitle": "Paediatric asthma management, Borders General Hospital (referenced to SIGN 158)",
-     "sourceUrl": "https://rightdecisions.scot.nhs.uk/media/lp3nxk5x/bgh-paediatric-asthma-management-2020-sign-158-referenced-v2.pdf",
-     "sourceEdition": "NHS Borders, January 2020, pp. 2–5 (IV doses, nebulised doses, severity, discharge)",
-     "preferred": false,
-     "useWhen": "IV salbutamol unavailable or not effective."
-    }
-   ],
-   "note": "Doses are from BTS/SIGN 158 (2019) and the SIGN 158-referenced NHS Borders protocol (2020). Antibiotics are not routinely given. India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
-  },
-  "teaching": {
-   "scope": "Acute asthma in Indian children.",
-   "learningObjectives": [
-    "Grade severity with SpO2 and PEF.",
-    "Give salbutamol by spacer correctly.",
-    "Escalate severe asthma."
-   ],
-   "keyPoints": [
-    "Spacer: 1 puff every 30–60 seconds, up to 10 puffs.",
-    "Prednisolone early: 10, 20 or 30–40 mg by age.",
-    "SpO2 below 92%: nebulise with ipratropium.",
-    "IV magnesium 40 mg/kg (maximum 2 g) if not responding."
-   ],
-   "pitfalls": [
-    "Nebuliser when spacer would work.",
-    "Delaying steroids.",
-    "Routine antibiotics.",
-    "Discharge without an action plan."
-   ],
-   "references": [
-    {
-     "title": "Initial treatment of acute asthma in children (BTS/SIGN 158, Right Decision Service, Healthcare Improvement Scotland)",
-     "edition": "BTS/SIGN 158, 2019",
-     "url": "https://rightdecisions.scot.nhs.uk/asthma-pathway-bts-nice-sign-sign-244/managing-acute-asthma/management-of-acute-asthma-in-children/initial-treatment-of-acute-asthma-in-children",
-     "locator": "section Initial treatment of acute asthma in children"
-    },
-    {
-     "title": "Paediatric asthma management, Borders General Hospital (referenced to SIGN 158)",
-     "edition": "NHS Borders, January 2020",
-     "url": "https://rightdecisions.scot.nhs.uk/media/lp3nxk5x/bgh-paediatric-asthma-management-2020-sign-158-referenced-v2.pdf",
-     "locator": "pp. 2–5"
-    }
-   ]
-  },
-  "nonClinicalManagement": {
-   "patientEducation": [
-    "Spacer technique and written action plan.",
-    "Use preventer inhaler daily as prescribed.",
-    "Return if reliever needed more than 4-hourly."
-   ],
-   "lifestyleAndDiet": [
-    "Avoid smoke from tobacco and biomass fuels.",
-    "Influenza vaccination."
-   ],
-   "mdtReferrals": [
-    "PICU for life-threatening asthma",
-    "Paediatric pulmonologist for frequent attacks"
-   ],
-   "dischargeCriteria": [
-    "Stable on 3–4-hourly bronchodilator (BGH)",
-    "PEF above 75% predicted or best; SpO2 above 94% in air (BGH)"
-   ],
-   "followUpPlan": "Review within 48 hours of discharge (BGH/SIGN 158)."
   }
- }
 ]

@@ -5,8 +5,8 @@
   "specialty": "Paediatrics / Paediatric Neurology / Infectious Diseases / Critical Care",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-set-2-2026-10-24-v1",
-  "lastReviewed": "2026-10-24",
+  "version": "india-set-2-2026-10-24-v2",
+  "lastReviewed": "2026-10-25",
   "pillar": "Urgent Care",
   "clinicalReviewStatus": "pending",
   "evidenceAudit": {
@@ -15,10 +15,12 @@
    "scope": "Children with acute encephalitis syndrome (AES) in India: definition, stabilisation, seizure and raised intracranial pressure (ICP) control, empiric ceftriaxone, acyclovir and artesunate, investigations and referral, built on the ICMR STW for AES in Children (October 2019). Adult JE/AES is covered in the Japanese encephalitis topic.",
    "findings": [
     "Definition, red flags, lumbar puncture contraindications, intubation criteria, 20 mL/kg fluid bolus, first- and second-line seizure drugs with doses, refractory status options, mannitol and 3% saline doses, PaCO2 and sodium targets, empiric ceftriaxone, acyclovir by age with stopping rules, artesunate dosing, investigations, supportive care and discharge criteria checked against the ICMR AES STW (October 2019).",
-    "Not clinically reviewed."
+    "Not clinically reviewed.",
+    "DHR-ICMR 2015, p. 17: doxycycline 4.5 mg/kg/day in two divided doses for children below 45 kg; azithromycin 10 mg/kg once daily for 5 days."
    ],
    "unverifiedSections": [
-    "Scrub typhus is a major cause of AES in India but is not in the ICMR AES workflow; doxycycline or azithromycin are not dosed here (see Scrub typhus topic).",
+    "Scrub typhus is a major cause of AES in India but is not in the ICMR AES workflow; doxycycline and azithromycin doses are taken from the DHR-ICMR rickettsial guideline (2015).",
+    "Doxycycline duration, the azithromycin maximum and the ceftriaxone maximum are usual practice; acyclovir renal doses are from the US label (Drugs.com); dextrose from the BC status epilepticus guideline (2011).",
     "Phenytoin, valproate and levetiracetam as alternatives are listed without ranking when no ICU is available; the first-listed is marked preferred.",
     "Drug cautions, contraindications and renal or hepatic adjustment lines without a source tag are general pharmacology statements and need formulary confirmation."
    ],
@@ -28,7 +30,7 @@
    ]
   },
   "pathophysiology": {
-   "summary": "Acute encephalitis syndrome is acute fever (up to 5–7 days) with altered sensorium and/or new-onset seizures, excluding simple febrile seizures (ICMR STW). In India the main causes are Japanese encephalitis, scrub typhus, dengue, cerebral malaria, herpes simplex virus (HSV), bacterial meningitis and tuberculosis, with autoimmune encephalitis increasingly recognised. Brain inflammation and oedema raise intracranial pressure, and seizures and shock add secondary injury. Outcome depends on rapid stabilisation, seizure and ICP control, and early empiric treatment of the treatable causes (bacterial meningitis, HSV and malaria) while tests are pending.",
+   "summary": "Acute encephalitis syndrome is acute fever (up to 5–7 days) with altered sensorium and/or new-onset seizures, excluding simple febrile seizures (ICMR STW). In India the main causes are Japanese encephalitis, scrub typhus, dengue, cerebral malaria, herpes simplex virus (HSV), bacterial meningitis and tuberculosis, with autoimmune encephalitis increasingly recognised. Brain inflammation and oedema raise intracranial pressure, and seizures and shock add secondary injury. Outcome depends on rapid stabilisation, seizure and ICP control, and early empiric treatment of the treatable causes (bacterial meningitis, HSV and malaria) while tests are pending. In north and east India, outbreaks peak in the monsoon and post-monsoon months, and Japanese encephalitis vaccination, early referral and treatment of hypoglycaemia have cut deaths; most children who die do so within the first 24–48 hours, which is why the first hour of stabilisation matters most.",
    "keyMechanisms": [
     "Viral, bacterial or parasitic invasion inflames the brain parenchyma and meninges.",
     "Cerebral oedema raises intracranial pressure and risks herniation.",
@@ -65,19 +67,31 @@
   "differentials": [
    {
     "condition": "Simple febrile seizure",
-    "distinguishingFeatures": "Brief generalised seizure, rapid full recovery; excluded from AES (ICMR STW)."
+    "distinguishingFeatures": "Brief generalised seizure with rapid full recovery and no altered sensorium; excluded from AES (ICMR STW)."
    },
    {
     "condition": "Bacterial meningitis",
-    "distinguishingFeatures": "CSF neutrophils, low glucose, positive culture."
+    "distinguishingFeatures": "Neck stiffness and toxic look; CSF neutrophils, low glucose and positive Gram stain or culture settle it."
    },
    {
     "condition": "Cerebral malaria",
-    "distinguishingFeatures": "Positive smear or RDT."
+    "distinguishingFeatures": "Fever with coma in an endemic area, pallor, splenomegaly; positive smear or rapid diagnostic test settles it."
    },
    {
     "condition": "Toxic or metabolic encephalopathy",
-    "distinguishingFeatures": "Hypoglycaemia, electrolyte disorder, poisoning history."
+    "distinguishingFeatures": "Hypoglycaemia, electrolyte disorder, liver failure or poisoning history; bedside glucose, electrolytes and history settle it."
+   },
+   {
+    "condition": "Scrub typhus meningoencephalitis",
+    "distinguishingFeatures": "Eschar, rash, lymphadenopathy, thrombocytopenia and raised transaminases; scrub typhus IgM ELISA settles it."
+   },
+   {
+    "condition": "Tuberculous meningitis",
+    "distinguishingFeatures": "Subacute onset over more than a week, cranial nerve palsies, contact history; CSF lymphocytes, high protein and imaging settle it."
+   },
+   {
+    "condition": "Autoimmune encephalitis or ADEM",
+    "distinguishingFeatures": "Behaviour change, movement disorder or multifocal deficits after an infection; MRI demyelination or CSF antibodies settle it."
    }
   ],
   "diagnosticCriteria": [
@@ -220,7 +234,7 @@
     "actions": [
      "Airway, breathing, circulation; intubate per criteria (ICMR STW).",
      "Normal saline 20 mL/kg for circulatory failure; inotropes if needed (ICMR STW).",
-     "Maintain euglycaemia; treat fever (ICMR STW)."
+     "Maintain euglycaemia (ICMR STW): glucose below 3 mmol/L, give 10% dextrose 5 mL/kg (BC guideline); treat fever (ICMR STW)."
     ]
    },
    {
@@ -249,7 +263,8 @@
     "actions": [
      "Ceftriaxone, acyclovir and artesunate if CSF delayed and child unwell (ICMR STW).",
      "Stop acyclovir if HSV PCR negative twice 24–48 hours apart and MRI not suggestive (ICMR STW).",
-     "Suspected ADEM or autoimmune encephalitis: pulse methylprednisolone (ICMR STW)."
+     "Suspected ADEM or autoimmune encephalitis: pulse methylprednisolone (ICMR STW).",
+     "Suspected scrub typhus (eschar, monsoon, thrombocytopenia): add doxycycline 4.5 mg/kg/day in 2 doses (under 45 kg) or azithromycin 10 mg/kg daily for 5 days (DHR-ICMR)."
     ]
    },
    {
@@ -276,6 +291,14 @@
     {
      "label": "Empiric antimicrobials",
      "entryCriteria": "AES where CSF cannot be obtained or results delayed and the child is unwell."
+    },
+    {
+     "label": "Suspected scrub typhus",
+     "entryCriteria": "Monsoon AES with eschar, rash, lymphadenopathy, hepatosplenomegaly or thrombocytopenia."
+    },
+    {
+     "label": "Glucose",
+     "entryCriteria": "Bedside glucose below 3 mmol/L."
     }
    ],
    "regimens": [
@@ -369,7 +392,7 @@
      "indication": "Seizure persisting after benzodiazepine",
      "patientGroup": "Children",
      "genericName": "Phenytoin",
-     "dose": "20 mg/kg in normal saline at 1 mg/kg/min",
+     "dose": "20 mg/kg in normal saline at 1 mg/kg/min (not faster than 50 mg/min, label)",
      "route": "IV",
      "frequency": "Once (loading)",
      "duration": "Then maintenance",
@@ -388,14 +411,13 @@
      ],
      "branch": "Seizure control",
      "step": "Second-line",
-     "selection": "one-of",
+     "selection": "all",
      "sourceTitle": "Standard Treatment Workflow: Acute Encephalitis Syndrome in Children (ICMR / Department of Health Research)",
      "sourceUrl": "https://icmr.gov.in/icmrobject/uploads/STWs/1725959608_paediatrics_acute_encephalitis_syndrome.pdf",
-     "sourceEdition": "ICMR STW, October 2019, section Seizure control",
-     "preferred": true
+     "sourceEdition": "ICMR STW, October 2019, section Seizure control"
     },
     {
-     "indication": "Seizure persisting, no ICU available",
+     "indication": "Refractory seizures when no ICU is available (ICMR STW)",
      "patientGroup": "Children",
      "genericName": "Levetiracetam",
      "dose": "20–40 mg/kg",
@@ -415,16 +437,16 @@
       "Behavioural change"
      ],
      "branch": "Seizure control",
-     "step": "Second-line",
+     "step": "Refractory, no ICU",
      "selection": "one-of",
      "sourceTitle": "Standard Treatment Workflow: Acute Encephalitis Syndrome in Children (ICMR / Department of Health Research)",
      "sourceUrl": "https://icmr.gov.in/icmrobject/uploads/STWs/1725959608_paediatrics_acute_encephalitis_syndrome.pdf",
      "sourceEdition": "ICMR STW, October 2019, section Seizure control",
-     "preferred": false,
+     "preferred": true,
      "useWhen": "Phenytoin fails or no ICU; preferred if liver dysfunction."
     },
     {
-     "indication": "Seizure persisting, no ICU available",
+     "indication": "Refractory seizures when no ICU is available (ICMR STW)",
      "patientGroup": "Children",
      "genericName": "Sodium valproate",
      "dose": "20 mg/kg",
@@ -445,7 +467,7 @@
       "Suspected inborn error of metabolism"
      ],
      "branch": "Seizure control",
-     "step": "Second-line",
+     "step": "Refractory, no ICU",
      "selection": "one-of",
      "sourceTitle": "Standard Treatment Workflow: Acute Encephalitis Syndrome in Children (ICMR / Department of Health Research)",
      "sourceUrl": "https://icmr.gov.in/icmrobject/uploads/STWs/1725959608_paediatrics_acute_encephalitis_syndrome.pdf",
@@ -454,7 +476,7 @@
      "useWhen": "Phenytoin fails or no ICU, normal liver function."
     },
     {
-     "indication": "Seizure persisting, no ICU available",
+     "indication": "Refractory seizures when no ICU is available (ICMR STW)",
      "patientGroup": "Children",
      "genericName": "Phenobarbitone",
      "dose": "20 mg/kg",
@@ -474,7 +496,7 @@
       "Without ventilation backup: monitor closely"
      ],
      "branch": "Seizure control",
-     "step": "Second-line",
+     "step": "Refractory, no ICU",
      "selection": "one-of",
      "sourceTitle": "Standard Treatment Workflow: Acute Encephalitis Syndrome in Children (ICMR / Department of Health Research)",
      "sourceUrl": "https://icmr.gov.in/icmrobject/uploads/STWs/1725959608_paediatrics_acute_encephalitis_syndrome.pdf",
@@ -543,7 +565,7 @@
      "indication": "Possible bacterial meningitis",
      "patientGroup": "Children",
      "genericName": "Ceftriaxone",
-     "dose": "100 mg/kg/day in 2 divided doses",
+     "dose": "100 mg/kg/day in 2 divided doses (maximum 2 g per dose, 4 g/day, general pharmacology)",
      "route": "IV",
      "frequency": "Every 12 hours",
      "duration": "10–14 days if bacterial meningitis confirmed",
@@ -568,16 +590,16 @@
     },
     {
      "indication": "Possible HSV encephalitis",
-     "patientGroup": "Children 3 months to 12 years",
+     "patientGroup": "Children 3 months and over (over 12 years: weight-based dose)",
      "genericName": "Acyclovir",
      "dose": "500 mg/m² every 8 hours (over 12 years: 10 mg/kg every 8 hours)",
      "route": "IV",
      "frequency": "Every 8 hours",
      "duration": "Minimum 21 days if confirmed (14–21 days over 12 years); stop if HSV PCR negative twice and MRI not suggestive",
      "adjustments": [
-      "Paediatric: This is the paediatric dose (ICMR STW).",
+      "Paediatric: This is the paediatric dose from 3 months (ICMR STW); under 3 months use neonatal dosing (see neonatal topics).",
       "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
-      "CKD: Reduce dose in renal impairment; hydrate well.",
+      "CKD: Creatinine clearance 25–50 full dose every 12 hours; 10–25 every 24 hours; below 10 half dose every 24 hours (label, Drugs.com); hydrate well.",
       "CLD: No adjustment."
      ],
      "monitoring": [
@@ -619,16 +641,101 @@
      "sourceTitle": "Standard Treatment Workflow: Acute Encephalitis Syndrome in Children (ICMR / Department of Health Research)",
      "sourceUrl": "https://icmr.gov.in/icmrobject/uploads/STWs/1725959608_paediatrics_acute_encephalitis_syndrome.pdf",
      "sourceEdition": "ICMR STW, October 2019, section Step III (empiric treatment)"
+    },
+    {
+     "indication": "Suspected scrub typhus (eschar, rash, thrombocytopenia, raised transaminases)",
+     "patientGroup": "Children",
+     "genericName": "Doxycycline",
+     "dose": "4.5 mg/kg/day in 2 divided doses (children under 45 kg)",
+     "route": "Oral or nasogastric; IV if available",
+     "frequency": "Twice daily",
+     "duration": "Until 3 days afebrile, usually 7 days in total (usual practice)",
+     "adjustments": [
+      "Paediatric: This is the paediatric dose for children under 45 kg (DHR-ICMR p. 17).",
+      "Penicillin allergy: Not a beta-lactam; suitable in penicillin allergy.",
+      "CKD: No adjustment.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Fever response within 48 hours"
+     ],
+     "contraindications": [
+      "Pregnancy (use azithromycin)"
+     ],
+     "branch": "Suspected scrub typhus",
+     "step": "Anti-rickettsial",
+     "selection": "one-of",
+     "sourceTitle": "DHR-ICMR Guidelines for Diagnosis and Management of Rickettsial Diseases in India",
+     "sourceUrl": "https://icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/DHR-ICMR%20Guidelines%20on%20Ricketesial%20Diseases.pdf",
+     "sourceEdition": "DHR-ICMR, February 2015, p. 17, sections 3.3.1(c), 3.3.2(b)",
+     "preferred": true
+    },
+    {
+     "indication": "Suspected scrub typhus (eschar, rash, thrombocytopenia, raised transaminases)",
+     "patientGroup": "Children",
+     "genericName": "Azithromycin",
+     "dose": "10 mg/kg (maximum 500 mg, usual practice)",
+     "route": "Oral or IV",
+     "frequency": "Once daily",
+     "duration": "5 days",
+     "adjustments": [
+      "Paediatric: This is the paediatric dose (DHR-ICMR).",
+      "Penicillin allergy: Not a beta-lactam; suitable in penicillin allergy.",
+      "CKD: No adjustment.",
+      "CLD: Caution in severe liver disease."
+     ],
+     "monitoring": [
+      "Fever response, QTc if on other QT drugs"
+     ],
+     "contraindications": [
+      "Macrolide allergy"
+     ],
+     "branch": "Suspected scrub typhus",
+     "step": "Anti-rickettsial",
+     "selection": "one-of",
+     "sourceTitle": "DHR-ICMR Guidelines for Diagnosis and Management of Rickettsial Diseases in India",
+     "sourceUrl": "https://icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/DHR-ICMR%20Guidelines%20on%20Ricketesial%20Diseases.pdf",
+     "sourceEdition": "DHR-ICMR, February 2015, p. 17, sections 3.3.1(c), 3.3.2(b)",
+     "preferred": false,
+     "useWhen": "Doxycycline unavailable or not tolerated."
+    },
+    {
+     "indication": "Bedside glucose below 3 mmol/L",
+     "patientGroup": "Children",
+     "genericName": "Dextrose 10%",
+     "dose": "5 mL/kg",
+     "route": "IV",
+     "frequency": "Bolus; recheck glucose in 15–30 minutes",
+     "duration": "Until euglycaemic",
+     "adjustments": [
+      "Paediatric: This is the paediatric dose (BC guideline).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Glucose every 15–30 minutes, then hourly"
+     ],
+     "contraindications": [
+      "Avoid hyperglycaemia"
+     ],
+     "branch": "Glucose",
+     "step": "Dextrose",
+     "selection": "all",
+     "sourceTitle": "Guideline for the management of convulsive status epilepticus in infants and children (Lee J, Huh L, Korn P, et al.)",
+     "sourceUrl": "https://bcmj.org/articles/guideline-management-convulsive-status-epilepticus-infants-and-children",
+     "sourceEdition": "BCMJ 2011;53(6):279-285, section Initial management"
     }
    ],
-   "note": "All doses are from the ICMR AES in Children STW (2019). Add doxycycline or azithromycin when scrub typhus is suspected (see Scrub typhus topic). India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
+   "note": "All doses are from the ICMR AES in Children STW (2019). Doxycycline and azithromycin for suspected scrub typhus from the DHR-ICMR rickettsial guideline (2015). India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
   },
   "teaching": {
    "scope": "AES in Indian children.",
    "learningObjectives": [
     "Recognise AES and its red flags.",
     "Control seizures and raised ICP.",
-    "Start empiric treatment for treatable causes."
+    "Start empiric treatment for treatable causes.",
+    "Recognise scrub typhus and give an anti-rickettsial early."
    ],
    "keyPoints": [
     "Fever with altered sensorium or new seizures = AES.",
@@ -648,6 +755,158 @@
      "edition": "ICMR STW, October 2019",
      "url": "https://icmr.gov.in/icmrobject/uploads/STWs/1725959608_paediatrics_acute_encephalitis_syndrome.pdf",
      "locator": "sections Definition, Red flags, Steps I–V, Seizure control, Raised ICP management, Empiric treatment, Investigations, Referral, Discharge criteria"
+    },
+    {
+     "title": "DHR-ICMR Guidelines for Diagnosis and Management of Rickettsial Diseases in India",
+     "edition": "DHR-ICMR, February 2015",
+     "url": "https://icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/DHR-ICMR%20Guidelines%20on%20Ricketesial%20Diseases.pdf",
+     "locator": "pp. 16–18"
+    },
+    {
+     "title": "Guideline for the management of convulsive status epilepticus in infants and children (Lee J, Huh L, Korn P, et al.)",
+     "edition": "BCMJ 2011;53(6):279-285",
+     "url": "https://bcmj.org/articles/guideline-management-convulsive-status-epilepticus-infants-and-children",
+     "locator": "section Initial management"
+    }
+   ],
+   "vignette": {
+    "text": "Aarav, a 6-year-old boy from Gorakhpur, is brought in September with 3 days of fever, 2 generalised seizures today and increasing drowsiness. He opens his eyes only to pain and localises (GCS 8). Temperature is 39.4 °C, pulse 136/min, capillary refill 3 seconds, BP 90/56 mmHg, and bedside glucose 3.0 mmol/L. There is a black-crusted lesion in the left groin. His JE vaccination status is unknown.",
+    "fictitious": true
+   },
+   "guidedApproach": [
+    {
+     "title": "Why the first hours decide outcome",
+     "prompt": "How do infection, oedema and seizures interact in AES?",
+     "guidance": "Japanese encephalitis and other neurotropic viruses infect neurons directly, especially the thalamus, basal ganglia and brainstem, while bacteria, malaria parasites and rickettsiae injure the brain through meningeal inflammation, microvascular sequestration or vasculitis. Whatever the cause, inflammation causes cerebral oedema, and the rigid skull turns any rise in volume into raised intracranial pressure, reducing perfusion and eventually causing herniation. Seizures raise cerebral oxygen demand and intracranial pressure further, and shock, hypoxia, hypoglycaemia and hyponatraemia add secondary injury. This is why control of airway, circulation, glucose, seizures and intracranial pressure prevents more deaths than any specific antiviral.",
+     "section": "pathophysiology"
+    },
+    {
+     "title": "Spot the red flags and the clues to the cause",
+     "prompt": "Which findings change what you do in the first hour?",
+     "guidance": "Assess airway, breathing and circulation, then GCS and pupils. A GCS below 8, abnormal breathing pattern, posturing, unequal or unreactive pupils, fluid-refractory shock or seizures that continue after a benzodiazepine and phenytoin mean the child needs intubation and a paediatric intensive care unit. Look for clues to treatable causes: an eschar, rash, lymph nodes or hepatosplenomegaly suggests scrub typhus; pallor and splenomegaly suggest malaria; neck stiffness and a toxic look suggest bacterial meningitis; subacute onset with cranial nerve palsies suggests tuberculosis; behaviour change and movement disorder suggest autoimmune encephalitis.",
+     "section": "signs-symptoms"
+    },
+    {
+     "title": "Test without delaying treatment",
+     "prompt": "Which tests matter and when is LP unsafe?",
+     "guidance": "Check bedside glucose at once. Send a blood count, electrolytes, liver and kidney function, malaria smear and rapid test, dengue NS1 and IgM, scrub typhus IgM and JE IgM. CSF examination is essential unless there is papilloedema, platelets below 50,000, a focal deficit, unequal or unreactive pupils or posturing; in those children, image first with contrast CT or MRI. CSF HSV PCR guides acyclovir, which should continue until two PCRs 24–48 hours apart are negative and MRI is not suggestive. Never let investigations delay empiric ceftriaxone, acyclovir and artesunate when the child is unwell.",
+     "section": "investigations"
+    },
+    {
+     "title": "Stabilise, stop seizures, protect the brain, treat the treatable",
+     "prompt": "How do you manage AES step by step?",
+     "guidance": "Secure the airway and intubate if criteria are met; give normal saline 20 mL/kg for circulatory failure and inotropes if needed; correct hypoglycaemia with 10% dextrose 5 mL/kg. Stop seizures with lorazepam 0.1 mg/kg or midazolam 0.2 mg/kg, then phenytoin 20 mg/kg at 1 mg/kg/min; refractory seizures need a midazolam infusion in intensive care, or valproate, levetiracetam or phenobarbitone if no ICU is available. For raised intracranial pressure, nurse head up 15–30°, give mannitol 0.25 g/kg or 3% saline to a sodium of 145–155 mEq/L. Start ceftriaxone 100 mg/kg/day, acyclovir 500 mg/m² every 8 hours and artesunate, and add doxycycline 4.5 mg/kg/day or azithromycin 10 mg/kg when scrub typhus is suspected.",
+     "section": "management"
+    }
+   ],
+   "boardQuestions": [
+    {
+     "id": "q1",
+     "vignette": "A 6-year-old boy has 3 days of fever, 2 seizures and drowsiness in September in eastern Uttar Pradesh. GCS is 8, capillary refill 3 seconds, BP 90/56 mmHg and glucose 3.0 mmol/L. He has a black-crusted groin lesion and platelets of 62,000/µL. He is no longer seizing.",
+     "fictitious": true,
+     "question": "In addition to stabilisation and ceftriaxone, acyclovir and artesunate, which drug should be added now?",
+     "options": [
+      {
+       "id": "A",
+       "text": "Oseltamivir",
+       "explanation": "There is no evidence of influenza, and it does not treat the likely cause here."
+      },
+      {
+       "id": "B",
+       "text": "Doxycycline 4.5 mg/kg/day in 2 doses",
+       "explanation": "Correct. The eschar and thrombocytopenia suggest scrub typhus, which responds to doxycycline (DHR-ICMR)."
+      },
+      {
+       "id": "C",
+       "text": "Methylprednisolone pulse",
+       "explanation": "Steroids are for suspected ADEM or autoimmune encephalitis, not this picture."
+      },
+      {
+       "id": "D",
+       "text": "Chloroquine",
+       "explanation": "Chloroquine is not used for severe or cerebral malaria; artesunate is already given."
+      },
+      {
+       "id": "E",
+       "text": "Vancomycin",
+       "explanation": "There is no specific indication for vancomycin in this child."
+      }
+     ],
+     "answer": "B",
+     "educationalObjective": "Recognise scrub typhus as a cause of AES.",
+     "keyPoint": "Eschar plus AES in monsoon: add doxycycline or azithromycin."
+    },
+    {
+     "id": "q2",
+     "vignette": "A 4-year-old girl with AES has a GCS of 10, platelets of 40,000/µL, and unequal pupils on examination. She has had one generalised seizure, which has stopped. BP and oxygen saturation are normal. The resident wants to perform a lumbar puncture before starting antimicrobials.",
+     "fictitious": true,
+     "question": "What is the best next step?",
+     "options": [
+      {
+       "id": "A",
+       "text": "Lumbar puncture now, then antimicrobials",
+       "explanation": "LP is contraindicated with low platelets and unequal pupils (ICMR STW)."
+      },
+      {
+       "id": "B",
+       "text": "Wait for CT before any treatment",
+       "explanation": "Treatment must not wait for imaging when the child is unwell."
+      },
+      {
+       "id": "C",
+       "text": "Oral antibiotics and observe",
+       "explanation": "Oral treatment and observation are inadequate for a child with AES."
+      },
+      {
+       "id": "D",
+       "text": "Start empiric ceftriaxone, acyclovir and artesunate, and image before any LP",
+       "explanation": "Correct. Image first when LP is contraindicated and start empiric treatment without delay (ICMR STW)."
+      },
+      {
+       "id": "E",
+       "text": "Discharge with follow-up",
+       "explanation": "AES needs admission in all cases (ICMR STW)."
+      }
+     ],
+     "answer": "D",
+     "educationalObjective": "Know the LP contraindications and do not delay treatment.",
+     "keyPoint": "LP contraindicated: image first, treat immediately."
+    },
+    {
+     "id": "q3",
+     "vignette": "A 9-year-old boy with AES received lorazepam 0.1 mg/kg 10 minutes ago and is still seizing. He weighs 25 kg. There is no paediatric intensive care unit in the district hospital and transfer will take 3 hours. Glucose is normal and airway is maintained.",
+     "fictitious": true,
+     "question": "What is the next drug?",
+     "options": [
+      {
+       "id": "A",
+       "text": "Phenytoin 20 mg/kg IV at 1 mg/kg/min (500 mg)",
+       "explanation": "Correct. Phenytoin 20 mg/kg is the second-line drug after a benzodiazepine (ICMR STW)."
+      },
+      {
+       "id": "B",
+       "text": "Mannitol 0.25 g/kg",
+       "explanation": "Mannitol treats raised intracranial pressure, not ongoing seizures."
+      },
+      {
+       "id": "C",
+       "text": "Oral carbamazepine",
+       "explanation": "Oral drugs have no role in a seizing child."
+      },
+      {
+       "id": "D",
+       "text": "Midazolam infusion on the ward",
+       "explanation": "Infusions need intensive care monitoring; give second-line drugs first."
+      },
+      {
+       "id": "E",
+       "text": "Paracetamol alone",
+       "explanation": "Antipyretics treat fever but do not stop an ongoing seizure."
+      }
+     ],
+     "answer": "A",
+     "educationalObjective": "Escalate seizure control in AES.",
+     "keyPoint": "Benzodiazepine, then phenytoin 20 mg/kg; refractory: ICU or valproate, levetiracetam, phenobarbitone."
     }
    ]
   },
@@ -671,6 +930,156 @@
     "Parents counselled on home care and physiotherapy (ICMR STW)"
    ],
    "followUpPlan": "Neurodevelopmental follow-up with physiotherapy; hearing and vision assessment."
-  }
+  },
+  "algorithms": [
+   {
+    "id": "aes-pathway",
+    "title": "Child with fever and altered sensorium or new seizures",
+    "placement": "manage",
+    "nodes": [
+     {
+      "id": "start",
+      "kind": "start",
+      "text": "Child with fever up to 5–7 days and altered sensorium or new seizures",
+      "next": [
+       {
+        "to": "abc"
+       }
+      ]
+     },
+     {
+      "id": "abc",
+      "kind": "action",
+      "text": "Airway, breathing, circulation; glucose (10% dextrose 5 mL/kg if below 3 mmol/L); saline 20 mL/kg if circulatory failure",
+      "next": [
+       {
+        "to": "seize"
+       }
+      ]
+     },
+     {
+      "id": "seize",
+      "kind": "decision",
+      "text": "Seizing now?",
+      "next": [
+       {
+        "to": "benzo",
+        "label": "Yes"
+       },
+       {
+        "to": "icp",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "benzo",
+      "kind": "action",
+      "text": "Lorazepam 0.1 mg/kg (or midazolam 0.2 mg/kg); then phenytoin 20 mg/kg if seizures persist",
+      "next": [
+       {
+        "to": "refr"
+       }
+      ]
+     },
+     {
+      "id": "refr",
+      "kind": "decision",
+      "text": "Still seizing after phenytoin?",
+      "next": [
+       {
+        "to": "refout",
+        "label": "Yes"
+       },
+       {
+        "to": "icp2",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "refout",
+      "kind": "outcome",
+      "text": "Refractory: PICU midazolam infusion 1–18 micrograms/kg/min; if no ICU, levetiracetam 20–40 mg/kg, valproate 20 mg/kg or phenobarbitone 20 mg/kg; intubate and refer"
+     },
+     {
+      "id": "icp2",
+      "kind": "decision",
+      "text": "GCS below 8, abnormal breathing, posturing or fluid-refractory shock?",
+      "next": [
+       {
+        "to": "picu",
+        "label": "Yes"
+       },
+       {
+        "to": "emp",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "picu",
+      "kind": "outcome",
+      "text": "Intubate, treat raised ICP (head up, mannitol or 3% saline), empiric antimicrobials, refer to PICU"
+     },
+     {
+      "id": "emp",
+      "kind": "outcome",
+      "text": "Image if LP contraindicated, then LP; ceftriaxone, acyclovir and artesunate while tests pending; doxycycline if scrub typhus suspected"
+     },
+     {
+      "id": "icp",
+      "kind": "decision",
+      "text": "Red flags: GCS below 8, abnormal breathing, posturing, refractory shock?",
+      "next": [
+       {
+        "to": "picu2",
+        "label": "Yes"
+       },
+       {
+        "to": "lp",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "picu2",
+      "kind": "outcome",
+      "text": "Intubate per criteria, treat raised ICP, empiric antimicrobials, refer to PICU"
+     },
+     {
+      "id": "lp",
+      "kind": "decision",
+      "text": "Any LP contraindication (papilloedema, platelets below 50,000, focal deficit, unequal pupils)?",
+      "next": [
+       {
+        "to": "ct",
+        "label": "Yes"
+       },
+       {
+        "to": "dolp",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "ct",
+      "kind": "outcome",
+      "text": "CT first; start empiric ceftriaxone, acyclovir, artesunate (and doxycycline if scrub typhus suspected) without waiting"
+     },
+     {
+      "id": "dolp",
+      "kind": "outcome",
+      "text": "LP, smear and RDT, scrub IgM; start ceftriaxone, acyclovir and artesunate if results will be delayed and the child is sick; tailor to results"
+     }
+    ],
+    "source": {
+     "title": "Standard Treatment Workflow: Acute Encephalitis Syndrome in Children (ICMR / Department of Health Research)",
+     "edition": "ICMR STW, October 2019",
+     "url": "https://icmr.gov.in/icmrobject/uploads/STWs/1725959608_paediatrics_acute_encephalitis_syndrome.pdf",
+     "locator": "sections Steps I–V, Seizure control, Raised ICP management"
+    }
+   }
+  ]
  }
 ]

@@ -15,14 +15,18 @@
       "User-pasted pathway incorporated as an additive revision on 16 October 2026.",
       "Clinical claims, doses and thresholds remain pending clinician verification against the cited source and local hospital protocol.",
       "Added the user-supplied PRAM reference appendix as a bottom-of-topic educational block.",
-      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from user-pasted-revision-2026-10-16-v2-pram-appendix-live-approved."
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from user-pasted-revision-2026-10-16-v2-pram-appendix-live-approved.",
+      "Management sequence reformatted on 2026-10-26: first step is an ABCDE survey where the topic is acute; every drug mention is a medication badge (drug, dose, route, frequency, duration) copied from this topic's medicine table; side-effect, contraindication and dose-adjustment wording was removed from the sequence (it stays in the medicine table). No other clinical content was changed.",
+      "[SUPPLEMENTED - EXTERNAL] ABCDE first-step doses (oxygen, 0.9% sodium chloride bolus, 10% glucose) are standard resuscitation doses from Resuscitation Council UK ABCDE approach (2021) for adults and APLS 6th edition (2016) for children; they were not taken from this topic's cited sources.",
+      "[SUPPLEMENTED - EXTERNAL] Discharge salbutamol 2–4 puffs every 4–6 hours for 24 hours: taken from the sister topic Acute Asthma Exacerbation in Children: Inhaler Technique and Oral Steroid Discharge Plan; not in this topic's medicine table."
     ],
     "unverifiedSections": [
       "The pasted content does not provide claim-level locators for each dose and threshold.",
       "Saudi Food and Drug Authority (SFDA) registration and local formulary availability were not independently checked for each medicine.",
       "Paediatric critical-care escalation and local oxygen/nebuliser protocols require clinician review.",
       "The pasted PRAM component table and severity thresholds require clinician verification against the source and local paediatric pathway before approval.",
-      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use.",
+      "Management sequence reformat (26 Oct 2026): badge doses were matched to the medicine table by wording, not re-opened against the cited source pages; ABCDE content is standard resuscitation guidance. A clinician must confirm before approval."
     ],
     "medscapeStatus": "unavailable",
     "originalVersionIds": [
@@ -190,14 +194,27 @@
   },
   "clinicalManagement": [
     {
+      "id": "abcde-concurrent-survey",
+      "title": "ABCDE survey with concurrent correction",
+      "timeframe": "Immediately, on arrival",
+      "actions": [
+        "Work through Airway, Breathing, Circulation, Disability and Exposure in order, and correct each abnormality concurrently as it is found: do not wait for the full survey, investigations or a diagnosis before treating a life-threatening problem, and call for senior help early.",
+        "Airway: look, listen and feel for obstruction; open it with a neutral head position (head tilt in older children) or jaw thrust, suction secretions, use an oropharyngeal airway if unconscious and call for expert paediatric airway help if it cannot be kept patent.",
+        "Breathing: count respiratory rate, measure SpO2, check recession, grunting, nasal flaring and air entry; if SpO2 is below 94% give [💊 Oxygen | 10–15 L/min via reservoir mask | Inhaled | Continuous | Until SpO2 94–98%, then titrate to target] and treat life-threatening chest problems as they are found.",
+        "Circulation: check heart rate, capillary refill and blood pressure, attach a monitor and secure IV access if the attack is severe (PRAM 8–12); if shocked give [💊 Sodium chloride 0.9% | 10 mL/kg | IV or IO bolus over 10 minutes | Reassess after each bolus; repeat if still shocked | Until perfusion restored].",
+        "Disability: assess responsiveness (alert, voice, pain, unresponsive), pupils and posture, and measure capillary glucose; if glucose is below 3 mmol/L give [💊 Glucose 10% | 2 mL/kg | IV or IO bolus | Repeat after 10 minutes if glucose remains below 3 mmol/L | Until glucose 3 mmol/L or above]; look for seizure activity.",
+        "Exposure: expose the child to examine fully while preventing heat loss; check temperature, skin (rash, bruising, wounds) and abdomen, then cover again."
+      ]
+    },
+    {
       "id": "assess-bronchodilation",
       "title": "Assess severity and start bronchodilation",
       "timeframe": "First minutes of arrival",
       "actions": [
         "Calculate and record the initial PRAM score and oxygen saturation.",
         "Screen for Intensive Care Unit (ICU) admission history or near-fatal asthma risk factors.",
-        "Give supplemental oxygen if hypoxaemic.",
-        "Initiate inhaled SABA therapy with salbutamol."
+        "Give [💊 Oxygen | 10–15 L/min via reservoir mask | Inhaled | Continuous | Until SpO2 94–98%, then titrate to target] if hypoxaemic.",
+        "Start inhaled short-acting beta-agonist (SABA) treatment: [💊 Salbutamol | 4–8 puffs by MDI with spacer, or weight/severity-based nebulisation | Inhaled | Every 20 minutes for the first hour, then titrate to response | First hour and reassessment thereafter]."
       ]
     },
     {
@@ -205,9 +222,9 @@
       "title": "First-hour treatment",
       "timeframe": "Every 20 minutes for 1 hour",
       "actions": [
-        "Repeat salbutamol by Metered-Dose Inhaler (MDI) with spacer, or use oxygen-driven nebulisation for severe attacks, every 20 minutes for three doses.",
-        "Add ipratropium bromide every 20 minutes during the first hour for moderate or severe exacerbations.",
-        "Give oral (PO) systemic corticosteroid prednisolone early for moderate-to-severe attacks or poor initial response to SABA."
+        "Repeat [💊 Salbutamol | 4–8 puffs by MDI with spacer (oxygen-driven nebulisation for severe attacks) | Inhaled | Every 20 minutes for three doses | First hour].",
+        "For moderate or severe exacerbations add [💊 Ipratropium bromide | 4 puffs by MDI with spacer or 250 micrograms by nebuliser | Inhaled | Every 20 minutes during the first hour, maximum three doses | First hour only].",
+        "For moderate-to-severe attacks or a poor initial response to SABA give early [💊 Prednisolone | 1–2 mg/kg (maximum 20 mg under 2 years, 30 mg at 2–5 years, 60 mg at 5–12 years) | PO | Once daily | 3–5 days total]."
       ]
     },
     {
@@ -216,8 +233,8 @@
       "timeframe": "At 60 minutes after treatment",
       "actions": [
         "Repeat PRAM and reassess oxygen saturation and work of breathing.",
-        "For PRAM 8–12 or worsening, escalate immediately to the paediatric critical-care or ICU team and consider intravenous (IV) magnesium sulfate under continuous cardiac monitoring.",
-        "For PRAM 1–3 with sustained response, use the discharge pathway with SABA, Inhaled Corticosteroid (ICS) plan, spacer demonstration, written asthma action plan and review within 7 days."
+        "For PRAM 8–12 or worsening, escalate immediately to the paediatric critical-care or ICU team and consider [💊 Magnesium sulfate | 40 mg/kg (maximum 2 g) | IV infusion over 20 minutes | Single dose in the ED | Single dose] under continuous cardiac monitoring.",
+        "For PRAM 1–3 with sustained response, use the discharge pathway: [💊 Salbutamol | 2–4 puffs by MDI with spacer | Inhaled | Every 4–6 hours for 24 hours, then as needed | 24 hours, then as needed], the inhaled corticosteroid (ICS) plan, spacer demonstration, written asthma action plan and review within 7 days."
       ]
     }
   ],

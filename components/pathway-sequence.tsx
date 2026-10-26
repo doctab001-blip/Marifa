@@ -3,7 +3,7 @@ import type { DiseaseDetail } from "@/lib/validations/disease";
 import { ClinicalTimeframe } from "@/components/clinical-timeframe";
 import { SourceCitation, type CitationSource } from "@/components/source-citation";
 import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
-import { MedicationTable } from "@/components/medication-table";
+import { StepMedicationTable } from "@/components/medication-table";
 import { parseAbcdeAction } from "@/lib/management-sequence-format";
 
 type Branch = NonNullable<DiseaseDetail["clinicalManagement"][number]["branches"]>[number];
@@ -113,21 +113,24 @@ export function PathwaySequence({ steps, sources = [], compact = false }: { step
               <ul className="pathway-actions">
                 {step.actions.map((action, actionIndex) => {
                   const abcde = parseAbcdeAction(action);
-                  if (!abcde) return <li key={`${actionIndex}-${action}`}><ClinicalTimeframe text={action} /></li>;
-                  return (
-                    <li className="abcde-row" key={`${actionIndex}-${action}`}>
-                      <span className="abcde-letter" aria-hidden="true">{abcde.letter}</span>
-                      <div className="abcde-body"><strong className="abcde-label">{abcde.label}</strong> <ClinicalTimeframe text={abcde.text} /></div>
-                    </li>
-                  );
+                  if (abcde) {
+                    return (
+                      <li className="abcde-row" key={`${actionIndex}-${action}`}>
+                        <span className="abcde-letter" aria-hidden="true">{abcde.letter}</span>
+                        <span><strong className="abcde-label">{abcde.label}:</strong> <ClinicalTimeframe text={abcde.text} /></span>
+                      </li>
+                    );
+                  }
+                  const isAbcdeStep = /ABCDE/.test(step.title);
+                  return <li className={isAbcdeStep ? "abcde-note" : undefined} key={`${actionIndex}-${action}`}><ClinicalTimeframe text={action} /></li>;
                 })}
               </ul>
+              <StepMedicationTable step={step} />
               {step.branches?.length ? <DecisionBranches stepTitle={withoutInlineSourceLocators(step.title)} branches={step.branches} /> : null}
             </article>
           </div>
         ))}
       </div>
-      <MedicationTable steps={steps} />
       {compact ? null : <SourceCitation sources={sources} />}
     </section>
   );

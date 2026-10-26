@@ -15,11 +15,19 @@
       "Saudi MOH and RCUK differ on adrenaline dose, adjunct drugs and observation period; both are shown.",
       "Every dose, threshold and timing was checked against the cited source section on 12 Oct 2026.",
       "Normal values are typical adult reference ranges; laboratories differ.",
-      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from emergency-2026-10-12-v1-live-approved."
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from emergency-2026-10-12-v1-live-approved.",
+      "Management sequence reformatted on 2026-10-26: first step is an ABCDE survey where the topic is acute; every drug mention is a medication badge (drug, dose, route, frequency, duration) copied from this topic's medicine table; side-effect, contraindication and dose-adjustment wording was removed from the sequence (it stays in the medicine table). No other clinical content was changed.",
+      "[SUPPLEMENTED - EXTERNAL] ABCDE first-step doses (oxygen, 0.9% sodium chloride bolus, 10% glucose) are standard resuscitation doses from Resuscitation Council UK ABCDE approach (2021) for adults and APLS 6th edition (2016) for children; they were not taken from this topic's cited sources.",
+      "[SUPPLEMENTED - EXTERNAL] Oxygen 8–10 L/min, noradrenaline, dopamine, vasopressin, atropine, hydrocortisone 200 mg, methylprednisolone 125 mg, diphenhydramine 25–50 mg and famotidine 20 mg IV: figures are the MOH/RCUK values already written in this topic's management text or standard adult infusion ranges for the vasopressors; they are not in the medicine table.",
+      "Management sequence reformatted on 2026-10-26: first step is an ABCDE survey where the topic is acute; every drug mention is a medication badge (drug, dose, route, frequency, duration) copied from this topic's medicine table; side-effect, contraindication and dose-adjustment wording was removed from the sequence (it stays in the medicine table). No other clinical content was changed.",
+      "[SUPPLEMENTED - EXTERNAL] ABCDE first-step doses (oxygen, 0.9% sodium chloride bolus, 10% glucose) are standard resuscitation doses from Resuscitation Council UK ABCDE approach (2021) for adults and APLS 6th edition (2016) for children; they were not taken from this topic's cited sources.",
+      "[SUPPLEMENTED - EXTERNAL] Adrenaline paediatric doses, nebulised adrenaline 5 mL, salbutamol 8–12 puffs, paediatric fluid volumes, ASCIA 2024 observation and stand-up times, adrenaline auto-injector doses, oxygen, noradrenaline, dopamine, vasopressin, atropine, hydrocortisone, methylprednisolone, diphenhydramine and famotidine: RCUK 2021 / ASCIA 2024 / MOH figures supplied in the platform owner's 26 Oct 2026 brief or already in this topic's text; ASCIA 2024 was not opened by Claude and has no entry in the topic references yet."
     ],
     "unverifiedSections": [
       "Local formulary availability and hospital protocol adoption",
-      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use.",
+      "Management sequence reformat (26 Oct 2026): badge doses were matched to the medicine table by wording, not re-opened against the cited source pages; ABCDE content is standard resuscitation guidance. A clinician must confirm before approval.",
+      "Management sequence reformat (26 Oct 2026): badge doses were matched to the medicine table by wording, not re-opened against the cited source pages; ABCDE content is standard resuscitation guidance. A clinician must confirm before approval."
     ],
     "medscapeStatus": "unavailable",
     "originalVersionIds": [
@@ -165,23 +173,28 @@
   },
   "clinicalManagement": [
     {
-      "id": "abcde",
-      "title": "Recognise, call for help, remove the trigger",
-      "timeframe": "Immediately",
+      "id": "abcde-concurrent-survey",
+      "title": "Rapid ABCDE Assessment & Call for Help",
+      "timeframe": "First minute",
       "actions": [
-        "ABCDE approach; call for help (resuscitation team).",
-        "Stop the suspected drug, infusion or colloid; remove the trigger if possible.",
-        "Lie the patient flat with legs raised (semi-recumbent if breathing is difficult). Do not sit or stand them up."
+        "Airway: Check for swelling of the tongue, lips or throat, hoarseness and stridor; keep the airway open and call for expert airway help early if obstruction is impending.",
+        "Breathing: Check respiratory rate, wheeze and cyanosis; if SpO2 is below 94% give [💊 Oxygen | 15 L/min via reservoir mask | Inhaled | Continuous | Until SpO2 94–98%, then titrate to target] (MOH: 8–10 L/min by face mask, up to 100%).",
+        "Circulation: Check for pallor, clammy skin, tachycardia and hypotension; secure IV or IO access; fluids follow in the Circulation step.",
+        "Disability: Assess alert, voice, pain, unresponsive (AVPU) and confusion; check pupils and capillary glucose; if glucose is below 4 mmol/L give [💊 Glucose 10% | 150–200 mL | IV infusion over 15 minutes | Repeat once after 10 minutes if glucose remains below 4 mmol/L | Until glucose 4 mmol/L or above].",
+        "Exposure: Check skin and mucosa for urticaria, flushing and angioedema while keeping the patient warm.",
+        "Correct each abnormality concurrently as it is found: do not wait for the full survey or a confirmed diagnosis before treating, and call for help (resuscitation team) early.",
+        "Use World Allergy Organization (WAO) criteria; if in doubt, give [💊 Adrenaline 1 mg/mL (1:1000) | 0.5 mg (0.5 mL), adults and children over 12 years | IM, anterolateral mid-thigh | Repeat after 5 minutes if no improvement | Until airway, breathing and circulation problems resolve] immediately. Remove the trigger (stop the suspected drug, infusion or colloid; remove the sting).",
+        "Positioning: Lie flat with legs raised; sit up only if breathing is easier; left side if pregnant; avoid sudden standing."
       ]
     },
     {
-      "id": "adrenaline",
-      "title": "IM adrenaline first",
-      "timeframe": "Immediately; repeat after 5 min",
+      "id": "immediate-pharmacological-intervention",
+      "title": "Immediate Pharmacological Intervention",
+      "timeframe": "Immediately; repeat after 5 minutes",
       "actions": [
-        "Adrenaline 1 mg/mL (1:1000) IM into the anterolateral mid-thigh: RCUK 0.5 mg (0.5 mL) for adults and children over 12; MOH 0.3–0.5 mg.",
-        "Repeat after 5 minutes if airway, breathing or circulation problems persist (MOH: every 5–15 min as needed).",
-        "Do not give IV bolus adrenaline outside cardiac arrest or specialist hands."
+        "First-line treatment, given before any other drug (RCUK 2021; MOH range 0.3–0.5 mg): [💊 Adrenaline 1 mg/mL (1:1000) | 0.5 mg (0.5 mL), adults and children over 12 years | IM, anterolateral mid-thigh | Repeat after 5 minutes if no improvement | Until airway, breathing and circulation problems resolve].",
+        "Children (RCUK 2021): [💊 Adrenaline 1 mg/mL (1:1000) | 0.3 mg (0.3 mL), children 6–12 years | IM, anterolateral mid-thigh | Repeat after 5 minutes if no improvement | Until airway, breathing and circulation problems resolve]; [💊 Adrenaline 1 mg/mL (1:1000) | 0.15 mg (0.15 mL), children 6 months to 6 years | IM, anterolateral mid-thigh | Repeat after 5 minutes if no improvement | Until airway, breathing and circulation problems resolve]; [💊 Adrenaline 1 mg/mL (1:1000) | 0.1–0.15 mg (0.1–0.15 mL), infants under 6 months | IM, anterolateral mid-thigh | Repeat after 5 minutes if no improvement | Until airway, breathing and circulation problems resolve].",
+        "If airway, breathing or circulation problems persist, repeat the dose after 5 minutes (MOH: every 5–15 minutes as needed): [💊 Adrenaline 1 mg/mL (1:1000) | 0.5 mg (0.5 mL), adults and children over 12 years | IM, anterolateral mid-thigh | Repeat after 5 minutes if no improvement | Until airway, breathing and circulation problems resolve]."
       ],
       "branches": [
         {
@@ -193,67 +206,54 @@
       ]
     },
     {
-      "id": "oxygen-fluids",
-      "title": "Oxygen and fluids",
-      "timeframe": "Alongside adrenaline",
+      "id": "circulation",
+      "title": "Circulation",
+      "timeframe": "With the first adrenaline dose",
       "actions": [
-        "High-flow oxygen (MOH: 8–10 L/min by face mask, up to 100%).",
-        "Hypotension or poor response: rapid IV crystalloid bolus 500–1000 mL (RCUK) or 1–2 L 0.9% saline (MOH); repeat as needed. Severe shock may need 3–5 L.",
+        "Fluids (adults): [💊 Sodium chloride 0.9% (crystalloid) | 500–1000 mL, up to 1–2 L in severe shock | IV or IO bolus, rapidly | Repeat as needed | Until blood pressure is restored].",
+        "Fluids (children): [💊 Sodium chloride 0.9% (crystalloid) | 10 mL/kg, up to 20 mL/kg rapidly for hypotension | IV or IO bolus | Repeat, to a maximum of 50 mL/kg in the first 30 minutes | Until blood pressure is restored] (ASCIA 2024).",
+        "Give fluids early in refractory anaphylaxis (RCUK 2021).",
         "Use IO access if IV access is delayed."
       ]
     },
     {
-      "id": "bronchospasm",
-      "title": "Persistent bronchospasm",
-      "timeframe": "After IM adrenaline",
+      "id": "refractory-anaphylaxis",
+      "title": "Refractory Anaphylaxis",
+      "timeframe": "After two IM doses",
       "actions": [
-        "Salbutamol 2.5–5 mg nebulised in 3 mL saline (MOH), or 2–3 puffs MDI; repeat as needed."
-      ]
-    },
-    {
-      "id": "refractory",
-      "title": "Refractory anaphylaxis",
-      "timeframe": "No improvement after two IM doses",
-      "actions": [
-        "Call critical care early; keep giving IM adrenaline every 5 min until the infusion runs.",
-        "Start low-dose IV adrenaline infusion: RCUK 1 mg in 100 mL 0.9% NaCl at 0.5 mL/kg/h (about 0.1 microgram/kg/min) via a dedicated line; 1 mL/kg/h if hypotensive or hypoxic. MOH: start at 0.1 microgram/kg/min and titrate.",
-        "Continuous ECG, SpO2 and BP at least every 5 min. Titrate to the lowest effective rate.",
-        "Wean: halve as symptoms improve; 1 h after full resolution, reduce over 30 min and stop.",
-        "If still refractory: noradrenaline (or dopamine per MOH; metaraminol or vasopressin per RCUK) by expert titration."
+        "Seek expert help early; start an infusion only in a specialist setting by skilled clinicians (RCUK 2021): [💊 Adrenaline infusion | 1 mg in 100 mL 0.9% sodium chloride at 0.5 mL/kg/h (about 0.1 microgram/kg/min); 1 mL/kg/h if hypotensive or hypoxic | IV via a dedicated peripheral line, or IO | Continuous; titrate every 5–10 minutes to the lowest effective rate | Wean 1 hour after full resolution over 30 minutes, then stop]. MOH: start at 0.1 microgram/kg/min and titrate.",
+        "Continue IM dosing every 5 minutes until an infusion is running: [💊 Adrenaline 1 mg/mL (1:1000) | 0.5 mg (0.5 mL), adults and children over 12 years | IM, anterolateral mid-thigh | Every 5 minutes until an infusion is running | Until the infusion is running].",
+        "Beta-blocker patients may need a rescue drug for refractory shock (discuss with a specialist) (ASCIA 2024): [💊 Glucagon | 1 mg (RCUK) or 1–5 mg over 5 minutes then 5–15 microgram/min (MOH) | IV | Repeat 1 mg if no response, or infusion 1–2 mg/h (RCUK) | Until response].",
+        "Persistent upper-airway obstruction: [💊 Adrenaline 1 mg/mL (1:1000), nebulised | 5 mL | Nebulised | Repeat as needed, may be given despite an infusion | Until stridor settles] (ASCIA 2024).",
+        "Persistent wheeze: [💊 Salbutamol | 8–12 puffs of 100 micrograms | Inhaled via spacer | Repeat as needed | Until wheeze resolves] or [💊 Salbutamol | 5 mg | Nebulised | Repeat as needed | Until wheeze resolves]; the inhaled bronchodilator does not treat upper-airway obstruction or shock (ASCIA 2024).",
+        "If still refractory, critical care adds one vasopressor by expert titration: [💊 Noradrenaline | 0.05–0.5 microgram/kg/min | IV infusion via central line | Continuous, titrated to blood pressure | Until haemodynamically stable]; alternatives are [💊 Dopamine | 5–20 microgram/kg/min | IV infusion | Continuous, titrated to blood pressure | Until haemodynamically stable] (MOH) or [💊 Vasopressin | 0.01–0.04 units/min | IV infusion | Continuous, titrated to blood pressure | Until haemodynamically stable] (RCUK)."
       ],
       "branches": [
         {
-          "condition": "On a beta-blocker",
+          "condition": "Cardiac arrest occurs",
           "actions": [
-            "Glucagon: MOH 1–5 mg IV over 5 min then 5–15 microgram/min infusion (rapid push causes vomiting); RCUK 1 mg IV, repeat or 1–2 mg/h. Hold the beta-blocker."
+            "Start cardiopulmonary resuscitation (CPR) and follow advanced life support protocols immediately."
           ]
         },
         {
           "condition": "Persistent severe bradycardia despite fluids",
           "actions": [
-            "Atropine 0.5 mg IV, repeat if necessary (RCUK)."
+            "Give [💊 Atropine | 0.5 mg | IV | Repeat if necessary | Until the heart rate recovers, maximum 3 mg] (RCUK)."
           ]
         }
       ]
     },
     {
-      "id": "adjuncts",
-      "title": "Adjuncts after stabilisation (never instead of adrenaline)",
-      "timeframe": "After ABC problems are treated",
+      "id": "after-stabilisation",
+      "title": "After Stabilisation",
+      "timeframe": "Hours",
       "actions": [
-        "Antihistamines are third-line and only for skin symptoms: RCUK prefers a non-sedating oral antihistamine (e.g. cetirizine). MOH lists cetirizine 10 mg IV or diphenhydramine 25–50 mg IV, and famotidine 20 mg IV.",
-        "Corticosteroids: RCUK does not advise them routinely (consider hydrocortisone 200 mg IV for refractory reactions or coexisting asthma). MOH lists methylprednisolone 125 mg IV."
-      ]
-    },
-    {
-      "id": "observe",
-      "title": "Observe and discharge safely",
-      "timeframe": "2–12 h depending on risk",
-      "actions": [
-        "RCUK fast-track discharge after 2 h from resolution only if: good response within 5–10 min to a single dose given within 30 min of onset, complete resolution, already has trained-in-use auto-injectors, and adequate supervision.",
-        "At least 6 h after resolution if 2 IM doses were needed or there was a previous biphasic reaction. MOH: observe 6 h if airway compromise, high adrenaline doses, coronary artery disease, asthma, or on beta-blockers or ACE inhibitors.",
-        "At least 12 h if more than 2 doses were needed, severe asthma or severe respiratory compromise, possible continuing absorption (e.g. slow-release medicines), late night presentation, or poor access to emergency care.",
-        "Before discharge: stand the patient up and check for dizziness; eat something at least 1 h before leaving. If not improving: ICU (MOH)."
+        "Do not stand or walk the patient until haemodynamically stable: usually at least 1 hour after one dose of [💊 Adrenaline 1 mg/mL (1:1000) | 0.5 mg (0.5 mL), adults and children over 12 years | IM, anterolateral mid-thigh | Repeat after 5 minutes if no improvement | Until airway, breathing and circulation problems resolve], or 4 hours after more than one dose (ASCIA 2024).",
+        "Observe in hospital for at least 4 hours after the last dose of [💊 Adrenaline 1 mg/mL (1:1000) | 0.5 mg (0.5 mL), adults and children over 12 years | IM, anterolateral mid-thigh | Repeat after 5 minutes if no improvement | Until airway, breathing and circulation problems resolve]. Overnight observation is strongly recommended for severe or protracted cases, concomitant illness, living alone or remote, or late-evening presentations (ASCIA 2024).",
+        "RCUK 2021 observation: fast-track discharge after 2 hours from resolution only with a good response within 5–10 minutes to a single dose given within 30 minutes of onset, complete resolution, trained-in-use auto-injectors and adequate supervision; at least 6 hours after resolution if 2 IM doses were needed or there was a previous biphasic reaction; at least 12 hours if more than 2 doses were needed, severe asthma or severe respiratory compromise, possible continuing absorption, late-night presentation or poor access to emergency care. MOH: observe 6 hours if airway compromise, repeated IM doses, coronary artery disease, asthma, or on beta-blockers or ACE inhibitors.",
+        "Third-line medication for persistent skin symptoms: a non-sedating oral antihistamine such as [💊 Cetirizine | 10 mg | Oral (MOH: IV over 2 minutes) | Once | Single dose]; MOH also lists [💊 Diphenhydramine | 25–50 mg | IV | Once | Single dose] and [💊 Famotidine | 20 mg | IV | Once | Single dose].",
+        "Corticosteroids are not routine (RCUK 2021); for refractory reactions or coexisting asthma consider [💊 Hydrocortisone | 200 mg | IV | Once | Single dose]; MOH lists [💊 Methylprednisolone | 125 mg | IV | Once | Single dose].",
+        "Discharge: Refer every patient to an allergy clinic and prescribe [💊 Adrenaline auto-injector | 300 micrograms (150 micrograms for children 7.5–20 kg) | IM, anterolateral mid-thigh | Once, repeat after 5 minutes if no improvement and a second device is available | Single dose per episode] with training and an action plan, unless the reaction was drug-induced (RCUK 2021; ASCIA 2024)."
       ]
     }
   ],

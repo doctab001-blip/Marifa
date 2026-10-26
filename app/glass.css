@@ -1138,23 +1138,17 @@ html[data-theme="dark"] .topic-tile[data-spec] { background: hsl(var(--spec-hue,
 .sidebar .topic-nav-group[data-spec] a:hover::before { background: var(--spec); }
 .sidebar .topic-nav-group[data-spec] > summary { color: var(--spec); }
 
-/* ── Medication badges in management sequences: [💊 Drug | Dose | Route | Frequency | Duration] ── */
-.med-badge { --pc: #34d399; display: inline-flex; flex-wrap: wrap; align-items: center; gap: .1rem .5rem; margin: .12rem .18rem; vertical-align: middle; }
-.med-badge-drug { font-weight: 850; font-size: 1.04em; letter-spacing: .01em; color: #ecfdf5; text-shadow: 0 0 10px rgb(52 211 153 / .55); }
-.med-badge-field { font-weight: 600; opacity: .94; }
-.med-badge-field::before { content: "|"; margin-right: .5rem; opacity: .45; }
-
-/* Medicines table under a management sequence */
-.med-table-wrap { margin-top: 1.4rem; }
-.med-table-title { display: flex; align-items: center; gap: .5rem; font-size: 1.02rem; font-weight: 800; margin: 0 0 .6rem; }
-.med-table-scroll { overflow-x: auto; border-radius: 14px; border: 1px solid rgb(52 211 153 / .35); }
-.med-table { width: 100%; border-collapse: collapse; font-size: .9rem; }
-.med-table th, .med-table td { padding: .55rem .75rem; text-align: left; vertical-align: top; border-bottom: 1px solid rgb(148 163 184 / .22); }
-.med-table thead th { font-weight: 800; background: rgb(52 211 153 / .14); white-space: nowrap; }
-.med-table-drug { font-weight: 850; font-size: 1.02em; color: #34d399; }
-.med-table tbody tr:last-child th, .med-table tbody tr:last-child td { border-bottom: 0; }
-
-/* ABCDE first step: one lettered row per assessment */
-.abcde-row { display: flex; gap: .7rem; align-items: flex-start; list-style: none; margin-left: -1.1rem; }
-.abcde-letter { flex: none; display: inline-grid; place-items: center; width: 2rem; height: 2rem; border-radius: 999px; font-weight: 900; font-size: 1rem; color: #052e2b; background: linear-gradient(180deg, #5eead4, #22d3ee); box-shadow: 0 0 14px rgb(34 211 238 / .45); }
-.abcde-label { font-weight: 850; }
+/* ── Medication pills, per-step medicine tables and the ABCDE step (light theme, follows --royal) ── */
+.med-pill { display: inline-flex; align-items: center; gap: .3rem; margin: 0 .15rem; padding: .08rem .6rem; border-radius: 8px; border: 1px solid var(--royal-line-strong); background: var(--royal-soft); color: var(--royal-deep); font-weight: 800; line-height: 1.5; white-space: nowrap; vertical-align: baseline; }
+.med-pill svg { flex: none; }
+.step-med-table { margin: 1rem 0 .4rem; border: 1px solid var(--royal-line); border-radius: 12px; overflow: hidden; }
+.step-med-table-scroll { overflow-x: auto; }
+.step-med-table table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+.step-med-table thead th { text-align: left; padding: .7rem .9rem; font-weight: 600; color: var(--ink); background: var(--royal-soft); white-space: nowrap; }
+.step-med-table tbody th, .step-med-table tbody td { text-align: left; vertical-align: top; padding: .75rem .9rem; border-top: 1px solid var(--royal-line); }
+.step-med-table tbody th { font-weight: 800; color: var(--ink); }
+.step-med-table .dose-main { font-weight: 800; }
+.abcde-row { display: flex; gap: .75rem; align-items: baseline; list-style: none; margin-left: -1.1rem; padding: .15rem 0; }
+.abcde-letter { flex: none; width: 1.4rem; font-weight: 900; color: var(--ink); }
+.abcde-label { font-weight: 800; color: var(--ink); }
+.abcde-note { list-style: none; margin: .45rem 0 0 -1.1rem; padding: .15rem 0 .15rem 1rem; border-left: 3px solid var(--royal-line-strong); }
