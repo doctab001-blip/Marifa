@@ -1,4 +1,6 @@
 import type { ClinicalPathwayPayload, ExactDoseSchema, Medicines_Doses } from "@/lib/validations/clinical-pathway";
+import { MedicineSideEffects } from "@/components/medicine-side-effects";
+import { cleanAdjustments } from "@/lib/medicine-adjustments";
 import type { z } from "zod";
 import { SourceCitation } from "@/components/source-citation";
 import { ClinicalTimeframe } from "@/components/clinical-timeframe";
@@ -11,6 +13,7 @@ function Medicines({ medicines, showSources }: { medicines: Medicines_Doses[]; s
   return <ul className="list-disc">
     {medicines.map((medicine) => <li key={medicine.id}>
       <h4>{withoutInlineSourceLocators(medicine.medicine)}</h4>
+      <MedicineSideEffects name={medicine.medicine} />
       <ul className="list-disc">
         <li><strong>Indication:</strong> {withoutInlineSourceLocators(medicine.indication)}</li>
         <li><strong>Patient group:</strong> {withoutInlineSourceLocators(medicine.patient_group)}</li>
@@ -18,7 +21,7 @@ function Medicines({ medicines, showSources }: { medicines: Medicines_Doses[]; s
         <li><strong>Maintenance dose:</strong> <Dose dose={medicine.maintenance_dose} /></li>
         <li><strong>Route:</strong> {withoutInlineSourceLocators(medicine.route)}</li>
         <li><strong>Contraindications:</strong><ul>{medicine.contraindications.map((item, i) => <li key={i}>{withoutInlineSourceLocators(item)}</li>)}</ul></li>
-        <li><strong>Adjustments:</strong><ul>{medicine.adjustments.map((item, i) => <li key={i}>{withoutInlineSourceLocators(item)}</li>)}</ul></li>
+        <li><strong>Adjustments:</strong><ul>{cleanAdjustments(medicine.adjustments, medicine.medicine).map((item, i) => <li key={i}>{withoutInlineSourceLocators(item)}</li>)}</ul></li>
         <li><strong>Monitoring:</strong><ul>{medicine.monitoring.map((item, i) => <li key={i}>{withoutInlineSourceLocators(item)}</li>)}</ul></li>
       </ul>
       {showSources ? <SourceCitation sources={medicine.evidence.sources} selectionRationale={medicine.evidence.selection_rationale} /> : null}

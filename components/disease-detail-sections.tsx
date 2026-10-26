@@ -1,4 +1,6 @@
 "use client";
+import { MedicineSideEffects } from "@/components/medicine-side-effects";
+import { cleanAdjustments } from "@/lib/medicine-adjustments";
 
 import { useState } from "react";
 import { ChevronDown } from "@/components/icons-3d";
@@ -81,12 +83,12 @@ function MedicationItem({ regimen }: { regimen: MedicationRegimen }) {
   return <li>
     <h4>{regimen.indication}{role ? <> — <em>{role}</em></> : null}</h4>
     <dl>
-      <div><dt>Medicine</dt><dd>{regimen.genericName}</dd></div>
+      <div><dt>Medicine</dt><dd>{regimen.genericName}<MedicineSideEffects name={regimen.genericName} /></dd></div>
       {regimen.useWhen ? <div><dt>Use when</dt><dd>{regimen.useWhen}</dd></div> : null}
       <div><dt>Patient group</dt><dd>{regimen.patientGroup}</dd></div>
       <div><dt>Dose and route</dt><dd>{regimen.dose}; {regimen.route}</dd></div>
       <div><dt>Frequency and duration</dt><dd>{regimen.frequency}; {regimen.duration}</dd></div>
-      <div><dt>Adjustments and precautions</dt><dd><ul>{regimen.adjustments.map((item) => <li key={item}>{item}</li>)}</ul></dd></div>
+      <div><dt>Adjustments and precautions</dt><dd><ul>{cleanAdjustments(regimen.adjustments, regimen.genericName).map((item) => <li key={item}>{item}</li>)}</ul></dd></div>
       <div><dt>Monitoring</dt><dd><ul>{regimen.monitoring.map((item) => <li key={item}>{item}</li>)}</ul></dd></div>
       <div><dt>Source</dt><dd><a href={regimen.sourceUrl} target="_blank" rel="noreferrer">{regimen.sourceTitle} ({regimen.sourceEdition})</a></dd></div>
     </dl>

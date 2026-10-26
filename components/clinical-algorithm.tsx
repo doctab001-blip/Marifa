@@ -20,46 +20,36 @@ function NodeCard({ node }: { node: AlgorithmNode }) {
   );
 }
 
-function Step({ id, nodes, label, seen }: { id: string; nodes: Map<string, AlgorithmNode>; label?: string; seen: Set<string> }) {
+function Branch({ id, nodes, label }: { id: string; nodes: Map<string, AlgorithmNode>; label?: string }) {
   const node = nodes.get(id);
-  if (!node || seen.has(id)) return null;
-  const visited = new Set(seen).add(id);
+  if (!node) return null;
   const next = node.next ?? [];
   return (
-    <div className="algorithm-step">
+    <li className="algorithm-branch">
       {label ? <span className="algorithm-edge-label">{label}</span> : null}
       <NodeCard node={node} />
-      {next.length === 1 ? (
-        <>
-          <span className="algorithm-arrow" aria-hidden="true" />
-          <Step id={next[0].to} nodes={nodes} label={next[0].label} seen={visited} />
-        </>
-      ) : null}
-      {next.length > 1 ? (
-        <ul className="algorithm-children" role="list">
-          {next.map((edge) => (
-            <li key={edge.to} className="algorithm-branch">
-              <Step id={edge.to} nodes={nodes} label={edge.label} seen={visited} />
-            </li>
-          ))}
+      {next.length ? (
+        <ul className={`algorithm-children${next.length > 1 ? " is-split" : ""}`} role="list">
+          {next.map((edge) => <Branch key={edge.to} id={edge.to} nodes={nodes} label={edge.label} />)}
         </ul>
       ) : null}
-    </div>
+    </li>
   );
 }
 
-/** Flowchart drawn with CSS only. Straight sequences stack with arrows; only real Yes/No splits indent, so the chart stays inside the page at any width. */
+/** Tree flowchart drawn with CSS only; branches sit side by side; the box scrolls sideways when the chart is wider than the page, so nothing is cut off. */
 export function ClinicalAlgorithmChart({ algorithm }: { algorithm: ClinicalAlgorithm }) {
   const nodes = new Map(algorithm.nodes.map((node) => [node.id, node]));
   const titleId = `algorithm-${algorithm.id}-title`;
   return (
     <figure className="clinical-algorithm" aria-labelledby={titleId}>
       <figcaption id={titleId} className="clinical-algorithm-title"><span className="disease-kicker">Algorithm</span>{algorithm.title}</figcaption>
-      <div className="clinical-algorithm-scroll">
-        <div className="algorithm-root" role="group" aria-label={`${algorithm.title}: step-by-step flowchart, read top to bottom`}>
-          <Step id={algorithm.nodes[0].id} nodes={nodes} seen={new Set()} />
-        </div>
+      <div className="clinical-algorithm-scroll" role="region" aria-label={`${algorithm.title}: flowchart. Scroll sideways if it does not fit.`} tabIndex={0}>
+        <ul className="algorithm-root" role="list">
+          <Branch id={algorithm.nodes[0].id} nodes={nodes} />
+        </ul>
       </div>
+      <p className="clinical-algorithm-hint">Wide flowchart: scroll sideways inside the box to see every branch.</p>
       <SourceCitation sources={[{ title: algorithm.source.title, url: algorithm.source.url, edition: algorithm.source.edition, locator: algorithm.source.locator }]} />
     </figure>
   );

@@ -1,3 +1,4 @@
+import { isAntibiotic, isEmptyAdjustment } from "@/lib/medicine-adjustments";
 import { unexplainedScores } from "@/lib/clinical-scores";
 import { DiseaseDetailSchema, type DiseaseDetail } from "@/lib/validations/disease";
 
@@ -38,8 +39,8 @@ export const DEPTH_MINIMUMS = {
   pitfalls: 4,
 } as const;
 
-/** The four population lines every medicine entry carries (paediatric, penicillin allergy, CKD, CLD). */
-const REQUIRED_ADJUSTMENT_PREFIXES = ["Paediatric:", "Penicillin allergy:", "CKD:", "CLD:"];
+/** Every medicine carries CKD and CLD lines; antibiotics also carry a penicillin-allergy line. Paediatric lines appear only when there is something to say. */
+const REQUIRED_ADJUSTMENT_PREFIXES = ["CKD:", "CLD:"];
 
 /** A dose must be stated. "Use the local protocol" is only acceptable when the whole plan says so. */
 const DEFERRED_DOSE = /\b(per|see|use the|according to)\s+(local|unit|hospital)\s+(protocol|policy|formulary)\b|\bdose (not|to be) (given|stated|confirmed|determined)\b|\bspecialist dosing\b/i;
@@ -100,7 +101,8 @@ export function auditTopicDepth(content: unknown): DepthAudit {
   if (plan?.status === "source-verified") need(regimens.length > 0, "Medicine plan is marked source-verified but lists no medicines.");
   regimens.forEach((r) => {
     const label = `Medicine ${r.genericName}`;
-    REQUIRED_ADJUSTMENT_PREFIXES.forEach((prefix) => need(r.adjustments.some((line) => line.startsWith(prefix)), `${label} has no “${prefix}” line.`));
+    REQUIRED_ADJUSTMENT_PREFIXES.forEach((prefix) => need(r.adjustments.some((line) => line.startsWith(prefix) && !isEmptyAdjustment(line)), `${label} has no usable “${prefix}” line (give the real adjustment from BNF, a regulator label or KDIGO, not “not specified”).`));
+    if (isAntibiotic(r.genericName)) need(r.adjustments.some((line) => line.startsWith("Penicillin allergy:")), `${label} is an antibiotic and has no “Penicillin allergy:” line.`);
     if (plan?.status !== "local-protocol-required") need(!DEFERRED_DOSE.test(`${r.dose} ${r.frequency}`), `${label} defers its dose to a local protocol; take the dose from an international guideline or label.`);
   });
   (t.evidenceAudit?.unverifiedSections ?? []).forEach((gap) => need(!MISSING_DOSE_GAP.test(gap), `Recorded gap leaves a medicine without a dose (“${gap.slice(0, 90)}…”); fill it from an international guideline or label.`));
