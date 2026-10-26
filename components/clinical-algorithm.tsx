@@ -1,4 +1,5 @@
 import type { ClinicalAlgorithm } from "@/lib/validations/disease";
+import { AlgorithmFrame } from "@/components/algorithm-frame";
 import { SourceCitation } from "@/components/source-citation";
 
 type AlgorithmNode = ClinicalAlgorithm["nodes"][number];
@@ -37,19 +38,17 @@ function Branch({ id, nodes, label }: { id: string; nodes: Map<string, Algorithm
   );
 }
 
-/** Tree flowchart drawn with CSS only; branches sit side by side; the box scrolls sideways when the chart is wider than the page, so nothing is cut off. */
+/** Tree flowchart drawn with CSS only; branches sit side by side; the inline box scrolls sideways, and "Open full flowchart" shows the whole chart in a window scaled to fit. */
 export function ClinicalAlgorithmChart({ algorithm }: { algorithm: ClinicalAlgorithm }) {
   const nodes = new Map(algorithm.nodes.map((node) => [node.id, node]));
   const titleId = `algorithm-${algorithm.id}-title`;
   return (
     <figure className="clinical-algorithm" aria-labelledby={titleId}>
       <figcaption id={titleId} className="clinical-algorithm-title"><span className="disease-kicker">Algorithm</span>{algorithm.title}</figcaption>
-      <div className="clinical-algorithm-scroll" role="region" aria-label={`${algorithm.title}: flowchart. Scroll sideways if it does not fit.`} tabIndex={0}>
-        <ul className="algorithm-root" role="list">
-          <Branch id={algorithm.nodes[0].id} nodes={nodes} />
-        </ul>
-      </div>
-      <p className="clinical-algorithm-hint">Wide flowchart: scroll sideways inside the box to see every branch.</p>
+      <AlgorithmFrame
+        title={algorithm.title}
+        chart={<ul className="algorithm-root" role="list"><Branch id={algorithm.nodes[0].id} nodes={nodes} /></ul>}
+      />
       <SourceCitation sources={[{ title: algorithm.source.title, url: algorithm.source.url, edition: algorithm.source.edition, locator: algorithm.source.locator }]} />
     </figure>
   );
