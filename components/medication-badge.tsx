@@ -1,4 +1,3 @@
-import { Pill } from "@/components/icons-3d";
 import type { MedicationBadge as MedicationBadgeData } from "@/lib/management-sequence-format";
 import { shortDrugName } from "@/lib/step-medication";
 
@@ -8,13 +7,8 @@ export function doseLead(text: string): string {
   return cut > 0 ? text.slice(0, cut) : text;
 }
 
-/** Inline pill: the drug name only. Dose, route, frequency and duration sit once, in the step's medicine table. Display only. */
+/** Inline drug name: bold with a soft highlight. Dose, route, frequency and duration sit once, in the step's medicine table. Display only. */
 export function MedicationBadge({ badge }: { badge: MedicationBadgeData }) {
   const detail = `${badge.drug}: ${badge.dose}; ${badge.route}; ${badge.frequency}; ${badge.duration}`;
-  return (
-    <span className="med-pill" title={detail} aria-label={`Medication ${detail}`}>
-      <Pill size={13} aria-hidden="true" />
-      {shortDrugName(badge.drug)}
-    </span>
-  );
+  return <strong className="med-name" title={detail}>{shortDrugName(badge.drug)}</strong>;
 }
