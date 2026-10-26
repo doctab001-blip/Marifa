@@ -150,7 +150,7 @@ export function DiseaseDetailSections({ disease, investigationSource }: { diseas
           {medicationPlan?.regimens.length ? <p className="medication-plan-status">{medicationPlan.note}</p> : null}
           {medicationPlan?.regimens.length && !remainingRegimens.length ? <p className="medication-plan-status">Every medicine in this pathway is listed with its dose, route, frequency, duration, adjustments, cautions and monitoring in the table under the step that uses it.</p> : null}
           {remainingRegimens.length ? (isBranchedMedicationPlan(remainingPlan!)
-            ? groupMedicationPlan(remainingPlan!).map((branch) => <div className="medication-branch" key={branch.label}>
+            ? groupMedicationPlan(remainingPlan!).filter((branch) => branch.steps.length).map((branch) => <div className="medication-branch" key={branch.label}>
                 <h4 className="medication-branch-title">If: {branch.label}</h4>
                 {branch.entryCriteria ? <p className="medication-plan-status">{branch.entryCriteria}</p> : null}
                 {branch.steps.map((step) => <div key={step.step}>

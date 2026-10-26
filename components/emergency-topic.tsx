@@ -189,7 +189,7 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
           <>
             <h3>{remainingRegimens.length === medicationPlan.regimens.length ? "Medicines and doses" : "Other medicines and doses"}</h3>
             <p className="em-footnote">{withoutInlineSourceLocators(medicationPlan.note)}</p>
-            {isBranchedMedicationPlan(remainingPlan) ? groupMedicationPlan(remainingPlan).map((branch) => (
+            {isBranchedMedicationPlan(remainingPlan) ? groupMedicationPlan(remainingPlan).filter((branch) => branch.steps.length).map((branch) => (
               <div className="em-med-branch" key={branch.label}>
                 <h4 className="em-med-branch-title"><span className="pill pill-sky pill-sm">If</span> {withoutInlineSourceLocators(branch.label)}</h4>
                 {branch.entryCriteria ? <p className="em-footnote em-med-entry">{withoutInlineSourceLocators(branch.entryCriteria)}</p> : null}
