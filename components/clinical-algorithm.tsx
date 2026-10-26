@@ -13,10 +13,10 @@ const KIND_LABEL: Record<AlgorithmNode["kind"], string> = {
 
 function NodeCard({ node }: { node: AlgorithmNode }) {
   return (
-    <div className={`algorithm-node algorithm-node-${node.kind}`}>
+    <div className={`algorithm-node algorithm-node-${node.kind}`} title={node.detail}>
       <span className="algorithm-node-kind">{KIND_LABEL[node.kind]}</span>
       <p className="algorithm-node-text">{node.text}</p>
-      {node.detail ? <p className="algorithm-node-detail">{node.detail}</p> : null}
+      {node.detail ? <details className="algorithm-node-more"><summary>Details</summary><p className="algorithm-node-detail">{node.detail}</p></details> : null}
     </div>
   );
 }

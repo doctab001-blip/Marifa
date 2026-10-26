@@ -39,6 +39,7 @@ function FullView({ title, chart, dialogRef, onClose }: { title: string; chart: 
   const viewport = useRef<HTMLDivElement>(null);
   const content = useRef<HTMLDivElement>(null);
   const [mode, setMode] = useState<Mode>("width");
+  const [details, setDetails] = useState(true);
   const [scale, setScale] = useState(1);
   const [size, setSize] = useState({ w: 0, h: 0 });
 
@@ -61,7 +62,10 @@ function FullView({ title, chart, dialogRef, onClose }: { title: string; chart: 
     setScale(Math.max(next, 0.2));
   }, [mode]);
 
-  useLayoutEffect(() => { measure(); }, [measure]);
+  useLayoutEffect(() => {
+    content.current?.querySelectorAll("details").forEach((el) => { el.open = details; });
+    measure();
+  }, [measure, details]);
   useEffect(() => {
     const vp = viewport.current;
     if (!vp || typeof ResizeObserver === "undefined") return;
@@ -84,6 +88,7 @@ function FullView({ title, chart, dialogRef, onClose }: { title: string; chart: 
           {([["width", "Fit width"], ["all", "Fit all"], ["actual", "100%"]] as const).map(([value, label]) => (
             <button key={value} type="button" aria-pressed={mode === value} className={mode === value ? "is-active" : undefined} onClick={() => { setMode(value); }}>{label}</button>
           ))}
+          <button type="button" aria-pressed={details} className={details ? "is-active" : undefined} onClick={() => { setDetails((value) => !value); }}>Details</button>
           <button type="button" className="algorithm-dialog-close" onClick={onClose} autoFocus>Close</button>
         </div>
       </div>

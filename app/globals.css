@@ -2097,18 +2097,18 @@ html[data-theme="dark"] .calculator-page .calculator-critical li { color: #ffd9d
 .algorithm-root, .algorithm-children { list-style: none; margin: 0; padding: 0; }
 .algorithm-root { display: flex; justify-content: center; width: max-content; min-width: 100%; }
 .algorithm-branch { position: relative; display: flex; flex-direction: column; align-items: center; }
-.algorithm-children { position: relative; display: flex; justify-content: center; gap: 0; padding-top: 18px; }
-.algorithm-children::before { content: ""; position: absolute; top: 0; left: 50%; width: 2px; height: 18px; background: #94a3b8; transform: translateX(-1px); }
-.algorithm-children > .algorithm-branch { padding: 18px 4px 0; flex: 1 1 0; min-width: 140px; }
-.algorithm-children > .algorithm-branch::before { content: ""; position: absolute; top: 0; left: 50%; width: 2px; height: 18px; background: #94a3b8; transform: translateX(-1px); }
+.algorithm-children { position: relative; display: flex; justify-content: center; gap: 0; padding-top: 14px; }
+.algorithm-children::before { content: ""; position: absolute; top: 0; left: 50%; width: 2px; height: 14px; background: #94a3b8; transform: translateX(-1px); }
+.algorithm-children > .algorithm-branch { padding: 14px 3px 0; flex: 1 1 0; min-width: 112px; }
+.algorithm-children > .algorithm-branch::before { content: ""; position: absolute; top: 0; left: 50%; width: 2px; height: 14px; background: #94a3b8; transform: translateX(-1px); }
 .algorithm-children.is-split > .algorithm-branch::after { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: #94a3b8; }
 .algorithm-children.is-split > .algorithm-branch:first-child::after { left: 50%; }
 .algorithm-children.is-split > .algorithm-branch:last-child::after { right: 50%; }
-.algorithm-edge-label { margin-bottom: 6px; padding: 1px 9px; border: 1px solid #cbd5e1; border-radius: 999px; background: #fff; color: #334155; font-size: .64rem; font-weight: 700; text-align: center; max-width: 220px; }
-.algorithm-node { box-sizing: border-box; width: 100%; max-width: 190px; min-width: 140px; padding: 8px 9px; border: 1.5px solid #cbd5e1; border-radius: 10px; background: #fff; color: var(--tp-ink, #0b1220); text-align: left; box-shadow: 0 2px 6px rgb(15 23 42 / .05); }
-.algorithm-node-kind { display: block; margin-bottom: 3px; font-size: .544rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #64748b; }
-.algorithm-node-text { margin: 0; font-size: .72rem; font-weight: 650; line-height: 1.45; }
-.algorithm-node-detail { margin: 5px 0 0; font-size: .656rem; line-height: 1.5; color: #475569; }
+.algorithm-edge-label { margin-bottom: 4px; padding: 1px 7px; border: 1px solid #cbd5e1; border-radius: 999px; background: #fff; color: #334155; font-size: .512rem; font-weight: 700; text-align: center; max-width: 220px; }
+.algorithm-node { box-sizing: border-box; width: 100%; max-width: 152px; min-width: 112px; padding: 6px 7px; border: 1.5px solid #cbd5e1; border-radius: 10px; background: #fff; color: var(--tp-ink, #0b1220); text-align: left; box-shadow: 0 2px 6px rgb(15 23 42 / .05); }
+.algorithm-node-kind { display: block; margin-bottom: 3px; font-size: .435rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #64748b; }
+.algorithm-node-text { margin: 0; font-size: .576rem; font-weight: 650; line-height: 1.45; }
+.algorithm-node-detail { margin: 5px 0 0; font-size: .525rem; line-height: 1.5; color: #475569; }
 .algorithm-node-start { border-color: var(--tp-primary, var(--royal)); background: var(--tp-primary, var(--royal)); color: #fff; }
 .algorithm-node-start .algorithm-node-kind, .algorithm-node-start .algorithm-node-detail { color: rgb(255 255 255 / .85); }
 .algorithm-node-decision { border-color: #d97706; background: #fffbeb; }
@@ -2185,3 +2185,15 @@ dialog.algorithm-dialog::backdrop { background: rgb(2 6 23 / .6); }
 .algorithm-dialog-content .algorithm-root { min-width: 0; }
 html[data-theme="dark"] dialog.algorithm-dialog, html[data-theme="dark"] .algorithm-dialog-viewport { background: #0f172a; color: #e2e8f0; }
 html[data-theme="dark"] .algorithm-dialog-bar { border-color: #334155; }
+
+/* Inline flowchart boxes show the short text only; the longer detail lines show in the full flowchart window and as a tooltip */
+.clinical-algorithm-scroll .algorithm-node-detail { display: none; }
+
+/* Algorithm node details: collapsed inline, open in the full-flowchart window */
+.algorithm-node-more { margin-top: 3px; }
+.algorithm-node-more > summary { display: inline-block; cursor: pointer; color: var(--tp-primary, #0f766e); font-size: .46rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; list-style: none; }
+.algorithm-node-more > summary::-webkit-details-marker { display: none; }
+.algorithm-node-more > summary::before { content: "+ "; }
+.algorithm-node-more[open] > summary::before { content: "− "; }
+.algorithm-node-more .algorithm-node-detail { margin-top: 2px; }
+.algorithm-node-start .algorithm-node-more > summary { color: inherit; }
