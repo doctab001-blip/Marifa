@@ -1,5 +1,7 @@
+import { Clock3 } from "@/components/icons-3d";
 import { doseLead } from "@/components/medication-badge";
 import { MedicineSideEffects } from "@/components/medicine-side-effects";
+import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
 import { cleanAdjustments } from "@/lib/medicine-adjustments";
 import { collectMedicationBadges, type ManagementStepLike, type MedicationBadge } from "@/lib/management-sequence-format";
 import { matchRegimens, type RegimenLike } from "@/lib/step-medication";
@@ -23,61 +25,65 @@ function groupBadges(badges: MedicationBadge[]) {
   return [...rows.values()];
 }
 
-function unique(lines: string[]) {
-  return [...new Set(lines.map((line) => line.trim()).filter(Boolean))];
+const unique = (lines: string[]) => [...new Set(lines.map((line) => line.trim()).filter(Boolean))];
+
+function Labelled({ text }: { text: string }) {
+  const display = withoutInlineSourceLocators(text);
+  const separator = display.indexOf(":");
+  if (separator > 0 && separator < 60) return <><strong>{display.slice(0, separator)}:</strong>{display.slice(separator + 1)}</>;
+  return <>{display}</>;
 }
 
-/** Everything else the topic's medicine table says about this drug, so the table is not repeated further down the page. */
-function RowDetails({ regimens }: { regimens: RegimenLike[] }) {
-  if (!regimens.length) return null;
-  const adjustments = unique(regimens.flatMap((r) => cleanAdjustments(r.adjustments ?? [], r.genericName)));
-  const contraindications = unique(regimens.flatMap((r) => r.contraindications ?? []));
-  const monitoring = unique(regimens.flatMap((r) => r.monitoring ?? []));
-  const sources = unique(regimens.map((r) => (r.sourceTitle ? `${r.sourceTitle}${r.sourceEdition ? ` (${r.sourceEdition})` : ""}` : "")));
-  if (!adjustments.length && !contraindications.length && !monitoring.length && !sources.length) return null;
-  const block = (title: string, items: string[]) => items.length ? <div><h5>{title}</h5><ul>{items.map((item) => <li key={item}>{item}</li>)}</ul></div> : null;
-  return (
-    <details className="med-details">
-      <summary>Adjustments, cautions and monitoring</summary>
-      {block("Adjustments and precautions", adjustments)}
-      {block("Contraindications", contraindications)}
-      {block("Monitoring", monitoring)}
-      {block("Source", sources)}
-    </details>
-  );
+function List({ items }: { items: string[] }) {
+  return <ul className="em-list">{items.map((item, index) => <li key={`${index}-${item}`}><Labelled text={item} /></li>)}</ul>;
 }
 
 /**
- * The single medicine table for one management step, built from that step's stored badges and the topic's medicine table.
- * It carries dose, route, frequency, duration and, under each drug, the adjustments, cautions and monitoring. Display only.
+ * The single medicine table for one management step, in the layout of the topic's medicine table:
+ * medicine and indication, dose with route, frequency and duration, contraindications, cautions and monitoring.
+ * Built from the step's stored badges plus the matching rows of the topic's medicine table. Display only.
  */
 export function StepMedicationTable({ step, regimens = [] }: { step: ManagementStepLike; regimens?: RegimenLike[] }) {
-  const rows = groupBadges(collectMedicationBadges([step]));
+  const rows = groupBadges(collectMedicationBadges([step])).map(({ head, doses }) => {
+    const matched = matchRegimens(head, regimens);
+    const first = matched[0] as (RegimenLike & { indication?: string; patientGroup?: string }) | undefined;
+    return {
+      head, doses, first,
+      contraindications: unique(matched.flatMap((r) => r.contraindications ?? [])),
+      cautions: unique([...matched.flatMap((r) => cleanAdjustments(r.adjustments ?? [], r.genericName)), ...matched.flatMap((r) => (r.monitoring ?? []).map((item) => `Monitor: ${item}`))]),
+    };
+  });
   if (!rows.length) return null;
+  const hasContraindications = rows.some((row) => row.contraindications.length);
   return (
-    <div className="step-med-table">
-      <div className="step-med-table-scroll">
-        <table>
-          <caption className="sr-only">Medicines in this step</caption>
-          <thead>
-            <tr><th scope="col">Medication</th><th scope="col">Dose</th><th scope="col">Route</th><th scope="col">Frequency</th><th scope="col">Duration</th></tr>
-          </thead>
-          <tbody>
-            {rows.map(({ head, doses }, index) => {
-              const matched = matchRegimens(head, regimens);
-              return (
-                <tr key={index}>
-                  <th scope="row">{head.drug}<MedicineSideEffects name={head.drug} /><RowDetails regimens={matched} /></th>
-                  <td>{doses.map((dose, i) => <div key={i} className="dose-line"><Dose text={dose} /></div>)}</td>
-                  <td>{head.route}</td>
-                  <td>{head.frequency}</td>
-                  <td>{head.duration}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
+    <div className="step-med-table em-table-wrap">
+      <table className={`em-table em-dose-table${hasContraindications ? " has-contra" : ""}`}>
+        <caption className="sr-only">Medicines in this step</caption>
+        <thead>
+          <tr><th scope="col">Medicine and indication</th><th scope="col">Dose, route, frequency</th>{hasContraindications ? <th scope="col">Contraindications</th> : null}<th scope="col">Cautions and monitoring</th></tr>
+        </thead>
+        <tbody>
+          {rows.map(({ head, doses, first, contraindications, cautions }, index) => (
+            <tr key={index}>
+              <th scope="row">
+                {head.drug}
+                <MedicineSideEffects name={head.drug} />
+                {first?.indication ? <small>{withoutInlineSourceLocators(first.indication)}{first.patientGroup ? ` · ${withoutInlineSourceLocators(first.patientGroup)}` : ""}</small> : null}
+              </th>
+              <td data-label="Dose, route, frequency">
+                {doses.map((dose, i) => <div key={i} className="dose-line"><Dose text={dose} /></div>)}
+                <span className="em-regimen-pills">
+                  <span className="pill pill-sky pill-sm">{head.route}</span>
+                  <span className="pill pill-violet pill-sm">{head.frequency}</span>
+                  <span className="pill pill-amber pill-sm"><Clock3 size={13} aria-hidden="true" />{head.duration}</span>
+                </span>
+              </td>
+              {hasContraindications ? <td className="em-contra" data-label="Contraindications">{contraindications.length ? <List items={contraindications} /> : <span className="em-muted">See product label</span>}</td> : null}
+              <td data-label="Cautions and monitoring">{cautions.length ? <List items={cautions} /> : <span className="em-muted">See product label</span>}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }

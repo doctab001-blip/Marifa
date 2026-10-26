@@ -1159,3 +1159,28 @@ html[data-theme="dark"] .topic-tile[data-spec] { background: hsl(var(--spec-hue,
 .med-details summary { cursor: pointer; color: var(--royal-deep); font-weight: 700; }
 .med-details h5 { margin: .55rem 0 .2rem; font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; color: var(--ink); }
 .med-details ul { margin: 0; padding-left: 1.1rem; }
+.med-name { font-weight: 800; color: var(--royal-deep); background: linear-gradient(transparent 58%, var(--royal-soft) 58%); padding: 0 .12rem; border-radius: 2px; }
+.step-med-table.em-table-wrap { margin: 1rem 0 .4rem; }
+.step-med-table .dose-line + .dose-line { margin-top: .3rem; }
+
+/* Step medicine table: the whole table is always visible. Columns share the width and wrap; on a narrow step each row stacks as a card. */
+.step-med-table.em-table-wrap { overflow: visible; container-type: inline-size; padding: 0; }
+.step-med-table .em-table { width: 100%; min-width: 0; table-layout: fixed; border-collapse: separate; border-spacing: 0; }
+.step-med-table .em-table thead th { white-space: normal; letter-spacing: .06em; font-size: .72rem; }
+.step-med-table .em-table th, .step-med-table .em-table td { overflow-wrap: anywhere; word-break: normal; min-width: 0; }
+.step-med-table .em-table.has-contra th:nth-child(1) { width: 23%; }
+.step-med-table .em-table.has-contra th:nth-child(2) { width: 27%; }
+.step-med-table .em-table.has-contra th:nth-child(3) { width: 21%; }
+.step-med-table .em-table.has-contra th:nth-child(4) { width: 29%; }
+.step-med-table .em-table:not(.has-contra) th:nth-child(1) { width: 26%; }
+.step-med-table .em-table:not(.has-contra) th:nth-child(2) { width: 30%; }
+.step-med-table .em-table:not(.has-contra) th:nth-child(3) { width: 44%; }
+.step-med-table .em-regimen-pills .pill { white-space: normal; max-width: 100%; text-align: left; }
+@container (max-width: 860px) {
+  .step-med-table .em-table, .step-med-table .em-table tbody, .step-med-table .em-table tr, .step-med-table .em-table tbody th, .step-med-table .em-table td { display: block; width: auto; }
+  .step-med-table .em-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .step-med-table .em-table tbody tr { padding: .35rem 0 .6rem; border-top: 1px solid var(--royal-line); }
+  .step-med-table .em-table tbody tr:first-child { border-top: 0; }
+  .step-med-table .em-table tbody th, .step-med-table .em-table td { border: 0; padding: .45rem .9rem; }
+  .step-med-table .em-table td[data-label]::before { content: attr(data-label); display: block; margin-bottom: .2rem; font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--tp-muted, #475569); }
+}
