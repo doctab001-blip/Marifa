@@ -39,6 +39,29 @@ export const ABBREVIATION_EXPANSION_RULE =
 const filler = /\b(it is important to note|plays a crucial role|a wide range of|comprehensive|in conclusion)\b/i;
 const locator = /\b(p{1,2}\.?\s*\d+|page\s*\d|section\s*[\w.]+|table\s*[\w.]+|figure\s*[\w.]+|recommendation\s*[\w.]+|rec\.?\s*\d|appendix\s*[\w.]+)\b/i;
 
+/**
+ * Words that only say who orders a test, where, or how important it is. A "what it means / next step" entry made
+ * entirely of these ("Essential test.", "At PHC level.", "Baseline.") tells the clinician nothing about the result.
+ */
+const ROLE_ONLY_WORDS = new Set(
+  `essential desirable optional baseline routine core basic recommended consider mandatory required useful
+  test tests testing investigation investigations work-up workup assessment screen screening check check-up checkup
+  all every each any patients patient child children neonates visit visits contact first
+  at in on for with when if where unless before after during the a an of to and or is are be
+  phc level centre center tertiary district secondary primary hospital facility
+  part annual intermittent symptoms symptom suspected suspicion high low
+  available use conditional unavailable usual finding findings
+  sick days atypical cases case sepsis meningitis fever without focus other diagnoses cervical length
+  cause contraindicated preoperative surgery transfusion hydroxyurea
+  electrical injury enclosed-space fires teach mothers`.split(/\s+/),
+);
+
+/** True when the interpretation/next-step text names only a role, setting or frequency and no meaning or action. */
+export function isRoleOnlyInterpretation(value: string): boolean {
+  const words = value.replace(/\([^)]*\)/g, "").toLowerCase().match(/[a-z0-9-]+/g) ?? [];
+  return words.length > 0 && words.length <= 9 && words.every((word) => ROLE_ONLY_WORDS.has(word));
+}
+
 function text(value: unknown): string {
   return JSON.stringify(value);
 }
@@ -103,6 +126,9 @@ export function auditTopicContent(content: unknown, options: AuditOptions = {}):
   check(investigations.every((item) => Boolean(item.normalValue)));
   check(investigations.every((item) => Boolean(item.expectedFinding)));
   check(investigations.every((item) => Boolean(item.clinicalRationale)));
+  const roleOnly = investigations.filter((entry) => entry.clinicalRationale && isRoleOnlyInterpretation(entry.clinicalRationale));
+  check(roleOnly.length === 0);
+  roleOnly.forEach((entry) => failures.push(`Investigation “${entry.testName}” next step is only “${entry.clinicalRationale}”; say what the result means or what to do next.`));
   check(investigations.every((item) => Boolean(item.references?.length)));
   check(investigations.every((item) => item.references?.every((reference) => locator.test(reference.edition))));
 
