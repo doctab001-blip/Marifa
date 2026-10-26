@@ -15,12 +15,16 @@
     "findings": [
       "Rewritten from the pasted draft using the Saudi Initiative for Asthma (SINA) 2024 child acute-asthma pathway.",
       "Every included dose, threshold and disposition step is traced to SINA 2024 Section 10 or Box 10.3.",
-      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from paediatric-asthma-discharge-plan-sina-2024-20261018-v4-live."
+      "Medicine list restructured into a branched decision pathway on 2026-10-18. Doses, routes, adjustments, monitoring, contraindications and sources are unchanged from paediatric-asthma-discharge-plan-sina-2024-20261018-v4-live.",
+      "Management sequence reformatted on 2026-10-26: first step is an ABCDE survey where the topic is acute; every drug mention is a medication badge (drug, dose, route, frequency, duration) copied from this topic's medicine table; side-effect, contraindication and dose-adjustment wording was removed from the sequence (it stays in the medicine table). No other clinical content was changed.",
+      "[SUPPLEMENTED - EXTERNAL] ABCDE first-step doses (oxygen, 0.9% sodium chloride bolus, 10% glucose) are standard resuscitation doses from Resuscitation Council UK ABCDE approach (2021) for adults and APLS 6th edition (2016) for children; they were not taken from this topic's cited sources.",
+      "[SUPPLEMENTED - EXTERNAL] Oxygen 10–15 L/min and continuous back-to-back nebulised salbutamol: standard paediatric figures (APLS 2016 oxygen; continuous nebulisation uses the table's single nebuliser doses); not stated in the medicine table."
     ],
     "unverifiedSections": [
       "Saudi Food and Drug Authority registration could not be independently confirmed in this task for salbutamol, ipratropium bromide, prednisolone or dexamethasone; check the SFDA register and hospital formulary before prescribing.",
       "Local paediatric oxygen-delivery, monitoring and escalation policies must be followed.",
-      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use."
+      "Medicine pathway: branch entry criteria, preferred options and “use when” conditions were assigned from this topic's own indications and management steps. Confirm each against the cited guideline before clinical use.",
+      "Management sequence reformat (26 Oct 2026): badge doses were matched to the medicine table by wording, not re-opened against the cited source pages; ABCDE content is standard resuscitation guidance. A clinician must confirm before approval."
     ],
     "medscapeStatus": "unavailable",
     "originalVersionIds": [
@@ -170,13 +174,26 @@
   },
   "clinicalManagement": [
     {
+      "id": "abcde-concurrent-survey",
+      "title": "ABCDE survey with concurrent correction",
+      "timeframe": "Immediately, on arrival",
+      "actions": [
+        "Work through Airway, Breathing, Circulation, Disability and Exposure in order, and correct each abnormality concurrently as it is found: do not wait for the full survey, investigations or a diagnosis before treating a life-threatening problem, and call for senior help early.",
+        "Airway: look, listen and feel for obstruction; open it with a neutral head position (head tilt in older children) or jaw thrust, suction secretions, use an oropharyngeal airway if unconscious and call for expert paediatric airway help if it cannot be kept patent.",
+        "Breathing: count respiratory rate, measure SpO2, check recession, grunting, nasal flaring and air entry; if SpO2 is below 94% give [💊 Oxygen | 10–15 L/min via reservoir mask | Inhaled | Continuous | Until SpO2 94–98%, then titrate to target] and treat life-threatening chest problems as they are found.",
+        "Circulation: check heart rate, capillary refill and blood pressure, attach a monitor and secure IV access if the attack is severe (PRAM 8–12); if shocked give [💊 Sodium chloride 0.9% | 10 mL/kg | IV or IO bolus over 10 minutes | Reassess after each bolus; repeat if still shocked | Until perfusion restored].",
+        "Disability: assess responsiveness (alert, voice, pain, unresponsive), pupils and posture, and measure capillary glucose; if glucose is below 3 mmol/L give [💊 Glucose 10% | 2 mL/kg | IV or IO bolus | Repeat after 10 minutes if glucose remains below 3 mmol/L | Until glucose 3 mmol/L or above]; look for seizure activity.",
+        "Exposure: expose the child to examine fully while preventing heat loss; check temperature, skin (rash, bruising, wounds) and abdomen, then cover again."
+      ]
+    },
+    {
       "id": "initial",
       "title": "Immediate assessment and first hour",
       "timeframe": "At presentation and every 20 minutes during the first hour",
       "actions": [
         "Record vital signs, oxygen saturation and PRAM.",
-        "Give oxygen when required to maintain saturation ≥92%.",
-        "For initial home treatment, the written plan uses salbutamol 2–4 puffs by spacer every 20 minutes for up to three doses; seek medical advice promptly even if improved.",
+        "Give [💊 Oxygen | 10–15 L/min via reservoir mask | Inhaled | Continuous | Until SpO2 92% or above] when required.",
+        "For initial home treatment the written plan uses [💊 Salbutamol | 2–4 puffs | Inhaled by metered-dose inhaler (MDI) with spacer | Every 20 minutes for up to three doses | Initial home management only]; seek medical advice promptly even if improved.",
         "In the emergency department, use the PRAM-directed pathway and reassess after treatment."
       ]
     },
@@ -185,9 +202,9 @@
       "title": "Moderate or severe attack",
       "timeframe": "First 60 minutes",
       "actions": [
-        "For PRAM 4–7, use weight-based salbutamol and add ipratropium bromide every 20 minutes for the first hour.",
-        "Give systemic steroid after the first SABA dose when indicated.",
-        "For PRAM 8–12, establish intravenous access, monitor closely, consider continuous nebulised salbutamol and contact paediatric intensive care."
+        "For PRAM 4–7 use weight-based [💊 Salbutamol | under 20 kg: 5 puffs by MDI/spacer or 2.5 mg nebulised; 20 kg or more: 10 puffs by MDI/spacer or 5 mg nebulised | Inhaled | Every 20 minutes, directed by the PRAM pathway | First hour and reassessment] and add [💊 Ipratropium bromide | 4 puffs by MDI/spacer or 250 micrograms nebulised | Inhaled | Every 20 minutes for the first hour | First hour only].",
+        "After the first SABA dose, when indicated, give [💊 Prednisolone | 1–2 mg/kg (maximum 20 mg under 2 years, 30 mg at 2–5 years, 60 mg at 5–12 years) | Oral | Once daily | 3–5 days total] or [💊 Dexamethasone | 0.6 mg/kg (maximum 16 mg) | Oral | Second dose the following day | Two-day course].",
+        "For PRAM 8–12, establish IV access, monitor closely, consider continuous nebulised [💊 Salbutamol | 2.5 mg (under 20 kg) or 5 mg (20 kg or more) per nebulisation, repeated back to back | Inhaled, continuous nebulisation | Back to back doses | Until PRAM improves] and contact paediatric intensive care."
       ]
     },
     {
@@ -196,7 +213,7 @@
       "timeframe": "After sustained response; observe one hour after the last bronchodilator when the pathway specifies",
       "actions": [
         "Discharge only if PRAM ≤3 after observation and the child is clinically stable.",
-        "Provide salbutamol every 4–6 hours for 24 hours then as needed, complete the prescribed oral steroid course, continue inhaled corticosteroid until the next clinic review if indicated, and supply a written action plan.",
+        "Provide [💊 Salbutamol | 2–4 puffs | Inhaled by MDI with spacer | Every 4–6 hours for 24 hours, then as needed | 24 hours, then as needed], complete the oral steroid course ([💊 Prednisolone | 1–2 mg/kg (maximum 20 mg under 2 years, 30 mg at 2–5 years, 60 mg at 5–12 years) | Oral | Once daily | 3–5 days total] or [💊 Dexamethasone | 0.6 mg/kg (maximum 16 mg) | Oral | Second dose the following day | Two-day course]), continue the inhaled corticosteroid until the next clinic review if indicated, and supply a written action plan.",
         "Observe the child and caregiver demonstrating one-puff-at-a-time spacer use: shake the inhaler, seal mouthpiece or mask, actuate one puff, allow several normal breaths, then repeat as prescribed.",
         "Arrange clinic review within one week."
       ]

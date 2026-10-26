@@ -5,8 +5,8 @@
   "specialty": "Paediatrics / Infectious Diseases / Paediatric Critical Care",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-set-2-2026-10-24-v1",
-  "lastReviewed": "2026-10-24",
+  "version": "india-set-2-2026-10-24-v2",
+  "lastReviewed": "2026-10-25",
   "pillar": "Urgent Care",
   "clinicalReviewStatus": "pending",
   "evidenceAudit": {
@@ -30,7 +30,7 @@
    ]
   },
   "pathophysiology": {
-   "summary": "Dengue is a mosquito-borne flavivirus infection with yearly epidemics across India. Most children have a febrile phase of 2–7 days with fever, myalgia, rash and headache. Around defervescence, a critical phase of increased capillary permeability can cause plasma leakage, rising haematocrit, pleural effusion, ascites and shock, sometimes with bleeding and organ involvement. Warning signs (abdominal pain, persistent vomiting, fluid accumulation, mucosal bleeding, liver enlargement over 2 cm) identify children who need hospital care (ICMR STW). Careful, haematocrit-guided fluid therapy prevents both shock and fluid overload; platelet transfusion is rarely needed.",
+   "summary": "Dengue is a mosquito-borne flavivirus infection with yearly epidemics across India. Most children have a febrile phase of 2–7 days with fever, myalgia, rash and headache. Around defervescence, a critical phase of increased capillary permeability can cause plasma leakage, rising haematocrit, pleural effusion, ascites and shock, sometimes with bleeding and organ involvement. Warning signs (abdominal pain, persistent vomiting, fluid accumulation, mucosal bleeding, liver enlargement over 2 cm) identify children who need hospital care (ICMR STW). Careful, haematocrit-guided fluid therapy prevents both shock and fluid overload; platelet transfusion is rarely needed. The danger window is the 24–48 hours around defervescence: a child whose fever settles may look better while plasma leaks silently, so a falling temperature is a reason to look harder, not to discharge. Infants, obese children and those with secondary infection are at higher risk of severe dengue.",
    "keyMechanisms": [
     "Viral infection and immune activation increase vascular permeability.",
     "Plasma leakage causes haemoconcentration, effusions and hypovolaemic shock.",
@@ -43,7 +43,8 @@
     "High fever 2–7 days",
     "Headache, retro-orbital pain, myalgia, arthralgia, rash (ICMR STW)",
     "Nausea, vomiting (ICMR STW)",
-    "Abdominal pain (warning sign)"
+    "Abdominal pain (warning sign)",
+    "Restlessness, lethargy or reduced urine output (impending shock)"
    ],
    "physicalSigns": [
     "Positive tourniquet test",
@@ -66,19 +67,27 @@
   "differentials": [
    {
     "condition": "Malaria",
-    "distinguishingFeatures": "Smear or RDT positive."
+    "distinguishingFeatures": "Fever with chills, pallor and splenomegaly in an endemic area; a positive smear or rapid diagnostic test settles it."
    },
    {
     "condition": "Chikungunya",
-    "distinguishingFeatures": "Prominent arthritis, less thrombocytopenia."
+    "distinguishingFeatures": "Prominent, often disabling polyarthritis with less thrombocytopenia and no plasma leak; chikungunya IgM or PCR settles it."
    },
    {
     "condition": "Scrub typhus",
-    "distinguishingFeatures": "Eschar, lymphadenopathy; IgM positive."
+    "distinguishingFeatures": "Eschar, lymphadenopathy and raised transaminases in the monsoon; scrub typhus IgM ELISA settles it."
    },
    {
     "condition": "Enteric fever",
-    "distinguishingFeatures": "Gradual fever, relative bradycardia; blood culture."
+    "distinguishingFeatures": "Gradually rising fever over a week, abdominal pain and relative bradycardia; blood culture settles it."
+   },
+   {
+    "condition": "Leptospirosis",
+    "distinguishingFeatures": "Exposure to flood water, calf pain, conjunctival suffusion, jaundice and kidney injury; leptospira IgM settles it."
+   },
+   {
+    "condition": "Bacterial sepsis with shock",
+    "distinguishingFeatures": "Toxic child with a focus, high white count and early shock without haemoconcentration; blood culture and procalcitonin help settle it."
    }
   ],
   "diagnosticCriteria": [
@@ -230,7 +239,8 @@
     "timeframe": "Hospital",
     "actions": [
      "Ringer's lactate or normal saline 10 mL/kg/hour (ICMR STW).",
-     "Reassess at 1–2 hours with PCV; if improving taper 10, 7, 5 and 3 mL/kg/hour; stop by 48 hours (ICMR STW)."
+     "Reassess at 1–2 hours with PCV; if improving taper 10, 7, 5 and 3 mL/kg/hour; stop by 48 hours (ICMR STW).",
+     "Not improving or PCV rising at reassessment: increase Ringer lactate to 15 mL/kg/hour, then colloid 10 mL/kg/hour, reassessing hourly (ICMR STW)."
     ]
    },
    {
@@ -258,7 +268,8 @@
     "title": "Discharge",
     "timeframe": "When criteria met",
     "actions": [
-     "No fever for 48 hours, rising platelets, stable PCV without IV fluids, observed 24 hours after stopping fluids (ICMR STW)."
+     "No fever for 48 hours, rising platelets, stable PCV without IV fluids, observed 24 hours after stopping fluids (ICMR STW).",
+     "Explain warning signs to parents and the need to return at once if abdominal pain, vomiting, bleeding or lethargy appears (usual practice)."
     ]
    }
   ],
@@ -292,7 +303,7 @@
      "frequency": "Every 4–6 hours as needed",
      "duration": "During fever",
      "adjustments": [
-      "Paediatric: This is the paediatric dose (ICMR Fever in Children STW).",
+      "Paediatric: This is the paediatric dose (ICMR Fever in Children STW); in dengue keep to a maximum of 60 mg/kg/day to limit liver injury (usual practice).",
       "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
       "CKD: No adjustment.",
       "CLD: Avoid high doses if liver involvement."
@@ -315,7 +326,7 @@
      "indication": "Dengue with warning signs",
      "patientGroup": "Children",
      "genericName": "Ringer lactate",
-     "dose": "10 mL/kg/hour, then taper to 7, 5 and 3 mL/kg/hour as PCV and vitals improve",
+     "dose": "10 mL/kg/hour for 1–2 hours; if improving taper to 7 (2–3 hours), 5 (2–4 hours) and 3 mL/kg/hour (2–4 hours); if not improving or PCV rising, 15 mL/kg/hour, then colloid 10 mL/kg/hour",
      "route": "IV",
      "frequency": "Continuous",
      "duration": "Stop by 48 hours",
@@ -426,10 +437,10 @@
      "sourceEdition": "ICMR STW, October 2019, section Indications for platelet transfusion and packed red cells"
     },
     {
-     "indication": "Overt blood loss of 10% or more of blood volume or refractory shock",
+     "indication": "Overt blood loss of 10% or more of blood volume, refractory shock, or fluid overload needing blood rather than more fluid (ICMR STW)",
      "patientGroup": "Children",
      "genericName": "Packed red cells",
-     "dose": "10 mL/kg",
+     "dose": "10 mL/kg (usual practice; ICMR gives no volume)",
      "route": "IV",
      "frequency": "As indicated",
      "duration": "Reassess PCV",
@@ -493,6 +504,146 @@
      "url": "https://www.nib.gov.in/media/Good Blood Transfusion Practices Guidance.pdf",
      "locator": "section 4 (platelets)"
     }
+   ],
+   "vignette": {
+    "text": "Riya, a 9-year-old girl from Delhi weighing 28 kg, is brought in October on day 5 of illness. Her fever settled this morning, but she now has abdominal pain, has vomited four times and is lethargic. Pulse is 128/min, BP 100/86 mmHg, capillary refill 3 seconds and the liver is palpable 3 cm below the costal margin. Haematocrit is 46% (it was 38% two days ago) and platelets are 38,000/cumm.",
+    "fictitious": true
+   },
+   "guidedApproach": [
+    {
+     "title": "Leak, not bleeding, is the main problem",
+     "prompt": "Why do children with dengue go into shock as the fever settles?",
+     "guidance": "Dengue virus infects monocytes and endothelium, and the host immune response — stronger in secondary infection with a different serotype — releases cytokines that make capillaries leaky. During the critical phase around defervescence plasma leaks into the pleural and peritoneal spaces, the haematocrit rises and circulating volume falls. Children compensate with tachycardia and vasoconstriction, so the pulse pressure narrows before the BP falls; hypotension is a late sign. Thrombocytopenia is common but bleeding is usually minor unless shock is prolonged, when acidosis and coagulopathy develop. After 24–48 hours the leak stops and fluid is reabsorbed, so continuing IV fluids causes overload.",
+     "section": "pathophysiology"
+    },
+    {
+     "title": "Warning signs and early shock",
+     "prompt": "Which findings change management?",
+     "guidance": "Classify each child. Dengue without warning signs can be managed at home with daily review. Warning signs — abdominal pain or tenderness, persistent vomiting, clinical fluid accumulation, mucosal bleeding, lethargy or restlessness, liver enlargement over 2 cm, and a rising haematocrit with falling platelets — mean admission. Look for compensated shock: tachycardia, cool peripheries, capillary refill over 2 seconds and a pulse pressure under 20 mmHg, even with a normal systolic BP. Severe dengue includes shock or respiratory distress from fluid accumulation, severe bleeding and organ impairment such as hepatitis, encephalopathy or myocarditis.",
+     "section": "signs-symptoms"
+    },
+    {
+     "title": "Use the haematocrit to steer fluids",
+     "prompt": "What do the tests tell you?",
+     "guidance": "NS1 antigen confirms dengue in the first 5 days and IgM after day 5, but treatment does not wait for confirmation. A baseline haematocrit taken early in the illness is the reference point: a rise of 20% or more indicates plasma leak (WHO), while a falling haematocrit in an unstable child suggests concealed bleeding. Check haematocrit before and after each fluid bolus and every few hours during resuscitation. Platelets guide transfusion only when below 10,000/cumm or with bleeding. Chest X-ray and ultrasound show effusions and gallbladder wall oedema; liver and kidney function and albumin show organ involvement. Always test for malaria and other co-infections.",
+     "section": "investigations"
+    },
+    {
+     "title": "Fluid that is enough, but not too much",
+     "prompt": "How do you give fluids in dengue with warning signs and shock?",
+     "guidance": "For warning signs without shock give Ringer lactate or saline 10 mL/kg/hour, reassess at 1–2 hours with the haematocrit and, if improving, taper to 7, 5 and 3 mL/kg/hour, stopping by 48 hours; if not improving, increase to 15 mL/kg/hour and then colloid 10 mL/kg/hour. For shock give 20 mL/kg crystalloid over 15 minutes, then reassess heart rate, BP, perfusion and haematocrit; if the haematocrit is still high, repeat crystalloid or colloid 10–20 mL/kg; if it falls while the child is unstable, suspect bleeding and give packed red cells 10 mL/kg. Use paracetamol 15 mg/kg for fever and avoid NSAIDs, aspirin and IM injections. Give platelets only below 10,000/cumm, in prolonged shock or with massive bleeding.",
+     "section": "management"
+    }
+   ],
+   "boardQuestions": [
+    {
+     "id": "q1",
+     "vignette": "A 9-year-old girl on day 5 of dengue has abdominal pain, repeated vomiting and lethargy. Her fever settled this morning. Pulse 128/min, BP 100/86 mmHg, capillary refill 3 seconds. Haematocrit has risen from 38% to 46% and platelets are 38,000/cumm.",
+     "fictitious": true,
+     "question": "What is the best immediate management?",
+     "options": [
+      {
+       "id": "A",
+       "text": "Platelet transfusion",
+       "explanation": "Platelets are given only below 10,000/cumm, in prolonged shock or with major bleeding (ICMR STW)."
+      },
+      {
+       "id": "B",
+       "text": "Oral fluids and discharge as fever has settled",
+       "explanation": "The narrow pulse pressure and rising haematocrit show compensated shock in the critical phase."
+      },
+      {
+       "id": "C",
+       "text": "Crystalloid 20 mL/kg over 15 minutes, then reassess with haematocrit",
+       "explanation": "Correct. A pulse pressure under 20 mmHg with poor perfusion is shock; give a 20 mL/kg bolus and reassess (ICMR STW)."
+      },
+      {
+       "id": "D",
+       "text": "Ibuprofen for abdominal pain",
+       "explanation": "NSAIDs are avoided in dengue because of bleeding and kidney risk (ICMR STW)."
+      },
+      {
+       "id": "E",
+       "text": "Ringer lactate 3 mL/kg/hour",
+       "explanation": "This is a tapering rate, far too little for shock."
+      }
+     ],
+     "answer": "C",
+     "educationalObjective": "Recognise compensated dengue shock.",
+     "keyPoint": "Narrow pulse pressure is shock even with a normal systolic BP."
+    },
+    {
+     "id": "q2",
+     "vignette": "A 7-year-old boy with dengue shock received two crystalloid boluses of 20 mL/kg. He remains tachycardic with cold peripheries. His haematocrit has fallen from 48% to 36% and he has had a dark, tarry stool in the last hour with little urine since. Platelets are 22,000/cumm.",
+     "fictitious": true,
+     "question": "What is the most likely problem and next step?",
+     "options": [
+      {
+       "id": "A",
+       "text": "Ongoing plasma leak; give colloid 20 mL/kg",
+       "explanation": "A falling haematocrit in an unstable child points to bleeding, not leak."
+      },
+      {
+       "id": "B",
+       "text": "Concealed bleeding; transfuse packed red cells 10 mL/kg",
+       "explanation": "Correct. A falling haematocrit with persistent shock suggests bleeding needing blood (ICMR STW)."
+      },
+      {
+       "id": "C",
+       "text": "Fluid overload; give furosemide",
+       "explanation": "He is still in shock, so diuretics would worsen perfusion."
+      },
+      {
+       "id": "D",
+       "text": "Myocarditis; stop all fluids",
+       "explanation": "Myocarditis is possible, but the haematocrit fall and melaena point to bleeding first."
+      },
+      {
+       "id": "E",
+       "text": "Prophylactic platelets only",
+       "explanation": "Platelets alone do not replace lost red cells or restore circulation."
+      }
+     ],
+     "answer": "B",
+     "educationalObjective": "Interpret the haematocrit during resuscitation.",
+     "keyPoint": "Unstable with a falling haematocrit: think bleeding and transfuse."
+    },
+    {
+     "id": "q3",
+     "vignette": "A 6-year-old girl was admitted with dengue warning signs and has received IV fluids for 52 hours. Her fever has gone for 2 days, platelets are rising and she now has puffy eyelids, a respiratory rate of 40/min and new bilateral crackles. Haematocrit is 32%.",
+     "fictitious": true,
+     "question": "What is the most appropriate step?",
+     "options": [
+      {
+       "id": "A",
+       "text": "Another 20 mL/kg crystalloid bolus",
+       "explanation": "She is not in shock; more fluid would worsen overload."
+      },
+      {
+       "id": "B",
+       "text": "Platelet transfusion",
+       "explanation": "Platelets are rising and there is no bleeding."
+      },
+      {
+       "id": "C",
+       "text": "Start antibiotics for pneumonia and continue fluids",
+       "explanation": "The picture is reabsorption of leaked fluid, not infection."
+      },
+      {
+       "id": "D",
+       "text": "Colloid 10 mL/kg",
+       "explanation": "Colloid adds volume to an already overloaded circulation."
+      },
+      {
+       "id": "E",
+       "text": "Stop IV fluids, monitor closely and seek senior review for a diuretic if she stays stable",
+       "explanation": "Correct. Fluids should stop by 48 hours; in the recovery phase reabsorption causes overload (ICMR STW)."
+      }
+     ],
+     "answer": "E",
+     "educationalObjective": "Recognise fluid overload in the recovery phase.",
+     "keyPoint": "Stop IV fluids by 48 hours; recovery brings reabsorption."
+    }
    ]
   },
   "nonClinicalManagement": {
@@ -514,6 +665,186 @@
     "Good appetite and urine output, no respiratory distress (ICMR STW)"
    ],
    "followUpPlan": "Daily review in the febrile and critical phases; review after discharge if symptoms recur."
-  }
+  },
+  "algorithms": [
+   {
+    "id": "dengue-pathway",
+    "title": "Child with suspected dengue: fluid decisions",
+    "placement": "manage",
+    "nodes": [
+     {
+      "id": "start",
+      "kind": "start",
+      "text": "Child with fever 2–7 days and suspected dengue",
+      "next": [
+       {
+        "to": "shock"
+       }
+      ]
+     },
+     {
+      "id": "shock",
+      "kind": "decision",
+      "text": "Shock: weak rapid pulse, pulse pressure under 20 mmHg, cold clammy skin or hypotension?",
+      "next": [
+       {
+        "to": "bolus",
+        "label": "Yes"
+       },
+       {
+        "to": "warn",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "bolus",
+      "kind": "action",
+      "text": "Crystalloid 20 mL/kg over 15 minutes; check PCV before and after",
+      "next": [
+       {
+        "to": "better"
+       }
+      ]
+     },
+     {
+      "id": "better",
+      "kind": "decision",
+      "text": "Improving after the bolus?",
+      "next": [
+       {
+        "to": "taper",
+        "label": "Yes"
+       },
+       {
+        "to": "pcv",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "taper",
+      "kind": "action",
+      "text": "Reduce to 10 mL/kg/hour, then 7, 5, 3 mL/kg/hour as vitals and PCV improve; stop by 48 hours",
+      "next": [
+       {
+        "to": "over"
+       }
+      ]
+     },
+     {
+      "id": "over",
+      "kind": "decision",
+      "text": "Breathlessness, crackles, puffy eyelids or effusions in recovery (fluid overload)?",
+      "next": [
+       {
+        "to": "stopfl",
+        "label": "Yes"
+       },
+       {
+        "to": "done",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "stopfl",
+      "kind": "outcome",
+      "text": "Stop IV fluids; senior or PICU review; diuretic only if haemodynamically stable"
+     },
+     {
+      "id": "done",
+      "kind": "outcome",
+      "text": "Discharge when afebrile 48 hours, platelets rising and PCV stable off fluids"
+     },
+     {
+      "id": "pcv",
+      "kind": "decision",
+      "text": "PCV rising or still high?",
+      "next": [
+       {
+        "to": "colloid",
+        "label": "Yes"
+       },
+       {
+        "to": "bleed",
+        "label": "No (falling)"
+       }
+      ]
+     },
+     {
+      "id": "colloid",
+      "kind": "outcome",
+      "text": "Repeat crystalloid or colloid 10–20 mL/kg; correct acidosis, calcium, glucose; consider inotropes"
+     },
+     {
+      "id": "bleed",
+      "kind": "outcome",
+      "text": "Suspect concealed bleeding: packed red cells 10 mL/kg; blood products if coagulopathy"
+     },
+     {
+      "id": "warn",
+      "kind": "decision",
+      "text": "Any warning sign (abdominal pain, persistent vomiting, fluid accumulation, mucosal bleeding, liver over 2 cm)?",
+      "next": [
+       {
+        "to": "adm",
+        "label": "Yes"
+       },
+       {
+        "to": "home",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "adm",
+      "kind": "action",
+      "text": "Admit: Ringer lactate 10 mL/kg/hour, reassess at 1–2 hours with PCV",
+      "next": [
+       {
+        "to": "admbetter"
+       }
+      ]
+     },
+     {
+      "id": "admbetter",
+      "kind": "decision",
+      "text": "Improving with a stable PCV?",
+      "next": [
+       {
+        "to": "admtaper",
+        "label": "Yes"
+       },
+       {
+        "to": "adm15",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "admtaper",
+      "kind": "outcome",
+      "text": "Taper 7, 5, 3 mL/kg/hour over the next hours; stop by 48 hours"
+     },
+     {
+      "id": "adm15",
+      "kind": "outcome",
+      "text": "Ringer lactate 15 mL/kg/hour, then colloid 10 mL/kg/hour; reassess hourly; treat as shock if it develops"
+     },
+     {
+      "id": "home",
+      "kind": "outcome",
+      "text": "Oral fluids, paracetamol, no NSAIDs; daily review with PCV and platelets; return if warning signs"
+     }
+    ],
+    "source": {
+     "title": "Standard Treatment Workflow: Dengue Fever (ICMR / Department of Health Research)",
+     "edition": "ICMR STW, October 2019",
+     "url": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1725952338_paediatrics_dengue_fever.pdf",
+     "locator": "sections Warning signs, Fluid management"
+    }
+   }
+  ]
  }
 ]

@@ -791,13 +791,16 @@
       "scope": "Adults in India; six-tier source-based revision. Clinical review pending.",
       "findings": [
         "National Centre for Disease Control (NCDC) and Indian Council of Medical Research (ICMR): joint Version 2.0, November 2025 verified directly on the title page. World Health Organization (WHO) guidance is supplementary.",
-        "India regional topic. Indian national antimicrobial guidance takes precedence over older ICMR text. WHO AWaRe (Access, Watch, Reserve) warnings identify stewardship category, not an automatic indication. Check hospital formulary, product strength and local antibiogram. No Saudi registration claim is made for this India adaptation."
+        "India regional topic. Indian national antimicrobial guidance takes precedence over older ICMR text. WHO AWaRe (Access, Watch, Reserve) warnings identify stewardship category, not an automatic indication. Check hospital formulary, product strength and local antibiogram. No Saudi registration claim is made for this India adaptation.",
+        "Management sequence reformatted on 2026-10-26: first step is an ABCDE survey where the topic is acute; every drug mention is a medication badge (drug, dose, route, frequency, duration) copied from this topic's medicine table; side-effect, contraindication and dose-adjustment wording was removed from the sequence (it stays in the medicine table). No other clinical content was changed.",
+        "[SUPPLEMENTED - EXTERNAL] ABCDE first-step doses (oxygen, 0.9% sodium chloride bolus, 10% glucose) are standard resuscitation doses from Resuscitation Council UK ABCDE approach (2021) for adults and APLS 6th edition (2016) for children; they were not taken from this topic's cited sources."
       ],
       "unverifiedSections": [
         "Hospital antibiogram, stocked Indian product licences, local infusion preparation and operational referral arrangements require local clinical/pharmacy confirmation.",
         "Local pneumococcal susceptibility, choice between the national and WHO higher-risk branches and duration policy need infection-specialist sign-off.",
         "Numerical dexamethasone organ-impairment adjustments are not supplied by the opened meningitis sources; individual product confirmation remains required.",
-        "Proposed 48-hour empirical authorisation cap is a governance safeguard, not a universal treatment-course maximum. SFDA registration is outside India scope."
+        "Proposed 48-hour empirical authorisation cap is a governance safeguard, not a universal treatment-course maximum. SFDA registration is outside India scope.",
+        "Management sequence reformat (26 Oct 2026): badge doses were matched to the medicine table by wording, not re-opened against the cited source pages; ABCDE content is standard resuscitation guidance. A clinician must confirm before approval."
       ],
       "medscapeStatus": "unavailable",
       "originalVersionIds": [
@@ -1230,11 +1233,24 @@
     "clinicalScenario": "Fictitious teaching case: an adult presents with fever, headache and new confusion. Obtain blood cultures and decide whether lumbar puncture is safe while preparing immediate treatment. Imaging must not become a barrier to antibiotics.",
     "clinicalManagement": [
       {
+        "id": "abcde-concurrent-survey",
+        "title": "ABCDE survey with concurrent correction",
+        "timeframe": "Immediately, on arrival",
+        "actions": [
+          "Work through Airway, Breathing, Circulation, Disability and Exposure in order, and correct each abnormality concurrently as it is found: do not wait for the full survey, investigations or a diagnosis before treating a life-threatening problem, and call for senior help early.",
+          "Airway: look, listen and feel for obstruction; open it with head tilt–chin lift or jaw thrust, suction secretions, insert an oropharyngeal airway if the patient is unconscious without a gag reflex, and call for expert airway help if it cannot be kept patent.",
+          "Breathing: count respiratory rate, measure SpO2, check work of breathing and listen to both lungs; if SpO2 is below 94% give [💊 Oxygen | 15 L/min via reservoir mask | Inhaled | Continuous | Until SpO2 94–98%, then titrate to target] and treat life-threatening chest problems as they are found.",
+          "Circulation: check pulse, blood pressure, capillary refill and skin perfusion; attach a cardiac monitor, secure IV access, take blood samples and control external bleeding; for hypotension or poor perfusion give [💊 Sodium chloride 0.9% | 500 mL | IV bolus over 15 minutes | Reassess after each bolus; repeat if still hypoperfused | Until perfusion restored].",
+          "Disability: assess responsiveness (alert, voice, pain, unresponsive), Glasgow Coma Scale and pupils, and measure capillary glucose; if glucose is below 4 mmol/L give [💊 Glucose 10% | 150–200 mL | IV infusion over 15 minutes | Repeat once after 10 minutes if glucose remains below 4 mmol/L | Until glucose 4 mmol/L or above]; look for focal weakness and seizure activity.",
+          "Exposure: expose the patient to examine fully while keeping them warm and their dignity protected; check temperature, skin (rash, bruising, wounds), abdomen and legs, then cover again.",
+          "Call critical care for airway compromise, shock or ongoing seizures (WHO sections B.1, B.4 and B.6)."
+        ]
+      },
+      {
         "id": "stabilise",
         "title": "Stabilise, protect staff and prepare specimens",
         "timeframe": "Immediate; treatment within 1 hour of admission",
         "actions": [
-          "Assess airway, breathing, circulation and neurological status; call critical care for airway compromise, shock or ongoing seizures (WHO sections B.1, B.4 and B.6).",
           "Take cultures and bloods while preparing antibiotics; initiate treatment as soon as possible and within 1 hour of admission. Do not wait for imaging or puncture results (NCDC–ICMR section 2.3; WHO toolkit, slide 33).",
           "Use droplet precautions when meningococcal infection is suspected and involve infection control for the duration and contact assessment; do not improvise a prophylaxis regimen."
         ]
@@ -1254,10 +1270,10 @@
         "title": "Select one empirical antibacterial pathway",
         "timeframe": "Immediately after cultures when obtainable without delay",
         "actions": [
-          "Use ceftriaxone as the standard community-acquired backbone. Add vancomycin only when resistant pneumococci are a concern; check the local antibiogram (NCDC–ICMR section 2.3).",
-          "For Listeria risk, add ampicillin to the ceftriaxone pathway. Do not treat pregnancy as ordinary undifferentiated fever (NCDC–ICMR section 2.3; WHO section B.2.1).",
-          "The Indian table also gives a meropenem-plus-vancomycin alternative for immunocompromised adults or age >50 years. This replaces the ceftriaxone branch; it is not stacked on top. Discuss selection with infection specialists and document why broadening is required (NCDC–ICMR section 2.3).",
-          "Give eligible adjunctive dexamethasone with the first antibiotic dose. Stop when bacterial infection is unlikely or the identified pathogen does not justify continuation; maximum 4 days. Do not use this steroid pathway for cryptococcal meningitis or cerebral malaria (WHO section B.3; WHO toolkit slides 31–32)."
+          "Use the standard community-acquired backbone: [💊 Ceftriaxone | 2 g | IV infusion over at least 30 minutes | Every 12 hours | 10–14 days for the uncomplicated empirical plan; review at 48 hours]. Add a glycopeptide only when resistant pneumococci are a concern: [💊 Vancomycin | 25 mg/kg loading dose, then 15 mg/kg per dose (maximum 2 g per dose) | IV infusion over at least 1 hour (maximum 10 mg/min) | Every 8–12 hours, then level-guided | Review at 48 hours; stop when resistance is excluded] (NCDC–ICMR section 2.3).",
+          "For Listeria risk add [💊 Ampicillin | 2 g | IV | Every 4 hours | Stop at microbiology review if Listeria is excluded; confirmed Listeria 21 days] to the standard backbone. Do not treat pregnancy as ordinary undifferentiated fever (NCDC–ICMR section 2.3; WHO section B.2.1).",
+          "The Indian table also gives an alternative two-drug combination for immunocompromised adults or age over 50 years: [💊 Meropenem | 2 g | IV | Every 8 hours | 10–14 days; review at 48 hours] with [💊 Vancomycin | 25 mg/kg loading dose, then 15 mg/kg per dose (maximum 2 g per dose) | IV infusion over at least 1 hour (maximum 10 mg/min) | Every 8–12 hours, then level-guided | Review at 48 hours; narrow or stop when the pathogen permits]. This replaces the standard backbone; it is not stacked on top. Discuss selection with infection specialists and document why broadening is required (NCDC–ICMR section 2.3).",
+          "Give eligible adjunctive [💊 Dexamethasone | 10 mg | IV | Every 6 hours, with the first antibiotic dose | Maximum 4 days] and stop earlier when bacterial infection is unlikely or the identified pathogen does not justify continuation (WHO section B.3; WHO toolkit slides 31–32)."
         ]
       },
       {

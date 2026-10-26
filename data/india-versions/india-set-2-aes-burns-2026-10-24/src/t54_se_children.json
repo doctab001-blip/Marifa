@@ -5,8 +5,8 @@
   "specialty": "Paediatrics / Paediatric Neurology / Emergency Medicine / Critical Care",
   "authority": "ICMR",
   "status": "under_review",
-  "version": "india-set-2-2026-10-24-v1",
-  "lastReviewed": "2026-10-24",
+  "version": "india-set-2-2026-10-24-v2",
+  "lastReviewed": "2026-10-25",
   "pillar": "Urgent Care",
   "clinicalReviewStatus": "pending",
   "evidenceAudit": {
@@ -20,8 +20,8 @@
    ],
    "unverifiedSections": [
     "IAP does not rank second-line drugs; phenytoin is listed first by ICMR and is marked preferred.",
-    "Calcium and pyridoxine are not addressed in the IAP chapter.",
-    "Maintenance doses after loading are not given.",
+    "Maintenance doses after loading are taken from the US labels (Drugs.com), dextrose from the BC status epilepticus guideline (2011) and pyridoxine from the LHSC NICU manual, because the IAP chapter gives none. Calcium and magnesium replacement follows the electrolyte topics.",
+    "IAP gives no limit on the number of benzodiazepine doses; giving no more than two is usual practice. The age criterion for a pyridoxine trial (infants under 2 years) is usual practice; the dose is from LHSC.",
     "Drug cautions, contraindications and renal or hepatic adjustment lines without a source tag are general pharmacology statements and need formulary confirmation."
    ],
    "medscapeStatus": "unavailable",
@@ -30,7 +30,7 @@
    ]
   },
   "pathophysiology": {
-   "summary": "Status epilepticus is the commonest neurological emergency in children. A convulsive seizure lasting 5 minutes or longer is treated as SE, because seizures beyond 30 minutes are likely to cause lasting neuronal injury (ILAE, quoted by IAP). In Indian children, common causes are febrile seizures, neuroinfection (meningitis, encephalitis, neurocysticercosis), poor adherence in known epilepsy, metabolic derangements and trauma. Treatment is time-based: rescue benzodiazepine at home or at first contact, IV benzodiazepine at 5–20 minutes, a second-line drug at 20–40 minutes, and ICU-based anaesthetic infusions for refractory SE, while correcting hypoglycaemia and finding the cause.",
+   "summary": "Status epilepticus is the commonest neurological emergency in children. A convulsive seizure lasting 5 minutes or longer is treated as SE, because seizures beyond 30 minutes are likely to cause lasting neuronal injury (ILAE, quoted by IAP). In Indian children, common causes are febrile seizures, neuroinfection (meningitis, encephalitis, neurocysticercosis), poor adherence in known epilepsy, metabolic derangements and trauma. Treatment is time-based: rescue benzodiazepine at home or at first contact, IV benzodiazepine at 5–20 minutes, a second-line drug at 20–40 minutes, and ICU-based anaesthetic infusions for refractory SE, while correcting hypoglycaemia and finding the cause. Every minute of delay matters: benzodiazepines given within 5–10 minutes stop most seizures, while those given after 30 minutes often fail, which is why rescue medicine at home and fixed time targets in hospital save brain.",
    "keyMechanisms": [
     "Failure of seizure-termination mechanisms and excess excitation sustain seizures.",
     "GABA-A receptors are internalised over time, so benzodiazepines work less well the longer SE lasts.",
@@ -41,7 +41,9 @@
   "presentation": {
    "symptoms": [
     "Continuous convulsion 5 minutes or more",
-    "Repeated seizures without regaining consciousness"
+    "Repeated seizures without regaining consciousness",
+    "Eye deviation, nystagmus or subtle twitching after visible jerks stop (non-convulsive SE)",
+    "Fever, vomiting or headache before the seizure (neuroinfection)"
    ],
    "physicalSigns": [
     "Tonic-clonic movements, eye deviation",
@@ -51,7 +53,7 @@
    ],
    "redFlags": [
     "Seizure continuing after two benzodiazepine doses: second-line drug now",
-    "Seizure beyond 60 minutes or needing anaesthetic drugs: PICU (IAP 2022)",
+    "Unstable at the second-line stage or refractory SE: PICU (IAP 2022)",
     "Hypoglycaemia",
     "Signs of raised intracranial pressure"
    ],
@@ -65,19 +67,27 @@
   "differentials": [
    {
     "condition": "Psychogenic non-epileptic events",
-    "distinguishingFeatures": "Eyes closed, resisting opening, preserved awareness."
+    "distinguishingFeatures": "Eyes closed and resisting opening, side-to-side head movement, preserved awareness; video EEG settles it."
    },
    {
     "condition": "Rigors",
-    "distinguishingFeatures": "Shivering with fever, no loss of awareness."
+    "distinguishingFeatures": "Shivering with high fever and preserved awareness, no post-ictal state; observation and normal consciousness settle it."
    },
    {
     "condition": "Dystonia from drugs",
-    "distinguishingFeatures": "Sustained postures with metoclopramide or antipsychotics."
+    "distinguishingFeatures": "Sustained twisting postures after metoclopramide or antipsychotics with intact awareness; drug history and response to an anticholinergic settle it."
    },
    {
     "condition": "Syncope with brief jerks",
-    "distinguishingFeatures": "Short duration, rapid recovery."
+    "distinguishingFeatures": "Pallor and a trigger, a few jerks lasting seconds and rapid recovery; history and ECG settle it."
+   },
+   {
+    "condition": "Hypoglycaemia",
+    "distinguishingFeatures": "Sweating, drowsiness and seizure in a fasting, ill or diabetic child; bedside glucose settles it."
+   },
+   {
+    "condition": "Raised intracranial pressure with posturing",
+    "distinguishingFeatures": "Decerebrate or decorticate posturing with bradycardia and hypertension, not seizures; CT and pupil examination settle it."
    }
   ],
   "diagnosticCriteria": [
@@ -226,7 +236,7 @@
     "actions": [
      "Load one second-line drug (see medicines) (IAP 2022; ICMR AES STW).",
      "Avoid valproate if liver disease or inborn error suspected; avoid phenobarbitone without ventilation backup (IAP 2022).",
-     "Known epilepsy on that drug: give half the loading dose (IAP 2022)."
+     "Already on that drug: at up to phenytoin 6, phenobarbitone 5, valproate 30 or levetiracetam 30 mg/kg/day, give a half dose; at larger doses avoid loading and give the maintenance dose (IAP 2022)."
     ]
    },
    {
@@ -234,7 +244,7 @@
     "title": "Refractory SE",
     "timeframe": "From 40–60 minutes",
     "actions": [
-     "PICU: midazolam infusion, or high-dose phenobarbitone, propofol or thiopentone with EEG (IAP 2022).",
+     "PICU with EEG: midazolam infusion, or high-dose phenobarbitone boluses 5–10 mg/kg every 30 minutes (up to 120 mg/kg/24 hours), propofol or thiopentone; enteral topiramate while tapering (IAP 2022).",
      "Treat raised ICP with mannitol or 3% saline; monitor rhabdomyolysis, arrhythmia and sepsis (IAP 2022)."
     ]
    },
@@ -266,6 +276,10 @@
     {
      "label": "Refractory SE",
      "entryCriteria": "Seizure continuing after a second-line drug (PICU)."
+    },
+    {
+     "label": "Correct the cause",
+     "entryCriteria": "Hypoglycaemia at any stage, or infant under 2 years with refractory seizures."
     }
    ],
    "regimens": [
@@ -332,7 +346,7 @@
      "genericName": "Lorazepam",
      "dose": "0.1 mg/kg (maximum 4 mg)",
      "route": "IV",
-     "frequency": "Once; repeat once after 5–10 minutes",
+     "frequency": "Once; repeat once after 5–10 minutes if still seizing (usual practice)",
      "duration": "Up to 2 doses",
      "adjustments": [
       "Paediatric: This is the paediatric dose (IAP STG 2022).",
@@ -416,10 +430,10 @@
      "indication": "Benzodiazepine-resistant SE",
      "patientGroup": "Children",
      "genericName": "Phenytoin",
-     "dose": "20 mg/kg in normal saline at 1 mg/kg/min; may repeat 10 mg/kg",
+     "dose": "20 mg/kg in normal saline at 1 mg/kg/min (not faster than 50 mg/min, label); may repeat 10 mg/kg",
      "route": "IV",
      "frequency": "Loading",
-     "duration": "Maintenance after 8–12 hours",
+     "duration": "Then maintenance after 8–12 hours (IAP); oral maintenance 4–8 mg/kg/day in divided doses (oral label, Drugs.com); check levels",
      "adjustments": [
       "Paediatric: This is the paediatric dose (IAP STG 2022).",
       "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
@@ -446,14 +460,14 @@
      "indication": "Benzodiazepine-resistant SE",
      "patientGroup": "Children",
      "genericName": "Levetiracetam",
-     "dose": "20–60 mg/kg at 5 mg/kg/min",
+     "dose": "20–60 mg/kg at 5 mg/kg/min (maximum 3 g, usual practice)",
      "route": "IV",
      "frequency": "Loading",
-     "duration": "Maintenance after 8–12 hours",
+     "duration": "Then maintenance: 1–under 6 months 7 mg/kg twice daily (maximum 21 mg/kg twice daily); 6 months–under 4 years 10 mg/kg twice daily (maximum 25 mg/kg twice daily); 4–16 years 10 mg/kg twice daily (maximum 30 mg/kg twice daily, not above 3000 mg/day) (label, Drugs.com)",
      "adjustments": [
       "Paediatric: This is the paediatric dose (IAP STG 2022).",
       "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
-      "CKD: Reduce maintenance in renal impairment.",
+      "CKD: The label gives no paediatric renal adjustment; reduce maintenance by creatinine clearance with specialist advice.",
       "CLD: No adjustment; preferred in liver dysfunction."
      ],
      "monitoring": [
@@ -478,7 +492,7 @@
      "dose": "20–40 mg/kg",
      "route": "IV",
      "frequency": "Loading",
-     "duration": "Maintenance after 8–12 hours",
+     "duration": "Then maintenance; enteral dosing 10–15 mg/kg/day increasing to effect, maximum 60 mg/kg/day (label, for 10 years and over)",
      "adjustments": [
       "Paediatric: This is the paediatric dose (IAP STG 2022).",
       "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
@@ -489,9 +503,7 @@
       "Liver tests, ammonia"
      ],
      "contraindications": [
-      "Liver disease",
-      "Suspected inborn error of metabolism",
-      "Under 2 years with unknown cause (caution)"
+      "Liver disease, suspected metabolic or POLG mitochondrial disease; under 2 years: high risk of fatal hepatotoxicity (label)"
      ],
      "branch": "Second line",
      "step": "Second-line antiseizure medicine",
@@ -509,7 +521,7 @@
      "dose": "20 mg/kg in normal saline at 2 mg/kg/min",
      "route": "IV",
      "frequency": "Loading",
-     "duration": "Maintenance after 8–12 hours",
+     "duration": "Then maintenance: 4–6 mg/kg/day for 7–10 days to a level of 10–15 micrograms/mL, or 10–15 mg/kg/day IM or IV (label, Drugs.com)",
      "adjustments": [
       "Paediatric: This is the paediatric dose (IAP STG 2022).",
       "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
@@ -617,6 +629,116 @@
      "sourceEdition": "IAP STG 2022, section Refractory SE",
      "preferred": false,
      "useWhen": "Midazolam fails; short-term use with monitoring."
+    },
+    {
+     "indication": "Bedside glucose below 3 mmol/L",
+     "patientGroup": "Children",
+     "genericName": "Dextrose 10%",
+     "dose": "5 mL/kg",
+     "route": "IV",
+     "frequency": "Bolus; recheck glucose",
+     "duration": "Until glucose normal",
+     "adjustments": [
+      "Paediatric: This is the paediatric dose (BC guideline).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "Glucose every 15–30 minutes after bolus"
+     ],
+     "contraindications": [
+      "Avoid hyperglycaemia; use 10%, not 25% or 50%, in children"
+     ],
+     "branch": "Correct the cause",
+     "step": "Glucose",
+     "selection": "all",
+     "sourceTitle": "Guideline for the management of convulsive status epilepticus in infants and children (Lee J, Huh L, Korn P, et al.)",
+     "sourceUrl": "https://bcmj.org/articles/guideline-management-convulsive-status-epilepticus-infants-and-children",
+     "sourceEdition": "BCMJ 2011;53(6):279-285, section Initial management"
+    },
+    {
+     "indication": "Infant under 2 years with refractory seizures, possible pyridoxine dependency (age criterion: usual practice)",
+     "patientGroup": "Infants",
+     "genericName": "Pyridoxine",
+     "dose": "100 mg",
+     "route": "IV over 10–15 minutes (or oral)",
+     "frequency": "Once; specialist may repeat",
+     "duration": "Maintenance 50–100 mg orally if responsive",
+     "adjustments": [
+      "Paediatric: 100 mg per dose IV over 10–15 minutes or orally; maintenance 50–100 mg orally (LHSC, for pyridoxine-dependent seizures).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: No adjustment.",
+      "CLD: No adjustment."
+     ],
+     "monitoring": [
+      "EEG if available; watch for apnoea and hypotonia after IV dose"
+     ],
+     "contraindications": [
+      "None in this setting"
+     ],
+     "branch": "Correct the cause",
+     "step": "Vitamin",
+     "selection": "all",
+     "sourceTitle": "Pyridoxine: NICU medication manual (London Health Sciences Centre)",
+     "sourceUrl": "https://lhsc.on.ca/nicu/pyridoxine",
+     "sourceEdition": "LHSC NICU medication manual, sections Dose, Administration"
+    },
+    {
+     "indication": "Refractory SE where infusions are unavailable or as an adjunct",
+     "patientGroup": "Children",
+     "genericName": "Phenobarbitone (high dose)",
+     "dose": "5–10 mg/kg boluses every 30 minutes, up to 120 mg/kg over 24 hours; maintenance up to 40 mg/kg/day",
+     "route": "IV",
+     "frequency": "Every 30 minutes as boluses",
+     "duration": "Until seizures controlled; ventilation needed",
+     "adjustments": [
+      "Paediatric: This is the paediatric dose (IAP STG 2022).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Caution in renal impairment.",
+      "CLD: Caution in liver failure."
+     ],
+     "monitoring": [
+      "Ventilation, BP, levels"
+     ],
+     "contraindications": [
+      "Use only with ventilation and BP support available"
+     ],
+     "branch": "Refractory SE",
+     "step": "Anaesthetic infusion",
+     "selection": "one-of",
+     "sourceTitle": "Evaluation and Management of Status Epilepticus in Children (IAP Standard Treatment Guidelines)",
+     "sourceUrl": "https://iapindia.org/pdf/Ch-040-evaluation-and-management-of-status-epilepticus-in-children.pdf",
+     "sourceEdition": "IAP STG 2022, section Refractory SE",
+     "preferred": false,
+     "useWhen": "Midazolam infusion ineffective or unavailable, in PICU."
+    },
+    {
+     "indication": "Refractory SE while tapering anaesthetic agents",
+     "patientGroup": "Children",
+     "genericName": "Topiramate",
+     "dose": "2–5 mg/kg enteral loading, increase by 5–10 mg/kg/day to a maximum of 25 mg/kg/day",
+     "route": "Orogastric or nasogastric",
+     "frequency": "Daily in divided doses",
+     "duration": "While tapering infusions",
+     "adjustments": [
+      "Paediatric: This is the paediatric dose (IAP STG 2022).",
+      "Penicillin allergy: Not an antibiotic; penicillin allergy does not change this medicine.",
+      "CKD: Reduce dose in renal impairment.",
+      "CLD: Caution in liver impairment."
+     ],
+     "monitoring": [
+      "Acidosis, sedation"
+     ],
+     "contraindications": [
+      "Metabolic acidosis, kidney stones"
+     ],
+     "branch": "Refractory SE",
+     "step": "Enteral adjunct",
+     "selection": "all",
+     "sourceTitle": "Evaluation and Management of Status Epilepticus in Children (IAP Standard Treatment Guidelines)",
+     "sourceUrl": "https://iapindia.org/pdf/Ch-040-evaluation-and-management-of-status-epilepticus-in-children.pdf",
+     "sourceEdition": "IAP STG 2022, section Refractory SE"
     }
    ],
    "note": "Doses are from IAP STG 2022 (status epilepticus), consistent with the ICMR AES in Children STW. India-only topic; the Saudi topic is unchanged. Not clinically reviewed."
@@ -652,6 +774,158 @@
      "edition": "ICMR STW, October 2019",
      "url": "https://icmr.gov.in/icmrobject/uploads/STWs/1725959608_paediatrics_acute_encephalitis_syndrome.pdf",
      "locator": "section Seizure control"
+    },
+    {
+     "title": "Guideline for the management of convulsive status epilepticus in infants and children (Lee J, Huh L, Korn P, et al.)",
+     "edition": "BCMJ 2011;53(6):279-285",
+     "url": "https://bcmj.org/articles/guideline-management-convulsive-status-epilepticus-infants-and-children",
+     "locator": "section Initial management"
+    },
+    {
+     "title": "Pyridoxine: NICU medication manual (London Health Sciences Centre)",
+     "edition": "LHSC NICU medication manual",
+     "url": "https://lhsc.on.ca/nicu/pyridoxine",
+     "locator": "section Dose"
+    }
+   ],
+   "vignette": {
+    "text": "Ishaan, a 2-year-old boy weighing 12 kg, is brought to the emergency department after convulsing for 15 minutes at home. His mother gave no rescue medicine. He has had fever for 2 days. He is still having generalised tonic-clonic movements, SpO2 is 90% on air, and bedside glucose is 4.6 mmol/L. IV access is obtained on the second attempt.",
+    "fictitious": true
+   },
+   "guidedApproach": [
+    {
+     "title": "Why benzodiazepines work less with time",
+     "prompt": "What changes in the brain as a seizure continues?",
+     "guidance": "A seizure normally stops because inhibitory GABA-A mechanisms and other termination processes overcome excitation. In status epilepticus these fail: within minutes, synaptic GABA-A receptors are internalised while NMDA and AMPA receptors move to the cell surface, so inhibition weakens and excitation strengthens. This explains why benzodiazepines are most effective when given early and lose much of their effect after 20–30 minutes. Prolonged seizures cause hypoxia, lactic acidosis, hyperthermia, rhabdomyolysis and excitotoxic neuronal death, especially in the hippocampus. Underlying causes in Indian children — fever, neuroinfection, neurocysticercosis, missed medicines and metabolic disturbances — drive recurrence and outcome.",
+     "section": "pathophysiology"
+    },
+    {
+     "title": "Recognise SE and its causes",
+     "prompt": "What should you look for during and after the seizure?",
+     "guidance": "Treat any convulsive seizure lasting 5 minutes, or repeated seizures without recovery in between, as status epilepticus. While treating, look for clues to the cause: fever and neck stiffness or a bulging fontanelle (meningitis or encephalitis), signs of raised intracranial pressure, trauma, a rash, a known epilepsy with missed doses, or a toxin. After visible jerks stop, check that consciousness improves; persistent eye deviation, nystagmus or subtle twitching with poor responsiveness suggests non-convulsive status epilepticus and needs EEG. Rigors, dystonia from drugs, syncope and psychogenic events can mimic seizures.",
+     "section": "signs-symptoms"
+    },
+    {
+     "title": "Glucose first, then the cause",
+     "prompt": "Which tests matter in the first hour?",
+     "guidance": "Check capillary glucose immediately and treat a value below 3 mmol/L with 10% dextrose 5 mL/kg. Send electrolytes, calcium, magnesium and a blood gas; correct hyponatraemia and hypocalcaemia, which can sustain seizures. In febrile children, take blood cultures and consider lumbar puncture once the child is stable and there is no contraindication. Image with CT if the child is unstable or has focal signs, and MRI when available. Antiseizure drug levels help in known epilepsy. Continuous EEG is used in the intensive care unit for refractory SE and to detect non-convulsive seizures after anaesthetic infusions.",
+     "section": "investigations"
+    },
+    {
+     "title": "Treat by the clock",
+     "prompt": "How do you treat paediatric SE step by step?",
+     "guidance": "At 5 minutes, give a rescue benzodiazepine: buccal or intranasal midazolam 0.1–0.2 mg/kg or rectal diazepam 0.5 mg/kg if there is no IV access, or IV lorazepam 0.1 mg/kg (maximum 4 mg), repeated once after 5–10 minutes. Do not give more than two benzodiazepine doses. If seizures continue, load one second-line drug: phenytoin 20 mg/kg in saline at 1 mg/kg/min, levetiracetam 20–60 mg/kg, valproate 20–40 mg/kg (avoid in liver or metabolic disease and under 2 years if possible) or phenobarbitone 20 mg/kg. Refractory SE needs intensive care with a midazolam infusion from 1 microgram/kg/min, EEG, and pyridoxine 100 mg IV in infants under 2 years.",
+     "section": "management"
+    }
+   ],
+   "boardQuestions": [
+    {
+     "id": "q1",
+     "vignette": "A 2-year-old boy weighing 12 kg has been convulsing for 15 minutes. He received IV lorazepam 1.2 mg 5 minutes ago and a second dose of 1.2 mg is now due. Glucose is 4.6 mmol/L and he has fever for 2 days. Airway and oxygenation are being supported.",
+     "fictitious": true,
+     "question": "If he is still seizing 5–10 minutes after the second lorazepam dose, what is the next step?",
+     "options": [
+      {
+       "id": "A",
+       "text": "A third dose of lorazepam",
+       "explanation": "Giving more than two benzodiazepine doses increases respiratory depression without benefit (usual practice)."
+      },
+      {
+       "id": "B",
+       "text": "Rectal paracetamol and observation",
+       "explanation": "Treating fever is reasonable but does not stop status epilepticus."
+      },
+      {
+       "id": "C",
+       "text": "Thiopentone infusion on the ward",
+       "explanation": "Anaesthetic infusions are for refractory SE in intensive care, after a second-line drug."
+      },
+      {
+       "id": "D",
+       "text": "Load a second-line drug, such as levetiracetam 20–60 mg/kg or phenytoin 20 mg/kg",
+       "explanation": "Correct. After two benzodiazepine doses, a second-line drug is given (IAP 2022)."
+      },
+      {
+       "id": "E",
+       "text": "Lumbar puncture now",
+       "explanation": "LP is delayed until seizures stop and the child is stable."
+      }
+     ],
+     "answer": "D",
+     "educationalObjective": "Escalate after benzodiazepine failure.",
+     "keyPoint": "Two benzodiazepine doses, then one second-line drug."
+    },
+    {
+     "id": "q2",
+     "vignette": "An 18-month-old girl with developmental delay is in the PICU with status epilepticus. She has received two doses of lorazepam, phenytoin 20 mg/kg and a midazolam infusion, and seizures continue on EEG. Glucose, sodium and calcium are normal and CSF is normal. She has no fever.",
+     "fictitious": true,
+     "question": "Which additional treatment should be given?",
+     "options": [
+      {
+       "id": "A",
+       "text": "Pyridoxine 100 mg IV with EEG monitoring",
+       "explanation": "Correct. In infants under 2 years with refractory seizures, a pyridoxine trial is given (LHSC)."
+      },
+      {
+       "id": "B",
+       "text": "Sodium valproate 40 mg/kg",
+       "explanation": "Valproate carries a high risk of fatal hepatotoxicity in children under 2, especially with possible metabolic disease (label)."
+      },
+      {
+       "id": "C",
+       "text": "Further lorazepam",
+       "explanation": "Benzodiazepine boluses are not repeated beyond two doses (IAP 2022)."
+      },
+      {
+       "id": "D",
+       "text": "Oral carbamazepine",
+       "explanation": "Oral drugs have no role in refractory status epilepticus."
+      },
+      {
+       "id": "E",
+       "text": "Stop the midazolam infusion",
+       "explanation": "Stopping the infusion while seizures continue would allow seizures to worsen."
+      }
+     ],
+     "answer": "A",
+     "educationalObjective": "Remember treatable metabolic causes in infants.",
+     "keyPoint": "Infant with refractory SE: give pyridoxine."
+    },
+    {
+     "id": "q3",
+     "vignette": "A 7-year-old boy with known epilepsy takes oral phenytoin 5 mg/kg/day with good adherence, confirmed by his mother. He presents in status epilepticus during a febrile illness and is still seizing after two IV doses of lorazepam. He weighs 20 kg. His liver function is normal.",
+     "fictitious": true,
+     "question": "What is the most appropriate second-line approach?",
+     "options": [
+      {
+       "id": "A",
+       "text": "Phenytoin 20 mg/kg as usual",
+       "explanation": "IAP advises a half dose when a child already takes up to 6 mg/kg/day of phenytoin, not a full 20 mg/kg load."
+      },
+      {
+       "id": "B",
+       "text": "No second-line drug, as he is already on phenytoin",
+       "explanation": "He is still seizing and needs a second-line drug now."
+      },
+      {
+       "id": "C",
+       "text": "Phenytoin at half dose (10 mg/kg) or a different second-line drug such as levetiracetam",
+       "explanation": "Correct. On phenytoin up to 6 mg/kg/day, IAP advises a half dose; switching to another second-line drug is also reasonable (IAP 2022)."
+      },
+      {
+       "id": "D",
+       "text": "Propofol infusion on the ward",
+       "explanation": "Propofol is an intensive care treatment for refractory status epilepticus."
+      },
+      {
+       "id": "E",
+       "text": "Diazepam infusion",
+       "explanation": "Further benzodiazepines are not recommended after two doses."
+      }
+     ],
+     "answer": "C",
+     "educationalObjective": "Adjust loading in children already on an antiseizure medicine.",
+     "keyPoint": "Already on phenytoin: half load or switch to another second-line drug."
     }
    ]
   },
@@ -673,6 +947,156 @@
     "Rescue medicine plan given"
    ],
    "followUpPlan": "Neurology review in 2–4 weeks; neurodevelopmental follow-up."
-  }
+  },
+  "algorithms": [
+   {
+    "id": "se-children-pathway",
+    "title": "Convulsive status epilepticus in children: time-based treatment",
+    "placement": "manage",
+    "nodes": [
+     {
+      "id": "start",
+      "kind": "start",
+      "text": "Convulsive seizure lasting 5 minutes or more",
+      "next": [
+       {
+        "to": "abc"
+       }
+      ]
+     },
+     {
+      "id": "abc",
+      "kind": "action",
+      "text": "Airway, oxygen, recovery position; check glucose (dextrose 10% 5 mL/kg if below 3 mmol/L)",
+      "next": [
+       {
+        "to": "iv"
+       }
+      ]
+     },
+     {
+      "id": "iv",
+      "kind": "decision",
+      "text": "IV access available?",
+      "next": [
+       {
+        "to": "ivb",
+        "label": "Yes"
+       },
+       {
+        "to": "buccal",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "buccal",
+      "kind": "action",
+      "text": "Buccal or intranasal midazolam 0.1–0.2 mg/kg, or rectal diazepam 0.5 mg/kg",
+      "next": [
+       {
+        "to": "stop1"
+       }
+      ]
+     },
+     {
+      "id": "stop1",
+      "kind": "decision",
+      "text": "Seizure stopped within 5–10 minutes?",
+      "next": [
+       {
+        "to": "cause1",
+        "label": "Yes"
+       },
+       {
+        "to": "ivb2",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "cause1",
+      "kind": "outcome",
+      "text": "Observe; find the cause (glucose, electrolytes, infection, imaging)"
+     },
+     {
+      "id": "ivb2",
+      "kind": "outcome",
+      "text": "Secure IV or IO access; one further benzodiazepine, then second-line drug at 20 minutes"
+     },
+     {
+      "id": "ivb",
+      "kind": "action",
+      "text": "IV lorazepam 0.1 mg/kg (maximum 4 mg); one repeat after 5–10 minutes",
+      "next": [
+       {
+        "to": "stop2"
+       }
+      ]
+     },
+     {
+      "id": "stop2",
+      "kind": "decision",
+      "text": "Still seizing after two benzodiazepine doses?",
+      "next": [
+       {
+        "to": "second",
+        "label": "Yes"
+       },
+       {
+        "to": "cause2",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "cause2",
+      "kind": "outcome",
+      "text": "Find and treat the cause; monitor for non-convulsive seizures"
+     },
+     {
+      "id": "second",
+      "kind": "action",
+      "text": "Phenytoin 20 mg/kg, levetiracetam 20–60 mg/kg, valproate 20–40 mg/kg or phenobarbitone 20 mg/kg",
+      "next": [
+       {
+        "to": "stop3"
+       }
+      ]
+     },
+     {
+      "id": "stop3",
+      "kind": "decision",
+      "text": "Still seizing after the second-line drug?",
+      "next": [
+       {
+        "to": "picu",
+        "label": "Yes"
+       },
+       {
+        "to": "maint",
+        "label": "No"
+       }
+      ]
+     },
+     {
+      "id": "picu",
+      "kind": "outcome",
+      "text": "Refractory SE: PICU with EEG; midazolam infusion, high-dose phenobarbitone, thiopentone or propofol; pyridoxine 100 mg IV if under 2 years (LHSC dose)"
+     },
+     {
+      "id": "maint",
+      "kind": "outcome",
+      "text": "Start maintenance after 8–12 hours; treat the cause"
+     }
+    ],
+    "source": {
+     "title": "Evaluation and Management of Status Epilepticus in Children (IAP Standard Treatment Guidelines)",
+     "edition": "IAP STG 2022",
+     "url": "https://iapindia.org/pdf/Ch-040-evaluation-and-management-of-status-epilepticus-in-children.pdf",
+     "locator": "sections Prehospital management, First-line, Second-line, Refractory SE"
+    }
+   }
+  ]
  }
 ]

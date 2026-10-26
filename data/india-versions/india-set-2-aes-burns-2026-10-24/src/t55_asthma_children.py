@@ -1,4 +1,5 @@
 from hx import *
+from hxdeep import node, algo, explain, bq, deepen
 TITLE = "Acute asthma in children (India)"
 IT = "section Initial treatment"; BG = "pp. 2–5 (IV doses, nebulised doses, severity, discharge)"
 PD = "This is the paediatric dose."
@@ -40,4 +41,105 @@ T = topic(
   "pitfalls": ["Nebuliser when spacer would work.", "Delaying steroids.", "Routine antibiotics.", "Discharge without an action plan."],
   "references": [tref("sign158", "section Initial treatment of acute asthma in children"), tref("bgh", "pp. 2–5")]},
  nonClinical={"patientEducation": ["Spacer technique and written action plan.", "Use preventer inhaler daily as prescribed.", "Return if reliever needed more than 4-hourly."], "lifestyleAndDiet": ["Avoid smoke from tobacco and biomass fuels.", "Influenza vaccination."], "mdtReferrals": ["PICU for life-threatening asthma", "Paediatric pulmonologist for frequent attacks"], "dischargeCriteria": ["Stable on 3–4-hourly bronchodilator (BGH)", "PEF above 75% predicted or best; SpO2 above 94% in air (BGH)"], "followUpPlan": "Review within 48 hours of discharge (BGH/SIGN 158)."})
+# Depth standard (2026-10-25)
+T["lastReviewed"] = "2026-10-25"
+T["pathophysiology"]["summary"] += " Children with frequent attacks often have under-treated persistent asthma, poor inhaler technique or no preventer, so every acute visit is a chance to check technique, start or step up an inhaled steroid, and reduce smoke exposure at home."
+T["presentation"]["symptoms"].append("Night-time or exercise-induced cough and wheeze before the attack (poor control)")
+T["differentials"] = [{"condition": c, "distinguishingFeatures": f} for c, f in [
+ ("Bronchiolitis", "Infant under 1 year with coryza, crackles and wheeze and poor bronchodilator response; clinical diagnosis by age and course."),
+ ("Pneumonia", "Fever, focal crackles or bronchial breathing and tachypnoea out of proportion to wheeze; chest X-ray consolidation settles it."),
+ ("Foreign body aspiration", "Sudden choking onset, unilateral wheeze or reduced air entry; chest X-ray air trapping and bronchoscopy settle it."),
+ ("Croup", "Barking cough and inspiratory stridor rather than expiratory wheeze; clinical diagnosis responds to steroid."),
+ ("Anaphylaxis", "Wheeze with urticaria, angioedema or hypotension after a trigger; clinical diagnosis — give IM adrenaline."),
+ ("Pneumothorax", "Sudden worsening with unilateral reduced breath sounds and hyper-resonance during an attack; chest X-ray settles it.")]]
+for m in T["clinicalManagement"]:
+    if m["id"] == "second":
+        m["actions"] = ["IV salbutamol or aminophylline under senior and PICU input (BGH/SIGN 158).", "Rising PaCO2, exhaustion or falling consciousness: call anaesthesia and PICU for airway support (BGH/SIGN 158)."]
+T["clinicalManagement"].insert(4, step("prevent", "Prevent the next attack", "Before discharge", [
+ "Check inhaler and spacer technique; start or step up an inhaled corticosteroid preventer if attacks are frequent (SIGN 158).",
+ "Advise avoiding tobacco and biomass smoke; give a written action plan and review within 48 hours (BGH/SIGN 158)."]))
+
+ALG = algo("asthma-children-pathway", "Acute asthma in children: grade and escalate", "manage", "sign158", "section Initial treatment of acute asthma in children", [
+ node("start", "start", "Child with acute wheeze and breathlessness", [("grade", None)]),
+ node("grade", "decision", "Life-threatening or severe: SpO2 below 92%, silent chest, exhaustion, confusion, PEF below 50%?", [("sev", "Yes"), ("mod", "No")]),
+ node("sev", "action", "Oxygen to 94–98%; nebulised salbutamol with ipratropium every 20–30 minutes; prednisolone; consider nebulised magnesium", [("resp", None)]),
+ node("resp", "decision", "Responding within the first hour?", [("ward", "Yes"), ("ivmg", "No")]),
+ node("ward", "outcome", "Admit; space salbutamol as tolerated; continue prednisolone"),
+ node("ivmg", "action", "IV magnesium 40 mg/kg (maximum 2 g)", [("resp2", None)]),
+ node("resp2", "decision", "Still not responding or rising PaCO2?", [("picu", "Yes"), ("ward2", "No")]),
+ node("picu", "outcome", "Senior and PICU: IV salbutamol or aminophylline; prepare for airway support"),
+ node("ward2", "outcome", "Admit; close monitoring and potassium checks"),
+ node("mod", "action", "Salbutamol by spacer, 1 puff every 30–60 seconds up to 10 puffs; prednisolone", [("better", None)]),
+ node("better", "decision", "Improved and stable on 3–4-hourly salbutamol?", [("home", "Yes"), ("sev2", "No")]),
+ node("home", "outcome", "Discharge with action plan, preventer review and follow-up in 48 hours"),
+ node("sev2", "outcome", "Treat as severe: nebulised salbutamol with ipratropium; admit")])
+
+VIG = "Meera, a 7-year-old girl from Lucknow weighing 22 kg, is brought in November with 2 days of cough and increasing wheeze after a cold. She lives in a household that cooks with wood. She can speak only a few words at a time, uses her neck muscles to breathe and has an SpO2 of 90% in air. Respiratory rate is 40/min, pulse 140/min, and peak flow is 40% of predicted. She uses a salbutamol inhaler without a spacer."
+
+EXP = [
+ explain("pathophysiology", "Inflammation, spasm and air trapping", "Why does an acute attack become dangerous?",
+  "Viral infection, smoke or allergen exposure triggers airway inflammation with mucosal oedema, mucus plugging and smooth-muscle contraction. Narrowed airways close early in expiration, trapping air and flattening the diaphragm, which increases the work of breathing. Uneven ventilation causes hypoxaemia. Early in an attack the child hyperventilates and PaCO2 falls; a normal or rising PaCO2 means fatigue and impending respiratory failure. A silent chest means so little air moves that wheeze cannot be heard. Beta-2 agonists relax smooth muscle within minutes, anticholinergics add bronchodilation in severe attacks, and steroids reduce inflammation over hours."),
+ explain("signs-symptoms", "Grade the attack in seconds", "Which signs define a severe or life-threatening attack?",
+  "Assess speech, work of breathing, air entry, SpO2, heart and respiratory rate, and peak flow in children aged 5 and over. A moderate attack has SpO2 of 92% or more, PEF 50–80% and the child can talk. A severe attack has SpO2 below 92%, PEF below 50%, inability to complete sentences or feed, and marked accessory muscle use. Life-threatening features are a silent chest, cyanosis, poor respiratory effort, exhaustion, confusion or drowsiness, and hypotension. Consider other diagnoses in infants under 2 years with poor response, and look for pneumothorax if a child suddenly worsens."),
+ explain("investigations", "Few tests, used wisely", "When are tests useful in acute asthma?",
+  "Pulse oximetry guides oxygen and severity, and peak flow in children aged 5 and over measures response and the discharge threshold of 75% or more. Most children need no blood tests or X-ray. Take a blood gas when the attack is severe or not improving: a PaCO2 above 6 kPa is a danger sign. A chest X-ray is reserved for severe or non-responding asthma, focal signs or suspected pneumothorax, collapse or consolidation. Check potassium when salbutamol is given repeatedly or intravenously, because beta-2 agonists drive potassium into cells."),
+ explain("management", "Bronchodilate early, add steroid, escalate on time", "How do you treat acute asthma step by step?",
+  "Give oxygen to keep SpO2 94–98%. For mild to moderate attacks give salbutamol by metered-dose inhaler and spacer, 1 puff every 30–60 seconds up to 10 puffs, repeated every 20–30 minutes; a spacer works as well as a nebuliser. Nebulise salbutamol (2.5 mg under 5 years, 5 mg from 5 years) with ipratropium 250 micrograms when SpO2 is below 92%. Give prednisolone early: 10 mg under 2 years, 20 mg at 2–5 years, 30–40 mg over 5 years, for up to 3 days. If there is no response, give IV magnesium 40 mg/kg (maximum 2 g), then IV salbutamol or aminophylline with PICU input.")]
+
+QS = [
+ bq("q1", "A 7-year-old girl has an asthma attack after a cold. She can say only a few words, SpO2 is 90% in air, respiratory rate 40/min and peak flow 40% of predicted. She has not yet had any treatment in the emergency department.", "What is the best initial treatment?",
+  [("Oral salbutamol syrup", "Oral salbutamol acts slowly and is not used for acute attacks."),
+   ("Oxygen, nebulised salbutamol 5 mg with ipratropium 250 micrograms, and oral prednisolone 30–40 mg", "Correct. SpO2 below 92% and PEF below 50% mean a severe attack needing oxygen, nebulised bronchodilators and early steroid (SIGN 158)."),
+   ("IV aminophylline first", "Aminophylline is second-line after inhaled therapy and magnesium fail."),
+   ("Amoxicillin for the cold", "Antibiotics are not routinely given in acute asthma."),
+   ("Chest X-ray before treatment", "Treatment must not wait; X-ray is only for selected children.")],
+  "B", "Treat a severe attack promptly.", "SpO2 below 92%: oxygen, nebulised salbutamol plus ipratropium, prednisolone."),
+ bq("q2", "A 5-year-old boy with a severe asthma attack has received three nebulised salbutamol and ipratropium doses and oral prednisolone over an hour. He is still working hard to breathe with SpO2 91% on oxygen and poor air entry. He weighs 18 kg and is alert.", "What is the next step?",
+  [("Another dose of prednisolone", "He has already received steroid, and a second dose adds no immediate effect."),
+   ("Discharge with an inhaler", "He is still severely unwell and needs escalation."),
+   ("Sedation to reduce distress", "Sedatives can depress breathing and are dangerous in acute asthma."),
+   ("IV magnesium sulfate 40 mg/kg (720 mg) over 20 minutes", "Correct. IV magnesium is the next step when severe asthma does not respond to inhaled therapy (BGH/SIGN 158)."),
+   ("Routine antibiotics", "There is no sign of bacterial infection and antibiotics will not relieve bronchospasm.")],
+  "D", "Escalate when inhaled therapy fails.", "No response after an hour: IV magnesium 40 mg/kg."),
+ bq("q3", "A 9-year-old girl has had three emergency visits for asthma this year. Today's attack has settled with salbutamol by spacer and prednisolone. Her peak flow is now 85% of predicted and SpO2 97% in air. She uses only a salbutamol inhaler without a spacer, and her family cooks with wood indoors.", "What is the most important addition to her discharge plan?",
+  [("A nebuliser for home use", "A spacer works as well as a nebuliser and is cheaper and quicker."),
+   ("Long-term oral prednisolone", "Long-term oral steroids are not appropriate for this level of asthma."),
+   ("Inhaled corticosteroid preventer with a spacer, smoke reduction and a written action plan", "Correct. Frequent attacks indicate a need for preventer therapy, good technique and trigger reduction (SIGN 158)."),
+   ("Antibiotics for 5 days", "Antibiotics treat bacterial infection and do not prevent asthma attacks."),
+   ("Avoid all exercise", "Exercise should be encouraged once asthma is controlled.")],
+  "C", "Prevent future attacks at discharge.", "Every attack is a chance to start a preventer and fix technique.")]
+
+T = deepen(T, [ALG], VIG, EXP, QS)
+
+# Reviewer fixes (independent check, 25 Oct 2026)
+for r in T["medicationPlan"]["regimens"]:
+    n = r["genericName"]
+    if n == "Aminophylline":
+        r["dose"] = "5 mg/kg (maximum 500 mg) over at least 20 minutes, then 1 mg/kg/hour (1 month–12 years) or 500–700 micrograms/kg/hour (over 12 years)"
+    if n == "Prednisolone":
+        r["adjustments"] = [a if not a.startswith("IV hydrocortisone") else "IV hydrocortisone if oral not retained: 4 mg/kg 4-hourly (2–12 years), 100 mg 6-hourly (over 12 years) (SIGN 158; BGH)." for a in r["adjustments"]]
+    if n == "Salbutamol (IV)":
+        r["dose"] = "Over 2 years 15 micrograms/kg over 10 minutes (1 month–2 years 5 micrograms/kg over 5 minutes); infusion 60–300 micrograms/kg/hour"
+    if n.startswith("Salbutamol (pMDI"):
+        r["patientGroup"] = "Children 1 year and over (under 2 with poor response: consider another diagnosis, SIGN 158)"
+    if n == "Ipratropium bromide":
+        r["duration"] = "Every 20–30 minutes in the first hours, then 4–6-hourly (BGH)"
+T["presentation"]["physicalSigns"] = [("SpO2 below 92% in air (severe, SIGN 158); give oxygen if below 94%" if s.startswith("SpO2 below 94%") else s) for s in T["presentation"]["physicalSigns"]]
+T["presentation"]["redFlags"] = [f.replace("(BGH/SIGN 158)", "(SIGN 158)") for f in T["presentation"]["redFlags"]]
+for b in T["teaching"]["guidedApproach"]:
+    b["guidance"] = b["guidance"].replace("A moderate attack has SpO2 of 92% or more, PEF 50–80% and the child can talk.", "A moderate attack has SpO2 of 92% or more (BGH bands moderate as 91–95%, which overlap), PEF 50–80% and the child can talk.")
+for m in T["clinicalManagement"]:
+    if m["id"] == "prevent":
+        m["actions"][0] = "Check inhaler and spacer technique; start or step up an inhaled corticosteroid preventer if attacks are frequent (SIGN 158, discharge and follow-up; see the Asthma: long-term care topic for preventer doses)."
+for q in T["teaching"]["boardQuestions"]:
+    if q["id"] == "q3":
+        for o in q["options"]:
+            if o["id"] == "C": o["explanation"] = "Correct. Frequent attacks indicate a need for preventer therapy, good technique and trigger reduction (SIGN 158, discharge and follow-up)."
+A = T["algorithms"][0]; N = {n["id"]: n for n in A["nodes"]}
+N["start"]["next"] = [{"to": "lt"}]
+N["grade"]["text"] = "Severe: SpO2 below 92%, PEF below 50%, cannot complete sentences, marked accessory muscle use?"
+N["mod"]["text"] = "Oxygen if SpO2 below 94%; salbutamol by spacer, 1 puff every 30–60 seconds up to 10 puffs; prednisolone"
+A["nodes"].insert(1, {"id": "lt", "kind": "decision", "text": "Life-threatening: silent chest, cyanosis, poor effort, exhaustion, confusion or hypotension?", "next": [{"to": "ltout", "label": "Yes"}, {"to": "grade", "label": "No"}]})
+A["nodes"].insert(2, {"id": "ltout", "kind": "outcome", "text": "Senior and PICU now: oxygen, back-to-back nebulised salbutamol with ipratropium, prednisolone or IV hydrocortisone, early IV magnesium 40 mg/kg, consider IV salbutamol"})
+
 save("t55_asthma_children.json", [T])
