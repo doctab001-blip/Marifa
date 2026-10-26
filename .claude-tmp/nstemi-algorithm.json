@@ -1,0 +1,302 @@
+{
+ "id": "nstemi-pathway-detailed",
+ "title": "Unstable angina and NSTEMI: risk and timing",
+ "placement": "manage",
+ "nodes": [
+  {
+   "id": "start",
+   "kind": "start",
+   "text": "Chest pain suggesting acute coronary syndrome (ACS): rest pain over 20 minutes, crescendo, new-onset or post-infarction",
+   "next": [
+    {
+     "to": "ecg"
+    }
+   ]
+  },
+  {
+   "id": "ecg",
+   "kind": "action",
+   "text": "12-lead electrocardiogram (ECG) within 10 minutes; draw troponin",
+   "detail": "Repeat ECG every 15–30 minutes if pain continues.",
+   "next": [
+    {
+     "to": "stemi"
+    }
+   ]
+  },
+  {
+   "id": "stemi",
+   "kind": "decision",
+   "text": "ST elevation on ECG?",
+   "next": [
+    {
+     "to": "o-stemi",
+     "label": "Yes"
+    },
+    {
+     "to": "other",
+     "label": "No"
+    }
+   ]
+  },
+  {
+   "id": "o-stemi",
+   "kind": "outcome",
+   "text": "ST-elevation myocardial infarction (STEMI): follow the STEMI pathway"
+  },
+  {
+   "id": "other",
+   "kind": "action",
+   "text": "Exclude other causes: aortic dissection, pulmonary embolism, pneumothorax, pericarditis",
+   "next": [
+    {
+     "to": "vh"
+    }
+   ]
+  },
+  {
+   "id": "vh",
+   "kind": "decision",
+   "text": "Very high risk?",
+   "detail": "Refractory pain, shock, acute heart failure, life-threatening arrhythmia, mechanical complication, or dynamic ST-T change.",
+   "next": [
+    {
+     "to": "vh-drugs",
+     "label": "Yes"
+    },
+    {
+     "to": "meds",
+     "label": "No"
+    }
+   ]
+  },
+  {
+   "id": "vh-drugs",
+   "kind": "action",
+   "text": "Aspirin 325 mg, heparin and ticagrelor; nitrate for pain. Do not wait for troponin",
+   "detail": "No beta-blocker in shock or heart failure.",
+   "next": [
+    {
+     "to": "o-imm"
+    }
+   ]
+  },
+  {
+   "id": "o-imm",
+   "kind": "outcome",
+   "text": "Angiography within 2 hours at a PCI centre",
+   "detail": "PCI = percutaneous coronary intervention. Not PCI-capable: transfer at once."
+  },
+  {
+   "id": "meds",
+   "kind": "action",
+   "text": "Aspirin 325 mg, then 75 mg daily",
+   "next": [
+    {
+     "to": "p2y12"
+    }
+   ]
+  },
+  {
+   "id": "p2y12",
+   "kind": "action",
+   "text": "P2Y12 inhibitor: ticagrelor first; prasugrel only if PCI planned; clopidogrel if neither suits",
+   "detail": "Ticagrelor 180 mg, then 90 mg twice daily. Avoid after brain bleed or with active bleeding.",
+   "next": [
+    {
+     "to": "anticoag"
+    }
+   ]
+  },
+  {
+   "id": "anticoag",
+   "kind": "action",
+   "text": "One anticoagulant: fondaparinux, enoxaparin or unfractionated heparin",
+   "detail": "Fondaparinux 2.5 mg daily (not if creatinine clearance below 20). Enoxaparin 1 mg/kg twice daily.",
+   "next": [
+    {
+     "to": "anti-ischaemic"
+    }
+   ]
+  },
+  {
+   "id": "anti-ischaemic",
+   "kind": "action",
+   "text": "Metoprolol unless heart failure, shock risk or AV block; atorvastatin 80 mg unless liver disease",
+   "detail": "Nitrate for pain unless systolic BP below 90 mmHg.",
+   "next": [
+    {
+     "to": "trop"
+    }
+   ]
+  },
+  {
+   "id": "trop",
+   "kind": "action",
+   "text": "Serial high-sensitivity troponin at 0 and 1 hour",
+   "detail": "Unclear: repeat at 3 hours. Conventional assay: repeat at 6 hours.",
+   "next": [
+    {
+     "to": "nstemi"
+    }
+   ]
+  },
+  {
+   "id": "nstemi",
+   "kind": "decision",
+   "text": "Troponin raised?",
+   "next": [
+    {
+     "to": "n-high",
+     "label": "Yes: NSTEMI"
+    },
+    {
+     "to": "u-high",
+     "label": "No: unstable angina"
+    }
+   ]
+  },
+  {
+   "id": "n-high",
+   "kind": "decision",
+   "text": "GRACE above 140, TIMI above 4 or dynamic ST-T change?",
+   "detail": "GRACE and TIMI scores: see the score tables.",
+   "next": [
+    {
+     "to": "o-n-early",
+     "label": "Yes"
+    },
+    {
+     "to": "n-int",
+     "label": "No"
+    }
+   ]
+  },
+  {
+   "id": "o-n-early",
+   "kind": "outcome",
+   "text": "Angiography within 24 hours",
+   "detail": "Same-day transfer if not PCI-capable."
+  },
+  {
+   "id": "n-int",
+   "kind": "decision",
+   "text": "GRACE 109–140 or TIMI 2–4?",
+   "next": [
+    {
+     "to": "o-n-delayed",
+     "label": "Yes"
+    },
+    {
+     "to": "o-n-low",
+     "label": "No"
+    }
+   ]
+  },
+  {
+   "id": "o-n-delayed",
+   "kind": "outcome",
+   "text": "Angiography within 72 hours",
+   "detail": "Earlier if pain recurs."
+  },
+  {
+   "id": "o-n-low",
+   "kind": "outcome",
+   "text": "Angiography during this admission",
+   "detail": "Troponin is raised: not low-risk."
+  },
+  {
+   "id": "u-high",
+   "kind": "decision",
+   "text": "GRACE above 140, TIMI above 4, dynamic ST-T change or recurrent pain?",
+   "next": [
+    {
+     "to": "o-u-early",
+     "label": "Yes"
+    },
+    {
+     "to": "u-int",
+     "label": "No"
+    }
+   ]
+  },
+  {
+   "id": "o-u-early",
+   "kind": "outcome",
+   "text": "Angiography within 24 hours"
+  },
+  {
+   "id": "u-int",
+   "kind": "decision",
+   "text": "GRACE 109–140 or TIMI 2–4?",
+   "next": [
+    {
+     "to": "o-u-delayed",
+     "label": "Yes"
+    },
+    {
+     "to": "low",
+     "label": "No"
+    }
+   ]
+  },
+  {
+   "id": "o-u-delayed",
+   "kind": "outcome",
+   "text": "Angiography within 72 hours",
+   "detail": "Earlier if pain recurs."
+  },
+  {
+   "id": "low",
+   "kind": "action",
+   "text": "Low risk: aspirin 75 mg, clopidogrel 75 mg, metoprolol and statin",
+   "next": [
+    {
+     "to": "low-test"
+    }
+   ]
+  },
+  {
+   "id": "low-test",
+   "kind": "action",
+   "text": "Non-invasive test within 1 week: CT coronary angiography, treadmill or stress imaging",
+   "next": [
+    {
+     "to": "low-fail"
+    }
+   ]
+  },
+  {
+   "id": "low-fail",
+   "kind": "decision",
+   "text": "Recurrent pain, new ECG change, ejection fraction below 40% or positive test?",
+   "next": [
+    {
+     "to": "o-low-invasive",
+     "label": "Yes"
+    },
+    {
+     "to": "o-discharge",
+     "label": "No"
+    }
+   ]
+  },
+  {
+   "id": "o-low-invasive",
+   "kind": "outcome",
+   "text": "Refer for angiography and revascularisation"
+  },
+  {
+   "id": "o-discharge",
+   "kind": "outcome",
+   "text": "Discharge with secondary prevention and early review",
+   "detail": "Pain-free, stable, ECG unchanged, troponin negative."
+  }
+ ],
+ "source": {
+  "title": "Standard Treatment Workflow: Unstable Angina / NSTEMI (ICMR / Department of Health Research)",
+  "edition": "ICMR STW, January 2026 (ESC 2023 ACS guideline, cited by the STW, used for items the STW does not state)",
+  "url": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1768823342_cardiology_1-4.pdf",
+  "locator": "Risk categorization, Risk category management, Drugs and dosage, Level-of-care actions, Revascularization strategy"
+ }
+}
