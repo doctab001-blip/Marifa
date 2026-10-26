@@ -1424,6 +1424,11 @@ h1, h2, h3, h4, h5, h6, .heading, .brand-name, .metric-value { font-family: var(
   .em-investigation-table tr { border-bottom: 1px solid var(--tp-hairline, #e2e8f0); padding: 6px 0; }
   .em-investigation-table td { border: 0; padding-top: 2px; }
   .em-investigation-table td::before { content: attr(data-label); display: block; color: var(--tp-muted, #475569); font-size: .72rem; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
+  .em-imaging-table thead { display: none; }
+  .em-imaging-table, .em-imaging-table tbody, .em-imaging-table tr, .em-imaging-table th, .em-imaging-table td { display: block; width: 100%; }
+  .em-imaging-table tr { border-bottom: 1px solid var(--tp-hairline, #e2e8f0); padding: 6px 0; }
+  .em-imaging-table td { border: 0; padding-top: 2px; }
+  .em-imaging-table td::before { content: attr(data-label); display: block; color: var(--tp-muted, #475569); font-size: .72rem; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
   .em-table tbody th { min-width: 100px; }
   .em-table th, .em-table td { padding: 9px 10px; }
 }
