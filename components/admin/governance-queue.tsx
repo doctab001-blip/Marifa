@@ -7,6 +7,7 @@ import { Check, X, XCircle } from "@/components/icons-3d";
 import type { GovernanceItem } from "@/lib/admin/data";
 import { Button } from "@/components/ui/button";
 import { approveGuidelineVersion } from "@/app/(workspace)/dashboard/admin/guidelines/actions";
+import { displayTopicTitle } from "@/lib/topic-title";
 
 type QueueAction = "Review" | "Reject";
 
@@ -23,7 +24,7 @@ export function GovernanceQueue({ items }: { items: GovernanceItem[] }) {
               <button className="ui-button ui-button-primary" type="submit" aria-label={`Approve ${item.title}, version ${item.versionNumber ?? "current"}`}><Check size={15} />Approve version</button>
               {item.versionNumber && <span>v{item.versionNumber}</span>}
             </form>}
-            <div className="admin-queue-copy"><span className={`admin-queue-status status-${item.status}`}>{item.status === "under_review" ? "Under review" : item.status === "published" ? "Published" : "Draft"}</span><h3>{item.title}</h3><p>{item.specialty} <span aria-hidden="true">·</span> Added {new Intl.DateTimeFormat("en-SA", { dateStyle: "medium", timeZone: "Asia/Riyadh" }).format(new Date(item.updatedAt))}</p></div>
+            <div className="admin-queue-copy"><span className={`admin-queue-status status-${item.status}`}>{item.status === "under_review" ? "Under review" : item.status === "published" ? "Published" : "Draft"}</span><h3>{displayTopicTitle(item.title)}</h3><p>{item.specialty} <span aria-hidden="true">·</span> Added {new Intl.DateTimeFormat("en-SA", { dateStyle: "medium", timeZone: "Asia/Riyadh" }).format(new Date(item.updatedAt))}</p></div>
             <div className="admin-queue-actions">
               {item.status === "published" ? <Link className="ui-button ui-button-secondary" href={`/dashboard/diseases/${encodeURIComponent(item.id)}`}>View topic</Link> : <>
                 {item.status === "draft" ? <Link className="ui-button ui-button-secondary" href={`/dashboard/admin/guidelines/${encodeURIComponent(item.id)}`}>Edit draft</Link> : <Button onClick={() => setSelected({ action: "Review", item })}>Review</Button>}
@@ -35,7 +36,7 @@ export function GovernanceQueue({ items }: { items: GovernanceItem[] }) {
       </div>
       <Dialog.Root open={Boolean(selected)} onOpenChange={(open) => { if (!open) setSelected(null); }}>
         <Dialog.Portal><Dialog.Overlay className="admin-dialog-overlay" /><Dialog.Content className="admin-dialog">
-          <div className="admin-dialog-header"><div><Dialog.Title>{selected?.action} guideline</Dialog.Title><Dialog.Description>{selected?.item.title}</Dialog.Description></div><Dialog.Close asChild><button className="dialog-close" aria-label="Close"><X size={18} /></button></Dialog.Close></div>
+          <div className="admin-dialog-header"><div><Dialog.Title>{selected?.action} guideline</Dialog.Title><Dialog.Description>{selected ? displayTopicTitle(selected.item.title) : null}</Dialog.Description></div><Dialog.Close asChild><button className="dialog-close" aria-label="Close"><X size={18} /></button></Dialog.Close></div>
           <p className="admin-form-note">This {selected?.action.toLowerCase()} action is a preview. No clinical content or governance status has been changed.</p>
           <Dialog.Close asChild><Button>Close</Button></Dialog.Close>
         </Dialog.Content></Dialog.Portal>

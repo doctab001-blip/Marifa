@@ -21,6 +21,7 @@ import { getSpotlightDevelopments } from "@/lib/data/recent-developments";
 import { getTopicViewStats } from "@/lib/data/topic-views";
 import { getCurrentViewer } from "@/lib/supabase/session";
 import { getDiseaseDraftTopicCount } from "@/lib/data/disease-drafts";
+import { displayTopicTitle } from "@/lib/topic-title";
 
 const dateFormat = new Intl.DateTimeFormat("en-SA", { dateStyle: "medium", timeZone: "Asia/Riyadh" });
 
@@ -90,7 +91,7 @@ async function DashboardContent({ initialSort, initialFilters, initialGrouped }:
     const views = viewStats.byTopic[disease.id];
     return {
       id: disease.id,
-      title: disease.title,
+      title: displayTopicTitle(disease.title),
       speciality: disease.speciality ?? disease.specialty,
       pillar: disease.pillar,
       authority: disease.authority,

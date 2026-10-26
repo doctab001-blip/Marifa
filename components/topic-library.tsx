@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowLeft, ChevronDown, ChevronLeft, ChevronRight } from "@/components/icons-3d";
+import { displayTopicTitle } from "@/lib/topic-title";
 
 export type TopicLink = { id: string; title: string };
 
@@ -21,14 +22,14 @@ export function TopicLibraryHeader({ pillar, topics, currentId, backHref = "/das
       {current ? (
         <details className="topic-switcher">
           <summary>
-            <span><span className="topic-switcher-position">Topic {index + 1} of {topics.length}</span><strong>{current.title}</strong></span>
+            <span><span className="topic-switcher-position">Topic {index + 1} of {topics.length}</span><strong>{displayTopicTitle(current.title)}</strong></span>
             <span className="topic-switcher-action">All topics <ChevronDown size={18} aria-hidden="true" /></span>
           </summary>
           <ol className="topic-switcher-list">
             {topics.map((topic, position) => (
               <li key={topic.id}>
                 <Link href={`/dashboard/diseases/${topic.id}`} aria-current={topic.id === currentId ? "page" : undefined}>
-                  <span>{position + 1}</span>{topic.title}
+                  <span>{position + 1}</span>{displayTopicTitle(topic.title)}
                 </Link>
               </li>
             ))}
@@ -46,8 +47,8 @@ export function TopicPager({ topics, currentId }: { topics: TopicLink[]; current
   const next = index < topics.length - 1 ? topics[index + 1] : undefined;
   return (
     <nav className="topic-pager" aria-label="Topic navigation">
-      {previous ? <Link href={`/dashboard/diseases/${previous.id}`} className="topic-pager-link"><ChevronLeft size={18} aria-hidden="true" /><span><small>Previous</small>{previous.title}</span></Link> : <span />}
-      {next ? <Link href={`/dashboard/diseases/${next.id}`} className="topic-pager-link is-next"><span><small>Next</small>{next.title}</span><ChevronRight size={18} aria-hidden="true" /></Link> : <span />}
+      {previous ? <Link href={`/dashboard/diseases/${previous.id}`} className="topic-pager-link"><ChevronLeft size={18} aria-hidden="true" /><span><small>Previous</small>{displayTopicTitle(previous.title)}</span></Link> : <span />}
+      {next ? <Link href={`/dashboard/diseases/${next.id}`} className="topic-pager-link is-next"><span><small>Next</small>{displayTopicTitle(next.title)}</span><ChevronRight size={18} aria-hidden="true" /></Link> : <span />}
     </nav>
   );
 }

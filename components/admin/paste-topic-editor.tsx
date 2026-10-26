@@ -7,6 +7,7 @@ import { CLINICAL_DIRECTORY_MINIMUM_SCORE } from "@/lib/clinical-authoring-audit
 import { parsePastedTopic, type PasteSectionReport } from "@/lib/topic-paste";
 import { buildFixPrompt, buildGeminiPrompt } from "@/lib/topic-paste-prompt";
 import type { DiseaseDetail } from "@/lib/validations/disease";
+import { displayTopicTitle } from "@/lib/topic-title";
 
 type Props = {
   base: DiseaseDetail;
@@ -99,7 +100,7 @@ export function PasteTopicEditor({ base, guidelineId, versionId, versionLabel, t
       <header className="paste-editor-head">
         <div>
           <p className="eyebrow">Paste editor · works offline, no AI credits used</p>
-          <h1>{base.title}</h1>
+          <h1>{displayTopicTitle(base.title)}</h1>
           <p className="paste-editor-sub">Editing from version <strong>{versionLabel}</strong>. Paste the complete topic from Gemini; Marifa sorts it under the right headings, scores it, and saves it as a new version. Earlier versions are always kept.</p>
         </div>
         <CopyButton

@@ -19,6 +19,7 @@ import { getGlobalDiseaseTopic } from "@/lib/data/global-topics";
 import { PLATFORM_REGION, REGION_COOKIE, getRegionOption, resolveRegion } from "@/lib/region";
 import { indiaReplacementFor, isTopicVisibleInRegion, topicCountry } from "@/lib/region-topics";
 import type { CountryCode } from "@/types/clinical";
+import { displayTopicTitle } from "@/lib/topic-title";
 
 function formatDate(date: string) {
   return new Intl.DateTimeFormat("en-GB", { day: "2-digit", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${date}T00:00:00Z`));
@@ -55,7 +56,7 @@ function TopicApprovalBar({ disease, message, position = "bottom", editHref }: {
           <form action={approveLiveTopic}>
             <input type="hidden" name="id" value={disease.id} />
             <input type="hidden" name="destination" value="approved" />
-            <TopicApproveButton title={disease.title} />
+            <TopicApproveButton title={displayTopicTitle(disease.title)} />
           </form>
         </>
       ) : (
@@ -133,11 +134,11 @@ export default async function DiseaseDetailPage({ params, searchParams }: { para
             <span className="pill pill-aqua">Clinical scenario</span>
             <span className="pill pill-sky">{disease.pillar}</span>
           </div>
-          <h1 id="scenario-title" className="scenario-title">{withoutInlineSourceLocators(family?.title ?? disease.title)}</h1>
+          <h1 id="scenario-title" className="scenario-title">{displayTopicTitle(withoutInlineSourceLocators(family?.title ?? disease.title))}</h1>
         </header>
         {displayedTopics.map((topic, index) => (
           <section className="topic-family-member" key={topic.disease.id} aria-labelledby={`family-topic-${topic.disease.id}`}>
-            {family ? <header className="topic-family-member-header"><p>Topic section {index + 1}</p><h2 id={`family-topic-${topic.disease.id}`}>{withoutInlineSourceLocators(topic.disease.title)}</h2></header> : null}
+            {family ? <header className="topic-family-member-header"><p>Topic section {index + 1}</p><h2 id={`family-topic-${topic.disease.id}`}>{displayTopicTitle(withoutInlineSourceLocators(topic.disease.title))}</h2></header> : null}
             <TopicApprovalBar disease={topic.disease} position="top" />
             {!version ? <p className="co-apply-bar"><ApplyProtocolPanel protocolId={topic.disease.id} protocolTitle={withoutInlineSourceLocators(topic.disease.title)} sourceModule="disease_management" /></p> : null}
             <EmergencyTopic disease={topic.disease} investigationSource={topic.investigationSource} />

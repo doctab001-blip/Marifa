@@ -6,6 +6,7 @@ import { ApplyProtocolPanel } from "@/components/clinical-orders/apply-protocol-
 import { ProtocolGovernancePanel } from "@/components/governance/protocol-governance-panel";
 import { getPublishedProtocol } from "@/lib/data/local-protocols";
 import { PROTOCOLS_PUBLISHED } from "@/lib/local-protocols";
+import { displayTopicTitle } from "@/lib/topic-title";
 
 function ErrorState({ invalid }: { invalid?: boolean }) {
   return (
@@ -32,7 +33,7 @@ export default async function LocalProtocolPage({ params }: { params: Promise<{ 
       <Link href={PROTOCOLS_PUBLISHED} className="disease-back-link"><ArrowLeft size={15} />Back to published protocols</Link>
       <article className="scenario-card" aria-labelledby="scenario-title">
         <p className="scenario-eyebrow">Local protocol · Emergency Department</p>
-        <h1 id="scenario-title" className="scenario-title">{protocol.title}</h1>
+        <h1 id="scenario-title" className="scenario-title">{displayTopicTitle(protocol.title)}</h1>
         <div className="scenario-chips">
           <span className="status status-draft">Version {protocol.version}</span>
           <span className="scenario-chip">{protocol.specialty}</span>

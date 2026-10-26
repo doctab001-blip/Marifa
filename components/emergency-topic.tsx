@@ -10,6 +10,7 @@ import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
 import { groupMedicationPlan, isBranchedMedicationPlan, type MedicationRegimen } from "@/lib/medication-pathway";
 import { ClinicalAlgorithms } from "@/components/clinical-algorithm";
 import { BoardQuestions, TeachingVignette } from "@/components/board-questions";
+import { findingWithNormal, importantNormalValue } from "@/lib/investigation-display";
 
 type Investigation = DiseaseDetail["investigations"]["ruleIn"][number];
 
@@ -76,7 +77,7 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
   const allTests = [...disease.investigations.ruleIn, ...disease.investigations.ruleOut];
   const labs = allTests.filter((item) => !isImaging(item));
   const imaging = allTests.filter(isImaging);
-  const showNormal = labs.some((item) => item.normalValue);
+  const showNormal = labs.some((item) => importantNormalValue(item.normalValue, item.expectedFinding));
   const testChoices = allTests.filter((item) => item.pros?.length || item.cons?.length);
   const medicationPlan = disease.medicationPlan ?? getMedicationPlan(disease.id);
   const hasContraindications = Boolean(medicationPlan?.regimens.some((regimen) => regimen.contraindications?.length));
@@ -137,20 +138,19 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
         ) : null}
         <div className="em-table-wrap">
           <table className="em-table em-investigation-table">
-            <thead><tr><th scope="col">Test</th>{showNormal ? <th scope="col">Normal</th> : null}<th scope="col">In this condition</th><th scope="col">What it means / next step</th></tr></thead>
+            <thead><tr><th scope="col">Test</th><th scope="col">In this condition</th><th scope="col">What it means / next step</th></tr></thead>
             <tbody>
               {labs.map((item) => (
                 <tr key={item.testName}>
                   <th scope="row">{item.testName}<small>{item.modalityTarget}</small></th>
-                  {showNormal ? <td data-label="Normal">{withoutInlineSourceLocators(item.normalValue ?? "—")}</td> : null}
-                  <td data-label="In this condition" className="em-deranged">{withoutInlineSourceLocators(item.expectedFinding)}</td>
+                  <td data-label="In this condition" className="em-deranged">{findingWithNormal(withoutInlineSourceLocators(item.expectedFinding), item.normalValue ? withoutInlineSourceLocators(item.normalValue) : null)}</td>
                   <td data-label="What it means">{withoutInlineSourceLocators(item.clinicalRationale)}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-        {showNormal ? <p className="em-footnote">Normal values are typical adult reference ranges; use your own laboratory&apos;s ranges.</p> : null}
+        {showNormal ? <p className="em-footnote">Normal values in brackets are typical adult reference ranges; use your own laboratory&apos;s ranges.</p> : null}
 
         {testChoices.length ? testChoices.map((item) => (
           <div key={`choice-${item.testName}`} className="em-proscons">

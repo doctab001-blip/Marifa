@@ -1,6 +1,7 @@
 import { AlertTriangle, CheckCircle2, HeartPulse, Pill, Stethoscope } from "lucide-react";
 import { GovernanceDrawer } from "@/components/clinical/GovernanceDrawer";
 import type { ClinicalTopic } from "@/types/clinical";
+import { displayTopicTitle } from "@/lib/topic-title";
 
 export function ClinicalTopicView({ topic }: { topic: ClinicalTopic }) {
   const { saudiPracticeProfile: practice } = topic;
@@ -23,7 +24,7 @@ export function ClinicalTopicView({ topic }: { topic: ClinicalTopic }) {
             </span>
             <div>
               <p className="text-sm font-medium text-emerald-700">Disease Management</p>
-              <h1 className="mt-1 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">{topic.title}</h1>
+              <h1 className="mt-1 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">{displayTopicTitle(topic.title)}</h1>
             </div>
           </div>
         </div>
