@@ -6,8 +6,7 @@
   {
    "id": "start",
    "kind": "start",
-   "text": "Chest pain or an equivalent suggesting acute coronary syndrome (ACS): rest angina over 20 minutes, crescendo angina, new-onset class II/III angina within 1 month, or post-infarction angina",
-   "detail": "Atypical presentations count: exertional breathlessness or fatigue, sweating, epigastric discomfort, especially in diabetes, women and the elderly. Pain is unlikely to be angina if pricking or stabbing, localised to a point, reproduced by neck/arm movement or breathing, or confined above the jaw or below the epigastrium (ICMR).",
+   "text": "Chest pain suggesting acute coronary syndrome (ACS): rest pain over 20 minutes, crescendo, new-onset or post-infarction",
    "next": [
     {
      "to": "ecg"
@@ -17,8 +16,8 @@
   {
    "id": "ecg",
    "kind": "action",
-   "text": "Record a 12-lead electrocardiogram (ECG) within 10 minutes, repeat every 15–30 minutes while pain continues, and draw troponin now",
-   "detail": "Add leads V7–V9 if there is ST depression in V1–V3 (possible posterior infarction). Keep on a monitor with a defibrillator at hand. Source: ECG and troponin from the ICMR STW; repeat timing and posterior leads from ESC 2023 (not in the STW text).",
+   "text": "12-lead electrocardiogram (ECG) within 10 minutes; draw troponin",
+   "detail": "Repeat ECG every 15–30 minutes if pain continues.",
    "next": [
     {
      "to": "stemi"
@@ -28,8 +27,7 @@
   {
    "id": "stemi",
    "kind": "decision",
-   "text": "Is there ST elevation or a STEMI equivalent (for example posterior infarction)?",
-   "detail": "Yes and No are exhaustive: ECG shows either ST-elevation myocardial infarction (STEMI) or it does not.",
+   "text": "ST elevation on ECG?",
    "next": [
     {
      "to": "o-stemi",
@@ -44,13 +42,12 @@
   {
    "id": "o-stemi",
    "kind": "outcome",
-   "text": "Leave this chart: follow the STEMI pathway (primary percutaneous coronary intervention (PCI) or fibrinolysis)"
+   "text": "ST-elevation myocardial infarction (STEMI): follow the STEMI pathway"
   },
   {
    "id": "other",
    "kind": "action",
-   "text": "Look for other causes of prolonged chest pain before anticoagulating",
-   "detail": "Aortic dissection (unequal or absent pulses, tearing pain to the back), pulmonary embolism, pneumothorax, pneumonitis or pleuritis, pericarditis (rub), herpes zoster or neuralgia. If one is likely, stop and manage that cause. Source: ICMR STW.",
+   "text": "Exclude other causes: aortic dissection, pulmonary embolism, pneumothorax, pericarditis",
    "next": [
     {
      "to": "vh"
@@ -60,8 +57,8 @@
   {
    "id": "vh",
    "kind": "decision",
-   "text": "Is ANY very-high-risk feature present?",
-   "detail": "Very high risk = any of: (1) refractory or ongoing chest pain despite medical treatment; (2) cardiogenic shock or haemodynamic instability (systolic BP below 90 mmHg); (3) acute left ventricular failure or pulmonary oedema; (4) life-threatening arrhythmia (sustained ventricular tachycardia, ventricular fibrillation, cardiac arrest); (5) mechanical complication (new systolic murmur, acute severe mitral regurgitation, ventricular septal rupture, papillary muscle rupture); (6) recurrent dynamic ST-T change, particularly intermittent ST elevation. ICMR lists acute LVF, hypotension, uncontrolled ventricular arrhythmia and severe MR; items 1, 5 (other than MR) and 6 are from ESC 2023.",
+   "text": "Very high risk?",
+   "detail": "Refractory pain, shock, acute heart failure, life-threatening arrhythmia, mechanical complication, or dynamic ST-T change.",
    "next": [
     {
      "to": "vh-drugs",
@@ -76,8 +73,8 @@
   {
    "id": "vh-drugs",
    "kind": "action",
-   "text": "Give aspirin, an anticoagulant and (if PCI is planned) a P2Y12 inhibitor, treat pain, and send for angiography now",
-   "detail": "Aspirin 325 mg chewed, then 75 mg daily. Unfractionated heparin 60 units/kg bolus (maximum 5,000 units) then 12 units/kg/hour to keep aPTT 50–70 s (preferred here: short-acting, usable with shock or kidney failure). P2Y12: ticagrelor 180 mg load (or prasugrel 60 mg only if PCI is planned; clopidogrel 600 mg only if neither can be used). Pain: intravenous nitroglycerin 5–25 micrograms/minute unless systolic BP below 90 mmHg, right ventricular infarction, or a phosphodiesterase-5 inhibitor taken in the last 24–48 hours. No beta-blocker in shock or acute heart failure. Do not wait for troponin.",
+   "text": "Aspirin 325 mg, heparin and ticagrelor; nitrate for pain. Do not wait for troponin",
+   "detail": "No beta-blocker in shock or heart failure.",
    "next": [
     {
      "to": "o-imm"
@@ -87,14 +84,24 @@
   {
    "id": "o-imm",
    "kind": "outcome",
-   "text": "Immediate invasive strategy: coronary angiography within 2 hours at a PCI-capable centre",
-   "detail": "If the hospital is not PCI-capable: transfer immediately. Cardiogenic shock: emergency angiography and haemodynamic support. Mechanical complication: urgent echocardiography and cardiac surgical referral. Prefer coronary artery bypass grafting (CABG) over PCI in diabetes with multivessel or left main disease. Dual antiplatelet therapy after PCI: at least 12 months with a drug-eluting stent, 3 months with a bare-metal stent (ICMR)."
+   "text": "Angiography within 2 hours at a PCI centre",
+   "detail": "PCI = percutaneous coronary intervention. Not PCI-capable: transfer at once."
   },
   {
    "id": "meds",
    "kind": "action",
-   "text": "Start aspirin and choose the P2Y12 inhibitor in this order of preference",
-   "detail": "Aspirin 325 mg load, then 75 mg daily (avoid if true aspirin allergy or active bleeding). P2Y12 inhibitor: 1st choice ticagrelor 180 mg load then 90 mg twice daily (not if prior intracranial haemorrhage, active bleeding or severe liver disease; caution with bradycardia or breathlessness; keep aspirin at 100 mg or less). Prasugrel 60 mg load then 10 mg daily ONLY when PCI is planned and anatomy known (not if prior stroke or transient ischaemic attack, active bleeding or severe liver disease; avoid at age 75 or over; 5 mg if under 60 kg). Clopidogrel 300 mg load (600 mg if PCI) then 75 mg daily only if ticagrelor and prasugrel are unavailable, contraindicated, or an oral anticoagulant is needed. The ICMR STW loads clopidogrel at first contact; ESC 2023 advises against routine pre-treatment when early angiography is planned.",
+   "text": "Aspirin 325 mg, then 75 mg daily",
+   "next": [
+    {
+     "to": "p2y12"
+    }
+   ]
+  },
+  {
+   "id": "p2y12",
+   "kind": "action",
+   "text": "P2Y12 inhibitor: ticagrelor first; prasugrel only if PCI planned; clopidogrel if neither suits",
+   "detail": "Ticagrelor 180 mg, then 90 mg twice daily. Avoid after brain bleed or with active bleeding.",
    "next": [
     {
      "to": "anticoag"
@@ -104,8 +111,8 @@
   {
    "id": "anticoag",
    "kind": "action",
-   "text": "Start ONE parenteral anticoagulant",
-   "detail": "Fondaparinux 2.5 mg subcutaneously once daily (favourable bleeding profile; avoid if creatinine clearance below 20 mL/min; add unfractionated heparin 70–85 units/kg at PCI). OR enoxaparin 1 mg/kg subcutaneously every 12 hours (once daily if creatinine clearance below 30 mL/min). OR unfractionated heparin 60 units/kg bolus (maximum 5,000 units) then 12 units/kg/hour, aPTT 50–70 s (choose if kidney failure or CABG likely). Enoxaparin and unfractionated heparin are in the ICMR STW; fondaparinux is from ESC 2023.",
+   "text": "One anticoagulant: fondaparinux, enoxaparin or unfractionated heparin",
+   "detail": "Fondaparinux 2.5 mg daily (not if creatinine clearance below 20). Enoxaparin 1 mg/kg twice daily.",
    "next": [
     {
      "to": "anti-ischaemic"
@@ -115,8 +122,8 @@
   {
    "id": "anti-ischaemic",
    "kind": "action",
-   "text": "Add anti-ischaemic treatment and a statin, each with its exclusions",
-   "detail": "Metoprolol 25–100 mg twice daily orally UNLESS acute heart failure or low-output state, risk of cardiogenic shock (systolic BP below 120 mmHg, heart rate above 110, age over 70), second- or third-degree AV block without a pacemaker, or active bronchospasm. Nitrates for ongoing pain: sublingual or intravenous nitroglycerin 5–25 micrograms/minute, UNLESS systolic BP below 90 mmHg, right ventricular infarction, or phosphodiesterase-5 inhibitor use in 24–48 hours. Atorvastatin 80 mg daily (or rosuvastatin 20–40 mg) UNLESS active liver disease. Start an ACE inhibitor (ramipril 2.5–10 mg daily or enalapril 2.5–10 mg twice daily) when stable, if left ventricular ejection fraction (LVEF) is below 40%, or in diabetes or hypertension, UNLESS hypotension, hyperkalaemia, bilateral renal artery stenosis or pregnancy.",
+   "text": "Metoprolol unless heart failure, shock risk or AV block; atorvastatin 80 mg unless liver disease",
+   "detail": "Nitrate for pain unless systolic BP below 90 mmHg.",
    "next": [
     {
      "to": "trop"
@@ -126,8 +133,8 @@
   {
    "id": "trop",
    "kind": "action",
-   "text": "Measure serial troponin to separate NSTEMI from unstable angina",
-   "detail": "High-sensitivity troponin: 0 and 1 hour (or 0 and 2 hours) rule-in / rule-out; if in the observe zone repeat at 3 hours. If only conventional troponin T or I is available: repeat at 6 hours after pain onset (a single early value cannot exclude NSTEMI). Rule-in = value above the 99th percentile with a rise or fall. Also: haemogram, creatinine, glucose and HbA1c, lipids, chest X-ray, echocardiography, serial ECG. The ICMR STW names troponin T/I only; the 0/1-hour and 0/2-hour algorithm is from ESC 2023.",
+   "text": "Serial high-sensitivity troponin at 0 and 1 hour",
+   "detail": "Unclear: repeat at 3 hours. Conventional assay: repeat at 6 hours.",
    "next": [
     {
      "to": "nstemi"
@@ -137,8 +144,7 @@
   {
    "id": "nstemi",
    "kind": "decision",
-   "text": "Is troponin raised (above the 99th percentile with a rise or fall)?",
-   "detail": "Yes = non-ST-elevation myocardial infarction (NSTEMI). No = unstable angina (UA). Exhaustive and exclusive once serial testing is complete.",
+   "text": "Troponin raised?",
    "next": [
     {
      "to": "n-high",
@@ -153,8 +159,8 @@
   {
    "id": "n-high",
    "kind": "decision",
-   "text": "NSTEMI: GRACE above 140, TIMI above 4, or dynamic ST-T change?",
-   "detail": "Any one criterion = Yes. Global Registry of Acute Coronary Events (GRACE) and Thrombolysis in Myocardial Infarction (TIMI) scores: see the score tables in this topic.",
+   "text": "GRACE above 140, TIMI above 4 or dynamic ST-T change?",
+   "detail": "GRACE and TIMI scores: see the score tables.",
    "next": [
     {
      "to": "o-n-early",
@@ -169,14 +175,13 @@
   {
    "id": "o-n-early",
    "kind": "outcome",
-   "text": "Early invasive strategy: coronary angiography within 24 hours (ICMR: 2–24 hours)",
-   "detail": "Non-PCI-capable hospital: same-day transfer. Continue aspirin, P2Y12 inhibitor and anticoagulant. If pain recurs or instability develops, return to the very-high-risk branch (angiography within 2 hours). Prefer CABG over PCI in diabetes with multivessel or left main disease."
+   "text": "Angiography within 24 hours",
+   "detail": "Same-day transfer if not PCI-capable."
   },
   {
    "id": "n-int",
    "kind": "decision",
-   "text": "NSTEMI: GRACE 109–140 or TIMI 2–4?",
-   "detail": "ICMR defines intermediate as GRACE 109–140 or TIMI 2–3 and high as TIMI above 4, leaving TIMI 4 unassigned; this chart places TIMI 4 here. Clinician to confirm.",
+   "text": "GRACE 109–140 or TIMI 2–4?",
    "next": [
     {
      "to": "o-n-delayed",
@@ -191,20 +196,19 @@
   {
    "id": "o-n-delayed",
    "kind": "outcome",
-   "text": "Delayed invasive strategy: coronary angiography within 72 hours (ICMR: 25–72 hours)",
-   "detail": "Transfer to a PCI-capable centre within 72 hours. ESC 2023 recommends angiography within 24 hours for any NSTEMI, so go earlier where the centre allows. Move to the very-high-risk branch if pain recurs or instability develops. LVEF below 40% also means referral for revascularisation."
+   "text": "Angiography within 72 hours",
+   "detail": "Earlier if pain recurs."
   },
   {
    "id": "o-n-low",
    "kind": "outcome",
-   "text": "NSTEMI with GRACE below 109 and TIMI 0–1: invasive evaluation during this admission",
-   "detail": "The ICMR STW sets no timing for this group; ESC 2023 advises angiography within 24 hours for NSTEMI. Do not manage as low-risk unstable angina: troponin is raised. Cardiology review before any discharge."
+   "text": "Angiography during this admission",
+   "detail": "Troponin is raised: not low-risk."
   },
   {
    "id": "u-high",
    "kind": "decision",
-   "text": "Unstable angina: dynamic ST-T change, recurrent pain on treatment, GRACE above 140, or TIMI above 4?",
-   "detail": "Any one criterion = Yes.",
+   "text": "GRACE above 140, TIMI above 4, dynamic ST-T change or recurrent pain?",
    "next": [
     {
      "to": "o-u-early",
@@ -219,14 +223,12 @@
   {
    "id": "o-u-early",
    "kind": "outcome",
-   "text": "Early invasive strategy: coronary angiography within 24 hours",
-   "detail": "Dynamic ST-T change and GRACE above 140 are ESC 2023 high-risk criteria even with negative troponin (ICMR: GRACE above 140 or TIMI above 4 = high risk, 2–24 hours). Same-day transfer from a non-PCI-capable hospital."
+   "text": "Angiography within 24 hours"
   },
   {
    "id": "u-int",
    "kind": "decision",
-   "text": "Unstable angina: GRACE 109–140 or TIMI 2–4?",
-   "detail": "Same cut-offs and TIMI 4 caveat as the NSTEMI branch.",
+   "text": "GRACE 109–140 or TIMI 2–4?",
    "next": [
     {
      "to": "o-u-delayed",
@@ -241,14 +243,13 @@
   {
    "id": "o-u-delayed",
    "kind": "outcome",
-   "text": "Delayed invasive strategy: coronary angiography within 72 hours (ICMR: 25–72 hours)",
-   "detail": "Transfer for PCI within 72 hours (ICMR). ESC 2023 favours a selective strategy after non-invasive testing for patients without high-risk features. Move to the very-high-risk branch if pain recurs or instability develops."
+   "text": "Angiography within 72 hours",
+   "detail": "Earlier if pain recurs."
   },
   {
    "id": "low",
    "kind": "action",
-   "text": "Low risk (GRACE below 109 and TIMI 0–1): conservative strategy",
-   "detail": "Aspirin 75 mg plus clopidogrel 75 mg daily (ICMR), metoprolol with the exclusions above, high-dose statin, risk-factor control and lifestyle advice. Continue monitoring and echocardiography. Transfer only if an invasive strategy is chosen.",
+   "text": "Low risk: aspirin 75 mg, clopidogrel 75 mg, metoprolol and statin",
    "next": [
     {
      "to": "low-test"
@@ -258,8 +259,7 @@
   {
    "id": "low-test",
    "kind": "action",
-   "text": "Non-invasive risk stratification within 1 week",
-   "detail": "CT coronary angiography (first choice when the likelihood of coronary disease is low to intermediate), or treadmill exercise test, or stress echocardiography or radionuclide imaging. Do not use exercise testing within the first hours of unstable symptoms.",
+   "text": "Non-invasive test within 1 week: CT coronary angiography, treadmill or stress imaging",
    "next": [
     {
      "to": "low-fail"
@@ -269,8 +269,7 @@
   {
    "id": "low-fail",
    "kind": "decision",
-   "text": "Recurrent pain, haemodynamic deterioration, new ECG change, LVEF below 40%, or a high-risk or positive non-invasive test?",
-   "detail": "Any one criterion = Yes (ICMR refers for revascularisation if recurrent pain, haemodynamic deterioration or new ECG change; LVEF below 40% and test results from ICMR and ESC).",
+   "text": "Recurrent pain, new ECG change, ejection fraction below 40% or positive test?",
    "next": [
     {
      "to": "o-low-invasive",
@@ -285,18 +284,18 @@
   {
    "id": "o-low-invasive",
    "kind": "outcome",
-   "text": "Refer for coronary angiography and revascularisation; return to the very-high-risk branch if unstable"
+   "text": "Refer for angiography and revascularisation"
   },
   {
    "id": "o-discharge",
    "kind": "outcome",
-   "text": "Discharge with secondary prevention and early outpatient review",
-   "detail": "Discharge criteria: pain-free and haemodynamically stable, ECG unchanged, serial troponin negative, LVEF 40% or more, and a negative or low-risk non-invasive test. Prescribe aspirin 75 mg daily, a statin and (if started) metoprolol or an ACE inhibitor; control blood pressure, glucose and lipids; stop smoking; give return advice for pain over 20 minutes, breathlessness, sweating or syncope. Criteria are a synthesis of the ICMR STW (secondary prevention, LVEF) and ESC 2023; no explicit discharge checklist appears in the STW."
+   "text": "Discharge with secondary prevention and early review",
+   "detail": "Pain-free, stable, ECG unchanged, troponin negative."
   }
  ],
  "source": {
   "title": "Standard Treatment Workflow: Unstable Angina / NSTEMI (ICMR / Department of Health Research)",
-  "edition": "ICMR STW, January 2026 (ESC 2023 ACS guideline cited by the STW used for items it does not state)",
+  "edition": "ICMR STW, January 2026 (ESC 2023 ACS guideline, cited by the STW, used for items the STW does not state)",
   "url": "https://www.icmr.gov.in/icmrobject/uploads/STWs/1768823342_cardiology_1-4.pdf",
   "locator": "Risk categorization, Risk category management, Drugs and dosage, Level-of-care actions, Revascularization strategy"
  }
