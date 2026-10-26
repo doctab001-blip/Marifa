@@ -1447,7 +1447,8 @@ h1, h2, h3, h4, h5, h6, .heading, .brand-name, .metric-value { font-family: var(
 .topic-page, .em-topic {
   --topic-heading-size: 1.65rem;
   --topic-subheading-size: 1.1rem;
-  --topic-body-size: .9625rem;
+  --topic-body-size: .85rem; /* matches the reading size used across the rest of the app (nav 13.8px, lists and calculators 12.5-13.8px) */
+  --font-size-body: var(--topic-body-size); /* anything in the topic reader that uses the body token follows the topic size */
   color: #000;
   font-size: var(--topic-body-size);
 }
@@ -2099,16 +2100,16 @@ html[data-theme="dark"] .calculator-page .calculator-critical li { color: #ffd9d
 .algorithm-branch { position: relative; display: flex; flex-direction: column; align-items: center; }
 .algorithm-children { position: relative; display: flex; justify-content: center; gap: 0; padding-top: 14px; }
 .algorithm-children::before { content: ""; position: absolute; top: 0; left: 50%; width: 2px; height: 14px; background: #94a3b8; transform: translateX(-1px); }
-.algorithm-children > .algorithm-branch { padding: 14px 3px 0; flex: 1 1 0; min-width: 112px; }
+.algorithm-children > .algorithm-branch { padding: 14px 3px 0; flex: 1 1 0; min-width: 96px; }
 .algorithm-children > .algorithm-branch::before { content: ""; position: absolute; top: 0; left: 50%; width: 2px; height: 14px; background: #94a3b8; transform: translateX(-1px); }
 .algorithm-children.is-split > .algorithm-branch::after { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: #94a3b8; }
 .algorithm-children.is-split > .algorithm-branch:first-child::after { left: 50%; }
 .algorithm-children.is-split > .algorithm-branch:last-child::after { right: 50%; }
-.algorithm-edge-label { margin-bottom: 4px; padding: 1px 7px; border: 1px solid #cbd5e1; border-radius: 999px; background: #fff; color: #334155; font-size: .512rem; font-weight: 700; text-align: center; max-width: 220px; }
-.algorithm-node { box-sizing: border-box; width: 100%; max-width: 152px; min-width: 112px; padding: 6px 7px; border: 1.5px solid #cbd5e1; border-radius: 10px; background: #fff; color: var(--tp-ink, #0b1220); text-align: left; box-shadow: 0 2px 6px rgb(15 23 42 / .05); }
-.algorithm-node-kind { display: block; margin-bottom: 3px; font-size: .435rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #64748b; }
-.algorithm-node-text { margin: 0; font-size: .576rem; font-weight: 650; line-height: 1.45; }
-.algorithm-node-detail { margin: 5px 0 0; font-size: .525rem; line-height: 1.5; color: #475569; }
+.algorithm-edge-label { margin-bottom: 4px; padding: 1px 7px; border: 1px solid #cbd5e1; border-radius: 999px; background: #fff; color: #334155; font-size: .46rem; font-weight: 700; text-align: center; max-width: 220px; }
+.algorithm-node { box-sizing: border-box; width: 100%; max-width: 132px; min-width: 96px; padding: 6px 7px; border: 1.5px solid #cbd5e1; border-radius: 10px; background: #fff; color: var(--tp-ink, #0b1220); text-align: left; box-shadow: 0 2px 6px rgb(15 23 42 / .05); }
+.algorithm-node-kind { display: block; margin-bottom: 3px; font-size: .4rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #64748b; }
+.algorithm-node-text { margin: 0; font-size: .52rem; font-weight: 650; line-height: 1.45; }
+.algorithm-node-detail { margin: 5px 0 0; font-size: .48rem; line-height: 1.5; color: #475569; }
 .algorithm-node-start { border-color: var(--tp-primary, var(--royal)); background: var(--tp-primary, var(--royal)); color: #fff; }
 .algorithm-node-start .algorithm-node-kind, .algorithm-node-start .algorithm-node-detail { color: rgb(255 255 255 / .85); }
 .algorithm-node-decision { border-color: #d97706; background: #fffbeb; }
@@ -2197,3 +2198,8 @@ html[data-theme="dark"] .algorithm-dialog-bar { border-color: #334155; }
 .algorithm-node-more[open] > summary::before { content: "− "; }
 .algorithm-node-more .algorithm-node-detail { margin-top: 2px; }
 .algorithm-node-start .algorithm-node-more > summary { color: inherit; }
+
+/* Inline flowchart is scaled to fit the page width */
+.algorithm-inline-sizer { margin: 0 auto; overflow: visible; }
+.algorithm-inline-content { display: inline-block; width: max-content; transform-origin: 0 0; }
+.algorithm-inline-content .algorithm-root { min-width: 0; }
