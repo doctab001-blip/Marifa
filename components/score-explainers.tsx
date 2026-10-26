@@ -10,9 +10,12 @@ export function ScoreExplainers({ disease, section }: { disease: DiseaseLike; se
   return (
     <div className="score-explainers">
       {scores.map((score) => (
-        <aside key={score.id} className="score-explainer" aria-labelledby={`score-${section}-${score.id}`}>
-          <p className="score-explainer-kicker">Score explained</p>
-          <h3 id={`score-${section}-${score.id}`} className="score-explainer-title">{score.name}</h3>
+        <details key={score.id} className="score-explainer">
+          <summary className="score-explainer-summary">
+            <span className="score-explainer-kicker">Score explained</span>
+            <span className="score-explainer-title">{score.name}</span>
+            <span className="score-explainer-toggle" aria-hidden="true">Show table</span>
+          </summary>
           <p className="score-explainer-purpose">{score.purpose}</p>
           <p className="score-explainer-range"><strong>Range:</strong> {score.range}</p>
           {score.tables.map((table) => (
@@ -29,7 +32,7 @@ export function ScoreExplainers({ disease, section }: { disease: DiseaseLike; se
             {score.calculatorId ? <Link href={`/dashboard/medical-calculators?calc=${encodeURIComponent(score.calculatorId)}`} prefetch={false}>Open the calculator</Link> : null}
             <span>Source: <a href={score.source.url} target="_blank" rel="noreferrer noopener">{score.source.label}</a></span>
           </p>
-        </aside>
+        </details>
       ))}
     </div>
   );
