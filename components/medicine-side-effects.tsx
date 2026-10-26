@@ -4,5 +4,5 @@ import { sideEffectsFor } from "@/lib/medicine-side-effects";
 export function MedicineSideEffects({ name }: { name: string }) {
   const effects = sideEffectsFor(name);
   if (!effects?.length) return null;
-  return <span className="medicine-side-effects" title="Common side effects (reference list; confirm with the BNF or product label)">({effects.some((effect) => effect.includes(": ")) ? effects.join("; ") : effects.join(", ")})</span>;
+  return <span className="medicine-side-effects" title="Common side effects (reference list; confirm with the BNF or product label)">(Side Effects - {effects.some((effect) => effect.includes(": ")) ? effects.join("; ") : effects.join(", ")})</span>;
 }

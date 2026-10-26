@@ -13,6 +13,7 @@ import { groupMedicationPlan, isBranchedMedicationPlan, type MedicationRegimen }
 import { ClinicalAlgorithms } from "@/components/clinical-algorithm";
 import { BoardQuestions, TeachingVignette } from "@/components/board-questions";
 import { ScoreExplainers } from "@/components/score-explainers";
+import { ImagingTable } from "@/components/imaging-table";
 import { findingWithNormal, importantNormalValue } from "@/lib/investigation-display";
 
 type Investigation = DiseaseDetail["investigations"]["ruleIn"][number];
@@ -168,17 +169,7 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
           </div>
         )) : null}
 
-        {imaging.length ? (
-          <>
-            <h3>Imaging</h3>
-            <div className="em-table-wrap">
-              <table className="em-table">
-                <thead><tr><th scope="col">Imaging</th><th scope="col">When to order</th><th scope="col">What you are looking for</th></tr></thead>
-                <tbody>{imaging.map((item) => <tr key={item.testName}><th scope="row">{item.testName}</th><td>{withoutInlineSourceLocators(item.modalityTarget)}</td><td>{withoutInlineSourceLocators(`${item.expectedFinding} ${item.clinicalRationale}`)}</td></tr>)}</tbody>
-              </table>
-            </div>
-          </>
-        ) : null}
+        <ImagingTable items={imaging} />
 
         {disease.granularPathway ? <details className="em-more"><summary>Monitoring schedule and decision points</summary><MonitoringSchedule phases={disease.granularPathway.Investigations} showSources={false} /></details> : null}
         <ClinicalAlgorithms algorithms={disease.algorithms} placement="confirm" />
