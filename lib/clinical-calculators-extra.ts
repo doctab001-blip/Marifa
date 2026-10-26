@@ -5,10 +5,10 @@
  */
 import type { CalculatorInput, CalculatorNextSteps, ClinicalCalculatorSchema, LegacyResult, RiskTone, SecondaryResult } from "./clinical-calculators";
 
-type Band = [min: number | undefined, range: string, label: string, tone: RiskTone, summary: string, steps: string[]];
+export type Band = [min: number | undefined, range: string, label: string, tone: RiskTone, summary: string, steps: string[]];
 type UnitSpec = [value: string, label: string, multiplier?: number, offset?: number];
 
-interface Spec {
+export interface Spec {
   id: string; name: string; shortName: string; specialty: string; description: string; whyUseIt: string; when?: string;
   inputs: any[]; calculate: (inputs: Record<string, any>) => number | string; bands: Band[];
   interpret?: (score: number, inputs: Record<string, any>) => LegacyResult | undefined;
@@ -20,18 +20,18 @@ interface Spec {
 }
 
 const COLOR: Record<RiskTone, string> = { low: "bg-emerald-50 text-emerald-800", moderate: "bg-yellow-50 text-yellow-800", high: "bg-red-50 text-red-800" };
-const opt = (value: string, label: string, points: number, description?: string) => ({ value, label, points, description });
-const yn = (id: string, label: string, points = 1, help?: string) => ({ id, label, help, type: "binary", options: [opt("no", "No", 0), opt("yes", "Yes", points)] });
-const choice = (id: string, label: string, options: Array<[string, string, number]>, help?: string) => ({ id, label, help, type: "binary", options: options.map(([v, l, p]) => opt(v, l, p)) });
-const numeric = (id: string, label: string, units: UnitSpec[], extra: { min?: number; max?: number; help?: string; required?: boolean } = {}) => ({
+export const opt = (value: string, label: string, points: number, description?: string) => ({ value, label, points, description });
+export const yn = (id: string, label: string, points = 1, help?: string) => ({ id, label, help, type: "binary", options: [opt("no", "No", 0), opt("yes", "Yes", points)] });
+export const choice = (id: string, label: string, options: Array<[string, string, number]>, help?: string) => ({ id, label, help, type: "binary", options: options.map(([v, l, p]) => opt(v, l, p)) });
+export const numeric = (id: string, label: string, units: UnitSpec[], extra: { min?: number; max?: number; help?: string; required?: boolean } = {}) => ({
   id, label, type: "numeric", ...extra,
   units: units.map(([value, unitLabel, canonicalMultiplier, canonicalOffset]) => ({ value, label: unitLabel, canonicalMultiplier, canonicalOffset })),
 });
-const val = (i: Record<string, any>, k: string): number | undefined => { const v = i?.[k]; const n = typeof v === "object" && v !== null ? v.value : v; return typeof n === "number" && Number.isFinite(n) ? n : undefined; };
-const isYes = (i: Record<string, any>, k: string) => i?.[k] === "yes";
+export const val = (i: Record<string, any>, k: string): number | undefined => { const v = i?.[k]; const n = typeof v === "object" && v !== null ? v.value : v; return typeof n === "number" && Number.isFinite(n) ? n : undefined; };
+export const isYes = (i: Record<string, any>, k: string) => i?.[k] === "yes";
 const round = (n: number, dp: number) => { const f = 10 ** dp; return Math.round((n + Number.EPSILON) * f) / f; };
 
-function build(s: Spec): ClinicalCalculatorSchema {
+export function build(s: Spec): ClinicalCalculatorSchema {
   const decimals = s.decimals ?? 0;
   const results: LegacyResult[] = s.bands.map(([min, range, label, tone, summary, steps], n) => {
     const next = s.bands[n + 1]?.[0];

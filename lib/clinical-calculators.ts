@@ -5,6 +5,7 @@
  */
 import { extraCalculators, replacementCalculators } from "./clinical-calculators-extra";
 import { calculatorContent } from "./clinical-calculators-content";
+import { scoreCalculators } from "./clinical-calculators-scores";
 /** Five-layer, MDCalc-inspired clinical calculator schema. */
 export type RiskTone = "low" | "moderate" | "high";
 export type CalculatorInputType = "numeric" | "binary" | "multi-select";
@@ -231,6 +232,7 @@ if (heartPathway) {
 // Calculators rewritten in the richer format replace the legacy entry in place; the rest are appended.
 for (const replacement of replacementCalculators) { const at = calculators.findIndex((c) => c.id === replacement.id); if (at >= 0) calculators[at] = replacement; else calculators.push(replacement); }
 calculators.push(...extraCalculators);
+for (const added of scoreCalculators) { if (!calculators.some((c) => c.id === added.id)) calculators.push(added); }
 /** "Most used" order for the calculator home page (MDCalc-style ranking); anything unlisted follows alphabetically. */
 const popularityOrder=['cha2ds2-vasc','wells-pe','ckd-epi-egfr','meld-na','glasgow-coma-scale','news2','curb-65','heart-score','cockcroft-gault','has-bled','wells-dvt','qtc','child-pugh','glasgow-blatchford','corrected-calcium','anion-gap','perc','bmi-bsa','padua','qsofa-score','qsofa'];
 const limitationsById:Record<string,string[]>={
