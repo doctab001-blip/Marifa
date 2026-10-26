@@ -139,6 +139,10 @@ export async function savePastedTopic(formData: FormData) {
   }
 
   updateTag(CLINICAL_DIRECTORY_TAG);
+
+  // The side panel totals live in the shared layout, so refresh it with the topic lists.
+
+  revalidatePath("/dashboard", "layout");
   revalidatePath(pastePath);
   revalidatePath("/dashboard/admin/governance");
   revalidatePath("/dashboard/diseases");

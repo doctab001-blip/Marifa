@@ -12,21 +12,24 @@ import "@/app/region-theme.css";
 import { PLATFORM_REGION, REGION_COOKIE, getRegionOption, resolveRegion } from "@/lib/region";
 import { HeaderContext } from "@/components/header-context";
 import { isTemporaryOpenAdminMode } from "@/lib/access-mode";
-import { getDiseaseDraftTopicCount } from "@/lib/data/disease-drafts";
+import { getDiseaseManagementCounts, getProtocolCounts } from "@/lib/data/disease-drafts";
+import { TopicContextProvider } from "@/components/topic-context";
 
 export async function AppShell({ children }: { children: React.ReactNode }) {
   const user = await getCurrentViewer();
   if (!user) redirect("/login");
   const temporaryAdminMode = isTemporaryOpenAdminMode();
-  const draftTopicCount = await getDiseaseDraftTopicCount();
+  // Approved / Drafts / Published totals come from the same loaders as the lists they badge.
+  const [diseaseCounts, protocolCounts] = await Promise.all([getDiseaseManagementCounts(), getProtocolCounts()]);
   const initialRegion = resolveRegion(undefined, (await cookies()).get(REGION_COOKIE)?.value);
   return (
     <CollapsibleShell primaryColor={user.primaryColor} region={initialRegion}>
+      <TopicContextProvider>
       <Sidebar
         organizationName={user.organizationName}
         organizationNote={initialRegion === "IN" ? "India" : "Riyadh, Saudi Arabia"}
         temporaryAdminMode={temporaryAdminMode}
-        draftTopicCount={draftTopicCount}
+        queueCounts={{ diseases: diseaseCounts, protocols: protocolCounts }}
       />
       <section className="workspace">
         {/* Floating glass header, three zones: where you are · search · your actions */}
@@ -64,6 +67,7 @@ export async function AppShell({ children }: { children: React.ReactNode }) {
         {children}
       </section>
       <MobileNavigation />
+      </TopicContextProvider>
     </CollapsibleShell>
   );
 }

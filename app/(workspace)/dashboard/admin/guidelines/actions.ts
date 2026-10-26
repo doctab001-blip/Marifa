@@ -121,6 +121,8 @@ export async function saveDraftGuideline(formData: FormData) {
   revalidatePath(editPath);
   revalidatePath("/dashboard/admin/governance");
   updateTag(CLINICAL_DIRECTORY_TAG);
+  // The side panel totals live in the shared layout, so refresh it with the topic lists.
+  revalidatePath("/dashboard", "layout");
   revalidatePath("/dashboard/diseases");
   revalidatePath("/dashboard/diseases/drafts");
   revalidatePath("/dashboard/diseases/approved");
@@ -159,6 +161,8 @@ export async function approveGuidelineVersion(formData: FormData) {
         .eq("id", versionId).eq("guideline_id", id).maybeSingle();
       if (receipt?.is_current && ["approved", "published"].includes(receipt.status) && receipt.approved_by && receipt.approved_at) {
         updateTag(CLINICAL_DIRECTORY_TAG);
+        // The side panel totals live in the shared layout, so refresh it with the topic lists.
+        revalidatePath("/dashboard", "layout");
         revalidatePath("/dashboard/diseases/drafts");
         redirect(destination === "approved" ? "/dashboard/diseases/approved?approved=1" : destination === "drafts" ? "/dashboard/diseases/drafts?approved=1" : "/dashboard/admin/governance?approved=1");
       }
@@ -172,6 +176,8 @@ export async function approveGuidelineVersion(formData: FormData) {
   revalidatePath("/dashboard/diseases/drafts");
   revalidatePath("/dashboard/diseases/approved");
   updateTag(CLINICAL_DIRECTORY_TAG);
+  // The side panel totals live in the shared layout, so refresh it with the topic lists.
+  revalidatePath("/dashboard", "layout");
   revalidatePath("/dashboard/diseases");
   revalidatePath(`/dashboard/diseases/${encodeURIComponent(id)}`);
   redirect(destination === "approved" ? "/dashboard/diseases/approved?approved=1" : destination === "drafts" ? "/dashboard/diseases/drafts?approved=1" : "/dashboard/admin/governance?approved=1");
@@ -202,6 +208,8 @@ export async function transitionGuidelineVersion(formData: FormData) {
   }
   if (version.is_current || target === "approved") await supabase.from("clinical_guidelines").update({ status: target }).eq("id", id);
   updateTag(CLINICAL_DIRECTORY_TAG);
+  // The side panel totals live in the shared layout, so refresh it with the topic lists.
+  revalidatePath("/dashboard", "layout");
   revalidatePath("/dashboard/diseases"); revalidatePath("/dashboard/diseases/drafts"); revalidatePath("/dashboard/diseases/published"); revalidatePath("/dashboard/diseases/approved");
   redirect(destination);
 }
@@ -217,7 +225,7 @@ export async function createDraftFromApproved(formData: FormData) {
   const version = `${source.version}-draft-${Date.now()}`;
   const { error } = await supabase.from("guideline_versions").insert({ ...source, id: undefined, version, version_number: version, status: "draft", is_current: false, approved_by: null, approved_at: null, created_by: context.userId, content: { ...parsed.data, version, status: "draft", clinicalReviewStatus: "pending" }, change_summary: `Editable draft created from approved version ${source.version}; approved version preserved.` });
   if (error) redirect("/dashboard/diseases/approved");
-  revalidatePath("/dashboard/diseases/drafts"); redirect("/dashboard/diseases/drafts");
+  revalidatePath("/dashboard", "layout"); revalidatePath("/dashboard/diseases/drafts"); redirect("/dashboard/diseases/drafts");
 }
 
 export async function deleteDraftVersion(formData: FormData) {
@@ -225,5 +233,5 @@ export async function deleteDraftVersion(formData: FormData) {
   if (!isUuid(id) || !isUuid(versionId)) redirect("/dashboard/diseases/drafts");
   await requireOrganizationAdmin(); const supabase = await createSupabaseDataClient();
   await supabase.from("guideline_versions").delete().eq("id", versionId).eq("guideline_id", id).in("status", ["draft", "under_review"]);
-  revalidatePath("/dashboard/diseases/drafts"); redirect("/dashboard/diseases/drafts");
+  revalidatePath("/dashboard", "layout"); revalidatePath("/dashboard/diseases/drafts"); redirect("/dashboard/diseases/drafts");
 }

@@ -29,10 +29,13 @@ import {
 } from "@/components/icons-3d";
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { searchTopics } from "@/lib/topic-search";
-import { PLATFORM_NAME, PLATFORM_REGION, REGION_CHANGE_EVENT, REGION_COOKIE, REGION_PARAM } from "@/lib/region";
+import { PLATFORM_NAME, REGION_CHANGE_EVENT } from "@/lib/region";
 import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
 import { UNASSIGNED_SPECIALITY, canonicalSpeciality, groupBySpeciality, specialityCounts, specialityStyle } from "@/lib/medical-specialities";
 import { displayTopicTitle } from "@/lib/topic-title";
+import { useActiveTopic } from "@/components/topic-context";
+import { loadLiveTopics, loadQueueRows, type QueueKind } from "@/components/topic-queue";
+import type { DiseaseManagementCounts, ProtocolCounts } from "@/lib/data/disease-drafts";
 
 type NavSection = "Workspace" | "Compliance & Audit" | "Hospital";
 
@@ -124,6 +127,21 @@ export function modulePanelLinks(module: NavItem, temporaryAdminMode = false): N
   }
 }
 
+/** Topic totals shown beside the Approved / Drafts / Published links; same loaders as the lists themselves. */
+export type QueueCounts = { diseases: DiseaseManagementCounts; protocols: ProtocolCounts };
+type QueueSlug = "approved" | "drafts" | "published";
+const QUEUE_SLUG = /\/(approved|drafts|published)$/;
+const EDIT_ROUTE = "/dashboard/admin/guidelines/";
+const isTopicEditRoute = (pathname: string) => pathname.startsWith(EDIT_ROUTE);
+
+function queueCountFor(module: NavItem, href: string, counts: QueueCounts): number | undefined {
+  const slug = QUEUE_SLUG.exec(href)?.[1] as QueueSlug | undefined;
+  if (!slug) return undefined;
+  if (module.href === "/dashboard/disease-management") return counts.diseases[slug];
+  if (module.href === "/dashboard/protocols" && slug !== "approved") return counts.protocols[slug];
+  return undefined;
+}
+
 const carePillars = ["Urgent Care", "Chronic Care", "Keep Well", "Planned Care", "Safe Birth", "Palliative Care"];
 
 function canonicalPath(pathname: string) {
@@ -155,18 +173,21 @@ function currentTopicId(pathname: string) {
   return match && match[1] !== "drafts" ? decodeURIComponent(match[1]) : null;
 }
 
-export function WorkspaceSidebar({ organizationName, organizationNote, temporaryAdminMode, draftTopicCount }: {
+export function WorkspaceSidebar({ organizationName, organizationNote, temporaryAdminMode, queueCounts }: {
   organizationName: string;
   organizationNote: string;
   temporaryAdminMode: boolean;
-  draftTopicCount: number;
+  queueCounts: QueueCounts;
 }) {
   const pathname = usePathname() ?? "";
+  const activeTopic = useActiveTopic();
   const activeModule = getActiveItem(pathname);
   const isHome = !activeModule || activeModule.href === "/dashboard";
   // Lets the reader glance at every module without leaving the current page; cleared on navigation.
   const [peekPath, setPeekPath] = useState<string | null>(null);
-  const moduleItem = isAdminPath(pathname) ? ADMIN_MODULE : isHome ? undefined : activeModule;
+  // Local Protocols share the topic editor; their topics open under the Local Protocols menu, not Disease Management.
+  const protocolEdit = isTopicEditRoute(pathname) && activeTopic?.scope === "protocol";
+  const moduleItem = isAdminPath(pathname) ? ADMIN_MODULE : protocolEdit ? navItem("/dashboard/protocols") : isHome ? undefined : activeModule;
   const showHome = !moduleItem || peekPath === pathname;
 
   return (
@@ -189,7 +210,7 @@ export function WorkspaceSidebar({ organizationName, organizationNote, temporary
               module={moduleItem}
               pathname={pathname}
               temporaryAdminMode={temporaryAdminMode}
-              draftTopicCount={draftTopicCount}
+              queueCounts={queueCounts}
               onShowAll={() => setPeekPath(pathname)}
             />
           </Suspense>
@@ -224,8 +245,12 @@ function HomePanel({ activeLabel, returnTo, onReturn }: { activeLabel?: string; 
   );
 }
 
-function ModulePanel({ module, pathname, temporaryAdminMode, draftTopicCount, onShowAll }: { module: NavItem; pathname: string; temporaryAdminMode: boolean; draftTopicCount: number; onShowAll: () => void }) {
+function ModulePanel({ module, pathname, temporaryAdminMode, queueCounts, onShowAll }: { module: NavItem; pathname: string; temporaryAdminMode: boolean; queueCounts: QueueCounts; onShowAll: () => void }) {
   const Icon = module.icon;
+  const activeTopic = useActiveTopic();
+  const onEditRoute = isTopicEditRoute(pathname);
+  // Lists reload when any queue total changes, so an approval or publish shows up without a page refresh.
+  const refreshKey = `${queueCounts.diseases.approved}-${queueCounts.diseases.drafts}-${queueCounts.diseases.published}`;
   const searchParams = useSearchParams();
   const params = useMemo(() => new URLSearchParams(searchParams?.toString() ?? ""), [searchParams]);
   const section = module.href === ADMIN_MODULE.href ? { label: "Admin" } : { label: module.section };
@@ -233,7 +258,10 @@ function ModulePanel({ module, pathname, temporaryAdminMode, draftTopicCount, on
   const isCalculators = module.href === "/dashboard/medical-calculators";
   const links = modulePanelLinks(module, temporaryAdminMode);
   const pathOf = (href: string) => href.split("?")[0];
-  const activeLink = links.find(({ isActive }) => isActive?.(pathname, params))
+  // A topic opened in the editor highlights the queue it belongs to (Drafts, Approved or Published).
+  const openQueue: QueueSlug | undefined = onEditRoute && activeTopic ? (activeTopic.status === "draft" ? "drafts" : activeTopic.status) : undefined;
+  const activeLink = (openQueue ? links.find(({ href }) => href.endsWith(`/${openQueue}`)) : undefined)
+    ?? links.find(({ isActive }) => isActive?.(pathname, params))
     ?? links
       .filter(({ href, isActive }) => !isActive && (pathname === pathOf(href) || (pathOf(href) !== module.href && pathname.startsWith(`${pathOf(href)}/`))))
       .sort((a, b) => b.href.length - a.href.length)[0];
@@ -255,16 +283,27 @@ function ModulePanel({ module, pathname, temporaryAdminMode, draftTopicCount, on
       {links.length > 0 && (
         <div className="sidebar-nav-section">
           {links.map(({ href, label, icon: LinkIcon }) => {
-            const displayLabel = href === "/dashboard/diseases/drafts" ? `${label} (${draftTopicCount})` : label;
+            const count = queueCountFor(module, href, queueCounts);
+            const displayLabel = count === undefined ? label : `${label} (${count})`;
             return <Link key={href} href={href} className="nav-link" title={displayLabel} aria-label={displayLabel} aria-current={activeLink?.href === href ? "page" : undefined}>
-              <LinkIcon size={18} strokeWidth={1.8} aria-hidden="true" /><span>{displayLabel}</span>
+              <LinkIcon size={18} strokeWidth={1.8} aria-hidden="true" /><span>{label}</span>
+              {count !== undefined && <span className="topic-nav-count nav-link-count" aria-hidden="true">{count}</span>}
             </Link>
           })}
         </div>
       )}
-      {isDiseases && (pathname.startsWith("/dashboard/diseases/drafts") || pathname.startsWith("/dashboard/admin/guidelines/")
-        ? <DraftTopicNavigator />
-        : <TopicNavigator currentId={currentTopicId(pathname)} />)}
+      {isDiseases && (
+        pathname.startsWith("/dashboard/diseases/drafts") ? <QueueTopicNavigator key="drafts" kind="drafts" refreshKey={refreshKey} />
+        : pathname.startsWith("/dashboard/diseases/published") ? <QueueTopicNavigator key="published" kind="published" refreshKey={refreshKey} />
+        : pathname.startsWith("/dashboard/diseases/approved") ? <QueueTopicNavigator key="approved" kind="approved" refreshKey={refreshKey} />
+        : onEditRoute ? (
+          // The editor serves drafts, approved and published versions; the menu follows the open topic's state.
+          activeTopic
+            ? <QueueTopicNavigator key={activeTopic.status} kind={activeTopic.status === "draft" ? "drafts" : activeTopic.status} refreshKey={refreshKey} />
+            : <div className="topic-nav-skeleton" aria-label="Loading topics" role="status">{Array.from({ length: 7 }, (_, index) => <span key={index} />)}</div>
+        )
+        : <TopicNavigator currentId={currentTopicId(pathname)} refreshKey={refreshKey} />
+      )}
       {isCalculators && <CalculatorNavigator />}
     </nav>
   );
@@ -323,40 +362,7 @@ function CalculatorNavigator() {
 type NavTopic = { id: string; title: string; pillar: string; speciality?: string; keywords?: string[] };
 type TopicState = { status: "loading" } | { status: "ready"; topics: NavTopic[] } | { status: "error" };
 
-// One request per browser session and practice region; the list is shared by every topic page.
-let topicRequest: Promise<NavTopic[]> | null = null;
-let topicRequestRegion = "";
-function currentRegionCode() {
-  if (PLATFORM_REGION) return PLATFORM_REGION;
-  try {
-    const fromUrl = new URLSearchParams(window.location.search).get(REGION_PARAM);
-    const fromCookie = document.cookie.split("; ").find((entry) => entry.startsWith(`${REGION_COOKIE}=`))?.split("=")[1];
-    // The toggle writes the cookie before it updates the URL, so the cookie is the freshest choice.
-    return (fromCookie ?? fromUrl ?? "SA").toUpperCase();
-  } catch {
-    return "SA";
-  }
-}
-function loadTopics() {
-  const region = currentRegionCode();
-  if (region !== topicRequestRegion) {
-    topicRequest = null;
-    topicRequestRegion = region;
-  }
-  topicRequest ??= fetch(`/api/topics?view=nav&region=${encodeURIComponent(region)}`, { credentials: "same-origin" })
-    .then((response) => {
-      if (!response.ok) throw new Error(`Topic list unavailable (${response.status})`);
-      return response.json() as Promise<{ topics: NavTopic[] }>;
-    })
-    .then(({ topics }) => topics)
-    .catch((error) => {
-      topicRequest = null;
-      throw error;
-    });
-  return topicRequest;
-}
-
-export function TopicNavigator({ currentId }: { currentId: string | null }) {
+export function TopicNavigator({ currentId, refreshKey = "" }: { currentId: string | null; refreshKey?: string }) {
   const router = useRouter();
   const [state, setState] = useState<TopicState>({ status: "loading" });
   const [query, setQuery] = useState("");
@@ -366,7 +372,7 @@ export function TopicNavigator({ currentId }: { currentId: string | null }) {
 
   useEffect(() => {
     let active = true;
-    const load = () => loadTopics().then(
+    const load = () => loadLiveTopics(refreshKey).then(
       (topics) => { if (active) setState({ status: "ready", topics }); },
       () => { if (active) setState({ status: "error" }); },
     );
@@ -375,7 +381,7 @@ export function TopicNavigator({ currentId }: { currentId: string | null }) {
     const onRegionChange = () => { setState({ status: "loading" }); load(); };
     window.addEventListener(REGION_CHANGE_EVENT, onRegionChange);
     return () => { active = false; window.removeEventListener(REGION_CHANGE_EVENT, onRegionChange); };
-  }, []);
+  }, [refreshKey]);
 
   const topics = useMemo(() => (state.status === "ready" ? state.topics : []), [state]);
   const needle = query.trim();
@@ -471,47 +477,70 @@ export function TopicNavigator({ currentId }: { currentId: string | null }) {
   );
 }
 
-type DraftNavTopic = { id: string; title: string; specialty?: string; versionId: string; version: string };
+type QueueNavTopic = { id: string; title: string; specialty?: string; versionId: string; version: string };
+
+const QUEUE_LABELS: Record<Exclude<QueueKind, "live">, { heading: string; noun: string; empty: string }> = {
+  drafts: { heading: "Draft topics", noun: "drafts", empty: "No draft topics." },
+  approved: { heading: "Approved topics", noun: "approved topics", empty: "No approved topics." },
+  published: { heading: "Published topics", noun: "published topics", empty: "No published topics." },
+};
 
 /** Draft topics grouped by speciality; each topic is a bulleted line showing only its name. */
 export function DraftTopicNavigator() {
+  return <QueueTopicNavigator kind="drafts" />;
+}
+
+/**
+ * One governance queue (Drafts, Approved or Published) grouped by speciality. The open topic is highlighted,
+ * its group is expanded and it is scrolled into view, so the menu always shows where the reader is.
+ */
+export function QueueTopicNavigator({ kind, refreshKey = "" }: { kind: Exclude<QueueKind, "live">; refreshKey?: string }) {
   const router = useRouter();
   const pathname = usePathname() ?? "";
-  const activeVersionId = pathname.startsWith("/dashboard/diseases/drafts/")
-    ? pathname.split("/").at(-1)
-    : null;
-  const [state, setState] = useState<{ status: "loading" } | { status: "ready"; topics: DraftNavTopic[] } | { status: "error" }>({ status: "loading" });
+  const activeTopic = useActiveTopic();
+  const labels = QUEUE_LABELS[kind];
+  const activeVersionId = pathname.startsWith("/dashboard/diseases/drafts/") ? pathname.split("/").at(-1) : null;
+  const [state, setState] = useState<{ status: "loading" } | { status: "ready"; topics: QueueNavTopic[] } | { status: "error" }>({ status: "loading" });
   const [query, setQuery] = useState("");
   const [speciality, setSpeciality] = useState("");
+  const listRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let active = true;
-    fetch("/api/topics?view=drafts", { credentials: "same-origin" })
-      .then((response) => response.ok ? response.json() as Promise<{ topics: DraftNavTopic[] }> : Promise.reject(new Error("Draft topics unavailable")))
-      .then(({ topics }) => { if (active) setState({ status: "ready", topics }); }, () => { if (active) setState({ status: "error" }); });
+    loadQueueRows(kind).then((topics) => { if (active) setState({ status: "ready", topics }); }, () => { if (active) setState({ status: "error" }); });
     return () => { active = false; };
-  }, []);
+  }, [kind, refreshKey]);
 
   const topics = useMemo(() => (state.status === "ready" ? state.topics : []), [state]);
   const needle = query.trim().toLocaleLowerCase();
-  const specialityOf = (topic: DraftNavTopic) => canonicalSpeciality(topic.specialty);
+  const specialityOf = (topic: QueueNavTopic) => canonicalSpeciality(topic.specialty);
   const specialityOptions = useMemo(() => specialityCounts(topics, specialityOf), [topics]);
   const groups = useMemo(() => {
     const searched = needle ? topics.filter((topic) => `${topic.title} ${topic.specialty ?? ""}`.toLocaleLowerCase().includes(needle)) : topics;
     const filtered = speciality ? searched.filter((topic) => specialityOf(topic) === speciality) : searched;
     return groupBySpeciality(filtered, specialityOf)
-      .map(({ speciality: name, items }) => ({ speciality: name, list: [...items].sort((a, b) => a.title.localeCompare(b.title)) }));
+      .map(({ speciality: name, items }) => ({ speciality: name, list: [...items].sort((a, b) => a.title.localeCompare(b.title, "en", { sensitivity: "base" })) }));
   }, [needle, speciality, topics]);
   const filtering = Boolean(needle || speciality);
+  const isActive = (topic: QueueNavTopic) => (activeVersionId ? topic.versionId === activeVersionId : activeTopic?.id === topic.id);
+
+  // Keep the open topic in view inside the panel without moving the page.
+  useEffect(() => {
+    const container = listRef.current?.closest(".sidebar-panel");
+    const current = listRef.current?.querySelector<HTMLElement>('[aria-current="page"]');
+    if (!container || !current) return;
+    const top = current.getBoundingClientRect().top - container.getBoundingClientRect().top + container.scrollTop;
+    container.scrollTop = Math.max(0, top - container.clientHeight / 3);
+  }, [activeTopic?.id, activeVersionId, state.status]);
 
   return (
-    <section className="topic-nav" aria-label="Draft clinical topics">
-      <div className="nav-label topic-nav-label"><span>Draft topics</span>{state.status === "ready" && <span className="topic-nav-count">{topics.length}</span>}</div>
-      <label className="topic-nav-search"><Search size={14} aria-hidden="true" /><span className="sr-only">Filter draft topics</span><input type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Filter drafts…" />{query && <button type="button" onClick={() => setQuery("")} aria-label="Clear draft filter"><X size={13} /></button>}</label>
+    <section className="topic-nav" aria-label={`${labels.heading} (clinical)`}>
+      <div className="nav-label topic-nav-label"><span>{labels.heading}</span>{state.status === "ready" && <span className="topic-nav-count">{topics.length}</span>}</div>
+      <label className="topic-nav-search"><Search size={14} aria-hidden="true" /><span className="sr-only">Filter {labels.heading.toLocaleLowerCase()}</span><input type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder={`Filter ${labels.noun}…`} />{query && <button type="button" onClick={() => setQuery("")} aria-label={`Clear ${labels.noun} filter`}><X size={13} /></button>}</label>
       {state.status === "ready" && (
         <div className="topic-nav-controls">
           <label className="topic-nav-select">
-            <span className="sr-only">Filter drafts by speciality</span>
+            <span className="sr-only">Filter {labels.noun} by speciality</span>
             <select value={speciality} onChange={(event) => setSpeciality(event.target.value)}>
               <option value="">All specialities</option>
               {specialityOptions.map((option) => <option key={option.value} value={option.value}>{option.value} ({option.count})</option>)}
@@ -519,26 +548,29 @@ export function DraftTopicNavigator() {
           </label>
         </div>
       )}
-      {state.status === "loading" && <div className="topic-nav-skeleton" aria-label="Loading draft topics" role="status">{Array.from({ length: 7 }, (_, index) => <span key={index} />)}</div>}
-      {state.status === "error" && <p className="topic-nav-empty">Draft topics could not be loaded.</p>}
-      {state.status === "ready" && groups.length === 0 && <p className="topic-nav-empty">{filtering ? "No drafts match this filter." : "No draft topics."}</p>}
-      {groups.map(({ speciality: name, list }) => (
-        <details key={`${name}-${filtering ? "filtered" : "all"}`} className="topic-nav-group" data-spec style={specialityStyle(name)} open={filtering || topics.length <= 40 || list.some((topic) => topic.versionId === activeVersionId)}>
-          <summary><span>{name}</span><span className="topic-nav-count">{list.length}</span></summary>
-          <ul>
-            {list.map((topic) => {
-              const href = `/dashboard/admin/guidelines/${encodeURIComponent(topic.id)}?version=${encodeURIComponent(topic.versionId)}`;
-              return (
-                <li key={topic.versionId}>
-                  <Link href={href} prefetch={false} onMouseEnter={() => router.prefetch(href)} onFocus={() => router.prefetch(href)} aria-current={topic.versionId === activeVersionId ? "page" : undefined} title={displayTopicTitle(withoutInlineSourceLocators(topic.title))}>
-                    {displayTopicTitle(withoutInlineSourceLocators(topic.title))}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </details>
-      ))}
+      <div ref={listRef}>
+        {state.status === "loading" && <div className="topic-nav-skeleton" aria-label={`Loading ${labels.noun}`} role="status">{Array.from({ length: 7 }, (_, index) => <span key={index} />)}</div>}
+        {state.status === "error" && <p className="topic-nav-empty">{labels.heading} could not be loaded.</p>}
+        {state.status === "ready" && groups.length === 0 && <p className="topic-nav-empty">{filtering ? `No ${labels.noun} match this filter.` : labels.empty}</p>}
+        {groups.map(({ speciality: name, list }) => (
+          <details key={`${name}-${filtering ? "filtered" : "all"}`} className="topic-nav-group" data-spec style={specialityStyle(name)} open={filtering || topics.length <= 40 || list.some(isActive)}>
+            <summary><span>{name}</span><span className="topic-nav-count">{list.length}</span></summary>
+            <ul>
+              {list.map((topic) => {
+                const href = `/dashboard/admin/guidelines/${encodeURIComponent(topic.id)}?version=${encodeURIComponent(topic.versionId)}`;
+                const title = displayTopicTitle(withoutInlineSourceLocators(topic.title));
+                return (
+                  <li key={topic.versionId}>
+                    <Link href={href} prefetch={false} onMouseEnter={() => router.prefetch(href)} onFocus={() => router.prefetch(href)} aria-current={isActive(topic) ? "page" : undefined} title={title}>
+                      {title}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </details>
+        ))}
+      </div>
     </section>
   );
 }

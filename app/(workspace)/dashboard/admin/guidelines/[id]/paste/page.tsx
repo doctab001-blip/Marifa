@@ -7,6 +7,7 @@ import { savePastedTopic } from "./actions";
 import { isDevEditMode } from "@/lib/dev-edit-mode";
 import { isLocalProtocolSourceType, PROTOCOLS_DRAFTS, PROTOCOLS_HOME, PROTOCOLS_PUBLISHED } from "@/lib/local-protocols";
 import { displayTopicTitle } from "@/lib/topic-title";
+import { ActiveTopicSignal } from "@/components/topic-context";
 
 const errorMessages: Record<string, string> = {
   empty: "Nothing was pasted. Paste the full topic text and try again.",
@@ -33,9 +34,11 @@ export default async function PasteTopicPage({
   if (result.state === "not-found") notFound();
   const devEdit = isDevEditMode();
   const isProtocol = isLocalProtocolSourceType(result.sourceType);
+  const status = result.state === "ready" && (result.versionStatus === "published" || result.versionStatus === "approved") ? result.versionStatus : "draft";
 
   return (
     <section className="admin-content topic-page paste-editor-page">
+      <ActiveTopicSignal id={id} title={displayTopicTitle(result.state === "ready" ? result.disease.title : result.title)} status={status} scope={isProtocol ? "protocol" : "disease"} versionId={result.state === "ready" ? result.versionId : query.version} />
       <Link href={isProtocol ? (result.state === "ready" && result.versionStatus === "published" ? PROTOCOLS_PUBLISHED : PROTOCOLS_DRAFTS) : "/dashboard/diseases/drafts"} className="disease-back-link"><ArrowLeft size={15} />{isProtocol ? "Back to Local Protocols" : "Back to Disease Management"}</Link>
       {result.state === "invalid" ? (
         <article className="card admin-edit-card">
