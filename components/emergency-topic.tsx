@@ -10,6 +10,7 @@ import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
 import { groupMedicationPlan, isBranchedMedicationPlan, type MedicationRegimen } from "@/lib/medication-pathway";
 import { ClinicalAlgorithms } from "@/components/clinical-algorithm";
 import { BoardQuestions, TeachingVignette } from "@/components/board-questions";
+import { ScoreExplainers } from "@/components/score-explainers";
 import { findingWithNormal, importantNormalValue } from "@/lib/investigation-display";
 
 type Investigation = DiseaseDetail["investigations"]["ruleIn"][number];
@@ -94,6 +95,7 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
 
       <section id="pathophysiology" className="em-section" aria-labelledby="pathophysiology-title">
         <Heading id="pathophysiology" number={1} title="Pathophysiology" />
+        <ScoreExplainers disease={disease} section="pathophysiology" />
         <p className="em-lead">{withoutInlineSourceLocators(disease.pathophysiology.summary)}</p>
         <List items={disease.pathophysiology.keyMechanisms} />
         <Explained disease={disease} section="pathophysiology" />
@@ -101,6 +103,7 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
 
       <section id="signs-symptoms" className="em-section" aria-labelledby="signs-symptoms-title">
         <Heading id="signs-symptoms" number={2} title="Signs & symptoms" />
+        <ScoreExplainers disease={disease} section="signs-symptoms" />
         <div className="em-alert" role="note">
           <TriangleAlert size={30} tone="rose" aria-hidden="true" />
           <div><strong>Red flags — escalate now</strong><List items={disease.presentation.redFlags} /></div>
@@ -123,6 +126,7 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
 
       <section id="investigations" className="em-section" aria-labelledby="investigations-title">
         <Heading id="investigations" number={3} title="Investigations" />
+        <ScoreExplainers disease={disease} section="investigations" />
         {disease.diagnosticCriteria?.length ? (
           <div className="em-criteria">
             <h3>Diagnostic criteria</h3>
@@ -181,6 +185,7 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
 
       <section id="management" className="em-section" aria-labelledby="management-title">
         <Heading id="management" number={4} title="Management" />
+        <ScoreExplainers disease={disease} section="management" />
         <PathwaySequence steps={disease.clinicalManagement} sources={topicSources} compact />
         <ClinicalAlgorithms algorithms={disease.algorithms} placement="manage" />
 

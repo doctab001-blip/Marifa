@@ -29,7 +29,7 @@ function Branch({ id, nodes, label }: { id: string; nodes: Map<string, Algorithm
       {label ? <span className="algorithm-edge-label">{label}</span> : null}
       <NodeCard node={node} />
       {next.length ? (
-        <ul className={`algorithm-children${next.length > 1 ? " is-split" : ""}`} role="list">
+        <ul className="algorithm-children" role="list">
           {next.map((edge) => <Branch key={edge.to} id={edge.to} nodes={nodes} label={edge.label} />)}
         </ul>
       ) : null}
@@ -37,7 +37,7 @@ function Branch({ id, nodes, label }: { id: string; nodes: Map<string, Algorithm
   );
 }
 
-/** Tree flowchart drawn with CSS only; branches sit side by side on wide screens and stack on phones. */
+/** Flowchart drawn as an indented tree with CSS only. Every branch is always visible at any width: no horizontal scrolling and no clipping. */
 export function ClinicalAlgorithmChart({ algorithm }: { algorithm: ClinicalAlgorithm }) {
   const nodes = new Map(algorithm.nodes.map((node) => [node.id, node]));
   const titleId = `algorithm-${algorithm.id}-title`;
@@ -45,7 +45,7 @@ export function ClinicalAlgorithmChart({ algorithm }: { algorithm: ClinicalAlgor
     <figure className="clinical-algorithm" aria-labelledby={titleId}>
       <figcaption id={titleId} className="clinical-algorithm-title"><span className="disease-kicker">Algorithm</span>{algorithm.title}</figcaption>
       <div className="clinical-algorithm-scroll">
-        <ul className="algorithm-root" role="list">
+        <ul className="algorithm-root" role="list" aria-label={`${algorithm.title}: step-by-step flowchart, read top to bottom`}>
           <Branch id={algorithm.nodes[0].id} nodes={nodes} />
         </ul>
       </div>

@@ -1,3 +1,4 @@
+import { unexplainedScores } from "@/lib/clinical-scores";
 import { DiseaseDetailSchema, type DiseaseDetail } from "@/lib/validations/disease";
 
 /**
@@ -53,6 +54,8 @@ export type DepthAudit = {
   standard: string;
   passed: boolean;
   failures: string[];
+  /** Advisory only: score names used in the text that have no explanation in lib/clinical-scores.ts. */
+  warnings?: string[];
   metrics: { words: number; regimens: number; algorithms: number; boardQuestions: number; differentials: number; investigations: number };
 };
 
@@ -131,6 +134,7 @@ export function auditTopicDepth(content: unknown): DepthAudit {
     standard: DEPTH_STANDARD_VERSION,
     passed: failures.length === 0,
     failures,
+    warnings: unexplainedScores(t).map((name) => `Score “${name}” is named but has no explanation and values table in lib/clinical-scores.ts; add one.`),
     metrics: { words: totalWords, regimens: regimens.length, algorithms: algorithms.length, boardQuestions: questions.length, differentials: t.differentials.length, investigations: investigations.length },
   };
 }
