@@ -14,6 +14,8 @@ import { isUuid } from "@/lib/ids";
 
 function refresh(id: string) {
   updateTag(CLINICAL_DIRECTORY_TAG);
+  // The side panel totals live in the shared layout, so refresh it with the topic lists.
+  revalidatePath("/dashboard", "layout");
   revalidatePath(PROTOCOLS_HOME);
   revalidatePath(PROTOCOLS_DRAFTS);
   revalidatePath(PROTOCOLS_PUBLISHED);

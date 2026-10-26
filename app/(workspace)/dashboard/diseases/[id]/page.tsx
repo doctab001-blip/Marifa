@@ -4,7 +4,8 @@ import { cookies } from "next/headers";
 import { after } from "next/server";
 import { ArrowLeft, CalendarCheck, CheckCircle2, FileText, Hourglass, ShieldAlert, Stethoscope } from "@/components/icons-3d";
 import { EmergencyTopic } from "@/components/emergency-topic";
-import { TopicPager, type TopicLink } from "@/components/topic-library";
+import { TopicQueuePager } from "@/components/topic-queue-pager";
+import { ActiveTopicSignal } from "@/components/topic-context";
 import { TopicApproveButton } from "@/components/topic-approve-button";
 import { ApplyProtocolPanel } from "@/components/clinical-orders/apply-protocol-panel";
 import { getApprovedDiseaseGuideline, getApprovedDiseaseGuidelineVersion, getApprovedDiseaseGuidelines } from "@/lib/data/disease-guidelines";
@@ -109,9 +110,8 @@ export default async function DiseaseDetailPage({ params, searchParams }: { para
   }
   // Count a view of the live topic only (not an opened historical version). Runs after the response is sent.
   if (!version) after(() => recordTopicView(disease.id));
-  const [directory, pillarDirectory] = await Promise.all([
+  const [directory] = await Promise.all([
     getApprovedDiseaseGuidelines({ includeFamilyMembers: true }),
-    getApprovedDiseaseGuidelines({ carePillar: disease.pillar, includeFamilyMembers: true }),
   ]);
   const allTopics = directory.state === "ready" ? directory.diseases : [];
   const family = version ? undefined : getTopicFamily(disease.title);
@@ -121,20 +121,20 @@ export default async function DiseaseDetailPage({ params, searchParams }: { para
   const relatedResults = await Promise.all(familyTopics.filter((topic) => topic.id !== disease.id).map((topic) => getApprovedDiseaseGuideline(topic.id)));
   const relatedTopics = relatedResults.flatMap((topic) => topic.state === "ready" ? [topic] : []);
   const displayedTopics = [{ disease, investigationSource: result.investigationSource }, ...relatedTopics];
-  const pillarTopics = pillarDirectory.state === "ready" ? pillarDirectory.diseases : [];
-  const topics: TopicLink[] = (family && canonicalFamilyTopic ? [canonicalFamilyTopic] : pillarTopics).map(({ id: topicId, title }) => ({ id: topicId, title }));
+  const pageTitle = displayTopicTitle(withoutInlineSourceLocators(family?.title ?? disease.title));
   const approvalMessage = approval ? approvalMessages[approval] : undefined;
 
   return (
     <main className="page disease-detail-page topic-page">
+      <ActiveTopicSignal id={disease.id} title={pageTitle} status="approved" />
+      <TopicQueuePager queue="live" currentId={disease.id} position="top" back={{ href: "/dashboard/diseases", label: "Disease Management" }} />
       <article className="scenario-card" aria-labelledby="scenario-title">
         <header className="sc-hero">
           <div className="sc-eyebrow-row">
             <span className="sc-icon-tile" aria-hidden="true"><Stethoscope size={24} /></span>
-            <span className="pill pill-aqua">Clinical scenario</span>
             <span className="pill pill-sky">{disease.pillar}</span>
           </div>
-          <h1 id="scenario-title" className="scenario-title">{displayTopicTitle(withoutInlineSourceLocators(family?.title ?? disease.title))}</h1>
+          <h1 id="scenario-title" className="scenario-title">{pageTitle}</h1>
         </header>
         {displayedTopics.map((topic, index) => (
           <section className="topic-family-member" key={topic.disease.id} aria-labelledby={`family-topic-${topic.disease.id}`}>
@@ -147,7 +147,7 @@ export default async function DiseaseDetailPage({ params, searchParams }: { para
         ))}
       </article>
 
-      <TopicPager topics={topics} currentId={disease.id} />
+      <TopicQueuePager queue="live" currentId={disease.id} position="bottom" />
     </main>
   );
 }

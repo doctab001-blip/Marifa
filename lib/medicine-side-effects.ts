@@ -122,6 +122,8 @@ export const SIDE_EFFECTS: readonly SideEffectRule[] = [
   ["ferrous|iron-folic|oral iron", "constipation, nausea, black stools, abdominal pain"],
   ["isoniazid", "raised liver enzymes, nerve tingling, nausea, rash"],
   ["rifampicin", "orange urine and tears, nausea, raised liver enzymes, rash"],
+  ["clomipramine", "dry mouth, constipation, sedation, sweating, tremor, weight gain"],
+  ["rifapentine", "orange urine and tears, nausea, raised liver enzymes, rash, flu-like reaction"],
   ["pyrazinamide", "joint pain, raised uric acid, nausea, liver injury"],
   ["ethambutol", "optic neuritis, reduced visual acuity, rash, nausea"],
   ["isosorbide|nitroglycerin|nitroglycerine|glyceryl trinitrate", "headache, flushing, dizziness, low blood pressure, palpitations"],

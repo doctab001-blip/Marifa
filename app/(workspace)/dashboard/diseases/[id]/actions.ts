@@ -93,6 +93,10 @@ export async function approveLiveTopic(formData: FormData) {
   }
 
   updateTag(CLINICAL_DIRECTORY_TAG);
+
+  // The side panel totals live in the shared layout, so refresh it with the topic lists.
+
+  revalidatePath("/dashboard", "layout");
   revalidatePath("/dashboard/diseases");
   revalidatePath("/dashboard/diseases/published");
   revalidatePath("/dashboard/diseases/approved");

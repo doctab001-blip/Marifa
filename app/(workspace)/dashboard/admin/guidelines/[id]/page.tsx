@@ -12,6 +12,8 @@ import { isDevEditMode } from "@/lib/dev-edit-mode";
 import { publishProtocol, revertProtocolToDraft } from "@/app/(workspace)/dashboard/protocols/actions";
 import { isLocalProtocolSourceType, PROTOCOLS_DRAFTS, PROTOCOLS_PUBLISHED } from "@/lib/local-protocols";
 import { displayTopicTitle } from "@/lib/topic-title";
+import { ActiveTopicSignal } from "@/components/topic-context";
+import { TopicQueuePager } from "@/components/topic-queue-pager";
 
 const messages: Record<string, string> = {
   invalid_json: "The content is not valid JSON. Correct the formatting and try again.",
@@ -36,6 +38,10 @@ export default async function EditDraftGuidelinePage({
   const isApproved = result.state === "ready" && result.versionStatus === "approved";
   // Local Protocols reuse this editor but only have Draft and Published (no Approve).
   const isProtocol = isLocalProtocolSourceType(result.sourceType);
+  // Which queue the open version sits in; the side panel and the arrows both follow it.
+  const status = result.state === "ready" && (result.versionStatus === "published" || result.versionStatus === "approved") ? result.versionStatus : "draft";
+  const queue = status === "draft" ? "drafts" : status;
+  const openTitle = displayTopicTitle(result.state === "ready" ? result.disease.title : result.title);
   const actionBar = (position: "top" | "bottom") => result.state !== "ready" ? null : (
     <section className="topic-approval-bar" aria-label={`${position === "top" ? "Top" : "Bottom"} topic actions`}>
       <p>{isApproved ? <><span className="pill pill-emerald"><CheckCircle2 size={16} aria-hidden="true" /><strong>Approved</strong></span><span className="pill pill-slate pill-sm"><FileText size={14} aria-hidden="true" />Version {result.disease.version}</span></> : result.isPublished ? <><span className="pill pill-sky"><FileText size={16} aria-hidden="true" /><strong>Published</strong></span><span className="pill pill-slate pill-sm"><FileText size={14} aria-hidden="true" />Version {result.disease.version}</span></> : <><span className="pill pill-amber"><Hourglass size={16} aria-hidden="true" /><strong>Status: Draft</strong></span><span className="pill pill-slate pill-sm"><FileText size={14} aria-hidden="true" />Version {result.disease.version}</span></>}</p>
@@ -55,7 +61,14 @@ export default async function EditDraftGuidelinePage({
 
   return (
     <section className="admin-content topic-page">
-      <Link href={isProtocol ? (result.state === "ready" && result.isPublished ? PROTOCOLS_PUBLISHED : PROTOCOLS_DRAFTS) : query.version ? "/dashboard/diseases" : "/dashboard/diseases/drafts"} className="disease-back-link"><ArrowLeft size={15} />{isProtocol ? "Back to Local Protocols" : "Back to Disease Management"}</Link>
+      <ActiveTopicSignal id={id} title={openTitle} status={status} scope={isProtocol ? "protocol" : "disease"} versionId={result.state === "ready" ? result.versionId : query.version} />
+      {(() => {
+        const backHref = isProtocol ? (result.state === "ready" && result.isPublished ? PROTOCOLS_PUBLISHED : PROTOCOLS_DRAFTS) : query.version ? "/dashboard/diseases" : "/dashboard/diseases/drafts";
+        const backLabel = isProtocol ? "Back to Local Protocols" : "Back to Disease Management";
+        return !isProtocol && result.state === "ready"
+          ? <TopicQueuePager queue={queue} currentId={id} position="top" back={{ href: backHref, label: backLabel }} />
+          : <div className="topic-toolbar"><Link href={backHref} className="topic-toolbar-back"><ArrowLeft size={15} aria-hidden="true" />{backLabel}</Link></div>;
+      })()}
       {result.state === "invalid" ? (
         <article className="card admin-edit-card">
           <p className="eyebrow">Draft needs repair</p>
@@ -71,7 +84,7 @@ export default async function EditDraftGuidelinePage({
           {query.error && messages[query.error] && <p className="admin-save-error" role="alert">{messages[query.error]}</p>}
           <article className="scenario-card" aria-labelledby="scenario-title">
             <header className="sc-hero">
-              <div className="sc-eyebrow-row"><span className="sc-icon-tile" aria-hidden="true"><Stethoscope size={24} /></span><span className="pill pill-aqua">{isProtocol ? "Local protocol" : "Clinical scenario"}</span><span className="pill pill-sky">{result.disease.pillar}</span></div>
+              <div className="sc-eyebrow-row"><span className="sc-icon-tile" aria-hidden="true"><Stethoscope size={24} /></span>{isProtocol ? <span className="pill pill-aqua">Local protocol</span> : null}<span className="pill pill-sky">{result.disease.pillar}</span></div>
               <h1 id="scenario-title" className="scenario-title">{displayTopicTitle(result.disease.title)}</h1>
             </header>
             {actionBar("top")}
@@ -82,6 +95,7 @@ export default async function EditDraftGuidelinePage({
           <article className="card admin-source-summary"><BookOpenCheck size={18} aria-hidden="true" /><div><strong>{result.sourceTitle ?? "Source not recorded"}</strong><span>{result.sourceUrl ? <a href={result.sourceUrl} target="_blank" rel="noreferrer">Open source reference</a> : "No source URL recorded"}</span><small>Preparation and source-check dates do not record clinical approval.</small></div></article>
           <ClinicalEvidenceAudit audit={result.disease.evidenceAudit} />
           {isApproved && !devEdit ? <div className="clinical-governance-notice" role="note"><strong>Approved versions are preserved.</strong> Use “Edit (make draft copy)” to make an editable draft; the approved version stays unchanged.</div> : <details className="card draft-editor-disclosure" id="pathway-editor"><summary>{result.isPublished || result.isLive ? "Edit current fields" : "Edit draft fields"}</summary><GuidelinePathwayForm disease={result.disease} guidelineId={id} versionId={result.versionId} saveAction={saveDraftGuideline} /></details>}
+          {!isProtocol ? <TopicQueuePager queue={queue} currentId={id} position="bottom" /> : null}
         </>
       )}
     </section>

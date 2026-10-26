@@ -2203,3 +2203,48 @@ html[data-theme="dark"] .algorithm-dialog-bar { border-color: #334155; }
 .algorithm-inline-sizer { margin: 0 auto; overflow: visible; }
 .algorithm-inline-content { display: inline-block; width: max-content; transform-origin: 0 0; }
 .algorithm-inline-content .algorithm-root { min-width: 0; }
+
+/* Previous / next arrows above and below an open topic: [← Previous]  3 of 120  [Next →] */
+.topic-pager.topic-pager-bar { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 12px; margin: 0 0 18px; }
+.topic-pager-bar.is-bottom { margin: 26px 0 0; }
+.topic-pager-bar.is-loading { min-height: 62px; }
+.topic-pager-bar .topic-pager-link { min-width: 0; padding: 11px 16px; }
+.topic-pager-bar .topic-pager-link > span { min-width: 0; }
+.topic-pager-bar .topic-pager-link em { display: block; font-style: normal; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.topic-pager-bar .topic-pager-link.is-disabled { opacity: .42; pointer-events: none; }
+.topic-pager-position { color: var(--tp-muted, #64748b); font-size: .82rem; font-weight: 650; letter-spacing: .04em; white-space: nowrap; }
+@media (max-width: 720px) {
+  .topic-pager.topic-pager-bar { grid-template-columns: 1fr 1fr; }
+  .topic-pager-bar .topic-pager-position { grid-column: 1 / -1; grid-row: 1; text-align: center; }
+  .topic-pager-bar .topic-pager-link.is-next { justify-content: flex-end; }
+}
+
+/* Top bar: the open topic's name replaces the organisation name */
+.topbar-crumb.is-topic { display: inline-flex; align-items: center; gap: 8px; min-width: 0; max-width: min(44ch, 38vw); overflow: hidden; text-overflow: ellipsis; color: var(--strong, #0f172a); font-size: .92rem; font-weight: 700; letter-spacing: 0; }
+.topbar-crumb.is-topic::before { content: "›"; color: var(--text-3, #94a3b8); font-weight: 600; }
+/* Count chip on the Approved / Drafts / Published links */
+.nav-link .nav-link-count { margin-left: auto; flex: none; padding: 1px 9px; font-size: .74rem; font-weight: 700; }
+.sidebar-collapsed .nav-link .nav-link-count { display: none; }
+
+/* ── Compact topic head: one toolbar row, one title row, one slim status row ── */
+.topic-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 36px; margin: 0 0 10px; }
+.topic-toolbar-back { display: inline-flex; align-items: center; gap: 6px; min-width: 0; color: var(--royal, #1d4ed8); font-size: .9rem; font-weight: 700; white-space: nowrap; }
+.topic-toolbar .topic-pager.topic-pager-bar { display: flex; align-items: center; gap: 8px; margin: 0 0 0 auto; }
+.topic-pager-bar.is-top .topic-pager-link { display: inline-flex; gap: 4px; padding: 6px 12px; border-radius: 999px; }
+.topic-pager-bar.is-top .topic-pager-link small { font-size: .74rem; letter-spacing: .06em; }
+.topic-pager-bar.is-top .topic-pager-position { font-size: .78rem; }
+.admin-content.topic-page { gap: 10px; }
+.topic-page .scenario-card { padding: clamp(14px, 2vw, 22px) clamp(16px, 3vw, 32px) clamp(18px, 3vw, 30px); }
+.topic-page .sc-hero { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; padding: 0; }
+.topic-page .sc-eyebrow-row { order: 2; margin-left: auto; gap: 8px; }
+.topic-page .sc-icon-tile { display: none; }
+.topic-page .scenario-title { order: 1; margin: 0; font-size: clamp(1.45rem, 2.6vw, 1.9rem); line-height: 1.15; }
+.topic-page .topic-approval-bar { margin-top: 10px; padding: 6px 10px; gap: 8px 12px; border-radius: 14px; }
+.topic-page .topic-approval-bar .ui-button { min-height: 34px; padding: 5px 14px; font-size: .88rem; }
+.topic-page .topic-approval-bar .pill-slate { max-width: 30ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.topic-page .clinical-review-draft-notice, .topic-page .clinical-governance-notice { margin-top: 10px; padding: 8px 12px; }
+@media (max-width: 720px) {
+  .topic-toolbar { flex-wrap: wrap; }
+  .topic-toolbar .topic-pager.topic-pager-bar { grid-template-columns: none; margin-left: 0; }
+  .topic-page .sc-eyebrow-row { order: 0; margin-left: 0; }
+}

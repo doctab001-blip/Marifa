@@ -1,5 +1,6 @@
 import { ShieldCheck } from "@/components/icons-3d";
 import { AdminSubNavigation } from "@/components/admin/admin-sub-navigation";
+import { AdminChrome } from "@/components/admin/admin-chrome";
 import { requireOrganizationAdmin } from "@/lib/admin/data";
 import { isTemporaryOpenAdminMode } from "@/lib/access-mode";
 
@@ -17,15 +18,19 @@ export default async function AdministrationLayout({ children }: { children: Rea
 
   return (
     <main className="page admin-page">
-      <header className="admin-heading">
-        <div>
-          <p className="eyebrow">Administration</p>
-          <h1 className="page-title">Administration &amp; Settings</h1>
-          <p className="page-copy">{temporaryAdminMode ? "Review, edit and approve clinical drafts without signing in during this development phase." : `Manage access, clinical governance and workspace settings for ${organizationName}.`}</p>
-        </div>
-        <span className="admin-scope"><ShieldCheck size={15} strokeWidth={1.5} aria-hidden="true" /> {temporaryAdminMode ? "Temporary open admin" : "Organization-scoped"}</span>
-      </header>
-      <AdminSubNavigation links={visibleLinks} />
+      <AdminChrome
+        heading={
+          <header className="admin-heading">
+          <div>
+            <p className="eyebrow">Administration</p>
+            <h1 className="page-title">Administration &amp; Settings</h1>
+            <p className="page-copy">{temporaryAdminMode ? "Review, edit and approve clinical drafts without signing in during this development phase." : `Manage access, clinical governance and workspace settings for ${organizationName}.`}</p>
+          </div>
+          <span className="admin-scope"><ShieldCheck size={15} strokeWidth={1.5} aria-hidden="true" /> {temporaryAdminMode ? "Temporary open admin" : "Organization-scoped"}</span>
+        </header>
+        }
+        tabs={<AdminSubNavigation links={visibleLinks} />}
+      />
       {children}
     </main>
   );
