@@ -3,6 +3,8 @@ import type { DiseaseDetail } from "@/lib/validations/disease";
 import { ClinicalTimeframe } from "@/components/clinical-timeframe";
 import { SourceCitation, type CitationSource } from "@/components/source-citation";
 import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
+import { MedicationTable } from "@/components/medication-table";
+import { parseAbcdeAction } from "@/lib/management-sequence-format";
 
 type Branch = NonNullable<DiseaseDetail["clinicalManagement"][number]["branches"]>[number];
 
@@ -109,13 +111,23 @@ export function PathwaySequence({ steps, sources = [], compact = false }: { step
                 <p className="pathway-timeframe"><span className="pill pill-amber pill-sm pill-wrap"><Clock3 size={14} aria-hidden="true" /><span className="sr-only">Timeframe: </span>{withoutInlineSourceLocators(step.timeframe)}</span></p>
               </div>
               <ul className="pathway-actions">
-                {step.actions.map((action, actionIndex) => <li key={`${actionIndex}-${action}`}><ClinicalTimeframe text={action} /></li>)}
+                {step.actions.map((action, actionIndex) => {
+                  const abcde = parseAbcdeAction(action);
+                  if (!abcde) return <li key={`${actionIndex}-${action}`}><ClinicalTimeframe text={action} /></li>;
+                  return (
+                    <li className="abcde-row" key={`${actionIndex}-${action}`}>
+                      <span className="abcde-letter" aria-hidden="true">{abcde.letter}</span>
+                      <div className="abcde-body"><strong className="abcde-label">{abcde.label}</strong> <ClinicalTimeframe text={abcde.text} /></div>
+                    </li>
+                  );
+                })}
               </ul>
               {step.branches?.length ? <DecisionBranches stepTitle={withoutInlineSourceLocators(step.title)} branches={step.branches} /> : null}
             </article>
           </div>
         ))}
       </div>
+      <MedicationTable steps={steps} />
       {compact ? null : <SourceCitation sources={sources} />}
     </section>
   );

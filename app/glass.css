@@ -1140,6 +1140,21 @@ html[data-theme="dark"] .topic-tile[data-spec] { background: hsl(var(--spec-hue,
 
 /* ── Medication badges in management sequences: [💊 Drug | Dose | Route | Frequency | Duration] ── */
 .med-badge { --pc: #34d399; display: inline-flex; flex-wrap: wrap; align-items: center; gap: .1rem .5rem; margin: .12rem .18rem; vertical-align: middle; }
-.med-badge-drug { font-weight: 750; letter-spacing: .005em; }
+.med-badge-drug { font-weight: 850; font-size: 1.04em; letter-spacing: .01em; color: #ecfdf5; text-shadow: 0 0 10px rgb(52 211 153 / .55); }
 .med-badge-field { font-weight: 600; opacity: .94; }
 .med-badge-field::before { content: "|"; margin-right: .5rem; opacity: .45; }
+
+/* Medicines table under a management sequence */
+.med-table-wrap { margin-top: 1.4rem; }
+.med-table-title { display: flex; align-items: center; gap: .5rem; font-size: 1.02rem; font-weight: 800; margin: 0 0 .6rem; }
+.med-table-scroll { overflow-x: auto; border-radius: 14px; border: 1px solid rgb(52 211 153 / .35); }
+.med-table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+.med-table th, .med-table td { padding: .55rem .75rem; text-align: left; vertical-align: top; border-bottom: 1px solid rgb(148 163 184 / .22); }
+.med-table thead th { font-weight: 800; background: rgb(52 211 153 / .14); white-space: nowrap; }
+.med-table-drug { font-weight: 850; font-size: 1.02em; color: #34d399; }
+.med-table tbody tr:last-child th, .med-table tbody tr:last-child td { border-bottom: 0; }
+
+/* ABCDE first step: one lettered row per assessment */
+.abcde-row { display: flex; gap: .7rem; align-items: flex-start; list-style: none; margin-left: -1.1rem; }
+.abcde-letter { flex: none; display: inline-grid; place-items: center; width: 2rem; height: 2rem; border-radius: 999px; font-weight: 900; font-size: 1rem; color: #052e2b; background: linear-gradient(180deg, #5eead4, #22d3ee); box-shadow: 0 0 14px rgb(34 211 238 / .45); }
+.abcde-label { font-weight: 850; }

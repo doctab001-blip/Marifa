@@ -146,3 +146,29 @@ export function lintManagementSequence(steps: ManagementStepLike[], options: Lin
   }
   return issues;
 }
+
+/** Every distinct badge used in a sequence (steps and branches), in reading order, for the "medicines used" table. */
+export function collectMedicationBadges(steps: ManagementStepLike[]): MedicationBadge[] {
+  const seen = new Set<string>();
+  const out: MedicationBadge[] = [];
+  const visit = (text: string) => {
+    for (const badge of extractMedicationBadges(text)) {
+      const key = MEDICATION_BADGE_FIELDS.map((field) => badge[field].toLowerCase()).join("|");
+      if (!seen.has(key)) { seen.add(key); out.push(badge); }
+    }
+  };
+  for (const step of steps) {
+    step.actions.forEach(visit);
+    step.branches?.forEach((branch) => branch.actions.forEach(visit));
+  }
+  return out;
+}
+
+const ABCDE_LETTER = /^(Airway|Breathing|Circulation|Disability|Exposure):\s*([\s\S]*)$/;
+
+/** Splits an ABCDE action into its letter row, or returns null for the lead sentence and any other action. */
+export function parseAbcdeAction(action: string): { letter: "A" | "B" | "C" | "D" | "E"; label: string; text: string } | null {
+  const match = action.trim().match(ABCDE_LETTER);
+  if (!match) return null;
+  return { letter: match[1][0] as "A" | "B" | "C" | "D" | "E", label: match[1], text: match[2] };
+}
