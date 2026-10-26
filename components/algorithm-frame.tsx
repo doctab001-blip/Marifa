@@ -12,23 +12,35 @@ export function AlgorithmFrame({ title, chart }: { title: string; chart: ReactNo
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [open, setOpen] = useState(false);
   const scroller = useRef<HTMLDivElement>(null);
+  const inner = useRef<HTMLDivElement>(null);
+  const [fit, setFit] = useState({ scale: 1, w: 0, h: 0 });
 
-  // A wide chart is centred on its first step: start the sideways scroll in the middle so the opening steps are visible.
+  // Shrink the whole chart to the width of the page so every branch is visible without scrolling.
+  // Very wide charts stop at 45% (still readable with "Open full flowchart"); beyond that the box scrolls.
   useLayoutEffect(() => {
-    const el = scroller.current;
-    if (!el) return;
-    const centre = () => { el.scrollLeft = Math.max(0, (el.scrollWidth - el.clientWidth) / 2); };
-    centre();
-    const raf = requestAnimationFrame(centre);
-    return () => { cancelAnimationFrame(raf); };
+    const box = scroller.current, content = inner.current;
+    if (!box || !content) return;
+    const measure = () => {
+      const w = content.offsetWidth, h = content.offsetHeight;
+      if (!w || !h) return;
+      setFit({ scale: Math.max(0.45, Math.min(1, (box.clientWidth - 8) / w)), w, h });
+    };
+    measure();
+    if (typeof ResizeObserver === "undefined") return;
+    const observer = new ResizeObserver(measure);
+    observer.observe(box); observer.observe(content);
+    return () => { observer.disconnect(); };
   }, []);
+
   return (
     <>
       <div className="clinical-algorithm-tools">
         <button type="button" className="clinical-algorithm-open" onClick={() => { setOpen(true); }} aria-haspopup="dialog">Open full flowchart</button>
       </div>
       <div className="clinical-algorithm-scroll" ref={scroller} role="region" aria-label={`${title}: flowchart. Scroll sideways, or open the full flowchart.`} tabIndex={0}>
-        {chart}
+        <div className="algorithm-inline-sizer" style={fit.w ? { width: fit.w * fit.scale, height: fit.h * fit.scale } : undefined}>
+          <div className="algorithm-inline-content" ref={inner} style={{ transform: `scale(${fit.scale})` }}>{chart}</div>
+        </div>
       </div>
       {open ? <FullView title={title} chart={chart} dialogRef={dialogRef} onClose={() => { setOpen(false); }} /> : null}
     </>
