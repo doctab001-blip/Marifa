@@ -98,15 +98,14 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
 
       <section id="pathophysiology" className="em-section" aria-labelledby="pathophysiology-title">
         <Heading id="pathophysiology" number={1} title="Pathophysiology" />
-        <ScoreExplainers disease={disease} section="pathophysiology" />
         <p className="em-lead">{withoutInlineSourceLocators(disease.pathophysiology.summary)}</p>
         <List items={disease.pathophysiology.keyMechanisms} />
         <Explained disease={disease} section="pathophysiology" />
+        <ScoreExplainers disease={disease} section="pathophysiology" />
       </section>
 
       <section id="signs-symptoms" className="em-section" aria-labelledby="signs-symptoms-title">
         <Heading id="signs-symptoms" number={2} title="Signs & symptoms" />
-        <ScoreExplainers disease={disease} section="signs-symptoms" />
         <div className="em-alert" role="note">
           <TriangleAlert size={30} tone="rose" aria-hidden="true" />
           <div><strong>Red flags — escalate now</strong><List items={disease.presentation.redFlags} /></div>
@@ -125,11 +124,11 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
         </div>
         <ClinicalAlgorithms algorithms={disease.algorithms} placement="recognise" />
         <Explained disease={disease} section="signs-symptoms" />
+        <ScoreExplainers disease={disease} section="signs-symptoms" />
       </section>
 
       <section id="investigations" className="em-section" aria-labelledby="investigations-title">
         <Heading id="investigations" number={3} title="Investigations" />
-        <ScoreExplainers disease={disease} section="investigations" />
         {disease.diagnosticCriteria?.length ? (
           <div className="em-criteria">
             <h3>Diagnostic criteria</h3>
@@ -174,11 +173,11 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
         {disease.granularPathway ? <details className="em-more"><summary>Monitoring schedule and decision points</summary><MonitoringSchedule phases={disease.granularPathway.Investigations} showSources={false} /></details> : null}
         <ClinicalAlgorithms algorithms={disease.algorithms} placement="confirm" />
         <Explained disease={disease} section="investigations" />
+        <ScoreExplainers disease={disease} section="investigations" />
       </section>
 
       <section id="management" className="em-section" aria-labelledby="management-title">
         <Heading id="management" number={4} title="Management" />
-        <ScoreExplainers disease={disease} section="management" />
         <PathwaySequence steps={disease.clinicalManagement} sources={topicSources} compact />
         <ClinicalAlgorithms algorithms={disease.algorithms} placement="manage" />
 
@@ -231,6 +230,7 @@ export function EmergencyTopic({ disease, investigationSource }: { disease: Dise
           <div><h4>Before they leave</h4><List items={[...care.patientEducation, ...care.lifestyleAndDiet, ...care.mdtReferrals].filter((item) => !/^not applicable/i.test(item))} /></div>
         </div>
         <p className="em-followup"><strong>Follow-up:</strong> {withoutInlineSourceLocators(care.followUpPlan)}</p>
+        <ScoreExplainers disease={disease} section="management" />
       </section>
 
       {hasQuestions ? <div id="self-assessment" className="em-section"><BoardQuestions teaching={disease.teaching} /></div> : null}
