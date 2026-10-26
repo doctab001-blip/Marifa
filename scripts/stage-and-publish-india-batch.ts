@@ -3,6 +3,7 @@
  *
  *   npx tsx --env-file=.env.india.local scripts/stage-and-publish-india-batch.ts <payload.json>           # dry run
  *   npx tsx --env-file=.env.india.local scripts/stage-and-publish-india-batch.ts <payload.json> --apply   # write
+ *   add --include-legacy-1-0 (with --revise) to also revise topics whose authored versions are the original "1.0"/"1.0-live".
  *   add --revise to publish a NEW version of topics whose only authored versions are earlier Marifa India
  *   batch versions ("india-..."); those versions are kept, never edited. Any other authored version still refuses.
  *
@@ -23,6 +24,8 @@ const [payloadPath, ...flags] = process.argv.slice(2);
 if (!payloadPath) throw new Error("Usage: tsx scripts/stage-and-publish-india-batch.ts <payload.json> [--apply]");
 const apply = flags.includes("--apply");
 const revise = flags.includes("--revise");
+const includeLegacy = flags.includes("--include-legacy-1-0"); // also allow revising topics whose authored versions are the original "1.0"/"1.0-live" India drafts
+const OWN_VERSION = (v: string) => v.startsWith("india-") || (includeLegacy && /^1\.0(-live)?$/.test(v));
 if ((process.env.NEXT_PUBLIC_MARIFA_REGION ?? "").toUpperCase() !== "IN") throw new Error("Refusing: NEXT_PUBLIC_MARIFA_REGION is not IN. Use --env-file=.env.india.local.");
 const url = process.env.NEXT_PUBLIC_SUPABASE_URL; const key = process.env.SUPABASE_SECRET_KEY;
 if (!url || !key) throw new Error("Set NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SECRET_KEY.");
@@ -49,7 +52,7 @@ for (const content of items) {
   const versions = guideline ? await rest<Array<{ id: string; version: string; status: string; content: Record<string, unknown> }>>("GET", `guideline_versions?select=id,version,status,content&guideline_id=eq.${content.id}`) : [];
   if (versions.some((row) => row.version === content.version)) { console.log(`SKIP ${label}: ${content.version} already exists`); continue; }
   const authored = versions.filter((row) => !PLACEHOLDER.test(JSON.stringify(row.content?.pathophysiology ?? "")));
-  const ownOnly = authored.length > 0 && authored.every((row) => row.version.startsWith("india-"));
+  const ownOnly = authored.length > 0 && authored.every((row) => OWN_VERSION(row.version));
   if (authored.length && !(revise && ownOnly)) { console.log(`REFUSED ${label}: already has authored version(s) ${authored.map((row) => row.version).join(", ")} — not overwriting`); continue; }
   const ref = content.teaching?.references?.[0];
   const issuing = content.authority === "ICMR" ? "Indian Council of Medical Research / Department of Health Research" : "Ministry of Health and Family Welfare, Government of India";
