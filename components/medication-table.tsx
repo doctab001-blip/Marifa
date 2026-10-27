@@ -60,7 +60,7 @@ export function StepMedicationTable({ step, regimens = [] }: { step: ManagementS
       <table className={`em-table em-dose-table${hasContraindications ? " has-contra" : ""}`}>
         <caption className="sr-only">Medicines in this step</caption>
         <thead>
-          <tr><th scope="col">Medicine and indication</th><th scope="col">Dose, route, frequency</th>{hasContraindications ? <th scope="col">Contraindications</th> : null}<th scope="col">Cautions and monitoring</th></tr>
+          <tr><th scope="col">Medicine and indication</th><th scope="col">Dose, route, frequency</th>{hasContraindications ? <th scope="col">Contra{"\u00AD"}indications</th> : null}<th scope="col">Cautions and monitoring</th></tr>
         </thead>
         <tbody>
           {rows.map(({ head, doses, first, contraindications, cautions }, index) => (
@@ -70,7 +70,7 @@ export function StepMedicationTable({ step, regimens = [] }: { step: ManagementS
                 <MedicineSideEffects name={head.drug} />
                 {first?.indication ? <small>{withoutInlineSourceLocators(first.indication)}{first.patientGroup ? ` · ${withoutInlineSourceLocators(first.patientGroup)}` : ""}</small> : null}
               </th>
-              <td data-label="Dose, route, frequency">
+              <td>
                 {doses.map((dose, i) => <div key={i} className="dose-line"><Dose text={dose} /></div>)}
                 <span className="em-regimen-pills">
                   <span className="pill pill-sky pill-sm">{head.route}</span>
@@ -78,8 +78,8 @@ export function StepMedicationTable({ step, regimens = [] }: { step: ManagementS
                   <span className="pill pill-amber pill-sm"><Clock3 size={13} aria-hidden="true" />{head.duration}</span>
                 </span>
               </td>
-              {hasContraindications ? <td className="em-contra" data-label="Contraindications">{contraindications.length ? <List items={contraindications} /> : <span className="em-muted">See product label</span>}</td> : null}
-              <td data-label="Cautions and monitoring">{cautions.length ? <List items={cautions} /> : <span className="em-muted">See product label</span>}</td>
+              {hasContraindications ? <td className="em-contra">{contraindications.length ? <List items={contraindications} /> : <span className="em-muted">See product label</span>}</td> : null}
+              <td>{cautions.length ? <List items={cautions} /> : <span className="em-muted">See product label</span>}</td>
             </tr>
           ))}
         </tbody>
