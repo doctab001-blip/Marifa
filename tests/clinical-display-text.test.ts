@@ -14,7 +14,7 @@ describe("clinical display text", () => {
     expect(withoutInlineSourceLocators("Low, moderate, high, active: NG19 1.3.6."))
       .toBe("Low, moderate, high, active.");
     expect(withoutInlineSourceLocators("See the BNF for dosing in renal impairment (NG19 Table 2)."))
-      .toBe("Check dosing in renal impairment.");
+      .toBe(""); // deferral wording is never shown (27 Oct 2026); the medicine's CKD line gives the answer
     expect(withoutInlineSourceLocators("NICE: call an ambulance if pain persists."))
       .toBe("call an ambulance if pain persists.");
     expect(withoutInlineSourceLocators("Hypertension in Adults [Adapted from NICE]"))

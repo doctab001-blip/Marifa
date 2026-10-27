@@ -2,14 +2,22 @@ import { Clock3 } from "@/components/icons-3d";
 import { MedicationBadge } from "@/components/medication-badge";
 import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
 import { splitMedicationBadges } from "@/lib/management-sequence-format";
+import { splitDrugMarks } from "@/lib/step-medication";
 
 const TIMER = /(\bwithin\s+\d+(?:[–-]\d+)?\s*(?:minutes?|hours?|days?)\b|\bHour\s+\d+\b)/gi;
+
+/** Drug names marked by the page (see linkStepMedicines) in bold; everything else as written. */
+function drugNames(text: string, keyPrefix: string) {
+  const parts = splitDrugMarks(text);
+  if (parts.length === 1 && !parts[0].bold) return text;
+  return parts.map((part, index) => part.bold ? <strong key={`${keyPrefix}-d${index}`} className="med-name">{part.text}</strong> : part.text);
+}
 
 function timerPills(text: string, keyPrefix: string) {
   return text.split(TIMER).map((part, index) =>
     /^(within\s|Hour\s)/i.test(part)
       ? <span key={`${keyPrefix}-${index}`} className="pill pill-amber pill-sm timer-pill"><Clock3 size={13} aria-hidden="true" />{part}</span>
-      : part,
+      : <span key={`${keyPrefix}-${index}`}>{drugNames(part, `${keyPrefix}-${index}`)}</span>,
   );
 }
 

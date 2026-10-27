@@ -1,4 +1,5 @@
 import { isAntibiotic, isEmptyAdjustment } from "@/lib/medicine-adjustments";
+import { hasDeferral } from "@/lib/clinical-display-text";
 import { unexplainedScores } from "@/lib/clinical-scores";
 import { DiseaseDetailSchema, type DiseaseDetail } from "@/lib/validations/disease";
 
@@ -104,7 +105,11 @@ export function auditTopicDepth(content: unknown): DepthAudit {
     REQUIRED_ADJUSTMENT_PREFIXES.forEach((prefix) => need(r.adjustments.some((line) => line.startsWith(prefix) && !isEmptyAdjustment(line)), `${label} has no usable “${prefix}” line (give the real adjustment from BNF, a regulator label or KDIGO, not “not specified”).`));
     if (isAntibiotic(r.genericName)) need(r.adjustments.some((line) => line.startsWith("Penicillin allergy:")), `${label} is an antibiotic and has no “Penicillin allergy:” line.`);
     if (plan?.status !== "local-protocol-required") need(!DEFERRED_DOSE.test(`${r.dose} ${r.frequency}`), `${label} defers its dose to a local protocol; take the dose from an international guideline or label.`);
+    const deferring = [r.dose, r.route, r.frequency, r.duration, ...r.adjustments, ...(r.contraindications ?? []), ...r.monitoring].find((line) => line && hasDeferral(line));
+    need(!deferring, `${label} carries deferral wording (“${String(deferring).slice(0, 90)}”); give the answer from an international guideline instead (no “MOH gives no…”, “per label”, “local protocol”, “hospital formulary”).`);
   });
+  const deferringStep = t.clinicalManagement.flatMap((step) => [...step.actions, ...(step.branches ?? []).flatMap((b) => b.actions)]).find((line) => hasDeferral(line));
+  need(!deferringStep, `Management text carries deferral wording (“${String(deferringStep).slice(0, 90)}”); give the answer from an international guideline instead.`);
   (t.evidenceAudit?.unverifiedSections ?? []).forEach((gap) => need(!MISSING_DOSE_GAP.test(gap), `Recorded gap leaves a medicine without a dose (“${gap.slice(0, 90)}…”); fill it from an international guideline or label.`));
 
   const algorithms = t.algorithms ?? [];

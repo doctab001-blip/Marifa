@@ -1,6 +1,7 @@
 "use client";
 import { MedicineSideEffects } from "@/components/medicine-side-effects";
-import { cleanAdjustments } from "@/lib/medicine-adjustments";
+import { displayAdjustments, displayLines } from "@/lib/medicine-adjustments";
+import { withoutDeferralsDeep, withoutInlineSourceLocators } from "@/lib/clinical-display-text";
 
 import { useState } from "react";
 import { ChevronDown } from "@/components/icons-3d";
@@ -85,20 +86,22 @@ function MedicationItem({ regimen }: { regimen: MedicationRegimen }) {
     <h4>{regimen.indication}{role ? <> — <em>{role}</em></> : null}</h4>
     <dl>
       <div><dt>Medicine</dt><dd>{regimen.genericName}<MedicineSideEffects name={regimen.genericName} /></dd></div>
-      {regimen.useWhen ? <div><dt>Use when</dt><dd>{regimen.useWhen}</dd></div> : null}
+      {regimen.useWhen ? <div><dt>Use when</dt><dd>{withoutInlineSourceLocators(regimen.useWhen)}</dd></div> : null}
       <div><dt>Patient group</dt><dd>{regimen.patientGroup}</dd></div>
-      <div><dt>Dose and route</dt><dd>{regimen.dose}; {regimen.route}</dd></div>
-      <div><dt>Frequency and duration</dt><dd>{regimen.frequency}; {regimen.duration}</dd></div>
-      <div><dt>Adjustments and precautions</dt><dd><ul>{cleanAdjustments(regimen.adjustments, regimen.genericName).map((item) => <li key={item}>{item}</li>)}</ul></dd></div>
-      <div><dt>Monitoring</dt><dd><ul>{regimen.monitoring.map((item) => <li key={item}>{item}</li>)}</ul></dd></div>
+      <div><dt>Dose and route</dt><dd>{withoutInlineSourceLocators(regimen.dose)}; {withoutInlineSourceLocators(regimen.route)}</dd></div>
+      <div><dt>Frequency and duration</dt><dd>{withoutInlineSourceLocators(regimen.frequency)}; {withoutInlineSourceLocators(regimen.duration)}</dd></div>
+      <div><dt>Adjustments and precautions</dt><dd><ul>{displayAdjustments(regimen.adjustments, regimen.genericName).map((item) => <li key={item}>{item}</li>)}</ul></dd></div>
+      <div><dt>Monitoring</dt><dd><ul>{displayLines(regimen.monitoring).map((item) => <li key={item}>{item}</li>)}</ul></dd></div>
       <div><dt>Source</dt><dd><a href={regimen.sourceUrl} target="_blank" rel="noreferrer">{regimen.sourceTitle} ({regimen.sourceEdition})</a></dd></div>
     </dl>
     <SourceCitation sources={[{ title: regimen.sourceTitle, url: regimen.sourceUrl, edition: regimen.sourceEdition }]} />
   </li>;
 }
 
-export function DiseaseDetailSections({ disease, investigationSource }: { disease: DiseaseDetail; investigationSource?: InvestigationReference }) {
-  const medicationPlan = disease.medicationPlan ?? getMedicationPlan(disease.id);
+export function DiseaseDetailSections({ disease: storedDisease, investigationSource }: { disease: DiseaseDetail; investigationSource?: InvestigationReference }) {
+  // Display copy: deferral wording ("MOH gives no …", "per the label", "check the hospital formulary") is never shown.
+  const disease = withoutDeferralsDeep(storedDisease);
+  const medicationPlan = disease.medicationPlan ?? withoutDeferralsDeep(getMedicationPlan(disease.id));
   const remainingRegimens = medicationPlan ? uncoveredRegimens(disease.clinicalManagement, medicationPlan.regimens) : [];
   const remainingPlan = medicationPlan ? { ...medicationPlan, regimens: remainingRegimens } : medicationPlan;
   const topicSources: CitationSource[] = investigationSource ? [investigationSource] : [];
@@ -158,7 +161,7 @@ export function DiseaseDetailSections({ disease, investigationSource }: { diseas
                   <ul className="medication-plan-list">{step.options.map((regimen) => <MedicationItem key={`${regimen.genericName}-${regimen.indication}`} regimen={regimen} />)}</ul>
                 </div>)}
               </div>)
-            : <ul className="medication-plan-list">{remainingRegimens.map((regimen) => <MedicationItem key={`${regimen.genericName}-${regimen.indication}`} regimen={regimen} />)}</ul>) : <p className="m-0 rounded-lg border border-edge bg-panel px-4 py-3 text-sm leading-relaxed text-muted">{medicationPlan?.note ?? "No exact-dose medicine plan is linked to this topic. Consult the current Saudi/local protocol and hospital formulary for prescribing details."}</p>}
+            : <ul className="medication-plan-list">{remainingRegimens.map((regimen) => <MedicationItem key={`${regimen.genericName}-${regimen.indication}`} regimen={regimen} />)}</ul>) : <p className="m-0 rounded-lg border border-edge bg-panel px-4 py-3 text-sm leading-relaxed text-muted">{medicationPlan?.note ?? "No medicine plan is linked to this topic yet."}</p>}
         </section>
         <SourceCitation sources={topicSources} />
       </Section>

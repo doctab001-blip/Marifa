@@ -5,7 +5,7 @@ import { SourceCitation, type CitationSource } from "@/components/source-citatio
 import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
 import { StepMedicationTable } from "@/components/medication-table";
 import { parseAbcdeAction } from "@/lib/management-sequence-format";
-import type { RegimenLike } from "@/lib/step-medication";
+import { linkStepMedicines, type RegimenLike } from "@/lib/step-medication";
 
 type Branch = NonNullable<DiseaseDetail["clinicalManagement"][number]["branches"]>[number];
 
@@ -87,7 +87,9 @@ function DecisionBranches({ stepTitle, branches }: { stepTitle: string; branches
   );
 }
 
-export function PathwaySequence({ steps, sources = [], compact = false, regimens = [] }: { steps: DiseaseDetail["clinicalManagement"]; sources?: CitationSource[]; compact?: boolean; regimens?: RegimenLike[] }) {
+export function PathwaySequence({ steps: storedSteps, sources = [], compact = false, regimens = [] }: { steps: DiseaseDetail["clinicalManagement"]; sources?: CitationSource[]; compact?: boolean; regimens?: RegimenLike[] }) {
+  // Display copy only: drug names from the topic's medicine table are shown in bold with their doses under the step.
+  const steps = linkStepMedicines(storedSteps, regimens);
   return (
     <section className="pathway-sequence" aria-labelledby="pathway-sequence-title">
       <header className="pathway-sequence-header">
