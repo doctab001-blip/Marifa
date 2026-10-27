@@ -65,7 +65,8 @@ A table. Every row has all four columns:
 
 ### Management
 - Time-ordered steps: immediate (first 15–60 min) → ongoing → escalation → disposition.
-- Every drug: name, dose, route, frequency, maximum, and renal/hepatic adjustment if the source gives one.
+- Every drug: name, dose, route, frequency, maximum, a `CKD:` line, a `CLD:` line and an allergy alternative (`Penicillin allergy:` for antibiotics). If the national (MOH/ICMR) source does not give one, take it from an international guideline (BNF, Renal Drug Handbook, KDIGO, EMA/FDA label, BSACI, IDSA, NICE).
+- Never publish deferral wording: no "MOH gives no…", "not stated in the source", "per the product label", "follow local protocol", "check hospital formulary" or "pharmacist review". Give the answer instead (platform owner rule, 27 Oct 2026).
 - Monitoring targets with numbers (e.g. glucose fall rate, MAP target, urine output).
 - Clear escalation triggers (when to call ICU / specialty).
 - Discharge criteria and follow-up.

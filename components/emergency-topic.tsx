@@ -1,7 +1,7 @@
 import { Activity, ClipboardCheck, Clock3, FileSearch, Stethoscope, TriangleAlert, type LucideIcon } from "@/components/icons-3d";
 import { SectionNav } from "@/components/section-nav";
 import { MedicineSideEffects } from "@/components/medicine-side-effects";
-import { cleanAdjustments } from "@/lib/medicine-adjustments";
+import { displayAdjustments, displayLines } from "@/lib/medicine-adjustments";
 import type { DiseaseDetail } from "@/lib/validations/disease";
 import { PathwaySequence } from "@/components/pathway-sequence";
 import { uncoveredRegimens } from "@/lib/step-medication";
@@ -9,7 +9,7 @@ import type { CitationSource } from "@/components/source-citation";
 import { Investigations as MonitoringSchedule, TreatmentDetails } from "@/components/granular-pathway";
 import { ClinicalEvidenceAudit } from "@/components/clinical-evidence-audit";
 import { getMedicationPlan } from "@/lib/data/medication-plans";
-import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
+import { withoutInlineSourceLocators, withoutDeferralsDeep } from "@/lib/clinical-display-text";
 import { groupMedicationPlan, isBranchedMedicationPlan, type MedicationRegimen } from "@/lib/medication-pathway";
 import { ClinicalAlgorithms } from "@/components/clinical-algorithm";
 import { BoardQuestions, TeachingVignette } from "@/components/board-questions";
@@ -39,8 +39,8 @@ function RegimenRow({ regimen, hasContraindications }: { regimen: MedicationRegi
     <tr>
       <th scope="row">{regimen.genericName}<MedicineSideEffects name={regimen.genericName} />{role ? <span className={`pill pill-sm ${regimen.preferred ? "pill-emerald" : "pill-slate"} em-role-pill`}>{role}</span> : null}<small>{withoutInlineSourceLocators(regimen.indication)} · {withoutInlineSourceLocators(regimen.patientGroup)}</small>{regimen.useWhen ? <small className="em-use-when"><strong>Use when:</strong> {withoutInlineSourceLocators(regimen.useWhen)}</small> : null}</th>
       <td>{withoutInlineSourceLocators(regimen.dose)}<span className="em-regimen-pills"><span className="pill pill-sky pill-sm">{withoutInlineSourceLocators(regimen.route)}</span><span className="pill pill-violet pill-sm">{withoutInlineSourceLocators(regimen.frequency)}</span><span className="pill pill-amber pill-sm"><Clock3 size={13} aria-hidden="true" />{withoutInlineSourceLocators(regimen.duration)}</span></span></td>
-      {hasContraindications ? <td className="em-contra">{regimen.contraindications?.length ? <List items={regimen.contraindications} /> : <span className="em-muted">See product label</span>}</td> : null}
-      <td><List items={[...cleanAdjustments(regimen.adjustments, regimen.genericName), ...regimen.monitoring.map((item) => `Monitor: ${item}`)]} /></td>
+      {hasContraindications ? <td className="em-contra">{displayLines(regimen.contraindications).length ? <List items={displayLines(regimen.contraindications)} /> : <span className="em-muted" aria-label="None listed">—</span>}</td> : null}
+      <td><List items={[...displayAdjustments(regimen.adjustments, regimen.genericName), ...displayLines(regimen.monitoring).map((item) => `Monitor: ${item}`)]} /></td>
     </tr>
   );
 }
@@ -77,14 +77,16 @@ function Explained({ disease, section }: { disease: DiseaseDetail; section: Expl
 
 const isImaging = (item: Investigation) => item.tier === "firstLineImaging" || item.tier === "advancedImaging";
 
-export function EmergencyTopic({ disease, investigationSource }: { disease: DiseaseDetail; investigationSource?: CitationSource }) {
+export function EmergencyTopic({ disease: storedDisease, investigationSource }: { disease: DiseaseDetail; investigationSource?: CitationSource }) {
+  // Display copy: deferral wording ("MOH gives no …", "per the label", "check the hospital formulary") is never shown.
+  const disease = withoutDeferralsDeep(storedDisease);
   const topicSources: CitationSource[] = investigationSource ? [investigationSource] : [];
   const allTests = [...disease.investigations.ruleIn, ...disease.investigations.ruleOut];
   const labs = allTests.filter((item) => !isImaging(item));
   const imaging = allTests.filter(isImaging);
   const showNormal = labs.some((item) => importantNormalValue(item.normalValue, item.expectedFinding));
   const testChoices = allTests.filter((item) => item.pros?.length || item.cons?.length);
-  const medicationPlan = disease.medicationPlan ?? getMedicationPlan(disease.id);
+  const medicationPlan = disease.medicationPlan ?? withoutDeferralsDeep(getMedicationPlan(disease.id));
   const remainingRegimens = medicationPlan ? uncoveredRegimens(disease.clinicalManagement, medicationPlan.regimens) : [];
   const remainingPlan = medicationPlan ? { ...medicationPlan, regimens: remainingRegimens } : medicationPlan;
   const hasContraindications = Boolean(remainingRegimens.some((regimen) => regimen.contraindications?.length));

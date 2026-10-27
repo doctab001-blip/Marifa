@@ -1167,7 +1167,7 @@ html[data-theme="dark"] .topic-tile[data-spec] { background: hsl(var(--spec-hue,
 .step-med-table.em-table-wrap { overflow: visible; padding: 0; }
 .step-med-table .em-table { width: 100%; min-width: 0; table-layout: fixed; border-collapse: separate; border-spacing: 0; font-size: .9rem; }
 .step-med-table .em-table thead th { white-space: normal; letter-spacing: .05em; font-size: .7rem; line-height: 1.35; }
-.step-med-table .em-table th, .step-med-table .em-table td { min-width: 0; padding: 10px 12px; overflow-wrap: break-word; word-break: normal; hyphens: auto; }
+.step-med-table .em-table th, .step-med-table .em-table td { min-width: 0; padding: 10px 12px; overflow-wrap: break-word; word-break: normal; }
 .step-med-table .em-table tbody th { min-width: 0; }
 .step-med-table .em-table thead th:first-child { border-top-left-radius: 12px; }
 .step-med-table .em-table thead th:last-child { border-top-right-radius: 12px; }
@@ -1178,16 +1178,29 @@ html[data-theme="dark"] .topic-tile[data-spec] { background: hsl(var(--spec-hue,
 .step-med-table .em-table:not(.has-contra) th:nth-child(1) { width: 27%; }
 .step-med-table .em-table:not(.has-contra) th:nth-child(2) { width: 33%; }
 .step-med-table .em-table:not(.has-contra) th:nth-child(3) { width: 40%; }
-.step-med-table .em-regimen-pills .pill { white-space: normal; max-width: 100%; text-align: left; }
-.step-med-table .em-list { padding-left: 1rem; }
+.step-med-table .em-regimen-pills .pill { white-space: normal; max-width: 100%; text-align: left; border-radius: 10px; line-height: 1.35; padding-top: .2rem; padding-bottom: .2rem; }
+.step-med-table .em-regimen-pills .pill svg { flex: none; margin-top: .1rem; align-self: flex-start; }
+.step-med-table .em-list { padding-left: 1rem; grid-template-columns: minmax(0, 1fr); }
+.step-med-table .em-list li { min-width: 0; overflow-wrap: break-word; }
 .step-med-table.em-table-wrap { container-type: inline-size; }
 @container (max-width: 640px) {
-  .step-med-table .em-table { font-size: .84rem; }
-  .step-med-table .em-table thead th { font-size: .6rem; letter-spacing: .03em; }
+  .step-med-table .em-table { --topic-body-size: .8rem; line-height: 1.45; }
+  .step-med-table .em-table thead th { font-size: .66rem !important; letter-spacing: .02em; }
   .step-med-table .em-table th, .step-med-table .em-table td { padding: 8px 8px; }
   .step-med-table .em-table.has-contra th:nth-child(1) { width: 26%; }
   .step-med-table .em-table.has-contra th:nth-child(2) { width: 27%; }
   .step-med-table .em-table.has-contra th:nth-child(3) { width: 21%; }
   .step-med-table .em-table.has-contra th:nth-child(4) { width: 26%; }
   .step-med-table .em-regimen-pills .pill { font-size: .7rem; padding: .1rem .45rem; }
+  .step-med-table .em-list { padding-left: .85rem; gap: 3px; }
 }
+@container (max-width: 480px) {
+  .step-med-table .em-table { --topic-body-size: .74rem; }
+  .step-med-table .em-table thead th { font-size: .6rem !important; letter-spacing: 0; }
+  .step-med-table .em-table th, .step-med-table .em-table td { padding: 7px 6px; }
+}
+/* Phones: four columns cannot be read in under 360px, so the whole table keeps a readable width and swipes sideways inside its rounded box. */
+@container (max-width: 360px) {
+  .step-med-table .em-table { min-width: 460px; }
+}
+.step-med-table.em-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }

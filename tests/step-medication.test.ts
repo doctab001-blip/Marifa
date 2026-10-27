@@ -27,3 +27,42 @@ describe("step medication matching", () => {
     expect(uncoveredRegimens(steps, regs).map((r) => r.genericName)).toEqual(["Meropenem"]);
   });
 });
+
+describe("automatic step medicines (display only)", async () => {
+  const { linkStepMedicines, splitDrugMarks } = await import("@/lib/step-medication");
+  const reg = (genericName: string, route = "Oral", extra = {}) => ({ genericName, route, dose: "500 mg", frequency: "Twice daily", duration: "5 days", ...extra });
+  const bold = (text: string) => splitDrugMarks(text).filter((p) => p.bold).map((p) => p.text);
+
+  it("bolds drugs named in step text and lists each under the first step that names it", () => {
+    const steps = [
+      { id: "1", title: "Treat", timeframe: "now", actions: ["Start oral Amoxicillin and give paracetamol for fever."] },
+      { id: "2", title: "Review", timeframe: "48 h", actions: ["Continue amoxicillin if improving."] },
+    ];
+    const regs = [reg("Amoxicillin 500 mg capsules"), reg("Paracetamol (acetaminophen)"), reg("Meropenem", "IV")];
+    const out = linkStepMedicines(steps, regs);
+    expect(bold(out[0].actions[0])).toEqual(["Amoxicillin", "paracetamol"]);
+    expect(out[0].medicines?.map((m) => m.badge.drug)).toEqual(["Amoxicillin 500 mg capsules", "Paracetamol (acetaminophen)"]);
+    expect(bold(out[1].actions[0])).toEqual(["amoxicillin"]);
+    expect(out[1].medicines).toEqual([]);
+    expect(uncoveredRegimens(steps, regs).map((r) => r.genericName)).toEqual(["Meropenem"]);
+  });
+
+  it("does not treat measurements or forms as prescriptions", () => {
+    const steps = [{ id: "1", title: "Check", timeframe: "now", actions: ["Check capillary glucose and serum potassium; if glucose below 4 mmol/L give glucose 10%."] }];
+    const out = linkStepMedicines(steps, [reg("Glucose 10%", "IV"), reg("Basal insulin (glargine)", "Subcutaneous")]);
+    expect(bold(out[0].actions[0])).toEqual(["glucose"]);
+    expect(out[0].actions[0].startsWith("Check capillary glucose")).toBe(true);
+  });
+
+  it("leaves topics that already carry badges exactly as written", () => {
+    const steps = [{ id: "1", title: "A", timeframe: "now", actions: ["Give [💊 Ceftriaxone | 2 g | IV | Once daily | 5 days] and paracetamol."] }];
+    expect(linkStepMedicines(steps, [reg("Paracetamol")])).toBe(steps);
+  });
+
+  it("keeps the stored text unchanged once marks are removed", () => {
+    const text = "Give magnesium sulphate and IV ceftriaxone — then co-amoxiclav.";
+    const out = linkStepMedicines([{ id: "1", title: "A", timeframe: "now", actions: [text] }], [reg("Magnesium sulfate 50%", "IV"), reg("Ceftriaxone", "IV"), reg("Co-amoxiclav")]);
+    expect(out[0].actions[0].replace(/[]/g, "")).toBe(text);
+    expect(bold(out[0].actions[0])).toEqual(["magnesium sulphate", "ceftriaxone", "co-amoxiclav"]);
+  });
+});
