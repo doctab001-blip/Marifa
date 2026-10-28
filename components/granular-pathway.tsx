@@ -1,6 +1,7 @@
 import type { ClinicalPathwayPayload, ExactDoseSchema, Medicines_Doses } from "@/lib/validations/clinical-pathway";
 import { MedicineSideEffects } from "@/components/medicine-side-effects";
 import { displayAdjustments, displayLines } from "@/lib/medicine-adjustments";
+import { CautionsDropdown, ContraList } from "@/components/medicine-cautions";
 import type { z } from "zod";
 import { SourceCitation } from "@/components/source-citation";
 import { ClinicalTimeframe } from "@/components/clinical-timeframe";
@@ -20,9 +21,8 @@ function Medicines({ medicines, showSources }: { medicines: Medicines_Doses[]; s
         <li><strong>Loading dose:</strong> <Dose dose={medicine.loading_dose} /></li>
         <li><strong>Maintenance dose:</strong> <Dose dose={medicine.maintenance_dose} /></li>
         <li><strong>Route:</strong> {withoutInlineSourceLocators(medicine.route)}</li>
-        <li><strong>Contraindications:</strong><ul>{displayLines(medicine.contraindications).map((item, i) => <li key={i}>{withoutInlineSourceLocators(item)}</li>)}</ul></li>
-        <li><strong>Adjustments:</strong><ul>{displayAdjustments(medicine.adjustments, medicine.medicine).map((item, i) => <li key={i}>{withoutInlineSourceLocators(item)}</li>)}</ul></li>
-        <li><strong>Monitoring:</strong><ul>{displayLines(medicine.monitoring).map((item, i) => <li key={i}>{withoutInlineSourceLocators(item)}</li>)}</ul></li>
+        <li><strong>Contraindications:</strong><ContraList items={displayLines(medicine.contraindications)} /></li>
+        <li><strong>Cautions:</strong> <CautionsDropdown adjustments={displayAdjustments(medicine.adjustments, medicine.medicine)} monitoring={displayLines(medicine.monitoring)} /></li>
       </ul>
       {showSources ? <SourceCitation sources={medicine.evidence.sources} selectionRationale={medicine.evidence.selection_rationale} /> : null}
     </li>)}

@@ -1,6 +1,7 @@
 "use client";
 import { MedicineSideEffects } from "@/components/medicine-side-effects";
 import { displayAdjustments, displayLines } from "@/lib/medicine-adjustments";
+import { CautionsDropdown } from "@/components/medicine-cautions";
 import { withoutDeferralsDeep, withoutInlineSourceLocators } from "@/lib/clinical-display-text";
 
 import { useState } from "react";
@@ -90,8 +91,7 @@ function MedicationItem({ regimen }: { regimen: MedicationRegimen }) {
       <div><dt>Patient group</dt><dd>{regimen.patientGroup}</dd></div>
       <div><dt>Dose and route</dt><dd>{withoutInlineSourceLocators(regimen.dose)}; {withoutInlineSourceLocators(regimen.route)}</dd></div>
       <div><dt>Frequency and duration</dt><dd>{withoutInlineSourceLocators(regimen.frequency)}; {withoutInlineSourceLocators(regimen.duration)}</dd></div>
-      <div><dt>Adjustments and precautions</dt><dd><ul>{displayAdjustments(regimen.adjustments, regimen.genericName).map((item) => <li key={item}>{item}</li>)}</ul></dd></div>
-      <div><dt>Monitoring</dt><dd><ul>{displayLines(regimen.monitoring).map((item) => <li key={item}>{item}</li>)}</ul></dd></div>
+      <div><dt>Cautions</dt><dd><CautionsDropdown adjustments={displayAdjustments(regimen.adjustments, regimen.genericName)} monitoring={displayLines(regimen.monitoring)} /></dd></div>
       <div><dt>Source</dt><dd><a href={regimen.sourceUrl} target="_blank" rel="noreferrer">{regimen.sourceTitle} ({regimen.sourceEdition})</a></dd></div>
     </dl>
     <SourceCitation sources={[{ title: regimen.sourceTitle, url: regimen.sourceUrl, edition: regimen.sourceEdition }]} />
