@@ -3,7 +3,7 @@ import { penicillinAllergyLine } from "@/lib/medicine-allergy";
 import { renalHepaticLines } from "@/lib/medicine-renal-hepatic";
 /** Display rules for the "adjustments" lines of a medicine: keep the table short and only show lines that carry information. */
 
-const ANTIBIOTIC = /(cillin|cef[a-z]*|ceph[a-z]*|penem|aztreonam|mycin|micin|cycline|floxacin|vancomycin|teicoplanin|linezolid|trimethoprim|co-trimoxazole|metronidazole|nitrofurantoin|fosfomycin|rifamp|isoniazid|pyrazinamide|ethambutol|chloramphenicol|colistin|antibiotic)/i;
+const ANTIBIOTIC = /(cillin|amoxiclav|clavulan|cef[a-z]*|ceph[a-z]*|penem|aztreonam|mycin|micin|cycline|floxacin|vancomycin|teicoplanin|linezolid|trimethoprim|co-trimoxazole|metronidazole|nitrofurantoin|fosfomycin|rifamp|isoniazid|pyrazinamide|ethambutol|chloramphenicol|colistin|antibiotic)/i;
 
 export function isAntibiotic(name: string): boolean {
   return ANTIBIOTIC.test(name);

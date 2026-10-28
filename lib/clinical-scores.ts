@@ -534,6 +534,45 @@ export const clinicalScores: ScoreDefinition[] = [
     note: "Thresholds depend on the country. FRAX is run in an online calculator.",
     source: { label: "Kanis JA et al. Osteoporos Int 2008;19:385-97", url: pm("Kanis FRAX and the assessment of fracture probability in men and women from the UK") },
   },
+  {
+    id: "burch-wartofsky", name: "Burch-Wartofsky point scale for thyroid storm", patterns: [/Burch[-–]Wartofsky/],
+    purpose: "Scores how likely it is that a patient with thyrotoxicosis has thyroid storm, using temperature, nervous system, gut and liver, heart and precipitant features. It supports, but does not replace, clinical diagnosis.",
+    range: "0 to 140 points",
+    tables: [
+      { caption: "Items scored", columns: ["Feature", "Points"], rows: yes([
+        ["Temperature", "37.2–37.7°C = 5; 37.8–38.2 = 10; 38.3–38.8 = 15; 38.9–39.3 = 20; 39.4–39.9 = 25; 40.0 or above = 30"],
+        ["Central nervous system", "Absent = 0; mild (agitation) = 10; moderate (delirium, psychosis, extreme lethargy) = 20; severe (seizure, coma) = 30"],
+        ["Gastrointestinal and liver", "Absent = 0; moderate (diarrhoea, nausea, vomiting, abdominal pain) = 10; severe (unexplained jaundice) = 20"],
+        ["Heart rate (beats/min)", "90–109 = 5; 110–119 = 10; 120–129 = 15; 130–139 = 20; 140 or above = 25"],
+        ["Heart failure", "Absent = 0; mild (ankle oedema) = 5; moderate (bibasal crackles) = 10; severe (pulmonary oedema) = 15"],
+        ["Atrial fibrillation", "Absent = 0; present = 10"], ["Precipitating event", "Absent = 0; present = 10"],
+      ]) },
+      { caption: "How to read the total", columns: ["Total", "Meaning"], rows: [
+        ["45 or above", "Highly suggestive of thyroid storm"], ["25 to 44", "Impending storm; treat as storm"], ["Below 25", "Storm unlikely"],
+      ] },
+    ],
+    note: "Score the worst value in each group. Thyroid hormone levels are not part of the scale and do not separate storm from uncomplicated thyrotoxicosis.",
+    source: { label: "Burch HB, Wartofsky L. Endocrinol Metab Clin North Am 1993;22:263-77", url: pm("Burch Wartofsky Life-threatening thyrotoxicosis thyroid storm 1993") },
+  },
+  {
+    id: "gmaws", name: "GMAWS (Glasgow Modified Alcohol Withdrawal Scale)", patterns: [/\bGMAWS\b/, /Glasgow Modified Alcohol Withdrawal/i],
+    purpose: "Five bedside items that grade the severity of alcohol withdrawal and guide symptom-triggered benzodiazepine dosing. It is repeated at set intervals, including overnight.",
+    range: "0 to 10 points",
+    tables: [
+      { caption: "Items scored (0 to 2 each)", columns: ["Item", "0", "1", "2"], rows: [
+        ["Tremor", "None", "Arms outstretched", "At rest"],
+        ["Sweating", "None", "Moist", "Drenching"],
+        ["Hallucinations", "None", "Dubious or brief", "Present"],
+        ["Orientation", "Oriented", "Vague or detached", "Disoriented or no contact"],
+        ["Agitation", "Calm", "Anxious", "Panicky"],
+      ] },
+      { caption: "How to read the total", columns: ["Score", "Meaning"], rows: [
+        ["0", "No withdrawal features; continue scoring"], ["1 to 3", "Mild withdrawal"], ["4 to 8", "Moderate withdrawal; benzodiazepine dose by the scale"], ["9 to 10", "Severe withdrawal; urgent senior review"],
+      ] },
+    ],
+    note: "Four consecutive scores of 0 suggest withdrawal has settled. Severe withdrawal and delirium tremens need senior review whatever the score.",
+    source: { label: "McPherson A et al. Alcohol Alcohol 2012;47:688-93 (Glasgow Modified Alcohol Withdrawal Scale)", url: pm("McPherson Glasgow modified alcohol withdrawal scale 2012") },
+  },
 ];
 
 /* ---- First-use detection ---------------------------------------------------------------------------------- */
