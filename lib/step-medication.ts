@@ -31,24 +31,47 @@ const STOP = new Set(["plus", "with", "oral", "intravenous", "intramuscular", "i
 const tokens = (name: string) => (name.toLowerCase().match(/[a-z]{4,}/g) ?? []).filter((t) => !STOP.has(t));
 const SPECIFIC = ["nebulis", "inhal", "infusion"];
 
-/** Regimens in the topic's medicine table that describe the drug named by a badge (best match by name, route and form). */
+/** Salt and carrier words: two names that share only these (sodium, chloride, succinate ...) are different medicines. */
+const SALTS = new Set(["sodium", "chloride", "hydrochloride", "sulfate", "sulphate", "acetate", "phosphate", "succinate", "citrate", "bitartrate", "maleate", "tartrate", "fumarate", "mesylate", "besilate", "bromide", "acid", "injection", "solution", "tablets", "tablet", "capsules", "ready", "mixed", "diluted", "concentrated", "only"]);
+const strengths = (name: string) => new Set((name.match(/\d+(?:\.\d+)?\s*%/g) ?? []).map((x) => x.replace(/\s+/g, "")));
+const norm = (name: string) => name.toLowerCase().replace(/\s+/g, " ").trim();
+
+/** How surely a medicine-table name names the badge's drug: 3 same drug, 2 one part of a combination, 1 same principal word, 0 another shared drug word; null for no real overlap. */
+function nameTier(badgeDrug: string, genericName: string): number | null {
+  const key = drugKey(badgeDrug), regimenKey = drugKey(genericName);
+  const bare = (name: string) => norm(name.replace(/\([^)]*\)/g, " ").replace(/\d+(?:\.\d+)?\s*%/g, " "));
+  if ((key && key === regimenKey) || bare(badgeDrug) === bare(genericName)) return 3;
+  if ((key && parts(genericName).includes(key)) || (regimenKey && parts(badgeDrug).includes(regimenKey))) return 2;
+  const a = tokens(badgeDrug).filter((t) => !SALTS.has(t)), b = tokens(genericName).filter((t) => !SALTS.has(t));
+  if (a.length && b.length && a[0] === b[0]) return 1;
+  return a.some((t) => b.includes(t)) ? 0 : null;
+}
+
+/** Regimens in the topic's medicine table that describe the drug named by a badge (best match by name, strength, route and form).
+ * An exact name match wins outright. Otherwise only the closest names are kept, a different stated strength (0.9% versus 3%)
+ * rules a row out, and names sharing only salt words (sodium chloride versus diatrizoate sodium) never match. */
 export function matchRegimens<R extends RegimenLike>(badge: MedicationBadge, regimens: R[]): R[] {
-  const key = drugKey(badge.drug);
-  const badgeTokens = tokens(badge.drug);
-  if (!key && !badgeTokens.length) return [];
+  if (!badge.drug.trim()) return [];
+  const exact = regimens.filter((r) => norm(r.genericName) === norm(badge.drug));
+  const wantedStrength = strengths(badge.drug);
+  const tiered = exact.length ? exact.map((r) => ({ r, tier: 9 })) : regimens
+    .map((r) => ({ r, tier: nameTier(badge.drug, r.genericName) }))
+    .filter((x): x is { r: R; tier: number } => x.tier !== null)
+    .filter(({ r }) => {
+      if (!wantedStrength.size) return true;
+      const own = strengths(r.genericName);
+      return !own.size || [...own].some((x) => wantedStrength.has(x));
+    });
+  if (!tiered.length) return [];
+  const top = Math.max(...tiered.map((x) => x.tier));
   const badgeText = `${badge.drug} ${badge.route}`.toLowerCase();
   const wanted = routeWords(badge.route);
-  const scored = regimens
-    .map((r) => {
-      const regimenTokens = tokens(r.genericName);
-      if (!regimenTokens.some((t) => badgeTokens.includes(t))) return { r, score: -Infinity };
-      const regimenText = `${r.genericName} ${r.route}`.toLowerCase();
-      let score = parts(r.genericName).includes(key) ? 4 : 0;
-      if (routeWords(r.route).some((w) => wanted.includes(w))) score += 2;
-      for (const word of SPECIFIC) score += badgeText.includes(word) === regimenText.includes(word) ? 1 : -3;
-      return { r, score };
-    })
-    .filter((x) => x.score > -Infinity);
+  const scored = tiered.filter((x) => x.tier === top).map(({ r }) => {
+    const regimenText = `${r.genericName} ${r.route}`.toLowerCase();
+    let score = routeWords(r.route).some((w) => wanted.includes(w)) ? 2 : 0;
+    for (const word of SPECIFIC) score += badgeText.includes(word) === regimenText.includes(word) ? 1 : -3;
+    return { r, score };
+  });
   const best = Math.max(...scored.map((x) => x.score));
   return scored.filter((x) => x.score === best).map((x) => x.r);
 }
