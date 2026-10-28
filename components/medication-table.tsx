@@ -1,7 +1,7 @@
 import { Clock3 } from "@/components/icons-3d";
 import { doseLead } from "@/components/medication-badge";
 import { MedicineSideEffects } from "@/components/medicine-side-effects";
-import { CautionsDropdown, ContraList } from "@/components/medicine-cautions";
+import { CautionsCell, ContraCell } from "@/components/medicine-cautions";
 import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
 import { displayAdjustments, displayLines } from "@/lib/medicine-adjustments";
 import { collectMedicationBadges, type MedicationBadge } from "@/lib/management-sequence-format";
@@ -80,7 +80,7 @@ export function StepMedicationTable({ step, regimens = [] }: { step: LinkedStep;
           <tr><th scope="col">Medicine and indication</th><th scope="col">Dose, route, frequency</th>{hasContraindications ? <th scope="col">Contra{"\u00AD"}indications</th> : null}<th scope="col">Cautions</th></tr>
         </thead>
         <tbody>
-          {rows.map(({ head, doses, first, contraindications, cautions, monitoring }, index) => (
+          {rows.map(({ head, doses, first, contraindications, cautions }, index) => (
             <tr key={index}>
               <th scope="row">
                 {head.drug}
@@ -95,8 +95,8 @@ export function StepMedicationTable({ step, regimens = [] }: { step: LinkedStep;
                   <span className="pill pill-amber pill-sm"><Clock3 size={13} aria-hidden="true" />{head.duration}</span>
                 </span>
               </td>
-              {hasContraindications ? <td className="em-contra"><ContraList items={contraindications} /></td> : null}
-              <td><CautionsDropdown adjustments={cautions} monitoring={monitoring} /></td>
+              {hasContraindications ? <td className="em-contra fit-cell"><ContraCell items={contraindications} /></td> : null}
+              <td className="fit-cell"><CautionsCell adjustments={cautions} /></td>
             </tr>
           ))}
         </tbody>

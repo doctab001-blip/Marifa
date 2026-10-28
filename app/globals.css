@@ -2248,3 +2248,31 @@ html[data-theme="dark"] .algorithm-dialog-bar { border-color: #334155; }
   .topic-toolbar .topic-pager.topic-pager-bar { grid-template-columns: none; margin-left: 0; }
   .topic-page .sc-eyebrow-row { order: 0; margin-left: 0; }
 }
+
+/* Cautions, monitoring and contraindication dropdowns in medicine tables (28 Oct 2026) */
+.med-drop { font-size: .92em; }
+.med-drop > summary { cursor: pointer; color: var(--tp-primary, var(--royal)); font-weight: 600; list-style: none; display: inline-flex; align-items: center; gap: 6px; }
+.med-drop > summary::-webkit-details-marker { display: none; }
+.med-drop > summary::before { content: "▸"; transition: transform .15s; }
+.med-drop[open] > summary::before { transform: rotate(90deg); }
+.med-drop[open] > summary { margin-bottom: 6px; }
+.med-drop-label { margin: 8px 0 4px; font-weight: 700; font-size: .85em; text-transform: uppercase; letter-spacing: .04em; color: var(--tp-muted, #64748b); }
+.med-drop-contra > summary { color: #9f1239; margin-top: 4px; }
+
+/* Contraindication and caution cells fill the height the medicine and dose columns give the row;
+   anything that does not fit opens with "Show all" (28 Oct 2026). Wide screens only. */
+.fit-row-toggle { margin-top: 4px; padding: 0; border: 0; background: none; cursor: pointer; color: var(--tp-primary, var(--royal)); font: inherit; font-size: .88em; font-weight: 650; }
+.fit-row-toggle::before { content: "▸ "; }
+.fit-row.is-open .fit-row-toggle::before { content: "▾ "; }
+.em-contra .fit-row-toggle { color: #9f1239; }
+.fit-row-box > .em-list { margin: 0; }
+@media (min-width: 721px) {
+  .em-dose-table { table-layout: fixed; }
+  .em-dose-table thead th:nth-child(1) { width: 27%; }
+  .em-dose-table thead th:nth-child(2) { width: 25%; }
+  .em-table td.fit-cell { position: relative; height: 7.5em; }
+  .em-table td.fit-cell .fit-row:not(.is-open) { position: absolute; inset: 10px 12px; display: flex; flex-direction: column; }
+  .em-table td.fit-cell .fit-row:not(.is-open) .fit-row-box { flex: 1 1 auto; min-height: 0; overflow: hidden; }
+  .em-table td.fit-cell .fit-row.is-clipped:not(.is-open) .fit-row-box { -webkit-mask-image: linear-gradient(to bottom, #000 80%, transparent); mask-image: linear-gradient(to bottom, #000 80%, transparent); }
+  .em-table td.fit-cell .fit-row-toggle { flex: none; align-self: flex-start; }
+}

@@ -22,7 +22,7 @@ export function compactMedicineLine(text: string): string {
     .replace(/\s{2,}/g, " ")
     .trim();
   if (/^(?:Paediatric|Allergy|CKD|CLD|Monitor):?\s*$/i.test(s)) return "";
-  s = s.replace(/^CKD:/, "Kidney:").replace(/^CLD:/, "Liver:").replace(/^Paediatric:/, "Children:");
+  s = s.replace(/^Paediatric:/, "Children:");
   s = s.replace(/^Children:\s*(?:are dosed at|are given|are dosed|receive|are)\s+/i, "Children: ");
   if (/^Children:\s*(?:[a-z]+\s+){0,4}on (?:a|the) paediatric\b[^.;]*\.?$/i.test(s)) return "";
   if (s && !/[.!?]$/.test(s)) s += ".";
@@ -31,16 +31,16 @@ export function compactMedicineLine(text: string): string {
 }
 
 const rank = (line: string) => { const i = ORDER_RANK.findIndex((pattern) => pattern.test(line)); return i < 0 ? ORDER_RANK.length : i; };
-const ORDER_RANK = [/^Kidney:/, /^Liver:/, /^(?:Penicillin allergy|Allergy):/i, /^Children:/];
+const ORDER_RANK = [/^CKD:/, /^CLD:/, /^(?:Penicillin allergy|Allergy):/i, /^Children:/];
 
 /** Compacted, de-duplicated lines: kidney, liver, allergy and children first, then the rest in their stored order. */
 export function compactMedicineLines(lines: string[]): string[] {
   return [...new Set(lines.map(compactMedicineLine).filter(Boolean))].map((line, i) => ({ line, i })).sort((a, b) => rank(a.line) - rank(b.line) || a.i - b.i).map((x) => x.line);
 }
 
-const ORDER: Array<[RegExp, string]> = [[/^Kidney:/, "Kidney"], [/^Liver:/, "Liver"], [/^(?:Penicillin allergy|Allergy):/i, "Allergy"], [/^Children:/, "Children"]];
+const ORDER: Array<[RegExp, string]> = [[/^CKD:/, "CKD"], [/^CLD:/, "CLD"], [/^(?:Penicillin allergy|Allergy):/i, "Allergy"], [/^Children:/, "Children"]];
 
-/** Short summary for the closed cautions panel: "Kidney · Liver · Allergy · 3 checks". */
+/** Short summary for the closed cautions panel: "CKD · CLD · Children · 2 more". */
 export function cautionSummary(cautions: string[], monitoring: string[]): string {
   const labels = ORDER.filter(([pattern]) => cautions.some((line) => pattern.test(line))).map(([, label]) => label);
   const other = cautions.filter((line) => !ORDER.some(([pattern]) => pattern.test(line))).length;

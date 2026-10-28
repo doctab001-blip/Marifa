@@ -1,7 +1,7 @@
 import { Activity, ClipboardCheck, Clock3, FileSearch, Stethoscope, TriangleAlert, type LucideIcon } from "@/components/icons-3d";
 import { SectionNav } from "@/components/section-nav";
 import { MedicineSideEffects } from "@/components/medicine-side-effects";
-import { CautionsDropdown, ContraList } from "@/components/medicine-cautions";
+import { CautionsCell, ContraCell } from "@/components/medicine-cautions";
 import { displayAdjustments, displayLines } from "@/lib/medicine-adjustments";
 import type { DiseaseDetail } from "@/lib/validations/disease";
 import { PathwaySequence } from "@/components/pathway-sequence";
@@ -40,8 +40,8 @@ function RegimenRow({ regimen, hasContraindications }: { regimen: MedicationRegi
     <tr>
       <th scope="row">{regimen.genericName}<MedicineSideEffects name={regimen.genericName} />{role ? <span className={`pill pill-sm ${regimen.preferred ? "pill-emerald" : "pill-slate"} em-role-pill`}>{role}</span> : null}<small>{withoutInlineSourceLocators(regimen.indication)} · {withoutInlineSourceLocators(regimen.patientGroup)}</small>{regimen.useWhen ? <small className="em-use-when"><strong>Use when:</strong> {withoutInlineSourceLocators(regimen.useWhen)}</small> : null}</th>
       <td>{withoutInlineSourceLocators(regimen.dose)}<span className="em-regimen-pills"><span className="pill pill-sky pill-sm">{withoutInlineSourceLocators(regimen.route)}</span><span className="pill pill-violet pill-sm">{withoutInlineSourceLocators(regimen.frequency)}</span><span className="pill pill-amber pill-sm"><Clock3 size={13} aria-hidden="true" />{withoutInlineSourceLocators(regimen.duration)}</span></span></td>
-      {hasContraindications ? <td className="em-contra"><ContraList items={displayLines(regimen.contraindications)} /></td> : null}
-      <td><CautionsDropdown adjustments={displayAdjustments(regimen.adjustments, regimen.genericName)} monitoring={displayLines(regimen.monitoring)} /></td>
+      {hasContraindications ? <td className="em-contra fit-cell"><ContraCell items={displayLines(regimen.contraindications)} /></td> : null}
+      <td className="fit-cell"><CautionsCell adjustments={displayAdjustments(regimen.adjustments, regimen.genericName)} /></td>
     </tr>
   );
 }
