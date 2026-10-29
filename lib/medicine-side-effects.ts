@@ -361,6 +361,10 @@ export const SIDE_EFFECTS: readonly SideEffectRule[] = [
   ["rocuronium", "injection pain, low blood pressure, prolonged weakness, allergic reaction"],
   ["sugammadex", "slow heart rate, nausea, allergic reaction, altered taste"],
   ["ephedrine", "fast heart rate, raised blood pressure, palpitations, anxiety"],
+  ["menthol", "skin irritation, stinging, contact dermatitis (rare)"],
+  ["anti-d immunoglobulin", "injection-site pain, fever, allergic reaction (rare)"],
+  ["compound sodium lactate|hartmann|ringer", "fluid overload, hyperkalaemia, metabolic alkalosis, injection-site irritation, raised lactate in liver failure"],
+  ["red cell concentrate|packed red cell|red cells", "fever, chills, urticaria, volume overload, raised potassium and low calcium with large volumes"],
 ];
 
 const FLUID = /^(dextrose|sodium chloride|ringer|glucose 50)/;
