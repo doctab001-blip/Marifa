@@ -8,6 +8,7 @@ import { DiseaseDetailSchema } from "@/lib/validations/disease";
 import { selectNewestDraftPerTopic } from "@/lib/data/draft-topic-selection";
 import { LOCAL_PROTOCOL_SOURCE_TYPE } from "@/lib/local-protocols";
 import { isTopicVisibleInRegion } from "@/lib/region-topics";
+import { mergedTopics } from "@/lib/data/merged-topics";
 import { currentRequestRegion } from "@/lib/region-server";
 
 /** Disease Management and Local Protocols share storage; `source_type` keeps their queues apart. */
@@ -85,6 +86,7 @@ async function loadDraftQueue(scope: TopicScope): Promise<{
           authority?: string | null;
         }>;
         for (const version of related.filter((entry) => ["draft", "under_review"].includes(entry.status))) {
+          if (Object.hasOwn(mergedTopics, item.id)) continue; // merged duplicate: the canonical topic is listed instead
           if (!isTopicVisibleInRegion({ id: item.id, title: item.title, authority: version.authority ?? undefined }, region)) continue;
           const canManage = isAdmin && (!item.is_shared_reference || isPlatformAdmin);
           drafts.push({
@@ -189,6 +191,7 @@ const getManagedVersions = cache(async (status: "approved" | "published", scope:
         id: string; version: string; status: "approved" | "published"; created_at: string; published_at: string | null; approved_at: string | null; source_title: string; authority?: string | null;
       } | null;
       if (!version) continue;
+      if (Object.hasOwn(mergedTopics, item.id)) continue; // merged duplicate: the canonical topic is listed instead
       if (!isTopicVisibleInRegion({ id: item.id, title: item.title, authority: version.authority ?? undefined }, region)) continue;
       const canManage = isAdmin && (!item.is_shared_reference || isPlatformAdmin);
       versions.push({
