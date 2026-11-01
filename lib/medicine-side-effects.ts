@@ -55,7 +55,7 @@ export const SIDE_EFFECTS: readonly SideEffectRule[] = [
   ["glibenclamide|glyburide|glimepiride", "hypoglycaemia, weight gain, nausea, rash"],
   ["sitagliptin", "headache, nasopharyngitis, nausea, upper respiratory infection"],
   ["dapagliflozin|empagliflozin", "genital thrush, urinary infection, increased urination, low blood volume, ketoacidosis (rare)"],
-  ["semaglutide|liraglutide", "nausea, vomiting, diarrhoea, constipation, abdominal pain"],
+  ["semaglutide|liraglutide|tirzepatide", "nausea, vomiting, diarrhoea, constipation, abdominal pain"],
   ["glucagon", "nausea, vomiting, fast heart rate, rebound hyperglycaemia"],
   ["dextrose|glucose 50|glucose 10", "high blood sugar, fluid overload, low potassium, vein irritation"],
   ["glucose \\(oral\\)|oral glucose|carbohydrate", "nausea, bloating, tooth decay (frequent use)"],
