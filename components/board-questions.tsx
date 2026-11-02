@@ -74,7 +74,7 @@ export function TeachingVignette({ teaching }: { teaching?: TeachingGuide }) {
       {teaching.vignette ? <p className="teaching-opening-case">{teaching.vignette.text} <em>(Fictitious case.)</em></p> : null}
       {teaching.learningObjectives?.length ? (
         <div className="teaching-opening-objectives"><strong>By the end of this topic you should be able to:</strong>
-          <ol>{teaching.learningObjectives.map((objective) => <li key={objective}>{objective}</li>)}</ol>
+          <ul>{teaching.learningObjectives.map((objective) => <li key={objective}>{objective.replace(/^\s*\d+[.)]\s*/, "")}</li>)}</ul>
         </div>
       ) : null}
     </section>
