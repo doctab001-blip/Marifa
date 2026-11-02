@@ -187,7 +187,7 @@ export const SIDE_EFFECTS: readonly SideEffectRule[] = [
   ["itraconazole", "nausea, abdominal pain, headache, rash, raised liver enzymes"],
   ["terbinafine", "nausea, diarrhoea, rash, taste change, headache"],
   ["flunarizine", "drowsiness, weight gain, low mood, stiffness or tremor, dry mouth"],
-  ["furosemide|torsemide|torasemide|bumetanide|metolazone|indapamide", "low potassium, low sodium, dehydration, low blood pressure, raised uric acid"],
+  ["furosemide|torsemide|torasemide|bumetanide|metolazone|indapamide|hydrochlorothiazide|chlorthalidone|bendroflumethiazide", "low potassium, low sodium, dehydration, low blood pressure, raised uric acid"],
   ["acetazolamide", "tingling, tiredness, nausea, taste change, low potassium"],
   ["gabapentin|pregabalin", "dizziness, drowsiness, ankle swelling, weight gain, blurred vision"],
   ["ibuprofen|ketorolac|naproxen|indomethacin|diclofenac", "dyspepsia, stomach bleeding, nausea, headache, kidney impairment"],
