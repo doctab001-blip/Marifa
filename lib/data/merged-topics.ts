@@ -67,6 +67,8 @@ export const mergedTopics: Readonly<Record<string, string>> = {
   "a1020000-0000-4000-8000-000000000002": "83ef740c-07f6-4689-be0a-5d4c06a4a259",
   // Gestational Diabetes Identification and Management Pathway → Gestational Diabetes: Antenatal Glucose Management and Delivery Planning (GDM pathway duplicates GDM screening (7916baee) and antenatal management)
   "e58a1236-9f75-4ca4-a398-0e27b5c1f849": "70f676c7-80dd-4ffc-a283-b54be839d68d",
+  // Stable Angina → Stable Coronary Artery Disease: Medical Management and Referral Triggers (2 Nov: word-for-word copy of Stable Chest Pain; owner chose to merge it; Stable Chest Pain bdff4827 is kept as the assessment and diagnosis topic)
+  "ac59eded-f1e9-4a52-afde-467300c4fda4": "4aa13e79-ceb9-4793-ad66-9daeb425431c",
 };
 
 export function canonicalTopicId(id: string): string | undefined {
