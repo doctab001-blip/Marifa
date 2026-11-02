@@ -1,5 +1,5 @@
 import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
-import { cautionSummary, compactContraLines, compactMedicineLines } from "@/lib/compact-medicine-text";
+import { cautionSummary, compactContraLines, compactMedicineLines, ifAllergicLabel } from "@/lib/compact-medicine-text";
 import { FitToRow } from "@/components/fit-to-row";
 
 function Labelled({ text }: { text: string }) {
@@ -10,11 +10,11 @@ function Labelled({ text }: { text: string }) {
 }
 
 const Lines = ({ items }: { items: string[] }) => <ul className="em-list">{items.map((item, index) => <li key={`${index}-${item}`}><Labelled text={item} /></li>)}</ul>;
-const cautionLines = (adjustments: string[]) => compactMedicineLines(adjustments).filter((line) => !/^(?:Penicillin allergy|Allergy|Monitor):/i.test(line));
+const cautionLines = (adjustments: string[]) => compactMedicineLines(adjustments).filter((line) => !/^Monitor:/i.test(line)).map(ifAllergicLabel);
 const None = () => <span className="em-muted" aria-label="None listed">—</span>;
 
-/** Cautions (kidney, liver, children and other dose cautions), closed by default. Allergy and monitoring lines are not shown
- * here (owner request, 28 Oct 2026); the monitoring prop is kept so callers need not change. */
+/** Cautions (CKD, CLD, If Allergic with the alternative drug, children and other dose cautions), closed by default. Allergy lines are shown
+ * again, labelled "If Allergic" (owner request, 1 Nov 2026); monitoring lines stay hidden and the monitoring prop is kept so callers need not change. */
 export function CautionsDropdown({ adjustments }: { adjustments: string[]; monitoring?: string[] }) {
   const cautions = cautionLines(adjustments);
   if (!cautions.length) return <None />;
