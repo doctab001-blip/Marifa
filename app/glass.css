@@ -1204,3 +1204,29 @@ html[data-theme="dark"] .topic-tile[data-spec] { background: hsl(var(--spec-hue,
   .step-med-table .em-table { min-width: 460px; }
 }
 .step-med-table.em-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+/* ── Header layout (2 Nov 2026): the three zones never overlap ─────────────────────────────────────────────
+ * The context zone was sized to its full content, so a long topic title squeezed the search box below its own
+ * width and it spilled over the title and the region pill. Now the context zone takes the free space and its
+ * title truncates with an ellipsis (full title on hover), the search keeps a minimum width, and the actions
+ * zone never shrinks. Shared by the Saudi and India sites. */
+.topbar { grid-template-columns: minmax(0, 1.25fr) minmax(220px, 1fr) auto; }
+.topbar > * { min-width: 0; }
+.topbar-context { overflow: hidden; }
+.topbar-context .pill { flex: 0 0 auto; }
+.topbar-crumb { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.topbar .global-search { width: 100%; max-width: 520px; min-width: 0; justify-self: center; }
+.topbar .global-search input { min-width: 0; text-overflow: ellipsis; }
+.top-actions { flex: 0 0 auto; min-width: max-content; }
+.top-actions > * { flex-shrink: 0; }
+/* Medium screens: drop the module pill's label and the profile text before anything collides. */
+@media (max-width: 1440px) {
+  .topbar-context .pill > span { display: none; }
+  .topbar-context .pill { padding-inline: 10px; }
+  .user-chip > div:last-child { display: none; }
+  .user-chip { padding: 4px; }
+}
+@media (max-width: 1100px) {
+  .topbar { grid-template-columns: minmax(0, 1fr) auto; }
+}
+
