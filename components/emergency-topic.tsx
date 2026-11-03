@@ -5,6 +5,7 @@ import { CautionsCell, ContraCell } from "@/components/medicine-cautions";
 import { displayAdjustments, displayLines } from "@/lib/medicine-adjustments";
 import type { DiseaseDetail } from "@/lib/validations/disease";
 import { PathwaySequence } from "@/components/pathway-sequence";
+import { investigationStepNumbers } from "@/lib/management-pathways";
 import { uncoveredRegimens } from "@/lib/step-medication";
 import type { CitationSource } from "@/components/source-citation";
 import { Investigations as MonitoringSchedule, TreatmentDetails } from "@/components/granular-pathway";
@@ -83,6 +84,7 @@ export function EmergencyTopic({ disease: storedDisease, investigationSource }: 
   const disease = withoutDeferralsDeep(storedDisease);
   const topicSources: CitationSource[] = investigationSource ? [investigationSource] : [];
   const allTests = [...disease.investigations.ruleIn, ...disease.investigations.ruleOut];
+  const decisionSteps = investigationStepNumbers(disease.clinicalManagement);
   const labs = allTests.filter((item) => !isImaging(item));
   const imaging = allTests.filter(isImaging);
   const showNormal = labs.some((item) => importantNormalValue(item.normalValue, item.expectedFinding));
@@ -154,7 +156,7 @@ export function EmergencyTopic({ disease: storedDisease, investigationSource }: 
             <tbody>
               {labs.map((item) => (
                 <tr key={item.testName}>
-                  <th scope="row">{item.testName}<small>{item.modalityTarget}</small></th>
+                  <th scope="row">{item.testName}<small>{item.modalityTarget}</small>{decisionSteps.get(item.testName)?.length ? <small className="em-decision-link"><a href="#management">Decision rule: Management step {decisionSteps.get(item.testName)!.join(", ")}</a></small> : null}</th>
                   <td data-label="In this condition" className="em-deranged">{findingWithNormal(withoutInlineSourceLocators(item.expectedFinding), item.normalValue ? withoutInlineSourceLocators(item.normalValue) : null)}</td>
                   <td data-label="What it means">{withoutInlineSourceLocators(item.clinicalRationale)}</td>
                 </tr>
