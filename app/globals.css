@@ -2221,8 +2221,8 @@ html[data-theme="dark"] .algorithm-dialog-bar { border-color: #334155; }
 }
 
 /* Top bar: the open topic's name replaces the organisation name */
-.topbar-crumb.is-topic { display: inline-flex; align-items: center; gap: 8px; min-width: 0; max-width: min(44ch, 38vw); overflow: hidden; text-overflow: ellipsis; color: var(--strong, #0f172a); font-size: .92rem; font-weight: 700; letter-spacing: 0; }
-.topbar-crumb.is-topic::before { content: "›"; color: var(--text-3, #94a3b8); font-weight: 600; }
+.topbar-crumb.is-topic { display: block; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; color: var(--strong, #0f172a); font-size: .92rem; font-weight: 700; letter-spacing: 0; }
+.topbar-crumb.is-topic::before { content: "›"; margin-right: 8px; color: var(--text-3, #94a3b8); font-weight: 600; }
 /* Count chip on the Approved / Drafts / Published links */
 .nav-link .nav-link-count { margin-left: auto; flex: none; padding: 1px 9px; font-size: .74rem; font-weight: 700; }
 .sidebar-collapsed .nav-link .nav-link-count { display: none; }
