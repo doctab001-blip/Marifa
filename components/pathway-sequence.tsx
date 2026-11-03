@@ -1,13 +1,11 @@
 import { Clock3, GitBranch, ListChecks } from "@/components/icons-3d";
 import type { DiseaseDetail } from "@/lib/validations/disease";
-import { ClinicalTimeframe } from "@/components/clinical-timeframe";
+import { ActionText } from "@/components/action-text";
 import { SourceCitation, type CitationSource } from "@/components/source-citation";
 import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
 import { StepMedicationTable } from "@/components/medication-table";
 import { parseAbcdeAction } from "@/lib/management-sequence-format";
 import { linkStepMedicines, type RegimenLike } from "@/lib/step-medication";
-import { ActionPathways } from "@/components/action-pathways";
-import { toManagementSteps } from "@/lib/management-pathways";
 
 type Branch = NonNullable<DiseaseDetail["clinicalManagement"][number]["branches"]>[number];
 
@@ -30,10 +28,10 @@ function capitalise(text: string) {
 
 function BranchActions({ actions }: { actions: string[] }) {
   // Nearly every branch carries one action: render it as a sentence, not a lone bullet.
-  if (actions.length === 1) return <p className="pathway-branch-action"><ClinicalTimeframe text={actions[0]} /></p>;
+  if (actions.length === 1) return <div className="pathway-branch-action"><ActionText text={actions[0]} /></div>;
   return (
     <ul className="pathway-branch-actions">
-      {actions.map((action, actionIndex) => <li key={`${actionIndex}-${action}`}><ClinicalTimeframe text={action} /></li>)}
+      {actions.map((action, actionIndex) => <li key={`${actionIndex}-${action}`}><ActionText text={action} /></li>)}
     </ul>
   );
 }
@@ -92,8 +90,6 @@ function DecisionBranches({ stepTitle, branches }: { stepTitle: string; branches
 export function PathwaySequence({ steps: storedSteps, sources = [], compact = false, regimens = [] }: { steps: DiseaseDetail["clinicalManagement"]; sources?: CitationSource[]; compact?: boolean; regimens?: RegimenLike[] }) {
   // Display copy only: drug names from the topic's medicine table are shown in bold with their doses under the step.
   const steps = linkStepMedicines(storedSteps, regimens);
-  // Rationale and If/Then pathways per action (position-keyed overlay on the stored actions).
-  const details = toManagementSteps(storedSteps);
   return (
     <section className="pathway-sequence" aria-labelledby="pathway-sequence-title">
       <header className="pathway-sequence-header">
@@ -119,23 +115,19 @@ export function PathwaySequence({ steps: storedSteps, sources = [], compact = fa
               </div>
               <ul className="pathway-actions">
                 {step.actions.map((action, actionIndex) => {
-                  const detail = details[index]?.actions[actionIndex];
                   const abcde = parseAbcdeAction(action);
                   if (abcde) {
                     return (
                       <li className="abcde-row" key={`${actionIndex}-${action}`}>
                         <span className="abcde-letter" aria-hidden="true">{abcde.letter}</span>
-                        <span className="min-w-0"><strong className="abcde-label">{abcde.label}:</strong> <ClinicalTimeframe text={abcde.text} />{detail ? <ActionPathways detail={detail} /> : null}</span>
+                        <span><strong className="abcde-label">{abcde.label}:</strong> <ActionText text={abcde.text} /></span>
                       </li>
                     );
                   }
                   const isAbcdeStep = /ABCDE/.test(step.title);
-                  return <li className={isAbcdeStep ? "abcde-note" : undefined} key={`${actionIndex}-${action}`}><ClinicalTimeframe text={action} />{detail ? <ActionPathways detail={detail} /> : null}</li>;
+                  return <li className={isAbcdeStep ? "abcde-note" : undefined} key={`${actionIndex}-${action}`}><ActionText text={action} /></li>;
                 })}
               </ul>
-              {details[index]?.actions.some((a) => a.investigationRefs.length > 0) ? (
-                <p className="mt-2 text-[12px] text-[var(--text-3)]">Reference values and rationale for these tests: <a className="font-semibold underline underline-offset-2" href="#investigations">Investigations</a></p>
-              ) : null}
               <StepMedicationTable step={step} regimens={regimens} />
               {step.branches?.length ? <DecisionBranches stepTitle={withoutInlineSourceLocators(step.title)} branches={step.branches} /> : null}
             </article>

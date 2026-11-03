@@ -212,6 +212,21 @@ Keep the report factual. Do not describe the work as "comprehensive" or "complet
 
 ---
 
+## Management text format: bullets and bold (platform owner, 3 Nov 2026)
+
+Management actions and branch actions are written for fast reading, not as paragraphs.
+
+- **A list is a short lead-in plus bullets.** In stored text write the lead-in, then one line per item starting with "- " (a newline then dash and space):
+  `Treat any of these as a **red flag**:\n- **bundle branch block**\n- **long or short QT interval**`
+  Put the source citation at the end of the last item.
+- **Bold the important findings and tests** with `**double asterisks**`: the test to order, the finding that changes management, the red flag. Keep bold to a few words per line; if everything is bold, nothing is. Do not bold timers (the site draws "within 24 hours" as a pill) or medicine names (they are already shown from the medicines table).
+- **One idea per bullet, no verbs in a list of findings.** A run of instructions is separate actions, not bullets of one action.
+- Avoid brackets that contain the letters "sign", "acc", "who", "esc" or "ada" for clinical content: the display filter that hides source citations also hides any bracket containing them.
+- Existing topics need no change. The site (`lib/action-list.ts`) turns a long line into bullets automatically only when it is clearly a list ending the sentence (after a colon or "review it for", no medicine badge, noun-phrase items). Anything else is left exactly as written.
+- Never edit published topics in place; changes to wording are additive versions as for any other correction.
+
+---
+
 ## Task
 
 <!-- Fill in for each run -->

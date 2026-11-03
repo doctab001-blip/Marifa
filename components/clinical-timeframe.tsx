@@ -13,11 +13,21 @@ function drugNames(text: string, keyPrefix: string) {
   return parts.map((part, index) => part.bold ? <strong key={`${keyPrefix}-d${index}`} className="med-name">{part.text}</strong> : part.text);
 }
 
+/** "**finding or test**" markers in stored text are drawn bold; everything else keeps the drug-name marks. */
+function richText(text: string, keyPrefix: string) {
+  if (!text.includes("**")) return drugNames(text, keyPrefix);
+  return text.split(/\*\*(.+?)\*\*/g).map((part, index) =>
+    index % 2 === 1
+      ? <strong key={`${keyPrefix}-b${index}`} className="key-term">{part}</strong>
+      : <span key={`${keyPrefix}-p${index}`}>{drugNames(part, `${keyPrefix}-p${index}`)}</span>,
+  );
+}
+
 function timerPills(text: string, keyPrefix: string) {
   return text.split(TIMER).map((part, index) =>
     /^(within\s|Hour\s)/i.test(part)
       ? <span key={`${keyPrefix}-${index}`} className="pill pill-amber pill-sm timer-pill"><Clock3 size={13} aria-hidden="true" />{part}</span>
-      : <span key={`${keyPrefix}-${index}`}>{drugNames(part, `${keyPrefix}-${index}`)}</span>,
+      : <span key={`${keyPrefix}-${index}`}>{richText(part, `${keyPrefix}-${index}`)}</span>,
   );
 }
 
