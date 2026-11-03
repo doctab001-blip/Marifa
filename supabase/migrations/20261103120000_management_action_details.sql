@@ -3,7 +3,7 @@
 -- rows without it stay valid, and the app (lib/validations/disease.ts) treats it as optional.
 -- This migration (1) snapshots every version's content, (2) adds a validity function, (3) adds a NOT VALID check so
 -- only NEW writes are checked and no existing row can block the migration.
--- Filling actionDetails is done by scripts/migrate-management-pathways.ts (dry run first, own backup and --restore).
+-- actionDetails are authored per topic (docs/management-inline-pathways.md). Deploy the app code first: older code rejects them.
 -- Apply to BOTH databases (Saudi, India). Not yet applied anywhere.
 
 begin;

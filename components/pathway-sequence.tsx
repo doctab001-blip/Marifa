@@ -133,6 +133,9 @@ export function PathwaySequence({ steps: storedSteps, sources = [], compact = fa
                   return <li className={isAbcdeStep ? "abcde-note" : undefined} key={`${actionIndex}-${action}`}><ClinicalTimeframe text={action} />{detail ? <ActionPathways detail={detail} /> : null}</li>;
                 })}
               </ul>
+              {details[index]?.actions.some((a) => a.investigationRefs.length > 0) ? (
+                <p className="mt-2 text-[12px] text-[var(--text-3)]">Reference values and rationale for these tests: <a className="font-semibold underline underline-offset-2" href="#investigations">Investigations</a></p>
+              ) : null}
               <StepMedicationTable step={step} regimens={regimens} />
               {step.branches?.length ? <DecisionBranches stepTitle={withoutInlineSourceLocators(step.title)} branches={step.branches} /> : null}
             </article>

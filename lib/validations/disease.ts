@@ -68,22 +68,16 @@ export const ActionPathwaySchema = z
   .strict();
 
 /**
- * Structured detail for the action at `actionIndex` in the step's `actions` array.
+ * If/Then pathways for the action at `actionIndex` in the step's `actions` array.
  * `actions` stays the canonical list of plain strings (audits, search, paste import and medicine linking all read it);
- * this overlay adds the rationale and the If/Then pathways without changing any existing string.
+ * this overlay adds only the decisions that follow from the action, never reference values (those stay in Investigations).
  */
 export const ManagementActionDetailSchema = z
   .object({
     actionIndex: z.number().int().min(0),
-    /** Why this is done (moved from the Investigations table's clinicalRationale). */
-    rationale: nonEmptyText.optional(),
-    /** What a normal result looks like (Investigations table's normalValue or expectedFinding). */
-    expected: nonEmptyText.optional(),
-    pathways: z.array(ActionPathwaySchema).default([]),
-    /** testName of the Investigations row this action came from. */
-    investigationRef: nonEmptyText.optional(),
-    /** "auto-linked" detail was attached by scripts/migrate-management-pathways.ts and needs clinician review. */
-    origin: z.enum(["authored", "auto-linked"]).optional(),
+    pathways: z.array(ActionPathwaySchema).min(1),
+    /** testName of every Investigations row this action's decisions rely on; drives the back-links between the two tabs. */
+    investigationRefs: z.array(nonEmptyText).min(1).optional(),
   })
   .strict();
 
