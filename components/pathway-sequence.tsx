@@ -1,6 +1,6 @@
 import { Clock3, GitBranch, ListChecks } from "@/components/icons-3d";
 import type { DiseaseDetail } from "@/lib/validations/disease";
-import { ClinicalTimeframe } from "@/components/clinical-timeframe";
+import { ActionText } from "@/components/action-text";
 import { SourceCitation, type CitationSource } from "@/components/source-citation";
 import { withoutInlineSourceLocators } from "@/lib/clinical-display-text";
 import { StepMedicationTable } from "@/components/medication-table";
@@ -28,10 +28,10 @@ function capitalise(text: string) {
 
 function BranchActions({ actions }: { actions: string[] }) {
   // Nearly every branch carries one action: render it as a sentence, not a lone bullet.
-  if (actions.length === 1) return <p className="pathway-branch-action"><ClinicalTimeframe text={actions[0]} /></p>;
+  if (actions.length === 1) return <div className="pathway-branch-action"><ActionText text={actions[0]} /></div>;
   return (
     <ul className="pathway-branch-actions">
-      {actions.map((action, actionIndex) => <li key={`${actionIndex}-${action}`}><ClinicalTimeframe text={action} /></li>)}
+      {actions.map((action, actionIndex) => <li key={`${actionIndex}-${action}`}><ActionText text={action} /></li>)}
     </ul>
   );
 }
@@ -120,12 +120,12 @@ export function PathwaySequence({ steps: storedSteps, sources = [], compact = fa
                     return (
                       <li className="abcde-row" key={`${actionIndex}-${action}`}>
                         <span className="abcde-letter" aria-hidden="true">{abcde.letter}</span>
-                        <span><strong className="abcde-label">{abcde.label}:</strong> <ClinicalTimeframe text={abcde.text} /></span>
+                        <span><strong className="abcde-label">{abcde.label}:</strong> <ActionText text={abcde.text} /></span>
                       </li>
                     );
                   }
                   const isAbcdeStep = /ABCDE/.test(step.title);
-                  return <li className={isAbcdeStep ? "abcde-note" : undefined} key={`${actionIndex}-${action}`}><ClinicalTimeframe text={action} /></li>;
+                  return <li className={isAbcdeStep ? "abcde-note" : undefined} key={`${actionIndex}-${action}`}><ActionText text={action} /></li>;
                 })}
               </ul>
               <StepMedicationTable step={step} regimens={regimens} />
