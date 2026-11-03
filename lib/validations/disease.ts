@@ -52,6 +52,41 @@ export const PathwayBranchSchema = z
   })
   .strict();
 
+/**
+ * Inline "If / Then" logic attached to ONE management action (see docs/management-inline-pathways.md).
+ * `trigger` is the finding that sends the clinician down this path ("Abnormal: long QT"); `response` is the
+ * next action ("Urgent cardiovascular assessment within 24 hours"). Both are plain text so every existing
+ * display rule (timers, medication badges, source-locator stripping) applies to them unchanged.
+ */
+export const ActionPathwaySchema = z
+  .object({
+    trigger: nonEmptyText,
+    response: nonEmptyText,
+    // Optional; drives only the colour of the "Then" block, never the wording.
+    urgency: z.enum(["immediate", "urgent", "routine"]).optional(),
+  })
+  .strict();
+
+/**
+ * Structured detail for the action at `actionIndex` in the step's `actions` array.
+ * `actions` stays the canonical list of plain strings (audits, search, paste import and medicine linking all read it);
+ * this overlay adds the rationale and the If/Then pathways without changing any existing string.
+ */
+export const ManagementActionDetailSchema = z
+  .object({
+    actionIndex: z.number().int().min(0),
+    /** Why this is done (moved from the Investigations table's clinicalRationale). */
+    rationale: nonEmptyText.optional(),
+    /** What a normal result looks like (Investigations table's normalValue or expectedFinding). */
+    expected: nonEmptyText.optional(),
+    pathways: z.array(ActionPathwaySchema).default([]),
+    /** testName of the Investigations row this action came from. */
+    investigationRef: nonEmptyText.optional(),
+    /** "auto-linked" detail was attached by scripts/migrate-management-pathways.ts and needs clinician review. */
+    origin: z.enum(["authored", "auto-linked"]).optional(),
+  })
+  .strict();
+
 export const ClinicalManagementStepSchema = z
   .object({
     id: z.string().trim().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
@@ -59,8 +94,20 @@ export const ClinicalManagementStepSchema = z
     timeframe: nonEmptyText,
     actions: nonEmptyTextArray,
     branches: z.array(PathwayBranchSchema).min(1).optional(),
+    actionDetails: z.array(ManagementActionDetailSchema).min(1).optional(),
   })
-  .strict();
+  .strict()
+  .superRefine((step, ctx) => {
+    const seen = new Set<number>();
+    (step.actionDetails ?? []).forEach((detail, i) => {
+      if (detail.actionIndex >= step.actions.length) ctx.addIssue({ code: "custom", path: ["actionDetails", i, "actionIndex"], message: `actionIndex ${detail.actionIndex} is outside the step's ${step.actions.length} actions` });
+      if (seen.has(detail.actionIndex)) ctx.addIssue({ code: "custom", path: ["actionDetails", i, "actionIndex"], message: `Two details for action ${detail.actionIndex}` });
+      seen.add(detail.actionIndex);
+    });
+  });
+
+export type ActionPathway = z.infer<typeof ActionPathwaySchema>;
+export type ManagementActionDetail = z.infer<typeof ManagementActionDetailSchema>;
 
 export const MedicationRegimenSchema = z.object({
   indication: nonEmptyText,
